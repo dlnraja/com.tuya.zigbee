@@ -1,13 +1,11 @@
 {
-  "id": "temphumidsensor",
+  "id": "doorwindowsensor",
   "name": {
-    "en": "Temperature & Humidity Sensor"
+    "en": "Door & Window Sensor"
   },
   "class": "sensor",
   "capabilities": [
-    "measure_temperature",
-    "measure_humidity",
-    "measure_battery",
+    "alarm_contact",
     "alarm_battery"
   ],
   "energy": {
@@ -24,24 +22,24 @@
       "TUYATEC-g3gl6cgy",
       "TUYATEC-Bfq2i2Sy",
       "TUYATEC-abkehqus",
-      "TUYATEC-yg5dcbfu",
-      "TUYATEC-prhs1rsd"
+      "TUYATEC-sb6t7ett",
+      "TUYATEC-rkqiqvcs",
+      "TUYATEC-crr8qb0p"
     ],
     "productId": [
-      "RH3052"
+      "RH3001"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
           1,
-          1026,
-          1029
+          3,
+          1280
         ],
         "bindings": [
           1,
-          1026,
-          1029
+          1280
         ]
       }
     },
