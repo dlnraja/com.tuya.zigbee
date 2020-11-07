@@ -1,13 +1,11 @@
 {
-  "id": "temphumidsensor",
+  "id": "pirsensor",
   "name": {
-    "en": "Temperature & Humidity Sensor"
+    "en": "PIR Sensor"
   },
   "class": "sensor",
   "capabilities": [
-    "measure_temperature",
-    "measure_humidity",
-    "measure_battery",
+    "alarm_motion",
     "alarm_battery"
   ],
   "energy": {
@@ -21,27 +19,22 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "TUYATEC-g3gl6cgy",
-      "TUYATEC-Bfq2i2Sy",
-      "TUYATEC-abkehqus",
-      "TUYATEC-yg5dcbfu",
-      "TUYATEC-prhs1rsd"
+      "TUYATEC-lha8pbwd",
+      "TUYATEC-zn9wyqtr"
     ],
     "productId": [
-      "RH3052"
+      "RH3040"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
           1,
-          1026,
-          1029
+          1280
         ],
         "bindings": [
           1,
-          1026,
-          1029
+          1280
         ]
       }
     },
