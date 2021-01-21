@@ -23,6 +23,11 @@
           "duration": true
           }
       },
+      "light_temperature": {
+        "opts": {
+        "duration": true
+        }
+      },
       "onoff": {
           "setOnDim": false
         }
