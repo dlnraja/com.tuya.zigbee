@@ -3,7 +3,7 @@
   "name": {
     "en": "RGB Spot GU10"
   },
-  "$extends": ["light_color"],
+  "$extends": ["light_color_ambiance"],
   "energy": {
     "approximation": {
       "usageOn": 5,
