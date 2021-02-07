@@ -2,16 +2,10 @@
     "class": "light",
     "capabilities": [
     "onoff",
-    "dim",
-    "light_temperature"
+    "dim"
     ],
     "capabilitiesOptions": {
     "dim": {
-        "opts": {
-        "duration": true
-        }
-    },
-    "light_temperature": {
         "opts": {
         "duration": true
         }
