@@ -20,7 +20,7 @@ class temphumidsensor extends ZigBeeDevice {
 					maxInterval: 0,
 					minChange: 0,
 				}
-			]);
+			]).catch(this.error);
 		}
 
 		// measure_temperature
