@@ -10,11 +10,6 @@ class doublepowerpoint extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
 
-    await zclNode.endpoints[1].clusters.basic.readAttributes('manufacturerName', 'zclVersion', 'appVersion', 'modelId', 'powerSource', 'attributeReportingStatus')
-      .catch(err => {
-        this.error('Error when reading device attributes ', err);
-      });
-
     this.printNode();
     console.log(zclNode.endpoints);
 
@@ -38,12 +33,18 @@ class doublepowerpoint extends ZigBeeDevice {
     }
 
     // Determine endpoint based on subDeviceId
-    const endpoint = subDeviceId === 'seconddoublepowerpoint' ? 2 : 1;
+    const endpoint = subDeviceId === 'socket2' ? 2 : 1;
     this.log(`Registering capabilities for endpoint ${endpoint}`);
 
     // Register only applicable capabilities based on the endpoint
     try {
       if (endpoint === 1) {
+
+        await zclNode.endpoints[1].clusters.basic.readAttributes('manufacturerName', 'zclVersion', 'appVersion', 'modelId', 'powerSource', 'attributeReportingStatus')
+        .catch(err => {
+          this.error('Error when reading device attributes ', err);
+        });
+
         // Register all capabilities for the first endpoint
         this.registerCapabilities(zclNode, { endpoint });
       } else {
@@ -61,62 +62,83 @@ class doublepowerpoint extends ZigBeeDevice {
 
   }
 
-  registerCapabilities(zclNode, options) {
-    const endpoint = options.endpoint;
-
-    // onOff capability
-    this.registerCapability('onoff', CLUSTER.ON_OFF, options, {
+  async registerCapabilities(zclNode, { endpoint }) {
+    // Register onOff capability with the correct options structure
+    this.registerCapability('onoff', CLUSTER.ON_OFF, { endpoint }, {
       getOpts: {
-        getOnStart: true,
-        pollInterval: 60000
+        getOnStart: true
       }
     });
-
-    // Only for endpoint 1 (main device), register additional capabilities
-    if (endpoint === 1) {
-      // meter_power capability
-      this.registerCapability('meter_power', CLUSTER.METERING, options, {
-        reportParser: value => (value * this.meteringOffset) / 100.0,
-        getParser: value => (value * this.meteringOffset) / 100.0,
-        getOpts: {
-          getOnStart: true,
-          pollInterval: 300000
-        }
+  
+    // Attempt to configure instant reporting for the onOff attribute
+    try {
+      await zclNode.endpoints[endpoint].clusters.onOff.configureReporting({
+        attribute: 'onOff',
+        minimumReportInterval: 1, // Minimum interval in seconds (instant reporting)
+        maximumReportInterval: 600, // Maximum interval in seconds
+        reportableChange: 1, // Report on any change
       });
-
-      // measure_power capability
-      this.registerCapability('measure_power', CLUSTER.ELECTRICAL_MEASUREMENT, options, {
-        reportParser: value => (value * this.measureOffset) / 100,
+      this.log('Configured instant reporting for onOff');
+    } catch (error) {
+      // If reporting fails, log the error and set up fallback polling
+      this.error('Failed to configure onOff reporting, setting up fallback polling', error);
+      
+      // Directly set the fallback polling interval without re-registering the capability
+      this.setCapabilityOptions('onoff', {
         getOpts: {
           getOnStart: true,
-          pollInterval: this.minReportPower
-        }
-      });
-
-      // measure_current capability
-      this.registerCapability('measure_current', CLUSTER.ELECTRICAL_MEASUREMENT, options, {
-        reportParser: value => value / 1000,
-        getOpts: {
-          getOnStart: true,
-          pollInterval: this.minReportCurrent
-        }
-      });
-
-      // measure_voltage capability
-      this.registerCapability('measure_voltage', CLUSTER.ELECTRICAL_MEASUREMENT, options, {
-        reportParser: value => value,
-        getOpts: {
-          getOnStart: true,
-          pollInterval: this.minReportVoltage
-        }
+          pollInterval: 60000, // Poll every 60 seconds as a fallback
+        },
       });
     }
+  
+    // Register additional capabilities with configureReporting instead of polling
+    if (endpoint === 1) {
+      try {
+        // Configure reporting for meter_power
+        await zclNode.endpoints[endpoint].clusters.metering.configureReporting({
+          attribute: 'currentSummationDelivered',
+          minimumReportInterval: 10, // Minimum reporting interval
+          maximumReportInterval: 600, // Maximum reporting interval
+          reportableChange: 10, // Report when the value changes by 10 units
+        });
+        this.log('Configured reporting for meter_power');
+  
+        // Configure reporting for measure_power
+        await zclNode.endpoints[endpoint].clusters.electricalMeasurement.configureReporting({
+          attribute: 'activePower',
+          minimumReportInterval: 10,
+          maximumReportInterval: this.minReportPower,
+          reportableChange: 1,
+        });
+        this.log('Configured reporting for measure_power');
+  
+        // Configure reporting for measure_current
+        await zclNode.endpoints[endpoint].clusters.electricalMeasurement.configureReporting({
+          attribute: 'rmsCurrent',
+          minimumReportInterval: 10,
+          maximumReportInterval: this.minReportCurrent,
+          reportableChange: 1,
+        });
+        this.log('Configured reporting for measure_current');
+  
+        // Configure reporting for measure_voltage
+        await zclNode.endpoints[endpoint].clusters.electricalMeasurement.configureReporting({
+          attribute: 'rmsVoltage',
+          minimumReportInterval: 10,
+          maximumReportInterval: this.minReportVoltage,
+          reportableChange: 1,
+        });
+        this.log('Configured reporting for measure_voltage');
+      } catch (error) {
+        this.error('Failed to configure reporting for some attributes:', error);
+      }
+    }
   }
+  
 
   onDeleted() {
-    const { subDeviceId } = this.getData();
-    const endpoint = subDeviceId === 'seconddoublepowerpoint' ? 2 : 1;
-    this.log(`Double Power Point, channel ${endpoint} removed`);
+    this.log(`Double Power Point removed`);
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {

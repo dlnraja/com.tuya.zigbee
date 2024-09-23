@@ -1,7 +1,7 @@
 {
   "id": "doublepowerpoint",
   "name": {
-    "en": "Double Power Point"
+    "en": "Double Power Point - With Metering"
   },
   "class": "socket",
   "platforms": ["local"],
@@ -45,16 +45,19 @@
       }
     }
   },
-  "subdevices": [
-    {
-      "id": "seconddoublepowerpoint",
-      "name": {
-        "en": "Second Power Point"
-      },
+  "devices": {
+    "socket2": {
       "class": "socket",
-      "capabilities": [
-        "onoff"
-      ]
+      "capabilities": ["onoff"],
+      "name": {
+        "en": "Double Power Point - Second socket"
+      },
+      "energy": {
+        "approximation": {
+          "usageOn": 0,
+          "usageOff": 0
+        }
+      }
     }
-  ]
+  }
 }
