@@ -5,6 +5,7 @@ Some of the supported White Label Brands:
 - Alecto
 - Alice
 - Avatto
+- Benexmart
 - BSEED
 - Blitzwolf
 - eWeLight
@@ -595,6 +596,7 @@ Supported devices:
 
 - RGB Spot GU10
     _TZ3000_kdpxju99 / TS0505A (LIVARNO LUX / Lidl)
+    _TZ3210_bfwvfyx1 / TS0505B (Benexmart) 
 
 - RGB Spot GardenLight
    _TZ3000_h1jnz6l8 / TS0505A (LIVARNO LUX / Lidl)
