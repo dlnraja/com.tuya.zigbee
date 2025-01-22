@@ -191,6 +191,7 @@ Supported devices:
     _TZ3000_cqlnswn0 / TY0203 (TESLA)
     _TZ3000_qrldbmfn / TS0203
     _TZ3000_gntwytxo / TS0203
+    _TZ3000_c8zfad4a / TS0203 (GIRIER)
 
 - Water Detector
     _TYZB01_sqmd19i1 / TS0207
