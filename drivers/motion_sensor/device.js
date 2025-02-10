@@ -1,7 +1,7 @@
 'use strict';
 
 const { ZigBeeDevice, Util } = require('homey-zigbeedriver');
-const { CLUSTER } = require('zigbee-clusters');
+const { CLUSTER, ZCLDataTypes } = require('zigbee-clusters');
 
 const BATTERY_UPDATE_INTERVAL = 1000 * 60 * 30; // 30 minutes
 
@@ -26,28 +26,35 @@ class motion_sensor extends ZigBeeDevice {
         // Set up IAS Zone
         const iasZone = zclNode.endpoints[1].clusters[CLUSTER.IAS_ZONE.NAME];
         
-        // Set IAS CIE address for all devices
-        await iasZone.writeAttributes({
-            iasCIEAddress: this.homey.zigbee.controller.getCoordinatorIEEEAddress()
-        }).catch(this.error);
-        
         // Bind handler for zone status changes
         iasZone.onZoneStatusChangeNotification = this.onZoneStatusChanged.bind(this);
         
-        // Set up battery updates
+        // Set up battery updates with throttling
         this._syncBattery = Util.throttle(
             this._updateBattery.bind(this),
             BATTERY_UPDATE_INTERVAL
         );
 
         if (this.isFirstInit()) {
-            this._updateBattery();
-            
-            // Trigger enrollment if needed
-            await iasZone.enrollResponse({
-                enrollResponseCode: 0,
-                zoneId: 255
-            }).catch(this.error);
+            try {
+                // Set IAS CIE address
+                await iasZone.writeAttributes({
+                    iasCIEAddress: Buffer.from(this.homey.zigbee.controller.ieeeAddress, 'hex').reverse()
+                }).catch(err => this.log('Failed to write IAS CIE address:', err));
+                
+                // Trigger enrollment
+                await iasZone.enrollResponse({
+                    enrollResponseCode: 0,
+                    zoneId: 255,
+                }).catch(err => this.log('Failed to enroll IAS Zone:', err));
+                
+                // Initial battery read - only on motion events afterwards
+                await this._updateBattery().catch(err => 
+                    this.log('Initial battery read failed (will retry on motion):', err)
+                );
+            } catch (err) {
+                this.log('Failed during initialization:', err);
+            }
         }
     }
 
@@ -64,7 +71,7 @@ class motion_sensor extends ZigBeeDevice {
             this.setCapabilityValue('alarm_motion', motionDetected).catch(this.error);
         }
         
-        // Update battery on motion events
+        // Try to update battery on motion when device is awake
         this._syncBattery();
     }
 
@@ -114,13 +121,17 @@ class motion_sensor extends ZigBeeDevice {
     }
 
     async _updateBattery() {
-        const attrs = await this._powerConfiguration.readAttributes(
-            ["batteryPercentageRemaining"]
-        ).catch(this.error);
-        if (attrs) {
-            const percent = attrs.batteryPercentageRemaining;
-            this.log('Set measure_battery: ', percent / 2);
-            this.setCapabilityValue('measure_battery', percent / 2).catch(this.error);
+        try {
+            const attrs = await this._powerConfiguration.readAttributes(
+                ["batteryPercentageRemaining"]
+            );
+            if (attrs && attrs.hasOwnProperty('batteryPercentageRemaining')) {
+                const percent = attrs.batteryPercentageRemaining;
+                this.log('Set measure_battery: ', percent / 2);
+                await this.setCapabilityValue('measure_battery', percent / 2);
+            }
+        } catch (err) {
+            this.log('Failed to read battery:', err);
         }
     }
 
