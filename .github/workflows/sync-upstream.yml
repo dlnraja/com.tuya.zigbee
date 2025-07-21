@@ -1,0 +1,53 @@
+name: Sync from upstream
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Tous les dimanches à minuit
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Configure Git
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+      
+      - name: Sync from upstream
+        run: |
+          git remote add upstream https://github.com/JohanBendz/com.tuya.zigbee.git
+          git fetch upstream
+          git checkout -b sync-upstream-$(date +%Y%m%d)
+          git merge upstream/master --no-edit
+      
+      - name: Run driver sync
+        run: |
+          npm run sync-drivers
+          npm run build-readme
+      
+      - name: Run tests
+        run: npm test
+      
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          title: 'chore: weekly sync from upstream'
+          commit-message: 'chore: sync drivers and update README'
+          branch: sync-upstream-$(date +%Y%m%d)
+          delete-branch: true
+          base: master
