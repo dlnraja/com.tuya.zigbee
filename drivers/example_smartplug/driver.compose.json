@@ -1,0 +1,28 @@
+{
+  "id": "example_smartplug",
+  "name": {
+    "en": "Smart Plug"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "productId": [
+      "TS0001",
+      "TS0121"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0, 4, 5, 61184
+        ],
+        "bindings": [
+          0, 4, 5
+        ]
+      }
+    }
+  }
+}
