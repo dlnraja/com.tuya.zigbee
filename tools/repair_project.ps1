@@ -1,5 +1,6 @@
 Write-Host "🛠️ Script de restauration automatique pour com.tuya.zigbee"
-$projectPath = Split-Path -Parent $MyInvocation.MyCommand.Path
+# Root of the repository (parent of the script directory)
+$projectPath = Resolve-Path (Join-Path $PSScriptRoot "..")
 
 # Fichiers/dossiers critiques à restaurer
 $restoreList = @(

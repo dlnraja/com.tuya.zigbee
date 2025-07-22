@@ -1,5 +1,6 @@
 Write-Host "🛠️ MEGA RESTORE for com.tuya.zigbee"
-$projectPath = Split-Path -Parent $MyInvocation.MyCommand.Path
+# Root of the repository (parent of the script directory)
+$projectPath = Resolve-Path (Join-Path $PSScriptRoot "..")
 $restoreList = @(
     ".env.example", ".gitignore", "README.md", "deploy.ps1", "package.json",
     "dashboard/dashboard.html", "drivers/TS0001/driver.compose.json", "drivers/TS0001/icon.svg",
