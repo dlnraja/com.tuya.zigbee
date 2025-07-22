@@ -17,6 +17,7 @@
 - `test/` : scripts de tests
 - `deploy.ps1` : déploiement auto
 - `repair_project.ps1` : restauration des fichiers critiques
+- `mega_restore.ps1` : restauration avancée depuis une sauvegarde
 
 ## Commandes utiles
 ```powershell
@@ -25,6 +26,9 @@
 
 # Restauration
 ./tools/repair_project.ps1
+
+# Restauration complète
+./tools/mega_restore.ps1
 
 # Tests
 
