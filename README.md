@@ -44,6 +44,7 @@ npm test
 * Parsing Z2M → Homey automatisé
 * Backup Google Drive automatique
 * Traitement quotidien de 5 PR et issues via GitHub Actions
+* Fusion automatique des PR validées vers master chaque nuit
 
 ## Crédits
 
