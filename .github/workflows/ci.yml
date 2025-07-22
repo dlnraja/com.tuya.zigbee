@@ -1,0 +1,16 @@
+
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install deps
+        run: npm install
+      - name: Run linter
+        run: echo "No linter yet"

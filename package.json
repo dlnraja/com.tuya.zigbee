@@ -1,14 +1,13 @@
 
 {
   "name": "com.tuya.zigbee",
-  "version": "7.0.0",
+  "version": "1.0.0",
   "scripts": {
-    "start": "node index.js",
+    "start": "node dashboard/index.js",
     "sync-drivers": "node scripts/z2m-parser.js",
     "generate-icons": "node scripts/icon-generator.js",
     "parse-docs": "node scripts/doc-parser.js",
-    "benchmark-ai": "node scripts/benchmark-ai.js",
-    "dashboard": "node dashboard/index.js"
+    "benchmark-ai": "node scripts/benchmark-ai.js"
   },
   "dependencies": {
     "axios": "^1.5.0",

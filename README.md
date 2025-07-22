@@ -1,3 +1,3 @@
 # com.tuya.zigbee
 
-Projet Homey Tuya Zigbee reconstruit automatiquement avec support IA.
+Reconstruction complète avec intégration IA, CI/CD, PowerShell, Dashboard.
