@@ -1,6 +1,7 @@
 # 🧠 com.tuya.zigbee — Intégration Homey + Tuya Zigbee + IA
 
-[![CI](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/integrity-monitor.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/integrity-monitor.yml)
+[![CI](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/ci.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/ci.yml)
+[![Integrity](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/integrity-monitor.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/integrity-monitor.yml)
 [![Backup](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/monthly-backup.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/monthly-backup.yml)
 [🌐 Dashboard](https://dlnraja.github.io/com.tuya.zigbee/)
 
