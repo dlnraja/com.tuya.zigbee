@@ -1,4 +1,18 @@
-name: 🤖 Automation & Auto-Update - Enhanced
+﻿# automation.yml
+# Description: Workflow automatisÃ© pour automation
+# Date: 2025-07-25
+# Version: 1.0
+
+name: ðŸ¤– Automation & Auto-Update - Enhanced
+
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   push:
@@ -7,27 +21,74 @@ on:
     branches: [ master, beta ]
   workflow_dispatch:
   schedule:
-    - cron: '0 */2 * * *'  # Toutes les 2 heures
+    - cr
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '0 */2 * * *'  # Toutes les 2 heures
 
 env:
-  NODE_VERSION: '18'
-  HOMEY_SDK_VERSION: '3'
+  NODE_VERSI
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '18'
+  HOMEY_SDK_VERSI
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '3'
   AUTOMATION_MODE: 'intelligent'
 
 jobs:
-  # 🔍 ANALYSE AUTOMATION
+  # ðŸ” ANALYSE AUTOMATION
   automation-analysis:
-    runs-on: ubuntu-latest
-    name: 🔍 Analyse automation
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    name: ðŸ” Analyse automation
     outputs:
       automation-ready: ${{ steps.check-automation.outputs.ready }}
       update-needed: ${{ steps.check-updates.outputs.needed }}
       security-status: ${{ steps.security-check.outputs.status }}
     steps:
-      - name: 📥 Checkout repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout repository
         uses: actions/checkout@v4
 
-      - name: 🔍 Vérification automation
+      - name: ðŸ” VÃ©rification automation
         id: check-automation
         run: |
           AUTOMATION_READY="false"
@@ -35,20 +96,20 @@ jobs:
             AUTOMATION_READY="true"
           fi
           echo "ready=$AUTOMATION_READY" >> $GITHUB_OUTPUT
-          echo "🔍 Automation ready: $AUTOMATION_READY"
+          echo "ðŸ” Automation ready: $AUTOMATION_READY"
 
-      - name: 🔄 Vérification mises à jour
+      - name: ðŸ”„ VÃ©rification mises Ã  jour
         id: check-updates
         run: |
           UPDATE_NEEDED="false"
           if [ -f "package.json" ]; then
-            echo "📦 package.json détecté"
+            echo "ðŸ“¦ package.json dÃ©tectÃ©"
             UPDATE_NEEDED="true"
           fi
           echo "needed=$UPDATE_NEEDED" >> $GITHUB_OUTPUT
-          echo "🔄 Mise à jour nécessaire: $UPDATE_NEEDED"
+          echo "ðŸ”„ Mise Ã  jour nÃ©cessaire: $UPDATE_NEEDED"
 
-      - name: 🛡️ Vérification sécurité
+      - name: ðŸ›¡ï¸ VÃ©rification sÃ©curitÃ©
         id: security-check
         run: |
           SECURITY_STATUS="basic"
@@ -59,108 +120,176 @@ jobs:
             SECURITY_STATUS="full"
           fi
           echo "status=$SECURITY_STATUS" >> $GITHUB_OUTPUT
-          echo "🛡️ Statut sécurité: $SECURITY_STATUS"
+          echo "ðŸ›¡ï¸ Statut sÃ©curitÃ©: $SECURITY_STATUS"
 
-  # 🔄 AUTO-UPDATE INTELLIGENT
+  # ðŸ”„ AUTO-UPDATE INTELLIGENT
   intelligent-auto-update:
-    runs-on: ubuntu-latest
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
     needs: automation-analysis
-    name: 🔄 Auto-update intelligent
+    name: ðŸ”„ Auto-update intelligent
     if: needs.automation-analysis.outputs.update-needed == 'true'
     steps:
-      - name: 📥 Checkout repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout repository
         uses: actions/checkout@v4
 
-      - name: 🔧 Setup Node.js
+      - name: ðŸ”§ Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-versi
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ${{ env.NODE_VERSION }}
           cache: 'npm'
 
-      - name: 📦 Mise à jour dépendances
+      - name: ðŸ“¦ Mise Ã  jour dÃ©pendances
         run: |
-          echo "📦 Mise à jour des dépendances..."
+          echo "ðŸ“¦ Mise Ã  jour des dÃ©pendances..."
           if [ -f "package.json" ]; then
-            npm ci || echo "⚠️ Installation avec avertissements"
-            npm audit fix --audit-level=moderate || echo "⚠️ Audit terminé avec avertissements"
+            npm ci || echo "âš ï¸ Installation avec avertissements"
+            npm audit fix --audit-level=moderate || echo "âš ï¸ Audit terminÃ© avec avertissements"
           else
-            echo "ℹ️ Pas de package.json détecté"
+            echo "â„¹ï¸ Pas de package.json dÃ©tectÃ©"
           fi
-          echo "✅ Dépendances mises à jour"
+          echo "âœ… DÃ©pendances mises Ã  jour"
 
-      - name: 🔍 Vérification code
+      - name: ðŸ” VÃ©rification code
         run: |
-          echo "🔍 Vérification du code..."
+          echo "ðŸ” VÃ©rification du code..."
           if [ -f "package.json" ] && grep -q "lint" package.json; then
-            npm run lint || echo "⚠️ Lint terminé avec des avertissements"
+            npm run lint || echo "âš ï¸ Lint terminÃ© avec des avertissements"
           else
-            echo "ℹ️ Pas de script lint configuré"
+            echo "â„¹ï¸ Pas de script lint configurÃ©"
           fi
-          echo "✅ Code vérifié"
+          echo "âœ… Code vÃ©rifiÃ©"
 
-      - name: 📝 Update manifest
+      - name: ðŸ“ Update manifest
         run: |
-          echo "📝 Update manifest..."
+          echo "ðŸ“ Update manifest..."
           if [ -f "package.json" ] && grep -q "update-manifest" package.json; then
-            npm run update-manifest || echo "⚠️ Update manifest terminé avec des avertissements"
+            npm run update-manifest || echo "âš ï¸ Update manifest terminÃ© avec des avertissements"
           else
-            echo "ℹ️ Pas de script update-manifest configuré"
+            echo "â„¹ï¸ Pas de script update-manifest configurÃ©"
           fi
-          echo "✅ Update manifest terminé"
+          echo "âœ… Update manifest terminÃ©"
 
-      - name: 📊 Génération rapport
+      - name: ðŸ“Š GÃ©nÃ©ration rapport
         run: |
-          echo "📊 RAPPORT AUTO-UPDATE"
+          echo "ðŸ“Š RAPPORT AUTO-UPDATE"
           echo ""
           echo "Automation ready: ${{ needs.automation-analysis.outputs.automation-ready }}"
           echo "Update needed: ${{ needs.automation-analysis.outputs.update-needed }}"
           echo "Security status: ${{ needs.automation-analysis.outputs.security-status }}"
-          echo "✅ Auto-update terminé avec succès!"
+          echo "âœ… Auto-update terminÃ© avec succÃ¨s!"
 
-  # 🤖 AUTOMATION INTELLIGENTE
-  intelligent-automation:
-    runs-on: ubuntu-latest
+  # ðŸ¤– AUTOMATION INTELLIGENTE
+  intelligent-automati
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on:
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
     needs: [automation-analysis, intelligent-auto-update]
-    name: 🤖 Automation intelligente
+    name: ðŸ¤– Automation intelligente
     if: always()
     steps:
-      - name: 📥 Checkout repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout repository
         uses: actions/checkout@v4
 
-      - name: 🔧 Setup Node.js
+      - name: ðŸ”§ Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-versi
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ${{ env.NODE_VERSION }}
           cache: 'npm'
 
-      - name: 📦 Installation finale
+      - name: ðŸ“¦ Installation finale
         run: |
           if [ -f "package.json" ]; then
             npm ci
           fi
 
-      - name: 🛠️ Build automation
+      - name: ðŸ› ï¸ Build automation
         run: |
-          echo "🛠️ Build automation..."
-          npm run build || echo "Build terminé avec des avertissements"
+          echo "ðŸ› ï¸ Build automation..."
+          npm run build || echo "Build terminÃ© avec des avertissements"
 
-      - name: 🧾 Validation finale
+      - name: ðŸ§¾ Validation finale
         run: |
-          echo "🧾 VALIDATION AUTOMATION"
+          echo "ðŸ§¾ VALIDATION AUTOMATION"
           echo "==="
           echo "Automation ready: ${{ needs.automation-analysis.outputs.automation-ready }}"
           echo "Security status: ${{ needs.automation-analysis.outputs.security-status }}"
-          echo "✅ Automation validée"
-          echo "✅ Build terminé"
-          echo "🚀 Projet prêt!"
+          echo "âœ… Automation validÃ©e"
+          echo "âœ… Build terminÃ©"
+          echo "ðŸš€ Projet prÃªt!"
 
-      - name: 🎉 Succès
+      - name: ðŸŽ‰ SuccÃ¨s
         run: |
-          echo "🎉 AUTOMATION RÉUSSIE!"
+          echo "ðŸŽ‰ AUTOMATION RÃ‰USSIE!"
           echo "=="
-          echo "✅ Auto-update terminé"
-          echo "✅ Build validé"
-          echo "✅ Automation opérationnelle"
-          echo "🚀 Projet optimisé!"
+          echo "âœ… Auto-update terminÃ©"
+          echo "âœ… Build validÃ©"
+          echo "âœ… Automation opÃ©rationnelle"
+          echo "ðŸš€ Projet optimisÃ©!"
+
 
 

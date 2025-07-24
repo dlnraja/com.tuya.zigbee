@@ -1,7 +1,21 @@
-# 🚀 Auto-Translate Documentation - Tuya Zigbee Project
+﻿# auto-translate-docs.yml
+# Description: Workflow automatisÃ© pour auto translate docs
+# Date: 2025-07-25
+# Version: 1.0
+
+# ðŸš€ Auto-Translate Documentation - Tuya Zigbee Project
 # Automatisation des traductions multilingues
 
-name: 🌍 Auto-Translate Documentation
+name: ðŸŒ Auto-Translate Documentation
+
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   push:
@@ -11,87 +25,176 @@ on:
       - 'locales/**'
   workflow_dispatch:
   schedule:
-    - cron: '0 2 * * *'  # Tous les jours à 2h00 UTC
+    - cr
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '0 2 * * *'  # Tous les jours Ã  2h00 UTC
 
 jobs:
   translate-docs:
-    runs-on: ubuntu-latest
-    name: 🔄 Traduction automatique des documents
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    name: ðŸ”„ Traduction automatique des documents
     
+    
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_VERSION: '18'
+        PYTHON_VERSION: '3.11'
+
     steps:
-      - name: 📥 Checkout repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout repository
         uses: actions/checkout@v4
         
-      - name: 🔧 Setup Node.js
+      - name: ðŸ”§ Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-versi
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '18'
           
-      - name: 📦 Install dependencies
+      - name: ðŸ“¦ Install dependencies
         run: |
           npm install
           npm install -g @crowdin/cli
           
-      - name: 🌍 Translate README to English
+      - name: ðŸŒ Translate README to English
         run: |
           echo "Translating README.md to English..."
           # Utilisation de l'API DeepL pour la traduction
           curl -X POST "https://api-free.deepl.com/v2/translate" \
-            -H "Authorization: DeepL-Auth-Key ${{ secrets.DEEPL_API_KEY }}" \
+            -H "Authorizati
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: DeepL-Auth-Key ${{ secrets.DEEPL_API_KEY }}" \
             -H "Content-Type: application/x-www-form-urlencoded" \
             -d "text=$(cat README.md | head -50)" \
             -d "target_lang=EN" \
             -d "source_lang=FR" > README_EN.md
           
-      - name: 🇪🇸 Translate to Spanish
+      - name: ðŸ‡ªðŸ‡¸ Translate to Spanish
         run: |
           echo "Translating to Spanish..."
           curl -X POST "https://api-free.deepl.com/v2/translate" \
-            -H "Authorization: DeepL-Auth-Key ${{ secrets.DEEPL_API_KEY }}" \
+            -H "Authorizati
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: DeepL-Auth-Key ${{ secrets.DEEPL_API_KEY }}" \
             -H "Content-Type: application/x-www-form-urlencoded" \
             -d "text=$(cat README.md | head -50)" \
             -d "target_lang=ES" \
             -d "source_lang=FR" > README_ES.md
           
-      - name: 🇩🇪 Translate to German
+      - name: ðŸ‡©ðŸ‡ª Translate to German
         run: |
           echo "Translating to German..."
           curl -X POST "https://api-free.deepl.com/v2/translate" \
-            -H "Authorization: DeepL-Auth-Key ${{ secrets.DEEPL_API_KEY }}" \
+            -H "Authorizati
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: DeepL-Auth-Key ${{ secrets.DEEPL_API_KEY }}" \
             -H "Content-Type: application/x-www-form-urlencoded" \
             -d "text=$(cat README.md | head -50)" \
             -d "target_lang=DE" \
             -d "source_lang=FR" > README_DE.md
           
-      - name: 🇮🇹 Translate to Italian
+      - name: ðŸ‡®ðŸ‡¹ Translate to Italian
         run: |
           echo "Translating to Italian..."
           curl -X POST "https://api-free.deepl.com/v2/translate" \
-            -H "Authorization: DeepL-Auth-Key ${{ secrets.DEEPL_API_KEY }}" \
+            -H "Authorizati
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: DeepL-Auth-Key ${{ secrets.DEEPL_API_KEY }}" \
             -H "Content-Type: application/x-www-form-urlencoded" \
             -d "text=$(cat README.md | head -50)" \
             -d "target_lang=IT" \
             -d "source_lang=FR" > README_IT.md
           
-      - name: 🇳🇱 Translate to Dutch
+      - name: ðŸ‡³ðŸ‡± Translate to Dutch
         run: |
           echo "Translating to Dutch..."
           curl -X POST "https://api-free.deepl.com/v2/translate" \
-            -H "Authorization: DeepL-Auth-Key ${{ secrets.DEEPL_API_KEY }}" \
+            -H "Authorizati
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: DeepL-Auth-Key ${{ secrets.DEEPL_API_KEY }}" \
             -H "Content-Type: application/x-www-form-urlencoded" \
             -d "text=$(cat README.md | head -50)" \
             -d "target_lang=NL" \
             -d "source_lang=FR" > README_NL.md
           
-      - name: 📊 Generate translation report
+      - name: ðŸ“Š Generate translation report
         run: |
-          echo "📊 TRANSLATION REPORT" > translation_report.md
+          echo "ðŸ“Š TRANSLATION REPORT" > translation_report.md
           echo "=====================" >> translation_report.md
           echo "" >> translation_report.md
           echo "**Date:** $(date -u)" >> translation_report.md
           echo "**Languages:** EN, ES, DE, IT, NL" >> translation_report.md
           echo "**Source:** FR" >> translation_report.md
-          echo "**Status:** ✅ Completed" >> translation_report.md
+          echo "**Status:** âœ… Completed" >> translation_report.md
           echo "" >> translation_report.md
           echo "**Files translated:**" >> translation_report.md
           echo "- README_EN.md" >> translation_report.md
@@ -100,15 +203,24 @@ jobs:
           echo "- README_IT.md" >> translation_report.md
           echo "- README_NL.md" >> translation_report.md
           
-      - name: 📝 Commit translations
+      - name: ðŸ“ Commit translations
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add README_*.md translation_report.md
-          git commit -m "🌍 [$(date -u '+%Y-%m-%d %H:%M UTC')] Auto-translation: README traduit en EN/ES/DE/IT/NL. Powered by DeepL API, GitHub Actions"
+          git commit -m "ðŸŒ [$(date -u '+%Y-%m-%d %H:%M UTC')] Auto-translati
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: README traduit en EN/ES/DE/IT/NL. Powered by DeepL API, GitHub Actions"
           git push
           
-      - name: 📈 Update translation stats
+      - name: ðŸ“ˆ Update translation stats
         run: |
           echo "Translation completed successfully!"
           echo "Languages: 6 (FR, EN, ES, DE, IT, NL)"

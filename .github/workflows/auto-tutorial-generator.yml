@@ -1,7 +1,16 @@
-# 🚀 Auto-Tutorial Generator - Tuya Zigbee Project
-# Génération automatique de tutoriels pour les drivers
+﻿# ðŸš€ Auto-Tutorial Generator - Tuya Zigbee Project
+# GÃ©nÃ©ration automatique de tutoriels pour les drivers
 
-name: 📚 Auto-Tutorial Generator
+name: ðŸ“š Auto-Tutorial Generator
+
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   push:
@@ -10,33 +19,77 @@ on:
       - 'README.md'
   workflow_dispatch:
   schedule:
-    - cron: '0 3 * * *'  # Tous les jours à 3h00 UTC
+    - cr
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '0 3 * * *'  # Tous les jours Ã  3h00 UTC
 
 jobs:
   generate-tutorials:
-    runs-on: ubuntu-latest
-    name: 📚 Génération automatique de tutoriels
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    name: ðŸ“š GÃ©nÃ©ration automatique de tutoriels
     
+    
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_VERSION: '18'
+        PYTHON_VERSION: '3.11'
+
     steps:
-      - name: 📥 Checkout repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout repository
         uses: actions/checkout@v4
         
-      - name: 🔧 Setup Node.js
+      - name: ðŸ”§ Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-versi
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '18'
           
-      - name: 📦 Install dependencies
+      - name: ðŸ“¦ Install dependencies
         run: |
           npm install
           npm install -g markdown-it
           
-      - name: 🔍 Generate tutorials
+      - name: ðŸ” Generate tutorials
         run: |
           echo "Generating tutorials for drivers..."
           mkdir -p docs/tutorials
           
-          # Créer un script simple pour générer les tutoriels
+          # CrÃ©er un script simple pour gÃ©nÃ©rer les tutoriels
           cat > generate_tutorials.js << 'EOF'
           const fs = require('fs');
           const path = require('path');
@@ -44,69 +97,69 @@ jobs:
           const drivers = ['curtain_module', 'rain_sensor', 'multi_sensor', 'smart_plug', 'remote_control'];
           
           drivers.forEach(driver => {
-            const tutorialContent = `# 📚 Tutoriel - ${driver}
+            const tutorialContent = `# ðŸ“š Tutoriel - ${driver}
           
-          ## 🎯 Vue d'ensemble
+          ## ðŸŽ¯ Vue d'ensemble
           Ce tutoriel vous guide dans l'installation et la configuration du driver **${driver}** pour Homey.
           
-          ## 📋 Prérequis
+          ## ðŸ“‹ PrÃ©requis
           - Homey avec firmware 8.0+
-          - Application Tuya Zigbee installée
+          - Application Tuya Zigbee installÃ©e
           - Appareil compatible ${driver}
           
-          ## 🔧 Installation
+          ## ðŸ”§ Installation
           
-          ### Étape 1: Ajout du driver
+          ### Ã‰tape 1: Ajout du driver
           1. Ouvrez l'application Tuya Zigbee sur Homey
           2. Allez dans l'onglet "Drivers"
           3. Recherchez "${driver}"
           4. Cliquez sur "Installer"
           
-          ### Étape 2: Configuration
+          ### Ã‰tape 2: Configuration
           1. Appuyez sur le bouton "+" pour ajouter un appareil
-          2. Sélectionnez "${driver}" dans la liste
-          3. Suivez les instructions à l'écran
+          2. SÃ©lectionnez "${driver}" dans la liste
+          3. Suivez les instructions Ã  l'Ã©cran
           
-          ## ⚙️ Configuration avancée
+          ## âš™ï¸ Configuration avancÃ©e
           
-          ### Paramètres recommandés
+          ### ParamÃ¨tres recommandÃ©s
           - **Polling interval**: 60 secondes
           - **Battery threshold**: 20%
-          - **Auto-reconnect**: Activé
+          - **Auto-reconnect**: ActivÃ©
           
-          ### Dépannage
-          - **Problème**: L'appareil ne se connecte pas
-            - **Solution**: Vérifiez que l'appareil est en mode pairing
-          - **Problème**: Batterie faible
+          ### DÃ©pannage
+          - **ProblÃ¨me**: L'appareil ne se connecte pas
+            - **Solution**: VÃ©rifiez que l'appareil est en mode pairing
+          - **ProblÃ¨me**: Batterie faible
             - **Solution**: Remplacez les piles et recalibrez
           
-          ## 📊 Monitoring
+          ## ðŸ“Š Monitoring
           - Surveillez la batterie dans l'application
-          - Vérifiez les logs pour les erreurs
+          - VÃ©rifiez les logs pour les erreurs
           - Utilisez le dashboard pour les statistiques
           
-          ## 🔗 Liens utiles
+          ## ðŸ”— Liens utiles
           - [Documentation officielle](../README.md)
           - [Support communautaire](https://github.com/dlnraja/com.tuya.zigbee/issues)
-          - [Dashboard temps réel](../dashboard/)
+          - [Dashboard temps rÃ©el](../dashboard/)
           
           ---
-          *Généré automatiquement le ${new Date().toISOString()}*
+          *GÃ©nÃ©rÃ© automatiquement le ${new Date().toISOString()}*
           `;
           
             fs.writeFileSync(`docs/tutorials/${driver}_tutorial.md`, tutorialContent);
             console.log(`Generated tutorial for ${driver}`);
           });
           
-          // Générer le guide d'installation
-          const installationGuide = `# 🚀 Guide d'Installation - Tuya Zigbee
+          // GÃ©nÃ©rer le guide d'installation
+          const installationGuide = `# ðŸš€ Guide d'Installation - Tuya Zigbee
           
-          ## 📋 Prérequis système
+          ## ðŸ“‹ PrÃ©requis systÃ¨me
           - Homey avec firmware 8.0+
           - Connexion internet stable
           - Compte Tuya (optionnel)
           
-          ## 🔧 Installation étape par étape
+          ## ðŸ”§ Installation Ã©tape par Ã©tape
           
           ### 1. Installation de l'application
           1. Ouvrez l'App Store sur Homey
@@ -117,114 +170,114 @@ jobs:
           ### 2. Configuration initiale
           1. Ouvrez l'application Tuya Zigbee
           2. Acceptez les conditions d'utilisation
-          3. Configurez votre région
+          3. Configurez votre rÃ©gion
           4. Testez la connexion
           
           ### 3. Ajout d'appareils
           1. Appuyez sur "+" pour ajouter un appareil
-          2. Sélectionnez le type d'appareil
+          2. SÃ©lectionnez le type d'appareil
           3. Suivez les instructions de pairing
-          4. Configurez les paramètres
+          4. Configurez les paramÃ¨tres
           
-          ## ⚙️ Configuration avancée
+          ## âš™ï¸ Configuration avancÃ©e
           
-          ### Paramètres réseau
-          - **Zigbee Channel**: Auto-détection
-          - **Security**: WPA2 recommandé
-          - **Range**: Jusqu'à 100m en extérieur
+          ### ParamÃ¨tres rÃ©seau
+          - **Zigbee Channel**: Auto-dÃ©tection
+          - **Security**: WPA2 recommandÃ©
+          - **Range**: Jusqu'Ã  100m en extÃ©rieur
           
           ### Optimisation des performances
           - Placez le Homey au centre de votre installation
-          - Évitez les interférences WiFi
-          - Utilisez des répéteurs si nécessaire
+          - Ã‰vitez les interfÃ©rences WiFi
+          - Utilisez des rÃ©pÃ©teurs si nÃ©cessaire
           
-          ## 🔍 Dépannage
+          ## ðŸ” DÃ©pannage
           
-          ### Problèmes courants
-          1. **Appareil non détecté**
-             - Vérifiez le mode pairing
-             - Redémarrez l'appareil
-             - Vérifiez la distance
+          ### ProblÃ¨mes courants
+          1. **Appareil non dÃ©tectÃ©**
+             - VÃ©rifiez le mode pairing
+             - RedÃ©marrez l'appareil
+             - VÃ©rifiez la distance
           
           2. **Connexion instable**
-             - Vérifiez la batterie
-             - Déplacez l'appareil plus près
-             - Ajoutez un répéteur
+             - VÃ©rifiez la batterie
+             - DÃ©placez l'appareil plus prÃ¨s
+             - Ajoutez un rÃ©pÃ©teur
           
-          3. **Erreurs de mise à jour**
-             - Vérifiez la connexion internet
-             - Redémarrez Homey
+          3. **Erreurs de mise Ã  jour**
+             - VÃ©rifiez la connexion internet
+             - RedÃ©marrez Homey
              - Contactez le support
           
-          ## 📞 Support
+          ## ðŸ“ž Support
           - **Documentation**: [README.md](../README.md)
           - **Issues**: [GitHub](https://github.com/dlnraja/com.tuya.zigbee/issues)
-          - **Dashboard**: [Temps réel](../dashboard/)
+          - **Dashboard**: [Temps rÃ©el](../dashboard/)
           
           ---
-          *Généré automatiquement le ${new Date().toISOString()}*
+          *GÃ©nÃ©rÃ© automatiquement le ${new Date().toISOString()}*
           `;
           
           fs.writeFileSync('docs/INSTALLATION_GUIDE.md', installationGuide);
           console.log('Generated installation guide');
           
-          // Générer le guide de dépannage
-          const troubleshootingGuide = `# 🔧 Guide de Dépannage - Tuya Zigbee
+          // GÃ©nÃ©rer le guide de dÃ©pannage
+          const troubleshootingGuide = `# ðŸ”§ Guide de DÃ©pannage - Tuya Zigbee
           
-          ## 🚨 Problèmes courants et solutions
+          ## ðŸš¨ ProblÃ¨mes courants et solutions
           
-          ### 1. Appareil non détecté
-          **Symptômes**: L'appareil n'apparaît pas dans la liste
+          ### 1. Appareil non dÃ©tectÃ©
+          **SymptÃ´mes**: L'appareil n'apparaÃ®t pas dans la liste
           **Solutions**:
-          - Vérifiez que l'appareil est en mode pairing
-          - Redémarrez l'appareil
-          - Vérifiez la distance (max 10m)
-          - Changez les piles si nécessaire
+          - VÃ©rifiez que l'appareil est en mode pairing
+          - RedÃ©marrez l'appareil
+          - VÃ©rifiez la distance (max 10m)
+          - Changez les piles si nÃ©cessaire
           
           ### 2. Connexion instable
-          **Symptômes**: L'appareil se déconnecte régulièrement
+          **SymptÃ´mes**: L'appareil se dÃ©connecte rÃ©guliÃ¨rement
           **Solutions**:
-          - Déplacez l'appareil plus près du Homey
-          - Ajoutez un répéteur Zigbee
-          - Vérifiez les interférences WiFi
-          - Mettez à jour le firmware
+          - DÃ©placez l'appareil plus prÃ¨s du Homey
+          - Ajoutez un rÃ©pÃ©teur Zigbee
+          - VÃ©rifiez les interfÃ©rences WiFi
+          - Mettez Ã  jour le firmware
           
           ### 3. Batterie faible
-          **Symptômes**: Alertes de batterie fréquentes
+          **SymptÃ´mes**: Alertes de batterie frÃ©quentes
           **Solutions**:
           - Remplacez les piles
-          - Vérifiez la qualité des piles
-          - Réduisez la fréquence de polling
+          - VÃ©rifiez la qualitÃ© des piles
+          - RÃ©duisez la frÃ©quence de polling
           - Recalibrez le capteur
           
-          ### 4. Erreurs de mise à jour
-          **Symptômes**: Échec des mises à jour
+          ### 4. Erreurs de mise Ã  jour
+          **SymptÃ´mes**: Ã‰chec des mises Ã  jour
           **Solutions**:
-          - Vérifiez la connexion internet
-          - Redémarrez Homey
-          - Vérifiez l'espace disque
+          - VÃ©rifiez la connexion internet
+          - RedÃ©marrez Homey
+          - VÃ©rifiez l'espace disque
           - Contactez le support
           
-          ## 📊 Diagnostic
+          ## ðŸ“Š Diagnostic
           
           ### Logs utiles
           - **Application logs**: Settings > System > Logs
           - **Driver logs**: Dans l'application Tuya Zigbee
-          - **Network logs**: Pour les problèmes de connexion
+          - **Network logs**: Pour les problÃ¨mes de connexion
           
           ### Outils de diagnostic
-          - **Dashboard**: Monitoring temps réel
+          - **Dashboard**: Monitoring temps rÃ©el
           - **Terminal**: Scripts PowerShell de diagnostic
           - **API**: Endpoints de diagnostic
           
-          ## 🆘 Support avancé
+          ## ðŸ†˜ Support avancÃ©
           
-          ### Informations à fournir
+          ### Informations Ã  fournir
           1. Version de Homey
           2. Version de l'application
           3. Type d'appareil
           4. Logs d'erreur
-          5. Étapes de reproduction
+          5. Ã‰tapes de reproduction
           
           ### Contacts
           - **GitHub Issues**: [Lien](https://github.com/dlnraja/com.tuya.zigbee/issues)
@@ -232,7 +285,7 @@ jobs:
           - **Dashboard**: [Monitoring](../dashboard/)
           
           ---
-          *Généré automatiquement le ${new Date().toISOString()}*
+          *GÃ©nÃ©rÃ© automatiquement le ${new Date().toISOString()}*
           `;
           
           fs.writeFileSync('docs/TROUBLESHOOTING.md', troubleshootingGuide);
@@ -241,15 +294,15 @@ jobs:
           
           node generate_tutorials.js
           
-      - name: 📝 Commit tutorials
+      - name: ðŸ“ Commit tutorials
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add docs/
-          git commit -m "📚 [$(date -u '+%Y-%m-%d %H:%M UTC')] Auto-tutorials: Guides générés pour 5 drivers + guides installation/dépannage. Powered by GitHub Actions"
+          git commit -m "ðŸ“š [$(date -u '+%Y-%m-%d %H:%M UTC')] Auto-tutorials: Guides gÃ©nÃ©rÃ©s pour 5 drivers + guides installation/dÃ©pannage. Powered by GitHub Actions"
           git push
           
-      - name: 📈 Update tutorial stats
+      - name: ðŸ“ˆ Update tutorial stats
         run: |
           echo "Tutorials generated successfully!"
           echo "Files created:"

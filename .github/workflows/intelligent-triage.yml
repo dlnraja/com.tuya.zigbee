@@ -1,8 +1,31 @@
-name: 🤖 Intelligent Triage Bot
+﻿# intelligent-triage.yml
+# Description: Workflow automatisÃ© pour intelligent triage
+# Date: 2025-07-25
+# Version: 1.0
+
+name: ðŸ¤– Intelligent Triage Bot
+
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   schedule:
-    - cron: '0 */1 * * *'  # Toutes les heures
+    - cr
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '0 */1 * * *'  # Toutes les heures
   workflow_dispatch:
   issues:
     types: [opened, reopened]
@@ -16,13 +39,33 @@ env:
 
 jobs:
   intelligent-triage:
-    runs-on: ubuntu-latest
-    name: 🤖 Triage intelligent
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    name: ðŸ¤– Triage intelligent
     steps:
-      - name: 📥 Checkout
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout
         uses: actions/checkout@v3
 
-      - name: 🤖 Traitement PRs
+      - name: ðŸ¤– Traitement PRs
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -30,28 +73,28 @@ jobs:
             const owner = context.repo.owner;
             const repo = context.repo.repo;
             
-            console.log('🤖 Traitement des PRs...');
+            console.log('ðŸ¤– Traitement des PRs...');
             
             const { data: prs } = await github.pulls.list({
               owner, repo, state: 'open', per_page: 20
             });
             
             for (const pr of prs) {
-              console.log(`📝 PR #${pr.number}: ${pr.title}`);
+              console.log(`ðŸ“ PR #${pr.number}: ${pr.title}`);
               
               // Commentaire intelligent
-              const comment = `🤖 **PR Analysée**\n\n` +
-                            `📊 **Détails:**\n` +
+              const comment = `ðŸ¤– **PR AnalysÃ©e**\n\n` +
+                            `ðŸ“Š **DÃ©tails:**\n` +
                             `- Titre: ${pr.title}\n` +
                             `- Auteur: @${pr.user.login}\n` +
                             `- Fichiers: ${pr.changed_files}\n` +
                             `- Ajouts: +${pr.additions}\n` +
                             `- Suppressions: -${pr.deletions}\n\n` +
-                            `🔄 **Prochaines étapes:**\n` +
-                            `1. ✅ Vérification automatique\n` +
-                            `2. 🔍 Revue par l'équipe\n` +
-                            `3. 🚀 Merge si approuvé\n\n` +
-                            `*Mode YOLO Intelligent activé*`;
+                            `ðŸ”„ **Prochaines Ã©tapes:**\n` +
+                            `1. âœ… VÃ©rification automatique\n` +
+                            `2. ðŸ” Revue par l'Ã©quipe\n` +
+                            `3. ðŸš€ Merge si approuvÃ©\n\n` +
+                            `*Mode YOLO Intelligent activÃ©*`;
               
               await github.issues.createComment({
                 owner, repo, issue_number: pr.number, body: comment
@@ -71,9 +114,9 @@ jobs:
               }
             }
             
-            console.log(`✅ ${prs.length} PRs traitées`);
+            console.log(`âœ… ${prs.length} PRs traitÃ©es`);
 
-      - name: 🤖 Traitement Issues
+      - name: ðŸ¤– Traitement Issues
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -81,7 +124,7 @@ jobs:
             const owner = context.repo.owner;
             const repo = context.repo.repo;
             
-            console.log('🤖 Traitement des Issues...');
+            console.log('ðŸ¤– Traitement des Issues...');
             
             const { data: issues } = await github.issues.listForRepo({
               owner, repo, state: 'open', per_page: 20
@@ -90,20 +133,20 @@ jobs:
             const pureIssues = issues.filter(issue => !issue.pull_request);
             
             for (const issue of pureIssues) {
-              console.log(`📝 Issue #${issue.number}: ${issue.title}`);
+              console.log(`ðŸ“ Issue #${issue.number}: ${issue.title}`);
               
               // Commentaire intelligent
-              const comment = `🤖 **Issue Analysée**\n\n` +
-                            `📊 **Détails:**\n` +
+              const comment = `ðŸ¤– **Issue AnalysÃ©e**\n\n` +
+                            `ðŸ“Š **DÃ©tails:**\n` +
                             `- Titre: ${issue.title}\n` +
                             `- Auteur: @${issue.user.login}\n` +
-                            `- Créée: ${new Date(issue.created_at).toLocaleDateString()}\n` +
+                            `- CrÃ©Ã©e: ${new Date(issue.created_at).toLocaleDateString()}\n` +
                             `- Labels: ${issue.labels.map(l => l.name).join(', ') || 'Aucun'}\n\n` +
-                            `🔄 **Prochaines étapes:**\n` +
-                            `1. ✅ Vérification automatique\n` +
-                            `2. 🔍 Analyse par l'équipe\n` +
-                            `3. 🚀 Résolution prioritaire\n\n` +
-                            `*Mode YOLO Intelligent activé*`;
+                            `ðŸ”„ **Prochaines Ã©tapes:**\n` +
+                            `1. âœ… VÃ©rification automatique\n` +
+                            `2. ðŸ” Analyse par l'Ã©quipe\n` +
+                            `3. ðŸš€ RÃ©solution prioritaire\n\n` +
+                            `*Mode YOLO Intelligent activÃ©*`;
               
               await github.issues.createComment({
                 owner, repo, issue_number: issue.number, body: comment
@@ -124,14 +167,34 @@ jobs:
               }
             }
             
-            console.log(`✅ ${pureIssues.length} Issues traitées`);
+            console.log(`âœ… ${pureIssues.length} Issues traitÃ©es`);
 
   statistics:
-    runs-on: ubuntu-latest
-    name: 📊 Statistiques
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    name: ðŸ“Š Statistiques
     if: env.ENABLE_STATS == 'true'
     steps:
-      - name: 📊 Génération rapport
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“Š GÃ©nÃ©ration rapport
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -149,17 +212,18 @@ jobs:
             
             const pureIssues = issues.filter(issue => !issue.pull_request);
             
-            const report = `📊 **RAPPORT TRIAGE INTELLIGENT**\n\n` +
-                          `🕐 **Timestamp:** ${new Date().toLocaleString()}\n` +
-                          `🤖 **Bot:** ${process.env.BOT_NAME}\n\n` +
-                          `📈 **Statistiques:**\n` +
+            const report = `ðŸ“Š **RAPPORT TRIAGE INTELLIGENT**\n\n` +
+                          `ðŸ• **Timestamp:** ${new Date().toLocaleString()}\n` +
+                          `ðŸ¤– **Bot:** ${process.env.BOT_NAME}\n\n` +
+                          `ðŸ“ˆ **Statistiques:**\n` +
                           `- PRs ouvertes: ${prs.length}\n` +
                           `- Issues ouvertes: ${pureIssues.length}\n` +
-                          `- Total éléments: ${prs.length + pureIssues.length}\n\n` +
-                          `✅ **Actions effectuées:**\n` +
-                          `- Commentaires automatiques ajoutés\n` +
-                          `- Labels automatiques appliqués\n` +
-                          `- Triage intelligent terminé\n\n` +
-                          `🚀 **Mode YOLO Intelligent activé**`;
+                          `- Total Ã©lÃ©ments: ${prs.length + pureIssues.length}\n\n` +
+                          `âœ… **Actions effectuÃ©es:**\n` +
+                          `- Commentaires automatiques ajoutÃ©s\n` +
+                          `- Labels automatiques appliquÃ©s\n` +
+                          `- Triage intelligent terminÃ©\n\n` +
+                          `ðŸš€ **Mode YOLO Intelligent activÃ©**`;
             
             console.log(report); 
+

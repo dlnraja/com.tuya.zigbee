@@ -1,12 +1,46 @@
+﻿# gen-env-tokens.yml
+# Description: Workflow automatisÃ© pour gen env tokens
+# Date: 2025-07-25
+# Version: 1.0
+
 name: Generate ENV with GitHub Tokens
+
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   workflow_dispatch:
 
 jobs:
   generate_env:
-    runs-on: ubuntu-latest
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
     steps:
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
@@ -24,3 +58,4 @@ jobs:
           git add .env.tokens
           git commit -m "ci: generate .env.tokens with both GH_PAT and FULLTOKEN" || echo "No changes"
           git push
+

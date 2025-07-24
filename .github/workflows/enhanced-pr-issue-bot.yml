@@ -1,9 +1,41 @@
-name: 🤖 Enhanced PR and Issue Bot - Intelligent Triage
+﻿# enhanced-pr-issue-bot.yml
+# Description: Workflow automatisÃ© pour enhanced pr issue bot
+# Date: 2025-07-25
+# Version: 1.0
+
+name: ðŸ¤– Enhanced PR and Issue Bot - Intelligent Triage
+
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   schedule:
-    - cron: '0 */1 * * *'  # Toutes les heures
-    - cron: '0 5 * * *'    # Tous les jours à 5h00
+    - cr
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '0 */1 * * *'  # Toutes les heures
+    - cr
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '0 5 * * *'    # Tous les jours Ã  5h00
   workflow_dispatch:
   issues:
     types: [opened, reopened]
@@ -18,20 +50,40 @@ env:
   ENABLE_ASSIGNMENTS: true
 
 jobs:
-  # 🔍 ANALYSE INTELLIGENTE
+  # ðŸ” ANALYSE INTELLIGENTE
   intelligent-analysis:
-    runs-on: ubuntu-latest
-    name: 🔍 Analyse intelligente des PR/Issues
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    name: ðŸ” Analyse intelligente des PR/Issues
     outputs:
       pr-count: ${{ steps.count-prs.outputs.count }}
       issue-count: ${{ steps.count-issues.outputs.count }}
       priority-issues: ${{ steps.priority-check.outputs.count }}
       stale-items: ${{ steps.stale-check.outputs.count }}
     steps:
-      - name: 📥 Checkout repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout repository
         uses: actions/checkout@v3
 
-      - name: 🔍 Comptage des PRs ouvertes
+      - name: ðŸ” Comptage des PRs ouvertes
         id: count-prs
         uses: actions/github-script@v7
         with:
@@ -43,10 +95,10 @@ jobs:
               state: 'open',
               per_page: 100
             });
-            console.log(`📊 PRs ouvertes: ${prs.length}`);
+            console.log(`ðŸ“Š PRs ouvertes: ${prs.length}`);
             core.setOutput('count', prs.length);
 
-      - name: 🔍 Comptage des Issues ouvertes
+      - name: ðŸ” Comptage des Issues ouvertes
         id: count-issues
         uses: actions/github-script@v7
         with:
@@ -59,10 +111,10 @@ jobs:
               per_page: 100
             });
             const pureIssues = issues.filter(issue => !issue.pull_request);
-            console.log(`📊 Issues ouvertes: ${pureIssues.length}`);
+            console.log(`ðŸ“Š Issues ouvertes: ${pureIssues.length}`);
             core.setOutput('count', pureIssues.length);
 
-      - name: 🔍 Vérification des priorités
+      - name: ðŸ” VÃ©rification des prioritÃ©s
         id: priority-check
         uses: actions/github-script@v7
         with:
@@ -81,10 +133,10 @@ jobs:
                 label.name.toLowerCase().includes('high')
               )
             );
-            console.log(`🚨 Issues prioritaires: ${priorityIssues.length}`);
+            console.log(`ðŸš¨ Issues prioritaires: ${priorityIssues.length}`);
             core.setOutput('count', priorityIssues.length);
 
-      - name: 🔍 Vérification des éléments obsolètes
+      - name: ðŸ” VÃ©rification des Ã©lÃ©ments obsolÃ¨tes
         id: stale-check
         uses: actions/github-script@v7
         with:
@@ -106,19 +158,39 @@ jobs:
               return daysSinceCreation > staleThreshold;
             });
             
-            console.log(`⏰ Éléments obsolètes (>${staleThreshold}j): ${staleItems.length}`);
+            console.log(`â° Ã‰lÃ©ments obsolÃ¨tes (>${staleThreshold}j): ${staleItems.length}`);
             core.setOutput('count', staleItems.length);
 
-  # 🤖 TRIAGE INTELLIGENT
+  # ðŸ¤– TRIAGE INTELLIGENT
   intelligent-triage:
-    runs-on: ubuntu-latest
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
     needs: intelligent-analysis
-    name: 🤖 Triage intelligent des PR/Issues
+    name: ðŸ¤– Triage intelligent des PR/Issues
     steps:
-      - name: 📥 Checkout repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout repository
         uses: actions/checkout@v3
 
-      - name: 🤖 Traitement des PRs
+      - name: ðŸ¤– Traitement des PRs
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -127,29 +199,29 @@ jobs:
             const repo = context.repo.repo;
             const maxItems = parseInt(process.env.MAX_ITEMS_PER_RUN || '20');
             
-            console.log(`🤖 Traitement des PRs (max: ${maxItems})`);
+            console.log(`ðŸ¤– Traitement des PRs (max: ${maxItems})`);
             
             const { data: prs } = await github.pulls.list({
               owner, repo, state: 'open', per_page: maxItems
             });
             
             for (const pr of prs) {
-              console.log(`📝 Traitement PR #${pr.number}: ${pr.title}`);
+              console.log(`ðŸ“ Traitement PR #${pr.number}: ${pr.title}`);
               
               // Commentaire automatique
               await github.issues.createComment({
                 owner, repo, issue_number: pr.number,
-                body: `🤖 **Merci pour votre PR !**\n\n` +
-                      `📊 **Analyse automatique:**\n` +
+                body: `ðŸ¤– **Merci pour votre PR !**\n\n` +
+                      `ðŸ“Š **Analyse automatique:**\n` +
                       `- Titre: ${pr.title}\n` +
                       `- Auteur: @${pr.user.login}\n` +
-                      `- Créée: ${new Date(pr.created_at).toLocaleDateString()}\n` +
-                      `- Fichiers modifiés: ${pr.changed_files}\n\n` +
-                      `🔄 **Prochaines étapes:**\n` +
-                      `1. ✅ Vérification automatique\n` +
-                      `2. 🔍 Revue par l'équipe\n` +
-                      `3. 🚀 Merge si approuvé\n\n` +
-                      `*Mode YOLO Intelligent activé - Traitement optimisé*`
+                      `- CrÃ©Ã©e: ${new Date(pr.created_at).toLocaleDateString()}\n` +
+                      `- Fichiers modifiÃ©s: ${pr.changed_files}\n\n` +
+                      `ðŸ”„ **Prochaines Ã©tapes:**\n` +
+                      `1. âœ… VÃ©rification automatique\n` +
+                      `2. ðŸ” Revue par l'Ã©quipe\n` +
+                      `3. ðŸš€ Merge si approuvÃ©\n\n` +
+                      `*Mode YOLO Intelligent activÃ© - Traitement optimisÃ©*`
               });
               
               // Ajout de labels automatiques
@@ -164,7 +236,7 @@ jobs:
                   await github.issues.addLabels({
                     owner, repo, issue_number: pr.number, labels
                   });
-                  console.log(`🏷️ Labels ajoutés: ${labels.join(', ')}`);
+                  console.log(`ðŸ·ï¸ Labels ajoutÃ©s: ${labels.join(', ')}`);
                 }
               }
               
@@ -178,14 +250,14 @@ jobs:
                   await github.issues.addAssignees({
                     owner, repo, issue_number: pr.number, assignees
                   });
-                  console.log(`👥 Assignés: ${assignees.join(', ')}`);
+                  console.log(`ðŸ‘¥ AssignÃ©s: ${assignees.join(', ')}`);
                 }
               }
             }
             
-            console.log(`✅ ${prs.length} PRs traitées`);
+            console.log(`âœ… ${prs.length} PRs traitÃ©es`);
 
-      - name: 🤖 Traitement des Issues
+      - name: ðŸ¤– Traitement des Issues
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -194,7 +266,7 @@ jobs:
             const repo = context.repo.repo;
             const maxItems = parseInt(process.env.MAX_ITEMS_PER_RUN || '20');
             
-            console.log(`🤖 Traitement des Issues (max: ${maxItems})`);
+            console.log(`ðŸ¤– Traitement des Issues (max: ${maxItems})`);
             
             const { data: issues } = await github.issues.listForRepo({
               owner, repo, state: 'open', per_page: maxItems
@@ -203,22 +275,22 @@ jobs:
             const pureIssues = issues.filter(issue => !issue.pull_request);
             
             for (const issue of pureIssues) {
-              console.log(`📝 Traitement Issue #${issue.number}: ${issue.title}`);
+              console.log(`ðŸ“ Traitement Issue #${issue.number}: ${issue.title}`);
               
               // Commentaire automatique
               await github.issues.createComment({
                 owner, repo, issue_number: issue.number,
-                body: `🤖 **Merci pour votre issue !**\n\n` +
-                      `📊 **Analyse automatique:**\n` +
+                body: `ðŸ¤– **Merci pour votre issue !**\n\n` +
+                      `ðŸ“Š **Analyse automatique:**\n` +
                       `- Titre: ${issue.title}\n` +
                       `- Auteur: @${issue.user.login}\n` +
-                      `- Créée: ${new Date(issue.created_at).toLocaleDateString()}\n` +
+                      `- CrÃ©Ã©e: ${new Date(issue.created_at).toLocaleDateString()}\n` +
                       `- Labels: ${issue.labels.map(l => l.name).join(', ') || 'Aucun'}\n\n` +
-                      `🔄 **Prochaines étapes:**\n` +
-                      `1. ✅ Vérification automatique\n` +
-                      `2. 🔍 Analyse par l'équipe\n` +
-                      `3. 🚀 Résolution prioritaire\n\n` +
-                      `*Mode YOLO Intelligent activé - Traitement optimisé*`
+                      `ðŸ”„ **Prochaines Ã©tapes:**\n` +
+                      `1. âœ… VÃ©rification automatique\n` +
+                      `2. ðŸ” Analyse par l'Ã©quipe\n` +
+                      `3. ðŸš€ RÃ©solution prioritaire\n\n` +
+                      `*Mode YOLO Intelligent activÃ© - Traitement optimisÃ©*`
               });
               
               // Ajout de labels automatiques
@@ -234,7 +306,7 @@ jobs:
                   await github.issues.addLabels({
                     owner, repo, issue_number: issue.number, labels
                   });
-                  console.log(`🏷️ Labels ajoutés: ${labels.join(', ')}`);
+                  console.log(`ðŸ·ï¸ Labels ajoutÃ©s: ${labels.join(', ')}`);
                 }
               }
               
@@ -249,21 +321,41 @@ jobs:
                   await github.issues.addAssignees({
                     owner, repo, issue_number: issue.number, assignees
                   });
-                  console.log(`👥 Assignés: ${assignees.join(', ')}`);
+                  console.log(`ðŸ‘¥ AssignÃ©s: ${assignees.join(', ')}`);
                 }
               }
             }
             
-            console.log(`✅ ${pureIssues.length} Issues traitées`);
+            console.log(`âœ… ${pureIssues.length} Issues traitÃ©es`);
 
-  # 📊 STATISTIQUES ET RAPPORTS
+  # ðŸ“Š STATISTIQUES ET RAPPORTS
   statistics-report:
-    runs-on: ubuntu-latest
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
     needs: [intelligent-analysis, intelligent-triage]
-    name: 📊 Génération des statistiques
+    name: ðŸ“Š GÃ©nÃ©ration des statistiques
     if: env.ENABLE_STATISTICS == 'true'
     steps:
-      - name: 📊 Création du rapport
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“Š CrÃ©ation du rapport
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -276,23 +368,23 @@ jobs:
             const priorityCount = ${{ needs.intelligent-analysis.outputs.priority-issues }};
             const staleCount = ${{ needs.intelligent-analysis.outputs.stale-items }};
             
-            const report = `📊 **RAPPORT TRIAGE INTELLIGENT**\n\n` +
-                          `🕐 **Timestamp:** ${new Date().toLocaleString()}\n` +
-                          `🤖 **Bot:** ${process.env.BOT_NAME}\n\n` +
-                          `📈 **Statistiques:**\n` +
+            const report = `ðŸ“Š **RAPPORT TRIAGE INTELLIGENT**\n\n` +
+                          `ðŸ• **Timestamp:** ${new Date().toLocaleString()}\n` +
+                          `ðŸ¤– **Bot:** ${process.env.BOT_NAME}\n\n` +
+                          `ðŸ“ˆ **Statistiques:**\n` +
                           `- PRs ouvertes: ${prCount}\n` +
                           `- Issues ouvertes: ${issueCount}\n` +
                           `- Issues prioritaires: ${priorityCount}\n` +
-                          `- Éléments obsolètes: ${staleCount}\n\n` +
-                          `✅ **Actions effectuées:**\n` +
-                          `- Commentaires automatiques ajoutés\n` +
-                          `- Labels automatiques appliqués\n` +
-                          `- Assignations automatiques effectuées\n` +
-                          `- Triage intelligent terminé\n\n` +
-                          `🚀 **Mode YOLO Intelligent activé**\n` +
-                          `*Workflow optimisé et automatisé*`;
+                          `- Ã‰lÃ©ments obsolÃ¨tes: ${staleCount}\n\n` +
+                          `âœ… **Actions effectuÃ©es:**\n` +
+                          `- Commentaires automatiques ajoutÃ©s\n` +
+                          `- Labels automatiques appliquÃ©s\n` +
+                          `- Assignations automatiques effectuÃ©es\n` +
+                          `- Triage intelligent terminÃ©\n\n` +
+                          `ðŸš€ **Mode YOLO Intelligent activÃ©**\n` +
+                          `*Workflow optimisÃ© et automatisÃ©*`;
             
-            // Créer un commentaire sur une issue de rapport
+            // CrÃ©er un commentaire sur une issue de rapport
             const { data: issues } = await github.issues.listForRepo({
               owner, repo, state: 'open', per_page: 1
             });
@@ -303,16 +395,36 @@ jobs:
               });
             }
             
-            console.log('📊 Rapport de statistiques généré');
+            console.log('ðŸ“Š Rapport de statistiques gÃ©nÃ©rÃ©');
 
-  # 🔔 NOTIFICATIONS AVANCÉES
+  # ðŸ”” NOTIFICATIONS AVANCÃ‰ES
   advanced-notifications:
-    runs-on: ubuntu-latest
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
     needs: intelligent-analysis
-    name: 🔔 Notifications avancées
+    name: ðŸ”” Notifications avancÃ©es
     if: needs.intelligent-analysis.outputs.priority-issues > '0'
     steps:
-      - name: 🔔 Notification des priorités
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ”” Notification des prioritÃ©s
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -322,19 +434,20 @@ jobs:
             const priorityCount = ${{ needs.intelligent-analysis.outputs.priority-issues }};
             
             if (priorityCount > 0) {
-              const notification = `🚨 **ALERTE PRIORITÉ**\n\n` +
-                                 `⚠️ **${priorityCount} issue(s) prioritaire(s) détectée(s)**\n\n` +
-                                 `🔍 **Action requise:** Vérification immédiate\n` +
-                                 `⏰ **Timestamp:** ${new Date().toLocaleString()}\n\n` +
+              const notification = `ðŸš¨ **ALERTE PRIORITÃ‰**\n\n` +
+                                 `âš ï¸ **${priorityCount} issue(s) prioritaire(s) dÃ©tectÃ©e(s)**\n\n` +
+                                 `ðŸ” **Action requise:** VÃ©rification immÃ©diate\n` +
+                                 `â° **Timestamp:** ${new Date().toLocaleString()}\n\n` +
                                  `*Mode YOLO Intelligent - Alerte automatique*`;
               
-              // Créer une issue d'alerte
+              // CrÃ©er une issue d'alerte
               await github.issues.create({
                 owner, repo,
-                title: `🚨 ALERTE: ${priorityCount} issue(s) prioritaire(s)`,
+                title: `ðŸš¨ ALERTE: ${priorityCount} issue(s) prioritaire(s)`,
                 body: notification,
                 labels: ['urgent', 'alert', 'priority']
               });
               
-              console.log(`🚨 Alerte créée pour ${priorityCount} issue(s) prioritaire(s)`);
+              console.log(`ðŸš¨ Alerte crÃ©Ã©e pour ${priorityCount} issue(s) prioritaire(s)`);
             } 
+

@@ -1,7 +1,25 @@
-name: 🚀 Auto-Optimization Pipeline
+﻿name: ðŸš€ Auto-Optimization Pipeline
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
 on:
   schedule:
-    - cron: '0 2 * * *'  # Tous les jours à 2h du matin
+    - cr
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '0 2 * * *'  # Tous les jours Ã  2h du matin
   workflow_dispatch:
   push:
     branches: [ main, develop ]
@@ -12,46 +30,81 @@ on:
 
 jobs:
   optimize-project:
-    runs-on: ubuntu-latest
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_VERSION: '18'
+        PYTHON_VERSION: '3.11'
+
     steps:
-      - name: 📥 Checkout
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout
         uses: actions/checkout@v4
         
-      - name: 🔧 Setup Node.js
+      - name: ðŸ”§ Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-versi
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '18'
           cache: 'npm'
           
-      - name: 🧹 Cleanup
+      - name: ðŸ§¹ Cleanup
         run: |
           npm run clean
           rm -rf node_modules/.cache
           
-      - name: 🔍 Analyze Drivers
+      - name: ðŸ” Analyze Drivers
         run: |
           echo "Analyzing drivers..."
           find drivers -name "device.js" -exec echo "Found: {}" \;
           
-      - name: 📊 Generate Reports
+      - name: ðŸ“Š Generate Reports
         run: |
           echo "Generating reports..."
           echo "SDK3 drivers: $(find drivers/sdk3 -type d | wc -l)"
           echo "Legacy drivers: $(find drivers/legacy -type d | wc -l)"
           echo "In progress drivers: $(find drivers/in_progress -type d | wc -l)"
           
-      - name: 🔄 Auto-Organize
+      - name: ðŸ”„ Auto-Organize
         run: |
           echo "Auto-organizing project..."
-          # Créer les dossiers nécessaires
+          # CrÃ©er les dossiers nÃ©cessaires
           mkdir -p scripts/powershell scripts/python scripts/bash
           mkdir -p docs/{en,fr,ta,nl,de,es,it,pt,pl,ru}
           mkdir -p dashboard
           
-      - name: 📝 Update Documentation
+      - name: ðŸ“ Update Documentation
         run: |
           echo "Updating documentation..."
-          # Générer la documentation multilingue
+          # GÃ©nÃ©rer la documentation multilingue
           for lang in en fr ta nl de es it pt pl ru; do
             echo "# Tuya Zigbee Project - $lang" > docs/$lang/README.md
             echo "" >> docs/$lang/README.md
@@ -60,10 +113,10 @@ jobs:
             echo "## Support" >> docs/$lang/README.md
           done
           
-      - name: 🚀 Commit Changes
+      - name: ðŸš€ Commit Changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
-          git commit -m "🤖 Auto-optimization $(date '+%Y-%m-%d %H:%M:%S')"
+          git commit -m "ðŸ¤– Auto-optimization $(date '+%Y-%m-%d %H:%M:%S')"
           git push 

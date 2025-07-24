@@ -1,4 +1,18 @@
-name: 🚀 CI/CD Intelligent - Tuya Zigbee
+﻿# ci-cd-intelligent.yml
+# Description: Workflow automatisÃ© pour ci cd intelligent
+# Date: 2025-07-25
+# Version: 1.0
+
+name: ðŸš€ CI/CD Intelligent - Tuya Zigbee
+
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   push:
@@ -6,11 +20,38 @@ on:
   pull_request:
     branches: [main]
   schedule:
-    - cron: '0 */6 * * *'  # Toutes les 6 heures
+    - cr
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '0 */6 * * *'  # Toutes les 6 heures
   workflow_dispatch:
     inputs:
-      action:
-        description: 'Action à effectuer'
+      acti
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on:
+        descripti
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: 'Action Ã  effectuer'
         required: true
         default: 'test'
         type: choice
@@ -22,88 +63,164 @@ on:
           - backup
 
 env:
-  NODE_VERSION: '18'
+  NODE_VERSI
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '18'
   YOLO_MODE: 'intelligent'
 
 jobs:
   # Job de test intelligent
   intelligent-test:
-    name: 🧪 Tests Intelligents
-    runs-on: ubuntu-latest
+    name: ðŸ§ª Tests Intelligents
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
     timeout-minutes: 10
     
     steps:
-      - name: 🚀 Checkout Intelligent
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸš€ Checkout Intelligent
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           
-      - name: 🔧 Setup Node.js Intelligent
+      - name: ðŸ”§ Setup Node.js Intelligent
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-versi
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ${{ env.NODE_VERSION }}
           cache: 'npm'
           
-      - name: 📦 Install Dependencies Intelligentes
+      - name: ðŸ“¦ Install Dependencies Intelligentes
         run: |
-          echo "🚀 Mode YOLO Intelligent - Installation des dépendances"
+          echo "ðŸš€ Mode YOLO Intelligent - Installation des dÃ©pendances"
           npm ci
           npm audit fix --audit-level=moderate || true
           
-      - name: 🧪 Tests Automatisés Intelligents
+      - name: ðŸ§ª Tests AutomatisÃ©s Intelligents
         run: |
-          echo "🧪 Exécution des tests intelligents"
-          npm test || echo "Tests terminés avec avertissements"
+          echo "ðŸ§ª ExÃ©cution des tests intelligents"
+          npm test || echo "Tests terminÃ©s avec avertissements"
           
-      - name: 📊 Analyse de Code Intelligente
+      - name: ðŸ“Š Analyse de Code Intelligente
         run: |
-          echo "📊 Analyse intelligente du code"
-          npm run lint || echo "Linting terminé avec avertissements"
+          echo "ðŸ“Š Analyse intelligente du code"
+          npm run lint || echo "Linting terminÃ© avec avertissements"
           
-      - name: 🛡️ Tests de Sécurité Intelligents
+      - name: ðŸ›¡ï¸ Tests de SÃ©curitÃ© Intelligents
         run: |
-          echo "🛡️ Tests de sécurité intelligents"
-          npm audit --audit-level=high || echo "Audit de sécurité terminé"
+          echo "ðŸ›¡ï¸ Tests de sÃ©curitÃ© intelligents"
+          npm audit --audit-level=high || echo "Audit de sÃ©curitÃ© terminÃ©"
           
-      - name: 📈 Rapport de Tests Intelligent
+      - name: ðŸ“ˆ Rapport de Tests Intelligent
         if: always()
         run: |
-          echo "📈 Génération du rapport de tests intelligent"
-          echo "✅ Tests intelligents terminés"
-          echo "🎯 Mode YOLO Intelligent activé"
+          echo "ðŸ“ˆ GÃ©nÃ©ration du rapport de tests intelligent"
+          echo "âœ… Tests intelligents terminÃ©s"
+          echo "ðŸŽ¯ Mode YOLO Intelligent activÃ©"
           
   # Job de build intelligent
   intelligent-build:
-    name: 🔨 Build Intelligent
-    runs-on: ubuntu-latest
+    name: ðŸ”¨ Build Intelligent
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
     needs: intelligent-test
     timeout-minutes: 15
     
     steps:
-      - name: 🚀 Checkout Intelligent
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸš€ Checkout Intelligent
         uses: actions/checkout@v4
         
-      - name: 🔧 Setup Node.js Intelligent
+      - name: ðŸ”§ Setup Node.js Intelligent
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-versi
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ${{ env.NODE_VERSION }}
           cache: 'npm'
           
-      - name: 📦 Install Dependencies Intelligentes
+      - name: ðŸ“¦ Install Dependencies Intelligentes
         run: npm ci
         
-      - name: 🛠️ Build Intelligent
+      - name: ðŸ› ï¸ Build Intelligent
         run: |
-          echo "🛠️ Build intelligent en cours"
-          npm run build || echo "Build terminé avec optimisations"
+          echo "ðŸ› ï¸ Build intelligent en cours"
+          npm run build || echo "Build terminÃ© avec optimisations"
           
-      - name: 📊 Analyse de Performance Intelligente
+      - name: ðŸ“Š Analyse de Performance Intelligente
         run: |
-          echo "📊 Analyse de performance intelligente"
+          echo "ðŸ“Š Analyse de performance intelligente"
           echo "Performance: 99.9%"
-          echo "Optimisation: Intelligente"
+          echo "Optimisati
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: Intelligente"
           
-      - name: 📦 Artifact Intelligent
+      - name: ðŸ“¦ Artifact Intelligent
         uses: actions/upload-artifact@v4
         with:
           name: tuya-zigbee-build
@@ -114,62 +231,111 @@ jobs:
             
   # Job d'optimisation intelligente
   intelligent-optimize:
-    name: ⚡ Optimisation Intelligente
-    runs-on: ubuntu-latest
+    name: âš¡ Optimisation Intelligente
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.action == 'optimize'
     
     steps:
-      - name: 🚀 Checkout Intelligent
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸš€ Checkout Intelligent
         uses: actions/checkout@v4
         
-      - name: 🔧 Setup Node.js Intelligent
+      - name: ðŸ”§ Setup Node.js Intelligent
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-versi
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ${{ env.NODE_VERSION }}
           
-      - name: 📦 Install Dependencies Intelligentes
+      - name: ðŸ“¦ Install Dependencies Intelligentes
         run: npm ci
         
-      - name: ⚡ Optimisation Intelligente
+      - name: âš¡ Optimisation Intelligente
         run: |
-          echo "⚡ Optimisation intelligente en cours"
-          echo "🎯 Mode YOLO Intelligent activé"
+          echo "âš¡ Optimisation intelligente en cours"
+          echo "ðŸŽ¯ Mode YOLO Intelligent activÃ©"
           
           # Optimisation des drivers
-          echo "🔧 Optimisation des drivers..."
+          echo "ðŸ”§ Optimisation des drivers..."
           find drivers/ -name "*.js" -exec echo "Optimisation de {}" \;
           
           # Optimisation des assets
-          echo "🎨 Optimisation des assets..."
+          echo "ðŸŽ¨ Optimisation des assets..."
           find assets/ -name "*.svg" -exec echo "Optimisation de {}" \;
           
           # Optimisation du code
-          echo "📝 Optimisation du code..."
-          echo "✅ Optimisation intelligente terminée"
+          echo "ðŸ“ Optimisation du code..."
+          echo "âœ… Optimisation intelligente terminÃ©e"
           
-      - name: 📊 Rapport d'Optimisation Intelligent
+      - name: ðŸ“Š Rapport d'Optimisation Intelligent
         run: |
-          echo "📊 Rapport d'optimisation intelligent"
-          echo "Performance améliorée: +15%"
-          echo "Taille réduite: -25%"
-          echo "Temps de réponse: -30%"
+          echo "ðŸ“Š Rapport d'optimisation intelligent"
+          echo "Performance amÃ©liorÃ©e: +15%"
+          echo "Taille rÃ©duite: -25%"
+          echo "Temps de rÃ©ponse: -30%"
           
   # Job de sauvegarde intelligente
   intelligent-backup:
-    name: 💾 Sauvegarde Intelligente
-    runs-on: ubuntu-latest
+    name: ðŸ’¾ Sauvegarde Intelligente
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.action == 'backup'
     
     steps:
-      - name: 🚀 Checkout Intelligent
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸš€ Checkout Intelligent
         uses: actions/checkout@v4
         
-      - name: 💾 Sauvegarde Intelligente
+      - name: ðŸ’¾ Sauvegarde Intelligente
         run: |
-          echo "💾 Sauvegarde intelligente en cours"
-          echo "🎯 Mode YOLO Intelligent activé"
+          echo "ðŸ’¾ Sauvegarde intelligente en cours"
+          echo "ðŸŽ¯ Mode YOLO Intelligent activÃ©"
           
-          # Créer la sauvegarde
+          # CrÃ©er la sauvegarde
           timestamp=$(date +%Y%m%d_%H%M%S)
           backup_name="tuya-zigbee-backup-$timestamp"
           
@@ -180,111 +346,181 @@ jobs:
             --exclude="*.log" \
             .
           
-          echo "✅ Sauvegarde créée: $backup_name.tar.gz"
+          echo "âœ… Sauvegarde crÃ©Ã©e: $backup_name.tar.gz"
           
-      - name: 📤 Upload Sauvegarde Intelligente
+      - name: ðŸ“¤ Upload Sauvegarde Intelligente
         uses: actions/upload-artifact@v4
         with:
           name: tuya-zigbee-backup
           path: tuya-zigbee-backup-*.tar.gz
           
-  # Job de déploiement intelligent
+  # Job de dÃ©ploiement intelligent
   intelligent-deploy:
-    name: 🚀 Déploiement Intelligent
-    runs-on: ubuntu-latest
+    name: ðŸš€ DÃ©ploiement Intelligent
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
     needs: [intelligent-test, intelligent-build]
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     timeout-minutes: 20
     
     steps:
-      - name: 🚀 Checkout Intelligent
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸš€ Checkout Intelligent
         uses: actions/checkout@v4
         
-      - name: 🔧 Setup Node.js Intelligent
+      - name: ðŸ”§ Setup Node.js Intelligent
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-versi
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ${{ env.NODE_VERSION }}
           cache: 'npm'
           
-      - name: 📦 Install Dependencies Intelligentes
+      - name: ðŸ“¦ Install Dependencies Intelligentes
         run: npm ci
         
-      - name: 🚀 Déploiement Intelligent
+      - name: ðŸš€ DÃ©ploiement Intelligent
         run: |
-          echo "🚀 Déploiement intelligent en cours"
-          echo "🎯 Mode YOLO Intelligent activé"
+          echo "ðŸš€ DÃ©ploiement intelligent en cours"
+          echo "ðŸŽ¯ Mode YOLO Intelligent activÃ©"
           
-          # Validation du déploiement
-          echo "✅ Validation du déploiement"
-          echo "✅ Tests de régression"
-          echo "✅ Vérification de la santé"
-          echo "✅ Monitoring activé"
+          # Validation du dÃ©ploiement
+          echo "âœ… Validation du dÃ©ploiement"
+          echo "âœ… Tests de rÃ©gression"
+          echo "âœ… VÃ©rification de la santÃ©"
+          echo "âœ… Monitoring activÃ©"
           
-      - name: 📊 Rapport de Déploiement Intelligent
+      - name: ðŸ“Š Rapport de DÃ©ploiement Intelligent
         run: |
-          echo "📊 Rapport de déploiement intelligent"
-          echo "✅ Déploiement réussi"
-          echo "🎯 Mode YOLO Intelligent opérationnel"
-          echo "📈 Performance: 99.9%"
-          echo "🛡️ Sécurité: Renforcée"
+          echo "ðŸ“Š Rapport de dÃ©ploiement intelligent"
+          echo "âœ… DÃ©ploiement rÃ©ussi"
+          echo "ðŸŽ¯ Mode YOLO Intelligent opÃ©rationnel"
+          echo "ðŸ“ˆ Performance: 99.9%"
+          echo "ðŸ›¡ï¸ SÃ©curitÃ©: RenforcÃ©e"
           
   # Job de monitoring intelligent
   intelligent-monitor:
-    name: 📊 Monitoring Intelligent
-    runs-on: ubuntu-latest
+    name: ðŸ“Š Monitoring Intelligent
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
     if: always()
     
     steps:
-      - name: 📊 Monitoring Intelligent
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“Š Monitoring Intelligent
         run: |
-          echo "📊 Monitoring intelligent en cours"
-          echo "🎯 Mode YOLO Intelligent activé"
+          echo "ðŸ“Š Monitoring intelligent en cours"
+          echo "ðŸŽ¯ Mode YOLO Intelligent activÃ©"
           
           # Statistiques du projet
-          echo "📈 Statistiques du projet:"
+          echo "ðŸ“ˆ Statistiques du projet:"
           echo "- Drivers: 117"
-          echo "- Appareils supportés: 156+"
+          echo "- Appareils supportÃ©s: 156+"
           echo "- Langues: 14"
           echo "- Performance: 99.9%"
           echo "- Uptime: 24/7"
           
-      - name: 📋 Rapport de Monitoring Intelligent
+      - name: ðŸ“‹ Rapport de Monitoring Intelligent
         run: |
-          echo "📋 Rapport de monitoring intelligent"
-          echo "✅ Monitoring actif"
-          echo "🎯 Mode YOLO Intelligent opérationnel"
-          echo "📊 Métriques en temps réel"
-          echo "🛡️ Alertes intelligentes"
+          echo "ðŸ“‹ Rapport de monitoring intelligent"
+          echo "âœ… Monitoring actif"
+          echo "ðŸŽ¯ Mode YOLO Intelligent opÃ©rationnel"
+          echo "ðŸ“Š MÃ©triques en temps rÃ©el"
+          echo "ðŸ›¡ï¸ Alertes intelligentes"
           
   # Job de notification intelligente
   intelligent-notify:
-    name: 📢 Notification Intelligente
-    runs-on: ubuntu-latest
+    name: ðŸ“¢ Notification Intelligente
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
     needs: [intelligent-test, intelligent-build, intelligent-deploy]
     if: always()
     
     steps:
-      - name: 📢 Notification Intelligente
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¢ Notification Intelligente
         run: |
-          echo "📢 Notification intelligente"
-          echo "🎯 Mode YOLO Intelligent activé"
+          echo "ðŸ“¢ Notification intelligente"
+          echo "ðŸŽ¯ Mode YOLO Intelligent activÃ©"
           
           if [ "${{ needs.intelligent-test.result }}" == "success" ]; then
-            echo "✅ Tests réussis"
+            echo "âœ… Tests rÃ©ussis"
           else
-            echo "❌ Tests échoués"
+            echo "âŒ Tests Ã©chouÃ©s"
           fi
           
           if [ "${{ needs.intelligent-build.result }}" == "success" ]; then
-            echo "✅ Build réussi"
+            echo "âœ… Build rÃ©ussi"
           else
-            echo "❌ Build échoué"
+            echo "âŒ Build Ã©chouÃ©"
           fi
           
           if [ "${{ needs.intelligent-deploy.result }}" == "success" ]; then
-            echo "✅ Déploiement réussi"
+            echo "âœ… DÃ©ploiement rÃ©ussi"
           else
-            echo "❌ Déploiement échoué"
+            echo "âŒ DÃ©ploiement Ã©chouÃ©"
           fi
           
-          echo "🎯 Mode YOLO Intelligent - Notification terminée" 
+          echo "ðŸŽ¯ Mode YOLO Intelligent - Notification terminÃ©e" 
+
