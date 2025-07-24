@@ -1,3 +1,4 @@
+﻿try {
 'use strict';
 
 const { Cluster, debug } = require('zigbee-clusters');
@@ -49,7 +50,8 @@ const getDataValue = (dpValue) => {
 
 class temphumidsensor5 extends TuyaSpecificClusterDevice {
 
-	async onNodeInit({ zclNode }) {
+	async 
+    this.registerCapability('onoff', CLUSTER.ON_OFF);
 
 		this.printNode();
 
@@ -135,3 +137,6 @@ class temphumidsensor5 extends TuyaSpecificClusterDevice {
 }
 
 module.exports = temphumidsensor5;
+
+} catch(e) { this.error('Driver error', e); }
+

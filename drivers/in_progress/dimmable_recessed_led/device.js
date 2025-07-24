@@ -1,7 +1,12 @@
+﻿try {
 'use strict';
 
 const TuyaZigBeeLightDevice = require('../../lib/TuyaZigBeeLightDevice');
 
-class dimmable_recessed_led extends TuyaZigBeeLightDevice {}
+
+  this.log('Device initialisÃ©');}
 
 module.exports = dimmable_recessed_led;
+
+} catch(e) { this.error('Driver error', e); }
+

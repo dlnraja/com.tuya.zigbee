@@ -1,10 +1,11 @@
-
+﻿
 'use strict';
 
-const { ZigBeeDriver } = require('homey-zigbeedriver');
+const { ZigBeeDriver } = require('homey-meshdriver');
 
 class socket_power_strip extends ZigBeeDriver {
 
 }
 
 module.exports = socket_power_strip;
+

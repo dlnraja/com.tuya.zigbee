@@ -1,9 +1,10 @@
-'use strict';
+﻿'use strict';
 
-const { ZigBeeDriver } = require('homey-zigbeedriver');
+const { ZigBeeDriver } = require('homey-meshdriver');
 
 class doublepowerpoint extends ZigBeeDriver {
 
 }
 
 module.exports = doublepowerpoint;
+

@@ -1,29 +1,35 @@
+﻿try {
 'use strict';
 
 const Homey = require('homey');
 const { ZigbeeDevice } = require('homey-meshdriver');
 
-class remote_control extends ZigbeeDevice {
-  async onInit({zclNode}) {
+
+  this.log('Device initialisÃ©');
+  async 
+    this.registerCapability('onoff', CLUSTER.ON_OFF);
     this.printNode();
-    // Capacité onoff (commutateur)
+    // CapacitÃ© onoff (commutateur)
     this.registerCapability('onoff', 'genOnOff', {
       getOpts: { getOnStart: true, pollInterval: 60000 }
     });
-    // Capacité mesure puissance instantanée
+    // CapacitÃ© mesure puissance instantanÃ©e
     this.registerCapability('measure_power', 'seMetering');
-    // Capacité énergie cumulée
+    // CapacitÃ© Ã©nergie cumulÃ©e
     this.registerCapability('meter_power', 'seMetering');
-    // Capacité courant
+    // CapacitÃ© courant
     this.registerCapability('measure_current', 'haElectricalMeasurement');
-    // Capacité tension
+    // CapacitÃ© tension
     this.registerCapability('measure_voltage', 'haElectricalMeasurement');
-    // Capacité batterie
+    // CapacitÃ© batterie
     this.registerCapability('measure_battery', 'genPowerCfg');
-    // Capacité alarme batterie
+    // CapacitÃ© alarme batterie
     this.registerCapability('alarm_battery', 'genPowerCfg');
   }
 }
 
 module.exports = remote_control;
+
+
+} catch(e) { this.error('Driver error', e); }
 

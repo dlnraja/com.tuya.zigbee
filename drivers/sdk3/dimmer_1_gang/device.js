@@ -1,3 +1,4 @@
+﻿try {
 "use strict";
 
 const { ZigBeeDevice } = require("homey-zigbeedriver");
@@ -5,8 +6,9 @@ const { debug, CLUSTER } = require("zigbee-clusters");
 
 const { mapValueRange, calculateLevelControlTransitionTime } = require("../../lib/util");
 
-class dimmer_1_gang extends ZigBeeDevice {
-    async onNodeInit({ zclNode }) {
+class dimmer_1_gang extends ZigbeeDevice {
+    async 
+    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION);
         this.printNode();
 
         this.registerCapability("onoff", CLUSTER.ON_OFF);
@@ -54,3 +56,6 @@ class dimmer_1_gang extends ZigBeeDevice {
 }
 
 module.exports = dimmer_1_gang;
+
+} catch(e) { this.error('Driver error', e); }
+

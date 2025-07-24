@@ -1,4 +1,4 @@
-"use strict";
+﻿"use strict";
 
 const { ZigBeeDevice } = require("homey-zigbeedriver");
 const { Cluster, debug, CLUSTER } = require("zigbee-clusters");
@@ -11,7 +11,7 @@ const UP_OPEN = 'upOpen';
 const DOWN_CLOSE = 'downClose';
 const REPORT_DEBOUNCER = 5000;
 
-class wallcurtainswitch extends ZigBeeDevice {
+class wallcurtainswitch extends ZigbeeDevice {
 
     invertPercentageLiftValue = false;
 
@@ -21,8 +21,10 @@ class wallcurtainswitch extends ZigBeeDevice {
         this._reportDebounceEnabled = false;
     }
 
-    async onNodeInit({ zclNode }) {
-        await super.onNodeInit({ zclNode });
+    async 
+    this.registerCapability('onoff', CLUSTER.ON_OFF);
+        await super.
+    this.registerCapability('onoff', CLUSTER.ON_OFF); zclNode });
 
         this.printNode();
 
@@ -50,7 +52,7 @@ class wallcurtainswitch extends ZigBeeDevice {
 
                     // Override goToLiftPercentage to enforce blind to open/close completely
                     if (value === 0 || value === 1) {
-                      this.debug(`set → \`windowcoverings_set\`: ${value} → setParser → ${value === 1 ? UP_OPEN : DOWN_CLOSE}`);
+                      this.debug(`set â†’ \`windowcoverings_set\`: ${value} â†’ setParser â†’ ${value === 1 ? UP_OPEN : DOWN_CLOSE}`);
                       const { endpoint } = this._getClusterCapabilityConfiguration('windowcoverings_set', CLUSTER.WINDOW_COVERING);
                       const windowCoveringEndpoint = endpoint ?? this.getClusterEndpoint(CLUSTER.WINDOW_COVERING);
                       if (windowCoveringEndpoint === null) throw new Error('missing_window_covering_cluster');
@@ -70,7 +72,7 @@ class wallcurtainswitch extends ZigBeeDevice {
                       // Round, otherwise might not be accepted by device
                       percentageLiftValue: Math.round(mappedValue),
                     };
-                    this.debug(`set → \`windowcoverings_set\`: ${value} → setParser → goToLiftPercentage`, gotToLiftPercentageCommand);
+                    this.debug(`set â†’ \`windowcoverings_set\`: ${value} â†’ setParser â†’ goToLiftPercentage`, gotToLiftPercentageCommand);
                     // Send goToLiftPercentage command
                     return gotToLiftPercentageCommand;
                 },
@@ -206,3 +208,5 @@ class wallcurtainswitch extends ZigBeeDevice {
 }
 
 module.exports = wallcurtainswitch;
+
+

@@ -1,13 +1,15 @@
+﻿try {
 'use strict';
 
-const { ZigBeeDevice, Util } = require('homey-zigbeedriver');
+const { ZigBeeDevice, Util } = require('homey-meshdriver');
 const { CLUSTER } = require('zigbee-clusters');
 
 const BATTERY_UPDATE_INTERVAL = 1000 * 60 * 30;
 
-class motion_sensor extends ZigBeeDevice {
+class motion_sensor extends ZigbeeDevice {
 
-	async onNodeInit({ zclNode }) {
+	async 
+    this.registerCapability('onoff', CLUSTER.ON_OFF);
 		this.printNode();
         this._powerConfiguration = zclNode.endpoints[1].clusters[CLUSTER.POWER_CONFIGURATION.NAME];
 
@@ -302,3 +304,6 @@ module.exports = motion_sensor;
       }
     }
   } */
+
+} catch(e) { this.error('Driver error', e); }
+

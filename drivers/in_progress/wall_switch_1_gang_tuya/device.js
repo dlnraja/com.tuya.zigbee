@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 const { debug, Cluster } = require('zigbee-clusters');
 const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
@@ -12,8 +12,10 @@ Cluster.addCluster(TuyaOnOffCluster)
 
 class wall_switch_1_gang_tuya extends TuyaSpecificClusterDevice {
 
-  async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
+  async 
+    this.registerCapability('onoff', CLUSTER.ON_OFF);
+    await super.
+    this.registerCapability('onoff', CLUSTER.ON_OFF); zclNode });
 
     this.printNode();
 /*     debug(true);
@@ -36,7 +38,7 @@ class wall_switch_1_gang_tuya extends TuyaSpecificClusterDevice {
     zclNode.endpoints[1].clusters.tuya.on("reporting", value => this.processResponse(value));
     zclNode.endpoints[1].clusters.tuya.on("response", value => this.processResponse(value));
 
-    this.log("🚀 Wall switch booted up!")
+    this.log("ðŸš€ Wall switch booted up!")
 
   }
 
@@ -59,3 +61,5 @@ async processResponse(data) {
 }
 
 module.exports = wall_switch_1_gang_tuya;
+
+

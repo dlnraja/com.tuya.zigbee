@@ -1,4 +1,9 @@
+﻿try {
 'use strict';
-const { ZigBeeDevice } = require('homey-zigbeedriver');
-class TS004F extends ZigBeeDevice {}
+const { ZigBeeDevice } = require('homey-meshdriver');
+
+  this.log('Device initialisÃ©');}
 module.exports = TS004F;
+
+} catch(e) { this.error('Driver error', e); }
+

@@ -1,7 +1,7 @@
-'use strict';
+﻿'use strict';
 
 const Homey = require('homey');
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { ZigBeeDevice } = require('homey-meshdriver');
 const { Cluster, debug, CLUSTER, TimeCluster } = require('zigbee-clusters');
 const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster')
 const TuyaSpecificClusterDevice = require('../../lib/TuyaSpecificClusterDevice');
@@ -20,7 +20,8 @@ Cluster.addCluster(TuyaSpecificCluster);
 */
 class ThermostaticRadiatorValve extends TuyaSpecificClusterDevice {
 
-    async onNodeInit({ zclNode }) {
+    async 
+    this.registerCapability('onoff', CLUSTER.ON_OFF);
 
         this.printNode();
 /*     debug(true);
@@ -215,3 +216,5 @@ class ThermostaticRadiatorValve extends TuyaSpecificClusterDevice {
 }
 
 module.exports = ThermostaticRadiatorValve;
+
+
