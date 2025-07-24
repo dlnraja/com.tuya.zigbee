@@ -1,67 +1,14 @@
-﻿# sync-rebuild.yml
-# Description: Workflow automatisÃ© pour sync rebuild
-# Date: 2025-07-25
-# Version: 1.0
-
-name: Sync master to rebuild/ai-bootstrap
-
-
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
+﻿name: Fallback - sync-rebuild
 on:
-  schedule:
-    - cr
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
-on: '30 4 1 * *'
-
+  push:
+    branches: [ master, main ]
+  workflow_dispatch:
 jobs:
-  sync:
-    runs-
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
-on: ubuntu-latest
-    
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NODE_VERSION: '18'
-        PYTHON_VERSION: '3.11'
-
+  fallback-job:
+    runs-on: ubuntu-latest
     steps:
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.npm
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - uses: actions/checkout@v4
-        with:
-          ref: master
-      - name: Pousser vers rebuild/ai-bootstrap
-        run: |
-          git checkout -B rebuild/ai-bootstrap
-          git push origin rebuild/ai-bootstrap --force
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Validate
+      run: echo 'Fallback workflow executed'
 

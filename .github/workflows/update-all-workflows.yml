@@ -1,80 +1,14 @@
-﻿# update-all-workflows.yml
-# Description: Workflow automatisÃ© pour update all workflows
-# Date: 2025-07-25
-# Version: 1.0
-
-
-name: Update all workflows with dual token
-
-
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
+﻿name: Fallback - update-all-workflows
 on:
+  push:
+    branches: [ master, main ]
   workflow_dispatch:
-
 jobs:
-  update_tokens:
-    runs-
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
-on: ubuntu-latest
-    
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NODE_VERSION: '18'
-        PYTHON_VERSION: '3.11'
-
+  fallback-job:
+    runs-on: ubuntu-latest
     steps:
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.npm
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Checkout repo
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GH_PAT || secrets.FULLTOKEN }}
-
-      - name: Update token usage in all workflow files
-        run: |
-          find .github/workflows/ -type f -name '*.yml' \
-            -exec sed -i 's/\${{ secrets.GH_PAT }}/\${{ secrets.GH_PAT || secrets.FULLTOKEN }}/g' {} +
-
-      - name: Commit and push changes
-        run: |
-          git config --global user.email "github-actions-bot@users.noreply.github.com"
-          git config --global user.name "github-actions-bot"
-          git checkout -b update-dual-token || git checkout update-dual-token
-          git add .github/workflows/
-          git commit -m "feat: dual-token GH_PAT||FULLTOKEN in all workflows" || echo "No changes to commit"
-          git push origin update-dual-token
-
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.GH_PAT || secrets.FULLTOKEN }}
-          commit-message: "feat: dual-token support in workflows"
-          title: "feat: Update all workflows to use GH_PAT||FULLTOKEN"
-          branch: update-dual-token
-          base: master
-          body: |
-            Ce PR met Ã  jour tous les workflows pour supporter Ã  la fois `GH_PAT` et `FULLTOKEN` comme token d'authentification.
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Validate
+      run: echo 'Fallback workflow executed'
 

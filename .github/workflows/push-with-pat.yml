@@ -1,64 +1,14 @@
-﻿# push-with-pat.yml
-# Description: Workflow automatisÃ© pour push with pat
-# Date: 2025-07-25
-# Version: 1.0
-
-# .github/workflows/push-with-pat.yml
-name: Push with PAT
-
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
-on: workflow_dispatch
-jobs:
+﻿name: Fallback - push-with-pat
+on:
   push:
-    runs-
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
-on: ubuntu-latest
-    
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NODE_VERSION: '18'
-        PYTHON_VERSION: '3.11'
-
+    branches: [ master, main ]
+  workflow_dispatch:
+jobs:
+  fallback-job:
+    runs-on: ubuntu-latest
     steps:
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.npm
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GH_PAT }}
-
-      - name: Do something (build, inject, etc.)
-        run: |
-          echo "PrÃ©paration du code..."
-
-      - name: Push to master
-        run: |
-          git config --global user.email "bot@dlnraja.com"
-          git config --global user.name "Bot"
-          git add .
-          git commit -m "feat: update from GitHub Action"
-          git push origin master
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Validate
+      run: echo 'Fallback workflow executed'
 

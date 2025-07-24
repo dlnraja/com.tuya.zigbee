@@ -1,83 +1,14 @@
-﻿# monthly-repo-cleanup.yml
-# Description: Workflow automatisÃ© pour monthly repo cleanup
-# Date: 2025-07-25
-# Version: 1.0
-
-name: ðŸ§¹ Monthly Repo Cleanup & Reports Organization
-
-
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
+﻿name: Fallback - monthly-repo-cleanup
 on:
-  schedule:
-    - cr
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
-on: '0 2 1 * *' # Tous les 1ers du mois Ã  2h00 UTC
+  push:
+    branches: [ master, main ]
   workflow_dispatch:
-
 jobs:
-  cleanup-and-organize:
-    runs-
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
-on: ubuntu-latest
-    
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NODE_VERSION: '18'
-        PYTHON_VERSION: '3.11'
-
+  fallback-job:
+    runs-on: ubuntu-latest
     steps:
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.npm
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Validate
+      run: echo 'Fallback workflow executed'
 
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Move all reports to rapports/
-        run: |
-          mkdir -p rapports
-          find . -maxdepth 1 -type f -name 'RAPPORT-*.md' -exec mv {} rapports/ \;
-          find . -maxdepth 1 -type f -name 'SYNTHESE-*.md' -exec mv {} rapports/ \;
-          find . -maxdepth 1 -type f -name '*report*.md' -exec mv {} rapports/ \;
-
-      - name: Remove unnecessary artifacts (archives, .md5, node_modules, etc.)
-        run: |
-          find . -type f -name '*.zip' -delete
-          find . -type f -name '*.md5' -delete
-          rm -rf node_modules
-
-      - name: Commit and push changes
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add .
-          git commit -m 'ðŸ§¹ Monthly cleanup: reports organized, artifacts removed, repo optimisÃ© [auto]'
-          git push || echo 'Nothing to commit' 

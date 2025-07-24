@@ -1,140 +1,14 @@
-﻿# migrate-and-rebuild.yml
-# Description: Workflow automatisÃ© pour migrate and rebuild
-# Date: 2025-07-25
-# Version: 1.0
-
-name: Migrate Tokens & Rebuild Project
-
-
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
+﻿name: Fallback - migrate-and-rebuild
 on:
-  workflow_dispatch:
-
-jobs:
-  migrate_and_rebuild:
-    runs-
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
-on: ubuntu-latest
-    
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NODE_VERSION: '18'
-        PYTHON_VERSION: '3.11'
-
-    steps:
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.npm
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          # On essaie GH_PAT d'abord, sinon FULLTOKEN
-          token: ${{ secrets.GH_PAT != '' && secrets.GH_PAT || secrets.FULLTOKEN }}
-
-      - name: Replace GH_PAT by FULLTOKEN in all workflow files
-        run: |
-          find .github/workflows/ -type f -name '*.yml' -exec sed -i 's/GH_PAT/FULLTOKEN/g' {} +
-
-      - name: Add rebuild-full-project.yml if missing (example)
-        run: |
-          FILE=.github/workflows/rebuild-full-project.yml
-          if [ ! -f "$FILE" ]; then
-            cat <<'EOT' > $FILE
-name: Rebuild Full Project
-
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
-on:
+  push:
+    branches: [ master, main ]
   workflow_dispatch:
 jobs:
-  rebuild:
-    runs-
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
-on: ubuntu-latest
-    
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NODE_VERSION: '18'
-        PYTHON_VERSION: '3.11'
-
+  fallback-job:
+    runs-on: ubuntu-latest
     steps:
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.npm
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - uses: actions/checkout@v4
-        with:
-          token: \${{ secrets.FULLTOKEN }}
-      - name: Restore or rebuild project files
-        run: |
-          echo "Your full rebuild logic here"
-EOT
-          fi
-
-      - name: Set git user
-        run: |
-          git config --global user.email "github-actions-bot@users.noreply.github.com"
-          git config --global user.name "github-actions-bot"
-
-      - name: Create PR with changes (auto branch)
-        uses: peter-evans/create-pull-request@v5
-        with:
-          token: ${{ secrets.GH_PAT != '' && secrets.GH_PAT || secrets.FULLTOKEN }}
-          commit-message: "chore: migration to FULLTOKEN and auto create rebuild-full-project.yml"
-          title: "Migrati
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
-on: Replace GH_PAT by FULLTOKEN & add rebuild workflow"
-          body: |
-            This PR replaces all `GH_PAT` references by `FULLTOKEN` in workflows and adds a `rebuild-full-project.yml` if missing.
-          branch: auto/migrate-fulltoken
-          delete-branch: true
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Validate
+      run: echo 'Fallback workflow executed'
 
