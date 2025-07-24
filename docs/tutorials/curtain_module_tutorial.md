@@ -45,4 +45,4 @@ Ce tutoriel vous guide dans l'installation et la configuration du driver **curta
 - [Dashboard temps réel](../dashboard/)
 
 ---
-*Généré automatiquement le 2025-07-24T22:17:19.362Z*
+*Généré automatiquement le 2025-07-24T22:47:56.752Z*
