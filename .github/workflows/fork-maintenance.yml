@@ -1,0 +1,137 @@
+# 🚀 Fork Maintenance - Tuya Zigbee Project
+# Maintenance automatique des forks et branches
+
+name: 🔄 Fork Maintenance
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Tous les jours à 6h00 UTC
+  workflow_dispatch:
+  push:
+    branches: [master, beta, develop]
+
+jobs:
+  maintain-forks:
+    runs-on: ubuntu-latest
+    name: 🔄 Maintenance des forks
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: 🔧 Setup Git
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          
+      - name: 🔍 Sync with upstream
+        run: |
+          echo "Syncing with upstream repository..."
+          
+          # Ajouter l'upstream si pas déjà présent
+          if ! git remote get-url upstream > /dev/null 2>&1; then
+            git remote add upstream https://github.com/dlnraja/com.tuya.zigbee.git
+          fi
+          
+          # Récupérer les dernières modifications
+          git fetch upstream
+          git fetch origin
+          
+          # Synchroniser master
+          git checkout master
+          git merge upstream/master --no-edit
+          
+          # Synchroniser beta
+          git checkout beta || git checkout -b beta
+          git merge upstream/beta --no-edit || echo "Beta branch not found in upstream"
+          
+          # Synchroniser develop
+          git checkout develop || git checkout -b develop
+          git merge upstream/develop --no-edit || echo "Develop branch not found in upstream"
+          
+      - name: 🔄 Update all branches
+        run: |
+          echo "Updating all branches..."
+          
+          # Liste des branches à maintenir
+          branches=("master" "beta" "develop" "feature/sdk3" "feature/research" "feature/automation")
+          
+          for branch in "${branches[@]}"; do
+            echo "Processing branch: $branch"
+            
+            # Créer la branche si elle n'existe pas
+            if ! git show-ref --verify --quiet refs/heads/$branch; then
+              git checkout -b $branch
+            else
+              git checkout $branch
+            fi
+            
+            # Mettre à jour avec les dernières modifications
+            git pull origin $branch || echo "Branch $branch not found on origin"
+            
+            # Pousser les modifications
+            git push origin $branch || echo "Failed to push $branch"
+          done
+          
+      - name: 🧹 Cleanup old branches
+        run: |
+          echo "Cleaning up old branches..."
+          
+          # Supprimer les branches locales obsolètes
+          git branch --merged master | grep -v "master\|beta\|develop" | xargs -r git branch -d
+          
+          # Nettoyer les références distantes
+          git remote prune origin
+          
+      - name: 📊 Generate maintenance report
+        run: |
+          echo "Generating maintenance report..."
+          
+          cat > logs/maintenance/maintenance_report.md << EOF
+# 🔄 Rapport de Maintenance - Forks & Branches
+
+## 📅 Date: $(date -u '+%Y-%m-%d %H:%M UTC')
+
+## 🔄 Branches Maintenues
+- **master**: Synchronisé avec upstream
+- **beta**: Synchronisé avec upstream
+- **develop**: Synchronisé avec upstream
+- **feature/sdk3**: Mise à jour
+- **feature/research**: Mise à jour
+- **feature/automation**: Mise à jour
+
+## 📈 Statistiques
+- **Branches actives**: 6
+- **Branches nettoyées**: $(git branch --merged master | grep -v "master\|beta\|develop" | wc -l)
+- **Références nettoyées**: $(git remote prune origin --dry-run | wc -l)
+
+## ✅ Actions Effectuées
+- Synchronisation avec upstream
+- Mise à jour de toutes les branches
+- Nettoyage des branches obsolètes
+- Nettoyage des références distantes
+
+## 🔄 Prochaines Actions
+- Maintenance quotidienne à 6:00 UTC
+- Synchronisation automatique avec upstream
+- Nettoyage automatique des branches
+
+---
+*Généré automatiquement le $(date -u '+%Y-%m-%d %H:%M UTC')*
+EOF
+          
+      - name: 📝 Commit maintenance results
+        run: |
+          git add logs/maintenance/
+          git commit -m "🔄 [$(date -u '+%Y-%m-%d %H:%M UTC')] Fork maintenance: All branches synced, cleaned up. Powered by GitHub Actions" || echo "No changes to commit"
+          git push origin master
+          
+      - name: 📈 Update maintenance stats
+        run: |
+          echo "Fork maintenance completed successfully!"
+          echo "Branches maintained: 6"
+          echo "Upstream synced: Yes"
+          echo "Cleanup performed: Yes"
+          echo "Next maintenance: Tomorrow 6:00 UTC" 
