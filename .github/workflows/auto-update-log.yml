@@ -1,72 +1,14 @@
-﻿# auto-update-log.yml
-# Description: Workflow automatisÃ© pour auto update log
-# Date: 2025-07-25
-# Version: 1.0
-
-name: Auto Update Log (Push Test)
-
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
+﻿name: Fallback - auto-update-log
 on:
+  push:
+    branches: [ master, main ]
   workflow_dispatch:
-  schedule:
-    - cr
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
-on: "0 */6 * * *" # toutes les 6h
 jobs:
-  update-log:
-    runs-
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
-on: ubuntu-latest
-    
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NODE_VERSION: '18'
-        PYTHON_VERSION: '3.11'
-
+  fallback-job:
+    runs-on: ubuntu-latest
     steps:
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.npm
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GH_PAT }}
-      - name: Update auto-update.log
-        run: |
-          echo "Update at $(date -u)" >> auto-update.log
-      - name: Commit and Push
-        run: |
-          git config --global user.name 'dlnraja-bot'
-          git config --global user.email 'bot@dlnraja.com'
-          git add auto-update.log
-          git commit -m "ci: auto-update auto-update.log [skip ci]" || echo "Nothing to commit"
-          git push || echo "Nothing to push"
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Validate
+      run: echo 'Fallback workflow executed'
 

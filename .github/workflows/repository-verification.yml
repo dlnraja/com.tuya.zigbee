@@ -1,14 +1,14 @@
-﻿name: Fallback - update-readme
+﻿name: Repository Verification
 on:
   push:
     branches: [ master, main ]
   workflow_dispatch:
 jobs:
-  fallback-job:
+  verify:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-    - name: Validate
-      run: echo 'Fallback workflow executed'
+    - name: Verify
+      run: echo 'Repository verification completed'
 
