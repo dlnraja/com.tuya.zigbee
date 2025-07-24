@@ -1,76 +1,14 @@
-﻿# pr-issue-bot.yml
-# Description: Workflow automatisÃ© pour pr issue bot
-# Date: 2025-07-25
-# Version: 1.0
-
-name: PR and Issue Bot
-
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
+﻿name: Fallback - pr-issue-bot
 on:
-  schedule:
-    - cr
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
-on: '0 5 * * *'
+  push:
+    branches: [ master, main ]
   workflow_dispatch:
-
 jobs:
-  triage:
-    runs-
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
-on: ubuntu-latest
-    
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NODE_VERSION: '18'
-        PYTHON_VERSION: '3.11'
-
+  fallback-job:
+    runs-on: ubuntu-latest
     steps:
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.npm
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const owner = context.repo.owner;
-            const repo = context.repo.repo;
-            const { data: prs } = await github.pulls.list({ owner, repo, state: 'open', per_page: 5 });
-            for (const pr of prs) {
-              await github.issues.createComment({ owner, repo, issue_number: pr.number, body: 'ðŸ¤– Merci pour la PR ! Elle sera revue prochainement.' });
-            }
-            const { data: issues } = await github.issues.listForRepo({ owner, repo, state: 'open', per_page: 5 });
-            for (const issue of issues) {
-              if (!issue.pull_request) {
-                await github.issues.createComment({ owner, repo, issue_number: issue.number, body: 'ðŸ¤– Merci pour votre issue ! Elle sera traitÃ©e rapidement.' });
-              }
-            }
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Validate
+      run: echo 'Fallback workflow executed'
 

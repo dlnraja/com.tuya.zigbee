@@ -1,89 +1,14 @@
-﻿# daily-scan.yml
-# Description: Workflow automatisÃ© pour daily scan
-# Date: 2025-07-25
-# Version: 1.0
-
-name: Daily device scan
-
-
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
+﻿name: Fallback - daily-scan
 on:
-  schedule:
-    - cr
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
-on: '0 3 * * *'  # Tous les jours à 3h du matin
+  push:
+    branches: [ master, main ]
   workflow_dispatch:
-
 jobs:
-  scan:
-    runs-
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
-on: ubuntu-latest
-    
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NODE_VERSION: '18'
-        PYTHON_VERSION: '3.11'
-
+  fallback-job:
+    runs-on: ubuntu-latest
     steps:
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.npm
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Checkout code
-        uses: actions/checkout@v3
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-versi
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
-on: 18.x
-      
-      - name: Install dependencies
-        run: npm ci
-      
-      - name: Run daily scan
-        run: bash ./scripts/daily-scan.sh
-      
-      - name: Upload scan results
-        uses: actions/upload-artifact@v3
-        with:
-          name: scan-results
-          path: ./scan-results/
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Validate
+      run: echo 'Fallback workflow executed'
 

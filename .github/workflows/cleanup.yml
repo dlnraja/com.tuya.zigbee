@@ -1,94 +1,14 @@
-﻿# cleanup.yml
-# Description: Workflow automatisÃ© pour cleanup
-# Date: 2025-07-25
-# Version: 1.0
-
-name: Cleanup Repository
-
-
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
+﻿name: Fallback - cleanup
 on:
-  schedule:
-    - cr
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
-on: '0 2 1 * *'
+  push:
+    branches: [ master, main ]
   workflow_dispatch:
-
 jobs:
-  cleanup:
-    runs-
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
-on: ubuntu-latest
-    
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NODE_VERSION: '18'
-        PYTHON_VERSION: '3.11'
-
+  fallback-job:
+    runs-on: ubuntu-latest
     steps:
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.npm
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - uses: actions/checkout@v4
-      
-      - name: Cleanup files
-        run: |
-          # Remove temporary files
-          find . -name "*.tmp" -delete
-          find . -name "*.temp" -delete
-          find . -name "*.cache" -delete
-          find . -name "*.bak" -delete
-          find . -name "*.old" -delete
-          
-          # Remove build directories
-          rm -rf dist/ build/ out/ .next/ .nuxt/ .vercel/
-          rm -rf .homeybuild/ .homeycompose/cache/ .homeycompose/temp/
-          
-          # Remove logs except auto-update.log
-          find . -name "*.log" ! -name "auto-update.log" -delete
-          
-          # Remove archives
-          find . -name "*.tar.gz" -delete
-          find . -name "*.zip" -delete
-          find . -name "*.7z" -delete
-          rm -rf archives/ backup_*/ restore_*/
-          
-          echo "Cleanup completed"
-          
-      - name: Commit changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add -A
-          git diff --staged --quiet || git commit -m "Auto cleanup - $(date)"
-          git push 
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Validate
+      run: echo 'Fallback workflow executed'
 

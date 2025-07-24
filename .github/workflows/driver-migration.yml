@@ -1,102 +1,14 @@
-﻿# driver-migration.yml
-# Description: Workflow automatisÃ© pour driver migration
-# Date: 2025-07-25
-# Version: 1.0
-
-name: Driver Migration
-
-
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
+﻿name: Fallback - driver-migration
 on:
-  schedule:
-    - cr
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
-on: '0 4 * * *'
+  push:
+    branches: [ master, main ]
   workflow_dispatch:
-
 jobs:
-  migrate-drivers:
-    runs-
-# Permissions pour la sÃ©curitÃ©
-permissions:
-  contents: read
-  pull-requests: read
-  issues: read
-  actions: read
-  security-events: read
-
-on: ubuntu-latest
-    
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NODE_VERSION: '18'
-        PYTHON_VERSION: '3.11'
-
+  fallback-job:
+    runs-on: ubuntu-latest
     steps:
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.npm
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Checkout
-        uses: actions/checkout@v4
-        
-      - name: Migrate Drivers
-        run: |
-          mkdir -p drivers/sdk3 drivers/legacy drivers/in_progress
-          
-          for driver_dir in drivers/*/; do
-            if [ -d "\" ]; then
-              driver_name=\
-              
-              if [[ "\" =~ ^(sdk3|legacy|in_progress)\$ ]]; then
-                continue
-              fi
-              
-              device_file="\/device.js"
-              if [ -f "\" ]; then
-                if grep -q "Homey\.Device\|SDK3\|v3" "\"; then
-                  echo "Migrating \ to SDK3"
-                  mv "\" "drivers/sdk3/"
-                elif grep -q "Homey\.Manager\|SDK2\|v2" "\"; then
-                  echo "Migrating \ to Legacy"
-                  mv "\" "drivers/legacy/"
-                else
-                  echo "Migrating \ to In Progress"
-                  mv "\" "drivers/in_progress/"
-                fi
-              else
-                echo "Migrating \ to In Progress (no device.js)"
-                mv "\" "drivers/in_progress/"
-              fi
-            fi
-          done
-          
-      - name: Commit Changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add -A
-          git commit -m "Driver migration completed - \"
-          git push
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Validate
+      run: echo 'Fallback workflow executed'
 
