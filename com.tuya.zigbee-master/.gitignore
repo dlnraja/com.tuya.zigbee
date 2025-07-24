@@ -1,0 +1,14 @@
+<<<<<<< HEAD
+.env
+*.key
+*.pem
+node_modules/
+progress.json
+ai-benchmark/*.json
+tuya-backup-*.zip
+=======
+﻿node_modules/
+*.log
+.env
+.homeybuild/
+>>>>>>> fix/readme-validation
