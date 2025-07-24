@@ -1,4 +1,18 @@
-name: 🧪 Test Workflows Optimisé
+﻿# test-workflows.yml
+# Description: Workflow automatisÃ© pour test workflows
+# Date: 2025-07-25
+# Version: 1.0
+
+name: ðŸ§ª Test Workflows OptimisÃ©
+
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   push:
@@ -9,35 +23,62 @@ on:
 
 jobs:
   test-workflows:
-    runs-on: ubuntu-latest
-    name: 🧪 Test des workflows robuste
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    name: ðŸ§ª Test des workflows robuste
+    
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_VERSION: '18'
+        PYTHON_VERSION: '3.11'
+
     steps:
-      - name: 📥 Checkout repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout repository
         uses: actions/checkout@v3
-      - name: 🔍 Test syntaxe YAML de tous les workflows
+      - name: ðŸ” Test syntaxe YAML de tous les workflows
         run: |
-          echo "🔍 Test de la syntaxe YAML de tous les workflows..."
+          echo "ðŸ” Test de la syntaxe YAML de tous les workflows..."
           for file in .github/workflows/*.yml; do
             echo "Testing: $file"
-            python3 -c "import yaml,sys; yaml.safe_load(open(sys.argv[1]))" $file && echo "✅  - Syntaxe OK" || { echo "❌  - Erreur de syntaxe dans $file"; exit 1; }
+            python3 -c "import yaml,sys; yaml.safe_load(open(sys.argv[1]))" $file && echo "âœ…  - Syntaxe OK" || { echo "âŒ  - Erreur de syntaxe dans $file"; exit 1; }
           done
-      - name: 🔧 Test des dépendances
+      - name: ðŸ”§ Test des dÃ©pendances
         run: |
-          echo "🔧 Test des dépendances..."
+          echo "ðŸ”§ Test des dÃ©pendances..."
           if [ -f "package.json" ]; then
-            npm install --dry-run || echo "⚠️ Dépendances avec avertissements"
+            npm install --dry-run || echo "âš ï¸ DÃ©pendances avec avertissements"
           else
-            echo "ℹ️ Pas de package.json"
+            echo "â„¹ï¸ Pas de package.json"
           fi
-      - name: 🏗️ Test build
+      - name: ðŸ—ï¸ Test build
         run: |
-          echo "🏗️ Test de build..."
+          echo "ðŸ—ï¸ Test de build..."
           if [ -f "app.json" ]; then
-            echo "✅ app.json trouvé"
+            echo "âœ… app.json trouvÃ©"
           else
-            echo "❌ app.json manquant"; exit 1;
+            echo "âŒ app.json manquant"; exit 1;
           fi
-      - name: 📊 Rapport de test workflows
+      - name: ðŸ“Š Rapport de test workflows
         run: |
-          echo "📊 Rapport de test workflows : tous les workflows YAML sont valides, dépendances et build vérifiés."
-          echo "✅ Test workflows terminé avec succès."
+          echo "ðŸ“Š Rapport de test workflows : tous les workflows YAML sont valides, dÃ©pendances et build vÃ©rifiÃ©s."
+          echo "âœ… Test workflows terminÃ© avec succÃ¨s."
+

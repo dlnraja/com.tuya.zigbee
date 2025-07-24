@@ -1,6 +1,20 @@
-# 🚀 Build & Deploy - Enhanced (powered by GPT-4, Cursor, GitHub Actions)
+﻿# build.yml
+# Description: Workflow automatisÃ© pour build
+# Date: 2025-07-25
+# Version: 1.0
 
-name: 🚀 Build & Deploy - Enhanced
+# ðŸš€ Build & Deploy - Enhanced (powered by GPT-4, Cursor, GitHub Actions)
+
+name: ðŸš€ Build & Deploy - Enhanced
+
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   push:
@@ -9,28 +23,75 @@ on:
     branches: [ master, beta ]
   workflow_dispatch:
   schedule:
-    - cron: '0 */4 * * *'  # Toutes les 4 heures
+    - cr
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '0 */4 * * *'  # Toutes les 4 heures
 
 env:
-  NODE_VERSION: '18'
-  HOMEY_SDK_VERSION: '3'
+  NODE_VERSI
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '18'
+  HOMEY_SDK_VERSI
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '3'
   BUILD_MODE: 'intelligent'
   DEPLOY_MODE: 'enhanced'
 
 jobs:
   intelligent-build-analysis:
-    runs-on: ubuntu-latest
-    name: 🔍 Analyse build intelligente
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    name: ðŸ” Analyse build intelligente
     outputs:
       build-complexity: ${{ steps.complexity-check.outputs.level }}
       dependencies-status: ${{ steps.deps-check.outputs.status }}
       sdk-compatibility: ${{ steps.sdk-check.outputs.compatible }}
       security-readiness: ${{ steps.security-check.outputs.ready }}
     steps:
-      - name: 📥 Checkout repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout repository
         uses: actions/checkout@v4
 
-      - name: 🔍 Analyse de complexité
+      - name: ðŸ” Analyse de complexitÃ©
         id: complexity-check
         run: |
           COMPLEXITY_LEVEL="basic"
@@ -41,140 +102,199 @@ jobs:
             COMPLEXITY_LEVEL="medium"
           fi
           echo "level=$COMPLEXITY_LEVEL" >> $GITHUB_OUTPUT
-          echo "🔍 Complexité: $COMPLEXITY_LEVEL ($DRIVERS_COUNT drivers)"
+          echo "ðŸ” ComplexitÃ©: $COMPLEXITY_LEVEL ($DRIVERS_COUNT drivers)"
 
-      - name: 📦 Vérification des dépendances
+      - name: ðŸ“¦ VÃ©rification des dÃ©pendances
         id: deps-check
         run: |
           if [ -f "package.json" ]; then
             echo "status=managed" >> $GITHUB_OUTPUT
-            echo "📦 Dépendances gérées"
+            echo "ðŸ“¦ DÃ©pendances gÃ©rÃ©es"
           else
             echo "status=missing" >> $GITHUB_OUTPUT
-            echo "⚠️ Dépendances manquantes"
+            echo "âš ï¸ DÃ©pendances manquantes"
           fi
 
       - name: Logs & monitoring (powered by GitHub Actions)
         run: |
-          echo "[BUILD] Analyse build terminée à $(date -u)"
-          echo "[BUILD] Monitoring automatisé - powered by GitHub Actions, orchestré par GPT-4/ Cursor"
+          echo "[BUILD] Analyse build terminÃ©e Ã  $(date -u)"
+          echo "[BUILD] Monitoring automatisÃ© - powered by GitHub Actions, orchestrÃ© par GPT-4/ Cursor"
 
-  # 🏗️ BUILD INTELLIGENT AVANCÉ
+  # ðŸ—ï¸ BUILD INTELLIGENT AVANCÃ‰
   intelligent-build-advanced:
     needs: intelligent-build-analysis
-    runs-on: ubuntu-latest
-    name: 🏗️ Build intelligent avancé
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    name: ðŸ—ï¸ Build intelligent avancÃ©
     steps:
-      - name: 📥 Checkout repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout repository
         uses: actions/checkout@v4
 
-      - name: 🔧 Setup Node.js ${{ env.NODE_VERSION }}
+      - name: ðŸ”§ Setup Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-versi
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ${{ env.NODE_VERSION }}
           cache: 'npm'
 
-      - name: 📦 Installation intelligente
+      - name: ðŸ“¦ Installation intelligente
         run: |
-          echo "📦 Installation intelligente des dépendances..."
+          echo "ðŸ“¦ Installation intelligente des dÃ©pendances..."
           if [ -f "package.json" ]; then
-            npm ci || echo "⚠️ Installation avec avertissements"
-            npm audit fix --audit-level=moderate || echo "⚠️ Audit terminé avec avertissements"
+            npm ci || echo "âš ï¸ Installation avec avertissements"
+            npm audit fix --audit-level=moderate || echo "âš ï¸ Audit terminÃ© avec avertissements"
           else
-            echo "ℹ️ Pas de package.json détecté"
+            echo "â„¹ï¸ Pas de package.json dÃ©tectÃ©"
           fi
-          echo "✅ Dépendances installées"
+          echo "âœ… DÃ©pendances installÃ©es"
 
-      - name: 🧹 Lint intelligent
+      - name: ðŸ§¹ Lint intelligent
         run: |
-          echo "🧹 Lint intelligent..."
+          echo "ðŸ§¹ Lint intelligent..."
           if [ -f "package.json" ] && grep -q "lint" package.json; then
-            npm run lint || echo "⚠️ Lint terminé avec des avertissements"
+            npm run lint || echo "âš ï¸ Lint terminÃ© avec des avertissements"
           else
-            echo "ℹ️ Pas de script lint configuré"
+            echo "â„¹ï¸ Pas de script lint configurÃ©"
           fi
-          echo "✅ Code validé"
+          echo "âœ… Code validÃ©"
 
-      - name: 🏗️ Build intelligent
+      - name: ðŸ—ï¸ Build intelligent
         run: |
-          echo "🏗️ Build intelligent..."
+          echo "ðŸ—ï¸ Build intelligent..."
           if [ -f "package.json" ] && grep -q "build" package.json; then
-            npm run build || echo "⚠️ Build terminé avec des avertissements"
+            npm run build || echo "âš ï¸ Build terminÃ© avec des avertissements"
           else
-            echo "ℹ️ Pas de script build configuré"
+            echo "â„¹ï¸ Pas de script build configurÃ©"
           fi
-          echo "✅ Build terminé"
+          echo "âœ… Build terminÃ©"
 
-      - name: 🧪 Tests intelligents
+      - name: ðŸ§ª Tests intelligents
         run: |
-          echo "🧪 Tests intelligents..."
+          echo "ðŸ§ª Tests intelligents..."
           if [ -f "package.json" ] && grep -q "test" package.json; then
-            npm test || echo "⚠️ Tests terminés avec des avertissements"
+            npm test || echo "âš ï¸ Tests terminÃ©s avec des avertissements"
           else
-            echo "ℹ️ Pas de script test configuré"
+            echo "â„¹ï¸ Pas de script test configurÃ©"
           fi
-          echo "✅ Tests validés"
+          echo "âœ… Tests validÃ©s"
 
-      - name: 📝 Update manifest
+      - name: ðŸ“ Update manifest
         run: |
-          echo "📝 Update manifest..."
+          echo "ðŸ“ Update manifest..."
           if [ -f "package.json" ] && grep -q "update-manifest" package.json; then
-            npm run update-manifest || echo "⚠️ Update manifest terminé avec des avertissements"
+            npm run update-manifest || echo "âš ï¸ Update manifest terminÃ© avec des avertissements"
           else
-            echo "ℹ️ Pas de script update-manifest configuré"
+            echo "â„¹ï¸ Pas de script update-manifest configurÃ©"
           fi
-          echo "✅ Update manifest terminé"
+          echo "âœ… Update manifest terminÃ©"
 
-  # 🚀 DEPLOY INTELLIGENT
+  # ðŸš€ DEPLOY INTELLIGENT
   intelligent-deploy:
     needs: [intelligent-build-analysis, intelligent-build-advanced]
-    runs-on: ubuntu-latest
-    name: 🚀 Deploy intelligent
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    name: ðŸš€ Deploy intelligent
     if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/beta'
     steps:
-      - name: 📥 Checkout repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout repository
         uses: actions/checkout@v4
 
-      - name: 🔧 Setup Node.js
+      - name: ðŸ”§ Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-versi
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ${{ env.NODE_VERSION }}
           cache: 'npm'
 
-      - name: 📦 Installation finale
+      - name: ðŸ“¦ Installation finale
         run: |
           if [ -f "package.json" ]; then
             npm ci
           fi
 
-      - name: 🏗️ Build final
+      - name: ðŸ—ï¸ Build final
         run: |
-          echo "🏗️ Build final..."
+          echo "ðŸ—ï¸ Build final..."
           if [ -f "package.json" ] && grep -q "build" package.json; then
-            npm run build || echo "⚠️ Build final terminé avec des avertissements"
+            npm run build || echo "âš ï¸ Build final terminÃ© avec des avertissements"
           else
-            echo "ℹ️ Pas de script build configuré"
+            echo "â„¹ï¸ Pas de script build configurÃ©"
           fi
 
-      - name: 🧾 Validation finale
+      - name: ðŸ§¾ Validation finale
         run: |
-          echo "🧾 VALIDATION FINALE"
+          echo "ðŸ§¾ VALIDATION FINALE"
           echo "======"
-          echo "Complexité: ${{ needs.intelligent-build-analysis.outputs.build-complexity }}"
-          echo "Dépendances: ${{ needs.intelligent-build-analysis.outputs.dependencies-status }}"
+          echo "ComplexitÃ©: ${{ needs.intelligent-build-analysis.outputs.build-complexity }}"
+          echo "DÃ©pendances: ${{ needs.intelligent-build-analysis.outputs.dependencies-status }}"
           echo "SDK: ${{ needs.intelligent-build-analysis.outputs.sdk-compatibility }}"
-          echo "Sécurité: ${{ needs.intelligent-build-analysis.outputs.security-readiness }}"
-          echo "✅ Build validé"
-          echo "✅ Tests passés"
-          echo "✅ Déploiement prêt"
+          echo "SÃ©curitÃ©: ${{ needs.intelligent-build-analysis.outputs.security-readiness }}"
+          echo "âœ… Build validÃ©"
+          echo "âœ… Tests passÃ©s"
+          echo "âœ… DÃ©ploiement prÃªt"
 
-      - name: 🎉 Succès
+      - name: ðŸŽ‰ SuccÃ¨s
         run: |
-          echo "🎉 DÉPLOIEMENT RÉUSSI!"
+          echo "ðŸŽ‰ DÃ‰PLOIEMENT RÃ‰USSI!"
           echo "=="
-          echo "✅ Tous les tests passés"
-          echo "✅ Build validé"
-          echo "✅ Déploiement terminé"
-          echo "🚀 Projet opérationnel!"
+          echo "âœ… Tous les tests passÃ©s"
+          echo "âœ… Build validÃ©"
+          echo "âœ… DÃ©ploiement terminÃ©"
+          echo "ðŸš€ Projet opÃ©rationnel!"
+
 
 

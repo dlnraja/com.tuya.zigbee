@@ -1,28 +1,78 @@
-name: 💾 Monthly Backup Optimisé
+﻿# monthly-backup.yml
+# Description: Workflow automatisÃ© pour monthly backup
+# Date: 2025-07-25
+# Version: 1.0
+
+name: ðŸ’¾ Monthly Backup OptimisÃ©
+
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   schedule:
-    - cron: '0 4 1 * *'
+    - cr
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '0 4 1 * *'
   workflow_dispatch:
 
 jobs:
   monthly-backup:
-    runs-on: ubuntu-latest
-    name: 💾 Sauvegarde mensuelle robuste
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    name: ðŸ’¾ Sauvegarde mensuelle robuste
+    
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_VERSION: '18'
+        PYTHON_VERSION: '3.11'
+
     steps:
-      - name: 📥 Checkout repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout repository
         uses: actions/checkout@v3
-      - name: 💾 Création de l'archive de sauvegarde
+      - name: ðŸ’¾ CrÃ©ation de l'archive de sauvegarde
         run: |
-          echo "💾 Création de l'archive de sauvegarde..."
+          echo "ðŸ’¾ CrÃ©ation de l'archive de sauvegarde..."
           tar -czf tuya-backup-$(date +%Y-%m-%d).tar.gz --exclude="node_modules" --exclude=".git" --exclude="*.log" .
-          echo "✅ Archive créée."
-      - name: 📤 Upload de la sauvegarde
+          echo "âœ… Archive crÃ©Ã©e."
+      - name: ðŸ“¤ Upload de la sauvegarde
         uses: actions/upload-artifact@v4
         with:
           name: tuya-backup
           path: tuya-backup-*.tar.gz
-      - name: 📈 Rapport de sauvegarde
+      - name: ðŸ“ˆ Rapport de sauvegarde
         run: |
-          echo "📈 Rapport de sauvegarde : archive générée et uploadée."
-          echo "✅ Sauvegarde mensuelle terminée avec succès."
+          echo "ðŸ“ˆ Rapport de sauvegarde : archive gÃ©nÃ©rÃ©e et uploadÃ©e."
+          echo "âœ… Sauvegarde mensuelle terminÃ©e avec succÃ¨s."
+

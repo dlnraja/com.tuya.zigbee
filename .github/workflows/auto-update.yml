@@ -1,39 +1,113 @@
+﻿
+ï»¿name: ðŸš€ YOLO Full Automation Pipeline - Enhanced
 
-﻿name: 🚀 YOLO Full Automation Pipeline - Enhanced
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   push:
     branches: [ master, beta, develop ]
   schedule:
-    - cron: '0 2 * * *'  # Tous les jours à 2h
-    - cron: '0 14 * * *' # Tous les jours à 14h
+    - cr
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '0 2 * * *'  # Tous les jours Ã  2h
+    - cr
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '0 14 * * *' # Tous les jours Ã  14h
   workflow_dispatch:
   repository_dispatch:
     types: [auto-update, manual-sync]
 
 env:
-  NODE_VERSION: '18'
-  HOMEY_SDK_VERSION: '3'
+  NODE_VERSI
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '18'
+  HOMEY_SDK_VERSI
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '3'
   AUTO_COMMIT: 'true'
   INTELLIGENT_MODE: 'true'
 
 jobs:
-  # 🔍 ANALYSE PRÉLIMINAIRE INTELLIGENTE
+  # ðŸ” ANALYSE PRÃ‰LIMINAIRE INTELLIGENTE
   intelligent-pre-analysis:
-    runs-on: ubuntu-latest
-    name: 🔍 Analyse préliminaire intelligente
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    name: ðŸ” Analyse prÃ©liminaire intelligente
     outputs:
       project-health: ${{ steps.health-check.outputs.score }}
       drivers-status: ${{ steps.drivers-check.outputs.status }}
-      sdk-version: ${{ steps.sdk-check.outputs.version }}
+      sdk-versi
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ${{ steps.sdk-check.outputs.version }}
       security-level: ${{ steps.security-check.outputs.level }}
     steps:
-      - name: 📥 Checkout repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - name: 🔍 Vérification de santé du projet
+      - name: ðŸ” VÃ©rification de santÃ© du projet
         id: health-check
         run: |
           HEALTH_SCORE=0
@@ -43,9 +117,9 @@ jobs:
           if [ -d "drivers" ]; then HEALTH_SCORE=$((HEALTH_SCORE + 20)); fi
           if [ -d "lib" ]; then HEALTH_SCORE=$((HEALTH_SCORE + 20)); fi
           echo "score=$HEALTH_SCORE" >> $GITHUB_OUTPUT
-          echo "🏥 Score de santé: $HEALTH_SCORE/100"
+          echo "ðŸ¥ Score de santÃ©: $HEALTH_SCORE/100"
 
-      - name: 🔧 Vérification des drivers
+      - name: ðŸ”§ VÃ©rification des drivers
         id: drivers-check
         run: |
           DRIVERS_COUNT=$(find drivers/ -name "device.js" | wc -l)
@@ -56,16 +130,25 @@ jobs:
           else
             echo "status=basic" >> $GITHUB_OUTPUT
           fi
-          echo "📊 Drivers détectés: $DRIVERS_COUNT"
+          echo "ðŸ“Š Drivers dÃ©tectÃ©s: $DRIVERS_COUNT"
 
-      - name: 🔧 Vérification SDK
+      - name: ðŸ”§ VÃ©rification SDK
         id: sdk-check
         run: |
           SDK_VERSION=$(grep -o '"sdk": [0-9]*' app.json | grep -o '[0-9]*' || echo "unknown")
           echo "version=$SDK_VERSION" >> $GITHUB_OUTPUT
-          echo "🔧 SDK Version: $SDK_VERSION"
+          echo "ðŸ”§ SDK Versi
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
-      - name: 🛡️ Vérification sécurité
+on: $SDK_VERSION"
+
+      - name: ðŸ›¡ï¸ VÃ©rification sÃ©curitÃ©
         id: security-check
         run: |
           SECURITY_LEVEL="basic"
@@ -76,109 +159,167 @@ jobs:
             SECURITY_LEVEL="advanced"
           fi
           echo "level=$SECURITY_LEVEL" >> $GITHUB_OUTPUT
-          echo "🛡️ Niveau de sécurité: $SECURITY_LEVEL"
+          echo "ðŸ›¡ï¸ Niveau de sÃ©curitÃ©: $SECURITY_LEVEL"
 
-  # 🏗️ BUILD ET TEST INTELLIGENTS
+  # ðŸ—ï¸ BUILD ET TEST INTELLIGENTS
   intelligent-build-test:
     needs: intelligent-pre-analysis
-    runs-on: ubuntu-latest
-    name: 🏗️ Build et test intelligents
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    name: ðŸ—ï¸ Build et test intelligents
     steps:
-      - name: 📥 Checkout repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout repository
         uses: actions/checkout@v3
 
-      - name: 🔧 Setup Node.js ${{ env.NODE_VERSION }}
+      - name: ðŸ”§ Setup Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-versi
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ${{ env.NODE_VERSION }}
           cache: 'npm'
 
-      - name: 📦 Installation intelligente
+      - name: ðŸ“¦ Installation intelligente
         run: |
-          echo "📦 Installation intelligente des dépendances..."
+          echo "ðŸ“¦ Installation intelligente des dÃ©pendances..."
           npm install --audit
           npm audit fix --audit-level=moderate || true
-          echo "✅ Dépendances installées"
+          echo "âœ… DÃ©pendances installÃ©es"
 
-      - name: 🧹 Lint intelligent
+      - name: ðŸ§¹ Lint intelligent
         run: |
-          echo "🧹 Lint intelligent..."
-          npm run lint || echo "⚠️ Lint terminé"
-          echo "✅ Code validé"
+          echo "ðŸ§¹ Lint intelligent..."
+          npm run lint || echo "âš ï¸ Lint terminÃ©"
+          echo "âœ… Code validÃ©"
 
-      - name: 🏗️ Build intelligent
+      - name: ðŸ—ï¸ Build intelligent
         run: |
-          echo "🏗️ Build intelligent..."
+          echo "ðŸ—ï¸ Build intelligent..."
           npm run build
-          echo "✅ Build réussi"
+          echo "âœ… Build rÃ©ussi"
 
-      - name: 🎨 Génération d'icônes intelligente
+      - name: ðŸŽ¨ GÃ©nÃ©ration d'icÃ´nes intelligente
         run: |
-          echo "🎨 Génération d'icônes intelligente..."
-          node scripts/icon-generator.js || echo "⚠️ Génération terminée"
-          echo "✅ Icônes générées"
+          echo "ðŸŽ¨ GÃ©nÃ©ration d'icÃ´nes intelligente..."
+          node scripts/icon-generator.js || echo "âš ï¸ GÃ©nÃ©ration terminÃ©e"
+          echo "âœ… IcÃ´nes gÃ©nÃ©rÃ©es"
 
-      - name: 🧪 Tests intelligents
+      - name: ðŸ§ª Tests intelligents
         run: |
-          echo "🧪 Tests intelligents..."
-          npm test --if-present || echo "⚠️ Tests terminés"
-          echo "✅ Tests validés"
+          echo "ðŸ§ª Tests intelligents..."
+          npm test --if-present || echo "âš ï¸ Tests terminÃ©s"
+          echo "âœ… Tests validÃ©s"
 
-  # 🔄 SYNC INTELLIGENT AVANCÉ
+  # ðŸ”„ SYNC INTELLIGENT AVANCÃ‰
   intelligent-sync-advanced:
     needs: [intelligent-pre-analysis, intelligent-build-test]
-    runs-on: ubuntu-latest
-    name: 🔄 Synchronisation intelligente avancée
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    name: ðŸ”„ Synchronisation intelligente avancÃ©e
     if: github.ref == 'refs/heads/master' && needs.intelligent-pre-analysis.outputs.project-health == '100'
     steps:
-      - name: 📥 Checkout repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout repository
         uses: actions/checkout@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: 🔧 Setup Node.js
+      - name: ðŸ”§ Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-versi
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
-      - name: 📦 Install dependencies
+on: ${{ env.NODE_VERSION }}
+
+      - name: ðŸ“¦ Install dependencies
         run: npm install
 
-      - name: 🔄 Sync drivers intelligente
+      - name: ðŸ”„ Sync drivers intelligente
         run: |
-          echo "🔄 Synchronisation intelligente des drivers..."
-          npm run sync-drivers --if-present || echo "⚠️ Sync terminé"
-          echo "✅ Drivers synchronisés"
+          echo "ðŸ”„ Synchronisation intelligente des drivers..."
+          npm run sync-drivers --if-present || echo "âš ï¸ Sync terminÃ©"
+          echo "âœ… Drivers synchronisÃ©s"
 
-      - name: 🎨 Génération d'icônes en lot intelligente
+      - name: ðŸŽ¨ GÃ©nÃ©ration d'icÃ´nes en lot intelligente
         run: |
-          echo "🎨 Génération d'icônes en lot intelligente..."
-          node scripts/icon-generator.js || echo "⚠️ Génération terminée"
-          echo "✅ Icônes générées"
+          echo "ðŸŽ¨ GÃ©nÃ©ration d'icÃ´nes en lot intelligente..."
+          node scripts/icon-generator.js || echo "âš ï¸ GÃ©nÃ©ration terminÃ©e"
+          echo "âœ… IcÃ´nes gÃ©nÃ©rÃ©es"
 
-      - name: 📊 Validation Homey App intelligente
+      - name: ðŸ“Š Validation Homey App intelligente
         run: |
           if [ -n "${{ secrets.HOMEY_PAT }}" ]; then
-            echo "📊 Validation intelligente de l'app Homey..."
-            npx homey app validate || echo "⚠️ Validation terminée"
+            echo "ðŸ“Š Validation intelligente de l'app Homey..."
+            npx homey app validate || echo "âš ï¸ Validation terminÃ©e"
           else
-            echo "ℹ️ Pas de token Homey, validation ignorée"
+            echo "â„¹ï¸ Pas de token Homey, validation ignorÃ©e"
           fi
 
-      - name: 📝 Commit intelligent avancé
+      - name: ðŸ“ Commit intelligent avancÃ©
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: |
-            🚀 YOLO: Synchronisation intelligente avancée
+            ðŸš€ YOLO: Synchronisation intelligente avancÃ©e
             
-            📊 Santé: ${{ needs.intelligent-pre-analysis.outputs.project-health }}/100
-            🔧 Drivers: ${{ needs.intelligent-pre-analysis.outputs.drivers-status }}
-            🔧 SDK: ${{ needs.intelligent-pre-analysis.outputs.sdk-version }}
-            🛡️ Sécurité: ${{ needs.intelligent-pre-analysis.outputs.security-level }}
+            ðŸ“Š SantÃ©: ${{ needs.intelligent-pre-analysis.outputs.project-health }}/100
+            ðŸ”§ Drivers: ${{ needs.intelligent-pre-analysis.outputs.drivers-status }}
+            ðŸ”§ SDK: ${{ needs.intelligent-pre-analysis.outputs.sdk-version }}
+            ðŸ›¡ï¸ SÃ©curitÃ©: ${{ needs.intelligent-pre-analysis.outputs.security-level }}
             
-            ✅ Build: Intelligent
-            🎨 Icônes: Générées
-            🔄 Sync: Avancé
+            âœ… Build: Intelligent
+            ðŸŽ¨ IcÃ´nes: GÃ©nÃ©rÃ©es
+            ðŸ”„ Sync: AvancÃ©
           file_pattern: |
             drivers/**
             assets/icons/**
@@ -186,118 +327,214 @@ jobs:
             app.json
             package.json
 
-  # 📊 RAPPORT INTELLIGENT AVANCÉ
+  # ðŸ“Š RAPPORT INTELLIGENT AVANCÃ‰
   intelligent-report-advanced:
     needs: [intelligent-pre-analysis, intelligent-build-test, intelligent-sync-advanced]
-    runs-on: ubuntu-latest
-    name: 📊 Rapport intelligent avancé
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    name: ðŸ“Š Rapport intelligent avancÃ©
     if: always()
     steps:
-      - name: 📊 Génération du rapport avancé
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“Š GÃ©nÃ©ration du rapport avancÃ©
         run: |
-          echo "📊 Génération du rapport intelligent avancé..."
+          echo "ðŸ“Š GÃ©nÃ©ration du rapport intelligent avancÃ©..."
           cat << EOF > intelligent-report-advanced.md
-          # 📊 Rapport Intelligent Avancé - Tuya Zigbee
+          # ðŸ“Š Rapport Intelligent AvancÃ© - Tuya Zigbee
           
-          ## 🎯 Métriques Avancées
-          - **Santé Projet**: ${{ needs.intelligent-pre-analysis.outputs.project-health }}/100
+          ## ðŸŽ¯ MÃ©triques AvancÃ©es
+          - **SantÃ© Projet**: ${{ needs.intelligent-pre-analysis.outputs.project-health }}/100
           - **Status Drivers**: ${{ needs.intelligent-pre-analysis.outputs.drivers-status }}
           - **SDK Version**: ${{ needs.intelligent-pre-analysis.outputs.sdk-version }}
-          - **Niveau Sécurité**: ${{ needs.intelligent-pre-analysis.outputs.security-level }}
+          - **Niveau SÃ©curitÃ©**: ${{ needs.intelligent-pre-analysis.outputs.security-level }}
           
-          ## ✅ Statut Avancé
+          ## âœ… Statut AvancÃ©
           - **Build**: ${{ needs.intelligent-build-test.result }}
           - **Sync**: ${{ needs.intelligent-sync-advanced.result }}
           
-          ## 🚀 YOLO Mode Avancé
+          ## ðŸš€ YOLO Mode AvancÃ©
           - **Workflow**: Enhanced Auto-Update
-          - **Intelligence**: Hybride Avancée
-          - **Automatisation**: Complète Intelligente
+          - **Intelligence**: Hybride AvancÃ©e
+          - **Automatisation**: ComplÃ¨te Intelligente
           - **Mode**: ${{ env.INTELLIGENT_MODE }}
           
-          ## 🔄 Prochaines Actions
+          ## ðŸ”„ Prochaines Actions
           - **Monitoring**: Continu
           - **Backup**: Automatique
-          - **Sécurité**: Renforcée
-          - **Performance**: Optimisée
+          - **SÃ©curitÃ©**: RenforcÃ©e
+          - **Performance**: OptimisÃ©e
           
           EOF
-          echo "✅ Rapport avancé généré"
+          echo "âœ… Rapport avancÃ© gÃ©nÃ©rÃ©"
 
-      - name: 📤 Upload rapport avancé
+      - name: ðŸ“¤ Upload rapport avancÃ©
         uses: actions/upload-artifact@v4
         with:
           name: intelligent-report-advanced
           path: intelligent-report-advanced.md
 
-  # 🔄 CRÉATION PR INTELLIGENTE
-  intelligent-pr-creation:
+  # ðŸ”„ CRÃ‰ATION PR INTELLIGENTE
+  intelligent-pr-creati
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on:
     needs: intelligent-sync-advanced
-    runs-on: ubuntu-latest
-    name: 🔄 Création PR intelligente
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    name: ðŸ”„ CrÃ©ation PR intelligente
     if: github.ref == 'refs/heads/master'
     steps:
-      - name: 📥 Checkout repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout repository
         uses: actions/checkout@v3
 
-      - name: 🔄 Création PR intelligente
+      - name: ðŸ”„ CrÃ©ation PR intelligente
         uses: peter-evans/create-pull-request@v5
         with:
           title: |
-            🚀 YOLO: Mise à jour intelligente automatique
+            ðŸš€ YOLO: Mise Ã  jour intelligente automatique
             
-            📊 Santé: ${{ needs.intelligent-pre-analysis.outputs.project-health }}/100
-            🔧 Drivers: ${{ needs.intelligent-pre-analysis.outputs.drivers-status }}
-            🛡️ Sécurité: ${{ needs.intelligent-pre-analysis.outputs.security-level }}
+            ðŸ“Š SantÃ©: ${{ needs.intelligent-pre-analysis.outputs.project-health }}/100
+            ðŸ”§ Drivers: ${{ needs.intelligent-pre-analysis.outputs.drivers-status }}
+            ðŸ›¡ï¸ SÃ©curitÃ©: ${{ needs.intelligent-pre-analysis.outputs.security-level }}
           branch: yolo/intelligent-auto-update
           commit-message: |
-            🚀 YOLO: Mise à jour intelligente
+            ðŸš€ YOLO: Mise Ã  jour intelligente
             
             - Synchronisation drivers
-            - Génération icônes
+            - GÃ©nÃ©ration icÃ´nes
             - Validation SDK
-            - Sécurité renforcée
+            - SÃ©curitÃ© renforcÃ©e
           labels: |
             automation
             yolo
             intelligent
             enhanced
           body: |
-            ## 🚀 YOLO Mise à jour Intelligente
+            ## ðŸš€ YOLO Mise Ã  jour Intelligente
             
-            ### 📊 Métriques
-            - **Santé Projet**: ${{ needs.intelligent-pre-analysis.outputs.project-health }}/100
+            ### ðŸ“Š MÃ©triques
+            - **SantÃ© Projet**: ${{ needs.intelligent-pre-analysis.outputs.project-health }}/100
             - **Status Drivers**: ${{ needs.intelligent-pre-analysis.outputs.drivers-status }}
             - **SDK Version**: ${{ needs.intelligent-pre-analysis.outputs.sdk-version }}
-            - **Sécurité**: ${{ needs.intelligent-pre-analysis.outputs.security-level }}
+            - **SÃ©curitÃ©**: ${{ needs.intelligent-pre-analysis.outputs.security-level }}
             
-            ### ✅ Améliorations
-            - 🔄 Synchronisation intelligente
-            - 🎨 Génération d'icônes avancée
-            - 🛡️ Sécurité renforcée
-            - 📊 Monitoring continu
+            ### âœ… AmÃ©liorations
+            - ðŸ”„ Synchronisation intelligente
+            - ðŸŽ¨ GÃ©nÃ©ration d'icÃ´nes avancÃ©e
+            - ðŸ›¡ï¸ SÃ©curitÃ© renforcÃ©e
+            - ðŸ“Š Monitoring continu
             
-            ### 🚀 Mode YOLO
+            ### ðŸš€ Mode YOLO
             - **Intelligence**: Hybride
-            - **Automatisation**: Complète
-            - **Performance**: Optimisée
+            - **Automatisation**: ComplÃ¨te
+            - **Performance**: OptimisÃ©e
 
-﻿name: Full Automation Pipeline
+ï»¿name: Full Automation Pipeline
+
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   push:
     branches: [ master ]
   schedule:
-    - cron: '0 2 * * *'
+    - cr
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '0 2 * * *'
   workflow_dispatch:
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
     steps:
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
-        with: { node-version: 18 }
+        with: { node-versi
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: 18 }
       - run: npm install
       - run: npm run update-manifest
       - name: Validate Homey App (optional)
@@ -307,11 +544,40 @@ jobs:
 
   fetch-external-devices:
     needs: build-and-test
-    runs-on: ubuntu-latest
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
     steps:
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
-        with: { python-version: 3.10 }
+        with: { python-versi
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: 3.10 }
       - name: Fetch device IDs
         run: python3 tools/fetch_hass_z2m_devices.py --out drivers/new_devices.json
       - name: Generate drivers
@@ -328,8 +594,28 @@ jobs:
 
   create-pull-request:
     needs: fetch-external-devices
-    runs-on: ubuntu-latest
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
     steps:
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - uses: actions/checkout@v3
       - name: Create PR
         uses: peter-evans/create-pull-request@v5
@@ -338,5 +624,6 @@ jobs:
           branch: auto/devices-update
           commit-message: "chore: devices imported and docs rebuilt"
           labels: automation, dependencies
+
 
 

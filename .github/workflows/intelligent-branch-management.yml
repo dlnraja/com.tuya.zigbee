@@ -1,13 +1,49 @@
-name: 🧠 Gestion Intelligente des Branches
+﻿name: ðŸ§  Gestion Intelligente des Branches
+
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   schedule:
-    # Merge mensuel beta → master
-    - cron: '0 0 1 * *'
+    # Merge mensuel beta â†’ master
+    - cr
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '0 0 1 * *'
   workflow_dispatch:
     inputs:
-      action:
-        description: 'Action à effectuer'
+      acti
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on:
+        descripti
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: 'Action Ã  effectuer'
         required: true
         default: 'merge-beta'
         type: choice
@@ -19,121 +55,147 @@ on:
 
 jobs:
   intelligent-branch-management:
-    runs-on: ubuntu-latest
-    name: 🧠 Gestion Intelligente des Branches
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    name: ðŸ§  Gestion Intelligente des Branches
     
+    
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_VERSION: '18'
+        PYTHON_VERSION: '3.11'
+
     steps:
-      - name: 📥 Checkout Repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout Repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: 🔧 Setup Git
+      - name: ðŸ”§ Setup Git
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
       
-      - name: 📊 Analyse des Branches
+      - name: ðŸ“Š Analyse des Branches
         id: analyze-branches
         run: |
-          echo "🔍 Analyse des branches disponibles..."
+          echo "ðŸ” Analyse des branches disponibles..."
           
           # Lister toutes les branches
           git branch -r | grep -v "HEAD" > branches.txt
           
           # Compter les branches
           BRANCH_COUNT=$(wc -l < branches.txt)
-          echo "📈 Nombre total de branches: $BRANCH_COUNT"
+          echo "ðŸ“ˆ Nombre total de branches: $BRANCH_COUNT"
           
           # Identifier les branches inutiles
           USELESS_BRANCHES=$(grep -E "(feature|fix|hotfix|work|jules|conflict|update)" branches.txt | wc -l)
-          echo "🗑️ Branches potentiellement inutiles: $USELESS_BRANCHES"
+          echo "ðŸ—‘ï¸ Branches potentiellement inutiles: $USELESS_BRANCHES"
           
-          # Sauvegarder les résultats
+          # Sauvegarder les rÃ©sultats
           echo "branch_count=$BRANCH_COUNT" >> $GITHUB_OUTPUT
           echo "useless_branches=$USELESS_BRANCHES" >> $GITHUB_OUTPUT
       
-      - name: 🔄 Merge Beta vers Master
+      - name: ðŸ”„ Merge Beta vers Master
         if: github.event.inputs.action == 'merge-beta' || github.event_name == 'schedule'
         run: |
-          echo "🔄 Début du merge beta → master"
+          echo "ðŸ”„ DÃ©but du merge beta â†’ master"
           
-          # Vérifier si la branche beta existe
+          # VÃ©rifier si la branche beta existe
           if git show-ref --verify --quiet refs/remotes/origin/beta; then
-            echo "✅ Branche beta trouvée"
+            echo "âœ… Branche beta trouvÃ©e"
             
             # Checkout master
             git checkout master
             git pull origin master
             
             # Merge beta dans master
-            git merge origin/beta --no-ff -m "🤖 Merge mensuel automatique: beta → master"
+            git merge origin/beta --no-ff -m "ðŸ¤– Merge mensuel automatique: beta â†’ master"
             
             # Push vers master
             git push origin master
             
-            echo "✅ Merge beta → master terminé avec succès"
+            echo "âœ… Merge beta â†’ master terminÃ© avec succÃ¨s"
           else
-            echo "⚠️ Branche beta non trouvée, skip du merge"
+            echo "âš ï¸ Branche beta non trouvÃ©e, skip du merge"
           fi
       
-      - name: 🧹 Nettoyage des Branches
+      - name: ðŸ§¹ Nettoyage des Branches
         if: github.event.inputs.action == 'cleanup-branches'
         run: |
-          echo "🧹 Début du nettoyage des branches"
+          echo "ðŸ§¹ DÃ©but du nettoyage des branches"
           
-          # Identifier les branches à supprimer
+          # Identifier les branches Ã  supprimer
           BRANCHES_TO_DELETE=$(git branch -r | grep -E "(feature|fix|hotfix|work|jules|conflict|update)" | grep -v "master\|main\|beta")
           
           if [ ! -z "$BRANCHES_TO_DELETE" ]; then
-            echo "🗑️ Branches à supprimer:"
+            echo "ðŸ—‘ï¸ Branches Ã  supprimer:"
             echo "$BRANCHES_TO_DELETE"
             
             # Supprimer les branches (sauf master, main, beta)
             for branch in $BRANCHES_TO_DELETE; do
               BRANCH_NAME=$(echo $branch | sed 's/origin\///')
-              echo "🗑️ Suppression de $BRANCH_NAME"
-              git push origin --delete $BRANCH_NAME || echo "⚠️ Impossible de supprimer $BRANCH_NAME"
+              echo "ðŸ—‘ï¸ Suppression de $BRANCH_NAME"
+              git push origin --delete $BRANCH_NAME || echo "âš ï¸ Impossible de supprimer $BRANCH_NAME"
             done
             
-            echo "✅ Nettoyage des branches terminé"
+            echo "âœ… Nettoyage des branches terminÃ©"
           else
-            echo "✅ Aucune branche à supprimer"
+            echo "âœ… Aucune branche Ã  supprimer"
           fi
       
-      - name: 🔄 Synchronisation Master-Main
+      - name: ðŸ”„ Synchronisation Master-Main
         if: github.event.inputs.action == 'sync-master-main'
         run: |
-          echo "🔄 Synchronisation master ↔ main"
+          echo "ðŸ”„ Synchronisation master â†” main"
           
-          # Vérifier si main existe
+          # VÃ©rifier si main existe
           if git show-ref --verify --quiet refs/remotes/origin/main; then
-            echo "✅ Branche main trouvée"
+            echo "âœ… Branche main trouvÃ©e"
             
-            # Sync master → main
+            # Sync master â†’ main
             git checkout main
             git pull origin main
-            git merge origin/master --no-ff -m "🤖 Sync automatique: master → main"
+            git merge origin/master --no-ff -m "ðŸ¤– Sync automatique: master â†’ main"
             git push origin main
             
-            # Sync main → master
+            # Sync main â†’ master
             git checkout master
             git pull origin master
-            git merge origin/main --no-ff -m "🤖 Sync automatique: main → master"
+            git merge origin/main --no-ff -m "ðŸ¤– Sync automatique: main â†’ master"
             git push origin master
             
-            echo "✅ Synchronisation master ↔ main terminée"
+            echo "âœ… Synchronisation master â†” main terminÃ©e"
           else
-            echo "⚠️ Branche main non trouvée, création..."
+            echo "âš ï¸ Branche main non trouvÃ©e, crÃ©ation..."
             git checkout -b main
             git push origin main
           fi
       
-      - name: 📊 Mise à jour des KPIs
+      - name: ðŸ“Š Mise Ã  jour des KPIs
         if: github.event.inputs.action == 'update-kpis'
         run: |
-          echo "📊 Mise à jour des KPIs"
+          echo "ðŸ“Š Mise Ã  jour des KPIs"
           
           # Compter les drivers
           DRIVER_COUNT=$(grep -c '"id":' app.json || echo "0")
@@ -144,112 +206,166 @@ jobs:
           # Compter les rapports
           REPORT_COUNT=$(find rapports -name "*.md" | wc -l)
           
-          # Générer le rapport KPI
+          # GÃ©nÃ©rer le rapport KPI
           cat > KPI-REPORT-$(date +%Y%m%d_%H%M%S).md << EOF
-          # 📊 Rapport KPI - $(date)
+          # ðŸ“Š Rapport KPI - $(date)
           
-          ## 📈 Métriques du Projet
+          ## ðŸ“ˆ MÃ©triques du Projet
           
-          - **Drivers supportés**: $DRIVER_COUNT
+          - **Drivers supportÃ©s**: $DRIVER_COUNT
           - **Workflows actifs**: $WORKFLOW_COUNT
-          - **Rapports générés**: $REPORT_COUNT
+          - **Rapports gÃ©nÃ©rÃ©s**: $REPORT_COUNT
           - **Branches totales**: ${{ steps.analyze-branches.outputs.branch_count }}
           - **Branches inutiles**: ${{ steps.analyze-branches.outputs.useless_branches }}
           
-          ## 🎯 Objectifs
+          ## ðŸŽ¯ Objectifs
           
-          - ✅ **Automatisation**: 100%
-          - ✅ **Performance**: 99.9%
-          - ✅ **Stabilité**: Optimale
-          - ✅ **Documentation**: Complète
+          - âœ… **Automatisation**: 100%
+          - âœ… **Performance**: 99.9%
+          - âœ… **StabilitÃ©**: Optimale
+          - âœ… **Documentation**: ComplÃ¨te
           
-          ## 🚀 Prochaines Actions
+          ## ðŸš€ Prochaines Actions
           
-          1. **Merge mensuel** beta → master
+          1. **Merge mensuel** beta â†’ master
           2. **Nettoyage** des branches inutiles
-          3. **Mise à jour** de la documentation
+          3. **Mise Ã  jour** de la documentation
           4. **Optimisation** continue
           EOF
           
-          echo "✅ Rapport KPI généré"
+          echo "âœ… Rapport KPI gÃ©nÃ©rÃ©"
       
-      - name: 📝 Génération du Rapport Final
+      - name: ðŸ“ GÃ©nÃ©ration du Rapport Final
         run: |
-          echo "📝 Génération du rapport final..."
+          echo "ðŸ“ GÃ©nÃ©ration du rapport final..."
           
           cat > RAPPORT-GESTION-BRANCHES-$(date +%Y%m%d_%H%M%S).md << EOF
-          # 🧠 Rapport de Gestion Intelligente des Branches
+          # ðŸ§  Rapport de Gestion Intelligente des Branches
           
           **Date**: $(date)
           **Action**: ${{ github.event.inputs.action || 'schedule' }}
           
-          ## 📊 Résultats
+          ## ðŸ“Š RÃ©sultats
           
-          - **Branches analysées**: ${{ steps.analyze-branches.outputs.branch_count }}
-          - **Branches inutiles identifiées**: ${{ steps.analyze-branches.outputs.useless_branches }}
-          - **Status**: ✅ Succès
+          - **Branches analysÃ©es**: ${{ steps.analyze-branches.outputs.branch_count }}
+          - **Branches inutiles identifiÃ©es**: ${{ steps.analyze-branches.outputs.useless_branches }}
+          - **Status**: âœ… SuccÃ¨s
           
-          ## 🔄 Actions Effectuées
+          ## ðŸ”„ Actions EffectuÃ©es
           
           ${{ github.event.inputs.action || 'Merge mensuel automatique' }}
           
-          ## 📈 Métriques
+          ## ðŸ“ˆ MÃ©triques
           
           - **Performance**: 99.9%
           - **Automatisation**: 100%
-          - **Stabilité**: Optimale
+          - **StabilitÃ©**: Optimale
           
-          ## 🎯 Prochaines Étapes
+          ## ðŸŽ¯ Prochaines Ã‰tapes
           
           1. **Monitoring continu** des branches
           2. **Optimisation** des merges
           3. **Nettoyage** automatique
-          4. **Mise à jour** des KPIs
+          4. **Mise Ã  jour** des KPIs
           
           ---
           
-          *Généré automatiquement par GitHub Actions*
-          *Mode YOLO Intelligent activé*
+          *GÃ©nÃ©rÃ© automatiquement par GitHub Actions*
+          *Mode YOLO Intelligent activÃ©*
           EOF
           
-          echo "✅ Rapport final généré"
+          echo "âœ… Rapport final gÃ©nÃ©rÃ©"
       
-      - name: 🚀 Push des Changements
+      - name: ðŸš€ Push des Changements
         run: |
-          echo "🚀 Push des changements..."
+          echo "ðŸš€ Push des changements..."
           
           # Ajouter tous les fichiers
           git add .
           
           # Commit avec message intelligent
-          git commit -m "🤖 Gestion intelligente des branches - $(date +%Y%m%d_%H%M%S)
+          git commit -m "ðŸ¤– Gestion intelligente des branches - $(date +%Y%m%d_%H%M%S)
           
-          📊 Actions effectuées:
+          ðŸ“Š Actions effectuÃ©es:
           - Analyse des branches: ${{ steps.analyze-branches.outputs.branch_count }} branches
           - Branches inutiles: ${{ steps.analyze-branches.outputs.useless_branches }}
-          - Action: ${{ github.event.inputs.action || 'merge-beta' }}
+          - Acti
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ${{ github.event.inputs.action || 'merge-beta' }}
           
-          🎯 Mode YOLO Intelligent activé
-          📈 Performance: 99.9%
-          🚀 Automatisation: 100%"
+          ðŸŽ¯ Mode YOLO Intelligent activÃ©
+          ðŸ“ˆ Performance: 99.9%
+          ðŸš€ Automatisati
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: 100%"
           
           # Push
           git push origin master
           
-          echo "✅ Changements poussés avec succès"
+          echo "âœ… Changements poussÃ©s avec succÃ¨s"
 
-  notify-completion:
-    runs-on: ubuntu-latest
+  notify-completi
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on:
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
     needs: intelligent-branch-management
-    name: 📢 Notification de Completion
+    name: ðŸ“¢ Notification de Completion
     
+    
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_VERSION: '18'
+        PYTHON_VERSION: '3.11'
+
     steps:
-      - name: 📢 Notification
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¢ Notification
         run: |
-          echo "🎉 Gestion intelligente des branches terminée avec succès!"
-          echo "📊 Résultats:"
-          echo "  - Branches analysées: ${{ needs.intelligent-branch-management.outputs.branch_count || 'N/A' }}"
-          echo "  - Action effectuée: ${{ github.event.inputs.action || 'merge-beta' }}"
-          echo "  - Status: ✅ Succès"
+          echo "ðŸŽ‰ Gestion intelligente des branches terminÃ©e avec succÃ¨s!"
+          echo "ðŸ“Š RÃ©sultats:"
+          echo "  - Branches analysÃ©es: ${{ needs.intelligent-branch-management.outputs.branch_count || 'N/A' }}"
+          echo "  - Action effectuÃ©e: ${{ github.event.inputs.action || 'merge-beta' }}"
+          echo "  - Status: âœ… SuccÃ¨s"
           echo ""
-          echo "🚀 Mode YOLO Intelligent - Optimisation continue" 
+          echo "ðŸš€ Mode YOLO Intelligent - Optimisation continue" 
+
