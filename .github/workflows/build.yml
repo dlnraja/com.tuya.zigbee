@@ -66,10 +66,10 @@ jobs:
     name: 🏗️ Build intelligent avancé
     steps:
       - name: 📥 Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: 🔧 Setup Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
@@ -133,10 +133,10 @@ jobs:
     if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/beta'
     steps:
       - name: 📥 Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: 🔧 Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
@@ -176,4 +176,5 @@ jobs:
           echo "✅ Build validé"
           echo "✅ Déploiement terminé"
           echo "🚀 Projet opérationnel!"
+
 
