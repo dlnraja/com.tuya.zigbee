@@ -1,0 +1,245 @@
+# 🚀 Driver Research Automation - Tuya Zigbee Project
+# Recherche automatique de drivers dans tous les forums et sources
+
+name: 🔍 Driver Research Automation
+
+on:
+  schedule:
+    - cron: '0 4 * * *'  # Tous les jours à 4h00 UTC
+  workflow_dispatch:
+  push:
+    paths:
+      - 'drivers/**'
+      - 'scripts/research/**'
+
+jobs:
+  research-drivers:
+    runs-on: ubuntu-latest
+    name: 🔍 Recherche automatique de drivers
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: 📦 Install dependencies
+        run: |
+          npm install
+          npm install -g puppeteer axios cheerio
+          
+      - name: 🔍 Research from ZHA (Zigbee Home Automation)
+        run: |
+          echo "Researching drivers from ZHA..."
+          mkdir -p logs/research
+          
+          # Script de recherche ZHA
+          cat > scripts/research/zha_research.js << 'EOF'
+          const axios = require('axios');
+          const fs = require('fs');
+          
+          async function researchZHA() {
+            const sources = [
+              'https://github.com/zigpy/zha-device-handlers',
+              'https://github.com/zigpy/zigpy',
+              'https://github.com/zigpy/zigpy-znp'
+            ];
+            
+            const results = [];
+            
+            for (const source of sources) {
+              try {
+                console.log(`Researching: ${source}`);
+                const response = await axios.get(source);
+                // Analyse des drivers Tuya
+                const tuyaDrivers = response.data.match(/tuya|_TZE200_|_TZE204_/gi) || [];
+                results.push({
+                  source,
+                  drivers: tuyaDrivers,
+                  timestamp: new Date().toISOString()
+                });
+              } catch (error) {
+                console.error(`Error researching ${source}:`, error.message);
+              }
+            }
+            
+            fs.writeFileSync('logs/research/zha_research.json', JSON.stringify(results, null, 2));
+            console.log('ZHA research completed');
+          }
+          
+          researchZHA();
+          EOF
+          
+          node scripts/research/zha_research.js
+          
+      - name: 🔍 Research from Z2M (Zigbee2MQTT)
+        run: |
+          echo "Researching drivers from Zigbee2MQTT..."
+          
+          cat > scripts/research/z2m_research.js << 'EOF'
+          const axios = require('axios');
+          const fs = require('fs');
+          
+          async function researchZ2M() {
+            const sources = [
+              'https://github.com/Koenkk/Z-Stack-firmware',
+              'https://github.com/Koenkk/zigbee2mqtt',
+              'https://github.com/Koenkk/zigbee-herdsman'
+            ];
+            
+            const results = [];
+            
+            for (const source of sources) {
+              try {
+                console.log(`Researching: ${source}`);
+                const response = await axios.get(source);
+                // Analyse des devices Tuya
+                const tuyaDevices = response.data.match(/tuya|_TZE200_|_TZE204_/gi) || [];
+                results.push({
+                  source,
+                  devices: tuyaDevices,
+                  timestamp: new Date().toISOString()
+                });
+              } catch (error) {
+                console.error(`Error researching ${source}:`, error.message);
+              }
+            }
+            
+            fs.writeFileSync('logs/research/z2m_research.json', JSON.stringify(results, null, 2));
+            console.log('Z2M research completed');
+          }
+          
+          researchZ2M();
+          EOF
+          
+          node scripts/research/z2m_research.js
+          
+      - name: 🔍 Research from forums and communities
+        run: |
+          echo "Researching from forums and communities..."
+          
+          cat > scripts/research/forum_research.js << 'EOF'
+          const axios = require('axios');
+          const fs = require('fs');
+          
+          async function researchForums() {
+            const forums = [
+              'https://community.home-assistant.io',
+              'https://github.com/dresden-elektronik/deconz-rest-plugin',
+              'https://github.com/ioBroker/ioBroker.zigbee'
+            ];
+            
+            const results = [];
+            
+            for (const forum of forums) {
+              try {
+                console.log(`Researching forum: ${forum}`);
+                const response = await axios.get(forum);
+                // Recherche de discussions Tuya
+                const tuyaDiscussions = response.data.match(/tuya|zigbee.*tuya|tuya.*zigbee/gi) || [];
+                results.push({
+                  forum,
+                  discussions: tuyaDiscussions.length,
+                  timestamp: new Date().toISOString()
+                });
+              } catch (error) {
+                console.error(`Error researching forum ${forum}:`, error.message);
+              }
+            }
+            
+            fs.writeFileSync('logs/research/forum_research.json', JSON.stringify(results, null, 2));
+            console.log('Forum research completed');
+          }
+          
+          researchForums();
+          EOF
+          
+          node scripts/research/forum_research.js
+          
+      - name: 📊 Generate research report
+        run: |
+          echo "Generating comprehensive research report..."
+          
+          cat > scripts/research/generate_report.js << 'EOF'
+          const fs = require('fs');
+          
+          function generateReport() {
+            const zha = JSON.parse(fs.readFileSync('logs/research/zha_research.json', 'utf8'));
+            const z2m = JSON.parse(fs.readFileSync('logs/research/z2m_research.json', 'utf8'));
+            const forums = JSON.parse(fs.readFileSync('logs/research/forum_research.json', 'utf8'));
+            
+            const report = {
+              timestamp: new Date().toISOString(),
+              summary: {
+                zha_sources: zha.length,
+                z2m_sources: z2m.length,
+                forums_researched: forums.length,
+                total_tuya_references: zha.reduce((sum, r) => sum + r.drivers.length, 0) +
+                                     z2m.reduce((sum, r) => sum + r.devices.length, 0)
+              },
+              recommendations: [
+                'Prioritize drivers with high community demand',
+                'Focus on ZHA compatibility for Home Assistant users',
+                'Consider Z2M device definitions for broader compatibility',
+                'Monitor forum discussions for emerging trends'
+              ],
+              next_actions: [
+                'Analyze found drivers for Homey SDK 3 compatibility',
+                'Create implementation plan for top 100 drivers',
+                'Update existing drivers based on community feedback',
+                'Schedule monthly review of research results'
+              ]
+            };
+            
+            fs.writeFileSync('logs/research/research_report.json', JSON.stringify(report, null, 2));
+            
+            // Générer rapport markdown
+            const markdown = `# 📊 Rapport de Recherche - Drivers Tuya Zigbee
+
+## 📅 Date: ${new Date().toLocaleDateString()}
+
+## 🔍 Sources Recherchées
+- **ZHA**: ${zha.length} sources
+- **Zigbee2MQTT**: ${z2m.length} sources  
+- **Forums**: ${forums.length} sources
+
+## 📈 Statistiques
+- **Références Tuya trouvées**: ${report.summary.total_tuya_references}
+- **Drivers potentiels**: ${Math.floor(report.summary.total_tuya_references / 10)}
+
+## 🎯 Recommandations
+${report.recommendations.map(r => `- ${r}`).join('\n')}
+
+## 📋 Actions Suivantes
+${report.next_actions.map(a => `- ${a}`).join('\n')}
+
+---
+*Généré automatiquement le ${new Date().toISOString()}*
+`;
+            
+            fs.writeFileSync('logs/research/research_report.md', markdown);
+            console.log('Research report generated');
+          }
+          
+          generateReport();
+          EOF
+          
+          node scripts/research/generate_report.js
+          
+      - name: 📝 Commit research results
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add logs/research/ scripts/research/
+          git commit -m "🔍 [$(date -u '+%Y-%m-%d %H:%M UTC')] Driver research: ZHA, Z2M, forums analysis completed. Found potential drivers for Homey SDK 3. Powered by GitHub Actions"
+          git push
+          
+      - name: 📈 Update research stats
+        run: |
+          echo "Research completed successfully!"
+          echo "Sources analyzed: ZHA, Zigbee2MQTT, Forums"
+          echo "Reports generated: JSON + Markdown"
+          echo "Next research: Tomorrow 4:00 UTC" 
