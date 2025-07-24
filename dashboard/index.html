@@ -35,6 +35,9 @@
             padding: 30px;
             margin-bottom: 30px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .header h1 {
@@ -99,8 +102,9 @@
 
         .main-content {
             display: grid;
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 30px;
+            margin-bottom: 30px;
         }
 
         .section {
@@ -118,56 +122,82 @@
             margin-bottom: 20px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #48bb78, #38a169);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+
+        .progress-fill.warning {
+            background: linear-gradient(90deg, #ed8936, #dd6b20);
+        }
+
+        .progress-fill.danger {
+            background: linear-gradient(90deg, #f56565, #e53e3e);
         }
 
         .device-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+            border-radius: 10px;
+            background: #f7fafc;
         }
 
-        .device-card {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+        .device-item {
+            padding: 15px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s ease;
         }
 
-        .device-card:hover {
-            transform: translateY(-3px);
+        .device-item:hover {
+            background: #edf2f7;
         }
 
-        .device-card h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
+        .device-item:last-child {
+            border-bottom: none;
+        }
+
+        .device-name {
+            font-weight: 500;
             color: #2d3748;
-            margin-bottom: 10px;
         }
 
         .device-status {
-            display: inline-block;
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 500;
-            margin-bottom: 10px;
         }
 
-        .status-operational {
+        .status-success {
             background: #c6f6d5;
             color: #22543d;
         }
 
-        .status-beta {
-            background: #fed7d7;
-            color: #742a2a;
-        }
-
-        .status-development {
+        .status-warning {
             background: #fef5e7;
             color: #744210;
+        }
+
+        .status-danger {
+            background: #fed7d7;
+            color: #742a2a;
         }
 
         .beta-section {
@@ -221,10 +251,33 @@
         }
 
         .footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
             text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer p {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        .refresh-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            margin-left: 15px;
+        }
+
+        .refresh-btn:hover {
+            transform: scale(1.05);
         }
 
         @media (max-width: 768px) {
@@ -233,11 +286,7 @@
             }
             
             .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .device-list {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             }
         }
     </style>
@@ -246,184 +295,162 @@
     <div class="container">
         <div class="header">
             <h1>
-                <i class="fas fa-home"></i>
-                Tuya Zigbee Dashboard Intelligent
+                <i class="fas fa-rocket"></i>
+                Tuya Zigbee - Dashboard Intelligent
             </h1>
-            <p>Monitoring en temps réel de l'écosystème Tuya Zigbee sur Homey</p>
+            <p>Suivi en temps réel de l'optimisation et de l'enrichissement des drivers</p>
+            <button class="refresh-btn" onclick="refreshData()">
+                <i class="fas fa-sync-alt"></i> Actualiser
+            </button>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>
+                    <i class="fas fa-microchip"></i>
+                    Drivers Supportés
+                </h3>
+                <div class="stat-value">124+</div>
+                <div class="stat-change">+5 enrichis</div>
+            </div>
             
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <h3><i class="fas fa-microchip"></i> Drivers Totaux</h3>
-                    <div class="stat-value">200+</div>
-                    <div class="stat-change">+15 ce mois</div>
-                </div>
-                
-                <div class="stat-card">
-                    <h3><i class="fas fa-check-circle"></i> Opérationnels</h3>
-                    <div class="stat-value">185</div>
-                    <div class="stat-change">92.5%</div>
-                </div>
-                
-                <div class="stat-card">
-                    <h3><i class="fas fa-flask"></i> En Beta</h3>
-                    <div class="stat-value">15</div>
-                    <div class="stat-change">7.5%</div>
-                </div>
-                
-                <div class="stat-card">
-                    <h3><i class="fas fa-language"></i> Langues</h3>
-                    <div class="stat-value">14</div>
-                    <div class="stat-change">100%</div>
-                </div>
+            <div class="stat-card">
+                <h3>
+                    <i class="fas fa-check-circle"></i>
+                    Drivers Enrichis
+                </h3>
+                <div class="stat-value">5</div>
+                <div class="stat-change">curtain_module, rain_sensor, multi_sensor, smart_plug, remote_control</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>
+                    <i class="fas fa-clock"></i>
+                    En Cours
+                </h3>
+                <div class="stat-value">15</div>
+                <div class="stat-change">optimisation et test</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>
+                    <i class="fas fa-tasks"></i>
+                    À Traiter
+                </h3>
+                <div class="stat-value">104</div>
+                <div class="stat-change">planifiés pour enrichissement</div>
             </div>
         </div>
 
         <div class="main-content">
             <div class="section">
-                <h2><i class="fas fa-list"></i> Appareils Supportés</h2>
-                <div class="device-list">
-                    <div class="device-card">
-                        <div class="device-status status-operational">Opérationnel</div>
-                        <h3>Interrupteur 1 Gang</h3>
-                        <p>Contrôle ON/OFF + Gestion batterie intelligente</p>
+                <h2>
+                    <i class="fas fa-chart-line"></i>
+                    Progression Globale
+                </h2>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 4%"></div>
+                </div>
+                <p><strong>4%</strong> des drivers enrichis (5/124)</p>
+                <p><strong>Date estimée de finalisation :</strong> 28/07/2025</p>
+                
+                <h3 style="margin-top: 25px; color: #4a5568;">Phases de développement</h3>
+                <div style="margin-top: 15px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <span>Phase 1 : Enrichissement en cours</span>
+                        <span>15 drivers</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill warning" style="width: 12%"></div>
                     </div>
                     
-                    <div class="device-card">
-                        <div class="device-status status-operational">Opérationnel</div>
-                        <h3>Interrupteur 2 Gangs</h3>
-                        <p>Contrôle 2 canaux + Détection clics avancée</p>
+                    <div style="display: flex; justify-content: space-between; margin: 15px 0 10px 0;">
+                        <span>Phase 2 : Traitement restant</span>
+                        <span>104 drivers</span>
                     </div>
-                    
-                    <div class="device-card">
-                        <div class="device-status status-operational">Opérationnel</div>
-                        <h3>Interrupteur 3 Gangs</h3>
-                        <p>Contrôle 3 canaux + Manufacturer IDs étendus</p>
-                    </div>
-                    
-                    <div class="device-card">
-                        <div class="device-status status-operational">Opérationnel</div>
-                        <h3>Interrupteur 4 Gangs</h3>
-                        <p>Contrôle 4 canaux + Flows automatiques</p>
-                    </div>
-                    
-                    <div class="device-card">
-                        <div class="device-status status-operational">Opérationnel</div>
-                        <h3>Interrupteur 5 Gangs</h3>
-                        <p>Contrôle 5 canaux + Monitoring temps réel</p>
-                    </div>
-                    
-                    <div class="device-card">
-                        <div class="device-status status-operational">Opérationnel</div>
-                        <h3>Interrupteur 6 Gangs</h3>
-                        <p>Contrôle 6 canaux + Optimisation continue</p>
-                    </div>
-                    
-                    <div class="device-card">
-                        <div class="device-status status-operational">Opérationnel</div>
-                        <h3>Prise Intelligente</h3>
-                        <p>Prise simple + Gestion intelligente</p>
-                    </div>
-                    
-                    <div class="device-card">
-                        <div class="device-status status-operational">Opérationnel</div>
-                        <h3>Double Prise</h3>
-                        <p>Double prise + Détection avancée</p>
-                    </div>
-                    
-                    <div class="device-card">
-                        <div class="device-status status-operational">Opérationnel</div>
-                        <h3>Multiprise</h3>
-                        <p>Multiprise + Monitoring 24/7</p>
-                    </div>
-                    
-                    <div class="device-card">
-                        <div class="device-status status-operational">Opérationnel</div>
-                        <h3>Capteur Température</h3>
-                        <p>Mesure précise + Calibration automatique</p>
-                    </div>
-                    
-                    <div class="device-card">
-                        <div class="device-status status-operational">Opérationnel</div>
-                        <h3>Capteur Humidité</h3>
-                        <p>Mesure humidité + Alertes intelligentes</p>
-                    </div>
-                    
-                    <div class="device-card">
-                        <div class="device-status status-operational">Opérationnel</div>
-                        <h3>Ampoule RGB</h3>
-                        <p>Contrôle couleur + Scènes automatiques</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill danger" style="width: 84%"></div>
                     </div>
                 </div>
             </div>
 
-            <div class="section beta-section">
-                <h2><i class="fas fa-flask"></i> Section Beta</h2>
-                
-                <div class="beta-kpi">
-                    <h4>Drivers en Développement</h4>
-                    <div class="value">15</div>
-                </div>
-                
-                <div class="beta-kpi">
-                    <h4>Tests en Cours</h4>
-                    <div class="value">8</div>
-                </div>
-                
-                <div class="beta-kpi">
-                    <h4>Nouveaux Features</h4>
-                    <div class="value">12</div>
-                </div>
-                
-                <div class="beta-kpi">
-                    <h4>Prochaine Release</h4>
-                    <div class="value">Mai 2025</div>
-                </div>
-                
-                <div class="recent-activity">
-                    <h3 style="margin-bottom: 15px; color: white;">Activité Récente</h3>
-                    
-                    <div class="activity-item">
-                        <div class="activity-time">Il y a 2 heures</div>
-                        <div class="activity-text">Nouveau driver curtain_module ajouté</div>
+            <div class="section">
+                <h2>
+                    <i class="fas fa-list"></i>
+                    Drivers Récents
+                </h2>
+                <div class="device-list">
+                    <div class="device-item">
+                        <span class="device-name">curtain_module</span>
+                        <span class="device-status status-success">Enrichi</span>
                     </div>
-                    
-                    <div class="activity-item">
-                        <div class="activity-time">Il y a 4 heures</div>
-                        <div class="activity-text">Tests terminés pour rain_sensor</div>
+                    <div class="device-item">
+                        <span class="device-name">rain_sensor</span>
+                        <span class="device-status status-success">Enrichi</span>
                     </div>
-                    
-                    <div class="activity-item">
-                        <div class="activity-time">Il y a 6 heures</div>
-                        <div class="activity-text">Optimisation wall_remote_3_gang</div>
+                    <div class="device-item">
+                        <span class="device-name">multi_sensor</span>
+                        <span class="device-status status-success">Enrichi</span>
                     </div>
-                    
-                    <div class="activity-item">
-                        <div class="activity-time">Il y a 1 jour</div>
-                        <div class="activity-text">Merge automatique beta → master</div>
+                    <div class="device-item">
+                        <span class="device-name">smart_plug</span>
+                        <span class="device-status status-success">Enrichi</span>
                     </div>
-                    
-                    <div class="activity-item">
-                        <div class="activity-time">Il y a 2 jours</div>
-                        <div class="activity-text">Nouveaux capabilities ajoutés</div>
+                    <div class="device-item">
+                        <span class="device-name">remote_control</span>
+                        <span class="device-status status-success">Enrichi</span>
+                    </div>
+                    <div class="device-item">
+                        <span class="device-name">wall_switch_1_gang</span>
+                        <span class="device-status status-warning">En cours</span>
+                    </div>
+                    <div class="device-item">
+                        <span class="device-name">motion_sensor</span>
+                        <span class="device-status status-warning">En cours</span>
+                    </div>
+                    <div class="device-item">
+                        <span class="device-name">rgb_bulb_E27</span>
+                        <span class="device-status status-danger">À traiter</span>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="footer">
-            <p>🚀 Tuya Zigbee Dashboard - Version 3.0.0 | Mode YOLO Intelligent Activé</p>
-            <p>Dernière mise à jour: <span id="lastUpdate"></span></p>
+            <p>
+                <i class="fas fa-cog"></i>
+                Dernière mise à jour : <span id="lastUpdate">24/07/2025 21:40 UTC</span>
+                <br>
+                <i class="fas fa-robot"></i>
+                Powered by GPT-4, Cursor, PowerShell, GitHub Actions
+            </p>
         </div>
     </div>
 
     <script>
-        // Mise à jour automatique de la date
-        document.getElementById('lastUpdate').textContent = new Date().toLocaleString('fr-FR');
-        
-        // Actualisation automatique toutes les 30 secondes
-        setInterval(() => {
-            document.getElementById('lastUpdate').textContent = new Date().toLocaleString('fr-FR');
-        }, 30000);
+        function refreshData() {
+            // Simulation de rafraîchissement des données
+            document.getElementById('lastUpdate').textContent = new Date().toLocaleString('fr-FR', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                timeZone: 'UTC'
+            }) + ' UTC';
+            
+            // Animation de rafraîchissement
+            const refreshBtn = document.querySelector('.refresh-btn');
+            refreshBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Actualisation...';
+            
+            setTimeout(() => {
+                refreshBtn.innerHTML = '<i class="fas fa-sync-alt"></i> Actualiser';
+            }, 1000);
+        }
+
+        // Auto-refresh toutes les 30 secondes
+        setInterval(refreshData, 30000);
     </script>
 </body>
 </html>
