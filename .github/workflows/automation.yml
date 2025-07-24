@@ -25,7 +25,7 @@ jobs:
       security-status: ${{ steps.security-check.outputs.status }}
     steps:
       - name: 📥 Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: 🔍 Vérification automation
         id: check-automation
@@ -69,10 +69,10 @@ jobs:
     if: needs.automation-analysis.outputs.update-needed == 'true'
     steps:
       - name: 📥 Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: 🔧 Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
@@ -125,10 +125,10 @@ jobs:
     if: always()
     steps:
       - name: 📥 Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: 🔧 Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
@@ -162,4 +162,5 @@ jobs:
           echo "✅ Build validé"
           echo "✅ Automation opérationnelle"
           echo "🚀 Projet optimisé!"
+
 
