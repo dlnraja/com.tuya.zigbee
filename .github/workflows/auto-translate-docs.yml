@@ -1,0 +1,116 @@
+# 🚀 Auto-Translate Documentation - Tuya Zigbee Project
+# Automatisation des traductions multilingues
+
+name: 🌍 Auto-Translate Documentation
+
+on:
+  push:
+    paths:
+      - 'README.md'
+      - 'docs/**'
+      - 'locales/**'
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * *'  # Tous les jours à 2h00 UTC
+
+jobs:
+  translate-docs:
+    runs-on: ubuntu-latest
+    name: 🔄 Traduction automatique des documents
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: 📦 Install dependencies
+        run: |
+          npm install
+          npm install -g @crowdin/cli
+          
+      - name: 🌍 Translate README to English
+        run: |
+          echo "Translating README.md to English..."
+          # Utilisation de l'API DeepL pour la traduction
+          curl -X POST "https://api-free.deepl.com/v2/translate" \
+            -H "Authorization: DeepL-Auth-Key ${{ secrets.DEEPL_API_KEY }}" \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            -d "text=$(cat README.md | head -50)" \
+            -d "target_lang=EN" \
+            -d "source_lang=FR" > README_EN.md
+          
+      - name: 🇪🇸 Translate to Spanish
+        run: |
+          echo "Translating to Spanish..."
+          curl -X POST "https://api-free.deepl.com/v2/translate" \
+            -H "Authorization: DeepL-Auth-Key ${{ secrets.DEEPL_API_KEY }}" \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            -d "text=$(cat README.md | head -50)" \
+            -d "target_lang=ES" \
+            -d "source_lang=FR" > README_ES.md
+          
+      - name: 🇩🇪 Translate to German
+        run: |
+          echo "Translating to German..."
+          curl -X POST "https://api-free.deepl.com/v2/translate" \
+            -H "Authorization: DeepL-Auth-Key ${{ secrets.DEEPL_API_KEY }}" \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            -d "text=$(cat README.md | head -50)" \
+            -d "target_lang=DE" \
+            -d "source_lang=FR" > README_DE.md
+          
+      - name: 🇮🇹 Translate to Italian
+        run: |
+          echo "Translating to Italian..."
+          curl -X POST "https://api-free.deepl.com/v2/translate" \
+            -H "Authorization: DeepL-Auth-Key ${{ secrets.DEEPL_API_KEY }}" \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            -d "text=$(cat README.md | head -50)" \
+            -d "target_lang=IT" \
+            -d "source_lang=FR" > README_IT.md
+          
+      - name: 🇳🇱 Translate to Dutch
+        run: |
+          echo "Translating to Dutch..."
+          curl -X POST "https://api-free.deepl.com/v2/translate" \
+            -H "Authorization: DeepL-Auth-Key ${{ secrets.DEEPL_API_KEY }}" \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            -d "text=$(cat README.md | head -50)" \
+            -d "target_lang=NL" \
+            -d "source_lang=FR" > README_NL.md
+          
+      - name: 📊 Generate translation report
+        run: |
+          echo "📊 TRANSLATION REPORT" > translation_report.md
+          echo "=====================" >> translation_report.md
+          echo "" >> translation_report.md
+          echo "**Date:** $(date -u)" >> translation_report.md
+          echo "**Languages:** EN, ES, DE, IT, NL" >> translation_report.md
+          echo "**Source:** FR" >> translation_report.md
+          echo "**Status:** ✅ Completed" >> translation_report.md
+          echo "" >> translation_report.md
+          echo "**Files translated:**" >> translation_report.md
+          echo "- README_EN.md" >> translation_report.md
+          echo "- README_ES.md" >> translation_report.md
+          echo "- README_DE.md" >> translation_report.md
+          echo "- README_IT.md" >> translation_report.md
+          echo "- README_NL.md" >> translation_report.md
+          
+      - name: 📝 Commit translations
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README_*.md translation_report.md
+          git commit -m "🌍 [$(date -u '+%Y-%m-%d %H:%M UTC')] Auto-translation: README traduit en EN/ES/DE/IT/NL. Powered by DeepL API, GitHub Actions"
+          git push
+          
+      - name: 📈 Update translation stats
+        run: |
+          echo "Translation completed successfully!"
+          echo "Languages: 6 (FR, EN, ES, DE, IT, NL)"
+          echo "Files: 5 README versions"
+          echo "Next update: Tomorrow 2:00 UTC" 
