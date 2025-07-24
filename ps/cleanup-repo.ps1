@@ -160,4 +160,4 @@ if (-not $DryRun) {
     Write-Host "`n🔍 Mode DryRun - Aucune modification effectuée" -ForegroundColor Yellow
 }
 
-Write-Host "⏰ Timestamp: $(Get-Date -Format "yyyy-MM-dd HH:mm:ss UTC")" -ForegroundColor White 
+Write-Host "⏰ Timestamp: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss UTC')" -ForegroundColor White 
