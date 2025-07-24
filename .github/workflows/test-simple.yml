@@ -1,0 +1,27 @@
+name: 🧪 Test Simple Optimisé
+
+on:
+  push:
+    branches: [ master, beta ]
+  pull_request:
+    branches: [ master, beta ]
+  workflow_dispatch:
+
+jobs:
+  test-simple:
+    runs-on: ubuntu-latest
+    name: 🧪 Test simple robuste
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v3
+      - name: 🔍 Test de la syntaxe YAML de tous les workflows
+        run: |
+          echo "🔍 Test de la syntaxe YAML de tous les workflows..."
+          for file in .github/workflows/*.yml; do
+            echo "Testing: $file"
+            python3 -c "import yaml,sys; yaml.safe_load(open(sys.argv[1]))" $file && echo "✅  - Syntaxe OK" || { echo "❌  - Erreur de syntaxe dans $file"; exit 1; }
+          done
+      - name: 📊 Rapport de test simple
+        run: |
+          echo "📊 Rapport de test simple : tous les workflows YAML sont valides."
+          echo "✅ Test simple terminé avec succès."

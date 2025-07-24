@@ -1,0 +1,37 @@
+﻿name: CI & Manifest Sync
+on:
+  push: { branches: [ 'master' ] }
+  pull_request: { branches: [ 'master' ] }
+  workflow_dispatch:
+jobs:
+  sync-manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - run: npm ci
+      - run: npm run update-manifest
+      - name: Validate Homey app
+        run: npx homey app validate
+      - uses: peter-evans/create-pull-request@v5
+        with:
+          token: UTF8{{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: sync app.json"
+          branch: sync/app-json
+          title: "[Automatisé] sync app.json"
+  lint-test:
+    needs: sync-manifest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test

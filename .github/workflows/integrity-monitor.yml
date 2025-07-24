@@ -1,0 +1,30 @@
+name: 🛡️ Integrity Monitor Optimisé
+
+on:
+  push:
+    branches: [ master, beta ]
+  pull_request:
+    branches: [ master, beta ]
+  workflow_dispatch:
+
+jobs:
+  integrity-monitor:
+    runs-on: ubuntu-latest
+    name: 🛡️ Monitoring d'intégrité robuste
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v3
+      - name: 🛡️ Vérification des fichiers critiques
+        run: |
+          echo "🛡️ Vérification des fichiers critiques..."
+          for file in app.js app.json package.json README.md; do
+            if [ -f "$file" ]; then
+              echo "✅ $file présent."
+            else
+              echo "❌ $file manquant !"; exit 1;
+            fi
+          done
+      - name: 📈 Rapport d'intégrité
+        run: |
+          echo "📈 Rapport d'intégrité : tous les fichiers critiques sont présents."
+          echo "✅ Monitoring d'intégrité terminé avec succès."
