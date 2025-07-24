@@ -1,4 +1,13 @@
-name: 🔄 Auto-Update README
+﻿name: ðŸ”„ Auto-Update README
+
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   push:
@@ -17,141 +26,176 @@ on:
 
 jobs:
   update-readme:
-    name: 🔄 Mise à jour automatique du README
-    runs-on: ubuntu-latest
+    name: ðŸ”„ Mise Ã  jour automatique du README
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
     
+    
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_VERSION: '18'
+        PYTHON_VERSION: '3.11'
+
     steps:
-      - name: 📥 Checkout repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: 🔧 Setup Node.js
+      - name: ðŸ”§ Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-versi
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '18'
           cache: 'npm'
 
-      - name: 📊 Analyse des devices supportés
+      - name: ðŸ“Š Analyse des devices supportÃ©s
         id: analyze_devices
         run: |
-          echo "📊 ANALYSE DES DEVICES SUPPORTÉS"
+          echo "ðŸ“Š ANALYSE DES DEVICES SUPPORTÃ‰S"
           echo "====="
           
           # Comptage des drivers
           DRIVER_COUNT=$(find drivers/ -name "*.js" -type f | wc -l)
-          echo "📱 Nombre de drivers: $DRIVER_COUNT"
+          echo "ðŸ“± Nombre de drivers: $DRIVER_COUNT"
           
           # Liste des types de devices
           DEVICE_TYPES=$(find drivers/ -name "*.js" -type f -exec basename {} .js \; | sort | uniq)
-          echo "📋 Types de devices:"
+          echo "ðŸ“‹ Types de devices:"
           echo "$DEVICE_TYPES"
           
-          # Sauvegarde des métriques
+          # Sauvegarde des mÃ©triques
           echo "driver_count=$DRIVER_COUNT" >> $GITHUB_OUTPUT
           echo "device_types<<EOF" >> $GITHUB_OUTPUT
           echo "$DEVICE_TYPES" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
-      - name: 🌍 Analyse des langues supportées
+      - name: ðŸŒ Analyse des langues supportÃ©es
         id: analyze_languages
         run: |
-          echo "🌍 ANALYSE DES LANGUES SUPPORTÉES"
+          echo "ðŸŒ ANALYSE DES LANGUES SUPPORTÃ‰ES"
           echo "====="
           
           # Comptage des fichiers de langue
           LANGUAGE_COUNT=$(find locales/ -name "*.json" -o -name "*.md" | wc -l)
-          echo "🌐 Nombre de langues: $LANGUAGE_COUNT"
+          echo "ðŸŒ Nombre de langues: $LANGUAGE_COUNT"
           
           # Liste des langues
           LANGUAGES=$(find locales/ -name "*.json" -o -name "*.md" | sed 's/.*\///' | sed 's/\.[^.]*$//' | sort | uniq)
-          echo "📝 Langues supportées:"
+          echo "ðŸ“ Langues supportÃ©es:"
           echo "$LANGUAGES"
           
-          # Sauvegarde des métriques
+          # Sauvegarde des mÃ©triques
           echo "language_count=$LANGUAGE_COUNT" >> $GITHUB_OUTPUT
           echo "languages<<EOF" >> $GITHUB_OUTPUT
           echo "$LANGUAGES" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
-      - name: 📈 Analyse des métriques de performance
+      - name: ðŸ“ˆ Analyse des mÃ©triques de performance
         id: analyze_performance
         run: |
-          echo "📈 ANALYSE DES MÉTRIQUES DE PERFORMANCE"
+          echo "ðŸ“ˆ ANALYSE DES MÃ‰TRIQUES DE PERFORMANCE"
           echo "===="
           
           # Taille du repo
           REPO_SIZE=$(du -sh . | cut -f1)
-          echo "📦 Taille du repo: $REPO_SIZE"
+          echo "ðŸ“¦ Taille du repo: $REPO_SIZE"
           
           # Nombre de fichiers
           FILE_COUNT=$(find . -type f | wc -l)
-          echo "📄 Nombre de fichiers: $FILE_COUNT"
+          echo "ðŸ“„ Nombre de fichiers: $FILE_COUNT"
           
           # Taille des dossiers principaux
-          echo "📁 Taille des dossiers principaux:"
+          echo "ðŸ“ Taille des dossiers principaux:"
           du -sh drivers/ 2>/dev/null || echo "drivers/: N/A"
           du -sh assets/ 2>/dev/null || echo "assets/: N/A"
           du -sh locales/ 2>/dev/null || echo "locales/: N/A"
           du -sh scripts/ 2>/dev/null || echo "scripts/: N/A"
           
-          # Sauvegarde des métriques
+          # Sauvegarde des mÃ©triques
           echo "repo_size=$REPO_SIZE" >> $GITHUB_OUTPUT
           echo "file_count=$FILE_COUNT" >> $GITHUB_OUTPUT
 
-      - name: 🔄 Mise à jour du README
+      - name: ðŸ”„ Mise Ã  jour du README
         run: |
-          echo "🔄 MISE À JOUR DU README"
+          echo "ðŸ”„ MISE Ã€ JOUR DU README"
           echo "==="
           
           # Configuration Git
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
-          # Mise à jour des badges dans le README
+          # Mise Ã  jour des badges dans le README
           sed -i "s/Devices-[0-9]\+/Devices-${{ steps.analyze_devices.outputs.driver_count }}/g" README.md
           sed -i "s/Automation-[0-9]\+%/Automation-100%/g" README.md
           
-          # Mise à jour des métriques
-          sed -i "s/Réduite de [0-9]\+%/Réduite de 97%/g" README.md
-          sed -i "s/1\.46 GiB → ~[0-9]\+ MB/1.46 GiB → ~${{ steps.analyze_performance.outputs.repo_size }}/g" README.md
+          # Mise Ã  jour des mÃ©triques
+          sed -i "s/RÃ©duite de [0-9]\+%/RÃ©duite de 97%/g" README.md
+          sed -i "s/1\.46 GiB â†’ ~[0-9]\+ MB/1.46 GiB â†’ ~${{ steps.analyze_performance.outputs.repo_size }}/g" README.md
           
-          # Mise à jour du nombre de langues
+          # Mise Ã  jour du nombre de langues
           sed -i "s/8 langues/${{ steps.analyze_languages.outputs.language_count }} langues/g" README.md
           
-          echo "✅ README mis à jour avec les nouvelles métriques"
+          echo "âœ… README mis Ã  jour avec les nouvelles mÃ©triques"
 
-      - name: 📝 Génération du rapport de mise à jour
+      - name: ðŸ“ GÃ©nÃ©ration du rapport de mise Ã  jour
         run: |
-          echo "📝 GÉNÉRATION DU RAPPORT"
+          echo "ðŸ“ GÃ‰NÃ‰RATION DU RAPPORT"
           echo "==="
           
           cat > README-UPDATE-REPORT.md << EOF
-          # 📊 RAPPORT DE MISE À JOUR README
+          # ðŸ“Š RAPPORT DE MISE Ã€ JOUR README
           
-          ## 📈 MÉTRIQUES ACTUALISÉES
+          ## ðŸ“ˆ MÃ‰TRIQUES ACTUALISÃ‰ES
           
-          ### 📱 Devices Supportés
+          ### ðŸ“± Devices SupportÃ©s
           - **Nombre de drivers**: ${{ steps.analyze_devices.outputs.driver_count }}
           - **Types de devices**: $(echo "${{ steps.analyze_devices.outputs.device_types }}" | wc -l)
           
-          ### 🌍 Support Multilingue
+          ### ðŸŒ Support Multilingue
           - **Nombre de langues**: ${{ steps.analyze_languages.outputs.language_count }}
-          - **Langues supportées**: ${{ steps.analyze_languages.outputs.languages }}
+          - **Langues supportÃ©es**: ${{ steps.analyze_languages.outputs.languages }}
           
-          ### 📊 Performance
+          ### ðŸ“Š Performance
           - **Taille du repo**: ${{ steps.analyze_performance.outputs.repo_size }}
           - **Nombre de fichiers**: ${{ steps.analyze_performance.outputs.file_count }}
           
-          ## 🔄 MODIFICATIONS APPORTÉES
+          ## ðŸ”„ MODIFICATIONS APPORTÃ‰ES
           
-          - ✅ Badges mis à jour avec les nouvelles métriques
-          - ✅ Nombre de devices actualisé
-          - ✅ Nombre de langues actualisé
-          - ✅ Métriques de performance mises à jour
+          - âœ… Badges mis Ã  jour avec les nouvelles mÃ©triques
+          - âœ… Nombre de devices actualisÃ©
+          - âœ… Nombre de langues actualisÃ©
+          - âœ… MÃ©triques de performance mises Ã  jour
           
-          ## ⏰ TIMESTAMP
+          ## â° TIMESTAMP
           
           - **Date**: $(date -u +"%Y-%m-%d")
           - **Heure**: $(date -u +"%H:%M:%S UTC")
@@ -160,64 +204,65 @@ jobs:
           
           ---
           
-          *Rapport généré automatiquement - Mode YOLO Intelligent*
+          *Rapport gÃ©nÃ©rÃ© automatiquement - Mode YOLO Intelligent*
           EOF
           
-          echo "✅ Rapport généré: README-UPDATE-REPORT.md"
+          echo "âœ… Rapport gÃ©nÃ©rÃ©: README-UPDATE-REPORT.md"
 
-      - name: 🔄 Commit et push des changements
+      - name: ðŸ”„ Commit et push des changements
         run: |
-          echo "🔄 COMMIT ET PUSH DES CHANGEMENTS"
+          echo "ðŸ”„ COMMIT ET PUSH DES CHANGEMENTS"
           echo "====="
           
           # Ajout des changements
           git add README.md README-UPDATE-REPORT.md
           
-          # Vérification s'il y a des changements
+          # VÃ©rification s'il y a des changements
           if git diff --staged --quiet; then
-            echo "ℹ️ Aucun changement à commiter"
+            echo "â„¹ï¸ Aucun changement Ã  commiter"
           else
-            # Commit avec message détaillé
-            git commit -m "🔄 AUTO-UPDATE: Mise à jour automatique du README
+            # Commit avec message dÃ©taillÃ©
+            git commit -m "ðŸ”„ AUTO-UPDATE: Mise Ã  jour automatique du README
 
-📊 MÉTRIQUES ACTUALISÉES:
-- Drivers supportés: ${{ steps.analyze_devices.outputs.driver_count }}
-- Langues supportées: ${{ steps.analyze_languages.outputs.language_count }}
+ðŸ“Š MÃ‰TRIQUES ACTUALISÃ‰ES:
+- Drivers supportÃ©s: ${{ steps.analyze_devices.outputs.driver_count }}
+- Langues supportÃ©es: ${{ steps.analyze_languages.outputs.language_count }}
 - Taille repo: ${{ steps.analyze_performance.outputs.repo_size }}
 - Fichiers: ${{ steps.analyze_performance.outputs.file_count }}
 
-🔄 MODIFICATIONS:
-- Badges mis à jour avec nouvelles métriques
-- Nombre de devices actualisé
-- Nombre de langues actualisé
-- Métriques de performance mises à jour
+ðŸ”„ MODIFICATIONS:
+- Badges mis Ã  jour avec nouvelles mÃ©triques
+- Nombre de devices actualisÃ©
+- Nombre de langues actualisÃ©
+- MÃ©triques de performance mises Ã  jour
 
-📅 Déclenchement: ${{ github.event_name }}
-⏰ Timestamp: $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
+ðŸ“… DÃ©clenchement: ${{ github.event_name }}
+â° Timestamp: $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
             
             # Push des changements
             git push origin ${{ github.ref }}
-            echo "✅ Changements commités et pushés"
+            echo "âœ… Changements commitÃ©s et pushÃ©s"
           fi
 
-      - name: 📊 Rapport de mise à jour
+      - name: ðŸ“Š Rapport de mise Ã  jour
         run: |
-          echo "📊 RAPPORT DE MISE À JOUR"
+          echo "ðŸ“Š RAPPORT DE MISE Ã€ JOUR"
           echo "===="
-          echo "📱 Drivers supportés: ${{ steps.analyze_devices.outputs.driver_count }}"
-          echo "🌍 Langues supportées: ${{ steps.analyze_languages.outputs.language_count }}"
-          echo "📦 Taille repo: ${{ steps.analyze_performance.outputs.repo_size }}"
-          echo "📄 Fichiers: ${{ steps.analyze_performance.outputs.file_count }}"
-          echo "🎯 Déclenchement: ${{ github.event_name }}"
-          echo "⏰ Timestamp: $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
-          echo "✅ Mise à jour terminée avec succès !"
+          echo "ðŸ“± Drivers supportÃ©s: ${{ steps.analyze_devices.outputs.driver_count }}"
+          echo "ðŸŒ Langues supportÃ©es: ${{ steps.analyze_languages.outputs.language_count }}"
+          echo "ðŸ“¦ Taille repo: ${{ steps.analyze_performance.outputs.repo_size }}"
+          echo "ðŸ“„ Fichiers: ${{ steps.analyze_performance.outputs.file_count }}"
+          echo "ðŸŽ¯ DÃ©clenchement: ${{ github.event_name }}"
+          echo "â° Timestamp: $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
+          echo "âœ… Mise Ã  jour terminÃ©e avec succÃ¨s !"
 
-      - name: 🔔 Notification de mise à jour
+      - name: ðŸ”” Notification de mise Ã  jour
         if: github.event_name == 'push'
         run: |
-          echo "🔔 NOTIFICATION DE MISE À JOUR"
+          echo "ðŸ”” NOTIFICATION DE MISE Ã€ JOUR"
           echo "=="
-          echo "🔄 README mis à jour automatiquement"
-          echo "📊 Métriques actualisées"
-          echo "📱 ${{ steps.analyze_devices.outputs.driver_count }} devices supportés"
-          echo "🌍 ${{ steps.analyze_languages.outputs.language_count }} langues supportées" 
+          echo "ðŸ”„ README mis Ã  jour automatiquement"
+          echo "ðŸ“Š MÃ©triques actualisÃ©es"
+          echo "ðŸ“± ${{ steps.analyze_devices.outputs.driver_count }} devices supportÃ©s"
+          echo "ðŸŒ ${{ steps.analyze_languages.outputs.language_count }} langues supportÃ©es" 
+

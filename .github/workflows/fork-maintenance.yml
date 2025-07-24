@@ -1,41 +1,85 @@
-# 🚀 Fork Maintenance - Tuya Zigbee Project
+﻿# ðŸš€ Fork Maintenance - Tuya Zigbee Project
 # Maintenance automatique des forks et branches
 
-name: 🔄 Fork Maintenance
+name: ðŸ”„ Fork Maintenance
+
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   schedule:
-    - cron: '0 6 * * *'  # Tous les jours à 6h00 UTC
+    - cr
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '0 6 * * *'  # Tous les jours Ã  6h00 UTC
   workflow_dispatch:
   push:
     branches: [master, beta, develop]
 
 jobs:
   maintain-forks:
-    runs-on: ubuntu-latest
-    name: 🔄 Maintenance des forks
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    name: ðŸ”„ Maintenance des forks
     
+    
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_VERSION: '18'
+        PYTHON_VERSION: '3.11'
+
     steps:
-      - name: 📥 Checkout repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           
-      - name: 🔧 Setup Git
+      - name: ðŸ”§ Setup Git
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
           
-      - name: 🔍 Sync with upstream
+      - name: ðŸ” Sync with upstream
         run: |
           echo "Syncing with upstream repository..."
           
-          # Ajouter l'upstream si pas déjà présent
+          # Ajouter l'upstream si pas dÃ©jÃ  prÃ©sent
           if ! git remote get-url upstream > /dev/null 2>&1; then
             git remote add upstream https://github.com/dlnraja/com.tuya.zigbee.git
           fi
           
-          # Récupérer les dernières modifications
+          # RÃ©cupÃ©rer les derniÃ¨res modifications
           git fetch upstream
           git fetch origin
           
@@ -51,84 +95,84 @@ jobs:
           git checkout develop || git checkout -b develop
           git merge upstream/develop --no-edit || echo "Develop branch not found in upstream"
           
-      - name: 🔄 Update all branches
+      - name: ðŸ”„ Update all branches
         run: |
           echo "Updating all branches..."
           
-          # Liste des branches à maintenir
+          # Liste des branches Ã  maintenir
           branches=("master" "beta" "develop" "feature/sdk3" "feature/research" "feature/automation")
           
           for branch in "${branches[@]}"; do
             echo "Processing branch: $branch"
             
-            # Créer la branche si elle n'existe pas
+            # CrÃ©er la branche si elle n'existe pas
             if ! git show-ref --verify --quiet refs/heads/$branch; then
               git checkout -b $branch
             else
               git checkout $branch
             fi
             
-            # Mettre à jour avec les dernières modifications
+            # Mettre Ã  jour avec les derniÃ¨res modifications
             git pull origin $branch || echo "Branch $branch not found on origin"
             
             # Pousser les modifications
             git push origin $branch || echo "Failed to push $branch"
           done
           
-      - name: 🧹 Cleanup old branches
+      - name: ðŸ§¹ Cleanup old branches
         run: |
           echo "Cleaning up old branches..."
           
-          # Supprimer les branches locales obsolètes
+          # Supprimer les branches locales obsolÃ¨tes
           git branch --merged master | grep -v "master\|beta\|develop" | xargs -r git branch -d
           
-          # Nettoyer les références distantes
+          # Nettoyer les rÃ©fÃ©rences distantes
           git remote prune origin
           
-      - name: 📊 Generate maintenance report
+      - name: ðŸ“Š Generate maintenance report
         run: |
           echo "Generating maintenance report..."
           
           cat > logs/maintenance/maintenance_report.md << EOF
-# 🔄 Rapport de Maintenance - Forks & Branches
+# ðŸ”„ Rapport de Maintenance - Forks & Branches
 
-## 📅 Date: $(date -u '+%Y-%m-%d %H:%M UTC')
+## ðŸ“… Date: $(date -u '+%Y-%m-%d %H:%M UTC')
 
-## 🔄 Branches Maintenues
-- **master**: Synchronisé avec upstream
-- **beta**: Synchronisé avec upstream
-- **develop**: Synchronisé avec upstream
-- **feature/sdk3**: Mise à jour
-- **feature/research**: Mise à jour
-- **feature/automation**: Mise à jour
+## ðŸ”„ Branches Maintenues
+- **master**: SynchronisÃ© avec upstream
+- **beta**: SynchronisÃ© avec upstream
+- **develop**: SynchronisÃ© avec upstream
+- **feature/sdk3**: Mise Ã  jour
+- **feature/research**: Mise Ã  jour
+- **feature/automation**: Mise Ã  jour
 
-## 📈 Statistiques
+## ðŸ“ˆ Statistiques
 - **Branches actives**: 6
-- **Branches nettoyées**: $(git branch --merged master | grep -v "master\|beta\|develop" | wc -l)
-- **Références nettoyées**: $(git remote prune origin --dry-run | wc -l)
+- **Branches nettoyÃ©es**: $(git branch --merged master | grep -v "master\|beta\|develop" | wc -l)
+- **RÃ©fÃ©rences nettoyÃ©es**: $(git remote prune origin --dry-run | wc -l)
 
-## ✅ Actions Effectuées
+## âœ… Actions EffectuÃ©es
 - Synchronisation avec upstream
-- Mise à jour de toutes les branches
-- Nettoyage des branches obsolètes
-- Nettoyage des références distantes
+- Mise Ã  jour de toutes les branches
+- Nettoyage des branches obsolÃ¨tes
+- Nettoyage des rÃ©fÃ©rences distantes
 
-## 🔄 Prochaines Actions
-- Maintenance quotidienne à 6:00 UTC
+## ðŸ”„ Prochaines Actions
+- Maintenance quotidienne Ã  6:00 UTC
 - Synchronisation automatique avec upstream
 - Nettoyage automatique des branches
 
 ---
-*Généré automatiquement le $(date -u '+%Y-%m-%d %H:%M UTC')*
+*GÃ©nÃ©rÃ© automatiquement le $(date -u '+%Y-%m-%d %H:%M UTC')*
 EOF
           
-      - name: 📝 Commit maintenance results
+      - name: ðŸ“ Commit maintenance results
         run: |
           git add logs/maintenance/
-          git commit -m "🔄 [$(date -u '+%Y-%m-%d %H:%M UTC')] Fork maintenance: All branches synced, cleaned up. Powered by GitHub Actions" || echo "No changes to commit"
+          git commit -m "ðŸ”„ [$(date -u '+%Y-%m-%d %H:%M UTC')] Fork maintenance: All branches synced, cleaned up. Powered by GitHub Actions" || echo "No changes to commit"
           git push origin master
           
-      - name: 📈 Update maintenance stats
+      - name: ðŸ“ˆ Update maintenance stats
         run: |
           echo "Fork maintenance completed successfully!"
           echo "Branches maintained: 6"

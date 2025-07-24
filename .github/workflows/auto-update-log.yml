@@ -1,12 +1,61 @@
+﻿# auto-update-log.yml
+# Description: Workflow automatisÃ© pour auto update log
+# Date: 2025-07-25
+# Version: 1.0
+
 name: Auto Update Log (Push Test)
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 */6 * * *" # toutes les 6h
+    - cr
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: "0 */6 * * *" # toutes les 6h
 jobs:
   update-log:
-    runs-on: ubuntu-latest
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_VERSION: '18'
+        PYTHON_VERSION: '3.11'
+
     steps:
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_PAT }}
@@ -20,3 +69,4 @@ jobs:
           git add auto-update.log
           git commit -m "ci: auto-update auto-update.log [skip ci]" || echo "Nothing to commit"
           git push || echo "Nothing to push"
+

@@ -1,14 +1,58 @@
 ﻿name: Continuous Monitoring
 
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cr
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '*/30 * * * *'
   workflow_dispatch:
 
 jobs:
   monitor-project:
-    runs-on: ubuntu-latest
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_VERSION: '18'
+        PYTHON_VERSION: '3.11'
+
     steps:
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Checkout
         uses: actions/checkout@v4
         
@@ -37,3 +81,4 @@ jobs:
           git add dashboard/monitoring.md
           git commit -m "Dashboard updated - \" || echo "No changes"
           git push
+

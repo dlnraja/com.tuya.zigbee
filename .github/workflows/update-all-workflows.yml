@@ -1,13 +1,53 @@
+﻿# update-all-workflows.yml
+# Description: Workflow automatisÃ© pour update all workflows
+# Date: 2025-07-25
+# Version: 1.0
+
 
 name: Update all workflows with dual token
+
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   workflow_dispatch:
 
 jobs:
   update_tokens:
-    runs-on: ubuntu-latest
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_VERSION: '18'
+        PYTHON_VERSION: '3.11'
+
     steps:
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
@@ -36,4 +76,5 @@ jobs:
           branch: update-dual-token
           base: master
           body: |
-            Ce PR met à jour tous les workflows pour supporter à la fois `GH_PAT` et `FULLTOKEN` comme token d'authentification.
+            Ce PR met Ã  jour tous les workflows pour supporter Ã  la fois `GH_PAT` et `FULLTOKEN` comme token d'authentification.
+

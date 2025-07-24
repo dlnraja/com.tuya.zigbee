@@ -1,12 +1,61 @@
+﻿# mounthly-backup.yml
+# Description: Workflow automatisÃ© pour mounthly backup
+# Date: 2025-07-25
+# Version: 1.0
+
 name: Monthly backup ZIP
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
 on:
   schedule:
-    - cron: '0 1 1 * *'
+    - cr
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '0 1 1 * *'
   workflow_dispatch:
 jobs:
   backup:
-    runs-on: ubuntu-latest
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_VERSION: '18'
+        PYTHON_VERSION: '3.11'
+
     steps:
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - uses: actions/checkout@v4
       - name: Create zip
         run: |
@@ -15,3 +64,4 @@ jobs:
         with:
           name: monthly-backup
           path: repo_backup_*.zip
+

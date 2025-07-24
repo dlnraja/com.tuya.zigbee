@@ -1,4 +1,18 @@
-name: 📊 Logs Monitoring Optimisé
+﻿# logs.yml
+# Description: Workflow automatisÃ© pour logs
+# Date: 2025-07-25
+# Version: 1.0
+
+name: ðŸ“Š Logs Monitoring OptimisÃ©
+
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   push:
@@ -9,21 +23,48 @@ on:
 
 jobs:
   logs-monitoring:
-    runs-on: ubuntu-latest
-    name: 📊 Monitoring des logs robuste
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    name: ðŸ“Š Monitoring des logs robuste
+    
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_VERSION: '18'
+        PYTHON_VERSION: '3.11'
+
     steps:
-      - name: 📥 Checkout repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout repository
         uses: actions/checkout@v3
-      - name: 📊 Analyse des logs
+      - name: ðŸ“Š Analyse des logs
         run: |
-          echo "📊 Analyse des logs du projet..."
+          echo "ðŸ“Š Analyse des logs du projet..."
           if [ -d "logs" ]; then
-            find logs/ -type f -name "*.log" -exec echo "Log trouvé : {}" \;
-            echo "✅ Logs analysés."
+            find logs/ -type f -name "*.log" -exec echo "Log trouvÃ© : {}" \;
+            echo "âœ… Logs analysÃ©s."
           else
-            echo "ℹ️ Aucun dossier logs/ trouvé."
+            echo "â„¹ï¸ Aucun dossier logs/ trouvÃ©."
           fi
-      - name: 📈 Rapport de monitoring
+      - name: ðŸ“ˆ Rapport de monitoring
         run: |
-          echo "📈 Rapport de monitoring : logs analysés, rapport généré."
-          echo "✅ Monitoring terminé avec succès."
+          echo "ðŸ“ˆ Rapport de monitoring : logs analysÃ©s, rapport gÃ©nÃ©rÃ©."
+          echo "âœ… Monitoring terminÃ© avec succÃ¨s."
+

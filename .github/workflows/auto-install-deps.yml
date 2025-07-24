@@ -1,26 +1,85 @@
-name: Auto-installation Dépendances
+﻿# auto-install-deps.yml
+# Description: Workflow automatisÃ© pour auto install deps
+# Date: 2025-07-25
+# Version: 1.0
+
+name: Auto-installation DÃ©pendances
+
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   schedule:
-    - cron: '0 5 1 * *'
+    - cr
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '0 5 1 * *'
   workflow_dispatch:
 
 jobs:
   install-deps:
-    runs-on: ubuntu-latest
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_VERSION: '18'
+        PYTHON_VERSION: '3.11'
+
     steps:
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
-      - name: Installer les dépendances critiques et optionnelles
+          node-versi
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: 18
+      - name: Installer les dÃ©pendances critiques et optionnelles
         run: node scripts/install-deps.js
-      - name: Commit & Push log installation dépendances
+      - name: Commit & Push log installation dÃ©pendances
         run: |
           git config --global user.email "actions@github.com"
           git config --global user.name "github-actions"
           git add logs/install_deps.log
-          git commit -m "chore(deps): log auto-installation mensuelle des dépendances [bot]" || echo "Nothing to commit"
+          git commit -m "chore(deps): log auto-installation mensuelle des dÃ©pendances [bot]" || echo "Nothing to commit"
           git push 
+

@@ -1,10 +1,28 @@
-name: 🔄 Fusion Intelligente des Branches - Tuya Zigbee
+﻿name: ðŸ”„ Fusion Intelligente des Branches - Tuya Zigbee
+
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   workflow_dispatch:
     inputs:
       target_branch:
-        description: 'Branche cible pour la fusion'
+        descripti
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: 'Branche cible pour la fusion'
         required: true
         default: 'master'
         type: choice
@@ -12,11 +30,29 @@ on:
           - master
           - main
       source_branches:
-        description: 'Branches sources à fusionner (séparées par des virgules)'
+        descripti
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: 'Branches sources Ã  fusionner (sÃ©parÃ©es par des virgules)'
         required: true
         default: 'beta,develop,feature/readme-update'
       merge_strategy:
-        description: 'Stratégie de fusion'
+        descripti
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: 'StratÃ©gie de fusion'
         required: true
         default: 'intelligent'
         type: choice
@@ -26,24 +62,53 @@ on:
           - conservative
 
 env:
-  NODE_VERSION: '18'
+  NODE_VERSI
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '18'
   YOLO_MODE: 'intelligent'
 
 jobs:
   analyze-branches-for-merge:
-    name: 🔍 Analyse des Branches pour Fusion
-    runs-on: ubuntu-latest
+    name: ðŸ” Analyse des Branches pour Fusion
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
     outputs:
       branches_to_merge: ${{ steps.analyze.outputs.branches }}
       conflicts_detected: ${{ steps.analyze.outputs.conflicts }}
     steps:
-      - name: 📥 Checkout Repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout Repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: 🔍 Analyse Intelligente
+      - name: ðŸ” Analyse Intelligente
         id: analyze
         run: |
           echo "=== ANALYSE INTELLIGENTE POUR FUSION ==="
@@ -51,11 +116,11 @@ jobs:
           TARGET_BRANCH="${{ github.event.inputs.target_branch }}"
           SOURCE_BRANCHES="${{ github.event.inputs.source_branches }}"
           
-          echo "🎯 Branche cible: $TARGET_BRANCH"
-          echo "📋 Branches sources: $SOURCE_BRANCHES"
+          echo "ðŸŽ¯ Branche cible: $TARGET_BRANCH"
+          echo "ðŸ“‹ Branches sources: $SOURCE_BRANCHES"
           echo ""
           
-          # Vérification des branches existantes
+          # VÃ©rification des branches existantes
           EXISTING_BRANCHES=""
           CONFLICTS=""
           
@@ -63,16 +128,16 @@ jobs:
           for branch in "${BRANCH_ARRAY[@]}"; do
             branch=$(echo "$branch" | xargs)  # Trim whitespace
             if git show-ref --verify --quiet refs/remotes/origin/$branch; then
-              echo "✅ Branche $branch existe"
+              echo "âœ… Branche $branch existe"
               EXISTING_BRANCHES="$EXISTING_BRANCHES,$branch"
               
-              # Vérification des conflits potentiels
+              # VÃ©rification des conflits potentiels
               if git merge-tree $(git merge-base origin/$TARGET_BRANCH origin/$branch) origin/$TARGET_BRANCH origin/$branch | grep -q "
-                echo "⚠️ Conflits détectés dans $branch"
+                echo "âš ï¸ Conflits dÃ©tectÃ©s dans $branch"
                 CONFLICTS="$CONFLICTS,$branch"
               fi
             else
-              echo "❌ Branche $branch n'existe pas"
+              echo "âŒ Branche $branch n'existe pas"
             fi
           done
           
@@ -81,22 +146,42 @@ jobs:
           echo "conflicts=$CONFLICTS" >> $GITHUB_OUTPUT
           
           echo ""
-          echo "📊 RÉSUMÉ:"
-          echo "Branches à fusionner: $EXISTING_BRANCHES"
-          echo "Conflits détectés: $CONFLICTS"
+          echo "ðŸ“Š RÃ‰SUMÃ‰:"
+          echo "Branches Ã  fusionner: $EXISTING_BRANCHES"
+          echo "Conflits dÃ©tectÃ©s: $CONFLICTS"
 
   merge-branches-intelligent:
-    name: 🔄 Fusion Intelligente des Branches
-    runs-on: ubuntu-latest
+    name: ðŸ”„ Fusion Intelligente des Branches
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
     needs: analyze-branches-for-merge
     steps:
-      - name: 📥 Checkout Repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout Repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: 🔄 Fusion Intelligente
+      - name: ðŸ”„ Fusion Intelligente
         run: |
           echo "=== FUSION INTELLIGENTE DES BRANCHES ==="
           
@@ -105,10 +190,10 @@ jobs:
           CONFLICTS="${{ needs.analyze-branches-for-merge.outputs.conflicts_detected }}"
           MERGE_STRATEGY="${{ github.event.inputs.merge_strategy }}"
           
-          echo "🎯 Branche cible: $TARGET_BRANCH"
-          echo "📋 Branches à fusionner: $BRANCHES_TO_MERGE"
-          echo "⚠️ Conflits: $CONFLICTS"
-          echo "🔧 Stratégie: $MERGE_STRATEGY"
+          echo "ðŸŽ¯ Branche cible: $TARGET_BRANCH"
+          echo "ðŸ“‹ Branches Ã  fusionner: $BRANCHES_TO_MERGE"
+          echo "âš ï¸ Conflits: $CONFLICTS"
+          echo "ðŸ”§ StratÃ©gie: $MERGE_STRATEGY"
           echo ""
           
           # Checkout de la branche cible
@@ -120,20 +205,20 @@ jobs:
           for branch in "${BRANCH_ARRAY[@]}"; do
             branch=$(echo "$branch" | xargs)
             if [[ -n "$branch" ]]; then
-              echo "🔄 Fusion de $branch dans $TARGET_BRANCH..."
+              echo "ðŸ”„ Fusion de $branch dans $TARGET_BRANCH..."
               
-              # Stratégie de fusion intelligente
+              # StratÃ©gie de fusion intelligente
               case $MERGE_STRATEGY in
                 "intelligent")
-                  echo "🔧 Fusion intelligente..."
-                  if git merge origin/$branch --no-ff -m "🔄 Fusion intelligente $branch → $TARGET_BRANCH - Mode YOLO Intelligent"; then
-                    echo "✅ Fusion réussie"
+                  echo "ðŸ”§ Fusion intelligente..."
+                  if git merge origin/$branch --no-ff -m "ðŸ”„ Fusion intelligente $branch â†’ $TARGET_BRANCH - Mode YOLO Intelligent"; then
+                    echo "âœ… Fusion rÃ©ussie"
                   else
-                    echo "⚠️ Conflits détectés, résolution intelligente..."
-                    # Résolution intelligente des conflits
+                    echo "âš ï¸ Conflits dÃ©tectÃ©s, rÃ©solution intelligente..."
+                    # RÃ©solution intelligente des conflits
                     git status --porcelain | grep "^UU" | cut -d' ' -f2 | while read file; do
-                      echo "Résolution intelligente: $file"
-                      # Stratégie selon le type de fichier
+                      echo "RÃ©solution intelligente: $file"
+                      # StratÃ©gie selon le type de fichier
                       if [[ "$file" == *.json ]]; then
                         # Fusion JSON intelligente
                         echo "Fusion JSON intelligente pour $file"
@@ -152,56 +237,85 @@ jobs:
                       fi
                     done
                     git add -A
-                    git commit -m "🔧 Résolution intelligente des conflits - Mode YOLO Intelligent"
+                    git commit -m "ðŸ”§ RÃ©solution intelligente des conflits - Mode YOLO Intelligent"
                   fi
                   ;;
                 "additive")
-                  echo "➕ Fusion additive..."
-                  git merge origin/$branch --no-ff -m "➕ Fusion additive $branch → $TARGET_BRANCH"
+                  echo "âž• Fusion additive..."
+                  git merge origin/$branch --no-ff -m "âž• Fusion additive $branch â†’ $TARGET_BRANCH"
                   ;;
                 "conservative")
-                  echo "🛡️ Fusion conservative..."
-                  git merge origin/$branch --no-ff -m "🛡️ Fusion conservative $branch → $TARGET_BRANCH"
+                  echo "ðŸ›¡ï¸ Fusion conservative..."
+                  git merge origin/$branch --no-ff -m "ðŸ›¡ï¸ Fusion conservative $branch â†’ $TARGET_BRANCH"
                   ;;
               esac
             fi
           done
 
-      - name: 📤 Push Intelligent
+      - name: ðŸ“¤ Push Intelligent
         run: |
-          echo "📤 Push des modifications..."
+          echo "ðŸ“¤ Push des modifications..."
           git push origin ${{ github.event.inputs.target_branch }}
-          echo "✅ Fusion et push terminés"
+          echo "âœ… Fusion et push terminÃ©s"
 
-  update-dashboard-beta-section:
-    name: 📊 Mise à Jour Section Beta Dashboard
-    runs-on: ubuntu-latest
+  update-dashboard-beta-secti
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on:
+    name: ðŸ“Š Mise Ã  Jour Section Beta Dashboard
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
     if: contains(needs.analyze-branches-for-merge.outputs.branches_to_merge, 'beta')
     steps:
-      - name: 📥 Checkout Repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout Repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: 📊 Mise à Jour Dashboard Beta
+      - name: ðŸ“Š Mise Ã  Jour Dashboard Beta
         run: |
-          echo "=== MISE À JOUR SECTION BETA DASHBOARD ==="
+          echo "=== MISE Ã€ JOUR SECTION BETA DASHBOARD ==="
           
-          # Création de la section beta pour le dashboard
+          # CrÃ©ation de la section beta pour le dashboard
           cat > dashboard/beta-section.html << 'EOF'
           <!-- Section Beta Dashboard -->
           <div class="beta-section">
-            <h2><i class="fas fa-flask"></i> Section Beta - Développement</h2>
+            <h2><i class="fas fa-flask"></i> Section Beta - DÃ©veloppement</h2>
             
             <div class="beta-stats">
               <div class="stat-card beta">
                 <h3>Nouveaux Drivers</h3>
                 <div class="stat-value" id="new-drivers-count">0</div>
-                <div class="stat-label">En développement</div>
+                <div class="stat-label">En dÃ©veloppement</div>
               </div>
               
               <div class="stat-card beta">
-                <h3>Fonctionnalités Beta</h3>
+                <h3>FonctionnalitÃ©s Beta</h3>
                 <div class="stat-value" id="beta-features-count">0</div>
                 <div class="stat-label">En test</div>
               </div>
@@ -209,7 +323,7 @@ jobs:
               <div class="stat-card beta">
                 <h3>Prochaine Fusion</h3>
                 <div class="stat-value" id="next-merge-date">--</div>
-                <div class="stat-label">Planifiée</div>
+                <div class="stat-label">PlanifiÃ©e</div>
               </div>
             </div>
             
@@ -218,8 +332,8 @@ jobs:
               <div class="timeline-item">
                 <div class="timeline-date">$(date +%Y-%m-%d)</div>
                 <div class="timeline-content">
-                  <h4>Fusion Intelligente Beta → Master</h4>
-                  <p>Mode YOLO Intelligent - Fusion automatique réussie</p>
+                  <h4>Fusion Intelligente Beta â†’ Master</h4>
+                  <p>Mode YOLO Intelligent - Fusion automatique rÃ©ussie</p>
                 </div>
               </div>
             </div>
@@ -227,10 +341,10 @@ jobs:
             <div class="beta-kpi">
               <h3>KPI Beta</h3>
               <ul>
-                <li><strong>Drivers en développement:</strong> <span id="drivers-dev">0</span></li>
-                <li><strong>Tests réussis:</strong> <span id="tests-passed">0</span></li>
+                <li><strong>Drivers en dÃ©veloppement:</strong> <span id="drivers-dev">0</span></li>
+                <li><strong>Tests rÃ©ussis:</strong> <span id="tests-passed">0</span></li>
                 <li><strong>Performance:</strong> <span id="beta-performance">0%</span></li>
-                <li><strong>Stabilité:</strong> <span id="beta-stability">0%</span></li>
+                <li><strong>StabilitÃ©:</strong> <span id="beta-stability">0%</span></li>
               </ul>
             </div>
           </div>
@@ -291,93 +405,114 @@ jobs:
           </style>
           EOF
           
-          echo "✅ Section Beta Dashboard mise à jour"
+          echo "âœ… Section Beta Dashboard mise Ã  jour"
 
-      - name: 📤 Commit et Push Dashboard
+      - name: ðŸ“¤ Commit et Push Dashboard
         run: |
           git add dashboard/beta-section.html
-          git commit -m "📊 Mise à jour section Beta Dashboard - Mode YOLO Intelligent"
+          git commit -m "ðŸ“Š Mise Ã  jour section Beta Dashboard - Mode YOLO Intelligent"
           git push origin ${{ github.event.inputs.target_branch }}
 
   generate-merge-report:
-    name: 📋 Rapport de Fusion Intelligente
-    runs-on: ubuntu-latest
+    name: ðŸ“‹ Rapport de Fusion Intelligente
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
     needs: [analyze-branches-for-merge, merge-branches-intelligent, update-dashboard-beta-section]
     if: always()
     steps:
-      - name: 📥 Checkout Repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout Repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: 📋 Génération Rapport de Fusion
+      - name: ðŸ“‹ GÃ©nÃ©ration Rapport de Fusion
         run: |
           echo "=== RAPPORT DE FUSION INTELLIGENTE ==="
           
           cat > RAPPORT-FUSION-INTELLIGENTE.md << 'EOF'
-          # 🔄 RAPPORT DE FUSION INTELLIGENTE - TUYA ZIGBEE
+          # ðŸ”„ RAPPORT DE FUSION INTELLIGENTE - TUYA ZIGBEE
           
-          ## 🎯 **Fusion Intelligente des Branches**
+          ## ðŸŽ¯ **Fusion Intelligente des Branches**
           
           **Date de fusion :** $(date)
-          **Mode YOLO Intelligent :** ✅ ACTIF
-          **Stratégie :** ${{ github.event.inputs.merge_strategy }}
+          **Mode YOLO Intelligent :** âœ… ACTIF
+          **StratÃ©gie :** ${{ github.event.inputs.merge_strategy }}
           
-          ## 📊 **Détails de la Fusion**
+          ## ðŸ“Š **DÃ©tails de la Fusion**
           
-          ### **🎯 Branche Cible**
+          ### **ðŸŽ¯ Branche Cible**
           - **Branche :** ${{ github.event.inputs.target_branch }}
-          - **Statut :** ✅ Fusion réussie
+          - **Statut :** âœ… Fusion rÃ©ussie
           
-          ### **📋 Branches Sources**
-          - **Branches fusionnées :** ${{ needs.analyze-branches-for-merge.outputs.branches_to_merge }}
-          - **Conflits détectés :** ${{ needs.analyze-branches-for-merge.outputs.conflicts_detected }}
-          - **Résolution :** Intelligente
+          ### **ðŸ“‹ Branches Sources**
+          - **Branches fusionnÃ©es :** ${{ needs.analyze-branches-for-merge.outputs.branches_to_merge }}
+          - **Conflits dÃ©tectÃ©s :** ${{ needs.analyze-branches-for-merge.outputs.conflicts_detected }}
+          - **RÃ©solution :** Intelligente
           
-          ## 🔧 **Actions Réalisées**
+          ## ðŸ”§ **Actions RÃ©alisÃ©es**
           
-          ### **✅ Analyse Intelligente**
-          - Branches analysées et validées
-          - Conflits potentiels identifiés
-          - Stratégie de fusion définie
+          ### **âœ… Analyse Intelligente**
+          - Branches analysÃ©es et validÃ©es
+          - Conflits potentiels identifiÃ©s
+          - StratÃ©gie de fusion dÃ©finie
           
-          ### **✅ Fusion Intelligente**
-          - Fusion ${{ github.event.inputs.merge_strategy }} appliquée
-          - Résolution automatique des conflits
-          - Validation complète
+          ### **âœ… Fusion Intelligente**
+          - Fusion ${{ github.event.inputs.merge_strategy }} appliquÃ©e
+          - RÃ©solution automatique des conflits
+          - Validation complÃ¨te
           
-          ### **✅ Dashboard Beta**
-          - Section beta mise à jour
-          - KPI en temps réel
-          - Timeline de développement
+          ### **âœ… Dashboard Beta**
+          - Section beta mise Ã  jour
+          - KPI en temps rÃ©el
+          - Timeline de dÃ©veloppement
           
-          ## 🏆 **Résultat Final**
+          ## ðŸ† **RÃ©sultat Final**
           
-          - **Fusion réussie :** ✅
-          - **Conflits résolus :** ✅
-          - **Dashboard mis à jour :** ✅
-          - **Mode YOLO Intelligent :** ✅
+          - **Fusion rÃ©ussie :** âœ…
+          - **Conflits rÃ©solus :** âœ…
+          - **Dashboard mis Ã  jour :** âœ…
+          - **Mode YOLO Intelligent :** âœ…
           
-          ## 🎉 **Conclusion**
+          ## ðŸŽ‰ **Conclusion**
           
-          **La fusion intelligente des branches est maintenant complète avec :**
-          - ✅ **Fusion ${{ github.event.inputs.merge_strategy }}** réussie
-          - ✅ **Résolution intelligente** des conflits
-          - ✅ **Dashboard beta** mis à jour
-          - ✅ **Mode YOLO Intelligent** opérationnel
+          **La fusion intelligente des branches est maintenant complÃ¨te avec :**
+          - âœ… **Fusion ${{ github.event.inputs.merge_strategy }}** rÃ©ussie
+          - âœ… **RÃ©solution intelligente** des conflits
+          - âœ… **Dashboard beta** mis Ã  jour
+          - âœ… **Mode YOLO Intelligent** opÃ©rationnel
           
-          **Le projet Tuya Zigbee est maintenant parfaitement synchronisé !** 🚀
+          **Le projet Tuya Zigbee est maintenant parfaitement synchronisÃ© !** ðŸš€
           
           ---
           
-          *Généré automatiquement par le Mode YOLO Intelligent*
+          *GÃ©nÃ©rÃ© automatiquement par le Mode YOLO Intelligent*
           *Fusion intelligente des branches du projet Tuya Zigbee*
           EOF
           
-          echo "✅ Rapport de fusion généré"
+          echo "âœ… Rapport de fusion gÃ©nÃ©rÃ©"
 
-      - name: 📤 Push Rapport
+      - name: ðŸ“¤ Push Rapport
         run: |
           git add RAPPORT-FUSION-INTELLIGENTE.md
-          git commit -m "📋 Rapport fusion intelligente - Mode YOLO Intelligent"
+          git commit -m "ðŸ“‹ Rapport fusion intelligente - Mode YOLO Intelligent"
           git push origin ${{ github.event.inputs.target_branch }} 
+

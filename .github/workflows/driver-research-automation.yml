@@ -1,11 +1,29 @@
-# 🚀 Driver Research Automation - Tuya Zigbee Project
+﻿# ðŸš€ Driver Research Automation - Tuya Zigbee Project
 # Recherche automatique de drivers dans tous les forums et sources
 
-name: 🔍 Driver Research Automation
+name: ðŸ” Driver Research Automation
+
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   schedule:
-    - cron: '0 4 * * *'  # Tous les jours à 4h00 UTC
+    - cr
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '0 4 * * *'  # Tous les jours Ã  4h00 UTC
   workflow_dispatch:
   push:
     paths:
@@ -14,24 +32,59 @@ on:
 
 jobs:
   research-drivers:
-    runs-on: ubuntu-latest
-    name: 🔍 Recherche automatique de drivers
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    name: ðŸ” Recherche automatique de drivers
     
+    
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_VERSION: '18'
+        PYTHON_VERSION: '3.11'
+
     steps:
-      - name: 📥 Checkout repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout repository
         uses: actions/checkout@v4
         
-      - name: 🔧 Setup Node.js
+      - name: ðŸ”§ Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-versi
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '18'
           
-      - name: 📦 Install dependencies
+      - name: ðŸ“¦ Install dependencies
         run: |
           npm install
           npm install -g puppeteer axios cheerio
           
-      - name: 🔍 Research from ZHA (Zigbee Home Automation)
+      - name: ðŸ” Research from ZHA (Zigbee Home Automation)
         run: |
           echo "Researching drivers from ZHA..."
           mkdir -p logs/research
@@ -75,7 +128,7 @@ jobs:
           
           node scripts/research/zha_research.js
           
-      - name: 🔍 Research from Z2M (Zigbee2MQTT)
+      - name: ðŸ” Research from Z2M (Zigbee2MQTT)
         run: |
           echo "Researching drivers from Zigbee2MQTT..."
           
@@ -117,7 +170,7 @@ jobs:
           
           node scripts/research/z2m_research.js
           
-      - name: 🔍 Research from forums and communities
+      - name: ðŸ” Research from forums and communities
         run: |
           echo "Researching from forums and communities..."
           
@@ -159,7 +212,7 @@ jobs:
           
           node scripts/research/forum_research.js
           
-      - name: 📊 Generate research report
+      - name: ðŸ“Š Generate research report
         run: |
           echo "Generating comprehensive research report..."
           
@@ -196,28 +249,28 @@ jobs:
             
             fs.writeFileSync('logs/research/research_report.json', JSON.stringify(report, null, 2));
             
-            // Générer rapport markdown
-            const markdown = `# 📊 Rapport de Recherche - Drivers Tuya Zigbee
+            // GÃ©nÃ©rer rapport markdown
+            const markdown = `# ðŸ“Š Rapport de Recherche - Drivers Tuya Zigbee
 
-## 📅 Date: ${new Date().toLocaleDateString()}
+## ðŸ“… Date: ${new Date().toLocaleDateString()}
 
-## 🔍 Sources Recherchées
+## ðŸ” Sources RecherchÃ©es
 - **ZHA**: ${zha.length} sources
 - **Zigbee2MQTT**: ${z2m.length} sources  
 - **Forums**: ${forums.length} sources
 
-## 📈 Statistiques
-- **Références Tuya trouvées**: ${report.summary.total_tuya_references}
+## ðŸ“ˆ Statistiques
+- **RÃ©fÃ©rences Tuya trouvÃ©es**: ${report.summary.total_tuya_references}
 - **Drivers potentiels**: ${Math.floor(report.summary.total_tuya_references / 10)}
 
-## 🎯 Recommandations
+## ðŸŽ¯ Recommandations
 ${report.recommendations.map(r => `- ${r}`).join('\n')}
 
-## 📋 Actions Suivantes
+## ðŸ“‹ Actions Suivantes
 ${report.next_actions.map(a => `- ${a}`).join('\n')}
 
 ---
-*Généré automatiquement le ${new Date().toISOString()}*
+*GÃ©nÃ©rÃ© automatiquement le ${new Date().toISOString()}*
 `;
             
             fs.writeFileSync('logs/research/research_report.md', markdown);
@@ -229,15 +282,15 @@ ${report.next_actions.map(a => `- ${a}`).join('\n')}
           
           node scripts/research/generate_report.js
           
-      - name: 📝 Commit research results
+      - name: ðŸ“ Commit research results
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add logs/research/ scripts/research/
-          git commit -m "🔍 [$(date -u '+%Y-%m-%d %H:%M UTC')] Driver research: ZHA, Z2M, forums analysis completed. Found potential drivers for Homey SDK 3. Powered by GitHub Actions"
+          git commit -m "ðŸ” [$(date -u '+%Y-%m-%d %H:%M UTC')] Driver research: ZHA, Z2M, forums analysis completed. Found potential drivers for Homey SDK 3. Powered by GitHub Actions"
           git push
           
-      - name: 📈 Update research stats
+      - name: ðŸ“ˆ Update research stats
         run: |
           echo "Research completed successfully!"
           echo "Sources analyzed: ZHA, Zigbee2MQTT, Forums"

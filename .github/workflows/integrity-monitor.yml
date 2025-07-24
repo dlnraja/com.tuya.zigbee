@@ -1,4 +1,18 @@
-name: 🛡️ Integrity Monitor Optimisé
+﻿# integrity-monitor.yml
+# Description: Workflow automatisÃ© pour integrity monitor
+# Date: 2025-07-25
+# Version: 1.0
+
+name: ðŸ›¡ï¸ Integrity Monitor OptimisÃ©
+
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   push:
@@ -9,22 +23,49 @@ on:
 
 jobs:
   integrity-monitor:
-    runs-on: ubuntu-latest
-    name: 🛡️ Monitoring d'intégrité robuste
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    name: ðŸ›¡ï¸ Monitoring d'intÃ©gritÃ© robuste
+    
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_VERSION: '18'
+        PYTHON_VERSION: '3.11'
+
     steps:
-      - name: 📥 Checkout repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout repository
         uses: actions/checkout@v3
-      - name: 🛡️ Vérification des fichiers critiques
+      - name: ðŸ›¡ï¸ VÃ©rification des fichiers critiques
         run: |
-          echo "🛡️ Vérification des fichiers critiques..."
+          echo "ðŸ›¡ï¸ VÃ©rification des fichiers critiques..."
           for file in app.js app.json package.json README.md; do
             if [ -f "$file" ]; then
-              echo "✅ $file présent."
+              echo "âœ… $file prÃ©sent."
             else
-              echo "❌ $file manquant !"; exit 1;
+              echo "âŒ $file manquant !"; exit 1;
             fi
           done
-      - name: 📈 Rapport d'intégrité
+      - name: ðŸ“ˆ Rapport d'intÃ©gritÃ©
         run: |
-          echo "📈 Rapport d'intégrité : tous les fichiers critiques sont présents."
-          echo "✅ Monitoring d'intégrité terminé avec succès."
+          echo "ðŸ“ˆ Rapport d'intÃ©gritÃ© : tous les fichiers critiques sont prÃ©sents."
+          echo "âœ… Monitoring d'intÃ©gritÃ© terminÃ© avec succÃ¨s."
+

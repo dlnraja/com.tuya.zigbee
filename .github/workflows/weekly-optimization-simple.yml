@@ -1,17 +1,76 @@
-﻿name: Weekly Optimization
+﻿# weekly-optimization-simple.yml
+# Description: Workflow automatisÃ© pour weekly optimization simple
+# Date: 2025-07-25
+# Version: 1.0
+
+name: Weekly Optimization
+
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   schedule:
-    - cron: '0 2 * * 1'
+    - cr
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '0 2 * * 1'
   workflow_dispatch:
 
 jobs:
-  weekly-optimization:
-    runs-on: windows-latest
+  weekly-optimizati
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on:
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: windows-latest
+    
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_VERSION: '18'
+        PYTHON_VERSION: '3.11'
+
     steps:
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Checkout
         uses: actions/checkout@v4
         
       - name: Run Weekly Optimization
         run: |
           powershell -ExecutionPolicy Bypass -File "scripts/weekly-optimization.ps1"
+

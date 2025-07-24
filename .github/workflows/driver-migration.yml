@@ -1,14 +1,63 @@
-﻿name: Driver Migration
+﻿# driver-migration.yml
+# Description: Workflow automatisÃ© pour driver migration
+# Date: 2025-07-25
+# Version: 1.0
+
+name: Driver Migration
+
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   schedule:
-    - cron: '0 4 * * *'
+    - cr
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '0 4 * * *'
   workflow_dispatch:
 
 jobs:
   migrate-drivers:
-    runs-on: ubuntu-latest
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_VERSION: '18'
+        PYTHON_VERSION: '3.11'
+
     steps:
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Checkout
         uses: actions/checkout@v4
         
@@ -50,3 +99,4 @@ jobs:
           git add -A
           git commit -m "Driver migration completed - \"
           git push
+

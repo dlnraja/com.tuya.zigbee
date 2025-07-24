@@ -1,14 +1,63 @@
+﻿# cleanup.yml
+# Description: Workflow automatisÃ© pour cleanup
+# Date: 2025-07-25
+# Version: 1.0
+
 name: Cleanup Repository
+
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   schedule:
-    - cron: '0 2 1 * *'
+    - cr
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '0 2 1 * *'
   workflow_dispatch:
 
 jobs:
   cleanup:
-    runs-on: ubuntu-latest
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_VERSION: '18'
+        PYTHON_VERSION: '3.11'
+
     steps:
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - uses: actions/checkout@v4
       
       - name: Cleanup files
@@ -42,3 +91,4 @@ jobs:
           git add -A
           git diff --staged --quiet || git commit -m "Auto cleanup - $(date)"
           git push 
+

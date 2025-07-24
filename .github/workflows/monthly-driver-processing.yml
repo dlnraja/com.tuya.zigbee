@@ -1,11 +1,29 @@
-# 🚀 Monthly Driver Processing - Tuya Zigbee Project
+﻿# ðŸš€ Monthly Driver Processing - Tuya Zigbee Project
 # Traitement mensuel de 100 drivers maximum
 
-name: 📅 Monthly Driver Processing
+name: ðŸ“… Monthly Driver Processing
+
+
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
 
 on:
   schedule:
-    - cron: '0 5 1 * *'  # Premier jour de chaque mois à 5h00 UTC
+    - cr
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '0 5 1 * *'  # Premier jour de chaque mois Ã  5h00 UTC
   workflow_dispatch:
   push:
     paths:
@@ -14,24 +32,59 @@ on:
 
 jobs:
   process-drivers:
-    runs-on: ubuntu-latest
-    name: 📅 Traitement mensuel des drivers
+    runs-
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: ubuntu-latest
+    name: ðŸ“… Traitement mensuel des drivers
     
+    
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_VERSION: '18'
+        PYTHON_VERSION: '3.11'
+
     steps:
-      - name: 📥 Checkout repository
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: ðŸ“¥ Checkout repository
         uses: actions/checkout@v4
         
-      - name: 🔧 Setup Node.js
+      - name: ðŸ”§ Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-versi
+# Permissions pour la sÃ©curitÃ©
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  security-events: read
+
+on: '18'
           
-      - name: 📦 Install dependencies
+      - name: ðŸ“¦ Install dependencies
         run: |
           npm install
           npm install -g homey-cli
           
-      - name: 🔍 Analyze research results
+      - name: ðŸ” Analyze research results
         run: |
           echo "Analyzing research results for driver prioritization..."
           mkdir -p logs/processing
@@ -71,7 +124,7 @@ jobs:
           
           node scripts/processing/analyze_research.js
           
-      - name: 📋 Generate processing plan
+      - name: ðŸ“‹ Generate processing plan
         run: |
           echo "Generating monthly processing plan..."
           
@@ -103,30 +156,30 @@ jobs:
             
             fs.writeFileSync('logs/processing/monthly_plan.json', JSON.stringify(plan, null, 2));
             
-            // Générer plan markdown
-            const markdown = `# 📅 Plan Mensuel - Traitement Drivers
+            // GÃ©nÃ©rer plan markdown
+            const markdown = `# ðŸ“… Plan Mensuel - Traitement Drivers
 
-## 📊 Vue d'ensemble
+## ðŸ“Š Vue d'ensemble
 - **Mois**: ${plan.month}
 - **Drivers cibles**: ${plan.target_drivers}/100
 - **Objectif hebdomadaire**: ${plan.weekly_targets} drivers
 
-## 🎯 Priorités par Semaine
+## ðŸŽ¯ PrioritÃ©s par Semaine
 ${Object.entries(plan.priorities).map(([week, categories]) => 
   `### ${week.charAt(0).toUpperCase() + week.slice(1)}
 - ${categories.join(', ')}`
 ).join('\n')}
 
-## 🔧 Exigences SDK 3
+## ðŸ”§ Exigences SDK 3
 ${plan.sdk3_requirements.map(req => `- ${req}`).join('\n')}
 
-## 📈 Métriques
+## ðŸ“ˆ MÃ©triques
 - **Drivers existants**: ${analysis.existing_drivers}
 - **Nouveaux potentiels**: ${analysis.potential_new_drivers}
-- **Compatibilité**: 100% SDK 3
+- **CompatibilitÃ©**: 100% SDK 3
 
 ---
-*Généré automatiquement le ${new Date().toISOString()}*
+*GÃ©nÃ©rÃ© automatiquement le ${new Date().toISOString()}*
 `;
             
             fs.writeFileSync('logs/processing/monthly_plan.md', markdown);
@@ -138,7 +191,7 @@ ${plan.sdk3_requirements.map(req => `- ${req}`).join('\n')}
           
           node scripts/processing/generate_plan.js
           
-      - name: 🔧 Create driver templates
+      - name: ðŸ”§ Create driver templates
         run: |
           echo "Creating SDK 3 compatible driver templates..."
           
@@ -236,15 +289,15 @@ module.exports = TuyaPlug;`
           
           node scripts/processing/create_templates.js
           
-      - name: 📝 Commit processing results
+      - name: ðŸ“ Commit processing results
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add logs/processing/ scripts/processing/ templates/
-          git commit -m "📅 [$(date -u '+%Y-%m-%d %H:%M UTC')] Monthly driver processing: Analysis completed, plan generated, templates created. SDK 3 compatible. Powered by GitHub Actions"
+          git commit -m "ðŸ“… [$(date -u '+%Y-%m-%d %H:%M UTC')] Monthly driver processing: Analysis completed, plan generated, templates created. SDK 3 compatible. Powered by GitHub Actions"
           git push
           
-      - name: 📈 Update processing stats
+      - name: ðŸ“ˆ Update processing stats
         run: |
           echo "Monthly processing setup completed!"
           echo "Analysis: Research results analyzed"
