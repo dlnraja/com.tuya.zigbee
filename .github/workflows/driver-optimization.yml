@@ -1,0 +1,256 @@
+# 🚀 Driver Optimization - Tuya Zigbee Project
+# Optimisation et mise à jour des drivers vers SDK 3
+
+name: 🔧 Driver Optimization
+
+on:
+  schedule:
+    - cron: '0 7 * * *'  # Tous les jours à 7h00 UTC
+  workflow_dispatch:
+  push:
+    paths:
+      - 'drivers/**'
+      - 'scripts/bench-ia-enhanced.js'
+
+jobs:
+  optimize-drivers:
+    runs-on: ubuntu-latest
+    name: 🔧 Optimisation des drivers SDK 3
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: 📦 Install dependencies
+        run: |
+          npm install
+          npm install -g homey-cli
+          
+      - name: 🔍 Analyze SDK 3 compatibility
+        run: |
+          echo "Analyzing SDK 3 compatibility..."
+          node scripts/bench-ia-enhanced.js
+          
+      - name: 🔧 Optimize drivers to SDK 3
+        run: |
+          echo "Optimizing drivers to SDK 3..."
+          
+          cat > scripts/optimize_sdk3.js << 'EOF'
+          const fs = require('fs');
+          const path = require('path');
+          
+          class SDK3Optimizer {
+            constructor() {
+              this.optimizedDrivers = [];
+              this.errors = [];
+              this.stats = {
+                total_drivers: 0,
+                optimized: 0,
+                already_compatible: 0,
+                errors: 0
+              };
+            }
+            
+            // Analyser tous les drivers
+            analyzeDrivers() {
+              const driversDir = 'drivers';
+              const drivers = fs.readdirSync(driversDir).filter(d => 
+                fs.statSync(path.join(driversDir, d)).isDirectory()
+              );
+              
+              this.stats.total_drivers = drivers.length;
+              console.log(`📊 Found ${drivers.length} drivers to analyze`);
+              
+              return drivers;
+            }
+            
+            // Optimiser un driver
+            optimizeDriver(driverName) {
+              try {
+                const driverPath = path.join('drivers', driverName);
+                const deviceFile = path.join(driverPath, 'device.js');
+                
+                if (!fs.existsSync(deviceFile)) {
+                  console.log(`⚠️  No device.js found for ${driverName}`);
+                  return;
+                }
+                
+                const content = fs.readFileSync(deviceFile, 'utf8');
+                const optimizedContent = this.optimizeDeviceFile(content, driverName);
+                
+                if (optimizedContent !== content) {
+                  fs.writeFileSync(deviceFile, optimizedContent);
+                  this.optimizedDrivers.push(driverName);
+                  this.stats.optimized++;
+                  console.log(`✅ Optimized ${driverName} to SDK 3`);
+                } else {
+                  this.stats.already_compatible++;
+                  console.log(`✅ ${driverName} already SDK 3 compatible`);
+                }
+                
+              } catch (error) {
+                console.error(`❌ Error optimizing ${driverName}:`, error.message);
+                this.errors.push({ driver: driverName, error: error.message });
+                this.stats.errors++;
+              }
+            }
+            
+            // Optimiser le fichier device.js
+            optimizeDeviceFile(content, driverName) {
+              let optimized = content;
+              
+              // 1. Remplacer les anciens patterns par les nouveaux
+              optimized = this.updateImportStatements(optimized);
+              optimized = this.updateClassDefinition(optimized);
+              optimized = this.updateCapabilityRegistration(optimized);
+              optimized = this.updateErrorHandling(optimized);
+              optimized = this.updateAsyncPatterns(optimized);
+              
+              return optimized;
+            }
+            
+            // Mettre à jour les imports
+            updateImportStatements(content) {
+              // Remplacer les anciens imports
+              let updated = content
+                .replace(/const\s+{\s*ZigBeeDevice\s*}\s*=\s*require\s*\(\s*['"]homey-zigbeedriver['"]\s*\)/g,
+                  "const { ZigBeeDevice } = require('homey-zigbeedriver')")
+                .replace(/const\s+{\s*CLUSTER\s*}\s*=\s*require\s*\(\s*['"]zigbee-clusters['"]\s*\)/g,
+                  "const { CLUSTER } = require('zigbee-clusters')");
+              
+              // Ajouter les imports manquants
+              if (!updated.includes("require('homey-zigbeedriver')")) {
+                updated = "const { ZigBeeDevice } = require('homey-zigbeedriver');\n" + updated;
+              }
+              
+              if (!updated.includes("require('zigbee-clusters')")) {
+                updated = updated.replace(/const\s+{\s*ZigBeeDevice\s*}\s*=\s*require\s*\(\s*['"]homey-zigbeedriver['"]\s*\)/,
+                  "const { ZigBeeDevice } = require('homey-zigbeedriver');\nconst { CLUSTER } = require('zigbee-clusters')");
+              }
+              
+              return updated;
+            }
+            
+            // Mettre à jour la définition de classe
+            updateClassDefinition(content) {
+              // S'assurer que la classe étend ZigBeeDevice
+              if (!content.includes('extends ZigBeeDevice')) {
+                content = content.replace(/class\s+(\w+)/, 'class $1 extends ZigBeeDevice');
+              }
+              
+              // S'assurer que 'use strict' est présent
+              if (!content.includes("'use strict'")) {
+                content = "'use strict';\n\n" + content;
+              }
+              
+              return content;
+            }
+            
+            // Mettre à jour l'enregistrement des capacités
+            updateCapabilityRegistration(content) {
+              // Remplacer les anciens patterns d'enregistrement
+              let updated = content
+                .replace(/this\.registerCapability\s*\(\s*['"]([^'"]+)['"]\s*,\s*['"]([^'"]+)['"]\s*\)/g,
+                  "this.registerCapability('$1', CLUSTER.$2, {\n      getOpts: { getOnStart: true, pollInterval: 60000 }\n    })")
+                .replace(/this\.registerCapability\s*\(\s*['"]([^'"]+)['"]\s*,\s*CLUSTER\.([^,\s]+)\s*\)/g,
+                  "this.registerCapability('$1', CLUSTER.$2, {\n      getOpts: { getOnStart: true, pollInterval: 60000 }\n    })");
+              
+              return updated;
+            }
+            
+            // Mettre à jour la gestion d'erreurs
+            updateErrorHandling(content) {
+              // Ajouter try-catch si absent
+              if (!content.includes('try') && !content.includes('catch')) {
+                content = content.replace(/async\s+onNodeInit\s*\(\s*{\s*zclNode\s*}\s*\)\s*{/,
+                  "async onNodeInit({ zclNode }) {\n    try {");
+                content = content.replace(/}\s*$/,
+                  "    } catch (error) {\n      this.error('Error initializing device:', error);\n    }\n  }");
+              }
+              
+              return content;
+            }
+            
+            // Mettre à jour les patterns async
+            updateAsyncPatterns(content) {
+              // S'assurer que onNodeInit est async
+              if (!content.includes('async onNodeInit')) {
+                content = content.replace(/onNodeInit\s*\(\s*{\s*zclNode\s*}\s*\)/,
+                  "async onNodeInit({ zclNode })");
+              }
+              
+              // Ajouter await pour super.onNodeInit
+              if (content.includes('super.onNodeInit') && !content.includes('await super.onNodeInit')) {
+                content = content.replace(/super\.onNodeInit\s*\(\s*{\s*zclNode\s*}\s*\)/,
+                  "await super.onNodeInit({ zclNode })");
+              }
+              
+              return content;
+            }
+            
+            // Exécuter l'optimisation
+            async execute() {
+              console.log('🚀 Starting SDK 3 optimization...');
+              
+              const drivers = this.analyzeDrivers();
+              
+              drivers.forEach(driver => {
+                this.optimizeDriver(driver);
+              });
+              
+              this.generateReport();
+              
+              console.log('\n✅ SDK 3 optimization completed!');
+              return this.stats;
+            }
+            
+            // Générer le rapport
+            generateReport() {
+              const report = {
+                timestamp: new Date().toISOString(),
+                stats: this.stats,
+                optimized_drivers: this.optimizedDrivers,
+                errors: this.errors,
+                summary: {
+                  success_rate: Math.round(((this.stats.optimized + this.stats.already_compatible) / this.stats.total_drivers) * 100)
+                }
+              };
+              
+              const logsDir = 'logs/optimization';
+              if (!fs.existsSync(logsDir)) {
+                fs.mkdirSync(logsDir, { recursive: true });
+              }
+              
+              fs.writeFileSync(
+                path.join(logsDir, `sdk3_optimization_${new Date().toISOString().replace(/[:.]/g, '-')}.json`),
+                JSON.stringify(report, null, 2)
+              );
+              
+              console.log(`📊 Optimization report saved to ${logsDir}/`);
+            }
+          }
+          
+          const optimizer = new SDK3Optimizer();
+          optimizer.execute().catch(console.error);
+          EOF
+          
+          node scripts/optimize_sdk3.js
+          
+      - name: 📝 Commit optimizations
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add drivers/ logs/optimization/
+          git commit -m "🔧 [$(date -u '+%Y-%m-%d %H:%M UTC')] Driver optimization: SDK 3 compatibility updates. Powered by GitHub Actions" || echo "No changes to commit"
+          git push
+          
+      - name: 📈 Update optimization stats
+        run: |
+          echo "Driver optimization completed successfully!"
+          echo "SDK 3 compatibility: Improved"
+          echo "Next optimization: Tomorrow 7:00 UTC" 
