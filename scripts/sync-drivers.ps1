@@ -1,41 +1,40 @@
+<<<<<<< HEAD
+﻿# SYNC DRIVERS - Tuya Zigbee Project
 # Script de synchronisation des drivers
-# Usage: powershell -ExecutionPolicy Bypass -File .\scripts\sync-drivers.ps1
+
 param(
-    [string]$DriversPath = ".\drivers",
-    [string]$TemplatePath = ".\templates\driver.compose.json"
+    [string]$TemplatePath = "templates\driver.compose.json"
 )
 
-# V�rification du template
+Write-Host "SYNCHRONISATION DES DRIVERS" -ForegroundColor Cyan
+
+# Vérifier si le template existe
 if (-not (Test-Path $TemplatePath)) {
-    # Cr�ation du dossier templates s'il n'existe pas
-    $templatesDir = Split-Path -Parent $TemplatePath
-    if (-not (Test-Path $templatesDir)) {
-        New-Item -ItemType Directory -Path $templatesDir -Force | Out-Null
-    }
+    Write-Host "Template non trouvé: $TemplatePath" -ForegroundColor Red
+    exit 1
+}
+
+# Parcourir tous les dossiers de drivers
+Get-ChildItem -Path "drivers" -Directory | ForEach-Object {
+    $driverComposePath = Join-Path $_.FullName "driver.compose.json"
     
-    # Cr�ation du template par d�faut
-    $defaultTemplate = @"
-{
-  "id": "",
-  "name": {
-    "en": ""
-  },
-  "class": "socket",
-  "capabilities": [
-    "onoff"
-  ],
-  "zigbee": {
-    "manufacturerName": "Tuya",
-    "productId": [],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0, 4, 5, 61184
-        ],
-        "bindings": [
-          0, 4, 5
-        ]
-      }
+    if (-not (Test-Path $driverComposePath)) {
+        Write-Host "Copie du template vers $($_.Name)" -ForegroundColor Yellow
+        Copy-Item -Path $TemplatePath -Destination $driverComposePath
+        Write-Host "✅ $($_.Name) - Template copié" -ForegroundColor Green
+    } else {
+        Write-Host "ℹ️ $($_.Name) - Template déjà présent" -ForegroundColor White
     }
+}
+
+Write-Host "SYNCHRONISATION TERMINÉE" -ForegroundColor Green
+=======
+﻿param(
+  [string]\ = \"templates\driver.compose.json\"
+)
+Get-ChildItem drivers -Directory | ForEach-Object {
+  if (-not (Test-Path \"$_\driver.compose.json\")) {
+    Copy-Item \ \"$_\driver.compose.json\"
   }
 }
+>>>>>>> 2968528d15b99b4e9d4174069d0bf00c50d07887
