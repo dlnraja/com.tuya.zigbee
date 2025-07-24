@@ -117,14 +117,14 @@ Write-Host "$White Timestamp: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') UTC$NC"
 Write-Host ""
 
 if ($PS_Count -eq $SH_Count -and $PS_Count -gt 0) {
-    Write-Host "$Green ✅ TEST RAPIDE RÉUSSI$NC"
-    Write-Host "$Cyan 🎉 Optimisations appliquées avec succès$NC"
+    Write-Host "$Green TEST RAPIDE REUSSI$NC"
+    Write-Host "$Cyan Optimisations appliquees avec succes$NC"
 } else {
-    Write-Host "$Yellow ⚠️ TEST RAPIDE PARTIEL$NC"
-    Write-Host "$Cyan 🔧 Quelques optimisations nécessaires$NC"
+    Write-Host "$Yellow TEST RAPIDE PARTIEL$NC"
+    Write-Host "$Cyan Quelques optimisations necessaires$NC"
 }
 Write-Host ""
 
-Write-Host "$Green TEST RAPIDE TERMINÉ !$NC"
-Write-Host "$Cyan Mode YOLO Intelligent activé - Optimisations continues$NC"
+Write-Host "$Green TEST RAPIDE TERMINE !$NC"
+Write-Host "$Cyan Mode YOLO Intelligent active - Optimisations continues$NC"
 Write-Host "" 

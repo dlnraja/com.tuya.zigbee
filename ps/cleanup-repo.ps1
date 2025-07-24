@@ -142,22 +142,22 @@ $filesSaved = $beforeFiles - $afterFiles
 $percentSize = if ($beforeSize -gt 0) { ($sizeSaved * 100) / $beforeSize } else { 0 }
 $percentFiles = if ($beforeFiles -gt 0) { ($filesSaved * 100) / $beforeFiles } else { 0 }
 
-Write-Host "Taille économisée: $([math]::Round($sizeSaved, 2)) MB ($([math]::Round($percentSize, 1))%)" -ForegroundColor Green
-Write-Host "Fichiers supprimés: $filesSaved ($([math]::Round($percentFiles, 1))%)" -ForegroundColor Green
+Write-Host "Taille economisee: $([math]::Round($sizeSaved, 2)) MB ($([math]::Round($percentSize, 1)) pourcent)" -ForegroundColor Green
+Write-Host "Fichiers supprimes: $filesSaved ($([math]::Round($percentFiles, 1)) pourcent)" -ForegroundColor Green
 
 # 10) Rapport final
-Write-Host "`n📊 RAPPORT FINAL" -ForegroundColor Green
-Write-Host "===============" -ForegroundColor Green
+Write-Host "`nRAPPORT FINAL" -ForegroundColor Green
+Write-Host "=============" -ForegroundColor Green
 Write-Host "Taille avant: $([math]::Round($beforeSize, 2)) MB" -ForegroundColor White
-Write-Host "Taille après: $([math]::Round($afterSize, 2)) MB" -ForegroundColor White
-Write-Host "Économie: $([math]::Round($sizeSaved, 2)) MB ($([math]::Round($percentSize, 1))%)" -ForegroundColor Green
-Write-Host "Fichiers supprimés: $filesSaved ($([math]::Round($percentFiles, 1))%)" -ForegroundColor Green
+Write-Host "Taille apres: $([math]::Round($afterSize, 2)) MB" -ForegroundColor White
+Write-Host "Economie: $([math]::Round($sizeSaved, 2)) MB ($([math]::Round($percentSize, 1)) pourcent)" -ForegroundColor Green
+Write-Host "Fichiers supprimes: $filesSaved ($([math]::Round($percentFiles, 1)) pourcent)" -ForegroundColor Green
 
 if (-not $DryRun) {
-    Write-Host "`n✅ NETTOYAGE TERMINÉ AVEC SUCCÈS" -ForegroundColor Green
-    Write-Host "📊 Repo optimisé pour la communauté Homey" -ForegroundColor Cyan
+    Write-Host "`nNETTOYAGE TERMINE AVEC SUCCES" -ForegroundColor Green
+    Write-Host "Repo optimise pour la communaute Homey" -ForegroundColor Cyan
 } else {
-    Write-Host "`n🔍 Mode DryRun - Aucune modification effectuée" -ForegroundColor Yellow
+    Write-Host "`nMode DryRun - Aucune modification effectuee" -ForegroundColor Yellow
 }
 
-Write-Host "⏰ Timestamp: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss UTC')" -ForegroundColor White 
+Write-Host "Timestamp: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss UTC')" -ForegroundColor White 
