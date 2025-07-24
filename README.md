@@ -13,7 +13,7 @@
 ---
 
 ## 🕒 Suivi live & automatisation
-- **Dernière mise à jour** : 24/07/2025 21:40 UTC
+- **Dernière mise à jour** : 24/07/2025 21:45 UTC
 - **Mode automatique** : Activé (powered by GPT-4, Cursor, PowerShell, GitHub Actions)
 - **Optimisation, nettoyage, documentation, workflows, monitoring** : 100% automatisés
 - **IA utilisées** :
@@ -45,6 +45,52 @@
 - **Phase 1** : Enrichissement des 15 drivers en cours (fin estimée : 25/07/2025)
 - **Phase 2** : Traitement des 104 drivers restants (fin estimée : 28/07/2025)
 - **Phase 3** : Tests complets et validation (fin estimée : 29/07/2025)
+
+---
+
+## 🆕 **Derniers Drivers Implémentés (5 derniers push)**
+
+### 📋 **Tableau des Drivers Récents**
+
+| Date | Driver ID | Manufacturer ID | Marque | Type | Product ID | Image | Statut | Features |
+|------|-----------|-----------------|--------|------|------------|-------|--------|----------|
+| **24/07/2025** | `curtain_module` | `_TZE200_` | Tuya | Module Store | TS130F | ![curtain](assets/icons/curtain.png) | ✅ Enrichi | Window Covering, Lift Control, Battery Monitoring |
+| **24/07/2025** | `rain_sensor` | `_TZE200_` | Tuya | Capteur Pluie | TS0207 | ![rain](assets/icons/rain.png) | ✅ Enrichi | Water Detection, Illuminance, Battery, Cleaning Reminder |
+| **24/07/2025** | `multi_sensor` | `_TZE200_` | Tuya | Capteur Multi | TS0601 | ![multi](assets/icons/multi.png) | ✅ Enrichi | Power Metering, Current, Voltage, Battery |
+| **24/07/2025** | `smart_plug` | `_TZE200_` | Tuya | Prise Intelligente | TS011F | ![plug](assets/icons/plug.png) | ✅ Enrichi | On/Off, Power Metering, Current, Voltage |
+| **24/07/2025** | `remote_control` | `_TZE200_` | Tuya | Télécommande | TS004F | ![remote](assets/icons/remote.png) | ✅ Enrichi | Remote Control, Battery Monitoring |
+
+### 🔧 **Détails Techniques**
+
+#### **curtain_module** (TS130F)
+- **Capacités** : `windowcoverings_set`, `measure_battery`, `alarm_battery`
+- **Clusters** : WINDOW_COVERING, POWER_CONFIGURATION
+- **Fonctionnalités** : Contrôle rideaux, pourcentage de position, batterie
+- **Compatibilité** : Homey SDK 3.0
+
+#### **rain_sensor** (TS0207)
+- **Capacités** : `alarm_water`, `measure_luminance`, `measure_battery`, `alarm_battery`, `alarm_cleaning`
+- **Clusters** : IAS_ZONE, POWER_CONFIGURATION, TUYA_SPECIFIC
+- **Fonctionnalités** : Détection pluie, luminosité, rappel nettoyage
+- **Compatibilité** : Homey SDK 3.0
+
+#### **multi_sensor** (TS0601)
+- **Capacités** : `onoff`, `measure_power`, `meter_power`, `measure_current`, `measure_voltage`, `measure_battery`, `alarm_battery`
+- **Clusters** : GEN_ON_OFF, SE_METERING, HA_ELECTRICAL_MEASUREMENT, GEN_POWER_CFG
+- **Fonctionnalités** : Mesure multi-paramètres, monitoring énergétique
+- **Compatibilité** : Homey SDK 3.0
+
+#### **smart_plug** (TS011F)
+- **Capacités** : `onoff`, `measure_power`, `meter_power`, `measure_current`, `measure_voltage`, `measure_battery`, `alarm_battery`
+- **Clusters** : GEN_ON_OFF, SE_METERING, HA_ELECTRICAL_MEASUREMENT, GEN_POWER_CFG
+- **Fonctionnalités** : Contrôle ON/OFF, monitoring énergétique complet
+- **Compatibilité** : Homey SDK 3.0
+
+#### **remote_control** (TS004F)
+- **Capacités** : `onoff`, `measure_power`, `meter_power`, `measure_current`, `measure_voltage`, `measure_battery`, `alarm_battery`
+- **Clusters** : GEN_ON_OFF, SE_METERING, HA_ELECTRICAL_MEASUREMENT, GEN_POWER_CFG
+- **Fonctionnalités** : Télécommande, monitoring batterie
+- **Compatibilité** : Homey SDK 3.0
 
 ---
 
@@ -85,7 +131,7 @@ Créer la solution la plus complète, automatisée et résiliente pour intégrer
 | Tâche                        | Statut      | IA/Agent         | Début              | Fin estimée         |
 |-----------------------------|-------------|------------------|--------------------|---------------------|
 | Nettoyage repo              | ✅ Terminé     | PowerShell, GPT-4 | 24/07/2025 20:35   | 24/07/2025 20:38    |
-| Correction README           | ✅ Terminé    | GPT-4, Cursor     | 24/07/2025 20:38   | 24/07/2025 21:40    |
+| Correction README           | ✅ Terminé    | GPT-4, Cursor     | 24/07/2025 20:38   | 24/07/2025 21:45    |
 | Optimisation workflows      | ✅ Terminé     | GPT-4, Cursor     | 24/07/2025 20:40   | 24/07/2025 21:37    |
 | Test workflows              | ✅ Terminé     | PowerShell, Git   | 24/07/2025 21:37   | 24/07/2025 21:40    |
 | Enrichissement drivers      | 🔄 En cours   | Node.js, GPT-4    | 24/07/2025 21:40   | 28/07/2025 23:59    |
@@ -149,4 +195,4 @@ Créer la solution la plus complète, automatisée et résiliente pour intégrer
 
 ---
 
-> Généré et maintenu automatiquement par GPT-4, Cursor, PowerShell, GitHub Actions. Dernière mise à jour : 24/07/2025 21:40 UTC
+> Généré et maintenu automatiquement par GPT-4, Cursor, PowerShell, GitHub Actions. Dernière mise à jour : 24/07/2025 21:45 UTC
