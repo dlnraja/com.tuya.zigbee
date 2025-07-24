@@ -45,4 +45,4 @@ Ce tutoriel vous guide dans l'installation et la configuration du driver **smart
 - [Dashboard temps réel](../dashboard/)
 
 ---
-*Généré automatiquement le 2025-07-24T22:47:56.757Z*
+*Généré automatiquement le 2025-07-24T23:04:55.510Z*
