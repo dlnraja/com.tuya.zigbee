@@ -61,4 +61,4 @@
 - **Dashboard**: [Temps réel](../dashboard/)
 
 ---
-*Généré automatiquement le 2025-07-24T23:04:55.510Z*
+*Généré automatiquement le 2025-07-24T23:08:11.583Z*
