@@ -294,7 +294,7 @@ jobs:
           
           - **Drivers en développement :** $(find drivers/ -name "device.js" -newer origin/master)
           - **Améliorations dashboard :** $(git diff --name-only origin/master..HEAD | grep dashboard | wc -l)
-          - **Scripts d'automatisation :** $(find scripts/ -name "*.ps1" -newer origin/master | wc -l)
+          - **Scripts d'automatisation :** $(find ps/ -name "*.ps1" -newer origin/master | wc -l)
           
           ## 📅 **Plan de Fusion**
           
