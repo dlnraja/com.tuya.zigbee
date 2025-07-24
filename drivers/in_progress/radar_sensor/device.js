@@ -1,3 +1,4 @@
+﻿try {
 'use strict';
 
 const {Cluster} = require('zigbee-clusters');
@@ -59,7 +60,8 @@ const getDataValue = (dpValue) => {
 }
 
 class radarSensor extends TuyaSpecificClusterDevice {
-  async onNodeInit({zclNode}) {
+  async 
+    this.registerCapability('onoff', CLUSTER.ON_OFF);
     zclNode.endpoints[1].clusters.tuya.on("response", value => this.updatePosition(value));
   }
 
@@ -479,3 +481,6 @@ module.exports = radarSensor;
 //     }
 //   }
 // }
+
+} catch(e) { this.error('Driver error', e); }
+

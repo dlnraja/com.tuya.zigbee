@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 const { Cluster, debug } = require('zigbee-clusters');
 const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
@@ -82,7 +82,8 @@ const getDataValue = (dpValue) => {
 
 class siren extends TuyaSpecificClusterDevice {
 
-	async onNodeInit({ zclNode }) {
+	async 
+    this.registerCapability('onoff', CLUSTER.ON_OFF);
 
 		this.printNode();
 
@@ -222,3 +223,5 @@ class siren extends TuyaSpecificClusterDevice {
 	}
 
 module.exports = siren;
+
+

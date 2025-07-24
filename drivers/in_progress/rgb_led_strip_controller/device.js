@@ -1,7 +1,12 @@
+﻿try {
 'use strict';
 
-const { ZigBeeLightDevice } = require('homey-zigbeedriver');
+const { ZigBeeLightDevice } = require('homey-meshdriver');
 
-class rgb_led_strip_controller extends ZigBeeLightDevice {}
+
+  this.log('Device initialisÃ©');}
 
 module.exports = rgb_led_strip_controller;
+
+} catch(e) { this.error('Driver error', e); }
+

@@ -11,7 +11,7 @@ const UP_OPEN = 'upOpen';
 const DOWN_CLOSE = 'downClose';
 const REPORT_DEBOUNCER = 5000;
 
-class wallcurtainswitch extends ZigBeeDevice {
+class wallcurtainswitch extends ZigbeeDevice {
 
     invertPercentageLiftValue = false;
 
@@ -21,8 +21,10 @@ class wallcurtainswitch extends ZigBeeDevice {
         this._reportDebounceEnabled = false;
     }
 
-    async onNodeInit({ zclNode }) {
-        await super.onNodeInit({ zclNode });
+    async 
+    this.registerCapability('onoff', CLUSTER.ON_OFF);
+        await super.
+    this.registerCapability('onoff', CLUSTER.ON_OFF); zclNode });
 
         this.printNode();
 
@@ -206,5 +208,7 @@ class wallcurtainswitch extends ZigBeeDevice {
 }
 
 module.exports = wallcurtainswitch;
+
+
 
 

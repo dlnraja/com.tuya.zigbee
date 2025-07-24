@@ -1,4 +1,4 @@
-"use strict";
+﻿"use strict";
 
 const { ZigBeeDevice } = require("homey-zigbeedriver");
 const { Cluster, debug, CLUSTER } = require("zigbee-clusters");
@@ -11,7 +11,7 @@ const UP_OPEN = "upOpen";
 const DOWN_CLOSE = "downClose";
 const REPORT_DEBOUNCER = 5000;
 
-class curtain_module_2_gang extends ZigBeeDevice {
+class curtain_module_2_gang extends ZigbeeDevice {
     invertPercentageLiftValue = false;
 
     constructor(...args) {
@@ -20,8 +20,10 @@ class curtain_module_2_gang extends ZigBeeDevice {
         this._reportDebounceEnabled = false;
     }
 
-    async onNodeInit({ zclNode }) {
-        await super.onNodeInit({ zclNode });
+    async 
+    this.registerCapability('onoff', CLUSTER.ON_OFF);
+        await super.
+    this.registerCapability('onoff', CLUSTER.ON_OFF); zclNode });
 
         this.printNode();
 
@@ -57,7 +59,7 @@ class curtain_module_2_gang extends ZigBeeDevice {
                     // Override goToLiftPercentage to enforce blind to open/close completely
                     if (value === 0 || value === 1) {
                         this.debug(
-                            `set → \`windowcoverings_set\`: ${value} → setParser → ${
+                            `set â†’ \`windowcoverings_set\`: ${value} â†’ setParser â†’ ${
                                 value === 1 ? UP_OPEN : DOWN_CLOSE
                             }`
                         );
@@ -92,7 +94,7 @@ class curtain_module_2_gang extends ZigBeeDevice {
                         percentageLiftValue: Math.round(mappedValue),
                     };
                     this.debug(
-                        `set → \`windowcoverings_set\`: ${value} → setParser → goToLiftPercentage`,
+                        `set â†’ \`windowcoverings_set\`: ${value} â†’ setParser â†’ goToLiftPercentage`,
                         gotToLiftPercentageCommand
                     );
                     // Send goToLiftPercentage command
@@ -230,3 +232,5 @@ class curtain_module_2_gang extends ZigBeeDevice {
 }
 
 module.exports = curtain_module_2_gang;
+
+

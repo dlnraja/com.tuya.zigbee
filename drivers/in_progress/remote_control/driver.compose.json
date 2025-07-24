@@ -1,50 +1,53 @@
-{
-  "id": "remote_control",
-  "name": {
-    "en": "Remote Control"
-  },
-  "class": "sensor",
-  "platforms": [
-    "local"
-  ],
-  "connectivity": [
-    "zigbee"
-  ],
-  "capabilities": [
-    "onoff"
-  ],
-  "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
-  },
-  "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_remote_control",
-      "Tuya",
-      "Moes",
-      "Aqara",
-      "Xiaomi",
-      "Philips",
-      "IKEA",
-      "Osram",
-      "Samsung",
-      "LG",
-      "Bosch"
-    ],
-    "productId": [
-      "TSxxxx",
-      "TS004F"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          6
-        ],
-        "bindings": [
-          6
-        ]
-      }
-    }
-  }
+﻿{
+    "id":  "remote_control",
+    "name":  {
+                 "en":  "Remote Control"
+             },
+    "class":  "sensor",
+    "platforms":  [
+                      "local"
+                  ],
+    "connectivity":  [
+                         "zigbee"
+                     ],
+    "capabilities":  [
+                         "onoff",
+                         "measure_battery",
+                         "measure_temperature",
+                         "measure_humidity"
+                     ],
+    "images":  {
+                   "large":  "{{driverAssetsPath}}/images/large.png",
+                   "small":  "{{driverAssetsPath}}/images/small.png"
+               },
+    "zigbee":  {
+                   "manufacturerName":  [
+                                            "_TZ3000_remote_control",
+                                            "Tuya",
+                                            "Moes",
+                                            "Aqara",
+                                            "Xiaomi",
+                                            "Philips",
+                                            "IKEA",
+                                            "Osram",
+                                            "Samsung",
+                                            "LG",
+                                            "Bosch"
+                                        ],
+                   "productId":  [
+                                     "TSxxxx",
+                                     "TS004F"
+                                 ],
+                   "endpoints":  {
+                                     "1":  {
+                                               "clusters":  [
+                                                                0,
+                                                                6
+                                                            ],
+                                               "bindings":  [
+                                                                6
+                                                            ]
+                                           }
+                                 }
+               }
 }

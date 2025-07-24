@@ -1,6 +1,6 @@
-'use strict';
+﻿'use strict';
 
-const { ZigBeeDriver } = require('homey-zigbeedriver');
+const { ZigBeeDriver } = require('homey-meshdriver');
 const Homey = require("homey");
 
 class ThermostaticRadiatorValveDriver extends ZigBeeDriver {
@@ -11,3 +11,4 @@ class ThermostaticRadiatorValveDriver extends ZigBeeDriver {
 }
 
 module.exports = ThermostaticRadiatorValveDriver;
+

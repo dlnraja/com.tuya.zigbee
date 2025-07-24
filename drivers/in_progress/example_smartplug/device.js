@@ -1,15 +1,17 @@
+ï»¿try {
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { ZigBeeDevice } = require('homey-meshdriver');
 const { CLUSTER } = require('zigbee-clusters');
 const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
 
-class SmartPlugDevice extends ZigBeeDevice {
-  async onNodeInit({ zclNode }) {
-    // Enregistre le cluster spécifique Tuya
+class SmartPlugDevice extends ZigbeeDevice {
+  async 
+    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION);
+    // Enregistre le cluster spÃ©cifique Tuya
     this.tuyaSpecificCluster = this.zclNode.endpoints[1].addCluster(TuyaSpecificCluster);
     
-    // Enregistre les listeners pour les données entrantes
+    // Enregistre les listeners pour les donnÃ©es entrantes
     this.tuyaSpecificCluster.on('dataReport', this.onDataReport.bind(this));
     
     // Initialisation des capabilities
@@ -23,18 +25,18 @@ class SmartPlugDevice extends ZigBeeDevice {
     this.log('Smart Plug device initialized');
   }
   
-  // Gestion des rapports de données Tuya
+  // Gestion des rapports de donnÃ©es Tuya
   onDataReport(data) {
     this.log('Received data report:', data);
     
     // Traitement selon l'ID du datapoint
     switch(data.dpId) {
-      case 1: // État on/off
+      case 1: // Ã‰tat on/off
         const onoff = data.data[0] === 1;
         this.setCapabilityValue('onoff', onoff).catch(this.error);
         break;
         
-      case 4: // Consommation électrique (si supporté)
+      case 4: // Consommation Ã©lectrique (si supportÃ©)
         if (this.hasCapability('measure_power')) {
           const power = data.data.readUInt32BE(0) / 10; // Watts
           this.setCapabilityValue('measure_power', power).catch(this.error);
@@ -45,3 +47,6 @@ class SmartPlugDevice extends ZigBeeDevice {
 }
 
 module.exports = SmartPlugDevice;
+
+} catch(e) { this.error('Driver error', e); }
+

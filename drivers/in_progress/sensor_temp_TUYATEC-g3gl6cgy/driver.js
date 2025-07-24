@@ -1,4 +1,6 @@
-﻿const { ZigBeeDriver } = require('homey-zigbeedriver');
+﻿const { ZigBeeDriver } = require('homey-meshdriver');
 module.exports = class extends ZigBeeDriver {
   onInit() { this.log('driver init'); }
 };
+
+

@@ -1,7 +1,12 @@
+﻿try {
 'use strict';
 
 const TuyaZigBeeLightDevice = require('../../lib/TuyaZigBeeLightDevice');
 
-class rgb_mood_light extends TuyaZigBeeLightDevice {}
+
+  this.log('Device initialisÃ©');}
 
 module.exports = rgb_mood_light;
+
+} catch(e) { this.error('Driver error', e); }
+

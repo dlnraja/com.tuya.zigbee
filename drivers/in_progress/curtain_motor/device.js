@@ -1,3 +1,4 @@
+﻿try {
 'use strict';
 
 const { Cluster } = require('zigbee-clusters');
@@ -55,7 +56,8 @@ const getDataValue = (dpValue) => {
 
 class CurtainMotor extends TuyaSpecificClusterDevice {
 
-  async onNodeInit({ zclNode }) {
+  async 
+    this.registerCapability('onoff', CLUSTER.ON_OFF);
 
     this.printNode();
 
@@ -260,3 +262,6 @@ module.exports = CurtainMotor;
 //     }
 //   }
 // }
+
+} catch(e) { this.error('Driver error', e); }
+
