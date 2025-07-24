@@ -1,12 +1,14 @@
+﻿try {
 'use strict';
 
 const Homey = require('homey');
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { ZigBeeDevice } = require('homey-meshdriver');
 const { debug, CLUSTER } = require('zigbee-clusters');
 
-class temphumidsensor2 extends ZigBeeDevice {
+class temphumidsensor2 extends ZigbeeDevice {
 
-	async onNodeInit({zclNode}) {
+	async 
+    this.registerCapability('onoff', CLUSTER.ON_OFF);
 
 /*     debug(true);
     this.enableDebug(); */
@@ -55,3 +57,6 @@ class temphumidsensor2 extends ZigBeeDevice {
 }
 
 module.exports = temphumidsensor2;
+
+} catch(e) { this.error('Driver error', e); }
+

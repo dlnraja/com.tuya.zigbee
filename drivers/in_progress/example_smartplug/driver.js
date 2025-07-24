@@ -1,4 +1,4 @@
-'use strict';
+ï»¿'use strict';
 
 const { Driver } = require('homey');
 
@@ -8,7 +8,7 @@ class SmartPlugDriver extends Driver {
   }
   
   async onPairListDevices() {
-    // Cette méthode est appelée lors du jumelage
+    // Cette mÃ©thode est appelÃ©e lors du jumelage
     // Elle devrait renvoyer un tableau d'appareils
     return [
       {
@@ -22,3 +22,5 @@ class SmartPlugDriver extends Driver {
 }
 
 module.exports = SmartPlugDriver;
+
+

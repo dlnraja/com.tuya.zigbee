@@ -1,3 +1,4 @@
+﻿try {
 'use strict';
 
 const { Cluster, debug} = require('zigbee-clusters');
@@ -56,7 +57,8 @@ const getDataValue = (dpValue) => {
 
 class lcdtemphumidsensor3 extends TuyaSpecificClusterDevice {
 
-  async onNodeInit({ zclNode }) {
+  async 
+    this.registerCapability('onoff', CLUSTER.ON_OFF);
     this.printNode();
 
     zclNode.endpoints[1].clusters.tuya.on("reporting", value => this.processResponse(value));
@@ -445,3 +447,6 @@ module.exports = lcdtemphumidsensor3;
     }
   }
  */
+
+} catch(e) { this.error('Driver error', e); }
+

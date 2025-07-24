@@ -1,12 +1,13 @@
-'use strict';
+﻿'use strict';
 
 const Homey = require('homey');
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { ZigBeeDevice } = require('homey-meshdriver');
 const { debug, CLUSTER } = require('zigbee-clusters');
 
-class wall_switch_3_gang extends ZigBeeDevice {
+class wall_switch_3_gang extends ZigbeeDevice {
 
-  async onNodeInit({zclNode}) {
+  async 
+    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION);
 
     this.printNode();
 
@@ -682,3 +683,5 @@ module.exports = wall_switch_3_gang;
       }
     }
   } */
+
+

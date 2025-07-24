@@ -10,7 +10,8 @@ Cluster.addCluster(TuyaSpecificCluster);
 
 class radarSensor2 extends TuyaSpecificClusterDevice {
 
-  async onNodeInit({ zclNode }) {
+  async 
+    this.registerCapability('onoff', CLUSTER.ON_OFF);
     this.printNode();
 /*     debug(true);
     this.enableDebug(); */
@@ -122,4 +123,6 @@ class radarSensor2 extends TuyaSpecificClusterDevice {
 }
 
 module.exports = radarSensor2;
+
+
 

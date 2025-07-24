@@ -1,10 +1,12 @@
+﻿try {
 "use strict";
 
 const { ZigBeeDevice } = require("homey-zigbeedriver");
 const { CLUSTER } = require('zigbee-clusters');
 
-class smart_remote_1b extends ZigBeeDevice {
-  async onNodeInit({ zclNode }) {
+class smart_remote_1b extends ZigbeeDevice {
+  async 
+    this.registerCapability('measure_temperature', CLUSTER.TEMPERATURE_MEASUREMENT);
     this.printNode();
 
     // Bind the OnOff cluster for handling button events
@@ -67,3 +69,6 @@ class smart_remote_1b extends ZigBeeDevice {
 }
 
 module.exports = smart_remote_1b;
+
+} catch(e) { this.error('Driver error', e); }
+

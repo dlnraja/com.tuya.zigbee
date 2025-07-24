@@ -1,11 +1,12 @@
-"use strict";
+﻿"use strict";
 
 const { ZigBeeDevice } = require("homey-zigbeedriver");
 const { debug, CLUSTER } = require("zigbee-clusters");
 
-class dimmer_1_gang_2 extends ZigBeeDevice {
+class dimmer_1_gang_2 extends ZigbeeDevice {
 
-    async onNodeInit({ zclNode }) {
+    async 
+    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION);
         this.printNodeDetails(zclNode);
 
         try {
@@ -53,3 +54,5 @@ class dimmer_1_gang_2 extends ZigBeeDevice {
 }
 
 module.exports = dimmer_1_gang_2;
+
+

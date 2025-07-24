@@ -1,11 +1,13 @@
+﻿try {
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { ZigBeeDevice } = require('homey-meshdriver');
 const { debug, CLUSTER } = require('zigbee-clusters');
 
-class waterdetector extends ZigBeeDevice {
+class waterdetector extends ZigbeeDevice {
 		
-	async onNodeInit({zclNode}) {
+	async 
+    this.registerCapability('onoff', CLUSTER.ON_OFF);
 
 		this.printNode();
 
@@ -320,3 +322,6 @@ module.exports = waterdetector;
     }
   }
 } */
+
+} catch(e) { this.error('Driver error', e); }
+

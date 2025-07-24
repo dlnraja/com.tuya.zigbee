@@ -1,11 +1,13 @@
+﻿try {
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { ZigBeeDevice } = require('homey-meshdriver');
 // const { CLUSTER } = require('zigbee-clusters');
 
-class handheld_remote_4_buttons extends ZigBeeDevice {
+class handheld_remote_4_buttons extends ZigbeeDevice {
 
-    async onNodeInit({zclNode}) {
+    async 
+    this.registerCapability('onoff', CLUSTER.ON_OFF);
 
       this.printNode();
 
@@ -396,3 +398,6 @@ module.exports = handheld_remote_4_buttons;
     }
   }
   */
+
+} catch(e) { this.error('Driver error', e); }
+

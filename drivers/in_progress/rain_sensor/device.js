@@ -1,3 +1,4 @@
+﻿try {
 'use strict';
 
 const { debug, CLUSTER, Cluster } = require('zigbee-clusters');
@@ -10,7 +11,8 @@ Cluster.addCluster(TuyaSpecificCluster);
 
 class RainSensor extends TuyaSpecificClusterDevice {
 
-  async onNodeInit({ zclNode }) {
+  async 
+    this.registerCapability('onoff', CLUSTER.ON_OFF);
 
     this.printNode();
 
@@ -98,3 +100,6 @@ class RainSensor extends TuyaSpecificClusterDevice {
 }
 
 module.exports = RainSensor;
+
+} catch(e) { this.error('Driver error', e); }
+

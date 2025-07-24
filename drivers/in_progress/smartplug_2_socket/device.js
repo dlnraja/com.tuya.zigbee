@@ -1,14 +1,15 @@
-'use strict';
+﻿'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { ZigBeeDevice } = require('homey-meshdriver');
 const { CLUSTER, Cluster, ZCLDataTypes} = require('zigbee-clusters');
 const TuyaOnOffCluster = require('../../lib/TuyaOnOffCluster');
 
 Cluster.addCluster(TuyaOnOffCluster);
 
-class smartplug_2_socket extends ZigBeeDevice {
+class smartplug_2_socket extends ZigbeeDevice {
 
-  async onNodeInit({zclNode}) {
+  async 
+    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION);
     const { subDeviceId } = this.getData();
 
     this.printNode();
@@ -130,3 +131,5 @@ class smartplug_2_socket extends ZigBeeDevice {
 }
 
 module.exports = smartplug_2_socket;
+
+

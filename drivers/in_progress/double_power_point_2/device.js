@@ -1,11 +1,12 @@
-'use strict';
+﻿'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { ZigBeeDevice } = require('homey-meshdriver');
 const { CLUSTER } = require('zigbee-clusters');
 
-class doublepowerpoint2 extends ZigBeeDevice {
+class doublepowerpoint2 extends ZigbeeDevice {
 
-  async onNodeInit({ zclNode }) {
+  async 
+    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION);
 
     this.printNode();
 
@@ -65,3 +66,5 @@ class doublepowerpoint2 extends ZigBeeDevice {
 }
 
 module.exports = doublepowerpoint2;
+
+

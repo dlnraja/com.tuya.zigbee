@@ -1,11 +1,13 @@
+﻿try {
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { ZigBeeDevice } = require('homey-meshdriver');
 const { debug, CLUSTER } = require('zigbee-clusters');
 
-class smart_motion_sensor extends ZigBeeDevice {
+class smart_motion_sensor extends ZigbeeDevice {
 
-	async onNodeInit({ zclNode }) {
+	async 
+    this.registerCapability('onoff', CLUSTER.ON_OFF);
 
 		this.printNode();
 
@@ -426,3 +428,6 @@ module.exports = smart_motion_sensor;
       }
     }
   } */
+
+} catch(e) { this.error('Driver error', e); }
+

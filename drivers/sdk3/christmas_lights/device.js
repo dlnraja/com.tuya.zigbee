@@ -1,3 +1,4 @@
+﻿try {
 'use strict';
 
 const { Cluster } = require('zigbee-clusters');
@@ -8,7 +9,8 @@ Cluster.addCluster(TuyaSpecificCluster);
 
 class christmas_lights extends TuyaSpecificClusterDevice {
 
-    async onNodeInit({ zclNode }) {
+    async 
+    this.registerCapability('onoff', CLUSTER.ON_OFF);
         
         this.printNode();
 
@@ -140,3 +142,6 @@ module.exports = christmas_lights;
 // The device does report the on/off state, but the app does not use this, because it is not reliable.
 // The device also reports the current mode, but the app does not use this, because it is not reliable.
 // The device does not report the current dim level, color or effect, so the app has to poll the device to get the current state.
+
+} catch(e) { this.error('Driver error', e); }
+

@@ -1,11 +1,13 @@
+﻿try {
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { ZigBeeDevice } = require('homey-meshdriver');
 const { debug, CLUSTER } = require('zigbee-clusters');
 
-class outdoorplug extends ZigBeeDevice {
+class outdoorplug extends ZigbeeDevice {
 		
-	async onNodeInit({zclNode}) {
+	async 
+    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION);
 
     this.printNode();
 
@@ -31,3 +33,6 @@ class outdoorplug extends ZigBeeDevice {
 }
 
 module.exports = outdoorplug;
+
+} catch(e) { this.error('Driver error', e); }
+

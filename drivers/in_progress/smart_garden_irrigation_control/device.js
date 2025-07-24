@@ -1,7 +1,8 @@
+﻿try {
 'use strict';
 
 const Homey = require('homey');
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { ZigBeeDevice } = require('homey-meshdriver');
 const { Cluster, debug, CLUSTER } = require('zigbee-clusters');
 const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
 
@@ -9,9 +10,10 @@ Cluster.addCluster(TuyaSpecificCluster);
 
 const DEFAULT_ONOFF_DURATION = 1000
 
-class IrrigationController extends ZigBeeDevice {
+class IrrigationController extends ZigbeeDevice {
 
-  async onNodeInit({zclNode}) {
+  async 
+    this.registerCapability('measure_temperature', CLUSTER.TEMPERATURE_MEASUREMENT);
 
     this.printNode();
 
@@ -73,3 +75,6 @@ class IrrigationController extends ZigBeeDevice {
 }
 
 module.exports = IrrigationController;
+
+} catch(e) { this.error('Driver error', e); }
+

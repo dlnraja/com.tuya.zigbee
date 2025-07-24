@@ -1,3 +1,4 @@
+﻿try {
 'use strict';
 
 const { debug, Cluster } = require('zigbee-clusters');
@@ -6,9 +7,10 @@ const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
 // Add custom cluster handling for Tuya-specific messages
 Cluster.addCluster(TuyaSpecificCluster);
 
-class TuyaDiagnosticDevice extends require('homey-zigbeedriver').ZigBeeDevice {
+class TuyaDiagnosticDevice extends require('homey-meshdriver').ZigBeeDevice {
 
-  async onNodeInit({ zclNode }) {
+  async 
+    this.registerCapability('onoff', CLUSTER.ON_OFF);
     this.printNode();
 /*     debug(true);
     this.enableDebug(); */
@@ -65,3 +67,6 @@ class TuyaDiagnosticDevice extends require('homey-zigbeedriver').ZigBeeDevice {
 }
 
 module.exports = TuyaDiagnosticDevice;
+
+} catch(e) { this.error('Driver error', e); }
+

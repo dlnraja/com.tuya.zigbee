@@ -1,7 +1,9 @@
-const { ZigbeeDevice } = require('homey-zigbeedriver');
+﻿try {
+const { ZigbeeDevice } = require('homey-meshdriver');
 
 class PlugBlitzwolf_TZ3000_mraovvmm extends ZigbeeDevice {
-  async onInit() {
+  async 
+    this.registerCapability('onoff', CLUSTER.ON_OFF);
     this.log('Plug Blitzwolf TZ3000_mraovvmm initialized');
     this.registerCapability('onoff', 'genOnOff');
     this.registerCapability('measure_power', 'seMetering');
@@ -10,10 +12,13 @@ class PlugBlitzwolf_TZ3000_mraovvmm extends ZigbeeDevice {
     this.registerCapability('measure_voltage', 'haElectricalMeasurement');
     this.registerCapability('measure_battery', 'genPowerCfg');
     this.registerCapability('alarm_battery', 'genPowerCfg');
-    // Ajoutez ici d'autres capacités si besoin
+    // Ajoutez ici d'autres capacitÃ©s si besoin
   }
 }
 
 module.exports = PlugBlitzwolf_TZ3000_mraovvmm;
 
+
+
+} catch(e) { this.error('Driver error', e); }
 
