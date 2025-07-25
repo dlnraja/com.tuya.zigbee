@@ -37,7 +37,6 @@
 
 [![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![Homey SDK](https://img.shields.io/badge/Homey%20SDK-3.0-green.svg)](https://apps.homey.app/)
-[![YOLO Mode](https://img.shields.io/badge/YOLO%20Mode-Enabled-red.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![Automation](https://img.shields.io/badge/Automation-100%25-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 ```
 
@@ -46,7 +45,6 @@
 - ✅ **Documentation complète** des appareils supportés
 - ✅ **Guide d'installation** détaillé
 - ✅ **Support multilingue** (14 langues)
-- ✅ **Mode YOLO Intelligent** documenté
 
 ### **2. Drivers Améliorés** ✅
 

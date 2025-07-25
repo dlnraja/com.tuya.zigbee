@@ -1,4 +1,4 @@
-﻿# TODO SYNCHRONISE - Universal TUYA Zigbee Device
+# TODO SYNCHRONISE - Universal TUYA Zigbee Device
 
 ## METRIQUES ACTUELLES (2025-07-25 14:34:58)
 

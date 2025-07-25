@@ -1,1 +1,1 @@
-﻿'use strict'; const { ZigBeeDevice } = require('homey-zigbeedriver'); 
+'use strict'; const { ZigBeeDevice } = require('homey-zigbeedriver'); 

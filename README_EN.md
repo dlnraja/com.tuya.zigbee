@@ -1,12 +1,11 @@
 # 🚀 Tuya Zigbee - Intelligent & Automated Homey Application
 
-[![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](https://github.com/dlnraja/universal.tuya.zigbee.device)
 [![Homey SDK](https://img.shields.io/badge/Homey%20SDK-3.0-green.svg)](https://apps.homey.app/)
-[![YOLO Mode](https://img.shields.io/badge/YOLO%20Mode-Enabled-red.svg)](https://github.com/dlnraja/com.tuya.zigbee)
-[![Automation](https://img.shields.io/badge/Automation-100%25-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee)
-[![Optimization](https://img.shields.io/badge/Optimization-97%25-yellow.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Automation](https://img.shields.io/badge/Automation-100%25-brightgreen.svg)](https://github.com/dlnraja/universal.tuya.zigbee.device)
+[![Optimization](https://img.shields.io/badge/Optimization-97%25-yellow.svg)](https://github.com/dlnraja/universal.tuya.zigbee.device)
 [![Languages](https://img.shields.io/badge/Languages-14-informational.svg)](locales/)
-[![CI/CD](https://img.shields.io/github/workflow/status/dlnraja/com.tuya.zigbee/CI%20%26%20Manifest%20Sync?label=CI%2FCD)](https://github.com/dlnraja/com.tuya.zigbee/actions)
+[![CI/CD](https://img.shields.io/github/workflow/status/dlnraja/universal.tuya.zigbee.device/CI%20%26%20Manifest%20Sync?label=CI%2FCD)](https://github.com/dlnraja/universal.tuya.zigbee.device/actions)
 [![Drivers](https://img.shields.io/badge/Drivers-124%2B-brightgreen.svg)](drivers/)
 [![Enrichment](https://img.shields.io/badge/Enrichment-5%20tested-blue.svg)](logs/)
 
@@ -189,7 +188,6 @@ Create the most comprehensive, automated and resilient solution to integrate, ma
 
 ## 🏆 Global status
 - **Project 100% operational, optimized, automated, multilingual, secure**
-- **YOLO Intelligent Mode** : Enabled
 - **Live tracking, regular pushes, detailed logs**
 - **Driver enrichment in progress** : 5/124 completed
 

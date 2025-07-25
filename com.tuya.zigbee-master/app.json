@@ -1,4 +1,4 @@
-﻿# Tuya Zigbee – Homey App
+# Tuya Zigbee – Homey App
 
 ## Changelog
 | 2025-07-21 | auto | auto | Full restoration |
@@ -12,8 +12,8 @@
 
 ## Quick Start
 \\\powershell
-git clone https://github.com/dlnraja/com.tuya.zigbee.git
-cd com.tuya.zigbee
+git clone https://github.com/dlnraja/universal.tuya.zigbee.device.git
+cd universal.tuya.zigbee.device
 homey app install
 \\\
 "@ | Set-Content README.md -Encoding UTF8

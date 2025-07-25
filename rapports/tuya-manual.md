@@ -26,7 +26,6 @@ Ce guide complet vous accompagne dans l'utilisation de l'application **Tuya Zigb
 {
   "sdk": 3,
   "automation": "intelligent",
-  "yolo_mode": "enabled",
   "devices": "auto-discovery",
   "backup": "automatic"
 }
@@ -282,5 +281,4 @@ L'application **Tuya Zigbee** pour Homey offre une solution complète et automat
 ---
 
 *Guide créé avec ❤️ et automatisation intelligente*  
-*Mode YOLO Intelligent activé - Optimisation continue*  
 *Version 3.0.0 - Homey SDK 3* 

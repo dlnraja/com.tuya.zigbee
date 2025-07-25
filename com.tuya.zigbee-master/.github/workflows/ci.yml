@@ -1,4 +1,4 @@
-﻿name: CI & Manifest Sync
+name: CI & Manifest Sync
 on:
   push: { branches: [ 'master' ] }
   pull_request: { branches: [ 'master' ] }
