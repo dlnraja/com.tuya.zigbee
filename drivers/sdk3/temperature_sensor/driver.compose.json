@@ -1,12 +1,12 @@
 ﻿{
-    "id":  "flood_sensor",
+    "id":  "temperature_sensor",
     "capabilities":  [
                          "measure_temperature",
                          "measure_humidity",
                          "measure_battery"
                      ],
     "metadata":  {
-                     "creation_date":  "2025-07-25 06:39:17",
+                     "creation_date":  "2025-07-25 06:39:16",
                      "status":  "auto_generated",
                      "pattern_used":  "sensor",
                      "created_by":  "GPT-4, Cursor, PowerShell"

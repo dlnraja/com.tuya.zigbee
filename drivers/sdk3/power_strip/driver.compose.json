@@ -1,14 +1,12 @@
 ﻿{
-    "id":  "flood_sensor",
+    "id":  "power_strip",
     "capabilities":  [
-                         "measure_temperature",
-                         "measure_humidity",
-                         "measure_battery"
+                         "onoff"
                      ],
     "metadata":  {
-                     "creation_date":  "2025-07-25 06:39:17",
+                     "creation_date":  "2025-07-25 06:39:34",
                      "status":  "auto_generated",
-                     "pattern_used":  "sensor",
+                     "pattern_used":  "switch",
                      "created_by":  "GPT-4, Cursor, PowerShell"
                  },
     "energy":  {
@@ -20,8 +18,8 @@
     "zigbee":  {
                    "manufacturerName":  [
                                             "Tuya",
-                                            "Aqara",
-                                            "Xiaomi"
+                                            "SmartLife",
+                                            "eWeLink"
                                         ],
                    "endpoints":  {
                                      "1":  {
@@ -42,9 +40,10 @@
                                            }
                                  },
                    "productId":  [
-                                     "TS0201",
-                                     "TS0202",
-                                     "TS0203"
+                                     "TS0001",
+                                     "TS0002",
+                                     "TS0003",
+                                     "TS0004"
                                  ],
                    "learnmode":  {
                                      "instruction":  {
@@ -61,15 +60,15 @@
                    "large":  "{{driverAssetsPath}}/images/large.png"
                },
     "name":  {
-                 "en":  "Sensor",
-                 "fr":  "Capteur",
-                 "nl":  "Sensor",
-                 "ta":  "à®šà¯†à®©à¯à®šà®¾à®°à¯"
+                 "en":  "Switch",
+                 "fr":  "Interrupteur",
+                 "nl":  "Schakelaar",
+                 "ta":  "à®®à®¾à®±à¯à®±à®¿"
              },
     "platforms":  [
                       "local"
                   ],
-    "class":  "sensor",
+    "class":  "light",
     "connectivity":  [
                          "zigbee"
                      ]
