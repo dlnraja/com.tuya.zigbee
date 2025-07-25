@@ -1,14 +1,41 @@
-name: Fallback - weekly-optimization
+# Description: Optimisation hebdomadaire automatique du projet (validation, logs, artefacts, auto-vérification)
+name: Weekly Optimization
 on:
+  schedule:
+    - cron: '0 3 * * 1' # Tous les lundis à 3h
   push:
     branches: [ master ]
   workflow_dispatch:
 jobs:
-  fallback-job:
+  weekly-optimization:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-    - name: Validate
-      run: echo 'Fallback workflow executed'
+    - name: Validate project structure
+      run: |
+        echo "🔍 Validation de la structure du projet..."
+        ls -la
+        if [ ! -d "drivers" ]; then echo "❌ Dossier drivers manquant"; exit 1; fi
+        if [ ! -f "package.json" ]; then echo "❌ package.json manquant"; exit 1; fi
+        if [ ! -f "README.md" ]; then echo "❌ README.md manquant"; exit 1; fi
+        echo "✅ Structure OK"
+    - name: Log stats
+      run: |
+        echo "📊 Nombre de drivers: $(find drivers -name '*.js' | wc -l)"
+        echo "📊 Nombre d'assets: $(find assets -type f | wc -l)"
+    - name: Archive logs
+      run: |
+        mkdir -p logs
+        echo "Log weekly optimization $(date)" > logs/weekly-optimization.log
+        echo "Drivers: $(find drivers -name '*.js' | wc -l)" >> logs/weekly-optimization.log
+        echo "Assets: $(find assets -type f | wc -l)" >> logs/weekly-optimization.log
+    - name: Upload logs as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: weekly-optimization-logs
+        path: logs/weekly-optimization.log
+        retention-days: 30
+    - name: Success
+      run: echo "🎉 Optimisation hebdomadaire terminée avec succès !"
 
