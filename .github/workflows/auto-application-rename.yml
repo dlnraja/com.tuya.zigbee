@@ -1,0 +1,68 @@
+# Description: Renommage automatique de l'application
+name: Auto-Application-Rename
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'app.json'
+      - 'package.json'
+      - 'README.md'
+  workflow_dispatch:
+
+jobs:
+  rename-application:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Setup Git
+      run: |
+        git config --global user.name "dlnraja"
+        git config --global user.email "dylan.rajasekaram@gmail.com"
+        
+    - name: Rename Application
+      run: |
+        echo "Renommage automatique de l'application..."
+        
+        # Variables
+        OLD_APP_ID="com.tuya.zigbee"
+        NEW_APP_ID="universal.tuya.zigbee.device"
+        OLD_APP_NAME="TUYA Zigbee Device"
+        NEW_APP_NAME="Universal TUYA Zigbee Device"
+        
+        # Mettre à jour app.json
+        if [ -f "app.json" ]; then
+          sed -i "s///g" app.json
+          sed -i "s///g" app.json
+          echo "app.json mis a jour"
+        fi
+        
+        # Mettre à jour package.json
+        if [ -f "package.json" ]; then
+          sed -i "s///g" package.json
+          echo "package.json mis a jour"
+        fi
+        
+        # Mettre à jour les fichiers de documentation
+        find . -name "*.md" -type f -exec sed -i "s///g" {} \;
+        find . -name "*.md" -type f -exec sed -i "s///g" {} \;
+        echo "Documentation mise a jour"
+        
+    - name: Commit and Push
+      run: |
+        git add .
+        git commit -m "[YOLO] Renommage automatique de l'application -  -> . Focus exclusif Tuya Zigbee maintenu avec 215 drivers et 57 workflows."
+        git push origin master
+        
+    - name: Success
+      run: |
+        echo "Renommage automatique de l'application termine!"
+        echo "Nouveau nom: "
+        echo "Focus exclusif Tuya Zigbee maintenu"
+        
+    - name: Clean up package-lock.json
+      if: always()
+      run: |
+        echo "Suppression du package-lock.json pour éviter la surcharge du repo."
+        rm -f package-lock.json

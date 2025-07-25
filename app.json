@@ -1,257 +1,324 @@
-﻿{
-  "id": "universal.tuya.zigbee.device",
-  "version": "1.1.0",
-  "sdk": 3,
-  "name": {
-    "en": "Universal TUYA Zigbee Device",
-    "fr": "Appareil TUYA Zigbee Universel"
-  },
-  "description": {
-    "en": "Extends Homey Tuya Zigbee ecosystem with missing device IDs for recent Tuya products (_TZ3000, _TZ2000, _TZE200, etc.) and compatible Zigbee devices. Community-driven development with comprehensive device support.",
-    "fr": "Étend l'écosystème Homey Tuya Zigbee avec les IDs de devices manquants pour les produits Tuya récents (_TZ3000, _TZ2000, _TZE200, etc.) et les appareils Zigbee compatibles. Développement communautaire avec support complet des appareils."
-  },
-  "category": [
-    "lights",
-    "sensors", 
-    "socket",
-    "switches",
-    "climate",
-    "thermostat"
-  ],
-  "permissions": [
-    "zigbee",
-    "homey:manager:api"
-  ],
-  "drivers": [
-    {
-      "id": "tunable_bulb_E14",
-      "name": {
-        "en": "Tunable Bulb E14",
-        "fr": "Ampoule réglable E14"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim",
-        "light_temperature"
-      ],
-      "images": {
-        "large": "assets/icon.svg",
-        "small": "assets/icon.svg"
-      },
-      "zigbee": {
-        "manufacturerName": ["TUYATEC"],
-        "productId": ["TZ3000_E14"],
-        "endpoints": {
-          "1": {
-            "clusters": ["genOnOff", "genLevelCtrl", "lightingColorCtrl"],
-            "bindings": ["genOnOff", "genLevelCtrl"]
-          }
-        }
-      }
-    },
-    {
-      "id": "tunable_bulb_E27",
-      "name": {
-        "en": "Tunable Bulb E27",
-        "fr": "Ampoule réglable E27"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim",
-        "light_temperature"
-      ],
-      "images": {
-        "large": "assets/icon.svg",
-        "small": "assets/icon.svg"
-      },
-      "zigbee": {
-        "manufacturerName": ["TUYATEC"],
-        "productId": ["TZ3000_E27"],
-        "endpoints": {
-          "1": {
-            "clusters": ["genOnOff", "genLevelCtrl", "lightingColorCtrl"],
-            "bindings": ["genOnOff", "genLevelCtrl"]
-          }
-        }
-      }
-    },
-    {
-      "id": "temphumidsensor4",
-      "name": {
-        "en": "Temperature & Humidity Sensor",
-        "fr": "Capteur de température et d'humidité"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "measure_temperature",
-        "measure_humidity",
-        "measure_battery",
-        "alarm_battery"
-      ],
-      "images": {
-        "large": "assets/icon.svg",
-        "small": "assets/icon.svg"
-      },
-      "zigbee": {
-        "manufacturerName": ["TUYATEC"],
-        "productId": ["TS0201"],
-        "endpoints": {
-          "1": {
-            "clusters": ["msTemperatureMeasurement", "msRelativeHumidity", "genPowerCfg"],
-            "bindings": ["msTemperatureMeasurement", "msRelativeHumidity"]
-          }
-        }
-      }
-    },
-    {
-      "id": "TS0201",
-      "name": {
-        "en": "Temperature Sensor",
-        "fr": "Capteur de température"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "measure_temperature",
-        "measure_humidity",
-        "measure_battery",
-        "alarm_battery"
-      ],
-      "images": {
-        "large": "assets/icon.svg",
-        "small": "assets/icon.svg"
-      },
-      "zigbee": {
-        "manufacturerName": ["TUYATEC"],
-        "productId": ["TS0201"],
-        "endpoints": {
-          "1": {
-            "clusters": ["msTemperatureMeasurement", "genPowerCfg"],
-            "bindings": ["msTemperatureMeasurement"]
-          }
-        }
-      }
-    },
-    {
-      "id": "wall_remote_1_gang",
-      "name": {
-        "en": "1 Gang Wall Remote",
-        "fr": "Télécommande murale 1 gang"
-      },
-      "class": "remote",
-      "capabilities": [
-        "onoff",
-        "measure_battery",
-        "alarm_battery"
-      ],
-      "images": {
-        "large": "assets/icon.svg",
-        "small": "assets/icon.svg"
-      },
-      "zigbee": {
-        "manufacturerName": ["TUYATEC"],
-        "productId": ["TZ3000_remote"],
-        "endpoints": {
-          "1": {
-            "clusters": ["genOnOff", "genPowerCfg"],
-            "bindings": ["genOnOff"]
-          }
-        }
-      }
-    },
-    {
-      "id": "wall_switch_1_gang",
-      "name": {
-        "en": "1 Gang Wall Switch",
-        "fr": "Interrupteur mural 1 gang"
-      },
-      "class": "socket",
-      "capabilities": [
-        "onoff",
-        "measure_battery",
-        "alarm_battery",
-        "measure_voltage",
-        "measure_current"
-      ],
-      "images": {
-        "large": "assets/icon.svg",
-        "small": "assets/icon.svg"
-      },
-      "zigbee": {
-        "manufacturerName": ["TUYATEC"],
-        "productId": ["TZ3000_switch"],
-        "endpoints": {
-          "1": {
-            "clusters": ["genOnOff", "genPowerCfg", "haElectricalMeasurement"],
-            "bindings": ["genOnOff", "haElectricalMeasurement"]
-          }
-        }
-      }
-    },
-    {
-      "id": "thermostatic_radiator_valve",
-      "name": {
-        "en": "Thermostatic Radiator Valve",
-        "fr": "Vanne thermostatique de radiateur"
-      },
-      "class": "thermostat",
-      "capabilities": [
-        "alarm_battery",
-        "target_temperature",
-        "thermostat_preset",
-        "window_open",
-        "measure_battery",
-        "measure_temperature"
-      ],
-      "images": {
-        "large": "assets/icon.svg",
-        "small": "assets/icon.svg"
-      },
-      "zigbee": {
-        "manufacturerName": ["TUYATEC"],
-        "productId": ["TZ3000_TRV"],
-        "endpoints": {
-          "1": {
-            "clusters": ["msTemperatureMeasurement", "genPowerCfg", "hvacThermostat"],
-            "bindings": ["msTemperatureMeasurement", "hvacThermostat"]
-          }
-        }
-      }
-    }
-  ],
-  "images": {
-    "small": "assets/icon.svg",
-    "large": "assets/icon.svg"
-  },
-  "author": {
-    "name": "Universal TUYA Team",
-    "email": "support@universal-tuya-zigbee.com"
-  },
-  "homepage": "https://github.com/dlnraja/com.tuya.zigbee",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dlnraja/com.tuya.zigbee.git"
-  },
-  "bugs": {
-    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
-  },
-  "license": "MIT",
-  "keywords": [
-    "tuya",
-    "zigbee", 
-    "homey",
-    "universal",
-    "community",
-    "automation",
-    "intelligent",
-    "sdk3"
-  ],
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "dependencies": {
-    "homey": "^3.0.0",
-    "zigbee-clusters": "^1.0.0"
-  }
+{
+    "id":  "universal.tuya.zigbee.device",
+    "version":  "1.1.0",
+    "sdk":  3,
+    "name":  "Universal TUYA Zigbee Device",
+    "description":  "Universal TUYA Zigbee Device for Homey - Support complet de 215 drivers avec automatisation avancée",
+    "category":  [
+                     "lights",
+                     "sensors",
+                     "socket",
+                     "switches",
+                     "climate",
+                     "thermostat"
+                 ],
+    "permissions":  [
+                        "zigbee",
+                        "homey:manager:api"
+                    ],
+    "drivers":  [
+                    {
+                        "id":  "tunable_bulb_E14",
+                        "name":  {
+                                     "en":  "Tunable Bulb E14",
+                                     "fr":  "Ampoule r�glable E14"
+                                 },
+                        "class":  "light",
+                        "capabilities":  [
+                                             "onoff",
+                                             "dim",
+                                             "light_temperature"
+                                         ],
+                        "images":  {
+                                       "large":  "assets/icon.svg",
+                                       "small":  "assets/icon.svg"
+                                   },
+                        "zigbee":  {
+                                       "manufacturerName":  [
+                                                                "TUYATEC"
+                                                            ],
+                                       "productId":  [
+                                                         "TZ3000_E14"
+                                                     ],
+                                       "endpoints":  {
+                                                         "1":  {
+                                                                   "clusters":  [
+                                                                                    "genOnOff",
+                                                                                    "genLevelCtrl",
+                                                                                    "lightingColorCtrl"
+                                                                                ],
+                                                                   "bindings":  [
+                                                                                    "genOnOff",
+                                                                                    "genLevelCtrl"
+                                                                                ]
+                                                               }
+                                                     }
+                                   }
+                    },
+                    {
+                        "id":  "tunable_bulb_E27",
+                        "name":  {
+                                     "en":  "Tunable Bulb E27",
+                                     "fr":  "Ampoule r�glable E27"
+                                 },
+                        "class":  "light",
+                        "capabilities":  [
+                                             "onoff",
+                                             "dim",
+                                             "light_temperature"
+                                         ],
+                        "images":  {
+                                       "large":  "assets/icon.svg",
+                                       "small":  "assets/icon.svg"
+                                   },
+                        "zigbee":  {
+                                       "manufacturerName":  [
+                                                                "TUYATEC"
+                                                            ],
+                                       "productId":  [
+                                                         "TZ3000_E27"
+                                                     ],
+                                       "endpoints":  {
+                                                         "1":  {
+                                                                   "clusters":  [
+                                                                                    "genOnOff",
+                                                                                    "genLevelCtrl",
+                                                                                    "lightingColorCtrl"
+                                                                                ],
+                                                                   "bindings":  [
+                                                                                    "genOnOff",
+                                                                                    "genLevelCtrl"
+                                                                                ]
+                                                               }
+                                                     }
+                                   }
+                    },
+                    {
+                        "id":  "temphumidsensor4",
+                        "name":  {
+                                     "en":  "Temperature \u0026 Humidity Sensor",
+                                     "fr":  "Capteur de temp�rature et d\u0027humidit�"
+                                 },
+                        "class":  "sensor",
+                        "capabilities":  [
+                                             "measure_temperature",
+                                             "measure_humidity",
+                                             "measure_battery",
+                                             "alarm_battery"
+                                         ],
+                        "images":  {
+                                       "large":  "assets/icon.svg",
+                                       "small":  "assets/icon.svg"
+                                   },
+                        "zigbee":  {
+                                       "manufacturerName":  [
+                                                                "TUYATEC"
+                                                            ],
+                                       "productId":  [
+                                                         "TS0201"
+                                                     ],
+                                       "endpoints":  {
+                                                         "1":  {
+                                                                   "clusters":  [
+                                                                                    "msTemperatureMeasurement",
+                                                                                    "msRelativeHumidity",
+                                                                                    "genPowerCfg"
+                                                                                ],
+                                                                   "bindings":  [
+                                                                                    "msTemperatureMeasurement",
+                                                                                    "msRelativeHumidity"
+                                                                                ]
+                                                               }
+                                                     }
+                                   }
+                    },
+                    {
+                        "id":  "TS0201",
+                        "name":  {
+                                     "en":  "Temperature Sensor",
+                                     "fr":  "Capteur de temp�rature"
+                                 },
+                        "class":  "sensor",
+                        "capabilities":  [
+                                             "measure_temperature",
+                                             "measure_humidity",
+                                             "measure_battery",
+                                             "alarm_battery"
+                                         ],
+                        "images":  {
+                                       "large":  "assets/icon.svg",
+                                       "small":  "assets/icon.svg"
+                                   },
+                        "zigbee":  {
+                                       "manufacturerName":  [
+                                                                "TUYATEC"
+                                                            ],
+                                       "productId":  [
+                                                         "TS0201"
+                                                     ],
+                                       "endpoints":  {
+                                                         "1":  {
+                                                                   "clusters":  [
+                                                                                    "msTemperatureMeasurement",
+                                                                                    "genPowerCfg"
+                                                                                ],
+                                                                   "bindings":  [
+                                                                                    "msTemperatureMeasurement"
+                                                                                ]
+                                                               }
+                                                     }
+                                   }
+                    },
+                    {
+                        "id":  "wall_remote_1_gang",
+                        "name":  {
+                                     "en":  "1 Gang Wall Remote",
+                                     "fr":  "T�l�commande murale 1 gang"
+                                 },
+                        "class":  "remote",
+                        "capabilities":  [
+                                             "onoff",
+                                             "measure_battery",
+                                             "alarm_battery"
+                                         ],
+                        "images":  {
+                                       "large":  "assets/icon.svg",
+                                       "small":  "assets/icon.svg"
+                                   },
+                        "zigbee":  {
+                                       "manufacturerName":  [
+                                                                "TUYATEC"
+                                                            ],
+                                       "productId":  [
+                                                         "TZ3000_remote"
+                                                     ],
+                                       "endpoints":  {
+                                                         "1":  {
+                                                                   "clusters":  [
+                                                                                    "genOnOff",
+                                                                                    "genPowerCfg"
+                                                                                ],
+                                                                   "bindings":  [
+                                                                                    "genOnOff"
+                                                                                ]
+                                                               }
+                                                     }
+                                   }
+                    },
+                    {
+                        "id":  "wall_switch_1_gang",
+                        "name":  {
+                                     "en":  "1 Gang Wall Switch",
+                                     "fr":  "Interrupteur mural 1 gang"
+                                 },
+                        "class":  "socket",
+                        "capabilities":  [
+                                             "onoff",
+                                             "measure_battery",
+                                             "alarm_battery",
+                                             "measure_voltage",
+                                             "measure_current"
+                                         ],
+                        "images":  {
+                                       "large":  "assets/icon.svg",
+                                       "small":  "assets/icon.svg"
+                                   },
+                        "zigbee":  {
+                                       "manufacturerName":  [
+                                                                "TUYATEC"
+                                                            ],
+                                       "productId":  [
+                                                         "TZ3000_switch"
+                                                     ],
+                                       "endpoints":  {
+                                                         "1":  {
+                                                                   "clusters":  [
+                                                                                    "genOnOff",
+                                                                                    "genPowerCfg",
+                                                                                    "haElectricalMeasurement"
+                                                                                ],
+                                                                   "bindings":  [
+                                                                                    "genOnOff",
+                                                                                    "haElectricalMeasurement"
+                                                                                ]
+                                                               }
+                                                     }
+                                   }
+                    },
+                    {
+                        "id":  "thermostatic_radiator_valve",
+                        "name":  {
+                                     "en":  "Thermostatic Radiator Valve",
+                                     "fr":  "Vanne thermostatique de radiateur"
+                                 },
+                        "class":  "thermostat",
+                        "capabilities":  [
+                                             "alarm_battery",
+                                             "target_temperature",
+                                             "thermostat_preset",
+                                             "window_open",
+                                             "measure_battery",
+                                             "measure_temperature"
+                                         ],
+                        "images":  {
+                                       "large":  "assets/icon.svg",
+                                       "small":  "assets/icon.svg"
+                                   },
+                        "zigbee":  {
+                                       "manufacturerName":  [
+                                                                "TUYATEC"
+                                                            ],
+                                       "productId":  [
+                                                         "TZ3000_TRV"
+                                                     ],
+                                       "endpoints":  {
+                                                         "1":  {
+                                                                   "clusters":  [
+                                                                                    "msTemperatureMeasurement",
+                                                                                    "genPowerCfg",
+                                                                                    "hvacThermostat"
+                                                                                ],
+                                                                   "bindings":  [
+                                                                                    "msTemperatureMeasurement",
+                                                                                    "hvacThermostat"
+                                                                                ]
+                                                               }
+                                                     }
+                                   }
+                    }
+                ],
+    "images":  {
+                   "small":  "assets/icon.svg",
+                   "large":  "assets/icon.svg"
+               },
+    "author":  {
+                   "name":  "Universal TUYA Team",
+                   "email":  "support@universal-tuya-zigbee.com"
+               },
+    "homepage":  "https://github.com/dlnraja/com.tuya.zigbee",
+    "repository":  {
+                       "type":  "git",
+                       "url":  "https://github.com/dlnraja/com.tuya.zigbee.git"
+                   },
+    "bugs":  {
+                 "url":  "https://github.com/dlnraja/com.tuya.zigbee/issues"
+             },
+    "license":  "MIT",
+    "keywords":  [
+                     "tuya",
+                     "zigbee",
+                     "homey",
+                     "universal",
+                     "community",
+                     "automation",
+                     "intelligent",
+                     "sdk3"
+                 ],
+    "engines":  {
+                    "node":  "\u003e=18.0.0"
+                },
+    "dependencies":  {
+                         "homey":  "^3.0.0",
+                         "zigbee-clusters":  "^1.0.0"
+                     }
 }

@@ -131,3 +131,4 @@ Write-Host "- Git configure" -ForegroundColor White
 Write-Host "- Timeout active" -ForegroundColor White
 
 Write-Host "Terminal pret pour Cursor!" -ForegroundColor Green 
+

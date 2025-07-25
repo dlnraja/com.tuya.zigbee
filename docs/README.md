@@ -1,80 +1,80 @@
-ï»¿# Universal TUYA Zigbee Device
+# Universal Universal TUYA Zigbee Device
 
 Extends Homey Tuya Zigbee ecosystem with missing device IDs for recent Tuya products (_TZ3000, _TZ2000, _TZE200, etc.) and compatible Zigbee devices. Community-driven development with comprehensive device support.
 
-## ðŸŽ¯ **Objectifs du Projet**
+## ?? **Objectifs du Projet**
 
 ### **Support Universel Tuya Zigbee**
-- **Devices Tuya** : _TZ3000, _TZ2000, _TZE200 et Ã©quivalents
+- **Devices Tuya** : _TZ3000, _TZ2000, _TZE200 et équivalents
 - **Clusters Tuya** : 0xEF00, 0xE001, 0xE002
-- **Ã‰quivalents Zigbee compatibles** : Devices compatibles Tuya
-- **SDK3 Homey** : CompatibilitÃ© complÃ¨te
+- **Équivalents Zigbee compatibles** : Devices compatibles Tuya
+- **SDK3 Homey** : Compatibilité complète
 
 ### **Automatisation Intelligente**
 - **50 workflows GitHub Actions** : CI/CD, validation, optimisation
 - **Monitoring 24/7** : Surveillance continue du projet
-- **YOLO Mode** : Auto-approve, auto-continue, dÃ©lai < 1 seconde
+- **YOLO Mode** : Auto-approve, auto-continue, délai < 1 seconde
 - **Archivage automatique** : Versioning des fichiers .md et TODO
 
-## ðŸ“Š **Statistiques Actuelles**
+## ?? **Statistiques Actuelles**
 
 ### **Drivers Tuya Zigbee**
 - **Total** : 215 drivers
 - **SDK3 Compatible** : 68 drivers (32%)
 - **En Cours** : 147 drivers (68%)
-- **Performance** : Temps de rÃ©ponse < 1 seconde
+- **Performance** : Temps de réponse < 1 seconde
 
-### **Workflows AutomatisÃ©s**
+### **Workflows Automatisés**
 - **CI/CD** : Validation automatique
 - **Optimisation** : Compression JSON/JS
-- **Monitoring** : Rapports en temps rÃ©el
-- **Changelog** : GÃ©nÃ©ration automatique
+- **Monitoring** : Rapports en temps réel
+- **Changelog** : Génération automatique
 
-## ðŸ”§ **Installation**
+## ?? **Installation**
 
 ### **Via Homey App Store**
 ```bash
-# L'app se met Ã  jour automatiquement
+# L'app se met à jour automatiquement
 # Aucune configuration requise
 ```
 
-### **DÃ©veloppement Local**
+### **Développement Local**
 ```bash
-git clone https://github.com/dlnraja/com.tuya.zigbee.git
-cd com.tuya.zigbee
+git clone https://github.com/dlnraja/universal.tuya.zigbee.device.git
+cd universal.tuya.zigbee.device
 npm install
 npm run build
 ```
 
-## ðŸš€ **FonctionnalitÃ©s**
+## ?? **Fonctionnalités**
 
 ### **Support Devices**
 - **Luminaires** : RGB, Blanc, Dimmable
 - **Interrupteurs** : Simple, Double, Triple
-- **Capteurs** : TempÃ©rature, HumiditÃ©, Mouvement
+- **Capteurs** : Température, Humidité, Mouvement
 - **Thermostats** : Radiateurs, Climatisation
-- **Ã‰quivalents Zigbee** : Devices compatibles Tuya
+- **Équivalents Zigbee** : Devices compatibles Tuya
 
 ### **Automatisation**
 - **Validation automatique** : app.json, package.json, drivers
-- **Tests automatisÃ©s** : CI/CD complet
+- **Tests automatisés** : CI/CD complet
 - **Optimisation continue** : Performance et taille
-- **Monitoring temps rÃ©el** : MÃ©triques et alertes
+- **Monitoring temps réel** : Métriques et alertes
 
-## ðŸ“‹ **Changelog**
+## ?? **Changelog**
 
 ### **[1.1.0] - 2025-07-25 13:51:15**
-- **Focus exclusif Tuya Zigbee** : Suppression des rÃ©fÃ©rences Home Assistant
-- **YOLO Mode activÃ©** : Auto-approve, auto-continue, dÃ©lai < 1 seconde
-- **50 workflows GitHub Actions** : Automatisation complÃ¨te
+- **Focus exclusif Tuya Zigbee** : Suppression des références Home Assistant
+- **YOLO Mode activé** : Auto-approve, auto-continue, délai < 1 seconde
+- **50 workflows GitHub Actions** : Automatisation complète
 - **215 drivers Tuya** : Support complet des devices
-- **Documentation bilingue** : EN/FR pour tous les Ã©lÃ©ments
+- **Documentation bilingue** : EN/FR pour tous les éléments
 
 ### **[1.0.0] - 2025-07-25 12:00:00**
 - **Migration branding Universal TUYA** : Renommage complet
-- **Structure drivers organisÃ©e** : in_progress, sdk3, legacy
-- **Workflows automatisÃ©s** : CI/CD, validation, optimisation
-- **Documentation complÃ¨te** : README, CONTRIBUTING.md
+- **Structure drivers organisée** : in_progress, sdk3, legacy
+- **Workflows automatisés** : CI/CD, validation, optimisation
+- **Documentation complète** : README, CONTRIBUTING.md
 
 ### **[0.9.0] - 2025-07-25 10:00:00**
 - **Structure de base** : Organisation des drivers
@@ -84,103 +84,106 @@ npm run build
 
 *Voir [CHANGELOG.md](CHANGELOG.md) pour l'historique complet*
 
-## ðŸ”„ **Automatisation des Changelogs**
+## ?? **Automatisation des Changelogs**
 
 ### **Workflow GitHub Actions**
-- **FrÃ©quence** : Toutes les 6 heures
-- **DÃ©clencheurs** : Push, Pull Request, Release
+- **Fréquence** : Toutes les 6 heures
+- **Déclencheurs** : Push, Pull Request, Release
 - **Actions** : 
-  - GÃ©nÃ©ration automatique du changelog
-  - Mise Ã  jour des mÃ©triques
+  - Génération automatique du changelog
+  - Mise à jour des métriques
   - Archivage des versions
   - Notification des changements
 
-### **Processus AutomatisÃ©**
-1. **DÃ©tection des changements** : Analyse des commits
-2. **CatÃ©gorisation** : AjoutÃ©, ModifiÃ©, SupprimÃ©, SÃ©curitÃ©
-3. **GÃ©nÃ©ration** : Changelog automatique
+### **Processus Automatisé**
+1. **Détection des changements** : Analyse des commits
+2. **Catégorisation** : Ajouté, Modifié, Supprimé, Sécurité
+3. **Génération** : Changelog automatique
 4. **Archivage** : Versioning avec timestamps
-5. **Notification** : Alertes en temps rÃ©el
+5. **Notification** : Alertes en temps réel
 
-## ðŸ“Š **Statut du Projet**
+## ?? **Statut du Projet**
 
 ### **Phase Actuelle**
 - **Validation des 215 drivers Tuya** : En cours
-- **Tests de compatibilitÃ© SDK3** : AutomatisÃ©s
+- **Tests de compatibilité SDK3** : Automatisés
 - **Optimisation des performances** : Continue
-- **Documentation technique** : ComplÃ¨te
+- **Documentation technique** : Complète
 
-### **Prochaines Ã‰tapes**
-- **Migration SDK3 complÃ¨te** : 147 drivers restants
+### **Prochaines Étapes**
+- **Migration SDK3 complète** : 147 drivers restants
 - **Support clusters Tuya v2/v3** : Nouveaux devices
-- **Dashboard avancÃ©** : Interface utilisateur
-- **IA intÃ©grÃ©e** : DÃ©tection intelligente devices Tuya
+- **Dashboard avancé** : Interface utilisateur
+- **IA intégrée** : Détection intelligente devices Tuya
 
-## ðŸ¤ **Contribution**
+## ?? **Contribution**
 
 ### **Ajouter un Nouveau Device**
-1. **Identifier le device** : VÃ©rifier la compatibilitÃ© Tuya
-2. **CrÃ©er le driver** : Suivre la structure SDK3
+1. **Identifier le device** : Vérifier la compatibilité Tuya
+2. **Créer le driver** : Suivre la structure SDK3
 3. **Tester** : Validation automatique
-4. **Documenter** : Mise Ã  jour automatique
+4. **Documenter** : Mise à jour automatique
 
-### **AmÃ©liorer un Driver Existant**
-1. **Analyser** : Identifier les amÃ©liorations
-2. **Optimiser** : Performance et compatibilitÃ©
-3. **Tester** : Validation complÃ¨te
+### **Améliorer un Driver Existant**
+1. **Analyser** : Identifier les améliorations
+2. **Optimiser** : Performance et compatibilité
+3. **Tester** : Validation complète
 4. **Documenter** : Changelog automatique
 
-## ðŸ“ž **Support**
+## ?? **Support**
 
 ### **Ressources**
-- **Forum Homey** : [Universal TUYA Zigbee Device](https://community.homey.app/t/app-community-universal-tuya-zigbee-device/140352)
-- **GitHub Issues** : [Rapporter un problÃ¨me](https://github.com/dlnraja/com.tuya.zigbee/issues)
+- **Forum Homey** : [Universal Universal TUYA Zigbee Device](https://community.homey.app/t/app-community-universal-tuya-zigbee-device/140352)
+- **GitHub Issues** : [Rapporter un problème](https://github.com/dlnraja/universal.tuya.zigbee.device/issues)
 - **Documentation** : Voir [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ### **Contact**
-- **DÃ©veloppeur** : dlnraja
+- **Développeur** : dlnraja
 - **Email** : dylan.rajasekaram@gmail.com
 - **Support** : Via forum Homey
 
-## ðŸ“„ **Licence**
+## ?? **Licence**
 
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de dÃ©tails.
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
-## ðŸ™ **Remerciements**
+## ?? **Remerciements**
 
-- **CommunautÃ© Homey** : Support et feedback
-- **DÃ©veloppeurs Tuya** : Documentation et API
-- **Contributeurs** : AmÃ©liorations et tests
-- **SystÃ¨me YOLO** : Automatisation intelligente
+- **Communauté Homey** : Support et feedback
+- **Développeurs Tuya** : Documentation et API
+- **Contributeurs** : Améliorations et tests
+- **Système YOLO** : Automatisation intelligente
 
 ---
 
-## ðŸ“š **Sources et Liens Utiles**
+## ?? **Sources et Liens Utiles**
 
 ### **Documentation Officielle**
 - [Homey Apps SDK](https://apps.developer.homey.app/) - Documentation officielle Homey
 - [Tuya Developer Platform](https://developer.tuya.com/) - API et produits Tuya
-- [Zigbee2MQTT](https://www.zigbee2mqtt.io/) - RÃ©fÃ©rence devices Zigbee
+- [Zigbee2MQTT](https://www.zigbee2mqtt.io/) - Référence devices Zigbee
 
-### **CommunautÃ©**
+### **Communauté**
 - [Forum Homey](https://community.homey.app/) - Support communautaire
-- [GitHub Issues](https://github.com/dlnraja/com.tuya.zigbee/issues) - Rapporter des problÃ¨mes
-- [Discord Homey](https://discord.gg/homey) - Chat en temps rÃ©el
+- [GitHub Issues](https://github.com/dlnraja/universal.tuya.zigbee.device/issues) - Rapporter des problèmes
+- [Discord Homey](https://discord.gg/homey) - Chat en temps réel
 
-### **Outils de DÃ©veloppement**
-- [Homey CLI](https://apps.developer.homey.app/tools/cli) - Outils de dÃ©veloppement
+### **Outils de Développement**
+- [Homey CLI](https://apps.developer.homey.app/tools/cli) - Outils de développement
 - [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=homey.homey) - Extension VS Code
-- [GitHub Actions](https://github.com/features/actions) - CI/CD automatisÃ©
+- [GitHub Actions](https://github.com/features/actions) - CI/CD automatisé
 
 ### **Ressources Tuya**
 - [Tuya IoT Platform](https://iot.tuya.com/) - Plateforme IoT Tuya
 - [Tuya Smart App](https://www.tuya.com/) - Application mobile
-- [Tuya Developer Forum](https://developer.tuya.com/forum) - Support dÃ©veloppeurs
+- [Tuya Developer Forum](https://developer.tuya.com/forum) - Support développeurs
 
 ---
 
-*DerniÃ¨re mise Ã  jour : 2025-07-25 13:51:15*  
-*GÃ©nÃ©rÃ© automatiquement par le systÃ¨me YOLO*  
-*Universal TUYA Zigbee Device - Focus exclusif Tuya Zigbee* ðŸš€
+*Dernière mise à jour : 2025-07-25 13:51:15*  
+*Généré automatiquement par le système YOLO*  
+*Universal Universal TUYA Zigbee Device - Focus exclusif Tuya Zigbee* ??
+
+
+
 
 

@@ -77,7 +77,7 @@ jobs:
         # Générer le contenu TODO mis à jour
         Write-Host "🔄 Génération du contenu TODO mis à jour..."
         $updatedContent = @"
-# TODO SYNCHRONISÉ - Universal TUYA Zigbee Device
+# TODO SYNCHRONISÉ - Universal Universal TUYA Zigbee Device
 
 ## 📊 **MÉTRIQUES ACTUELLES ($timestamp)**
 
@@ -157,7 +157,7 @@ jobs:
 
 ---
 
-**TODO SYNCHRONISÉ - UNIVERSAL TUYA ZIGBEE DEVICE** 🚀
+**TODO SYNCHRONISÉ - UNIVERSAL Universal TUYA Zigbee Device** 🚀
 
 *Dernière mise à jour : $timestamp*  
 *Généré automatiquement par le système YOLO*  
@@ -235,3 +235,4 @@ jobs:
       run: |
         echo "🧹 Suppression du package-lock.json pour éviter la surcharge du repo."
         rm -f package-lock.json 
+

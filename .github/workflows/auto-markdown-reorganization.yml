@@ -52,7 +52,7 @@ jobs:
         
         # Créer l'index
         cat > docs/INDEX.md << 'EOF'
-# Documentation Universal TUYA Zigbee Device
+# Documentation Universal Universal TUYA Zigbee Device
 
 ## Structure des fichiers Markdown
 
@@ -106,3 +106,5 @@ EOF
       run: |
         echo "Suppression du package-lock.json pour éviter la surcharge du repo."
         rm -f package-lock.json
+
+

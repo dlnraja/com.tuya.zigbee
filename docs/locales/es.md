@@ -2,7 +2,7 @@
 
 (Traduction automatique à compléter)
 
-# 🚀 com.tuya.zigbee – Vision Fonctionnelle & Architecture Globale
+# 🚀 universal.tuya.zigbee.device – Vision Fonctionnelle & Architecture Globale
 
 ---
 
@@ -181,3 +181,6 @@ Créer la solution la plus complète, automatisée et résiliente pour intégrer
 - (Voir aussi les workflows auto-bench-ia.yml, auto-security-audit.yml, auto-translate.yml, etc.)
 
 ---
+
+
+

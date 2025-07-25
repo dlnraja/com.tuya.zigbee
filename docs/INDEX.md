@@ -1,4 +1,4 @@
-# Documentation Universal TUYA Zigbee Device
+# Documentation Universal Universal TUYA Zigbee Device
 
 ## Structure des fichiers Markdown
 
@@ -30,3 +30,6 @@
 Ce projet se concentre exclusivement sur l'écosystème Tuya Zigbee pour Homey, avec support complet des 215 drivers et automatisation avancée.
 
 *Dernière mise à jour : 2025-07-25_15-33-43*
+
+
+

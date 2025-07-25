@@ -34,10 +34,10 @@ jobs:
     - name: Build validation
       run: |
         echo "🔍 Validation du build..."
-        if [ -f "com.tuya.zigbee-master/app.json" ] && [ -f "package.json" ]; then
+        if [ -f "universal.tuya.zigbee.device-master/app.json" ] && [ -f "package.json" ]; then
           echo "✅ Fichiers de configuration présents"
-          echo "📦 Version: $(jq -r '.version' com.tuya.zigbee-master/app.json)"
-          echo "🏷️ Nom: $(jq -r '.name' com.tuya.zigbee-master/app.json)"
+          echo "📦 Version: $(jq -r '.version' universal.tuya.zigbee.device-master/app.json)"
+          echo "🏷️ Nom: $(jq -r '.name' universal.tuya.zigbee.device-master/app.json)"
         else
           echo "❌ Fichiers de configuration manquants"
           exit 1
@@ -47,7 +47,7 @@ jobs:
       run: |
         echo "🔍 Création des artefacts de build..."
         mkdir -p build
-        cp com.tuya.zigbee-master/app.json build/
+        cp universal.tuya.zigbee.device-master/app.json build/
         cp package.json build/
         cp -r drivers build/ 2>/dev/null || echo "⚠️ Pas de dossier drivers"
         cp -r assets build/ 2>/dev/null || echo "⚠️ Pas de dossier assets"
@@ -75,4 +75,6 @@ jobs:
       run: |
         echo "🧹 Suppression du package-lock.json pour éviter la surcharge du repo."
         rm -f package-lock.json
+
+
 

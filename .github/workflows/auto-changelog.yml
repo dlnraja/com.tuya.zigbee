@@ -102,7 +102,7 @@ jobs:
         
         # Créer les notes de release
         cat > "RELEASE_NOTES_v${current_version}.md" << 'EOF'
-# Release Notes - Universal TUYA Zigbee Device v${current_version}
+# Release Notes - Universal Universal TUYA Zigbee Device v${current_version}
 
 **Date de release** : ${current_date}  
 **Version** : ${current_version}  
@@ -141,13 +141,13 @@ $(cat temp/changelog-section.md | sed -n '/🛡️ Sécurité:/,$p' | tail -n +2
 ## 📞 Support
 
 - **Forum Homey** : https://community.homey.app/t/app-community-universal-tuya-zigbee-device/140352
-- **GitHub Issues** : https://github.com/dlnraja/com.tuya.zigbee/issues
+- **GitHub Issues** : https://github.com/dlnraja/universal.tuya.zigbee.device/issues
 - **Documentation** : Voir README.md
 
 ---
 
 *Généré automatiquement par le système YOLO*  
-*Universal TUYA Zigbee Device - Focus exclusif Tuya Zigbee* 🚀
+*Universal Universal TUYA Zigbee Device - Focus exclusif Tuya Zigbee* 🚀
 EOF
         
     - name: Archive changelog data
@@ -211,3 +211,4 @@ EOF
       run: |
         echo "🧹 Suppression du package-lock.json pour éviter la surcharge du repo."
         rm -f package-lock.json 
+
