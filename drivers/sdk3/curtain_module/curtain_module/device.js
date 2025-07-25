@@ -212,3 +212,4 @@ class curtain_module extends ZigbeeDevice {
 module.exports = curtain_module;
 
 
+

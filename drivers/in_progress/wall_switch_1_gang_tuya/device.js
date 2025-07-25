@@ -63,3 +63,4 @@ async processResponse(data) {
 module.exports = wall_switch_1_gang_tuya;
 
 
+

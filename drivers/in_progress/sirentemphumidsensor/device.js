@@ -372,3 +372,4 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
 module.exports = sensortemphumidsensor;
 
 
+

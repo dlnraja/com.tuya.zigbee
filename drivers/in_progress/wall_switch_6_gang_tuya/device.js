@@ -140,3 +140,4 @@ class wall_switch_6_gang_tuya extends TuyaSpecificClusterDevice {
 module.exports = wall_switch_6_gang_tuya;
 
 
+

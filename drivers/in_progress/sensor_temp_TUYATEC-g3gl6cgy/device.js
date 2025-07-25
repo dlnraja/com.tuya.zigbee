@@ -18,3 +18,4 @@ module.exports = SensorTemp_TUYATEC_g3gl6cgy;
 
 } catch(e) { this.error('Driver error', e); }
 
+

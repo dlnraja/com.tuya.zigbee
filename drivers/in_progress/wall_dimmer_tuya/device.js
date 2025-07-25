@@ -128,3 +128,4 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
 module.exports = wall_dimmer_tuya;
 
 
+

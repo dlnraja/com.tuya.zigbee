@@ -133,3 +133,4 @@ class smartplug_2_socket extends ZigbeeDevice {
 module.exports = smartplug_2_socket;
 
 
+

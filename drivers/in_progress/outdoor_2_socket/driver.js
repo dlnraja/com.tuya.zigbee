@@ -18,3 +18,4 @@ class outdoor2socket_driver extends ZigBeeDriver {
 module.exports = outdoor2socket_driver;
 
 
+

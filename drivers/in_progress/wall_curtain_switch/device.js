@@ -210,3 +210,4 @@ class wallcurtainswitch extends ZigbeeDevice {
 module.exports = wallcurtainswitch;
 
 
+
