@@ -4,7 +4,7 @@ Thank you for taking the time to contribute! We appreciate your support in impro
 
 Below are some guidelines to help you make the most effective contributions. These are not hard rules but suggestions to keep things running smoothly. If you have any questions, feel free to reach out.
 
-Make sure you’ve joined the [Homey community](https://community.homey.app/t/app-pro-tuya-zigbee-app/26439) or checked the Apps Github discussions (https://github.com/JohanBendz/com.tuya.zigbee) for more informal interactions and updates.
+Make sure you’ve joined the [Homey community](https://community.homey.app/t/app-pro-tuya-zigbee-app/26439) or checked the Apps Github discussions (https://github.com/JohanBendz/universal.tuya.zigbee.device) for more informal interactions and updates.
 
 ## Before Submitting a Bug or Feature Request
 
@@ -14,7 +14,7 @@ Make sure you’ve joined the [Homey community](https://community.homey.app/t/ap
 - Make sure the issue lies with the **Tuya Zigbee app** and not another app or Homey itself.
 - Investigate the issue yourself where possible. I highly encourage capable developers to submit pull requests rather than issues!
 
-For regular support, feel free to contact me via Github (https://github.com/JohanBendz/com.tuya.zigbee/issues).
+For regular support, feel free to contact me via Github (https://github.com/JohanBendz/universal.tuya.zigbee.device/issues).
 
 ## Creating a Great Bug Report
 

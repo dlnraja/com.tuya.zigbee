@@ -817,7 +817,7 @@ Supported devices:
 - Finger Bot
     _TZ3210_j4pdtz9v / TS0001 (MOES)
 
-To request additional devices, please use Github issue tracking: https://github.com/JohanBendz/com.tuya.zigbee/issues
+To request additional devices, please use Github issue tracking: https://github.com/JohanBendz/universal.tuya.zigbee.device/issues
 To get support from the community please use Athom Homey Community Forum: https://community.athom.com/t/tuya-zigbee-app/26439
 
 Major Code Contributors:

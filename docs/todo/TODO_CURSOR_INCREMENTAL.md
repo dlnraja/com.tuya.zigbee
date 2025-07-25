@@ -54,27 +54,6 @@
 - Metriques : Historique complet
 - Workflows : Configurations archivees
 
-## YOLO MODE ACTIVATED
-
-### Configuration YOLO
-\\\json
-"yolo": {
-  "enabled": true,
-  "auto-approve": true,
-  "auto-continue": true,
-  "delay": 0.1,
-  "startup": "enabled"
-}
-\\\
-
-### Automatisation Complete
-- Auto-validation : app.json, package.json, drivers
-- Auto-build : Build et tests automatiques
-- Auto-optimisation : Compression JSON
-- Auto-commit/push : Git automatise
-- Auto-nettoyage : package-lock.json
-- Auto-changelog : Generation automatique
-
 ---
 
 **TODO SYNCHRONISE - UNIVERSAL Universal TUYA Zigbee Device**

@@ -1,1 +1,1 @@
-﻿"use strict"; const { ZigBeeDevice } = require("homey-zigbeedriver"); const { CLUSTER } = require('zigbee-clusters'); class smart_remote_1b extends ZigBeeDevice { async onNodeInit({ zclNode }) { this.printNode(); 
+"use strict"; const { ZigBeeDevice } = require("homey-zigbeedriver"); const { CLUSTER } = require('zigbee-clusters'); class smart_remote_1b extends ZigBeeDevice { async onNodeInit({ zclNode }) { this.printNode(); 

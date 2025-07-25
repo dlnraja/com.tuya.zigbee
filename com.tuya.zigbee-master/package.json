@@ -1,5 +1,5 @@
-﻿{
-  "name": "com.tuya.zigbee",
+{
+  "name": "universal.tuya.zigbee.device",
   "version": "1.0.0",
   "scripts": {
     "start": "node dashboard/index.js",
@@ -20,7 +20,7 @@
     "chai": "^4.3.10",
     "@types/mocha": "^10.0.1"
 ï»¿{
-  \"name\": \"com.tuya.zigbee\",
+  \"name\": \"universal.tuya.zigbee.device\",
   \"version\": \"0.1.9\",
   \"main\": \"app.js\",
   \"scripts\": {

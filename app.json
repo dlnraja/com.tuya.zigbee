@@ -21,7 +21,7 @@
                         "id":  "tunable_bulb_E14",
                         "name":  {
                                      "en":  "Tunable Bulb E14",
-                                     "fr":  "Ampoule réglable E14"
+                                     "fr":  "Ampoule rï¿½glable E14"
                                  },
                         "class":  "light",
                         "capabilities":  [
@@ -59,7 +59,7 @@
                         "id":  "tunable_bulb_E27",
                         "name":  {
                                      "en":  "Tunable Bulb E27",
-                                     "fr":  "Ampoule réglable E27"
+                                     "fr":  "Ampoule rï¿½glable E27"
                                  },
                         "class":  "light",
                         "capabilities":  [
@@ -97,7 +97,7 @@
                         "id":  "temphumidsensor4",
                         "name":  {
                                      "en":  "Temperature \u0026 Humidity Sensor",
-                                     "fr":  "Capteur de température et d\u0027humidité"
+                                     "fr":  "Capteur de tempï¿½rature et d\u0027humiditï¿½"
                                  },
                         "class":  "sensor",
                         "capabilities":  [
@@ -136,7 +136,7 @@
                         "id":  "TS0201",
                         "name":  {
                                      "en":  "Temperature Sensor",
-                                     "fr":  "Capteur de température"
+                                     "fr":  "Capteur de tempï¿½rature"
                                  },
                         "class":  "sensor",
                         "capabilities":  [
@@ -173,7 +173,7 @@
                         "id":  "wall_remote_1_gang",
                         "name":  {
                                      "en":  "1 Gang Wall Remote",
-                                     "fr":  "Télécommande murale 1 gang"
+                                     "fr":  "Tï¿½lï¿½commande murale 1 gang"
                                  },
                         "class":  "remote",
                         "capabilities":  [
@@ -295,13 +295,13 @@
                    "name":  "Universal TUYA Team",
                    "email":  "support@universal-tuya-zigbee.com"
                },
-    "homepage":  "https://github.com/dlnraja/com.tuya.zigbee",
+    "homepage":  "https://github.com/dlnraja/universal.tuya.zigbee.device",
     "repository":  {
                        "type":  "git",
-                       "url":  "https://github.com/dlnraja/com.tuya.zigbee.git"
+                       "url":  "https://github.com/dlnraja/universal.tuya.zigbee.device.git"
                    },
     "bugs":  {
-                 "url":  "https://github.com/dlnraja/com.tuya.zigbee/issues"
+                 "url":  "https://github.com/dlnraja/universal.tuya.zigbee.device/issues"
              },
     "license":  "MIT",
     "keywords":  [

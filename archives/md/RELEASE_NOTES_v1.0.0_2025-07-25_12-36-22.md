@@ -1,4 +1,4 @@
-﻿# Release v1.0.0
+# Release v1.0.0
 
 ## Nouvelles Fonctionnalites
 - Dashboard Multilingue complet avec support FR/EN/TA/NL
