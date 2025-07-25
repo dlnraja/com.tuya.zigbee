@@ -7,8 +7,8 @@
     "fr": "Appareil TUYA Zigbee Universel"
   },
   "description": {
-    "en": "Extends Homey Tuya Zigbee ecosystem with missing device IDs for recent Tuya products (_TZ3000, _TZ2000, _TZE200, etc.) without requiring Zigbee2MQTT or Home Assistant. Community-driven development with comprehensive device support.",
-    "fr": "Étend l'écosystème Homey Tuya Zigbee avec les IDs de devices manquants pour les produits Tuya récents (_TZ3000, _TZ2000, _TZE200, etc.) sans nécessiter Zigbee2MQTT ou Home Assistant. Développement communautaire avec support complet des appareils."
+    "en": "Extends Homey Tuya Zigbee ecosystem with missing device IDs for recent Tuya products (_TZ3000, _TZ2000, _TZE200, etc.) and compatible Zigbee devices. Community-driven development with comprehensive device support.",
+    "fr": "Étend l'écosystème Homey Tuya Zigbee avec les IDs de devices manquants pour les produits Tuya récents (_TZ3000, _TZ2000, _TZE200, etc.) et les appareils Zigbee compatibles. Développement communautaire avec support complet des appareils."
   },
   "category": [
     "lights",

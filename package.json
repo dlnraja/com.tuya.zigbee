@@ -1,7 +1,7 @@
 ﻿{
   "name": "universal.tuya.zigbee.device",
   "version": "1.1.0",
-  "description": "Extends Homey Tuya Zigbee ecosystem with missing device IDs for recent Tuya products (_TZ3000, _TZ2000, _TZE200, etc.) without requiring Zigbee2MQTT or Home Assistant. Community-driven development with comprehensive device support.",
+  "description": "Extends Homey Tuya Zigbee ecosystem with missing device IDs for recent Tuya products (_TZ3000, _TZ2000, _TZE200, etc.) and compatible Zigbee devices. Community-driven development with comprehensive device support.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
