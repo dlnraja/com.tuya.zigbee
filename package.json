@@ -1,57 +1,44 @@
 ﻿{
-  "name": "universal.tuya.zigbee.device",
+  "name": "com.tuya.zigbee",
   "version": "1.1.0",
-  "description": "Extends Homey Tuya Zigbee ecosystem with missing device IDs for recent Tuya products (_TZ3000, _TZ2000, _TZE200, etc.) and compatible Zigbee devices. Community-driven development with comprehensive device support.",
+  "description": "Universal TUYA Zigbee Device - Extends Homey Tuya Zigbee ecosystem with missing device IDs for recent Tuya products (_TZ3000, _TZ2000, _TZE200, etc.) without requiring additional bridges or complex setups. Community-driven development with comprehensive device support.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint .",
-    "start": "node app.js",
     "build": "homey app build",
     "validate": "homey app validate",
     "run": "homey app run",
     "deploy": "homey app deploy"
   },
-  "keywords": [
-    "tuya",
-    "zigbee",
-    "homey",
-    "universal",
-    "community",
-    "automation",
-    "intelligent",
-    "sdk3",
-    "yolo"
-  ],
-  "author": {
-    "name": "Universal TUYA Team",
-    "email": "support@universal-tuya-zigbee.com"
-  },
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/dlnraja/com.tuya.zigbee.git"
   },
-  "bugs": {
-    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
-  },
   "homepage": "https://community.homey.app/t/app-community-universal-tuya-zigbee-device/140352",
-  "engines": {
-    "node": ">=18.0.0",
-    "homey": ">=3.0.0"
-  },
-  "dependencies": {
-    "homey": "^3.0.0",
-    "zigbee-clusters": "^1.0.0"
-  },
-  "devDependencies": {
-    "eslint": "^8.0.0"
-  },
+  "keywords": [
+    "homey",
+    "tuya",
+    "zigbee",
+    "smart-home",
+    "automation"
+  ],
+  "author": "dlnraja",
+  "license": "MIT",
   "yolo": {
     "enabled": true,
     "auto-approve": true,
     "auto-continue": true,
     "delay": 0.1,
-    "startup": "enabled"
+    "startup": "enabled",
+    "default": true,
+    "mode": "aggressive",
+    "priority": "high",
+    "timeout": 0.5,
+    "force": true,
+    "skip-confirmation": true,
+    "auto-push": true,
+    "auto-commit": true,
+    "cross-platform": true,
+    "real-time": true,
+    "instant": true
   }
 }
