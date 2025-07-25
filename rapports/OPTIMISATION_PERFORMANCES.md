@@ -1,35 +1,35 @@
 ﻿# RAPPORT D'OPTIMISATION DES PERFORMANCES
 
-**Date :** 2025-07-25 06:58:22
+**Date :** 2025-07-25 09:37:26
 **Statut :** OPTIMISATION TERMINEE
 
 ## RESULTATS AVANT OPTIMISATION
 
-- **Temps de chargement Dashboard** : 112.9935 ms
-- **Nombre de fichiers** : 4445
-- **Taille totale** : 62.98 MB
-- **Fichiers JSON** : 1220
+- **Temps de chargement Dashboard** : 230.0003 ms
+- **Nombre de fichiers** : 4448
+- **Taille totale** : 58.95 MB
+- **Fichiers JSON** : 1221
 - **Fichiers JavaScript** : 745
 - **Fichiers SVG** : 549
 
 ## RESULTATS APRES OPTIMISATION
 
-- **Temps de chargement Dashboard** : 0.9997 ms
-- **Nombre de fichiers** : 4445
-- **Taille totale** : 60.31 MB
-- **Fichiers JSON** : 1220
+- **Temps de chargement Dashboard** : 15.9995 ms
+- **Nombre de fichiers** : 4448
+- **Taille totale** : 58.72 MB
+- **Fichiers JSON** : 1221
 - **Fichiers JavaScript** : 745
 - **Fichiers SVG** : 549
 
 ## AMELIORATIONS
 
-- **Reduction temps de chargement** : 111.9938 ms
+- **Reduction temps de chargement** : 214.0008 ms
 - **Reduction nombre de fichiers** : 0
-- **Reduction taille totale** : 2.67 MB
+- **Reduction taille totale** : 0.24 MB
 
 ## OPTIMISATIONS APPLIQUEES
 
-- Fichiers JSON optimises: 1188 - Fichiers JavaScript optimises: 745 - Fichiers SVG optimises: 515 - Fichiers temporaires supprimes: 0 - Fichiers JS organises: 745 - Fichiers JSON organises: 1220
+- Fichiers JSON optimises: 921 - Fichiers JavaScript optimises: 743 - Fichiers SVG optimises: 515 - Fichiers temporaires supprimes: 0 - Fichiers JS organises: 745 - Fichiers JSON organises: 1221
 
 ## RECOMMANDATIONS
 

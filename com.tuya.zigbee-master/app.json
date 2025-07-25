@@ -21,14 +21,14 @@ homey app install
 # app.json
 @"
 {
-  \"id\": \"com.tuya.zigbee\",
-  \"version\": \"0.1.9\",
-  \"sdk\": 3,
-  \"name\": { \"en\": \"Tuya Zigbee\" },
-  \"description\": { \"en\": \"Adds support for Tuya Zigbee devices\" },
-  \"category\": [\"lights\",\"sensors\",\"socket\"],
-  \"permissions\": [\"zigbee\"],
-  \"drivers\": []
+  "id": "universal.tuya.zigbee.device",
+  "version": "1.1.0",
+  "sdk": 3,
+  "name": { "en": "Universal TUYA Zigbee Device" },
+  "description": { "en": "Control and integrate all your TUYA Zigbee devices in Homey. Universal, smart, and fully automated." },
+  "category": ["lights","sensors","socket"],
+  "permissions": ["zigbee"],
+  "drivers": []
 }
 
 
