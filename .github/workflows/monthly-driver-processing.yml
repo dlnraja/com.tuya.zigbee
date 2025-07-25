@@ -1,7 +1,7 @@
-﻿name: Fallback - monthly-driver-processing
+name: Fallback - monthly-driver-processing
 on:
   push:
-    branches: [ master, main ]
+    branches: [ master ]
   workflow_dispatch:
 jobs:
   fallback-job:

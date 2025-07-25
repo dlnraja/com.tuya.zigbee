@@ -1,7 +1,7 @@
-﻿name: Fallback - auto-enrich-drivers
+name: Fallback - auto-enrich-drivers
 on:
   push:
-    branches: [ master, main ]
+    branches: [ master ]
   workflow_dispatch:
 jobs:
   fallback-job:

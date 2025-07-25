@@ -1,7 +1,7 @@
-﻿name: Fallback - integrity-monitor
+name: Fallback - integrity-monitor
 on:
   push:
-    branches: [ master, main ]
+    branches: [ master ]
   workflow_dispatch:
 jobs:
   fallback-job:

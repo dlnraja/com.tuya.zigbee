@@ -1,7 +1,7 @@
-﻿name: Fallback - push-with-pat
+name: Fallback - push-with-pat
 on:
   push:
-    branches: [ master, main ]
+    branches: [ master ]
   workflow_dispatch:
 jobs:
   fallback-job:

@@ -1,7 +1,7 @@
-﻿name: Fallback - driver-research-automation
+name: Fallback - driver-research-automation
 on:
   push:
-    branches: [ master, main ]
+    branches: [ master ]
   workflow_dispatch:
 jobs:
   fallback-job:

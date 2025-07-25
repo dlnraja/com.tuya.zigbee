@@ -1,7 +1,7 @@
-﻿name: Fallback - intelligent-branch-management
+name: Fallback - intelligent-branch-management
 on:
   push:
-    branches: [ master, main ]
+    branches: [ master ]
   workflow_dispatch:
 jobs:
   fallback-job:

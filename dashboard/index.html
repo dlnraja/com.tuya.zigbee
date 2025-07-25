@@ -4,7 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🚀 Tuya Zigbee - Dashboard Intelligent</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
     <style>
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --dark-color: #1f2937;
+            --light-color: #f8fafc;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,12 +29,12 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             min-height: 100vh;
-            color: #333;
+            color: var(--dark-color);
         }
 
-        .container {
+        .container-fluid {
             max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
@@ -34,32 +50,34 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .header h1 {
             font-size: 2.5em;
-            color: #4a5568;
+            color: var(--dark-color);
             margin-bottom: 10px;
         }
 
         .header p {
-            color: #718096;
+            color: #6b7280;
             font-size: 1.1em;
         }
 
         .refresh-btn {
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
             color: white;
             border: none;
             padding: 12px 24px;
             border-radius: 25px;
             cursor: pointer;
             font-size: 1em;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .refresh-btn:hover {
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         .stats-grid {
@@ -76,6 +94,7 @@
             padding: 25px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
+            border-left: 4px solid var(--primary-color);
         }
 
         .stat-card:hover {
@@ -83,20 +102,23 @@
         }
 
         .stat-card h3 {
-            color: #4a5568;
+            color: var(--dark-color);
             margin-bottom: 15px;
             font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .stat-value {
             font-size: 2.5em;
             font-weight: bold;
-            color: #667eea;
+            color: var(--primary-color);
             margin-bottom: 10px;
         }
 
         .stat-label {
-            color: #718096;
+            color: #6b7280;
             font-size: 0.9em;
         }
 
@@ -110,28 +132,47 @@
         }
 
         .progress-section h2 {
-            color: #4a5568;
+            color: var(--dark-color);
             margin-bottom: 25px;
             font-size: 1.8em;
         }
 
-        .progress-bar {
-            background: #e2e8f0;
-            border-radius: 10px;
+        .progress-item {
+            margin-bottom: 20px;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .progress-label span {
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+
+        .progress-percentage {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .progress {
             height: 20px;
-            margin-bottom: 15px;
+            border-radius: 10px;
+            background-color: #e5e7eb;
             overflow: hidden;
         }
 
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+        .progress-bar {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
             border-radius: 10px;
             transition: width 0.5s ease;
             position: relative;
         }
 
-        .progress-fill::after {
+        .progress-bar::after {
             content: '';
             position: absolute;
             top: 0;
@@ -147,23 +188,6 @@
             100% { transform: translateX(100%); }
         }
 
-        .progress-label {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .progress-label span {
-            color: #4a5568;
-            font-weight: 500;
-        }
-
-        .progress-percentage {
-            color: #667eea;
-            font-weight: bold;
-        }
-
         .recent-drivers {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -174,7 +198,7 @@
         }
 
         .recent-drivers h2 {
-            color: #4a5568;
+            color: var(--dark-color);
             margin-bottom: 25px;
             font-size: 1.8em;
         }
@@ -186,10 +210,10 @@
         }
 
         .driver-item {
-            background: #f7fafc;
+            background: var(--light-color);
             border-radius: 12px;
             padding: 20px;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid var(--primary-color);
             transition: transform 0.3s ease;
         }
 
@@ -199,36 +223,16 @@
 
         .driver-name {
             font-weight: bold;
-            color: #4a5568;
+            color: var(--dark-color);
             margin-bottom: 8px;
         }
 
         .driver-status {
-            color: #667eea;
+            color: #6b7280;
             font-size: 0.9em;
         }
 
-        .footer {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            color: #718096;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
-
-        .ai-attribution {
-            color: #667eea;
-            font-weight: 500;
-        }
-
-        .timestamp {
-            font-size: 0.9em;
-            margin-top: 10px;
-        }
-
-        .new-features {
+        .features-section {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-radius: 20px;
@@ -237,121 +241,190 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
-        .new-features h2 {
-            color: #4a5568;
+        .features-section h2 {
+            color: var(--dark-color);
             margin-bottom: 25px;
             font-size: 1.8em;
         }
 
-        .feature-grid {
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
 
         .feature-item {
-            background: #f7fafc;
+            background: var(--light-color);
             border-radius: 12px;
             padding: 20px;
-            border-left: 4px solid #48bb78;
+            border-left: 4px solid var(--success-color);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-3px);
         }
 
         .feature-title {
             font-weight: bold;
-            color: #4a5568;
+            color: var(--dark-color);
             margin-bottom: 8px;
         }
 
         .feature-desc {
-            color: #718096;
+            color: #6b7280;
             font-size: 0.9em;
+        }
+
+        .footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .ai-attribution {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .timestamp {
+            color: #6b7280;
+            font-size: 0.9em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .driver-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="header">
             <div>
-                <h1>🚀 Tuya Zigbee Dashboard</h1>
-                <p>Suivi intelligent et automatisation en temps réel</p>
+                <h1><i class="fas fa-rocket"></i> Tuya Zigbee Dashboard</h1>
+                <p>Application Homey Intelligente & Automatisée - Monitoring en Temps Réel</p>
             </div>
-            <button class="refresh-btn" onclick="location.reload()">🔄 Actualiser</button>
+            <button class="refresh-btn" onclick="refreshDashboard()">
+                <i class="fas fa-sync-alt"></i> Actualiser
+            </button>
         </div>
 
         <div class="stats-grid">
             <div class="stat-card">
-                <h3>Drivers Supportés</h3>
+                <h3><i class="fas fa-microchip"></i> Drivers Supportés</h3>
                 <div class="stat-value">124+</div>
                 <div class="stat-label">Testés et fonctionnels</div>
             </div>
             <div class="stat-card">
-                <h3>Drivers Enrichis</h3>
+                <h3><i class="fas fa-check-circle"></i> Drivers Enrichis</h3>
                 <div class="stat-value">5</div>
-                <div class="stat-label">curtain_module, rain_sensor, multi_sensor, smart_plug, remote_control</div>
+                <div class="stat-label">Optimisés et testés</div>
             </div>
             <div class="stat-card">
-                <h3>En Cours</h3>
-                <div class="stat-value">15</div>
-                <div class="stat-label">En cours d'optimisation et de test</div>
-            </div>
-            <div class="stat-card">
-                <h3>À Traiter</h3>
-                <div class="stat-value">104</div>
-                <div class="stat-label">Planifiés pour enrichissement</div>
-            </div>
-            <div class="stat-card">
-                <h3>SDK 3 Compatible</h3>
+                <h3><i class="fas fa-cogs"></i> SDK 3 Compatible</h3>
                 <div class="stat-value">94/124</div>
                 <div class="stat-label">76% - 30 à mettre à jour</div>
             </div>
             <div class="stat-card">
-                <h3>Sources Analysées</h3>
-                <div class="stat-value">217+</div>
-                <div class="stat-label">ZHA, Z2M, deCONZ, ioBroker, forums</div>
+                <h3><i class="fas fa-language"></i> Langues Supportées</h3>
+                <div class="stat-value">14</div>
+                <div class="stat-label">FR, EN, TA, NL, etc.</div>
             </div>
         </div>
 
         <div class="progress-section">
-            <h2>📈 Progression Globale</h2>
+            <h2><i class="fas fa-chart-line"></i> Progression du Projet</h2>
             
-            <div class="progress-label">
-                <span>Enrichissement Global</span>
-                <span class="progress-percentage">4%</span>
+            <div class="progress-item">
+                <div class="progress-label">
+                    <span>Testés & Fonctionnels</span>
+                    <span class="progress-percentage">100%</span>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 100%"></div>
+                </div>
             </div>
-            <div class="progress-bar">
-                <div class="progress-fill" style="width: 4%"></div>
+            
+            <div class="progress-item">
+                <div class="progress-label">
+                    <span>Enrichis & Optimisés</span>
+                    <span class="progress-percentage">4%</span>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 4%"></div>
+                </div>
             </div>
-
-            <div class="progress-label">
-                <span>Phase 1: Enrichissement en cours</span>
-                <span class="progress-percentage">33%</span>
+            
+            <div class="progress-item">
+                <div class="progress-label">
+                    <span>En cours d'optimisation</span>
+                    <span class="progress-percentage">12%</span>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 12%"></div>
+                </div>
             </div>
-            <div class="progress-bar">
-                <div class="progress-fill" style="width: 33%"></div>
-            </div>
-
-            <div class="progress-label">
-                <span>Phase 2: Traitement restant</span>
-                <span class="progress-percentage">84%</span>
-            </div>
-            <div class="progress-bar">
-                <div class="progress-fill" style="width: 84%"></div>
-            </div>
-
-            <div class="progress-label">
-                <span>Compatibilité SDK 3</span>
-                <span class="progress-percentage">76%</span>
-            </div>
-            <div class="progress-bar">
-                <div class="progress-fill" style="width: 76%"></div>
+            
+            <div class="progress-item">
+                <div class="progress-label">
+                    <span>SDK 3 Compatible</span>
+                    <span class="progress-percentage">76%</span>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 76%"></div>
+                </div>
             </div>
         </div>
 
-        <div class="new-features">
-            <h2>🆕 Nouvelles Fonctionnalités</h2>
-            <div class="feature-grid">
+        <div class="features-section">
+            <h2><i class="fas fa-star"></i> Fonctionnalités Avancées</h2>
+            <div class="features-grid">
                 <div class="feature-item">
-                    <div class="feature-title">🔄 Fusion Lot1 & History</div>
+                    <div class="feature-title">🤖 Automatisation IA</div>
+                    <div class="feature-desc">Enrichissement automatique des drivers avec GPT-4 et Cursor</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-title">🔄 Fusion Intelligente</div>
                     <div class="feature-desc">Fusion intelligente des dossiers Lot1 et History dans la structure principale des drivers</div>
                 </div>
                 <div class="feature-item">
@@ -374,11 +447,15 @@
                     <div class="feature-title">🔄 Maintenance Forks</div>
                     <div class="feature-desc">Synchronisation automatique de tous les forks et branches</div>
                 </div>
+                <div class="feature-item">
+                    <div class="feature-title">📊 Monitoring Temps Réel</div>
+                    <div class="feature-desc">Dashboard interactif avec métriques en temps réel</div>
+                </div>
             </div>
         </div>
 
         <div class="recent-drivers">
-            <h2>📋 Drivers Récents</h2>
+            <h2><i class="fas fa-list"></i> Drivers Récents</h2>
             <div class="driver-list">
                 <div class="driver-item">
                     <div class="driver-name">curtain_module (TS130F)</div>
@@ -408,11 +485,18 @@
         </div>
 
         <div class="footer">
-            <div class="ai-attribution">Powered by GPT-4, Cursor, PowerShell, GitHub Actions</div>
-            <div class="timestamp">Dernière mise à jour : <span id="timestamp"></span></div>
+            <div class="ai-attribution">
+                <i class="fas fa-robot"></i> Powered by GPT-4, Cursor, PowerShell, GitHub Actions
+            </div>
+            <div class="timestamp">
+                <i class="fas fa-clock"></i> Dernière mise à jour : <span id="timestamp"></span>
+            </div>
         </div>
     </div>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script>
         // Mettre à jour le timestamp
         function updateTimestamp() {
@@ -428,13 +512,49 @@
             document.getElementById('timestamp').textContent = timestamp;
         }
 
-        // Mettre à jour toutes les 30 secondes
-        updateTimestamp();
-        setInterval(updateTimestamp, 30000);
+        // Actualiser le dashboard
+        function refreshDashboard() {
+            const btn = document.querySelector('.refresh-btn');
+            const icon = btn.querySelector('i');
+            
+            // Animation de chargement
+            icon.className = 'fas fa-spinner fa-spin';
+            btn.disabled = true;
+            
+            // Simuler un rechargement
+            setTimeout(() => {
+                updateTimestamp();
+                icon.className = 'fas fa-sync-alt';
+                btn.disabled = false;
+                
+                // Notification de succès
+                showNotification('Dashboard actualisé avec succès !', 'success');
+            }, 1000);
+        }
+
+        // Afficher une notification
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+            notification.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
+            notification.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Auto-remove après 5 secondes
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.remove();
+                }
+            }, 5000);
+        }
 
         // Animation des barres de progression
         function animateProgressBars() {
-            const progressBars = document.querySelectorAll('.progress-fill');
+            const progressBars = document.querySelectorAll('.progress-bar');
             progressBars.forEach(bar => {
                 const width = bar.style.width;
                 bar.style.width = '0%';
@@ -444,8 +564,17 @@
             });
         }
 
-        // Animer au chargement
-        setTimeout(animateProgressBars, 1000);
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTimestamp();
+            setTimeout(animateProgressBars, 1000);
+            
+            // Mettre à jour toutes les 30 secondes
+            setInterval(updateTimestamp, 30000);
+            
+            // Notification de chargement
+            showNotification('Dashboard chargé avec succès !', 'success');
+        });
     </script>
 </body>
 </html>

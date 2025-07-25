@@ -1,7 +1,7 @@
-﻿name: Fallback - auto-install-deps
+name: Fallback - auto-install-deps
 on:
   push:
-    branches: [ master, main ]
+    branches: [ master ]
   workflow_dispatch:
 jobs:
   fallback-job:

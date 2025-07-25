@@ -1,7 +1,7 @@
-﻿name: Fallback - mounthly-backup
+name: Fallback - mounthly-backup
 on:
   push:
-    branches: [ master, main ]
+    branches: [ master ]
   workflow_dispatch:
 jobs:
   fallback-job:

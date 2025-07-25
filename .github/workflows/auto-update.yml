@@ -1,7 +1,7 @@
-﻿name: Fallback - auto-update
+name: Fallback - auto-update
 on:
   push:
-    branches: [ master, main ]
+    branches: [ master ]
   workflow_dispatch:
 jobs:
   fallback-job:

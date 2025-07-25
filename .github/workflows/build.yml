@@ -1,14 +1,72 @@
-﻿name: Fallback - build
+name: Build - Compilation et Déploiement
 on:
   push:
-    branches: [ master, main ]
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
   workflow_dispatch:
+
 jobs:
-  fallback-job:
+  build:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-    - name: Validate
-      run: echo 'Fallback workflow executed'
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Validate project structure
+      run: |
+        echo "🔍 Validation de la structure du projet..."
+        echo "📁 Structure détectée:"
+        ls -la
+        echo "📊 Drivers: $(find drivers -name "*.js" | wc -l) fichiers"
+        echo "📊 Assets: $(find assets -type f | wc -l) fichiers"
+        echo "📊 Locales: $(find locales -type f | wc -l) fichiers"
+        
+    - name: Build validation
+      run: |
+        echo "🔍 Validation du build..."
+        if [ -f "app.json" ] && [ -f "package.json" ]; then
+          echo "✅ Fichiers de configuration présents"
+          echo "📦 Version: $(jq -r '.version' app.json)"
+          echo "🏷️ Nom: $(jq -r '.name' app.json)"
+        else
+          echo "❌ Fichiers de configuration manquants"
+          exit 1
+        fi
+        
+    - name: Create build artifacts
+      run: |
+        echo "🔍 Création des artefacts de build..."
+        mkdir -p build
+        cp app.json build/
+        cp package.json build/
+        cp -r drivers build/ 2>/dev/null || echo "⚠️ Pas de dossier drivers"
+        cp -r assets build/ 2>/dev/null || echo "⚠️ Pas de dossier assets"
+        cp -r locales build/ 2>/dev/null || echo "⚠️ Pas de dossier locales"
+        echo "✅ Artefacts créés"
+        
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: tuya-zigbee-build
+        path: build/
+        retention-days: 30
+        
+    - name: Build success
+      run: |
+        echo "🎉 Build terminé avec succès!"
+        echo "📊 Résumé:"
+        echo "- ✅ Structure validée"
+        echo "- ✅ Configuration vérifiée"
+        echo "- ✅ Artefacts créés"
+        echo "- ✅ Build uploadé"
 
