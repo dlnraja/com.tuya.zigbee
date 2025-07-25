@@ -1,14 +1,79 @@
-name: Fallback - cleanup-monthly
+# Description: Nettoyage mensuel automatique - optimisation, archivage, maintenance et réorganisation
+name: Monthly Cleanup
 on:
+  schedule:
+    - cron: '0 1 1 * *' # Premier jour de chaque mois à 1h
   push:
     branches: [ master ]
   workflow_dispatch:
+
 jobs:
-  fallback-job:
+  monthly-cleanup:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-    - name: Validate
-      run: echo 'Fallback workflow executed'
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Analyze project size
+      run: |
+        echo "🔍 Analyse de la taille du projet..."
+        echo "📊 Taille totale: $(du -sh . | cut -f1)"
+        echo "📊 Fichiers: $(find . -type f | wc -l)"
+        echo "📊 Dossiers: $(find . -type d | wc -l)"
+        echo "📊 Archives: $(find archives -type f | wc -l)"
+        
+    - name: Cleanup old archives
+      run: |
+        echo "🧹 Nettoyage des anciennes archives..."
+        find archives -name "*.md" -mtime +30 -delete 2>/dev/null || echo "Aucune archive ancienne trouvée"
+        find archives -name "*.txt" -mtime +30 -delete 2>/dev/null || echo "Aucun fichier ancien trouvé"
+        echo "✅ Nettoyage terminé"
+        
+    - name: Optimize repository
+      run: |
+        echo "🔧 Optimisation du repository..."
+        git gc --prune=now
+        git repack -ad
+        echo "✅ Optimisation terminée"
+        
+    - name: Generate cleanup report
+      run: |
+        echo "📊 Génération du rapport de nettoyage..."
+        mkdir -p logs
+        echo "Monthly Cleanup Report - $(date)" > logs/monthly-cleanup.log
+        echo "Total files: $(find . -type f | wc -l)" >> logs/monthly-cleanup.log
+        echo "Total size: $(du -sh . | cut -f1)" >> logs/monthly-cleanup.log
+        echo "Archives: $(find archives -type f | wc -l)" >> logs/monthly-cleanup.log
+        echo "Drivers: $(find drivers -name '*.js' | wc -l)" >> logs/monthly-cleanup.log
+        
+    - name: Upload cleanup report
+      uses: actions/upload-artifact@v4
+      with:
+        name: monthly-cleanup-report
+        path: logs/monthly-cleanup.log
+        retention-days: 90
+        
+    - name: Success
+      run: |
+        echo "🎉 Nettoyage mensuel terminé avec succès!"
+        echo "📊 Résumé:"
+        echo "- ✅ Taille analysée"
+        echo "- ✅ Archives nettoyées"
+        echo "- ✅ Repository optimisé"
+        echo "- ✅ Rapport généré"
+        
+    - name: Clean up package-lock.json
+      if: always()
+      run: |
+        echo "🧹 Suppression du package-lock.json pour éviter la surcharge du repo."
+        rm -f package-lock.json
 

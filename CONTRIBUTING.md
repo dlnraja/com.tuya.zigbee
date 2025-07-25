@@ -1,50 +1,219 @@
-# Contributing to the Tuya Zigbee App for Homey
+# Guide de Contribution - Universal TUYA Zigbee Device
 
-Thank you for taking the time to contribute! We appreciate your support in improving the Tuya Zigbee app and making it more powerful and reliable.
+## 🎯 **Objectif du projet**
 
-Below are some guidelines to help you make the most effective contributions. These are not hard rules but suggestions to keep things running smoothly. If you have any questions, feel free to reach out.
+Ce projet étend l'écosystème Homey Tuya Zigbee en ajoutant des **device IDs manquants** pour les produits Tuya récents (_TZ3000, _TZ2000, _TZE200, etc.) sans passer par Zigbee2MQTT ou Home Assistant.
 
-Make sure you’ve joined the [Homey community](https://community.homey.app/t/app-pro-tuya-zigbee-app/26439) or checked the Apps Github discussions (https://github.com/JohanBendz/com.tuya.zigbee) for more informal interactions and updates.
+## 📋 **Comment ajouter un nouveau device**
 
-## Before Submitting a Bug or Feature Request
+### 1. **Identifier le device**
+- Récupérer le **Device ID** depuis l'app Tuya Smart ou Zigbee2MQTT
+- Identifier les **clusters** utilisés (standards Zigbee + clusters Tuya spécifiques 0xEF00)
+- Déterminer les **capabilities** Homey nécessaires
 
-- **Read the error message** thoroughly and ensure you understand it.
-- Search for similar issues in the repository before opening a new one.
-- Ensure Homey, your apps, and development tools are up to date.
-- Make sure the issue lies with the **Tuya Zigbee app** and not another app or Homey itself.
-- Investigate the issue yourself where possible. I highly encourage capable developers to submit pull requests rather than issues!
+### 2. **Créer le driver**
+```javascript
+// Template de driver pour un interrupteur simple
+module.exports = {
+  id: 'switch_tuya_TZ3000_example',
+  name: { en: 'Tuya Switch TZ3000' },
+  class: 'socket',
+  capabilities: ['onoff'],
+  images: {
+    large: 'assets/icon.svg',
+    small: 'assets/icon.svg'
+  },
+  zigbee: {
+    manufacturerName: ['TUYATEC'],
+    productId: ['TZ3000_example'],
+    endpoints: {
+      1: {
+        clusters: ['genOnOff', 'genBasic'],
+        bindings: ['genOnOff']
+      }
+    }
+  },
+  settings: {
+    // Configuration spécifique si nécessaire
+  }
+};
+```
 
-For regular support, feel free to contact me via Github (https://github.com/JohanBendz/com.tuya.zigbee/issues).
+### 3. **Ajouter dans app.json**
+```json
+{
+  "id": "universal.tuya.zigbee.device",
+  "drivers": [
+    {
+      "id": "switch_tuya_TZ3000_example",
+      "name": { "en": "Tuya Switch TZ3000" },
+      "class": "socket",
+      "capabilities": ["onoff"],
+      "images": {
+        "large": "assets/icon.svg",
+        "small": "assets/icon.svg"
+      },
+      "zigbee": {
+        "manufacturerName": ["TUYATEC"],
+        "productId": ["TZ3000_example"],
+        "endpoints": {
+          "1": {
+            "clusters": ["genOnOff", "genBasic"],
+            "bindings": ["genOnOff"]
+          }
+        }
+      }
+    }
+  ]
+}
+```
 
-## Creating a Great Bug Report
+### 4. **Tester le driver**
+```bash
+# Validation locale
+homey app validate
 
-- **Context**: What were you trying to achieve when the issue occurred?
-- Provide detailed steps to **reproduce the issue**. If possible, isolate the smallest amount of code necessary to recreate the problem.
-- Include any relevant log files, IDs, or screenshots.
-- Detail any troubleshooting steps you have taken, and if possible, suggest a **theory** or **potential fix**.
+# Test sur Homey
+homey app run
+```
 
-## Submitting a Feature Request
+## 🔧 **Types de devices supportés**
 
-- **Current situation**: What’s the existing behavior?
-- Why is the current behavior problematic?
-- Include a detailed proposal, or even better, a **pull request** that demonstrates the solution.
-- Explain the **use case**: Who needs this feature and why?
-- List any potential issues or caveats with the feature.
+### **Interrupteurs et Prises**
+- Interrupteurs simples (on/off)
+- Interrupteurs dimmers
+- Prises intelligentes
+- Modules de contrôle
 
-## Submitting a Pull Request (PR)
+### **Éclairage**
+- Ampoules LED
+- Bandes LED
+- Spots encastrés
+- Contrôleurs RGB
 
-- Keep the changes **focused on one issue** or feature to avoid unnecessary complexity.
-- When adding support for a device, please stick to one device per PR.
-- Ensure your changes are contained within a **single commit**.
-- **Rebase** from the latest master branch to avoid conflicts.
-- Stick to the existing **code formatting** and structure to maintain consistency.
-- Ensure any changes are covered by **tests**, and that they pass before submitting the PR.
-- Add **documentation** for any new functionality or significant changes.
+### **Thermostats et Vannes**
+- Vannes TRV (Thermostatic Radiator Valve)
+- Thermostats d'ambiance
+- Contrôleurs de chauffage
 
-## Speeding Up the Review Process
+### **Capteurs**
+- Capteurs de température
+- Capteurs d'humidité
+- Détecteurs de mouvement
+- Détecteurs de fuite
+- Capteurs de contact
 
-Merging pull requests can take time. Here’s how you can help:
+## 📊 **Structure des clusters**
 
-- Ask fellow developers to **review** and test your changes.
-- Keep your PR as **small** and focused as possible.
-- Make sure your changes are well-documented and explain **why** they’re necessary.
+### **Clusters Zigbee Standards**
+- `genBasic` : Informations de base
+- `genOnOff` : Contrôle on/off
+- `genLevelCtrl` : Contrôle de luminosité
+- `msTemperatureMeasurement` : Température
+- `msRelativeHumidity` : Humidité
+
+### **Clusters Tuya Spécifiques**
+- `0xEF00` : Clusters Tuya personnalisés
+- `0xE001` : Nouveaux clusters Tuya v2
+- `0xE002` : Nouveaux clusters Tuya v3
+
+## 🚀 **Processus de contribution**
+
+### **1. Fork et Clone**
+```bash
+git clone https://github.com/dlnraja/com.tuya.zigbee.git
+cd com.tuya.zigbee
+```
+
+### **2. Créer une branche**
+```bash
+git checkout -b feature/new-device-TZ3000_example
+```
+
+### **3. Ajouter le driver**
+- Créer le fichier driver dans `drivers/sdk3/`
+- Ajouter l'entrée dans `app.json`
+- Tester localement
+
+### **4. Validation**
+```bash
+# Vérifier la syntaxe
+npm run lint
+
+# Valider l'app
+homey app validate
+
+# Tester le build
+npm run build
+```
+
+### **5. Pull Request**
+- Description claire du device ajouté
+- Screenshots si possible
+- Test sur Homey réel
+
+## 📝 **Template de Pull Request**
+
+```markdown
+## Nouveau Device : [Nom du Device]
+
+### Device ID
+- **Manufacturer** : TUYATEC
+- **Product ID** : TZ3000_example
+- **Type** : Interrupteur simple
+
+### Clusters utilisés
+- `genOnOff` : Contrôle on/off
+- `genBasic` : Informations de base
+
+### Capabilities Homey
+- `onoff` : Contrôle basique
+
+### Testé sur
+- [ ] Homey Pro
+- [ ] Homey Bridge
+- [ ] Firmware Tuya : [version]
+
+### Screenshots
+[Insérer captures d'écran si disponible]
+```
+
+## ⚠️ **Points d'attention**
+
+### **1. Éviter les conflits**
+- Vérifier que le device ID n'existe pas déjà
+- Utiliser des noms uniques pour les drivers
+- Tester la compatibilité avec l'app officielle
+
+### **2. Validation des clusters**
+- Identifier tous les clusters utilisés
+- Tester les bindings nécessaires
+- Vérifier la compatibilité firmware
+
+### **3. Documentation**
+- Documenter les settings spécifiques
+- Expliquer les limitations connues
+- Ajouter des exemples d'utilisation
+
+## 🛠️ **Outils utiles**
+
+### **Zigbee2MQTT**
+- Pour identifier les clusters et device IDs
+- Documentation : https://www.zigbee2mqtt.io/
+
+### **Tuya IoT Platform**
+- Pour vérifier les spécifications produits
+- Documentation : https://developer.tuya.com/
+
+### **Homey Apps SDK**
+- Documentation officielle : https://apps.developer.homey.app/
+
+## 📞 **Support**
+
+- **Issues GitHub** : Pour les bugs et demandes
+- **Forum Homey** : https://community.homey.app/t/app-community-universal-tuya-zigbee-device/140352
+- **Discord** : [Lien à ajouter]
+
+---
+
+*Merci de contribuer à l'écosystème Homey Tuya Zigbee !*
