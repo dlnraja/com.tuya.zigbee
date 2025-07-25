@@ -1,1 +1,17 @@
-﻿{"name":"com.tuya.zigbee","version":"1.0.0","description":"Adds support for Tuya Zigbee devices to Homey","main":"app.js","scripts":{"test":"echo \"Error: no test specified\" \u0026\u0026 exit 1","lint":"eslint .","start":"node app.js"},"keywords":["Tuya","Zigbee"],"author":"Johan Bendz","license":"MIT","repository":{"type":"git","url":"https://github.com/JohanBendz/com.tuya.zigbee.git"},"bugs":{"url":"https://github.com/JohanBendz/com.tuya.zigbee/issues"},"homepage":"https://bortbytt.se/2022/02/03/tuya-zigbee/","engines":{"node":"\u003e=12"},"contributors":["Johan Bendz \u003cjohan_bendz@hotmail.com\u003e"],"funding":{"type":"paypal","url":"https://www.paypal.me/johanbendz"},"dependencies":{"homey-zigbeedriver":"^2.1.4","zigbee-clusters":"^2.4.1"}}
+﻿{
+  "name": "universal.tuya.zigbee.device",
+  "version": "1.1.0",
+  "description": "Control and integrate all your TUYA Zigbee devices in Homey. Universal, smart, and fully automated.",
+  "main": "app.js",
+  "scripts": {"test": "echo \"Error: no test specified\" && exit 1", "lint": "eslint .", "start": "node app.js"},
+  "keywords": ["TUYA","Zigbee","Universal","Homey"],
+  "author": "Johan Bendz",
+  "license": "MIT",
+  "repository": {"type": "git", "url": "https://github.com/JohanBendz/universal.tuya.zigbee.device.git"},
+  "bugs": {"url": "https://github.com/JohanBendz/universal.tuya.zigbee.device/issues"},
+  "homepage": "https://community.homey.app/t/app-community-universal-tuya-zigbee-device/140352",
+  "engines": {"node": ">=12"},
+  "contributors": ["Johan Bendz <johan_bendz@hotmail.com>"],
+  "funding": {"type": "paypal", "url": "https://www.paypal.me/johanbendz"},
+  "dependencies": {"homey-zigbeedriver": "^2.1.4", "zigbee-clusters": "^2.4.1"}
+}
