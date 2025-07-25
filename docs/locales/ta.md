@@ -1,4 +1,4 @@
-# Universal TUYA Zigbee Device - தமிழ் மொழிபெயர்ப்பு
+# Universal Universal TUYA Zigbee Device - தமிழ் மொழிபெயர்ப்பு
 
 ## 🎯 **திட்டத்தின் நோக்கங்கள்**
 
@@ -38,8 +38,8 @@
 
 ### **உள்ளூர் மேம்பாடு**
 ```bash
-git clone https://github.com/dlnraja/com.tuya.zigbee.git
-cd com.tuya.zigbee
+git clone https://github.com/dlnraja/universal.tuya.zigbee.device.git
+cd universal.tuya.zigbee.device
 npm install
 npm run build
 ```
@@ -131,8 +131,8 @@ npm run build
 ## 📞 **ஆதரவு**
 
 ### **வளங்கள்**
-- **Homey Forum** : [Universal TUYA Zigbee Device](https://community.homey.app/t/app-community-universal-tuya-zigbee-device/140352)
-- **GitHub Issues** : [சிக்கலை அறிக்கை செய்தல்](https://github.com/dlnraja/com.tuya.zigbee/issues)
+- **Homey Forum** : [Universal Universal TUYA Zigbee Device](https://community.homey.app/t/app-community-universal-tuya-zigbee-device/140352)
+- **GitHub Issues** : [சிக்கலை அறிக்கை செய்தல்](https://github.com/dlnraja/universal.tuya.zigbee.device/issues)
 - **ஆவணப்படுத்தல்** : [CONTRIBUTING.md](CONTRIBUTING.md) பார்க்கவும்
 
 ### **தொடர்பு**
@@ -162,7 +162,7 @@ npm run build
 
 ### **சமூகம்**
 - [Homey Forum](https://community.homey.app/) - சமூக ஆதரவு
-- [GitHub Issues](https://github.com/dlnraja/com.tuya.zigbee/issues) - சிக்கல்களை அறிக்கை செய்தல்
+- [GitHub Issues](https://github.com/dlnraja/universal.tuya.zigbee.device/issues) - சிக்கல்களை அறிக்கை செய்தல்
 - [Homey Discord](https://discord.gg/homey) - நிகழ்நேர அரட்டை
 
 ### **மேம்பாட்டு கருவிகள்**
@@ -179,4 +179,6 @@ npm run build
 
 *கடைசி புதுப்பித்தல் : 2025-07-25 13:51:15*  
 *YOLO சிஸ்டம் மூலம் ஆட்டோமேடிகலாக உருவாக்கப்பட்டது*  
-*Universal TUYA Zigbee Device - Tuya Zigbee மீது முழுமையான கவனம்* 🚀 
+*Universal Universal TUYA Zigbee Device - Tuya Zigbee மீது முழுமையான கவனம்* 🚀 
+
+

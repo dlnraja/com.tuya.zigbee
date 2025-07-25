@@ -1,4 +1,4 @@
-# Script de réorganisation automatique des fichiers Markdown - Universal TUYA Zigbee Device
+# Script de réorganisation automatique des fichiers Markdown - Universal Universal TUYA Zigbee Device
 # Description: Réorganisation automatique des fichiers MD à chaque push avec YOLO mode
 
 Write-Host "Reorganisation automatique des fichiers Markdown..." -ForegroundColor Cyan
@@ -73,7 +73,7 @@ function Create-MarkdownIndex {
     Write-Host "Creation de l'index des fichiers Markdown..." -ForegroundColor Yellow
     
     $indexContent = @"
-# Documentation Universal TUYA Zigbee Device
+# Documentation Universal Universal TUYA Zigbee Device
 
 ## Structure des fichiers Markdown
 
@@ -170,7 +170,7 @@ jobs:
         
         # Créer l'index
         cat > docs/INDEX.md << 'EOF'
-# Documentation Universal TUYA Zigbee Device
+# Documentation Universal Universal TUYA Zigbee Device
 
 ## Structure des fichiers Markdown
 
@@ -313,3 +313,4 @@ try {
     Write-Host "Erreur lors de la reorganisation des fichiers Markdown: $($_.Exception.Message)" -ForegroundColor Red
     exit 1
 } 
+

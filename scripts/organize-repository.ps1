@@ -29,8 +29,8 @@ Write-Host "`nOrganisation des scripts..." -ForegroundColor Cyan
 $BuildScripts = @(
     "build-fixed.ps1",
     "build-full.ps1",
-    "com.tuya.zigbee-master\build-fixed.ps1",
-    "com.tuya.zigbee-master\build-full.ps1"
+    "universal.tuya.zigbee.device-master\build-fixed.ps1",
+    "universal.tuya.zigbee.device-master\build-full.ps1"
 )
 
 foreach ($Script in $BuildScripts) {
@@ -182,9 +182,9 @@ $ProjectScripts = @(
     "complete-patch.ps1",
     "recreate-project.ps1",
     "resolve-conflicts.ps1",
-    "com.tuya.zigbee-master\complete-patch.ps1",
-    "com.tuya.zigbee-master\deploy.ps1",
-    "com.tuya.zigbee-master\recreate-project.ps1"
+    "universal.tuya.zigbee.device-master\complete-patch.ps1",
+    "universal.tuya.zigbee.device-master\deploy.ps1",
+    "universal.tuya.zigbee.device-master\recreate-project.ps1"
 )
 
 foreach ($Script in $ProjectScripts) {
@@ -230,7 +230,7 @@ foreach ($Script in $PowerShellScripts) {
 # Supprimer les dossiers vides
 $EmptyFolders = @(
     "scripts/powershell",
-    "com.tuya.zigbee-master"
+    "universal.tuya.zigbee.device-master"
 )
 
 foreach ($Folder in $EmptyFolders) {
@@ -278,3 +278,4 @@ foreach ($Folder in $Folders) {
 
 Write-Host "`nOrganisation terminée!" -ForegroundColor Green
 Write-Host "Repository nettoyé et structuré avec succès." -ForegroundColor Cyan 
+

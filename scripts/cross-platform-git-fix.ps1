@@ -1,4 +1,4 @@
-# Script cross-platform de correction Git - Universal TUYA Zigbee Device
+# Script cross-platform de correction Git - Universal Universal TUYA Zigbee Device
 # Description: Correction des auteurs Git et amélioration des messages de commit pour tous les systèmes
 
 Write-Host "Script cross-platform de correction Git..." -ForegroundColor Cyan
@@ -251,3 +251,4 @@ try {
     Write-Host "Erreur lors de la correction cross-platform Git: $($_.Exception.Message)" -ForegroundColor Red
     exit 1
 } 
+

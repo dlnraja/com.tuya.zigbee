@@ -40,3 +40,4 @@ Write-Host "- Fichiers corrigés: $fixedCount" -ForegroundColor White
 Write-Host "- Fichiers déjà corrects: $($totalCount - $fixedCount)" -ForegroundColor White
 
 Write-Host "🚀 Tous les workflows sont maintenant configurés pour master uniquement!" -ForegroundColor Green 
+

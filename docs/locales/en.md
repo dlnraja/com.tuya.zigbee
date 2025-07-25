@@ -1,10 +1,10 @@
-# 🚀 com.tuya.zigbee – Functional Vision & Global Architecture
+# 🚀 universal.tuya.zigbee.device – Functional Vision & Global Architecture
 
 ---
 
 ## 🎯 Project Objective
 
-Create the most complete, automated, and resilient solution to integrate, maintain, and evolve all Tuya Zigbee devices on Homey, with:
+Create the most complete, automated, and resilient solution to integrate, maintain, and evolve all Universal TUYA Zigbee Devices on Homey, with:
 - **Universal support** (dynamic drivers, multi-source extraction, AI benchmarking)
 - **Total automation** (restoration, backup, CI/CD, multilingual docs, benchmarking, reporting)
 - **Transparency & monitoring** (web dashboard, logs, changelog, real-time status)
@@ -149,3 +149,5 @@ Create the most complete, automated, and resilient solution to integrate, mainta
 - Automatic generation of detailed technical documentation (API, flows, capabilities)
 
 --- 
+
+

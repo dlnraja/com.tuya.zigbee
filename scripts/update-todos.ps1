@@ -1,4 +1,4 @@
-# Script de mise à jour automatique des TODO - Universal TUYA Zigbee Device
+# Script de mise à jour automatique des TODO - Universal Universal TUYA Zigbee Device
 # Description: Synchronisation et mise à jour automatique de tous les fichiers TODO du projet
 
 # Configuration
@@ -52,7 +52,7 @@ function Update-TodoContent {
     param($metrics)
     
     $content = @"
-# TODO SYNCHRONISE - Universal TUYA Zigbee Device
+# TODO SYNCHRONISE - Universal Universal TUYA Zigbee Device
 
 ## METRIQUES ACTUELLES ($timestamp)
 
@@ -131,7 +131,7 @@ function Update-TodoContent {
 
 ---
 
-**TODO SYNCHRONISE - UNIVERSAL TUYA ZIGBEE DEVICE**
+**TODO SYNCHRONISE - UNIVERSAL Universal TUYA Zigbee Device**
 
 *Derniere mise a jour : $timestamp*  
 *Genere automatiquement par le systeme YOLO*  
@@ -214,3 +214,4 @@ try {
     Write-Host "Erreur lors de la mise a jour des TODO: $($_.Exception.Message)" -ForegroundColor Red
     exit 1
 } 
+

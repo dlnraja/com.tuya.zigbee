@@ -1,4 +1,4 @@
-# Script de correction des auteurs Git - Universal TUYA Zigbee Device
+# Script de correction des auteurs Git - Universal Universal TUYA Zigbee Device
 # Description: Correction des auteurs Git et amélioration des messages de commit
 
 # Configuration
@@ -251,3 +251,4 @@ try {
     Write-Host "Erreur lors de la correction des auteurs Git: $($_.Exception.Message)" -ForegroundColor Red
     exit 1
 } 
+
