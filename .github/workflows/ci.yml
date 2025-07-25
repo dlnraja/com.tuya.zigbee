@@ -77,4 +77,9 @@ jobs:
         echo "- ✅ Fichiers de configuration vérifiés"
         echo "- ✅ Drivers détectés"
         echo "- ✅ Build testé"
+    - name: Clean up package-lock.json
+      if: always()
+      run: |
+        echo "🧹 Suppression du package-lock.json pour éviter la surcharge du repo."
+        rm -f package-lock.json
 
