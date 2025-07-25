@@ -1,12 +1,1 @@
-{
-    "capabilitiesOptions": {
-        "onoff": {
-            "setOnDim": false
-        },
-        "dim": {
-            "opts": {
-            "duration": true
-            }
-        }
-    }
-}
+﻿{"capabilitiesOptions":{"onoff":{"setOnDim":false},"dim":{"opts":"@{duration=True}"}}}

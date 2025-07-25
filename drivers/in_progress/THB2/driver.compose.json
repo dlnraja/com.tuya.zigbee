@@ -1,10 +1,1 @@
-﻿{
-    "name":  "THB2",
-    "class":  "sensor",
-    "capabilities":  [
-                         "onoff",
-                         "measure_battery",
-                         "measure_temperature",
-                         "measure_humidity"
-                     ]
-}
+﻿{"name":"THB2","class":"sensor","capabilities":["onoff","measure_battery","measure_temperature","measure_humidity"]}

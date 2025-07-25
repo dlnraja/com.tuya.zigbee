@@ -1,11 +1,1 @@
-﻿'use strict';
-
-const { ZigBeeDriver } = require('homey-meshdriver');
-
-class buzzerDriver extends ZigBeeDriver {
-    async onMeshInit() {
-        this.log('buzzerDriver has been initialized');
-    }
-}
-
-module.exports = buzzerDriver;
+﻿'use strict'; const { ZigBeeDriver } = require('homey-meshdriver'); class buzzerDriver extends ZigBeeDriver { async onMeshInit() { this.log('buzzerDriver has been initialized'); } } module.exports = buzzerDriver; 
