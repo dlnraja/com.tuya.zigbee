@@ -1,37 +1,117 @@
-﻿try {
-'use strict';
+﻿'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');
-const { debug, CLUSTER } = require('zigbee-clusters');
 
-class floodsensor extends ZigbeeDevice {
-		
-	async 
-    this.registerCapability('onoff', CLUSTER.ON_OFF);
-
-		this.printNode();
-
-		// alarm_contact
-      zclNode.endpoints[1].clusters[CLUSTER.IAS_ZONE.NAME].onZoneStatusChangeNotification = payload => {
-        this.onIASZoneStatusChangeNotification(payload);
-      }
-
-  }
-  
-  onIASZoneStatusChangeNotification({zoneStatus, extendedStatus, zoneId, delay,}) {
-    this.log('IASZoneStatusChangeNotification received:', zoneStatus, extendedStatus, zoneId, delay);
-    this.setCapabilityValue('alarm_water', zoneStatus.alarm1).catch(this.error);
-    this.setCapabilityValue('alarm_battery', zoneStatus.battery).catch(this.error);
-  }
-
-	onDeleted(){
-		this.log("Flood Sensor removed")
-	}
-
+class floodsensorDevice extends ZigBeeDevice {
+    async onNodeInit({ zclNode }) {
+        // Enable debugging
+        this.enableDebug();
+        
+        // Enable polling
+        this.enablePolling();
+        
+        // Register capabilities
+        this.registerCapability('onoff', 'genOnOff', {
+            getOpts: {
+                getOnStart: true,
+                pollInterval: 300000,
+                getOnOnline: true,
+            },
+            reportOpts: {
+                configureAttributeReporting: {
+                    minInterval: 0,
+                    maxInterval: 300,
+                    minChange: 0,
+                },
+            },
+        });
+        
+        // Register additional capabilities based on pattern
+        if (this.hasCapability('dim')) {
+            this.registerCapability('dim', 'genLevelCtrl', {
+                getOpts: {
+                    getOnStart: true,
+                    pollInterval: 300000,
+                    getOnOnline: true,
+                },
+                reportOpts: {
+                    configureAttributeReporting: {
+                        minInterval: 0,
+                        maxInterval: 300,
+                        minChange: 1,
+                    },
+                },
+            });
+        }
+        
+        if (this.hasCapability('measure_power')) {
+            this.registerCapability('measure_power', 'seMetering', {
+                getOpts: {
+                    getOnStart: true,
+                    pollInterval: 300000,
+                    getOnOnline: true,
+                },
+                reportOpts: {
+                    configureAttributeReporting: {
+                        minInterval: 0,
+                        maxInterval: 300,
+                        minChange: 1,
+                    },
+                },
+            });
+        }
+        
+        if (this.hasCapability('measure_temperature')) {
+            this.registerCapability('measure_temperature', 'msTemperatureMeasurement', {
+                getOpts: {
+                    getOnStart: true,
+                    pollInterval: 300000,
+                    getOnOnline: true,
+                },
+                reportOpts: {
+                    configureAttributeReporting: {
+                        minInterval: 0,
+                        maxInterval: 300,
+                        minChange: 10,
+                    },
+                },
+            });
+        }
+        
+        if (this.hasCapability('measure_humidity')) {
+            this.registerCapability('measure_humidity', 'msRelativeHumidity', {
+                getOpts: {
+                    getOnStart: true,
+                    pollInterval: 300000,
+                    getOnOnline: true,
+                },
+                reportOpts: {
+                    configureAttributeReporting: {
+                        minInterval: 0,
+                        maxInterval: 300,
+                        minChange: 100,
+                    },
+                },
+            });
+        }
+        
+        if (this.hasCapability('alarm_motion')) {
+            this.registerCapability('alarm_motion', 'ssIasZone', {
+                getOpts: {
+                    getOnStart: true,
+                    pollInterval: 300000,
+                    getOnOnline: true,
+                },
+                reportOpts: {
+                    configureAttributeReporting: {
+                        minInterval: 0,
+                        maxInterval: 300,
+                        minChange: 0,
+                    },
+                },
+            });
+        }
+    }
 }
 
-module.exports = floodsensor;
-
-} catch(e) { this.error('Driver error', e); }
-
-
+module.exports = floodsensorDevice;

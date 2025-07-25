@@ -1,572 +1,39 @@
 {
   "categories": {
-    "light": [
-      {
-        "id": "christmas_lights",
-        "name": {
-          "fr": "Christmas Lights",
-          "en": "Christmas Lights",
-          "ta": "Christmas Lights",
-          "nl": "Christmas Lights"
-        },
-        "category": "light",
-        "manufacturers": [
-          "_TZE200_s8gkrkxk"
-        ],
-        "models": [
-          "TS0601"
-        ],
-        "capabilities": [
-          "onoff",
-          "dim",
-          "light_hue",
-          "light_saturation",
-          "lidl_xmas_mode",
-          "measure_battery",
-          "measure_temperature",
-          "measure_humidity"
-        ],
-        "status": "sdk3",
-        "instruction": {
-          "fr": "Push the F button on the Christmas Lights controller for aprox 5-10 seconds and release, lights should start to flash slowly.",
-          "en": "Push the F button on the Christmas Lights controller for aprox 5-10 seconds and release, lights should start to flash slowly.",
-          "ta": "Push the F button on the Christmas Lights controller for aprox 5-10 seconds and release, lights should start to flash slowly.",
-          "nl": "Push the F button on the Christmas Lights controller for aprox 5-10 seconds and release, lights should start to flash slowly."
-        },
-        "image": "{{driverAssetsPath}}/images/large.png"
-      },
-      {
-        "id": "dimmer_1_gang",
-        "name": {
-          "fr": "1 Gang Dimmer Module",
-          "en": "1 Gang Dimmer Module",
-          "ta": "1 Gang Dimmer Module",
-          "nl": "1 Gang Dimmer Module"
-        },
-        "category": "light",
-        "manufacturers": [
-          "_TYZB01_qezuin6k",
-          "_TZ3210_ngqk6jia",
-          "_TZ3000_ktuoyvt5",
-          "_TZ3210_zxbtub8r",
-          "_TZ3210_weaqkhab",
-          "_TZ3210_k1msuvg6",
-          "_TZ3000_mgusv51k"
-        ],
-        "models": [
-          "TS110F",
-          "TS110E",
-          "TS0052"
-        ],
-        "capabilities": [
-          "onoff",
-          "dim",
-          "measure_battery",
-          "measure_temperature",
-          "measure_humidity"
-        ],
-        "status": "sdk3",
-        "instruction": {
-          "fr": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
-          "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
-          "ta": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
-          "nl": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
-        },
-        "image": "{{driverAssetsPath}}/images/large.png"
-      },
-      {
-        "id": "multi_sensor",
-        "name": {
-          "fr": "Multi Sensor",
-          "en": "Multi Sensor",
-          "ta": "Multi Sensor",
-          "nl": "Multi Sensor"
-        },
-        "category": "light",
-        "manufacturers": [
-          "Tuya"
-        ],
-        "models": [
-          "multi_sensor"
-        ],
-        "capabilities": [
-          "measure_temperature",
-          "measure_humidity"
-        ],
-        "status": "sdk3",
-        "instruction": {
-          "fr": "",
-          "en": "",
-          "ta": "",
-          "nl": ""
-        },
-        "image": ""
-      },
-      {
-        "id": "rain_sensor",
-        "name": {
-          "fr": "Rain Sensor",
-          "en": "Rain Sensor",
-          "ta": "Rain Sensor",
-          "nl": "Rain Sensor"
-        },
-        "category": "light",
-        "manufacturers": [
-          "Tuya"
-        ],
-        "models": [
-          "rain_sensor"
-        ],
-        "capabilities": [
-          "measure_battery",
-          "alarm_water"
-        ],
-        "status": "sdk3",
-        "instruction": {
-          "fr": "",
-          "en": "",
-          "ta": "",
-          "nl": ""
-        },
-        "image": ""
-      },
-      {
-        "id": "smart_plug",
-        "name": {
-          "fr": "Smart Plug",
-          "en": "Smart Plug",
-          "ta": "Smart Plug",
-          "nl": "Smart Plug"
-        },
-        "category": "light",
-        "manufacturers": [
-          "Tuya"
-        ],
-        "models": [
-          "smart_plug"
-        ],
-        "capabilities": [
-          "onoff",
-          "measure_power"
-        ],
-        "status": "sdk3",
-        "instruction": {
-          "fr": "",
-          "en": "",
-          "ta": "",
-          "nl": ""
-        },
-        "image": ""
-      },
-      {
-        "id": "TS0001",
-        "name": {
-          "fr": "Switch 1 Gang",
-          "en": "Switch 1 Gang",
-          "ta": "Switch 1 Gang",
-          "nl": "Switch 1 Gang"
-        },
-        "category": "light",
-        "manufacturers": [
-          "Tuya"
-        ],
-        "models": [
-          "TS0001"
-        ],
-        "capabilities": [
-          "onoff"
-        ],
-        "status": "sdk3",
-        "instruction": {
-          "fr": "",
-          "en": "",
-          "ta": "",
-          "nl": ""
-        },
-        "image": ""
-      },
-      {
-        "id": "TS0043",
-        "name": {
-          "fr": "Switch 4 Gang",
-          "en": "Switch 4 Gang",
-          "ta": "Switch 4 Gang",
-          "nl": "Switch 4 Gang"
-        },
-        "category": "light",
-        "manufacturers": [
-          "Tuya"
-        ],
-        "models": [
-          "TS0043"
-        ],
-        "capabilities": [
-          "onoff",
-          "measure_power"
-        ],
-        "status": "sdk3",
-        "instruction": {
-          "fr": "",
-          "en": "",
-          "ta": "",
-          "nl": ""
-        },
-        "image": ""
-      },
-      {
-        "id": "TS0044",
-        "name": {
-          "fr": "Switch 4 Gang",
-          "en": "Switch 4 Gang",
-          "ta": "Switch 4 Gang",
-          "nl": "Switch 4 Gang"
-        },
-        "category": "light",
-        "manufacturers": [
-          "Tuya"
-        ],
-        "models": [
-          "TS0044"
-        ],
-        "capabilities": [
-          "onoff",
-          "measure_power",
-          "measure_current"
-        ],
-        "status": "sdk3",
-        "instruction": {
-          "fr": "",
-          "en": "",
-          "ta": "",
-          "nl": ""
-        },
-        "image": ""
-      },
-      {
-        "id": "dimmer_1_gang_2",
-        "name": {
-          "fr": "1 Gang Dimmer Module",
-          "en": "1 Gang Dimmer Module",
-          "ta": "1 Gang Dimmer Module",
-          "nl": "1 Gang Dimmer Module"
-        },
-        "category": "light",
-        "manufacturers": [
-          "_TZ3210_ngqk6jia"
-        ],
-        "models": [
-          "TS110E"
-        ],
-        "capabilities": [
-          "onoff",
-          "dim",
-          "measure_battery",
-          "measure_temperature",
-          "measure_humidity"
-        ],
-        "status": "in_progress",
-        "instruction": {
-          "fr": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
-          "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
-          "ta": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
-          "nl": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
-        },
-        "image": "{{driverAssetsPath}}/images/large.png"
-      },
-      {
-        "id": "dimmer_1_gang_tuya",
-        "name": {
-          "fr": "1 Gang Dimmer Module",
-          "en": "1 Gang Dimmer Module",
-          "ta": "1 Gang Dimmer Module",
-          "nl": "1 Gang Dimmer Module"
-        },
-        "category": "light",
-        "manufacturers": [
-          "_TZE200_la2c2uo9",
-          "_TZE204_hlx9tnzb",
-          "_TZE200_ip2akl4w",
-          "_TZE200_1agwnems",
-          "_TZE200_579lguh2",
-          "_TZE200_vucankjx",
-          "_TZE200_4mh6tyyo",
-          "_TZE204_n9ctkb6j",
-          "_TZE204_9qhuzgo0",
-          "_TZE204_dcnsggvz",
-          "_TZE204_5cuocqty"
-        ],
-        "models": [
-          "TS0601"
-        ],
-        "capabilities": [
-          "onoff",
-          "dim",
-          "measure_battery",
-          "measure_temperature",
-          "measure_humidity"
-        ],
-        "status": "in_progress",
-        "instruction": {
-          "fr": "Press the reset switch rapidly 10 times until the unit make a continously beep sound to enter pairing mode.",
-          "en": "Press the reset switch rapidly 10 times until the unit make a continously beep sound to enter pairing mode.",
-          "ta": "Press the reset switch rapidly 10 times until the unit make a continously beep sound to enter pairing mode.",
-          "nl": "Press the reset switch rapidly 10 times until the unit make a continously beep sound to enter pairing mode."
-        },
-        "image": "{{driverAssetsPath}}/images/large.png"
-      },
-      {
-        "id": "dimmer_2_gang",
-        "name": {
-          "fr": "2 Gang Dimmer Module",
-          "en": "2 Gang Dimmer Module",
-          "ta": "2 Gang Dimmer Module",
-          "nl": "2 Gang Dimmer Module"
-        },
-        "category": "light",
-        "manufacturers": [
-          "_TYZB01_v8gtiaed",
-          "_TZ3000_92chsky7",
-          "_TZ3210_wdexaypg",
-          "_TZ3210_3mpwqzuu",
-          "_TZ3210_pagajpog",
-          "_TZ3210_4ubylghk"
-        ],
-        "models": [
-          "TS110F",
-          "TS110E"
-        ],
-        "capabilities": [
-          "onoff",
-          "dim",
-          "measure_battery",
-          "measure_temperature",
-          "measure_humidity"
-        ],
-        "status": "in_progress",
-        "instruction": {
-          "fr": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
-          "en": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
-          "ta": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
-          "nl": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
-        },
-        "image": "{{driverAssetsPath}}/images/large.png"
-      },
-      {
-        "id": "TS0043",
-        "name": {
-          "fr": null,
-          "en": null,
-          "ta": null,
-          "nl": null
-        },
-        "category": "light",
-        "manufacturers": [
-          null
-        ],
-        "models": [
-          "TS0043"
-        ],
-        "capabilities": [
-          "onoff"
-        ],
-        "status": "in_progress",
-        "instruction": {
-          "fr": "",
-          "en": "",
-          "ta": "",
-          "nl": ""
-        },
-        "image": ""
-      },
-      {
-        "id": "wall_dimmer_tuya",
-        "name": {
-          "fr": "Wall Dimmer",
-          "en": "Wall Dimmer",
-          "ta": "Wall Dimmer",
-          "nl": "Wall Dimmer"
-        },
-        "category": "light",
-        "manufacturers": [
-          "_TZE200_3p5ydos3",
-          "_TZE200_whpb9yts",
-          "_TZE200_ebwgzdqq",
-          "_TZE200_ctq0k47x",
-          "_TZE200_9i9dt8is",
-          "_TZE200_dfxkcots",
-          "_TZE200_w4cryh2i",
-          "_TZE200_ojzhk75b",
-          "_TZE200_9cxuhakf",
-          "_TZE200_a0syesf5",
-          "_TZE200_swaamsoy",
-          "_TZE200_p0gzbqct",
-          "_TZE204_vevc4c6g",
-          "_TZE200_0nauxa0p"
-        ],
-        "models": [
-          "TS0601"
-        ],
-        "capabilities": [
-          "onoff",
-          "dim",
-          "measure_battery",
-          "measure_temperature",
-          "measure_humidity"
-        ],
-        "status": "in_progress",
-        "instruction": {
-          "fr": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
-          "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
-          "ta": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
-          "nl": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
-        },
-        "image": "{{driverAssetsPath}}/images/large.png"
-      }
-    ],
-    "windowcoverings": [
-      {
-        "id": "curtainmodule",
-        "name": {
-          "fr": "Curtain Module",
-          "en": "Curtain Module",
-          "ta": "Curtain Module",
-          "nl": "Curtain Module"
-        },
-        "category": "windowcoverings",
-        "manufacturers": [
-          "_TZ3000_vd43bbfq",
-          "_TZ3000_1dd0d5yi",
-          "_TZ3000_ke7pzj5d",
-          "_TZ3000_fccpjz5z",
-          "_TZ3000_4uuaja4a",
-          "_TZ3000_zirycpws",
-          "_TZ3000_femsaaua",
-          "_TZ3000_e3vhyirx",
-          "_TZ3000_jwv3cwak",
-          "_TZ3210_dwytrmda",
-          "_TZ3210_ol1uhvza",
-          "_TZ3000_eg7awg6a",
-          "_TZ3000_eafaa66e",
-          "Tuya",
-          "Moes",
-          "Aqara",
-          "Xiaomi",
-          "Philips",
-          "IKEA",
-          "Osram",
-          "Samsung",
-          "LG",
-          "Bosch"
-        ],
-        "models": [
-          "TS130F"
-        ],
-        "capabilities": [
-          "windowcoverings_set",
-          "windowcoverings_state",
-          "onoff",
-          "measure_battery",
-          "measure_temperature",
-          "measure_humidity"
-        ],
-        "status": "sdk3",
-        "instruction": {
-          "fr": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping).",
-          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping).",
-          "ta": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping).",
-          "nl": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
-        },
-        "image": "{{driverAssetsPath}}/images/large.png"
-      },
-      {
-        "id": "curtain_module_2_gang",
-        "name": {
-          "fr": "2 Gang Curtain Module",
-          "en": "2 Gang Curtain Module",
-          "ta": "2 Gang Curtain Module",
-          "nl": "2 Gang Curtain Module"
-        },
-        "category": "windowcoverings",
-        "manufacturers": [
-          "_TZ3000_j1xl73iw",
-          "_TZ3000_l6iqph4f"
-        ],
-        "models": [
-          "TS130F"
-        ],
-        "capabilities": [
-          "windowcoverings_set",
-          "windowcoverings_state",
-          "onoff",
-          "measure_battery",
-          "measure_temperature",
-          "measure_humidity"
-        ],
-        "status": "sdk3",
-        "instruction": {
-          "fr": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping).",
-          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping).",
-          "ta": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping).",
-          "nl": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
-        },
-        "image": "{{driverAssetsPath}}/images/large.png"
-      },
-      {
-        "id": "curtainmodule",
-        "name": {
-          "fr": "Curtain Module",
-          "en": "Curtain Module",
-          "ta": "Curtain Module",
-          "nl": "Curtain Module"
-        },
-        "category": "windowcoverings",
-        "manufacturers": [
-          "_TZ3000_vd43bbfq",
-          "_TZ3000_1dd0d5yi",
-          "_TZ3000_ke7pzj5d",
-          "_TZ3000_fccpjz5z",
-          "_TZ3000_4uuaja4a",
-          "_TZ3000_zirycpws",
-          "_TZ3000_femsaaua",
-          "_TZ3000_e3vhyirx",
-          "_TZ3000_jwv3cwak",
-          "_TZ3210_dwytrmda",
-          "_TZ3210_ol1uhvza",
-          "_TZ3000_eg7awg6a",
-          "_TZ3000_eafaa66e",
-          "Tuya",
-          "Moes",
-          "Aqara",
-          "Xiaomi",
-          "Philips",
-          "IKEA",
-          "Osram",
-          "Samsung",
-          "LG",
-          "Bosch"
-        ],
-        "models": [
-          "TS130F"
-        ],
-        "capabilities": [
-          "windowcoverings_set",
-          "windowcoverings_state",
-          "onoff",
-          "measure_battery",
-          "measure_temperature",
-          "measure_humidity"
-        ],
-        "status": "in_progress",
-        "instruction": {
-          "fr": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping).",
-          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping).",
-          "ta": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping).",
-          "nl": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
-        },
-        "image": "{{driverAssetsPath}}/images/large.png"
-      }
-    ],
     "sensor": [
+      {
+        "id": "alarm_sensor",
+        "name": {
+          "fr": "Capteur",
+          "en": "Sensor",
+          "ta": "à®šà¯†à®©à¯à®šà®¾à®°à¯",
+          "nl": "Sensor"
+        },
+        "category": "sensor",
+        "manufacturers": [
+          "Tuya",
+          "Aqara",
+          "Xiaomi"
+        ],
+        "models": [
+          "TS0201",
+          "TS0202",
+          "TS0203"
+        ],
+        "capabilities": [
+          "measure_temperature",
+          "measure_humidity",
+          "measure_battery"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+          "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+          "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
       {
         "id": "doorwindowsensor",
         "name": {
@@ -717,39 +184,101 @@
         "image": "{{driverAssetsPath}}/images/large.png"
       },
       {
-        "id": "floodsensor",
+        "id": "door_window_sensor",
         "name": {
-          "fr": "Flood sensor",
-          "en": "Flood sensor",
-          "ta": "Flood sensor",
-          "nl": "Flood sensor"
+          "fr": "Capteur",
+          "en": "Sensor",
+          "ta": "à®šà¯†à®©à¯à®šà®¾à®°à¯",
+          "nl": "Sensor"
         },
         "category": "sensor",
         "manufacturers": [
-          "TUYATEC-3tipnsrx",
-          "_TZ3000_4uvovz4r",
-          "_TZ3000_3dfewsk1",
-          "_TZ3000_ww9i3e0y",
-          "_TZ3000_wuep9zng"
+          "Tuya",
+          "Aqara",
+          "Xiaomi"
         ],
         "models": [
-          "RH3001",
-          "TS0207"
+          "TS0201",
+          "TS0202",
+          "TS0203"
         ],
         "capabilities": [
-          "alarm_water",
-          "alarm_battery",
-          "onoff",
-          "measure_battery",
           "measure_temperature",
-          "measure_humidity"
+          "measure_humidity",
+          "measure_battery"
         ],
         "status": "sdk3",
         "instruction": {
-          "fr": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat.",
-          "en": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat.",
-          "ta": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat.",
-          "nl": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat."
+          "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+          "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+          "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "flood_sensor",
+        "name": {
+          "fr": "Capteur",
+          "en": "Sensor",
+          "ta": "à®šà¯†à®©à¯à®šà®¾à®°à¯",
+          "nl": "Sensor"
+        },
+        "category": "sensor",
+        "manufacturers": [
+          "Tuya",
+          "Aqara",
+          "Xiaomi"
+        ],
+        "models": [
+          "TS0201",
+          "TS0202",
+          "TS0203"
+        ],
+        "capabilities": [
+          "measure_temperature",
+          "measure_humidity",
+          "measure_battery"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+          "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+          "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "humidity_sensor",
+        "name": {
+          "fr": "Capteur",
+          "en": "Sensor",
+          "ta": "à®šà¯†à®©à¯à®šà®¾à®°à¯",
+          "nl": "Sensor"
+        },
+        "category": "sensor",
+        "manufacturers": [
+          "Tuya",
+          "Aqara",
+          "Xiaomi"
+        ],
+        "models": [
+          "TS0201",
+          "TS0202",
+          "TS0203"
+        ],
+        "capabilities": [
+          "measure_temperature",
+          "measure_humidity",
+          "measure_battery"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+          "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+          "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
         },
         "image": "{{driverAssetsPath}}/images/large.png"
       },
@@ -820,6 +349,39 @@
           "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly.",
           "ta": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly.",
           "nl": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "pir_sensor",
+        "name": {
+          "fr": "Capteur",
+          "en": "Sensor",
+          "ta": "à®šà¯†à®©à¯à®šà®¾à®°à¯",
+          "nl": "Sensor"
+        },
+        "category": "sensor",
+        "manufacturers": [
+          "Tuya",
+          "Aqara",
+          "Xiaomi"
+        ],
+        "models": [
+          "TS0201",
+          "TS0202",
+          "TS0203"
+        ],
+        "capabilities": [
+          "measure_temperature",
+          "measure_humidity",
+          "measure_battery"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+          "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+          "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
         },
         "image": "{{driverAssetsPath}}/images/large.png"
       },
@@ -963,6 +525,39 @@
           "en": "Press and hold down test switch until the LED blinks green.",
           "ta": "Press and hold down test switch until the LED blinks green.",
           "nl": "Press and hold down test switch until the LED blinks green."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "temperature_sensor",
+        "name": {
+          "fr": "Capteur",
+          "en": "Sensor",
+          "ta": "à®šà¯†à®©à¯à®šà®¾à®°à¯",
+          "nl": "Sensor"
+        },
+        "category": "sensor",
+        "manufacturers": [
+          "Tuya",
+          "Aqara",
+          "Xiaomi"
+        ],
+        "models": [
+          "TS0201",
+          "TS0202",
+          "TS0203"
+        ],
+        "capabilities": [
+          "measure_temperature",
+          "measure_humidity",
+          "measure_battery"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+          "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+          "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
         },
         "image": "{{driverAssetsPath}}/images/large.png"
       },
@@ -2026,6 +1621,1137 @@
           "nl": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat."
         },
         "image": "{{driverAssetsPath}}/images/large.png"
+      }
+    ],
+    "windowcoverings": [
+      {
+        "id": "blind_motor",
+        "name": {
+          "fr": "Moteur de Rideau",
+          "en": "Curtain Motor",
+          "ta": "à®¤à®¿à®°à¯ˆ à®®à¯‹à®Ÿà¯à®Ÿà®¾à®°à¯",
+          "nl": "Gordijnmotor"
+        },
+        "category": "windowcoverings",
+        "manufacturers": [
+          "Tuya",
+          "Moes",
+          "Aqara"
+        ],
+        "models": [
+          "TS130F",
+          "TS1301",
+          "TS1302"
+        ],
+        "capabilities": [
+          "windowcoverings_set",
+          "windowcoverings_state"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+          "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+          "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "curtainmodule",
+        "name": {
+          "fr": "Curtain Module",
+          "en": "Curtain Module",
+          "ta": "Curtain Module",
+          "nl": "Curtain Module"
+        },
+        "category": "windowcoverings",
+        "manufacturers": [
+          "_TZ3000_vd43bbfq",
+          "_TZ3000_1dd0d5yi",
+          "_TZ3000_ke7pzj5d",
+          "_TZ3000_fccpjz5z",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_zirycpws",
+          "_TZ3000_femsaaua",
+          "_TZ3000_e3vhyirx",
+          "_TZ3000_jwv3cwak",
+          "_TZ3210_dwytrmda",
+          "_TZ3210_ol1uhvza",
+          "_TZ3000_eg7awg6a",
+          "_TZ3000_eafaa66e",
+          "Tuya",
+          "Moes",
+          "Aqara",
+          "Xiaomi",
+          "Philips",
+          "IKEA",
+          "Osram",
+          "Samsung",
+          "LG",
+          "Bosch"
+        ],
+        "models": [
+          "TS130F"
+        ],
+        "capabilities": [
+          "windowcoverings_set",
+          "windowcoverings_state",
+          "onoff",
+          "measure_battery",
+          "measure_temperature",
+          "measure_humidity"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping).",
+          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping).",
+          "ta": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping).",
+          "nl": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "curtain_module_2_gang",
+        "name": {
+          "fr": "2 Gang Curtain Module",
+          "en": "2 Gang Curtain Module",
+          "ta": "2 Gang Curtain Module",
+          "nl": "2 Gang Curtain Module"
+        },
+        "category": "windowcoverings",
+        "manufacturers": [
+          "_TZ3000_j1xl73iw",
+          "_TZ3000_l6iqph4f"
+        ],
+        "models": [
+          "TS130F"
+        ],
+        "capabilities": [
+          "windowcoverings_set",
+          "windowcoverings_state",
+          "onoff",
+          "measure_battery",
+          "measure_temperature",
+          "measure_humidity"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping).",
+          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping).",
+          "ta": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping).",
+          "nl": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "curtainmodule",
+        "name": {
+          "fr": "Curtain Module",
+          "en": "Curtain Module",
+          "ta": "Curtain Module",
+          "nl": "Curtain Module"
+        },
+        "category": "windowcoverings",
+        "manufacturers": [
+          "_TZ3000_vd43bbfq",
+          "_TZ3000_1dd0d5yi",
+          "_TZ3000_ke7pzj5d",
+          "_TZ3000_fccpjz5z",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_zirycpws",
+          "_TZ3000_femsaaua",
+          "_TZ3000_e3vhyirx",
+          "_TZ3000_jwv3cwak",
+          "_TZ3210_dwytrmda",
+          "_TZ3210_ol1uhvza",
+          "_TZ3000_eg7awg6a",
+          "_TZ3000_eafaa66e",
+          "Tuya",
+          "Moes",
+          "Aqara",
+          "Xiaomi",
+          "Philips",
+          "IKEA",
+          "Osram",
+          "Samsung",
+          "LG",
+          "Bosch"
+        ],
+        "models": [
+          "TS130F"
+        ],
+        "capabilities": [
+          "windowcoverings_set",
+          "windowcoverings_state",
+          "onoff",
+          "measure_battery",
+          "measure_temperature",
+          "measure_humidity"
+        ],
+        "status": "in_progress",
+        "instruction": {
+          "fr": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping).",
+          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping).",
+          "ta": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping).",
+          "nl": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      }
+    ],
+    "light": [
+      {
+        "id": "button_switch",
+        "name": {
+          "fr": "Interrupteur",
+          "en": "Switch",
+          "ta": "à®®à®¾à®±à¯à®±à®¿",
+          "nl": "Schakelaar"
+        },
+        "category": "light",
+        "manufacturers": [
+          "Tuya",
+          "SmartLife",
+          "eWeLink"
+        ],
+        "models": [
+          "TS0001",
+          "TS0002",
+          "TS0003",
+          "TS0004"
+        ],
+        "capabilities": [
+          "onoff"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+          "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+          "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "buzzer",
+        "name": {
+          "fr": "Interrupteur",
+          "en": "Switch",
+          "ta": "à®®à®¾à®±à¯à®±à®¿",
+          "nl": "Schakelaar"
+        },
+        "category": "light",
+        "manufacturers": [
+          "Tuya",
+          "SmartLife",
+          "eWeLink"
+        ],
+        "models": [
+          "TS0001",
+          "TS0002",
+          "TS0003",
+          "TS0004"
+        ],
+        "capabilities": [
+          "onoff"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+          "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+          "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "christmas_lights",
+        "name": {
+          "fr": "Christmas Lights",
+          "en": "Christmas Lights",
+          "ta": "Christmas Lights",
+          "nl": "Christmas Lights"
+        },
+        "category": "light",
+        "manufacturers": [
+          "_TZE200_s8gkrkxk"
+        ],
+        "models": [
+          "TS0601"
+        ],
+        "capabilities": [
+          "onoff",
+          "dim",
+          "light_hue",
+          "light_saturation",
+          "lidl_xmas_mode",
+          "measure_battery",
+          "measure_temperature",
+          "measure_humidity"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Push the F button on the Christmas Lights controller for aprox 5-10 seconds and release, lights should start to flash slowly.",
+          "en": "Push the F button on the Christmas Lights controller for aprox 5-10 seconds and release, lights should start to flash slowly.",
+          "ta": "Push the F button on the Christmas Lights controller for aprox 5-10 seconds and release, lights should start to flash slowly.",
+          "nl": "Push the F button on the Christmas Lights controller for aprox 5-10 seconds and release, lights should start to flash slowly."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "curtain_switch",
+        "name": {
+          "fr": "Interrupteur",
+          "en": "Switch",
+          "ta": "à®®à®¾à®±à¯à®±à®¿",
+          "nl": "Schakelaar"
+        },
+        "category": "light",
+        "manufacturers": [
+          "Tuya",
+          "SmartLife",
+          "eWeLink"
+        ],
+        "models": [
+          "TS0001",
+          "TS0002",
+          "TS0003",
+          "TS0004"
+        ],
+        "capabilities": [
+          "onoff"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+          "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+          "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "dimmer_1_gang",
+        "name": {
+          "fr": "1 Gang Dimmer Module",
+          "en": "1 Gang Dimmer Module",
+          "ta": "1 Gang Dimmer Module",
+          "nl": "1 Gang Dimmer Module"
+        },
+        "category": "light",
+        "manufacturers": [
+          "_TYZB01_qezuin6k",
+          "_TZ3210_ngqk6jia",
+          "_TZ3000_ktuoyvt5",
+          "_TZ3210_zxbtub8r",
+          "_TZ3210_weaqkhab",
+          "_TZ3210_k1msuvg6",
+          "_TZ3000_mgusv51k"
+        ],
+        "models": [
+          "TS110F",
+          "TS110E",
+          "TS0052"
+        ],
+        "capabilities": [
+          "onoff",
+          "dim",
+          "measure_battery",
+          "measure_temperature",
+          "measure_humidity"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
+          "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
+          "ta": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
+          "nl": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "dimmer_3_gang",
+        "name": {
+          "fr": "Variateur 3 Gang",
+          "en": "Dimmer 3 Gang",
+          "ta": "à®®à®™à¯à®•à®²à®¾à®© 3 Gang",
+          "nl": "Dimmer 3 Gang"
+        },
+        "category": "light",
+        "manufacturers": [
+          "Tuya",
+          "SmartLife"
+        ],
+        "models": [
+          "TS0601",
+          "TS0602"
+        ],
+        "capabilities": [
+          "onoff",
+          "dim"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+          "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+          "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "fingerbot",
+        "name": {
+          "fr": "Interrupteur",
+          "en": "Switch",
+          "ta": "à®®à®¾à®±à¯à®±à®¿",
+          "nl": "Schakelaar"
+        },
+        "category": "light",
+        "manufacturers": [
+          "Tuya",
+          "SmartLife",
+          "eWeLink"
+        ],
+        "models": [
+          "TS0001",
+          "TS0002",
+          "TS0003",
+          "TS0004"
+        ],
+        "capabilities": [
+          "onoff"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+          "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+          "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "irrigation_controller",
+        "name": {
+          "fr": "Interrupteur",
+          "en": "Switch",
+          "ta": "à®®à®¾à®±à¯à®±à®¿",
+          "nl": "Schakelaar"
+        },
+        "category": "light",
+        "manufacturers": [
+          "Tuya",
+          "SmartLife",
+          "eWeLink"
+        ],
+        "models": [
+          "TS0001",
+          "TS0002",
+          "TS0003",
+          "TS0004"
+        ],
+        "capabilities": [
+          "onoff"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+          "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+          "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "multi_sensor",
+        "name": {
+          "fr": "Multi Sensor",
+          "en": "Multi Sensor",
+          "ta": "Multi Sensor",
+          "nl": "Multi Sensor"
+        },
+        "category": "light",
+        "manufacturers": [
+          "Tuya"
+        ],
+        "models": [
+          "multi_sensor"
+        ],
+        "capabilities": [
+          "measure_temperature",
+          "measure_humidity"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "",
+          "en": "",
+          "ta": "",
+          "nl": ""
+        },
+        "image": ""
+      },
+      {
+        "id": "outdoor_plug",
+        "name": {
+          "fr": "Prise Intelligente",
+          "en": "Smart Plug",
+          "ta": "à®¸à¯à®®à®¾à®°à¯à®Ÿà¯ à®ªà®¿à®³à®•à¯",
+          "nl": "Slimme Stekker"
+        },
+        "category": "light",
+        "manufacturers": [
+          "Tuya",
+          "SmartLife",
+          "eWeLink"
+        ],
+        "models": [
+          "TS011F",
+          "TS0121",
+          "TS0122"
+        ],
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "measure_current",
+          "measure_voltage"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+          "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+          "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "power_strip",
+        "name": {
+          "fr": "Interrupteur",
+          "en": "Switch",
+          "ta": "à®®à®¾à®±à¯à®±à®¿",
+          "nl": "Schakelaar"
+        },
+        "category": "light",
+        "manufacturers": [
+          "Tuya",
+          "SmartLife",
+          "eWeLink"
+        ],
+        "models": [
+          "TS0001",
+          "TS0002",
+          "TS0003",
+          "TS0004"
+        ],
+        "capabilities": [
+          "onoff"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+          "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+          "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "rain_sensor",
+        "name": {
+          "fr": "Rain Sensor",
+          "en": "Rain Sensor",
+          "ta": "Rain Sensor",
+          "nl": "Rain Sensor"
+        },
+        "category": "light",
+        "manufacturers": [
+          "Tuya"
+        ],
+        "models": [
+          "rain_sensor"
+        ],
+        "capabilities": [
+          "measure_battery",
+          "alarm_water"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "",
+          "en": "",
+          "ta": "",
+          "nl": ""
+        },
+        "image": ""
+      },
+      {
+        "id": "relay_board",
+        "name": {
+          "fr": "Interrupteur",
+          "en": "Switch",
+          "ta": "à®®à®¾à®±à¯à®±à®¿",
+          "nl": "Schakelaar"
+        },
+        "category": "light",
+        "manufacturers": [
+          "Tuya",
+          "SmartLife",
+          "eWeLink"
+        ],
+        "models": [
+          "TS0001",
+          "TS0002",
+          "TS0003",
+          "TS0004"
+        ],
+        "capabilities": [
+          "onoff"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+          "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+          "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "smart_plug",
+        "name": {
+          "fr": "Smart Plug",
+          "en": "Smart Plug",
+          "ta": "Smart Plug",
+          "nl": "Smart Plug"
+        },
+        "category": "light",
+        "manufacturers": [
+          "Tuya"
+        ],
+        "models": [
+          "smart_plug"
+        ],
+        "capabilities": [
+          "onoff",
+          "measure_power"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "",
+          "en": "",
+          "ta": "",
+          "nl": ""
+        },
+        "image": ""
+      },
+      {
+        "id": "smart_plug_2_socket",
+        "name": {
+          "fr": "Prise Intelligente",
+          "en": "Smart Plug",
+          "ta": "à®¸à¯à®®à®¾à®°à¯à®Ÿà¯ à®ªà®¿à®³à®•à¯",
+          "nl": "Slimme Stekker"
+        },
+        "category": "light",
+        "manufacturers": [
+          "Tuya",
+          "SmartLife",
+          "eWeLink"
+        ],
+        "models": [
+          "TS011F",
+          "TS0121",
+          "TS0122"
+        ],
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "measure_current",
+          "measure_voltage"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+          "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+          "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "smart_plug_4_socket",
+        "name": {
+          "fr": "Prise Intelligente",
+          "en": "Smart Plug",
+          "ta": "à®¸à¯à®®à®¾à®°à¯à®Ÿà¯ à®ªà®¿à®³à®•à¯",
+          "nl": "Slimme Stekker"
+        },
+        "category": "light",
+        "manufacturers": [
+          "Tuya",
+          "SmartLife",
+          "eWeLink"
+        ],
+        "models": [
+          "TS011F",
+          "TS0121",
+          "TS0122"
+        ],
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "measure_current",
+          "measure_voltage"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+          "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+          "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "switch_4_gang",
+        "name": {
+          "fr": "Interrupteur 4 Gang",
+          "en": "Switch 4 Gang",
+          "ta": "à®®à®¾à®±à¯à®±à®¿ 4 Gang",
+          "nl": "Schakelaar 4 Gang"
+        },
+        "category": "light",
+        "manufacturers": [
+          "Tuya",
+          "SmartLife",
+          "eWeLink"
+        ],
+        "models": [
+          "TS0001",
+          "TS0002",
+          "TS0003",
+          "TS0004"
+        ],
+        "capabilities": [
+          "onoff"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+          "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+          "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "TS0001",
+        "name": {
+          "fr": "Switch 1 Gang",
+          "en": "Switch 1 Gang",
+          "ta": "Switch 1 Gang",
+          "nl": "Switch 1 Gang"
+        },
+        "category": "light",
+        "manufacturers": [
+          "Tuya"
+        ],
+        "models": [
+          "TS0001"
+        ],
+        "capabilities": [
+          "onoff"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "",
+          "en": "",
+          "ta": "",
+          "nl": ""
+        },
+        "image": ""
+      },
+      {
+        "id": "TS0043",
+        "name": {
+          "fr": "Switch 4 Gang",
+          "en": "Switch 4 Gang",
+          "ta": "Switch 4 Gang",
+          "nl": "Switch 4 Gang"
+        },
+        "category": "light",
+        "manufacturers": [
+          "Tuya"
+        ],
+        "models": [
+          "TS0043"
+        ],
+        "capabilities": [
+          "onoff",
+          "measure_power"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "",
+          "en": "",
+          "ta": "",
+          "nl": ""
+        },
+        "image": ""
+      },
+      {
+        "id": "TS0044",
+        "name": {
+          "fr": "Switch 4 Gang",
+          "en": "Switch 4 Gang",
+          "ta": "Switch 4 Gang",
+          "nl": "Switch 4 Gang"
+        },
+        "category": "light",
+        "manufacturers": [
+          "Tuya"
+        ],
+        "models": [
+          "TS0044"
+        ],
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "measure_current"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "",
+          "en": "",
+          "ta": "",
+          "nl": ""
+        },
+        "image": ""
+      },
+      {
+        "id": "dimmer_1_gang_2",
+        "name": {
+          "fr": "1 Gang Dimmer Module",
+          "en": "1 Gang Dimmer Module",
+          "ta": "1 Gang Dimmer Module",
+          "nl": "1 Gang Dimmer Module"
+        },
+        "category": "light",
+        "manufacturers": [
+          "_TZ3210_ngqk6jia"
+        ],
+        "models": [
+          "TS110E"
+        ],
+        "capabilities": [
+          "onoff",
+          "dim",
+          "measure_battery",
+          "measure_temperature",
+          "measure_humidity"
+        ],
+        "status": "in_progress",
+        "instruction": {
+          "fr": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
+          "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
+          "ta": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
+          "nl": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "dimmer_1_gang_tuya",
+        "name": {
+          "fr": "1 Gang Dimmer Module",
+          "en": "1 Gang Dimmer Module",
+          "ta": "1 Gang Dimmer Module",
+          "nl": "1 Gang Dimmer Module"
+        },
+        "category": "light",
+        "manufacturers": [
+          "_TZE200_la2c2uo9",
+          "_TZE204_hlx9tnzb",
+          "_TZE200_ip2akl4w",
+          "_TZE200_1agwnems",
+          "_TZE200_579lguh2",
+          "_TZE200_vucankjx",
+          "_TZE200_4mh6tyyo",
+          "_TZE204_n9ctkb6j",
+          "_TZE204_9qhuzgo0",
+          "_TZE204_dcnsggvz",
+          "_TZE204_5cuocqty"
+        ],
+        "models": [
+          "TS0601"
+        ],
+        "capabilities": [
+          "onoff",
+          "dim",
+          "measure_battery",
+          "measure_temperature",
+          "measure_humidity"
+        ],
+        "status": "in_progress",
+        "instruction": {
+          "fr": "Press the reset switch rapidly 10 times until the unit make a continously beep sound to enter pairing mode.",
+          "en": "Press the reset switch rapidly 10 times until the unit make a continously beep sound to enter pairing mode.",
+          "ta": "Press the reset switch rapidly 10 times until the unit make a continously beep sound to enter pairing mode.",
+          "nl": "Press the reset switch rapidly 10 times until the unit make a continously beep sound to enter pairing mode."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "dimmer_2_gang",
+        "name": {
+          "fr": "2 Gang Dimmer Module",
+          "en": "2 Gang Dimmer Module",
+          "ta": "2 Gang Dimmer Module",
+          "nl": "2 Gang Dimmer Module"
+        },
+        "category": "light",
+        "manufacturers": [
+          "_TYZB01_v8gtiaed",
+          "_TZ3000_92chsky7",
+          "_TZ3210_wdexaypg",
+          "_TZ3210_3mpwqzuu",
+          "_TZ3210_pagajpog",
+          "_TZ3210_4ubylghk"
+        ],
+        "models": [
+          "TS110F",
+          "TS110E"
+        ],
+        "capabilities": [
+          "onoff",
+          "dim",
+          "measure_battery",
+          "measure_temperature",
+          "measure_humidity"
+        ],
+        "status": "in_progress",
+        "instruction": {
+          "fr": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
+          "en": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
+          "ta": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
+          "nl": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "TS0043",
+        "name": {
+          "fr": null,
+          "en": null,
+          "ta": null,
+          "nl": null
+        },
+        "category": "light",
+        "manufacturers": [
+          null
+        ],
+        "models": [
+          "TS0043"
+        ],
+        "capabilities": [
+          "onoff"
+        ],
+        "status": "in_progress",
+        "instruction": {
+          "fr": "",
+          "en": "",
+          "ta": "",
+          "nl": ""
+        },
+        "image": ""
+      },
+      {
+        "id": "wall_dimmer_tuya",
+        "name": {
+          "fr": "Wall Dimmer",
+          "en": "Wall Dimmer",
+          "ta": "Wall Dimmer",
+          "nl": "Wall Dimmer"
+        },
+        "category": "light",
+        "manufacturers": [
+          "_TZE200_3p5ydos3",
+          "_TZE200_whpb9yts",
+          "_TZE200_ebwgzdqq",
+          "_TZE200_ctq0k47x",
+          "_TZE200_9i9dt8is",
+          "_TZE200_dfxkcots",
+          "_TZE200_w4cryh2i",
+          "_TZE200_ojzhk75b",
+          "_TZE200_9cxuhakf",
+          "_TZE200_a0syesf5",
+          "_TZE200_swaamsoy",
+          "_TZE200_p0gzbqct",
+          "_TZE204_vevc4c6g",
+          "_TZE200_0nauxa0p"
+        ],
+        "models": [
+          "TS0601"
+        ],
+        "capabilities": [
+          "onoff",
+          "dim",
+          "measure_battery",
+          "measure_temperature",
+          "measure_humidity"
+        ],
+        "status": "in_progress",
+        "instruction": {
+          "fr": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
+          "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
+          "ta": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
+          "nl": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      }
+    ],
+    "thermostat": [
+      {
+        "id": "radiator_valve",
+        "name": {
+          "fr": "Thermostat",
+          "en": "Thermostat",
+          "ta": "à®µà¯†à®ªà¯à®ªà®¨à®¿à®²à¯ˆ à®•à®Ÿà¯à®Ÿà¯à®ªà¯à®ªà®Ÿà¯à®¤à¯à®¤à®¿",
+          "nl": "Thermostaat"
+        },
+        "category": "thermostat",
+        "manufacturers": [
+          "Tuya",
+          "Moes",
+          "Aqara"
+        ],
+        "models": [
+          "TS0601",
+          "TS0602"
+        ],
+        "capabilities": [
+          "target_temperature",
+          "measure_temperature",
+          "measure_humidity"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+          "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+          "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "thermostat",
+        "name": {
+          "fr": "Thermostat",
+          "en": "Thermostat",
+          "ta": "à®µà¯†à®ªà¯à®ªà®¨à®¿à®²à¯ˆ à®•à®Ÿà¯à®Ÿà¯à®ªà¯à®ªà®Ÿà¯à®¤à¯à®¤à®¿",
+          "nl": "Thermostaat"
+        },
+        "category": "thermostat",
+        "manufacturers": [
+          "Tuya",
+          "Moes",
+          "Aqara"
+        ],
+        "models": [
+          "TS0601",
+          "TS0602"
+        ],
+        "capabilities": [
+          "target_temperature",
+          "measure_temperature",
+          "measure_humidity"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+          "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+          "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+          "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+        },
+        "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "thermostatic_radiator_valve",
+        "name": {
+          "fr": "Thermostatic Radiator Valve",
+          "en": "Thermostatic Radiator Valve",
+          "ta": "Thermostatic Radiator Valve",
+          "nl": "Thermostatic Radiator Valve"
+        },
+        "category": "thermostat",
+        "manufacturers": [
+          "_TZE200_sur6q7ko",
+          "_TZE200_hue3yfsn",
+          "_TZE200_husqqvux",
+          "_TZE200_lnbfnyxd",
+          "_TZE200_lllliz3p",
+          "_TZE200_mudxchsu",
+          "_TZE200_7yoranx2",
+          "_TZE200_e9ba97vf",
+          "_TZE200_kds0pmmv",
+          "_TZE200_kly8gjlz",
+          "_TZE200_py4cm3he"
+        ],
+        "models": [
+          "TS0601"
+        ],
+        "capabilities": [
+          "alarm_battery",
+          "target_temperature",
+          "thermostat_preset",
+          "window_open",
+          "onoff",
+          "measure_battery",
+          "measure_temperature",
+          "measure_humidity"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "Press 'Pair' button for 5 seconds until antenna symbol starts to blink.",
+          "en": "Press 'Pair' button for 5 seconds until antenna symbol starts to blink.",
+          "ta": "Press 'Pair' button for 5 seconds until antenna symbol starts to blink.",
+          "nl": "Press 'Pair' button for 5 seconds until antenna symbol starts to blink."
+        },
+        "image": "{{driverAssetsPath}}/images/moes_zigbee_3_large.png"
+      },
+      {
+        "id": "wall_thermostat",
+        "name": {
+          "fr": "Wall Thermostat",
+          "en": "Wall Thermostat",
+          "ta": "Wall Thermostat",
+          "nl": "Wall Thermostat"
+        },
+        "category": "thermostat",
+        "manufacturers": [
+          "_TZE200_aoclfnxz",
+          "_TZE204_aoclfnxz",
+          "_TZE200_2ekuz3dz"
+        ],
+        "models": [
+          "TS0601"
+        ],
+        "capabilities": [
+          "onoff",
+          "thermostat_programming",
+          "measure_temperature",
+          "target_temperature",
+          "child_lock",
+          "measure_battery",
+          "measure_humidity"
+        ],
+        "status": "in_progress",
+        "instruction": {
+          "fr": "Press the arrow down button for 8s when the thermostat is off.",
+          "en": "Press the arrow down button for 8s when the thermostat is off.",
+          "ta": "Press the arrow down button for 8s when the thermostat is off.",
+          "nl": "Press the arrow down button for 8s when the thermostat is off."
+        },
+        "image": "{{driverAssetsPath}}/images/large.jpg"
       }
     ],
     "socket": [
@@ -3417,87 +4143,6 @@
         "image": "{{driverAssetsPath}}/images/large.png"
       }
     ],
-    "thermostat": [
-      {
-        "id": "thermostatic_radiator_valve",
-        "name": {
-          "fr": "Thermostatic Radiator Valve",
-          "en": "Thermostatic Radiator Valve",
-          "ta": "Thermostatic Radiator Valve",
-          "nl": "Thermostatic Radiator Valve"
-        },
-        "category": "thermostat",
-        "manufacturers": [
-          "_TZE200_sur6q7ko",
-          "_TZE200_hue3yfsn",
-          "_TZE200_husqqvux",
-          "_TZE200_lnbfnyxd",
-          "_TZE200_lllliz3p",
-          "_TZE200_mudxchsu",
-          "_TZE200_7yoranx2",
-          "_TZE200_e9ba97vf",
-          "_TZE200_kds0pmmv",
-          "_TZE200_kly8gjlz",
-          "_TZE200_py4cm3he"
-        ],
-        "models": [
-          "TS0601"
-        ],
-        "capabilities": [
-          "alarm_battery",
-          "target_temperature",
-          "thermostat_preset",
-          "window_open",
-          "onoff",
-          "measure_battery",
-          "measure_temperature",
-          "measure_humidity"
-        ],
-        "status": "sdk3",
-        "instruction": {
-          "fr": "Press 'Pair' button for 5 seconds until antenna symbol starts to blink.",
-          "en": "Press 'Pair' button for 5 seconds until antenna symbol starts to blink.",
-          "ta": "Press 'Pair' button for 5 seconds until antenna symbol starts to blink.",
-          "nl": "Press 'Pair' button for 5 seconds until antenna symbol starts to blink."
-        },
-        "image": "{{driverAssetsPath}}/images/moes_zigbee_3_large.png"
-      },
-      {
-        "id": "wall_thermostat",
-        "name": {
-          "fr": "Wall Thermostat",
-          "en": "Wall Thermostat",
-          "ta": "Wall Thermostat",
-          "nl": "Wall Thermostat"
-        },
-        "category": "thermostat",
-        "manufacturers": [
-          "_TZE200_aoclfnxz",
-          "_TZE204_aoclfnxz",
-          "_TZE200_2ekuz3dz"
-        ],
-        "models": [
-          "TS0601"
-        ],
-        "capabilities": [
-          "onoff",
-          "thermostat_programming",
-          "measure_temperature",
-          "target_temperature",
-          "child_lock",
-          "measure_battery",
-          "measure_humidity"
-        ],
-        "status": "in_progress",
-        "instruction": {
-          "fr": "Press the arrow down button for 8s when the thermostat is off.",
-          "en": "Press the arrow down button for 8s when the thermostat is off.",
-          "ta": "Press the arrow down button for 8s when the thermostat is off.",
-          "nl": "Press the arrow down button for 8s when the thermostat is off."
-        },
-        "image": "{{driverAssetsPath}}/images/large.jpg"
-      }
-    ],
     "curtain": [
       {
         "id": "wallcurtainswitch",
@@ -4790,6 +5435,135 @@
   },
   "all": [
     {
+      "id": "alarm_sensor",
+      "name": {
+        "fr": "Capteur",
+        "en": "Sensor",
+        "ta": "à®šà¯†à®©à¯à®šà®¾à®°à¯",
+        "nl": "Sensor"
+      },
+      "category": "sensor",
+      "manufacturers": [
+        "Tuya",
+        "Aqara",
+        "Xiaomi"
+      ],
+      "models": [
+        "TS0201",
+        "TS0202",
+        "TS0203"
+      ],
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+        "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+        "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+      },
+      "image": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
+      "id": "blind_motor",
+      "name": {
+        "fr": "Moteur de Rideau",
+        "en": "Curtain Motor",
+        "ta": "à®¤à®¿à®°à¯ˆ à®®à¯‹à®Ÿà¯à®Ÿà®¾à®°à¯",
+        "nl": "Gordijnmotor"
+      },
+      "category": "windowcoverings",
+      "manufacturers": [
+        "Tuya",
+        "Moes",
+        "Aqara"
+      ],
+      "models": [
+        "TS130F",
+        "TS1301",
+        "TS1302"
+      ],
+      "capabilities": [
+        "windowcoverings_set",
+        "windowcoverings_state"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+        "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+        "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+      },
+      "image": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
+      "id": "button_switch",
+      "name": {
+        "fr": "Interrupteur",
+        "en": "Switch",
+        "ta": "à®®à®¾à®±à¯à®±à®¿",
+        "nl": "Schakelaar"
+      },
+      "category": "light",
+      "manufacturers": [
+        "Tuya",
+        "SmartLife",
+        "eWeLink"
+      ],
+      "models": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004"
+      ],
+      "capabilities": [
+        "onoff"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+        "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+        "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+      },
+      "image": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
+      "id": "buzzer",
+      "name": {
+        "fr": "Interrupteur",
+        "en": "Switch",
+        "ta": "à®®à®¾à®±à¯à®±à®¿",
+        "nl": "Schakelaar"
+      },
+      "category": "light",
+      "manufacturers": [
+        "Tuya",
+        "SmartLife",
+        "eWeLink"
+      ],
+      "models": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004"
+      ],
+      "capabilities": [
+        "onoff"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+        "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+        "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+      },
+      "image": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
       "id": "christmas_lights",
       "name": {
         "fr": "Christmas Lights",
@@ -4911,6 +5685,38 @@
       "image": "{{driverAssetsPath}}/images/large.png"
     },
     {
+      "id": "curtain_switch",
+      "name": {
+        "fr": "Interrupteur",
+        "en": "Switch",
+        "ta": "à®®à®¾à®±à¯à®±à®¿",
+        "nl": "Schakelaar"
+      },
+      "category": "light",
+      "manufacturers": [
+        "Tuya",
+        "SmartLife",
+        "eWeLink"
+      ],
+      "models": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004"
+      ],
+      "capabilities": [
+        "onoff"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+        "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+        "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+      },
+      "image": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
       "id": "dimmer_1_gang",
       "name": {
         "fr": "1 Gang Dimmer Module",
@@ -4946,6 +5752,36 @@
         "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
         "ta": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
         "nl": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
+      },
+      "image": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
+      "id": "dimmer_3_gang",
+      "name": {
+        "fr": "Variateur 3 Gang",
+        "en": "Dimmer 3 Gang",
+        "ta": "à®®à®™à¯à®•à®²à®¾à®© 3 Gang",
+        "nl": "Dimmer 3 Gang"
+      },
+      "category": "light",
+      "manufacturers": [
+        "Tuya",
+        "SmartLife"
+      ],
+      "models": [
+        "TS0601",
+        "TS0602"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+        "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+        "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
       },
       "image": "{{driverAssetsPath}}/images/large.png"
     },
@@ -5099,39 +5935,165 @@
       "image": "{{driverAssetsPath}}/images/large.png"
     },
     {
-      "id": "floodsensor",
+      "id": "door_window_sensor",
       "name": {
-        "fr": "Flood sensor",
-        "en": "Flood sensor",
-        "ta": "Flood sensor",
-        "nl": "Flood sensor"
+        "fr": "Capteur",
+        "en": "Sensor",
+        "ta": "à®šà¯†à®©à¯à®šà®¾à®°à¯",
+        "nl": "Sensor"
       },
       "category": "sensor",
       "manufacturers": [
-        "TUYATEC-3tipnsrx",
-        "_TZ3000_4uvovz4r",
-        "_TZ3000_3dfewsk1",
-        "_TZ3000_ww9i3e0y",
-        "_TZ3000_wuep9zng"
+        "Tuya",
+        "Aqara",
+        "Xiaomi"
       ],
       "models": [
-        "RH3001",
-        "TS0207"
+        "TS0201",
+        "TS0202",
+        "TS0203"
       ],
       "capabilities": [
-        "alarm_water",
-        "alarm_battery",
-        "onoff",
-        "measure_battery",
         "measure_temperature",
-        "measure_humidity"
+        "measure_humidity",
+        "measure_battery"
       ],
       "status": "sdk3",
       "instruction": {
-        "fr": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat.",
-        "en": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat.",
-        "ta": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat.",
-        "nl": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat."
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+        "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+        "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+      },
+      "image": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
+      "id": "fingerbot",
+      "name": {
+        "fr": "Interrupteur",
+        "en": "Switch",
+        "ta": "à®®à®¾à®±à¯à®±à®¿",
+        "nl": "Schakelaar"
+      },
+      "category": "light",
+      "manufacturers": [
+        "Tuya",
+        "SmartLife",
+        "eWeLink"
+      ],
+      "models": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004"
+      ],
+      "capabilities": [
+        "onoff"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+        "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+        "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+      },
+      "image": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
+      "id": "flood_sensor",
+      "name": {
+        "fr": "Capteur",
+        "en": "Sensor",
+        "ta": "à®šà¯†à®©à¯à®šà®¾à®°à¯",
+        "nl": "Sensor"
+      },
+      "category": "sensor",
+      "manufacturers": [
+        "Tuya",
+        "Aqara",
+        "Xiaomi"
+      ],
+      "models": [
+        "TS0201",
+        "TS0202",
+        "TS0203"
+      ],
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+        "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+        "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+      },
+      "image": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
+      "id": "humidity_sensor",
+      "name": {
+        "fr": "Capteur",
+        "en": "Sensor",
+        "ta": "à®šà¯†à®©à¯à®šà®¾à®°à¯",
+        "nl": "Sensor"
+      },
+      "category": "sensor",
+      "manufacturers": [
+        "Tuya",
+        "Aqara",
+        "Xiaomi"
+      ],
+      "models": [
+        "TS0201",
+        "TS0202",
+        "TS0203"
+      ],
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+        "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+        "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+      },
+      "image": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
+      "id": "irrigation_controller",
+      "name": {
+        "fr": "Interrupteur",
+        "en": "Switch",
+        "ta": "à®®à®¾à®±à¯à®±à®¿",
+        "nl": "Schakelaar"
+      },
+      "category": "light",
+      "manufacturers": [
+        "Tuya",
+        "SmartLife",
+        "eWeLink"
+      ],
+      "models": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004"
+      ],
+      "capabilities": [
+        "onoff"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+        "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+        "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
       },
       "image": "{{driverAssetsPath}}/images/large.png"
     },
@@ -5196,6 +6158,40 @@
       "image": ""
     },
     {
+      "id": "outdoor_plug",
+      "name": {
+        "fr": "Prise Intelligente",
+        "en": "Smart Plug",
+        "ta": "à®¸à¯à®®à®¾à®°à¯à®Ÿà¯ à®ªà®¿à®³à®•à¯",
+        "nl": "Slimme Stekker"
+      },
+      "category": "light",
+      "manufacturers": [
+        "Tuya",
+        "SmartLife",
+        "eWeLink"
+      ],
+      "models": [
+        "TS011F",
+        "TS0121",
+        "TS0122"
+      ],
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "measure_current",
+        "measure_voltage"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+        "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+        "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+      },
+      "image": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
       "id": "pirsensor",
       "name": {
         "fr": "PIR Sensor",
@@ -5230,6 +6226,39 @@
         "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly.",
         "ta": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly.",
         "nl": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly."
+      },
+      "image": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
+      "id": "pir_sensor",
+      "name": {
+        "fr": "Capteur",
+        "en": "Sensor",
+        "ta": "à®šà¯†à®©à¯à®šà®¾à®°à¯",
+        "nl": "Sensor"
+      },
+      "category": "sensor",
+      "manufacturers": [
+        "Tuya",
+        "Aqara",
+        "Xiaomi"
+      ],
+      "models": [
+        "TS0201",
+        "TS0202",
+        "TS0203"
+      ],
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+        "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+        "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
       },
       "image": "{{driverAssetsPath}}/images/large.png"
     },
@@ -5278,6 +6307,38 @@
       "image": "{{driverAssetsPath}}/images/large.png"
     },
     {
+      "id": "power_strip",
+      "name": {
+        "fr": "Interrupteur",
+        "en": "Switch",
+        "ta": "à®®à®¾à®±à¯à®±à®¿",
+        "nl": "Schakelaar"
+      },
+      "category": "light",
+      "manufacturers": [
+        "Tuya",
+        "SmartLife",
+        "eWeLink"
+      ],
+      "models": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004"
+      ],
+      "capabilities": [
+        "onoff"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+        "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+        "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+      },
+      "image": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
       "id": "radar_sensor_2",
       "name": {
         "fr": "Radar Sensor",
@@ -5312,6 +6373,38 @@
       "image": "{{driverAssetsPath}}/images/large.png"
     },
     {
+      "id": "radiator_valve",
+      "name": {
+        "fr": "Thermostat",
+        "en": "Thermostat",
+        "ta": "à®µà¯†à®ªà¯à®ªà®¨à®¿à®²à¯ˆ à®•à®Ÿà¯à®Ÿà¯à®ªà¯à®ªà®Ÿà¯à®¤à¯à®¤à®¿",
+        "nl": "Thermostaat"
+      },
+      "category": "thermostat",
+      "manufacturers": [
+        "Tuya",
+        "Moes",
+        "Aqara"
+      ],
+      "models": [
+        "TS0601",
+        "TS0602"
+      ],
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "measure_humidity"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+        "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+        "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+      },
+      "image": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
       "id": "rain_sensor",
       "name": {
         "fr": "Rain Sensor",
@@ -5338,6 +6431,38 @@
         "nl": ""
       },
       "image": ""
+    },
+    {
+      "id": "relay_board",
+      "name": {
+        "fr": "Interrupteur",
+        "en": "Switch",
+        "ta": "à®®à®¾à®±à¯à®±à®¿",
+        "nl": "Schakelaar"
+      },
+      "category": "light",
+      "manufacturers": [
+        "Tuya",
+        "SmartLife",
+        "eWeLink"
+      ],
+      "models": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004"
+      ],
+      "capabilities": [
+        "onoff"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+        "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+        "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+      },
+      "image": "{{driverAssetsPath}}/images/large.png"
     },
     {
       "id": "slim_motion_sensor",
@@ -5439,6 +6564,74 @@
       "image": ""
     },
     {
+      "id": "smart_plug_2_socket",
+      "name": {
+        "fr": "Prise Intelligente",
+        "en": "Smart Plug",
+        "ta": "à®¸à¯à®®à®¾à®°à¯à®Ÿà¯ à®ªà®¿à®³à®•à¯",
+        "nl": "Slimme Stekker"
+      },
+      "category": "light",
+      "manufacturers": [
+        "Tuya",
+        "SmartLife",
+        "eWeLink"
+      ],
+      "models": [
+        "TS011F",
+        "TS0121",
+        "TS0122"
+      ],
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "measure_current",
+        "measure_voltage"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+        "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+        "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+      },
+      "image": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
+      "id": "smart_plug_4_socket",
+      "name": {
+        "fr": "Prise Intelligente",
+        "en": "Smart Plug",
+        "ta": "à®¸à¯à®®à®¾à®°à¯à®Ÿà¯ à®ªà®¿à®³à®•à¯",
+        "nl": "Slimme Stekker"
+      },
+      "category": "light",
+      "manufacturers": [
+        "Tuya",
+        "SmartLife",
+        "eWeLink"
+      ],
+      "models": [
+        "TS011F",
+        "TS0121",
+        "TS0122"
+      ],
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "measure_current",
+        "measure_voltage"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+        "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+        "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+      },
+      "image": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
       "id": "smoke_sensor",
       "name": {
         "fr": "Smoke Sensor",
@@ -5468,6 +6661,103 @@
         "en": "Press and hold down test switch until the LED blinks green.",
         "ta": "Press and hold down test switch until the LED blinks green.",
         "nl": "Press and hold down test switch until the LED blinks green."
+      },
+      "image": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
+      "id": "switch_4_gang",
+      "name": {
+        "fr": "Interrupteur 4 Gang",
+        "en": "Switch 4 Gang",
+        "ta": "à®®à®¾à®±à¯à®±à®¿ 4 Gang",
+        "nl": "Schakelaar 4 Gang"
+      },
+      "category": "light",
+      "manufacturers": [
+        "Tuya",
+        "SmartLife",
+        "eWeLink"
+      ],
+      "models": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004"
+      ],
+      "capabilities": [
+        "onoff"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+        "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+        "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+      },
+      "image": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
+      "id": "temperature_sensor",
+      "name": {
+        "fr": "Capteur",
+        "en": "Sensor",
+        "ta": "à®šà¯†à®©à¯à®šà®¾à®°à¯",
+        "nl": "Sensor"
+      },
+      "category": "sensor",
+      "manufacturers": [
+        "Tuya",
+        "Aqara",
+        "Xiaomi"
+      ],
+      "models": [
+        "TS0201",
+        "TS0202",
+        "TS0203"
+      ],
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+        "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+        "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
+      },
+      "image": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
+      "id": "thermostat",
+      "name": {
+        "fr": "Thermostat",
+        "en": "Thermostat",
+        "ta": "à®µà¯†à®ªà¯à®ªà®¨à®¿à®²à¯ˆ à®•à®Ÿà¯à®Ÿà¯à®ªà¯à®ªà®Ÿà¯à®¤à¯à®¤à®¿",
+        "nl": "Thermostaat"
+      },
+      "category": "thermostat",
+      "manufacturers": [
+        "Tuya",
+        "Moes",
+        "Aqara"
+      ],
+      "models": [
+        "TS0601",
+        "TS0602"
+      ],
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "measure_humidity"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez/Ã©teignez 5 fois pour entrer en mode d'appairage.",
+        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode.",
+        "ta": "à®šà¯‹à®Ÿà®¿à®™à¯à®•à¯ à®ªà®¯à®©à¯à®®à¯à®±à¯ˆà®¯à®¿à®²à¯ à®¨à¯à®´à¯ˆà®¯ 10 à®µà®¿à®¨à®¾à®Ÿà®¿à®•à®³à¯ à®…à®²à¯à®²à®¤à¯ 5 à®®à¯à®±à¯ˆ à®†à®©à¯/à®†à®ƒà®ªà¯ à®šà¯†à®¯à¯à®¯ à®…à®®à¯ˆà®ªà¯à®ªà¯ à®ªà¯Šà®¤à¯à®¤à®¾à®©à¯ˆ à®…à®´à¯à®¤à¯à®¤à®µà¯à®®à¯.",
+        "nl": "Druk 10 seconden op de instelknop of schakel 5 keer aan/uit om de koppelmodus te activeren."
       },
       "image": "{{driverAssetsPath}}/images/large.png"
     },
