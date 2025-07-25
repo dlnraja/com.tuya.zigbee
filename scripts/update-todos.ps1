@@ -2,7 +2,7 @@
 # Description: Synchronisation et mise à jour automatique de tous les fichiers TODO du projet
 
 # Configuration
-$timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+$timestamp = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
 $archivesDir = "archives/todo"
 $todoFiles = @(
     "TODO_CURSOR_NATIVE.md",
@@ -15,7 +15,7 @@ $todoFiles = @(
 # Créer le dossier d'archives s'il n'existe pas
 if (!(Test-Path $archivesDir)) {
     New-Item -ItemType Directory -Path $archivesDir -Force
-    Write-Host "📁 Dossier d'archives créé: $archivesDir" -ForegroundColor Cyan
+    Write-Host "Dossier d'archives cree: $archivesDir" -ForegroundColor Cyan
 }
 
 # Fonction pour analyser les métriques du projet
@@ -28,7 +28,6 @@ function Get-ProjectMetrics {
         md_files = (Get-ChildItem -Recurse -Filter "*.md" | Measure-Object).Count
         todo_files = $todoFiles.Count
     }
-    
     return $metrics
 }
 
@@ -42,8 +41,10 @@ function Archive-TodoFile {
         $archivePath = Join-Path $archivesDir $archiveName
         
         Copy-Item $filePath $archivePath
-        Write-Host "📦 Archivé: $fileName -> $archiveName" -ForegroundColor Yellow
+        Write-Host "Archive: $fileName -> $archiveName" -ForegroundColor Yellow
+        return $archivePath
     }
+    return $null
 }
 
 # Fonction pour générer le contenu TODO mis à jour
@@ -51,65 +52,65 @@ function Update-TodoContent {
     param($metrics)
     
     $content = @"
-# TODO SYNCHRONISÉ - Universal TUYA Zigbee Device
+# TODO SYNCHRONISE - Universal TUYA Zigbee Device
 
-## 📊 **MÉTRIQUES ACTUELLES ($timestamp)**
+## METRIQUES ACTUELLES ($timestamp)
 
-### **Drivers Tuya Zigbee**
-- **Total** : $($metrics.drivers_total) drivers
-- **SDK3 Compatible** : $(($metrics.drivers_total * 0.32) -as [int]) drivers (32%)
-- **En Cours** : $(($metrics.drivers_total * 0.68) -as [int]) drivers (68%)
-- **Performance** : Temps de réponse < 1 seconde
+### Drivers Tuya Zigbee
+- Total : $($metrics.drivers_total) drivers
+- SDK3 Compatible : $(($metrics.drivers_total * 0.32) -as [int]) drivers (32%)
+- En Cours : $(($metrics.drivers_total * 0.68) -as [int]) drivers (68%)
+- Performance : Temps de reponse < 1 seconde
 
-### **Workflows Automatisés**
-- **Total** : $($metrics.workflows_total) workflows
-- **CI/CD** : Validation automatique
-- **Optimisation** : Compression JSON/JS
-- **Monitoring** : Rapports en temps réel
-- **Changelog** : Génération automatique
+### Workflows Automatises
+- Total : $($metrics.workflows_total) workflows
+- CI/CD : Validation automatique
+- Optimisation : Compression JSON/JS
+- Monitoring : Rapports en temps reel
+- Changelog : Generation automatique
 
-### **Documentation**
-- **Fichiers JSON** : $($metrics.json_files) configurés
-- **Fichiers Markdown** : $($metrics.md_files) documentés
-- **Fichiers TODO** : $($metrics.todo_files) organisés
+### Documentation
+- Fichiers JSON : $($metrics.json_files) configures
+- Fichiers Markdown : $($metrics.md_files) documentes
+- Fichiers TODO : $($metrics.todo_files) organises
 
-## 🎯 **TÂCHES PRIORITAIRES**
+## TACHES PRIORITAIRES
 
-### **Validation et Tests (Priorité HAUTE)**
-- [ ] **Validation des $($metrics.drivers_total) drivers Tuya Zigbee** - Tester tous les drivers
-- [ ] **Tests de compatibilité SDK3** - Valider la compatibilité
-- [ ] **Optimisation des performances** - Améliorer les temps de réponse
-- [ ] **Documentation technique** - Compléter la documentation
+### Validation et Tests (Priorite HAUTE)
+- [ ] Validation des $($metrics.drivers_total) drivers Tuya Zigbee - Tester tous les drivers
+- [ ] Tests de compatibilite SDK3 - Valider la compatibilite
+- [ ] Optimisation des performances - Ameliorer les temps de reponse
+- [ ] Documentation technique - Completer la documentation
 
-### **Automatisation Avancée (Priorité HAUTE)**
-- [ ] **Test du workflow auto-changelog** - Vérifier le fonctionnement
-- [ ] **Optimisation des catégories** - Améliorer la détection
-- [ ] **Notifications enrichies** - Alertes détaillées
-- [ ] **Archivage intelligent** - Versioning des fichiers
+### Automatisation Avancee (Priorite HAUTE)
+- [ ] Test du workflow auto-changelog - Verifier le fonctionnement
+- [ ] Optimisation des categories - Ameliorer la detection
+- [ ] Notifications enrichies - Alertes detaillees
+- [ ] Archivage intelligent - Versioning des fichiers
 
-### **Intelligence Artificielle (Priorité MOYENNE)**
-- [ ] **IA pour détection automatique Tuya** - Machine Learning
-- [ ] **Prédiction de compatibilité SDK3** - Estimation automatique
-- [ ] **Optimisation automatique Zigbee** - Amélioration continue
-- [ ] **Analyse de tendances Tuya** - Évolution du projet
+### Intelligence Artificielle (Priorite MOYENNE)
+- [ ] IA pour detection automatique Tuya - Machine Learning
+- [ ] Prediction de compatibilite SDK3 - Estimation automatique
+- [ ] Optimisation automatique Zigbee - Amelioration continue
+- [ ] Analyse de tendances Tuya - Evolution du projet
 
-## 🔄 **SYNCHRONISATION AUTOMATIQUE**
+## SYNCHRONISATION AUTOMATIQUE
 
-### **Mise à jour régulière**
-- **Toutes les 5 minutes** : Status d'avancement
-- **À chaque push** : Mise à jour des TODO
-- **Toutes les 6 heures** : Changelog automatique
-- **Chaque évolution** : Archivage des données
+### Mise a jour reguliere
+- Toutes les 5 minutes : Status d'avancement
+- A chaque push : Mise a jour des TODO
+- Toutes les 6 heures : Changelog automatique
+- Chaque evolution : Archivage des donnees
 
-### **Archivage intelligent**
-- **Fichiers TODO** : Versionnés avec timestamps
-- **Rapports** : Sauvegardés automatiquement
-- **Métriques** : Historique complet
-- **Workflows** : Configurations archivées
+### Archivage intelligent
+- Fichiers TODO : Versionnes avec timestamps
+- Rapports : Sauvegardes automatiquement
+- Metriques : Historique complet
+- Workflows : Configurations archivees
 
-## 🚀 **YOLO MODE ACTIVATED**
+## YOLO MODE ACTIVATED
 
-### **Configuration YOLO**
+### Configuration YOLO
 \`\`\`json
 "yolo": {
   "enabled": true,
@@ -120,21 +121,21 @@ function Update-TodoContent {
 }
 \`\`\`
 
-### **Automatisation Complète**
-- ✅ **Auto-validation** : app.json, package.json, drivers
-- ✅ **Auto-build** : Build et tests automatiques
-- ✅ **Auto-optimisation** : Compression JSON
-- ✅ **Auto-commit/push** : Git automatisé
-- ✅ **Auto-nettoyage** : package-lock.json
-- ✅ **Auto-changelog** : Génération automatique
+### Automatisation Complete
+- Auto-validation : app.json, package.json, drivers
+- Auto-build : Build et tests automatiques
+- Auto-optimisation : Compression JSON
+- Auto-commit/push : Git automatise
+- Auto-nettoyage : package-lock.json
+- Auto-changelog : Generation automatique
 
 ---
 
-**TODO SYNCHRONISÉ - UNIVERSAL TUYA ZIGBEE DEVICE** 🚀
+**TODO SYNCHRONISE - UNIVERSAL TUYA ZIGBEE DEVICE**
 
-*Dernière mise à jour : $timestamp*  
-*Généré automatiquement par le système YOLO*  
-*Focus exclusif Tuya Zigbee avec YOLO mode activé*
+*Derniere mise a jour : $timestamp*  
+*Genere automatiquement par le systeme YOLO*  
+*Focus exclusif Tuya Zigbee avec YOLO mode active*
 "@
     
     return $content
@@ -145,11 +146,11 @@ function Update-TodoFile {
     param($filePath, $content)
     
     if (Test-Path $filePath) {
-        Set-Content -Path $filePath -Value $content -Encoding UTF8
-        Write-Host "✅ Mis à jour: $filePath" -ForegroundColor Green
+        Set-Content -Path $filePath -Value $content
+        Write-Host "Mis a jour: $filePath" -ForegroundColor Green
     } else {
-        Set-Content -Path $filePath -Value $content -Encoding UTF8
-        Write-Host "🆕 Créé: $filePath" -ForegroundColor Cyan
+        Set-Content -Path $filePath -Value $content
+        Write-Host "Cree: $filePath" -ForegroundColor Cyan
     }
 }
 
@@ -167,18 +168,18 @@ function Generate-UpdateReport {
         focus = "tuya_zigbee_exclusive"
     }
     
-    $report | ConvertTo-Json -Depth 10 | Set-Content -Path $reportPath -Encoding UTF8
-    Write-Host "📊 Rapport généré: $reportPath" -ForegroundColor Magenta
+    $report | ConvertTo-Json -Depth 10 | Set-Content -Path $reportPath
+    Write-Host "Rapport genere: $reportPath" -ForegroundColor Magenta
     
     return $reportPath
 }
 
 # Exécution principale
 try {
-    Write-Host "🔍 Analyse des métriques du projet..." -ForegroundColor Cyan
+    Write-Host "Analyse des metriques du projet..." -ForegroundColor Cyan
     $metrics = Get-ProjectMetrics
     
-    Write-Host "📦 Archivage des fichiers TODO existants..." -ForegroundColor Cyan
+    Write-Host "Archivage des fichiers TODO existants..." -ForegroundColor Cyan
     $archivedFiles = @()
     foreach ($todoFile in $todoFiles) {
         if (Test-Path $todoFile) {
@@ -187,29 +188,29 @@ try {
         }
     }
     
-    Write-Host "🔄 Génération du contenu TODO mis à jour..." -ForegroundColor Cyan
+    Write-Host "Generation du contenu TODO mis a jour..." -ForegroundColor Cyan
     $updatedContent = Update-TodoContent $metrics
     
-    Write-Host "💾 Mise à jour des fichiers TODO..." -ForegroundColor Cyan
+    Write-Host "Mise a jour des fichiers TODO..." -ForegroundColor Cyan
     $updatedFiles = @()
     foreach ($todoFile in $todoFiles) {
         Update-TodoFile $todoFile $updatedContent
         $updatedFiles += $todoFile
     }
     
-    Write-Host "📊 Génération du rapport de mise à jour..." -ForegroundColor Cyan
+    Write-Host "Generation du rapport de mise a jour..." -ForegroundColor Cyan
     $reportPath = Generate-UpdateReport $metrics $updatedFiles
     
     # Résumé final
-    Write-Host "`n🎉 Mise à jour automatique des TODO terminée!" -ForegroundColor Green
-    Write-Host "📊 Résumé:" -ForegroundColor White
-    Write-Host "- ✅ Métriques analysées: $($metrics.drivers_total) drivers, $($metrics.workflows_total) workflows" -ForegroundColor Green
-    Write-Host "- ✅ Fichiers archivés: $($archivedFiles.Count)" -ForegroundColor Green
-    Write-Host "- ✅ Fichiers mis à jour: $($updatedFiles.Count)" -ForegroundColor Green
-    Write-Host "- ✅ Rapport généré: $reportPath" -ForegroundColor Green
-    Write-Host "- ✅ YOLO mode activé" -ForegroundColor Green
+    Write-Host "Mise a jour automatique des TODO terminee!" -ForegroundColor Green
+    Write-Host "Resume:" -ForegroundColor White
+    Write-Host "- Metriques analysees: $($metrics.drivers_total) drivers, $($metrics.workflows_total) workflows" -ForegroundColor Green
+    Write-Host "- Fichiers archives: $($archivedFiles.Count)" -ForegroundColor Green
+    Write-Host "- Fichiers mis a jour: $($updatedFiles.Count)" -ForegroundColor Green
+    Write-Host "- Rapport genere: $reportPath" -ForegroundColor Green
+    Write-Host "- YOLO mode active" -ForegroundColor Green
     
 } catch {
-    Write-Host "❌ Erreur lors de la mise à jour des TODO: $($_.Exception.Message)" -ForegroundColor Red
+    Write-Host "Erreur lors de la mise a jour des TODO: $($_.Exception.Message)" -ForegroundColor Red
     exit 1
 } 
