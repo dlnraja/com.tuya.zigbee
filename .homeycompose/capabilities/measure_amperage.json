@@ -1,15 +1,1 @@
-{
-  "type": "number",
-  "title": {
-    "en": "Amperage"
-  },
-  "getable": true,
-  "setable": false,
-  "units": {
-    "en": "A"
-  },
-  "insights": true,
-  "insightsTitleTrue": {
-    "en": "Amperage"
-  }
-}
+﻿{"type":"number","title":{"en":"Amperage"},"getable":true,"setable":false,"units":{"en":"A"},"insights":true,"insightsTitleTrue":{"en":"Amperage"}}
