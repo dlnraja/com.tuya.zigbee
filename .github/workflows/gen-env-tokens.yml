@@ -1,7 +1,7 @@
-﻿name: Fallback - gen-env-tokens
+name: Fallback - gen-env-tokens
 on:
   push:
-    branches: [ master, main ]
+    branches: [ master ]
   workflow_dispatch:
 jobs:
   fallback-job:

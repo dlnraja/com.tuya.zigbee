@@ -1,7 +1,7 @@
-﻿name: Fallback - weekly-optimization-simple
+name: Fallback - weekly-optimization-simple
 on:
   push:
-    branches: [ master, main ]
+    branches: [ master ]
   workflow_dispatch:
 jobs:
   fallback-job:

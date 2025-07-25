@@ -1,7 +1,7 @@
-﻿name: Fallback - continuous-monitoring
+name: Fallback - continuous-monitoring
 on:
   push:
-    branches: [ master, main ]
+    branches: [ master ]
   workflow_dispatch:
 jobs:
   fallback-job:
