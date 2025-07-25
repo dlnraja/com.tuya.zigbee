@@ -70,3 +70,9 @@ jobs:
         echo "- ✅ Artefacts créés"
         echo "- ✅ Build uploadé"
 
+    - name: Clean up package-lock.json
+      if: always()
+      run: |
+        echo "🧹 Suppression du package-lock.json pour éviter la surcharge du repo."
+        rm -f package-lock.json
+
