@@ -34,10 +34,10 @@ jobs:
     - name: Build validation
       run: |
         echo "🔍 Validation du build..."
-        if [ -f "app.json" ] && [ -f "package.json" ]; then
+        if [ -f "com.tuya.zigbee-master/app.json" ] && [ -f "package.json" ]; then
           echo "✅ Fichiers de configuration présents"
-          echo "📦 Version: $(jq -r '.version' app.json)"
-          echo "🏷️ Nom: $(jq -r '.name' app.json)"
+          echo "📦 Version: $(jq -r '.version' com.tuya.zigbee-master/app.json)"
+          echo "🏷️ Nom: $(jq -r '.name' com.tuya.zigbee-master/app.json)"
         else
           echo "❌ Fichiers de configuration manquants"
           exit 1
@@ -47,7 +47,7 @@ jobs:
       run: |
         echo "🔍 Création des artefacts de build..."
         mkdir -p build
-        cp app.json build/
+        cp com.tuya.zigbee-master/app.json build/
         cp package.json build/
         cp -r drivers build/ 2>/dev/null || echo "⚠️ Pas de dossier drivers"
         cp -r assets build/ 2>/dev/null || echo "⚠️ Pas de dossier assets"
@@ -57,7 +57,7 @@ jobs:
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: tuya-zigbee-build
+        name: universal-tuya-zigbee-device-build
         path: build/
         retention-days: 30
         
