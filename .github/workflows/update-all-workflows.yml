@@ -1,7 +1,7 @@
-﻿name: Fallback - update-all-workflows
+name: Fallback - update-all-workflows
 on:
   push:
-    branches: [ master, main ]
+    branches: [ master ]
   workflow_dispatch:
 jobs:
   fallback-job:

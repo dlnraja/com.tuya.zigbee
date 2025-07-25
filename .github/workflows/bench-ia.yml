@@ -1,7 +1,7 @@
-﻿name: Fallback - bench-ia
+name: Fallback - bench-ia
 on:
   push:
-    branches: [ master, main ]
+    branches: [ master ]
   workflow_dispatch:
 jobs:
   fallback-job:

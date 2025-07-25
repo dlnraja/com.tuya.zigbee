@@ -1,7 +1,7 @@
-﻿name: Fallback - test-workflows
+name: Fallback - test-workflows
 on:
   push:
-    branches: [ master, main ]
+    branches: [ master ]
   workflow_dispatch:
 jobs:
   fallback-job:

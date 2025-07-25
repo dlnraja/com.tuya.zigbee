@@ -1,7 +1,7 @@
-﻿name: Fallback - sync-upstream
+name: Fallback - sync-upstream
 on:
   push:
-    branches: [ master, main ]
+    branches: [ master ]
   workflow_dispatch:
 jobs:
   fallback-job:

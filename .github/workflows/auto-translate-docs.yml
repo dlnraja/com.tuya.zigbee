@@ -1,7 +1,7 @@
-﻿name: Fallback - auto-translate-docs
+name: Fallback - auto-translate-docs
 on:
   push:
-    branches: [ master, main ]
+    branches: [ master ]
   workflow_dispatch:
 jobs:
   fallback-job:

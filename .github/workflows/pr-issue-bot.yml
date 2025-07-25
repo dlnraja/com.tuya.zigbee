@@ -1,7 +1,7 @@
-﻿name: Fallback - pr-issue-bot
+name: Fallback - pr-issue-bot
 on:
   push:
-    branches: [ master, main ]
+    branches: [ master ]
   workflow_dispatch:
 jobs:
   fallback-job:
