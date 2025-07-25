@@ -1,1 +1,0 @@
-﻿try { 'use strict'; const { ZigBeeDevice } = require('homey-meshdriver'); class zigbeerepeater extends ZigbeeDevice { async this.registerCapability('onoff', CLUSTER.ON_OFF); this.printNode(); } onDeleted(){ this.log("Zigbee Repeater removed") } } module.exports = zigbeerepeater; } catch(e) { this.error('Driver error', e); } 

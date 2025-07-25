@@ -1,1 +1,0 @@
-﻿try { "use strict"; const { ZigBeeDevice } = require("homey-zigbeedriver"); const { CLUSTER } = require('zigbee-clusters'); class smart_remote_1b extends ZigbeeDevice { async this.registerCapability('measure_temperature', CLUSTER.TEMPERATURE_MEASUREMENT); this.printNode(); 
