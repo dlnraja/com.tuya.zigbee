@@ -1,14 +1,15 @@
 ﻿{
-    "id":  "flood_sensor",
+    "id":  "outdoor_plug",
     "capabilities":  [
-                         "measure_temperature",
-                         "measure_humidity",
-                         "measure_battery"
+                         "onoff",
+                         "measure_power",
+                         "measure_current",
+                         "measure_voltage"
                      ],
     "metadata":  {
-                     "creation_date":  "2025-07-25 06:39:17",
+                     "creation_date":  "2025-07-25 06:39:34",
                      "status":  "auto_generated",
-                     "pattern_used":  "sensor",
+                     "pattern_used":  "plug",
                      "created_by":  "GPT-4, Cursor, PowerShell"
                  },
     "energy":  {
@@ -20,8 +21,8 @@
     "zigbee":  {
                    "manufacturerName":  [
                                             "Tuya",
-                                            "Aqara",
-                                            "Xiaomi"
+                                            "SmartLife",
+                                            "eWeLink"
                                         ],
                    "endpoints":  {
                                      "1":  {
@@ -42,9 +43,9 @@
                                            }
                                  },
                    "productId":  [
-                                     "TS0201",
-                                     "TS0202",
-                                     "TS0203"
+                                     "TS011F",
+                                     "TS0121",
+                                     "TS0122"
                                  ],
                    "learnmode":  {
                                      "instruction":  {
@@ -61,15 +62,15 @@
                    "large":  "{{driverAssetsPath}}/images/large.png"
                },
     "name":  {
-                 "en":  "Sensor",
-                 "fr":  "Capteur",
-                 "nl":  "Sensor",
-                 "ta":  "à®šà¯†à®©à¯à®šà®¾à®°à¯"
+                 "en":  "Smart Plug",
+                 "fr":  "Prise Intelligente",
+                 "nl":  "Slimme Stekker",
+                 "ta":  "à®¸à¯à®®à®¾à®°à¯à®Ÿà¯ à®ªà®¿à®³à®•à¯"
              },
     "platforms":  [
                       "local"
                   ],
-    "class":  "sensor",
+    "class":  "light",
     "connectivity":  [
                          "zigbee"
                      ]

@@ -2,7 +2,7 @@
 
 const { ZigBeeDevice } = require('homey-meshdriver');
 
-class floodsensorDevice extends ZigBeeDevice {
+class switch4gangDevice extends ZigBeeDevice {
     async onNodeInit({ zclNode }) {
         // Enable debugging
         this.enableDebug();
@@ -114,4 +114,4 @@ class floodsensorDevice extends ZigBeeDevice {
     }
 }
 
-module.exports = floodsensorDevice;
+module.exports = switch4gangDevice;
