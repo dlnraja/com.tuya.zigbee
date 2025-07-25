@@ -34,10 +34,10 @@ jobs:
     - name: Build validation
       run: |
         echo "🔍 Validation du build..."
-        if [ -f "universal.tuya.zigbee.device-master/app.json" ] && [ -f "package.json" ]; then
+        if [ -f "app.json" ] && [ -f "package.json" ]; then
           echo "✅ Fichiers de configuration présents"
-          echo "📦 Version: $(jq -r '.version' universal.tuya.zigbee.device-master/app.json)"
-          echo "🏷️ Nom: $(jq -r '.name' universal.tuya.zigbee.device-master/app.json)"
+          echo "📦 Version: $(jq -r '.version' app.json)"
+          echo "🏷️ Nom: $(jq -r '.name' app.json)"
         else
           echo "❌ Fichiers de configuration manquants"
           exit 1
@@ -47,7 +47,7 @@ jobs:
       run: |
         echo "🔍 Création des artefacts de build..."
         mkdir -p build
-        cp universal.tuya.zigbee.device-master/app.json build/
+        cp app.json build/
         cp package.json build/
         cp -r drivers build/ 2>/dev/null || echo "⚠️ Pas de dossier drivers"
         cp -r assets build/ 2>/dev/null || echo "⚠️ Pas de dossier assets"

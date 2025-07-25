@@ -11,9 +11,9 @@ jobs:
   yolo-automation:
     runs-on: ubuntu-latest
     steps:
-    - name: YOLO Mode Activated
+    - name: Auto Mode Activated
       run: |
-        echo "🚀 YOLO MODE ACTIVATED - AUTO EVERYTHING"
+        echo "🚀 AUTO MODE ACTIVATED - AUTOMATION COMPLETE"
         echo "⏱️ Delay: 0.1 second"
         echo "✅ Auto-approve: ENABLED"
         echo "🔄 Auto-continue: ENABLED"
