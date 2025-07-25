@@ -192,3 +192,4 @@ class dimmer_2_gang_tuya extends TuyaSpecificClusterDevice {
 module.exports = dimmer_2_gang_tuya;
 
 
+

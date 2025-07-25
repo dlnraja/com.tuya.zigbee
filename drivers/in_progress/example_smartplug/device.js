@@ -50,3 +50,4 @@ module.exports = SmartPlugDevice;
 
 } catch(e) { this.error('Driver error', e); }
 
+

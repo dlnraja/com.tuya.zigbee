@@ -34,3 +34,4 @@ module.exports = SlimMotionSensor;
 
 } catch(e) { this.error('Driver error', e); }
 
+

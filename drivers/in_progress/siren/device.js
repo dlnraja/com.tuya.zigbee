@@ -225,3 +225,4 @@ class siren extends TuyaSpecificClusterDevice {
 module.exports = siren;
 
 
+

@@ -125,3 +125,4 @@ class radarSensor2 extends TuyaSpecificClusterDevice {
 module.exports = radarSensor2;
 
 
+

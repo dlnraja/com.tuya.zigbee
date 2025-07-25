@@ -70,3 +70,4 @@ module.exports = TuyaDiagnosticDevice;
 
 } catch(e) { this.error('Driver error', e); }
 
+

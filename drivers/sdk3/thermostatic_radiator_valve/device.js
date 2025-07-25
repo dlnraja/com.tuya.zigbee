@@ -218,3 +218,4 @@ class ThermostaticRadiatorValve extends TuyaSpecificClusterDevice {
 module.exports = ThermostaticRadiatorValve;
 
 
+

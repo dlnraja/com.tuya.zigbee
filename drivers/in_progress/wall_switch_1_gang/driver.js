@@ -9,3 +9,4 @@ class wall_switch_1_gang extends ZigBeeDriver {
 
 module.exports = wall_switch_1_gang;
 
+
