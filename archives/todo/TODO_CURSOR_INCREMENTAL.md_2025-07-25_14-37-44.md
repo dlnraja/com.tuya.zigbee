@@ -1,6 +1,6 @@
-# TODO SYNCHRONISE - Universal TUYA Zigbee Device
+﻿# TODO SYNCHRONISE - Universal TUYA Zigbee Device
 
-## METRIQUES ACTUELLES (2025-07-25_14-37-44)
+## METRIQUES ACTUELLES (2025-07-25 14:34:58)
 
 ### Drivers Tuya Zigbee
 - Total : 215 drivers
@@ -79,6 +79,6 @@
 
 **TODO SYNCHRONISE - UNIVERSAL TUYA ZIGBEE DEVICE**
 
-*Derniere mise a jour : 2025-07-25_14-37-44*  
+*Derniere mise a jour : 2025-07-25 14:34:58*  
 *Genere automatiquement par le systeme YOLO*  
 *Focus exclusif Tuya Zigbee avec YOLO mode active*
