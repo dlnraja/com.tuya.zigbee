@@ -9,4 +9,20 @@ https://community.homey.app/t/app-community-universal-tuya-zigbee-device/140352
 
 Credits and contributors are listed in the app manifest.
 
+---
+
+Sources et liens utiles :
+- Forum officiel Homey (support, communauté, annonces) :
+  https://community.homey.app/t/app-community-universal-tuya-zigbee-device/140352
+- Guidelines Homey App Store (conformité, publication) :
+  https://apps.developer.homey.app/app-store/guidelines
+- Dépôt GitHub du projet (code source, issues, releases) :
+  https://github.com/dlnraja/com.tuya.zigbee
+- Documentation Homey Apps SDK (API, manifest, drivers) :
+  https://apps.developer.homey.app/
+- Documentation Zigbee2MQTT (référence appareils, intégration) :
+  https://www.zigbee2mqtt.io/
+- Documentation officielle Tuya (API, produits, cloud) :
+  https://developer.tuya.com/en/docs
+
 
