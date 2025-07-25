@@ -26,7 +26,7 @@ jobs:
         echo "Renommage automatique de l'application..."
         
         # Variables
-        OLD_APP_ID="com.tuya.zigbee"
+        OLD_APP_ID="universal.tuya.zigbee.device"
         NEW_APP_ID="universal.tuya.zigbee.device"
         OLD_APP_NAME="TUYA Zigbee Device"
         NEW_APP_NAME="Universal TUYA Zigbee Device"

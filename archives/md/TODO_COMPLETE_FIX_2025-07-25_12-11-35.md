@@ -118,7 +118,7 @@
 - **GitHub Copilot (5%)** : Assistance développement
 
 ### 🎨 **DASHBOARD INTERACTIF**
-- **URL** : `https://dlnraja.github.io/com.tuya.zigbee/dashboard/`
+- **URL** : `https://dlnraja.github.io/universal.tuya.zigbee.device/dashboard/`
 - **Fonctionnalités** :
   - Statistiques en temps réel
   - Barres de progression animées

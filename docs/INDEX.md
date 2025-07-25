@@ -24,7 +24,6 @@
 - **Drivers Tuya Zigbee** : 215 drivers
 - **Workflows GitHub Actions** : 57 workflows
 - **Langues supportées** : 4 (EN/FR/TA/NL)
-- **Mode YOLO** : Activé avec auto-approve et auto-continue
 
 ## Focus exclusif Tuya Zigbee
 Ce projet se concentre exclusivement sur l'écosystème Tuya Zigbee pour Homey, avec support complet des 215 drivers et automatisation avancée.
