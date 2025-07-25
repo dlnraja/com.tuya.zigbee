@@ -65,3 +65,5 @@ EOF
       run: |
         echo "Suppression du package-lock.json pour éviter la surcharge du repo."
         rm -f package-lock.json
+
+

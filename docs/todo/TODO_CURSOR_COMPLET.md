@@ -1,4 +1,4 @@
-# TODO SYNCHRONISE - Universal TUYA Zigbee Device
+# TODO SYNCHRONISE - Universal Universal TUYA Zigbee Device
 
 ## METRIQUES ACTUELLES (2025-07-25_15-12-52)
 
@@ -77,8 +77,11 @@
 
 ---
 
-**TODO SYNCHRONISE - UNIVERSAL TUYA ZIGBEE DEVICE**
+**TODO SYNCHRONISE - UNIVERSAL Universal TUYA Zigbee Device**
 
 *Derniere mise a jour : 2025-07-25_15-12-52*  
 *Genere automatiquement par le systeme YOLO*  
 *Focus exclusif Tuya Zigbee avec YOLO mode active*
+
+
+

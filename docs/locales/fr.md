@@ -1,4 +1,4 @@
-# 🚀 com.tuya.zigbee – Vision fonctionnelle & architecture globale
+# 🚀 universal.tuya.zigbee.device – Vision fonctionnelle & architecture globale
 
 ---
 
@@ -149,3 +149,5 @@ Créer la solution la plus complète, automatisée et résiliente pour intégrer
 - Génération automatique de documentation technique détaillée (API, flows, capabilities)
 
 --- 
+
+

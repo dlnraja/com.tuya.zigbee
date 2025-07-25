@@ -344,3 +344,4 @@ function Start-AutoVersioning {
 
 # Execution
 Start-AutoVersioning 
+

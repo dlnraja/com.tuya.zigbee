@@ -332,3 +332,4 @@ function Start-SDK3CompatibilityTests {
 
 # Execution
 Start-SDK3CompatibilityTests 
+

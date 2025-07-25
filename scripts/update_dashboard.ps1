@@ -122,3 +122,4 @@ Write-Host "- Donnees des drivers generees" -ForegroundColor White
 Write-Host "- Dashboard multilingue active" -ForegroundColor White
 Write-Host "- Statistiques mises a jour" -ForegroundColor White
 Write-Host "- Rapport genere" -ForegroundColor White 
+

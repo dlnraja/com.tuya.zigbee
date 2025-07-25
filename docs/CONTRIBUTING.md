@@ -1,4 +1,4 @@
-# Guide de Contribution - Universal TUYA Zigbee Device
+# Guide de Contribution - Universal Universal TUYA Zigbee Device
 
 ## 🎯 **Objectif du projet**
 
@@ -121,8 +121,8 @@ homey app run
 
 ### **1. Fork et Clone**
 ```bash
-git clone https://github.com/dlnraja/com.tuya.zigbee.git
-cd com.tuya.zigbee
+git clone https://github.com/dlnraja/universal.tuya.zigbee.device.git
+cd universal.tuya.zigbee.device
 ```
 
 ### **2. Créer une branche**
@@ -217,3 +217,5 @@ npm run build
 ---
 
 *Merci de contribuer à l'écosystème Homey Tuya Zigbee !*
+
+

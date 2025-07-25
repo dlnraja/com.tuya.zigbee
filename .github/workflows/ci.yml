@@ -25,9 +25,9 @@ jobs:
     - name: Validate app.json
       run: |
         echo "🔍 Validation du fichier app.json..."
-        if [ -f "com.tuya.zigbee-master/app.json" ]; then
+        if [ -f "universal.tuya.zigbee.device-master/app.json" ]; then
           echo "✅ app.json trouvé"
-          cat com.tuya.zigbee-master/app.json | jq .
+          cat universal.tuya.zigbee.device-master/app.json | jq .
         else
           echo "❌ app.json manquant"
           exit 1
@@ -82,4 +82,6 @@ jobs:
       run: |
         echo "🧹 Suppression du package-lock.json pour éviter la surcharge du repo."
         rm -f package-lock.json
+
+
 

@@ -309,3 +309,4 @@ Set-Content -Path "rapports/SIMPLE_CHECK_REPORT_$ReportDate.md" -Value $FinalRep
 Write-Host "`n🎉 VÉRIFICATION TERMINÉE !" -ForegroundColor Green
 Write-Host "Repository vérifié, fallbacks créés, automatisations implémentées." -ForegroundColor Cyan
 Write-Host "Rapport: rapports/SIMPLE_CHECK_REPORT_$ReportDate.md" -ForegroundColor Yellow 
+
