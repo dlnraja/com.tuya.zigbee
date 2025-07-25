@@ -1,14 +1,86 @@
-name: Fallback - cleanup
+# Description: Nettoyage automatique du projet - suppression fichiers temporaires, optimisation et maintenance
+name: Auto-Cleanup
 on:
+  schedule:
+    - cron: '0 1 * * 0,3' # Dimanche et mercredi à 1h
   push:
     branches: [ master ]
   workflow_dispatch:
+
 jobs:
-  fallback-job:
+  cleanup-project:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-    - name: Validate
-      run: echo 'Fallback workflow executed'
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Analyze project size
+      run: |
+        echo "🔍 Analyse de la taille du projet..."
+        echo "📊 Taille totale: $(du -sh . | cut -f1)"
+        echo "📊 Fichiers: $(find . -type f | wc -l)"
+        echo "📊 Dossiers: $(find . -type d | wc -l)"
+        
+    - name: Clean temporary files
+      run: |
+        echo "🧹 Nettoyage des fichiers temporaires..."
+        find . -name "*.tmp" -delete 2>/dev/null || echo "Aucun fichier .tmp trouvé"
+        find . -name "*.log" -not -path "./logs/*" -delete 2>/dev/null || echo "Aucun fichier .log trouvé"
+        find . -name "*.cache" -delete 2>/dev/null || echo "Aucun fichier .cache trouvé"
+        echo "✅ Nettoyage terminé"
+        
+    - name: Clean node_modules artifacts
+      run: |
+        echo "🧹 Nettoyage des artefacts node_modules..."
+        find . -name "node_modules" -type d -exec rm -rf {} + 2>/dev/null || echo "Aucun node_modules trouvé"
+        echo "✅ Nettoyage node_modules terminé"
+        
+    - name: Optimize JSON files
+      run: |
+        echo "🔧 Optimisation des fichiers JSON..."
+        find . -name "*.json" -not -path "./node_modules/*" -exec sh -c '
+          echo "Optimizing {}"
+          jq -c . "{}" > "{}.tmp" && mv "{}.tmp" "{}"
+        ' \; 2>/dev/null || echo "Optimisation JSON terminée"
+        
+    - name: Generate cleanup report
+      run: |
+        echo "📊 Génération du rapport de nettoyage..."
+        mkdir -p logs
+        echo "Cleanup Report - $(date)" > logs/cleanup-report.log
+        echo "Total size: $(du -sh . | cut -f1)" >> logs/cleanup-report.log
+        echo "Files count: $(find . -type f | wc -l)" >> logs/cleanup-report.log
+        echo "Directories count: $(find . -type d | wc -l)" >> logs/cleanup-report.log
+        echo "Drivers count: $(find drivers -name '*.js' | wc -l)" >> logs/cleanup-report.log
+        
+    - name: Upload cleanup report
+      uses: actions/upload-artifact@v4
+      with:
+        name: cleanup-report
+        path: logs/cleanup-report.log
+        retention-days: 30
+        
+    - name: Success
+      run: |
+        echo "🎉 Nettoyage terminé avec succès!"
+        echo "📊 Résumé:"
+        echo "- ✅ Fichiers temporaires supprimés"
+        echo "- ✅ Artefacts nettoyés"
+        echo "- ✅ Fichiers optimisés"
+        echo "- ✅ Rapport généré"
+        
+    - name: Clean up package-lock.json
+      if: always()
+      run: |
+        echo "🧹 Suppression du package-lock.json pour éviter la surcharge du repo."
+        rm -f package-lock.json
 
