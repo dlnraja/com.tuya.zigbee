@@ -1,0 +1,47 @@
+﻿{
+    "timestamp":  "2025-07-25 06:35:11",
+    "parsed_formats":  3,
+    "analytics":  {
+                      "sources_analyzed":  3,
+                      "source_distribution":  {
+                                                  "homey":  1,
+                                                  "jeedom":  1,
+                                                  "zigbee2mqtt":  1
+                                              },
+                      "class_distribution":  {
+                                                 "sensor":  1,
+                                                 "windowcoverings":  1,
+                                                 "other":  1,
+                                                 "light":  4
+                                             },
+                      "timestamp":  "2025-07-25 06:35:11",
+                      "confidence_metrics":  {
+                                                 "high_confidence_devices":  0,
+                                                 "low_confidence_devices":  0,
+                                                 "average_confidence":  0
+                                             },
+                      "manufacturers_distribution":  {
+                                                         "Tuya":  7
+                                                     },
+                      "capabilities_distribution":  {
+                                                        "measure_humidity":  1,
+                                                        "measure_current":  1,
+                                                        "measure_power":  3,
+                                                        "onoff":  4,
+                                                        "measure_battery":  1,
+                                                        "windowcoverings_set":  1,
+                                                        "windowcoverings_state":  1,
+                                                        "alarm_water":  1,
+                                                        "measure_temperature":  1
+                                                    },
+                      "total_devices_found":  7,
+                      "new_devices_detected":  0
+                  },
+    "scraped_sources":  3,
+    "new_devices_detected":  0,
+    "summary":  {
+                    "integration_success_rate":  "LOW",
+                    "total_devices_processed":  7,
+                    "confidence_level":  "MEDIUM"
+                }
+}
