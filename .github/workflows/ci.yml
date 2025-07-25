@@ -25,9 +25,9 @@ jobs:
     - name: Validate app.json
       run: |
         echo "🔍 Validation du fichier app.json..."
-        if [ -f "universal.tuya.zigbee.device-master/app.json" ]; then
+        if [ -f "app.json" ]; then
           echo "✅ app.json trouvé"
-          cat universal.tuya.zigbee.device-master/app.json | jq .
+          cat app.json | jq .
         else
           echo "❌ app.json manquant"
           exit 1
