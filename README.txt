@@ -1,5 +1,10 @@
-Tuya provides a leading global IoT platform (Tuya Smart) that enables more than 3 000 manufacturers, brands, OEMs and retail chains to develop one-stop smart home solutions, many of the Tuya devices are found as rebranded units.
+Universal TUYA Zigbee Device
 
-Supported White Label Brands: Malmbergs, Alecto, Smart9, Blitzwolf, Zemismart, Samotech, Lonsonho, Nedis, Neo, Ejlink, Lidl, Silvercrest, Livarno LUX etc.
+This app lets you control and integrate all your TUYA Zigbee devices in Homey. Universal, smart, and fully automated. Enjoy advanced automation, real-time documentation, and robust compatibility with Homey SDK3.
 
-To request additional devices, please use the apps Github repository request functionality.
+Status: In Active Development
+
+For community support and updates, visit the official Homey forum thread:
+https://community.homey.app/t/app-community-universal-tuya-zigbee-device/140352
+
+Credits and contributors are listed in the app manifest.
