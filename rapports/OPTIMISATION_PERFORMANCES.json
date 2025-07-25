@@ -1,0 +1,38 @@
+﻿{
+    "before_performance":  {
+                               "total_size":  66042144,
+                               "dashboard_load_time":  112.99350000000001,
+                               "cpu_usage":  3.75,
+                               "js_files":  745,
+                               "svg_files":  549,
+                               "timestamp":  "2025-07-25 06:52:14",
+                               "file_count":  4445,
+                               "json_files":  1220,
+                               "memory_usage":  164.87890625
+                           },
+    "timestamp":  "2025-07-25 06:58:22",
+    "optimizations":  [
+                          "Fichiers JSON optimises: 1188",
+                          "Fichiers JavaScript optimises: 745",
+                          "Fichiers SVG optimises: 515",
+                          "Fichiers temporaires supprimes: 0",
+                          "Fichiers JS organises: 745",
+                          "Fichiers JSON organises: 1220"
+                      ],
+    "improvements":  {
+                         "file_count_reduction":  0,
+                         "dashboard_load_time":  111.99380000000001,
+                         "size_reduction":  2799717
+                     },
+    "after_performance":  {
+                              "total_size":  63242427,
+                              "dashboard_load_time":  0.9997,
+                              "cpu_usage":  40.25,
+                              "js_files":  745,
+                              "svg_files":  549,
+                              "timestamp":  "2025-07-25 06:58:18",
+                              "file_count":  4445,
+                              "json_files":  1220,
+                              "memory_usage":  169.80859375
+                          }
+}

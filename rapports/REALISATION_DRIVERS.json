@@ -1,13 +1,1 @@
-﻿{
-    "existing_drivers":  133,
-    "timestamp":  "2025-07-25 06:39:34",
-    "created_drivers":  21,
-    "missing_drivers":  21,
-    "summary":  {
-                    "legacy_drivers":  0,
-                    "sdk3_drivers":  46,
-                    "in_progress_drivers":  108,
-                    "total_drivers":  154
-                },
-    "success_rate":  100
-}
+﻿{"existing_drivers":133,"timestamp":"2025-07-25 06:39:34","created_drivers":21,"missing_drivers":21,"summary":{"legacy_drivers":0,"sdk3_drivers":46,"in_progress_drivers":108,"total_drivers":154},"success_rate":100}

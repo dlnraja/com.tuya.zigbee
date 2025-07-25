@@ -1,7 +1,1 @@
-{
-  "root": true,
-  "extends": ["athom"],
-  "rules": {
-    "import/no-dynamic-require": "off"
-  }
-} 
+﻿{"root":true,"extends":["athom"],"rules":{"import/no-dynamic-require":"off"}}
