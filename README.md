@@ -9,6 +9,7 @@
 
 ### 🎯 **Dashboard Interactif**
 - **[📈 Dashboard en Temps Réel](https://dlnraja.github.io/com.tuya.zigbee/dashboard/)** - Monitoring complet du projet
+- **[🌐 Dashboard Multilingue](dashboard/index.html)** - Interface moderne avec support FR/EN/TA/NL
 - **Métriques Live** : Drivers, progression, enrichissement, compatibilité SDK3
 - **Interface Responsive** : Optimisé pour desktop, tablette et mobile
 - **Actualisation Auto** : Mise à jour toutes les 30 secondes
@@ -20,6 +21,9 @@
 - ✅ **Drivers récents** : Liste des derniers drivers traités
 - ✅ **Fonctionnalités avancées** : Automatisation IA, fusion intelligente
 - ✅ **Design moderne** : Bootstrap 5, Font Awesome, animations CSS
+- ✅ **Support multilingue** : FR, EN, TA, NL avec sélecteur de langue
+- ✅ **Filtres avancés** : Recherche, catégorie, statut, fabricant
+- ✅ **Organisation par catégorie** : Affichage automatique des drivers
 
 ---
 
