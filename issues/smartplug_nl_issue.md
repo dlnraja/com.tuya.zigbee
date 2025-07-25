@@ -1,0 +1,34 @@
+# Onvolledige driver gedetecteerd: smartplug
+
+## 🚨 Onvolledige Driver Gedetecteerd
+
+**Driver ID :** `smartplug`
+**Naam :** Smart Plug with metering
+**Status :** incomplete
+**Detectiedatum :** 2025-07-25 06:12:36
+
+### 📋 Driver Informatie
+- **Fabrikant :** _TZ3000_3ooaz3ng, _TYZB01_iuepbmpv, _TZ3000_g5xawfcq, _TZ3000_vtscrpmw, _TZ3000_rdtixbnu, _TZ3000_8nkb7mof, _TZ3000_cphmq0q7, _TZ3000_ew3ldmgx, _TZ3000_dpo1ysak, _TZ3000_w0qqde0g, _TZ3000_mraovvmm, _TZ3000_u5u4cakc, _TZ3000_typdpdpg, _TZ3000_gjnozsaz, _TZ3000_amdymr7l, _TZ3000_amdymr71, _TZ3000_typdpbpg, _TZ3000_ksw8qtmt, _TZ3000_zloso4jk, _TZ3000_5f43h46b, _TZ3000_cehuw1lw, _TZ3000_5f43h46b, _TZ3000_fqoynhku, _TZ3000_ynmowqk2, _TZ3000_kx0pris5, _TZ3000_hdopuwv6, _TZ3000_bfn1w0mm, _TZ3000_0zfrhq4i, _TZ3000_gznh2xla, _TZ3000_ss98ec5d, _TZ3000_gnjozsaz, _TZ3000_gvn91tmx, _TZ3000_1h2x4akh, _TZ3000_r6buo8ba, _TZ3000_2putqrmw, _TZ3000_5ity3zyu, _TZ3000_okaz9tjs, _TZ3000_eyzb8yg3, _TZ3000_dksbtrzs, _TZ3000_nkcobies, _TZ3000_j1v25l17, _TZ3000_waho4jtj, _TZ3000_3uimvkn6, _TZ3000_pjcqjtev
+- **Model :** TS0121, TSO121, TS011F
+- **Mogelijkheden :** onoff, measure_power, meter_power, measure_current, measure_voltage, measure_battery, measure_temperature, measure_humidity
+- **Categorie :** socket
+
+### 🔍 Geïdentificeerde Problemen
+- Nom manquant pour la langue: fr
+- Nom manquant pour la langue: ta
+- Nom manquant pour la langue: nl
+
+### 🎯 Vereiste Acties
+- [ ] Ontbrekende metadata voltooien
+- [ ] Ontbrekende mogelijkheden toevoegen
+- [ ] SDK3 compatibiliteit controleren
+- [ ] Driver testen
+- [ ] Documentatie bijwerken
+
+### 📝 Notities
+Sévérité: low
+Nombre de problèmes: 3
+
+---
+*Automatisch gegenereerd door GPT-4, Cursor, PowerShell*
+

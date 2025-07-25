@@ -75,6 +75,174 @@
         "image": "{{driverAssetsPath}}/images/large.png"
       },
       {
+        "id": "multi_sensor",
+        "name": {
+          "fr": "Multi Sensor",
+          "en": "Multi Sensor",
+          "ta": "Multi Sensor",
+          "nl": "Multi Sensor"
+        },
+        "category": "light",
+        "manufacturers": [
+          "Tuya"
+        ],
+        "models": [
+          "multi_sensor"
+        ],
+        "capabilities": [
+          "measure_temperature",
+          "measure_humidity"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "",
+          "en": "",
+          "ta": "",
+          "nl": ""
+        },
+        "image": ""
+      },
+      {
+        "id": "rain_sensor",
+        "name": {
+          "fr": "Rain Sensor",
+          "en": "Rain Sensor",
+          "ta": "Rain Sensor",
+          "nl": "Rain Sensor"
+        },
+        "category": "light",
+        "manufacturers": [
+          "Tuya"
+        ],
+        "models": [
+          "rain_sensor"
+        ],
+        "capabilities": [
+          "measure_battery",
+          "alarm_water"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "",
+          "en": "",
+          "ta": "",
+          "nl": ""
+        },
+        "image": ""
+      },
+      {
+        "id": "smart_plug",
+        "name": {
+          "fr": "Smart Plug",
+          "en": "Smart Plug",
+          "ta": "Smart Plug",
+          "nl": "Smart Plug"
+        },
+        "category": "light",
+        "manufacturers": [
+          "Tuya"
+        ],
+        "models": [
+          "smart_plug"
+        ],
+        "capabilities": [
+          "onoff",
+          "measure_power"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "",
+          "en": "",
+          "ta": "",
+          "nl": ""
+        },
+        "image": ""
+      },
+      {
+        "id": "TS0001",
+        "name": {
+          "fr": "Switch 1 Gang",
+          "en": "Switch 1 Gang",
+          "ta": "Switch 1 Gang",
+          "nl": "Switch 1 Gang"
+        },
+        "category": "light",
+        "manufacturers": [
+          "Tuya"
+        ],
+        "models": [
+          "TS0001"
+        ],
+        "capabilities": [
+          "onoff"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "",
+          "en": "",
+          "ta": "",
+          "nl": ""
+        },
+        "image": ""
+      },
+      {
+        "id": "TS0043",
+        "name": {
+          "fr": "Switch 4 Gang",
+          "en": "Switch 4 Gang",
+          "ta": "Switch 4 Gang",
+          "nl": "Switch 4 Gang"
+        },
+        "category": "light",
+        "manufacturers": [
+          "Tuya"
+        ],
+        "models": [
+          "TS0043"
+        ],
+        "capabilities": [
+          "onoff",
+          "measure_power"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "",
+          "en": "",
+          "ta": "",
+          "nl": ""
+        },
+        "image": ""
+      },
+      {
+        "id": "TS0044",
+        "name": {
+          "fr": "Switch 4 Gang",
+          "en": "Switch 4 Gang",
+          "ta": "Switch 4 Gang",
+          "nl": "Switch 4 Gang"
+        },
+        "category": "light",
+        "manufacturers": [
+          "Tuya"
+        ],
+        "models": [
+          "TS0044"
+        ],
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "measure_current"
+        ],
+        "status": "sdk3",
+        "instruction": {
+          "fr": "",
+          "en": "",
+          "ta": "",
+          "nl": ""
+        },
+        "image": ""
+      },
+      {
         "id": "dimmer_1_gang_2",
         "name": {
           "fr": "1 Gang Dimmer Module",
@@ -182,6 +350,33 @@
           "nl": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
         },
         "image": "{{driverAssetsPath}}/images/large.png"
+      },
+      {
+        "id": "TS0043",
+        "name": {
+          "fr": null,
+          "en": null,
+          "ta": null,
+          "nl": null
+        },
+        "category": "light",
+        "manufacturers": [
+          null
+        ],
+        "models": [
+          "TS0043"
+        ],
+        "capabilities": [
+          "onoff"
+        ],
+        "status": "in_progress",
+        "instruction": {
+          "fr": "",
+          "en": "",
+          "ta": "",
+          "nl": ""
+        },
+        "image": ""
       },
       {
         "id": "wall_dimmer_tuya",
@@ -4973,6 +5168,34 @@
       "image": "{{driverAssetsPath}}/images/large.png"
     },
     {
+      "id": "multi_sensor",
+      "name": {
+        "fr": "Multi Sensor",
+        "en": "Multi Sensor",
+        "ta": "Multi Sensor",
+        "nl": "Multi Sensor"
+      },
+      "category": "light",
+      "manufacturers": [
+        "Tuya"
+      ],
+      "models": [
+        "multi_sensor"
+      ],
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "",
+        "en": "",
+        "ta": "",
+        "nl": ""
+      },
+      "image": ""
+    },
+    {
       "id": "pirsensor",
       "name": {
         "fr": "PIR Sensor",
@@ -5089,6 +5312,34 @@
       "image": "{{driverAssetsPath}}/images/large.png"
     },
     {
+      "id": "rain_sensor",
+      "name": {
+        "fr": "Rain Sensor",
+        "en": "Rain Sensor",
+        "ta": "Rain Sensor",
+        "nl": "Rain Sensor"
+      },
+      "category": "light",
+      "manufacturers": [
+        "Tuya"
+      ],
+      "models": [
+        "rain_sensor"
+      ],
+      "capabilities": [
+        "measure_battery",
+        "alarm_water"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "",
+        "en": "",
+        "ta": "",
+        "nl": ""
+      },
+      "image": ""
+    },
+    {
       "id": "slim_motion_sensor",
       "name": {
         "fr": "Slim motion sensor",
@@ -5158,6 +5409,34 @@
         "nl": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
       },
       "image": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
+      "id": "smart_plug",
+      "name": {
+        "fr": "Smart Plug",
+        "en": "Smart Plug",
+        "ta": "Smart Plug",
+        "nl": "Smart Plug"
+      },
+      "category": "light",
+      "manufacturers": [
+        "Tuya"
+      ],
+      "models": [
+        "smart_plug"
+      ],
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "",
+        "en": "",
+        "ta": "",
+        "nl": ""
+      },
+      "image": ""
     },
     {
       "id": "smoke_sensor",
@@ -5235,6 +5514,90 @@
         "nl": "Press 'Pair' button for 5 seconds until antenna symbol starts to blink."
       },
       "image": "{{driverAssetsPath}}/images/moes_zigbee_3_large.png"
+    },
+    {
+      "id": "TS0001",
+      "name": {
+        "fr": "Switch 1 Gang",
+        "en": "Switch 1 Gang",
+        "ta": "Switch 1 Gang",
+        "nl": "Switch 1 Gang"
+      },
+      "category": "light",
+      "manufacturers": [
+        "Tuya"
+      ],
+      "models": [
+        "TS0001"
+      ],
+      "capabilities": [
+        "onoff"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "",
+        "en": "",
+        "ta": "",
+        "nl": ""
+      },
+      "image": ""
+    },
+    {
+      "id": "TS0043",
+      "name": {
+        "fr": "Switch 4 Gang",
+        "en": "Switch 4 Gang",
+        "ta": "Switch 4 Gang",
+        "nl": "Switch 4 Gang"
+      },
+      "category": "light",
+      "manufacturers": [
+        "Tuya"
+      ],
+      "models": [
+        "TS0043"
+      ],
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "",
+        "en": "",
+        "ta": "",
+        "nl": ""
+      },
+      "image": ""
+    },
+    {
+      "id": "TS0044",
+      "name": {
+        "fr": "Switch 4 Gang",
+        "en": "Switch 4 Gang",
+        "ta": "Switch 4 Gang",
+        "nl": "Switch 4 Gang"
+      },
+      "category": "light",
+      "manufacturers": [
+        "Tuya"
+      ],
+      "models": [
+        "TS0044"
+      ],
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "measure_current"
+      ],
+      "status": "sdk3",
+      "instruction": {
+        "fr": "",
+        "en": "",
+        "ta": "",
+        "nl": ""
+      },
+      "image": ""
     },
     {
       "id": "wallcurtainswitch",
@@ -8210,6 +8573,33 @@
         "nl": ""
       },
       "image": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
+      "id": "TS0043",
+      "name": {
+        "fr": null,
+        "en": null,
+        "ta": null,
+        "nl": null
+      },
+      "category": "light",
+      "manufacturers": [
+        null
+      ],
+      "models": [
+        "TS0043"
+      ],
+      "capabilities": [
+        "onoff"
+      ],
+      "status": "in_progress",
+      "instruction": {
+        "fr": "",
+        "en": "",
+        "ta": "",
+        "nl": ""
+      },
+      "image": ""
     },
     {
       "id": "TS0201",

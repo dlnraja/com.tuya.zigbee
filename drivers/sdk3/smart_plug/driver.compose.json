@@ -1,0 +1,22 @@
+﻿{
+    "zigbee":  {
+                   "manufacturerName":  [
+                                            "Tuya"
+                                        ],
+                   "productId":  [
+                                     "smart_plug"
+                                 ]
+               },
+    "name":  {
+                 "en":  "Smart Plug",
+                 "fr":  "Smart Plug",
+                 "nl":  "Smart Plug",
+                 "ta":  "Smart Plug"
+             },
+    "id":  "smart_plug",
+    "class":  "light",
+    "capabilities":  [
+                         "onoff",
+                         "measure_power"
+                     ]
+}

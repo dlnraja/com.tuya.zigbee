@@ -1,0 +1,22 @@
+﻿{
+    "zigbee":  {
+                   "manufacturerName":  [
+                                            "Tuya"
+                                        ],
+                   "productId":  [
+                                     "multi_sensor"
+                                 ]
+               },
+    "name":  {
+                 "en":  "Multi Sensor",
+                 "fr":  "Multi Sensor",
+                 "nl":  "Multi Sensor",
+                 "ta":  "Multi Sensor"
+             },
+    "id":  "multi_sensor",
+    "class":  "light",
+    "capabilities":  [
+                         "measure_temperature",
+                         "measure_humidity"
+                     ]
+}
