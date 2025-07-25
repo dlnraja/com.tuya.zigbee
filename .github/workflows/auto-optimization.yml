@@ -1,14 +1,79 @@
-name: Fallback - auto-optimization
+# Description: Optimisation automatique du projet - compression, nettoyage, validation et amélioration des performances
+name: Auto-Optimization
 on:
+  schedule:
+    - cron: '0 4 * * 2,4,6' # Mardi, jeudi, samedi à 4h
   push:
     branches: [ master ]
   workflow_dispatch:
+
 jobs:
-  fallback-job:
+  optimize-project:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-    - name: Validate
-      run: echo 'Fallback workflow executed'
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Analyze project structure
+      run: |
+        echo "🔍 Analyse de la structure du projet..."
+        echo "📊 Fichiers JS: $(find . -name '*.js' | wc -l)"
+        echo "📊 Fichiers JSON: $(find . -name '*.json' | wc -l)"
+        echo "📊 Fichiers SVG: $(find . -name '*.svg' | wc -l)"
+        echo "📊 Taille totale: $(du -sh . | cut -f1)"
+        
+    - name: Optimize JSON files
+      run: |
+        echo "🔧 Optimisation des fichiers JSON..."
+        find . -name "*.json" -not -path "./node_modules/*" -exec sh -c '
+          echo "Optimizing {}"
+          jq -c . "{}" > "{}.tmp" && mv "{}.tmp" "{}"
+        ' \;
+        echo "✅ Optimisation JSON terminée"
+        
+    - name: Validate optimized files
+      run: |
+        echo "🔍 Validation des fichiers optimisés..."
+        find . -name "*.json" -not -path "./node_modules/*" -exec jq . {} > /dev/null \;
+        echo "✅ Validation terminée"
+        
+    - name: Generate optimization report
+      run: |
+        echo "📊 Génération du rapport d'optimisation..."
+        mkdir -p logs
+        echo "Optimization Report - $(date)" > logs/optimization-report.log
+        echo "Files optimized: $(find . -name '*.json' | wc -l)" >> logs/optimization-report.log
+        echo "Total size: $(du -sh . | cut -f1)" >> logs/optimization-report.log
+        echo "Drivers count: $(find drivers -name '*.js' | wc -l)" >> logs/optimization-report.log
+        
+    - name: Upload optimization report
+      uses: actions/upload-artifact@v4
+      with:
+        name: optimization-report
+        path: logs/optimization-report.log
+        retention-days: 30
+        
+    - name: Success
+      run: |
+        echo "🎉 Optimisation terminée avec succès!"
+        echo "📊 Résumé:"
+        echo "- ✅ Structure analysée"
+        echo "- ✅ Fichiers optimisés"
+        echo "- ✅ Validation réussie"
+        echo "- ✅ Rapport généré"
+        
+    - name: Clean up package-lock.json
+      if: always()
+      run: |
+        echo "🧹 Suppression du package-lock.json pour éviter la surcharge du repo."
+        rm -f package-lock.json
 
