@@ -1,11 +1,8 @@
-# Script de Mise à Jour Automatique des TODO - Universal TUYA Zigbee Device
-# Description: Synchronise et met à jour tous les fichiers TODO du projet
-
-Write-Host "🔄 Début de la mise à jour automatique des TODO..." -ForegroundColor Green
+# Script de mise à jour automatique des TODO - Universal TUYA Zigbee Device
+# Description: Synchronisation et mise à jour automatique de tous les fichiers TODO du projet
 
 # Configuration
 $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-$projectRoot = Get-Location
 $archivesDir = "archives/todo"
 $todoFiles = @(
     "TODO_CURSOR_NATIVE.md",
@@ -19,20 +16,6 @@ $todoFiles = @(
 if (!(Test-Path $archivesDir)) {
     New-Item -ItemType Directory -Path $archivesDir -Force
     Write-Host "📁 Dossier d'archives créé: $archivesDir" -ForegroundColor Cyan
-}
-
-# Fonction pour archiver un fichier TODO
-function Archive-TodoFile {
-    param($filePath)
-    
-    if (Test-Path $filePath) {
-        $fileName = Split-Path $filePath -Leaf
-        $archiveName = "${fileName}_${timestamp}.md"
-        $archivePath = Join-Path $archivesDir $archiveName
-        
-        Copy-Item $filePath $archivePath
-        Write-Host "📦 Archivé: $fileName -> $archiveName" -ForegroundColor Yellow
-    }
 }
 
 # Fonction pour analyser les métriques du projet
@@ -49,12 +32,26 @@ function Get-ProjectMetrics {
     return $metrics
 }
 
+# Fonction pour archiver un fichier TODO
+function Archive-TodoFile {
+    param($filePath)
+    
+    if (Test-Path $filePath) {
+        $fileName = Split-Path $filePath -Leaf
+        $archiveName = "${fileName}_${timestamp}.md"
+        $archivePath = Join-Path $archivesDir $archiveName
+        
+        Copy-Item $filePath $archivePath
+        Write-Host "📦 Archivé: $fileName -> $archiveName" -ForegroundColor Yellow
+    }
+}
+
 # Fonction pour générer le contenu TODO mis à jour
 function Update-TodoContent {
     param($metrics)
     
     $content = @"
-# TODO MIS À JOUR - Universal TUYA Zigbee Device
+# TODO SYNCHRONISÉ - Universal TUYA Zigbee Device
 
 ## 📊 **MÉTRIQUES ACTUELLES ($timestamp)**
 
@@ -133,7 +130,7 @@ function Update-TodoContent {
 
 ---
 
-**TODO MIS À JOUR - UNIVERSAL TUYA ZIGBEE DEVICE** 🚀
+**TODO SYNCHRONISÉ - UNIVERSAL TUYA ZIGBEE DEVICE** 🚀
 
 *Dernière mise à jour : $timestamp*  
 *Généré automatiquement par le système YOLO*  
@@ -215,7 +212,4 @@ try {
 } catch {
     Write-Host "❌ Erreur lors de la mise à jour des TODO: $($_.Exception.Message)" -ForegroundColor Red
     exit 1
-}
-
-Write-Host "`n🚀 Synchronisation automatique des TODO activée!" -ForegroundColor Green
-Write-Host "Focus exclusif Tuya Zigbee avec YOLO mode activé" -ForegroundColor Yellow 
+} 
