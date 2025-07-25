@@ -1,0 +1,22 @@
+﻿{
+    "zigbee":  {
+                   "manufacturerName":  [
+                                            "Tuya"
+                                        ],
+                   "productId":  [
+                                     "rain_sensor"
+                                 ]
+               },
+    "name":  {
+                 "en":  "Rain Sensor",
+                 "fr":  "Rain Sensor",
+                 "nl":  "Rain Sensor",
+                 "ta":  "Rain Sensor"
+             },
+    "id":  "rain_sensor",
+    "class":  "light",
+    "capabilities":  [
+                         "measure_battery",
+                         "alarm_water"
+                     ]
+}

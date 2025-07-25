@@ -1,0 +1,35 @@
+# Onvolledige driver gedetecteerd: sensor_temp_TUYATEC-g3gl6cgy
+
+## 🚨 Onvolledige Driver Gedetecteerd
+
+**Driver ID :** `sensor_temp_TUYATEC-g3gl6cgy`
+**Naam :** Livarno Lux Smart LED Wall Light
+**Status :** incomplete
+**Detectiedatum :** 2025-07-25 06:12:36
+
+### 📋 Driver Informatie
+- **Fabrikant :** _TZ3000_utagpnzs, _TZ3000_5bsf8vaj
+- **Model :** TS0505A
+- **Mogelijkheden :** onoff, measure_battery, measure_temperature, measure_humidity
+- **Categorie :** unknown
+
+### 🔍 Geïdentificeerde Problemen
+- Champ requis manquant: class
+- Nom manquant pour la langue: fr
+- Nom manquant pour la langue: ta
+- Nom manquant pour la langue: nl
+
+### 🎯 Vereiste Acties
+- [ ] Ontbrekende metadata voltooien
+- [ ] Ontbrekende mogelijkheden toevoegen
+- [ ] SDK3 compatibiliteit controleren
+- [ ] Driver testen
+- [ ] Documentatie bijwerken
+
+### 📝 Notities
+Sévérité: medium
+Nombre de problèmes: 4
+
+---
+*Automatisch gegenereerd door GPT-4, Cursor, PowerShell*
+

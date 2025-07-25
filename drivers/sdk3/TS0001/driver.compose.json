@@ -1,0 +1,21 @@
+﻿{
+    "zigbee":  {
+                   "manufacturerName":  [
+                                            "Tuya"
+                                        ],
+                   "productId":  [
+                                     "TS0001"
+                                 ]
+               },
+    "name":  {
+                 "en":  "Switch 1 Gang",
+                 "fr":  "Switch 1 Gang",
+                 "nl":  "Switch 1 Gang",
+                 "ta":  "Switch 1 Gang"
+             },
+    "id":  "TS0001",
+    "class":  "light",
+    "capabilities":  [
+                         "onoff"
+                     ]
+}
