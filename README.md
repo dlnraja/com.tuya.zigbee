@@ -9,6 +9,33 @@ This app extends the Homey Tuya Zigbee ecosystem by adding **missing device IDs*
 - **Maintain compatibility** with Homey SDK3
 - **Provide community-driven** device support
 
+## 📋 **Homey vs Home Assistant OS - Key Differences**
+
+### **Homey (Athom) - Plug & Play Solution**
+- **Hardware**: Closed ecosystem, all-in-one device (Pro/Bridge)
+- **Installation**: Buy and plug in, ready to use immediately
+- **User Interface**: Mobile app + recent web interface
+- **Automation**: Flow-based drag & drop, HomeyScript (JS)
+- **Device Support**: Built-in Zigbee 3.0, Z-Wave Plus, Wi-Fi, BLE, 433MHz, IR, Thread
+- **App Store**: Official/community apps with one-click installation
+- **Target Users**: "Don't want to tinker" - regular users seeking simplicity
+
+### **Home Assistant OS - DIY Solution**
+- **Hardware**: Custom installation on Raspberry Pi, x86-NUC, etc.
+- **Installation**: Requires flashing SD card or VM setup
+- **User Interface**: Fully customizable Lovelace web interface
+- **Automation**: Visual editor, YAML, Node-RED, Python scripts
+- **Device Support**: Requires USB dongles or Ethernet gateways
+- **Integrations**: Thousands of community integrations (free)
+- **Target Users**: "Unlimited tinkering, complete control" - DIY enthusiasts
+
+### **Why Choose Homey for Tuya Zigbee?**
+- **Simplicity**: Plug & play, no complex setup
+- **Built-in Support**: Native Zigbee 3.0 without additional hardware
+- **App Ecosystem**: Official app store with community contributions
+- **User-Friendly**: Flow-based automation for non-technical users
+- **Local Priority**: Runs locally with optional cloud access
+
 ## 📋 **Supported Device Types**
 
 ### **Switches & Sockets**
@@ -64,7 +91,7 @@ This app extends the Homey Tuya Zigbee ecosystem by adding **missing device IDs*
 - **SDK**: Homey 3
 - **Status**: Active Development
 - **Drivers**: 215 total (147 in_progress, 68 SDK3)
-- **Workflows**: 48 automated processes
+- **Workflows**: 50 automated processes
 
 ## 🛡️ **Compatibility Strategy**
 
