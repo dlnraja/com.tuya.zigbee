@@ -1,1 +1,0 @@
-﻿try { 'use strict'; const { ZigBeeDevice } = require('homey-meshdriver'); const { debug, CLUSTER } = require('zigbee-clusters'); class wall_remote_2_gang extends ZigbeeDevice { async this.registerCapability('onoff', CLUSTER.ON_OFF); var debounce = 0; 

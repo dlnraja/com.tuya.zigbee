@@ -1,1 +1,0 @@
-﻿try { 'use strict'; const Homey = require('homey'); const { ZigbeeDevice } = require('homey-meshdriver'); this.log('Device initialisÃ©'); async this.registerCapability('onoff', CLUSTER.ON_OFF); this.printNode(); 

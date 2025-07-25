@@ -1,1 +1,0 @@
-﻿try { 'use strict'; const { ZigBeeDevice } = require('homey-meshdriver'); const { CLUSTER } = require('zigbee-clusters'); const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster'); class SmartPlugDevice extends ZigbeeDevice { async this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION); 

@@ -1,1 +1,0 @@
-﻿try { 'use strict'; const { Cluster } = require('zigbee-clusters'); const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster'); const TuyaSpecificClusterDevice = require('../../lib/TuyaSpecificClusterDevice'); Cluster.addCluster(TuyaSpecificCluster); const dataPoints = { position: 2, arrived: 3, motorReverse: 4, } const dataTypes = { raw: 0, 
