@@ -1,5 +1,4 @@
-﻿
----
+﻿---
 **📅 Version**: 1.0.0
 **📅 Date**: 2025-07-26
 **🕐 Heure**: 16:49:40
@@ -3410,32 +3409,39 @@ jobs:
 **🛡️ Sécurité**: Mode local complet
 ---
 name: Deploy to GitHub Pages
+
 on:
   push:
-    branches: [ master, main ]
+    branches: [ main ]
   pull_request:
-    branches: [ master, main ]
+    branches: [ main ]
   workflow_dispatch:
-  schedule:
-    - cron: '0 6 * * *' # Daily at 6 AM
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  # Build job
+  build:
     runs-on: ubuntu-latest
-    name: Build and Deploy to GitHub Pages
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    concurrency:
-      group: "pages"
-      cancel-in-progress: false
-    
     steps:
-      - name: Checkout Repository
+      - name: Checkout
         uses: actions/checkout@v4
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -3443,1016 +3449,88 @@ jobs:
           node-version: '18'
           cache: 'npm'
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Validate Project Structure
+      - name: Install dependencies
         run: |
-          echo "🔍 Validation de la structure du projet..."
-          
-          # Vérifier les fichiers essentiels
-          if [ ! -f "app.json" ]; then
-            echo "❌ app.json manquant"
-            exit 1
-          fi
-          
-          if [ ! -f "package.json" ]; then
-            echo "❌ package.json manquant"
-            exit 1
-          fi
-          
-          echo "✅ Fichiers de configuration présents"
-          
-          # Vérifier la structure des dossiers
-          if [ ! -d "drivers" ]; then
-            echo "⚠️ Dossier drivers manquant"
-          else
-            echo "✅ Dossier drivers présent"
-          fi
-          
-          if [ ! -d "docs" ]; then
-            echo "⚠️ Dossier docs manquant"
-          else
-            echo "✅ Dossier docs présent"
-          fi
-          
-          if [ ! -d "lib" ]; then
-            echo "⚠️ Dossier lib manquant"
-          else
-            echo "✅ Dossier lib présent"
-          fi
+          npm ci
+          bundle install
 
-      - name: Create GitHub Pages Structure
+      - name: Build with Jekyll
         run: |
-          echo "📁 Création de la structure GitHub Pages..."
-          
-          # Créer le dossier de build pour GitHub Pages
-          mkdir -p .github/pages-build
-          
-          # Copier les fichiers essentiels
-          cp app.json .github/pages-build/
-          cp package.json .github/pages-build/
-          cp README.md .github/pages-build/ 2>/dev/null || echo "⚠️ README.md manquant"
-          cp CHANGELOG.md .github/pages-build/ 2>/dev/null || echo "⚠️ CHANGELOG.md manquant"
-          
-          # Copier la documentation
-          if [ -d "docs" ]; then
-            cp -r docs .github/pages-build/
-            echo "✅ Documentation copiée"
-          fi
-          
-          # Copier les assets
-          if [ -d "assets" ]; then
-            cp -r assets .github/pages-build/
-            echo "✅ Assets copiés"
-          fi
-          
-          # Copier les scripts (sans les .ps1 pour la compatibilité)
-          if [ -d "scripts" ]; then
-            mkdir -p .github/pages-build/scripts
-            find scripts -name "*.js" -o -name "*.sh" -o -name "*.md" | xargs -I {} cp {} .github/pages-build/scripts/enhanced/ 2>/dev/null || echo "⚠️ Aucun script compatible trouvé"
-            echo "✅ Scripts compatibles copiés"
-          fi
-
-      - name: Create Index Page
-        run: |
-          echo "📄 Création de la page d'accueil..."
-          
-          cat > .github/pages-build/index.html << 'EOF'
-          <!DOCTYPE html>
-          <html lang="fr">
-          <head>
-              <meta charset="UTF-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <title>Tuya Zigbee Local Mode - GitHub Pages</title>
-              <style>
-                  body {
-                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                      line-height: 1.6;
-                      margin: 0;
-                      padding: 20px;
-                      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                      color: #333;
-                      min-height: 100vh;
-                  }
-                  .container {
-                      max-width: 1200px;
-                      margin: 0 auto;
-                      background: white;
-                      border-radius: 10px;
-                      padding: 30px;
-                      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-                  }
-                  .header {
-                      text-align: center;
-                      margin-bottom: 40px;
-                      padding-bottom: 20px;
-                      border-bottom: 2px solid #667eea;
-                  }
-                  .header h1 {
-                      color: #667eea;
-                      font-size: 2.5em;
-                      margin-bottom: 10px;
-                  }
-                  .header p {
-                      color: #666;
-                      font-size: 1.2em;
-                      margin: 0;
-                  }
-                  .stats {
-                      display: grid;
-                      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                      gap: 20px;
-                      margin: 30px 0;
-                  }
-                  .stat-card {
-                      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                      color: white;
-                      padding: 20px;
-                      border-radius: 10px;
-                      text-align: center;
-                      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-                  }
-                  .stat-card h3 {
-                      margin: 0 0 10px 0;
-                      font-size: 1.5em;
-                  }
-                  .stat-card p {
-                      margin: 0;
-                      font-size: 2em;
-                      font-weight: bold;
-                  }
-                  .section {
-                      margin: 30px 0;
-                      padding: 20px;
-                      background: #f8f9fa;
-                      border-radius: 10px;
-                      border-left: 4px solid #667eea;
-                  }
-                  .section h2 {
-                      color: #667eea;
-                      margin-top: 0;
-                  }
-                  .feature-list {
-                      list-style: none;
-                      padding: 0;
-                  }
-                  .feature-list li {
-                      padding: 10px 0;
-                      border-bottom: 1px solid #eee;
-                      position: relative;
-                      padding-left: 30px;
-                  }
-                  .feature-list li:before {
-                      content: "✅";
-                      position: absolute;
-                      left: 0;
-                      color: #28a745;
-                  }
-                  .footer {
-                      text-align: center;
-                      margin-top: 40px;
-                      padding-top: 20px;
-                      border-top: 2px solid #667eea;
-                      color: #666;
-                  }
-                  .badge {
-                      display: inline-block;
-                      padding: 5px 10px;
-                      background: #667eea;
-                      color: white;
-                      border-radius: 15px;
-                      font-size: 0.8em;
-                      margin: 5px;
-                  }
-              </style>
-          </head>
-          <body>
-              <div class="container">
-                  <div class="header">
-                      <h1>🚀 Tuya Zigbee Local Mode</h1>
-                      <p>Application Homey pour appareils Tuya Zigbee en mode local</p>
-                      <div>
-                          <span class="badge">Homey SDK3</span>
-                          <span class="badge">Mode Local</span>
-                          <span class="badge">Smart Life</span>
-                          <span class="badge">8 Langues</span>
-                      </div>
-                  </div>
-                  
-                  <div class="stats">
-                      <div class="stat-card">
-                          <h3>📊 Drivers</h3>
-                          <p id="drivers-count">...</p>
-                      </div>
-                      <div class="stat-card">
-                          <h3>🌍 Langues</h3>
-                          <p>8</p>
-                      </div>
-                      <div class="stat-card">
-                          <h3>🔧 Modules</h3>
-                          <p id="modules-count">...</p>
-                      </div>
-                      <div class="stat-card">
-                          <h3>📈 Performance</h3>
-                          <p>98.5%</p>
-                      </div>
-                  </div>
-                  
-                  <div class="section">
-                      <h2>✨ Fonctionnalités</h2>
-                      <ul class="feature-list">
-                          <li><strong>Mode local prioritaire</strong> - Fonctionnement sans API Tuya</li>
-                          <li><strong>Drivers SDK3</strong> - Support complet Homey SDK3</li>
-                          <li><strong>Smart Life Integration</strong> - 4 drivers Smart Life</li>
-                          <li><strong>Modules intelligents</strong> - 7 modules d'automatisation</li>
-                          <li><strong>Traductions complètes</strong> - 8 langues supportées</li>
-                          <li><strong>Dashboard temps réel</strong> - Interface interactive</li>
-                          <li><strong>Sécurité renforcée</strong> - 100% local, aucune API externe</li>
-                          <li><strong>Performance optimisée</strong> - 98.5% de réussite</li>
-                      </ul>
-                  </div>
-                  
-                  <div class="section">
-                      <h2>🔧 Installation</h2>
-                      <ol>
-                          <li>Téléchargez le package depuis les releases GitHub</li>
-                          <li>Installez via Homey App Store</li>
-                          <li>Activez le mode local dans les paramètres</li>
-                          <li>Ajoutez vos appareils Tuya Zigbee</li>
-                          <li>Profitez de votre système domotique local !</li>
-                      </ol>
-                  </div>
-                  
-                  <div class="section">
-                      <h2>🛡️ Sécurité</h2>
-                      <ul class="feature-list">
-                          <li><strong>Aucune dépendance API externe</strong> - Fonctionnement 100% local</li>
-                          <li><strong>Données protégées</strong> - Toutes les données restent sur votre réseau</li>
-                          <li><strong>Confidentialité totale</strong> - Aucune donnée envoyée à l'extérieur</li>
-                          <li><strong>Fallback systems</strong> - Systèmes de secours automatiques</li>
-                      </ul>
-                  </div>
-                  
-                  <div class="footer">
-                      <p>📅 Dernière mise à jour: <span id="last-update">...</span></p>
-                      <p>🔗 <a href="https://github.com/dlnraja/com.tuya.zigbee" target="_blank">Repository GitHub</a></p>
-                      <p>📧 Support: <a href="mailto:support@tuya-zigbee.com">support@tuya-zigbee.com</a></p>
-                  </div>
-              </div>
-              
-              <script>
-                  // Mettre à jour les statistiques dynamiquement
-                  document.addEventListener('DOMContentLoaded', function() {
-                      // Compter les drivers
-                      fetch('drivers/active/')
-                          .then(response => {
-                              if (response.ok) {
-                                  return response.text();
-                              }
-                          })
-                          .then(html => {
-                              const driverCount = (html.match(/<a href/g) || []).length;
-                              document.getElementById('drivers-count').textContent = driverCount;
-                          })
-                          .catch(() => {
-                              document.getElementById('drivers-count').textContent = 'N/A';
-                          });
-                      
-                      // Compter les modules
-                      fetch('lib/enhanced/')
-                          .then(response => {
-                              if (response.ok) {
-                                  return response.text();
-                              }
-                          })
-                          .then(html => {
-                              const moduleCount = (html.match(/<a href/g) || []).length;
-                              document.getElementById('modules-count').textContent = moduleCount;
-                          })
-                          .catch(() => {
-                              document.getElementById('modules-count').textContent = 'N/A';
-                          });
-                      
-                      // Mettre à jour la date
-                      document.getElementById('last-update').textContent = new Date().toLocaleDateString('fr-FR');
-                  });
-              </script>
-          </body>
-          </html>
-          EOF
-          
-          echo "✅ Page d'accueil créée"
-
-      - name: Create Documentation Pages
-        run: |
-          echo "📚 Création des pages de documentation..."
-          
-          # Page de documentation principale
-          cat > .github/pages-build/docs.html << 'EOF'
-          <!DOCTYPE html>
-          <html lang="fr">
-          <head>
-              <meta charset="UTF-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <title>Documentation - Tuya Zigbee Local Mode</title>
-              <style>
-                  body {
-                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                      line-height: 1.6;
-                      margin: 0;
-                      padding: 20px;
-                      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                      color: #333;
-                      min-height: 100vh;
-                  }
-                  .container {
-                      max-width: 1200px;
-                      margin: 0 auto;
-                      background: white;
-                      border-radius: 10px;
-                      padding: 30px;
-                      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-                  }
-                  .header {
-                      text-align: center;
-                      margin-bottom: 40px;
-                      padding-bottom: 20px;
-                      border-bottom: 2px solid #667eea;
-                  }
-                  .header h1 {
-                      color: #667eea;
-                      font-size: 2.5em;
-                      margin-bottom: 10px;
-                  }
-                  .nav {
-                      background: #f8f9fa;
-                      padding: 20px;
-                      border-radius: 10px;
-                      margin: 20px 0;
-                  }
-                  .nav a {
-                      color: #667eea;
-                      text-decoration: none;
-                      margin: 0 15px;
-                      padding: 10px 15px;
-                      border-radius: 5px;
-                      transition: background 0.3s;
-                  }
-                  .nav a:hover {
-                      background: #667eea;
-                      color: white;
-                  }
-                  .content {
-                      margin: 30px 0;
-                  }
-                  .section {
-                      margin: 20px 0;
-                      padding: 20px;
-                      background: #f8f9fa;
-                      border-radius: 10px;
-                      border-left: 4px solid #667eea;
-                  }
-                  .section h2 {
-                      color: #667eea;
-                      margin-top: 0;
-                  }
-                  .footer {
-                      text-align: center;
-                      margin-top: 40px;
-                      padding-top: 20px;
-                      border-top: 2px solid #667eea;
-                      color: #666;
-                  }
-              </style>
-          </head>
-          <body>
-              <div class="container">
-                  <div class="header">
-                      <h1>📚 Documentation</h1>
-                      <p>Guide complet pour Tuya Zigbee Local Mode</p>
-                  </div>
-                  
-                  <div class="nav">
-                      <a href="index.html">🏠 Accueil</a>
-                      <a href="docs.html">📚 Documentation</a>
-                      <a href="changelog.html">📋 Changelog</a>
-                      <a href="https://github.com/dlnraja/com.tuya.zigbee" target="_blank">🔗 GitHub</a>
-                  </div>
-                  
-                  <div class="content">
-                      <div class="section">
-                          <h2>🚀 Installation</h2>
-                          <h3>Prérequis</h3>
-                          <ul>
-                              <li>Homey Pro ou Homey</li>
-                              <li>Appareils Tuya Zigbee compatibles</li>
-                              <li>Connexion réseau stable</li>
-                          </ul>
-                          
-                          <h3>Étapes d'installation</h3>
-                          <ol>
-                              <li>Téléchargez le package depuis les releases GitHub</li>
-                              <li>Installez via Homey App Store</li>
-                              <li>Activez le mode local dans les paramètres</li>
-                              <li>Ajoutez vos appareils Tuya Zigbee</li>
-                          </ol>
-                      </div>
-                      
-                      <div class="section">
-                          <h2>🔧 Configuration</h2>
-                          <h3>Mode Local</h3>
-                          <p>L'application fonctionne entièrement en mode local, sans dépendance à l'API Tuya. Cela garantit :</p>
-                          <ul>
-                              <li>Confidentialité totale des données</li>
-                              <li>Fonctionnement hors ligne</li>
-                              <li>Aucune limitation de l'API</li>
-                              <li>Performance optimale</li>
-                          </ul>
-                          
-                          <h3>Drivers Supportés</h3>
-                          <ul>
-                              <li><strong>Drivers SDK3</strong> - Compatibles Homey SDK3</li>
-                              <li><strong>Smart Life</strong> - 4 drivers intégrés</li>
-                              <li><strong>Modules intelligents</strong> - 7 modules d'automatisation</li>
-                          </ul>
-                      </div>
-                      
-                      <div class="section">
-                          <h2>🌍 Traductions</h2>
-                          <p>L'application supporte 8 langues :</p>
-                          <ul>
-                              <li>🇫🇷 Français (FR)</li>
-                              <li>🇬🇧 English (EN)</li>
-                              <li>🇹🇷 Tamil (TA)</li>
-                              <li>🇳🇱 Dutch (NL)</li>
-                              <li>🇩🇪 German (DE)</li>
-                              <li>🇪🇸 Spanish (ES)</li>
-                              <li>🇮🇹 Italian (IT)</li>
-                          </ul>
-                      </div>
-                      
-                      <div class="section">
-                          <h2>🛡️ Sécurité</h2>
-                          <h3>Protection des données</h3>
-                          <ul>
-                              <li>Toutes les données restent sur votre réseau local</li>
-                              <li>Aucune communication avec des serveurs externes</li>
-                              <li>Chiffrement local des données sensibles</li>
-                              <li>Authentification locale sécurisée</li>
-                          </ul>
-                          
-                          <h3>Mode local</h3>
-                          <p>L'application fonctionne entièrement en mode local, garantissant :</p>
-                          <ul>
-                              <li>Confidentialité totale</li>
-                              <li>Indépendance des services externes</li>
-                              <li>Performance optimale</li>
-                              <li>Fiabilité maximale</li>
-                          </ul>
-                      </div>
-                  </div>
-                  
-                  <div class="footer">
-                      <p>📅 Dernière mise à jour: <span id="last-update">...</span></p>
-                      <p>🔗 <a href="https://github.com/dlnraja/com.tuya.zigbee" target="_blank">Repository GitHub</a></p>
-                  </div>
-              </div>
-              
-              <script>
-                  document.addEventListener('DOMContentLoaded', function() {
-                      document.getElementById('last-update').textContent = new Date().toLocaleDateString('fr-FR');
-                  });
-              </script>
-          </body>
-          </html>
-          EOF
-          
-          echo "✅ Pages de documentation créées"
-
-      - name: Create Changelog Page
-        run: |
-          echo "📋 Création de la page changelog..."
-          
-          # Lire le CHANGELOG.md s'il existe
-          if [ -f "CHANGELOG.md" ]; then
-            cat > .github/pages-build/changelog.html << 'EOF'
-          <!DOCTYPE html>
-          <html lang="fr">
-          <head>
-              <meta charset="UTF-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <title>Changelog - Tuya Zigbee Local Mode</title>
-              <style>
-                  body {
-                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                      line-height: 1.6;
-                      margin: 0;
-                      padding: 20px;
-                      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                      color: #333;
-                      min-height: 100vh;
-                  }
-                  .container {
-                      max-width: 1200px;
-                      margin: 0 auto;
-                      background: white;
-                      border-radius: 10px;
-                      padding: 30px;
-                      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-                  }
-                  .header {
-                      text-align: center;
-                      margin-bottom: 40px;
-                      padding-bottom: 20px;
-                      border-bottom: 2px solid #667eea;
-                  }
-                  .header h1 {
-                      color: #667eea;
-                      font-size: 2.5em;
-                      margin-bottom: 10px;
-                  }
-                  .nav {
-                      background: #f8f9fa;
-                      padding: 20px;
-                      border-radius: 10px;
-                      margin: 20px 0;
-                  }
-                  .nav a {
-                      color: #667eea;
-                      text-decoration: none;
-                      margin: 0 15px;
-                      padding: 10px 15px;
-                      border-radius: 5px;
-                      transition: background 0.3s;
-                  }
-                  .nav a:hover {
-                      background: #667eea;
-                      color: white;
-                  }
-                  .changelog {
-                      margin: 30px 0;
-                      background: #f8f9fa;
-                      padding: 20px;
-                      border-radius: 10px;
-                      border-left: 4px solid #667eea;
-                  }
-                  .changelog h2 {
-                      color: #667eea;
-                      margin-top: 0;
-                  }
-                  .changelog pre {
-                      background: #2d3748;
-                      color: #e2e8f0;
-                      padding: 20px;
-                      border-radius: 5px;
-                      overflow-x: auto;
-                      white-space: pre-wrap;
-                  }
-                  .footer {
-                      text-align: center;
-                      margin-top: 40px;
-                      padding-top: 20px;
-                      border-top: 2px solid #667eea;
-                      color: #666;
-                  }
-              </style>
-          </head>
-          <body>
-              <div class="container">
-                  <div class="header">
-                      <h1>📋 Changelog</h1>
-                      <p>Historique des versions de Tuya Zigbee Local Mode</p>
-                  </div>
-                  
-                  <div class="nav">
-                      <a href="index.html">🏠 Accueil</a>
-                      <a href="docs.html">📚 Documentation</a>
-                      <a href="changelog.html">📋 Changelog</a>
-                      <a href="https://github.com/dlnraja/com.tuya.zigbee" target="_blank">🔗 GitHub</a>
-                  </div>
-                  
-                  <div class="changelog">
-                      <h2>📋 Historique des versions</h2>
-                      <pre id="changelog-content">Chargement du changelog...</pre>
-                  </div>
-                  
-                  <div class="footer">
-                      <p>📅 Dernière mise à jour: <span id="last-update">...</span></p>
-                      <p>🔗 <a href="https://github.com/dlnraja/com.tuya.zigbee" target="_blank">Repository GitHub</a></p>
-                  </div>
-              </div>
-              
-              <script>
-                  document.addEventListener('DOMContentLoaded', function() {
-                      document.getElementById('last-update').textContent = new Date().toLocaleDateString('fr-FR');
-                      
-                      // Charger le changelog depuis le fichier
-                      fetch('CHANGELOG.md')
-                          .then(response => response.text())
-                          .then(content => {
-                              document.getElementById('changelog-content').textContent = content;
-                          })
-                          .catch(() => {
-                              document.getElementById('changelog-content').textContent = 'Changelog non disponible';
-                          });
-                  });
-              </script>
-          </body>
-          </html>
-          EOF
-          else
-            echo "⚠️ CHANGELOG.md non trouvé, création d'une page vide"
-            cat > .github/pages-build/changelog.html << 'EOF'
-          <!DOCTYPE html>
-          <html lang="fr">
-          <head>
-              <meta charset="UTF-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <title>Changelog - Tuya Zigbee Local Mode</title>
-              <style>
-                  body {
-                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                      line-height: 1.6;
-                      margin: 0;
-                      padding: 20px;
-                      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                      color: #333;
-                      min-height: 100vh;
-                  }
-                  .container {
-                      max-width: 1200px;
-                      margin: 0 auto;
-                      background: white;
-                      border-radius: 10px;
-                      padding: 30px;
-                      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-                  }
-                  .header {
-                      text-align: center;
-                      margin-bottom: 40px;
-                      padding-bottom: 20px;
-                      border-bottom: 2px solid #667eea;
-                  }
-                  .header h1 {
-                      color: #667eea;
-                      font-size: 2.5em;
-                      margin-bottom: 10px;
-                  }
-                  .nav {
-                      background: #f8f9fa;
-                      padding: 20px;
-                      border-radius: 10px;
-                      margin: 20px 0;
-                  }
-                  .nav a {
-                      color: #667eea;
-                      text-decoration: none;
-                      margin: 0 15px;
-                      padding: 10px 15px;
-                      border-radius: 5px;
-                      transition: background 0.3s;
-                  }
-                  .nav a:hover {
-                      background: #667eea;
-                      color: white;
-                  }
-                  .changelog {
-                      margin: 30px 0;
-                      background: #f8f9fa;
-                      padding: 20px;
-                      border-radius: 10px;
-                      border-left: 4px solid #667eea;
-                  }
-                  .changelog h2 {
-                      color: #667eea;
-                      margin-top: 0;
-                  }
-                  .footer {
-                      text-align: center;
-                      margin-top: 40px;
-                      padding-top: 20px;
-                      border-top: 2px solid #667eea;
-                      color: #666;
-                  }
-              </style>
-          </head>
-          <body>
-              <div class="container">
-                  <div class="header">
-                      <h1>📋 Changelog</h1>
-                      <p>Historique des versions de Tuya Zigbee Local Mode</p>
-                  </div>
-                  
-                  <div class="nav">
-                      <a href="index.html">🏠 Accueil</a>
-                      <a href="docs.html">📚 Documentation</a>
-                      <a href="changelog.html">📋 Changelog</a>
-                      <a href="https://github.com/dlnraja/com.tuya.zigbee" target="_blank">🔗 GitHub</a>
-                  </div>
-                  
-                  <div class="changelog">
-                      <h2>📋 Historique des versions</h2>
-                      <p>Le changelog sera disponible prochainement.</p>
-                  </div>
-                  
-                  <div class="footer">
-                      <p>📅 Dernière mise à jour: <span id="last-update">...</span></p>
-                      <p>🔗 <a href="https://github.com/dlnraja/com.tuya.zigbee" target="_blank">Repository GitHub</a></p>
-                  </div>
-              </div>
-              
-              <script>
-                  document.addEventListener('DOMContentLoaded', function() {
-                      document.getElementById('last-update').textContent = new Date().toLocaleDateString('fr-FR');
-                  });
-              </script>
-          </body>
-          </html>
-          EOF
-          fi
-          
-          echo "✅ Page changelog créée"
+          cd docs
+          bundle exec jekyll build --baseurl "/com.tuya.zigbee"
+        env:
+          JEKYLL_ENV: production
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .github/pages-build
+          path: docs/_site
 
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: Success
-        run: |
-          echo "🎉 Déploiement GitHub Pages réussi"
-          echo "📦 Version: $(jq -r '.version' app.json)"
-          echo "🔗 URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
-          echo "✅ Pages disponibles" 
-
-
-
----
-**📅 Version**: 1.0.0
-**📅 Date**: 2025-07-26
-**🕐 Heure**: 16:49:40
-**🎯 Objectif**: Intégration locale Tuya Zigbee
-**🚀 Mode**: Priorité locale
-**🛡️ Sécurité**: Mode local complet
----
-name: Fix GitHub Pages Deployment
-on:
-  push:
-    branches: [ master, main ]
-  workflow_dispatch:
-
-jobs:
-  deploy-pages:
+  # Test job
+  test:
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    concurrency:
-      group: "pages"
-      cancel-in-progress: false
-    
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Create Pages Structure
-        run: |
-          mkdir -p .github/pages-build
-          cp app.json .github/pages-build/ 2>/dev/null || echo "app.json not found"
-          cp package.json .github/pages-build/ 2>/dev/null || echo "package.json not found"
-          cp README.md .github/pages-build/ 2>/dev/null || echo "README.md not found"
-          cp CHANGELOG.md .github/pages-build/ 2>/dev/null || echo "CHANGELOG.md not found"
-          
-          # Create index.html
-          cat > .github/pages-build/index.html << 'EOF'
-          <!DOCTYPE html>
-          <html lang="fr">
-          <head>
-              <meta charset="UTF-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <title>Tuya Zigbee Local Mode</title>
-              <style>
-                  body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
-                  .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-                  h1 { color: #667eea; text-align: center; }
-                  .feature { margin: 20px 0; padding: 15px; background: #f8f9fa; border-left: 4px solid #667eea; }
-                  .footer { text-align: center; margin-top: 30px; color: #666; }
-              </style>
-          </head>
-          <body>
-              <div class="container">
-                  <h1>🚀 Tuya Zigbee Local Mode</h1>
-                  <p style="text-align: center; color: #666;">Application Homey pour appareils Tuya Zigbee en mode local</p>
-                  
-                  <div class="feature">
-                      <h3>✨ Fonctionnalités</h3>
-                      <ul>
-                          <li>Mode local prioritaire - Fonctionnement sans API Tuya</li>
-                          <li>Drivers SDK3 - Support complet Homey SDK3</li>
-                          <li>Smart Life Integration - 4 drivers Smart Life</li>
-                          <li>Modules intelligents - 7 modules d'automatisation</li>
-                          <li>Traductions complètes - 8 langues supportées</li>
-                          <li>Dashboard temps réel - Interface interactive</li>
-                          <li>Sécurité renforcée - 100% local, aucune API externe</li>
-                          <li>Performance optimisée - 98.5% de réussite</li>
-                      </ul>
-                  </div>
-                  
-                  <div class="feature">
-                      <h3>🔧 Installation</h3>
-                      <ol>
-                          <li>Téléchargez le package depuis les releases GitHub</li>
-                          <li>Installez via Homey App Store</li>
-                          <li>Activez le mode local dans les paramètres</li>
-                          <li>Ajoutez vos appareils Tuya Zigbee</li>
-                          <li>Profitez de votre système domotique local !</li>
-                      </ol>
-                  </div>
-                  
-                  <div class="feature">
-                      <h3>🛡️ Sécurité</h3>
-                      <ul>
-                          <li>Aucune dépendance API externe - Fonctionnement 100% local</li>
-                          <li>Données protégées - Toutes les données restent sur votre réseau</li>
-                          <li>Confidentialité totale - Aucune donnée envoyée à l'extérieur</li>
-                          <li>Fallback systems - Systèmes de secours automatiques</li>
-                      </ul>
-                  </div>
-                  
-                  <div class="footer">
-                      <p>📅 Dernière mise à jour: <span id="last-update"></span></p>
-                      <p>🔗 <a href="https://github.com/dlnraja/com.tuya.zigbee" target="_blank">Repository GitHub</a></p>
-                  </div>
-              </div>
-              
-              <script>
-                  document.getElementById('last-update').textContent = new Date().toLocaleDateString('fr-FR');
-              </script>
-          </body>
-          </html>
-          EOF
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          path: .github/pages-build
+          ruby-version: '3.2'
+          bundler-cache: true
 
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
-
-      - name: Success
+      - name: Test Jekyll build
         run: |
-          echo "✅ GitHub Pages déployé avec succès"
-          echo "🔗 URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}" 
+          cd docs
+          bundle exec jekyll build --safe
+        env:
+          JEKYLL_ENV: test
 
+      - name: Validate HTML
+        run: |
+          cd docs/_site
+          find . -name "*.html" -exec echo "Validating {}" \;
+          # Basic HTML validation
+          for file in $(find . -name "*.html"); do
+            if ! grep -q "<!DOCTYPE html>" "$file"; then
+              echo "❌ $file missing DOCTYPE"
+              exit 1
+            fi
+            echo "✅ $file validated"
+          done
 
----
-**📅 Version**: 1.0.0
-**📅 Date**: 2025-07-26
-**🕐 Heure**: 16:49:40
-**🎯 Objectif**: Intégration locale Tuya Zigbee
-**🚀 Mode**: Priorité locale
-**🛡️ Sécurité**: Mode local complet
----
-# Workflow GitHub Actions - Global Validation Enhancement
-# Enrichi automatiquement - Mode additif
-# Compatible Homey SDK3
-# Fonctionnement local prioritaire
-# Aucune dépendance API externe
-# 
-# @author Auto-Enhancement System
-# @version Enhanced
-# @date 2025-07-26 16:49:40
-
-name: Global Validation Enhancement
-on:
-  push:
-    branches: [ master, main ]
-  workflow_dispatch:
-  schedule:
-    - cron: '0 */6 * * *' # Every 6 hours
-
-jobs:
-  validate-global:
+  # Security check
+  security:
     runs-on: ubuntu-latest
-    name: Global Validation
     steps:
-      - name: Checkout Repository
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-
-      - name: Validate Project Structure
+      - name: Security audit
         run: |
-          echo "🔍 Validation globale du projet..."
-          
-          # Vérifier les fichiers de configuration
-          if [ -f "app.json" ] && [ -f "package.json" ]; then
-            echo "✅ Fichiers de configuration présents"
-            echo "📦 Version: "
-            echo "🏷️ Nom: "
-          else
-            echo "❌ Fichiers de configuration manquants"
-            exit 1
-          fi
-          
-          # Vérifier le mode local
-          if grep -q '"local": true' app.json; then
-            echo "✅ Mode local activé"
-          else
-            echo "❌ Mode local non configuré"
-            exit 1
-          fi
-          
-          if grep -q '"noApiRequired": true' app.json; then
-            echo "✅ API optionnelle configurée"
-          else
-            echo "❌ API optionnelle non configurée"
-            exit 1
-          fi
+          cd docs
+          bundle audit check --update
+        continue-on-error: true
 
-      - name: Validate Drivers Structure
+      - name: Dependency check
         run: |
-          echo "🔍 Validation de la structure des drivers..."
-          if [ -d "drivers" ]; then
-            echo "✅ Dossier drivers présent"
-            SDK3_COUNT=
-            SMART_LIFE_COUNT=
-            NEW_COUNT=
-            GENERIC_COUNT=
-            echo "📊 Drivers SDK3: "
-            echo "🔗 Drivers Smart Life: "
-            echo "🆕 Drivers Nouveaux: "
-            echo "🔧 Drivers Génériques: "
-            echo "📈 Total:  drivers"
-          else
-            echo "❌ Dossier drivers manquant"
-            exit 1
-          fi
+          cd docs
+          bundle outdated
+        continue-on-error: true
 
-      - name: Validate Workflows
-        run: |
-          echo "🔍 Validation des workflows..."
-          if [ -d ".github/workflows" ]; then
-            echo "✅ Dossier workflows présent"
-            WORKFLOW_COUNT=
-            echo "⚙️ Workflows: "
-            echo "📋 Workflows trouvés:"
-            find .github/workflows -name "*.yml" -exec basename {} \;
-          else
-            echo "❌ Dossier workflows manquant"
-            exit 1
-          fi
 
-      - name: Validate Documentation
-        run: |
-          echo "🔍 Validation de la documentation..."
-          if [ -d "docs" ]; then
-            echo "✅ Dossier docs présent"
-            DASHBOARD_FILES=
-            LOCALE_FILES=
-            echo "📊 Dashboard:  fichiers"
-            echo "🌍 Traductions:  langues"
-          else
-            echo "❌ Dossier docs manquant"
-            exit 1
-          fi
-
-      - name: Validate Scripts
-        run: |
-          echo "🔍 Validation des scripts..."
-          if [ -d "scripts" ]; then
-            echo "✅ Dossier scripts présent"
-            SCRIPT_COUNT=
-            echo "🔧 Scripts PowerShell: "
-            echo "📋 Scripts trouvés:"
-            find scripts -name "*.ps1" -exec basename {} \;
-          else
-            echo "❌ Dossier scripts manquant"
-            exit 1
-          fi
-
-      - name: Success
-        run: |
-          echo "🎉 Validation globale réussie"
-          echo "✅ Structure du projet validée"
-          echo "✅ Mode local prioritaire"
-          echo "✅ Aucune dépendance API externe"
-          echo "✅ Enrichissement additif appliqué"
 
 
 
