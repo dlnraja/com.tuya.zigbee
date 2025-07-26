@@ -1,4 +1,4 @@
-# 🔄 SCRIPT DE MISE À JOUR DES WORKFLOWS - Tuya Zigbee Project
+﻿# 🔄 SCRIPT DE MISE À JOUR DES WORKFLOWS - Tuya Zigbee Project
 # Exécution: .\scripts\update-workflows.ps1
 
 Write-Host "🔄 MISE À JOUR DES WORKFLOWS" -ForegroundColor Green
@@ -234,7 +234,7 @@ jobs:
           TOTAL_DRIVERS=\$((SDK3_COUNT + LEGACY_COUNT + IN_PROGRESS_COUNT))
           
           mkdir -p rapports
-          cat > rapports/MIGRATION_REPORT_\$(date +%Y%m%d).md << 'EOF'
+          cat > docs/reports/MIGRATION_REPORT_\$(date +%Y%m%d).md << 'EOF'
 # 🚀 Rapport de Migration des Drivers
 
 **Date:** \$(date '+%Y-%m-%d %H:%M:%S')

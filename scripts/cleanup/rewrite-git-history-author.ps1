@@ -1,4 +1,4 @@
-# Rewrite Git History Author/Email for All Commits
+﻿# Rewrite Git History Author/Email for All Commits
 # Usage: pwsh -File scripts/cleanup/rewrite-git-history-author.ps1
 # ⚠️ Cette opération réécrit tout l’historique git (force-push obligatoire)
 # ⚠️ Sauvegardez votre repo avant !

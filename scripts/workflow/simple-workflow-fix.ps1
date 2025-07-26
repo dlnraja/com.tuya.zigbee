@@ -1,4 +1,4 @@
-# SIMPLE WORKFLOW FIX - Tuya Zigbee Project
+﻿# SIMPLE WORKFLOW FIX - Tuya Zigbee Project
 # Script simple pour corriger les workflows
 
 Write-Host "SIMPLE WORKFLOW FIX - CORRECTION RAPIDE" -ForegroundColor Cyan

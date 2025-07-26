@@ -1,4 +1,4 @@
-# Diagnostic Terminal PowerShell - Sécurisé, Zéro boucle, Zéro attente
+﻿# Diagnostic Terminal PowerShell - Sécurisé, Zéro boucle, Zéro attente
 # Généré automatiquement le 24/07/2025
 
 Write-Host "--- DIAGNOSTIC TERMINAL SECURISE ---"

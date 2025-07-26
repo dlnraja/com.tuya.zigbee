@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     recreate-project.ps1
     Recrée l’intégralité des fichiers et répertoires manquants avec leurs contenus,

@@ -1,4 +1,4 @@
-# Script de configuration YOLO - Universal Universal TUYA Zigbee Device
+﻿# Script de configuration YOLO - Universal Universal TUYA Zigbee Device
 # Description: Configuration automatique du mode YOLO avec auto-approve et auto-continue
 
 Write-Host "Configuration YOLO MODE avec auto-approve et auto-continue..." -ForegroundColor Cyan
@@ -287,4 +287,5 @@ try {
     Write-Host "Erreur lors de la configuration YOLO MODE: $($_.Exception.Message)" -ForegroundColor Red
     exit 1
 } 
+
 

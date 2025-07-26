@@ -1,4 +1,4 @@
-# Vérification Complète du Repository et GitHub Actions - Tuya Zigbee Project
+﻿# Vérification Complète du Repository et GitHub Actions - Tuya Zigbee Project
 Write-Host "Vérification Complète du Repository et GitHub Actions - Tuya Zigbee Project" -ForegroundColor Green
 Write-Host "=================================================================" -ForegroundColor Green
 
@@ -260,7 +260,7 @@ Write-Host "===================================" -ForegroundColor Green
 *Rapport généré automatiquement par le Monitoring Script*
 "@
 
-Set-Content -Path "rapports/MONITORING_REPORT_`$ReportDate.md" -Value `$ReportContent -Encoding UTF8
+Set-Content -Path "docs/reports/MONITORING_REPORT_`$ReportDate.md" -Value `$ReportContent -Encoding UTF8
 Write-Host "✅ Rapport de monitoring généré" -ForegroundColor Green
 "@
 
@@ -378,9 +378,10 @@ $FinalReport = @"
 "@
 
 $ReportDate = Get-Date -Format "yyyyMMdd"
-Set-Content -Path "rapports/COMPREHENSIVE_CHECK_REPORT_$ReportDate.md" -Value $FinalReport -Encoding UTF8
+Set-Content -Path "docs/reports/COMPREHENSIVE_CHECK_REPORT_$ReportDate.md" -Value $FinalReport -Encoding UTF8
 
 Write-Host "`n🎉 VÉRIFICATION COMPLÈTE TERMINÉE !" -ForegroundColor Green
 Write-Host "Repository vérifié, fallbacks créés, automatisations implémentées." -ForegroundColor Cyan
-Write-Host "Rapport: rapports/COMPREHENSIVE_CHECK_REPORT_$ReportDate.md" -ForegroundColor Yellow 
+Write-Host "Rapport: docs/reports/COMPREHENSIVE_CHECK_REPORT_$ReportDate.md" -ForegroundColor Yellow 
+
 

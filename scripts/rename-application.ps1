@@ -1,4 +1,4 @@
-# Script de renommage automatique de l'application - Universal Universal TUYA Zigbee Device
+﻿# Script de renommage automatique de l'application - Universal Universal TUYA Zigbee Device
 # Description: Renommer universal.tuya.zigbee.device vers un nom plus explicite et mettre à jour toute la documentation
 
 Write-Host "Renommage automatique de l'application..." -ForegroundColor Cyan
@@ -53,12 +53,12 @@ function Rename-Application {
     # 3. Mettre à jour les fichiers de documentation
     $docsFiles = @(
         "README.md",
-        "docs/README.md",
+        "docs/README/README.md",
         "docs/INDEX.md",
         "CHANGELOG.md",
-        "docs/CHANGELOG.md",
-        "CONTRIBUTING.md",
-        "docs/CONTRIBUTING.md"
+        "docs/CHANGELOG/CHANGELOG.md",
+        "docs/CONTRIBUTING/CONTRIBUTING.md",
+        "docs/docs/CONTRIBUTING/CONTRIBUTING.md"
     )
     
     foreach ($file in $docsFiles) {
@@ -184,7 +184,7 @@ Ce projet se concentre exclusivement sur l'écosystème Tuya Zigbee pour Homey, 
 - [Documentation complète](docs/)
 - [TODO](docs/todo/)
 - [Traductions](docs/locales/)
-- [Changelog](docs/CHANGELOG.md)
+- [Changelog](docs/CHANGELOG/CHANGELOG.md)
 
 ## Support
 - **GitHub** : [dlnraja/universal.tuya.zigbee.device](https://github.com/dlnraja/universal.tuya.zigbee.device)
@@ -357,4 +357,5 @@ try {
     Write-Host "Erreur lors du renommage de l'application: $($_.Exception.Message)" -ForegroundColor Red
     exit 1
 } 
+
 

@@ -1,4 +1,4 @@
-# Script de test des workflows GitHub Actions
+﻿# Script de test des workflows GitHub Actions
 # YOLO FAST MODE
 
 Write-Host "🔧 TEST DES WORKFLOWS GITHUB ACTIONS - $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"

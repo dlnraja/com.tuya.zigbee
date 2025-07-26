@@ -1,4 +1,4 @@
-# Monthly Enrichment Automation for Tuya Zigbee Drivers
+﻿# Monthly Enrichment Automation for Tuya Zigbee Drivers
 # Automatisation mensuelle d'enrichissement des drivers Tuya Zigbee
 # Version: 1.0.0
 # Date: $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")

@@ -1,4 +1,4 @@
-# UPDATE README - Tuya Zigbee Project
+﻿# UPDATE README - Tuya Zigbee Project
 # Script de mise à jour automatique du README avec timeouts
 
 param(
@@ -127,7 +127,7 @@ try {
 
 [![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![Homey SDK](https://img.shields.io/badge/Homey%20SDK-3.0-green.svg)](https://apps.homey.app/)
-[![License](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
+[![docs/LICENSE/LICENSE](https://img.shields.io/badge/docs/LICENSE/LICENSE-MIT-yellow.svg)](docs/LICENSE/LICENSE)
 [![YOLO Mode](https://img.shields.io/badge/YOLO%20Mode-Enabled-red.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![Automation](https://img.shields.io/badge/Automation-100%25-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![Devices](https://img.shields.io/badge/Devices-$driverCount+-orange.svg)](https://github.com/dlnraja/com.tuya.zigbee)

@@ -1,4 +1,4 @@
-# 🔧 SETUP AUTO README - Tuya Zigbee Project
+﻿# 🔧 SETUP AUTO README - Tuya Zigbee Project
 # Script de configuration pour automatisation README
 
 param(

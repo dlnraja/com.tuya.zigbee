@@ -1,4 +1,4 @@
-# CURSOR AUTO EDIT MONITOR - Tuya Zigbee Project
+﻿# CURSOR AUTO EDIT MONITOR - Tuya Zigbee Project
 # Script de surveillance continue pour l'édition automatique dans Cursor
 
 param(

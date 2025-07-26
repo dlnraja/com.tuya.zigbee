@@ -1,4 +1,4 @@
-# Script Relance Simple Fixe - Tuya Zigbee
+﻿# Script Relance Simple Fixe - Tuya Zigbee
 # Mode YOLO Intelligent
 
 Write-Host "RELANCE SIMPLE FIXE - TUYA ZIGBEE" -ForegroundColor Cyan
@@ -6,7 +6,7 @@ Write-Host "Mode YOLO Intelligent" -ForegroundColor Red
 
 # Configuration
 $timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
-$logFile = "rapports/RELAUNCH-SIMPLE-FIXED-$timestamp.md"
+$logFile = "docs/reports/RELAUNCH-SIMPLE-FIXED-$timestamp.md"
 
 # Creer le dossier rapports
 if (!(Test-Path "rapports")) {

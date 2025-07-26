@@ -1,4 +1,4 @@
-# Script d'amélioration intelligente de tous les drivers
+﻿# Script d'amélioration intelligente de tous les drivers
 # Mode YOLO Intelligent - Amélioration automatique
 
 Write-Host "Amelioration intelligente de tous les drivers" -ForegroundColor Green

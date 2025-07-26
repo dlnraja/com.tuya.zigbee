@@ -1,4 +1,4 @@
-# Script d'analyse du repository Tuya Smart Life
+﻿# Script d'analyse du repository Tuya Smart Life
 # YOLO GLOBAL ANTI-CRASH MODE
 
 Write-Host "🚀 ANALYSE TUYA SMART LIFE REPOSITORY - $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"

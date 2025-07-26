@@ -1,4 +1,4 @@
-# Script de migration massive SDK3 pour tous les drivers
+﻿# Script de migration massive SDK3 pour tous les drivers
 Write-Host "🚀 MIGRATION MASSIVE SDK3 - $(Get-Date -Format 'HH:mm:ss')"
 
 # Template SDK3 moderne

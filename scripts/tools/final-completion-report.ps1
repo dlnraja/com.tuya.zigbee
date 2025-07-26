@@ -1,4 +1,4 @@
-# Rapport Final de Completion - Tuya Zigbee Project
+﻿# Rapport Final de Completion - Tuya Zigbee Project
 Write-Host "Rapport Final de Completion - Tuya Zigbee Project" -ForegroundColor Green
 Write-Host "===============================================" -ForegroundColor Green
 
@@ -163,10 +163,10 @@ if (!(Test-Path "rapports")) {
     New-Item -ItemType Directory -Path "rapports" -Force
 }
 
-Set-Content -Path "rapports/COMPLETION_FINAL_REPORT_$ReportDate.md" -Value $ReportContent -Encoding UTF8
+Set-Content -Path "docs/reports/COMPLETION_FINAL_REPORT_$ReportDate.md" -Value $ReportContent -Encoding UTF8
 
 Write-Host "`nRapport final de completion généré!" -ForegroundColor Green
-Write-Host "Fichier: rapports/COMPLETION_FINAL_REPORT_$ReportDate.md" -ForegroundColor Cyan
+Write-Host "Fichier: docs/reports/COMPLETION_FINAL_REPORT_$ReportDate.md" -ForegroundColor Cyan
 
 Write-Host "`nStatistiques Finales:" -ForegroundColor Yellow
 Write-Host "===================" -ForegroundColor Yellow

@@ -1,4 +1,4 @@
-# Script d'enrichissement du dashboard avec matrice de devices
+﻿# Script d'enrichissement du dashboard avec matrice de devices
 # Mode enrichissement additif - Amélioration sans dégradation
 
 Write-Host "📊 ENRICHISSEMENT DASHBOARD MATRICE - Mode enrichissement" -ForegroundColor Green

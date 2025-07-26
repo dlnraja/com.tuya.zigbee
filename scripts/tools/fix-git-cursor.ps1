@@ -1,4 +1,4 @@
-# FIX GIT CURSOR - Tuya Zigbee Project
+﻿# FIX GIT CURSOR - Tuya Zigbee Project
 # Script pour configurer Git correctement pour Cursor
 
 Write-Host "FIX GIT CURSOR - CONFIGURATION POUR CURSOR" -ForegroundColor Cyan

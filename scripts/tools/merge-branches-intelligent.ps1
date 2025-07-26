@@ -1,4 +1,4 @@
-# 🔄 SCRIPT DE FUSION INTELLIGENTE DES BRANCHES - TUYA ZIGBEE
+﻿# 🔄 SCRIPT DE FUSION INTELLIGENTE DES BRANCHES - TUYA ZIGBEE
 # Mode YOLO Intelligent - Fusion intelligente et additive
 
 Write-Host "🔄 FUSION INTELLIGENTE DES BRANCHES - TUYA ZIGBEE" -ForegroundColor Green

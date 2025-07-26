@@ -1,4 +1,4 @@
-# Script de mise à jour du versioning
+﻿# Script de mise à jour du versioning
 # Mode additif - Enrichissement sans dégradation
 
 Write-Host "📦 MISE À JOUR DU VERSIONING - Mode additif" -ForegroundColor Green
@@ -100,8 +100,8 @@ Write-Host "📚 MISE À JOUR DE LA DOCUMENTATION..." -ForegroundColor Cyan
 $documentationFiles = @(
     "README.md",
     "CHANGELOG.md",
-    "CONTRIBUTING.md",
-    "CODE_OF_CONDUCT.md"
+    "docs/CONTRIBUTING/CONTRIBUTING.md",
+    "docs/CODE_OF_CONDUCT/CODE_OF_CONDUCT.md"
 )
 
 foreach ($file in $documentationFiles) {
@@ -217,8 +217,8 @@ $versioningContent = @"
 ### **Documentation**
 - `README.md`: Design enrichi
 - `CHANGELOG.md`: Entrées automatiques
-- `CONTRIBUTING.md`: Guidelines mises à jour
-- `CODE_OF_CONDUCT.md`: Règles de communauté
+- `docs/CONTRIBUTING/CONTRIBUTING.md`: Guidelines mises à jour
+- `docs/CODE_OF_CONDUCT/CODE_OF_CONDUCT.md`: Règles de communauté
 
 ### **Traductions**
 - `docs/locales/en.md`: Anglais

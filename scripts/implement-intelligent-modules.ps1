@@ -1,4 +1,4 @@
-# Implementation Intelligent Modules - Tuya Zigbee
+﻿# Implementation Intelligent Modules - Tuya Zigbee
 # Amélioration compatibilité drivers anciens/legacy/génériques
 
 Write-Host "🧠 IMPLÉMENTATION MODULES INTELLIGENTS - $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')" -ForegroundColor Green

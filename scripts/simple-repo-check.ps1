@@ -1,4 +1,4 @@
-# Vérification Simple du Repository - Tuya Zigbee Project
+﻿# Vérification Simple du Repository - Tuya Zigbee Project
 Write-Host "Vérification Simple du Repository - Tuya Zigbee Project" -ForegroundColor Green
 Write-Host "=================================================" -ForegroundColor Green
 
@@ -192,7 +192,7 @@ if (!(Test-Path "rapports")) {
     New-Item -ItemType Directory -Path "rapports" -Force
 }
 
-Set-Content -Path "rapports/MONITORING_REPORT_`$ReportDate.md" -Value `$ReportContent -Encoding UTF8
+Set-Content -Path "docs/reports/MONITORING_REPORT_`$ReportDate.md" -Value `$ReportContent -Encoding UTF8
 Write-Host "✅ Rapport de monitoring généré" -ForegroundColor Green
 "@
 
@@ -304,9 +304,10 @@ $FinalReport = @"
 "@
 
 $ReportDate = Get-Date -Format "yyyyMMdd"
-Set-Content -Path "rapports/SIMPLE_CHECK_REPORT_$ReportDate.md" -Value $FinalReport -Encoding UTF8
+Set-Content -Path "docs/reports/SIMPLE_CHECK_REPORT_$ReportDate.md" -Value $FinalReport -Encoding UTF8
 
 Write-Host "`n🎉 VÉRIFICATION TERMINÉE !" -ForegroundColor Green
 Write-Host "Repository vérifié, fallbacks créés, automatisations implémentées." -ForegroundColor Cyan
-Write-Host "Rapport: rapports/SIMPLE_CHECK_REPORT_$ReportDate.md" -ForegroundColor Yellow 
+Write-Host "Rapport: docs/reports/SIMPLE_CHECK_REPORT_$ReportDate.md" -ForegroundColor Yellow 
+
 

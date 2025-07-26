@@ -1,4 +1,4 @@
-# FIX WORKFLOW ISSUES - Tuya Zigbee Project
+﻿# FIX WORKFLOW ISSUES - Tuya Zigbee Project
 # Script pour corriger les problèmes spécifiques dans les workflows
 
 param(

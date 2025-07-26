@@ -1,4 +1,4 @@
-# Analyse des Drivers Restants - Tuya Zigbee Project
+﻿# Analyse des Drivers Restants - Tuya Zigbee Project
 Write-Host "Analyse des Drivers Restants - Tuya Zigbee Project" -ForegroundColor Green
 Write-Host "=================================================" -ForegroundColor Green
 
@@ -274,7 +274,7 @@ if (!(Test-Path "rapports")) {
     New-Item -ItemType Directory -Path "rapports" -Force
 }
 
-Set-Content -Path "rapports/REMAINING_DRIVERS_ANALYSIS_$ReportDate.md" -Value $ReportContent -Encoding UTF8
+Set-Content -Path "docs/reports/REMAINING_DRIVERS_ANALYSIS_$ReportDate.md" -Value $ReportContent -Encoding UTF8
 
 # Générer un fichier CSV pour analyse détaillée
 $CSVContent = "Name,Complexity,MigrationEffort,Priority,SDK2Patterns,SDK3Patterns,Notes`n"
@@ -282,11 +282,11 @@ foreach ($Result in $AnalysisResults) {
     $CSVContent += "$($Result.Name),$($Result.Complexity),$($Result.MigrationEffort),$($Result.Priority),`"$($Result.SDK2Patterns -join ';')`",`"$($Result.SDK3Patterns -join ';')`",`"$($Result.Notes)`"`n"
 }
 
-Set-Content -Path "rapports/DRIVERS_ANALYSIS_DETAILED_$ReportDate.csv" -Value $CSVContent -Encoding UTF8
+Set-Content -Path "docs/reports/DRIVERS_ANALYSIS_DETAILED_$ReportDate.csv" -Value $CSVContent -Encoding UTF8
 
 Write-Host "`nAnalyse terminée!" -ForegroundColor Green
-Write-Host "Rapport principal: rapports/REMAINING_DRIVERS_ANALYSIS_$ReportDate.md" -ForegroundColor Cyan
-Write-Host "Données détaillées: rapports/DRIVERS_ANALYSIS_DETAILED_$ReportDate.csv" -ForegroundColor Cyan
+Write-Host "Rapport principal: docs/reports/REMAINING_DRIVERS_ANALYSIS_$ReportDate.md" -ForegroundColor Cyan
+Write-Host "Données détaillées: docs/reports/DRIVERS_ANALYSIS_DETAILED_$ReportDate.csv" -ForegroundColor Cyan
 
 Write-Host "`nRésumé:" -ForegroundColor Yellow
 Write-Host "  SDK2: $SDK2Count drivers" -ForegroundColor White

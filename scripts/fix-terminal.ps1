@@ -1,4 +1,4 @@
-# Script de Correction Terminal - Eviter les Blocages Cursor
+﻿# Script de Correction Terminal - Eviter les Blocages Cursor
 
 Write-Host "Debut de la correction des problemes de terminal..." -ForegroundColor Green
 
@@ -131,4 +131,5 @@ Write-Host "- Git configure" -ForegroundColor White
 Write-Host "- Timeout active" -ForegroundColor White
 
 Write-Host "Terminal pret pour Cursor!" -ForegroundColor Green 
+
 

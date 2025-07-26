@@ -1,4 +1,4 @@
-# 🚀 Script de Push Intelligent - Mode YOLO Intelligent
+﻿# 🚀 Script de Push Intelligent - Mode YOLO Intelligent
 # Push automatique avec toutes les améliorations
 
 Write-Host "🚀 PUSH INTELLIGENT - MODE YOLO INTELLIGENT" -ForegroundColor Green

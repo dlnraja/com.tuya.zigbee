@@ -1,4 +1,4 @@
-# Script de mise à jour du tableau de matrices de devices avec KPIs maximum
+﻿# Script de mise à jour du tableau de matrices de devices avec KPIs maximum
 # Mode enrichissement additif - KPIs maximum
 
 Write-Host "📊 MISE À JOUR MATRICE DEVICES KPIs - Mode enrichissement" -ForegroundColor Green

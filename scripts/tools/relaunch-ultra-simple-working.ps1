@@ -1,4 +1,4 @@
-# 🚀 Script Ultra-Simple Fonctionnel - Tuya Zigbee
+﻿# 🚀 Script Ultra-Simple Fonctionnel - Tuya Zigbee
 # Mode YOLO Intelligent
 
 Write-Host "🚀 RELANCE ULTRA-SIMPLE FONCTIONNELLE - TUYA ZIGBEE" -ForegroundColor Cyan
@@ -7,7 +7,7 @@ Write-Host "==================================================" -ForegroundColor
 
 # Configuration
 $timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
-$logFile = "rapports/RELAUNCH-ULTRA-SIMPLE-WORKING-$timestamp.md"
+$logFile = "docs/reports/RELAUNCH-ULTRA-SIMPLE-WORKING-$timestamp.md"
 
 # Créer le dossier rapports s'il n'existe pas
 if (!(Test-Path "rapports")) {

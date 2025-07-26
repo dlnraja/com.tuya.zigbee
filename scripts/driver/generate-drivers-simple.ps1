@@ -1,4 +1,4 @@
-# 🚀 Script de Génération Automatique des Drivers - Version Simplifiée
+﻿# 🚀 Script de Génération Automatique des Drivers - Version Simplifiée
 # Mode YOLO Intelligent
 
 Write-Host "🚀 GÉNÉRATION AUTOMATIQUE DES DRIVERS" -ForegroundColor Green

@@ -1,4 +1,4 @@
-# Amélioration Simple des Workflows - Tuya Zigbee Project
+﻿# Amélioration Simple des Workflows - Tuya Zigbee Project
 Write-Host "Amélioration Simple des Workflows - Tuya Zigbee Project" -ForegroundColor Green
 Write-Host "=================================================" -ForegroundColor Green
 

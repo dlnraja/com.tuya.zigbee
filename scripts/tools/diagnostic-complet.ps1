@@ -1,4 +1,4 @@
-# DIAGNOSTIC COMPLET - Tuya Zigbee Project
+﻿# DIAGNOSTIC COMPLET - Tuya Zigbee Project
 # Script de diagnostic et etat d'avancement avec timeouts
 
 param(

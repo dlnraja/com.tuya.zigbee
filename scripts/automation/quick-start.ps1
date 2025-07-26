@@ -1,4 +1,4 @@
-# 🚀 SCRIPT DE DÉMARRAGE RAPIDE - Tuya Zigbee Project
+﻿# 🚀 SCRIPT DE DÉMARRAGE RAPIDE - Tuya Zigbee Project
 # Utilisation: .\scripts\quick-start.ps1
 
 Write-Host "🚀 DÉMARRAGE RAPIDE - Tuya Zigbee Project" -ForegroundColor Green

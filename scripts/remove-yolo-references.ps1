@@ -1,4 +1,4 @@
-# Script de suppression des références YOLO
+﻿# Script de suppression des références YOLO
 # Mode additif - Nettoyage sans dégradation
 
 Write-Host "🧹 SUPPRESSION DES RÉFÉRENCES YOLO - Mode additif" -ForegroundColor Green
@@ -50,8 +50,8 @@ Write-Host "📚 NETTOYAGE DE LA DOCUMENTATION..." -ForegroundColor Cyan
 $documentationFiles = @(
     "README.md",
     "CHANGELOG.md",
-    "CONTRIBUTING.md",
-    "CODE_OF_CONDUCT.md",
+    "docs/CONTRIBUTING/CONTRIBUTING.md",
+    "docs/CODE_OF_CONDUCT/CODE_OF_CONDUCT.md",
     "docs/locales/en.md",
     "docs/locales/fr.md",
     "docs/locales/ta.md",

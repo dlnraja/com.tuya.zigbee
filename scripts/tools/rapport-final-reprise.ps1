@@ -1,4 +1,4 @@
-# RAPPORT FINAL - REPRISE TACHES
+﻿# RAPPORT FINAL - REPRISE TACHES
 # Rapport complet de l'etat d'avancement du projet Tuya Zigbee
 
 # Couleurs pour l'affichage

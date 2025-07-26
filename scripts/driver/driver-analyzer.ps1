@@ -1,4 +1,4 @@
-# Driver Analyzer Script - Tuya Zigbee Project
+﻿# Driver Analyzer Script - Tuya Zigbee Project
 Write-Host "Driver Analyzer - Tuya Zigbee Project" -ForegroundColor Green
 Write-Host "=====================================" -ForegroundColor Green
 
@@ -239,8 +239,8 @@ if (!(Test-Path "rapports")) {
     New-Item -ItemType Directory -Path "rapports" -Force
 }
 
-Set-Content -Path "rapports/DRIVER_ANALYSIS_REPORT_$ReportDate.md" -Value $ReportContent -Encoding UTF8
-Write-Host "`nDetailed report saved to: rapports/DRIVER_ANALYSIS_REPORT_$ReportDate.md" -ForegroundColor Green
+Set-Content -Path "docs/reports/DRIVER_ANALYSIS_REPORT_$ReportDate.md" -Value $ReportContent -Encoding UTF8
+Write-Host "`nDetailed report saved to: docs/reports/DRIVER_ANALYSIS_REPORT_$ReportDate.md" -ForegroundColor Green
 
 # Auto-migrate ready drivers
 if ($MigratableDrivers.Count -gt 0) {

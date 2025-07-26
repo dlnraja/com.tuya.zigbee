@@ -1,4 +1,4 @@
-# Script de Veille Communautaire Automatisee - Tuya Zigbee
+﻿# Script de Veille Communautaire Automatisee - Tuya Zigbee
 # Phase 15 : Monitoring des forums/issues/dumps et integration de nouveaux devices
 
 Write-Host "Debut de la veille communautaire automatisee..." -ForegroundColor Green
@@ -268,7 +268,7 @@ function Generate-VeilleReport {
     }
     
     $reportJson = $report | ConvertTo-Json -Depth 10
-    Set-Content "rapports/VEILLE_COMMUNAUTAIRE.json" $reportJson -Encoding UTF8
+    Set-Content "docs/reports/VEILLE_COMMUNAUTAIRE.json" $reportJson -Encoding UTF8
     
     # Creer un rapport lisible
     $readableReport = @"
@@ -315,7 +315,7 @@ $(foreach ($alert in $alerts) {
 *Genere automatiquement par GPT-4, Cursor, PowerShell*
 "@
     
-    Set-Content "rapports/VEILLE_COMMUNAUTAIRE.md" $readableReport -Encoding UTF8
+    Set-Content "docs/reports/VEILLE_COMMUNAUTAIRE.md" $readableReport -Encoding UTF8
     Write-Host "Rapport de veille genere" -ForegroundColor Green
 }
 
@@ -357,4 +357,5 @@ function Start-VeilleCommunautaire {
 
 # Execution
 Start-VeilleCommunautaire 
+
 

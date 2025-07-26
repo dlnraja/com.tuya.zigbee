@@ -1,4 +1,4 @@
-# Script de Push Intelligent - Version Simplifiee
+﻿# Script de Push Intelligent - Version Simplifiee
 # Mode YOLO Intelligent
 
 Write-Host "PUSH INTELLIGENT - MODE YOLO INTELLIGENT" -ForegroundColor Green

@@ -1,4 +1,4 @@
-# Script d'optimisation de l'app Homey
+﻿# Script d'optimisation de l'app Homey
 # Mode enrichissement additif - Optimisation taille
 
 Write-Host "🏠 OPTIMISATION APP HOMEY - Mode enrichissement" -ForegroundColor Green

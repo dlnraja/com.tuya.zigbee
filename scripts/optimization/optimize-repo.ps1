@@ -1,4 +1,4 @@
-# OPTIMIZE REPO - Tuya Zigbee Project
+﻿# OPTIMIZE REPO - Tuya Zigbee Project
 # Script pour optimiser et nettoyer le repository avant push
 
 param(

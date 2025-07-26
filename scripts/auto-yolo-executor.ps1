@@ -1,4 +1,4 @@
-# Script d'exécution automatique YOLO - Universal Universal TUYA Zigbee Device
+﻿# Script d'exécution automatique YOLO - Universal Universal TUYA Zigbee Device
 # Description: Exécution automatique avec auto-approve et auto-continue, délai < 1 seconde
 
 Write-Host "YOLO AUTO-EXECUTOR ACTIVATED" -ForegroundColor Cyan
@@ -156,4 +156,5 @@ try {
     Write-Host "Error in YOLO auto-executor: $($_.Exception.Message)" -ForegroundColor Red
     exit 1
 } 
+
 
