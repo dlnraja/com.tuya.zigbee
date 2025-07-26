@@ -1,1 +1,3 @@
-﻿'use strict'; const { ZigBeeDriver } = require('homey-meshdriver'); class thermostatDriver extends ZigBeeDriver { async onMeshInit() { this.log('thermostatDriver has been initialized'); } } module.exports = thermostatDriver; 
+﻿const { Device } = require('homey');
+'use strict'; const { ZigBeeDriver } = require('homey-meshdriver'); class thermostatDriver extends ZigBeeDriver { async onMeshInit() { this.log('thermostatDriver has been initialized'); } } module.exports = thermostatDriver; 
+
