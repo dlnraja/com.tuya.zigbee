@@ -1,1 +1,0 @@
-'use strict'; const { Cluster } = require('zigbee-clusters'); const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster'); const TuyaSpecificClusterDevice = require("../../lib/TuyaSpecificClusterDevice"); Cluster.addCluster(TuyaSpecificCluster); class christmas_lights extends TuyaSpecificClusterDevice { async onNodeInit({ zclNode }) { this.printNode(); 

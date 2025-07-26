@@ -1,1 +1,0 @@
-'use strict'; const Homey = require('homey'); const { ZigBeeDevice } = require('homey-zigbeedriver'); const { debug, CLUSTER } = require('zigbee-clusters'); class SlimMotionSensor extends ZigBeeDevice { async onNodeInit({zclNode}) { this.printNode(); 
