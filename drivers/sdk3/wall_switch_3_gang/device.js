@@ -1,4 +1,5 @@
-﻿'use strict';
+﻿const { Device } = require('homey');
+'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');
 const { CLUSTER } = require('zigbee-clusters');
@@ -75,3 +76,4 @@ class Wallswitch3gang extends ZigBeeDevice {
 }
 
 module.exports = Wallswitch3gang;
+

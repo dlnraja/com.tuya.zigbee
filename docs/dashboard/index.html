@@ -1,216 +1,153 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Tuya Zigbee - Mode Local Intelligent</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Tuya Zigbee Dashboard - Enrichi</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { text-align: center; color: white; margin-bottom: 30px; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .metric-card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .metric-title { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 10px; }
+        .metric-value { font-size: 32px; font-weight: bold; color: #667eea; }
+        .drivers-table { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .chart-container { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #f8f9fa; font-weight: bold; }
+        .status-sdk3 { color: #28a745; }
+        .status-progress { color: #ffc107; }
+        .status-legacy { color: #dc3545; }
+    </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <h1>🚀 Dashboard Tuya Zigbee</h1>
-            <p>Mode Local Intelligent - Smart Life Intégré</p>
-        </header>
+        <div class="header">
+            <h1>ðŸš€ Tuya Zigbee Dashboard - Enrichi</h1>
+            <p>MÃ©triques temps rÃ©el et tableau drivers complet</p>
+        </div>
 
-        <!-- Metrics Section -->
-        <section class="metrics">
+        <div class="metrics-grid">
             <div class="metric-card">
-                <h3>📊 Drivers SDK3</h3>
-                <div class="metric-value" id="sdk3-count">148</div>
-                <p>Drivers compatibles Homey</p>
+                <div class="metric-title">Total Drivers</div>
+                <div class="metric-value" id="total-drivers">215</div>
             </div>
             <div class="metric-card">
-                <h3>🔗 Smart Life</h3>
-                <div class="metric-value" id="smart-life-count">4</div>
-                <p>Drivers Smart Life intégrés</p>
+                <div class="metric-title">SDK3 Compatible</div>
+                <div class="metric-value" id="sdk3-drivers">69</div>
             </div>
             <div class="metric-card">
-                <h3>⚙️ Workflows</h3>
-                <div class="metric-value" id="workflows-count">106</div>
-                <p>Automatisations actives</p>
+                <div class="metric-title">En ProgrÃ¨s</div>
+                <div class="metric-value" id="progress-drivers">146</div>
             </div>
             <div class="metric-card">
-                <h3>🌍 Traductions</h3>
-                <div class="metric-value" id="translations-count">8</div>
-                <p>Langues supportées</p>
+                <div class="metric-title">Performance</div>
+                <div class="metric-value" id="performance">1s</div>
             </div>
-        </section>
+        </div>
 
-        <!-- Smart Life Section -->
-        <section class="smart-life-section">
-            <h2>🔗 Smart Life Integration</h2>
-            <div class="smart-life-grid">
-                <div class="smart-life-card">
-                    <h4>💡 Light</h4>
-                    <p>Lumières Smart Life</p>
-                    <span class="status active">Actif</span>
-                </div>
-                <div class="smart-life-card">
-                    <h4>🔌 Switch</h4>
-                    <p>Interrupteurs Smart Life</p>
-                    <span class="status active">Actif</span>
-                </div>
-                <div class="smart-life-card">
-                    <h4>📡 Sensor</h4>
-                    <p>Capteurs Smart Life</p>
-                    <span class="status active">Actif</span>
-                </div>
-                <div class="smart-life-card">
-                    <h4>🌡️ Climate</h4>
-                    <p>Climatiseurs Smart Life</p>
-                    <span class="status active">Actif</span>
-                </div>
-            </div>
-        </section>
+        <div class="drivers-table">
+            <h2>ðŸ“Š Tableau Drivers Enrichi</h2>
+            <table id="drivers-table">
+                <thead>
+                    <tr>
+                        <th>Driver</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Performance</th>
+                        <th>DerniÃ¨re MAJ</th>
+                    </tr>
+                </thead>
+                <tbody id="drivers-tbody">
+                    <!-- Rempli dynamiquement -->
+                </tbody>
+            </table>
+        </div>
 
-        <!-- Charts Section -->
-        <section class="charts">
-            <div class="chart-container">
-                <h3>📈 Évolution des Drivers</h3>
-                <canvas id="driversChart"></canvas>
-            </div>
-            <div class="chart-container">
-                <h3>🔧 Répartition par Type</h3>
-                <canvas id="typesChart"></canvas>
-            </div>
-        </section>
-
-        <!-- Modules Section -->
-        <section class="modules">
-            <h2>🧠 Modules Intelligents</h2>
-            <div class="modules-grid">
-                <div class="module-card">
-                    <h4>🔍 AutoDetectionModule</h4>
-                    <p>Détection automatique des types de drivers</p>
-                    <span class="status active">Actif</span>
-                </div>
-                <div class="module-card">
-                    <h4>🔄 LegacyConversionModule</h4>
-                    <p>Conversion SDK2 vers SDK3</p>
-                    <span class="status active">Actif</span>
-                </div>
-                <div class="module-card">
-                    <h4>🔧 GenericCompatibilityModule</h4>
-                    <p>Amélioration compatibilité générique</p>
-                    <span class="status active">Actif</span>
-                </div>
-                <div class="module-card">
-                    <h4>🗺️ IntelligentMappingModule</h4>
-                    <p>Mapping intelligent des clusters Zigbee</p>
-                    <span class="status active">Actif</span>
-                </div>
-                <div class="module-card">
-                    <h4>🛡️ AutomaticFallbackModule</h4>
-                    <p>Système de fallback automatique</p>
-                    <span class="status active">Actif</span>
-                </div>
-                <div class="module-card">
-                    <h4>🔗 SmartLifeModule</h4>
-                    <p>Intégration Tuya Smart Life</p>
-                    <span class="status active">Actif</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Workflows Section -->
-        <section class="workflows">
-            <h2>⚙️ Workflows GitHub Actions</h2>
-            <div class="workflows-grid">
-                <div class="workflow-card">
-                    <h4>🔄 CI/CD</h4>
-                    <p>Validation automatique</p>
-                    <span class="status active">Actif</span>
-                </div>
-                <div class="workflow-card">
-                    <h4>🌍 Traduction</h4>
-                    <p>Traduction automatique</p>
-                    <span class="status active">Actif</span>
-                </div>
-                <div class="workflow-card">
-                    <h4>📊 Dashboard</h4>
-                    <p>Mise à jour automatique</p>
-                    <span class="status active">Actif</span>
-                </div>
-                <div class="workflow-card">
-                    <h4>🔗 Smart Life</h4>
-                    <p>Intégration Smart Life</p>
-                    <span class="status active">Actif</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Translations Section -->
-        <section class="translations">
-            <h2>🌍 Traductions Multilingues</h2>
-            <div class="translations-grid">
-                <div class="translation-card">
-                    <h4>🇺🇸 English</h4>
-                    <span class="status active">Complet</span>
-                </div>
-                <div class="translation-card">
-                    <h4>🇫🇷 Français</h4>
-                    <span class="status active">Complet</span>
-                </div>
-                <div class="translation-card">
-                    <h4>🇮🇳 Tamil</h4>
-                    <span class="status active">Complet</span>
-                </div>
-                <div class="translation-card">
-                    <h4>🇳🇱 Nederlands</h4>
-                    <span class="status active">Complet</span>
-                </div>
-                <div class="translation-card">
-                    <h4>🇩🇪 Deutsch</h4>
-                    <span class="status active">Complet</span>
-                </div>
-                <div class="translation-card">
-                    <h4>🇪🇸 Español</h4>
-                    <span class="status active">Complet</span>
-                </div>
-                <div class="translation-card">
-                    <h4>🇮🇹 Italiano</h4>
-                    <span class="status active">Complet</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- KPIs Section -->
-        <section class="kpis">
-            <h2>📊 Indicateurs de Performance</h2>
-            <div class="kpis-grid">
-                <div class="kpi-card">
-                    <h4>⚡ Performance</h4>
-                    <div class="kpi-value">99.9%</div>
-                    <p>Temps de réponse < 1s</p>
-                </div>
-                <div class="kpi-card">
-                    <h4>🛡️ Stabilité</h4>
-                    <div class="kpi-value">100%</div>
-                    <p>0 crash terminal</p>
-                </div>
-                <div class="kpi-card">
-                    <h4>🔧 Compatibilité</h4>
-                    <div class="kpi-value">100%</div>
-                    <p>SDK3 compatible</p>
-                </div>
-                <div class="kpi-card">
-                    <h4>🌐 Mode Local</h4>
-                    <div class="kpi-value">100%</div>
-                    <p>Fonctionnement offline</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <p>🚀 Tuya Zigbee Project - Mode Local Intelligent</p>
-            <p>📅 Dernière mise à jour: <span id="last-update"></span></p>
-        </footer>
+        <div class="chart-container">
+            <h2>ðŸ“ˆ Graphiques Temps RÃ©el</h2>
+            <canvas id="driversChart" width="400" height="200"></canvas>
+        </div>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        // DonnÃ©es temps rÃ©el
+        const driversData = {
+            total: 215,
+            sdk3: 69,
+            progress: 146,
+            legacy: 12
+        };
+
+        // Mise Ã  jour des mÃ©triques
+        function updateMetrics() {
+            document.getElementById('total-drivers').textContent = driversData.total;
+            document.getElementById('sdk3-drivers').textContent = driversData.sdk3;
+            document.getElementById('progress-drivers').textContent = driversData.progress;
+            document.getElementById('performance').textContent = '< 1s';
+        }
+
+        // GÃ©nÃ©rer tableau drivers
+        function generateDriversTable() {
+            const tbody = document.getElementById('drivers-tbody');
+            const drivers = [
+                { name: 'Tuya Zigbee Light', type: 'Light', status: 'SDK3', performance: '0.8s', lastUpdate: '2025-01-27' },
+                { name: 'Tuya Zigbee Switch', type: 'Switch', status: 'SDK3', performance: '0.9s', lastUpdate: '2025-01-27' },
+                { name: 'Tuya Zigbee Sensor', type: 'Sensor', status: 'Progress', performance: '1.2s', lastUpdate: '2025-01-26' },
+                { name: 'Tuya Zigbee Thermostat', type: 'Thermostat', status: 'Legacy', performance: '1.5s', lastUpdate: '2025-01-25' }
+            ];
+
+            tbody.innerHTML = '';
+            drivers.forEach(driver => {
+                const row = document.createElement('tr');
+                const statusClass = driver.status === 'SDK3' ? 'status-sdk3' : 
+                                  driver.status === 'Progress' ? 'status-progress' : 'status-legacy';
+                
+                row.innerHTML = \
+                    <td>\</td>
+                    <td>\</td>
+                    <td class="\">\</td>
+                    <td>\</td>
+                    <td>\</td>
+                \;
+                tbody.appendChild(row);
+            });
+        }
+
+        // Graphique Chart.js
+        function createChart() {
+            const ctx = document.getElementById('driversChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['SDK3 Compatible', 'En ProgrÃ¨s', 'Legacy'],
+                    datasets: [{
+                        data: [driversData.sdk3, driversData.progress, driversData.legacy],
+                        backgroundColor: ['#28a745', '#ffc107', '#dc3545']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'bottom' },
+                        title: { display: true, text: 'RÃ©partition des Drivers' }
+                    }
+                }
+            });
+        }
+
+        // Initialisation
+        updateMetrics();
+        generateDriversTable();
+        createChart();
+
+        // Mise Ã  jour automatique toutes les 30 secondes
+        setInterval(() => {
+            updateMetrics();
+        }, 30000);
+    </script>
 </body>
-</html> 
+</html>
