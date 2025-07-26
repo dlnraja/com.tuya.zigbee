@@ -1,4 +1,4 @@
-# Script de création du référentiel Zigbee Cluster
+﻿# Script de création du référentiel Zigbee Cluster
 # Mode enrichissement additif
 
 Write-Host "🔗 CRÉATION RÉFÉRENTIEL ZIGBEE - Mode enrichissement" -ForegroundColor Green

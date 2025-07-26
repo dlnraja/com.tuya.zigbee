@@ -1,4 +1,4 @@
-# Script d'optimisation IA pour tous les drivers Tuya Zigbee
+﻿# Script d'optimisation IA pour tous les drivers Tuya Zigbee
 # Universal TUYA Zigbee Device - Version 3.0.0
 
 Write-Host "🚀 OPTIMISATION IA DES DRIVERS - $(Get-Date -Format 'HH:mm:ss')" -ForegroundColor Green

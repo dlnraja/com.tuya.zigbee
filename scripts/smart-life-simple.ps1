@@ -1,4 +1,4 @@
-# Script simple d'analyse Tuya Smart Life
+﻿# Script simple d'analyse Tuya Smart Life
 Write-Host "🚀 ANALYSE TUYA SMART LIFE - $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
 Write-Host ""
 

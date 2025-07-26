@@ -1,4 +1,4 @@
-# Script d'optimisation du projet Tuya Zigbee
+﻿# Script d'optimisation du projet Tuya Zigbee
 Write-Host "🚀 DÉMARRAGE DE L'OPTIMISATION DU PROJET" -ForegroundColor Green
 
 # 1. Nettoyage des fichiers temporaires

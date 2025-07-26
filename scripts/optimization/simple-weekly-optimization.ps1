@@ -1,4 +1,4 @@
-# Simple Weekly Optimization Script
+﻿# Simple Weekly Optimization Script
 Write-Host "Starting weekly optimization..." -ForegroundColor Green
 
 # 1. Analyze project structure
@@ -155,7 +155,7 @@ if (!(Test-Path "rapports")) {
 $ReportDate = Get-Date -Format "yyyyMMdd"
 $ReportContent = "# Rapport Hebdomadaire - Tuya Zigbee Project`n`n**Date:** $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')`n**Workflow:** Weekly Optimization`n**Status:** Termine avec succes`n`n## Statistiques de la Semaine`n`n### Drivers`n- Total organises: $TotalDrivers`n- SDK3 compatibles: $Sdk3Count`n- Legacy: $LegacyCount`n- En cours de developpement: $InProgressCount`n`n### Scripts`n- Total organises: $TotalScripts`n- PowerShell: $PowerShellCount`n- Python: $PythonCount`n- Bash: $BashCount`n`n### Documentation`n- Langues supportees: 10`n- Fichiers generes: 10`n`n## Optimisations Appliquees`n`n- Nettoyage automatique`n- Migration des drivers`n- Reorganisation des scripts`n- Documentation multilingue`n- Monitoring continu`n`n---`n`nOptimisation hebdomadaire terminee avec succes !"
 
-Set-Content -Path "rapports/WEEKLY_REPORT_$ReportDate.md" -Value $ReportContent -Encoding UTF8
+Set-Content -Path "docs/reports/WEEKLY_REPORT_$ReportDate.md" -Value $ReportContent -Encoding UTF8
 Write-Host "Weekly report generated" -ForegroundColor Green
 
 # 8. Commit and push

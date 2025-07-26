@@ -1,4 +1,4 @@
-# Amélioration Traductions Multilingues - Tuya Zigbee Local Autonome
+﻿# Amélioration Traductions Multilingues - Tuya Zigbee Local Autonome
 # Date: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')
 
 Write-Host "🌍 AMÉLIORATION TRADUCTIONS MULTILINGUES" -ForegroundColor Green

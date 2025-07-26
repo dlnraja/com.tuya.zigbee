@@ -1,4 +1,4 @@
-# Analyse Complète des Workflows GitHub Actions - Tuya Zigbee
+﻿# Analyse Complète des Workflows GitHub Actions - Tuya Zigbee
 # Date: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')
 
 Write-Host "🔍 ANALYSE COMPLÈTE DES WORKFLOWS GITHUB ACTIONS" -ForegroundColor Green

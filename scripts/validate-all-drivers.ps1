@@ -1,4 +1,4 @@
-# Script de validation de tous les drivers SDK3
+﻿# Script de validation de tous les drivers SDK3
 # YOLO FAST MODE
 
 Write-Host "🔍 VALIDATION COMPLÈTE DES DRIVERS SDK3 - $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"

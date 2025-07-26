@@ -1,4 +1,4 @@
-# RECOVER DRIVERS - Tuya Zigbee Project
+﻿# RECOVER DRIVERS - Tuya Zigbee Project
 # Script pour recuperer et regenerer tous les drivers de toutes les sources
 
 param(

@@ -1,4 +1,4 @@
-# 🚀 RESTORE PROJECT SECURE - Tuya Zigbee Project
+﻿# 🚀 RESTORE PROJECT SECURE - Tuya Zigbee Project
 # Script de restauration sécurisée du projet
 # Powered by GPT-4, Cursor, PowerShell
 

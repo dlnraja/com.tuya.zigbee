@@ -1,4 +1,4 @@
-# GitHub Issues Generator for Incomplete Tuya Zigbee Drivers
+﻿# GitHub Issues Generator for Incomplete Tuya Zigbee Drivers
 # Générateur d'issues GitHub pour drivers Tuya Zigbee incomplets
 # Version: 1.0.0
 # Date: $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")

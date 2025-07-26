@@ -48,3 +48,4 @@ if (Test-Path $RepoDir) {
 try {
   Invoke-WebRequest -Uri $ZipUrl -OutFile $ZipFile -UseBasicParsing -ErrorAction Stop
   Expand-Archive -Path $ZipFile -DestinationPath $WorkDir
+

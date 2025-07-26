@@ -1,4 +1,4 @@
-# 🚀 SCRIPT D'OPTIMISATION COMPLÈTE - Tuya Zigbee Project
+﻿# 🚀 SCRIPT D'OPTIMISATION COMPLÈTE - Tuya Zigbee Project
 # Date: $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
 
 Write-Host "🚀 DÉMARRAGE DE L'OPTIMISATION COMPLÈTE DU PROJET" -ForegroundColor Green

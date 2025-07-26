@@ -1,4 +1,4 @@
-# Script d'Optimisation Continue - Tuya Zigbee
+﻿# Script d'Optimisation Continue - Tuya Zigbee
 # Phase 15 : Monitoring des performances et amélioration continue
 
 Write-Host "Debut de l'optimisation continue..." -ForegroundColor Green
@@ -263,7 +263,7 @@ function Generate-OptimizationReport {
     }
     
     $reportJson = $report | ConvertTo-Json -Depth 10
-    Set-Content "rapports/OPTIMISATION_CONTINUE.json" $reportJson -Encoding UTF8
+    Set-Content "docs/reports/OPTIMISATION_CONTINUE.json" $reportJson -Encoding UTF8
     
     # Créer un rapport lisible
     $readableReport = @"
@@ -320,7 +320,7 @@ $(foreach ($opt in $optimizations) {
 *Généré automatiquement par GPT-4, Cursor, PowerShell*
 "@
     
-    Set-Content "rapports/OPTIMISATION_CONTINUE.md" $readableReport -Encoding UTF8
+    Set-Content "docs/reports/OPTIMISATION_CONTINUE.md" $readableReport -Encoding UTF8
     Write-Host "Rapport d'optimisation genere" -ForegroundColor Green
 }
 
@@ -351,4 +351,5 @@ function Start-OptimisationContinue {
 
 # Execution
 Start-OptimisationContinue 
+
 

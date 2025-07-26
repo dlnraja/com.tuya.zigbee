@@ -1,4 +1,4 @@
-# Script de génération des drivers - Version basique
+﻿# Script de génération des drivers - Version basique
 Write-Host "Generation automatique des drivers" -ForegroundColor Green
 
 $driversPath = "drivers"

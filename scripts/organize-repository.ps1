@@ -1,4 +1,4 @@
-# Organisation du Repository - Tuya Zigbee Project
+﻿# Organisation du Repository - Tuya Zigbee Project
 Write-Host "Organisation du Repository - Tuya Zigbee Project" -ForegroundColor Green
 Write-Host "=============================================" -ForegroundColor Green
 
@@ -278,4 +278,5 @@ foreach ($Folder in $Folders) {
 
 Write-Host "`nOrganisation terminée!" -ForegroundColor Green
 Write-Host "Repository nettoyé et structuré avec succès." -ForegroundColor Cyan 
+
 

@@ -1,4 +1,4 @@
-# ENHANCE SPECIFIC DRIVERS - Tuya Zigbee Project
+﻿# ENHANCE SPECIFIC DRIVERS - Tuya Zigbee Project
 # Script pour ameliorer quelques drivers specifiques
 
 Write-Host "AMELIORATION DE DRIVERS SPECIFIQUES" -ForegroundColor Cyan

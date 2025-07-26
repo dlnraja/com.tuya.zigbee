@@ -1,4 +1,4 @@
-# TEST COMPATIBILITÉ - Tuya Zigbee Project
+﻿# TEST COMPATIBILITÉ - Tuya Zigbee Project
 # Script de test de compatibilité entre PowerShell et Bash (PowerShell version)
 
 # Variables

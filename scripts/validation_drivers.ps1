@@ -1,4 +1,4 @@
-# Script de Validation des Drivers - Tuya Zigbee
+﻿# Script de Validation des Drivers - Tuya Zigbee
 # Validation manuelle des 21 nouveaux drivers crees
 
 Write-Host "Debut de la validation des drivers..." -ForegroundColor Green
@@ -311,7 +311,7 @@ function Generate-ValidationReport {
     }
     
     $reportJson = $report | ConvertTo-Json -Depth 10
-    Set-Content "rapports/VALIDATION_DRIVERS.json" $reportJson -Encoding UTF8
+    Set-Content "docs/reports/VALIDATION_DRIVERS.json" $reportJson -Encoding UTF8
     
     # Creer un rapport lisible
     $readableReport = @"
@@ -365,7 +365,7 @@ foreach ($err in $validation.icon.errors) {
 *Genere automatiquement par GPT-4, Cursor, PowerShell*
 "@
     
-    Set-Content "rapports/VALIDATION_DRIVERS.md" $readableReport -Encoding UTF8
+    Set-Content "docs/reports/VALIDATION_DRIVERS.md" $readableReport -Encoding UTF8
     Write-Host "Rapport de validation genere" -ForegroundColor Green
 }
 
@@ -402,4 +402,5 @@ function Start-ValidationDrivers {
 
 # Execution
 Start-ValidationDrivers 
+
 

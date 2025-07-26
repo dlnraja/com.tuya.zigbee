@@ -1,4 +1,4 @@
-# 🚀 Script de Relance de Toutes les Fonctionnalités - Tuya Zigbee
+﻿# 🚀 Script de Relance de Toutes les Fonctionnalités - Tuya Zigbee
 # Mode YOLO Intelligent - Relance Automatique
 
 Write-Host "🚀 RELANCE DE TOUTES LES FONCTIONNALITÉS - TUYA ZIGBEE" -ForegroundColor Cyan
@@ -8,7 +8,7 @@ Write-Host "==================================================" -ForegroundColor
 # Configuration
 $repoPath = Get-Location
 $timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
-$logFile = "rapports/RELAUNCH-ALL-FEATURES-$timestamp.md"
+$logFile = "docs/reports/RELAUNCH-ALL-FEATURES-$timestamp.md"
 
 # Créer le dossier rapports s'il n'existe pas
 if (!(Test-Path "rapports")) {

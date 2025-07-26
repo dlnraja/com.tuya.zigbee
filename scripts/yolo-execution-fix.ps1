@@ -1,4 +1,4 @@
-# YOLO Execution Fix - Correction des bugs d'exécution
+﻿# YOLO Execution Fix - Correction des bugs d'exécution
 # Mode local prioritaire - Aucune dépendance API Tuya
 
 param(
@@ -82,7 +82,7 @@ $AppJsonContent = @"
     "type": "github",
     "url": "https://github.com/sponsors/tuya-zigbee"
   },
-  "license": "MIT",
+  "docs/LICENSE/LICENSE": "MIT",
   "drivers": [
     {
       "id": "smartplug",

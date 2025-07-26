@@ -1,4 +1,4 @@
-# Amélioration Automatique des Workflows - Tuya Zigbee Project
+﻿# Amélioration Automatique des Workflows - Tuya Zigbee Project
 Write-Host "Amélioration Automatique des Workflows - Tuya Zigbee Project" -ForegroundColor Green
 Write-Host "=======================================================" -ForegroundColor Green
 
@@ -251,10 +251,10 @@ if (!(Test-Path "rapports")) {
     New-Item -ItemType Directory -Path "rapports" -Force
 }
 
-Set-Content -Path "rapports/WORKFLOW_IMPROVEMENT_REPORT_$ReportDate.md" -Value $ReportContent -Encoding UTF8
+Set-Content -Path "docs/reports/WORKFLOW_IMPROVEMENT_REPORT_$ReportDate.md" -Value $ReportContent -Encoding UTF8
 
 Write-Host "`nAmélioration terminée!" -ForegroundColor Green
-Write-Host "Rapport: rapports/WORKFLOW_IMPROVEMENT_REPORT_$ReportDate.md" -ForegroundColor Cyan
+Write-Host "Rapport: docs/reports/WORKFLOW_IMPROVEMENT_REPORT_$ReportDate.md" -ForegroundColor Cyan
 
 Write-Host "`nRésumé:" -ForegroundColor Yellow
 Write-Host "  Workflows traités: $($Workflows.Count)" -ForegroundColor White

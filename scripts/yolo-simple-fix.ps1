@@ -1,4 +1,4 @@
-# YOLO Simple Fix - Correction bugs d'exécution
+﻿# YOLO Simple Fix - Correction bugs d'exécution
 # Mode local prioritaire - Aucune dépendance API Tuya
 
 Write-Host "🚀 YOLO SIMPLE FIX - $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')" -ForegroundColor Red

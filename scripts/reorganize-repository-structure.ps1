@@ -1,4 +1,4 @@
-# Script de réorganisation complète du repository
+﻿# Script de réorganisation complète du repository
 # Mode enrichissement additif - Structure optimisée
 
 Write-Host "📁 RÉORGANISATION COMPLÈTE DU RÉPERTOIRE - Mode additif" -ForegroundColor Green

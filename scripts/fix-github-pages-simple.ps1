@@ -1,4 +1,4 @@
-# Script de correction des bugs GitHub Pages - Version Simplifiee
+﻿# Script de correction des bugs GitHub Pages - Version Simplifiee
 # Mode enrichissement additif
 
 Write-Host "CORRECTION BUGS GITHUB PAGES - Mode enrichissement" -ForegroundColor Green

@@ -1,4 +1,4 @@
-# RECOVER PUSH - Tuya Zigbee Project
+﻿# RECOVER PUSH - Tuya Zigbee Project
 # Script de récupération pour le push
 
 Write-Host "RECOVER PUSH - RECUPERATION PUSH" -ForegroundColor Cyan

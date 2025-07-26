@@ -1,4 +1,4 @@
-# Script de monitoring continu
+﻿# Script de monitoring continu
 Write-Host "📊 DÉMARRAGE DU MONITORING CONTINU" -ForegroundColor Green
 
 while ($true) {

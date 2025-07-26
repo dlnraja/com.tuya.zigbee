@@ -1,4 +1,4 @@
-# FIX DRIVERS SIMPLE - Tuya Zigbee Project
+﻿# FIX DRIVERS SIMPLE - Tuya Zigbee Project
 # Script simple pour corriger la cohérence des drivers
 
 param(

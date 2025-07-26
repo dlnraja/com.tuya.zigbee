@@ -1,4 +1,4 @@
-# Script final d'enrichissement et push
+﻿# Script final d'enrichissement et push
 # Mode enrichissement additif - Push avec versioning
 
 Write-Host "🚀 PUSH FINAL ENRICHISSEMENT - Mode additif" -ForegroundColor Green

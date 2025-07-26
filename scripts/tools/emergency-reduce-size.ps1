@@ -1,4 +1,4 @@
-# EMERGENCY REDUCE SIZE - Tuya Zigbee Project
+﻿# EMERGENCY REDUCE SIZE - Tuya Zigbee Project
 # Script d'urgence pour réduire drastiquement la taille du repository
 
 Write-Host "EMERGENCY REDUCE SIZE - REDUCTION DRASTIQUE" -ForegroundColor Red

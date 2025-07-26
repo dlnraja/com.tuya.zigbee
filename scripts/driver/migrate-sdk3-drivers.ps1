@@ -1,9 +1,9 @@
-# Migration des Drivers SDK3 - Tuya Zigbee Project
+﻿# Migration des Drivers SDK3 - Tuya Zigbee Project
 Write-Host "Migration des Drivers SDK3 - Tuya Zigbee Project" -ForegroundColor Green
 Write-Host "===============================================" -ForegroundColor Green
 
 # Lire le fichier CSV pour identifier les drivers SDK3
-$CSVPath = "rapports/DRIVERS_ANALYSIS_DETAILED_$(Get-Date -Format 'yyyyMMdd').csv"
+$CSVPath = "docs/reports/DRIVERS_ANALYSIS_DETAILED_$(Get-Date -Format 'yyyyMMdd').csv"
 
 if (!(Test-Path $CSVPath)) {
     Write-Host "Fichier d'analyse non trouvé. Exécutez d'abord l'analyse des drivers." -ForegroundColor Red
@@ -156,7 +156,7 @@ if (!(Test-Path "rapports")) {
     New-Item -ItemType Directory -Path "rapports" -Force
 }
 
-Set-Content -Path "rapports/SDK3_MIGRATION_REPORT_$ReportDate.md" -Value $ReportContent -Encoding UTF8
-Write-Host "`nMigration report saved to: rapports/SDK3_MIGRATION_REPORT_$ReportDate.md" -ForegroundColor Green
+Set-Content -Path "docs/reports/SDK3_MIGRATION_REPORT_$ReportDate.md" -Value $ReportContent -Encoding UTF8
+Write-Host "`nMigration report saved to: docs/reports/SDK3_MIGRATION_REPORT_$ReportDate.md" -ForegroundColor Green
 
 Write-Host "`nSDK3 driver migration completed!" -ForegroundColor Green 

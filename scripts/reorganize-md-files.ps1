@@ -1,4 +1,4 @@
-# Script de réorganisation automatique des fichiers Markdown - Universal Universal TUYA Zigbee Device
+﻿# Script de réorganisation automatique des fichiers Markdown - Universal Universal TUYA Zigbee Device
 # Description: Réorganisation automatique des fichiers MD à chaque push avec YOLO mode
 
 Write-Host "Reorganisation automatique des fichiers Markdown..." -ForegroundColor Cyan
@@ -9,8 +9,8 @@ $mdFiles = @(
     "README.md",
     "README.txt",
     "CHANGELOG.md",
-    "CONTRIBUTING.md",
-    "LICENSE",
+    "docs/CONTRIBUTING/CONTRIBUTING.md",
+    "docs/LICENSE/LICENSE",
     "TODO_CURSOR_NATIVE.md",
     "TODO_PROJET.md",
     "TODO_CURSOR_COMPLET.md",
@@ -57,7 +57,7 @@ function Reorganize-MarkdownFiles {
     }
     
     # Déplacer les autres fichiers MD vers docs
-    foreach ($mdFile in @("README.md", "CHANGELOG.md", "CONTRIBUTING.md")) {
+    foreach ($mdFile in @("README.md", "CHANGELOG.md", "docs/CONTRIBUTING/CONTRIBUTING.md")) {
         if (Test-Path $mdFile) {
             $destination = "docs/$mdFile"
             Copy-Item $mdFile $destination -Force
@@ -80,7 +80,7 @@ function Create-MarkdownIndex {
 ### Documentation principale
 - [README.md](README.md) - Documentation principale du projet
 - [CHANGELOG.md](CHANGELOG.md) - Historique des changements
-- [CONTRIBUTING.md](CONTRIBUTING.md) - Guide de contribution
+- [docs/CONTRIBUTING/CONTRIBUTING.md](docs/CONTRIBUTING/CONTRIBUTING.md) - Guide de contribution
 
 ### Fichiers TODO
 - [TODO_CURSOR_NATIVE.md](todo/TODO_CURSOR_NATIVE.md) - TODO principal
@@ -166,7 +166,7 @@ jobs:
         # Copier les fichiers principaux
         cp README.md docs/ 2>/dev/null || echo "README.md non trouve"
         cp CHANGELOG.md docs/ 2>/dev/null || echo "CHANGELOG.md non trouve"
-        cp CONTRIBUTING.md docs/ 2>/dev/null || echo "CONTRIBUTING.md non trouve"
+        cp docs/CONTRIBUTING/CONTRIBUTING.md docs/ 2>/dev/null || echo "docs/CONTRIBUTING/CONTRIBUTING.md non trouve"
         
         # Créer l'index
         cat > docs/INDEX.md << 'EOF'
@@ -177,7 +177,7 @@ jobs:
 ### Documentation principale
 - [README.md](README.md) - Documentation principale du projet
 - [CHANGELOG.md](CHANGELOG.md) - Historique des changements
-- [CONTRIBUTING.md](CONTRIBUTING.md) - Guide de contribution
+- [docs/CONTRIBUTING/CONTRIBUTING.md](docs/CONTRIBUTING/CONTRIBUTING.md) - Guide de contribution
 
 ### Fichiers TODO
 - [TODO_CURSOR_NATIVE.md](todo/TODO_CURSOR_NATIVE.md) - TODO principal
@@ -313,4 +313,5 @@ try {
     Write-Host "Erreur lors de la reorganisation des fichiers Markdown: $($_.Exception.Message)" -ForegroundColor Red
     exit 1
 } 
+
 

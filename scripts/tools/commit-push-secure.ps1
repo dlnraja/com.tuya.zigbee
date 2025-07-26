@@ -1,4 +1,4 @@
-# 🚀 COMMIT PUSH SECURE - Tuya Zigbee Project
+﻿# 🚀 COMMIT PUSH SECURE - Tuya Zigbee Project
 # Script de commit et push sécurisé
 # Powered by GPT-4, Cursor, PowerShell
 

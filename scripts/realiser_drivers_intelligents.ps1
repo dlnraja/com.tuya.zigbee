@@ -1,4 +1,4 @@
-# Script de Realisation Intelligente des Drivers - Tuya Zigbee
+﻿# Script de Realisation Intelligente des Drivers - Tuya Zigbee
 # Realisation de tous les drivers listes de facon intelligente
 
 Write-Host "Debut de la realisation intelligente des drivers..." -ForegroundColor Green
@@ -476,7 +476,7 @@ function Generate-RealizationReport {
     }
     
     $reportJson = $report | ConvertTo-Json -Depth 10
-    Set-Content "rapports/REALISATION_DRIVERS.json" $reportJson -Encoding UTF8
+    Set-Content "docs/reports/REALISATION_DRIVERS.json" $reportJson -Encoding UTF8
     
     # Creer un rapport lisible
     $readableReport = @"
@@ -520,7 +520,7 @@ $(foreach ($pattern in $DRIVER_PATTERNS.Keys) {
 *Genere automatiquement par GPT-4, Cursor, PowerShell*
 "@
     
-    Set-Content "rapports/REALISATION_DRIVERS.md" $readableReport -Encoding UTF8
+    Set-Content "docs/reports/REALISATION_DRIVERS.md" $readableReport -Encoding UTF8
     Write-Host "Rapport de realisation genere" -ForegroundColor Green
 }
 
@@ -551,4 +551,5 @@ function Start-RealisationIntelligente {
 
 # Execution
 Start-RealisationIntelligente 
+
 

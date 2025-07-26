@@ -1,4 +1,4 @@
-# VALIDATION FINALE - Tuya Zigbee Project
+﻿# VALIDATION FINALE - Tuya Zigbee Project
 # Script de validation finale et push avec timeouts
 
 param(

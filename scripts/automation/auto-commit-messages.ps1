@@ -1,4 +1,4 @@
-# Auto Commit Messages Script - Tuya Zigbee Project
+﻿# Auto Commit Messages Script - Tuya Zigbee Project
 Write-Host "Auto Commit Messages Generator" -ForegroundColor Green
 Write-Host "=============================" -ForegroundColor Green
 

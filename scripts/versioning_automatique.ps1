@@ -1,4 +1,4 @@
-# Script de Versionning Automatique - Tuya Zigbee
+﻿# Script de Versionning Automatique - Tuya Zigbee
 # Phase 14 : Systeme complet de versionning automatique
 
 Write-Host "Debut du versionning automatique..." -ForegroundColor Green
@@ -286,7 +286,7 @@ function Generate-VersioningReport {
     }
     
     $reportJson = $report | ConvertTo-Json -Depth 10
-    Set-Content "rapports/VERSIONING_REPORT.json" $reportJson -Encoding UTF8
+    Set-Content "docs/reports/VERSIONING_REPORT.json" $reportJson -Encoding UTF8
     
     Write-Host "Rapport de versionning genere" -ForegroundColor Green
 }
@@ -344,4 +344,5 @@ function Start-AutoVersioning {
 
 # Execution
 Start-AutoVersioning 
+
 

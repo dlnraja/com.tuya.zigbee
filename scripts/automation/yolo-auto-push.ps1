@@ -1,4 +1,4 @@
-# YOLO AUTO PUSH - Tuya Zigbee Project
+﻿# YOLO AUTO PUSH - Tuya Zigbee Project
 # Script YOLO mode pour nettoyer, valider et pousser automatiquement
 
 Write-Host "YOLO AUTO PUSH - MODE YOLO INTELLIGENT" -ForegroundColor Cyan

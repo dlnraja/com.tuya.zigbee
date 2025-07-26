@@ -1,4 +1,4 @@
-# Test Automation Suite for Tuya Zigbee Project
+﻿# Test Automation Suite for Tuya Zigbee Project
 # Suite de tests pour les automatisations du projet Tuya Zigbee
 # Version: 1.0.0
 # Date: $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")

@@ -1,4 +1,4 @@
-# TEST TIMEOUTS - Tuya Zigbee Project
+﻿# TEST TIMEOUTS - Tuya Zigbee Project
 # Script de test pour verifier le fonctionnement des timeouts
 
 param(

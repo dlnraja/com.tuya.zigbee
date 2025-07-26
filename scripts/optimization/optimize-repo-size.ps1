@@ -1,4 +1,4 @@
-# OPTIMIZE REPO SIZE - Tuya Zigbee Project
+﻿# OPTIMIZE REPO SIZE - Tuya Zigbee Project
 # Script pour réduire drastiquement la taille du repository
 
 param(

@@ -1,4 +1,4 @@
-# Script YOLO MASSIF - Traitement parallèle de tout le projet
+﻿# Script YOLO MASSIF - Traitement parallèle de tout le projet
 Write-Host "🚀 YOLO MASSIF - $(Get-Date -Format 'HH:mm:ss')"
 
 # 1. Mise à jour README avec nouvelles métriques
@@ -239,7 +239,7 @@ $changelogEntry = @"
 "@
 
 # Ajouter l'entrée au début du changelog
-$changelogPath = "docs/CHANGELOG.md"
+$changelogPath = "docs/CHANGELOG/CHANGELOG.md"
 $changelogContent = Get-Content $changelogPath -Raw
 $newChangelog = $changelogEntry + "`n" + $changelogContent
 $newChangelog | Out-File -FilePath $changelogPath -Encoding UTF8

@@ -1,4 +1,4 @@
-# Script Maître d'Enrichissement avec Référentiel Zigbee
+﻿# Script Maître d'Enrichissement avec Référentiel Zigbee
 # Mode enrichissement additif - Référentiel intelligent
 
 Write-Host "🚀 ENRICHISSEMENT MAÎTRE AVEC ZIGBEE - Mode additif" -ForegroundColor Green

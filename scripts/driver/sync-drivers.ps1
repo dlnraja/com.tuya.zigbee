@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+﻿<<<<<<< HEAD
 ﻿# SYNC DRIVERS - Tuya Zigbee Project
 # Script de synchronisation des drivers
 
@@ -38,3 +38,4 @@ Get-ChildItem drivers -Directory | ForEach-Object {
   }
 }
 >>>>>>> 2968528d15b99b4e9d4174069d0bf00c50d07887
+

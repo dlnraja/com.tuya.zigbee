@@ -1,4 +1,4 @@
-# Script Maître d'Enrichissement Complet - Universal Tuya Zigbee Device
+﻿# Script Maître d'Enrichissement Complet - Universal Tuya Zigbee Device
 # Mode enrichissement additif - Exécution complète
 
 Write-Host "🚀 ENRICHISSEMENT COMPLET MAÎTRE - Mode additif" -ForegroundColor Green

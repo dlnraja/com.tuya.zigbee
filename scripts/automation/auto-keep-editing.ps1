@@ -1,4 +1,4 @@
-# AUTO KEEP EDITING - Tuya Zigbee Project
+﻿# AUTO KEEP EDITING - Tuya Zigbee Project
 # Script pour maintenir l'édition automatique des fichiers dans Cursor
 
 param(

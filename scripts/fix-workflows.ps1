@@ -1,4 +1,4 @@
-# 🚀 Script de Correction des Workflows GitHub Actions
+﻿# 🚀 Script de Correction des Workflows GitHub Actions
 # Correction automatique des références "main" vers "master" uniquement
 
 Write-Host "🔧 Début de la correction des workflows GitHub Actions..." -ForegroundColor Green
@@ -40,4 +40,5 @@ Write-Host "- Fichiers corrigés: $fixedCount" -ForegroundColor White
 Write-Host "- Fichiers déjà corrects: $($totalCount - $fixedCount)" -ForegroundColor White
 
 Write-Host "🚀 Tous les workflows sont maintenant configurés pour master uniquement!" -ForegroundColor Green 
+
 

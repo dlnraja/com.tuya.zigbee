@@ -1,4 +1,4 @@
-# Script d'enrichissement avancé pour tous les drivers SDK3
+﻿# Script d'enrichissement avancé pour tous les drivers SDK3
 Write-Host "🚀 ENRICHISSEMENT AVANCÉ SDK3 - $(Get-Date -Format 'HH:mm:ss')"
 
 $sdk3Path = "drivers/sdk3"

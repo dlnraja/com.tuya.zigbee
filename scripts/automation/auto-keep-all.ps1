@@ -1,4 +1,4 @@
-# AUTO KEEP ALL - Tuya Zigbee Project
+﻿# AUTO KEEP ALL - Tuya Zigbee Project
 # Script pour automatiser la sauvegarde et conservation de tous les fichiers et étapes
 
 param(

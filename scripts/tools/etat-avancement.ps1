@@ -1,4 +1,4 @@
-# ÉTAT D'AVANCEMENT - Tuya Zigbee Project
+﻿# ÉTAT D'AVANCEMENT - Tuya Zigbee Project
 # Script pour faire un état d'avancement complet des tâches en cours
 
 # Couleurs pour l'affichage

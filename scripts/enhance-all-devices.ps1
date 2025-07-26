@@ -1,4 +1,4 @@
-# Script d'enrichissement de tous les devices Tuya Zigbee
+﻿# Script d'enrichissement de tous les devices Tuya Zigbee
 # Mode additif - Amélioration sans dégradation
 
 Write-Host "🔧 ENRICHISSEMENT DE TOUS LES DEVICES - Mode additif" -ForegroundColor Green

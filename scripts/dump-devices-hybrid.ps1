@@ -1,4 +1,4 @@
-# Dump et Recherche Devices - Tuya Zigbee Hybrid Intelligent
+﻿# Dump et Recherche Devices - Tuya Zigbee Hybrid Intelligent
 # Date: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')
 
 Write-Host "🔍 DUMP ET RECHERCHE DEVICES HYBRIDE INTELLIGENT" -ForegroundColor Green

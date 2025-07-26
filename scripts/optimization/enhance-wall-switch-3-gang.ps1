@@ -1,4 +1,4 @@
-# ENHANCE WALL SWITCH 3 GANG - Tuya Zigbee Project
+﻿# ENHANCE WALL SWITCH 3 GANG - Tuya Zigbee Project
 # Script pour ameliorer le driver wall_switch_3_gang avec toutes les fonctionnalites
 
 Write-Host "AMELIORATION WALL SWITCH 3 GANG" -ForegroundColor Cyan

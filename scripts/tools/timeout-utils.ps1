@@ -1,4 +1,4 @@
-# TIMEOUT UTILS - Tuya Zigbee Project
+﻿# TIMEOUT UTILS - Tuya Zigbee Project
 # Module utilitaire pour gerer les timeouts et eviter les boucles infinies
 
 # Configuration des timeouts par defaut

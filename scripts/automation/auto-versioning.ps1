@@ -1,4 +1,4 @@
-# Automatic Versioning System for Tuya Zigbee Project
+﻿# Automatic Versioning System for Tuya Zigbee Project
 # Système de versionning automatique pour le projet Tuya Zigbee
 # Version: 1.0.0
 # Date: $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")

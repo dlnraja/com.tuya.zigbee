@@ -1,4 +1,4 @@
-# 🚀 SCRIPT MAÎTRE D'OPTIMISATION COMPLÈTE - Tuya Zigbee Project
+﻿# 🚀 SCRIPT MAÎTRE D'OPTIMISATION COMPLÈTE - Tuya Zigbee Project
 # Date: $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
 # Objectif: Optimisation complète et réorganisation du projet
 
