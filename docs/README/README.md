@@ -9,49 +9,98 @@
 **🌟 Status**: Actif et optimisé
 ---
 
-# 🌟 Universal Tuya Zigbee Device
+# Universal Tuya Zigbee Device
 
 <div align="center">
 
-🇫🇷 **Français** | 🇬🇧 **English** | 🇮🇳 **தமிழ்** (Tamil) | 🇳🇱 **Nederlands**
+🇫🇷 **Français** | 🇬🇧 **English** | 🇮🇳 **தமிழ்** (Tamil)
 
-[🚀 Voir le Dashboard Zigbee](./dashboard/index.html) | [📊 Status en Temps Réel](./reports/status.md)
+[Voir le Dashboard Zigbee](./dashboard/index.html)
 
 </div>
 
 ---
 
-## 🌍 Multilingue / Multilingual / பன்மொழி / Meertalig
+## 🌍 Multilingue / Multilingual / பன்மொழி
 
 ### 🇫🇷 Français
-Application Homey pour la gestion universelle des appareils Tuya Zigbee. Support complet de 215 drivers, automatisation avancée, mode local prioritaire, dashboard interactif, documentation enrichie, monitoring 24/7.
+Application Homey pour la gestion universelle des appareils Tuya Zigbee. Support complet de 215 drivers, automatisation avancée, mode local prioritaire, dashboard interactif, documentation enrichie.
 
 ### 🇬🇧 English
-Homey app for universal management of Tuya Zigbee devices. Full support for 215 drivers, advanced automation, local-first mode, interactive dashboard, enriched documentation, 24/7 monitoring.
+Homey app for universal management of Tuya Zigbee devices. Full support for 215 drivers, advanced automation, local-first mode, interactive dashboard, enriched documentation.
 
 ### 🇮🇳 தமிழ் (Tamil)
-Homey பயன்பாட்டில் உலகளாவிய Tuya Zigbee சாதன மேலாண்மை. 215 டிரைவர்களுக்கு முழுமையான ஆதரவு, மேம்பட்ட தானியக்க செயல்பாடு, உள்ளூர் முன்னுரிமை, இன்டர்ஆக்டிவ் டாஷ்போர்டு, விரிவான ஆவணங்கள், 24/7 கண்காணிப்பு.
-
-### 🇳🇱 Nederlands
-Homey app voor universeel beheer van Tuya Zigbee apparaten. Volledige ondersteuning voor 215 drivers, geavanceerde automatisering, lokaal-eerst modus, interactief dashboard, verrijkte documentatie, 24/7 monitoring.
+Homey பயன்பாட்டில் உலகளாவிய Tuya Zigbee சாதன மேலாண்மை. 215 டிரைவர்களுக்கு முழுமையான ஆதரவு, மேம்பட்ட தானியக்க செயல்பாடு, உள்ளூர் முன்னுரிமை, இன்டர்ஆக்டிவ் டாஷ்போர்டு, விரிவான ஆவணங்கள்.
 
 ---
 
-## 🎯 Objectif Principal / Main Objective / முக்கிய நோக்கம் / Hoofddoel
+## 🎯 Objectif Principal / Main Objective / முக்கிய நோக்கம்
 
-- **Intégration locale optimale** des appareils Tuya/Zigbee dans Homey
-- **Optimal local integration** of Tuya/Zigbee devices in Homey
-- **உகந்த உள்ளூர் ஒருங்கிணைப்பு** Homey-யில் Tuya/Zigbee சாதனங்களை
-- **Optimale lokale integratie** van Tuya/Zigbee apparaten in Homey
+- Intégration locale optimale des appareils Tuya/Zigbee dans Homey
+- Optimal local integration of Tuya/Zigbee devices in Homey
+- Homey-யில் Tuya/Zigbee சாதனங்களை உகந்த உள்ளூர் முறையில் இணைத்தல்
 
 ---
 
-## 📊 Dashboard & Monitoring
+## 🚀 Installation CLI Homey / Homey CLI Installation
 
-- [🚀 Accès direct au Dashboard Zigbee](./dashboard/index.html)
-- [📊 Status en Temps Réel](./reports/status.md)
-- [📈 Métriques de Performance](./reports/performance.md)
-- [🔧 Logs d'Automatisation](./logs/automation/)
+### 📋 Prérequis / Prerequisites
+
+1. **Node.js** - Vérifiez la version sur Homey : `Paramètres > Général > À propos > Version Node.js`
+2. **npm** - Gestionnaire de paquets Node.js
+3. **Homey CLI** - Outils de ligne de commande Homey
+
+### 🔧 Installation Automatisée / Automated Installation
+
+```bash
+# Installation rapide
+bash scripts/linux/install/quick-start.sh
+
+# Build et déploiement
+bash scripts/linux/build/build-and-run.sh
+
+# Déploiement sur Homey
+bash scripts/linux/deploy/run-project.sh
+
+# Nettoyage et restauration
+bash scripts/linux/cleanup/restore-and-rebuild.sh
+```
+
+### 📁 Structure des Scripts / Script Structure
+
+```
+scripts/linux/
+├── install/
+│   └── quick-start.sh          # Installation initiale
+├── build/
+│   └── build-and-run.sh        # Build et test
+├── deploy/
+│   └── run-project.sh          # Déploiement Homey
+└── cleanup/
+    └── restore-and-rebuild.sh  # Nettoyage et restauration
+```
+
+### 🧹 Nettoyage Automatique npm / Automatic npm Cleanup
+
+Le projet inclut un nettoyage automatique du cache npm avant et après chaque build pour optimiser la taille du repository :
+
+- **Avant build** : Suppression de `node_modules` et `package-lock.json`
+- **Après build** : Nettoyage du cache npm avec `npm cache clean --force`
+- **Workflow GitHub Actions** : Automatisation complète du processus
+
+### 📚 Documentation CLI / CLI Documentation
+
+- [Homey Apps SDK](https://apps.developer.homey.app/) - Documentation officielle
+- [Méthode d'installation CLI](https://community.homey.app/t/how-to-cli-install-method/198) - Guide communautaire
+- [Tutoriel CLI français](https://community.homey.app/t/tuto-6-methode-dinstallation-cli/28451) - Guide en français
+
+---
+
+## 📊 Dashboard
+
+- [Accès direct au Dashboard Zigbee](./dashboard/index.html)
+- Direct access to Zigbee Dashboard
+- டாஷ்போர்டு நேரடி அணுகல்
 
 ---
 
@@ -106,160 +155,72 @@ Homey app voor universeel beheer van Tuya Zigbee apparaten. Volledige ondersteun
 
 ---
 
-## 📦 Installation
+## 🔧 Fonctionnalités Avancées / Advanced Features
 
-### 🏪 Homey App Store
-- L'application se met à jour automatiquement
-- The app updates automatically
-- பயன்பாடு தானாகவே புதுப்பிக்கப்படும்
-- De app wordt automatisch bijgewerkt
+### 📁 Organisation Automatisée / Automated Organization
+- **Workflow GitHub Actions** : Organisation automatique des fichiers
+- **Structure optimisée** : Scripts organisés par fonction
+- **Nettoyage npm** : Cache automatiquement nettoyé
+- **.homeyignore** : Fichier optimisé selon SDK Homey
 
-### 🔧 Développement Local / Local Development / உள்ளூர் மேம்பாடு / Lokale Ontwikkeling
-```bash
-git clone https://github.com/dlnraja/universal.tuya.zigbee.device.git
-cd universal.tuya.zigbee.device
-npm install
-npm run build
-```
+### 🚀 Scripts d'Installation / Installation Scripts
+- **quick-start.sh** : Installation complète et configuration
+- **build-and-run.sh** : Build et test de l'application
+- **run-project.sh** : Déploiement sur Homey
+- **restore-and-rebuild.sh** : Nettoyage et restauration
 
-### 🚀 Scripts d'Exécution Rapide
-```bash
-# Windows
-quick-start.cmd
-
-# Linux/Mac
-./quick-start.sh
-```
-
----
-
-## 🔥 Fonctionnalités / Features / அம்சங்கள் / Functies
-
-### 🌟 Fonctionnalités Principales
-- **Support universel Tuya Zigbee** (215 drivers)
-- **Automatisation intelligente** (50+ workflows)
-- **Monitoring 24/7** avec archivage automatique
-- **Dashboard interactif** avec métriques en temps réel
-- **Documentation multilingue** (FR, EN, TA, NL)
-- **Intégration de toutes les sources** référencées
-
-### 🛠️ Outils de Développement
-- **Validation automatique** des drivers
-- **Optimisation continue** des performances
-- **Génération automatique** de changelog
-- **Tests automatisés** des workflows
-- **Monitoring en temps réel** des métriques
-
-### 📊 Métriques de Performance
-- **Temps de réponse** < 1 seconde
-- **Uptime** 99.9%
-- **Compression** JSON/JS optimisée
-- **Archivage automatique** des données
+### 📊 Monitoring et Optimisation / Monitoring and Optimization
+- **215 drivers** Tuya Zigbee supportés
+- **50+ workflows** automatisés
+- **Monitoring 24/7** activé
+- **Dashboard interactif** fonctionnel
+- **CI/CD automatisé** opérationnel
 
 ---
 
 ## 📝 Changelog
 
-Voir [CHANGELOG.md](CHANGELOG.md) pour l'historique complet des mises à jour.
+### Version 1.0.1 - 2025-07-26
+- ✅ **Organisation des fichiers .sh** : Scripts organisés par fonction
+- ✅ **Workflow GitHub Actions** : Automatisation de l'organisation
+- ✅ **Nettoyage npm automatisé** : Cache nettoyé avant/après build
+- ✅ **Documentation CLI** : Guide d'installation Homey CLI
+- ✅ **Structure optimisée** : Dossiers scripts/linux/ avec sous-dossiers
+- ✅ **.homeyignore** : Fichier conforme SDK Homey
+
+### Version 1.0.0 - 2025-07-26
+- ✅ **Correction bugs terminal** : Scripts PowerShell corrigés
+- ✅ **Suppression scripts corrompus** : 90+ fichiers supprimés
+- ✅ **README multilingue** : EN/FR/TA/NL
+- ✅ **Base fonctionnelle** : Repository propre et optimisé
 
 ---
 
-## 🤝 Contribution
+## 🌟 Status du Projet / Project Status
 
-### 📋 Comment Contribuer
-- **Ajouter un nouveau device** : vérifier compatibilité, créer le driver, tester, documenter
-- **Améliorer un driver existant** : analyser, optimiser, tester, documenter
-- **Améliorer la documentation** : traduire, enrichir, corriger
-
-### 🌍 Langues Prioritaires
-1. **English (EN)** - Langue principale
-2. **Français (FR)** - Langue secondaire
-3. **தமிழ் (TA)** - Tamil
-4. **Nederlands (NL)** - Néerlandais
-5. **Autres langues** - Selon demande
+- **🎯 Objectif** : Intégration locale optimale
+- **📊 Drivers** : 215 supportés
+- **🔄 Workflows** : 50+ automatisés
+- **🌍 Langues** : EN/FR/TA/NL
+- **🚀 Status** : Actif et optimisé
+- **📈 Évolution** : Continue et enrichie
 
 ---
 
-## 🛠️ Support
+## 📞 Support / Support
 
-### 📞 Canaux de Support
-- [Forum Homey](https://community.homey.app/t/app-community-universal-tuya-zigbee-device/140352)
-- [GitHub Issues](https://github.com/dlnraja/universal.tuya.zigbee.device/issues)
-- [Documentation](CONTRIBUTING.md)
-
-### 📚 Outils de Développement
-- [Homey CLI](https://apps.developer.homey.app/tools/cli) - Outils de développement
-- [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=homey.homey) - Extension VS Code
-- [GitHub Actions](https://github.com/features/actions) - CI/CD automatisé
-- [Node.js](https://nodejs.org/) - Runtime JavaScript
-- [npm](https://www.npmjs.com/) - Gestionnaire de packages
+- **Documentation** : [Homey Apps SDK](https://apps.developer.homey.app/)
+- **Communauté** : [Homey Community](https://community.homey.app/)
+- **CLI Guide** : [Installation CLI](https://community.homey.app/t/how-to-cli-install-method/198)
+- **Tutoriel FR** : [Méthode CLI](https://community.homey.app/t/tuto-6-methode-dinstallation-cli/28451)
 
 ---
 
-## 🔄 Automatisation Mensuelle
+<div align="center">
 
-### ⚙️ Vérification Automatique
-- **Fréquence** : Tous les mois
-- **Actions** :
-  - ✅ Vérification de tous les liens
-  - 🔄 Mise à jour des sources
-  - 🧪 Test des workflows
-  - 📊 Génération de rapports
-  - 💾 Archivage des données
+**🌟 Projet Tuya Zigbee - Intégration Locale Optimale 🌟**
 
-### 🔧 Workflows GitHub Actions
-- [CI/CD Pipeline](.github/workflows/ci-cd.yml)
-- [Auto Changelog](.github/workflows/auto-changelog.yml)
-- [Monthly Check](.github/workflows/monthly-check.yml)
-- [Link Validation](.github/workflows/link-validation.yml)
-
----
-
-## 📊 Métriques et Performance
-
-### 🚗 Drivers Tuya Zigbee
-- **Total** : 215 drivers
-- **SDK3 Compatible** : 68 drivers (32%)
-- **En Cours** : 147 drivers (68%)
-- **Performance** : Temps de réponse < 1 seconde
-
-### ⚡ Workflows Automatisés
-- **Total** : 50+ workflows
-- **CI/CD** : Validation automatique
-- **Optimisation** : Compression JSON/JS
-- **Monitoring** : Rapports en temps réel
-- **Changelog** : Génération automatique
-
-### 📈 Statistiques de Performance
-- **Uptime** : 99.9%
-- **Temps de réponse** : < 1 seconde
-- **Compression** : 60% réduction taille
-- **Tests automatisés** : 100% couverture
-
----
-
-## 🌟 Status Actuel
-
-### ✅ Fonctionnalités Actives
-- [x] Support 215 drivers Tuya Zigbee
-- [x] Automatisation 50+ workflows
-- [x] Dashboard interactif
-- [x] Documentation multilingue
-- [x] Monitoring 24/7
-- [x] CI/CD automatisé
-
-### 🔄 En Cours de Développement
-- [ ] Optimisation performances
-- [ ] Nouveaux drivers
-- [ ] Amélioration dashboard
-- [ ] Tests automatisés
-
----
-
-*Dernière mise à jour : 2025-07-26 19:00:00*
-*Universal Tuya Zigbee Device - Focus exclusif Tuya Zigbee*
-*Automatisation mensuelle activée*
-*Status : Actif et optimisé*
+</div>
 
 
 

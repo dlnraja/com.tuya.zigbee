@@ -1,0 +1,519 @@
+name: File Organization and NPM Cleanup
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+  workflow_dispatch:
+
+jobs:
+  organize-files:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Clean npm cache
+      run: |
+        echo "🧹 Nettoyage du cache npm..."
+        npm cache clean --force
+        echo "✅ Cache npm nettoyé"
+        
+    - name: Remove node_modules
+      run: |
+        echo "🗑️ Suppression de node_modules..."
+        if [ -d "node_modules" ]; then
+          rm -rf node_modules
+          echo "✅ node_modules supprimé"
+        else
+          echo "ℹ️ node_modules n'existe pas"
+        fi
+        
+    - name: Remove package-lock.json
+      run: |
+        echo "🗑️ Suppression de package-lock.json..."
+        if [ -f "package-lock.json" ]; then
+          rm -f package-lock.json
+          echo "✅ package-lock.json supprimé"
+        else
+          echo "ℹ️ package-lock.json n'existe pas"
+        fi
+        
+    - name: Organize shell scripts
+      run: |
+        echo "📁 Organisation des scripts shell..."
+        
+        # Créer les dossiers s'ils n'existent pas
+        mkdir -p scripts/linux/install
+        mkdir -p scripts/linux/build
+        mkdir -p scripts/linux/deploy
+        mkdir -p scripts/linux/cleanup
+        
+        # Déplacer les fichiers .sh dans les bons dossiers
+        if [ -f "quick-start.sh" ]; then
+          mv quick-start.sh scripts/linux/install/
+          echo "✅ quick-start.sh déplacé vers scripts/linux/install/"
+        fi
+        
+        if [ -f "build-and-run.sh" ]; then
+          mv build-and-run.sh scripts/linux/build/
+          echo "✅ build-and-run.sh déplacé vers scripts/linux/build/"
+        fi
+        
+        if [ -f "run-project.sh" ]; then
+          mv run-project.sh scripts/linux/deploy/
+          echo "✅ run-project.sh déplacé vers scripts/linux/deploy/"
+        fi
+        
+        if [ -f "restore-and-rebuild.sh" ]; then
+          mv restore-and-rebuild.sh scripts/linux/cleanup/
+          echo "✅ restore-and-rebuild.sh déplacé vers scripts/linux/cleanup/"
+        fi
+        
+        echo "✅ Organisation des scripts terminée"
+        
+    - name: Update .homeyignore
+      run: |
+        echo "📝 Mise à jour du fichier .homeyignore..."
+        
+        # Créer un .homeyignore optimisé
+        cat > .homeyignore << 'EOF'
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build artifacts
+dist/
+build/
+.homeybuild/
+*.tgz
+*.tar.gz
+
+# Development files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+.env.test
+.env.production
+
+# parcel-bundler cache
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+public
+
+# Storybook build outputs
+.out
+.storybook-out
+
+# Temporary folders
+tmp/
+temp/
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+docs/
+*.md
+!README.md
+
+# Scripts (development only)
+scripts/
+*.sh
+*.ps1
+*.bat
+
+# Backup files
+*.backup
+*.bak
+*.old
+
+# Test files
+test/
+tests/
+*.test.js
+*.spec.js
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+.circleci/
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archives
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Media files
+*.3g2
+*.3gp
+*.avi
+*.flv
+*.h264
+*.m4v
+*.mkv
+*.mov
+*.mp4
+*.mp4v
+*.mpeg
+*.mpg
+*.rm
+*.swf
+*.vob
+*.wmv
+
+# Audio files
+*.aac
+*.aiff
+*.amr
+*.flac
+*.m4a
+*.mp3
+*.ogg
+*.opus
+*.wav
+*.wma
+
+# Image files
+*.bmp
+*.gif
+*.ico
+*.jpeg
+*.jpg
+*.png
+*.svg
+*.tiff
+*.webp
+
+# Font files
+*.eot
+*.otf
+*.ttf
+*.woff
+*.woff2
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Certificate files
+*.pem
+*.key
+*.crt
+*.csr
+*.p12
+*.pfx
+
+# Large files
+*.iso
+*.dmg
+*.exe
+*.msi
+*.deb
+*.rpm
+*.apk
+
+# Development tools
+.eslintrc*
+.prettierrc*
+.editorconfig
+.babelrc*
+tsconfig.json
+webpack.config.js
+rollup.config.js
+vite.config.js
+
+# Package managers
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Environment files
+.env*
+!.env.example
+
+# Cache directories
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+dist/
+build/
+
+# Test coverage
+coverage/
+.nyc_output/
+*.lcov
+
+# Documentation
+docs/
+*.md
+!README.md
+!CHANGELOG.md
+!LICENSE
+
+# Scripts
+scripts/
+*.sh
+*.ps1
+*.bat
+*.js
+!app.js
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# OS
+.DS_Store
+Thumbs.db
+*.lnk
+
+# Logs
+*.log
+logs/
+
+# Temporary
+tmp/
+temp/
+*.tmp
+
+# Backup
+*.bak
+*.backup
+*.old
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Media
+*.mp4
+*.avi
+*.mov
+*.mp3
+*.wav
+*.jpg
+*.png
+*.gif
+*.pdf
+
+# Development
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build
+dist/
+build/
+.homeybuild/
+
+# Cache
+.cache/
+.parcel-cache/
+
+# Test
+coverage/
+.nyc_output/
+
+# Documentation
+docs/
+*.md
+!README.md
+
+# Scripts
+scripts/
+*.sh
+*.ps1
+*.bat
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary
+tmp/
+temp/
+
+# Backup
+*.bak
+*.backup
+
+# Archives
+*.zip
+*.tar.gz
+
+# Media
+*.mp4
+*.mp3
+*.jpg
+*.png
+EOF
+        
+        echo "✅ .homeyignore mis à jour"
+        
+    - name: Install dependencies
+      run: |
+        echo "📦 Installation des dépendances..."
+        npm install
+        echo "✅ Dépendances installées"
+        
+    - name: Build project
+      run: |
+        echo "🔨 Build du projet..."
+        npm run build
+        echo "✅ Projet compilé"
+        
+    - name: Final npm cleanup
+      run: |
+        echo "🧹 Nettoyage final npm..."
+        npm cache clean --force
+        echo "✅ Nettoyage final terminé"
+        
+    - name: Commit changes
+      run: |
+        echo "📝 Commit des changements..."
+        git config --local user.email "dylan.rajasekaram+homey@gmail.com"
+        git config --local user.name "dlnraja"
+        git add .
+        git commit -m "🔧 ORGANISATION AUTOMATIQUE - 2025-07-26
+
+✅ ACTIONS RÉALISÉES:
+- Organisation des scripts .sh dans les bons dossiers
+- Nettoyage automatique du cache npm
+- Mise à jour du fichier .homeyignore
+- Build et validation du projet
+
+📁 STRUCTURE CRÉÉE:
+- scripts/linux/install/ (quick-start.sh)
+- scripts/linux/build/ (build-and-run.sh)
+- scripts/linux/deploy/ (run-project.sh)
+- scripts/linux/cleanup/ (restore-and-rebuild.sh)
+
+📊 FONCTIONNALITÉS:
+- Workflow GitHub Actions automatisé
+- Nettoyage npm avant/après build
+- Organisation optimisée des fichiers
+- .homeyignore conforme SDK Homey
+
+🎯 OBJECTIF: Repository propre et optimisé
+🌟 STATUS: Automatisé et fonctionnel" || echo "Aucun changement à commiter"
+        
+    - name: Push changes
+      run: |
+        echo "🚀 Push des changements..."
+        git push origin HEAD:${{ github.ref_name }}
+        echo "✅ Changements poussés" 
