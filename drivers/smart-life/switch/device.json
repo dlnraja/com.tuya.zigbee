@@ -1,0 +1,14 @@
+{
+  "id": "switch",
+  "title": {
+    "en": "Tuya Smart Life Switch",
+    "fr": "Interrupteur Tuya Smart Life",
+    "nl": "Tuya Smart Life Schakelaar"
+  },
+  "icon": "/assets/icon.svg",
+  "class": "switch",
+  "capabilities": ["onoff"],
+  "local": true,
+  "noApiRequired": true,
+  "smartLife": true
+} 
