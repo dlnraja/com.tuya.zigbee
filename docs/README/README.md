@@ -106,13 +106,30 @@ bash scripts/linux/cleanup/restore-and-rebuild.sh
 ```
 scripts/linux/
 ├── install/
-│   └── quick-start.sh          # Installation initiale
+│   ├── quick-start.sh          # Installation initiale
+│   └── linux-setup.sh          # Configuration Linux
 ├── build/
 │   └── build-and-run.sh        # Build et test
 ├── deploy/
 │   └── run-project.sh          # Déploiement Homey
-└── cleanup/
-    └── restore-and-rebuild.sh  # Nettoyage et restauration
+├── cleanup/
+│   ├── restore-and-rebuild.sh  # Nettoyage et restauration
+│   ├── fix-all-bugs.sh         # Correction des bugs
+│   └── cross-platform-fix.sh   # Correction multi-plateforme
+├── validation/
+│   └── validate-all-drivers.sh # Validation des drivers
+├── enhancement/
+│   ├── enhance-all-drivers.sh  # Amélioration des drivers
+│   ├── enhance-all-workflows.sh # Amélioration des workflows
+│   └── zigbee-referencial-creator.sh # Création référentiel Zigbee
+├── testing/
+│   └── test-workflows.sh       # Tests des workflows
+└── automation/
+    ├── auto-commit-push-multilingual.sh # Commit/push multilingue
+    ├── complete-enrichment-master.sh    # Enrichissement complet
+    ├── update-dashboard-auto.sh         # Mise à jour dashboard
+    ├── universal-runner.sh              # Exécuteur universel
+    └── final-summary.sh                 # Résumé final
 ```
 
 ### 🧹 Nettoyage Automatique npm / Automatic npm Cleanup
@@ -122,6 +139,17 @@ Le projet inclut un nettoyage automatique du cache npm avant et après chaque bu
 - **Avant build** : Suppression de `node_modules` et `package-lock.json`
 - **Après build** : Nettoyage du cache npm avec `npm cache clean --force`
 - **Workflow GitHub Actions** : Automatisation complète du processus
+
+### 🔄 Automatisation Mensuelle / Monthly Automation
+
+Le projet inclut une automatisation mensuelle complète qui reprend toutes les contraintes :
+
+- **Organisation automatique** : Scripts .sh organisés par catégorie
+- **Validation des contraintes** : Vérification de la structure et des fichiers essentiels
+- **Mise à jour .homeyignore** : Optimisation selon SDK Homey
+- **Build et validation** : Test complet du projet
+- **Nettoyage npm** : Cache automatiquement nettoyé
+- **Programmation** : Exécution le 1er du mois à 4h00 UTC
 
 ### 📚 Documentation CLI / CLI Documentation
 
@@ -214,6 +242,13 @@ Le projet inclut un nettoyage automatique du cache npm avant et après chaque bu
 ---
 
 ## 📝 Changelog Complet / Complete Changelog
+
+### Version 1.0.3 - 2025-07-26 19:30:00
+- ✅ **Organisation optimisée des scripts .sh** : Structure par catégorie (install, build, deploy, cleanup, validation, enhancement, testing, automation)
+- ✅ **Automatisation mensuelle** : Workflow GitHub Actions pour maintenance automatique
+- ✅ **Validation des contraintes** : Vérification automatique de la structure et des fichiers essentiels
+- ✅ **Structure complète** : 8 catégories de scripts organisés logiquement
+- ✅ **Maintenance automatique** : Programmation mensuelle avec toutes les contraintes du projet
 
 ### Version 1.0.2 - 2025-07-26 19:15:00
 - ✅ **Organisation des fichiers .sh** : Scripts organisés par fonction
