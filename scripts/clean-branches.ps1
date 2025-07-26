@@ -1,4 +1,4 @@
-# Script de nettoyage des branches et optimisation des commits
+﻿# Script de nettoyage des branches et optimisation des commits
 # Mode enrichissement additif - Nettoyage GMT+2 Paris
 
 Write-Host "🧹 NETTOYAGE BRANCHES ET COMMITS - Mode enrichissement" -ForegroundColor Green

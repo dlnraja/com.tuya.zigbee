@@ -1,4 +1,4 @@
-# YOLO CLEAN HISTORY - Tuya Zigbee Project
+﻿# YOLO CLEAN HISTORY - Tuya Zigbee Project
 # Script pour nettoyer complètement l'historique Git des fichiers volumineux
 
 Write-Host "YOLO CLEAN HISTORY - NETTOYAGE HISTORIQUE GIT" -ForegroundColor Cyan

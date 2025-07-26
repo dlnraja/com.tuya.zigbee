@@ -1,4 +1,4 @@
-# 🔧 FIX PROJECT SAFE - Tuya Zigbee Project
+﻿# 🔧 FIX PROJECT SAFE - Tuya Zigbee Project
 # Script de correction sécurisée du projet
 # Powered by GPT-4, Cursor, PowerShell
 

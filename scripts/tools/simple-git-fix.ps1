@@ -1,4 +1,4 @@
-# SIMPLE GIT FIX - Tuya Zigbee Project
+﻿# SIMPLE GIT FIX - Tuya Zigbee Project
 # Script simple pour configurer Git pour Cursor
 
 Write-Host "SIMPLE GIT FIX - CONFIGURATION POUR CURSOR" -ForegroundColor Cyan

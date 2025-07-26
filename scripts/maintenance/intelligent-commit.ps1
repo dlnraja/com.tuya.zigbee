@@ -1,4 +1,4 @@
-# Script de commit intelligent
+﻿# Script de commit intelligent
 Write-Host "🚀 COMMIT ET PUSH INTELLIGENT" -ForegroundColor Green
 
 # Vérifier l'état du git

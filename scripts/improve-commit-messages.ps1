@@ -1,4 +1,4 @@
-# Script d'amélioration des messages de commit - Universal Universal TUYA Zigbee Device
+﻿# Script d'amélioration des messages de commit - Universal Universal TUYA Zigbee Device
 # Description: Amélioration automatique des messages de commit avec icônes et emojis
 
 Write-Host "Amelioration des messages de commit..." -ForegroundColor Cyan
@@ -169,4 +169,5 @@ try {
     Write-Host "Erreur lors de l'amelioration des messages de commit: $($_.Exception.Message)" -ForegroundColor Red
     exit 1
 } 
+
 

@@ -1,4 +1,4 @@
-# Vérification Basique du Repository - Tuya Zigbee Project
+﻿# Vérification Basique du Repository - Tuya Zigbee Project
 Write-Host "Vérification Basique du Repository - Tuya Zigbee Project" -ForegroundColor Green
 Write-Host "==================================================" -ForegroundColor Green
 
@@ -142,7 +142,7 @@ $MonitoringScript += "`$ReportContent += '`nDate: ' + (Get-Date -Format 'yyyy-MM
 $MonitoringScript += "`$ReportContent += 'Workflows: ' + (Get-ChildItem '.github/workflows' -Filter '*.yml' | Measure-Object).Count`n"
 $MonitoringScript += "`$ReportContent += 'Scripts: ' + (Get-ChildItem 'scripts' -Recurse -Filter '*.ps1' | Measure-Object).Count`n"
 $MonitoringScript += "if (!(Test-Path 'rapports')) { New-Item -ItemType Directory -Path 'rapports' -Force }`n"
-$MonitoringScript += "Set-Content -Path 'rapports/MONITORING_REPORT_' + `$ReportDate + '.md' -Value `$ReportContent -Encoding UTF8`n"
+$MonitoringScript += "Set-Content -Path 'docs/reports/MONITORING_REPORT_' + `$ReportDate + '.md' -Value `$ReportContent -Encoding UTF8`n"
 $MonitoringScript += "Write-Host '✅ Rapport de monitoring généré' -ForegroundColor Green`n"
 
 Set-Content -Path "scripts/automation/monitoring.ps1" -Value $MonitoringScript -Encoding UTF8
@@ -195,9 +195,10 @@ $FinalReport += "2. Monitoring Script - Surveillance continue`n"
 $FinalReport += "3. Verification Workflow - Vérification automatique`n"
 
 $ReportDate = Get-Date -Format "yyyyMMdd"
-Set-Content -Path "rapports/BASIC_CHECK_REPORT_$ReportDate.md" -Value $FinalReport -Encoding UTF8
+Set-Content -Path "docs/reports/BASIC_CHECK_REPORT_$ReportDate.md" -Value $FinalReport -Encoding UTF8
 
 Write-Host "`n🎉 VÉRIFICATION TERMINÉE !" -ForegroundColor Green
 Write-Host "Repository vérifié, fallbacks créés, automatisations implémentées." -ForegroundColor Cyan
-Write-Host "Rapport: rapports/BASIC_CHECK_REPORT_$ReportDate.md" -ForegroundColor Yellow 
+Write-Host "Rapport: docs/reports/BASIC_CHECK_REPORT_$ReportDate.md" -ForegroundColor Yellow 
+
 

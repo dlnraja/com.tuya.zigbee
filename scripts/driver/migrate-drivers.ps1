@@ -1,4 +1,4 @@
-# Script de migration des drivers
+﻿# Script de migration des drivers
 Write-Host "🔄 MIGRATION DES DRIVERS" -ForegroundColor Green
 
 $DriversDir = "drivers"

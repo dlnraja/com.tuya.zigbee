@@ -1,4 +1,4 @@
-# 🚀 Script Simple Final de Relance - Tuya Zigbee
+﻿# 🚀 Script Simple Final de Relance - Tuya Zigbee
 # Mode YOLO Intelligent
 
 Write-Host "🚀 RELANCE SIMPLE FINALE - TUYA ZIGBEE" -ForegroundColor Cyan
@@ -7,7 +7,7 @@ Write-Host "==================================================" -ForegroundColor
 
 # Configuration
 $timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
-$logFile = "rapports/RELAUNCH-SIMPLE-FINAL-$timestamp.md"
+$logFile = "docs/reports/RELAUNCH-SIMPLE-FINAL-$timestamp.md"
 
 # Créer le dossier rapports s'il n'existe pas
 if (!(Test-Path "rapports")) {

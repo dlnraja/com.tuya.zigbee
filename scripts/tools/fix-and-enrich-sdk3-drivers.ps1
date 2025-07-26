@@ -1,4 +1,4 @@
-# FIX & ENRICH SDK3 DRIVERS - Tuya Zigbee Project
+﻿# FIX & ENRICH SDK3 DRIVERS - Tuya Zigbee Project
 # Script ultra-robuste pour corriger et enrichir tous les drivers SDK3
 
 Write-Host "FIX & ENRICH SDK3 DRIVERS - Tuya Zigbee Project" -ForegroundColor Cyan
@@ -137,7 +137,7 @@ foreach ($driverFolder in $driverFolders) {
 
 # Rapport final
 $ReportDate = Get-Date -Format "yyyyMMdd_HHmmss"
-$ReportPath = "rapports/SDK3_FIX_ENRICH_REPORT_$ReportDate.md"
+$ReportPath = "docs/reports/SDK3_FIX_ENRICH_REPORT_$ReportDate.md"
 $ReportContent = "# Rapport Correction & Enrichissement SDK3 - Tuya Zigbee Project`n`n"
 $ReportContent += "Date: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')`n"
 $ReportContent += "Drivers traités: $totalDrivers`nDrivers corrigés: $fixedDrivers`nDrivers enrichis: $enrichedDrivers`nCompose.json erreurs: $composeJsonErrors`n`n"

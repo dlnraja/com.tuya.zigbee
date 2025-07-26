@@ -1,4 +1,4 @@
-# 🚀 RESOLVE CONFLICTS - Tuya Zigbee Project
+﻿# 🚀 RESOLVE CONFLICTS - Tuya Zigbee Project
 # Script automatique de résolution de conflits PR
 
 param(
@@ -16,8 +16,8 @@ param(
 
 #### 📚 **DOCUMENTATION**
 - **README.md** : Documentation complète multilingue
-- **CODE_OF_CONDUCT.md** : Guide de contribution
-- **CONTRIBUTING.md** : Processus de développement
+- **docs/CODE_OF_CONDUCT/CODE_OF_CONDUCT.md** : Guide de contribution
+- **docs/CONTRIBUTING/CONTRIBUTING.md** : Processus de développement
 - **LOCAL.md** : Documentation locale
 
 #### 🚀 **APPLICATION**

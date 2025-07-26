@@ -1,4 +1,4 @@
-# Script d'enrichissement de tous les workflows GitHub Actions
+﻿# Script d'enrichissement de tous les workflows GitHub Actions
 # Mode enrichissement additif - Amélioration sans dégradation
 
 Write-Host "⚙️ ENRICHISSEMENT DE TOUS LES WORKFLOWS - Mode additif" -ForegroundColor Green

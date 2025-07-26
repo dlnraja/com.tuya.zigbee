@@ -1,4 +1,4 @@
-# VERIFY FIX DRIVERS - Tuya Zigbee Project
+﻿# VERIFY FIX DRIVERS - Tuya Zigbee Project
 # Script pour vérifier et corriger la cohérence de tous les drivers avec le SDK Homey 3
 
 param(

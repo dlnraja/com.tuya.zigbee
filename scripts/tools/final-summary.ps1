@@ -1,4 +1,4 @@
-# Final Summary Script - Tuya Zigbee Project
+﻿# Final Summary Script - Tuya Zigbee Project
 Write-Host "FINAL OPTIMIZATION SUMMARY" -ForegroundColor Green
 Write-Host "============================" -ForegroundColor Green
 

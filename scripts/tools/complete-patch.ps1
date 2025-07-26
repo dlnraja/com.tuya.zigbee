@@ -1,4 +1,4 @@
-<#
+﻿<#
   complete-patch.ps1
   Crée l’ensemble des fichiers / dossiers des 7 commits du 22/07/2025
   puis commit + push

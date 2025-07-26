@@ -1,4 +1,4 @@
-# Script de déplacement des drivers migrés vers SDK3 - Version améliorée
+﻿# Script de déplacement des drivers migrés vers SDK3 - Version améliorée
 Write-Host "🚀 DÉPLACEMENT DRIVERS MIGRÉS - $(Get-Date -Format 'HH:mm:ss')"
 
 $sourcePath = "drivers/in_progress"

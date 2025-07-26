@@ -1,4 +1,4 @@
-# Script de mise à jour des traductions Tuya Zigbee
+﻿# Script de mise à jour des traductions Tuya Zigbee
 # Mode additif - Enrichissement sans dégradation
 
 Write-Host "🌍 MISE À JOUR DES TRADUCTIONS - Mode additif" -ForegroundColor Green

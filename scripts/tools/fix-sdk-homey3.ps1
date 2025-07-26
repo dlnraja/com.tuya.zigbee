@@ -1,4 +1,4 @@
-# FIX SDK HOMEY 3 - Tuya Zigbee Project
+﻿# FIX SDK HOMEY 3 - Tuya Zigbee Project
 # Script pour corriger la syntaxe SDK Homey 3 dans tous les drivers
 
 param(

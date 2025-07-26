@@ -1,4 +1,4 @@
-# Script de traitement de tous les devices TODO et nouveaux
+﻿# Script de traitement de tous les devices TODO et nouveaux
 # Mode enrichissement additif - Amélioration sans dégradation
 
 Write-Host "🔧 TRAITEMENT DE TOUS LES DEVICES - Mode enrichissement" -ForegroundColor Green

@@ -1,4 +1,4 @@
-# Script d'Automatisation Mensuelle Enrichie - Tuya Zigbee
+﻿# Script d'Automatisation Mensuelle Enrichie - Tuya Zigbee
 # Phase 9 : Ajout et enrichissement de tous les devices generiques
 
 Write-Host "Debut de l'automatisation mensuelle enrichie..." -ForegroundColor Green
@@ -212,7 +212,7 @@ function Update-Documentation {
 *Genere automatiquement par GPT-4, Cursor, PowerShell*
 "@
     
-    Set-Content "rapports/AUTOMATISATION_MENSUELLE.md" $report -Encoding UTF8
+    Set-Content "docs/reports/AUTOMATISATION_MENSUELLE.md" $report -Encoding UTF8
     Write-Host "Documentation mise a jour" -ForegroundColor Green
 }
 
@@ -251,7 +251,7 @@ function Start-AutomationMensuelle {
     }
     
     $finalReportJson = $finalReport | ConvertTo-Json -Depth 10
-    Set-Content "rapports/AUTOMATISATION_FINAL.json" $finalReportJson -Encoding UTF8
+    Set-Content "docs/reports/AUTOMATISATION_FINAL.json" $finalReportJson -Encoding UTF8
     
     Write-Host "AUTOMATISATION MENSUELLE TERMINEE AVEC SUCCES!" -ForegroundColor Green
     Write-Host "Resume:" -ForegroundColor Cyan
@@ -264,4 +264,5 @@ function Start-AutomationMensuelle {
 
 # Execution
 Start-AutomationMensuelle 
+
 

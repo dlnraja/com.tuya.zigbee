@@ -1,4 +1,4 @@
-# Migration des Drivers Prioritaires - Tuya Zigbee Project
+﻿# Migration des Drivers Prioritaires - Tuya Zigbee Project
 Write-Host "Migration des Drivers Prioritaires - Tuya Zigbee Project" -ForegroundColor Green
 Write-Host "=====================================================" -ForegroundColor Green
 
@@ -227,7 +227,7 @@ if (!(Test-Path "rapports")) {
     New-Item -ItemType Directory -Path "rapports" -Force
 }
 
-Set-Content -Path "rapports/PRIORITY_MIGRATION_REPORT_$ReportDate.md" -Value $ReportContent -Encoding UTF8
-Write-Host "`nMigration report saved to: rapports/PRIORITY_MIGRATION_REPORT_$ReportDate.md" -ForegroundColor Green
+Set-Content -Path "docs/reports/PRIORITY_MIGRATION_REPORT_$ReportDate.md" -Value $ReportContent -Encoding UTF8
+Write-Host "`nMigration report saved to: docs/reports/PRIORITY_MIGRATION_REPORT_$ReportDate.md" -ForegroundColor Green
 
 Write-Host "`nPriority driver migration completed!" -ForegroundColor Green 

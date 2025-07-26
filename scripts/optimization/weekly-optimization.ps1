@@ -1,4 +1,4 @@
-# 🚀 SCRIPT D'OPTIMISATION HEBDOMADAIRE - Tuya Zigbee Project
+﻿# 🚀 SCRIPT D'OPTIMISATION HEBDOMADAIRE - Tuya Zigbee Project
 # Exécution: .\scripts\weekly-optimization.ps1
 
 Write-Host "🚀 DÉMARRAGE DE L'OPTIMISATION HEBDOMADAIRE" -ForegroundColor Green
@@ -368,7 +368,7 @@ $ReportContent = @"
 *Rapport généré automatiquement par le script Weekly Optimization*
 "@
 
-Set-Content -Path "rapports/WEEKLY_REPORT_$ReportDate.md" -Value $ReportContent -Encoding UTF8
+Set-Content -Path "docs/reports/WEEKLY_REPORT_$ReportDate.md" -Value $ReportContent -Encoding UTF8
 Write-Host "✅ Rapport hebdomadaire généré" -ForegroundColor Green
 
 # 9. COMMIT ET PUSH

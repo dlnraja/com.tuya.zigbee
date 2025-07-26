@@ -1,4 +1,4 @@
-# TEST PR ISSUE WORKFLOW - Tuya Zigbee Project
+﻿# TEST PR ISSUE WORKFLOW - Tuya Zigbee Project
 # Script pour tester et analyser le workflow PR/Issue
 
 Write-Host "TEST PR ISSUE WORKFLOW - ANALYSE ET TEST" -ForegroundColor Cyan

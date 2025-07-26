@@ -1,4 +1,4 @@
-# Auto Monthly Update - Tuya Zigbee Project
+﻿# Auto Monthly Update - Tuya Zigbee Project
 
 param(
     [string]\ = "monthly",
@@ -62,3 +62,4 @@ Write-Host "🚀 Projet prêt pour la prochaine itération"
 Write-Host ""
 
 Write-Host "🔄 MISE À JOUR MENSUELLE TERMINÉE - \23:21:18" -ForegroundColor Green
+

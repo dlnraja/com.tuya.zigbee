@@ -1,4 +1,4 @@
-# TEST AND FIX WORKFLOWS - Tuya Zigbee Project
+﻿# TEST AND FIX WORKFLOWS - Tuya Zigbee Project
 # Script pour tester et corriger tous les workflows GitHub Actions
 
 param(

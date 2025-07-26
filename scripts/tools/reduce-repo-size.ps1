@@ -1,4 +1,4 @@
-# REDUCE REPO SIZE - Tuya Zigbee Project
+﻿# REDUCE REPO SIZE - Tuya Zigbee Project
 # Script simple pour réduire la taille du repository
 
 Write-Host "REDUCE REPO SIZE - REDUCTION DRASTIQUE" -ForegroundColor Cyan

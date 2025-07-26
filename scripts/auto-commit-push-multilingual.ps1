@@ -1,4 +1,4 @@
-# Auto Commit et Push Multilingue - Tuya Zigbee Project
+﻿# Auto Commit et Push Multilingue - Tuya Zigbee Project
 Write-Host "Auto Commit et Push Multilingue - Tuya Zigbee Project" -ForegroundColor Green
 Write-Host "==================================================" -ForegroundColor Green
 
@@ -159,8 +159,9 @@ if (!(Test-Path "rapports")) {
     New-Item -ItemType Directory -Path "rapports" -Force
 }
 
-Set-Content -Path "rapports/MULTILINGUAL_COMMIT_REPORT_$ReportDate.md" -Value $ReportContent -Encoding UTF8
-Write-Host "Rapport multilingue sauvegardé: rapports/MULTILINGUAL_COMMIT_REPORT_$ReportDate.md" -ForegroundColor Green
+Set-Content -Path "docs/reports/MULTILINGUAL_COMMIT_REPORT_$ReportDate.md" -Value $ReportContent -Encoding UTF8
+Write-Host "Rapport multilingue sauvegardé: docs/reports/MULTILINGUAL_COMMIT_REPORT_$ReportDate.md" -ForegroundColor Green
 
 Write-Host "`nAuto Commit et Push Multilingue terminé avec succès!" -ForegroundColor Green 
+
 

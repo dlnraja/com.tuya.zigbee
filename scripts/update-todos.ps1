@@ -1,4 +1,4 @@
-# Script de mise à jour automatique des TODO - Universal Universal TUYA Zigbee Device
+﻿# Script de mise à jour automatique des TODO - Universal Universal TUYA Zigbee Device
 # Description: Synchronisation et mise à jour automatique de tous les fichiers TODO du projet
 
 # Configuration
@@ -214,4 +214,5 @@ try {
     Write-Host "Erreur lors de la mise a jour des TODO: $($_.Exception.Message)" -ForegroundColor Red
     exit 1
 } 
+
 

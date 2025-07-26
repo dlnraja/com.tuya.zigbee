@@ -1,4 +1,4 @@
-# Fix Terminal Bug - Correction double entrée et nettoyage
+﻿# Fix Terminal Bug - Correction double entrée et nettoyage
 # Suppression références 600 features - Focus but principal
 
 Write-Host "🔧 FIX TERMINAL BUG - $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')" -ForegroundColor Red
@@ -151,7 +151,7 @@ $AppJsonFinal = @"
     "type": "github",
     "url": "https://github.com/sponsors/tuya-zigbee"
   },
-  "license": "MIT",
+  "docs/LICENSE/LICENSE": "MIT",
   "drivers": [
     {
       "id": "smartplug",

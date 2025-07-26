@@ -1,4 +1,4 @@
-# Script d'Integration Avancee - Tuya Zigbee
+﻿# Script d'Integration Avancee - Tuya Zigbee
 # Phase 16 : Scraping reel, parsers specialises, detection intelligente
 
 Write-Host "Debut de l'integration avancee..." -ForegroundColor Green
@@ -336,7 +336,7 @@ function Generate-AdvancedIntegrationReport {
     }
     
     $reportJson = $report | ConvertTo-Json -Depth 10
-    Set-Content "rapports/INTEGRATION_AVANCEE.json" $reportJson -Encoding UTF8
+    Set-Content "docs/reports/INTEGRATION_AVANCEE.json" $reportJson -Encoding UTF8
     
     # Creer un rapport lisible
     $readableReport = @"
@@ -396,7 +396,7 @@ $(foreach ($class in $analytics.class_distribution.Keys) {
 *Genere automatiquement par GPT-4, Cursor, PowerShell*
 "@
     
-    Set-Content "rapports/INTEGRATION_AVANCEE.md" $readableReport -Encoding UTF8
+    Set-Content "docs/reports/INTEGRATION_AVANCEE.md" $readableReport -Encoding UTF8
     Write-Host "Rapport d'integration avancee genere" -ForegroundColor Green
 }
 
@@ -434,4 +434,5 @@ function Start-IntegrationAvancee {
 
 # Execution
 Start-IntegrationAvancee 
+
 

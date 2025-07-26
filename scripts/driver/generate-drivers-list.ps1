@@ -1,4 +1,4 @@
-# 🚀 Script de Génération Automatique de la Liste des Drivers
+﻿# 🚀 Script de Génération Automatique de la Liste des Drivers
 # Mode YOLO Intelligent - Génération automatique
 
 param(

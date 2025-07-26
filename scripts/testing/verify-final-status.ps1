@@ -1,4 +1,4 @@
-# Script de verification de l'etat final du projet
+﻿# Script de verification de l'etat final du projet
 # Mode YOLO Intelligent - Verification complete
 
 Write-Host "VERIFICATION FINALE - MODE YOLO INTELLIGENT" -ForegroundColor Green

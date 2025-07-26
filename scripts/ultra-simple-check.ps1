@@ -1,4 +1,4 @@
-# Vérification Ultra-Simple du Repository
+﻿# Vérification Ultra-Simple du Repository
 Write-Host "Vérification Ultra-Simple du Repository" -ForegroundColor Green
 
 # 1. Vérification de la structure
@@ -94,7 +94,7 @@ Write-Host "Script auto-commit créé" -ForegroundColor Green
 $MonitoringScript = "Write-Host 'Monitoring Script' -ForegroundColor Green`n"
 $MonitoringScript += "`$ReportDate = Get-Date -Format 'yyyyMMdd'`n"
 $MonitoringScript += "`$ReportContent = 'Rapport de Monitoring'`n"
-$MonitoringScript += "Set-Content -Path 'rapports/MONITORING_REPORT_' + `$ReportDate + '.md' -Value `$ReportContent -Encoding UTF8`n"
+$MonitoringScript += "Set-Content -Path 'docs/reports/MONITORING_REPORT_' + `$ReportDate + '.md' -Value `$ReportContent -Encoding UTF8`n"
 
 Set-Content -Path "scripts/automation/monitoring.ps1" -Value $MonitoringScript -Encoding UTF8
 Write-Host "Script de monitoring créé" -ForegroundColor Green
@@ -127,8 +127,9 @@ $FinalReport += "Scripts: $($Scripts.Count)`n"
 $FinalReport += "Automatisations créées: 2`n"
 
 $ReportDate = Get-Date -Format "yyyyMMdd"
-Set-Content -Path "rapports/ULTRA_SIMPLE_CHECK_REPORT_$ReportDate.md" -Value $FinalReport -Encoding UTF8
+Set-Content -Path "docs/reports/ULTRA_SIMPLE_CHECK_REPORT_$ReportDate.md" -Value $FinalReport -Encoding UTF8
 
 Write-Host "VÉRIFICATION TERMINÉE !" -ForegroundColor Green
 Write-Host "Repository vérifié, fallbacks créés, automatisations implémentées." -ForegroundColor Cyan 
+
 

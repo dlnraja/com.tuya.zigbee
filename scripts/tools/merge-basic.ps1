@@ -1,4 +1,4 @@
-# Basic Branch Merge Script - Tuya Zigbee
+﻿# Basic Branch Merge Script - Tuya Zigbee
 # Mode YOLO Intelligent
 
 Write-Host "Basic Branch Merge - Tuya Zigbee" -ForegroundColor Green

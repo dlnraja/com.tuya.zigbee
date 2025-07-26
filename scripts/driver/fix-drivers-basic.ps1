@@ -1,4 +1,4 @@
-# FIX DRIVERS BASIC - Tuya Zigbee Project
+﻿# FIX DRIVERS BASIC - Tuya Zigbee Project
 # Script basique pour corriger la cohérence des drivers
 
 Write-Host "FIX DRIVERS BASIC - SDK HOMEY 3" -ForegroundColor Cyan

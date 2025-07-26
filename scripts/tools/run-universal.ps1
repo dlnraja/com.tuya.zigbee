@@ -1,4 +1,4 @@
-# RUN UNIVERSAL - Tuya Zigbee Project
+﻿# RUN UNIVERSAL - Tuya Zigbee Project
 # Script de lancement universel avec détection automatique du shell (PowerShell version)
 
 # Variables

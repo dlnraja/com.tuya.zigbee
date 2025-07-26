@@ -1,4 +1,4 @@
-# Script d'Enrichissement Dashboard - Version Simplifiée
+﻿# Script d'Enrichissement Dashboard - Version Simplifiée
 # Date: 2025-07-25
 
 Write-Host "🚀 DÉBUT ENRICHISSEMENT DASHBOARD" -ForegroundColor Green

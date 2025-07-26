@@ -1,4 +1,4 @@
-# 🔄 SCRIPT DE FUSION SIMPLE DES BRANCHES - TUYA ZIGBEE
+﻿# 🔄 SCRIPT DE FUSION SIMPLE DES BRANCHES - TUYA ZIGBEE
 # Mode YOLO Intelligent - Version simplifiée
 
 Write-Host "🔄 FUSION SIMPLE DES BRANCHES - TUYA ZIGBEE" -ForegroundColor Green

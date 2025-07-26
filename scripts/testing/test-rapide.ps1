@@ -1,4 +1,4 @@
-# TEST RAPIDE - Tuya Zigbee Project
+﻿# TEST RAPIDE - Tuya Zigbee Project
 # Script de test rapide pour vérifier les optimisations
 
 # Couleurs pour l'affichage

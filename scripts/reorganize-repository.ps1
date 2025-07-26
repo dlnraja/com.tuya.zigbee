@@ -1,4 +1,4 @@
-# Script de réorganisation du repository Tuya Zigbee
+﻿# Script de réorganisation du repository Tuya Zigbee
 # Mode additif - Enrichissement sans dégradation
 
 Write-Host "📁 RÉORGANISATION DU RÉPERTOIRE - Mode additif" -ForegroundColor Green

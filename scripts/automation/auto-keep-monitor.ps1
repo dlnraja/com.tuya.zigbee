@@ -1,4 +1,4 @@
-# AUTO KEEP MONITOR - Tuya Zigbee Project
+﻿# AUTO KEEP MONITOR - Tuya Zigbee Project
 # Script de surveillance continue pour maintenir automatiquement toutes les sauvegardes
 
 param(

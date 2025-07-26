@@ -1,4 +1,4 @@
-# ENHANCE ALL DRIVERS - Tuya Zigbee Project
+﻿# ENHANCE ALL DRIVERS - Tuya Zigbee Project
 # Script pour ameliorer tous les drivers avec les fonctionnalites manquantes
 
 param(

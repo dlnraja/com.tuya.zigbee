@@ -1,4 +1,4 @@
-# CLEANUP REPO - Tuya Zigbee Project
+﻿# CLEANUP REPO - Tuya Zigbee Project
 # Script de nettoyage local pour optimiser le repo
 
 param(

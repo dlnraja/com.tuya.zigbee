@@ -1,4 +1,4 @@
-# SIMPLE RECOVER DRIVERS - Tuya Zigbee Project
+﻿# SIMPLE RECOVER DRIVERS - Tuya Zigbee Project
 # Script simple pour recuperer tous les drivers
 
 Write-Host "RECUPERATION SIMPLE DES DRIVERS" -ForegroundColor Cyan

@@ -1,4 +1,4 @@
-# Script de Tests de Compatibilite SDK3 - Tuya Zigbee
+﻿# Script de Tests de Compatibilite SDK3 - Tuya Zigbee
 # Tests de compatibilite SDK3 pour tous les drivers
 
 Write-Host "Debut des tests de compatibilite SDK3..." -ForegroundColor Green
@@ -175,7 +175,7 @@ function Generate-CompatibilityReport {
     }
     
     $reportJson = $report | ConvertTo-Json -Depth 10
-    Set-Content "rapports/COMPATIBILITE_SDK3.json" $reportJson -Encoding UTF8
+    Set-Content "docs/reports/COMPATIBILITE_SDK3.json" $reportJson -Encoding UTF8
     
     # Creer un rapport lisible
     $readableReport = @"
@@ -236,7 +236,7 @@ foreach ($rec in $driver.recommendations) {
 *Genere automatiquement par GPT-4, Cursor, PowerShell*
 "@
     
-    Set-Content "rapports/COMPATIBILITE_SDK3.md" $readableReport -Encoding UTF8
+    Set-Content "docs/reports/COMPATIBILITE_SDK3.md" $readableReport -Encoding UTF8
     Write-Host "Rapport de compatibilite SDK3 genere" -ForegroundColor Green
 }
 
@@ -332,4 +332,5 @@ function Start-SDK3CompatibilityTests {
 
 # Execution
 Start-SDK3CompatibilityTests 
+
 

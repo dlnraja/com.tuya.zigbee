@@ -1,4 +1,4 @@
-# Script d'Optimisation des Performances - Tuya Zigbee
+﻿# Script d'Optimisation des Performances - Tuya Zigbee
 # Optimisation des performances du projet
 
 Write-Host "Debut de l'optimisation des performances..." -ForegroundColor Green
@@ -218,7 +218,7 @@ function Generate-OptimizationReport {
     }
     
     $reportJson = $report | ConvertTo-Json -Depth 10
-    Set-Content "rapports/OPTIMISATION_PERFORMANCES.json" $reportJson -Encoding UTF8
+    Set-Content "docs/reports/OPTIMISATION_PERFORMANCES.json" $reportJson -Encoding UTF8
     
     # Creer un rapport lisible
     $readableReport = @"
@@ -268,7 +268,7 @@ $(foreach ($opt in $optimizations) {
 *Genere automatiquement par GPT-4, Cursor, PowerShell*
 "@
     
-    Set-Content "rapports/OPTIMISATION_PERFORMANCES.md" $readableReport -Encoding UTF8
+    Set-Content "docs/reports/OPTIMISATION_PERFORMANCES.md" $readableReport -Encoding UTF8
     Write-Host "Rapport d'optimisation genere" -ForegroundColor Green
 }
 
@@ -320,4 +320,5 @@ function Start-PerformanceOptimization {
 
 # Execution
 Start-PerformanceOptimization 
+
 

@@ -1,4 +1,4 @@
-# Task Tracker Script - Tuya Zigbee Project
+﻿# Task Tracker Script - Tuya Zigbee Project
 Write-Host "Task Tracker - Tuya Zigbee Project" -ForegroundColor Green
 Write-Host "=================================" -ForegroundColor Green
 
@@ -186,7 +186,7 @@ if (!(Test-Path "rapports")) {
     New-Item -ItemType Directory -Path "rapports" -Force
 }
 
-Set-Content -Path "rapports/TASK_TRACKER_REPORT_$ReportDate.md" -Value $ReportContent -Encoding UTF8
-Write-Host "`nTask report saved to: rapports/TASK_TRACKER_REPORT_$ReportDate.md" -ForegroundColor Green
+Set-Content -Path "docs/reports/TASK_TRACKER_REPORT_$ReportDate.md" -Value $ReportContent -Encoding UTF8
+Write-Host "`nTask report saved to: docs/reports/TASK_TRACKER_REPORT_$ReportDate.md" -ForegroundColor Green
 
 Write-Host "`nTask tracking completed!" -ForegroundColor Green 

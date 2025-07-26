@@ -1,4 +1,4 @@
-# Script Final d'Exécution de l'Enrichissement Complet
+﻿# Script Final d'Exécution de l'Enrichissement Complet
 # Mode enrichissement additif - Exécution complète
 
 Write-Host "🚀 EXÉCUTION ENRICHISSEMENT COMPLET - Mode additif" -ForegroundColor Green

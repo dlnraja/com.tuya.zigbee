@@ -1,4 +1,4 @@
-# Script de mise a jour automatique du dashboard multilingue
+﻿# Script de mise a jour automatique du dashboard multilingue
 
 Write-Host "Debut de la mise a jour du dashboard multilingue..." -ForegroundColor Green
 
@@ -122,4 +122,5 @@ Write-Host "- Donnees des drivers generees" -ForegroundColor White
 Write-Host "- Dashboard multilingue active" -ForegroundColor White
 Write-Host "- Statistiques mises a jour" -ForegroundColor White
 Write-Host "- Rapport genere" -ForegroundColor White 
+
 

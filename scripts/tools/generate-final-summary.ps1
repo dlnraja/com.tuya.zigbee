@@ -1,4 +1,4 @@
-# Génération du Résumé Final - Tuya Zigbee Project
+﻿# Génération du Résumé Final - Tuya Zigbee Project
 Write-Host "Génération du Résumé Final - Tuya Zigbee Project" -ForegroundColor Green
 Write-Host "===============================================" -ForegroundColor Green
 
@@ -149,10 +149,10 @@ if (!(Test-Path "rapports")) {
     New-Item -ItemType Directory -Path "rapports" -Force
 }
 
-Set-Content -Path "rapports/RESUME_FINAL_$SummaryDate.md" -Value $SummaryContent -Encoding UTF8
+Set-Content -Path "docs/reports/RESUME_FINAL_$SummaryDate.md" -Value $SummaryContent -Encoding UTF8
 
 Write-Host "`nRésumé final généré!" -ForegroundColor Green
-Write-Host "Fichier: rapports/RESUME_FINAL_$SummaryDate.md" -ForegroundColor Cyan
+Write-Host "Fichier: docs/reports/RESUME_FINAL_$SummaryDate.md" -ForegroundColor Cyan
 
 Write-Host "`nStatistiques Finales:" -ForegroundColor Yellow
 Write-Host "===================" -ForegroundColor Yellow
