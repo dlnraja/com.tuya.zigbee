@@ -1,4 +1,4 @@
-# Phase 2: Tuya Smart Life Analysis
+# Phase 2: Tuya Smart Life Analysis - VERSION CORRIGÉE
 # Mode enrichissement additif - Granularité fine
 
 Write-Host "PHASE 2: TUYA SMART LIFE ANALYSIS" -ForegroundColor Green
@@ -107,7 +107,7 @@ function Extract-SmartLifeDrivers {
     Write-Host "Extraction des drivers Smart Life..." -ForegroundColor Yellow
     
     # Simuler l'extraction de 45 drivers compatibles
-    \$drivers = @(
+    $drivers = @(
         @{ Name = "Tuya Light RGB"; Type = "Light"; Category = "Lighting"; Priority = "High" },
         @{ Name = "Tuya Switch Simple"; Type = "Switch"; Category = "Switches"; Priority = "High" },
         @{ Name = "Tuya Sensor Temperature"; Type = "Sensor"; Category = "Sensors"; Priority = "High" },
@@ -115,12 +115,12 @@ function Extract-SmartLifeDrivers {
         @{ Name = "Tuya Cover Blind"; Type = "Cover"; Category = "Appliances"; Priority = "Medium" }
     )
     
-    return \$drivers
+    return $drivers
 }
 
 # Fonction de conversion Python vers JavaScript
 function Convert-PythonToJavaScript {
-    param([string]\$pythonCode)
+    param([string]$pythonCode)
     
     Write-Host "Conversion Python vers JavaScript..." -ForegroundColor Yellow
     
@@ -166,32 +166,32 @@ const { TuyaDevice } = require('homey-tuya');
 Write-Host "Début de la migration Smart Life..." -ForegroundColor Green
 
 # 1. Extraire les drivers
-\$smartLifeDrivers = Extract-SmartLifeDrivers
-Write-Host "Drivers extraits: \$(\$smartLifeDrivers.Count)" -ForegroundColor Green
+$smartLifeDrivers = Extract-SmartLifeDrivers
+Write-Host "Drivers extraits: $($smartLifeDrivers.Count)" -ForegroundColor Green
 
 # 2. Créer le dossier de migration
-\$migrationDir = "drivers/smart-life-migrated"
-if (!(Test-Path \$migrationDir)) {
-    New-Item -ItemType Directory -Path \$migrationDir -Force
-    Write-Host "Dossier de migration créé : \$migrationDir" -ForegroundColor Green
+$migrationDir = "drivers/smart-life-migrated"
+if (!(Test-Path $migrationDir)) {
+    New-Item -ItemType Directory -Path $migrationDir -Force
+    Write-Host "Dossier de migration créé : $migrationDir" -ForegroundColor Green
 }
 
 # 3. Migrer chaque driver
-foreach (\$driver in \$smartLifeDrivers) {
-    Write-Host "Migration: \$(\$driver.Name)" -ForegroundColor Yellow
+foreach ($driver in $smartLifeDrivers) {
+    Write-Host "Migration: $($driver.Name)" -ForegroundColor Yellow
     
     # Créer le fichier driver
-    \$driverFile = "\$migrationDir/\$(\$driver.Name -replace ' ', '_').js"
+    $driverFile = "$migrationDir/$($driver.Name -replace ' ', '_').js"
     
-    \$driverContent = @"
+    $driverContent = @"
 // Driver migré de Tuya Smart Life
 // Mode enrichissement additif
 
 const { TuyaDevice } = require('homey-tuya');
 
-class \$(\$driver.Name -replace ' ', '') extends TuyaDevice {
+class $($driver.Name -replace ' ', '') extends TuyaDevice {
     async onInit() {
-        this.log('Driver \$(\$driver.Name) initialisé');
+        this.log('Driver $($driver.Name) initialisé');
         
         // Configuration migrée de Smart Life
         this.setCapabilityValue('onoff', false);
@@ -206,15 +206,15 @@ class \$(\$driver.Name -replace ' ', '') extends TuyaDevice {
     }
 }
 
-module.exports = \$(\$driver.Name -replace ' ', '');
+module.exports = $($driver.Name -replace ' ', '');
 "@
     
-    Set-Content -Path \$driverFile -Value \$driverContent -Encoding UTF8
-    Write-Host "Driver créé: \$driverFile" -ForegroundColor Green
+    Set-Content -Path $driverFile -Value $driverContent -Encoding UTF8
+    Write-Host "Driver créé: $driverFile" -ForegroundColor Green
 }
 
 Write-Host "MIGRATION SMART LIFE TERMINÉE" -ForegroundColor Green
-Write-Host "Drivers migrés: \$(\$smartLifeDrivers.Count)" -ForegroundColor Green
+Write-Host "Drivers migrés: $($smartLifeDrivers.Count)" -ForegroundColor Green
 "@
 
 Set-Content -Path "scripts/migrate-smart-life-drivers.ps1" -Value $migrationScript -Encoding UTF8
