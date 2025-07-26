@@ -1,8 +1,8 @@
 ﻿
 ---
-**📅 Version**: 1.0.0
+**📅 Version**: 1.0.1
 **📅 Date**: 2025-07-26
-**🕐 Heure**: 17:50:00
+**🕐 Heure**: 19:00:00
 **🎯 Objectif**: Intégration locale Tuya Zigbee
 **🚀 Mode**: Priorité locale
 **🛡️ Sécurité**: Mode local complet
@@ -125,10 +125,10 @@ npm run build
 ### 🚀 Scripts d'Exécution Rapide
 ```bash
 # Windows
-run-project.cmd
+quick-start.cmd
 
 # Linux/Mac
-./run-project.sh
+./quick-start.sh
 ```
 
 ---
@@ -256,7 +256,7 @@ Voir [CHANGELOG.md](CHANGELOG.md) pour l'historique complet des mises à jour.
 
 ---
 
-*Dernière mise à jour : 2025-07-26 17:50:00*
+*Dernière mise à jour : 2025-07-26 19:00:00*
 *Universal Tuya Zigbee Device - Focus exclusif Tuya Zigbee*
 *Automatisation mensuelle activée*
 *Status : Actif et optimisé*
