@@ -1,0 +1,45 @@
+name: Monthly Check Automation
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'  # Tous les 1er du mois à minuit
+  workflow_dispatch:  # Permet l'exécution manuelle
+
+jobs:
+  monthly-check:
+    runs-on: ubuntu-22.04
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Run monthly check script
+      run: |
+        powershell -ExecutionPolicy Bypass -File "scripts/monthly-check-automation.ps1"
+        
+    - name: Upload report
+      uses: actions/upload-artifact@v3
+      with:
+        name: monthly-check-report
+        path: docs/reports/monthly-check-*.md
+        
+    - name: Create issue if problems found
+      uses: actions/github-script@v6
+      if: failure()
+      with:
+        script: |
+          github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: 'Monthly Check - Issues Found',
+            body: 'Monthly automation check found issues. Please review the report.',
+            labels: ['automation', 'monthly-check']
+          }) 
