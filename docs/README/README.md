@@ -1,3 +1,12 @@
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
 # Universal Tuya Zigbee Device
 
 <div align="center">
@@ -183,9 +192,10 @@ Voir [CHANGELOG.md](CHANGELOG.md) pour l'historique complet.
 
 ---
 
-*Dernière mise à jour : 2025-07-25 13:51:15*
+*Dernière mise à jour : 2025-07-26 16:49:40*
 *Universal Tuya Zigbee Device - Focus exclusif Tuya Zigbee*
 *Automatisation mensuelle activée*
+
 
 
 

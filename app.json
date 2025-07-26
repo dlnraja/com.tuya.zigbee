@@ -1,4 +1,4 @@
-﻿{
+{
     "id":  "universal.tuya.zigbee.device",
     "version":  "1.0.1",
     "compatibility":  "\u003e=5.0.0",
@@ -41,13 +41,13 @@
                                       "en":  "Tuya Smart Plug",
                                       "fr":  "Prise Intelligente Tuya",
                                       "nl":  "Tuya Slimme Plug",
-                                      "ta":  "Tuya ஸ்மார்ட் பிளக்"
+                                      "ta":  "Tuya ???????? ?????"
                                   },
                         "titleForm":  {
                                           "en":  "Tuya Smart Plug",
                                           "fr":  "Prise Intelligente Tuya",
                                           "nl":  "Tuya Slimme Plug",
-                                          "ta":  "Tuya ஸ்மார்ட் பிளக்"
+                                          "ta":  "Tuya ???????? ?????"
                                       },
                         "icon":  "/assets/icon.svg",
                         "class":  "smartplug",
@@ -65,15 +65,15 @@
                         "id":  "smart_plug",
                         "title":  {
                                       "en":  "Tuya Smart Plug (Generic)",
-                                      "fr":  "Prise Intelligente Tuya (Générique)",
+                                      "fr":  "Prise Intelligente Tuya (G�n�rique)",
                                       "nl":  "Tuya Slimme Plug (Generiek)",
-                                      "ta":  "Tuya ஸ்மார்ட் பிளக் (பொதுவான)"
+                                      "ta":  "Tuya ???????? ????? (???????)"
                                   },
                         "titleForm":  {
                                           "en":  "Tuya Smart Plug (Generic)",
-                                          "fr":  "Prise Intelligente Tuya (Générique)",
+                                          "fr":  "Prise Intelligente Tuya (G�n�rique)",
                                           "nl":  "Tuya Slimme Plug (Generiek)",
-                                          "ta":  "Tuya ஸ்மார்ட் பிளக் (பொதுவான)"
+                                          "ta":  "Tuya ???????? ????? (???????)"
                                       },
                         "icon":  "/assets/icon.svg",
                         "class":  "smart_plug",
@@ -93,13 +93,13 @@
                                       "en":  "Tuya RGB Bulb E27",
                                       "fr":  "Ampoule RGB Tuya E27",
                                       "nl":  "Tuya RGB Lamp E27",
-                                      "ta":  "Tuya RGB பல்ப் E27"
+                                      "ta":  "Tuya RGB ????? E27"
                                   },
                         "titleForm":  {
                                           "en":  "Tuya RGB Bulb E27",
                                           "fr":  "Ampoule RGB Tuya E27",
                                           "nl":  "Tuya RGB Lamp E27",
-                                          "ta":  "Tuya RGB பல்ப் E27"
+                                          "ta":  "Tuya RGB ????? E27"
                                       },
                         "icon":  "/assets/icon.svg",
                         "class":  "rgb_bulb_E27",
@@ -124,4 +124,3 @@
     "sizeOptimized":  true,
     "homeyignore":  true
 }
-

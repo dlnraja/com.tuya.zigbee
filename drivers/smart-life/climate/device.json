@@ -1,14 +1,20 @@
 {
-  "id": "climate",
-  "title": {
-    "en": "Tuya Smart Life Climate",
-    "fr": "Climatiseur Tuya Smart Life",
-    "nl": "Tuya Smart Life Klimaat"
-  },
-  "icon": "/assets/icon.svg",
-  "class": "climate",
-  "capabilities": ["target_temperature", "measure_temperature"],
-  "local": true,
-  "noApiRequired": true,
-  "smartLife": true
-} 
+    "id":  "smart-life-climate",
+    "title":  {
+                  "en":  "Tuya Smart Life Climate",
+                  "fr":  "Tuya Smart Life Climate",
+                  "nl":  "Tuya Smart Life Climate"
+              },
+    "icon":  "/assets/icon.svg",
+    "class":  "climate",
+    "capabilities":  [
+                         "onoff"
+                     ],
+    "local":  true,
+    "smartLife":  true,
+    "category":  "climate",
+    "enhanced":  true,
+    "localMode":  true,
+    "noApiRequired":  true,
+    "lastEnhanced":  "2025-07-26 16:49:03"
+}

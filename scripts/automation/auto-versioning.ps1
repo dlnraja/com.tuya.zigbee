@@ -1,4 +1,13 @@
-﻿# Automatic Versioning System for Tuya Zigbee Project
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# Automatic Versioning System for Tuya Zigbee Project
 # Système de versionning automatique pour le projet Tuya Zigbee
 # Version: 1.0.0
 # Date: $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
@@ -377,3 +386,4 @@ if ($MyInvocation.InvocationName -eq $MyInvocation.MyCommand.Name) {
     $success = Start-AutoVersioning
     exit $(if ($success) { 0 } else { 1 })
 } 
+
