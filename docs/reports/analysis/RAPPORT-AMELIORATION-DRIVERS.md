@@ -1,4 +1,4 @@
-﻿# 🚀 RAPPORT D'AMÉLIORATION DRIVERS - Tuya Zigbee Project
+# 🚀 RAPPORT D'AMÉLIORATION DRIVERS - Tuya Zigbee Project
 
 ## 🎯 **RÉSUMÉ EXÉCUTIF**
 **Amélioration complète des drivers avec gestion de batterie, manufacturer IDs étendus et gestion intelligente des clics**

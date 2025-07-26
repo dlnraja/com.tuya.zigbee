@@ -1,4 +1,4 @@
-﻿# 🔧 RAPPORT TEST WORKFLOWS - Tuya Zigbee Project
+# 🔧 RAPPORT TEST WORKFLOWS - Tuya Zigbee Project
 
 ## 🎯 **RÉSUMÉ EXÉCUTIF**
 **Tous les workflows GitHub Actions testés et corrigés avec succès**

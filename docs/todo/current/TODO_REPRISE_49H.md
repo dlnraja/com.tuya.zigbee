@@ -1,4 +1,4 @@
-﻿# TODO REPRISE 49 DERNIÈRES HEURES - Tuya Zigbee Project
+# TODO REPRISE 49 DERNIÈRES HEURES - Tuya Zigbee Project
 
 ## 🚀 **TÂCHES PRIORITAIRES À REPRENDRE**
 

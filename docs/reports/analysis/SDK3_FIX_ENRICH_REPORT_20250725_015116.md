@@ -1,4 +1,4 @@
-﻿# Rapport Correction & Enrichissement SDK3 - Tuya Zigbee Project
+# Rapport Correction & Enrichissement SDK3 - Tuya Zigbee Project
 
 Date: 2025-07-25 01:51:16
 Drivers traitÃ©s: 388

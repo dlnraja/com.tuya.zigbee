@@ -1,4 +1,4 @@
-﻿# 🔧 RAPPORT FIX GIT CURSOR - Tuya Zigbee Project
+# 🔧 RAPPORT FIX GIT CURSOR - Tuya Zigbee Project
 
 ## 🎯 **RÉSUMÉ EXÉCUTIF**
 **Problème de pager Git résolu pour Cursor - Toutes les commandes Git fonctionnent maintenant**

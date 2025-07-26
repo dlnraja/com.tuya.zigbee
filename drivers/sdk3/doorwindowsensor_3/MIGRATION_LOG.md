@@ -1,4 +1,4 @@
-﻿# Migration Log - doorwindowsensor_3
+# Migration Log - doorwindowsensor_3
 
 **Date:** 2025-07-25 01:06:13
 **Source:** drivers/in_progress/doorwindowsensor_3

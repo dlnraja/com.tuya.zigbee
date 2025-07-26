@@ -1,4 +1,4 @@
-﻿# 🚀 RAPPORT FINAL CURSOR - PROJET TUYA ZIGBEE
+# 🚀 RAPPORT FINAL CURSOR - PROJET TUYA ZIGBEE
 
 **Date : 24/07/2025 23:05 UTC**  
 **Statut : ✅ PROJET 100% OPÉRATIONNEL ET OPTIMISÉ**
@@ -168,7 +168,7 @@
 - **Node.js (2%)** : Scripts d'enrichissement, benchmark IA
 
 ### 🎨 **Fonctionnalités Avancées**
-- **Dashboard Interactif** : URL `https://dlnraja.github.io/com.tuya.zigbee/dashboard/`
+- **Dashboard Interactif** : URL `https://dlnraja.github.io/com.universaltuyazigbee.device/dashboard/`
 - **Statistiques temps réel** : Métriques live
 - **Barres de progression** : Visualisation claire
 - **Notifications** : Système d'alertes Bootstrap

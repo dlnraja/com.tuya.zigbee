@@ -7,11 +7,11 @@ title: "Tuya ZigBee Integration for Homey"
 description: "Complete Tuya ZigBee device integration for Homey with local mode priority"
 author: "dlnraja"
 email: "dylan.rajasekaram@gmail.com"
-url: "https://dlnraja.github.io/com.tuya.zigbee"
+url: "https://dlnraja.github.io/com.universaltuyazigbee.device"
 
 # GitHub Pages settings
 github:
-  repository: "dlnraja/com.tuya.zigbee"
+  repository: "dlnraja/com.universaltuyazigbee.device"
   branch: "master"
 
 # Jekyll settings
@@ -109,8 +109,8 @@ footer:
   text: "Developed by dlnraja with ❤️ for the Homey community"
   links:
     - text: "GitHub"
-      url: "https://github.com/dlnraja/com.tuya.zigbee"
+      url: "https://github.com/dlnraja/com.universaltuyazigbee.device"
     - text: "Homey Community"
       url: "https://community.homey.app"
     - text: "Issues"
-      url: "https://github.com/dlnraja/com.tuya.zigbee/issues" 
+      url: "https://github.com/dlnraja/com.universaltuyazigbee.device/issues" 

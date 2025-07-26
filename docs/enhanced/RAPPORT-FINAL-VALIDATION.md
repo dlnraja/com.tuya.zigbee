@@ -1,4 +1,4 @@
-﻿# RAPPORT FINAL DE VALIDATION - TUYA ZIGBEE
+# RAPPORT FINAL DE VALIDATION - TUYA ZIGBEE
 
 ## Résumé de la validation complète
 

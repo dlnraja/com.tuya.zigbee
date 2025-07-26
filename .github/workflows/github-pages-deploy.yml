@@ -1,4 +1,4 @@
-﻿---
+---
 **📅 Version**: 1.0.0
 **📅 Date**: 2025-07-26
 **🕐 Heure**: 16:49:40
@@ -3457,7 +3457,7 @@ jobs:
       - name: Build with Jekyll
         run: |
           cd docs
-          bundle exec jekyll build --baseurl "/com.tuya.zigbee"
+          bundle exec jekyll build --baseurl "/com.universaltuyazigbee.device"
         env:
           JEKYLL_ENV: production
 

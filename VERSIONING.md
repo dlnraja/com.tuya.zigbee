@@ -1,4 +1,4 @@
-﻿# 📦 Versioning - Universal Tuya Zigbee Device
+# 📦 Versioning - Universal Tuya Zigbee Device
 
 ## 📊 **INFORMATIONS DE VERSION**
 

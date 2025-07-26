@@ -1,4 +1,4 @@
-﻿# 🤖 RAPPORT AUTO EDIT CURSOR - Tuya Zigbee Project
+# 🤖 RAPPORT AUTO EDIT CURSOR - Tuya Zigbee Project
 
 ## 🎯 **RÉSUMÉ EXÉCUTIF**
 **Système d'édition automatique implémenté pour maintenir l'édition continue dans Cursor**

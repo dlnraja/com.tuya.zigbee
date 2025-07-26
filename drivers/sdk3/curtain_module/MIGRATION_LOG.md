@@ -1,4 +1,4 @@
-﻿# Migration Log - curtain_module
+# Migration Log - curtain_module
 
 **Date:** 2025-07-25 01:02:00
 **Source:** drivers/in_progress/curtain_module

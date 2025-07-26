@@ -138,7 +138,7 @@ Fonction : Automatisation résolution conflits PR avec mode YOLO
 ## 🔗 **LIENS ET RESSOURCES**
 
 ### 📋 **PULL REQUEST**
-- **URL** : https://github.com/dlnraja/com.tuya.zigbee/pull/new/conflict-resolution-strategy
+- **URL** : https://github.com/dlnraja/com.universaltuyazigbee.device/pull/new/conflict-resolution-strategy
 - **Branche** : conflict-resolution-strategy
 - **Statut** : Prête pour merge
 

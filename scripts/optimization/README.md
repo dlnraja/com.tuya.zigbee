@@ -1,6 +1,6 @@
-﻿# Scripts COM.TUYA.ZIGBEE-MASTER
+# Scripts com.universaltuyazigbee.device-MASTER
 
-Ce dossier contient les scripts de com.tuya.zigbee-master pour le projet Tuya Zigbee.
+Ce dossier contient les scripts de com.universaltuyazigbee.device-master pour le projet Tuya Zigbee.
 
 ## Scripts disponibles
 

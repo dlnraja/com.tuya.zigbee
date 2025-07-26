@@ -1,4 +1,4 @@
-﻿# Rapport Hebdomadaire - Tuya Zigbee Project
+# Rapport Hebdomadaire - Tuya Zigbee Project
 
 **Date:** 2025-07-25 00:46:45
 **Workflow:** Weekly Optimization

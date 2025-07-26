@@ -1,4 +1,4 @@
-﻿# Tuya Zigbee Project - Russkiy
+# Tuya Zigbee Project - Russkiy
 
 ## Installation
 

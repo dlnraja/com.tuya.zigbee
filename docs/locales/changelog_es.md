@@ -1,4 +1,4 @@
-﻿# Changelog - Universal Tuya Zigbee Device
+# Changelog - Universal Tuya Zigbee Device
 
 ## [v1.0.0] - 2025-07-26 16:49:04
 

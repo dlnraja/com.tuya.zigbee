@@ -1,4 +1,4 @@
-﻿# 🔧 RAPPORT VÉRIFICATION DRIVERS - Tuya Zigbee Project
+# 🔧 RAPPORT VÉRIFICATION DRIVERS - Tuya Zigbee Project
 
 ## 🎯 **RÉSUMÉ EXÉCUTIF**
 **Vérification et correction de la cohérence de tous les drivers avec le SDK Homey 3**

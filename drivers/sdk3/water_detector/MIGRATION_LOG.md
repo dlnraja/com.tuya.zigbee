@@ -1,4 +1,4 @@
-﻿# Migration Log - water_detector
+# Migration Log - water_detector
 
 **Date:** 2025-07-25 01:06:24
 **Source:** drivers/in_progress/water_detector

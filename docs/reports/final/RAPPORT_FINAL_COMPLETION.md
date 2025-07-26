@@ -1,4 +1,4 @@
-﻿# RAPPORT FINAL COMPLETION - Tuya Zigbee Project (2025-07-26)
+# RAPPORT FINAL COMPLETION - Tuya Zigbee Project (2025-07-26)
 
 ## 🎉 **TOUTES LES TÂCHES MANQUANTES COMPLÉTÉES**
 
