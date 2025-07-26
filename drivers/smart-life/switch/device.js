@@ -1,3 +1,4 @@
+﻿const { Device } = require('homey');
 class SmartLifeSwitchDevice extends ZigBeeDevice {
     async onNodeInit() {
         this.homey.log('🚀 Smart Life Switch Device initialized');
