@@ -1,1 +1,0 @@
-'use strict'; const { ZigBeeDevice } = require('homey-zigbeedriver'); const { CLUSTER } = require('zigbee-clusters'); class wall_remote_4_gang extends ZigBeeDevice { async onNodeInit({ zclNode }) { this.printNode(); 

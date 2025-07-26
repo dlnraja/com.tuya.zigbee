@@ -1,1 +1,0 @@
-'use strict'; const { ZigBeeDevice } = require('homey-zigbeedriver'); const { CLUSTER } = require('zigbee-clusters'); class smart_remote_4b extends ZigBeeDevice { async onNodeInit({zclNode}) { var debounce = 0; this.printNode(); const node = await this.homey.zigbee.getNode(this); node.handleFrame = (endpointId, clusterId, frame, meta) => { if (clusterId === 1281) { 

@@ -1,1 +1,0 @@
-﻿'use strict'; const { ZigBeeDevice } = require('homey-zigbeedriver'); const { CLUSTER, Cluster, ZCLDataTypes } = require('zigbee-clusters'); const TuyaOnOffCluster = require('../../lib/TuyaOnOffCluster'); Cluster.addCluster(TuyaOnOffCluster); class switch_1_gang_metering extends ZigBeeDevice { async onNodeInit({ zclNode }) { this.printNode(); 
