@@ -1,131 +1,62 @@
-# 🚀 Tuya Zigbee Project - .gitignore
-# Fichiers et dossiers à ignorer
+# Tuya Zigbee Project - .gitignore
+# Mode Local Prioritaire - Aucune API requise
 
-# Dependencies
+# Cursor Development Files (Séparé du projet principal)
+cursor-dev/
+cursor-dev/scripts/
+cursor-dev/workflows/
+cursor-dev/docs/
+
+# Node.js
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Build outputs
-dist/
-build/
-*.tgz
-*.tar.gz
-
-# IDE and editor files
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# Logs
-logs/
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
-
-# Coverage directory used by tools like istanbul
-coverage/
-*.lcov
-
-# nyc test coverage
-.nyc_output
-
-# Dependency directories
-jspm_packages/
-
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# Optional REPL history
-.node_repl_history
-
-# Output of 'npm pack'
-*.tgz
-
-# Yarn Integrity file
-.yarn-integrity
-
-# dotenv environment variables file
+# Environment variables
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Build
+dist/
+build/
+
 # Temporary files
-tmp/
-temp/
 *.tmp
 *.temp
+
+# API Keys (Optionnel - Mode Local Prioritaire)
+api_keys.json
+tuya_api.json
+
+# Cache
+.cache/
+cache/
 
 # Backup files
 *.bak
 *.backup
-*.old
 
-# Test files
-test-results/
+# Test coverage
 coverage/
 
-# Documentation builds
-docs/_build/
-docs/build/
-
-# Local configuration
-config.local.js
-settings.local.json
-
-# API keys and secrets
-secrets/
-*.key
-*.pem
-
-# Database files
-*.db
-*.sqlite
-*.sqlite3
-
-# Cache directories
-.cache/
-.parcel-cache/
-
-# Homey specific
-.homeyignore
-homey.json
-
-# Research and analysis files
-research_cache/
-analysis_temp/
-
-# Benchmark temporary files
-benchmark_temp/
-*.benchmark
-
-# Driver development
-drivers/*/node_modules/
-drivers/*/package-lock.json
-
-# Workflow artifacts
-.github/workflows/artifacts/
+# Local development
+local/
+dev/
