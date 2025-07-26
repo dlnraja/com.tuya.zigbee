@@ -1,6 +1,6 @@
 {
   "name": "com.tuya.zigbee",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Tuya ZigBee Integration for Homey - Local Mode",
   "main": "app.js",
   "scripts": {
@@ -64,7 +64,7 @@
   "config": {
     "homey": {
       "appId": "com.tuya.zigbee",
-      "version": "1.0.5",
+      "version": "1.0.6",
       "sdk": 3,
       "platform": "local"
     }
