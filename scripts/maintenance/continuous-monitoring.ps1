@@ -1,4 +1,13 @@
-﻿# Script de monitoring continu
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# Script de monitoring continu
 Write-Host "📊 DÉMARRAGE DU MONITORING CONTINU" -ForegroundColor Green
 
 while ($true) {
@@ -36,3 +45,4 @@ while ($true) {
     
     Start-Sleep -Seconds 300  # 5 minutes
 } 
+

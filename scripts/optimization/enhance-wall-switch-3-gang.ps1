@@ -1,4 +1,13 @@
-﻿# ENHANCE WALL SWITCH 3 GANG - Tuya Zigbee Project
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# ENHANCE WALL SWITCH 3 GANG - Tuya Zigbee Project
 # Script pour ameliorer le driver wall_switch_3_gang avec toutes les fonctionnalites
 
 Write-Host "AMELIORATION WALL SWITCH 3 GANG" -ForegroundColor Cyan
@@ -471,4 +480,6 @@ if ($deviceJsExists -and $composeExists -and $settingsExists) {
 }
 
 Write-Host "`nAMELIORATION WALL SWITCH 3 GANG TERMINEE!" -ForegroundColor Green
-Write-Host "Mode YOLO Intelligent active" -ForegroundColor Cyan 
+Write-Host "Mode Automatique Intelligent active" -ForegroundColor Cyan 
+
+

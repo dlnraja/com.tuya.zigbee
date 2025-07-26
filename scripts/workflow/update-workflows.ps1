@@ -1,4 +1,13 @@
-﻿# 🔄 SCRIPT DE MISE À JOUR DES WORKFLOWS - Tuya Zigbee Project
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# 🔄 SCRIPT DE MISE À JOUR DES WORKFLOWS - Tuya Zigbee Project
 # Exécution: .\scripts\update-workflows.ps1
 
 Write-Host "🔄 MISE À JOUR DES WORKFLOWS" -ForegroundColor Green
@@ -369,3 +378,4 @@ Write-Host "  - multilingual-docs.yml (quotidien à 6h)" -ForegroundColor White
 Write-Host "  - weekly-optimization-simple.yml (hebdomadaire)" -ForegroundColor White
 Write-Host ""
 Write-Host "🎉 Mise à jour des workflows terminée !" -ForegroundColor Green 
+

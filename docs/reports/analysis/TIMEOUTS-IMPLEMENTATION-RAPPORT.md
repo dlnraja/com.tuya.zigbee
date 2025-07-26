@@ -1,4 +1,4 @@
-# ⏱️ RAPPORT D'IMPLÉMENTATION TIMEOUTS - Tuya Zigbee Project
+﻿# ⏱️ RAPPORT D'IMPLÉMENTATION TIMEOUTS - Tuya Zigbee Project
 
 ## 🎯 **RÉSUMÉ EXÉCUTIF**
 **Système de timeouts implémenté avec succès pour prévenir les boucles infinies**
@@ -175,7 +175,7 @@ $status = Invoke-GitWithTimeout -GitCommand "status --porcelain" -TimeoutSeconds
 - ✅ **Tests** automatisés
 - ✅ **Documentation** complète
 
-### **Mode YOLO Intelligent**
+### **Mode Automatique Intelligent**
 - ✅ **Automatisation** sécurisée
 - ✅ **Monitoring** continu
 - ✅ **Optimisation** automatique
@@ -217,12 +217,12 @@ $status = Invoke-GitWithTimeout -GitCommand "status --porcelain" -TimeoutSeconds
 - **Stabilité** améliorée
 - **Sécurité** renforcée
 - **Maintenance** facilitée
-- **Mode YOLO Intelligent** sécurisé
+- **Mode Automatique Intelligent** sécurisé
 
 **Le projet Tuya Zigbee est maintenant protégé contre les boucles infinies et optimisé pour une exécution stable et sécurisée !**
 
 ---
 
 *Timestamp : 2025-07-24 01:15:00 UTC*  
-*Mode YOLO Intelligent activé - Système de timeouts opérationnel*  
+*Mode Automatique Intelligent activé - Système de timeouts opérationnel*  
 *Projet Tuya Zigbee 100% sécurisé et optimisé* 

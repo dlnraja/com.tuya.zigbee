@@ -1,4 +1,13 @@
-﻿# Task Tracker Script - Tuya Zigbee Project
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# Task Tracker Script - Tuya Zigbee Project
 Write-Host "Task Tracker - Tuya Zigbee Project" -ForegroundColor Green
 Write-Host "=================================" -ForegroundColor Green
 
@@ -190,3 +199,4 @@ Set-Content -Path "docs/reports/TASK_TRACKER_REPORT_$ReportDate.md" -Value $Repo
 Write-Host "`nTask report saved to: docs/reports/TASK_TRACKER_REPORT_$ReportDate.md" -ForegroundColor Green
 
 Write-Host "`nTask tracking completed!" -ForegroundColor Green 
+

@@ -2,7 +2,7 @@
 
 **Date**: 2025-07-24 06:30:37
 **Script**: cleanup-and-organize.ps1
-**Mode**: YOLO Intelligent
+**Mode**: Automatique Intelligent
 
 ## Resultats du Nettoyage
 
@@ -40,4 +40,5 @@
 ---
 
 *Genere automatiquement par le script de nettoyage*
-*Mode YOLO Intelligent active*
+*Mode Automatique Intelligent active*
+

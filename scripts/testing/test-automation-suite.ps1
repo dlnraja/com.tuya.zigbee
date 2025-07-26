@@ -1,4 +1,13 @@
-﻿# Test Automation Suite for Tuya Zigbee Project
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# Test Automation Suite for Tuya Zigbee Project
 # Suite de tests pour les automatisations du projet Tuya Zigbee
 # Version: 1.0.0
 # Date: $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
@@ -374,3 +383,4 @@ if ($MyInvocation.InvocationName -eq $MyInvocation.MyCommand.Name) {
     $exitCode = if ($results -and $results.FailedTests -eq 0) { 0 } else { 1 }
     exit $exitCode
 } 
+

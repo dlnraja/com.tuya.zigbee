@@ -1,4 +1,13 @@
-﻿# AUTO KEEP MONITOR - Tuya Zigbee Project
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# AUTO KEEP MONITOR - Tuya Zigbee Project
 # Script de surveillance continue pour maintenir automatiquement toutes les sauvegardes
 
 param(
@@ -80,7 +89,7 @@ function Start-Monitoring {
                     $status = git status --porcelain 2>$null
                     if ($status) {
                         git add . 2>$null
-                        $commitMessage = "🤖 AUTO KEEP MONITOR: Sauvegarde #$backupNumber - $timestamp - Mode YOLO Intelligent"
+                        $commitMessage = "🤖 AUTO KEEP MONITOR: Sauvegarde #$backupNumber - $timestamp - Mode Automatique Intelligent"
                         git commit -m $commitMessage 2>$null
                         git push 2>$null
                     }
@@ -213,7 +222,7 @@ function Stop-Monitoring {
     Clear-TimeoutJobs
     
     Write-Host "`n✅ Surveillance arrêtée proprement" -ForegroundColor Green
-    Write-Host "Mode YOLO Intelligent - Sauvegarde continue maintenue" -ForegroundColor Cyan
+    Write-Host "Mode Automatique Intelligent - Sauvegarde continue maintenue" -ForegroundColor Cyan
 }
 
 # Configuration du gestionnaire d'événements pour l'arrêt propre
@@ -222,7 +231,7 @@ Register-EngineEvent PowerShell.Exiting -Action { Stop-Monitoring }
 # Démarrer la surveillance
 try {
     Write-Host "🚀 DÉMARRAGE DU MONITEUR AUTO KEEP ALL" -ForegroundColor Green
-    Write-Host "Mode YOLO Intelligent activé" -ForegroundColor Cyan
+    Write-Host "Mode Automatique Intelligent activé" -ForegroundColor Cyan
     
     # Validation initiale
     Validate-Integrity
@@ -237,3 +246,5 @@ try {
     # Nettoyage final
     Stop-Monitoring
 } 
+
+

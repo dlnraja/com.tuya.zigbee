@@ -1,4 +1,4 @@
-# 🔍 RAPPORT ANALYSE PR/ISSUE WORKFLOW - Tuya Zigbee Project
+﻿# 🔍 RAPPORT ANALYSE PR/ISSUE WORKFLOW - Tuya Zigbee Project
 
 ## 🎯 **RÉSUMÉ EXÉCUTIF**
 **Analyse complète du workflow PR/Issue existant et propositions d'améliorations**
@@ -94,7 +94,7 @@ const comment = `🤖 **PR Analysée**\n\n` +
                `1. ✅ Vérification automatique\n` +
                `2. 🔍 Revue par l'équipe\n` +
                `3. 🚀 Merge si approuvé\n\n` +
-               `*Mode YOLO Intelligent activé*`;
+               `*Mode Automatique Intelligent activé*`;
 ```
 
 ##### **4. Labels Automatiques**
@@ -119,7 +119,7 @@ const report = `📊 **RAPPORT TRIAGE INTELLIGENT**\n\n` +
                `- Commentaires automatiques ajoutés\n` +
                `- Labels automatiques appliqués\n` +
                `- Triage intelligent terminé\n\n` +
-               `🚀 **Mode YOLO Intelligent activé**`;
+               `🚀 **Mode Automatique Intelligent activé**`;
 ```
 
 ---
@@ -139,7 +139,7 @@ const report = `📊 **RAPPORT TRIAGE INTELLIGENT**\n\n` +
 | **Filtrage intelligent** | ❌ | ✅ | +100% |
 | **Notifications avancées** | ❌ | ✅ | +100% |
 | **Gestion des priorités** | ❌ | ✅ | +100% |
-| **Mode YOLO Intelligent** | ❌ | ✅ | +100% |
+| **Mode Automatique Intelligent** | ❌ | ✅ | +100% |
 
 ---
 
@@ -170,7 +170,7 @@ const report = `📊 **RAPPORT TRIAGE INTELLIGENT**\n\n` +
 - ✅ **Commentaires détaillés** : Informations complètes
 - ✅ **Mentions utilisateurs** : @username automatiques
 - ✅ **Prochaines étapes** : Workflow clair
-- ✅ **Mode YOLO Intelligent** : Messages optimisés
+- ✅ **Mode Automatique Intelligent** : Messages optimisés
 
 ---
 
@@ -215,7 +215,7 @@ const report = `📊 **RAPPORT TRIAGE INTELLIGENT**\n\n` +
 - **Labels automatiques** : Classification pertinente
 - **Statistiques détaillées** : Rapports complets
 - **Notifications avancées** : Communication optimisée
-- **Mode YOLO Intelligent** : Activé et opérationnel
+- **Mode Automatique Intelligent** : Activé et opérationnel
 
 ### **🎯 PRÊT POUR PRODUCTION**
 - **Workflow amélioré** : `intelligent-triage.yml`
@@ -229,5 +229,5 @@ const report = `📊 **RAPPORT TRIAGE INTELLIGENT**\n\n` +
 ---
 
 *Timestamp : 2025-07-24 02:25:00 UTC*
-*Mode YOLO Intelligent activé - Workflow PR/Issue optimisé*
+*Mode Automatique Intelligent activé - Workflow PR/Issue optimisé*
 *Projet Tuya Zigbee 100% automatisé* 

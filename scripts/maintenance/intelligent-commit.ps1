@@ -1,4 +1,13 @@
-﻿# Script de commit intelligent
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# Script de commit intelligent
 Write-Host "🚀 COMMIT ET PUSH INTELLIGENT" -ForegroundColor Green
 
 # Vérifier l'état du git
@@ -54,3 +63,4 @@ Optimization completed automatically by AI Assistant
 } else {
     Write-Host "ℹ️ Aucun changement détecté" -ForegroundColor Blue
 } 
+

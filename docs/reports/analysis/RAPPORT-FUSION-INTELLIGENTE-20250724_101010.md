@@ -1,9 +1,9 @@
-# 🔄 RAPPORT DE FUSION INTELLIGENTE - TUYA ZIGBEE
+﻿# 🔄 RAPPORT DE FUSION INTELLIGENTE - TUYA ZIGBEE
 
 ## 🎯 **Fusion Intelligente des Branches**
 
 **Date de fusion :** 2025-07-24 10:10:10
-**Mode YOLO Intelligent :** ✅ ACTIF
+**Mode Automatique Intelligent :** ✅ ACTIF
 **Stratégie :** Intelligente et additive
 
 ## 📊 **Détails de la Fusion**
@@ -39,7 +39,7 @@
 - **Fusion réussie :** ✅
 - **Conflits résolus :** ✅
 - **Synchronisation :** ✅
-- **Mode YOLO Intelligent :** ✅
+- **Mode Automatique Intelligent :** ✅
 
 ## 🎉 **Conclusion**
 
@@ -47,11 +47,12 @@
 - ✅ **Fusion intelligente** réussie
 - ✅ **Résolution intelligente** des conflits
 - ✅ **Synchronisation** automatique
-- ✅ **Mode YOLO Intelligent** opérationnel
+- ✅ **Mode Automatique Intelligent** opérationnel
 
 **Le projet Tuya Zigbee est maintenant parfaitement synchronisé !** 🚀
 
 ---
 
-*Généré automatiquement par le Mode YOLO Intelligent*
+*Généré automatiquement par le Mode Automatique Intelligent*
 *Fusion intelligente des branches du projet Tuya Zigbee*
+

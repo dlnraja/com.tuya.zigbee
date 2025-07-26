@@ -1,4 +1,4 @@
-# 🔧 RAPPORT VÉRIFICATION DRIVERS - Tuya Zigbee Project
+﻿# 🔧 RAPPORT VÉRIFICATION DRIVERS - Tuya Zigbee Project
 
 ## 🎯 **RÉSUMÉ EXÉCUTIF**
 **Vérification et correction de la cohérence de tous les drivers avec le SDK Homey 3**
@@ -193,8 +193,8 @@ async onInit() {
     // Enregistrer les capacités
     this.registerCapability('onoff', 'genOnOff');
     
-    // Mode YOLO Intelligent activé
-    this.log('Mode YOLO Intelligent activé - SDK Homey 3 optimisé');
+    // Mode Automatique Intelligent activé
+    this.log('Mode Automatique Intelligent activé - SDK Homey 3 optimisé');
 }
 ```
 
@@ -248,7 +248,7 @@ this.registerCapability('alarm_battery', 'genPowerCfg');
 
 ## 🎯 **FONCTIONNALITÉS AVANCÉES**
 
-### **1. Mode YOLO Intelligent**
+### **1. Mode Automatique Intelligent**
 - ✅ **Activation automatique** dans tous les drivers
 - ✅ **Optimisation continue** des performances
 - ✅ **Intelligence intégrée** pour les choix optimaux
@@ -315,5 +315,5 @@ this.registerCapability('alarm_battery', 'genPowerCfg');
 ---
 
 *Timestamp : 2025-07-24 02:45:00 UTC*
-*Mode YOLO Intelligent activé - SDK Homey 3 optimisé*
+*Mode Automatique Intelligent activé - SDK Homey 3 optimisé*
 *123 drivers vérifiés et corrigés avec succès* 

@@ -1,4 +1,13 @@
-﻿<#
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+<#
 .SYNOPSIS
     recreate-project.ps1
     Recrée l’intégralité des fichiers et répertoires manquants avec leurs contenus,
@@ -90,7 +99,7 @@ module.exports = THB2;
     }
 
     Create-File "$root\README.md" @"
-# Tuya Zigbee App – Fork avec Patch 2025-07-22
+# Tuya Zigbee App – Fork avec Patch 2025-07-26
 Adds:
 - Daily-scan illimité
 - Icons IA
@@ -121,3 +130,4 @@ Create-Files
 Git-Operations
 
 Write-Host "✅ Tous les fichiers ont été créés et pushés sur le dépôt distant !" -ForegroundColor Green
+

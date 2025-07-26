@@ -1,4 +1,13 @@
-﻿# RECOVER DRIVERS - Tuya Zigbee Project
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# RECOVER DRIVERS - Tuya Zigbee Project
 # Script pour recuperer et regenerer tous les drivers de toutes les sources
 
 param(
@@ -346,7 +355,7 @@ Statut:
 - Backup: Cree
 
 ---
-Rapport genere automatiquement - Mode YOLO Intelligent
+Rapport genere automatiquement - Mode Automatique Intelligent
 "@
         
         return $report
@@ -378,4 +387,6 @@ Clear-TimeoutJobs
 Write-Host "`nRECUPERATION DES DRIVERS TERMINEE" -ForegroundColor Green
 Write-Host "=================================" -ForegroundColor Green
 Write-Host "Tous les drivers ont ete recuperes et regeneres!" -ForegroundColor White
-Write-Host "Mode YOLO Intelligent active - Recuperation continue" -ForegroundColor Cyan 
+Write-Host "Mode Automatique Intelligent active - Recuperation continue" -ForegroundColor Cyan 
+
+

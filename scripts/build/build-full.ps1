@@ -1,4 +1,13 @@
-﻿<#
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+<#
   build-full.ps1
   Crée l’arborescence complète avec les drivers historiques,
   dashboard, scripts automation, README, locales…
@@ -30,7 +39,7 @@ module.exports = THB2;
 <!DOCTYPE html>
 <html><head><title>Tuya Patch Dashboard</title></head>
 <body>
-  <h1>Tuya Patch 2025-07-22</h1>
+  <h1>Tuya Patch 2025-07-26</h1>
   <ul>
     <li>Daily-scan illimité</li>
     <li>7 langues</li>
@@ -55,7 +64,7 @@ with serial.Serial(sys.argv[1], 500000) as ser:
 
   # README complet
   "README.md" = @"
-# Tuya Zigbee App – Fork avec Patch 2025-07-22
+# Tuya Zigbee App – Fork avec Patch 2025-07-26
 
 Ajoute :
 - Daily-scan illimité + icons IA + trad 7 langues  
@@ -103,3 +112,4 @@ git push origin master
 
 Pop-Location
 Write-Host "✅ Tous les fichiers créés et pushés !" -ForegroundColor Green
+

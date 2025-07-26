@@ -1,4 +1,4 @@
-# TODO REPRISE 49 DERNIÈRES HEURES - Tuya Zigbee Project
+﻿# TODO REPRISE 49 DERNIÈRES HEURES - Tuya Zigbee Project
 
 ## 🚀 **TÂCHES PRIORITAIRES À REPRENDRE**
 
@@ -65,7 +65,7 @@
 - **Graphiques**: Chart.js interactifs
 - **Logs**: Historique dynamique
 
-### 🔄 **TÂCHES IMMÉDIATES (YOLO MODE)**
+### 🔄 **TÂCHES IMMÉDIATES (Mode Automatique)**
 
 #### **1. Enrichir Dashboard**
 ```html
@@ -166,8 +166,8 @@ https://github.com/tuya/tuya-smart-life
 - **Parser error**: Alternative parser + Manual
 - **Scraper fail**: Cache + Offline mode
 
-#### **YOLO Mode**
-- **Auto-continue**: Toutes les actions
+#### **Mode Automatique**
+- **continuation automatique**: Toutes les actions
 - **No confirmation**: Exécution directe
 - **Fast recovery**: Reprise immédiate
 - **Zero delay**: < 1 seconde
@@ -176,6 +176,6 @@ https://github.com/tuya/tuya-smart-life
 
 **📅 Créé**: 2025-07-26 03:45:12
 **🎯 Objectif**: Reprise complète des 49 dernières heures
-**🚀 Mode**: YOLO GLOBAL ANTI-CRASH
+**🚀 Mode**: Automatique GLOBAL ANTI-CRASH
 **🔗 Smart Life**: Intégration complète
 **🛡️ Anti-crash**: Fallback systems activés 

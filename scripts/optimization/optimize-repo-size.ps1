@@ -1,4 +1,13 @@
-﻿# OPTIMIZE REPO SIZE - Tuya Zigbee Project
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# OPTIMIZE REPO SIZE - Tuya Zigbee Project
 # Script pour réduire drastiquement la taille du repository
 
 param(
@@ -237,3 +246,4 @@ Write-Host "- Réduction: $reductionPercent%" -ForegroundColor Green
 Write-Host "`nOPTIMIZE REPO SIZE TERMINÉ!" -ForegroundColor Green
 Write-Host "===========================" -ForegroundColor Green
 Write-Host "Repository optimisé pour push GitHub" -ForegroundColor White 
+

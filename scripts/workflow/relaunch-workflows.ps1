@@ -1,8 +1,17 @@
-﻿# 🚀 Script de Relance des Workflows GitHub Actions - Tuya Zigbee
-# Mode YOLO Intelligent
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# 🚀 Script de Relance des Workflows GitHub Actions - Tuya Zigbee
+# Mode Automatique Intelligent
 
 Write-Host "🚀 RELANCE DES WORKFLOWS GITHUB ACTIONS - TUYA ZIGBEE" -ForegroundColor Cyan
-Write-Host "Mode YOLO Intelligent Activé" -ForegroundColor Red
+Write-Host "Mode Automatique Intelligent Activé" -ForegroundColor Red
 Write-Host "==================================================" -ForegroundColor Yellow
 
 # Configuration
@@ -149,7 +158,7 @@ $reportContent = @"
 
 ## 📅 Informations Générales
 - **Date de relance**: $currentDate
-- **Mode**: YOLO Intelligent
+- **Mode**: Automatique Intelligent
 - **Statut**: Relance des workflows GitHub Actions
 
 ## 📊 Statistiques
@@ -186,7 +195,7 @@ $($syncWorkflows -join "`n- ")
 4. Monitoring automatique
 
 ---
-*Rapport généré automatiquement par le Mode YOLO Intelligent*
+*Rapport généré automatiquement par le Mode Automatique Intelligent*
 "@
 
 Set-Content $logFile $reportContent
@@ -197,7 +206,7 @@ Write-Log "🔄 Commit et push automatique" "GIT"
 
 try {
     git add .
-    git commit -m "🚀 Relance des workflows GitHub Actions - Mode YOLO Intelligent - Tous les workflows relancés et opérationnels - CI/CD intelligent activé - Automatisation complète"
+    git commit -m "🚀 Relance des workflows GitHub Actions - Mode Automatique Intelligent - Tous les workflows relancés et opérationnels - CI/CD intelligent activé - Automatisation complète"
     git push
     Write-Log "✅ Commit et push automatique réussi" "SUCCESS"
 } catch {
@@ -208,7 +217,9 @@ try {
 Write-Log "🎉 RELANCE DES WORKFLOWS TERMINÉE" "COMPLETE"
 Write-Host ""
 Write-Host "🎉 RELANCE DES WORKFLOWS TERMINÉE" -ForegroundColor Green
-Write-Host "Mode YOLO Intelligent - Tous les workflows sont maintenant opérationnels" -ForegroundColor Cyan
+Write-Host "Mode Automatique Intelligent - Tous les workflows sont maintenant opérationnels" -ForegroundColor Cyan
 Write-Host "📊 Rapport généré: $logFile" -ForegroundColor Yellow
 Write-Host "🚀 Workflows GitHub Actions entièrement fonctionnels" -ForegroundColor Green
 Write-Host "" 
+
+

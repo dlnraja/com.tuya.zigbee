@@ -1,0 +1,16 @@
+﻿{
+  "id": "genericmediaplayer",
+  "title": {
+    "en": "Tuya GenericMediaPlayer",
+    "fr": "Tuya GenericMediaPlayer",
+    "nl": "Tuya GenericMediaPlayer"
+  },
+  "icon": "/assets/icon.svg",
+  "class": "media_player",
+  "capabilities": ["onoff"],
+  "local": true,
+  "noApiRequired": true,
+  "enhanced": true,
+  "lastEnhanced": "2025-07-26 16:48:51",
+  "category": "media_player"
+}

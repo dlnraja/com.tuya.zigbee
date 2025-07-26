@@ -1,7 +1,16 @@
-﻿# YOLO CLEAN HISTORY - Tuya Zigbee Project
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# Automatique CLEAN HISTORY - Tuya Zigbee Project
 # Script pour nettoyer complètement l'historique Git des fichiers volumineux
 
-Write-Host "YOLO CLEAN HISTORY - NETTOYAGE HISTORIQUE GIT" -ForegroundColor Cyan
+Write-Host "Automatique CLEAN HISTORY - NETTOYAGE HISTORIQUE GIT" -ForegroundColor Cyan
 Write-Host "=============================================" -ForegroundColor Cyan
 
 # 1. Nettoyage des fichiers volumineux de l'historique
@@ -48,7 +57,7 @@ Write-Host "===================" -ForegroundColor Yellow
 
 Write-Host "  Commit de nettoyage..." -ForegroundColor Yellow
 git add .
-git commit -m "🚀 YOLO CLEAN HISTORY: Nettoyage complet de l'historique Git - Fichiers volumineux supprimés"
+git commit -m "🚀 Automatique CLEAN HISTORY: Nettoyage complet de l'historique Git - Fichiers volumineux supprimés"
 
 # 6. Configuration Git optimisée
 Write-Host "`n6. CONFIGURATION GIT OPTIMISÉE" -ForegroundColor Yellow
@@ -61,6 +70,8 @@ git config core.compression 9
 git config http.lowSpeedLimit 0
 git config http.lowSpeedTime 999999
 
-Write-Host "`nYOLO CLEAN HISTORY TERMINÉ!" -ForegroundColor Green
+Write-Host "`nAutomatique CLEAN HISTORY TERMINÉ!" -ForegroundColor Green
 Write-Host "============================" -ForegroundColor Green
 Write-Host "Historique Git nettoyé des fichiers volumineux" -ForegroundColor White 
+
+

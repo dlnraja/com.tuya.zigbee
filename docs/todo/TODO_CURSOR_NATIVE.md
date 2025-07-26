@@ -1,4 +1,4 @@
-# TODO SYNCHRONISE - Universal TUYA Zigbee Device
+﻿# TODO SYNCHRONISE - Universal TUYA Zigbee Device
 
 ## METRIQUES ACTUELLES (2025-07-25_21-35-00)
 
@@ -56,7 +56,7 @@
 - [ ] Tests de performance
 - [ ] Validation des workflows
 
-## RELANCE IMMÉDIATE - YOLO MODE
+## RELANCE IMMÉDIATE - Mode Automatique
 
 ### Actions Immédiates
 1. **Validation Dashboard** - Mise à jour métriques
@@ -82,9 +82,10 @@
 **TODO SYNCHRONISE - UNIVERSAL TUYA Zigbee Device**
 
 *Derniere mise a jour : 2025-07-25_21-35-00*  
-*Genere automatiquement par le systeme YOLO*  
-*Focus exclusif Tuya Zigbee avec YOLO mode active*
+*Genere automatiquement par le systeme Automatique*  
+*Focus exclusif Tuya Zigbee avec Mode Automatique active*
 *Status : MIGRATION COMPLÈTE - 208/208 drivers SDK3*
+
 
 
 

@@ -1,8 +1,17 @@
-﻿# 🔄 SCRIPT DE FUSION SIMPLE DES BRANCHES - TUYA ZIGBEE
-# Mode YOLO Intelligent - Version simplifiée
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# 🔄 SCRIPT DE FUSION SIMPLE DES BRANCHES - TUYA ZIGBEE
+# Mode Automatique Intelligent - Version simplifiée
 
 Write-Host "🔄 FUSION SIMPLE DES BRANCHES - TUYA ZIGBEE" -ForegroundColor Green
-Write-Host "Mode YOLO Intelligent: ACTIF" -ForegroundColor Yellow
+Write-Host "Mode Automatique Intelligent: ACTIF" -ForegroundColor Yellow
 Write-Host ""
 
 # ===== ANALYSE DES BRANCHES =====
@@ -54,7 +63,7 @@ foreach ($branch in $existingBranches) {
     
     try {
         # Tentative de fusion intelligente
-        git merge "origin/$branch" --no-ff -m "🔄 Fusion intelligente $branch → master - Mode YOLO Intelligent"
+        git merge "origin/$branch" --no-ff -m "🔄 Fusion intelligente $branch → master - Mode Automatique Intelligent"
         
         if ($LASTEXITCODE -eq 0) {
             Write-Host "✅ Fusion réussie pour $branch" -ForegroundColor Green
@@ -70,7 +79,7 @@ foreach ($branch in $existingBranches) {
             
             # Commit de la résolution
             git add -A
-            git commit -m "🔧 Résolution automatique des conflits - Mode YOLO Intelligent"
+            git commit -m "🔧 Résolution automatique des conflits - Mode Automatique Intelligent"
             Write-Host "✅ Conflits résolus pour $branch" -ForegroundColor Green
         }
     } catch {
@@ -116,7 +125,7 @@ $rapportFile = "RAPPORT-FUSION-SIMPLE-$timestamp.md"
 
 $rapport = "FUSION SIMPLE DES BRANCHES - TUYA ZIGBEE`n"
 $rapport += "Date: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')`n"
-$rapport += "Mode YOLO Intelligent: ACTIF`n"
+$rapport += "Mode Automatique Intelligent: ACTIF`n"
 $rapport += "Branches fusionnées: $($existingBranches -join ', ')`n"
 $rapport += "Statut: REUSSI`n"
 
@@ -128,12 +137,14 @@ Write-Host ""
 Write-Host "📤 PUSH FINAL..." -ForegroundColor Blue
 
 git add $rapportFile
-git commit -m "📋 Rapport fusion simple - Mode YOLO Intelligent"
+git commit -m "📋 Rapport fusion simple - Mode Automatique Intelligent"
 git push origin master
 
 Write-Host ""
 Write-Host "🎉 FUSION SIMPLE TERMINÉE AVEC SUCCÈS" -ForegroundColor Green
 Write-Host "Branches fusionnées: $($existingBranches.Count)" -ForegroundColor Cyan
-Write-Host "Mode YOLO Intelligent: Opérationnel" -ForegroundColor Green
+Write-Host "Mode Automatique Intelligent: Opérationnel" -ForegroundColor Green
 Write-Host ""
-Write-Host "Mode YOLO Intelligent - Fusion simple terminée" -ForegroundColor Yellow 
+Write-Host "Mode Automatique Intelligent - Fusion simple terminée" -ForegroundColor Yellow 
+
+

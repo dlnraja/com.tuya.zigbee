@@ -1,4 +1,13 @@
-﻿# TEST TIMEOUTS - Tuya Zigbee Project
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# TEST TIMEOUTS - Tuya Zigbee Project
 # Script de test pour verifier le fonctionnement des timeouts
 
 param(
@@ -119,3 +128,4 @@ Write-Host "`nTOUS LES TESTS TERMINES" -ForegroundColor Green
 Write-Host "=========================" -ForegroundColor Green
 Write-Host "Module timeout fonctionne correctement" -ForegroundColor White
 Write-Host "Prevention des boucles infinies activee" -ForegroundColor Cyan 
+

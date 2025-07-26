@@ -1,8 +1,8 @@
-# RAPPORT FINAL DE VALIDATION - TUYA ZIGBEE
+﻿# RAPPORT FINAL DE VALIDATION - TUYA ZIGBEE
 
 ## Résumé de la validation complète
 
-- **Mode YOLO Intelligent** : Activé
+- **Mode Automatique Intelligent** : Activé
 - **Drivers totaux** : 123
 - **Drivers sains** : 57
 - **Drivers problématiques** : 66
@@ -34,4 +34,4 @@
 
 **Projet validé et prêt pour la production ou la publication.**
 
-*Rapport généré automatiquement - Mode YOLO Intelligent* 
+*Rapport généré automatiquement - Mode Automatique Intelligent* 

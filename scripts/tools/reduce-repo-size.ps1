@@ -1,4 +1,13 @@
-﻿# REDUCE REPO SIZE - Tuya Zigbee Project
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# REDUCE REPO SIZE - Tuya Zigbee Project
 # Script simple pour réduire la taille du repository
 
 Write-Host "REDUCE REPO SIZE - REDUCTION DRASTIQUE" -ForegroundColor Cyan
@@ -122,3 +131,4 @@ Write-Host "- Taille du repository: $sizeMB MB" -ForegroundColor Green
 Write-Host "`nREDUCE REPO SIZE TERMINE!" -ForegroundColor Green
 Write-Host "=========================" -ForegroundColor Green
 Write-Host "Repository optimise pour push GitHub" -ForegroundColor White 
+

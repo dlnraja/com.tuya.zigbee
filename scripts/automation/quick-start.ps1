@@ -1,4 +1,13 @@
-﻿# 🚀 SCRIPT DE DÉMARRAGE RAPIDE - Tuya Zigbee Project
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# 🚀 SCRIPT DE DÉMARRAGE RAPIDE - Tuya Zigbee Project
 # Utilisation: .\scripts\quick-start.ps1
 
 Write-Host "🚀 DÉMARRAGE RAPIDE - Tuya Zigbee Project" -ForegroundColor Green
@@ -51,3 +60,4 @@ Write-Host "  4. Lancer le monitoring continu" -ForegroundColor White
 Write-Host ""
 Write-Host "✅ PROJET OPTIMISÉ ET PRÊT !" -ForegroundColor Green
 Write-Host "🚀 Bon développement !" -ForegroundColor Green 
+

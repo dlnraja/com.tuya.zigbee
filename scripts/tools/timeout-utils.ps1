@@ -1,4 +1,13 @@
-﻿# TIMEOUT UTILS - Tuya Zigbee Project
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# TIMEOUT UTILS - Tuya Zigbee Project
 # Module utilitaire pour gerer les timeouts et eviter les boucles infinies
 
 # Configuration des timeouts par defaut
@@ -252,3 +261,4 @@ function Set-TimeoutConfiguration {
     
     Write-Host "Configuration timeouts pour $Environment" -ForegroundColor Green
 } 
+

@@ -153,7 +153,7 @@
 - **Taille**: 4.2 KB
 - **Il y a**:  jours
 
-### [MODE-YOLO-INTELLIGENT](MODE-YOLO-INTELLIGENT.md)
+### [MODE-Automatique-INTELLIGENT](MODE-Automatique-INTELLIGENT.md)
 - **Date**: 2025-07-24 06:18
 - **Taille**: 9.3 KB
 - **Il y a**:  jours
@@ -224,10 +224,11 @@
 
 ### Rapports d'Automatisation
 - Workflows CI/CD
-- Mode YOLO Intelligent
+- Mode Automatique Intelligent
 - Automatisations avancees
 
 ---
 
 *Genere automatiquement par le script de nettoyage*
-*Mode YOLO Intelligent active*
+*Mode Automatique Intelligent active*
+

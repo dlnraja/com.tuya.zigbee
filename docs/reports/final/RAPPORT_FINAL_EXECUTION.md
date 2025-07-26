@@ -1,4 +1,4 @@
-# 🚀 RAPPORT FINAL D'EXÉCUTION - ENRICHISSEMENT ZIGBEE
+﻿# 🚀 RAPPORT FINAL D'EXÉCUTION - ENRICHISSEMENT ZIGBEE
 
 ## 📊 **Résumé de l'Exécution**
 
@@ -55,7 +55,7 @@ Certains scripts n'ont pas pu s'exécuter en raison de problèmes de syntaxe ou 
 - `scripts/process-all-devices.ps1`
 - `scripts/enhance-all-devices.ps1`
 - `scripts/update-translations.ps1`
-- `scripts/remove-yolo-references.ps1`
+- `scripts/remove-Automatique-references.ps1`
 - `scripts/update-versioning.ps1`
 - `scripts/update-device-matrix-kpis.ps1`
 
@@ -100,7 +100,7 @@ scripts/enhance-all-workflows.ps1
 scripts/process-all-devices.ps1
 scripts/enhance-all-devices.ps1
 scripts/update-translations.ps1
-scripts/remove-yolo-references.ps1
+scripts/remove-Automatique-references.ps1
 scripts/update-versioning.ps1
 scripts/update-device-matrix-kpis.ps1
 ```
@@ -161,7 +161,7 @@ Exécuter manuellement chaque script qui a échoué pour compléter l'enrichisse
 - Compléter les traductions
 - Finaliser les workflows
 - Optimiser les devices
-- Nettoyer les références YOLO
+- Nettoyer les références Automatique
 
 ---
 

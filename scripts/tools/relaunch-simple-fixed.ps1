@@ -1,8 +1,17 @@
-﻿# Script Relance Simple Fixe - Tuya Zigbee
-# Mode YOLO Intelligent
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# Script Relance Simple Fixe - Tuya Zigbee
+# Mode Automatique Intelligent
 
 Write-Host "RELANCE SIMPLE FIXE - TUYA ZIGBEE" -ForegroundColor Cyan
-Write-Host "Mode YOLO Intelligent" -ForegroundColor Red
+Write-Host "Mode Automatique Intelligent" -ForegroundColor Red
 
 # Configuration
 $timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
@@ -151,7 +160,7 @@ Write-Log "Generation du rapport final" "REPORT"
 $currentDate = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 $reportContent = "RAPPORT DE RELANCE SIMPLE FIXE - TUYA ZIGBEE`n"
 $reportContent += "Date: $currentDate`n"
-$reportContent += "Mode: YOLO Intelligent`n"
+$reportContent += "Mode: Automatique Intelligent`n"
 $reportContent += "Workflows: $($workflows.Count)`n"
 $reportContent += "Drivers: $($drivers.Count)`n"
 $reportContent += "Scripts: $($scripts.Count)`n"
@@ -165,7 +174,7 @@ Write-Log "Commit et push final" "GIT"
 
 try {
     git add .
-    git commit -m "Relance simple fixe de toutes les fonctionnalites - Mode YOLO Intelligent - Dashboard avec section Beta - Documentation a jour - Workflows operationnels"
+    git commit -m "Relance simple fixe de toutes les fonctionnalites - Mode Automatique Intelligent - Dashboard avec section Beta - Documentation a jour - Workflows operationnels"
     git push
     Write-Log "Commit et push final reussi" "SUCCESS"
 } catch {
@@ -176,7 +185,9 @@ try {
 Write-Log "RELANCE SIMPLE FIXE TERMINEE" "COMPLETE"
 Write-Host ""
 Write-Host "RELANCE SIMPLE FIXE TERMINEE" -ForegroundColor Green
-Write-Host "Mode YOLO Intelligent" -ForegroundColor Cyan
+Write-Host "Mode Automatique Intelligent" -ForegroundColor Cyan
 Write-Host "Rapport genere: $logFile" -ForegroundColor Yellow
 Write-Host "Projet Tuya Zigbee entierement fonctionnel" -ForegroundColor Green
 Write-Host "" 
+
+

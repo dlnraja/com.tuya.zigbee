@@ -1,4 +1,13 @@
-﻿# TEST RAPIDE - Tuya Zigbee Project
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# TEST RAPIDE - Tuya Zigbee Project
 # Script de test rapide pour vérifier les optimisations
 
 # Couleurs pour l'affichage
@@ -126,5 +135,7 @@ if ($PS_Count -eq $SH_Count -and $PS_Count -gt 0) {
 Write-Host ""
 
 Write-Host "$Green TEST RAPIDE TERMINE !$NC"
-Write-Host "$Cyan Mode YOLO Intelligent active - Optimisations continues$NC"
+Write-Host "$Cyan Mode Automatique Intelligent active - Optimisations continues$NC"
 Write-Host "" 
+
+

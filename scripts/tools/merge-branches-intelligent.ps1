@@ -1,8 +1,17 @@
-﻿# 🔄 SCRIPT DE FUSION INTELLIGENTE DES BRANCHES - TUYA ZIGBEE
-# Mode YOLO Intelligent - Fusion intelligente et additive
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# 🔄 SCRIPT DE FUSION INTELLIGENTE DES BRANCHES - TUYA ZIGBEE
+# Mode Automatique Intelligent - Fusion intelligente et additive
 
 Write-Host "🔄 FUSION INTELLIGENTE DES BRANCHES - TUYA ZIGBEE" -ForegroundColor Green
-Write-Host "Mode YOLO Intelligent: ACTIF" -ForegroundColor Yellow
+Write-Host "Mode Automatique Intelligent: ACTIF" -ForegroundColor Yellow
 Write-Host ""
 
 # ===== ANALYSE DES BRANCHES =====
@@ -76,7 +85,7 @@ foreach ($branch in $existingBranches) {
     
     try {
         # Tentative de fusion intelligente
-        $mergeResult = git merge "origin/$branch" --no-ff -m "🔄 Fusion intelligente $branch → master - Mode YOLO Intelligent" 2>&1
+        $mergeResult = git merge "origin/$branch" --no-ff -m "🔄 Fusion intelligente $branch → master - Mode Automatique Intelligent" 2>&1
         
         if ($LASTEXITCODE -eq 0) {
             Write-Host "✅ Fusion réussie pour $branch" -ForegroundColor Green
@@ -110,7 +119,7 @@ foreach ($branch in $existingBranches) {
             
             # Commit de la résolution
             git add -A
-            git commit -m "🔧 Résolution intelligente des conflits - Mode YOLO Intelligent"
+            git commit -m "🔧 Résolution intelligente des conflits - Mode Automatique Intelligent"
             Write-Host "✅ Conflits résolus pour $branch" -ForegroundColor Green
         }
     } catch {
@@ -160,7 +169,7 @@ $rapport = @"
 ## 🎯 **Fusion Intelligente des Branches**
 
 **Date de fusion :** $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
-**Mode YOLO Intelligent :** ✅ ACTIF
+**Mode Automatique Intelligent :** ✅ ACTIF
 **Stratégie :** Intelligente et additive
 
 ## 📊 **Détails de la Fusion**
@@ -196,7 +205,7 @@ $rapport = @"
 - **Fusion réussie :** ✅
 - **Conflits résolus :** ✅
 - **Synchronisation :** ✅
-- **Mode YOLO Intelligent :** ✅
+- **Mode Automatique Intelligent :** ✅
 
 ## 🎉 **Conclusion**
 
@@ -204,13 +213,13 @@ $rapport = @"
 - ✅ **Fusion intelligente** réussie
 - ✅ **Résolution intelligente** des conflits
 - ✅ **Synchronisation** automatique
-- ✅ **Mode YOLO Intelligent** opérationnel
+- ✅ **Mode Automatique Intelligent** opérationnel
 
 **Le projet Tuya Zigbee est maintenant parfaitement synchronisé !** 🚀
 
 ---
 
-*Généré automatiquement par le Mode YOLO Intelligent*
+*Généré automatiquement par le Mode Automatique Intelligent*
 *Fusion intelligente des branches du projet Tuya Zigbee*
 "@
 
@@ -222,13 +231,15 @@ Write-Host ""
 Write-Host "📤 PUSH FINAL..." -ForegroundColor Blue
 
 git add $rapportFile
-git commit -m "📋 Rapport fusion intelligente - Mode YOLO Intelligent"
+git commit -m "📋 Rapport fusion intelligente - Mode Automatique Intelligent"
 git push origin master
 
 Write-Host ""
 Write-Host "🎉 FUSION INTELLIGENTE TERMINÉE AVEC SUCCÈS" -ForegroundColor Green
 Write-Host "Branches fusionnées: $($existingBranches.Count)" -ForegroundColor Cyan
 Write-Host "Conflits résolus: $($conflictsDetected.Count)" -ForegroundColor Yellow
-Write-Host "Mode YOLO Intelligent: Opérationnel" -ForegroundColor Green
+Write-Host "Mode Automatique Intelligent: Opérationnel" -ForegroundColor Green
 Write-Host ""
-Write-Host "Mode YOLO Intelligent - Fusion intelligente terminée" -ForegroundColor Yellow 
+Write-Host "Mode Automatique Intelligent - Fusion intelligente terminée" -ForegroundColor Yellow 
+
+

@@ -4,7 +4,7 @@
 - **Drivers traitÃ©s** : 117
 - **Drivers amÃ©liorÃ©s** : 111
 - **Date d'amÃ©lioration** : 2025-07-24 05:32:20
-- **Mode YOLO Intelligent** : ActivÃ©
+- **Mode Automatique Intelligent** : ActivÃ©
 
 ## ðŸš€ **FONCTIONNALITÃ‰S AJOUTÃ‰ES**
 
@@ -22,7 +22,7 @@
 - âœ… **Long press** : DÃ©tection d'appui long
 - âœ… **Flow triggers** : DÃ©clenchement automatique des flows
 
-### **Mode YOLO Intelligent**
+### **Mode Automatique Intelligent**
 - âœ… **Automatisation complÃ¨te** : AmÃ©lioration automatique
 - âœ… **Intelligence intÃ©grÃ©e** : FonctionnalitÃ©s avancÃ©es
 - âœ… **Optimisation continue** : Performance amÃ©liorÃ©e
@@ -36,8 +36,9 @@
 ## âœ… **VALIDATION**
 - **AmÃ©lioration automatique** : âœ…
 - **FonctionnalitÃ©s intelligentes** : âœ…
-- **Mode YOLO Intelligent** : âœ…
+- **Mode Automatique Intelligent** : âœ…
 - **Rapport gÃ©nÃ©rÃ©** : âœ…
 
 ---
-*GÃ©nÃ©rÃ© automatiquement par le Mode YOLO Intelligent*
+*GÃ©nÃ©rÃ© automatiquement par le Mode Automatique Intelligent*
+

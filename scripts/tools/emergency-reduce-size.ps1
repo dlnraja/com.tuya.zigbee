@@ -1,4 +1,13 @@
-﻿# EMERGENCY REDUCE SIZE - Tuya Zigbee Project
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# EMERGENCY REDUCE SIZE - Tuya Zigbee Project
 # Script d'urgence pour réduire drastiquement la taille du repository
 
 Write-Host "EMERGENCY REDUCE SIZE - REDUCTION DRASTIQUE" -ForegroundColor Red
@@ -116,3 +125,4 @@ Write-Host "  Taille finale: $sizeMB MB" -ForegroundColor Green
 Write-Host "`nEMERGENCY REDUCE SIZE TERMINE!" -ForegroundColor Green
 Write-Host "=============================" -ForegroundColor Green
 Write-Host "Repository reduit pour push d'urgence" -ForegroundColor White 
+

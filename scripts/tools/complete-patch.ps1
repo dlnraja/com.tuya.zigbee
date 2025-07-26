@@ -1,4 +1,13 @@
-﻿<#
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+<#
   complete-patch.ps1
   Crée l’ensemble des fichiers / dossiers des 7 commits du 22/07/2025
   puis commit + push
@@ -136,3 +145,4 @@ git commit -m "feat: daily-scan illimité + icons IA + trad 7 langues + Lot-1 de
 git push origin master
 
 Write-Host "✅ Patch complet appliqué et pushé !" -ForegroundColor Green
+

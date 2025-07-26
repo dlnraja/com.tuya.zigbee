@@ -1,4 +1,13 @@
-﻿# CLEANUP REPO - Tuya Zigbee Project
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# CLEANUP REPO - Tuya Zigbee Project
 # Script de nettoyage local pour optimiser le repo
 
 param(
@@ -161,3 +170,4 @@ if (-not $DryRun) {
 }
 
 Write-Host "Timestamp: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss UTC')" -ForegroundColor White 
+

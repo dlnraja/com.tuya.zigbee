@@ -1,4 +1,13 @@
-﻿# OPTIMIZE REPO - Tuya Zigbee Project
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# OPTIMIZE REPO - Tuya Zigbee Project
 # Script pour optimiser et nettoyer le repository avant push
 
 param(
@@ -142,7 +151,7 @@ try {
         
         # Commit des optimisations
         $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-        git commit -m "🚀 OPTIMISATION REPO: Nettoyage et compression - $timestamp - Mode YOLO Intelligent"
+        git commit -m "🚀 OPTIMISATION REPO: Nettoyage et compression - $timestamp - Mode Automatique Intelligent"
         
         Write-Host "Repository optimisé et prêt pour push" -ForegroundColor Green
     } else {
@@ -155,4 +164,6 @@ try {
 Write-Host "`nOPTIMISATION TERMINÉE!" -ForegroundColor Green
 Write-Host "=====================" -ForegroundColor Green
 Write-Host "Repository optimisé et prêt pour push" -ForegroundColor White
-Write-Host "Mode YOLO Intelligent activé" -ForegroundColor Cyan 
+Write-Host "Mode Automatique Intelligent activé" -ForegroundColor Cyan 
+
+

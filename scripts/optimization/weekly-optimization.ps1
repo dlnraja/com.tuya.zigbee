@@ -1,4 +1,13 @@
-﻿# 🚀 SCRIPT D'OPTIMISATION HEBDOMADAIRE - Tuya Zigbee Project
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# 🚀 SCRIPT D'OPTIMISATION HEBDOMADAIRE - Tuya Zigbee Project
 # Exécution: .\scripts\weekly-optimization.ps1
 
 Write-Host "🚀 DÉMARRAGE DE L'OPTIMISATION HEBDOMADAIRE" -ForegroundColor Green
@@ -425,3 +434,4 @@ Write-Host "📝 Rapport hebdomadaire généré" -ForegroundColor Green
 Write-Host "🚀 Changements commités et poussés" -ForegroundColor Green
 Write-Host ""
 Write-Host "🎉 Pipeline d'optimisation hebdomadaire terminé !" -ForegroundColor Green 
+

@@ -1,4 +1,13 @@
-﻿# RECOVER PUSH - Tuya Zigbee Project
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# RECOVER PUSH - Tuya Zigbee Project
 # Script de récupération pour le push
 
 Write-Host "RECOVER PUSH - RECUPERATION PUSH" -ForegroundColor Cyan
@@ -56,3 +65,4 @@ git status
 Write-Host "`nRECOVER PUSH TERMINE!" -ForegroundColor Green
 Write-Host "=====================" -ForegroundColor Green
 Write-Host "Récupération push terminée" -ForegroundColor White 
+

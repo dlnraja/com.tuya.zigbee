@@ -1,4 +1,13 @@
-﻿# Script de migration des drivers
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# Script de migration des drivers
 Write-Host "🔄 MIGRATION DES DRIVERS" -ForegroundColor Green
 
 $DriversDir = "drivers"
@@ -49,3 +58,4 @@ Write-Host "📊 STATISTIQUES:" -ForegroundColor Cyan
 Write-Host "  - Drivers SDK3: $Sdk3Count" -ForegroundColor White
 Write-Host "  - Drivers Legacy: $LegacyCount" -ForegroundColor White
 Write-Host "  - Drivers En cours: $InProgressCount" -ForegroundColor White 
+

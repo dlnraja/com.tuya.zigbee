@@ -1,4 +1,13 @@
-﻿# Rewrite Git History Author/Email for All Commits
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# Rewrite Git History Author/Email for All Commits
 # Usage: pwsh -File scripts/cleanup/rewrite-git-history-author.ps1
 # ⚠️ Cette opération réécrit tout l’historique git (force-push obligatoire)
 # ⚠️ Sauvegardez votre repo avant !
@@ -35,3 +44,4 @@ fi
 
 Write-Host "✅ Réécriture terminée."
 Write-Host "⚠️ Il faut maintenant forcer le push : git push --force --tags origin $Branch" -ForegroundColor Yellow 
+

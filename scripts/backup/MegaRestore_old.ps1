@@ -1,4 +1,13 @@
-﻿<#
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+<#
 .SYNOPSIS
   Répare et automatise ton repo Tuya Zigbee.
 .DESCRIPTION
@@ -48,4 +57,5 @@ if (Test-Path $RepoDir) {
 try {
   Invoke-WebRequest -Uri $ZipUrl -OutFile $ZipFile -UseBasicParsing -ErrorAction Stop
   Expand-Archive -Path $ZipFile -DestinationPath $WorkDir
+
 

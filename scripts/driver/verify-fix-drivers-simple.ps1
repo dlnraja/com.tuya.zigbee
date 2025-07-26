@@ -1,4 +1,13 @@
-﻿# VERIFY FIX DRIVERS SIMPLE - Tuya Zigbee Project
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# VERIFY FIX DRIVERS SIMPLE - Tuya Zigbee Project
 # Script simplifié pour vérifier et corriger la cohérence des drivers avec le SDK Homey 3
 
 param(
@@ -94,7 +103,7 @@ function Fix-Driver {
         
         # Ajouter onInit si manquant
         if ($content -notmatch "async onInit") {
-            $onInit = "`n    async onInit() {`n        await super.onInit();`n        this.registerCapability('onoff', 'genOnOff');`n        this.log('Mode YOLO Intelligent activé');`n    }`n"
+            $onInit = "`n    async onInit() {`n        await super.onInit();`n        this.registerCapability('onoff', 'genOnOff');`n        this.log('Mode Automatique Intelligent activé');`n    }`n"
             $content = $content -replace "}", "$onInit`n}"
         }
         
@@ -208,3 +217,5 @@ if ($driversFixed -gt 0) {
 
 Write-Host "`nVERIFY FIX DRIVERS SIMPLE TERMINÉ!" -ForegroundColor Green
 Write-Host "===================================" -ForegroundColor Green
+
+

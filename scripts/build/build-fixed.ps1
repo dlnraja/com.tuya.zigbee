@@ -1,6 +1,15 @@
-﻿<#
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+<#
   build-fixed.ps1
-  Génère l’intégralité du patch 2025-07-22
+  Génère l’intégralité du patch 2025-07-26
   (drivers + workflows + scripts + locales + dashboard + git-notes)
 #>
 
@@ -104,7 +113,7 @@ foreach ($l in $langs.Keys) {
 
 # 6) README
 Write-File "README.md" @"
-# Tuya Zigbee App – Fork avec Patch 2025-07-22
+# Tuya Zigbee App – Fork avec Patch 2025-07-26
 Adds:
 - Daily-scan illimité  
 - Icons IA  
@@ -128,3 +137,4 @@ git commit -m $CommitMsg
 git push origin master
 
 Write-Host "✅ Patch complet créé et pushé !" -ForegroundColor Green
+

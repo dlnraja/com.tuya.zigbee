@@ -1,4 +1,13 @@
-﻿# Diagnostic Terminal PowerShell - Sécurisé, Zéro boucle, Zéro attente
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# Diagnostic Terminal PowerShell - Sécurisé, Zéro boucle, Zéro attente
 # Généré automatiquement le 24/07/2025
 
 Write-Host "--- DIAGNOSTIC TERMINAL SECURISE ---"
@@ -41,3 +50,4 @@ Write-Host "  - Fermez et rouvrez le terminal en cas de blocage."
 Write-Host "  - Surveillez les processus pwsh/conhost dans le gestionnaire de tâches."
 
 Write-Host "--- FIN DU DIAGNOSTIC ---" 
+

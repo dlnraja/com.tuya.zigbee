@@ -1,0 +1,16 @@
+﻿{
+  "id": "curtain",
+  "title": {
+    "en": "Tuya Curtain",
+    "fr": "Tuya Curtain",
+    "nl": "Tuya Curtain"
+  },
+  "icon": "/assets/icon.svg",
+  "class": "cover",
+  "capabilities": ["onoff"],
+  "local": true,
+  "noApiRequired": true,
+  "enhanced": true,
+  "lastEnhanced": "2025-07-26 16:48:49",
+  "category": "cover"
+}

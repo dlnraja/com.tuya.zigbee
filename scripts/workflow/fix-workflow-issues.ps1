@@ -1,4 +1,13 @@
-﻿# FIX WORKFLOW ISSUES - Tuya Zigbee Project
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# FIX WORKFLOW ISSUES - Tuya Zigbee Project
 # Script pour corriger les problèmes spécifiques dans les workflows
 
 param(
@@ -290,7 +299,9 @@ Write-Host "===============" -ForegroundColor Yellow
 Write-Host "`n🎉 CORRECTION WORKFLOWS TERMINÉE!" -ForegroundColor Green
 Write-Host "=================================" -ForegroundColor Green
 Write-Host "Tous les workflows ont été testés et corrigés!" -ForegroundColor White
-Write-Host "Mode YOLO Intelligent active - Workflows optimises" -ForegroundColor Cyan
+Write-Host "Mode Automatique Intelligent active - Workflows optimises" -ForegroundColor Cyan
 
 # 7. Nettoyage
 Clear-TimeoutJobs 
+
+

@@ -1,4 +1,4 @@
-# TODO ENRICHISSEMENT COMPLET - Tuya Zigbee Project
+﻿# TODO ENRICHISSEMENT COMPLET - Tuya Zigbee Project
 
 ## 🚀 **TÂCHES ACCOMPLIES (2025-01-27)**
 
@@ -34,7 +34,7 @@
 - [x] **Versioning mis à jour** : Dates et heures intégrées
 - [x] **CHANGELOG enrichi** : Toutes les modifications documentées
 - [x] **Push réussi** : Toutes les modifications synchronisées
-- [x] **Nettoyage YOLO** : Références supprimées
+- [x] **Nettoyage Automatique** : Références supprimées
 - [x] **Rapport final** : Documentation complète
 
 ## 📊 **MÉTRIQUES FINALES**

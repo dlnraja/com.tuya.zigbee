@@ -1,14 +1,20 @@
 {
-  "id": "switch",
-  "title": {
-    "en": "Tuya Smart Life Switch",
-    "fr": "Interrupteur Tuya Smart Life",
-    "nl": "Tuya Smart Life Schakelaar"
-  },
-  "icon": "/assets/icon.svg",
-  "class": "switch",
-  "capabilities": ["onoff"],
-  "local": true,
-  "noApiRequired": true,
-  "smartLife": true
-} 
+    "id":  "smart-life-switch",
+    "title":  {
+                  "en":  "Tuya Smart Life Switch",
+                  "fr":  "Tuya Smart Life Switch",
+                  "nl":  "Tuya Smart Life Switch"
+              },
+    "icon":  "/assets/icon.svg",
+    "class":  "switch",
+    "capabilities":  [
+                         "onoff"
+                     ],
+    "local":  true,
+    "smartLife":  true,
+    "category":  "switch",
+    "enhanced":  true,
+    "localMode":  true,
+    "noApiRequired":  true,
+    "lastEnhanced":  "2025-07-26 16:49:03"
+}

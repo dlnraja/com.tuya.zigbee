@@ -1,8 +1,17 @@
-﻿# Basic Branch Merge Script - Tuya Zigbee
-# Mode YOLO Intelligent
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# Basic Branch Merge Script - Tuya Zigbee
+# Mode Automatique Intelligent
 
 Write-Host "Basic Branch Merge - Tuya Zigbee" -ForegroundColor Green
-Write-Host "Mode YOLO Intelligent: ACTIVE" -ForegroundColor Yellow
+Write-Host "Mode Automatique Intelligent: ACTIVE" -ForegroundColor Yellow
 Write-Host ""
 
 # Analyze branches
@@ -52,7 +61,7 @@ foreach ($branch in $existingBranches) {
     Write-Host "Merging $branch into master..." -ForegroundColor Green
     
     try {
-        git merge "origin/$branch" --no-ff -m "Merge $branch into master - YOLO Mode"
+        git merge "origin/$branch" --no-ff -m "Merge $branch into master - Mode Automatique"
         
         if ($LASTEXITCODE -eq 0) {
             Write-Host "Merge successful for $branch" -ForegroundColor Green
@@ -67,7 +76,7 @@ foreach ($branch in $existingBranches) {
             }
             
             git add -A
-            git commit -m "Auto-resolve conflicts - YOLO Mode"
+            git commit -m "Auto-resolve conflicts - Mode Automatique"
             Write-Host "Conflicts resolved for $branch" -ForegroundColor Green
         }
     } catch {
@@ -113,7 +122,7 @@ $rapportFile = "MERGE-REPORT-$timestamp.md"
 
 $rapport = "MERGE REPORT - TUYA ZIGBEE`n"
 $rapport += "Date: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')`n"
-$rapport += "YOLO Mode: ACTIVE`n"
+$rapport += "Mode Automatique: ACTIVE`n"
 $rapport += "Branches merged: $($existingBranches -join ', ')`n"
 $rapport += "Status: SUCCESS`n"
 
@@ -125,12 +134,14 @@ Write-Host ""
 Write-Host "Final push..." -ForegroundColor Blue
 
 git add $rapportFile
-git commit -m "Merge report - YOLO Mode"
+git commit -m "Merge report - Mode Automatique"
 git push origin master
 
 Write-Host ""
 Write-Host "MERGE PROCESS COMPLETED SUCCESSFULLY" -ForegroundColor Green
 Write-Host "Branches merged: $($existingBranches.Count)" -ForegroundColor Cyan
-Write-Host "YOLO Mode: Operational" -ForegroundColor Green
+Write-Host "Mode Automatique: Operational" -ForegroundColor Green
 Write-Host ""
-Write-Host "YOLO Mode - Basic merge completed" -ForegroundColor Yellow 
+Write-Host "Mode Automatique - Basic merge completed" -ForegroundColor Yellow 
+
+

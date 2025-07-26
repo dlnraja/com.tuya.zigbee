@@ -1,4 +1,4 @@
-# RAPPORT COMPATIBILITÉ CROSS-PLATFORM - Tuya Zigbee Project
+﻿# RAPPORT COMPATIBILITÉ CROSS-PLATFORM - Tuya Zigbee Project
 
 ## 🎯 OBJECTIF ATTEINT
 
@@ -196,9 +196,9 @@ pwsh -File scripts/test-compatibilite.ps1
 - ✅ **Documentation complète**
 - ✅ **Gestion d'erreurs robuste**
 
-## 🚀 MODE YOLO INTELLIGENT
+## 🚀 MODE Automatique INTELLIGENT
 
-Tous les scripts fonctionnent en mode YOLO Intelligent :
+Tous les scripts fonctionnent en mode Automatique Intelligent :
 - **Modifications automatiques** acceptées
 - **Optimisations continues** activées
 - **Tests automatiques** intégrés
@@ -244,7 +244,7 @@ Tous les scripts fonctionnent en mode YOLO Intelligent :
 - **Date** : $(Get-Date -Format 'yyyy-MM-dd')
 - **Heure** : $(Get-Date -Format 'HH:mm:ss') UTC
 - **Script** : Rapport généré automatiquement
-- **Mode** : YOLO Intelligent activé
+- **Mode** : Automatique Intelligent activé
 
 ## 🎉 CONCLUSION
 
@@ -256,5 +256,5 @@ Le projet Tuya Zigbee dispose maintenant d'une suite complète de scripts cross-
 
 ---
 
-*Rapport généré automatiquement - Mode YOLO Intelligent*
+*Rapport généré automatiquement - Mode Automatique Intelligent*
 *Compatibilité cross-platform 100% - Prêt pour la production* 

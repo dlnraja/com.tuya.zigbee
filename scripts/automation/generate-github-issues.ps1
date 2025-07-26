@@ -1,4 +1,13 @@
-﻿# GitHub Issues Generator for Incomplete Tuya Zigbee Drivers
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# GitHub Issues Generator for Incomplete Tuya Zigbee Drivers
 # Générateur d'issues GitHub pour drivers Tuya Zigbee incomplets
 # Version: 1.0.0
 # Date: $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
@@ -397,3 +406,4 @@ if ($MyInvocation.InvocationName -eq $MyInvocation.MyCommand.Name) {
     $report = Start-GitHubIssuesGeneration
     exit $(if ($report.IssuesCreated -gt 0) { 0 } else { 1 })
 } 
+
