@@ -1,3 +1,12 @@
+﻿# Workflow GitHub Actions - weekly-optimization.yml
+# Enrichi automatiquement - Mode additif
+# Compatible Homey SDK3
+# Fonctionnement local prioritaire
+# Aucune dépendance API externe
+# 
+# @author Auto-Enhancement System
+# @version Enhanced
+# @date 2025-07-26 16:44:49
 # Description: Optimisation hebdomadaire automatique du projet (validation, logs, artefacts, auto-vérification)
 name: Weekly Optimization
 on:
@@ -38,6 +47,8 @@ jobs:
         retention-days: 30
     - name: Success
       run: echo "🎉 Optimisation hebdomadaire terminée avec succès !"
+
+
 
 
 

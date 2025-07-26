@@ -1,3 +1,12 @@
+﻿# Workflow GitHub Actions - ci.yml
+# Enrichi automatiquement - Mode additif
+# Compatible Homey SDK3
+# Fonctionnement local prioritaire
+# Aucune dépendance API externe
+# 
+# @author Auto-Enhancement System
+# @version Enhanced
+# @date 2025-07-26 16:44:49
 name: Continuous Integration - Tuya Zigbee
 on:
   push:
@@ -161,7 +170,7 @@ jobs:
           echo "✅ Fonctionnement 100% local"
           echo "✅ Modules intelligents validés"
           echo "✅ Documentation complète"
-          echo "✅ Dashboard dans docs/dashboard/"
+          echo "✅ Dashboard dans docs/docs/dashboard/"
           echo "✅ Traductions multilingues"
           echo "✅ Workflows GitHub Actions"
           echo "✅ Scripts PowerShell"
@@ -216,13 +225,13 @@ jobs:
       - name: Test Dashboard
         run: |
           echo "🧪 Test du dashboard..."
-          if [ -f "docs/dashboard/index.html" ]; then
+          if [ -f "docs/docs/dashboard/index.html" ]; then
             echo "✅ Dashboard HTML présent"
           fi
-          if [ -f "docs/dashboard/script.js" ]; then
+          if [ -f "docs/docs/dashboard/script.js" ]; then
             echo "✅ Dashboard JavaScript présent"
           fi
-          if [ -f "docs/dashboard/style.css" ]; then
+          if [ -f "docs/docs/dashboard/style.css" ]; then
             echo "✅ Dashboard CSS présent"
           fi
 
@@ -256,3 +265,5 @@ jobs:
           echo ""
           echo "✅ Validation complète réussie"
           echo "🚀 Projet prêt pour le déploiement"
+
+

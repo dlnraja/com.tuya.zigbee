@@ -1,3 +1,12 @@
+﻿# Workflow GitHub Actions - auto-translation.yml
+# Enrichi automatiquement - Mode additif
+# Compatible Homey SDK3
+# Fonctionnement local prioritaire
+# Aucune dépendance API externe
+# 
+# @author Auto-Enhancement System
+# @version Enhanced
+# @date 2025-07-26 16:44:49
 # Auto Translation - Traduction Automatique Multilingue
 name: Auto Translation - Tuya Zigbee
 
@@ -5,7 +14,7 @@ on:
   push:
     branches: [ master, main ]
     paths:
-      - 'docs/locales/en.md'
+      - 'docs/docs/locales/en.md'
       - 'README.md'
       - 'CHANGELOG.md'
   workflow_dispatch:
@@ -96,13 +105,13 @@ jobs:
             
             // Traduire README.md
             for (const lang of languages) {
-              const targetPath = `docs/locales/${lang.code}.md`;
+              const targetPath = `docs/docs/locales/${lang.code}.md`;
               await translateFile('README.md', targetPath, lang.code);
             }
             
             // Traduire CHANGELOG.md
             for (const lang of languages) {
-              const targetPath = `docs/locales/changelog_${lang.code}.md`;
+              const targetPath = `docs/docs/locales/changelog_${lang.code}.md`;
               await translateFile('CHANGELOG.md', targetPath, lang.code);
             }
             
@@ -154,7 +163,7 @@ jobs:
           echo "📝 Commit des traductions..."
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add docs/locales/
+          git add docs/docs/locales/
           git commit -m "🌍 Auto-translation: Update all language files" || echo "Aucun changement à commiter"
           git push || echo "Push non nécessaire"
 
@@ -164,4 +173,6 @@ jobs:
           echo "✅ 8 langues supportées"
           echo "✅ Fichiers mis à jour"
           echo "✅ Commit automatique effectué" 
+
+
 

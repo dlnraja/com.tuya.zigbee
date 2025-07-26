@@ -1,0 +1,132 @@
+﻿# Workflow GitHub Actions - Global Validation Enhancement
+# Enrichi automatiquement - Mode additif
+# Compatible Homey SDK3
+# Fonctionnement local prioritaire
+# Aucune dépendance API externe
+# 
+# @author Auto-Enhancement System
+# @version Enhanced
+# @date 2025-07-26 16:44:58
+
+name: Global Validation Enhancement
+on:
+  push:
+    branches: [ master, main ]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *' # Every 6 hours
+
+jobs:
+  validate-global:
+    runs-on: ubuntu-latest
+    name: Global Validation
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Validate Project Structure
+        run: |
+          echo "🔍 Validation globale du projet..."
+          
+          # Vérifier les fichiers de configuration
+          if [ -f "app.json" ] && [ -f "package.json" ]; then
+            echo "✅ Fichiers de configuration présents"
+            echo "📦 Version: "
+            echo "🏷️ Nom: "
+          else
+            echo "❌ Fichiers de configuration manquants"
+            exit 1
+          fi
+          
+          # Vérifier le mode local
+          if grep -q '"local": true' app.json; then
+            echo "✅ Mode local activé"
+          else
+            echo "❌ Mode local non configuré"
+            exit 1
+          fi
+          
+          if grep -q '"noApiRequired": true' app.json; then
+            echo "✅ API optionnelle configurée"
+          else
+            echo "❌ API optionnelle non configurée"
+            exit 1
+          fi
+
+      - name: Validate Drivers Structure
+        run: |
+          echo "🔍 Validation de la structure des drivers..."
+          if [ -d "drivers" ]; then
+            echo "✅ Dossier drivers présent"
+            SDK3_COUNT=
+            SMART_LIFE_COUNT=
+            NEW_COUNT=
+            GENERIC_COUNT=
+            echo "📊 Drivers SDK3: "
+            echo "🔗 Drivers Smart Life: "
+            echo "🆕 Drivers Nouveaux: "
+            echo "🔧 Drivers Génériques: "
+            echo "📈 Total:  drivers"
+          else
+            echo "❌ Dossier drivers manquant"
+            exit 1
+          fi
+
+      - name: Validate Workflows
+        run: |
+          echo "🔍 Validation des workflows..."
+          if [ -d ".github/workflows" ]; then
+            echo "✅ Dossier workflows présent"
+            WORKFLOW_COUNT=
+            echo "⚙️ Workflows: "
+            echo "📋 Workflows trouvés:"
+            find .github/workflows -name "*.yml" -exec basename {} \;
+          else
+            echo "❌ Dossier workflows manquant"
+            exit 1
+          fi
+
+      - name: Validate Documentation
+        run: |
+          echo "🔍 Validation de la documentation..."
+          if [ -d "docs" ]; then
+            echo "✅ Dossier docs présent"
+            DASHBOARD_FILES=
+            LOCALE_FILES=
+            echo "📊 Dashboard:  fichiers"
+            echo "🌍 Traductions:  langues"
+          else
+            echo "❌ Dossier docs manquant"
+            exit 1
+          fi
+
+      - name: Validate Scripts
+        run: |
+          echo "🔍 Validation des scripts..."
+          if [ -d "scripts" ]; then
+            echo "✅ Dossier scripts présent"
+            SCRIPT_COUNT=
+            echo "🔧 Scripts PowerShell: "
+            echo "📋 Scripts trouvés:"
+            find scripts -name "*.ps1" -exec basename {} \;
+          else
+            echo "❌ Dossier scripts manquant"
+            exit 1
+          fi
+
+      - name: Success
+        run: |
+          echo "🎉 Validation globale réussie"
+          echo "✅ Structure du projet validée"
+          echo "✅ Mode local prioritaire"
+          echo "✅ Aucune dépendance API externe"
+          echo "✅ Enrichissement additif appliqué"
+

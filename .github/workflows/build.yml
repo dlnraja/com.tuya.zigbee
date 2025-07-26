@@ -1,3 +1,12 @@
+﻿# Workflow GitHub Actions - build.yml
+# Enrichi automatiquement - Mode additif
+# Compatible Homey SDK3
+# Fonctionnement local prioritaire
+# Aucune dépendance API externe
+# 
+# @author Auto-Enhancement System
+# @version Enhanced
+# @date 2025-07-26 16:44:49
 name: Build and Package - Tuya Zigbee
 on:
   push:
@@ -203,6 +212,8 @@ jobs:
           echo "📦 Version: ${{ steps.get_version.outputs.version }}"
           echo "🔗 Release: https://github.com/${{ github.repository }}/releases/tag/v${{ steps.get_version.outputs.version }}"
           echo "✅ Package disponible pour téléchargement"
+
+
 
 
 
