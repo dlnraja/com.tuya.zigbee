@@ -1,3 +1,12 @@
+﻿# Workflow GitHub Actions - tuya-smart-life-integration.yml
+# Enrichi automatiquement - Mode additif
+# Compatible Homey SDK3
+# Fonctionnement local prioritaire
+# Aucune dépendance API externe
+# 
+# @author Auto-Enhancement System
+# @version Enhanced
+# @date 2025-07-26 16:44:49
 name: Tuya Smart Life Integration
 on:
   workflow_dispatch:
@@ -61,3 +70,4 @@ jobs:
           echo "✅ 100% Homey SDK3 compatibility"
           echo "✅ Local mode priority maintained"
           echo "✅ Offline functionality preserved" 
+

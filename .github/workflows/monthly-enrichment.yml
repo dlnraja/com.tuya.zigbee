@@ -1,3 +1,12 @@
+﻿# Workflow GitHub Actions - monthly-enrichment.yml
+# Enrichi automatiquement - Mode additif
+# Compatible Homey SDK3
+# Fonctionnement local prioritaire
+# Aucune dépendance API externe
+# 
+# @author Auto-Enhancement System
+# @version Enhanced
+# @date 2025-07-26 16:44:49
 # Monthly Enrichment - Enrichissement Mensuel Tuya Zigbee
 name: Monthly Enrichment - Tuya Zigbee
 
@@ -22,27 +31,29 @@ jobs:
       run: |
         echo "🔍 Validation Dashboard Location..."
         if [ -d "docs/dashboard" ]; then
-          echo "✅ Dashboard trouvé dans docs/dashboard/"
-          if [ -f "docs/dashboard/index.html" ]; then
+          echo "✅ Dashboard trouvé dans docs/docs/dashboard/"
+          if [ -f "docs/docs/dashboard/index.html" ]; then
             echo "✅ Dashboard index.html trouvé"
           else
             echo "❌ Dashboard index.html manquant"
           fi
         else
-          echo "❌ Dashboard manquant dans docs/dashboard/"
+          echo "❌ Dashboard manquant dans docs/docs/dashboard/"
         fi
         
     - name: Update Dashboard Metrics
       run: |
         echo "📊 Mise à jour des métriques dashboard..."
-        echo "📁 Dashboard accessible via: docs/dashboard/index.html"
+        echo "📁 Dashboard accessible via: docs/docs/dashboard/index.html"
         echo "✅ Métriques mises à jour"
         
     - name: Success
       run: |
         echo "🎉 Enrichissement mensuel terminé"
-        echo "✅ Dashboard dans docs/dashboard/"
+        echo "✅ Dashboard dans docs/docs/dashboard/"
         echo "✅ Métriques mises à jour"
         echo "✅ Workflows validés"
+
+
 
 
