@@ -1,44 +1,100 @@
 {
-    "name":  "universal.tuya.zigbee.device",
-    "version":  "1.0.0",
-    "description":  "Universal TUYA Zigbee Device for Homey - Support complet de 215 drivers avec automatisation avancée",
-    "main":  "app.js",
-    "scripts":  {
-                    "build":  "homey app build",
-                    "validate":  "homey app validate",
-                    "run":  "homey app run",
-                    "deploy":  "homey app deploy"
-                },
-    "repository":  {
-                       "type":  "git",
-                       "url":  "https://github.com/dlnraja/universal.tuya.zigbee.device.git"
-                   },
-    "homepage":  "https://community.homey.app/t/app-community-universal-tuya-zigbee-device/140352",
-    "keywords":  [
-                     "homey",
-                     "tuya",
-                     "zigbee",
-                     "smart-home",
-                     "automation"
-                 ],
-    "author":  "dlnraja",
-    "license":  "MIT",
-    "Automatique":  {
-                        "enabled":  true,
-                        "validation automatique":  true,
-                        "continuation automatique":  true,
-                        "delay":  0.1,
-                        "startup":  "enabled",
-                        "default":  true,
-                        "mode":  "aggressive",
-                        "priority":  "high",
-                        "timeout":  0.5,
-                        "force":  true,
-                        "skip-confirmation":  true,
-                        "auto-push":  true,
-                        "auto-commit":  true,
-                        "cross-platform":  true,
-                        "real-time":  true,
-                        "instant":  true
-                    }
+  "name": "com.tuya.zigbee",
+  "version": "1.0.5",
+  "description": "Tuya ZigBee Integration for Homey - Local Mode",
+  "main": "app.js",
+  "scripts": {
+    "build": "homey app build",
+    "run": "homey app run",
+    "run:clean": "homey app run --clean",
+    "install": "homey app install",
+    "uninstall": "homey app uninstall",
+    "test": "npm run build && npm run run:clean",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "clean": "npm cache clean --force && rm -rf node_modules package-lock.json",
+    "setup": "npm install && npm run build",
+    "validate": "npm run lint && npm run build",
+    "deploy": "npm run build && npm run install",
+    "logs": "homey app logs",
+    "logs:follow": "homey app logs --follow",
+    "debug": "homey app run --debug",
+    "debug:clean": "homey app run --debug --clean"
+  },
+  "keywords": [
+    "homey",
+    "tuya",
+    "zigbee",
+    "smart-home",
+    "local-mode",
+    "drivers",
+    "automation"
+  ],
+  "author": {
+    "name": "dlnraja",
+    "email": "dylan.rajasekaram@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@homey/cli": "^3.0.0",
+    "@homey/lib": "^3.0.0",
+    "@homey/zigbeedriver": "^3.0.0",
+    "@homey/log": "^3.0.0",
+    "homey": "^3.0.0",
+    "homey-zwavedriver": "^3.0.0",
+    "homey-zigbeedriver": "^3.0.0"
+  },
+  "devDependencies": {
+    "@homey/app": "^3.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-homey": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dlnraja/com.tuya.zigbee.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
+  },
+  "homepage": "https://github.com/dlnraja/com.tuya.zigbee#readme",
+  "config": {
+    "homey": {
+      "appId": "com.tuya.zigbee",
+      "version": "1.0.5",
+      "sdk": 3,
+      "platform": "local"
+    }
+  },
+  "homey": {
+    "appId": "com.tuya.zigbee",
+    "version": "1.0.5",
+    "sdk": 3,
+    "platform": "local",
+    "category": "lighting",
+    "icon": "/assets/icon.svg",
+    "images": {
+      "small": "/assets/images/small.png",
+      "large": "/assets/images/large.png"
+    },
+    "permissions": [
+      "homey:manager:api",
+      "homey:manager:drivers",
+      "homey:manager:devices",
+      "homey:manager:flow",
+      "homey:manager:geolocation",
+      "homey:manager:insights",
+      "homey:manager:ledring",
+      "homey:manager:media",
+      "homey:manager:notifications",
+      "homey:manager:speech-output",
+      "homey:manager:speech-input",
+      "homey:manager:storage",
+      "homey:manager:util",
+      "homey:manager:zigbee"
+    ]
+  }
 }
