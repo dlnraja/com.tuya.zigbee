@@ -1,25 +1,21 @@
-# ==========================================
-# TUYA ZIGBEE PROJECT - HOMEYIGNORE
-# ==========================================
-# Version: 1.0.1
+# =============================================================================
+# OPTIMIZED .homeyignore FOR HOMEY CLI AND DEPLOYMENT
+# =============================================================================
+# Author: dlnraja (dylan.rajasekaram@gmail.com)
+# Version: 1.0.0
 # Date: 2025-07-26
-# Optimisé pour Homey SDK
-# ==========================================
+# Description: Optimized .homeyignore for minimal app size with strict necessary files
+# =============================================================================
 
-# Node.js dependencies
+# Development and build files
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.npm/
+.yarn/
 
-# Build artifacts
-dist/
-build/
-.homeybuild/
-*.tgz
-*.tar.gz
-
-# Development files
+# IDE and editor files
 .vscode/
 .idea/
 *.swp
@@ -35,374 +31,264 @@ build/
 ehthumbs.db
 Thumbs.db
 
-# Logs
+# Logs and temporary files
 logs/
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Runtime data
-pids/
-*.pid
-*.seed
-*.pid.lock
-
-# Coverage directory used by tools like istanbul
-coverage/
-*.lcov
-
-# nyc test coverage
-.nyc_output
-
-# Dependency directories
-jspm_packages/
-
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# Microbundle cache
-.rpt2_cache/
-.rts2_cache_cjs/
-.rts2_cache_es/
-.rts2_cache_umd/
-
-# Optional REPL history
-.node_repl_history
-
-# Output of 'npm pack'
-*.tgz
-
-# Yarn Integrity file
-.yarn-integrity
-
-# dotenv environment variables file
-.env
-.env.test
-.env.production
-
-# parcel-bundler cache (https://parceljs.org/)
-.cache
-.parcel-cache
-
-# Next.js build output
-.next
-
-# Nuxt.js build / generate output
-.nuxt
-dist
-
-# Gatsby files
-.cache/
-public
-
-# Storybook build outputs
-.out
-.storybook-out
-
-# Temporary folders
 tmp/
 temp/
 
-# Git
-.git/
-.gitignore
+# Backup and archive files
+*.bak
+*.backup
+*.old
+*.orig
+*.tmp
 
-# Documentation
+# Documentation and reference files (exclude from deployment)
 docs/
 *.md
 !README.md
+!CHANGELOG.md
 
-# Scripts (development only)
+# Scripts and automation (exclude from deployment)
 scripts/
-*.sh
-*.ps1
-*.bat
+.github/
+.github/workflows/
+.github/ISSUE_TEMPLATE/
+.github/PULL_REQUEST_TEMPLATE.md
 
-# Backup files
-*.backup
-*.bak
-*.old
-
-# Test files
+# Testing and development files
 test/
 tests/
+__tests__/
 *.test.js
 *.spec.js
+coverage/
+.nyc_output/
 
-# CI/CD
-.github/
-.gitlab-ci.yml
-.travis.yml
-.circleci/
+# Configuration files (development only)
+.eslintrc*
+.prettierrc*
+.editorconfig
+.gitignore
+.gitattributes
 
-# IDE
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
+# Build and distribution files
+dist/
+build/
+out/
 
-# OS
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+# Referential and large data files (exclude from deployment)
+referentials/
+dumps/
+backups/
+ai-enhancements/
 
-# Windows
-*.lnk
+# Large documentation files
+*.pdf
+*.doc
+*.docx
+*.xls
+*.xlsx
 
-# Linux
-*~
-
-# Archives
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
-
-# Media files
-*.3g2
-*.3gp
-*.avi
-*.flv
-*.h264
-*.m4v
-*.mkv
-*.mov
+# Media files (not needed for Homey app)
 *.mp4
-*.mp4v
-*.mpeg
-*.mpg
-*.rm
-*.swf
-*.vob
+*.avi
+*.mov
 *.wmv
+*.flv
+*.webm
 
-# Audio files
-*.aac
-*.aiff
-*.amr
-*.flac
-*.m4a
-*.mp3
-*.ogg
-*.opus
-*.wav
-*.wma
-
-# Image files
-*.bmp
-*.gif
-*.ico
-*.jpeg
-*.jpg
-*.png
-*.svg
-*.tiff
-*.webp
-
-# Font files
-*.eot
-*.otf
-*.ttf
-*.woff
-*.woff2
+# Archive files
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z
 
 # Database files
 *.db
 *.sqlite
 *.sqlite3
 
-# Certificate files
-*.pem
-*.key
-*.crt
-*.csr
-*.p12
-*.pfx
+# Cache files
+.cache/
+cache/
 
-# Archive files
-*.zip
-*.tar.gz
-*.rar
-*.7z
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
 
-# Large files
-*.iso
-*.dmg
-*.exe
-*.msi
-*.deb
-*.rpm
-*.apk
-
-# Development tools
-.eslintrc*
-.prettierrc*
-.editorconfig
-.babelrc*
-tsconfig.json
-webpack.config.js
-rollup.config.js
-vite.config.js
-
-# Package managers
+# Package manager files
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
 
-# Environment files
-.env*
-!.env.example
+# TypeScript files (if not using TypeScript)
+*.ts
+*.tsx
+tsconfig.json
 
-# Cache directories
-.cache/
-.parcel-cache/
-.next/
-.nuxt/
-dist/
-build/
+# SASS/SCSS files (if not using)
+*.scss
+*.sass
 
-# Test coverage
-coverage/
-.nyc_output/
-*.lcov
+# Webpack files (if not using)
+webpack.config.js
+webpack.mix.js
 
-# Documentation
+# Babel files (if not using)
+.babelrc
+babel.config.js
+
+# Jest files (if not using)
+jest.config.js
+
+# Storybook files (if not using)
+.storybook/
+
+# Cypress files (if not using)
+cypress/
+
+# Docker files (if not using)
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Kubernetes files (if not using)
+*.yaml
+*.yml
+!homeycompose.json
+
+# Terraform files (if not using)
+*.tf
+*.tfvars
+
+# Ansible files (if not using)
+*.ansible
+
+# Vagrant files (if not using)
+Vagrantfile
+
+# Virtual machine files
+*.vmdk
+*.vdi
+*.vbox
+
+# Large binary files
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Font files (if not using custom fonts)
+*.ttf
+*.otf
+*.woff
+*.woff2
+
+# Image files (if not using custom images)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.svg
+!assets/icon.svg
+!assets/images/small.png
+!assets/images/large.png
+
+# Audio files (if not using)
+*.mp3
+*.wav
+*.ogg
+*.flac
+
+# Video files (if not using)
+*.mp4
+*.avi
+*.mov
+*.wmv
+
+# Large text files
+*.txt
+*.csv
+*.json
+!package.json
+!homeycompose.json
+!app.json
+
+# Configuration files (development only)
+.eslintignore
+.prettierignore
+.stylelintrc*
+
+# Temporary files
+*.tmp
+*.temp
+
+# Backup files
+*.backup
+*.bak
+*.old
+
+# Lock files (except package-lock.json if needed)
+*.lock
+
+# Large data files
+data/
+datasets/
+samples/
+
+# Documentation files (except essential)
 docs/
 *.md
 !README.md
 !CHANGELOG.md
-!LICENSE
 
-# Scripts
-scripts/
-*.sh
-*.ps1
-*.bat
-*.js
-!app.js
+# Development tools
+.tools/
+tools/
 
-# Git
-.git/
-.gitignore
-.gitattributes
+# Large reference files
+references/
+examples/
+samples/
 
-# IDE
-.vscode/
-.idea/
-*.sublime-*
+# =============================================================================
+# ESSENTIAL FILES TO KEEP (DO NOT IGNORE)
+# =============================================================================
 
-# OS
-.DS_Store
-Thumbs.db
-*.lnk
+# Core application files
+app.js
+app.json
+homeycompose.json
+package.json
 
-# Logs
-*.log
-logs/
+# Driver files
+drivers/
+!drivers/**/*.js
 
-# Temporary
-tmp/
-temp/
-*.tmp
+# Assets (only essential)
+assets/icon.svg
+assets/images/small.png
+assets/images/large.png
 
-# Backup
-*.bak
-*.backup
-*.old
+# Essential documentation
+README.md
+CHANGELOG.md
+LICENSE
 
-# Archives
-*.zip
-*.tar.gz
-*.rar
-*.7z
-
-# Media
-*.mp4
-*.avi
-*.mov
-*.mp3
-*.wav
-*.jpg
-*.png
-*.gif
-*.pdf
-
-# Development
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Build
-dist/
-build/
-.homeybuild/
-
-# Cache
-.cache/
-.parcel-cache/
-
-# Test
-coverage/
-.nyc_output/
-
-# Documentation
-docs/
-*.md
-!README.md
-
-# Scripts
-scripts/
-*.sh
-*.ps1
-*.bat
-
-# Git
-.git/
-.gitignore
-
-# IDE
-.vscode/
-.idea/
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
-logs/
-
-# Temporary
-tmp/
-temp/
-
-# Backup
-*.bak
-*.backup
-
-# Archives
-*.zip
-*.tar.gz
-
-# Media
-*.mp4
-*.mp3
-*.jpg
-*.png
-
-# ==========================================
-# END OF HOMEYIGNORE
-# ==========================================
+# =============================================================================
+# OPTIMIZATION NOTES
+# =============================================================================
+# This .homeyignore is optimized for:
+# - Minimal app size for Homey CLI deployment
+# - Fast build times
+# - Clean repository structure
+# - Essential files only for Homey app functionality
+# - Excludes development, documentation, and reference files
+# =============================================================================

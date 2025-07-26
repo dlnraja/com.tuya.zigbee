@@ -258,6 +258,146 @@ bash scripts/linux/cleanup/restore-and-rebuild.sh
 
 ---
 
+## 🔌 Zigbee Referential System / Système de Référentiel Zigbee
+
+### 📊 Complete Zigbee Matrix / Matrice Zigbee Complète
+
+**EN**: The project includes a comprehensive Zigbee referential system with all official specifications and vendor documentation.
+
+**FR**: Le projet inclut un système de référentiel Zigbee complet avec toutes les spécifications officielles et la documentation des fournisseurs.
+
+#### 🎯 Cluster Matrix / Matrice des Clusters
+
+| Cluster / Cluster | ID / ID | Description / Description |
+|-------------------|---------|---------------------------|
+| **Basic** / Basique | 0x0000 | Device information and identification |
+| **Identify** / Identification | 0x0003 | Device identification |
+| **Groups** / Groupes | 0x0004 | Device grouping |
+| **Scenes** / Scènes | 0x0005 | Scene management |
+| **On/Off** / Marche/Arrêt | 0x0006 | Power control |
+| **Level Control** / Contrôle de Niveau | 0x0008 | Dimming control |
+| **Color Control** / Contrôle de Couleur | 0x0300 | Color management |
+| **Occupancy Sensing** / Détection d'Occupation | 0x0406 | Presence detection |
+| **Temperature Measurement** / Mesure de Température | 0x0402 | Temperature sensing |
+| **Humidity Measurement** / Mesure d'Humidité | 0x0405 | Humidity sensing |
+| **Pressure Measurement** / Mesure de Pression | 0x0403 | Pressure sensing |
+| **Electrical Measurement** / Mesure Électrique | 0x0B04 | Power monitoring |
+
+#### 🏷️ Device Types / Types d'Appareils
+
+| Device Type / Type d'Appareil | ID / ID | Clusters / Clusters |
+|-------------------------------|---------|-------------------|
+| **On/Off Light** / Lampe Marche/Arrêt | 0x0100 | Basic, Identify, Groups, Scenes, On/Off |
+| **Dimmable Light** / Lampe Dimmable | 0x0101 | Basic, Identify, Groups, Scenes, On/Off, Level Control |
+| **Color Light** / Lampe Colorée | 0x0102 | Basic, Identify, Groups, Scenes, On/Off, Level Control, Color Control |
+| **Temperature Sensor** / Capteur de Température | 0x0302 | Basic, Identify, Temperature Measurement |
+| **Occupancy Sensor** / Capteur d'Occupation | 0x0107 | Basic, Identify, Occupancy Sensing |
+| **Smart Plug** / Prise Intelligente | 0x0051 | Basic, Identify, Groups, Scenes, On/Off, Electrical Measurement |
+
+### 🔧 Device Templates / Modèles d'Appareils
+
+**EN**: The project includes intelligent device templates for maximum compatibility and automatic device support.
+
+**FR**: Le projet inclut des modèles d'appareils intelligents pour une compatibilité maximale et un support automatique des appareils.
+
+#### 📋 Generic Device Template / Modèle d'Appareil Générique
+
+```javascript
+// Generic device template with maximum compatibility
+class GenericDeviceTemplate extends ZigbeeDevice {
+    async onNodeInit({ zclNode }) {
+        // Automatic capability detection and registration
+        await this.registerCapabilities(zclNode);
+        this.setupEventListeners(zclNode);
+    }
+}
+```
+
+#### 🔄 Legacy Device Template / Modèle d'Appareil Legacy
+
+```javascript
+// Legacy device template with backward compatibility
+class LegacyDeviceTemplate extends ZigbeeDevice {
+    async onNodeInit({ zclNode }) {
+        // Legacy capability support
+        await this.registerLegacyCapabilities(zclNode);
+        this.setupLegacyEventListeners(zclNode);
+    }
+}
+```
+
+### 📚 Official Sources / Sources Officielles
+
+**EN**: The referential system includes all official Zigbee specifications and vendor documentation.
+
+**FR**: Le système de référentiel inclut toutes les spécifications Zigbee officielles et la documentation des fournisseurs.
+
+#### 📖 Specifications / Spécifications
+
+- **Zigbee Alliance** : [Cluster Library Specification](https://zigbeealliance.org/wp-content/uploads/2019/12/07-5123-06-zigbee-cluster-library-specification.pdf)
+- **CSA IoT** : [Connectivity Standards Alliance](https://csa-iot.org/)
+- **Espressif** : [ESP-Zigbee SDK](https://docs.espressif.com/projects/esp-zigbee-sdk/en/latest/esp32/user-guide/zcl_custom.html)
+- **NXP** : [JN-UG-3115 User Guide](https://www.nxp.com/docs/en/user-guide/JN-UG-3115.pdf)
+- **Microchip** : [Zigbee Documentation](https://onlinedocs.microchip.com/oxy/GUID-D176AD05-7AEE-4A67-B5B2-16E9E7E7FAC8-en-US-1/GUID-20DDCF41-97FD-4FBB-AC06-7E6A033D6FEB.html)
+- **Silicon Labs** : [Zigbee Fundamentals](https://docs.silabs.com/zigbee/8.2.1/zigbee-fundamentals/06-zigbee-cluster-library)
+
+#### 🔗 GitHub Repositories / Référentiels GitHub
+
+- **Silicon Labs** : [Zigbee Applications](https://github.com/SiliconLabsSoftware/zigbee_applications/blob/master/zigbee_concepts/Zigbee-Introduction/Zigbee%20Introduction%20-%20Clusters,%20Endpoints,%20Device%20Types.md)
+
+### 🔄 Monthly Referential Update / Mise à Jour Mensuelle du Référentiel
+
+**EN**: The referential system is automatically updated monthly with the latest specifications and vendor documentation.
+
+**FR**: Le système de référentiel est automatiquement mis à jour mensuellement avec les dernières spécifications et la documentation des fournisseurs.
+
+#### 📅 Update Schedule / Planning de Mise à Jour
+
+- **Date** : 1er du mois à 5h00 UTC
+- **Frequency** / Fréquence : Monthly / Mensuel
+- **Automation** : GitHub Actions workflow
+- **Validation** : Post-update validation and testing
+
+#### 🔄 Update Process / Processus de Mise à Jour
+
+1. **Download** / Téléchargement : Latest specifications and documentation
+2. **Parse** / Analyse : Extract cluster and device information
+3. **Update** / Mise à jour : Cluster matrix and device templates
+4. **Validate** / Validation : Test with existing devices
+5. **Deploy** / Déploiement : Update project with new referential
+
+### 🎯 Intelligent Device Support / Support Intelligent d'Appareils
+
+**EN**: The referential system enables intelligent support for unknown Zigbee devices through automatic cluster analysis.
+
+**FR**: Le système de référentiel permet un support intelligent des appareils Zigbee inconnus grâce à l'analyse automatique des clusters.
+
+#### 🤖 Automatic Device Detection / Détection Automatique d'Appareils
+
+- **Cluster Analysis** / Analyse des Clusters : Automatic detection of device capabilities
+- **Template Matching** / Correspondance de Modèles : Match with existing device templates
+- **Custom Support** / Support Personnalisé : Generate custom device support
+- **Compatibility Testing** / Test de Compatibilité : Validate device compatibility
+
+#### 🔧 Custom Device Creation / Création d'Appareils Personnalisés
+
+```javascript
+// Automatic custom device creation based on cluster analysis
+class CustomDevice extends ZigbeeDevice {
+    async onNodeInit({ zclNode }) {
+        // Analyze available clusters
+        const clusters = zclNode.endpoints[1].clusters;
+        
+        // Register capabilities based on detected clusters
+        if (clusters.onOff) await this.registerOnOffCapability(zclNode);
+        if (clusters.levelCtrl) await this.registerLevelControlCapability(zclNode);
+        if (clusters.lightColorCtrl) await this.registerColorControlCapability(zclNode);
+    }
+}
+```
+
+---
+
 ## 📁 Script Structure / Structure des Scripts
 
 ```
