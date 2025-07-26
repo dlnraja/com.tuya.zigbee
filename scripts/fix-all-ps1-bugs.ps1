@@ -1,14 +1,14 @@
-# Fix All PS1 Bugs - Version Simple
-# Mode enrichissement additif
+# Correction automatique des bugs PowerShell
+# Mode enrichissement additif - Granularité fine
 
-Write-Host "🔧 FIX ALL PS1 BUGS" -ForegroundColor Green
-Write-Host "Mode enrichissement additif" -ForegroundColor Yellow
+Write-Host "FIX ALL PS1 BUGS - CORRECTION AUTOMATIQUE" -ForegroundColor Green
+Write-Host "Mode enrichissement additif - Granularité fine" -ForegroundColor Yellow
 
-# Fonction de correction des bugs communs
+# Fonction de correction des bugs PS1
 function Fix-PS1Bugs {
     param([string]$filePath)
     
-    Write-Host "Correction: $filePath" -ForegroundColor Yellow
+    Write-Host "Vérification: $filePath" -ForegroundColor Cyan
     
     try {
         $content = Get-Content $filePath -Raw -Encoding UTF8
@@ -17,10 +17,10 @@ function Fix-PS1Bugs {
         $fixes = @{
             # Corriger les caractères d'échappement incorrects
             '\\\$' = '$'
-            '\\\(' = '('
-            '\\\)' = ')'
-            '\\\{' = '{'
-            '\\\}' = '}'
+            '\\\(' = '\('
+            '\\\)' = '\)'
+            '\\\{' = '\{'
+            '\\\}' = '\}'
             
             # Corriger les variables dans les here-strings
             '\$\(([^)]+)\)' = '`$($1)'
@@ -48,15 +48,15 @@ function Fix-PS1Bugs {
             $backupPath = $filePath + ".backup"
             Copy-Item $filePath $backupPath
             Set-Content -Path $filePath -Value $fixedContent -Encoding UTF8
-            Write-Host "✅ Corrigé ($changes changements)" -ForegroundColor Green
+            Write-Host "[OK] Corrigé ($changes changements)" -ForegroundColor Green
             return "FIXED"
         } else {
-            Write-Host "✅ Déjà correct" -ForegroundColor Green
+            Write-Host "[OK] Déjà correct" -ForegroundColor Green
             return "OK"
         }
         
     } catch {
-        Write-Host "❌ Erreur: $_" -ForegroundColor Red
+        Write-Host "[ERROR] Erreur: $_" -ForegroundColor Red
         return "ERROR"
     }
 }
