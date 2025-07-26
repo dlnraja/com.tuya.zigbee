@@ -1,93 +1,93 @@
 # Changelog - Universal Universal TUYA Zigbee Device
 
-Toutes les modifications notables de ce projet seront documentées dans ce fichier.
+Toutes les modifications notables de ce projet seront documentï¿½es dans ce fichier.
 
-Le format est basé sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/),
-et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
+Le format est basï¿½ sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/),
+et ce projet adhï¿½re au [Semantic Versioning](https://semver.org/lang/fr/).
 
 ## [1.1.0] - 2025-07-25 13:51:15
 
-### ?? **Ajouté**
-- **Focus exclusif Tuya Zigbee** : Suppression de toutes les références Home Assistant
-- **YOLO Mode activé** : Auto-approve, auto-continue, délai < 1 seconde
-- **50 workflows GitHub Actions** : Automatisation complète du projet
+### ?? **Ajoutï¿½**
+- **Focus exclusif Tuya Zigbee** : Suppression de toutes les rï¿½fï¿½rences Home Assistant
+- **YOLO Mode activï¿½** : Auto-approve, auto-continue, dï¿½lai < 1 seconde
+- **50 workflows GitHub Actions** : Automatisation complï¿½te du projet
 - **215 drivers Tuya** : Support complet des devices Tuya Zigbee
-- **Documentation bilingue** : EN/FR pour tous les éléments
+- **Documentation bilingue** : EN/FR pour tous les ï¿½lï¿½ments
 - **Validation automatique** : CI/CD, tests, optimisation
-- **Archivage automatique** : Fichiers .md et TODO versionnés
+- **Archivage automatique** : Fichiers .md et TODO versionnï¿½s
 
-### ?? **Modifié**
-- **README.md** : Focus exclusif sur Tuya Zigbee et équivalents compatibles
-- **app.json** : Description mise à jour, suppression références Home Assistant
-- **package.json** : Configuration YOLO mode, scripts optimisés
-- **TODO_CURSOR_NATIVE.md** : Métriques mises à jour, focus Tuya uniquement
+### ?? **Modifiï¿½**
+- **README.md** : Focus exclusif sur Tuya Zigbee et ï¿½quivalents compatibles
+- **app.json** : Description mise ï¿½ jour, suppression rï¿½fï¿½rences Home Assistant
+- **package.json** : Configuration YOLO mode, scripts optimisï¿½s
+- **TODO_CURSOR_NATIVE.md** : Mï¿½triques mises ï¿½ jour, focus Tuya uniquement
 
-### ??? **Supprimé**
+### ??? **Supprimï¿½**
 - **COMPARISON.md** : Fichier de comparaison Homey vs Home Assistant OS
-- **Références Home Assistant** : Toutes les mentions supprimées
-- **Documentation multilingue étendue** : Retour à EN/FR uniquement
+- **Rï¿½fï¿½rences Home Assistant** : Toutes les mentions supprimï¿½es
+- **Documentation multilingue ï¿½tendue** : Retour ï¿½ EN/FR uniquement
 
-### ??? **Sécurité**
-- **Validation automatique** : Détection des IDs dupliqués
-- **Tests de compatibilité SDK3** : Validation continue
-- **Nettoyage automatique** : package-lock.json supprimé après builds
+### ??? **Sï¿½curitï¿½**
+- **Validation automatique** : Dï¿½tection des IDs dupliquï¿½s
+- **Tests de compatibilitï¿½ SDK3** : Validation continue
+- **Nettoyage automatique** : package-lock.json supprimï¿½ aprï¿½s builds
 
-### ?? **Métriques**
+### ?? **Mï¿½triques**
 - **Drivers** : 215 total (68 SDK3, 147 in_progress)
-- **Workflows** : 50 automatisés
-- **Performance** : Temps de réponse < 1 seconde
-- **Tests** : 50/50 réussis
+- **Workflows** : 50 automatisï¿½s
+- **Performance** : Temps de rï¿½ponse < 1 seconde
+- **Tests** : 50/50 rï¿½ussis
 
 ---
 
 ## [1.0.0] - 2025-07-25 12:00:00
 
-### ?? **Ajouté**
+### ?? **Ajoutï¿½**
 - **Migration branding Universal TUYA** : Renommage complet de l'app
-- **Structure drivers organisée** : in_progress, sdk3, legacy
-- **Workflows automatisés** : CI/CD, validation, optimisation
-- **Documentation complète** : README, CONTRIBUTING.md, COMPARISON.md
+- **Structure drivers organisï¿½e** : in_progress, sdk3, legacy
+- **Workflows automatisï¿½s** : CI/CD, validation, optimisation
+- **Documentation complï¿½te** : README, CONTRIBUTING.md, COMPARISON.md
 - **Validation automatique** : app.json, package.json, drivers
-- **Archivage versionné** : Fichiers .md et TODO avec timestamps
+- **Archivage versionnï¿½** : Fichiers .md et TODO avec timestamps
 
-### ?? **Modifié**
+### ?? **Modifiï¿½**
 - **App ID** : `universal.tuya.zigbee.device`
 - **Version** : 1.0.0
 - **Branding** : Universal Universal TUYA Zigbee Device
 - **Documentation** : Multilingue EN/FR/TA/NL
 - **Workflows** : 48 GitHub Actions enrichis
 
-### ??? **Supprimé**
+### ??? **Supprimï¿½**
 - **Ancien branding** : universal.tuya.zigbee.device
-- **Fichiers obsolètes** : Nettoyage automatique
-- **Documentation périmée** : Mise à jour complète
+- **Fichiers obsolï¿½tes** : Nettoyage automatique
+- **Documentation pï¿½rimï¿½e** : Mise ï¿½ jour complï¿½te
 
-### ??? **Sécurité**
-- **Validation automatique** : Syntaxe, structure, compatibilité
-- **Tests automatisés** : CI/CD complet
+### ??? **Sï¿½curitï¿½**
+- **Validation automatique** : Syntaxe, structure, compatibilitï¿½
+- **Tests automatisï¿½s** : CI/CD complet
 - **Nettoyage** : package-lock.json automatique
 
-### ?? **Métriques**
+### ?? **Mï¿½triques**
 - **Drivers** : 215 total
-- **Workflows** : 48 automatisés
-- **Documentation** : 4 langues supportées
-- **Tests** : 100% automatisés
+- **Workflows** : 48 automatisï¿½s
+- **Documentation** : 4 langues supportï¿½es
+- **Tests** : 100% automatisï¿½s
 
 ---
 
 ## [0.9.0] - 2025-07-25 10:00:00
 
-### ?? **Ajouté**
+### ?? **Ajoutï¿½**
 - **Structure de base** : Organisation des drivers
 - **Documentation initiale** : README de base
 - **Configuration Homey** : app.json et package.json
 - **Drivers de base** : Support des devices Tuya essentiels
 
-### ?? **Modifié**
+### ?? **Modifiï¿½**
 - **Configuration initiale** : Setup du projet
-- **Documentation** : Première version
+- **Documentation** : Premiï¿½re version
 
-### ?? **Métriques**
+### ?? **Mï¿½triques**
 - **Drivers** : 50 de base
 - **Documentation** : EN uniquement
 - **Tests** : Manuels
@@ -96,12 +96,12 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 
 ## [0.8.0] - 2025-07-25 08:00:00
 
-### ?? **Ajouté**
-- **Création du projet** : Repository initial
+### ?? **Ajoutï¿½**
+- **Crï¿½ation du projet** : Repository initial
 - **Structure de base** : Dossiers et fichiers essentiels
 - **Configuration Git** : Repository GitHub
 
-### ?? **Métriques**
+### ?? **Mï¿½triques**
 - **Drivers** : 0 (projet vide)
 - **Documentation** : Aucune
 - **Tests** : Aucun
@@ -111,9 +111,9 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 ## ?? **Historique des TODO et Documents**
 
 ### **TODO_CURSOR_NATIVE.md**
-- **Version 1.1.0** : Focus exclusif Tuya Zigbee, YOLO mode activé
-- **Version 1.0.0** : Structure complète, 5 phases d'implémentation
-- **Version 0.9.0** : TODO de base, tâches essentielles
+- **Version 1.1.0** : Focus exclusif Tuya Zigbee, YOLO mode activï¿½
+- **Version 1.0.0** : Structure complï¿½te, 5 phases d'implï¿½mentation
+- **Version 0.9.0** : TODO de base, tï¿½ches essentielles
 
 ### **README.md**
 - **Version 1.1.0** : Suppression Home Assistant, focus Tuya Zigbee
@@ -121,8 +121,8 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 - **Version 0.9.0** : Documentation de base
 
 ### **Dashboard et Rapports**
-- **Version 1.1.0** : 50 workflows automatisés, monitoring 24/7
-- **Version 1.0.0** : Rapports automatiques, métriques en temps réel
+- **Version 1.1.0** : 50 workflows automatisï¿½s, monitoring 24/7
+- **Version 1.0.0** : Rapports automatiques, mï¿½triques en temps rï¿½el
 - **Version 0.9.0** : Dashboard de base
 
 ---
@@ -130,54 +130,54 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 ## ?? **Automatisation des Changelogs**
 
 ### **Workflow GitHub Actions**
-- **Fréquence** : Toutes les 6 heures
-- **Déclencheurs** : Push, Pull Request, Release
+- **Frï¿½quence** : Toutes les 6 heures
+- **Dï¿½clencheurs** : Push, Pull Request, Release
 - **Actions** : 
-  - Génération automatique du changelog
-  - Mise à jour des métriques
+  - Gï¿½nï¿½ration automatique du changelog
+  - Mise ï¿½ jour des mï¿½triques
   - Archivage des versions
   - Notification des changements
 
-### **Processus Automatisé**
-1. **Détection des changements** : Analyse des commits
-2. **Catégorisation** : Ajouté, Modifié, Supprimé, Sécurité
-3. **Génération** : Changelog automatique
+### **Processus Automatisï¿½**
+1. **Dï¿½tection des changements** : Analyse des commits
+2. **Catï¿½gorisation** : Ajoutï¿½, Modifiï¿½, Supprimï¿½, Sï¿½curitï¿½
+3. **Gï¿½nï¿½ration** : Changelog automatique
 4. **Archivage** : Versioning avec timestamps
-5. **Notification** : Alertes en temps réel
+5. **Notification** : Alertes en temps rï¿½el
 
-### **Métriques Suivies**
-- **Versions** : Numérotation sémantique
+### **Mï¿½triques Suivies**
+- **Versions** : Numï¿½rotation sï¿½mantique
 - **Drivers** : Nombre et statut
-- **Workflows** : Performance et succès
-- **Tests** : Couverture et résultats
-- **Documentation** : Complétude et langues
+- **Workflows** : Performance et succï¿½s
+- **Tests** : Couverture et rï¿½sultats
+- **Documentation** : Complï¿½tude et langues
 
 ---
 
 ## ?? **Statistiques Globales**
 
-### **Évolutions par Version**
-- **1.1.0** : 50+ améliorations, YOLO mode
-- **1.0.0** : 100+ fonctionnalités, migration complète
-- **0.9.0** : 20+ fonctionnalités de base
-- **0.8.0** : Création initiale
+### **ï¿½volutions par Version**
+- **1.1.0** : 50+ amï¿½liorations, YOLO mode
+- **1.0.0** : 100+ fonctionnalitï¿½s, migration complï¿½te
+- **0.9.0** : 20+ fonctionnalitï¿½s de base
+- **0.8.0** : Crï¿½ation initiale
 
 ### **Performance**
-- **Temps de réponse** : < 1 seconde (1.1.0)
-- **Tests automatisés** : 50/50 réussis
-- **Workflows** : 50 opérationnels
-- **Drivers** : 215 supportés
+- **Temps de rï¿½ponse** : < 1 seconde (1.1.0)
+- **Tests automatisï¿½s** : 50/50 rï¿½ussis
+- **Workflows** : 50 opï¿½rationnels
+- **Drivers** : 215 supportï¿½s
 
-### **Qualité**
-- **Validation** : 100% automatisée
-- **Documentation** : 100% à jour
+### **Qualitï¿½**
+- **Validation** : 100% automatisï¿½e
+- **Documentation** : 100% ï¿½ jour
 - **Tests** : 100% couverture
-- **Sécurité** : 100% validée
+- **Sï¿½curitï¿½** : 100% validï¿½e
 
 ---
 
-*Dernière mise à jour : 2025-07-25 13:51:15*
-*Généré automatiquement par le système YOLO*
+*Derniï¿½re mise ï¿½ jour : 2025-07-25 13:51:15*
+*Gï¿½nï¿½rï¿½ automatiquement par le systï¿½me YOLO*
 *Universal Universal TUYA Zigbee Device - Focus exclusif Tuya Zigbee* ??
 
 

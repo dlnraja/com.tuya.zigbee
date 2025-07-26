@@ -56,7 +56,7 @@
 5. Étapes de reproduction
 
 ### Contacts
-- **GitHub Issues**: [Lien](https://github.com/dlnraja/com.tuya.zigbee/issues)
+- **GitHub Issues**: [Lien](https://github.com/dlnraja/com.universaltuyazigbee.device/issues)
 - **Documentation**: [README.md](../README.md)
 - **Dashboard**: [Monitoring](../dashboard/)
 

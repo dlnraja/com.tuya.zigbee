@@ -1,4 +1,4 @@
-﻿# Migration Log - radar_sensor_2
+# Migration Log - radar_sensor_2
 
 **Date:** 2025-07-25 01:02:01
 **Source:** drivers/in_progress/radar_sensor_2

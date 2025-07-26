@@ -1,4 +1,4 @@
-﻿# RAPPORT FINAL - ENRICHISSEMENT COMPLET
+# RAPPORT FINAL - ENRICHISSEMENT COMPLET
 # Mode enrichissement additif - GranularitÃ© fine
 
 ## ðŸ“Š MÃ‰TRIQUES FINALES

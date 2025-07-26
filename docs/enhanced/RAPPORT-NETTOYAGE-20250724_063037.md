@@ -1,4 +1,4 @@
-﻿# Rapport de Nettoyage et Organisation
+# Rapport de Nettoyage et Organisation
 
 **Date**: 2025-07-24 06:30:37
 **Script**: cleanup-and-organize.ps1

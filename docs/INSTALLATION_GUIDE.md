@@ -57,7 +57,7 @@
 
 ## 📞 Support
 - **Documentation**: [README.md](../README.md)
-- **Issues**: [GitHub](https://github.com/dlnraja/com.tuya.zigbee/issues)
+- **Issues**: [GitHub](https://github.com/dlnraja/com.universaltuyazigbee.device/issues)
 - **Dashboard**: [Temps réel](../dashboard/)
 
 ---

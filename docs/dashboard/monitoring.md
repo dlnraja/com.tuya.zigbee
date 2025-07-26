@@ -1,4 +1,4 @@
-﻿# Dashboard de Monitoring - Tuya Zigbee Project
+# Dashboard de Monitoring - Tuya Zigbee Project
 
 ## Metriques en Temps Reel
 

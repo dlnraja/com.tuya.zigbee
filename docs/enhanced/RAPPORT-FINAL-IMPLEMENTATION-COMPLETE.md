@@ -1,4 +1,4 @@
-﻿# 🎉 RAPPORT FINAL - IMPLÉMENTATION COMPLÈTE
+# 🎉 RAPPORT FINAL - IMPLÉMENTATION COMPLÈTE
 
 ## 🎯 **RÉSUMÉ EXÉCUTIF**
 **Projet Tuya Zigbee entièrement réimplémenté et optimisé avec Mode Automatique Intelligent**

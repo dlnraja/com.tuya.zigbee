@@ -1,4 +1,4 @@
-﻿# 📋 RAPPORT D'ORGANISATION FINALE - PROJET TUYA ZIGBEE
+# 📋 RAPPORT D'ORGANISATION FINALE - PROJET TUYA ZIGBEE
 
 ## 🎯 **Organisation des Rapports Réalisée**
 

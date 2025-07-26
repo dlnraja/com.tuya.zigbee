@@ -1,4 +1,4 @@
-﻿# 🚀 RAPPORT FINAL D'EXÉCUTION - ENRICHISSEMENT ZIGBEE
+# 🚀 RAPPORT FINAL D'EXÉCUTION - ENRICHISSEMENT ZIGBEE
 
 ## 📊 **Résumé de l'Exécution**
 
@@ -61,7 +61,7 @@ Certains scripts n'ont pas pu s'exécuter en raison de problèmes de syntaxe ou 
 
 ### 🔄 **Push Git Rejeté**
 ```
-error: failed to push some refs to 'https://github.com/dlnraja/com.tuya.zigbee.git'
+error: failed to push some refs to 'https://github.com/dlnraja/com.universaltuyazigbee.device.git'
 hint: Updates were rejected because the tip of your current branch is behind
 ```
 

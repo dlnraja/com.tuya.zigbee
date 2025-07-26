@@ -11,7 +11,7 @@ Réparer et optimiser **entièrement** le projet Tuya Zigbee Homey App - rendre 
 
 ### Fichiers ESSENTIELS à créer/réparer :
 ```
-📁 com.tuya.zigbee/
+📁 com.universaltuyazigbee.device/
 ├── 📄 app.json                 # Manifeste principal
 ├── 📄 package.json            # Dépendances
 ├── 📁 drivers/                # 82 dossiers drivers
@@ -78,7 +78,7 @@ class DocParser {
 param([string]$WorkDir="C:\tuya-repair")
 
 # 1. Clone le repo
-git clone https://github.com/dlnraja/com.tuya.zigbee.git $WorkDir
+git clone https://github.com/dlnraja/com.universaltuyazigbee.device.git $WorkDir
 
 # 2. Crée fichiers manquants
 # 3. Installe dépendances
@@ -91,7 +91,7 @@ git clone https://github.com/dlnraja/com.tuya.zigbee.git $WorkDir
 ### 1. **app.json** (manifeste principal)
 ```json
 {
-  "id": "com.tuya.zigbee",
+  "id": "com.universaltuyazigbee.device",
   "version": "1.5.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
@@ -104,7 +104,7 @@ git clone https://github.com/dlnraja/com.tuya.zigbee.git $WorkDir
 ### 2. **package.json** (dépendances)
 ```json
 {
-  "name": "com.tuya.zigbee",
+  "name": "com.universaltuyazigbee.device",
   "version": "1.5.0",
   "scripts": {
     "lint": "eslint .",

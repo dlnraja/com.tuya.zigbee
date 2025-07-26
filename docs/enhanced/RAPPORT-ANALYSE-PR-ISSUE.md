@@ -1,4 +1,4 @@
-﻿# 🔍 RAPPORT ANALYSE PR/ISSUE WORKFLOW - Tuya Zigbee Project
+# 🔍 RAPPORT ANALYSE PR/ISSUE WORKFLOW - Tuya Zigbee Project
 
 ## 🎯 **RÉSUMÉ EXÉCUTIF**
 **Analyse complète du workflow PR/Issue existant et propositions d'améliorations**

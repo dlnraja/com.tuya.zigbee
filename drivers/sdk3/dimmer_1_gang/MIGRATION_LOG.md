@@ -1,4 +1,4 @@
-﻿# Migration Log - dimmer_1_gang
+# Migration Log - dimmer_1_gang
 
 **Date:** 2025-07-25 01:06:13
 **Source:** drivers/in_progress/dimmer_1_gang

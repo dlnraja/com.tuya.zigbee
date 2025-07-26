@@ -1,4 +1,4 @@
-﻿# Migration Log - smartPlug_DinRail
+# Migration Log - smartPlug_DinRail
 
 **Date:** 2025-07-25 01:02:01
 **Source:** drivers/in_progress/smartPlug_DinRail

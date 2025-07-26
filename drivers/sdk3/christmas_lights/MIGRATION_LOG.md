@@ -1,4 +1,4 @@
-﻿# Migration Log - christmas_lights
+# Migration Log - christmas_lights
 
 **Date:** 2025-07-25 01:06:13
 **Source:** drivers/in_progress/christmas_lights

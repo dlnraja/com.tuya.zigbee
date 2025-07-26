@@ -1,4 +1,4 @@
-﻿# TODO ENRICHISSEMENT COMPLET - Tuya Zigbee Project
+# TODO ENRICHISSEMENT COMPLET - Tuya Zigbee Project
 
 ## 🚀 **TÂCHES ACCOMPLIES (2025-01-27)**
 

@@ -1,7 +1,7 @@
 {
-  "name": "com.tuya.zigbee",
-  "version": "1.0.7",
-  "description": "Tuya ZigBee Integration for Homey - Local Mode",
+  "name": "com.universaltuyazigbee.device",
+  "version": "1.0.8",
+  "description": "Universal Tuya ZigBee Device Integration for Homey - Local Mode",
   "main": "app.js",
   "scripts": {
     "build": "homey app build",
@@ -55,22 +55,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dlnraja/com.tuya.zigbee.git"
+    "url": "https://github.com/dlnraja/com.universaltuyazigbee.device.git"
   },
   "bugs": {
-    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
+    "url": "https://github.com/dlnraja/com.universaltuyazigbee.device/issues"
   },
-  "homepage": "https://github.com/dlnraja/com.tuya.zigbee#readme",
+  "homepage": "https://github.com/dlnraja/com.universaltuyazigbee.device#readme",
   "config": {
     "homey": {
-      "appId": "com.tuya.zigbee",
+      "appId": "com.universaltuyazigbee.device",
       "version": "1.0.6",
       "sdk": 3,
       "platform": "local"
     }
   },
   "homey": {
-    "appId": "com.tuya.zigbee",
+    "appId": "com.universaltuyazigbee.device",
     "version": "1.0.5",
     "sdk": 3,
     "platform": "local",

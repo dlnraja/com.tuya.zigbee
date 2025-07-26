@@ -1,4 +1,4 @@
-﻿# 📊 RAPPORT ÉTAT D'AVANCEMENT - Tuya Zigbee Project
+# 📊 RAPPORT ÉTAT D'AVANCEMENT - Tuya Zigbee Project
 
 ## 🎯 **RÉSUMÉ EXÉCUTIF**
 

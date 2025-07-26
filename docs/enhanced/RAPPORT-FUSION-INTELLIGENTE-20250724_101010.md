@@ -1,4 +1,4 @@
-﻿# 🔄 RAPPORT DE FUSION INTELLIGENTE - TUYA ZIGBEE
+# 🔄 RAPPORT DE FUSION INTELLIGENTE - TUYA ZIGBEE
 
 ## 🎯 **Fusion Intelligente des Branches**
 

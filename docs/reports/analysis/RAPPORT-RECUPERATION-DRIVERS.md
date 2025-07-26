@@ -1,4 +1,4 @@
-﻿# 🚀 RAPPORT DE RÉCUPÉRATION DRIVERS - Tuya Zigbee Project
+# 🚀 RAPPORT DE RÉCUPÉRATION DRIVERS - Tuya Zigbee Project
 
 ## 🎯 **RÉSUMÉ EXÉCUTIF**
 **Récupération complète de 123 drivers depuis toutes les branches Git**

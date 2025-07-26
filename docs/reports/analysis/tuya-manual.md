@@ -159,7 +159,7 @@ L'application intègre un **Mode YOLO Intelligent** qui automatise :
 ```bash
 # Accéder aux logs Homey
 ssh admin@homey.local
-tail -f /var/log/homey/app/com.tuya.zigbee/current
+tail -f /var/log/homey/app/com.universaltuyazigbee.device/current
 ```
 
 ---
@@ -236,7 +236,7 @@ Accédez au **dashboard web** pour :
 ### **API REST**
 ```bash
 # Exemple d'utilisation API
-curl -X GET "http://homey.local/api/app/com.tuya.zigbee/devices"
+curl -X GET "http://homey.local/api/app/com.universaltuyazigbee.device/devices"
 ```
 
 ### **Webhooks**

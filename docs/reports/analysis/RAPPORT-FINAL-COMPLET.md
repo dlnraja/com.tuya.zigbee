@@ -1,4 +1,4 @@
-﻿# 🎉 RAPPORT FINAL COMPLET - Tuya Zigbee Project
+# 🎉 RAPPORT FINAL COMPLET - Tuya Zigbee Project
 
 ## 🎯 **RÉSUMÉ EXÉCUTIF**
 **Projet Tuya Zigbee entièrement optimisé et automatisé avec Mode Automatique Intelligent**
@@ -35,9 +35,9 @@
 ```markdown
 # 🚀 Tuya Zigbee - Application Homey Intelligente & Automatisée
 
-[![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](https://github.com/dlnraja/com.universaltuyazigbee.device)
 [![Homey SDK](https://img.shields.io/badge/Homey%20SDK-3.0-green.svg)](https://apps.homey.app/)
-[![Automation](https://img.shields.io/badge/Automation-100%25-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Automation](https://img.shields.io/badge/Automation-100%25-brightgreen.svg)](https://github.com/dlnraja/com.universaltuyazigbee.device)
 ```
 
 **Fonctionnalités ajoutées :**

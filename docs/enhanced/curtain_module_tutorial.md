@@ -41,7 +41,7 @@ Ce tutoriel vous guide dans l'installation et la configuration du driver **curta
 
 ## 🔗 Liens utiles
 - [Documentation officielle](../README.md)
-- [Support communautaire](https://github.com/dlnraja/com.tuya.zigbee/issues)
+- [Support communautaire](https://github.com/dlnraja/com.universaltuyazigbee.device/issues)
 - [Dashboard temps réel](../dashboard/)
 
 ---

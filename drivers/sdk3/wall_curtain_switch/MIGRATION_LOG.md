@@ -1,4 +1,4 @@
-﻿# Migration Log - wall_curtain_switch
+# Migration Log - wall_curtain_switch
 
 **Date:** 2025-07-25 01:02:01
 **Source:** drivers/in_progress/wall_curtain_switch
