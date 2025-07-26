@@ -1,4 +1,4 @@
-﻿# Rapport de Validation Drivers Tuya Zigbee
+# Rapport de Validation Drivers Tuya Zigbee
 # Mode enrichissement additif
 
 ## MÃ©triques Globales

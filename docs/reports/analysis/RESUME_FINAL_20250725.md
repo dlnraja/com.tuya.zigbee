@@ -1,4 +1,4 @@
-﻿# ðŸŽ‰ RÃ‰SUMÃ‰ FINAL - OPTIMISATION COMPLÃˆTE RÃ‰USSIE
+# ðŸŽ‰ RÃ‰SUMÃ‰ FINAL - OPTIMISATION COMPLÃˆTE RÃ‰USSIE
 
 **Date:** 2025-07-25 01:10:02
 **Projet:** Tuya Zigbee Project

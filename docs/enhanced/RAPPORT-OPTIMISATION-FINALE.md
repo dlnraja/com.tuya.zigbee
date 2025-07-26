@@ -1,4 +1,4 @@
-﻿# 📊 RAPPORT D'OPTIMISATION FINALE - Tuya Zigbee Project
+# 📊 RAPPORT D'OPTIMISATION FINALE - Tuya Zigbee Project
 
 ## 🎯 **RÉSUMÉ EXÉCUTIF**
 

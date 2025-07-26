@@ -1,4 +1,4 @@
-﻿# Migration Log - smoke_sensor
+# Migration Log - smoke_sensor
 
 **Date:** 2025-07-25 01:06:22
 **Source:** drivers/in_progress/smoke_sensor

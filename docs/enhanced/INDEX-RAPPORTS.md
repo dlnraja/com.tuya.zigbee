@@ -1,4 +1,4 @@
-﻿# Index des Rapports - Tuya Zigbee
+# Index des Rapports - Tuya Zigbee
 
 **Derniere mise a jour**: 2025-07-24 06:30:35
 

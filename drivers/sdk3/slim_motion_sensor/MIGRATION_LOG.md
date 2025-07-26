@@ -1,4 +1,4 @@
-﻿# Migration Log - slim_motion_sensor
+# Migration Log - slim_motion_sensor
 
 **Date:** 2025-07-25 01:06:20
 **Source:** drivers/in_progress/slim_motion_sensor

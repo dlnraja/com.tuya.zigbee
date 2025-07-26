@@ -1,4 +1,4 @@
-﻿# Configuration de la structure du repository
+# Configuration de la structure du repository
 # Mode enrichissement additif
 
 ## Structure Principale

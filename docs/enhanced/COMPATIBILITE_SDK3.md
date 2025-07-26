@@ -1,4 +1,4 @@
-﻿# RAPPORT DE COMPATIBILITE SDK3
+# RAPPORT DE COMPATIBILITE SDK3
 
 **Date :** 2025-07-25 07:02:37
 **Statut :** 23/161 drivers compatibles

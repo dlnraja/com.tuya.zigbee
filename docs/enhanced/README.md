@@ -1,4 +1,4 @@
-﻿# Tuya Zigbee Project - Tamil
+# Tuya Zigbee Project - Tamil
 
 ## Installation
 

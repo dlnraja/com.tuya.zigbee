@@ -59,7 +59,7 @@
 ## 📈 **FONCTIONNALITÉS AVANCÉES**
 
 ### 🎨 **Dashboard Interactif**
-- **URL** : `https://dlnraja.github.io/com.tuya.zigbee/dashboard/`
+- **URL** : `https://dlnraja.github.io/com.universaltuyazigbee.device/dashboard/`
 - **Fonctionnalités** :
   - Statistiques en temps réel
   - Barres de progression animées

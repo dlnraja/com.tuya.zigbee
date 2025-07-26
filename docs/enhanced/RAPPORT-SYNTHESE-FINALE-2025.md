@@ -1,4 +1,4 @@
-﻿<<<<<<< HEAD
+<<<<<<< HEAD
 # 🚀 RAPPORT DE SYNTHÈSE FINALE - TUYA ZIGBEE 2025
 
 ## 🎯 **Mission Accomplie - Fusion Intelligente Complète**

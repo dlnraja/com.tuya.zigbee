@@ -1,4 +1,4 @@
-﻿# 📁 Rapport de Réorganisation - Universal Tuya Zigbee Device
+# 📁 Rapport de Réorganisation - Universal Tuya Zigbee Device
 
 ## 🎯 **OBJECTIF**
 Réorganisation complète du repository en mode enrichissement additif pour optimiser la structure et améliorer la maintenabilité.

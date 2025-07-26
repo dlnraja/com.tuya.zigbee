@@ -117,7 +117,7 @@
 
 ### Ressourcen
 - **Homey Forum**: [Tuya Zigbee Project](https://community.homey.app/)
-- **GitHub Issues**: [Problem melden](https://github.com/dlnraja/com.tuya.zigbee/issues)
+- **GitHub Issues**: [Problem melden](https://github.com/dlnraja/com.universaltuyazigbee.device/issues)
 - **Dokumentation**: Siehe CONTRIBUTING.md
 
 ### Kontakt

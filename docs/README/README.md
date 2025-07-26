@@ -1,4 +1,4 @@
-﻿
+
 ---
 **📅 Version**: 1.0.1
 **📅 Date**: 2025-07-26
@@ -19,9 +19,9 @@
 [![Homey App](https://img.shields.io/badge/Homey-App-blue.svg?style=for-the-badge&logo=homey)](https://homey.app)
 [![ZigBee](https://img.shields.io/badge/Protocol-ZigBee-green.svg?style=for-the-badge&logo=zigbee)](https://zigbeealliance.org)
 [![Local Mode](https://img.shields.io/badge/Mode-Local-orange.svg?style=for-the-badge)](https://homey.app)
-[![Drivers](https://img.shields.io/badge/Drivers-215-brightgreen.svg?style=for-the-badge)](https://github.com/dlnraja/com.tuya.zigbee)
-[![Workflows](https://img.shields.io/badge/Workflows-106-blue.svg?style=for-the-badge)](https://github.com/dlnraja/com.tuya.zigbee/actions)
-[![Version](https://img.shields.io/badge/Version-1.0.6-purple.svg?style=for-the-badge)](https://github.com/dlnraja/com.tuya.zigbee/releases)
+[![Drivers](https://img.shields.io/badge/Drivers-215-brightgreen.svg?style=for-the-badge)](https://github.com/dlnraja/com.universaltuyazigbee.device)
+[![Workflows](https://img.shields.io/badge/Workflows-106-blue.svg?style=for-the-badge)](https://github.com/dlnraja/com.universaltuyazigbee.device/actions)
+[![Version](https://img.shields.io/badge/Version-1.0.6-purple.svg?style=for-the-badge)](https://github.com/dlnraja/com.universaltuyazigbee.device/releases)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
 **Complete Tuya ZigBee device integration for Homey with local mode priority, supporting 215+ drivers with advanced automation and intelligent management.**
@@ -580,9 +580,9 @@ scripts/linux/
 
 **FR**: Pour le support, les questions ou les contributions, veuillez utiliser les canaux suivants.
 
-- **GitHub Issues** / Issues GitHub : [Report Issues](https://github.com/dlnraja/com.tuya.zigbee/issues)
+- **GitHub Issues** / Issues GitHub : [Report Issues](https://github.com/dlnraja/com.universaltuyazigbee.device/issues)
 - **Community Forum** / Forum Communautaire : [Homey Community](https://community.homey.app)
-- **Documentation** / Documentation : [Project Wiki](https://github.com/dlnraja/com.tuya.zigbee/wiki)
+- **Documentation** / Documentation : [Project Wiki](https://github.com/dlnraja/com.universaltuyazigbee.device/wiki)
 
 ---
 

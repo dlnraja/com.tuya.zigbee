@@ -1,4 +1,4 @@
-﻿# ⏱️ RAPPORT D'IMPLÉMENTATION TIMEOUTS - Tuya Zigbee Project
+# ⏱️ RAPPORT D'IMPLÉMENTATION TIMEOUTS - Tuya Zigbee Project
 
 ## 🎯 **RÉSUMÉ EXÉCUTIF**
 **Système de timeouts implémenté avec succès pour prévenir les boucles infinies**

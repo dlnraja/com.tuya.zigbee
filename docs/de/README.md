@@ -1,4 +1,4 @@
-﻿# Tuya Zigbee Project - Deutsch
+# Tuya Zigbee Project - Deutsch
 
 ## Installation
 

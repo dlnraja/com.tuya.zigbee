@@ -1,4 +1,4 @@
-﻿# Migration Log - wall_socket
+# Migration Log - wall_socket
 
 **Date:** 2025-07-25 01:02:02
 **Source:** drivers/in_progress/wall_socket

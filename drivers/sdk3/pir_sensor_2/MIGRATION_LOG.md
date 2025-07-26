@@ -1,4 +1,4 @@
-﻿# Migration Log - pir_sensor_2
+# Migration Log - pir_sensor_2
 
 **Date:** 2025-07-25 01:06:18
 **Source:** drivers/in_progress/pir_sensor_2

@@ -142,7 +142,7 @@
 
 ### Resources
 - **Homey Forum**: [Tuya Zigbee Project](https://community.homey.app/)
-- **GitHub Issues**: [Report an issue](https://github.com/dlnraja/com.tuya.zigbee/issues)
+- **GitHub Issues**: [Report an issue](https://github.com/dlnraja/com.universaltuyazigbee.device/issues)
 - **Documentation**: See CONTRIBUTING.md
 
 ### Contact
@@ -172,7 +172,7 @@ This project is under MIT license. See the [LICENSE](LICENSE) file for details.
 
 ### Community
 - [Homey Forum](https://community.homey.app/) - Community support
-- [GitHub Issues](https://github.com/dlnraja/com.tuya.zigbee/issues) - Report issues
+- [GitHub Issues](https://github.com/dlnraja/com.universaltuyazigbee.device/issues) - Report issues
 - [Homey Discord](https://discord.gg/homey) - Real-time chat
 
 ### Development Tools

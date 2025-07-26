@@ -157,8 +157,8 @@ Les bugs de déploiement GitHub Pages ont été corrigés avec succès. Le site 
 
 ## 🔗 **Liens Utiles**
 
-- **GitHub Pages**: https://dlnraja.github.io/com.tuya.zigbee
-- **Repository**: https://github.com/dlnraja/com.tuya.zigbee
+- **GitHub Pages**: https://dlnraja.github.io/com.universaltuyazigbee.device
+- **Repository**: https://github.com/dlnraja/com.universaltuyazigbee.device
 - **Workflow**: `.github/workflows/github-pages-fix.yml`
 - **Page d'accueil**: `.github/pages-build/index.html`
 
