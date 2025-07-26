@@ -1,4 +1,4 @@
-# 🚀 PLAN D'ENRICHISSEMENT WORKFLOWS - 50 FEATURES PAR WORKFLOW
+# 🚀 PLAN D'ENRICHISSEMENT WORKFLOWS - features Tuya/Zigbee
 
 ## 📊 ANALYSE DES 60 WORKFLOWS EXISTANTS
 
@@ -709,7 +709,7 @@
 ## 🎯 **PROCHAINES ÉTAPES**
 
 ### **Phase 1: Validation des Features**
-- [ ] Révision des 50 features par workflow
+- [ ] Révision des features Tuya/Zigbee
 - [ ] Priorisation des features critiques
 - [ ] Estimation des ressources nécessaires
 - [ ] Planification de l'implémentation
@@ -734,6 +734,7 @@
 
 ---
 
-**🚀 TOTAL: 600 FEATURES D'ENRICHISSEMENT (50 par workflow × 12 workflows CI/CD)**
+**🚀 TOTAL: features Tuya/Zigbee D'ENRICHISSEMENT (50 par workflow × 12 workflows CI/CD)**
 
 *Prêt pour validation et implémentation complète !* 
+
