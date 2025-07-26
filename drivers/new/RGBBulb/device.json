@@ -1,0 +1,16 @@
+﻿{
+  "id": "rgbbulb",
+  "title": {
+    "en": "Tuya RGBBulb",
+    "fr": "Tuya RGBBulb",
+    "nl": "Tuya RGBBulb"
+  },
+  "icon": "/assets/icon.svg",
+  "class": "light",
+  "capabilities": ["onoff"],
+  "local": true,
+  "noApiRequired": true,
+  "enhanced": true,
+  "lastEnhanced": "2025-07-26 16:48:41",
+  "category": "light"
+}

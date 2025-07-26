@@ -1,4 +1,13 @@
-﻿# AUTO KEEP ALL - Tuya Zigbee Project
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# AUTO KEEP ALL - Tuya Zigbee Project
 # Script pour automatiser la sauvegarde et conservation de tous les fichiers et étapes
 
 param(
@@ -159,7 +168,7 @@ try {
             
             # Créer un commit automatique
             $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-            $commitMessage = "🤖 AUTO KEEP ALL: Sauvegarde automatique - $timestamp - Mode YOLO Intelligent"
+            $commitMessage = "🤖 AUTO KEEP ALL: Sauvegarde automatique - $timestamp - Mode Automatique Intelligent"
             
             git commit -m $commitMessage 2>$null
             
@@ -345,7 +354,7 @@ STATUT:
 - Nettoyage: Effectué
 
 ---
-Rapport généré automatiquement - Mode YOLO Intelligent
+Rapport généré automatiquement - Mode Automatique Intelligent
 "@
         
         return $report
@@ -377,4 +386,6 @@ Clear-TimeoutJobs
 Write-Host "`nAUTO KEEP ALL TERMINÉ!" -ForegroundColor Green
 Write-Host "=======================" -ForegroundColor Green
 Write-Host "Tous les fichiers et étapes ont été sauvegardés automatiquement!" -ForegroundColor White
-Write-Host "Mode YOLO Intelligent activé - Sauvegarde continue" -ForegroundColor Cyan 
+Write-Host "Mode Automatique Intelligent activé - Sauvegarde continue" -ForegroundColor Cyan 
+
+

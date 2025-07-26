@@ -1,4 +1,13 @@
-﻿# CURSOR AUTO EDIT MONITOR - Tuya Zigbee Project
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# CURSOR AUTO EDIT MONITOR - Tuya Zigbee Project
 # Script de surveillance continue pour l'édition automatique dans Cursor
 
 param(
@@ -45,10 +54,10 @@ function Start-AutoEdit {
                     $content = $content + $timestamp
                 }
                 
-                # 2. Ajouter le mode YOLO Intelligent
-                if ($content -notmatch "Mode YOLO Intelligent") {
-                    $yoloComment = "`n*Mode YOLO Intelligent activé - Édition automatique*"
-                    $content = $content + $yoloComment
+                # 2. Ajouter le mode Automatique Intelligent
+                if ($content -notmatch "Mode Automatique Intelligent") {
+                    $AutomatiqueComment = "`n*Mode Automatique Intelligent activé - Édition automatique*"
+                    $content = $content + $AutomatiqueComment
                 }
                 
                 # 3. Optimiser les workflows YAML
@@ -121,7 +130,7 @@ function Start-ContinuousMonitor {
 
 ### **🕐 Dernière édition**
 - **Timestamp:** $($currentTime.ToString('yyyy-MM-dd HH:mm:ss')) UTC
-- **Mode:** YOLO Intelligent
+- **Mode:** Automatique Intelligent
 - **Statut:** Actif
 
 ### **📈 Statistiques**
@@ -142,9 +151,9 @@ function Start-ContinuousMonitor {
 - Surveillance continue des fichiers
 - Édition automatique des timestamps
 - Optimisation des workflows
-- Ajout du mode YOLO Intelligent
+- Ajout du mode Automatique Intelligent
 
-### **🚀 Mode YOLO Intelligent activé**
+### **🚀 Mode Automatique Intelligent activé**
 *Édition automatique et continue*
 "@
             
@@ -209,10 +218,10 @@ CURSOR AUTO EDIT MONITOR - RAPPORT FINAL
 - Surveillance continue des fichiers
 - Édition automatique des timestamps
 - Optimisation des workflows
-- Ajout du mode YOLO Intelligent
+- Ajout du mode Automatique Intelligent
 - Mise à jour continue des statuts
 
-🚀 MODE YOLO INTELLIGENT ACTIVÉ
+🚀 MODE Automatique INTELLIGENT ACTIVÉ
 *Édition automatique et continue dans Cursor*
 "@
 
@@ -221,4 +230,6 @@ Write-Host $finalReport -ForegroundColor White
 Write-Host "`nCURSOR AUTO EDIT MONITOR TERMINÉ!" -ForegroundColor Green
 Write-Host "=================================" -ForegroundColor Green
 Write-Host "L'édition automatique continue est maintenant active!" -ForegroundColor White
-Write-Host "Mode YOLO Intelligent activé - Édition continue dans Cursor" -ForegroundColor Cyan 
+Write-Host "Mode Automatique Intelligent activé - Édition continue dans Cursor" -ForegroundColor Cyan 
+
+

@@ -1,18 +1,27 @@
-﻿# YOLO AUTO PUSH - Tuya Zigbee Project
-# Script YOLO mode pour nettoyer, valider et pousser automatiquement
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# Automatique AUTO PUSH - Tuya Zigbee Project
+# Script Mode Automatique pour nettoyer, valider et pousser automatiquement
 
-Write-Host "YOLO AUTO PUSH - MODE YOLO INTELLIGENT" -ForegroundColor Cyan
+Write-Host "Automatique AUTO PUSH - MODE Automatique INTELLIGENT" -ForegroundColor Cyan
 Write-Host "=====================================" -ForegroundColor Cyan
 
 # Variables globales
-$yoloMode = $true
+$AutomatiqueMode = $true
 $autoValidate = $true
 $autoPush = $true
 $maxRetries = 3
 
-# Fonction YOLO Clean
-function YOLO-Clean {
-    Write-Host "`n1. YOLO CLEAN - NETTOYAGE AUTOMATIQUE" -ForegroundColor Yellow
+# Fonction Automatique Clean
+function Automatique-Clean {
+    Write-Host "`n1. Automatique CLEAN - NETTOYAGE AUTOMATIQUE" -ForegroundColor Yellow
     Write-Host "=====================================" -ForegroundColor Yellow
     
     # Supprimer les archives volumineuses
@@ -48,9 +57,9 @@ function YOLO-Clean {
     git reflog expire --expire=now --all
 }
 
-# Fonction YOLO Validate
-function YOLO-Validate {
-    Write-Host "`n2. YOLO VALIDATE - VALIDATION AUTOMATIQUE" -ForegroundColor Yellow
+# Fonction Automatique Validate
+function Automatique-Validate {
+    Write-Host "`n2. Automatique VALIDATE - VALIDATION AUTOMATIQUE" -ForegroundColor Yellow
     Write-Host "=========================================" -ForegroundColor Yellow
     
     # Vérifier la taille du repository
@@ -84,9 +93,9 @@ function YOLO-Validate {
     return $true
 }
 
-# Fonction YOLO Push
-function YOLO-Push {
-    Write-Host "`n3. YOLO PUSH - PUSH AUTOMATIQUE" -ForegroundColor Yellow
+# Fonction Automatique Push
+function Automatique-Push {
+    Write-Host "`n3. Automatique PUSH - PUSH AUTOMATIQUE" -ForegroundColor Yellow
     Write-Host "===============================" -ForegroundColor Yellow
     
     # Configuration Git optimisée
@@ -103,7 +112,7 @@ function YOLO-Push {
     
     # Commit automatique
     Write-Host "  Commit automatique..." -ForegroundColor Yellow
-    git commit -m "🚀 YOLO AUTO PUSH: Nettoyage, validation et push automatique - Mode YOLO Intelligent" --allow-empty
+    git commit -m "🚀 Automatique AUTO PUSH: Nettoyage, validation et push automatique - Mode Automatique Intelligent" --allow-empty
     
     # Tentatives de push
     $pushMethods = @(
@@ -127,9 +136,9 @@ function YOLO-Push {
     return $false
 }
 
-# Fonction YOLO Monitor
-function YOLO-Monitor {
-    Write-Host "`n4. YOLO MONITOR - SURVEILLANCE AUTOMATIQUE" -ForegroundColor Yellow
+# Fonction Automatique Monitor
+function Automatique-Monitor {
+    Write-Host "`n4. Automatique MONITOR - SURVEILLANCE AUTOMATIQUE" -ForegroundColor Yellow
     Write-Host "=========================================" -ForegroundColor Yellow
     
     # Surveillance continue
@@ -142,10 +151,10 @@ function YOLO-Monitor {
         # Vérifier l'état Git
         $status = git status --porcelain
         if ($status) {
-            Write-Host "  📝 Changements détectés, lancement YOLO Clean..." -ForegroundColor Yellow
-            YOLO-Clean
-            YOLO-Validate
-            YOLO-Push
+            Write-Host "  📝 Changements détectés, lancement Automatique Clean..." -ForegroundColor Yellow
+            Automatique-Clean
+            Automatique-Validate
+            Automatique-Push
         } else {
             Write-Host "  ✅ Aucun changement détecté" -ForegroundColor Green
         }
@@ -154,9 +163,9 @@ function YOLO-Monitor {
     }
 }
 
-# Fonction principale YOLO Mode
-function Start-YOLOMode {
-    Write-Host "🚀 DÉMARRAGE YOLO MODE INTELLIGENT" -ForegroundColor Cyan
+# Fonction principale Mode Automatique
+function Start-AutomatiqueMode {
+    Write-Host "🚀 DÉMARRAGE Mode Automatique INTELLIGENT" -ForegroundColor Cyan
     Write-Host "=================================" -ForegroundColor Cyan
     
     $retryCount = 0
@@ -164,20 +173,20 @@ function Start-YOLOMode {
     while ($retryCount -lt $maxRetries) {
         Write-Host "`n🔄 TENTATIVE $($retryCount + 1)/$maxRetries" -ForegroundColor Yellow
         
-        # YOLO Clean
-        YOLO-Clean
+        # Automatique Clean
+        Automatique-Clean
         
-        # YOLO Validate
-        if (YOLO-Validate) {
+        # Automatique Validate
+        if (Automatique-Validate) {
             Write-Host "  ✅ Validation réussie" -ForegroundColor Green
         } else {
             Write-Host "  ❌ Validation échouée, nettoyage supplémentaire..." -ForegroundColor Red
-            YOLO-Clean
+            Automatique-Clean
             continue
         }
         
-        # YOLO Push
-        if (YOLO-Push) {
+        # Automatique Push
+        if (Automatique-Push) {
             Write-Host "  ✅ Push réussi!" -ForegroundColor Green
             break
         } else {
@@ -192,15 +201,17 @@ function Start-YOLOMode {
     }
     
     # Démarrer la surveillance
-    Write-Host "`n🔄 DÉMARRAGE SURVEILLANCE YOLO" -ForegroundColor Cyan
-    YOLO-Monitor
+    Write-Host "`n🔄 DÉMARRAGE SURVEILLANCE Automatique" -ForegroundColor Cyan
+    Automatique-Monitor
     
     return $true
 }
 
-# Démarrer le mode YOLO
-Start-YOLOMode
+# Démarrer le mode Automatique
+Start-AutomatiqueMode
 
-Write-Host "`nYOLO AUTO PUSH TERMINÉ!" -ForegroundColor Green
+Write-Host "`nAutomatique AUTO PUSH TERMINÉ!" -ForegroundColor Green
 Write-Host "=========================" -ForegroundColor Green
-Write-Host "Mode YOLO Intelligent activé sur Cursor" -ForegroundColor White 
+Write-Host "Mode Automatique Intelligent activé sur Cursor" -ForegroundColor White 
+
+

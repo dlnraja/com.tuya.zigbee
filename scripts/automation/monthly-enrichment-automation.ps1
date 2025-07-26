@@ -1,4 +1,13 @@
-﻿# Monthly Enrichment Automation for Tuya Zigbee Drivers
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# Monthly Enrichment Automation for Tuya Zigbee Drivers
 # Automatisation mensuelle d'enrichissement des drivers Tuya Zigbee
 # Version: 1.0.0
 # Date: $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
@@ -348,3 +357,4 @@ if ($MyInvocation.InvocationName -eq $MyInvocation.MyCommand.Name) {
     $success = Start-MonthlyEnrichment
     exit $(if ($success) { 0 } else { 1 })
 } 
+

@@ -1,4 +1,13 @@
-﻿# Auto Commit Messages Script - Tuya Zigbee Project
+﻿
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
+# Auto Commit Messages Script - Tuya Zigbee Project
 Write-Host "Auto Commit Messages Generator" -ForegroundColor Green
 Write-Host "=============================" -ForegroundColor Green
 
@@ -271,3 +280,4 @@ Write-Host "  Commit-WithMessage -Type 'driver-migration' -CustomMessage 'Priori
 Write-Host "  Push-Changes" -ForegroundColor Yellow
 
 Write-Host "`nAuto commit messages generator ready!" -ForegroundColor Green 
+

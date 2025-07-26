@@ -1,0 +1,16 @@
+﻿{
+  "id": "tablelamp",
+  "title": {
+    "en": "Tuya TableLamp",
+    "fr": "Tuya TableLamp",
+    "nl": "Tuya TableLamp"
+  },
+  "icon": "/assets/icon.svg",
+  "class": "light",
+  "capabilities": ["onoff"],
+  "local": true,
+  "noApiRequired": true,
+  "enhanced": true,
+  "lastEnhanced": "2025-07-26 16:48:43",
+  "category": "light"
+}

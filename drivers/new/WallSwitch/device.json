@@ -1,0 +1,16 @@
+﻿{
+  "id": "wallswitch",
+  "title": {
+    "en": "Tuya WallSwitch",
+    "fr": "Tuya WallSwitch",
+    "nl": "Tuya WallSwitch"
+  },
+  "icon": "/assets/icon.svg",
+  "class": "switch",
+  "capabilities": ["onoff"],
+  "local": true,
+  "noApiRequired": true,
+  "enhanced": true,
+  "lastEnhanced": "2025-07-26 16:48:42",
+  "category": "switch"
+}
