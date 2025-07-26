@@ -1,3 +1,12 @@
+﻿# Workflow GitHub Actions - validation-automated.yml
+# Enrichi automatiquement - Mode additif
+# Compatible Homey SDK3
+# Fonctionnement local prioritaire
+# Aucune dépendance API externe
+# 
+# @author Auto-Enhancement System
+# @version Enhanced
+# @date 2025-07-26 16:44:49
 # Validation Automatisée - Tuya Zigbee
 name: Validation Automatisée - Tuya Zigbee
 
@@ -18,24 +27,24 @@ jobs:
       run: |
         echo "🔍 Validation structure Dashboard..."
         if [ -d "docs/dashboard" ]; then
-          echo "✅ Dashboard trouvé dans docs/dashboard/"
-          if [ -f "docs/dashboard/index.html" ]; then
+          echo "✅ Dashboard trouvé dans docs/docs/dashboard/"
+          if [ -f "docs/docs/dashboard/index.html" ]; then
             echo "✅ Dashboard index.html trouvé"
           else
             echo "❌ Dashboard index.html manquant"
           fi
-          if [ -f "docs/dashboard/style.css" ]; then
+          if [ -f "docs/docs/dashboard/style.css" ]; then
             echo "✅ Dashboard style.css trouvé"
           else
             echo "❌ Dashboard style.css manquant"
           fi
-          if [ -f "docs/dashboard/script.js" ]; then
+          if [ -f "docs/docs/dashboard/script.js" ]; then
             echo "✅ Dashboard script.js trouvé"
           else
             echo "❌ Dashboard script.js manquant"
           fi
         else
-          echo "❌ Dashboard manquant dans docs/dashboard/"
+          echo "❌ Dashboard manquant dans docs/docs/dashboard/"
         fi
         
     - name: Validate Success
@@ -43,4 +52,6 @@ jobs:
         echo "🎉 Validation automatisée terminée"
         echo "✅ Dashboard structure validée"
         echo "✅ Tous les fichiers présents" 
+
+
 

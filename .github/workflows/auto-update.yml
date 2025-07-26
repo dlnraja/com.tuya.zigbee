@@ -1,3 +1,12 @@
+﻿# Workflow GitHub Actions - auto-update.yml
+# Enrichi automatiquement - Mode additif
+# Compatible Homey SDK3
+# Fonctionnement local prioritaire
+# Aucune dépendance API externe
+# 
+# @author Auto-Enhancement System
+# @version Enhanced
+# @date 2025-07-26 16:44:49
 # Auto Update - Mise à jour automatique avancée avec 50 Features
 name: Auto Update - Mise à jour automatique avancée
 on:
@@ -168,8 +177,8 @@ jobs:
     - name: Dashboard Updates
       run: |
         echo "🔍 Feature 25: Dashboard updates (UI updates)..."
-        echo "📁 Dashboard déplacé vers docs/dashboard/"
-        echo "✅ Dashboard mis à jour dans docs/dashboard/"
+        echo "📁 Dashboard déplacé vers docs/docs/dashboard/"
+        echo "✅ Dashboard mis à jour dans docs/docs/dashboard/"
         
     # Feature 26: API versioning
     - name: API Versioning
@@ -372,7 +381,7 @@ jobs:
         echo "- ✅ Monitoring updates"
         echo "- ✅ Logging updates"
         echo "- ✅ Metrics updates"
-        echo "- ✅ Dashboard updates (docs/dashboard/)"
+        echo "- ✅ Dashboard updates (docs/docs/dashboard/)"
         echo "- ✅ API versioning"
         echo "- ✅ Webhook updates"
         echo "- ✅ Third-party updates"
@@ -398,6 +407,8 @@ jobs:
         echo "- ✅ Screen sharing"
         echo "- ✅ File sharing"
         echo "- ✅ Collaboration tools"
+
+
 
 
 

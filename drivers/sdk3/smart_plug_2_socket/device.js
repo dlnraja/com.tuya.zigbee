@@ -1,5 +1,4 @@
-﻿const { Device } = require('homey');
-'use strict';
+﻿'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');
 const { CLUSTER } = require('zigbee-clusters');
@@ -76,4 +75,3 @@ class Smartplug2socket extends ZigBeeDevice {
 }
 
 module.exports = Smartplug2socket;
-
