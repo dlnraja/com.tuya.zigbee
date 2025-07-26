@@ -1,0 +1,57 @@
+﻿# Fichiers de dÃ©veloppement
+*.log
+*.tmp
+*.temp
+node_modules/
+.git/
+.github/
+.vscode/
+.idea/
+
+# Documentation de dÃ©veloppement
+docs/development/
+docs/internal/
+cursor-dev/
+
+# Scripts de dÃ©veloppement
+scripts/dev/
+scripts/test/
+scripts/debug/
+
+# DonnÃ©es de dÃ©veloppement
+data/dev/
+data/test/
+data/debug/
+
+# Rapports temporaires
+reports/temp/
+logs/temp/
+
+# Fichiers de sauvegarde
+*.bak
+*.backup
+*.old
+
+# Fichiers de configuration de dÃ©veloppement
+.env
+.env.local
+.env.development
+
+# Fichiers de cache
+.cache/
+.temp/
+tmp/
+
+# Fichiers de build de dÃ©veloppement
+build/dev/
+dist/dev/
+
+# Fichiers de test
+test/
+tests/
+__tests__/
+
+# Fichiers de documentation de dÃ©veloppement
+*.dev.md
+*.test.md
+*.debug.md
