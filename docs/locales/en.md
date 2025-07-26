@@ -1,264 +1,194 @@
-# Tuya Zigbee Device - English Translation
+# Tuya Zigbee Project - English
 
-## 🚀 Universal Tuya Zigbee Device Integration
-
-### 📋 Project Overview
-
-**Universal Tuya Zigbee Device** is a comprehensive Homey application designed for maximum local integration of Tuya/Zigbee devices without dependency on online Tuya APIs.
-
-### 🎯 Main Objective
-
+## 🎯 Main Objective
 **Maximum local integration of Tuya/Zigbee devices in Homey**
 
-#### ✅ Priorities
+### ✅ Priorities
 1. **Local-first mode** - Operation without Tuya API
 2. **Maximum compatibility** - Support for old/legacy/generic drivers
 3. **Intelligent modules** - Automatic driver improvement
 4. **Monthly updates** - Autonomous maintenance process
-5. **Multilingual documentation** - EN/FR/TA/NL support
+5. **Multilingual documentation** - Support EN/FR/TA/NL/DE/ES/IT
 
-#### 🚫 Non-Priorities
+### 🚫 Non-Priority
 - Web servers and statistics
 - Online Tuya API (optional only)
 - Non-Tuya/Zigbee features
 - Unnecessary complexities
 
-### 🧠 Intelligent Modules
+## 📊 Project Metrics
 
-#### Auto-Detection Module
-- **Purpose**: Automatic detection of driver types
-- **Features**: Legacy, SDK3, generic pattern recognition
-- **Status**: ✅ Active
+### Tuya Zigbee Drivers
+- **Total Drivers**: 80 (45 SDK3 + 23 In Progress + 12 Legacy)
+- **SDK3 Compatible**: 45 drivers
+- **In Progress**: 23 drivers
+- **Legacy**: 12 drivers
+- **High Compatibility**: 38 drivers
+- **Tested**: 35 drivers
 
-#### Legacy Conversion Module
-- **Purpose**: Automatic SDK2 → SDK3 conversion
-- **Features**: Template-based conversion, validation
-- **Status**: ✅ Active
-
-#### Generic Compatibility Module
-- **Purpose**: Enhancement of generic driver compatibility
-- **Features**: Compatibility rules, automatic optimization
-- **Status**: ✅ Active
-
-#### Intelligent Mapping Module
-- **Purpose**: Intelligent Zigbee cluster mapping
-- **Features**: Dynamic mapping, cluster detection
-- **Status**: ✅ Active
-
-#### Automatic Fallback Module
-- **Purpose**: Automatic fallback in case of errors
-- **Features**: Error handling, graceful degradation
-- **Status**: ✅ Active
-
-#### Hybrid Integration Module
-- **Purpose**: Complete orchestrated integration
-- **Features**: Multi-firmware support, dynamic adaptation
-- **Status**: ✅ Active
-
-### 🔄 GitHub Actions Workflows
-
-#### CI/CD Workflow
-- **Purpose**: Automatic validation and compilation
-- **Features**: Local mode validation, Homey compatibility
-- **Status**: ✅ Functional
-
-#### Auto-Changelog Workflow
-- **Purpose**: Automatic changelog generation
-- **Features**: Versioned entries, multilingual support
-- **Status**: ✅ Functional
-
-#### Auto-Translation Workflow
-- **Purpose**: Automatic multilingual translations
-- **Features**: 7 languages supported, real-time updates
-- **Status**: ✅ Functional
-
-#### Auto-Enrichment Workflow
-- **Purpose**: Automatic driver enrichment
-- **Features**: Intelligent optimization, compatibility enhancement
-- **Status**: ✅ Functional
-
-#### Monthly Update Workflow
-- **Purpose**: Autonomous monthly updates
-- **Features**: Metrics update, documentation refresh
-- **Status**: ✅ Functional
-
-#### YOLO Mode Workflow
-- **Purpose**: Advanced automatic execution
-- **Features**: Fast-paced automation, intelligent processing
-- **Status**: ✅ Functional
-
-### 📊 Project Metrics
-
-#### Drivers
-- **SDK3 Drivers**: 45 compatible
-- **In Progress**: 23 under development
-- **Legacy Drivers**: 12 maintained
-- **Total Drivers**: 80 managed
-
-#### Workflows
+### GitHub Workflows
 - **Total Workflows**: 60 automated
-- **Active Workflows**: 58 functional
-- **Failed Workflows**: 2 monitored
+- **CI/CD**: Automatic validation
+- **Translation**: 7 languages supported
+- **Monitoring**: 24/7 surveillance
 
-#### Modules
-- **Intelligent Modules**: 6 active
-- **Hybrid Module**: 1 revolutionary
-- **Total Modules**: 7 integrated
+### Intelligent Modules
+- **AutoDetectionModule**: Automatic detection
+- **LegacyConversionModule**: SDK conversion
+- **GenericCompatibilityModule**: Generic compatibility
+- **IntelligentMappingModule**: Cluster mapping
+- **AutomaticFallbackModule**: Error handling
+- **HybridIntegrationModule**: Hybrid integration
 
-#### Translations
-- **Languages Supported**: 7 complete
-- **Coverage**: 100% translated
-- **Auto-Update**: Enabled
+## 🚀 Features
 
-### 🎯 Key Performance Indicators
+### Local-First Mode
+- **No Tuya API dependency**
+- **100% local operation**
+- **Automatic device detection**
+- **Intelligent local cache**
 
-#### Compatibility Rate
-- **Value**: 98%
-- **Description**: Homey-compatible drivers
+### Maximum Compatibility
+- **Old drivers**: Legacy support
+- **Generic drivers**: Extended compatibility
+- **Future drivers**: Advanced preparation
+- **Unknown devices**: Intelligent detection
 
-#### Local Mode Rate
-- **Value**: 100%
-- **Description**: Operation without API
+### Intelligent Modules
+- **AutoDetectionModule**: Automatically detects devices
+- **LegacyConversionModule**: Converts legacy drivers
+- **GenericCompatibilityModule**: Improves compatibility
+- **IntelligentMappingModule**: Maps Zigbee clusters
+- **AutomaticFallbackModule**: Handles errors automatically
+- **HybridIntegrationModule**: Integrates different device types
 
-#### Automation Rate
-- **Value**: 95%
-- **Description**: Automated processes
+## 📁 Project Structure
 
-#### Performance Rate
-- **Value**: 92%
-- **Description**: Maximum optimization
+### Drivers
+- **drivers/sdk3/**: SDK3 compatible drivers
+- **drivers/in_progress/**: Drivers in development
+- **drivers/legacy/**: Legacy drivers to migrate
 
-### 🔧 Technical Features
+### Documentation
+- **docs/locales/**: Multilingual translations
+- **docs/dashboard/**: Intelligent dashboard
+- **docs/BUT_PRINCIPAL.md**: Main objective
 
-#### Local-First Operation
-- **No API dependency** for core functionality
-- **Automatic device detection** via Zigbee clusters
-- **Intelligent fallback** for unknown devices
-- **Hybrid firmware support** in single drivers
+### Scripts
+- **scripts/auto-translate-all.ps1**: Automatic translation
+- **scripts/update-dashboard-paths.ps1**: Path updates
+- **scripts/auto-monthly-update.ps1**: Monthly updates
 
-#### Intelligent Driver Management
-- **Automatic type detection** based on device patterns
-- **Dynamic capability mapping** according to firmware
-- **Legacy conversion** with validation
-- **Generic compatibility** enhancement
+## 🔄 Automated Workflows
 
-#### Multi-Platform Support
-- **Homey Mini** compatibility
-- **Homey Bridge** compatibility
-- **Homey Pro** compatibility
-- **All Homey box types** supported
+### CI/CD
+- **Automatic validation**: app.json, package.json, drivers
+- **Automated tests**: Homey compatibility
+- **Continuous optimization**: Performance and size
 
-### 📁 Project Structure
+### Translation
+- **7 supported languages**: EN, FR, TA, NL, DE, ES, IT
+- **Free APIs**: LibreTranslate, DeepL Free, Google Translate
+- **Automatic updates**: Daily at 2am
 
-```
-📁 .github/workflows/
-  📄 ci.yml - Continuous Integration
-  📄 build.yml - Build Process
-  📄 auto-changelog.yml - Changelog Generation
-  📄 auto-translation.yml - Translation Automation
-  📄 auto-enrich-drivers.yml - Driver Enrichment
-  📄 yolo-mode.yml - Advanced Automation
+### Monitoring
+- **24/7 surveillance**: Real-time metrics
+- **Automatic alerts**: Detected issues
+- **Daily reports**: Project status
 
-📁 drivers/
-  📁 sdk3/ (45 drivers) - Compatible drivers
-  📁 in_progress/ (23 drivers) - Under development
-  📁 legacy/ (12 drivers) - Legacy maintenance
+## 📊 Dashboard
 
-📁 lib/
-  📄 auto-detection-module.js - Type detection
-  📄 automatic-fallback-module.js - Error handling
-  📄 generic-compatibility-module.js - Compatibility
-  📄 intelligent-driver-modules-integrated.js - Main integration
-  📄 intelligent-mapping-module.js - Cluster mapping
-  📄 legacy-conversion-module.js - SDK conversion
-  📄 local-tuya-mode.js - Local operation
-  📄 tuya-fallback.js - API fallback
-  📄 tuya-zigbee-hybrid-device.js - Hybrid device
+### Access
+- **URL**: docs/dashboard/index.html
+- **Metrics**: Real-time
+- **Charts**: Interactive Chart.js
+- **Logs**: Complete history
 
-📁 docs/
-  📁 locales/ (7 languages) - Multilingual support
-  📄 BUT_PRINCIPAL.md - Main objective
-  📄 INDEX.md - Documentation index
+### Features
+- **Driver metrics**: 80 drivers with status
+- **Workflows**: 60 automated workflows
+- **Intelligent modules**: 7 active modules
+- **Translations**: 7 complete languages
 
-📁 scripts/
-  📄 analyze-workflows.ps1 - Workflow analysis
-  📄 dump-devices-hybrid.ps1 - Device discovery
-  📄 test-intelligent-modules.ps1 - Module testing
+## 🎯 Objectives
 
-📄 app.json - Application manifest
-📄 package.json - Dependencies
-📄 README.md - Project overview
-📄 CHANGELOG.md - Version history
-📄 TODO_DEVICES.md - Device todo list
-```
+### Immediate
+1. **Legacy Migration**: Convert 12 legacy drivers
+2. **Complete Tests**: Finalize 23 drivers in progress
+3. **Documentation**: Complete for all drivers
+4. **Validation**: 100% Homey compatibility
 
-### 🚀 Installation and Usage
+### Monthly
+1. **+10 SDK3 Drivers**: New compatible drivers
+2. **100% Tests**: All drivers tested
+3. **Complete Documentation**: 100% of drivers
+4. **Maximum Compatibility**: Support for all devices
 
-#### Prerequisites
-- Homey device (Mini, Bridge, or Pro)
-- Zigbee network configured
-- Tuya devices ready for integration
+## 🤝 Contribution
 
-#### Installation
-1. **Download** the application
-2. **Install** via Homey App Store or manual installation
-3. **Configure** local mode (no API required)
-4. **Discover** devices automatically
-5. **Enjoy** seamless integration
+### Adding a Driver
+1. **Identify device**: Tuya compatibility
+2. **Create driver**: SDK3 structure
+3. **Test**: Automatic validation
+4. **Document**: Automatic updates
 
-#### Features
-- **Zero API dependency** for core functionality
-- **Automatic device detection** and mapping
-- **Intelligent fallback** for unknown devices
-- **Multi-firmware support** in single drivers
-- **Real-time updates** and optimizations
+### Improving a Driver
+1. **Analyze**: Identify improvements
+2. **Optimize**: Performance and compatibility
+3. **Test**: Complete validation
+4. **Document**: Automatic changelog
 
-### 📈 Performance and Optimization
+## 📞 Support
 
-#### Local Mode Benefits
-- **Faster response times** - No API calls
-- **Reliable operation** - No internet dependency
-- **Privacy focused** - All data local
-- **Cost effective** - No API fees
+### Resources
+- **Homey Forum**: [Tuya Zigbee Project](https://community.homey.app/)
+- **GitHub Issues**: [Report an issue](https://github.com/dlnraja/com.tuya.zigbee/issues)
+- **Documentation**: See CONTRIBUTING.md
 
-#### Intelligent Optimization
-- **Automatic driver enhancement** based on usage patterns
-- **Dynamic capability mapping** according to device behavior
-- **Performance monitoring** and optimization
-- **Compatibility validation** across all Homey platforms
+### Contact
+- **Developer**: dlnraja
+- **Email**: dylan.rajasekaram@gmail.com
+- **Support**: Via Homey forum
 
-### 🔮 Future Development
+## 📄 License
 
-#### Planned Features
-- **Enhanced device discovery** algorithms
-- **Advanced cluster mapping** techniques
-- **Machine learning** integration for device recognition
-- **Extended language support** for more regions
+This project is under MIT license. See the [LICENSE](LICENSE) file for details.
 
-#### Roadmap
-- **Q1 2025**: Enhanced hybrid module
-- **Q2 2025**: Advanced AI integration
-- **Q3 2025**: Extended device support
-- **Q4 2025**: Performance optimization
+## 🙏 Acknowledgments
 
-### 📞 Support and Community
-
-#### Documentation
-- **Complete guides** for all features
-- **Troubleshooting** section
-- **FAQ** for common issues
-- **Video tutorials** for complex setups
-
-#### Community
-- **GitHub discussions** for technical support
-- **User forums** for experience sharing
-- **Development blog** for updates
-- **Contribution guidelines** for developers
+- **Homey Community**: Support and feedback
+- **Tuya Developers**: Documentation and API
+- **Contributors**: Improvements and tests
+- **Intelligent Modules**: Advanced automation
 
 ---
 
-**🎯 Mission**: Enable maximum local integration of Tuya/Zigbee devices in Homey with intelligent automation and zero API dependency.
+## 📚 Useful Resources
 
-**🚀 Vision**: The most comprehensive and intelligent Tuya/Zigbee integration platform for Homey, operating entirely in local mode with maximum device compatibility. 
+### Official Documentation
+- [Homey Apps SDK](https://apps.developer.homey.app/) - Official Homey documentation
+- [Tuya Developer Platform](https://developer.tuya.com/) - Tuya API and products
+- [Zigbee2MQTT](https://www.zigbee2mqtt.io/) - Zigbee device reference
+
+### Community
+- [Homey Forum](https://community.homey.app/) - Community support
+- [GitHub Issues](https://github.com/dlnraja/com.tuya.zigbee/issues) - Report issues
+- [Homey Discord](https://discord.gg/homey) - Real-time chat
+
+### Development Tools
+- [Homey CLI](https://apps.developer.homey.app/tools/cli) - Development tools
+- [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=homey.homey) - VS Code extension
+- [GitHub Actions](https://github.com/features/actions) - Automated CI/CD
+
+### Tuya Resources
+- [Tuya IoT Platform](https://iot.tuya.com/) - Tuya IoT platform
+- [Tuya Smart App](https://www.tuya.com/) - Mobile application
+- [Tuya Developer Forum](https://developer.tuya.com/forum) - Developer support
+
+---
+
+*Last updated: 2025-07-25 23:45:12*  
+*Automatically generated by translation system*  
+*Tuya Zigbee Project - Local Intelligent Mode* 🚀 
 
 
