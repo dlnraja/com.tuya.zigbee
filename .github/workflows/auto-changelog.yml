@@ -138,8 +138,8 @@ jobs:
       - name: Commit changes
         run: |
           echo "📝 Commit des changements..."
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "[redacted-email]"
+          git config --local user.name "dlnraja"
           git add CHANGELOG.md app.json
           git commit -m "📝 Auto-changelog: Update version and changelog" || echo "Aucun changement à commiter"
           git push || echo "Push non nécessaire"

@@ -125,7 +125,7 @@ function Convert-PythonToJavaScript {
     Write-Host "Conversion Python vers JavaScript..." -ForegroundColor Yellow
     
     # Règles de conversion
-    \$conversions = @{
+    $conversions = @{
         "import" = "const"
         "def " = "function "
         "self." = "this."
@@ -134,32 +134,32 @@ function Convert-PythonToJavaScript {
         "None" = "null"
     }
     
-    \$jsCode = \$pythonCode
-    foreach (\$rule in \$conversions.GetEnumerator()) {
-        \$jsCode = \$jsCode -replace \$rule.Key, \$rule.Value
+    $jsCode = $pythonCode
+    foreach ($rule in $conversions.GetEnumerator()) {
+        $jsCode = $jsCode -replace $rule.Key, $rule.Value
     }
     
-    return \$jsCode
+    return $jsCode
 }
 
 # Fonction d'adaptation Homey SDK3
 function Adapt-ForHomeySDK3 {
-    param([string]\$driverCode)
+    param([string]$driverCode)
     
     Write-Host "Adaptation pour Homey SDK3..." -ForegroundColor Yellow
     
     # Ajouter les imports Homey SDK3
-    \$homeyImports = @"
+    $homeyImports = @"
 const { HomeyAPI } = require('homey-api');
 const { TuyaDevice } = require('homey-tuya');
 
 "@
     
     # Adapter la structure
-    \$adaptedCode = \$homeyImports + \$driverCode
-    \$adaptedCode = \$adaptedCode -replace "class.*:", "class TuyaZigbeeDevice extends TuyaDevice {"
+    $adaptedCode = $homeyImports + $driverCode
+    $adaptedCode = $adaptedCode -replace "class.*:", "class TuyaZigbeeDevice extends TuyaDevice {"
     
-    return \$adaptedCode
+    return $adaptedCode
 }
 
 # Exécution de la migration
