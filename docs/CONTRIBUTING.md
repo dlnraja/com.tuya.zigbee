@@ -1,3 +1,12 @@
+
+---
+**📅 Version**: 1.0.0
+**📅 Date**: 2025-07-26
+**🕐 Heure**: 16:49:40
+**🎯 Objectif**: Intégration locale Tuya Zigbee
+**🚀 Mode**: Priorité locale
+**🛡️ Sécurité**: Mode local complet
+---
 # Guide de Contribution - Universal Universal TUYA Zigbee Device
 
 ## 🎯 **Objectif du projet**
@@ -217,6 +226,8 @@ npm run build
 ---
 
 *Merci de contribuer à l'écosystème Homey Tuya Zigbee !*
+
+
 
 
 
