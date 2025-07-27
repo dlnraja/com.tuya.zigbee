@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - SmartPlug
  * Catégorie: switch
  * Enrichi automatiquement - Mode additif

@@ -1,3 +1,3 @@
-﻿const { Device } = require('homey');
+const { Device } = require('homey');
  'use strict'; const { ZigBeeDriver } = require('homey-meshdriver'); class dimmer_2_gang extends ZigBeeDriver { } module.exports = dimmer_2_gang; 
 

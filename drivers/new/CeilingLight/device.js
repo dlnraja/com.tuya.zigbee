@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - CeilingLight
  * Catégorie: light
  * Enrichi automatiquement - Mode additif

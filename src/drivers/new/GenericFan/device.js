@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - GenericFan
  * Catégorie: fan
  * Enrichi automatiquement - Mode additif

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - WindowSensor
  * Catégorie: sensor
  * Enrichi automatiquement - Mode additif

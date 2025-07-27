@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - GenericMediaPlayer
  * Catégorie: media_player
  * Enrichi automatiquement - Mode additif

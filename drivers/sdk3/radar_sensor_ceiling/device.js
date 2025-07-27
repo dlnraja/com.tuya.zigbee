@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');
 const { CLUSTER } = require('zigbee-clusters');

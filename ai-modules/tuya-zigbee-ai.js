@@ -1,4 +1,4 @@
-﻿// AI Integration Module for Tuya Zigbee Devices
+// AI Integration Module for Tuya Zigbee Devices
 const Homey = require('homey');
 
 class TuyaZigbeeAI {

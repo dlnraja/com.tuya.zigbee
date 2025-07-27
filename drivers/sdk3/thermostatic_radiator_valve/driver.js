@@ -1,3 +1,3 @@
-﻿const { Device } = require('homey');
+const { Device } = require('homey');
 'use strict'; const { ZigBeeDriver } = require('homey-meshdriver'); const Homey = require("homey"); class ThermostaticRadiatorValveDriver extends ZigBeeDriver { async onInit() { this.log('Thermostatic Radiator Valve Driver initialized'); } } module.exports = ThermostaticRadiatorValveDriver; 
 

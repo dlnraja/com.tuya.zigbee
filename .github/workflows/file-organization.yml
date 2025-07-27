@@ -486,7 +486,7 @@ EOF
     - name: Commit changes
       run: |
         echo "📝 Commit des changements..."
-        git config --local user.email "dylan.rajasekaram+homey@gmail.com"
+        git config --local user.email "dylan.rajasekaram@gmail.com"
         git config --local user.name "dlnraja"
         git add .
         git commit -m "🔧 ORGANISATION AUTOMATIQUE - 2025-07-26

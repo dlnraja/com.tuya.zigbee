@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - GenericAlarm
  * Catégorie: alarm
  * Enrichi automatiquement - Mode additif

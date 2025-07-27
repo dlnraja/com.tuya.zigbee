@@ -21,7 +21,7 @@
   - Code examples
 
 ### Contact
-- **Email**: dylan.rajasekaram+homey@gmail.com
+- **Email**: dylan.rajasekaram@gmail.com
   - Technical support
   - Collaboration opportunities
   - Community feedback

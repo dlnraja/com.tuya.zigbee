@@ -1,3 +1,3 @@
-﻿const { Device } = require('homey');
+const { Device } = require('homey');
 'use strict'; const { ZigBeeDriver } = require('homey-meshdriver'); class buttonswitchDriver extends ZigBeeDriver { async onMeshInit() { this.log('buttonswitchDriver has been initialized'); } } module.exports = buttonswitchDriver; 
 

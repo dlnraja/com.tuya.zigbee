@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Smart Life Device Tuya Zigbee - Alarm
  * Catégorie: alarm
  * Enrichi automatiquement - Mode additif
