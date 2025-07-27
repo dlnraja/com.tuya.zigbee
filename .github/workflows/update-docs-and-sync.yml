@@ -1,0 +1,17 @@
+name: Update Docs and Sync 
+on: 
+  push: 
+    branches: [ master ] 
+  schedule: 
+    - cron: '0 4 1 * *' 
+jobs: 
+  update-docs: 
+    runs-on: ubuntu-latest 
+    steps: 
+      - uses: actions/checkout@v3 
+      - run: node tools/generate-readme.js 
+      - run: node tools/update-changelog.js 
+      - uses: stefanzweifel/git-auto-commit-action@v5 
+        with: 
+          commit_message: \\" docs: Auto-update README and changelog // FR: MAJ auto de la doc et "changelog\ 
+          commit_message: \\" docs: Auto-update README and changelog // FR: MAJ auto de la doc et "changelog\ 
