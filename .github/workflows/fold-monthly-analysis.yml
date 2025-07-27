@@ -13,9 +13,7 @@ jobs:
       - name: Analyze Fold Sources
         run: |
           echo "Analyzing Fold sources for Tuya/Zigbee patterns..."
-          # Analyse des nouvelles sources
           find sources/fold-sources -type f -exec grep -l "tuya\|zigbee" {} \;
       - name: Update Integration Report
         run: |
           echo "Updating integration report..."
-          # Mise à jour du rapport

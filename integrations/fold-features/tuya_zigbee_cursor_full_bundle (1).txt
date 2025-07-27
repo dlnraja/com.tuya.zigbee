@@ -1,0 +1,453 @@
+### 📁 INSTRUCTION POUR CURSOR
+
+Ce fichier contient un prompt complet à interpréter.  
+Merci de **t’inspirer intégralement** de ce contenu pour **mettre à jour, corriger, enrichir** et finaliser le projet `dlnraja/com.tuya.zigbee`.  
+Tous les éléments doivent être interprétés comme des tâches à exécuter **immédiatement** en mode **enrichissement sans régression**, et **sans ajout de serveur local**.
+
+---
+
+### 🧠 PROMPT CURSOR – MEGA RELANCE & ENRICHISSEMENT DU PROJET `com.tuya.zigbee`
+
+(Contenu principal du prompt comme vu précédemment, résumé ici pour clarté)
+
+...
+
+---
+
+### 🔧 Script installateur `install.sh`
+
+```bash
+#!/bin/bash
+echo "🔧 Initialisation du projet Tuya Zigbee..."
+
+# Création des répertoires standards
+mkdir -p ref dashboard docs scripts workflows .github/workflows
+
+# Attribution des droits
+chmod +x scripts/*.sh
+
+# Installation dépendances de base (facultatif selon système)
+echo "ℹ️ Assurez-vous d’avoir Node.js, Git et Homey CLI installés"
+
+echo "✅ Projet initialisé localement."
+```
+
+---
+
+### 📝 Contenu enrichi du `README.md`
+
+# 🧠 Tuya Zigbee Universal (SDK3) – Custom Homey App
+
+[![License](https://img.shields.io/github/license/dlnraja/com.tuya.zigbee)](./LICENSE)
+[![Deploy](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/deploy.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions)
+[![Dashboard](https://img.shields.io/badge/Dashboard-Online-blue)](https://dlnraja.github.io/com.tuya.zigbee/dashboard/)
+
+> 🎯 Objectif : Offrir une intégration Tuya Zigbee complète, autonome, multilingue, enrichie par IA pour Homey Pro (SDK3+).
+
+## 🔍 Fonctionnalités
+
+- Détection intelligente des appareils Zigbee Tuya
+- Référentiel local Zigbee (clusters, endpoints, types, specs)
+- Support de modèles génériques + templates legacy
+- Workflows GitHub automatiques (build, changelog, dashboard)
+- Dashboard GitHub Pages interactif
+
+## 📊 Dashboard
+
+🔗 [Accéder au Dashboard Zigbee](https://dlnraja.github.io/com.tuya.zigbee/dashboard/)
+
+> Contient la matrice de compatibilité des devices, les clusters, endpoints et KPIs associés.
+
+## 📁 Structure
+
+```bash
+ref/                # Fichiers de specs Zigbee, clusters, endpoints
+dashboard/          # Page GitHub Pages
+docs/               # Documentation et changelogs
+scripts/            # Scripts d’automatisation
+.github/workflows/  # Actions GitHub CI/CD
+```
+
+## 🚀 Déploiement local
+
+```bash
+npm install
+homey app run
+```
+
+## 🔄 Contribution
+
+Pull requests bienvenues. Lisez les conventions de commits (`docs/CONTRIBUTING.md`) avant de proposer une PR.
+
+## 🧠 À venir
+
+- Ajout d’un moteur d’apprentissage pour prédiction de compatibilité
+- Compatibilité Homey Cloud & Homey Mini
+- Génération automatique de drivers
+
+© 2025 – Dylan Rajasekaram
+
+
+---
+
+### ⚙️ Exemple de Workflow GitHub Actions (`dashboard.yml`)
+
+```yaml
+name: 📊 Build & Deploy Dashboard
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du repo
+        uses: actions/checkout@v3
+
+      - name: Générer le dashboard
+        run: |
+          echo "🧠 Génération des données..."
+          mkdir -p dashboard
+          cp ref/*.json dashboard/
+          echo "<html><body><h1>Dashboard en cours de construction</h1></body></html>" > dashboard/index.html
+
+      - name: Déploiement GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dashboard
+
+```
+
+---
+
+### 📊 Données KPIs des Devices Zigbee Tuya (`ref/device_kpis.csv`)
+
+```csv
+Device,Model,Manufacturer,Clusters Supported,Endpoint Count,Power Source,Status,Last Test
+Zigbee Plug A,TS011F,Tuya,OnOff,1,AC mains,Stable,2025-07-27
+Zigbee Sensor B,TS0201,Tuya,TemperatureMeasurement,HumidityMeasurement,1,Battery,Experimental,2025-07-25
+Zigbee Dimmer C,TS0601,Tuya,LevelControl,OnOff,2,AC mains,Stable,2025-07-21
+```
+
+---
+
+### 🗂 Génération automatique du Changelog
+
+📌 À implémenter dans un workflow GitHub (`.github/workflows/changelog.yml`) :
+
+- À chaque `push` ou `pull_request` sur `main`, génère/complète le fichier `docs/CHANGELOG.md` automatiquement.
+- Format standard :
+  ```markdown
+  ## [vX.X.X] - YYYY-MM-DD
+  ### Added
+  - Nouvelle fonctionnalité XYZ
+
+  ### Fixed
+  - Bug corrigé dans l'appareil TS0601
+
+  ### Changed
+  - Mise à jour SDK Homey 3.X.X
+  ```
+- Utilise une action GitHub comme [`triage-pr`](https://github.com/actions/github-script) pour extraire les messages de commit.
+
+---
+
+### 🧰 Templates automatiques pour nouveaux drivers Tuya
+
+📁 Crée un dossier `templates/` contenant :
+
+- `generic_driver_template.js`  
+- `driver_config_template.json`  
+- `capabilities_template.json`
+
+📌 Ajoute un script CLI (`scripts/generate_driver.sh`) pour générer automatiquement la structure de driver :
+```bash
+#!/bin/bash
+NAME=$1
+cp -r templates/generic_driver_template.js drivers/$NAME/driver.js
+cp templates/driver_config_template.json drivers/$NAME/driver.compose.json
+echo "✅ Nouveau driver généré dans drivers/$NAME"
+```
+
+🔁 Connecte ce script à un GitHub Action manuelle (`generate-driver.yml`) déclenchée par `workflow_dispatch` avec nom du device.
+
+---
+
+### 🌐 Documentation multilingue (i18n)
+
+📁 Structure recommandée dans `docs/i18n/` :
+```
+docs/
+├── i18n/
+│   ├── fr/
+│   │   └── index.md
+│   └── en/
+│       └── index.md
+```
+
+📌 Implémente dans GitHub Pages :
+
+- Ajoute un sélecteur de langue simple dans le `index.html` du dashboard
+- Intègre un script `.yml` dans `.github/workflows/docs.yml` pour valider la présence et la cohérence des traductions
+
+📌 Traduction à couvrir :
+- README.md
+- Dashboard
+- CHANGELOG.md
+- Docs principaux des appareils
+
+---
+
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
+# Enhanced with Fold sources: tuya_zigbee_cursor_full_bundle (1).txt
