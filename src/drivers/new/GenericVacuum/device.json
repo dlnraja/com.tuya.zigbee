@@ -1,0 +1,16 @@
+﻿{
+  "id": "genericvacuum",
+  "title": {
+    "en": "Tuya GenericVacuum",
+    "fr": "Tuya GenericVacuum",
+    "nl": "Tuya GenericVacuum"
+  },
+  "icon": "/assets/icon.svg",
+  "class": "vacuum",
+  "capabilities": ["onoff"],
+  "local": true,
+  "noApiRequired": true,
+  "enhanced": true,
+  "lastEnhanced": "2025-07-26 16:48:51",
+  "category": "vacuum"
+}

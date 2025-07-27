@@ -1,0 +1,53 @@
+name: ChatGPT Enhanced Workflow
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Daily
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  process-chatgpt:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Process ChatGPT URLs
+      run: |
+        node scripts/process-chatgpt-urls.js
+        
+    - name: Generate implementations
+      run: |
+        node scripts/generate-implementations.js
+        
+    - name: Update documentation
+      run: |
+        node scripts/update-chatgpt-docs.js
+        
+    - name: Test implementations
+      run: |
+        node scripts/test-chatgpt-features.js
+        
+    - name: Commit changes
+      run: |
+        git config --local user.email "dylan.rajasekaram@gmail.com"
+        git config --local user.name "dlnraja"
+        git add .
+        git commit -m "ChatGPT Enhanced Features - $(date)"
+        git push
+        
+    - name: Create release
+      if: success()
+      run: |
+        node scripts/create-chatgpt-release.js

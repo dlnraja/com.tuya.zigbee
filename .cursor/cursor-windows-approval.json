@@ -1,0 +1,60 @@
+﻿{
+  "context": {
+    "project": {
+      "name": "com.universaltuyazigbee.device",
+      "version": "1.0.15",
+      "description": "Universal Tuya ZigBee Device Integration for Homey",
+      "author": "dlnraja",
+      "email": "dylan.rajasekaram@gmail.com",
+      "platform": "Windows"
+    },
+    "integrations": {
+      "gpmachado": {
+        "repository": "https://github.com/gpmachado/HomeyPro-Tuya-Devices",
+        "status": "completed",
+        "drivers": [
+          "Zemismart TB26 Switch",
+          "Universal Unsupported Device"
+        ]
+      },
+      "chatgpt": {
+        "urls": [
+          "https://chatgpt.com/s/t_6885232266b081918b820c1fddceecb8",
+          "https://chatgpt.com/s/t_688523012bcc8191ae758ea4530e7330"
+        ],
+        "status": "processed"
+      }
+    },
+    "automation": {
+      "yolo_mode": "active",
+      "platform": "Windows",
+      "scripts": [
+        "gpmachado-repository-processor.sh",
+        "quick-gpmachado-continue.sh",
+        "yolo-todo-processor.sh",
+        "terminal-fix-yolo.sh",
+        "windows-quick-continue.ps1"
+      ],
+      "workflows": [
+        "gpmachado-integration.yml",
+        "quick-gpmachado.yml",
+        "yolo-mode-activated.yml"
+      ]
+    },
+    "features": {
+      "ai_integration": "active",
+      "chatgpt_enhancement": "enabled",
+      "gpmachado_integration": "completed",
+      "todo_processing": "completed",
+      "terminal_fixes": "applied",
+      "windows_optimization": "active"
+    }
+  },
+  "approval": {
+    "status": "approved",
+    "mode": "yolo",
+    "auto_continue": true,
+    "skip_confirmations": true,
+    "platform": "Windows"
+  }
+}

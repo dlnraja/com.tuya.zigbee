@@ -1,0 +1,28 @@
+﻿name: Windows GPMACHADO Integration
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  windows-gpmachado:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build and test
+        run: npm run build && npm test
+      - name: Commit changes
+        run: |
+          git config --local user.email 'dylan.rajasekaram@gmail.com'
+          git config --local user.name 'dlnraja'
+          git add .
+          git commit -m 'ðŸ”— Windows GPMACHADO Integration - 07/27/2025 01:49:17'
+          git push
