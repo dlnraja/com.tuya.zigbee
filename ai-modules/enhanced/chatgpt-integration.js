@@ -283,3 +283,4 @@ class CommunityManager {
 }
 
 module.exports = ChatGPTIntegration;
+

@@ -75,3 +75,4 @@ class Socketpowerstripfour extends ZigBeeDevice {
 }
 
 module.exports = Socketpowerstripfour;
+

@@ -66,3 +66,4 @@ class RGBBulbDevice extends ZigBeeDevice {
 }
 
 module.exports = RGBBulbDevice;
+

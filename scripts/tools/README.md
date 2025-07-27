@@ -16,3 +16,4 @@ powershell -ExecutionPolicy Bypass -File "script-name.ps1"
 
 ---
 *GÃ©nÃ©rÃ© automatiquement par le script d'organisation du repository*
+

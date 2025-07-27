@@ -75,3 +75,4 @@ class Siren extends ZigBeeDevice {
 }
 
 module.exports = Siren;
+

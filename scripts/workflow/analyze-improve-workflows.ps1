@@ -210,3 +210,4 @@ Write-Host "  Avec problèmes: $($IssuesFound.Count)" -ForegroundColor Red
 Write-Host "  À améliorer: $($Improvements.Count)" -ForegroundColor Yellow
 Write-Host "  Valides: $(($AnalysisResults | Where-Object { $_.Status -eq "Valid" }).Count)" -ForegroundColor Green 
 
+

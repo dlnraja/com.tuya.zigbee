@@ -387,3 +387,4 @@ Write-Host "✅ Références Automatique supprimées" -ForegroundColor Green
 Write-Host "✅ Aucune dégradation de fonctionnalité" -ForegroundColor Green 
 
 
+

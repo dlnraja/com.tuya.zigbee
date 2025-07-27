@@ -75,3 +75,4 @@ class Handheldremote4buttons extends ZigBeeDevice {
 }
 
 module.exports = Handheldremote4buttons;
+

@@ -279,3 +279,4 @@ Tous les scripts fonctionnent en mode YOLO Intelligent :
 
 *Documentation générée automatiquement - Mode YOLO Intelligent*
 *Compatibilité cross-platform 100% - Prêt pour la production* 
+

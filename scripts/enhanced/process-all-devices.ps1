@@ -359,3 +359,4 @@ Write-Host "✅ Structure enrichie" -ForegroundColor Green
 Write-Host "✅ Métadonnées ajoutées" -ForegroundColor Green
 Write-Host "✅ Aucune dégradation de fonctionnalité" -ForegroundColor Green 
 
+

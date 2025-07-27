@@ -66,3 +66,4 @@ class GenericMediaPlayerDevice extends ZigBeeDevice {
 }
 
 module.exports = GenericMediaPlayerDevice;
+

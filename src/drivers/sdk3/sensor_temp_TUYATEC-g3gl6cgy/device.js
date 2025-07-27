@@ -75,3 +75,4 @@ class Sensortemptuyatecg3gl6cgy extends ZigBeeDevice {
 }
 
 module.exports = Sensortemptuyatecg3gl6cgy;
+

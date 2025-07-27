@@ -1,3 +1,4 @@
 const { Device } = require('homey');
 'use strict'; const { ZigBeeDriver } = require('homey-meshdriver'); class TuyaDiagnosticDriver extends ZigBeeDriver { } module.exports = TuyaDiagnosticDriver; 
 
+

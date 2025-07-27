@@ -282,3 +282,4 @@ jobs:
             echo "❌ Monthly automation failed"
             echo "Some validations failed"
           fi 
+

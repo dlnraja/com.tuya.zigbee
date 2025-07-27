@@ -483,3 +483,4 @@ Write-Host "`nAMELIORATION WALL SWITCH 3 GANG TERMINEE!" -ForegroundColor Green
 Write-Host "Mode Automatique Intelligent active" -ForegroundColor Cyan 
 
 
+

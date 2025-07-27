@@ -75,3 +75,4 @@ class Slimmotionsensor extends ZigBeeDevice {
 }
 
 module.exports = Slimmotionsensor;
+

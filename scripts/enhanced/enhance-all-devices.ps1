@@ -151,3 +151,4 @@ Write-Host "✅ Métadonnées ajoutées" -ForegroundColor Green
 Write-Host "✅ Commentaires enrichis" -ForegroundColor Green
 Write-Host "✅ Aucune dégradation de fonctionnalité" -ForegroundColor Green 
 
+

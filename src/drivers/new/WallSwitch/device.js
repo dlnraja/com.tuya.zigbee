@@ -66,3 +66,4 @@ class WallSwitchDevice extends ZigBeeDevice {
 }
 
 module.exports = WallSwitchDevice;
+

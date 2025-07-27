@@ -75,3 +75,4 @@ class Wallswitch6gangtuya extends ZigBeeDevice {
 }
 
 module.exports = Wallswitch6gangtuya;
+

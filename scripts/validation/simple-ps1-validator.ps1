@@ -92,3 +92,4 @@ Write-Host "❌ FAIL: $failCount" -ForegroundColor Red
 $results | Format-Table -AutoSize
 
 Write-Host "`n🎉 VALIDATION TERMINÉE" -ForegroundColor Green 
+

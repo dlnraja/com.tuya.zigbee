@@ -66,3 +66,4 @@ class GenericSwitchDevice extends ZigBeeDevice {
 }
 
 module.exports = GenericSwitchDevice;
+

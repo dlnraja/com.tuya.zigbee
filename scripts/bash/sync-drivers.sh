@@ -66,3 +66,4 @@ for driver_dir in drivers/*/; do
 done
 
 echo -e "${GREEN}SYNCHRONISATION TERMINÉE${NC}" 
+

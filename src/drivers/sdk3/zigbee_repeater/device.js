@@ -75,3 +75,4 @@ class Zigbeerepeater extends ZigBeeDevice {
 }
 
 module.exports = Zigbeerepeater;
+

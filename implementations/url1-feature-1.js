@@ -12,3 +12,4 @@ class Devicediscoveryautomation {
 }
 
 module.exports = Devicediscoveryautomation;
+

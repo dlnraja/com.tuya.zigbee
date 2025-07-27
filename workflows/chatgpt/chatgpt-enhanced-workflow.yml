@@ -51,3 +51,4 @@ jobs:
       if: success()
       run: |
         node scripts/create-chatgpt-release.js
+

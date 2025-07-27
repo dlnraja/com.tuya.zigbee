@@ -237,3 +237,4 @@ Write-Host "$Green🎉 CORRECTION SÉCURISÉE TERMINÉE AVEC SUCCÈS!$NC"
 Write-Host "$Cyan Projet corrigé et optimisé$NC"
 Write-Host "$Yellow Prochaines étapes: Test de compilation et push$NC" 
 
+

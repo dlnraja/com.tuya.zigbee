@@ -75,3 +75,4 @@ class Buzzer extends ZigBeeDevice {
 }
 
 module.exports = Buzzer;
+

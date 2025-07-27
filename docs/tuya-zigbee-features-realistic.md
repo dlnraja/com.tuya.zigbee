@@ -276,3 +276,4 @@
 
 *Toutes les features sont compatibles avec les capacités réelles des Homey et incluent des fallbacks appropriés.* 
 
+

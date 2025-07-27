@@ -282,3 +282,4 @@ L'application **Tuya Zigbee** pour Homey offre une solution complète et automat
 
 *Guide créé avec ❤️ et automatisation intelligente*  
 *Version 3.0.0 - Homey SDK 3* 
+

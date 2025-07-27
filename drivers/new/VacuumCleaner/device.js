@@ -66,3 +66,4 @@ class VacuumCleanerDevice extends ZigBeeDevice {
 }
 
 module.exports = VacuumCleanerDevice;
+

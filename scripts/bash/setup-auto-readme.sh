@@ -172,3 +172,4 @@ echo -e "${WHITE}1. Le README sera mis à jour automatiquement à chaque commit$
 echo -e "${WHITE}2. Pour désactiver: $0 --remove${NC}"
 echo -e "${WHITE}3. Pour forcer: $0 --force${NC}"
 echo -e "${WHITE}4. Test manuel: bash $SCRIPT_PATH --dry-run${NC}" 
+

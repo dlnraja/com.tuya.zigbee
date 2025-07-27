@@ -213,3 +213,4 @@ fi
 echo -e "${GREEN}TEST DE COMPATIBILITÉ TERMINÉ !${NC}"
 echo -e "${CYAN}Mode YOLO Intelligent activé - Compatibilité cross-platform${NC}"
 echo "" 
+

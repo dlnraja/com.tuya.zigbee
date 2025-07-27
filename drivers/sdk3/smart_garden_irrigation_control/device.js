@@ -75,3 +75,4 @@ class Smartgardenirrigationcontrol extends ZigBeeDevice {
 }
 
 module.exports = Smartgardenirrigationcontrol;
+

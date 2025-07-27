@@ -66,3 +66,4 @@ class GenericVacuumDevice extends ZigBeeDevice {
 }
 
 module.exports = GenericVacuumDevice;
+

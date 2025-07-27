@@ -66,3 +66,4 @@ class ThermostatDevice extends ZigBeeDevice {
 }
 
 module.exports = ThermostatDevice;
+

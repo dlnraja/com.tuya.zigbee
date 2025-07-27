@@ -41,3 +41,4 @@ fi
 
 echo ""
 echo "Validation de la structure terminee!"
+

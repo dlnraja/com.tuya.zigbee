@@ -336,3 +336,4 @@ Write-Host ""
 Write-Host "🚀 FIX TERMINAL BUG TERMINÉ - $(Get-Date -Format 'HH:mm:ss')" -ForegroundColor Red
 Add-TerminalPause 
 
+

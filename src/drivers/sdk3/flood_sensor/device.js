@@ -75,3 +75,4 @@ class Floodsensor extends ZigBeeDevice {
 }
 
 module.exports = Floodsensor;
+

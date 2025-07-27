@@ -23,3 +23,4 @@ fi
 ' --tag-name-filter cat -- --branches --tags
 
 echo "Historique Git réécrit avec succès!"
+

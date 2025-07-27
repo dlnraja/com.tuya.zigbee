@@ -181,3 +181,4 @@ Write-Host "📊 $($drivers.Count) drivers créés"
 Write-Host "📁 Dossier: $smartLifeDir"
 Write-Host "🔗 Smart Life: Integration complete" 
 
+

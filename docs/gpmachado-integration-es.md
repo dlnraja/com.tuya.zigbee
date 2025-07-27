@@ -23,3 +23,4 @@
 - **Mejora IA** : Análisis de dispositivos alimentado por ChatGPT
 - **Optimización de Rendimiento** : Mejora continua del rendimiento
 
+

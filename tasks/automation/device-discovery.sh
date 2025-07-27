@@ -78,3 +78,4 @@ class DeviceAuditor {
 
 const auditor = new DeviceAuditor();
 auditor.generateReport();
+

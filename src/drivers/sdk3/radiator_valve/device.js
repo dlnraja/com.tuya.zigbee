@@ -75,3 +75,4 @@ class Radiatorvalve extends ZigBeeDevice {
 }
 
 module.exports = Radiatorvalve;
+

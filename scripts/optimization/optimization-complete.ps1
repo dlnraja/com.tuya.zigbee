@@ -349,3 +349,4 @@ Write-Host "✅ Commit et push effectués" -ForegroundColor Green
 Write-Host ""
 Write-Host "🚀 Projet entièrement optimisé et prêt pour la production!" -ForegroundColor Green 
 
+

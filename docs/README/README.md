@@ -206,3 +206,5 @@ templates/fold-templates/      # Templates de configuration
 workflows/fold-automation/     # Automatisations
 `
 
+
+

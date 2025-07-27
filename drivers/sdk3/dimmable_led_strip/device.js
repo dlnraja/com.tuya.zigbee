@@ -46,3 +46,4 @@ class Dimmableledstrip extends TuyaZigBeeLightDevice {
 }
 
 module.exports = Dimmableledstrip;
+

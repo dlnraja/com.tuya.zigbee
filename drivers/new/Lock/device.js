@@ -66,3 +66,4 @@ class LockDevice extends ZigBeeDevice {
 }
 
 module.exports = LockDevice;
+

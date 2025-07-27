@@ -215,3 +215,4 @@ Write-Host "=========================" -ForegroundColor Green
 Write-Host "Mode Automatique Intelligent activé sur Cursor" -ForegroundColor White 
 
 
+

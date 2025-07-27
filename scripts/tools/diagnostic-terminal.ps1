@@ -51,3 +51,4 @@ Write-Host "  - Surveillez les processus pwsh/conhost dans le gestionnaire de t√
 
 Write-Host "--- FIN DU DIAGNOSTIC ---" 
 
+

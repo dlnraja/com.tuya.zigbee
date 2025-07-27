@@ -247,3 +247,4 @@ Write-Host "`nOPTIMIZE REPO SIZE TERMINÉ!" -ForegroundColor Green
 Write-Host "===========================" -ForegroundColor Green
 Write-Host "Repository optimisé pour push GitHub" -ForegroundColor White 
 
+

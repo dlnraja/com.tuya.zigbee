@@ -74,3 +74,4 @@ class SmartLifeMediaPlayerDevice extends ZigBeeDevice {
 }
 
 module.exports = SmartLifeMediaPlayerDevice;
+

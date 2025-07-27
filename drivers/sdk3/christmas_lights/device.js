@@ -46,3 +46,4 @@ class Christmaslights extends TuyaZigBeeLightDevice {
 }
 
 module.exports = Christmaslights;
+

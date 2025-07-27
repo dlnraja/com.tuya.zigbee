@@ -46,3 +46,4 @@ class Rgbbulbe27 extends TuyaZigBeeLightDevice {
 }
 
 module.exports = Rgbbulbe27;
+

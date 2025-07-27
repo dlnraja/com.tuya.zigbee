@@ -153,3 +153,4 @@ class WindowsZemismartTB26 extends ZigbeeDevice {
 }
 
 module.exports = WindowsZemismartTB26;
+

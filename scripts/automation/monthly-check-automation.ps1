@@ -208,3 +208,4 @@ $workflowError = ($workflowResults | Where-Object { $_.Status -eq "ERROR" }).Cou
 Write-Host "Workflows: $workflowOk OK, $workflowWarn Warnings, $workflowError Erreurs" -ForegroundColor $(if ($workflowError -eq 0) { "Green" } else { "Red" })
 
 Write-Host "`n🎉 VÉRIFICATION MENSUELLE TERMINÉE" -ForegroundColor Green 
+

@@ -290,3 +290,4 @@ Write-Host "📁 Dossier: $smartLifeDir"
 Write-Host "🔗 Smart Life: Intégration complète" 
 
 
+

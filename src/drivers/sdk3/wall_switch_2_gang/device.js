@@ -75,3 +75,4 @@ class Wallswitch2gang extends ZigBeeDevice {
 }
 
 module.exports = Wallswitch2gang;
+

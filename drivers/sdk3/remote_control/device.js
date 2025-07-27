@@ -75,3 +75,4 @@ class Remotecontrol extends ZigBeeDevice {
 }
 
 module.exports = Remotecontrol;
+

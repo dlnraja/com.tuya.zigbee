@@ -75,3 +75,4 @@ class Temperaturesensor extends ZigBeeDevice {
 }
 
 module.exports = Temperaturesensor;
+

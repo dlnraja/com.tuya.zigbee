@@ -75,3 +75,4 @@ class Dimmer1gang extends ZigBeeDevice {
 }
 
 module.exports = Dimmer1gang;
+
