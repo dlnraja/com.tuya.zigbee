@@ -1,0 +1,16 @@
+﻿{
+  "id": "windowsensor",
+  "title": {
+    "en": "Tuya WindowSensor",
+    "fr": "Tuya WindowSensor",
+    "nl": "Tuya WindowSensor"
+  },
+  "icon": "/assets/icon.svg",
+  "class": "sensor",
+  "capabilities": ["onoff"],
+  "local": true,
+  "noApiRequired": true,
+  "enhanced": true,
+  "lastEnhanced": "2025-07-26 16:48:42",
+  "category": "sensor"
+}

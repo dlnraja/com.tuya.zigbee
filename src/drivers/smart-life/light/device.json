@@ -1,0 +1,20 @@
+{
+    "id":  "smart-life-light",
+    "title":  {
+                  "en":  "Tuya Smart Life Light",
+                  "fr":  "Tuya Smart Life Light",
+                  "nl":  "Tuya Smart Life Light"
+              },
+    "icon":  "/assets/icon.svg",
+    "class":  "light",
+    "capabilities":  [
+                         "onoff"
+                     ],
+    "local":  true,
+    "smartLife":  true,
+    "category":  "light",
+    "enhanced":  true,
+    "localMode":  true,
+    "noApiRequired":  true,
+    "lastEnhanced":  "2025-07-26 16:49:03"
+}

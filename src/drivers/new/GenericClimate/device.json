@@ -1,0 +1,16 @@
+﻿{
+  "id": "genericclimate",
+  "title": {
+    "en": "Tuya GenericClimate",
+    "fr": "Tuya GenericClimate",
+    "nl": "Tuya GenericClimate"
+  },
+  "icon": "/assets/icon.svg",
+  "class": "climate",
+  "capabilities": ["onoff"],
+  "local": true,
+  "noApiRequired": true,
+  "enhanced": true,
+  "lastEnhanced": "2025-07-26 16:48:51",
+  "category": "climate"
+}

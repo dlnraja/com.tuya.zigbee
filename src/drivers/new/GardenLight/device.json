@@ -1,0 +1,16 @@
+﻿{
+  "id": "gardenlight",
+  "title": {
+    "en": "Tuya GardenLight",
+    "fr": "Tuya GardenLight",
+    "nl": "Tuya GardenLight"
+  },
+  "icon": "/assets/icon.svg",
+  "class": "light",
+  "capabilities": ["onoff"],
+  "local": true,
+  "noApiRequired": true,
+  "enhanced": true,
+  "lastEnhanced": "2025-07-26 16:48:43",
+  "category": "light"
+}
