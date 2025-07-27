@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - TableLamp
  * Catégorie: light
  * Enrichi automatiquement - Mode additif

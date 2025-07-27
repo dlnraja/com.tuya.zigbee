@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - RGBBulb
  * Catégorie: light
  * Enrichi automatiquement - Mode additif

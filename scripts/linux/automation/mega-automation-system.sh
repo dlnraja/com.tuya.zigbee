@@ -248,7 +248,7 @@ ensure_author_identity() {
     git config --local user.email "dylan.rajasekaram@gmail.com"
     
     # Update package.json author
-    sed -i 's/"email": "dylan.rajasekaram+homey@gmail.com"/"email": "dylan.rajasekaram@gmail.com"/' "$PROJECT_ROOT/package.json"
+    sed -i 's/"email": "dylan.rajasekaram@gmail.com"/"email": "dylan.rajasekaram@gmail.com"/' "$PROJECT_ROOT/package.json"
     
     # Update all markdown files with author information
     find "$PROJECT_ROOT" -name "*.md" -type f -exec sed -i 's/dylan\.rajasekaram+homey@gmail\.com/dylan.rajasekaram@gmail.com/g' {} \;

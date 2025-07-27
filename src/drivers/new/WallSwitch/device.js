@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - WallSwitch
  * Catégorie: switch
  * Enrichi automatiquement - Mode additif

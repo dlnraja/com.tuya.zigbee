@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - GenericLock
  * Catégorie: lock
  * Enrichi automatiquement - Mode additif

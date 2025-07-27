@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - TemperatureSensor
  * Catégorie: sensor
  * Enrichi automatiquement - Mode additif

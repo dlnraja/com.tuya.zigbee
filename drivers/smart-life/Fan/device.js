@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Smart Life Device Tuya Zigbee - Fan
  * Catégorie: fan
  * Enrichi automatiquement - Mode additif

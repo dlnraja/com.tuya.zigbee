@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Smart Life Device Tuya Zigbee - Switch
  * Catégorie: switch
  * Enrichi automatiquement - Mode additif

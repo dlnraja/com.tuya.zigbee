@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Smart Life Device Tuya Zigbee - Vacuum
  * Catégorie: vacuum
  * Enrichi automatiquement - Mode additif

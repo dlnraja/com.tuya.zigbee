@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Smart Life Device Tuya Zigbee - MediaPlayer
  * Catégorie: media_player
  * Enrichi automatiquement - Mode additif

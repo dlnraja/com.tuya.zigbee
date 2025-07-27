@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - GenericSwitch
  * Catégorie: switch
  * Enrichi automatiquement - Mode additif

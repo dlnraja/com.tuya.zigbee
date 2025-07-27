@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - GenericCover
  * Catégorie: cover
  * Enrichi automatiquement - Mode additif

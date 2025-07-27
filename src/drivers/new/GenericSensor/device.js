@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - GenericSensor
  * Catégorie: sensor
  * Enrichi automatiquement - Mode additif

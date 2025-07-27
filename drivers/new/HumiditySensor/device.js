@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - HumiditySensor
  * Catégorie: sensor
  * Enrichi automatiquement - Mode additif

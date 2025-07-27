@@ -1,4 +1,4 @@
-﻿# ChatGPT Enhanced Features - URL 2 Content
+# ChatGPT Enhanced Features - URL 2 Content
 
 ## Zigbee Cluster Referential System
 - Monthly updates of Zigbee cluster information

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - DimmerSwitch
  * Catégorie: switch
  * Enrichi automatiquement - Mode additif

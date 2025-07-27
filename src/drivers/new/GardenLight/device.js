@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - GardenLight
  * Catégorie: light
  * Enrichi automatiquement - Mode additif

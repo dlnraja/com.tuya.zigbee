@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - GenericClimate
  * Catégorie: climate
  * Enrichi automatiquement - Mode additif

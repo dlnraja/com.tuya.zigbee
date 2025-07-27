@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Smart Life Device Tuya Zigbee - Lock
  * Catégorie: lock
  * Enrichi automatiquement - Mode additif

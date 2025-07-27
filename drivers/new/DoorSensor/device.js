@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - DoorSensor
  * Catégorie: sensor
  * Enrichi automatiquement - Mode additif

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - WaterLeakSensor
  * Catégorie: sensor
  * Enrichi automatiquement - Mode additif

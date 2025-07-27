@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - VacuumCleaner
  * Catégorie: vacuum
  * Enrichi automatiquement - Mode additif

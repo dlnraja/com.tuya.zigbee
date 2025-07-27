@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - GenericLight
  * Catégorie: light
  * Enrichi automatiquement - Mode additif
