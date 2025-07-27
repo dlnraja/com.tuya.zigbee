@@ -1,210 +1,231 @@
-# Universal Tuya ZigBee Device Integration
+# 🚀 Universal Tuya ZigBee Device Integration
 
-[![Version](https://img.shields.io/badge/version-1.0.19-blue.svg)](https://github.com/dlnraja/com.universaltuyazigbee.device)
+[![Version](https://img.shields.io/badge/version-1.0.19-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![Homey SDK](https://img.shields.io/badge/Homey%20SDK-3.0-green.svg)](https://developers.homey.app/)
 [![License](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
+[![Drivers](https://img.shields.io/badge/drivers-249%20active-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/tree/master/drivers)
+[![Workflows](https://img.shields.io/badge/workflows-92%20CI%2FCD-orange.svg)](https://github.com/dlnraja/com.tuya.zigbee/tree/master/.github/workflows)
+[![AI Integration](https://img.shields.io/badge/AI%20Integration-100%25-purple.svg)](https://github.com/dlnraja/com.tuya.zigbee#-intelligence-artificielle)
+[![Local Mode](https://img.shields.io/badge/Local%20Mode-Enabled-success.svg)](https://github.com/dlnraja/com.tuya.zigbee#-mode-local-sans-api)
+[![Multilingual](https://img.shields.io/badge/Multilingual-4%20languages-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee#-support-multilingue)
 
-## ðŸŒŸ Enhanced Features
+> **Universal Tuya ZigBee Device Integration with AI-Powered Features and Zigbee Cluster Referential System**
 
-### ðŸ¤– AI-Powered Integration
-- **Automatic Device Discovery**: AI-driven device recognition and template generation
-- **Intelligent Fallback**: Generic "Tuya Unknown" driver for unsupported devices
-- **Predictive Analytics**: Device compatibility prediction and optimization suggestions
-- **Automated Testing**: AI-powered test generation and validation
+## 🌟 Fonctionnalités Principales
 
-### ðŸ“Š Zigbee Cluster Referential System
-- **Monthly Updates**: Automated Zigbee cluster information updates
-- **Local Database**: Complete cluster matrix and device characteristics
-- **Autonomous Understanding**: Self-learning device capability detection
-- **Custom Support**: Automatic generation of compatible device support
+### 🤖 Intelligence Artificielle
+- **Intégration OpenAI & Claude** : Génération automatique de drivers et analyse prédictive
+- **Parsing intelligent Z2M/Tuya** : Détection automatique d'appareils et génération de templates
+- **Génération d'icônes SVG IA** : Création automatique d'icônes personnalisées
+- **Benchmarks automatiques** : Analyse de performance et optimisation continue
 
-### ðŸ”§ Advanced Automation
-- **Continuous Integration**: Automated driver audit and template generation
-- **Error Recovery**: Automatic retry mechanisms with detailed logging
-- **Performance Optimization**: Memory, caching, and load balancing improvements
-- **Security Enhancement**: Input validation, error handling, and access control
+### 🔌 Intégration Zigbee Universelle
+- **Mode local sécurisé** : Fonctionnement sans API externe
+- **Support multi-fabricants** : Tuya, Zemismart, et autres fabricants
+- **Système de référentiel Zigbee Cluster** : Base de données complète des clusters
+- **Détection automatique** : Reconnaissance intelligente des appareils
 
-### ðŸŒ Multi-Language Support
-- **Primary**: English
-- **Secondary**: French
-- **Tertiary**: Spanish
-- **Automatic Translation**: Pre-push translation system
+### 🌍 Support Multilingue
+- **4 langues supportées** : Français, Anglais, Tamoul, Néerlandais
+- **Traduction automatique** : Workflows de traduction automatisés
+- **Interface i18n complète** : Documentation et interface multilingues
+- **Traduction en temps réel** : Mise à jour automatique des contenus
 
-### ðŸ“ˆ Real-Time Monitoring
-- **Dashboard**: Live metrics and device status
-- **Notifications**: Automated alerts and status updates
-- **Analytics**: Performance and usage statistics
+### ⚡ Automatisation Avancée
+- **92 workflows CI/CD** : Automatisation complète du développement
+- **Déploiement automatique** : Mise en production sans intervention
+- **Tests automatisés** : Validation continue de la qualité
+- **Monitoring en temps réel** : Surveillance et alertes automatiques
 
-## ðŸš€ Quick Start
+## 📊 Métriques du Projet
 
-### Installation
-\\\ash
-# Clone the repository
-git clone https://github.com/dlnraja/com.universaltuyazigbee.device.git
+| Métrique | Valeur | Statut |
+|----------|--------|--------|
+| **Drivers Actifs** | 249 | ✅ Actif |
+| **Workflows CI/CD** | 92 | ✅ Opérationnel |
+| **Version Actuelle** | 1.0.19 | ✅ Stable |
+| **IA Integration** | 100% | ✅ Complète |
+| **Compatibilité** | Homey Pro/Cloud/Mini | ✅ Validé |
+| **License** | MIT | ✅ Libre |
 
-# Install dependencies
+## 🚀 Installation Rapide
+
+```bash
+# Cloner le repository
+git clone https://github.com/dlnraja/com.tuya.zigbee.git
+cd com.tuya.zigbee
+
+# Installer les dépendances
 npm install
 
-# Build the app
+# Construire le projet
 npm run build
 
-# Run the app
-npm run run
-\\\
+# Lancer en mode développement
+npm run run:clean
+```
 
-### Available Scripts
-\\\ash
-# AI Integration
-npm run chatgpt-process
-npm run ai-integration
+## 🛠️ Scripts Disponibles
 
-# Stability and Performance
-npm run stability-fix
-npm run performance-optimize
+```bash
+# Développement
+npm run build          # Construire l'application
+npm run run:clean      # Lancer avec nettoyage
+npm run install        # Installer sur Homey
+npm run uninstall      # Désinstaller
 
-# Translation
-npm run auto-translate
-npm run translate-push
+# Tests & Validation
+npm run test           # Tests complets
+npm run lint           # Vérification du code
+npm run validate       # Validation complète
 
-# Quick Actions
-npm run yolo-mode
-npm run continue-tasks
-npm run gpmachado-process
-\\\
+# IA & Automatisation
+npm run chatgpt-process    # Traitement ChatGPT
+npm run yolo-mode          # Mode YOLO
+npm run auto-translate     # Traduction automatique
+```
 
-## ðŸ“‹ Supported Devices
+## 📁 Structure du Projet
 
-### Device Categories
-- **Lighting**: Dimmable lights, color lights, switches
-- **Sensors**: Temperature, humidity, motion, contact
-- **Controllers**: Remotes, dimmers, scene controllers
-- **Accessories**: Plugs, outlets, power strips
+```
+com.tuya.zigbee/
+├── 📁 drivers/           # 249 drivers actifs
+│   ├── 📁 active/        # Drivers en production
+│   ├── 📁 sdk3/          # Drivers SDK3
+│   ├── 📁 legacy/        # Drivers legacy
+│   └── 📁 testing/       # Drivers en test
+├── 📁 .github/workflows/ # 92 workflows CI/CD
+├── 📁 dashboard/         # Dashboard GitHub Pages
+├── 📁 docs/             # Documentation multilingue
+├── 📁 scripts/          # Scripts d'automatisation
+├── 📁 templates/        # Templates IA
+└── 📁 ref/              # Référentiel Zigbee
+```
 
-### Key Features
-- **Local Control**: No cloud dependency
-- **Real-time Updates**: Instant device status
-- **Energy Monitoring**: Power consumption tracking
-- **Scene Support**: Custom automation scenes
-- **Group Management**: Device grouping and control
+## 🎯 Drivers Supportés
 
-## ðŸ”§ Configuration
+### 🔌 Prises Intelligentes
+- **Tuya Smart Plug** : Prise intelligente basique
+- **Tuya Smart Plug (Generic)** : Prise générique universelle
+- **Zemismart Plugs** : Prises Zemismart compatibles
 
-### Basic Setup
-1. Install the app on your Homey
-2. Add your Tuya Zigbee devices
-3. Configure device settings
-4. Create automation flows
+### 💡 Éclairage
+- **RGB Bulb E27** : Ampoule RGB E27
+- **Smart Bulbs** : Ampoules intelligentes
+- **LED Strips** : Bandes LED RGB
 
-### Advanced Configuration
-- **Custom Drivers**: Create device-specific drivers
-- **API Integration**: Connect to external services
-- **Webhook Support**: Real-time notifications
-- **Data Export**: Export device data for analysis
+### 🌡️ Capteurs
+- **Temperature Sensors** : Capteurs de température
+- **Humidity Sensors** : Capteurs d'humidité
+- **Motion Sensors** : Détecteurs de mouvement
 
-## ðŸ“Š Dashboard
+## 🤖 Fonctionnalités IA
 
-Visit our [Live Dashboard](https://dlnraja.github.io/com.universaltuyazigbee.device/) for:
-- Real-time device status
-- Performance metrics
-- Usage statistics
-- System health monitoring
+### Génération Automatique
+- **Templates de drivers** : Création automatique basée sur les clusters
+- **Code intelligent** : Génération de code optimisé
+- **Documentation IA** : Création automatique de docs
 
-## ðŸ¤ Contributing
+### Analyse Prédictive
+- **Détection d'appareils** : Reconnaissance automatique
+- **Optimisation** : Suggestions d'amélioration
+- **Benchmarks** : Analyse de performance
 
-### Development Setup
-\\\ash
-# Install development dependencies
-npm install --dev
+## 🌐 Support Multilingue
 
-# Run tests
-npm test
+### Langues Supportées
+- 🇫🇷 **Français** : Langue principale
+- 🇬🇧 **Anglais** : Documentation technique
+- 🇮🇳 **Tamoul** : Support communautaire
+- 🇳🇱 **Néerlandais** : Support européen
 
-# Lint code
-npm run lint
+### Traduction Automatique
+```bash
+npm run auto-translate     # Traduction automatique
+npm run translate-push     # Traduction + push
+```
 
-# Build for production
-npm run build
-\\\
+## 🔧 Configuration
 
-### Guidelines
-- Follow the existing code style
-- Add tests for new features
-- Update documentation
-- Use conventional commits
+### Mode Local
+```javascript
+// Configuration pour mode local
+{
+  "local": true,
+  "noApiRequired": true,
+  "permissions": ["homey:manager:zigbee"]
+}
+```
 
-## ðŸ“ Changelog
+### Compatibilité
+- ✅ **Homey Pro** : Support complet
+- ✅ **Homey Cloud** : Compatible
+- ✅ **Homey Mini** : Optimisé
 
-### Version 1.0.19
-- âœ… **Stability Fixes**: Resolved terminal and process issues
-- âœ… **AI Integration**: Complete ChatGPT feature integration
-- âœ… **Zigbee Referential**: Monthly cluster information updates
-- âœ… **Performance**: Memory and caching optimizations
-- âœ… **Documentation**: Comprehensive multi-language support
+## 📈 Dashboard en Temps Réel
 
-### Version 1.0.18
-- âœ… **GPMACHADO Integration**: Enhanced device support
-- âœ… **Translation System**: Automatic multi-language translation
-- âœ… **Dashboard Enhancement**: Modern UI with real-time metrics
-- âœ… **Workflow Optimization**: Improved CI/CD pipelines
+Visitez notre **[Dashboard GitHub Pages](https://dlnraja.github.io/com.tuya.zigbee/)** pour voir :
+- 📊 **Métriques en temps réel**
+- 🤖 **Statut des fonctionnalités IA**
+- 🔧 **État des workflows CI/CD**
+- 📈 **Analytics et KPIs**
 
-## ðŸ“ž Support
+## 👨‍💻 Développeur
 
-- **GitHub Issues**: [Report bugs](https://github.com/dlnraja/com.universaltuyazigbee.device/issues)
-- **Documentation**: [Full documentation](https://github.com/dlnraja/com.universaltuyazigbee.device/wiki)
-- **Community**: [Join discussions](https://github.com/dlnraja/com.universaltuyazigbee.device/discussions)
+**Dylan Rajasekaram**
+- 📧 **Email** : [redacted-email]
+- 📍 **Localisation** : Lieusaint, France
+- 🕐 **Timezone** : GMT+2
+- 🔗 **LinkedIn** : [dlnraja](https://[redacted-linkedin])
+- 🐦 **Twitter** : [@dlnraja](https://twitter.com/dlnraja)
+- 💻 **GitHub** : [dlnraja](https://github.com/dlnraja)
 
-## ðŸ“„ License
+## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Ce projet est sous licence **MIT** - voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+## 🤝 Contribution
+
+Les contributions sont les bienvenues ! Consultez notre [Guide de Contribution](CONTRIBUTING.md) pour plus d'informations.
+
+### Comment Contribuer
+1. 🍴 Fork le projet
+2. 🌿 Créer une branche feature (`git checkout -b feature/AmazingFeature`)
+3. 💾 Commit les changements (`git commit -m 'Add some AmazingFeature'`)
+4. 📤 Push vers la branche (`git push origin feature/AmazingFeature`)
+5. 🔄 Ouvrir une Pull Request
+
+## 📞 Support
+
+- 🐛 **Bugs** : [Issues GitHub](https://github.com/dlnraja/com.tuya.zigbee/issues)
+- 💡 **Suggestions** : [Discussions](https://github.com/dlnraja/com.tuya.zigbee/discussions)
+- 📧 **Contact** : [redacted-email]
+
+## 🚀 Roadmap
+
+### Version 1.1.0 (Prochaine)
+- [ ] Support de nouveaux fabricants
+- [ ] Amélioration des fonctionnalités IA
+- [ ] Interface utilisateur enrichie
+- [ ] Performance optimisée
+
+### Version 1.2.0 (Futur)
+- [ ] Intégration de nouveaux protocoles
+- [ ] Dashboard avancé
+- [ ] API publique
+- [ ] Marketplace Homey
 
 ---
 
-**Made with â¤ï¸ for the Homey community**
+<div align="center">
 
-## 🔄 Intégration Fold Sources
+**🌟 Star ce projet si vous l'aimez ! 🌟**
 
-### Sources Traitées
-- **Dossier source**: `D:\Download\fold`
-- **Patterns détectés**: Tuya, Zigbee, Homey, Clusters, Endpoints
-- **Scripts intégrés**: JavaScript, Python, Shell, PowerShell
-- **Templates créés**: Configurations, Workflows, Automations
+[![GitHub stars](https://img.shields.io/github/stars/dlnraja/com.tuya.zigbee?style=social)](https://github.com/dlnraja/com.tuya.zigbee)
+[![GitHub forks](https://img.shields.io/github/forks/dlnraja/com.tuya.zigbee?style=social)](https://github.com/dlnraja/com.tuya.zigbee)
+[![GitHub watchers](https://img.shields.io/github/watchers/dlnraja/com.tuya.zigbee?style=social)](https://github.com/dlnraja/com.tuya.zigbee)
 
-### Fonctionnalités Ajoutées
-- Analyse intelligente des sources Fold
-- Enrichissement automatique des drivers
-- Workflows d'intégration mensuelle
-- Templates d'automatisation
-
-### Structure d'Intégration
-```
-integrations/fold-features/    # Fonctionnalités extraites
-enhancements/fold-drivers/     # Drivers enrichis
-templates/fold-templates/      # Templates de configuration
-workflows/fold-automation/     # Automatisations
-```
-
-
-## 🔄 Intégration Fold Sources
-
-### Sources Traitées
-- **Dossier source**: D:\Download\fold
-- **Patterns détectés**: Tuya, Zigbee, Homey, Clusters, Endpoints
-- **Scripts intégrés**: JavaScript, Python, Shell, PowerShell
-- **Templates créés**: Configurations, Workflows, Automations
-
-### Fonctionnalités Ajoutées
-- Analyse intelligente des sources Fold
-- Enrichissement automatique des drivers
-- Workflows d'intégration mensuelle
-- Templates d'automatisation
-
-### Structure d'Intégration
-`
-integrations/fold-features/    # Fonctionnalités extraites
-enhancements/fold-drivers/     # Drivers enrichis
-templates/fold-templates/      # Templates de configuration
-workflows/fold-automation/     # Automatisations
-`
+</div>
 
 
 
