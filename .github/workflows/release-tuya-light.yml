@@ -1,0 +1,10 @@
+name: Release Tuya Light 
+on: 
+  push: 
+    branches: [ master ] 
+jobs: 
+  release: 
+    runs-on: ubuntu-latest 
+    steps: 
+      - uses: actions/checkout@v3 
+      - run: zip -r tuya-light.zip . -x \\" "*.git*\ \*.github*\ \node_modules/*\ 
