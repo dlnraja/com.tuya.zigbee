@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Smart Life Device Tuya Zigbee - Climate
  * Catégorie: climate
  * Enrichi automatiquement - Mode additif

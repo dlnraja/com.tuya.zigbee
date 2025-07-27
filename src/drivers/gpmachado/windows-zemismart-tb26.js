@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Windows-Optimized Zemismart TB26 Driver
  * Based on gpmachado/HomeyPro-Tuya-Devices
  * Enhanced for Windows platform

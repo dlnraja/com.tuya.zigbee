@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - SmokeDetector
  * Catégorie: alarm
  * Enrichi automatiquement - Mode additif

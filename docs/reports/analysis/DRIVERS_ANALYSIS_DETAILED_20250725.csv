@@ -1,4 +1,4 @@
-﻿Name,Complexity,MigrationEffort,Priority,SDK2Patterns,SDK3Patterns,Notes
+Name,Complexity,MigrationEffort,Priority,SDK2Patterns,SDK3Patterns,Notes
 christmas_lights,SDK3,2-4h,High,"","setCapabilityValue;getCapabilityValue","Already contains SDK3 patterns - easy migration"
 curtain_module,Mixed,8-16h,Medium,"v2","setCapabilityValue","Contains both SDK2 and SDK3 patterns - complex migration required"
 curtain_module_2_gang,SDK3,2-4h,High,"","setCapabilityValue","Already contains SDK3 patterns - easy migration"

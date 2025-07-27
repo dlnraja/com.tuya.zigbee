@@ -1,4 +1,4 @@
-﻿# Windows Quick Continue Summary
+# Windows Quick Continue Summary
 
 **Date**: 2025-07-27 01:49:17
 **Status**: âœ… Approved and Continued

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - Curtain
  * Catégorie: cover
  * Enrichi automatiquement - Mode additif

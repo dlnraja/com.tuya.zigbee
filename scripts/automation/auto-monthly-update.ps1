@@ -1,4 +1,4 @@
-﻿# Auto Monthly Update - Tuya Zigbee Project
+# Auto Monthly Update - Tuya Zigbee Project
 
 param(
     [string]\ = "monthly",

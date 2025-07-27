@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - GenericVacuum
  * Catégorie: vacuum
  * Enrichi automatiquement - Mode additif

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - Thermostat
  * Catégorie: climate
  * Enrichi automatiquement - Mode additif

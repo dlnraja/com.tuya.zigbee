@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Smart Life Device Tuya Zigbee - Sensor
  * Catégorie: sensor
  * Enrichi automatiquement - Mode additif

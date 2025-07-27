@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Smart Life Device Tuya Zigbee - Cover
  * Catégorie: cover
  * Enrichi automatiquement - Mode additif

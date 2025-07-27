@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - MotionSensor
  * Catégorie: sensor
  * Enrichi automatiquement - Mode additif

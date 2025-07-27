@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Device Tuya Zigbee - FloorLamp
  * Catégorie: light
  * Enrichi automatiquement - Mode additif

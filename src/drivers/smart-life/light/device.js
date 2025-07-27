@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Smart Life Device Tuya Zigbee - Light
  * Catégorie: light
  * Enrichi automatiquement - Mode additif
