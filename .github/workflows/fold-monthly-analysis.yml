@@ -1,0 +1,21 @@
+name: Fold Monthly Analysis
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'  # Premier jour de chaque mois
+  workflow_dispatch:
+
+jobs:
+  fold-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Analyze Fold Sources
+        run: |
+          echo "Analyzing Fold sources for Tuya/Zigbee patterns..."
+          # Analyse des nouvelles sources
+          find sources/fold-sources -type f -exec grep -l "tuya\|zigbee" {} \;
+      - name: Update Integration Report
+        run: |
+          echo "Updating integration report..."
+          # Mise à jour du rapport
