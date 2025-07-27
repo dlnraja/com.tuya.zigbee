@@ -1,0 +1,16 @@
+﻿{
+  "id": "floorlamp",
+  "title": {
+    "en": "Tuya FloorLamp",
+    "fr": "Tuya FloorLamp",
+    "nl": "Tuya FloorLamp"
+  },
+  "icon": "/assets/icon.svg",
+  "class": "light",
+  "capabilities": ["onoff"],
+  "local": true,
+  "noApiRequired": true,
+  "enhanced": true,
+  "lastEnhanced": "2025-07-26 16:48:42",
+  "category": "light"
+}

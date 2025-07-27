@@ -1,0 +1,16 @@
+﻿{
+  "id": "smartplug",
+  "title": {
+    "en": "Tuya SmartPlug",
+    "fr": "Tuya SmartPlug",
+    "nl": "Tuya SmartPlug"
+  },
+  "icon": "/assets/icon.svg",
+  "class": "switch",
+  "capabilities": ["onoff"],
+  "local": true,
+  "noApiRequired": true,
+  "enhanced": true,
+  "lastEnhanced": "2025-07-26 16:48:41",
+  "category": "switch"
+}

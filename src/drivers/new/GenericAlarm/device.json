@@ -1,0 +1,16 @@
+﻿{
+  "id": "genericalarm",
+  "title": {
+    "en": "Tuya GenericAlarm",
+    "fr": "Tuya GenericAlarm",
+    "nl": "Tuya GenericAlarm"
+  },
+  "icon": "/assets/icon.svg",
+  "class": "alarm",
+  "capabilities": ["onoff"],
+  "local": true,
+  "noApiRequired": true,
+  "enhanced": true,
+  "lastEnhanced": "2025-07-26 16:48:51",
+  "category": "alarm"
+}

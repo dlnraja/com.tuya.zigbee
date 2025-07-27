@@ -1,0 +1,16 @@
+﻿{
+  "id": "genericsensor",
+  "title": {
+    "en": "Tuya GenericSensor",
+    "fr": "Tuya GenericSensor",
+    "nl": "Tuya GenericSensor"
+  },
+  "icon": "/assets/icon.svg",
+  "class": "sensor",
+  "capabilities": ["onoff"],
+  "local": true,
+  "noApiRequired": true,
+  "enhanced": true,
+  "lastEnhanced": "2025-07-26 16:48:51",
+  "category": "sensor"
+}
