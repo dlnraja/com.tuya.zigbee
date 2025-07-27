@@ -1,4 +1,4 @@
-# ChatGPT Enhanced Features - URL 1 Content
+﻿# ChatGPT Enhanced Features - URL 1 Content
 
 ## Device Discovery Automation
 - Automatic driver audit system
