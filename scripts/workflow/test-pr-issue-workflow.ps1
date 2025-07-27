@@ -189,3 +189,4 @@ Write-Host "`n🎉 ANALYSE TERMINÉE!" -ForegroundColor Green
 Write-Host "Mode Automatique Intelligent activé - Workflow analysé" -ForegroundColor Cyan 
 
 
+

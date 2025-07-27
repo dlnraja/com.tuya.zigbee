@@ -59,3 +59,4 @@ Set-Content -Path ".github/workflows/zigbee-update.yml" -Value $workflow -Encodi
 
 Write-Host "✅ Référentiel Zigbee créé avec succès" -ForegroundColor Green 
 
+

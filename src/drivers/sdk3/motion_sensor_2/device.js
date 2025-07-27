@@ -75,3 +75,4 @@ class Motionsensor2 extends ZigBeeDevice {
 }
 
 module.exports = Motionsensor2;
+

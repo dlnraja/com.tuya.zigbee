@@ -99,3 +99,4 @@ Write-Host ""
 Write-Host "OPTIMISATION TERMINEE" -ForegroundColor Green
 Write-Host "Taille finale: $sizeMB MB" -ForegroundColor Green
 Write-Host "Mode additif applique avec succes" -ForegroundColor Green 
+

@@ -66,3 +66,4 @@ class GardenLightDevice extends ZigBeeDevice {
 }
 
 module.exports = GardenLightDevice;
+

@@ -134,3 +134,4 @@ Write-Host "✅ Commits optimisés" -ForegroundColor Green
 Write-Host "✅ Template de commits créé" -ForegroundColor Green 
 
 
+

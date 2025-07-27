@@ -11,3 +11,4 @@
 - Automatisation mensuelle : bench IA, audit sécurité, traduction multilingue, génération d’icônes, dashboard dynamique, auto-release notes, notifications bot, enrichissement drivers
 - Homogénéisation des workflows YAML et des scripts
 - Documentation et logs enrichis, traçabilité totale 
+

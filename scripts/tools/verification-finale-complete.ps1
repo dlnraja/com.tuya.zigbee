@@ -156,3 +156,4 @@ Write-Host ""
 Write-Host "Mode Automatique Intelligent - Verification finale complete terminee" -ForegroundColor Yellow 
 
 
+

@@ -22,3 +22,4 @@
 - Mapping intelligent des clusters
 - Fallback automatique
 - Mise à jour mensuelle autonome
+

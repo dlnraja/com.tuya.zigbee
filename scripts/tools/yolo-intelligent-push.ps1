@@ -228,3 +228,4 @@ try {
 Write-Host "🚀 Mode Automatique Intelligent - Push intelligent terminé" -ForegroundColor Green 
 
 
+

@@ -75,3 +75,4 @@ class Smartplug extends ZigBeeDevice {
 }
 
 module.exports = Smartplug;
+

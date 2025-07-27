@@ -75,3 +75,4 @@ class Blindmotor extends ZigBeeDevice {
 }
 
 module.exports = Blindmotor;
+

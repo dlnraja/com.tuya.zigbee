@@ -75,3 +75,4 @@ class Relayboard4channel extends ZigBeeDevice {
 }
 
 module.exports = Relayboard4channel;
+

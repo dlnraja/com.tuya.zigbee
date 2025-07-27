@@ -75,3 +75,4 @@ class Smartairdetectionbox extends ZigBeeDevice {
 }
 
 module.exports = Smartairdetectionbox;
+

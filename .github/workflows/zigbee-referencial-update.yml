@@ -282,3 +282,4 @@ jobs:
             echo "❌ Zigbee referential update failed"
             echo "Some validations failed"
           fi 
+

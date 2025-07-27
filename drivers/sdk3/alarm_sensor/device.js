@@ -75,3 +75,4 @@ class Alarmsensor extends ZigBeeDevice {
 }
 
 module.exports = Alarmsensor;
+

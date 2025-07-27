@@ -148,3 +148,4 @@ Write-Host "  - Caches de performance" -ForegroundColor White
 Write-Host "  - Validations automatiques" -ForegroundColor White
 Write-Host "  - Documentation ajoutée" -ForegroundColor White 
 
+

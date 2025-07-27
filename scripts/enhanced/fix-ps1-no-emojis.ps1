@@ -156,3 +156,4 @@ if ($fixedCount -gt 0) {
 
 Write-Host ""
 Write-Host "[SUCCESS] CORRECTION TERMINÉE" -ForegroundColor Green 
+

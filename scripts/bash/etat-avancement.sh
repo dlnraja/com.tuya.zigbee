@@ -159,3 +159,4 @@ echo ""
 echo -e "${GREEN}ÉTAT D'AVANCEMENT TERMINÉ !${NC}"
 echo -e "${CYAN}Mode YOLO Intelligent activé - Optimisations continues${NC}"
 echo "" 
+

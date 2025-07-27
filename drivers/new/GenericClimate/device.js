@@ -66,3 +66,4 @@ class GenericClimateDevice extends ZigBeeDevice {
 }
 
 module.exports = GenericClimateDevice;
+

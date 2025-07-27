@@ -46,3 +46,4 @@ class Rgbledlightbar extends TuyaZigBeeLightDevice {
 }
 
 module.exports = Rgbledlightbar;
+

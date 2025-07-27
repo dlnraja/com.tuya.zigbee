@@ -201,3 +201,4 @@ Write-Host "=========================" -ForegroundColor Green
 Write-Host "SDK Homey 3 - Syntaxe corrigée et optimisée" -ForegroundColor White 
 
 
+

@@ -75,3 +75,4 @@ class Walldimmertuya extends ZigBeeDevice {
 }
 
 module.exports = Walldimmertuya;
+

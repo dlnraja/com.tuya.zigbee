@@ -66,3 +66,4 @@ class FloorLampDevice extends ZigBeeDevice {
 }
 
 module.exports = FloorLampDevice;
+

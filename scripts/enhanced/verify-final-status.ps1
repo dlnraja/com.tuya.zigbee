@@ -177,3 +177,4 @@ try {
 Write-Host "Mode Automatique Intelligent - Verification finale terminee" -ForegroundColor Green 
 
 
+

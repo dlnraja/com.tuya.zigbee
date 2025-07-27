@@ -520,3 +520,4 @@ Write-Host "✅ Sources officielles intégrées" -ForegroundColor Green
 Write-Host "✅ Aucune dégradation de fonctionnalité" -ForegroundColor Green
 Write-Host "✅ Mode enrichissement additif appliqué avec succès" -ForegroundColor Green 
 
+

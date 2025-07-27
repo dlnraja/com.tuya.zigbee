@@ -75,3 +75,4 @@ class Powerstrip extends ZigBeeDevice {
 }
 
 module.exports = Powerstrip;
+

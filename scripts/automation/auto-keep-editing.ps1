@@ -345,3 +345,4 @@ Write-Host "L'édition automatique des fichiers est maintenant active!" -Foregro
 Write-Host "Mode Automatique Intelligent activé - Édition continue" -ForegroundColor Cyan 
 
 
+

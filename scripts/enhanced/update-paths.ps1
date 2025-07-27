@@ -36,3 +36,4 @@ foreach ($script in $scriptFiles) {
 
 Write-Host "MISE A JOUR DES CHEMINS TERMINEE" -ForegroundColor Green 
 
+

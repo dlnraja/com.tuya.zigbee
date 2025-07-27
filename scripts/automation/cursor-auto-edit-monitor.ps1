@@ -233,3 +233,4 @@ Write-Host "L'édition automatique continue est maintenant active!" -ForegroundC
 Write-Host "Mode Automatique Intelligent activé - Édition continue dans Cursor" -ForegroundColor Cyan 
 
 
+

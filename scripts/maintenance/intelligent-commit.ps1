@@ -64,3 +64,4 @@ Optimization completed automatically by AI Assistant
     Write-Host "ℹ️ Aucun changement détecté" -ForegroundColor Blue
 } 
 
+

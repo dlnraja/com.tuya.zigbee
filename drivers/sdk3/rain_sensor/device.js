@@ -75,3 +75,4 @@ class Rainsensor extends ZigBeeDevice {
 }
 
 module.exports = Rainsensor;
+

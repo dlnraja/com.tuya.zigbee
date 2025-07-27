@@ -66,3 +66,4 @@ class GenericAlarmDevice extends ZigBeeDevice {
 }
 
 module.exports = GenericAlarmDevice;
+

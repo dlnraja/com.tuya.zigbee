@@ -46,3 +46,4 @@ class Tunablespotgu10 extends TuyaZigBeeLightDevice {
 }
 
 module.exports = Tunablespotgu10;
+

@@ -196,3 +196,4 @@ Set-Content -Path "docs/reports/ps1-correction-report-$(Get-Date -Format 'yyyyMM
 Write-Host "Rapport de correction créé" -ForegroundColor Green
 
 Write-Host "`n🎉 TEST ET CORRECTION TERMINÉS" -ForegroundColor Green 
+

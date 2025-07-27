@@ -75,3 +75,4 @@ class Outdoorplug extends ZigBeeDevice {
 }
 
 module.exports = Outdoorplug;
+

@@ -116,3 +116,4 @@ class TuyaZigbeeAI {
 }
 
 module.exports = TuyaZigbeeAI;
+

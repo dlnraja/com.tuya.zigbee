@@ -497,3 +497,4 @@ Write-Host "✅ Mode local prioritaire"
 Write-Host "`n🎉 DUMP ET RECHERCHE DEVICES TERMINÉ!" -ForegroundColor Green
 Add-TerminalPause 
 
+

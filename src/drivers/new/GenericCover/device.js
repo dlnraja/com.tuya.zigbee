@@ -66,3 +66,4 @@ class GenericCoverDevice extends ZigBeeDevice {
 }
 
 module.exports = GenericCoverDevice;
+

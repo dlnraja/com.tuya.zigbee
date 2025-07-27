@@ -75,3 +75,4 @@ class Switch2gang extends ZigBeeDevice {
 }
 
 module.exports = Switch2gang;
+

@@ -46,3 +46,4 @@ class Rgbfloorledlight extends TuyaZigBeeLightDevice {
 }
 
 module.exports = Rgbfloorledlight;
+

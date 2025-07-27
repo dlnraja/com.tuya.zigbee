@@ -42,3 +42,4 @@ foreach ($dossier in $dossiers) {
 }
 
 Write-Host "\nOPTIMISATION ET REORGANISATION DES LOGS TERMINEE" -ForegroundColor Green 
+

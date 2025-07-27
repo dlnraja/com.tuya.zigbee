@@ -540,3 +540,4 @@ Write-Host ""
 Write-Host "🚀 IMPLÉMENTATION MODULES INTELLIGENTS TERMINÉE - $(Get-Date -Format 'HH:mm:ss')" -ForegroundColor Green
 Add-TerminalPause 
 
+

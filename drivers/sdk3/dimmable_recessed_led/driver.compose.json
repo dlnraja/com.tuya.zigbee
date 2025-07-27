@@ -1,1 +1,2 @@
 {"id":"dimmable_recessed_led","name":{"en":"Dimmable Recessed LED"},"$extends":["light_white_ambiance"],"energy":{"approximation":{"usageOn":7,"usageOff":1}},"zigbee":{"manufacturerName":["_TZ3210_zdrhqmo0"],"productId":["TS0502B"],"endpoints":{"1":"@{clusters=System.Object[]; bindings=System.Object[]}"},"learnmode":{"image":"{{driverAssetsPath}}/icon.svg","instruction":"@{en=Power on to enter pairing mode.}"}},"capabilities":["onoff","measure_battery","measure_temperature","measure_humidity"]}
+

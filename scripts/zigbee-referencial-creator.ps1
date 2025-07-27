@@ -372,3 +372,4 @@ Write-Host "✅ Sources documentées" -ForegroundColor Green
 
 Write-Host "`n🎉 RÉFÉRENTIEL ZIGBEE CRÉÉ AVEC SUCCÈS" -ForegroundColor Green
 Write-Host "Mode enrichissement additif appliqué" -ForegroundColor Yellow 
+

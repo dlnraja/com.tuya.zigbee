@@ -454,3 +454,4 @@ echo "📊 Rapport généré: logs/cursor-approval-summary-$DATE.md"
 echo "🎛️ Configuration: .cursor/cursor-approval.json"
 echo "🤖 Automation: .cursor/cursor-automation.js"
 echo "🔧 Script: scripts/linux/automation/cursor-approval-continue.sh" 
+

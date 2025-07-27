@@ -179,3 +179,4 @@ https://github.com/tuya/tuya-smart-life
 **🚀 Mode**: Automatique GLOBAL ANTI-CRASH
 **🔗 Smart Life**: Intégration complète
 **🛡️ Anti-crash**: Fallback systems activés 
+

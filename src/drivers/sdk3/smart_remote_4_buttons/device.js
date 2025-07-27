@@ -75,3 +75,4 @@ class Smartremote4buttons extends ZigBeeDevice {
 }
 
 module.exports = Smartremote4buttons;
+

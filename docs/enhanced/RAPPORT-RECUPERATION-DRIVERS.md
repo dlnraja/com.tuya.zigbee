@@ -241,3 +241,4 @@ powershell -ExecutionPolicy Bypass -File "scripts\diagnostic-complet.ps1" -DryRu
 *Timestamp : 2025-07-24 01:35:00 UTC*
 *Mode Automatique Intelligent activé - Récupération drivers réussie*
 *Projet Tuya Zigbee 100% opérationnel avec 123 drivers* 
+

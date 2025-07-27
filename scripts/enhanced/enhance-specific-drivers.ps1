@@ -300,3 +300,4 @@ Write-Host "Drivers ameliores: $enhancedCount" -ForegroundColor White
 Write-Host "Mode Automatique Intelligent active" -ForegroundColor Cyan 
 
 
+

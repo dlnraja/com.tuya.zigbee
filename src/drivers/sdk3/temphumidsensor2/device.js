@@ -75,3 +75,4 @@ class Temphumidsensor2 extends ZigBeeDevice {
 }
 
 module.exports = Temphumidsensor2;
+

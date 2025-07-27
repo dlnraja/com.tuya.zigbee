@@ -75,3 +75,4 @@ class Smartknobswitch extends ZigBeeDevice {
 }
 
 module.exports = Smartknobswitch;
+

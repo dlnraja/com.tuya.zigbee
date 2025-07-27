@@ -66,3 +66,4 @@ class TableLampDevice extends ZigBeeDevice {
 }
 
 module.exports = TableLampDevice;
+

@@ -256,3 +256,4 @@ Write-Host "===========================" -ForegroundColor Green
 Write-Host "SDK Homey 3 - Cohérence vérifiée et corrigée" -ForegroundColor White 
 
 
+

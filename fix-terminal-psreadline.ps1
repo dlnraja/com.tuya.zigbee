@@ -101,3 +101,4 @@ Write-Host "[INFO] Variables d'environnement configurées" -ForegroundColor Yell
 Write-Host ""
 Write-Host "[NEXT] Vous pouvez maintenant continuer normalement" -ForegroundColor Cyan
 Write-Host "" 
+

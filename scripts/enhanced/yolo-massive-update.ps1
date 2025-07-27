@@ -256,3 +256,4 @@ $newChangelog | Out-File -FilePath $changelogPath -Encoding UTF8
 Write-Host "🎉 Automatique MASSIF TERMINÉ - Tout le projet mis à jour !" 
 
 
+

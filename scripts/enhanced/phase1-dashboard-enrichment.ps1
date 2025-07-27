@@ -208,3 +208,4 @@ Set-Content -Path "scripts/update-dashboard-auto.ps1" -Value $updateScript -Enco
 Write-Host "Script de mise à jour automatique créé" -ForegroundColor Green
 
 Write-Host "PHASE 1 TERMINÉE: Dashboard enrichi avec tableau drivers et métriques temps réel" -ForegroundColor Green 
+

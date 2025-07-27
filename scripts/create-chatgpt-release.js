@@ -68,3 +68,4 @@ const releasePath = path.join(__dirname, '../releases', `chatgpt-enhanced-${date
 fs.writeFileSync(releasePath, releaseNotes);
 
 console.log('ChatGPT release created successfully');
+

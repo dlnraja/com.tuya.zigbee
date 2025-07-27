@@ -46,3 +46,4 @@ class Rgbledstrip extends TuyaZigBeeLightDevice {
 }
 
 module.exports = Rgbledstrip;
+

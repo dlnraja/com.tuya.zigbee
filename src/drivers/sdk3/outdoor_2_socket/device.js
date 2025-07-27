@@ -75,3 +75,4 @@ class Outdoor2socket extends ZigBeeDevice {
 }
 
 module.exports = Outdoor2socket;
+

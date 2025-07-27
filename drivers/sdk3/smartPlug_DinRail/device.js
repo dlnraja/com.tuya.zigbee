@@ -75,3 +75,4 @@ class Smartplugdinrail extends ZigBeeDevice {
 }
 
 module.exports = Smartplugdinrail;
+

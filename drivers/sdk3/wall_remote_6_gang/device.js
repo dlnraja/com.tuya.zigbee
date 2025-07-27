@@ -75,3 +75,4 @@ class Wallremote6gang extends ZigBeeDevice {
 }
 
 module.exports = Wallremote6gang;
+

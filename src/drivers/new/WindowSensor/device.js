@@ -66,3 +66,4 @@ class WindowSensorDevice extends ZigBeeDevice {
 }
 
 module.exports = WindowSensorDevice;
+

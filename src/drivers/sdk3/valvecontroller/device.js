@@ -75,3 +75,4 @@ class Valvecontroller extends ZigBeeDevice {
 }
 
 module.exports = Valvecontroller;
+

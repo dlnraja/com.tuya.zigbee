@@ -95,3 +95,4 @@
 
 *Versioning automatique - Mode additif appliqué*
 *Universal Tuya Zigbee Device - Mode Local Intelligent*
+

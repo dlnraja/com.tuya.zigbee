@@ -390,3 +390,4 @@ Write-Host "Tous les drivers ont ete recuperes et regeneres!" -ForegroundColor W
 Write-Host "Mode Automatique Intelligent active - Recuperation continue" -ForegroundColor Cyan 
 
 
+

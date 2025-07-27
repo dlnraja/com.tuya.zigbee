@@ -17,3 +17,4 @@ jobs:
     - run: node scripts/update-zigbee-referential.js
     - run: node scripts/generate-device-templates.js
     - run: node scripts/update-documentation.js
+

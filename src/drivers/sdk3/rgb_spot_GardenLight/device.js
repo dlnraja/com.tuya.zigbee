@@ -46,3 +46,4 @@ class Rgbspotgardenlight extends TuyaZigBeeLightDevice {
 }
 
 module.exports = Rgbspotgardenlight;
+

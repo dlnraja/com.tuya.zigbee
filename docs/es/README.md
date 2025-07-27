@@ -28,3 +28,4 @@
 ## Documentation
 
 Ce projet supporte 10 langues differentes pour une accessibilite maximale.
+

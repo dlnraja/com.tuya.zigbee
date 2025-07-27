@@ -219,3 +219,4 @@ Write-Host "`nVERIFY FIX DRIVERS SIMPLE TERMINÉ!" -ForegroundColor Green
 Write-Host "===================================" -ForegroundColor Green
 
 
+

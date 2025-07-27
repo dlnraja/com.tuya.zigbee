@@ -75,3 +75,4 @@ class Waterdetector extends ZigBeeDevice {
 }
 
 module.exports = Waterdetector;
+

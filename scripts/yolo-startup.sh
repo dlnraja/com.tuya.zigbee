@@ -29,3 +29,4 @@ YOLO_INSTANT=true
 
 echo "YOLO configuration loaded successfully!"
 echo "Ready for instant execution with < 1 second delay"
+

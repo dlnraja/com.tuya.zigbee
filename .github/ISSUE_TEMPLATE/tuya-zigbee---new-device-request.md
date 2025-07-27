@@ -41,3 +41,4 @@ assignees: ''
 - Paste the copied information above.
 
 > **Note:** To be able to add more devices to the Tuya Zigbee app, we rely on community members like you to provide interviews of the devices you want to be added. Thank you for your contribution!
+

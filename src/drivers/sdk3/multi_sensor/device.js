@@ -75,3 +75,4 @@ class Multisensor extends ZigBeeDevice {
 }
 
 module.exports = Multisensor;
+

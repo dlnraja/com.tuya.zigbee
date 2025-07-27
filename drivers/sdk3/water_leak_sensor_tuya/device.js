@@ -75,3 +75,4 @@ class Waterleaksensortuya extends ZigBeeDevice {
 }
 
 module.exports = Waterleaksensortuya;
+

@@ -75,3 +75,4 @@ class Plugblitzwolftz3000mraovvmm extends ZigBeeDevice {
 }
 
 module.exports = Plugblitzwolftz3000mraovvmm;
+

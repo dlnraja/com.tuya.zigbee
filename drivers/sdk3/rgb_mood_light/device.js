@@ -46,3 +46,4 @@ class Rgbmoodlight extends TuyaZigBeeLightDevice {
 }
 
 module.exports = Rgbmoodlight;
+

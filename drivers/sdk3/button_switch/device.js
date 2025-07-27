@@ -75,3 +75,4 @@ class Buttonswitch extends ZigBeeDevice {
 }
 
 module.exports = Buttonswitch;
+

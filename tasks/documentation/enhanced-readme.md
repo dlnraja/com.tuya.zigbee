@@ -56,3 +56,4 @@ npm run run
 - GitHub Issues: [Report bugs](https://github.com/dlnraja/com.universaltuyazigbee.device/issues)
 - Community: [Homey Community](https://community.homey.app)
 - Documentation: [Wiki](https://github.com/dlnraja/com.universaltuyazigbee.device/wiki)
+

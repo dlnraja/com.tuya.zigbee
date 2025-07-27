@@ -118,3 +118,4 @@ Write-Host "✅ Structure optimisée créée" -ForegroundColor White
 Write-Host "✅ Fichiers réorganisés" -ForegroundColor White
 Write-Host "✅ Workflow principal créé" -ForegroundColor White
 Write-Host "✅ Rapport généré" -ForegroundColor White 
+

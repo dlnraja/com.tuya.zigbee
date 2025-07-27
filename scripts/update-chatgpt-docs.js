@@ -65,3 +65,4 @@ if (featuresIndex !== -1) {
 fs.writeFileSync(readmePath, readme);
 
 console.log('ChatGPT documentation updated successfully');
+
