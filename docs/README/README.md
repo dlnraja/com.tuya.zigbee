@@ -183,3 +183,26 @@ templates/fold-templates/      # Templates de configuration
 workflows/fold-automation/     # Automatisations
 ```
 
+
+## 🔄 Intégration Fold Sources
+
+### Sources Traitées
+- **Dossier source**: D:\Download\fold
+- **Patterns détectés**: Tuya, Zigbee, Homey, Clusters, Endpoints
+- **Scripts intégrés**: JavaScript, Python, Shell, PowerShell
+- **Templates créés**: Configurations, Workflows, Automations
+
+### Fonctionnalités Ajoutées
+- Analyse intelligente des sources Fold
+- Enrichissement automatique des drivers
+- Workflows d'intégration mensuelle
+- Templates d'automatisation
+
+### Structure d'Intégration
+`
+integrations/fold-features/    # Fonctionnalités extraites
+enhancements/fold-drivers/     # Drivers enrichis
+templates/fold-templates/      # Templates de configuration
+workflows/fold-automation/     # Automatisations
+`
+
