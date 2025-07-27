@@ -1,0 +1,3 @@
+#!/bin/bash
+set -e
+echo Starting Linux-based project enhancement...
