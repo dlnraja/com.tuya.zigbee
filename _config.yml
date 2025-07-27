@@ -1,0 +1,25 @@
+title: Universal Tuya ZigBee Device Integration
+description: Real-time monitoring and analytics for Tuya ZigBee devices
+author: Dylan Rajasekaram
+email: dylan.rajasekaram+homey@gmail.com
+linkedin: https://www.linkedin.com/in/dlnraja/
+twitter: https://twitter.com/dlnraja
+github: https://github.com/dlnraja
+
+theme: minimal-mistakes
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+markdown: kramdown
+highlighter: rouge
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

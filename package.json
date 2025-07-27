@@ -50,10 +50,6 @@
     "translation",
     "multilingual"
   ],
-  "author": {
-    "name": "dlnraja",
-    "email": "dylan.rajasekaram@gmail.com"
-  },
   "license": "MIT",
   "dependencies": {
     "@homey/cli": "^3.0.0",
@@ -89,5 +85,9 @@
         "homey:manager:zigbee"
       ]
     }
-  }
+  },
+  "author": "Dylan Rajasekaram",
+  "author_email": "dylan.rajasekaram+homey@gmail.com",
+  "author_linkedin": "https://www.linkedin.com/in/dlnraja/",
+  "author_twitter": "https://twitter.com/dlnraja"
 }

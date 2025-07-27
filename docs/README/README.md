@@ -153,6 +153,15 @@ npm run build
 - **Documentation**: [Full documentation](https://github.com/dlnraja/com.universaltuyazigbee.device/wiki)
 - **Community**: [Join discussions](https://github.com/dlnraja/com.universaltuyazigbee.device/discussions)
 
+## 👨‍💻 Author
+
+**Dylan Rajasekaram** - *Lead Developer*
+
+- **LinkedIn**: [dlnraja](https://www.linkedin.com/in/dlnraja/)
+- **Twitter**: [@dlnraja](https://twitter.com/dlnraja)
+- **GitHub**: [dlnraja](https://github.com/dlnraja)
+- **Email**: dylan.rajasekaram+homey@gmail.com
+
 ## ðŸ“„ License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
