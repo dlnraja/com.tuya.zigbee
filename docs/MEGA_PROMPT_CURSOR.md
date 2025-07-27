@@ -1,11 +1,13 @@
-# 🧠 MEGA PROMPT CURSOR – COM.TUYA.ZIGBEE (EN MODE ENRICHISSEMENT SANS RÉGRESSION)
+### 📁 INSTRUCTION POUR CURSOR
 
-
-
-**💡 Objectif général :**
-Reconstruire, enrichir et automatiser totalement le projet com.tuya.zigbee avec une approche IA, multilingue, modulaire, légère, documentée, et à jour avec les dernières specs Zigbee et SDK Homey.
-**⚠️ Aucune perte fonctionnelle ne doit être introduite. Aucune dépendance à un serveur local ne doit être ajoutée.**
+Ce fichier contient un prompt complet à interpréter.  
+Merci de **t’inspirer intégralement** de ce contenu pour **mettre à jour, corriger, enrichir** et finaliser le projet `dlnraja/com.tuya.zigbee`.  
+Tous les éléments doivent être interprétés comme des tâches à exécuter **immédiatement** en mode **enrichissement sans régression**, et **sans ajout de serveur local**.
 
 ---
 
-### ✅ TÂCHES À RÉALISER PAR CURSOR (interprétées comme des ordres immédiats)
+### 🧠 PROMPT CURSOR – MEGA RELANCE & ENRICHISSEMENT DU PROJET `com.tuya.zigbee`
+
+...
+
+...
