@@ -62,3 +62,4 @@ class GenericCompatibilityModule {
 }
 
 module.exports = GenericCompatibilityModule;
+

@@ -75,3 +75,4 @@ class Doublepowerpoint2 extends ZigBeeDevice {
 }
 
 module.exports = Doublepowerpoint2;
+

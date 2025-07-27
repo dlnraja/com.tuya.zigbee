@@ -66,3 +66,4 @@ class DimmerSwitchDevice extends ZigBeeDevice {
 }
 
 module.exports = DimmerSwitchDevice;
+

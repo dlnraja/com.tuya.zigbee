@@ -207,3 +207,4 @@ Write-Host "  - Markdown: $markdownPath" -ForegroundColor White
 Write-Host "`n🚀 PROJET 100% OPTIMISÉ - READY FOR PRODUCTION!" -ForegroundColor Green 
 
 
+

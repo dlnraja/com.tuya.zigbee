@@ -75,3 +75,4 @@ class Wallsocket extends ZigBeeDevice {
 }
 
 module.exports = Wallsocket;
+

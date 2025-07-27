@@ -230,3 +230,4 @@ Set-Content -Path "scripts/migrate-smart-life-drivers.ps1" -Value $migrationScri
 Write-Host "Script de migration créé : scripts/migrate-smart-life-drivers.ps1" -ForegroundColor Green
 
 Write-Host "PHASE 2 TERMINÉE: Analyse Tuya Smart Life et migration des drivers" -ForegroundColor Green 
+

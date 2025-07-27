@@ -46,3 +46,4 @@ class Lightrgbtz3000dbou1ap4 extends TuyaZigBeeLightDevice {
 }
 
 module.exports = Lightrgbtz3000dbou1ap4;
+

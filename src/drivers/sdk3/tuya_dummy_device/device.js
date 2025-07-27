@@ -75,3 +75,4 @@ class Tuyadummydevice extends ZigBeeDevice {
 }
 
 module.exports = Tuyadummydevice;
+

@@ -75,3 +75,4 @@ class Radarsensorceiling extends ZigBeeDevice {
 }
 
 module.exports = Radarsensorceiling;
+

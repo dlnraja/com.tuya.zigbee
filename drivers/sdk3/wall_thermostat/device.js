@@ -75,3 +75,4 @@ class Wallthermostat extends ZigBeeDevice {
 }
 
 module.exports = Wallthermostat;
+

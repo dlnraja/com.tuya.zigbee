@@ -59,3 +59,4 @@ Automatiser la mise à jour du README à chaque commit avec les métriques actua
 ---
 
 *Configuration automatique - Mode YOLO Intelligent*
+

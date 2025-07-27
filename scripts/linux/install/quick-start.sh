@@ -112,3 +112,4 @@ echo "📚 Documentation:"
 echo "   - https://apps.developer.homey.app/"
 echo "   - https://community.homey.app/t/how-to-cli-install-method/198"
 echo ""
+

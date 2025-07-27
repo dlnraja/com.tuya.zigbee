@@ -1,1 +1,2 @@
 {"id":"rgb_led_strip","name":{"en":"RGB LED Strip"},"$extends":["light_color_ambiance"],"energy":{"approximation":{"usageOn":0,"usageOff":0}},"zigbee":{"manufacturerName":["_TZ3000_riwp3k79"],"productId":["TS0505A"],"endpoints":{"1":"@{clusters=System.Object[]; bindings=System.Object[]}"},"learnmode":{"image":"{{driverAssetsPath}}/icon.svg","instruction":"@{en=Power on to enter pairing mode.}"}},"capabilities":["onoff","measure_battery","measure_temperature","measure_humidity"]}
+

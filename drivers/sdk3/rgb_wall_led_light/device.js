@@ -46,3 +46,4 @@ class Rgbwallledlight extends TuyaZigBeeLightDevice {
 }
 
 module.exports = Rgbwallledlight;
+

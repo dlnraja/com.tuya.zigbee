@@ -278,3 +278,4 @@ Set-Content -Path "scripts/test-workflows-automated.ps1" -Value $testWorkflowsSc
 Write-Host "Script de test des workflows créé" -ForegroundColor Green
 
 Write-Host "PHASE 4 TERMINÉE: Optimisation complète des workflows GitHub Actions" -ForegroundColor Green 
+

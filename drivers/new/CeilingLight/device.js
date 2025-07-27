@@ -66,3 +66,4 @@ class CeilingLightDevice extends ZigBeeDevice {
 }
 
 module.exports = CeilingLightDevice;
+

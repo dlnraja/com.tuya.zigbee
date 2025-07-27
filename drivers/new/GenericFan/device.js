@@ -66,3 +66,4 @@ class GenericFanDevice extends ZigBeeDevice {
 }
 
 module.exports = GenericFanDevice;
+

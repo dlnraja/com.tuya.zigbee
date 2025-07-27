@@ -12,3 +12,4 @@ class Enhanceddocumentation {
 }
 
 module.exports = Enhanceddocumentation;
+

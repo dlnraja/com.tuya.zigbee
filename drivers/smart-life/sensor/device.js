@@ -74,3 +74,4 @@ class SmartLifeSensorDevice extends ZigBeeDevice {
 }
 
 module.exports = SmartLifeSensorDevice;
+

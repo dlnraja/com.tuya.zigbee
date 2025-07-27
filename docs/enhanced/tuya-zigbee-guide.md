@@ -222,3 +222,4 @@ cd dashboard && npm start
 ## 📝 FICHIER FINAL À CRÉER
 
 Crée un fichier `tuya-zigbee-guide.md` avec tout ce contenu pour Jules AI. 
+

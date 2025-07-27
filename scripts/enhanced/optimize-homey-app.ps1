@@ -84,3 +84,4 @@ $appJson | ConvertTo-Json -Depth 10 | Set-Content "app.json"
 
 Write-Host "✅ App Homey optimisée avec .homeyignore" -ForegroundColor Green 
 
+

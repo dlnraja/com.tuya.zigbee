@@ -80,3 +80,4 @@ echo "🎯 Application déployée sur Homey"
 echo "📊 Status: Actif et optimisé"
 echo "📚 Documentation: https://apps.developer.homey.app/"
 echo ""
+

@@ -75,3 +75,4 @@ class Pirsensor extends ZigBeeDevice {
 }
 
 module.exports = Pirsensor;
+

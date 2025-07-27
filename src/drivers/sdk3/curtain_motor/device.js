@@ -75,3 +75,4 @@ class Curtainmotor extends ZigBeeDevice {
 }
 
 module.exports = Curtainmotor;
+

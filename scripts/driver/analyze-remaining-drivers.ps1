@@ -303,3 +303,4 @@ Write-Host "  SDK3: $SDK3Count drivers" -ForegroundColor Green
 Write-Host "  Mixte: $MixedCount drivers" -ForegroundColor Yellow
 Write-Host "  Inconnu: $UnknownCount drivers" -ForegroundColor Red 
 
+

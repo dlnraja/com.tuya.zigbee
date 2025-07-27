@@ -116,3 +116,4 @@ Write-Host "`nFIX DRIVERS BASIC TERMINE!" -ForegroundColor Green
 Write-Host "===========================" -ForegroundColor Green
 Write-Host "SDK Homey 3 - Coherence verifiee et corrigee" -ForegroundColor White 
 
+

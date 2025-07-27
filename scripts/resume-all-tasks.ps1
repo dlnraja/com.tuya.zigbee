@@ -151,3 +151,4 @@ Write-Host "[INFO] Version: 1.0.23" -ForegroundColor Yellow
 Write-Host "[INFO] Serveur MCP PowerShell: Actif" -ForegroundColor Cyan
 Write-Host "[INFO] Prochaines étapes: validation et monitoring" -ForegroundColor Cyan
 Write-Host "" 
+

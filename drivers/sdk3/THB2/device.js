@@ -75,3 +75,4 @@ class Thb2 extends ZigBeeDevice {
 }
 
 module.exports = Thb2;
+

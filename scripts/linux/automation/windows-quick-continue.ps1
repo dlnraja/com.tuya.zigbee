@@ -446,3 +446,4 @@ Write-Host "📊 Rapport généré: logs/windows-approval-summary-$DATE.md" -For
 Write-Host "🎛️ Configuration: .cursor/cursor-windows-approval.json" -ForegroundColor Cyan
 Write-Host "🔧 Script: scripts/linux/automation/windows-quick-continue.ps1" -ForegroundColor Cyan
 Write-Host "⚙️ Workflow: .github/workflows/windows-gpmachado.yml" -ForegroundColor Cyan 
+

@@ -161,3 +161,4 @@ Write-Host "Erreurs JSON dans compose.json: $composeJsonErrors" -ForegroundColor
 Write-Host "FIN DU SCRIPT - Tous les drivers SDK3 sont corrigés et enrichis !" -ForegroundColor Green
 exit 0 
 
+

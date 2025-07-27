@@ -24,3 +24,4 @@ class TuyaUnknownDevice extends ZigbeeDevice {
 }
 
 module.exports = TuyaUnknownDevice;
+

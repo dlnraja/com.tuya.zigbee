@@ -136,3 +136,4 @@ $report += "`n" + ($results -join "`n")
 Set-Content -Path "docs/reports/ps1-fix-report-$(Get-Date -Format 'yyyyMMdd-HHmmss').md" -Value $report -Encoding UTF8
 Write-Host $report -ForegroundColor Cyan
 Write-Host "[SUCCESS] PHASE 1 TERMINÉE" -ForegroundColor Green 
+

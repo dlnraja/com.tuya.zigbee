@@ -233,3 +233,4 @@ Write-Host "Mode Automatique Intelligent activé - Compatibilité cross-platform
 Write-Host "" 
 
 
+

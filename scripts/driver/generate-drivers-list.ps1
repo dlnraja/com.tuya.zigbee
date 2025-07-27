@@ -245,3 +245,4 @@ try {
 Write-Host "🚀 Mode Automatique Intelligent - Génération terminée" -ForegroundColor Green 
 
 
+

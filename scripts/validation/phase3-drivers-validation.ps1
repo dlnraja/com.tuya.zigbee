@@ -213,3 +213,4 @@ Set-Content -Path "scripts/test-drivers-automated.ps1" -Value $testScript -Encod
 Write-Host "Script de test automatisé créé" -ForegroundColor Green
 
 Write-Host "PHASE 3 TERMINÉE: Validation complète des drivers Tuya Zigbee" -ForegroundColor Green 
+

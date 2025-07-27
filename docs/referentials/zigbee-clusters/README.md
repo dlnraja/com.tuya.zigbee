@@ -152,3 +152,4 @@ docs/referentials/zigbee-clusters/
 **Version**: 1.0.0  
 **Statut**: En développement actif  
 **Mode**: Enrichissement additif 
+

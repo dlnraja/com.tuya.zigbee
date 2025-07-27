@@ -59,3 +59,4 @@ Write-Host "  - Drivers SDK3: $Sdk3Count" -ForegroundColor White
 Write-Host "  - Drivers Legacy: $LegacyCount" -ForegroundColor White
 Write-Host "  - Drivers En cours: $InProgressCount" -ForegroundColor White 
 
+

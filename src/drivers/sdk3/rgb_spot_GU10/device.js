@@ -46,3 +46,4 @@ class Rgbspotgu10 extends TuyaZigBeeLightDevice {
 }
 
 module.exports = Rgbspotgu10;
+

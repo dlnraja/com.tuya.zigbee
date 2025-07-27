@@ -102,3 +102,4 @@ Write-Host "  - Rapport: $reportPath" -ForegroundColor White
 
 Write-Host "`n🚀 PROJET OPTIMISÉ - READY FOR PRODUCTION!" -ForegroundColor Green 
 
+

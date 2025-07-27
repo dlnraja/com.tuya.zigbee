@@ -119,3 +119,4 @@ if ($fixedCount -gt 0) {
 }
 
 Write-Host "`n🎉 CORRECTION TERMINÉE" -ForegroundColor Green 
+

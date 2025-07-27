@@ -25,3 +25,4 @@ git filter-branch --msg-filter '
 ' --tag-name-filter cat -- --branches --tags
 
 echo "Messages de commit améliorés!"
+

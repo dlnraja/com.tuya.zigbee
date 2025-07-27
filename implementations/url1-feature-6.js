@@ -12,3 +12,4 @@ class AI-poweredanalysis {
 }
 
 module.exports = AI-poweredanalysis;
+

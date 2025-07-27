@@ -63,3 +63,4 @@ class ColorLight extends HomeyDevice {
 }
 
 module.exports = TemplateGenerator;
+

@@ -75,3 +75,4 @@ class Smartdoorwindowsensor extends ZigBeeDevice {
 }
 
 module.exports = Smartdoorwindowsensor;
+

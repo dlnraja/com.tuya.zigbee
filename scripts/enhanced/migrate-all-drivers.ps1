@@ -119,3 +119,4 @@ Get-ChildItem -Path $driversPath -Directory | ForEach-Object {
 
 Write-Host "🎉 MIGRATION TERMINÉE - $processedCount drivers migrés vers SDK3" 
 
+

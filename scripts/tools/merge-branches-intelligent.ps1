@@ -243,3 +243,4 @@ Write-Host ""
 Write-Host "Mode Automatique Intelligent - Fusion intelligente terminée" -ForegroundColor Yellow 
 
 
+

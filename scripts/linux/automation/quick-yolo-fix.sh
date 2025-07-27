@@ -20,3 +20,4 @@ find . -name "*.md" -type f -exec sed -i 's|https://github.com/dlnraja/com.tuya.
 find . -name "*.html" -type f -exec sed -i 's|https://github.com/dlnraja/com.tuya.zigbee|https://github.com/dlnraja/com.universaltuyazigbee.device|g' {} \;
 
 echo "✅ YOLO QUICK FIX COMPLETED" 
+

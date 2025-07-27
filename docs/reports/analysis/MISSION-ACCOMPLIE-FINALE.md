@@ -363,3 +363,4 @@ on:
 **Le projet Tuya Zigbee est maintenant 100% implémenté, optimisé et prêt pour la production !**
 
 **Tous les objectifs ont été atteints avec succès !** 🎉 
+

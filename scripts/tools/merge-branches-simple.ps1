@@ -148,3 +148,4 @@ Write-Host ""
 Write-Host "Mode Automatique Intelligent - Fusion simple terminée" -ForegroundColor Yellow 
 
 
+

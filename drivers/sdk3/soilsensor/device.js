@@ -75,3 +75,4 @@ class Soilsensor extends ZigBeeDevice {
 }
 
 module.exports = Soilsensor;
+

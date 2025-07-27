@@ -392,3 +392,4 @@ fi
 echo -e "${GREEN}DIAGNOSTIC TERMINÉ AVEC SUCCÈS !${NC}"
 echo -e "${CYAN}Mode YOLO Intelligent activé - Optimisation continue${NC}"
 echo "" 
+

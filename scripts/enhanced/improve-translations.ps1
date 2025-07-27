@@ -345,3 +345,4 @@ Write-Host "`n🌍 TRADUCTIONS MULTILINGUES AMÉLIORÉES!" -ForegroundColor Gree
 Write-Host "Focus: Tuya Zigbee Local Autonome" -ForegroundColor Cyan
 Add-TerminalPause 
 
+

@@ -22,3 +22,4 @@ git config user.email
 
 echo ""
 echo "Validation terminée!"
+

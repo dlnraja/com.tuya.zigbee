@@ -72,3 +72,4 @@ if (Test-Path $appJsonPath) {
 Write-Host "Generation terminee avec succes" -ForegroundColor Green
 Write-Host "$($driversList.Count) drivers generes" -ForegroundColor Cyan 
 
+

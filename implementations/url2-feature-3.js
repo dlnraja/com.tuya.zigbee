@@ -12,3 +12,4 @@ class Communityfeatures {
 }
 
 module.exports = Communityfeatures;
+

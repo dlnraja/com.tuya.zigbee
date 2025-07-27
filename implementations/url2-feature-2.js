@@ -12,3 +12,4 @@ class AdvancedAPI {
 }
 
 module.exports = AdvancedAPI;
+

@@ -75,3 +75,4 @@ class Irrigationcontroller extends ZigBeeDevice {
 }
 
 module.exports = Irrigationcontroller;
+

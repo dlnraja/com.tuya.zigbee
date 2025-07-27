@@ -24,3 +24,4 @@
 ---
 
 > Généré automatiquement par Cursor AI – dernière mise à jour : $(date) 
+

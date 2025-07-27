@@ -75,3 +75,4 @@ class Ts0207 extends ZigBeeDevice {
 }
 
 module.exports = Ts0207;
+

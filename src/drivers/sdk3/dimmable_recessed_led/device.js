@@ -46,3 +46,4 @@ class Dimmablerecessedled extends TuyaZigBeeLightDevice {
 }
 
 module.exports = Dimmablerecessedled;
+

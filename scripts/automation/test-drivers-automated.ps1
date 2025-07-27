@@ -52,3 +52,4 @@ foreach (\device.js in \) {
 
 Write-Host "TEST AUTOMATISÃ‰ TERMINÃ‰" -ForegroundColor Green
 
+

@@ -379,3 +379,4 @@ Write-Host "  - weekly-optimization-simple.yml (hebdomadaire)" -ForegroundColor 
 Write-Host ""
 Write-Host "🎉 Mise à jour des workflows terminée !" -ForegroundColor Green 
 
+

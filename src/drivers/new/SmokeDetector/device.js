@@ -66,3 +66,4 @@ class SmokeDetectorDevice extends ZigBeeDevice {
 }
 
 module.exports = SmokeDetectorDevice;
+

@@ -190,3 +190,4 @@
 //
 // dp   0x0569  Low battery
 //      data    0 or 1 (false/true)
+

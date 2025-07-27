@@ -13,3 +13,4 @@ git log --oneline | grep "\[YOLO\]" | head -10
 
 echo ""
 echo "Validation terminée!"
+

@@ -75,3 +75,4 @@ class Humiditysensor extends ZigBeeDevice {
 }
 
 module.exports = Humiditysensor;
+

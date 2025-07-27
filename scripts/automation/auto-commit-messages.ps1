@@ -281,3 +281,4 @@ Write-Host "  Push-Changes" -ForegroundColor Yellow
 
 Write-Host "`nAuto commit messages generator ready!" -ForegroundColor Green 
 
+

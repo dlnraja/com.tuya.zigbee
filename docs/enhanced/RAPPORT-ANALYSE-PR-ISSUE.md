@@ -231,3 +231,4 @@ const report = `📊 **RAPPORT TRIAGE INTELLIGENT**\n\n` +
 *Timestamp : 2025-07-24 02:25:00 UTC*
 *Mode Automatique Intelligent activé - Workflow PR/Issue optimisé*
 *Projet Tuya Zigbee 100% automatisé* 
+

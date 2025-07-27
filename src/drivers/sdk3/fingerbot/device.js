@@ -75,3 +75,4 @@ class Fingerbot extends ZigBeeDevice {
 }
 
 module.exports = Fingerbot;
+
