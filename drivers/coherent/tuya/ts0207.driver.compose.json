@@ -1,0 +1,315 @@
+{
+  "id": "tuya-rgb_light-ts0207",
+  "title": {
+    "en": "Tuya rgb_light - TS0207",
+    "fr": "Tuya rgb_light - TS0207",
+    "nl": "Tuya rgb_light - TS0207",
+    "ta": "Tuya rgb_light - TS0207"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature"
+  ],
+  "images": {
+    "small": "/assets/images/small/tuya-rgb_light.png",
+    "large": "/assets/images/large/tuya-rgb_light.png"
+  },
+  "pairing": [
+    {
+      "id": "tuya_rgb_light_pairing",
+      "title": {
+        "en": "Tuya rgb_light Pairing",
+        "fr": "Appairage Tuya rgb_light",
+        "nl": "Tuya rgb_light Koppeling",
+        "ta": "Tuya rgb_light இணைப்பு"
+      },
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genColorCtrl"
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "id": "manufacturer",
+      "type": "text",
+      "title": {
+        "en": "Manufacturer",
+        "fr": "Fabricant",
+        "nl": "Fabrikant",
+        "ta": "உற்பத்தியாளர்"
+      },
+      "value": "Tuya"
+    },
+    {
+      "id": "model",
+      "type": "text",
+      "title": {
+        "en": "Model",
+        "fr": "Modèle",
+        "nl": "Model",
+        "ta": "மாடல்"
+      },
+      "value": "rgb_light"
+    }
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "turned_on",
+        "title": {
+          "en": "Turned On",
+          "fr": "Allumé",
+          "nl": "Aangezet",
+          "ta": "ஆன் செய்யப்பட்டது"
+        }
+      },
+      {
+        "id": "turned_off",
+        "title": {
+          "en": "Turned Off",
+          "fr": "Éteint",
+          "nl": "Uitgezet",
+          "ta": "ஆஃப் செய்யப்பட்டது"
+        }
+      },
+      {
+        "id": "dim_level_changed",
+        "title": {
+          "en": "Dim Level Changed",
+          "fr": "Niveau Modifié",
+          "nl": "Dimniveau Gewijzigd",
+          "ta": "மங்கல் நிலை மாற்றப்பட்டது"
+        }
+      }
+    ],
+    "conditions": [],
+    "actions": [
+      {
+        "id": "turn_on",
+        "title": {
+          "en": "Turn On",
+          "fr": "Allumer",
+          "nl": "Aanzetten",
+          "ta": "ஆன் செய்யவும்"
+        }
+      },
+      {
+        "id": "turn_off",
+        "title": {
+          "en": "Turn Off",
+          "fr": "Éteindre",
+          "nl": "Uitzetten",
+          "ta": "ஆஃப் செய்யவும்"
+        }
+      },
+      {
+        "id": "set_dim_level",
+        "title": {
+          "en": "Set Dim Level",
+          "fr": "Définir le Niveau",
+          "nl": "Dimniveau Instellen",
+          "ta": "மங்கல் நிலையை அமைக்கவும்"
+        },
+        "args": [
+          {
+            "name": "level",
+            "type": "number",
+            "min": 0,
+            "max": 100
+          }
+        ]
+      },
+      {
+        "id": "set_hue",
+        "title": {
+          "en": "Set Hue",
+          "fr": "Définir la Teinte",
+          "nl": "Tint Instellen",
+          "ta": "வண்ணத்தை அமைக்கவும்"
+        },
+        "args": [
+          {
+            "name": "hue",
+            "type": "number",
+            "min": 0,
+            "max": 360
+          }
+        ]
+      },
+      {
+        "id": "set_rgb_color",
+        "title": {
+          "en": "Set RGB Color",
+          "fr": "Définir la Couleur RGB",
+          "nl": "RGB Kleur Instellen",
+          "ta": "RGB வண்ணத்தை அமைக்கவும்"
+        },
+        "args": [
+          {
+            "name": "hue",
+            "type": "number",
+            "title": {
+              "en": "Hue",
+              "fr": "Teinte",
+              "nl": "Tint",
+              "ta": "வண்ணம்"
+            },
+            "min": 0,
+            "max": 360
+          },
+          {
+            "name": "saturation",
+            "type": "number",
+            "title": {
+              "en": "Saturation",
+              "fr": "Saturation",
+              "nl": "Verzadiging",
+              "ta": "செறிவு"
+            },
+            "min": 0,
+            "max": 100
+          }
+        ]
+      }
+    ]
+  },
+  "error_handling": {
+    "cluster_communication": {
+      "timeout": 5000,
+      "retry_attempts": 3,
+      "fallback_strategy": "capability_validation"
+    },
+    "capability_validation": {
+      "validate_before_use": true,
+      "fallback_capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature"
+      ],
+      "error_messages": {
+        "cluster_timeout": "Device communication timeout",
+        "capability_not_supported": "Capability not supported by device",
+        "invalid_value": "Invalid value for device capability"
+      }
+    },
+    "device_specific": {
+      "color_control": {
+        "hue_range": {
+          "min": 0,
+          "max": 360
+        },
+        "saturation_range": {
+          "min": 0,
+          "max": 100
+        },
+        "fallback_to_white": true
+      }
+    }
+  },
+  "performance_optimization": {
+    "communication": {
+      "polling_interval": 30000,
+      "batch_requests": true,
+      "priority_capabilities": [
+        "onoff",
+        "dim"
+      ]
+    },
+    "battery_optimization": {
+      "reduce_polling": false,
+      "sleep_mode": false,
+      "critical_capabilities_only": false
+    },
+    "caching": {
+      "cache_device_state": true,
+      "cache_duration": 60000,
+      "invalidate_on_change": true
+    }
+  },
+  "validation": {
+    "capability_validation": {
+      "required_capabilities": [
+        "onoff"
+      ],
+      "optional_capabilities": [
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature"
+      ],
+      "capability_conflicts": []
+    },
+    "cluster_validation": {
+      "required_clusters": [
+        "genBasic",
+        "genOnOff"
+      ],
+      "optional_clusters": [
+        "genLevelCtrl",
+        "genColorCtrl"
+      ],
+      "cluster_mapping": {
+        "genBasic": [],
+        "genOnOff": [
+          "onoff"
+        ],
+        "genLevelCtrl": [
+          "dim"
+        ],
+        "genColorCtrl": [
+          "light_hue",
+          "light_saturation",
+          "light_temperature"
+        ]
+      }
+    },
+    "value_validation": {
+      "onoff": {
+        "type": "boolean",
+        "required": false
+      },
+      "dim": {
+        "range": {
+          "min": 0,
+          "max": 100
+        },
+        "type": "number",
+        "required": false
+      },
+      "light_hue": {
+        "range": {
+          "min": 0,
+          "max": 360
+        },
+        "type": "number",
+        "required": false
+      },
+      "light_saturation": {
+        "range": {
+          "min": 0,
+          "max": 100
+        },
+        "type": "number",
+        "required": false
+      },
+      "light_temperature": {
+        "type": "boolean",
+        "required": false
+      }
+    }
+  }
+}

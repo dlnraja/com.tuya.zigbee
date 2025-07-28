@@ -1,0 +1,258 @@
+{
+  "id": "tuya-switch-ts0001",
+  "title": {
+    "en": "Tuya switch - TS0001",
+    "fr": "Tuya switch - TS0001",
+    "nl": "Tuya switch - TS0001",
+    "ta": "Tuya switch - TS0001"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "images": {
+    "small": "/assets/images/small/tuya-switch.png",
+    "large": "/assets/images/large/tuya-switch.png"
+  },
+  "pairing": [
+    {
+      "id": "tuya_switch_pairing",
+      "title": {
+        "en": "Tuya switch Pairing",
+        "fr": "Appairage Tuya switch",
+        "nl": "Tuya switch Koppeling",
+        "ta": "Tuya switch இணைப்பு"
+      },
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_power"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg"
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "id": "manufacturer",
+      "type": "text",
+      "title": {
+        "en": "Manufacturer",
+        "fr": "Fabricant",
+        "nl": "Fabrikant",
+        "ta": "உற்பத்தியாளர்"
+      },
+      "value": "Tuya"
+    },
+    {
+      "id": "model",
+      "type": "text",
+      "title": {
+        "en": "Model",
+        "fr": "Modèle",
+        "nl": "Model",
+        "ta": "மாடல்"
+      },
+      "value": "switch"
+    },
+    {
+      "id": "power_calibration",
+      "type": "number",
+      "title": {
+        "en": "Power Calibration",
+        "fr": "Calibration Puissance",
+        "nl": "Vermogen Kalibratie",
+        "ta": "சக்தி அளவீடு"
+      },
+      "value": 1,
+      "min": 0.1,
+      "max": 10
+    }
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "turned_on",
+        "title": {
+          "en": "Turned On",
+          "fr": "Allumé",
+          "nl": "Aangezet",
+          "ta": "ஆன் செய்யப்பட்டது"
+        }
+      },
+      {
+        "id": "turned_off",
+        "title": {
+          "en": "Turned Off",
+          "fr": "Éteint",
+          "nl": "Uitgezet",
+          "ta": "ஆஃப் செய்யப்பட்டது"
+        }
+      },
+      {
+        "id": "dim_level_changed",
+        "title": {
+          "en": "Dim Level Changed",
+          "fr": "Niveau Modifié",
+          "nl": "Dimniveau Gewijzigd",
+          "ta": "மங்கல் நிலை மாற்றப்பட்டது"
+        }
+      },
+      {
+        "id": "power_changed",
+        "title": {
+          "en": "Power Changed",
+          "fr": "Puissance Modifiée",
+          "nl": "Vermogen Gewijzigd",
+          "ta": "சக்தி மாற்றப்பட்டது"
+        }
+      }
+    ],
+    "conditions": [],
+    "actions": [
+      {
+        "id": "turn_on",
+        "title": {
+          "en": "Turn On",
+          "fr": "Allumer",
+          "nl": "Aanzetten",
+          "ta": "ஆன் செய்யவும்"
+        }
+      },
+      {
+        "id": "turn_off",
+        "title": {
+          "en": "Turn Off",
+          "fr": "Éteindre",
+          "nl": "Uitzetten",
+          "ta": "ஆஃப் செய்யவும்"
+        }
+      },
+      {
+        "id": "set_dim_level",
+        "title": {
+          "en": "Set Dim Level",
+          "fr": "Définir le Niveau",
+          "nl": "Dimniveau Instellen",
+          "ta": "மங்கல் நிலையை அமைக்கவும்"
+        },
+        "args": [
+          {
+            "name": "level",
+            "type": "number",
+            "min": 0,
+            "max": 100
+          }
+        ]
+      },
+      {
+        "id": "measure_power",
+        "title": {
+          "en": "Measure Power",
+          "fr": "Mesurer la Puissance",
+          "nl": "Vermogen Meten",
+          "ta": "சக்தியை அளவிடவும்"
+        }
+      }
+    ]
+  },
+  "error_handling": {
+    "cluster_communication": {
+      "timeout": 5000,
+      "retry_attempts": 3,
+      "fallback_strategy": "capability_validation"
+    },
+    "capability_validation": {
+      "validate_before_use": true,
+      "fallback_capabilities": [
+        "onoff",
+        "dim",
+        "measure_power"
+      ],
+      "error_messages": {
+        "cluster_timeout": "Device communication timeout",
+        "capability_not_supported": "Capability not supported by device",
+        "invalid_value": "Invalid value for device capability"
+      }
+    },
+    "device_specific": {}
+  },
+  "performance_optimization": {
+    "communication": {
+      "polling_interval": 30000,
+      "batch_requests": true,
+      "priority_capabilities": [
+        "onoff",
+        "dim"
+      ]
+    },
+    "battery_optimization": {
+      "reduce_polling": false,
+      "sleep_mode": false,
+      "critical_capabilities_only": false
+    },
+    "caching": {
+      "cache_device_state": true,
+      "cache_duration": 60000,
+      "invalidate_on_change": true
+    }
+  },
+  "validation": {
+    "capability_validation": {
+      "required_capabilities": [
+        "onoff"
+      ],
+      "optional_capabilities": [
+        "dim",
+        "measure_power"
+      ],
+      "capability_conflicts": []
+    },
+    "cluster_validation": {
+      "required_clusters": [
+        "genBasic",
+        "genOnOff"
+      ],
+      "optional_clusters": [
+        "genLevelCtrl",
+        "genPowerCfg"
+      ],
+      "cluster_mapping": {
+        "genBasic": [],
+        "genOnOff": [
+          "onoff"
+        ],
+        "genLevelCtrl": [
+          "dim"
+        ],
+        "genPowerCfg": [
+          "measure_battery"
+        ]
+      }
+    },
+    "value_validation": {
+      "onoff": {
+        "type": "boolean",
+        "required": false
+      },
+      "dim": {
+        "range": {
+          "min": 0,
+          "max": 100
+        },
+        "type": "number",
+        "required": false
+      },
+      "measure_power": {
+        "type": "boolean",
+        "required": false
+      }
+    }
+  }
+}
