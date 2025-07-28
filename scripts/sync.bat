@@ -1,3 +1,0 @@
-@echo off
-echo Sync drivers...
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0sync-drivers.ps1"
