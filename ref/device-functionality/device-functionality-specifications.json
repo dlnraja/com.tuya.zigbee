@@ -1,0 +1,1283 @@
+{
+  "timestamp": "2025-07-28T22:24:15.359Z",
+  "device_functionalities": {
+    "TS0001": {
+      "manufacturer": "Tuya",
+      "type": "switch",
+      "functionalities": [
+        "onoff",
+        "dim",
+        "power_monitoring"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_power"
+      ],
+      "characteristics": [
+        "smart_switch",
+        "dimmable",
+        "power_monitor"
+      ],
+      "common_issues": [
+        "dimming_inconsistency",
+        "power_reading_accuracy"
+      ],
+      "solutions": [
+        "proper_cluster_mapping",
+        "capability_validation"
+      ],
+      "flow_actions": [
+        {
+          "id": "turn_on",
+          "title": {
+            "en": "Turn On",
+            "fr": "Allumer",
+            "nl": "Aanzetten",
+            "ta": "ஆன் செய்யவும்"
+          }
+        },
+        {
+          "id": "turn_off",
+          "title": {
+            "en": "Turn Off",
+            "fr": "Éteindre",
+            "nl": "Uitzetten",
+            "ta": "ஆஃப் செய்யவும்"
+          }
+        },
+        {
+          "id": "set_dim_level",
+          "title": {
+            "en": "Set Dim Level",
+            "fr": "Définir le Niveau",
+            "nl": "Dimniveau Instellen",
+            "ta": "மங்கல் நிலையை அமைக்கவும்"
+          },
+          "args": [
+            {
+              "name": "level",
+              "type": "number",
+              "min": 0,
+              "max": 100
+            }
+          ]
+        },
+        {
+          "id": "measure_power",
+          "title": {
+            "en": "Measure Power",
+            "fr": "Mesurer la Puissance",
+            "nl": "Vermogen Meten",
+            "ta": "சக்தியை அளவிடவும்"
+          }
+        }
+      ],
+      "flow_triggers": [
+        {
+          "id": "turned_on",
+          "title": {
+            "en": "Turned On",
+            "fr": "Allumé",
+            "nl": "Aangezet",
+            "ta": "ஆன் செய்யப்பட்டது"
+          }
+        },
+        {
+          "id": "turned_off",
+          "title": {
+            "en": "Turned Off",
+            "fr": "Éteint",
+            "nl": "Uitgezet",
+            "ta": "ஆஃப் செய்யப்பட்டது"
+          }
+        },
+        {
+          "id": "dim_level_changed",
+          "title": {
+            "en": "Dim Level Changed",
+            "fr": "Niveau Modifié",
+            "nl": "Dimniveau Gewijzigd",
+            "ta": "மங்கல் நிலை மாற்றப்பட்டது"
+          }
+        },
+        {
+          "id": "power_changed",
+          "title": {
+            "en": "Power Changed",
+            "fr": "Puissance Modifiée",
+            "nl": "Vermogen Gewijzigd",
+            "ta": "சக்தி மாற்றப்பட்டது"
+          }
+        }
+      ],
+      "settings": [
+        {
+          "id": "manufacturer",
+          "type": "text",
+          "title": {
+            "en": "Manufacturer",
+            "fr": "Fabricant",
+            "nl": "Fabrikant",
+            "ta": "உற்பத்தியாளர்"
+          },
+          "value": "Tuya"
+        },
+        {
+          "id": "model",
+          "type": "text",
+          "title": {
+            "en": "Model",
+            "fr": "Modèle",
+            "nl": "Model",
+            "ta": "மாடல்"
+          },
+          "value": "switch"
+        },
+        {
+          "id": "power_calibration",
+          "type": "number",
+          "title": {
+            "en": "Power Calibration",
+            "fr": "Calibration Puissance",
+            "nl": "Vermogen Kalibratie",
+            "ta": "சக்தி அளவீடு"
+          },
+          "value": 1,
+          "min": 0.1,
+          "max": 10
+        }
+      ]
+    },
+    "TS0207": {
+      "manufacturer": "Tuya",
+      "type": "rgb_light",
+      "functionalities": [
+        "onoff",
+        "dim",
+        "rgb_control",
+        "color_temperature"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genColorCtrl"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature"
+      ],
+      "characteristics": [
+        "smart_bulb",
+        "rgb_light",
+        "color_temperature",
+        "dimmable"
+      ],
+      "common_issues": [
+        "color_accuracy",
+        "hue_mapping",
+        "saturation_control"
+      ],
+      "solutions": [
+        "color_calibration",
+        "hue_saturation_mapping",
+        "temperature_range"
+      ],
+      "flow_actions": [
+        {
+          "id": "turn_on",
+          "title": {
+            "en": "Turn On",
+            "fr": "Allumer",
+            "nl": "Aanzetten",
+            "ta": "ஆன் செய்யவும்"
+          }
+        },
+        {
+          "id": "turn_off",
+          "title": {
+            "en": "Turn Off",
+            "fr": "Éteindre",
+            "nl": "Uitzetten",
+            "ta": "ஆஃப் செய்யவும்"
+          }
+        },
+        {
+          "id": "set_dim_level",
+          "title": {
+            "en": "Set Dim Level",
+            "fr": "Définir le Niveau",
+            "nl": "Dimniveau Instellen",
+            "ta": "மங்கல் நிலையை அமைக்கவும்"
+          },
+          "args": [
+            {
+              "name": "level",
+              "type": "number",
+              "min": 0,
+              "max": 100
+            }
+          ]
+        },
+        {
+          "id": "set_hue",
+          "title": {
+            "en": "Set Hue",
+            "fr": "Définir la Teinte",
+            "nl": "Tint Instellen",
+            "ta": "வண்ணத்தை அமைக்கவும்"
+          },
+          "args": [
+            {
+              "name": "hue",
+              "type": "number",
+              "min": 0,
+              "max": 360
+            }
+          ]
+        }
+      ],
+      "flow_triggers": [
+        {
+          "id": "turned_on",
+          "title": {
+            "en": "Turned On",
+            "fr": "Allumé",
+            "nl": "Aangezet",
+            "ta": "ஆன் செய்யப்பட்டது"
+          }
+        },
+        {
+          "id": "turned_off",
+          "title": {
+            "en": "Turned Off",
+            "fr": "Éteint",
+            "nl": "Uitgezet",
+            "ta": "ஆஃப் செய்யப்பட்டது"
+          }
+        },
+        {
+          "id": "dim_level_changed",
+          "title": {
+            "en": "Dim Level Changed",
+            "fr": "Niveau Modifié",
+            "nl": "Dimniveau Gewijzigd",
+            "ta": "மங்கல் நிலை மாற்றப்பட்டது"
+          }
+        }
+      ],
+      "settings": [
+        {
+          "id": "manufacturer",
+          "type": "text",
+          "title": {
+            "en": "Manufacturer",
+            "fr": "Fabricant",
+            "nl": "Fabrikant",
+            "ta": "உற்பத்தியாளர்"
+          },
+          "value": "Tuya"
+        },
+        {
+          "id": "model",
+          "type": "text",
+          "title": {
+            "en": "Model",
+            "fr": "Modèle",
+            "nl": "Model",
+            "ta": "மாடல்"
+          },
+          "value": "rgb_light"
+        }
+      ]
+    },
+    "TS0601": {
+      "manufacturer": "Tuya",
+      "type": "curtain_controller",
+      "functionalities": [
+        "open_close",
+        "position_control",
+        "tilt_control"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genWindowCovering"
+      ],
+      "capabilities": [
+        "windowcoverings_set",
+        "windowcoverings_tilt_set"
+      ],
+      "characteristics": [
+        "curtain_controller",
+        "position_control",
+        "tilt_control"
+      ],
+      "common_issues": [
+        "position_accuracy",
+        "tilt_calibration"
+      ],
+      "solutions": [
+        "position_calibration",
+        "tilt_mapping"
+      ],
+      "flow_actions": [],
+      "flow_triggers": [],
+      "settings": [
+        {
+          "id": "manufacturer",
+          "type": "text",
+          "title": {
+            "en": "Manufacturer",
+            "fr": "Fabricant",
+            "nl": "Fabrikant",
+            "ta": "உற்பத்தியாளர்"
+          },
+          "value": "Tuya"
+        },
+        {
+          "id": "model",
+          "type": "text",
+          "title": {
+            "en": "Model",
+            "fr": "Modèle",
+            "nl": "Model",
+            "ta": "மாடல்"
+          },
+          "value": "curtain_controller"
+        }
+      ]
+    },
+    "TS130F": {
+      "manufacturer": "Tuya",
+      "type": "motion_sensor",
+      "functionalities": [
+        "motion_detection",
+        "illuminance_measurement",
+        "battery_monitoring"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOccupancySensing",
+        "genIlluminanceMeasurement",
+        "genPowerCfg"
+      ],
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "characteristics": [
+        "motion_sensor",
+        "illuminance_sensor",
+        "battery_powered"
+      ],
+      "common_issues": [
+        "false_motion",
+        "battery_drain",
+        "illuminance_accuracy"
+      ],
+      "solutions": [
+        "motion_sensitivity",
+        "battery_optimization",
+        "illuminance_calibration"
+      ],
+      "flow_actions": [],
+      "flow_triggers": [],
+      "settings": [
+        {
+          "id": "manufacturer",
+          "type": "text",
+          "title": {
+            "en": "Manufacturer",
+            "fr": "Fabricant",
+            "nl": "Fabrikant",
+            "ta": "உற்பத்தியாளர்"
+          },
+          "value": "Tuya"
+        },
+        {
+          "id": "model",
+          "type": "text",
+          "title": {
+            "en": "Model",
+            "fr": "Modèle",
+            "nl": "Model",
+            "ta": "மாடல்"
+          },
+          "value": "motion_sensor"
+        }
+      ]
+    },
+    "THB2": {
+      "manufacturer": "Tuya",
+      "type": "temperature_humidity_sensor",
+      "functionalities": [
+        "temperature_measurement",
+        "humidity_measurement",
+        "battery_monitoring"
+      ],
+      "clusters": [
+        "genBasic",
+        "genTempMeasurement",
+        "genHumidityMeasurement",
+        "genPowerCfg"
+      ],
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "characteristics": [
+        "temperature_sensor",
+        "humidity_sensor",
+        "battery_powered"
+      ],
+      "common_issues": [
+        "temperature_accuracy",
+        "humidity_accuracy",
+        "battery_life"
+      ],
+      "solutions": [
+        "temperature_calibration",
+        "humidity_calibration",
+        "battery_optimization"
+      ],
+      "flow_actions": [],
+      "flow_triggers": [
+        {
+          "id": "temperature_changed",
+          "title": {
+            "en": "Temperature Changed",
+            "fr": "Température Modifiée",
+            "nl": "Temperatuur Gewijzigd",
+            "ta": "வெப்பநிலை மாற்றப்பட்டது"
+          }
+        }
+      ],
+      "settings": [
+        {
+          "id": "manufacturer",
+          "type": "text",
+          "title": {
+            "en": "Manufacturer",
+            "fr": "Fabricant",
+            "nl": "Fabrikant",
+            "ta": "உற்பத்தியாளர்"
+          },
+          "value": "Tuya"
+        },
+        {
+          "id": "model",
+          "type": "text",
+          "title": {
+            "en": "Model",
+            "fr": "Modèle",
+            "nl": "Model",
+            "ta": "மாடல்"
+          },
+          "value": "temperature_humidity_sensor"
+        },
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "title": {
+            "en": "Temperature Offset",
+            "fr": "Décalage Température",
+            "nl": "Temperatuur Offset",
+            "ta": "வெப்பநிலை ஆஃப்செட்"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10
+        }
+      ]
+    }
+  },
+  "cluster_mappings": {
+    "genBasic": {
+      "functionality": "Device Information",
+      "attributes": [
+        "model",
+        "manufacturer",
+        "firmware_version"
+      ],
+      "capabilities": [
+        "device_info"
+      ],
+      "mapping": "Basic device identification and information",
+      "homey_mapping": {
+        "cluster": "Device Information",
+        "homey_capability": "device_info",
+        "implementation": "Maps Device Information to device_info capability"
+      }
+    },
+    "genOnOff": {
+      "functionality": "On/Off Control",
+      "attributes": [
+        "on_off"
+      ],
+      "capabilities": [
+        "onoff"
+      ],
+      "mapping": "Basic on/off functionality for switches and lights",
+      "homey_mapping": {
+        "cluster": "On/Off Control",
+        "homey_capability": "onoff",
+        "implementation": "Maps On/Off Control to onoff capability"
+      }
+    },
+    "genLevelCtrl": {
+      "functionality": "Dimming Control",
+      "attributes": [
+        "current_level",
+        "remaining_time"
+      ],
+      "capabilities": [
+        "dim"
+      ],
+      "mapping": "Dimming functionality for lights and switches",
+      "homey_mapping": {
+        "cluster": "Dimming Control",
+        "homey_capability": "dim",
+        "implementation": "Maps Dimming Control to dim capability"
+      }
+    },
+    "genColorCtrl": {
+      "functionality": "Color Control",
+      "attributes": [
+        "current_hue",
+        "current_saturation",
+        "current_x",
+        "current_y"
+      ],
+      "capabilities": [
+        "light_hue",
+        "light_saturation",
+        "light_mode"
+      ],
+      "mapping": "RGB color control for smart lights",
+      "homey_mapping": {
+        "cluster": "Color Control",
+        "homey_capability": "light_hue",
+        "implementation": "Maps Color Control to light_hue capability"
+      }
+    },
+    "genPowerCfg": {
+      "functionality": "Power Configuration",
+      "attributes": [
+        "battery_voltage",
+        "battery_percentage_remaining"
+      ],
+      "capabilities": [
+        "measure_battery"
+      ],
+      "mapping": "Battery monitoring for battery-powered devices",
+      "homey_mapping": {
+        "cluster": "Power Configuration",
+        "homey_capability": "measure_battery",
+        "implementation": "Maps Power Configuration to measure_battery capability"
+      }
+    },
+    "genTempMeasurement": {
+      "functionality": "Temperature Measurement",
+      "attributes": [
+        "measured_value",
+        "min_measured_value",
+        "max_measured_value"
+      ],
+      "capabilities": [
+        "measure_temperature"
+      ],
+      "mapping": "Temperature sensing for thermostats and sensors",
+      "homey_mapping": {
+        "cluster": "Temperature Measurement",
+        "homey_capability": "measure_temperature",
+        "implementation": "Maps Temperature Measurement to measure_temperature capability"
+      }
+    },
+    "genHumidityMeasurement": {
+      "functionality": "Humidity Measurement",
+      "attributes": [
+        "measured_value",
+        "min_measured_value",
+        "max_measured_value"
+      ],
+      "capabilities": [
+        "measure_humidity"
+      ],
+      "mapping": "Humidity sensing for environmental sensors",
+      "homey_mapping": {
+        "cluster": "Humidity Measurement",
+        "homey_capability": "measure_humidity",
+        "implementation": "Maps Humidity Measurement to measure_humidity capability"
+      }
+    },
+    "genOccupancySensing": {
+      "functionality": "Occupancy Sensing",
+      "attributes": [
+        "occupancy"
+      ],
+      "capabilities": [
+        "alarm_motion"
+      ],
+      "mapping": "Motion detection for occupancy sensors",
+      "homey_mapping": {
+        "cluster": "Occupancy Sensing",
+        "homey_capability": "alarm_motion",
+        "implementation": "Maps Occupancy Sensing to alarm_motion capability"
+      }
+    },
+    "genIlluminanceMeasurement": {
+      "functionality": "Illuminance Measurement",
+      "attributes": [
+        "measured_value",
+        "min_measured_value",
+        "max_measured_value"
+      ],
+      "capabilities": [
+        "measure_luminance"
+      ],
+      "mapping": "Light level measurement for illuminance sensors",
+      "homey_mapping": {
+        "cluster": "Illuminance Measurement",
+        "homey_capability": "measure_luminance",
+        "implementation": "Maps Illuminance Measurement to measure_luminance capability"
+      }
+    },
+    "genWindowCovering": {
+      "functionality": "Window Covering",
+      "attributes": [
+        "current_position_lift",
+        "current_position_tilt"
+      ],
+      "capabilities": [
+        "windowcoverings_set",
+        "windowcoverings_tilt_set"
+      ],
+      "mapping": "Blind and curtain control",
+      "homey_mapping": {
+        "cluster": "Window Covering",
+        "homey_capability": "windowcoverings_set",
+        "implementation": "Maps Window Covering to windowcoverings_set capability"
+      }
+    },
+    "genThermostat": {
+      "functionality": "Thermostat Control",
+      "attributes": [
+        "local_temperature",
+        "occupied_heating_setpoint",
+        "system_mode"
+      ],
+      "capabilities": [
+        "thermostat_mode",
+        "thermostat_target_temperature",
+        "thermostat_measure_temperature"
+      ],
+      "mapping": "HVAC thermostat control",
+      "homey_mapping": {
+        "cluster": "Thermostat Control",
+        "homey_capability": "thermostat_mode",
+        "implementation": "Maps Thermostat Control to thermostat_mode capability"
+      }
+    },
+    "genAlarms": {
+      "functionality": "Alarm System",
+      "attributes": [
+        "alarm_count",
+        "alarm_code"
+      ],
+      "capabilities": [
+        "alarm_contact",
+        "alarm_smoke",
+        "alarm_water"
+      ],
+      "mapping": "Security and safety alarms",
+      "homey_mapping": {
+        "cluster": "Alarm System",
+        "homey_capability": "alarm_contact",
+        "implementation": "Maps Alarm System to alarm_contact capability"
+      }
+    }
+  },
+  "capability_mappings": {
+    "onoff": {
+      "functionality": "On/Off Control",
+      "devices": [
+        "switches",
+        "lights",
+        "plugs",
+        "appliances"
+      ],
+      "clusters": [
+        "genOnOff"
+      ],
+      "flow_actions": [
+        "turn_on",
+        "turn_off",
+        "toggle"
+      ],
+      "flow_triggers": [
+        "turned_on",
+        "turned_off"
+      ],
+      "mapping": "Basic on/off functionality",
+      "implementation": {
+        "capability": "On/Off Control",
+        "clusters": [
+          "genOnOff"
+        ],
+        "flow_integration": [
+          "turn_on",
+          "turn_off",
+          "toggle"
+        ],
+        "trigger_integration": [
+          "turned_on",
+          "turned_off"
+        ],
+        "implementation": "Implements On/Off Control using genOnOff clusters"
+      }
+    },
+    "dim": {
+      "functionality": "Dimming Control",
+      "devices": [
+        "dimmable_lights",
+        "dimmable_switches"
+      ],
+      "clusters": [
+        "genLevelCtrl"
+      ],
+      "flow_actions": [
+        "set_dim_level"
+      ],
+      "flow_triggers": [
+        "dim_level_changed"
+      ],
+      "mapping": "Brightness control for dimmable devices",
+      "implementation": {
+        "capability": "Dimming Control",
+        "clusters": [
+          "genLevelCtrl"
+        ],
+        "flow_integration": [
+          "set_dim_level"
+        ],
+        "trigger_integration": [
+          "dim_level_changed"
+        ],
+        "implementation": "Implements Dimming Control using genLevelCtrl clusters"
+      }
+    },
+    "light_hue": {
+      "functionality": "Hue Control",
+      "devices": [
+        "rgb_lights",
+        "color_lights"
+      ],
+      "clusters": [
+        "genColorCtrl"
+      ],
+      "flow_actions": [
+        "set_hue"
+      ],
+      "flow_triggers": [
+        "hue_changed"
+      ],
+      "mapping": "Color hue control for RGB lights",
+      "implementation": {
+        "capability": "Hue Control",
+        "clusters": [
+          "genColorCtrl"
+        ],
+        "flow_integration": [
+          "set_hue"
+        ],
+        "trigger_integration": [
+          "hue_changed"
+        ],
+        "implementation": "Implements Hue Control using genColorCtrl clusters"
+      }
+    },
+    "light_saturation": {
+      "functionality": "Saturation Control",
+      "devices": [
+        "rgb_lights",
+        "color_lights"
+      ],
+      "clusters": [
+        "genColorCtrl"
+      ],
+      "flow_actions": [
+        "set_saturation"
+      ],
+      "flow_triggers": [
+        "saturation_changed"
+      ],
+      "mapping": "Color saturation control for RGB lights",
+      "implementation": {
+        "capability": "Saturation Control",
+        "clusters": [
+          "genColorCtrl"
+        ],
+        "flow_integration": [
+          "set_saturation"
+        ],
+        "trigger_integration": [
+          "saturation_changed"
+        ],
+        "implementation": "Implements Saturation Control using genColorCtrl clusters"
+      }
+    },
+    "light_temperature": {
+      "functionality": "Color Temperature Control",
+      "devices": [
+        "white_lights",
+        "tunable_white_lights"
+      ],
+      "clusters": [
+        "genColorCtrl"
+      ],
+      "flow_actions": [
+        "set_temperature"
+      ],
+      "flow_triggers": [
+        "temperature_changed"
+      ],
+      "mapping": "Color temperature control for white lights",
+      "implementation": {
+        "capability": "Color Temperature Control",
+        "clusters": [
+          "genColorCtrl"
+        ],
+        "flow_integration": [
+          "set_temperature"
+        ],
+        "trigger_integration": [
+          "temperature_changed"
+        ],
+        "implementation": "Implements Color Temperature Control using genColorCtrl clusters"
+      }
+    },
+    "measure_power": {
+      "functionality": "Power Measurement",
+      "devices": [
+        "smart_plugs",
+        "power_monitors"
+      ],
+      "clusters": [
+        "genPowerCfg",
+        "genEnergyMeasurement"
+      ],
+      "flow_actions": [
+        "measure_power"
+      ],
+      "flow_triggers": [
+        "power_changed"
+      ],
+      "mapping": "Power consumption monitoring",
+      "implementation": {
+        "capability": "Power Measurement",
+        "clusters": [
+          "genPowerCfg",
+          "genEnergyMeasurement"
+        ],
+        "flow_integration": [
+          "measure_power"
+        ],
+        "trigger_integration": [
+          "power_changed"
+        ],
+        "implementation": "Implements Power Measurement using genPowerCfg, genEnergyMeasurement clusters"
+      }
+    },
+    "measure_temperature": {
+      "functionality": "Temperature Measurement",
+      "devices": [
+        "temperature_sensors",
+        "thermostats"
+      ],
+      "clusters": [
+        "genTempMeasurement"
+      ],
+      "flow_actions": [
+        "measure_temperature"
+      ],
+      "flow_triggers": [
+        "temperature_changed"
+      ],
+      "mapping": "Temperature sensing and monitoring",
+      "implementation": {
+        "capability": "Temperature Measurement",
+        "clusters": [
+          "genTempMeasurement"
+        ],
+        "flow_integration": [
+          "measure_temperature"
+        ],
+        "trigger_integration": [
+          "temperature_changed"
+        ],
+        "implementation": "Implements Temperature Measurement using genTempMeasurement clusters"
+      }
+    },
+    "measure_humidity": {
+      "functionality": "Humidity Measurement",
+      "devices": [
+        "humidity_sensors",
+        "environmental_sensors"
+      ],
+      "clusters": [
+        "genHumidityMeasurement"
+      ],
+      "flow_actions": [
+        "measure_humidity"
+      ],
+      "flow_triggers": [
+        "humidity_changed"
+      ],
+      "mapping": "Humidity sensing and monitoring",
+      "implementation": {
+        "capability": "Humidity Measurement",
+        "clusters": [
+          "genHumidityMeasurement"
+        ],
+        "flow_integration": [
+          "measure_humidity"
+        ],
+        "trigger_integration": [
+          "humidity_changed"
+        ],
+        "implementation": "Implements Humidity Measurement using genHumidityMeasurement clusters"
+      }
+    },
+    "measure_battery": {
+      "functionality": "Battery Measurement",
+      "devices": [
+        "battery_powered_devices"
+      ],
+      "clusters": [
+        "genPowerCfg"
+      ],
+      "flow_actions": [
+        "measure_battery"
+      ],
+      "flow_triggers": [
+        "battery_changed"
+      ],
+      "mapping": "Battery level monitoring",
+      "implementation": {
+        "capability": "Battery Measurement",
+        "clusters": [
+          "genPowerCfg"
+        ],
+        "flow_integration": [
+          "measure_battery"
+        ],
+        "trigger_integration": [
+          "battery_changed"
+        ],
+        "implementation": "Implements Battery Measurement using genPowerCfg clusters"
+      }
+    },
+    "alarm_motion": {
+      "functionality": "Motion Alarm",
+      "devices": [
+        "motion_sensors",
+        "occupancy_sensors"
+      ],
+      "clusters": [
+        "genOccupancySensing"
+      ],
+      "flow_actions": [
+        "detect_motion"
+      ],
+      "flow_triggers": [
+        "motion_detected",
+        "motion_cleared"
+      ],
+      "mapping": "Motion detection and alarm",
+      "implementation": {
+        "capability": "Motion Alarm",
+        "clusters": [
+          "genOccupancySensing"
+        ],
+        "flow_integration": [
+          "detect_motion"
+        ],
+        "trigger_integration": [
+          "motion_detected",
+          "motion_cleared"
+        ],
+        "implementation": "Implements Motion Alarm using genOccupancySensing clusters"
+      }
+    },
+    "windowcoverings_set": {
+      "functionality": "Window Covering Control",
+      "devices": [
+        "blinds",
+        "curtains",
+        "shutters"
+      ],
+      "clusters": [
+        "genWindowCovering"
+      ],
+      "flow_actions": [
+        "set_position",
+        "open",
+        "close"
+      ],
+      "flow_triggers": [
+        "position_changed"
+      ],
+      "mapping": "Blind and curtain position control",
+      "implementation": {
+        "capability": "Window Covering Control",
+        "clusters": [
+          "genWindowCovering"
+        ],
+        "flow_integration": [
+          "set_position",
+          "open",
+          "close"
+        ],
+        "trigger_integration": [
+          "position_changed"
+        ],
+        "implementation": "Implements Window Covering Control using genWindowCovering clusters"
+      }
+    },
+    "thermostat_mode": {
+      "functionality": "Thermostat Mode Control",
+      "devices": [
+        "thermostats",
+        "hvac_controllers"
+      ],
+      "clusters": [
+        "genThermostat"
+      ],
+      "flow_actions": [
+        "set_mode"
+      ],
+      "flow_triggers": [
+        "mode_changed"
+      ],
+      "mapping": "HVAC mode control (heat, cool, auto, off)",
+      "implementation": {
+        "capability": "Thermostat Mode Control",
+        "clusters": [
+          "genThermostat"
+        ],
+        "flow_integration": [
+          "set_mode"
+        ],
+        "trigger_integration": [
+          "mode_changed"
+        ],
+        "implementation": "Implements Thermostat Mode Control using genThermostat clusters"
+      }
+    }
+  },
+  "common_issues": {
+    "dimming_not_working": {
+      "description": "Dimming functionality not working properly",
+      "affected_devices": [
+        "TS0001"
+      ],
+      "solutions": [
+        "cluster_mapping",
+        "capability_adjustment"
+      ]
+    },
+    "inconsistent_behavior": {
+      "description": "Device behavior is inconsistent",
+      "affected_devices": [
+        "TS0001"
+      ],
+      "solutions": [
+        "cluster_mapping",
+        "capability_adjustment"
+      ]
+    },
+    "color_not_changing": {
+      "description": "RGB color not changing as expected",
+      "affected_devices": [
+        "TS0207"
+      ],
+      "solutions": [
+        "genColorCtrl_cluster",
+        "hue_saturation_mapping"
+      ]
+    },
+    "hue_control_broken": {
+      "description": "Hue control functionality broken",
+      "affected_devices": [
+        "TS0207"
+      ],
+      "solutions": [
+        "genColorCtrl_cluster",
+        "hue_saturation_mapping"
+      ]
+    },
+    "false_triggers": {
+      "description": "Motion sensor triggering false alarms",
+      "affected_devices": [
+        "motion_sensor"
+      ],
+      "solutions": [
+        "sensitivity_adjustment",
+        "battery_optimization"
+      ]
+    },
+    "battery_drain": {
+      "description": "Battery draining too quickly",
+      "affected_devices": [
+        "motion_sensor"
+      ],
+      "solutions": [
+        "sensitivity_adjustment",
+        "battery_optimization"
+      ]
+    },
+    "inaccurate_readings": {
+      "description": "Power readings are inaccurate",
+      "affected_devices": [
+        "smart_plug"
+      ],
+      "solutions": [
+        "power_calibration",
+        "measurement_accuracy"
+      ]
+    },
+    "calibration_needed": {
+      "description": "Device needs calibration",
+      "affected_devices": [
+        "smart_plug"
+      ],
+      "solutions": [
+        "power_calibration",
+        "measurement_accuracy"
+      ]
+    },
+    "temperature_drift": {
+      "description": "Temperature readings drifting over time",
+      "affected_devices": [
+        "thermostat"
+      ],
+      "solutions": [
+        "temperature_calibration",
+        "mode_mapping"
+      ]
+    },
+    "mode_switching": {
+      "description": "Thermostat mode switching issues",
+      "affected_devices": [
+        "thermostat"
+      ],
+      "solutions": [
+        "temperature_calibration",
+        "mode_mapping"
+      ]
+    }
+  },
+  "solutions": {
+    "cluster_mapping": {
+      "description": "Proper Zigbee cluster mapping",
+      "affected_issues": [
+        "dimming_not_working",
+        "inconsistent_behavior"
+      ],
+      "implementation": "Map device clusters to appropriate Homey capabilities"
+    },
+    "capability_adjustment": {
+      "description": "Adjust Homey capabilities",
+      "affected_issues": [
+        "dimming_not_working",
+        "inconsistent_behavior"
+      ],
+      "implementation": "Adjust capability parameters for better device compatibility"
+    },
+    "genColorCtrl_cluster": {
+      "description": "Use genColorCtrl cluster for color control",
+      "affected_issues": [
+        "color_not_changing",
+        "hue_control_broken"
+      ],
+      "implementation": "Implement proper genColorCtrl cluster handling"
+    },
+    "hue_saturation_mapping": {
+      "description": "Map hue and saturation values correctly",
+      "affected_issues": [
+        "color_not_changing",
+        "hue_control_broken"
+      ],
+      "implementation": "Map hue (0-360) and saturation (0-100) values"
+    },
+    "sensitivity_adjustment": {
+      "description": "Adjust motion sensor sensitivity",
+      "affected_issues": [
+        "false_triggers",
+        "battery_drain"
+      ],
+      "implementation": "Adjust motion detection sensitivity settings"
+    },
+    "battery_optimization": {
+      "description": "Optimize battery usage",
+      "affected_issues": [
+        "false_triggers",
+        "battery_drain"
+      ],
+      "implementation": "Implement battery-saving communication patterns"
+    },
+    "power_calibration": {
+      "description": "Calibrate power measurements",
+      "affected_issues": [
+        "inaccurate_readings",
+        "calibration_needed"
+      ],
+      "implementation": "Apply power measurement calibration factors"
+    },
+    "measurement_accuracy": {
+      "description": "Improve measurement accuracy",
+      "affected_issues": [
+        "inaccurate_readings",
+        "calibration_needed"
+      ],
+      "implementation": "Improve measurement precision and filtering"
+    },
+    "temperature_calibration": {
+      "description": "Calibrate temperature readings",
+      "affected_issues": [
+        "temperature_drift",
+        "mode_switching"
+      ],
+      "implementation": "Apply temperature offset and calibration"
+    },
+    "mode_mapping": {
+      "description": "Map thermostat modes correctly",
+      "affected_issues": [
+        "temperature_drift",
+        "mode_switching"
+      ],
+      "implementation": "Map thermostat modes to Homey capabilities"
+    }
+  },
+  "recommendations": {
+    "device_implementation": "Implement devices with proper cluster mapping and capability validation",
+    "error_handling": "Add comprehensive error handling for all device interactions",
+    "performance_optimization": "Optimize device communication for better responsiveness",
+    "user_experience": "Provide clear feedback and status updates for all device operations",
+    "testing": "Implement thorough testing for all device functionalities and edge cases"
+  }
+}
