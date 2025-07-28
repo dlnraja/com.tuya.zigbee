@@ -1,25 +1,69 @@
-# Tuya Light - Simplified Version
+# 🚀 Tuya Light - Version Simplifiée
 
-## Overview
-Simplified version of Tuya Zigbee integration without AI features.
+## 📋 Description
 
-## Installation
+Version simplifiée du projet `com.tuya.zigbee` sans automatisation complexe, optimisée pour une utilisation directe.
+
+## 🌟 Fonctionnalités
+
+- **Drivers SDK3** : Support complet des appareils Tuya Zigbee
+- **Installation simple** : Prêt à l'utilisation immédiate
+- **Documentation claire** : Guides d'installation et d'utilisation
+- **Support communautaire** : Issues et contribution ouverts
+
+## 🛠️ Installation
+
 ```bash
-homey app install tuya-light.zip
+# Cloner le repository
+git clone https://github.com/dlnraja/com.universaltuyazigbee.device.git
+
+# Basculer sur la branche tuya-light
+git checkout tuya-light
+
+# Installer les dépendances
+npm install
+
+# Valider le projet
+npm run validate
 ```
 
-## Features
-- Basic Tuya Zigbee device support
-- Homey SDK3 compatible
-- Essential drivers only
-- No AI/automation features
+## 📁 Structure
 
-## Drivers Included
-- TS0201 (Temperature Sensor)
-- TS0202 (Humidity Sensor)
-- TS0601 (Smart Switch)
-- TS011F (Smart Plug)
-- TS004F (Wall Switch)
+```
+tuya-light/
+├── drivers/sdk3/          # Drivers Homey SDK3
+├── package.json           # Configuration npm
+├── app.json              # Configuration Homey
+└── README.md             # Documentation
+```
 
-## License
-MIT License
+## 🔧 Scripts Disponibles
+
+```bash
+npm run build          # Compiler le projet
+npm run test           # Exécuter les tests
+npm run validate       # Valider le projet
+npm run deploy         # Déployer sur Homey
+```
+
+## 📊 Drivers Disponibles
+
+- **Capteurs** : Température, humidité, mouvement
+- **Interrupteurs** : Prises intelligentes, interrupteurs
+- **Éclairage** : Ampoules RGB, variateurs
+- **Capteurs** : Fumée, eau, porte/fenêtre
+
+## 🤝 Contribution
+
+Voir `docs/CONTRIBUTING.md` pour les guidelines de contribution.
+
+## 📄 Licence
+
+MIT License - Voir `LICENSE` pour plus de détails.
+
+---
+
+**Version** : 1.0.19  
+**Branche** : tuya-light  
+**Auteur** : Dylan Rajasekaram  
+**Support** : [GitHub Issues](https://github.com/dlnraja/com.universaltuyazigbee.device/issues)
