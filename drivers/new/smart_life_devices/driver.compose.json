@@ -1,0 +1,60 @@
+{
+  "id": "smart_life_devices",
+  "title": {
+    "en": "New smart_life_devices",
+    "fr": "Nouveau smart_life_devices",
+    "nl": "Nieuwe smart_life_devices",
+    "ta": "புதிய smart_life_devices"
+  },
+  "class": "device",
+  "capabilities": [],
+  "images": {
+    "small": "/assets/images/small/smart_life_devices.png",
+    "large": "/assets/images/large/smart_life_devices.png"
+  },
+  "pairing": [
+    {
+      "id": "new_device_pairing",
+      "title": {
+        "en": "New Device Pairing",
+        "fr": "Appairage Nouveau Device",
+        "nl": "Nieuw Apparaat Koppeling",
+        "ta": "புதிய சாதனம் இணைப்பு"
+      },
+      "capabilities": [],
+      "clusters": [
+        "genBasic",
+        "genOnOff"
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "id": "device_category",
+      "type": "text",
+      "title": {
+        "en": "Device Category",
+        "fr": "Catégorie d'Appareil",
+        "nl": "Apparaatcategorie",
+        "ta": "சாதன வகை"
+      },
+      "value": "unknown"
+    },
+    {
+      "id": "priority",
+      "type": "text",
+      "title": {
+        "en": "Priority",
+        "fr": "Priorité",
+        "nl": "Prioriteit",
+        "ta": "முன்னுரிமை"
+      },
+      "value": "medium"
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  }
+}
