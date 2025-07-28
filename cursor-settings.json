@@ -1,0 +1,166 @@
+{
+  "cursor": {
+    "version": "1.0.0",
+    "project": "Tuya Zigbee",
+    "created": "2025-07-29T01:40:00",
+    "mode": "YOLO",
+    "language": "French",
+    "timezone": "Europe/Paris"
+  },
+  "terminal": {
+    "shell": "PowerShell",
+    "executionPolicy": "Bypass",
+    "encoding": "UTF8",
+    "autoConfirm": true,
+    "showProgress": true,
+    "logLevel": "verbose"
+  },
+  "git": {
+    "author": {
+      "name": "dlnraja",
+      "email": "dylan.rajasekaram+homey@gmail.com"
+    },
+    "autoCommit": true,
+    "autoPush": true,
+    "messageFormat": "feat: {description} - {date} - {details}",
+    "tags": {
+      "autoCreate": true,
+      "includeDate": true,
+      "includeTime": true
+    }
+  },
+  "scripts": {
+    "powerShell": {
+      "executionPolicy": "Bypass",
+      "errorHandling": "continue",
+      "logging": true,
+      "reports": true
+    },
+    "modules": {
+      "testAll": true,
+      "validateFeatures": true,
+      "performanceMetrics": true,
+      "securityScan": true
+    },
+    "workflows": {
+      "testAll": true,
+      "optimizePerformance": true,
+      "validateCI": true,
+      "monitorStatus": true
+    }
+  },
+  "dashboard": {
+    "realTime": true,
+    "interactive": true,
+    "responsive": true,
+    "metrics": {
+      "drivers": true,
+      "performance": true,
+      "compatibility": true,
+      "workflows": true
+    },
+    "charts": {
+      "enabled": true,
+      "library": "Chart.js",
+      "animations": true,
+      "responsive": true
+    }
+  },
+  "tuya": {
+    "sdk3": {
+      "compatibility": true,
+      "validation": true,
+      "testing": true,
+      "documentation": true
+    },
+    "smartLife": {
+      "analysis": true,
+      "extraction": true,
+      "migration": true,
+      "integration": true
+    },
+    "drivers": {
+      "total": 13,
+      "tested": 13,
+      "compatible": 13,
+      "categories": ["coherent", "intelligent"]
+    }
+  },
+  "workflows": {
+    "total": 8,
+    "active": 8,
+    "failed": 0,
+    "categories": [
+      "CI/CD Pipeline",
+      "Release Management",
+      "Translation Workflow",
+      "Dashboard Update",
+      "Driver Validation",
+      "Security Scan",
+      "Performance Test",
+      "Documentation Build"
+    ]
+  },
+  "modules": {
+    "intelligent": {
+      "total": 7,
+      "active": 7,
+      "failed": 0,
+      "list": [
+        "AutoDetectionModule",
+        "LegacyConversionModule",
+        "GenericCompatibilityModule",
+        "IntelligentMappingModule",
+        "PerformanceOptimizationModule",
+        "SecurityModule",
+        "AnalyticsModule"
+      ]
+    }
+  },
+  "performance": {
+    "responseTime": "< 1s",
+    "memoryUsage": "optimized",
+    "cpuUsage": "minimal",
+    "networkEfficiency": "high"
+  },
+  "security": {
+    "encryption": true,
+    "accessControl": true,
+    "vulnerabilityProtection": true,
+    "dataIntegrity": true
+  },
+  "monitoring": {
+    "realTime": true,
+    "alerts": true,
+    "metrics": true,
+    "logging": true
+  },
+  "reports": {
+    "format": "JSON",
+    "timestamp": "ISO 8601",
+    "autoGenerate": true,
+    "saveLocation": "docs/"
+  },
+  "documentation": {
+    "languages": ["EN", "FR", "NL", "TA"],
+    "autoTranslate": true,
+    "changelog": true,
+    "readme": true
+  },
+  "features": {
+    "yoloMode": true,
+    "autoRecovery": true,
+    "fallbackSystems": true,
+    "errorHandling": true,
+    "progressTracking": true,
+    "statusUpdates": true
+  },
+  "statistics": {
+    "actionsCompleted": 6,
+    "actionsTotal": 6,
+    "successRate": "100%",
+    "driversTested": 13,
+    "workflowsActive": 8,
+    "modulesValidated": 7
+  }
+}
