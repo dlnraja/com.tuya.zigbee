@@ -46,9 +46,9 @@ function finalizeAllTranslations() {
 
 // Créer une release GitHub
 function createGitHubRelease(version) {
-    console.log(`Creating GitHub release for version ${version.version}...`);
+    console.log('Creating GitHub release for version ' + version.version + '...');
     
-    const releaseDir = `releases/v${version.version}`;
+    const releaseDir = 'releases/v' + version.version;
     if (!fs.existsSync(releaseDir)) {
         fs.mkdirSync(releaseDir, { recursive: true });
     }
@@ -58,7 +58,7 @@ function createGitHubRelease(version) {
         codename: version.codename,
         description: version.description,
         release_date: new Date().toISOString(),
-        download_url: `https://github.com/dlnraja/com.tuya.zigbee/releases/download/v${version.version}/tuya-zigbee-v${version.version}.zip`
+        download_url: 'https://github.com/dlnraja/com.tuya.zigbee/releases/download/v' + version.version + '/tuya-zigbee-v' + version.version + '.zip'
     };
     
     fs.writeFileSync(
@@ -66,7 +66,7 @@ function createGitHubRelease(version) {
         JSON.stringify(releaseContent, null, 2)
     );
     
-    console.log(`GitHub release created for version ${version.version}`);
+    console.log('GitHub release created for version ' + version.version);
     return releaseContent;
 }
 
