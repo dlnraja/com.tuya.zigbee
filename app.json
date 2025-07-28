@@ -7,10 +7,16 @@
     "local"
   ],
   "name": {
-    "en": "Tuya Zigbee Universal Integration"
+    "en": "Tuya Zigbee Universal Integration",
+    "fr": "Intégration Universelle Tuya Zigbee",
+    "nl": "Tuya Zigbee Universele Integratie",
+    "ta": "Tuya Zigbee உலகளாவிய ஒருங்கிணைப்பு"
   },
   "description": {
-    "en": "Universal Tuya ZigBee device integration for Homey"
+    "en": "Universal Tuya ZigBee device integration for Homey",
+    "fr": "Intégration universelle des appareils Tuya ZigBee pour Homey",
+    "nl": "Universele Tuya ZigBee-apparaatintegratie voor Homey",
+    "ta": "Homey க்கான Tuya ZigBee சாதனங்களின் உலகளாவிய ஒருங்கிணைப்பு"
   },
   "category": [
     "appliances"
@@ -81,4 +87,4 @@
       }
     }
   ]
-} 
+}
