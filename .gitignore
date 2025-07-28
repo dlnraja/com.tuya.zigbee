@@ -15,6 +15,9 @@ cursor_temp*
 *.log
 D:/Download/fold/
 
+# Dossier de traitement local (NE PAS PUSHER)
+local-processing/
+
 # Fichiers locaux (NE PAS PUSHER)
 project-tasks.md
 auto-backup.ps1
@@ -24,6 +27,7 @@ auto-backup.ps1
 monitor.ps1
 quick-save.ps1
 quick-save.ps1
+
 # Fichiers de configuration locale supplémentaires
 cursor_*.md
 TODO_*.md
@@ -32,3 +36,64 @@ TODO_*.md
 logs/
 backups/
 .cursor/
+
+# Fichiers temporaires et de développement
+*.tmp
+*.bak
+*.backup
+*.log
+cursor_temp*
+*.zip
+*.tar.gz
+FINAL_VALIDATION_REPORT.md
+cursor_r_capitulatif_des_t_ches_et_avan.md
+cursor_prompt_auto.md
+cursor_global_policy*.md
+tasks.md
+readme_fold_reference.md
+mega_prompt_cursor_tuya.txt
+cursor_recovery_package.zip
+cursor_init.*
+continue.ps1
+TODO_SCAN_RESULTS.txt
+PROGRESS.md
+README.md.backup
+zigbee-cluster-referential-system.js
+mcp-powershell-server.js
+update-all-workflows.yml
+tatus
+README.txt
+olution-strategy
+commit-message.txt
+bigfiles.txt
+$TemplatePath
+.git-notes
+
+# Dossiers de développement
+logs/
+backups/
+recovery/
+enhancements/
+integrations/
+implementations/
+sources/
+reports/
+ai-modules/
+documentation/
+referentials/
+tasks/
+data/
+assets/
+config/
+test/
+dist/
+.cursor/
+gh-pages/
+ci/
+workflows/
+templates/
+dashboard/
+src/
+lib/
+rapports/
+locales/
