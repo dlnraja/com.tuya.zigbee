@@ -1,0 +1,10 @@
+# Configuration locale et fichiers de développement
+.vscode/
+local-scripts/
+cursor_temp*
+*.log
+RestoreAndRebuild.ps1
+D:/Download/fold/
+# Fichiers de développement local
+*.backup
+*.tmp
