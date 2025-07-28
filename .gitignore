@@ -18,3 +18,17 @@ D:/Download/fold/
 # Fichiers locaux (NE PAS PUSHER)
 project-tasks.md
 auto-backup.ps1
+
+# Scripts et automatisations locales
+*.ps1
+monitor.ps1
+quick-save.ps1
+quick-save.ps1
+# Fichiers de configuration locale supplémentaires
+cursor_*.md
+TODO_*.md
+*.ps1
+*.sh
+logs/
+backups/
+.cursor/
