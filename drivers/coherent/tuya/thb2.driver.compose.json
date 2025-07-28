@@ -1,0 +1,217 @@
+{
+  "id": "tuya-temperature_humidity_sensor-thb2",
+  "title": {
+    "en": "Tuya temperature_humidity_sensor - THB2",
+    "fr": "Tuya temperature_humidity_sensor - THB2",
+    "nl": "Tuya temperature_humidity_sensor - THB2",
+    "ta": "Tuya temperature_humidity_sensor - THB2"
+  },
+  "class": "device",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+  ],
+  "images": {
+    "small": "/assets/images/small/tuya-temperature_humidity_sensor.png",
+    "large": "/assets/images/large/tuya-temperature_humidity_sensor.png"
+  },
+  "pairing": [
+    {
+      "id": "tuya_temperature_humidity_sensor_pairing",
+      "title": {
+        "en": "Tuya temperature_humidity_sensor Pairing",
+        "fr": "Appairage Tuya temperature_humidity_sensor",
+        "nl": "Tuya temperature_humidity_sensor Koppeling",
+        "ta": "Tuya temperature_humidity_sensor இணைப்பு"
+      },
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "clusters": [
+        "genBasic",
+        "genTempMeasurement",
+        "genHumidityMeasurement",
+        "genPowerCfg"
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "id": "manufacturer",
+      "type": "text",
+      "title": {
+        "en": "Manufacturer",
+        "fr": "Fabricant",
+        "nl": "Fabrikant",
+        "ta": "உற்பத்தியாளர்"
+      },
+      "value": "Tuya"
+    },
+    {
+      "id": "model",
+      "type": "text",
+      "title": {
+        "en": "Model",
+        "fr": "Modèle",
+        "nl": "Model",
+        "ta": "மாடல்"
+      },
+      "value": "temperature_humidity_sensor"
+    },
+    {
+      "id": "temperature_offset",
+      "type": "number",
+      "title": {
+        "en": "Temperature Offset",
+        "fr": "Décalage Température",
+        "nl": "Temperatuur Offset",
+        "ta": "வெப்பநிலை ஆஃப்செட்"
+      },
+      "value": 0,
+      "min": -10,
+      "max": 10
+    }
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "temperature_changed",
+        "title": {
+          "en": "Temperature Changed",
+          "fr": "Température Modifiée",
+          "nl": "Temperatuur Gewijzigd",
+          "ta": "வெப்பநிலை மாற்றப்பட்டது"
+        }
+      },
+      {
+        "id": "temperature_changed",
+        "title": {
+          "en": "Temperature Changed",
+          "fr": "Température Modifiée",
+          "nl": "Temperatuur Gewijzigd",
+          "ta": "வெப்பநிலை மாற்றப்பட்டது"
+        }
+      },
+      {
+        "id": "humidity_changed",
+        "title": {
+          "en": "Humidity Changed",
+          "fr": "Humidité Modifiée",
+          "nl": "Vochtigheid Gewijzigd",
+          "ta": "ஈரப்பதம் மாற்றப்பட்டது"
+        }
+      }
+    ],
+    "conditions": [],
+    "actions": []
+  },
+  "error_handling": {
+    "cluster_communication": {
+      "timeout": 5000,
+      "retry_attempts": 3,
+      "fallback_strategy": "capability_validation"
+    },
+    "capability_validation": {
+      "validate_before_use": true,
+      "fallback_capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "error_messages": {
+        "cluster_timeout": "Device communication timeout",
+        "capability_not_supported": "Capability not supported by device",
+        "invalid_value": "Invalid value for device capability"
+      }
+    },
+    "device_specific": {
+      "measurement": {
+        "temperature_range": {
+          "min": -40,
+          "max": 80
+        },
+        "humidity_range": {
+          "min": 0,
+          "max": 100
+        },
+        "calibration_offset": true
+      }
+    }
+  },
+  "performance_optimization": {
+    "communication": {
+      "polling_interval": 30000,
+      "batch_requests": true,
+      "priority_capabilities": []
+    },
+    "battery_optimization": {
+      "reduce_polling": true,
+      "sleep_mode": true,
+      "critical_capabilities_only": true
+    },
+    "caching": {
+      "cache_device_state": true,
+      "cache_duration": 60000,
+      "invalidate_on_change": true
+    }
+  },
+  "validation": {
+    "capability_validation": {
+      "required_capabilities": [],
+      "optional_capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "capability_conflicts": []
+    },
+    "cluster_validation": {
+      "required_clusters": [
+        "genBasic",
+        "genOnOff"
+      ],
+      "optional_clusters": [
+        "genTempMeasurement",
+        "genHumidityMeasurement",
+        "genPowerCfg"
+      ],
+      "cluster_mapping": {
+        "genBasic": [],
+        "genTempMeasurement": [
+          "measure_temperature"
+        ],
+        "genHumidityMeasurement": [
+          "measure_humidity"
+        ],
+        "genPowerCfg": [
+          "measure_battery"
+        ]
+      }
+    },
+    "value_validation": {
+      "measure_temperature": {
+        "range": {
+          "min": -40,
+          "max": 80
+        },
+        "type": "number",
+        "required": false
+      },
+      "measure_humidity": {
+        "range": {
+          "min": 0,
+          "max": 100
+        },
+        "type": "number",
+        "required": false
+      },
+      "measure_battery": {
+        "type": "boolean",
+        "required": false
+      }
+    }
+  }
+}

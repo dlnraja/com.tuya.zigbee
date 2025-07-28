@@ -1,0 +1,148 @@
+{
+  "id": "tuya-curtain_controller-ts0601",
+  "title": {
+    "en": "Tuya curtain_controller - TS0601",
+    "fr": "Tuya curtain_controller - TS0601",
+    "nl": "Tuya curtain_controller - TS0601",
+    "ta": "Tuya curtain_controller - TS0601"
+  },
+  "class": "device",
+  "capabilities": [
+    "windowcoverings_set",
+    "windowcoverings_tilt_set"
+  ],
+  "images": {
+    "small": "/assets/images/small/tuya-curtain_controller.png",
+    "large": "/assets/images/large/tuya-curtain_controller.png"
+  },
+  "pairing": [
+    {
+      "id": "tuya_curtain_controller_pairing",
+      "title": {
+        "en": "Tuya curtain_controller Pairing",
+        "fr": "Appairage Tuya curtain_controller",
+        "nl": "Tuya curtain_controller Koppeling",
+        "ta": "Tuya curtain_controller இணைப்பு"
+      },
+      "capabilities": [
+        "windowcoverings_set",
+        "windowcoverings_tilt_set"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genWindowCovering"
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "id": "manufacturer",
+      "type": "text",
+      "title": {
+        "en": "Manufacturer",
+        "fr": "Fabricant",
+        "nl": "Fabrikant",
+        "ta": "உற்பத்தியாளர்"
+      },
+      "value": "Tuya"
+    },
+    {
+      "id": "model",
+      "type": "text",
+      "title": {
+        "en": "Model",
+        "fr": "Modèle",
+        "nl": "Model",
+        "ta": "மாடல்"
+      },
+      "value": "curtain_controller"
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  },
+  "error_handling": {
+    "cluster_communication": {
+      "timeout": 5000,
+      "retry_attempts": 3,
+      "fallback_strategy": "capability_validation"
+    },
+    "capability_validation": {
+      "validate_before_use": true,
+      "fallback_capabilities": [
+        "windowcoverings_set",
+        "windowcoverings_tilt_set"
+      ],
+      "error_messages": {
+        "cluster_timeout": "Device communication timeout",
+        "capability_not_supported": "Capability not supported by device",
+        "invalid_value": "Invalid value for device capability"
+      }
+    },
+    "device_specific": {}
+  },
+  "performance_optimization": {
+    "communication": {
+      "polling_interval": 30000,
+      "batch_requests": true,
+      "priority_capabilities": []
+    },
+    "battery_optimization": {
+      "reduce_polling": false,
+      "sleep_mode": false,
+      "critical_capabilities_only": false
+    },
+    "caching": {
+      "cache_device_state": true,
+      "cache_duration": 60000,
+      "invalidate_on_change": true
+    }
+  },
+  "validation": {
+    "capability_validation": {
+      "required_capabilities": [],
+      "optional_capabilities": [
+        "windowcoverings_set",
+        "windowcoverings_tilt_set"
+      ],
+      "capability_conflicts": []
+    },
+    "cluster_validation": {
+      "required_clusters": [
+        "genBasic",
+        "genOnOff"
+      ],
+      "optional_clusters": [
+        "genLevelCtrl",
+        "genWindowCovering"
+      ],
+      "cluster_mapping": {
+        "genBasic": [],
+        "genOnOff": [
+          "onoff"
+        ],
+        "genLevelCtrl": [
+          "dim"
+        ],
+        "genWindowCovering": [
+          "windowcoverings_set",
+          "windowcoverings_tilt_set"
+        ]
+      }
+    },
+    "value_validation": {
+      "windowcoverings_set": {
+        "type": "boolean",
+        "required": false
+      },
+      "windowcoverings_tilt_set": {
+        "type": "boolean",
+        "required": false
+      }
+    }
+  }
+}
