@@ -1,0 +1,20 @@
+{
+  "version": "1.1.0",
+  "build": 20250128,
+  "codename": "Documentation Complete",
+  "description": "Documentation complète en 4 langues",
+  "release_date": "2025-07-28T22:46:08.412Z",
+  "features": [
+    "Documentation complète en 4 langues (EN, FR, NL, TA)",
+    "Guides d'installation multilingues",
+    "Matrice de compatibilité mise à jour",
+    "Workflows GitHub Actions"
+  ],
+  "changelog": [
+    "Ajout de la documentation complète en 4 langues",
+    "Création des guides d'installation multilingues",
+    "Mise à jour de la matrice de compatibilité",
+    "Implémentation des workflows GitHub Actions"
+  ],
+  "download_url": "https://github.com/dlnraja/com.tuya.zigbee/releases/download/v1.1.0/tuya-zigbee-v1.1.0.zip"
+}
