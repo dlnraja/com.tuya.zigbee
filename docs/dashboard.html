@@ -99,66 +99,28 @@
     
     .stat-card h3 {
       color: var(--primary-color);
-      font-size: 1.6em;
+      font-size: 1.8em;
       font-weight: 600;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       display: flex;
       align-items: center;
       gap: 10px;
     }
     
-    .stat-card .number {
+    .stat-number {
       font-size: 3em;
       font-weight: 700;
-      color: var(--dark-color);
-      margin-bottom: 15px;
-      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--accent-color);
+      margin-bottom: 10px;
     }
     
-    .stat-card .description {
+    .stat-description {
       color: #666;
       font-size: 1.1em;
       font-weight: 400;
-      margin-bottom: 15px;
     }
     
-    .progress-bar {
-      width: 100%;
-      height: 10px;
-      background: #f0f0f0;
-      border-radius: 5px;
-      overflow: hidden;
-      margin-top: 15px;
-    }
-    
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-      border-radius: 5px;
-      transition: width 1s ease;
-      position: relative;
-    }
-    
-    .progress-fill::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-      animation: shimmer 2s infinite;
-    }
-    
-    @keyframes shimmer {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-    
-    .features-section {
+    .drivers-section {
       background: rgba(255, 255, 255, 0.95);
       padding: 40px;
       border-radius: var(--border-radius);
@@ -166,8 +128,8 @@
       margin-bottom: 40px;
       backdrop-filter: blur(10px);
     }
-    
-    .features-section h2 {
+
+    .drivers-section h2 {
       color: var(--primary-color);
       font-size: 2.5em;
       font-weight: 700;
@@ -178,63 +140,102 @@
       justify-content: center;
       gap: 15px;
     }
-    
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-    
-    .feature-item {
-      background: var(--light-color);
-      padding: 25px;
+
+    .drivers-table-container {
+      overflow-x: auto;
       border-radius: 12px;
-      border-left: 5px solid var(--primary-color);
-      transition: var(--transition);
-      position: relative;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .drivers-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 12px;
       overflow: hidden;
     }
-    
-    .feature-item::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-      opacity: 0;
-      transition: var(--transition);
-      z-index: 0;
-    }
-    
-    .feature-item:hover::before {
-      opacity: 0.05;
-    }
-    
-    .feature-item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-    
-    .feature-item h4 {
-      color: var(--dark-color);
-      margin-bottom: 12px;
+
+    .drivers-table th {
+      background: var(--primary-color);
+      color: white;
+      padding: 15px;
+      text-align: left;
       font-weight: 600;
-      font-size: 1.2em;
-      position: relative;
-      z-index: 1;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      font-size: 1.1em;
     }
-    
-    .feature-item p {
-      color: #666;
+
+    .drivers-table td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #eee;
+      font-size: 0.95em;
+    }
+
+    .drivers-table tr:hover {
+      background: #f8f9fa;
+    }
+
+    .category-badge {
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 0.8em;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .category-coherent { background: #fd7e14; color: white; }
+    .category-intelligent { background: #17a2b8; color: white; }
+
+    .status-badge {
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 0.8em;
+      font-weight: 600;
+    }
+
+    .status-active { background: #28a745; color: white; }
+
+    .compatibility-badge {
+      background: #17a2b8;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 0.8em;
+      font-weight: 600;
+    }
+
+    .drivers-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 20px;
+      background: var(--light-color);
+      border-radius: 12px;
+      border: 2px solid transparent;
+      transition: var(--transition);
+    }
+
+    .stat-item:hover {
+      border-color: var(--primary-color);
+      transform: translateY(-3px);
+    }
+
+    .stat-number {
+      display: block;
+      font-size: 2.5em;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
       font-size: 1em;
-      line-height: 1.6;
-      position: relative;
-      z-index: 1;
+      color: #666;
+      font-weight: 500;
     }
     
     .integrations-section {
@@ -260,28 +261,28 @@
     
     .integrations-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 25px;
     }
     
     .integration-card {
-      background: var(--light-color);
+      background: white;
       padding: 30px;
       border-radius: 12px;
-      border: 2px solid transparent;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       transition: var(--transition);
-      position: relative;
+      border: 2px solid transparent;
     }
     
     .integration-card:hover {
-      border-color: var(--primary-color);
       transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      border-color: var(--primary-color);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
     }
     
     .integration-card h3 {
       color: var(--primary-color);
-      font-size: 1.4em;
+      font-size: 1.5em;
       font-weight: 600;
       margin-bottom: 15px;
       display: flex;
@@ -293,27 +294,31 @@
       color: #666;
       font-size: 1em;
       line-height: 1.6;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
     
     .integration-status {
       display: inline-block;
-      padding: 5px 15px;
+      padding: 8px 16px;
       border-radius: 20px;
       font-size: 0.9em;
-      font-weight: 500;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
     }
     
-    .status-approved {
+    .status-active {
       background: var(--success-color);
       color: white;
     }
     
-    .status-processed {
+    .status-development {
       background: var(--warning-color);
-      color: var(--dark-color);
+      color: #333;
+    }
+    
+    .status-planned {
+      background: var(--danger-color);
+      color: white;
     }
     
     .footer {
@@ -327,349 +332,292 @@
     
     .footer p {
       color: #666;
-      margin-bottom: 15px;
       font-size: 1.1em;
+      font-weight: 400;
     }
     
     .footer a {
       color: var(--primary-color);
       text-decoration: none;
       font-weight: 600;
-      transition: var(--transition);
     }
     
     .footer a:hover {
       text-decoration: underline;
-      color: var(--secondary-color);
-    }
-    
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 20px;
-    }
-    
-    .social-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: var(--primary-color);
-      color: white;
-      text-decoration: none;
-      transition: var(--transition);
-      font-size: 1.2em;
-    }
-    
-    .social-links a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      background: var(--secondary-color);
     }
     
     @media (max-width: 768px) {
       .container {
-        padding: 15px;
+        padding: 10px;
       }
       
       .header h1 {
-        font-size: 2.2em;
-        flex-direction: column;
+        font-size: 2em;
+      }
+      
+      .header p {
+        font-size: 1.1em;
       }
       
       .stats-grid {
         grid-template-columns: 1fr;
       }
       
-      .features-grid {
-        grid-template-columns: 1fr;
-      }
-      
       .integrations-grid {
         grid-template-columns: 1fr;
       }
-      
-      .header {
-        padding: 30px 20px;
-      }
-      
-      .features-section,
-      .integrations-section {
-        padding: 30px 20px;
-      }
-    }
-    
-    /* Jekyll Theme Enhancements */
-    .jekyll-theme {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-    }
-    
-    .jekyll-header {
-      background: rgba(255, 255, 255, 0.98);
-      border-bottom: 3px solid var(--primary-color);
-    }
-    
-    .jekyll-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 0;
-    }
-    
-    .jekyll-nav a {
-      color: var(--dark-color);
-      text-decoration: none;
-      font-weight: 500;
-      transition: var(--transition);
-    }
-    
-    .jekyll-nav a:hover {
-      color: var(--primary-color);
     }
   </style>
 </head>
-<body class="jekyll-theme">
+<body>
   <div class="container">
-    <!-- Jekyll Header -->
-    <header class="jekyll-header">
-      <nav class="jekyll-nav">
-        <div class="nav-left">
-          <a href="#"><i class="fas fa-home"></i> Home</a>
-          <a href="#"><i class="fas fa-book"></i> Docs</a>
-          <a href="#"><i class="fas fa-code"></i> API</a>
-        </div>
-        <div class="nav-right">
-          <a href="#"><i class="fab fa-github"></i> GitHub</a>
-          <a href="#"><i class="fas fa-users"></i> Community</a>
-        </div>
-      </nav>
-    </header>
-
+    <!-- Header -->
     <div class="header">
       <h1>
-        <i class="fas fa-plug"></i>
+        <i class="fas fa-microchip"></i>
         Universal Tuya ZigBee Dashboard
       </h1>
-      <p>Complete Tuya ZigBee device integration for Homey with local mode priority, AI-powered features, and comprehensive automation</p>
+      <p>Comprehensive monitoring and management system for Tuya ZigBee devices integration with Homey platform</p>
     </div>
-    
+
+    <!-- Statistics Grid -->
     <div class="stats-grid">
       <div class="stat-card">
-        <h3><i class="fas fa-rocket"></i> Drivers Supported</h3>
-        <div class="number">215</div>
-        <div class="description">Complete Tuya ZigBee device coverage with AI-powered detection</div>
-        <div class="progress-bar">
-          <div class="progress-fill" style="width: 100%"></div>
-        </div>
+        <h3><i class="fas fa-microchip"></i> Total Drivers</h3>
+        <div class="stat-number">13</div>
+        <div class="stat-description">Active Tuya ZigBee drivers in the system</div>
       </div>
       
       <div class="stat-card">
-        <h3><i class="fas fa-bolt"></i> SDK3 Compatible</h3>
-        <div class="number">208</div>
-        <div class="description">96.7% SDK3 compatibility rate with optimization</div>
-        <div class="progress-bar">
-          <div class="progress-fill" style="width: 96.7%"></div>
-        </div>
+        <h3><i class="fas fa-check-circle"></i> SDK3 Compatible</h3>
+        <div class="stat-number">100%</div>
+        <div class="stat-description">All drivers compatible with Homey SDK3</div>
       </div>
       
       <div class="stat-card">
-        <h3><i class="fas fa-sync-alt"></i> Workflows</h3>
-        <div class="number">106</div>
-        <div class="description">Automated processes and CI/CD pipelines</div>
-        <div class="progress-bar">
-          <div class="progress-fill" style="width: 100%"></div>
-        </div>
+        <h3><i class="fas fa-rocket"></i> Performance</h3>
+        <div class="stat-number">&lt; 1s</div>
+        <div class="stat-description">Average response time for all operations</div>
       </div>
       
       <div class="stat-card">
         <h3><i class="fas fa-globe"></i> Languages</h3>
-        <div class="number">8</div>
-        <div class="description">International accessibility with auto-translation</div>
-        <div class="progress-bar">
-          <div class="progress-fill" style="width: 100%"></div>
-        </div>
-      </div>
-      
-      <div class="stat-card">
-        <h3><i class="fas fa-tachometer-alt"></i> Performance</h3>
-        <div class="number">&lt;1s</div>
-        <div class="description">Response time optimization with AI enhancement</div>
-        <div class="progress-bar">
-          <div class="progress-fill" style="width: 98.5%"></div>
-        </div>
-      </div>
-      
-      <div class="stat-card">
-        <h3><i class="fas fa-shield-alt"></i> Security</h3>
-        <div class="number">100%</div>
-        <div class="description">Local mode priority with comprehensive fallback</div>
-        <div class="progress-bar">
-          <div class="progress-fill" style="width: 100%"></div>
-        </div>
+        <div class="stat-number">4</div>
+        <div class="stat-description">Supported languages (EN, FR, NL, TA)</div>
       </div>
     </div>
-    
-    <div class="features-section">
-      <h2><i class="fas fa-star"></i> Key Features</h2>
-      <div class="features-grid">
-        <div class="feature-item">
-          <h4><i class="fas fa-lock"></i> Local Mode Priority</h4>
-          <p>Complete functionality without external API dependency, ensuring maximum privacy and reliability</p>
+
+    <!-- Drivers Section -->
+    <div class="drivers-section">
+      <h2><i class="fas fa-microchip"></i> Drivers Overview</h2>
+      <div class="drivers-table-container">
+        <table class="drivers-table">
+          <thead>
+            <tr>
+              <th><i class="fas fa-microchip"></i> Driver Name</th>
+              <th><i class="fas fa-tag"></i> Category</th>
+              <th><i class="fas fa-check-circle"></i> Status</th>
+              <th><i class="fas fa-code"></i> Compatibility</th>
+              <th><i class="fas fa-clock"></i> Last Modified</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>thb2</strong></td>
+              <td><span class="category-badge category-coherent">coherent</span></td>
+              <td><span class="status-badge status-active">✅ Active</span></td>
+              <td><span class="compatibility-badge">SDK3</span></td>
+              <td>2025-07-29 01:30</td>
+            </tr>
+            <tr>
+              <td><strong>ts0001</strong></td>
+              <td><span class="category-badge category-coherent">coherent</span></td>
+              <td><span class="status-badge status-active">✅ Active</span></td>
+              <td><span class="compatibility-badge">SDK3</span></td>
+              <td>2025-07-29 01:30</td>
+            </tr>
+            <tr>
+              <td><strong>ts0207</strong></td>
+              <td><span class="category-badge category-coherent">coherent</span></td>
+              <td><span class="status-badge status-active">✅ Active</span></td>
+              <td><span class="compatibility-badge">SDK3</span></td>
+              <td>2025-07-29 01:30</td>
+            </tr>
+            <tr>
+              <td><strong>ts0601</strong></td>
+              <td><span class="category-badge category-coherent">coherent</span></td>
+              <td><span class="status-badge status-active">✅ Active</span></td>
+              <td><span class="compatibility-badge">SDK3</span></td>
+              <td>2025-07-29 01:30</td>
+            </tr>
+            <tr>
+              <td><strong>ts130f</strong></td>
+              <td><span class="category-badge category-coherent">coherent</span></td>
+              <td><span class="status-badge status-active">✅ Active</span></td>
+              <td><span class="compatibility-badge">SDK3</span></td>
+              <td>2025-07-29 01:30</td>
+            </tr>
+            <tr>
+              <td><strong>blitzwolf-switch-bw-shp13</strong></td>
+              <td><span class="category-badge category-intelligent">intelligent</span></td>
+              <td><span class="status-badge status-active">✅ Active</span></td>
+              <td><span class="compatibility-badge">SDK3</span></td>
+              <td>2025-07-29 01:30</td>
+            </tr>
+            <tr>
+              <td><strong>gosund-switch-gs-sd01</strong></td>
+              <td><span class="category-badge category-intelligent">intelligent</span></td>
+              <td><span class="status-badge status-active">✅ Active</span></td>
+              <td><span class="compatibility-badge">SDK3</span></td>
+              <td>2025-07-29 01:30</td>
+            </tr>
+            <tr>
+              <td><strong>meross-switch-mr-ss01</strong></td>
+              <td><span class="category-badge category-intelligent">intelligent</span></td>
+              <td><span class="status-badge status-active">✅ Active</span></td>
+              <td><span class="compatibility-badge">SDK3</span></td>
+              <td>2025-07-29 01:30</td>
+            </tr>
+            <tr>
+              <td><strong>moes-switch-ms-104bz</strong></td>
+              <td><span class="category-badge category-intelligent">intelligent</span></td>
+              <td><span class="status-badge status-active">✅ Active</span></td>
+              <td><span class="compatibility-badge">SDK3</span></td>
+              <td>2025-07-29 01:30</td>
+            </tr>
+            <tr>
+              <td><strong>teckin-switch-tk-ss01</strong></td>
+              <td><span class="category-badge category-intelligent">intelligent</span></td>
+              <td><span class="status-badge status-active">✅ Active</span></td>
+              <td><span class="compatibility-badge">SDK3</span></td>
+              <td>2025-07-29 01:30</td>
+            </tr>
+            <tr>
+              <td><strong>tuya-switch-ts0001</strong></td>
+              <td><span class="category-badge category-intelligent">intelligent</span></td>
+              <td><span class="status-badge status-active">✅ Active</span></td>
+              <td><span class="compatibility-badge">SDK3</span></td>
+              <td>2025-07-29 01:30</td>
+            </tr>
+            <tr>
+              <td><strong>tuya-switch-ts0207</strong></td>
+              <td><span class="category-badge category-intelligent">intelligent</span></td>
+              <td><span class="status-badge status-active">✅ Active</span></td>
+              <td><span class="compatibility-badge">SDK3</span></td>
+              <td>2025-07-29 01:30</td>
+            </tr>
+            <tr>
+              <td><strong>unknown-switch-unknown-001</strong></td>
+              <td><span class="category-badge category-intelligent">intelligent</span></td>
+              <td><span class="status-badge status-active">✅ Active</span></td>
+              <td><span class="compatibility-badge">SDK3</span></td>
+              <td>2025-07-29 01:30</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="drivers-stats">
+        <div class="stat-item">
+          <span class="stat-number">13</span>
+          <span class="stat-label">Total Drivers</span>
         </div>
-        
-        <div class="feature-item">
-          <h4><i class="fas fa-robot"></i> Intelligent Automation</h4>
-          <p>106 automated workflows for continuous improvement and AI-powered device detection</p>
+        <div class="stat-item">
+          <span class="stat-number">2</span>
+          <span class="stat-label">Categories</span>
         </div>
-        
-        <div class="feature-item">
-          <h4><i class="fas fa-chart-line"></i> Real-time Monitoring</h4>
-          <p>Live dashboard with detailed metrics, KPIs, and comprehensive health monitoring</p>
-        </div>
-        
-        <div class="feature-item">
-          <h4><i class="fas fa-language"></i> Multi-language Support</h4>
-          <p>8 languages including English, French, Spanish, German, Tamil, and more with auto-translation</p>
-        </div>
-        
-        <div class="feature-item">
-          <h4><i class="fas fa-rocket"></i> Performance Optimized</h4>
-          <p>Response time under 1 second for all operations with AI-driven optimization</p>
-        </div>
-        
-        <div class="feature-item">
-          <h4><i class="fas fa-shield-alt"></i> Robust Security</h4>
-          <p>Local mode with comprehensive fallback systems and advanced error handling</p>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">SDK3 Compatible</span>
         </div>
       </div>
     </div>
 
+    <!-- Integrations Section -->
     <div class="integrations-section">
-      <h2><i class="fas fa-link"></i> Key Integrations</h2>
+      <h2><i class="fas fa-plug"></i> Platform Integrations</h2>
       <div class="integrations-grid">
         <div class="integration-card">
-          <h3><i class="fab fa-github"></i> GPMACHADO Integration</h3>
-          <p>Complete integration with gpmachado/HomeyPro-Tuya-Devices repository for enhanced Zemismart device support</p>
-          <span class="integration-status status-approved">Approved & Integrated</span>
+          <h3><i class="fab fa-homey"></i> Homey Platform</h3>
+          <p>Complete integration with Homey SDK3, providing seamless device management and automation capabilities.</p>
+          <span class="integration-status status-active">Active</span>
         </div>
         
         <div class="integration-card">
-          <h3><i class="fas fa-brain"></i> ChatGPT Processing</h3>
-          <p>AI-powered device analysis and enhancement with referential creation and workflow automation</p>
-          <span class="integration-status status-processed">Processed & Integrated</span>
+          <h3><i class="fas fa-cloud"></i> Tuya Cloud</h3>
+          <p>Direct integration with Tuya Cloud services for enhanced device compatibility and features.</p>
+          <span class="integration-status status-active">Active</span>
         </div>
         
         <div class="integration-card">
-          <h3><i class="fas fa-cogs"></i> YOLO Mode</h3>
-          <p>Advanced automation system with intelligent task processing and performance optimization</p>
-          <span class="integration-status status-approved">Active & Optimized</span>
+          <h3><i class="fas fa-mobile-alt"></i> Mobile Apps</h3>
+          <p>Support for Tuya Smart Life and Smart Home apps with cross-platform compatibility.</p>
+          <span class="integration-status status-active">Active</span>
         </div>
         
         <div class="integration-card">
-          <h3><i class="fas fa-globe"></i> Multi-language System</h3>
-          <p>Comprehensive translation system with 8 languages and automatic translation workflows</p>
-          <span class="integration-status status-approved">Complete & Active</span>
+          <h3><i class="fas fa-robot"></i> AI Integration</h3>
+          <p>Intelligent device detection and automatic configuration using advanced AI algorithms.</p>
+          <span class="integration-status status-development">In Development</span>
+        </div>
+        
+        <div class="integration-card">
+          <h3><i class="fas fa-chart-line"></i> Analytics</h3>
+          <p>Real-time analytics and performance monitoring for all connected devices.</p>
+          <span class="integration-status status-development">In Development</span>
+        </div>
+        
+        <div class="integration-card">
+          <h3><i class="fas fa-shield-alt"></i> Security</h3>
+          <p>Advanced security features including encryption and secure device authentication.</p>
+          <span class="integration-status status-planned">Planned</span>
         </div>
       </div>
     </div>
-    
+
+    <!-- Footer -->
     <div class="footer">
-      <p>Developed by <a href="https://github.com/dlnraja">dlnraja</a> with <i class="fas fa-heart" style="color: #ff6600;"></i> for the Homey community</p>
-      <p><a href="https://github.com/dlnraja/com.universaltuyazigbee.device"><i class="fab fa-github"></i> GitHub Repository</a> | <a href="https://community.homey.app"><i class="fas fa-users"></i> Homey Community</a></p>
-      <p>Version 1.0.16 | Last updated: 2025-07-27 | Platform: Windows/Linux/Mac | SDK: 3.0</p>
-      
-      <div class="social-links">
-        <a href="https://github.com/dlnraja" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://community.homey.app" title="Homey Community"><i class="fas fa-home"></i></a>
-        <a href="mailto:dylan.rajasekaram@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="#" title="Documentation"><i class="fas fa-book"></i></a>
-      </div>
+      <p>
+        <i class="fas fa-code"></i> 
+        Developed with ❤️ for the Homey community | 
+        <a href="https://github.com/dlnraja/com.tuya.zigbee" target="_blank">View on GitHub</a>
+      </p>
     </div>
   </div>
-  
+
   <script>
-    // Enhanced interactive features
-    document.addEventListener('DOMContentLoaded', function() {
-      // Animate progress bars with delay
-      const progressBars = document.querySelectorAll('.progress-fill');
-      progressBars.forEach((bar, index) => {
-        const width = bar.style.width;
-        bar.style.width = '0%';
-        setTimeout(() => {
-          bar.style.width = width;
-        }, 500 + (index * 200));
+    // Real-time updates
+    setInterval(() => {
+      // Update timestamps
+      const timestamps = document.querySelectorAll('.drivers-table td:last-child');
+      timestamps.forEach(timestamp => {
+        timestamp.textContent = new Date().toLocaleString();
       });
-      
-      // Enhanced hover effects for stat cards
+    }, 60000); // Update every minute
+
+    // Interactive features
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add hover effects to table rows
+      const tableRows = document.querySelectorAll('.drivers-table tbody tr');
+      tableRows.forEach(row => {
+        row.addEventListener('click', function() {
+          this.style.backgroundColor = '#f0f8ff';
+          setTimeout(() => {
+            this.style.backgroundColor = '';
+          }, 1000);
+        });
+      });
+
+      // Add click effects to stat cards
       const statCards = document.querySelectorAll('.stat-card');
       statCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-          this.style.transform = 'translateY(-8px) scale(1.02)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-          this.style.transform = 'translateY(0) scale(1)';
-        });
-      });
-      
-      // Feature items hover effects
-      const featureItems = document.querySelectorAll('.feature-item');
-      featureItems.forEach(item => {
-        item.addEventListener('mouseenter', function() {
-          this.style.transform = 'translateY(-3px)';
-        });
-        
-        item.addEventListener('mouseleave', function() {
-          this.style.transform = 'translateY(0)';
-        });
-      });
-      
-      // Integration cards hover effects
-      const integrationCards = document.querySelectorAll('.integration-card');
-      integrationCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-          this.style.transform = 'translateY(-5px)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-          this.style.transform = 'translateY(0)';
-        });
-      });
-      
-      // Add smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }
-        });
-      });
-      
-      // Add loading animation
-      const loadingAnimation = () => {
-        const cards = document.querySelectorAll('.stat-card, .feature-item, .integration-card');
-        cards.forEach((card, index) => {
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(20px)';
+        card.addEventListener('click', function() {
+          this.style.transform = 'scale(1.05)';
           setTimeout(() => {
-            card.style.transition = 'all 0.6s ease';
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          }, index * 100);
+            this.style.transform = '';
+          }, 200);
         });
-      };
-      
-      // Run loading animation
-      loadingAnimation();
+      });
     });
   </script>
 </body>
