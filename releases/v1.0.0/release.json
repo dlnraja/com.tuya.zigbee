@@ -1,20 +1,6 @@
 {
   "version": "1.0.0",
-  "build": 20250128,
   "codename": "Initial Release",
-  "description": "Version initiale avec drivers de base",
-  "release_date": "2025-07-28T22:46:08.586Z",
-  "features": [
-    "Drivers de base pour appareils Tuya Zigbee",
-    "Support des interrupteurs et lumières",
-    "Intégration Homey SDK3",
-    "Documentation de base"
-  ],
-  "changelog": [
-    "Version initiale du projet",
-    "Support des appareils Tuya Zigbee de base",
-    "Intégration avec Homey SDK3",
-    "Drivers pour interrupteurs et lumières"
-  ],
+  "release_date": "2025-07-28T22:49:32.470Z",
   "download_url": "https://github.com/dlnraja/com.tuya.zigbee/releases/download/v1.0.0/tuya-zigbee-v1.0.0.zip"
 }
