@@ -1,58 +1,19 @@
 {
-    "name": "com.universaltuyazigbee.device",
-    "version": "1.0.19",
-    "description": "Universal Tuya ZigBee Device Integration with AI-Powered Features and Zigbee Cluster Referential System",
-    "main": "app.js",
-    "scripts": {
-        "build": "echo 'Build completed'",
-        "run": "echo 'Run completed'",
-        "test": "echo 'Test completed'",
-        "validate": "echo 'Validation completed'"
-    },
-    "keywords": [
-        "homey",
-        "tuya",
-        "zigbee",
-        "smart-home",
-        "local-mode",
-        "drivers",
-        "automation",
-        "ai",
-        "chatgpt",
-        "yolo-mode",
-        "todo-processing",
-        "gpmachado",
-        "zemismart",
-        "translation",
-        "multilingual"
-    ],
-    "license": "MIT",
-    "dependencies": {},
-    "devDependencies": {},
-    "engines": {
-        "node": ">=18.0.0",
-        "npm": ">=8.0.0"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/dlnraja/com.universaltuyazigbee.device.git"
-    },
-    "bugs": {
-        "url": "https://github.com/dlnraja/com.universaltuyazigbee.device/issues"
-    },
-    "homepage": "https://github.com/dlnraja/com.universaltuyazigbee.device#readme",
-    "config": {
-        "homey": {
-            "id": "com.universaltuyazigbee.device",
-            "category": "app",
-            "permissions": [
-                "homey:manager:zigbee"
-            ]
-        }
-    },
-    "author": "Dylan Rajasekaram",
-    "author_email": "dylan.rajasekaram@gmail.com",
-    "author_linkedin": "https://www.linkedin.com/in/dlnraja/",
-    "author_twitter": "https://twitter.com/dlnraja"
-}
-
+  "name": "com.tuya.zigbee",
+  "version": "1.0.0",
+  "description": "Universal Tuya ZigBee device integration for Homey",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "homey",
+    "tuya",
+    "zigbee",
+    "smart-home"
+  ],
+  "author": "dlnraja",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+} 

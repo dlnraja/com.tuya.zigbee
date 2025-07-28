@@ -1,4 +1,20 @@
-const { Device } = require('homey');
- 'use strict'; const { ZigBeeDriver } = require('homey-meshdriver'); class wall_switch_1_gang extends ZigBeeDriver { } module.exports = wall_switch_1_gang; 
+'use strict';
+
+const { ZigbeeDevice } = require('homey-meshdriver');
+
+class WallSwitch1Gang extends ZigbeeDevice {
+  async onMeshInit() {
+    await super.onMeshInit();
+    
+    // Enable debugging
+    this.enableDebug();
+    this.printNode();
+    
+    // Register capabilities
+    this.registerCapability('onoff', 'genOnOff');
+  }
+}
+
+module.exports = WallSwitch1Gang; 
 
 

@@ -1,8 +1,57 @@
 name: Validate Drivers
-on: [push, pull_request]
+
+on:
+  push:
+    branches: [master, tuya-light]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
 jobs:
-  validate:
+  validate-drivers:
+    name: Validate All Drivers
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - run: node tools/verify-drivers.js
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Validate drivers
+      run: |
+        echo "🔍 Validating all drivers..."
+        node tools/verify-drivers.js --report --export markdown
+        echo "✅ Driver validation completed"
+
+    - name: Upload validation report
+      uses: actions/upload-artifact@v4
+      with:
+        name: driver-validation-report
+        path: validation-report.md
+        retention-days: 30
+
+    - name: Notify success
+      if: success()
+      run: |
+        echo "✅ Driver validation completed successfully"
+        echo "📅 Date: $(date)"
+        echo "📊 Report: Generated and uploaded"
+
+    - name: Notify failure
+      if: failure()
+      run: |
+        echo "❌ Driver validation failed"
+        echo "📅 Date: $(date)"
+        echo "🔍 Check the workflow logs for details"
+        exit 1 
