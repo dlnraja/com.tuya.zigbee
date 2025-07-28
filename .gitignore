@@ -8,3 +8,13 @@ D:/Download/fold/
 # Fichiers de développement local
 *.backup
 *.tmp
+# Exclusion automatique de toute config locale
+.vscode/
+local-scripts/
+cursor_temp*
+*.log
+D:/Download/fold/
+
+# Fichiers locaux (NE PAS PUSHER)
+project-tasks.md
+auto-backup.ps1
