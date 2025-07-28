@@ -7,18 +7,28 @@
 - Mode automatique pour toutes les tâches
 - Pas de délai entre les actions
 - Continuation immédiate après chaque étape
+- Mises à jour régulières obligatoires
 
 ### **Langue de Communication**
 - Répondre en français
 - Utiliser des emojis pour la clarté
 - Messages détaillés et informatifs
 - Formatage markdown pour la lisibilité
+- Priorité des langues : EN, FR, TA, NL
 
 ### **Gestion des Erreurs**
 - Corriger automatiquement les erreurs
 - Continuer même en cas d'échec
 - Fallback systems pour toutes les opérations
 - Rapports d'erreur détaillés
+- Récupération automatique des actions perdues
+
+### **Mises à Jour Régulières**
+- Actualisation automatique du contexte
+- Synchronisation des fichiers de configuration
+- Vérification des contraintes du projet
+- Mise à jour des règles et contraintes
+- Validation continue de l'état du projet
 
 ## 📋 **RÈGLES DE DÉVELOPPEMENT**
 
@@ -27,24 +37,28 @@
 - Push automatique après chaque commit
 - Tags avec dates et heures
 - Messages en français et anglais
+- Auteur : dlnraja / [redacted-email]
 
 ### **PowerShell Scripts**
 - Scripts modulaires et réutilisables
 - Gestion d'erreur complète
 - Rapports JSON pour chaque opération
 - Logs détaillés avec timestamps
+- Exécution avec `echo "  \n"` après chaque commande
 
 ### **File Management**
 - Création automatique des dossiers manquants
 - Sauvegarde avant modification
 - Validation des fichiers créés
 - Documentation complète
+- Gestion des fichiers temporaires et cache
 
 ### **Dashboard Integration**
 - Interface moderne et responsive
 - Données en temps réel
 - Graphiques interactifs
 - Métriques détaillées
+- Tableau drivers interactif
 
 ## 🎯 **RÈGLES SPÉCIFIQUES**
 
@@ -53,24 +67,28 @@
 - Compatibilité maximale
 - Performance optimisée
 - Tests automatisés
+- Mode local uniquement (pas d'API Tuya)
 
 ### **Smart Life Analysis**
 - Extraction automatique des drivers
 - Migration scripts
 - Feature mapping
 - Compatibility validation
+- Analyse repository GitHub
 
 ### **Workflow Optimization**
 - Tests de tous les workflows
 - Performance monitoring
 - Error handling
 - Continuous integration
+- 8 workflows GitHub Actions
 
 ### **Module Testing**
 - Validation des 7 modules intelligents
 - Feature testing
 - Performance metrics
 - Security validation
+- AutoDetectionModule, LegacyConversionModule, etc.
 
 ## 📊 **RÈGLES DE RAPPORT**
 
@@ -79,18 +97,21 @@
 - Markdown pour la documentation
 - Timestamps ISO 8601
 - Métriques détaillées
+- Rapports automatiques
 
 ### **Statistiques**
 - Compteurs précis
 - Pourcentages de progression
 - Temps d'exécution
 - Taux de succès
+- Suivi en temps réel
 
 ### **Documentation**
 - Fichiers README complets
 - Changelog automatique
 - Guides d'utilisation
 - Exemples de code
+- Multi-langue : EN, FR, NL, TA
 
 ## 🛡️ **RÈGLES DE SÉCURITÉ**
 
@@ -99,18 +120,21 @@
 - Test des scripts générés
 - Validation des workflows
 - Contrôle de qualité
+- Tests automatisés
 
 ### **Backup**
 - Sauvegarde avant modification
 - Versioning automatique
 - Rollback capability
 - Recovery systems
+- Protection contre les pertes
 
 ### **Monitoring**
 - Surveillance en temps réel
 - Alertes automatiques
 - Performance tracking
 - Error logging
+- Monitoring continu
 
 ## 🚀 **RÈGLES DE PERFORMANCE**
 
@@ -119,18 +143,21 @@
 - Utilisation mémoire optimisée
 - CPU usage minimal
 - Network efficiency
+- Performance maximale
 
 ### **Scalability**
 - Support de gros volumes
 - Parallélisation automatique
 - Load balancing
 - Resource management
+- Évolutivité continue
 
 ### **Reliability**
 - 99.9% uptime
 - Error recovery
 - Data integrity
 - System stability
+- Fiabilité maximale
 
 ## 📅 **RÈGLES DE PLANIFICATION**
 
@@ -139,22 +166,49 @@
 - Priorisation des tâches
 - Gestion des dépendances
 - Timeline optimization
+- Planification intelligente
 
 ### **Monitoring**
 - Progress tracking
 - Status updates
 - Performance metrics
 - Resource usage
+- Suivi continu
 
 ### **Reporting**
 - Daily reports
 - Weekly summaries
 - Monthly analytics
 - Quarterly reviews
+- Rapports automatiques
+
+## 🔄 **RÈGLES DE CONTINUITÉ**
+
+### **Reprise des Tâches**
+- Récupération automatique des actions perdues
+- Continuation des tâches interrompues
+- Mise à jour du contexte
+- Synchronisation des états
+- Reprise intelligente
+
+### **Mises à Jour Régulières**
+- Actualisation automatique
+- Synchronisation des configurations
+- Vérification des contraintes
+- Mise à jour des règles
+- Maintenance continue
+
+### **Gestion des Contraintes**
+- Respect des contraintes du projet
+- Adaptation aux nouvelles exigences
+- Optimisation continue
+- Amélioration constante
+- Évolution intelligente
 
 ---
 
 **📅 Créé**: 29/07/2025 01:40:00  
 **🎯 Objectif**: Optimisation complète de l'expérience Cursor  
 **🚀 Mode**: YOLO - Règles automatiques  
-**✅ Statut**: RÈGLES COMPLÈTES ET ACTIVES
+**✅ Statut**: RÈGLES COMPLÈTES ET ACTIVES  
+**🔄 Mises à jour**: Régulières et automatiques

@@ -1,11 +1,13 @@
 {
   "cursor": {
-    "version": "1.0.0",
+    "version": "1.1.0",
     "project": "Tuya Zigbee",
     "created": "2025-07-29T01:40:00",
+    "updated": "2025-07-29T01:45:00",
     "mode": "YOLO",
     "language": "French",
-    "timezone": "Europe/Paris"
+    "timezone": "Europe/Paris",
+    "updateFrequency": "regular"
   },
   "terminal": {
     "shell": "PowerShell",
@@ -13,7 +15,8 @@
     "encoding": "UTF8",
     "autoConfirm": true,
     "showProgress": true,
-    "logLevel": "verbose"
+    "logLevel": "verbose",
+    "postCommand": "echo \"  \\n\""
   },
   "git": {
     "author": {
@@ -27,26 +30,30 @@
       "autoCreate": true,
       "includeDate": true,
       "includeTime": true
-    }
+    },
+    "languagePriority": ["EN", "FR", "TA", "NL"]
   },
   "scripts": {
     "powerShell": {
       "executionPolicy": "Bypass",
       "errorHandling": "continue",
       "logging": true,
-      "reports": true
+      "reports": true,
+      "autoRecovery": true
     },
     "modules": {
       "testAll": true,
       "validateFeatures": true,
       "performanceMetrics": true,
-      "securityScan": true
+      "securityScan": true,
+      "count": 7
     },
     "workflows": {
       "testAll": true,
       "optimizePerformance": true,
       "validateCI": true,
-      "monitorStatus": true
+      "monitorStatus": true,
+      "count": 8
     }
   },
   "dashboard": {
@@ -64,6 +71,11 @@
       "library": "Chart.js",
       "animations": true,
       "responsive": true
+    },
+    "driversTable": {
+      "enabled": true,
+      "interactive": true,
+      "realTime": true
     }
   },
   "tuya": {
@@ -77,14 +89,20 @@
       "analysis": true,
       "extraction": true,
       "migration": true,
-      "integration": true
+      "integration": true,
+      "repository": "https://github.com/tuya/tuya-smart-life"
     },
     "drivers": {
-      "total": 13,
+      "total": 80,
+      "sdk3": 45,
+      "inProgress": 23,
+      "legacy": 12,
       "tested": 13,
       "compatible": 13,
       "categories": ["coherent", "intelligent"]
-    }
+    },
+    "mode": "local",
+    "apiAccess": false
   },
   "workflows": {
     "total": 8,
@@ -121,7 +139,8 @@
     "responseTime": "< 1s",
     "memoryUsage": "optimized",
     "cpuUsage": "minimal",
-    "networkEfficiency": "high"
+    "networkEfficiency": "high",
+    "optimization": "continuous"
   },
   "security": {
     "encryption": true,
@@ -133,19 +152,22 @@
     "realTime": true,
     "alerts": true,
     "metrics": true,
-    "logging": true
+    "logging": true,
+    "continuous": true
   },
   "reports": {
     "format": "JSON",
     "timestamp": "ISO 8601",
     "autoGenerate": true,
-    "saveLocation": "docs/"
+    "saveLocation": "docs/",
+    "frequency": "regular"
   },
   "documentation": {
     "languages": ["EN", "FR", "NL", "TA"],
     "autoTranslate": true,
     "changelog": true,
-    "readme": true
+    "readme": true,
+    "priority": ["EN", "FR", "TA", "NL"]
   },
   "features": {
     "yoloMode": true,
@@ -153,7 +175,28 @@
     "fallbackSystems": true,
     "errorHandling": true,
     "progressTracking": true,
-    "statusUpdates": true
+    "statusUpdates": true,
+    "regularUpdates": true,
+    "contextSync": true
+  },
+  "constraints": {
+    "tuyaApi": false,
+    "localMode": true,
+    "freeTier": true,
+    "noExtraCosts": true,
+    "autonomousCommits": true,
+    "batchSize": 5,
+    "timezone": "GMT+2"
+  },
+  "tasks": {
+    "completed": 6,
+    "total": 6,
+    "pending": 37,
+    "critical": 2,
+    "high": 5,
+    "medium": 1,
+    "failed": 3,
+    "categories": 8
   },
   "statistics": {
     "actionsCompleted": 6,
@@ -161,6 +204,16 @@
     "successRate": "100%",
     "driversTested": 13,
     "workflowsActive": 8,
-    "modulesValidated": 7
+    "modulesValidated": 7,
+    "filesCreated": 3,
+    "linesAdded": 528
+  },
+  "updates": {
+    "frequency": "regular",
+    "automatic": true,
+    "contextSync": true,
+    "rulesUpdate": true,
+    "constraintsCheck": true,
+    "lastUpdate": "2025-07-29T01:45:00"
   }
 }
