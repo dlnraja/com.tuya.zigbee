@@ -1,0 +1,568 @@
+{
+  "intelligent_driver_system": {
+    "version": "1.0.0",
+    "last_updated": "2025-01-28 16:50 GMT+2",
+    "description": "Système intelligent de détermination et création de drivers Tuya Zigbee avec référentiels exhaustifs",
+    
+    "constraints": {
+      "local_creation_only": true,
+      "max_conditions": "maximum possible",
+      "exhaustive_manufacturers": true,
+      "exhaustive_brands": true,
+      "exhaustive_products": true,
+      "intelligent_detection": true,
+      "compatibility_maximization": true,
+      "fallback_support": true,
+      "legacy_support": true,
+      "future_proof": true
+    },
+    
+    "referentials": {
+      "manufacturers": {
+        "tuya": {
+          "name": "Tuya",
+          "aliases": ["Tuya", "TUYA", "tuya"],
+          "model_prefixes": ["TS", "TH", "TZ", "TY"],
+          "base_clusters": ["genBasic", "genOnOff"],
+          "common_capabilities": ["onoff"],
+          "firmware_support": ["legacy", "current", "latest", "unknown"],
+          "characteristics": {
+            "reliable": true,
+            "widespread": true,
+            "standard_compliant": true,
+            "good_support": true
+          }
+        },
+        "zemismart": {
+          "name": "Zemismart",
+          "aliases": ["Zemismart", "ZEMISMART", "zemismart", "ZemiSmart"],
+          "model_prefixes": ["TZ", "ZS", "ZM"],
+          "base_clusters": ["genBasic", "genOnOff", "genLevelCtrl"],
+          "common_capabilities": ["onoff", "dim"],
+          "firmware_support": ["current", "latest"],
+          "characteristics": {
+            "premium_quality": true,
+            "advanced_features": true,
+            "good_support": true,
+            "reliable": true
+          }
+        },
+        "novadigital": {
+          "name": "NovaDigital",
+          "aliases": ["NovaDigital", "NOVADIGITAL", "novadigital", "Nova Digital"],
+          "model_prefixes": ["ND", "NV", "NOVA"],
+          "base_clusters": ["genBasic", "genOnOff", "genLevelCtrl", "genPowerCfg"],
+          "common_capabilities": ["onoff", "dim", "measure_power"],
+          "firmware_support": ["current", "latest"],
+          "characteristics": {
+            "power_monitoring": true,
+            "energy_efficient": true,
+            "professional_grade": true,
+            "reliable": true
+          }
+        },
+        "blitzwolf": {
+          "name": "BlitzWolf",
+          "aliases": ["BlitzWolf", "BLITZWOLF", "blitzwolf", "Blitz Wolf"],
+          "model_prefixes": ["BW", "BL", "BW-"],
+          "base_clusters": ["genBasic", "genOnOff", "genPowerCfg"],
+          "common_capabilities": ["onoff", "measure_power"],
+          "firmware_support": ["current", "latest"],
+          "characteristics": {
+            "cost_effective": true,
+            "good_performance": true,
+            "popular_choice": true,
+            "reliable": true
+          }
+        },
+        "moes": {
+          "name": "Moes",
+          "aliases": ["Moes", "MOES", "moes", "MOESGO"],
+          "model_prefixes": ["MS", "MO", "MOES"],
+          "base_clusters": ["genBasic", "genOnOff", "genLevelCtrl"],
+          "common_capabilities": ["onoff", "dim"],
+          "firmware_support": ["current", "latest"],
+          "characteristics": {
+            "thermostat_specialist": true,
+            "climate_control": true,
+            "energy_saving": true,
+            "reliable": true
+          }
+        },
+        "smartlife": {
+          "name": "Smart Life",
+          "aliases": ["Smart Life", "SMART LIFE", "smartlife", "SmartLife"],
+          "model_prefixes": ["SL", "SM", "SMART"],
+          "base_clusters": ["genBasic", "genOnOff"],
+          "common_capabilities": ["onoff"],
+          "firmware_support": ["legacy", "current", "latest"],
+          "characteristics": {
+            "basic_functionality": true,
+            "cost_effective": true,
+            "widespread": true,
+            "reliable": true
+          }
+        },
+        "gosund": {
+          "name": "Gosund",
+          "aliases": ["Gosund", "GOSUND", "gosund", "GoSund"],
+          "model_prefixes": ["GS", "GO", "GOSUND"],
+          "base_clusters": ["genBasic", "genOnOff", "genPowerCfg"],
+          "common_capabilities": ["onoff", "measure_power"],
+          "firmware_support": ["current", "latest"],
+          "characteristics": {
+            "power_monitoring": true,
+            "good_quality": true,
+            "popular": true,
+            "reliable": true
+          }
+        },
+        "meross": {
+          "name": "Meross",
+          "aliases": ["Meross", "MEROSS", "meross"],
+          "model_prefixes": ["MR", "ME", "MEROSS"],
+          "base_clusters": ["genBasic", "genOnOff", "genLevelCtrl"],
+          "common_capabilities": ["onoff", "dim"],
+          "firmware_support": ["current", "latest"],
+          "characteristics": {
+            "good_quality": true,
+            "reliable": true,
+            "popular": true,
+            "good_support": true
+          }
+        },
+        "teckin": {
+          "name": "Teckin",
+          "aliases": ["Teckin", "TECKIN", "teckin"],
+          "model_prefixes": ["TK", "TE", "TECKIN"],
+          "base_clusters": ["genBasic", "genOnOff", "genPowerCfg"],
+          "common_capabilities": ["onoff", "measure_power"],
+          "firmware_support": ["current", "latest"],
+          "characteristics": {
+            "cost_effective": true,
+            "good_performance": true,
+            "reliable": true,
+            "popular": true
+          }
+        },
+        "unknown": {
+          "name": "Unknown",
+          "aliases": ["Unknown", "UNKNOWN", "unknown", "Generic"],
+          "model_prefixes": ["UNKNOWN", "GEN", "GENERIC"],
+          "base_clusters": ["genBasic", "genOnOff"],
+          "common_capabilities": ["onoff"],
+          "firmware_support": ["unknown"],
+          "characteristics": {
+            "intelligent_detection": true,
+            "fallback_mode": true,
+            "basic_support": true,
+            "generic_pattern": true
+          }
+        }
+      },
+      
+      "brands": {
+        "tuya_official": {
+          "manufacturer": "tuya",
+          "name": "Tuya Official",
+          "aliases": ["Tuya Official", "TUYA OFFICIAL", "tuya official"],
+          "model_patterns": ["TS*", "TH*", "TZ*"],
+          "characteristics": {
+            "official": true,
+            "best_support": true,
+            "most_reliable": true,
+            "reference_implementation": true
+          }
+        },
+        "zemismart_premium": {
+          "manufacturer": "zemismart",
+          "name": "Zemismart Premium",
+          "aliases": ["Zemismart Premium", "ZEMISMART PREMIUM", "zemismart premium"],
+          "model_patterns": ["TZ*", "ZS*"],
+          "characteristics": {
+            "premium": true,
+            "advanced_features": true,
+            "high_quality": true,
+            "good_support": true
+          }
+        },
+        "novadigital_pro": {
+          "manufacturer": "novadigital",
+          "name": "NovaDigital Pro",
+          "aliases": ["NovaDigital Pro", "NOVADIGITAL PRO", "novadigital pro"],
+          "model_patterns": ["ND*", "NV*"],
+          "characteristics": {
+            "professional": true,
+            "power_monitoring": true,
+            "energy_efficient": true,
+            "high_quality": true
+          }
+        },
+        "blitzwolf_standard": {
+          "manufacturer": "blitzwolf",
+          "name": "BlitzWolf Standard",
+          "aliases": ["BlitzWolf Standard", "BLITZWOLF STANDARD", "blitzwolf standard"],
+          "model_patterns": ["BW*", "BL*"],
+          "characteristics": {
+            "standard": true,
+            "cost_effective": true,
+            "good_performance": true,
+            "popular": true
+          }
+        },
+        "moes_specialist": {
+          "manufacturer": "moes",
+          "name": "Moes Specialist",
+          "aliases": ["Moes Specialist", "MOES SPECIALIST", "moes specialist"],
+          "model_patterns": ["MS*", "MO*"],
+          "characteristics": {
+            "specialist": true,
+            "climate_control": true,
+            "thermostat": true,
+            "energy_saving": true
+          }
+        },
+        "smartlife_basic": {
+          "manufacturer": "smartlife",
+          "name": "Smart Life Basic",
+          "aliases": ["Smart Life Basic", "SMART LIFE BASIC", "smartlife basic"],
+          "model_patterns": ["SL*", "SM*"],
+          "characteristics": {
+            "basic": true,
+            "cost_effective": true,
+            "simple": true,
+            "widespread": true
+          }
+        },
+        "gosund_power": {
+          "manufacturer": "gosund",
+          "name": "Gosund Power",
+          "aliases": ["Gosund Power", "GOSUND POWER", "gosund power"],
+          "model_patterns": ["GS*", "GO*"],
+          "characteristics": {
+            "power_monitoring": true,
+            "good_quality": true,
+            "reliable": true,
+            "popular": true
+          }
+        },
+        "meross_quality": {
+          "manufacturer": "meross",
+          "name": "Meross Quality",
+          "aliases": ["Meross Quality", "MEROSS QUALITY", "meross quality"],
+          "model_patterns": ["MR*", "ME*"],
+          "characteristics": {
+            "quality": true,
+            "reliable": true,
+            "good_support": true,
+            "popular": true
+          }
+        },
+        "teckin_value": {
+          "manufacturer": "teckin",
+          "name": "Teckin Value",
+          "aliases": ["Teckin Value", "TECKIN VALUE", "teckin value"],
+          "model_patterns": ["TK*", "TE*"],
+          "characteristics": {
+            "value": true,
+            "cost_effective": true,
+            "good_performance": true,
+            "reliable": true
+          }
+        },
+        "generic_unknown": {
+          "manufacturer": "unknown",
+          "name": "Generic Unknown",
+          "aliases": ["Generic Unknown", "GENERIC UNKNOWN", "generic unknown", "Unknown Brand"],
+          "model_patterns": ["UNKNOWN*", "GEN*"],
+          "characteristics": {
+            "generic": true,
+            "unknown": true,
+            "fallback": true,
+            "basic_support": true
+          }
+        }
+      },
+      
+      "product_categories": {
+        "switch": {
+          "name": "Switch",
+          "aliases": ["Switch", "SWITCH", "switch", "On/Off Switch", "Toggle Switch"],
+          "clusters": ["genBasic", "genOnOff"],
+          "capabilities": ["onoff"],
+          "manufacturers": ["tuya", "zemismart", "smartlife", "meross", "teckin"],
+          "model_patterns": ["TS0001*", "TS004F*", "TS011F*", "TS0201*"],
+          "characteristics": {
+            "basic_functionality": true,
+            "simple_control": true,
+            "widespread": true,
+            "reliable": true
+          }
+        },
+        "dimmer": {
+          "name": "Dimmer",
+          "aliases": ["Dimmer", "DIMMER", "dimmer", "Dimmable Switch", "Light Dimmer"],
+          "clusters": ["genBasic", "genOnOff", "genLevelCtrl"],
+          "capabilities": ["onoff", "dim"],
+          "manufacturers": ["zemismart", "novadigital", "moes", "meross"],
+          "model_patterns": ["TS0207*", "TS0601*", "TZ*"],
+          "characteristics": {
+            "dimmable": true,
+            "level_control": true,
+            "advanced_control": true,
+            "popular": true
+          }
+        },
+        "plug": {
+          "name": "Smart Plug",
+          "aliases": ["Smart Plug", "SMART PLUG", "smart plug", "Power Plug", "Outlet"],
+          "clusters": ["genBasic", "genOnOff", "genPowerCfg"],
+          "capabilities": ["onoff", "measure_power"],
+          "manufacturers": ["tuya", "blitzwolf", "gosund", "teckin"],
+          "model_patterns": ["TS0207*", "BW-*", "GS*", "TK*"],
+          "characteristics": {
+            "power_monitoring": true,
+            "energy_tracking": true,
+            "smart_control": true,
+            "popular": true
+          }
+        },
+        "light": {
+          "name": "Smart Light",
+          "aliases": ["Smart Light", "SMART LIGHT", "smart light", "LED Light", "Bulb"],
+          "clusters": ["genBasic", "genOnOff", "genLevelCtrl", "genColorCtrl"],
+          "capabilities": ["onoff", "dim", "light_hue", "light_saturation"],
+          "manufacturers": ["zemismart", "novadigital", "moes"],
+          "model_patterns": ["TS130F*", "THB2*", "TZ*"],
+          "characteristics": {
+            "color_control": true,
+            "rgb_support": true,
+            "advanced_lighting": true,
+            "premium": true
+          }
+        },
+        "sensor": {
+          "name": "Sensor",
+          "aliases": ["Sensor", "SENSOR", "sensor", "Environmental Sensor", "Monitor"],
+          "clusters": ["genBasic", "genTempMeasurement", "genHumidityMeasurement"],
+          "capabilities": ["measure_temperature", "measure_humidity"],
+          "manufacturers": ["tuya", "zemismart", "novadigital"],
+          "model_patterns": ["TS0201*", "TZ*", "ND*"],
+          "characteristics": {
+            "environmental": true,
+            "monitoring": true,
+            "data_collection": true,
+            "useful": true
+          }
+        },
+        "thermostat": {
+          "name": "Thermostat",
+          "aliases": ["Thermostat", "THERMOSTAT", "thermostat", "Climate Control", "HVAC"],
+          "clusters": ["genBasic", "genOnOff", "genLevelCtrl"],
+          "capabilities": ["onoff", "dim", "thermostat_mode"],
+          "manufacturers": ["moes", "zemismart", "novadigital"],
+          "model_patterns": ["MS*", "TZ*", "ND*"],
+          "characteristics": {
+            "climate_control": true,
+            "temperature_control": true,
+            "energy_saving": true,
+            "specialized": true
+          }
+        },
+        "curtain": {
+          "name": "Curtain",
+          "aliases": ["Curtain", "CURTAIN", "curtain", "Blind", "Shade"],
+          "clusters": ["genBasic", "genOnOff", "genLevelCtrl"],
+          "capabilities": ["onoff", "dim", "windowcoverings_set"],
+          "manufacturers": ["zemismart", "tuya", "novadigital"],
+          "model_patterns": ["TZ*", "TS*", "ND*"],
+          "characteristics": {
+            "window_control": true,
+            "automation": true,
+            "convenience": true,
+            "popular": true
+          }
+        },
+        "lock": {
+          "name": "Smart Lock",
+          "aliases": ["Smart Lock", "SMART LOCK", "smart lock", "Lock", "Door Lock"],
+          "clusters": ["genBasic", "genOnOff", "genDoorLock"],
+          "capabilities": ["onoff", "lock_set"],
+          "manufacturers": ["tuya", "zemismart", "novadigital"],
+          "model_patterns": ["TS*", "TZ*", "ND*"],
+          "characteristics": {
+            "security": true,
+            "access_control": true,
+            "safety": true,
+            "specialized": true
+          }
+        },
+        "unknown": {
+          "name": "Unknown Device",
+          "aliases": ["Unknown Device", "UNKNOWN DEVICE", "unknown device", "Generic Device"],
+          "clusters": ["genBasic", "genOnOff"],
+          "capabilities": ["onoff"],
+          "manufacturers": ["unknown"],
+          "model_patterns": ["UNKNOWN*", "GEN*"],
+          "characteristics": {
+            "unknown": true,
+            "generic": true,
+            "fallback": true,
+            "basic_support": true
+          }
+        }
+      }
+    },
+    
+    "intelligent_detection": {
+      "confidence_levels": {
+        "high": {
+          "min_confidence": 0.8,
+          "description": "High confidence in device type and capabilities",
+          "action": "create_optimized_driver"
+        },
+        "medium": {
+          "min_confidence": 0.6,
+          "description": "Medium confidence with some uncertainty",
+          "action": "create_compatible_driver"
+        },
+        "low": {
+          "min_confidence": 0.4,
+          "description": "Low confidence, using fallback patterns",
+          "action": "create_fallback_driver"
+        }
+      },
+      
+      "fallback_strategies": {
+        "unknown_manufacturer": {
+          "strategy": "use_tuya_pattern",
+          "description": "Use Tuya pattern for unknown manufacturers",
+          "confidence_boost": 0.3
+        },
+        "unknown_model": {
+          "strategy": "use_basic_pattern",
+          "description": "Use basic on/off pattern for unknown models",
+          "confidence_boost": 0.2
+        },
+        "unknown_clusters": {
+          "strategy": "use_manufacturer_pattern",
+          "description": "Use manufacturer-specific pattern",
+          "confidence_boost": 0.4
+        },
+        "unknown_capabilities": {
+          "strategy": "use_category_pattern",
+          "description": "Use product category pattern",
+          "confidence_boost": 0.3
+        }
+      },
+      
+      "pattern_matching": {
+        "manufacturer_detection": {
+          "method": "prefix_analysis",
+          "description": "Analyze model prefixes to determine manufacturer",
+          "accuracy": 0.85
+        },
+        "brand_detection": {
+          "method": "alias_matching",
+          "description": "Match device aliases to known brands",
+          "accuracy": 0.75
+        },
+        "category_detection": {
+          "method": "cluster_analysis",
+          "description": "Analyze Zigbee clusters to determine device category",
+          "accuracy": 0.90
+        },
+        "capability_detection": {
+          "method": "cluster_to_capability_mapping",
+          "description": "Map clusters to Homey capabilities",
+          "accuracy": 0.95
+        }
+      }
+    },
+    
+    "driver_generation": {
+      "strategies": {
+        "optimized": {
+          "description": "Create driver with maximum capabilities and optimizations",
+          "use_case": "high_confidence_devices",
+          "features": [
+            "full_capability_support",
+            "optimized_performance",
+            "advanced_features",
+            "comprehensive_documentation"
+          ]
+        },
+        "compatible": {
+          "description": "Create driver with good compatibility and features",
+          "use_case": "medium_confidence_devices",
+          "features": [
+            "standard_capability_support",
+            "good_performance",
+            "reliable_features",
+            "basic_documentation"
+          ]
+        },
+        "fallback": {
+          "description": "Create basic driver with fallback support",
+          "use_case": "low_confidence_devices",
+          "features": [
+            "basic_capability_support",
+            "stable_performance",
+            "essential_features",
+            "minimal_documentation"
+          ]
+        }
+      },
+      
+      "templates": {
+        "sdk3_optimized": {
+          "framework": "Homey SDK3",
+          "structure": "modern",
+          "features": [
+            "async_await",
+            "modern_js",
+            "optimized_performance",
+            "comprehensive_error_handling"
+          ]
+        },
+        "sdk3_compatible": {
+          "framework": "Homey SDK3",
+          "structure": "standard",
+          "features": [
+            "async_await",
+            "modern_js",
+            "good_performance",
+            "standard_error_handling"
+          ]
+        },
+        "sdk3_fallback": {
+          "framework": "Homey SDK3",
+          "structure": "basic",
+          "features": [
+            "async_await",
+            "modern_js",
+            "stable_performance",
+            "basic_error_handling"
+          ]
+        }
+      }
+    },
+    
+    "matrix_integration": {
+      "update_frequency": "real_time",
+      "integration_method": "additive_silent",
+      "data_sources": [
+        "local_detection",
+        "pattern_analysis",
+        "intelligent_matching",
+        "fallback_strategies"
+      ],
+      "output_formats": [
+        "driver_compose_json",
+        "matrix_markdown",
+        "reference_json",
+        "documentation_md"
+      ]
+    }
+  }
+} 

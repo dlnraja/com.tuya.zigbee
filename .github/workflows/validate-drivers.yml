@@ -2,56 +2,355 @@ name: Validate Drivers
 
 on:
   push:
-    branches: [master, tuya-light]
+    branches: [ master, tuya-light ]
+    paths:
+      - 'drivers/**'
+      - 'app.json'
+      - 'package.json'
   pull_request:
-    branches: [master]
+    branches: [ master, tuya-light ]
+    paths:
+      - 'drivers/**'
+      - 'app.json'
+      - 'package.json'
   workflow_dispatch:
+    inputs:
+      driver_path:
+        description: 'Specific driver path to validate'
+        required: false
+        default: ''
 
 jobs:
-  validate-drivers:
-    name: Validate All Drivers
+  validate-sdk3-drivers:
+    name: Validate SDK3 Drivers
     runs-on: ubuntu-latest
-
+    
     steps:
-    - name: Checkout repository
+    - name: Checkout code
       uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-        token: ${{ secrets.GITHUB_TOKEN }}
-
+      
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '18'
         cache: 'npm'
-
+        
     - name: Install dependencies
-      run: npm ci
-
-    - name: Validate drivers
       run: |
-        echo "🔍 Validating all drivers..."
-        node tools/verify-drivers.js --report --export markdown
-        echo "✅ Driver validation completed"
-
+        npm ci
+        echo "  \n"
+        
+    - name: Run driver validation
+      run: |
+        echo "🔍 Validating SDK3 drivers..."
+        node tools/verify-drivers.js
+        echo "  \n"
+        
+    - name: Check driver structure
+      run: |
+        echo "📋 Checking driver structure..."
+        if [ ! -d "drivers/sdk3" ]; then
+          echo "❌ ERROR: drivers/sdk3 directory not found"
+          exit 1
+        fi
+        
+        DRIVER_COUNT=$(find drivers/sdk3 -name "driver.compose.json" | wc -l)
+        echo "✅ Found $DRIVER_COUNT SDK3 drivers"
+        
+        if [ $DRIVER_COUNT -eq 0 ]; then
+          echo "❌ ERROR: No SDK3 drivers found"
+          exit 1
+        fi
+        echo "  \n"
+        
+    - name: Validate individual drivers
+      run: |
+        echo "🔧 Validating individual drivers..."
+        for driver in drivers/sdk3/*/; do
+          if [ -d "$driver" ]; then
+            driver_name=$(basename "$driver")
+            echo "  📦 Validating $driver_name..."
+            
+            # Check for required files
+            if [ ! -f "$driver/driver.compose.json" ]; then
+              echo "    ❌ Missing driver.compose.json"
+              exit 1
+            fi
+            
+            if [ ! -f "$driver/driver.js" ]; then
+              echo "    ❌ Missing driver.js"
+              exit 1
+            fi
+            
+            # Validate JSON syntax
+            if ! jq empty "$driver/driver.compose.json" 2>/dev/null; then
+              echo "    ❌ Invalid JSON in driver.compose.json"
+              exit 1
+            fi
+            
+            echo "    ✅ $driver_name validated"
+          fi
+        done
+        echo "  \n"
+        
+    - name: Generate validation report
+      run: |
+        echo "📊 Generating validation report..."
+        mkdir -p docs/validation-reports
+        node tools/verify-drivers.js > docs/validation-reports/validation-report-$(date +%Y%m%d-%H%M%S).md
+        echo "✅ Validation report generated"
+        echo "  \n"
+        
     - name: Upload validation report
       uses: actions/upload-artifact@v4
       with:
-        name: driver-validation-report
-        path: validation-report.md
-        retention-days: 30
-
-    - name: Notify success
-      if: success()
+        name: validation-report
+        path: docs/validation-reports/
+        
+  validate-legacy-drivers:
+    name: Validate Legacy Drivers
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
       run: |
-        echo "✅ Driver validation completed successfully"
-        echo "📅 Date: $(date)"
-        echo "📊 Report: Generated and uploaded"
-
-    - name: Notify failure
-      if: failure()
+        npm ci
+        echo "  \n"
+        
+    - name: Check legacy drivers
       run: |
-        echo "❌ Driver validation failed"
-        echo "📅 Date: $(date)"
-        echo "🔍 Check the workflow logs for details"
-        exit 1 
+        echo "🔍 Checking legacy drivers..."
+        if [ -d "drivers/legacy" ]; then
+          LEGACY_COUNT=$(find drivers/legacy -name "*.js" | wc -l)
+          echo "✅ Found $LEGACY_COUNT legacy drivers"
+        else
+          echo "ℹ️ No legacy drivers directory found"
+        fi
+        echo "  \n"
+        
+  validate-intelligent-drivers:
+    name: Validate Intelligent Drivers
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: |
+        npm ci
+        echo "  \n"
+        
+    - name: Check intelligent drivers
+      run: |
+        echo "🧠 Checking intelligent drivers..."
+        if [ -d "drivers/intelligent" ]; then
+          INTELLIGENT_COUNT=$(find drivers/intelligent -name "driver.compose.json" | wc -l)
+          echo "✅ Found $INTELLIGENT_COUNT intelligent drivers"
+        else
+          echo "ℹ️ No intelligent drivers directory found"
+        fi
+        echo "  \n"
+        
+  validate-tuya-light-structure:
+    name: Validate Tuya Light Structure
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/tuya-light'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Validate tuya-light structure
+      run: |
+        echo "⚡ Validating tuya-light structure..."
+        
+        # Check essential files
+        ESSENTIAL_FILES=("app.json" "package.json" "app.js" "README.md" "LICENSE" ".gitignore")
+        for file in "${ESSENTIAL_FILES[@]}"; do
+          if [ ! -f "$file" ]; then
+            echo "❌ ERROR: Essential file $file is missing"
+            exit 1
+          fi
+        done
+        
+        # Check for forbidden files
+        FORBIDDEN_FILES=$(find . -type f \( -name "*.ps1" -o -name "*.sh" -o -name "*.yml" -o -name "*.yaml" -o -name "*.test.js" -o -name "*.spec.js" -o -name "*.log" -o -name "*.cursor" -o -name "*.tmp" -o -name "*.bak" \) -not -path "./.git/*" -not -path "./.github/*" 2>/dev/null || true)
+        if [ ! -z "$FORBIDDEN_FILES" ]; then
+          echo "❌ ERROR: Found forbidden files in tuya-light branch:"
+          echo "$FORBIDDEN_FILES"
+          exit 1
+        fi
+        
+        # Check for forbidden directories
+        FORBIDDEN_DIRS=("docs" "tools" "ref" "src" "locales" "research" "node_modules" "dashboard" "web" "ui" "scripts" "test" "tests" "examples" "samples" "templates" "config" "build" "dist" "coverage" "reports" "logs" "temp" "cache" ".vscode" ".idea" ".cursor")
+        for dir in "${FORBIDDEN_DIRS[@]}"; do
+          if [ -d "$dir" ]; then
+            echo "❌ ERROR: Found forbidden directory: $dir"
+            exit 1
+          fi
+        done
+        
+        # Check SDK3 drivers
+        if [ ! -d "drivers/sdk3" ]; then
+          echo "❌ ERROR: drivers/sdk3 directory is missing"
+          exit 1
+        fi
+        
+        DRIVER_COUNT=$(find drivers/sdk3 -name "driver.compose.json" | wc -l)
+        if [ $DRIVER_COUNT -eq 0 ]; then
+          echo "❌ ERROR: No SDK3 drivers found"
+          exit 1
+        fi
+        
+        echo "✅ Tuya-light structure validation passed"
+        echo "✅ Found $DRIVER_COUNT SDK3 drivers"
+        echo "✅ No forbidden files or directories found"
+        echo "  \n"
+        
+  validate-app-json:
+    name: Validate app.json
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Validate app.json syntax
+      run: |
+        echo "📋 Validating app.json..."
+        if [ ! -f "app.json" ]; then
+          echo "❌ ERROR: app.json not found"
+          exit 1
+        fi
+        
+        if ! jq empty app.json 2>/dev/null; then
+          echo "❌ ERROR: Invalid JSON in app.json"
+          exit 1
+        fi
+        
+        echo "✅ app.json syntax is valid"
+        echo "  \n"
+        
+    - name: Validate app.json structure
+      run: |
+        echo "🔍 Validating app.json structure..."
+        
+        # Check required fields
+        REQUIRED_FIELDS=("id" "version" "category" "permissions" "platforms")
+        for field in "${REQUIRED_FIELDS[@]}"; do
+          if ! jq -e ".$field" app.json > /dev/null 2>&1; then
+            echo "❌ ERROR: Required field '$field' missing in app.json"
+            exit 1
+          fi
+        done
+        
+        echo "✅ app.json structure is valid"
+        echo "  \n"
+        
+  validate-package-json:
+    name: Validate package.json
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Validate package.json syntax
+      run: |
+        echo "📦 Validating package.json..."
+        if [ ! -f "package.json" ]; then
+          echo "❌ ERROR: package.json not found"
+          exit 1
+        fi
+        
+        if ! jq empty package.json 2>/dev/null; then
+          echo "❌ ERROR: Invalid JSON in package.json"
+          exit 1
+        fi
+        
+        echo "✅ package.json syntax is valid"
+        echo "  \n"
+        
+    - name: Validate package.json structure
+      run: |
+        echo "🔍 Validating package.json structure..."
+        
+        # Check required fields
+        REQUIRED_FIELDS=("name" "version" "description" "main" "dependencies")
+        for field in "${REQUIRED_FIELDS[@]}"; do
+          if ! jq -e ".$field" package.json > /dev/null 2>&1; then
+            echo "❌ ERROR: Required field '$field' missing in package.json"
+            exit 1
+          fi
+        done
+        
+        echo "✅ package.json structure is valid"
+        echo "  \n"
+        
+  generate-validation-summary:
+    name: Generate Validation Summary
+    runs-on: ubuntu-latest
+    needs: [validate-sdk3-drivers, validate-legacy-drivers, validate-intelligent-drivers, validate-tuya-light-structure, validate-app-json, validate-package-json]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Generate summary
+      run: |
+        echo "📊 Generating validation summary..."
+        
+        # Count drivers
+        SDK3_COUNT=$(find drivers/sdk3 -name "driver.compose.json" 2>/dev/null | wc -l || echo "0")
+        LEGACY_COUNT=$(find drivers/legacy -name "*.js" 2>/dev/null | wc -l || echo "0")
+        INTELLIGENT_COUNT=$(find drivers/intelligent -name "driver.compose.json" 2>/dev/null | wc -l || echo "0")
+        
+        echo "## 🎯 Validation Summary" > validation-summary.md
+        echo "" >> validation-summary.md
+        echo "**Date**: $(date)" >> validation-summary.md
+        echo "**Branch**: ${{ github.ref_name }}" >> validation-summary.md
+        echo "**Commit**: ${{ github.sha }}" >> validation-summary.md
+        echo "" >> validation-summary.md
+        echo "### 📊 Driver Statistics" >> validation-summary.md
+        echo "- **SDK3 Drivers**: $SDK3_COUNT" >> validation-summary.md
+        echo "- **Legacy Drivers**: $LEGACY_COUNT" >> validation-summary.md
+        echo "- **Intelligent Drivers**: $INTELLIGENT_COUNT" >> validation-summary.md
+        echo "- **Total Drivers**: $((SDK3_COUNT + LEGACY_COUNT + INTELLIGENT_COUNT))" >> validation-summary.md
+        echo "" >> validation-summary.md
+        echo "### ✅ Validation Results" >> validation-summary.md
+        echo "- **SDK3 Drivers**: ✅ Validated" >> validation-summary.md
+        echo "- **Legacy Drivers**: ✅ Checked" >> validation-summary.md
+        echo "- **Intelligent Drivers**: ✅ Checked" >> validation-summary.md
+        echo "- **Tuya Light Structure**: ✅ Validated" >> validation-summary.md
+        echo "- **app.json**: ✅ Validated" >> validation-summary.md
+        echo "- **package.json**: ✅ Validated" >> validation-summary.md
+        echo "" >> validation-summary.md
+        echo "### 🎯 Status" >> validation-summary.md
+        echo "**Overall Status**: ✅ All validations passed" >> validation-summary.md
+        
+        cat validation-summary.md
+        echo "  \n"
+        
+    - name: Upload validation summary
+      uses: actions/upload-artifact@v4
+      with:
+        name: validation-summary
+        path: validation-summary.md 

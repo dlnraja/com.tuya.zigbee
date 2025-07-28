@@ -1,0 +1,64 @@
+{
+  "id": "gosund-switch-gs-sd01",
+  "title": {
+    "en": "Gosund Switch - GS-SD01",
+    "fr": "Gosund Switch - GS-SD01",
+    "nl": "Gosund Switch - GS-SD01",
+    "ta": "Gosund Switch - GS-SD01"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small/gosund-switch.png",
+    "large": "/assets/images/large/gosund-switch.png"
+  },
+  "pairing": [
+    {
+      "id": "generic_switch",
+      "title": {
+        "en": "Generic Switch",
+        "fr": "Interrupteur Générique",
+        "nl": "Generieke Schakelaar",
+        "ta": "பொதுவான சுவிட்ச்"
+      },
+      "capabilities": [
+        "onoff"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff"
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "id": "manufacturer",
+      "type": "text",
+      "title": {
+        "en": "Manufacturer",
+        "fr": "Fabricant",
+        "nl": "Fabrikant",
+        "ta": "உற்பத்தியாளர்"
+      },
+      "value": "Gosund"
+    },
+    {
+      "id": "model",
+      "type": "text",
+      "title": {
+        "en": "Model",
+        "fr": "Modèle",
+        "nl": "Model",
+        "ta": "மாடல்"
+      },
+      "value": "GS-SD01"
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  }
+}
