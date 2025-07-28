@@ -7,7 +7,7 @@
 [![Stars](https://img.shields.io/github/stars/dlnraja/com.tuya.zigbee)](https://github.com/dlnraja/com.tuya.zigbee/stargazers)
 [![Forks](https://img.shields.io/github/forks/dlnraja/com.tuya.zigbee)](https://github.com/dlnraja/com.tuya.zigbee/network/members)
 
-> **Universal Tuya ZigBee device integration with AI-powered features for Homey SDK3**
+> **Universal Tuya ZigBee device integration with intelligent automation for Homey SDK3**
 
 ## 📋 Table of Contents
 
@@ -28,7 +28,7 @@
 
 ## 🎯 Overview
 
-The **Tuya Zigbee Universal Integration** is a comprehensive Homey SDK3 application that provides universal support for Tuya ZigBee devices. Built with AI-powered intelligence, real-time monitoring, and multi-language support, this project serves as the definitive solution for integrating Tuya ZigBee devices with Homey.
+The **Tuya Zigbee Universal Integration** is a comprehensive Homey SDK3 application that provides universal support for Tuya ZigBee devices. Built with intelligent automation, real-time monitoring, and multi-language support, this project serves as the definitive solution for integrating Tuya ZigBee devices with Homey.
 
 ### 🏗️ Architecture
 
@@ -53,7 +53,7 @@ com.tuya.zigbee/
 ### 🎯 Project Goals
 
 - **Universal Compatibility**: Support for all Tuya ZigBee devices
-- **AI-Powered Intelligence**: Automated device detection and optimization
+- **Intelligent Automation**: Automated device detection and optimization
 - **Real-time Monitoring**: Comprehensive dashboard and analytics
 - **Multi-language Support**: Documentation in EN, FR, NL, TA
 - **Homey SDK3 Compatibility**: Modern, efficient, and maintainable
@@ -66,15 +66,15 @@ com.tuya.zigbee/
 
 ### 🔌 Universal Device Support
 - **148+ Device Drivers**: Comprehensive coverage of Tuya ZigBee devices
-- **Automatic Detection**: AI-powered device identification and configuration
+- **Automatic Detection**: Intelligent device identification and configuration
 - **Cluster Support**: Full Zigbee cluster compatibility (Basic, OnOff, Level, Color, etc.)
 - **Manufacturer Support**: Tuya, Zemismart, NovaDigital, and more
 - **Regional Compatibility**: Support for devices from Brazil, Europe, Asia, and beyond
 
-### 🤖 AI-Powered Intelligence
+### 🤖 Intelligent Automation
 - **Smart Device Detection**: Automatic identification of unknown devices
-- **Configuration Optimization**: AI-driven parameter tuning
-- **Error Recovery**: Intelligent retry mechanisms and fallback strategies
+- **Configuration Optimization**: Intelligent parameter tuning
+- **Error Recovery**: Advanced retry mechanisms and fallback strategies
 - **Performance Analytics**: Real-time monitoring and optimization suggestions
 - **Predictive Maintenance**: Proactive issue detection and resolution
 
@@ -224,10 +224,10 @@ npm run watch
 ### Advanced Configuration
 ```json
 {
-  "ai": {
+  "automation": {
     "enabled": true,
-    "model": "gpt-4",
-    "optimization": true
+    "optimization": true,
+    "intelligentDetection": true
   },
   "monitoring": {
     "dashboard": true,
