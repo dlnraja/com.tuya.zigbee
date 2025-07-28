@@ -1,0 +1,94 @@
+{
+  "id": "niko-base-device",
+  "title": {
+    "en": "Niko Base Device",
+    "fr": "Device de Base Niko",
+    "nl": "Niko Basis Apparaat",
+    "ta": "Niko அடிப்படை சாதனம்"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "images": {
+    "small": "/assets/images/small/niko.png",
+    "large": "/assets/images/large/niko.png"
+  },
+  "pairing": [
+    {
+      "id": "niko_pairing",
+      "title": {
+        "en": "Niko Pairing",
+        "fr": "Appairage Niko",
+        "nl": "niko Koppeling",
+        "ta": "Niko இணைப்பு"
+      },
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_power"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg"
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "id": "manufacturer",
+      "type": "text",
+      "title": {
+        "en": "Manufacturer",
+        "fr": "Fabricant",
+        "nl": "Fabrikant",
+        "ta": "உற்பத்தியாளர்"
+      },
+      "value": "Niko"
+    },
+    {
+      "id": "brands",
+      "type": "text",
+      "title": {
+        "en": "Brands",
+        "fr": "Marques",
+        "nl": "Merken",
+        "ta": "பிராண்டுகள்"
+      },
+      "value": "Niko, Niko Home Control"
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": [
+      {
+        "id": "set_dim_level",
+        "title": {
+          "en": "Set Dim Level",
+          "fr": "Définir le Niveau de Luminosité",
+          "nl": "Dimniveau Instellen",
+          "ta": "மங்கல் நிலையை அமைக்கவும்"
+        },
+        "args": [
+          {
+            "name": "level",
+            "type": "number",
+            "title": {
+              "en": "Level",
+              "fr": "Niveau",
+              "nl": "Niveau",
+              "ta": "நிலை"
+            },
+            "min": 0,
+            "max": 100
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,1447 @@
+{
+  "timestamp": "2025-07-28T21:57:11.722Z",
+  "current_manufacturers": {
+    "total_manufacturers": 10,
+    "manufacturers": {
+      "tuya": {
+        "name": "Tuya",
+        "aliases": [
+          "Tuya",
+          "TUYA",
+          "tuya"
+        ],
+        "brands": [],
+        "model_prefixes": [
+          "TS",
+          "TH",
+          "TZ",
+          "TY"
+        ],
+        "clusters": [],
+        "capabilities": [],
+        "characteristics": {
+          "reliable": true,
+          "widespread": true,
+          "standard_compliant": true,
+          "good_support": true
+        },
+        "coverage_score": 40,
+        "missing_features": [
+          "brands",
+          "clusters",
+          "capabilities"
+        ],
+        "recommendations": [
+          "Add brand information for comprehensive coverage",
+          "Add Zigbee clusters for proper device communication",
+          "Add Homey capabilities for device functionality"
+        ]
+      },
+      "zemismart": {
+        "name": "Zemismart",
+        "aliases": [
+          "Zemismart",
+          "ZEMISMART",
+          "zemismart",
+          "ZemiSmart"
+        ],
+        "brands": [],
+        "model_prefixes": [
+          "TZ",
+          "ZS",
+          "ZM"
+        ],
+        "clusters": [],
+        "capabilities": [],
+        "characteristics": {
+          "premium_quality": true,
+          "advanced_features": true,
+          "good_support": true,
+          "reliable": true
+        },
+        "coverage_score": 40,
+        "missing_features": [
+          "brands",
+          "clusters",
+          "capabilities"
+        ],
+        "recommendations": [
+          "Add brand information for comprehensive coverage",
+          "Add Zigbee clusters for proper device communication",
+          "Add Homey capabilities for device functionality"
+        ]
+      },
+      "novadigital": {
+        "name": "NovaDigital",
+        "aliases": [
+          "NovaDigital",
+          "NOVADIGITAL",
+          "novadigital",
+          "Nova Digital"
+        ],
+        "brands": [],
+        "model_prefixes": [
+          "ND",
+          "NV",
+          "NOVA"
+        ],
+        "clusters": [],
+        "capabilities": [],
+        "characteristics": {
+          "power_monitoring": true,
+          "energy_efficient": true,
+          "professional_grade": true,
+          "reliable": true
+        },
+        "coverage_score": 40,
+        "missing_features": [
+          "brands",
+          "clusters",
+          "capabilities"
+        ],
+        "recommendations": [
+          "Add brand information for comprehensive coverage",
+          "Add Zigbee clusters for proper device communication",
+          "Add Homey capabilities for device functionality"
+        ]
+      },
+      "blitzwolf": {
+        "name": "BlitzWolf",
+        "aliases": [
+          "BlitzWolf",
+          "BLITZWOLF",
+          "blitzwolf",
+          "Blitz Wolf"
+        ],
+        "brands": [],
+        "model_prefixes": [
+          "BW",
+          "BL",
+          "BW-"
+        ],
+        "clusters": [],
+        "capabilities": [],
+        "characteristics": {
+          "cost_effective": true,
+          "good_performance": true,
+          "popular_choice": true,
+          "reliable": true
+        },
+        "coverage_score": 40,
+        "missing_features": [
+          "brands",
+          "clusters",
+          "capabilities"
+        ],
+        "recommendations": [
+          "Add brand information for comprehensive coverage",
+          "Add Zigbee clusters for proper device communication",
+          "Add Homey capabilities for device functionality"
+        ]
+      },
+      "moes": {
+        "name": "Moes",
+        "aliases": [
+          "Moes",
+          "MOES",
+          "moes",
+          "MOESGO"
+        ],
+        "brands": [],
+        "model_prefixes": [
+          "MS",
+          "MO",
+          "MOES"
+        ],
+        "clusters": [],
+        "capabilities": [],
+        "characteristics": {
+          "thermostat_specialist": true,
+          "climate_control": true,
+          "energy_saving": true,
+          "reliable": true
+        },
+        "coverage_score": 40,
+        "missing_features": [
+          "brands",
+          "clusters",
+          "capabilities"
+        ],
+        "recommendations": [
+          "Add brand information for comprehensive coverage",
+          "Add Zigbee clusters for proper device communication",
+          "Add Homey capabilities for device functionality"
+        ]
+      },
+      "smartlife": {
+        "name": "Smart Life",
+        "aliases": [
+          "Smart Life",
+          "SMART LIFE",
+          "smartlife",
+          "SmartLife"
+        ],
+        "brands": [],
+        "model_prefixes": [
+          "SL",
+          "SM",
+          "SMART"
+        ],
+        "clusters": [],
+        "capabilities": [],
+        "characteristics": {
+          "basic_functionality": true,
+          "cost_effective": true,
+          "widespread": true,
+          "reliable": true
+        },
+        "coverage_score": 40,
+        "missing_features": [
+          "brands",
+          "clusters",
+          "capabilities"
+        ],
+        "recommendations": [
+          "Add brand information for comprehensive coverage",
+          "Add Zigbee clusters for proper device communication",
+          "Add Homey capabilities for device functionality"
+        ]
+      },
+      "gosund": {
+        "name": "Gosund",
+        "aliases": [
+          "Gosund",
+          "GOSUND",
+          "gosund",
+          "GoSund"
+        ],
+        "brands": [],
+        "model_prefixes": [
+          "GS",
+          "GO",
+          "GOSUND"
+        ],
+        "clusters": [],
+        "capabilities": [],
+        "characteristics": {
+          "power_monitoring": true,
+          "good_quality": true,
+          "popular": true,
+          "reliable": true
+        },
+        "coverage_score": 40,
+        "missing_features": [
+          "brands",
+          "clusters",
+          "capabilities"
+        ],
+        "recommendations": [
+          "Add brand information for comprehensive coverage",
+          "Add Zigbee clusters for proper device communication",
+          "Add Homey capabilities for device functionality"
+        ]
+      },
+      "meross": {
+        "name": "Meross",
+        "aliases": [
+          "Meross",
+          "MEROSS",
+          "meross"
+        ],
+        "brands": [],
+        "model_prefixes": [
+          "MR",
+          "ME",
+          "MEROSS"
+        ],
+        "clusters": [],
+        "capabilities": [],
+        "characteristics": {
+          "good_quality": true,
+          "reliable": true,
+          "popular": true,
+          "good_support": true
+        },
+        "coverage_score": 40,
+        "missing_features": [
+          "brands",
+          "clusters",
+          "capabilities"
+        ],
+        "recommendations": [
+          "Add brand information for comprehensive coverage",
+          "Add Zigbee clusters for proper device communication",
+          "Add Homey capabilities for device functionality"
+        ]
+      },
+      "teckin": {
+        "name": "Teckin",
+        "aliases": [
+          "Teckin",
+          "TECKIN",
+          "teckin"
+        ],
+        "brands": [],
+        "model_prefixes": [
+          "TK",
+          "TE",
+          "TECKIN"
+        ],
+        "clusters": [],
+        "capabilities": [],
+        "characteristics": {
+          "cost_effective": true,
+          "good_performance": true,
+          "reliable": true,
+          "popular": true
+        },
+        "coverage_score": 40,
+        "missing_features": [
+          "brands",
+          "clusters",
+          "capabilities"
+        ],
+        "recommendations": [
+          "Add brand information for comprehensive coverage",
+          "Add Zigbee clusters for proper device communication",
+          "Add Homey capabilities for device functionality"
+        ]
+      },
+      "unknown": {
+        "name": "Unknown",
+        "aliases": [
+          "Unknown",
+          "UNKNOWN",
+          "unknown",
+          "Generic"
+        ],
+        "brands": [],
+        "model_prefixes": [
+          "UNKNOWN",
+          "GEN",
+          "GENERIC"
+        ],
+        "clusters": [],
+        "capabilities": [],
+        "characteristics": {
+          "intelligent_detection": true,
+          "fallback_mode": true,
+          "basic_support": true,
+          "generic_pattern": true
+        },
+        "coverage_score": 40,
+        "missing_features": [
+          "brands",
+          "clusters",
+          "capabilities"
+        ],
+        "recommendations": [
+          "Add brand information for comprehensive coverage",
+          "Add Zigbee clusters for proper device communication",
+          "Add Homey capabilities for device functionality"
+        ]
+      }
+    },
+    "coverage_score": 40,
+    "missing_manufacturers": [],
+    "recommendations": []
+  },
+  "missing_manufacturers": [
+    {
+      "key": "aqara",
+      "name": "Aqara",
+      "aliases": [
+        "aqara",
+        "aqara_smart"
+      ],
+      "brands": [
+        "Aqara",
+        "Xiaomi"
+      ],
+      "model_prefixes": [
+        "WSDCGQ",
+        "WSDCGQ01LM",
+        "WSDCGQ11LM",
+        "SNZB-01",
+        "SNZB-02",
+        "SNZB-03",
+        "SNZB-04"
+      ],
+      "clusters": [
+        "genBasic",
+        "genPowerCfg",
+        "genTempMeasurement",
+        "genHumidityMeasurement",
+        "genPressureMeasurement"
+      ],
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_pressure",
+        "measure_battery"
+      ],
+      "characteristics": [
+        "temperature_sensor",
+        "humidity_sensor",
+        "pressure_sensor",
+        "battery_powered"
+      ]
+    },
+    {
+      "key": "ikea",
+      "name": "IKEA",
+      "aliases": [
+        "ikea",
+        "tradfri"
+      ],
+      "brands": [
+        "IKEA",
+        "TRÅDFRI"
+      ],
+      "model_prefixes": [
+        "LED",
+        "TRADFRI",
+        "FYRTUR",
+        "KADRILJ"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genColorCtrl",
+        "genPowerCfg"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature"
+      ],
+      "characteristics": [
+        "smart_bulb",
+        "smart_switch",
+        "smart_blind",
+        "color_light"
+      ]
+    },
+    {
+      "key": "philips",
+      "name": "Philips",
+      "aliases": [
+        "philips",
+        "hue"
+      ],
+      "brands": [
+        "Philips",
+        "Hue"
+      ],
+      "model_prefixes": [
+        "LCT",
+        "LST",
+        "LLC",
+        "LWB",
+        "LWA"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genColorCtrl",
+        "genPowerCfg"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature"
+      ],
+      "characteristics": [
+        "smart_bulb",
+        "color_light",
+        "white_light",
+        "bridge_compatible"
+      ]
+    },
+    {
+      "key": "samsung",
+      "name": "Samsung",
+      "aliases": [
+        "samsung",
+        "smartthings"
+      ],
+      "brands": [
+        "Samsung",
+        "SmartThings"
+      ],
+      "model_prefixes": [
+        "ST",
+        "GP",
+        "IM",
+        "F-ADT"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg",
+        "genAlarms"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_power",
+        "alarm_contact"
+      ],
+      "characteristics": [
+        "smart_switch",
+        "power_monitor",
+        "contact_sensor",
+        "motion_sensor"
+      ]
+    },
+    {
+      "key": "bosch",
+      "name": "Bosch",
+      "aliases": [
+        "bosch",
+        "bosch_smart_home"
+      ],
+      "brands": [
+        "Bosch",
+        "Bosch Smart Home"
+      ],
+      "model_prefixes": [
+        "BSH",
+        "BTH",
+        "BSR"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg",
+        "genTempMeasurement"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_temperature",
+        "measure_power"
+      ],
+      "characteristics": [
+        "smart_switch",
+        "thermostat",
+        "temperature_sensor",
+        "power_monitor"
+      ]
+    },
+    {
+      "key": "legrand",
+      "name": "Legrand",
+      "aliases": [
+        "legrand",
+        "bticino"
+      ],
+      "brands": [
+        "Legrand",
+        "BTicino"
+      ],
+      "model_prefixes": [
+        "LC",
+        "LD",
+        "LM",
+        "LN"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_power"
+      ],
+      "characteristics": [
+        "smart_switch",
+        "dimmer",
+        "power_monitor",
+        "wall_switch"
+      ]
+    },
+    {
+      "key": "schneider",
+      "name": "Schneider Electric",
+      "aliases": [
+        "schneider",
+        "wiser"
+      ],
+      "brands": [
+        "Schneider Electric",
+        "Wiser"
+      ],
+      "model_prefixes": [
+        "WISER",
+        "SCH",
+        "SE"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg",
+        "genTempMeasurement"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_temperature",
+        "measure_power"
+      ],
+      "characteristics": [
+        "smart_switch",
+        "thermostat",
+        "temperature_sensor",
+        "power_monitor"
+      ]
+    },
+    {
+      "key": "somfy",
+      "name": "Somfy",
+      "aliases": [
+        "somfy",
+        "tao"
+      ],
+      "brands": [
+        "Somfy",
+        "Tahoma"
+      ],
+      "model_prefixes": [
+        "SOMFY",
+        "TAO",
+        "IO"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "windowcoverings_set"
+      ],
+      "characteristics": [
+        "smart_blind",
+        "roller_shutter",
+        "curtain_control",
+        "window_control"
+      ]
+    },
+    {
+      "key": "velux",
+      "name": "VELUX",
+      "aliases": [
+        "velux",
+        "velux_active"
+      ],
+      "brands": [
+        "VELUX",
+        "VELUX Active"
+      ],
+      "model_prefixes": [
+        "VELUX",
+        "VAC"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "windowcoverings_set"
+      ],
+      "characteristics": [
+        "smart_window",
+        "roof_window",
+        "skylight_control",
+        "ventilation"
+      ]
+    },
+    {
+      "key": "niko",
+      "name": "Niko",
+      "aliases": [
+        "niko",
+        "niko_home_control"
+      ],
+      "brands": [
+        "Niko",
+        "Niko Home Control"
+      ],
+      "model_prefixes": [
+        "NIKO",
+        "NHC"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_power"
+      ],
+      "characteristics": [
+        "smart_switch",
+        "dimmer",
+        "power_monitor",
+        "wall_switch"
+      ]
+    }
+  ],
+  "technical_specifications": {
+    "zigbee_clusters": {
+      "basic": [
+        "genBasic",
+        "genPowerCfg",
+        "genDeviceTempCfg"
+      ],
+      "lighting": [
+        "genOnOff",
+        "genLevelCtrl",
+        "genColorCtrl",
+        "genScenes"
+      ],
+      "sensors": [
+        "genTempMeasurement",
+        "genHumidityMeasurement",
+        "genPressureMeasurement",
+        "genIlluminanceMeasurement"
+      ],
+      "security": [
+        "genAlarms",
+        "genPollCtrl",
+        "genTime"
+      ],
+      "hvac": [
+        "genThermostat",
+        "genFanCtrl",
+        "genThermostatUI"
+      ],
+      "closures": [
+        "genWindowCovering",
+        "genDoorLock"
+      ],
+      "measurement": [
+        "genPowerCfg",
+        "genEnergyMeasurement",
+        "genMetering"
+      ]
+    },
+    "homey_capabilities": {
+      "lighting": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature"
+      ],
+      "sensors": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_pressure",
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "security": [
+        "alarm_contact",
+        "alarm_motion",
+        "alarm_smoke",
+        "alarm_water"
+      ],
+      "hvac": [
+        "thermostat_mode",
+        "thermostat_target_temperature",
+        "thermostat_measure_temperature"
+      ],
+      "closures": [
+        "windowcoverings_set",
+        "windowcoverings_tilt_set",
+        "lock_set"
+      ],
+      "measurement": [
+        "measure_power",
+        "measure_voltage",
+        "measure_current",
+        "measure_energy"
+      ]
+    },
+    "device_characteristics": {
+      "power_source": [
+        "battery_powered",
+        "mains_powered",
+        "usb_powered"
+      ],
+      "connectivity": [
+        "zigbee",
+        "wifi",
+        "bluetooth",
+        "thread"
+      ],
+      "placement": [
+        "indoor",
+        "outdoor",
+        "wall_mounted",
+        "ceiling_mounted"
+      ],
+      "environment": [
+        "waterproof",
+        "dustproof",
+        "temperature_resistant"
+      ],
+      "features": [
+        "color_light",
+        "white_light",
+        "dimmable",
+        "color_temperature",
+        "rgb_control"
+      ]
+    }
+  },
+  "recommendations": [
+    {
+      "type": "improve_existing",
+      "manufacturer": "tuya",
+      "priority": "high",
+      "actions": [
+        "Add brand information for comprehensive coverage",
+        "Add Zigbee clusters for proper device communication",
+        "Add Homey capabilities for device functionality"
+      ]
+    },
+    {
+      "type": "improve_existing",
+      "manufacturer": "zemismart",
+      "priority": "high",
+      "actions": [
+        "Add brand information for comprehensive coverage",
+        "Add Zigbee clusters for proper device communication",
+        "Add Homey capabilities for device functionality"
+      ]
+    },
+    {
+      "type": "improve_existing",
+      "manufacturer": "novadigital",
+      "priority": "high",
+      "actions": [
+        "Add brand information for comprehensive coverage",
+        "Add Zigbee clusters for proper device communication",
+        "Add Homey capabilities for device functionality"
+      ]
+    },
+    {
+      "type": "improve_existing",
+      "manufacturer": "blitzwolf",
+      "priority": "high",
+      "actions": [
+        "Add brand information for comprehensive coverage",
+        "Add Zigbee clusters for proper device communication",
+        "Add Homey capabilities for device functionality"
+      ]
+    },
+    {
+      "type": "improve_existing",
+      "manufacturer": "moes",
+      "priority": "high",
+      "actions": [
+        "Add brand information for comprehensive coverage",
+        "Add Zigbee clusters for proper device communication",
+        "Add Homey capabilities for device functionality"
+      ]
+    },
+    {
+      "type": "improve_existing",
+      "manufacturer": "smartlife",
+      "priority": "high",
+      "actions": [
+        "Add brand information for comprehensive coverage",
+        "Add Zigbee clusters for proper device communication",
+        "Add Homey capabilities for device functionality"
+      ]
+    },
+    {
+      "type": "improve_existing",
+      "manufacturer": "gosund",
+      "priority": "high",
+      "actions": [
+        "Add brand information for comprehensive coverage",
+        "Add Zigbee clusters for proper device communication",
+        "Add Homey capabilities for device functionality"
+      ]
+    },
+    {
+      "type": "improve_existing",
+      "manufacturer": "meross",
+      "priority": "high",
+      "actions": [
+        "Add brand information for comprehensive coverage",
+        "Add Zigbee clusters for proper device communication",
+        "Add Homey capabilities for device functionality"
+      ]
+    },
+    {
+      "type": "improve_existing",
+      "manufacturer": "teckin",
+      "priority": "high",
+      "actions": [
+        "Add brand information for comprehensive coverage",
+        "Add Zigbee clusters for proper device communication",
+        "Add Homey capabilities for device functionality"
+      ]
+    },
+    {
+      "type": "improve_existing",
+      "manufacturer": "unknown",
+      "priority": "high",
+      "actions": [
+        "Add brand information for comprehensive coverage",
+        "Add Zigbee clusters for proper device communication",
+        "Add Homey capabilities for device functionality"
+      ]
+    },
+    {
+      "type": "add_new",
+      "manufacturer": "aqara",
+      "priority": "high",
+      "actions": [
+        "Add Aqara to the manufacturer list",
+        "Implement 2 brands",
+        "Add 7 model prefixes",
+        "Support 5 Zigbee clusters",
+        "Implement 4 Homey capabilities"
+      ]
+    },
+    {
+      "type": "add_new",
+      "manufacturer": "ikea",
+      "priority": "high",
+      "actions": [
+        "Add IKEA to the manufacturer list",
+        "Implement 2 brands",
+        "Add 4 model prefixes",
+        "Support 5 Zigbee clusters",
+        "Implement 5 Homey capabilities"
+      ]
+    },
+    {
+      "type": "add_new",
+      "manufacturer": "philips",
+      "priority": "high",
+      "actions": [
+        "Add Philips to the manufacturer list",
+        "Implement 2 brands",
+        "Add 5 model prefixes",
+        "Support 5 Zigbee clusters",
+        "Implement 5 Homey capabilities"
+      ]
+    },
+    {
+      "type": "add_new",
+      "manufacturer": "samsung",
+      "priority": "high",
+      "actions": [
+        "Add Samsung to the manufacturer list",
+        "Implement 2 brands",
+        "Add 4 model prefixes",
+        "Support 5 Zigbee clusters",
+        "Implement 4 Homey capabilities"
+      ]
+    },
+    {
+      "type": "add_new",
+      "manufacturer": "bosch",
+      "priority": "high",
+      "actions": [
+        "Add Bosch to the manufacturer list",
+        "Implement 2 brands",
+        "Add 3 model prefixes",
+        "Support 5 Zigbee clusters",
+        "Implement 4 Homey capabilities"
+      ]
+    },
+    {
+      "type": "add_new",
+      "manufacturer": "legrand",
+      "priority": "high",
+      "actions": [
+        "Add Legrand to the manufacturer list",
+        "Implement 2 brands",
+        "Add 4 model prefixes",
+        "Support 4 Zigbee clusters",
+        "Implement 3 Homey capabilities"
+      ]
+    },
+    {
+      "type": "add_new",
+      "manufacturer": "schneider",
+      "priority": "high",
+      "actions": [
+        "Add Schneider Electric to the manufacturer list",
+        "Implement 2 brands",
+        "Add 3 model prefixes",
+        "Support 5 Zigbee clusters",
+        "Implement 4 Homey capabilities"
+      ]
+    },
+    {
+      "type": "add_new",
+      "manufacturer": "somfy",
+      "priority": "high",
+      "actions": [
+        "Add Somfy to the manufacturer list",
+        "Implement 2 brands",
+        "Add 3 model prefixes",
+        "Support 4 Zigbee clusters",
+        "Implement 3 Homey capabilities"
+      ]
+    },
+    {
+      "type": "add_new",
+      "manufacturer": "velux",
+      "priority": "high",
+      "actions": [
+        "Add VELUX to the manufacturer list",
+        "Implement 2 brands",
+        "Add 2 model prefixes",
+        "Support 4 Zigbee clusters",
+        "Implement 3 Homey capabilities"
+      ]
+    },
+    {
+      "type": "add_new",
+      "manufacturer": "niko",
+      "priority": "high",
+      "actions": [
+        "Add Niko to the manufacturer list",
+        "Implement 2 brands",
+        "Add 2 model prefixes",
+        "Support 4 Zigbee clusters",
+        "Implement 3 Homey capabilities"
+      ]
+    }
+  ],
+  "implementation_plan": {
+    "phase_1": {
+      "title": "Améliorer les fabricants existants",
+      "manufacturers": [
+        "tuya",
+        "zemismart",
+        "novadigital",
+        "blitzwolf",
+        "moes"
+      ],
+      "duration": "2 weeks",
+      "tasks": [
+        "Analyser les données manquantes",
+        "Rechercher les spécifications techniques",
+        "Implémenter les améliorations",
+        "Tester avec des devices réels"
+      ]
+    },
+    "phase_2": {
+      "title": "Ajouter les fabricants manquants prioritaires",
+      "manufacturers": [
+        {
+          "key": "aqara",
+          "name": "Aqara",
+          "aliases": [
+            "aqara",
+            "aqara_smart"
+          ],
+          "brands": [
+            "Aqara",
+            "Xiaomi"
+          ],
+          "model_prefixes": [
+            "WSDCGQ",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "SNZB-01",
+            "SNZB-02",
+            "SNZB-03",
+            "SNZB-04"
+          ],
+          "clusters": [
+            "genBasic",
+            "genPowerCfg",
+            "genTempMeasurement",
+            "genHumidityMeasurement",
+            "genPressureMeasurement"
+          ],
+          "capabilities": [
+            "measure_temperature",
+            "measure_humidity",
+            "measure_pressure",
+            "measure_battery"
+          ],
+          "characteristics": [
+            "temperature_sensor",
+            "humidity_sensor",
+            "pressure_sensor",
+            "battery_powered"
+          ]
+        },
+        {
+          "key": "ikea",
+          "name": "IKEA",
+          "aliases": [
+            "ikea",
+            "tradfri"
+          ],
+          "brands": [
+            "IKEA",
+            "TRÅDFRI"
+          ],
+          "model_prefixes": [
+            "LED",
+            "TRADFRI",
+            "FYRTUR",
+            "KADRILJ"
+          ],
+          "clusters": [
+            "genBasic",
+            "genOnOff",
+            "genLevelCtrl",
+            "genColorCtrl",
+            "genPowerCfg"
+          ],
+          "capabilities": [
+            "onoff",
+            "dim",
+            "light_hue",
+            "light_saturation",
+            "light_temperature"
+          ],
+          "characteristics": [
+            "smart_bulb",
+            "smart_switch",
+            "smart_blind",
+            "color_light"
+          ]
+        },
+        {
+          "key": "philips",
+          "name": "Philips",
+          "aliases": [
+            "philips",
+            "hue"
+          ],
+          "brands": [
+            "Philips",
+            "Hue"
+          ],
+          "model_prefixes": [
+            "LCT",
+            "LST",
+            "LLC",
+            "LWB",
+            "LWA"
+          ],
+          "clusters": [
+            "genBasic",
+            "genOnOff",
+            "genLevelCtrl",
+            "genColorCtrl",
+            "genPowerCfg"
+          ],
+          "capabilities": [
+            "onoff",
+            "dim",
+            "light_hue",
+            "light_saturation",
+            "light_temperature"
+          ],
+          "characteristics": [
+            "smart_bulb",
+            "color_light",
+            "white_light",
+            "bridge_compatible"
+          ]
+        },
+        {
+          "key": "samsung",
+          "name": "Samsung",
+          "aliases": [
+            "samsung",
+            "smartthings"
+          ],
+          "brands": [
+            "Samsung",
+            "SmartThings"
+          ],
+          "model_prefixes": [
+            "ST",
+            "GP",
+            "IM",
+            "F-ADT"
+          ],
+          "clusters": [
+            "genBasic",
+            "genOnOff",
+            "genLevelCtrl",
+            "genPowerCfg",
+            "genAlarms"
+          ],
+          "capabilities": [
+            "onoff",
+            "dim",
+            "measure_power",
+            "alarm_contact"
+          ],
+          "characteristics": [
+            "smart_switch",
+            "power_monitor",
+            "contact_sensor",
+            "motion_sensor"
+          ]
+        },
+        {
+          "key": "bosch",
+          "name": "Bosch",
+          "aliases": [
+            "bosch",
+            "bosch_smart_home"
+          ],
+          "brands": [
+            "Bosch",
+            "Bosch Smart Home"
+          ],
+          "model_prefixes": [
+            "BSH",
+            "BTH",
+            "BSR"
+          ],
+          "clusters": [
+            "genBasic",
+            "genOnOff",
+            "genLevelCtrl",
+            "genPowerCfg",
+            "genTempMeasurement"
+          ],
+          "capabilities": [
+            "onoff",
+            "dim",
+            "measure_temperature",
+            "measure_power"
+          ],
+          "characteristics": [
+            "smart_switch",
+            "thermostat",
+            "temperature_sensor",
+            "power_monitor"
+          ]
+        }
+      ],
+      "duration": "3 weeks",
+      "tasks": [
+        "Rechercher les spécifications détaillées",
+        "Implémenter les fabricants",
+        "Créer les drivers correspondants",
+        "Tester la compatibilité"
+      ]
+    },
+    "phase_3": {
+      "title": "Finaliser la couverture complète",
+      "manufacturers": [
+        {
+          "key": "legrand",
+          "name": "Legrand",
+          "aliases": [
+            "legrand",
+            "bticino"
+          ],
+          "brands": [
+            "Legrand",
+            "BTicino"
+          ],
+          "model_prefixes": [
+            "LC",
+            "LD",
+            "LM",
+            "LN"
+          ],
+          "clusters": [
+            "genBasic",
+            "genOnOff",
+            "genLevelCtrl",
+            "genPowerCfg"
+          ],
+          "capabilities": [
+            "onoff",
+            "dim",
+            "measure_power"
+          ],
+          "characteristics": [
+            "smart_switch",
+            "dimmer",
+            "power_monitor",
+            "wall_switch"
+          ]
+        },
+        {
+          "key": "schneider",
+          "name": "Schneider Electric",
+          "aliases": [
+            "schneider",
+            "wiser"
+          ],
+          "brands": [
+            "Schneider Electric",
+            "Wiser"
+          ],
+          "model_prefixes": [
+            "WISER",
+            "SCH",
+            "SE"
+          ],
+          "clusters": [
+            "genBasic",
+            "genOnOff",
+            "genLevelCtrl",
+            "genPowerCfg",
+            "genTempMeasurement"
+          ],
+          "capabilities": [
+            "onoff",
+            "dim",
+            "measure_temperature",
+            "measure_power"
+          ],
+          "characteristics": [
+            "smart_switch",
+            "thermostat",
+            "temperature_sensor",
+            "power_monitor"
+          ]
+        },
+        {
+          "key": "somfy",
+          "name": "Somfy",
+          "aliases": [
+            "somfy",
+            "tao"
+          ],
+          "brands": [
+            "Somfy",
+            "Tahoma"
+          ],
+          "model_prefixes": [
+            "SOMFY",
+            "TAO",
+            "IO"
+          ],
+          "clusters": [
+            "genBasic",
+            "genOnOff",
+            "genLevelCtrl",
+            "genPowerCfg"
+          ],
+          "capabilities": [
+            "onoff",
+            "dim",
+            "windowcoverings_set"
+          ],
+          "characteristics": [
+            "smart_blind",
+            "roller_shutter",
+            "curtain_control",
+            "window_control"
+          ]
+        },
+        {
+          "key": "velux",
+          "name": "VELUX",
+          "aliases": [
+            "velux",
+            "velux_active"
+          ],
+          "brands": [
+            "VELUX",
+            "VELUX Active"
+          ],
+          "model_prefixes": [
+            "VELUX",
+            "VAC"
+          ],
+          "clusters": [
+            "genBasic",
+            "genOnOff",
+            "genLevelCtrl",
+            "genPowerCfg"
+          ],
+          "capabilities": [
+            "onoff",
+            "dim",
+            "windowcoverings_set"
+          ],
+          "characteristics": [
+            "smart_window",
+            "roof_window",
+            "skylight_control",
+            "ventilation"
+          ]
+        },
+        {
+          "key": "niko",
+          "name": "Niko",
+          "aliases": [
+            "niko",
+            "niko_home_control"
+          ],
+          "brands": [
+            "Niko",
+            "Niko Home Control"
+          ],
+          "model_prefixes": [
+            "NIKO",
+            "NHC"
+          ],
+          "clusters": [
+            "genBasic",
+            "genOnOff",
+            "genLevelCtrl",
+            "genPowerCfg"
+          ],
+          "capabilities": [
+            "onoff",
+            "dim",
+            "measure_power"
+          ],
+          "characteristics": [
+            "smart_switch",
+            "dimmer",
+            "power_monitor",
+            "wall_switch"
+          ]
+        }
+      ],
+      "duration": "4 weeks",
+      "tasks": [
+        "Implémenter les fabricants restants",
+        "Optimiser les performances",
+        "Finaliser la documentation",
+        "Déployer en production"
+      ]
+    }
+  }
+}

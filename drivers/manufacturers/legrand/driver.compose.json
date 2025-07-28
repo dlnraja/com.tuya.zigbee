@@ -1,0 +1,94 @@
+{
+  "id": "legrand-base-device",
+  "title": {
+    "en": "Legrand Base Device",
+    "fr": "Device de Base Legrand",
+    "nl": "Legrand Basis Apparaat",
+    "ta": "Legrand அடிப்படை சாதனம்"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "images": {
+    "small": "/assets/images/small/legrand.png",
+    "large": "/assets/images/large/legrand.png"
+  },
+  "pairing": [
+    {
+      "id": "legrand_pairing",
+      "title": {
+        "en": "Legrand Pairing",
+        "fr": "Appairage Legrand",
+        "nl": "legrand Koppeling",
+        "ta": "Legrand இணைப்பு"
+      },
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_power"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg"
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "id": "manufacturer",
+      "type": "text",
+      "title": {
+        "en": "Manufacturer",
+        "fr": "Fabricant",
+        "nl": "Fabrikant",
+        "ta": "உற்பத்தியாளர்"
+      },
+      "value": "Legrand"
+    },
+    {
+      "id": "brands",
+      "type": "text",
+      "title": {
+        "en": "Brands",
+        "fr": "Marques",
+        "nl": "Merken",
+        "ta": "பிராண்டுகள்"
+      },
+      "value": "Legrand, BTicino"
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": [
+      {
+        "id": "set_dim_level",
+        "title": {
+          "en": "Set Dim Level",
+          "fr": "Définir le Niveau de Luminosité",
+          "nl": "Dimniveau Instellen",
+          "ta": "மங்கல் நிலையை அமைக்கவும்"
+        },
+        "args": [
+          {
+            "name": "level",
+            "type": "number",
+            "title": {
+              "en": "Level",
+              "fr": "Niveau",
+              "nl": "Niveau",
+              "ta": "நிலை"
+            },
+            "min": 0,
+            "max": 100
+          }
+        ]
+      }
+    ]
+  }
+}

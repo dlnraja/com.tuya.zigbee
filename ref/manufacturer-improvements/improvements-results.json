@@ -1,0 +1,2028 @@
+{
+  "timestamp": "2025-07-28T22:08:56.315Z",
+  "improvements": [
+    {
+      "manufacturer": "tuya",
+      "original_score": 40,
+      "improved_score": 100,
+      "improvements": [
+        "brands",
+        "clusters",
+        "capabilities"
+      ],
+      "enhanced_data": {
+        "name": "Tuya",
+        "aliases": [
+          "Tuya",
+          "TUYA",
+          "tuya"
+        ],
+        "brands": [
+          "Tuya",
+          "TUYA",
+          "Smart Life",
+          "SmartLife"
+        ],
+        "model_prefixes": [
+          "TS",
+          "TH",
+          "TZ",
+          "TY"
+        ],
+        "clusters": [
+          "genBasic",
+          "genOnOff",
+          "genLevelCtrl",
+          "genPowerCfg",
+          "genColorCtrl"
+        ],
+        "capabilities": [
+          "onoff",
+          "dim",
+          "light_hue",
+          "light_saturation",
+          "measure_power"
+        ],
+        "characteristics": [
+          "smart_switch",
+          "smart_bulb",
+          "color_light",
+          "power_monitor"
+        ]
+      }
+    },
+    {
+      "manufacturer": "zemismart",
+      "original_score": 40,
+      "improved_score": 100,
+      "improvements": [
+        "brands",
+        "clusters",
+        "capabilities"
+      ],
+      "enhanced_data": {
+        "name": "Zemismart",
+        "aliases": [
+          "Zemismart",
+          "ZEMISMART",
+          "zemismart",
+          "ZemiSmart"
+        ],
+        "brands": [
+          "Zemismart",
+          "ZEMISMART",
+          "ZemiSmart"
+        ],
+        "model_prefixes": [
+          "TZ",
+          "ZS",
+          "ZM"
+        ],
+        "clusters": [
+          "genBasic",
+          "genOnOff",
+          "genLevelCtrl",
+          "genPowerCfg",
+          "genColorCtrl"
+        ],
+        "capabilities": [
+          "onoff",
+          "dim",
+          "light_hue",
+          "light_saturation",
+          "measure_power"
+        ],
+        "characteristics": [
+          "smart_switch",
+          "smart_bulb",
+          "color_light",
+          "power_monitor"
+        ]
+      }
+    },
+    {
+      "manufacturer": "novadigital",
+      "original_score": 40,
+      "improved_score": 100,
+      "improvements": [
+        "brands",
+        "clusters",
+        "capabilities"
+      ],
+      "enhanced_data": {
+        "name": "NovaDigital",
+        "aliases": [
+          "NovaDigital",
+          "NOVADIGITAL",
+          "novadigital",
+          "Nova Digital"
+        ],
+        "brands": [
+          "NovaDigital",
+          "NOVADIGITAL",
+          "Nova Digital"
+        ],
+        "model_prefixes": [
+          "ND",
+          "NV",
+          "NOVA"
+        ],
+        "clusters": [
+          "genBasic",
+          "genOnOff",
+          "genLevelCtrl",
+          "genPowerCfg",
+          "genTempMeasurement"
+        ],
+        "capabilities": [
+          "onoff",
+          "dim",
+          "measure_power",
+          "measure_temperature"
+        ],
+        "characteristics": [
+          "smart_switch",
+          "power_monitor",
+          "temperature_sensor"
+        ]
+      }
+    },
+    {
+      "manufacturer": "blitzwolf",
+      "original_score": 40,
+      "improved_score": 100,
+      "improvements": [
+        "brands",
+        "clusters",
+        "capabilities"
+      ],
+      "enhanced_data": {
+        "name": "BlitzWolf",
+        "aliases": [
+          "BlitzWolf",
+          "BLITZWOLF",
+          "blitzwolf",
+          "Blitz Wolf"
+        ],
+        "brands": [
+          "BlitzWolf",
+          "BLITZWOLF",
+          "Blitz Wolf"
+        ],
+        "model_prefixes": [
+          "BW",
+          "BL",
+          "BW-"
+        ],
+        "clusters": [
+          "genBasic",
+          "genOnOff",
+          "genPowerCfg",
+          "genTempMeasurement"
+        ],
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "measure_temperature"
+        ],
+        "characteristics": [
+          "smart_switch",
+          "power_monitor",
+          "temperature_sensor"
+        ]
+      }
+    },
+    {
+      "manufacturer": "moes",
+      "original_score": 40,
+      "improved_score": 100,
+      "improvements": [
+        "brands",
+        "clusters",
+        "capabilities"
+      ],
+      "enhanced_data": {
+        "name": "Moes",
+        "aliases": [
+          "Moes",
+          "MOES",
+          "moes",
+          "MOESGO"
+        ],
+        "brands": [
+          "Moes",
+          "MOES",
+          "MOESGO"
+        ],
+        "model_prefixes": [
+          "MS",
+          "MO",
+          "MOES"
+        ],
+        "clusters": [
+          "genBasic",
+          "genOnOff",
+          "genLevelCtrl",
+          "genTempMeasurement",
+          "genThermostat"
+        ],
+        "capabilities": [
+          "onoff",
+          "dim",
+          "measure_temperature",
+          "thermostat_mode"
+        ],
+        "characteristics": [
+          "smart_switch",
+          "thermostat",
+          "temperature_sensor"
+        ]
+      }
+    },
+    {
+      "manufacturer": "smartlife",
+      "original_score": 40,
+      "improved_score": 100,
+      "improvements": [
+        "brands",
+        "clusters",
+        "capabilities"
+      ],
+      "enhanced_data": {
+        "name": "Smart Life",
+        "aliases": [
+          "Smart Life",
+          "SMART LIFE",
+          "smartlife",
+          "SmartLife"
+        ],
+        "brands": [
+          "Smart Life",
+          "SMART LIFE",
+          "SmartLife"
+        ],
+        "model_prefixes": [
+          "SL",
+          "SM",
+          "SMART"
+        ],
+        "clusters": [
+          "genBasic",
+          "genOnOff",
+          "genLevelCtrl",
+          "genPowerCfg"
+        ],
+        "capabilities": [
+          "onoff",
+          "dim",
+          "measure_power"
+        ],
+        "characteristics": [
+          "smart_switch",
+          "smart_bulb",
+          "power_monitor"
+        ]
+      }
+    },
+    {
+      "manufacturer": "gosund",
+      "original_score": 40,
+      "improved_score": 100,
+      "improvements": [
+        "brands",
+        "clusters",
+        "capabilities"
+      ],
+      "enhanced_data": {
+        "name": "Gosund",
+        "aliases": [
+          "Gosund",
+          "GOSUND",
+          "gosund",
+          "GoSund"
+        ],
+        "brands": [
+          "Gosund",
+          "GOSUND",
+          "GoSund"
+        ],
+        "model_prefixes": [
+          "GS",
+          "GO",
+          "GOSUND"
+        ],
+        "clusters": [
+          "genBasic",
+          "genOnOff",
+          "genLevelCtrl",
+          "genPowerCfg"
+        ],
+        "capabilities": [
+          "onoff",
+          "dim",
+          "measure_power"
+        ],
+        "characteristics": [
+          "smart_switch",
+          "smart_bulb",
+          "power_monitor"
+        ]
+      }
+    },
+    {
+      "manufacturer": "meross",
+      "original_score": 40,
+      "improved_score": 100,
+      "improvements": [
+        "brands",
+        "clusters",
+        "capabilities"
+      ],
+      "enhanced_data": {
+        "name": "Meross",
+        "aliases": [
+          "Meross",
+          "MEROSS",
+          "meross"
+        ],
+        "brands": [
+          "Meross",
+          "MEROSS"
+        ],
+        "model_prefixes": [
+          "MR",
+          "ME",
+          "MEROSS"
+        ],
+        "clusters": [
+          "genBasic",
+          "genOnOff",
+          "genLevelCtrl",
+          "genPowerCfg",
+          "genColorCtrl"
+        ],
+        "capabilities": [
+          "onoff",
+          "dim",
+          "light_hue",
+          "light_saturation",
+          "measure_power"
+        ],
+        "characteristics": [
+          "smart_switch",
+          "smart_bulb",
+          "color_light",
+          "power_monitor"
+        ]
+      }
+    },
+    {
+      "manufacturer": "teckin",
+      "original_score": 40,
+      "improved_score": 100,
+      "improvements": [
+        "brands",
+        "clusters",
+        "capabilities"
+      ],
+      "enhanced_data": {
+        "name": "Teckin",
+        "aliases": [
+          "Teckin",
+          "TECKIN",
+          "teckin"
+        ],
+        "brands": [
+          "Teckin",
+          "TECKIN"
+        ],
+        "model_prefixes": [
+          "TK",
+          "TE",
+          "TECKIN"
+        ],
+        "clusters": [
+          "genBasic",
+          "genOnOff",
+          "genLevelCtrl",
+          "genPowerCfg"
+        ],
+        "capabilities": [
+          "onoff",
+          "dim",
+          "measure_power"
+        ],
+        "characteristics": [
+          "smart_switch",
+          "smart_bulb",
+          "power_monitor"
+        ]
+      }
+    },
+    {
+      "manufacturer": "unknown",
+      "original_score": 40,
+      "improved_score": 100,
+      "improvements": [
+        "brands",
+        "clusters",
+        "capabilities"
+      ],
+      "enhanced_data": {
+        "name": "Unknown",
+        "aliases": [
+          "Unknown",
+          "UNKNOWN",
+          "unknown",
+          "Generic"
+        ],
+        "brands": [
+          "Unknown",
+          "Generic",
+          "Generic Brand"
+        ],
+        "model_prefixes": [
+          "UNKNOWN",
+          "GEN",
+          "GENERIC"
+        ],
+        "clusters": [
+          "genBasic",
+          "genOnOff",
+          "genLevelCtrl"
+        ],
+        "capabilities": [
+          "onoff",
+          "dim"
+        ],
+        "characteristics": [
+          "smart_switch",
+          "smart_bulb"
+        ]
+      }
+    }
+  ],
+  "added_manufacturers": [
+    {
+      "key": "aqara",
+      "name": "Aqara",
+      "aliases": [
+        "aqara",
+        "aqara_smart"
+      ],
+      "brands": [
+        "Aqara",
+        "Xiaomi"
+      ],
+      "model_prefixes": [
+        "WSDCGQ",
+        "WSDCGQ01LM",
+        "WSDCGQ11LM",
+        "SNZB-01",
+        "SNZB-02",
+        "SNZB-03",
+        "SNZB-04"
+      ],
+      "clusters": [
+        "genBasic",
+        "genPowerCfg",
+        "genTempMeasurement",
+        "genHumidityMeasurement",
+        "genPressureMeasurement"
+      ],
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_pressure",
+        "measure_battery"
+      ],
+      "characteristics": [
+        "temperature_sensor",
+        "humidity_sensor",
+        "pressure_sensor",
+        "battery_powered"
+      ],
+      "coverage_score": 100,
+      "implementation_date": "2025-07-28T22:08:55.635Z"
+    },
+    {
+      "key": "ikea",
+      "name": "IKEA",
+      "aliases": [
+        "ikea",
+        "tradfri"
+      ],
+      "brands": [
+        "IKEA",
+        "TRÅDFRI"
+      ],
+      "model_prefixes": [
+        "LED",
+        "TRADFRI",
+        "FYRTUR",
+        "KADRILJ"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genColorCtrl",
+        "genPowerCfg"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature"
+      ],
+      "characteristics": [
+        "smart_bulb",
+        "smart_switch",
+        "smart_blind",
+        "color_light"
+      ],
+      "coverage_score": 100,
+      "implementation_date": "2025-07-28T22:08:55.646Z"
+    },
+    {
+      "key": "philips",
+      "name": "Philips",
+      "aliases": [
+        "philips",
+        "hue"
+      ],
+      "brands": [
+        "Philips",
+        "Hue"
+      ],
+      "model_prefixes": [
+        "LCT",
+        "LST",
+        "LLC",
+        "LWB",
+        "LWA"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genColorCtrl",
+        "genPowerCfg"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature"
+      ],
+      "characteristics": [
+        "smart_bulb",
+        "color_light",
+        "white_light",
+        "bridge_compatible"
+      ],
+      "coverage_score": 100,
+      "implementation_date": "2025-07-28T22:08:55.654Z"
+    },
+    {
+      "key": "samsung",
+      "name": "Samsung",
+      "aliases": [
+        "samsung",
+        "smartthings"
+      ],
+      "brands": [
+        "Samsung",
+        "SmartThings"
+      ],
+      "model_prefixes": [
+        "ST",
+        "GP",
+        "IM",
+        "F-ADT"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg",
+        "genAlarms"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_power",
+        "alarm_contact"
+      ],
+      "characteristics": [
+        "smart_switch",
+        "power_monitor",
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "coverage_score": 100,
+      "implementation_date": "2025-07-28T22:08:55.666Z"
+    },
+    {
+      "key": "bosch",
+      "name": "Bosch",
+      "aliases": [
+        "bosch",
+        "bosch_smart_home"
+      ],
+      "brands": [
+        "Bosch",
+        "Bosch Smart Home"
+      ],
+      "model_prefixes": [
+        "BSH",
+        "BTH",
+        "BSR"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg",
+        "genTempMeasurement"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_temperature",
+        "measure_power"
+      ],
+      "characteristics": [
+        "smart_switch",
+        "thermostat",
+        "temperature_sensor",
+        "power_monitor"
+      ],
+      "coverage_score": 100,
+      "implementation_date": "2025-07-28T22:08:55.683Z"
+    },
+    {
+      "key": "legrand",
+      "name": "Legrand",
+      "aliases": [
+        "legrand",
+        "bticino"
+      ],
+      "brands": [
+        "Legrand",
+        "BTicino"
+      ],
+      "model_prefixes": [
+        "LC",
+        "LD",
+        "LM",
+        "LN"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_power"
+      ],
+      "characteristics": [
+        "smart_switch",
+        "dimmer",
+        "power_monitor",
+        "wall_switch"
+      ],
+      "coverage_score": 100,
+      "implementation_date": "2025-07-28T22:08:55.698Z"
+    },
+    {
+      "key": "schneider",
+      "name": "Schneider Electric",
+      "aliases": [
+        "schneider",
+        "wiser"
+      ],
+      "brands": [
+        "Schneider Electric",
+        "Wiser"
+      ],
+      "model_prefixes": [
+        "WISER",
+        "SCH",
+        "SE"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg",
+        "genTempMeasurement"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_temperature",
+        "measure_power"
+      ],
+      "characteristics": [
+        "smart_switch",
+        "thermostat",
+        "temperature_sensor",
+        "power_monitor"
+      ],
+      "coverage_score": 100,
+      "implementation_date": "2025-07-28T22:08:55.703Z"
+    },
+    {
+      "key": "somfy",
+      "name": "Somfy",
+      "aliases": [
+        "somfy",
+        "tao"
+      ],
+      "brands": [
+        "Somfy",
+        "Tahoma"
+      ],
+      "model_prefixes": [
+        "SOMFY",
+        "TAO",
+        "IO"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "windowcoverings_set"
+      ],
+      "characteristics": [
+        "smart_blind",
+        "roller_shutter",
+        "curtain_control",
+        "window_control"
+      ],
+      "coverage_score": 100,
+      "implementation_date": "2025-07-28T22:08:55.718Z"
+    },
+    {
+      "key": "velux",
+      "name": "VELUX",
+      "aliases": [
+        "velux",
+        "velux_active"
+      ],
+      "brands": [
+        "VELUX",
+        "VELUX Active"
+      ],
+      "model_prefixes": [
+        "VELUX",
+        "VAC"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "windowcoverings_set"
+      ],
+      "characteristics": [
+        "smart_window",
+        "roof_window",
+        "skylight_control",
+        "ventilation"
+      ],
+      "coverage_score": 100,
+      "implementation_date": "2025-07-28T22:08:55.731Z"
+    },
+    {
+      "key": "niko",
+      "name": "Niko",
+      "aliases": [
+        "niko",
+        "niko_home_control"
+      ],
+      "brands": [
+        "Niko",
+        "Niko Home Control"
+      ],
+      "model_prefixes": [
+        "NIKO",
+        "NHC"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_power"
+      ],
+      "characteristics": [
+        "smart_switch",
+        "dimmer",
+        "power_monitor",
+        "wall_switch"
+      ],
+      "coverage_score": 100,
+      "implementation_date": "2025-07-28T22:08:55.735Z"
+    }
+  ],
+  "generated_drivers": [
+    {
+      "manufacturer": "Aqara",
+      "driver": {
+        "id": "aqara-base-device",
+        "title": {
+          "en": "Aqara Base Device",
+          "fr": "Device de Base Aqara",
+          "nl": "Aqara Basis Apparaat",
+          "ta": "Aqara அடிப்படை சாதனம்"
+        },
+        "class": "device",
+        "capabilities": [
+          "measure_temperature",
+          "measure_humidity",
+          "measure_pressure",
+          "measure_battery"
+        ],
+        "images": {
+          "small": "/assets/images/small/aqara.png",
+          "large": "/assets/images/large/aqara.png"
+        },
+        "pairing": [
+          {
+            "id": "aqara_pairing",
+            "title": {
+              "en": "Aqara Pairing",
+              "fr": "Appairage Aqara",
+              "nl": "aqara Koppeling",
+              "ta": "Aqara இணைப்பு"
+            },
+            "capabilities": [
+              "measure_temperature",
+              "measure_humidity",
+              "measure_pressure",
+              "measure_battery"
+            ],
+            "clusters": [
+              "genBasic",
+              "genPowerCfg",
+              "genTempMeasurement",
+              "genHumidityMeasurement",
+              "genPressureMeasurement"
+            ]
+          }
+        ],
+        "settings": [
+          {
+            "id": "manufacturer",
+            "type": "text",
+            "title": {
+              "en": "Manufacturer",
+              "fr": "Fabricant",
+              "nl": "Fabrikant",
+              "ta": "உற்பத்தியாளர்"
+            },
+            "value": "Aqara"
+          },
+          {
+            "id": "brands",
+            "type": "text",
+            "title": {
+              "en": "Brands",
+              "fr": "Marques",
+              "nl": "Merken",
+              "ta": "பிராண்டுகள்"
+            },
+            "value": "Aqara, Xiaomi"
+          }
+        ],
+        "flow": {
+          "triggers": [],
+          "conditions": [],
+          "actions": []
+        }
+      },
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_pressure",
+        "measure_battery"
+      ],
+      "clusters": [
+        "genBasic",
+        "genPowerCfg",
+        "genTempMeasurement",
+        "genHumidityMeasurement",
+        "genPressureMeasurement"
+      ],
+      "implementation_date": "2025-07-28T22:08:55.992Z"
+    },
+    {
+      "manufacturer": "IKEA",
+      "driver": {
+        "id": "ikea-base-device",
+        "title": {
+          "en": "IKEA Base Device",
+          "fr": "Device de Base IKEA",
+          "nl": "IKEA Basis Apparaat",
+          "ta": "IKEA அடிப்படை சாதனம்"
+        },
+        "class": "device",
+        "capabilities": [
+          "onoff",
+          "dim",
+          "light_hue",
+          "light_saturation",
+          "light_temperature"
+        ],
+        "images": {
+          "small": "/assets/images/small/ikea.png",
+          "large": "/assets/images/large/ikea.png"
+        },
+        "pairing": [
+          {
+            "id": "ikea_pairing",
+            "title": {
+              "en": "IKEA Pairing",
+              "fr": "Appairage IKEA",
+              "nl": "ikea Koppeling",
+              "ta": "IKEA இணைப்பு"
+            },
+            "capabilities": [
+              "onoff",
+              "dim",
+              "light_hue",
+              "light_saturation",
+              "light_temperature"
+            ],
+            "clusters": [
+              "genBasic",
+              "genOnOff",
+              "genLevelCtrl",
+              "genColorCtrl",
+              "genPowerCfg"
+            ]
+          }
+        ],
+        "settings": [
+          {
+            "id": "manufacturer",
+            "type": "text",
+            "title": {
+              "en": "Manufacturer",
+              "fr": "Fabricant",
+              "nl": "Fabrikant",
+              "ta": "உற்பத்தியாளர்"
+            },
+            "value": "IKEA"
+          },
+          {
+            "id": "brands",
+            "type": "text",
+            "title": {
+              "en": "Brands",
+              "fr": "Marques",
+              "nl": "Merken",
+              "ta": "பிராண்டுகள்"
+            },
+            "value": "IKEA, TRÅDFRI"
+          }
+        ],
+        "flow": {
+          "triggers": [],
+          "conditions": [],
+          "actions": [
+            {
+              "id": "set_dim_level",
+              "title": {
+                "en": "Set Dim Level",
+                "fr": "Définir le Niveau de Luminosité",
+                "nl": "Dimniveau Instellen",
+                "ta": "மங்கல் நிலையை அமைக்கவும்"
+              },
+              "args": [
+                {
+                  "name": "level",
+                  "type": "number",
+                  "title": {
+                    "en": "Level",
+                    "fr": "Niveau",
+                    "nl": "Niveau",
+                    "ta": "நிலை"
+                  },
+                  "min": 0,
+                  "max": 100
+                }
+              ]
+            },
+            {
+              "id": "set_rgb_color",
+              "title": {
+                "en": "Set RGB Color",
+                "fr": "Définir la Couleur RGB",
+                "nl": "RGB Kleur Instellen",
+                "ta": "RGB வண்ணத்தை அமைக்கவும்"
+              },
+              "args": [
+                {
+                  "name": "hue",
+                  "type": "number",
+                  "title": {
+                    "en": "Hue",
+                    "fr": "Teinte",
+                    "nl": "Tint",
+                    "ta": "வண்ணம்"
+                  },
+                  "min": 0,
+                  "max": 360
+                },
+                {
+                  "name": "saturation",
+                  "type": "number",
+                  "title": {
+                    "en": "Saturation",
+                    "fr": "Saturation",
+                    "nl": "Verzadiging",
+                    "ta": "செறிவு"
+                  },
+                  "min": 0,
+                  "max": 100
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genColorCtrl",
+        "genPowerCfg"
+      ],
+      "implementation_date": "2025-07-28T22:08:56.034Z"
+    },
+    {
+      "manufacturer": "Philips",
+      "driver": {
+        "id": "philips-base-device",
+        "title": {
+          "en": "Philips Base Device",
+          "fr": "Device de Base Philips",
+          "nl": "Philips Basis Apparaat",
+          "ta": "Philips அடிப்படை சாதனம்"
+        },
+        "class": "device",
+        "capabilities": [
+          "onoff",
+          "dim",
+          "light_hue",
+          "light_saturation",
+          "light_temperature"
+        ],
+        "images": {
+          "small": "/assets/images/small/philips.png",
+          "large": "/assets/images/large/philips.png"
+        },
+        "pairing": [
+          {
+            "id": "philips_pairing",
+            "title": {
+              "en": "Philips Pairing",
+              "fr": "Appairage Philips",
+              "nl": "philips Koppeling",
+              "ta": "Philips இணைப்பு"
+            },
+            "capabilities": [
+              "onoff",
+              "dim",
+              "light_hue",
+              "light_saturation",
+              "light_temperature"
+            ],
+            "clusters": [
+              "genBasic",
+              "genOnOff",
+              "genLevelCtrl",
+              "genColorCtrl",
+              "genPowerCfg"
+            ]
+          }
+        ],
+        "settings": [
+          {
+            "id": "manufacturer",
+            "type": "text",
+            "title": {
+              "en": "Manufacturer",
+              "fr": "Fabricant",
+              "nl": "Fabrikant",
+              "ta": "உற்பத்தியாளர்"
+            },
+            "value": "Philips"
+          },
+          {
+            "id": "brands",
+            "type": "text",
+            "title": {
+              "en": "Brands",
+              "fr": "Marques",
+              "nl": "Merken",
+              "ta": "பிராண்டுகள்"
+            },
+            "value": "Philips, Hue"
+          }
+        ],
+        "flow": {
+          "triggers": [],
+          "conditions": [],
+          "actions": [
+            {
+              "id": "set_dim_level",
+              "title": {
+                "en": "Set Dim Level",
+                "fr": "Définir le Niveau de Luminosité",
+                "nl": "Dimniveau Instellen",
+                "ta": "மங்கல் நிலையை அமைக்கவும்"
+              },
+              "args": [
+                {
+                  "name": "level",
+                  "type": "number",
+                  "title": {
+                    "en": "Level",
+                    "fr": "Niveau",
+                    "nl": "Niveau",
+                    "ta": "நிலை"
+                  },
+                  "min": 0,
+                  "max": 100
+                }
+              ]
+            },
+            {
+              "id": "set_rgb_color",
+              "title": {
+                "en": "Set RGB Color",
+                "fr": "Définir la Couleur RGB",
+                "nl": "RGB Kleur Instellen",
+                "ta": "RGB வண்ணத்தை அமைக்கவும்"
+              },
+              "args": [
+                {
+                  "name": "hue",
+                  "type": "number",
+                  "title": {
+                    "en": "Hue",
+                    "fr": "Teinte",
+                    "nl": "Tint",
+                    "ta": "வண்ணம்"
+                  },
+                  "min": 0,
+                  "max": 360
+                },
+                {
+                  "name": "saturation",
+                  "type": "number",
+                  "title": {
+                    "en": "Saturation",
+                    "fr": "Saturation",
+                    "nl": "Verzadiging",
+                    "ta": "செறிவு"
+                  },
+                  "min": 0,
+                  "max": 100
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genColorCtrl",
+        "genPowerCfg"
+      ],
+      "implementation_date": "2025-07-28T22:08:56.052Z"
+    },
+    {
+      "manufacturer": "Samsung",
+      "driver": {
+        "id": "samsung-base-device",
+        "title": {
+          "en": "Samsung Base Device",
+          "fr": "Device de Base Samsung",
+          "nl": "Samsung Basis Apparaat",
+          "ta": "Samsung அடிப்படை சாதனம்"
+        },
+        "class": "device",
+        "capabilities": [
+          "onoff",
+          "dim",
+          "measure_power",
+          "alarm_contact"
+        ],
+        "images": {
+          "small": "/assets/images/small/samsung.png",
+          "large": "/assets/images/large/samsung.png"
+        },
+        "pairing": [
+          {
+            "id": "samsung_pairing",
+            "title": {
+              "en": "Samsung Pairing",
+              "fr": "Appairage Samsung",
+              "nl": "samsung Koppeling",
+              "ta": "Samsung இணைப்பு"
+            },
+            "capabilities": [
+              "onoff",
+              "dim",
+              "measure_power",
+              "alarm_contact"
+            ],
+            "clusters": [
+              "genBasic",
+              "genOnOff",
+              "genLevelCtrl",
+              "genPowerCfg",
+              "genAlarms"
+            ]
+          }
+        ],
+        "settings": [
+          {
+            "id": "manufacturer",
+            "type": "text",
+            "title": {
+              "en": "Manufacturer",
+              "fr": "Fabricant",
+              "nl": "Fabrikant",
+              "ta": "உற்பத்தியாளர்"
+            },
+            "value": "Samsung"
+          },
+          {
+            "id": "brands",
+            "type": "text",
+            "title": {
+              "en": "Brands",
+              "fr": "Marques",
+              "nl": "Merken",
+              "ta": "பிராண்டுகள்"
+            },
+            "value": "Samsung, SmartThings"
+          }
+        ],
+        "flow": {
+          "triggers": [],
+          "conditions": [],
+          "actions": [
+            {
+              "id": "set_dim_level",
+              "title": {
+                "en": "Set Dim Level",
+                "fr": "Définir le Niveau de Luminosité",
+                "nl": "Dimniveau Instellen",
+                "ta": "மங்கல் நிலையை அமைக்கவும்"
+              },
+              "args": [
+                {
+                  "name": "level",
+                  "type": "number",
+                  "title": {
+                    "en": "Level",
+                    "fr": "Niveau",
+                    "nl": "Niveau",
+                    "ta": "நிலை"
+                  },
+                  "min": 0,
+                  "max": 100
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_power",
+        "alarm_contact"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg",
+        "genAlarms"
+      ],
+      "implementation_date": "2025-07-28T22:08:56.072Z"
+    },
+    {
+      "manufacturer": "Bosch",
+      "driver": {
+        "id": "bosch-base-device",
+        "title": {
+          "en": "Bosch Base Device",
+          "fr": "Device de Base Bosch",
+          "nl": "Bosch Basis Apparaat",
+          "ta": "Bosch அடிப்படை சாதனம்"
+        },
+        "class": "device",
+        "capabilities": [
+          "onoff",
+          "dim",
+          "measure_temperature",
+          "measure_power"
+        ],
+        "images": {
+          "small": "/assets/images/small/bosch.png",
+          "large": "/assets/images/large/bosch.png"
+        },
+        "pairing": [
+          {
+            "id": "bosch_pairing",
+            "title": {
+              "en": "Bosch Pairing",
+              "fr": "Appairage Bosch",
+              "nl": "bosch Koppeling",
+              "ta": "Bosch இணைப்பு"
+            },
+            "capabilities": [
+              "onoff",
+              "dim",
+              "measure_temperature",
+              "measure_power"
+            ],
+            "clusters": [
+              "genBasic",
+              "genOnOff",
+              "genLevelCtrl",
+              "genPowerCfg",
+              "genTempMeasurement"
+            ]
+          }
+        ],
+        "settings": [
+          {
+            "id": "manufacturer",
+            "type": "text",
+            "title": {
+              "en": "Manufacturer",
+              "fr": "Fabricant",
+              "nl": "Fabrikant",
+              "ta": "உற்பத்தியாளர்"
+            },
+            "value": "Bosch"
+          },
+          {
+            "id": "brands",
+            "type": "text",
+            "title": {
+              "en": "Brands",
+              "fr": "Marques",
+              "nl": "Merken",
+              "ta": "பிராண்டுகள்"
+            },
+            "value": "Bosch, Bosch Smart Home"
+          }
+        ],
+        "flow": {
+          "triggers": [],
+          "conditions": [],
+          "actions": [
+            {
+              "id": "set_dim_level",
+              "title": {
+                "en": "Set Dim Level",
+                "fr": "Définir le Niveau de Luminosité",
+                "nl": "Dimniveau Instellen",
+                "ta": "மங்கல் நிலையை அமைக்கவும்"
+              },
+              "args": [
+                {
+                  "name": "level",
+                  "type": "number",
+                  "title": {
+                    "en": "Level",
+                    "fr": "Niveau",
+                    "nl": "Niveau",
+                    "ta": "நிலை"
+                  },
+                  "min": 0,
+                  "max": 100
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_temperature",
+        "measure_power"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg",
+        "genTempMeasurement"
+      ],
+      "implementation_date": "2025-07-28T22:08:56.114Z"
+    },
+    {
+      "manufacturer": "Legrand",
+      "driver": {
+        "id": "legrand-base-device",
+        "title": {
+          "en": "Legrand Base Device",
+          "fr": "Device de Base Legrand",
+          "nl": "Legrand Basis Apparaat",
+          "ta": "Legrand அடிப்படை சாதனம்"
+        },
+        "class": "device",
+        "capabilities": [
+          "onoff",
+          "dim",
+          "measure_power"
+        ],
+        "images": {
+          "small": "/assets/images/small/legrand.png",
+          "large": "/assets/images/large/legrand.png"
+        },
+        "pairing": [
+          {
+            "id": "legrand_pairing",
+            "title": {
+              "en": "Legrand Pairing",
+              "fr": "Appairage Legrand",
+              "nl": "legrand Koppeling",
+              "ta": "Legrand இணைப்பு"
+            },
+            "capabilities": [
+              "onoff",
+              "dim",
+              "measure_power"
+            ],
+            "clusters": [
+              "genBasic",
+              "genOnOff",
+              "genLevelCtrl",
+              "genPowerCfg"
+            ]
+          }
+        ],
+        "settings": [
+          {
+            "id": "manufacturer",
+            "type": "text",
+            "title": {
+              "en": "Manufacturer",
+              "fr": "Fabricant",
+              "nl": "Fabrikant",
+              "ta": "உற்பத்தியாளர்"
+            },
+            "value": "Legrand"
+          },
+          {
+            "id": "brands",
+            "type": "text",
+            "title": {
+              "en": "Brands",
+              "fr": "Marques",
+              "nl": "Merken",
+              "ta": "பிராண்டுகள்"
+            },
+            "value": "Legrand, BTicino"
+          }
+        ],
+        "flow": {
+          "triggers": [],
+          "conditions": [],
+          "actions": [
+            {
+              "id": "set_dim_level",
+              "title": {
+                "en": "Set Dim Level",
+                "fr": "Définir le Niveau de Luminosité",
+                "nl": "Dimniveau Instellen",
+                "ta": "மங்கல் நிலையை அமைக்கவும்"
+              },
+              "args": [
+                {
+                  "name": "level",
+                  "type": "number",
+                  "title": {
+                    "en": "Level",
+                    "fr": "Niveau",
+                    "nl": "Niveau",
+                    "ta": "நிலை"
+                  },
+                  "min": 0,
+                  "max": 100
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_power"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg"
+      ],
+      "implementation_date": "2025-07-28T22:08:56.142Z"
+    },
+    {
+      "manufacturer": "Schneider Electric",
+      "driver": {
+        "id": "schneider-base-device",
+        "title": {
+          "en": "Schneider Electric Base Device",
+          "fr": "Device de Base Schneider Electric",
+          "nl": "Schneider Electric Basis Apparaat",
+          "ta": "Schneider Electric அடிப்படை சாதனம்"
+        },
+        "class": "device",
+        "capabilities": [
+          "onoff",
+          "dim",
+          "measure_temperature",
+          "measure_power"
+        ],
+        "images": {
+          "small": "/assets/images/small/schneider.png",
+          "large": "/assets/images/large/schneider.png"
+        },
+        "pairing": [
+          {
+            "id": "schneider_pairing",
+            "title": {
+              "en": "Schneider Electric Pairing",
+              "fr": "Appairage Schneider Electric",
+              "nl": "schneider Koppeling",
+              "ta": "Schneider Electric இணைப்பு"
+            },
+            "capabilities": [
+              "onoff",
+              "dim",
+              "measure_temperature",
+              "measure_power"
+            ],
+            "clusters": [
+              "genBasic",
+              "genOnOff",
+              "genLevelCtrl",
+              "genPowerCfg",
+              "genTempMeasurement"
+            ]
+          }
+        ],
+        "settings": [
+          {
+            "id": "manufacturer",
+            "type": "text",
+            "title": {
+              "en": "Manufacturer",
+              "fr": "Fabricant",
+              "nl": "Fabrikant",
+              "ta": "உற்பத்தியாளர்"
+            },
+            "value": "Schneider Electric"
+          },
+          {
+            "id": "brands",
+            "type": "text",
+            "title": {
+              "en": "Brands",
+              "fr": "Marques",
+              "nl": "Merken",
+              "ta": "பிராண்டுகள்"
+            },
+            "value": "Schneider Electric, Wiser"
+          }
+        ],
+        "flow": {
+          "triggers": [],
+          "conditions": [],
+          "actions": [
+            {
+              "id": "set_dim_level",
+              "title": {
+                "en": "Set Dim Level",
+                "fr": "Définir le Niveau de Luminosité",
+                "nl": "Dimniveau Instellen",
+                "ta": "மங்கல் நிலையை அமைக்கவும்"
+              },
+              "args": [
+                {
+                  "name": "level",
+                  "type": "number",
+                  "title": {
+                    "en": "Level",
+                    "fr": "Niveau",
+                    "nl": "Niveau",
+                    "ta": "நிலை"
+                  },
+                  "min": 0,
+                  "max": 100
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_temperature",
+        "measure_power"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg",
+        "genTempMeasurement"
+      ],
+      "implementation_date": "2025-07-28T22:08:56.159Z"
+    },
+    {
+      "manufacturer": "Somfy",
+      "driver": {
+        "id": "somfy-base-device",
+        "title": {
+          "en": "Somfy Base Device",
+          "fr": "Device de Base Somfy",
+          "nl": "Somfy Basis Apparaat",
+          "ta": "Somfy அடிப்படை சாதனம்"
+        },
+        "class": "device",
+        "capabilities": [
+          "onoff",
+          "dim",
+          "windowcoverings_set"
+        ],
+        "images": {
+          "small": "/assets/images/small/somfy.png",
+          "large": "/assets/images/large/somfy.png"
+        },
+        "pairing": [
+          {
+            "id": "somfy_pairing",
+            "title": {
+              "en": "Somfy Pairing",
+              "fr": "Appairage Somfy",
+              "nl": "somfy Koppeling",
+              "ta": "Somfy இணைப்பு"
+            },
+            "capabilities": [
+              "onoff",
+              "dim",
+              "windowcoverings_set"
+            ],
+            "clusters": [
+              "genBasic",
+              "genOnOff",
+              "genLevelCtrl",
+              "genPowerCfg"
+            ]
+          }
+        ],
+        "settings": [
+          {
+            "id": "manufacturer",
+            "type": "text",
+            "title": {
+              "en": "Manufacturer",
+              "fr": "Fabricant",
+              "nl": "Fabrikant",
+              "ta": "உற்பத்தியாளர்"
+            },
+            "value": "Somfy"
+          },
+          {
+            "id": "brands",
+            "type": "text",
+            "title": {
+              "en": "Brands",
+              "fr": "Marques",
+              "nl": "Merken",
+              "ta": "பிராண்டுகள்"
+            },
+            "value": "Somfy, Tahoma"
+          }
+        ],
+        "flow": {
+          "triggers": [],
+          "conditions": [],
+          "actions": [
+            {
+              "id": "set_dim_level",
+              "title": {
+                "en": "Set Dim Level",
+                "fr": "Définir le Niveau de Luminosité",
+                "nl": "Dimniveau Instellen",
+                "ta": "மங்கல் நிலையை அமைக்கவும்"
+              },
+              "args": [
+                {
+                  "name": "level",
+                  "type": "number",
+                  "title": {
+                    "en": "Level",
+                    "fr": "Niveau",
+                    "nl": "Niveau",
+                    "ta": "நிலை"
+                  },
+                  "min": 0,
+                  "max": 100
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "capabilities": [
+        "onoff",
+        "dim",
+        "windowcoverings_set"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg"
+      ],
+      "implementation_date": "2025-07-28T22:08:56.180Z"
+    },
+    {
+      "manufacturer": "VELUX",
+      "driver": {
+        "id": "velux-base-device",
+        "title": {
+          "en": "VELUX Base Device",
+          "fr": "Device de Base VELUX",
+          "nl": "VELUX Basis Apparaat",
+          "ta": "VELUX அடிப்படை சாதனம்"
+        },
+        "class": "device",
+        "capabilities": [
+          "onoff",
+          "dim",
+          "windowcoverings_set"
+        ],
+        "images": {
+          "small": "/assets/images/small/velux.png",
+          "large": "/assets/images/large/velux.png"
+        },
+        "pairing": [
+          {
+            "id": "velux_pairing",
+            "title": {
+              "en": "VELUX Pairing",
+              "fr": "Appairage VELUX",
+              "nl": "velux Koppeling",
+              "ta": "VELUX இணைப்பு"
+            },
+            "capabilities": [
+              "onoff",
+              "dim",
+              "windowcoverings_set"
+            ],
+            "clusters": [
+              "genBasic",
+              "genOnOff",
+              "genLevelCtrl",
+              "genPowerCfg"
+            ]
+          }
+        ],
+        "settings": [
+          {
+            "id": "manufacturer",
+            "type": "text",
+            "title": {
+              "en": "Manufacturer",
+              "fr": "Fabricant",
+              "nl": "Fabrikant",
+              "ta": "உற்பத்தியாளர்"
+            },
+            "value": "VELUX"
+          },
+          {
+            "id": "brands",
+            "type": "text",
+            "title": {
+              "en": "Brands",
+              "fr": "Marques",
+              "nl": "Merken",
+              "ta": "பிராண்டுகள்"
+            },
+            "value": "VELUX, VELUX Active"
+          }
+        ],
+        "flow": {
+          "triggers": [],
+          "conditions": [],
+          "actions": [
+            {
+              "id": "set_dim_level",
+              "title": {
+                "en": "Set Dim Level",
+                "fr": "Définir le Niveau de Luminosité",
+                "nl": "Dimniveau Instellen",
+                "ta": "மங்கல் நிலையை அமைக்கவும்"
+              },
+              "args": [
+                {
+                  "name": "level",
+                  "type": "number",
+                  "title": {
+                    "en": "Level",
+                    "fr": "Niveau",
+                    "nl": "Niveau",
+                    "ta": "நிலை"
+                  },
+                  "min": 0,
+                  "max": 100
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "capabilities": [
+        "onoff",
+        "dim",
+        "windowcoverings_set"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg"
+      ],
+      "implementation_date": "2025-07-28T22:08:56.287Z"
+    },
+    {
+      "manufacturer": "Niko",
+      "driver": {
+        "id": "niko-base-device",
+        "title": {
+          "en": "Niko Base Device",
+          "fr": "Device de Base Niko",
+          "nl": "Niko Basis Apparaat",
+          "ta": "Niko அடிப்படை சாதனம்"
+        },
+        "class": "device",
+        "capabilities": [
+          "onoff",
+          "dim",
+          "measure_power"
+        ],
+        "images": {
+          "small": "/assets/images/small/niko.png",
+          "large": "/assets/images/large/niko.png"
+        },
+        "pairing": [
+          {
+            "id": "niko_pairing",
+            "title": {
+              "en": "Niko Pairing",
+              "fr": "Appairage Niko",
+              "nl": "niko Koppeling",
+              "ta": "Niko இணைப்பு"
+            },
+            "capabilities": [
+              "onoff",
+              "dim",
+              "measure_power"
+            ],
+            "clusters": [
+              "genBasic",
+              "genOnOff",
+              "genLevelCtrl",
+              "genPowerCfg"
+            ]
+          }
+        ],
+        "settings": [
+          {
+            "id": "manufacturer",
+            "type": "text",
+            "title": {
+              "en": "Manufacturer",
+              "fr": "Fabricant",
+              "nl": "Fabrikant",
+              "ta": "உற்பத்தியாளர்"
+            },
+            "value": "Niko"
+          },
+          {
+            "id": "brands",
+            "type": "text",
+            "title": {
+              "en": "Brands",
+              "fr": "Marques",
+              "nl": "Merken",
+              "ta": "பிராண்டுகள்"
+            },
+            "value": "Niko, Niko Home Control"
+          }
+        ],
+        "flow": {
+          "triggers": [],
+          "conditions": [],
+          "actions": [
+            {
+              "id": "set_dim_level",
+              "title": {
+                "en": "Set Dim Level",
+                "fr": "Définir le Niveau de Luminosité",
+                "nl": "Dimniveau Instellen",
+                "ta": "மங்கல் நிலையை அமைக்கவும்"
+              },
+              "args": [
+                {
+                  "name": "level",
+                  "type": "number",
+                  "title": {
+                    "en": "Level",
+                    "fr": "Niveau",
+                    "nl": "Niveau",
+                    "ta": "நிலை"
+                  },
+                  "min": 0,
+                  "max": 100
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_power"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg"
+      ],
+      "implementation_date": "2025-07-28T22:08:56.300Z"
+    }
+  ],
+  "updated_system": {
+    "total_manufacturers": 20,
+    "improved_manufacturers": 10,
+    "new_manufacturers": 10,
+    "new_drivers": 10
+  }
+}
