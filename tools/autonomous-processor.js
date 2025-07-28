@@ -42,7 +42,7 @@ function processAllTasksAutonomously() {
     const results = [];
     
     AUTONOMOUS_TASKS.forEach(task => {
-        console.log(`Processing task: ${task.name}`);
+        console.log('Processing task: ' + task.name);
         
         try {
             const result = executeTask(task);
@@ -53,10 +53,10 @@ function processAllTasksAutonomously() {
                 timestamp: new Date().toISOString()
             });
             
-            console.log(`Task ${task.name} completed successfully`);
+            console.log('Task ' + task.name + ' completed successfully');
             
         } catch (error) {
-            console.error(`Error processing task ${task.name}:`, error.message);
+            console.error('Error processing task ' + task.name + ':', error.message);
             results.push({
                 task: task,
                 result: null,
@@ -82,7 +82,7 @@ function executeTask(task) {
         case 'push_regularly':
             return { status: 'completed', message: 'Changes pushed' };
         default:
-            throw new Error(`Unknown task: ${task.id}`);
+            throw new Error('Unknown task: ' + task.id);
     }
 }
 
@@ -94,9 +94,9 @@ function main() {
     const results = processAllTasksAutonomously();
     
     console.log('Autonomous Processor completed successfully!');
-    console.log(`Processed ${results.length} tasks`);
-    console.log(`Completed: ${results.filter(r => r.status === 'completed').length}`);
-    console.log(`Failed: ${results.filter(r => r.status === 'failed').length}`);
+    console.log('Processed ' + results.length + ' tasks');
+    console.log('Completed: ' + results.filter(r => r.status === 'completed').length);
+    console.log('Failed: ' + results.filter(r => r.status === 'failed').length);
     
     return results;
 }
