@@ -1,8 +1,8 @@
 {
-  "timestamp": "2025-07-28T22:58:17.006Z",
+  "timestamp": "2025-07-28T23:04:32.889Z",
   "total_actions": 6,
-  "completed_actions": 5,
-  "failed_actions": 1,
+  "completed_actions": 6,
+  "failed_actions": 0,
   "results": [
     {
       "action": {
@@ -12,10 +12,15 @@
         "priority": "critical",
         "status": "pending"
       },
-      "result": null,
-      "status": "failed",
-      "error": "ProjectName is not defined",
-      "timestamp": "2025-07-28T22:57:52.952Z"
+      "result": {
+        "files_restored": 19,
+        "workflows_restored": 8,
+        "tools_restored": 5,
+        "assets_restored": 4,
+        "status": "completed"
+      },
+      "status": "completed",
+      "timestamp": "2025-07-28T23:04:15.033Z"
     },
     {
       "action": {
@@ -31,7 +36,7 @@
         "status": "completed"
       },
       "status": "completed",
-      "timestamp": "2025-07-28T22:57:52.966Z"
+      "timestamp": "2025-07-28T23:04:15.046Z"
     },
     {
       "action": {
@@ -47,7 +52,7 @@
         "status": "completed"
       },
       "status": "completed",
-      "timestamp": "2025-07-28T22:57:52.975Z"
+      "timestamp": "2025-07-28T23:04:15.051Z"
     },
     {
       "action": {
@@ -63,38 +68,38 @@
           {
             "version": "1.0.0",
             "codename": "Initial Release",
-            "release_date": "2025-07-28T22:57:52.978Z",
+            "release_date": "2025-07-28T23:04:15.055Z",
             "download_url": "https://github.com/dlnraja/com.tuya.zigbee/releases/download/v1.0.0/tuya-zigbee-v1.0.0.zip"
           },
           {
             "version": "1.1.0",
             "codename": "Documentation Complete",
-            "release_date": "2025-07-28T22:57:52.983Z",
+            "release_date": "2025-07-28T23:04:15.062Z",
             "download_url": "https://github.com/dlnraja/com.tuya.zigbee/releases/download/v1.1.0/tuya-zigbee-v1.1.0.zip"
           },
           {
             "version": "1.2.0",
             "codename": "Intelligent Driver System",
-            "release_date": "2025-07-28T22:57:52.992Z",
+            "release_date": "2025-07-28T23:04:15.066Z",
             "download_url": "https://github.com/dlnraja/com.tuya.zigbee/releases/download/v1.2.0/tuya-zigbee-v1.2.0.zip"
           },
           {
             "version": "1.3.0",
             "codename": "Forum Analysis Release",
-            "release_date": "2025-07-28T22:57:53.007Z",
+            "release_date": "2025-07-28T23:04:15.069Z",
             "download_url": "https://github.com/dlnraja/com.tuya.zigbee/releases/download/v1.3.0/tuya-zigbee-v1.3.0.zip"
           },
           {
             "version": "1.4.0",
             "codename": "Intelligent Release",
-            "release_date": "2025-07-28T22:57:53.016Z",
+            "release_date": "2025-07-28T23:04:15.079Z",
             "download_url": "https://github.com/dlnraja/com.tuya.zigbee/releases/download/v1.4.0/tuya-zigbee-v1.4.0.zip"
           }
         ],
         "status": "completed"
       },
       "status": "completed",
-      "timestamp": "2025-07-28T22:57:53.018Z"
+      "timestamp": "2025-07-28T23:04:15.080Z"
     },
     {
       "action": {
@@ -110,7 +115,7 @@
         "status": "completed"
       },
       "status": "completed",
-      "timestamp": "2025-07-28T22:58:16.985Z"
+      "timestamp": "2025-07-28T23:04:32.871Z"
     },
     {
       "action": {
@@ -135,7 +140,7 @@
         "status": "completed"
       },
       "status": "completed",
-      "timestamp": "2025-07-28T22:58:16.989Z"
+      "timestamp": "2025-07-28T23:04:32.884Z"
     }
   ]
 }
