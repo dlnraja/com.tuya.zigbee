@@ -1,0 +1,120 @@
+[
+  {
+    "manufacturer": "tuya",
+    "category": "switch",
+    "capabilities": [
+      "onoff"
+    ],
+    "confidence": 0.7,
+    "model": "TS0001",
+    "original_manufacturer": "Tuya",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  {
+    "manufacturer": "tuya",
+    "category": "switch",
+    "capabilities": [
+      "onoff"
+    ],
+    "confidence": 0.7,
+    "model": "TS0207",
+    "original_manufacturer": "Zemismart",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "genLevelCtrl"
+    ]
+  },
+  {
+    "manufacturer": "blitzwolf",
+    "category": "switch",
+    "capabilities": [
+      "onoff"
+    ],
+    "confidence": 0.7,
+    "model": "BW-SHP13",
+    "original_manufacturer": "BlitzWolf",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "genPowerCfg"
+    ]
+  },
+  {
+    "manufacturer": "moes",
+    "category": "switch",
+    "capabilities": [
+      "onoff"
+    ],
+    "confidence": 0.7,
+    "model": "MS-104BZ",
+    "original_manufacturer": "Moes",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "genLevelCtrl"
+    ]
+  },
+  {
+    "manufacturer": "gosund",
+    "category": "switch",
+    "capabilities": [
+      "onoff"
+    ],
+    "confidence": 0.7,
+    "model": "GS-SD01",
+    "original_manufacturer": "Gosund",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "genPowerCfg"
+    ]
+  },
+  {
+    "manufacturer": "meross",
+    "category": "switch",
+    "capabilities": [
+      "onoff"
+    ],
+    "confidence": 0.7,
+    "model": "MR-SS01",
+    "original_manufacturer": "Meross",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "genLevelCtrl"
+    ]
+  },
+  {
+    "manufacturer": "teckin",
+    "category": "switch",
+    "capabilities": [
+      "onoff"
+    ],
+    "confidence": 0.7,
+    "model": "TK-SS01",
+    "original_manufacturer": "Teckin",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "genPowerCfg"
+    ]
+  },
+  {
+    "manufacturer": "unknown",
+    "category": "switch",
+    "capabilities": [
+      "onoff"
+    ],
+    "confidence": 0.7,
+    "model": "UNKNOWN-001",
+    "original_manufacturer": "Unknown",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  }
+]

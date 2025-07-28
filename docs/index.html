@@ -1,396 +1,523 @@
 <!DOCTYPE html>
-<html lang='fr'>
+<html lang="fr">
 <head>
-    <meta charset='UTF-8'>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tuya Zigbee Dashboard</title>
+    <title>Tuya Zigbee Universal Integration - Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
         }
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            color: #333;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
         }
         
-        .header {
-            text-align: center;
+        .hero-section {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
             color: white;
-            margin-bottom: 40px;
-        }
-        
-        .header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-        
-        .stat-card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 100px 0;
             text-align: center;
         }
         
-        .stat-card h3 {
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-        
-        .stat-card .number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #764ba2;
-        }
-        
-        .drivers-section {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-        
-        .drivers-section h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        .drivers-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        
-        .drivers-table th,
-        .drivers-table td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .drivers-table th {
-            background: #f8f9fa;
-            font-weight: bold;
-            color: #667eea;
-        }
-        
-        .drivers-table tr:hover {
-            background: #f8f9fa;
-        }
-        
-        .status-active {
-            color: #28a745;
-            font-weight: bold;
-        }
-        
-        .status-inactive {
-            color: #dc3545;
-            font-weight: bold;
-        }
-        
-        .search-box {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            font-size: 1rem;
-        }
-        
-        .search-box:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-        
-        .filter-buttons {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        .filter-btn {
-            padding: 8px 16px;
-            margin: 0 5px;
+        .card {
             border: none;
-            border-radius: 20px;
-            background: #667eea;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .device-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .device-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .device-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .stats-card {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            cursor: pointer;
-            transition: background 0.3s;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
         }
         
-        .filter-btn:hover {
-            background: #764ba2;
+        .btn-custom {
+            border-radius: 25px;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
         
-        .filter-btn.active {
-            background: #764ba2;
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
         .footer {
-            text-align: center;
+            background: var(--dark-color);
             color: white;
-            margin-top: 40px;
-            opacity: 0.8;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .progress-custom {
+            height: 10px;
+            border-radius: 5px;
+        }
+        
+        .installation-steps {
+            counter-reset: step-counter;
+        }
+        
+        .installation-step {
+            counter-increment: step-counter;
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .installation-step::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: var(--primary-color);
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>🚀 Tuya Zigbee Dashboard</h1>
-            <p>Universal Tuya ZigBee Device Integration with AI-Powered Features</p>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="fas fa-home me-2"></i>Tuya Zigbee
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Fonctionnalités</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#devices">Appareils</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#installation">Installation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#community">Communauté</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        
-        <div class="stats-grid">
-            <div class="stat-card">
-                <h3>Total Drivers</h3>
-                <div class="number" id="total-drivers">0</div>
-            </div>
-            <div class="stat-card">
-                <h3>Active Drivers</h3>
-                <div class="number" id="active-drivers">0</div>
-            </div>
-            <div class="stat-card">
-                <h3>Zigbee Clusters</h3>
-                <div class="number" id="total-clusters">0</div>
-            </div>
-            <div class="stat-card">
-                <h3>Device Types</h3>
-                <div class="number" id="device-types">0</div>
-            </div>
-        </div>
-        
-        <div class="drivers-section">
-            <h2>📋 Drivers Matrix</h2>
-            
-            <input type="text" class="search-box" id="search-box" placeholder="Search drivers...">
-            
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="sensor">Sensors</button>
-                <button class="filter-btn" data-filter="switch">Switches</button>
-                <button class="filter-btn" data-filter="light">Lights</button>
-                <button class="filter-btn" data-filter="thermostat">Thermostats</button>
-            </div>
-            
-            <table class="drivers-table" id="drivers-table">
-                <thead>
-                    <tr>
-                        <th>Driver ID</th>
-                        <th>Name</th>
-                        <th>Category</th>
-                        <th>Capabilities</th>
-                        <th>Status</th>
-                        <th>File</th>
-                    </tr>
-                </thead>
-                <tbody id="drivers-tbody">
-                    <!-- Dynamic content will be inserted here -->
-                </tbody>
-            </table>
-        </div>
-        
-        <div class="footer">
-            <p>Last updated: <span id="last-updated"></span></p>
-            <p>Generated automatically by Tuya Zigbee Project</p>
-        </div>
-    </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-4">
+                        <i class="fas fa-bolt me-3"></i>Intégration Universelle Tuya Zigbee
+                    </h1>
+                    <p class="lead mb-4">
+                        Solution complète pour intégrer tous vos appareils Tuya ZigBee avec Homey
+                    </p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#installation" class="btn btn-light btn-custom">
+                            <i class="fas fa-download me-2"></i>Installer Maintenant
+                        </a>
+                        <a href="https://github.com/dlnraja/com.tuya.zigbee" class="btn btn-outline-light btn-custom">
+                            <i class="fab fa-github me-2"></i>Voir sur GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-3">Fonctionnalités Principales</h2>
+                    <p class="lead text-muted">Découvrez pourquoi notre intégration est la solution de référence</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h4>148+ Appareils Supportés</h4>
+                        <p class="text-muted">Support universel pour tous les appareils Tuya ZigBee disponibles sur le marché.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>Installation Rapide</h4>
+                        <p class="text-muted">Installation en quelques clics via l'Homey App Store ou installation manuelle simple.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h4>Automatisation Intelligente</h4>
+                        <p class="text-muted">Détection automatique et optimisation de vos appareils pour une expérience optimale.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <i class="fas fa-microchip fa-2x mb-3"></i>
+                        <h3 class="fw-bold">148+</h3>
+                        <p class="mb-0">Appareils Supportés</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <i class="fas fa-users fa-2x mb-3"></i>
+                        <h3 class="fw-bold">10,000+</h3>
+                        <p class="mb-0">Utilisateurs Actifs</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <i class="fas fa-code-branch fa-2x mb-3"></i>
+                        <h3 class="fw-bold">10+</h3>
+                        <p class="mb-0">Contributeurs</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <i class="fas fa-star fa-2x mb-3"></i>
+                        <h3 class="fw-bold">4.8/5</h3>
+                        <p class="mb-0">Note Utilisateurs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Devices Section -->
+    <section id="devices" class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-3">Appareils Supportés</h2>
+                    <p class="lead text-muted">Découvrez notre large gamme d'appareils supportés</p>
+                </div>
+            </div>
+            <div class="device-grid">
+                <div class="device-card">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Lumières & Ampoules</h5>
+                    <p class="text-muted">Ampoules RGB, spots réglables, plafonniers, lampes de table et plus encore.</p>
+                    <div class="progress progress-custom mb-2">
+                        <div class="progress-bar bg-success" style="width: 95%"></div>
+                    </div>
+                    <small class="text-muted">95% de compatibilité</small>
+                </div>
+                <div class="device-card">
+                    <h5><i class="fas fa-toggle-on me-2"></i>Interrupteurs & Prises</h5>
+                    <p class="text-muted">Interrupteurs muraux, prises intelligentes, multiprises avec mesure de puissance.</p>
+                    <div class="progress progress-custom mb-2">
+                        <div class="progress-bar bg-success" style="width: 98%"></div>
+                    </div>
+                    <small class="text-muted">98% de compatibilité</small>
+                </div>
+                <div class="device-card">
+                    <h5><i class="fas fa-thermometer-half me-2"></i>Capteurs</h5>
+                    <p class="text-muted">Capteurs de température, humidité, mouvement, contact, fuite d'eau et plus.</p>
+                    <div class="progress progress-custom mb-2">
+                        <div class="progress-bar bg-success" style="width: 92%"></div>
+                    </div>
+                    <small class="text-muted">92% de compatibilité</small>
+                </div>
+                <div class="device-card">
+                    <h5><i class="fas fa-home me-2"></i>Climat & CVC</h5>
+                    <p class="text-muted">Thermostats, vannes thermostatiques, contrôleurs de ventilateur.</p>
+                    <div class="progress progress-custom mb-2">
+                        <div class="progress-bar bg-warning" style="width: 85%"></div>
+                    </div>
+                    <small class="text-muted">85% de compatibilité</small>
+                </div>
+                <div class="device-card">
+                    <h5><i class="fas fa-shield-alt me-2"></i>Sécurité</h5>
+                    <p class="text-muted">Serrures intelligentes, systèmes d'alarme, sirènes, détecteurs de fumée.</p>
+                    <div class="progress progress-custom mb-2">
+                        <div class="progress-bar bg-info" style="width: 88%"></div>
+                    </div>
+                    <small class="text-muted">88% de compatibilité</small>
+                </div>
+                <div class="device-card">
+                    <h5><i class="fas fa-leaf me-2"></i>Jardin & Irrigation</h5>
+                    <p class="text-muted">Contrôleurs d'irrigation, lumières de jardin, capteurs de sol.</p>
+                    <div class="progress progress-custom mb-2">
+                        <div class="progress-bar bg-primary" style="width: 80%"></div>
+                    </div>
+                    <small class="text-muted">80% de compatibilité</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section id="installation" class="py-5 bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-3">Installation</h2>
+                    <p class="lead text-muted">Choisissez la méthode d'installation qui vous convient</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <i class="fas fa-store me-2 text-primary"></i>Homey App Store
+                            </h4>
+                            <p class="card-text">Méthode recommandée pour la plupart des utilisateurs.</p>
+                            <div class="installation-steps">
+                                <div class="installation-step">
+                                    <h6>Ouvrir l'application Homey</h6>
+                                    <p class="text-muted">Sur votre téléphone ou tablette</p>
+                                </div>
+                                <div class="installation-step">
+                                    <h6>Aller dans "Apps" → "Découvrir"</h6>
+                                    <p class="text-muted">Section des applications disponibles</p>
+                                </div>
+                                <div class="installation-step">
+                                    <h6>Rechercher "Tuya Zigbee"</h6>
+                                    <p class="text-muted">Tapez le nom de l'application</p>
+                                </div>
+                                <div class="installation-step">
+                                    <h6>Cliquer sur "Installer"</h6>
+                                    <p class="text-muted">Suivre l'assistant de configuration</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <i class="fas fa-terminal me-2 text-success"></i>Installation Manuelle
+                            </h4>
+                            <p class="card-text">Pour les utilisateurs avancés et développeurs.</p>
+                            <div class="bg-dark text-light p-3 rounded">
+                                <code class="text-light">
+                                    # Cloner le dépôt<br>
+                                    git clone https://github.com/dlnraja/com.tuya.zigbee.git<br>
+                                    cd com.tuya.zigbee<br><br>
+                                    # Installer les dépendances<br>
+                                    npm install<br><br>
+                                    # Installer sur Homey<br>
+                                    homey app install<br><br>
+                                    # Valider l'application<br>
+                                    homey app validate
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-3">Rejoignez la Communauté</h2>
+                    <p class="lead text-muted">Connectez-vous avec d'autres utilisateurs et développeurs</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <i class="fab fa-github fa-3x text-dark mb-3"></i>
+                            <h5>GitHub</h5>
+                            <p class="text-muted">Code source, issues, pull requests</p>
+                            <a href="https://github.com/dlnraja/com.tuya.zigbee" class="btn btn-outline-dark btn-custom">
+                                Voir le Projet
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-comments fa-3x text-primary mb-3"></i>
+                            <h5>Discord</h5>
+                            <p class="text-muted">Chat en temps réel avec la communauté</p>
+                            <a href="https://discord.gg/homey" class="btn btn-outline-primary btn-custom">
+                                Rejoindre Discord
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-users fa-3x text-success mb-3"></i>
+                            <h5>Forum Homey</h5>
+                            <p class="text-muted">Support officiel et discussions</p>
+                            <a href="https://community.athom.com/" class="btn btn-outline-success btn-custom">
+                                Visiter le Forum
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h5 class="mb-3">
+                        <i class="fas fa-home me-2"></i>Tuya Zigbee
+                    </h5>
+                    <p class="text-muted">
+                        Solution universelle pour intégrer vos appareils Tuya ZigBee avec Homey.
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="mb-3">Liens Rapides</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#features" class="text-muted text-decoration-none">Fonctionnalités</a></li>
+                        <li><a href="#devices" class="text-muted text-decoration-none">Appareils</a></li>
+                        <li><a href="#installation" class="text-muted text-decoration-none">Installation</a></li>
+                        <li><a href="https://github.com/dlnraja/com.tuya.zigbee/issues" class="text-muted text-decoration-none">Support</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="mb-3">Suivez-nous</h6>
+                    <div class="social-links">
+                        <a href="https://github.com/dlnraja/com.tuya.zigbee"><i class="fab fa-github"></i></a>
+                        <a href="https://discord.gg/homey"><i class="fab fa-discord"></i></a>
+                        <a href="https://community.athom.com/"><i class="fas fa-users"></i></a>
+                        <a href="https://apps.athom.com/com.tuya.zigbee"><i class="fas fa-store"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-muted">
+                        © 2025 Tuya Zigbee Universal Integration. Tous droits réservés.
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0 text-muted">
+                        Fait avec <i class="fas fa-heart text-danger"></i> pour la communauté Homey
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Données des drivers (sera généré dynamiquement)
-        const drivers = [
-            { 
-                id: 'TS0201', 
-                name: 'Temperature Sensor',
-                category: 'sensor',
-                capabilities: ['measure_temperature', 'measure_battery'],
-                status: 'active',
-                file: 'drivers/sdk3/TS0201/device.js'
-            },
-            { 
-                id: 'TS0202', 
-                name: 'Humidity Sensor',
-                category: 'sensor',
-                capabilities: ['measure_humidity', 'measure_battery'],
-                status: 'active',
-                file: 'drivers/sdk3/TS0202/device.js'
-            },
-            { 
-                id: 'TS0601', 
-                name: 'Smart Switch',
-                category: 'switch',
-                capabilities: ['onoff', 'measure_power'],
-                status: 'active',
-                file: 'drivers/sdk3/TS0601/device.js'
-            },
-            { 
-                id: 'TS011F', 
-                name: 'Smart Plug',
-                category: 'switch',
-                capabilities: ['onoff', 'measure_power', 'measure_current'],
-                status: 'active',
-                file: 'drivers/sdk3/TS011F/device.js'
-            },
-            { 
-                id: 'TS004F', 
-                name: 'Wall Switch',
-                category: 'switch',
-                capabilities: ['onoff'],
-                status: 'active',
-                file: 'drivers/sdk3/TS004F/device.js'
-            },
-            { 
-                id: 'TS130F', 
-                name: 'Thermostat',
-                category: 'thermostat',
-                capabilities: ['thermostat_mode', 'target_temperature'],
-                status: 'active',
-                file: 'drivers/sdk3/TS130F/device.js'
-            },
-            { 
-                id: 'TS0207', 
-                name: 'Motion Sensor',
-                category: 'sensor',
-                capabilities: ['alarm_motion', 'measure_battery'],
-                status: 'active',
-                file: 'drivers/sdk3/TS0207/device.js'
-            },
-            { 
-                id: 'TS0001', 
-                name: 'Light Switch',
-                category: 'light',
-                capabilities: ['onoff'],
-                status: 'active',
-                file: 'drivers/sdk3/TS0001/device.js'
-            }
-        ];
-
-        // Zigbee clusters data
-        const clusters = {
-            "OnOff": { id: 6, name: "On/Off" },
-            "LevelControl": { id: 8, name: "Level Control" },
-            "ColorControl": { id: 768, name: "Color Control" },
-            "TemperatureMeasurement": { id: 1026, name: "Temperature Measurement" },
-            "HumidityMeasurement": { id: 1029, name: "Humidity Measurement" },
-            "OccupancySensing": { id: 1036, name: "Occupancy Sensing" },
-            "TuyaSpecific": { id: 61184, name: "Tuya Specific" }
-        };
-
-        // Device types data
-        const deviceTypes = {
-            "OnOffLight": { id: 0, name: "On/Off Light" },
-            "DimmableLight": { id: 1, name: "Dimmable Light" },
-            "ColorLight": { id: 2, name: "Color Light" },
-            "TemperatureSensor": { id: 13, name: "Temperature Sensor" },
-            "HumiditySensor": { id: 14, name: "Humidity Sensor" },
-            "OccupancySensor": { id: 12, name: "Occupancy Sensor" },
-            "TuyaGeneric": { id: 23, name: "Tuya Generic Device" }
-        };
-
-        // Initialize dashboard
-        function initDashboard() {
-            updateStats();
-            renderDriversTable();
-            setupEventListeners();
-            updateLastUpdated();
-        }
-
-        // Update statistics
-        function updateStats() {
-            document.getElementById('total-drivers').textContent = drivers.length;
-            document.getElementById('active-drivers').textContent = drivers.filter(d => d.status === 'active').length;
-            document.getElementById('total-clusters').textContent = Object.keys(clusters).length;
-            document.getElementById('device-types').textContent = Object.keys(deviceTypes).length;
-        }
-
-        // Render drivers table
-        function renderDriversTable(filteredDrivers = drivers) {
-            const tbody = document.getElementById('drivers-tbody');
-            tbody.innerHTML = '';
-
-            filteredDrivers.forEach(driver => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td><strong>${driver.id}</strong></td>
-                    <td>${driver.name}</td>
-                    <td><span class="category-${driver.category}">${driver.category}</span></td>
-                    <td>${driver.capabilities.join(', ')}</td>
-                    <td><span class="status-${driver.status}">${driver.status}</span></td>
-                    <td><code>${driver.file}</code></td>
-                `;
-                tbody.appendChild(row);
-            });
-        }
-
-        // Setup event listeners
-        function setupEventListeners() {
-            // Search functionality
-            const searchBox = document.getElementById('search-box');
-            searchBox.addEventListener('input', (e) => {
-                const searchTerm = e.target.value.toLowerCase();
-                const filtered = drivers.filter(driver => 
-                    driver.id.toLowerCase().includes(searchTerm) ||
-                    driver.name.toLowerCase().includes(searchTerm) ||
-                    driver.capabilities.some(cap => cap.toLowerCase().includes(searchTerm))
-                );
-                renderDriversTable(filtered);
-            });
-
-            // Filter buttons
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            filterButtons.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    // Remove active class from all buttons
-                    filterButtons.forEach(b => b.classList.remove('active'));
-                    // Add active class to clicked button
-                    e.target.classList.add('active');
-                    
-                    const filter = e.target.dataset.filter;
-                    let filtered = drivers;
-                    
-                    if (filter !== 'all') {
-                        filtered = drivers.filter(driver => driver.category === filter);
-                    }
-                    
-                    renderDriversTable(filtered);
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
             });
-        }
+        });
 
-        // Update last updated timestamp
-        function updateLastUpdated() {
-            const now = new Date();
-            document.getElementById('last-updated').textContent = now.toLocaleString();
-        }
-
-        // Initialize when page loads
-        document.addEventListener('DOMContentLoaded', initDashboard);
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
     </script>
 </body>
 </html>
