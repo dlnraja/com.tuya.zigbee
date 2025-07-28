@@ -1,0 +1,64 @@
+{
+  "id": "wall_thermostat",
+  "title": {
+    "en": "Improved wall_thermostat",
+    "fr": "wall_thermostat Amélioré",
+    "nl": "Verbeterde wall_thermostat",
+    "ta": "மேம்படுத்தப்பட்ட wall_thermostat"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small/wall_thermostat.png",
+    "large": "/assets/images/large/wall_thermostat.png"
+  },
+  "pairing": [
+    {
+      "id": "improved_pairing",
+      "title": {
+        "en": "Improved Pairing",
+        "fr": "Appairage Amélioré",
+        "nl": "Verbeterde Koppeling",
+        "ta": "மேம்படுத்தப்பட்ட இணைப்பு"
+      },
+      "capabilities": [
+        "onoff"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff"
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "id": "improvement_version",
+      "type": "text",
+      "title": {
+        "en": "Improvement Version",
+        "fr": "Version d'Amélioration",
+        "nl": "Verbeteringsversie",
+        "ta": "மேம்பாட்டு பதிப்பு"
+      },
+      "value": "1.0"
+    },
+    {
+      "id": "implementation_date",
+      "type": "text",
+      "title": {
+        "en": "Implementation Date",
+        "fr": "Date d'Implémentation",
+        "nl": "Implementatiedatum",
+        "ta": "செயல்படுத்தும் தேதி"
+      },
+      "value": "2025-07-28T21:36:47.177Z"
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  }
+}

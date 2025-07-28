@@ -1,0 +1,90 @@
+{
+  "id": "TS0001",
+  "title": {
+    "en": "Improved TS0001",
+    "fr": "TS0001 Amélioré",
+    "nl": "Verbeterde TS0001",
+    "ta": "மேம்படுத்தப்பட்ட TS0001"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "images": {
+    "small": "/assets/images/small/TS0001.png",
+    "large": "/assets/images/large/TS0001.png"
+  },
+  "pairing": [
+    {
+      "id": "improved_pairing",
+      "title": {
+        "en": "Improved Pairing",
+        "fr": "Appairage Amélioré",
+        "nl": "Verbeterde Koppeling",
+        "ta": "மேம்படுத்தப்பட்ட இணைப்பு"
+      },
+      "capabilities": [
+        "onoff"
+      ],
+      "clusters": [
+        "genBasic",
+        "genOnOff",
+        "genLevelCtrl"
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "id": "improvement_version",
+      "type": "text",
+      "title": {
+        "en": "Improvement Version",
+        "fr": "Version d'Amélioration",
+        "nl": "Verbeteringsversie",
+        "ta": "மேம்பாட்டு பதிப்பு"
+      },
+      "value": "1.0"
+    },
+    {
+      "id": "implementation_date",
+      "type": "text",
+      "title": {
+        "en": "Implementation Date",
+        "fr": "Date d'Implémentation",
+        "nl": "Implementatiedatum",
+        "ta": "செயல்படுத்தும் தேதி"
+      },
+      "value": "2025-07-28T21:36:47.122Z"
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": [
+      {
+        "id": "set_dim_level",
+        "title": {
+          "en": "Set Dim Level",
+          "fr": "Définir le Niveau de Luminosité",
+          "nl": "Dimniveau Instellen",
+          "ta": "மங்கல் நிலையை அமைக்கவும்"
+        },
+        "args": [
+          {
+            "name": "level",
+            "type": "number",
+            "title": {
+              "en": "Level",
+              "fr": "Niveau",
+              "nl": "Niveau",
+              "ta": "நிலை"
+            },
+            "min": 0,
+            "max": 100
+          }
+        ]
+      }
+    ]
+  }
+}
