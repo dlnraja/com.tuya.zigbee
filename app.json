@@ -1,0 +1,84 @@
+{
+  "id": "com.tuya.zigbee",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Tuya Zigbee Universal Integration"
+  },
+  "description": {
+    "en": "Universal Tuya ZigBee device integration for Homey"
+  },
+  "category": [
+    "appliances"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "author": {
+    "name": "dlnraja",
+    "email": "support@homey.app"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "dlnraja",
+        "email": "support@homey.app"
+      }
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dlnraja/com.tuya.zigbee.git"
+  },
+  "support": "mailto:support@homey.app",
+  "homepage": "https://github.com/dlnraja/com.tuya.zigbee#readme",
+  "license": "MIT",
+  "drivers": [
+    {
+      "id": "wall_switch_1_gang",
+      "name": {
+        "en": "Wall Switch 1 Gang"
+      },
+      "images": {
+        "small": "/drivers/sdk3/wall_switch_1_gang/assets/small.png",
+        "large": "/drivers/sdk3/wall_switch_1_gang/assets/large.png"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Switch"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": "Tuya",
+        "modelId": "TS0001",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              "genBasic",
+              "genIdentify",
+              "genOnOff"
+            ],
+            "bindings": [
+              "genOnOff"
+            ]
+          }
+        }
+      }
+    }
+  ]
+} 

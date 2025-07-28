@@ -1,0 +1,19 @@
+{
+  "name": "com.tuya.zigbee",
+  "version": "1.0.0",
+  "description": "Universal Tuya ZigBee device integration for Homey",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "homey",
+    "tuya",
+    "zigbee",
+    "smart-home"
+  ],
+  "author": "dlnraja",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+} 
