@@ -1,3 +1,3 @@
 git add .
-git commit -m 'feat(project): Auto-save progress // FR: Sauvegarde automatique'
+git commit -m 'auto-save'
 git push origin master
