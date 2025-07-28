@@ -1,127 +1,84 @@
 {
-    "id":  "universal.tuya.zigbee.device",
-    "version":  "1.0.1",
-    "compatibility":  "\u003e=5.0.0",
-    "category":  "light",
-    "icon":  "/assets/icon.svg",
-    "images":  {
-                   "small":  "/assets/images/small.png",
-                   "large":  "/assets/images/large.png"
-               },
-    "author":  {
-                   "name":  "Tuya Zigbee Team",
-                   "email":  "support@tuya-zigbee.local"
-               },
-    "contributors":  {
-                         "developers":  [
-                                            {
-                                                "name":  "Local Development Team",
-                                                "email":  "dev@tuya-zigbee.local"
-                                            }
-                                        ]
-                     },
-    "bugs":  {
-                 "url":  "https://github.com/tuya-zigbee/issues"
-             },
-    "repository":  {
-                       "type":  "git",
-                       "url":  "https://github.com/tuya-zigbee/universal-device"
-                   },
-    "support":  "mailto:support@tuya-zigbee.local",
-    "homepage":  "https://github.com/tuya-zigbee/universal-device#readme",
-    "funding":  {
-                    "type":  "github",
-                    "url":  "https://github.com/sponsors/tuya-zigbee"
-                },
-    "license":  "MIT",
-    "drivers":  [
-                    {
-                        "id":  "smartplug",
-                        "title":  {
-                                      "en":  "Tuya Smart Plug",
-                                      "fr":  "Prise Intelligente Tuya",
-                                      "nl":  "Tuya Slimme Plug",
-                                      "ta":  "Tuya ???????? ?????"
-                                  },
-                        "titleForm":  {
-                                          "en":  "Tuya Smart Plug",
-                                          "fr":  "Prise Intelligente Tuya",
-                                          "nl":  "Tuya Slimme Plug",
-                                          "ta":  "Tuya ???????? ?????"
-                                      },
-                        "icon":  "/assets/icon.svg",
-                        "class":  "smartplug",
-                        "capabilities":  [
-                                             "onoff"
-                                         ],
-                        "images":  {
-                                       "small":  "/assets/images/small.png",
-                                       "large":  "/assets/images/large.png"
-                                   },
-                        "local":  true,
-                        "noApiRequired":  true
-                    },
-                    {
-                        "id":  "smart_plug",
-                        "title":  {
-                                      "en":  "Tuya Smart Plug (Generic)",
-                                      "fr":  "Prise Intelligente Tuya (G�n�rique)",
-                                      "nl":  "Tuya Slimme Plug (Generiek)",
-                                      "ta":  "Tuya ???????? ????? (???????)"
-                                  },
-                        "titleForm":  {
-                                          "en":  "Tuya Smart Plug (Generic)",
-                                          "fr":  "Prise Intelligente Tuya (G�n�rique)",
-                                          "nl":  "Tuya Slimme Plug (Generiek)",
-                                          "ta":  "Tuya ???????? ????? (???????)"
-                                      },
-                        "icon":  "/assets/icon.svg",
-                        "class":  "smart_plug",
-                        "capabilities":  [
-                                             "onoff"
-                                         ],
-                        "images":  {
-                                       "small":  "/assets/images/small.png",
-                                       "large":  "/assets/images/large.png"
-                                   },
-                        "local":  true,
-                        "noApiRequired":  true
-                    },
-                    {
-                        "id":  "rgb_bulb_E27",
-                        "title":  {
-                                      "en":  "Tuya RGB Bulb E27",
-                                      "fr":  "Ampoule RGB Tuya E27",
-                                      "nl":  "Tuya RGB Lamp E27",
-                                      "ta":  "Tuya RGB ????? E27"
-                                  },
-                        "titleForm":  {
-                                          "en":  "Tuya RGB Bulb E27",
-                                          "fr":  "Ampoule RGB Tuya E27",
-                                          "nl":  "Tuya RGB Lamp E27",
-                                          "ta":  "Tuya RGB ????? E27"
-                                      },
-                        "icon":  "/assets/icon.svg",
-                        "class":  "rgb_bulb_E27",
-                        "capabilities":  [
-                                             "onoff",
-                                             "dim",
-                                             "light_hue",
-                                             "light_saturation"
-                                         ],
-                        "images":  {
-                                       "small":  "/assets/images/small.png",
-                                       "large":  "/assets/images/large.png"
-                                   },
-                        "local":  true,
-                        "noApiRequired":  true
-                    }
-                ],
-    "local":  true,
-    "noApiRequired":  true,
-    "focus":  "Tuya Zigbee Local Integration",
-    "optimized":  true,
-    "sizeOptimized":  true,
-    "homeyignore":  true
-}
-
+  "id": "com.tuya.zigbee",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Tuya Zigbee Universal Integration"
+  },
+  "description": {
+    "en": "Universal Tuya ZigBee device integration for Homey"
+  },
+  "category": [
+    "appliances"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "author": {
+    "name": "dlnraja",
+    "email": "support@homey.app"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "dlnraja",
+        "email": "support@homey.app"
+      }
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dlnraja/com.tuya.zigbee.git"
+  },
+  "support": "mailto:support@homey.app",
+  "homepage": "https://github.com/dlnraja/com.tuya.zigbee#readme",
+  "license": "MIT",
+  "drivers": [
+    {
+      "id": "wall_switch_1_gang",
+      "name": {
+        "en": "Wall Switch 1 Gang"
+      },
+      "images": {
+        "small": "/drivers/sdk3/wall_switch_1_gang/assets/small.png",
+        "large": "/drivers/sdk3/wall_switch_1_gang/assets/large.png"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Switch"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": "Tuya",
+        "modelId": "TS0001",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              "genBasic",
+              "genIdentify",
+              "genOnOff"
+            ],
+            "bindings": [
+              "genOnOff"
+            ]
+          }
+        }
+      }
+    }
+  ]
+} 
