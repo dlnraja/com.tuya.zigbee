@@ -1,6 +1,6 @@
 {
   "name": "com.tuya.zigbee",
-  "version": "1.0.0",
+  "version": "1.4.0",
   "description": "Universal Tuya ZigBee device integration for Homey",
   "main": "app.js",
   "scripts": {
@@ -15,5 +15,6 @@
   "author": "dlnraja",
   "license": "MIT",
   "dependencies": {},
-  "devDependencies": {}
-} 
+  "devDependencies": {},
+  "build": 20250128
+}

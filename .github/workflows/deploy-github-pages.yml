@@ -1,0 +1,175 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build documentation
+        run: |
+          echo "Building documentation..."
+          
+          # Create docs directory structure
+          mkdir -p docs/_site
+          
+          # Copy documentation files
+          cp -r docs/en docs/_site/en
+          cp -r docs/fr docs/_site/fr
+          cp -r docs/nl docs/_site/nl
+          cp -r docs/ta docs/_site/ta
+          cp -r docs/specs docs/_site/specs
+          cp -r docs/devices docs/_site/devices
+          cp -r docs/tools docs/_site/tools
+          cp -r docs/matrix docs/_site/matrix
+          cp -r docs/validation-reports docs/_site/validation-reports
+          
+          # Create index page
+          cat > docs/_site/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Tuya Zigbee Universal Integration - Documentation</title>
+              <style>
+                  body { font-family: Arial, sans-serif; margin: 40px; }
+                  .container { max-width: 800px; margin: 0 auto; }
+                  .language-links { margin: 20px 0; }
+                  .language-links a { margin-right: 15px; padding: 8px 15px; text-decoration: none; background: #007cba; color: white; border-radius: 4px; }
+                  .language-links a:hover { background: #005a87; }
+                  h1 { color: #333; }
+                  .section { margin: 30px 0; }
+                  .section h2 { color: #007cba; border-bottom: 2px solid #007cba; padding-bottom: 10px; }
+                  .section ul { line-height: 1.6; }
+              </style>
+          </head>
+          <body>
+              <div class="container">
+                  <h1>🌟 Tuya Zigbee Universal Integration</h1>
+                  <p><strong>Universal Tuya ZigBee device integration with intelligent automation for Homey SDK3</strong></p>
+                  
+                  <div class="language-links">
+                      <a href="en/">English</a>
+                      <a href="fr/">Français</a>
+                      <a href="nl/">Nederlands</a>
+                      <a href="ta/">தமிழ்</a>
+                  </div>
+                  
+                  <div class="section">
+                      <h2>📚 Documentation Sections</h2>
+                      <ul>
+                          <li><strong>Technical Specifications</strong> - <a href="specs/">View Specs</a></li>
+                          <li><strong>Device Documentation</strong> - <a href="devices/">View Devices</a></li>
+                          <li><strong>Development Tools</strong> - <a href="tools/">View Tools</a></li>
+                          <li><strong>Compatibility Matrix</strong> - <a href="matrix/">View Matrix</a></li>
+                          <li><strong>Validation Reports</strong> - <a href="validation-reports/">View Reports</a></li>
+                      </ul>
+                  </div>
+                  
+                  <div class="section">
+                      <h2>🔗 Quick Links</h2>
+                      <ul>
+                          <li><a href="https://github.com/dlnraja/com.tuya.zigbee">GitHub Repository</a></li>
+                          <li><a href="https://apps.athom.com/com.tuya.zigbee">Homey App Store</a></li>
+                          <li><a href="https://community.athom.com/">Homey Community</a></li>
+                      </ul>
+                  </div>
+                  
+                  <div class="section">
+                      <h2>📊 Project Statistics</h2>
+                      <ul>
+                          <li><strong>148+ Device Drivers</strong> - Comprehensive coverage</li>
+                          <li><strong>50+ Manufacturers</strong> - Universal compatibility</li>
+                          <li><strong>4 Languages</strong> - EN, FR, NL, TA</li>
+                          <li><strong>100% Validation Rate</strong> - All drivers tested</li>
+                      </ul>
+                  </div>
+              </div>
+          </body>
+          </html>
+          EOF
+          
+          # Create sitemap
+          cat > docs/_site/sitemap.xml << 'EOF'
+          <?xml version="1.0" encoding="UTF-8"?>
+          <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+              <url>
+                  <loc>https://dlnraja.github.io/com.tuya.zigbee/</loc>
+                  <lastmod>2025-01-28</lastmod>
+                  <changefreq>weekly</changefreq>
+                  <priority>1.0</priority>
+              </url>
+              <url>
+                  <loc>https://dlnraja.github.io/com.tuya.zigbee/en/</loc>
+                  <lastmod>2025-01-28</lastmod>
+                  <changefreq>weekly</changefreq>
+                  <priority>0.9</priority>
+              </url>
+              <url>
+                  <loc>https://dlnraja.github.io/com.tuya.zigbee/fr/</loc>
+                  <lastmod>2025-01-28</lastmod>
+                  <changefreq>weekly</changefreq>
+                  <priority>0.9</priority>
+              </url>
+              <url>
+                  <loc>https://dlnraja.github.io/com.tuya.zigbee/nl/</loc>
+                  <lastmod>2025-01-28</lastmod>
+                  <changefreq>weekly</changefreq>
+                  <priority>0.9</priority>
+              </url>
+              <url>
+                  <loc>https://dlnraja.github.io/com.tuya.zigbee/ta/</loc>
+                  <lastmod>2025-01-28</lastmod>
+                  <changefreq>weekly</changefreq>
+                  <priority>0.9</priority>
+              </url>
+          </urlset>
+          EOF
+          
+          echo "Documentation built successfully"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/_site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 

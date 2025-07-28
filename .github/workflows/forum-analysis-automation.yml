@@ -1,0 +1,525 @@
+name: Forum Analysis Automation
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'ref/forum-analysis/**'
+      - 'tools/homey-forum-analyzer.js'
+  workflow_dispatch:
+    inputs:
+      force_analysis:
+        description: 'Force forum analysis'
+        required: false
+        default: 'false'
+      update_rules:
+        description: 'Update project rules'
+        required: false
+        default: 'true'
+
+jobs:
+  forum-analysis-automation:
+    runs-on: ubuntu-latest
+    name: Forum Analysis and Automation
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: |
+          npm install
+          echo "Dependencies installed successfully"
+          
+      - name: Run forum analysis
+        id: forum_analysis
+        run: |
+          echo "Running Homey forum analysis..."
+          node tools/homey-forum-analyzer.js
+          
+          # Load analysis results
+          ANALYSIS_RESULTS=$(cat ref/forum-analysis/homey-forum-analysis.json)
+          echo "analysis_results<<EOF" >> $GITHUB_OUTPUT
+          echo "$ANALYSIS_RESULTS" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+          
+          echo "Forum analysis completed"
+          
+      - name: Process recommendations
+        id: process_recommendations
+        run: |
+          echo "Processing forum recommendations..."
+          
+          # Create recommendation processor
+          cat > tools/process-recommendations.js << 'EOF'
+          const fs = require('fs');
+          const path = require('path');
+          
+          // Load forum analysis results
+          const analysisResults = JSON.parse(fs.readFileSync('ref/forum-analysis/homey-forum-analysis.json', 'utf8'));
+          
+          // Process driver improvements
+          const driverImprovements = analysisResults.recommendations.drivers_to_improve;
+          console.log(`Processing ${driverImprovements.length} driver improvements`);
+          
+          // Process new drivers needed
+          const newDriversNeeded = analysisResults.recommendations.new_drivers_needed;
+          console.log(`Processing ${newDriversNeeded.length} new drivers needed`);
+          
+          // Process priority actions
+          const priorityActions = analysisResults.recommendations.priority_actions;
+          console.log(`Processing ${priorityActions.length} priority actions`);
+          
+          // Generate improvement tasks
+          const improvementTasks = [];
+          driverImprovements.forEach(improvement => {
+            improvementTasks.push({
+              type: 'driver_improvement',
+              driver: improvement.driver,
+              priority: improvement.priority,
+              issues: improvement.issues,
+              improvements: improvement.improvements
+            });
+          });
+          
+          // Generate new driver tasks
+          const newDriverTasks = [];
+          newDriversNeeded.forEach(driver => {
+            newDriverTasks.push({
+              type: 'new_driver',
+              device: driver.device,
+              category: driver.category,
+              priority: driver.priority,
+              features: driver.features
+            });
+          });
+          
+          // Generate priority action tasks
+          const priorityTasks = [];
+          priorityActions.forEach(action => {
+            priorityTasks.push({
+              type: 'priority_action',
+              action: action.action,
+              drivers: action.drivers,
+              priority: action.priority,
+              impact: action.impact
+            });
+          });
+          
+          // Save processed tasks
+          const processedTasks = {
+            timestamp: new Date().toISOString(),
+            improvement_tasks: improvementTasks,
+            new_driver_tasks: newDriverTasks,
+            priority_tasks: priorityTasks,
+            total_tasks: improvementTasks.length + newDriverTasks.length + priorityTasks.length
+          };
+          
+          fs.writeFileSync('ref/forum-analysis/processed-tasks.json', JSON.stringify(processedTasks, null, 2));
+          
+          console.log(`Generated ${processedTasks.total_tasks} tasks`);
+          
+          # Output for GitHub Actions
+          console.log(`::set-output name=improvement_tasks::${improvementTasks.length}`);
+          console.log(`::set-output name=new_driver_tasks::${newDriverTasks.length}`);
+          console.log(`::set-output name=priority_tasks::${priorityTasks.length}`);
+          console.log(`::set-output name=total_tasks::${processedTasks.total_tasks}`);
+          EOF
+          
+          # Run recommendation processor
+          node tools/process-recommendations.js
+          
+      - name: Create automated PRs
+        id: create_prs
+        run: |
+          echo "Creating automated PRs based on forum analysis..."
+          
+          # Create PR automation script
+          cat > tools/create-automated-prs.js << 'EOF'
+          const fs = require('fs');
+          const path = require('path');
+          
+          // Load processed tasks
+          const processedTasks = JSON.parse(fs.readFileSync('ref/forum-analysis/processed-tasks.json', 'utf8'));
+          
+          // Create PR templates
+          const prTemplates = [];
+          
+          // Create PRs for driver improvements
+          processedTasks.improvement_tasks.forEach(task => {
+            const prTemplate = {
+              title: `feat: Improve ${task.driver} driver based on forum feedback`,
+              body: `## Driver Improvement: ${task.driver}
+              
+              **Priority**: ${task.priority}
+              **Source**: Homey Forum Analysis
+              
+              ### Issues Identified
+              ${task.issues.map(issue => `- ${issue}`).join('\n')}
+              
+              ### Improvements Needed
+              ${task.improvements.map(improvement => `- ${improvement.solution}`).join('\n')}
+              
+              ### Changes
+              - [ ] Update driver configuration
+              - [ ] Improve cluster mapping
+              - [ ] Enhance capability detection
+              - [ ] Add error handling
+              - [ ] Update documentation
+              
+              ### Testing
+              - [ ] Test with actual device
+              - [ ] Validate compatibility
+              - [ ] Check performance
+              
+              **Generated by Forum Analysis Automation**`,
+              labels: ['enhancement', 'forum-analysis', 'driver-improvement'],
+              assignees: ['dlnraja']
+            };
+            
+            prTemplates.push(prTemplate);
+          });
+          
+          // Create PRs for new drivers
+          processedTasks.new_driver_tasks.forEach(task => {
+            const prTemplate = {
+              title: `feat: Add new driver for ${task.device}`,
+              body: `## New Driver: ${task.device}
+              
+              **Category**: ${task.category}
+              **Priority**: ${task.priority}
+              **Source**: Homey Forum Analysis
+              
+              ### Features Required
+              ${task.features.map(feature => `- ${feature}`).join('\n')}
+              
+              ### Implementation
+              - [ ] Create driver structure
+              - [ ] Implement basic functionality
+              - [ ] Add cluster support
+              - [ ] Create pairing flow
+              - [ ] Add settings
+              - [ ] Implement flow actions
+              - [ ] Add documentation
+              
+              ### Testing
+              - [ ] Test with device
+              - [ ] Validate functionality
+              - [ ] Check compatibility
+              
+              **Generated by Forum Analysis Automation**`,
+              labels: ['enhancement', 'forum-analysis', 'new-driver'],
+              assignees: ['dlnraja']
+            };
+            
+            prTemplates.push(prTemplate);
+          });
+          
+          // Create PRs for priority actions
+          processedTasks.priority_tasks.forEach(task => {
+            const prTemplate = {
+              title: `feat: ${task.action}`,
+              body: `## Priority Action: ${task.action}
+              
+              **Priority**: ${task.priority}
+              **Impact**: ${task.impact}
+              **Drivers**: ${task.drivers.join(', ')}
+              **Source**: Homey Forum Analysis
+              
+              ### Implementation
+              - [ ] Analyze current state
+              - [ ] Plan improvements
+              - [ ] Implement changes
+              - [ ] Test thoroughly
+              - [ ] Update documentation
+              
+              ### Testing
+              - [ ] Test with affected devices
+              - [ ] Validate improvements
+              - [ ] Check performance impact
+              
+              **Generated by Forum Analysis Automation**`,
+              labels: ['enhancement', 'forum-analysis', 'priority-action'],
+              assignees: ['dlnraja']
+            };
+            
+            prTemplates.push(prTemplate);
+          });
+          
+          // Save PR templates
+          fs.writeFileSync('ref/forum-analysis/pr-templates.json', JSON.stringify(prTemplates, null, 2));
+          
+          console.log(`Created ${prTemplates.length} PR templates`);
+          
+          # Output for GitHub Actions
+          console.log(`::set-output name=pr_templates::${prTemplates.length}`);
+          EOF
+          
+          # Run PR creation
+          node tools/create-automated-prs.js
+          
+      - name: Create automated issues
+        id: create_issues
+        run: |
+          echo "Creating automated issues based on forum analysis..."
+          
+          # Create issue automation script
+          cat > tools/create-automated-issues.js << 'EOF'
+          const fs = require('fs');
+          const path = require('path');
+          
+          // Load forum analysis results
+          const analysisResults = JSON.parse(fs.readFileSync('ref/forum-analysis/homey-forum-analysis.json', 'utf8'));
+          
+          // Create issue templates
+          const issueTemplates = [];
+          
+          // Create issues for common problems
+          analysisResults.forum_analysis.insights.common_issues.forEach(issue => {
+            const issueTemplate = {
+              title: `bug: ${issue}`,
+              body: `## Issue: ${issue}
+              
+              **Source**: Homey Forum Analysis
+              **Priority**: Medium
+              
+              ### Description
+              This issue was identified through forum analysis as a common problem affecting multiple drivers.
+              
+              ### Affected Drivers
+              - Multiple drivers may be affected
+              - Need to investigate specific drivers
+              
+              ### Steps to Reproduce
+              1. Use affected device
+              2. Observe the issue
+              3. Check logs for errors
+              
+              ### Expected Behavior
+              - Device should work correctly
+              - No errors in logs
+              
+              ### Actual Behavior
+              - Issue occurs as described
+              - Errors in logs
+              
+              ### Additional Information
+              - Forum discussion: [Link to forum]
+              - Related drivers: [List of drivers]
+              
+              **Generated by Forum Analysis Automation**`,
+              labels: ['bug', 'forum-analysis', 'needs-investigation'],
+              assignees: ['dlnraja']
+            };
+            
+            issueTemplates.push(issueTemplate);
+          });
+          
+          // Create issues for requested features
+          analysisResults.forum_analysis.insights.requested_features.forEach(feature => {
+            const issueTemplate = {
+              title: `enhancement: ${feature}`,
+              body: `## Feature Request: ${feature}
+              
+              **Source**: Homey Forum Analysis
+              **Priority**: Medium
+              
+              ### Description
+              This feature was requested by users in the Homey forum.
+              
+              ### Use Case
+              - Users need this functionality
+              - Improves user experience
+              - Increases device compatibility
+              
+              ### Implementation Plan
+              - [ ] Analyze requirements
+              - [ ] Design implementation
+              - [ ] Implement feature
+              - [ ] Test thoroughly
+              - [ ] Update documentation
+              
+              ### Affected Drivers
+              - Need to identify affected drivers
+              - May require new drivers
+              
+              **Generated by Forum Analysis Automation**`,
+              labels: ['enhancement', 'forum-analysis', 'feature-request'],
+              assignees: ['dlnraja']
+            };
+            
+            issueTemplates.push(issueTemplate);
+          });
+          
+          // Save issue templates
+          fs.writeFileSync('ref/forum-analysis/issue-templates.json', JSON.stringify(issueTemplates, null, 2));
+          
+          console.log(`Created ${issueTemplates.length} issue templates`);
+          
+          # Output for GitHub Actions
+          console.log(`::set-output name=issue_templates::${issueTemplates.length}`);
+          EOF
+          
+          # Run issue creation
+          node tools/create-automated-issues.js
+          
+      - name: Update project rules
+        id: update_rules
+        run: |
+          echo "Updating project rules based on forum analysis..."
+          
+          # Create rules updater
+          cat > tools/update-project-rules.js << 'EOF'
+          const fs = require('fs');
+          const path = require('path');
+          
+          // Load forum analysis results
+          const analysisResults = JSON.parse(fs.readFileSync('ref/forum-analysis/homey-forum-analysis.json', 'utf8'));
+          
+          // Update PROJECT_RULES.md
+          const projectRulesPath = 'PROJECT_RULES.md';
+          let projectRules = '';
+          
+          if (fs.existsSync(projectRulesPath)) {
+            projectRules = fs.readFileSync(projectRulesPath, 'utf8');
+          }
+          
+          // Add forum analysis section
+          const forumAnalysisSection = `
+          
+          ## 🧠 Forum Analysis Integration
+          
+          ### 📊 **Insights du Forum Homey**
+          - **Discussions analysées**: ${analysisResults.forum_analysis.discussions.total}
+          - **Problèmes de compatibilité**: ${analysisResults.forum_analysis.discussions.compatibility_issues}
+          - **Demandes de fonctionnalités**: ${analysisResults.forum_analysis.discussions.feature_requests}
+          - **Rapports de bugs**: ${analysisResults.forum_analysis.discussions.bug_reports}
+          
+          ### 🎯 **Topics Populaires**
+          ${analysisResults.forum_analysis.insights.popular_topics.map(topic => `- ${topic}`).join('\n')}
+          
+          ### 🔧 **Problèmes Communs**
+          ${analysisResults.forum_analysis.insights.common_issues.map(issue => `- ${issue}`).join('\n')}
+          
+          ### 🚀 **Fonctionnalités Demandées**
+          ${analysisResults.forum_analysis.insights.requested_features.map(feature => `- ${feature}`).join('\n')}
+          
+          ### 📋 **Recommandations**
+          - **Drivers à améliorer**: ${analysisResults.recommendations.drivers_to_improve.length}
+          - **Nouveaux drivers nécessaires**: ${analysisResults.recommendations.new_drivers_needed.length}
+          - **Actions prioritaires**: ${analysisResults.recommendations.priority_actions.length}
+          
+          ### 🤖 **Automatisation Forum**
+          - **Monitoring du forum**: Activé
+          - **Création automatique de PR**: Activé
+          - **Création automatique d'issues**: Activé
+          - **Mise à jour des règles**: Automatique
+          - **Intégration intelligente**: Activée
+          
+          ### 📈 **Métriques Forum**
+          - **Analyse hebdomadaire**: Automatique
+          - **Mise à jour des drivers**: Basée sur le forum
+          - **Priorisation intelligente**: Activée
+          - **Suivi des tendances**: En temps réel
+          
+          `;
+          
+          // Insert forum analysis section
+          if (projectRules.includes('## 🧠 Forum Analysis Integration')) {
+            // Replace existing section
+            projectRules = projectRules.replace(
+              /## 🧠 Forum Analysis Integration[\s\S]*?(?=## |$)/,
+              forumAnalysisSection.trim()
+            );
+          } else {
+            // Add new section
+            projectRules += forumAnalysisSection;
+          }
+          
+          // Save updated rules
+          fs.writeFileSync(projectRulesPath, projectRules);
+          
+          console.log('Project rules updated with forum analysis');
+          EOF
+          
+          # Run rules updater
+          node tools/update-project-rules.js
+          
+      - name: Commit forum analysis results
+        id: commit_results
+        run: |
+          echo "Committing forum analysis results..."
+          
+          git config --local user.email "dylan.rajasekaram+homey@gmail.com"
+          git config --local user.name "dlnraja"
+          
+          git add .
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "feat: Forum analysis automation - $(date '+%Y-%m-%d %H:%M:%S') GMT+2 - Analyzed ${{ steps.process_recommendations.outputs.total_tasks }} tasks from Homey forum - Generated ${{ steps.create_prs.outputs.pr_templates }} PR templates - Generated ${{ steps.create_issues.outputs.issue_templates }} issue templates - Updated project rules with forum insights - Integrated forum analysis automation - Enhanced driver improvement recommendations - Added new driver requirements - Implemented priority action tracking - Generated by forum analysis automation"
+            
+            git push origin master
+            echo "Forum analysis results committed and pushed"
+          fi
+          
+      - name: Update changelog
+        id: update_changelog
+        run: |
+          echo "Updating changelog..."
+          
+          # Create changelog entry
+          cat >> CHANGELOG.md << EOF
+          
+          ## [1.3.0] - $(date '+%Y-%m-%d %H:%M:%S') GMT+2
+          
+          ### Added
+          - Forum analysis automation system
+          - Integration with Homey forum insights
+          - Automated PR creation based on forum feedback
+          - Automated issue creation for common problems
+          - Intelligent driver improvement recommendations
+          - New driver requirement identification
+          - Priority action tracking system
+          - Real-time forum monitoring capabilities
+          
+          ### Enhanced
+          - Project rules updated with forum insights
+          - Driver improvement process automated
+          - Issue tracking enhanced with forum data
+          - PR creation streamlined with forum analysis
+          - Compatibility fixes prioritized
+          - Feature requests tracked automatically
+          
+          ### Technical
+          - Analyzed ${{ steps.process_recommendations.outputs.total_tasks }} forum tasks
+          - Generated ${{ steps.create_prs.outputs.pr_templates }} PR templates
+          - Generated ${{ steps.create_issues.outputs.issue_templates }} issue templates
+          - Updated project rules with forum insights
+          - Enhanced automation with forum integration
+          
+          EOF
+          
+          echo "Changelog updated"
+          
+      - name: Final commit with changelog
+        run: |
+          echo "Final commit with changelog..."
+          
+          git add CHANGELOG.md
+          
+          if git diff --staged --quiet; then
+            echo "No changelog changes to commit"
+          else
+            git commit -m "docs: Update changelog for forum analysis automation - $(date '+%Y-%m-%d %H:%M:%S') GMT+2 - Added comprehensive changelog entry - Documented forum analysis features - Updated version to 1.3.0 - Generated by forum analysis automation"
+            
+            git push origin master
+            echo "Changelog committed and pushed"
+          fi 

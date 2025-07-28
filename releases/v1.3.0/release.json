@@ -1,0 +1,20 @@
+{
+  "version": "1.3.0",
+  "build": 20250128,
+  "codename": "Forum Analysis Release",
+  "description": "Version avec analyse du forum et améliorations",
+  "release_date": "2025-07-28T22:46:08.819Z",
+  "features": [
+    "Analyse intelligente du forum Homey",
+    "Génération automatique de PR et issues",
+    "28 drivers améliorés basés sur l'analyse",
+    "1 nouveau driver créé (smart_life_devices)"
+  ],
+  "changelog": [
+    "Analyseur intelligent du forum Homey",
+    "Génération automatique de PR et issues",
+    "Implémentation de 28 drivers améliorés",
+    "Création du nouveau driver smart_life_devices"
+  ],
+  "download_url": "https://github.com/dlnraja/com.tuya.zigbee/releases/download/v1.3.0/tuya-zigbee-v1.3.0.zip"
+}
