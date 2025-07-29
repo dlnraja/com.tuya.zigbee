@@ -1,63 +1,39 @@
 {
-  "id": "zigbee-curtain",
-  "name": {
-    "en": "Zigbee Curtain (Zigbee2MQTT)",
-    "fr": "Rideau Zigbee (Zigbee2MQTT)",
-    "nl": "Zigbee Gordijn (Zigbee2MQTT)",
-    "ta": "Zigbee திரைச்சீலை (Zigbee2MQTT)"
-  },
-  "images": {
-    "small": "assets/images/curtain-small.png",
-    "large": "assets/images/curtain-large.png"
-  },
-  "class": "device",
-  "capabilities": [
-    "onoff",
-    "dim",
-    "curtain_set"
-  ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "title": {
-        "en": "On/Off",
-        "fr": "Marche/Arrêt",
-        "nl": "Aan/Uit",
-        "ta": "இயக்கு/நிறுத்து"
-      }
-    },
-    "dim": {
-      "title": {
-        "en": "Dim",
-        "fr": "Variation",
-        "nl": "Dimmen",
-        "ta": "மங்கலாக்கு"
-      }
-    },
-    "curtain_set": {
-      "title": {
-        "en": "Curtain Position",
-        "fr": "Position Rideau",
-        "nl": "Gordijn Positie",
-        "ta": "திரைச்சீலை நிலை"
-      }
-    }
-  },
-  "settings": [
-    {
-      "id": "poll_interval",
-      "type": "number",
-      "label": {
-        "en": "Poll Interval (ms) - Zigbee2MQTT",
-        "fr": "Intervalle de Polling (ms) - Zigbee2MQTT",
-        "nl": "Poll Interval (ms) - Zigbee2MQTT",
-        "ta": "போல் இடைவெளி (ms) - Zigbee2MQTT"
-      },
-      "value": 30000,
-      "attr": {
-        "min": 1000,
-        "max": 300000,
-        "step": 1000
-      }
-    }
-  ]
+    "id":  "zigbee-curtain",
+    "name":  {
+                 "en":  " $args[0].Value.ToUpper() igbee  $args[0].Value.ToUpper() urtain",
+                 "fr":  " $args[0].Value.ToUpper() igbee  $args[0].Value.ToUpper() urtain",
+                 "nl":  " $args[0].Value.ToUpper() igbee  $args[0].Value.ToUpper() urtain",
+                 "ta":  " $args[0].Value.ToUpper() igbee  $args[0].Value.ToUpper() urtain"
+             },
+    "capabilities":  [
+                         "onoff",
+                         "dim"
+                     ],
+    "class":  "light",
+    "zigbee":  {
+                   "manufacturerName":  [
+                                            "Zigbee"
+                                        ],
+                   "endpoints":  {
+                                     "1":  {
+                                               "clusters":  [
+                                                                "genOnOff",
+                                                                "genLevelCtrl",
+                                                                "genBasic"
+                                                            ],
+                                               "bindings":  [
+                                                                "genOnOff",
+                                                                "genLevelCtrl"
+                                                            ]
+                                           }
+                                 },
+                   "productId":  [
+                                     ""
+                                 ]
+               },
+    "images":  {
+                   "small":  "assets/images/small.png",
+                   "large":  "assets/images/large.png"
+               }
 }

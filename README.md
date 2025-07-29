@@ -1,6 +1,6 @@
 # 🏠 Tuya Zigbee Project
 
-[![Version](https://img.shields.io/badge/version-1.0.9--20250729--0620-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee/releases)
+[![Version](https://img.shields.io/badge/version-1.0.10--20250729--0640-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee/releases)
 [![Homey SDK](https://img.shields.io/badge/Homey%20SDK-3.0-green.svg)](https://apps.homey.app/fr/com.tuya.zigbee)
 [![License](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 [![Languages](https://img.shields.io/badge/languages-EN%20%7C%20FR%20%7C%20NL%20%7C%20TA-orange.svg)](README.md)
@@ -32,23 +32,27 @@ Organized by protocol (Tuya/Zigbee) and category (controllers/sensors/security/c
 
 ### 🔌 Tuya Drivers
 
-13 Tuya drivers across controllers, sensors, and security categories. Each driver supports local control without API dependency, intelligent polling, error handling, and universal compatibility with known and unknown firmware versions.
+18 Tuya drivers across controllers, sensors, security, climate, and automation categories. Each driver supports local control without API dependency, intelligent polling, error handling, and universal compatibility with known and unknown firmware versions.
 
 **Controllers**: tuya-light, tuya-switch, tuya-wall-switch, tuya-fan, tuya-garage-door, tuya-curtain, tuya-smart-plug
 **Sensors**: tuya-temperature-sensor, tuya-humidity-sensor, tuya-pressure-sensor
 **Security**: tuya-motion-sensor, tuya-contact-sensor, tuya-lock
+**Climate**: tuya-thermostat, tuya-hvac, tuya-valve
+**Automation**: tuya-irrigation, tuya-gateway
 
 ### 📡 Pure Zigbee Drivers
 
-5 Pure Zigbee drivers for direct Zigbee communication. Each driver implements Homey SDK 3 best practices with intelligent polling, error handling, and universal compatibility. Supports both generic and specific device types.
+15 Pure Zigbee drivers for direct Zigbee communication. Each driver implements Homey SDK 3 best practices with intelligent polling, error handling, and universal compatibility. Supports both generic and specific device types.
 
-**Controllers**: zigbee-wall-switch, zigbee-smart-plug, zigbee-curtain
-**Sensors**: zigbee-temperature-sensor
-**Security**: zigbee-motion-sensor
+**Controllers**: zigbee-light, zigbee-switch, zigbee-wall-switch, zigbee-smart-plug, zigbee-curtain
+**Sensors**: zigbee-temperature-sensor, zigbee-humidity-sensor, zigbee-pressure-sensor
+**Security**: zigbee-motion-sensor, zigbee-contact-sensor, zigbee-lock
+**Climate**: zigbee-thermostat, zigbee-hvac, zigbee-valve
+**Automation**: zigbee-irrigation, zigbee-gateway
 
 ### 📊 Statistics
 
-18 total drivers, 20+ capabilities, 2 protocols supported. Comprehensive coverage across all device categories with intelligent fallback systems and universal compatibility.
+33 total drivers, 25+ capabilities, 2 protocols supported. Comprehensive coverage across all device categories with intelligent fallback systems and universal compatibility.
 
 ### 🚀 Installation
 
@@ -111,23 +115,27 @@ Organisé par protocole (Tuya/Zigbee) et catégorie (contrôleurs/capteurs/sécu
 
 ### 🔌 Drivers Tuya
 
-13 drivers Tuya répartis en contrôleurs, capteurs et sécurité. Chaque driver supporte le contrôle local sans dépendance API, le polling intelligent, la gestion d'erreur et la compatibilité universelle avec les versions de firmware connues et inconnues.
+18 drivers Tuya répartis en contrôleurs, capteurs, sécurité, climat et automatisation. Chaque driver supporte le contrôle local sans dépendance API, le polling intelligent, la gestion d'erreur et la compatibilité universelle avec les versions de firmware connues et inconnues.
 
 **Contrôleurs**: tuya-light, tuya-switch, tuya-wall-switch, tuya-fan, tuya-garage-door, tuya-curtain, tuya-smart-plug
 **Capteurs**: tuya-temperature-sensor, tuya-humidity-sensor, tuya-pressure-sensor
 **Sécurité**: tuya-motion-sensor, tuya-contact-sensor, tuya-lock
+**Climat**: tuya-thermostat, tuya-hvac, tuya-valve
+**Automatisation**: tuya-irrigation, tuya-gateway
 
 ### 📡 Drivers Zigbee Pur
 
-5 drivers Zigbee pur pour la communication Zigbee directe. Chaque driver implémente les meilleures pratiques Homey SDK 3 avec polling intelligent, gestion d'erreur et compatibilité universelle. Supporte les types d'appareils génériques et spécifiques.
+15 drivers Zigbee pur pour la communication Zigbee directe. Chaque driver implémente les meilleures pratiques Homey SDK 3 avec polling intelligent, gestion d'erreur et compatibilité universelle. Supporte les types d'appareils génériques et spécifiques.
 
-**Contrôleurs**: zigbee-wall-switch, zigbee-smart-plug, zigbee-curtain
-**Capteurs**: zigbee-temperature-sensor
-**Sécurité**: zigbee-motion-sensor
+**Contrôleurs**: zigbee-light, zigbee-switch, zigbee-wall-switch, zigbee-smart-plug, zigbee-curtain
+**Capteurs**: zigbee-temperature-sensor, zigbee-humidity-sensor, zigbee-pressure-sensor
+**Sécurité**: zigbee-motion-sensor, zigbee-contact-sensor, zigbee-lock
+**Climat**: zigbee-thermostat, zigbee-hvac, zigbee-valve
+**Automatisation**: zigbee-irrigation, zigbee-gateway
 
 ### 📊 Statistiques
 
-18 drivers totaux, 20+ capacités, 2 protocoles supportés. Couverture complète de toutes les catégories d'appareils avec systèmes de fallback intelligents et compatibilité universelle.
+33 drivers totaux, 25+ capacités, 2 protocoles supportés. Couverture complète de toutes les catégories d'appareils avec systèmes de fallback intelligents et compatibilité universelle.
 
 ### 🚀 Installation
 
@@ -190,23 +198,27 @@ Georganiseerd per protocol (Tuya/Zigbee) en categorie (controllers/sensoren/beve
 
 ### 🔌 Tuya Drivers
 
-13 Tuya drivers verdeeld over controllers, sensoren en beveiliging. Elke driver ondersteunt lokale besturing zonder API-afhankelijkheid, intelligente polling, foutafhandeling en universele compatibiliteit met bekende en onbekende firmware-versies.
+18 Tuya drivers verdeeld over controllers, sensoren, beveiliging, klimaat en automatisering. Elke driver ondersteunt lokale besturing zonder API-afhankelijkheid, intelligente polling, foutafhandeling en universele compatibiliteit met bekende en onbekende firmware-versies.
 
-**Contrôleurs**: tuya-light, tuya-switch, tuya-wall-switch, tuya-fan, tuya-garage-door, tuya-curtain, tuya-smart-plug
-**Capteurs**: tuya-temperature-sensor, tuya-humidity-sensor, tuya-pressure-sensor
+**Controllers**: tuya-light, tuya-switch, tuya-wall-switch, tuya-fan, tuya-garage-door, tuya-curtain, tuya-smart-plug
+**Sensoren**: tuya-temperature-sensor, tuya-humidity-sensor, tuya-pressure-sensor
 **Beveiliging**: tuya-motion-sensor, tuya-contact-sensor, tuya-lock
+**Klimaat**: tuya-thermostat, tuya-hvac, tuya-valve
+**Automatisering**: tuya-irrigation, tuya-gateway
 
 ### 📡 Pure Zigbee Drivers
 
-5 Pure Zigbee drivers voor directe Zigbee communicatie. Elke driver implementeert Homey SDK 3 best practices met intelligente polling, foutafhandeling en universele compatibiliteit. Ondersteunt zowel generieke als specifieke apparaattypen.
+15 Pure Zigbee drivers voor directe Zigbee communicatie. Elke driver implementeert Homey SDK 3 best practices met intelligente polling, foutafhandeling en universele compatibiliteit. Ondersteunt zowel generieke als specifieke apparaattypen.
 
-**Contrôleurs**: zigbee-wall-switch, zigbee-smart-plug, zigbee-curtain
-**Capteurs**: zigbee-temperature-sensor
-**Beveiliging**: zigbee-motion-sensor
+**Controllers**: zigbee-light, zigbee-switch, zigbee-wall-switch, zigbee-smart-plug, zigbee-curtain
+**Sensoren**: zigbee-temperature-sensor, zigbee-humidity-sensor, zigbee-pressure-sensor
+**Beveiliging**: zigbee-motion-sensor, zigbee-contact-sensor, zigbee-lock
+**Klimaat**: zigbee-thermostat, zigbee-hvac, zigbee-valve
+**Automatisering**: zigbee-irrigation, zigbee-gateway
 
 ### 📊 Statistieken
 
-18 totale drivers, 20+ mogelijkheden, 2 ondersteunde protocollen. Uitgebreide dekking van alle apparaatcategorieën met intelligente fallback-systemen en universele compatibiliteit.
+33 totale drivers, 25+ mogelijkheden, 2 ondersteunde protocollen. Uitgebreide dekking van alle apparaatcategorieën met intelligente fallback-systemen en universele compatibiliteit.
 
 ### 🚀 Installatie
 
@@ -269,23 +281,27 @@ Email ondersteuning op [redacted-email], GitHub Issues voor bug rapporten en fea
 
 ### 🔌 Tuya டிரைவர்கள்
 
-கட்டுப்படுத்திகள், சென்சார்கள் மற்றும் பாதுகாப்பு வகைகளில் 13 Tuya டிரைவர்கள். ஒவ்வொரு டிரைவரும் API சார்பு இல்லாமல் உள்ளூர் கட்டுப்பாடு, நுண்ணறிவு கண்காணிப்பு, பிழை கையாளுதல் மற்றும் அறியப்பட்ட மற்றும் அறியப்படாத firmware பதிப்புகளுடன் உலகளாவிய பொருந்தக்கூடிய தன்மையை ஆதரிக்கிறது.
+கட்டுப்படுத்திகள், சென்சார்கள், பாதுகாப்பு, காலநிலை மற்றும் தானியக்கம் வகைகளில் 18 Tuya டிரைவர்கள். ஒவ்வொரு டிரைவரும் API சார்பு இல்லாமல் உள்ளூர் கட்டுப்பாடு, நுண்ணறிவு கண்காணிப்பு, பிழை கையாளுதல் மற்றும் அறியப்பட்ட மற்றும் அறியப்படாத firmware பதிப்புகளுடன் உலகளாவிய பொருந்தக்கூடிய தன்மையை ஆதரிக்கிறது.
 
 **கட்டுப்படுத்திகள்**: tuya-light, tuya-switch, tuya-wall-switch, tuya-fan, tuya-garage-door, tuya-curtain, tuya-smart-plug
 **சென்சார்கள்**: tuya-temperature-sensor, tuya-humidity-sensor, tuya-pressure-sensor
 **பாதுகாப்பு**: tuya-motion-sensor, tuya-contact-sensor, tuya-lock
+**காலநிலை**: tuya-thermostat, tuya-hvac, tuya-valve
+**தானியக்கம்**: tuya-irrigation, tuya-gateway
 
 ### 📡 தூய Zigbee டிரைவர்கள்
 
-நேரடி Zigbee தகவல்தொடர்புக்கான 5 தூய Zigbee டிரைவர்கள். ஒவ்வொரு டிரைவரும் நுண்ணறிவு கண்காணிப்பு, பிழை கையாளுதல் மற்றும் உலகளாவிய பொருந்தக்கூடிய தன்மையுடன் Homey SDK 3 சிறந்த நடைமுறைகளை செயல்படுத்துகிறது. பொதுவான மற்றும் குறிப்பிட்ட சாதன வகைகளை ஆதரிக்கிறது.
+நேரடி Zigbee தகவல்தொடர்புக்கான 15 தூய Zigbee டிரைவர்கள். ஒவ்வொரு டிரைவரும் நுண்ணறிவு கண்காணிப்பு, பிழை கையாளுதல் மற்றும் உலகளாவிய பொருந்தக்கூடிய தன்மையுடன் Homey SDK 3 சிறந்த நடைமுறைகளை செயல்படுத்துகிறது. பொதுவான மற்றும் குறிப்பிட்ட சாதன வகைகளை ஆதரிக்கிறது.
 
-**கட்டுப்படுத்திகள்**: zigbee-wall-switch, zigbee-smart-plug, zigbee-curtain
-**சென்சார்கள்**: zigbee-temperature-sensor
-**பாதுகாப்பு**: zigbee-motion-sensor
+**கட்டுப்படுத்திகள்**: zigbee-light, zigbee-switch, zigbee-wall-switch, zigbee-smart-plug, zigbee-curtain
+**சென்சார்கள்**: zigbee-temperature-sensor, zigbee-humidity-sensor, zigbee-pressure-sensor
+**பாதுகாப்பு**: zigbee-motion-sensor, zigbee-contact-sensor, zigbee-lock
+**காலநிலை**: zigbee-thermostat, zigbee-hvac, zigbee-valve
+**தானியக்கம்**: zigbee-irrigation, zigbee-gateway
 
 ### 📊 புள்ளிவிவரங்கள்
 
-18 மொத்த டிரைவர்கள், 20+ திறன்கள், 2 ஆதரிக்கப்படும் நெறிமுறைகள். நுண்ணறிவு fallback அமைப்புகள் மற்றும் உலகளாவிய பொருந்தக்கூடிய தன்மையுடன் அனைத்து சாதன வகைகளிலும் விரிவான கவரேஜ்.
+33 மொத்த டிரைவர்கள், 25+ திறன்கள், 2 ஆதரிக்கப்படும் நெறிமுறைகள். நுண்ணறிவு fallback அமைப்புகள் மற்றும் உலகளாவிய பொருந்தக்கூடிய தன்மையுடன் அனைத்து சாதன வகைகளிலும் விரிவான கவரேஜ்.
 
 ### 🚀 நிறுவல்
 
@@ -323,10 +339,10 @@ Homey Community, Zigbee2MQTT, GitHub Tuya, SmartThings, Home Assistant, OpenHAB,
 
 ---
 
-**Version**: 1.0.9-20250729-0620  
-**Last Update**: 29/07/2025 06:20:00  
+**Version**: 1.0.10-20250729-0640  
+**Last Update**: 29/07/2025 06:40:00  
 **Status**: ✅ Active and maintained  
 **Supported Protocols**: 🔌 Tuya + 📡 Pure Zigbee  
-**Total Drivers**: 18 (13 Tuya + 5 Zigbee)  
-**Capabilities**: 20+  
+**Total Drivers**: 33 (18 Tuya + 15 Zigbee)  
+**Capabilities**: 25+  
 **Languages**: EN, FR, NL, TA

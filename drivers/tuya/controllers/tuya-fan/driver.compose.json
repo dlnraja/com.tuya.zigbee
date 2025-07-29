@@ -1,63 +1,39 @@
 {
-  "id": "tuya-fan",
-  "name": {
-    "en": "Tuya Fan (Homey)",
-    "fr": "Ventilateur Tuya (Homey)",
-    "nl": "Tuya Ventilator (Homey)",
-    "ta": "Tuya விசிறி (Homey)"
-  },
-  "images": {
-    "small": "assets/images/fan-small.png",
-    "large": "assets/images/fan-large.png"
-  },
-  "class": "device",
-  "capabilities": [
-    "onoff",
-    "dim",
-    "fan_set"
-  ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "title": {
-        "en": "On/Off",
-        "fr": "Marche/Arrêt",
-        "nl": "Aan/Uit",
-        "ta": "இயக்கு/நிறுத்து"
-      }
-    },
-    "dim": {
-      "title": {
-        "en": "Dim",
-        "fr": "Variation",
-        "nl": "Dimmen",
-        "ta": "மங்கலாக்கு"
-      }
-    },
-    "fan_set": {
-      "title": {
-        "en": "Fan Speed",
-        "fr": "Vitesse Ventilateur",
-        "nl": "Ventilator Snelheid",
-        "ta": "விசிறி வேகம்"
-      }
-    }
-  },
-  "settings": [
-    {
-      "id": "poll_interval",
-      "type": "number",
-      "label": {
-        "en": "Poll Interval (ms) - Homey",
-        "fr": "Intervalle de Polling (ms) - Homey",
-        "nl": "Poll Interval (ms) - Homey",
-        "ta": "போல் இடைவெளி (ms) - Homey"
-      },
-      "value": 30000,
-      "attr": {
-        "min": 1000,
-        "max": 300000,
-        "step": 1000
-      }
-    }
-  ]
+    "id":  "tuya-fan",
+    "name":  {
+                 "en":  " $args[0].Value.ToUpper() uya  $args[0].Value.ToUpper() an",
+                 "fr":  " $args[0].Value.ToUpper() uya  $args[0].Value.ToUpper() an",
+                 "nl":  " $args[0].Value.ToUpper() uya  $args[0].Value.ToUpper() an",
+                 "ta":  " $args[0].Value.ToUpper() uya  $args[0].Value.ToUpper() an"
+             },
+    "capabilities":  [
+                         "onoff",
+                         "dim"
+                     ],
+    "class":  "light",
+    "zigbee":  {
+                   "manufacturerName":  [
+                                            "Tuya"
+                                        ],
+                   "endpoints":  {
+                                     "1":  {
+                                               "clusters":  [
+                                                                "genOnOff",
+                                                                "genLevelCtrl",
+                                                                "genBasic"
+                                                            ],
+                                               "bindings":  [
+                                                                "genOnOff",
+                                                                "genLevelCtrl"
+                                                            ]
+                                           }
+                                 },
+                   "productId":  [
+                                     ""
+                                 ]
+               },
+    "images":  {
+                   "small":  "assets/images/small.png",
+                   "large":  "assets/images/large.png"
+               }
 }
