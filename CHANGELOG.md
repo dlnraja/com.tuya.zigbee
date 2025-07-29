@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.4] - 2025-07-29 05:30:00
+
+### Added
+- 🔧 **Séparation claire Tuya et Zigbee pur**
+  - ✅ **README restructuré**: Séparation complète des protocoles
+  - ✅ **Architecture clarifiée**: 🔌 Tuya vs 📡 Zigbee pur
+  - ✅ **Sources organisées**: Par protocole (Tuya/Zigbee pur)
+  - ✅ **Statistiques séparées**: 10 drivers Tuya + 7 drivers Zigbee pur
+  - ✅ **Support multi-langue**: EN, FR, NL, TA avec distinction protocole
+
+### Changed
+- 🔄 **Structure du README**: Organisation par protocole avec icônes
+- 🔄 **Sources de récupération**: Séparées par protocole (Tuya/Zigbee pur)
+- 🔄 **Statistiques**: Distinction claire entre appareils Tuya et Zigbee pur
+- 🔄 **Documentation**: Clarification des protocoles supportés
+
+### Fixed
+- 🐛 **Confusion protocoles**: Séparation claire Tuya vs Zigbee pur
+- 🐛 **Organisation**: Structure plus claire et compréhensible
+- 🐛 **Documentation**: Meilleure lisibilité et compréhension
+
 ## [1.0.3] - 2025-07-29 05:15:00
 
 ### Added
