@@ -1,90 +1,193 @@
 {
   "id": "com.tuya.zigbee",
-  "version": "1.4.0",
+  "version": "1.0.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
-    "local"
+    {
+      "id": "tuya-zigbee",
+      "name": {
+        "en": "Tuya & Zigbee Platform",
+        "fr": "Plateforme Tuya & Zigbee",
+        "nl": "Tuya & Zigbee Platform",
+        "ta": "Tuya & Zigbee மேட்ஃபார்ம்"
+      },
+      "images": {
+        "small": "assets/images/platform-small.png",
+        "large": "assets/images/platform-large.png"
+      },
+      "class": "platform",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "measure_power",
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_motion",
+        "alarm_contact",
+        "lock_set",
+        "lock_get",
+        "camera_stream",
+        "speaker_volume",
+        "vacuum_start",
+        "garage_door_set",
+        "valve_set"
+      ],
+      "settings": [
+        {
+          "id": "tuya_only_mode",
+          "type": "boolean",
+          "label": {
+            "en": "Tuya Only Mode",
+            "fr": "Mode Tuya Uniquement",
+            "nl": "Tuya Alleen Modus",
+            "ta": "Tuya மட்டும் பயன்முறை"
+          },
+          "value": false
+        }
+      ]
+    }
   ],
-  "name": {
-    "en": "Tuya Zigbee Universal Integration",
-    "fr": "Intégration Universelle Tuya Zigbee",
-    "nl": "Tuya Zigbee Universele Integratie",
-    "ta": "Tuya Zigbee உலகளாவிய ஒருங்கிணைப்பு"
-  },
-  "description": {
-    "en": "Universal Tuya ZigBee device integration for Homey",
-    "fr": "Intégration universelle des appareils Tuya ZigBee pour Homey",
-    "nl": "Universele Tuya ZigBee-apparaatintegratie voor Homey",
-    "ta": "Homey க்கான Tuya ZigBee சாதனங்களின் உலகளாவிய ஒருங்கிணைப்பு"
-  },
-  "category": [
-    "Appliances"
+  "drivers": [
+    {
+      "id": "tuya-switch",
+      "name": {
+        "en": "Tuya Switch",
+        "fr": "Interrupteur Tuya",
+        "nl": "Tuya Schakelaar",
+        "ta": "Tuya சுவிட்ச்"
+      },
+      "images": {
+        "small": "assets/images/switch-small.png",
+        "large": "assets/images/switch-large.png"
+      },
+      "class": "device",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_power"
+      ]
+    },
+    {
+      "id": "tuya-light",
+      "name": {
+        "en": "Tuya Light",
+        "fr": "Lampe Tuya",
+        "nl": "Tuya Licht",
+        "ta": "Tuya விளக்கு"
+      },
+      "images": {
+        "small": "assets/images/light-small.png",
+        "large": "assets/images/light-large.png"
+      },
+      "class": "device",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature"
+      ]
+    },
+    {
+      "id": "zigbee-switch",
+      "name": {
+        "en": "Zigbee Switch",
+        "fr": "Interrupteur Zigbee",
+        "nl": "Zigbee Schakelaar",
+        "ta": "Zigbee சுவிட்ச்"
+      },
+      "images": {
+        "small": "assets/images/switch-small.png",
+        "large": "assets/images/switch-large.png"
+      },
+      "class": "device",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_power"
+      ]
+    },
+    {
+      "id": "zigbee-light",
+      "name": {
+        "en": "Zigbee Light",
+        "fr": "Lampe Zigbee",
+        "nl": "Zigbee Licht",
+        "ta": "Zigbee விளக்கு"
+      },
+      "images": {
+        "small": "assets/images/light-small.png",
+        "large": "assets/images/light-large.png"
+      },
+      "class": "device",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature"
+      ]
+    }
   ],
-  "permissions": [],
+  "dependencies": {
+    "homey-meshdriver": "^1.3.50",
+    "homey-tuya": "^1.0.0",
+    "homey": "^2.0.0"
+  },
+  "permissions": [
+    "homey:manager:api"
+  ],
   "images": {
-    "small": "/assets/images/small.png",
-    "large": "/assets/images/large.png"
+    "small": "assets/images/app-small.png",
+    "large": "assets/images/app-large.png"
   },
   "author": {
     "name": "dlnraja",
-    "email": "support@homey.app"
+    "email": "dylan.rajasekaram+homey@gmail.com"
   },
-  "contributors": {
-    "developers": [
-      {
-        "name": "dlnraja",
-        "email": "support@homey.app"
-      }
-    ]
-  },
+  "category": [
+    "lights"
+  ],
+  "keywords": [
+    "tuya",
+    "zigbee",
+    "smart home",
+    "automation",
+    "lights",
+    "switches",
+    "sensors"
+  ],
   "bugs": {
     "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
   },
+  "contributors": [
+    {
+      "name": "dlnraja",
+      "email": "dylan.rajasekaram+homey@gmail.com"
+    }
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/dlnraja/com.tuya.zigbee.git"
   },
-  "support": "mailto:support@homey.app",
   "homepage": "https://github.com/dlnraja/com.tuya.zigbee#readme",
-  "license": "MIT",
-  "drivers": [
-    {
-      "id": "wall_switch_1_gang",
-      "name": {
-        "en": "Wall Switch 1 Gang"
-      },
-      "images": {
-        "small": "/drivers/sdk3/wall_switch_1_gang/assets/small.png",
-        "large": "/drivers/sdk3/wall_switch_1_gang/assets/large.png"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff"
-      ],
-      "capabilitiesOptions": {
-        "onoff": {
-          "title": {
-            "en": "Switch"
-          }
-        }
-      },
-      "zigbee": {
-        "manufacturerName": "Tuya",
-        "modelId": "TS0001",
-        "endpoints": {
-          "1": {
-            "clusters": [
-              "genBasic",
-              "genIdentify",
-              "genOnOff"
-            ],
-            "bindings": [
-              "genOnOff"
-            ]
-          }
-        }
-      }
-    }
-  ]
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {},
+  "description": {
+    "en": "Tuya & Zigbee Smart Home Integration",
+    "fr": "Intégration Domotique Tuya & Zigbee",
+    "nl": "Tuya & Zigbee Smart Home Integratie",
+    "ta": "Tuya & Zigbee ஸ்மார்ட் ஹோம் ஒருங்கிணைப்பு"
+  }
 }
