@@ -1,0 +1,38 @@
+{
+    "id":  "zigbee-pressure-sensor",
+    "name":  {
+                 "en":  " $args[0].Value.ToUpper() igbee  $args[0].Value.ToUpper() ressure  $args[0].Value.ToUpper() ensor",
+                 "fr":  " $args[0].Value.ToUpper() igbee  $args[0].Value.ToUpper() ressure  $args[0].Value.ToUpper() ensor",
+                 "nl":  " $args[0].Value.ToUpper() igbee  $args[0].Value.ToUpper() ressure  $args[0].Value.ToUpper() ensor",
+                 "ta":  " $args[0].Value.ToUpper() igbee  $args[0].Value.ToUpper() ressure  $args[0].Value.ToUpper() ensor"
+             },
+    "capabilities":  [
+                         "measure_pressure"
+                     ],
+    "class":  "light",
+    "zigbee":  {
+                   "manufacturerName":  [
+                                            "Zigbee"
+                                        ],
+                   "endpoints":  {
+                                     "1":  {
+                                               "clusters":  [
+                                                                "genOnOff",
+                                                                "genLevelCtrl",
+                                                                "genBasic"
+                                                            ],
+                                               "bindings":  [
+                                                                "genOnOff",
+                                                                "genLevelCtrl"
+                                                            ]
+                                           }
+                                 },
+                   "productId":  [
+                                     ""
+                                 ]
+               },
+    "images":  {
+                   "small":  "assets/images/small.png",
+                   "large":  "assets/images/large.png"
+               }
+}

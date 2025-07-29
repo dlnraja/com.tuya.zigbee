@@ -1,0 +1,38 @@
+{
+    "id":  "zigbee-lock",
+    "name":  {
+                 "en":  " $args[0].Value.ToUpper() igbee  $args[0].Value.ToUpper() ock",
+                 "fr":  " $args[0].Value.ToUpper() igbee  $args[0].Value.ToUpper() ock",
+                 "nl":  " $args[0].Value.ToUpper() igbee  $args[0].Value.ToUpper() ock",
+                 "ta":  " $args[0].Value.ToUpper() igbee  $args[0].Value.ToUpper() ock"
+             },
+    "capabilities":  [
+                         "lock"
+                     ],
+    "class":  "light",
+    "zigbee":  {
+                   "manufacturerName":  [
+                                            "Zigbee"
+                                        ],
+                   "endpoints":  {
+                                     "1":  {
+                                               "clusters":  [
+                                                                "genOnOff",
+                                                                "genLevelCtrl",
+                                                                "genBasic"
+                                                            ],
+                                               "bindings":  [
+                                                                "genOnOff",
+                                                                "genLevelCtrl"
+                                                            ]
+                                           }
+                                 },
+                   "productId":  [
+                                     ""
+                                 ]
+               },
+    "images":  {
+                   "small":  "assets/images/small.png",
+                   "large":  "assets/images/large.png"
+               }
+}

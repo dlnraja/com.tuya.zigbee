@@ -1,63 +1,38 @@
 {
-  "id": "tuya-contact-sensor",
-  "name": {
-    "en": "Tuya Contact Sensor",
-    "fr": "Capteur de Contact Tuya",
-    "nl": "Tuya Contactsensor",
-    "ta": "Tuya தொடர்பு சென்சார்"
-  },
-  "images": {
-    "small": "assets/images/contact-sensor-small.png",
-    "large": "assets/images/contact-sensor-large.png"
-  },
-  "class": "device",
-  "capabilities": [
-    "alarm_contact",
-    "measure_temperature",
-    "measure_humidity"
-  ],
-  "capabilitiesOptions": {
-    "alarm_contact": {
-      "title": {
-        "en": "Contact",
-        "fr": "Contact",
-        "nl": "Contact",
-        "ta": "தொடர்பு"
-      }
-    },
-    "measure_temperature": {
-      "title": {
-        "en": "Temperature",
-        "fr": "Température",
-        "nl": "Temperatuur",
-        "ta": "வெப்பநிலை"
-      }
-    },
-    "measure_humidity": {
-      "title": {
-        "en": "Humidity",
-        "fr": "Humidité",
-        "nl": "Luchtvochtigheid",
-        "ta": "ஈரப்பதம்"
-      }
-    }
-  },
-  "settings": [
-    {
-      "id": "poll_interval",
-      "type": "number",
-      "label": {
-        "en": "Poll Interval (ms)",
-        "fr": "Intervalle de Polling (ms)",
-        "nl": "Poll Interval (ms)",
-        "ta": "போல் இடைவெளி (ms)"
-      },
-      "value": 30000,
-      "attr": {
-        "min": 1000,
-        "max": 300000,
-        "step": 1000
-      }
-    }
-  ]
+    "id":  "tuya-contact-sensor",
+    "name":  {
+                 "en":  " $args[0].Value.ToUpper() uya  $args[0].Value.ToUpper() ontact  $args[0].Value.ToUpper() ensor",
+                 "fr":  " $args[0].Value.ToUpper() uya  $args[0].Value.ToUpper() ontact  $args[0].Value.ToUpper() ensor",
+                 "nl":  " $args[0].Value.ToUpper() uya  $args[0].Value.ToUpper() ontact  $args[0].Value.ToUpper() ensor",
+                 "ta":  " $args[0].Value.ToUpper() uya  $args[0].Value.ToUpper() ontact  $args[0].Value.ToUpper() ensor"
+             },
+    "capabilities":  [
+                         "alarm_contact"
+                     ],
+    "class":  "light",
+    "zigbee":  {
+                   "manufacturerName":  [
+                                            "Tuya"
+                                        ],
+                   "endpoints":  {
+                                     "1":  {
+                                               "clusters":  [
+                                                                "genOnOff",
+                                                                "genLevelCtrl",
+                                                                "genBasic"
+                                                            ],
+                                               "bindings":  [
+                                                                "genOnOff",
+                                                                "genLevelCtrl"
+                                                            ]
+                                           }
+                                 },
+                   "productId":  [
+                                     ""
+                                 ]
+               },
+    "images":  {
+                   "small":  "assets/images/small.png",
+                   "large":  "assets/images/large.png"
+               }
 }

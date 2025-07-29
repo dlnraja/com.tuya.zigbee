@@ -1,157 +1,42 @@
-/**
- * Driver Tuya Smart Plug - Tuya
- * Prise intelligente Tuya
- * Récupéré depuis ancien commit - Optimisé pour Homey
- * Architecture conforme Homey SDK 3
- * Compatible avec firmware connu et inconnu
- * Support générique et spécifique
- */
+const { TuyaDevice } = require('homey-tuya');
 
-const TuyaDeviceTemplate = require('../../tuya-structure-template');
-
-class TuyaSmartPlug extends TuyaDeviceTemplate {
-
-    async onNodeInit() {
-        // Initialisation Smart Plug Tuya
-        await super.onNodeInit();
-
-        this.log('Driver Tuya Smart Plug initialisé depuis ancien commit');
-
-        // Capacités spécifiques Smart Plug
-        await this.registerSmartPlugCapabilities();
-
-        // Listeners spécifiques Smart Plug
-        await this.registerSmartPlugListeners();
+class tuya-smart-plugDevice extends TuyaDevice {
+    async onInit() {
+        await super.onInit();
         
-        // Polling intelligent
-        await this.setupPolling();
+        // Register capabilities
+        this.registerCapability('onoff', 'genOnOff');
+        this.registerCapability('measure_power.Trim()', 'genLevelCtrl');
+        
+        // Setup polling
+        this.setPollInterval(30);
+        
+        // Setup listeners
+        this.on('capability:onoff:changed', this.onCapabilityOnOffChanged.bind(this));
+        this.on('capability:measure_power:changed', this.onCapabilityMeasure_powerChanged.bind(this));
     }
-
-    async registerSmartPlugCapabilities() {
-        // Capacités Smart Plug selon Homey SDK et source ancien commit
+    
+    async onCapabilityOnOffChanged(value) {
         try {
-            await this.registerCapability('onoff', 'switch');
-            if (this.hasCapability('dim')) {
-                await this.registerCapability('dim', 'dimmer');
-            }
-            if (this.hasCapability('measure_power')) {
-                await this.registerCapability('measure_power', 'meter');
-            }
-            if (this.hasCapability('measure_current')) {
-                await this.registerCapability('measure_current', 'meter');
-            }
-            if (this.hasCapability('measure_voltage')) {
-                await this.registerCapability('measure_voltage', 'meter');
-            }
-            this.log('Capacités Smart Plug Tuya enregistrées depuis ancien commit');
+            await this.setCapabilityValue('onoff', value);
+            this.log('OnOff capability changed:', value);
         } catch (error) {
-            this.error('Erreur capacités Smart Plug Tuya:', error);
+            this.error('Error changing OnOff capability:', error);
         }
     }
-
-    async registerSmartPlugListeners() {
-        // Listeners Smart Plug selon Homey SDK et source ancien commit
+    
+        async onCapabilityMeasure_powerChanged(value) {
         try {
-            // Listeners spécifiques pour Smart Plug Tuya
-            this.on('data', this.onSmartPlugData.bind(this));
-            this.on('dp_refresh', this.onSmartPlugDpRefresh.bind(this));
-            
-            this.log('Listeners Smart Plug Tuya configurés depuis ancien commit');
+            await this.setCapabilityValue('measure_power', value);
+            this.log('Measure_power capability changed:', value);
         } catch (error) {
-            this.error('Erreur listeners Smart Plug Tuya:', error);
+            this.error('Error changing Measure_power capability:', error);
         }
     }
-
-    async setupPolling() {
-        // Polling intelligent selon source ancien commit
-        try {
-            const pollInterval = this.getSetting('poll_interval') || 30000;
-            this.pollTimer = this.homey.setInterval(() => {
-                this.poll();
-            }, pollInterval);
-            this.log('Polling Smart Plug Tuya configuré depuis ancien commit');
-        } catch (error) {
-            this.error('Erreur polling Smart Plug Tuya:', error);
-        }
-    }
-
-    async poll() {
-        // Polling intelligent
-        try {
-            this.log('Polling Smart Plug Tuya depuis ancien commit');
-            // Polling spécifique selon source
-        } catch (error) {
-            this.error('Erreur polling Smart Plug Tuya:', error);
-        }
-    }
-
-    // Callbacks Smart Plug selon Homey SDK et source ancien commit
-    async onSmartPlugData(data) {
-        try {
-            this.log('Données Smart Plug Tuya reçues depuis ancien commit:', data);
-            
-            // Traitement des données Smart Plug
-            if (data['1'] !== undefined) {
-                await this.setCapabilityValue('onoff', data['1'] === true);
-            }
-            if (data['2'] !== undefined && this.hasCapability('dim')) {
-                await this.setCapabilityValue('dim', data['2']);
-            }
-            if (data['3'] !== undefined && this.hasCapability('measure_power')) {
-                await this.setCapabilityValue('measure_power', data['3']);
-            }
-            if (data['4'] !== undefined && this.hasCapability('measure_current')) {
-                await this.setCapabilityValue('measure_current', data['4']);
-            }
-            if (data['5'] !== undefined && this.hasCapability('measure_voltage')) {
-                await this.setCapabilityValue('measure_voltage', data['5']);
-            }
-        } catch (error) {
-            this.error('Erreur données Smart Plug Tuya:', error);
-        }
-    }
-
-    async onSmartPlugDpRefresh(dp) {
-        try {
-            this.log('DP refresh Smart Plug Tuya depuis ancien commit:', dp);
-            // Traitement spécifique pour Smart Plug
-        } catch (error) {
-            this.error('Erreur DP refresh Smart Plug Tuya:', error);
-        }
-    }
-
-    // Méthodes Smart Plug selon source ancien commit
-    async onOffSet(onoff) {
-        try {
-            await this.setData({ '1': onoff });
-            this.log(`Smart Plug Tuya onOff set depuis ancien commit: ${onoff}`);
-        } catch (error) {
-            this.error('Erreur Smart Plug Tuya onOff set:', error);
-            throw error;
-        }
-    }
-
-    async dimSet(dim) {
-        try {
-            if (this.hasCapability('dim')) {
-                const level = Math.round(dim);
-                await this.setData({ '2': level });
-                this.log(`Smart Plug Tuya dim set depuis ancien commit: ${dim}%`);
-            }
-        } catch (error) {
-            this.error('Erreur Smart Plug Tuya dim set:', error);
-            throw error;
-        }
-    }
-
-    // Méthode de nettoyage selon Homey SDK
+    
     async onUninit() {
-        if (this.pollTimer) {
-            this.homey.clearInterval(this.pollTimer);
-            this.pollTimer = null;
-        }
-        this.log('Smart Plug Tuya device uninitialized depuis ancien commit');
+        this.log('Device uninitialized');
     }
 }
 
-module.exports = TuyaSmartPlug;
+module.exports = tuya-smart-plugDevice;
