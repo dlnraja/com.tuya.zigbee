@@ -29,6 +29,7 @@
     "generate-docs": "node scripts/generate-docs.js",
     "optimize-drivers": "node scripts/optimize-reorganize-drivers.js",
     "sync-tuya-light": "node scripts/sync-tuya-light.js",
+    "verify-releases": "node scripts/verify-releases-zip.js",
     "build": "npm run pipeline",
     "test": "npm run verify",
     "lint": "echo 'Linting completed'",
@@ -67,7 +68,10 @@
     "synchronization",
     "tuya-light",
     "branch-sync",
-    "monthly-automation"
+    "monthly-automation",
+    "releases",
+    "zip-files",
+    "verification"
   ],
   "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
   "license": "MIT",
