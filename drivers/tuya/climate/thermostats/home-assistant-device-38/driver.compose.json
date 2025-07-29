@@ -1,0 +1,63 @@
+{
+  "id": "home-assistant-device-38",
+  "title": {
+    "en": "Home Assistant Device 38",
+    "fr": "Home Assistant Device 38",
+    "nl": "Home Assistant Device 38",
+    "ta": "Home Assistant Device 38"
+  },
+  "description": {
+    "en": "Driver for home-assistant-device-38 from Home Assistant",
+    "fr": "Driver pour home-assistant-device-38 de Home Assistant",
+    "nl": "Driver voor home-assistant-device-38 van Home Assistant",
+    "ta": "Home Assistant இலிருந்து home-assistant-device-38 க்கான டிரைவர்"
+  },
+  "category": "climate",
+  "protocol": "tuya",
+  "source": "Home Assistant",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power",
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genPowerCfg",
+    "msTemperatureMeasurement",
+    "msRelativeHumidity"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:11:17.709Z",
+  "tuyaCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Tuya",
+    "model": "home-assistant-device-38",
+    "firmware": "latest",
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_power",
+      "measure_temperature",
+      "measure_humidity"
+    ],
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genPowerCfg",
+      "msTemperatureMeasurement",
+      "msRelativeHumidity"
+    ]
+  },
+  "homeyCompatibility": {
+    "pro": true,
+    "bridge": true,
+    "cloud": false,
+    "minVersion": "5.0.0",
+    "maxVersion": "6.0.0"
+  }
+}

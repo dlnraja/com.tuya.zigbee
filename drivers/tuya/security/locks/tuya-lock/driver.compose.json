@@ -1,0 +1,57 @@
+{
+  "id": "tuya-lock",
+  "title": {
+    "en": "Tuya Lock",
+    "fr": "Tuya Lock",
+    "nl": "Tuya Lock",
+    "ta": "Tuya Lock"
+  },
+  "description": {
+    "en": "TUYA driver for tuya-lock from Tuya (Historical)",
+    "fr": "Driver TUYA pour tuya-lock de Tuya (Historique)",
+    "nl": "TUYA driver voor tuya-lock van Tuya (Historisch)",
+    "ta": "Tuya இலிருந்து tuya-lock க்கான TUYA டிரைவர் (வரலாற்று)"
+  },
+  "category": "security",
+  "protocol": "tuya",
+  "manufacturer": "Tuya",
+  "source": "README historique (master)",
+  "capabilities": [
+    "alarm_motion",
+    "alarm_contact",
+    "alarm_tamper"
+  ],
+  "clusters": [
+    "ssIasZone"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.001Z",
+  "historical": {
+    "commitHash": "e8936adf",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "tuyaCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Tuya",
+    "model": "tuya-lock",
+    "firmware": "latest",
+    "capabilities": [
+      "alarm_motion",
+      "alarm_contact",
+      "alarm_tamper"
+    ],
+    "clusters": [
+      "ssIasZone"
+    ]
+  },
+  "homeyCompatibility": {
+    "pro": true,
+    "bridge": true,
+    "cloud": false,
+    "minVersion": "5.0.0",
+    "maxVersion": "6.0.0"
+  }
+}

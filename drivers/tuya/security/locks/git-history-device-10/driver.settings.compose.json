@@ -1,0 +1,24 @@
+{
+  "id": "git-history-device-10-settings",
+  "title": {
+    "en": "git-history-device-10 Settings",
+    "fr": "Paramètres git-history-device-10",
+    "nl": "git-history-device-10 Instellingen",
+    "ta": "git-history-device-10 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}
