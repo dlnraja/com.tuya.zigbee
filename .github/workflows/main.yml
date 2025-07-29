@@ -31,36 +31,16 @@ jobs:
         run: npm ci
 
       - name: Run linting
-        run: |
-          if [ -f "package.json" ] && grep -q '"lint"' package.json; then
-            npm run lint
-          else
-            echo "✅ No lint script found, skipping..."
-          fi
+        run: npm run lint
 
       - name: Run tests
-        run: |
-          if [ -f "package.json" ] && grep -q '"test"' package.json; then
-            npm test
-          else
-            echo "✅ No test script found, skipping..."
-          fi
+        run: npm test
 
       - name: Build application
-        run: |
-          if [ -f "package.json" ] && grep -q '"build"' package.json; then
-            npm run build
-          else
-            echo "✅ No build script found, skipping..."
-          fi
+        run: npm run build
 
       - name: Validate Homey app
-        run: |
-          if [ -f "package.json" ] && grep -q '"validate"' package.json; then
-            npm run validate
-          else
-            echo "✅ No validate script found, skipping..."
-          fi
+        run: npm run validate
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
@@ -112,20 +92,10 @@ jobs:
         run: npm ci
 
       - name: Build for production
-        run: |
-          if [ -f "package.json" ] && grep -q '"build"' package.json; then
-            npm run build
-          else
-            echo "✅ No build script found, skipping..."
-          fi
+        run: npm run build
 
       - name: Deploy to Homey
-        run: |
-          if [ -f "package.json" ] && grep -q '"deploy"' package.json; then
-            npm run deploy
-          else
-            echo "✅ No deploy script found, skipping..."
-          fi
+        run: npm run deploy
         env:
           HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
 
