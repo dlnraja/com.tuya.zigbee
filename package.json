@@ -28,6 +28,7 @@
     "fetch-github": "node scripts/fetch-issues-pullrequests.js",
     "generate-docs": "node scripts/generate-docs.js",
     "optimize-drivers": "node scripts/optimize-reorganize-drivers.js",
+    "sync-tuya-light": "node scripts/sync-tuya-light.js",
     "build": "npm run pipeline",
     "test": "npm run verify",
     "lint": "echo 'Linting completed'",
@@ -62,7 +63,11 @@
     "documentation",
     "generation",
     "optimization",
-    "reorganization"
+    "reorganization",
+    "synchronization",
+    "tuya-light",
+    "branch-sync",
+    "monthly-automation"
   ],
   "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
   "license": "MIT",
