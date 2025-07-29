@@ -1,42 +1,22 @@
-const { TuyaDevice } = require('homey-tuya');
+﻿const { ZigbeeDevice } = require('homey-zigbeedriver');
 
-class tuya-contact-sensorDevice extends TuyaDevice {
+class TuyaContactSensorDevice extends ZigbeeDevice {
     async onInit() {
         await super.onInit();
         
-        // Register capabilities
-        this.registerCapability('onoff', 'genOnOff');
-        this.registerCapability('alarm_contact.Trim()', 'genLevelCtrl');
-        
-        // Setup polling
-        this.setPollInterval(30);
-        
-        // Setup listeners
-        this.on('capability:onoff:changed', this.onCapabilityOnOffChanged.bind(this));
-        this.on('capability:alarm_contact:changed', this.onCapabilityAlarm_contactChanged.bind(this));
+        // Start polling
+        this.startPolling();
     }
-    
-    async onCapabilityOnOffChanged(value) {
-        try {
-            await this.setCapabilityValue('onoff', value);
-            this.log('OnOff capability changed:', value);
-        } catch (error) {
-            this.error('Error changing OnOff capability:', error);
-        }
+
+    async onContactChange(contact) {
+        await this.setCapabilityValue('alarm_contact', contact);
+        this.log('Contact changed to: ' + contact);
     }
-    
-        async onCapabilityAlarm_contactChanged(value) {
-        try {
-            await this.setCapabilityValue('alarm_contact', value);
-            this.log('Alarm_contact capability changed:', value);
-        } catch (error) {
-            this.error('Error changing Alarm_contact capability:', error);
-        }
-    }
-    
+
     async onUninit() {
-        this.log('Device uninitialized');
+        this.stopPolling();
+        await super.onUninit();
     }
 }
 
-module.exports = tuya-contact-sensorDevice;
+module.exports = TuyaContactSensorDevice;

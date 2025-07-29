@@ -1,0 +1,13 @@
+{
+  "id": "forum-homey-community-device-1",
+  "title": "forum-Homey Community-device-1 Device",
+  "category": "controllers",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "TS0001",
+  "name": {
+    "en": "TS0001 Device"
+  },
+  "class": "socket",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_TS0001"
+    ],
+    "productId": [
+      "TS0001"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "title": "TS0001 Device",
+  "category": "controllers",
+  "optimized": true,
+  "optimizationDate": "2025-07-29T12:42:40.181Z",
+  "version": "1.0.12-20250729-1405"
+}

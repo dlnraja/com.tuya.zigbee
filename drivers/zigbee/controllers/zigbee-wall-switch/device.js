@@ -1,35 +1,25 @@
-const { ZigbeeDevice } = require('homey-meshdriver');
+﻿const { ZigbeeDevice } = require('homey-zigbeedriver');
 
-class zigbee-wall-switchDevice extends ZigbeeDevice {
+class ZigbeeWallSwitchDevice extends ZigbeeDevice {
     async onInit() {
         await super.onInit();
         
         // Register capabilities
-        this.registerCapability('onoff', 'genOnOff');
+        this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
         
-        
-        // Setup polling
-        this.setPollInterval(30);
-        
-        // Setup listeners
-        this.on('capability:onoff:changed', this.onCapabilityOnOffChanged.bind(this));
-        
+        // Start polling
+        this.startPolling();
     }
-    
-    async onCapabilityOnOffChanged(value) {
-        try {
-            await this.setCapabilityValue('onoff', value);
-            this.log('OnOff capability changed:', value);
-        } catch (error) {
-            this.error('Error changing OnOff capability:', error);
-        }
+
+    async onCapabilityOnoff(value, opts) {
+        await this.setCapabilityValue('onoff', value);
+        this.log('Zigbee wall switch toggled to: ' + value);
     }
-    
-    
-    
+
     async onUninit() {
-        this.log('Device uninitialized');
+        this.stopPolling();
+        await super.onUninit();
     }
 }
 
-module.exports = zigbee-wall-switchDevice;
+module.exports = ZigbeeWallSwitchDevice;

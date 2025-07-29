@@ -1,39 +1,12 @@
-{
-    "id":  "zigbee-smart-plug",
-    "name":  {
-                 "en":  " $args[0].Value.ToUpper() igbee  $args[0].Value.ToUpper() mart  $args[0].Value.ToUpper() lug",
-                 "fr":  " $args[0].Value.ToUpper() igbee  $args[0].Value.ToUpper() mart  $args[0].Value.ToUpper() lug",
-                 "nl":  " $args[0].Value.ToUpper() igbee  $args[0].Value.ToUpper() mart  $args[0].Value.ToUpper() lug",
-                 "ta":  " $args[0].Value.ToUpper() igbee  $args[0].Value.ToUpper() mart  $args[0].Value.ToUpper() lug"
-             },
-    "capabilities":  [
-                         "onoff",
-                         "measure_power"
-                     ],
-    "class":  "light",
-    "zigbee":  {
-                   "manufacturerName":  [
-                                            "Zigbee"
-                                        ],
-                   "endpoints":  {
-                                     "1":  {
-                                               "clusters":  [
-                                                                "genOnOff",
-                                                                "genLevelCtrl",
-                                                                "genBasic"
-                                                            ],
-                                               "bindings":  [
-                                                                "genOnOff",
-                                                                "genLevelCtrl"
-                                                            ]
-                                           }
-                                 },
-                   "productId":  [
-                                     ""
-                                 ]
-               },
-    "images":  {
-                   "small":  "assets/images/small.png",
-                   "large":  "assets/images/large.png"
-               }
+﻿{
+  "id": "zigbee-smart-plug",
+  "title": "zigbee-smart-plug Device",
+  "category": "controllers",
+  "capabilities": [
+    
+  ],
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
+  }
 }

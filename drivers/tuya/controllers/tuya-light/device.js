@@ -1,42 +1,31 @@
-const { TuyaDevice } = require('homey-tuya');
+﻿const { ZigbeeDevice } = require('homey-zigbeedriver');
 
-class tuya-lightDevice extends TuyaDevice {
+class TuyaLightDevice extends ZigbeeDevice {
     async onInit() {
         await super.onInit();
         
         // Register capabilities
-        this.registerCapability('onoff', 'genOnOff');
-        this.registerCapability('dim.Trim()', 'genLevelCtrl');
+        this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
+        this.registerCapabilityListener('dim', this.onCapabilityDim.bind(this));
         
-        // Setup polling
-        this.setPollInterval(30);
-        
-        // Setup listeners
-        this.on('capability:onoff:changed', this.onCapabilityOnOffChanged.bind(this));
-        this.on('capability:dim:changed', this.onCapabilityDimChanged.bind(this));
+        // Start polling
+        this.startPolling();
     }
-    
-    async onCapabilityOnOffChanged(value) {
-        try {
-            await this.setCapabilityValue('onoff', value);
-            this.log('OnOff capability changed:', value);
-        } catch (error) {
-            this.error('Error changing OnOff capability:', error);
-        }
+
+    async onCapabilityOnoff(value, opts) {
+        await this.setCapabilityValue('onoff', value);
+        this.log('Tuya light toggled to: ' + value);
     }
-    
-        async onCapabilityDimChanged(value) {
-        try {
-            await this.setCapabilityValue('dim', value);
-            this.log('Dim capability changed:', value);
-        } catch (error) {
-            this.error('Error changing Dim capability:', error);
-        }
+
+    async onCapabilityDim(value, opts) {
+        await this.setCapabilityValue('dim', value);
+        this.log('Tuya light dimmed to: ' + value);
     }
-    
+
     async onUninit() {
-        this.log('Device uninitialized');
+        this.stopPolling();
+        await super.onUninit();
     }
 }
 
-module.exports = tuya-lightDevice;
+module.exports = TuyaLightDevice;
