@@ -14,6 +14,11 @@ class dimmer_1_gang_tuya extends Homey.Device {
     // Compatibilité: OK
     // Capabilities supportées: onoff, dim
     // Limitations: 
+    // Compatibilité multi-firmware et multi-box Homey
+    // Firmware détecté: TS0601 (high)
+    // Compatibilité: OK
+    // Capabilities supportées: onoff, dim
+    // Limitations: 
     async onUninit() {
         this.stopPolling();
         await super.onUninit();

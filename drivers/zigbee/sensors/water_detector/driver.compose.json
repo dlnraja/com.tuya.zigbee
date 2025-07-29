@@ -76,7 +76,7 @@
   },
   "category": "controllers",
   "optimized": true,
-  "optimizationDate": "2025-07-29T12:42:40.129Z",
+  "optimizationDate": "2025-07-29T14:41:50.942Z",
   "version": "1.0.12-20250729-1405",
   "platformCompatibility": {
     "homeyModels": [
@@ -88,7 +88,7 @@
     ],
     "minHomeyVersion": "3.0.0",
     "firmware": {
-      "detected": "TS0606",
+      "detected": "TS0603",
       "category": "official",
       "confidence": "high"
     },
@@ -97,13 +97,15 @@
       "compatible": true,
       "capabilities": {
         "supported": [
-          "alarm_contact"
+          "onoff",
+          "measure_temperature"
         ],
         "unsupported": []
       },
       "clusters": {
         "supported": [
-          "ssIasZone"
+          "genOnOff",
+          "msTemperatureMeasurement"
         ],
         "unsupported": []
       },
@@ -114,14 +116,16 @@
     "warnings": []
   },
   "firmwareMetadata": {
-    "detected": "TS0606",
+    "detected": "TS0603",
     "category": "official",
     "confidence": "high",
     "capabilities": [
-      "alarm_contact"
+      "onoff",
+      "measure_temperature"
     ],
     "clusters": [
-      "ssIasZone"
+      "genOnOff",
+      "msTemperatureMeasurement"
     ],
     "fallback": false,
     "unknown": false

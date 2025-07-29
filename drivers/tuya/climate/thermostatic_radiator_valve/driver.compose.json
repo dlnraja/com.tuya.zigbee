@@ -82,7 +82,7 @@
   },
   "category": "controllers",
   "optimized": true,
-  "optimizationDate": "2025-07-29T12:42:39.914Z",
+  "optimizationDate": "2025-07-29T14:41:45.104Z",
   "version": "1.0.12-20250729-1405",
   "platformCompatibility": {
     "homeyModels": [
@@ -94,8 +94,8 @@
     ],
     "minHomeyVersion": "3.0.0",
     "firmware": {
-      "detected": "GENERIC_ONOFF",
-      "category": "generic",
+      "detected": "TS0603",
+      "category": "official",
       "confidence": "high"
     },
     "compatibility": {
@@ -103,33 +103,37 @@
       "compatible": true,
       "capabilities": {
         "supported": [
-          "onoff"
+          "onoff",
+          "measure_temperature"
         ],
         "unsupported": []
       },
       "clusters": {
         "supported": [
-          "genOnOff"
+          "genOnOff",
+          "msTemperatureMeasurement"
         ],
         "unsupported": []
       },
       "limitations": [],
-      "fallback": true
+      "fallback": false
     },
-    "fallbackBehavior": "basic_onoff",
+    "fallbackBehavior": null,
     "warnings": []
   },
   "firmwareMetadata": {
-    "detected": "GENERIC_ONOFF",
-    "category": "generic",
+    "detected": "TS0603",
+    "category": "official",
     "confidence": "high",
     "capabilities": [
-      "onoff"
+      "onoff",
+      "measure_temperature"
     ],
     "clusters": [
-      "genOnOff"
+      "genOnOff",
+      "msTemperatureMeasurement"
     ],
-    "fallback": true,
+    "fallback": false,
     "unknown": false
   },
   "clusters": [

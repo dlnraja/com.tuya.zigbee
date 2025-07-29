@@ -1,6 +1,11 @@
 const { ZigbeeDevice } = require('homey-meshdriver');
 
-class HomeyAppsDevice1 extends ZigbeeDevice {
+class homey-apps-device-1 extends Homey.Device {
+    // Compatibilité multi-firmware et multi-box Homey
+    // Firmware détecté: GENERIC_ONOFF (high)
+    // Compatibilité: OK
+    // Capabilities supportées: onoff
+    // Limitations: 
     async onInit() {
         await super.onInit();
         
@@ -17,4 +22,17 @@ class HomeyAppsDevice1 extends ZigbeeDevice {
     }
 }
 
-module.exports = HomeyAppsDevice1;
+
+    // Méthodes de fallback pour firmware inconnu
+    async onInit() {
+        await super.onInit();
+        this.log('Driver en mode fallback - compatibilité limitée');
+        this.setWarning('Firmware non reconnu - fonctionnalités limitées');
+    }
+    
+    async onSettings({ oldSettings, newSettings, changedKeys }) {
+        await super.onSettings({ oldSettings, newSettings, changedKeys });
+        this.log('Paramètres mis à jour en mode fallback');
+    }
+
+module.exports = homey-apps-device-1;

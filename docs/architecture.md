@@ -39,4 +39,4 @@ Ce document décrit l'architecture technique du projet Tuya Zigbee.
 
 ---
 
-**📅 Généré**: 2025-07-29T14:13:53.784Z
+**📅 Généré**: 2025-07-29T14:42:15.252Z

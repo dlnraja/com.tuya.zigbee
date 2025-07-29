@@ -9,6 +9,11 @@ class smart_remote_1_button_2 extends Homey.Device {
     // Compatibilité: OK
     // Capabilities supportées: onoff
     // Limitations: 
+    // Compatibilité multi-firmware et multi-box Homey
+    // Firmware détecté: GENERIC_ONOFF (high)
+    // Compatibilité: OK
+    // Capabilities supportées: onoff
+    // Limitations: 
     async onUninit() {
         this.stopPolling();
         await super.onUninit();
@@ -86,6 +91,19 @@ class smart_remote_1_button_2 extends Homey.Device {
     this.log("1 button Smart Remote Controller has been removed");
   }
 }
+
+
+    // Méthodes de fallback pour firmware inconnu
+    async onInit() {
+        await super.onInit();
+        this.log('Driver en mode fallback - compatibilité limitée');
+        this.setWarning('Firmware non reconnu - fonctionnalités limitées');
+    }
+    
+    async onSettings({ oldSettings, newSettings, changedKeys }) {
+        await super.onSettings({ oldSettings, newSettings, changedKeys });
+        this.log('Paramètres mis à jour en mode fallback');
+    }
 
 
     // Méthodes de fallback pour firmware inconnu

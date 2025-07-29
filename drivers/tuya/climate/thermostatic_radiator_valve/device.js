@@ -20,6 +20,11 @@ Cluster.addCluster(TuyaSpecificCluster);
 */
 class thermostatic_radiator_valve extends Homey.Device {
     // Compatibilité multi-firmware et multi-box Homey
+    // Firmware détecté: TS0603 (high)
+    // Compatibilité: OK
+    // Capabilities supportées: onoff, measure_temperature
+    // Limitations: 
+    // Compatibilité multi-firmware et multi-box Homey
     // Firmware détecté: GENERIC_ONOFF (high)
     // Compatibilité: OK
     // Capabilities supportées: onoff
