@@ -8,6 +8,24 @@
 - **Hiérarchie cohérente**
 - **Nommage standardisé**
 
+### **🏠 Mode Local Uniquement**
+- **Communication directe** avec les appareils Zigbee
+- **Aucune dépendance** aux API externes
+- **Fonctionnement autonome** sans internet
+- **Sécurité locale** sans transmission de données
+
+### **🚫 Évitement des API Tuya**
+- **Pas d'API Cloud** Tuya
+- **Pas d'API IoT Platform** Tuya
+- **Pas d'API Smart Life** Tuya
+- **Pas d'authentification** externe
+
+### **➕ Mode Additif et Enrichissant**
+- **Toujours ajouter** des fonctionnalités
+- **Toujours enrichir** l'expérience
+- **Jamais dégrader** les performances
+- **Amélioration continue** des features
+
 ### **🌍 Multi-langue**
 - **Support EN, FR, TA, NL**
 - **Priorité des langues respectée** : EN > FR > TA > NL
@@ -45,7 +63,12 @@
 ### **🔧 /drivers/**
 ```
 /drivers/
-├── /sdk3/          # Drivers SDK3 compatibles
+├── /sdk3/          # Drivers SDK3 locaux
+│   ├── TuyaZigBeeLightDevice.js
+│   ├── TuyaOnOffCluster.js
+│   ├── TuyaColorControlCluster.js
+│   ├── TuyaPowerOnStateCluster.js
+│   └── TuyaSpecificCluster.js
 ├── /legacy/        # Drivers legacy à migrer
 └── /tests/         # Tests des drivers
 ```
@@ -115,10 +138,16 @@
 - **snake_case** pour les constantes
 
 ### **🔍 Organisation des Drivers**
-- **SDK3** : Drivers compatibles SDK3
+- **SDK3** : Drivers compatibles SDK3 (LOCAUX)
 - **Legacy** : Drivers à migrer vers SDK3
 - **Tests** : Tests unitaires et d'intégration
 - **Documentation** : Documentation spécifique
+
+### **🏠 Mode Local**
+- **Communication directe** : Protocole Zigbee uniquement
+- **Aucune API externe** : Pas de dépendance aux services Tuya
+- **Chiffrement local** : Sécurité locale maximale
+- **Performance optimale** : Latence minimale
 
 ### **🌍 Gestion Multi-langue**
 - **Priorité** : EN > FR > TA > NL
@@ -212,7 +241,29 @@
 
 ---
 
-**📅 Créé** : 29/07/2025 02:27:00  
-**🎯 Objectif** : Politiques du projet  
-**🚀 Mode** : YOLO - Politiques automatiques  
+## 🎯 **RÈGLES CRITIQUES**
+
+### **🚫 INTERDICTIONS ABSOLUES**
+- **Utiliser les API Tuya** : Interdit
+- **Dépendre des services externes** : Interdit
+- **Dégrader les performances** : Interdit
+- **Compromettre la sécurité locale** : Interdit
+
+### **✅ OBLIGATIONS**
+- **Mode local uniquement** : Obligatoire
+- **Communication Zigbee directe** : Obligatoire
+- **Enrichissement additif** : Obligatoire
+- **Sécurité locale maximale** : Obligatoire
+
+### **🎨 PRINCIPES D'ENRICHISSEMENT**
+- **Toujours ajouter** : Nouvelles fonctionnalités
+- **Toujours améliorer** : Performance et sécurité
+- **Toujours enrichir** : Expérience utilisateur
+- **Jamais dégrader** : Fonctionnalités existantes
+
+---
+
+**📅 Créé** : 29/07/2025 02:30:00  
+**🎯 Objectif** : Politiques du projet - Mode local uniquement  
+**🚀 Mode** : YOLO - Local mode only  
 **✅ Statut** : POLITIQUES COMPLÈTES ET ACTIVES
