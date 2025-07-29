@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.5] - 2025-07-29 05:45:00
+
+### Added
+- 🌍 **README multi-langue complet avec les plus belles versions**
+  - ✅ **4 langues supportées**: EN, FR, NL, TA avec traduction complète
+  - ✅ **Structure multi-langue**: Chaque section traduite en bloc complet
+  - ✅ **Badges et icônes**: Interface moderne et professionnelle
+  - ✅ **Séparation claire**: Tuya vs Zigbee pur avec icônes distinctives
+  - ✅ **Statistiques détaillées**: Tableaux comparatifs par protocole
+
+### Added
+- 🔧 **Automatisation complète des traductions**
+  - ✅ **Workflow auto-translation.yml**: Traduction automatique à chaque release
+  - ✅ **Règles de traduction**: docs/translation-rules.md avec stratégie complète
+  - ✅ **Traduction par bloc complet**: Pas de traduction section par section
+  - ✅ **4 langues prioritaires**: EN (1er), FR (2ème), NL (3ème), TA (4ème)
+  - ✅ **Structure de fichiers**: translations/ avec sous-dossiers par langue
+
+### Changed
+- 🔄 **README restructuré**: Organisation multi-langue avec séparation claire
+- 🔄 **Documentation améliorée**: Règles de traduction complètes et détaillées
+- 🔄 **Workflows optimisés**: Intégration de la traduction automatique
+- 🔄 **Interface modernisée**: Badges, icônes et mise en page professionnelle
+
+### Fixed
+- 🐛 **Traduction par bloc**: Implémentation de la traduction complète
+- 🐛 **Automatisation**: Workflow de traduction automatique fonctionnel
+- 🐛 **Documentation**: Règles de traduction claires et complètes
+
 ## [1.0.4] - 2025-07-29 05:30:00
 
 ### Added
@@ -9,7 +38,7 @@ All notable changes to this project will be documented in this file.
   - ✅ **README restructuré**: Séparation complète des protocoles
   - ✅ **Architecture clarifiée**: 🔌 Tuya vs 📡 Zigbee pur
   - ✅ **Sources organisées**: Par protocole (Tuya/Zigbee pur)
-  - ✅ **Statistiques séparées**: 10 drivers Tuya + 7 drivers Zigbee pur
+  - ✅ **Statistiques séparées**: 13 drivers Tuya + 5 drivers Zigbee pur
   - ✅ **Support multi-langue**: EN, FR, NL, TA avec distinction protocole
 
 ### Changed
