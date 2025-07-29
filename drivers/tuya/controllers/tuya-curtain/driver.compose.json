@@ -1,10 +1,10 @@
 {
   "id": "tuya-curtain",
   "name": {
-    "en": "Tuya Curtain",
-    "fr": "Rideau Tuya",
-    "nl": "Tuya Gordijn",
-    "ta": "Tuya திரைச்சீலை"
+    "en": "Tuya Curtain (Ancien Commit)",
+    "fr": "Rideau Tuya (Ancien Commit)",
+    "nl": "Tuya Gordijn (Ancien Commit)",
+    "ta": "Tuya திரைச்சீலை (Ancien Commit)"
   },
   "images": {
     "small": "assets/images/curtain-small.png",
@@ -47,10 +47,10 @@
       "id": "poll_interval",
       "type": "number",
       "label": {
-        "en": "Poll Interval (ms)",
-        "fr": "Intervalle de Polling (ms)",
-        "nl": "Poll Interval (ms)",
-        "ta": "போல் இடைவெளி (ms)"
+        "en": "Poll Interval (ms) - Ancien Commit",
+        "fr": "Intervalle de Polling (ms) - Ancien Commit",
+        "nl": "Poll Interval (ms) - Ancien Commit",
+        "ta": "போல் இடைவெளி (ms) - Ancien Commit"
       },
       "value": 30000,
       "attr": {

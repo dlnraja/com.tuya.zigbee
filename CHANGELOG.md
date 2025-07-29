@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.3] - 2025-07-29 05:15:00
+
+### Added
+- 🔧 **Récupération complète des drivers depuis sources locales**
+  - ✅ **2 nouveaux drivers récupérés**: tuya-curtain, tuya-smart-plug
+  - ✅ **Sources locales analysées**: Anciens commits Git, D:\download\
+  - ✅ **Architecture conforme Homey SDK 3**: Templates optimisés, polling intelligent
+  - ✅ **Compatibilité universelle**: Firmware connu et inconnu, support générique et spécifique
+  - ✅ **Multi-langue**: EN, FR, NL, TA avec source indiquée dans le nom
+
+### Changed
+- 🔄 **Amélioration des templates**: TuyaDeviceTemplate optimisé avec polling intelligent
+- 🔄 **Polling intelligent**: Par source (Ancien Commit/Homey/Zigbee2MQTT)
+- 🔄 **Gestion d'erreur**: Try/catch sur toutes les méthodes
+- 🔄 **Structure organisée**: Séparation claire Tuya/Zigbee par catégorie
+
+### Fixed
+- 🐛 **Drivers manquants**: Récupération depuis anciens commits Git
+- 🐛 **Compatibilité**: Support firmware connu et inconnu
+- 🐛 **Performance**: Optimisation du polling par source
+
 ## [1.0.2] - 2025-07-29 05:00:00
 
 ### Added
