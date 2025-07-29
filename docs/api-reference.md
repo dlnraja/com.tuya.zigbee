@@ -74,4 +74,4 @@ class TuyaDevice extends HomeyDevice {
 
 ---
 
-**📅 Généré**: 2025-07-29T14:13:53.784Z
+**📅 Généré**: 2025-07-29T14:42:15.252Z

@@ -1,6 +1,6 @@
 ﻿const { TuyaDevice } = require('homey-tuya');
 
-class tuya-hvac extends Homey.Device {
+class tuya-hvac extends ZigbeeDevice {
     // Compatibilité multi-firmware et multi-box Homey
     // Firmware détecté: TS0603 (high)
     // Compatibilité: OK

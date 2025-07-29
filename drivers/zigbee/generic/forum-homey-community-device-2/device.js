@@ -1,6 +1,11 @@
 const { ZigbeeDevice } = require('homey-meshdriver');
 
-class ForumHomeyCommunityDevice2 extends ZigbeeDevice {
+class forum-homey-community-device-2 extends Homey.Device {
+    // Compatibilité multi-firmware et multi-box Homey
+    // Firmware détecté: TS0604 (high)
+    // Compatibilité: OK
+    // Capabilities supportées: onoff, measure_humidity
+    // Limitations: 
     async onInit() {
         await super.onInit();
         

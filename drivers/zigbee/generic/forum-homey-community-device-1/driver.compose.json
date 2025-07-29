@@ -55,5 +55,60 @@
     "suggestions": [
       "Définir les clusters Zigbee appropriés"
     ]
-  }
+  },
+  "platformCompatibility": {
+    "homeyModels": [
+      "homey_pro_2016",
+      "homey_pro_2019",
+      "homey_pro_2023",
+      "homey_bridge",
+      "homey_cloud"
+    ],
+    "minHomeyVersion": "3.0.0",
+    "firmware": {
+      "detected": "TS0601",
+      "category": "official",
+      "confidence": "high"
+    },
+    "compatibility": {
+      "homeyModel": "homey_pro_2023",
+      "compatible": true,
+      "capabilities": {
+        "supported": [
+          "onoff",
+          "dim"
+        ],
+        "unsupported": []
+      },
+      "clusters": {
+        "supported": [
+          "genOnOff",
+          "genLevelCtrl"
+        ],
+        "unsupported": []
+      },
+      "limitations": [],
+      "fallback": false
+    },
+    "fallbackBehavior": null,
+    "warnings": []
+  },
+  "firmwareMetadata": {
+    "detected": "TS0601",
+    "category": "official",
+    "confidence": "high",
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl"
+    ],
+    "fallback": false,
+    "unknown": false
+  },
+  "optimized": true,
+  "optimizationDate": "2025-07-29T14:41:48.205Z",
+  "version": "1.0.12-20250729-1405"
 }

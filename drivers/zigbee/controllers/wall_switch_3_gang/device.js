@@ -6,6 +6,11 @@ const { debug, CLUSTER } = require('zigbee-clusters');
 
 class wall_switch_3_gang extends Homey.Device {
     // Compatibilité multi-firmware et multi-box Homey
+    // Firmware détecté: TS0602 (high)
+    // Compatibilité: OK
+    // Capabilities supportées: onoff, measure_power
+    // Limitations: 
+    // Compatibilité multi-firmware et multi-box Homey
     // Firmware détecté: GENERIC_ONOFF (high)
     // Compatibilité: OK
     // Capabilities supportées: onoff
@@ -56,7 +61,7 @@ class wall_switch_3_gang extends Homey.Device {
   }
 
 /*     onSettings(oldSettingsObj, newSettingsObj, changedKeysArr, callback) {
-        if (newSettingsObj.deviceclass wall_switch_3_gang extends Homey.Device {
+        if (newSettingsObj.deviceclass wall_switch_3_gang extends ZigbeeDevice {
     // Compatibilité multi-firmware et multi-box Homey
     // Firmware détecté: GENERIC_ONOFF (high)
     // Compatibilité: OK

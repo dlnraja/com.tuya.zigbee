@@ -58,6 +58,19 @@ class tuya-gatewayDevice extends TuyaDevice {
         this.log('Paramètres mis à jour en mode fallback');
     }
 
+
+    // Méthodes de fallback pour firmware inconnu
+    async onInit() {
+        await super.onInit();
+        this.log('Driver en mode fallback - compatibilité limitée');
+        this.setWarning('Firmware non reconnu - fonctionnalités limitées');
+    }
+    
+    async onSettings({ oldSettings, newSettings, changedKeys }) {
+        await super.onSettings({ oldSettings, newSettings, changedKeys });
+        this.log('Paramètres mis à jour en mode fallback');
+    }
+
 module.exports = tuya-gateway;
 
 

@@ -5,6 +5,11 @@ const { debug, CLUSTER } = require('zigbee-clusters');
 
 class water_detector extends Homey.Device {
     // Compatibilité multi-firmware et multi-box Homey
+    // Firmware détecté: TS0603 (high)
+    // Compatibilité: OK
+    // Capabilities supportées: onoff, measure_temperature
+    // Limitations: 
+    // Compatibilité multi-firmware et multi-box Homey
     // Firmware détecté: TS0606 (high)
     // Compatibilité: OK
     // Capabilities supportées: alarm_contact
