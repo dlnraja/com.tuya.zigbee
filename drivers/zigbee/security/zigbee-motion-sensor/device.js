@@ -1,102 +1,42 @@
-/**
- * Driver Zigbee Motion Sensor - Zigbee
- * Capteur de mouvement Zigbee
- * Architecture conforme Homey SDK 3
- */
+const { ZigbeeDevice } = require('homey-meshdriver');
 
-const TuyaZigbeeDevice = require('../../zigbee-structure-template');
-
-class ZigbeeMotionSensor extends TuyaZigbeeDevice {
-
-    async onNodeInit({ zclNode }) {
-        // Initialisation Motion Sensor Zigbee
-        await super.onNodeInit({ zclNode });
-
-        this.log('Driver Zigbee Motion Sensor initialisé');
-
-        // Capacités spécifiques Motion Sensor
-        await this.registerMotionSensorCapabilities();
-
-        // Listeners spécifiques Motion Sensor
-        await this.registerMotionSensorListeners();
+class zigbee-motion-sensorDevice extends ZigbeeDevice {
+    async onInit() {
+        await super.onInit();
+        
+        // Register capabilities
+        this.registerCapability('onoff', 'genOnOff');
+        this.registerCapability('alarm_motion.Trim()', 'genLevelCtrl');
+        
+        // Setup polling
+        this.setPollInterval(30);
+        
+        // Setup listeners
+        this.on('capability:onoff:changed', this.onCapabilityOnOffChanged.bind(this));
+        this.on('capability:alarm_motion:changed', this.onCapabilityAlarm_motionChanged.bind(this));
     }
-
-    async registerMotionSensorCapabilities() {
-        // Capacités Motion Sensor selon Homey SDK
+    
+    async onCapabilityOnOffChanged(value) {
         try {
-            if (this.node.endpoints[1].clusters.ssIasZone) {
-                await this.registerCapability('alarm_motion', 'ssIasZone');
-            }
-            if (this.node.endpoints[1].clusters.msTemperatureMeasurement) {
-                await this.registerCapability('measure_temperature', 'msTemperatureMeasurement');
-            }
-            if (this.node.endpoints[1].clusters.msRelativeHumidity) {
-                await this.registerCapability('measure_humidity', 'msRelativeHumidity');
-            }
-            this.log('Capacités Motion Sensor Zigbee enregistrées');
+            await this.setCapabilityValue('onoff', value);
+            this.log('OnOff capability changed:', value);
         } catch (error) {
-            this.error('Erreur capacités Motion Sensor Zigbee:', error);
+            this.error('Error changing OnOff capability:', error);
         }
     }
-
-    async registerMotionSensorListeners() {
-        // Listeners Motion Sensor selon Homey SDK
+    
+        async onCapabilityAlarm_motionChanged(value) {
         try {
-            if (this.node.endpoints[1].clusters.ssIasZone) {
-                await this.registerReportListener(1, 'ssIasZone', 'zoneStatus', this.onMotionReport.bind(this));
-            }
-            if (this.node.endpoints[1].clusters.msTemperatureMeasurement) {
-                await this.registerReportListener(1, 'msTemperatureMeasurement', 'measuredValue', this.onTemperatureReport.bind(this));
-            }
-            if (this.node.endpoints[1].clusters.msRelativeHumidity) {
-                await this.registerReportListener(1, 'msRelativeHumidity', 'measuredValue', this.onHumidityReport.bind(this));
-            }
-            this.log('Listeners Motion Sensor Zigbee configurés');
+            await this.setCapabilityValue('alarm_motion', value);
+            this.log('Alarm_motion capability changed:', value);
         } catch (error) {
-            this.error('Erreur listeners Motion Sensor Zigbee:', error);
+            this.error('Error changing Alarm_motion capability:', error);
         }
     }
-
-    // Callbacks Motion Sensor selon Homey SDK
-    async onMotionReport(value) {
-        try {
-            const motion = (value & 0x0001) !== 0;
-            await this.setCapabilityValue('alarm_motion', motion);
-            this.log(`Motion: ${motion}`);
-        } catch (error) {
-            this.error('Erreur Motion:', error);
-        }
-    }
-
-    async onTemperatureReport(value) {
-        try {
-            const temperature = value / 100;
-            await this.setCapabilityValue('measure_temperature', temperature);
-            this.log(`Temperature: ${temperature}°C`);
-        } catch (error) {
-            this.error('Erreur Temperature:', error);
-        }
-    }
-
-    async onHumidityReport(value) {
-        try {
-            const humidity = value / 100;
-            await this.setCapabilityValue('measure_humidity', humidity);
-            this.log(`Humidity: ${humidity}%`);
-        } catch (error) {
-            this.error('Erreur Humidity:', error);
-        }
-    }
-
-    // Méthode de nettoyage selon Homey SDK
+    
     async onUninit() {
-        // Nettoyage lors de la déconnexion
-        if (this.pollTimer) {
-            this.homey.clearInterval(this.pollTimer);
-            this.pollTimer = null;
-        }
-        this.log('Motion Sensor Zigbee device uninitialized');
+        this.log('Device uninitialized');
     }
 }
 
-module.exports = ZigbeeMotionSensor;
+module.exports = zigbee-motion-sensorDevice;
