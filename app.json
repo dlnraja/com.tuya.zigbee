@@ -1,5 +1,5 @@
 {
-  "id": "com.tuya.zigbee.johan",
+  "id": "com.tuya.zigbee",
   "version": "1.0.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
@@ -196,12 +196,12 @@
   ],
   "drivers": [
     {
-      "id": "zigbee-switch-johan",
+      "id": "zigbee-switch",
       "name": {
-        "en": "Zigbee Switch Johan",
-        "fr": "Interrupteur Zigbee Johan",
-        "nl": "Zigbee Schakelaar Johan",
-        "ta": "Zigbee சுவிட்ச் Johan"
+        "en": "Zigbee Switch",
+        "fr": "Interrupteur Zigbee",
+        "nl": "Zigbee Schakelaar",
+        "ta": "Zigbee சுவிட்ச்"
       },
       "images": {
         "small": "assets/images/switch-small.png",
@@ -259,12 +259,12 @@
       ]
     },
     {
-      "id": "zigbee-light-johan",
+      "id": "zigbee-light",
       "name": {
-        "en": "Zigbee Light Johan",
-        "fr": "Lampe Zigbee Johan",
-        "nl": "Zigbee Licht Johan",
-        "ta": "Zigbee விளக்கு Johan"
+        "en": "Zigbee Light",
+        "fr": "Lampe Zigbee",
+        "nl": "Zigbee Licht",
+        "ta": "Zigbee விளக்கு"
       },
       "images": {
         "small": "assets/images/light-small.png",
@@ -369,7 +369,6 @@
     "tuya",
     "zigbee",
     "homey",
-    "johan",
     "local",
     "smart",
     "home",

@@ -1,28 +1,28 @@
 /**
- * Driver Zigbee Light avec Structure Johan
+ * Driver Zigbee Light
  * Compatible avec tous les lights Zigbee Tuya
  * Architecture conforme Homey SDK 3
  */
 
-const TuyaZigbeeDevice = require('./johan-structure-template');
+const TuyaZigbeeDevice = require('./zigbee-structure-template');
 
-class ZigbeeLightJohan extends TuyaZigbeeDevice {
+class ZigbeeLight extends TuyaZigbeeDevice {
 
     async onNodeInit({ zclNode }) {
-        // Structure Johan - Initialisation Light Zigbee
+        // Initialisation Light Zigbee
         await super.onNodeInit({ zclNode });
         
-        this.log('Driver Zigbee Light Johan initialisé');
+        this.log('Driver Zigbee Light initialisé');
         
-        // Capacités spécifiques Light Johan
+        // Capacités spécifiques Light
         await this.registerLightCapabilities();
         
-        // Listeners spécifiques Light Johan
+        // Listeners spécifiques Light
         await this.registerLightListeners();
     }
 
     async registerLightCapabilities() {
-        // Structure Johan - Capacités Light selon Homey SDK
+        // Capacités Light selon Homey SDK
         try {
             // Enregistrement des capacités selon les clusters disponibles
             if (this.node.endpoints[1].clusters.genOnOff) {
@@ -39,14 +39,14 @@ class ZigbeeLightJohan extends TuyaZigbeeDevice {
                 await this.registerCapability('light_temperature', 'lightingColorCtrl');
             }
             
-            this.log('Capacités Light Johan enregistrées');
+            this.log('Capacités Light enregistrées');
         } catch (error) {
-            this.error('Erreur Johan capacités Light:', error);
+            this.error('Erreur capacités Light:', error);
         }
     }
 
     async registerLightListeners() {
-        // Structure Johan - Listeners Light selon Homey SDK
+        // Listeners Light selon Homey SDK
         try {
             // Listeners selon les clusters disponibles
             if (this.node.endpoints[1].clusters.genOnOff) {
@@ -63,19 +63,19 @@ class ZigbeeLightJohan extends TuyaZigbeeDevice {
                 await this.registerReportListener('lightingColorCtrl', 'colorTemperature', this.onLightTemperatureReport.bind(this));
             }
             
-            this.log('Listeners Light Johan configurés');
+            this.log('Listeners Light configurés');
         } catch (error) {
-            this.error('Erreur Johan listeners Light:', error);
+            this.error('Erreur listeners Light:', error);
         }
     }
 
-    // Callbacks Johan Light selon Homey SDK
+    // Callbacks Light selon Homey SDK
     async onLightOffReport(value) {
         try {
             await this.setCapabilityValue('onoff', value === 1);
-            this.log(`Johan Light onOff: ${value}`);
+            this.log(`Light onOff: ${value}`);
         } catch (error) {
-            this.error('Erreur Johan Light onOff:', error);
+            this.error('Erreur Light onOff:', error);
         }
     }
 
@@ -83,9 +83,9 @@ class ZigbeeLightJohan extends TuyaZigbeeDevice {
         try {
             const level = value / 254 * 100;
             await this.setCapabilityValue('dim', level);
-            this.log(`Johan Light level: ${level}%`);
+            this.log(`Light level: ${level}%`);
         } catch (error) {
-            this.error('Erreur Johan Light level:', error);
+            this.error('Erreur Light level:', error);
         }
     }
 
@@ -93,9 +93,9 @@ class ZigbeeLightJohan extends TuyaZigbeeDevice {
         try {
             const hue = value / 254 * 360;
             await this.setCapabilityValue('light_hue', hue);
-            this.log(`Johan Light hue: ${hue}°`);
+            this.log(`Light hue: ${hue}°`);
         } catch (error) {
-            this.error('Erreur Johan Light hue:', error);
+            this.error('Erreur Light hue:', error);
         }
     }
 
@@ -103,30 +103,30 @@ class ZigbeeLightJohan extends TuyaZigbeeDevice {
         try {
             const saturation = value / 254 * 100;
             await this.setCapabilityValue('light_saturation', saturation);
-            this.log(`Johan Light saturation: ${saturation}%`);
+            this.log(`Light saturation: ${saturation}%`);
         } catch (error) {
-            this.error('Erreur Johan Light saturation:', error);
+            this.error('Erreur Light saturation:', error);
         }
     }
 
     async onLightTemperatureReport(value) {
         try {
             await this.setCapabilityValue('light_temperature', value);
-            this.log(`Johan Light temperature: ${value}K`);
+            this.log(`Light temperature: ${value}K`);
         } catch (error) {
-            this.error('Erreur Johan Light temperature:', error);
+            this.error('Erreur Light temperature:', error);
         }
     }
 
-    // Méthodes Johan Light selon Homey SDK
+    // Méthodes Light selon Homey SDK
     async onOffSet(onoff) {
         try {
             if (this.node.endpoints[1].clusters.genOnOff) {
                 await this.node.endpoints[1].clusters.genOnOff.write('onOff', onoff ? 1 : 0);
             }
-            this.log(`Johan Light onOff set: ${onoff}`);
+            this.log(`Light onOff set: ${onoff}`);
         } catch (error) {
-            this.error('Erreur Johan Light onOff set:', error);
+            this.error('Erreur Light onOff set:', error);
             throw error;
         }
     }
@@ -137,9 +137,9 @@ class ZigbeeLightJohan extends TuyaZigbeeDevice {
             if (this.node.endpoints[1].clusters.genLevelCtrl) {
                 await this.node.endpoints[1].clusters.genLevelCtrl.write('currentLevel', level);
             }
-            this.log(`Johan Light dim set: ${dim}%`);
+            this.log(`Light dim set: ${dim}%`);
         } catch (error) {
-            this.error('Erreur Johan Light dim set:', error);
+            this.error('Erreur Light dim set:', error);
             throw error;
         }
     }
@@ -150,9 +150,9 @@ class ZigbeeLightJohan extends TuyaZigbeeDevice {
             if (this.node.endpoints[1].clusters.lightingColorCtrl) {
                 await this.node.endpoints[1].clusters.lightingColorCtrl.write('currentHue', value);
             }
-            this.log(`Johan Light hue set: ${hue}°`);
+            this.log(`Light hue set: ${hue}°`);
         } catch (error) {
-            this.error('Erreur Johan Light hue set:', error);
+            this.error('Erreur Light hue set:', error);
             throw error;
         }
     }
@@ -163,9 +163,9 @@ class ZigbeeLightJohan extends TuyaZigbeeDevice {
             if (this.node.endpoints[1].clusters.lightingColorCtrl) {
                 await this.node.endpoints[1].clusters.lightingColorCtrl.write('currentSaturation', value);
             }
-            this.log(`Johan Light saturation set: ${saturation}%`);
+            this.log(`Light saturation set: ${saturation}%`);
         } catch (error) {
-            this.error('Erreur Johan Light saturation set:', error);
+            this.error('Erreur Light saturation set:', error);
             throw error;
         }
     }
@@ -175,23 +175,23 @@ class ZigbeeLightJohan extends TuyaZigbeeDevice {
             if (this.node.endpoints[1].clusters.lightingColorCtrl) {
                 await this.node.endpoints[1].clusters.lightingColorCtrl.write('colorTemperature', temperature);
             }
-            this.log(`Johan Light temperature set: ${temperature}K`);
+            this.log(`Light temperature set: ${temperature}K`);
         } catch (error) {
-            this.error('Erreur Johan Light temperature set:', error);
+            this.error('Erreur Light temperature set:', error);
             throw error;
         }
     }
 
     // Méthode de nettoyage selon Homey SDK
     async onUninit() {
-        // Structure Johan - Nettoyage lors de la déconnexion
+        // Nettoyage lors de la déconnexion
         if (this.pollTimer) {
             this.homey.clearInterval(this.pollTimer);
             this.pollTimer = null;
         }
         
-        this.log('Johan Light device uninitialized');
+        this.log('Light device uninitialized');
     }
 }
 
-module.exports = ZigbeeLightJohan;
+module.exports = ZigbeeLight;
