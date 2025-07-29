@@ -32,7 +32,7 @@
 - **Traductions centralisées**
 - **Synchronisation automatique**
 
-### **📦 Releases VLC**
+### **📦 Releases Standards**
 - **Releases ZIP par version**
 - **Changelog détaillé**
 - **Assets attachés**
