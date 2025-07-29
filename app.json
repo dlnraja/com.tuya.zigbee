@@ -138,10 +138,6 @@
           }
         }
       },
-      "images": {
-        "small": "assets/images/small.png",
-        "large": "assets/images/large.png"
-      },
       "settings": [
         {
           "id": "poll_interval",
@@ -196,10 +192,6 @@
             "nl": "Vermogen"
           }
         }
-      },
-      "images": {
-        "small": "assets/images/switch-small.png",
-        "large": "assets/images/switch-large.png"
       },
       "settings": [
         {
@@ -267,10 +259,6 @@
             "nl": "Kleurtemperatuur"
           }
         }
-      },
-      "images": {
-        "small": "assets/images/light-small.png",
-        "large": "assets/images/light-large.png"
       },
       "settings": [
         {
