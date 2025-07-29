@@ -1,0 +1,63 @@
+{
+  "id": "zigbee-switch-johan",
+  "name": {
+    "en": "Zigbee Switch Johan",
+    "fr": "Interrupteur Zigbee Johan",
+    "nl": "Zigbee Schakelaar Johan",
+    "ta": "Zigbee சுவிட்ச் Johan"
+  },
+  "images": {
+    "small": "assets/images/switch-small.png",
+    "large": "assets/images/switch-large.png"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "On/Off",
+        "fr": "Marche/Arrêt",
+        "nl": "Aan/Uit",
+        "ta": "இயக்கு/நிறுத்து"
+      }
+    },
+    "dim": {
+      "title": {
+        "en": "Dim",
+        "fr": "Variation",
+        "nl": "Dimmen",
+        "ta": "மங்கலாக்கு"
+      }
+    },
+    "measure_power": {
+      "title": {
+        "en": "Power",
+        "fr": "Puissance",
+        "nl": "Vermogen",
+        "ta": "சக்தி"
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "poll_interval",
+      "type": "number",
+      "label": {
+        "en": "Poll Interval (ms)",
+        "fr": "Intervalle de Polling (ms)",
+        "nl": "Poll Interval (ms)",
+        "ta": "போல் இடைவெளி (ms)"
+      },
+      "value": 30000,
+      "attr": {
+        "min": 1000,
+        "max": 300000,
+        "step": 1000
+      }
+    }
+  ]
+}

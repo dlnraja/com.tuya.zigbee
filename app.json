@@ -8,7 +8,9 @@
       "id": "zigbee",
       "name": {
         "en": "Tuya Zigbee",
-        "nl": "Tuya Zigbee"
+        "fr": "Tuya Zigbee",
+        "nl": "Tuya Zigbee",
+        "ta": "Tuya Zigbee"
       },
       "images": {
         "small": "assets/images/small.png",
@@ -38,103 +40,137 @@
         "onoff": {
           "title": {
             "en": "On/Off",
-            "nl": "Aan/Uit"
+            "fr": "Marche/Arrêt",
+            "nl": "Aan/Uit",
+            "ta": "இயக்கு/நிறுத்து"
           }
         },
         "dim": {
           "title": {
             "en": "Dim",
-            "nl": "Dimmen"
+            "fr": "Variation",
+            "nl": "Dimmen",
+            "ta": "மங்கலாக்கு"
           }
         },
         "light_hue": {
           "title": {
             "en": "Hue",
-            "nl": "Tint"
+            "fr": "Teinte",
+            "nl": "Tint",
+            "ta": "நிறம்"
           }
         },
         "light_saturation": {
           "title": {
             "en": "Saturation",
-            "nl": "Verzadiging"
+            "fr": "Saturation",
+            "nl": "Verzadiging",
+            "ta": "செறிவு"
           }
         },
         "light_temperature": {
           "title": {
             "en": "Color Temperature",
-            "nl": "Kleurtemperatuur"
+            "fr": "Température de Couleur",
+            "nl": "Kleurtemperatuur",
+            "ta": "வண்ண வெப்பநிலை"
           }
         },
         "measure_power": {
           "title": {
             "en": "Power",
-            "nl": "Vermogen"
+            "fr": "Puissance",
+            "nl": "Vermogen",
+            "ta": "சக்தி"
           }
         },
         "measure_temperature": {
           "title": {
             "en": "Temperature",
-            "nl": "Temperatuur"
+            "fr": "Température",
+            "nl": "Temperatuur",
+            "ta": "வெப்பநிலை"
           }
         },
         "measure_humidity": {
           "title": {
             "en": "Humidity",
-            "nl": "Luchtvochtigheid"
+            "fr": "Humidité",
+            "nl": "Luchtvochtigheid",
+            "ta": "ஈரப்பதம்"
           }
         },
         "alarm_motion": {
           "title": {
             "en": "Motion Alarm",
-            "nl": "Bewegingsalarm"
+            "fr": "Alarme de Mouvement",
+            "nl": "Bewegingsalarm",
+            "ta": "இயக்க அலாரம்"
           }
         },
         "alarm_contact": {
           "title": {
             "en": "Contact Alarm",
-            "nl": "Contactalarm"
+            "fr": "Alarme de Contact",
+            "nl": "Contactalarm",
+            "ta": "தொடர்பு அலாரம்"
           }
         },
         "lock_set": {
           "title": {
             "en": "Lock",
-            "nl": "Vergrendeling"
+            "fr": "Verrouillage",
+            "nl": "Vergrendeling",
+            "ta": "பூட்டு"
           }
         },
         "lock_get": {
           "title": {
             "en": "Lock Status",
-            "nl": "Vergrendelingsstatus"
+            "fr": "État du Verrouillage",
+            "nl": "Vergrendelingsstatus",
+            "ta": "பூட்டு நிலை"
           }
         },
         "camera_stream": {
           "title": {
             "en": "Camera Stream",
-            "nl": "Camera Stream"
+            "fr": "Flux Caméra",
+            "nl": "Camera Stream",
+            "ta": "கேமரா ஸ்ட்ரீம்"
           }
         },
         "speaker_volume": {
           "title": {
             "en": "Speaker Volume",
-            "nl": "Luidspreker Volume"
+            "fr": "Volume Haut-parleur",
+            "nl": "Luidspreker Volume",
+            "ta": "ஒலிபெருக்கி அளவு"
           }
         },
         "vacuum_start": {
           "title": {
             "en": "Vacuum Start",
-            "nl": "Stofzuiger Start"
+            "fr": "Démarrage Aspirateur",
+            "nl": "Stofzuiger Start",
+            "ta": "வெற்றிடம் தொடங்கு"
           }
         },
         "garage_door_set": {
           "title": {
             "en": "Garage Door",
-            "nl": "Garagedeur"
+            "fr": "Porte de Garage",
+            "nl": "Garagedeur",
+            "ta": "கேரேஜ் கதவு"
           }
         },
         "valve_set": {
           "title": {
             "en": "Valve",
-            "nl": "Klep"
+            "fr": "Vanne",
+            "nl": "Klep",
+            "ta": "வால்வு"
           }
         }
       },
@@ -144,7 +180,9 @@
           "type": "number",
           "label": {
             "en": "Poll Interval (ms)",
-            "nl": "Poll Interval (ms)"
+            "fr": "Intervalle de Polling (ms)",
+            "nl": "Poll Interval (ms)",
+            "ta": "போல் இடைவெளி (ms)"
           },
           "value": 30000,
           "attr": {
@@ -161,7 +199,9 @@
       "id": "zigbee-switch-johan",
       "name": {
         "en": "Zigbee Switch Johan",
-        "nl": "Zigbee Schakelaar Johan"
+        "fr": "Interrupteur Zigbee Johan",
+        "nl": "Zigbee Schakelaar Johan",
+        "ta": "Zigbee சுவிட்ச் Johan"
       },
       "images": {
         "small": "assets/images/switch-small.png",
@@ -177,19 +217,25 @@
         "onoff": {
           "title": {
             "en": "On/Off",
-            "nl": "Aan/Uit"
+            "fr": "Marche/Arrêt",
+            "nl": "Aan/Uit",
+            "ta": "இயக்கு/நிறுத்து"
           }
         },
         "dim": {
           "title": {
             "en": "Dim",
-            "nl": "Dimmen"
+            "fr": "Variation",
+            "nl": "Dimmen",
+            "ta": "மங்கலாக்கு"
           }
         },
         "measure_power": {
           "title": {
             "en": "Power",
-            "nl": "Vermogen"
+            "fr": "Puissance",
+            "nl": "Vermogen",
+            "ta": "சக்தி"
           }
         }
       },
@@ -199,7 +245,9 @@
           "type": "number",
           "label": {
             "en": "Poll Interval (ms)",
-            "nl": "Poll Interval (ms)"
+            "fr": "Intervalle de Polling (ms)",
+            "nl": "Poll Interval (ms)",
+            "ta": "போல் இடைவெளி (ms)"
           },
           "value": 30000,
           "attr": {
@@ -214,7 +262,9 @@
       "id": "zigbee-light-johan",
       "name": {
         "en": "Zigbee Light Johan",
-        "nl": "Zigbee Licht Johan"
+        "fr": "Lampe Zigbee Johan",
+        "nl": "Zigbee Licht Johan",
+        "ta": "Zigbee விளக்கு Johan"
       },
       "images": {
         "small": "assets/images/light-small.png",
@@ -232,31 +282,41 @@
         "onoff": {
           "title": {
             "en": "On/Off",
-            "nl": "Aan/Uit"
+            "fr": "Marche/Arrêt",
+            "nl": "Aan/Uit",
+            "ta": "இயக்கு/நிறுத்து"
           }
         },
         "dim": {
           "title": {
             "en": "Dim",
-            "nl": "Dimmen"
+            "fr": "Variation",
+            "nl": "Dimmen",
+            "ta": "மங்கலாக்கு"
           }
         },
         "light_hue": {
           "title": {
             "en": "Hue",
-            "nl": "Tint"
+            "fr": "Teinte",
+            "nl": "Tint",
+            "ta": "நிறம்"
           }
         },
         "light_saturation": {
           "title": {
             "en": "Saturation",
-            "nl": "Verzadiging"
+            "fr": "Saturation",
+            "nl": "Verzadiging",
+            "ta": "செறிவு"
           }
         },
         "light_temperature": {
           "title": {
             "en": "Color Temperature",
-            "nl": "Kleurtemperatuur"
+            "fr": "Température de Couleur",
+            "nl": "Kleurtemperatuur",
+            "ta": "வண்ண வெப்பநிலை"
           }
         }
       },
@@ -266,7 +326,9 @@
           "type": "number",
           "label": {
             "en": "Poll Interval (ms)",
-            "nl": "Poll Interval (ms)"
+            "fr": "Intervalle de Polling (ms)",
+            "nl": "Poll Interval (ms)",
+            "ta": "போல் இடைவெளி (ms)"
           },
           "value": 30000,
           "attr": {
