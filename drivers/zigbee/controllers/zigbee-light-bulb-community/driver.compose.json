@@ -1,0 +1,48 @@
+{
+  "id": "zigbee-light-bulb-community",
+  "title": {
+    "en": "Zigbee Light Bulb (Community)",
+    "fr": "Ampoule Zigbee (Communauté)",
+    "nl": "Zigbee Lamp (Gemeenschap)",
+    "ta": "Zigbee விளக்கு (சமூகம்)"
+  },
+  "description": {
+    "en": "Smart light bulb with color control from Homey Community",
+    "fr": "Ampoule intelligente avec contrôle de couleur de la communauté Homey",
+    "nl": "Slimme lamp met kleurregeling van Homey Community",
+    "ta": "ஹோமி சமூகத்திலிருந்து வண்ண கட்டுப்பாட்டுடன் ஸ்மார்ட் விளக்கு"
+  },
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "On/Off",
+        "fr": "Marche/Arrêt",
+        "nl": "Aan/Uit",
+        "ta": "ஆன்/ஆஃப்"
+      }
+    },
+    "dim": {
+      "title": {
+        "en": "Dim",
+        "fr": "Variation",
+        "nl": "Dimmen",
+        "ta": "மங்கல்"
+      }
+    }
+  },
+  "images": {
+    "icon": "assets/images/icon.svg"
+  },
+  "category": "controllers",
+  "protocol": "zigbee",
+  "source": "homey-community",
+  "communityRating": 4.7,
+  "downloads": 2100
+}

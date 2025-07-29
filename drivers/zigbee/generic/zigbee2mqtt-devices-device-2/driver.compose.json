@@ -1,0 +1,59 @@
+{
+  "id": "zigbee2mqtt-devices-device-2",
+  "title": {
+    "en": "Zigbee2mqtt Devices Device 2",
+    "fr": "Zigbee2mqtt Devices Device 2",
+    "nl": "Zigbee2mqtt Devices Device 2",
+    "ta": "Zigbee2mqtt Devices Device 2"
+  },
+  "description": {
+    "en": "Auto-generated device from TODO list",
+    "fr": "Appareil auto-généré depuis la liste TODO",
+    "nl": "Auto-gegenereerd apparaat van TODO lijst",
+    "ta": "TODO பட்டியலில் இருந்து தானாக உருவாக்கப்பட்ட சாதனம்"
+  },
+  "capabilities": [
+    "onoff",
+    "measure_temperature"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Onoff",
+        "fr": "Onoff",
+        "nl": "Onoff",
+        "ta": "Onoff"
+      }
+    },
+    "measure_temperature": {
+      "title": {
+        "en": "Measure Temperature",
+        "fr": "Measure Temperature",
+        "nl": "Measure Temperature",
+        "ta": "Measure Temperature"
+      }
+    }
+  },
+  "images": {
+    "icon": "assets/images/icon.svg"
+  },
+  "category": "generic",
+  "protocol": "zigbee",
+  "source": "todo-resolution",
+  "resolutionDate": "2025-07-29T14:02:44.421Z",
+  "originalAnalysis": {
+    "name": "zigbee2mqtt-devices-device-2",
+    "status": "analyzed",
+    "protocol": "zigbee",
+    "category": "generic",
+    "capabilities": [
+      "onoff",
+      "measure_temperature"
+    ],
+    "clusters": [],
+    "issues": [],
+    "suggestions": [
+      "Définir les clusters Zigbee appropriés"
+    ]
+  }
+}
