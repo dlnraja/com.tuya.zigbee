@@ -459,30 +459,33 @@ function runMegaPipeline() {
     // 2. Vérification et nettoyage des drivers
     results.driverVerification = runStep("Vérification des drivers", verifyAllDrivers);
     
-    // 3. Récupération de nouveaux appareils
-    results.newDevices = runStep("Recherche de nouveaux devices Tuya / communautaires", fetchNewDevices);
+    // 3. Récupération de nouveaux appareils avec correction manufacturerName
+    results.newDevices = runStep("Recherche de nouveaux devices Tuya / communautaires avec correction manufacturerName", fetchNewDevices);
     
-    // 4. Enrichissement par IA (si API dispo)
+    // 4. Vérification et mise à jour des drivers basés sur les issues
+    results.driverVerification = runStep("Vérification et mise à jour des drivers basés sur les issues", verifyAllDrivers);
+    
+    // 5. Enrichissement par IA (si API dispo)
     if (process.env.OPENAI_API_KEY) {
         results.aiEnrichment = runStep("Enrichissement par IA des drivers", aiEnrichDrivers);
     } else {
         log("🔕 Clé OpenAI absente, IA ignorée");
     }
     
-    // 5. Scraping du forum Homey et Homey Apps
+    // 6. Scraping du forum Homey et Homey Apps
     results.communityScraping = runStep("Scraping communautaire Homey", scrapeHomeyCommunity);
     
-    // 6. Récupération des issues et PR GitHub
+    // 7. Récupération des issues et PR GitHub
     if (process.env.GITHUB_TOKEN) {
         results.githubIssues = runStep("Synchronisation des issues / PR GitHub", fetchGitHubIssues);
     } else {
         log("🔕 Token GitHub absent, issues ignorées");
     }
     
-    // 7. Résolution des TODO devices
-    results.todoResolution = runStep("Traitement des TODO devices", resolveTodoDevices);
+    // 8. Résolution des TODO devices avec fallback intelligent
+    results.todoResolution = runStep("Traitement des TODO devices avec fallback intelligent", resolveTodoDevices);
     
-    // 8. Test de compatibilité multi-firmware / Homey
+    // 9. Test de compatibilité multi-firmware / Homey
     results.compatibility = runStep("Vérification multi-compatibilité firmware + Homey", testCompatibility);
     
     // 9. Validation Homey CLI
