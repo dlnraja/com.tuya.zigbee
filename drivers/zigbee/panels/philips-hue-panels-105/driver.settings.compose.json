@@ -1,0 +1,24 @@
+{
+  "id": "philips-hue-panels-105-settings",
+  "title": {
+    "en": "philips-hue-panels-105 Settings",
+    "fr": "Paramètres philips-hue-panels-105",
+    "nl": "philips-hue-panels-105 Instellingen",
+    "ta": "philips-hue-panels-105 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

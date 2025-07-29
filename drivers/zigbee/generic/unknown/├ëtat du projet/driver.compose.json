@@ -1,0 +1,28 @@
+﻿{
+    "source":  "README-e112726a",
+    "id":  "├ëtat du projet",
+    "manufacturer":  "Historical Recovery",
+    "version":  "1.0.0",
+    "category":  "generic",
+    "description":  {
+                        "en":  "Driver for ├ëtat du projet",
+                        "fr":  "Driver pour ├ëtat du projet",
+                        "nl":  "Driver voor ├ëtat du projet",
+                        "ta":  "Driver for ├ëtat du projet"
+                    },
+    "author":  "dlnraja \u003cdylan.rajasekaram+homey@gmail.com\u003e",
+    "createdAt":  "2025-07-29T18:24:47.140Z",
+    "capabilities":  [
+                         "onoff"
+                     ],
+    "title":  {
+                  "en":  "├ëtat du projet",
+                  "fr":  "├ëtat du projet",
+                  "nl":  "├ëtat du projet",
+                  "ta":  "├ëtat du projet"
+              },
+    "protocol":  "zigbee",
+    "clusters":  [
+                     "genBasic"
+                 ]
+}

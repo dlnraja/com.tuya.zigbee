@@ -1,0 +1,28 @@
+﻿{
+    "source":  "README-c736301a",
+    "id":  "Zigbee",
+    "manufacturer":  "Historical Recovery",
+    "version":  "1.0.0",
+    "category":  "generic",
+    "description":  {
+                        "en":  "Driver for Zigbee",
+                        "fr":  "Driver pour Zigbee",
+                        "nl":  "Driver voor Zigbee",
+                        "ta":  "Driver for Zigbee"
+                    },
+    "author":  "dlnraja \u003cdylan.rajasekaram+homey@gmail.com\u003e",
+    "createdAt":  "2025-07-29T18:24:47.023Z",
+    "capabilities":  [
+                         "onoff"
+                     ],
+    "title":  {
+                  "en":  "Zigbee",
+                  "fr":  "Zigbee",
+                  "nl":  "Zigbee",
+                  "ta":  "Zigbee"
+              },
+    "protocol":  "zigbee",
+    "clusters":  [
+                     "genBasic"
+                 ]
+}

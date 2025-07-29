@@ -1,0 +1,63 @@
+{
+  "id": "lutron-switches-55",
+  "title": {
+    "en": "Lutron Switches 55",
+    "fr": "Lutron Switches 55",
+    "nl": "Lutron Switches 55",
+    "ta": "Lutron Switches 55"
+  },
+  "description": {
+    "en": "Zigbee driver for lutron-switches-55 from Lutron",
+    "fr": "Driver Zigbee pour lutron-switches-55 de Lutron",
+    "nl": "Zigbee driver voor lutron-switches-55 van Lutron",
+    "ta": "Lutron இலிருந்து lutron-switches-55 க்கான Zigbee டிரைவர்"
+  },
+  "category": "switches",
+  "protocol": "zigbee",
+  "manufacturer": "Lutron",
+  "source": "Lutron",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "windowcoverings_set",
+    "windowcoverings_tilt_set"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genWindowCovering"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:12.212Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Lutron",
+    "model": "lutron-switches-55",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genWindowCovering"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "windowcoverings_set",
+      "windowcoverings_tilt_set"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

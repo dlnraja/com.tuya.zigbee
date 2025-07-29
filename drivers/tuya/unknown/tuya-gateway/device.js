@@ -1,4 +1,5 @@
 ﻿const { TuyaDevice } = require('homey-tuya');
+const { TuyaZigbeeDevice } = require('homey-tuya-zigbee');
 
 class tuya-gatewayDevice extends TuyaDevice {
     async onInit() {

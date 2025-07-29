@@ -1,0 +1,71 @@
+{
+  "id": "xiaomi-aqara-sensors-21",
+  "title": {
+    "en": "Xiaomi Aqara Sensors 21",
+    "fr": "Xiaomi Aqara Sensors 21",
+    "nl": "Xiaomi Aqara Sensors 21",
+    "ta": "Xiaomi Aqara Sensors 21"
+  },
+  "description": {
+    "en": "Zigbee driver for xiaomi-aqara-sensors-21 from Xiaomi/Aqara",
+    "fr": "Driver Zigbee pour xiaomi-aqara-sensors-21 de Xiaomi/Aqara",
+    "nl": "Zigbee driver voor xiaomi-aqara-sensors-21 van Xiaomi/Aqara",
+    "ta": "Xiaomi/Aqara இலிருந்து xiaomi-aqara-sensors-21 க்கான Zigbee டிரைவர்"
+  },
+  "category": "sensors",
+  "protocol": "zigbee",
+  "manufacturer": "Xiaomi/Aqara",
+  "source": "Xiaomi/Aqara",
+  "capabilities": [
+    "onoff",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_pressure",
+    "alarm_motion",
+    "alarm_contact"
+  ],
+  "clusters": [
+    "genOnOff",
+    "msTemperatureMeasurement",
+    "msRelativeHumidity",
+    "msPressureMeasurement",
+    "ssIasZone"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:20:59.231Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Xiaomi/Aqara",
+    "model": "xiaomi-aqara-sensors-21",
+    "clusters": [
+      "genOnOff",
+      "msTemperatureMeasurement",
+      "msRelativeHumidity",
+      "msPressureMeasurement",
+      "ssIasZone"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "measure_temperature",
+      "measure_humidity",
+      "measure_pressure",
+      "alarm_motion",
+      "alarm_contact"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

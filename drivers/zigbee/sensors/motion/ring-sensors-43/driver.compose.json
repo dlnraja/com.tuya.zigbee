@@ -1,0 +1,61 @@
+{
+  "id": "ring-sensors-43",
+  "title": {
+    "en": "Ring Sensors 43",
+    "fr": "Ring Sensors 43",
+    "nl": "Ring Sensors 43",
+    "ta": "Ring Sensors 43"
+  },
+  "description": {
+    "en": "Zigbee driver for ring-sensors-43 from Ring",
+    "fr": "Driver Zigbee pour ring-sensors-43 de Ring",
+    "nl": "Zigbee driver voor ring-sensors-43 van Ring",
+    "ta": "Ring இலிருந்து ring-sensors-43 க்கான Zigbee டிரைவர்"
+  },
+  "category": "sensors",
+  "protocol": "zigbee",
+  "manufacturer": "Ring",
+  "source": "Ring",
+  "capabilities": [
+    "alarm_motion",
+    "alarm_contact",
+    "alarm_tamper",
+    "button"
+  ],
+  "clusters": [
+    "ssIasZone",
+    "genBasic"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:15.688Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Ring",
+    "model": "ring-sensors-43",
+    "clusters": [
+      "ssIasZone",
+      "genBasic"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "alarm_motion",
+      "alarm_contact",
+      "alarm_tamper",
+      "button"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

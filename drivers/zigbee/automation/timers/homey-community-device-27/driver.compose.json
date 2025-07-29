@@ -1,0 +1,56 @@
+{
+  "id": "homey-community-device-27",
+  "title": {
+    "en": "Homey Community Device 27",
+    "fr": "Homey Community Device 27",
+    "nl": "Homey Community Device 27",
+    "ta": "Homey Community Device 27"
+  },
+  "description": {
+    "en": "Driver for homey-community-device-27 from Homey Community",
+    "fr": "Driver pour homey-community-device-27 de Homey Community",
+    "nl": "Driver voor homey-community-device-27 van Homey Community",
+    "ta": "Homey Community இலிருந்து homey-community-device-27 க்கான டிரைவர்"
+  },
+  "category": "automation",
+  "protocol": "zigbee",
+  "source": "Homey Community",
+  "capabilities": [
+    "onoff",
+    "measure_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "msTemperatureMeasurement"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:11:13.025Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Generic",
+    "model": "homey-community-device-27",
+    "clusters": [
+      "genOnOff",
+      "msTemperatureMeasurement"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "measure_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

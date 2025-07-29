@@ -1,0 +1,24 @@
+{
+  "id": "zigbee-thermostat-settings",
+  "title": {
+    "en": "zigbee-thermostat Settings",
+    "fr": "Paramètres zigbee-thermostat",
+    "nl": "zigbee-thermostat Instellingen",
+    "ta": "zigbee-thermostat அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

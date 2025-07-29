@@ -1,0 +1,24 @@
+{
+  "id": "schlage-doorbell-14-settings",
+  "title": {
+    "en": "schlage-doorbell-14 Settings",
+    "fr": "Paramètres schlage-doorbell-14",
+    "nl": "schlage-doorbell-14 Instellingen",
+    "ta": "schlage-doorbell-14 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

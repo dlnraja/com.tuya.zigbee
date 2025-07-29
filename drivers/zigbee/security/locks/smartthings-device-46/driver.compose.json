@@ -1,0 +1,60 @@
+{
+  "id": "smartthings-device-46",
+  "title": {
+    "en": "Smartthings Device 46",
+    "fr": "Smartthings Device 46",
+    "nl": "Smartthings Device 46",
+    "ta": "Smartthings Device 46"
+  },
+  "description": {
+    "en": "Driver for smartthings-device-46 from SmartThings",
+    "fr": "Driver pour smartthings-device-46 de SmartThings",
+    "nl": "Driver voor smartthings-device-46 van SmartThings",
+    "ta": "SmartThings இலிருந்து smartthings-device-46 க்கான டிரைவர்"
+  },
+  "category": "security",
+  "protocol": "zigbee",
+  "source": "SmartThings",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genPowerCfg"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:11:16.358Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Generic",
+    "model": "smartthings-device-46",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genPowerCfg"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_power"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

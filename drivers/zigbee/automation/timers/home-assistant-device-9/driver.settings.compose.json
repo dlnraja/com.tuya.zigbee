@@ -1,0 +1,24 @@
+{
+  "id": "home-assistant-device-9-settings",
+  "title": {
+    "en": "home-assistant-device-9 Settings",
+    "fr": "Paramètres home-assistant-device-9",
+    "nl": "home-assistant-device-9 Instellingen",
+    "ta": "home-assistant-device-9 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

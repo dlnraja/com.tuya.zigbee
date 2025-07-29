@@ -1,0 +1,24 @@
+{
+  "id": "schlage-locks-13-settings",
+  "title": {
+    "en": "schlage-locks-13 Settings",
+    "fr": "Paramètres schlage-locks-13",
+    "nl": "schlage-locks-13 Instellingen",
+    "ta": "schlage-locks-13 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

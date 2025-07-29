@@ -1,0 +1,28 @@
+﻿{
+    "source":  "README-e112726a",
+    "id":  "Available scripts",
+    "manufacturer":  "Historical Recovery",
+    "version":  "1.0.0",
+    "category":  "generic",
+    "description":  {
+                        "en":  "Driver for Available scripts",
+                        "fr":  "Driver pour Available scripts",
+                        "nl":  "Driver voor Available scripts",
+                        "ta":  "Driver for Available scripts"
+                    },
+    "author":  "dlnraja \u003cdylan.rajasekaram+homey@gmail.com\u003e",
+    "createdAt":  "2025-07-29T18:24:47.733Z",
+    "capabilities":  [
+                         "onoff"
+                     ],
+    "title":  {
+                  "en":  "Available scripts",
+                  "fr":  "Available scripts",
+                  "nl":  "Available scripts",
+                  "ta":  "Available scripts"
+              },
+    "protocol":  "zigbee",
+    "clusters":  [
+                     "genBasic"
+                 ]
+}

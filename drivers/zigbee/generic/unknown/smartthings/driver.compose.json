@@ -1,0 +1,58 @@
+{
+  "id": "smartthings",
+  "title": {
+    "en": "Smartthings",
+    "fr": "Smartthings",
+    "nl": "Smartthings",
+    "ta": "Smartthings"
+  },
+  "description": {
+    "en": "ZIGBEE driver for smartthings from Samsung SmartThings (Historical)",
+    "fr": "Driver ZIGBEE pour smartthings de Samsung SmartThings (Historique)",
+    "nl": "ZIGBEE driver voor smartthings van Samsung SmartThings (Historisch)",
+    "ta": "Samsung SmartThings இலிருந்து smartthings க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "zigbee",
+  "manufacturer": "Samsung SmartThings",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.216Z",
+  "historical": {
+    "commitHash": "e8936adf",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Samsung SmartThings",
+    "model": "smartthings",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

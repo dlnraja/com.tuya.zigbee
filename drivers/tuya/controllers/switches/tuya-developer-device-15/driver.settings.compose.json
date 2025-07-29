@@ -1,0 +1,24 @@
+{
+  "id": "tuya-developer-device-15-settings",
+  "title": {
+    "en": "tuya-developer-device-15 Settings",
+    "fr": "Paramètres tuya-developer-device-15",
+    "nl": "tuya-developer-device-15 Instellingen",
+    "ta": "tuya-developer-device-15 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

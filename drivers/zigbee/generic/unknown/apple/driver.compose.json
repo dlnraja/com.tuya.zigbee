@@ -1,0 +1,58 @@
+{
+  "id": "apple",
+  "title": {
+    "en": "Apple",
+    "fr": "Apple",
+    "nl": "Apple",
+    "ta": "Apple"
+  },
+  "description": {
+    "en": "ZIGBEE driver for apple from Apple (Historical)",
+    "fr": "Driver ZIGBEE pour apple de Apple (Historique)",
+    "nl": "ZIGBEE driver voor apple van Apple (Historisch)",
+    "ta": "Apple இலிருந்து apple க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "zigbee",
+  "manufacturer": "Apple",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.317Z",
+  "historical": {
+    "commitHash": "e8936adf",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Apple",
+    "model": "apple",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

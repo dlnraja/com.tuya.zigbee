@@ -1,0 +1,59 @@
+{
+  "id": "schlage-security-21",
+  "title": {
+    "en": "Schlage Security 21",
+    "fr": "Schlage Security 21",
+    "nl": "Schlage Security 21",
+    "ta": "Schlage Security 21"
+  },
+  "description": {
+    "en": "Zigbee driver for schlage-security-21 from Schlage",
+    "fr": "Driver Zigbee pour schlage-security-21 de Schlage",
+    "nl": "Zigbee driver voor schlage-security-21 van Schlage",
+    "ta": "Schlage இலிருந்து schlage-security-21 க்கான Zigbee டிரைவர்"
+  },
+  "category": "security",
+  "protocol": "zigbee",
+  "manufacturer": "Schlage",
+  "source": "Schlage",
+  "capabilities": [
+    "lock",
+    "alarm_contact",
+    "alarm_tamper"
+  ],
+  "clusters": [
+    "genDoorLock",
+    "ssIasZone"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:13.290Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Schlage",
+    "model": "schlage-security-21",
+    "clusters": [
+      "genDoorLock",
+      "ssIasZone"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "lock",
+      "alarm_contact",
+      "alarm_tamper"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "zigbee-switch",
+  "title": {
+    "en": "Zigbee Switch",
+    "fr": "Zigbee Switch",
+    "nl": "Zigbee Switch",
+    "ta": "Zigbee Switch"
+  },
+  "description": {
+    "en": "ZIGBEE driver for zigbee-switch from Unknown Manufacturer (Historical)",
+    "fr": "Driver ZIGBEE pour zigbee-switch de Unknown Manufacturer (Historique)",
+    "nl": "ZIGBEE driver voor zigbee-switch van Unknown Manufacturer (Historisch)",
+    "ta": "Unknown Manufacturer இலிருந்து zigbee-switch க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "controllers",
+  "protocol": "zigbee",
+  "manufacturer": "Unknown Manufacturer",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "lightingColorCtrl"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:37.937Z",
+  "historical": {
+    "commitHash": "f989d92e",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Unknown Manufacturer",
+    "model": "zigbee-switch",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_hue",
+      "light_saturation",
+      "light_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

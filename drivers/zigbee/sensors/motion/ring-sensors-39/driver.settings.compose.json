@@ -1,0 +1,24 @@
+{
+  "id": "ring-sensors-39-settings",
+  "title": {
+    "en": "ring-sensors-39 Settings",
+    "fr": "Paramètres ring-sensors-39",
+    "nl": "ring-sensors-39 Instellingen",
+    "ta": "ring-sensors-39 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

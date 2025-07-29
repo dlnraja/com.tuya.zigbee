@@ -1,0 +1,58 @@
+{
+  "id": "rti",
+  "title": {
+    "en": "Rti",
+    "fr": "Rti",
+    "nl": "Rti",
+    "ta": "Rti"
+  },
+  "description": {
+    "en": "ZIGBEE driver for rti from RTI (Historical)",
+    "fr": "Driver ZIGBEE pour rti de RTI (Historique)",
+    "nl": "ZIGBEE driver voor rti van RTI (Historisch)",
+    "ta": "RTI இலிருந்து rti க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "zigbee",
+  "manufacturer": "RTI",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:37.807Z",
+  "historical": {
+    "commitHash": "71d2b8b5",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "RTI",
+    "model": "rti",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

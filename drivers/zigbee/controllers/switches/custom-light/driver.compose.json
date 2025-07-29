@@ -1,0 +1,187 @@
+{
+  "id": "custom-light",
+  "name": {
+    "en": " $args[0].Value.ToUpper() ustom  $args[0].Value.ToUpper() ight",
+    "fr": " $args[0].Value.ToUpper() ustom  $args[0].Value.ToUpper() ight",
+    "nl": " $args[0].Value.ToUpper() ustom  $args[0].Value.ToUpper() ight",
+    "ta": " $args[0].Value.ToUpper() ustom  $args[0].Value.ToUpper() ight"
+  },
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power",
+    "light_temperature"
+  ],
+  "class": "light",
+  "zigbee": {
+    "manufacturerName": [
+      "Generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genOnOff",
+          "genLevelCtrl",
+          "genBasic"
+        ],
+        "bindings": [
+          "genOnOff",
+          "genLevelCtrl"
+        ]
+      }
+    },
+    "productId": [
+      ""
+    ]
+  },
+  "images": {
+    "icon": "assets/images/icon.svg"
+  },
+  "title": {
+    "en": "Custom Light",
+    "fr": "Custom Light",
+    "nl": "Custom Light",
+    "ta": "Custom Light"
+  },
+  "category": "controllers",
+  "optimized": true,
+  "optimizationDate": "2025-07-29T14:41:45.956Z",
+  "version": "1.0.12-20250729-1405",
+  "platformCompatibility": {
+    "homeyModels": [
+      "homey_pro_2016",
+      "homey_pro_2019",
+      "homey_pro_2023",
+      "homey_bridge",
+      "homey_cloud"
+    ],
+    "minHomeyVersion": "3.0.0",
+    "firmware": {
+      "detected": "TS0602",
+      "category": "official",
+      "confidence": "high"
+    },
+    "compatibility": {
+      "homeyModel": "homey_pro_2023",
+      "compatible": true,
+      "capabilities": {
+        "supported": [
+          "onoff",
+          "measure_power"
+        ],
+        "unsupported": []
+      },
+      "clusters": {
+        "supported": [
+          "genOnOff",
+          "genPowerCfg"
+        ],
+        "unsupported": []
+      },
+      "limitations": [],
+      "fallback": false
+    },
+    "fallbackBehavior": null,
+    "warnings": []
+  },
+  "firmwareMetadata": {
+    "detected": "TS0602",
+    "category": "official",
+    "confidence": "high",
+    "capabilities": [
+      "onoff",
+      "measure_power"
+    ],
+    "clusters": [
+      "genOnOff",
+      "genPowerCfg"
+    ],
+    "fallback": false,
+    "unknown": false
+  },
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "lightingColorCtrl"
+  ],
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-07-29T13:21:52.688Z",
+    "originalType": "light",
+    "suggestedCapabilities": [
+      "onoff",
+      "dim",
+      "light_temperature"
+    ]
+  },
+  "description": {
+    "en": "Optimized custom-light driver",
+    "fr": "Driver custom-light optimisé",
+    "nl": "Geoptimaliseerde custom-light driver",
+    "ta": "ஒப்படைக்கப்பட்ட custom-light டிரைவர்"
+  },
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Onoff",
+        "fr": "Onoff",
+        "nl": "Onoff",
+        "ta": "Onoff"
+      }
+    },
+    "dim": {
+      "title": {
+        "en": "Dim",
+        "fr": "Dim",
+        "nl": "Dim",
+        "ta": "Dim"
+      }
+    },
+    "measure_power": {
+      "title": {
+        "en": "Measure Power",
+        "fr": "Measure Power",
+        "nl": "Measure Power",
+        "ta": "Measure Power"
+      }
+    },
+    "light_temperature": {
+      "title": {
+        "en": "Light Temperature",
+        "fr": "Light Temperature",
+        "nl": "Light Temperature",
+        "ta": "Light Temperature"
+      }
+    }
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Generic",
+    "model": "custom-light",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_power",
+      "light_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

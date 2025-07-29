@@ -1,0 +1,24 @@
+{
+  "id": "wyze-cameras-6-settings",
+  "title": {
+    "en": "wyze-cameras-6 Settings",
+    "fr": "Paramètres wyze-cameras-6",
+    "nl": "wyze-cameras-6 Instellingen",
+    "ta": "wyze-cameras-6 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

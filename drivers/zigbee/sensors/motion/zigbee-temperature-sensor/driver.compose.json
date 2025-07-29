@@ -1,0 +1,66 @@
+{
+  "id": "zigbee-temperature-sensor",
+  "title": {
+    "en": "Zigbee Temperature Sensor",
+    "fr": "Zigbee Temperature Sensor",
+    "nl": "Zigbee Temperature Sensor",
+    "ta": "Zigbee Temperature Sensor"
+  },
+  "description": {
+    "en": "ZIGBEE driver for zigbee-temperature-sensor from Unknown Manufacturer (Historical)",
+    "fr": "Driver ZIGBEE pour zigbee-temperature-sensor de Unknown Manufacturer (Historique)",
+    "nl": "ZIGBEE driver voor zigbee-temperature-sensor van Unknown Manufacturer (Historisch)",
+    "ta": "Unknown Manufacturer இலிருந்து zigbee-temperature-sensor க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "sensors",
+  "protocol": "zigbee",
+  "manufacturer": "Unknown Manufacturer",
+  "source": "README historique (master)",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_pressure"
+  ],
+  "clusters": [
+    "msTemperatureMeasurement",
+    "msRelativeHumidity",
+    "msPressureMeasurement"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:37.964Z",
+  "historical": {
+    "commitHash": "f989d92e",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Unknown Manufacturer",
+    "model": "zigbee-temperature-sensor",
+    "clusters": [
+      "msTemperatureMeasurement",
+      "msRelativeHumidity",
+      "msPressureMeasurement"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "measure_temperature",
+      "measure_humidity",
+      "measure_pressure"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

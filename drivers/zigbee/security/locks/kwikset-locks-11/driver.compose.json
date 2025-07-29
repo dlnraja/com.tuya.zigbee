@@ -1,0 +1,59 @@
+{
+  "id": "kwikset-locks-11",
+  "title": {
+    "en": "Kwikset Locks 11",
+    "fr": "Kwikset Locks 11",
+    "nl": "Kwikset Locks 11",
+    "ta": "Kwikset Locks 11"
+  },
+  "description": {
+    "en": "Zigbee driver for kwikset-locks-11 from Kwikset",
+    "fr": "Driver Zigbee pour kwikset-locks-11 de Kwikset",
+    "nl": "Zigbee driver voor kwikset-locks-11 van Kwikset",
+    "ta": "Kwikset இலிருந்து kwikset-locks-11 க்கான Zigbee டிரைவர்"
+  },
+  "category": "locks",
+  "protocol": "zigbee",
+  "manufacturer": "Kwikset",
+  "source": "Kwikset",
+  "capabilities": [
+    "lock",
+    "alarm_contact",
+    "alarm_tamper"
+  ],
+  "clusters": [
+    "genDoorLock",
+    "ssIasZone"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:13.829Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Kwikset",
+    "model": "kwikset-locks-11",
+    "clusters": [
+      "genDoorLock",
+      "ssIasZone"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "lock",
+      "alarm_contact",
+      "alarm_tamper"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "samsung",
+  "title": {
+    "en": "Samsung",
+    "fr": "Samsung",
+    "nl": "Samsung",
+    "ta": "Samsung"
+  },
+  "description": {
+    "en": "ZIGBEE driver for samsung from Samsung SmartThings (Historical)",
+    "fr": "Driver ZIGBEE pour samsung de Samsung SmartThings (Historique)",
+    "nl": "ZIGBEE driver voor samsung van Samsung SmartThings (Historisch)",
+    "ta": "Samsung SmartThings இலிருந்து samsung க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "zigbee",
+  "manufacturer": "Samsung SmartThings",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.199Z",
+  "historical": {
+    "commitHash": "e8936adf",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Samsung SmartThings",
+    "model": "samsung",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "yale-security-32",
+  "title": {
+    "en": "Yale Security 32",
+    "fr": "Yale Security 32",
+    "nl": "Yale Security 32",
+    "ta": "Yale Security 32"
+  },
+  "description": {
+    "en": "Zigbee driver for yale-security-32 from Yale",
+    "fr": "Driver Zigbee pour yale-security-32 de Yale",
+    "nl": "Zigbee driver voor yale-security-32 van Yale",
+    "ta": "Yale இலிருந்து yale-security-32 க்கான Zigbee டிரைவர்"
+  },
+  "category": "security",
+  "protocol": "zigbee",
+  "manufacturer": "Yale",
+  "source": "Yale",
+  "capabilities": [
+    "lock",
+    "alarm_contact",
+    "alarm_tamper"
+  ],
+  "clusters": [
+    "genDoorLock",
+    "ssIasZone"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:14.736Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Yale",
+    "model": "yale-security-32",
+    "clusters": [
+      "genDoorLock",
+      "ssIasZone"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "lock",
+      "alarm_contact",
+      "alarm_tamper"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

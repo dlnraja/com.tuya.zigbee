@@ -1,0 +1,58 @@
+{
+  "id": "elan",
+  "title": {
+    "en": "Elan",
+    "fr": "Elan",
+    "nl": "Elan",
+    "ta": "Elan"
+  },
+  "description": {
+    "en": "ZIGBEE driver for elan from Elan (Historical)",
+    "fr": "Driver ZIGBEE pour elan de Elan (Historique)",
+    "nl": "ZIGBEE driver voor elan van Elan (Historisch)",
+    "ta": "Elan இலிருந்து elan க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "zigbee",
+  "manufacturer": "Elan",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.250Z",
+  "historical": {
+    "commitHash": "e8936adf",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Elan",
+    "model": "elan",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

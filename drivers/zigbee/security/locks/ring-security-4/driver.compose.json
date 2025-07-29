@@ -1,0 +1,61 @@
+{
+  "id": "ring-security-4",
+  "title": {
+    "en": "Ring Security 4",
+    "fr": "Ring Security 4",
+    "nl": "Ring Security 4",
+    "ta": "Ring Security 4"
+  },
+  "description": {
+    "en": "Zigbee driver for ring-security-4 from Ring",
+    "fr": "Driver Zigbee pour ring-security-4 de Ring",
+    "nl": "Zigbee driver voor ring-security-4 van Ring",
+    "ta": "Ring இலிருந்து ring-security-4 க்கான Zigbee டிரைவர்"
+  },
+  "category": "security",
+  "protocol": "zigbee",
+  "manufacturer": "Ring",
+  "source": "Ring",
+  "capabilities": [
+    "alarm_motion",
+    "alarm_contact",
+    "alarm_tamper",
+    "button"
+  ],
+  "clusters": [
+    "ssIasZone",
+    "genBasic"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:15.225Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Ring",
+    "model": "ring-security-4",
+    "clusters": [
+      "ssIasZone",
+      "genBasic"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "alarm_motion",
+      "alarm_contact",
+      "alarm_tamper",
+      "button"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

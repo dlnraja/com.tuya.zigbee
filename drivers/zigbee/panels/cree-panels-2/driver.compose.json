@@ -1,0 +1,61 @@
+{
+  "id": "cree-panels-2",
+  "title": {
+    "en": "Cree Panels 2",
+    "fr": "Cree Panels 2",
+    "nl": "Cree Panels 2",
+    "ta": "Cree Panels 2"
+  },
+  "description": {
+    "en": "Zigbee driver for cree-panels-2 from Cree",
+    "fr": "Driver Zigbee pour cree-panels-2 de Cree",
+    "nl": "Zigbee driver voor cree-panels-2 van Cree",
+    "ta": "Cree இலிருந்து cree-panels-2 க்கான Zigbee டிரைவர்"
+  },
+  "category": "panels",
+  "protocol": "zigbee",
+  "manufacturer": "Cree",
+  "source": "Cree",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "lightingColorCtrl"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:06.376Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Cree",
+    "model": "cree-panels-2",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

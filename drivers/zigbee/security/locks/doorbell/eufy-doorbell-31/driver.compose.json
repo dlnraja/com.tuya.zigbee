@@ -1,0 +1,61 @@
+{
+  "id": "eufy-doorbell-31",
+  "title": {
+    "en": "Eufy Doorbell 31",
+    "fr": "Eufy Doorbell 31",
+    "nl": "Eufy Doorbell 31",
+    "ta": "Eufy Doorbell 31"
+  },
+  "description": {
+    "en": "Zigbee driver for eufy-doorbell-31 from Eufy",
+    "fr": "Driver Zigbee pour eufy-doorbell-31 de Eufy",
+    "nl": "Zigbee driver voor eufy-doorbell-31 van Eufy",
+    "ta": "Eufy இலிருந்து eufy-doorbell-31 க்கான Zigbee டிரைவர்"
+  },
+  "category": "doorbell",
+  "protocol": "zigbee",
+  "manufacturer": "Eufy",
+  "source": "Eufy",
+  "capabilities": [
+    "alarm_motion",
+    "alarm_contact",
+    "alarm_tamper",
+    "button"
+  ],
+  "clusters": [
+    "ssIasZone",
+    "genBasic"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:16.540Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Eufy",
+    "model": "eufy-doorbell-31",
+    "clusters": [
+      "ssIasZone",
+      "genBasic"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "alarm_motion",
+      "alarm_contact",
+      "alarm_tamper",
+      "button"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

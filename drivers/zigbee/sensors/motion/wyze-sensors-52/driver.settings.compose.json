@@ -1,0 +1,24 @@
+{
+  "id": "wyze-sensors-52-settings",
+  "title": {
+    "en": "wyze-sensors-52 Settings",
+    "fr": "Paramètres wyze-sensors-52",
+    "nl": "wyze-sensors-52 Instellingen",
+    "ta": "wyze-sensors-52 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

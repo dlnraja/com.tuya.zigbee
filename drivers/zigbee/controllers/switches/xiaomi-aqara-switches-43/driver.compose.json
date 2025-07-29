@@ -1,0 +1,71 @@
+{
+  "id": "xiaomi-aqara-switches-43",
+  "title": {
+    "en": "Xiaomi Aqara Switches 43",
+    "fr": "Xiaomi Aqara Switches 43",
+    "nl": "Xiaomi Aqara Switches 43",
+    "ta": "Xiaomi Aqara Switches 43"
+  },
+  "description": {
+    "en": "Zigbee driver for xiaomi-aqara-switches-43 from Xiaomi/Aqara",
+    "fr": "Driver Zigbee pour xiaomi-aqara-switches-43 de Xiaomi/Aqara",
+    "nl": "Zigbee driver voor xiaomi-aqara-switches-43 van Xiaomi/Aqara",
+    "ta": "Xiaomi/Aqara இலிருந்து xiaomi-aqara-switches-43 க்கான Zigbee டிரைவர்"
+  },
+  "category": "switches",
+  "protocol": "zigbee",
+  "manufacturer": "Xiaomi/Aqara",
+  "source": "Xiaomi/Aqara",
+  "capabilities": [
+    "onoff",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_pressure",
+    "alarm_motion",
+    "alarm_contact"
+  ],
+  "clusters": [
+    "genOnOff",
+    "msTemperatureMeasurement",
+    "msRelativeHumidity",
+    "msPressureMeasurement",
+    "ssIasZone"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:20:59.621Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Xiaomi/Aqara",
+    "model": "xiaomi-aqara-switches-43",
+    "clusters": [
+      "genOnOff",
+      "msTemperatureMeasurement",
+      "msRelativeHumidity",
+      "msPressureMeasurement",
+      "ssIasZone"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "measure_temperature",
+      "measure_humidity",
+      "measure_pressure",
+      "alarm_motion",
+      "alarm_contact"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "wyze-sensors-12",
+  "title": {
+    "en": "Wyze Sensors 12",
+    "fr": "Wyze Sensors 12",
+    "nl": "Wyze Sensors 12",
+    "ta": "Wyze Sensors 12"
+  },
+  "description": {
+    "en": "Zigbee driver for wyze-sensors-12 from Wyze",
+    "fr": "Driver Zigbee pour wyze-sensors-12 de Wyze",
+    "nl": "Zigbee driver voor wyze-sensors-12 van Wyze",
+    "ta": "Wyze இலிருந்து wyze-sensors-12 க்கான Zigbee டிரைவர்"
+  },
+  "category": "sensors",
+  "protocol": "zigbee",
+  "manufacturer": "Wyze",
+  "source": "Wyze",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "alarm_motion",
+    "alarm_contact",
+    "measure_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "ssIasZone",
+    "msTemperatureMeasurement"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:17.023Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Wyze",
+    "model": "wyze-sensors-12",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "ssIasZone",
+      "msTemperatureMeasurement"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "alarm_motion",
+      "alarm_contact",
+      "measure_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

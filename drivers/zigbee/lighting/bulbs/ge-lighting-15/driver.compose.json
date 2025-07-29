@@ -1,0 +1,61 @@
+{
+  "id": "ge-lighting-15",
+  "title": {
+    "en": "Ge Lighting 15",
+    "fr": "Ge Lighting 15",
+    "nl": "Ge Lighting 15",
+    "ta": "Ge Lighting 15"
+  },
+  "description": {
+    "en": "Zigbee driver for ge-lighting-15 from GE",
+    "fr": "Driver Zigbee pour ge-lighting-15 de GE",
+    "nl": "Zigbee driver voor ge-lighting-15 van GE",
+    "ta": "GE இலிருந்து ge-lighting-15 க்கான Zigbee டிரைவர்"
+  },
+  "category": "lighting",
+  "protocol": "zigbee",
+  "manufacturer": "GE",
+  "source": "GE",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genPowerCfg"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:05.404Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "GE",
+    "model": "ge-lighting-15",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genPowerCfg"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_power"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

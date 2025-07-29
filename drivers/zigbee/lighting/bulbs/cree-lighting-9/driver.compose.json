@@ -1,0 +1,61 @@
+{
+  "id": "cree-lighting-9",
+  "title": {
+    "en": "Cree Lighting 9",
+    "fr": "Cree Lighting 9",
+    "nl": "Cree Lighting 9",
+    "ta": "Cree Lighting 9"
+  },
+  "description": {
+    "en": "Zigbee driver for cree-lighting-9 from Cree",
+    "fr": "Driver Zigbee pour cree-lighting-9 de Cree",
+    "nl": "Zigbee driver voor cree-lighting-9 van Cree",
+    "ta": "Cree இலிருந்து cree-lighting-9 க்கான Zigbee டிரைவர்"
+  },
+  "category": "lighting",
+  "protocol": "zigbee",
+  "manufacturer": "Cree",
+  "source": "Cree",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "lightingColorCtrl"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:06.487Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Cree",
+    "model": "cree-lighting-9",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

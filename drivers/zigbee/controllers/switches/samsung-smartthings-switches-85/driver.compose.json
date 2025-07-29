@@ -1,0 +1,69 @@
+{
+  "id": "samsung-smartthings-switches-85",
+  "title": {
+    "en": "Samsung Smartthings Switches 85",
+    "fr": "Samsung Smartthings Switches 85",
+    "nl": "Samsung Smartthings Switches 85",
+    "ta": "Samsung Smartthings Switches 85"
+  },
+  "description": {
+    "en": "Zigbee driver for samsung-smartthings-switches-85 from Samsung SmartThings",
+    "fr": "Driver Zigbee pour samsung-smartthings-switches-85 de Samsung SmartThings",
+    "nl": "Zigbee driver voor samsung-smartthings-switches-85 van Samsung SmartThings",
+    "ta": "Samsung SmartThings இலிருந்து samsung-smartthings-switches-85 க்கான Zigbee டிரைவர்"
+  },
+  "category": "switches",
+  "protocol": "zigbee",
+  "manufacturer": "Samsung SmartThings",
+  "source": "Samsung SmartThings",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_motion"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "msTemperatureMeasurement",
+    "msRelativeHumidity",
+    "ssIasZone"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:03.549Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Samsung SmartThings",
+    "model": "samsung-smartthings-switches-85",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "msTemperatureMeasurement",
+      "msRelativeHumidity",
+      "ssIasZone"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_temperature",
+      "measure_humidity",
+      "alarm_motion"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

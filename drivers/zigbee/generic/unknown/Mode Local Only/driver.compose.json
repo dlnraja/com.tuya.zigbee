@@ -1,0 +1,28 @@
+﻿{
+    "source":  "README-e112726a",
+    "id":  "Mode Local Only",
+    "manufacturer":  "Historical Recovery",
+    "version":  "1.0.0",
+    "category":  "generic",
+    "description":  {
+                        "en":  "Driver for Mode Local Only",
+                        "fr":  "Driver pour Mode Local Only",
+                        "nl":  "Driver voor Mode Local Only",
+                        "ta":  "Driver for Mode Local Only"
+                    },
+    "author":  "dlnraja \u003cdylan.rajasekaram+homey@gmail.com\u003e",
+    "createdAt":  "2025-07-29T18:24:47.084Z",
+    "capabilities":  [
+                         "onoff"
+                     ],
+    "title":  {
+                  "en":  "Mode Local Only",
+                  "fr":  "Mode Local Only",
+                  "nl":  "Mode Local Only",
+                  "ta":  "Mode Local Only"
+              },
+    "protocol":  "zigbee",
+    "clusters":  [
+                     "genBasic"
+                 ]
+}

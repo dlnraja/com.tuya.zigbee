@@ -1,0 +1,67 @@
+{
+  "id": "osram-lighting-76",
+  "title": {
+    "en": "Osram Lighting 76",
+    "fr": "Osram Lighting 76",
+    "nl": "Osram Lighting 76",
+    "ta": "Osram Lighting 76"
+  },
+  "description": {
+    "en": "Zigbee driver for osram-lighting-76 from Osram",
+    "fr": "Driver Zigbee pour osram-lighting-76 de Osram",
+    "nl": "Zigbee driver voor osram-lighting-76 van Osram",
+    "ta": "Osram இலிருந்து osram-lighting-76 க்கான Zigbee டிரைவர்"
+  },
+  "category": "lighting",
+  "protocol": "zigbee",
+  "manufacturer": "Osram",
+  "source": "Osram",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "lightingColorCtrl",
+    "genBasic"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:04.861Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Osram",
+    "model": "osram-lighting-76",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl",
+      "genBasic"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_hue",
+      "light_saturation",
+      "light_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

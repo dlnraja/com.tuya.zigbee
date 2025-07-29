@@ -1,0 +1,28 @@
+﻿{
+    "source":  "README-e112726a",
+    "id":  "Zigbee Natif",
+    "manufacturer":  "Historical Recovery",
+    "version":  "1.0.0",
+    "category":  "generic",
+    "description":  {
+                        "en":  "Driver for Zigbee Natif",
+                        "fr":  "Driver pour Zigbee Natif",
+                        "nl":  "Driver voor Zigbee Natif",
+                        "ta":  "Driver for Zigbee Natif"
+                    },
+    "author":  "dlnraja \u003cdylan.rajasekaram+homey@gmail.com\u003e",
+    "createdAt":  "2025-07-29T18:24:47.065Z",
+    "capabilities":  [
+                         "onoff"
+                     ],
+    "title":  {
+                  "en":  "Zigbee Natif",
+                  "fr":  "Zigbee Natif",
+                  "nl":  "Zigbee Natif",
+                  "ta":  "Zigbee Natif"
+              },
+    "protocol":  "zigbee",
+    "clusters":  [
+                     "genBasic"
+                 ]
+}

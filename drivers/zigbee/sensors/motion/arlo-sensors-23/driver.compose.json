@@ -1,0 +1,59 @@
+{
+  "id": "arlo-sensors-23",
+  "title": {
+    "en": "Arlo Sensors 23",
+    "fr": "Arlo Sensors 23",
+    "nl": "Arlo Sensors 23",
+    "ta": "Arlo Sensors 23"
+  },
+  "description": {
+    "en": "Zigbee driver for arlo-sensors-23 from Arlo",
+    "fr": "Driver Zigbee pour arlo-sensors-23 de Arlo",
+    "nl": "Zigbee driver voor arlo-sensors-23 van Arlo",
+    "ta": "Arlo இலிருந்து arlo-sensors-23 க்கான Zigbee டிரைவர்"
+  },
+  "category": "sensors",
+  "protocol": "zigbee",
+  "manufacturer": "Arlo",
+  "source": "Arlo",
+  "capabilities": [
+    "alarm_motion",
+    "alarm_contact",
+    "alarm_tamper"
+  ],
+  "clusters": [
+    "ssIasZone",
+    "genBasic"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:15.968Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Arlo",
+    "model": "arlo-sensors-23",
+    "clusters": [
+      "ssIasZone",
+      "genBasic"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "alarm_motion",
+      "alarm_contact",
+      "alarm_tamper"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

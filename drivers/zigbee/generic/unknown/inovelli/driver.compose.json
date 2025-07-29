@@ -1,0 +1,58 @@
+{
+  "id": "inovelli",
+  "title": {
+    "en": "Inovelli",
+    "fr": "Inovelli",
+    "nl": "Inovelli",
+    "ta": "Inovelli"
+  },
+  "description": {
+    "en": "ZIGBEE driver for inovelli from Inovelli (Historical)",
+    "fr": "Driver ZIGBEE pour inovelli de Inovelli (Historique)",
+    "nl": "ZIGBEE driver voor inovelli van Inovelli (Historisch)",
+    "ta": "Inovelli இலிருந்து inovelli க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "zigbee",
+  "manufacturer": "Inovelli",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.557Z",
+  "historical": {
+    "commitHash": "601ea78c",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Inovelli",
+    "model": "inovelli",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

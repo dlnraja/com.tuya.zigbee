@@ -1,0 +1,24 @@
+{
+  "id": "gledopto-strips-14-settings",
+  "title": {
+    "en": "gledopto-strips-14 Settings",
+    "fr": "Paramètres gledopto-strips-14",
+    "nl": "gledopto-strips-14 Instellingen",
+    "ta": "gledopto-strips-14 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

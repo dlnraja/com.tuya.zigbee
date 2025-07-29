@@ -1,0 +1,24 @@
+{
+  "id": "cree-lighting-21-settings",
+  "title": {
+    "en": "cree-lighting-21 Settings",
+    "fr": "Paramètres cree-lighting-21",
+    "nl": "cree-lighting-21 Instellingen",
+    "ta": "cree-lighting-21 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

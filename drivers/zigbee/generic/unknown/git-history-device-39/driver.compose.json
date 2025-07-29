@@ -1,0 +1,56 @@
+{
+  "id": "git-history-device-39",
+  "title": {
+    "en": "Git History Device 39",
+    "fr": "Git History Device 39",
+    "nl": "Git History Device 39",
+    "ta": "Git History Device 39"
+  },
+  "description": {
+    "en": "Driver for git-history-device-39 from Local Git History",
+    "fr": "Driver pour git-history-device-39 de Local Git History",
+    "nl": "Driver voor git-history-device-39 van Local Git History",
+    "ta": "Local Git History இலிருந்து git-history-device-39 க்கான டிரைவர்"
+  },
+  "category": "generic",
+  "protocol": "zigbee",
+  "source": "Local Git History",
+  "capabilities": [
+    "onoff",
+    "measure_power"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genPowerCfg"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:11:25.565Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Generic",
+    "model": "git-history-device-39",
+    "clusters": [
+      "genOnOff",
+      "genPowerCfg"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "measure_power"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

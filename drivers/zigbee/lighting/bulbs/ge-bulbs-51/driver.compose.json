@@ -1,0 +1,61 @@
+{
+  "id": "ge-bulbs-51",
+  "title": {
+    "en": "Ge Bulbs 51",
+    "fr": "Ge Bulbs 51",
+    "nl": "Ge Bulbs 51",
+    "ta": "Ge Bulbs 51"
+  },
+  "description": {
+    "en": "Zigbee driver for ge-bulbs-51 from GE",
+    "fr": "Driver Zigbee pour ge-bulbs-51 de GE",
+    "nl": "Zigbee driver voor ge-bulbs-51 van GE",
+    "ta": "GE இலிருந்து ge-bulbs-51 க்கான Zigbee டிரைவர்"
+  },
+  "category": "bulbs",
+  "protocol": "zigbee",
+  "manufacturer": "GE",
+  "source": "GE",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genPowerCfg"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:06.212Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "GE",
+    "model": "ge-bulbs-51",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genPowerCfg"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_power"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

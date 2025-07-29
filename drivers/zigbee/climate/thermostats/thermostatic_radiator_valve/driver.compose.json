@@ -1,0 +1,26 @@
+{
+  "id": "thermostatic_radiator_valve",
+  "title": {
+    "en": "thermostatic_radiator_valve Device",
+    "fr": "Appareil thermostatic_radiator_valve",
+    "nl": "thermostatic_radiator_valve Apparaat",
+    "ta": "thermostatic_radiator_valve சாதனம்"
+  },
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "/assets/images/icon.svg",
+  "images": {
+    "small": "/assets/images/icon.svg",
+    "large": "/assets/images/icon.svg"
+  },
+  "manufacturer": "Generic",
+  "model": "thermostatic_radiator_valve",
+  "class": "other",
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  }
+}

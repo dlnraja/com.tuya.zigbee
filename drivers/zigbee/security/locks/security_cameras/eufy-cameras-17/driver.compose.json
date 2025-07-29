@@ -1,0 +1,61 @@
+{
+  "id": "eufy-cameras-17",
+  "title": {
+    "en": "Eufy Cameras 17",
+    "fr": "Eufy Cameras 17",
+    "nl": "Eufy Cameras 17",
+    "ta": "Eufy Cameras 17"
+  },
+  "description": {
+    "en": "Zigbee driver for eufy-cameras-17 from Eufy",
+    "fr": "Driver Zigbee pour eufy-cameras-17 de Eufy",
+    "nl": "Zigbee driver voor eufy-cameras-17 van Eufy",
+    "ta": "Eufy இலிருந்து eufy-cameras-17 க்கான Zigbee டிரைவர்"
+  },
+  "category": "cameras",
+  "protocol": "zigbee",
+  "manufacturer": "Eufy",
+  "source": "Eufy",
+  "capabilities": [
+    "alarm_motion",
+    "alarm_contact",
+    "alarm_tamper",
+    "button"
+  ],
+  "clusters": [
+    "ssIasZone",
+    "genBasic"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:16.264Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Eufy",
+    "model": "eufy-cameras-17",
+    "clusters": [
+      "ssIasZone",
+      "genBasic"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "alarm_motion",
+      "alarm_contact",
+      "alarm_tamper",
+      "button"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

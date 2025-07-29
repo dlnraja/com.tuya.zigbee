@@ -1,0 +1,28 @@
+﻿{
+    "source":  "README-e8936adf",
+    "id":  "Automatisering",
+    "manufacturer":  "Historical Recovery",
+    "version":  "1.0.0",
+    "category":  "generic",
+    "description":  {
+                        "en":  "Driver for Automatisering",
+                        "fr":  "Driver pour Automatisering",
+                        "nl":  "Driver voor Automatisering",
+                        "ta":  "Driver for Automatisering"
+                    },
+    "author":  "dlnraja \u003cdylan.rajasekaram+homey@gmail.com\u003e",
+    "createdAt":  "2025-07-29T18:24:48.890Z",
+    "capabilities":  [
+                         "onoff"
+                     ],
+    "title":  {
+                  "en":  "Automatisering",
+                  "fr":  "Automatisering",
+                  "nl":  "Automatisering",
+                  "ta":  "Automatisering"
+              },
+    "protocol":  "tuya",
+    "clusters":  [
+                     "genBasic"
+                 ]
+}

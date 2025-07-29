@@ -1,0 +1,61 @@
+{
+  "id": "cree-bulbs-31",
+  "title": {
+    "en": "Cree Bulbs 31",
+    "fr": "Cree Bulbs 31",
+    "nl": "Cree Bulbs 31",
+    "ta": "Cree Bulbs 31"
+  },
+  "description": {
+    "en": "Zigbee driver for cree-bulbs-31 from Cree",
+    "fr": "Driver Zigbee pour cree-bulbs-31 de Cree",
+    "nl": "Zigbee driver voor cree-bulbs-31 van Cree",
+    "ta": "Cree இலிருந்து cree-bulbs-31 க்கான Zigbee டிரைவர்"
+  },
+  "category": "bulbs",
+  "protocol": "zigbee",
+  "manufacturer": "Cree",
+  "source": "Cree",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "lightingColorCtrl"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:06.812Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Cree",
+    "model": "cree-bulbs-31",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

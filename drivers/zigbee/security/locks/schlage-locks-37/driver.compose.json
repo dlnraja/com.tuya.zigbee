@@ -1,0 +1,59 @@
+{
+  "id": "schlage-locks-37",
+  "title": {
+    "en": "Schlage Locks 37",
+    "fr": "Schlage Locks 37",
+    "nl": "Schlage Locks 37",
+    "ta": "Schlage Locks 37"
+  },
+  "description": {
+    "en": "Zigbee driver for schlage-locks-37 from Schlage",
+    "fr": "Driver Zigbee pour schlage-locks-37 de Schlage",
+    "nl": "Zigbee driver voor schlage-locks-37 van Schlage",
+    "ta": "Schlage இலிருந்து schlage-locks-37 க்கான Zigbee டிரைவர்"
+  },
+  "category": "locks",
+  "protocol": "zigbee",
+  "manufacturer": "Schlage",
+  "source": "Schlage",
+  "capabilities": [
+    "lock",
+    "alarm_contact",
+    "alarm_tamper"
+  ],
+  "clusters": [
+    "genDoorLock",
+    "ssIasZone"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:13.578Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Schlage",
+    "model": "schlage-locks-37",
+    "clusters": [
+      "genDoorLock",
+      "ssIasZone"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "lock",
+      "alarm_contact",
+      "alarm_tamper"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

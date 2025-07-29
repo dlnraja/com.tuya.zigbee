@@ -1,0 +1,24 @@
+{
+  "id": "kwikset-locks-7-settings",
+  "title": {
+    "en": "kwikset-locks-7 Settings",
+    "fr": "Paramètres kwikset-locks-7",
+    "nl": "kwikset-locks-7 Instellingen",
+    "ta": "kwikset-locks-7 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

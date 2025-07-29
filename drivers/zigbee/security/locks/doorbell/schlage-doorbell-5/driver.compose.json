@@ -1,0 +1,59 @@
+{
+  "id": "schlage-doorbell-5",
+  "title": {
+    "en": "Schlage Doorbell 5",
+    "fr": "Schlage Doorbell 5",
+    "nl": "Schlage Doorbell 5",
+    "ta": "Schlage Doorbell 5"
+  },
+  "description": {
+    "en": "Zigbee driver for schlage-doorbell-5 from Schlage",
+    "fr": "Driver Zigbee pour schlage-doorbell-5 de Schlage",
+    "nl": "Zigbee driver voor schlage-doorbell-5 van Schlage",
+    "ta": "Schlage இலிருந்து schlage-doorbell-5 க்கான Zigbee டிரைவர்"
+  },
+  "category": "doorbell",
+  "protocol": "zigbee",
+  "manufacturer": "Schlage",
+  "source": "Schlage",
+  "capabilities": [
+    "lock",
+    "alarm_contact",
+    "alarm_tamper"
+  ],
+  "clusters": [
+    "genDoorLock",
+    "ssIasZone"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:13.085Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Schlage",
+    "model": "schlage-doorbell-5",
+    "clusters": [
+      "genDoorLock",
+      "ssIasZone"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "lock",
+      "alarm_contact",
+      "alarm_tamper"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

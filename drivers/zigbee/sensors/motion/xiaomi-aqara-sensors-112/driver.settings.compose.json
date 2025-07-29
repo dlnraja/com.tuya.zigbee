@@ -1,0 +1,24 @@
+{
+  "id": "xiaomi-aqara-sensors-112-settings",
+  "title": {
+    "en": "xiaomi-aqara-sensors-112 Settings",
+    "fr": "Paramètres xiaomi-aqara-sensors-112",
+    "nl": "xiaomi-aqara-sensors-112 Instellingen",
+    "ta": "xiaomi-aqara-sensors-112 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "lutron-curtains-18",
+  "title": {
+    "en": "Lutron Curtains 18",
+    "fr": "Lutron Curtains 18",
+    "nl": "Lutron Curtains 18",
+    "ta": "Lutron Curtains 18"
+  },
+  "description": {
+    "en": "Zigbee driver for lutron-curtains-18 from Lutron",
+    "fr": "Driver Zigbee pour lutron-curtains-18 de Lutron",
+    "nl": "Zigbee driver voor lutron-curtains-18 van Lutron",
+    "ta": "Lutron இலிருந்து lutron-curtains-18 க்கான Zigbee டிரைவர்"
+  },
+  "category": "curtains",
+  "protocol": "zigbee",
+  "manufacturer": "Lutron",
+  "source": "Lutron",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "windowcoverings_set",
+    "windowcoverings_tilt_set"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genWindowCovering"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:11.423Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Lutron",
+    "model": "lutron-curtains-18",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genWindowCovering"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "windowcoverings_set",
+      "windowcoverings_tilt_set"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "ge-switches-27-settings",
+  "title": {
+    "en": "ge-switches-27 Settings",
+    "fr": "Paramètres ge-switches-27",
+    "nl": "ge-switches-27 Instellingen",
+    "ta": "ge-switches-27 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

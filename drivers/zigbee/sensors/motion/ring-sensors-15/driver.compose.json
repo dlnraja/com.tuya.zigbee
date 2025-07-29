@@ -1,0 +1,61 @@
+{
+  "id": "ring-sensors-15",
+  "title": {
+    "en": "Ring Sensors 15",
+    "fr": "Ring Sensors 15",
+    "nl": "Ring Sensors 15",
+    "ta": "Ring Sensors 15"
+  },
+  "description": {
+    "en": "Zigbee driver for ring-sensors-15 from Ring",
+    "fr": "Driver Zigbee pour ring-sensors-15 de Ring",
+    "nl": "Zigbee driver voor ring-sensors-15 van Ring",
+    "ta": "Ring இலிருந்து ring-sensors-15 க்கான Zigbee டிரைவர்"
+  },
+  "category": "sensors",
+  "protocol": "zigbee",
+  "manufacturer": "Ring",
+  "source": "Ring",
+  "capabilities": [
+    "alarm_motion",
+    "alarm_contact",
+    "alarm_tamper",
+    "button"
+  ],
+  "clusters": [
+    "ssIasZone",
+    "genBasic"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:15.412Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Ring",
+    "model": "ring-sensors-15",
+    "clusters": [
+      "ssIasZone",
+      "genBasic"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "alarm_motion",
+      "alarm_contact",
+      "alarm_tamper",
+      "button"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

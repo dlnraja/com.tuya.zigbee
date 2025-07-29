@@ -1,0 +1,24 @@
+{
+  "id": "wyze-bulbs-58-settings",
+  "title": {
+    "en": "wyze-bulbs-58 Settings",
+    "fr": "Paramètres wyze-bulbs-58",
+    "nl": "wyze-bulbs-58 Instellingen",
+    "ta": "wyze-bulbs-58 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

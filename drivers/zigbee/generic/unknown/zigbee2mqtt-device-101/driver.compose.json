@@ -1,0 +1,60 @@
+{
+  "id": "zigbee2mqtt-device-101",
+  "title": {
+    "en": "Zigbee2mqtt Device 101",
+    "fr": "Zigbee2mqtt Device 101",
+    "nl": "Zigbee2mqtt Device 101",
+    "ta": "Zigbee2mqtt Device 101"
+  },
+  "description": {
+    "en": "Driver for zigbee2mqtt-device-101 from Zigbee2MQTT",
+    "fr": "Driver pour zigbee2mqtt-device-101 de Zigbee2MQTT",
+    "nl": "Driver voor zigbee2mqtt-device-101 van Zigbee2MQTT",
+    "ta": "Zigbee2MQTT இலிருந்து zigbee2mqtt-device-101 க்கான டிரைவர்"
+  },
+  "category": "generic",
+  "protocol": "zigbee",
+  "source": "Zigbee2MQTT",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genPowerCfg"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:11:11.482Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Generic",
+    "model": "zigbee2mqtt-device-101",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genPowerCfg"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_power"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

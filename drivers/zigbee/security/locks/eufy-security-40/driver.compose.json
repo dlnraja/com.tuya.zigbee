@@ -1,0 +1,61 @@
+{
+  "id": "eufy-security-40",
+  "title": {
+    "en": "Eufy Security 40",
+    "fr": "Eufy Security 40",
+    "nl": "Eufy Security 40",
+    "ta": "Eufy Security 40"
+  },
+  "description": {
+    "en": "Zigbee driver for eufy-security-40 from Eufy",
+    "fr": "Driver Zigbee pour eufy-security-40 de Eufy",
+    "nl": "Zigbee driver voor eufy-security-40 van Eufy",
+    "ta": "Eufy இலிருந்து eufy-security-40 க்கான Zigbee டிரைவர்"
+  },
+  "category": "security",
+  "protocol": "zigbee",
+  "manufacturer": "Eufy",
+  "source": "Eufy",
+  "capabilities": [
+    "alarm_motion",
+    "alarm_contact",
+    "alarm_tamper",
+    "button"
+  ],
+  "clusters": [
+    "ssIasZone",
+    "genBasic"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:16.759Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Eufy",
+    "model": "eufy-security-40",
+    "clusters": [
+      "ssIasZone",
+      "genBasic"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "alarm_motion",
+      "alarm_contact",
+      "alarm_tamper",
+      "button"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

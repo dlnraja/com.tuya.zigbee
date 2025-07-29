@@ -1,0 +1,24 @@
+{
+  "id": "eufy-sensors-10-settings",
+  "title": {
+    "en": "eufy-sensors-10 Settings",
+    "fr": "Paramètres eufy-sensors-10",
+    "nl": "eufy-sensors-10 Instellingen",
+    "ta": "eufy-sensors-10 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

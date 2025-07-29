@@ -1,0 +1,24 @@
+{
+  "id": "ring-security-44-settings",
+  "title": {
+    "en": "ring-security-44 Settings",
+    "fr": "Paramètres ring-security-44",
+    "nl": "ring-security-44 Instellingen",
+    "ta": "ring-security-44 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "gledopto-controllers-11-settings",
+  "title": {
+    "en": "gledopto-controllers-11 Settings",
+    "fr": "Paramètres gledopto-controllers-11",
+    "nl": "gledopto-controllers-11 Instellingen",
+    "ta": "gledopto-controllers-11 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

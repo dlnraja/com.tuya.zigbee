@@ -1,0 +1,24 @@
+{
+  "id": "eufy-security-8-settings",
+  "title": {
+    "en": "eufy-security-8 Settings",
+    "fr": "Paramètres eufy-security-8",
+    "nl": "eufy-security-8 Instellingen",
+    "ta": "eufy-security-8 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

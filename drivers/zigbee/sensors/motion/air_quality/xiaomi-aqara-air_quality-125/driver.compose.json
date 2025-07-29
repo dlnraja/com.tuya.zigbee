@@ -1,0 +1,71 @@
+{
+  "id": "xiaomi-aqara-air_quality-125",
+  "title": {
+    "en": "Xiaomi Aqara Air_quality 125",
+    "fr": "Xiaomi Aqara Air_quality 125",
+    "nl": "Xiaomi Aqara Air_quality 125",
+    "ta": "Xiaomi Aqara Air_quality 125"
+  },
+  "description": {
+    "en": "Zigbee driver for xiaomi-aqara-air_quality-125 from Xiaomi/Aqara",
+    "fr": "Driver Zigbee pour xiaomi-aqara-air_quality-125 de Xiaomi/Aqara",
+    "nl": "Zigbee driver voor xiaomi-aqara-air_quality-125 van Xiaomi/Aqara",
+    "ta": "Xiaomi/Aqara இலிருந்து xiaomi-aqara-air_quality-125 க்கான Zigbee டிரைவர்"
+  },
+  "category": "air_quality",
+  "protocol": "zigbee",
+  "manufacturer": "Xiaomi/Aqara",
+  "source": "Xiaomi/Aqara",
+  "capabilities": [
+    "onoff",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_pressure",
+    "alarm_motion",
+    "alarm_contact"
+  ],
+  "clusters": [
+    "genOnOff",
+    "msTemperatureMeasurement",
+    "msRelativeHumidity",
+    "msPressureMeasurement",
+    "ssIasZone"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:00.936Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Xiaomi/Aqara",
+    "model": "xiaomi-aqara-air_quality-125",
+    "clusters": [
+      "genOnOff",
+      "msTemperatureMeasurement",
+      "msRelativeHumidity",
+      "msPressureMeasurement",
+      "ssIasZone"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "measure_temperature",
+      "measure_humidity",
+      "measure_pressure",
+      "alarm_motion",
+      "alarm_contact"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

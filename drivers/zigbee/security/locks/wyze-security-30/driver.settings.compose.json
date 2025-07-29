@@ -1,0 +1,24 @@
+{
+  "id": "wyze-security-30-settings",
+  "title": {
+    "en": "wyze-security-30 Settings",
+    "fr": "Paramètres wyze-security-30",
+    "nl": "wyze-security-30 Instellingen",
+    "ta": "wyze-security-30 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

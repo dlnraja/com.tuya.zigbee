@@ -1,0 +1,58 @@
+{
+  "id": "zooz",
+  "title": {
+    "en": "Zooz",
+    "fr": "Zooz",
+    "nl": "Zooz",
+    "ta": "Zooz"
+  },
+  "description": {
+    "en": "ZIGBEE driver for zooz from Zooz (Historical)",
+    "fr": "Driver ZIGBEE pour zooz de Zooz (Historique)",
+    "nl": "ZIGBEE driver voor zooz van Zooz (Historisch)",
+    "ta": "Zooz இலிருந்து zooz க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "zigbee",
+  "manufacturer": "Zooz",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.552Z",
+  "historical": {
+    "commitHash": "601ea78c",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Zooz",
+    "model": "zooz",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

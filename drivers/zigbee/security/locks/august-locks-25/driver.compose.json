@@ -1,0 +1,59 @@
+{
+  "id": "august-locks-25",
+  "title": {
+    "en": "August Locks 25",
+    "fr": "August Locks 25",
+    "nl": "August Locks 25",
+    "ta": "August Locks 25"
+  },
+  "description": {
+    "en": "Zigbee driver for august-locks-25 from August",
+    "fr": "Driver Zigbee pour august-locks-25 de August",
+    "nl": "Zigbee driver voor august-locks-25 van August",
+    "ta": "August இலிருந்து august-locks-25 க்கான Zigbee டிரைவர்"
+  },
+  "category": "locks",
+  "protocol": "zigbee",
+  "manufacturer": "August",
+  "source": "August",
+  "capabilities": [
+    "lock",
+    "alarm_contact",
+    "alarm_tamper"
+  ],
+  "clusters": [
+    "genDoorLock",
+    "ssIasZone"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:15.150Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "August",
+    "model": "august-locks-25",
+    "clusters": [
+      "genDoorLock",
+      "ssIasZone"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "lock",
+      "alarm_contact",
+      "alarm_tamper"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

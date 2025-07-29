@@ -1,0 +1,61 @@
+{
+  "id": "cree-bulbs-16",
+  "title": {
+    "en": "Cree Bulbs 16",
+    "fr": "Cree Bulbs 16",
+    "nl": "Cree Bulbs 16",
+    "ta": "Cree Bulbs 16"
+  },
+  "description": {
+    "en": "Zigbee driver for cree-bulbs-16 from Cree",
+    "fr": "Driver Zigbee pour cree-bulbs-16 de Cree",
+    "nl": "Zigbee driver voor cree-bulbs-16 van Cree",
+    "ta": "Cree இலிருந்து cree-bulbs-16 க்கான Zigbee டிரைவர்"
+  },
+  "category": "bulbs",
+  "protocol": "zigbee",
+  "manufacturer": "Cree",
+  "source": "Cree",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "lightingColorCtrl"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:06.587Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Cree",
+    "model": "cree-bulbs-16",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

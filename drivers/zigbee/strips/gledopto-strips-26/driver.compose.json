@@ -1,0 +1,67 @@
+{
+  "id": "gledopto-strips-26",
+  "title": {
+    "en": "Gledopto Strips 26",
+    "fr": "Gledopto Strips 26",
+    "nl": "Gledopto Strips 26",
+    "ta": "Gledopto Strips 26"
+  },
+  "description": {
+    "en": "Zigbee driver for gledopto-strips-26 from Gledopto",
+    "fr": "Driver Zigbee pour gledopto-strips-26 de Gledopto",
+    "nl": "Zigbee driver voor gledopto-strips-26 van Gledopto",
+    "ta": "Gledopto இலிருந்து gledopto-strips-26 க்கான Zigbee டிரைவர்"
+  },
+  "category": "strips",
+  "protocol": "zigbee",
+  "manufacturer": "Gledopto",
+  "source": "Gledopto",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "lightingColorCtrl",
+    "genBasic"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:09.147Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Gledopto",
+    "model": "gledopto-strips-26",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl",
+      "genBasic"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_hue",
+      "light_saturation",
+      "light_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

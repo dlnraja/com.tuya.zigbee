@@ -1,0 +1,61 @@
+{
+  "id": "innr-lighting-36",
+  "title": {
+    "en": "Innr Lighting 36",
+    "fr": "Innr Lighting 36",
+    "nl": "Innr Lighting 36",
+    "ta": "Innr Lighting 36"
+  },
+  "description": {
+    "en": "Zigbee driver for innr-lighting-36 from Innr",
+    "fr": "Driver Zigbee pour innr-lighting-36 de Innr",
+    "nl": "Zigbee driver voor innr-lighting-36 van Innr",
+    "ta": "Innr இலிருந்து innr-lighting-36 க்கான Zigbee டிரைவர்"
+  },
+  "category": "lighting",
+  "protocol": "zigbee",
+  "manufacturer": "Innr",
+  "source": "Innr",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "lightingColorCtrl"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:08.792Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Innr",
+    "model": "innr-lighting-36",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

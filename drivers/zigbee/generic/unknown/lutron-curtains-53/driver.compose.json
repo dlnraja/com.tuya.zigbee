@@ -1,0 +1,63 @@
+{
+  "id": "lutron-curtains-53",
+  "title": {
+    "en": "Lutron Curtains 53",
+    "fr": "Lutron Curtains 53",
+    "nl": "Lutron Curtains 53",
+    "ta": "Lutron Curtains 53"
+  },
+  "description": {
+    "en": "Zigbee driver for lutron-curtains-53 from Lutron",
+    "fr": "Driver Zigbee pour lutron-curtains-53 de Lutron",
+    "nl": "Zigbee driver voor lutron-curtains-53 van Lutron",
+    "ta": "Lutron இலிருந்து lutron-curtains-53 க்கான Zigbee டிரைவர்"
+  },
+  "category": "curtains",
+  "protocol": "zigbee",
+  "manufacturer": "Lutron",
+  "source": "Lutron",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "windowcoverings_set",
+    "windowcoverings_tilt_set"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genWindowCovering"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:12.195Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Lutron",
+    "model": "lutron-curtains-53",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genWindowCovering"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "windowcoverings_set",
+      "windowcoverings_tilt_set"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

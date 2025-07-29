@@ -1,0 +1,59 @@
+{
+  "id": "arlo-cameras-25",
+  "title": {
+    "en": "Arlo Cameras 25",
+    "fr": "Arlo Cameras 25",
+    "nl": "Arlo Cameras 25",
+    "ta": "Arlo Cameras 25"
+  },
+  "description": {
+    "en": "Zigbee driver for arlo-cameras-25 from Arlo",
+    "fr": "Driver Zigbee pour arlo-cameras-25 de Arlo",
+    "nl": "Zigbee driver voor arlo-cameras-25 van Arlo",
+    "ta": "Arlo இலிருந்து arlo-cameras-25 க்கான Zigbee டிரைவர்"
+  },
+  "category": "cameras",
+  "protocol": "zigbee",
+  "manufacturer": "Arlo",
+  "source": "Arlo",
+  "capabilities": [
+    "alarm_motion",
+    "alarm_contact",
+    "alarm_tamper"
+  ],
+  "clusters": [
+    "ssIasZone",
+    "genBasic"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:15.981Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Arlo",
+    "model": "arlo-cameras-25",
+    "clusters": [
+      "ssIasZone",
+      "genBasic"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "alarm_motion",
+      "alarm_contact",
+      "alarm_tamper"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "august-locks-25-settings",
+  "title": {
+    "en": "august-locks-25 Settings",
+    "fr": "Paramètres august-locks-25",
+    "nl": "august-locks-25 Instellingen",
+    "ta": "august-locks-25 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

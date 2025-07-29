@@ -1,0 +1,60 @@
+{
+  "id": "zigbee2mqtt-device-184",
+  "title": {
+    "en": "Zigbee2mqtt Device 184",
+    "fr": "Zigbee2mqtt Device 184",
+    "nl": "Zigbee2mqtt Device 184",
+    "ta": "Zigbee2mqtt Device 184"
+  },
+  "description": {
+    "en": "Driver for zigbee2mqtt-device-184 from Zigbee2MQTT",
+    "fr": "Driver pour zigbee2mqtt-device-184 de Zigbee2MQTT",
+    "nl": "Driver voor zigbee2mqtt-device-184 van Zigbee2MQTT",
+    "ta": "Zigbee2MQTT இலிருந்து zigbee2mqtt-device-184 க்கான டிரைவர்"
+  },
+  "category": "automation",
+  "protocol": "zigbee",
+  "source": "Zigbee2MQTT",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genPowerCfg"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:11:12.472Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Generic",
+    "model": "zigbee2mqtt-device-184",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genPowerCfg"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_power"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "innr-strips-26",
+  "title": {
+    "en": "Innr Strips 26",
+    "fr": "Innr Strips 26",
+    "nl": "Innr Strips 26",
+    "ta": "Innr Strips 26"
+  },
+  "description": {
+    "en": "Zigbee driver for innr-strips-26 from Innr",
+    "fr": "Driver Zigbee pour innr-strips-26 de Innr",
+    "nl": "Zigbee driver voor innr-strips-26 van Innr",
+    "ta": "Innr இலிருந்து innr-strips-26 க்கான Zigbee டிரைவர்"
+  },
+  "category": "strips",
+  "protocol": "zigbee",
+  "manufacturer": "Innr",
+  "source": "Innr",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "lightingColorCtrl"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:08.655Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Innr",
+    "model": "innr-strips-26",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

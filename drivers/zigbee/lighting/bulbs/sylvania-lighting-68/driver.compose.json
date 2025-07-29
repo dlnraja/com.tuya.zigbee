@@ -1,0 +1,67 @@
+{
+  "id": "sylvania-lighting-68",
+  "title": {
+    "en": "Sylvania Lighting 68",
+    "fr": "Sylvania Lighting 68",
+    "nl": "Sylvania Lighting 68",
+    "ta": "Sylvania Lighting 68"
+  },
+  "description": {
+    "en": "Zigbee driver for sylvania-lighting-68 from Sylvania",
+    "fr": "Driver Zigbee pour sylvania-lighting-68 de Sylvania",
+    "nl": "Zigbee driver voor sylvania-lighting-68 van Sylvania",
+    "ta": "Sylvania இலிருந்து sylvania-lighting-68 க்கான Zigbee டிரைவர்"
+  },
+  "category": "lighting",
+  "protocol": "zigbee",
+  "manufacturer": "Sylvania",
+  "source": "Sylvania",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "lightingColorCtrl",
+    "genBasic"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:08.316Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Sylvania",
+    "model": "sylvania-lighting-68",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl",
+      "genBasic"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_hue",
+      "light_saturation",
+      "light_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

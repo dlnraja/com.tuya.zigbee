@@ -1,0 +1,58 @@
+{
+  "id": "gosund",
+  "title": {
+    "en": "Gosund",
+    "fr": "Gosund",
+    "nl": "Gosund",
+    "ta": "Gosund"
+  },
+  "description": {
+    "en": "ZIGBEE driver for gosund from Gosund (Historical)",
+    "fr": "Driver ZIGBEE pour gosund de Gosund (Historique)",
+    "nl": "ZIGBEE driver voor gosund van Gosund (Historisch)",
+    "ta": "Gosund இலிருந்து gosund க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "zigbee",
+  "manufacturer": "Gosund",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.451Z",
+  "historical": {
+    "commitHash": "debc2d27",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Gosund",
+    "model": "gosund",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

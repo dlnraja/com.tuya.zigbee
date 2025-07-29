@@ -1,0 +1,24 @@
+{
+  "id": "wyze-switches-44-settings",
+  "title": {
+    "en": "wyze-switches-44 Settings",
+    "fr": "Paramètres wyze-switches-44",
+    "nl": "wyze-switches-44 Instellingen",
+    "ta": "wyze-switches-44 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

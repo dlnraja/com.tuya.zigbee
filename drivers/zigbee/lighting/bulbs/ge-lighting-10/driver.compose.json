@@ -1,0 +1,61 @@
+{
+  "id": "ge-lighting-10",
+  "title": {
+    "en": "Ge Lighting 10",
+    "fr": "Ge Lighting 10",
+    "nl": "Ge Lighting 10",
+    "ta": "Ge Lighting 10"
+  },
+  "description": {
+    "en": "Zigbee driver for ge-lighting-10 from GE",
+    "fr": "Driver Zigbee pour ge-lighting-10 de GE",
+    "nl": "Zigbee driver voor ge-lighting-10 van GE",
+    "ta": "GE இலிருந்து ge-lighting-10 க்கான Zigbee டிரைவர்"
+  },
+  "category": "lighting",
+  "protocol": "zigbee",
+  "manufacturer": "GE",
+  "source": "GE",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genPowerCfg"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:05.316Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "GE",
+    "model": "ge-lighting-10",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genPowerCfg"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_power"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

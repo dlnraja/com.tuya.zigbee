@@ -1,0 +1,67 @@
+{
+  "id": "wyze-cameras-21",
+  "title": {
+    "en": "Wyze Cameras 21",
+    "fr": "Wyze Cameras 21",
+    "nl": "Wyze Cameras 21",
+    "ta": "Wyze Cameras 21"
+  },
+  "description": {
+    "en": "Zigbee driver for wyze-cameras-21 from Wyze",
+    "fr": "Driver Zigbee pour wyze-cameras-21 de Wyze",
+    "nl": "Zigbee driver voor wyze-cameras-21 van Wyze",
+    "ta": "Wyze இலிருந்து wyze-cameras-21 க்கான Zigbee டிரைவர்"
+  },
+  "category": "cameras",
+  "protocol": "zigbee",
+  "manufacturer": "Wyze",
+  "source": "Wyze",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "alarm_motion",
+    "alarm_contact",
+    "measure_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "ssIasZone",
+    "msTemperatureMeasurement"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:17.291Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Wyze",
+    "model": "wyze-cameras-21",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "ssIasZone",
+      "msTemperatureMeasurement"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "alarm_motion",
+      "alarm_contact",
+      "measure_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

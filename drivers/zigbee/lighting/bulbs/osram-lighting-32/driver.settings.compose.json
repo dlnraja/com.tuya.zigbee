@@ -1,0 +1,24 @@
+{
+  "id": "osram-lighting-32-settings",
+  "title": {
+    "en": "osram-lighting-32 Settings",
+    "fr": "Paramètres osram-lighting-32",
+    "nl": "osram-lighting-32 Instellingen",
+    "ta": "osram-lighting-32 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

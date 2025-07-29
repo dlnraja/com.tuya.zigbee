@@ -1,0 +1,61 @@
+{
+  "id": "innr-bulbs-29",
+  "title": {
+    "en": "Innr Bulbs 29",
+    "fr": "Innr Bulbs 29",
+    "nl": "Innr Bulbs 29",
+    "ta": "Innr Bulbs 29"
+  },
+  "description": {
+    "en": "Zigbee driver for innr-bulbs-29 from Innr",
+    "fr": "Driver Zigbee pour innr-bulbs-29 de Innr",
+    "nl": "Zigbee driver voor innr-bulbs-29 van Innr",
+    "ta": "Innr இலிருந்து innr-bulbs-29 க்கான Zigbee டிரைவர்"
+  },
+  "category": "bulbs",
+  "protocol": "zigbee",
+  "manufacturer": "Innr",
+  "source": "Innr",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "lightingColorCtrl"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:08.713Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Innr",
+    "model": "innr-bulbs-29",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

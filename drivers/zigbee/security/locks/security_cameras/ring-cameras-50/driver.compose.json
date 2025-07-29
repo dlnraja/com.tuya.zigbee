@@ -1,0 +1,61 @@
+{
+  "id": "ring-cameras-50",
+  "title": {
+    "en": "Ring Cameras 50",
+    "fr": "Ring Cameras 50",
+    "nl": "Ring Cameras 50",
+    "ta": "Ring Cameras 50"
+  },
+  "description": {
+    "en": "Zigbee driver for ring-cameras-50 from Ring",
+    "fr": "Driver Zigbee pour ring-cameras-50 de Ring",
+    "nl": "Zigbee driver voor ring-cameras-50 van Ring",
+    "ta": "Ring இலிருந்து ring-cameras-50 க்கான Zigbee டிரைவர்"
+  },
+  "category": "cameras",
+  "protocol": "zigbee",
+  "manufacturer": "Ring",
+  "source": "Ring",
+  "capabilities": [
+    "alarm_motion",
+    "alarm_contact",
+    "alarm_tamper",
+    "button"
+  ],
+  "clusters": [
+    "ssIasZone",
+    "genBasic"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:15.752Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Ring",
+    "model": "ring-cameras-50",
+    "clusters": [
+      "ssIasZone",
+      "genBasic"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "alarm_motion",
+      "alarm_contact",
+      "alarm_tamper",
+      "button"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

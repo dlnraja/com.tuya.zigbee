@@ -1,0 +1,24 @@
+{
+  "id": "ikea-tradfri-lighting-84-settings",
+  "title": {
+    "en": "ikea-tradfri-lighting-84 Settings",
+    "fr": "Paramètres ikea-tradfri-lighting-84",
+    "nl": "ikea-tradfri-lighting-84 Instellingen",
+    "ta": "ikea-tradfri-lighting-84 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

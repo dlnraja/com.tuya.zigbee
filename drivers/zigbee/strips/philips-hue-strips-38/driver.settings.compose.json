@@ -1,0 +1,24 @@
+{
+  "id": "philips-hue-strips-38-settings",
+  "title": {
+    "en": "philips-hue-strips-38 Settings",
+    "fr": "Paramètres philips-hue-strips-38",
+    "nl": "philips-hue-strips-38 Instellingen",
+    "ta": "philips-hue-strips-38 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

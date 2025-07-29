@@ -1,0 +1,58 @@
+{
+  "id": "leviton",
+  "title": {
+    "en": "Leviton",
+    "fr": "Leviton",
+    "nl": "Leviton",
+    "ta": "Leviton"
+  },
+  "description": {
+    "en": "ZIGBEE driver for leviton from Leviton (Historical)",
+    "fr": "Driver ZIGBEE pour leviton de Leviton (Historique)",
+    "nl": "ZIGBEE driver voor leviton van Leviton (Historisch)",
+    "ta": "Leviton இலிருந்து leviton க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "zigbee",
+  "manufacturer": "Leviton",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.589Z",
+  "historical": {
+    "commitHash": "601ea78c",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Leviton",
+    "model": "leviton",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}
