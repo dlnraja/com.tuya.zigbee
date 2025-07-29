@@ -34,10 +34,14 @@
     ]
   },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
+    "icon": "assets/images/icon.svg"
   },
-  "title": "tuya-contact-sensor Device",
+  "title": {
+    "en": "Tuya Contact Sensor",
+    "fr": "Tuya Contact Sensor",
+    "nl": "Tuya Contact Sensor",
+    "ta": "Tuya Contact Sensor"
+  },
   "category": "controllers",
   "optimized": true,
   "optimizationDate": "2025-07-29T12:42:39.841Z",
@@ -102,5 +106,37 @@
       "measure_temperature",
       "measure_humidity"
     ]
+  },
+  "description": {
+    "en": "Optimized tuya-contact-sensor driver",
+    "fr": "Driver tuya-contact-sensor optimisé",
+    "nl": "Geoptimaliseerde tuya-contact-sensor driver",
+    "ta": "ஒப்படைக்கப்பட்ட tuya-contact-sensor டிரைவர்"
+  },
+  "capabilitiesOptions": {
+    "alarm_contact": {
+      "title": {
+        "en": "Alarm Contact",
+        "fr": "Alarm Contact",
+        "nl": "Alarm Contact",
+        "ta": "Alarm Contact"
+      }
+    },
+    "measure_temperature": {
+      "title": {
+        "en": "Measure Temperature",
+        "fr": "Measure Temperature",
+        "nl": "Measure Temperature",
+        "ta": "Measure Temperature"
+      }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Measure Humidity",
+        "fr": "Measure Humidity",
+        "nl": "Measure Humidity",
+        "ta": "Measure Humidity"
+      }
+    }
   }
 }

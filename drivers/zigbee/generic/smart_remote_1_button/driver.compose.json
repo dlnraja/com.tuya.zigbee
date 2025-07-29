@@ -14,8 +14,7 @@
     "onoff"
   ],
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "icon": "assets/images/icon.svg"
   },
   "energy": {
     "batteries": [
@@ -54,7 +53,12 @@
       }
     }
   },
-  "title": "smart_remote_1_button Device",
+  "title": {
+    "en": "Smart_remote_1_button",
+    "fr": "Smart_remote_1_button",
+    "nl": "Smart_remote_1_button",
+    "ta": "Smart_remote_1_button"
+  },
   "category": "controllers",
   "optimized": true,
   "optimizationDate": "2025-07-29T12:42:39.970Z",
@@ -117,5 +121,21 @@
     "suggestedCapabilities": [
       "onoff"
     ]
+  },
+  "description": {
+    "en": "Optimized smart_remote_1_button driver",
+    "fr": "Driver smart_remote_1_button optimisé",
+    "nl": "Geoptimaliseerde smart_remote_1_button driver",
+    "ta": "ஒப்படைக்கப்பட்ட smart_remote_1_button டிரைவர்"
+  },
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Onoff",
+        "fr": "Onoff",
+        "nl": "Onoff",
+        "ta": "Onoff"
+      }
+    }
   }
 }

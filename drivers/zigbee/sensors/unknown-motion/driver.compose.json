@@ -32,10 +32,14 @@
     ]
   },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
+    "icon": "assets/images/icon.svg"
   },
-  "title": "unknown-motion Device",
+  "title": {
+    "en": "Unknown Motion",
+    "fr": "Unknown Motion",
+    "nl": "Unknown Motion",
+    "ta": "Unknown Motion"
+  },
   "category": "controllers",
   "optimized": true,
   "optimizationDate": "2025-07-29T12:42:40.192Z",
@@ -98,5 +102,21 @@
     "suggestedCapabilities": [
       "alarm_motion"
     ]
+  },
+  "description": {
+    "en": "Optimized unknown-motion driver",
+    "fr": "Driver unknown-motion optimisé",
+    "nl": "Geoptimaliseerde unknown-motion driver",
+    "ta": "ஒப்படைக்கப்பட்ட unknown-motion டிரைவர்"
+  },
+  "capabilitiesOptions": {
+    "alarm_motion": {
+      "title": {
+        "en": "Alarm Motion",
+        "fr": "Alarm Motion",
+        "nl": "Alarm Motion",
+        "ta": "Alarm Motion"
+      }
+    }
   }
 }

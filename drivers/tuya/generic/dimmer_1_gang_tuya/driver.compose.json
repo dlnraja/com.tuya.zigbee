@@ -22,8 +22,7 @@
     }
   },
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "icon": "assets/images/icon.svg"
   },
   "energy": {
     "approximation": {
@@ -73,7 +72,12 @@
       }
     }
   },
-  "title": "dimmer_1_gang_tuya Device",
+  "title": {
+    "en": "Dimmer_1_gang_tuya",
+    "fr": "Dimmer_1_gang_tuya",
+    "nl": "Dimmer_1_gang_tuya",
+    "ta": "Dimmer_1_gang_tuya"
+  },
   "category": "controllers",
   "optimized": true,
   "optimizationDate": "2025-07-29T12:42:39.858Z",
@@ -140,5 +144,11 @@
     "suggestedCapabilities": [
       "onoff"
     ]
+  },
+  "description": {
+    "en": "Optimized dimmer_1_gang_tuya driver",
+    "fr": "Driver dimmer_1_gang_tuya optimisé",
+    "nl": "Geoptimaliseerde dimmer_1_gang_tuya driver",
+    "ta": "ஒப்படைக்கப்பட்ட dimmer_1_gang_tuya டிரைவர்"
   }
 }

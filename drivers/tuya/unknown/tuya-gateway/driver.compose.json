@@ -32,10 +32,14 @@
     ]
   },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
+    "icon": "assets/images/icon.svg"
   },
-  "title": "tuya-gateway Device",
+  "title": {
+    "en": "Tuya Gateway",
+    "fr": "Tuya Gateway",
+    "nl": "Tuya Gateway",
+    "ta": "Tuya Gateway"
+  },
   "category": "controllers",
   "optimized": true,
   "optimizationDate": "2025-07-29T12:42:39.920Z",
@@ -98,5 +102,21 @@
     "suggestedCapabilities": [
       "onoff"
     ]
+  },
+  "description": {
+    "en": "Optimized tuya-gateway driver",
+    "fr": "Driver tuya-gateway optimisé",
+    "nl": "Geoptimaliseerde tuya-gateway driver",
+    "ta": "ஒப்படைக்கப்பட்ட tuya-gateway டிரைவர்"
+  },
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Onoff",
+        "fr": "Onoff",
+        "nl": "Onoff",
+        "ta": "Onoff"
+      }
+    }
   }
 }

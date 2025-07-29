@@ -25,8 +25,7 @@
     }
   },
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "icon": "assets/images/icon.svg"
   },
   "zigbee": {
     "manufacturerName": [
@@ -61,7 +60,12 @@
       }
     }
   },
-  "title": "smart_air_detection_box Device",
+  "title": {
+    "en": "Smart_air_detection_box",
+    "fr": "Smart_air_detection_box",
+    "nl": "Smart_air_detection_box",
+    "ta": "Smart_air_detection_box"
+  },
   "category": "controllers",
   "optimized": true,
   "optimizationDate": "2025-07-29T12:42:39.866Z",
@@ -128,5 +132,61 @@
     "suggestedCapabilities": [
       "onoff"
     ]
+  },
+  "description": {
+    "en": "Optimized smart_air_detection_box driver",
+    "fr": "Driver smart_air_detection_box optimisé",
+    "nl": "Geoptimaliseerde smart_air_detection_box driver",
+    "ta": "ஒப்படைக்கப்பட்ட smart_air_detection_box டிரைவர்"
+  },
+  "capabilitiesOptions": {
+    "measure_formaldehyde": {
+      "title": {
+        "en": "Measure Formaldehyde",
+        "fr": "Measure Formaldehyde",
+        "nl": "Measure Formaldehyde",
+        "ta": "Measure Formaldehyde"
+      }
+    },
+    "measure_voc": {
+      "title": {
+        "en": "Measure Voc",
+        "fr": "Measure Voc",
+        "nl": "Measure Voc",
+        "ta": "Measure Voc"
+      }
+    },
+    "measure_co2": {
+      "title": {
+        "en": "Measure Co2",
+        "fr": "Measure Co2",
+        "nl": "Measure Co2",
+        "ta": "Measure Co2"
+      }
+    },
+    "measure_temperature": {
+      "title": {
+        "en": "Measure Temperature",
+        "fr": "Measure Temperature",
+        "nl": "Measure Temperature",
+        "ta": "Measure Temperature"
+      }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Measure Humidity",
+        "fr": "Measure Humidity",
+        "nl": "Measure Humidity",
+        "ta": "Measure Humidity"
+      }
+    },
+    "onoff": {
+      "title": {
+        "en": "Onoff",
+        "fr": "Onoff",
+        "nl": "Onoff",
+        "ta": "Onoff"
+      }
+    }
   }
 }
