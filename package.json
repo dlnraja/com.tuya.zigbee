@@ -21,6 +21,8 @@
     "compatibility-firmware": "node scripts/compatibility-multi-firmware.js",
     "recover-historical": "node scripts/recover-all-historical-drivers.js",
     "recover-quick": "node scripts/recover-quick-historical.js",
+    "dump-comprehensive": "node scripts/comprehensive-driver-dump.js",
+    "list-and-dump": "node scripts/list-and-dump-drivers.js",
     "build": "npm run pipeline",
     "test": "npm run verify",
     "lint": "echo 'Linting completed'",
@@ -41,7 +43,10 @@
     "firmware",
     "recovery",
     "historical",
-    "quick"
+    "quick",
+    "dump",
+    "comprehensive",
+    "listing"
   ],
   "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
   "license": "MIT",
