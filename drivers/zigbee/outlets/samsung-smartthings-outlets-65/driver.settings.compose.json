@@ -1,0 +1,24 @@
+{
+  "id": "samsung-smartthings-outlets-65-settings",
+  "title": {
+    "en": "samsung-smartthings-outlets-65 Settings",
+    "fr": "Paramètres samsung-smartthings-outlets-65",
+    "nl": "samsung-smartthings-outlets-65 Instellingen",
+    "ta": "samsung-smartthings-outlets-65 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "gledopto-lighting-8-settings",
+  "title": {
+    "en": "gledopto-lighting-8 Settings",
+    "fr": "Paramètres gledopto-lighting-8",
+    "nl": "gledopto-lighting-8 Instellingen",
+    "ta": "gledopto-lighting-8 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

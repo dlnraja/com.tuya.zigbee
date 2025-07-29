@@ -1,0 +1,24 @@
+{
+  "id": "homey-community-device-19-settings",
+  "title": {
+    "en": "homey-community-device-19 Settings",
+    "fr": "Paramètres homey-community-device-19",
+    "nl": "homey-community-device-19 Instellingen",
+    "ta": "homey-community-device-19 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

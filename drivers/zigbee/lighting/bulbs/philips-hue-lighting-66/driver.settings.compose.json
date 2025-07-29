@@ -1,0 +1,24 @@
+{
+  "id": "philips-hue-lighting-66-settings",
+  "title": {
+    "en": "philips-hue-lighting-66 Settings",
+    "fr": "Paramètres philips-hue-lighting-66",
+    "nl": "philips-hue-lighting-66 Instellingen",
+    "ta": "philips-hue-lighting-66 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

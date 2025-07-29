@@ -1,0 +1,24 @@
+{
+  "id": "yale-security-28-settings",
+  "title": {
+    "en": "yale-security-28 Settings",
+    "fr": "Paramètres yale-security-28",
+    "nl": "yale-security-28 Instellingen",
+    "ta": "yale-security-28 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

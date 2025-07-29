@@ -1,0 +1,24 @@
+{
+  "id": "innr-bulbs-21-settings",
+  "title": {
+    "en": "innr-bulbs-21 Settings",
+    "fr": "Paramètres innr-bulbs-21",
+    "nl": "innr-bulbs-21 Instellingen",
+    "ta": "innr-bulbs-21 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

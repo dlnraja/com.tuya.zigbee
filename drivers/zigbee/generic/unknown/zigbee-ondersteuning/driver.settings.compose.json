@@ -1,0 +1,24 @@
+{
+  "id": "zigbee-ondersteuning-settings",
+  "title": {
+    "en": "zigbee-ondersteuning Settings",
+    "fr": "Paramètres zigbee-ondersteuning",
+    "nl": "zigbee-ondersteuning Instellingen",
+    "ta": "zigbee-ondersteuning அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

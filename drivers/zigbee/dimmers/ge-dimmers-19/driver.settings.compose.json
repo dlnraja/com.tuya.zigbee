@@ -1,0 +1,24 @@
+{
+  "id": "ge-dimmers-19-settings",
+  "title": {
+    "en": "ge-dimmers-19 Settings",
+    "fr": "Paramètres ge-dimmers-19",
+    "nl": "ge-dimmers-19 Instellingen",
+    "ta": "ge-dimmers-19 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

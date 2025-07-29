@@ -1,0 +1,24 @@
+{
+  "id": "ikea-tradfri-bulbs-99-settings",
+  "title": {
+    "en": "ikea-tradfri-bulbs-99 Settings",
+    "fr": "Paramètres ikea-tradfri-bulbs-99",
+    "nl": "ikea-tradfri-bulbs-99 Instellingen",
+    "ta": "ikea-tradfri-bulbs-99 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

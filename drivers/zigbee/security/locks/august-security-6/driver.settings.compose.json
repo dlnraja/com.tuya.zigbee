@@ -1,0 +1,24 @@
+{
+  "id": "august-security-6-settings",
+  "title": {
+    "en": "august-security-6 Settings",
+    "fr": "Paramètres august-security-6",
+    "nl": "august-security-6 Instellingen",
+    "ta": "august-security-6 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

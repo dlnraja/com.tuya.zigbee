@@ -1,0 +1,24 @@
+{
+  "id": "ikea-tradfri-blinds-97-settings",
+  "title": {
+    "en": "ikea-tradfri-blinds-97 Settings",
+    "fr": "Paramètres ikea-tradfri-blinds-97",
+    "nl": "ikea-tradfri-blinds-97 Instellingen",
+    "ta": "ikea-tradfri-blinds-97 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "ring-cameras-14-settings",
+  "title": {
+    "en": "ring-cameras-14 Settings",
+    "fr": "Paramètres ring-cameras-14",
+    "nl": "ring-cameras-14 Instellingen",
+    "ta": "ring-cameras-14 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

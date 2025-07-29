@@ -1,0 +1,24 @@
+{
+  "id": "kwikset-security-30-settings",
+  "title": {
+    "en": "kwikset-security-30 Settings",
+    "fr": "Paramètres kwikset-security-30",
+    "nl": "kwikset-security-30 Instellingen",
+    "ta": "kwikset-security-30 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}
