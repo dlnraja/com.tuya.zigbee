@@ -35,10 +35,14 @@
     ]
   },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
+    "icon": "assets/images/icon.svg"
   },
-  "title": "custom-light Device",
+  "title": {
+    "en": "Custom Light",
+    "fr": "Custom Light",
+    "nl": "Custom Light",
+    "ta": "Custom Light"
+  },
   "category": "controllers",
   "optimized": true,
   "optimizationDate": "2025-07-29T12:42:40.064Z",
@@ -109,5 +113,45 @@
       "dim",
       "light_temperature"
     ]
+  },
+  "description": {
+    "en": "Optimized custom-light driver",
+    "fr": "Driver custom-light optimisé",
+    "nl": "Geoptimaliseerde custom-light driver",
+    "ta": "ஒப்படைக்கப்பட்ட custom-light டிரைவர்"
+  },
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Onoff",
+        "fr": "Onoff",
+        "nl": "Onoff",
+        "ta": "Onoff"
+      }
+    },
+    "dim": {
+      "title": {
+        "en": "Dim",
+        "fr": "Dim",
+        "nl": "Dim",
+        "ta": "Dim"
+      }
+    },
+    "measure_power": {
+      "title": {
+        "en": "Measure Power",
+        "fr": "Measure Power",
+        "nl": "Measure Power",
+        "ta": "Measure Power"
+      }
+    },
+    "light_temperature": {
+      "title": {
+        "en": "Light Temperature",
+        "fr": "Light Temperature",
+        "nl": "Light Temperature",
+        "ta": "Light Temperature"
+      }
+    }
   }
 }

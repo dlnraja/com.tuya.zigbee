@@ -15,8 +15,7 @@
     "measure_power"
   ],
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "icon": "assets/images/icon.svg"
   },
   "energy": {
     "approximation": {
@@ -113,7 +112,12 @@
       }
     }
   },
-  "title": "wall_switch_3_gang Device",
+  "title": {
+    "en": "Wall_switch_3_gang",
+    "fr": "Wall_switch_3_gang",
+    "nl": "Wall_switch_3_gang",
+    "ta": "Wall_switch_3_gang"
+  },
   "category": "controllers",
   "optimized": true,
   "optimizationDate": "2025-07-29T12:42:40.195Z",
@@ -178,5 +182,29 @@
       "onoff",
       "measure_power"
     ]
+  },
+  "description": {
+    "en": "Optimized wall_switch_3_gang driver",
+    "fr": "Driver wall_switch_3_gang optimisé",
+    "nl": "Geoptimaliseerde wall_switch_3_gang driver",
+    "ta": "ஒப்படைக்கப்பட்ட wall_switch_3_gang டிரைவர்"
+  },
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Onoff",
+        "fr": "Onoff",
+        "nl": "Onoff",
+        "ta": "Onoff"
+      }
+    },
+    "measure_power": {
+      "title": {
+        "en": "Measure Power",
+        "fr": "Measure Power",
+        "nl": "Measure Power",
+        "ta": "Measure Power"
+      }
+    }
   }
 }

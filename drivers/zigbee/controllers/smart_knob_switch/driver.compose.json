@@ -17,8 +17,7 @@
     "measure_power"
   ],
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "icon": "assets/images/icon.svg"
   },
   "energy": {
     "batteries": [
@@ -66,7 +65,12 @@
       }
     }
   },
-  "title": "smart_knob_switch Device",
+  "title": {
+    "en": "Smart_knob_switch",
+    "fr": "Smart_knob_switch",
+    "nl": "Smart_knob_switch",
+    "ta": "Smart_knob_switch"
+  },
   "category": "controllers",
   "optimized": true,
   "optimizationDate": "2025-07-29T12:42:40.154Z",
@@ -135,5 +139,37 @@
       "onoff",
       "measure_power"
     ]
+  },
+  "description": {
+    "en": "Optimized smart_knob_switch driver",
+    "fr": "Driver smart_knob_switch optimisé",
+    "nl": "Geoptimaliseerde smart_knob_switch driver",
+    "ta": "ஒப்படைக்கப்பட்ட smart_knob_switch டிரைவர்"
+  },
+  "capabilitiesOptions": {
+    "dim": {
+      "title": {
+        "en": "Dim",
+        "fr": "Dim",
+        "nl": "Dim",
+        "ta": "Dim"
+      }
+    },
+    "onoff": {
+      "title": {
+        "en": "Onoff",
+        "fr": "Onoff",
+        "nl": "Onoff",
+        "ta": "Onoff"
+      }
+    },
+    "measure_power": {
+      "title": {
+        "en": "Measure Power",
+        "fr": "Measure Power",
+        "nl": "Measure Power",
+        "ta": "Measure Power"
+      }
+    }
   }
 }

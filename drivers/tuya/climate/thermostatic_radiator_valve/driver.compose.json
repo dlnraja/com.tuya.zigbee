@@ -30,8 +30,7 @@
     ]
   },
   "images": {
-    "small": "{{driverAssetsPath}}/images/moes_zigbee_3_small.png",
-    "large": "{{driverAssetsPath}}/images/moes_zigbee_3_large.png"
+    "icon": "assets/images/icon.svg"
   },
   "zigbee": {
     "manufacturerName": [
@@ -75,7 +74,12 @@
     }
   },
   "id": "thermostatic_radiator_valve",
-  "title": "thermostatic_radiator_valve Device",
+  "title": {
+    "en": "Thermostatic_radiator_valve",
+    "fr": "Thermostatic_radiator_valve",
+    "nl": "Thermostatic_radiator_valve",
+    "ta": "Thermostatic_radiator_valve"
+  },
   "category": "controllers",
   "optimized": true,
   "optimizationDate": "2025-07-29T12:42:39.914Z",
@@ -140,5 +144,11 @@
       "measure_temperature",
       "target_temperature"
     ]
+  },
+  "description": {
+    "en": "Optimized thermostatic_radiator_valve driver",
+    "fr": "Driver thermostatic_radiator_valve optimisé",
+    "nl": "Geoptimaliseerde thermostatic_radiator_valve driver",
+    "ta": "ஒப்படைக்கப்பட்ட thermostatic_radiator_valve டிரைவர்"
   }
 }

@@ -27,6 +27,7 @@
     "resolve-todo": "node scripts/resolve-todo-devices.js",
     "fetch-github": "node scripts/fetch-issues-pullrequests.js",
     "generate-docs": "node scripts/generate-docs.js",
+    "optimize-drivers": "node scripts/optimize-reorganize-drivers.js",
     "build": "npm run pipeline",
     "test": "npm run verify",
     "lint": "echo 'Linting completed'",
@@ -59,7 +60,9 @@
     "issues",
     "pull-requests",
     "documentation",
-    "generation"
+    "generation",
+    "optimization",
+    "reorganization"
   ],
   "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
   "license": "MIT",

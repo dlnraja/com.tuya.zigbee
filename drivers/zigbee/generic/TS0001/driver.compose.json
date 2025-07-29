@@ -14,8 +14,7 @@
     "onoff"
   ],
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "icon": "assets/images/icon.svg"
   },
   "zigbee": {
     "manufacturerName": [
@@ -36,7 +35,12 @@
       }
     }
   },
-  "title": "TS0001 Device",
+  "title": {
+    "en": "TS0001",
+    "fr": "TS0001",
+    "nl": "TS0001",
+    "ta": "TS0001"
+  },
   "category": "controllers",
   "optimized": true,
   "optimizationDate": "2025-07-29T12:42:40.181Z",
@@ -99,5 +103,21 @@
     "suggestedCapabilities": [
       "onoff"
     ]
+  },
+  "description": {
+    "en": "Optimized TS0001 driver",
+    "fr": "Driver TS0001 optimisé",
+    "nl": "Geoptimaliseerde TS0001 driver",
+    "ta": "ஒப்படைக்கப்பட்ட TS0001 டிரைவர்"
+  },
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Onoff",
+        "fr": "Onoff",
+        "nl": "Onoff",
+        "ta": "Onoff"
+      }
+    }
   }
 }
