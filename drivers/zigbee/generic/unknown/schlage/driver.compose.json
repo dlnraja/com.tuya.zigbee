@@ -1,0 +1,58 @@
+{
+  "id": "schlage",
+  "title": {
+    "en": "Schlage",
+    "fr": "Schlage",
+    "nl": "Schlage",
+    "ta": "Schlage"
+  },
+  "description": {
+    "en": "ZIGBEE driver for schlage from GE (Historical)",
+    "fr": "Driver ZIGBEE pour schlage de GE (Historique)",
+    "nl": "ZIGBEE driver voor schlage van GE (Historisch)",
+    "ta": "GE இலிருந்து schlage க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "zigbee",
+  "manufacturer": "GE",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.498Z",
+  "historical": {
+    "commitHash": "601ea78c",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "GE",
+    "model": "schlage",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

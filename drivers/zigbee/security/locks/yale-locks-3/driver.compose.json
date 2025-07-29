@@ -1,0 +1,59 @@
+{
+  "id": "yale-locks-3",
+  "title": {
+    "en": "Yale Locks 3",
+    "fr": "Yale Locks 3",
+    "nl": "Yale Locks 3",
+    "ta": "Yale Locks 3"
+  },
+  "description": {
+    "en": "Zigbee driver for yale-locks-3 from Yale",
+    "fr": "Driver Zigbee pour yale-locks-3 de Yale",
+    "nl": "Zigbee driver voor yale-locks-3 van Yale",
+    "ta": "Yale இலிருந்து yale-locks-3 க்கான Zigbee டிரைவர்"
+  },
+  "category": "locks",
+  "protocol": "zigbee",
+  "manufacturer": "Yale",
+  "source": "Yale",
+  "capabilities": [
+    "lock",
+    "alarm_contact",
+    "alarm_tamper"
+  ],
+  "clusters": [
+    "genDoorLock",
+    "ssIasZone"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:14.394Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Yale",
+    "model": "yale-locks-3",
+    "clusters": [
+      "genDoorLock",
+      "ssIasZone"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "lock",
+      "alarm_contact",
+      "alarm_tamper"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "wyze-sensors-37-settings",
+  "title": {
+    "en": "wyze-sensors-37 Settings",
+    "fr": "Paramètres wyze-sensors-37",
+    "nl": "wyze-sensors-37 Instellingen",
+    "ta": "wyze-sensors-37 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

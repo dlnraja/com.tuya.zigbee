@@ -1,0 +1,61 @@
+{
+  "id": "eufy-cameras-37",
+  "title": {
+    "en": "Eufy Cameras 37",
+    "fr": "Eufy Cameras 37",
+    "nl": "Eufy Cameras 37",
+    "ta": "Eufy Cameras 37"
+  },
+  "description": {
+    "en": "Zigbee driver for eufy-cameras-37 from Eufy",
+    "fr": "Driver Zigbee pour eufy-cameras-37 de Eufy",
+    "nl": "Zigbee driver voor eufy-cameras-37 van Eufy",
+    "ta": "Eufy இலிருந்து eufy-cameras-37 க்கான Zigbee டிரைவர்"
+  },
+  "category": "cameras",
+  "protocol": "zigbee",
+  "manufacturer": "Eufy",
+  "source": "Eufy",
+  "capabilities": [
+    "alarm_motion",
+    "alarm_contact",
+    "alarm_tamper",
+    "button"
+  ],
+  "clusters": [
+    "ssIasZone",
+    "genBasic"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:16.617Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Eufy",
+    "model": "eufy-cameras-37",
+    "clusters": [
+      "ssIasZone",
+      "genBasic"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "alarm_motion",
+      "alarm_contact",
+      "alarm_tamper",
+      "button"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "zigbee2mqtt-device-41",
+  "title": {
+    "en": "Zigbee2mqtt Device 41",
+    "fr": "Zigbee2mqtt Device 41",
+    "nl": "Zigbee2mqtt Device 41",
+    "ta": "Zigbee2mqtt Device 41"
+  },
+  "description": {
+    "en": "Driver for zigbee2mqtt-device-41 from Zigbee2MQTT",
+    "fr": "Driver pour zigbee2mqtt-device-41 de Zigbee2MQTT",
+    "nl": "Driver voor zigbee2mqtt-device-41 van Zigbee2MQTT",
+    "ta": "Zigbee2MQTT இலிருந்து zigbee2mqtt-device-41 க்கான டிரைவர்"
+  },
+  "category": "generic",
+  "protocol": "zigbee",
+  "source": "Zigbee2MQTT",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genPowerCfg"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:11:10.872Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Generic",
+    "model": "zigbee2mqtt-device-41",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genPowerCfg"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_power"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

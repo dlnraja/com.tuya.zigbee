@@ -1,0 +1,60 @@
+{
+  "id": "zigbee2mqtt-device-128",
+  "title": {
+    "en": "Zigbee2mqtt Device 128",
+    "fr": "Zigbee2mqtt Device 128",
+    "nl": "Zigbee2mqtt Device 128",
+    "ta": "Zigbee2mqtt Device 128"
+  },
+  "description": {
+    "en": "Driver for zigbee2mqtt-device-128 from Zigbee2MQTT",
+    "fr": "Driver pour zigbee2mqtt-device-128 de Zigbee2MQTT",
+    "nl": "Driver voor zigbee2mqtt-device-128 van Zigbee2MQTT",
+    "ta": "Zigbee2MQTT இலிருந்து zigbee2mqtt-device-128 க்கான டிரைவர்"
+  },
+  "category": "security",
+  "protocol": "zigbee",
+  "source": "Zigbee2MQTT",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genPowerCfg"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:11:11.770Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Generic",
+    "model": "zigbee2mqtt-device-128",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genPowerCfg"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_power"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

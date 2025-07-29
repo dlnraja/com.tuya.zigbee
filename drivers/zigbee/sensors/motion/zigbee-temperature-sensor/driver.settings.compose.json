@@ -1,0 +1,24 @@
+{
+  "id": "zigbee-temperature-sensor-settings",
+  "title": {
+    "en": "zigbee-temperature-sensor Settings",
+    "fr": "Paramètres zigbee-temperature-sensor",
+    "nl": "zigbee-temperature-sensor Instellingen",
+    "ta": "zigbee-temperature-sensor அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

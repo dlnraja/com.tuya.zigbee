@@ -1,0 +1,24 @@
+{
+  "id": "ge-bulbs-26-settings",
+  "title": {
+    "en": "ge-bulbs-26 Settings",
+    "fr": "Paramètres ge-bulbs-26",
+    "nl": "ge-bulbs-26 Instellingen",
+    "ta": "ge-bulbs-26 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

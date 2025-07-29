@@ -1,0 +1,58 @@
+{
+  "id": "meross",
+  "title": {
+    "en": "Meross",
+    "fr": "Meross",
+    "nl": "Meross",
+    "ta": "Meross"
+  },
+  "description": {
+    "en": "ZIGBEE driver for meross from Meross (Historical)",
+    "fr": "Driver ZIGBEE pour meross de Meross (Historique)",
+    "nl": "ZIGBEE driver voor meross van Meross (Historisch)",
+    "ta": "Meross இலிருந்து meross க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "zigbee",
+  "manufacturer": "Meross",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.443Z",
+  "historical": {
+    "commitHash": "debc2d27",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Meross",
+    "model": "meross",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

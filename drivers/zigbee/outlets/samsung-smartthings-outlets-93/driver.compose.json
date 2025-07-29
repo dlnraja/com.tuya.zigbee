@@ -1,0 +1,69 @@
+{
+  "id": "samsung-smartthings-outlets-93",
+  "title": {
+    "en": "Samsung Smartthings Outlets 93",
+    "fr": "Samsung Smartthings Outlets 93",
+    "nl": "Samsung Smartthings Outlets 93",
+    "ta": "Samsung Smartthings Outlets 93"
+  },
+  "description": {
+    "en": "Zigbee driver for samsung-smartthings-outlets-93 from Samsung SmartThings",
+    "fr": "Driver Zigbee pour samsung-smartthings-outlets-93 de Samsung SmartThings",
+    "nl": "Zigbee driver voor samsung-smartthings-outlets-93 van Samsung SmartThings",
+    "ta": "Samsung SmartThings இலிருந்து samsung-smartthings-outlets-93 க்கான Zigbee டிரைவர்"
+  },
+  "category": "outlets",
+  "protocol": "zigbee",
+  "manufacturer": "Samsung SmartThings",
+  "source": "Samsung SmartThings",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_motion"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "msTemperatureMeasurement",
+    "msRelativeHumidity",
+    "ssIasZone"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:03.661Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Samsung SmartThings",
+    "model": "samsung-smartthings-outlets-93",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "msTemperatureMeasurement",
+      "msRelativeHumidity",
+      "ssIasZone"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_temperature",
+      "measure_humidity",
+      "alarm_motion"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

@@ -1,0 +1,28 @@
+﻿{
+    "source":  "README-c736301a",
+    "id":  "Clusters",
+    "manufacturer":  "Historical Recovery",
+    "version":  "1.0.0",
+    "category":  "generic",
+    "description":  {
+                        "en":  "Driver for Clusters",
+                        "fr":  "Driver pour Clusters",
+                        "nl":  "Driver voor Clusters",
+                        "ta":  "Driver for Clusters"
+                    },
+    "author":  "dlnraja \u003cdylan.rajasekaram+homey@gmail.com\u003e",
+    "createdAt":  "2025-07-29T18:24:46.982Z",
+    "capabilities":  [
+                         "onoff"
+                     ],
+    "title":  {
+                  "en":  "Clusters",
+                  "fr":  "Clusters",
+                  "nl":  "Clusters",
+                  "ta":  "Clusters"
+              },
+    "protocol":  "zigbee",
+    "clusters":  [
+                     "genBasic"
+                 ]
+}

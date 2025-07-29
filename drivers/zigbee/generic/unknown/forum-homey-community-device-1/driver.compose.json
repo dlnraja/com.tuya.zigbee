@@ -1,0 +1,141 @@
+{
+  "id": "forum-homey-community-device-1",
+  "title": {
+    "en": "Forum Homey Community Device 1",
+    "fr": "Forum Homey Community Device 1",
+    "nl": "Forum Homey Community Device 1",
+    "ta": "Forum Homey Community Device 1"
+  },
+  "description": {
+    "en": "Auto-generated device from TODO list",
+    "fr": "Appareil auto-généré depuis la liste TODO",
+    "nl": "Auto-gegenereerd apparaat van TODO lijst",
+    "ta": "TODO பட்டியலில் இருந்து தானாக உருவாக்கப்பட்ட சாதனம்"
+  },
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Onoff",
+        "fr": "Onoff",
+        "nl": "Onoff",
+        "ta": "Onoff"
+      }
+    },
+    "dim": {
+      "title": {
+        "en": "Dim",
+        "fr": "Dim",
+        "nl": "Dim",
+        "ta": "Dim"
+      }
+    }
+  },
+  "images": {
+    "icon": "assets/images/icon.svg"
+  },
+  "category": "generic",
+  "protocol": "zigbee",
+  "source": "todo-resolution",
+  "resolutionDate": "2025-07-29T14:02:44.281Z",
+  "originalAnalysis": {
+    "name": "forum-homey-community-device-1",
+    "status": "analyzed",
+    "protocol": "zigbee",
+    "category": "generic",
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
+    "clusters": [],
+    "issues": [],
+    "suggestions": [
+      "Définir les clusters Zigbee appropriés"
+    ]
+  },
+  "platformCompatibility": {
+    "homeyModels": [
+      "homey_pro_2016",
+      "homey_pro_2019",
+      "homey_pro_2023",
+      "homey_bridge",
+      "homey_cloud"
+    ],
+    "minHomeyVersion": "3.0.0",
+    "firmware": {
+      "detected": "TS0601",
+      "category": "official",
+      "confidence": "high"
+    },
+    "compatibility": {
+      "homeyModel": "homey_pro_2023",
+      "compatible": true,
+      "capabilities": {
+        "supported": [
+          "onoff",
+          "dim"
+        ],
+        "unsupported": []
+      },
+      "clusters": {
+        "supported": [
+          "genOnOff",
+          "genLevelCtrl"
+        ],
+        "unsupported": []
+      },
+      "limitations": [],
+      "fallback": false
+    },
+    "fallbackBehavior": null,
+    "warnings": []
+  },
+  "firmwareMetadata": {
+    "detected": "TS0601",
+    "category": "official",
+    "confidence": "high",
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl"
+    ],
+    "fallback": false,
+    "unknown": false
+  },
+  "optimized": true,
+  "optimizationDate": "2025-07-29T14:41:48.205Z",
+  "version": "1.0.12-20250729-1405",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Generic",
+    "model": "forum-homey-community-device-1",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

@@ -118,5 +118,25 @@
         "ta": "Onoff"
       }
     }
+  },
+  "tuyaCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Tuya",
+    "model": "tuya-gateway",
+    "firmware": "latest",
+    "capabilities": [
+      "onoff"
+    ],
+    "clusters": [
+      "genOnOff"
+    ]
+  },
+  "homeyCompatibility": {
+    "pro": true,
+    "bridge": true,
+    "cloud": false,
+    "minVersion": "5.0.0",
+    "maxVersion": "6.0.0"
   }
 }

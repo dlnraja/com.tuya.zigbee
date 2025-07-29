@@ -1,0 +1,59 @@
+{
+  "id": "kwikset-security-6",
+  "title": {
+    "en": "Kwikset Security 6",
+    "fr": "Kwikset Security 6",
+    "nl": "Kwikset Security 6",
+    "ta": "Kwikset Security 6"
+  },
+  "description": {
+    "en": "Zigbee driver for kwikset-security-6 from Kwikset",
+    "fr": "Driver Zigbee pour kwikset-security-6 de Kwikset",
+    "nl": "Zigbee driver voor kwikset-security-6 van Kwikset",
+    "ta": "Kwikset இலிருந்து kwikset-security-6 க்கான Zigbee டிரைவர்"
+  },
+  "category": "security",
+  "protocol": "zigbee",
+  "manufacturer": "Kwikset",
+  "source": "Kwikset",
+  "capabilities": [
+    "lock",
+    "alarm_contact",
+    "alarm_tamper"
+  ],
+  "clusters": [
+    "genDoorLock",
+    "ssIasZone"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:13.752Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Kwikset",
+    "model": "kwikset-security-6",
+    "clusters": [
+      "genDoorLock",
+      "ssIasZone"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "lock",
+      "alarm_contact",
+      "alarm_tamper"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

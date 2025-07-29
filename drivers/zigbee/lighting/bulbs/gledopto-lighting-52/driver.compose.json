@@ -1,0 +1,67 @@
+{
+  "id": "gledopto-lighting-52",
+  "title": {
+    "en": "Gledopto Lighting 52",
+    "fr": "Gledopto Lighting 52",
+    "nl": "Gledopto Lighting 52",
+    "ta": "Gledopto Lighting 52"
+  },
+  "description": {
+    "en": "Zigbee driver for gledopto-lighting-52 from Gledopto",
+    "fr": "Driver Zigbee pour gledopto-lighting-52 de Gledopto",
+    "nl": "Zigbee driver voor gledopto-lighting-52 van Gledopto",
+    "ta": "Gledopto இலிருந்து gledopto-lighting-52 க்கான Zigbee டிரைவர்"
+  },
+  "category": "lighting",
+  "protocol": "zigbee",
+  "manufacturer": "Gledopto",
+  "source": "Gledopto",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "lightingColorCtrl",
+    "genBasic"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:09.677Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Gledopto",
+    "model": "gledopto-lighting-52",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl",
+      "genBasic"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_hue",
+      "light_saturation",
+      "light_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

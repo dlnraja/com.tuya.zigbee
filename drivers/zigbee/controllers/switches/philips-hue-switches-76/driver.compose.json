@@ -1,0 +1,67 @@
+{
+  "id": "philips-hue-switches-76",
+  "title": {
+    "en": "Philips Hue Switches 76",
+    "fr": "Philips Hue Switches 76",
+    "nl": "Philips Hue Switches 76",
+    "ta": "Philips Hue Switches 76"
+  },
+  "description": {
+    "en": "Zigbee driver for philips-hue-switches-76 from Philips Hue",
+    "fr": "Driver Zigbee pour philips-hue-switches-76 de Philips Hue",
+    "nl": "Zigbee driver voor philips-hue-switches-76 van Philips Hue",
+    "ta": "Philips Hue இலிருந்து philips-hue-switches-76 க்கான Zigbee டிரைவர்"
+  },
+  "category": "switches",
+  "protocol": "zigbee",
+  "manufacturer": "Philips Hue",
+  "source": "Philips Hue",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "lightingColorCtrl",
+    "genBasic"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:20:55.718Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Philips Hue",
+    "model": "philips-hue-switches-76",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl",
+      "genBasic"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_hue",
+      "light_saturation",
+      "light_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

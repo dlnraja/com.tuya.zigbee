@@ -1,0 +1,58 @@
+{
+  "id": "august",
+  "title": {
+    "en": "August",
+    "fr": "August",
+    "nl": "August",
+    "ta": "August"
+  },
+  "description": {
+    "en": "ZIGBEE driver for august from August (Historical)",
+    "fr": "Driver ZIGBEE pour august de August (Historique)",
+    "nl": "ZIGBEE driver voor august van August (Historisch)",
+    "ta": "August இலிருந்து august க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "zigbee",
+  "manufacturer": "August",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.515Z",
+  "historical": {
+    "commitHash": "601ea78c",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "August",
+    "model": "august",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "lutron-switches-70-settings",
+  "title": {
+    "en": "lutron-switches-70 Settings",
+    "fr": "Paramètres lutron-switches-70",
+    "nl": "lutron-switches-70 Instellingen",
+    "ta": "lutron-switches-70 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

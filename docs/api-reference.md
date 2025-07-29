@@ -5,9 +5,9 @@
 Documentation de l'API et des interfaces du projet.
 
 ## 📊 **Statistiques**
-- **Drivers Documentés**: 47
-- **Capabilities**: 20
-- **Clusters**: 8
+- **Drivers Documentés**: 353
+- **Capabilities**: 13
+- **Clusters**: 10
 
 ## 🔧 **Interfaces**
 
@@ -40,38 +40,33 @@ class TuyaDevice extends HomeyDevice {
 
 ## 📋 **Capabilities Supportées**
 
-- **alarm_battery**: 3 drivers
-- **alarm_contact**: 2 drivers
-- **alarm_motion**: 4 drivers
-- **alarm_water**: 1 drivers
-- **dim**: 5 drivers
-- **light_hue**: 1 drivers
-- **light_saturation**: 1 drivers
-- **light_temperature**: 2 drivers
-- **measure_co2**: 1 drivers
-- **measure_current**: 1 drivers
-- **measure_formaldehyde**: 1 drivers
-- **measure_humidity**: 5 drivers
-- **measure_power**: 4 drivers
-- **measure_temperature**: 9 drivers
-- **measure_voc**: 1 drivers
-- **measure_voltage**: 1 drivers
-- **onoff**: 21 drivers
-- **target_temperature**: 2 drivers
-- **thermostat_preset**: 1 drivers
-- **window_open**: 1 drivers
+- **alarm_contact**: 41 drivers
+- **alarm_motion**: 70 drivers
+- **dim**: 308 drivers
+- **light_hue**: 190 drivers
+- **light_saturation**: 190 drivers
+- **light_temperature**: 227 drivers
+- **measure_humidity**: 59 drivers
+- **measure_power**: 24 drivers
+- **measure_pressure**: 30 drivers
+- **measure_temperature**: 71 drivers
+- **onoff**: 338 drivers
+- **windowcoverings_set**: 16 drivers
+- **windowcoverings_tilt_set**: 16 drivers
 
 ## 🔗 **Clusters Zigbee**
 
-- **genLevelCtrl**: 1 drivers
-- **genOnOff**: 11 drivers
-- **genPowerCfg**: 2 drivers
-- **hvacThermostat**: 1 drivers
-- **lightingColorCtrl**: 1 drivers
-- **msRelativeHumidity**: 2 drivers
-- **msTemperatureMeasurement**: 3 drivers
-- **ssIasZone**: 1 drivers
+- **genBasic**: 190 drivers
+- **genLevelCtrl**: 308 drivers
+- **genOnOff**: 338 drivers
+- **genPowerCfg**: 24 drivers
+- **genWindowCovering**: 16 drivers
+- **lightingColorCtrl**: 227 drivers
+- **msPressureMeasurement**: 30 drivers
+- **msRelativeHumidity**: 59 drivers
+- **msTemperatureMeasurement**: 71 drivers
+- **ssIasZone**: 70 drivers
 
 ---
 
-**📅 Généré**: 2025-07-29T14:50:05.655Z
+**📅 Généré**: 2025-07-29T18:13:35.032Z

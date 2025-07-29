@@ -1,0 +1,71 @@
+{
+  "id": "xiaomi-aqara-sensors-182",
+  "title": {
+    "en": "Xiaomi Aqara Sensors 182",
+    "fr": "Xiaomi Aqara Sensors 182",
+    "nl": "Xiaomi Aqara Sensors 182",
+    "ta": "Xiaomi Aqara Sensors 182"
+  },
+  "description": {
+    "en": "Zigbee driver for xiaomi-aqara-sensors-182 from Xiaomi/Aqara",
+    "fr": "Driver Zigbee pour xiaomi-aqara-sensors-182 de Xiaomi/Aqara",
+    "nl": "Zigbee driver voor xiaomi-aqara-sensors-182 van Xiaomi/Aqara",
+    "ta": "Xiaomi/Aqara இலிருந்து xiaomi-aqara-sensors-182 க்கான Zigbee டிரைவர்"
+  },
+  "category": "sensors",
+  "protocol": "zigbee",
+  "manufacturer": "Xiaomi/Aqara",
+  "source": "Xiaomi/Aqara",
+  "capabilities": [
+    "onoff",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_pressure",
+    "alarm_motion",
+    "alarm_contact"
+  ],
+  "clusters": [
+    "genOnOff",
+    "msTemperatureMeasurement",
+    "msRelativeHumidity",
+    "msPressureMeasurement",
+    "ssIasZone"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:01.997Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Xiaomi/Aqara",
+    "model": "xiaomi-aqara-sensors-182",
+    "clusters": [
+      "genOnOff",
+      "msTemperatureMeasurement",
+      "msRelativeHumidity",
+      "msPressureMeasurement",
+      "ssIasZone"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "measure_temperature",
+      "measure_humidity",
+      "measure_pressure",
+      "alarm_motion",
+      "alarm_contact"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

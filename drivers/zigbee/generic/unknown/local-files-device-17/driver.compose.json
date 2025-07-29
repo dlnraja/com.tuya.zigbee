@@ -1,0 +1,56 @@
+{
+  "id": "local-files-device-17",
+  "title": {
+    "en": "Local Files Device 17",
+    "fr": "Local Files Device 17",
+    "nl": "Local Files Device 17",
+    "ta": "Local Files Device 17"
+  },
+  "description": {
+    "en": "Driver for local-files-device-17 from Local Files",
+    "fr": "Driver pour local-files-device-17 de Local Files",
+    "nl": "Driver voor local-files-device-17 van Local Files",
+    "ta": "Local Files இலிருந்து local-files-device-17 க்கான டிரைவர்"
+  },
+  "category": "generic",
+  "protocol": "zigbee",
+  "source": "Local Files",
+  "capabilities": [
+    "onoff",
+    "measure_power"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genPowerCfg"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:11:25.980Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Generic",
+    "model": "local-files-device-17",
+    "clusters": [
+      "genOnOff",
+      "genPowerCfg"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "measure_power"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

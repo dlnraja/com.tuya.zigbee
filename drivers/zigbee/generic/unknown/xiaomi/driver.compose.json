@@ -1,0 +1,58 @@
+{
+  "id": "xiaomi",
+  "title": {
+    "en": "Xiaomi",
+    "fr": "Xiaomi",
+    "nl": "Xiaomi",
+    "ta": "Xiaomi"
+  },
+  "description": {
+    "en": "ZIGBEE driver for xiaomi from Xiaomi/Aqara (Historical)",
+    "fr": "Driver ZIGBEE pour xiaomi de Xiaomi/Aqara (Historique)",
+    "nl": "ZIGBEE driver voor xiaomi van Xiaomi/Aqara (Historisch)",
+    "ta": "Xiaomi/Aqara இலிருந்து xiaomi க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "zigbee",
+  "manufacturer": "Xiaomi/Aqara",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.435Z",
+  "historical": {
+    "commitHash": "debc2d27",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Xiaomi/Aqara",
+    "model": "xiaomi",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "august-doorbell-14",
+  "title": {
+    "en": "August Doorbell 14",
+    "fr": "August Doorbell 14",
+    "nl": "August Doorbell 14",
+    "ta": "August Doorbell 14"
+  },
+  "description": {
+    "en": "Zigbee driver for august-doorbell-14 from August",
+    "fr": "Driver Zigbee pour august-doorbell-14 de August",
+    "nl": "Zigbee driver voor august-doorbell-14 van August",
+    "ta": "August இலிருந்து august-doorbell-14 க்கான Zigbee டிரைவர்"
+  },
+  "category": "doorbell",
+  "protocol": "zigbee",
+  "manufacturer": "August",
+  "source": "August",
+  "capabilities": [
+    "lock",
+    "alarm_contact",
+    "alarm_tamper"
+  ],
+  "clusters": [
+    "genDoorLock",
+    "ssIasZone"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:14.980Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "August",
+    "model": "august-doorbell-14",
+    "clusters": [
+      "genDoorLock",
+      "ssIasZone"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "lock",
+      "alarm_contact",
+      "alarm_tamper"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

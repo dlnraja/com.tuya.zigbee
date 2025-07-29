@@ -1,0 +1,24 @@
+{
+  "id": "sylvania-strips-70-settings",
+  "title": {
+    "en": "sylvania-strips-70 Settings",
+    "fr": "Paramètres sylvania-strips-70",
+    "nl": "sylvania-strips-70 Instellingen",
+    "ta": "sylvania-strips-70 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

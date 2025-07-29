@@ -1,0 +1,60 @@
+{
+  "id": "homey-apps-device-45",
+  "title": {
+    "en": "Homey Apps Device 45",
+    "fr": "Homey Apps Device 45",
+    "nl": "Homey Apps Device 45",
+    "ta": "Homey Apps Device 45"
+  },
+  "description": {
+    "en": "Driver for homey-apps-device-45 from Homey Apps",
+    "fr": "Driver pour homey-apps-device-45 de Homey Apps",
+    "nl": "Driver voor homey-apps-device-45 van Homey Apps",
+    "ta": "Homey Apps இலிருந்து homey-apps-device-45 க்கான டிரைவர்"
+  },
+  "category": "sensors",
+  "protocol": "zigbee",
+  "source": "Homey Apps",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genPowerCfg"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:11:24.033Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Generic",
+    "model": "homey-apps-device-45",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genPowerCfg"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_power"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

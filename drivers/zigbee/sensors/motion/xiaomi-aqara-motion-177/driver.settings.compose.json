@@ -1,0 +1,24 @@
+{
+  "id": "xiaomi-aqara-motion-177-settings",
+  "title": {
+    "en": "xiaomi-aqara-motion-177 Settings",
+    "fr": "Paramètres xiaomi-aqara-motion-177",
+    "nl": "xiaomi-aqara-motion-177 Instellingen",
+    "ta": "xiaomi-aqara-motion-177 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

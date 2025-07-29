@@ -1,0 +1,24 @@
+{
+  "id": "xiaomi-aqara-humidity-47-settings",
+  "title": {
+    "en": "xiaomi-aqara-humidity-47 Settings",
+    "fr": "Paramètres xiaomi-aqara-humidity-47",
+    "nl": "xiaomi-aqara-humidity-47 Instellingen",
+    "ta": "xiaomi-aqara-humidity-47 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

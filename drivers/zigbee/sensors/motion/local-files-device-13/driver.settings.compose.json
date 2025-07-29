@@ -1,0 +1,24 @@
+{
+  "id": "local-files-device-13-settings",
+  "title": {
+    "en": "local-files-device-13 Settings",
+    "fr": "Paramètres local-files-device-13",
+    "nl": "local-files-device-13 Instellingen",
+    "ta": "local-files-device-13 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

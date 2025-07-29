@@ -1,0 +1,24 @@
+{
+  "id": "eufy-cameras-9-settings",
+  "title": {
+    "en": "eufy-cameras-9 Settings",
+    "fr": "Paramètres eufy-cameras-9",
+    "nl": "eufy-cameras-9 Instellingen",
+    "ta": "eufy-cameras-9 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

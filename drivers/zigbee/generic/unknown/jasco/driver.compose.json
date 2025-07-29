@@ -1,0 +1,58 @@
+{
+  "id": "jasco",
+  "title": {
+    "en": "Jasco",
+    "fr": "Jasco",
+    "nl": "Jasco",
+    "ta": "Jasco"
+  },
+  "description": {
+    "en": "ZIGBEE driver for jasco from Jasco (Historical)",
+    "fr": "Driver ZIGBEE pour jasco de Jasco (Historique)",
+    "nl": "ZIGBEE driver voor jasco van Jasco (Historisch)",
+    "ta": "Jasco இலிருந்து jasco க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "zigbee",
+  "manufacturer": "Jasco",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.583Z",
+  "historical": {
+    "commitHash": "601ea78c",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Jasco",
+    "model": "jasco",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

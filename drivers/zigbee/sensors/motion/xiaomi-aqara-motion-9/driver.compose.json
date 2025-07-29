@@ -1,0 +1,71 @@
+{
+  "id": "xiaomi-aqara-motion-9",
+  "title": {
+    "en": "Xiaomi Aqara Motion 9",
+    "fr": "Xiaomi Aqara Motion 9",
+    "nl": "Xiaomi Aqara Motion 9",
+    "ta": "Xiaomi Aqara Motion 9"
+  },
+  "description": {
+    "en": "Zigbee driver for xiaomi-aqara-motion-9 from Xiaomi/Aqara",
+    "fr": "Driver Zigbee pour xiaomi-aqara-motion-9 de Xiaomi/Aqara",
+    "nl": "Zigbee driver voor xiaomi-aqara-motion-9 van Xiaomi/Aqara",
+    "ta": "Xiaomi/Aqara இலிருந்து xiaomi-aqara-motion-9 க்கான Zigbee டிரைவர்"
+  },
+  "category": "motion",
+  "protocol": "zigbee",
+  "manufacturer": "Xiaomi/Aqara",
+  "source": "Xiaomi/Aqara",
+  "capabilities": [
+    "onoff",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_pressure",
+    "alarm_motion",
+    "alarm_contact"
+  ],
+  "clusters": [
+    "genOnOff",
+    "msTemperatureMeasurement",
+    "msRelativeHumidity",
+    "msPressureMeasurement",
+    "ssIasZone"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:20:59.091Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Xiaomi/Aqara",
+    "model": "xiaomi-aqara-motion-9",
+    "clusters": [
+      "genOnOff",
+      "msTemperatureMeasurement",
+      "msRelativeHumidity",
+      "msPressureMeasurement",
+      "ssIasZone"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "measure_temperature",
+      "measure_humidity",
+      "measure_pressure",
+      "alarm_motion",
+      "alarm_contact"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

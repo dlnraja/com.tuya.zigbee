@@ -1,0 +1,63 @@
+{
+  "id": "lutron-dimmers-31",
+  "title": {
+    "en": "Lutron Dimmers 31",
+    "fr": "Lutron Dimmers 31",
+    "nl": "Lutron Dimmers 31",
+    "ta": "Lutron Dimmers 31"
+  },
+  "description": {
+    "en": "Zigbee driver for lutron-dimmers-31 from Lutron",
+    "fr": "Driver Zigbee pour lutron-dimmers-31 de Lutron",
+    "nl": "Zigbee driver voor lutron-dimmers-31 van Lutron",
+    "ta": "Lutron இலிருந்து lutron-dimmers-31 க்கான Zigbee டிரைவர்"
+  },
+  "category": "dimmers",
+  "protocol": "zigbee",
+  "manufacturer": "Lutron",
+  "source": "Lutron",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "windowcoverings_set",
+    "windowcoverings_tilt_set"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genWindowCovering"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:11.777Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Lutron",
+    "model": "lutron-dimmers-31",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genWindowCovering"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "windowcoverings_set",
+      "windowcoverings_tilt_set"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

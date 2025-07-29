@@ -1,0 +1,61 @@
+{
+  "id": "innr-panels-3",
+  "title": {
+    "en": "Innr Panels 3",
+    "fr": "Innr Panels 3",
+    "nl": "Innr Panels 3",
+    "ta": "Innr Panels 3"
+  },
+  "description": {
+    "en": "Zigbee driver for innr-panels-3 from Innr",
+    "fr": "Driver Zigbee pour innr-panels-3 de Innr",
+    "nl": "Zigbee driver voor innr-panels-3 van Innr",
+    "ta": "Innr இலிருந்து innr-panels-3 க்கான Zigbee டிரைவர்"
+  },
+  "category": "panels",
+  "protocol": "zigbee",
+  "manufacturer": "Innr",
+  "source": "Innr",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "lightingColorCtrl"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:08.389Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Innr",
+    "model": "innr-panels-3",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

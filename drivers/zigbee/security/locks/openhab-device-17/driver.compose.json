@@ -1,0 +1,56 @@
+{
+  "id": "openhab-device-17",
+  "title": {
+    "en": "Openhab Device 17",
+    "fr": "Openhab Device 17",
+    "nl": "Openhab Device 17",
+    "ta": "Openhab Device 17"
+  },
+  "description": {
+    "en": "Driver for openhab-device-17 from OpenHAB",
+    "fr": "Driver pour openhab-device-17 de OpenHAB",
+    "nl": "Driver voor openhab-device-17 van OpenHAB",
+    "ta": "OpenHAB இலிருந்து openhab-device-17 க்கான டிரைவர்"
+  },
+  "category": "security",
+  "protocol": "zigbee",
+  "source": "OpenHAB",
+  "capabilities": [
+    "onoff",
+    "measure_power"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genPowerCfg"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:11:19.742Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Generic",
+    "model": "openhab-device-17",
+    "clusters": [
+      "genOnOff",
+      "genPowerCfg"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "measure_power"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

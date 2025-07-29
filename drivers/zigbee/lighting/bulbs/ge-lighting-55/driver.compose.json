@@ -1,0 +1,61 @@
+{
+  "id": "ge-lighting-55",
+  "title": {
+    "en": "Ge Lighting 55",
+    "fr": "Ge Lighting 55",
+    "nl": "Ge Lighting 55",
+    "ta": "Ge Lighting 55"
+  },
+  "description": {
+    "en": "Zigbee driver for ge-lighting-55 from GE",
+    "fr": "Driver Zigbee pour ge-lighting-55 de GE",
+    "nl": "Zigbee driver voor ge-lighting-55 van GE",
+    "ta": "GE இலிருந்து ge-lighting-55 க்கான Zigbee டிரைவர்"
+  },
+  "category": "lighting",
+  "protocol": "zigbee",
+  "manufacturer": "GE",
+  "source": "GE",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genPowerCfg"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:06.282Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "GE",
+    "model": "ge-lighting-55",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genPowerCfg"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_power"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

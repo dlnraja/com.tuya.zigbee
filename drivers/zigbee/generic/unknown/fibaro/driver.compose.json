@@ -1,0 +1,58 @@
+{
+  "id": "fibaro",
+  "title": {
+    "en": "Fibaro",
+    "fr": "Fibaro",
+    "nl": "Fibaro",
+    "ta": "Fibaro"
+  },
+  "description": {
+    "en": "ZIGBEE driver for fibaro from Fibaro (Historical)",
+    "fr": "Driver ZIGBEE pour fibaro de Fibaro (Historique)",
+    "nl": "ZIGBEE driver voor fibaro van Fibaro (Historisch)",
+    "ta": "Fibaro இலிருந்து fibaro க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "zigbee",
+  "manufacturer": "Fibaro",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.221Z",
+  "historical": {
+    "commitHash": "e8936adf",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Fibaro",
+    "model": "fibaro",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

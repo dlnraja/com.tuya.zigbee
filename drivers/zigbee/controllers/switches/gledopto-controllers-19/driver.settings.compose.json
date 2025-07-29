@@ -1,0 +1,24 @@
+{
+  "id": "gledopto-controllers-19-settings",
+  "title": {
+    "en": "gledopto-controllers-19 Settings",
+    "fr": "Paramètres gledopto-controllers-19",
+    "nl": "gledopto-controllers-19 Instellingen",
+    "ta": "gledopto-controllers-19 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

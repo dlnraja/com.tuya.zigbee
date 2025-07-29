@@ -1,0 +1,24 @@
+{
+  "id": "cree-panels-44-settings",
+  "title": {
+    "en": "cree-panels-44 Settings",
+    "fr": "Paramètres cree-panels-44",
+    "nl": "cree-panels-44 Instellingen",
+    "ta": "cree-panels-44 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

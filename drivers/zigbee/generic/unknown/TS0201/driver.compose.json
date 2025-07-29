@@ -1,0 +1,138 @@
+{
+  "id": "TS0201",
+  "name": {
+    "en": "Temperature Sensor",
+    "fr": "Capteur Température"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "onoff"
+  ],
+  "title": {
+    "en": "TS0201",
+    "fr": "TS0201",
+    "nl": "TS0201",
+    "ta": "TS0201"
+  },
+  "category": "controllers",
+  "images": {
+    "icon": "assets/images/icon.svg"
+  },
+  "optimized": true,
+  "optimizationDate": "2025-07-29T14:41:49.993Z",
+  "version": "1.0.12-20250729-1405",
+  "platformCompatibility": {
+    "homeyModels": [
+      "homey_pro_2016",
+      "homey_pro_2019",
+      "homey_pro_2023",
+      "homey_bridge",
+      "homey_cloud"
+    ],
+    "minHomeyVersion": "3.0.0",
+    "firmware": {
+      "detected": "TS0603",
+      "category": "official",
+      "confidence": "high"
+    },
+    "compatibility": {
+      "homeyModel": "homey_pro_2023",
+      "compatible": true,
+      "capabilities": {
+        "supported": [
+          "onoff",
+          "measure_temperature"
+        ],
+        "unsupported": []
+      },
+      "clusters": {
+        "supported": [
+          "genOnOff",
+          "msTemperatureMeasurement"
+        ],
+        "unsupported": []
+      },
+      "limitations": [],
+      "fallback": false
+    },
+    "fallbackBehavior": null,
+    "warnings": []
+  },
+  "firmwareMetadata": {
+    "detected": "TS0603",
+    "category": "official",
+    "confidence": "high",
+    "capabilities": [
+      "onoff",
+      "measure_temperature"
+    ],
+    "clusters": [
+      "genOnOff",
+      "msTemperatureMeasurement"
+    ],
+    "fallback": false,
+    "unknown": false
+  },
+  "clusters": [
+    "genOnOff"
+  ],
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-07-29T13:21:52.695Z",
+    "originalType": "generic",
+    "suggestedCapabilities": [
+      "onoff"
+    ]
+  },
+  "description": {
+    "en": "Optimized TS0201 driver",
+    "fr": "Driver TS0201 optimisé",
+    "nl": "Geoptimaliseerde TS0201 driver",
+    "ta": "ஒப்படைக்கப்பட்ட TS0201 டிரைவர்"
+  },
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Measure Temperature",
+        "fr": "Measure Temperature",
+        "nl": "Measure Temperature",
+        "ta": "Measure Temperature"
+      }
+    },
+    "onoff": {
+      "title": {
+        "en": "Onoff",
+        "fr": "Onoff",
+        "nl": "Onoff",
+        "ta": "Onoff"
+      }
+    }
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Generic",
+    "model": "TS0201",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "measure_temperature",
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

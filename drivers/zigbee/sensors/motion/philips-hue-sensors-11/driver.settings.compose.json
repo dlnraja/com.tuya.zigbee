@@ -1,0 +1,24 @@
+{
+  "id": "philips-hue-sensors-11-settings",
+  "title": {
+    "en": "philips-hue-sensors-11 Settings",
+    "fr": "Paramètres philips-hue-sensors-11",
+    "nl": "philips-hue-sensors-11 Instellingen",
+    "ta": "philips-hue-sensors-11 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

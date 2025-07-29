@@ -1,0 +1,24 @@
+{
+  "id": "openhab-device-11-settings",
+  "title": {
+    "en": "openhab-device-11 Settings",
+    "fr": "Paramètres openhab-device-11",
+    "nl": "openhab-device-11 Instellingen",
+    "ta": "openhab-device-11 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "id": "innr-bulbs-37",
+  "title": {
+    "en": "Innr Bulbs 37",
+    "fr": "Innr Bulbs 37",
+    "nl": "Innr Bulbs 37",
+    "ta": "Innr Bulbs 37"
+  },
+  "description": {
+    "en": "Zigbee driver for innr-bulbs-37 from Innr",
+    "fr": "Driver Zigbee pour innr-bulbs-37 de Innr",
+    "nl": "Zigbee driver voor innr-bulbs-37 van Innr",
+    "ta": "Innr இலிருந்து innr-bulbs-37 க்கான Zigbee டிரைவர்"
+  },
+  "category": "bulbs",
+  "protocol": "zigbee",
+  "manufacturer": "Innr",
+  "source": "Innr",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "lightingColorCtrl"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:08.799Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Innr",
+    "model": "innr-bulbs-37",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

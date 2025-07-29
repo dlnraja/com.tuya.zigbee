@@ -1,0 +1,24 @@
+{
+  "id": "gledopto-lighting-40-settings",
+  "title": {
+    "en": "gledopto-lighting-40 Settings",
+    "fr": "Paramètres gledopto-lighting-40",
+    "nl": "gledopto-lighting-40 Instellingen",
+    "ta": "gledopto-lighting-40 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

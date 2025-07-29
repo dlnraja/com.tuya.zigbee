@@ -1,0 +1,69 @@
+{
+  "id": "samsung-smartthings-temperature-62",
+  "title": {
+    "en": "Samsung Smartthings Temperature 62",
+    "fr": "Samsung Smartthings Temperature 62",
+    "nl": "Samsung Smartthings Temperature 62",
+    "ta": "Samsung Smartthings Temperature 62"
+  },
+  "description": {
+    "en": "Zigbee driver for samsung-smartthings-temperature-62 from Samsung SmartThings",
+    "fr": "Driver Zigbee pour samsung-smartthings-temperature-62 de Samsung SmartThings",
+    "nl": "Zigbee driver voor samsung-smartthings-temperature-62 van Samsung SmartThings",
+    "ta": "Samsung SmartThings இலிருந்து samsung-smartthings-temperature-62 க்கான Zigbee டிரைவர்"
+  },
+  "category": "temperature",
+  "protocol": "zigbee",
+  "manufacturer": "Samsung SmartThings",
+  "source": "Samsung SmartThings",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_motion"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "msTemperatureMeasurement",
+    "msRelativeHumidity",
+    "ssIasZone"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:03.239Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Samsung SmartThings",
+    "model": "samsung-smartthings-temperature-62",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "msTemperatureMeasurement",
+      "msRelativeHumidity",
+      "ssIasZone"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_temperature",
+      "measure_humidity",
+      "alarm_motion"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "zigbee-app",
+  "title": {
+    "en": "Zigbee App",
+    "fr": "Zigbee App",
+    "nl": "Zigbee App",
+    "ta": "Zigbee App"
+  },
+  "description": {
+    "en": "ZIGBEE driver for zigbee-app from Unknown Manufacturer (Historical)",
+    "fr": "Driver ZIGBEE pour zigbee-app de Unknown Manufacturer (Historique)",
+    "nl": "ZIGBEE driver voor zigbee-app van Unknown Manufacturer (Historisch)",
+    "ta": "Unknown Manufacturer இலிருந்து zigbee-app க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "zigbee",
+  "manufacturer": "Unknown Manufacturer",
+  "source": "README historique (main)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.664Z",
+  "historical": {
+    "commitHash": "79744356",
+    "branch": "main",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Unknown Manufacturer",
+    "model": "zigbee-app",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

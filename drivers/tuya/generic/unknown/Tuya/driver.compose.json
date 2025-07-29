@@ -1,0 +1,28 @@
+﻿{
+    "source":  "README-c736301a",
+    "id":  "Tuya",
+    "manufacturer":  "Historical Recovery",
+    "version":  "1.0.0",
+    "category":  "generic",
+    "description":  {
+                        "en":  "Driver for Tuya",
+                        "fr":  "Driver pour Tuya",
+                        "nl":  "Driver voor Tuya",
+                        "ta":  "Driver for Tuya"
+                    },
+    "author":  "dlnraja \u003cdylan.rajasekaram+homey@gmail.com\u003e",
+    "createdAt":  "2025-07-29T18:24:47.005Z",
+    "capabilities":  [
+                         "onoff"
+                     ],
+    "title":  {
+                  "en":  "Tuya",
+                  "fr":  "Tuya",
+                  "nl":  "Tuya",
+                  "ta":  "Tuya"
+              },
+    "protocol":  "tuya",
+    "clusters":  [
+                     "genBasic"
+                 ]
+}

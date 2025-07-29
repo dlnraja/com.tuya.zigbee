@@ -1,0 +1,69 @@
+{
+  "id": "samsung-smartthings-contact-12",
+  "title": {
+    "en": "Samsung Smartthings Contact 12",
+    "fr": "Samsung Smartthings Contact 12",
+    "nl": "Samsung Smartthings Contact 12",
+    "ta": "Samsung Smartthings Contact 12"
+  },
+  "description": {
+    "en": "Zigbee driver for samsung-smartthings-contact-12 from Samsung SmartThings",
+    "fr": "Driver Zigbee pour samsung-smartthings-contact-12 de Samsung SmartThings",
+    "nl": "Zigbee driver voor samsung-smartthings-contact-12 van Samsung SmartThings",
+    "ta": "Samsung SmartThings இலிருந்து samsung-smartthings-contact-12 க்கான Zigbee டிரைவர்"
+  },
+  "category": "contact",
+  "protocol": "zigbee",
+  "manufacturer": "Samsung SmartThings",
+  "source": "Samsung SmartThings",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_motion"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "msTemperatureMeasurement",
+    "msRelativeHumidity",
+    "ssIasZone"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:02.340Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Samsung SmartThings",
+    "model": "samsung-smartthings-contact-12",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "msTemperatureMeasurement",
+      "msRelativeHumidity",
+      "ssIasZone"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_temperature",
+      "measure_humidity",
+      "alarm_motion"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

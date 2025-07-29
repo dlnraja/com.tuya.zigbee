@@ -5,9 +5,9 @@
 Ce document décrit l'architecture technique du projet Tuya Zigbee.
 
 ## 📊 **Statistiques**
-- **Total Drivers**: 47
+- **Total Drivers**: 353
 - **Protocoles**: 2
-- **Catégories**: 10
+- **Catégories**: 46
 
 ## 🔧 **Composants**
 
@@ -39,4 +39,4 @@ Ce document décrit l'architecture technique du projet Tuya Zigbee.
 
 ---
 
-**📅 Généré**: 2025-07-29T14:50:05.655Z
+**📅 Généré**: 2025-07-29T18:13:35.032Z

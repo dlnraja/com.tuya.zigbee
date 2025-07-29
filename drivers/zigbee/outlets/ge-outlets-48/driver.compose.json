@@ -1,0 +1,61 @@
+{
+  "id": "ge-outlets-48",
+  "title": {
+    "en": "Ge Outlets 48",
+    "fr": "Ge Outlets 48",
+    "nl": "Ge Outlets 48",
+    "ta": "Ge Outlets 48"
+  },
+  "description": {
+    "en": "Zigbee driver for ge-outlets-48 from GE",
+    "fr": "Driver Zigbee pour ge-outlets-48 de GE",
+    "nl": "Zigbee driver voor ge-outlets-48 van GE",
+    "ta": "GE இலிருந்து ge-outlets-48 க்கான Zigbee டிரைவர்"
+  },
+  "category": "outlets",
+  "protocol": "zigbee",
+  "manufacturer": "GE",
+  "source": "GE",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genPowerCfg"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:06.143Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "GE",
+    "model": "ge-outlets-48",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genPowerCfg"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_power"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

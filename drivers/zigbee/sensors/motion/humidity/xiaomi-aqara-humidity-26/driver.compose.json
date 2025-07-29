@@ -1,0 +1,71 @@
+{
+  "id": "xiaomi-aqara-humidity-26",
+  "title": {
+    "en": "Xiaomi Aqara Humidity 26",
+    "fr": "Xiaomi Aqara Humidity 26",
+    "nl": "Xiaomi Aqara Humidity 26",
+    "ta": "Xiaomi Aqara Humidity 26"
+  },
+  "description": {
+    "en": "Zigbee driver for xiaomi-aqara-humidity-26 from Xiaomi/Aqara",
+    "fr": "Driver Zigbee pour xiaomi-aqara-humidity-26 de Xiaomi/Aqara",
+    "nl": "Zigbee driver voor xiaomi-aqara-humidity-26 van Xiaomi/Aqara",
+    "ta": "Xiaomi/Aqara இலிருந்து xiaomi-aqara-humidity-26 க்கான Zigbee டிரைவர்"
+  },
+  "category": "humidity",
+  "protocol": "zigbee",
+  "manufacturer": "Xiaomi/Aqara",
+  "source": "Xiaomi/Aqara",
+  "capabilities": [
+    "onoff",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_pressure",
+    "alarm_motion",
+    "alarm_contact"
+  ],
+  "clusters": [
+    "genOnOff",
+    "msTemperatureMeasurement",
+    "msRelativeHumidity",
+    "msPressureMeasurement",
+    "ssIasZone"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:20:59.323Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Xiaomi/Aqara",
+    "model": "xiaomi-aqara-humidity-26",
+    "clusters": [
+      "genOnOff",
+      "msTemperatureMeasurement",
+      "msRelativeHumidity",
+      "msPressureMeasurement",
+      "ssIasZone"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "measure_temperature",
+      "measure_humidity",
+      "measure_pressure",
+      "alarm_motion",
+      "alarm_contact"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

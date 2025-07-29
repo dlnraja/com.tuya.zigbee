@@ -1,0 +1,68 @@
+{
+  "id": "home-assistant-device-97",
+  "title": {
+    "en": "Home Assistant Device 97",
+    "fr": "Home Assistant Device 97",
+    "nl": "Home Assistant Device 97",
+    "ta": "Home Assistant Device 97"
+  },
+  "description": {
+    "en": "Driver for home-assistant-device-97 from Home Assistant",
+    "fr": "Driver pour home-assistant-device-97 de Home Assistant",
+    "nl": "Driver voor home-assistant-device-97 van Home Assistant",
+    "ta": "Home Assistant இலிருந்து home-assistant-device-97 க்கான டிரைவர்"
+  },
+  "category": "security",
+  "protocol": "zigbee",
+  "source": "Home Assistant",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power",
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genPowerCfg",
+    "msTemperatureMeasurement",
+    "msRelativeHumidity"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:11:18.846Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Generic",
+    "model": "home-assistant-device-97",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genPowerCfg",
+      "msTemperatureMeasurement",
+      "msRelativeHumidity"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_power",
+      "measure_temperature",
+      "measure_humidity"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

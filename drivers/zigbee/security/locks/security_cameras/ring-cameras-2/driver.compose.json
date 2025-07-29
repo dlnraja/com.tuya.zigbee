@@ -1,0 +1,61 @@
+{
+  "id": "ring-cameras-2",
+  "title": {
+    "en": "Ring Cameras 2",
+    "fr": "Ring Cameras 2",
+    "nl": "Ring Cameras 2",
+    "ta": "Ring Cameras 2"
+  },
+  "description": {
+    "en": "Zigbee driver for ring-cameras-2 from Ring",
+    "fr": "Driver Zigbee pour ring-cameras-2 de Ring",
+    "nl": "Zigbee driver voor ring-cameras-2 van Ring",
+    "ta": "Ring இலிருந்து ring-cameras-2 க்கான Zigbee டிரைவர்"
+  },
+  "category": "cameras",
+  "protocol": "zigbee",
+  "manufacturer": "Ring",
+  "source": "Ring",
+  "capabilities": [
+    "alarm_motion",
+    "alarm_contact",
+    "alarm_tamper",
+    "button"
+  ],
+  "clusters": [
+    "ssIasZone",
+    "genBasic"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:15.167Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Ring",
+    "model": "ring-cameras-2",
+    "clusters": [
+      "ssIasZone",
+      "genBasic"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "alarm_motion",
+      "alarm_contact",
+      "alarm_tamper",
+      "button"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

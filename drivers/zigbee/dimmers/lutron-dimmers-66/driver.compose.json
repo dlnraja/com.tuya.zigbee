@@ -1,0 +1,63 @@
+{
+  "id": "lutron-dimmers-66",
+  "title": {
+    "en": "Lutron Dimmers 66",
+    "fr": "Lutron Dimmers 66",
+    "nl": "Lutron Dimmers 66",
+    "ta": "Lutron Dimmers 66"
+  },
+  "description": {
+    "en": "Zigbee driver for lutron-dimmers-66 from Lutron",
+    "fr": "Driver Zigbee pour lutron-dimmers-66 de Lutron",
+    "nl": "Zigbee driver voor lutron-dimmers-66 van Lutron",
+    "ta": "Lutron இலிருந்து lutron-dimmers-66 க்கான Zigbee டிரைவர்"
+  },
+  "category": "dimmers",
+  "protocol": "zigbee",
+  "manufacturer": "Lutron",
+  "source": "Lutron",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "windowcoverings_set",
+    "windowcoverings_tilt_set"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genWindowCovering"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:12.475Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Lutron",
+    "model": "lutron-dimmers-66",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genWindowCovering"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "windowcoverings_set",
+      "windowcoverings_tilt_set"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

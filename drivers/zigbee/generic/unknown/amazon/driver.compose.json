@@ -1,0 +1,58 @@
+{
+  "id": "amazon",
+  "title": {
+    "en": "Amazon",
+    "fr": "Amazon",
+    "nl": "Amazon",
+    "ta": "Amazon"
+  },
+  "description": {
+    "en": "ZIGBEE driver for amazon from Amazon (Historical)",
+    "fr": "Driver ZIGBEE pour amazon de Amazon (Historique)",
+    "nl": "ZIGBEE driver voor amazon van Amazon (Historisch)",
+    "ta": "Amazon இலிருந்து amazon க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "zigbee",
+  "manufacturer": "Amazon",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.278Z",
+  "historical": {
+    "commitHash": "e8936adf",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Amazon",
+    "model": "amazon",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "wyze-bulbs-8",
+  "title": {
+    "en": "Wyze Bulbs 8",
+    "fr": "Wyze Bulbs 8",
+    "nl": "Wyze Bulbs 8",
+    "ta": "Wyze Bulbs 8"
+  },
+  "description": {
+    "en": "Zigbee driver for wyze-bulbs-8 from Wyze",
+    "fr": "Driver Zigbee pour wyze-bulbs-8 de Wyze",
+    "nl": "Zigbee driver voor wyze-bulbs-8 van Wyze",
+    "ta": "Wyze இலிருந்து wyze-bulbs-8 க்கான Zigbee டிரைவர்"
+  },
+  "category": "bulbs",
+  "protocol": "zigbee",
+  "manufacturer": "Wyze",
+  "source": "Wyze",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "alarm_motion",
+    "alarm_contact",
+    "measure_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "ssIasZone",
+    "msTemperatureMeasurement"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:16.943Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Wyze",
+    "model": "wyze-bulbs-8",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "ssIasZone",
+      "msTemperatureMeasurement"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "alarm_motion",
+      "alarm_contact",
+      "measure_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

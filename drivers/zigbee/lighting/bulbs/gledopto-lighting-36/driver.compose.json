@@ -1,0 +1,67 @@
+{
+  "id": "gledopto-lighting-36",
+  "title": {
+    "en": "Gledopto Lighting 36",
+    "fr": "Gledopto Lighting 36",
+    "nl": "Gledopto Lighting 36",
+    "ta": "Gledopto Lighting 36"
+  },
+  "description": {
+    "en": "Zigbee driver for gledopto-lighting-36 from Gledopto",
+    "fr": "Driver Zigbee pour gledopto-lighting-36 de Gledopto",
+    "nl": "Zigbee driver voor gledopto-lighting-36 van Gledopto",
+    "ta": "Gledopto இலிருந்து gledopto-lighting-36 க்கான Zigbee டிரைவர்"
+  },
+  "category": "lighting",
+  "protocol": "zigbee",
+  "manufacturer": "Gledopto",
+  "source": "Gledopto",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "lightingColorCtrl",
+    "genBasic"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:09.339Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Gledopto",
+    "model": "gledopto-lighting-36",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl",
+      "genBasic"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_hue",
+      "light_saturation",
+      "light_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

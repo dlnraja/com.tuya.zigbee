@@ -1,0 +1,24 @@
+{
+  "id": "samsung-smartthings-temperature-41-settings",
+  "title": {
+    "en": "samsung-smartthings-temperature-41 Settings",
+    "fr": "Paramètres samsung-smartthings-temperature-41",
+    "nl": "samsung-smartthings-temperature-41 Instellingen",
+    "ta": "samsung-smartthings-temperature-41 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

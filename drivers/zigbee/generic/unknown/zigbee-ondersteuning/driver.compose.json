@@ -1,0 +1,58 @@
+{
+  "id": "zigbee-ondersteuning",
+  "title": {
+    "en": "Zigbee Ondersteuning",
+    "fr": "Zigbee Ondersteuning",
+    "nl": "Zigbee Ondersteuning",
+    "ta": "Zigbee Ondersteuning"
+  },
+  "description": {
+    "en": "ZIGBEE driver for zigbee-ondersteuning from Unknown Manufacturer (Historical)",
+    "fr": "Driver ZIGBEE pour zigbee-ondersteuning de Unknown Manufacturer (Historique)",
+    "nl": "ZIGBEE driver voor zigbee-ondersteuning van Unknown Manufacturer (Historisch)",
+    "ta": "Unknown Manufacturer இலிருந்து zigbee-ondersteuning க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "zigbee",
+  "manufacturer": "Unknown Manufacturer",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.404Z",
+  "historical": {
+    "commitHash": "41660562",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Unknown Manufacturer",
+    "model": "zigbee-ondersteuning",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

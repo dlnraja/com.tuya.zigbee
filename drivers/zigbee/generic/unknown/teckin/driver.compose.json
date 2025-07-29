@@ -1,0 +1,58 @@
+{
+  "id": "teckin",
+  "title": {
+    "en": "Teckin",
+    "fr": "Teckin",
+    "nl": "Teckin",
+    "ta": "Teckin"
+  },
+  "description": {
+    "en": "ZIGBEE driver for teckin from Teckin (Historical)",
+    "fr": "Driver ZIGBEE pour teckin de Teckin (Historique)",
+    "nl": "ZIGBEE driver voor teckin van Teckin (Historisch)",
+    "ta": "Teckin இலிருந்து teckin க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "zigbee",
+  "manufacturer": "Teckin",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.465Z",
+  "historical": {
+    "commitHash": "debc2d27",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Teckin",
+    "model": "teckin",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

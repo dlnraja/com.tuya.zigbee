@@ -1,0 +1,70 @@
+{
+  "id": "zigbee-smart-plug",
+  "title": {
+    "en": "Zigbee Smart Plug",
+    "fr": "Zigbee Smart Plug",
+    "nl": "Zigbee Smart Plug",
+    "ta": "Zigbee Smart Plug"
+  },
+  "description": {
+    "en": "ZIGBEE driver for zigbee-smart-plug from Unknown Manufacturer (Historical)",
+    "fr": "Driver ZIGBEE pour zigbee-smart-plug de Unknown Manufacturer (Historique)",
+    "nl": "ZIGBEE driver voor zigbee-smart-plug van Unknown Manufacturer (Historisch)",
+    "ta": "Unknown Manufacturer இலிருந்து zigbee-smart-plug க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "controllers",
+  "protocol": "zigbee",
+  "manufacturer": "Unknown Manufacturer",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "lightingColorCtrl"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:37.956Z",
+  "historical": {
+    "commitHash": "f989d92e",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Unknown Manufacturer",
+    "model": "zigbee-smart-plug",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_hue",
+      "light_saturation",
+      "light_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

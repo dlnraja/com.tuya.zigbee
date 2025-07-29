@@ -1,0 +1,68 @@
+{
+  "id": "home-assistant-device-55",
+  "title": {
+    "en": "Home Assistant Device 55",
+    "fr": "Home Assistant Device 55",
+    "nl": "Home Assistant Device 55",
+    "ta": "Home Assistant Device 55"
+  },
+  "description": {
+    "en": "Driver for home-assistant-device-55 from Home Assistant",
+    "fr": "Driver pour home-assistant-device-55 de Home Assistant",
+    "nl": "Driver voor home-assistant-device-55 van Home Assistant",
+    "ta": "Home Assistant இலிருந்து home-assistant-device-55 க்கான டிரைவர்"
+  },
+  "category": "controllers",
+  "protocol": "zigbee",
+  "source": "Home Assistant",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power",
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genPowerCfg",
+    "msTemperatureMeasurement",
+    "msRelativeHumidity"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:11:17.942Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Generic",
+    "model": "home-assistant-device-55",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genPowerCfg",
+      "msTemperatureMeasurement",
+      "msRelativeHumidity"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_power",
+      "measure_temperature",
+      "measure_humidity"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

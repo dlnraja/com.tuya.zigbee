@@ -1,0 +1,63 @@
+{
+  "id": "lutron-blinds-17",
+  "title": {
+    "en": "Lutron Blinds 17",
+    "fr": "Lutron Blinds 17",
+    "nl": "Lutron Blinds 17",
+    "ta": "Lutron Blinds 17"
+  },
+  "description": {
+    "en": "Zigbee driver for lutron-blinds-17 from Lutron",
+    "fr": "Driver Zigbee pour lutron-blinds-17 de Lutron",
+    "nl": "Zigbee driver voor lutron-blinds-17 van Lutron",
+    "ta": "Lutron இலிருந்து lutron-blinds-17 க்கான Zigbee டிரைவர்"
+  },
+  "category": "blinds",
+  "protocol": "zigbee",
+  "manufacturer": "Lutron",
+  "source": "Lutron",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "windowcoverings_set",
+    "windowcoverings_tilt_set"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genWindowCovering"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:11.412Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Lutron",
+    "model": "lutron-blinds-17",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genWindowCovering"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "windowcoverings_set",
+      "windowcoverings_tilt_set"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

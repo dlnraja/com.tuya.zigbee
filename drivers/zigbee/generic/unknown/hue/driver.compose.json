@@ -1,0 +1,58 @@
+{
+  "id": "hue",
+  "title": {
+    "en": "Hue",
+    "fr": "Hue",
+    "nl": "Hue",
+    "ta": "Hue"
+  },
+  "description": {
+    "en": "ZIGBEE driver for hue from Philips Hue (Historical)",
+    "fr": "Driver ZIGBEE pour hue de Philips Hue (Historique)",
+    "nl": "ZIGBEE driver voor hue van Philips Hue (Historisch)",
+    "ta": "Philips Hue இலிருந்து hue க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "zigbee",
+  "manufacturer": "Philips Hue",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.357Z",
+  "historical": {
+    "commitHash": "c944894b",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Philips Hue",
+    "model": "hue",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

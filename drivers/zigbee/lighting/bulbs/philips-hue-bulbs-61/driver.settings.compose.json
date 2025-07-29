@@ -1,0 +1,24 @@
+{
+  "id": "philips-hue-bulbs-61-settings",
+  "title": {
+    "en": "philips-hue-bulbs-61 Settings",
+    "fr": "Paramètres philips-hue-bulbs-61",
+    "nl": "philips-hue-bulbs-61 Instellingen",
+    "ta": "philips-hue-bulbs-61 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

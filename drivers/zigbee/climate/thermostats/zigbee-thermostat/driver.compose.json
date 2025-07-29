@@ -1,0 +1,62 @@
+{
+  "id": "zigbee-thermostat",
+  "title": {
+    "en": "Zigbee Thermostat",
+    "fr": "Zigbee Thermostat",
+    "nl": "Zigbee Thermostat",
+    "ta": "Zigbee Thermostat"
+  },
+  "description": {
+    "en": "ZIGBEE driver for zigbee-thermostat from Unknown Manufacturer (Historical)",
+    "fr": "Driver ZIGBEE pour zigbee-thermostat de Unknown Manufacturer (Historique)",
+    "nl": "ZIGBEE driver voor zigbee-thermostat van Unknown Manufacturer (Historisch)",
+    "ta": "Unknown Manufacturer இலிருந்து zigbee-thermostat க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "climate",
+  "protocol": "zigbee",
+  "manufacturer": "Unknown Manufacturer",
+  "source": "README historique (master)",
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature"
+  ],
+  "clusters": [
+    "msTemperatureMeasurement",
+    "genLevelCtrl"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.151Z",
+  "historical": {
+    "commitHash": "e8936adf",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Unknown Manufacturer",
+    "model": "zigbee-thermostat",
+    "clusters": [
+      "msTemperatureMeasurement",
+      "genLevelCtrl"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "target_temperature",
+      "measure_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

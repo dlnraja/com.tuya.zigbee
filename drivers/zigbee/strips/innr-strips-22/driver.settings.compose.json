@@ -1,0 +1,24 @@
+{
+  "id": "innr-strips-22-settings",
+  "title": {
+    "en": "innr-strips-22 Settings",
+    "fr": "Paramètres innr-strips-22",
+    "nl": "innr-strips-22 Instellingen",
+    "ta": "innr-strips-22 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

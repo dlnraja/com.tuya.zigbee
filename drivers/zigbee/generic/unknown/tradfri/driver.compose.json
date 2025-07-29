@@ -1,0 +1,58 @@
+{
+  "id": "tradfri",
+  "title": {
+    "en": "Tradfri",
+    "fr": "Tradfri",
+    "nl": "Tradfri",
+    "ta": "Tradfri"
+  },
+  "description": {
+    "en": "ZIGBEE driver for tradfri from IKEA TRÅDFRI (Historical)",
+    "fr": "Driver ZIGBEE pour tradfri de IKEA TRÅDFRI (Historique)",
+    "nl": "ZIGBEE driver voor tradfri van IKEA TRÅDFRI (Historisch)",
+    "ta": "IKEA TRÅDFRI இலிருந்து tradfri க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "zigbee",
+  "manufacturer": "IKEA TRÅDFRI",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.472Z",
+  "historical": {
+    "commitHash": "601ea78c",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "IKEA TRÅDFRI",
+    "model": "tradfri",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

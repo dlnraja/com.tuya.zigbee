@@ -1,0 +1,28 @@
+﻿{
+    "source":  "README-c736301a",
+    "id":  "Capabilities",
+    "manufacturer":  "Historical Recovery",
+    "version":  "1.0.0",
+    "category":  "generic",
+    "description":  {
+                        "en":  "Driver for Capabilities",
+                        "fr":  "Driver pour Capabilities",
+                        "nl":  "Driver voor Capabilities",
+                        "ta":  "Driver for Capabilities"
+                    },
+    "author":  "dlnraja \u003cdylan.rajasekaram+homey@gmail.com\u003e",
+    "createdAt":  "2025-07-29T18:24:46.967Z",
+    "capabilities":  [
+                         "onoff"
+                     ],
+    "title":  {
+                  "en":  "Capabilities",
+                  "fr":  "Capabilities",
+                  "nl":  "Capabilities",
+                  "ta":  "Capabilities"
+              },
+    "protocol":  "zigbee",
+    "clusters":  [
+                     "genBasic"
+                 ]
+}

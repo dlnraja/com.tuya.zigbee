@@ -1,0 +1,58 @@
+{
+  "id": "lutron",
+  "title": {
+    "en": "Lutron",
+    "fr": "Lutron",
+    "nl": "Lutron",
+    "ta": "Lutron"
+  },
+  "description": {
+    "en": "ZIGBEE driver for lutron from Lutron (Historical)",
+    "fr": "Driver ZIGBEE pour lutron de Lutron (Historique)",
+    "nl": "ZIGBEE driver voor lutron van Lutron (Historisch)",
+    "ta": "Lutron இலிருந்து lutron க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "zigbee",
+  "manufacturer": "Lutron",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.489Z",
+  "historical": {
+    "commitHash": "601ea78c",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Lutron",
+    "model": "lutron",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

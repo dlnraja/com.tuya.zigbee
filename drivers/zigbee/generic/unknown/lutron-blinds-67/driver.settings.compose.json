@@ -1,0 +1,24 @@
+{
+  "id": "lutron-blinds-67-settings",
+  "title": {
+    "en": "lutron-blinds-67 Settings",
+    "fr": "Paramètres lutron-blinds-67",
+    "nl": "lutron-blinds-67 Instellingen",
+    "ta": "lutron-blinds-67 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

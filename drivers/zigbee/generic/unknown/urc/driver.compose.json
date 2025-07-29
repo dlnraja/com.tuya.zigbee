@@ -1,0 +1,58 @@
+{
+  "id": "urc",
+  "title": {
+    "en": "Urc",
+    "fr": "Urc",
+    "nl": "Urc",
+    "ta": "Urc"
+  },
+  "description": {
+    "en": "ZIGBEE driver for urc from URC (Historical)",
+    "fr": "Driver ZIGBEE pour urc de URC (Historique)",
+    "nl": "ZIGBEE driver voor urc van URC (Historisch)",
+    "ta": "URC இலிருந்து urc க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "zigbee",
+  "manufacturer": "URC",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:37.818Z",
+  "historical": {
+    "commitHash": "71d2b8b5",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "URC",
+    "model": "urc",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "osram-panels-31-settings",
+  "title": {
+    "en": "osram-panels-31 Settings",
+    "fr": "Paramètres osram-panels-31",
+    "nl": "osram-panels-31 Instellingen",
+    "ta": "osram-panels-31 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

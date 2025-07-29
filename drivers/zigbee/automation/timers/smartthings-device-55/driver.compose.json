@@ -1,0 +1,60 @@
+{
+  "id": "smartthings-device-55",
+  "title": {
+    "en": "Smartthings Device 55",
+    "fr": "Smartthings Device 55",
+    "nl": "Smartthings Device 55",
+    "ta": "Smartthings Device 55"
+  },
+  "description": {
+    "en": "Driver for smartthings-device-55 from SmartThings",
+    "fr": "Driver pour smartthings-device-55 de SmartThings",
+    "nl": "Driver voor smartthings-device-55 van SmartThings",
+    "ta": "SmartThings இலிருந்து smartthings-device-55 க்கான டிரைவர்"
+  },
+  "category": "automation",
+  "protocol": "zigbee",
+  "source": "SmartThings",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genPowerCfg"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:11:16.542Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Generic",
+    "model": "smartthings-device-55",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genPowerCfg"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_power"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

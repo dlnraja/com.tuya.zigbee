@@ -1,0 +1,58 @@
+{
+  "id": "aeotec",
+  "title": {
+    "en": "Aeotec",
+    "fr": "Aeotec",
+    "nl": "Aeotec",
+    "ta": "Aeotec"
+  },
+  "description": {
+    "en": "ZIGBEE driver for aeotec from Aeotec (Historical)",
+    "fr": "Driver ZIGBEE pour aeotec de Aeotec (Historique)",
+    "nl": "ZIGBEE driver voor aeotec van Aeotec (Historisch)",
+    "ta": "Aeotec இலிருந்து aeotec க்கான ZIGBEE டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "zigbee",
+  "manufacturer": "Aeotec",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.547Z",
+  "historical": {
+    "commitHash": "601ea78c",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Aeotec",
+    "model": "aeotec",
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "lutron-dimmers-36-settings",
+  "title": {
+    "en": "lutron-dimmers-36 Settings",
+    "fr": "Paramètres lutron-dimmers-36",
+    "nl": "lutron-dimmers-36 Instellingen",
+    "ta": "lutron-dimmers-36 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "smartthings-device-32-settings",
+  "title": {
+    "en": "smartthings-device-32 Settings",
+    "fr": "Paramètres smartthings-device-32",
+    "nl": "smartthings-device-32 Instellingen",
+    "ta": "smartthings-device-32 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

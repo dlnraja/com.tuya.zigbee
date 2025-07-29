@@ -1,0 +1,53 @@
+{
+  "id": "tuya-rgb",
+  "title": {
+    "en": "Tuya Rgb",
+    "fr": "Tuya Rgb",
+    "nl": "Tuya Rgb",
+    "ta": "Tuya Rgb"
+  },
+  "description": {
+    "en": "TUYA driver for tuya-rgb from Tuya (Historical)",
+    "fr": "Driver TUYA pour tuya-rgb de Tuya (Historique)",
+    "nl": "TUYA driver voor tuya-rgb van Tuya (Historisch)",
+    "ta": "Tuya இலிருந்து tuya-rgb க்கான TUYA டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "tuya",
+  "manufacturer": "Tuya",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.617Z",
+  "historical": {
+    "commitHash": "298e1711",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "tuyaCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Tuya",
+    "model": "tuya-rgb",
+    "firmware": "latest",
+    "capabilities": [
+      "onoff"
+    ],
+    "clusters": [
+      "genOnOff"
+    ]
+  },
+  "homeyCompatibility": {
+    "pro": true,
+    "bridge": true,
+    "cloud": false,
+    "minVersion": "5.0.0",
+    "maxVersion": "6.0.0"
+  }
+}

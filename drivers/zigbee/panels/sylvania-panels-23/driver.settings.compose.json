@@ -1,0 +1,24 @@
+{
+  "id": "sylvania-panels-23-settings",
+  "title": {
+    "en": "sylvania-panels-23 Settings",
+    "fr": "Paramètres sylvania-panels-23",
+    "nl": "sylvania-panels-23 Instellingen",
+    "ta": "sylvania-panels-23 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

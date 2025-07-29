@@ -1,0 +1,59 @@
+{
+  "id": "kwikset-security-18",
+  "title": {
+    "en": "Kwikset Security 18",
+    "fr": "Kwikset Security 18",
+    "nl": "Kwikset Security 18",
+    "ta": "Kwikset Security 18"
+  },
+  "description": {
+    "en": "Zigbee driver for kwikset-security-18 from Kwikset",
+    "fr": "Driver Zigbee pour kwikset-security-18 de Kwikset",
+    "nl": "Zigbee driver voor kwikset-security-18 van Kwikset",
+    "ta": "Kwikset இலிருந்து kwikset-security-18 க்கான Zigbee டிரைவர்"
+  },
+  "category": "security",
+  "protocol": "zigbee",
+  "manufacturer": "Kwikset",
+  "source": "Kwikset",
+  "capabilities": [
+    "lock",
+    "alarm_contact",
+    "alarm_tamper"
+  ],
+  "clusters": [
+    "genDoorLock",
+    "ssIasZone"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:14.124Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Kwikset",
+    "model": "kwikset-security-18",
+    "clusters": [
+      "genDoorLock",
+      "ssIasZone"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "lock",
+      "alarm_contact",
+      "alarm_tamper"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

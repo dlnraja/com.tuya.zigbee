@@ -1,0 +1,67 @@
+{
+  "id": "wyze-switches-24",
+  "title": {
+    "en": "Wyze Switches 24",
+    "fr": "Wyze Switches 24",
+    "nl": "Wyze Switches 24",
+    "ta": "Wyze Switches 24"
+  },
+  "description": {
+    "en": "Zigbee driver for wyze-switches-24 from Wyze",
+    "fr": "Driver Zigbee pour wyze-switches-24 de Wyze",
+    "nl": "Zigbee driver voor wyze-switches-24 van Wyze",
+    "ta": "Wyze இலிருந்து wyze-switches-24 க்கான Zigbee டிரைவர்"
+  },
+  "category": "switches",
+  "protocol": "zigbee",
+  "manufacturer": "Wyze",
+  "source": "Wyze",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "alarm_motion",
+    "alarm_contact",
+    "measure_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "ssIasZone",
+    "msTemperatureMeasurement"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:17.317Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Wyze",
+    "model": "wyze-switches-24",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "ssIasZone",
+      "msTemperatureMeasurement"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "alarm_motion",
+      "alarm_contact",
+      "measure_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}

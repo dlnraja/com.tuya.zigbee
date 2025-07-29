@@ -1,0 +1,24 @@
+{
+  "id": "sylvania-bulbs-45-settings",
+  "title": {
+    "en": "sylvania-bulbs-45 Settings",
+    "fr": "Paramètres sylvania-bulbs-45",
+    "nl": "sylvania-bulbs-45 Instellingen",
+    "ta": "sylvania-bulbs-45 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

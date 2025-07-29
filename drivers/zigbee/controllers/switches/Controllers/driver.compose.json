@@ -1,0 +1,28 @@
+﻿{
+    "source":  "README-e8936adf",
+    "id":  "Controllers",
+    "manufacturer":  "Historical Recovery",
+    "version":  "1.0.0",
+    "category":  "generic",
+    "description":  {
+                        "en":  "Driver for Controllers",
+                        "fr":  "Driver pour Controllers",
+                        "nl":  "Driver voor Controllers",
+                        "ta":  "Driver for Controllers"
+                    },
+    "author":  "dlnraja \u003cdylan.rajasekaram+homey@gmail.com\u003e",
+    "createdAt":  "2025-07-29T18:24:48.303Z",
+    "capabilities":  [
+                         "onoff"
+                     ],
+    "title":  {
+                  "en":  "Controllers",
+                  "fr":  "Controllers",
+                  "nl":  "Controllers",
+                  "ta":  "Controllers"
+              },
+    "protocol":  "zigbee",
+    "clusters":  [
+                     "genBasic"
+                 ]
+}

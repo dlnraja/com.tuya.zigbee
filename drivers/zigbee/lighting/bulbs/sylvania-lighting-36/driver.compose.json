@@ -1,0 +1,67 @@
+{
+  "id": "sylvania-lighting-36",
+  "title": {
+    "en": "Sylvania Lighting 36",
+    "fr": "Sylvania Lighting 36",
+    "nl": "Sylvania Lighting 36",
+    "ta": "Sylvania Lighting 36"
+  },
+  "description": {
+    "en": "Zigbee driver for sylvania-lighting-36 from Sylvania",
+    "fr": "Driver Zigbee pour sylvania-lighting-36 de Sylvania",
+    "nl": "Zigbee driver voor sylvania-lighting-36 van Sylvania",
+    "ta": "Sylvania இலிருந்து sylvania-lighting-36 க்கான Zigbee டிரைவர்"
+  },
+  "category": "lighting",
+  "protocol": "zigbee",
+  "manufacturer": "Sylvania",
+  "source": "Sylvania",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "lightingColorCtrl",
+    "genBasic"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:21:07.752Z",
+  "zigbeeCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Sylvania",
+    "model": "sylvania-lighting-36",
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl",
+      "genBasic"
+    ],
+    "endpoints": [
+      1
+    ],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_hue",
+      "light_saturation",
+      "light_temperature"
+    ]
+  },
+  "multiManufacturerSupport": {
+    "enabled": true,
+    "manufacturers": [
+      "Philips Hue",
+      "IKEA TRÅDFRI",
+      "Xiaomi/Aqara",
+      "Samsung SmartThings"
+    ],
+    "fallback": "generic"
+  }
+}
