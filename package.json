@@ -19,6 +19,8 @@
     "ai-enrich": "node scripts/ai-enrich-drivers.js",
     "fusion-drivers": "node scripts/fusion-intelligent-drivers.js",
     "compatibility-firmware": "node scripts/compatibility-multi-firmware.js",
+    "recover-historical": "node scripts/recover-all-historical-drivers.js",
+    "recover-quick": "node scripts/recover-quick-historical.js",
     "build": "npm run pipeline",
     "test": "npm run verify",
     "lint": "echo 'Linting completed'",
@@ -36,7 +38,10 @@
     "ai",
     "fusion",
     "compatibility",
-    "firmware"
+    "firmware",
+    "recovery",
+    "historical",
+    "quick"
   ],
   "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
   "license": "MIT",

@@ -7,7 +7,8 @@
     "alarm_battery",
     "target_temperature",
     "thermostat_preset",
-    "window_open"
+    "window_open",
+    "measure_temperature"
   ],
   "capabilitiesOptions": {
     "target_temperature": {
@@ -126,5 +127,18 @@
     ],
     "fallback": true,
     "unknown": false
+  },
+  "clusters": [
+    "msTemperatureMeasurement",
+    "hvacThermostat"
+  ],
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-07-29T13:21:52.647Z",
+    "originalType": "thermostat",
+    "suggestedCapabilities": [
+      "measure_temperature",
+      "target_temperature"
+    ]
   }
 }

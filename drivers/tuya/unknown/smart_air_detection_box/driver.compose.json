@@ -15,7 +15,8 @@
     "measure_voc",
     "measure_co2",
     "measure_temperature",
-    "measure_humidity"
+    "measure_humidity",
+    "onoff"
   ],
   "energy": {
     "approximation": {
@@ -116,5 +117,16 @@
     ],
     "fallback": false,
     "unknown": false
+  },
+  "clusters": [
+    "genOnOff"
+  ],
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-07-29T13:21:52.644Z",
+    "originalType": "generic",
+    "suggestedCapabilities": [
+      "onoff"
+    ]
   }
 }

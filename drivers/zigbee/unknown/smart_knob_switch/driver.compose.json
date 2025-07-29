@@ -12,7 +12,9 @@
     "zigbee"
   ],
   "capabilities": [
-    "dim"
+    "dim",
+    "onoff",
+    "measure_power"
   ],
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",
@@ -120,5 +122,18 @@
     ],
     "fallback": false,
     "unknown": false
+  },
+  "clusters": [
+    "genOnOff",
+    "genPowerCfg"
+  ],
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-07-29T13:21:52.708Z",
+    "originalType": "switch",
+    "suggestedCapabilities": [
+      "onoff",
+      "measure_power"
+    ]
   }
 }

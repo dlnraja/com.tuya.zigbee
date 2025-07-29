@@ -9,7 +9,8 @@
   "capabilities": [
     "onoff",
     "dim",
-    "measure_power"
+    "measure_power",
+    "light_temperature"
   ],
   "class": "light",
   "zigbee": {
@@ -93,5 +94,20 @@
     ],
     "fallback": false,
     "unknown": false
+  },
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "lightingColorCtrl"
+  ],
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-07-29T13:21:52.688Z",
+    "originalType": "light",
+    "suggestedCapabilities": [
+      "onoff",
+      "dim",
+      "light_temperature"
+    ]
   }
 }
