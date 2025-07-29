@@ -1,0 +1,81 @@
+{
+  "id": "zigbee-smart-plug",
+  "name": {
+    "en": "Zigbee Smart Plug",
+    "fr": "Prise Intelligente Zigbee",
+    "nl": "Zigbee Slimme Stekker",
+    "ta": "Zigbee ஸ்மார்ட் பிளக்"
+  },
+  "images": {
+    "small": "assets/images/smart-plug-small.png",
+    "large": "assets/images/smart-plug-large.png"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power",
+    "measure_current",
+    "measure_voltage"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "On/Off",
+        "fr": "Marche/Arrêt",
+        "nl": "Aan/Uit",
+        "ta": "இயக்கு/நிறுத்து"
+      }
+    },
+    "dim": {
+      "title": {
+        "en": "Dim",
+        "fr": "Variation",
+        "nl": "Dimmen",
+        "ta": "மங்கலாக்கு"
+      }
+    },
+    "measure_power": {
+      "title": {
+        "en": "Power",
+        "fr": "Puissance",
+        "nl": "Vermogen",
+        "ta": "சக்தி"
+      }
+    },
+    "measure_current": {
+      "title": {
+        "en": "Current",
+        "fr": "Courant",
+        "nl": "Stroom",
+        "ta": "மின்னோட்டம்"
+      }
+    },
+    "measure_voltage": {
+      "title": {
+        "en": "Voltage",
+        "fr": "Tension",
+        "nl": "Spanning",
+        "ta": "மின்னழுத்தம்"
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "poll_interval",
+      "type": "number",
+      "label": {
+        "en": "Poll Interval (ms)",
+        "fr": "Intervalle de Polling (ms)",
+        "nl": "Poll Interval (ms)",
+        "ta": "போல் இடைவெளி (ms)"
+      },
+      "value": 30000,
+      "attr": {
+        "min": 1000,
+        "max": 300000,
+        "step": 1000
+      }
+    }
+  ]
+}
