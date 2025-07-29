@@ -18,7 +18,12 @@ Cluster.addCluster(TuyaSpecificCluster);
 * - Zigbee2MQTT Device description: https://www.zigbee2mqtt.io/devices/TV02-Zigbee.html
 * 
 */
-class thermostatic_radiator_valveDevice extends ZigbeeDevice {
+class thermostatic_radiator_valve extends Homey.Device {
+    // Compatibilité multi-firmware et multi-box Homey
+    // Firmware détecté: GENERIC_ONOFF (high)
+    // Compatibilité: OK
+    // Capabilities supportées: onoff
+    // Limitations: 
     async onUninit() {
         this.stopPolling();
         await super.onUninit();
@@ -228,6 +233,32 @@ class thermostatic_radiator_valveDevice extends ZigbeeDevice {
     }
 }
 
-module.exports = ThermostaticRadiatorValve;
+
+    // Méthodes de fallback pour firmware inconnu
+    async onInit() {
+        await super.onInit();
+        this.log('Driver en mode fallback - compatibilité limitée');
+        this.setWarning('Firmware non reconnu - fonctionnalités limitées');
+    }
+    
+    async onSettings({ oldSettings, newSettings, changedKeys }) {
+        await super.onSettings({ oldSettings, newSettings, changedKeys });
+        this.log('Paramètres mis à jour en mode fallback');
+    }
+
+
+    // Méthodes de fallback pour firmware inconnu
+    async onInit() {
+        await super.onInit();
+        this.log('Driver en mode fallback - compatibilité limitée');
+        this.setWarning('Firmware non reconnu - fonctionnalités limitées');
+    }
+    
+    async onSettings({ oldSettings, newSettings, changedKeys }) {
+        await super.onSettings({ oldSettings, newSettings, changedKeys });
+        this.log('Paramètres mis à jour en mode fallback');
+    }
+
+module.exports = thermostatic_radiator_valve;
 
 

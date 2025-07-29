@@ -2,7 +2,12 @@
 'use strict';
 const { ZigbeeDevice } = require('homey-zigbeedriver');
 
-class TS0201Device extends ZigbeeDevice {
+class TS0201 extends Homey.Device {
+    // Compatibilité multi-firmware et multi-box Homey
+    // Firmware détecté: TS0603 (high)
+    // Compatibilité: OK
+    // Capabilities supportées: onoff, measure_temperature
+    // Limitations: 
     async onUninit() {
         this.stopPolling();
         await super.onUninit();

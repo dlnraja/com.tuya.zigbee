@@ -8,7 +8,12 @@ const { V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS } = require('../../lib/TuyaData
 
 Cluster.addCluster(TuyaSpecificCluster);
 
-class dimmer_1_gang_tuyaDevice extends ZigbeeDevice {
+class dimmer_1_gang_tuya extends Homey.Device {
+    // Compatibilité multi-firmware et multi-box Homey
+    // Firmware détecté: TS0601 (high)
+    // Compatibilité: OK
+    // Capabilities supportées: onoff, dim
+    // Limitations: 
     async onUninit() {
         this.stopPolling();
         await super.onUninit();

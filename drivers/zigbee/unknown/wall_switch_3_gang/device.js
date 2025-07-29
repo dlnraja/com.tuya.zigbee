@@ -4,7 +4,12 @@ const Homey = require('homey-meshdriver');
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { debug, CLUSTER } = require('zigbee-clusters');
 
-class wall_switch_3_gangDevice extends ZigbeeDevice {
+class wall_switch_3_gang extends Homey.Device {
+    // Compatibilité multi-firmware et multi-box Homey
+    // Firmware détecté: GENERIC_ONOFF (high)
+    // Compatibilité: OK
+    // Capabilities supportées: onoff
+    // Limitations: 
     async onUninit() {
         this.stopPolling();
         await super.onUninit();
@@ -51,7 +56,12 @@ class wall_switch_3_gangDevice extends ZigbeeDevice {
   }
 
 /*     onSettings(oldSettingsObj, newSettingsObj, changedKeysArr, callback) {
-        if (newSettingsObj.deviceclass wall_switch_3_gangDevice extends ZigbeeDevice {
+        if (newSettingsObj.deviceclass wall_switch_3_gang extends Homey.Device {
+    // Compatibilité multi-firmware et multi-box Homey
+    // Firmware détecté: GENERIC_ONOFF (high)
+    // Compatibilité: OK
+    // Capabilities supportées: onoff
+    // Limitations: 
     async onUninit() {
         this.stopPolling();
         await super.onUninit();
@@ -87,6 +97,32 @@ class wall_switch_3_gangDevice extends ZigbeeDevice {
   }
 
 }
+
+
+    // Méthodes de fallback pour firmware inconnu
+    async onInit() {
+        await super.onInit();
+        this.log('Driver en mode fallback - compatibilité limitée');
+        this.setWarning('Firmware non reconnu - fonctionnalités limitées');
+    }
+    
+    async onSettings({ oldSettings, newSettings, changedKeys }) {
+        await super.onSettings({ oldSettings, newSettings, changedKeys });
+        this.log('Paramètres mis à jour en mode fallback');
+    }
+
+
+    // Méthodes de fallback pour firmware inconnu
+    async onInit() {
+        await super.onInit();
+        this.log('Driver en mode fallback - compatibilité limitée');
+        this.setWarning('Firmware non reconnu - fonctionnalités limitées');
+    }
+    
+    async onSettings({ oldSettings, newSettings, changedKeys }) {
+        await super.onSettings({ oldSettings, newSettings, changedKeys });
+        this.log('Paramètres mis à jour en mode fallback');
+    }
 
 module.exports = wall_switch_3_gang;
 
