@@ -13,7 +13,9 @@
   "capabilities": [
     "alarm_contact",
     "alarm_water",
-    "alarm_battery"
+    "alarm_battery",
+    "measure_temperature",
+    "measure_humidity"
   ],
   "energy": {
     "batteries": [
@@ -119,5 +121,18 @@
     ],
     "fallback": false,
     "unknown": false
+  },
+  "clusters": [
+    "msTemperatureMeasurement",
+    "msRelativeHumidity"
+  ],
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-07-29T13:21:52.699Z",
+    "originalType": "sensor",
+    "suggestedCapabilities": [
+      "measure_temperature",
+      "measure_humidity"
+    ]
   }
 }

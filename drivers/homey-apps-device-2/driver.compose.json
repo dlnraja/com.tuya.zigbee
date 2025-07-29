@@ -1,0 +1,12 @@
+{
+  "id": "homey-apps-device-2",
+  "title": "Homey Apps-device-2 Device",
+  "category": "sensors",
+  "capabilities": [
+    "measure_temperature"
+  ],
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
+  }
+}

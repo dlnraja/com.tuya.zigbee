@@ -8,7 +8,8 @@
   },
   "capabilities": [
     "target_temperature",
-    "measure_temperature"
+    "measure_temperature",
+    "onoff"
   ],
   "class": "light",
   "zigbee": {
@@ -92,5 +93,16 @@
     ],
     "fallback": false,
     "unknown": false
+  },
+  "clusters": [
+    "genOnOff"
+  ],
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-07-29T13:21:52.659Z",
+    "originalType": "generic",
+    "suggestedCapabilities": [
+      "onoff"
+    ]
   }
 }

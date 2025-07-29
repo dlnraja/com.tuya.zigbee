@@ -1,0 +1,12 @@
+{
+  "id": "zigbee2mqtt-devices-device-3",
+  "title": "Zigbee2MQTT Devices-device-3 Device",
+  "category": "security",
+  "capabilities": [
+    "alarm_motion"
+  ],
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
+  }
+}
