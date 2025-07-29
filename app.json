@@ -1,90 +1,343 @@
 {
-  "id": "com.tuya.zigbee",
+  "id": "com.tuya.zigbee.johan",
   "version": "1.0.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
-    "local"
-  ],
-  "name": {
-    "en": "Tuya Zigbee Universal Integration",
-    "fr": "Intégration Universelle Tuya Zigbee",
-    "nl": "Tuya Zigbee Universele Integratie",
-    "ta": "Tuya Zigbee உலகளாவிய ஒருங்கிணைப்பு"
-  },
-  "description": {
-    "en": "Universal Tuya ZigBee device integration for Homey",
-    "fr": "Intégration universelle des appareils Tuya ZigBee pour Homey",
-    "nl": "Universele Tuya ZigBee-apparaatintegratie voor Homey",
-    "ta": "Homey க்கான Tuya ZigBee சாதனங்களின் உலகளாவிய ஒருங்கிணைப்பு"
-  },
-  "category": [
-    "appliances"
-  ],
-  "permissions": [],
-  "images": {
-    "small": "/assets/images/small.png",
-    "large": "/assets/images/large.png"
-  },
-  "author": {
-    "name": "dlnraja",
-    "email": "support@homey.app"
-  },
-  "contributors": {
-    "developers": [
-      {
-        "name": "dlnraja",
-        "email": "support@homey.app"
-      }
-    ]
-  },
-  "bugs": {
-    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dlnraja/com.tuya.zigbee.git"
-  },
-  "support": "mailto:support@homey.app",
-  "homepage": "https://github.com/dlnraja/com.tuya.zigbee#readme",
-  "license": "MIT",
-  "drivers": [
     {
-      "id": "wall_switch_1_gang",
+      "id": "zigbee",
       "name": {
-        "en": "Wall Switch 1 Gang"
+        "en": "Tuya Zigbee",
+        "nl": "Tuya Zigbee"
       },
       "images": {
-        "small": "/drivers/sdk3/wall_switch_1_gang/assets/small.png",
-        "large": "/drivers/sdk3/wall_switch_1_gang/assets/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
-      "class": "light",
+      "class": "driver",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "measure_power",
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_motion",
+        "alarm_contact",
+        "lock_set",
+        "lock_get",
+        "camera_stream",
+        "speaker_volume",
+        "vacuum_start",
+        "garage_door_set",
+        "valve_set"
       ],
       "capabilitiesOptions": {
         "onoff": {
           "title": {
-            "en": "Switch"
+            "en": "On/Off",
+            "nl": "Aan/Uit"
+          }
+        },
+        "dim": {
+          "title": {
+            "en": "Dim",
+            "nl": "Dimmen"
+          }
+        },
+        "light_hue": {
+          "title": {
+            "en": "Hue",
+            "nl": "Tint"
+          }
+        },
+        "light_saturation": {
+          "title": {
+            "en": "Saturation",
+            "nl": "Verzadiging"
+          }
+        },
+        "light_temperature": {
+          "title": {
+            "en": "Color Temperature",
+            "nl": "Kleurtemperatuur"
+          }
+        },
+        "measure_power": {
+          "title": {
+            "en": "Power",
+            "nl": "Vermogen"
+          }
+        },
+        "measure_temperature": {
+          "title": {
+            "en": "Temperature",
+            "nl": "Temperatuur"
+          }
+        },
+        "measure_humidity": {
+          "title": {
+            "en": "Humidity",
+            "nl": "Luchtvochtigheid"
+          }
+        },
+        "alarm_motion": {
+          "title": {
+            "en": "Motion Alarm",
+            "nl": "Bewegingsalarm"
+          }
+        },
+        "alarm_contact": {
+          "title": {
+            "en": "Contact Alarm",
+            "nl": "Contactalarm"
+          }
+        },
+        "lock_set": {
+          "title": {
+            "en": "Lock",
+            "nl": "Vergrendeling"
+          }
+        },
+        "lock_get": {
+          "title": {
+            "en": "Lock Status",
+            "nl": "Vergrendelingsstatus"
+          }
+        },
+        "camera_stream": {
+          "title": {
+            "en": "Camera Stream",
+            "nl": "Camera Stream"
+          }
+        },
+        "speaker_volume": {
+          "title": {
+            "en": "Speaker Volume",
+            "nl": "Luidspreker Volume"
+          }
+        },
+        "vacuum_start": {
+          "title": {
+            "en": "Vacuum Start",
+            "nl": "Stofzuiger Start"
+          }
+        },
+        "garage_door_set": {
+          "title": {
+            "en": "Garage Door",
+            "nl": "Garagedeur"
+          }
+        },
+        "valve_set": {
+          "title": {
+            "en": "Valve",
+            "nl": "Klep"
           }
         }
       },
-      "zigbee": {
-        "manufacturerName": "Tuya",
-        "modelId": "TS0001",
-        "endpoints": {
-          "1": {
-            "clusters": [
-              "genBasic",
-              "genIdentify",
-              "genOnOff"
-            ],
-            "bindings": [
-              "genOnOff"
-            ]
+      "images": {
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "poll_interval",
+          "type": "number",
+          "label": {
+            "en": "Poll Interval (ms)",
+            "nl": "Poll Interval (ms)"
+          },
+          "value": 30000,
+          "attr": {
+            "min": 1000,
+            "max": 300000,
+            "step": 1000
           }
         }
-      }
+      ]
     }
-  ]
+  ],
+  "drivers": [
+    {
+      "id": "zigbee-switch-johan",
+      "name": {
+        "en": "Zigbee Switch Johan",
+        "nl": "Zigbee Schakelaar Johan"
+      },
+      "images": {
+        "small": "assets/images/switch-small.png",
+        "large": "assets/images/switch-large.png"
+      },
+      "class": "device",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_power"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "On/Off",
+            "nl": "Aan/Uit"
+          }
+        },
+        "dim": {
+          "title": {
+            "en": "Dim",
+            "nl": "Dimmen"
+          }
+        },
+        "measure_power": {
+          "title": {
+            "en": "Power",
+            "nl": "Vermogen"
+          }
+        }
+      },
+      "images": {
+        "small": "assets/images/switch-small.png",
+        "large": "assets/images/switch-large.png"
+      },
+      "settings": [
+        {
+          "id": "poll_interval",
+          "type": "number",
+          "label": {
+            "en": "Poll Interval (ms)",
+            "nl": "Poll Interval (ms)"
+          },
+          "value": 30000,
+          "attr": {
+            "min": 1000,
+            "max": 300000,
+            "step": 1000
+          }
+        }
+      ]
+    },
+    {
+      "id": "zigbee-light-johan",
+      "name": {
+        "en": "Zigbee Light Johan",
+        "nl": "Zigbee Licht Johan"
+      },
+      "images": {
+        "small": "assets/images/light-small.png",
+        "large": "assets/images/light-large.png"
+      },
+      "class": "device",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "On/Off",
+            "nl": "Aan/Uit"
+          }
+        },
+        "dim": {
+          "title": {
+            "en": "Dim",
+            "nl": "Dimmen"
+          }
+        },
+        "light_hue": {
+          "title": {
+            "en": "Hue",
+            "nl": "Tint"
+          }
+        },
+        "light_saturation": {
+          "title": {
+            "en": "Saturation",
+            "nl": "Verzadiging"
+          }
+        },
+        "light_temperature": {
+          "title": {
+            "en": "Color Temperature",
+            "nl": "Kleurtemperatuur"
+          }
+        }
+      },
+      "images": {
+        "small": "assets/images/light-small.png",
+        "large": "assets/images/light-large.png"
+      },
+      "settings": [
+        {
+          "id": "poll_interval",
+          "type": "number",
+          "label": {
+            "en": "Poll Interval (ms)",
+            "nl": "Poll Interval (ms)"
+          },
+          "value": 30000,
+          "attr": {
+            "min": 1000,
+            "max": 300000,
+            "step": 1000
+          }
+        }
+      ]
+    }
+  ],
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
+  },
+  "author": {
+    "name": "dlnraja",
+    "email": "dylan.rajasekaram+homey@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Johan",
+      "email": "johan@homey.app"
+    }
+  ],
+  "category": [
+    "local"
+  ],
+  "permissions": [
+    "homey:manager:api",
+    "homey:manager:meshdriver"
+  ],
+  "bugs": "https://github.com/dlnraja/com.tuya.zigbee/issues",
+  "source": "https://github.com/dlnraja/com.tuya.zigbee",
+  "homepage": "https://github.com/dlnraja/com.tuya.zigbee#readme",
+  "support": "mailto:dylan.rajasekaram+homey@gmail.com",
+  "keywords": [
+    "tuya",
+    "zigbee",
+    "homey",
+    "johan",
+    "local",
+    "smart",
+    "home",
+    "automation"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "homey-meshdriver": "^1.3.50"
+  },
+  "devDependencies": {
+    "homey": "^2.0.0"
+  },
+  "scripts": {
+    "run": "homey app run",
+    "build": "homey app build",
+    "deploy": "homey app deploy",
+    "validate": "homey app validate"
+  }
 }
