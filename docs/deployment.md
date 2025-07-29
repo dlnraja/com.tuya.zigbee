@@ -52,4 +52,4 @@ Guide complet pour déployer et maintenir le projet.
 
 ---
 
-**📅 Généré**: 2025-07-29T14:42:15.252Z
+**📅 Généré**: 2025-07-29T14:50:05.655Z
