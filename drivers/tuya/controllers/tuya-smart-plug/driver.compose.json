@@ -1,10 +1,10 @@
 {
   "id": "tuya-smart-plug",
   "name": {
-    "en": "Tuya Smart Plug",
-    "fr": "Prise Intelligente Tuya",
-    "nl": "Tuya Slimme Stekker",
-    "ta": "Tuya ஸ்மார்ட் பிளக்"
+    "en": "Tuya Smart Plug (Ancien Commit)",
+    "fr": "Prise Intelligente Tuya (Ancien Commit)",
+    "nl": "Tuya Slimme Stekker (Ancien Commit)",
+    "ta": "Tuya ஸ்மார்ட் பிளக் (Ancien Commit)"
   },
   "images": {
     "small": "assets/images/smart-plug-small.png",
@@ -65,10 +65,10 @@
       "id": "poll_interval",
       "type": "number",
       "label": {
-        "en": "Poll Interval (ms)",
-        "fr": "Intervalle de Polling (ms)",
-        "nl": "Poll Interval (ms)",
-        "ta": "போல் இடைவெளி (ms)"
+        "en": "Poll Interval (ms) - Ancien Commit",
+        "fr": "Intervalle de Polling (ms) - Ancien Commit",
+        "nl": "Poll Interval (ms) - Ancien Commit",
+        "ta": "போல் இடைவெளி (ms) - Ancien Commit"
       },
       "value": 30000,
       "attr": {
