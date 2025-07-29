@@ -1,6 +1,6 @@
 # 🏠 Tuya Zigbee Project
 
-[![Version](https://img.shields.io/badge/version-1.0.5--20250729--0545-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee/releases)
+[![Version](https://img.shields.io/badge/version-1.0.6--20250729--0550-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee/releases)
 [![Homey SDK](https://img.shields.io/badge/Homey%20SDK-3.0-green.svg)](https://apps.homey.app/fr/com.tuya.zigbee)
 [![License](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 [![Languages](https://img.shields.io/badge/languages-EN%20%7C%20FR%20%7C%20NL%20%7C%20TA-orange.svg)](README.md)
@@ -21,192 +21,121 @@
 
 ## 🎯 Key Features
 
-### ✅ **Multi-Protocol Support**
-- **Tuya Protocol**: Local control without API dependency
-- **Pure Zigbee Protocol**: Direct Zigbee communication
-- **Clear Separation**: Organized by protocol and category
-- **Universal Compatibility**: Known and unknown firmware support
+**English**: Multi-Protocol Support, Homey SDK 3 Architecture, Multi-Language Support, Local Control, Universal Compatibility
 
-### ✅ **Homey SDK 3 Architecture**
-- **Optimized Performance**: Fast response times
-- **Intelligent Polling**: Protocol-specific polling
-- **Error Handling**: Comprehensive error management
-- **Modular Design**: Easy maintenance and extension
+**Français**: Support Multi-Protocole, Architecture Homey SDK 3, Support Multi-Langue, Contrôle Local, Compatibilité Universelle
 
-### ✅ **Multi-Language Support**
-- **English (EN)**: Primary language
-- **Français (FR)**: Secondary language  
-- **Nederlands (NL)**: Tertiary language
-- **தமிழ் (TA)**: Quaternary language
+**Nederlands**: Multi-Protocol Ondersteuning, Homey SDK 3 Architectuur, Multi-Taal Ondersteuning, Lokale Besturing, Universele Compatibiliteit
+
+**தமிழ்**: பல நெறிமுறை ஆதரவு, Homey SDK 3 கட்டமைப்பு, பல மொழி ஆதரவு, உள்ளூர் கட்டுப்பாடு, உலகளாவிய பொருந்தக்கூடிய தன்மை
 
 ---
 
 ## 🏗️ Project Architecture
 
-### 📁 **Protocol Structure**
+**English**: Organized by protocol (Tuya/Zigbee) and category (controllers/sensors/security/climate/automation)
 
-```
-drivers/
-├── tuya/                    # 🔌 Tuya devices only
-│   ├── controllers/         # Tuya Controllers
-│   ├── sensors/            # Tuya Sensors
-│   ├── security/           # Tuya Security
-│   ├── climate/            # Tuya Climate
-│   └── automation/         # Tuya Automation
-└── zigbee/                 # 📡 Pure Zigbee devices only
-    ├── controllers/         # Zigbee Controllers
-    ├── sensors/            # Zigbee Sensors
-    ├── security/           # Zigbee Security
-    ├── climate/            # Zigbee Climate
-    └── automation/         # Zigbee Automation
-```
+**Français**: Organisé par protocole (Tuya/Zigbee) et catégorie (contrôleurs/capteurs/sécurité/climat/automatisation)
+
+**Nederlands**: Georganiseerd per protocol (Tuya/Zigbee) en categorie (controllers/sensoren/beveiliging/klimaat/automatisering)
+
+**தமிழ்**: நெறிமுறை (Tuya/Zigbee) மற்றும் வகை (கட்டுப்படுத்திகள்/சென்சார்கள்/பாதுகாப்பு/காலநிலை/தானியக்கம்) வாரியாக ஒழுங்கமைக்கப்பட்டது
 
 ---
 
 ## 🔌 Tuya Drivers
 
-### 🏠 **Tuya Controllers**
-- **tuya-light**: Smart Tuya bulb (onoff, dim, light_hue, light_saturation, light_temperature)
-- **tuya-switch**: Smart Tuya switch (onoff)
-- **tuya-wall-switch**: Tuya wall switch (onoff)
-- **tuya-fan**: Tuya fan (onoff, dim, fan_set)
-- **tuya-garage-door**: Tuya garage door (garage_door_set)
-- **tuya-curtain**: Tuya curtain (onoff, dim, curtain_set)
-- **tuya-smart-plug**: Smart Tuya plug (onoff, dim, measure_power, measure_current, measure_voltage)
+**English**: 13 Tuya drivers across controllers, sensors, and security categories
 
-### 📊 **Tuya Sensors**
-- **tuya-temperature-sensor**: Tuya temperature sensor (measure_temperature)
-- **tuya-humidity-sensor**: Tuya humidity sensor (measure_humidity)
-- **tuya-pressure-sensor**: Tuya pressure sensor (measure_pressure)
+**Français**: 13 drivers Tuya répartis en contrôleurs, capteurs et sécurité
 
-### 🔒 **Tuya Security**
-- **tuya-motion-sensor**: Tuya motion detector (alarm_motion)
-- **tuya-contact-sensor**: Tuya contact sensor (alarm_contact)
-- **tuya-lock**: Smart Tuya lock (lock_set, lock_get)
+**Nederlands**: 13 Tuya drivers verdeeld over controllers, sensoren en beveiliging
+
+**தமிழ்**: கட்டுப்படுத்திகள், சென்சார்கள் மற்றும் பாதுகாப்பு வகைகளில் 13 Tuya டிரைவர்கள்
 
 ---
 
 ## 📡 Pure Zigbee Drivers
 
-### 🏠 **Pure Zigbee Controllers**
-- **zigbee-wall-switch**: Pure Zigbee wall switch (onoff)
-- **zigbee-smart-plug**: Pure Zigbee smart plug (onoff, dim)
-- **zigbee-curtain**: Pure Zigbee curtain (onoff, dim, curtain_set)
+**English**: 5 Pure Zigbee drivers for direct Zigbee communication
 
-### 📊 **Pure Zigbee Sensors**
-- **zigbee-temperature-sensor**: Pure Zigbee temperature sensor (measure_temperature)
+**Français**: 5 drivers Zigbee pur pour la communication Zigbee directe
 
-### 🔒 **Pure Zigbee Security**
-- **zigbee-motion-sensor**: Pure Zigbee motion detector (alarm_motion)
+**Nederlands**: 5 Pure Zigbee drivers voor directe Zigbee communicatie
+
+**தமிழ்**: நேரடி Zigbee தகவல்தொடர்புக்கான 5 தூய Zigbee டிரைவர்கள்
 
 ---
 
-## 🔄 Recovery Sources by Protocol
+## 📊 Statistics
 
-### 🔌 **Tuya Sources**
-- **Homey Community**: 2000 Tuya devices analyzed
-- **GitHub Tuya**: 1500 Tuya devices analyzed
-- **SmartThings**: 1800 Tuya devices analyzed
-- **Old Git Commits**: Tuya drivers recovery
+**English**: 18 total drivers, 20+ capabilities, 2 protocols supported
 
-### 📡 **Pure Zigbee Sources**
-- **Zigbee2MQTT**: 4464 pure Zigbee devices analyzed
-- **Home Assistant**: 3000 pure Zigbee devices analyzed
-- **OpenHAB**: 1200 pure Zigbee devices analyzed
+**Français**: 18 drivers totaux, 20+ capacités, 2 protocoles supportés
 
----
+**Nederlands**: 18 totale drivers, 20+ mogelijkheden, 2 ondersteunde protocollen
 
-## 📊 Statistics by Protocol
-
-### 🔌 **Tuya Devices**
-| Category | Drivers | Capabilities |
-|----------|---------|--------------|
-| Controllers | 7 | onoff, dim, fan_set, garage_door_set, curtain_set, measure_power |
-| Sensors | 3 | measure_temperature, measure_humidity, measure_pressure |
-| Security | 3 | alarm_motion, alarm_contact, lock_set, lock_get |
-| **Total** | **13** | **15+ capabilities** |
-
-### 📡 **Pure Zigbee Devices**
-| Category | Drivers | Capabilities |
-|----------|---------|--------------|
-| Controllers | 3 | onoff, dim, curtain_set |
-| Sensors | 1 | measure_temperature |
-| Security | 1 | alarm_motion |
-| **Total** | **5** | **5+ capabilities** |
+**தமிழ்**: 18 மொத்த டிரைவர்கள், 20+ திறன்கள், 2 ஆதரிக்கப்படும் நெறிமுறைகள்
 
 ---
 
 ## 🚀 Installation
 
-### Prerequisites
-- Homey v5.0.0 or higher
-- Compatible Tuya or pure Zigbee devices
+**English**: Install via Homey app or manual installation with npm
 
-### Installation via Homey
-1. Open Homey app
-2. Go to "Apps" → "Install"
-3. Search for "Tuya Zigbee"
-4. Click "Install"
+**Français**: Installation via l'app Homey ou installation manuelle avec npm
 
-### Manual Installation
-```bash
-git clone https://github.com/dlnraja/com.tuya.zigbee.git
-cd com.tuya.zigbee
-npm install
-npm run build
-```
+**Nederlands**: Installeren via Homey app of handmatige installatie met npm
+
+**தமிழ்**: Homey பயன்பாட்டின் மூலம் நிறுவல் அல்லது npm உடன் கைமுறை நிறுவல்
 
 ---
 
 ## 🛠️ Development
 
-### Development Prerequisites
-- Node.js 18+
-- Homey CLI
-- Git
+**English**: Node.js 18+, Homey CLI, Git required for development
 
-### Development Installation
-```bash
-git clone https://github.com/dlnraja/com.tuya.zigbee.git
-cd com.tuya.zigbee
-npm install
-```
+**Français**: Node.js 18+, Homey CLI, Git requis pour le développement
 
-### Available Scripts
-```bash
-npm run build          # Build
-npm run test           # Tests
-npm run lint           # Linting
-npm run dev            # Development mode
-```
+**Nederlands**: Node.js 18+, Homey CLI, Git vereist voor ontwikkeling
+
+**தமிழ்**: மேம்பாட்டுக்கு Node.js 18+, Homey CLI, Git தேவை
 
 ---
 
 ## 📝 Documentation
 
-- [Installation Guide](docs/installation-guide.md)
-- [Configuration Guide](docs/configuration-guide.md)
-- [Tuya Zigbee Rules](docs/tuya-zigbee-rules.md)
-- [Versioning Rules](docs/versioning-rules.md)
-- [Architecture](docs/architecture.md)
+**English**: Complete guides for installation, configuration, and architecture
+
+**Français**: Guides complets pour l'installation, la configuration et l'architecture
+
+**Nederlands**: Complete gidsen voor installatie, configuratie en architectuur
+
+**தமிழ்**: நிறுவல், கட்டமைப்பு மற்றும் கட்டமைப்புக்கான முழுமையான வழிகாட்டிகள்
 
 ---
 
 ## 🤝 Contribution
 
-Contributions are welcome! Please:
+**English**: Fork, create feature branch, commit changes, push, open Pull Request
 
-1. Fork the project
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+**Français**: Fork, créer une branche feature, commit des changements, push, ouvrir Pull Request
+
+**Nederlands**: Fork, feature branch maken, wijzigingen committen, push, Pull Request openen
+
+**தமிழ்**: Fork, feature branch உருவாக்கு, மாற்றங்களை commit செய், push, Pull Request திற
 
 ---
 
 ## 📄 License
 
-This project is under MIT license. See the [LICENSE](LICENSE) file for more details.
+**English**: MIT license - see LICENSE file for details
+
+**Français**: Licence MIT - voir le fichier LICENSE pour les détails
+
+**Nederlands**: MIT licentie - zie LICENSE bestand voor details
+
+**தமிழ்**: MIT உரிமம் - விவரங்களுக்கு LICENSE கோப்பைப் பார்க்கவும்
 
 ---
 
@@ -218,24 +147,29 @@ This project is under MIT license. See the [LICENSE](LICENSE) file for more deta
 
 ## 🙏 Acknowledgments
 
-- **Homey Community**: Support and inspiration
-- **Zigbee2MQTT**: Documentation and pure Zigbee compatibility
-- **GitHub Tuya**: Reference Tuya drivers
-- **SmartThings**: Extended Tuya compatibility
-- **Home Assistant**: Advanced pure Zigbee integrations
-- **OpenHAB**: Multi-platform pure Zigbee support
+**English**: Homey Community, Zigbee2MQTT, GitHub Tuya, SmartThings, Home Assistant, OpenHAB
+
+**Français**: Homey Community, Zigbee2MQTT, GitHub Tuya, SmartThings, Home Assistant, OpenHAB
+
+**Nederlands**: Homey Community, Zigbee2MQTT, GitHub Tuya, SmartThings, Home Assistant, OpenHAB
+
+**தமிழ்**: Homey Community, Zigbee2MQTT, GitHub Tuya, SmartThings, Home Assistant, OpenHAB
 
 ---
 
 ## 📞 Support
 
-- **Email**: dylan.rajasekaram+homey@gmail.com
-- **GitHub Issues**: [Issues](https://github.com/dlnraja/com.tuya.zigbee/issues)
-- **Homey Community**: [Forum](https://community.homey.app)
+**English**: Email, GitHub Issues, Homey Community Forum
+
+**Français**: Email, GitHub Issues, Forum Homey Community
+
+**Nederlands**: Email, GitHub Issues, Homey Community Forum
+
+**தமிழ்**: மின்னஞ்சல், GitHub Issues, Homey Community Forum
 
 ---
 
-**Version**: 1.0.5-20250729-0545  
-**Last Update**: 29/07/2025 05:45:00  
+**Version**: 1.0.6-20250729-0550  
+**Last Update**: 29/07/2025 05:50:00  
 **Status**: ✅ Active and maintained  
 **Supported Protocols**: 🔌 Tuya + 📡 Pure Zigbee
