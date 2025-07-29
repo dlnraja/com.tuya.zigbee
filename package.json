@@ -10,6 +10,7 @@
     "fetch": "node scripts/pipeline-complete.js fetch",
     "enrich": "node scripts/pipeline-complete.js enrich",
     "fusion": "node scripts/pipeline-complete.js fusion",
+    "compatibility": "node scripts/pipeline-complete.js compatibility",
     "cleanup": "node scripts/pipeline-complete.js cleanup",
     "monitor": "node scripts/pipeline-complete.js monitor",
     "health": "node scripts/pipeline-complete.js health",
@@ -17,6 +18,7 @@
     "fetch-devices": "node scripts/fetch-new-devices.js",
     "ai-enrich": "node scripts/ai-enrich-drivers.js",
     "fusion-drivers": "node scripts/fusion-intelligent-drivers.js",
+    "compatibility-firmware": "node scripts/compatibility-multi-firmware.js",
     "build": "npm run pipeline",
     "test": "npm run verify",
     "lint": "echo 'Linting completed'",
@@ -32,7 +34,9 @@
     "automation",
     "pipeline",
     "ai",
-    "fusion"
+    "fusion",
+    "compatibility",
+    "firmware"
   ],
   "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
   "license": "MIT",

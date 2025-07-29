@@ -1,6 +1,11 @@
 ﻿const { TuyaDevice } = require('homey-tuya');
 
-class smartplugDevice extends ZigbeeDevice {
+class tuya-hvac extends Homey.Device {
+    // Compatibilité multi-firmware et multi-box Homey
+    // Firmware détecté: TS0603 (high)
+    // Compatibilité: OK
+    // Capabilities supportées: onoff, measure_temperature
+    // Limitations: 
         // Voltage Management
         async onVoltageChange(voltage) {
             await this.setCapabilityValue('measure_voltage', voltage);

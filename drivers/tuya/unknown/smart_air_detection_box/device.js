@@ -60,7 +60,12 @@ const getDataValue = (dpValue) => {
     }
 };
 
-class smart_air_detection_boxDevice extends ZigbeeDevice {
+class smart_air_detection_box extends Homey.Device {
+    // Compatibilité multi-firmware et multi-box Homey
+    // Firmware détecté: TS0603 (high)
+    // Compatibilité: OK
+    // Capabilities supportées: onoff, measure_temperature
+    // Limitations: 
     async onUninit() {
         this.stopPolling();
         await super.onUninit();

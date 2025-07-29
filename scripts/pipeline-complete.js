@@ -351,6 +351,23 @@ async function optimizeDriver(driverPath) {
     }
 }
 
+// Pipeline de compatibilité multi-firmware
+async function runCompatibilityPipeline() {
+    log('=== DÉBUT PIPELINE DE COMPATIBILITÉ ===');
+    
+    const results = {
+        compatibility: await executeScript('compatibility-multi-firmware.js', 'Analyse compatibilité multi-firmware')
+    };
+    
+    if (!results.compatibility.success) {
+        log('❌ Pipeline de compatibilité échoué', 'ERROR');
+        return false;
+    }
+    
+    log('✅ Pipeline de compatibilité terminé avec succès');
+    return true;
+}
+
 // Pipeline principal complet
 async function runCompletePipeline() {
     log('🚀 === DÉBUT PIPELINE COMPLET ===');
@@ -361,6 +378,7 @@ async function runCompletePipeline() {
         fetching: false,
         enrichment: false,
         fusion: false,
+        compatibility: false,
         cleanup: false
     };
     
@@ -389,8 +407,12 @@ async function runCompletePipeline() {
         log('🔗 ÉTAPE 4: Fusion intelligente');
         results.fusion = await runFusionPipeline();
         
-        // Étape 5: Nettoyage
-        log('🧹 ÉTAPE 5: Nettoyage et optimisation');
+        // Étape 5: Compatibilité Multi-Firmware
+        log('🔧 ÉTAPE 5: Compatibilité Multi-Firmware');
+        results.compatibility = await runCompatibilityPipeline();
+        
+        // Étape 6: Nettoyage
+        log('🧹 ÉTAPE 6: Nettoyage et optimisation');
         results.cleanup = await runCleanupPipeline();
         
         // Résultats finaux
@@ -511,6 +533,13 @@ if (require.main === module) {
             });
             break;
             
+        case 'compatibility':
+            runCompatibilityPipeline().catch(error => {
+                log(`Erreur compatibilité: ${error.message}`, 'ERROR');
+                process.exit(1);
+            });
+            break;
+            
         case 'cleanup':
             runCleanupPipeline().catch(error => {
                 log(`Erreur nettoyage: ${error.message}`, 'ERROR');
@@ -537,7 +566,7 @@ if (require.main === module) {
             
         default:
             log(`Commande inconnue: ${command}`, 'ERROR');
-            log('Commandes disponibles: complete, verify, fetch, enrich, fusion, cleanup, monitor, health');
+            log('Commandes disponibles: complete, verify, fetch, enrich, fusion, compatibility, cleanup, monitor, health');
             process.exit(1);
     }
 }
@@ -548,6 +577,7 @@ module.exports = {
     runFetchingPipeline,
     runEnrichmentPipeline,
     runFusionPipeline,
+    runCompatibilityPipeline,
     runCleanupPipeline,
     runMonitoringPipeline,
     checkProjectHealth,
