@@ -1,5 +1,43 @@
 # 📋 Changelog - Tuya Zigbee Project
 
+## Version 1.0.1-20250729-0445 - 29/07/2025 04:45:00
+
+### ✅ Nouvelles fonctionnalités
+- Application règles de versioning et tests sur les 2 branches
+- Correction script versioning automatique
+- Tests manuels réussis sur master et tuya-light
+- Release v1.0.1-20250729-0445 créée et publiée
+
+### 🔧 Améliorations
+- Performance optimisée
+- Stabilité améliorée
+- Documentation mise à jour
+- Support multi-langue (EN, FR, TA, NL)
+- Automatisation complète
+- Règles de versioning appliquées
+- Script de versioning corrigé
+
+### 🐛 Corrections
+- Bugs mineurs corrigés
+- Compatibilité Homey v5.0.0+
+- Validation Homey SDK3
+- Tests automatisés
+- Erreurs de syntaxe dans le script de versioning
+
+### 📦 Installation
+1. Télécharger la release v1.0.1-20250729-0445
+2. Installer via Homey
+3. Configurer les appareils Tuya Zigbee
+4. Profiter du contrôle local
+
+### 📄 Documentation
+- Documentation complète: https://github.com/dlnraja/com.tuya.zigbee
+- Guide d'installation: README.md
+- Règles Tuya Zigbee: docs/tuya-zigbee-rules.md
+- Règles de versioning: docs/versioning-rules.md
+
+---
+
 ## Version 1.0.0-20250729-0440 - 29/07/2025 04:40:00
 
 ### ✅ Nouvelles fonctionnalités
@@ -74,4 +112,4 @@
 
 ---
 
-*Dernière mise à jour : 29/07/2025 04:40:00* 
+*Dernière mise à jour : 29/07/2025 04:45:00* 
