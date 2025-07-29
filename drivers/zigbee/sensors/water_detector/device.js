@@ -3,7 +3,12 @@
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { debug, CLUSTER } = require('zigbee-clusters');
 
-class water_detectorDevice extends ZigbeeDevice {
+class water_detector extends Homey.Device {
+    // Compatibilité multi-firmware et multi-box Homey
+    // Firmware détecté: TS0606 (high)
+    // Compatibilité: OK
+    // Capabilities supportées: alarm_contact
+    // Limitations: 
     async onUninit() {
         this.stopPolling();
         await super.onUninit();

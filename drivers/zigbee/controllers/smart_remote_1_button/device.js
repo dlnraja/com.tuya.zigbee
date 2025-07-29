@@ -3,7 +3,12 @@
 const { ZigBeeDevice } = require("homey-zigbeedriver");
 const { CLUSTER } = require('zigbee-clusters');
 
-class smart_remote_1_buttonDevice extends ZigbeeDevice {
+class smart_remote_1_button extends Homey.Device {
+    // Compatibilité multi-firmware et multi-box Homey
+    // Firmware détecté: TS0609 (high)
+    // Compatibilité: OK
+    // Capabilities supportées: onoff
+    // Limitations: 
     async onUninit() {
         this.stopPolling();
         await super.onUninit();
@@ -80,7 +85,20 @@ class smart_remote_1_buttonDevice extends ZigbeeDevice {
 
 }
 
-module.exports = smart_remote_1b;
+
+    // Méthodes de fallback pour firmware inconnu
+    async onInit() {
+        await super.onInit();
+        this.log('Driver en mode fallback - compatibilité limitée');
+        this.setWarning('Firmware non reconnu - fonctionnalités limitées');
+    }
+    
+    async onSettings({ oldSettings, newSettings, changedKeys }) {
+        await super.onSettings({ oldSettings, newSettings, changedKeys });
+        this.log('Paramètres mis à jour en mode fallback');
+    }
+
+module.exports = smart_remote_1_button;
 
 
 

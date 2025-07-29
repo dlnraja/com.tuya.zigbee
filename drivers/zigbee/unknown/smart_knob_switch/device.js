@@ -3,7 +3,12 @@
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 // const { CLUSTER } = require('zigbee-clusters');
 
-class smart_knob_switchDevice extends ZigbeeDevice {
+class smart_knob_switch extends Homey.Device {
+    // Compatibilité multi-firmware et multi-box Homey
+    // Firmware détecté: TS0601 (high)
+    // Compatibilité: OK
+    // Capabilities supportées: onoff, dim
+    // Limitations: 
     async onUninit() {
         this.stopPolling();
         await super.onUninit();

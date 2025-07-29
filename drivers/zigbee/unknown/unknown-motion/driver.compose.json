@@ -39,5 +39,53 @@
   "category": "controllers",
   "optimized": true,
   "optimizationDate": "2025-07-29T12:42:40.192Z",
-  "version": "1.0.12-20250729-1405"
+  "version": "1.0.12-20250729-1405",
+  "platformCompatibility": {
+    "homeyModels": [
+      "homey_pro_2016",
+      "homey_pro_2019",
+      "homey_pro_2023",
+      "homey_bridge",
+      "homey_cloud"
+    ],
+    "minHomeyVersion": "3.0.0",
+    "firmware": {
+      "detected": "TS0605",
+      "category": "official",
+      "confidence": "high"
+    },
+    "compatibility": {
+      "homeyModel": "homey_pro_2023",
+      "compatible": true,
+      "capabilities": {
+        "supported": [
+          "alarm_motion"
+        ],
+        "unsupported": []
+      },
+      "clusters": {
+        "supported": [
+          "ssIasZone"
+        ],
+        "unsupported": []
+      },
+      "limitations": [],
+      "fallback": false
+    },
+    "fallbackBehavior": null,
+    "warnings": []
+  },
+  "firmwareMetadata": {
+    "detected": "TS0605",
+    "category": "official",
+    "confidence": "high",
+    "capabilities": [
+      "alarm_motion"
+    ],
+    "clusters": [
+      "ssIasZone"
+    ],
+    "fallback": false,
+    "unknown": false
+  }
 }

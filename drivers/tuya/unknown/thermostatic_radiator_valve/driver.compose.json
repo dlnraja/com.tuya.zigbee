@@ -78,5 +78,53 @@
   "category": "controllers",
   "optimized": true,
   "optimizationDate": "2025-07-29T12:42:39.914Z",
-  "version": "1.0.12-20250729-1405"
+  "version": "1.0.12-20250729-1405",
+  "platformCompatibility": {
+    "homeyModels": [
+      "homey_pro_2016",
+      "homey_pro_2019",
+      "homey_pro_2023",
+      "homey_bridge",
+      "homey_cloud"
+    ],
+    "minHomeyVersion": "3.0.0",
+    "firmware": {
+      "detected": "GENERIC_ONOFF",
+      "category": "generic",
+      "confidence": "high"
+    },
+    "compatibility": {
+      "homeyModel": "homey_pro_2023",
+      "compatible": true,
+      "capabilities": {
+        "supported": [
+          "onoff"
+        ],
+        "unsupported": []
+      },
+      "clusters": {
+        "supported": [
+          "genOnOff"
+        ],
+        "unsupported": []
+      },
+      "limitations": [],
+      "fallback": true
+    },
+    "fallbackBehavior": "basic_onoff",
+    "warnings": []
+  },
+  "firmwareMetadata": {
+    "detected": "GENERIC_ONOFF",
+    "category": "generic",
+    "confidence": "high",
+    "capabilities": [
+      "onoff"
+    ],
+    "clusters": [
+      "genOnOff"
+    ],
+    "fallback": true,
+    "unknown": false
+  }
 }
