@@ -20,27 +20,27 @@ Système intelligent de gestion et réparation des drivers Homey Zigbee/Tuya ave
 - **Zigbee**: 26 drivers
 
 ### **Catégories Principales**
-- **assets**: 2 drivers
-- **automation**: 1 drivers
-- **climate**: 2 drivers
-- **controllers**: 14 drivers
-- **custom**: 1 drivers
-- **generic**: 8 drivers
+- **assets**: 0 drivers
+- **automation**: 2 drivers
+- **climate**: 3 drivers
+- **controllers**: 13 drivers
+- **custom**: 0 drivers
+- **generic**: 17 drivers
 - **legacy**: 0 drivers
-- **security**: 3 drivers
-- **sensors**: 7 drivers
-- **unknown**: 9 drivers
+- **security**: 1 drivers
+- **sensors**: 9 drivers
+- **unknown**: 2 drivers
 
 ### **Capabilities Populaires**
 - **onoff**: 21 drivers
 - **measure_temperature**: 9 drivers
-- **measure_humidity**: 5 drivers
 - **dim**: 5 drivers
+- **measure_humidity**: 5 drivers
 - **measure_power**: 4 drivers
 - **alarm_motion**: 4 drivers
 - **alarm_battery**: 3 drivers
-- **alarm_contact**: 2 drivers
 - **target_temperature**: 2 drivers
+- **alarm_contact**: 2 drivers
 - **light_temperature**: 2 drivers
 
 ## 🚀 **Installation**
@@ -126,5 +126,5 @@ MIT License - voir le fichier LICENSE pour plus de détails.
 
 ---
 
-**📅 Dernière mise à jour**: 2025-07-29T14:13:53.727Z
+**📅 Dernière mise à jour**: 2025-07-29T14:42:15.182Z
 **👨‍💻 Auteur**: dlnraja <dylan.rajasekaram+homey@gmail.com>

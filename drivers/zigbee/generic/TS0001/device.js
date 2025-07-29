@@ -9,6 +9,11 @@ class TS0001 extends Homey.Device {
     // Compatibilité: OK
     // Capabilities supportées: onoff
     // Limitations: 
+    // Compatibilité multi-firmware et multi-box Homey
+    // Firmware détecté: GENERIC_ONOFF (high)
+    // Compatibilité: OK
+    // Capabilities supportées: onoff
+    // Limitations: 
     async onUninit() {
         this.stopPolling();
         await super.onUninit();
@@ -33,6 +38,19 @@ class TS0001 extends Homey.Device {
     this.registerCapability('alarm_battery', 'genPowerCfg');
   }
 }
+
+
+    // Méthodes de fallback pour firmware inconnu
+    async onInit() {
+        await super.onInit();
+        this.log('Driver en mode fallback - compatibilité limitée');
+        this.setWarning('Firmware non reconnu - fonctionnalités limitées');
+    }
+    
+    async onSettings({ oldSettings, newSettings, changedKeys }) {
+        await super.onSettings({ oldSettings, newSettings, changedKeys });
+        this.log('Paramètres mis à jour en mode fallback');
+    }
 
 
     // Méthodes de fallback pour firmware inconnu

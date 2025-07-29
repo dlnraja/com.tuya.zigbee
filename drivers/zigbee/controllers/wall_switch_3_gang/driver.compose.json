@@ -120,7 +120,7 @@
   },
   "category": "controllers",
   "optimized": true,
-  "optimizationDate": "2025-07-29T12:42:40.195Z",
+  "optimizationDate": "2025-07-29T14:41:46.960Z",
   "version": "1.0.12-20250729-1405",
   "platformCompatibility": {
     "homeyModels": [
@@ -132,8 +132,8 @@
     ],
     "minHomeyVersion": "3.0.0",
     "firmware": {
-      "detected": "GENERIC_ONOFF",
-      "category": "generic",
+      "detected": "TS0602",
+      "category": "official",
       "confidence": "high"
     },
     "compatibility": {
@@ -141,33 +141,37 @@
       "compatible": true,
       "capabilities": {
         "supported": [
-          "onoff"
+          "onoff",
+          "measure_power"
         ],
         "unsupported": []
       },
       "clusters": {
         "supported": [
-          "genOnOff"
+          "genOnOff",
+          "genPowerCfg"
         ],
         "unsupported": []
       },
       "limitations": [],
-      "fallback": true
+      "fallback": false
     },
-    "fallbackBehavior": "basic_onoff",
+    "fallbackBehavior": null,
     "warnings": []
   },
   "firmwareMetadata": {
-    "detected": "GENERIC_ONOFF",
-    "category": "generic",
+    "detected": "TS0602",
+    "category": "official",
     "confidence": "high",
     "capabilities": [
-      "onoff"
+      "onoff",
+      "measure_power"
     ],
     "clusters": [
-      "genOnOff"
+      "genOnOff",
+      "genPowerCfg"
     ],
-    "fallback": true,
+    "fallback": false,
     "unknown": false
   },
   "clusters": [

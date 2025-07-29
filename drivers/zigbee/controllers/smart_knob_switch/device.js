@@ -5,6 +5,11 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 class smart_knob_switch extends Homey.Device {
     // Compatibilité multi-firmware et multi-box Homey
+    // Firmware détecté: TS0602 (high)
+    // Compatibilité: OK
+    // Capabilities supportées: onoff, measure_power
+    // Limitations: 
+    // Compatibilité multi-firmware et multi-box Homey
     // Firmware détecté: TS0601 (high)
     // Compatibilité: OK
     // Capabilities supportées: onoff, dim

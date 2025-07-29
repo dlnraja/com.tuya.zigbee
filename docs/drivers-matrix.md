@@ -26,16 +26,16 @@ Cette matrice présente tous les drivers disponibles dans le projet, organisés 
 
 | Catégorie | Drivers | Tuya | Zigbee |
 |-----------|---------|------|--------|
-| **assets** | 2 | 1 | 1 |
-| **automation** | 1 | 1 | 0 |
-| **climate** | 2 | 1 | 1 |
-| **controllers** | 14 | 7 | 7 |
-| **custom** | 1 | 0 | 1 |
-| **generic** | 8 | 0 | 8 |
+| **assets** | 0 | 0 | 0 |
+| **automation** | 2 | 2 | 0 |
+| **climate** | 3 | 2 | 1 |
+| **controllers** | 13 | 5 | 8 |
+| **custom** | 0 | 0 | 0 |
+| **generic** | 17 | 4 | 13 |
 | **legacy** | 0 | 0 | 0 |
-| **security** | 3 | 2 | 1 |
-| **sensors** | 7 | 4 | 3 |
-| **unknown** | 9 | 5 | 4 |
+| **security** | 1 | 1 | 0 |
+| **sensors** | 9 | 5 | 4 |
+| **unknown** | 2 | 2 | 0 |
 
 ## 🔧 **Capabilities Populaires**
 
@@ -43,19 +43,19 @@ Cette matrice présente tous les drivers disponibles dans le projet, organisés 
 |------------|--------------|---------|
 | **onoff** | 21 | 44.7% |
 | **measure_temperature** | 9 | 19.1% |
-| **measure_humidity** | 5 | 10.6% |
 | **dim** | 5 | 10.6% |
+| **measure_humidity** | 5 | 10.6% |
 | **measure_power** | 4 | 8.5% |
 | **alarm_motion** | 4 | 8.5% |
 | **alarm_battery** | 3 | 6.4% |
-| **alarm_contact** | 2 | 4.3% |
 | **target_temperature** | 2 | 4.3% |
+| **alarm_contact** | 2 | 4.3% |
 | **light_temperature** | 2 | 4.3% |
+| **thermostat_preset** | 1 | 2.1% |
+| **window_open** | 1 | 2.1% |
 | **measure_current** | 1 | 2.1% |
 | **measure_voltage** | 1 | 2.1% |
 | **measure_formaldehyde** | 1 | 2.1% |
-| **measure_voc** | 1 | 2.1% |
-| **measure_co2** | 1 | 2.1% |
 
 ## 🔗 **Clusters Zigbee**
 
@@ -74,54 +74,22 @@ Cette matrice présente tous les drivers disponibles dans le projet, organisés 
 
 ### **Tuya Drivers (21)**
 
-#### ASSETS (1 drivers)
+#### ASSETS (0 drivers)
+- Aucun driver dans cette catégorie
+
+#### AUTOMATION (2 drivers)
 - Liste des drivers...
 
-#### AUTOMATION (1 drivers)
+#### CLIMATE (2 drivers)
 - Liste des drivers...
 
-#### CLIMATE (1 drivers)
-- Liste des drivers...
-
-#### CONTROLLERS (7 drivers)
+#### CONTROLLERS (5 drivers)
 - Liste des drivers...
 
 #### CUSTOM (0 drivers)
 - Aucun driver dans cette catégorie
 
-#### GENERIC (0 drivers)
-- Aucun driver dans cette catégorie
-
-#### LEGACY (0 drivers)
-- Aucun driver dans cette catégorie
-
-#### SECURITY (2 drivers)
-- Liste des drivers...
-
-#### SENSORS (4 drivers)
-- Liste des drivers...
-
-#### UNKNOWN (5 drivers)
-- Liste des drivers...
-
-### **Zigbee Drivers (26)**
-
-#### ASSETS (1 drivers)
-- Liste des drivers...
-
-#### AUTOMATION (0 drivers)
-- Aucun driver dans cette catégorie
-
-#### CLIMATE (1 drivers)
-- Liste des drivers...
-
-#### CONTROLLERS (7 drivers)
-- Liste des drivers...
-
-#### CUSTOM (1 drivers)
-- Liste des drivers...
-
-#### GENERIC (8 drivers)
+#### GENERIC (4 drivers)
 - Liste des drivers...
 
 #### LEGACY (0 drivers)
@@ -130,11 +98,43 @@ Cette matrice présente tous les drivers disponibles dans le projet, organisés 
 #### SECURITY (1 drivers)
 - Liste des drivers...
 
-#### SENSORS (3 drivers)
+#### SENSORS (5 drivers)
 - Liste des drivers...
 
-#### UNKNOWN (4 drivers)
+#### UNKNOWN (2 drivers)
 - Liste des drivers...
+
+### **Zigbee Drivers (26)**
+
+#### ASSETS (0 drivers)
+- Aucun driver dans cette catégorie
+
+#### AUTOMATION (0 drivers)
+- Aucun driver dans cette catégorie
+
+#### CLIMATE (1 drivers)
+- Liste des drivers...
+
+#### CONTROLLERS (8 drivers)
+- Liste des drivers...
+
+#### CUSTOM (0 drivers)
+- Aucun driver dans cette catégorie
+
+#### GENERIC (13 drivers)
+- Liste des drivers...
+
+#### LEGACY (0 drivers)
+- Aucun driver dans cette catégorie
+
+#### SECURITY (0 drivers)
+- Aucun driver dans cette catégorie
+
+#### SENSORS (4 drivers)
+- Liste des drivers...
+
+#### UNKNOWN (0 drivers)
+- Aucun driver dans cette catégorie
 
 ## 🔍 **Recherche et Filtrage**
 
@@ -177,5 +177,5 @@ Cette matrice présente tous les drivers disponibles dans le projet, organisés 
 
 ---
 
-**📅 Généré automatiquement**: 2025-07-29T14:13:53.777Z
+**📅 Généré automatiquement**: 2025-07-29T14:42:15.233Z
 **👨‍💻 Auteur**: dlnraja <dylan.rajasekaram+homey@gmail.com>

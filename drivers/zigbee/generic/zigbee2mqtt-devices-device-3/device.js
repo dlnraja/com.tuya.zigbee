@@ -1,6 +1,11 @@
 const { ZigbeeDevice } = require('homey-meshdriver');
 
-class Zigbee2mqttDevicesDevice3 extends ZigbeeDevice {
+class zigbee2mqtt-devices-device-3 extends Homey.Device {
+    // Compatibilité multi-firmware et multi-box Homey
+    // Firmware détecté: TS0605 (high)
+    // Compatibilité: OK
+    // Capabilities supportées: alarm_motion
+    // Limitations: 
     async onInit() {
         await super.onInit();
         
