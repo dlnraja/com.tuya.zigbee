@@ -1,0 +1,12 @@
+{
+  "id": "homey-apps-device-1",
+  "title": "Homey Apps-device-1 Device",
+  "category": "controllers",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
+  }
+}
