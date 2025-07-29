@@ -568,12 +568,13 @@ function runMegaPipeline() {
 
 // Exécution si appelé directement
 if (require.main === module) {
-    runMegaPipeline().then(results => {
+    try {
+        const results = runMegaPipeline();
         log('✅ Pipeline terminée avec succès', 'SUCCESS');
-    }).catch(error => {
+    } catch (error) {
         log(`❌ Pipeline échouée: ${error.message}`, 'ERROR');
         process.exit(1);
-    });
+    }
 }
 
 module.exports = { runMegaPipeline }; 
