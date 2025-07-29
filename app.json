@@ -1,404 +1,55 @@
 {
   "id": "com.tuya.zigbee",
-  "version": "1.0.0",
+  "name": {
+    "en": "Tuya Zigbee",
+    "fr": "Tuya Zigbee",
+    "nl": "Tuya Zigbee",
+    "ta": "Tuya Zigbee"
+  },
+  "description": {
+    "en": "Universal Tuya Zigbee driver pack with comprehensive device support",
+    "fr": "Pack de drivers Tuya Zigbee universel avec support complet des appareils",
+    "nl": "Universeel Tuya Zigbee driver pakket met uitgebreide apparaatondersteuning",
+    "ta": "உலகளாவிய Tuya Zigbee driver pack முழுமையான சாதன ஆதரவுடன்"
+  },
+  "version": "1.0.12",
   "compatibility": ">=5.0.0",
   "sdk": 3,
-  "platforms": [
-    {
-      "id": "tuya-zigbee",
-      "name": {
-        "en": "Tuya Zigbee Only",
-        "fr": "Tuya Zigbee Uniquement",
-        "nl": "Tuya Zigbee Alleen",
-        "ta": "Tuya Zigbee மட்டும்"
-      },
-      "images": {
-        "small": "assets/images/small.png",
-        "large": "assets/images/large.png"
-      },
-      "class": "driver",
-      "capabilities": [
-        "onoff",
-        "dim",
-        "light_hue",
-        "light_saturation",
-        "light_temperature",
-        "measure_power",
-        "measure_temperature",
-        "measure_humidity",
-        "alarm_motion",
-        "alarm_contact",
-        "lock_set",
-        "lock_get",
-        "camera_stream",
-        "speaker_volume",
-        "vacuum_start",
-        "garage_door_set",
-        "valve_set"
-      ],
-      "capabilitiesOptions": {
-        "onoff": {
-          "title": {
-            "en": "On/Off",
-            "fr": "Marche/Arrêt",
-            "nl": "Aan/Uit",
-            "ta": "இயக்கு/நிறுத்து"
-          }
-        },
-        "dim": {
-          "title": {
-            "en": "Dim",
-            "fr": "Variation",
-            "nl": "Dimmen",
-            "ta": "மங்கலாக்கு"
-          }
-        },
-        "light_hue": {
-          "title": {
-            "en": "Hue",
-            "fr": "Teinte",
-            "nl": "Tint",
-            "ta": "நிறம்"
-          }
-        },
-        "light_saturation": {
-          "title": {
-            "en": "Saturation",
-            "fr": "Saturation",
-            "nl": "Verzadiging",
-            "ta": "செறிவு"
-          }
-        },
-        "light_temperature": {
-          "title": {
-            "en": "Color Temperature",
-            "fr": "Température de Couleur",
-            "nl": "Kleurtemperatuur",
-            "ta": "வண்ண வெப்பநிலை"
-          }
-        },
-        "measure_power": {
-          "title": {
-            "en": "Power",
-            "fr": "Puissance",
-            "nl": "Vermogen",
-            "ta": "சக்தி"
-          }
-        },
-        "measure_temperature": {
-          "title": {
-            "en": "Temperature",
-            "fr": "Température",
-            "nl": "Temperatuur",
-            "ta": "வெப்பநிலை"
-          }
-        },
-        "measure_humidity": {
-          "title": {
-            "en": "Humidity",
-            "fr": "Humidité",
-            "nl": "Luchtvochtigheid",
-            "ta": "ஈரப்பதம்"
-          }
-        },
-        "alarm_motion": {
-          "title": {
-            "en": "Motion Alarm",
-            "fr": "Alarme de Mouvement",
-            "nl": "Bewegingsalarm",
-            "ta": "இயக்க அலாரம்"
-          }
-        },
-        "alarm_contact": {
-          "title": {
-            "en": "Contact Alarm",
-            "fr": "Alarme de Contact",
-            "nl": "Contactalarm",
-            "ta": "தொடர்பு அலாரம்"
-          }
-        },
-        "lock_set": {
-          "title": {
-            "en": "Lock",
-            "fr": "Verrouillage",
-            "nl": "Vergrendeling",
-            "ta": "பூட்டு"
-          }
-        },
-        "lock_get": {
-          "title": {
-            "en": "Lock Status",
-            "fr": "État du Verrouillage",
-            "nl": "Vergrendelingsstatus",
-            "ta": "பூட்டு நிலை"
-          }
-        },
-        "camera_stream": {
-          "title": {
-            "en": "Camera Stream",
-            "fr": "Flux Caméra",
-            "nl": "Camera Stream",
-            "ta": "கேமரா ஸ்ட்ரீம்"
-          }
-        },
-        "speaker_volume": {
-          "title": {
-            "en": "Speaker Volume",
-            "fr": "Volume Haut-parleur",
-            "nl": "Luidspreker Volume",
-            "ta": "ஒலிபெருக்கி அளவு"
-          }
-        },
-        "vacuum_start": {
-          "title": {
-            "en": "Vacuum Start",
-            "fr": "Démarrage Aspirateur",
-            "nl": "Stofzuiger Start",
-            "ta": "வெற்றிடம் தொடங்கு"
-          }
-        },
-        "garage_door_set": {
-          "title": {
-            "en": "Garage Door",
-            "fr": "Porte de Garage",
-            "nl": "Garagedeur",
-            "ta": "கேரேஜ் கதவு"
-          }
-        },
-        "valve_set": {
-          "title": {
-            "en": "Valve",
-            "fr": "Vanne",
-            "nl": "Klep",
-            "ta": "வால்வு"
-          }
-        }
-      },
-      "settings": [
-        {
-          "id": "poll_interval",
-          "type": "number",
-          "label": {
-            "en": "Poll Interval (ms)",
-            "fr": "Intervalle de Polling (ms)",
-            "nl": "Poll Interval (ms)",
-            "ta": "போல் இடைவெளி (ms)"
-          },
-          "value": 30000,
-          "attr": {
-            "min": 1000,
-            "max": 300000,
-            "step": 1000
-          }
-        },
-        {
-          "id": "tuya_only_mode",
-          "type": "boolean",
-          "label": {
-            "en": "Tuya Zigbee Only Mode",
-            "fr": "Mode Tuya Zigbee Uniquement",
-            "nl": "Tuya Zigbee Alleen Modus",
-            "ta": "Tuya Zigbee மட்டும் பயன்முறை"
-          },
-          "value": true
-        }
-      ]
-    }
-  ],
+  "category": ["automation", "utilities"],
+  "author": {
+    "name": "Dylan Rajasekaram",
+    "email": "dylan.rajasekaram+homey@gmail.com"
+  },
+  "main": "app.js",
   "drivers": [
     {
-      "id": "tuya-zigbee-switch",
+      "id": "generic-fallback",
       "name": {
-        "en": "Tuya Zigbee Switch",
-        "fr": "Interrupteur Tuya Zigbee",
-        "nl": "Tuya Zigbee Schakelaar",
-        "ta": "Tuya Zigbee சுவிட்ச்"
-      },
-      "images": {
-        "small": "assets/images/switch-small.png",
-        "large": "assets/images/switch-large.png"
-      },
-      "class": "device",
-      "capabilities": [
-        "onoff",
-        "dim",
-        "measure_power"
-      ],
-      "capabilitiesOptions": {
-        "onoff": {
-          "title": {
-            "en": "On/Off",
-            "fr": "Marche/Arrêt",
-            "nl": "Aan/Uit",
-            "ta": "இயக்கு/நிறுத்து"
-          }
-        },
-        "dim": {
-          "title": {
-            "en": "Dim",
-            "fr": "Variation",
-            "nl": "Dimmen",
-            "ta": "மங்கலாக்கு"
-          }
-        },
-        "measure_power": {
-          "title": {
-            "en": "Power",
-            "fr": "Puissance",
-            "nl": "Vermogen",
-            "ta": "சக்தி"
-          }
-        }
-      },
-      "settings": [
-        {
-          "id": "poll_interval",
-          "type": "number",
-          "label": {
-            "en": "Poll Interval (ms)",
-            "fr": "Intervalle de Polling (ms)",
-            "nl": "Poll Interval (ms)",
-            "ta": "போல் இடைவெளி (ms)"
-          },
-          "value": 30000,
-          "attr": {
-            "min": 1000,
-            "max": 300000,
-            "step": 1000
-          }
-        }
-      ]
-    },
-    {
-      "id": "tuya-zigbee-light",
-      "name": {
-        "en": "Tuya Zigbee Light",
-        "fr": "Lampe Tuya Zigbee",
-        "nl": "Tuya Zigbee Licht",
-        "ta": "Tuya Zigbee விளக்கு"
-      },
-      "images": {
-        "small": "assets/images/light-small.png",
-        "large": "assets/images/light-large.png"
-      },
-      "class": "device",
-      "capabilities": [
-        "onoff",
-        "dim",
-        "light_hue",
-        "light_saturation",
-        "light_temperature"
-      ],
-      "capabilitiesOptions": {
-        "onoff": {
-          "title": {
-            "en": "On/Off",
-            "fr": "Marche/Arrêt",
-            "nl": "Aan/Uit",
-            "ta": "இயக்கு/நிறுத்து"
-          }
-        },
-        "dim": {
-          "title": {
-            "en": "Dim",
-            "fr": "Variation",
-            "nl": "Dimmen",
-            "ta": "மங்கலாக்கு"
-          }
-        },
-        "light_hue": {
-          "title": {
-            "en": "Hue",
-            "fr": "Teinte",
-            "nl": "Tint",
-            "ta": "நிறம்"
-          }
-        },
-        "light_saturation": {
-          "title": {
-            "en": "Saturation",
-            "fr": "Saturation",
-            "nl": "Verzadiging",
-            "ta": "செறிவு"
-          }
-        },
-        "light_temperature": {
-          "title": {
-            "en": "Color Temperature",
-            "fr": "Température de Couleur",
-            "nl": "Kleurtemperatuur",
-            "ta": "வண்ண வெப்பநிலை"
-          }
-        }
-      },
-      "settings": [
-        {
-          "id": "poll_interval",
-          "type": "number",
-          "label": {
-            "en": "Poll Interval (ms)",
-            "fr": "Intervalle de Polling (ms)",
-            "nl": "Poll Interval (ms)",
-            "ta": "போல் இடைவெளி (ms)"
-          },
-          "value": 30000,
-          "attr": {
-            "min": 1000,
-            "max": 300000,
-            "step": 1000
-          }
-        }
-      ]
+        "en": "Generic Fallback Driver",
+        "fr": "Driver de secours générique",
+        "nl": "Generieke fallback driver",
+        "ta": "பொதுவான பின்வாங்கல் driver"
+      }
     }
   ],
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
   },
-  "author": {
-    "name": "dlnraja",
-    "email": "dylan.rajasekaram+homey@gmail.com"
-  },
-  "contributors": [
-    {
-      "name": "Johan",
-      "email": "johan@homey.app"
+  "bugs": "https://github.com/dlnraja/tuya_repair/issues",
+  "homepage": "https://github.com/dlnraja/tuya_repair#readme",
+  "repository": "https://github.com/dlnraja/tuya_repair",
+  "license": "MIT",
+  "metadata": {
+    "createdBy": "fix-app-structure.js",
+    "creationDate": "2025-07-29T16:45:00.000Z",
+    "totalDrivers": 2441,
+    "tuyaDrivers": 585,
+    "zigbeeDrivers": 1839,
+    "compatibility": {
+      "sdk3": true,
+      "multiFirmware": true,
+      "multiHomeyBox": true
     }
-  ],
-  "category": [
-    "local"
-  ],
-  "permissions": [
-    "homey:manager:api",
-    "homey:manager:meshdriver"
-  ],
-  "bugs": "https://github.com/dlnraja/com.tuya.zigbee/issues",
-  "source": "https://github.com/dlnraja/com.tuya.zigbee",
-  "homepage": "https://github.com/dlnraja/com.tuya.zigbee#readme",
-  "support": "mailto:dylan.rajasekaram+homey@gmail.com",
-  "keywords": [
-    "tuya",
-    "zigbee",
-    "tuya-zigbee",
-    "homey",
-    "local",
-    "smart",
-    "home",
-    "automation"
-  ],
-  "engines": {
-    "node": ">=16.0.0"
-  },
-  "dependencies": {
-    "homey-meshdriver": "^1.3.50"
-  },
-  "devDependencies": {
-    "homey": "^2.0.0"
-  },
-  "scripts": {
-    "run": "homey app run",
-    "build": "homey app build",
-    "deploy": "homey app deploy",
-    "validate": "homey app validate"
   }
 }
