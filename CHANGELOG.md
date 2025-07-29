@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.6] - 2025-07-29 05:50:00
+
+### Changed
+- 🔄 **Structure README modifiée**: Langues séparées par section au lieu d'être sur la même ligne
+  - ✅ **README principal**: Version anglaise uniquement avec structure claire
+  - ✅ **Versions séparées**: translations/en/README.md et translations/fr/README.md créées
+  - ✅ **Organisation améliorée**: Une langue complète par section
+  - ✅ **Lisibilité optimisée**: Plus de confusion entre les langues
+  - ✅ **Structure modulaire**: Chaque langue dans son propre fichier
+
+### Added
+- 📁 **Versions multi-langues séparées**
+  - ✅ **Version anglaise**: translations/en/README.md complète
+  - ✅ **Version française**: translations/fr/README.md complète
+  - ✅ **Structure de dossiers**: Organisation claire par langue
+  - ✅ **Traduction par bloc**: Chaque langue complète et autonome
+
+### Fixed
+- 🐛 **Confusion linguistique**: Séparation claire des langues
+- 🐛 **Lisibilité**: Structure plus claire et compréhensible
+- 🐛 **Organisation**: Meilleure gestion des traductions
+
 ## [1.0.5] - 2025-07-29 05:45:00
 
 ### Added

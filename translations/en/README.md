@@ -9,13 +9,7 @@
 
 ## 📋 Description
 
-**English**: Complete Homey application for controlling Tuya and pure Zigbee devices in local mode. This application offers clear separation between protocols and maximum compatibility with all devices.
-
-**Français**: Application Homey complète pour contrôler vos appareils Tuya et Zigbee pur en mode local. Cette application offre une séparation claire entre les protocoles et une compatibilité maximale avec tous les appareils.
-
-**Nederlands**: Complete Homey-applicatie voor het besturen van Tuya en pure Zigbee-apparaten in lokale modus. Deze applicatie biedt duidelijke scheiding tussen protocollen en maximale compatibiliteit met alle apparaten.
-
-**தமிழ்**: உள்ளூர் பயன்முறையில் Tuya மற்றும் தூய Zigbee சாதனங்களை கட்டுப்படுத்த Homey முழுமையான பயன்பாடு. இந்த பயன்பாடு நெறிமுறைகளுக்கு இடையே தெளிவான பிரிப்பு மற்றும் அனைத்து சாதனங்களுடனும் அதிகபட்ச பொருந்தக்கூடிய தன்மையை வழங்குகிறது.
+Complete Homey application for controlling Tuya and pure Zigbee devices in local mode. This application offers clear separation between protocols and maximum compatibility with all devices.
 
 ---
 
