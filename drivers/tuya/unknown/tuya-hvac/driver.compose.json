@@ -1,0 +1,44 @@
+{
+  "id": "tuya-hvac",
+  "name": {
+    "en": " $args[0].Value.ToUpper() uya  $args[0].Value.ToUpper() vac",
+    "fr": " $args[0].Value.ToUpper() uya  $args[0].Value.ToUpper() vac",
+    "nl": " $args[0].Value.ToUpper() uya  $args[0].Value.ToUpper() vac",
+    "ta": " $args[0].Value.ToUpper() uya  $args[0].Value.ToUpper() vac"
+  },
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature"
+  ],
+  "class": "light",
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genOnOff",
+          "genLevelCtrl",
+          "genBasic"
+        ],
+        "bindings": [
+          "genOnOff",
+          "genLevelCtrl"
+        ]
+      }
+    },
+    "productId": [
+      ""
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
+  },
+  "title": "tuya-hvac Device",
+  "category": "controllers",
+  "optimized": true,
+  "optimizationDate": "2025-07-29T12:42:39.927Z",
+  "version": "1.0.12-20250729-1405"
+}

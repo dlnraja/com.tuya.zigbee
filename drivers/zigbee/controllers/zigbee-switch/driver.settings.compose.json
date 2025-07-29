@@ -1,42 +1,5 @@
-{
-  "settings": [
-    {
-      "id": "poll_interval",
-      "type": "number",
-      "label": {
-        "en": "Poll Interval (ms)",
-        "fr": "Intervalle de Polling (ms)",
-        "nl": "Poll Interval (ms)",
-        "ta": "போல் இடைவெளி (ms)"
-      },
-      "value": 30000,
-      "attr": {
-        "min": 1000,
-        "max": 300000,
-        "step": 1000
-      }
-    },
-    {
-      "id": "debug_mode",
-      "type": "boolean",
-      "label": {
-        "en": "Debug Mode",
-        "fr": "Mode Debug",
-        "nl": "Debug Modus",
-        "ta": "டீபக் பயன்முறை"
-      },
-      "value": false
-    },
-    {
-      "id": "auto_polling",
-      "type": "boolean",
-      "label": {
-        "en": "Auto Polling",
-        "fr": "Polling Automatique",
-        "nl": "Auto Polling",
-        "ta": "தானியங்கி போலிங்"
-      },
-      "value": true
-    }
-  ]
+﻿{
+  "id": "zigbee-switch_settings",
+  "title": "zigbee-switch Settings",
+  "category": "settings"
 }

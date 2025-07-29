@@ -1,29 +1,55 @@
-{
-  "name": "com.tuya.zigbee",
-  "version": "1.0.6-20250729-0550",
-  "description": "Complete Homey application for controlling Tuya and pure Zigbee devices in local mode",
-  "main": "app.js",
+﻿{
+  "name": "tuya-repair",
+  "version": "1.0.12",
+  "description": "Système intelligent de gestion et réparation des drivers Homey Zigbee/Tuya avec pipeline automatisé",
+  "main": "scripts/pipeline-complete.js",
   "scripts": {
-    "build": "echo 'Build completed'",
-    "test": "echo 'Tests completed'",
+    "start": "node scripts/pipeline-complete.js",
+    "pipeline": "node scripts/pipeline-complete.js complete",
+    "verify": "node scripts/pipeline-complete.js verify",
+    "fetch": "node scripts/pipeline-complete.js fetch",
+    "enrich": "node scripts/pipeline-complete.js enrich",
+    "fusion": "node scripts/pipeline-complete.js fusion",
+    "cleanup": "node scripts/pipeline-complete.js cleanup",
+    "monitor": "node scripts/pipeline-complete.js monitor",
+    "health": "node scripts/pipeline-complete.js health",
+    "verify-drivers": "node scripts/verify-all-drivers.js",
+    "fetch-devices": "node scripts/fetch-new-devices.js",
+    "ai-enrich": "node scripts/ai-enrich-drivers.js",
+    "fusion-drivers": "node scripts/fusion-intelligent-drivers.js",
+    "build": "npm run pipeline",
+    "test": "npm run verify",
     "lint": "echo 'Linting completed'",
-    "validate": "echo 'Validation completed'",
-    "deploy": "echo 'Deployment completed'",
-    "dev": "echo 'Development mode'"
+    "validate": "npm run verify",
+    "deploy": "npm run pipeline && git add . && git commit -m 'Auto-deploy: Pipeline execution' && git push",
+    "dev": "npm run monitor"
   },
   "keywords": [
     "homey",
     "tuya",
     "zigbee",
-    "smart-home",
-    "local-control"
+    "drivers",
+    "automation",
+    "pipeline",
+    "ai",
+    "fusion"
   ],
-  "author": "dlnraja",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "homey-tuya": "^1.0.0"
-  },
-  "devDependencies": {
+    "homey-tuya": "^1.0.0",
     "homey": "^2.0.0"
-  }
-} 
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dlnraja/tuya_repair.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dlnraja/tuya_repair/issues"
+  },
+  "homepage": "https://github.com/dlnraja/tuya_repair#readme"
+}

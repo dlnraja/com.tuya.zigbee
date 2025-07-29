@@ -1,0 +1,43 @@
+{
+  "id": "unknown-motion",
+  "name": {
+    "en": " $args[0].Value.ToUpper() nknown  $args[0].Value.ToUpper() otion",
+    "fr": " $args[0].Value.ToUpper() nknown  $args[0].Value.ToUpper() otion",
+    "nl": " $args[0].Value.ToUpper() nknown  $args[0].Value.ToUpper() otion",
+    "ta": " $args[0].Value.ToUpper() nknown  $args[0].Value.ToUpper() otion"
+  },
+  "capabilities": [
+    "alarm_motion"
+  ],
+  "class": "light",
+  "zigbee": {
+    "manufacturerName": [
+      "Generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genOnOff",
+          "genLevelCtrl",
+          "genBasic"
+        ],
+        "bindings": [
+          "genOnOff",
+          "genLevelCtrl"
+        ]
+      }
+    },
+    "productId": [
+      ""
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
+  },
+  "title": "unknown-motion Device",
+  "category": "controllers",
+  "optimized": true,
+  "optimizationDate": "2025-07-29T12:42:40.192Z",
+  "version": "1.0.12-20250729-1405"
+}

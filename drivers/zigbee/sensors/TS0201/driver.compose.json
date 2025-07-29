@@ -1,0 +1,20 @@
+{
+  "id": "TS0201",
+  "name": {
+    "en": "Temperature Sensor",
+    "fr": "Capteur Température"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature"
+  ],
+  "title": "TS0201 Device",
+  "category": "controllers",
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
+  },
+  "optimized": true,
+  "optimizationDate": "2025-07-29T12:42:40.124Z",
+  "version": "1.0.12-20250729-1405"
+}

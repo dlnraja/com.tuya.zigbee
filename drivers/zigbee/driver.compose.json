@@ -1,0 +1,36 @@
+{
+    "id":  "zigbee",
+    "name":  {
+                 "en":  "zigbee Device",
+                 "fr":  "Appareil zigbee",
+                 "nl":  "zigbee Apparaat",
+                 "ta":  "zigbee Device"
+             },
+    "capabilities":  [
+                         "onoff"
+                     ],
+    "class":  "light",
+    "zigbee":  {
+                   "manufacturerName":  [
+                                            "Generic"
+                                        ],
+                   "endpoints":  {
+                                     "1":  {
+                                               "clusters":  [
+                                                                "genOnOff",
+                                                                "genBasic"
+                                                            ],
+                                               "bindings":  [
+                                                                "genOnOff"
+                                                            ]
+                                           }
+                                 },
+                   "productId":  [
+                                     ""
+                                 ]
+               },
+    "images":  {
+                   "small":  "assets/images/small.png",
+                   "large":  "assets/images/large.png"
+               }
+}
