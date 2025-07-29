@@ -5,12 +5,12 @@
   "sdk": 3,
   "platforms": [
     {
-      "id": "zigbee",
+      "id": "tuya-zigbee",
       "name": {
-        "en": "Tuya Zigbee",
-        "fr": "Tuya Zigbee",
-        "nl": "Tuya Zigbee",
-        "ta": "Tuya Zigbee"
+        "en": "Tuya Zigbee Only",
+        "fr": "Tuya Zigbee Uniquement",
+        "nl": "Tuya Zigbee Alleen",
+        "ta": "Tuya Zigbee மட்டும்"
       },
       "images": {
         "small": "assets/images/small.png",
@@ -190,18 +190,29 @@
             "max": 300000,
             "step": 1000
           }
+        },
+        {
+          "id": "tuya_only_mode",
+          "type": "boolean",
+          "label": {
+            "en": "Tuya Zigbee Only Mode",
+            "fr": "Mode Tuya Zigbee Uniquement",
+            "nl": "Tuya Zigbee Alleen Modus",
+            "ta": "Tuya Zigbee மட்டும் பயன்முறை"
+          },
+          "value": true
         }
       ]
     }
   ],
   "drivers": [
     {
-      "id": "zigbee-switch",
+      "id": "tuya-zigbee-switch",
       "name": {
-        "en": "Zigbee Switch",
-        "fr": "Interrupteur Zigbee",
-        "nl": "Zigbee Schakelaar",
-        "ta": "Zigbee சுவிட்ச்"
+        "en": "Tuya Zigbee Switch",
+        "fr": "Interrupteur Tuya Zigbee",
+        "nl": "Tuya Zigbee Schakelaar",
+        "ta": "Tuya Zigbee சுவிட்ச்"
       },
       "images": {
         "small": "assets/images/switch-small.png",
@@ -259,12 +270,12 @@
       ]
     },
     {
-      "id": "zigbee-light",
+      "id": "tuya-zigbee-light",
       "name": {
-        "en": "Zigbee Light",
-        "fr": "Lampe Zigbee",
-        "nl": "Zigbee Licht",
-        "ta": "Zigbee விளக்கு"
+        "en": "Tuya Zigbee Light",
+        "fr": "Lampe Tuya Zigbee",
+        "nl": "Tuya Zigbee Licht",
+        "ta": "Tuya Zigbee விளக்கு"
       },
       "images": {
         "small": "assets/images/light-small.png",
@@ -368,6 +379,7 @@
   "keywords": [
     "tuya",
     "zigbee",
+    "tuya-zigbee",
     "homey",
     "local",
     "smart",
