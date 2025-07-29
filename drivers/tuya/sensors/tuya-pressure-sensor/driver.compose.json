@@ -1,0 +1,45 @@
+{
+  "id": "tuya-pressure-sensor",
+  "name": {
+    "en": "Tuya Pressure Sensor (Zigbee2MQTT)",
+    "fr": "Capteur de Pression Tuya (Zigbee2MQTT)",
+    "nl": "Tuya Druk Sensor (Zigbee2MQTT)",
+    "ta": "Tuya அழுத்தம் சென்சார் (Zigbee2MQTT)"
+  },
+  "images": {
+    "small": "assets/images/pressure-sensor-small.png",
+    "large": "assets/images/pressure-sensor-large.png"
+  },
+  "class": "device",
+  "capabilities": [
+    "measure_pressure"
+  ],
+  "capabilitiesOptions": {
+    "measure_pressure": {
+      "title": {
+        "en": "Pressure",
+        "fr": "Pression",
+        "nl": "Druk",
+        "ta": "அழுத்தம்"
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "poll_interval",
+      "type": "number",
+      "label": {
+        "en": "Poll Interval (ms) - Zigbee2MQTT",
+        "fr": "Intervalle de Polling (ms) - Zigbee2MQTT",
+        "nl": "Poll Interval (ms) - Zigbee2MQTT",
+        "ta": "போல் இடைவெளி (ms) - Zigbee2MQTT"
+      },
+      "value": 30000,
+      "attr": {
+        "min": 1000,
+        "max": 300000,
+        "step": 1000
+      }
+    }
+  ]
+}
