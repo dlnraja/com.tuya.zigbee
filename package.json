@@ -25,6 +25,8 @@
     "list-and-dump": "node scripts/list-and-dump-drivers.js",
     "scrape-community": "node scripts/scrape-homey-community.js",
     "resolve-todo": "node scripts/resolve-todo-devices.js",
+    "fetch-github": "node scripts/fetch-issues-pullrequests.js",
+    "generate-docs": "node scripts/generate-docs.js",
     "build": "npm run pipeline",
     "test": "npm run verify",
     "lint": "echo 'Linting completed'",
@@ -52,7 +54,12 @@
     "scraping",
     "community",
     "todo",
-    "resolution"
+    "resolution",
+    "github",
+    "issues",
+    "pull-requests",
+    "documentation",
+    "generation"
   ],
   "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
   "license": "MIT",
