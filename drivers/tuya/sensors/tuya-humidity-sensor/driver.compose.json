@@ -1,0 +1,54 @@
+{
+  "id": "tuya-humidity-sensor",
+  "name": {
+    "en": "Tuya Humidity Sensor",
+    "fr": "Capteur d'Humidité Tuya",
+    "nl": "Tuya Luchtvochtigheidssensor",
+    "ta": "Tuya ஈரப்பதம் சென்சார்"
+  },
+  "images": {
+    "small": "assets/images/humidity-sensor-small.png",
+    "large": "assets/images/humidity-sensor-large.png"
+  },
+  "class": "device",
+  "capabilities": [
+    "measure_humidity",
+    "measure_temperature"
+  ],
+  "capabilitiesOptions": {
+    "measure_humidity": {
+      "title": {
+        "en": "Humidity",
+        "fr": "Humidité",
+        "nl": "Luchtvochtigheid",
+        "ta": "ஈரப்பதம்"
+      }
+    },
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "poll_interval",
+      "type": "number",
+      "label": {
+        "en": "Poll Interval (ms)",
+        "fr": "Intervalle de Polling (ms)",
+        "nl": "Poll Interval (ms)",
+        "ta": "போல் இடைவெளி (ms)"
+      },
+      "value": 30000,
+      "attr": {
+        "min": 1000,
+        "max": 300000,
+        "step": 1000
+      }
+    }
+  ]
+}
