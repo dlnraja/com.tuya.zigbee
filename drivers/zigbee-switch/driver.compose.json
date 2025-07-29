@@ -1,22 +1,20 @@
 {
-  "id": "zigbee-light-johan",
+  "id": "zigbee-switch",
   "name": {
-    "en": "Zigbee Light Johan",
-    "fr": "Lampe Zigbee Johan",
-    "nl": "Zigbee Licht Johan",
-    "ta": "Zigbee விளக்கு Johan"
+    "en": "Zigbee Switch",
+    "fr": "Interrupteur Zigbee",
+    "nl": "Zigbee Schakelaar",
+    "ta": "Zigbee சுவிட்ச்"
   },
   "images": {
-    "small": "assets/images/light-small.png",
-    "large": "assets/images/light-large.png"
+    "small": "assets/images/switch-small.png",
+    "large": "assets/images/switch-large.png"
   },
   "class": "device",
   "capabilities": [
     "onoff",
     "dim",
-    "light_hue",
-    "light_saturation",
-    "light_temperature"
+    "measure_power"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -35,28 +33,12 @@
         "ta": "மங்கலாக்கு"
       }
     },
-    "light_hue": {
+    "measure_power": {
       "title": {
-        "en": "Hue",
-        "fr": "Teinte",
-        "nl": "Tint",
-        "ta": "நிறம்"
-      }
-    },
-    "light_saturation": {
-      "title": {
-        "en": "Saturation",
-        "fr": "Saturation",
-        "nl": "Verzadiging",
-        "ta": "செறிவு"
-      }
-    },
-    "light_temperature": {
-      "title": {
-        "en": "Color Temperature",
-        "fr": "Température de Couleur",
-        "nl": "Kleurtemperatuur",
-        "ta": "வண்ண வெப்பநிலை"
+        "en": "Power",
+        "fr": "Puissance",
+        "nl": "Vermogen",
+        "ta": "சக்தி"
       }
     }
   },
