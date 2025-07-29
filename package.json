@@ -23,6 +23,8 @@
     "recover-quick": "node scripts/recover-quick-historical.js",
     "dump-comprehensive": "node scripts/comprehensive-driver-dump.js",
     "list-and-dump": "node scripts/list-and-dump-drivers.js",
+    "scrape-community": "node scripts/scrape-homey-community.js",
+    "resolve-todo": "node scripts/resolve-todo-devices.js",
     "build": "npm run pipeline",
     "test": "npm run verify",
     "lint": "echo 'Linting completed'",
@@ -46,7 +48,11 @@
     "quick",
     "dump",
     "comprehensive",
-    "listing"
+    "listing",
+    "scraping",
+    "community",
+    "todo",
+    "resolution"
   ],
   "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
   "license": "MIT",

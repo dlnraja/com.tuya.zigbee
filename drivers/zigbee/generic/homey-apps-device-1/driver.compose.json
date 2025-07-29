@@ -1,0 +1,49 @@
+{
+  "id": "homey-apps-device-1",
+  "title": {
+    "en": "Homey Apps Device 1",
+    "fr": "Homey Apps Device 1",
+    "nl": "Homey Apps Device 1",
+    "ta": "Homey Apps Device 1"
+  },
+  "description": {
+    "en": "Auto-generated device from TODO list",
+    "fr": "Appareil auto-généré depuis la liste TODO",
+    "nl": "Auto-gegenereerd apparaat van TODO lijst",
+    "ta": "TODO பட்டியலில் இருந்து தானாக உருவாக்கப்பட்ட சாதனம்"
+  },
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Onoff",
+        "fr": "Onoff",
+        "nl": "Onoff",
+        "ta": "Onoff"
+      }
+    }
+  },
+  "images": {
+    "icon": "assets/images/icon.svg"
+  },
+  "category": "generic",
+  "protocol": "zigbee",
+  "source": "todo-resolution",
+  "resolutionDate": "2025-07-29T14:02:44.333Z",
+  "originalAnalysis": {
+    "name": "homey-apps-device-1",
+    "status": "analyzed",
+    "protocol": "zigbee",
+    "category": "generic",
+    "capabilities": [
+      "onoff"
+    ],
+    "clusters": [],
+    "issues": [],
+    "suggestions": [
+      "Définir les clusters Zigbee appropriés"
+    ]
+  }
+}
