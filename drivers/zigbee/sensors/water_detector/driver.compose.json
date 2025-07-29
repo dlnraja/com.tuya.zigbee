@@ -23,8 +23,7 @@
     ]
   },
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "icon": "assets/images/icon.svg"
   },
   "zigbee": {
     "manufacturerName": [
@@ -69,7 +68,12 @@
       }
     }
   },
-  "title": "water_detector Device",
+  "title": {
+    "en": "Water_detector",
+    "fr": "Water_detector",
+    "nl": "Water_detector",
+    "ta": "Water_detector"
+  },
   "category": "controllers",
   "optimized": true,
   "optimizationDate": "2025-07-29T12:42:40.129Z",
@@ -134,5 +138,53 @@
       "measure_temperature",
       "measure_humidity"
     ]
+  },
+  "description": {
+    "en": "Optimized water_detector driver",
+    "fr": "Driver water_detector optimisé",
+    "nl": "Geoptimaliseerde water_detector driver",
+    "ta": "ஒப்படைக்கப்பட்ட water_detector டிரைவர்"
+  },
+  "capabilitiesOptions": {
+    "alarm_contact": {
+      "title": {
+        "en": "Alarm Contact",
+        "fr": "Alarm Contact",
+        "nl": "Alarm Contact",
+        "ta": "Alarm Contact"
+      }
+    },
+    "alarm_water": {
+      "title": {
+        "en": "Alarm Water",
+        "fr": "Alarm Water",
+        "nl": "Alarm Water",
+        "ta": "Alarm Water"
+      }
+    },
+    "alarm_battery": {
+      "title": {
+        "en": "Alarm Battery",
+        "fr": "Alarm Battery",
+        "nl": "Alarm Battery",
+        "ta": "Alarm Battery"
+      }
+    },
+    "measure_temperature": {
+      "title": {
+        "en": "Measure Temperature",
+        "fr": "Measure Temperature",
+        "nl": "Measure Temperature",
+        "ta": "Measure Temperature"
+      }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Measure Humidity",
+        "fr": "Measure Humidity",
+        "nl": "Measure Humidity",
+        "ta": "Measure Humidity"
+      }
+    }
   }
 }
