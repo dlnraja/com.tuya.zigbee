@@ -1,0 +1,35 @@
+{
+  "id": "generic--TZ3000-ts0060",
+  "name": "Other Tuya Zigbee device",
+  "class": "other",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/icon-small.svg",
+    "large": "/assets/icon-large.svg"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "add": true
+      }
+    }
+  ],
+  "settings": [],
+  "flow": {
+    "actions": [],
+    "conditions": [],
+    "triggers": []
+  },
+  "supportedModels": [
+    "TS0060"
+  ],
+  "metadata": {
+    "created": "2025-07-30T16:12:14.885Z",
+    "source": "forum-request",
+    "user": "User_Forum_41"
+  }
+}

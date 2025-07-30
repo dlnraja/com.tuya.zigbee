@@ -46,6 +46,15 @@
     "large": "assets/images/large.png"
   },
   "metadata": {
+    "completion_date": "2025-07-30T15:48:14.978Z",
+    "completion_version": "1.0.12-20250729-1700",
+    "original_completeness": 83.33333333333334,
+    "enrichment": {
+      "source": "tuya_database_exact",
+      "confidence": 0.95,
+      "timestamp": "2025-07-30T16:09:20.412Z",
+      "deviceType": "generic"
+    },
     "supportedModels": {
       "firmwares": [
         "official",
@@ -69,16 +78,25 @@
         "homeyBox": 0.81
       },
       "metadata": {
-        "tested": "2025-07-30T15:15:25.895Z",
+        "tested": "2025-07-30T16:09:27.976Z",
         "totalTests": 12,
         "successfulTests": 12
       }
-    },
-    "enrichment": {
-      "source": "tuya_database_exact",
-      "confidence": 0.95,
-      "timestamp": "2025-07-30T15:15:23.651Z",
-      "deviceType": "generic"
     }
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "add": true
+      }
+    }
+  ],
+  "settings": [],
+  "flow": {
+    "actions": [],
+    "conditions": [],
+    "triggers": []
   }
 }

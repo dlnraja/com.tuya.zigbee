@@ -47,6 +47,9 @@
     "ta": "forum-homey-community-device-1"
   },
   "metadata": {
+    "completion_date": "2025-07-30T15:48:15.024Z",
+    "completion_version": "1.0.12-20250729-1700",
+    "original_completeness": 66.66666666666666,
     "supportedModels": {
       "firmwares": [
         "official",
@@ -70,10 +73,26 @@
         "homeyBox": 0.81
       },
       "metadata": {
-        "tested": "2025-07-30T15:15:24.599Z",
+        "tested": "2025-07-30T16:09:24.676Z",
         "totalTests": 12,
         "successfulTests": 12
       }
     }
+  },
+  "class": "light",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "add": true
+      }
+    }
+  ],
+  "settings": [],
+  "flow": {
+    "actions": [],
+    "conditions": [],
+    "triggers": []
   }
 }

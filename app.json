@@ -6,12 +6,7 @@
     "nl": "Tuya Zigbee",
     "ta": "Tuya Zigbee"
   },
-  "description": {
-    "en": "Universal Tuya Zigbee driver pack with comprehensive device support",
-    "fr": "Pack de drivers Tuya Zigbee universel avec support complet des appareils",
-    "nl": "Universeel Tuya Zigbee driver pakket met uitgebreide apparaatondersteuning",
-    "ta": "உலகளாவிய Tuya Zigbee driver pack முழுமையான சாதன ஆதரவுடன்"
-  },
+  "description": "Universal Tuya Zigbee Device Support",
   "version": "1.0.12",
   "compatibility": ">=5.0.0",
   "sdk": 3,
@@ -34,41 +29,37 @@
         "ta": "zigbee Device"
       },
       "path": "zigbee"
-    },
-    {
-      "id": "generic--tz3000-unknown001",
-      "name": "Generic _TZ3000_unknown001",
-      "category": "generic"
-    },
-    {
-      "id": "generic--tz3000-unknown002",
-      "name": "Generic _TZ3000_unknown002",
-      "category": "generic"
-    },
-    {
-      "id": "generic--tz3000-unknown003",
-      "name": "Generic _TZ3000_unknown003",
-      "category": "generic"
     }
   ],
   "images": {
     "small": "./assets/images/small.png",
     "large": "./assets/images/large.png"
   },
-  "bugs": "https://github.com/dlnraja/tuya_repair/issues",
-  "homepage": "https://github.com/dlnraja/tuya_repair#readme",
-  "repository": "https://github.com/dlnraja/tuya_repair",
+  "bugs": {
+    "url": "https://github.com/dlnraja/tuya-zigbee/issues"
+  },
+  "homepage": "https://github.com/dlnraja/tuya-zigbee",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dlnraja/tuya-zigbee.git"
+  },
   "license": "MIT",
-  "metadata": {
-    "createdBy": "fix-app-structure.js",
-    "creationDate": "2025-07-29T16:45:00.000Z",
-    "totalDrivers": 2441,
-    "tuyaDrivers": 585,
-    "zigbeeDrivers": 1839,
-    "compatibility": {
-      "sdk3": true,
-      "multiFirmware": true,
-      "multiHomeyBox": true
-    }
-  }
+  "permissions": [
+    "homey:app:com.tuya.zigbee",
+    "homey:manager:api",
+    "homey:manager:devices",
+    "homey:manager:drivers"
+  ],
+  "support": "mailto:dylan.rajasekaram+homey@gmail.com",
+  "api": {
+    "min": 3,
+    "max": 3
+  },
+  "platform": "local",
+  "flow": {
+    "actions": [],
+    "conditions": [],
+    "triggers": []
+  },
+  "devices": []
 }

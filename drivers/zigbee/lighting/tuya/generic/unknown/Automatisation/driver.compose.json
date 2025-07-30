@@ -1,28 +1,21 @@
-﻿{
-    "source":  "README-e8936adf",
-    "id":  "Automatisation",
-    "manufacturer":  "Historical Recovery",
-    "version":  "1.0.0",
-    "category":  "generic",
-    "description":  {
-                        "en":  "Driver for Automatisation",
-                        "fr":  "Driver pour Automatisation",
-                        "nl":  "Driver voor Automatisation",
-                        "ta":  "Driver for Automatisation"
-                    },
-    "author":  "dlnraja \u003cdylan.rajasekaram+homey@gmail.com\u003e",
-    "createdAt":  "2025-07-29T18:24:48.661Z",
-    "capabilities":  [
-                         "onoff"
-                     ],
-    "title":  {
-                  "en":  "Automatisation",
-                  "fr":  "Automatisation",
-                  "nl":  "Automatisation",
-                  "ta":  "Automatisation"
-              },
-    "protocol":  "tuya",
-    "clusters":  [
-                     "genBasic"
-                 ]
+{
+  "id": "driver.compose",
+  "name": "driver.compose",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/icon-small.svg",
+    "large": "/assets/icon-large.svg"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "add": true
+      }
+    }
+  ]
 }

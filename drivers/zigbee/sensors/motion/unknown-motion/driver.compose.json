@@ -96,12 +96,9 @@
     "ssIasZone"
   ],
   "metadata": {
-    "enriched": true,
-    "enrichmentDate": "2025-07-29T13:21:52.714Z",
-    "originalType": "motion",
-    "suggestedCapabilities": [
-      "alarm_motion"
-    ]
+    "completion_date": "2025-07-30T15:48:26.691Z",
+    "completion_version": "1.0.12-20250729-1700",
+    "original_completeness": 83.33333333333334
   },
   "description": {
     "en": "Optimized unknown-motion driver",
@@ -143,5 +140,20 @@
       "Samsung SmartThings"
     ],
     "fallback": "generic"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "add": true
+      }
+    }
+  ],
+  "settings": [],
+  "flow": {
+    "actions": [],
+    "conditions": [],
+    "triggers": []
   }
 }

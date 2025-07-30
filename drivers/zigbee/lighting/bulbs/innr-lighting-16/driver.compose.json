@@ -57,5 +57,31 @@
       "Samsung SmartThings"
     ],
     "fallback": "generic"
+  },
+  "name": "Innr Lighting 16",
+  "class": "light",
+  "images": {
+    "small": "/assets/icon-small.svg",
+    "large": "/assets/icon-large.svg"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "add": true
+      }
+    }
+  ],
+  "settings": [],
+  "flow": {
+    "actions": [],
+    "conditions": [],
+    "triggers": []
+  },
+  "metadata": {
+    "completion_date": "2025-07-30T15:48:21.998Z",
+    "completion_version": "1.0.12-20250729-1700",
+    "original_completeness": 33.33333333333333
   }
 }
