@@ -22,5 +22,26 @@
     "batteries": [
       "INTERNAL"
     ]
+  },
+  "name": "Images",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "add": true
+      }
+    }
+  ],
+  "settings": [],
+  "flow": {
+    "actions": [],
+    "conditions": [],
+    "triggers": []
+  },
+  "metadata": {
+    "completion_date": "2025-07-30T15:48:20.263Z",
+    "completion_version": "1.0.12-20250729-1700",
+    "original_completeness": 66.66666666666666
   }
 }

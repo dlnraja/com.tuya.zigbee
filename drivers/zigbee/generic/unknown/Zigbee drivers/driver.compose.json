@@ -1,28 +1,21 @@
-﻿{
-    "source":  "README-e112726a",
-    "id":  "Zigbee drivers",
-    "manufacturer":  "Historical Recovery",
-    "version":  "1.0.0",
-    "category":  "generic",
-    "description":  {
-                        "en":  "Driver for Zigbee drivers",
-                        "fr":  "Driver pour Zigbee drivers",
-                        "nl":  "Driver voor Zigbee drivers",
-                        "ta":  "Driver for Zigbee drivers"
-                    },
-    "author":  "dlnraja \u003cdylan.rajasekaram+homey@gmail.com\u003e",
-    "createdAt":  "2025-07-29T18:24:47.601Z",
-    "capabilities":  [
-                         "onoff"
-                     ],
-    "title":  {
-                  "en":  "Zigbee drivers",
-                  "fr":  "Zigbee drivers",
-                  "nl":  "Zigbee drivers",
-                  "ta":  "Zigbee drivers"
-              },
-    "protocol":  "zigbee",
-    "clusters":  [
-                     "genBasic"
-                 ]
+{
+  "id": "driver.compose",
+  "name": "driver.compose",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/icon-small.svg",
+    "large": "/assets/icon-large.svg"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "add": true
+      }
+    }
+  ]
 }

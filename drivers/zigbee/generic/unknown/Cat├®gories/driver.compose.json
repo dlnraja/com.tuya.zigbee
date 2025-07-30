@@ -1,28 +1,21 @@
-﻿{
-    "source":  "README-c736301a",
-    "id":  "Cat├®gories",
-    "manufacturer":  "Historical Recovery",
-    "version":  "1.0.0",
-    "category":  "generic",
-    "description":  {
-                        "en":  "Driver for Cat├®gories",
-                        "fr":  "Driver pour Cat├®gories",
-                        "nl":  "Driver voor Cat├®gories",
-                        "ta":  "Driver for Cat├®gories"
-                    },
-    "author":  "dlnraja \u003cdylan.rajasekaram+homey@gmail.com\u003e",
-    "createdAt":  "2025-07-29T18:24:46.951Z",
-    "capabilities":  [
-                         "onoff"
-                     ],
-    "title":  {
-                  "en":  "Cat├®gories",
-                  "fr":  "Cat├®gories",
-                  "nl":  "Cat├®gories",
-                  "ta":  "Cat├®gories"
-              },
-    "protocol":  "zigbee",
-    "clusters":  [
-                     "genBasic"
-                 ]
+{
+  "id": "driver.compose",
+  "name": "driver.compose",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/icon-small.svg",
+    "large": "/assets/icon-large.svg"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "add": true
+      }
+    }
+  ]
 }

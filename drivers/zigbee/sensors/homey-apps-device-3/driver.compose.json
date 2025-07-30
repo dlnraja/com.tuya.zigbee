@@ -8,5 +8,27 @@
   "images": {
     "small": "assets/images/small.png",
     "large": "assets/images/large.png"
+  },
+  "name": "Homey Apps Device 3",
+  "class": "light",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "add": true
+      }
+    }
+  ],
+  "settings": [],
+  "flow": {
+    "actions": [],
+    "conditions": [],
+    "triggers": []
+  },
+  "metadata": {
+    "completion_date": "2025-07-30T15:48:16.680Z",
+    "completion_version": "1.0.12-20250729-1700",
+    "original_completeness": 50
   }
 }

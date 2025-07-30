@@ -274,6 +274,28 @@ function resolveTodoDevices() {
     }
 }
 
+// 8.5. Correction automatique des erreurs du forum
+function crawlForumErrorsAndFixDrivers() {
+    log('🔧 === CORRECTION ERREURS FORUM ===', 'INFO');
+    
+    try {
+        const { crawlForumErrorsAndFixDrivers: crawlForumErrors } = require('./scripts/crawlForumErrorsAndFixDrivers');
+        const results = crawlForumErrors();
+        
+        if (results && results.successfulCorrections !== undefined) {
+            log('✅ Correction erreurs forum terminée', 'SUCCESS');
+            return { corrected: true, correctionsApplied: results.successfulCorrections || 0 };
+        } else {
+            log('❌ Échec correction erreurs forum', 'ERROR');
+            return { corrected: false, correctionsApplied: 0 };
+        }
+        
+    } catch (error) {
+        log(`❌ Erreur correction erreurs forum: ${error.message}`, 'ERROR');
+        return { corrected: false, correctionsApplied: 0 };
+    }
+}
+
 // 9. Tests compatibilité
 function testMultiFirmwareCompatibility() {
     log('🧪 === TESTS COMPATIBILITÉ ===', 'INFO');
@@ -393,6 +415,9 @@ function runMegaPipeline() {
         
         // 8. Résolution TODO
         results.steps.todo = runStep('Résolution TODO Devices', resolveTodoDevices);
+        
+        // 8.5. Correction erreurs forum
+        results.steps.forumErrors = runStep('Correction Erreurs Forum', crawlForumErrorsAndFixDrivers);
         
         // 9. Tests compatibilité
         results.steps.compatibility = runStep('Tests Compatibilité', testMultiFirmwareCompatibility);

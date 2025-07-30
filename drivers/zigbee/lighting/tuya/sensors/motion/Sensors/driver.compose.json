@@ -1,28 +1,21 @@
-﻿{
-    "source":  "README-e8936adf",
-    "id":  "Sensors",
-    "manufacturer":  "Historical Recovery",
-    "version":  "1.0.0",
-    "category":  "sensors",
-    "description":  {
-                        "en":  "Driver for Sensors",
-                        "fr":  "Driver pour Sensors",
-                        "nl":  "Driver voor Sensors",
-                        "ta":  "Driver for Sensors"
-                    },
-    "author":  "dlnraja \u003cdylan.rajasekaram+homey@gmail.com\u003e",
-    "createdAt":  "2025-07-29T18:24:48.029Z",
-    "capabilities":  [
-                         "onoff"
-                     ],
-    "title":  {
-                  "en":  "Sensors",
-                  "fr":  "Sensors",
-                  "nl":  "Sensors",
-                  "ta":  "Sensors"
-              },
-    "protocol":  "tuya",
-    "clusters":  [
-                     "genBasic"
-                 ]
+{
+  "id": "driver.compose",
+  "name": "driver.compose",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/icon-small.svg",
+    "large": "/assets/icon-large.svg"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "add": true
+      }
+    }
+  ]
 }

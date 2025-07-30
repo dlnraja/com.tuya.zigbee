@@ -141,13 +141,9 @@
     "hvacThermostat"
   ],
   "metadata": {
-    "enriched": true,
-    "enrichmentDate": "2025-07-29T13:21:52.647Z",
-    "originalType": "thermostat",
-    "suggestedCapabilities": [
-      "measure_temperature",
-      "target_temperature"
-    ]
+    "completion_date": "2025-07-30T15:48:29.729Z",
+    "completion_version": "1.0.12-20250729-1700",
+    "original_completeness": 83.33333333333334
   },
   "description": {
     "en": "Optimized thermostatic_radiator_valve driver",
@@ -179,5 +175,20 @@
     "cloud": false,
     "minVersion": "5.0.0",
     "maxVersion": "6.0.0"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "add": true
+      }
+    }
+  ],
+  "settings": [],
+  "flow": {
+    "actions": [],
+    "conditions": [],
+    "triggers": []
   }
 }

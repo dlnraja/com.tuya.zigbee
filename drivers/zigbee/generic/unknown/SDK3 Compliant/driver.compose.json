@@ -1,28 +1,21 @@
-﻿{
-    "source":  "README-e112726a",
-    "id":  "SDK3 Compliant",
-    "manufacturer":  "Historical Recovery",
-    "version":  "1.0.0",
-    "category":  "generic",
-    "description":  {
-                        "en":  "Driver for SDK3 Compliant",
-                        "fr":  "Driver pour SDK3 Compliant",
-                        "nl":  "Driver voor SDK3 Compliant",
-                        "ta":  "Driver for SDK3 Compliant"
-                    },
-    "author":  "dlnraja \u003cdylan.rajasekaram+homey@gmail.com\u003e",
-    "createdAt":  "2025-07-29T18:24:47.101Z",
-    "capabilities":  [
-                         "onoff"
-                     ],
-    "title":  {
-                  "en":  "SDK3 Compliant",
-                  "fr":  "SDK3 Compliant",
-                  "nl":  "SDK3 Compliant",
-                  "ta":  "SDK3 Compliant"
-              },
-    "protocol":  "zigbee",
-    "clusters":  [
-                     "genBasic"
-                 ]
+{
+  "id": "driver.compose",
+  "name": "driver.compose",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/icon-small.svg",
+    "large": "/assets/icon-large.svg"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "add": true
+      }
+    }
+  ]
 }

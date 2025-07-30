@@ -1,47 +1,25 @@
-﻿{
-  "name": "tuya-repair",
+{
+  "name": "com.tuya.zigbee",
   "version": "1.0.12",
-  "description": "Système intelligent de gestion et réparation des drivers Homey Zigbee/Tuya avec pipeline automatisé",
-  "main": "scripts/pipeline-complete.js",
+  "description": "Universal Tuya Zigbee Device Support for Homey",
+  "main": "app.js",
   "scripts": {
-    "start": "node scripts/pipeline-complete.js",
-    "pipeline": "node scripts/pipeline-complete.js complete",
-    "verify": "node scripts/pipeline-complete.js verify",
-    "fetch": "node scripts/pipeline-complete.js fetch",
-    "enrich": "node scripts/pipeline-complete.js enrich",
-    "fusion": "node scripts/pipeline-complete.js fusion",
-    "compatibility": "node scripts/pipeline-complete.js compatibility",
-    "cleanup": "node scripts/pipeline-complete.js cleanup",
-    "monitor": "node scripts/pipeline-complete.js monitor",
-    "health": "node scripts/pipeline-complete.js health",
-    "verify-drivers": "node scripts/verify-all-drivers.js",
-    "fetch-devices": "node scripts/fetch-new-devices.js",
-    "ai-enrich": "node scripts/ai-enrich-drivers.js",
-    "fusion-drivers": "node scripts/fusion-intelligent-drivers.js",
-    "compatibility-firmware": "node scripts/compatibility-multi-firmware.js",
-    "recover-historical": "node scripts/recover-all-historical-drivers.js",
-    "recover-quick": "node scripts/recover-quick-historical.js",
-    "dump-comprehensive": "node scripts/comprehensive-driver-dump.js",
-    "list-and-dump": "node scripts/list-and-dump-drivers.js",
+    "start": "node app.js",
+    "mega-pipeline": "node mega-pipeline.js",
+    "verify": "node scripts/verify-all-drivers.js",
+    "fetch": "node scripts/fetch-new-devices.js",
+    "enrich": "node scripts/smart-enrich-drivers.js",
     "scrape-community": "node scripts/scrape-homey-community.js",
     "resolve-todo": "node scripts/resolve-todo-devices.js",
-    "fetch-github": "node scripts/fetch-issues-pullrequests.js",
     "generate-docs": "node scripts/generate-docs.js",
-    "optimize-drivers": "node scripts/optimize-reorganize-drivers.js",
-    "sync-tuya-light": "node scripts/sync-tuya-light.js",
-    "verify-releases": "node scripts/verify-releases-zip.js",
-    "massive-recovery": "node scripts/massive-driver-recovery.js",
-    "recover-zigbee-manufacturers": "node scripts/recover-all-zigbee-manufacturers.js",
-    "analyze-historical-readme": "node scripts/analyze-historical-readme.js",
-                    "mega-pipeline": "node mega-pipeline.js",
-                "fix-app-structure": "node scripts/fix-app-structure.js",
-                "validate-homey-cli": "node scripts/validate-homey-cli.js",
-    "build": "npm run pipeline",
+    "fix-app-structure": "node scripts/fix-app-structure.js",
+    "validate-homey-cli": "node scripts/validate-homey-cli.js",
+    "build": "npm run mega-pipeline",
     "test": "npm run verify",
     "lint": "echo 'Linting completed'",
     "validate": "npm run verify",
-    "deploy": "npm run pipeline && git add . && git commit -m 'Auto-deploy: Pipeline execution' && git push",
-    "dev": "npm run monitor"
+    "deploy": "npm run mega-pipeline && git add . && git commit -m 'Auto-deploy: Pipeline execution' && git push",
+    "dev": "npm run mega-pipeline"
   },
   "keywords": [
     "homey",
@@ -51,56 +29,43 @@
     "automation",
     "pipeline",
     "ai",
-    "fusion",
     "compatibility",
     "firmware",
     "recovery",
-    "historical",
-    "quick",
-    "dump",
-    "comprehensive",
-    "listing",
     "scraping",
     "community",
     "todo",
     "resolution",
     "github",
     "issues",
-    "pull-requests",
     "documentation",
     "generation",
-    "optimization",
-    "reorganization",
-    "synchronization",
-    "tuya-light",
-    "branch-sync",
-    "monthly-automation",
-    "releases",
-    "zip-files",
-    "verification",
-    "massive-recovery",
-    "driver-enrichment",
-    "zigbee-manufacturers",
-    "multi-fabricants",
-    "historical-readme",
-    "readme-analysis"
+    "optimization"
   ],
   "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dlnraja/tuya-zigbee.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dlnraja/tuya-zigbee/issues"
+  },
+  "homepage": "https://github.com/dlnraja/tuya-zigbee#readme",
   "dependencies": {
-    "homey-tuya": "^1.0.0",
     "homey": "^2.0.0"
   },
   "devDependencies": {},
   "engines": {
     "node": ">=14.0.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dlnraja/tuya_repair.git"
-  },
-  "bugs": {
-    "url": "https://github.com/dlnraja/tuya_repair/issues"
-  },
-  "homepage": "https://github.com/dlnraja/tuya_repair#readme"
+  "os": [
+    "linux",
+    "darwin",
+    "win32"
+  ],
+  "cpu": [
+    "x64",
+    "arm64"
+  ]
 }
