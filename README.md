@@ -11,14 +11,17 @@ Universal Tuya Zigbee driver pack with comprehensive device support for Homey. T
 
 ## 📊 Statistics
 
-- **Total Drivers**: 0
-- **Tuya Drivers**: 0
+- **Total Drivers**: 14
+- **Tuya Drivers**: 1
 - **Zigbee Drivers**: 0
-- **Categories**: 0
+- **Categories**: 4
 
 ### 📈 Driver Categories
 
-
+- **generic**: 4 drivers
+- **todo-devices**: 8 drivers
+- **tuya**: 1 drivers
+- **drivers**: 1 drivers
 
 ## 🚀 Features
 
@@ -183,4 +186,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Version**: 1.0.12-20250729-1650
 
-**Total Drivers**: 0 | **Tuya**: 0 | **Zigbee**: 0
+**Total Drivers**: 14 | **Tuya**: 1 | **Zigbee**: 0

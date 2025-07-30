@@ -33,41 +33,56 @@ function countDrivers() {
     log('📊 === COMPTAGE DES DRIVERS ===');
     
     try {
-        const driverPaths = execSync('Get-ChildItem -Path ".\\drivers" -Recurse -Include "driver.compose.json"', { shell: 'powershell' }).toString().split('\n').filter(line => line.trim());
-        
+        // Utiliser une approche plus robuste pour compter les drivers
+        const driversDir = './drivers';
         const stats = {
-            total: driverPaths.length,
+            total: 0,
             tuya: 0,
             zigbee: 0,
             byCategory: {}
         };
         
-        driverPaths.forEach(driverPath => {
-            if (driverPath.trim()) {
-                try {
-                    const composePath = driverPath.trim();
-                    const composeContent = fs.readFileSync(composePath, 'utf8');
-                    const compose = JSON.parse(composeContent);
-                    
-                    // Compter par type
-                    if (composePath.includes('\\tuya\\')) {
-                        stats.tuya++;
-                    } else if (composePath.includes('\\zigbee\\')) {
-                        stats.zigbee++;
+        // Fonction récursive pour scanner les drivers
+        function scanDrivers(dir) {
+            const items = fs.readdirSync(dir);
+            
+            for (const item of items) {
+                const fullPath = path.join(dir, item);
+                const stat = fs.statSync(fullPath);
+                
+                if (stat.isDirectory()) {
+                    // Vérifier si c'est un driver (contient driver.compose.json)
+                    const composePath = path.join(fullPath, 'driver.compose.json');
+                    if (fs.existsSync(composePath)) {
+                        stats.total++;
+                        
+                        // Compter par type - corriger la logique
+                        const normalizedPath = fullPath.replace(/\\/g, '/');
+                        if (normalizedPath.includes('/tuya/') || normalizedPath.includes('\\tuya\\')) {
+                            stats.tuya++;
+                        } else if (normalizedPath.includes('/zigbee/') || normalizedPath.includes('\\zigbee\\')) {
+                            stats.zigbee++;
+                        }
+                        
+                        // Compter par catégorie
+                        const pathParts = fullPath.split(path.sep);
+                        const category = pathParts[pathParts.length - 2] || 'unknown';
+                        if (!stats.byCategory[category]) {
+                            stats.byCategory[category] = 0;
+                        }
+                        stats.byCategory[category]++;
+                    } else {
+                        // Continuer à scanner les sous-dossiers
+                        scanDrivers(fullPath);
                     }
-                    
-                    // Compter par catégorie
-                    const category = path.dirname(composePath).split('\\').pop();
-                    if (!stats.byCategory[category]) {
-                        stats.byCategory[category] = 0;
-                    }
-                    stats.byCategory[category]++;
-                    
-                } catch (error) {
-                    log(`Erreur lecture driver ${driverPath}: ${error.message}`, 'ERROR');
                 }
             }
-        });
+        }
+        
+        // Démarrer le scan
+        if (fs.existsSync(driversDir)) {
+            scanDrivers(driversDir);
+        }
         
         log(`Total drivers: ${stats.total}`);
         log(`Tuya drivers: ${stats.tuya}`);

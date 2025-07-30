@@ -19,7 +19,10 @@
       "_TZ3000_wkr3jqmr",
       "_TZ3000_hdlpifbk",
       "_TZ3000_excgg5kb",
-      "_TZ3000_u3oupgdy"
+      "_TZ3000_u3oupgdy",
+      "_TZ3000_light_bulb",
+      "_TZ3000_sensor_temp",
+      "_TZ3000_motion_sensor"
     ],
     "modelId": [
       "TS0004"
@@ -62,7 +65,7 @@
         "homeyBox": 0.81
       },
       "metadata": {
-        "tested": "2025-07-30T14:59:55.837Z",
+        "tested": "2025-07-30T15:15:25.827Z",
         "totalTests": 12,
         "successfulTests": 12
       }
