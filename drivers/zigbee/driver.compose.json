@@ -9,9 +9,7 @@
   "capabilities": [
     "onoff",
     "measure_power",
-    "dim",
-    "measure_temperature",
-    "alarm_motion"
+    "meter_power"
   ],
   "class": "light",
   "zigbee": {
@@ -20,7 +18,10 @@
       "_TZ3000_wkr3jqmr",
       "_TZ3000_hdlpifbk",
       "_TZ3000_excgg5kb",
-      "_TZ3000_u3oupgdy"
+      "_TZ3000_u3oupgdy",
+      "_TZ3000_light_bulb",
+      "_TZ3000_sensor_temp",
+      "_TZ3000_motion_sensor"
     ],
     "endpoints": {
       "1": {
@@ -43,5 +44,41 @@
   "images": {
     "small": "assets/images/small.png",
     "large": "assets/images/large.png"
+  },
+  "metadata": {
+    "supportedModels": {
+      "firmwares": [
+        "official",
+        "alternative",
+        "ota_partial",
+        "generic",
+        "undocumented",
+        "unstable",
+        "fragmented"
+      ],
+      "homeyBoxes": [
+        "homey_pro_2016",
+        "homey_pro_2019",
+        "homey_pro_2023",
+        "homey_bridge",
+        "homey_cloud"
+      ],
+      "confidence": {
+        "average": 0.65,
+        "firmware": 0.54,
+        "homeyBox": 0.81
+      },
+      "metadata": {
+        "tested": "2025-07-30T14:59:55.884Z",
+        "totalTests": 12,
+        "successfulTests": 12
+      }
+    },
+    "enrichment": {
+      "source": "tuya_database_exact",
+      "confidence": 0.95,
+      "timestamp": "2025-07-30T14:59:54.390Z",
+      "deviceType": "generic"
+    }
   }
 }

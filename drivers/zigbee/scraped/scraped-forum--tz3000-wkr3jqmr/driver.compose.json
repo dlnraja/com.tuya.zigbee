@@ -1,0 +1,57 @@
+{
+  "id": "scraped-forum--tz3000-wkr3jqmr",
+  "class": "light",
+  "name": {
+    "en": "Scraped _TZ3000_wkr3jqmr Device",
+    "fr": "Appareil scrapé _TZ3000_wkr3jqmr",
+    "nl": "Gescraped _TZ3000_wkr3jqmr apparaat",
+    "ta": "Scraped _TZ3000_wkr3jqmr சாதனம்"
+  },
+  "capabilities": [
+    "onoff",
+    "measure_power"
+  ],
+  "capabilitiesOptions": {},
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_wkr3jqmr"
+    ],
+    "modelId": [
+      "TS0004"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genBasic",
+          "genIdentify",
+          "genOnOff"
+        ],
+        "bindings": [
+          "genOnOff"
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
+  },
+  "settings": [],
+  "metadata": {
+    "createdFromScraping": true,
+    "source": "forum",
+    "scrapingDate": "2025-07-30T14:59:54.424Z",
+    "originalInfo": {
+      "source": "forum",
+      "postId": 26439,
+      "manufacturerName": "_TZ3000_wkr3jqmr",
+      "modelId": "TS0004",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "issue": "Device with manufacturerName '_TZ3000_wkr3jqmr' and modelId 'TS0004' shows as 'unknown zigbee device'",
+      "date": "2025-07-29"
+    }
+  }
+}

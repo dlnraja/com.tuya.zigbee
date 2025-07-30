@@ -1,0 +1,53 @@
+{
+  "id": "generic--tz3000-unknown001",
+  "class": "switch",
+  "name": {
+    "en": "Generic _TZ3000_unknown001 Device",
+    "fr": "Appareil générique _TZ3000_unknown001",
+    "nl": "Generiek _TZ3000_unknown001 apparaat",
+    "ta": "பொதுவான _TZ3000_unknown001 சாதனம்"
+  },
+  "description": {
+    "en": "Generic driver for _TZ3000_unknown001 device",
+    "fr": "Driver générique pour l'appareil _TZ3000_unknown001",
+    "nl": "Generieke driver voor _TZ3000_unknown001 apparaat",
+    "ta": "_TZ3000_unknown001 சாதனத்திற்கான பொதுவான driver"
+  },
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_unknown001"
+    ],
+    "modelId": [
+      "TS0004"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": {
+          "input": [
+            "genBasic",
+            "genIdentify",
+            "genOnOff"
+          ],
+          "output": [
+            "genOnOff"
+          ]
+        }
+      }
+    }
+  },
+  "images": {
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
+  },
+  "settings": [],
+  "metadata": {
+    "source": "homey_community",
+    "issue": "unknown_zigbee_device",
+    "created": "2025-07-30T14:59:54.569Z",
+    "fallback": true
+  }
+}

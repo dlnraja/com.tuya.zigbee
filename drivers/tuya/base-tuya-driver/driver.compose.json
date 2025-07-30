@@ -1,0 +1,71 @@
+{
+  "id": "base-tuya-driver",
+  "name": {
+    "en": "Base Tuya Driver",
+    "fr": "Driver Tuya de base",
+    "nl": "Basis Tuya Driver",
+    "ta": "அடிப்படை Tuya Driver"
+  },
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "dim",
+    "measure_temperature",
+    "alarm_motion"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_generic",
+      "_TZ3000_wkr3jqmr",
+      "_TZ3000_hdlpifbk",
+      "_TZ3000_excgg5kb",
+      "_TZ3000_u3oupgdy"
+    ],
+    "modelId": [
+      "TS0004"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": {
+          "input": [
+            "genOnOff"
+          ],
+          "output": []
+        }
+      }
+    }
+  },
+  "metadata": {
+    "createdBy": "fix-driver-scanning.js",
+    "creationDate": "2025-07-30T05:02:56.111Z",
+    "fallback": true,
+    "supportedModels": {
+      "firmwares": [
+        "official",
+        "alternative",
+        "ota_partial",
+        "generic",
+        "undocumented",
+        "unstable",
+        "fragmented"
+      ],
+      "homeyBoxes": [
+        "homey_pro_2016",
+        "homey_pro_2019",
+        "homey_pro_2023",
+        "homey_bridge",
+        "homey_cloud"
+      ],
+      "confidence": {
+        "average": 0.65,
+        "firmware": 0.54,
+        "homeyBox": 0.81
+      },
+      "metadata": {
+        "tested": "2025-07-30T14:59:55.837Z",
+        "totalTests": 12,
+        "successfulTests": 12
+      }
+    }
+  }
+}
