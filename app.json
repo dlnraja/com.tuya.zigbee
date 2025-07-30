@@ -26,91 +26,6 @@
   "main": "app.js",
   "drivers": [
     {
-      "id": "forum-homey-community-device-1",
-      "name": "forum-homey-community-device-1",
-      "category": "generic"
-    },
-    {
-      "id": "forum-homey-community-device-2",
-      "name": "forum-homey-community-device-2",
-      "category": "generic"
-    },
-    {
-      "id": "homey-apps-device-1",
-      "name": "homey-apps-device-1",
-      "category": "generic"
-    },
-    {
-      "id": "homey-apps-device-2",
-      "name": "homey-apps-device-2",
-      "category": "generic"
-    },
-    {
-      "id": "homey-apps-device-3",
-      "name": "homey-apps-device-3",
-      "category": "generic"
-    },
-    {
-      "id": "smart_air_detection_box",
-      "name": {
-        "en": "smart_air_detection_box Device",
-        "fr": "Appareil smart_air_detection_box",
-        "nl": "smart_air_detection_box Apparaat",
-        "ta": "smart_air_detection_box Device"
-      },
-      "category": "generic"
-    },
-    {
-      "id": "forum-homey-community-device-1",
-      "name": "forum-homey-community-device-1",
-      "category": "todo-devices"
-    },
-    {
-      "id": "forum-homey-community-device-2",
-      "name": "forum-homey-community-device-2",
-      "category": "todo-devices"
-    },
-    {
-      "id": "homey-apps-device-1",
-      "name": "homey-apps-device-1",
-      "category": "todo-devices"
-    },
-    {
-      "id": "homey-apps-device-2",
-      "name": "homey-apps-device-2",
-      "category": "todo-devices"
-    },
-    {
-      "id": "homey-apps-device-3",
-      "name": "homey-apps-device-3",
-      "category": "todo-devices"
-    },
-    {
-      "id": "zigbee2mqtt-devices-device-1",
-      "name": "zigbee2mqtt-devices-device-1",
-      "category": "todo-devices"
-    },
-    {
-      "id": "zigbee2mqtt-devices-device-2",
-      "name": "zigbee2mqtt-devices-device-2",
-      "category": "todo-devices"
-    },
-    {
-      "id": "zigbee2mqtt-devices-device-3",
-      "name": "zigbee2mqtt-devices-device-3",
-      "category": "todo-devices"
-    },
-    {
-      "id": "tuya",
-      "name": {
-        "en": "tuya Device",
-        "fr": "Appareil tuya",
-        "nl": "tuya Apparaat",
-        "ta": "tuya Device"
-      },
-      "category": "generic"
-    },
-    {
       "id": "zigbee",
       "name": {
         "en": "zigbee Device",
@@ -118,42 +33,22 @@
         "nl": "zigbee Apparaat",
         "ta": "zigbee Device"
       },
+      "path": "zigbee"
+    },
+    {
+      "id": "generic--tz3000-unknown001",
+      "name": "Generic _TZ3000_unknown001",
       "category": "generic"
     },
     {
-      "id": "zigbee2mqtt-devices-device-1",
-      "name": "zigbee2mqtt-devices-device-1",
+      "id": "generic--tz3000-unknown002",
+      "name": "Generic _TZ3000_unknown002",
       "category": "generic"
     },
     {
-      "id": "zigbee2mqtt-devices-device-2",
-      "name": "zigbee2mqtt-devices-device-2",
+      "id": "generic--tz3000-unknown003",
+      "name": "Generic _TZ3000_unknown003",
       "category": "generic"
-    },
-    {
-      "id": "zigbee2mqtt-devices-device-3",
-      "name": "zigbee2mqtt-devices-device-3",
-      "category": "generic"
-    },
-    {
-      "id": "generic--TZ3000-excgg5kb",
-      "name": "Generic _TZ3000_excgg5kb",
-      "category": "lighting"
-    },
-    {
-      "id": "generic--TZ3000-hdlpifbk",
-      "name": "Generic _TZ3000_hdlpifbk",
-      "category": "lighting"
-    },
-    {
-      "id": "generic--TZ3000-u3oupgdy",
-      "name": "Generic _TZ3000_u3oupgdy",
-      "category": "lighting"
-    },
-    {
-      "id": "generic--TZ3000-wkr3jqmr",
-      "name": "Generic _TZ3000_wkr3jqmr",
-      "category": "lighting"
     }
   ],
   "images": {

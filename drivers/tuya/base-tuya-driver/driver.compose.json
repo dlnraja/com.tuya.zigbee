@@ -1,27 +1,25 @@
 {
-  "id": "forum-homey-community-device-1",
-  "title": "forum-Homey Community-device-1 Device",
-  "category": "controllers",
+  "id": "base-tuya-driver",
+  "name": {
+    "en": "Base Tuya Driver",
+    "fr": "Driver Tuya de base",
+    "nl": "Basis Tuya Driver",
+    "ta": "அடிப்படை Tuya Driver"
+  },
   "capabilities": [
     "onoff",
-    "dim",
     "measure_power",
+    "dim",
     "measure_temperature",
     "alarm_motion"
   ],
-  "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
-  },
   "zigbee": {
     "manufacturerName": [
+      "_TZ3000_generic",
       "_TZ3000_wkr3jqmr",
       "_TZ3000_hdlpifbk",
       "_TZ3000_excgg5kb",
-      "_TZ3000_u3oupgdy",
-      "_TZ3000_light_bulb",
-      "_TZ3000_sensor_temp",
-      "_TZ3000_motion_sensor"
+      "_TZ3000_u3oupgdy"
     ],
     "modelId": [
       "TS0004"
@@ -30,23 +28,17 @@
       "1": {
         "clusters": {
           "input": [
-            "genBasic",
             "genOnOff"
           ],
-          "output": [
-            "genOnOff"
-          ]
+          "output": []
         }
       }
     }
   },
-  "name": {
-    "en": "forum-homey-community-device-1",
-    "fr": "forum-homey-community-device-1",
-    "nl": "forum-homey-community-device-1",
-    "ta": "forum-homey-community-device-1"
-  },
   "metadata": {
+    "createdBy": "fix-driver-scanning.js",
+    "creationDate": "2025-07-30T05:02:56.111Z",
+    "fallback": true,
     "supportedModels": {
       "firmwares": [
         "official",
@@ -70,7 +62,7 @@
         "homeyBox": 0.81
       },
       "metadata": {
-        "tested": "2025-07-30T14:59:54.949Z",
+        "tested": "2025-07-30T14:59:55.837Z",
         "totalTests": 12,
         "successfulTests": 12
       }
