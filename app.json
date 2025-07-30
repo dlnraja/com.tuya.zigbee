@@ -15,7 +15,10 @@
   "version": "1.0.12",
   "compatibility": ">=5.0.0",
   "sdk": 3,
-  "category": ["automation", "utilities"],
+  "category": [
+    "automation",
+    "utilities"
+  ],
   "author": {
     "name": "Dylan Rajasekaram",
     "email": "dylan.rajasekaram+homey@gmail.com"
@@ -23,13 +26,114 @@
   "main": "app.js",
   "drivers": [
     {
-      "id": "generic-fallback",
+      "id": "forum-homey-community-device-1",
+      "name": "forum-homey-community-device-1",
+      "category": "generic"
+    },
+    {
+      "id": "forum-homey-community-device-2",
+      "name": "forum-homey-community-device-2",
+      "category": "generic"
+    },
+    {
+      "id": "homey-apps-device-1",
+      "name": "homey-apps-device-1",
+      "category": "generic"
+    },
+    {
+      "id": "homey-apps-device-2",
+      "name": "homey-apps-device-2",
+      "category": "generic"
+    },
+    {
+      "id": "homey-apps-device-3",
+      "name": "homey-apps-device-3",
+      "category": "generic"
+    },
+    {
+      "id": "smart_air_detection_box",
       "name": {
-        "en": "Generic Fallback Driver",
-        "fr": "Driver de secours générique",
-        "nl": "Generieke fallback driver",
-        "ta": "பொதுவான பின்வாங்கல் driver"
-      }
+        "en": "smart_air_detection_box Device",
+        "fr": "Appareil smart_air_detection_box",
+        "nl": "smart_air_detection_box Apparaat",
+        "ta": "smart_air_detection_box Device"
+      },
+      "category": "generic"
+    },
+    {
+      "id": "forum-homey-community-device-1",
+      "name": "forum-homey-community-device-1",
+      "category": "todo-devices"
+    },
+    {
+      "id": "forum-homey-community-device-2",
+      "name": "forum-homey-community-device-2",
+      "category": "todo-devices"
+    },
+    {
+      "id": "homey-apps-device-1",
+      "name": "homey-apps-device-1",
+      "category": "todo-devices"
+    },
+    {
+      "id": "homey-apps-device-2",
+      "name": "homey-apps-device-2",
+      "category": "todo-devices"
+    },
+    {
+      "id": "homey-apps-device-3",
+      "name": "homey-apps-device-3",
+      "category": "todo-devices"
+    },
+    {
+      "id": "zigbee2mqtt-devices-device-1",
+      "name": "zigbee2mqtt-devices-device-1",
+      "category": "todo-devices"
+    },
+    {
+      "id": "zigbee2mqtt-devices-device-2",
+      "name": "zigbee2mqtt-devices-device-2",
+      "category": "todo-devices"
+    },
+    {
+      "id": "zigbee2mqtt-devices-device-3",
+      "name": "zigbee2mqtt-devices-device-3",
+      "category": "todo-devices"
+    },
+    {
+      "id": "tuya",
+      "name": {
+        "en": "tuya Device",
+        "fr": "Appareil tuya",
+        "nl": "tuya Apparaat",
+        "ta": "tuya Device"
+      },
+      "category": "generic"
+    },
+    {
+      "id": "zigbee",
+      "name": {
+        "en": "zigbee Device",
+        "fr": "Appareil zigbee",
+        "nl": "zigbee Apparaat",
+        "ta": "zigbee Device"
+      },
+      "category": "generic"
+    },
+    {
+      "id": "zigbee2mqtt-devices-device-1",
+      "name": "zigbee2mqtt-devices-device-1",
+      "category": "generic"
+    },
+    {
+      "id": "zigbee2mqtt-devices-device-2",
+      "name": "zigbee2mqtt-devices-device-2",
+      "category": "generic"
+    },
+    {
+      "id": "zigbee2mqtt-devices-device-3",
+      "name": "zigbee2mqtt-devices-device-3",
+      "category": "generic"
     }
   ],
   "images": {
