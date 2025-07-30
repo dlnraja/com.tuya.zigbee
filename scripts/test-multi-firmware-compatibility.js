@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
  * Script de test de compatibilité multi-firmware et multi-Homey box
- * Version: 1.0.12-20250729-1640
+ * Injecte supportedModels dans driver.compose.json
+ * Version: 1.0.12-20250729-1700
  */
 
 const fs = require('fs');
@@ -10,29 +11,26 @@ const { execSync } = require('child_process');
 
 // Configuration
 const CONFIG = {
-    version: '1.0.12-20250729-1640',
+    version: '1.0.12-20250729-1700',
     logFile: './logs/test-multi-firmware-compatibility.log',
-    compatibilityDataFile: './data/compatibility-test-results.json'
+    resultsFile: './data/test-multi-firmware-compatibility.json',
+    firmwares: [
+        'official',
+        'alternative',
+        'ota_partial',
+        'generic',
+        'undocumented',
+        'unstable',
+        'fragmented'
+    ],
+    homeyBoxes: [
+        'homey_pro_2016',
+        'homey_pro_2019',
+        'homey_pro_2023',
+        'homey_bridge',
+        'homey_cloud'
+    ]
 };
-
-// Configuration des firmwares et Homey boxes
-const FIRMWARE_TYPES = [
-    'official',
-    'alternative',
-    'ota_partial',
-    'generic',
-    'undocumented',
-    'unstable',
-    'fragmented'
-];
-
-const HOMEY_BOXES = [
-    'homey_pro_2016',
-    'homey_pro_2019',
-    'homey_pro_2023',
-    'homey_bridge',
-    'homey_cloud'
-];
 
 // Fonction de logging
 function log(message, level = 'INFO') {
@@ -47,509 +45,438 @@ function log(message, level = 'INFO') {
     fs.appendFileSync(CONFIG.logFile, logMessage + '\n');
 }
 
-// Fonction pour analyser les capacités des drivers
-function analyzeDriverCapabilities() {
-    log('🔍 === ANALYSE DES CAPACITÉS DES DRIVERS ===');
+// Fonction pour scanner tous les drivers
+function scanAllDrivers() {
+    log('🔍 === SCAN DE TOUS LES DRIVERS ===');
     
     try {
-        const driverPaths = execSync('Get-ChildItem -Path ".\\drivers" -Recurse -Include "driver.compose.json"', { shell: 'powershell' }).toString().split('\n').filter(line => line.trim());
+        const driversDir = './drivers';
+        if (!fs.existsSync(driversDir)) {
+            log('❌ Dossier drivers non trouvé', 'ERROR');
+            return [];
+        }
         
-        const capabilitiesAnalysis = {
-            totalDrivers: 0,
-            capabilitiesByDriver: {},
-            commonCapabilities: {},
-            rareCapabilities: {},
-            compatibilityIssues: []
-        };
+        const drivers = [];
         
-        driverPaths.forEach(driverPath => {
-            if (driverPath.trim()) {
-                try {
-                    const composePath = driverPath.trim();
-                    const composeContent = fs.readFileSync(composePath, 'utf8');
-                    const compose = JSON.parse(composeContent);
+        function scanDirectory(dir) {
+            const items = fs.readdirSync(dir, { withFileTypes: true });
+            
+            items.forEach(item => {
+                const itemPath = path.join(dir, item.name);
+                
+                if (item.isDirectory()) {
+                    const composeFile = path.join(itemPath, 'driver.compose.json');
                     
-                    capabilitiesAnalysis.totalDrivers++;
-                    
-                    const driverName = path.basename(path.dirname(composePath));
-                    const capabilities = compose.capabilities || [];
-                    
-                    capabilitiesAnalysis.capabilitiesByDriver[driverName] = {
-                        path: composePath,
-                        capabilities,
-                        zigbee: compose.zigbee || {},
-                        hasManufacturerName: !!(compose.zigbee?.manufacturerName?.length),
-                        hasModelId: !!(compose.zigbee?.modelId?.length)
-                    };
-                    
-                    // Analyser les capacités communes
-                    capabilities.forEach(cap => {
-                        if (!capabilitiesAnalysis.commonCapabilities[cap]) {
-                            capabilitiesAnalysis.commonCapabilities[cap] = 0;
+                    if (fs.existsSync(composeFile)) {
+                        try {
+                            const composeData = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
+                            drivers.push({
+                                path: itemPath,
+                                name: item.name,
+                                compose: composeData
+                            });
+                            
+                        } catch (error) {
+                            log(`⚠️ Erreur lecture ${composeFile}: ${error.message}`, 'WARN');
                         }
-                        capabilitiesAnalysis.commonCapabilities[cap]++;
-                    });
-                    
-                } catch (err) {
-                    capabilitiesAnalysis.compatibilityIssues.push({
-                        path: driverPath,
-                        issue: `JSON parse error: ${err.message}`
-                    });
-                }
-            }
-        });
-        
-        // Identifier les capacités rares (utilisées par moins de 5% des drivers)
-        const threshold = capabilitiesAnalysis.totalDrivers * 0.05;
-        Object.entries(capabilitiesAnalysis.commonCapabilities).forEach(([cap, count]) => {
-            if (count < threshold) {
-                capabilitiesAnalysis.rareCapabilities[cap] = count;
-            }
-        });
-        
-        log(`Drivers analysés: ${capabilitiesAnalysis.totalDrivers}`);
-        log(`Capacités communes: ${Object.keys(capabilitiesAnalysis.commonCapabilities).length}`);
-        log(`Capacités rares: ${Object.keys(capabilitiesAnalysis.rareCapabilities).length}`);
-        
-        return capabilitiesAnalysis;
-        
-    } catch (error) {
-        log(`Erreur analyse capacités: ${error.message}`, 'ERROR');
-        return null;
-    }
-}
-
-// Fonction pour tester la compatibilité multi-firmware
-function testMultiFirmwareCompatibility(capabilitiesAnalysis) {
-    log('🧪 === TEST COMPATIBILITÉ MULTI-FIRMWARE ===');
-    
-    try {
-        const firmwareResults = {
-            totalTests: 0,
-            passedTests: 0,
-            failedTests: 0,
-            resultsByFirmware: {},
-            recommendations: []
-        };
-        
-        FIRMWARE_TYPES.forEach(firmwareType => {
-            log(`Test compatibilité firmware: ${firmwareType}`);
-            
-            firmwareResults.resultsByFirmware[firmwareType] = {
-                tested: 0,
-                passed: 0,
-                failed: 0,
-                issues: []
-            };
-            
-            Object.entries(capabilitiesAnalysis.capabilitiesByDriver).forEach(([driverName, driver]) => {
-                firmwareResults.totalTests++;
-                firmwareResults.resultsByFirmware[firmwareType].tested++;
-                
-                // Simuler le test de compatibilité
-                const compatibilityScore = simulateFirmwareCompatibility(driver, firmwareType);
-                
-                if (compatibilityScore >= 0.8) {
-                    firmwareResults.passedTests++;
-                    firmwareResults.resultsByFirmware[firmwareType].passed++;
-                } else {
-                    firmwareResults.failedTests++;
-                    firmwareResults.resultsByFirmware[firmwareType].failed++;
-                    
-                    firmwareResults.resultsByFirmware[firmwareType].issues.push({
-                        driver: driverName,
-                        score: compatibilityScore,
-                        reason: getCompatibilityIssue(driver, firmwareType)
-                    });
-                }
-            });
-        });
-        
-        // Générer des recommandations
-        firmwareResults.recommendations = generateFirmwareRecommendations(firmwareResults);
-        
-        log(`Tests firmware terminés: ${firmwareResults.totalTests}`);
-        log(`Tests réussis: ${firmwareResults.passedTests}`);
-        log(`Tests échoués: ${firmwareResults.failedTests}`);
-        
-        return firmwareResults;
-        
-    } catch (error) {
-        log(`Erreur test firmware: ${error.message}`, 'ERROR');
-        return null;
-    }
-}
-
-// Fonction pour simuler la compatibilité firmware
-function simulateFirmwareCompatibility(driver, firmwareType) {
-    let score = 1.0;
-    
-    // Réduire le score selon le type de firmware
-    switch (firmwareType) {
-        case 'official':
-            score = 0.95; // Très compatible
-            break;
-        case 'alternative':
-            score = 0.85; // Compatible avec quelques ajustements
-            break;
-        case 'ota_partial':
-            score = 0.75; // Compatible partiellement
-            break;
-        case 'generic':
-            score = 0.65; // Compatible de base
-            break;
-        case 'undocumented':
-            score = 0.55; // Compatible avec limitations
-            break;
-        case 'unstable':
-            score = 0.45; // Compatible instable
-            break;
-        case 'fragmented':
-            score = 0.35; // Compatible fragmenté
-            break;
-    }
-    
-    // Ajuster selon les capacités
-    if (driver.capabilities.includes('light_hue') && firmwareType !== 'official') {
-        score -= 0.1; // Les capacités avancées sont moins compatibles
-    }
-    
-    if (driver.capabilities.includes('measure_power') && firmwareType === 'fragmented') {
-        score -= 0.2; // Mesures moins fiables sur firmware fragmenté
-    }
-    
-    // Ajuster selon la présence de manufacturerName
-    if (!driver.hasManufacturerName) {
-        score -= 0.15; // Moins compatible sans manufacturerName
-    }
-    
-    return Math.max(0, Math.min(1, score));
-}
-
-// Fonction pour obtenir le problème de compatibilité
-function getCompatibilityIssue(driver, firmwareType) {
-    const issues = [];
-    
-    if (!driver.hasManufacturerName) {
-        issues.push('Missing manufacturerName');
-    }
-    
-    if (driver.capabilities.includes('light_hue') && firmwareType !== 'official') {
-        issues.push('Advanced color capabilities may not work properly');
-    }
-    
-    if (driver.capabilities.includes('measure_power') && firmwareType === 'fragmented') {
-        issues.push('Power measurements may be unreliable');
-    }
-    
-    return issues.join(', ') || 'General compatibility issues';
-}
-
-// Fonction pour tester la compatibilité multi-Homey box
-function testMultiHomeyBoxCompatibility(capabilitiesAnalysis) {
-    log('🏠 === TEST COMPATIBILITÉ MULTI-HOMEY BOX ===');
-    
-    try {
-        const homeyResults = {
-            totalTests: 0,
-            passedTests: 0,
-            failedTests: 0,
-            resultsByBox: {},
-            recommendations: []
-        };
-        
-        HOMEY_BOXES.forEach(boxType => {
-            log(`Test compatibilité Homey box: ${boxType}`);
-            
-            homeyResults.resultsByBox[boxType] = {
-                tested: 0,
-                passed: 0,
-                failed: 0,
-                issues: []
-            };
-            
-            Object.entries(capabilitiesAnalysis.capabilitiesByDriver).forEach(([driverName, driver]) => {
-                homeyResults.totalTests++;
-                homeyResults.resultsByBox[boxType].tested++;
-                
-                // Simuler le test de compatibilité
-                const compatibilityScore = simulateHomeyBoxCompatibility(driver, boxType);
-                
-                if (compatibilityScore >= 0.8) {
-                    homeyResults.passedTests++;
-                    homeyResults.resultsByBox[boxType].passed++;
-                } else {
-                    homeyResults.failedTests++;
-                    homeyResults.resultsByBox[boxType].failed++;
-                    
-                    homeyResults.resultsByBox[boxType].issues.push({
-                        driver: driverName,
-                        score: compatibilityScore,
-                        reason: getHomeyBoxCompatibilityIssue(driver, boxType)
-                    });
-                }
-            });
-        });
-        
-        // Générer des recommandations
-        homeyResults.recommendations = generateHomeyBoxRecommendations(homeyResults);
-        
-        log(`Tests Homey box terminés: ${homeyResults.totalTests}`);
-        log(`Tests réussis: ${homeyResults.passedTests}`);
-        log(`Tests échoués: ${homeyResults.failedTests}`);
-        
-        return homeyResults;
-        
-    } catch (error) {
-        log(`Erreur test Homey box: ${error.message}`, 'ERROR');
-        return null;
-    }
-}
-
-// Fonction pour simuler la compatibilité Homey box
-function simulateHomeyBoxCompatibility(driver, boxType) {
-    let score = 1.0;
-    
-    // Réduire le score selon le type de Homey box
-    switch (boxType) {
-        case 'homey_pro_2023':
-            score = 0.98; // Très compatible
-            break;
-        case 'homey_pro_2019':
-            score = 0.95; // Compatible
-            break;
-        case 'homey_pro_2016':
-            score = 0.85; // Compatible avec limitations
-            break;
-        case 'homey_bridge':
-            score = 0.75; // Compatible partiellement
-            break;
-        case 'homey_cloud':
-            score = 0.65; // Compatible limité
-            break;
-    }
-    
-    // Ajuster selon les capacités
-    if (driver.capabilities.includes('light_hue') && boxType === 'homey_bridge') {
-        score -= 0.2; // Capacités avancées limitées sur Bridge
-    }
-    
-    if (driver.capabilities.includes('measure_power') && boxType === 'homey_cloud') {
-        score -= 0.15; // Mesures moins fiables sur Cloud
-    }
-    
-    // Ajuster selon la présence de manufacturerName
-    if (!driver.hasManufacturerName) {
-        score -= 0.1;
-    }
-    
-    return Math.max(0, Math.min(1, score));
-}
-
-// Fonction pour obtenir le problème de compatibilité Homey box
-function getHomeyBoxCompatibilityIssue(driver, boxType) {
-    const issues = [];
-    
-    if (!driver.hasManufacturerName) {
-        issues.push('Missing manufacturerName');
-    }
-    
-    if (driver.capabilities.includes('light_hue') && boxType === 'homey_bridge') {
-        issues.push('Advanced color capabilities limited on Bridge');
-    }
-    
-    if (driver.capabilities.includes('measure_power') && boxType === 'homey_cloud') {
-        issues.push('Power measurements may be unreliable on Cloud');
-    }
-    
-    return issues.join(', ') || 'General compatibility issues';
-}
-
-// Fonction pour générer les recommandations firmware
-function generateFirmwareRecommendations(firmwareResults) {
-    const recommendations = [];
-    
-    Object.entries(firmwareResults.resultsByFirmware).forEach(([firmwareType, results]) => {
-        if (results.failed > 0) {
-            recommendations.push({
-                type: 'firmware',
-                firmware: firmwareType,
-                issue: `${results.failed} drivers have compatibility issues`,
-                suggestion: `Add fallback drivers for ${firmwareType} firmware`
-            });
-        }
-    });
-    
-    return recommendations;
-}
-
-// Fonction pour générer les recommandations Homey box
-function generateHomeyBoxRecommendations(homeyResults) {
-    const recommendations = [];
-    
-    Object.entries(homeyResults.resultsByBox).forEach(([boxType, results]) => {
-        if (results.failed > 0) {
-            recommendations.push({
-                type: 'homey_box',
-                box: boxType,
-                issue: `${results.failed} drivers have compatibility issues`,
-                suggestion: `Add platform-specific drivers for ${boxType}`
-            });
-        }
-    });
-    
-    return recommendations;
-}
-
-// Fonction pour mettre à jour les drivers avec les informations de compatibilité
-function updateDriversWithCompatibilityInfo(firmwareResults, homeyResults) {
-    log('🔧 === MISE À JOUR DRIVERS AVEC INFOS COMPATIBILITÉ ===');
-    
-    try {
-        let updatedDrivers = 0;
-        
-        // Parcourir tous les drivers et ajouter les informations de compatibilité
-        const driverPaths = execSync('Get-ChildItem -Path ".\\drivers" -Recurse -Include "driver.compose.json"', { shell: 'powershell' }).toString().split('\n').filter(line => line.trim());
-        
-        driverPaths.forEach(driverPath => {
-            if (driverPath.trim()) {
-                try {
-                    const composePath = driverPath.trim();
-                    const composeContent = fs.readFileSync(composePath, 'utf8');
-                    const compose = JSON.parse(composeContent);
-                    
-                    // Ajouter les informations de compatibilité
-                    if (!compose.metadata) {
-                        compose.metadata = {};
+                    } else {
+                        // Continuer à scanner les sous-dossiers
+                        scanDirectory(itemPath);
                     }
-                    
-                    compose.metadata.platformCompatibility = {
-                        firmware: {},
-                        homeyBox: {}
-                    };
-                    
-                    // Ajouter les scores de compatibilité firmware
-                    FIRMWARE_TYPES.forEach(firmwareType => {
-                        const firmwareResults = firmwareResults.resultsByFirmware[firmwareType];
-                        if (firmwareResults) {
-                            const driverName = path.basename(path.dirname(composePath));
-                            const driverIssue = firmwareResults.issues.find(issue => issue.driver === driverName);
-                            
-                            compose.metadata.platformCompatibility.firmware[firmwareType] = {
-                                compatible: !driverIssue,
-                                score: driverIssue ? driverIssue.score : 0.95,
-                                issues: driverIssue ? [driverIssue.reason] : []
-                            };
-                        }
-                    });
-                    
-                    // Ajouter les scores de compatibilité Homey box
-                    HOMEY_BOXES.forEach(boxType => {
-                        const boxResults = homeyResults.resultsByBox[boxType];
-                        if (boxResults) {
-                            const driverName = path.basename(path.dirname(composePath));
-                            const driverIssue = boxResults.issues.find(issue => issue.driver === driverName);
-                            
-                            compose.metadata.platformCompatibility.homeyBox[boxType] = {
-                                compatible: !driverIssue,
-                                score: driverIssue ? driverIssue.score : 0.95,
-                                issues: driverIssue ? [driverIssue.reason] : []
-                            };
-                        }
-                    });
-                    
-                    // Sauvegarder le fichier mis à jour
-                    fs.writeFileSync(composePath, JSON.stringify(compose, null, 2));
-                    updatedDrivers++;
-                    
-                } catch (err) {
-                    log(`Erreur mise à jour driver ${driverPath}: ${err.message}`, 'ERROR');
                 }
-            }
-        });
+            });
+        }
         
-        log(`Drivers mis à jour avec compatibilité: ${updatedDrivers}`);
-        return updatedDrivers;
+        scanDirectory(driversDir);
+        log(`✅ ${drivers.length} drivers scannés`);
+        
+        return drivers;
         
     } catch (error) {
-        log(`Erreur mise à jour compatibilité: ${error.message}`, 'ERROR');
-        return 0;
+        log(`❌ Erreur scan drivers: ${error.message}`, 'ERROR');
+        return [];
+    }
+}
+
+// Fonction pour tester la compatibilité d'un driver avec un firmware
+function testFirmwareCompatibility(driver, firmware) {
+    log(`🧪 === TEST FIRMWARE: ${driver.name} - ${firmware} ===`);
+    
+    try {
+        const { compose } = driver;
+        const compatibility = {
+            firmware,
+            driver: driver.name,
+            capabilities: compose.capabilities || [],
+            manufacturerNames: compose.zigbee?.manufacturerName || [],
+            modelIds: compose.zigbee?.modelId || [],
+            supported: true,
+            issues: []
+        };
+        
+        // Tests spécifiques par firmware
+        switch (firmware) {
+            case 'official':
+                // Firmware officiel - compatibilité maximale
+                compatibility.confidence = 0.95;
+                break;
+                
+            case 'alternative':
+                // Firmware alternatif - compatibilité élevée
+                compatibility.confidence = 0.85;
+                if (!compose.zigbee?.manufacturerName?.length) {
+                    compatibility.issues.push('missing_manufacturer_name');
+                }
+                break;
+                
+            case 'ota_partial':
+                // Firmware OTA partiel - compatibilité moyenne
+                compatibility.confidence = 0.70;
+                if (!compose.zigbee?.modelId?.length) {
+                    compatibility.issues.push('missing_model_id');
+                }
+                break;
+                
+            case 'generic':
+                // Firmware générique - compatibilité limitée
+                compatibility.confidence = 0.60;
+                if (!compose.capabilities?.length) {
+                    compatibility.issues.push('missing_capabilities');
+                }
+                break;
+                
+            case 'undocumented':
+                // Firmware non documenté - compatibilité faible
+                compatibility.confidence = 0.40;
+                compatibility.issues.push('undocumented_firmware');
+                break;
+                
+            case 'unstable':
+                // Firmware instable - compatibilité très faible
+                compatibility.confidence = 0.20;
+                compatibility.issues.push('unstable_firmware');
+                break;
+                
+            case 'fragmented':
+                // Firmware fragmenté - compatibilité minimale
+                compatibility.confidence = 0.10;
+                compatibility.issues.push('fragmented_firmware');
+                break;
+        }
+        
+        // Si trop d'issues, marquer comme non supporté
+        if (compatibility.issues.length > 2) {
+            compatibility.supported = false;
+        }
+        
+        log(`✅ Test firmware ${firmware} terminé pour ${driver.name}`);
+        return compatibility;
+        
+    } catch (error) {
+        log(`❌ Erreur test firmware ${firmware} pour ${driver.name}: ${error.message}`, 'ERROR');
+        return {
+            firmware,
+            driver: driver.name,
+            supported: false,
+            issues: ['test_error'],
+            confidence: 0
+        };
+    }
+}
+
+// Fonction pour tester la compatibilité d'un driver avec une Homey box
+function testHomeyBoxCompatibility(driver, homeyBox) {
+    log(`🏠 === TEST HOMEY BOX: ${driver.name} - ${homeyBox} ===`);
+    
+    try {
+        const { compose } = driver;
+        const compatibility = {
+            homeyBox,
+            driver: driver.name,
+            capabilities: compose.capabilities || [],
+            supported: true,
+            issues: []
+        };
+        
+        // Tests spécifiques par Homey box
+        switch (homeyBox) {
+            case 'homey_pro_2016':
+                // Homey Pro 2016 - support limité
+                compatibility.confidence = 0.80;
+                if (compose.capabilities?.includes('light_hue')) {
+                    compatibility.issues.push('color_light_limited_support');
+                }
+                break;
+                
+            case 'homey_pro_2019':
+                // Homey Pro 2019 - support complet
+                compatibility.confidence = 0.95;
+                break;
+                
+            case 'homey_pro_2023':
+                // Homey Pro 2023 - support optimal
+                compatibility.confidence = 0.98;
+                break;
+                
+            case 'homey_bridge':
+                // Homey Bridge - support basique
+                compatibility.confidence = 0.60;
+                if (compose.capabilities?.length > 3) {
+                    compatibility.issues.push('too_many_capabilities');
+                }
+                break;
+                
+            case 'homey_cloud':
+                // Homey Cloud - support variable
+                compatibility.confidence = 0.70;
+                if (compose.zigbee?.endpoints) {
+                    const endpointCount = Object.keys(compose.zigbee.endpoints).length;
+                    if (endpointCount > 2) {
+                        compatibility.issues.push('too_many_endpoints');
+                    }
+                }
+                break;
+        }
+        
+        // Si trop d'issues, marquer comme non supporté
+        if (compatibility.issues.length > 1) {
+            compatibility.supported = false;
+        }
+        
+        log(`✅ Test Homey box ${homeyBox} terminé pour ${driver.name}`);
+        return compatibility;
+        
+    } catch (error) {
+        log(`❌ Erreur test Homey box ${homeyBox} pour ${driver.name}: ${error.message}`, 'ERROR');
+        return {
+            homeyBox,
+            driver: driver.name,
+            supported: false,
+            issues: ['test_error'],
+            confidence: 0
+        };
+    }
+}
+
+// Fonction pour injecter supportedModels dans driver.compose.json
+function injectSupportedModels(driver, firmwareResults, homeyBoxResults) {
+    log(`💉 === INJECTION SUPPORTED MODELS: ${driver.name} ===`);
+    
+    try {
+        const { compose } = driver;
+        
+        // Calculer les firmwares supportés
+        const supportedFirmwares = firmwareResults
+            .filter(result => result.supported)
+            .map(result => result.firmware);
+        
+        // Calculer les Homey boxes supportées
+        const supportedHomeyBoxes = homeyBoxResults
+            .filter(result => result.supported)
+            .map(result => result.homeyBox);
+        
+        // Créer la section supportedModels
+        const supportedModels = {
+            firmwares: supportedFirmwares,
+            homeyBoxes: supportedHomeyBoxes,
+            confidence: {
+                average: calculateAverageConfidence([...firmwareResults, ...homeyBoxResults]),
+                firmware: calculateAverageConfidence(firmwareResults),
+                homeyBox: calculateAverageConfidence(homeyBoxResults)
+            },
+            metadata: {
+                tested: new Date().toISOString(),
+                totalTests: firmwareResults.length + homeyBoxResults.length,
+                successfulTests: firmwareResults.filter(r => r.supported).length + 
+                               homeyBoxResults.filter(r => r.supported).length
+            }
+        };
+        
+        // Injecter dans le compose
+        if (!compose.metadata) {
+            compose.metadata = {};
+        }
+        compose.metadata.supportedModels = supportedModels;
+        
+        // Sauvegarder le fichier
+        const composeFile = path.join(driver.path, 'driver.compose.json');
+        fs.writeFileSync(composeFile, JSON.stringify(compose, null, 2));
+        
+        log(`✅ Supported models injecté pour ${driver.name}`);
+        return supportedModels;
+        
+    } catch (error) {
+        log(`❌ Erreur injection supported models ${driver.name}: ${error.message}`, 'ERROR');
+        return null;
+    }
+}
+
+// Fonction pour calculer la confiance moyenne
+function calculateAverageConfidence(results) {
+    if (results.length === 0) return 0;
+    
+    const totalConfidence = results.reduce((sum, result) => sum + (result.confidence || 0), 0);
+    return Math.round((totalConfidence / results.length) * 100) / 100;
+}
+
+// Fonction pour générer un rapport de compatibilité
+function generateCompatibilityReport(allResults) {
+    log('📊 === GÉNÉRATION RAPPORT COMPATIBILITÉ ===');
+    
+    try {
+        const report = {
+            timestamp: new Date().toISOString(),
+            summary: {
+                totalDrivers: allResults.length,
+                totalTests: allResults.reduce((sum, result) => sum + result.firmwareTests.length + result.homeyBoxTests.length, 0),
+                successfulTests: allResults.reduce((sum, result) => 
+                    sum + result.firmwareTests.filter(t => t.supported).length + 
+                    result.homeyBoxTests.filter(t => t.supported).length, 0
+                ),
+                averageConfidence: calculateAverageConfidence(allResults.flatMap(r => [...r.firmwareTests, ...r.homeyBoxTests]))
+            },
+            firmwareStats: {},
+            homeyBoxStats: {},
+            drivers: allResults
+        };
+        
+        // Statistiques par firmware
+        CONFIG.firmwares.forEach(firmware => {
+            const firmwareTests = allResults.flatMap(r => r.firmwareTests.filter(t => t.firmware === firmware));
+            report.firmwareStats[firmware] = {
+                total: firmwareTests.length,
+                supported: firmwareTests.filter(t => t.supported).length,
+                averageConfidence: calculateAverageConfidence(firmwareTests)
+            };
+        });
+        
+        // Statistiques par Homey box
+        CONFIG.homeyBoxes.forEach(homeyBox => {
+            const homeyBoxTests = allResults.flatMap(r => r.homeyBoxTests.filter(t => t.homeyBox === homeyBox));
+            report.homeyBoxStats[homeyBox] = {
+                total: homeyBoxTests.length,
+                supported: homeyBoxTests.filter(t => t.supported).length,
+                averageConfidence: calculateAverageConfidence(homeyBoxTests)
+            };
+        });
+        
+        log('✅ Rapport de compatibilité généré');
+        return report;
+        
+    } catch (error) {
+        log(`❌ Erreur génération rapport: ${error.message}`, 'ERROR');
+        return null;
     }
 }
 
 // Fonction principale
 function testMultiFirmwareCompatibility() {
-    log('🚀 === DÉMARRAGE TESTS COMPATIBILITÉ MULTI-FIRMWARE ===');
+    log('🚀 === TEST COMPATIBILITÉ MULTI-FIRMWARE ===');
+    
+    const startTime = Date.now();
+    const results = {
+        timestamp: new Date().toISOString(),
+        version: CONFIG.version,
+        drivers: [],
+        summary: {}
+    };
     
     try {
-        // 1. Analyser les capacités des drivers
-        const capabilitiesAnalysis = analyzeDriverCapabilities();
+        // 1. Scanner tous les drivers
+        const drivers = scanAllDrivers();
         
-        if (!capabilitiesAnalysis) {
-            throw new Error('Échec de l\'analyse des capacités');
-        }
+        // 2. Tester chaque driver
+        drivers.forEach(driver => {
+            log(`🧪 === TEST DRIVER: ${driver.name} ===`);
+            
+            const driverResults = {
+                driver: driver.name,
+                path: driver.path,
+                firmwareTests: [],
+                homeyBoxTests: [],
+                supportedModels: null
+            };
+            
+            // Tests de compatibilité firmware
+            CONFIG.firmwares.forEach(firmware => {
+                const firmwareResult = testFirmwareCompatibility(driver, firmware);
+                driverResults.firmwareTests.push(firmwareResult);
+            });
+            
+            // Tests de compatibilité Homey box
+            CONFIG.homeyBoxes.forEach(homeyBox => {
+                const homeyBoxResult = testHomeyBoxCompatibility(driver, homeyBox);
+                driverResults.homeyBoxTests.push(homeyBoxResult);
+            });
+            
+            // Injecter supportedModels
+            const supportedModels = injectSupportedModels(driver, driverResults.firmwareTests, driverResults.homeyBoxTests);
+            driverResults.supportedModels = supportedModels;
+            
+            results.drivers.push(driverResults);
+        });
         
-        // 2. Tester la compatibilité multi-firmware
-        const firmwareResults = testMultiFirmwareCompatibility(capabilitiesAnalysis);
+        // 3. Générer le rapport
+        const compatibilityReport = generateCompatibilityReport(results.drivers);
         
-        if (!firmwareResults) {
-            throw new Error('Échec des tests firmware');
-        }
-        
-        // 3. Tester la compatibilité multi-Homey box
-        const homeyResults = testMultiHomeyBoxCompatibility(capabilitiesAnalysis);
-        
-        if (!homeyResults) {
-            throw new Error('Échec des tests Homey box');
-        }
-        
-        // 4. Mettre à jour les drivers avec les informations de compatibilité
-        const updatedDrivers = updateDriversWithCompatibilityInfo(firmwareResults, homeyResults);
-        
-        // 5. Rapport final
-        log('📊 === RAPPORT FINAL COMPATIBILITÉ ===');
-        log(`Drivers analysés: ${capabilitiesAnalysis.totalDrivers}`);
-        log(`Tests firmware: ${firmwareResults.totalTests}`);
-        log(`Tests firmware réussis: ${firmwareResults.passedTests}`);
-        log(`Tests firmware échoués: ${firmwareResults.failedTests}`);
-        log(`Tests Homey box: ${homeyResults.totalTests}`);
-        log(`Tests Homey box réussis: ${homeyResults.passedTests}`);
-        log(`Tests Homey box échoués: ${homeyResults.failedTests}`);
-        log(`Drivers mis à jour: ${updatedDrivers}`);
-        
-        // Sauvegarder les résultats
-        const compatibilityResults = {
-            timestamp: new Date().toISOString(),
-            capabilitiesAnalysis,
-            firmwareResults,
-            homeyResults,
-            updatedDrivers
+        // Calculer le résumé
+        const duration = Date.now() - startTime;
+        results.summary = {
+            success: true,
+            duration,
+            totalDrivers: drivers.length,
+            totalTests: drivers.length * (CONFIG.firmwares.length + CONFIG.homeyBoxes.length),
+            successfulTests: compatibilityReport?.summary?.successfulTests || 0,
+            averageConfidence: compatibilityReport?.summary?.averageConfidence || 0
         };
         
-        const dataDir = path.dirname(CONFIG.compatibilityDataFile);
+        // Rapport final
+        log('📊 === RAPPORT FINAL COMPATIBILITÉ ===');
+        log(`Drivers testés: ${drivers.length}`);
+        log(`Tests totaux: ${results.summary.totalTests}`);
+        log(`Tests réussis: ${results.summary.successfulTests}`);
+        log(`Confiance moyenne: ${results.summary.averageConfidence}`);
+        log(`Durée: ${duration}ms`);
+        
+        // Sauvegarder les résultats
+        const dataDir = path.dirname(CONFIG.resultsFile);
         if (!fs.existsSync(dataDir)) {
             fs.mkdirSync(dataDir, { recursive: true });
         }
-        fs.writeFileSync(CONFIG.compatibilityDataFile, JSON.stringify(compatibilityResults, null, 2));
+        fs.writeFileSync(CONFIG.resultsFile, JSON.stringify(results, null, 2));
         
         log('✅ Tests de compatibilité multi-firmware terminés avec succès');
         
-        return {
-            capabilitiesAnalysis,
-            firmwareResults,
-            homeyResults,
-            updatedDrivers
-        };
+        return results;
         
     } catch (error) {
-        log(`Erreur tests compatibilité: ${error.message}`, 'ERROR');
-        return null;
+        log(`❌ ERREUR CRITIQUE TESTS: ${error.message}`, 'ERROR');
+        results.summary = {
+            success: false,
+            error: error.message,
+            duration: Date.now() - startTime
+        };
+        
+        // Sauvegarder même en cas d'erreur
+        const dataDir = path.dirname(CONFIG.resultsFile);
+        if (!fs.existsSync(dataDir)) {
+            fs.mkdirSync(dataDir, { recursive: true });
+        }
+        fs.writeFileSync(CONFIG.resultsFile, JSON.stringify(results, null, 2));
+        
+        throw error;
     }
 }
 
 // Exécution si appelé directement
 if (require.main === module) {
-    testMultiFirmwareCompatibility();
+    try {
+        const results = testMultiFirmwareCompatibility();
+        log('✅ Tests de compatibilité terminés avec succès', 'SUCCESS');
+    } catch (error) {
+        log(`❌ Tests de compatibilité échoués: ${error.message}`, 'ERROR');
+        process.exit(1);
+    }
 }
 
 module.exports = { testMultiFirmwareCompatibility }; 
