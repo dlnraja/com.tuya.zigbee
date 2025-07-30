@@ -1,43 +1,30 @@
-/**
- * Tuya Zigbee App
- * Version: 1.0.12-20250729-1700
- */
-
 const { HomeyApp } = require('homey');
 
 class TuyaZigbeeApp extends HomeyApp {
-    
     async onInit() {
-        this.log('🚀 Tuya Zigbee App initialisé');
+        this.log('Tuya Zigbee App is running...');
         
         // Initialisation des drivers
         await this.initializeDrivers();
         
         // Configuration des événements
-        this.setupEventHandlers();
-        
-        this.log('✅ Tuya Zigbee App prêt');
+        this.homey.on('unload', () => {
+            this.log('Tuya Zigbee App is unloading...');
+        });
     }
     
     async initializeDrivers() {
         try {
             // Initialisation automatique des drivers
-            const drivers = await this.getDrivers();
-            this.log(`📦 ${drivers.length} drivers initialisés`);
+            this.log('Initializing drivers...');
+            
+            // Chargement des drivers disponibles
+            const drivers = this.homey.drivers.getDrivers();
+            this.log(`Loaded ${drivers.length} drivers`);
+            
         } catch (error) {
-            this.error('❌ Erreur initialisation drivers:', error);
+            this.log('Error initializing drivers:', error);
         }
-    }
-    
-    setupEventHandlers() {
-        // Gestion des événements de l'app
-        this.on('unload', () => {
-            this.log('🔄 Tuya Zigbee App déchargé');
-        });
-    }
-    
-    async onUninit() {
-        this.log('👋 Tuya Zigbee App terminé');
     }
 }
 
