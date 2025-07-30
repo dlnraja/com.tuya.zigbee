@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Script de correction intelligente de la structure de l'app
- * Version: 1.0.12-20250729-1700
+ * Version: 2.0.0
  */
 
 const fs = require('fs');
@@ -10,9 +10,9 @@ const { execSync } = require('child_process');
 
 // Configuration
 const CONFIG = {
-    version: '1.0.12-20250729-1700',
+    version: '2.0.0',
     logFile: './logs/fix-app-structure.log',
-    resultsFile: './data/app-structure-fix.json'
+    resultsFile: './data/fix-app-structure-results.json'
 };
 
 // Fonction de logging
@@ -21,6 +21,7 @@ function log(message, level = 'INFO') {
     const logMessage = `[${timestamp}] [${level}] ${message}`;
     console.log(logMessage);
     
+    // Sauvegarde dans le fichier de log
     const logDir = path.dirname(CONFIG.logFile);
     if (!fs.existsSync(logDir)) {
         fs.mkdirSync(logDir, { recursive: true });
@@ -28,184 +29,215 @@ function log(message, level = 'INFO') {
     fs.appendFileSync(CONFIG.logFile, logMessage + '\n');
 }
 
-// Fonction pour corriger la structure des dossiers
-function fixFolderStructure() {
-    log('📁 === CORRECTION STRUCTURE DES DOSSIERS ===');
+// Analyse intelligente du type de produit
+function analyzeProductType(driverName, capabilities = []) {
+    const name = driverName.toLowerCase();
+    const caps = capabilities.map(c => c.toLowerCase());
     
-    try {
-        // Créer les dossiers de base s'ils n'existent pas
-        const baseDirs = [
-            './assets',
-            './assets/images',
-            './assets/icons',
-            './data',
-            './logs',
-            './docs',
-            './scripts',
-            './tools',
-            './backups',
-            './releases',
-            './temp'
-        ];
-        
-        baseDirs.forEach(dir => {
-            if (!fs.existsSync(dir)) {
-                fs.mkdirSync(dir, { recursive: true });
-                log(`✅ Dossier créé: ${dir}`);
-            }
-        });
-        
-        // Corriger la structure des drivers
-        fixDriversStructure();
-        
-        return true;
-        
-    } catch (error) {
-        log(`❌ Erreur correction structure: ${error.message}`, 'ERROR');
-        return false;
+    // Catégories principales
+    const categories = {
+        lighting: {
+            keywords: ['light', 'bulb', 'lamp', 'strip', 'panel', 'dimmer', 'switch'],
+            capabilities: ['onoff', 'dim', 'light_hue', 'light_saturation', 'light_temperature']
+        },
+        sensors: {
+            keywords: ['sensor', 'motion', 'contact', 'temperature', 'humidity', 'pressure', 'air_quality'],
+            capabilities: ['measure_temperature', 'measure_humidity', 'measure_pressure', 'alarm_motion', 'alarm_contact']
+        },
+        security: {
+            keywords: ['lock', 'doorbell', 'camera', 'alarm', 'smoke', 'gas', 'water'],
+            capabilities: ['alarm_contact', 'alarm_motion', 'alarm_smoke', 'alarm_gas', 'lock']
+        },
+        climate: {
+            keywords: ['thermostat', 'valve', 'fan', 'heater', 'ac', 'climate'],
+            capabilities: ['measure_temperature', 'target_temperature', 'measure_humidity']
+        },
+        automation: {
+            keywords: ['switch', 'relay', 'outlet', 'plug', 'socket'],
+            capabilities: ['onoff', 'measure_power', 'measure_current', 'measure_voltage']
+        },
+        controllers: {
+            keywords: ['gateway', 'bridge', 'repeater', 'router', 'hub'],
+            capabilities: ['gateway', 'bridge']
+        }
+    };
+    
+    // Analyse par nom
+    for (const [category, config] of Object.entries(categories)) {
+        if (config.keywords.some(keyword => name.includes(keyword))) {
+            return category;
+        }
     }
+    
+    // Analyse par capacités
+    for (const [category, config] of Object.entries(categories)) {
+        if (config.capabilities.some(cap => caps.includes(cap))) {
+            return category;
+        }
+    }
+    
+    return 'generic';
 }
 
-// Fonction pour corriger la structure des drivers
-function fixDriversStructure() {
-    log('🔧 === CORRECTION STRUCTURE DRIVERS ===');
+// Réorganisation intelligente des drivers
+function reorganizeDriversIntelligently() {
+    log('🔄 === RÉORGANISATION INTELLIGENTE DES DRIVERS ===');
+    
+    const driversPath = './drivers';
+    if (!fs.existsSync(driversPath)) {
+        log('❌ Dossier drivers non trouvé', 'ERROR');
+        return false;
+    }
+    
+    let reorganizedCount = 0;
+    let errors = 0;
     
     try {
-        const driversDir = './drivers';
-        if (!fs.existsSync(driversDir)) {
-            fs.mkdirSync(driversDir, { recursive: true });
-            log('✅ Dossier drivers créé');
-        }
+        // Scanner tous les drivers
+        const driverDirs = fs.readdirSync(driversPath, { withFileTypes: true })
+            .filter(dirent => dirent.isDirectory())
+            .map(dirent => dirent.name);
         
-        // Catégories principales
-        const categories = {
-            tuya: ['controllers', 'sensors', 'security', 'climate', 'automation', 'lighting', 'switches', 'outlets', 'dimmers', 'bulbs', 'strips', 'panels', 'generic'],
-            zigbee: ['controllers', 'sensors', 'security', 'climate', 'automation', 'lighting', 'accessories', 'switches', 'outlets', 'dimmers', 'bulbs', 'strips', 'panels', 'generic']
-        };
+        log(`📁 ${driverDirs.length} drivers trouvés`);
         
-        // Créer les catégories pour chaque protocole
-        Object.entries(categories).forEach(([protocol, cats]) => {
-            const protocolDir = path.join(driversDir, protocol);
-            if (!fs.existsSync(protocolDir)) {
-                fs.mkdirSync(protocolDir, { recursive: true });
-                log(`✅ Dossier ${protocol} créé`);
+        for (const driverDir of driverDirs) {
+            const driverPath = path.join(driversPath, driverDir);
+            const composePath = path.join(driverPath, 'driver.compose.json');
+            
+            if (!fs.existsSync(composePath)) {
+                log(`⚠️ Pas de driver.compose.json dans ${driverDir}`, 'WARN');
+                continue;
             }
             
-            cats.forEach(cat => {
-                const catDir = path.join(protocolDir, cat);
-                if (!fs.existsSync(catDir)) {
-                    fs.mkdirSync(catDir, { recursive: true });
-                    log(`✅ Catégorie ${protocol}/${cat} créée`);
-                }
-            });
-        });
-        
-        // Réorganiser les drivers existants
-        reorganizeExistingDrivers();
-        
-        return true;
-        
-    } catch (error) {
-        log(`❌ Erreur correction drivers: ${error.message}`, 'ERROR');
-        return false;
-    }
-}
-
-// Fonction pour réorganiser les drivers existants
-function reorganizeExistingDrivers() {
-    log('🔄 === RÉORGANISATION DRIVERS EXISTANTS ===');
-    
-    try {
-        const driversDir = './drivers';
-        if (!fs.existsSync(driversDir)) return;
-        
-        // Parcourir tous les dossiers de drivers
-        const items = fs.readdirSync(driversDir, { withFileTypes: true });
-        
-        items.forEach(item => {
-            if (item.isDirectory()) {
-                const driverPath = path.join(driversDir, item.name);
-                const composeFile = path.join(driverPath, 'driver.compose.json');
+            try {
+                const composeData = JSON.parse(fs.readFileSync(composePath, 'utf8'));
+                const driverName = composeData.name || driverDir;
+                const capabilities = composeData.capabilities || [];
                 
-                if (fs.existsSync(composeFile)) {
-                    try {
-                        const composeData = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
-                        const category = determineDriverCategory(composeData, item.name);
-                        
-                        if (category) {
-                            moveDriverToCategory(driverPath, category);
-                        }
-                    } catch (error) {
-                        log(`⚠️ Erreur lecture ${composeFile}: ${error.message}`, 'WARN');
+                // Analyser le type de produit
+                const productType = analyzeProductType(driverName, capabilities);
+                log(`🔍 ${driverDir} → ${productType}`);
+                
+                // Déterminer le protocole (Tuya ou Zigbee)
+                const protocol = determineProtocol(composeData);
+                
+                // Créer la structure de destination
+                const destPath = path.join(driversPath, protocol, productType, driverDir);
+                
+                // Vérifier si le déplacement est nécessaire
+                if (path.resolve(driverPath) !== path.resolve(destPath)) {
+                    // Créer les dossiers parents
+                    const destParent = path.dirname(destPath);
+                    if (!fs.existsSync(destParent)) {
+                        fs.mkdirSync(destParent, { recursive: true });
                     }
+                    
+                    // Déplacer le driver
+                    if (fs.existsSync(destPath)) {
+                        // Si le dossier existe, fusionner
+                        mergeDriverDirectories(driverPath, destPath);
+                        fs.rmSync(driverPath, { recursive: true, force: true });
+                    } else {
+                        fs.renameSync(driverPath, destPath);
+                    }
+                    
+                    reorganizedCount++;
+                    log(`✅ ${driverDir} déplacé vers ${protocol}/${productType}/`);
                 }
+                
+            } catch (error) {
+                log(`❌ Erreur traitement ${driverDir}: ${error.message}`, 'ERROR');
+                errors++;
             }
-        });
+        }
         
-        log('✅ Réorganisation terminée');
+        log(`✅ Réorganisation terminée: ${reorganizedCount} drivers réorganisés, ${errors} erreurs`);
+        return reorganizedCount > 0;
         
     } catch (error) {
         log(`❌ Erreur réorganisation: ${error.message}`, 'ERROR');
+        return false;
     }
 }
 
-// Fonction pour déterminer la catégorie d'un driver
-function determineDriverCategory(composeData, driverName) {
-    try {
-        // Analyser les capacités pour déterminer la catégorie
-        const capabilities = composeData.capabilities || [];
-        const name = driverName.toLowerCase();
+// Déterminer le protocole (Tuya ou Zigbee)
+function determineProtocol(composeData) {
+    if (composeData.tuya && Object.keys(composeData.tuya).length > 0) {
+        return 'tuya';
+    }
+    if (composeData.zigbee && Object.keys(composeData.zigbee).length > 0) {
+        return 'zigbee';
+    }
+    
+    // Heuristique basée sur les capacités
+    const capabilities = composeData.capabilities || [];
+    const tuyaCapabilities = ['tuya_switch', 'tuya_dimmer', 'tuya_light'];
+    const zigbeeCapabilities = ['onoff', 'dim', 'measure_temperature'];
+    
+    const tuyaCount = tuyaCapabilities.filter(cap => capabilities.includes(cap)).length;
+    const zigbeeCount = zigbeeCapabilities.filter(cap => capabilities.includes(cap)).length;
+    
+    return tuyaCount > zigbeeCount ? 'tuya' : 'zigbee';
+}
+
+// Fusionner deux dossiers de drivers
+function mergeDriverDirectories(sourcePath, destPath) {
+    const sourceFiles = fs.readdirSync(sourcePath);
+    
+    for (const file of sourceFiles) {
+        const sourceFile = path.join(sourcePath, file);
+        const destFile = path.join(destPath, file);
         
-        // Logique de catégorisation intelligente
-        if (capabilities.includes('onoff') && capabilities.includes('dim')) {
-            return 'lighting/dimmers';
-        } else if (capabilities.includes('onoff') && !capabilities.includes('dim')) {
-            return 'switches';
-        } else if (capabilities.includes('measure_temperature')) {
-            return 'sensors';
-        } else if (capabilities.includes('measure_humidity')) {
-            return 'sensors';
-        } else if (capabilities.includes('alarm_motion')) {
-            return 'security';
-        } else if (capabilities.includes('alarm_contact')) {
-            return 'security';
-        } else if (name.includes('light') || name.includes('bulb')) {
-            return 'lighting/bulbs';
-        } else if (name.includes('switch')) {
-            return 'switches';
-        } else if (name.includes('sensor')) {
-            return 'sensors';
-        } else if (name.includes('lock')) {
-            return 'security';
+        if (fs.existsSync(destFile)) {
+            // Si le fichier existe, comparer et fusionner si nécessaire
+            if (file === 'driver.compose.json') {
+                mergeComposeFiles(sourceFile, destFile);
+            }
         } else {
-            return 'generic';
+            // Déplacer le fichier
+            fs.renameSync(sourceFile, destFile);
         }
-        
-    } catch (error) {
-        log(`⚠️ Erreur catégorisation ${driverName}: ${error.message}`, 'WARN');
-        return 'generic';
     }
 }
 
-// Fonction pour déplacer un driver vers sa catégorie
-function moveDriverToCategory(driverPath, category) {
+// Fusionner les fichiers driver.compose.json
+function mergeComposeFiles(sourceFile, destFile) {
     try {
-        const driverName = path.basename(driverPath);
-        const targetPath = path.join('./drivers', category, driverName);
+        const sourceData = JSON.parse(fs.readFileSync(sourceFile, 'utf8'));
+        const destData = JSON.parse(fs.readFileSync(destFile, 'utf8'));
         
-        if (driverPath !== targetPath && !fs.existsSync(targetPath)) {
-            fs.renameSync(driverPath, targetPath);
-            log(`✅ Driver déplacé: ${driverName} → ${category}`);
+        // Fusionner les capacités
+        if (sourceData.capabilities && destData.capabilities) {
+            destData.capabilities = [...new Set([...destData.capabilities, ...sourceData.capabilities])];
         }
         
+        // Fusionner les métadonnées Tuya
+        if (sourceData.tuya && destData.tuya) {
+            destData.tuya = { ...destData.tuya, ...sourceData.tuya };
+        }
+        
+        // Fusionner les métadonnées Zigbee
+        if (sourceData.zigbee && destData.zigbee) {
+            if (sourceData.zigbee.manufacturerName && destData.zigbee.manufacturerName) {
+                destData.zigbee.manufacturerName = [...new Set([...destData.zigbee.manufacturerName, ...sourceData.zigbee.manufacturerName])];
+            }
+            if (sourceData.zigbee.modelId && destData.zigbee.modelId) {
+                destData.zigbee.modelId = [...new Set([...destData.zigbee.modelId, ...sourceData.zigbee.modelId])];
+            }
+        }
+        
+        // Sauvegarder le fichier fusionné
+        fs.writeFileSync(destFile, JSON.stringify(destData, null, 2));
+        log(`✅ Fusion réussie: ${path.basename(destFile)}`);
+        
     } catch (error) {
-        log(`❌ Erreur déplacement ${driverName}: ${error.message}`, 'ERROR');
+        log(`❌ Erreur fusion ${path.basename(sourceFile)}: ${error.message}`, 'ERROR');
     }
 }
 
-// Fonction pour corriger app.json
-function fixAppJson() {
-    log('📋 === CORRECTION APP.JSON ===');
+// Corriger app.json de manière intelligente
+function fixAppJsonIntelligently() {
+    log('📋 === CORRECTION INTELLIGENTE APP.JSON ===');
     
     try {
         const appJsonPath = './app.json';
@@ -215,200 +247,168 @@ function fixAppJson() {
             appData = JSON.parse(fs.readFileSync(appJsonPath, 'utf8'));
         }
         
-        // Structure complète et corrigée
-        const correctedApp = {
+        // Structure de base SDK3
+        const baseAppData = {
             id: appData.id || 'com.tuya.zigbee',
-            name: appData.name || {
-                en: 'Tuya Zigbee',
-                fr: 'Tuya Zigbee',
-                nl: 'Tuya Zigbee',
-                ta: 'Tuya Zigbee'
-            },
-            description: appData.description || {
-                en: 'Comprehensive Tuya Zigbee device support',
-                fr: 'Support complet des appareils Tuya Zigbee',
-                nl: 'Uitgebreide ondersteuning voor Tuya Zigbee-apparaten',
-                ta: 'Tuya Zigbee சாதனங்களுக்கான விரிவான ஆதரவு'
-            },
-            version: appData.version || '1.0.12',
+            name: appData.name || 'Tuya Zigbee',
+            description: appData.description || 'Universal Tuya Zigbee Device Support',
+            version: appData.version || '1.0.0',
             compatibility: appData.compatibility || '>=5.0.0',
             sdk: appData.sdk || 3,
-            category: appData.category || ['lighting'],
-            author: appData.author || {
-                name: 'dlnraja',
-                email: 'dylan.rajasekaram+homey@gmail.com'
-            },
+            category: appData.category || 'light',
+            author: appData.author || 'dlnraja',
             main: appData.main || 'app.js',
             drivers: appData.drivers || [],
-            images: appData.images || {
-                small: 'assets/images/small.png',
-                large: 'assets/images/large.png'
-            },
+            images: appData.images || {},
             bugs: appData.bugs || 'https://github.com/dlnraja/com.tuya.zigbee/issues',
             homepage: appData.homepage || 'https://github.com/dlnraja/com.tuya.zigbee',
-            repository: appData.repository || 'https://github.com/dlnraja/com.tuya.zigbee',
+            repository: appData.repository || 'https://github.com/dlnraja/com.tuya.zigbee.git',
             license: appData.license || 'MIT',
-            metadata: appData.metadata || {
-                support: 'https://community.homey.app/t/app-pro-tuya-zigbee-app',
-                version: '1.0.12-20250729-1700'
-            }
+            metadata: appData.metadata || {}
         };
         
-        // Mettre à jour la liste des drivers
-        correctedApp.drivers = scanDriversForAppJson();
+        // Scanner et ajouter tous les drivers
+        log('🔍 === SCAN DRIVERS POUR APP.JSON ===');
+        const drivers = scanAllDrivers();
         
-        fs.writeFileSync(appJsonPath, JSON.stringify(correctedApp, null, 2));
-        log('✅ app.json corrigé');
+        // Ajouter les drivers manquants
+        for (const driver of drivers) {
+            const existingDriver = baseAppData.drivers.find(d => d.id === driver.id);
+            if (!existingDriver) {
+                baseAppData.drivers.push({
+                    id: driver.id,
+                    name: driver.name,
+                    category: driver.category || 'generic'
+                });
+                log(`✅ Driver ajouté: ${driver.id}`);
+            }
+        }
         
-        return correctedApp;
+        // Sauvegarder app.json
+        fs.writeFileSync(appJsonPath, JSON.stringify(baseAppData, null, 2));
+        log(`✅ app.json corrigé avec ${baseAppData.drivers.length} drivers`);
+        
+        return baseAppData.drivers.length;
         
     } catch (error) {
         log(`❌ Erreur correction app.json: ${error.message}`, 'ERROR');
-        return null;
+        return 0;
     }
 }
 
-// Fonction pour scanner les drivers pour app.json
-function scanDriversForAppJson() {
-    log('🔍 === SCAN DRIVERS POUR APP.JSON ===');
+// Scanner tous les drivers
+function scanAllDrivers() {
+    const drivers = [];
+    const driversPath = './drivers';
     
-    try {
-        const drivers = [];
-        const driversDir = './drivers';
-        
-        if (!fs.existsSync(driversDir)) return drivers;
-        
-        // Scanner récursivement tous les drivers
-        function scanDirectory(dir, protocol = '') {
-            const items = fs.readdirSync(dir, { withFileTypes: true });
-            
-            items.forEach(item => {
-                const itemPath = path.join(dir, item.name);
-                
-                if (item.isDirectory()) {
-                    const composeFile = path.join(itemPath, 'driver.compose.json');
-                    
-                    if (fs.existsSync(composeFile)) {
-                        try {
-                            const composeData = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
-                            const driverId = composeData.id || item.name;
-                            
-                            drivers.push({
-                                id: driverId,
-                                name: composeData.name || item.name,
-                                category: protocol || 'generic'
-                            });
-                            
-                            log(`✅ Driver ajouté: ${driverId}`);
-                            
-                        } catch (error) {
-                            log(`⚠️ Erreur lecture ${composeFile}: ${error.message}`, 'WARN');
-                        }
-                    } else {
-                        // Continuer à scanner les sous-dossiers
-                        scanDirectory(itemPath, protocol || item.name);
-                    }
-                }
-            });
-        }
-        
-        scanDirectory(driversDir);
-        log(`✅ ${drivers.length} drivers scannés`);
-        
+    if (!fs.existsSync(driversPath)) {
         return drivers;
-        
-    } catch (error) {
-        log(`❌ Erreur scan drivers: ${error.message}`, 'ERROR');
-        return [];
     }
+    
+    function scanDirectory(dirPath) {
+        const items = fs.readdirSync(dirPath, { withFileTypes: true });
+        
+        for (const item of items) {
+            const fullPath = path.join(dirPath, item.name);
+            
+            if (item.isDirectory()) {
+                const composePath = path.join(fullPath, 'driver.compose.json');
+                
+                if (fs.existsSync(composePath)) {
+                    try {
+                        const composeData = JSON.parse(fs.readFileSync(composePath, 'utf8'));
+                        const productType = analyzeProductType(composeData.name || item.name, composeData.capabilities || []);
+                        
+                        drivers.push({
+                            id: item.name,
+                            name: composeData.name || item.name,
+                            category: productType,
+                            path: fullPath
+                        });
+                    } catch (error) {
+                        log(`⚠️ Erreur lecture ${item.name}/driver.compose.json: ${error.message}`, 'WARN');
+                    }
+                } else {
+                    // Récursif pour les sous-dossiers
+                    scanDirectory(fullPath);
+                }
+            }
+        }
+    }
+    
+    scanDirectory(driversPath);
+    return drivers;
 }
 
-// Fonction pour corriger app.js
+// Corriger app.js
 function fixAppJs() {
     log('📝 === CORRECTION APP.JS ===');
     
-    try {
-        const appJsPath = './app.js';
-        const appJsContent = `/**
- * Tuya Zigbee App
- * Version: 1.0.12-20250729-1700
- */
-
-const { HomeyApp } = require('homey');
+    const appJsPath = './app.js';
+    const appJsContent = `const { HomeyApp } = require('homey');
 
 class TuyaZigbeeApp extends HomeyApp {
-    
     async onInit() {
-        this.log('🚀 Tuya Zigbee App initialisé');
+        this.log('Tuya Zigbee App is running...');
         
         // Initialisation des drivers
         await this.initializeDrivers();
         
         // Configuration des événements
-        this.setupEventHandlers();
-        
-        this.log('✅ Tuya Zigbee App prêt');
+        this.homey.on('unload', () => {
+            this.log('Tuya Zigbee App is unloading...');
+        });
     }
     
     async initializeDrivers() {
         try {
             // Initialisation automatique des drivers
-            const drivers = await this.getDrivers();
-            this.log(\`📦 \${drivers.length} drivers initialisés\`);
+            this.log('Initializing drivers...');
+            
+            // Chargement des drivers disponibles
+            const drivers = this.homey.drivers.getDrivers();
+            this.log(\`Loaded \${drivers.length} drivers\`);
+            
         } catch (error) {
-            this.error('❌ Erreur initialisation drivers:', error);
+            this.log('Error initializing drivers:', error);
         }
-    }
-    
-    setupEventHandlers() {
-        // Gestion des événements de l'app
-        this.on('unload', () => {
-            this.log('🔄 Tuya Zigbee App déchargé');
-        });
-    }
-    
-    async onUninit() {
-        this.log('👋 Tuya Zigbee App terminé');
     }
 }
 
 module.exports = TuyaZigbeeApp;
 `;
-        
+    
+    try {
         fs.writeFileSync(appJsPath, appJsContent);
         log('✅ app.js corrigé');
-        
         return true;
-        
     } catch (error) {
         log(`❌ Erreur correction app.js: ${error.message}`, 'ERROR');
         return false;
     }
 }
 
-// Fonction pour valider avec Homey CLI
+// Validation avec Homey CLI
 function validateWithHomeyCLI() {
     log('🏠 === VALIDATION HOMEY CLI ===');
     
     try {
         // Vérifier si Homey CLI est installé
+        execSync('homey --version', { stdio: 'pipe' });
+        log('✅ Homey CLI détecté');
+        
+        // Valider l'app
         try {
-            execSync('homey --version', { stdio: 'pipe' });
-            log('✅ Homey CLI détecté');
-            
-            // Valider l'app
-            execSync('homey app validate', { stdio: 'inherit' });
-            log('✅ Validation Homey CLI réussie');
-            
+            execSync('homey app validate', { stdio: 'pipe' });
+            log('✅ App validée avec Homey CLI');
             return true;
-            
         } catch (error) {
-            log('⚠️ Homey CLI non disponible, validation ignorée', 'WARN');
+            log(`⚠️ Validation échouée: ${error.message}`, 'WARN');
             return false;
         }
         
     } catch (error) {
-        log(`❌ Erreur validation Homey CLI: ${error.message}`, 'ERROR');
+        log('⚠️ Homey CLI non disponible, validation ignorée', 'WARN');
         return false;
     }
 }
@@ -416,70 +416,84 @@ function validateWithHomeyCLI() {
 // Fonction principale
 function fixAppStructure() {
     log('🧱 === CORRECTION STRUCTURE APP ===');
-    
     const startTime = Date.now();
-    const results = {
-        timestamp: new Date().toISOString(),
-        version: CONFIG.version,
-        steps: {},
-        summary: {}
-    };
     
     try {
-        // 1. Corriger la structure des dossiers
-        results.steps.folderStructure = fixFolderStructure();
+        // 1. Créer les dossiers de base
+        log('📁 === CRÉATION DOSSIERS DE BASE ===');
+        const baseDirs = [
+            './drivers/tuya/lighting',
+            './drivers/tuya/sensors',
+            './drivers/tuya/security',
+            './drivers/tuya/climate',
+            './drivers/tuya/automation',
+            './drivers/tuya/controllers',
+            './drivers/zigbee/lighting',
+            './drivers/zigbee/sensors',
+            './drivers/zigbee/security',
+            './drivers/zigbee/climate',
+            './drivers/zigbee/automation',
+            './drivers/zigbee/controllers',
+            './drivers/generic'
+        ];
         
-        // 2. Corriger app.json
-        results.steps.appJson = fixAppJson();
+        for (const dir of baseDirs) {
+            if (!fs.existsSync(dir)) {
+                fs.mkdirSync(dir, { recursive: true });
+                log(`✅ Dossier créé: ${dir}`);
+            }
+        }
         
-        // 3. Corriger app.js
-        results.steps.appJs = fixAppJs();
+        // 2. Réorganisation intelligente
+        const reorganized = reorganizeDriversIntelligently();
         
-        // 4. Valider avec Homey CLI
-        results.steps.homeyCLI = validateWithHomeyCLI();
+        // 3. Correction app.json
+        const driversCount = fixAppJsonIntelligently();
         
-        // Calculer le résumé
+        // 4. Correction app.js
+        const appJsFixed = fixAppJs();
+        
+        // 5. Validation Homey CLI
+        const cliValidated = validateWithHomeyCLI();
+        
+        // 6. Rapport final
         const duration = Date.now() - startTime;
-        results.summary = {
-            success: true,
-            duration,
-            driversScanned: results.steps.appJson?.drivers?.length || 0,
-            homeyCLIValidated: results.steps.homeyCLI
-        };
-        
-        // Rapport final
         log('📊 === RAPPORT FINAL CORRECTION STRUCTURE ===');
-        log(`Drivers scannés: ${results.summary.driversScanned}`);
-        log(`Homey CLI validé: ${results.summary.homeyCLIValidated ? '✅' : '❌'}`);
+        log(`Drivers réorganisés: ${reorganized ? 'Oui' : 'Non'}`);
+        log(`Drivers scannés: ${driversCount}`);
+        log(`App.js corrigé: ${appJsFixed ? 'Oui' : 'Non'}`);
+        log(`Homey CLI validé: ${cliValidated ? 'Oui' : 'Non'}`);
         log(`Durée: ${duration}ms`);
         
         // Sauvegarder les résultats
-        const dataDir = path.dirname(CONFIG.resultsFile);
-        if (!fs.existsSync(dataDir)) {
-            fs.mkdirSync(dataDir, { recursive: true });
+        const results = {
+            success: true,
+            summary: {
+                reorganized: reorganized,
+                driversScanned: driversCount,
+                appJsFixed: appJsFixed,
+                cliValidated: cliValidated,
+                duration: duration
+            },
+            timestamp: new Date().toISOString()
+        };
+        
+        const resultsDir = path.dirname(CONFIG.resultsFile);
+        if (!fs.existsSync(resultsDir)) {
+            fs.mkdirSync(resultsDir, { recursive: true });
         }
         fs.writeFileSync(CONFIG.resultsFile, JSON.stringify(results, null, 2));
         
-        log('✅ Structure app corrigée avec succès');
-        
+        log('✅ Structure app corrigée avec succès', 'SUCCESS');
         return results;
         
     } catch (error) {
-        log(`❌ ERREUR CRITIQUE CORRECTION: ${error.message}`, 'ERROR');
-        results.summary = {
+        log(`❌ Erreur correction structure: ${error.message}`, 'ERROR');
+        return {
             success: false,
             error: error.message,
-            duration: Date.now() - startTime
+            timestamp: new Date().toISOString()
         };
-        
-        // Sauvegarder même en cas d'erreur
-        const dataDir = path.dirname(CONFIG.resultsFile);
-        if (!fs.existsSync(dataDir)) {
-            fs.mkdirSync(dataDir, { recursive: true });
-        }
-        fs.writeFileSync(CONFIG.resultsFile, JSON.stringify(results, null, 2));
-        
-        throw error;
     }
 }
 
@@ -487,9 +501,14 @@ function fixAppStructure() {
 if (require.main === module) {
     try {
         const results = fixAppStructure();
-        log('✅ Correction structure terminée avec succès', 'SUCCESS');
+        if (results.success) {
+            log('✅ Correction structure terminée avec succès', 'SUCCESS');
+        } else {
+            log('❌ Correction structure échouée', 'ERROR');
+            process.exit(1);
+        }
     } catch (error) {
-        log(`❌ Correction structure échouée: ${error.message}`, 'ERROR');
+        log(`❌ Erreur fatale: ${error.message}`, 'ERROR');
         process.exit(1);
     }
 }
