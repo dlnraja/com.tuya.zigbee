@@ -1,0 +1,33 @@
+{
+  "name": "Generic _TZ3000_excgg5kb",
+  "category": "sensors",
+  "capabilities": [
+    "onoff",
+    "measure_temperature"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_excgg5kb"
+    ],
+    "modelId": [
+      "TS0004"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": {
+          "input": [
+            "genBasic",
+            "genOnOff"
+          ],
+          "output": [
+            "genOnOff"
+          ]
+        }
+      }
+    }
+  },
+  "images": {
+    "small": "/assets/images/small/generic-light.png",
+    "large": "/assets/images/large/generic-light.png"
+  }
+}

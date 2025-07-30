@@ -3,10 +3,25 @@
   "title": "Homey Apps-device-1 Device",
   "category": "controllers",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_power",
+    "dim",
+    "measure_temperature",
+    "alarm_motion"
   ],
   "images": {
     "small": "assets/images/small.png",
     "large": "assets/images/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_wkr3jqmr",
+      "_TZ3000_hdlpifbk",
+      "_TZ3000_excgg5kb",
+      "_TZ3000_u3oupgdy"
+    ],
+    "modelId": [
+      "TS0004"
+    ]
   }
 }

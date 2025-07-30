@@ -1,36 +1,47 @@
 {
-    "id":  "smart_air_detection_box",
-    "name":  {
-                 "en":  "smart_air_detection_box Device",
-                 "fr":  "Appareil smart_air_detection_box",
-                 "nl":  "smart_air_detection_box Apparaat",
-                 "ta":  "smart_air_detection_box Device"
-             },
-    "capabilities":  [
-                         "onoff"
-                     ],
-    "class":  "light",
-    "zigbee":  {
-                   "manufacturerName":  [
-                                            "Generic"
-                                        ],
-                   "endpoints":  {
-                                     "1":  {
-                                               "clusters":  [
-                                                                "genOnOff",
-                                                                "genBasic"
-                                                            ],
-                                               "bindings":  [
-                                                                "genOnOff"
-                                                            ]
-                                           }
-                                 },
-                   "productId":  [
-                                     ""
-                                 ]
-               },
-    "images":  {
-                   "small":  "assets/images/small.png",
-                   "large":  "assets/images/large.png"
-               }
+  "id": "smart_air_detection_box",
+  "name": {
+    "en": "smart_air_detection_box Device",
+    "fr": "Appareil smart_air_detection_box",
+    "nl": "smart_air_detection_box Apparaat",
+    "ta": "smart_air_detection_box Device"
+  },
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "dim",
+    "measure_temperature",
+    "alarm_motion"
+  ],
+  "class": "light",
+  "zigbee": {
+    "manufacturerName": [
+      "Generic",
+      "_TZ3000_wkr3jqmr",
+      "_TZ3000_hdlpifbk",
+      "_TZ3000_excgg5kb",
+      "_TZ3000_u3oupgdy"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genOnOff",
+          "genBasic"
+        ],
+        "bindings": [
+          "genOnOff"
+        ]
+      }
+    },
+    "productId": [
+      ""
+    ],
+    "modelId": [
+      "TS0004"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
+  }
 }

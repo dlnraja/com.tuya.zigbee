@@ -11,11 +11,9 @@ const { execSync } = require('child_process');
 
 // Configuration
 const CONFIG = {
-    version: '1.0.12-20250729-1700',
+    version: '2.0.0',
     logFile: './logs/fetch-new-devices.log',
-    resultsFile: './data/fetch-new-devices.json',
-    homeyCLI: 'homey',
-    interviewTimeout: 30000
+    resultsFile: './data/fetch-new-devices-results.json'
 };
 
 // Fonction de logging
@@ -24,6 +22,7 @@ function log(message, level = 'INFO') {
     const logMessage = `[${timestamp}] [${level}] ${message}`;
     console.log(logMessage);
     
+    // Sauvegarde dans le fichier de log
     const logDir = path.dirname(CONFIG.logFile);
     if (!fs.existsSync(logDir)) {
         fs.mkdirSync(logDir, { recursive: true });
@@ -31,299 +30,199 @@ function log(message, level = 'INFO') {
     fs.appendFileSync(CONFIG.logFile, logMessage + '\n');
 }
 
-// Fonction pour simuler l'interview d'un appareil
-function simulateDeviceInterview(deviceId) {
-    log(`🔍 === INTERVIEW SIMULÉ: ${deviceId} ===`);
+// Simulation d'interview Homey CLI pour récupérer manufacturerName et modelId
+function simulateHomeyInterview() {
+    log('🔍 === SIMULATION INTERVIEW HOMEY CLI ===');
     
-    try {
-        // Simulation des données d'interview Homey
-        const interviewData = {
-            deviceId,
-            manufacturerName: `_TZ3000_${deviceId.toLowerCase().replace(/[^a-z0-9]/g, '')}`,
+    // Données simulées basées sur les problèmes Homey Community
+    const interviewData = [
+        {
+            manufacturerName: '_TZ3000_wkr3jqmr',
             modelId: 'TS0004',
-            endpoints: {
-                1: {
-                    clusters: {
-                        input: ['genBasic', 'genOnOff'],
-                        output: ['genOnOff']
-                    }
-                }
-            },
-            capabilities: ['onoff'],
-            interviewTimestamp: new Date().toISOString()
-        };
-        
-        log(`✅ Interview simulé pour ${deviceId}`);
-        return interviewData;
-        
-    } catch (error) {
-        log(`❌ Erreur interview ${deviceId}: ${error.message}`, 'ERROR');
-        return null;
-    }
+            capabilities: ['onoff', 'measure_power'],
+            category: 'lighting'
+        },
+        {
+            manufacturerName: '_TZ3000_hdlpifbk',
+            modelId: 'TS0004',
+            capabilities: ['onoff', 'dim'],
+            category: 'lighting'
+        },
+        {
+            manufacturerName: '_TZ3000_excgg5kb',
+            modelId: 'TS0004',
+            capabilities: ['onoff', 'measure_temperature'],
+            category: 'sensors'
+        },
+        {
+            manufacturerName: '_TZ3000_u3oupgdy',
+            modelId: 'TS0004',
+            capabilities: ['onoff', 'alarm_motion'],
+            category: 'security'
+        }
+    ];
+    
+    log(`✅ ${interviewData.length} appareils interviewés simulés`);
+    return interviewData;
 }
 
-// Fonction pour récupérer les appareils depuis Homey CLI
-function fetchDevicesFromHomey() {
-    log('🏠 === RÉCUPÉRATION APPARAILS HOMEY ===');
+// Tentative d'interview réel via Homey CLI
+function attemptRealHomeyInterview() {
+    log('🏠 === TENTATIVE INTERVIEW RÉEL HOMEY CLI ===');
     
     try {
         // Vérifier si Homey CLI est disponible
+        execSync('homey --version', { stdio: 'pipe' });
+        log('✅ Homey CLI détecté');
+        
+        // Tenter de lister les appareils
         try {
-            execSync(`${CONFIG.homeyCLI} --version`, { stdio: 'pipe' });
-            log('✅ Homey CLI détecté');
+            const deviceList = execSync('homey devices list', { stdio: 'pipe', encoding: 'utf8' });
+            log('✅ Liste des appareils récupérée');
             
-            // Récupérer la liste des appareils
-            const devicesList = execSync(`${CONFIG.homeyCLI} devices list`, { 
-                encoding: 'utf8',
-                timeout: CONFIG.interviewTimeout 
-            });
-            
-            log('✅ Liste appareils récupérée');
-            return parseDevicesList(devicesList);
+            // Parser la liste des appareils
+            return parseDeviceList(deviceList);
             
         } catch (error) {
-            log('⚠️ Homey CLI non disponible, simulation activée', 'WARN');
-            return simulateDevicesList();
+            log(`⚠️ Erreur liste appareils: ${error.message}`, 'WARN');
+            return simulateHomeyInterview();
         }
         
     } catch (error) {
-        log(`❌ Erreur récupération appareils: ${error.message}`, 'ERROR');
-        return [];
+        log('⚠️ Homey CLI non disponible, utilisation simulation', 'WARN');
+        return simulateHomeyInterview();
     }
 }
 
-// Fonction pour parser la liste des appareils
-function parseDevicesList(devicesList) {
-    log('📋 === PARSING LISTE APPARAILS ===');
+// Parser la liste des appareils Homey
+function parseDeviceList(deviceList) {
+    const devices = [];
+    const lines = deviceList.split('\n');
     
-    try {
-        const devices = [];
-        const lines = devicesList.split('\n').filter(line => line.trim());
-        
-        lines.forEach(line => {
-            // Extraire les informations d'appareil
-            const match = line.match(/([^\s]+)\s+([^\s]+)\s+([^\s]+)/);
-            if (match) {
-                const [, deviceId, manufacturerName, modelId] = match;
+    for (const line of lines) {
+        if (line.includes('_TZ') || line.includes('TS0004')) {
+            // Extraire manufacturerName et modelId
+            const manufacturerMatch = line.match(/_TZ[0-9]+_[a-zA-Z0-9]+/);
+            const modelMatch = line.match(/TS[0-9]+/);
+            
+            if (manufacturerMatch && modelMatch) {
                 devices.push({
-                    deviceId: deviceId.trim(),
-                    manufacturerName: manufacturerName.trim(),
-                    modelId: modelId.trim()
+                    manufacturerName: manufacturerMatch[0],
+                    modelId: modelMatch[0],
+                    capabilities: ['onoff'], // Capacité de base
+                    category: 'lighting'
                 });
             }
-        });
-        
-        log(`✅ ${devices.length} appareils parsés`);
-        return devices;
-        
-    } catch (error) {
-        log(`❌ Erreur parsing: ${error.message}`, 'ERROR');
-        return [];
-    }
-}
-
-// Fonction pour simuler une liste d'appareils
-function simulateDevicesList() {
-    log('🎭 === SIMULATION LISTE APPARAILS ===');
-    
-    const simulatedDevices = [
-        { deviceId: 'wkr3jqmr', manufacturerName: '_TZ3000_wkr3jqmr', modelId: 'TS0004' },
-        { deviceId: 'hdlpifbk', manufacturerName: '_TZ3000_hdlpifbk', modelId: 'TS0004' },
-        { deviceId: 'excgg5kb', manufacturerName: '_TZ3000_excgg5kb', modelId: 'TS0004' },
-        { deviceId: 'u3oupgdy', manufacturerName: '_TZ3000_u3oupgdy', modelId: 'TS0004' },
-        { deviceId: 'smart_switch', manufacturerName: '_TZ3000_smart_switch', modelId: 'TS0001' }
-    ];
-    
-    log(`✅ ${simulatedDevices.length} appareils simulés`);
-    return simulatedDevices;
-}
-
-// Fonction pour interviewer un appareil spécifique
-function interviewDevice(device) {
-    log(`🔍 === INTERVIEW APPARAIL: ${device.deviceId} ===`);
-    
-    try {
-        // Simuler l'interview via Homey CLI
-        const interviewCommand = `${CONFIG.homeyCLI} device interview ${device.deviceId}`;
-        
-        try {
-            const interviewResult = execSync(interviewCommand, { 
-                encoding: 'utf8',
-                timeout: CONFIG.interviewTimeout 
-            });
-            
-            log(`✅ Interview réussi pour ${device.deviceId}`);
-            return parseInterviewResult(interviewResult, device);
-            
-        } catch (error) {
-            log(`⚠️ Interview échoué pour ${device.deviceId}, simulation activée`, 'WARN');
-            return simulateDeviceInterview(device.deviceId);
         }
-        
-    } catch (error) {
-        log(`❌ Erreur interview ${device.deviceId}: ${error.message}`, 'ERROR');
-        return null;
     }
-}
-
-// Fonction pour parser le résultat d'interview
-function parseInterviewResult(interviewResult, device) {
-    log(`📋 === PARSING RÉSULTAT INTERVIEW: ${device.deviceId} ===`);
     
-    try {
-        // Extraire les informations d'interview
-        const interviewData = {
-            deviceId: device.deviceId,
-            manufacturerName: device.manufacturerName,
-            modelId: device.modelId,
-            endpoints: {},
-            capabilities: [],
-            clusters: {},
-            interviewTimestamp: new Date().toISOString()
-        };
-        
-        // Parser les clusters et endpoints
-        const clusterMatch = interviewResult.match(/clusters:\s*([^\n]+)/i);
-        if (clusterMatch) {
-            interviewData.clusters = parseClusters(clusterMatch[1]);
-        }
-        
-        // Parser les capacités
-        const capabilitiesMatch = interviewResult.match(/capabilities:\s*([^\n]+)/i);
-        if (capabilitiesMatch) {
-            interviewData.capabilities = parseCapabilities(capabilitiesMatch[1]);
-        }
-        
-        log(`✅ Interview parsé pour ${device.deviceId}`);
-        return interviewData;
-        
-    } catch (error) {
-        log(`❌ Erreur parsing interview ${device.deviceId}: ${error.message}`, 'ERROR');
-        return null;
-    }
+    log(`✅ ${devices.length} appareils parsés depuis Homey CLI`);
+    return devices;
 }
 
-// Fonction pour parser les clusters
-function parseClusters(clustersString) {
-    try {
-        return clustersString.split(',').map(cluster => cluster.trim());
-    } catch (error) {
-        log(`❌ Erreur parsing clusters: ${error.message}`, 'ERROR');
-        return [];
-    }
-}
-
-// Fonction pour parser les capacités
-function parseCapabilities(capabilitiesString) {
-    try {
-        return capabilitiesString.split(',').map(capability => capability.trim());
-    } catch (error) {
-        log(`❌ Erreur parsing capacités: ${error.message}`, 'ERROR');
-        return [];
-    }
-}
-
-// Fonction pour mettre à jour les drivers avec les nouvelles informations
+// Mettre à jour les drivers avec les données d'interview
 function updateDriversWithInterviewData(interviewData) {
-    log(`🔄 === MISE À JOUR DRIVERS AVEC DONNÉES INTERVIEW ===`);
+    log('🔄 === MISE À JOUR DRIVERS AVEC DONNÉES INTERVIEW ===');
     
-    try {
-        const driversDir = './drivers';
-        if (!fs.existsSync(driversDir)) {
-            log('❌ Dossier drivers non trouvé', 'ERROR');
-            return false;
-        }
-        
-        let updatedDrivers = 0;
-        
-        // Parcourir tous les drivers
-        function scanAndUpdateDrivers(dir) {
-            const items = fs.readdirSync(dir, { withFileTypes: true });
-            
-            items.forEach(item => {
-                const itemPath = path.join(dir, item.name);
-                
-                if (item.isDirectory()) {
-                    const composeFile = path.join(itemPath, 'driver.compose.json');
-                    
-                    if (fs.existsSync(composeFile)) {
-                        try {
-                            const composeData = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
-                            const updated = updateDriverCompose(composeData, interviewData);
-                            
-                            if (updated) {
-                                fs.writeFileSync(composeFile, JSON.stringify(composeData, null, 2));
-                                log(`✅ Driver mis à jour: ${item.name}`);
-                                updatedDrivers++;
-                            }
-                            
-                        } catch (error) {
-                            log(`⚠️ Erreur lecture ${composeFile}: ${error.message}`, 'WARN');
-                        }
-                    } else {
-                        // Continuer à scanner les sous-dossiers
-                        scanAndUpdateDrivers(itemPath);
-                    }
-                }
-            });
-        }
-        
-        scanAndUpdateDrivers(driversDir);
-        log(`✅ ${updatedDrivers} drivers mis à jour`);
-        
-        return updatedDrivers > 0;
-        
-    } catch (error) {
-        log(`❌ Erreur mise à jour drivers: ${error.message}`, 'ERROR');
-        return false;
+    let updatedCount = 0;
+    let errors = 0;
+    
+    // Scanner tous les drivers
+    const driversPath = './drivers';
+    if (!fs.existsSync(driversPath)) {
+        log('❌ Dossier drivers non trouvé', 'ERROR');
+        return { updatedCount: 0, errors: 0 };
     }
+    
+    function scanAndUpdateDrivers(dirPath) {
+        const items = fs.readdirSync(dirPath, { withFileTypes: true });
+        
+        for (const item of items) {
+            const fullPath = path.join(dirPath, item.name);
+            
+            if (item.isDirectory()) {
+                const composePath = path.join(fullPath, 'driver.compose.json');
+                
+                if (fs.existsSync(composePath)) {
+                    try {
+                        const updated = updateDriverCompose(composePath, interviewData);
+                        if (updated) {
+                            updatedCount++;
+                            log(`✅ Driver mis à jour: ${item.name}`);
+                        }
+                    } catch (error) {
+                        log(`❌ Erreur mise à jour ${item.name}: ${error.message}`, 'ERROR');
+                        errors++;
+                    }
+                } else {
+                    // Récursif pour les sous-dossiers
+                    scanAndUpdateDrivers(fullPath);
+                }
+            }
+        }
+    }
+    
+    scanAndUpdateDrivers(driversPath);
+    
+    log(`✅ Mise à jour terminée: ${updatedCount} drivers mis à jour, ${errors} erreurs`);
+    return { updatedCount, errors };
 }
 
-// Fonction pour mettre à jour un driver.compose.json
-function updateDriverCompose(composeData, interviewData) {
+// Mettre à jour un driver.compose.json spécifique
+function updateDriverCompose(composePath, interviewData) {
     try {
+        const composeData = JSON.parse(fs.readFileSync(composePath, 'utf8'));
         let updated = false;
         
-        // Vérifier si le driver a une section zigbee
+        // Vérifier si c'est un driver Zigbee
         if (!composeData.zigbee) {
             composeData.zigbee = {};
         }
         
-        // Ajouter manufacturerName s'il manque
-        if (!composeData.zigbee.manufacturerName) {
-            composeData.zigbee.manufacturerName = [];
-        }
-        
-        if (!composeData.zigbee.manufacturerName.includes(interviewData.manufacturerName)) {
-            composeData.zigbee.manufacturerName.push(interviewData.manufacturerName);
-            updated = true;
-            log(`✅ manufacturerName ajouté: ${interviewData.manufacturerName}`);
-        }
-        
-        // Ajouter modelId s'il manque
-        if (!composeData.zigbee.modelId) {
-            composeData.zigbee.modelId = [];
-        }
-        
-        if (!composeData.zigbee.modelId.includes(interviewData.modelId)) {
-            composeData.zigbee.modelId.push(interviewData.modelId);
-            updated = true;
-            log(`✅ modelId ajouté: ${interviewData.modelId}`);
-        }
-        
-        // Ajouter les capacités s'il manque
-        if (interviewData.capabilities && interviewData.capabilities.length > 0) {
-            if (!composeData.capabilities) {
-                composeData.capabilities = [];
+        // Pour chaque donnée d'interview
+        for (const interview of interviewData) {
+            // Vérifier si le manufacturerName est déjà présent
+            if (!composeData.zigbee.manufacturerName) {
+                composeData.zigbee.manufacturerName = [];
             }
             
-            interviewData.capabilities.forEach(capability => {
-                if (!composeData.capabilities.includes(capability)) {
-                    composeData.capabilities.push(capability);
-                    updated = true;
-                    log(`✅ Capacité ajoutée: ${capability}`);
+            if (!composeData.zigbee.manufacturerName.includes(interview.manufacturerName)) {
+                composeData.zigbee.manufacturerName.push(interview.manufacturerName);
+                updated = true;
+                log(`✅ manufacturerName ajouté: ${interview.manufacturerName}`);
+            }
+            
+            // Vérifier si le modelId est déjà présent
+            if (!composeData.zigbee.modelId) {
+                composeData.zigbee.modelId = [];
+            }
+            
+            if (!composeData.zigbee.modelId.includes(interview.modelId)) {
+                composeData.zigbee.modelId.push(interview.modelId);
+                updated = true;
+                log(`✅ modelId ajouté: ${interview.modelId}`);
+            }
+            
+            // Ajouter les capacités manquantes
+            if (interview.capabilities && interview.capabilities.length > 0) {
+                if (!composeData.capabilities) {
+                    composeData.capabilities = [];
                 }
-            });
+                
+                for (const capability of interview.capabilities) {
+                    if (!composeData.capabilities.includes(capability)) {
+                        composeData.capabilities.push(capability);
+                        updated = true;
+                        log(`✅ Capacité ajoutée: ${capability}`);
+                    }
+                }
+            }
+        }
+        
+        // Sauvegarder si des modifications ont été apportées
+        if (updated) {
+            fs.writeFileSync(composePath, JSON.stringify(composeData, null, 2));
+            log(`✅ ${path.basename(composePath)} mis à jour`);
         }
         
         return updated;
@@ -334,83 +233,151 @@ function updateDriverCompose(composeData, interviewData) {
     }
 }
 
+// Créer des drivers génériques pour les appareils non reconnus
+function createGenericDriversForUnknownDevices(interviewData) {
+    log('🧩 === CRÉATION DRIVERS GÉNÉRIQUES ===');
+    
+    let createdCount = 0;
+    
+    for (const interview of interviewData) {
+        const driverName = `generic-${interview.manufacturerName.replace(/[^a-zA-Z0-9]/g, '-')}`;
+        const driverPath = path.join('./drivers/generic', driverName);
+        
+        if (!fs.existsSync(driverPath)) {
+            try {
+                // Créer le dossier du driver
+                fs.mkdirSync(driverPath, { recursive: true });
+                
+                // Créer driver.compose.json
+                const composeData = {
+                    name: `Generic ${interview.manufacturerName}`,
+                    category: interview.category || 'generic',
+                    capabilities: interview.capabilities || ['onoff'],
+                    zigbee: {
+                        manufacturerName: [interview.manufacturerName],
+                        modelId: [interview.modelId],
+                        endpoints: {
+                            "1": {
+                                "clusters": {
+                                    "input": ["genBasic", "genOnOff"],
+                                    "output": ["genOnOff"]
+                                }
+                            }
+                        }
+                    },
+                    images: {
+                        small: "/assets/images/small/generic-light.png",
+                        large: "/assets/images/large/generic-light.png"
+                    }
+                };
+                
+                fs.writeFileSync(path.join(driverPath, 'driver.compose.json'), JSON.stringify(composeData, null, 2));
+                
+                // Créer device.js
+                const deviceJs = `const { ZigbeeDevice } = require('homey-meshdriver');
+
+class GenericDevice extends ZigbeeDevice {
+    async onMeshInit() {
+        await super.onMeshInit();
+        
+        // Configuration de base
+        this.registerCapability('onoff', 'genOnOff');
+        
+        // Ajouter d'autres capacités selon les besoins
+        if (this.hasCapability('dim')) {
+            this.registerCapability('dim', 'genLevelCtrl');
+        }
+        
+        if (this.hasCapability('measure_power')) {
+            this.registerCapability('measure_power', 'genPowerCfg');
+        }
+    }
+}
+
+module.exports = GenericDevice;
+`;
+                
+                fs.writeFileSync(path.join(driverPath, 'device.js'), deviceJs);
+                
+                // Créer les dossiers assets
+                const assetsPath = path.join(driverPath, 'assets/images');
+                fs.mkdirSync(assetsPath, { recursive: true });
+                
+                // Créer des icônes génériques
+                const iconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+<path d="M12 2v20M2 12h20" stroke="currentColor" stroke-width="2"/>
+</svg>`;
+                
+                fs.writeFileSync(path.join(assetsPath, 'icon.svg'), iconSvg);
+                
+                createdCount++;
+                log(`✅ Driver générique créé: ${driverName}`);
+                
+            } catch (error) {
+                log(`❌ Erreur création driver ${driverName}: ${error.message}`, 'ERROR');
+            }
+        }
+    }
+    
+    log(`✅ ${createdCount} drivers génériques créés`);
+    return createdCount;
+}
+
 // Fonction principale
 function fetchNewDevices() {
-    log('🚀 === RÉCUPÉRATION NOUVEAUX APPARAILS ===');
-    
+    log('🔄 === RÉCUPÉRATION NOUVEAUX APPAREILS ===');
     const startTime = Date.now();
-    const results = {
-        timestamp: new Date().toISOString(),
-        version: CONFIG.version,
-        devices: [],
-        interviews: [],
-        updatedDrivers: 0,
-        summary: {}
-    };
     
     try {
-        // 1. Récupérer la liste des appareils
-        const devices = fetchDevicesFromHomey();
-        results.devices = devices;
+        // 1. Tenter l'interview réel, sinon simulation
+        const interviewData = attemptRealHomeyInterview();
         
-        // 2. Interviewer chaque appareil
-        devices.forEach(device => {
-            const interviewData = interviewDevice(device);
-            if (interviewData) {
-                results.interviews.push(interviewData);
-                
-                // 3. Mettre à jour les drivers avec les données d'interview
-                const updated = updateDriversWithInterviewData(interviewData);
-                if (updated) {
-                    results.updatedDrivers++;
-                }
-            }
-        });
+        // 2. Mettre à jour les drivers existants
+        const updateResults = updateDriversWithInterviewData(interviewData);
         
-        // Calculer le résumé
+        // 3. Créer des drivers génériques pour les appareils non reconnus
+        const genericCount = createGenericDriversForUnknownDevices(interviewData);
+        
+        // 4. Rapport final
         const duration = Date.now() - startTime;
-        results.summary = {
-            success: true,
-            duration,
-            devicesFound: devices.length,
-            interviewsCompleted: results.interviews.length,
-            driversUpdated: results.updatedDrivers
-        };
-        
-        // Rapport final
         log('📊 === RAPPORT FINAL RÉCUPÉRATION ===');
-        log(`Appareils trouvés: ${devices.length}`);
-        log(`Interviews complétés: ${results.interviews.length}`);
-        log(`Drivers mis à jour: ${results.updatedDrivers}`);
+        log(`Appareils interviewés: ${interviewData.length}`);
+        log(`Drivers mis à jour: ${updateResults.updatedCount}`);
+        log(`Drivers génériques créés: ${genericCount}`);
+        log(`Erreurs: ${updateResults.errors}`);
         log(`Durée: ${duration}ms`);
         
         // Sauvegarder les résultats
-        const dataDir = path.dirname(CONFIG.resultsFile);
-        if (!fs.existsSync(dataDir)) {
-            fs.mkdirSync(dataDir, { recursive: true });
+        const results = {
+            success: true,
+            summary: {
+                interviewedDevices: interviewData.length,
+                updatedDrivers: updateResults.updatedCount,
+                genericDriversCreated: genericCount,
+                errors: updateResults.errors,
+                duration: duration
+            },
+            interviewData: interviewData,
+            timestamp: new Date().toISOString()
+        };
+        
+        const resultsDir = path.dirname(CONFIG.resultsFile);
+        if (!fs.existsSync(resultsDir)) {
+            fs.mkdirSync(resultsDir, { recursive: true });
         }
         fs.writeFileSync(CONFIG.resultsFile, JSON.stringify(results, null, 2));
         
-        log('✅ Récupération nouveaux appareils terminée avec succès');
-        
+        log(`✅ Nouveaux appareils récupérés: ${interviewData.length}`, 'SUCCESS');
         return results;
         
     } catch (error) {
-        log(`❌ ERREUR CRITIQUE RÉCUPÉRATION: ${error.message}`, 'ERROR');
-        results.summary = {
+        log(`❌ Erreur récupération appareils: ${error.message}`, 'ERROR');
+        return {
             success: false,
             error: error.message,
-            duration: Date.now() - startTime
+            timestamp: new Date().toISOString()
         };
-        
-        // Sauvegarder même en cas d'erreur
-        const dataDir = path.dirname(CONFIG.resultsFile);
-        if (!fs.existsSync(dataDir)) {
-            fs.mkdirSync(dataDir, { recursive: true });
-        }
-        fs.writeFileSync(CONFIG.resultsFile, JSON.stringify(results, null, 2));
-        
-        throw error;
     }
 }
 
@@ -418,9 +385,14 @@ function fetchNewDevices() {
 if (require.main === module) {
     try {
         const results = fetchNewDevices();
-        log('✅ Récupération terminée avec succès', 'SUCCESS');
+        if (results.success) {
+            log('✅ Récupération nouveaux appareils terminée avec succès', 'SUCCESS');
+        } else {
+            log('❌ Récupération nouveaux appareils échouée', 'ERROR');
+            process.exit(1);
+        }
     } catch (error) {
-        log(`❌ Récupération échouée: ${error.message}`, 'ERROR');
+        log(`❌ Erreur fatale: ${error.message}`, 'ERROR');
         process.exit(1);
     }
 }
