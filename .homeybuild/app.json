@@ -1,0 +1,65 @@
+{
+  "id": "com.tuya.zigbee",
+  "name": {
+    "en": "Tuya Zigbee",
+    "fr": "Tuya Zigbee",
+    "nl": "Tuya Zigbee",
+    "ta": "Tuya Zigbee"
+  },
+  "description": "Universal Tuya Zigbee Device Support",
+  "version": "1.0.12",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "category": [
+    "automation",
+    "utilities"
+  ],
+  "author": {
+    "name": "Dylan Rajasekaram",
+    "email": "dylan.rajasekaram+homey@gmail.com"
+  },
+  "main": "app.js",
+  "drivers": [
+    {
+      "id": "zigbee",
+      "name": {
+        "en": "zigbee Device",
+        "fr": "Appareil zigbee",
+        "nl": "zigbee Apparaat",
+        "ta": "zigbee Device"
+      },
+      "path": "zigbee"
+    }
+  ],
+  "images": {
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
+  },
+  "bugs": {
+    "url": "https://github.com/dlnraja/tuya-zigbee/issues"
+  },
+  "homepage": "https://github.com/dlnraja/tuya-zigbee",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dlnraja/tuya-zigbee.git"
+  },
+  "license": "MIT",
+  "permissions": [
+    "homey:app:com.tuya.zigbee",
+    "homey:manager:api",
+    "homey:manager:devices",
+    "homey:manager:drivers"
+  ],
+  "support": "mailto:dylan.rajasekaram+homey@gmail.com",
+  "api": {
+    "min": 3,
+    "max": 3
+  },
+  "platform": "local",
+  "flow": {
+    "actions": [],
+    "conditions": [],
+    "triggers": []
+  },
+  "devices": []
+}
