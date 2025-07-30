@@ -6,14 +6,32 @@ This document provides a comprehensive overview of all drivers in the Tuya Zigbe
 
 ## Statistics
 
-- **Total Drivers**: 0
-- **Tuya Drivers**: 0
+- **Total Drivers**: 14
+- **Tuya Drivers**: 1
 - **Zigbee Drivers**: 0
-- **Categories**: 0
+- **Categories**: 4
 
 ## Driver Categories
 
+### Generic (4)
+- Drivers in the generic category
+- Supports various generic devices
+- Includes both Tuya and Zigbee variants
 
+### Todo-devices (8)
+- Drivers in the todo-devices category
+- Supports various todo-devices devices
+- Includes both Tuya and Zigbee variants
+
+### Tuya (1)
+- Drivers in the tuya category
+- Supports various tuya devices
+- Includes both Tuya and Zigbee variants
+
+### Drivers (1)
+- Drivers in the drivers category
+- Supports various drivers devices
+- Includes both Tuya and Zigbee variants
 
 ## Capability Matrix
 
