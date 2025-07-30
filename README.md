@@ -3,7 +3,7 @@
 ## 📊 Statistics
 - **Total Drivers**: 14644
 - **Tuya Drivers**: 584
-- **Zigbee Drivers**: 1838
+- **Zigbee Drivers**: 1846
 
 ## 🚀 Features
 - Universal Tuya and Zigbee support
