@@ -177,7 +177,25 @@ function ensureRequiredFilesExist() {
     return { createdFiles };
 }
 
-// 2. Correction de la structure de l'app
+// 2. Complétion intelligente des fichiers
+function smartCompleteFiles() {
+    log('🧠 === COMPLÉTION INTELLIGENTE DES FICHIERS ===', 'INFO');
+    
+    try {
+        // Importer et exécuter le script de complétion intelligente
+        const { smartCompleteAllFiles } = require('./scripts/smart-complete-files.js');
+        const results = smartCompleteAllFiles();
+        log(`📊 Complétion terminée: ${results.enhanced} fichiers améliorés`, 'SUCCESS');
+        return results;
+    } catch (error) {
+        log(`❌ Erreur import script complétion: ${error.message}`, 'ERROR');
+        // Fallback : complétion manuelle basique
+        log('🔄 Fallback: complétion manuelle', 'INFO');
+        return { enhanced: 0, errors: 1, fallback: true };
+    }
+}
+
+// 3. Correction de la structure de l'app
 function fixAppStructure() {
     log('🔧 === CORRECTION STRUCTURE APP ===', 'INFO');
     
@@ -529,41 +547,44 @@ function runMegaPipeline() {
         // 1. Vérification fichiers requis
         results.steps.requiredFiles = runStep('Vérification Fichiers Requis', ensureRequiredFilesExist);
         
-        // 2. Correction structure app
+        // 2. Complétion intelligente des fichiers
+        results.steps.smartComplete = runStep('Complétion Intelligente Fichiers', smartCompleteFiles);
+        
+        // 3. Correction structure app
         results.steps.appStructure = runStep('Correction Structure App', fixAppStructure);
         
-        // 3. Vérification drivers
+        // 4. Vérification drivers
         results.steps.drivers = runStep('Vérification Drivers', verifyAllDrivers);
         
-        // 4. Recherche nouveaux devices
+        // 5. Recherche nouveaux devices
         results.steps.devices = runStep('Recherche Nouveaux Devices', fetchNewDevices);
         
-        // 5. Enrichissement intelligent
+        // 6. Enrichissement intelligent
         results.steps.enrichment = runStep('Enrichissement Intelligent', smartEnrichDrivers);
         
-        // 6. Scraping communauté
+        // 7. Scraping communauté
         results.steps.scraping = runStep('Scraping Communauté Homey', scrapeHomeyCommunity);
         
-        // 7. Correction erreurs forum
+        // 8. Correction erreurs forum
         results.steps.forumErrors = runStep('Correction Erreurs Forum', crawlForumErrorsAndFixDrivers);
         
-        // 8. GitHub (si token disponible)
+        // 9. GitHub (si token disponible)
         if (process.env.GITHUB_TOKEN) {
             results.steps.github = runStep('Synchronisation GitHub', fetchGitHubIssues);
         } else {
             log('🔕 Token GitHub absent, GitHub ignoré', 'WARN');
         }
         
-        // 9. Traitement TODO
+        // 10. Traitement TODO
         results.steps.todo = runStep('Traitement TODO Devices', resolveTodoDevices);
         
-        // 10. Tests compatibilité
+        // 11. Tests compatibilité
         results.steps.compatibility = runStep('Tests Compatibilité', testCompatibility);
         
-        // 11. Validation Homey CLI
+        // 12. Validation Homey CLI
         results.steps.cli = runStep('Validation Homey CLI', validateHomeyCLI);
         
-        // 12. Génération documentation
+        // 13. Génération documentation
         results.steps.docs = runStep('Génération Documentation', generateDocs);
         
         // Calculer le résumé

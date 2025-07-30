@@ -55,5 +55,14 @@
       "issue": "Need fallback drivers for devices not in any existing driver",
       "date": "2025-07-29"
     }
-  }
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "add": true
+      }
+    }
+  ]
 }

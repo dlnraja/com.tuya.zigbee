@@ -53,5 +53,14 @@
       "issue": "Device with manufacturerName '_TZ3000_wkr3jqmr' and modelId 'TS0004' shows as 'unknown zigbee device'",
       "date": "2025-07-29"
     }
-  }
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "add": true
+      }
+    }
+  ]
 }

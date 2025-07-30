@@ -56,5 +56,14 @@
       "downloads": 8000,
       "rating": 4
     }
-  }
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "add": true
+      }
+    }
+  ]
 }
