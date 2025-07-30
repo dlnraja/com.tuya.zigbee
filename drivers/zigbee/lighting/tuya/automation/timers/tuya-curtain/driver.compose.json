@@ -1,12 +1,21 @@
-﻿{
-  "id": "tuya-curtain",
-  "title": "tuya-curtain Device",
-  "category": "controllers",
+{
+  "id": "driver.compose",
+  "name": "driver.compose",
+  "class": "light",
   "capabilities": [
-    
+    "onoff"
   ],
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
-  }
+    "small": "/assets/icon-small.svg",
+    "large": "/assets/icon-large.svg"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "add": true
+      }
+    }
+  ]
 }

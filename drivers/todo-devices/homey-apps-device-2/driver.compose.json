@@ -47,6 +47,9 @@
     "ta": "homey-apps-device-2"
   },
   "metadata": {
+    "completion_date": "2025-07-30T15:48:15.038Z",
+    "completion_version": "1.0.12-20250729-1700",
+    "original_completeness": 66.66666666666666,
     "supportedModels": {
       "firmwares": [
         "official",
@@ -70,10 +73,26 @@
         "homeyBox": 0.81
       },
       "metadata": {
-        "tested": "2025-07-30T15:15:24.917Z",
+        "tested": "2025-07-30T16:09:26.700Z",
         "totalTests": 12,
         "successfulTests": 12
       }
     }
+  },
+  "class": "light",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "add": true
+      }
+    }
+  ],
+  "settings": [],
+  "flow": {
+    "actions": [],
+    "conditions": [],
+    "triggers": []
   }
 }

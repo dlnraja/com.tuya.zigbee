@@ -39,9 +39,9 @@
     }
   },
   "metadata": {
-    "createdBy": "fix-driver-scanning.js",
-    "creationDate": "2025-07-30T05:02:56.111Z",
-    "fallback": true,
+    "completion_date": "2025-07-30T15:48:15.060Z",
+    "completion_version": "1.0.12-20250729-1700",
+    "original_completeness": 50,
     "supportedModels": {
       "firmwares": [
         "official",
@@ -65,10 +65,30 @@
         "homeyBox": 0.81
       },
       "metadata": {
-        "tested": "2025-07-30T15:15:25.827Z",
+        "tested": "2025-07-30T16:09:27.882Z",
         "totalTests": 12,
         "successfulTests": 12
       }
     }
+  },
+  "class": "light",
+  "images": {
+    "small": "/assets/icon-small.svg",
+    "large": "/assets/icon-large.svg"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "add": true
+      }
+    }
+  ],
+  "settings": [],
+  "flow": {
+    "actions": [],
+    "conditions": [],
+    "triggers": []
   }
 }

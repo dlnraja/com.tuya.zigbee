@@ -1,1 +1,1 @@
-docs/CODE_OF_CONDUCT/CODE_OF_CONDUCT.md
+# Code of Conduct
