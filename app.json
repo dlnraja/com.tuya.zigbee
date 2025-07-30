@@ -49,10 +49,7 @@
   },
   "license": "MIT",
   "permissions": [
-    "homey:app:com.tuya.zigbee",
-    "homey:manager:api",
-    "homey:manager:devices",
-    "homey:manager:drivers"
+    "homey:app:com.tuya.zigbee"
   ],
   "support": "mailto:dylan.rajasekaram+homey@gmail.com",
   "api": {
