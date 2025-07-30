@@ -76,117 +76,26 @@ function runStep(name, stepFunction, options = {}) {
     }
 }
 
-// 1. Correction de la structure de l'app (CRITIQUE)
+// 1. Correction automatique (CRITIQUE)
 function fixAppStructure() {
     log('🧱 === CORRECTION STRUCTURE APP ===', 'INFO');
     
     try {
-        // Vérifier app.json
-        if (!fs.existsSync('./app.json')) {
-            log('📝 Création app.json...', 'INFO');
-            const appJson = {
-                "id": "com.tuya.zigbee",
-                "name": {
-                    "en": "Tuya Zigbee",
-                    "fr": "Tuya Zigbee",
-                    "nl": "Tuya Zigbee",
-                    "ta": "Tuya Zigbee"
-                },
-                "description": {
-                    "en": "Universal Tuya Zigbee driver pack with comprehensive device support",
-                    "fr": "Pack de drivers Tuya Zigbee universel avec support complet des appareils",
-                    "nl": "Universeel Tuya Zigbee driver pakket met uitgebreide apparaatondersteuning",
-                    "ta": "உலகளாவிய Tuya Zigbee driver pack முழுமையான சாதன ஆதரவுடன்"
-                },
-                "version": "1.0.12",
-                "compatibility": ">=5.0.0",
-                "sdk": 3,
-                "category": ["automation", "utilities"],
-                "author": {
-                    "name": "Dylan Rajasekaram",
-                    "email": "dylan.rajasekaram+homey@gmail.com"
-                },
-                "main": "app.js",
-                "drivers": [
-                    {
-                        "id": "generic-fallback",
-                        "name": {
-                            "en": "Generic Fallback Driver"
-                        }
-                    }
-                ],
-                "images": {
-                    "small": "./assets/images/small.png",
-                    "large": "./assets/images/large.png"
-                },
-                "bugs": "https://github.com/dlnraja/tuya_repair/issues",
-                "homepage": "https://github.com/dlnraja/tuya_repair#readme",
-                "repository": "https://github.com/dlnraja/tuya_repair",
-                "license": "MIT"
-            };
-            fs.writeFileSync('./app.json', JSON.stringify(appJson, null, 2));
+        // Importer et exécuter le script de correction intelligente
+        const { fixAppStructure: fixStructure } = require('./scripts/fix-app-structure');
+        const results = fixStructure();
+        
+        if (results && results.summary.success) {
+            log('✅ Structure app corrigée avec succès', 'SUCCESS');
+            return { fixed: true, driversScanned: results.summary.driversScanned || 0 };
+        } else {
+            log('❌ Échec correction structure app', 'ERROR');
+            return { fixed: false, driversScanned: 0 };
         }
-        
-        // Vérifier app.js
-        if (!fs.existsSync('./app.js')) {
-            log('📝 Création app.js...', 'INFO');
-            const appJs = `'use strict';
-
-const Homey = require('homey');
-
-class TuyaZigbeeApp extends Homey.App {
-    async onInit() {
-        this.log('Tuya Zigbee App is running...');
-        this.log('App initialized with comprehensive Tuya and Zigbee support');
-        
-        this.homey.on('ready', () => {
-            this.log('Homey is ready, Tuya Zigbee drivers are available');
-        });
-    }
-    
-    async onUninit() {
-        this.log('Tuya Zigbee App is shutting down...');
-    }
-}
-
-module.exports = TuyaZigbeeApp;`;
-            fs.writeFileSync('./app.js', appJs);
-        }
-        
-        // Créer la structure des dossiers
-        const directories = [
-            './drivers',
-            './drivers/tuya',
-            './drivers/zigbee',
-            './drivers/tuya/controllers',
-            './drivers/tuya/sensors',
-            './drivers/tuya/lighting',
-            './drivers/tuya/generic',
-            './drivers/zigbee/controllers',
-            './drivers/zigbee/sensors',
-            './drivers/zigbee/lighting',
-            './drivers/zigbee/generic',
-            './assets',
-            './assets/images',
-            './scripts',
-            './logs',
-            './data',
-            './docs'
-        ];
-        
-        directories.forEach(dir => {
-            if (!fs.existsSync(dir)) {
-                fs.mkdirSync(dir, { recursive: true });
-                log(`📁 Dossier créé: ${dir}`, 'INFO');
-            }
-        });
-        
-        log('✅ Structure app corrigée avec succès', 'SUCCESS');
-        return { fixed: true };
         
     } catch (error) {
         log(`❌ Erreur correction structure: ${error.message}`, 'ERROR');
-        throw error;
+        return { fixed: false, driversScanned: 0 };
     }
 }
 
