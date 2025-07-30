@@ -1,7 +1,7 @@
 # Tuya Zigbee - Universal Driver Pack
 
 ## 📊 Statistics
-- **Total Drivers**: 14644
+- **Total Drivers**: 14668
 - **Tuya Drivers**: 584
 - **Zigbee Drivers**: 1846
 
