@@ -31,8 +31,9 @@ function log(message, level = 'INFO') {
 
 // Analyse intelligente du type de produit
 function analyzeProductType(driverName, capabilities = []) {
-    const name = driverName.toLowerCase();
-    const caps = capabilities.map(c => c.toLowerCase());
+    // Validation et conversion en string
+    const name = (driverName && typeof driverName === 'string') ? driverName.toLowerCase() : '';
+    const caps = capabilities.map(c => (c && typeof c === 'string') ? c.toLowerCase() : '');
     
     // Catégories principales
     const categories = {
@@ -62,10 +63,12 @@ function analyzeProductType(driverName, capabilities = []) {
         }
     };
     
-    // Analyse par nom
-    for (const [category, config] of Object.entries(categories)) {
-        if (config.keywords.some(keyword => name.includes(keyword))) {
-            return category;
+    // Analyse par nom (seulement si name n'est pas vide)
+    if (name) {
+        for (const [category, config] of Object.entries(categories)) {
+            if (config.keywords.some(keyword => name.includes(keyword))) {
+                return category;
+            }
         }
     }
     
@@ -317,11 +320,14 @@ function scanAllDrivers() {
                 if (fs.existsSync(composePath)) {
                     try {
                         const composeData = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-                        const productType = analyzeProductType(composeData.name || item.name, composeData.capabilities || []);
+                        // Validation du nom du driver
+                        const driverName = composeData.name || item.name;
+                        const capabilities = composeData.capabilities || [];
+                        const productType = analyzeProductType(driverName, capabilities);
                         
                         drivers.push({
                             id: item.name,
-                            name: composeData.name || item.name,
+                            name: driverName,
                             category: productType,
                             path: fullPath
                         });
