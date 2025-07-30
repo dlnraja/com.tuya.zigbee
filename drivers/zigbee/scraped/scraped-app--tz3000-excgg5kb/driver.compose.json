@@ -1,0 +1,60 @@
+{
+  "id": "scraped-app--tz3000-excgg5kb",
+  "class": "light",
+  "name": {
+    "en": "Scraped _TZ3000_excgg5kb Device",
+    "fr": "Appareil scrapé _TZ3000_excgg5kb",
+    "nl": "Gescraped _TZ3000_excgg5kb apparaat",
+    "ta": "Scraped _TZ3000_excgg5kb சாதனம்"
+  },
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "measure_current"
+  ],
+  "capabilitiesOptions": {},
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_excgg5kb"
+    ],
+    "modelId": [
+      "TS0004"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genBasic",
+          "genIdentify",
+          "genOnOff"
+        ],
+        "bindings": [
+          "genOnOff"
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
+  },
+  "settings": [],
+  "metadata": {
+    "createdFromScraping": true,
+    "source": "app",
+    "scrapingDate": "2025-07-30T14:59:54.473Z",
+    "originalInfo": {
+      "source": "app",
+      "appId": "com.zigbee.universal",
+      "appName": "Universal Zigbee",
+      "manufacturerName": "_TZ3000_excgg5kb",
+      "modelId": "TS0004",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "measure_current"
+      ],
+      "downloads": 8000,
+      "rating": 4
+    }
+  }
+}

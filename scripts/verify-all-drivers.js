@@ -463,9 +463,16 @@ function verifyAllDrivers() {
 
 // Exécution si appelé directement
 if (require.main === module) {
+    log('🚀 === DÉMARRAGE VÉRIFICATION DRIVERS ===');
     try {
         const results = verifyAllDrivers();
-        log('✅ Vérification terminée avec succès', 'SUCCESS');
+        if (results.summary && results.summary.success) {
+            log('✅ Vérification terminée avec succès', 'SUCCESS');
+            log(`📊 Résumé: ${results.summary.totalDrivers} drivers, ${results.summary.validDrivers} valides, ${results.summary.fixedDrivers} corrigés`);
+        } else {
+            log('❌ Vérification échouée', 'ERROR');
+            process.exit(1);
+        }
     } catch (error) {
         log(`❌ Vérification échouée: ${error.message}`, 'ERROR');
         process.exit(1);

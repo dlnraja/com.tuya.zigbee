@@ -1,0 +1,59 @@
+{
+  "id": "scraped-forum--tz3000-hdlpifbk",
+  "class": "light",
+  "name": {
+    "en": "Scraped _TZ3000_hdlpifbk Device",
+    "fr": "Appareil scrapé _TZ3000_hdlpifbk",
+    "nl": "Gescraped _TZ3000_hdlpifbk apparaat",
+    "ta": "Scraped _TZ3000_hdlpifbk சாதனம்"
+  },
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "measure_voltage"
+  ],
+  "capabilitiesOptions": {},
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_hdlpifbk"
+    ],
+    "modelId": [
+      "TS0004"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genBasic",
+          "genIdentify",
+          "genOnOff"
+        ],
+        "bindings": [
+          "genOnOff"
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
+  },
+  "settings": [],
+  "metadata": {
+    "createdFromScraping": true,
+    "source": "forum",
+    "scrapingDate": "2025-07-30T14:59:54.438Z",
+    "originalInfo": {
+      "source": "forum",
+      "postId": 140352,
+      "manufacturerName": "_TZ3000_hdlpifbk",
+      "modelId": "TS0004",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "measure_voltage"
+      ],
+      "issue": "Several Tuya devices not recognized due to missing manufacturerName in driver.compose.json",
+      "date": "2025-07-29"
+    }
+  }
+}

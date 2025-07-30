@@ -19,10 +19,62 @@
       "_TZ3000_wkr3jqmr",
       "_TZ3000_hdlpifbk",
       "_TZ3000_excgg5kb",
-      "_TZ3000_u3oupgdy"
+      "_TZ3000_u3oupgdy",
+      "_TZ3000_light_bulb",
+      "_TZ3000_sensor_temp",
+      "_TZ3000_motion_sensor"
     ],
     "modelId": [
       "TS0004"
-    ]
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": {
+          "input": [
+            "genBasic",
+            "genOnOff"
+          ],
+          "output": [
+            "genOnOff"
+          ]
+        }
+      }
+    }
+  },
+  "name": {
+    "en": "forum-homey-community-device-2",
+    "fr": "forum-homey-community-device-2",
+    "nl": "forum-homey-community-device-2",
+    "ta": "forum-homey-community-device-2"
+  },
+  "metadata": {
+    "supportedModels": {
+      "firmwares": [
+        "official",
+        "alternative",
+        "ota_partial",
+        "generic",
+        "undocumented",
+        "unstable",
+        "fragmented"
+      ],
+      "homeyBoxes": [
+        "homey_pro_2016",
+        "homey_pro_2019",
+        "homey_pro_2023",
+        "homey_bridge",
+        "homey_cloud"
+      ],
+      "confidence": {
+        "average": 0.65,
+        "firmware": 0.54,
+        "homeyBox": 0.81
+      },
+      "metadata": {
+        "tested": "2025-07-30T14:59:55.006Z",
+        "totalTests": 12,
+        "successfulTests": 12
+      }
+    }
   }
 }
