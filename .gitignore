@@ -426,3 +426,7 @@ dev-performance-tests/
 # Fichiers de configuration de développement de développement
 dev-dev-config/
 dev-dev-settings/
+
+
+# Added by Homey CLI
+/.homeybuild/
