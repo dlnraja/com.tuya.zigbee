@@ -55,5 +55,14 @@
       "issue": "Several Tuya devices not recognized due to missing manufacturerName in driver.compose.json",
       "date": "2025-07-29"
     }
-  }
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "add": true
+      }
+    }
+  ]
 }

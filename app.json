@@ -28,7 +28,11 @@
         "nl": "zigbee Apparaat",
         "ta": "zigbee Device"
       },
-      "path": "zigbee"
+      "path": "zigbee",
+      "class": "device",
+      "capabilities": [
+        "onoff"
+      ]
     }
   ],
   "images": {
