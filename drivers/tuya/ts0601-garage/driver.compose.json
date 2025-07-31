@@ -1,0 +1,71 @@
+{
+  "id": "ts0601-garage",
+  "name": {
+    "en": "Tuya TS0601 Garage",
+    "fr": "Garage Tuya TS0601",
+    "nl": "Tuya TS0601 Garage",
+    "ta": "Tuya TS0601 கேரேஜ்"
+  },
+  "class": "garage",
+  "capabilities": [
+    "garagedoor_closed",
+    "garagedoor_state"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601_garage",
+    "clusters": [
+      "genBasic",
+      "closuresDoorLock"
+    ]
+  },
+  "settings": {},
+  "fallback": false,
+  "description": "Garage door opener",
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-31T20:16:47.863Z",
+    "optimized": true
+  },
+  "integration": {
+    "integrated": true,
+    "integratedAt": "2025-07-31T20:16:48.755Z",
+    "version": "1.0.0",
+    "compatible": true
+  },
+  "capabilityProperties": {
+    "garagedoor_closed": {
+      "type": "boolean",
+      "title": {
+        "en": "Garage Door Closed",
+        "fr": "Porte Garage Fermée",
+        "nl": "Garage Deur Gesloten",
+        "ta": "கேரேஜ் கதவு மூடப்பட்டது"
+      },
+      "getable": true,
+      "setable": false
+    },
+    "garagedoor_state": {
+      "type": "string",
+      "title": {
+        "en": "Garage Door State",
+        "fr": "État Porte Garage",
+        "nl": "Garage Deur Status",
+        "ta": "கேரேஜ் கதவு நிலை"
+      },
+      "getable": true,
+      "setable": false
+    }
+  },
+  "clusterDetails": {
+    "closuresDoorLock": {
+      "attributes": [
+        "lockState"
+      ],
+      "commands": [
+        "lockDoor",
+        "unlockDoor"
+      ]
+    }
+  }
+}

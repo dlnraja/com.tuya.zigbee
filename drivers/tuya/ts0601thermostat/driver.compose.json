@@ -1,0 +1,30 @@
+{
+  "id": "ts0601thermostat",
+  "name": {
+    "en": "Tuya TS0601thermostat",
+    "fr": "Tuya TS0601thermostat",
+    "nl": "Tuya TS0601thermostat",
+    "ta": "Tuya TS0601thermostat"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "measure_temperature",
+    "target_temperature",
+    "thermostat_mode"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601thermostat",
+    "clusters": [
+      "genBasic",
+      "msTemperatureMeasurement",
+      "hvacThermostat"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.942Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+  }
+}

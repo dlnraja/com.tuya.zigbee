@@ -1,0 +1,31 @@
+{
+  "id": "ts0601_plug_2",
+  "name": {
+    "en": "Tuya TS0601_plug_2",
+    "fr": "Tuya TS0601_plug_2",
+    "nl": "Tuya TS0601_plug_2",
+    "ta": "Tuya TS0601_plug_2"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "meter_power",
+    "measure_current",
+    "measure_voltage"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601_plug_2",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "seMetering"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.756Z",
+    "version": "3.1.0",
+    "source": "database_analysis",
+    "channels": 1
+  }
+}

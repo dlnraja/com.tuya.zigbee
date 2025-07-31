@@ -1,0 +1,32 @@
+{
+  "id": "ts0123",
+  "name": {
+    "en": "Tuya TS0123",
+    "fr": "Tuya TS0123",
+    "nl": "Tuya TS0123",
+    "ta": "Tuya TS0123"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "meter_power",
+    "measure_current",
+    "measure_voltage",
+    "measure_power_factor"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0123",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "seMetering"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:54.017Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+  }
+}

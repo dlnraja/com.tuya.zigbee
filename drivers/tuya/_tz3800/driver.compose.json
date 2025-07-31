@@ -1,0 +1,27 @@
+{
+  "id": "_tz3800",
+  "name": {
+    "en": "Tuya _TZ3800",
+    "fr": "Tuya _TZ3800",
+    "nl": "Tuya _TZ3800",
+    "ta": "Tuya _TZ3800"
+  },
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "_TZ3800",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:54.093Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+  }
+}

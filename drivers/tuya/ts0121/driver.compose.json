@@ -1,0 +1,112 @@
+{
+  "id": "ts0121",
+  "name": {
+    "en": "Tuya TS0121 Plug",
+    "fr": "Prise Tuya TS0121",
+    "nl": "Tuya TS0121 Stekker",
+    "ta": "Tuya TS0121 பிளக்"
+  },
+  "class": "socket",
+  "capabilities": [
+    {
+      "type": "boolean",
+      "title": {
+        "en": "On/Off",
+        "fr": "Marche/Arrêt",
+        "nl": "Aan/Uit",
+        "ta": "ஆன்/ஆஃப்"
+      },
+      "getable": true,
+      "setable": true,
+      "id": "onoff"
+    },
+    {
+      "type": "number",
+      "title": {
+        "en": "Power",
+        "fr": "Puissance",
+        "nl": "Vermogen",
+        "ta": "சக்தி"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "W",
+      "id": "meter_power"
+    },
+    "measure_current",
+    "measure_voltage"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0121",
+    "clusters": [
+      {
+        "attributes": [
+          "onOff"
+        ],
+        "commands": [
+          "toggle",
+          "off",
+          "on"
+        ],
+        "id": "genOnOff"
+      },
+      {
+        "attributes": [
+          "instantaneousDemand",
+          "currentSummationDelivered"
+        ],
+        "commands": [],
+        "id": "seMetering"
+      },
+      {
+        "attributes": [
+          "instantaneousDemand",
+          "currentSummationDelivered"
+        ],
+        "commands": [],
+        "id": "seMetering"
+      }
+    ]
+  },
+  "settings": {},
+  "fallback": false,
+  "description": "Smart plug with detailed power monitoring",
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-31T20:16:47.707Z",
+    "optimized": true
+  },
+  "integration": {
+    "integrated": true,
+    "integratedAt": "2025-07-31T20:16:48.642Z",
+    "version": "1.0.0",
+    "compatible": true
+  },
+  "capabilityProperties": {
+    "measure_current": {
+      "type": "number",
+      "title": {
+        "en": "Current",
+        "fr": "Courant",
+        "nl": "Stroom",
+        "ta": "மின்னோட்டம்"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "A"
+    },
+    "measure_voltage": {
+      "type": "number",
+      "title": {
+        "en": "Voltage",
+        "fr": "Tension",
+        "nl": "Spanning",
+        "ta": "மின்னழுத்தம்"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "V"
+    }
+  }
+}

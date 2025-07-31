@@ -1,0 +1,28 @@
+{
+  "id": "ts0601blind",
+  "name": {
+    "en": "Tuya TS0601blind",
+    "fr": "Tuya TS0601blind",
+    "nl": "Tuya TS0601blind",
+    "ta": "Tuya TS0601blind"
+  },
+  "class": "curtain",
+  "capabilities": [
+    "windowcoverings_state",
+    "windowcoverings_set"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601blind",
+    "clusters": [
+      "genBasic",
+      "closuresWindowCovering"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.959Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+  }
+}

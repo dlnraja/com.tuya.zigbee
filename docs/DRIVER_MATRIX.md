@@ -6,43 +6,93 @@ This document provides a comprehensive overview of all drivers in the Tuya Zigbe
 
 ## Statistics
 
-- **Total Drivers**: 14
-- **Tuya Drivers**: 1
-- **Zigbee Drivers**: 0
-- **Categories**: 4
+- **Total Drivers**: 2447
+- **Tuya Drivers**: 268
+- **Zigbee Drivers**: 2179
+- **Categories**: 14
 
 ## Driver Categories
 
-### Generic (4)
+### 224 (1)
+- Drivers in the 224 category
+- Supports various 224 devices
+- Includes both Tuya and Zigbee variants
+
+### 302 (2)
+- Drivers in the 302 category
+- Supports various 302 devices
+- Includes both Tuya and Zigbee variants
+
+### 303 (1)
+- Drivers in the 303 category
+- Supports various 303 devices
+- Includes both Tuya and Zigbee variants
+
+### Generic (1987)
 - Drivers in the generic category
 - Supports various generic devices
 - Includes both Tuya and Zigbee variants
 
-### Todo-devices (8)
-- Drivers in the todo-devices category
-- Supports various todo-devices devices
+### Lights (2)
+- Drivers in the lights category
+- Supports various lights devices
 - Includes both Tuya and Zigbee variants
 
-### Tuya (1)
-- Drivers in the tuya category
-- Supports various tuya devices
+### Sensors (4)
+- Drivers in the sensors category
+- Supports various sensors devices
 - Includes both Tuya and Zigbee variants
 
-### Drivers (1)
-- Drivers in the drivers category
-- Supports various drivers devices
+### Humidity (31)
+- Drivers in the humidity category
+- Supports various humidity devices
+- Includes both Tuya and Zigbee variants
+
+### Switches (3)
+- Drivers in the switches category
+- Supports various switches devices
+- Includes both Tuya and Zigbee variants
+
+### Bulbs (162)
+- Drivers in the bulbs category
+- Supports various bulbs devices
+- Includes both Tuya and Zigbee variants
+
+### Contact (45)
+- Drivers in the contact category
+- Supports various contact devices
+- Includes both Tuya and Zigbee variants
+
+### Motion (47)
+- Drivers in the motion category
+- Supports various motion devices
+- Includes both Tuya and Zigbee variants
+
+### Strips (113)
+- Drivers in the strips category
+- Supports various strips devices
+- Includes both Tuya and Zigbee variants
+
+### Temperature (46)
+- Drivers in the temperature category
+- Supports various temperature devices
+- Includes both Tuya and Zigbee variants
+
+### Specific (3)
+- Drivers in the specific category
+- Supports various specific devices
 - Includes both Tuya and Zigbee variants
 
 ## Capability Matrix
 
 | Capability | Tuya | Zigbee | Total |
 |------------|------|--------|-------|
-| onoff | 0 | 0 | 0 |
-| dim | 0 | 0 | 0 |
-| light_hue | 0 | 0 | 0 |
-| measure_power | 0 | 0 | 0 |
-| measure_temperature | 0 | 0 | 0 |
-| measure_humidity | 0 | 0 | 0 |
+| onoff | 241 | 1743 | 1984 |
+| dim | 187 | 1307 | 1494 |
+| light_hue | 134 | 871 | 1005 |
+| measure_power | 160 | 1089 | 1249 |
+| measure_temperature | 80 | 871 | 951 |
+| measure_humidity | 53 | 653 | 706 |
 
 ## Compatibility Matrix
 
@@ -79,6 +129,6 @@ This document provides a comprehensive overview of all drivers in the Tuya Zigbe
 
 ---
 
-**Last Updated**: July 30, 2025
+**Last Updated**: July 31, 2025
 
 **Version**: 1.0.12-20250729-1650

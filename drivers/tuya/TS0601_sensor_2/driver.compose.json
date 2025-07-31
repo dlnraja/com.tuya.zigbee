@@ -1,0 +1,72 @@
+{
+  "id": "TS0601_sensor_2",
+  "name": {
+    "en": "Tuya TS0601 Sensor V2",
+    "fr": "Capteur Tuya TS0601 V2",
+    "nl": "Tuya TS0601 Sensor V2",
+    "ta": "Tuya TS0601 சென்சார் V2"
+  },
+  "class": "sensor",
+  "capabilities": [
+    {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "°C",
+      "id": "measure_temperature"
+    },
+    {
+      "type": "number",
+      "title": {
+        "en": "Humidity",
+        "fr": "Humidité",
+        "nl": "Vochtigheid",
+        "ta": "ஈரப்பதம்"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "%",
+      "id": "measure_humidity"
+    },
+    "measure_pressure"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601",
+    "clusters": [
+      "genBasic",
+      {
+        "attributes": [
+          "measuredValue"
+        ],
+        "commands": [],
+        "id": "msTemperatureMeasurement"
+      },
+      {
+        "attributes": [
+          "measuredValue"
+        ],
+        "commands": [],
+        "id": "msRelativeHumidity"
+      },
+      "msPressureMeasurement"
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-31T20:16:48.251Z",
+    "optimized": true
+  },
+  "integration": {
+    "integrated": true,
+    "integratedAt": "2025-07-31T20:16:49.058Z",
+    "version": "1.0.0",
+    "compatible": true
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "ts0601fan",
+  "name": {
+    "en": "Tuya TS0601fan",
+    "fr": "Tuya TS0601fan",
+    "nl": "Tuya TS0601fan",
+    "ta": "Tuya TS0601fan"
+  },
+  "class": "fan",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601fan",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "genLevelCtrl"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.969Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+  }
+}

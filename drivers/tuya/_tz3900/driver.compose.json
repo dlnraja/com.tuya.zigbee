@@ -1,0 +1,27 @@
+{
+  "id": "_tz3900",
+  "name": {
+    "en": "Tuya _TZ3900",
+    "fr": "Tuya _TZ3900",
+    "nl": "Tuya _TZ3900",
+    "ta": "Tuya _TZ3900"
+  },
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "_TZ3900",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:54.107Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+  }
+}

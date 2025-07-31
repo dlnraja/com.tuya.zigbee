@@ -1,0 +1,29 @@
+{
+  "id": "_tz3000",
+  "name": {
+    "en": "Tuya _TZ3000",
+    "fr": "Tuya _TZ3000",
+    "nl": "Tuya _TZ3000",
+    "ta": "Tuya _TZ3000"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "_TZ3000",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "genLevelCtrl"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:54.039Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+  }
+}
