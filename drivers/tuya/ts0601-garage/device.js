@@ -1,0 +1,111 @@
+const Homey = require('homey');
+
+'use strict';
+
+const { ZigbeeDevice } = require('homey-meshdriver');
+
+class ts0601garageDevice extends ZigbeeDevice {
+    async onMeshInit() {
+        try {
+            await super.onMeshInit();
+            this.log('Tuya TS0601 Garage initialized');
+            
+            // Register capabilities with error handling
+            try { this.registerCapability('garagedoor_closed', 'genOnOff'); } catch (error) { this.log('Error registering capability garagedoor_closed:', error); }
+            try { this.registerCapability('garagedoor_state', 'genOnOff'); } catch (error) { this.log('Error registering capability garagedoor_state:', error); }
+            
+        } catch (error) {
+            this.log('Error during mesh init:', error);
+            throw error;
+        }
+    }
+
+    // Optimized methods
+    async onSettings(oldSettings, newSettings, changedKeys) {
+        this.log('Settings updated:', changedKeys);
+    }
+    
+    async onRenamed(name) {
+        this.log('Device renamed to:', name);
+    }
+    
+    async onDeleted() {
+        this.log('Device deleted');
+    }
+    
+    // Error handling
+    async onError(error) {
+        this.log('Device error:', error);
+        this.setUnavailable(error.message);
+    }
+    
+    // Availability management
+    async onUnavailable() {
+        this.log('Device unavailable');
+    }
+    
+    async onAvailable() {
+        this.log('Device available');
+        this.setAvailable();
+    }
+
+    // Optimized methods
+    async onSettings(oldSettings, newSettings, changedKeys) {
+        this.log('Settings updated:', changedKeys);
+    }
+    
+    async onRenamed(name) {
+        this.log('Device renamed to:', name);
+    }
+    
+    async onDeleted() {
+        this.log('Device deleted');
+    }
+    
+    // Error handling
+    async onError(error) {
+        this.log('Device error:', error);
+        this.setUnavailable(error.message);
+    }
+    
+    // Availability management
+    async onUnavailable() {
+        this.log('Device unavailable');
+    }
+    
+    async onAvailable() {
+        this.log('Device available');
+        this.setAvailable();
+    }
+
+    // Optimized methods
+    async onSettings(oldSettings, newSettings, changedKeys) {
+        this.log('Settings updated:', changedKeys);
+    }
+    
+    async onRenamed(name) {
+        this.log('Device renamed to:', name);
+    }
+    
+    async onDeleted() {
+        this.log('Device deleted');
+    }
+    
+    // Error handling
+    async onError(error) {
+        this.log('Device error:', error);
+        this.setUnavailable(error.message);
+    }
+    
+    // Availability management
+    async onUnavailable() {
+        this.log('Device unavailable');
+    }
+    
+    async onAvailable() {
+        this.log('Device available');
+        this.setAvailable();
+    }
+}
+
+module.exports = ts0601garageDevice;

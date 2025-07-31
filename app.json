@@ -1,66 +1,33 @@
 {
   "id": "com.tuya.zigbee",
   "name": {
-    "en": "Tuya Zigbee",
-    "fr": "Tuya Zigbee",
-    "nl": "Tuya Zigbee",
-    "ta": "Tuya Zigbee"
+    "en": "Tuya Zigbee - Universal Device Support"
   },
-  "description": "Universal Tuya Zigbee Device Support",
-  "version": "1.0.12",
+  "version": "3.1.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "category": [
-    "automation",
-    "utilities"
+    "lights"
   ],
   "author": {
     "name": "Dylan Rajasekaram",
     "email": "dylan.rajasekaram+homey@gmail.com"
   },
   "main": "app.js",
-  "drivers": [
-    {
-      "id": "zigbee",
-      "name": {
-        "en": "zigbee Device",
-        "fr": "Appareil zigbee",
-        "nl": "zigbee Apparaat",
-        "ta": "zigbee Device"
-      },
-      "path": "zigbee",
-      "class": "device",
-      "capabilities": [
-        "onoff"
-      ]
-    }
-  ],
   "images": {
     "small": "./assets/images/small.png",
     "large": "./assets/images/large.png"
   },
-  "bugs": {
-    "url": "https://github.com/dlnraja/tuya-zigbee/issues"
+  "permissions": [],
+  "description": {
+    "en": "Complete Tuya Zigbee device support for Homey",
+    "fr": "Support complet des appareils Tuya Zigbee pour Homey",
+    "nl": "Volledige Tuya Zigbee apparaat ondersteuning voor Homey",
+    "ta": "Homey க்கான முழுமையான Tuya Zigbee சாதன ஆதரவு"
   },
-  "homepage": "https://github.com/dlnraja/tuya-zigbee",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dlnraja/tuya-zigbee.git"
-  },
-  "license": "MIT",
-  "permissions": [
-    "homey:app:com.tuya.zigbee"
+  "scripts": [
+    "ultimate-driver-analyzer.js",
+    "release-manager.js"
   ],
-  "support": "mailto:dylan.rajasekaram+homey@gmail.com",
-  "api": {
-    "min": 3,
-    "max": 3
-  },
-  "platform": "local",
-  "flow": {
-    "actions": [],
-    "conditions": [],
-    "triggers": []
-  },
-  "devices": []
+  "totalDrivers": 103
 }

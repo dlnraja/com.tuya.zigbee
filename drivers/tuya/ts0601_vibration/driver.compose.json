@@ -1,0 +1,29 @@
+{
+  "id": "ts0601_vibration",
+  "name": {
+    "en": "Tuya TS0601_vibration",
+    "fr": "Tuya TS0601_vibration",
+    "nl": "Tuya TS0601_vibration",
+    "ta": "Tuya TS0601_vibration"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_vibration",
+    "measure_temperature"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601_vibration",
+    "clusters": [
+      "genBasic",
+      "ssIasZone",
+      "msTemperatureMeasurement"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.803Z",
+    "version": "3.1.0",
+    "source": "database_analysis",
+    "channels": 1
+  }
+}

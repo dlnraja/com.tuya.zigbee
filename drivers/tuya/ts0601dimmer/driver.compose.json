@@ -1,0 +1,29 @@
+{
+  "id": "ts0601dimmer",
+  "name": {
+    "en": "Tuya TS0601dimmer",
+    "fr": "Tuya TS0601dimmer",
+    "nl": "Tuya TS0601dimmer",
+    "ta": "Tuya TS0601dimmer"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601dimmer",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "genLevelCtrl"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.892Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+  }
+}

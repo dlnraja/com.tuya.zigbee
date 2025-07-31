@@ -1,0 +1,27 @@
+{
+  "id": "ts0601switch",
+  "name": {
+    "en": "Tuya TS0601switch",
+    "fr": "Tuya TS0601switch",
+    "nl": "Tuya TS0601switch",
+    "ta": "Tuya TS0601switch"
+  },
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601switch",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.889Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+  }
+}

@@ -1,71 +1,17 @@
 {
   "name": "com.tuya.zigbee",
-  "version": "1.0.12",
-  "description": "Universal Tuya Zigbee Device Support for Homey",
+  "version": "3.1.0",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "mega-pipeline": "node mega-pipeline.js",
-    "verify": "node scripts/verify-all-drivers.js",
-    "fetch": "node scripts/fetch-new-devices.js",
-    "enrich": "node scripts/smart-enrich-drivers.js",
-    "scrape-community": "node scripts/scrape-homey-community.js",
-    "resolve-todo": "node scripts/resolve-todo-devices.js",
-    "generate-docs": "node scripts/generate-docs.js",
-    "fix-app-structure": "node scripts/fix-app-structure.js",
-    "validate-homey-cli": "node scripts/validate-homey-cli.js",
-    "build": "npm run mega-pipeline",
-    "test": "npm run verify",
-    "lint": "echo 'Linting completed'",
-    "validate": "npm run verify",
-    "deploy": "npm run mega-pipeline && git add . && git commit -m 'Auto-deploy: Pipeline execution' && git push",
-    "dev": "npm run mega-pipeline"
+    "validate": "homey app validate",
+    "install": "homey app install",
+    "release": "node scripts/core/release-manager.js",
+    "analyze": "node scripts/core/ultimate-driver-analyzer.js",
+    "scrape": "node scripts/core/comprehensive-driver-scraper.js",
+    "improve": "node scripts/core/driver-analyzer-improver.js",
+    "mega-pipeline": "node mega-pipeline-ultimate.js"
   },
-  "keywords": [
-    "homey",
-    "tuya",
-    "zigbee",
-    "drivers",
-    "automation",
-    "pipeline",
-    "ai",
-    "compatibility",
-    "firmware",
-    "recovery",
-    "scraping",
-    "community",
-    "todo",
-    "resolution",
-    "github",
-    "issues",
-    "documentation",
-    "generation",
-    "optimization"
-  ],
-  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dlnraja/tuya-zigbee.git"
-  },
-  "bugs": {
-    "url": "https://github.com/dlnraja/tuya-zigbee/issues"
-  },
-  "homepage": "https://github.com/dlnraja/tuya-zigbee#readme",
   "dependencies": {
-    "homey": "^2.0.0"
-  },
-  "devDependencies": {},
-  "engines": {
-    "node": ">=14.0.0"
-  },
-  "os": [
-    "linux",
-    "darwin",
-    "win32"
-  ],
-  "cpu": [
-    "x64",
-    "arm64"
-  ]
+    "homey-meshdriver": "^1.3.50"
+  }
 }

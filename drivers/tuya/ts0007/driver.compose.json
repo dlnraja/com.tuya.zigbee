@@ -1,0 +1,33 @@
+{
+  "id": "ts0007",
+  "name": {
+    "en": "Tuya TS0007",
+    "fr": "Tuya TS0007",
+    "nl": "Tuya TS0007",
+    "ta": "Tuya TS0007"
+  },
+  "class": "switch",
+  "capabilities": [
+    "onoff",
+    "onoff",
+    "onoff",
+    "onoff",
+    "onoff",
+    "onoff",
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0007",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.876Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+  }
+}

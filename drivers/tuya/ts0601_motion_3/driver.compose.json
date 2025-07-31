@@ -1,0 +1,33 @@
+{
+  "id": "ts0601_motion_3",
+  "name": {
+    "en": "Tuya TS0601_motion_3",
+    "fr": "Tuya TS0601_motion_3",
+    "nl": "Tuya TS0601_motion_3",
+    "ta": "Tuya TS0601_motion_3"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_temperature",
+    "measure_illuminance",
+    "measure_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601_motion_3",
+    "clusters": [
+      "genBasic",
+      "msOccupancySensing",
+      "msTemperatureMeasurement",
+      "msIlluminanceMeasurement",
+      "genPowerCfg"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.857Z",
+    "version": "3.1.0",
+    "source": "database_analysis",
+    "channels": 1
+  }
+}

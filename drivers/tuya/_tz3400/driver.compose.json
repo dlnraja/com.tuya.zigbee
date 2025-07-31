@@ -1,0 +1,29 @@
+{
+  "id": "_tz3400",
+  "name": {
+    "en": "Tuya _TZ3400",
+    "fr": "Tuya _TZ3400",
+    "nl": "Tuya _TZ3400",
+    "ta": "Tuya _TZ3400"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "_TZ3400",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "genLevelCtrl"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:54.073Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+  }
+}

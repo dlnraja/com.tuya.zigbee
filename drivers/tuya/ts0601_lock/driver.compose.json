@@ -1,0 +1,28 @@
+{
+  "id": "ts0601_lock",
+  "name": {
+    "en": "Tuya TS0601_lock",
+    "fr": "Tuya TS0601_lock",
+    "nl": "Tuya TS0601_lock",
+    "ta": "Tuya TS0601_lock"
+  },
+  "class": "lock",
+  "capabilities": [
+    "lock_state",
+    "lock_mode"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601_lock",
+    "clusters": [
+      "genBasic",
+      "closuresDoorLock"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.813Z",
+    "version": "3.1.0",
+    "source": "database_analysis",
+    "channels": 1
+  }
+}

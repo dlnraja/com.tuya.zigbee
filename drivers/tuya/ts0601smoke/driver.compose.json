@@ -1,0 +1,29 @@
+{
+  "id": "ts0601smoke",
+  "name": {
+    "en": "Tuya TS0601smoke",
+    "fr": "Tuya TS0601smoke",
+    "nl": "Tuya TS0601smoke",
+    "ta": "Tuya TS0601smoke"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_smoke",
+    "measure_temperature"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601smoke",
+    "clusters": [
+      "genBasic",
+      "ssIasZone",
+      "msTemperatureMeasurement"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.923Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+  }
+}

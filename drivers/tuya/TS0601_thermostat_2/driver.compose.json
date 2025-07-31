@@ -1,0 +1,73 @@
+{
+  "id": "TS0601_thermostat_2",
+  "name": {
+    "en": "Tuya TS0601 Thermostat V2",
+    "fr": "Thermostat Tuya TS0601 V2",
+    "nl": "Tuya TS0601 Thermostaat V2",
+    "ta": "Tuya TS0601 தெர்மோஸ்டேட் V2"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "°C",
+      "id": "measure_temperature"
+    },
+    "target_temperature",
+    "thermostat_mode",
+    {
+      "type": "number",
+      "title": {
+        "en": "Humidity",
+        "fr": "Humidité",
+        "nl": "Vochtigheid",
+        "ta": "ஈரப்பதம்"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "%",
+      "id": "measure_humidity"
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601",
+    "clusters": [
+      "genBasic",
+      {
+        "attributes": [
+          "measuredValue"
+        ],
+        "commands": [],
+        "id": "msTemperatureMeasurement"
+      },
+      "hvacThermostat",
+      {
+        "attributes": [
+          "measuredValue"
+        ],
+        "commands": [],
+        "id": "msRelativeHumidity"
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-31T20:16:48.291Z",
+    "optimized": true
+  },
+  "integration": {
+    "integrated": true,
+    "integratedAt": "2025-07-31T20:16:49.085Z",
+    "version": "1.0.0",
+    "compatible": true
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "-tz3500-sensor",
+  "name": {
+    "en": "Tuya _TZ3500 Sensor",
+    "fr": "Capteur Tuya _TZ3500",
+    "nl": "Tuya _TZ3500 Sensor",
+    "ta": "Tuya _TZ3500 சென்சார்"
+  },
+  "class": "sensor",
+  "capabilities": [
+    {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "°C",
+      "id": "measure_temperature"
+    },
+    {
+      "type": "number",
+      "title": {
+        "en": "Humidity",
+        "fr": "Humidité",
+        "nl": "Vochtigheid",
+        "ta": "ஈரப்பதம்"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "%",
+      "id": "measure_humidity"
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "_TZ3500_sensor",
+    "clusters": [
+      "genBasic",
+      {
+        "attributes": [
+          "measuredValue"
+        ],
+        "commands": [],
+        "id": "msTemperatureMeasurement"
+      },
+      {
+        "attributes": [
+          "measuredValue"
+        ],
+        "commands": [],
+        "id": "msRelativeHumidity"
+      }
+    ]
+  },
+  "settings": {},
+  "fallback": false,
+  "description": "Tuya sensor",
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-31T20:16:47.451Z",
+    "optimized": true
+  },
+  "integration": {
+    "integrated": true,
+    "integratedAt": "2025-07-31T20:16:48.362Z",
+    "version": "1.0.0",
+    "compatible": true
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "ts0601",
+  "name": {
+    "en": "Tuya TS0601 Switch",
+    "fr": "Interrupteur Tuya TS0601",
+    "nl": "Tuya TS0601 Schakelaar",
+    "ta": "Tuya TS0601 சுவிட்ச்"
+  },
+  "class": "light",
+  "capabilities": [
+    {
+      "type": "boolean",
+      "title": {
+        "en": "On/Off",
+        "fr": "Marche/Arrêt",
+        "nl": "Aan/Uit",
+        "ta": "ஆன்/ஆஃப்"
+      },
+      "getable": true,
+      "setable": true,
+      "id": "onoff"
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601",
+    "clusters": [
+      {
+        "attributes": [
+          "onOff"
+        ],
+        "commands": [
+          "toggle",
+          "off",
+          "on"
+        ],
+        "id": "genOnOff"
+      }
+    ]
+  },
+  "settings": {},
+  "fallback": false,
+  "description": "Generic switch",
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-31T20:16:47.724Z",
+    "optimized": true
+  },
+  "integration": {
+    "integrated": true,
+    "integratedAt": "2025-07-31T20:16:48.683Z",
+    "version": "1.0.0",
+    "compatible": true
+  }
+}

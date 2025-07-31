@@ -1,0 +1,29 @@
+{
+  "id": "ts0601sensor",
+  "name": {
+    "en": "Tuya TS0601sensor",
+    "fr": "Tuya TS0601sensor",
+    "nl": "Tuya TS0601sensor",
+    "ta": "Tuya TS0601sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601sensor",
+    "clusters": [
+      "genBasic",
+      "msTemperatureMeasurement",
+      "msRelativeHumidity"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.905Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+  }
+}
