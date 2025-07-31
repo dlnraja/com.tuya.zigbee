@@ -1,47 +1,16 @@
-# Specifications
+# Tuya Zigbee Specifications
 
-## Tuya Zigbee App Specifications
+## Overview
 
-### Overview
-This document contains the technical specifications for the Tuya Zigbee App for Homey.
+This directory contains specifications and technical documentation for the Tuya Zigbee project.
 
-### App Information
-- **App ID**: com.tuya.zigbee
-- **Version**: 1.0.12
-- **SDK**: 3+
-- **Platform**: Homey Pro/Bridge/Cloud
+## Structure
 
-### Features
-- Support for 2000+ Tuya devices
-- SDK3+ compatibility
-- Multi-firmware support
-- Automatic driver enrichment
-- Forum error corrections
+- `drivers/` - Driver specifications and templates
+- `protocols/` - Zigbee protocol documentation
+- `standards/` - Homey and Tuya standards
+- `examples/` - Code examples and templates
 
-### Drivers
-- **Total Drivers**: 2468
-- **Tuya Drivers**: 51
-- **Zigbee Drivers**: 2400
-- **Optimized Drivers**: 9
+## Contributing
 
-### Technical Requirements
-- Homey SDK 3 or higher
-- Node.js 14+
-- Zigbee protocol support
-
-### Installation
-```bash
-homey app install
-```
-
-### Development
-```bash
-npm run mega-pipeline
-```
-
-### Support
-- Homey Community: [Topic 26439](https://community.homey.app/t/app-pro-tuya-zigbee-app/26439)
-- GitHub: [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee)
-
-### License
-MIT License
+Please follow the established patterns when adding new specifications.

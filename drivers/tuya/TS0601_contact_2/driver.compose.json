@@ -1,0 +1,54 @@
+{
+  "id": "TS0601_contact_2",
+  "name": {
+    "en": "Tuya TS0601 Contact V2",
+    "fr": "Capteur de Contact Tuya TS0601 V2",
+    "nl": "Tuya TS0601 Contactsensor V2",
+    "ta": "Tuya TS0601 தொடர்பு சென்சார் V2"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_contact",
+    {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "°C",
+      "id": "measure_temperature"
+    },
+    "measure_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601",
+    "clusters": [
+      "genBasic",
+      "msOccupancySensing",
+      {
+        "attributes": [
+          "measuredValue"
+        ],
+        "commands": [],
+        "id": "msTemperatureMeasurement"
+      },
+      "genPowerCfg"
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-31T20:16:48.117Z",
+    "optimized": true
+  },
+  "integration": {
+    "integrated": true,
+    "integratedAt": "2025-07-31T20:16:48.991Z",
+    "version": "1.0.0",
+    "compatible": true
+  }
+}

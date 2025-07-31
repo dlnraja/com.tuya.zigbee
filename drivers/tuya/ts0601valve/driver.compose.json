@@ -1,0 +1,29 @@
+{
+  "id": "ts0601valve",
+  "name": {
+    "en": "Tuya TS0601valve",
+    "fr": "Tuya TS0601valve",
+    "nl": "Tuya TS0601valve",
+    "ta": "Tuya TS0601valve"
+  },
+  "class": "valve",
+  "capabilities": [
+    "onoff",
+    "measure_temperature"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601valve",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "msTemperatureMeasurement"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.951Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+  }
+}

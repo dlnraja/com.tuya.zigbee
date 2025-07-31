@@ -1,0 +1,33 @@
+{
+  "id": "ts0601_sensor_3",
+  "name": {
+    "en": "Tuya TS0601_sensor_3",
+    "fr": "Tuya TS0601_sensor_3",
+    "nl": "Tuya TS0601_sensor_3",
+    "ta": "Tuya TS0601_sensor_3"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_pressure",
+    "measure_illuminance"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601_sensor_3",
+    "clusters": [
+      "genBasic",
+      "msTemperatureMeasurement",
+      "msRelativeHumidity",
+      "msPressureMeasurement",
+      "msIlluminanceMeasurement"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.854Z",
+    "version": "3.1.0",
+    "source": "database_analysis",
+    "channels": 1
+  }
+}

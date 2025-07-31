@@ -1,0 +1,28 @@
+{
+  "id": "ts0601garage",
+  "name": {
+    "en": "Tuya TS0601garage",
+    "fr": "Tuya TS0601garage",
+    "nl": "Tuya TS0601garage",
+    "ta": "Tuya TS0601garage"
+  },
+  "class": "garage",
+  "capabilities": [
+    "garagedoor_closed",
+    "garagedoor_state"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601garage",
+    "clusters": [
+      "genBasic",
+      "closuresDoorLock"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.973Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+  }
+}

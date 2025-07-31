@@ -1,39 +1,21 @@
-# Tuya Zigbee App
+# Tuya Zigbee App for Homey
 
-Universal Tuya Zigbee Device Support for Homey
+Complete Tuya Zigbee device support for Homey with SDK3+ compatibility.
 
 ## Features
-
-- Support for 2000+ Tuya devices
+- Full Tuya Zigbee device support (29 drivers)
 - SDK3+ compatibility
-- Multi-firmware support
-- Automatic driver enrichment
-- Forum error corrections
+- Works on all Homey devices (Pro, Bridge, Cloud)
+- Automatic device detection and configuration
 
 ## Installation
-
 ```bash
 homey app install
 ```
 
-## Development
-
-```bash
-npm run mega-pipeline
-```
-
-## Drivers
-
-- 2467+ drivers available
-- Automatic validation
-- Smart enrichment
-- Forum integration
-
 ## Support
-
-- Homey Community: [Topic 26439](https://community.homey.app/t/app-pro-tuya-zigbee-app/26439)
-- GitHub: [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee)
+- GitHub: https://github.com/dlnraja/com.tuya.zigbee
+- Community: https://community.homey.app/t/app-pro-tuya-zigbee-app/26439
 
 ## License
-
 MIT License

@@ -1,0 +1,28 @@
+{
+  "id": "ts0601curtain",
+  "name": {
+    "en": "Tuya TS0601curtain",
+    "fr": "Tuya TS0601curtain",
+    "nl": "Tuya TS0601curtain",
+    "ta": "Tuya TS0601curtain"
+  },
+  "class": "curtain",
+  "capabilities": [
+    "windowcoverings_state",
+    "windowcoverings_set"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601curtain",
+    "clusters": [
+      "genBasic",
+      "closuresWindowCovering"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.955Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+  }
+}

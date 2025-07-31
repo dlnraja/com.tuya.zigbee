@@ -1,0 +1,76 @@
+{
+  "id": "ts0601-contact",
+  "name": {
+    "en": "Tuya TS0601 Contact",
+    "fr": "Contact Tuya TS0601",
+    "nl": "Tuya TS0601 Contact",
+    "ta": "Tuya TS0601 தொடர்பு"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_contact",
+    {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "°C",
+      "id": "measure_temperature"
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601_contact",
+    "clusters": [
+      "genBasic",
+      "msOccupancySensing",
+      {
+        "attributes": [
+          "measuredValue"
+        ],
+        "commands": [],
+        "id": "msTemperatureMeasurement"
+      }
+    ]
+  },
+  "settings": {},
+  "fallback": false,
+  "description": "Contact sensor",
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-31T20:16:47.742Z",
+    "optimized": true
+  },
+  "integration": {
+    "integrated": true,
+    "integratedAt": "2025-07-31T20:16:48.712Z",
+    "version": "1.0.0",
+    "compatible": true
+  },
+  "capabilityProperties": {
+    "alarm_contact": {
+      "type": "boolean",
+      "title": {
+        "en": "Contact",
+        "fr": "Contact",
+        "nl": "Contact",
+        "ta": "தொடர்பு"
+      },
+      "getable": true,
+      "setable": false
+    }
+  },
+  "clusterDetails": {
+    "msOccupancySensing": {
+      "attributes": [
+        "occupancy"
+      ],
+      "commands": []
+    }
+  }
+}

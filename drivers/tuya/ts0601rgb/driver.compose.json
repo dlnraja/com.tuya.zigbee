@@ -1,0 +1,32 @@
+{
+  "id": "ts0601rgb",
+  "name": {
+    "en": "Tuya TS0601rgb",
+    "fr": "Tuya TS0601rgb",
+    "nl": "Tuya TS0601rgb",
+    "ta": "Tuya TS0601rgb"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature",
+    "light_mode"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601rgb",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.902Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+  }
+}

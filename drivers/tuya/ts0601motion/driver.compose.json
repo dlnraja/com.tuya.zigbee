@@ -1,0 +1,29 @@
+{
+  "id": "ts0601motion",
+  "name": {
+    "en": "Tuya TS0601motion",
+    "fr": "Tuya TS0601motion",
+    "nl": "Tuya TS0601motion",
+    "ta": "Tuya TS0601motion"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_temperature"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601motion",
+    "clusters": [
+      "genBasic",
+      "msOccupancySensing",
+      "msTemperatureMeasurement"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.908Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+  }
+}

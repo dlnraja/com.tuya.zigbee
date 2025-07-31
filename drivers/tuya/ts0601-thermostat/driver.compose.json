@@ -1,0 +1,101 @@
+{
+  "id": "ts0601-thermostat",
+  "name": {
+    "en": "Tuya TS0601 Thermostat",
+    "fr": "Thermostat Tuya TS0601",
+    "nl": "Tuya TS0601 Thermostaat",
+    "ta": "Tuya TS0601 தெர்மோஸ்டேட்"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "°C",
+      "id": "measure_temperature"
+    },
+    "target_temperature",
+    "thermostat_mode"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601_thermostat",
+    "clusters": [
+      "genBasic",
+      {
+        "attributes": [
+          "measuredValue"
+        ],
+        "commands": [],
+        "id": "msTemperatureMeasurement"
+      },
+      "hvacThermostat"
+    ]
+  },
+  "settings": {},
+  "fallback": false,
+  "description": "Thermostat",
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-31T20:16:47.987Z",
+    "optimized": true
+  },
+  "integration": {
+    "integrated": true,
+    "integratedAt": "2025-07-31T20:16:48.905Z",
+    "version": "1.0.0",
+    "compatible": true
+  },
+  "capabilityProperties": {
+    "target_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Target Temperature",
+        "fr": "Température Cible",
+        "nl": "Doeltemperatuur",
+        "ta": "இலக்கு வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": true,
+      "min": 5,
+      "max": 35,
+      "unit": "°C"
+    },
+    "thermostat_mode": {
+      "type": "string",
+      "title": {
+        "en": "Thermostat Mode",
+        "fr": "Mode Thermostat",
+        "nl": "Thermostaat Modus",
+        "ta": "தெர்மோஸ்டேட் பயன்முறை"
+      },
+      "getable": true,
+      "setable": true,
+      "options": [
+        "heat",
+        "cool",
+        "auto"
+      ]
+    }
+  },
+  "clusterDetails": {
+    "hvacThermostat": {
+      "attributes": [
+        "localTemperature",
+        "occupiedHeatingSetpoint"
+      ],
+      "commands": [
+        "setWeeklySchedule",
+        "getWeeklySchedule",
+        "clearWeeklySchedule"
+      ]
+    }
+  }
+}

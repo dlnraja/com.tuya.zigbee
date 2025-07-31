@@ -1,0 +1,33 @@
+{
+  "id": "ts0601_switch_3",
+  "name": {
+    "en": "Tuya TS0601_switch_3",
+    "fr": "Tuya TS0601_switch_3",
+    "nl": "Tuya TS0601_switch_3",
+    "ta": "Tuya TS0601_switch_3"
+  },
+  "class": "switch",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature",
+    "light_mode",
+    "light_hue"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601_switch_3",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.841Z",
+    "version": "3.1.0",
+    "source": "database_analysis",
+    "channels": 1
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "_tz3700_thermostat",
+  "name": {
+    "en": "Tuya _TZ3700_thermostat",
+    "fr": "Tuya _TZ3700_thermostat",
+    "nl": "Tuya _TZ3700_thermostat",
+    "ta": "Tuya _TZ3700_thermostat"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "measure_temperature",
+    "target_temperature",
+    "thermostat_mode"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "_TZ3700_thermostat",
+    "clusters": [
+      "genBasic",
+      "msTemperatureMeasurement",
+      "hvacThermostat"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.835Z",
+    "version": "3.1.0",
+    "source": "database_analysis",
+    "channels": 1
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "ts0601_contact_3",
+  "name": {
+    "en": "Tuya TS0601_contact_3",
+    "fr": "Tuya TS0601_contact_3",
+    "nl": "Tuya TS0601_contact_3",
+    "ta": "Tuya TS0601_contact_3"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_contact",
+    "measure_temperature",
+    "measure_battery",
+    "measure_illuminance"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601_contact_3",
+    "clusters": [
+      "genBasic",
+      "ssIasZone",
+      "msTemperatureMeasurement",
+      "genPowerCfg",
+      "msIlluminanceMeasurement"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.863Z",
+    "version": "3.1.0",
+    "source": "database_analysis",
+    "channels": 1
+  }
+}

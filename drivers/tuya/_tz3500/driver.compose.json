@@ -1,0 +1,29 @@
+{
+  "id": "_tz3500",
+  "name": {
+    "en": "Tuya _TZ3500",
+    "fr": "Tuya _TZ3500",
+    "nl": "Tuya _TZ3500",
+    "ta": "Tuya _TZ3500"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "_TZ3500",
+    "clusters": [
+      "genBasic",
+      "msTemperatureMeasurement",
+      "msRelativeHumidity"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:54.081Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+  }
+}

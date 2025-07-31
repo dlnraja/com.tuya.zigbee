@@ -1,0 +1,32 @@
+{
+  "id": "_tz3200",
+  "name": {
+    "en": "Tuya _TZ3200",
+    "fr": "Tuya _TZ3200",
+    "nl": "Tuya _TZ3200",
+    "ta": "Tuya _TZ3200"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature",
+    "light_mode"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "_TZ3200",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:54.056Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+  }
+}

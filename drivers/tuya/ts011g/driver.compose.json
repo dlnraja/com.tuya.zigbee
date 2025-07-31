@@ -1,0 +1,31 @@
+{
+  "id": "ts011g",
+  "name": {
+    "en": "Tuya TS011G",
+    "fr": "Tuya TS011G",
+    "nl": "Tuya TS011G",
+    "ta": "Tuya TS011G"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "meter_power",
+    "measure_current",
+    "measure_voltage"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS011G",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "seMetering"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.986Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+  }
+}

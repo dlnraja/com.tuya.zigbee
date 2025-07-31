@@ -1,0 +1,29 @@
+{
+  "id": "_tz3600_plug",
+  "name": {
+    "en": "Tuya _TZ3600_plug",
+    "fr": "Tuya _TZ3600_plug",
+    "nl": "Tuya _TZ3600_plug",
+    "ta": "Tuya _TZ3600_plug"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "meter_power"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "_TZ3600_plug",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "seMetering"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.823Z",
+    "version": "3.1.0",
+    "source": "database_analysis",
+    "channels": 1
+  }
+}
