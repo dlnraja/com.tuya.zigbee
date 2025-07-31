@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-jewelry",
+  "name": {
+    "en": "Tuya Light tuya-light-jewelry",
+    "fr": "Tuya Light tuya-light-jewelry",
+    "nl": "Tuya Light tuya-light-jewelry",
+    "ta": "Tuya Light tuya-light-jewelry"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-jewelry",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:26.125Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

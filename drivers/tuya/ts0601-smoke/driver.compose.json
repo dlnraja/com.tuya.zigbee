@@ -1,0 +1,76 @@
+{
+  "id": "ts0601-smoke",
+  "name": {
+    "en": "Tuya TS0601 Smoke",
+    "fr": "Fumée Tuya TS0601",
+    "nl": "Tuya TS0601 Rook",
+    "ta": "Tuya TS0601 புகை"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_smoke",
+    {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "°C",
+      "id": "measure_temperature"
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601_smoke",
+    "clusters": [
+      "genBasic",
+      "ssIasZone",
+      {
+        "attributes": [
+          "measuredValue"
+        ],
+        "commands": [],
+        "id": "msTemperatureMeasurement"
+      }
+    ]
+  },
+  "settings": {},
+  "fallback": false,
+  "description": "Smoke detector",
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-31T21:12:22.207Z",
+    "optimized": true
+  },
+  "integration": {
+    "integrated": true,
+    "integratedAt": "2025-07-31T21:12:24.560Z",
+    "version": "1.0.0",
+    "compatible": true
+  },
+  "capabilityProperties": {
+    "alarm_smoke": {
+      "type": "boolean",
+      "title": {
+        "en": "Smoke",
+        "fr": "Fumée",
+        "nl": "Rook",
+        "ta": "புகை"
+      },
+      "getable": true,
+      "setable": false
+    }
+  },
+  "clusterDetails": {
+    "ssIasZone": {
+      "attributes": [
+        "zoneState"
+      ],
+      "commands": []
+    }
+  }
+}

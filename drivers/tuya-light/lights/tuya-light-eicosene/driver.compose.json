@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-eicosene",
+  "name": {
+    "en": "Tuya Light tuya-light-eicosene",
+    "fr": "Tuya Light tuya-light-eicosene",
+    "nl": "Tuya Light tuya-light-eicosene",
+    "ta": "Tuya Light tuya-light-eicosene"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-eicosene",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:29.796Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

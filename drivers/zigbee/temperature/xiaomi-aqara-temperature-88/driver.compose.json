@@ -1,0 +1,29 @@
+{
+  "id": "xiaomi-aqara-temperature-88",
+  "name": {
+    "en": "Zigbee xiaomi-aqara-temperature-88",
+    "fr": "Zigbee xiaomi-aqara-temperature-88",
+    "nl": "Zigbee xiaomi-aqara-temperature-88",
+    "ta": "Zigbee xiaomi-aqara-temperature-88"
+  },
+  "class": "temperature",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "zigbee": {
+    "manufacturerName": "Xiaomi",
+    "modelId": "xiaomi-aqara-temperature-88",
+    "clusters": [
+      "genBasic",
+      "msTemperatureMeasurement",
+      "msRelativeHumidity"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:10:01.010Z",
+    "version": "3.1.0",
+    "source": "historical_recovery",
+    "category": "temperature"
+  }
+}

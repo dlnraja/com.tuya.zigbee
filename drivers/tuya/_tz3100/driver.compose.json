@@ -1,0 +1,160 @@
+{
+  "id": "_tz3100",
+  "name": {
+    "en": "Tuya _TZ3100",
+    "fr": "Tuya _TZ3100",
+    "nl": "Tuya _TZ3100",
+    "ta": "Tuya _TZ3100"
+  },
+  "class": "light",
+  "capabilities": [
+    {
+      "type": "boolean",
+      "title": {
+        "en": "On/Off",
+        "fr": "Marche/Arrêt",
+        "nl": "Aan/Uit",
+        "ta": "ஆன்/ஆஃப்"
+      },
+      "getable": true,
+      "setable": true,
+      "id": "onoff"
+    },
+    {
+      "type": "number",
+      "title": {
+        "en": "Dim Level",
+        "fr": "Niveau de variation",
+        "nl": "Dim niveau",
+        "ta": "டிம் நிலை"
+      },
+      "getable": true,
+      "setable": true,
+      "min": 0,
+      "max": 1,
+      "id": "dim"
+    },
+    "light_temperature"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "_TZ3100",
+    "clusters": [
+      "genBasic",
+      {
+        "attributes": [
+          "onOff"
+        ],
+        "commands": [
+          "toggle",
+          "off",
+          "on"
+        ],
+        "id": "genOnOff"
+      },
+      {
+        "attributes": [
+          "currentLevel"
+        ],
+        "commands": [
+          "moveToLevel",
+          "move",
+          "step"
+        ],
+        "id": "genLevelCtrl"
+      },
+      "lightingColorCtrl"
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-31T21:12:22.745Z",
+    "optimized": true
+  },
+  "capabilityProperties": {
+    "onoff": {
+      "type": "boolean",
+      "title": {
+        "en": "On/Off",
+        "fr": "Marche/Arrêt",
+        "nl": "Aan/Uit",
+        "ta": "ஆன்/ஆஃப்"
+      },
+      "getable": true,
+      "setable": true
+    },
+    "dim": {
+      "type": "number",
+      "title": {
+        "en": "Dim Level",
+        "fr": "Niveau de Dim",
+        "nl": "Dim Niveau",
+        "ta": "டிம் நிலை"
+      },
+      "getable": true,
+      "setable": true,
+      "min": 0,
+      "max": 100,
+      "unit": "%"
+    },
+    "light_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Light Temperature",
+        "fr": "Température Lumière",
+        "nl": "Licht Temperatuur",
+        "ta": "விளக்கு வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": true,
+      "min": 2700,
+      "max": 6500,
+      "unit": "K"
+    }
+  },
+  "clusterDetails": {
+    "genOnOff": {
+      "attributes": [
+        "onOff"
+      ],
+      "commands": [
+        "toggle",
+        "off",
+        "on"
+      ]
+    },
+    "genLevelCtrl": {
+      "attributes": [
+        "currentLevel"
+      ],
+      "commands": [
+        "move",
+        "step",
+        "stop",
+        "moveToLevel"
+      ]
+    },
+    "lightingColorCtrl": {
+      "attributes": [
+        "currentHue",
+        "currentSaturation",
+        "currentX",
+        "currentY"
+      ],
+      "commands": [
+        "moveToHue",
+        "stepHue",
+        "moveToSaturation",
+        "stepSaturation",
+        "moveToColor",
+        "stepColor"
+      ]
+    }
+  },
+  "integration": {
+    "integrated": true,
+    "integratedAt": "2025-07-31T21:12:26.395Z",
+    "version": "1.0.0",
+    "compatible": true
+  }
+}

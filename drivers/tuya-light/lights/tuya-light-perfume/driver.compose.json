@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-perfume",
+  "name": {
+    "en": "Tuya Light tuya-light-perfume",
+    "fr": "Tuya Light tuya-light-perfume",
+    "nl": "Tuya Light tuya-light-perfume",
+    "ta": "Tuya Light tuya-light-perfume"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-perfume",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:26.097Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

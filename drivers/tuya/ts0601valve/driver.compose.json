@@ -1,0 +1,116 @@
+{
+  "id": "ts0601valve",
+  "name": {
+    "en": "Tuya TS0601valve",
+    "fr": "Tuya TS0601valve",
+    "nl": "Tuya TS0601valve",
+    "ta": "Tuya TS0601valve"
+  },
+  "class": "valve",
+  "capabilities": [
+    {
+      "type": "boolean",
+      "title": {
+        "en": "On/Off",
+        "fr": "Marche/Arrêt",
+        "nl": "Aan/Uit",
+        "ta": "ஆன்/ஆஃப்"
+      },
+      "getable": true,
+      "setable": true,
+      "id": "onoff"
+    },
+    {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "°C",
+      "id": "measure_temperature"
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601valve",
+    "clusters": [
+      "genBasic",
+      {
+        "attributes": [
+          "onOff"
+        ],
+        "commands": [
+          "toggle",
+          "off",
+          "on"
+        ],
+        "id": "genOnOff"
+      },
+      {
+        "attributes": [
+          "measuredValue"
+        ],
+        "commands": [],
+        "id": "msTemperatureMeasurement"
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-31T21:12:22.425Z",
+    "optimized": true
+  },
+  "capabilityProperties": {
+    "onoff": {
+      "type": "boolean",
+      "title": {
+        "en": "On/Off",
+        "fr": "Marche/Arrêt",
+        "nl": "Aan/Uit",
+        "ta": "ஆன்/ஆஃப்"
+      },
+      "getable": true,
+      "setable": true
+    },
+    "measure_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "°C"
+    }
+  },
+  "clusterDetails": {
+    "genOnOff": {
+      "attributes": [
+        "onOff"
+      ],
+      "commands": [
+        "toggle",
+        "off",
+        "on"
+      ]
+    },
+    "msTemperatureMeasurement": {
+      "attributes": [
+        "measuredValue"
+      ],
+      "commands": []
+    }
+  },
+  "integration": {
+    "integrated": true,
+    "integratedAt": "2025-07-31T21:12:25.457Z",
+    "version": "1.0.0",
+    "compatible": true
+  }
+}

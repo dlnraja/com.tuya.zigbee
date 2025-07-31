@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-gas",
+  "name": {
+    "en": "Tuya Light tuya-light-gas",
+    "fr": "Tuya Light tuya-light-gas",
+    "nl": "Tuya Light tuya-light-gas",
+    "ta": "Tuya Light tuya-light-gas"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-gas",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:28.917Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

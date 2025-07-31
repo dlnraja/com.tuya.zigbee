@@ -1,0 +1,80 @@
+{
+  "id": "ts0601_gas",
+  "name": {
+    "en": "Tuya TS0601_gas",
+    "fr": "Tuya TS0601_gas",
+    "nl": "Tuya TS0601_gas",
+    "ta": "Tuya TS0601_gas"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_gas",
+    {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "°C",
+      "id": "measure_temperature"
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601_gas",
+    "clusters": [
+      "genBasic",
+      "ssIasZone",
+      {
+        "attributes": [
+          "measuredValue"
+        ],
+        "commands": [],
+        "id": "msTemperatureMeasurement"
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-31T21:12:22.495Z",
+    "optimized": true
+  },
+  "capabilityProperties": {
+    "measure_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "°C"
+    }
+  },
+  "clusterDetails": {
+    "ssIasZone": {
+      "attributes": [
+        "zoneState"
+      ],
+      "commands": []
+    },
+    "msTemperatureMeasurement": {
+      "attributes": [
+        "measuredValue"
+      ],
+      "commands": []
+    }
+  },
+  "integration": {
+    "integrated": true,
+    "integratedAt": "2025-07-31T21:12:25.811Z",
+    "version": "1.0.0",
+    "compatible": true
+  }
+}

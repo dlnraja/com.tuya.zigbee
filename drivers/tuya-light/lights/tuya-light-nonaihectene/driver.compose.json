@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-nonaihectene",
+  "name": {
+    "en": "Tuya Light tuya-light-nonaihectene",
+    "fr": "Tuya Light tuya-light-nonaihectene",
+    "nl": "Tuya Light tuya-light-nonaihectene",
+    "ta": "Tuya Light tuya-light-nonaihectene"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-nonaihectene",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:47.626Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

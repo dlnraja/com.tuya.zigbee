@@ -1,0 +1,29 @@
+{
+  "id": "samsung-smartthings-temperature-69",
+  "name": {
+    "en": "Zigbee samsung-smartthings-temperature-69",
+    "fr": "Zigbee samsung-smartthings-temperature-69",
+    "nl": "Zigbee samsung-smartthings-temperature-69",
+    "ta": "Zigbee samsung-smartthings-temperature-69"
+  },
+  "class": "temperature",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "zigbee": {
+    "manufacturerName": "Samsung",
+    "modelId": "samsung-smartthings-temperature-69",
+    "clusters": [
+      "genBasic",
+      "msTemperatureMeasurement",
+      "msRelativeHumidity"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:10:00.691Z",
+    "version": "3.1.0",
+    "source": "historical_recovery",
+    "category": "temperature"
+  }
+}

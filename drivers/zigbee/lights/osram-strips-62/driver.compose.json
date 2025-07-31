@@ -1,0 +1,32 @@
+{
+  "id": "osram-strips-62",
+  "name": {
+    "en": "Zigbee osram-strips-62",
+    "fr": "Zigbee osram-strips-62",
+    "nl": "Zigbee osram-strips-62",
+    "ta": "Zigbee osram-strips-62"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature",
+    "light_mode"
+  ],
+  "zigbee": {
+    "manufacturerName": "OSRAM",
+    "modelId": "osram-strips-62",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:09:59.977Z",
+    "version": "3.1.0",
+    "source": "historical_recovery",
+    "category": "lights"
+  }
+}

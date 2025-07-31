@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-pitch",
+  "name": {
+    "en": "Tuya Light tuya-light-pitch",
+    "fr": "Tuya Light tuya-light-pitch",
+    "nl": "Tuya Light tuya-light-pitch",
+    "ta": "Tuya Light tuya-light-pitch"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-pitch",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:28.508Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-military",
+  "name": {
+    "en": "Tuya Light tuya-light-military",
+    "fr": "Tuya Light tuya-light-military",
+    "nl": "Tuya Light tuya-light-military",
+    "ta": "Tuya Light tuya-light-military"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-military",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:24.777Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

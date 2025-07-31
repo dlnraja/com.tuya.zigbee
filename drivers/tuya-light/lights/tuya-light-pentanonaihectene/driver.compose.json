@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-pentanonaihectene",
+  "name": {
+    "en": "Tuya Light tuya-light-pentanonaihectene",
+    "fr": "Tuya Light tuya-light-pentanonaihectene",
+    "nl": "Tuya Light tuya-light-pentanonaihectene",
+    "ta": "Tuya Light tuya-light-pentanonaihectene"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-pentanonaihectene",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:48.910Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

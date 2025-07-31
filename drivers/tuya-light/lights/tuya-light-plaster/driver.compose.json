@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-plaster",
+  "name": {
+    "en": "Tuya Light tuya-light-plaster",
+    "fr": "Tuya Light tuya-light-plaster",
+    "nl": "Tuya Light tuya-light-plaster",
+    "ta": "Tuya Light tuya-light-plaster"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-plaster",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:26.721Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-nonacosene",
+  "name": {
+    "en": "Tuya Light tuya-light-nonacosene",
+    "fr": "Tuya Light tuya-light-nonacosene",
+    "nl": "Tuya Light tuya-light-nonacosene",
+    "ta": "Tuya Light tuya-light-nonacosene"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-nonacosene",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:29.971Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

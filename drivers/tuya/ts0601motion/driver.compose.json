@@ -1,0 +1,91 @@
+{
+  "id": "ts0601motion",
+  "name": {
+    "en": "Tuya TS0601motion",
+    "fr": "Tuya TS0601motion",
+    "nl": "Tuya TS0601motion",
+    "ta": "Tuya TS0601motion"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "°C",
+      "id": "measure_temperature"
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601motion",
+    "clusters": [
+      "genBasic",
+      "msOccupancySensing",
+      {
+        "attributes": [
+          "measuredValue"
+        ],
+        "commands": [],
+        "id": "msTemperatureMeasurement"
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-31T21:12:22.343Z",
+    "optimized": true
+  },
+  "capabilityProperties": {
+    "alarm_motion": {
+      "type": "boolean",
+      "title": {
+        "en": "Motion",
+        "fr": "Mouvement",
+        "nl": "Beweging",
+        "ta": "இயக்கம்"
+      },
+      "getable": true,
+      "setable": false
+    },
+    "measure_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "°C"
+    }
+  },
+  "clusterDetails": {
+    "msOccupancySensing": {
+      "attributes": [
+        "occupancy"
+      ],
+      "commands": []
+    },
+    "msTemperatureMeasurement": {
+      "attributes": [
+        "measuredValue"
+      ],
+      "commands": []
+    }
+  },
+  "integration": {
+    "integrated": true,
+    "integratedAt": "2025-07-31T21:12:25.175Z",
+    "version": "1.0.0",
+    "compatible": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-heptanonacontene",
+  "name": {
+    "en": "Tuya Light tuya-light-heptanonacontene",
+    "fr": "Tuya Light tuya-light-heptanonacontene",
+    "nl": "Tuya Light tuya-light-heptanonacontene",
+    "ta": "Tuya Light tuya-light-heptanonacontene"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-heptanonacontene",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:36.835Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

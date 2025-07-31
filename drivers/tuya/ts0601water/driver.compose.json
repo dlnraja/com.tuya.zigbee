@@ -1,0 +1,91 @@
+{
+  "id": "ts0601water",
+  "name": {
+    "en": "Tuya TS0601water",
+    "fr": "Tuya TS0601water",
+    "nl": "Tuya TS0601water",
+    "ta": "Tuya TS0601water"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_water",
+    {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "°C",
+      "id": "measure_temperature"
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601water",
+    "clusters": [
+      "genBasic",
+      "ssIasZone",
+      {
+        "attributes": [
+          "measuredValue"
+        ],
+        "commands": [],
+        "id": "msTemperatureMeasurement"
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-31T21:12:22.442Z",
+    "optimized": true
+  },
+  "capabilityProperties": {
+    "alarm_water": {
+      "type": "boolean",
+      "title": {
+        "en": "Water Leak",
+        "fr": "Fuite d'Eau",
+        "nl": "Waterlek",
+        "ta": "தண்ணீர் கசிவு"
+      },
+      "getable": true,
+      "setable": false
+    },
+    "measure_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "°C"
+    }
+  },
+  "clusterDetails": {
+    "ssIasZone": {
+      "attributes": [
+        "zoneState"
+      ],
+      "commands": []
+    },
+    "msTemperatureMeasurement": {
+      "attributes": [
+        "measuredValue"
+      ],
+      "commands": []
+    }
+  },
+  "integration": {
+    "integrated": true,
+    "integratedAt": "2025-07-31T21:12:25.629Z",
+    "version": "1.0.0",
+    "compatible": true
+  }
+}

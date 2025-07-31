@@ -1,0 +1,29 @@
+{
+  "id": "xiaomi-aqara-temperature-200",
+  "name": {
+    "en": "Zigbee xiaomi-aqara-temperature-200",
+    "fr": "Zigbee xiaomi-aqara-temperature-200",
+    "nl": "Zigbee xiaomi-aqara-temperature-200",
+    "ta": "Zigbee xiaomi-aqara-temperature-200"
+  },
+  "class": "temperature",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "zigbee": {
+    "manufacturerName": "Xiaomi",
+    "modelId": "xiaomi-aqara-temperature-200",
+    "clusters": [
+      "genBasic",
+      "msTemperatureMeasurement",
+      "msRelativeHumidity"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:10:01.267Z",
+    "version": "3.1.0",
+    "source": "historical_recovery",
+    "category": "temperature"
+  }
+}

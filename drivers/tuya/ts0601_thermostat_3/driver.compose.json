@@ -1,0 +1,156 @@
+{
+  "id": "ts0601_thermostat_3",
+  "name": {
+    "en": "Tuya TS0601_thermostat_3",
+    "fr": "Tuya TS0601_thermostat_3",
+    "nl": "Tuya TS0601_thermostat_3",
+    "ta": "Tuya TS0601_thermostat_3"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "°C",
+      "id": "measure_temperature"
+    },
+    "target_temperature",
+    "thermostat_mode",
+    {
+      "type": "number",
+      "title": {
+        "en": "Humidity",
+        "fr": "Humidité",
+        "nl": "Vochtigheid",
+        "ta": "ஈரப்பதம்"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "%",
+      "id": "measure_humidity"
+    },
+    "measure_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601_thermostat_3",
+    "clusters": [
+      "genBasic",
+      {
+        "attributes": [
+          "measuredValue"
+        ],
+        "commands": [],
+        "id": "msTemperatureMeasurement"
+      },
+      "hvacThermostat",
+      {
+        "attributes": [
+          "measuredValue"
+        ],
+        "commands": [],
+        "id": "msRelativeHumidity"
+      },
+      "genPowerCfg"
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-31T21:12:22.691Z",
+    "optimized": true
+  },
+  "capabilityProperties": {
+    "measure_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "°C"
+    },
+    "target_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Target Temperature",
+        "fr": "Température Cible",
+        "nl": "Doeltemperatuur",
+        "ta": "இலக்கு வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": true,
+      "min": 5,
+      "max": 35,
+      "unit": "°C"
+    },
+    "thermostat_mode": {
+      "type": "string",
+      "title": {
+        "en": "Thermostat Mode",
+        "fr": "Mode Thermostat",
+        "nl": "Thermostaat Modus",
+        "ta": "தெர்மோஸ்டேட் பயன்முறை"
+      },
+      "getable": true,
+      "setable": true,
+      "options": [
+        "heat",
+        "cool",
+        "auto"
+      ]
+    },
+    "measure_humidity": {
+      "type": "number",
+      "title": {
+        "en": "Humidity",
+        "fr": "Humidité",
+        "nl": "Vochtigheid",
+        "ta": "ஈரப்பதம்"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "%"
+    }
+  },
+  "clusterDetails": {
+    "msTemperatureMeasurement": {
+      "attributes": [
+        "measuredValue"
+      ],
+      "commands": []
+    },
+    "hvacThermostat": {
+      "attributes": [
+        "localTemperature",
+        "occupiedHeatingSetpoint"
+      ],
+      "commands": [
+        "setWeeklySchedule",
+        "getWeeklySchedule",
+        "clearWeeklySchedule"
+      ]
+    },
+    "msRelativeHumidity": {
+      "attributes": [
+        "measuredValue"
+      ],
+      "commands": []
+    }
+  },
+  "integration": {
+    "integrated": true,
+    "integratedAt": "2025-07-31T21:12:26.239Z",
+    "version": "1.0.0",
+    "compatible": true
+  }
+}
