@@ -1,28 +1,17 @@
 'use strict';
 
-const Homey = require('homey');
+const { HomeyApp } = require('homey');
 
-class TuyaZigbeeApp extends Homey.App {
-    async onInit() {
-        this.log('Tuya Zigbee App initialized - Comprehensive Scraping');
-        
-        // Register all scraped drivers
-        this.registerDeviceClass('light', require('./drivers/tuya/TS0001_forum/device.js'));
-        this.registerDeviceClass('light', require('./drivers/tuya/TS0601_forum/device.js'));
-        this.registerDeviceClass('light', require('./drivers/tuya/TS0001_zigbee2mqtt/device.js'));
-        this.registerDeviceClass('light', require('./drivers/tuya/TS0601_zigbee2mqtt/device.js'));
-        this.registerDeviceClass('light', require('./drivers/tuya/TS0001_github/device.js'));
-        this.registerDeviceClass('light', require('./drivers/tuya/TS0601_github/device.js'));
-        this.registerDeviceClass('light', require('./drivers/tuya/TS0001_appstore/device.js'));
-        this.registerDeviceClass('light', require('./drivers/tuya/TS0001_zigbee_db/device.js'));
+// Driver imports
 
-        this.log('Comprehensive scraping system initialized');
-        this.log('All scraped drivers registered and ready for use');
-    }
+
+class TuyaZigbeeApp extends HomeyApp {
+  async onInit() {
+    this.log('Tuya Zigbee App is running...');
     
-    async onUninit() {
-        this.log('Tuya Zigbee App uninitialized - Comprehensive Scraping');
-    }
+    // Register all drivers
+
+  }
 }
 
 module.exports = TuyaZigbeeApp;
