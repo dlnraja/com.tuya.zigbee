@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-tetratetracontene",
+  "name": {
+    "en": "Tuya Light tuya-light-tetratetracontene",
+    "fr": "Tuya Light tuya-light-tetratetracontene",
+    "nl": "Tuya Light tuya-light-tetratetracontene",
+    "ta": "Tuya Light tuya-light-tetratetracontene"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-tetratetracontene",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:30.308Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

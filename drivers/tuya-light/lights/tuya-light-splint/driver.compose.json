@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-splint",
+  "name": {
+    "en": "Tuya Light tuya-light-splint",
+    "fr": "Tuya Light tuya-light-splint",
+    "nl": "Tuya Light tuya-light-splint",
+    "ta": "Tuya Light tuya-light-splint"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-splint",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:26.738Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

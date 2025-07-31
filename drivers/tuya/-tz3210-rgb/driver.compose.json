@@ -1,0 +1,133 @@
+{
+  "id": "-tz3210-rgb",
+  "name": {
+    "en": "Tuya _TZ3210 RGB",
+    "fr": "RGB Tuya _TZ3210",
+    "nl": "Tuya _TZ3210 RGB",
+    "ta": "Tuya _TZ3210 RGB"
+  },
+  "class": "light",
+  "capabilities": [
+    {
+      "type": "boolean",
+      "title": {
+        "en": "On/Off",
+        "fr": "Marche/Arrêt",
+        "nl": "Aan/Uit",
+        "ta": "ஆன்/ஆஃப்"
+      },
+      "getable": true,
+      "setable": true,
+      "id": "onoff"
+    },
+    {
+      "type": "number",
+      "title": {
+        "en": "Dim Level",
+        "fr": "Niveau de variation",
+        "nl": "Dim niveau",
+        "ta": "டிம் நிலை"
+      },
+      "getable": true,
+      "setable": true,
+      "min": 0,
+      "max": 1,
+      "id": "dim"
+    },
+    "light_temperature",
+    "light_mode"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "_TZ3210_rgb",
+    "clusters": [
+      {
+        "attributes": [
+          "onOff"
+        ],
+        "commands": [
+          "toggle",
+          "off",
+          "on"
+        ],
+        "id": "genOnOff"
+      },
+      {
+        "attributes": [
+          "currentLevel"
+        ],
+        "commands": [
+          "moveToLevel",
+          "move",
+          "step"
+        ],
+        "id": "genLevelCtrl"
+      },
+      "lightingColorCtrl"
+    ]
+  },
+  "settings": {},
+  "fallback": false,
+  "description": "RGB Tuya light",
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-31T21:12:21.592Z",
+    "optimized": true
+  },
+  "integration": {
+    "integrated": true,
+    "integratedAt": "2025-07-31T21:12:22.899Z",
+    "version": "1.0.0",
+    "compatible": true
+  },
+  "capabilityProperties": {
+    "light_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Light Temperature",
+        "fr": "Température Lumière",
+        "nl": "Licht Temperatuur",
+        "ta": "விளக்கு வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": true,
+      "min": 2700,
+      "max": 6500,
+      "unit": "K"
+    },
+    "light_mode": {
+      "type": "string",
+      "title": {
+        "en": "Light Mode",
+        "fr": "Mode Lumière",
+        "nl": "Licht Modus",
+        "ta": "விளக்கு பயன்முறை"
+      },
+      "getable": true,
+      "setable": true,
+      "options": [
+        "color",
+        "temperature",
+        "white"
+      ]
+    }
+  },
+  "clusterDetails": {
+    "lightingColorCtrl": {
+      "attributes": [
+        "currentHue",
+        "currentSaturation",
+        "currentX",
+        "currentY"
+      ],
+      "commands": [
+        "moveToHue",
+        "stepHue",
+        "moveToSaturation",
+        "stepSaturation",
+        "moveToColor",
+        "stepColor"
+      ]
+    }
+  }
+}

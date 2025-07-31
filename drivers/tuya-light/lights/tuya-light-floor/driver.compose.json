@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-floor",
+  "name": {
+    "en": "Tuya Light tuya-light-floor",
+    "fr": "Tuya Light tuya-light-floor",
+    "nl": "Tuya Light tuya-light-floor",
+    "ta": "Tuya Light tuya-light-floor"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-floor",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:23.576Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

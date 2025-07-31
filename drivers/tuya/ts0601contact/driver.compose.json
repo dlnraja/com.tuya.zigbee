@@ -1,0 +1,91 @@
+{
+  "id": "ts0601contact",
+  "name": {
+    "en": "Tuya TS0601contact",
+    "fr": "Tuya TS0601contact",
+    "nl": "Tuya TS0601contact",
+    "ta": "Tuya TS0601contact"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_contact",
+    {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "°C",
+      "id": "measure_temperature"
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601contact",
+    "clusters": [
+      "genBasic",
+      "ssIasZone",
+      {
+        "attributes": [
+          "measuredValue"
+        ],
+        "commands": [],
+        "id": "msTemperatureMeasurement"
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-31T21:12:22.287Z",
+    "optimized": true
+  },
+  "capabilityProperties": {
+    "alarm_contact": {
+      "type": "boolean",
+      "title": {
+        "en": "Contact",
+        "fr": "Contact",
+        "nl": "Contact",
+        "ta": "தொடர்பு"
+      },
+      "getable": true,
+      "setable": false
+    },
+    "measure_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "°C"
+    }
+  },
+  "clusterDetails": {
+    "ssIasZone": {
+      "attributes": [
+        "zoneState"
+      ],
+      "commands": []
+    },
+    "msTemperatureMeasurement": {
+      "attributes": [
+        "measuredValue"
+      ],
+      "commands": []
+    }
+  },
+  "integration": {
+    "integrated": true,
+    "integratedAt": "2025-07-31T21:12:24.724Z",
+    "version": "1.0.0",
+    "compatible": true
+  }
+}

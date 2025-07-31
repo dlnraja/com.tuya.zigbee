@@ -1,0 +1,95 @@
+{
+  "id": "ts0601_motion_3",
+  "name": {
+    "en": "Tuya TS0601_motion_3",
+    "fr": "Tuya TS0601_motion_3",
+    "nl": "Tuya TS0601_motion_3",
+    "ta": "Tuya TS0601_motion_3"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "°C",
+      "id": "measure_temperature"
+    },
+    "measure_illuminance",
+    "measure_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601_motion_3",
+    "clusters": [
+      "genBasic",
+      "msOccupancySensing",
+      {
+        "attributes": [
+          "measuredValue"
+        ],
+        "commands": [],
+        "id": "msTemperatureMeasurement"
+      },
+      "msIlluminanceMeasurement",
+      "genPowerCfg"
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-31T21:12:22.558Z",
+    "optimized": true
+  },
+  "capabilityProperties": {
+    "alarm_motion": {
+      "type": "boolean",
+      "title": {
+        "en": "Motion",
+        "fr": "Mouvement",
+        "nl": "Beweging",
+        "ta": "இயக்கம்"
+      },
+      "getable": true,
+      "setable": false
+    },
+    "measure_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "°C"
+    }
+  },
+  "clusterDetails": {
+    "msOccupancySensing": {
+      "attributes": [
+        "occupancy"
+      ],
+      "commands": []
+    },
+    "msTemperatureMeasurement": {
+      "attributes": [
+        "measuredValue"
+      ],
+      "commands": []
+    }
+  },
+  "integration": {
+    "integrated": true,
+    "integratedAt": "2025-07-31T21:12:25.926Z",
+    "version": "1.0.0",
+    "compatible": true
+  }
+}

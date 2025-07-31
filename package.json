@@ -1,0 +1,17 @@
+{
+  "name": "com.tuya.zigbee",
+  "version": "3.1.0",
+  "main": "app.js",
+  "scripts": {
+    "validate": "homey app validate",
+    "install": "homey app install",
+    "release": "node scripts/core/release-manager.js",
+    "analyze": "node scripts/core/ultimate-driver-analyzer.js",
+    "scrape": "node scripts/core/comprehensive-driver-scraper.js",
+    "improve": "node scripts/core/driver-analyzer-improver.js",
+    "mega-pipeline": "node mega-pipeline-ultimate.js"
+  },
+  "dependencies": {
+    "homey-meshdriver": "^1.3.50"
+  }
+}

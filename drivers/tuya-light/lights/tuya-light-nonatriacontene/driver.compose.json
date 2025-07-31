@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-nonatriacontene",
+  "name": {
+    "en": "Tuya Light tuya-light-nonatriacontene",
+    "fr": "Tuya Light tuya-light-nonatriacontene",
+    "nl": "Tuya Light tuya-light-nonatriacontene",
+    "ta": "Tuya Light tuya-light-nonatriacontene"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-nonatriacontene",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:30.171Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

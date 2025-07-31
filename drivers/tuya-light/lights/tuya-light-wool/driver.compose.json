@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-wool",
+  "name": {
+    "en": "Tuya Light tuya-light-wool",
+    "fr": "Tuya Light tuya-light-wool",
+    "nl": "Tuya Light tuya-light-wool",
+    "ta": "Tuya Light tuya-light-wool"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-wool",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:27.284Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

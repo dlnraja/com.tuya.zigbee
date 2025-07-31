@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-plastic",
+  "name": {
+    "en": "Tuya Light tuya-light-plastic",
+    "fr": "Tuya Light tuya-light-plastic",
+    "nl": "Tuya Light tuya-light-plastic",
+    "ta": "Tuya Light tuya-light-plastic"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-plastic",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:27.754Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

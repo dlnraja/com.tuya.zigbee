@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-pentanonacontene",
+  "name": {
+    "en": "Tuya Light tuya-light-pentanonacontene",
+    "fr": "Tuya Light tuya-light-pentanonacontene",
+    "nl": "Tuya Light tuya-light-pentanonacontene",
+    "ta": "Tuya Light tuya-light-pentanonacontene"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-pentanonacontene",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:36.611Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

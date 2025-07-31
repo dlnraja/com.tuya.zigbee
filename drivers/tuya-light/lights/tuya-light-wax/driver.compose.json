@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-wax",
+  "name": {
+    "en": "Tuya Light tuya-light-wax",
+    "fr": "Tuya Light tuya-light-wax",
+    "nl": "Tuya Light tuya-light-wax",
+    "ta": "Tuya Light tuya-light-wax"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-wax",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:28.630Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

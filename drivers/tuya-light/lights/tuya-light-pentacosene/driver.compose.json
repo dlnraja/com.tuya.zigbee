@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-pentacosene",
+  "name": {
+    "en": "Tuya Light tuya-light-pentacosene",
+    "fr": "Tuya Light tuya-light-pentacosene",
+    "nl": "Tuya Light tuya-light-pentacosene",
+    "ta": "Tuya Light tuya-light-pentacosene"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-pentacosene",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:29.902Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

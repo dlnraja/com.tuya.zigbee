@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-performance",
+  "name": {
+    "en": "Tuya Light tuya-light-performance",
+    "fr": "Tuya Light tuya-light-performance",
+    "nl": "Tuya Light tuya-light-performance",
+    "ta": "Tuya Light tuya-light-performance"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-performance",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:25.523Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "xiaomi-aqara-temperature-53",
+  "name": {
+    "en": "Zigbee xiaomi-aqara-temperature-53",
+    "fr": "Zigbee xiaomi-aqara-temperature-53",
+    "nl": "Zigbee xiaomi-aqara-temperature-53",
+    "ta": "Zigbee xiaomi-aqara-temperature-53"
+  },
+  "class": "temperature",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "zigbee": {
+    "manufacturerName": "Xiaomi",
+    "modelId": "xiaomi-aqara-temperature-53",
+    "clusters": [
+      "genBasic",
+      "msTemperatureMeasurement",
+      "msRelativeHumidity"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:10:00.952Z",
+    "version": "3.1.0",
+    "source": "historical_recovery",
+    "category": "temperature"
+  }
+}

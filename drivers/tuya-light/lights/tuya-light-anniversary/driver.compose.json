@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-anniversary",
+  "name": {
+    "en": "Tuya Light tuya-light-anniversary",
+    "fr": "Tuya Light tuya-light-anniversary",
+    "nl": "Tuya Light tuya-light-anniversary",
+    "ta": "Tuya Light tuya-light-anniversary"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-anniversary",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:25.295Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

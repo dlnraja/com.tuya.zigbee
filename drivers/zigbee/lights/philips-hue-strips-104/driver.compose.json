@@ -1,0 +1,32 @@
+{
+  "id": "philips-hue-strips-104",
+  "name": {
+    "en": "Zigbee philips-hue-strips-104",
+    "fr": "Zigbee philips-hue-strips-104",
+    "nl": "Zigbee philips-hue-strips-104",
+    "ta": "Zigbee philips-hue-strips-104"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature",
+    "light_mode"
+  ],
+  "zigbee": {
+    "manufacturerName": "Philips",
+    "modelId": "philips-hue-strips-104",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:10:00.275Z",
+    "version": "3.1.0",
+    "source": "historical_recovery",
+    "category": "lights"
+  }
+}

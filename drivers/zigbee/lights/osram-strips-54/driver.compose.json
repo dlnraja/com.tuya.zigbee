@@ -1,0 +1,32 @@
+{
+  "id": "osram-strips-54",
+  "name": {
+    "en": "Zigbee osram-strips-54",
+    "fr": "Zigbee osram-strips-54",
+    "nl": "Zigbee osram-strips-54",
+    "ta": "Zigbee osram-strips-54"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature",
+    "light_mode"
+  ],
+  "zigbee": {
+    "manufacturerName": "OSRAM",
+    "modelId": "osram-strips-54",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:09:59.962Z",
+    "version": "3.1.0",
+    "source": "historical_recovery",
+    "category": "lights"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "id": "_tz3600_plug",
+  "name": {
+    "en": "Tuya _TZ3600_plug",
+    "fr": "Tuya _TZ3600_plug",
+    "nl": "Tuya _TZ3600_plug",
+    "ta": "Tuya _TZ3600_plug"
+  },
+  "class": "socket",
+  "capabilities": [
+    {
+      "type": "boolean",
+      "title": {
+        "en": "On/Off",
+        "fr": "Marche/Arrêt",
+        "nl": "Aan/Uit",
+        "ta": "ஆன்/ஆஃப்"
+      },
+      "getable": true,
+      "setable": true,
+      "id": "onoff"
+    },
+    {
+      "type": "number",
+      "title": {
+        "en": "Power",
+        "fr": "Puissance",
+        "nl": "Vermogen",
+        "ta": "சக்தி"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "W",
+      "id": "meter_power"
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "_TZ3600_plug",
+    "clusters": [
+      "genBasic",
+      {
+        "attributes": [
+          "onOff"
+        ],
+        "commands": [
+          "toggle",
+          "off",
+          "on"
+        ],
+        "id": "genOnOff"
+      },
+      {
+        "attributes": [
+          "instantaneousDemand",
+          "currentSummationDelivered"
+        ],
+        "commands": [],
+        "id": "seMetering"
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-31T21:12:22.844Z",
+    "optimized": true
+  },
+  "capabilityProperties": {
+    "onoff": {
+      "type": "boolean",
+      "title": {
+        "en": "On/Off",
+        "fr": "Marche/Arrêt",
+        "nl": "Aan/Uit",
+        "ta": "ஆன்/ஆஃப்"
+      },
+      "getable": true,
+      "setable": true
+    },
+    "meter_power": {
+      "type": "number",
+      "title": {
+        "en": "Power",
+        "fr": "Puissance",
+        "nl": "Vermogen",
+        "ta": "சக்தி"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "W"
+    }
+  },
+  "clusterDetails": {
+    "genOnOff": {
+      "attributes": [
+        "onOff"
+      ],
+      "commands": [
+        "toggle",
+        "off",
+        "on"
+      ]
+    },
+    "seMetering": {
+      "attributes": [
+        "currentSummationDelivered",
+        "instantaneousDemand"
+      ],
+      "commands": []
+    }
+  },
+  "integration": {
+    "integrated": true,
+    "integratedAt": "2025-07-31T21:12:26.699Z",
+    "version": "1.0.0",
+    "compatible": true
+  }
+}

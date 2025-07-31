@@ -1,0 +1,29 @@
+{
+  "id": "smart-life-lock",
+  "name": {
+    "en": "Tuya smart-life-lock",
+    "fr": "Tuya smart-life-lock",
+    "nl": "Tuya smart-life-lock",
+    "ta": "Tuya smart-life-lock"
+  },
+  "class": "switches",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "smart-life-lock",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "genLevelCtrl"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:10:02.007Z",
+    "version": "3.1.0",
+    "source": "historical_recovery",
+    "category": "switches"
+  }
+}

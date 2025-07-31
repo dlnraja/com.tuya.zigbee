@@ -1,0 +1,32 @@
+{
+  "id": "osram-strips-30",
+  "name": {
+    "en": "Zigbee osram-strips-30",
+    "fr": "Zigbee osram-strips-30",
+    "nl": "Zigbee osram-strips-30",
+    "ta": "Zigbee osram-strips-30"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature",
+    "light_mode"
+  ],
+  "zigbee": {
+    "manufacturerName": "OSRAM",
+    "modelId": "osram-strips-30",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "genLevelCtrl",
+      "lightingColorCtrl"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:09:59.906Z",
+    "version": "3.1.0",
+    "source": "historical_recovery",
+    "category": "lights"
+  }
+}

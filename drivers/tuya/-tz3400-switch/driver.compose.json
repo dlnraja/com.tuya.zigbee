@@ -1,0 +1,80 @@
+{
+  "id": "-tz3400-switch",
+  "name": {
+    "en": "Tuya _TZ3400 Switch",
+    "fr": "Interrupteur Tuya _TZ3400",
+    "nl": "Tuya _TZ3400 Schakelaar",
+    "ta": "Tuya _TZ3400 சுவிட்ச்"
+  },
+  "class": "light",
+  "capabilities": [
+    {
+      "type": "boolean",
+      "title": {
+        "en": "On/Off",
+        "fr": "Marche/Arrêt",
+        "nl": "Aan/Uit",
+        "ta": "ஆன்/ஆஃப்"
+      },
+      "getable": true,
+      "setable": true,
+      "id": "onoff"
+    },
+    {
+      "type": "number",
+      "title": {
+        "en": "Dim Level",
+        "fr": "Niveau de variation",
+        "nl": "Dim niveau",
+        "ta": "டிம் நிலை"
+      },
+      "getable": true,
+      "setable": true,
+      "min": 0,
+      "max": 1,
+      "id": "dim"
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "_TZ3400_switch",
+    "clusters": [
+      {
+        "attributes": [
+          "onOff"
+        ],
+        "commands": [
+          "toggle",
+          "off",
+          "on"
+        ],
+        "id": "genOnOff"
+      },
+      {
+        "attributes": [
+          "currentLevel"
+        ],
+        "commands": [
+          "moveToLevel",
+          "move",
+          "step"
+        ],
+        "id": "genLevelCtrl"
+      }
+    ]
+  },
+  "settings": {},
+  "fallback": false,
+  "description": "Tuya switch",
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-31T21:12:21.625Z",
+    "optimized": true
+  },
+  "integration": {
+    "integrated": true,
+    "integratedAt": "2025-07-31T21:12:22.904Z",
+    "version": "1.0.0",
+    "compatible": true
+  }
+}

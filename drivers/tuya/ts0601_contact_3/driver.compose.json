@@ -1,0 +1,95 @@
+{
+  "id": "ts0601_contact_3",
+  "name": {
+    "en": "Tuya TS0601_contact_3",
+    "fr": "Tuya TS0601_contact_3",
+    "nl": "Tuya TS0601_contact_3",
+    "ta": "Tuya TS0601_contact_3"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_contact",
+    {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "°C",
+      "id": "measure_temperature"
+    },
+    "measure_battery",
+    "measure_illuminance"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601_contact_3",
+    "clusters": [
+      "genBasic",
+      "ssIasZone",
+      {
+        "attributes": [
+          "measuredValue"
+        ],
+        "commands": [],
+        "id": "msTemperatureMeasurement"
+      },
+      "genPowerCfg",
+      "msIlluminanceMeasurement"
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-31T21:12:22.474Z",
+    "optimized": true
+  },
+  "capabilityProperties": {
+    "alarm_contact": {
+      "type": "boolean",
+      "title": {
+        "en": "Contact",
+        "fr": "Contact",
+        "nl": "Contact",
+        "ta": "தொடர்பு"
+      },
+      "getable": true,
+      "setable": false
+    },
+    "measure_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "°C"
+    }
+  },
+  "clusterDetails": {
+    "ssIasZone": {
+      "attributes": [
+        "zoneState"
+      ],
+      "commands": []
+    },
+    "msTemperatureMeasurement": {
+      "attributes": [
+        "measuredValue"
+      ],
+      "commands": []
+    }
+  },
+  "integration": {
+    "integrated": true,
+    "integratedAt": "2025-07-31T21:12:25.726Z",
+    "version": "1.0.0",
+    "compatible": true
+  }
+}

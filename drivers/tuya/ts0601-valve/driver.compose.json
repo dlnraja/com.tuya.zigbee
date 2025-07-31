@@ -1,0 +1,75 @@
+{
+  "id": "ts0601-valve",
+  "name": {
+    "en": "Tuya TS0601 Valve",
+    "fr": "Vanne Tuya TS0601",
+    "nl": "Tuya TS0601 Klep",
+    "ta": "Tuya TS0601 வால்வு"
+  },
+  "class": "valve",
+  "capabilities": [
+    {
+      "type": "boolean",
+      "title": {
+        "en": "On/Off",
+        "fr": "Marche/Arrêt",
+        "nl": "Aan/Uit",
+        "ta": "ஆன்/ஆஃப்"
+      },
+      "getable": true,
+      "setable": true,
+      "id": "onoff"
+    },
+    {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "ta": "வெப்பநிலை"
+      },
+      "getable": true,
+      "setable": false,
+      "unit": "°C",
+      "id": "measure_temperature"
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "TS0601_valve",
+    "clusters": [
+      {
+        "attributes": [
+          "onOff"
+        ],
+        "commands": [
+          "toggle",
+          "off",
+          "on"
+        ],
+        "id": "genOnOff"
+      },
+      {
+        "attributes": [
+          "measuredValue"
+        ],
+        "commands": [],
+        "id": "msTemperatureMeasurement"
+      }
+    ]
+  },
+  "settings": {},
+  "fallback": false,
+  "description": "Smart valve",
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-31T21:12:22.240Z",
+    "optimized": true
+  },
+  "integration": {
+    "integrated": true,
+    "integratedAt": "2025-07-31T21:12:24.671Z",
+    "version": "1.0.0",
+    "compatible": true
+  }
+}

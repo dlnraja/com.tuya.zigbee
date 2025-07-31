@@ -1,0 +1,29 @@
+{
+  "id": "smart-life-fan",
+  "name": {
+    "en": "Tuya smart-life-fan",
+    "fr": "Tuya smart-life-fan",
+    "nl": "Tuya smart-life-fan",
+    "ta": "Tuya smart-life-fan"
+  },
+  "class": "switches",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "smart-life-fan",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "genLevelCtrl"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:10:01.758Z",
+    "version": "3.1.0",
+    "source": "historical_recovery",
+    "category": "switches"
+  }
+}

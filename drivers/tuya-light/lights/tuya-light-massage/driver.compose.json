@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-massage",
+  "name": {
+    "en": "Tuya Light tuya-light-massage",
+    "fr": "Tuya Light tuya-light-massage",
+    "nl": "Tuya Light tuya-light-massage",
+    "ta": "Tuya Light tuya-light-massage"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-massage",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:25.024Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

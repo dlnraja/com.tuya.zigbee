@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-adhesive",
+  "name": {
+    "en": "Tuya Light tuya-light-adhesive",
+    "fr": "Tuya Light tuya-light-adhesive",
+    "nl": "Tuya Light tuya-light-adhesive",
+    "ta": "Tuya Light tuya-light-adhesive"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-adhesive",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:27.884Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-birthday",
+  "name": {
+    "en": "Tuya Light tuya-light-birthday",
+    "fr": "Tuya Light tuya-light-birthday",
+    "nl": "Tuya Light tuya-light-birthday",
+    "ta": "Tuya Light tuya-light-birthday"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-birthday",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:25.284Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-hennonacontene",
+  "name": {
+    "en": "Tuya Light tuya-light-hennonacontene",
+    "fr": "Tuya Light tuya-light-hennonacontene",
+    "nl": "Tuya Light tuya-light-hennonacontene",
+    "ta": "Tuya Light tuya-light-hennonacontene"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-hennonacontene",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:36.174Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}
