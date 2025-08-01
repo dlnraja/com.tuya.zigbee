@@ -8,6 +8,7 @@
   },
   "class": "sensor",
   "capabilities": [
+<<<<<<< HEAD
     {
       "type": "number",
       "title": {
@@ -34,12 +35,17 @@
       "unit": "%",
       "id": "measure_humidity"
     }
+=======
+    "measure_temperature",
+    "measure_humidity"
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   ],
   "zigbee": {
     "manufacturerName": "Tuya",
     "modelId": "TS0601_sensor",
     "clusters": [
       "genBasic",
+<<<<<<< HEAD
       {
         "attributes": [
           "measuredValue"
@@ -106,5 +112,16 @@
     "integratedAt": "2025-07-31T23:52:44.573Z",
     "version": "1.0.0",
     "compatible": true
+=======
+      "msTemperatureMeasurement",
+      "msRelativeHumidity"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.772Z",
+    "version": "3.1.0",
+    "source": "database_analysis",
+    "channels": 1
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   }
 }

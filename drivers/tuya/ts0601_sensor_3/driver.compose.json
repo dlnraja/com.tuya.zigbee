@@ -8,6 +8,7 @@
   },
   "class": "sensor",
   "capabilities": [
+<<<<<<< HEAD
     {
       "type": "number",
       "title": {
@@ -34,6 +35,10 @@
       "unit": "%",
       "id": "measure_humidity"
     },
+=======
+    "measure_temperature",
+    "measure_humidity",
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
     "measure_pressure",
     "measure_illuminance"
   ],
@@ -42,6 +47,7 @@
     "modelId": "TS0601_sensor_3",
     "clusters": [
       "genBasic",
+<<<<<<< HEAD
       {
         "attributes": [
           "measuredValue"
@@ -56,11 +62,16 @@
         "commands": [],
         "id": "msRelativeHumidity"
       },
+=======
+      "msTemperatureMeasurement",
+      "msRelativeHumidity",
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
       "msPressureMeasurement",
       "msIlluminanceMeasurement"
     ]
   },
   "metadata": {
+<<<<<<< HEAD
     "version": "1.0.0",
     "lastUpdated": "2025-07-31T23:52:38.993Z",
     "optimized": true
@@ -110,5 +121,11 @@
     "integratedAt": "2025-07-31T23:52:44.777Z",
     "version": "1.0.0",
     "compatible": true
+=======
+    "createdAt": "2025-07-31T20:27:53.854Z",
+    "version": "3.1.0",
+    "source": "database_analysis",
+    "channels": 1
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   }
 }

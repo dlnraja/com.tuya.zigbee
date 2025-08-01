@@ -6,6 +6,7 @@ const { ZigbeeDevice } = require('homey-meshdriver');
 
 class TS0601githubDevice extends ZigbeeDevice {
     async onMeshInit() {
+<<<<<<< HEAD
         try {
             await super.onMeshInit();
             this.log('Tuya TS0601 (GitHub) initialized');
@@ -18,6 +19,18 @@ class TS0601githubDevice extends ZigbeeDevice {
             this.log('Error during mesh init:', error);
             throw error;
         }
+=======
+        await super.onMeshInit();
+        this.log('Tuya TS0601 (GitHub) initialized');
+        
+        // Register capabilities
+        this.registerCapability('onoff', 'genOnOff');
+        this.registerCapability('dim', 'genOnOff');
+        
+        // Add source metadata
+        this.setStoreValue('source', 'github');
+        this.setStoreValue('scrapedAt', '2025-07-31T20:16:46.885Z');
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
     }
     
     async onSettings(oldSettings, newSettings, changedKeys) {
@@ -43,6 +56,36 @@ class TS0601githubDevice extends ZigbeeDevice {
     async onAvailable() {
         this.log('Device available');
     }
+
+    // Optimized methods
+    async onSettings(oldSettings, newSettings, changedKeys) {
+        this.log('Settings updated:', changedKeys);
+    }
+    
+    async onRenamed(name) {
+        this.log('Device renamed to:', name);
+    }
+    
+    async onDeleted() {
+        this.log('Device deleted');
+    }
+    
+    // Error handling
+    async onError(error) {
+        this.log('Device error:', error);
+        this.setUnavailable(error.message);
+    }
+    
+    // Availability management
+    async onUnavailable() {
+        this.log('Device unavailable');
+    }
+    
+    async onAvailable() {
+        this.log('Device available');
+        this.setAvailable();
+    }
+<<<<<<< HEAD
 
     // Optimized methods
     async onSettings(oldSettings, newSettings, changedKeys) {
@@ -101,35 +144,8 @@ class TS0601githubDevice extends ZigbeeDevice {
         this.log('Device available');
         this.setAvailable();
     }
-
-    // Optimized methods
-    async onSettings(oldSettings, newSettings, changedKeys) {
-        this.log('Settings updated:', changedKeys);
-    }
-    
-    async onRenamed(name) {
-        this.log('Device renamed to:', name);
-    }
-    
-    async onDeleted() {
-        this.log('Device deleted');
-    }
-    
-    // Error handling
-    async onError(error) {
-        this.log('Device error:', error);
-        this.setUnavailable(error.message);
-    }
-    
-    // Availability management
-    async onUnavailable() {
-        this.log('Device unavailable');
-    }
-    
-    async onAvailable() {
-        this.log('Device available');
-        this.setAvailable();
-    }
+=======
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
 }
 
 module.exports = TS0601githubDevice;

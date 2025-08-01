@@ -114,6 +114,7 @@ class ts011fplugDevice extends ZigbeeDevice {
         this.log('Device available');
         this.setAvailable();
     }
+<<<<<<< HEAD
 
     // Optimized methods
     async onSettings(oldSettings, newSettings, changedKeys) {
@@ -230,6 +231,8 @@ class ts011fplugDevice extends ZigbeeDevice {
         this.log('Device available');
         this.setAvailable();
     }
+=======
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
 }
 
 module.exports = ts011fplugDevice;

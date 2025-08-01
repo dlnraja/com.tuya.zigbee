@@ -8,6 +8,7 @@
   },
   "class": "light",
   "capabilities": [
+<<<<<<< HEAD
     {
       "type": "boolean",
       "title": {
@@ -34,6 +35,10 @@
       "max": 1,
       "id": "dim"
     },
+=======
+    "onoff",
+    "dim",
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
     "light_temperature"
   ],
   "zigbee": {
@@ -41,6 +46,7 @@
     "modelId": "_TZ3100",
     "clusters": [
       "genBasic",
+<<<<<<< HEAD
       {
         "attributes": [
           "onOff"
@@ -63,10 +69,15 @@
         ],
         "id": "genLevelCtrl"
       },
+=======
+      "genOnOff",
+      "genLevelCtrl",
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
       "lightingColorCtrl"
     ]
   },
   "metadata": {
+<<<<<<< HEAD
     "version": "1.0.0",
     "lastUpdated": "2025-07-31T23:52:39.497Z",
     "optimized": true
@@ -156,5 +167,11 @@
     "integratedAt": "2025-07-31T23:52:45.600Z",
     "version": "1.0.0",
     "compatible": true
+=======
+    "createdAt": "2025-07-31T20:27:54.043Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   }
 }

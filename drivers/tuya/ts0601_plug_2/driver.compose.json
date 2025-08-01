@@ -8,6 +8,7 @@
   },
   "class": "socket",
   "capabilities": [
+<<<<<<< HEAD
     {
       "type": "boolean",
       "title": {
@@ -33,6 +34,10 @@
       "unit": "W",
       "id": "meter_power"
     },
+=======
+    "onoff",
+    "meter_power",
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
     "measure_current",
     "measure_voltage"
   ],
@@ -41,6 +46,7 @@
     "modelId": "TS0601_plug_2",
     "clusters": [
       "genBasic",
+<<<<<<< HEAD
       {
         "attributes": [
           "onOff"
@@ -140,5 +146,16 @@
     "integratedAt": "2025-07-31T23:52:44.365Z",
     "version": "1.0.0",
     "compatible": true
+=======
+      "genOnOff",
+      "seMetering"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.756Z",
+    "version": "3.1.0",
+    "source": "database_analysis",
+    "channels": 1
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   }
 }

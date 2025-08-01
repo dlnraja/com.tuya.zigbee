@@ -20,6 +20,7 @@
     ]
   },
   "metadata": {
+<<<<<<< HEAD
     "version": "1.0.0",
     "lastUpdated": "2025-07-31T23:52:36.017Z",
     "optimized": true
@@ -68,5 +69,11 @@
     "integratedAt": "2025-07-31T23:52:43.683Z",
     "version": "1.0.0",
     "compatible": true
+=======
+    "createdAt": "2025-07-31T20:27:53.959Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   }
 }
