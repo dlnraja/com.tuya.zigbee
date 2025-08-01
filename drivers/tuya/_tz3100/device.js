@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 const Homey = require('homey');
 
+=======
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
 'use strict';
 
 const { ZigbeeDevice } = require('homey-meshdriver');
@@ -49,6 +52,7 @@ class tz3100Device extends ZigbeeDevice {
     async onAvailable() {
         this.log('Device available');
     }
+<<<<<<< HEAD
 
     // Optimized methods
     async onSettings(oldSettings, newSettings, changedKeys) {
@@ -136,6 +140,8 @@ class tz3100Device extends ZigbeeDevice {
         this.log('Device available');
         this.setAvailable();
     }
+=======
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
 }
 
 module.exports = tz3100Device;

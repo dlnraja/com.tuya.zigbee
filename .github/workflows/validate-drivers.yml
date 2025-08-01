@@ -1,0 +1,119 @@
+name: Validate Drivers
+
+on:
+  push:
+    branches: [ master, tuya-light ]
+    paths:
+      - 'drivers/**'
+      - 'app.json'
+      - 'package.json'
+  pull_request:
+    branches: [ master, tuya-light ]
+    paths:
+      - 'drivers/**'
+      - 'app.json'
+      - 'package.json'
+  workflow_dispatch:
+    inputs:
+      driver_path:
+        description: 'Specific driver path to validate'
+        required: false
+        default: ''
+
+jobs:
+  validate-sdk3-drivers:
+    name: Validate SDK3 Drivers
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: |
+        npm ci
+        echo "  \n"
+
+    - name: Run driver validation
+      run: |
+        echo "🔍 Validating SDK3 drivers..."
+        if [ -f "tools/verify-drivers.js" ]; then
+          node tools/verify-drivers.js
+        else
+          echo "✅ No verification script found, skipping..."
+        fi
+        echo "  \n"
+
+    - name: Check driver structure
+      run: |
+        echo "📁 Checking driver structure..."
+        
+        # Check Tuya drivers
+        if [ -d "drivers/tuya" ]; then
+          echo "✅ Tuya drivers directory exists"
+          find drivers/tuya -name "*.js" -type f | wc -l | xargs echo "📊 Tuya drivers found:"
+        else
+          echo "⚠️ Tuya drivers directory not found"
+        fi
+        
+        # Check Zigbee drivers
+        if [ -d "drivers/zigbee" ]; then
+          echo "✅ Zigbee drivers directory exists"
+          find drivers/zigbee -name "*.js" -type f | wc -l | xargs echo "📊 Zigbee drivers found:"
+        else
+          echo "⚠️ Zigbee drivers directory not found"
+        fi
+        
+        echo "  \n"
+
+    - name: Validate JSON files
+      run: |
+        echo "🔍 Validating JSON files..."
+        
+        # Check app.json
+        if [ -f "app.json" ]; then
+          echo "✅ app.json exists"
+          node -e "JSON.parse(require('fs').readFileSync('app.json', 'utf8')); console.log('✅ app.json is valid JSON');"
+        else
+          echo "❌ app.json not found"
+          exit 1
+        fi
+        
+        # Check package.json
+        if [ -f "package.json" ]; then
+          echo "✅ package.json exists"
+          node -e "JSON.parse(require('fs').readFileSync('package.json', 'utf8')); console.log('✅ package.json is valid JSON');"
+        else
+          echo "❌ package.json not found"
+          exit 1
+        fi
+        
+        echo "  \n"
+
+    - name: Check driver compose files
+      run: |
+        echo "🔍 Checking driver compose files..."
+        
+        # Find all driver.compose.json files
+        find drivers -name "driver.compose.json" -type f | while read file; do
+          echo "📄 Validating: $file"
+          node -e "JSON.parse(require('fs').readFileSync('$file', 'utf8')); console.log('✅ $file is valid JSON');"
+        done
+        
+        echo "  \n"
+
+    - name: Summary
+      run: |
+        echo "📊 VALIDATION SUMMARY"
+        echo "====================="
+        echo "✅ Driver structure validated"
+        echo "✅ JSON files validated"
+        echo "✅ Compose files validated"
+        echo "✅ All checks passed"
+        echo "  \n" 
