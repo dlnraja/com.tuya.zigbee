@@ -8,6 +8,7 @@
   },
   "class": "thermostat",
   "capabilities": [
+<<<<<<< HEAD
     {
       "type": "number",
       "title": {
@@ -21,6 +22,9 @@
       "unit": "°C",
       "id": "measure_temperature"
     },
+=======
+    "measure_temperature",
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
     "target_temperature",
     "thermostat_mode"
   ],
@@ -29,6 +33,7 @@
     "modelId": "_TZ3700_thermostat",
     "clusters": [
       "genBasic",
+<<<<<<< HEAD
       {
         "attributes": [
           "measuredValue"
@@ -36,10 +41,14 @@
         "commands": [],
         "id": "msTemperatureMeasurement"
       },
+=======
+      "msTemperatureMeasurement",
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
       "hvacThermostat"
     ]
   },
   "metadata": {
+<<<<<<< HEAD
     "version": "1.0.0",
     "lastUpdated": "2025-07-31T23:52:40.213Z",
     "optimized": true
@@ -112,5 +121,11 @@
     "integratedAt": "2025-07-31T23:52:45.998Z",
     "version": "1.0.0",
     "compatible": true
+=======
+    "createdAt": "2025-07-31T20:27:53.835Z",
+    "version": "3.1.0",
+    "source": "database_analysis",
+    "channels": 1
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   }
 }

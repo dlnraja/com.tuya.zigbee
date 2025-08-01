@@ -8,6 +8,7 @@
   },
   "class": "light",
   "capabilities": [
+<<<<<<< HEAD
     {
       "type": "boolean",
       "title": {
@@ -34,12 +35,17 @@
       "max": 1,
       "id": "dim"
     }
+=======
+    "onoff",
+    "dim"
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   ],
   "zigbee": {
     "manufacturerName": "Tuya",
     "modelId": "TS0601dimmer",
     "clusters": [
       "genBasic",
+<<<<<<< HEAD
       {
         "attributes": [
           "onOff"
@@ -124,5 +130,16 @@
     "integratedAt": "2025-07-31T23:52:43.785Z",
     "version": "1.0.0",
     "compatible": true
+=======
+      "genOnOff",
+      "genLevelCtrl"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.892Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   }
 }

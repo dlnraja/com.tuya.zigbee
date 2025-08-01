@@ -8,6 +8,7 @@
   },
   "class": "switch",
   "capabilities": [
+<<<<<<< HEAD
     {
       "type": "boolean",
       "title": {
@@ -92,12 +93,22 @@
       "setable": true,
       "id": "onoff"
     }
+=======
+    "onoff",
+    "onoff",
+    "onoff",
+    "onoff",
+    "onoff",
+    "onoff",
+    "onoff"
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   ],
   "zigbee": {
     "manufacturerName": "Tuya",
     "modelId": "TS0007",
     "clusters": [
       "genBasic",
+<<<<<<< HEAD
       {
         "attributes": [
           "onOff"
@@ -146,5 +157,15 @@
     "integratedAt": "2025-07-31T23:52:42.412Z",
     "version": "1.0.0",
     "compatible": true
+=======
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.876Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   }
 }

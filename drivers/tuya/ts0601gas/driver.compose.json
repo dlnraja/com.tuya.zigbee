@@ -9,6 +9,7 @@
   "class": "sensor",
   "capabilities": [
     "alarm_gas",
+<<<<<<< HEAD
     {
       "type": "number",
       "title": {
@@ -22,6 +23,9 @@
       "unit": "°C",
       "id": "measure_temperature"
     }
+=======
+    "measure_temperature"
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   ],
   "zigbee": {
     "manufacturerName": "Tuya",
@@ -29,6 +33,7 @@
     "clusters": [
       "genBasic",
       "ssIasZone",
+<<<<<<< HEAD
       {
         "attributes": [
           "measuredValue"
@@ -76,5 +81,15 @@
     "integratedAt": "2025-07-31T23:52:43.828Z",
     "version": "1.0.0",
     "compatible": true
+=======
+      "msTemperatureMeasurement"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T20:27:53.934Z",
+    "version": "3.1.0",
+    "source": "generic_pattern_analysis",
+    "channels": 1
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   }
 }

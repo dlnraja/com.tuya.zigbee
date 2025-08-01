@@ -67,11 +67,16 @@
   },
   "metadata": {
     "version": "1.0.0",
+<<<<<<< HEAD
     "lastUpdated": "2025-07-31T23:52:39.063Z",
+=======
+    "lastUpdated": "2025-07-31T20:16:48.273Z",
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
     "optimized": true
   },
   "integration": {
     "integrated": true,
+<<<<<<< HEAD
     "integratedAt": "2025-07-31T23:52:44.896Z",
     "version": "1.0.0",
     "compatible": true
@@ -109,5 +114,10 @@
         "stepColor"
       ]
     }
+=======
+    "integratedAt": "2025-07-31T20:16:49.075Z",
+    "version": "1.0.0",
+    "compatible": true
+>>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   }
 }
