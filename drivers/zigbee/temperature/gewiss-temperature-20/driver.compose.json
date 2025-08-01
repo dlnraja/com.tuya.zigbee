@@ -1,0 +1,27 @@
+{
+  "id": "gewiss-temperature-20",
+  "name": {
+    "en": "gewiss-temperature-20 Device",
+    "fr": "Appareil gewiss-temperature-20",
+    "nl": "gewiss-temperature-20 Apparaat",
+    "ta": "gewiss-temperature-20 சாதனம்"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "GEWISS-TEMPERATURE-20",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "msTemperatureMeasurement"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "gewiss-temperature-20.png",
+    "large": "gewiss-temperature-20.png"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "samsung-smartthings-motion-11",
+  "name": {
+    "en": "samsung-smartthings-motion-11 Device",
+    "fr": "Appareil samsung-smartthings-motion-11",
+    "nl": "samsung-smartthings-motion-11 Apparaat",
+    "ta": "samsung-smartthings-motion-11 சாதனம்"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "SAMSUNG-SMARTTHINGS-MOTION-11",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "msOccupancySensing"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "samsung-smartthings-motion-11.png",
+    "large": "samsung-smartthings-motion-11.png"
+  }
+}

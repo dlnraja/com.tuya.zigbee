@@ -1,0 +1,29 @@
+{
+  "id": "smart-life-mediaplayer",
+  "name": {
+    "en": "Tuya smart-life-mediaplayer",
+    "fr": "Tuya smart-life-mediaplayer",
+    "nl": "Tuya smart-life-mediaplayer",
+    "ta": "Tuya smart-life-mediaplayer"
+  },
+  "class": "switches",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "smart-life-mediaplayer",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "genLevelCtrl"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:10:02.060Z",
+    "version": "3.1.0",
+    "source": "historical_recovery",
+    "category": "switches"
+  }
+}

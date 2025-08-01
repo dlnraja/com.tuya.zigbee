@@ -1,0 +1,27 @@
+{
+  "id": "ledvance-bulb-11",
+  "name": {
+    "en": "ledvance-bulb-11 Device",
+    "fr": "Appareil ledvance-bulb-11",
+    "nl": "ledvance-bulb-11 Apparaat",
+    "ta": "ledvance-bulb-11 சாதனம்"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "LEDVANCE-BULB-11",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "genOnOff"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "ledvance-bulb-11.png",
+    "large": "ledvance-bulb-11.png"
+  }
+}

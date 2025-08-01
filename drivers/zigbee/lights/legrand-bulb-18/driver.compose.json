@@ -1,0 +1,27 @@
+{
+  "id": "legrand-bulb-18",
+  "name": {
+    "en": "legrand-bulb-18 Device",
+    "fr": "Appareil legrand-bulb-18",
+    "nl": "legrand-bulb-18 Apparaat",
+    "ta": "legrand-bulb-18 சாதனம்"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "LEGRAND-BULB-18",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "genOnOff"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "legrand-bulb-18.png",
+    "large": "legrand-bulb-18.png"
+  }
+}

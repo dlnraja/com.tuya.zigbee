@@ -1,0 +1,46 @@
+{
+  "id": "com.tuya.light",
+  "version": "3.1.0",
+  "compatibility": ">=3.0.0",
+  "category": [
+    "light"
+  ],
+  "name": {
+    "en": "Tuya Light",
+    "fr": "Tuya Light",
+    "nl": "Tuya Light",
+    "ta": "Tuya Light"
+  },
+  "description": {
+    "en": "Tuya Light devices for Homey",
+    "fr": "Appareils Tuya Light pour Homey",
+    "nl": "Tuya Light apparaten voor Homey",
+    "ta": "Homey க்கான Tuya Light சாதனங்கள்"
+  },
+  "author": {
+    "name": "dlnraja",
+    "email": "dylan.rajasekaram+homey@gmail.com"
+  },
+  "contributors": [],
+  "keywords": [
+    "tuya",
+    "light",
+    "smart",
+    "home",
+    "automation"
+  ],
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
+  },
+  "screenshots": [],
+  "changelog": {
+    "3.1.0": {
+      "en": "Complete Tuya Light release with all drivers",
+      "fr": "Release Tuya Light complète avec tous les drivers",
+      "nl": "Volledige Tuya Light release met alle drivers",
+      "ta": "அனைத்து drivers உடன் முழுமையான Tuya Light release"
+    }
+  },
+  "permissions": []
+}

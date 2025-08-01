@@ -1,0 +1,27 @@
+{
+  "id": "hager-bulb-19",
+  "name": {
+    "en": "hager-bulb-19 Device",
+    "fr": "Appareil hager-bulb-19",
+    "nl": "hager-bulb-19 Apparaat",
+    "ta": "hager-bulb-19 சாதனம்"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "HAGER-BULB-19",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "genOnOff"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "hager-bulb-19.png",
+    "large": "hager-bulb-19.png"
+  }
+}

@@ -411,7 +411,7 @@ module.exports = TuyaZigbeeApp;`;
 
 on:
   push:
-    branches: [ master, tuya-light ]
+    branches: [ 'master' ]
   pull_request:
     branches: [ master ]
 

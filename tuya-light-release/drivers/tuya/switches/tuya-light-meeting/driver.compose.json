@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-meeting",
+  "name": {
+    "en": "Tuya Light tuya-light-meeting",
+    "fr": "Tuya Light tuya-light-meeting",
+    "nl": "Tuya Light tuya-light-meeting",
+    "ta": "Tuya Light tuya-light-meeting"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-meeting",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:24.359Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-wall",
+  "name": {
+    "en": "Tuya Light tuya-light-wall",
+    "fr": "Tuya Light tuya-light-wall",
+    "nl": "Tuya Light tuya-light-wall",
+    "ta": "Tuya Light tuya-light-wall"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-wall",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:23.571Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

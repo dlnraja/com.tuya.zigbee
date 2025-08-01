@@ -1,0 +1,29 @@
+{
+  "id": "water_leak_sensor_tuya",
+  "name": {
+    "en": "Tuya water_leak_sensor_tuya",
+    "fr": "Tuya water_leak_sensor_tuya",
+    "nl": "Tuya water_leak_sensor_tuya",
+    "ta": "Tuya water_leak_sensor_tuya"
+  },
+  "class": "switches",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "water_leak_sensor_tuya",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "genLevelCtrl"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:10:01.315Z",
+    "version": "3.1.0",
+    "source": "historical_recovery",
+    "category": "switches"
+  }
+}

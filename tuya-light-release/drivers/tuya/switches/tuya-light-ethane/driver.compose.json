@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-ethane",
+  "name": {
+    "en": "Tuya Light tuya-light-ethane",
+    "fr": "Tuya Light tuya-light-ethane",
+    "nl": "Tuya Light tuya-light-ethane",
+    "ta": "Tuya Light tuya-light-ethane"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-ethane",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:29.346Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

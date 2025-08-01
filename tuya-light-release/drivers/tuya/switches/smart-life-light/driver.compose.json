@@ -1,0 +1,29 @@
+{
+  "id": "smart-life-light",
+  "name": {
+    "en": "Tuya smart-life-light",
+    "fr": "Tuya smart-life-light",
+    "nl": "Tuya smart-life-light",
+    "ta": "Tuya smart-life-light"
+  },
+  "class": "switches",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "smart-life-light",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "genLevelCtrl"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:10:01.356Z",
+    "version": "3.1.0",
+    "source": "historical_recovery",
+    "category": "switches"
+  }
+}

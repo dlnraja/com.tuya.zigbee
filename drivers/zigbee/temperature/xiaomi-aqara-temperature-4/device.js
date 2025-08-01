@@ -2,30 +2,49 @@
 
 const { ZigbeeDevice } = require('homey-meshdriver');
 
-class xiaomiaqaratemperature4Device extends ZigbeeDevice {
+class xiaomiAqaraTemperature_4Device extends ZigbeeDevice {
     async onMeshInit() {
-        try {
-            await super.onMeshInit();
-            this.log('xiaomi-aqara-temperature-4 initialized');
-            
-            // Register capabilities
-            this.registerCapability('measure_temperature', 'genOnOff');
-            this.registerCapability('measure_humidity', 'genOnOff');
-            
-            // Add metadata
-            this.setStoreValue('modelId', 'xiaomi-aqara-temperature-4');
-            this.setStoreValue('source', 'historical_recovery');
-            this.setStoreValue('category', 'temperature');
-            this.setStoreValue('createdAt', '2025-07-31T21:10:00.824Z');
-            
-        } catch (error) {
-            this.log('Error during mesh init:', error);
-            throw error;
+        this.log('xiaomi-aqara-temperature-4 initialized');
+        
+        // Enable debugging
+        this.enableDebug();
+        
+        // Set device info
+        this.setStoreValue('modelId', 'xiaomi-aqara-temperature-4');
+        
+        // Initialize capabilities
+        await this.initializeCapabilities();
+    }
+    
+    async initializeCapabilities() {
+        // Initialize device-specific capabilities
+        if (this.hasCapability('onoff')) {
+            await this.registerCapability('onoff', 'genOnOff');
+        }
+        
+        if (this.hasCapability('dim')) {
+            await this.registerCapability('dim', 'genLevelCtrl');
+        }
+        
+        if (this.hasCapability('measure_temperature')) {
+            await this.registerCapability('measure_temperature', 'msTemperatureMeasurement');
+        }
+        
+        if (this.hasCapability('measure_humidity')) {
+            await this.registerCapability('measure_humidity', 'msRelativeHumidity');
+        }
+        
+        if (this.hasCapability('alarm_motion')) {
+            await this.registerCapability('alarm_motion', 'msOccupancySensing');
+        }
+        
+        if (this.hasCapability('alarm_contact')) {
+            await this.registerCapability('alarm_contact', 'genOnOff');
         }
     }
     
     async onSettings(oldSettings, newSettings, changedKeys) {
-        this.log('Settings updated:', changedKeys);
+        this.log('Settings changed:', changedKeys);
     }
     
     async onRenamed(name) {
@@ -36,10 +55,6 @@ class xiaomiaqaratemperature4Device extends ZigbeeDevice {
         this.log('Device deleted');
     }
     
-    async onError(error) {
-        this.log('Device error:', error);
-    }
-    
     async onUnavailable() {
         this.log('Device unavailable');
     }
@@ -47,6 +62,10 @@ class xiaomiaqaratemperature4Device extends ZigbeeDevice {
     async onAvailable() {
         this.log('Device available');
     }
+    
+    async onError(error) {
+        this.log('Device error:', error);
+    }
 }
 
-module.exports = xiaomiaqaratemperature4Device;
+module.exports = xiaomiAqaraTemperature_4Device;

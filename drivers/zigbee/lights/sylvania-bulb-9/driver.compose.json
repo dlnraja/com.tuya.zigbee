@@ -1,0 +1,27 @@
+{
+  "id": "sylvania-bulb-9",
+  "name": {
+    "en": "sylvania-bulb-9 Device",
+    "fr": "Appareil sylvania-bulb-9",
+    "nl": "sylvania-bulb-9 Apparaat",
+    "ta": "sylvania-bulb-9 சாதனம்"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "SYLVANIA-BULB-9",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "genOnOff"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "sylvania-bulb-9.png",
+    "large": "sylvania-bulb-9.png"
+  }
+}

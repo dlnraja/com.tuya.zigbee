@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-acrylic",
+  "name": {
+    "en": "Tuya Light tuya-light-acrylic",
+    "fr": "Tuya Light tuya-light-acrylic",
+    "nl": "Tuya Light tuya-light-acrylic",
+    "ta": "Tuya Light tuya-light-acrylic"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-acrylic",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:27.509Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

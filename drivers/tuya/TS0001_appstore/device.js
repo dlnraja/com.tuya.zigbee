@@ -14,7 +14,7 @@ class TS0001appstoreDevice extends ZigbeeDevice {
         
         // Add source metadata
         this.setStoreValue('source', 'homey_appstore');
-        this.setStoreValue('scrapedAt', '2025-07-31T21:12:20.068Z');
+        this.setStoreValue('scrapedAt', '2025-07-31T23:52:31.392Z');
     }
     
     async onSettings(oldSettings, newSettings, changedKeys) {

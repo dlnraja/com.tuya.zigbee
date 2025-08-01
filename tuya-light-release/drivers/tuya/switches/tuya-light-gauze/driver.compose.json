@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-gauze",
+  "name": {
+    "en": "Tuya Light tuya-light-gauze",
+    "fr": "Tuya Light tuya-light-gauze",
+    "nl": "Tuya Light tuya-light-gauze",
+    "ta": "Tuya Light tuya-light-gauze"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-gauze",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:26.643Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

@@ -17,7 +17,6 @@ class ComprehensiveDriverScraper {
             homeyCommunity: 'https://community.homey.app',
             zigbee2mqtt: 'https://github.com/Koenkk/Z-Stack-firmware',
             tuyaGitHub: 'https://github.com/dlnraja/com.tuya.zigbee',
-            tuyaLightGitHub: 'https://github.com/dlnraja/tuya-light',
             homeyApps: 'https://apps.athom.com',
             zigbeeDevices: 'https://zigbee.blakadder.com'
         };
@@ -129,11 +128,6 @@ class ComprehensiveDriverScraper {
                     name: 'com.tuya.zigbee',
                     url: 'https://github.com/dlnraja/com.tuya.zigbee',
                     branch: 'master'
-                },
-                {
-                    name: 'tuya-light',
-                    url: 'https://github.com/dlnraja/tuya-light',
-                    branch: 'main'
                 }
             ];
 
@@ -274,18 +268,6 @@ class ComprehensiveDriverScraper {
             });
         }
         
-        if (repoName === 'tuya-light') {
-            drivers.push({
-                id: 'TS0601_github',
-                name: { en: 'Tuya TS0601 (GitHub)', fr: 'Tuya TS0601 (GitHub)', nl: 'Tuya TS0601 (GitHub)', ta: 'Tuya TS0601 (GitHub)' },
-                class: 'light',
-                capabilities: ['onoff', 'dim'],
-                zigbee: { manufacturerName: 'Tuya', modelId: 'TS0601', clusters: ['genOnOff', 'genLevelCtrl'] },
-                source: 'github',
-                repository: repoName
-            });
-        }
-
         return drivers;
     }
 

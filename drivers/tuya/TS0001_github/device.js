@@ -14,7 +14,7 @@ class TS0001githubDevice extends ZigbeeDevice {
         
         // Add source metadata
         this.setStoreValue('source', 'github');
-        this.setStoreValue('scrapedAt', '2025-07-31T21:12:20.043Z');
+        this.setStoreValue('scrapedAt', '2025-07-31T23:52:31.380Z');
     }
     
     async onSettings(oldSettings, newSettings, changedKeys) {

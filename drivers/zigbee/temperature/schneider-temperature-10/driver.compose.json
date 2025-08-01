@@ -1,0 +1,27 @@
+{
+  "id": "schneider-temperature-10",
+  "name": {
+    "en": "schneider-temperature-10 Device",
+    "fr": "Appareil schneider-temperature-10",
+    "nl": "schneider-temperature-10 Apparaat",
+    "ta": "schneider-temperature-10 சாதனம்"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "SCHNEIDER-TEMPERATURE-10",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "msTemperatureMeasurement"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "schneider-temperature-10.png",
+    "large": "schneider-temperature-10.png"
+  }
+}

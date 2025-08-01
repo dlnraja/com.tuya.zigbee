@@ -14,7 +14,7 @@ class TS0001zigbee2mqttDevice extends ZigbeeDevice {
         
         // Add source metadata
         this.setStoreValue('source', 'zigbee2mqtt');
-        this.setStoreValue('scrapedAt', '2025-07-31T21:12:20.023Z');
+        this.setStoreValue('scrapedAt', '2025-07-31T23:52:31.364Z');
     }
     
     async onSettings(oldSettings, newSettings, changedKeys) {

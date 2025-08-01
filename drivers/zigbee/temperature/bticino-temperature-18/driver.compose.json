@@ -1,0 +1,27 @@
+{
+  "id": "bticino-temperature-18",
+  "name": {
+    "en": "bticino-temperature-18 Device",
+    "fr": "Appareil bticino-temperature-18",
+    "nl": "bticino-temperature-18 Apparaat",
+    "ta": "bticino-temperature-18 சாதனம்"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "BTICINO-TEMPERATURE-18",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "msTemperatureMeasurement"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "bticino-temperature-18.png",
+    "large": "bticino-temperature-18.png"
+  }
+}

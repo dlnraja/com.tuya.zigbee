@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-octacosene",
+  "name": {
+    "en": "Tuya Light tuya-light-octacosene",
+    "fr": "Tuya Light tuya-light-octacosene",
+    "nl": "Tuya Light tuya-light-octacosene",
+    "ta": "Tuya Light tuya-light-octacosene"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-octacosene",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:29.956Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

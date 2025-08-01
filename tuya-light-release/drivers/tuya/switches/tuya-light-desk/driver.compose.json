@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-desk",
+  "name": {
+    "en": "Tuya Light tuya-light-desk",
+    "fr": "Tuya Light tuya-light-desk",
+    "nl": "Tuya Light tuya-light-desk",
+    "ta": "Tuya Light tuya-light-desk"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-desk",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:23.594Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

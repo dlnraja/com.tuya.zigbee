@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-rubber",
+  "name": {
+    "en": "Tuya Light tuya-light-rubber",
+    "fr": "Tuya Light tuya-light-rubber",
+    "nl": "Tuya Light tuya-light-rubber",
+    "ta": "Tuya Light tuya-light-rubber"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-rubber",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:27.623Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

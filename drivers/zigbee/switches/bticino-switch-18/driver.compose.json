@@ -1,0 +1,27 @@
+{
+  "id": "bticino-switch-18",
+  "name": {
+    "en": "bticino-switch-18 Device",
+    "fr": "Appareil bticino-switch-18",
+    "nl": "bticino-switch-18 Apparaat",
+    "ta": "bticino-switch-18 சாதனம்"
+  },
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "BTICINO-SWITCH-18",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "genOnOff"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "bticino-switch-18.png",
+    "large": "bticino-switch-18.png"
+  }
+}

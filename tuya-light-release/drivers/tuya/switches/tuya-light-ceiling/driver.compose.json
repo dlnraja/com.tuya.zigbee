@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-ceiling",
+  "name": {
+    "en": "Tuya Light tuya-light-ceiling",
+    "fr": "Tuya Light tuya-light-ceiling",
+    "nl": "Tuya Light tuya-light-ceiling",
+    "ta": "Tuya Light tuya-light-ceiling"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-ceiling",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:23.563Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

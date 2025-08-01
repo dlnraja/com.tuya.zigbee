@@ -1,0 +1,27 @@
+{
+  "id": "legrand-switch-11",
+  "name": {
+    "en": "legrand-switch-11 Device",
+    "fr": "Appareil legrand-switch-11",
+    "nl": "legrand-switch-11 Apparaat",
+    "ta": "legrand-switch-11 சாதனம்"
+  },
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "LEGRAND-SWITCH-11",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "genOnOff"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "legrand-switch-11.png",
+    "large": "legrand-switch-11.png"
+  }
+}

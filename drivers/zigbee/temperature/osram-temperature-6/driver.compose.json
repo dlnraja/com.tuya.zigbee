@@ -1,0 +1,27 @@
+{
+  "id": "osram-temperature-6",
+  "name": {
+    "en": "osram-temperature-6 Device",
+    "fr": "Appareil osram-temperature-6",
+    "nl": "osram-temperature-6 Apparaat",
+    "ta": "osram-temperature-6 சாதனம்"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "OSRAM-TEMPERATURE-6",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "msTemperatureMeasurement"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "osram-temperature-6.png",
+    "large": "osram-temperature-6.png"
+  }
+}

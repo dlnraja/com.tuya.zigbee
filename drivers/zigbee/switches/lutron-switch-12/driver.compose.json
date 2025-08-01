@@ -1,0 +1,27 @@
+{
+  "id": "lutron-switch-12",
+  "name": {
+    "en": "lutron-switch-12 Device",
+    "fr": "Appareil lutron-switch-12",
+    "nl": "lutron-switch-12 Apparaat",
+    "ta": "lutron-switch-12 சாதனம்"
+  },
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "LUTRON-SWITCH-12",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "genOnOff"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "lutron-switch-12.png",
+    "large": "lutron-switch-12.png"
+  }
+}

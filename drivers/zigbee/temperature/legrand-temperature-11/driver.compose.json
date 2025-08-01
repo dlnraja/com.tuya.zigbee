@@ -1,0 +1,27 @@
+{
+  "id": "legrand-temperature-11",
+  "name": {
+    "en": "legrand-temperature-11 Device",
+    "fr": "Appareil legrand-temperature-11",
+    "nl": "legrand-temperature-11 Apparaat",
+    "ta": "legrand-temperature-11 சாதனம்"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "LEGRAND-TEMPERATURE-11",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "msTemperatureMeasurement"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "legrand-temperature-11.png",
+    "large": "legrand-temperature-11.png"
+  }
+}

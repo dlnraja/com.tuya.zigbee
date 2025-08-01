@@ -1,0 +1,27 @@
+{
+  "id": "bosch-bulb-15",
+  "name": {
+    "en": "bosch-bulb-15 Device",
+    "fr": "Appareil bosch-bulb-15",
+    "nl": "bosch-bulb-15 Apparaat",
+    "ta": "bosch-bulb-15 சாதனம்"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "BOSCH-BULB-15",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "genOnOff"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "bosch-bulb-15.png",
+    "large": "bosch-bulb-15.png"
+  }
+}

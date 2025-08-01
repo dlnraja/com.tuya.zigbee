@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-accessory",
+  "name": {
+    "en": "Tuya Light tuya-light-accessory",
+    "fr": "Tuya Light tuya-light-accessory",
+    "nl": "Tuya Light tuya-light-accessory",
+    "ta": "Tuya Light tuya-light-accessory"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-accessory",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:26.157Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

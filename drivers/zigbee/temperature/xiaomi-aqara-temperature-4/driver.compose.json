@@ -1,29 +1,27 @@
 {
   "id": "xiaomi-aqara-temperature-4",
   "name": {
-    "en": "Zigbee xiaomi-aqara-temperature-4",
-    "fr": "Zigbee xiaomi-aqara-temperature-4",
-    "nl": "Zigbee xiaomi-aqara-temperature-4",
-    "ta": "Zigbee xiaomi-aqara-temperature-4"
+    "en": "xiaomi-aqara-temperature-4 Device",
+    "fr": "Appareil xiaomi-aqara-temperature-4",
+    "nl": "xiaomi-aqara-temperature-4 Apparaat",
+    "ta": "xiaomi-aqara-temperature-4 சாதனம்"
   },
-  "class": "temperature",
+  "class": "sensor",
   "capabilities": [
-    "measure_temperature",
-    "measure_humidity"
+    "measure_temperature"
   ],
   "zigbee": {
-    "manufacturerName": "Xiaomi",
-    "modelId": "xiaomi-aqara-temperature-4",
+    "manufacturerName": "Generic",
+    "modelId": "XIAOMI-AQARA-TEMPERATURE-4",
     "clusters": [
       "genBasic",
-      "msTemperatureMeasurement",
-      "msRelativeHumidity"
+      "genIdentify",
+      "msTemperatureMeasurement"
     ]
   },
-  "metadata": {
-    "createdAt": "2025-07-31T21:10:00.823Z",
-    "version": "3.1.0",
-    "source": "historical_recovery",
-    "category": "temperature"
+  "settings": [],
+  "images": {
+    "small": "xiaomi-aqara-temperature-4.png",
+    "large": "xiaomi-aqara-temperature-4.png"
   }
 }

@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-police",
+  "name": {
+    "en": "Tuya Light tuya-light-police",
+    "fr": "Tuya Light tuya-light-police",
+    "nl": "Tuya Light tuya-light-police",
+    "ta": "Tuya Light tuya-light-police"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-police",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:24.766Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-concert",
+  "name": {
+    "en": "Tuya Light tuya-light-concert",
+    "fr": "Tuya Light tuya-light-concert",
+    "nl": "Tuya Light tuya-light-concert",
+    "ta": "Tuya Light tuya-light-concert"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-concert",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:24.061Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

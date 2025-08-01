@@ -1,0 +1,27 @@
+{
+  "id": "ledvance-temperature-9",
+  "name": {
+    "en": "ledvance-temperature-9 Device",
+    "fr": "Appareil ledvance-temperature-9",
+    "nl": "ledvance-temperature-9 Apparaat",
+    "ta": "ledvance-temperature-9 சாதனம்"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "LEDVANCE-TEMPERATURE-9",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "msTemperatureMeasurement"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "ledvance-temperature-9.png",
+    "large": "ledvance-temperature-9.png"
+  }
+}

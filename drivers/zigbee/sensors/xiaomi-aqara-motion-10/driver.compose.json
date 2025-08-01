@@ -1,0 +1,27 @@
+{
+  "id": "xiaomi-aqara-motion-10",
+  "name": {
+    "en": "xiaomi-aqara-motion-10 Device",
+    "fr": "Appareil xiaomi-aqara-motion-10",
+    "nl": "xiaomi-aqara-motion-10 Apparaat",
+    "ta": "xiaomi-aqara-motion-10 சாதனம்"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "XIAOMI-AQARA-MOTION-10",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "msOccupancySensing"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "xiaomi-aqara-motion-10.png",
+    "large": "xiaomi-aqara-motion-10.png"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-nonaoctaihectene",
+  "name": {
+    "en": "Tuya Light tuya-light-nonaoctaihectene",
+    "fr": "Tuya Light tuya-light-nonaoctaihectene",
+    "nl": "Tuya Light tuya-light-nonaoctaihectene",
+    "ta": "Tuya Light tuya-light-nonaoctaihectene"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-nonaoctaihectene",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:47.517Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

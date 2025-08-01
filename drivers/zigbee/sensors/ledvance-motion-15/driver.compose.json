@@ -1,0 +1,27 @@
+{
+  "id": "ledvance-motion-15",
+  "name": {
+    "en": "ledvance-motion-15 Device",
+    "fr": "Appareil ledvance-motion-15",
+    "nl": "ledvance-motion-15 Apparaat",
+    "ta": "ledvance-motion-15 சாதனம்"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "LEDVANCE-MOTION-15",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "msOccupancySensing"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "ledvance-motion-15.png",
+    "large": "ledvance-motion-15.png"
+  }
+}
