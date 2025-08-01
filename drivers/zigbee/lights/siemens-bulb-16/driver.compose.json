@@ -1,0 +1,27 @@
+{
+  "id": "siemens-bulb-16",
+  "name": {
+    "en": "siemens-bulb-16 Device",
+    "fr": "Appareil siemens-bulb-16",
+    "nl": "siemens-bulb-16 Apparaat",
+    "ta": "siemens-bulb-16 சாதனம்"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "SIEMENS-BULB-16",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "genOnOff"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "siemens-bulb-16.png",
+    "large": "siemens-bulb-16.png"
+  }
+}

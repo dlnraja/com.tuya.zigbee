@@ -19,6 +19,9 @@ class MegaPipelineUltimate {
         this.optimizer = require('./scripts/core/driver-optimizer.js').DriverOptimizer;
         this.integrator = require('./scripts/core/final-integration.js').FinalIntegration;
         this.manager = require('./scripts/core/unified-project-manager.js').UnifiedProjectManager;
+        this.appJsGenerator = require('./scripts/core/generate-app-js.js').AppJsGenerator;
+        this.completeAppJsGenerator = require('./scripts/core/complete-app-js-generator.js').CompleteAppJsGenerator;
+        this.missingFilesCompleter = require('./scripts/core/complete-missing-files.js').CompleteMissingFiles;
     }
 
     log(message, type = 'info') {
@@ -111,8 +114,64 @@ class MegaPipelineUltimate {
         }
     }
 
+    async generateAppJs() {
+        this.log('📝 Étape 6: Génération du app.js avec tous les drivers...');
+        
+        try {
+            const generator = new this.appJsGenerator();
+            const stats = await generator.run();
+            
+            this.log(`✅ Génération app.js terminée: ${stats.total} drivers intégrés`);
+            this.log(`   Tuya: ${stats.tuya.total} drivers`);
+            this.log(`   Zigbee: ${stats.zigbee.total} drivers`);
+            return stats;
+            
+        } catch (error) {
+            this.log(`❌ Erreur génération app.js: ${error.message}`, 'error');
+            return null;
+        }
+    }
+
+    async generateCompleteAppJs() {
+        this.log('📝 Étape 6.5: Génération complète du app.js avec tous les drivers...');
+        
+        try {
+            const generator = new this.completeAppJsGenerator();
+            const report = await generator.run();
+            
+            this.log(`✅ Génération complète app.js terminée: ${report.summary.totalDrivers} drivers intégrés`);
+            this.log(`   Tuya: ${report.summary.tuyaDrivers} drivers`);
+            this.log(`   Zigbee: ${report.summary.zigbeeDrivers} drivers`);
+            this.log(`   Imports: ${report.summary.generatedImports} imports générés`);
+            this.log(`   Enregistrements: ${report.summary.generatedRegistrations} enregistrements`);
+            return report;
+            
+        } catch (error) {
+            this.log(`❌ Erreur génération complète app.js: ${error.message}`, 'error');
+            return null;
+        }
+    }
+
+    async completeMissingFiles() {
+        this.log('📝 Étape 6.75: Complétion des fichiers manquants...');
+        
+        try {
+            const completer = new this.missingFilesCompleter();
+            const report = await completer.run();
+            
+            this.log(`✅ Complétion fichiers manquants terminée: ${report.summary.completedFiles} fichiers créés`);
+            this.log(`   Fichiers manquants: ${report.summary.missingFiles} détectés`);
+            this.log(`   Erreurs: ${report.summary.errors} rencontrées`);
+            return report;
+            
+        } catch (error) {
+            this.log(`❌ Erreur complétion fichiers manquants: ${error.message}`, 'error');
+            return null;
+        }
+    }
+
     async runFinalIntegration() {
-        this.log('🔧 Étape 6: Intégration finale...');
+        this.log('🔧 Étape 7: Intégration finale...');
         
         try {
             const integrator = new this.integrator();
@@ -128,7 +187,7 @@ class MegaPipelineUltimate {
     }
 
     async runUnifiedProjectManagement() {
-        this.log('🔧 Étape 7: Gestion unifiée du projet...');
+        this.log('🔧 Étape 8: Gestion unifiée du projet...');
         
         try {
             const manager = new this.manager();
@@ -144,7 +203,7 @@ class MegaPipelineUltimate {
     }
 
     async validateProject() {
-        this.log('🧪 Étape 8: Validation finale du projet...');
+        this.log('🧪 Étape 9: Validation finale du projet...');
         
         try {
             const manager = new this.manager();
@@ -239,16 +298,25 @@ class MegaPipelineUltimate {
             // Étape 5: Optimisation
             const optimizationReport = await this.runDriverOptimization();
             
-            // Étape 6: Intégration finale
+            // Étape 6: Génération du app.js
+            const appJsReport = await this.generateAppJs();
+            
+            // Étape 6.5: Génération complète du app.js
+            const completeAppJsReport = await this.generateCompleteAppJs();
+            
+            // Étape 6.75: Complétion des fichiers manquants
+            const missingFilesReport = await this.completeMissingFiles();
+            
+            // Étape 7: Intégration finale
             const integrationReport = await this.runFinalIntegration();
             
-            // Étape 7: Gestion unifiée
+            // Étape 8: Gestion unifiée
             const managementReport = await this.runUnifiedProjectManagement();
             
-            // Étape 8: Validation finale
+            // Étape 9: Validation finale
             const validationReport = await this.validateProject();
             
-            // Étape 9: Rapport ultime
+            // Étape 10: Rapport ultime
             const ultimateReport = await this.generateUltimateReport();
             
             // Générer le rapport final
@@ -258,6 +326,9 @@ class MegaPipelineUltimate {
                 analysisReport: analysisReport?.summary || {},
                 driverRecoveryReport: driverRecoveryReport?.summary || {},
                 optimizationReport: optimizationReport?.summary || {},
+                appJsReport: appJsReport || {},
+                completeAppJsReport: completeAppJsReport || {},
+                missingFilesReport: missingFilesReport || {},
                 integrationReport: integrationReport?.summary || {},
                 managementReport: managementReport?.summary || {},
                 validationReport: validationReport?.summary || {},

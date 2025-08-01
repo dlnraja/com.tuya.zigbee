@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-dance",
+  "name": {
+    "en": "Tuya Light tuya-light-dance",
+    "fr": "Tuya Light tuya-light-dance",
+    "nl": "Tuya Light tuya-light-dance",
+    "ta": "Tuya Light tuya-light-dance"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-dance",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:25.770Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

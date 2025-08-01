@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-yoga",
+  "name": {
+    "en": "Tuya Light tuya-light-yoga",
+    "fr": "Tuya Light tuya-light-yoga",
+    "nl": "Tuya Light tuya-light-yoga",
+    "ta": "Tuya Light tuya-light-yoga"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-yoga",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:25.087Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

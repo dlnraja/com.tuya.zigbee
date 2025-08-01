@@ -15,7 +15,7 @@ class TS0601forumDevice extends ZigbeeDevice {
         
         // Add source metadata
         this.setStoreValue('source', 'homey_forum');
-        this.setStoreValue('scrapedAt', '2025-07-31T21:12:20.011Z');
+        this.setStoreValue('scrapedAt', '2025-07-31T23:52:31.357Z');
     }
     
     async onSettings(oldSettings, newSettings, changedKeys) {

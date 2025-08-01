@@ -1,0 +1,27 @@
+{
+  "id": "schneider-switch-10",
+  "name": {
+    "en": "schneider-switch-10 Device",
+    "fr": "Appareil schneider-switch-10",
+    "nl": "schneider-switch-10 Apparaat",
+    "ta": "schneider-switch-10 சாதனம்"
+  },
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "SCHNEIDER-SWITCH-10",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "genOnOff"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "schneider-switch-10.png",
+    "large": "schneider-switch-10.png"
+  }
+}

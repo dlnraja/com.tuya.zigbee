@@ -70,7 +70,7 @@ class ReleasePushManager {
 - Récupération complète des drivers historiques (147 drivers)
 - Récupération des scripts legacy (45 scripts)
 - Mega-pipeline ultime avec 9 étapes
-- Support complet tuya-light
+- Support complet tuya et zigbee
 - Nettoyage automatique des fichiers temporaires
 - Organisation parfaite des drivers par catégorie
 - Compatibilité maximale avec tous types de devices

@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-design",
+  "name": {
+    "en": "Tuya Light tuya-light-design",
+    "fr": "Tuya Light tuya-light-design",
+    "nl": "Tuya Light tuya-light-design",
+    "ta": "Tuya Light tuya-light-design"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-design",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:25.917Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

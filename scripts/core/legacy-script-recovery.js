@@ -247,15 +247,15 @@ class LegacyScriptRecovery {
                 category: 'enrichment',
                 description: 'Enrichissement intelligent des drivers'
             },
-            'sync-tuya-light-branch.js': {
+            'sync-tuya-branch.js': {
                 type: 'javascript',
                 category: 'sync',
-                description: 'Synchronisation de la branche tuya-light'
+                description: 'Synchronisation de la branche tuya'
             },
-            'sync-tuya-light.js': {
+            'sync-tuya.js': {
                 type: 'javascript',
                 category: 'sync',
-                description: 'Synchronisation tuya-light'
+                description: 'Synchronisation tuya'
             },
             'test-cli-installation.js': {
                 type: 'javascript',

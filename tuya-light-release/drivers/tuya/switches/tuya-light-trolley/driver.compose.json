@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-trolley",
+  "name": {
+    "en": "Tuya Light tuya-light-trolley",
+    "fr": "Tuya Light tuya-light-trolley",
+    "nl": "Tuya Light tuya-light-trolley",
+    "ta": "Tuya Light tuya-light-trolley"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-trolley",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:26.937Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

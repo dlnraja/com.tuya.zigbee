@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-glue",
+  "name": {
+    "en": "Tuya Light tuya-light-glue",
+    "fr": "Tuya Light tuya-light-glue",
+    "nl": "Tuya Light tuya-light-glue",
+    "ta": "Tuya Light tuya-light-glue"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-glue",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:27.991Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

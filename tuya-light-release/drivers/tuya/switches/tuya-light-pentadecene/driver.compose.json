@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-pentadecene",
+  "name": {
+    "en": "Tuya Light tuya-light-pentadecene",
+    "fr": "Tuya Light tuya-light-pentadecene",
+    "nl": "Tuya Light tuya-light-pentadecene",
+    "ta": "Tuya Light tuya-light-pentadecene"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-pentadecene",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:29.668Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

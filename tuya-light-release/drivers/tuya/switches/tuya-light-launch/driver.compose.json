@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-launch",
+  "name": {
+    "en": "Tuya Light tuya-light-launch",
+    "fr": "Tuya Light tuya-light-launch",
+    "nl": "Tuya Light tuya-light-launch",
+    "ta": "Tuya Light tuya-light-launch"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-launch",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:25.461Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

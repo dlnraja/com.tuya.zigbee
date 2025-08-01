@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-tetranonacontene",
+  "name": {
+    "en": "Tuya Light tuya-light-tetranonacontene",
+    "fr": "Tuya Light tuya-light-tetranonacontene",
+    "nl": "Tuya Light tuya-light-tetranonacontene",
+    "ta": "Tuya Light tuya-light-tetranonacontene"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-tetranonacontene",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:36.551Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

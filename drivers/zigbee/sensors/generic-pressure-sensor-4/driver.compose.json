@@ -1,0 +1,27 @@
+{
+  "id": "generic-pressure-sensor-4",
+  "name": {
+    "en": "generic-pressure-sensor-4 Device",
+    "fr": "Appareil generic-pressure-sensor-4",
+    "nl": "generic-pressure-sensor-4 Apparaat",
+    "ta": "generic-pressure-sensor-4 சாதனம்"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_pressure"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "GENERIC-PRESSURE-SENSOR-4",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "msPressureMeasurement"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "generic-pressure-sensor-4.png",
+    "large": "generic-pressure-sensor-4.png"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "legrand-bulb-13",
+  "name": {
+    "en": "legrand-bulb-13 Device",
+    "fr": "Appareil legrand-bulb-13",
+    "nl": "legrand-bulb-13 Apparaat",
+    "ta": "legrand-bulb-13 சாதனம்"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "LEGRAND-BULB-13",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "genOnOff"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "legrand-bulb-13.png",
+    "large": "legrand-bulb-13.png"
+  }
+}

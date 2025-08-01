@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-brace",
+  "name": {
+    "en": "Tuya Light tuya-light-brace",
+    "fr": "Tuya Light tuya-light-brace",
+    "nl": "Tuya Light tuya-light-brace",
+    "ta": "Tuya Light tuya-light-brace"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-brace",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:26.548Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

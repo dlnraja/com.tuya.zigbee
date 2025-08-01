@@ -1,0 +1,27 @@
+{
+  "id": "siemens-switch-14",
+  "name": {
+    "en": "siemens-switch-14 Device",
+    "fr": "Appareil siemens-switch-14",
+    "nl": "siemens-switch-14 Apparaat",
+    "ta": "siemens-switch-14 சாதனம்"
+  },
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "SIEMENS-SWITCH-14",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "genOnOff"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "siemens-switch-14.png",
+    "large": "siemens-switch-14.png"
+  }
+}

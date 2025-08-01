@@ -60,4 +60,4 @@ This document lists all supported Tuya Zigbee devices.
 
 ---
 
-Last updated: 2025-07-31T21:12:26.992Z
+Last updated: 2025-07-31T23:52:46.254Z

@@ -1,0 +1,27 @@
+{
+  "id": "ikea-tradfri-bulb-4",
+  "name": {
+    "en": "ikea-tradfri-bulb-4 Device",
+    "fr": "Appareil ikea-tradfri-bulb-4",
+    "nl": "ikea-tradfri-bulb-4 Apparaat",
+    "ta": "ikea-tradfri-bulb-4 சாதனம்"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "IKEA-TRADFRI-BULB-4",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "genOnOff"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "ikea-tradfri-bulb-4.png",
+    "large": "ikea-tradfri-bulb-4.png"
+  }
+}

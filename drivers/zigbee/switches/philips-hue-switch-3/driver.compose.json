@@ -1,0 +1,27 @@
+{
+  "id": "philips-hue-switch-3",
+  "name": {
+    "en": "philips-hue-switch-3 Device",
+    "fr": "Appareil philips-hue-switch-3",
+    "nl": "philips-hue-switch-3 Apparaat",
+    "ta": "philips-hue-switch-3 சாதனம்"
+  },
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "PHILIPS-HUE-SWITCH-3",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "genOnOff"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "philips-hue-switch-3.png",
+    "large": "philips-hue-switch-3.png"
+  }
+}

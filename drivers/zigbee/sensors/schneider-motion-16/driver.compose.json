@@ -1,0 +1,27 @@
+{
+  "id": "schneider-motion-16",
+  "name": {
+    "en": "schneider-motion-16 Device",
+    "fr": "Appareil schneider-motion-16",
+    "nl": "schneider-motion-16 Apparaat",
+    "ta": "schneider-motion-16 சாதனம்"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "SCHNEIDER-MOTION-16",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "msOccupancySensing"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "schneider-motion-16.png",
+    "large": "schneider-motion-16.png"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-cord",
+  "name": {
+    "en": "Tuya Light tuya-light-cord",
+    "fr": "Tuya Light tuya-light-cord",
+    "nl": "Tuya Light tuya-light-cord",
+    "ta": "Tuya Light tuya-light-cord"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-cord",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:27.142Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

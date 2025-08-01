@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-dohectene",
+  "name": {
+    "en": "Tuya Light tuya-light-dohectene",
+    "fr": "Tuya Light tuya-light-dohectene",
+    "nl": "Tuya Light tuya-light-dohectene",
+    "ta": "Tuya Light tuya-light-dohectene"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-dohectene",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:37.348Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

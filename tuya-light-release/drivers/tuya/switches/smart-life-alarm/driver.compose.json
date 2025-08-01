@@ -1,0 +1,29 @@
+{
+  "id": "smart-life-alarm",
+  "name": {
+    "en": "Tuya smart-life-alarm",
+    "fr": "Tuya smart-life-alarm",
+    "nl": "Tuya smart-life-alarm",
+    "ta": "Tuya smart-life-alarm"
+  },
+  "class": "switches",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "smart-life-alarm",
+    "clusters": [
+      "genBasic",
+      "genOnOff",
+      "genLevelCtrl"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:10:02.159Z",
+    "version": "3.1.0",
+    "source": "historical_recovery",
+    "category": "switches"
+  }
+}

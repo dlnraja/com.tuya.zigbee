@@ -1,0 +1,27 @@
+{
+  "id": "samsung-smartthings-temperature-5",
+  "name": {
+    "en": "samsung-smartthings-temperature-5 Device",
+    "fr": "Appareil samsung-smartthings-temperature-5",
+    "nl": "samsung-smartthings-temperature-5 Apparaat",
+    "ta": "samsung-smartthings-temperature-5 சாதனம்"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature"
+  ],
+  "zigbee": {
+    "manufacturerName": "Generic",
+    "modelId": "SAMSUNG-SMARTTHINGS-TEMPERATURE-5",
+    "clusters": [
+      "genBasic",
+      "genIdentify",
+      "msTemperatureMeasurement"
+    ]
+  },
+  "settings": [],
+  "images": {
+    "small": "samsung-smartthings-temperature-5.png",
+    "large": "samsung-smartthings-temperature-5.png"
+  }
+}

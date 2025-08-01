@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-clothing",
+  "name": {
+    "en": "Tuya Light tuya-light-clothing",
+    "fr": "Tuya Light tuya-light-clothing",
+    "nl": "Tuya Light tuya-light-clothing",
+    "ta": "Tuya Light tuya-light-clothing"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-clothing",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:26.347Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

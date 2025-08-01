@@ -1,0 +1,27 @@
+{
+  "id": "tuya-light-mortar",
+  "name": {
+    "en": "Tuya Light tuya-light-mortar",
+    "fr": "Tuya Light tuya-light-mortar",
+    "nl": "Tuya Light tuya-light-mortar",
+    "ta": "Tuya Light tuya-light-mortar"
+  },
+  "class": "lights",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "tuya-light-mortar",
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2025-07-31T21:24:28.111Z",
+    "version": "3.1.0",
+    "source": "tuya_light_recovery",
+    "category": "lights"
+  }
+}

@@ -14,7 +14,7 @@ class TS0001zigbeedbDevice extends ZigbeeDevice {
         
         // Add source metadata
         this.setStoreValue('source', 'zigbee_database');
-        this.setStoreValue('scrapedAt', '2025-07-31T21:12:20.074Z');
+        this.setStoreValue('scrapedAt', '2025-07-31T23:52:31.398Z');
     }
     
     async onSettings(oldSettings, newSettings, changedKeys) {
