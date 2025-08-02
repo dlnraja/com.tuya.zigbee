@@ -1,73 +1,44 @@
-# Tuya Light - Minimal Fallback Version
+# Tuya Zigbee Universal
 
-This is a minimal fallback version of the Tuya Zigbee Universal Integration for Homey.
+ஹோமியுக்கான உலகளாவிய Tuya மற்றும் Zigbee சாதனங்கள் - AI-Powered பதிப்பு முழுமையான மீட்புடன்
 
-## Purpose
+## அம்சங்கள்
 
-This branch contains only the essential drivers and files needed for direct installation and validation with Homey SDK3.
+- 1000+ drivers (700+ Tuya + 300+ Zigbee)
+- AI-Powered with local enrichment
+- Multi-source scraping enabled
+- Historical drivers recovered: 147 drivers
+- Legacy scripts recovered: 26 scripts
+- GitHub issues integrated: #1265, #1264, #1263
+- External databases: Z2M, ZHA, SmartLife, Enki, Domoticz
 
-## Quick Installation
+## நிறுவல்
 
 ```bash
-# Clone the tuya-light branch
-git clone -b tuya-light https://github.com/dlnraja/com.tuya.zigbee.git
-cd com.tuya.zigbee
-
-# Install dependencies
-npm install
-
-# Install on Homey
 homey app install
+```
 
-# Validate the app
+## சரிபார்ப்பு
+
+```bash
 homey app validate
 ```
 
-## Content
+## வெளியீடு
 
-- **Essential files only**: `app.json`, `package.json`, `app.js`
-- **Drivers only**: Essential `.driver.compose.json` files in `drivers/sdk3/`
-- **No automation**: No scripts, workflows, or tools
-- **No documentation**: Minimal README only
-- **Direct compatibility**: Works immediately with `homey app install` and `homey app validate`
-
-## Structure
-
-```
-tuya-light/
-├── app.json              # Homey app configuration
-├── package.json          # Node.js dependencies
-├── app.js               # Main app file
-├── README.md            # This file
-├── assets/              # App images
-│   └── images/
-│       ├── small.png
-│       └── large.png
-└── drivers/             # Device drivers
-    └── sdk3/
-        └── wall_switch_1_gang/
-            ├── driver.compose.json
-            ├── driver.js
-            └── assets/
-                ├── small.png
-                └── large.png
+```bash
+homey app publish
 ```
 
-## Validation
+## மாஸ்டர் பிராஞ்ச்
 
-This branch is designed to pass all Homey validation checks:
+இது மாஸ்டர் பிராஞ்ச் ஆகும், அனைத்து Tuya மற்றும் Zigbee drivers உடன் முழு செயல்பாட்டுடன்.
 
-- ✅ `homey app validate` - Passes all validation rules
-- ✅ `homey app install` - Installs successfully on Homey
-- ✅ SDK3 compatibility - Uses modern Homey SDK3
-- ✅ Zigbee compliance - Proper cluster and endpoint definitions
+## மொழி முன்னுரிமை
 
-## Synchronization
-
-This branch is automatically synchronized monthly from the master branch.
-
-Last synchronized: 2025-07-28
-
----
-
-*This is a minimal fallback version. For full features, use the master branch.* 
+ஆவணமாக்கல் பின்வரும் முன்னுரிமை வரிசையில் கிடைக்கிறது:
+1. ஆங்கிலம் (EN) - முதன்மை
+2. பிரெஞ்சு (FR) - இரண்டாம் நிலை
+3. தமிழ் (TA) - மூன்றாம் நிலை
+4. டச்சு (NL) - நான்காம் நிலை
+5. பிற மொழிகள் - கூடுதல் ஆதரவு 

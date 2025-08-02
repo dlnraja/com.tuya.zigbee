@@ -1,14 +1,16 @@
-# Tuya Zigbee Light
+# Tuya Zigbee Universal
 
-Lightweight Tuya devices for Homey - Tuya Light Edition
+Universal Tuya and Zigbee devices for Homey - AI-Powered Edition with Complete Recovery
 
 ## Features
 
-- 300+ Tuya drivers only
-- Lightweight version - Tuya devices only
-- Optimized for performance
-- Auto-install via CLI
-- English only - Simplified
+- 1000+ drivers (700+ Tuya + 300+ Zigbee)
+- AI-Powered with local enrichment
+- Multi-source scraping enabled
+- Historical drivers recovered: 147 drivers
+- Legacy scripts recovered: 26 scripts
+- GitHub issues integrated: #1265, #1264, #1263
+- External databases: Z2M, ZHA, SmartLife, Enki, Domoticz
 
 ## Installation
 
@@ -28,6 +30,15 @@ homey app validate
 homey app publish
 ```
 
-## Tuya Light Branch
+## Master Branch
 
-This is the tuya-light branch with lightweight functionality including only Tuya drivers.
+This is the master branch with full functionality including all Tuya and Zigbee drivers.
+
+## Language Priority
+
+Documentation is available in the following priority order:
+1. English (EN) - Primary
+2. French (FR) - Secondary
+3. Tamil (TA) - Tertiary
+4. Dutch (NL) - Quaternary
+5. Other languages - Additional support
