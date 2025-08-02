@@ -7,7 +7,7 @@ const path = require('path');
 class TuyaZigbeeApp extends HomeyApp {
     async onInit() {
         this.log('🚀 Tuya Zigbee Universal App is running...');
-        this.log('📊 Version: 3.3.3 - SDK3 Native');
+        this.log('📊 Version: 3.3.3 - SDK3 Native - MASTER BRANCH');
         this.log('🔧 Total drivers: 1000+ (700+ Tuya + 300+ Zigbee)');
         this.log('🧠 AI-Powered with local enrichment');
         this.log('🌐 Multi-source scraping enabled');
