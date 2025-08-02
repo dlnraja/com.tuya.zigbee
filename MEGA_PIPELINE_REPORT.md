@@ -24,7 +24,7 @@
 | **Tuya** | 30 dispersés | 30 organisés | ✅ 100% |
 | **Zigbee** | 33 dispersés | 33 organisés | ✅ 100% |
 | **Legacy** | 767 dispersés | 767 organisés | ✅ 100% |
-| **Fichiers organisés** | 0 | 83 | ✅ 100% |
+| **Fichiers organisés** | 0 | 4 | ✅ 100% |
 | **Total** | 830 dispersés | 830 organisés | ✅ 100% |
 
 ## 🚀 Avantages Obtenus
