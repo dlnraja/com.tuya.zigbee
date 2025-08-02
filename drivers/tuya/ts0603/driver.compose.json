@@ -2,17 +2,17 @@
   "id": "ts0603",
   "class": "light",
   "name": {
-    "en": "Tuya Temperature/Humidity Sensor",
-    "fr": "Tuya Temperature/Humidity Sensor",
-    "nl": "Tuya Temperature/Humidity Sensor"
+    "en": "Ts0603",
+    "fr": "Ts0603",
+    "nl": "Ts0603"
   },
   "capabilities": [
-    "measure_temperature",
-    "measure_humidity"
+    "onoff",
+    "dim"
   ],
   "clusters": [
-    "msTemperatureMeasurement",
-    "msRelativeHumidity",
+    "genOnOff",
+    "genLevelCtrl",
     "genBasic",
     "genIdentify"
   ],

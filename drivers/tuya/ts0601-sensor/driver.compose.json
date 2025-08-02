@@ -1,80 +1,29 @@
 {
   "id": "ts0601-sensor",
+  "class": "light",
   "name": {
-    "en": "Tuya TS0601 Sensor",
-    "fr": "Capteur Tuya TS0601",
-    "nl": "Tuya TS0601 Sensor",
-    "ta": "Tuya TS0601 சென்சார்"
+    "en": "Ts0601 Sensor",
+    "fr": "Ts0601 Sensor",
+    "nl": "Ts0601 Sensor"
   },
-  "class": "sensor",
   "capabilities": [
-    {
-      "type": "number",
-      "title": {
-        "en": "Temperature",
-        "fr": "Température",
-        "nl": "Temperatuur",
-        "ta": "வெப்பநிலை"
-      },
-      "getable": true,
-      "setable": false,
-      "unit": "°C",
-      "id": "measure_temperature"
-    },
-    {
-      "type": "number",
-      "title": {
-        "en": "Humidity",
-        "fr": "Humidité",
-        "nl": "Vochtigheid",
-        "ta": "ஈரப்பதம்"
-      },
-      "getable": true,
-      "setable": false,
-      "unit": "%",
-      "id": "measure_humidity"
-    }
+    "onoff",
+    "dim"
   ],
-  "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "TS0601",
-    "clusters": [
-      "genBasic",
-      {
-        "attributes": [
-          "measuredValue"
-        ],
-        "commands": [],
-        "id": "msTemperatureMeasurement"
-      },
-      {
-        "attributes": [
-          "measuredValue"
-        ],
-        "commands": [],
-        "id": "msRelativeHumidity"
-      }
-    ]
-  },
-  "settings": {},
-  "fallback": false,
-  "metadata": {
-    "version": "1.0.0",
-<<<<<<< HEAD
-    "lastUpdated": "2025-07-31T23:52:35.531Z",
-=======
-    "lastUpdated": "2025-07-31T20:16:47.899Z",
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
-    "optimized": true
-  },
-  "integration": {
-    "integrated": true,
-<<<<<<< HEAD
-    "integratedAt": "2025-07-31T23:52:43.251Z",
-=======
-    "integratedAt": "2025-07-31T20:16:48.807Z",
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
-    "version": "1.0.0",
-    "compatible": true
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
+      "type": "number",
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
+    }
   }
 }

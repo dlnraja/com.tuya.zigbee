@@ -1,79 +1,29 @@
 {
   "id": "ts0601curtain",
+  "class": "light",
   "name": {
-    "en": "Tuya TS0601curtain",
-    "fr": "Tuya TS0601curtain",
-    "nl": "Tuya TS0601curtain",
-    "ta": "Tuya TS0601curtain"
+    "en": "Ts0601curtain",
+    "fr": "Ts0601curtain",
+    "nl": "Ts0601curtain"
   },
-  "class": "curtain",
   "capabilities": [
-    "windowcoverings_state",
-    "windowcoverings_set"
+    "onoff",
+    "dim"
   ],
-  "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "TS0601curtain",
-    "clusters": [
-      "genBasic",
-      "closuresWindowCovering"
-    ]
-  },
-  "metadata": {
-<<<<<<< HEAD
-    "version": "1.0.0",
-    "lastUpdated": "2025-07-31T23:52:36.132Z",
-    "optimized": true
-  },
-  "capabilityProperties": {
-    "windowcoverings_state": {
-      "type": "string",
-      "title": {
-        "en": "Covering State",
-        "fr": "État Couverture",
-        "nl": "Bedekking Status",
-        "ta": "மறைப்பு நிலை"
-      },
-      "getable": true,
-      "setable": false
-    },
-    "windowcoverings_set": {
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
       "type": "number",
-      "title": {
-        "en": "Covering Position",
-        "fr": "Position Couverture",
-        "nl": "Bedekking Positie",
-        "ta": "மறைப்பு நிலை"
-      },
-      "getable": true,
-      "setable": true,
-      "min": 0,
-      "max": 100,
-      "unit": "%"
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
     }
-  },
-  "clusterDetails": {
-    "closuresWindowCovering": {
-      "attributes": [
-        "currentPositionLiftPercentage"
-      ],
-      "commands": [
-        "upOpen",
-        "downClose",
-        "stop"
-      ]
-    }
-  },
-  "integration": {
-    "integrated": true,
-    "integratedAt": "2025-07-31T23:52:43.767Z",
-    "version": "1.0.0",
-    "compatible": true
-=======
-    "createdAt": "2025-07-31T20:27:53.955Z",
-    "version": "3.1.0",
-    "source": "generic_pattern_analysis",
-    "channels": 1
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   }
 }

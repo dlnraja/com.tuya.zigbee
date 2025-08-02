@@ -1,51 +1,29 @@
 {
   "id": "ts0601lock",
+  "class": "light",
   "name": {
-    "en": "Tuya TS0601lock",
-    "fr": "Tuya TS0601lock",
-    "nl": "Tuya TS0601lock",
-    "ta": "Tuya TS0601lock"
+    "en": "Ts0601lock",
+    "fr": "Ts0601lock",
+    "nl": "Ts0601lock"
   },
-  "class": "lock",
   "capabilities": [
-    "lock_state",
-    "lock_mode"
+    "onoff",
+    "dim"
   ],
-  "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "TS0601lock",
-    "clusters": [
-      "genBasic",
-      "closuresDoorLock"
-    ]
-  },
-  "metadata": {
-<<<<<<< HEAD
-    "version": "1.0.0",
-    "lastUpdated": "2025-07-31T23:52:36.843Z",
-    "optimized": true
-  },
-  "clusterDetails": {
-    "closuresDoorLock": {
-      "attributes": [
-        "lockState"
-      ],
-      "commands": [
-        "lockDoor",
-        "unlockDoor"
-      ]
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
+      "type": "number",
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
     }
-  },
-  "integration": {
-    "integrated": true,
-    "integratedAt": "2025-07-31T23:52:43.843Z",
-    "version": "1.0.0",
-    "compatible": true
-=======
-    "createdAt": "2025-07-31T20:27:53.976Z",
-    "version": "3.1.0",
-    "source": "generic_pattern_analysis",
-    "channels": 1
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   }
 }

@@ -1,95 +1,29 @@
 {
   "id": "ts0601_gas",
+  "class": "light",
   "name": {
-    "en": "Tuya TS0601_gas",
-    "fr": "Tuya TS0601_gas",
-    "nl": "Tuya TS0601_gas",
-    "ta": "Tuya TS0601_gas"
+    "en": "Ts0601 Gas",
+    "fr": "Ts0601 Gas",
+    "nl": "Ts0601 Gas"
   },
-  "class": "sensor",
   "capabilities": [
-    "alarm_gas",
-<<<<<<< HEAD
-    {
-      "type": "number",
-      "title": {
-        "en": "Temperature",
-        "fr": "Température",
-        "nl": "Temperatuur",
-        "ta": "வெப்பநிலை"
-      },
-      "getable": true,
-      "setable": false,
-      "unit": "°C",
-      "id": "measure_temperature"
-    }
-=======
-    "measure_temperature"
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
+    "onoff",
+    "dim"
   ],
-  "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "TS0601_gas",
-    "clusters": [
-      "genBasic",
-      "ssIasZone",
-<<<<<<< HEAD
-      {
-        "attributes": [
-          "measuredValue"
-        ],
-        "commands": [],
-        "id": "msTemperatureMeasurement"
-      }
-    ]
-  },
-  "metadata": {
-    "version": "1.0.0",
-    "lastUpdated": "2025-07-31T23:52:38.064Z",
-    "optimized": true
-  },
-  "capabilityProperties": {
-    "measure_temperature": {
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
       "type": "number",
-      "title": {
-        "en": "Temperature",
-        "fr": "Température",
-        "nl": "Temperatuur",
-        "ta": "வெப்பநிலை"
-      },
-      "getable": true,
-      "setable": false,
-      "unit": "°C"
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
     }
-  },
-  "clusterDetails": {
-    "ssIasZone": {
-      "attributes": [
-        "zoneState"
-      ],
-      "commands": []
-    },
-    "msTemperatureMeasurement": {
-      "attributes": [
-        "measuredValue"
-      ],
-      "commands": []
-    }
-  },
-  "integration": {
-    "integrated": true,
-    "integratedAt": "2025-07-31T23:52:43.999Z",
-    "version": "1.0.0",
-    "compatible": true
-=======
-      "msTemperatureMeasurement"
-    ]
-  },
-  "metadata": {
-    "createdAt": "2025-07-31T20:27:53.792Z",
-    "version": "3.1.0",
-    "source": "database_analysis",
-    "channels": 1
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   }
 }

@@ -1,127 +1,29 @@
 {
   "id": "_tz3500",
+  "class": "light",
   "name": {
-    "en": "Tuya _TZ3500",
-    "fr": "Tuya _TZ3500",
-    "nl": "Tuya _TZ3500",
-    "ta": "Tuya _TZ3500"
+    "en": " Tz3500",
+    "fr": " Tz3500",
+    "nl": " Tz3500"
   },
-  "class": "sensor",
   "capabilities": [
-<<<<<<< HEAD
-    {
-      "type": "number",
-      "title": {
-        "en": "Temperature",
-        "fr": "Température",
-        "nl": "Temperatuur",
-        "ta": "வெப்பநிலை"
-      },
-      "getable": true,
-      "setable": false,
-      "unit": "°C",
-      "id": "measure_temperature"
-    },
-    {
-      "type": "number",
-      "title": {
-        "en": "Humidity",
-        "fr": "Humidité",
-        "nl": "Vochtigheid",
-        "ta": "ஈரப்பதம்"
-      },
-      "getable": true,
-      "setable": false,
-      "unit": "%",
-      "id": "measure_humidity"
-    }
-=======
-    "measure_temperature",
-    "measure_humidity"
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
+    "onoff",
+    "dim"
   ],
-  "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "_TZ3500",
-    "clusters": [
-      "genBasic",
-<<<<<<< HEAD
-      {
-        "attributes": [
-          "measuredValue"
-        ],
-        "commands": [],
-        "id": "msTemperatureMeasurement"
-      },
-      {
-        "attributes": [
-          "measuredValue"
-        ],
-        "commands": [],
-        "id": "msRelativeHumidity"
-      }
-    ]
-  },
-  "metadata": {
-    "version": "1.0.0",
-    "lastUpdated": "2025-07-31T23:52:39.811Z",
-    "optimized": true
-  },
-  "capabilityProperties": {
-    "measure_temperature": {
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
       "type": "number",
-      "title": {
-        "en": "Temperature",
-        "fr": "Température",
-        "nl": "Temperatuur",
-        "ta": "வெப்பநிலை"
-      },
-      "getable": true,
-      "setable": false,
-      "unit": "°C"
-    },
-    "measure_humidity": {
-      "type": "number",
-      "title": {
-        "en": "Humidity",
-        "fr": "Humidité",
-        "nl": "Vochtigheid",
-        "ta": "ஈரப்பதம்"
-      },
-      "getable": true,
-      "setable": false,
-      "unit": "%"
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
     }
-  },
-  "clusterDetails": {
-    "msTemperatureMeasurement": {
-      "attributes": [
-        "measuredValue"
-      ],
-      "commands": []
-    },
-    "msRelativeHumidity": {
-      "attributes": [
-        "measuredValue"
-      ],
-      "commands": []
-    }
-  },
-  "integration": {
-    "integrated": true,
-    "integratedAt": "2025-07-31T23:52:45.767Z",
-    "version": "1.0.0",
-    "compatible": true
-=======
-      "msTemperatureMeasurement",
-      "msRelativeHumidity"
-    ]
-  },
-  "metadata": {
-    "createdAt": "2025-07-31T20:27:54.081Z",
-    "version": "3.1.0",
-    "source": "generic_pattern_analysis",
-    "channels": 1
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   }
 }

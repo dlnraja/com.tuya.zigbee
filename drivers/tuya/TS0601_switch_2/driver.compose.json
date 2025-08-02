@@ -1,123 +1,29 @@
 {
   "id": "TS0601_switch_2",
-  "name": {
-    "en": "Tuya TS0601 Switch V2",
-    "fr": "Interrupteur Tuya TS0601 V2",
-    "nl": "Tuya TS0601 Schakelaar V2",
-    "ta": "Tuya TS0601 சுவிட்ச் V2"
-  },
   "class": "light",
+  "name": {
+    "en": "TS0601 Switch 2",
+    "fr": "TS0601 Switch 2",
+    "nl": "TS0601 Switch 2"
+  },
   "capabilities": [
-    {
-      "type": "boolean",
-      "title": {
-        "en": "On/Off",
-        "fr": "Marche/Arrêt",
-        "nl": "Aan/Uit",
-        "ta": "ஆன்/ஆஃப்"
-      },
-      "getable": true,
-      "setable": true,
-      "id": "onoff"
-    },
-    {
-      "type": "number",
-      "title": {
-        "en": "Dim Level",
-        "fr": "Niveau de variation",
-        "nl": "Dim niveau",
-        "ta": "டிம் நிலை"
-      },
-      "getable": true,
-      "setable": true,
-      "min": 0,
-      "max": 1,
-      "id": "dim"
-    },
-    "light_temperature"
+    "onoff",
+    "dim"
   ],
-  "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "TS0601",
-    "clusters": [
-      {
-        "attributes": [
-          "onOff"
-        ],
-        "commands": [
-          "toggle",
-          "off",
-          "on"
-        ],
-        "id": "genOnOff"
-      },
-      {
-        "attributes": [
-          "currentLevel"
-        ],
-        "commands": [
-          "moveToLevel",
-          "move",
-          "step"
-        ],
-        "id": "genLevelCtrl"
-      },
-      "lightingColorCtrl"
-    ]
-  },
-  "metadata": {
-    "version": "1.0.0",
-<<<<<<< HEAD
-    "lastUpdated": "2025-07-31T23:52:39.063Z",
-=======
-    "lastUpdated": "2025-07-31T20:16:48.273Z",
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
-    "optimized": true
-  },
-  "integration": {
-    "integrated": true,
-<<<<<<< HEAD
-    "integratedAt": "2025-07-31T23:52:44.896Z",
-    "version": "1.0.0",
-    "compatible": true
-  },
-  "capabilityProperties": {
-    "light_temperature": {
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
       "type": "number",
-      "title": {
-        "en": "Light Temperature",
-        "fr": "Température Lumière",
-        "nl": "Licht Temperatuur",
-        "ta": "விளக்கு வெப்பநிலை"
-      },
-      "getable": true,
-      "setable": true,
-      "min": 2700,
-      "max": 6500,
-      "unit": "K"
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
     }
-  },
-  "clusterDetails": {
-    "lightingColorCtrl": {
-      "attributes": [
-        "currentHue",
-        "currentSaturation",
-        "currentX",
-        "currentY"
-      ],
-      "commands": [
-        "moveToHue",
-        "stepHue",
-        "moveToSaturation",
-        "stepSaturation",
-        "moveToColor",
-        "stepColor"
-      ]
-    }
-=======
-    "integratedAt": "2025-07-31T20:16:49.075Z",
-    "version": "1.0.0",
-    "compatible": true
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   }
 }

@@ -1,84 +1,29 @@
 {
   "id": "ts0601-motion",
+  "class": "light",
   "name": {
-    "en": "Tuya TS0601 Motion",
-    "fr": "Mouvement Tuya TS0601",
-    "nl": "Tuya TS0601 Beweging",
-    "ta": "Tuya TS0601 இயக்கம்"
+    "en": "Ts0601 Motion",
+    "fr": "Ts0601 Motion",
+    "nl": "Ts0601 Motion"
   },
-  "class": "sensor",
   "capabilities": [
-    "alarm_motion",
-    {
-      "type": "number",
-      "title": {
-        "en": "Temperature",
-        "fr": "Température",
-        "nl": "Temperatuur",
-        "ta": "வெப்பநிலை"
-      },
-      "getable": true,
-      "setable": false,
-      "unit": "°C",
-      "id": "measure_temperature"
-    }
+    "onoff",
+    "dim"
   ],
-  "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "TS0601_motion",
-    "clusters": [
-      "genBasic",
-      "msOccupancySensing",
-      {
-        "attributes": [
-          "measuredValue"
-        ],
-        "commands": [],
-        "id": "msTemperatureMeasurement"
-      }
-    ]
-  },
-  "settings": {},
-  "fallback": false,
-  "description": "Motion sensor",
-  "metadata": {
-    "version": "1.0.0",
-<<<<<<< HEAD
-    "lastUpdated": "2025-07-31T23:52:35.501Z",
-=======
-    "lastUpdated": "2025-07-31T20:16:47.875Z",
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
-    "optimized": true
-  },
-  "integration": {
-    "integrated": true,
-<<<<<<< HEAD
-    "integratedAt": "2025-07-31T23:52:43.161Z",
-=======
-    "integratedAt": "2025-07-31T20:16:48.762Z",
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
-    "version": "1.0.0",
-    "compatible": true
-  },
-  "capabilityProperties": {
-    "alarm_motion": {
-      "type": "boolean",
-      "title": {
-        "en": "Motion",
-        "fr": "Mouvement",
-        "nl": "Beweging",
-        "ta": "இயக்கம்"
-      },
-      "getable": true,
-      "setable": false
-    }
-  },
-  "clusterDetails": {
-    "msOccupancySensing": {
-      "attributes": [
-        "occupancy"
-      ],
-      "commands": []
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
+      "type": "number",
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
     }
   }
 }

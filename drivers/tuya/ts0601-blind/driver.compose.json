@@ -1,83 +1,29 @@
 {
   "id": "ts0601-blind",
+  "class": "light",
   "name": {
-    "en": "Tuya TS0601 Blind",
-    "fr": "Volet Tuya TS0601",
-    "nl": "Tuya TS0601 Jaloezie",
-    "ta": "Tuya TS0601 பிளைண்ட்"
+    "en": "Ts0601 Blind",
+    "fr": "Ts0601 Blind",
+    "nl": "Ts0601 Blind"
   },
-  "class": "curtain",
   "capabilities": [
-    "windowcoverings_state",
-    "windowcoverings_set"
+    "onoff",
+    "dim"
   ],
-  "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "TS0601_blind",
-    "clusters": [
-      "genBasic",
-      "closuresWindowCovering"
-    ]
-  },
-  "settings": {},
-  "fallback": false,
-  "description": "Smart blind",
-  "metadata": {
-    "version": "1.0.0",
-<<<<<<< HEAD
-    "lastUpdated": "2025-07-31T23:52:35.014Z",
-=======
-    "lastUpdated": "2025-07-31T20:16:47.736Z",
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
-    "optimized": true
-  },
-  "integration": {
-    "integrated": true,
-<<<<<<< HEAD
-    "integratedAt": "2025-07-31T23:52:42.851Z",
-=======
-    "integratedAt": "2025-07-31T20:16:48.703Z",
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
-    "version": "1.0.0",
-    "compatible": true
-  },
-  "capabilityProperties": {
-    "windowcoverings_state": {
-      "type": "string",
-      "title": {
-        "en": "Covering State",
-        "fr": "État Couverture",
-        "nl": "Bedekking Status",
-        "ta": "மறைப்பு நிலை"
-      },
-      "getable": true,
-      "setable": false
-    },
-    "windowcoverings_set": {
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
       "type": "number",
-      "title": {
-        "en": "Covering Position",
-        "fr": "Position Couverture",
-        "nl": "Bedekking Positie",
-        "ta": "மறைப்பு நிலை"
-      },
-      "getable": true,
-      "setable": true,
-      "min": 0,
-      "max": 100,
-      "unit": "%"
-    }
-  },
-  "clusterDetails": {
-    "closuresWindowCovering": {
-      "attributes": [
-        "currentPositionLiftPercentage"
-      ],
-      "commands": [
-        "upOpen",
-        "downClose",
-        "stop"
-      ]
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
     }
   }
 }

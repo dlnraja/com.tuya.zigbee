@@ -1,93 +1,29 @@
 {
   "id": "_tz3800",
+  "class": "light",
   "name": {
-    "en": "Tuya _TZ3800",
-    "fr": "Tuya _TZ3800",
-    "nl": "Tuya _TZ3800",
-    "ta": "Tuya _TZ3800"
+    "en": " Tz3800",
+    "fr": " Tz3800",
+    "nl": " Tz3800"
   },
-  "class": "switch",
   "capabilities": [
-<<<<<<< HEAD
-    {
-      "type": "boolean",
-      "title": {
-        "en": "On/Off",
-        "fr": "Marche/Arrêt",
-        "nl": "Aan/Uit",
-        "ta": "ஆன்/ஆஃப்"
-      },
-      "getable": true,
-      "setable": true,
-      "id": "onoff"
-    }
-=======
-    "onoff"
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
+    "onoff",
+    "dim"
   ],
-  "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "_TZ3800",
-    "clusters": [
-      "genBasic",
-<<<<<<< HEAD
-      {
-        "attributes": [
-          "onOff"
-        ],
-        "commands": [
-          "toggle",
-          "off",
-          "on"
-        ],
-        "id": "genOnOff"
-      }
-    ]
-  },
-  "metadata": {
-    "version": "1.0.0",
-    "lastUpdated": "2025-07-31T23:52:40.233Z",
-    "optimized": true
-  },
-  "capabilityProperties": {
-    "onoff": {
-      "type": "boolean",
-      "title": {
-        "en": "On/Off",
-        "fr": "Marche/Arrêt",
-        "nl": "Aan/Uit",
-        "ta": "ஆன்/ஆஃப்"
-      },
-      "getable": true,
-      "setable": true
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
+      "type": "number",
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
     }
-  },
-  "clusterDetails": {
-    "genOnOff": {
-      "attributes": [
-        "onOff"
-      ],
-      "commands": [
-        "toggle",
-        "off",
-        "on"
-      ]
-    }
-  },
-  "integration": {
-    "integrated": true,
-    "integratedAt": "2025-07-31T23:52:46.061Z",
-    "version": "1.0.0",
-    "compatible": true
-=======
-      "genOnOff"
-    ]
-  },
-  "metadata": {
-    "createdAt": "2025-07-31T20:27:54.093Z",
-    "version": "3.1.0",
-    "source": "generic_pattern_analysis",
-    "channels": 1
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   }
 }

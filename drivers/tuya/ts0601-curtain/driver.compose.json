@@ -1,83 +1,29 @@
 {
   "id": "ts0601-curtain",
+  "class": "light",
   "name": {
-    "en": "Tuya TS0601 Curtain",
-    "fr": "Rideau Tuya TS0601",
-    "nl": "Tuya TS0601 Gordijn",
-    "ta": "Tuya TS0601 திரை"
+    "en": "Ts0601 Curtain",
+    "fr": "Ts0601 Curtain",
+    "nl": "Ts0601 Curtain"
   },
-  "class": "curtain",
   "capabilities": [
-    "windowcoverings_state",
-    "windowcoverings_set"
+    "onoff",
+    "dim"
   ],
-  "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "TS0601_curtain",
-    "clusters": [
-      "genBasic",
-      "closuresWindowCovering"
-    ]
-  },
-  "settings": {},
-  "fallback": false,
-  "description": "Smart curtain",
-  "metadata": {
-    "version": "1.0.0",
-<<<<<<< HEAD
-    "lastUpdated": "2025-07-31T23:52:35.140Z",
-=======
-    "lastUpdated": "2025-07-31T20:16:47.759Z",
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
-    "optimized": true
-  },
-  "integration": {
-    "integrated": true,
-<<<<<<< HEAD
-    "integratedAt": "2025-07-31T23:52:42.961Z",
-=======
-    "integratedAt": "2025-07-31T20:16:48.725Z",
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
-    "version": "1.0.0",
-    "compatible": true
-  },
-  "capabilityProperties": {
-    "windowcoverings_state": {
-      "type": "string",
-      "title": {
-        "en": "Covering State",
-        "fr": "État Couverture",
-        "nl": "Bedekking Status",
-        "ta": "மறைப்பு நிலை"
-      },
-      "getable": true,
-      "setable": false
-    },
-    "windowcoverings_set": {
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
       "type": "number",
-      "title": {
-        "en": "Covering Position",
-        "fr": "Position Couverture",
-        "nl": "Bedekking Positie",
-        "ta": "மறைப்பு நிலை"
-      },
-      "getable": true,
-      "setable": true,
-      "min": 0,
-      "max": 100,
-      "unit": "%"
-    }
-  },
-  "clusterDetails": {
-    "closuresWindowCovering": {
-      "attributes": [
-        "currentPositionLiftPercentage"
-      ],
-      "commands": [
-        "upOpen",
-        "downClose",
-        "stop"
-      ]
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
     }
   }
 }

@@ -2,20 +2,17 @@
   "id": "ts0602",
   "class": "light",
   "name": {
-    "en": "Tuya RGB Light",
-    "fr": "Tuya RGB Light",
-    "nl": "Tuya RGB Light"
+    "en": "Ts0602",
+    "fr": "Ts0602",
+    "nl": "Ts0602"
   },
   "capabilities": [
     "onoff",
-    "dim",
-    "light_hue",
-    "light_saturation"
+    "dim"
   ],
   "clusters": [
     "genOnOff",
     "genLevelCtrl",
-    "lightingColorCtrl",
     "genBasic",
     "genIdentify"
   ],
