@@ -1,20 +1,23 @@
 {
-  "id": "ts0602",
-  "class": "curtain",
+  "id": "ts0601_rgb",
+  "class": "light",
   "name": {
-    "en": "Curtain controller with position control",
-    "fr": "Curtain controller with position control",
-    "nl": "Curtain controller with position control"
+    "en": "TS0601_rgb device",
+    "fr": "Appareil TS0601_rgb",
+    "nl": "TS0601_rgb apparaat"
   },
   "capabilities": [
     "onoff",
-    "dim"
+    "dim",
+    "light_hue",
+    "light_saturation"
   ],
   "clusters": [
     "genOnOff",
     "genLevelCtrl",
     "genBasic",
-    "genIdentify"
+    "genIdentify",
+    "lightingColorCtrl"
   ],
   "settings": {
     "pollInterval": {

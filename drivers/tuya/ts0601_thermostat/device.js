@@ -2,12 +2,12 @@
 
 const Device = require('homey').Device;
 
-class TS0603Device extends Device {
+class TS0601_thermostatDevice extends Device {
     async onInit() {
-        this.log('TS0603 device initialized with missing functions implemented');
+        this.log('TS0601_thermostat device initialized with missing functions implemented');
         
         // Initialize capabilities with missing functions
-        this.registerCapabilityListener('measure_temperature', this.onCapability.bind(this));\n        this.registerCapabilityListener('target_temperature', this.onCapability.bind(this));\n        this.registerCapabilityListener('measure_humidity', this.onCapability.bind(this));
+        this.registerCapabilityListener('measure_temperature', this.onCapability.bind(this));\n        this.registerCapabilityListener('target_temperature', this.onCapability.bind(this));
     }
 
     async onCapability(capability, value) {
@@ -18,8 +18,6 @@ class TS0603Device extends Device {
                 await this.handleMeasure_temperature(value);
                 break;\n            case 'target_temperature':
                 await this.handleTarget_temperature(value);
-                break;\n            case 'measure_humidity':
-                await this.handleMeasure_humidity(value);
                 break;
             default:
                 this.log('Unknown capability: ' + capability);
@@ -32,9 +30,6 @@ class TS0603Device extends Device {
     }\n        async handleTarget_temperature(value) {
         this.log('Setting target_temperature to: ' + value + ' (missing function implemented)');
         await this.setCapabilityValue('target_temperature', value);
-    }\n        async handleMeasure_humidity(value) {
-        this.log('Setting measure_humidity to: ' + value + ' (missing function implemented)');
-        await this.setCapabilityValue('measure_humidity', value);
     }
     
     // Device lifecycle methods with missing functions
@@ -63,4 +58,4 @@ class TS0603Device extends Device {
     }
 }
 
-module.exports = TS0603Device;
+module.exports = TS0601_thermostatDevice;

@@ -2,9 +2,9 @@
 
 const Device = require('homey').Device;
 
-class TS0004Device extends Device {
+class TS0601_switchDevice extends Device {
     async onInit() {
-        this.log('TS0004 device initialized with missing functions implemented');
+        this.log('TS0601_switch device initialized with missing functions implemented');
         
         // Initialize capabilities with missing functions
         this.registerCapabilityListener('onoff', this.onCapability.bind(this));
@@ -53,4 +53,4 @@ class TS0004Device extends Device {
     }
 }
 
-module.exports = TS0004Device;
+module.exports = TS0601_switchDevice;

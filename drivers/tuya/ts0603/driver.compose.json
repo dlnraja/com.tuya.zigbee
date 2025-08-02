@@ -1,20 +1,22 @@
 {
   "id": "ts0603",
-  "class": "light",
+  "class": "thermostat",
   "name": {
-    "en": "Ts0603",
-    "fr": "Ts0603",
-    "nl": "Ts0603"
+    "en": "Smart thermostat with temperature control",
+    "fr": "Smart thermostat with temperature control",
+    "nl": "Smart thermostat with temperature control"
   },
   "capabilities": [
-    "onoff",
-    "dim"
+    "measure_temperature",
+    "target_temperature",
+    "measure_humidity"
   ],
   "clusters": [
-    "genOnOff",
-    "genLevelCtrl",
     "genBasic",
-    "genIdentify"
+    "genIdentify",
+    "msTemperatureMeasurement",
+    "msRelativeHumidity",
+    "hvacThermostat"
   ],
   "settings": {
     "pollInterval": {

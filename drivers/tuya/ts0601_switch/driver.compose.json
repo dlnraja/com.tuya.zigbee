@@ -1,18 +1,16 @@
 {
-  "id": "ts0602",
-  "class": "curtain",
+  "id": "ts0601_switch",
+  "class": "switch",
   "name": {
-    "en": "Curtain controller with position control",
-    "fr": "Curtain controller with position control",
-    "nl": "Curtain controller with position control"
+    "en": "TS0601_switch device",
+    "fr": "Appareil TS0601_switch",
+    "nl": "TS0601_switch apparaat"
   },
   "capabilities": [
-    "onoff",
-    "dim"
+    "onoff"
   ],
   "clusters": [
     "genOnOff",
-    "genLevelCtrl",
     "genBasic",
     "genIdentify"
   ],

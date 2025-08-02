@@ -1,18 +1,16 @@
 {
   "id": "ts0004",
-  "class": "light",
+  "class": "switch",
   "name": {
-    "en": "Ts0004",
-    "fr": "Ts0004",
-    "nl": "Ts0004"
+    "en": "Basic on/off switch",
+    "fr": "Basic on/off switch",
+    "nl": "Basic on/off switch"
   },
   "capabilities": [
-    "onoff",
-    "dim"
+    "onoff"
   ],
   "clusters": [
     "genOnOff",
-    "genLevelCtrl",
     "genBasic",
     "genIdentify"
   ],

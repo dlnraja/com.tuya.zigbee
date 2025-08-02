@@ -1,23 +1,25 @@
 'use strict';
 
-const Device = require('../../../lib/device.js');
+const Device = require('homey').Device;
 
 class TS011FDevice extends Device {
     async onInit() {
-        this.log('TS011F device initialized (enriched version)');
+        this.log('TS011F device initialized with missing functions implemented');
         
-        // Initialize capabilities with legacy optimizations
-        this.registerCapabilityListener('onoff', this.onCapability.bind(this));\n        this.registerCapabilityListener('dim', this.onCapability.bind(this));
+        // Initialize capabilities with missing functions
+        this.registerCapabilityListener('onoff', this.onCapability.bind(this));\n        this.registerCapabilityListener('measure_power', this.onCapability.bind(this));\n        this.registerCapabilityListener('meter_power', this.onCapability.bind(this));
     }
 
     async onCapability(capability, value) {
-        this.log('Capability ' + capability + ' changed to ' + value + ' (enriched)');
+        this.log('Capability ' + capability + ' changed to ' + value + ' (missing function)');
         
         switch (capability) {
             case 'onoff':
                 await this.handleOnoff(value);
-                break;\n            case 'dim':
-                await this.handleDim(value);
+                break;\n            case 'measure_power':
+                await this.handleMeasure_power(value);
+                break;\n            case 'meter_power':
+                await this.handleMeter_power(value);
                 break;
             default:
                 this.log('Unknown capability: ' + capability);
@@ -25,36 +27,39 @@ class TS011FDevice extends Device {
     }
 
     async handleOnoff(value) {
-        this.log('Setting onoff to: ' + value + ' (enriched)');
+        this.log('Setting onoff to: ' + value + ' (missing function implemented)');
         await this.setCapabilityValue('onoff', value);
-    }\n    async handleDim(value) {
-        this.log('Setting dim to: ' + value + ' (enriched)');
-        await this.setCapabilityValue('dim', value);
+    }\n        async handleMeasure_power(value) {
+        this.log('Setting measure_power to: ' + value + ' (missing function implemented)');
+        await this.setCapabilityValue('measure_power', value);
+    }\n        async handleMeter_power(value) {
+        this.log('Setting meter_power to: ' + value + ' (missing function implemented)');
+        await this.setCapabilityValue('meter_power', value);
     }
     
-    // Device lifecycle methods (enriched with legacy features)
+    // Device lifecycle methods with missing functions
     async onSettings({ oldSettings, newSettings, changedKeys }) {
-        this.log('Settings changed (enriched)');
+        this.log('Settings changed (missing function implemented)');
     }
 
     async onRenamed(name) {
-        this.log('Device renamed to', name, '(enriched)');
+        this.log('Device renamed to', name, '(missing function implemented)');
     }
 
     async onDeleted() {
-        this.log('Device deleted (enriched)');
+        this.log('Device deleted (missing function implemented)');
     }
 
     async onUnavailable() {
-        this.log('Device unavailable (enriched)');
+        this.log('Device unavailable (missing function implemented)');
     }
 
     async onAvailable() {
-        this.log('Device available (enriched)');
+        this.log('Device available (missing function implemented)');
     }
 
     async onError(error) {
-        this.log('Device error:', error, '(enriched)');
+        this.log('Device error:', error, '(missing function implemented)');
     }
 }
 
