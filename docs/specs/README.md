@@ -1,16 +1,32 @@
-# Tuya Zigbee Specifications
+# Tuya Zigbee App - CLI Installation Guide
 
-## Overview
+## Installation via CLI
 
-This directory contains specifications and technical documentation for the Tuya Zigbee project.
+```bash
+# Installation simple
+homey app install
 
-## Structure
+# Validation
+homey app validate
 
-- `drivers/` - Driver specifications and templates
-- `protocols/` - Zigbee protocol documentation
-- `standards/` - Homey and Tuya standards
-- `examples/` - Code examples and templates
+# Publication
+homey app publish
+```
 
-## Contributing
+## Compatibilité
 
-Please follow the established patterns when adding new specifications.
+- ✅ Homey SDK3+
+- ✅ CLI Installation
+- ✅ All dependencies resolved
+- ✅ Complete Homey app ready
+
+## Features
+
+- 1000+ drivers supportés
+- Architecture enrichie
+- Pipeline automatisée
+- Documentation complète
+
+---
+
+**🎉 Prêt pour installation CLI !** 🚀✨

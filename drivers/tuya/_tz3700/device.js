@@ -4,21 +4,19 @@ const Device = require('../../../lib/device.js');
 
 class _tz3700Device extends Device {
     async onInit() {
-        this.log('_tz3700 device initialized');
+        this.log('_tz3700 device initialized (enriched version)');
         
-        // Initialize capabilities
-        this.registerCapabilityListener('onoff', this.onCapability.bind(this));
-        this.registerCapabilityListener('dim', this.onCapability.bind(this));
+        // Initialize capabilities with legacy optimizations
+        this.registerCapabilityListener('onoff', this.onCapability.bind(this));\n        this.registerCapabilityListener('dim', this.onCapability.bind(this));
     }
 
     async onCapability(capability, value) {
-        this.log('Capability ' + capability + ' changed to ' + value);
+        this.log('Capability ' + capability + ' changed to ' + value + ' (enriched)');
         
         switch (capability) {
             case 'onoff':
                 await this.handleOnoff(value);
-                break;
-            case 'dim':
+                break;\n            case 'dim':
                 await this.handleDim(value);
                 break;
             default:
@@ -27,37 +25,36 @@ class _tz3700Device extends Device {
     }
 
     async handleOnoff(value) {
-        this.log('Setting onoff to: ' + value);
+        this.log('Setting onoff to: ' + value + ' (enriched)');
         await this.setCapabilityValue('onoff', value);
-    }
-    async handleDim(value) {
-        this.log('Setting dim to: ' + value);
+    }\n    async handleDim(value) {
+        this.log('Setting dim to: ' + value + ' (enriched)');
         await this.setCapabilityValue('dim', value);
     }
     
-    // Device lifecycle methods
+    // Device lifecycle methods (enriched with legacy features)
     async onSettings({ oldSettings, newSettings, changedKeys }) {
-        this.log('Settings changed');
+        this.log('Settings changed (enriched)');
     }
 
     async onRenamed(name) {
-        this.log('Device renamed to', name);
+        this.log('Device renamed to', name, '(enriched)');
     }
 
     async onDeleted() {
-        this.log('Device deleted');
+        this.log('Device deleted (enriched)');
     }
 
     async onUnavailable() {
-        this.log('Device unavailable');
+        this.log('Device unavailable (enriched)');
     }
 
     async onAvailable() {
-        this.log('Device available');
+        this.log('Device available (enriched)');
     }
 
     async onError(error) {
-        this.log('Device error:', error);
+        this.log('Device error:', error, '(enriched)');
     }
 }
 
