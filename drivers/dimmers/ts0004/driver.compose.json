@@ -1,0 +1,26 @@
+{
+  "id": "ts0004",
+  "name": {
+    "en": "TS0004 Device",
+    "fr": "Appareil TS0004",
+    "nl": "TS0004 Apparaat"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "zigbee": {
+    "manufacturer": "Tuya",
+    "model": "TS0004",
+    "supports": [],
+    "fromZigbee": [],
+    "toZigbee": []
+  },
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  }
+}

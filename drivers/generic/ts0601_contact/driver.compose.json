@@ -1,0 +1,27 @@
+{
+  "id": "ts0601_contact",
+  "name": {
+    "en": "TS0601_contact Device",
+    "fr": "Appareil TS0601_contact",
+    "nl": "TS0601_contact Apparaat"
+  },
+  "class": "other",
+  "capabilities": [
+    "alarm_contact"
+  ],
+  "zigbee": {
+    "manufacturer": "Tuya",
+    "model": "TS0601_contact",
+    "supports": [
+      "genOnOff",
+      "genLevelCtrl"
+    ],
+    "fromZigbee": [],
+    "toZigbee": []
+  },
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  }
+}

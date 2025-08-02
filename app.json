@@ -1,6 +1,6 @@
 {
   "id": "com.tuya.zigbee",
-  "version": "3.3.2",
+  "version": "3.3.3",
   "compatibility": ">=6.0.0",
   "sdk": 3,
   "platforms": [
@@ -9,19 +9,22 @@
   "name": {
     "en": "Tuya Zigbee Universal",
     "fr": "Tuya Zigbee Universel",
-    "nl": "Tuya Zigbee Universeel"
+    "nl": "Tuya Zigbee Universeel",
+    "de": "Tuya Zigbee Universal",
+    "es": "Tuya Zigbee Universal"
   },
   "description": {
-    "en": "Universal Tuya and Zigbee devices for Homey - Peter CLI Fix",
-    "fr": "Appareils Tuya et Zigbee universels pour Homey - Fix CLI Peter",
-    "nl": "Universele Tuya en Zigbee apparaten voor Homey - Peter CLI Fix"
+    "en": "Universal Tuya and Zigbee devices for Homey - AI-Powered Edition with Complete Recovery",
+    "fr": "Appareils Tuya et Zigbee universels pour Homey - Édition IA avec Récupération Complète",
+    "nl": "Universele Tuya en Zigbee apparaten voor Homey - AI Editie met Complete Herstel",
+    "de": "Universal Tuya und Zigbee Geräte für Homey - KI-Edition mit Vollständiger Wiederherstellung",
+    "es": "Dispositivos Tuya y Zigbee universales para Homey - Edición IA con Recuperación Completa"
   },
   "category": [
-    "app"
+    "lighting"
   ],
   "permissions": [
-    "homey:manager:api",
-    "homey:manager:drivers"
+    "homey:manager:api"
   ],
   "images": {
     "small": "/assets/images/small.png",

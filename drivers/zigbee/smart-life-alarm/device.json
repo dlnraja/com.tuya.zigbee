@@ -1,0 +1,34 @@
+{
+  "id": "smart-life-alarm",
+  "name": {
+    "en": "smart-life-alarm Device",
+    "fr": "Appareil smart-life-alarm",
+    "nl": "smart-life-alarm Apparaat",
+    "de": "smart-life-alarm Gerät",
+    "es": "Dispositivo smart-life-alarm"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "philips-hue-strips-3",
+  "name": {
+    "en": "philips-hue-strips-3 Device",
+    "fr": "Appareil philips-hue-strips-3",
+    "nl": "philips-hue-strips-3 Apparaat",
+    "de": "philips-hue-strips-3 Gerät",
+    "es": "Dispositivo philips-hue-strips-3"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

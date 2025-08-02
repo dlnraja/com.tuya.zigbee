@@ -1,0 +1,34 @@
+{
+  "id": "smart-life-vacuum",
+  "name": {
+    "en": "smart-life-vacuum Device",
+    "fr": "Appareil smart-life-vacuum",
+    "nl": "smart-life-vacuum Apparaat",
+    "de": "smart-life-vacuum Gerät",
+    "es": "Dispositivo smart-life-vacuum"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

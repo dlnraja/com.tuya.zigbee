@@ -1,0 +1,34 @@
+{
+  "id": "TS0201_sensor",
+  "name": {
+    "en": "TS0201_sensor Device",
+    "fr": "Appareil TS0201_sensor",
+    "nl": "TS0201_sensor Apparaat",
+    "de": "TS0201_sensor Gerät",
+    "es": "Dispositivo TS0201_sensor"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power",
+    "meter_power"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}
