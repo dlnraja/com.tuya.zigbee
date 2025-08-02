@@ -1,195 +1,29 @@
 {
   "id": "_tz3300",
-  "name": {
-    "en": "Tuya _TZ3300",
-    "fr": "Tuya _TZ3300",
-    "nl": "Tuya _TZ3300",
-    "ta": "Tuya _TZ3300"
-  },
   "class": "light",
+  "name": {
+    "en": " Tz3300",
+    "fr": " Tz3300",
+    "nl": " Tz3300"
+  },
   "capabilities": [
-<<<<<<< HEAD
-    {
-      "type": "boolean",
-      "title": {
-        "en": "On/Off",
-        "fr": "Marche/Arrêt",
-        "nl": "Aan/Uit",
-        "ta": "ஆன்/ஆஃப்"
-      },
-      "getable": true,
-      "setable": true,
-      "id": "onoff"
-    },
-    {
-      "type": "number",
-      "title": {
-        "en": "Dim Level",
-        "fr": "Niveau de variation",
-        "nl": "Dim niveau",
-        "ta": "டிம் நிலை"
-      },
-      "getable": true,
-      "setable": true,
-      "min": 0,
-      "max": 1,
-      "id": "dim"
-    },
-=======
     "onoff",
-    "dim",
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
-    "light_temperature",
-    "light_mode",
-    "light_hue"
+    "dim"
   ],
-  "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "_TZ3300",
-    "clusters": [
-      "genBasic",
-<<<<<<< HEAD
-      {
-        "attributes": [
-          "onOff"
-        ],
-        "commands": [
-          "toggle",
-          "off",
-          "on"
-        ],
-        "id": "genOnOff"
-      },
-      {
-        "attributes": [
-          "currentLevel"
-        ],
-        "commands": [
-          "moveToLevel",
-          "move",
-          "step"
-        ],
-        "id": "genLevelCtrl"
-      },
-=======
-      "genOnOff",
-      "genLevelCtrl",
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
-      "lightingColorCtrl"
-    ]
-  },
-  "metadata": {
-<<<<<<< HEAD
-    "version": "1.0.0",
-    "lastUpdated": "2025-07-31T23:52:39.643Z",
-    "optimized": true
-  },
-  "capabilityProperties": {
-    "onoff": {
-      "type": "boolean",
-      "title": {
-        "en": "On/Off",
-        "fr": "Marche/Arrêt",
-        "nl": "Aan/Uit",
-        "ta": "ஆன்/ஆஃப்"
-      },
-      "getable": true,
-      "setable": true
-    },
-    "dim": {
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
       "type": "number",
-      "title": {
-        "en": "Dim Level",
-        "fr": "Niveau de Dim",
-        "nl": "Dim Niveau",
-        "ta": "டிம் நிலை"
-      },
-      "getable": true,
-      "setable": true,
-      "min": 0,
-      "max": 100,
-      "unit": "%"
-    },
-    "light_temperature": {
-      "type": "number",
-      "title": {
-        "en": "Light Temperature",
-        "fr": "Température Lumière",
-        "nl": "Licht Temperatuur",
-        "ta": "விளக்கு வெப்பநிலை"
-      },
-      "getable": true,
-      "setable": true,
-      "min": 2700,
-      "max": 6500,
-      "unit": "K"
-    },
-    "light_mode": {
-      "type": "string",
-      "title": {
-        "en": "Light Mode",
-        "fr": "Mode Lumière",
-        "nl": "Licht Modus",
-        "ta": "விளக்கு பயன்முறை"
-      },
-      "getable": true,
-      "setable": true,
-      "options": [
-        "color",
-        "temperature",
-        "white"
-      ]
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
     }
-  },
-  "clusterDetails": {
-    "genOnOff": {
-      "attributes": [
-        "onOff"
-      ],
-      "commands": [
-        "toggle",
-        "off",
-        "on"
-      ]
-    },
-    "genLevelCtrl": {
-      "attributes": [
-        "currentLevel"
-      ],
-      "commands": [
-        "move",
-        "step",
-        "stop",
-        "moveToLevel"
-      ]
-    },
-    "lightingColorCtrl": {
-      "attributes": [
-        "currentHue",
-        "currentSaturation",
-        "currentX",
-        "currentY"
-      ],
-      "commands": [
-        "moveToHue",
-        "stepHue",
-        "moveToSaturation",
-        "stepSaturation",
-        "moveToColor",
-        "stepColor"
-      ]
-    }
-  },
-  "integration": {
-    "integrated": true,
-    "integratedAt": "2025-07-31T23:52:45.700Z",
-    "version": "1.0.0",
-    "compatible": true
-=======
-    "createdAt": "2025-07-31T20:27:54.068Z",
-    "version": "3.1.0",
-    "source": "generic_pattern_analysis",
-    "channels": 1
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   }
 }

@@ -1,131 +1,29 @@
 {
   "id": "_tz3700_thermostat",
+  "class": "light",
   "name": {
-    "en": "Tuya _TZ3700_thermostat",
-    "fr": "Tuya _TZ3700_thermostat",
-    "nl": "Tuya _TZ3700_thermostat",
-    "ta": "Tuya _TZ3700_thermostat"
+    "en": " Tz3700 Thermostat",
+    "fr": " Tz3700 Thermostat",
+    "nl": " Tz3700 Thermostat"
   },
-  "class": "thermostat",
   "capabilities": [
-<<<<<<< HEAD
-    {
-      "type": "number",
-      "title": {
-        "en": "Temperature",
-        "fr": "Température",
-        "nl": "Temperatuur",
-        "ta": "வெப்பநிலை"
-      },
-      "getable": true,
-      "setable": false,
-      "unit": "°C",
-      "id": "measure_temperature"
-    },
-=======
-    "measure_temperature",
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
-    "target_temperature",
-    "thermostat_mode"
+    "onoff",
+    "dim"
   ],
-  "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "_TZ3700_thermostat",
-    "clusters": [
-      "genBasic",
-<<<<<<< HEAD
-      {
-        "attributes": [
-          "measuredValue"
-        ],
-        "commands": [],
-        "id": "msTemperatureMeasurement"
-      },
-=======
-      "msTemperatureMeasurement",
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
-      "hvacThermostat"
-    ]
-  },
-  "metadata": {
-<<<<<<< HEAD
-    "version": "1.0.0",
-    "lastUpdated": "2025-07-31T23:52:40.213Z",
-    "optimized": true
-  },
-  "capabilityProperties": {
-    "measure_temperature": {
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
       "type": "number",
-      "title": {
-        "en": "Temperature",
-        "fr": "Température",
-        "nl": "Temperatuur",
-        "ta": "வெப்பநிலை"
-      },
-      "getable": true,
-      "setable": false,
-      "unit": "°C"
-    },
-    "target_temperature": {
-      "type": "number",
-      "title": {
-        "en": "Target Temperature",
-        "fr": "Température Cible",
-        "nl": "Doeltemperatuur",
-        "ta": "இலக்கு வெப்பநிலை"
-      },
-      "getable": true,
-      "setable": true,
-      "min": 5,
-      "max": 35,
-      "unit": "°C"
-    },
-    "thermostat_mode": {
-      "type": "string",
-      "title": {
-        "en": "Thermostat Mode",
-        "fr": "Mode Thermostat",
-        "nl": "Thermostaat Modus",
-        "ta": "தெர்மோஸ்டேட் பயன்முறை"
-      },
-      "getable": true,
-      "setable": true,
-      "options": [
-        "heat",
-        "cool",
-        "auto"
-      ]
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
     }
-  },
-  "clusterDetails": {
-    "msTemperatureMeasurement": {
-      "attributes": [
-        "measuredValue"
-      ],
-      "commands": []
-    },
-    "hvacThermostat": {
-      "attributes": [
-        "localTemperature",
-        "occupiedHeatingSetpoint"
-      ],
-      "commands": [
-        "setWeeklySchedule",
-        "getWeeklySchedule",
-        "clearWeeklySchedule"
-      ]
-    }
-  },
-  "integration": {
-    "integrated": true,
-    "integratedAt": "2025-07-31T23:52:45.998Z",
-    "version": "1.0.0",
-    "compatible": true
-=======
-    "createdAt": "2025-07-31T20:27:53.835Z",
-    "version": "3.1.0",
-    "source": "database_analysis",
-    "channels": 1
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   }
 }

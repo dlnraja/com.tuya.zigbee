@@ -4,33 +4,36 @@ const Device = require('../../../lib/device.js');
 
 class TS011FDevice extends Device {
     async onInit() {
-        this.log('Tuya Smart Plug device initialized');
+        this.log('TS011F device initialized');
         
         // Initialize capabilities
         this.registerCapabilityListener('onoff', this.onCapability.bind(this));
-        this.registerCapabilityListener('measure_power', this.onCapability.bind(this));
-        this.registerCapabilityListener('measure_current', this.onCapability.bind(this));
-        this.registerCapabilityListener('measure_voltage', this.onCapability.bind(this));
+        this.registerCapabilityListener('dim', this.onCapability.bind(this));
     }
 
-    
-            async onCapability(capability, value) {
-                switch (capability) {
-                    case 'onoff':
-                        await this.setCapabilityValue('onoff', value);
-                        break;
-                    case 'measure_power':
-                        // Power measurement implementation
-                        break;
-                    case 'measure_current':
-                        // Current measurement implementation
-                        break;
-                    case 'measure_voltage':
-                        // Voltage measurement implementation
-                        break;
-                }
-            }
+    async onCapability(capability, value) {
+        this.log('Capability ' + capability + ' changed to ' + value);
         
+        switch (capability) {
+            case 'onoff':
+                await this.handleOnoff(value);
+                break;
+            case 'dim':
+                await this.handleDim(value);
+                break;
+            default:
+                this.log('Unknown capability: ' + capability);
+        }
+    }
+
+    async handleOnoff(value) {
+        this.log('Setting onoff to: ' + value);
+        await this.setCapabilityValue('onoff', value);
+    }
+    async handleDim(value) {
+        this.log('Setting dim to: ' + value);
+        await this.setCapabilityValue('dim', value);
+    }
     
     // Device lifecycle methods
     async onSettings({ oldSettings, newSettings, changedKeys }) {

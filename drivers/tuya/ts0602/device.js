@@ -2,35 +2,38 @@
 
 const Device = require('../../../lib/device.js');
 
-class TS0602Device extends Device {
+class ts0602Device extends Device {
     async onInit() {
-        this.log('Tuya RGB Light device initialized');
+        this.log('ts0602 device initialized');
         
         // Initialize capabilities
         this.registerCapabilityListener('onoff', this.onCapability.bind(this));
         this.registerCapabilityListener('dim', this.onCapability.bind(this));
-        this.registerCapabilityListener('light_hue', this.onCapability.bind(this));
-        this.registerCapabilityListener('light_saturation', this.onCapability.bind(this));
     }
 
-    
-            async onCapability(capability, value) {
-                switch (capability) {
-                    case 'onoff':
-                        await this.setCapabilityValue('onoff', value);
-                        break;
-                    case 'dim':
-                        await this.setCapabilityValue('dim', value);
-                        break;
-                    case 'light_hue':
-                        await this.setCapabilityValue('light_hue', value);
-                        break;
-                    case 'light_saturation':
-                        await this.setCapabilityValue('light_saturation', value);
-                        break;
-                }
-            }
+    async onCapability(capability, value) {
+        this.log('Capability ' + capability + ' changed to ' + value);
         
+        switch (capability) {
+            case 'onoff':
+                await this.handleOnoff(value);
+                break;
+            case 'dim':
+                await this.handleDim(value);
+                break;
+            default:
+                this.log('Unknown capability: ' + capability);
+        }
+    }
+
+    async handleOnoff(value) {
+        this.log('Setting onoff to: ' + value);
+        await this.setCapabilityValue('onoff', value);
+    }
+    async handleDim(value) {
+        this.log('Setting dim to: ' + value);
+        await this.setCapabilityValue('dim', value);
+    }
     
     // Device lifecycle methods
     async onSettings({ oldSettings, newSettings, changedKeys }) {
@@ -58,4 +61,4 @@ class TS0602Device extends Device {
     }
 }
 
-module.exports = TS0602Device;
+module.exports = ts0602Device;

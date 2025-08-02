@@ -1,135 +1,29 @@
 {
   "id": "_tz3600",
+  "class": "light",
   "name": {
-    "en": "Tuya _TZ3600",
-    "fr": "Tuya _TZ3600",
-    "nl": "Tuya _TZ3600",
-    "ta": "Tuya _TZ3600"
+    "en": " Tz3600",
+    "fr": " Tz3600",
+    "nl": " Tz3600"
   },
-  "class": "socket",
   "capabilities": [
-<<<<<<< HEAD
-    {
-      "type": "boolean",
-      "title": {
-        "en": "On/Off",
-        "fr": "Marche/Arrêt",
-        "nl": "Aan/Uit",
-        "ta": "ஆன்/ஆஃப்"
-      },
-      "getable": true,
-      "setable": true,
-      "id": "onoff"
-    },
-    {
-      "type": "number",
-      "title": {
-        "en": "Power",
-        "fr": "Puissance",
-        "nl": "Vermogen",
-        "ta": "சக்தி"
-      },
-      "getable": true,
-      "setable": false,
-      "unit": "W",
-      "id": "meter_power"
-    }
-=======
     "onoff",
-    "meter_power"
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
+    "dim"
   ],
-  "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "_TZ3600",
-    "clusters": [
-      "genBasic",
-<<<<<<< HEAD
-      {
-        "attributes": [
-          "onOff"
-        ],
-        "commands": [
-          "toggle",
-          "off",
-          "on"
-        ],
-        "id": "genOnOff"
-      },
-      {
-        "attributes": [
-          "instantaneousDemand",
-          "currentSummationDelivered"
-        ],
-        "commands": [],
-        "id": "seMetering"
-      }
-    ]
-  },
-  "metadata": {
-    "version": "1.0.0",
-    "lastUpdated": "2025-07-31T23:52:39.933Z",
-    "optimized": true
-  },
-  "capabilityProperties": {
-    "onoff": {
-      "type": "boolean",
-      "title": {
-        "en": "On/Off",
-        "fr": "Marche/Arrêt",
-        "nl": "Aan/Uit",
-        "ta": "ஆன்/ஆஃப்"
-      },
-      "getable": true,
-      "setable": true
-    },
-    "meter_power": {
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
       "type": "number",
-      "title": {
-        "en": "Power",
-        "fr": "Puissance",
-        "nl": "Vermogen",
-        "ta": "சக்தி"
-      },
-      "getable": true,
-      "setable": false,
-      "unit": "W"
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
     }
-  },
-  "clusterDetails": {
-    "genOnOff": {
-      "attributes": [
-        "onOff"
-      ],
-      "commands": [
-        "toggle",
-        "off",
-        "on"
-      ]
-    },
-    "seMetering": {
-      "attributes": [
-        "currentSummationDelivered",
-        "instantaneousDemand"
-      ],
-      "commands": []
-    }
-  },
-  "integration": {
-    "integrated": true,
-    "integratedAt": "2025-07-31T23:52:45.830Z",
-    "version": "1.0.0",
-    "compatible": true
-=======
-      "genOnOff",
-      "seMetering"
-    ]
-  },
-  "metadata": {
-    "createdAt": "2025-07-31T20:27:54.087Z",
-    "version": "3.1.0",
-    "source": "generic_pattern_analysis",
-    "channels": 1
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   }
 }

@@ -1,177 +1,64 @@
-<<<<<<< HEAD
-const Homey = require('homey');
-
-=======
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
 'use strict';
 
-const { ZigbeeDevice } = require('homey-meshdriver');
+const Device = require('../../../lib/device.js');
 
-class ts0601plug2Device extends ZigbeeDevice {
-    async onMeshInit() {
-        try {
-            await super.onMeshInit();
-            this.log('TS0601_plug_2 initialized');
-            
-            // Register capabilities with error handling
-            try { this.registerCapability('onoff', 'genOnOff'); } catch (error) { this.log('Error registering capability onoff:', error); }
-            try { this.registerCapability('meter_power', 'genOnOff'); } catch (error) { this.log('Error registering capability meter_power:', error); }
-            try { this.registerCapability('measure_current', 'genOnOff'); } catch (error) { this.log('Error registering capability measure_current:', error); }
-            try { this.registerCapability('measure_voltage', 'genOnOff'); } catch (error) { this.log('Error registering capability measure_voltage:', error); }
-            
-            // Add metadata
-            this.setStoreValue('modelId', 'TS0601_plug_2');
-            this.setStoreValue('source', 'database_analysis');
-            this.setStoreValue('createdAt', '2025-07-31T20:27:53.760Z');
-            
-        } catch (error) {
-            this.log('Error during mesh init:', error);
-            throw error;
+class ts0601_plug_2Device extends Device {
+    async onInit() {
+        this.log('ts0601_plug_2 device initialized');
+        
+        // Initialize capabilities
+        this.registerCapabilityListener('onoff', this.onCapability.bind(this));
+        this.registerCapabilityListener('dim', this.onCapability.bind(this));
+    }
+
+    async onCapability(capability, value) {
+        this.log('Capability ' + capability + ' changed to ' + value);
+        
+        switch (capability) {
+            case 'onoff':
+                await this.handleOnoff(value);
+                break;
+            case 'dim':
+                await this.handleDim(value);
+                break;
+            default:
+                this.log('Unknown capability: ' + capability);
         }
     }
-    
-    async onSettings(oldSettings, newSettings, changedKeys) {
-        this.log('Settings updated:', changedKeys);
-    }
-    
-    async onRenamed(name) {
-        this.log('Device renamed to:', name);
-    }
-    
-    async onDeleted() {
-        this.log('Device deleted');
-    }
-    
-    async onError(error) {
-        this.log('Device error:', error);
-    }
-    
-    async onUnavailable() {
-        this.log('Device unavailable');
-    }
-    
-    async onAvailable() {
-        this.log('Device available');
-    }
-<<<<<<< HEAD
 
-    // Optimized methods
-    async onSettings(oldSettings, newSettings, changedKeys) {
-        this.log('Settings updated:', changedKeys);
+    async handleOnoff(value) {
+        this.log('Setting onoff to: ' + value);
+        await this.setCapabilityValue('onoff', value);
+    }
+    async handleDim(value) {
+        this.log('Setting dim to: ' + value);
+        await this.setCapabilityValue('dim', value);
     }
     
-    async onRenamed(name) {
-        this.log('Device renamed to:', name);
-    }
-    
-    async onDeleted() {
-        this.log('Device deleted');
-    }
-    
-    // Error handling
-    async onError(error) {
-        this.log('Device error:', error);
-        this.setUnavailable(error.message);
-    }
-    
-    // Availability management
-    async onUnavailable() {
-        this.log('Device unavailable');
-    }
-    
-    async onAvailable() {
-        this.log('Device available');
-        this.setAvailable();
+    // Device lifecycle methods
+    async onSettings({ oldSettings, newSettings, changedKeys }) {
+        this.log('Settings changed');
     }
 
-    // Optimized methods
-    async onSettings(oldSettings, newSettings, changedKeys) {
-        this.log('Settings updated:', changedKeys);
-    }
-    
     async onRenamed(name) {
-        this.log('Device renamed to:', name);
-    }
-    
-    async onDeleted() {
-        this.log('Device deleted');
-    }
-    
-    // Error handling
-    async onError(error) {
-        this.log('Device error:', error);
-        this.setUnavailable(error.message);
-    }
-    
-    // Availability management
-    async onUnavailable() {
-        this.log('Device unavailable');
-    }
-    
-    async onAvailable() {
-        this.log('Device available');
-        this.setAvailable();
+        this.log('Device renamed to', name);
     }
 
-    // Optimized methods
-    async onSettings(oldSettings, newSettings, changedKeys) {
-        this.log('Settings updated:', changedKeys);
-    }
-    
-    async onRenamed(name) {
-        this.log('Device renamed to:', name);
-    }
-    
     async onDeleted() {
         this.log('Device deleted');
-    }
-    
-    // Error handling
-    async onError(error) {
-        this.log('Device error:', error);
-        this.setUnavailable(error.message);
-    }
-    
-    // Availability management
-    async onUnavailable() {
-        this.log('Device unavailable');
-    }
-    
-    async onAvailable() {
-        this.log('Device available');
-        this.setAvailable();
     }
 
-    // Optimized methods
-    async onSettings(oldSettings, newSettings, changedKeys) {
-        this.log('Settings updated:', changedKeys);
-    }
-    
-    async onRenamed(name) {
-        this.log('Device renamed to:', name);
-    }
-    
-    async onDeleted() {
-        this.log('Device deleted');
-    }
-    
-    // Error handling
-    async onError(error) {
-        this.log('Device error:', error);
-        this.setUnavailable(error.message);
-    }
-    
-    // Availability management
     async onUnavailable() {
         this.log('Device unavailable');
     }
-    
+
     async onAvailable() {
         this.log('Device available');
-        this.setAvailable();
     }
-=======
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
+
+    async onError(error) {
+        this.log('Device error:', error);
+    }
 }
 
-module.exports = ts0601plug2Device;
+module.exports = ts0601_plug_2Device;

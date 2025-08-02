@@ -1,62 +1,29 @@
 {
   "id": "TS0001_forum",
-  "name": {
-    "en": "Tuya TS0001 (Forum)",
-    "fr": "Tuya TS0001 (Forum)",
-    "nl": "Tuya TS0001 (Forum)",
-    "ta": "Tuya TS0001 (Forum)"
-  },
   "class": "light",
+  "name": {
+    "en": "TS0001 Forum",
+    "fr": "TS0001 Forum",
+    "nl": "TS0001 Forum"
+  },
   "capabilities": [
-    {
-      "type": "boolean",
-      "title": {
-        "en": "On/Off",
-        "fr": "Marche/Arrêt",
-        "nl": "Aan/Uit",
-        "ta": "ஆன்/ஆஃப்"
-      },
-      "getable": true,
-      "setable": true,
-      "id": "onoff"
-    }
+    "onoff",
+    "dim"
   ],
-  "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "TS0001",
-    "clusters": [
-      {
-        "attributes": [
-          "onOff"
-        ],
-        "commands": [
-          "toggle",
-          "off",
-          "on"
-        ],
-        "id": "genOnOff"
-      }
-    ]
-  },
-  "source": "homey_forum",
-  "topic": "26439",
-  "metadata": {
-    "version": "1.0.0",
-<<<<<<< HEAD
-    "lastUpdated": "2025-07-31T23:52:33.244Z",
-=======
-    "lastUpdated": "2025-07-31T20:16:47.509Z",
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
-    "optimized": true
-  },
-  "integration": {
-    "integrated": true,
-<<<<<<< HEAD
-    "integratedAt": "2025-07-31T23:52:41.851Z",
-=======
-    "integratedAt": "2025-07-31T20:16:48.437Z",
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
-    "version": "1.0.0",
-    "compatible": true
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
+      "type": "number",
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
+    }
   }
 }

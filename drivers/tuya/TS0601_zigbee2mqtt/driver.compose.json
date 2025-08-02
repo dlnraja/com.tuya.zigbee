@@ -1,87 +1,29 @@
 {
   "id": "TS0601_zigbee2mqtt",
-  "name": {
-    "en": "Tuya TS0601 (Z2M)",
-    "fr": "Tuya TS0601 (Z2M)",
-    "nl": "Tuya TS0601 (Z2M)",
-    "ta": "Tuya TS0601 (Z2M)"
-  },
   "class": "light",
+  "name": {
+    "en": "TS0601 Zigbee2mqtt",
+    "fr": "TS0601 Zigbee2mqtt",
+    "nl": "TS0601 Zigbee2mqtt"
+  },
   "capabilities": [
-    {
-      "type": "boolean",
-      "title": {
-        "en": "On/Off",
-        "fr": "Marche/Arrêt",
-        "nl": "Aan/Uit",
-        "ta": "ஆன்/ஆஃப்"
-      },
-      "getable": true,
-      "setable": true,
-      "id": "onoff"
-    },
-    {
-      "type": "number",
-      "title": {
-        "en": "Dim Level",
-        "fr": "Niveau de variation",
-        "nl": "Dim niveau",
-        "ta": "டிம் நிலை"
-      },
-      "getable": true,
-      "setable": true,
-      "min": 0,
-      "max": 1,
-      "id": "dim"
-    }
+    "onoff",
+    "dim"
   ],
-  "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "TS0601",
-    "clusters": [
-      {
-        "attributes": [
-          "onOff"
-        ],
-        "commands": [
-          "toggle",
-          "off",
-          "on"
-        ],
-        "id": "genOnOff"
-      },
-      {
-        "attributes": [
-          "currentLevel"
-        ],
-        "commands": [
-          "moveToLevel",
-          "move",
-          "step"
-        ],
-        "id": "genLevelCtrl"
-      }
-    ]
-  },
-  "source": "zigbee2mqtt",
-  "firmware": "latest",
-  "metadata": {
-    "version": "1.0.0",
-<<<<<<< HEAD
-    "lastUpdated": "2025-07-31T23:52:39.368Z",
-=======
-    "lastUpdated": "2025-07-31T20:16:48.307Z",
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
-    "optimized": true
-  },
-  "integration": {
-    "integrated": true,
-<<<<<<< HEAD
-    "integratedAt": "2025-07-31T23:52:45.483Z",
-=======
-    "integratedAt": "2025-07-31T20:16:49.116Z",
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
-    "version": "1.0.0",
-    "compatible": true
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
+      "type": "number",
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
+    }
   }
 }
