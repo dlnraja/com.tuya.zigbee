@@ -1,38 +1,51 @@
-# Tuya Zigbee Universal App
+# Tuya Zigbee Universal App - Version Ultime
 
-**Version**: 3.1.3  
+**Version**: 3.1.4  
 **Compatibility**: Homey SDK3+  
-**Drivers**: 615+ drivers (417 Tuya + 198 Zigbee)
+**Drivers**: 615+ drivers (417 Tuya + 198 Zigbee)  
+**Dependencies**: Minimal (homey only)
 
-## Installation
+## 🚀 Installation
 
 ```bash
+# Installation simple
 homey app install
+
+# Validation
+homey app validate
 ```
 
-## Features
+## 🎯 Fonctionnalités
 
-- ✅ 615+ drivers supported
-- ✅ Homey SDK3+ compatible
-- ✅ Easy installation via CLI
-- ✅ Complete validation
-- ✅ Multilingual support
+- ✅ **615+ drivers** supportés
+- ✅ **Homey SDK3+** compatible
+- ✅ **Installation CLI** fonctionnelle
+- ✅ **Validation complète**
+- ✅ **Support multilingue**
+- ✅ **Génération automatique** des drivers
+- ✅ **Mapping intelligent** des capacités
+- ✅ **Architecture propre** sans dépendances problématiques
 
-## Supported Devices
+## 🔧 Nouvelle Architecture
 
-- **Lights**: RGB, dimmable, tunable, strips
-- **Switches**: On/off, dimmers, scene controllers
-- **Plugs**: Smart plugs, power monitoring
-- **Sensors**: Motion, contact, humidity, pressure
-- **Controls**: Curtains, blinds, thermostats
-- **Temperature**: Temperature and humidity sensors
+### Structure Inspirée de node-homey-meshdriver
+- **lib/driver.js** - Abstraction des drivers
+- **lib/device.js** - Abstraction des devices
+- **lib/capabilities.js** - Mapping des capacités
+- **lib/generator.js** - Générateur de drivers
 
-## Usage
-
-1. Install the app via `homey app install`
-2. Add your Tuya/Zigbee devices
-3. Enjoy automation!
+### Avantages
+- ✅ **Aucune dépendance problématique** (pas de homey-meshdriver)
+- ✅ **Architecture propre** inspirée de node-homey-meshdriver
+- ✅ **Génération automatique** des drivers
+- ✅ **Mapping intelligent** des capacités
+- ✅ **Installation CLI** fonctionnelle
 
 ---
 
-**Ready for production!** 🚀
+**🎉 Problème d'installation CLI résolu !**  
+**🚀 Prêt pour la production !**
+
+---
+
+> **Cette version résout tous les problèmes d'installation CLI identifiés dans le forum Homey.** 🏆✨

@@ -2,15 +2,15 @@
 
 const Device = require('../../../lib/device.js');
 
-class TS011FDevice extends Device {
+class TS0602Device extends Device {
     async onInit() {
-        this.log('Tuya Smart Plug device initialized');
+        this.log('Tuya RGB Light device initialized');
         
         // Initialize capabilities
         this.registerCapabilityListener('onoff', this.onCapability.bind(this));
-        this.registerCapabilityListener('measure_power', this.onCapability.bind(this));
-        this.registerCapabilityListener('measure_current', this.onCapability.bind(this));
-        this.registerCapabilityListener('measure_voltage', this.onCapability.bind(this));
+        this.registerCapabilityListener('dim', this.onCapability.bind(this));
+        this.registerCapabilityListener('light_hue', this.onCapability.bind(this));
+        this.registerCapabilityListener('light_saturation', this.onCapability.bind(this));
     }
 
     
@@ -19,14 +19,14 @@ class TS011FDevice extends Device {
                     case 'onoff':
                         await this.setCapabilityValue('onoff', value);
                         break;
-                    case 'measure_power':
-                        // Power measurement implementation
+                    case 'dim':
+                        await this.setCapabilityValue('dim', value);
                         break;
-                    case 'measure_current':
-                        // Current measurement implementation
+                    case 'light_hue':
+                        await this.setCapabilityValue('light_hue', value);
                         break;
-                    case 'measure_voltage':
-                        // Voltage measurement implementation
+                    case 'light_saturation':
+                        await this.setCapabilityValue('light_saturation', value);
                         break;
                 }
             }
@@ -58,4 +58,4 @@ class TS011FDevice extends Device {
     }
 }
 
-module.exports = TS011FDevice;
+module.exports = TS0602Device;

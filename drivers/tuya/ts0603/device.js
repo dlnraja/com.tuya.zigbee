@@ -2,23 +2,23 @@
 
 const Device = require('../../../lib/device.js');
 
-class TS0601Device extends Device {
+class TS0603Device extends Device {
     async onInit() {
-        this.log('Tuya Dimmable Light device initialized');
+        this.log('Tuya Temperature/Humidity Sensor device initialized');
         
         // Initialize capabilities
-        this.registerCapabilityListener('onoff', this.onCapability.bind(this));
-        this.registerCapabilityListener('dim', this.onCapability.bind(this));
+        this.registerCapabilityListener('measure_temperature', this.onCapability.bind(this));
+        this.registerCapabilityListener('measure_humidity', this.onCapability.bind(this));
     }
 
     
             async onCapability(capability, value) {
                 switch (capability) {
-                    case 'onoff':
-                        await this.setCapabilityValue('onoff', value);
+                    case 'measure_temperature':
+                        await this.setCapabilityValue('measure_temperature', value);
                         break;
-                    case 'dim':
-                        await this.setCapabilityValue('dim', value);
+                    case 'measure_humidity':
+                        await this.setCapabilityValue('measure_humidity', value);
                         break;
                 }
             }
@@ -50,4 +50,4 @@ class TS0601Device extends Device {
     }
 }
 
-module.exports = TS0601Device;
+module.exports = TS0603Device;

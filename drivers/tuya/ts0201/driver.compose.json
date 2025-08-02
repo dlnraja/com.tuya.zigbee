@@ -1,22 +1,20 @@
 {
-  "id": "ts011f",
+  "id": "ts0201",
   "class": "light",
   "name": {
-    "en": "Tuya Smart Plug",
-    "fr": "Tuya Smart Plug",
-    "nl": "Tuya Smart Plug"
+    "en": "Tuya Motion Sensor",
+    "fr": "Tuya Motion Sensor",
+    "nl": "Tuya Motion Sensor"
   },
   "capabilities": [
-    "onoff",
-    "measure_power",
-    "measure_current",
-    "measure_voltage"
+    "alarm_motion",
+    "measure_temperature",
+    "measure_humidity"
   ],
   "clusters": [
-    "genOnOff",
-    "genPowerCfg",
-    "genBasic",
-    "genIdentify"
+    "msOccupancySensing",
+    "msTemperatureMeasurement",
+    "msRelativeHumidity"
   ],
   "settings": {
     "pollInterval": {

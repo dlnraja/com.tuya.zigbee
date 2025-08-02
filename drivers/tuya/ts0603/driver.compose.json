@@ -1,20 +1,18 @@
 {
-  "id": "ts011f",
+  "id": "ts0603",
   "class": "light",
   "name": {
-    "en": "Tuya Smart Plug",
-    "fr": "Tuya Smart Plug",
-    "nl": "Tuya Smart Plug"
+    "en": "Tuya Temperature/Humidity Sensor",
+    "fr": "Tuya Temperature/Humidity Sensor",
+    "nl": "Tuya Temperature/Humidity Sensor"
   },
   "capabilities": [
-    "onoff",
-    "measure_power",
-    "measure_current",
-    "measure_voltage"
+    "measure_temperature",
+    "measure_humidity"
   ],
   "clusters": [
-    "genOnOff",
-    "genPowerCfg",
+    "msTemperatureMeasurement",
+    "msRelativeHumidity",
     "genBasic",
     "genIdentify"
   ],

@@ -1,23 +1,32 @@
 {
   "name": "com.tuya.zigbee",
-  "version": "3.1.3",
-  "description": "Universal Tuya and Zigbee devices for Homey",
+  "version": "3.1.4",
+  "description": "Universal Tuya and Zigbee devices for Homey - Ultimate Version",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test-generator.js",
+    "generate": "node ultimate-pipeline.js",
+    "validate": "homey app validate",
+    "install": "homey app install"
   },
   "keywords": [
     "tuya",
     "zigbee",
     "homey",
     "smart",
-    "home"
+    "home",
+    "sdk3"
   ],
   "author": "dlnraja <dylan.rajasekaram@gmail.com>",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "homey": "^2.0.0"
+  },
   "devDependencies": {},
   "engines": {
     "node": ">=16.0.0"
+  },
+  "homey": {
+    "min": "6.0.0"
   }
 }
