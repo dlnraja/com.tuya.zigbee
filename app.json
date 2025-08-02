@@ -1,28 +1,26 @@
 {
-  "id": "com.tuya.zigbee.light",
+  "id": "com.tuya.zigbee",
   "version": "3.3.3",
   "compatibility": ">=6.0.0",
   "sdk": 3,
-  "platforms": [
-    "local"
-  ],
+  "platforms": ["local"],
   "name": {
-    "en": "Tuya Zigbee Light",
-    "fr": "Tuya Zigbee Light",
-    "nl": "Tuya Zigbee Light",
-    "de": "Tuya Zigbee Light",
-    "es": "Tuya Zigbee Light"
+    "en": "Tuya Zigbee Universal",
+    "fr": "Tuya Zigbee Universel",
+    "ta": "Tuya Zigbee Universal",
+    "nl": "Tuya Zigbee Universeel",
+    "de": "Tuya Zigbee Universal",
+    "es": "Tuya Zigbee Universal"
   },
   "description": {
-    "en": "Lightweight Tuya devices for Homey - Tuya Light Edition",
-    "fr": "Appareils Tuya légers pour Homey - Édition Light",
-    "nl": "Lichte Tuya apparaten voor Homey - Light Editie",
-    "de": "Leichte Tuya Geräte für Homey - Light Edition",
-    "es": "Dispositivos Tuya ligeros para Homey - Edición Light"
+    "en": "Universal Tuya and Zigbee devices for Homey - AI-Powered Edition with Complete Recovery",
+    "fr": "Appareils Tuya et Zigbee universels pour Homey - Édition IA avec Récupération Complète",
+    "ta": "ஹோமியுக்கான உலகளாவிய Tuya மற்றும் Zigbee சாதனங்கள் - AI-Powered பதிப்பு முழுமையான மீட்புடன்",
+    "nl": "Universele Tuya en Zigbee apparaten voor Homey - AI Editie met Complete Herstel",
+    "de": "Universal Tuya und Zigbee Geräte für Homey - KI-Edition mit Vollständiger Wiederherstellung",
+    "es": "Dispositivos Tuya y Zigbee universales para Homey - Edición IA con Recuperación Completa"
   },
-  "category": [
-    "lighting"
-  ],
+  "category": ["lighting"],
   "permissions": [
     "homey:manager:api"
   ],
@@ -34,6 +32,12 @@
     "name": "dlnraja",
     "email": "dylan.rajasekaram@gmail.com"
   },
+  "contributors": [
+    {
+      "name": "Peter van Werkhoven",
+      "email": "peter@homey.app"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
   },
