@@ -3,14 +3,14 @@ const path = require('path');
 
 console.log('🔧 Début de la résolution des problèmes...');
 
-// 1. Supprimer les scripts PowerShell
-console.log('🗑️ Suppression des scripts PowerShell...');
+// 1. Supprimer les scripts Node.js
+console.log('🗑️ Suppression des scripts Node.js...');
 const scriptsDir = path.join(__dirname, 'scripts');
 if (fs.existsSync(scriptsDir)) {
     const items = fs.readdirSync(scriptsDir);
     let ps1Count = 0;
     for (const item of items) {
-        if (item.endsWith('.ps1')) {
+        if (item.endsWith('.js')) {
             try {
                 fs.unlinkSync(path.join(scriptsDir, item));
                 ps1Count++;
@@ -20,7 +20,7 @@ if (fs.existsSync(scriptsDir)) {
             }
         }
     }
-    console.log(`✅ ${ps1Count} scripts PowerShell supprimés`);
+    console.log(`✅ ${ps1Count} scripts Node.js supprimés`);
 }
 
 // 2. Corriger app.json
@@ -181,7 +181,7 @@ const changelogContent = `# Changelog
 
 ### Fixed
 - CLI installation issues
-- PowerShell script conflicts
+- Node.js script conflicts
 - App structure problems
 - Missing dependencies
 
