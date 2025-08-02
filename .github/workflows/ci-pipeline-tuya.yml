@@ -1,0 +1,38 @@
+name: Tuya Zigbee CI Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Run mega-pipeline
+      run: node mega-pipeline-clean.js
+      
+    - name: Validate Homey app
+      run: |
+        npm install -g @homey/homey-cli
+        homey app validate
+        
+    - name: Commit changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "Auto-update: Drivers and docs" || exit 0
+        git push

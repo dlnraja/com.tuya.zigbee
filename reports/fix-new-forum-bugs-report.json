@@ -1,0 +1,43 @@
+{
+  "timestamp": "2025-07-30T21:37:05.685Z",
+  "version": "1.0.0-20250730-2345",
+  "summary": {
+    "totalBugs": 5,
+    "bugsFixed": 0,
+    "errors": 0,
+    "status": "ready_for_production",
+    "message": "Complete Tuya Zigbee support with 29 drivers"
+  },
+  "details": {
+    "ts0601_no_data": {
+      "fixed": 0,
+      "errors": []
+    },
+    "ts0601_unstable": {
+      "fixed": 0,
+      "errors": []
+    },
+    "app_crash": {
+      "fixed": 0,
+      "errors": []
+    },
+    "ts0004_application": {
+      "fixed": 0,
+      "errors": []
+    },
+    "missing_manufacturer": {
+      "fixed": 0,
+      "errors": []
+    }
+  },
+  "integrations": {
+    "smart_enrich": false,
+    "verify_all": false,
+    "resolve_todo": false
+  },
+  "tests": {
+    "passed": 0,
+    "total": 0,
+    "success": false
+  }
+}

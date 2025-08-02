@@ -1,20 +1,19 @@
 {
-  "name": "com.tuya.zigbee",
-  "version": "1.4.0",
-  "description": "Universal Tuya ZigBee device integration for Homey",
+  "name": "com.tuya.zigbee.light",
+  "version": "3.3.3",
+  "description": "Lightweight Tuya devices for Homey - Tuya Light Edition",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "homey app validate",
+    "install": "homey app install",
+    "publish": "homey app publish"
   },
   "keywords": [
     "homey",
     "tuya",
-    "zigbee",
-    "smart-home"
+    "smart-home",
+    "lightweight"
   ],
   "author": "dlnraja",
-  "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {},
-  "build": 20250128
+  "license": "MIT"
 }

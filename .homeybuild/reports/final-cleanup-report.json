@@ -1,0 +1,12 @@
+{
+  "timestamp": "2025-07-31T19:17:02.621Z",
+  "removedScripts": 10,
+  "remainingScripts": {
+    "core": 28,
+    "external": 2
+  },
+  "summary": {
+    "status": "ready_for_production",
+    "message": "Complete Tuya Zigbee support with 29 drivers"
+  }
+}
