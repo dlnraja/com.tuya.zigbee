@@ -1,162 +1,29 @@
 {
   "id": "ts0122",
+  "class": "light",
   "name": {
-    "en": "Tuya TS0122",
-    "fr": "Tuya TS0122",
-    "nl": "Tuya TS0122",
-    "ta": "Tuya TS0122"
+    "en": "Ts0122",
+    "fr": "Ts0122",
+    "nl": "Ts0122"
   },
-  "class": "socket",
   "capabilities": [
-<<<<<<< HEAD
-    {
-      "type": "boolean",
-      "title": {
-        "en": "On/Off",
-        "fr": "Marche/Arrêt",
-        "nl": "Aan/Uit",
-        "ta": "ஆன்/ஆஃப்"
-      },
-      "getable": true,
-      "setable": true,
-      "id": "onoff"
-    },
-    {
-      "type": "number",
-      "title": {
-        "en": "Power",
-        "fr": "Puissance",
-        "nl": "Vermogen",
-        "ta": "சக்தி"
-      },
-      "getable": true,
-      "setable": false,
-      "unit": "W",
-      "id": "meter_power"
-    },
-=======
     "onoff",
-    "meter_power",
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
-    "measure_current",
-    "measure_voltage",
-    "measure_power_factor"
+    "dim"
   ],
-  "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "TS0122",
-    "clusters": [
-      "genBasic",
-<<<<<<< HEAD
-      {
-        "attributes": [
-          "onOff"
-        ],
-        "commands": [
-          "toggle",
-          "off",
-          "on"
-        ],
-        "id": "genOnOff"
-      },
-      {
-        "attributes": [
-          "instantaneousDemand",
-          "currentSummationDelivered"
-        ],
-        "commands": [],
-        "id": "seMetering"
-      }
-    ]
-  },
-  "metadata": {
-    "version": "1.0.0",
-    "lastUpdated": "2025-07-31T23:52:34.399Z",
-    "optimized": true
-  },
-  "capabilityProperties": {
-    "onoff": {
-      "type": "boolean",
-      "title": {
-        "en": "On/Off",
-        "fr": "Marche/Arrêt",
-        "nl": "Aan/Uit",
-        "ta": "ஆன்/ஆஃப்"
-      },
-      "getable": true,
-      "setable": true
-    },
-    "meter_power": {
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
       "type": "number",
-      "title": {
-        "en": "Power",
-        "fr": "Puissance",
-        "nl": "Vermogen",
-        "ta": "சக்தி"
-      },
-      "getable": true,
-      "setable": false,
-      "unit": "W"
-    },
-    "measure_current": {
-      "type": "number",
-      "title": {
-        "en": "Current",
-        "fr": "Courant",
-        "nl": "Stroom",
-        "ta": "மின்னோட்டம்"
-      },
-      "getable": true,
-      "setable": false,
-      "unit": "A"
-    },
-    "measure_voltage": {
-      "type": "number",
-      "title": {
-        "en": "Voltage",
-        "fr": "Tension",
-        "nl": "Spanning",
-        "ta": "மின்னழுத்தம்"
-      },
-      "getable": true,
-      "setable": false,
-      "unit": "V"
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
     }
-  },
-  "clusterDetails": {
-    "genOnOff": {
-      "attributes": [
-        "onOff"
-      ],
-      "commands": [
-        "toggle",
-        "off",
-        "on"
-      ]
-    },
-    "seMetering": {
-      "attributes": [
-        "currentSummationDelivered",
-        "instantaneousDemand"
-      ],
-      "commands": []
-    }
-  },
-  "integration": {
-    "integrated": true,
-    "integratedAt": "2025-07-31T23:52:42.666Z",
-    "version": "1.0.0",
-    "compatible": true
-=======
-      "genOnOff",
-      "seMetering"
-    ]
-  },
-  "metadata": {
-    "createdAt": "2025-07-31T20:27:54.009Z",
-    "version": "3.1.0",
-    "source": "generic_pattern_analysis",
-    "channels": 1
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   }
 }

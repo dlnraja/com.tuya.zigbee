@@ -1,88 +1,29 @@
 {
   "id": "-tz3000-light",
-  "name": {
-    "en": "Tuya _TZ3000 Light",
-    "fr": "Lampe Tuya _TZ3000",
-    "nl": "Tuya _TZ3000 Lamp",
-    "ta": "Tuya _TZ3000 விளக்கு"
-  },
   "class": "light",
+  "name": {
+    "en": " Tz3000 Light",
+    "fr": " Tz3000 Light",
+    "nl": " Tz3000 Light"
+  },
   "capabilities": [
-    {
-      "type": "boolean",
-      "title": {
-        "en": "On/Off",
-        "fr": "Marche/Arrêt",
-        "nl": "Aan/Uit",
-        "ta": "ஆன்/ஆஃப்"
-      },
-      "getable": true,
-      "setable": true,
-      "id": "onoff"
-    },
-    {
-      "type": "number",
-      "title": {
-        "en": "Dim Level",
-        "fr": "Niveau de variation",
-        "nl": "Dim niveau",
-        "ta": "டிம் நிலை"
-      },
-      "getable": true,
-      "setable": true,
-      "min": 0,
-      "max": 1,
-      "id": "dim"
-    }
+    "onoff",
+    "dim"
   ],
-  "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "_TZ3000_light",
-    "clusters": [
-      {
-        "attributes": [
-          "onOff"
-        ],
-        "commands": [
-          "toggle",
-          "off",
-          "on"
-        ],
-        "id": "genOnOff"
-      },
-      {
-        "attributes": [
-          "currentLevel"
-        ],
-        "commands": [
-          "moveToLevel",
-          "move",
-          "step"
-        ],
-        "id": "genLevelCtrl"
-      }
-    ]
-  },
-  "settings": {},
-  "fallback": false,
-  "description": "Generic Tuya light",
-  "metadata": {
-    "version": "1.0.0",
-<<<<<<< HEAD
-    "lastUpdated": "2025-07-31T23:52:33.182Z",
-=======
-    "lastUpdated": "2025-07-31T20:16:47.433Z",
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
-    "optimized": true
-  },
-  "integration": {
-    "integrated": true,
-<<<<<<< HEAD
-    "integratedAt": "2025-07-31T23:52:40.962Z",
-=======
-    "integratedAt": "2025-07-31T20:16:48.341Z",
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
-    "version": "1.0.0",
-    "compatible": true
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
+      "type": "number",
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
+    }
   }
 }

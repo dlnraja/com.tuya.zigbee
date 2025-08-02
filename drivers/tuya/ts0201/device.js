@@ -4,29 +4,36 @@ const Device = require('../../../lib/device.js');
 
 class TS0201Device extends Device {
     async onInit() {
-        this.log('Tuya Motion Sensor device initialized');
+        this.log('TS0201 device initialized');
         
         // Initialize capabilities
-        this.registerCapabilityListener('alarm_motion', this.onCapability.bind(this));
-        this.registerCapabilityListener('measure_temperature', this.onCapability.bind(this));
-        this.registerCapabilityListener('measure_humidity', this.onCapability.bind(this));
+        this.registerCapabilityListener('onoff', this.onCapability.bind(this));
+        this.registerCapabilityListener('dim', this.onCapability.bind(this));
     }
 
-    
-            async onCapability(capability, value) {
-                switch (capability) {
-                    case 'alarm_motion':
-                        await this.setCapabilityValue('alarm_motion', value);
-                        break;
-                    case 'measure_temperature':
-                        // Temperature measurement implementation
-                        break;
-                    case 'measure_humidity':
-                        // Humidity measurement implementation
-                        break;
-                }
-            }
+    async onCapability(capability, value) {
+        this.log('Capability ' + capability + ' changed to ' + value);
         
+        switch (capability) {
+            case 'onoff':
+                await this.handleOnoff(value);
+                break;
+            case 'dim':
+                await this.handleDim(value);
+                break;
+            default:
+                this.log('Unknown capability: ' + capability);
+        }
+    }
+
+    async handleOnoff(value) {
+        this.log('Setting onoff to: ' + value);
+        await this.setCapabilityValue('onoff', value);
+    }
+    async handleDim(value) {
+        this.log('Setting dim to: ' + value);
+        await this.setCapabilityValue('dim', value);
+    }
     
     // Device lifecycle methods
     async onSettings({ oldSettings, newSettings, changedKeys }) {

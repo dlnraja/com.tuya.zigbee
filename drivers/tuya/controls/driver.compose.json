@@ -1,0 +1,29 @@
+{
+  "id": "controls",
+  "class": "light",
+  "name": {
+    "en": "Controls",
+    "fr": "Controls",
+    "nl": "Controls"
+  },
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
+      "type": "number",
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
+    }
+  }
+}

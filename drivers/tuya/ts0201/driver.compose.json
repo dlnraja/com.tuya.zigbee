@@ -2,19 +2,19 @@
   "id": "ts0201",
   "class": "light",
   "name": {
-    "en": "Tuya Motion Sensor",
-    "fr": "Tuya Motion Sensor",
-    "nl": "Tuya Motion Sensor"
+    "en": "Motion sensor with temperature and humidity",
+    "fr": "Motion sensor with temperature and humidity",
+    "nl": "Motion sensor with temperature and humidity"
   },
   "capabilities": [
-    "alarm_motion",
-    "measure_temperature",
-    "measure_humidity"
+    "onoff",
+    "dim"
   ],
   "clusters": [
-    "msOccupancySensing",
-    "msTemperatureMeasurement",
-    "msRelativeHumidity"
+    "genOnOff",
+    "genLevelCtrl",
+    "genBasic",
+    "genIdentify"
   ],
   "settings": {
     "pollInterval": {

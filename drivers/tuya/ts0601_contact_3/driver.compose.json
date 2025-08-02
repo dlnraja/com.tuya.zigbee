@@ -1,110 +1,29 @@
 {
   "id": "ts0601_contact_3",
+  "class": "light",
   "name": {
-    "en": "Tuya TS0601_contact_3",
-    "fr": "Tuya TS0601_contact_3",
-    "nl": "Tuya TS0601_contact_3",
-    "ta": "Tuya TS0601_contact_3"
+    "en": "Ts0601 Contact 3",
+    "fr": "Ts0601 Contact 3",
+    "nl": "Ts0601 Contact 3"
   },
-  "class": "sensor",
   "capabilities": [
-    "alarm_contact",
-<<<<<<< HEAD
-    {
-      "type": "number",
-      "title": {
-        "en": "Temperature",
-        "fr": "Température",
-        "nl": "Temperatuur",
-        "ta": "வெப்பநிலை"
-      },
-      "getable": true,
-      "setable": false,
-      "unit": "°C",
-      "id": "measure_temperature"
-    },
-=======
-    "measure_temperature",
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
-    "measure_battery",
-    "measure_illuminance"
+    "onoff",
+    "dim"
   ],
-  "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "TS0601_contact_3",
-    "clusters": [
-      "genBasic",
-      "ssIasZone",
-<<<<<<< HEAD
-      {
-        "attributes": [
-          "measuredValue"
-        ],
-        "commands": [],
-        "id": "msTemperatureMeasurement"
-      },
-=======
-      "msTemperatureMeasurement",
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
-      "genPowerCfg",
-      "msIlluminanceMeasurement"
-    ]
-  },
-  "metadata": {
-<<<<<<< HEAD
-    "version": "1.0.0",
-    "lastUpdated": "2025-07-31T23:52:37.875Z",
-    "optimized": true
-  },
-  "capabilityProperties": {
-    "alarm_contact": {
-      "type": "boolean",
-      "title": {
-        "en": "Contact",
-        "fr": "Contact",
-        "nl": "Contact",
-        "ta": "தொடர்பு"
-      },
-      "getable": true,
-      "setable": false
-    },
-    "measure_temperature": {
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
       "type": "number",
-      "title": {
-        "en": "Temperature",
-        "fr": "Température",
-        "nl": "Temperatuur",
-        "ta": "வெப்பநிலை"
-      },
-      "getable": true,
-      "setable": false,
-      "unit": "°C"
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
     }
-  },
-  "clusterDetails": {
-    "ssIasZone": {
-      "attributes": [
-        "zoneState"
-      ],
-      "commands": []
-    },
-    "msTemperatureMeasurement": {
-      "attributes": [
-        "measuredValue"
-      ],
-      "commands": []
-    }
-  },
-  "integration": {
-    "integrated": true,
-    "integratedAt": "2025-07-31T23:52:43.976Z",
-    "version": "1.0.0",
-    "compatible": true
-=======
-    "createdAt": "2025-07-31T20:27:53.863Z",
-    "version": "3.1.0",
-    "source": "database_analysis",
-    "channels": 1
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
   }
 }

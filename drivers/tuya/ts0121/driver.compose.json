@@ -1,120 +1,29 @@
 {
   "id": "ts0121",
+  "class": "light",
   "name": {
-    "en": "Tuya TS0121 Plug",
-    "fr": "Prise Tuya TS0121",
-    "nl": "Tuya TS0121 Stekker",
-    "ta": "Tuya TS0121 பிளக்"
+    "en": "Ts0121",
+    "fr": "Ts0121",
+    "nl": "Ts0121"
   },
-  "class": "socket",
   "capabilities": [
-    {
-      "type": "boolean",
-      "title": {
-        "en": "On/Off",
-        "fr": "Marche/Arrêt",
-        "nl": "Aan/Uit",
-        "ta": "ஆன்/ஆஃப்"
-      },
-      "getable": true,
-      "setable": true,
-      "id": "onoff"
-    },
-    {
-      "type": "number",
-      "title": {
-        "en": "Power",
-        "fr": "Puissance",
-        "nl": "Vermogen",
-        "ta": "சக்தி"
-      },
-      "getable": true,
-      "setable": false,
-      "unit": "W",
-      "id": "meter_power"
-    },
-    "measure_current",
-    "measure_voltage"
+    "onoff",
+    "dim"
   ],
-  "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "TS0121",
-    "clusters": [
-      {
-        "attributes": [
-          "onOff"
-        ],
-        "commands": [
-          "toggle",
-          "off",
-          "on"
-        ],
-        "id": "genOnOff"
-      },
-      {
-        "attributes": [
-          "instantaneousDemand",
-          "currentSummationDelivered"
-        ],
-        "commands": [],
-        "id": "seMetering"
-      },
-      {
-        "attributes": [
-          "instantaneousDemand",
-          "currentSummationDelivered"
-        ],
-        "commands": [],
-        "id": "seMetering"
-      }
-    ]
-  },
-  "settings": {},
-  "fallback": false,
-  "description": "Smart plug with detailed power monitoring",
-  "metadata": {
-    "version": "1.0.0",
-<<<<<<< HEAD
-    "lastUpdated": "2025-07-31T23:52:34.099Z",
-=======
-    "lastUpdated": "2025-07-31T20:16:47.707Z",
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
-    "optimized": true
-  },
-  "integration": {
-    "integrated": true,
-<<<<<<< HEAD
-    "integratedAt": "2025-07-31T23:52:42.644Z",
-=======
-    "integratedAt": "2025-07-31T20:16:48.642Z",
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
-    "version": "1.0.0",
-    "compatible": true
-  },
-  "capabilityProperties": {
-    "measure_current": {
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
       "type": "number",
-      "title": {
-        "en": "Current",
-        "fr": "Courant",
-        "nl": "Stroom",
-        "ta": "மின்னோட்டம்"
-      },
-      "getable": true,
-      "setable": false,
-      "unit": "A"
-    },
-    "measure_voltage": {
-      "type": "number",
-      "title": {
-        "en": "Voltage",
-        "fr": "Tension",
-        "nl": "Spanning",
-        "ta": "மின்னழுத்தம்"
-      },
-      "getable": true,
-      "setable": false,
-      "unit": "V"
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
     }
   }
 }

@@ -1,79 +1,64 @@
-const Homey = require('homey');
-
 'use strict';
 
-const { ZigbeeDevice } = require('homey-meshdriver');
+const Device = require('../../../lib/device.js');
 
-class TS0601forumDevice extends ZigbeeDevice {
-    async onMeshInit() {
-        await super.onMeshInit();
-        this.log('Tuya TS0601 (Forum) initialized');
+class TS0601_forumDevice extends Device {
+    async onInit() {
+        this.log('TS0601_forum device initialized');
         
-        // Register capabilities
-        this.registerCapability('onoff', 'genOnOff');
-        this.registerCapability('dim', 'genOnOff');
+        // Initialize capabilities
+        this.registerCapabilityListener('onoff', this.onCapability.bind(this));
+        this.registerCapabilityListener('dim', this.onCapability.bind(this));
+    }
+
+    async onCapability(capability, value) {
+        this.log('Capability ' + capability + ' changed to ' + value);
         
-        // Add source metadata
-        this.setStoreValue('source', 'homey_forum');
-<<<<<<< HEAD
-        this.setStoreValue('scrapedAt', '2025-07-31T23:52:31.357Z');
-=======
-        this.setStoreValue('scrapedAt', '2025-07-31T20:16:46.809Z');
->>>>>>> 3775ec2fa491371fe5cee7f94ff7c514463b9a7c
+        switch (capability) {
+            case 'onoff':
+                await this.handleOnoff(value);
+                break;
+            case 'dim':
+                await this.handleDim(value);
+                break;
+            default:
+                this.log('Unknown capability: ' + capability);
+        }
+    }
+
+    async handleOnoff(value) {
+        this.log('Setting onoff to: ' + value);
+        await this.setCapabilityValue('onoff', value);
+    }
+    async handleDim(value) {
+        this.log('Setting dim to: ' + value);
+        await this.setCapabilityValue('dim', value);
     }
     
-    async onSettings(oldSettings, newSettings, changedKeys) {
-        this.log('Settings updated:', changedKeys);
+    // Device lifecycle methods
+    async onSettings({ oldSettings, newSettings, changedKeys }) {
+        this.log('Settings changed');
     }
-    
+
     async onRenamed(name) {
-        this.log('Device renamed to:', name);
+        this.log('Device renamed to', name);
     }
-    
+
     async onDeleted() {
         this.log('Device deleted');
     }
-    
-    async onError(error) {
-        this.log('Device error:', error);
-    }
-    
+
     async onUnavailable() {
         this.log('Device unavailable');
     }
-    
+
     async onAvailable() {
         this.log('Device available');
     }
 
-    // Optimized methods
-    async onSettings(oldSettings, newSettings, changedKeys) {
-        this.log('Settings updated:', changedKeys);
-    }
-    
-    async onRenamed(name) {
-        this.log('Device renamed to:', name);
-    }
-    
-    async onDeleted() {
-        this.log('Device deleted');
-    }
-    
-    // Error handling
     async onError(error) {
         this.log('Device error:', error);
-        this.setUnavailable(error.message);
-    }
-    
-    // Availability management
-    async onUnavailable() {
-        this.log('Device unavailable');
-    }
-    
-    async onAvailable() {
-        this.log('Device available');
-        this.setAvailable();
     }
 }
 
-module.exports = TS0601forumDevice;
+module.exports = TS0601_forumDevice;

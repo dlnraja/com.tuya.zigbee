@@ -2,19 +2,17 @@
   "id": "ts011f",
   "class": "light",
   "name": {
-    "en": "Tuya Smart Plug",
-    "fr": "Tuya Smart Plug",
-    "nl": "Tuya Smart Plug"
+    "en": "Smart plug with power monitoring",
+    "fr": "Smart plug with power monitoring",
+    "nl": "Smart plug with power monitoring"
   },
   "capabilities": [
     "onoff",
-    "measure_power",
-    "measure_current",
-    "measure_voltage"
+    "dim"
   ],
   "clusters": [
     "genOnOff",
-    "genPowerCfg",
+    "genLevelCtrl",
     "genBasic",
     "genIdentify"
   ],

@@ -1,0 +1,29 @@
+{
+  "id": "sensors",
+  "class": "light",
+  "name": {
+    "en": "Sensors",
+    "fr": "Sensors",
+    "nl": "Sensors"
+  },
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
+      "type": "number",
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
+    }
+  }
+}

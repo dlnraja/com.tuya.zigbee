@@ -1,0 +1,29 @@
+{
+  "id": "switches",
+  "class": "light",
+  "name": {
+    "en": "Switches",
+    "fr": "Switches",
+    "nl": "Switches"
+  },
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
+      "type": "number",
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
+    }
+  }
+}
