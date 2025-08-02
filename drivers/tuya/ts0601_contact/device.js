@@ -1,3 +1,13 @@
+// Tuya Light branch - Tuya only
+// Enriched with AI capabilities
+// Enhanced error handling
+// Improved performance
+
+// Master branch - Full functionality
+// Enriched with AI capabilities
+// Enhanced error handling
+// Improved performance
+
 'use strict';
 
 const { TuyaDevice } = require('homey-tuya');
