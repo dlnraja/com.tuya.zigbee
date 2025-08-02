@@ -20,7 +20,7 @@ class MegaPipelineEnrichedFixed {
             // Issue #6a5aab87 - RÉSOLUTION PROBLÈMES INSTALLATION CLI
             cliInstallation: {
                 fixAllIssues: true,
-                suppressionPowerShell: true,
+                suppressionjavascript: true,
                 correctionAppJson: true,
                 correctionPackageJson: true,
                 correctionAppJs: true,

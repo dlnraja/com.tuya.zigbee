@@ -1,10 +1,10 @@
 {
   "id": "ts0602",
-  "class": "light",
+  "class": "curtain",
   "name": {
-    "en": "Ts0602",
-    "fr": "Ts0602",
-    "nl": "Ts0602"
+    "en": "Curtain controller with position control",
+    "fr": "Curtain controller with position control",
+    "nl": "Curtain controller with position control"
   },
   "capabilities": [
     "onoff",

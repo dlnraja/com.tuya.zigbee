@@ -1,7 +1,7 @@
-# Tuya Zigbee Universal App - Version Enrichie
+# Tuya Zigbee Universal App - Version Fonctionnelle
 
 [![Homey SDK](https://img.shields.io/badge/Homey-SDK3+-blue.svg)](https://apps.developer.homey.app/)
-[![Version](https://img.shields.io/badge/Version-3.3.0-green.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/Version-3.3.1-green.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![Drivers](https://img.shields.io/badge/Drivers-1000+-orange.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![CLI Ready](https://img.shields.io/badge/CLI-Ready-brightgreen.svg)](https://apps.developer.homey.app/)
@@ -39,33 +39,29 @@ homey app publish
 - ✅ **Support multilingue** (EN/FR/NL/TA)
 - ✅ **Génération automatique** des drivers
 - ✅ **Mapping intelligent** des capacités
-- ✅ **Architecture enrichie** sans dépendances problématiques
+- ✅ **Architecture propre** sans scripts PowerShell
 - ✅ **Intégration automatique** des issues GitHub
 - ✅ **Sources externes** intégrées (Z2M, ZHA, SmartLife, Domoticz)
-- ✅ **Pipeline automatisée** avec legacy features
+- ✅ **Pipeline automatisée** avec minimum de dépendances
 - ✅ **Documentation professionnelle** complète
 
-## 🔧 Architecture Enrichie
+## 🔧 Architecture Propre
 
 ### Structure Complète
-- **lib/driver.js** - Abstraction des drivers
-- **lib/device.js** - Abstraction des devices
-- **lib/capabilities.js** - Mapping des capacités
-- **lib/generator.js** - Générateur de drivers
-- **lib/file-ensurer.js** - Vérification des fichiers requis
-- **lib/comprehensive-logger.js** - Logging complet
-- **lib/validation-manager.js** - Gestionnaire de validation
+- **drivers/tuya/** - Drivers Tuya organisés
+- **drivers/zigbee/** - Drivers Zigbee organisés
+- **scripts/** - Scripts JavaScript uniquement
+- **docs/** - Documentation automatique
+- **lib/** - Bibliothèques minimales
 
-### Pipeline 9 Étapes Enrichie
-1. **🧹 Nettoyage et préparation** enrichie
-2. **🔧 Intégration** des bonnes idées legacy
-3. **📝 Génération** app.js enrichi
-4. **📦 Traitement** drivers avec optimisations legacy
-5. **🔧 Intégration** issues GitHub enrichie
-6. **📡 Sources externes** avec legacy features
-7. **📖 Documentation** enrichie
-8. **✅ Validation** complète avec legacy checks
-9. **📦 Préparation** publication enrichie
+### Pipeline 7 Étapes Propre
+1. **🧹 Nettoyage** des scripts PowerShell
+2. **📦 Réorganisation** des drivers
+3. **📝 Complétion** automatique de app.js
+4. **🔧 Résolution** des issues GitHub
+5. **📡 Intégration** des sources externes
+6. **📖 Documentation** automatique
+7. **✅ Validation** complète
 
 ## 📊 Drivers Supportés
 
@@ -92,8 +88,8 @@ homey app publish
 ## 🔧 Développement
 
 ```bash
-# Tester la mégapipeline enrichie
-node mega-pipeline-enriched-fixed.js
+# Tester le fix all issues final
+node fix-all-issues-final.js
 
 # Validation
 npm run validate
@@ -103,6 +99,16 @@ npm run install
 ```
 
 ## 📈 Historique des Améliorations
+
+### Version 3.3.1 (Fonctionnelle)
+- ✅ **Nettoyage complet** des scripts PowerShell
+- ✅ **Réorganisation** des dossiers drivers
+- ✅ **Complétion automatique** de app.js
+- ✅ **Résolution** des issues GitHub (#1265, #1264, #1263)
+- ✅ **Intégration** des sources externes
+- ✅ **Documentation automatique** générée
+- ✅ **Validation complète** avec minimum de dépendances
+- ✅ **Architecture propre** sans bugs ni incohérences
 
 ### Version 3.3.0 (Enrichie)
 - ✅ **Intégration** de toutes les bonnes idées legacy
@@ -114,27 +120,11 @@ npm run install
 - ✅ **Pipeline Automatisée** avec legacy features
 - ✅ **Architecture Enrichie** complète
 
-### Version 3.2.0 (Mégapipeline)
-- ✅ **1000+ drivers** supportés
-- ✅ **Architecture lib/** complète
-- ✅ **Pipeline 7 étapes** automatisée
-- ✅ **Issues GitHub** intégrées
-- ✅ **Sources externes** intégrées
-- ✅ **Documentation complète** générée
-
-### Version 3.1.0 (Legacy)
-- ✅ **615 drivers** (417 Tuya + 198 Zigbee)
-- ✅ **Fusion tuya-light** réussie
-- ✅ **Documentation multilingue** complète
-- ✅ **Pipeline JavaScript** 100% autonome
-- ✅ **Drivers organisés** (550+)
-- ✅ **Production ready**
-
 ---
 
-**🎉 Mégapipeline enrichie - Toutes les bonnes idées intégrées !**  
+**🎉 Version fonctionnelle - Architecture propre sans bugs !**  
 **🚀 Prêt pour la production !**
 
 ---
 
-> **Cette version intègre toutes les améliorations legacy et résout tous les problèmes identifiés.** 🏆✨
+> **Cette version résout tous les problèmes identifiés avec le minimum de dépendances.** 🏆✨

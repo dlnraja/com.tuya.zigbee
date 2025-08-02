@@ -1,6 +1,6 @@
 {
   "id": "ts011f",
-  "class": "light",
+  "class": "socket",
   "name": {
     "en": "Smart plug with power monitoring",
     "fr": "Smart plug with power monitoring",
@@ -8,13 +8,14 @@
   },
   "capabilities": [
     "onoff",
-    "dim"
+    "measure_power",
+    "meter_power"
   ],
   "clusters": [
     "genOnOff",
-    "genLevelCtrl",
     "genBasic",
-    "genIdentify"
+    "genIdentify",
+    "seMetering"
   ],
   "settings": {
     "pollInterval": {
