@@ -2,29 +2,29 @@
 
 const Device = require('homey').Device;
 
-class TS0004Device extends Device {
+class TS0601_contactDevice extends Device {
     async onInit() {
-        this.log('TS0004 device initialized with missing functions implemented');
+        this.log('TS0601_contact device initialized with missing functions implemented');
         
         // Initialize capabilities with missing functions
-        this.registerCapabilityListener('onoff', this.onCapability.bind(this));
+        this.registerCapabilityListener('alarm_contact', this.onCapability.bind(this));
     }
 
     async onCapability(capability, value) {
         this.log('Capability ' + capability + ' changed to ' + value + ' (missing function)');
         
         switch (capability) {
-            case 'onoff':
-                await this.handleOnoff(value);
+            case 'alarm_contact':
+                await this.handleAlarm_contact(value);
                 break;
             default:
                 this.log('Unknown capability: ' + capability);
         }
     }
 
-    async handleOnoff(value) {
-        this.log('Setting onoff to: ' + value + ' (missing function implemented)');
-        await this.setCapabilityValue('onoff', value);
+    async handleAlarm_contact(value) {
+        this.log('Setting alarm_contact to: ' + value + ' (missing function implemented)');
+        await this.setCapabilityValue('alarm_contact', value);
     }
     
     // Device lifecycle methods with missing functions
@@ -53,4 +53,4 @@ class TS0004Device extends Device {
     }
 }
 
-module.exports = TS0004Device;
+module.exports = TS0601_contactDevice;

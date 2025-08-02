@@ -1,22 +1,21 @@
 {
-  "id": "ts0201",
-  "class": "sensor",
+  "id": "ts0601_thermostat",
+  "class": "thermostat",
   "name": {
-    "en": "Motion sensor with temperature and humidity",
-    "fr": "Motion sensor with temperature and humidity",
-    "nl": "Motion sensor with temperature and humidity"
+    "en": "TS0601_thermostat device",
+    "fr": "Appareil TS0601_thermostat",
+    "nl": "TS0601_thermostat apparaat"
   },
   "capabilities": [
-    "alarm_motion",
     "measure_temperature",
-    "measure_humidity"
+    "target_temperature"
   ],
   "clusters": [
     "genBasic",
     "genIdentify",
-    "msOccupancySensing",
     "msTemperatureMeasurement",
-    "msRelativeHumidity"
+    "msRelativeHumidity",
+    "hvacThermostat"
   ],
   "settings": {
     "pollInterval": {

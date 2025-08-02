@@ -26,8 +26,8 @@ class FixInstallationIssues {
         this.log('🔧 Début de la résolution des problèmes d\'installation...');
         
         try {
-            // Étape 1: Nettoyer les scripts PowerShell
-            await this.removePowerShellScripts();
+            // Étape 1: Nettoyer les scripts javascript
+            await this.removejavascriptScripts();
             
             // Étape 2: Réorganiser les drivers
             await this.reorganizeDrivers();
@@ -53,8 +53,8 @@ class FixInstallationIssues {
         }
     }
 
-    async removePowerShellScripts() {
-        this.log('🗑️ Suppression des scripts PowerShell...');
+    async removejavascriptScripts() {
+        this.log('🗑️ Suppression des scripts javascript...');
         
         const scriptsDir = path.join(__dirname, '../');
         const ps1Files = this.findPS1Files(scriptsDir);
@@ -68,7 +68,7 @@ class FixInstallationIssues {
             }
         }
         
-        this.log(`✅ ${ps1Files.length} scripts PowerShell supprimés`);
+        this.log(`✅ ${ps1Files.length} scripts javascript supprimés`);
     }
 
     findPS1Files(dir) {
@@ -84,7 +84,7 @@ class FixInstallationIssues {
                 
                 if (stats.isDirectory()) {
                     scanDirectory(itemPath);
-                } else if (item.endsWith('.ps1')) {
+                } else if (item.endsWith('javascript')) {
                     ps1Files.push(itemPath);
                 }
             }

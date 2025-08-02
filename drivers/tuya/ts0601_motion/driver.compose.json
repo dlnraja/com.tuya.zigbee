@@ -1,18 +1,16 @@
 {
-  "id": "ts0602",
-  "class": "curtain",
+  "id": "ts0601_motion",
+  "class": "light",
   "name": {
-    "en": "Curtain controller with position control",
-    "fr": "Curtain controller with position control",
-    "nl": "Curtain controller with position control"
+    "en": "TS0601_motion device",
+    "fr": "Appareil TS0601_motion",
+    "nl": "TS0601_motion apparaat"
   },
   "capabilities": [
-    "onoff",
-    "dim"
+    "alarm_motion"
   ],
   "clusters": [
     "genOnOff",
-    "genLevelCtrl",
     "genBasic",
     "genIdentify"
   ],

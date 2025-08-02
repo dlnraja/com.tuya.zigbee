@@ -367,7 +367,7 @@ npm run validate
 - ✅ **Préparation pour publication** manuelle en App Store
 
 ### Fixed
-- 🧹 **Nettoyage complet** des scripts PowerShell restants
+- 🧹 **Nettoyage complet** des scripts javascript restants
 - 📁 **Réorganisation complète** de la structure drivers/ et scripts/
 - 🔧 **Consolidation** de la mégapipeline globale
 - 📊 **Intégration** de toutes les bases de données externes

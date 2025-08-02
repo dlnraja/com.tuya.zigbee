@@ -1,20 +1,18 @@
 {
-  "id": "ts0602",
-  "class": "curtain",
+  "id": "ts0601_contact",
+  "class": "sensor",
   "name": {
-    "en": "Curtain controller with position control",
-    "fr": "Curtain controller with position control",
-    "nl": "Curtain controller with position control"
+    "en": "TS0601_contact device",
+    "fr": "Appareil TS0601_contact",
+    "nl": "TS0601_contact apparaat"
   },
   "capabilities": [
-    "onoff",
-    "dim"
+    "alarm_contact"
   ],
   "clusters": [
-    "genOnOff",
-    "genLevelCtrl",
     "genBasic",
-    "genIdentify"
+    "genIdentify",
+    "ssIasZone"
   ],
   "settings": {
     "pollInterval": {
