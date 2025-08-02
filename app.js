@@ -5,13 +5,14 @@ const { HomeyApp } = require('homey');
 class TuyaZigbeeApp extends HomeyApp {
     async onInit() {
         this.log('Tuya Zigbee App is running...');
+        this.log('Version: 3.3.2 - Peter CLI Fix');
         this.log('Total drivers: 1000+ (700+ Tuya + 300+ Zigbee)');
         
         // Register all drivers automatically
         await this.registerAllDrivers();
         
         this.log('App initialized successfully!');
-        this.log('Ready for installation: homey app install');
+        this.log('Ready for CLI installation: homey app install');
         this.log('Ready for validation: homey app validate');
         this.log('Ready for publication: homey app publish');
     }
