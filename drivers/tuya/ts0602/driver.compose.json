@@ -1,0 +1,32 @@
+{
+  "id": "ts0602",
+  "class": "light",
+  "name": {
+    "en": "Tuya RGB Light",
+    "fr": "Tuya RGB Light",
+    "nl": "Tuya RGB Light"
+  },
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "lightingColorCtrl",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
+      "type": "number",
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
+    }
+  }
+}

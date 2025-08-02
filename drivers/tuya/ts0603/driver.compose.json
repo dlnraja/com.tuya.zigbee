@@ -1,0 +1,29 @@
+{
+  "id": "ts0603",
+  "class": "light",
+  "name": {
+    "en": "Tuya Temperature/Humidity Sensor",
+    "fr": "Tuya Temperature/Humidity Sensor",
+    "nl": "Tuya Temperature/Humidity Sensor"
+  },
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "clusters": [
+    "msTemperatureMeasurement",
+    "msRelativeHumidity",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
+      "type": "number",
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
+    }
+  }
+}

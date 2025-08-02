@@ -1,0 +1,29 @@
+{
+  "id": "ts0201",
+  "class": "light",
+  "name": {
+    "en": "Tuya Motion Sensor",
+    "fr": "Tuya Motion Sensor",
+    "nl": "Tuya Motion Sensor"
+  },
+  "capabilities": [
+    "alarm_motion",
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "clusters": [
+    "msOccupancySensing",
+    "msTemperatureMeasurement",
+    "msRelativeHumidity"
+  ],
+  "settings": {
+    "pollInterval": {
+      "type": "number",
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
+    }
+  }
+}
