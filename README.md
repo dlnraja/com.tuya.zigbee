@@ -1,21 +1,38 @@
-# Tuya Zigbee App for Homey
+# Tuya Zigbee Universal App
 
-Complete Tuya Zigbee device support for Homey with SDK3+ compatibility.
-
-## Features
-- Full Tuya Zigbee device support (29 drivers)
-- SDK3+ compatibility
-- Works on all Homey devices (Pro, Bridge, Cloud)
-- Automatic device detection and configuration
+**Version**: 3.1.3  
+**Compatibility**: Homey SDK3+  
+**Drivers**: 615+ drivers (417 Tuya + 198 Zigbee)
 
 ## Installation
+
 ```bash
 homey app install
 ```
 
-## Support
-- GitHub: https://github.com/dlnraja/com.tuya.zigbee
-- Community: https://community.homey.app/t/app-pro-tuya-zigbee-app/26439
+## Features
 
-## License
-MIT License
+- ✅ 615+ drivers supported
+- ✅ Homey SDK3+ compatible
+- ✅ Easy installation via CLI
+- ✅ Complete validation
+- ✅ Multilingual support
+
+## Supported Devices
+
+- **Lights**: RGB, dimmable, tunable, strips
+- **Switches**: On/off, dimmers, scene controllers
+- **Plugs**: Smart plugs, power monitoring
+- **Sensors**: Motion, contact, humidity, pressure
+- **Controls**: Curtains, blinds, thermostats
+- **Temperature**: Temperature and humidity sensors
+
+## Usage
+
+1. Install the app via `homey app install`
+2. Add your Tuya/Zigbee devices
+3. Enjoy automation!
+
+---
+
+**Ready for production!** 🚀
