@@ -1,0 +1,52 @@
+'use strict';
+
+const { ZigbeeDevice } = require('homey-meshdriver');
+
+class xiaomiaqaratemperature95Device extends ZigbeeDevice {
+    async onMeshInit() {
+        try {
+            await super.onMeshInit();
+            this.log('xiaomi-aqara-temperature-95 initialized');
+            
+            // Register capabilities
+            this.registerCapability('measure_temperature', 'genOnOff');
+            this.registerCapability('measure_humidity', 'genOnOff');
+            
+            // Add metadata
+            this.setStoreValue('modelId', 'xiaomi-aqara-temperature-95');
+            this.setStoreValue('source', 'historical_recovery');
+            this.setStoreValue('category', 'temperature');
+            this.setStoreValue('createdAt', '2025-07-31T21:10:01.027Z');
+            
+        } catch (error) {
+            this.log('Error during mesh init:', error);
+            throw error;
+        }
+    }
+    
+    async onSettings(oldSettings, newSettings, changedKeys) {
+        this.log('Settings updated:', changedKeys);
+    }
+    
+    async onRenamed(name) {
+        this.log('Device renamed to:', name);
+    }
+    
+    async onDeleted() {
+        this.log('Device deleted');
+    }
+    
+    async onError(error) {
+        this.log('Device error:', error);
+    }
+    
+    async onUnavailable() {
+        this.log('Device unavailable');
+    }
+    
+    async onAvailable() {
+        this.log('Device available');
+    }
+}
+
+module.exports = xiaomiaqaratemperature95Device;
