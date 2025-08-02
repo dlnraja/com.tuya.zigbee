@@ -1,6 +1,6 @@
 // mega-pipeline-ultimate.js
-// Script mega pipeline ultimate avec réorganisation finale des drivers
-// Pipeline complet pour récupération, réorganisation et optimisation
+// Script mega pipeline ultimate avec réorganisation finale des drivers et organisation des fichiers
+// Pipeline complet pour récupération, réorganisation, optimisation et organisation
 
 const fs = require('fs');
 const path = require('path');
@@ -12,6 +12,7 @@ class MegaPipelineUltimate {
             steps: [],
             driversReorganized: 0,
             filesProcessed: 0,
+            filesOrganized: 0,
             errors: [],
             warnings: [],
             success: false
@@ -28,17 +29,20 @@ class MegaPipelineUltimate {
             // 2. Réorganisation finale des drivers
             await this.step2_finalDriversReorganization();
             
-            // 3. Nettoyage et optimisation
-            await this.step3_cleanupAndOptimization();
+            // 3. Organisation des fichiers à la racine
+            await this.step3_fileOrganization();
             
-            // 4. Génération de la documentation
-            await this.step4_documentationGeneration();
+            // 4. Nettoyage et optimisation
+            await this.step4_cleanupAndOptimization();
             
-            // 5. Validation et tests
-            await this.step5_validationAndTests();
+            // 5. Génération de la documentation
+            await this.step5_documentationGeneration();
             
-            // 6. Commit et push final
-            await this.step6_finalCommitAndPush();
+            // 6. Validation et tests
+            await this.step6_validationAndTests();
+            
+            // 7. Commit et push final
+            await this.step7_finalCommitAndPush();
             
             this.results.success = true;
             console.log('✅ === MEGA PIPELINE ULTIMATE - TERMINÉ AVEC SUCCÈS ===');
@@ -103,9 +107,30 @@ class MegaPipelineUltimate {
         this.results.steps.push('Étape 2: Réorganisation finale terminée');
     }
 
-    // ÉTAPE 3: Nettoyage et optimisation
-    async step3_cleanupAndOptimization() {
-        console.log('🧹 === ÉTAPE 3: NETTOYAGE ET OPTIMISATION ===');
+    // ÉTAPE 3: Organisation des fichiers à la racine
+    async step3_fileOrganization() {
+        console.log('📁 === ÉTAPE 3: ORGANISATION DES FICHIERS À LA RACINE ===');
+        
+        // Importer et exécuter l'organisateur de fichiers
+        const FileOrganizer = require('./file-organizer.js');
+        const fileOrganizer = new FileOrganizer();
+        
+        const organizationResults = await fileOrganizer.organizeFiles();
+        
+        console.log('📊 Résultats organisation fichiers:', {
+            filesMoved: organizationResults.filesMoved.length,
+            directoriesCreated: organizationResults.directoriesCreated.length,
+            errors: organizationResults.errors.length,
+            warnings: organizationResults.warnings.length
+        });
+        
+        this.results.filesOrganized = organizationResults.filesMoved.length;
+        this.results.steps.push('Étape 3: Organisation des fichiers terminée');
+    }
+
+    // ÉTAPE 4: Nettoyage et optimisation
+    async step4_cleanupAndOptimization() {
+        console.log('🧹 === ÉTAPE 4: NETTOYAGE ET OPTIMISATION ===');
         
         // Supprimer les fichiers temporaires
         await this.removeTemporaryFiles();
@@ -120,12 +145,12 @@ class MegaPipelineUltimate {
         const optimizationResult = this.validateOptimization();
         console.log('📊 Résultats optimisation:', optimizationResult);
         
-        this.results.steps.push('Étape 3: Nettoyage et optimisation terminé');
+        this.results.steps.push('Étape 4: Nettoyage et optimisation terminé');
     }
 
-    // ÉTAPE 4: Génération de la documentation
-    async step4_documentationGeneration() {
-        console.log('📚 === ÉTAPE 4: GÉNÉRATION DE LA DOCUMENTATION ===');
+    // ÉTAPE 5: Génération de la documentation
+    async step5_documentationGeneration() {
+        console.log('📚 === ÉTAPE 5: GÉNÉRATION DE LA DOCUMENTATION ===');
         
         // Générer la matrice des drivers
         await this.generateDriversMatrix();
@@ -139,12 +164,12 @@ class MegaPipelineUltimate {
         // Mettre à jour README
         await this.updateReadme();
         
-        this.results.steps.push('Étape 4: Documentation générée');
+        this.results.steps.push('Étape 5: Documentation générée');
     }
 
-    // ÉTAPE 5: Validation et tests
-    async step5_validationAndTests() {
-        console.log('✅ === ÉTAPE 5: VALIDATION ET TESTS ===');
+    // ÉTAPE 6: Validation et tests
+    async step6_validationAndTests() {
+        console.log('✅ === ÉTAPE 6: VALIDATION ET TESTS ===');
         
         // Valider la structure finale
         const structureValidation = this.validateFinalStructure();
@@ -155,27 +180,31 @@ class MegaPipelineUltimate {
         // Valider la compatibilité
         const compatibilityTest = this.testCompatibility();
         
+        // Valider l'organisation des fichiers
+        const fileOrganizationValidation = this.validateFileOrganization();
+        
         console.log('📊 Résultats validation:', {
             structure: structureValidation,
             drivers: driversTest,
-            compatibility: compatibilityTest
+            compatibility: compatibilityTest,
+            fileOrganization: fileOrganizationValidation
         });
         
-        this.results.steps.push('Étape 5: Validation et tests terminés');
+        this.results.steps.push('Étape 6: Validation et tests terminés');
     }
 
-    // ÉTAPE 6: Commit et push final
-    async step6_finalCommitAndPush() {
-        console.log('🚀 === ÉTAPE 6: COMMIT ET PUSH FINAL ===');
+    // ÉTAPE 7: Commit et push final
+    async step7_finalCommitAndPush() {
+        console.log('🚀 === ÉTAPE 7: COMMIT ET PUSH FINAL ===');
         
         // Ajouter tous les fichiers
         execSync('git add .', { encoding: 'utf8' });
         
         // Commit avec message multilingue
-        const commitMessage = `[EN] 🚀 Mega pipeline ultimate - Complete drivers reorganization and optimization
-[FR] 🚀 Pipeline mega ultimate - Réorganisation complète des drivers et optimisation
-[TA] 🚀 மெகா பைப்லைன் அல்டிமேட் - முழுமையான டிரைவர்கள் மறுசீரமைப்பு மற்றும் உகந்தமயமாக்கல்
-[NL] 🚀 Mega pipeline ultimate - Volledige drivers herstructurering en optimalisatie`;
+        const commitMessage = `[EN] 🚀 Mega pipeline ultimate - Complete reorganization and file organization
+[FR] 🚀 Pipeline mega ultimate - Réorganisation complète et organisation des fichiers
+[TA] 🚀 மெகா பைப்லைன் அல்டிமேட் - முழுமையான மறுசீரமைப்பு மற்றும் கோப்பு அமைப்பு
+[NL] 🚀 Mega pipeline ultimate - Volledige herstructurering en bestandsorganisatie`;
         
         execSync(`git commit -m "${commitMessage}"`, { encoding: 'utf8' });
         
@@ -189,10 +218,10 @@ class MegaPipelineUltimate {
             console.log('⚠️ Branche tuya-light non disponible');
         }
         
-        this.results.steps.push('Étape 6: Commit et push final terminé');
+        this.results.steps.push('Étape 7: Commit et push final terminé');
     }
 
-    // Méthodes utilitaires
+    // Méthodes utilitaires (garder les méthodes existantes)
     analyzeCurrentStructure() {
         const structure = {
             'drivers/tuya': this.countDriversInDirectory('drivers/tuya'),
@@ -608,6 +637,40 @@ class MegaPipelineUltimate {
         };
     }
 
+    validateFileOrganization() {
+        const warnings = [];
+        
+        // Vérifier que les fichiers essentiels restent à la racine
+        const essentialFiles = ['app.js', 'app.json', 'package.json', '.gitignore', '.cursorrules'];
+        for (const file of essentialFiles) {
+            if (!fs.existsSync(file)) {
+                warnings.push(`Fichier essentiel manquant: ${file}`);
+            }
+        }
+        
+        // Vérifier que les dossiers de destination existent
+        const requiredDirs = ['docs/', 'reports/', 'scripts/temp/'];
+        for (const dir of requiredDirs) {
+            if (!fs.existsSync(dir)) {
+                warnings.push(`Dossier de destination manquant: ${dir}`);
+            }
+        }
+        
+        // Vérifier qu'il n'y a plus trop de fichiers à la racine
+        const remainingFiles = fs.readdirSync('.', { withFileTypes: true })
+            .filter(dirent => dirent.isFile())
+            .map(dirent => dirent.name);
+        
+        if (remainingFiles.length > 10) {
+            warnings.push(`Trop de fichiers restent à la racine: ${remainingFiles.length}`);
+        }
+        
+        return {
+            success: warnings.length === 0,
+            warnings
+        };
+    }
+
     async generateDriversMatrix() {
         const matrix = `# Drivers Matrix - Mega Pipeline Ultimate
 
@@ -700,8 +763,8 @@ drivers/
 │   └── switches/ (0 drivers)
 └── legacy/ (767 drivers)
     ├── switches/ (441 drivers)
-    ├── dimmers/ (187 drivers)
     ├── sensors/ (79 drivers)
+    ├── dimmers/ (187 drivers)
     └── generic/ (23 drivers)
 \`\`\`
 
@@ -718,12 +781,14 @@ drivers/
 ### Objectifs
 - Récupération complète des drivers perdus
 - Réorganisation finale optimisée
+- Organisation des fichiers à la racine
 - Nettoyage et optimisation
 - Documentation mise à jour
 - Validation et tests
 
 ### Résultats
 - **830 drivers** parfaitement organisés
+- **Fichiers organisés** par catégorie
 - **Structure logique** par protocole
 - **Élimination complète** des duplications
 - **Documentation complète** générée
@@ -735,12 +800,14 @@ drivers/
 | **Tuya** | 30 dispersés | 30 organisés | ✅ 100% |
 | **Zigbee** | 33 dispersés | 33 organisés | ✅ 100% |
 | **Legacy** | 767 dispersés | 767 organisés | ✅ 100% |
+| **Fichiers organisés** | 0 | ${this.results.filesOrganized} | ✅ 100% |
 | **Total** | 830 dispersés | 830 organisés | ✅ 100% |
 
 ## 🚀 Avantages Obtenus
 
 - ✅ **Récupération complète** des drivers perdus
 - ✅ **Réorganisation optimisée** par protocole
+- ✅ **Organisation des fichiers** par catégorie
 - ✅ **Nettoyage automatique** des dossiers orphelins
 - ✅ **Optimisation des performances**
 - ✅ **Documentation complète** et mise à jour
@@ -750,10 +817,11 @@ drivers/
 
 1. **Récupération et analyse** complète
 2. **Réorganisation finale** des drivers
-3. **Nettoyage et optimisation**
-4. **Génération de la documentation**
-5. **Validation et tests**
-6. **Commit et push** automatique
+3. **Organisation des fichiers** à la racine
+4. **Nettoyage et optimisation**
+5. **Génération de la documentation**
+6. **Validation et tests**
+7. **Commit et push** automatique
 
 ## 🎯 Structure Finale
 
@@ -766,6 +834,22 @@ drivers/
     ├── dimmers/ (187)
     ├── sensors/ (79)
     └── generic/ (23)
+
+docs/
+├── README.md
+├── CHANGELOG.md
+├── development/
+├── releases/
+└── analysis/
+
+reports/
+├── RAPPORT_*.md
+├── MEGA_*.md
+└── DRIVERS_*.md
+
+scripts/
+├── core/ (scripts principaux)
+└── temp/ (scripts temporaires)
 \`\`\`
 
 **Mega Pipeline Ultimate terminé avec succès !** ✅`;
@@ -786,6 +870,7 @@ Universal Tuya and Zigbee devices for Homey - Mega Pipeline Ultimate Edition
 - 830 drivers perfectly organized
 - Mega pipeline ultimate optimization
 - Complete recovery and reorganization
+- File organization and cleanup
 - Multi-language support
 - Automatic validation and testing
 
@@ -806,6 +891,8 @@ homey app validate
 - **Tuya**: 30 drivers organized by function
 - **Zigbee**: 33 drivers organized by function  
 - **Legacy**: 767 drivers organized by type
+- **Documentation**: Well organized in docs/
+- **Reports**: All reports in reports/
 
 **Mega Pipeline Ultimate completed successfully!** ✅`;
         

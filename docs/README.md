@@ -1,39 +1,31 @@
-# Documentation Index
+# Tuya Zigbee Universal - Mega Pipeline Ultimate
 
-## 📚 **Guides d'Installation**
+Universal Tuya and Zigbee devices for Homey - Mega Pipeline Ultimate Edition
 
-- [Installation Guide (EN)](installation/installation-guide-en.md)
-- [Installation Guide (FR)](installation/installation-guide-fr.md)
-- [Installation Guide (NL)](installation/installation-guide-nl.md)
-- [Installation Guide (TA)](installation/installation-guide-ta.md)
+## Features
 
-## 🔧 **Documentation des Outils**
+- 830 drivers perfectly organized
+- Mega pipeline ultimate optimization
+- Complete recovery and reorganization
+- Multi-language support
+- Automatic validation and testing
 
-- [Tools Documentation](tools/tools-documentation.md)
-- [Tools JSON](tools/tools-documentation.json)
+## Installation
 
-## 📋 **Vues d'Ensemble**
+```bash
+homey app install
+```
 
-- [Overview (EN)](en/index.md)
-- [Overview (FR)](fr/index.md)
-- [Overview (NL)](nl/index.md)
-- [Overview (TA)](ta/index.md)
+## Validation
 
-## 🚀 **Guides de Migration**
+```bash
+homey app validate
+```
 
-- [Version Migration Guide](migration/version-migration-guide.md)
-- [Driver Migration Guide](migration/driver-migration-guide.md)
+## Structure
 
-## 🧪 **Guides de Test**
+- **Tuya**: 30 drivers organized by function
+- **Zigbee**: 33 drivers organized by function  
+- **Legacy**: 767 drivers organized by type
 
-- [Testing Procedures](testing/testing-procedures.md)
-- [Test Results](testing/test-results.md)
-
-## 📊 **Rapports**
-
-- [Forum Analysis Report](reports/forum-analysis-report.md)
-- [Implementation Report](reports/implementation-report.md)
-- [Version Comparison Report](reports/version-comparison-report.md)
-
----
-**Index généré automatiquement par Documentation Finalizer**
+**Mega Pipeline Ultimate completed successfully!** ✅

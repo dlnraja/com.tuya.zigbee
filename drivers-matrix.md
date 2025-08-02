@@ -89,8 +89,8 @@ drivers/
 │   └── switches/ (0 drivers)
 └── legacy/ (767 drivers)
     ├── switches/ (441 drivers)
-    ├── dimmers/ (187 drivers)
     ├── sensors/ (79 drivers)
+    ├── dimmers/ (187 drivers)
     └── generic/ (23 drivers)
 ```
 
