@@ -1,0 +1,34 @@
+{
+  "id": "smart-life-fan",
+  "name": {
+    "en": "smart-life-fan Device",
+    "fr": "Appareil smart-life-fan",
+    "nl": "smart-life-fan Apparaat",
+    "de": "smart-life-fan Gerät",
+    "es": "Dispositivo smart-life-fan"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "samsung-smartthings-temperature-6",
+  "name": {
+    "en": "samsung-smartthings-temperature-6 Device",
+    "fr": "Appareil samsung-smartthings-temperature-6",
+    "nl": "samsung-smartthings-temperature-6 Apparaat",
+    "de": "samsung-smartthings-temperature-6 Gerät",
+    "es": "Dispositivo samsung-smartthings-temperature-6"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

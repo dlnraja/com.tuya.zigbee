@@ -1,0 +1,34 @@
+{
+  "id": "TS0601_lock",
+  "name": {
+    "en": "TS0601_lock Device",
+    "fr": "Appareil TS0601_lock",
+    "nl": "TS0601_lock Apparaat",
+    "de": "TS0601_lock Gerät",
+    "es": "Dispositivo TS0601_lock"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power",
+    "meter_power"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

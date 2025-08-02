@@ -1,56 +1,56 @@
 'use strict';
 
-const Device = require('homey').Device;
+const { TuyaDevice } = require('homey-tuya');
 
-class TS0601_motionDevice extends Device {
+class TS0601motionDevice extends TuyaDevice {
     async onInit() {
-        this.log('TS0601_motion device initialized with missing functions implemented');
+        this.log('TS0601_motion device initialized');
         
-        // Initialize capabilities with missing functions
-        this.registerCapabilityListener('alarm_motion', this.onCapability.bind(this));
-    }
-
-    async onCapability(capability, value) {
-        this.log('Capability ' + capability + ' changed to ' + value + ' (missing function)');
+        // Initialize device capabilities
+        await this.initializeCapabilities();
         
-        switch (capability) {
-            case 'alarm_motion':
-                await this.handleAlarm_motion(value);
-                break;
-            default:
-                this.log('Unknown capability: ' + capability);
-        }
-    }
-
-    async handleAlarm_motion(value) {
-        this.log('Setting alarm_motion to: ' + value + ' (missing function implemented)');
-        await this.setCapabilityValue('alarm_motion', value);
+        // Register device events
+        this.registerDeviceEvents();
     }
     
-    // Device lifecycle methods with missing functions
-    async onSettings({ oldSettings, newSettings, changedKeys }) {
-        this.log('Settings changed (missing function implemented)');
+    async initializeCapabilities() {
+        // Add device-specific capabilities
+        if (this.hasCapability('onoff')) {
+            this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
+        }
+        
+        if (this.hasCapability('dim')) {
+            this.registerCapabilityListener('dim', this.onCapabilityDim.bind(this));
+        }
+        
+        if (this.hasCapability('measure_power')) {
+            this.setCapabilityValue('measure_power', 0);
+        }
     }
-
-    async onRenamed(name) {
-        this.log('Device renamed to', name, '(missing function implemented)');
+    
+    registerDeviceEvents() {
+        // Register device-specific events
+        this.on('dp_refresh', this.onDpRefresh.bind(this));
     }
-
-    async onDeleted() {
-        this.log('Device deleted (missing function implemented)');
+    
+    async onCapabilityOnoff(value) {
+        // Handle on/off capability
+        await this.setDataPointValue(1, value);
     }
-
-    async onUnavailable() {
-        this.log('Device unavailable (missing function implemented)');
+    
+    async onCapabilityDim(value) {
+        // Handle dimming capability
+        await this.setDataPointValue(2, value * 100);
     }
-
-    async onAvailable() {
-        this.log('Device available (missing function implemented)');
-    }
-
-    async onError(error) {
-        this.log('Device error:', error, '(missing function implemented)');
+    
+    onDpRefresh(data) {
+        // Handle data point refresh
+        if (data.dp === 1) {
+            this.setCapabilityValue('onoff', data.value);
+        } else if (data.dp === 2) {
+            this.setCapabilityValue('dim', data.value / 100);
+        }
     }
 }
 
-module.exports = TS0601_motionDevice;
+module.exports = TS0601motionDevice;

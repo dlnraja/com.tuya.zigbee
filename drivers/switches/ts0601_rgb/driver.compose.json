@@ -1,0 +1,30 @@
+{
+  "id": "ts0601_rgb",
+  "name": {
+    "en": "TS0601_rgb Device",
+    "fr": "Appareil TS0601_rgb",
+    "nl": "TS0601_rgb Apparaat"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "light_hue",
+    "light_saturation",
+    "light_temperature"
+  ],
+  "zigbee": {
+    "manufacturer": "Tuya",
+    "model": "TS0601_rgb",
+    "supports": [
+      "genOnOff",
+      "genLevelCtrl"
+    ],
+    "fromZigbee": [],
+    "toZigbee": []
+  },
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  }
+}

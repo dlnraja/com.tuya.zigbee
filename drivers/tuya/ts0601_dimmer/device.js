@@ -1,61 +1,56 @@
 'use strict';
 
-const Device = require('../../../lib/device.js');
+const { TuyaDevice } = require('homey-tuya');
 
-class ts0601_dimmerDevice extends Device {
+class TS0601dimmerDevice extends TuyaDevice {
     async onInit() {
-        this.log('ts0601_dimmer device initialized (enriched version)');
+        this.log('TS0601_dimmer device initialized');
         
-        // Initialize capabilities with legacy optimizations
-        this.registerCapabilityListener('onoff', this.onCapability.bind(this));\n        this.registerCapabilityListener('dim', this.onCapability.bind(this));
-    }
-
-    async onCapability(capability, value) {
-        this.log('Capability ' + capability + ' changed to ' + value + ' (enriched)');
+        // Initialize device capabilities
+        await this.initializeCapabilities();
         
-        switch (capability) {
-            case 'onoff':
-                await this.handleOnoff(value);
-                break;\n            case 'dim':
-                await this.handleDim(value);
-                break;
-            default:
-                this.log('Unknown capability: ' + capability);
-        }
-    }
-
-    async handleOnoff(value) {
-        this.log('Setting onoff to: ' + value + ' (enriched)');
-        await this.setCapabilityValue('onoff', value);
-    }\n    async handleDim(value) {
-        this.log('Setting dim to: ' + value + ' (enriched)');
-        await this.setCapabilityValue('dim', value);
+        // Register device events
+        this.registerDeviceEvents();
     }
     
-    // Device lifecycle methods (enriched with legacy features)
-    async onSettings({ oldSettings, newSettings, changedKeys }) {
-        this.log('Settings changed (enriched)');
+    async initializeCapabilities() {
+        // Add device-specific capabilities
+        if (this.hasCapability('onoff')) {
+            this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
+        }
+        
+        if (this.hasCapability('dim')) {
+            this.registerCapabilityListener('dim', this.onCapabilityDim.bind(this));
+        }
+        
+        if (this.hasCapability('measure_power')) {
+            this.setCapabilityValue('measure_power', 0);
+        }
     }
-
-    async onRenamed(name) {
-        this.log('Device renamed to', name, '(enriched)');
+    
+    registerDeviceEvents() {
+        // Register device-specific events
+        this.on('dp_refresh', this.onDpRefresh.bind(this));
     }
-
-    async onDeleted() {
-        this.log('Device deleted (enriched)');
+    
+    async onCapabilityOnoff(value) {
+        // Handle on/off capability
+        await this.setDataPointValue(1, value);
     }
-
-    async onUnavailable() {
-        this.log('Device unavailable (enriched)');
+    
+    async onCapabilityDim(value) {
+        // Handle dimming capability
+        await this.setDataPointValue(2, value * 100);
     }
-
-    async onAvailable() {
-        this.log('Device available (enriched)');
-    }
-
-    async onError(error) {
-        this.log('Device error:', error, '(enriched)');
+    
+    onDpRefresh(data) {
+        // Handle data point refresh
+        if (data.dp === 1) {
+            this.setCapabilityValue('onoff', data.value);
+        } else if (data.dp === 2) {
+            this.setCapabilityValue('dim', data.value / 100);
+        }
     }
 }
 
-module.exports = ts0601_dimmerDevice;
+module.exports = TS0601dimmerDevice;

@@ -1,71 +1,56 @@
 'use strict';
 
-const Device = require('homey').Device;
+const { TuyaDevice } = require('homey-tuya');
 
-class TS0601_rgbDevice extends Device {
+class TS0601rgbDevice extends TuyaDevice {
     async onInit() {
-        this.log('TS0601_rgb device initialized with missing functions implemented');
+        this.log('TS0601_rgb device initialized');
         
-        // Initialize capabilities with missing functions
-        this.registerCapabilityListener('onoff', this.onCapability.bind(this));\n        this.registerCapabilityListener('dim', this.onCapability.bind(this));\n        this.registerCapabilityListener('light_hue', this.onCapability.bind(this));\n        this.registerCapabilityListener('light_saturation', this.onCapability.bind(this));
-    }
-
-    async onCapability(capability, value) {
-        this.log('Capability ' + capability + ' changed to ' + value + ' (missing function)');
+        // Initialize device capabilities
+        await this.initializeCapabilities();
         
-        switch (capability) {
-            case 'onoff':
-                await this.handleOnoff(value);
-                break;\n            case 'dim':
-                await this.handleDim(value);
-                break;\n            case 'light_hue':
-                await this.handleLight_hue(value);
-                break;\n            case 'light_saturation':
-                await this.handleLight_saturation(value);
-                break;
-            default:
-                this.log('Unknown capability: ' + capability);
-        }
-    }
-
-    async handleOnoff(value) {
-        this.log('Setting onoff to: ' + value + ' (missing function implemented)');
-        await this.setCapabilityValue('onoff', value);
-    }\n        async handleDim(value) {
-        this.log('Setting dim to: ' + value + ' (missing function implemented)');
-        await this.setCapabilityValue('dim', value);
-    }\n        async handleLight_hue(value) {
-        this.log('Setting light_hue to: ' + value + ' (missing function implemented)');
-        await this.setCapabilityValue('light_hue', value);
-    }\n        async handleLight_saturation(value) {
-        this.log('Setting light_saturation to: ' + value + ' (missing function implemented)');
-        await this.setCapabilityValue('light_saturation', value);
+        // Register device events
+        this.registerDeviceEvents();
     }
     
-    // Device lifecycle methods with missing functions
-    async onSettings({ oldSettings, newSettings, changedKeys }) {
-        this.log('Settings changed (missing function implemented)');
+    async initializeCapabilities() {
+        // Add device-specific capabilities
+        if (this.hasCapability('onoff')) {
+            this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
+        }
+        
+        if (this.hasCapability('dim')) {
+            this.registerCapabilityListener('dim', this.onCapabilityDim.bind(this));
+        }
+        
+        if (this.hasCapability('measure_power')) {
+            this.setCapabilityValue('measure_power', 0);
+        }
     }
-
-    async onRenamed(name) {
-        this.log('Device renamed to', name, '(missing function implemented)');
+    
+    registerDeviceEvents() {
+        // Register device-specific events
+        this.on('dp_refresh', this.onDpRefresh.bind(this));
     }
-
-    async onDeleted() {
-        this.log('Device deleted (missing function implemented)');
+    
+    async onCapabilityOnoff(value) {
+        // Handle on/off capability
+        await this.setDataPointValue(1, value);
     }
-
-    async onUnavailable() {
-        this.log('Device unavailable (missing function implemented)');
+    
+    async onCapabilityDim(value) {
+        // Handle dimming capability
+        await this.setDataPointValue(2, value * 100);
     }
-
-    async onAvailable() {
-        this.log('Device available (missing function implemented)');
-    }
-
-    async onError(error) {
-        this.log('Device error:', error, '(missing function implemented)');
+    
+    onDpRefresh(data) {
+        // Handle data point refresh
+        if (data.dp === 1) {
+            this.setCapabilityValue('onoff', data.value);
+        } else if (data.dp === 2) {
+            this.setCapabilityValue('dim', data.value / 100);
+        }
     }
 }
 
-module.exports = TS0601_rgbDevice;
+module.exports = TS0601rgbDevice;

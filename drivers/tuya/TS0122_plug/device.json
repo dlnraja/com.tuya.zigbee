@@ -1,0 +1,34 @@
+{
+  "id": "TS0122_plug",
+  "name": {
+    "en": "TS0122_plug Device",
+    "fr": "Appareil TS0122_plug",
+    "nl": "TS0122_plug Apparaat",
+    "de": "TS0122_plug Gerät",
+    "es": "Dispositivo TS0122_plug"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power",
+    "meter_power"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}
