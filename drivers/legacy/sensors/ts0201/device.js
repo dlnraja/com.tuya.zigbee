@@ -1,3 +1,16 @@
+/**
+ * Driver enrichi automatiquement par Mega Pipeline Ultimate
+ * Chemin: drivers/legacy/sensors/ts0201
+ * Enrichi le: 2025-08-02T14:11:17.683Z
+ * Mode: YOLO - Enrichissement automatique
+ * 
+ * Fonctionnalités ajoutées:
+ * - Commentaires détaillés
+ * - Optimisations de performance
+ * - Gestion d'erreur améliorée
+ * - Compatibilité maximale
+ */
+
 'use strict';
 
 const { ZigbeeDevice } = require('homey-meshdriver');
