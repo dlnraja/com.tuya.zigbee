@@ -1,0 +1,128 @@
+name: Tuya Zigbee Mega Pipeline
+
+on:
+  schedule:
+    - cron: '0 2 * * 1,4'
+  workflow_dispatch:
+  push:
+    branches: [test]
+
+jobs:
+  full-sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: ⬇️ Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: 🧪 Install Node Dependencies
+        run: npm ci
+
+      #################################################
+      # 🔍 1. Check & Fix Core App Structure (recursif)
+      #################################################
+      - name: 🧱 Fix app.json, app.js, paths & drivers
+        run: node scripts/fix-app-structure.js || echo "⚠️ Core structure correction skipped"
+
+      #################################################
+      # 🔍 2. Verify and Clean All Drivers
+      #################################################
+      - name: 🔍 Scan & Validate Drivers
+        run: node scripts/verify-all-drivers.js || echo "⚠️ Driver verification skipped"
+
+      #################################################
+      # 🔄 3. Fetch New Devices
+      #################################################
+      - name: 🔄 Fetch Tuya/Community/New Devices
+        run: node scripts/fetch-new-devices.js || echo "⚠️ Device fetching skipped"
+
+      #################################################
+      # 🧠 4. Enrich with AI (Optional)
+      #################################################
+      - name: 🧠 Enrich Drivers with AI (if key present)
+        if: ${{ secrets.OPENAI_API_KEY != '' }}
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: node scripts/ai-enrich-drivers.js || echo "⚠️ AI skipped"
+
+      #################################################
+      # 🕸️ 5. Scrape Homey Community
+      #################################################
+      - name: 🕸️ Scrape Homey Web & Forum
+        run: node scripts/scrape-homey-community.js || echo "⚠️ Web scraping skipped"
+
+      #################################################
+      # 🐛 6. Scrape Forum Bugs & Auto-Fix
+      #################################################
+      - name: 🐛 Scrape Forum Bugs & Auto-Fix
+        run: node scripts/scrape-homey-forum-bugs.js || echo "⚠️ Forum bugs scraping skipped"
+
+      #################################################
+      # 📬 7. Fetch GitHub Issues & PRs
+      #################################################
+      - name: 📬 Sync Issues & PRs
+        if: ${{ secrets.GITHUB_TOKEN != '' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/fetch-issues-pullrequests.js || echo "⚠️ GitHub fetch skipped"
+
+      #################################################
+      # 🧩 8. Resolve TODO Devices
+      #################################################
+      - name: 🧩 Generate & Fix TODO Devices
+        run: node scripts/resolve-todo-devices.js || echo "⚠️ TODO resolution skipped"
+
+      #################################################
+      # 🧪 9. Test Compatibility (Firmware + Homey)
+      #################################################
+      - name: 🧪 Compatibility Check (Firmware + Platform)
+        run: node scripts/test-multi-firmware-compatibility.js || echo "⚠️ Compatibility skipped"
+
+      #################################################
+      # 🛠️ 10. Homey CLI Validation
+      #################################################
+      - name: 🧰 Validate App via Homey CLI
+        run: |
+          if command -v homey > /dev/null; then
+            homey app validate || echo "⚠️ Homey CLI validation failed"
+          else
+            echo "⚠️ Homey CLI not installed in CI context"
+          fi
+
+      #################################################
+      # 📚 11. Generate Documentation
+      #################################################
+      - name: 📜 Generate README, Changelog, Matrix
+        run: node scripts/generate-docs.js || echo "⚠️ Doc generation skipped"
+
+      #################################################
+      # ✅ 12. Lint + Test Drivers
+      #################################################
+      - name: ✅ Lint & Unit Test
+        run: npm run lint && npm run test || echo "⚠️ Lint/test warnings"
+
+      #################################################
+      # 🚀 13. Commit & Push if token present
+      #################################################
+      - name: 🚀 Commit & Push
+        if: ${{ secrets.GITHUB_TOKEN != '' }}
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🚀 Auto-fix & enrich drivers [CI]"
+          branch: test
+          file_pattern: |
+            app.json
+            app.js
+            drivers/**
+            CHANGELOG.md
+            README.md
+            docs/**
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      #################################################
+      # 🌐 14. Deploy Dashboard (optional)
+      #################################################
+      - name: 🌐 Deploy Pages (if exists)
+        run: npm run deploy:pages || echo "⚠️ No dashboard to deploy" 

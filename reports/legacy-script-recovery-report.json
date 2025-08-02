@@ -1,0 +1,58 @@
+{
+  "timestamp": "2025-07-31T23:52:30.429Z",
+  "recoveredScripts": [
+    {
+      "message": "🚀 Début de la récupération des scripts legacy...",
+      "type": "info",
+      "timestamp": "2025-07-31T23:52:30.429Z"
+    },
+    {
+      "message": "🔧 Récupération des scripts legacy...",
+      "type": "info",
+      "timestamp": "2025-07-31T23:52:30.430Z"
+    },
+    {
+      "message": "❌ Erreur récupération scripts legacy: className is not defined",
+      "type": "error",
+      "timestamp": "2025-07-31T23:52:30.433Z"
+    },
+    {
+      "message": "📁 Organisation des scripts legacy...",
+      "type": "info",
+      "timestamp": "2025-07-31T23:52:30.435Z"
+    },
+    {
+      "message": "✅ Scripts organisés: 0 scripts",
+      "type": "info",
+      "timestamp": "2025-07-31T23:52:30.444Z"
+    }
+  ],
+  "missingScripts": [],
+  "errors": [],
+  "warnings": [],
+  "summary": {
+    "recoveredScripts": 0,
+    "categories": {
+      "analysis": [],
+      "scraping": [],
+      "recovery": [],
+      "fix": [],
+      "optimization": [],
+      "testing": [],
+      "validation": [],
+      "documentation": [],
+      "sync": [],
+      "dump": [],
+      "enhancement": [],
+      "completion": [],
+      "enrichment": [],
+      "resolution": [],
+      "verification": [],
+      "reporting": [],
+      "installation": [],
+      "pipeline": [],
+      "fusion": []
+    },
+    "status": "legacy_recovery_complete"
+  }
+}

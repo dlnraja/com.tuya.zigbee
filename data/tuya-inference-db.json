@@ -1,0 +1,55 @@
+{
+  "TS0001": {
+    "capabilities": [
+      "onoff"
+    ],
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": 1
+  },
+  "TS0002": {
+    "capabilities": [
+      "onoff",
+      "onoff"
+    ],
+    "clusters": [
+      "genOnOff",
+      "genOnOff"
+    ],
+    "endpoints": 2
+  },
+  "TS0003": {
+    "capabilities": [
+      "onoff",
+      "onoff",
+      "onoff"
+    ],
+    "clusters": [
+      "genOnOff",
+      "genOnOff",
+      "genOnOff"
+    ],
+    "endpoints": 3
+  },
+  "TS0601": {
+    "capabilities": [
+      "onoff"
+    ],
+    "clusters": [
+      "genOnOff"
+    ],
+    "endpoints": 1
+  },
+  "TS011F": {
+    "capabilities": [
+      "onoff",
+      "meter_power"
+    ],
+    "clusters": [
+      "genOnOff",
+      "seMetering"
+    ],
+    "endpoints": 1
+  }
+}

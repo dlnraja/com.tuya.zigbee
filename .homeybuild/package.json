@@ -1,0 +1,44 @@
+{
+  "name": "com.tuya.zigbee",
+  "version": "3.3.2",
+  "description": "Universal Tuya and Zigbee devices for Homey - Peter CLI Fix",
+  "main": "app.js",
+  "scripts": {
+    "test": "node test-generator.js",
+    "validate": "homey app validate",
+    "install": "homey app install",
+    "publish": "homey app publish",
+    "build": "homey app build"
+  },
+  "keywords": [
+    "tuya",
+    "zigbee",
+    "homey",
+    "smart",
+    "home",
+    "sdk3",
+    "cli",
+    "installation",
+    "peter-fix"
+  ],
+  "author": "dlnraja <dylan.rajasekaram@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "homey": "^2.0.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "homey": {
+    "min": "6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dlnraja/com.tuya.zigbee.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
+  },
+  "homepage": "https://github.com/dlnraja/com.tuya.zigbee#readme"
+}

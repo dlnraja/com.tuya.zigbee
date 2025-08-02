@@ -1,0 +1,24329 @@
+{
+  "timestamp": "2025-07-31T08:56:24.395Z",
+  "summary": {
+    "totalDrivers": 4862,
+    "fixedDrivers": 4813,
+    "errors": 1,
+    "successRate": "98.99",
+    "status": "ready_for_production",
+    "message": "Complete Tuya Zigbee support with 29 drivers"
+  },
+  "details": [
+    {
+      "path": "drivers\\tuya\\controllers\\generic\\tuya-light\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\tuya\\controllers\\generic\\tuya-smart-plug\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\tuya\\controllers\\generic\\tuya-switch\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\tuya\\controllers\\generic\\tuya-wall-switch\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\base-tuya-driver\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\dimmer_1_gang_tuya\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\generic-tuya-device\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\github-tuya-device-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\TS0201\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-apparaten\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-compatibiliteit\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-contact-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-curtain\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-100\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-101\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-102\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-103\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-104\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-105\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-106\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-107\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-108\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-109\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-110\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-111\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-112\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-113\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-114\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-115\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-116\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-117\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-118\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-119\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-120\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-121\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-122\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-123\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-124\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-125\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-126\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-127\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-128\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-129\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-130\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-131\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-132\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-133\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-134\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-135\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-136\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-137\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-138\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-139\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-140\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-141\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-142\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-143\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-144\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-145\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-146\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-147\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-148\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-149\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-150\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-151\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-152\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-153\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-154\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-155\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-156\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-157\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-158\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-159\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-160\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-61\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-62\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-63\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-64\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-65\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-66\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-67\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-68\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-69\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-70\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-71\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-72\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-73\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-74\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-75\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-76\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-77\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-78\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-79\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-80\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-81\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-82\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-83\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-84\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-85\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-86\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-87\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-88\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-89\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-90\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-91\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-92\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-93\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-94\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-95\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-96\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-97\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-98\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-developer-device-99\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-fan\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-garage-door\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-gateway\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-humidity-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-hvac\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-irrigation\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-light\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-lock\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-motion\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-motion-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-motion-sensor-community\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-pressure-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-rgb\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-smart-plug\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-smart-plug-community\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-switch\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-switch-ts\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-temperature\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-temperature-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-thermostat\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-valve\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-wall-switch\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-zigbee\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-zigbee-app\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\generic\\generic\\tuya-zigbee-rules\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\lights\\bulbs\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\tuya\\lights\\strips\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\tuya\\sensors\\contact\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\tuya\\sensors\\contact\\ts0601-contact-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\tuya\\sensors\\contact\\tuya-contact-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\tuya\\sensors\\humidity\\tuya-humidity-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\tuya\\sensors\\motion\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\tuya\\sensors\\motion\\ts0601-motion-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\tuya\\sensors\\motion\\tuya-motion-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\tuya\\sensors\\smoke\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\tuya\\sensors\\temperature\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\tuya\\sensors\\temperature\\ts0601-temperature-humidity\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\tuya\\sensors\\temperature\\tuya-temperature-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\tuya\\switches\\double\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\tuya\\switches\\single\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\tuya\\switches\\single\\TS0001\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\tuya\\switches\\triple\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\controllers\\generic\\ts0004-application\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\controllers\\generic\\ts0004-multiswitch\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\controllers\\generic\\zigbee-light\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\controllers\\generic\\zigbee-smart-plug\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\controllers\\generic\\zigbee-switch\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\controllers\\generic\\zigbee-wall-switch\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\bulbs\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\cree-bulbs-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\cree-bulbs-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\cree-bulbs-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\cree-bulbs-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\cree-bulbs-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\cree-bulbs-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\cree-bulbs-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\cree-bulbs-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\cree-bulbs-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\cree-bulbs-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\cree-bulbs-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\cree-bulbs-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\cree-bulbs-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\cree-bulbs-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\cree-bulbs-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\cree-bulbs-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\cree-bulbs-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\ge-bulbs-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\ge-bulbs-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\ge-bulbs-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\ge-bulbs-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\ge-bulbs-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\ge-bulbs-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\ge-bulbs-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\ge-bulbs-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\ge-bulbs-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\ge-bulbs-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\ge-bulbs-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\ge-bulbs-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\gledopto-bulbs-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\gledopto-bulbs-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\gledopto-bulbs-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\gledopto-bulbs-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\gledopto-bulbs-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\gledopto-bulbs-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\gledopto-bulbs-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\gledopto-bulbs-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\gledopto-bulbs-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\gledopto-bulbs-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\gledopto-bulbs-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\gledopto-bulbs-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\gledopto-bulbs-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\gledopto-bulbs-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\gledopto-bulbs-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\innr-bulbs-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\innr-bulbs-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\innr-bulbs-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\innr-bulbs-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\innr-bulbs-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\innr-bulbs-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\innr-bulbs-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\innr-bulbs-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\innr-bulbs-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\innr-bulbs-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\osram-bulbs-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\osram-bulbs-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\osram-bulbs-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\osram-bulbs-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\osram-bulbs-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\osram-bulbs-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\osram-bulbs-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\osram-bulbs-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\osram-bulbs-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\osram-bulbs-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\osram-bulbs-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\osram-bulbs-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\osram-bulbs-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\osram-bulbs-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\osram-bulbs-61\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\osram-bulbs-65\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\osram-bulbs-69\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\osram-bulbs-73\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\osram-bulbs-77\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\osram-bulbs-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\sylvania-bulbs-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\sylvania-bulbs-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\sylvania-bulbs-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\sylvania-bulbs-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\sylvania-bulbs-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\sylvania-bulbs-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\sylvania-bulbs-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\sylvania-bulbs-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\sylvania-bulbs-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\sylvania-bulbs-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\sylvania-bulbs-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\sylvania-bulbs-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\sylvania-bulbs-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\sylvania-bulbs-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\sylvania-bulbs-61\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\sylvania-bulbs-65\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\sylvania-bulbs-69\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\sylvania-bulbs-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\wyze-bulbs-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\wyze-bulbs-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\wyze-bulbs-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\wyze-bulbs-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\wyze-bulbs-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\wyze-bulbs-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\wyze-bulbs-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\wyze-bulbs-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\wyze-bulbs-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\wyze-bulbs-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\wyze-bulbs-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\bulbs\\wyze-bulbs-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\contact\\contact\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\contact\\zigbee-contact-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\342\\224\\234\\303\\253tat du projet\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\aeotec\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\amazon\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\apple\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-cameras-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-cameras-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-cameras-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-cameras-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-cameras-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-cameras-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-cameras-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-cameras-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-cameras-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-cameras-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-security-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-security-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-security-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-security-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-security-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-security-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-security-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-security-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-security-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-security-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-sensors-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-sensors-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-sensors-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-sensors-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-sensors-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-sensors-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-sensors-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-sensors-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-sensors-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\arlo-sensors-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-doorbell-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-doorbell-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-doorbell-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-doorbell-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-doorbell-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-doorbell-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-doorbell-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-doorbell-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-locks-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-locks-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-locks-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-locks-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-locks-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-locks-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-locks-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-locks-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-locks-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-security-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-security-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-security-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-security-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-security-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-security-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-security-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\august-security-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Automation\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Automatisation\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Automatisering\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Available scripts\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Beveiliging\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\bridges\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Capabilities\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Capteurs\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Cat\\342\\224\\234\\302\\256gories\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Climat\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Climate\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Clusters\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Contr\\342\\224\\234\\342\\224\\244leurs\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Controllers\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-lighting-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-lighting-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-lighting-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-lighting-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-lighting-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-lighting-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-lighting-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-lighting-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-lighting-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-lighting-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-lighting-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-lighting-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-lighting-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-lighting-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-lighting-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-lighting-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-panels-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-panels-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-panels-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-panels-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-panels-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-panels-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-panels-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-panels-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-panels-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-panels-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-panels-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-panels-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-panels-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-panels-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-panels-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-panels-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\cree-panels-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\curtain\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\custom-light\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Drivers Tuya\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Drivers Zigbee\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\elan\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-cameras-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-cameras-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-cameras-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-cameras-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-cameras-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-cameras-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-cameras-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-cameras-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-cameras-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-cameras-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-doorbell-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-doorbell-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-doorbell-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-doorbell-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-doorbell-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-doorbell-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-doorbell-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-doorbell-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-doorbell-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-doorbell-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-security-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-security-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-security-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-security-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-security-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-security-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-security-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-security-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-security-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-security-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-sensors-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-sensors-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-sensors-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-sensors-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-sensors-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-sensors-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-sensors-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-sensors-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-sensors-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\eufy-sensors-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\fan\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\fibaro\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\forum-homey-community-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\forum-homey-community-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\garage\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gateway\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-dimmers-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-dimmers-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-dimmers-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-dimmers-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-dimmers-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-dimmers-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-dimmers-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-dimmers-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-dimmers-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-dimmers-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-dimmers-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-dimmers-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-lighting-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-lighting-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-lighting-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-lighting-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-lighting-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-lighting-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-lighting-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-lighting-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-lighting-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-lighting-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-lighting-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-lighting-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-outlets-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-outlets-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-outlets-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-outlets-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-outlets-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-outlets-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-outlets-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-outlets-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-outlets-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-outlets-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-outlets-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-outlets-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-switches-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-switches-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-switches-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-switches-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-switches-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-switches-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-switches-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-switches-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-switches-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-switches-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-switches-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ge-switches-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\generic\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\generic--TZ3000-abc123\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\generic--TZ3000-def456\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\generic--TZ3000-excgg5kb\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\generic--TZ3000-ghi789\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\generic--TZ3000-hdlpifbk\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\generic--TZ3000-jkl012\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\generic--TZ3000-mno345\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\generic--TZ3000-ts0004-application50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\generic--TZ3000-ts0004-application52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\generic--TZ3000-ts0030\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\generic--TZ3000-ts0031\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\generic--TZ3000-ts0040\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\generic--TZ3000-ts0050\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\generic--TZ3000-ts0060\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\generic--TZ3000-u3oupgdy\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\generic--tz3000-unknown001\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\generic--tz3000-unknown002\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\generic--tz3000-unknown003\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\generic--TZ3000-wkr3jqmr\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\generic-zigbee-device\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\git-history-device-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-controllers-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-controllers-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-controllers-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-controllers-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-controllers-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-controllers-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-controllers-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-controllers-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-controllers-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-controllers-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-controllers-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-controllers-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-controllers-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-controllers-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-controllers-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-lighting-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-lighting-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-lighting-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-lighting-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-lighting-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-lighting-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-lighting-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-lighting-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-lighting-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-lighting-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-lighting-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-lighting-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-lighting-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-lighting-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gledopto-lighting-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\google\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\gosund\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-100\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-101\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-102\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-103\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-104\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-105\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-106\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-107\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-108\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-109\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-110\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-111\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-112\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-113\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-114\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-115\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-116\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-117\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-118\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-119\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-120\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-61\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-62\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-63\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-64\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-65\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-66\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-67\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-68\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-69\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-70\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-71\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-72\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-73\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-74\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-75\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-76\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-77\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-78\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-79\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-80\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-81\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-82\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-83\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-84\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-85\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-86\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-87\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-88\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-89\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-90\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-91\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-92\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-93\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-94\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-95\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-96\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-97\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-98\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\home-assistant-device-99\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-apps-device-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-100\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-61\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-62\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-63\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-64\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-65\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-66\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-67\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-68\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-69\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-70\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-71\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-72\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-73\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-74\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-75\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-76\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-77\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-78\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-79\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-80\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-81\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-82\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-83\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-84\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-85\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-86\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-87\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-88\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-89\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-90\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-91\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-92\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-93\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-94\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-95\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-96\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-97\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-98\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\homey-community-device-99\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\hvac\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\images\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\innr-lighting-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\innr-lighting-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\innr-lighting-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\innr-lighting-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\innr-lighting-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\innr-lighting-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\innr-lighting-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\innr-lighting-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\innr-lighting-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\innr-lighting-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\innr-panels-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\innr-panels-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\innr-panels-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\innr-panels-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\innr-panels-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\innr-panels-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\innr-panels-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\innr-panels-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\innr-panels-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\innr-panels-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\inovelli\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\irrigation\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\jasco\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Klimaat\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-locks-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-locks-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-locks-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-locks-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-locks-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-locks-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-locks-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-locks-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-locks-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-locks-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-locks-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-locks-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-locks-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-locks-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-locks-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-security-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-security-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-security-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-security-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-security-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-security-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-security-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-security-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-security-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-security-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-security-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-security-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-security-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-security-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\kwikset-security-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\leviton\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lg\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\light\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Local Only Mode\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\local-files-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\local-files-device-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\local-files-device-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\local-files-device-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\local-files-device-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\local-files-device-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\local-files-device-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\local-files-device-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\local-files-device-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\local-files-device-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\local-files-device-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\local-files-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\local-files-device-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\local-files-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\local-files-device-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\local-files-device-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\local-files-device-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\local-files-device-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\local-files-device-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\local-files-device-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lock\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\locks\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-blinds-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-blinds-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-blinds-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-blinds-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-blinds-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-blinds-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-blinds-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-blinds-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-blinds-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-blinds-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-blinds-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-blinds-62\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-blinds-67\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-blinds-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-blinds-72\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-blinds-77\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-curtains-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-curtains-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-curtains-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-curtains-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-curtains-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-curtains-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-curtains-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-curtains-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-curtains-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-curtains-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-curtains-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-curtains-63\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-curtains-68\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-curtains-73\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-curtains-78\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-curtains-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-dimmers-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-dimmers-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-dimmers-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-dimmers-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-dimmers-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-dimmers-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-dimmers-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-dimmers-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-dimmers-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-dimmers-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-dimmers-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-dimmers-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-dimmers-61\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-dimmers-66\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-dimmers-71\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-dimmers-76\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-sensors-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-sensors-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-sensors-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-sensors-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-sensors-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-sensors-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-sensors-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-sensors-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-sensors-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-sensors-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-sensors-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-sensors-64\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-sensors-69\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-sensors-74\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-sensors-79\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-sensors-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-switches-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-switches-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-switches-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-switches-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-switches-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-switches-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-switches-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-switches-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-switches-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-switches-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-switches-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-switches-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-switches-65\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-switches-70\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-switches-75\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\lutron-switches-80\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\meross\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Mode Local Only\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\nanoleaf-controllers-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\nanoleaf-controllers-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\nanoleaf-controllers-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\nanoleaf-controllers-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\nanoleaf-controllers-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\nanoleaf-controllers-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\nanoleaf-controllers-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\nanoleaf-lighting-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\nanoleaf-lighting-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\nanoleaf-lighting-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\nanoleaf-lighting-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\nanoleaf-lighting-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\nanoleaf-lighting-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\nanoleaf-lighting-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\nanoleaf-panels-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\nanoleaf-panels-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\nanoleaf-panels-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\nanoleaf-panels-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\nanoleaf-panels-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\nanoleaf-panels-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\nanoleaf-panels-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\nanoleaf-panels-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Native Zigbee\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\openhab-device-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-lighting-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-lighting-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-lighting-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-lighting-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-lighting-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-lighting-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-lighting-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-lighting-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-lighting-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-lighting-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-lighting-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-lighting-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-lighting-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-lighting-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-lighting-64\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-lighting-68\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-lighting-72\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-lighting-76\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-lighting-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-lighting-80\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-panels-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-panels-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-panels-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-panels-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-panels-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-panels-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-panels-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-panels-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-panels-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-panels-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-panels-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-panels-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-panels-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-panels-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-panels-63\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-panels-67\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-panels-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-panels-71\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-panels-75\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\osram-panels-79\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\plug\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\pressure\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Project status\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-cameras-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-cameras-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-cameras-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-cameras-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-cameras-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-cameras-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-cameras-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-cameras-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-cameras-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-cameras-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-cameras-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-cameras-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-cameras-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-doorbell-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-doorbell-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-doorbell-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-doorbell-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-doorbell-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-doorbell-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-doorbell-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-doorbell-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-doorbell-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-doorbell-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-doorbell-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-doorbell-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-doorbell-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-security-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-security-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-security-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-security-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-security-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-security-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-security-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-security-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-security-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-security-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-security-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-security-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-sensors-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-sensors-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-sensors-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-sensors-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-sensors-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-sensors-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-sensors-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-sensors-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-sensors-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-sensors-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-sensors-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\ring-sensors-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\rti\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\S\\342\\224\\234\\302\\256curit\\342\\224\\234\\302\\256\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-doorbell-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-doorbell-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-doorbell-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-doorbell-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-doorbell-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-doorbell-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-doorbell-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-doorbell-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-doorbell-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-doorbell-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-doorbell-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-doorbell-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-doorbell-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-locks-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-locks-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-locks-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-locks-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-locks-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-locks-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-locks-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-locks-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-locks-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-locks-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-locks-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-locks-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-locks-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-locks-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-security-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-security-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-security-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-security-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-security-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-security-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-security-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-security-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-security-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-security-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-security-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-security-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\schlage-security-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\scraped-app--tz3000-excgg5kb\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\scraped-app--tz3000-hdlpifbk\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\scraped-app--tz3000-wkr3jqmr\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\scraped-forum--tz3000-excgg5kb\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\scraped-forum--tz3000-hdlpifbk\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\scraped-forum--tz3000-wkr3jqmr\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Scripts disponibles\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\SDK3 Compliant\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Security\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Sensoren\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Sensors\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\smart-plug\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\smart_air_detection_box\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\smart_knob_switch\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\smart_remote_1_button\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\smart_remote_1_button_2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\switch\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\switches\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-lighting-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-lighting-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-lighting-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-lighting-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-lighting-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-lighting-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-lighting-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-lighting-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-lighting-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-lighting-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-lighting-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-lighting-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-lighting-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-lighting-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-lighting-64\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-lighting-68\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-lighting-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-panels-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-panels-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-panels-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-panels-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-panels-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-panels-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-panels-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-panels-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-panels-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-panels-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-panels-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-panels-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-panels-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-panels-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-panels-63\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-panels-67\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\sylvania-panels-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\teckin\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\thermostat\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\thermostatic_radiator_valve\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\thermostats\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\timers\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Tuya\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Tuya drivers\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Tuya Zigbee\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Tuya Zigbee - Drivers Homey Intelligents\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\unknown\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\urc\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\valve\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wall_switch_3_gang\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\water_detector\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-cameras-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-cameras-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-cameras-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-cameras-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-cameras-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-cameras-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-cameras-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-cameras-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-cameras-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-cameras-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-cameras-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-cameras-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-security-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-security-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-security-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-security-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-security-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-security-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-security-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-security-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-security-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-security-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-security-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-security-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-sensors-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-sensors-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-sensors-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-sensors-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-sensors-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-sensors-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-sensors-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-sensors-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-sensors-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-sensors-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-sensors-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-sensors-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-switches-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-switches-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-switches-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-switches-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-switches-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-switches-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-switches-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-switches-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-switches-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-switches-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-switches-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\wyze-switches-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-locks-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-locks-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-locks-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-locks-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-locks-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-locks-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-locks-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-locks-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-locks-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-locks-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-locks-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-locks-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-locks-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-locks-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-locks-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-locks-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-locks-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-locks-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-security-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-security-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-security-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-security-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-security-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-security-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-security-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-security-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-security-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-security-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-security-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-security-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-security-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-security-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-security-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-security-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\yale-security-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Zigbee drivers\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\Zigbee Natif\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee-app\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee-apparaten\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee-compatibiliteit\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee-curtain\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee-gateway\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee-hvac\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee-integraties\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee-irrigation\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee-light\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee-light-bulb-community\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee-lock\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee-ondersteuning\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee-pressure-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee-rules\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee-smart-plug\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee-switch\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee-thermostat\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee-valve\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee-wall-switch\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-100\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-101\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-102\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-103\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-104\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-105\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-106\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-107\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-108\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-109\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-110\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-111\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-112\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-113\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-114\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-115\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-116\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-117\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-118\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-119\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-120\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-121\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-122\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-123\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-124\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-125\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-126\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-127\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-128\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-129\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-130\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-131\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-132\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-133\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-134\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-135\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-136\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-137\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-138\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-139\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-140\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-141\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-142\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-143\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-144\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-145\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-146\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-147\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-148\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-149\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-150\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-151\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-152\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-153\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-154\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-155\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-156\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-157\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-158\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-159\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-160\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-161\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-162\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-163\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-164\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-165\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-166\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-167\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-168\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-169\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-170\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-171\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-172\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-173\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-174\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-175\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-176\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-177\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-178\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-179\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-180\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-181\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-182\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-183\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-184\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-185\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-186\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-187\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-188\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-189\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-190\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-191\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-192\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-193\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-194\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-195\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-196\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-197\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-198\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-199\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-200\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-61\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-62\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-63\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-64\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-65\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-66\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-67\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-68\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-69\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-70\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-71\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-72\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-73\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-74\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-75\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-76\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-77\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-78\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-79\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-80\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-81\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-82\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-83\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-84\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-85\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-86\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-87\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-88\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-89\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-90\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-91\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-92\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-93\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-94\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-95\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-96\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-97\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-98\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-device-99\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-devices-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-devices-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zigbee2mqtt-devices-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic\\zooz\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic-tz3000-unknown001\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic-tz3000-unknown002\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\generic-tz3000-unknown003\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\humidity\\humidity\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\humidity\\zigbee-humidity-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\motion\\motion\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\motion\\unknown-motion\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\motion\\zigbee-motion-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\gledopto-strips-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\gledopto-strips-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\gledopto-strips-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\gledopto-strips-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\gledopto-strips-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\gledopto-strips-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\gledopto-strips-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\gledopto-strips-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\gledopto-strips-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\gledopto-strips-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\gledopto-strips-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\gledopto-strips-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\gledopto-strips-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\gledopto-strips-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\gledopto-strips-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\innr-strips-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\innr-strips-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\innr-strips-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\innr-strips-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\innr-strips-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\innr-strips-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\innr-strips-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\innr-strips-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\innr-strips-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\innr-strips-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\nanoleaf-strips-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\nanoleaf-strips-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\nanoleaf-strips-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\nanoleaf-strips-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\nanoleaf-strips-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\nanoleaf-strips-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\nanoleaf-strips-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\nanoleaf-strips-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\osram-strips-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\osram-strips-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\osram-strips-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\osram-strips-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\osram-strips-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\osram-strips-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\osram-strips-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\osram-strips-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\osram-strips-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\osram-strips-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\osram-strips-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\osram-strips-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\osram-strips-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\osram-strips-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\osram-strips-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\osram-strips-62\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\osram-strips-66\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\osram-strips-70\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\osram-strips-74\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\osram-strips-78\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\sylvania-strips-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\sylvania-strips-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\sylvania-strips-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\sylvania-strips-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\sylvania-strips-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\sylvania-strips-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\sylvania-strips-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\sylvania-strips-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\sylvania-strips-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\sylvania-strips-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\sylvania-strips-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\sylvania-strips-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\sylvania-strips-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\sylvania-strips-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\sylvania-strips-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\sylvania-strips-62\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\sylvania-strips-66\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\strips\\sylvania-strips-70\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\temperature\\temperature\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\generic\\temperature\\zigbee-temperature-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\ikea-tradfri-bulbs-1\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\ikea-tradfri-bulbs-106\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\ikea-tradfri-bulbs-113\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\ikea-tradfri-bulbs-120\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\ikea-tradfri-bulbs-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\ikea-tradfri-bulbs-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\ikea-tradfri-bulbs-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\ikea-tradfri-bulbs-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\ikea-tradfri-bulbs-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\ikea-tradfri-bulbs-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\ikea-tradfri-bulbs-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\ikea-tradfri-bulbs-64\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\ikea-tradfri-bulbs-71\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\ikea-tradfri-bulbs-78\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\ikea-tradfri-bulbs-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\ikea-tradfri-bulbs-85\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\ikea-tradfri-bulbs-92\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\ikea-tradfri-bulbs-99\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-1\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-103\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-109\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-115\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-121\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-127\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-133\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-139\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-145\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-61\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-67\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-73\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-79\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-85\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-91\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\bulbs\\philips-hue-bulbs-97\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\hue\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-blinds-104\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-blinds-111\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-blinds-118\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-blinds-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-blinds-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-blinds-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-blinds-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-blinds-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-blinds-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-blinds-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-blinds-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-blinds-62\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-blinds-69\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-blinds-76\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-blinds-83\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-blinds-90\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-blinds-97\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-lighting-105\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-lighting-112\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-lighting-119\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-lighting-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-lighting-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-lighting-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-lighting-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-lighting-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-lighting-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-lighting-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-lighting-63\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-lighting-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-lighting-70\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-lighting-77\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-lighting-84\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-lighting-91\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-lighting-98\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-panels-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-panels-101\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-panels-108\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-panels-115\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-panels-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-panels-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-panels-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-panels-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-panels-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-panels-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-panels-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-panels-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-panels-66\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-panels-73\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-panels-80\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-panels-87\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-panels-94\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-sensors-103\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-sensors-110\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-sensors-117\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-sensors-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-sensors-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-sensors-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-sensors-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-sensors-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-sensors-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-sensors-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-sensors-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-sensors-61\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-sensors-68\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-sensors-75\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-sensors-82\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-sensors-89\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-sensors-96\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-switches-102\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-switches-109\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-switches-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-switches-116\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-switches-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-switches-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-switches-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-switches-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-switches-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-switches-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-switches-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-switches-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-switches-67\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-switches-74\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-switches-81\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-switches-88\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\ikea-tradfri-switches-95\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-102\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-108\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-114\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-120\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-126\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-132\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-138\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-144\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-150\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-66\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-72\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-78\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-84\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-90\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-lighting-96\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-105\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-111\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-117\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-123\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-129\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-135\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-141\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-147\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-63\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-69\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-75\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-81\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-87\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-93\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-panels-99\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-101\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-107\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-113\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-119\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-125\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-131\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-137\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-143\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-149\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-65\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-71\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-77\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-83\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-89\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-sensors-95\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-100\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-106\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-112\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-118\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-124\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-130\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-136\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-142\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-148\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-64\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-70\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-76\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-82\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-88\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\philips-hue-switches-94\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\generic\\tradfri\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\ikea-tradfri-strips-100\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\ikea-tradfri-strips-107\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\ikea-tradfri-strips-114\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\ikea-tradfri-strips-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\ikea-tradfri-strips-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\ikea-tradfri-strips-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\ikea-tradfri-strips-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\ikea-tradfri-strips-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\ikea-tradfri-strips-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\ikea-tradfri-strips-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\ikea-tradfri-strips-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\ikea-tradfri-strips-65\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\ikea-tradfri-strips-72\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\ikea-tradfri-strips-79\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\ikea-tradfri-strips-86\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\ikea-tradfri-strips-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\ikea-tradfri-strips-93\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-104\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-110\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-116\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-122\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-128\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-134\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-140\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-146\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-62\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-68\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-74\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-80\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-86\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-92\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\lights\\strips\\philips-hue-strips-98\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\bulbs\\samsung-smartthings-bulbs-10\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\bulbs\\samsung-smartthings-bulbs-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\bulbs\\samsung-smartthings-bulbs-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\bulbs\\samsung-smartthings-bulbs-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\bulbs\\samsung-smartthings-bulbs-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\bulbs\\samsung-smartthings-bulbs-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\bulbs\\samsung-smartthings-bulbs-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\bulbs\\samsung-smartthings-bulbs-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\bulbs\\samsung-smartthings-bulbs-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\bulbs\\samsung-smartthings-bulbs-66\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\bulbs\\samsung-smartthings-bulbs-73\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\bulbs\\samsung-smartthings-bulbs-80\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\bulbs\\samsung-smartthings-bulbs-87\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\bulbs\\samsung-smartthings-bulbs-94\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\samsung-smartthings-contact-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\samsung-smartthings-contact-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\samsung-smartthings-contact-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\samsung-smartthings-contact-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\samsung-smartthings-contact-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\samsung-smartthings-contact-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\samsung-smartthings-contact-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\samsung-smartthings-contact-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\samsung-smartthings-contact-61\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\samsung-smartthings-contact-68\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\samsung-smartthings-contact-75\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\samsung-smartthings-contact-82\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\samsung-smartthings-contact-89\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\samsung-smartthings-contact-96\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-10\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-101\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-108\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-115\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-122\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-129\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-136\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-143\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-150\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-157\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-164\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-171\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-178\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-185\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-192\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-199\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-66\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-73\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-80\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-87\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\contact\\xiaomi-aqara-contact-94\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\aqara\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-outlets-100\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-outlets-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-outlets-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-outlets-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-outlets-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-outlets-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-outlets-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-outlets-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-outlets-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-outlets-65\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-outlets-72\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-outlets-79\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-outlets-86\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-outlets-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-outlets-93\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-sensors-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-sensors-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-sensors-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-sensors-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-sensors-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-sensors-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-sensors-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-sensors-63\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-sensors-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-sensors-70\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-sensors-77\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-sensors-84\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-sensors-91\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-sensors-98\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-switches-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-switches-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-switches-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-switches-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-switches-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-switches-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-switches-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-switches-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-switches-64\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-switches-71\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-switches-78\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-switches-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-switches-85\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-switches-92\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\samsung-smartthings-switches-99\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-61\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-62\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-63\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-64\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-65\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-66\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-67\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-68\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-69\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-70\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-71\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-72\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-73\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-74\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-75\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-76\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-77\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-78\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-79\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-80\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\smartthings-device-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-104\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-111\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-118\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-125\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-132\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-139\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-146\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-153\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-160\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-167\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-174\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-181\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-188\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-195\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-62\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-69\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-76\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-83\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-90\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-air_quality-97\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-105\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-112\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-119\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-126\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-133\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-140\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-147\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-154\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-161\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-168\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-175\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-182\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-189\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-196\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-63\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-70\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-77\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-84\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-91\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-sensors-98\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-106\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-113\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-120\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-127\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-134\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-141\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-148\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-155\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-162\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-169\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-176\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-183\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-190\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-197\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-64\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-71\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-78\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-85\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-92\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\generic\\xiaomi-aqara-switches-99\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-103\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-110\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-117\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-124\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-131\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-138\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-145\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-152\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-159\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-166\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-173\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-180\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-187\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-194\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-61\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-68\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-75\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-82\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-89\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\humidity\\xiaomi-aqara-humidity-96\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\samsung-smartthings-motion-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\samsung-smartthings-motion-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\samsung-smartthings-motion-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\samsung-smartthings-motion-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\samsung-smartthings-motion-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\samsung-smartthings-motion-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\samsung-smartthings-motion-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\samsung-smartthings-motion-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\samsung-smartthings-motion-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\samsung-smartthings-motion-67\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\samsung-smartthings-motion-74\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\samsung-smartthings-motion-81\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\samsung-smartthings-motion-88\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\samsung-smartthings-motion-95\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-100\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-107\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-114\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-121\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-128\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-135\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-142\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-149\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-156\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-163\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-170\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-177\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-184\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-191\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-198\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-65\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-72\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-79\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-86\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\xiaomi-aqara-motion-93\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\motion\\zigbee-motion-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\samsung-smartthings-temperature-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\samsung-smartthings-temperature-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\samsung-smartthings-temperature-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\samsung-smartthings-temperature-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\samsung-smartthings-temperature-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\samsung-smartthings-temperature-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\samsung-smartthings-temperature-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\samsung-smartthings-temperature-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\samsung-smartthings-temperature-62\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\samsung-smartthings-temperature-69\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\samsung-smartthings-temperature-76\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\samsung-smartthings-temperature-83\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\samsung-smartthings-temperature-90\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\samsung-smartthings-temperature-97\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-102\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-109\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-116\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-123\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-130\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-137\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-144\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-151\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-158\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-165\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-172\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-179\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-186\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-193\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-200\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-67\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-74\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-81\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-88\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\xiaomi-aqara-temperature-95\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\sensors\\temperature\\zigbee-temperature-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\ts0004-application50\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\ts0004-application52\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\accessories\\bridges\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\Automation\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\home-assistant-device-109\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\home-assistant-device-119\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\home-assistant-device-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\home-assistant-device-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\home-assistant-device-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\home-assistant-device-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\home-assistant-device-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\home-assistant-device-69\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\home-assistant-device-79\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\home-assistant-device-89\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\home-assistant-device-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\home-assistant-device-99\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-apps-device-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-apps-device-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-apps-device-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-apps-device-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-apps-device-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-apps-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-apps-device-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-apps-device-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-apps-device-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-apps-device-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-apps-device-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-apps-device-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-apps-device-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-apps-device-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-apps-device-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-63\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-67\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-71\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-75\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-79\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-83\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-87\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-91\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-95\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\homey-community-device-99\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\smartthings-device-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\smartthings-device-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\smartthings-device-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\smartthings-device-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\smartthings-device-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\smartthings-device-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\smartthings-device-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\smartthings-device-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\smartthings-device-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\smartthings-device-67\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\smartthings-device-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\smartthings-device-71\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\smartthings-device-79\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee-gateway\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee-irrigation\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-100\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-106\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-112\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-118\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-124\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-130\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-136\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-142\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-148\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-154\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-160\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-166\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-172\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-178\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-184\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-190\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-196\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-64\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-70\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-76\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-82\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-88\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\automation\\timers\\zigbee2mqtt-device-94\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\cameras\\wyze-cameras-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\cameras\\wyze-cameras-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\cameras\\wyze-cameras-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\cameras\\wyze-cameras-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\cameras\\wyze-cameras-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\cameras\\wyze-cameras-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\cameras\\wyze-cameras-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\cameras\\wyze-cameras-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\cameras\\wyze-cameras-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\cameras\\wyze-cameras-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\cameras\\wyze-cameras-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\cameras\\wyze-cameras-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\climate\\thermostats\\Climate\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\climate\\thermostats\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\climate\\thermostats\\home-assistant-device-103\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\climate\\thermostats\\home-assistant-device-113\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\climate\\thermostats\\home-assistant-device-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\climate\\thermostats\\home-assistant-device-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\climate\\thermostats\\home-assistant-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\climate\\thermostats\\home-assistant-device-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\climate\\thermostats\\home-assistant-device-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\climate\\thermostats\\home-assistant-device-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\climate\\thermostats\\home-assistant-device-63\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\climate\\thermostats\\home-assistant-device-73\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\climate\\thermostats\\home-assistant-device-83\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\climate\\thermostats\\home-assistant-device-93\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\climate\\thermostats\\thermostatic_radiator_valve\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\climate\\thermostats\\zigbee-hvac\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\climate\\thermostats\\zigbee-thermostat\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\climate\\thermostats\\zigbee-valve\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\Controllers\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\custom-light\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ge-switches-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ge-switches-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ge-switches-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ge-switches-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ge-switches-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ge-switches-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ge-switches-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ge-switches-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ge-switches-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ge-switches-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ge-switches-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ge-switches-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\gledopto-controllers-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\gledopto-controllers-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\gledopto-controllers-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\gledopto-controllers-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\gledopto-controllers-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\gledopto-controllers-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\gledopto-controllers-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\gledopto-controllers-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\gledopto-controllers-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\gledopto-controllers-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\gledopto-controllers-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\gledopto-controllers-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\gledopto-controllers-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\gledopto-controllers-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\gledopto-controllers-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\home-assistant-device-105\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\home-assistant-device-115\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\home-assistant-device-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\home-assistant-device-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\home-assistant-device-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\home-assistant-device-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\home-assistant-device-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\home-assistant-device-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\home-assistant-device-65\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\home-assistant-device-75\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\home-assistant-device-85\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\home-assistant-device-95\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ikea-tradfri-switches-102\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ikea-tradfri-switches-109\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ikea-tradfri-switches-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ikea-tradfri-switches-116\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ikea-tradfri-switches-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ikea-tradfri-switches-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ikea-tradfri-switches-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ikea-tradfri-switches-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ikea-tradfri-switches-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ikea-tradfri-switches-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ikea-tradfri-switches-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ikea-tradfri-switches-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ikea-tradfri-switches-67\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ikea-tradfri-switches-74\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ikea-tradfri-switches-81\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ikea-tradfri-switches-88\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\ikea-tradfri-switches-95\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\local-files-device-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\local-files-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\local-files-device-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\lutron-switches-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\lutron-switches-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\lutron-switches-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\lutron-switches-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\lutron-switches-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\lutron-switches-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\lutron-switches-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\lutron-switches-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\lutron-switches-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\lutron-switches-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\lutron-switches-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\lutron-switches-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\lutron-switches-65\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\lutron-switches-70\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\lutron-switches-75\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\lutron-switches-80\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\nanoleaf-controllers-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\nanoleaf-controllers-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\nanoleaf-controllers-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\nanoleaf-controllers-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\nanoleaf-controllers-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\nanoleaf-controllers-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\nanoleaf-controllers-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\openhab-device-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\openhab-device-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\openhab-device-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\openhab-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\openhab-device-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\openhab-device-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\openhab-device-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-100\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-106\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-112\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-118\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-124\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-130\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-136\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-142\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-148\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-64\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-70\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-76\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-82\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-88\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\philips-hue-switches-94\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\samsung-smartthings-switches-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\samsung-smartthings-switches-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\samsung-smartthings-switches-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\samsung-smartthings-switches-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\samsung-smartthings-switches-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\samsung-smartthings-switches-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\samsung-smartthings-switches-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\samsung-smartthings-switches-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\samsung-smartthings-switches-64\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\samsung-smartthings-switches-71\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\samsung-smartthings-switches-78\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\samsung-smartthings-switches-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\samsung-smartthings-switches-85\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\samsung-smartthings-switches-92\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\samsung-smartthings-switches-99\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\smartthings-device-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\smartthings-device-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\smartthings-device-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\smartthings-device-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\smartthings-device-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\smartthings-device-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\smartthings-device-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\smartthings-device-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\smartthings-device-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\smartthings-device-64\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\smartthings-device-68\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\smartthings-device-76\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\smartthings-device-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\smartthings-device-80\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\smart_knob_switch\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\wall_switch_3_gang\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\wyze-switches-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\wyze-switches-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\wyze-switches-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\wyze-switches-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\wyze-switches-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\wyze-switches-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\wyze-switches-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\wyze-switches-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\wyze-switches-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\wyze-switches-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\wyze-switches-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\wyze-switches-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-106\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-113\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-120\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-127\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-134\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-141\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-148\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-155\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-162\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-169\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-176\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-183\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-190\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-197\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-64\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-71\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-78\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-85\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-92\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\xiaomi-aqara-switches-99\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\zigbee-curtain\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\zigbee-light\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\zigbee-light-bulb-community\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\zigbee-smart-plug\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\zigbee-switch\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\controllers\\switches\\zigbee-wall-switch\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\ge-dimmers-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\ge-dimmers-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\ge-dimmers-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\ge-dimmers-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\ge-dimmers-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\ge-dimmers-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\ge-dimmers-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\ge-dimmers-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\ge-dimmers-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\ge-dimmers-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\ge-dimmers-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\ge-dimmers-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\lutron-dimmers-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\lutron-dimmers-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\lutron-dimmers-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\lutron-dimmers-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\lutron-dimmers-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\lutron-dimmers-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\lutron-dimmers-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\lutron-dimmers-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\lutron-dimmers-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\lutron-dimmers-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\lutron-dimmers-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\lutron-dimmers-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\lutron-dimmers-61\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\lutron-dimmers-66\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\lutron-dimmers-71\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\dimmers\\lutron-dimmers-76\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\driver.compose.json",
+      "success": false,
+      "error": "Unexpected token '#', \"# driver.c\"... is not valid JSON"
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-abc123\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-def456\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-ghi789\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-jkl012\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-mno345\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-ts0004-application50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-ts0004-application52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-ts0030\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-ts0031\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-ts0040\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-ts0050\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-ts0060\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--tz3000-unknown001\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--tz3000-unknown002\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--tz3000-unknown003\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\aeotec\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\amazon\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\apple\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\aqara\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\arlo\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\august\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\Automatisation\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\Automatisering\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\Available scripts\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\Beveiliging\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\Capabilities\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\Capteurs\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\Cat├®gories\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\Climat\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\Clusters\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\Contr├┤leurs\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\Drivers Zigbee\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\elan\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\fibaro\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\forum-homey-community-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\forum-homey-community-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\ge\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\git-history-device-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\git-history-device-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\git-history-device-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\git-history-device-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\git-history-device-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\git-history-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\git-history-device-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\git-history-device-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\git-history-device-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\git-history-device-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\google\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\gosund\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\homey-apps-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\homey-apps-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\homey-apps-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\hue\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\ikea\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\ikea-tradfri-blinds-104\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\ikea-tradfri-blinds-111\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\ikea-tradfri-blinds-118\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\ikea-tradfri-blinds-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\ikea-tradfri-blinds-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\ikea-tradfri-blinds-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\ikea-tradfri-blinds-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\ikea-tradfri-blinds-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\ikea-tradfri-blinds-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\ikea-tradfri-blinds-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\ikea-tradfri-blinds-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\ikea-tradfri-blinds-62\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\ikea-tradfri-blinds-69\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\ikea-tradfri-blinds-76\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\ikea-tradfri-blinds-83\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\ikea-tradfri-blinds-90\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\ikea-tradfri-blinds-97\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\images\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\inovelli\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\jasco\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\Klimaat\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\kwikset\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\leviton\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lg\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\Local Only Mode\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\local-files-device-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\local-files-device-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\local-files-device-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-blinds-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-blinds-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-blinds-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-blinds-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-blinds-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-blinds-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-blinds-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-blinds-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-blinds-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-blinds-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-blinds-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-blinds-62\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-blinds-67\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-blinds-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-blinds-72\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-blinds-77\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-curtains-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-curtains-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-curtains-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-curtains-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-curtains-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-curtains-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-curtains-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-curtains-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-curtains-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-curtains-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-curtains-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-curtains-63\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-curtains-68\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-curtains-73\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-curtains-78\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\lutron-curtains-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\meross\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\Mode Local Only\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\Native Zigbee\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\philips\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\Project status\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\ring\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\rti\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\samsung\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\schlage\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\Scripts disponibles\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\SDK3 Compliant\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\smartthings\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\smart_remote_1_button\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\smart_remote_1_button_2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\S├®curit├®\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\teckin\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\tradfri\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\TS0001\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\TS0201\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\urc\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\xiaomi\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\Zigbee\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\Zigbee drivers\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\Zigbee Natif\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee-app\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee-apparaten\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee-compatibiliteit\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee-integraties\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee-ondersteuning\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee-rules\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-101\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-107\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-113\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-119\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-125\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-131\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-137\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-143\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-149\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-155\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-161\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-167\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-173\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-179\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-185\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-191\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-197\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-65\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-71\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-77\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-83\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-89\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-device-95\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-devices-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-devices-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zigbee2mqtt-devices-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\zooz\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\unknown\\├ëtat du projet\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic--_tz3000_abc123\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic--_tz3000_def456\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic--_tz3000_ghi789\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic--_tz3000_jkl012\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic--_tz3000_mno345\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-bulbs-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-bulbs-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-bulbs-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-bulbs-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-bulbs-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-bulbs-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-bulbs-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-bulbs-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-bulbs-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-bulbs-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-bulbs-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-bulbs-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-bulbs-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-bulbs-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-bulbs-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-bulbs-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-bulbs-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-lighting-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-lighting-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-lighting-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-lighting-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-lighting-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-lighting-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-lighting-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-lighting-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-lighting-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-lighting-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-lighting-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-lighting-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-lighting-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-lighting-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-lighting-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\cree-lighting-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ge-bulbs-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ge-bulbs-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ge-bulbs-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ge-bulbs-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ge-bulbs-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ge-bulbs-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ge-bulbs-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ge-bulbs-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ge-bulbs-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ge-bulbs-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ge-bulbs-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ge-bulbs-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ge-lighting-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ge-lighting-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ge-lighting-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ge-lighting-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ge-lighting-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ge-lighting-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ge-lighting-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ge-lighting-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ge-lighting-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ge-lighting-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ge-lighting-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ge-lighting-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-bulbs-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-bulbs-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-bulbs-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-bulbs-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-bulbs-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-bulbs-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-bulbs-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-bulbs-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-bulbs-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-bulbs-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-bulbs-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-bulbs-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-bulbs-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-bulbs-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-bulbs-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-lighting-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-lighting-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-lighting-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-lighting-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-lighting-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-lighting-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-lighting-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-lighting-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-lighting-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-lighting-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-lighting-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-lighting-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-lighting-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-lighting-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\gledopto-lighting-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-bulbs-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-bulbs-106\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-bulbs-113\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-bulbs-120\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-bulbs-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-bulbs-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-bulbs-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-bulbs-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-bulbs-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-bulbs-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-bulbs-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-bulbs-64\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-bulbs-71\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-bulbs-78\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-bulbs-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-bulbs-85\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-bulbs-92\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-bulbs-99\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-lighting-105\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-lighting-112\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-lighting-119\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-lighting-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-lighting-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-lighting-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-lighting-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-lighting-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-lighting-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-lighting-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-lighting-63\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-lighting-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-lighting-70\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-lighting-77\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-lighting-84\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-lighting-91\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\ikea-tradfri-lighting-98\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\innr-bulbs-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\innr-bulbs-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\innr-bulbs-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\innr-bulbs-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\innr-bulbs-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\innr-bulbs-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\innr-bulbs-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\innr-bulbs-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\innr-bulbs-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\innr-bulbs-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\innr-lighting-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\innr-lighting-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\innr-lighting-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\innr-lighting-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\innr-lighting-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\innr-lighting-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\innr-lighting-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\innr-lighting-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\innr-lighting-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\innr-lighting-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\nanoleaf-lighting-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\nanoleaf-lighting-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\nanoleaf-lighting-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\nanoleaf-lighting-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\nanoleaf-lighting-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\nanoleaf-lighting-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\nanoleaf-lighting-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-bulbs-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-bulbs-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-bulbs-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-bulbs-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-bulbs-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-bulbs-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-bulbs-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-bulbs-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-bulbs-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-bulbs-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-bulbs-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-bulbs-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-bulbs-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-bulbs-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-bulbs-61\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-bulbs-65\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-bulbs-69\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-bulbs-73\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-bulbs-77\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-bulbs-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-lighting-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-lighting-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-lighting-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-lighting-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-lighting-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-lighting-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-lighting-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-lighting-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-lighting-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-lighting-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-lighting-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-lighting-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-lighting-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-lighting-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-lighting-64\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-lighting-68\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-lighting-72\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-lighting-76\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-lighting-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\osram-lighting-80\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-103\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-109\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-115\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-121\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-127\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-133\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-139\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-145\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-61\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-67\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-73\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-79\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-85\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-91\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-bulbs-97\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-102\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-108\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-114\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-120\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-126\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-132\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-138\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-144\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-150\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-66\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-72\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-78\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-84\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-90\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\philips-hue-lighting-96\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\samsung-smartthings-bulbs-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\samsung-smartthings-bulbs-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\samsung-smartthings-bulbs-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\samsung-smartthings-bulbs-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\samsung-smartthings-bulbs-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\samsung-smartthings-bulbs-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\samsung-smartthings-bulbs-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\samsung-smartthings-bulbs-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\samsung-smartthings-bulbs-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\samsung-smartthings-bulbs-66\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\samsung-smartthings-bulbs-73\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\samsung-smartthings-bulbs-80\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\samsung-smartthings-bulbs-87\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\samsung-smartthings-bulbs-94\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-bulbs-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-bulbs-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-bulbs-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-bulbs-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-bulbs-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-bulbs-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-bulbs-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-bulbs-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-bulbs-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-bulbs-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-bulbs-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-bulbs-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-bulbs-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-bulbs-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-bulbs-61\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-bulbs-65\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-bulbs-69\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-bulbs-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-lighting-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-lighting-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-lighting-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-lighting-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-lighting-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-lighting-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-lighting-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-lighting-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-lighting-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-lighting-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-lighting-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-lighting-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-lighting-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-lighting-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-lighting-64\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-lighting-68\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\sylvania-lighting-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\wyze-bulbs-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\wyze-bulbs-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\wyze-bulbs-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\wyze-bulbs-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\wyze-bulbs-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\wyze-bulbs-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\wyze-bulbs-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\wyze-bulbs-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\wyze-bulbs-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\wyze-bulbs-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\wyze-bulbs-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\bulbs\\wyze-bulbs-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\forum-homey-community-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\homey-apps-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\smart_air_detection_box\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\Automation\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\gateway\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\home-assistant-device-104\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\home-assistant-device-114\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\home-assistant-device-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\home-assistant-device-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\home-assistant-device-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\home-assistant-device-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\home-assistant-device-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\home-assistant-device-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\home-assistant-device-64\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\home-assistant-device-74\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\home-assistant-device-84\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\home-assistant-device-94\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\irrigation\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\smartthings-device-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\smartthings-device-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\smartthings-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\smartthings-device-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\smartthings-device-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\smartthings-device-63\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\smartthings-device-75\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-curtain\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-104\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-109\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-114\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-119\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-124\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-129\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-134\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-139\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-144\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-149\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-154\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-159\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-64\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-69\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-74\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-79\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-84\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-89\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-94\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-developer-device-99\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-fan\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-gateway\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\automation\\timers\\tuya-irrigation\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\Climate\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\github-tuya-device-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\github-tuya-device-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\github-tuya-device-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\github-tuya-device-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\github-tuya-device-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\github-tuya-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\github-tuya-device-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\github-tuya-device-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\github-tuya-device-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\github-tuya-device-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\github-tuya-device-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\github-tuya-device-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\github-tuya-device-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\github-tuya-device-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\github-tuya-device-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\home-assistant-device-108\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\home-assistant-device-118\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\home-assistant-device-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\home-assistant-device-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\home-assistant-device-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\home-assistant-device-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\home-assistant-device-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\home-assistant-device-68\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\home-assistant-device-78\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\home-assistant-device-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\home-assistant-device-88\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\home-assistant-device-98\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\hvac\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\thermostat\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\thermostatic_radiator_valve\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-103\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-108\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-113\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-118\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-123\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-128\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-133\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-138\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-143\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-148\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-153\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-158\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-63\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-68\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-73\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-78\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-83\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-88\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-93\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-developer-device-98\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-hvac\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-thermostat\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\tuya-valve\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\valve\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-105\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-111\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-117\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-123\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-129\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-135\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-141\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-147\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-153\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-159\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-165\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-171\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-177\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-183\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-189\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-195\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-63\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-69\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-75\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-81\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-87\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-93\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\climate\\thermostats\\zigbee2mqtt-device-99\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\Controllers\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\curtain\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\fan\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\garage\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\git-history-device-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\git-history-device-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\git-history-device-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\git-history-device-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\git-history-device-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\git-history-device-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\git-history-device-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\git-history-device-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\git-history-device-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\git-history-device-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\github-tuya-device-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\github-tuya-device-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\github-tuya-device-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\github-tuya-device-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\github-tuya-device-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\github-tuya-device-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\github-tuya-device-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\github-tuya-device-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\github-tuya-device-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\github-tuya-device-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\github-tuya-device-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\github-tuya-device-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\github-tuya-device-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\github-tuya-device-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\github-tuya-device-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\home-assistant-device-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\home-assistant-device-100\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\home-assistant-device-110\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\home-assistant-device-120\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\home-assistant-device-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\home-assistant-device-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\home-assistant-device-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\home-assistant-device-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\home-assistant-device-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\home-assistant-device-70\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\home-assistant-device-80\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\home-assistant-device-90\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-apps-device-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-apps-device-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-apps-device-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-apps-device-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-apps-device-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-apps-device-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-apps-device-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-apps-device-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-apps-device-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-apps-device-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-apps-device-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-apps-device-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-apps-device-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-apps-device-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-apps-device-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-100\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-64\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-68\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-72\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-76\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-80\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-84\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-88\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-92\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\homey-community-device-96\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\light\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\local-files-device-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\local-files-device-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\local-files-device-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\openhab-device-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\openhab-device-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\openhab-device-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\openhab-device-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\openhab-device-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\openhab-device-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\plug\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\smart-plug\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\smartthings-device-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\smartthings-device-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\smartthings-device-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\smartthings-device-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\smartthings-device-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\smartthings-device-72\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\switch\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-curtain\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-100\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-105\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-110\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-115\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-120\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-125\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-130\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-135\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-140\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-145\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-150\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-155\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-160\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-65\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-70\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-75\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-80\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-85\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-90\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-developer-device-95\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-fan\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-garage-door\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-light\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-smart-plug\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-smart-plug-community\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-switch\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-switch-ts\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\tuya-wall-switch\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-102\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-108\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-114\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-120\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-126\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-132\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-138\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-144\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-150\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-156\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-162\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-168\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-174\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-180\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-186\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-192\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-198\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-66\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-72\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-78\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-84\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-90\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\controllers\\switches\\zigbee2mqtt-device-96\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\driver.compose.json",
+      "success": true,
+      "fixed": false
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\Automatisation\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\Automatisering\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\Beveiliging\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\Capteurs\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\Climat\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\Contr├┤leurs\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\dimmer_1_gang_tuya\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\Drivers Tuya\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\images\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\Klimaat\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\local-files-device-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\local-files-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\local-files-device-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\local-files-device-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\smart_air_detection_box\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\S├®curit├®\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\Tuya\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\Tuya drivers\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\Tuya Zigbee\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\Tuya Zigbee - Drivers Homey Intelligents\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\tuya-apparaten\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\tuya-compatibiliteit\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\tuya-gateway\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\tuya-hvac\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\tuya-rgb\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\tuya-zigbee\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\tuya-zigbee-app\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\generic\\unknown\\tuya-zigbee-rules\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\lighting\\bulbs\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\git-history-device-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\git-history-device-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\git-history-device-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\git-history-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\git-history-device-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\git-history-device-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\git-history-device-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\git-history-device-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\git-history-device-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\git-history-device-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\github-tuya-device-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\github-tuya-device-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\github-tuya-device-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\github-tuya-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\github-tuya-device-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\github-tuya-device-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\github-tuya-device-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\github-tuya-device-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\github-tuya-device-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\github-tuya-device-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\github-tuya-device-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\github-tuya-device-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\github-tuya-device-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\github-tuya-device-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\github-tuya-device-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\home-assistant-device-102\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\home-assistant-device-112\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\home-assistant-device-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\home-assistant-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\home-assistant-device-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\home-assistant-device-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\home-assistant-device-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\home-assistant-device-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\home-assistant-device-62\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\home-assistant-device-72\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\home-assistant-device-82\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\home-assistant-device-92\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-apps-device-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-apps-device-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-apps-device-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-apps-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-apps-device-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-apps-device-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-apps-device-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-apps-device-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-apps-device-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-apps-device-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-apps-device-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-apps-device-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-apps-device-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-apps-device-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-apps-device-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-62\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-66\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-70\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-74\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-78\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-82\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-86\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-90\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-94\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\homey-community-device-98\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\lock\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\openhab-device-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\openhab-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\openhab-device-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\openhab-device-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\openhab-device-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\openhab-device-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\openhab-device-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\Security\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\smartthings-device-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\smartthings-device-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\smartthings-device-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\smartthings-device-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\smartthings-device-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\smartthings-device-66\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\smartthings-device-78\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-102\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-107\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-112\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-117\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-122\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-127\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-132\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-137\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-142\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-147\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-152\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-157\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-62\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-67\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-72\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-77\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-82\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-87\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-92\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-developer-device-97\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\security\\locks\\tuya-lock\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\contact\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\contact\\tuya-contact-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\github-tuya-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\github-tuya-device-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\github-tuya-device-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\github-tuya-device-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\github-tuya-device-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\github-tuya-device-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\github-tuya-device-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\github-tuya-device-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\github-tuya-device-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\github-tuya-device-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\github-tuya-device-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\github-tuya-device-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\github-tuya-device-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\github-tuya-device-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\github-tuya-device-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\home-assistant-device-106\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\home-assistant-device-116\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\home-assistant-device-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\home-assistant-device-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\home-assistant-device-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\home-assistant-device-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\home-assistant-device-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\home-assistant-device-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\home-assistant-device-66\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\home-assistant-device-76\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\home-assistant-device-86\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\home-assistant-device-96\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\humidity\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\local-files-device-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\local-files-device-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\local-files-device-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\openhab-device-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\openhab-device-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\openhab-device-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\openhab-device-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\openhab-device-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\openhab-device-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\openhab-device-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\pressure\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\Sensoren\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\Sensors\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\smartthings-device-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\smartthings-device-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\smartthings-device-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\smartthings-device-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\smartthings-device-69\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\smartthings-device-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-contact-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-101\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-106\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-111\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-116\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-121\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-126\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-131\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-136\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-141\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-146\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-151\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-156\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-61\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-66\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-71\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-76\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-81\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-86\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-91\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-developer-device-96\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-humidity-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-motion\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-motion-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-motion-sensor-community\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\sensors\\motion\\tuya-pressure-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\unknown\\tuya-gateway\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\zigbee2mqtt-devices-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\ge-outlets-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\ge-outlets-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\ge-outlets-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\ge-outlets-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\ge-outlets-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\ge-outlets-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\ge-outlets-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\ge-outlets-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\ge-outlets-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\ge-outlets-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\ge-outlets-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\ge-outlets-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\samsung-smartthings-outlets-100\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\samsung-smartthings-outlets-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\samsung-smartthings-outlets-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\samsung-smartthings-outlets-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\samsung-smartthings-outlets-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\samsung-smartthings-outlets-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\samsung-smartthings-outlets-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\samsung-smartthings-outlets-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\samsung-smartthings-outlets-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\samsung-smartthings-outlets-65\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\samsung-smartthings-outlets-72\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\samsung-smartthings-outlets-79\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\samsung-smartthings-outlets-86\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\samsung-smartthings-outlets-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\outlets\\samsung-smartthings-outlets-93\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\cree-panels-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\cree-panels-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\cree-panels-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\cree-panels-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\cree-panels-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\cree-panels-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\cree-panels-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\cree-panels-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\cree-panels-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\cree-panels-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\cree-panels-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\cree-panels-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\cree-panels-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\cree-panels-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\cree-panels-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\cree-panels-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\cree-panels-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\ikea-tradfri-panels-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\ikea-tradfri-panels-101\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\ikea-tradfri-panels-108\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\ikea-tradfri-panels-115\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\ikea-tradfri-panels-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\ikea-tradfri-panels-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\ikea-tradfri-panels-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\ikea-tradfri-panels-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\ikea-tradfri-panels-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\ikea-tradfri-panels-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\ikea-tradfri-panels-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\ikea-tradfri-panels-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\ikea-tradfri-panels-66\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\ikea-tradfri-panels-73\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\ikea-tradfri-panels-80\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\ikea-tradfri-panels-87\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\ikea-tradfri-panels-94\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\innr-panels-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\innr-panels-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\innr-panels-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\innr-panels-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\innr-panels-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\innr-panels-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\innr-panels-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\innr-panels-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\innr-panels-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\innr-panels-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\nanoleaf-panels-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\nanoleaf-panels-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\nanoleaf-panels-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\nanoleaf-panels-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\nanoleaf-panels-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\nanoleaf-panels-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\nanoleaf-panels-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\nanoleaf-panels-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\osram-panels-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\osram-panels-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\osram-panels-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\osram-panels-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\osram-panels-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\osram-panels-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\osram-panels-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\osram-panels-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\osram-panels-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\osram-panels-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\osram-panels-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\osram-panels-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\osram-panels-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\osram-panels-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\osram-panels-63\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\osram-panels-67\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\osram-panels-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\osram-panels-71\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\osram-panels-75\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\osram-panels-79\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-105\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-111\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-117\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-123\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-129\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-135\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-141\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-147\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-63\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-69\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-75\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-81\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-87\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-93\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\philips-hue-panels-99\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\sylvania-panels-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\sylvania-panels-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\sylvania-panels-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\sylvania-panels-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\sylvania-panels-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\sylvania-panels-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\sylvania-panels-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\sylvania-panels-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\sylvania-panels-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\sylvania-panels-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\sylvania-panels-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\sylvania-panels-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\sylvania-panels-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\sylvania-panels-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\sylvania-panels-63\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\sylvania-panels-67\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\panels\\sylvania-panels-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\arlo-security-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\arlo-security-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\arlo-security-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\arlo-security-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\arlo-security-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\arlo-security-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\arlo-security-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\arlo-security-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\arlo-security-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\arlo-security-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\august-locks-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\august-locks-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\august-locks-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\august-locks-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\august-locks-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\august-locks-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\august-locks-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\august-locks-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\august-locks-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\august-security-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\august-security-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\august-security-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\august-security-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\august-security-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\august-security-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\august-security-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\august-security-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\august-doorbell-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\august-doorbell-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\august-doorbell-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\august-doorbell-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\august-doorbell-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\august-doorbell-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\august-doorbell-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\august-doorbell-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\eufy-doorbell-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\eufy-doorbell-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\eufy-doorbell-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\eufy-doorbell-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\eufy-doorbell-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\eufy-doorbell-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\eufy-doorbell-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\eufy-doorbell-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\eufy-doorbell-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\eufy-doorbell-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\ring-doorbell-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\ring-doorbell-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\ring-doorbell-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\ring-doorbell-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\ring-doorbell-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\ring-doorbell-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\ring-doorbell-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\ring-doorbell-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\ring-doorbell-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\ring-doorbell-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\ring-doorbell-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\ring-doorbell-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\ring-doorbell-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\schlage-doorbell-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\schlage-doorbell-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\schlage-doorbell-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\schlage-doorbell-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\schlage-doorbell-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\schlage-doorbell-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\schlage-doorbell-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\schlage-doorbell-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\schlage-doorbell-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\schlage-doorbell-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\schlage-doorbell-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\schlage-doorbell-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\doorbell\\schlage-doorbell-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\eufy-security-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\eufy-security-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\eufy-security-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\eufy-security-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\eufy-security-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\eufy-security-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\eufy-security-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\eufy-security-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\eufy-security-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\eufy-security-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\home-assistant-device-107\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\home-assistant-device-117\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\home-assistant-device-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\home-assistant-device-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\home-assistant-device-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\home-assistant-device-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\home-assistant-device-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\home-assistant-device-67\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\home-assistant-device-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\home-assistant-device-77\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\home-assistant-device-87\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\home-assistant-device-97\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-locks-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-locks-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-locks-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-locks-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-locks-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-locks-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-locks-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-locks-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-locks-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-locks-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-locks-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-locks-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-locks-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-locks-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-locks-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-security-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-security-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-security-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-security-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-security-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-security-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-security-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-security-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-security-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-security-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-security-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-security-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-security-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-security-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\kwikset-security-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\openhab-device-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\openhab-device-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\openhab-device-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\openhab-device-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\openhab-device-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\openhab-device-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\ring-security-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\ring-security-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\ring-security-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\ring-security-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\ring-security-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\ring-security-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\ring-security-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\ring-security-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\ring-security-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\ring-security-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\ring-security-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\ring-security-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-locks-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-locks-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-locks-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-locks-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-locks-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-locks-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-locks-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-locks-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-locks-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-locks-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-locks-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-locks-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-locks-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-locks-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-security-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-security-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-security-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-security-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-security-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-security-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-security-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-security-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-security-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-security-36\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-security-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-security-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\schlage-security-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\Security\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\arlo-cameras-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\arlo-cameras-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\arlo-cameras-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\arlo-cameras-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\arlo-cameras-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\arlo-cameras-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\arlo-cameras-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\arlo-cameras-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\arlo-cameras-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\arlo-cameras-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\eufy-cameras-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\eufy-cameras-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\eufy-cameras-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\eufy-cameras-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\eufy-cameras-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\eufy-cameras-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\eufy-cameras-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\eufy-cameras-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\eufy-cameras-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\eufy-cameras-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\ring-cameras-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\ring-cameras-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\ring-cameras-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\ring-cameras-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\ring-cameras-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\ring-cameras-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\ring-cameras-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\ring-cameras-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\ring-cameras-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\ring-cameras-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\ring-cameras-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\ring-cameras-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\security_cameras\\ring-cameras-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\smartthings-device-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\smartthings-device-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\smartthings-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\smartthings-device-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\smartthings-device-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\smartthings-device-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\smartthings-device-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\smartthings-device-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\smartthings-device-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\smartthings-device-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\smartthings-device-62\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\smartthings-device-70\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\smartthings-device-74\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\wyze-security-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\wyze-security-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\wyze-security-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\wyze-security-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\wyze-security-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\wyze-security-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\wyze-security-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\wyze-security-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\wyze-security-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\wyze-security-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\wyze-security-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\wyze-security-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-locks-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-locks-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-locks-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-locks-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-locks-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-locks-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-locks-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-locks-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-locks-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-locks-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-locks-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-locks-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-locks-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-locks-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-locks-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-locks-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-locks-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-locks-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-security-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-security-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-security-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-security-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-security-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-security-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-security-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-security-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-security-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-security-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-security-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-security-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-security-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-security-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-security-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-security-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\yale-security-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee-lock\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-104\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-110\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-116\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-122\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-128\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-134\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-140\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-146\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-152\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-158\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-164\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-170\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-176\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-182\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-188\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-194\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-200\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-62\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-68\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-74\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-80\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-86\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-92\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\security\\locks\\zigbee2mqtt-device-98\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\forum-homey-community-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\homey-apps-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\homey-apps-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-104\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-111\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-118\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-125\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-132\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-139\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-146\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-153\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-160\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-167\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-174\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-181\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-188\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-195\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-48\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-62\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-69\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-76\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-83\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-90\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\air_quality\\xiaomi-aqara-air_quality-97\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\arlo-sensors-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\arlo-sensors-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\arlo-sensors-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\arlo-sensors-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\arlo-sensors-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\arlo-sensors-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\arlo-sensors-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\arlo-sensors-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\arlo-sensors-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\arlo-sensors-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\samsung-smartthings-contact-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\samsung-smartthings-contact-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\samsung-smartthings-contact-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\samsung-smartthings-contact-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\samsung-smartthings-contact-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\samsung-smartthings-contact-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\samsung-smartthings-contact-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\samsung-smartthings-contact-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\samsung-smartthings-contact-61\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\samsung-smartthings-contact-68\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\samsung-smartthings-contact-75\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\samsung-smartthings-contact-82\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\samsung-smartthings-contact-89\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\samsung-smartthings-contact-96\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-101\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-108\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-115\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-122\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-129\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-136\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-143\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-150\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-157\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-164\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-171\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-178\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-185\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-192\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-199\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-66\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-73\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-80\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-87\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\contact\\xiaomi-aqara-contact-94\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\eufy-sensors-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\eufy-sensors-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\eufy-sensors-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\eufy-sensors-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\eufy-sensors-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\eufy-sensors-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\eufy-sensors-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\eufy-sensors-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\eufy-sensors-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\eufy-sensors-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\git-history-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\git-history-device-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\git-history-device-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\git-history-device-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\git-history-device-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\git-history-device-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\git-history-device-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\git-history-device-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\git-history-device-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\git-history-device-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\home-assistant-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\home-assistant-device-101\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\home-assistant-device-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\home-assistant-device-111\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\home-assistant-device-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\home-assistant-device-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\home-assistant-device-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\home-assistant-device-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\home-assistant-device-61\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\home-assistant-device-71\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\home-assistant-device-81\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\home-assistant-device-91\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-apps-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-apps-device-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-apps-device-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-apps-device-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-apps-device-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-apps-device-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-apps-device-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-apps-device-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-apps-device-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-apps-device-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-apps-device-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-apps-device-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-apps-device-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-apps-device-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-apps-device-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-45\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-61\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-65\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-69\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-73\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-77\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-81\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-85\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-89\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-93\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\homey-community-device-97\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-103\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-110\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-117\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-124\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-131\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-138\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-145\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-152\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-159\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-166\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-173\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-180\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-187\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-194\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-61\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-68\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-75\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-82\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-89\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\humidity\\xiaomi-aqara-humidity-96\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ikea-tradfri-sensors-103\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ikea-tradfri-sensors-110\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ikea-tradfri-sensors-117\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ikea-tradfri-sensors-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ikea-tradfri-sensors-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ikea-tradfri-sensors-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ikea-tradfri-sensors-33\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ikea-tradfri-sensors-40\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ikea-tradfri-sensors-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ikea-tradfri-sensors-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ikea-tradfri-sensors-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ikea-tradfri-sensors-61\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ikea-tradfri-sensors-68\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ikea-tradfri-sensors-75\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ikea-tradfri-sensors-82\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ikea-tradfri-sensors-89\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ikea-tradfri-sensors-96\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\local-files-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\local-files-device-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\local-files-device-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\local-files-device-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\lutron-sensors-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\lutron-sensors-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\lutron-sensors-24\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\lutron-sensors-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\lutron-sensors-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\lutron-sensors-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\lutron-sensors-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\lutron-sensors-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\lutron-sensors-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\lutron-sensors-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\lutron-sensors-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\lutron-sensors-64\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\lutron-sensors-69\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\lutron-sensors-74\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\lutron-sensors-79\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\lutron-sensors-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\openhab-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\openhab-device-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\openhab-device-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\openhab-device-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\openhab-device-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\openhab-device-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\openhab-device-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-101\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-107\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-113\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-119\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-125\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-131\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-137\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-143\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-149\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-59\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-65\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-71\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-77\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-83\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-89\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\philips-hue-sensors-95\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ring-sensors-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ring-sensors-15\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ring-sensors-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ring-sensors-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ring-sensors-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ring-sensors-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ring-sensors-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ring-sensors-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ring-sensors-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ring-sensors-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ring-sensors-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\ring-sensors-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-motion-11\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-motion-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-motion-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-motion-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-motion-39\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-motion-4\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-motion-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-motion-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-motion-60\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-motion-67\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-motion-74\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-motion-81\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-motion-88\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-motion-95\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-sensors-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-sensors-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-sensors-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-sensors-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-sensors-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-sensors-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-sensors-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-sensors-63\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-sensors-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-sensors-70\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-sensors-77\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-sensors-84\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-sensors-91\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\samsung-smartthings-sensors-98\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\Sensoren\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\Sensors\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\smartthings-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\smartthings-device-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\smartthings-device-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\smartthings-device-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\smartthings-device-29\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\smartthings-device-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\smartthings-device-41\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\smartthings-device-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\smartthings-device-5\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\smartthings-device-53\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\smartthings-device-61\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\smartthings-device-65\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\smartthings-device-73\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\smartthings-device-77\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\unknown-motion\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\water_detector\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\wyze-sensors-12\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\wyze-sensors-17\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\wyze-sensors-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\wyze-sensors-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\wyze-sensors-27\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\wyze-sensors-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\wyze-sensors-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\wyze-sensors-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\wyze-sensors-47\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\wyze-sensors-52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\wyze-sensors-57\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\wyze-sensors-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-100\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-107\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-114\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-121\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-128\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-135\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-142\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-149\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-156\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-163\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-170\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-177\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-184\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-191\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-198\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-65\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-72\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-79\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-86\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-motion-93\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-105\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-112\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-119\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-126\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-133\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-140\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-147\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-154\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-161\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-168\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-175\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-182\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-189\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-196\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-21\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-28\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-35\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-63\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-70\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-77\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-84\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-91\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\xiaomi-aqara-sensors-98\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee-contact-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee-humidity-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee-motion-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee-pressure-sensor\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-1\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-103\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-109\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-115\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-121\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-127\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-13\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-133\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-139\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-145\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-151\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-157\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-163\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-169\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-175\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-181\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-187\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-19\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-193\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-199\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-25\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-31\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-43\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-49\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-55\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-61\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-67\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-7\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-73\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-79\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-85\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-91\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\motion\\zigbee2mqtt-device-97\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\zigbee2mqtt-devices-device-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\sensors\\zigbee2mqtt-devices-device-3\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\gledopto-strips-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\gledopto-strips-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\gledopto-strips-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\gledopto-strips-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\gledopto-strips-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\gledopto-strips-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\gledopto-strips-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\gledopto-strips-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\gledopto-strips-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\gledopto-strips-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\gledopto-strips-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\gledopto-strips-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\gledopto-strips-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\gledopto-strips-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\gledopto-strips-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\ikea-tradfri-strips-100\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\ikea-tradfri-strips-107\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\ikea-tradfri-strips-114\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\ikea-tradfri-strips-16\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\ikea-tradfri-strips-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\ikea-tradfri-strips-23\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\ikea-tradfri-strips-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\ikea-tradfri-strips-37\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\ikea-tradfri-strips-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\ikea-tradfri-strips-51\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\ikea-tradfri-strips-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\ikea-tradfri-strips-65\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\ikea-tradfri-strips-72\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\ikea-tradfri-strips-79\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\ikea-tradfri-strips-86\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\ikea-tradfri-strips-9\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\ikea-tradfri-strips-93\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\innr-strips-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\innr-strips-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\innr-strips-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\innr-strips-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\innr-strips-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\innr-strips-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\innr-strips-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\innr-strips-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\innr-strips-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\innr-strips-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\nanoleaf-strips-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\nanoleaf-strips-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\nanoleaf-strips-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\nanoleaf-strips-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\nanoleaf-strips-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\nanoleaf-strips-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\nanoleaf-strips-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\nanoleaf-strips-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\osram-strips-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\osram-strips-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\osram-strips-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\osram-strips-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\osram-strips-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\osram-strips-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\osram-strips-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\osram-strips-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\osram-strips-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\osram-strips-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\osram-strips-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\osram-strips-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\osram-strips-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\osram-strips-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\osram-strips-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\osram-strips-62\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\osram-strips-66\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\osram-strips-70\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\osram-strips-74\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\osram-strips-78\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-104\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-110\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-116\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-122\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-128\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-134\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-140\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-146\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-20\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-32\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-44\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-56\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-62\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-68\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-74\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-8\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-80\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-86\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-92\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\philips-hue-strips-98\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\sylvania-strips-10\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\sylvania-strips-14\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\sylvania-strips-18\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\sylvania-strips-2\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\sylvania-strips-22\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\sylvania-strips-26\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\sylvania-strips-30\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\sylvania-strips-34\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\sylvania-strips-38\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\sylvania-strips-42\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\sylvania-strips-46\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\sylvania-strips-50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\sylvania-strips-54\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\sylvania-strips-58\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\sylvania-strips-6\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\sylvania-strips-62\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\sylvania-strips-66\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\strips\\sylvania-strips-70\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\ts0004-application50\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    },
+    {
+      "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\ts0004-application52\\driver.compose.json",
+      "success": true,
+      "fixed": true
+    }
+  ],
+  "recommendations": [
+    "Corriger 1 erreurs restantes",
+    "4813 drivers corrigés avec succès",
+    "Mega pipeline mis à jour avec nouvelle étape",
+    "Tous les drivers sont maintenant valides"
+  ]
+}

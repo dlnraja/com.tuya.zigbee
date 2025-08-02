@@ -1,0 +1,24 @@
+{
+  "genOnOff": {
+    "capabilities": [
+      "onoff"
+    ],
+    "description": "Generic On/Off"
+  },
+  "seMetering": {
+    "capabilities": [
+      "meter_power"
+    ],
+    "description": "Simple Metering"
+  },
+  "genLevelCtrl": {
+    "capabilities": [
+      "dim"
+    ],
+    "description": "Generic Level Control"
+  },
+  "genBasic": {
+    "capabilities": [],
+    "description": "Generic Basic"
+  }
+}
