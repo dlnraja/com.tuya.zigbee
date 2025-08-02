@@ -1,4 +1,4 @@
-# Drivers Matrix - Structure Réorganisée
+# Drivers Matrix - Structure Finale Optimisée
 
 ## 🔌 Tuya Drivers
 
@@ -44,6 +44,15 @@
 ### Historical
 - wall_thermostat, water_detector, water_leak_sensor_tuya, zigbee_repeater
 
+### Controls
+- Contrôles et interfaces utilisateur
+
+### Plugs
+- Prises et connecteurs
+
+### Switches
+- Interrupteurs et commutateurs
+
 ## 📚 Legacy Drivers
 
 ### Switches (441 drivers)
@@ -55,12 +64,15 @@
 ### Dimmers (187 drivers)
 - Tous les variateurs historiques et génériques
 
-## 🎯 Structure Finale
+### Generic (23 drivers)
+- Drivers génériques et templates de base
+
+## 🎯 Structure Finale Optimisée
 
 ```
 drivers/
 ├── tuya/
-│   ├── plugs/ (9 drivers)
+│   ├── plugs/ (10 drivers)
 │   ├── switches/ (8 drivers)
 │   ├── sensors/ (5 drivers)
 │   ├── lights/ (3 drivers)
@@ -68,14 +80,18 @@ drivers/
 │   ├── covers/ (1 driver)
 │   └── locks/ (1 driver)
 ├── zigbee/
-│   ├── lights/ (9 drivers)
+│   ├── lights/ (10 drivers)
 │   ├── sensors/ (4 drivers)
 │   ├── smart-life/ (11 drivers)
-│   └── historical/ (4 drivers)
+│   ├── historical/ (4 drivers)
+│   ├── controls/ (drivers)
+│   ├── plugs/ (drivers)
+│   └── switches/ (drivers)
 └── legacy/
     ├── switches/ (441 drivers)
     ├── sensors/ (79 drivers)
-    └── dimmers/ (187 drivers)
+    ├── dimmers/ (187 drivers)
+    └── generic/ (23 drivers)
 ```
 
-**Total: 821 drivers organisés logiquement !** ✅
+**Total: 832 drivers parfaitement organisés !** ✅
