@@ -9,7 +9,7 @@
 - Nettoyer les fichiers temporaires
 
 ### Résultats
-- **Fichiers déplacés**: 4
+- **Fichiers déplacés**: 6
 - **Dossiers créés**: 0
 - **Erreurs**: 1
 - **Avertissements**: 3

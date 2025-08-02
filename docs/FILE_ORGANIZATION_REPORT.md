@@ -9,8 +9,8 @@
 - Nettoyer les fichiers temporaires
 
 ### Résultats
-- **Fichiers déplacés**: 83
-- **Dossiers créés**: 8
+- **Fichiers déplacés**: 4
+- **Dossiers créés**: 0
 - **Erreurs**: 1
 - **Avertissements**: 3
 

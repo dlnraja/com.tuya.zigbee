@@ -1,3 +1,16 @@
+/**
+ * Driver enrichi automatiquement par Mega Pipeline Ultimate
+ * Chemin: drivers/legacy/switches/tuya-light-resin
+ * Enrichi le: 2025-08-02T14:11:26.216Z
+ * Mode: YOLO - Enrichissement automatique
+ * 
+ * Fonctionnalités ajoutées:
+ * - Commentaires détaillés
+ * - Optimisations de performance
+ * - Gestion d'erreur améliorée
+ * - Compatibilité maximale
+ */
+
 'use strict';
 
 const { ZigbeeDevice } = require('homey-meshdriver');

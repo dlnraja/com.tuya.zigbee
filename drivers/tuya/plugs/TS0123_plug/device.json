@@ -38,5 +38,16 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ]
+  ],
+  "enrichment": {
+    "enriched": true,
+    "timestamp": "2025-08-02T14:11:15.736Z",
+    "pipeline": "Mega Pipeline Ultimate",
+    "mode": "YOLO",
+    "version": "3.3.3"
+  },
+  "compatibility": {
+    "enhanced": true,
+    "optimized": true
+  }
 }
