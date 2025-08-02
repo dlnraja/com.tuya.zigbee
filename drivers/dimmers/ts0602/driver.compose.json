@@ -1,0 +1,27 @@
+{
+  "id": "ts0602",
+  "name": {
+    "en": "TS0602 Device",
+    "fr": "Appareil TS0602",
+    "nl": "TS0602 Apparaat"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "zigbee": {
+    "manufacturer": "Tuya",
+    "model": "TS0602",
+    "supports": [
+      "genLevelCtrl"
+    ],
+    "fromZigbee": [],
+    "toZigbee": []
+  },
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  }
+}

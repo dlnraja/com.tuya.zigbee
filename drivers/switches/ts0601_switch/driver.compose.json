@@ -1,0 +1,27 @@
+{
+  "id": "ts0601_switch",
+  "name": {
+    "en": "TS0601_switch Device",
+    "fr": "Appareil TS0601_switch",
+    "nl": "TS0601_switch Apparaat"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturer": "Tuya",
+    "model": "TS0601_switch",
+    "supports": [
+      "genOnOff",
+      "genLevelCtrl"
+    ],
+    "fromZigbee": [],
+    "toZigbee": []
+  },
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  }
+}

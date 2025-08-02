@@ -1,0 +1,46 @@
+{
+  "id": "ts0601-curtain",
+  "class": "light",
+  "name": {
+    "en": "Ts0601 Curtain",
+    "fr": "Ts0601 Curtain",
+    "nl": "Ts0601 Curtain"
+  },
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genBasic",
+    "genIdentify"
+  ],
+  "settings": {
+    "pollInterval": {
+      "type": "number",
+      "title": "Poll Interval",
+      "description": "Polling interval in seconds",
+      "default": 60,
+      "minimum": 10,
+      "maximum": 300
+    }
+  },
+  "zigbee": {
+    "manufacturerName": "_TZ3000",
+    "modelId": "TS0601",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genBasic",
+          "genOnOff"
+        ],
+        "bindings": []
+      }
+    }
+  },
+  "images": {
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "ts011f",
+  "name": {
+    "en": "TS011F Device",
+    "fr": "Appareil TS011F",
+    "nl": "TS011F Apparaat"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power"
+  ],
+  "zigbee": {
+    "manufacturer": "Tuya",
+    "model": "TS011F",
+    "supports": [
+      "genOnOff",
+      "genLevelCtrl"
+    ],
+    "fromZigbee": [],
+    "toZigbee": []
+  },
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
+  }
+}

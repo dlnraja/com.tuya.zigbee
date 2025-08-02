@@ -1,0 +1,56 @@
+'use strict';
+
+const { TuyaDevice } = require('homey-tuya');
+
+class TS0004switchDevice extends TuyaDevice {
+    async onInit() {
+        this.log('TS0004_switch device initialized');
+        
+        // Initialize device capabilities
+        await this.initializeCapabilities();
+        
+        // Register device events
+        this.registerDeviceEvents();
+    }
+    
+    async initializeCapabilities() {
+        // Add device-specific capabilities
+        if (this.hasCapability('onoff')) {
+            this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
+        }
+        
+        if (this.hasCapability('dim')) {
+            this.registerCapabilityListener('dim', this.onCapabilityDim.bind(this));
+        }
+        
+        if (this.hasCapability('measure_power')) {
+            this.setCapabilityValue('measure_power', 0);
+        }
+    }
+    
+    registerDeviceEvents() {
+        // Register device-specific events
+        this.on('dp_refresh', this.onDpRefresh.bind(this));
+    }
+    
+    async onCapabilityOnoff(value) {
+        // Handle on/off capability
+        await this.setDataPointValue(1, value);
+    }
+    
+    async onCapabilityDim(value) {
+        // Handle dimming capability
+        await this.setDataPointValue(2, value * 100);
+    }
+    
+    onDpRefresh(data) {
+        // Handle data point refresh
+        if (data.dp === 1) {
+            this.setCapabilityValue('onoff', data.value);
+        } else if (data.dp === 2) {
+            this.setCapabilityValue('dim', data.value / 100);
+        }
+    }
+}
+
+module.exports = TS0004switchDevice;

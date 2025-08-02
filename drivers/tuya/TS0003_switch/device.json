@@ -1,0 +1,34 @@
+{
+  "id": "TS0003_switch",
+  "name": {
+    "en": "TS0003_switch Device",
+    "fr": "Appareil TS0003_switch",
+    "nl": "TS0003_switch Apparaat",
+    "de": "TS0003_switch Gerät",
+    "es": "Dispositivo TS0003_switch"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power",
+    "meter_power"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

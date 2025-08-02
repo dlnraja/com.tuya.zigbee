@@ -1,0 +1,34 @@
+{
+  "id": "TS0005_switch",
+  "name": {
+    "en": "TS0005_switch Device",
+    "fr": "Appareil TS0005_switch",
+    "nl": "TS0005_switch Apparaat",
+    "de": "TS0005_switch Gerät",
+    "es": "Dispositivo TS0005_switch"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power",
+    "meter_power"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}
