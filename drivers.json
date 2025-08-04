@@ -1,0 +1,30 @@
+{
+  "drivers": {
+    "tuya": {
+      "lights": [],
+      "switches": [],
+      "plugs": [],
+      "sensors": [],
+      "covers": [],
+      "locks": [],
+      "thermostats": []
+    },
+    "zigbee": {
+      "lights": [],
+      "sensors": [],
+      "controls": [],
+      "historical": []
+    }
+  },
+  "metadata": {
+    "version": "3.4.2",
+    "lastUpdate": "2025-08-04T08:54:11.766Z",
+    "totalDrivers": 0,
+    "categories": [
+      "energy",
+      "lighting",
+      "sensors",
+      "controls"
+    ]
+  }
+}

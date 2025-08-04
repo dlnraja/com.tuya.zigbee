@@ -1,22 +1,25 @@
 # Tuya Zigbee Universal
 
-[EN] Universal Tuya and Zigbee devices for Homey - Mega Pipeline Final Simple
-[FR] Appareils Tuya et Zigbee universels pour Homey - Mega Pipeline Final Simple
-[NL] Universele Tuya en Zigbee apparaten voor Homey - Mega Pipeline Final Simple
-[TA] ஹோமியுக்கான உலகளாவிய Tuya மற்றும் Zigbee சாதனங்கள் - Mega Pipeline Final Simple
+[EN] Universal Tuya and Zigbee devices for Homey - Mega Fix Ultimate
+[FR] Appareils Tuya et Zigbee universels pour Homey - Mega Fix Ultimate
+[NL] Universele Tuya en Zigbee apparaten voor Homey - Mega Fix Ultimate
+[TA] ஹோமியுக்கான உலகளாவிய Tuya மற்றும் Zigbee சாதனங்கள் - Mega Fix Ultimate
 
 ## Features / Fonctionnalités / Functies / அம்சங்கள்
 
-- ✅ 4 bugs forum corrigés / 4 bugs forum corrigés / 4 forum bugs opgelost / 4 மன்ற பிழைகள் சரிசெய்யப்பட்டன
-- ✅ Validation complète / Validation complète / Volledige validatie / முழுமையான சரிபார்ப்பு
-- ✅ Documentation multilingue / Documentation multilingue / Meertalige documentatie / பல மொழி ஆவணப்படுத்தல்
-- ✅ Pipeline final simple / Pipeline final simple / Finale eenvoudige pipeline / இறுதி எளிய பைப்லைன்
+- ✅ 5 bugs forum corrigés
+- ✅ Validation complète (debug + publish)
+- ✅ Images PNG conformes Athom BV
+- ✅ Drivers organisés par catégories
+- ✅ Documentation multilingue
+- ✅ Issues GitHub intégrées
 
 ## Installation
 
 ```bash
+npx homey app validate --level debug
+npx homey app validate --level publish
 homey app install
-homey app validate
 ```
 
 ## Structure
