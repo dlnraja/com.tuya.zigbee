@@ -1,6 +1,6 @@
 {
   "id": "com.tuya.zigbee",
-  "version": "3.4.0",
+  "version": "3.4.2",
   "compatibility": ">=6.0.0",
   "sdk": 3,
   "platforms": [
@@ -14,13 +14,12 @@
     "es": "Tuya Zigbee Universal"
   },
   "description": {
-    "en": "Universal Tuya and Zigbee devices for Homey - Mega Pipeline Ultimate",
-    "fr": "Appareils Tuya et Zigbee universels pour Homey - Mega Pipeline Ultimate",
-    "nl": "Universele Tuya en Zigbee apparaten voor Homey - Mega Pipeline Ultimate",
-    "de": "Universal Tuya und Zigbee Geräte für Homey - Mega Pipeline Ultimate",
-    "es": "Dispositivos Tuya y Zigbee universales para Homey - Mega Pipeline Ultimate"
+    "en": "Universal Tuya and Zigbee devices for Homey - Mega Fix Ultimate",
+    "fr": "Appareils Tuya et Zigbee universels pour Homey - Mega Fix Ultimate",
+    "nl": "Universele Tuya en Zigbee apparaten voor Homey - Mega Fix Ultimate",
+    "de": "Universal Tuya und Zigbee Geräte für Homey - Mega Fix Ultimate",
+    "es": "Dispositivos Tuya y Zigbee universales para Homey - Mega Fix Ultimate"
   },
-
   "category": [
     "energy"
   ],
