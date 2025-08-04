@@ -1,0 +1,46 @@
+{
+  "id": "com.tuya.zigbee",
+  "version": "3.3.4",
+  "compatibility": ">=6.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Tuya Zigbee Universal",
+    "fr": "Tuya Zigbee Universel",
+    "nl": "Tuya Zigbee Universeel",
+    "de": "Tuya Zigbee Universal",
+    "es": "Tuya Zigbee Universal"
+  },
+  "description": {
+    "en": "Universal Tuya and Zigbee devices for Homey - Ultimate Fix Script",
+    "fr": "Appareils Tuya et Zigbee universels pour Homey - Ultimate Fix Script",
+    "nl": "Universele Tuya en Zigbee apparaten voor Homey - Ultimate Fix Script",
+    "de": "Universal Tuya und Zigbee Geräte für Homey - Ultimate Fix Script",
+    "es": "Dispositivos Tuya y Zigbee universales para Homey - Ultimate Fix Script"
+  },
+  "category": [
+    "lighting"
+  ],
+  "permissions": [
+    "homey:manager:api"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "author": {
+    "name": "dlnraja",
+    "email": "dylan.rajasekaram@gmail.com"
+  },
+
+  "bugs": {
+    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dlnraja/com.tuya.zigbee.git"
+  },
+  "license": "MIT"
+}
