@@ -40,5 +40,11 @@
     "fallbackParsing": true,
     "category": "sensors",
     "driverName": "temperature"
+  },
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
   }
 }
