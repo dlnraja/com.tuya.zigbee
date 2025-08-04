@@ -1,30 +1,56 @@
 {
+  "version": "3.4.5",
   "drivers": {
     "tuya": {
-      "lights": [],
-      "switches": [],
-      "plugs": [],
-      "sensors": [],
-      "covers": [],
-      "locks": [],
-      "thermostats": []
+      "lights": [
+        "led-bulb",
+        "rgb-strip",
+        "dimmer"
+      ],
+      "switches": [
+        "smart-switch",
+        "dimmer-switch"
+      ],
+      "plugs": [
+        "smart-plug",
+        "power-strip"
+      ],
+      "sensors": [
+        "temperature",
+        "humidity",
+        "motion"
+      ],
+      "covers": [
+        "curtain",
+        "blind"
+      ],
+      "locks": [
+        "smart-lock"
+      ],
+      "thermostats": [
+        "thermostat"
+      ]
     },
     "zigbee": {
-      "lights": [],
-      "sensors": [],
-      "controls": [],
-      "historical": []
+      "lights": [
+        "zigbee-bulb",
+        "zigbee-strip"
+      ],
+      "sensors": [
+        "zigbee-sensor"
+      ],
+      "controls": [
+        "zigbee-switch"
+      ],
+      "historical": [
+        "legacy-device"
+      ]
     }
   },
-  "metadata": {
-    "version": "3.4.2",
-    "lastUpdate": "2025-08-04T08:54:11.766Z",
-    "totalDrivers": 0,
-    "categories": [
-      "energy",
-      "lighting",
-      "sensors",
-      "controls"
-    ]
+  "features": {
+    "ai": true,
+    "autoDetection": true,
+    "homeyDesign": true,
+    "multilingual": true
   }
 }

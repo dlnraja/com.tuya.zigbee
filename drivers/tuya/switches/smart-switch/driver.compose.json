@@ -1,0 +1,34 @@
+{
+  "id": "com.tuya.zigbee.smart-switch",
+  "name": {
+    "en": "SmartSwitch Device",
+    "fr": "Appareil SmartSwitch",
+    "nl": "SmartSwitch Apparaat",
+    "de": "SmartSwitch Gerät",
+    "es": "Dispositivo SmartSwitch"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "design": {
+    "category": "switches",
+    "primaryColor": "#4169E1",
+    "secondaryColor": "#1E90FF",
+    "icon": "🔌",
+    "pattern": "linear-gradient"
+  }
+}
