@@ -1,34 +1,48 @@
-# Tuya Zigbee Universal - Mega Pipeline Ultimate
+# Tuya Zigbee Universal
 
-Universal Tuya and Zigbee devices for Homey - Mega Pipeline Ultimate Edition
+[EN] Universal Tuya and Zigbee devices for Homey - Ultimate Fix Script
+[FR] Appareils Tuya et Zigbee universels pour Homey - Ultimate Fix Script
+[NL] Universele Tuya en Zigbee apparaten voor Homey - Ultimate Fix Script
+[TA] ஹோமியுக்கான உலகளாவிய Tuya மற்றும் Zigbee சாதனங்கள் - Ultimate Fix Script
 
-## Features
+## Features / Fonctionnalités / Functies / அம்சங்கள்
 
-- 830 drivers perfectly organized
-- Mega pipeline ultimate optimization
-- Complete recovery and reorganization
-- File organization and cleanup
-- Multi-language support
-- Automatic validation and testing
+- ✅ 3 drivers reorganized / 3 drivers réorganisés / 3 drivers gereorganiseerd / 3 டிரைவர்கள் மறுசீரமைக்கப்பட்டன
+- ✅ Forum bugs fixed / Bugs forum corrigés / Forum bugs opgelost / மன்ற பிழைகள் சரிசெய்யப்பட்டன
+- ✅ External sources integrated / Sources externes intégrées / Externe bronnen geïntegreerd / வெளி மூலங்கள் ஒருங்கிணைக்கப்பட்டன
+- ✅ Complete documentation / Documentation complète / Volledige documentatie / முழுமையான ஆவணப்படுத்தல்
 
 ## Installation
 
 ```bash
 homey app install
-```
-
-## Validation
-
-```bash
 homey app validate
 ```
 
 ## Structure
 
-- **Tuya**: 30 drivers organized by function
-- **Zigbee**: 33 drivers organized by function  
-- **Legacy**: 767 drivers organized by type
-- **Documentation**: Well organized in docs/
-- **Reports**: All reports in reports/
+```
+/drivers/
+├── tuya/
+│   ├── lights/
+│   ├── switches/
+│   ├── plugs/
+│   ├── sensors/
+│   ├── covers/
+│   ├── locks/
+│   └── thermostats/
+└── zigbee/
+    ├── lights/
+    ├── sensors/
+    ├── controls/
+    └── historical/
+```
 
-**Mega Pipeline Ultimate completed successfully!** ✅
+## Support
+
+- GitHub: https://github.com/dlnraja/com.tuya.zigbee
+- Forum: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352/31
+
+## License
+
+MIT License
