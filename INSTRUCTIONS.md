@@ -1,117 +1,129 @@
-# 🧩 MEGA-PROMPT CURSOR – PROJET `com.tuya.zigbee`
+# 🚀 TUYA ZIGBEE UNIVERSAL — REFORMULATION CURSOR COMPLETE
 
-## 🎯 Objectif global
+## 🧭 Objectif global
 
-Reprendre immédiatement la totalité du projet `com.tuya.zigbee` (branche `master` et `tuya-light`), corriger les bugs, récupérer toutes les tâches manquées (queue interrompue), réadapter les drivers et pipelines, et recompiler automatiquement une version complète, fiable, exhaustive et documentée du projet – **sans régression**.
+Consolider et finaliser **le projet `com.tuya.zigbee`**, en séparant proprement les branches `master` (universelle, AI-powered) et `tuya-light` (version allégée), avec une **pipeline intelligente**, des **drivers organisés**, une **documentation multilingue** et un **déploiement autonome**.
 
-➡️ *Ce prompt doit être traité en mode autonome et sans attendre d'autres instructions.*
-
----
-
-## 🛠️ Étapes à exécuter
-
-### 1. 🔄 Corriger les bugs et récupérer la queue perdue
-
-* Inspecter et corriger tous les dysfonctionnements mentionnés dans [ce post Homey](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352/31).
-* Récupérer les actions de build, commits ou tâches de pipeline manquantes ("queue qui a sauté").
-* Traiter toutes les fonctions manquantes indiquées sur les forums Homey (messages de Dylan).
-
-### 2. 🧼 Réorganiser et fiabiliser le dépôt
-
-* Supprimer tous les scripts PowerShell (`*.ps1`) et les convertir en JS si nécessaire.
-* Organiser les dossiers ainsi :
-
-  ```
-  /drivers/tuya/
-  /drivers/zigbee/
-  /drivers/tuya/subtypes/
-  /scripts/
-  /scripts/auto/
-  ```
-* Tous les drivers doivent être **fonctionnels, compatibles, testés Homey**, sans duplication.
-* Le fichier `app.js` doit être **complété à 100%**, cohérent avec tous les dossiers.
-
-### 3. 🔁 Recompiler le projet
-
-* Compléter automatiquement `app.js`, `drivers.json`, `app.json`, `manifest.json`.
-* Vérifier que l'app est **installable et validée** via `homey app validate`.
-* Exécuter la pipeline JS (`mega-pipeline.js`) incluant :
-
-  * Détection automatique de nouveaux appareils
-  * Mapping des clusters/capabilities
-  * Fallback AI local
-  * Génération des fichiers :
-
-    * `README.md` (4 langues)
-    * `CHANGELOG.md`
-    * `drivers-matrix.md`
-    * `GitHub Pages dashboard`
-
-### 4. 📦 Intégrer les sources et issues externes
-
-* Scraper et importer :
-
-  * Issues GitHub JohanBendz/com.tuya.zigbee (`#1263`, `#1264`, `#1265`, etc.)
-  * Forum Homey
-  * Zigbee2MQTT
-  * ZHA (Home Assistant)
-  * Samsung SmartLife
-  * Domoticz
-  * Enki (Legrand)
-  * doctor64/tuyaZigbee (firmwares et modèles utiles)
-
-### 5. 📚 Documentation & CI
-
-* Générer automatiquement :
-
-  * `README.md` multilingue (EN > FR > NL > TA)
-  * `CHANGELOG.md` complet à chaque release
-  * `drivers-matrix.md` (nom, DP, compatibilité, état)
-  * `dashboard GitHub Pages` dynamique
-* Publier manuellement l'app sur l'App Store Homey après validation.
-
-### 6. 🔃 Synchronisation `tuya-light`
-
-* Mettre à jour `tuya-light` en miroir mensuel avec `master`, sans IA, sans pipeline.
-* Inclure uniquement les drivers Tuya natifs dans `/drivers/tuya/` (300+ devices).
-* Générer son propre `README` avec explications (app allégée, sans automatisation).
-* Garder les deux branches synchrones mais indépendantes.
+> 🎯 Objectif : rendre le dépôt **auto-suffisant, modulaire, maintenable, exhaustif et validé Homey Pro SDK3**.
 
 ---
 
-## ✅ Conditions de validation
+## ✅ Étapes de travail pour Cursor
 
-À la fin du processus :
+### 1. Vérification du fonctionnement global
 
-* ✅ Une application **fonctionnelle**, **stable** et **validée** (`homey app validate`)
-* ✅ Tous les fichiers de config complétés
-* ✅ Tous les drivers détectés, nettoyés, fonctionnels
-* ✅ Tous les logs/queues/patchs intégrés
-* ✅ Le dashboard et README mis à jour automatiquement
-* ✅ Toutes les fonctions discutées avec Dylan dans les threads Homey sont intégrées
+* Identifier les bugs actifs via `homey app validate` et `homey app install`
+* Corriger les erreurs remontées sur le [forum Homey (page 31)](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352/31)
+* Récupérer tous les jobs bloqués ou non exécutés (ex : queue GitHub Actions sautée)
+
+### 2. Nettoyage du dépôt
+
+* Supprimer tous les scripts PowerShell (`*.ps1`)
+* Convertir en `.js` si nécessaire
+* Réorganiser comme suit :
+
+```
+/drivers/
+  ├── tuya/
+  │   └── subtypes/
+  └── zigbee/
+    
+/scripts/
+  └── auto/
+```
+
+* Tous les drivers doivent être :
+
+  * Fonctionnels ✅
+  * Compatibles Homey Pro SDK3 ✅
+  * Reliés dans `app.js`, `drivers.json`, `manifest.json`
+
+### 3. Génération automatique
+
+* Générer les fichiers :
+
+  * `app.js`
+  * `app.json`
+  * `drivers.json`
+  * `manifest.json`
+* Valider l'application localement :
+
+```bash
+homey app validate
+homey app install
+```
+
+### 4. Scraping intelligent
+
+Intégrer les données de :
+
+* GitHub : `JohanBendz/com.tuya.zigbee` (issues/PRs)
+* Forum Homey (topics mentionnant Tuya)
+* Zigbee2MQTT
+* ZHA (Home Assistant)
+* SmartLife (Samsung)
+* Domoticz
+* Enki (Legrand)
+* doctor64/tuyaZigbee (DP, clusters)
+
+### 5. Branchement `tuya-light`
+
+Maintenir une version allégée stable :
+
+* Uniquement les drivers dans `/drivers/tuya/`
+* Pas de pipeline, pas d'IA, pas d'automatisation
+* `README.md` dédié à cette version
+* Synchronisation manuelle depuis `master` à chaque release stable
+
+### 6. Documentation multilingue
+
+Générer automatiquement :
+
+* `README.md` → 🇬🇧 EN → 🇫🇷 FR → 🇳🇱 NL → 🇱🇰 தமிழ்
+* `CHANGELOG.md`
+* `drivers-matrix.md` (nom, DP, clusters, statut, source)
+* `GitHub Pages dashboard` (HTML dynamique généré)
 
 ---
 
-## 🚀 Dernière étape : "YOLO FINAL PUSH"
+## 🔧 Améliorations recommandées
 
-* Une fois tout repris, corrigé et regénéré :
-
-  * Push final sur la branche `master`
-  * Push miroir sur `tuya-light` si applicable
-  * Relancer les workflows GitHub Actions
-  * Confirmer que le projet est **entièrement autonome, auto-structuré et maintenable**
-
----
-
-## 🧠 Mode d'exécution
-
-Agir sans dépendance bloquante, corriger tous les points faibles actuels, optimiser sans supprimer de fonctionnalités, puis exécuter l'intégralité du traitement en une seule passe.
+| Fonction / Script      | Description                                                                |
+| ---------------------- | -------------------------------------------------------------------------- |
+| `auto-i18n.js`         | Traduction multilingue automatique des fichiers `.md`                      |
+| `monthly-sync.js`      | Synchronisation mensuelle avec Z2M/ZHA/SmartLife pour enrichir les drivers |
+| `fallback-local.js`    | Fallback AI en local sans dépendance OpenAI                                |
+| `validate-all.js`      | Valide en masse tous les fichiers de configuration                         |
+| `watch-issues.js`      | GitHub Action qui importe automatiquement les nouveaux devices demandés    |
+| `dashboard.js`         | Génère le GitHub Pages auto avec état des drivers                          |
+| `drivers-sec-check.js` | Vérifie les clusters dangereux ou permissions mal définies                 |
+| Tests unitaires        | À écrire pour valider les DP/EP/Clusters générés                           |
 
 ---
 
-## 🌍 Langues prioritaires
+## 📌 Critères de succès
 
-Tous les documents générés doivent respecter cet ordre :
+* [x] Application 100% fonctionnelle et validée
+* [x] `app.js` complet et sans doublons
+* [x] Pipelines intelligentes opérationnelles
+* [x] Dashboard et fichiers `.md` générés automatiquement
+* [x] Deux branches maintenues (`master` et `tuya-light`)
+* [x] Intégration des sources communautaires
+
+---
+
+## 🧠 Notes du mainteneur
+
+**Auteur** : Dylan Rajasekaram
+📍 Projet : `com.tuya.zigbee`
+📬 GitHub : [github.com/dlnraja](https://github.com/dlnraja)
+🔗 LinkedIn : [linkedin.com/in/dlnraja](https://linkedin.com/in/dlnraja)
+
+---
+
+## 🌍 Ordre des langues
+
+Tous les fichiers générés doivent respecter cet ordre :
 
 1. 🇬🇧 English
 2. 🇫🇷 Français
@@ -120,68 +132,22 @@ Tous les documents générés doivent respecter cet ordre :
 
 ---
 
-## 🎉 ÉTAT ACTUEL DU PROJET
+## ✅ Résultat attendu
 
-### ✅ **MISSION ACCOMPLIE - 29/01/2025**
-
-**Statistiques finales :**
-- **4108 drivers réorganisés** avec structure propre
-- **Validation locale réussie** (`homey app validate`)
-- **Documentation multilingue** complète (EN/FR/NL/TA)
-- **8 sources externes** intégrées
-- **2 branches synchronisées** (master + tuya-light)
-- **100 fichiers modifiés** avec succès
-
-**Fichiers générés :**
-- ✅ `app.js` complet et fonctionnel
-- ✅ `app.json` optimisé
-- ✅ `README.md` multilingue
-- ✅ `CHANGELOG.md` structuré
-- ✅ `drivers-matrix.md` détaillé
-- ✅ `INSTRUCTIONS.md` (ce fichier)
-
-**Sources externes intégrées :**
-- ✅ GitHub: JohanBendz/com.tuya.zigbee
-- ✅ Forum Homey: Community topics
-- ✅ Zigbee2MQTT: Supported devices
-- ✅ ZHA: Home Assistant integration
-- ✅ SmartLife: Samsung integration
-- ✅ Domoticz: Home automation
-- ✅ Enki: Legrand integration
-- ✅ doctor64/tuyaZigbee: Firmware data
-
-**Le projet `com.tuya.zigbee` est maintenant complet, fonctionnel, documenté et prêt pour la production !** 🚀
+* Projet **complet**, **documenté**, **multi-source**, **multilingue**
+* Drivers testés, classés, enrichis
+* Pipeline prête à relancer automatiquement
+* Dashboard visible sur GitHub Pages
+* Synchronisation simple de `tuya-light` depuis `master`
 
 ---
 
-## 🎉 ÉTAT ACTUEL DU PROJET
+> 🔁 Ce document est conçu pour guider Cursor dans la consolidation complète du projet. Tu peux l'utiliser dans `INSTRUCTIONS.md`, dans un README interne, ou comme référence de maintenance.
 
-### ✅ **MISSION ACCOMPLIE - 29/01/2025**
+---
 
-**Statistiques finales :**
-- **4108 drivers réorganisés** avec structure propre
-- **Validation locale réussie** (`homey app validate`)
-- **Documentation multilingue** complète (EN/FR/NL/TA)
-- **8 sources externes** intégrées
-- **2 branches synchronisées** (master + tuya-light)
-- **100 fichiers modifiés** avec succès
 
-**Fichiers générés :**
-- ✅ `app.js` complet et fonctionnel
-- ✅ `app.json` optimisé
-- ✅ `README.md` multilingue
-- ✅ `CHANGELOG.md` structuré
-- ✅ `drivers-matrix.md` détaillé
-- ✅ `INSTRUCTIONS.md` (ce fichier)
 
-**Sources externes intégrées :**
-- ✅ GitHub: JohanBendz/com.tuya.zigbee
-- ✅ Forum Homey: Community topics
-- ✅ Zigbee2MQTT: Supported devices
-- ✅ ZHA: Home Assistant integration
-- ✅ SmartLife: Samsung integration
-- ✅ Domoticz: Home automation
-- ✅ Enki: Legrand integration
-- ✅ doctor64/tuyaZigbee: Firmware data
 
-**Le projet `com.tuya.zigbee` est maintenant complet, fonctionnel, documenté et prêt pour la production !** 🚀 
+
+ 
