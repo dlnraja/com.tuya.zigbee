@@ -1,0 +1,20 @@
+{
+  "id": "com.tuya.zigbee.legacy",
+  "name": {
+    "en": "Legacy"
+  },
+  "class": "historica",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ]
+}
