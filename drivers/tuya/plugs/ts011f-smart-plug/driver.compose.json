@@ -32,5 +32,11 @@
     "fallbackParsing": true,
     "category": "plugs",
     "driverName": "ts011f-smart-plug"
+  },
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
   }
 }

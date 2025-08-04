@@ -31,5 +31,11 @@
     "fallbackParsing": true,
     "category": "sensors",
     "driverName": "soil-sensor"
+  },
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
   }
 }

@@ -16,5 +16,11 @@
       "id": "list_devices",
       "template": "list_devices"
     }
-  ]
+  ],
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  }
 }
