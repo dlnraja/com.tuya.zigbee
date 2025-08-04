@@ -30,5 +30,11 @@
     "fallbackParsing": true,
     "category": "sensors",
     "driverName": "smart-knob"
+  },
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
   }
 }
