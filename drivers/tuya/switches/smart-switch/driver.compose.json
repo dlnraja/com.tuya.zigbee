@@ -33,10 +33,12 @@
     "pattern": "linear-gradient"
   },
   "tuyaLight": {
-    "version": "3.4.9",
+    "version": "3.5.0",
     "optimized": true,
     "autoFingerprint": true,
     "enhancedPolling": true,
-    "fallbackParsing": true
+    "fallbackParsing": true,
+    "category": "switches",
+    "driverName": "smart-switch"
   }
 }

@@ -1,19 +1,17 @@
 {
-  "id": "com.tuya.zigbee.led-bulb",
+  "id": "com.tuya.zigbee.soil-sensor",
   "name": {
-    "en": "LedBulb Device",
-    "fr": "Appareil LedBulb",
-    "nl": "LedBulb Apparaat",
-    "de": "LedBulb Gerät",
-    "es": "Dispositivo LedBulb"
+    "en": "Soil Sensor Device",
+    "fr": "Appareil Soil Sensor",
+    "nl": "Soil Sensor Apparaat",
+    "de": "Soil Sensor Gerät",
+    "es": "Dispositivo Soil Sensor"
   },
   "class": "device",
   "capabilities": [
-    "onoff",
-    "dim",
     "measure_temperature",
     "measure_humidity",
-    "measure_power"
+    "measure_soil_moisture"
   ],
   "images": {
     "small": "/assets/images/small.png",
@@ -25,20 +23,13 @@
       "template": "list_devices"
     }
   ],
-  "design": {
-    "category": "lights",
-    "primaryColor": "#FFD700",
-    "secondaryColor": "#FFA500",
-    "icon": "💡",
-    "pattern": "radial-gradient"
-  },
   "tuyaLight": {
     "version": "3.5.0",
     "optimized": true,
     "autoFingerprint": true,
     "enhancedPolling": true,
     "fallbackParsing": true,
-    "category": "lights",
-    "driverName": "led-bulb"
+    "category": "sensors",
+    "driverName": "soil-sensor"
   }
 }
