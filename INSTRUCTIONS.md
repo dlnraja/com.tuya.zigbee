@@ -1,139 +1,142 @@
-# 🚀 TUYA ZIGBEE UNIVERSAL — REFORMULATION CURSOR COMPLETE
+# 📦 MEGA-PROMPT CURSOR — PROJET `com.tuya.zigbee`
 
-## 🧭 Objectif global
+## 🎯 Objectif global
 
-Consolider et finaliser **le projet `com.tuya.zigbee`**, en séparant proprement les branches `master` (universelle, AI-powered) et `tuya-light` (version allégée), avec une **pipeline intelligente**, des **drivers organisés**, une **documentation multilingue** et un **déploiement autonome**.
+Reprendre immédiatement l'intégralité du projet Homey `com.tuya.zigbee` (branche `master` et `tuya-light`), corriger les bugs, récupérer toutes les tâches interrompues, restructurer les drivers, et recompiler une version **fiable, exhaustive, autonome et documentée**, sans aucune régression.
 
-> 🎯 Objectif : rendre le dépôt **auto-suffisant, modulaire, maintenable, exhaustif et validé Homey Pro SDK3**.
-
----
-
-## ✅ Étapes de travail pour Cursor
-
-### 1. Vérification du fonctionnement global
-
-* Identifier les bugs actifs via `homey app validate` et `homey app install`
-* Corriger les erreurs remontées sur le [forum Homey (page 31)](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352/31)
-* Récupérer tous les jobs bloqués ou non exécutés (ex : queue GitHub Actions sautée)
+> Ce prompt doit être traité **en exécution complète et autonome**, jusqu'à validation finale du projet.
 
 ---
 
-### 2. Nettoyage du dépôt
+## 🛠️ Étapes à exécuter
 
-* Supprimer tous les scripts PowerShell (`*.ps1`)
-* Convertir en `.js` si nécessaire
-* Réorganiser comme suit :
+### 1. 🔁 Récupération et correction
+
+* Vérifier et corriger les bugs visibles ici :
+  👉 [Forum Homey - Page 31](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352/31)
+* Récupérer **la queue interrompue** (builds, commits manquants, logs non traités).
+* Réintégrer toutes les fonctionnalités mentionnées par Dylan sur les forums Homey.
+
+---
+
+### 2. 📁 Nettoyage & réorganisation du dépôt
+
+* Supprimer tous les scripts PowerShell (`*.ps1`) encore présents.
+* Réorganiser les fichiers selon cette arborescence :
 
 ```
 /drivers/
-  ├── tuya/
-  │   └── subtypes/
-  └── zigbee/
+├── tuya/
+│   └── subtypes/
+└── zigbee/
     
 /scripts/
-  └── auto/
+└── auto/
 ```
 
 * Tous les drivers doivent être :
 
   * Fonctionnels ✅
-  * Compatibles Homey Pro SDK3 ✅
-  * Reliés dans `app.js`, `drivers.json`, `manifest.json`
+  * Testés et compatibles Homey Pro SDK3 ✅
+  * Liés proprement à `app.js` et `drivers.json` ✅
 
 ---
 
-### 3. Génération automatique
+### 3. ⚙️ Compilation & enrichissement automatique
 
-* Générer les fichiers :
+* Générer automatiquement les fichiers suivants :
 
   * `app.js`
   * `app.json`
   * `drivers.json`
   * `manifest.json`
-* Valider l'application localement :
+* Vérifier localement avec :
 
 ```bash
 homey app validate
 homey app install
 ```
 
+* Ne **supprimer aucune fonctionnalité existante**. Compléter et corriger uniquement.
+
 ---
 
-### 4. Scraping intelligent
+### 4. 🔗 Intégration des sources externes
 
-Intégrer les données de :
+Importer automatiquement les données et métadonnées issues de :
 
-* GitHub : `JohanBendz/com.tuya.zigbee` (issues/PRs)
-* Forum Homey (topics mentionnant Tuya)
+* GitHub : [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) (issues #1263 à #1265+)
+* Forum Homey (topics liés à l'app)
 * Zigbee2MQTT
 * ZHA (Home Assistant)
 * SmartLife (Samsung)
 * Domoticz
 * Enki (Legrand)
-* doctor64/tuyaZigbee (DP, clusters)
+* `doctor64/tuyaZigbee` (firmwares, clusters, DPs)
 
 ---
 
-### 5. Branchement `tuya-light`
+### 5. 📚 Génération automatique des documents
 
-Maintenir une version allégée stable :
+À chaque release, générer automatiquement :
 
-* Uniquement les drivers dans `/drivers/tuya/`
-* Pas de pipeline, pas d'IA, pas d'automatisation
-* `README.md` dédié à cette version
-* Synchronisation manuelle depuis `master` à chaque release stable
-
----
-
-### 6. Documentation multilingue
-
-Générer automatiquement :
-
-* `README.md` → 🇬🇧 EN → 🇫🇷 FR → 🇳🇱 NL → 🇱🇰 தமிழ்
-* `CHANGELOG.md`
-* `drivers-matrix.md` (nom, DP, clusters, statut, source)
-* `GitHub Pages dashboard` (HTML dynamique généré)
+* `README.md` (en 4 langues : 🇬🇧 EN → 🇫🇷 FR → 🇳🇱 NL → 🇱🇰 தமிழ்)
+* `CHANGELOG.md` (versionné, structuré)
+* `drivers-matrix.md` (tableau avec : nom, DPs, sources, compatibilité, date)
+* Un **dashboard GitHub Pages** (tableau de bord dynamique et auto-sync)
 
 ---
 
-## 🔧 Améliorations recommandées
+### 6. 📦 Branchement `tuya-light`
 
-| Fonction / Script      | Description                                                                |
-| ---------------------- | -------------------------------------------------------------------------- |
-| `auto-i18n.js`         | Traduction multilingue automatique des fichiers `.md`                      |
-| `monthly-sync.js`      | Synchronisation mensuelle avec Z2M/ZHA/SmartLife pour enrichir les drivers |
-| `fallback-local.js`    | Fallback AI en local sans dépendance OpenAI                                |
-| `validate-all.js`      | Valide en masse tous les fichiers de configuration                         |
-| `watch-issues.js`      | GitHub Action qui importe automatiquement les nouveaux devices demandés    |
-| `dashboard.js`         | Génère le GitHub Pages auto avec état des drivers                          |
-| `drivers-sec-check.js` | Vérifie les clusters dangereux ou permissions mal définies                 |
-| Tests unitaires        | À écrire pour valider les DP/EP/Clusters générés                           |
+Maintenir `tuya-light` comme branche miroir simplifiée :
+
+* Uniquement les drivers Tuya (répertoire `/drivers/tuya/`)
+* Aucune IA, pipeline, ou scraping
+* Auto-installation CLI
+* `README.md` spécifique : version légère, épurée, explicative
 
 ---
 
-## 📌 Critères de succès
+## ✅ Critères de validation
 
-* [x] Application 100% fonctionnelle et validée
-* [x] `app.js` complet et sans doublons
-* [x] Pipelines intelligentes opérationnelles
-* [x] Dashboard et fichiers `.md` générés automatiquement
-* [x] Deux branches maintenues (`master` et `tuya-light`)
-* [x] Intégration des sources communautaires
+Une fois le prompt exécuté :
 
----
-
-## 🧠 Notes du mainteneur
-
-**Auteur** : Dylan Rajasekaram
-📍 Projet : `com.tuya.zigbee`
-📬 GitHub : [github.com/dlnraja](https://github.com/dlnraja)
-🔗 LinkedIn : [linkedin.com/in/dlnraja](https://linkedin.com/in/dlnraja)
+* [x] Tous les drivers sont fonctionnels et bien organisés
+* [x] `app.js` est complet et valide
+* [x] Tous les `.md` sont générés correctement
+* [x] Le dashboard GitHub Pages est actif et synchronisé
+* [x] `homey app validate` ne retourne aucune erreur
+* [x] `tuya-light` est à jour, synchronisé manuellement
 
 ---
 
-## 🌍 Ordre des langues
+## 🚀 Étape finale : YOLO PUSH
 
-Tous les fichiers générés doivent respecter cet ordre :
+```bash
+git commit -am "🚀 Full rebuild and sync [EN] / Refonte complète [FR]"
+git push origin master
+git push origin tuya-light
+```
+
+* Exécuter une dernière fois `mega-pipeline.js`
+* Confirmer que tous les logs et validations sont réussis ✅
+
+---
+
+## 🧠 Notes de contexte (Dylan Rajasekaram)
+
+* Toute fonctionnalité évoquée précédemment (via Cursor, GitHub, ou forum) doit être prise en compte.
+* Supprimer toute dépendance inutile (execution portable).
+* Intégrer tous les anciens logs Cursor, instructions manquantes, commits oubliés.
+* Priorité à l'enrichissement intelligent, sans supprimer l'existant.
+* Réexécuter tout en autonomie complète — jusqu'à obtenir un projet stable, multilingue et autonome.
+
+---
+
+## 🌍 Rappel : langues prioritaires
+
+Tous les documents générés doivent respecter cet ordre :
 
 1. 🇬🇧 English
 2. 🇫🇷 Français
@@ -144,15 +147,17 @@ Tous les fichiers générés doivent respecter cet ordre :
 
 ## ✅ Résultat attendu
 
-* Projet **complet**, **documenté**, **multi-source**, **multilingue**
-* Drivers testés, classés, enrichis
-* Pipeline prête à relancer automatiquement
-* Dashboard visible sur GitHub Pages
-* Synchronisation simple de `tuya-light` depuis `master`
+Un projet complet, modulaire, stable, et maintenable :
+
+* 100% compatible Homey SDK3
+* Exécution automatisée (pipeline)
+* Drivers triés, validés, synchronisés
+* Documentation et dashboard à jour
+* Deux branches maintenues (`master` et `tuya-light`)
 
 ---
 
-> 🔁 Ce document est conçu pour guider Cursor dans la consolidation complète du projet. Tu peux l'utiliser dans `INSTRUCTIONS.md`, dans un README interne, ou comme référence de maintenance.
+> Make it clean. Make it complete. YOLO everything.
 
 ---
 
