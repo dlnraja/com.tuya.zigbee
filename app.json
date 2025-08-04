@@ -20,16 +20,14 @@
     "de": "Universal Tuya und Zigbee Geräte für Homey - Mega Pipeline Ultimate",
     "es": "Dispositivos Tuya y Zigbee universales para Homey - Mega Pipeline Ultimate"
   },
+
   "category": [
-    "app"
+    "energy"
   ],
   "permissions": [
     "homey:manager:api"
   ],
-  "images": {
-    "small": "/assets/images/small.png",
-    "large": "/assets/images/large.png"
-  },
+
   "author": {
     "name": "dlnraja",
     "email": "dylan.rajasekaram@gmail.com"
