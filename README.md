@@ -174,3 +174,73 @@ npx homey app run --debug
 - [ ] Synchronisation batch
 - [ ] Tests unitaires complets
 - [ ] Dashboard de statut en temps réel
+
+
+## 🔧 Corrections Apportées (Version 3.5.0)
+
+### ✅ Problèmes CLI Résolus
+- **Installation CLI** : Script d'installation automatisé créé
+- **Validation** : App validation corrigée pour CLI
+- **Build** : Processus de build optimisé
+- **Debug** : Instructions de debug ajoutées
+
+### 📁 Nouveaux Drivers Ajoutés
+- **TS0044** : Smart Switch multi-endpoint
+- **TS011F** : Smart Plug avec mesure de puissance
+- **Smart Knob** : Contrôleur rotatif intelligent
+- **Soil Sensor** : Capteur de sol avec humidité
+
+### 🔧 Optimisations Tuya-Light
+- **Auto-fingerprint** : Détection automatique des appareils
+- **Enhanced polling** : Polling amélioré avec fallback
+- **Multi-endpoint** : Support complet multi-endpoint
+- **Fallback parsing** : Parsing de secours robuste
+
+### 🐛 Problèmes Forum Résolus
+- ✅ Installation CLI fonctionnelle
+- ✅ Support TS0044, TS011F ajouté
+- ✅ Smart knob supporté
+- ✅ Soil sensor compatible
+- ✅ Multi-endpoint corrigé
+
+### 🔧 Installation CLI
+
+```bash
+# Installation via CLI
+node install-cli.js
+
+# Ou manuellement
+npx homey app validate --level debug
+npx homey app build
+npx homey app install
+```
+
+### 🐛 Troubleshooting
+
+Si l'installation CLI échoue :
+
+1. **Vérifiez Homey CLI** :
+   ```bash
+   npm install -g @homey/cli
+   ```
+
+2. **Authentifiez-vous** :
+   ```bash
+   npx homey auth
+   ```
+
+3. **Vérifiez les logs** :
+   ```bash
+   npx homey app run --debug
+   ```
+
+4. **Redémarrez Homey** si nécessaire
+
+### 📊 Nouveaux Drivers Supportés
+
+| Driver | Modèle | Capacités | Endpoints | Statut |
+|--------|--------|-----------|-----------|--------|
+| TS0044 | Smart Switch | onoff, dim | 1,2,3,4 | ✅ |
+| TS011F | Smart Plug | onoff, measure_power | 1 | ✅ |
+| Smart Knob | Contrôleur | button, measure_temp | 1 | ✅ |
+| Soil Sensor | Capteur Sol | measure_temp, measure_humidity | 1 | ✅ |
