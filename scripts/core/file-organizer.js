@@ -16,6 +16,16 @@ class FileOrganizer {
             steps: []
         };
         
+        // FICHIERS ESSENTIELS QUI DOIVENT RESTER À LA RACINE
+        this.essentialFiles = [
+            'app.js',
+            'app.json', 
+            'package.json',
+            '.cursorrules',
+            '.gitignore',
+            'LICENSE'
+        ];
+        
         this.fileCategories = {
             'docs/': [
                 '*.md', '*.txt', '*.pdf'
@@ -183,6 +193,12 @@ class FileOrganizer {
             .map(dirent => dirent.name);
         
         for (const file of rootFiles) {
+            // EXCLURE LES FICHIERS ESSENTIELS
+            if (this.essentialFiles.includes(file)) {
+                console.log(`🛡️ Fichier essentiel préservé: ${file}`);
+                continue;
+            }
+            
             for (const pattern of patterns) {
                 if (this.matchesPattern(file, pattern)) {
                     await this.moveFile(file, destination + file);
@@ -239,6 +255,12 @@ class FileOrganizer {
         ];
         
         for (const move of specificMoves) {
+            // EXCLURE LES FICHIERS ESSENTIELS
+            if (this.essentialFiles.includes(move.source)) {
+                console.log(`🛡️ Fichier essentiel préservé: ${move.source}`);
+                continue;
+            }
+            
             if (move.source.includes('*')) {
                 // Pattern matching
                 await this.moveFilesByPattern(move.dest, [move.source]);
@@ -300,8 +322,7 @@ class FileOrganizer {
         const warnings = [];
         
         // Vérifier que les fichiers essentiels restent à la racine
-        const essentialFiles = ['app.js', 'app.json', 'package.json', '.gitignore', '.cursorrules'];
-        for (const file of essentialFiles) {
+        for (const file of this.essentialFiles) {
             if (!fs.existsSync(file)) {
                 warnings.push(`Fichier essentiel manquant: ${file}`);
             }
