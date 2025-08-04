@@ -27,7 +27,10 @@
   "permissions": [
     "homey:manager:api"
   ],
-
+  "images": {
+    "small": "/assets/icon.svg",
+    "large": "/assets/icon.svg"
+  },
   "author": {
     "name": "dlnraja",
     "email": "dylan.rajasekaram@gmail.com"
