@@ -12,7 +12,8 @@
     "onoff",
     "dim",
     "measure_temperature",
-    "measure_humidity"
+    "measure_humidity",
+    "measure_power"
   ],
   "images": {
     "small": "/assets/images/small.png",
@@ -30,5 +31,12 @@
     "secondaryColor": "#228B22",
     "icon": "⚡",
     "pattern": "diagonal-gradient"
+  },
+  "tuyaLight": {
+    "version": "3.4.9",
+    "optimized": true,
+    "autoFingerprint": true,
+    "enhancedPolling": true,
+    "fallbackParsing": true
   }
 }
