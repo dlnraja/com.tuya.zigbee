@@ -1,0 +1,34 @@
+{
+  "id": "com.tuya.zigbee.smart-knob",
+  "name": {
+    "en": "Smart Knob Device",
+    "fr": "Appareil Smart Knob",
+    "nl": "Smart Knob Apparaat",
+    "de": "Smart Knob Gerät",
+    "es": "Dispositivo Smart Knob"
+  },
+  "class": "device",
+  "capabilities": [
+    "button",
+    "measure_temperature"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "tuyaLight": {
+    "version": "3.5.0",
+    "optimized": true,
+    "autoFingerprint": true,
+    "enhancedPolling": true,
+    "fallbackParsing": true,
+    "category": "sensors",
+    "driverName": "smart-knob"
+  }
+}
