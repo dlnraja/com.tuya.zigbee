@@ -108,3 +108,69 @@ Pour plus d'informations : https://homey.app
 ✅ AI FEATURES INTÉGRÉES
 ✅ CORRECTION BUGS AUTOMATIQUE
 ✅ CRUGE APPLIQUÉ
+
+## 🚀 Tuya-Light Branch
+
+### 📋 Spécifications Tuya-Light
+
+La branche **tuya-light** est une version **light**, **stable**, exclusivement anglophone, développée pour Homey Pro (modèle début 2023 et versions **CLI installables**) – en rupture avec l'automatisation cloud ou IA – et centrée sur des drivers fiables pour SDK3 Zigbee.
+
+### ✨ Fonctionnalités Tuya-Light
+
+- **🔍 Système de fingerprint automatique** : Détection automatique des appareils non supportés
+- **🔄 Polling fallback périodique** : Gestion robuste des erreurs de cluster
+- **🚀 Pipeline CI/CD** : Tests automatisés et validation continue
+- **📊 Dashboard de monitoring** : Interface de surveillance des drivers
+- **🔧 Drivers optimisés** : Support multi-endpoint amélioré
+- **📚 Documentation complète** : Guides d'installation et de debug
+
+### 🎯 Drivers Supportés
+
+| Catégorie | Drivers | Statut |
+|-----------|---------|--------|
+| Lights | LED Bulb, RGB Strip, Dimmers | ✅ |
+| Plugs | Smart Plug, Power Meter | ✅ |
+| Sensors | Temperature, Humidity, Motion | ✅ |
+| Switches | Smart Switch, Multi-endpoint | ✅ |
+| Covers | Curtains, Shutters | ✅ |
+| Locks | Smart Locks | ✅ |
+| Thermostats | Smart Thermostats | ✅ |
+
+### 🔧 Installation
+
+```bash
+# Cloner la branche tuya-light
+git clone -b tuya-light https://github.com/dlnraja/com.tuya.zigbee.git
+
+# Installer les dépendances
+npm install
+
+# Valider l'application
+npx homey app validate --level debug
+
+# Installer sur Homey
+npx homey app install
+```
+
+### 📊 Monitoring
+
+L'application inclut un dashboard intégré pour surveiller :
+- État des drivers
+- Taux de succès d'appairage
+- Erreurs fréquentes
+- Connexion au hub Zigbee
+
+### 🐛 Debug
+
+Pour activer les logs de debug :
+
+```bash
+npx homey app run --debug
+```
+
+### 📈 Roadmap
+
+- [ ] Fingerprint auto-detect avancé
+- [ ] Synchronisation batch
+- [ ] Tests unitaires complets
+- [ ] Dashboard de statut en temps réel
