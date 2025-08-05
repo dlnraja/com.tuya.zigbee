@@ -1,0 +1,56 @@
+{
+  "id": "com.tuya.zigbee",
+  "version": "3.4.8",
+  "compatibility": ">=6.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Tuya Zigbee Universal",
+    "fr": "Tuya Zigbee Universel",
+    "nl": "Tuya Zigbee Universeel",
+    "ta": "Tuya Zigbee உலகளாவிய"
+  },
+  "description": {
+    "en": "Universal Tuya and Zigbee devices for Homey",
+    "fr": "Appareils Tuya et Zigbee universels pour Homey",
+    "nl": "Universele Tuya en Zigbee apparaten voor Homey",
+    "ta": "Homey க்கான Universal Tuya மற்றும் Zigbee சாதனங்கள்"
+  },
+  "category": [
+    "lights",
+    "energy",
+    "security"
+  ],
+  "permissions": [
+    "homey:manager:api",
+    "homey:manager:geolocation",
+    "homey:manager:network"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "icon": "/assets/icon.svg",
+  "brandColor": "#4CAF50",
+  "author": {
+    "name": "dlnraja",
+    "email": "dylan.rajasekaram@gmail.com",
+    "url": "https://github.com/dlnraja"
+  },
+  "bugs": {
+    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dlnraja/com.tuya.zigbee.git"
+  },
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Dylan Rajasekaram",
+      "email": "dylan.rajasekaram@gmail.com"
+    }
+  ]
+}

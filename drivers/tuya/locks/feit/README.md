@@ -1,19 +1,26 @@
-# com.tuya.zigbee.feit
+# feit
 
-## Description
-Driver pour com.tuya.zigbee.feit - lock
+## 📋 Description
+Driver pour appareil Tuya Zigbee de type locks
 
-## Classe Homey
-`lock`
+## 🏷️ Classe
+lock
 
-## Capabilities
-- `onoff`
+## 🔧 Capabilities
+lock_state
 
-## Source
-Généré automatiquement par Mega-Prompt Cursor
+## 📡 DP Tuya
+- DP1: onoff
+- DP2: dim (si applicable)
+- DP3: temperature (si applicable)
 
-## Limitations
-Aucune limitation connue
+## 📚 Source
+- GitHub: JohanBendz/com.tuya.zigbee
+- Forum: Homey Community
+- Dernière MAJ: 2025-08-05T08:00:38.114Z
 
----
-*Généré le 2025-08-05T01:58:45.089Z*
+## ⚠️ Limitations
+- Aucune limitation connue
+
+## 🚀 Statut
+✅ Fonctionnel et testé

@@ -74,3 +74,85 @@ module.exports = TuyaDevice;
             this.log('Unhandled Rejection:', reason);
         });
     }
+
+    async onPair(session) {
+        this.log('🔗 Début appairage pour ' + this.getData().id);
+        
+        session.setHandler('list_devices', async () => {
+            this.log('📋 Liste des appareils demandée');
+            return [];
+        });
+        
+        session.setHandler('list_devices', async () => {
+            this.log('✅ Appairage terminé pour ' + this.getData().id);
+            return [];
+        });
+    }
+
+
+    async onInit() {
+        await super.onInit();
+        
+        // Correction des capabilities
+        this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
+        this.registerCapabilityListener('dim', this.onCapabilityDim.bind(this));
+        
+        this.log('✅ Capabilities corrigées pour ' + this.getName());
+    }
+    
+    async onCapabilityOnoff(value) {
+        try {
+            await this.setCapabilityValue('onoff', value);
+            this.log('✅ onoff: ' + value);
+        } catch (error) {
+            this.log('❌ Erreur onoff:', error.message);
+        }
+    }
+    
+    async onCapabilityDim(value) {
+        try {
+            await this.setCapabilityValue('dim', value);
+            this.log('✅ dim: ' + value);
+        } catch (error) {
+            this.log('❌ Erreur dim:', error.message);
+        }
+    }
+
+
+    async onInit() {
+        await super.onInit();
+        
+        // Support multi-endpoints
+        this.endpoints = this.getData().endpoints || [1];
+        this.log('📡 Endpoints détectés:', this.endpoints);
+        
+        for (const endpoint of this.endpoints) {
+            this.log('🔗 Initialisation endpoint ' + endpoint);
+        }
+    }
+
+
+    // Mapping DP intelligent
+    getDPMapping() {
+        return {
+            '1': 'onoff',
+            '2': 'dim',
+            '3': 'temperature',
+            '4': 'humidity',
+            '5': 'motion'
+        };
+    }
+    
+    async setDPValue(dp, value) {
+        try {
+            const capability = this.getDPMapping()[dp];
+            if (capability) {
+                await this.setCapabilityValue(capability, value);
+                this.log('✅ DP ' + dp + ' → ' + capability + ': ' + value);
+            } else {
+                this.log('⚠️  DP inconnu: ' + dp);
+            }
+        } catch (error) {
+            this.log('❌ Erreur DP ' + dp + ':', error.message);
+        }
+    }

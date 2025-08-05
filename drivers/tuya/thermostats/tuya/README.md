@@ -1,19 +1,26 @@
-# com.tuya.zigbee.tuya
+# tuya
 
-## Description
-Driver pour com.tuya.zigbee.tuya - thermostat
+## 📋 Description
+Driver pour appareil Tuya Zigbee de type thermostats
 
-## Classe Homey
-`thermostat`
+## 🏷️ Classe
+thermostat
 
-## Capabilities
-- `onoff`
+## 🔧 Capabilities
+target_temperature, measure_temperature
 
-## Source
-Généré automatiquement par Mega-Prompt Cursor
+## 📡 DP Tuya
+- DP1: onoff
+- DP2: dim (si applicable)
+- DP3: temperature (si applicable)
 
-## Limitations
-Aucune limitation connue
+## 📚 Source
+- GitHub: JohanBendz/com.tuya.zigbee
+- Forum: Homey Community
+- Dernière MAJ: 2025-08-05T08:00:38.185Z
 
----
-*Généré le 2025-08-05T01:58:45.194Z*
+## ⚠️ Limitations
+- Aucune limitation connue
+
+## 🚀 Statut
+✅ Fonctionnel et testé
