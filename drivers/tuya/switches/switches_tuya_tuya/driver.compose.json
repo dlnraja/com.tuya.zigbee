@@ -1,0 +1,75 @@
+{
+  "id": "switches_tuya_tuya",
+  "class": "switch",
+  "capabilities": [
+    "onoff",
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "name": {
+    "en": "switches_tuya_tuya",
+    "fr": "switches_tuya_tuya",
+    "nl": "switches_tuya_tuya",
+    "ta": "switches_tuya_tuya"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": ", ",
+  "model": "curtainmotor",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\curtain_motor\\device.js",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:35:45.227Z",
+  "enriched": "2025-08-05T08:40:35.152Z",
+  "type": "tuya",
+  "category": "switches",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.293Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "switch"
+    }
+  },
+  "renamed": {
+    "from": "switches_tuya_curtainmotor",
+    "date": "2025-08-05T10:09:26.374Z",
+    "reason": "automatic_fusion"
+  },
+  "fusion": {
+    "date": "2025-08-05T10:09:25.976Z",
+    "duplicates": [
+      "switches_tuya_lcdtemphumidsensor3",
+      "switches_tuya_radarsensor",
+      "switches_tuya_radarsensorceiling",
+      "switches_tuya_smartairdetectionbox",
+      "switches_tuya_smoke_sensor2",
+      "switches_tuya_soilsensor",
+      "switches_zigbee_call",
+      "switches_zigbee_cannot",
+      "switches_zigbee_contains",
+      "switches_zigbee_contentprefservice",
+      "switches_zigbee_datasystem",
+      "switches_zigbee_descriptor",
+      "switches_zigbee_enable",
+      "switches_zigbee_ikea",
+      "switches_zigbee_isusabledirectory",
+      "switches_zigbee_log",
+      "switches_zigbee_name",
+      "switches_zigbee_not",
+      "switches_zigbee_osram",
+      "switches_zigbee_philips",
+      "switches_zigbee_returned",
+      "switches_zigbee_samsung",
+      "switches_zigbee_sylvania",
+      "switches_zigbee_system",
+      "switches_zigbee_to",
+      "switches_zigbee_wrapper",
+      "switches_zigbee_xiaomi"
+    ],
+    "totalDrivers": 28
+  }
+}

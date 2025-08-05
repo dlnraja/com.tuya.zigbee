@@ -1,5 +1,5 @@
 {
-  "id": "sensors_zigbee_xiaomi-aqara-temperature-4",
+  "id": "sensors_zigbee_generic",
   "name": {
     "en": "sensors_zigbee_xiaomi-aqara-temperature-4",
     "fr": "sensors_zigbee_xiaomi-aqara-temperature-4",
@@ -48,5 +48,12 @@
     "from": "xiaomi-aqara-temperature-4",
     "date": "2025-08-05T09:47:53.800Z",
     "reason": "standardization"
+  },
+  "fusion": {
+    "date": "2025-08-05T10:09:27.943Z",
+    "duplicates": [
+      "sensors_zigbee_xiaomi-aqara-temperature-5"
+    ],
+    "totalDrivers": 2
   }
 }

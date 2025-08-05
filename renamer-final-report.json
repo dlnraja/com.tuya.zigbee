@@ -1,0 +1,29 @@
+{
+  "timestamp": "2025-08-05T10:09:29.044Z",
+  "success": true,
+  "stats": {
+    "driversProcessed": 0,
+    "driversRenamed": 23,
+    "driversFused": 14,
+    "filesCreated": 2,
+    "errors": []
+  },
+  "structure": {
+    "totalDrivers": 46,
+    "tuyaDrivers": 20,
+    "zigbeeDrivers": 26,
+    "categories": [
+      "assets",
+      "covers",
+      "lights",
+      "locks",
+      "plugs",
+      "sensors",
+      "switches",
+      "thermostats",
+      "controls",
+      "historical",
+      "smart-life"
+    ]
+  }
+}

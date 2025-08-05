@@ -1,0 +1,55 @@
+{
+  "id": "plugs_zigbee_generic",
+  "class": "socket",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "plugs_zigbee_generic",
+    "fr": "plugs_zigbee_generic",
+    "nl": "plugs_zigbee_generic",
+    "ta": "plugs_zigbee_generic"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "descriptor",
+  "source": "D:\\Download\\Compressed\\Realtek UHD Audio Driver DD RC4\\Realtek UHD Audio Driver Nahimic PCEE4 DTS X Creative DD DDP ATMOS G RC4\\Win64\\MBAPO264.dll",
+  "originalFile": "MBAPO264.dll",
+  "extracted": "2025-08-05T08:27:29.793Z",
+  "enriched": "2025-08-05T08:40:36.379Z",
+  "type": "zigbee",
+  "category": "plugs",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:47.106Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "socket"
+    }
+  },
+  "renamed": {
+    "from": "plugs_zigbee_descriptor",
+    "date": "2025-08-05T10:09:27.771Z",
+    "reason": "automatic_fusion"
+  },
+  "fusion": {
+    "date": "2025-08-05T10:09:27.177Z",
+    "duplicates": [
+      "plugs_zigbee_from",
+      "plugs_zigbee_ikea",
+      "plugs_zigbee_not",
+      "plugs_zigbee_osram",
+      "plugs_zigbee_philips",
+      "plugs_zigbee_samsung",
+      "plugs_zigbee_sylvania",
+      "plugs_zigbee_to",
+      "plugs_zigbee_xiaomi"
+    ],
+    "totalDrivers": 10
+  }
+}
