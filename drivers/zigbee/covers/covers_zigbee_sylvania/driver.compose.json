@@ -1,0 +1,52 @@
+{
+  "id": "covers_zigbee_sylvania",
+  "name": {
+    "en": "covers_zigbee_sylvania",
+    "fr": "covers_zigbee_sylvania",
+    "nl": "covers_zigbee_sylvania",
+    "ta": "covers_zigbee_sylvania"
+  },
+  "class": "cover",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  },
+  "isGeneric": true,
+  "source": "zigbee-common",
+  "type": "zigbee",
+  "manufacturer": "Generic",
+  "manufacturername": "generic",
+  "model": "sylvania",
+  "enriched": "2025-08-05T08:40:35.586Z",
+  "category": "covers",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.471Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "cover"
+    }
+  },
+  "renamed": {
+    "from": "sylvania",
+    "date": "2025-08-05T09:47:44.435Z",
+    "reason": "standardization"
+  }
+}

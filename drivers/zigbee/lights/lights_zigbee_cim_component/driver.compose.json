@@ -1,0 +1,40 @@
+{
+  "id": "lights_zigbee_cim_component",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "lights_zigbee_cim_component",
+    "fr": "lights_zigbee_cim_component",
+    "nl": "lights_zigbee_cim_component",
+    "ta": "lights_zigbee_cim_component"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "cim_component",
+  "source": "D:\\Download\\Compressed\\ME_SW_2413.5.67.0\\Drivers\\WMIProvider\\ME\\s\\Core\\CIM_Component.mof",
+  "originalFile": "CIM_Component.mof",
+  "extracted": "2025-08-05T08:31:48.059Z",
+  "enriched": "2025-08-05T08:40:35.704Z",
+  "type": "zigbee",
+  "category": "lights",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.550Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light"
+    }
+  },
+  "renamed": {
+    "from": "cim_component",
+    "date": "2025-08-05T09:47:45.993Z",
+    "reason": "standardization"
+  }
+}

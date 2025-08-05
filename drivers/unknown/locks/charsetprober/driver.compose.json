@@ -1,0 +1,20 @@
+{
+  "id": "charsetprober",
+  "class": "lock",
+  "capabilities": [],
+  "name": {
+    "en": "charsetprober",
+    "fr": "charsetprober",
+    "nl": "charsetprober",
+    "ta": "charsetprober"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "charsetprober",
+  "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\chardet\\charsetprober.py",
+  "originalFile": "charsetprober.py",
+  "extracted": "2025-08-05T08:33:41.668Z"
+}

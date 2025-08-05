@@ -1,0 +1,20 @@
+{
+  "id": "switch_2_gang_metering",
+  "class": "switche",
+  "capabilities": [],
+  "name": {
+    "en": "switch_2_gang_metering",
+    "fr": "switch_2_gang_metering",
+    "nl": "switch_2_gang_metering",
+    "ta": "switch_2_gang_metering"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "switch_2_gang_metering",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\switch_2_gang_metering\\driver.js",
+  "originalFile": "driver.js",
+  "extracted": "2025-08-05T08:36:08.147Z"
+}

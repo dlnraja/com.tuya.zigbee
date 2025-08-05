@@ -1,0 +1,37 @@
+{
+  "id": "lights_zigbee_philips-hue",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "lights_zigbee_philips-hue",
+    "fr": "lights_zigbee_philips-hue",
+    "nl": "lights_zigbee_philips-hue",
+    "ta": "lights_zigbee_philips-hue"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Generic",
+  "model": "philips-hue",
+  "created": "2025-08-05T08:40:39.462Z",
+  "type": "zigbee",
+  "category": "lights",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.657Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light"
+    }
+  },
+  "renamed": {
+    "from": "philips-hue",
+    "date": "2025-08-05T09:47:48.034Z",
+    "reason": "standardization"
+  }
+}

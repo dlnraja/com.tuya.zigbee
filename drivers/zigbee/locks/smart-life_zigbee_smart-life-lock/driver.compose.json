@@ -1,0 +1,51 @@
+{
+  "id": "smart-life_zigbee_smart-life-lock",
+  "name": {
+    "en": "smart-life_zigbee_smart-life-lock",
+    "fr": "smart-life_zigbee_smart-life-lock",
+    "nl": "smart-life_zigbee_smart-life-lock",
+    "ta": "smart-life_zigbee_smart-life-lock"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  },
+  "manufacturername": "generic",
+  "isGeneric": true,
+  "source": "zigbee-common",
+  "type": "zigbee",
+  "model": "smart-life-lock",
+  "enriched": "2025-08-05T08:40:37.176Z",
+  "category": "smart-life",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:47.275Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light"
+    }
+  },
+  "renamed": {
+    "from": "smart-life-lock",
+    "date": "2025-08-05T09:47:55.053Z",
+    "reason": "standardization"
+  }
+}

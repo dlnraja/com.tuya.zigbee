@@ -1,0 +1,51 @@
+{
+  "id": "smart-life_zigbee_smart-life-fan",
+  "name": {
+    "en": "smart-life_zigbee_smart-life-fan",
+    "fr": "smart-life_zigbee_smart-life-fan",
+    "nl": "smart-life_zigbee_smart-life-fan",
+    "ta": "smart-life_zigbee_smart-life-fan"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  },
+  "manufacturername": "generic",
+  "isGeneric": true,
+  "source": "zigbee-common",
+  "type": "zigbee",
+  "model": "smart-life-fan",
+  "enriched": "2025-08-05T08:40:37.095Z",
+  "category": "smart-life",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:47.268Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light"
+    }
+  },
+  "renamed": {
+    "from": "smart-life-fan",
+    "date": "2025-08-05T09:47:54.766Z",
+    "reason": "standardization"
+  }
+}

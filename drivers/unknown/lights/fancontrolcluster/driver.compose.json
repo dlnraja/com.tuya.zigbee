@@ -1,0 +1,20 @@
+{
+  "id": "fancontrolcluster",
+  "class": "light",
+  "capabilities": [],
+  "name": {
+    "en": "fancontrolcluster",
+    "fr": "fancontrolcluster",
+    "nl": "fancontrolcluster",
+    "ta": "fancontrolcluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "fancontrolcluster",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\node_modules\\zigbee-clusters\\lib\\clusters\\fanControl.js",
+  "originalFile": "fanControl.js",
+  "extracted": "2025-08-05T08:36:27.068Z"
+}

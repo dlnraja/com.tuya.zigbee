@@ -1,0 +1,40 @@
+{
+  "id": "switches_zigbee_not",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "switches_zigbee_not",
+    "fr": "switches_zigbee_not",
+    "nl": "switches_zigbee_not",
+    "ta": "switches_zigbee_not"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "not",
+  "source": "D:\\Download\\Compressed\\ME_SW_2413.5.67.0\\Drivers\\JHI\\jhi_service.exe",
+  "originalFile": "jhi_service.exe",
+  "extracted": "2025-08-05T08:31:15.592Z",
+  "enriched": "2025-08-05T08:40:37.653Z",
+  "type": "zigbee",
+  "category": "switches",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:47.365Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "switch"
+    }
+  },
+  "renamed": {
+    "from": "not",
+    "date": "2025-08-05T09:47:57.829Z",
+    "reason": "standardization"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "curtain_module",
+  "class": "cover",
+  "capabilities": [],
+  "name": {
+    "en": "curtain_module",
+    "fr": "curtain_module",
+    "nl": "curtain_module",
+    "ta": "curtain_module"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "curtain_module",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\curtain_module\\device.js",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:35:44.933Z"
+}

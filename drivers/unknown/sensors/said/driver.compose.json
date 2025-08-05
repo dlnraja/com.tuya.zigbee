@@ -1,0 +1,20 @@
+{
+  "id": "said",
+  "class": "sensor",
+  "capabilities": [],
+  "name": {
+    "en": "said",
+    "fr": "said",
+    "nl": "said",
+    "ta": "said"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "said",
+  "source": "D:\\Download\\Compressed\\PYRANA-1.53.401.5-U12-0.9\\system_new\\system\\lib\\libqvr_adsp_driver_stub.so",
+  "originalFile": "libqvr_adsp_driver_stub.so",
+  "extracted": "2025-08-05T08:26:14.498Z"
+}

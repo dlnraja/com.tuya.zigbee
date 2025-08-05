@@ -1,0 +1,40 @@
+{
+  "id": "locks_zigbee_connection",
+  "class": "lock",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "locks_zigbee_connection",
+    "fr": "locks_zigbee_connection",
+    "nl": "locks_zigbee_connection",
+    "ta": "locks_zigbee_connection"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "connection",
+  "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\__pycache__\\typing_extensions.cpython-311.pyc",
+  "originalFile": "typing_extensions.cpython-311.pyc",
+  "extracted": "2025-08-05T08:34:50.868Z",
+  "enriched": "2025-08-05T08:40:36.145Z",
+  "type": "zigbee",
+  "category": "locks",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.906Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "lock"
+    }
+  },
+  "renamed": {
+    "from": "connection",
+    "date": "2025-08-05T09:47:49.430Z",
+    "reason": "standardization"
+  }
+}

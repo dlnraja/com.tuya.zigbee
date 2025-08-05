@@ -1,0 +1,20 @@
+{
+  "id": "basiccluster",
+  "class": "light",
+  "capabilities": [],
+  "name": {
+    "en": "basiccluster",
+    "fr": "basiccluster",
+    "nl": "basiccluster",
+    "ta": "basiccluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "basiccluster",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\node_modules\\zigbee-clusters\\lib\\clusters\\basic.js",
+  "originalFile": "basic.js",
+  "extracted": "2025-08-05T08:36:18.459Z"
+}

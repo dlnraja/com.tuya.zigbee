@@ -1,0 +1,52 @@
+{
+  "id": "lights_zigbee_ikea",
+  "name": {
+    "en": "lights_zigbee_ikea",
+    "fr": "lights_zigbee_ikea",
+    "nl": "lights_zigbee_ikea",
+    "ta": "lights_zigbee_ikea"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  },
+  "isGeneric": true,
+  "source": "zigbee-common",
+  "type": "zigbee",
+  "manufacturer": "Generic",
+  "manufacturername": "generic",
+  "model": "ikea",
+  "enriched": "2025-08-05T08:40:35.782Z",
+  "category": "lights",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.599Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light"
+    }
+  },
+  "renamed": {
+    "from": "ikea",
+    "date": "2025-08-05T09:47:46.868Z",
+    "reason": "standardization"
+  }
+}

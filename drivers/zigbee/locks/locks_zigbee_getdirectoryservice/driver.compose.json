@@ -1,0 +1,40 @@
+{
+  "id": "locks_zigbee_getdirectoryservice",
+  "class": "lock",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "locks_zigbee_getdirectoryservice",
+    "fr": "locks_zigbee_getdirectoryservice",
+    "nl": "locks_zigbee_getdirectoryservice",
+    "ta": "locks_zigbee_getdirectoryservice"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "getdirectoryservice",
+  "source": "D:\\Download\\Compressed\\katana\\PortableApps\\FirefoxPortable\\App\\Firefox\\components\\nsDefaultCLH.js",
+  "originalFile": "nsDefaultCLH.js",
+  "extracted": "2025-08-05T08:26:24.721Z",
+  "enriched": "2025-08-05T08:40:36.200Z",
+  "type": "zigbee",
+  "category": "locks",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.955Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "lock"
+    }
+  },
+  "renamed": {
+    "from": "getdirectoryservice",
+    "date": "2025-08-05T09:47:50.650Z",
+    "reason": "standardization"
+  }
+}

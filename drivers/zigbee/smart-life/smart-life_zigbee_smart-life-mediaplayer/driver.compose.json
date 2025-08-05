@@ -1,0 +1,51 @@
+{
+  "id": "smart-life_zigbee_smart-life-mediaplayer",
+  "name": {
+    "en": "smart-life_zigbee_smart-life-mediaplayer",
+    "fr": "smart-life_zigbee_smart-life-mediaplayer",
+    "nl": "smart-life_zigbee_smart-life-mediaplayer",
+    "ta": "smart-life_zigbee_smart-life-mediaplayer"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  },
+  "manufacturername": "generic",
+  "isGeneric": true,
+  "source": "zigbee-common",
+  "type": "zigbee",
+  "model": "smart-life-mediaplayer",
+  "enriched": "2025-08-05T08:40:37.193Z",
+  "category": "smart-life",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:47.279Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light"
+    }
+  },
+  "renamed": {
+    "from": "smart-life-mediaplayer",
+    "date": "2025-08-05T09:47:55.241Z",
+    "reason": "standardization"
+  }
+}

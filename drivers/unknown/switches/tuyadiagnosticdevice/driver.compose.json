@@ -1,0 +1,20 @@
+{
+  "id": "tuyadiagnosticdevice",
+  "class": "switche",
+  "capabilities": [],
+  "name": {
+    "en": "tuyadiagnosticdevice",
+    "fr": "tuyadiagnosticdevice",
+    "nl": "tuyadiagnosticdevice",
+    "ta": "tuyadiagnosticdevice"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "tuyadiagnosticdevice",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\tuya_dummy_device\\device.js",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:36:09.493Z"
+}

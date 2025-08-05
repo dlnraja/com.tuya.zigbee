@@ -1,0 +1,20 @@
+{
+  "id": "prot_application",
+  "class": "switche",
+  "capabilities": [],
+  "name": {
+    "en": "prot_application",
+    "fr": "prot_application",
+    "nl": "prot_application",
+    "ta": "prot_application"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "prot_application",
+  "source": "D:\\Download\\Compressed\\katana\\PortableApps\\FirefoxPortable\\App\\Firefox\\components\\nsSafebrowsingApplication.js",
+  "originalFile": "nsSafebrowsingApplication.js",
+  "extracted": "2025-08-05T08:26:25.703Z"
+}

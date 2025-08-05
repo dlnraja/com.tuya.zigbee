@@ -1,0 +1,34 @@
+{
+  "id": "ts0501a-light",
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "name": {
+    "en": "ts0501a-light",
+    "fr": "ts0501a-light",
+    "nl": "ts0501a-light",
+    "ta": "ts0501a-light"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "ts0501a-light",
+  "created": "2025-08-05T08:40:39.298Z",
+  "type": "tuya",
+  "category": "lights",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.247Z",
+    "deduced": {
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "class": "light"
+    }
+  }
+}

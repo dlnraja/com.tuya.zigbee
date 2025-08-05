@@ -1,0 +1,20 @@
+{
+  "id": "tuyaonoffcluster",
+  "class": "lock",
+  "capabilities": [],
+  "name": {
+    "en": "tuyaonoffcluster",
+    "fr": "tuyaonoffcluster",
+    "nl": "tuyaonoffcluster",
+    "ta": "tuyaonoffcluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "tuyaonoffcluster",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\lib\\TuyaOnOffCluster.js",
+  "originalFile": "TuyaOnOffCluster.js",
+  "extracted": "2025-08-05T08:36:10.862Z"
+}

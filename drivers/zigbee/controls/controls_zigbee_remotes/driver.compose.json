@@ -1,0 +1,52 @@
+{
+  "id": "controls_zigbee_remotes",
+  "name": {
+    "en": "controls_zigbee_remotes",
+    "fr": "controls_zigbee_remotes",
+    "nl": "controls_zigbee_remotes",
+    "ta": "controls_zigbee_remotes"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  },
+  "isGeneric": true,
+  "source": "zigbee-common",
+  "type": "zigbee",
+  "manufacturer": "Generic",
+  "manufacturername": "generic",
+  "model": "remotes",
+  "enriched": "2025-08-05T08:40:35.378Z",
+  "category": "controls",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.371Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light"
+    }
+  },
+  "renamed": {
+    "from": "remotes",
+    "date": "2025-08-05T09:47:44.160Z",
+    "reason": "standardization"
+  }
+}

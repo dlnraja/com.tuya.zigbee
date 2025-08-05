@@ -1,0 +1,20 @@
+{
+  "id": "powerprofilecluster",
+  "class": "light",
+  "capabilities": [],
+  "name": {
+    "en": "powerprofilecluster",
+    "fr": "powerprofilecluster",
+    "nl": "powerprofilecluster",
+    "ta": "powerprofilecluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "powerprofilecluster",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\node_modules\\zigbee-clusters\\lib\\clusters\\powerProfile.js",
+  "originalFile": "powerProfile.js",
+  "extracted": "2025-08-05T08:36:31.780Z"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "lights_zigbee_pythonlexer",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "lights_zigbee_pythonlexer",
+    "fr": "lights_zigbee_pythonlexer",
+    "nl": "lights_zigbee_pythonlexer",
+    "ta": "lights_zigbee_pythonlexer"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "pythonlexer",
+  "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\pygments\\lexers\\python.py",
+  "originalFile": "python.py",
+  "extracted": "2025-08-05T08:33:50.614Z",
+  "enriched": "2025-08-05T08:40:35.912Z",
+  "type": "zigbee",
+  "category": "lights",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.721Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light"
+    }
+  },
+  "renamed": {
+    "from": "pythonlexer",
+    "date": "2025-08-05T09:47:48.394Z",
+    "reason": "standardization"
+  }
+}

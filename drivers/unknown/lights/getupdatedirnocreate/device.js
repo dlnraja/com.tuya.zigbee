@@ -1,0 +1,20 @@
+'use strict';
+
+const { ZigbeeDevice } = require('homey-unknown');
+
+class GetupdatedirnocreateDevice extends ZigbeeDevice {
+    async onInit() {
+        await super.onInit();
+        
+        this.log('getupdatedirnocreate device initialized');
+        this.log('Source: D:\Download\Compressed\katana\PortableApps\FirefoxPortable\App\Firefox\components\nsUpdateServiceStub.js');
+        this.log('Original file: nsUpdateServiceStub.js');
+        
+        // Register capabilities
+        
+    }
+    
+    
+}
+
+module.exports = GetupdatedirnocreateDevice;

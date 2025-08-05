@@ -1,0 +1,40 @@
+{
+  "id": "lights_zigbee_ioservice",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "lights_zigbee_ioservice",
+    "fr": "lights_zigbee_ioservice",
+    "nl": "lights_zigbee_ioservice",
+    "ta": "lights_zigbee_ioservice"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": ", ",
+  "source": "D:\\Download\\Compressed\\x86_64-pc-windows-gnu\\tool_config_files\\build-repo-builds\\config.json",
+  "originalFile": "config.json",
+  "extracted": "2025-08-05T08:29:42.064Z",
+  "enriched": "2025-08-05T08:40:35.819Z",
+  "type": "zigbee",
+  "category": "lights",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.620Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light"
+    }
+  },
+  "renamed": {
+    "from": "ioservice",
+    "date": "2025-08-05T09:47:47.160Z",
+    "reason": "standardization"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "switches_zigbee_returned",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "switches_zigbee_returned",
+    "fr": "switches_zigbee_returned",
+    "nl": "switches_zigbee_returned",
+    "ta": "switches_zigbee_returned"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "returned",
+  "source": "D:\\Download\\Compressed\\ME_SW_2413.5.67.0\\Drivers\\ICLS\\lib32\\iclsProxyInternal.dll",
+  "originalFile": "iclsProxyInternal.dll",
+  "extracted": "2025-08-05T08:31:07.756Z",
+  "enriched": "2025-08-05T08:40:38.024Z",
+  "type": "zigbee",
+  "category": "switches",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:47.379Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "switch"
+    }
+  },
+  "renamed": {
+    "from": "returned",
+    "date": "2025-08-05T09:47:58.309Z",
+    "reason": "standardization"
+  }
+}

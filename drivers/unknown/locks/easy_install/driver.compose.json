@@ -1,0 +1,20 @@
+{
+  "id": "easy_install",
+  "class": "lock",
+  "capabilities": [],
+  "name": {
+    "en": "easy_install",
+    "fr": "easy_install",
+    "nl": "easy_install",
+    "ta": "easy_install"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "easy_install",
+  "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\setuptools\\command\\easy_install.py",
+  "originalFile": "easy_install.py",
+  "extracted": "2025-08-05T08:33:23.039Z"
+}

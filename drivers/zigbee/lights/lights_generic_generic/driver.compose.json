@@ -1,0 +1,52 @@
+{
+  "id": "lights_generic_generic",
+  "name": {
+    "en": "lights_generic_generic",
+    "fr": "lights_generic_generic",
+    "nl": "lights_generic_generic",
+    "ta": "lights_generic_generic"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  },
+  "isGeneric": true,
+  "source": "zigbee-common",
+  "type": "zigbee",
+  "manufacturer": "Generic",
+  "manufacturername": "generic",
+  "model": "generic",
+  "enriched": "2025-08-05T08:40:35.759Z",
+  "category": "lights",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.587Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light"
+    }
+  },
+  "renamed": {
+    "from": "generic",
+    "date": "2025-08-05T09:47:46.615Z",
+    "reason": "standardization"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "switches_zigbee_cannot",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "switches_zigbee_cannot",
+    "fr": "switches_zigbee_cannot",
+    "nl": "switches_zigbee_cannot",
+    "ta": "switches_zigbee_cannot"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "cannot",
+  "source": "D:\\Download\\Compressed\\cooltechtics-11\\cooltechtics-11\\cooltechtics11\\driver\\win11_x64\\DolbyAPOvlldp130.dll",
+  "originalFile": "DolbyAPOvlldp130.dll",
+  "extracted": "2025-08-05T08:27:36.114Z",
+  "enriched": "2025-08-05T08:40:37.255Z",
+  "type": "zigbee",
+  "category": "switches",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:47.304Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "switch"
+    }
+  },
+  "renamed": {
+    "from": "cannot",
+    "date": "2025-08-05T09:47:55.704Z",
+    "reason": "standardization"
+  }
+}

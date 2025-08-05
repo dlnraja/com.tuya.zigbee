@@ -1,0 +1,20 @@
+{
+  "id": "temperaturemeasurement",
+  "class": "light",
+  "capabilities": [],
+  "name": {
+    "en": "temperaturemeasurement",
+    "fr": "temperaturemeasurement",
+    "nl": "temperaturemeasurement",
+    "ta": "temperaturemeasurement"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "temperaturemeasurement",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\node_modules\\zigbee-clusters\\lib\\clusters\\temperatureMeasurement.js",
+  "originalFile": "temperatureMeasurement.js",
+  "extracted": "2025-08-05T08:36:31.962Z"
+}

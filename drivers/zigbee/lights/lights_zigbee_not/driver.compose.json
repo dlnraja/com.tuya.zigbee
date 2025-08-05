@@ -1,0 +1,40 @@
+{
+  "id": "lights_zigbee_not",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "lights_zigbee_not",
+    "fr": "lights_zigbee_not",
+    "nl": "lights_zigbee_not",
+    "ta": "lights_zigbee_not"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "not",
+  "source": "D:\\Download\\compresed\\miflash_unlock_en_7.6.727.43\\MiUsbDriver.exe",
+  "originalFile": "MiUsbDriver.exe",
+  "extracted": "2025-08-05T08:30:06.320Z",
+  "enriched": "2025-08-05T08:40:35.833Z",
+  "type": "zigbee",
+  "category": "lights",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.624Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light"
+    }
+  },
+  "renamed": {
+    "from": "not",
+    "date": "2025-08-05T09:47:47.295Z",
+    "reason": "standardization"
+  }
+}

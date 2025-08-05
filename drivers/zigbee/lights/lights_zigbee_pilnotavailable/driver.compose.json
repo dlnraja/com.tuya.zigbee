@@ -1,0 +1,40 @@
+{
+  "id": "lights_zigbee_pilnotavailable",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "lights_zigbee_pilnotavailable",
+    "fr": "lights_zigbee_pilnotavailable",
+    "nl": "lights_zigbee_pilnotavailable",
+    "ta": "lights_zigbee_pilnotavailable"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "pilnotavailable",
+  "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\pygments\\formatters\\img.py",
+  "originalFile": "img.py",
+  "extracted": "2025-08-05T08:33:49.768Z",
+  "enriched": "2025-08-05T08:40:35.898Z",
+  "type": "zigbee",
+  "category": "lights",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.674Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light"
+    }
+  },
+  "renamed": {
+    "from": "pilnotavailable",
+    "date": "2025-08-05T09:47:48.218Z",
+    "reason": "standardization"
+  }
+}

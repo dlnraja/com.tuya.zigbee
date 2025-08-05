@@ -1,0 +1,51 @@
+{
+  "id": "thermostats_zigbee_ikea",
+  "name": {
+    "en": "thermostats_zigbee_ikea",
+    "fr": "thermostats_zigbee_ikea",
+    "nl": "thermostats_zigbee_ikea",
+    "ta": "thermostats_zigbee_ikea"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  },
+  "manufacturername": "generic",
+  "isGeneric": true,
+  "source": "zigbee-common",
+  "type": "zigbee",
+  "model": "ikea",
+  "enriched": "2025-08-05T08:40:38.799Z",
+  "category": "thermostats",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:47.419Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "thermostat"
+    }
+  },
+  "renamed": {
+    "from": "ikea",
+    "date": "2025-08-05T09:47:58.436Z",
+    "reason": "standardization"
+  }
+}
