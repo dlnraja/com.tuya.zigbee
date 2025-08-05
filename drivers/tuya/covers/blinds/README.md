@@ -1,19 +1,26 @@
-# com.tuya.zigbee.blinds
+# blinds
 
-## Description
-Driver pour com.tuya.zigbee.blinds - cover
+## 📋 Description
+Driver pour appareil Tuya Zigbee de type covers
 
-## Classe Homey
-`cover`
+## 🏷️ Classe
+cover
 
-## Capabilities
-- `onoff`
+## 🔧 Capabilities
+windowcoverings_state, windowcoverings_set
 
-## Source
-Généré automatiquement par Mega-Prompt Cursor
+## 📡 DP Tuya
+- DP1: onoff
+- DP2: dim (si applicable)
+- DP3: temperature (si applicable)
 
-## Limitations
-Aucune limitation connue
+## 📚 Source
+- GitHub: JohanBendz/com.tuya.zigbee
+- Forum: Homey Community
+- Dernière MAJ: 2025-08-05T08:00:38.072Z
 
----
-*Généré le 2025-08-05T01:58:45.058Z*
+## ⚠️ Limitations
+- Aucune limitation connue
+
+## 🚀 Statut
+✅ Fonctionnel et testé
