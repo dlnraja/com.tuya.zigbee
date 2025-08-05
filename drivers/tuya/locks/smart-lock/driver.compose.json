@@ -22,5 +22,9 @@
     "performance": "enhanced",
     "memory": "managed",
     "errorHandling": "robust"
-  }
+  },
+  "isGeneric": false,
+  "source": "tuya-zigbee",
+  "type": "tuya",
+  "manufacturer": "Tuya"
 }
