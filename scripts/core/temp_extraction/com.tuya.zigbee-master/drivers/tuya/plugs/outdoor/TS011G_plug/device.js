@@ -1,0 +1,18 @@
+const { TuyaDevice } = require('homey-tuya');
+
+class TS011G_plugDevice extends TuyaDevice {
+    async onInit() {
+        this.log('TS011G_plug device initialized');
+        
+        // Configuration des capacités selon le type
+        await this.setCapabilityValue('onoff', false);
+        
+        this.log('TS011G_plug device ready');
+    }
+    
+    async onSettings({ oldSettings, newSettings, changedKeys }) {
+        this.log('TS011G_plug settings updated');
+    }
+}
+
+module.exports = TS011G_plugDevice;

@@ -1,0 +1,15 @@
+{
+  "id": "generate-missing-zigbee-drivers",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturer": "Generic",
+  "model": "Unknown",
+  "source": "Fused: Git History Recovery",
+  "fusionDate": "2025-08-05T02:28:45.888Z"
+}

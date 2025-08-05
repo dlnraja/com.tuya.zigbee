@@ -1,0 +1,18 @@
+{
+  "id": "TS0005",
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "onoff",
+    "onoff",
+    "onoff",
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturer": "Generic",
+  "model": "Unknown",
+  "source": "Git History Recovery"
+}

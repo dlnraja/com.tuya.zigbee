@@ -1,0 +1,16 @@
+{
+  "id": "com.tuya.zigbee.zigbee-bulb.settings",
+  "name": {
+    "en": "ZigbeeBulb Settings",
+    "fr": "Paramètres ZigbeeBulb",
+    "nl": "ZigbeeBulb Instellingen",
+    "de": "ZigbeeBulb Einstellungen",
+    "es": "Configuración ZigbeeBulb"
+  },
+  "class": "settings",
+  "capabilities": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  }
+}

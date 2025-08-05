@@ -1,34 +1,20 @@
-# TS0044 Driver
+# com.tuya.zigbee.ts0044-smart-switch
 
-## 📋 Description
-Driver pour TS0044 compatible avec Homey Pro SDK3.
+## Description
+Driver pour com.tuya.zigbee.ts0044-smart-switch - device
 
-## 🔧 Capacités
-- onoff
-- dim
+## Classe Homey
+`device`
 
-## 📡 Endpoints
-- Endpoint 1
-- Endpoint 2
-- Endpoint 3
-- Endpoint 4
+## Capabilities
+- `onoff`
+- `dim`
 
-## 🏭 Fabricant
-Tuya
+## Source
+Généré automatiquement par Mega-Prompt Cursor
 
-## 📦 Modèle
-TS0044
+## Limitations
+Aucune limitation connue
 
-## 🚀 Tuya-Light Features
-- ✅ Auto-fingerprint detection
-- ✅ Enhanced polling
-- ✅ Fallback parsing
-- ✅ Multi-endpoint support
-
-## 🐛 Limitations connues
-- Aucune limitation connue actuellement
-
-## 📝 Notes de développement
-- Version: 3.5.0
-- Optimisé pour tuya-light
-- Compatible CLI installation
+---
+*Généré le 2025-08-05T01:58:45.173Z*

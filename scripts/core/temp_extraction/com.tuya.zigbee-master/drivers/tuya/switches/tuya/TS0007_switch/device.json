@@ -1,0 +1,53 @@
+{
+  "id": "TS0007_switch",
+  "name": {
+    "en": "TS0007_switch Device",
+    "fr": "Appareil TS0007_switch",
+    "nl": "TS0007_switch Apparaat",
+    "de": "TS0007_switch Gerät",
+    "es": "Dispositivo TS0007_switch"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power",
+    "meter_power",
+    "ai_enhanced",
+    "performance_optimized",
+    "tuya_optimized",
+    "lightweight",
+    "ai_enhanced",
+    "performance_optimized",
+    "tuya_optimized",
+    "lightweight"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "enrichment": {
+    "enriched": true,
+    "timestamp": "2025-08-02T14:11:15.866Z",
+    "pipeline": "Mega Pipeline Ultimate",
+    "mode": "YOLO",
+    "version": "3.3.3"
+  },
+  "compatibility": {
+    "enhanced": true,
+    "optimized": true
+  }
+}

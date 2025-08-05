@@ -1,33 +1,22 @@
-# TS011F Driver
+# com.tuya.zigbee.ts011f-smart-plug
 
-## 📋 Description
-Driver pour TS011F compatible avec Homey Pro SDK3.
+## Description
+Driver pour com.tuya.zigbee.ts011f-smart-plug - device
 
-## 🔧 Capacités
-- onoff
-- measure_power
-- measure_current
-- measure_voltage
+## Classe Homey
+`device`
 
-## 📡 Endpoints
-- Endpoint 1
+## Capabilities
+- `onoff`
+- `measure_power`
+- `measure_current`
+- `measure_voltage`
 
-## 🏭 Fabricant
-Tuya
+## Source
+Généré automatiquement par Mega-Prompt Cursor
 
-## 📦 Modèle
-TS011F
+## Limitations
+Aucune limitation connue
 
-## 🚀 Tuya-Light Features
-- ✅ Auto-fingerprint detection
-- ✅ Enhanced polling
-- ✅ Fallback parsing
-- ✅ Multi-endpoint support
-
-## 🐛 Limitations connues
-- Aucune limitation connue actuellement
-
-## 📝 Notes de développement
-- Version: 3.5.0
-- Optimisé pour tuya-light
-- Compatible CLI installation
+---
+*Généré le 2025-08-05T01:58:45.114Z*
