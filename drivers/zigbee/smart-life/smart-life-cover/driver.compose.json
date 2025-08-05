@@ -22,5 +22,9 @@
     "performance": "enhanced",
     "memory": "managed",
     "errorHandling": "robust"
-  }
+  },
+  "manufacturername": "generic",
+  "isGeneric": true,
+  "source": "zigbee-common",
+  "type": "zigbee"
 }

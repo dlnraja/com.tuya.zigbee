@@ -1,19 +1,26 @@
-# Xiaomi Aqara Temperature 4 Driver
+# xiaomi-aqara-temperature-4
 
-## Description
-Driver for xiaomi-aqara-temperature-4 sensors device.
+## 📋 Description
+Driver pour appareil Zigbee générique de type sensors
 
-## Capabilities
-- onoff
-- Additional capabilities to be implemented
+## 🏷️ Classe
+sensor
 
-## DataPoints (DPs)
-- DP1: On/Off state
-- Additional DPs to be documented
+## 🔧 Capabilities
+measure_temperature, measure_humidity, alarm_motion
 
-## Limitations
-- Basic implementation
-- Additional features to be added
+## 📡 Clusters Zigbee
+- Cluster 0x0006: OnOff
+- Cluster 0x0008: Level Control
+- Cluster 0x0402: Temperature
 
-## Version
-3.5.4
+## 📚 Source
+- GitHub: JohanBendz/com.tuya.zigbee
+- Forum: Homey Community
+- Dernière MAJ: 2025-08-05T08:00:38.252Z
+
+## ⚠️ Limitations
+- Aucune limitation connue
+
+## 🚀 Statut
+✅ Fonctionnel et testé
