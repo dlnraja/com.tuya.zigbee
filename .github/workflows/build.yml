@@ -1,34 +1,62 @@
-name: Build and Validate
+name: 🚀 Build & Deploy
 
 on:
   push:
-    branches: [ master, tuya-light ]
+    branches: [ master ]
   pull_request:
     branches: [ master ]
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
+    - name: 📥 Checkout
+      uses: actions/checkout@v4
+      
+    - name: 📦 Setup Node.js
+      uses: actions/setup-node@v4
       with:
         node-version: '18'
+        cache: 'npm'
         
-    - name: Install dependencies
+    - name: 📋 Install dependencies
       run: npm install
       
-    - name: Validate app
-      run: npx homey app validate
+    - name: 🔍 Validate drivers
+      run: node scripts/validate.js
       
-    - name: Build app
-      run: npx homey app build
+    - name: 🧹 Clean structure
+      run: node scripts/final-structure-cleaner.js
       
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v3
+    - name: 📊 Generate reports
+      run: node scripts/mega-complete-processor.js
+      
+    - name: 🚀 Build project
+      run: |
+        npm run build
+        echo "✅ Build completed successfully"
+        
+    - name: 📝 Update drivers index
+      run: node scripts/ultimate-fix.js
+      
+    - name: 🎯 Deploy to GitHub Pages
+      if: github.ref == 'refs/heads/master'
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        name: homey-app-build
-        path: .homeybuild/
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public/dashboard
+        
+    - name: 📈 Generate matrix
+      run: node scripts/generate-matrix.js
+      
+    - name: 📋 Create release
+      if: github.ref == 'refs/heads/master'
+      run: |
+        git config --local user.email "[redacted-email]"
+        git config --local user.name "dlnraja"
+        git add .
+        git commit -m "🚀 Build: $(date +%Y-%m-%d_%H-%M-%S) - MEGA-PROMPT CURSOR ULTIME"
+        git push

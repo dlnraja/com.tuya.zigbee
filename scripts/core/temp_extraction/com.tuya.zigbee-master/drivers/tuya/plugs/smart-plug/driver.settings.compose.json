@@ -1,16 +1,1 @@
-{
-  "id": "com.tuya.zigbee.smart-plug.settings",
-  "name": {
-    "en": "SmartPlug Settings",
-    "fr": "Paramètres SmartPlug",
-    "nl": "SmartPlug Instellingen",
-    "de": "SmartPlug Einstellungen",
-    "es": "Configuración SmartPlug"
-  },
-  "class": "settings",
-  "capabilities": [],
-  "images": {
-    "small": "/assets/images/small.png",
-    "large": "/assets/images/large.png"
-  }
-}
+{ "id": "com.tuya.zigbee.smart-plug.settings", "name": { "en": "SmartPlug Settings", "fr": "Paramètres SmartPlug", "nl": "SmartPlug Instellingen", "de": "SmartPlug Einstellungen", "es": "Configuración SmartPlug" }, "class": "settings", "capabilities": [], "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }}
