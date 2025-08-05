@@ -1,36 +1,75 @@
-name: Validate Drivers
+name: 🔍 Validate All Drivers
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, tuya-light ]
   pull_request:
-    branches: [ master ]
-  schedule:
-    - cron: '0 0 * * 1'  # Every Monday at midnight
+    branches: [ master, tuya-light ]
+  workflow_dispatch:
 
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
+    - name: 📥 Checkout
+      uses: actions/checkout@v4
+      
+    - name: 📦 Setup Node.js
+      uses: actions/setup-node@v4
       with:
         node-version: '18'
+        cache: 'npm'
         
-    - name: Install dependencies
+    - name: 📋 Install dependencies
       run: npm install
       
-    - name: Run driver validation
-      run: node scripts/core/validate.js
+    - name: 🔍 Detect anomalies
+      run: node scripts/detect-driver-anomalies.js
       
-    - name: Generate drivers matrix
-      run: node scripts/core/generate-matrix.js
+    - name: ✅ Validate drivers
+      run: node scripts/validate.js
       
-    - name: Upload validation report
-      uses: actions/upload-artifact@v3
+    - name: 🧹 Clean structure
+      run: node scripts/final-structure-cleaner.js
+      
+    - name: 📊 Generate validation report
+      run: node scripts/validate-final.js
+      
+    - name: 📈 Update drivers index
+      run: node scripts/ultimate-fix.js
+      
+    - name: 📋 Upload validation report
+      uses: actions/upload-artifact@v4
       with:
         name: validation-report
-        path: validation-report.json
+        path: reports/
+        
+    - name: 🚨 Create issue on validation failure
+      if: failure()
+      uses: actions/github-script@v7
+      with:
+        script: |
+          github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: '❌ Validation Failed - MEGA-PROMPT CURSOR ULTIME',
+            body: `## Validation Failed
+            
+            **Date**: ${new Date().toISOString()}
+            **Branch**: ${context.ref}
+            **Commit**: ${context.sha}
+            
+            ### Actions Required:
+            - [ ] Review validation errors
+            - [ ] Fix driver issues
+            - [ ] Re-run validation
+            
+            ### MEGA-PROMPT CURSOR ULTIME Status:
+            - ❌ Validation failed
+            - 🔧 Manual intervention required
+            
+            ---
+            *Generated automatically by GitHub Actions*`
+          })

@@ -1,17 +1,1 @@
-{
-  "drivers": 93,
-  "categories": {
-    "lights": 30,
-    "switches": 13,
-    "plugs": 10,
-    "sensors": 15,
-    "covers": 10,
-    "locks": 7,
-    "thermostats": 8
-  },
-  "finalization": {
-    "driversRecategorized": 8,
-    "foldersCleaned": 50,
-    "timestamp": "2025-08-05T07:04:21.345Z"
-  }
-}
+{ "drivers": 93, "categories": { "lights": 30, "switches": 13, "plugs": 10, "sensors": 15, "covers": 10, "locks": 7, "thermostats": 8 }, "finalization": { "driversRecategorized": 8, "foldersCleaned": 50, "timestamp": "2025-08-05T07:04:21.345Z" }}
