@@ -1,0 +1,14 @@
+{
+  "id": "total-drivers",
+  "class": "container",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturer": "Tuya",
+  "model": "Unknown",
+  "source": "Git History Recovery"
+}

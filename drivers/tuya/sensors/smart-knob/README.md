@@ -1,31 +1,20 @@
-# Smart Knob Driver
+# com.tuya.zigbee.smart-knob
 
-## 📋 Description
-Driver pour Smart Knob compatible avec Homey Pro SDK3.
+## Description
+Driver pour com.tuya.zigbee.smart-knob - device
 
-## 🔧 Capacités
-- button
-- measure_temperature
+## Classe Homey
+`device`
 
-## 📡 Endpoints
-- Endpoint 1
+## Capabilities
+- `button`
+- `measure_temperature`
 
-## 🏭 Fabricant
-Tuya
+## Source
+Généré automatiquement par Mega-Prompt Cursor
 
-## 📦 Modèle
-Smart Knob
+## Limitations
+Aucune limitation connue
 
-## 🚀 Tuya-Light Features
-- ✅ Auto-fingerprint detection
-- ✅ Enhanced polling
-- ✅ Fallback parsing
-- ✅ Multi-endpoint support
-
-## 🐛 Limitations connues
-- Aucune limitation connue actuellement
-
-## 📝 Notes de développement
-- Version: 3.5.0
-- Optimisé pour tuya-light
-- Compatible CLI installation
+---
+*Généré le 2025-08-05T01:58:45.127Z*

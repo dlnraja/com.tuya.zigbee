@@ -1,19 +1,19 @@
-# Smart Life Light Driver
+# com.tuya.zigbee.smart-life-light
 
 ## Description
-Driver for smart-life-light smart-life device.
+Driver pour com.tuya.zigbee.smart-life-light - smart-lif
+
+## Classe Homey
+`smart-lif`
 
 ## Capabilities
-- onoff
-- Additional capabilities to be implemented
+- `onoff`
 
-## DataPoints (DPs)
-- DP1: On/Off state
-- Additional DPs to be documented
+## Source
+Généré automatiquement par Mega-Prompt Cursor
 
 ## Limitations
-- Basic implementation
-- Additional features to be added
+Aucune limitation connue
 
-## Version
-3.5.4
+---
+*Généré le 2025-08-05T01:58:45.270Z*

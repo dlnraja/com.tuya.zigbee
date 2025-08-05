@@ -1,0 +1,112 @@
+# Génération d'un fichier texte contenant le bloc complet formaté
+bloc_complet = """
+# 🚀 INSTRUCTION CURSOR — PROJET COMPLET `com.tuya.zigbee` (TUYA & ZIGBEE) 🔁
+
+Tu dois reconstruire, stabiliser, enrichir et maintenir le projet GitHub `com.tuya.zigbee` (et sa variante `tuya-light`) à l’aide de tous les scripts, logs, discussions forum, archives, documents et drivers, en appliquant les règles de structuration suivantes :
+
+---
+
+## 📁 STRUCTURE DOSSIER À RESPECTER (OBLIGATOIRE)
+
+/drivers/tuya/        → tous les drivers Tuya Zigbee uniquement  
+/drivers/zigbee/      → tous les autres drivers Zigbee non-Tuya  
+/scripts/*.js         → tous les scripts Node.js (scraping, IA, CI, validation)  
+/scripts/*.ps1        → tous les scripts PowerShell (synchros, backups, conversions)  
+/data/*.json          → fichiers IA locale (clusters, DPs, modèles, fallback)  
+/docs/                → documentation technique, changelog, PDF, specs  
+.github/workflows/    → GitHub Actions pour validation & automation  
+README.md             → README multilingue généré (EN, FR, NL, TA)  
+CHANGELOG.md          → changelog enrichi automatiquement  
+drivers-matrix.md     → matrice détaillée des devices compatibles  
+mega-pipeline.js      → script principal autonome d’orchestration  
+app.json / app.js     → requis pour chaque version (lite & full)
+
+Supprimer tout dossier ou fichier obsolète comme `/fusion*`, `/drivers/test-*`, `/old`, `/temp`, `/backup`, ou tout fichier `.DS_Store`, `.zip`, `.log` inutile.
+
+---
+
+## 🎯 CONTRAINTES & OBJECTIFS MAJEURS
+
+- SDK **obligatoirement ≥ 3**
+- Fonctionnement 100 % compatible avec Homey **Pro / Cloud / Bridge**
+- Aucune publication automatique sur le store Homey (no `homey app publish`)
+- Zéro perte de devices déjà supportés ou historiques
+- Système d’auto-réparation et enrichissement permanent
+- Résilience : continue même sans OpenAI, GitHub token, ou accès Internet
+- Tous les scripts `.ps1` doivent être convertis ou synchronisés avec les `.js`
+- Enrichissement IA même partiel ou local est autorisé
+- Ne traiter **que** les sujets en rapport avec Zigbee et/ou Tuya
+
+---
+
+## 🧠 ENRICHISSEMENT IA LOCAL — `smart-enrich-drivers.js`
+
+Utilise :
+
+- `/data/tuya-inference-db.json` → mapping `modelId` → `capabilities`
+- `/data/dps-map.json`, `/cluster-map.json`, `/z2m-compatibility.json`
+- Règles internes :
+  - TS0003 → 3x `onoff`
+  - TS0601 + DP1 → `onoff`
+  - TS011F → `onoff` + `meter_power`
+- Système de fallback :
+  "capabilities": ["onoff"],
+  "fallback": true,
+  "warning": "inferred with low confidence"
+
+---
+
+## 🔁 PIPELINE GLOBALE — `mega-pipeline.js`
+
+1. `ensureRequiredFilesExist()` → crée README.md, app.js, specs manquants
+2. `cleanObsoleteFiles()` → supprime fusion*, orphelins, vieux dossiers
+3. `fixAppStructure()` → vérifie et corrige structure SDK3+, fichiers clés
+4. `verifyAllDrivers()` → JSON, champs, cross-validation app.json
+5. `fetchNewDevices()` → détecte tout nouveau device Tuya ou Zigbee générique
+6. `smart-enrich-drivers.js` → enrichit drivers via IA locale ou OpenAI si dispo
+7. `scrapeHomeyCommunity()` → scrape automatiquement les discussions Homey :
+   - https://community.homey.app/t/app-pro-tuya-zigbee-app/26439
+   - https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352
+   - + Z2M, Home Assistant, domotique-fr, GitHub
+8. `fix-from-forum-feedback()` → applique correctifs aux drivers impactés
+9. `resolveTodoDevices()` → transforme les `todo-*` en vrais drivers SDK3+
+10. `fetchGitHubIssues()` → récupère issues/PR si GITHUB_TOKEN dispo
+11. `test-multi-firmware-compatibility()` → test sur firmware Tuya & box Homey
+12. `generate-docs()` → génère README.md, CHANGELOG.md, drivers-matrix.md
+
+---
+
+## 🌐 SCRAPING & SYNCHRO SCRIPTÉE
+
+- Lire tout le contenu des scripts `.js` et `.ps1` pour améliorer la logique globale
+- Indexer les bons patterns à enrichir, tester, compléter ou automatiser
+- Scraper forums Homey, GitHub, Tuya, Z2M, HA, domotique
+- Enregistrer les résultats dans `.cache/forum-capability-map.json`
+- Chercher en priorité dans tous les messages pertinents des topics ci-dessus
+- Scanner tout ce qui est script ou automation dans le projet pour améliorer la logique d’exécution (`mega-pipeline.js` doit piloter tout le reste en fallback/resilient)
+
+---
+
+## 📚 SOURCES & FICHIERS INTERNES IMPORTANTS
+
+- Repo : https://github.com/dlnraja/com.tuya.zigbee
+- Discussions & bugs forums :
+  - https://community.homey.app/t/app-pro-tuya-zigbee-app/26439
+  - https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352/33
+- GitHub Actions : https://github.com/marketplace/actions/homey-app-validate
+- Dev Portal Homey : https://apps.developer.homey.app
+- Koenkk Z2M : https://github.com/Koenkk/zigbee-herdsman-converters
+- Docs locales :
+  - `/docs/specs/*.md`
+  - `ultime.txt`
+  - `[APP][PRO]Universal TUYA Zigbee Device App - lite version.pdf`
+
+✅ Ce fichier est prêt pour Cursor.
+"""
+
+# Sauvegarde dans un fichier texte
+output_path = "/mnt/data/instruction_cursor_com_tuya_zigbee.txt"
+with open(output_path, "w", encoding="utf-8") as f:
+    f.write(bloc_complet)
+
+output_path

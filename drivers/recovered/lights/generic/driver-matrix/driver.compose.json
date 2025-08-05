@@ -1,0 +1,14 @@
+{
+  "id": "driver-matrix",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturer": "Generic",
+  "model": "Unknown",
+  "source": "Git History Recovery"
+}

@@ -1,19 +1,19 @@
-# Sylvania Driver
+# com.tuya.zigbee.sylvania
 
 ## Description
-Driver for sylvania covers device.
+Driver pour com.tuya.zigbee.sylvania - cover
+
+## Classe Homey
+`cover`
 
 ## Capabilities
-- onoff
-- Additional capabilities to be implemented
+- `onoff`
 
-## DataPoints (DPs)
-- DP1: On/Off state
-- Additional DPs to be documented
+## Source
+Généré automatiquement par Mega-Prompt Cursor
 
 ## Limitations
-- Basic implementation
-- Additional features to be added
+Aucune limitation connue
 
-## Version
-3.5.4
+---
+*Généré le 2025-08-05T01:58:45.214Z*
