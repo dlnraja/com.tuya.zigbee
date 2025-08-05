@@ -5,15 +5,32 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+  schedule:
+    - cron: '0 0 * * 1'  # Every Monday at midnight
 
 jobs:
   validate:
     runs-on: ubuntu-latest
+    
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js
-      uses: actions/setup-node@v2
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
       with:
-        node-version: '16'
-    - run: npm ci
-    - run: node tools/validate.js
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Run driver validation
+      run: node scripts/core/validate.js
+      
+    - name: Generate drivers matrix
+      run: node scripts/core/generate-matrix.js
+      
+    - name: Upload validation report
+      uses: actions/upload-artifact@v3
+      with:
+        name: validation-report
+        path: validation-report.json

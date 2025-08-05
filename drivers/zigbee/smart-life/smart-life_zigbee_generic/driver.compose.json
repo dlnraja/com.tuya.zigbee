@@ -1,0 +1,51 @@
+{
+  "id": "smart-life_zigbee_generic",
+  "name": {
+    "en": "smart-life_zigbee_generic",
+    "fr": "smart-life_zigbee_generic",
+    "nl": "smart-life_zigbee_generic",
+    "ta": "smart-life_zigbee_generic"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  },
+  "manufacturername": "generic",
+  "isGeneric": true,
+  "source": "zigbee-common",
+  "type": "zigbee",
+  "model": "assets",
+  "enriched": "2025-08-05T08:40:36.960Z",
+  "category": "smart-life",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:47.241Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light"
+    }
+  },
+  "renamed": {
+    "from": "smart-life_generic_assets",
+    "date": "2025-08-05T10:09:28.638Z",
+    "reason": "automatic_fusion"
+  }
+}
