@@ -1,0 +1,37 @@
+{
+  "id": "motion_sensor_2",
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "name": {
+    "en": "motion_sensor_2",
+    "fr": "motion_sensor_2",
+    "nl": "motion_sensor_2",
+    "ta": "motion_sensor_2"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": ": ",
+  "model": "motion_sensor_2",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\motion_sensor_2\\device.js",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:35:51.796Z",
+  "enriched": "2025-08-05T08:40:35.138Z",
+  "type": "tuya",
+  "category": "sensors",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.289Z",
+    "deduced": {
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity"
+      ],
+      "class": "sensor"
+    }
+  }
+}

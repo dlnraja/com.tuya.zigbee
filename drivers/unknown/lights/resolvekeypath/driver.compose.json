@@ -1,0 +1,20 @@
+{
+  "id": "resolvekeypath",
+  "class": "light",
+  "capabilities": [],
+  "name": {
+    "en": "resolvekeypath",
+    "fr": "resolvekeypath",
+    "nl": "resolvekeypath",
+    "ta": "resolvekeypath"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "resolvekeypath",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\node_modules\\homey-zigbeedriver\\lib\\util\\index.js",
+  "originalFile": "index.js",
+  "extracted": "2025-08-05T08:36:31.737Z"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "upload",
+  "class": "light",
+  "capabilities": [],
+  "name": {
+    "en": "upload",
+    "fr": "upload",
+    "nl": "upload",
+    "ta": "upload"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "upload",
+  "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\setuptools\\command\\upload.py",
+  "originalFile": "upload.py",
+  "extracted": "2025-08-05T08:33:23.641Z"
+}

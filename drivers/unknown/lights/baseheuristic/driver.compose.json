@@ -1,0 +1,20 @@
+{
+  "id": "baseheuristic",
+  "class": "light",
+  "capabilities": [],
+  "name": {
+    "en": "baseheuristic",
+    "fr": "baseheuristic",
+    "nl": "baseheuristic",
+    "ta": "baseheuristic"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "baseheuristic",
+  "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\heuristics.py",
+  "originalFile": "heuristics.py",
+  "extracted": "2025-08-05T08:33:40.831Z"
+}

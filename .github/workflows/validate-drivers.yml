@@ -2,19 +2,18 @@ name: Validate Drivers
 
 on:
   push:
-    paths:
-      - 'drivers/**'
+    branches: [ master ]
   pull_request:
-    paths:
-      - 'drivers/**'
+    branches: [ master ]
 
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      - run: npm install
-      - run: node tools/validate.js
+    - uses: actions/checkout@v2
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+    - run: npm ci
+    - run: node tools/validate.js

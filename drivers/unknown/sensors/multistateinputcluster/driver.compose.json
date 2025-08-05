@@ -1,0 +1,20 @@
+{
+  "id": "multistateinputcluster",
+  "class": "sensor",
+  "capabilities": [],
+  "name": {
+    "en": "multistateinputcluster",
+    "fr": "multistateinputcluster",
+    "nl": "multistateinputcluster",
+    "ta": "multistateinputcluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "multistateinputcluster",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\node_modules\\zigbee-clusters\\lib\\clusters\\multistateInput.js",
+  "originalFile": "multistateInput.js",
+  "extracted": "2025-08-05T08:36:30.123Z"
+}

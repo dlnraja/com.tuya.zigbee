@@ -1,0 +1,40 @@
+{
+  "id": "covers_zigbee_represents",
+  "class": "cover",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "covers_zigbee_represents",
+    "fr": "covers_zigbee_represents",
+    "nl": "covers_zigbee_represents",
+    "ta": "covers_zigbee_represents"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "represents",
+  "source": "D:\\Download\\Compressed\\ME_SW_2413.5.67.0\\Drivers\\WMIProvider\\ME\\s\\Core\\CIM_ConcreteJob.mof",
+  "originalFile": "CIM_ConcreteJob.mof",
+  "extracted": "2025-08-05T08:31:48.073Z",
+  "enriched": "2025-08-05T08:40:35.554Z",
+  "type": "zigbee",
+  "category": "covers",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.439Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "cover"
+    }
+  },
+  "renamed": {
+    "from": "represents",
+    "date": "2025-08-05T09:47:44.393Z",
+    "reason": "standardization"
+  }
+}

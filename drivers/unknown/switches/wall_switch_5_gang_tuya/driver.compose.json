@@ -1,0 +1,20 @@
+{
+  "id": "wall_switch_5_gang_tuya",
+  "class": "switche",
+  "capabilities": [],
+  "name": {
+    "en": "wall_switch_5_gang_tuya",
+    "fr": "wall_switch_5_gang_tuya",
+    "nl": "wall_switch_5_gang_tuya",
+    "ta": "wall_switch_5_gang_tuya"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "wall_switch_5_gang_tuya",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\wall_switch_5_gang_tuya\\driver.js",
+  "originalFile": "driver.js",
+  "extracted": "2025-08-05T08:36:10.549Z"
+}

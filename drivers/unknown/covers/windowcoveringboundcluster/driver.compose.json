@@ -1,0 +1,20 @@
+{
+  "id": "windowcoveringboundcluster",
+  "class": "cover",
+  "capabilities": [],
+  "name": {
+    "en": "windowcoveringboundcluster",
+    "fr": "windowcoveringboundcluster",
+    "nl": "windowcoveringboundcluster",
+    "ta": "windowcoveringboundcluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "windowcoveringboundcluster",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\lib\\WindowCoveringBoundCluster.js",
+  "originalFile": "WindowCoveringBoundCluster.js",
+  "extracted": "2025-08-05T08:36:10.933Z"
+}

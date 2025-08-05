@@ -1,0 +1,20 @@
+{
+  "id": "smart_knob_switch",
+  "class": "switche",
+  "capabilities": [],
+  "name": {
+    "en": "smart_knob_switch",
+    "fr": "smart_knob_switch",
+    "nl": "smart_knob_switch",
+    "ta": "smart_knob_switch"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "smart_knob_switch",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\smart_knob_switch\\device.js",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:36:03.444Z"
+}

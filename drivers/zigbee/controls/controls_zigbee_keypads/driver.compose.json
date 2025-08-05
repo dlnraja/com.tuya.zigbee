@@ -1,0 +1,52 @@
+{
+  "id": "controls_zigbee_keypads",
+  "name": {
+    "en": "controls_zigbee_keypads",
+    "fr": "controls_zigbee_keypads",
+    "nl": "controls_zigbee_keypads",
+    "ta": "controls_zigbee_keypads"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  },
+  "isGeneric": true,
+  "source": "zigbee-common",
+  "type": "zigbee",
+  "manufacturer": "Generic",
+  "manufacturername": "generic",
+  "model": "keypads",
+  "enriched": "2025-08-05T08:40:35.356Z",
+  "category": "controls",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.364Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light"
+    }
+  },
+  "renamed": {
+    "from": "keypads",
+    "date": "2025-08-05T09:47:44.131Z",
+    "reason": "standardization"
+  }
+}

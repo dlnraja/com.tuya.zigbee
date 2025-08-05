@@ -1,0 +1,20 @@
+{
+  "id": "invalidmarker",
+  "class": "light",
+  "capabilities": [],
+  "name": {
+    "en": "invalidmarker",
+    "fr": "invalidmarker",
+    "nl": "invalidmarker",
+    "ta": "invalidmarker"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "invalidmarker",
+  "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\packaging\\markers.py",
+  "originalFile": "markers.py",
+  "extracted": "2025-08-05T08:33:46.075Z"
+}

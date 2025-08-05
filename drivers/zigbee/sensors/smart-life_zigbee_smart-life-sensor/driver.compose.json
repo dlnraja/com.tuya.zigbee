@@ -1,0 +1,53 @@
+{
+  "id": "smart-life_zigbee_smart-life-sensor",
+  "name": {
+    "en": "smart-life_zigbee_smart-life-sensor",
+    "fr": "smart-life_zigbee_smart-life-sensor",
+    "nl": "smart-life_zigbee_smart-life-sensor",
+    "ta": "smart-life_zigbee_smart-life-sensor"
+  },
+  "class": "light",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  },
+  "manufacturername": "generic",
+  "isGeneric": true,
+  "source": "zigbee-common",
+  "type": "zigbee",
+  "model": "smart-life-sensor",
+  "enriched": "2025-08-05T08:40:37.207Z",
+  "category": "smart-life",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:47.284Z",
+    "deduced": {
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity"
+      ],
+      "class": "light"
+    }
+  },
+  "renamed": {
+    "from": "smart-life-sensor",
+    "date": "2025-08-05T09:47:55.361Z",
+    "reason": "standardization"
+  }
+}

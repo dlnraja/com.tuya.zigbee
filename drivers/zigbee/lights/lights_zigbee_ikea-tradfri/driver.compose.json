@@ -1,0 +1,37 @@
+{
+  "id": "lights_zigbee_ikea-tradfri",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "lights_zigbee_ikea-tradfri",
+    "fr": "lights_zigbee_ikea-tradfri",
+    "nl": "lights_zigbee_ikea-tradfri",
+    "ta": "lights_zigbee_ikea-tradfri"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Generic",
+  "model": "ikea-tradfri",
+  "created": "2025-08-05T08:40:39.408Z",
+  "type": "zigbee",
+  "category": "lights",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.605Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light"
+    }
+  },
+  "renamed": {
+    "from": "ikea-tradfri",
+    "date": "2025-08-05T09:47:46.946Z",
+    "reason": "standardization"
+  }
+}

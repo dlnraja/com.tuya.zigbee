@@ -1,0 +1,40 @@
+{
+  "id": "switches_zigbee_wrapper",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "switches_zigbee_wrapper",
+    "fr": "switches_zigbee_wrapper",
+    "nl": "switches_zigbee_wrapper",
+    "ta": "switches_zigbee_wrapper"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "wrapper",
+  "source": "D:\\Download\\Compressed\\ME_SW_2413.5.67.0\\Drivers\\LMS\\LMS.exe",
+  "originalFile": "LMS.exe",
+  "extracted": "2025-08-05T08:31:39.576Z",
+  "enriched": "2025-08-05T08:40:38.578Z",
+  "type": "zigbee",
+  "category": "switches",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:47.404Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "switch"
+    }
+  },
+  "renamed": {
+    "from": "wrapper",
+    "date": "2025-08-05T09:47:58.399Z",
+    "reason": "standardization"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "switches_zigbee_log",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "switches_zigbee_log",
+    "fr": "switches_zigbee_log",
+    "nl": "switches_zigbee_log",
+    "ta": "switches_zigbee_log"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "log",
+  "source": "D:\\Download\\Compressed\\katana\\PortableApps\\FirefoxPortable\\App\\Firefox\\components\\WebContentConverter.js",
+  "originalFile": "WebContentConverter.js",
+  "extracted": "2025-08-05T08:26:26.545Z",
+  "enriched": "2025-08-05T08:40:37.342Z",
+  "type": "zigbee",
+  "category": "switches",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:47.355Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "switch"
+    }
+  },
+  "renamed": {
+    "from": "log",
+    "date": "2025-08-05T09:47:57.458Z",
+    "reason": "standardization"
+  }
+}

@@ -1,0 +1,20 @@
+'use strict';
+
+const { ZigbeeDevice } = require('homey-unknown');
+
+class ResolverexceptionDevice extends ZigbeeDevice {
+    async onInit() {
+        await super.onInit();
+        
+        this.log('resolverexception device initialized');
+        this.log('Source: D:\Download\Compressed\elelabs-zigbee-ezsp-utility-master\elelabs-zigbee-ezsp-utility-master\venv\Lib\site-packages\pip\_vendor\resolvelib\resolvers.py');
+        this.log('Original file: resolvers.py');
+        
+        // Register capabilities
+        
+    }
+    
+    
+}
+
+module.exports = ResolverexceptionDevice;

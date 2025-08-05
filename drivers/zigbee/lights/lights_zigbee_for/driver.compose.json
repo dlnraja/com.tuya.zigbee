@@ -1,0 +1,40 @@
+{
+  "id": "lights_zigbee_for",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "lights_zigbee_for",
+    "fr": "lights_zigbee_for",
+    "nl": "lights_zigbee_for",
+    "ta": "lights_zigbee_for"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "for",
+  "source": "D:\\Download\\Compressed\\RockChip_TFT TeaM\\RockChip\\Rockchip_DriverAssitant_v5.1.1\\Driver\\x86\\xp\\rockusb.inf",
+  "originalFile": "rockusb.inf",
+  "extracted": "2025-08-05T08:27:42.618Z",
+  "enriched": "2025-08-05T08:40:35.737Z",
+  "type": "zigbee",
+  "category": "lights",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.572Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light"
+    }
+  },
+  "renamed": {
+    "from": "for",
+    "date": "2025-08-05T09:47:46.406Z",
+    "reason": "standardization"
+  }
+}

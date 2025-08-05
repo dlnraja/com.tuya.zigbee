@@ -1,0 +1,42 @@
+{
+  "id": "switches_tuya_lcdtemphumidsensor3",
+  "class": "switch",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "name": {
+    "en": "switches_tuya_lcdtemphumidsensor3",
+    "fr": "switches_tuya_lcdtemphumidsensor3",
+    "nl": "switches_tuya_lcdtemphumidsensor3",
+    "ta": "switches_tuya_lcdtemphumidsensor3"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": ": ",
+  "model": "lcdtemphumidsensor3",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\lcdtemphumidsensor_3\\device.js",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:35:51.181Z",
+  "enriched": "2025-08-05T08:40:35.164Z",
+  "type": "tuya",
+  "category": "switches",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.296Z",
+    "deduced": {
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity"
+      ],
+      "class": "switch"
+    }
+  },
+  "renamed": {
+    "from": "lcdtemphumidsensor3",
+    "date": "2025-08-05T09:47:43.777Z",
+    "reason": "standardization"
+  }
+}

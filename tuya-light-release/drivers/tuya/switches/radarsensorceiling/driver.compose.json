@@ -1,0 +1,37 @@
+{
+  "id": "radarsensorceiling",
+  "class": "switch",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "name": {
+    "en": "radarsensorceiling",
+    "fr": "radarsensorceiling",
+    "nl": "radarsensorceiling",
+    "ta": "radarsensorceiling"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": ": ",
+  "model": "radarsensorceiling",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\radar_sensor_ceiling\\device.js",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:35:55.312Z",
+  "enriched": "2025-08-05T08:40:35.186Z",
+  "type": "tuya",
+  "category": "switches",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.306Z",
+    "deduced": {
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity"
+      ],
+      "class": "switch"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "switches_zigbee_datasystem",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "switches_zigbee_datasystem",
+    "fr": "switches_zigbee_datasystem",
+    "nl": "switches_zigbee_datasystem",
+    "ta": "switches_zigbee_datasystem"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "datasystem",
+  "source": "D:\\Download\\Compressed\\Realtek UHD Audio Driver DD RC4\\Realtek UHD Audio Driver Nahimic PCEE4 DTS X Creative DD DDP ATMOS G RC4\\Win64\\NahimicSvc64.exe",
+  "originalFile": "NahimicSvc64.exe",
+  "extracted": "2025-08-05T08:28:07.740Z",
+  "enriched": "2025-08-05T08:40:37.288Z",
+  "type": "zigbee",
+  "category": "switches",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:47.321Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "switch"
+    }
+  },
+  "renamed": {
+    "from": "datasystem",
+    "date": "2025-08-05T09:47:56.436Z",
+    "reason": "standardization"
+  }
+}

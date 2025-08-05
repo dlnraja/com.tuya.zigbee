@@ -1,0 +1,40 @@
+{
+  "id": "locks_zigbee_descriptor",
+  "class": "lock",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "locks_zigbee_descriptor",
+    "fr": "locks_zigbee_descriptor",
+    "nl": "locks_zigbee_descriptor",
+    "ta": "locks_zigbee_descriptor"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "descriptor",
+  "source": "D:\\Download\\Compressed\\ME_SW_2413.5.67.0\\Drivers\\ICLS\\lib32\\vcruntime140.dll",
+  "originalFile": "vcruntime140.dll",
+  "extracted": "2025-08-05T08:31:09.024Z",
+  "enriched": "2025-08-05T08:40:36.175Z",
+  "type": "zigbee",
+  "category": "locks",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.936Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "lock"
+    }
+  },
+  "renamed": {
+    "from": "descriptor",
+    "date": "2025-08-05T09:47:50.043Z",
+    "reason": "standardization"
+  }
+}

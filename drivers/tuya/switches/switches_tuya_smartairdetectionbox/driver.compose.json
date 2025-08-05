@@ -1,0 +1,40 @@
+{
+  "id": "switches_tuya_smartairdetectionbox",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "switches_tuya_smartairdetectionbox",
+    "fr": "switches_tuya_smartairdetectionbox",
+    "nl": "switches_tuya_smartairdetectionbox",
+    "ta": "switches_tuya_smartairdetectionbox"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "smartairdetectionbox",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\smart_air_detection_box\\device.js",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:36:01.800Z",
+  "enriched": "2025-08-05T08:40:35.197Z",
+  "type": "tuya",
+  "category": "switches",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.308Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "switch"
+    }
+  },
+  "renamed": {
+    "from": "smartairdetectionbox",
+    "date": "2025-08-05T09:47:43.827Z",
+    "reason": "standardization"
+  }
+}

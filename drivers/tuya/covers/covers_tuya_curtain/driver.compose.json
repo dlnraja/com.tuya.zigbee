@@ -1,0 +1,52 @@
+{
+  "id": "covers_tuya_curtain",
+  "name": {
+    "en": "covers_tuya_curtain",
+    "fr": "covers_tuya_curtain",
+    "nl": "covers_tuya_curtain",
+    "ta": "covers_tuya_curtain"
+  },
+  "class": "cover",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  },
+  "isGeneric": false,
+  "source": "tuya-zigbee",
+  "type": "tuya",
+  "manufacturer": "Tuya",
+  "manufacturername": "_TZE200_CURTAIN",
+  "model": "curtain",
+  "enriched": "2025-08-05T08:40:34.967Z",
+  "category": "covers",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.218Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "cover"
+    }
+  },
+  "renamed": {
+    "from": "curtain",
+    "date": "2025-08-05T09:47:42.900Z",
+    "reason": "standardization"
+  }
+}

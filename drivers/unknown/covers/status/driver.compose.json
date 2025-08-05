@@ -1,0 +1,20 @@
+{
+  "id": "status",
+  "class": "cover",
+  "capabilities": [],
+  "name": {
+    "en": "status",
+    "fr": "status",
+    "nl": "status",
+    "ta": "status"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "status",
+  "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\rich\\status.py",
+  "originalFile": "status.py",
+  "extracted": "2025-08-05T08:33:57.172Z"
+}

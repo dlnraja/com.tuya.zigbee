@@ -1,0 +1,20 @@
+{
+  "id": "build_clib",
+  "class": "light",
+  "capabilities": [],
+  "name": {
+    "en": "build_clib",
+    "fr": "build_clib",
+    "nl": "build_clib",
+    "ta": "build_clib"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "build_clib",
+  "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\setuptools\\command\\build_clib.py",
+  "originalFile": "build_clib.py",
+  "extracted": "2025-08-05T08:33:22.669Z"
+}

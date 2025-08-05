@@ -1,0 +1,32 @@
+{
+  "id": "ts0044-switch",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "ts0044-switch",
+    "fr": "ts0044-switch",
+    "nl": "ts0044-switch",
+    "ta": "ts0044-switch"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "ts0044-switch",
+  "created": "2025-08-05T08:40:39.277Z",
+  "type": "tuya",
+  "category": "switches",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.322Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "switch"
+    }
+  }
+}
