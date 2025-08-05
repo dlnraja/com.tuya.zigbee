@@ -1,0 +1,51 @@
+{
+  "id": "thermostats_zigbee_osram",
+  "name": {
+    "en": "thermostats_zigbee_osram",
+    "fr": "thermostats_zigbee_osram",
+    "nl": "thermostats_zigbee_osram",
+    "ta": "thermostats_zigbee_osram"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  },
+  "manufacturername": "generic",
+  "isGeneric": true,
+  "source": "zigbee-common",
+  "type": "zigbee",
+  "model": "osram",
+  "enriched": "2025-08-05T08:40:38.834Z",
+  "category": "thermostats",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:47.422Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "thermostat"
+    }
+  },
+  "renamed": {
+    "from": "osram",
+    "date": "2025-08-05T09:47:58.468Z",
+    "reason": "standardization"
+  }
+}

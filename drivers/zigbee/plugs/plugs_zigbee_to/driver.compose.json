@@ -1,0 +1,40 @@
+{
+  "id": "plugs_zigbee_to",
+  "class": "socket",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "plugs_zigbee_to",
+    "fr": "plugs_zigbee_to",
+    "nl": "plugs_zigbee_to",
+    "ta": "plugs_zigbee_to"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "to",
+  "source": "D:\\Download\\Compressed\\katana\\caine\\rw_common\\themes\\bravo\\javascript.js",
+  "originalFile": "javascript.js",
+  "extracted": "2025-08-05T08:26:20.650Z",
+  "enriched": "2025-08-05T08:40:36.587Z",
+  "type": "zigbee",
+  "category": "plugs",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:47.157Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "socket"
+    }
+  },
+  "renamed": {
+    "from": "to",
+    "date": "2025-08-05T09:47:53.261Z",
+    "reason": "standardization"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "sensors_zigbee_samsung",
+  "name": {
+    "en": "sensors_zigbee_samsung",
+    "fr": "sensors_zigbee_samsung",
+    "nl": "sensors_zigbee_samsung",
+    "ta": "sensors_zigbee_samsung"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  },
+  "isGeneric": true,
+  "source": "zigbee-common",
+  "type": "zigbee",
+  "manufacturer": "Generic",
+  "manufacturername": "generic",
+  "model": "samsung",
+  "enriched": "2025-08-05T08:40:36.720Z",
+  "category": "sensors",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:47.192Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "sensor"
+    }
+  },
+  "renamed": {
+    "from": "samsung",
+    "date": "2025-08-05T09:47:53.548Z",
+    "reason": "standardization"
+  }
+}

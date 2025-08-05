@@ -1,0 +1,20 @@
+{
+  "id": "temphumidsensor5",
+  "class": "switche",
+  "capabilities": [],
+  "name": {
+    "en": "temphumidsensor5",
+    "fr": "temphumidsensor5",
+    "nl": "temphumidsensor5",
+    "ta": "temphumidsensor5"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "temphumidsensor5",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\temphumidsensor5\\device.js",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:36:08.656Z"
+}

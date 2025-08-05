@@ -1,0 +1,20 @@
+{
+  "id": "httperror",
+  "class": "light",
+  "capabilities": [],
+  "name": {
+    "en": "httperror",
+    "fr": "httperror",
+    "nl": "httperror",
+    "ta": "httperror"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "httperror",
+  "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\urllib3\\exceptions.py",
+  "originalFile": "exceptions.py",
+  "extracted": "2025-08-05T08:33:59.449Z"
+}

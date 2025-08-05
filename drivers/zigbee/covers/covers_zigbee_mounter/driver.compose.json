@@ -1,0 +1,40 @@
+{
+  "id": "covers_zigbee_mounter",
+  "class": "cover",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "covers_zigbee_mounter",
+    "fr": "covers_zigbee_mounter",
+    "nl": "covers_zigbee_mounter",
+    "ta": "covers_zigbee_mounter"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "mounter",
+  "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\distlib\\wheel.py",
+  "originalFile": "wheel.py",
+  "extracted": "2025-08-05T08:33:44.379Z",
+  "enriched": "2025-08-05T08:40:35.506Z",
+  "type": "zigbee",
+  "category": "covers",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.410Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "cover"
+    }
+  },
+  "renamed": {
+    "from": "mounter",
+    "date": "2025-08-05T09:47:44.344Z",
+    "reason": "standardization"
+  }
+}

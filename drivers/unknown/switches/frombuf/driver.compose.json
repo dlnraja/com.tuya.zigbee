@@ -1,0 +1,20 @@
+{
+  "id": "frombuf",
+  "class": "switche",
+  "capabilities": [],
+  "name": {
+    "en": "frombuf",
+    "fr": "frombuf",
+    "nl": "frombuf",
+    "ta": "frombuf"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "frombuf",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\node_modules\\zigbee-clusters\\lib\\zclFrames.js",
+  "originalFile": "zclFrames.js",
+  "extracted": "2025-08-05T08:36:32.635Z"
+}

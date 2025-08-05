@@ -1,0 +1,20 @@
+{
+  "id": "windows",
+  "class": "light",
+  "capabilities": [],
+  "name": {
+    "en": "windows",
+    "fr": "windows",
+    "nl": "windows",
+    "ta": "windows"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "windows",
+  "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\platformdirs\\windows.py",
+  "originalFile": "windows.py",
+  "extracted": "2025-08-05T08:33:48.777Z"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "lifoqueue",
+  "class": "light",
+  "capabilities": [],
+  "name": {
+    "en": "lifoqueue",
+    "fr": "lifoqueue",
+    "nl": "lifoqueue",
+    "ta": "lifoqueue"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "lifoqueue",
+  "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\urllib3\\util\\queue.py",
+  "originalFile": "queue.py",
+  "extracted": "2025-08-05T08:34:01.441Z"
+}

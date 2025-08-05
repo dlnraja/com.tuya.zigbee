@@ -1,0 +1,20 @@
+{
+  "id": "or",
+  "class": "lock",
+  "capabilities": [],
+  "name": {
+    "en": "or",
+    "fr": "or",
+    "nl": "or",
+    "ta": "or"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "or",
+  "source": "D:\\Download\\Compressed\\PYRANA-1.53.401.5-U12-0.9\\vendor_new\\lib64\\vendor.qti.hardware.camera.device@1.0_vendor.so",
+  "originalFile": "vendor.qti.hardware.camera.device@1.0_vendor.so",
+  "extracted": "2025-08-05T08:26:17.412Z"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "command",
+  "class": "light",
+  "capabilities": [],
+  "name": {
+    "en": "command",
+    "fr": "command",
+    "nl": "command",
+    "ta": "command"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "command",
+  "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_internal\\cli\\base_command.py",
+  "originalFile": "base_command.py",
+  "extracted": "2025-08-05T08:33:34.942Z"
+}

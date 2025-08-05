@@ -1,0 +1,40 @@
+{
+  "id": "lights_zigbee_in",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "lights_zigbee_in",
+    "fr": "lights_zigbee_in",
+    "nl": "lights_zigbee_in",
+    "ta": "lights_zigbee_in"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": ", ",
+  "source": "D:\\Download\\Compressed\\x86_64-pc-windows-gnu\\tool_config_files\\build-repo-builds\\plugins\\OpenCorePkg.json",
+  "originalFile": "OpenCorePkg.json",
+  "extracted": "2025-08-05T08:29:43.306Z",
+  "enriched": "2025-08-05T08:40:35.799Z",
+  "type": "zigbee",
+  "category": "lights",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.612Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light"
+    }
+  },
+  "renamed": {
+    "from": "in",
+    "date": "2025-08-05T09:47:47.048Z",
+    "reason": "standardization"
+  }
+}

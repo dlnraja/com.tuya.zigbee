@@ -1,0 +1,42 @@
+{
+  "id": "switches_tuya_radarsensor",
+  "class": "switch",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "name": {
+    "en": "switches_tuya_radarsensor",
+    "fr": "switches_tuya_radarsensor",
+    "nl": "switches_tuya_radarsensor",
+    "ta": "switches_tuya_radarsensor"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": ": ",
+  "model": "radarsensor",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\radar_sensor\\device.js",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:35:54.625Z",
+  "enriched": "2025-08-05T08:40:35.177Z",
+  "type": "tuya",
+  "category": "switches",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.302Z",
+    "deduced": {
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity"
+      ],
+      "class": "switch"
+    }
+  },
+  "renamed": {
+    "from": "radarsensor",
+    "date": "2025-08-05T09:47:43.795Z",
+    "reason": "standardization"
+  }
+}

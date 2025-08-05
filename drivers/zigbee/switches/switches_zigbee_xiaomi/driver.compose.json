@@ -1,0 +1,51 @@
+{
+  "id": "switches_zigbee_xiaomi",
+  "name": {
+    "en": "switches_zigbee_xiaomi",
+    "fr": "switches_zigbee_xiaomi",
+    "nl": "switches_zigbee_xiaomi",
+    "ta": "switches_zigbee_xiaomi"
+  },
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  },
+  "manufacturername": "generic",
+  "isGeneric": true,
+  "source": "zigbee-common",
+  "type": "zigbee",
+  "model": "xiaomi",
+  "enriched": "2025-08-05T08:40:38.644Z",
+  "category": "switches",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:47.408Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "switch"
+    }
+  },
+  "renamed": {
+    "from": "xiaomi",
+    "date": "2025-08-05T09:47:58.414Z",
+    "reason": "standardization"
+  }
+}

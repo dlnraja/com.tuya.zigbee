@@ -1,0 +1,20 @@
+{
+  "id": "motion_sensor",
+  "class": "sensor",
+  "capabilities": [],
+  "name": {
+    "en": "motion_sensor",
+    "fr": "motion_sensor",
+    "nl": "motion_sensor",
+    "ta": "motion_sensor"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": ": ",
+  "model": "motion_sensor",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\motion_sensor\\device.js",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:35:51.593Z"
+}

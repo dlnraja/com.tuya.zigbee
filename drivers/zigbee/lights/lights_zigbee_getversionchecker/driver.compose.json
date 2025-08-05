@@ -1,0 +1,40 @@
+{
+  "id": "lights_zigbee_getversionchecker",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "lights_zigbee_getversionchecker",
+    "fr": "lights_zigbee_getversionchecker",
+    "nl": "lights_zigbee_getversionchecker",
+    "ta": "lights_zigbee_getversionchecker"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "getversionchecker",
+  "source": "D:\\Download\\Compressed\\katana\\PortableApps\\FirefoxPortable\\App\\Firefox\\components\\nsExtensionManager.js",
+  "originalFile": "nsExtensionManager.js",
+  "extracted": "2025-08-05T08:26:24.845Z",
+  "enriched": "2025-08-05T08:40:35.771Z",
+  "type": "zigbee",
+  "category": "lights",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.591Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light"
+    }
+  },
+  "renamed": {
+    "from": "getversionchecker",
+    "date": "2025-08-05T09:47:46.773Z",
+    "reason": "standardization"
+  }
+}

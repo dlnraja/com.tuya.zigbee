@@ -1,0 +1,20 @@
+{
+  "id": "iniprocessorfactory",
+  "class": "lock",
+  "capabilities": [],
+  "name": {
+    "en": "iniprocessorfactory",
+    "fr": "iniprocessorfactory",
+    "nl": "iniprocessorfactory",
+    "ta": "iniprocessorfactory"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "iniprocessorfactory",
+  "source": "D:\\Download\\Compressed\\katana\\PortableApps\\FirefoxPortable\\App\\Firefox\\components\\nsINIProcessor.js",
+  "originalFile": "nsINIProcessor.js",
+  "extracted": "2025-08-05T08:26:25.071Z"
+}

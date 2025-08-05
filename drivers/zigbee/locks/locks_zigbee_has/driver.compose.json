@@ -1,0 +1,40 @@
+{
+  "id": "locks_zigbee_has",
+  "class": "lock",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "locks_zigbee_has",
+    "fr": "locks_zigbee_has",
+    "nl": "locks_zigbee_has",
+    "ta": "locks_zigbee_has"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "has",
+  "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\pygments\\lexers\\__pycache__\\python.cpython-311.pyc",
+  "originalFile": "python.cpython-311.pyc",
+  "extracted": "2025-08-05T08:34:42.888Z",
+  "enriched": "2025-08-05T08:40:36.211Z",
+  "type": "zigbee",
+  "category": "locks",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.967Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "lock"
+    }
+  },
+  "renamed": {
+    "from": "has",
+    "date": "2025-08-05T09:47:50.899Z",
+    "reason": "standardization"
+  }
+}

@@ -1,20 +1,32 @@
-# switches
+# 
 
-## Description
-Driver pour switches - light
+## 📋 Description
+Driver extrait automatiquement depuis VirtualSMC.json
 
-## Classe Homey
-`light`
+## 🏷️ Classe
+switches
 
-## Capabilities
-- `onoff`
-- `dim`
+## 🔧 Capabilities
 
-## Source
-Généré automatiquement par Mega-Prompt Cursor
 
-## Limitations
-Aucune limitation connue
+## 📡 Type
+zigbee
 
----
-*Généré le 2025-08-05T01:58:45.281Z*
+## 🏭 Manufacturer
+Unknown
+
+## 📱 Model
+
+
+## 📚 Source
+- **Fichier original**: VirtualSMC.json
+- **Chemin complet**: D:\Download\Compressed\x86_64-pc-windows-gnu\tool_config_files\build-repo-builds\plugins\VirtualSMC.json
+- **Extrait le**: 2025-08-05T08:29:43.439Z
+
+## ⚠️ Limitations
+- Driver extrait automatiquement
+- Nécessite tests et validation
+- Source: VirtualSMC.json
+
+## 🚀 Statut
+⚠️ En attente de validation

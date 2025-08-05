@@ -1,0 +1,40 @@
+{
+  "id": "covers_zigbee_scanningloader",
+  "class": "cover",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "covers_zigbee_scanningloader",
+    "fr": "covers_zigbee_scanningloader",
+    "nl": "covers_zigbee_scanningloader",
+    "ta": "covers_zigbee_scanningloader"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "scanningloader",
+  "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\setuptools\\command\\test.py",
+  "originalFile": "test.py",
+  "extracted": "2025-08-05T08:33:23.610Z",
+  "enriched": "2025-08-05T08:40:35.577Z",
+  "type": "zigbee",
+  "category": "covers",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.457Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "cover"
+    }
+  },
+  "renamed": {
+    "from": "scanningloader",
+    "date": "2025-08-05T09:47:44.425Z",
+    "reason": "standardization"
+  }
+}

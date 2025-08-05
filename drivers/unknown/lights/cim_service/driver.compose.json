@@ -1,0 +1,20 @@
+{
+  "id": "cim_service",
+  "class": "light",
+  "capabilities": [],
+  "name": {
+    "en": "cim_service",
+    "fr": "cim_service",
+    "nl": "cim_service",
+    "ta": "cim_service"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "cim_service",
+  "source": "D:\\Download\\Compressed\\ME_SW_2413.5.67.0\\Drivers\\WMIProvider\\ME\\s\\Core\\CIM_Service.mof",
+  "originalFile": "CIM_Service.mof",
+  "extracted": "2025-08-05T08:31:48.187Z"
+}

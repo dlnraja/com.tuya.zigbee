@@ -1,0 +1,52 @@
+{
+  "id": "sensors_zigbee_motion",
+  "name": {
+    "en": "sensors_zigbee_motion",
+    "fr": "sensors_zigbee_motion",
+    "nl": "sensors_zigbee_motion",
+    "ta": "sensors_zigbee_motion"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  },
+  "isGeneric": true,
+  "source": "zigbee-common",
+  "type": "zigbee",
+  "manufacturer": "Generic",
+  "manufacturername": "generic",
+  "model": "motion",
+  "enriched": "2025-08-05T08:40:36.675Z",
+  "category": "sensors",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:47.180Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "sensor"
+    }
+  },
+  "renamed": {
+    "from": "motion",
+    "date": "2025-08-05T09:47:53.509Z",
+    "reason": "standardization"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "temphumidsensor3",
+  "class": "sensor",
+  "capabilities": [],
+  "name": {
+    "en": "temphumidsensor3",
+    "fr": "temphumidsensor3",
+    "nl": "temphumidsensor3",
+    "ta": "temphumidsensor3"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "temphumidsensor3",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\temphumidsensor3\\device.js",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:36:08.531Z"
+}

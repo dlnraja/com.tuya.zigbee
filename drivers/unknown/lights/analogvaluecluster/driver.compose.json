@@ -1,0 +1,20 @@
+{
+  "id": "analogvaluecluster",
+  "class": "light",
+  "capabilities": [],
+  "name": {
+    "en": "analogvaluecluster",
+    "fr": "analogvaluecluster",
+    "nl": "analogvaluecluster",
+    "ta": "analogvaluecluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "analogvaluecluster",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\node_modules\\zigbee-clusters\\lib\\clusters\\analogValue.js",
+  "originalFile": "analogValue.js",
+  "extracted": "2025-08-05T08:36:16.298Z"
+}

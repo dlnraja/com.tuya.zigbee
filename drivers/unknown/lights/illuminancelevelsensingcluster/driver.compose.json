@@ -1,0 +1,20 @@
+{
+  "id": "illuminancelevelsensingcluster",
+  "class": "light",
+  "capabilities": [],
+  "name": {
+    "en": "illuminancelevelsensingcluster",
+    "fr": "illuminancelevelsensingcluster",
+    "nl": "illuminancelevelsensingcluster",
+    "ta": "illuminancelevelsensingcluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "illuminancelevelsensingcluster",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\node_modules\\zigbee-clusters\\lib\\clusters\\illuminanceLevelSensing.js",
+  "originalFile": "illuminanceLevelSensing.js",
+  "extracted": "2025-08-05T08:36:28.888Z"
+}

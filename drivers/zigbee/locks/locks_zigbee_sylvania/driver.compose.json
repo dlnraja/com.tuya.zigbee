@@ -1,0 +1,52 @@
+{
+  "id": "locks_zigbee_sylvania",
+  "name": {
+    "en": "locks_zigbee_sylvania",
+    "fr": "locks_zigbee_sylvania",
+    "nl": "locks_zigbee_sylvania",
+    "ta": "locks_zigbee_sylvania"
+  },
+  "class": "lock",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  },
+  "isGeneric": true,
+  "source": "zigbee-common",
+  "type": "zigbee",
+  "manufacturer": "Generic",
+  "manufacturername": "generic",
+  "model": "sylvania",
+  "enriched": "2025-08-05T08:40:36.321Z",
+  "category": "locks",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:47.057Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "lock"
+    }
+  },
+  "renamed": {
+    "from": "sylvania",
+    "date": "2025-08-05T09:47:51.850Z",
+    "reason": "standardization"
+  }
+}

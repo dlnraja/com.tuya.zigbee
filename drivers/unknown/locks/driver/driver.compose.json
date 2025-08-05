@@ -1,0 +1,20 @@
+{
+  "id": "driver",
+  "class": "lock",
+  "capabilities": [],
+  "name": {
+    "en": "driver",
+    "fr": "driver",
+    "nl": "driver",
+    "ta": "driver"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "driver",
+  "source": "D:\\Download\\Compressed\\ME_SW_2413.5.67.0\\Drivers\\SOL\\mesrl.inf",
+  "originalFile": "mesrl.inf",
+  "extracted": "2025-08-05T08:31:39.856Z"
+}

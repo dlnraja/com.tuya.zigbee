@@ -1,0 +1,20 @@
+'use strict';
+
+const { ZigbeeDevice } = require('homey-unknown');
+
+class SetallbutonehiddenDevice extends ZigbeeDevice {
+    async onInit() {
+        await super.onInit();
+        
+        this.log('setallbutonehidden device initialized');
+        this.log('Source: D:\Download\Compressed\katana\PortableApps\OpenOfficePortable\App\openoffice\Basis\share\Scripts\javascript\ExportSheetsToHTML\exportsheetstohtml.js');
+        this.log('Original file: exportsheetstohtml.js');
+        
+        // Register capabilities
+        
+    }
+    
+    
+}
+
+module.exports = SetallbutonehiddenDevice;

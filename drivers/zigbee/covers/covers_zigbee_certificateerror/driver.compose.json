@@ -1,0 +1,40 @@
+{
+  "id": "covers_zigbee_certificateerror",
+  "class": "cover",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "covers_zigbee_certificateerror",
+    "fr": "covers_zigbee_certificateerror",
+    "nl": "covers_zigbee_certificateerror",
+    "ta": "covers_zigbee_certificateerror"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "certificateerror",
+  "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\distlib\\compat.py",
+  "originalFile": "compat.py",
+  "extracted": "2025-08-05T08:33:43.699Z",
+  "enriched": "2025-08-05T08:40:35.483Z",
+  "type": "zigbee",
+  "category": "covers",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.400Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "cover"
+    }
+  },
+  "renamed": {
+    "from": "certificateerror",
+    "date": "2025-08-05T09:47:44.252Z",
+    "reason": "standardization"
+  }
+}

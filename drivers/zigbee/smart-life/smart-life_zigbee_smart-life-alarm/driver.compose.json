@@ -1,0 +1,51 @@
+{
+  "id": "smart-life_zigbee_smart-life-alarm",
+  "name": {
+    "en": "smart-life_zigbee_smart-life-alarm",
+    "fr": "smart-life_zigbee_smart-life-alarm",
+    "nl": "smart-life_zigbee_smart-life-alarm",
+    "ta": "smart-life_zigbee_smart-life-alarm"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  },
+  "manufacturername": "generic",
+  "isGeneric": true,
+  "source": "zigbee-common",
+  "type": "zigbee",
+  "model": "smart-life-alarm",
+  "enriched": "2025-08-05T08:40:36.995Z",
+  "category": "smart-life",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:47.253Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light"
+    }
+  },
+  "renamed": {
+    "from": "smart-life-alarm",
+    "date": "2025-08-05T09:47:54.400Z",
+    "reason": "standardization"
+  }
+}

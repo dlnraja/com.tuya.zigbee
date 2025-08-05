@@ -1,0 +1,15 @@
+{
+  "timestamp": "2025-08-05T08:40:40.273Z",
+  "success": true,
+  "stats": {
+    "driversEnriched": 170,
+    "filesCreated": 15,
+    "reportsGenerated": 3,
+    "errors": []
+  },
+  "structure": {
+    "tuyaDrivers": 39,
+    "zigbeeDrivers": 136,
+    "totalDrivers": 175
+  }
+}

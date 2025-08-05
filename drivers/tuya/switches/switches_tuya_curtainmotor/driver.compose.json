@@ -1,0 +1,40 @@
+{
+  "id": "switches_tuya_curtainmotor",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "switches_tuya_curtainmotor",
+    "fr": "switches_tuya_curtainmotor",
+    "nl": "switches_tuya_curtainmotor",
+    "ta": "switches_tuya_curtainmotor"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": ", ",
+  "model": "curtainmotor",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\curtain_motor\\device.js",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:35:45.227Z",
+  "enriched": "2025-08-05T08:40:35.152Z",
+  "type": "tuya",
+  "category": "switches",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.293Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "switch"
+    }
+  },
+  "renamed": {
+    "from": "curtainmotor",
+    "date": "2025-08-05T09:47:43.751Z",
+    "reason": "standardization"
+  }
+}

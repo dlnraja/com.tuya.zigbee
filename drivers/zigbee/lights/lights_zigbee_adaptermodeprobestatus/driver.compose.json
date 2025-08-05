@@ -1,0 +1,40 @@
+{
+  "id": "lights_zigbee_adaptermodeprobestatus",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "lights_zigbee_adaptermodeprobestatus",
+    "fr": "lights_zigbee_adaptermodeprobestatus",
+    "nl": "lights_zigbee_adaptermodeprobestatus",
+    "ta": "lights_zigbee_adaptermodeprobestatus"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "adaptermodeprobestatus",
+  "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master_3\\elelabs-zigbee-ezsp-utility-master\\Elelabs_EzspFwUtility.py",
+  "originalFile": "Elelabs_EzspFwUtility.py",
+  "extracted": "2025-08-05T08:28:11.426Z",
+  "enriched": "2025-08-05T08:40:35.666Z",
+  "type": "zigbee",
+  "category": "lights",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.514Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light"
+    }
+  },
+  "renamed": {
+    "from": "adaptermodeprobestatus",
+    "date": "2025-08-05T09:47:45.397Z",
+    "reason": "standardization"
+  }
+}

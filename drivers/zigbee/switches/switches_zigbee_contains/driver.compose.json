@@ -1,0 +1,40 @@
+{
+  "id": "switches_zigbee_contains",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "switches_zigbee_contains",
+    "fr": "switches_zigbee_contains",
+    "nl": "switches_zigbee_contains",
+    "ta": "switches_zigbee_contains"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "contains",
+  "source": "D:\\Download\\Compressed\\Realtek UHD Audio Driver DD RC4\\Realtek UHD Audio Driver Nahimic PCEE4 DTS X Creative DD DDP ATMOS G RC4\\Win64\\Realtek\\OVWrap2_25\\inference_engine.dll",
+  "originalFile": "inference_engine.dll",
+  "extracted": "2025-08-05T08:28:15.192Z",
+  "enriched": "2025-08-05T08:40:37.267Z",
+  "type": "zigbee",
+  "category": "switches",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:47.308Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "switch"
+    }
+  },
+  "renamed": {
+    "from": "contains",
+    "date": "2025-08-05T09:47:55.736Z",
+    "reason": "standardization"
+  }
+}

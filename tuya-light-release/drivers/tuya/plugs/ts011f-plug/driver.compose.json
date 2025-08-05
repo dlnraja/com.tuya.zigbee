@@ -1,0 +1,32 @@
+{
+  "id": "ts011f-plug",
+  "class": "socket",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "ts011f-plug",
+    "fr": "ts011f-plug",
+    "nl": "ts011f-plug",
+    "ta": "ts011f-plug"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "ts011f-plug",
+  "created": "2025-08-05T08:40:39.245Z",
+  "type": "tuya",
+  "category": "plugs",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.286Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "socket"
+    }
+  }
+}

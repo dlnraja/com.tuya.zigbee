@@ -1,0 +1,20 @@
+{
+  "id": "panel",
+  "class": "light",
+  "capabilities": [],
+  "name": {
+    "en": "panel",
+    "fr": "panel",
+    "nl": "panel",
+    "ta": "panel"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "panel",
+  "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\rich\\panel.py",
+  "originalFile": "panel.py",
+  "extracted": "2025-08-05T08:33:55.989Z"
+}

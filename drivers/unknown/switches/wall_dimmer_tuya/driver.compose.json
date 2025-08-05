@@ -1,0 +1,20 @@
+{
+  "id": "wall_dimmer_tuya",
+  "class": "switche",
+  "capabilities": [],
+  "name": {
+    "en": "wall_dimmer_tuya",
+    "fr": "wall_dimmer_tuya",
+    "nl": "wall_dimmer_tuya",
+    "ta": "wall_dimmer_tuya"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": ", ",
+  "model": "wall_dimmer_tuya",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\wall_dimmer_tuya\\device.js",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:36:09.655Z"
+}

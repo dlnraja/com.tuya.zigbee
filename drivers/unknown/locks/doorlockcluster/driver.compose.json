@@ -1,0 +1,20 @@
+{
+  "id": "doorlockcluster",
+  "class": "lock",
+  "capabilities": [],
+  "name": {
+    "en": "doorlockcluster",
+    "fr": "doorlockcluster",
+    "nl": "doorlockcluster",
+    "ta": "doorlockcluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "doorlockcluster",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\node_modules\\zigbee-clusters\\lib\\clusters\\doorLock.js",
+  "originalFile": "doorLock.js",
+  "extracted": "2025-08-05T08:36:25.652Z"
+}

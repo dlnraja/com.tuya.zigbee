@@ -1,0 +1,40 @@
+{
+  "id": "lights_zigbee_to",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "lights_zigbee_to",
+    "fr": "lights_zigbee_to",
+    "nl": "lights_zigbee_to",
+    "ta": "lights_zigbee_to"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "to",
+  "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\distlib\\__pycache__\\wheel.cpython-311.pyc",
+  "originalFile": "wheel.cpython-311.pyc",
+  "extracted": "2025-08-05T08:34:37.012Z",
+  "enriched": "2025-08-05T08:40:36.056Z",
+  "type": "zigbee",
+  "category": "lights",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.853Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light"
+    }
+  },
+  "renamed": {
+    "from": "to",
+    "date": "2025-08-05T09:47:48.720Z",
+    "reason": "standardization"
+  }
+}

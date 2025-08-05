@@ -1,0 +1,20 @@
+{
+  "id": "wall_socket",
+  "class": "cover",
+  "capabilities": [],
+  "name": {
+    "en": "wall_socket",
+    "fr": "wall_socket",
+    "nl": "wall_socket",
+    "ta": "wall_socket"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": ", ",
+  "model": "wall_socket",
+  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\wall_socket\\device.js",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:36:10.116Z"
+}
