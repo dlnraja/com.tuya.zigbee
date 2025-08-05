@@ -2,88 +2,380 @@
 
 const { Homey } = require('homey');
 
-/**
- * Tuya Zigbee Universal App
- * Version 3.4.8 - CRUGE
- * Inspiré des standards Athom BV
- */
+// Driver imports - Generated dynamically
+const com.tuya.zigbee.assetsDriver = require('./drivers/tuya/assets/assets/device.js');
+const com.tuya.zigbee.imagesDriver = require('./drivers/tuya/assets/images/device.js');
+const com.tuya.zigbee.assetsDriver = require('./drivers/tuya/covers/assets/device.js');
+const com.tuya.zigbee.blindDriver = require('./drivers/tuya/covers/blind/device.js');
+const com.tuya.zigbee.blindsDriver = require('./drivers/tuya/covers/blinds/device.js');
+const com.tuya.zigbee.curtainDriver = require('./drivers/tuya/covers/curtain/device.js');
+const com.tuya.zigbee.curtainsDriver = require('./drivers/tuya/covers/curtains/device.js');
+const com.tuya.zigbee.feitDriver = require('./drivers/tuya/covers/feit/device.js');
+const com.tuya.zigbee.gosundDriver = require('./drivers/tuya/covers/gosund/device.js');
+const com.tuya.zigbee.shuttersDriver = require('./drivers/tuya/covers/shutters/device.js');
+const com.tuya.zigbee.smartlifeDriver = require('./drivers/tuya/covers/smartlife/device.js');
+const com.tuya.zigbee.tuyaDriver = require('./drivers/tuya/covers/tuya/device.js');
+const com.tuya.zigbee.bulbsDriver = require('./drivers/tuya/lights/bulbs/device.js');
+const com.tuya.zigbee.dimmerDriver = require('./drivers/tuya/lights/dimmer/device.js');
+const com.tuya.zigbee.dimmersDriver = require('./drivers/tuya/lights/dimmers/device.js');
+const com.tuya.zigbee.feitDriver = require('./drivers/tuya/lights/feit/device.js');
+const com.tuya.zigbee.gosundDriver = require('./drivers/tuya/lights/gosund/device.js');
+const com.tuya.zigbee.led-bulbDriver = require('./drivers/tuya/lights/led-bulb/device.js');
+const com.tuya.zigbee.rgbDriver = require('./drivers/tuya/lights/rgb/device.js');
+const com.tuya.zigbee.rgb-stripDriver = require('./drivers/tuya/lights/rgb-strip/device.js');
+const com.tuya.zigbee.smartlifeDriver = require('./drivers/tuya/lights/smartlife/device.js');
+const com.tuya.zigbee.stripsDriver = require('./drivers/tuya/lights/strips/device.js');
+const com.tuya.zigbee.tuyaDriver = require('./drivers/tuya/lights/tuya/device.js');
+const com.tuya.zigbee.feitDriver = require('./drivers/tuya/locks/feit/device.js');
+const com.tuya.zigbee.gosundDriver = require('./drivers/tuya/locks/gosund/device.js');
+const com.tuya.zigbee.keypadsDriver = require('./drivers/tuya/locks/keypads/device.js');
+const com.tuya.zigbee.smart-lockDriver = require('./drivers/tuya/locks/smart-lock/device.js');
+const com.tuya.zigbee.smartlifeDriver = require('./drivers/tuya/locks/smartlife/device.js');
+const com.tuya.zigbee.smart_locksDriver = require('./drivers/tuya/locks/smart_locks/device.js');
+const com.tuya.zigbee.tuyaDriver = require('./drivers/tuya/locks/tuya/device.js');
+const com.tuya.zigbee.feitDriver = require('./drivers/tuya/plugs/feit/device.js');
+const com.tuya.zigbee.gosundDriver = require('./drivers/tuya/plugs/gosund/device.js');
+const com.tuya.zigbee.indoorDriver = require('./drivers/tuya/plugs/indoor/device.js');
+const com.tuya.zigbee.outdoorDriver = require('./drivers/tuya/plugs/outdoor/device.js');
+const com.tuya.zigbee.powerDriver = require('./drivers/tuya/plugs/power/device.js');
+const com.tuya.zigbee.power-stripDriver = require('./drivers/tuya/plugs/power-strip/device.js');
+const com.tuya.zigbee.smart-plugDriver = require('./drivers/tuya/plugs/smart-plug/device.js');
+const com.tuya.zigbee.smartlifeDriver = require('./drivers/tuya/plugs/smartlife/device.js');
+const com.tuya.zigbee.ts011f-smart-plugDriver = require('./drivers/tuya/plugs/ts011f-smart-plug/device.js');
+const com.tuya.zigbee.tuyaDriver = require('./drivers/tuya/plugs/tuya/device.js');
+const com.tuya.zigbee.feitDriver = require('./drivers/tuya/sensors/feit/device.js');
+const com.tuya.zigbee.gosundDriver = require('./drivers/tuya/sensors/gosund/device.js');
+const com.tuya.zigbee.humidityDriver = require('./drivers/tuya/sensors/humidity/device.js');
+const com.tuya.zigbee.motionDriver = require('./drivers/tuya/sensors/motion/device.js');
+const com.tuya.zigbee.smart-knobDriver = require('./drivers/tuya/sensors/smart-knob/device.js');
+const com.tuya.zigbee.smartlifeDriver = require('./drivers/tuya/sensors/smartlife/device.js');
+const com.tuya.zigbee.soil-sensorDriver = require('./drivers/tuya/sensors/soil-sensor/device.js');
+const com.tuya.zigbee.temperatureDriver = require('./drivers/tuya/sensors/temperature/device.js');
+const com.tuya.zigbee.tuyaDriver = require('./drivers/tuya/sensors/tuya/device.js');
+const com.tuya.zigbee.waterDriver = require('./drivers/tuya/sensors/water/device.js');
+const com.tuya.zigbee.dimmer-switchDriver = require('./drivers/tuya/switches/dimmer-switch/device.js');
+const com.tuya.zigbee.feitDriver = require('./drivers/tuya/switches/feit/device.js');
+const com.tuya.zigbee.gosundDriver = require('./drivers/tuya/switches/gosund/device.js');
+const com.tuya.zigbee.remoteDriver = require('./drivers/tuya/switches/remote/device.js');
+const com.tuya.zigbee.smartDriver = require('./drivers/tuya/switches/smart/device.js');
+const com.tuya.zigbee.smart-switchDriver = require('./drivers/tuya/switches/smart-switch/device.js');
+const com.tuya.zigbee.smartlifeDriver = require('./drivers/tuya/switches/smartlife/device.js');
+const com.tuya.zigbee.ts0044-smart-switchDriver = require('./drivers/tuya/switches/ts0044-smart-switch/device.js');
+const com.tuya.zigbee.tuyaDriver = require('./drivers/tuya/switches/tuya/device.js');
+const com.tuya.zigbee.wallDriver = require('./drivers/tuya/switches/wall/device.js');
+const com.tuya.zigbee.feitDriver = require('./drivers/tuya/thermostats/feit/device.js');
+const com.tuya.zigbee.floorDriver = require('./drivers/tuya/thermostats/floor/device.js');
+const com.tuya.zigbee.gosundDriver = require('./drivers/tuya/thermostats/gosund/device.js');
+const com.tuya.zigbee.smartDriver = require('./drivers/tuya/thermostats/smart/device.js');
+const com.tuya.zigbee.smartlifeDriver = require('./drivers/tuya/thermostats/smartlife/device.js');
+const com.tuya.zigbee.thermostatDriver = require('./drivers/tuya/thermostats/thermostat/device.js');
+const com.tuya.zigbee.tuyaDriver = require('./drivers/tuya/thermostats/tuya/device.js');
+const com.tuya.zigbee.wallDriver = require('./drivers/tuya/thermostats/wall/device.js');
+const com.tuya.zigbee.assetsDriver = require('./drivers/zigbee/controls/assets/device.js');
+const com.tuya.zigbee.keypadsDriver = require('./drivers/zigbee/controls/keypads/device.js');
+const com.tuya.zigbee.remotesDriver = require('./drivers/zigbee/controls/remotes/device.js');
+const com.tuya.zigbee.switchesDriver = require('./drivers/zigbee/controls/switches/device.js');
+const com.tuya.zigbee.zigbee-switchDriver = require('./drivers/zigbee/controls/zigbee-switch/device.js');
+const com.tuya.zigbee.ikeaDriver = require('./drivers/zigbee/covers/ikea/device.js');
+const com.tuya.zigbee.osramDriver = require('./drivers/zigbee/covers/osram/device.js');
+const com.tuya.zigbee.philipsDriver = require('./drivers/zigbee/covers/philips/device.js');
+const com.tuya.zigbee.samsungDriver = require('./drivers/zigbee/covers/samsung/device.js');
+const com.tuya.zigbee.sylvaniaDriver = require('./drivers/zigbee/covers/sylvania/device.js');
+const com.tuya.zigbee.xiaomiDriver = require('./drivers/zigbee/covers/xiaomi/device.js');
+const com.tuya.zigbee.assetsDriver = require('./drivers/zigbee/historical/assets/device.js');
+const com.tuya.zigbee.legacyDriver = require('./drivers/zigbee/historical/legacy/device.js');
+const com.tuya.zigbee.legacy-deviceDriver = require('./drivers/zigbee/historical/legacy-device/device.js');
+const com.tuya.zigbee.repeatersDriver = require('./drivers/zigbee/historical/repeaters/device.js');
+const com.tuya.zigbee.genericDriver = require('./drivers/zigbee/lights/generic/device.js');
+const com.tuya.zigbee.ikeaDriver = require('./drivers/zigbee/lights/ikea/device.js');
+const com.tuya.zigbee.osramDriver = require('./drivers/zigbee/lights/osram/device.js');
+const com.tuya.zigbee.philipsDriver = require('./drivers/zigbee/lights/philips/device.js');
+const com.tuya.zigbee.zigbee-bulbDriver = require('./drivers/zigbee/lights/zigbee-bulb/device.js');
+const com.tuya.zigbee.zigbee-stripDriver = require('./drivers/zigbee/lights/zigbee-strip/device.js');
+const com.tuya.zigbee.ikeaDriver = require('./drivers/zigbee/locks/ikea/device.js');
+const com.tuya.zigbee.osramDriver = require('./drivers/zigbee/locks/osram/device.js');
+const com.tuya.zigbee.philipsDriver = require('./drivers/zigbee/locks/philips/device.js');
+const com.tuya.zigbee.samsungDriver = require('./drivers/zigbee/locks/samsung/device.js');
+const com.tuya.zigbee.sylvaniaDriver = require('./drivers/zigbee/locks/sylvania/device.js');
+const com.tuya.zigbee.xiaomiDriver = require('./drivers/zigbee/locks/xiaomi/device.js');
+const com.tuya.zigbee.ikeaDriver = require('./drivers/zigbee/plugs/ikea/device.js');
+const com.tuya.zigbee.osramDriver = require('./drivers/zigbee/plugs/osram/device.js');
+const com.tuya.zigbee.philipsDriver = require('./drivers/zigbee/plugs/philips/device.js');
+const com.tuya.zigbee.samsungDriver = require('./drivers/zigbee/plugs/samsung/device.js');
+const com.tuya.zigbee.sylvaniaDriver = require('./drivers/zigbee/plugs/sylvania/device.js');
+const com.tuya.zigbee.xiaomiDriver = require('./drivers/zigbee/plugs/xiaomi/device.js');
+const sensorsDriver = require('./drivers/zigbee/sensors/device.js');
+const com.tuya.zigbee.assetsDriver = require('./drivers/zigbee/smart-life/assets/device.js');
+const com.tuya.zigbee.smart-life-alarmDriver = require('./drivers/zigbee/smart-life/smart-life-alarm/device.js');
+const com.tuya.zigbee.smart-life-climateDriver = require('./drivers/zigbee/smart-life/smart-life-climate/device.js');
+const com.tuya.zigbee.smart-life-coverDriver = require('./drivers/zigbee/smart-life/smart-life-cover/device.js');
+const com.tuya.zigbee.smart-life-fanDriver = require('./drivers/zigbee/smart-life/smart-life-fan/device.js');
+const com.tuya.zigbee.smart-life-lightDriver = require('./drivers/zigbee/smart-life/smart-life-light/device.js');
+const com.tuya.zigbee.smart-life-lockDriver = require('./drivers/zigbee/smart-life/smart-life-lock/device.js');
+const com.tuya.zigbee.smart-life-mediaplayerDriver = require('./drivers/zigbee/smart-life/smart-life-mediaplayer/device.js');
+const com.tuya.zigbee.smart-life-sensorDriver = require('./drivers/zigbee/smart-life/smart-life-sensor/device.js');
+const com.tuya.zigbee.smart-life-switchDriver = require('./drivers/zigbee/smart-life/smart-life-switch/device.js');
+const com.tuya.zigbee.smart-life-vacuumDriver = require('./drivers/zigbee/smart-life/smart-life-vacuum/device.js');
+const switchesDriver = require('./drivers/zigbee/switches/device.js');
+const com.tuya.zigbee.genericDriver = require('./drivers/zigbee/thermostats/generic/device.js');
+const com.tuya.zigbee.ikeaDriver = require('./drivers/zigbee/thermostats/ikea/device.js');
+const com.tuya.zigbee.osramDriver = require('./drivers/zigbee/thermostats/osram/device.js');
+const com.tuya.zigbee.philipsDriver = require('./drivers/zigbee/thermostats/philips/device.js');
+const com.tuya.zigbee.samsungDriver = require('./drivers/zigbee/thermostats/samsung/device.js');
+const com.tuya.zigbee.sylvaniaDriver = require('./drivers/zigbee/thermostats/sylvania/device.js');
+const com.tuya.zigbee.xiaomiDriver = require('./drivers/zigbee/thermostats/xiaomi/device.js');
+
 class TuyaZigbeeApp extends Homey.App {
     async onInit() {
-        this.log('🚀 Tuya Zigbee Universal App initializing...');
+        this.log('Tuya Zigbee App is running!');
         
-        try {
-            await this.initializeSDKv3();
-            await this.initializeDeviceDiscovery();
-            await this.initializeCapabilities();
-            await this.initializeFlowCards();
-            await this.initializeAIFeatures();
-            
-            this.log('✅ Tuya Zigbee Universal App initialized successfully');
-            
-        } catch (error) {
-            this.error('❌ Error during initialization:', error);
-            throw error;
-        }
-    }
-    
-    async initializeSDKv3() {
-        this.log('🔧 Initializing SDK v3 features...');
-        this.sdkVersion = '3.4.8';
-        this.compatibility = '>=6.0.0';
-    }
-    
-    async initializeDeviceDiscovery() {
-        this.log('🔍 Initializing device discovery...');
-        this.deviceDiscovery = {
-            tuya: true,
-            zigbee: true,
-            autoDetection: true
-        };
-    }
-    
-    async initializeCapabilities() {
-        this.log('⚡ Initializing capabilities...');
-        const capabilities = [
-            'onoff', 'dim', 'light_hue', 'light_saturation', 'light_temperature',
-            'light_mode', 'measure_temperature', 'measure_humidity', 'measure_pressure',
-            'measure_co2', 'measure_voltage', 'measure_current', 'measure_power',
-            'measure_energy', 'alarm_contact', 'alarm_motion', 'alarm_smoke',
-            'alarm_water', 'alarm_co', 'alarm_co2', 'alarm_fire', 'alarm_heat',
-            'alarm_night', 'alarm_tamper', 'alarm_battery', 'alarm_generic',
-            'button', 'speaker_volume', 'speaker_mute', 'speaker_next',
-            'speaker_prev', 'speaker_artist', 'speaker_album', 'speaker_track',
-            'speaker_duration', 'speaker_playing', 'speaker_control', 'speaker_set',
-            'speaker_get', 'speaker_trigger'
-        ];
+        // Register all drivers dynamically
+        this.homey.drivers.registerDriver(com.tuya.zigbee.assetsDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.imagesDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.assetsDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.blindDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.blindsDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.curtainDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.curtainsDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.feitDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.gosundDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.shuttersDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.smartlifeDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.tuyaDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.bulbsDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.dimmerDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.dimmersDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.feitDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.gosundDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.led-bulbDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.rgbDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.rgb-stripDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.smartlifeDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.stripsDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.tuyaDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.feitDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.gosundDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.keypadsDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.smart-lockDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.smartlifeDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.smart_locksDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.tuyaDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.feitDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.gosundDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.indoorDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.outdoorDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.powerDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.power-stripDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.smart-plugDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.smartlifeDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.ts011f-smart-plugDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.tuyaDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.feitDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.gosundDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.humidityDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.motionDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.smart-knobDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.smartlifeDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.soil-sensorDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.temperatureDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.tuyaDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.waterDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.dimmer-switchDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.feitDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.gosundDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.remoteDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.smartDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.smart-switchDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.smartlifeDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.ts0044-smart-switchDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.tuyaDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.wallDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.feitDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.floorDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.gosundDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.smartDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.smartlifeDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.thermostatDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.tuyaDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.wallDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.assetsDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.keypadsDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.remotesDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.switchesDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.zigbee-switchDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.ikeaDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.osramDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.philipsDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.samsungDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.sylvaniaDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.xiaomiDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.assetsDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.legacyDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.legacy-deviceDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.repeatersDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.genericDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.ikeaDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.osramDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.philipsDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.zigbee-bulbDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.zigbee-stripDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.ikeaDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.osramDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.philipsDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.samsungDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.sylvaniaDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.xiaomiDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.ikeaDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.osramDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.philipsDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.samsungDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.sylvaniaDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.xiaomiDriver);
+        this.homey.drivers.registerDriver(sensorsDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.assetsDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.smart-life-alarmDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.smart-life-climateDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.smart-life-coverDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.smart-life-fanDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.smart-life-lightDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.smart-life-lockDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.smart-life-mediaplayerDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.smart-life-sensorDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.smart-life-switchDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.smart-life-vacuumDriver);
+        this.homey.drivers.registerDriver(switchesDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.genericDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.ikeaDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.osramDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.philipsDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.samsungDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.sylvaniaDriver);
+        this.homey.drivers.registerDriver(com.tuya.zigbee.xiaomiDriver);
         
-        for (const capability of capabilities) {
-            this.log(`✅ Capability ${capability} initialized`);
-        }
+        // Log driver registrations
+        this.log('Driver com.tuya.zigbee.assets (asset) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.images (asset) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.assets (cover) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.blind (cover) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.blinds (cover) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.curtain (cover) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.curtains (cover) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.feit (cover) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.gosund (cover) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.shutters (cover) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.smartlife (cover) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.tuya (cover) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.bulbs (light) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.dimmer (light) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.dimmers (light) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.feit (light) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.gosund (light) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.led-bulb (device) registered with capabilities: onoff, dim, measure_temperature, measure_humidity, measure_power');
+        this.log('Driver com.tuya.zigbee.rgb (light) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.rgb-strip (light) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.smartlife (light) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.strips (light) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.tuya (light) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.feit (lock) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.gosund (lock) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.keypads (lock) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.smart-lock (lock) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.smartlife (lock) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.smart_locks (lock) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.tuya (lock) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.feit (plug) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.gosund (plug) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.indoor (plug) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.outdoor (plug) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.power (plug) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.power-strip (plug) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.smart-plug (device) registered with capabilities: onoff, dim, measure_temperature, measure_humidity, measure_power');
+        this.log('Driver com.tuya.zigbee.smartlife (plug) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.ts011f-smart-plug (device) registered with capabilities: onoff, measure_power, measure_current, measure_voltage');
+        this.log('Driver com.tuya.zigbee.tuya (plug) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.feit (sensor) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.gosund (sensor) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.humidity (sensor) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.motion (sensor) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.smart-knob (device) registered with capabilities: button, measure_temperature');
+        this.log('Driver com.tuya.zigbee.smartlife (sensor) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.soil-sensor (device) registered with capabilities: measure_temperature, measure_humidity, measure_soil_moisture');
+        this.log('Driver com.tuya.zigbee.temperature (device) registered with capabilities: onoff, dim, measure_temperature, measure_humidity, measure_power');
+        this.log('Driver com.tuya.zigbee.tuya (sensor) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.water (sensor) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.dimmer-switch (switche) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.feit (switche) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.gosund (switche) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.remote (switche) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.smart (switche) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.smart-switch (device) registered with capabilities: onoff, dim, measure_temperature, measure_humidity, measure_power');
+        this.log('Driver com.tuya.zigbee.smartlife (switche) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.ts0044-smart-switch (device) registered with capabilities: onoff, dim');
+        this.log('Driver com.tuya.zigbee.tuya (switche) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.wall (switche) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.feit (thermostat) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.floor (thermostat) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.gosund (thermostat) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.smart (thermostat) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.smartlife (thermostat) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.thermostat (thermostat) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.tuya (thermostat) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.wall (thermostat) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.assets (control) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.keypads (control) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.remotes (control) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.switches (control) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.zigbee-switch (control) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.ikea (cover) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.osram (cover) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.philips (cover) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.samsung (cover) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.sylvania (cover) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.xiaomi (cover) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.assets (historica) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.legacy (historica) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.legacy-device (historica) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.repeaters (historica) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.generic (light) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.ikea (light) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.osram (light) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.philips (light) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.zigbee-bulb (device) registered with capabilities: onoff, dim, measure_temperature, measure_humidity');
+        this.log('Driver com.tuya.zigbee.zigbee-strip (light) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.ikea (lock) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.osram (lock) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.philips (lock) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.samsung (lock) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.sylvania (lock) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.xiaomi (lock) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.ikea (plug) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.osram (plug) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.philips (plug) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.samsung (plug) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.sylvania (plug) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.xiaomi (plug) registered with capabilities: onoff');
+        this.log('Driver sensors (light) registered with capabilities: onoff, dim');
+        this.log('Driver com.tuya.zigbee.assets (smart-lif) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.smart-life-alarm (smart-lif) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.smart-life-climate (smart-lif) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.smart-life-cover (smart-lif) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.smart-life-fan (smart-lif) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.smart-life-light (smart-lif) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.smart-life-lock (smart-lif) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.smart-life-mediaplayer (smart-lif) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.smart-life-sensor (smart-lif) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.smart-life-switch (smart-lif) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.smart-life-vacuum (smart-lif) registered with capabilities: onoff');
+        this.log('Driver switches (light) registered with capabilities: onoff, dim');
+        this.log('Driver com.tuya.zigbee.generic (thermostat) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.ikea (thermostat) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.osram (thermostat) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.philips (thermostat) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.samsung (thermostat) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.sylvania (thermostat) registered with capabilities: onoff');
+        this.log('Driver com.tuya.zigbee.xiaomi (thermostat) registered with capabilities: onoff');
         
-        this.capabilities = capabilities;
-    }
-    
-    async initializeFlowCards() {
-        this.log('🔄 Initializing flow cards...');
-        this.flowCards = {
-            triggers: [],
-            conditions: [],
-            actions: []
-        };
-    }
-    
-    async initializeAIFeatures() {
-        this.log('🤖 Initializing AI features...');
-        this.aiFeatures = {
-            autoDetection: true,
-            capabilityMapping: true,
-            localFallback: true,
-            driverGeneration: true
-        };
-    }
-    
-    async onUninit() {
-        this.log('🔄 Tuya Zigbee Universal App unloading...');
+        this.log('All drivers registered successfully');
     }
 }
 

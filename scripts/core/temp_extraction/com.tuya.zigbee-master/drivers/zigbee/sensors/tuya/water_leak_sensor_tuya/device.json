@@ -1,0 +1,49 @@
+{
+  "id": "water_leak_sensor_tuya",
+  "name": {
+    "en": "water_leak_sensor_tuya Device",
+    "fr": "Appareil water_leak_sensor_tuya",
+    "nl": "water_leak_sensor_tuya Apparaat",
+    "de": "water_leak_sensor_tuya Gerät",
+    "es": "Dispositivo water_leak_sensor_tuya"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_temperature",
+    "measure_humidity",
+    "ai_enhanced",
+    "performance_optimized",
+    "ai_enhanced",
+    "performance_optimized"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "enrichment": {
+    "enriched": true,
+    "timestamp": "2025-08-02T14:11:15.914Z",
+    "pipeline": "Mega Pipeline Ultimate",
+    "mode": "YOLO",
+    "version": "3.3.3"
+  },
+  "compatibility": {
+    "enhanced": true,
+    "optimized": true
+  }
+}

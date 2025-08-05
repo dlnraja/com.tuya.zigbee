@@ -1,0 +1,21 @@
+{
+  "version": "4.0.0",
+  "date": "2025-08-05T02:28:46.252Z",
+  "fusion": {
+    "tuyaDrivers": 0,
+    "zigbeeDrivers": 0,
+    "recoveredDrivers": 2842,
+    "totalDrivers": 50,
+    "conflictsResolved": 0
+  },
+  "structure": {
+    "categories": [
+      "lights",
+      "sensors",
+      "switches",
+      "plugs",
+      "generic"
+    ],
+    "source": "Driver Fusion Mega Update"
+  }
+}

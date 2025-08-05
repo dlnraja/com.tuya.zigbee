@@ -1,32 +1,21 @@
-# Soil Sensor Driver
+# com.tuya.zigbee.soil-sensor
 
-## 📋 Description
-Driver pour Soil Sensor compatible avec Homey Pro SDK3.
+## Description
+Driver pour com.tuya.zigbee.soil-sensor - device
 
-## 🔧 Capacités
-- measure_temperature
-- measure_humidity
-- measure_soil_moisture
+## Classe Homey
+`device`
 
-## 📡 Endpoints
-- Endpoint 1
+## Capabilities
+- `measure_temperature`
+- `measure_humidity`
+- `measure_soil_moisture`
 
-## 🏭 Fabricant
-Tuya
+## Source
+Généré automatiquement par Mega-Prompt Cursor
 
-## 📦 Modèle
-Soil Sensor
+## Limitations
+Aucune limitation connue
 
-## 🚀 Tuya-Light Features
-- ✅ Auto-fingerprint detection
-- ✅ Enhanced polling
-- ✅ Fallback parsing
-- ✅ Multi-endpoint support
-
-## 🐛 Limitations connues
-- Aucune limitation connue actuellement
-
-## 📝 Notes de développement
-- Version: 3.5.0
-- Optimisé pour tuya-light
-- Compatible CLI installation
+---
+*Généré le 2025-08-05T01:58:45.128Z*

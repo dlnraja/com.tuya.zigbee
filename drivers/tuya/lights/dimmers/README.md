@@ -1,19 +1,19 @@
-# Dimmers Driver
+# com.tuya.zigbee.dimmers
 
 ## Description
-Driver for dimmers lights device.
+Driver pour com.tuya.zigbee.dimmers - light
+
+## Classe Homey
+`light`
 
 ## Capabilities
-- onoff
-- Additional capabilities to be implemented
+- `onoff`
 
-## DataPoints (DPs)
-- DP1: On/Off state
-- Additional DPs to be documented
+## Source
+Généré automatiquement par Mega-Prompt Cursor
 
 ## Limitations
-- Basic implementation
-- Additional features to be added
+Aucune limitation connue
 
-## Version
-3.5.4
+---
+*Généré le 2025-08-05T01:58:45.076Z*

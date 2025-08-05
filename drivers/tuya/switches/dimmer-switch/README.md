@@ -1,19 +1,19 @@
-# Dimmer Switch Driver
+# com.tuya.zigbee.dimmer-switch
 
 ## Description
-Driver for dimmer-switch switches device.
+Driver pour com.tuya.zigbee.dimmer-switch - switche
+
+## Classe Homey
+`switche`
 
 ## Capabilities
-- onoff
-- Additional capabilities to be implemented
+- `onoff`
 
-## DataPoints (DPs)
-- DP1: On/Off state
-- Additional DPs to be documented
+## Source
+Généré automatiquement par Mega-Prompt Cursor
 
 ## Limitations
-- Basic implementation
-- Additional features to be added
+Aucune limitation connue
 
-## Version
-3.5.4
+---
+*Généré le 2025-08-05T01:58:45.132Z*
