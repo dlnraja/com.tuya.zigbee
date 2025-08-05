@@ -1,0 +1,68 @@
+{
+  "id": "lights_zigbee_generic",
+  "name": {
+    "en": "lights_zigbee_generic",
+    "fr": "lights_zigbee_generic",
+    "nl": "lights_zigbee_generic",
+    "ta": "lights_zigbee_generic"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "design": {
+    "category": "lights",
+    "primaryColor": "#FFD700",
+    "secondaryColor": "#FFA500",
+    "icon": "💡",
+    "pattern": "radial-gradient"
+  },
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  },
+  "isGeneric": true,
+  "source": "zigbee-common",
+  "type": "zigbee",
+  "manufacturer": "Generic",
+  "manufacturername": "generic",
+  "model": "zigbee-bulb",
+  "enriched": "2025-08-05T08:40:36.114Z",
+  "category": "lights",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.891Z",
+    "deduced": {
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "class": "light"
+    }
+  },
+  "renamed": {
+    "from": "lights_zigbee_zigbee-bulb",
+    "date": "2025-08-05T10:09:27.156Z",
+    "reason": "automatic_fusion"
+  },
+  "fusion": {
+    "date": "2025-08-05T10:09:27.128Z",
+    "duplicates": [
+      "lights_zigbee_zigbee-strip"
+    ],
+    "totalDrivers": 2
+  }
+}

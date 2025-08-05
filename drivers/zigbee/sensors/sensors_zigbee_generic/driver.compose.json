@@ -1,10 +1,10 @@
 {
   "id": "sensors_zigbee_generic",
   "name": {
-    "en": "sensors_zigbee_xiaomi-aqara-temperature-4",
-    "fr": "sensors_zigbee_xiaomi-aqara-temperature-4",
-    "nl": "sensors_zigbee_xiaomi-aqara-temperature-4",
-    "ta": "sensors_zigbee_xiaomi-aqara-temperature-4"
+    "en": "sensors_zigbee_generic",
+    "fr": "sensors_zigbee_generic",
+    "nl": "sensors_zigbee_generic",
+    "ta": "sensors_zigbee_generic"
   },
   "class": "sensor",
   "capabilities": [
@@ -31,12 +31,12 @@
   "type": "zigbee",
   "manufacturer": "Generic",
   "manufacturername": "generic",
-  "model": "xiaomi-aqara-temperature-4",
-  "enriched": "2025-08-05T08:40:36.849Z",
+  "model": "samsung-smartthings-temperature-6",
+  "enriched": "2025-08-05T08:40:36.730Z",
   "category": "sensors",
   "heuristic": {
     "applied": true,
-    "date": "2025-08-05T09:03:47.225Z",
+    "date": "2025-08-05T09:03:47.197Z",
     "deduced": {
       "capabilities": [
         "onoff"
@@ -45,14 +45,14 @@
     }
   },
   "renamed": {
-    "from": "xiaomi-aqara-temperature-4",
-    "date": "2025-08-05T09:47:53.800Z",
-    "reason": "standardization"
+    "from": "sensors_zigbee_samsung-smartthings-temperature-6",
+    "date": "2025-08-05T10:09:27.921Z",
+    "reason": "automatic_fusion"
   },
   "fusion": {
-    "date": "2025-08-05T10:09:27.943Z",
+    "date": "2025-08-05T10:09:27.822Z",
     "duplicates": [
-      "sensors_zigbee_xiaomi-aqara-temperature-5"
+      "sensors_zigbee_samsung-smartthings-temperature-7"
     ],
     "totalDrivers": 2
   }

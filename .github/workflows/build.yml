@@ -1,18 +1,34 @@
-name: Build and Test
+name: Build and Validate
 
 on:
   push:
+    branches: [ master, tuya-light ]
+  pull_request:
     branches: [ master ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js
-      uses: actions/setup-node@v2
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
       with:
-        node-version: '16'
-    - run: npm ci
-    - run: npm test
-    - run: homey app validate
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Validate app
+      run: npx homey app validate
+      
+    - name: Build app
+      run: npx homey app build
+      
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: homey-app-build
+        path: .homeybuild/
