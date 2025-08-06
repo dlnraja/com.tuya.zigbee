@@ -1,1 +1,25 @@
-{ "id": "otacluster", "class": "light", "capabilities": [], "name": { "en": "otacluster", "fr": "otacluster", "nl": "otacluster", "ta": "otacluster" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "otacluster", "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\node_modules\\zigbee-clusters\\lib\\clusters\\ota.js", "originalFile": "ota.js", "extracted": "2025-08-05T08:36:31.150Z"}
+{
+  "id": "otacluster",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "otacluster",
+    "fr": "otacluster",
+    "nl": "otacluster",
+    "ta": "otacluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "otacluster",
+  "originalFile": "ota.js",
+  "extracted": "2025-08-05T08:36:31.150Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

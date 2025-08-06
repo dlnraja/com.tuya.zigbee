@@ -1,1 +1,25 @@
-{ "id": "3", "class": "light", "capabilities": [], "name": { "en": "3", "fr": "3", "nl": "3", "ta": "3" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "3", "source": "D:\\Download\\Compressed\\CH314A Tools Collection ByNSC\\AsProgrammer\\drivers\\AVRISPMK2\\avrisp_mkii.cat", "originalFile": "avrisp_mkii.cat", "extracted": "2025-08-05T08:30:02.215Z"}
+{
+  "id": "3",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "3",
+    "fr": "3",
+    "nl": "3",
+    "ta": "3"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "3",
+  "originalFile": "avrisp_mkii.cat",
+  "extracted": "2025-08-05T08:30:02.215Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

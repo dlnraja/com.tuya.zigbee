@@ -1,1 +1,25 @@
-{ "id": "binaryoutputcluster", "class": "light", "capabilities": [], "name": { "en": "binaryoutputcluster", "fr": "binaryoutputcluster", "nl": "binaryoutputcluster", "ta": "binaryoutputcluster" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "binaryoutputcluster", "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\node_modules\\zigbee-clusters\\lib\\clusters\\binaryOutput.js", "originalFile": "binaryOutput.js", "extracted": "2025-08-05T08:36:19.721Z"}
+{
+  "id": "binaryoutputcluster",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "binaryoutputcluster",
+    "fr": "binaryoutputcluster",
+    "nl": "binaryoutputcluster",
+    "ta": "binaryoutputcluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "binaryoutputcluster",
+  "originalFile": "binaryOutput.js",
+  "extracted": "2025-08-05T08:36:19.721Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

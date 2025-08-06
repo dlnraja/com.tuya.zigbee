@@ -1,1 +1,25 @@
-{ "id": "setuptoolsdeprecationwarning", "class": "light", "capabilities": [], "name": { "en": "setuptoolsdeprecationwarning", "fr": "setuptoolsdeprecationwarning", "nl": "setuptoolsdeprecationwarning", "ta": "setuptoolsdeprecationwarning" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "setuptoolsdeprecationwarning", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\setuptools\\_deprecation_warning.py", "originalFile": "_deprecation_warning.py", "extracted": "2025-08-05T08:33:15.026Z"}
+{
+  "id": "setuptoolsdeprecationwarning",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "setuptoolsdeprecationwarning",
+    "fr": "setuptoolsdeprecationwarning",
+    "nl": "setuptoolsdeprecationwarning",
+    "ta": "setuptoolsdeprecationwarning"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "setuptoolsdeprecationwarning",
+  "originalFile": "_deprecation_warning.py",
+  "extracted": "2025-08-05T08:33:15.026Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

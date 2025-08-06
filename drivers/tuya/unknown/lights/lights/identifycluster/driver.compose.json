@@ -1,1 +1,25 @@
-{ "id": "identifycluster", "class": "light", "capabilities": [], "name": { "en": "identifycluster", "fr": "identifycluster", "nl": "identifycluster", "ta": "identifycluster" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "identifycluster", "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\node_modules\\zigbee-clusters\\lib\\clusters\\identify.js", "originalFile": "identify.js", "extracted": "2025-08-05T08:36:28.564Z"}
+{
+  "id": "identifycluster",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "identifycluster",
+    "fr": "identifycluster",
+    "nl": "identifycluster",
+    "ta": "identifycluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "identifycluster",
+  "originalFile": "identify.js",
+  "extracted": "2025-08-05T08:36:28.564Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

@@ -1,1 +1,25 @@
-{ "id": "inputstate", "class": "light", "capabilities": [], "name": { "en": "inputstate", "fr": "inputstate", "nl": "inputstate", "ta": "inputstate" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "inputstate", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\chardet\\enums.py", "originalFile": "enums.py", "extracted": "2025-08-05T08:33:41.706Z"}
+{
+  "id": "inputstate",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "inputstate",
+    "fr": "inputstate",
+    "nl": "inputstate",
+    "ta": "inputstate"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "inputstate",
+  "originalFile": "enums.py",
+  "extracted": "2025-08-05T08:33:41.706Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

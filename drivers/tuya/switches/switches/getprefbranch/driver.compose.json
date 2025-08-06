@@ -1,1 +1,25 @@
-{ "id": "getprefbranch", "class": "switche", "capabilities": [], "name": { "en": "getprefbranch", "fr": "getprefbranch", "nl": "getprefbranch", "ta": "getprefbranch" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "getprefbranch", "source": "D:\\Download\\Compressed\\katana\\PortableApps\\OpenOfficePortable\\App\\openoffice\\program\\defaults\\autoconfig\\prefcalls.js", "originalFile": "prefcalls.js", "extracted": "2025-08-05T08:26:28.402Z"}
+{
+  "id": "getprefbranch",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "getprefbranch",
+    "fr": "getprefbranch",
+    "nl": "getprefbranch",
+    "ta": "getprefbranch"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "getprefbranch",
+  "originalFile": "prefcalls.js",
+  "extracted": "2025-08-05T08:26:28.402Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

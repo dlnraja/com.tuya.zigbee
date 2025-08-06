@@ -1,1 +1,25 @@
-{ "id": "descriptor", "class": "light", "capabilities": [], "name": { "en": "descriptor", "fr": "descriptor", "nl": "descriptor", "ta": "descriptor" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "descriptor", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\distlib\\w64-arm.exe", "originalFile": "w64-arm.exe", "extracted": "2025-08-05T08:33:44.172Z"}
+{
+  "id": "descriptor",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "descriptor",
+    "fr": "descriptor",
+    "nl": "descriptor",
+    "ta": "descriptor"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "descriptor",
+  "originalFile": "w64-arm.exe",
+  "extracted": "2025-08-05T08:33:44.172Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

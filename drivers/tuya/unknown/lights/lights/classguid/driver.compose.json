@@ -1,1 +1,25 @@
-{ "id": "classguid", "class": "light", "capabilities": [], "name": { "en": "classguid", "fr": "classguid", "nl": "classguid", "ta": "classguid" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "classguid", "source": "D:\\Download\\Compressed\\RockChip_TFT TeaM\\RockChip\\Rockchip_DriverAssitant_v5.1.1\\ADBDriver\\android_winusb.inf", "originalFile": "android_winusb.inf", "extracted": "2025-08-05T08:27:32.462Z"}
+{
+  "id": "classguid",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "classguid",
+    "fr": "classguid",
+    "nl": "classguid",
+    "ta": "classguid"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "classguid",
+  "originalFile": "android_winusb.inf",
+  "extracted": "2025-08-05T08:27:32.462Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

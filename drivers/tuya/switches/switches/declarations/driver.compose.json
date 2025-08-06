@@ -1,1 +1,25 @@
-{ "id": "declarations", "class": "switche", "capabilities": [], "name": { "en": "declarations", "fr": "declarations", "nl": "declarations", "ta": "declarations" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "declarations", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Scripts\\Activate.ps1", "originalFile": "Activate.ps1", "extracted": "2025-08-05T08:34:54.395Z"}
+{
+  "id": "declarations",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "declarations",
+    "fr": "declarations",
+    "nl": "declarations",
+    "ta": "declarations"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "declarations",
+  "originalFile": "Activate.ps1",
+  "extracted": "2025-08-05T08:34:54.395Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

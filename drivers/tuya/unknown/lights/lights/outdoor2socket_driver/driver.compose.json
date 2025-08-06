@@ -1,1 +1,25 @@
-{ "id": "outdoor2socket_driver", "class": "light", "capabilities": [], "name": { "en": "outdoor2socket_driver", "fr": "outdoor2socket_driver", "nl": "outdoor2socket_driver", "ta": "outdoor2socket_driver" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "outdoor2socket_driver", "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\outdoor_2_socket\\driver.js", "originalFile": "driver.js", "extracted": "2025-08-05T08:35:52.372Z"}
+{
+  "id": "outdoor2socket_driver",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "outdoor2socket_driver",
+    "fr": "outdoor2socket_driver",
+    "nl": "outdoor2socket_driver",
+    "ta": "outdoor2socket_driver"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "outdoor2socket_driver",
+  "originalFile": "driver.js",
+  "extracted": "2025-08-05T08:35:52.372Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

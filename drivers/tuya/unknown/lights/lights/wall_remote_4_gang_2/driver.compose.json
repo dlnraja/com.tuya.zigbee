@@ -1,1 +1,25 @@
-{ "id": "wall_remote_4_gang_2", "class": "light", "capabilities": [], "name": { "en": "wall_remote_4_gang_2", "fr": "wall_remote_4_gang_2", "nl": "wall_remote_4_gang_2", "ta": "wall_remote_4_gang_2" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "wall_remote_4_gang_2", "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\wall_remote_4_gang_2\\device.js", "originalFile": "device.js", "extracted": "2025-08-05T08:36:09.931Z"}
+{
+  "id": "wall_remote_4_gang_2",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "wall_remote_4_gang_2",
+    "fr": "wall_remote_4_gang_2",
+    "nl": "wall_remote_4_gang_2",
+    "ta": "wall_remote_4_gang_2"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "wall_remote_4_gang_2",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:36:09.931Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

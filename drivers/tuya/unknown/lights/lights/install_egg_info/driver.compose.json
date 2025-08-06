@@ -1,1 +1,25 @@
-{ "id": "install_egg_info", "class": "light", "capabilities": [], "name": { "en": "install_egg_info", "fr": "install_egg_info", "nl": "install_egg_info", "ta": "install_egg_info" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "install_egg_info", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\setuptools\\command\\install_egg_info.py", "originalFile": "install_egg_info.py", "extracted": "2025-08-05T08:33:23.160Z"}
+{
+  "id": "install_egg_info",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "install_egg_info",
+    "fr": "install_egg_info",
+    "nl": "install_egg_info",
+    "ta": "install_egg_info"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "install_egg_info",
+  "originalFile": "install_egg_info.py",
+  "extracted": "2025-08-05T08:33:23.160Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

@@ -1,1 +1,25 @@
-{ "id": "pollcontrolcluster", "class": "light", "capabilities": [], "name": { "en": "pollcontrolcluster", "fr": "pollcontrolcluster", "nl": "pollcontrolcluster", "ta": "pollcontrolcluster" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "pollcontrolcluster", "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\node_modules\\zigbee-clusters\\lib\\clusters\\pollControl.js", "originalFile": "pollControl.js", "extracted": "2025-08-05T08:36:31.434Z"}
+{
+  "id": "pollcontrolcluster",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "pollcontrolcluster",
+    "fr": "pollcontrolcluster",
+    "nl": "pollcontrolcluster",
+    "ta": "pollcontrolcluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "pollcontrolcluster",
+  "originalFile": "pollControl.js",
+  "extracted": "2025-08-05T08:36:31.434Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

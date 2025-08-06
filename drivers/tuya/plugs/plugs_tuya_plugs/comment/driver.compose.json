@@ -1,1 +1,25 @@
-{ "id": "comment", "class": "plug", "capabilities": [], "name": { "en": "comment", "fr": "comment", "nl": "comment", "ta": "comment" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "comment", "source": "D:\\Download\\Compressed\\x86_64-pc-windows-gnu\\tool_config_files\\build-repo-builds\\plugins\\FeatureUnlock.json", "originalFile": "FeatureUnlock.json", "extracted": "2025-08-05T08:29:42.927Z"}
+{
+  "id": "comment",
+  "class": "plug",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "comment",
+    "fr": "comment",
+    "nl": "comment",
+    "ta": "comment"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "comment",
+  "originalFile": "FeatureUnlock.json",
+  "extracted": "2025-08-05T08:29:42.927Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

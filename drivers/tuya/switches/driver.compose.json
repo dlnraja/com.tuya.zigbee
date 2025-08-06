@@ -1,25 +1,30 @@
 {
-  "id": "",
-  "class": "switche",
-  "capabilities": [],
+  "id": "switches",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
   "name": {
-    "en": "",
-    "fr": "",
-    "nl": "",
-    "ta": ""
+    "en": "switches",
+    "fr": "switches",
+    "nl": "switches",
+    "ta": "switches"
   },
   "images": {
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png"
   },
   "manufacturername": ": [\n ",
-  "model": "",
-  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\wall_switch_6_gang_tuya\\driver.compose.json",
+  "model": "TS0601",
   "originalFile": "driver.compose.json",
   "extracted": "2025-08-05T08:36:10.600Z",
   "metadata": {
     "enriched": true,
     "enrichmentDate": "2025-08-05T17:09:10.860Z",
     "megaPromptVersion": "ULTIME - VERSION FINALE 2025"
-  }
+  },
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
 }

@@ -1,1 +1,25 @@
-{ "id": "pirsensor", "class": "sensor", "capabilities": [], "name": { "en": "pirsensor", "fr": "pirsensor", "nl": "pirsensor", "ta": "pirsensor" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "pirsensor", "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\pirsensor\\device.js", "originalFile": "device.js", "extracted": "2025-08-05T08:35:53.263Z"}
+{
+  "id": "pirsensor",
+  "class": "sensor",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "pirsensor",
+    "fr": "pirsensor",
+    "nl": "pirsensor",
+    "ta": "pirsensor"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "pirsensor",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:35:53.263Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

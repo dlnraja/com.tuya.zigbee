@@ -1,1 +1,25 @@
-{ "id": "cim_logentry", "class": "light", "capabilities": [], "name": { "en": "cim_logentry", "fr": "cim_logentry", "nl": "cim_logentry", "ta": "cim_logentry" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "cim_logentry", "source": "D:\\Download\\Compressed\\ME_SW_2413.5.67.0\\Drivers\\WMIProvider\\ME\\s\\System\\CIM_LogEntry.mof", "originalFile": "CIM_LogEntry.mof", "extracted": "2025-08-05T08:31:48.272Z"}
+{
+  "id": "cim_logentry",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "cim_logentry",
+    "fr": "cim_logentry",
+    "nl": "cim_logentry",
+    "ta": "cim_logentry"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "cim_logentry",
+  "originalFile": "CIM_LogEntry.mof",
+  "extracted": "2025-08-05T08:31:48.272Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

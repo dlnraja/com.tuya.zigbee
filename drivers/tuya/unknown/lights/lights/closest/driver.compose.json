@@ -1,1 +1,25 @@
-{ "id": "closest", "class": "light", "capabilities": [], "name": { "en": "closest", "fr": "closest", "nl": "closest", "ta": "closest" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "closest", "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\node_modules\\mumath\\closest.js", "originalFile": "closest.js", "extracted": "2025-08-05T08:36:16.032Z"}
+{
+  "id": "closest",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "closest",
+    "fr": "closest",
+    "nl": "closest",
+    "ta": "closest"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "closest",
+  "originalFile": "closest.js",
+  "extracted": "2025-08-05T08:36:16.032Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

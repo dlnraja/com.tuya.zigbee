@@ -1,1 +1,25 @@
-{ "id": "powerconfigurationcluster", "class": "light", "capabilities": [], "name": { "en": "powerconfigurationcluster", "fr": "powerconfigurationcluster", "nl": "powerconfigurationcluster", "ta": "powerconfigurationcluster" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "powerconfigurationcluster", "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\node_modules\\zigbee-clusters\\lib\\clusters\\powerConfiguration.js", "originalFile": "powerConfiguration.js", "extracted": "2025-08-05T08:36:31.751Z"}
+{
+  "id": "powerconfigurationcluster",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "powerconfigurationcluster",
+    "fr": "powerconfigurationcluster",
+    "nl": "powerconfigurationcluster",
+    "ta": "powerconfigurationcluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "powerconfigurationcluster",
+  "originalFile": "powerConfiguration.js",
+  "extracted": "2025-08-05T08:36:31.751Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

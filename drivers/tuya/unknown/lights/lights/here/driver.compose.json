@@ -1,1 +1,25 @@
-{ "id": "here", "class": "light", "capabilities": [], "name": { "en": "here", "fr": "here", "nl": "here", "ta": "here" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "here", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\setuptools\\_distutils\\log.py", "originalFile": "log.py", "extracted": "2025-08-05T08:33:17.225Z"}
+{
+  "id": "here",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "here",
+    "fr": "here",
+    "nl": "here",
+    "ta": "here"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "here",
+  "originalFile": "log.py",
+  "extracted": "2025-08-05T08:33:17.225Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

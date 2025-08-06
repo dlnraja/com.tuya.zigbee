@@ -1,1 +1,25 @@
-{ "id": "cache", "class": "light", "capabilities": [], "name": { "en": "cache", "fr": "cache", "nl": "cache", "ta": "cache" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "cache", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_internal\\cache.py", "originalFile": "cache.py", "extracted": "2025-08-05T08:33:34.538Z"}
+{
+  "id": "cache",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "cache",
+    "fr": "cache",
+    "nl": "cache",
+    "ta": "cache"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "cache",
+  "originalFile": "cache.py",
+  "extracted": "2025-08-05T08:33:34.538Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

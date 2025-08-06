@@ -1,1 +1,25 @@
-{ "id": "resourcecache", "class": "light", "capabilities": [], "name": { "en": "resourcecache", "fr": "resourcecache", "nl": "resourcecache", "ta": "resourcecache" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "resourcecache", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\distlib\\resources.py", "originalFile": "resources.py", "extracted": "2025-08-05T08:33:43.783Z"}
+{
+  "id": "resourcecache",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "resourcecache",
+    "fr": "resourcecache",
+    "nl": "resourcecache",
+    "ta": "resourcecache"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "resourcecache",
+  "originalFile": "resources.py",
+  "extracted": "2025-08-05T08:33:43.783Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

@@ -1,1 +1,25 @@
-{ "id": "smart_switch", "class": "switche", "capabilities": [], "name": { "en": "smart_switch", "fr": "smart_switch", "nl": "smart_switch", "ta": "smart_switch" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": ", ", "model": "smart_switch", "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\smart_switch\\device.js", "originalFile": "device.js", "extracted": "2025-08-05T08:36:04.801Z"}
+{
+  "id": "smart_switch",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "smart_switch",
+    "fr": "smart_switch",
+    "nl": "smart_switch",
+    "ta": "smart_switch"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": ", ",
+  "model": "smart_switch",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:36:04.801Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

@@ -1,1 +1,25 @@
-{ "id": "alarmscluster", "class": "light", "capabilities": [], "name": { "en": "alarmscluster", "fr": "alarmscluster", "nl": "alarmscluster", "ta": "alarmscluster" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "alarmscluster", "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\node_modules\\zigbee-clusters\\lib\\clusters\\alarms.js", "originalFile": "alarms.js", "extracted": "2025-08-05T08:36:13.376Z"}
+{
+  "id": "alarmscluster",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "alarmscluster",
+    "fr": "alarmscluster",
+    "nl": "alarmscluster",
+    "ta": "alarmscluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "alarmscluster",
+  "originalFile": "alarms.js",
+  "extracted": "2025-08-05T08:36:13.376Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

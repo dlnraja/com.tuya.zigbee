@@ -1,1 +1,25 @@
-{ "id": "tooltipwindow", "class": "light", "capabilities": [], "name": { "en": "tooltipwindow", "fr": "tooltipwindow", "nl": "tooltipwindow", "ta": "tooltipwindow" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "tooltipwindow", "source": "D:\\Download\\Compressed\\katana\\PortableApps\\Metasploit\\Metasploit\\msf3\\data\\msfweb\\public\\javascripts\\tooltip.js", "originalFile": "tooltip.js", "extracted": "2025-08-05T08:26:22.648Z"}
+{
+  "id": "tooltipwindow",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "tooltipwindow",
+    "fr": "tooltipwindow",
+    "nl": "tooltipwindow",
+    "ta": "tooltipwindow"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "tooltipwindow",
+  "originalFile": "tooltip.js",
+  "extracted": "2025-08-05T08:26:22.648Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

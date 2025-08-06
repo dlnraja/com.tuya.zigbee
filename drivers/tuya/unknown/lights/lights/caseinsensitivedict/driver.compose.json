@@ -1,1 +1,25 @@
-{ "id": "caseinsensitivedict", "class": "light", "capabilities": [], "name": { "en": "caseinsensitivedict", "fr": "caseinsensitivedict", "nl": "caseinsensitivedict", "ta": "caseinsensitivedict" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "caseinsensitivedict", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\requests\\structures.py", "originalFile": "structures.py", "extracted": "2025-08-05T08:33:52.285Z"}
+{
+  "id": "caseinsensitivedict",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "caseinsensitivedict",
+    "fr": "caseinsensitivedict",
+    "nl": "caseinsensitivedict",
+    "ta": "caseinsensitivedict"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "caseinsensitivedict",
+  "originalFile": "structures.py",
+  "extracted": "2025-08-05T08:33:52.285Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

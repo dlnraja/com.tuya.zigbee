@@ -1,1 +1,25 @@
-{ "id": "wheel", "class": "light", "capabilities": [], "name": { "en": "wheel", "fr": "wheel", "nl": "wheel", "ta": "wheel" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "wheel", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_internal\\models\\wheel.py", "originalFile": "wheel.py", "extracted": "2025-08-05T08:33:37.033Z"}
+{
+  "id": "wheel",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "wheel",
+    "fr": "wheel",
+    "nl": "wheel",
+    "ta": "wheel"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "wheel",
+  "originalFile": "wheel.py",
+  "extracted": "2025-08-05T08:33:37.033Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}
