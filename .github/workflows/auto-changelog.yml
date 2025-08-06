@@ -1,0 +1,51 @@
+name: 📖 Auto Changelog
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 👋 Checkout
+        uses: actions/checkout@v3
+
+      - name: ✨ Generate changelog
+        uses: heinrichreimer/github-changelog-generator-action@v2.2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          author: true
+          issues: true
+          pullRequests: true
+          compareLink: true
+          unreleased: false
+
+      - name: 🖉 Commit changelog
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add CHANGELOG.md
+          git commit -m "📖 docs: update changelog for release"
+          git push
+
+      - name: 📝 Create release notification
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '📖 Changelog Auto-Generated',
+              body: `✅ Changelog généré automatiquement pour la release!
+              
+              📄 **Fichiers mis à jour:**
+              - CHANGELOG.md
+              
+              🎯 **MEGA-PROMPT ULTIME - VERSION FINALE 2025**`
+            }) 
