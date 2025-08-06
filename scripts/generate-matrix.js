@@ -1,12 +1,416 @@
-// MEGA-PROMPT ULTIME - VERSION FINALE 2025
-// Enhanced with enrichment mode
-#!/usr/bin/env node /** * 📊 GENERATE-MATRIX.JS - GÉNÉRATION OPTIMISÉE * Version: 3.0.0 * Date: 2025-08-05 * * Génération rapide et complète de la matrice des drivers * OPTIMISÉ - Performance x3, Données enrichies */ const fs = require('fs'); const path = require('path'); class MatrixGenerator { constructor() { this.startTime = Date.now(); this.report = { timestamp: new Date().toISOString(), driversProcessed: 0, matrixGenerated: false, jsonGenerated: false, performance: { startTime: this.startTime, endTime: null, duration: null } }; // Cache pour optimiser les performances this.driverCache = new Map(); this.matrixCache = new Map(); } async execute() { console.log('📊 Démarrage de la génération de matrice optimisée...'); try { const drivers = await this.scanAllDrivers(); await this.generateMatrix(drivers); await this.generateJSON(drivers); await this.generateReport(); this.report.performance.endTime = Date.now(); this.report.performance.duration = this.report.performance.endTime - this.startTime; console.log(`✅ Génération terminée en ${this.report.performance.duration}ms`); } catch (error) { console.error('❌ Erreur génération:', error.message); } } async scanAllDrivers() { console.log('🔍 Scan de tous les drivers...'); const drivers = []; const driverDirs = ['drivers/tuya', 'drivers/zigbee']; for (const dir of driverDirs) { if (fs.existsSync(dir)) { const categories = fs.readdirSync(dir); for (const category of categories) { const categoryPath = path.join(dir, category); if (fs.statSync(categoryPath).isDirectory()) { const brands = fs.readdirSync(categoryPath); for (const brand of brands) { const brandPath = path.join(categoryPath, brand); if (fs.statSync(brandPath).isDirectory()) { const models = fs.readdirSync(brandPath); for (const model of models) { const modelPath = path.join(brandPath, model); if (fs.statSync(modelPath).isDirectory()) { const driverInfo = await this.extractDriverInfo(modelPath, category, brand, model); drivers.push(driverInfo); this.report.driversProcessed++; } } } } } } } } console.log(`📊 ${drivers.length} drivers analysés`); return drivers; } async extractDriverInfo(driverPath, category, brand, model) { const driverInfo = { id: model, category, brand, model, path: driverPath, type: this.extractType(model), status: 'unknown', capabilities: [], class: 'unknown', manufacturer: brand, fusion: null, enriched: false, validated: false, assets: [], metadata: {} }; // Vérification des fichiers const devicePath = path.join(driverPath, 'device.js'); const composePath = path.join(driverPath, 'driver.compose.json'); const readmePath = path.join(driverPath, 'README.md'); const assetsPath = path.join(driverPath, 'assets'); if (fs.existsSync(devicePath)) { driverInfo.validated = true; driverInfo.status = 'valid'; } if (fs.existsSync(composePath)) { try { const compose = JSON.parse(fs.readFileSync(composePath, 'utf8')); driverInfo.capabilities = compose.capabilities || []; driverInfo.class = compose.class || 'unknown'; driverInfo.metadata = compose; if (compose.fusion) { driverInfo.fusion = compose.fusion; } if (compose.enriched) { driverInfo.enriched = true; } } catch (error) { console.warn(`⚠️ Erreur lecture compose pour ${model}: ${error.message}`); } } if (fs.existsSync(readmePath)) { driverInfo.metadata.readme = true; } if (fs.existsSync(assetsPath)) { const assets = fs.readdirSync(assetsPath); driverInfo.assets = assets.filter(file => file.endsWith('.png') || file.endsWith('.jpg') || file.endsWith('.svg') ); } // Cache du driver this.driverCache.set(driverPath, driverInfo); return driverInfo; } extractType(model) { const patterns = [ { pattern: 'ts011f', type: 'plug' }, { pattern: 'ts011g', type: 'plug' }, { pattern: 'ts011h', type: 'plug' }, { pattern: 'ts011i', type: 'plug' }, { pattern: 'ts011j', type: 'plug' }, { pattern: 'ts0121', type: 'plug' }, { pattern: 'ts0122', type: 'plug' }, { pattern: 'ts0123', type: 'plug' }, { pattern: 'ts0124', type: 'plug' }, { pattern: 'ts0125', type: 'plug' }, { pattern: 'ts0601', type: 'generic' }, { pattern: 'ts0602', type: 'cover' }, { pattern: 'ts0603', type: 'cover' }, { pattern: 'ts0604', type: 'cover' }, { pattern: 'ts0001', type: 'switch' }, { pattern: 'ts0002', type: 'switch' }, { pattern: 'ts0003', type: 'switch' }, { pattern: 'ts0004', type: 'switch' }, { pattern: 'ts0005', type: 'switch' }, { pattern: 'ts0006', type: 'switch' }, { pattern: 'ts0007', type: 'switch' }, { pattern: 'ts0008', type: 'switch' }, { pattern: 'ts0201', type: 'sensor' }, { pattern: 'ts0202', type: 'sensor' }, { pattern: 'ts0203', type: 'sensor' } ]; const modelLower = model.toLowerCase(); for (const { pattern, type } of patterns) { if (modelLower.includes(pattern)) { return type; } } return 'unknown'; } async generateMatrix(drivers) { console.log('📊 Génération de la matrice Markdown...'); let matrixContent = `# 📊 Matrice des Drivers - Tuya Zigbee ## 📈 Statistiques - **Total Drivers**: ${drivers.length} - **Drivers Tuya**: ${drivers.filter(d => d.path.includes('tuya')).length} - **Drivers Zigbee**: ${drivers.filter(d => d.path.includes('zigbee')).length} - **Drivers Validés**: ${drivers.filter(d => d.validated).length} - **Drivers Enrichis**: ${drivers.filter(d => d.enriched).length} - **Date de génération**: ${new Date().toLocaleDateString('fr-FR')} ## 📋 Liste des Drivers | ID | Catégorie | Marque | Modèle | Type | Classe | Statut | Capabilities | Fusion | |----|-----------|--------|--------|------|--------|--------|--------------|--------| `; for (const driver of drivers) { const status = driver.validated ? '✅' : '❌'; const capabilities = driver.capabilities.length > 0 ? driver.capabilities.slice(0, 3).join(', ') + (driver.capabilities.length > 3 ? '...' : '') : 'Aucune'; const fusion = driver.fusion ? '✅' : '❌'; matrixContent += `| ${driver.id} | ${driver.category} | ${driver.brand} | ${driver.model} | ${driver.type} | ${driver.class} | ${status} | ${capabilities} | ${fusion} |\n`; } matrixContent += ` ## 🔧 Métadonnées - **Version**: 3.1.0 - **SDK**: 3.0.0 - **Compatibilité**: Homey Pro 2023+ - **Optimisation**: x3 performance - **Enrichissement**: IA locale ## 📊 Répartition par Type `; const typeStats = {}; for (const driver of drivers) { typeStats[driver.type] = (typeStats[driver.type] || 0) + 1; } for (const [type, count] of Object.entries(typeStats)) { matrixContent += `- **${type}**: ${count} drivers\n`; } matrixContent += ` ## 🎯 Fonctionnalités - ✅ Scan rapide des drivers - ✅ Extraction des métadonnées - ✅ Analyse des capabilities - ✅ Détection des fusions - ✅ Validation automatique - ✅ Rapport détaillé --- **📊 MEGA-PROMPT CURSOR ULTIME - GÉNÉRATION OPTIMISÉE** `; fs.writeFileSync('ref/drivers-matrix.md', matrixContent); this.report.matrixGenerated = true; console.log('✅ Matrice Markdown générée'); } async generateJSON(drivers) { console.log('📊 Génération du JSON...'); const jsonData = { metadata: { version: "3.1.0", generated: new Date().toISOString(), totalDrivers: drivers.length, tuyaDrivers: drivers.filter(d => d.path.includes('tuya')).length, zigbeeDrivers: drivers.filter(d => d.path.includes('zigbee')).length, validatedDrivers: drivers.filter(d => d.validated).length, enrichedDrivers: drivers.filter(d => d.enriched).length }, drivers: drivers.map(driver => ({ id: driver.id, category: driver.category, brand: driver.brand, model: driver.model, type: driver.type, class: driver.class, status: driver.status, capabilities: driver.capabilities, manufacturer: driver.manufacturer, fusion: driver.fusion, enriched: driver.enriched, validated: driver.validated, assets: driver.assets, metadata: driver.metadata })), statistics: { byType: this.generateTypeStats(drivers), byCategory: this.generateCategoryStats(drivers), byBrand: this.generateBrandStats(drivers), byStatus: this.generateStatusStats(drivers) } }; fs.writeFileSync('ref/drivers-index.json', JSON.stringify(jsonData, null, 2)); this.report.jsonGenerated = true; console.log('✅ JSON généré'); } generateTypeStats(drivers) { const stats = {}; for (const driver of drivers) { stats[driver.type] = (stats[driver.type] || 0) + 1; } return stats; } generateCategoryStats(drivers) { const stats = {}; for (const driver of drivers) { stats[driver.category] = (stats[driver.category] || 0) + 1; } return stats; } generateBrandStats(drivers) { const stats = {}; for (const driver of drivers) { stats[driver.brand] = (stats[driver.brand] || 0) + 1; } return stats; } generateStatusStats(drivers) { const stats = { valid: drivers.filter(d => d.validated).length, invalid: drivers.filter(d => !d.validated).length, enriched: drivers.filter(d => d.enriched).length, fused: drivers.filter(d => d.fusion).length }; return stats; } async generateReport() { console.log('📊 Génération du rapport...'); const reportPath = 'reports/matrix-generation-report.json'; const reportDir = path.dirname(reportPath); if (!fs.existsSync(reportDir)) { fs.mkdirSync(reportDir, { recursive: true }); } fs.writeFileSync(reportPath, JSON.stringify(this.report, null, 2)); const markdownReport = this.generateMarkdownReport(); const markdownPath = 'reports/matrix-generation-report.md'; fs.writeFileSync(markdownPath, markdownReport); console.log(`📊 Rapport généré: ${reportPath}`); console.log(`📊 Rapport Markdown: ${markdownPath}`); } generateMarkdownReport() { const { driversProcessed, matrixGenerated, jsonGenerated, performance } = this.report; return `# 📊 Rapport de Génération Matrice - MEGA-PROMPT CURSOR ULTIME ## 📅 Date de Génération **${new Date().toLocaleString('fr-FR')}** ## ⚡ Performance - **Durée totale**: ${performance.duration}ms - **Drivers traités**: ${driversProcessed} - **Matrice générée**: ${matrixGenerated ? '✅' : '❌'} - **JSON généré**: ${jsonGenerated ? '✅' : '❌'} ## 📊 Résultats - ✅ Scan complet des drivers - ✅ Extraction des métadonnées - ✅ Analyse des capabilities - ✅ Détection des fusions - ✅ Génération Markdown - ✅ Génération JSON ## 🎯 Fonctionnalités - 🔍 Scan rapide des drivers - 📊 Extraction des métadonnées - 🎯 Analyse des capabilities - 🔗 Détection des fusions - 📈 Statistiques détaillées - ⚡ Performance optimisée ## 📈 Métriques - **Cache hits**: ${this.driverCache.size} - **Matrix cache**: ${this.matrixCache.size} - **Optimisation**: x3 amélioration ## 📁 Fichiers Générés - ✅ ref/drivers-matrix.md - ✅ ref/drivers-index.json - ✅ reports/matrix-generation-report.json - ✅ reports/matrix-generation-report.md --- **📊 GÉNÉRATION OPTIMISÉE - MEGA-PROMPT CURSOR ULTIME** `; } } // Exécution const matrixGenerator = new MatrixGenerator(); matrixGenerator.execute().catch(console.error); 
+// 📦 generate-matrix.js
+// Script Node.js pour générer `drivers-matrix.md` et un dashboard HTML
 
-// Enhanced error handling
-process.on('unhandledRejection', (reason, promise) => {
-    console.error('Unhandled Rejection at:', promise, 'reason:', reason);
-});
+const fs = require('fs');
+const path = require('path');
 
-process.on('uncaughtException', (error) => {
-    console.error('Uncaught Exception:', error);
-});
+const ROOT = path.resolve(__dirname, '..', 'drivers');
+const OUTPUT_MD = path.resolve(__dirname, '..', 'drivers-matrix.md');
+const OUTPUT_HTML = path.resolve(__dirname, '..', 'docs', 'dashboard.html');
+
+function findDrivers(dir = ROOT) {
+  const drivers = [];
+
+  function walk(currentPath) {
+    const entries = fs.readdirSync(currentPath, { withFileTypes: true });
+    for (const entry of entries) {
+      const fullPath = path.join(currentPath, entry.name);
+      if (entry.isDirectory()) {
+        walk(fullPath);
+      } else if (entry.name === 'driver.compose.json') {
+        const jsExists = fs.existsSync(path.join(currentPath, 'driver.js'));
+        const relPath = path.relative(ROOT, currentPath);
+        const driverInfo = {
+          type: relPath.split(path.sep)[0],
+          folder: relPath,
+          file: 'driver.compose.json',
+          json: validateJSON(fullPath),
+          js: jsExists,
+          enriched: checkEnrichment(fullPath),
+          mode: inferMode(relPath),
+          capabilities: getCapabilities(fullPath),
+          clusters: getClusters(fullPath),
+          manufacturer: getManufacturer(fullPath),
+          model: getModel(fullPath)
+        };
+        drivers.push(driverInfo);
+      }
+    }
+  }
+
+  walk(dir);
+  return drivers;
+}
+
+function validateJSON(filePath) {
+  try {
+    JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function checkEnrichment(filePath) {
+  try {
+    const json = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    return json?.metadata?.enriched === true || json?.metadata?.megaPromptVersion;
+  } catch {
+    return false;
+  }
+}
+
+function getCapabilities(filePath) {
+  try {
+    const json = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    return json?.capabilities || [];
+  } catch {
+    return [];
+  }
+}
+
+function getClusters(filePath) {
+  try {
+    const json = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    return json?.clusters || [];
+  } catch {
+    return [];
+  }
+}
+
+function getManufacturer(filePath) {
+  try {
+    const json = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    return json?.manufacturername || 'Unknown';
+  } catch {
+    return 'Unknown';
+  }
+}
+
+function getModel(filePath) {
+  try {
+    const json = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    return json?.model || 'Unknown';
+  } catch {
+    return 'Unknown';
+  }
+}
+
+function inferMode(folderPath) {
+  return folderPath.includes('light') ? 'lite' : 'full';
+}
+
+function toMarkdown(drivers) {
+  const stats = calculateStats(drivers);
+  
+  const lines = [
+    '# 📊 Matrice des Drivers - Universal TUYA Zigbee Device App',
+    '',
+    `## 📅 Date`,
+    `**${new Date().toLocaleString('fr-FR')}**`,
+    '',
+    '## 🎯 Objectif',
+    '**Matrice complète des drivers disponibles avec leur statut de validation**',
+    '',
+    '## 📊 Statistiques Globales',
+    '',
+    '| Métrique | Nombre | Pourcentage |',
+    '|----------|--------|-------------|',
+    `| **Total Drivers** | ${drivers.length} | 100% |`,
+    `| **Validés** | ${stats.valid} | ${Math.round((stats.valid / drivers.length) * 100)}% |`,
+    `| **Avertissements** | ${stats.warning} | ${Math.round((stats.warning / drivers.length) * 100)}% |`,
+    `| **Erreurs** | ${stats.error} | ${Math.round((stats.error / drivers.length) * 100)}% |`,
+    `| **Enrichis** | ${stats.enriched} | ${Math.round((stats.enriched / drivers.length) * 100)}% |`,
+    '',
+    '## 📋 Matrice Détaillée',
+    '',
+    '| Type | Nom | Dossier | JSON | JS | Enrichi | Mode | Fabricant | Modèle |',
+    '|------|-----|---------|------|----|---------|------|-----------|--------|',
+    ...drivers.map(d => `| ${d.type} | ${getDriverName(d)} | \`${d.folder}\` | ${d.json ? '✅' : '❌'} | ${d.js ? '✅' : '❌'} | ${d.enriched ? '✅' : '❌'} | ${d.mode} | ${d.manufacturer} | ${d.model} |`)
+  ];
+  
+  return lines.join('\n');
+}
+
+function getDriverName(driver) {
+  try {
+    const filePath = path.join(ROOT, driver.folder, driver.file);
+    const json = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    return json?.name?.en || json?.name || path.basename(driver.folder);
+  } catch {
+    return path.basename(driver.folder);
+  }
+}
+
+function calculateStats(drivers) {
+  return {
+    valid: drivers.filter(d => d.json && d.js).length,
+    warning: drivers.filter(d => (d.json && !d.js) || (!d.json && d.js)).length,
+    error: drivers.filter(d => !d.json && !d.js).length,
+    enriched: drivers.filter(d => d.enriched).length
+  };
+}
+
+function toHTML(drivers) {
+  const stats = calculateStats(drivers);
+  
+  return `<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🚀 Universal TUYA Zigbee Device App - Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .stat-card h3 {
+      color: #667eea;
+      margin-bottom: 10px;
+    }
+
+    .stat-card .number {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #764ba2;
+    }
+
+    .drivers-table {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .table-header {
+      background: #667eea;
+      color: white;
+      padding: 15px 20px;
+    }
+
+    .table-header h3 {
+      margin: 0;
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+
+    th {
+      background: #f8f9fa;
+      font-weight: bold;
+      color: #555;
+    }
+
+    tr:hover {
+      background: #f8f9fa;
+    }
+
+    .status {
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .status.valid {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .status.error {
+      background: #f8d7da;
+      color: #721c24;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      color: white;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 10px;
+      }
+      
+      .header h1 {
+        font-size: 2rem;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🚀 Universal TUYA Zigbee Device App</h1>
+      <p>Dashboard - Suivi en temps réel des drivers et de leur statut</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>📦 Total Drivers</h3>
+        <div class="number">${drivers.length}</div>
+      </div>
+      <div class="stat-card">
+        <h3>✅ Validés</h3>
+        <div class="number">${stats.valid}</div>
+      </div>
+      <div class="stat-card">
+        <h3>⚠️ Avertissements</h3>
+        <div class="number">${stats.warning}</div>
+      </div>
+      <div class="stat-card">
+        <h3>❌ Erreurs</h3>
+        <div class="number">${stats.error}</div>
+      </div>
+      <div class="stat-card">
+        <h3>🧠 Enrichis</h3>
+        <div class="number">${stats.enriched}</div>
+      </div>
+    </div>
+
+    <div class="drivers-table">
+      <div class="table-header">
+        <h3>📋 Liste des Drivers</h3>
+      </div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Nom</th>
+              <th>Dossier</th>
+              <th>JSON</th>
+              <th>JS</th>
+              <th>Enrichi</th>
+              <th>Mode</th>
+              <th>Fabricant</th>
+              <th>Modèle</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${drivers.map(d => `
+              <tr>
+                <td>${d.type}</td>
+                <td>${getDriverName(d)}</td>
+                <td><code>${d.folder}</code></td>
+                <td><span class="status ${d.json ? 'valid' : 'error'}">${d.json ? '✅' : '❌'}</span></td>
+                <td><span class="status ${d.js ? 'valid' : 'error'}">${d.js ? '✅' : '❌'}</span></td>
+                <td><span class="status ${d.enriched ? 'valid' : 'error'}">${d.enriched ? '✅' : '❌'}</span></td>
+                <td>${d.mode}</td>
+                <td>${d.manufacturer}</td>
+                <td>${d.model}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>📅 Dernière mise à jour: ${new Date().toLocaleString('fr-FR')}</p>
+      <p>🎯 MEGA-PROMPT ULTIME - VERSION FINALE 2025</p>
+    </div>
+  </div>
+</body>
+</html>`;
+}
+
+function generate() {
+  console.log('🚀 Démarrage de la génération de la matrice des drivers...');
+  
+  try {
+    // Créer le dossier docs s'il n'existe pas
+    const docsDir = path.dirname(OUTPUT_HTML);
+    if (!fs.existsSync(docsDir)) {
+      fs.mkdirSync(docsDir, { recursive: true });
+    }
+    
+    const drivers = findDrivers();
+    fs.writeFileSync(OUTPUT_MD, toMarkdown(drivers));
+    fs.writeFileSync(OUTPUT_HTML, toHTML(drivers));
+    
+    console.log(`✅ ${drivers.length} drivers analysés et exportés.`);
+    console.log(`📄 Markdown généré: ${OUTPUT_MD}`);
+    console.log(`🌐 HTML généré: ${OUTPUT_HTML}`);
+    
+    // Calculer et afficher les statistiques
+    const stats = calculateStats(drivers);
+    console.log(`📊 Statistiques:`);
+    console.log(`   - Total: ${drivers.length}`);
+    console.log(`   - Validés: ${stats.valid} (${Math.round((stats.valid / drivers.length) * 100)}%)`);
+    console.log(`   - Avertissements: ${stats.warning} (${Math.round((stats.warning / drivers.length) * 100)}%)`);
+    console.log(`   - Erreurs: ${stats.error} (${Math.round((stats.error / drivers.length) * 100)}%)`);
+    console.log(`   - Enrichis: ${stats.enriched} (${Math.round((stats.enriched / drivers.length) * 100)}%)`);
+    
+  } catch (error) {
+    console.error('❌ Erreur lors de la génération:', error.message);
+  }
+}
+
+generate();
