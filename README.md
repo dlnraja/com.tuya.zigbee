@@ -15,6 +15,7 @@
 [![Drivers Validated](https://img.shields.io/badge/Drivers-Validated-blue?style=flat-square&logo=home-assistant)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/validate-drivers.yml)
 [![Sync tuya-light](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/sync-tuya-light.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/sync-tuya-light.yml)
 [![Deploy Dashboard](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/generate-dashboard.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/generate-dashboard.yml)
+[![Changelog Auto](https://img.shields.io/badge/Changelog-Auto-lightgrey?style=flat-square&logo=git)](https://github.com/dlnraja/com.tuya.zigbee/releases)
 
 ## 📅 Date
 **${new Date().toLocaleString('fr-FR')}**
