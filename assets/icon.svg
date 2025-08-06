@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2196F3;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="128" cy="128" r="120" fill="url(#grad1)" stroke="#333" stroke-width="4"/>
+  
+  <!-- Tuya Logo -->
+  <circle cx="128" cy="128" r="80" fill="none" stroke="white" stroke-width="8"/>
+  <circle cx="128" cy="128" r="50" fill="none" stroke="white" stroke-width="6"/>
+  
+  <!-- Zigbee waves -->
+  <path d="M 40 128 Q 64 108, 88 128 Q 112 148, 136 128 Q 160 108, 184 128 Q 208 148, 232 128" 
+        fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Energy symbol -->
+  <path d="M 128 60 L 140 100 L 180 100 L 150 130 L 160 170 L 128 140 L 96 170 L 106 130 L 76 100 L 116 100 Z" 
+        fill="white"/>
+  
+  <!-- Text -->
+  <text x="128" y="220" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+    Tuya Zigbee
+  </text>
+</svg> 

@@ -1,0 +1,121 @@
+name: 🚀 Generate Dashboard & Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'drivers/**'
+      - 'scripts/generate-matrix.js'
+  pull_request:
+    paths:
+      - 'drivers/**'
+      - 'scripts/generate-matrix.js'
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * *' # Tous les jours à 2h00 UTC
+
+jobs:
+  generate-dashboard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate drivers matrix and dashboard
+        run: |
+          echo "🚀 Démarrage de la génération du dashboard..."
+          node scripts/generate-matrix.js
+          echo "✅ Dashboard généré avec succès!"
+
+      - name: Upload dashboard artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dashboard-files
+          path: |
+            drivers-matrix.md
+            docs/dashboard.html
+          retention-days: 30
+
+      - name: Comment on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '✅ Dashboard généré automatiquement! Voir les changements dans drivers-matrix.md et docs/dashboard.html'
+            })
+
+  deploy-pages:
+    needs: generate-dashboard
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Generate dashboard
+        run: node scripts/generate-matrix.js
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: docs/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+
+      - name: Create deployment issue
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '🚀 Dashboard déployé sur GitHub Pages',
+              body: `✅ Dashboard mis à jour et déployé avec succès!
+              
+              📊 **Statistiques:**
+              - Dashboard: https://${context.repo.owner}.github.io/${context.repo.repo}/docs/dashboard.html
+              - Matrice: drivers-matrix.md mis à jour
+              
+              🎯 **MEGA-PROMPT ULTIME - VERSION FINALE 2025**`
+            })
+
+  notify-success:
+    needs: [generate-dashboard, deploy-pages]
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Notify success
+        if: needs.generate-dashboard.result == 'success' && needs.deploy-pages.result == 'success'
+        run: |
+          echo "🎉 Dashboard généré et déployé avec succès!"
+          echo "📊 Dashboard disponible sur GitHub Pages"
+          echo "📄 drivers-matrix.md mis à jour"
+
+      - name: Notify failure
+        if: needs.generate-dashboard.result == 'failure' || needs.deploy-pages.result == 'failure'
+        run: |
+          echo "❌ Erreur lors de la génération/déploiement du dashboard"
+          echo "🔍 Vérifier les logs pour plus de détails" 
