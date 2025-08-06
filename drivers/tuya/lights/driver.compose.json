@@ -1,0 +1,89 @@
+{
+  "id": "tuya-light",
+  "title": {
+    "en": "Tuya Light",
+    "nl": "Tuya Licht",
+    "fr": "Lampe Tuya",
+    "de": "Tuya Licht"
+  },
+  "category": [
+    "light"
+  ],
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Light",
+        "nl": "Licht",
+        "fr": "Lampe",
+        "de": "Licht"
+      }
+    },
+    "dim": {
+      "title": {
+        "en": "Brightness",
+        "nl": "Helderheid",
+        "fr": "Luminosité",
+        "de": "Helligkeit"
+      }
+    },
+    "light_hue": {
+      "title": {
+        "en": "Hue",
+        "nl": "Tint",
+        "fr": "Teinte",
+        "de": "Farbton"
+      }
+    },
+    "light_saturation": {
+      "title": {
+        "en": "Saturation",
+        "nl": "Verzadiging",
+        "fr": "Saturation",
+        "de": "Sättigung"
+      }
+    },
+    "light_temperature": {
+      "title": {
+        "en": "Color Temperature",
+        "nl": "Kleurtemperatuur",
+        "fr": "Température de couleur",
+        "de": "Farbtemperatur"
+      }
+    }
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Light Settings",
+        "nl": "Licht Instellingen",
+        "fr": "Paramètres de la lampe",
+        "de": "Lichteinstellungen"
+      }
+    }
+  ]
+} 

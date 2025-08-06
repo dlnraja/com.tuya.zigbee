@@ -2,7 +2,7 @@
 
 const { ZigBeeDevice } = require('homey-meshdriver');
 
-class TuyaSensorDevice extends ZigBeeDevice {
+class ZigbeeSensorDevice extends ZigBeeDevice {
     async onMeshInit() {
         await super.onMeshInit();
         
@@ -22,12 +22,16 @@ class TuyaSensorDevice extends ZigBeeDevice {
             this.registerCapability('measure_pressure', 'msPressureMeasurement');
         }
         
-        this.log('Tuya Sensor Device initialized');
+        if (this.hasCapability('measure_illuminance')) {
+            this.registerCapability('measure_illuminance', 'msIlluminanceMeasurement');
+        }
+        
+        this.log('Zigbee Sensor Device initialized');
     }
 
     async onSettings({ oldSettings, newSettings, changedKeys }) {
-        this.log('Tuya Sensor Device settings changed');
+        this.log('Zigbee Sensor Device settings changed');
     }
 }
 
-module.exports = TuyaSensorDevice;
+module.exports = ZigbeeSensorDevice; 

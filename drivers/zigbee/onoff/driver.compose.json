@@ -1,10 +1,10 @@
 {
-  "id": "tuya-switch",
+  "id": "zigbee-onoff",
   "title": {
-    "en": "Tuya Switch",
-    "nl": "Tuya Schakelaar",
-    "fr": "Interrupteur Tuya",
-    "de": "Tuya Schalter"
+    "en": "Zigbee OnOff",
+    "nl": "Zigbee AanUit",
+    "fr": "Zigbee MarcheArrêt",
+    "de": "Zigbee EinAus"
   },
   "category": [
     "switch"
@@ -43,11 +43,11 @@
     {
       "type": "group",
       "label": {
-        "en": "Device Settings",
-        "nl": "Apparaat Instellingen",
-        "fr": "Paramètres de l'appareil",
-        "de": "Geräteeinstellungen"
+        "en": "OnOff Settings",
+        "nl": "AanUit Instellingen",
+        "fr": "Paramètres MarcheArrêt",
+        "de": "EinAus Einstellungen"
       }
     }
   ]
-}
+} 

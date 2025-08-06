@@ -1,0 +1,62 @@
+{
+  "id": "zigbee-dimmer",
+  "title": {
+    "en": "Zigbee Dimmer",
+    "nl": "Zigbee Dimmer",
+    "fr": "Variateur Zigbee",
+    "de": "Zigbee Dimmer"
+  },
+  "category": [
+    "light"
+  ],
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Light",
+        "nl": "Licht",
+        "fr": "Lampe",
+        "de": "Licht"
+      }
+    },
+    "dim": {
+      "title": {
+        "en": "Brightness",
+        "nl": "Helderheid",
+        "fr": "Luminosité",
+        "de": "Helligkeit"
+      }
+    }
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Dimmer Settings",
+        "nl": "Dimmer Instellingen",
+        "fr": "Paramètres du variateur",
+        "de": "Dimmereinstellungen"
+      }
+    }
+  ]
+} 
