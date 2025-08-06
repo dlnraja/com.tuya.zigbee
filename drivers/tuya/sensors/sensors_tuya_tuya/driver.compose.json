@@ -18,7 +18,7 @@
   },
   "manufacturername": ": ",
   "model": "motion_sensor_2",
-  "originalFile": "device.js",
+  "originalFile": "driver.compose.json",
   "extracted": "2025-08-05T08:35:51.796Z",
   "enriched": "2025-08-05T08:40:35.138Z",
   "type": "tuya",
@@ -49,5 +49,24 @@
   "clusters": [
     "genBasic",
     "genOnOff"
-  ]
+  ],
+  "title": {
+    "en": "Sensors_tuya_tuya Device",
+    "nl": "Sensors_tuya_tuya Apparaat"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "extractedAt": "2025-08-06T08:05:11.317Z",
+  "fixedAt": "2025-08-06T08:05:11.317Z"
 }

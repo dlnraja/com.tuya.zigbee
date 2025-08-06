@@ -47,5 +47,12 @@
   "clusters": [
     "genBasic",
     "genOnOff"
-  ]
+  ],
+  "title": {
+    "en": "Sensors_tuya_assets Device",
+    "nl": "Sensors_tuya_assets Apparaat"
+  },
+  "originalFile": "driver.compose.json",
+  "extractedAt": "2025-08-06T08:05:11.238Z",
+  "fixedAt": "2025-08-06T08:05:11.238Z"
 }

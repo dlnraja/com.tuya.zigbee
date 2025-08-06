@@ -49,5 +49,25 @@
   "clusters": [
     "genBasic",
     "genOnOff"
-  ]
+  ],
+  "title": {
+    "en": "Plugs_tuya_ts011f Device",
+    "nl": "Plugs_tuya_ts011f Apparaat"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "originalFile": "driver.compose.json",
+  "extractedAt": "2025-08-06T08:05:11.221Z",
+  "fixedAt": "2025-08-06T08:05:11.221Z"
 }

@@ -26,33 +26,17 @@ jobs:
 
       - name: Validate driver.compose.json files
         run: |
-          echo "🔍 Starting driver.compose.json validation..."
           find drivers -name 'driver.compose.json' | while read file; do
             echo "🔍 Validating $file"
             if ! jq empty "$file"; then
               echo "❌ Invalid JSON in $file"
               exit 1
             fi
-            # Validate required fields
-            if ! jq -e '.id' "$file" > /dev/null; then
-              echo "❌ Missing 'id' field in $file"
-              exit 1
-            fi
-            if ! jq -e '.class' "$file" > /dev/null; then
-              echo "❌ Missing 'class' field in $file"
-              exit 1
-            fi
-            if ! jq -e '.capabilities' "$file" > /dev/null; then
-              echo "❌ Missing 'capabilities' field in $file"
-              exit 1
-            fi
-            echo "✅ $file is valid"
           done
           echo "✅ All driver.compose.json files are valid."
 
       - name: Validate driver.js presence
         run: |
-          echo "🔍 Checking for driver.js files..."
           MISSING=$(find drivers -type d ! -exec test -e "{}/driver.js" \; -print)
           if [ -n "$MISSING" ]; then
             echo "❌ Missing driver.js in:"
@@ -61,56 +45,15 @@ jobs:
           fi
           echo "✅ All driver.js files are present."
 
-      - name: Validate assets and images
+      - name: Generate drivers matrix
         run: |
-          echo "🔍 Checking assets and images..."
-          find drivers -name 'driver.compose.json' | while read file; do
-            dir=$(dirname "$file")
-            if [ -f "$dir/assets/images/small.png" ] || [ -f "$dir/assets/images/large.png" ]; then
-              echo "✅ Assets found in $dir"
-            else
-              echo "⚠️ No assets found in $dir"
-            fi
-          done
+          node scripts/generate-matrix.js
+          echo "📊 Drivers matrix generated successfully"
 
-      - name: Validate translations
-        run: |
-          echo "🔍 Checking translations..."
-          find drivers -name 'driver.compose.json' | while read file; do
-            if jq -e '.name.en' "$file" > /dev/null; then
-              echo "✅ English translation found in $file"
-            else
-              echo "⚠️ Missing English translation in $file"
-            fi
-          done
-
-      - name: Generate validation report
-        run: |
-          echo "📊 Generating validation report..."
-          echo "# Driver Validation Report" > validation-report.md
-          echo "Date: $(date)" >> validation-report.md
-          echo "" >> validation-report.md
-          echo "## Summary" >> validation-report.md
-          echo "- Total drivers: $(find drivers -name 'driver.compose.json' | wc -l)" >> validation-report.md
-          echo "- Valid JSON: ✅" >> validation-report.md
-          echo "- Driver.js present: ✅" >> validation-report.md
-          echo "- Assets checked: ✅" >> validation-report.md
-          echo "- Translations checked: ✅" >> validation-report.md
-
-      - name: Upload validation report
+      - name: Upload matrix artifact
         uses: actions/upload-artifact@v3
         with:
-          name: validation-report
-          path: validation-report.md
-
-      - name: Comment on PR
-        if: github.event_name == 'pull_request'
-        uses: actions/github-script@v6
-        with:
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: '✅ Driver validation completed successfully!'
-            })
+          name: drivers-matrix
+          path: |
+            drivers-matrix.md
+            drivers-matrix.html

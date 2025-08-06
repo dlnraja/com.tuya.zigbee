@@ -59,5 +59,12 @@
   "clusters": [
     "genBasic",
     "genOnOff"
-  ]
+  ],
+  "title": {
+    "en": "Generic-unknown Device",
+    "nl": "Generic-unknown Apparaat"
+  },
+  "originalFile": "driver.compose.json",
+  "extractedAt": "2025-08-06T08:05:11.580Z",
+  "fixedAt": "2025-08-06T08:05:11.580Z"
 }
