@@ -1,1 +1,25 @@
-{ "id": "dimmable_led_strip", "class": "light", "capabilities": [], "name": { "en": "dimmable_led_strip", "fr": "dimmable_led_strip", "nl": "dimmable_led_strip", "ta": "dimmable_led_strip" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": ": ", "model": "dimmable_led_strip", "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\dimmable_led_strip\\device.js", "originalFile": "device.js", "extracted": "2025-08-05T08:35:45.380Z"}
+{
+  "id": "dimmable_led_strip",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "dimmable_led_strip",
+    "fr": "dimmable_led_strip",
+    "nl": "dimmable_led_strip",
+    "ta": "dimmable_led_strip"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": ": ",
+  "model": "dimmable_led_strip",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:35:45.380Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

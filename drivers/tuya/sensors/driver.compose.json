@@ -1,25 +1,30 @@
 {
-  "id": "",
+  "id": "sensors",
   "class": "sensor",
-  "capabilities": [],
+  "capabilities": [
+    "onoff"
+  ],
   "name": {
-    "en": "",
-    "fr": "",
-    "nl": "",
-    "ta": ""
+    "en": "sensors",
+    "fr": "sensors",
+    "nl": "sensors",
+    "ta": "sensors"
   },
   "images": {
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png"
   },
   "manufacturername": ": [\n ",
-  "model": "",
-  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\water_leak_sensor_tuya\\driver.compose.json",
+  "model": "TS0601",
   "originalFile": "driver.compose.json",
   "extracted": "2025-08-05T08:36:10.755Z",
   "metadata": {
     "enriched": true,
     "enrichmentDate": "2025-08-05T17:09:10.851Z",
     "megaPromptVersion": "ULTIME - VERSION FINALE 2025"
-  }
+  },
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
 }

@@ -1,1 +1,25 @@
-{ "id": "dehumidificationcontrolcluster", "class": "light", "capabilities": [], "name": { "en": "dehumidificationcontrolcluster", "fr": "dehumidificationcontrolcluster", "nl": "dehumidificationcontrolcluster", "ta": "dehumidificationcontrolcluster" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "dehumidificationcontrolcluster", "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\node_modules\\zigbee-clusters\\lib\\clusters\\dehumidificationControl.js", "originalFile": "dehumidificationControl.js", "extracted": "2025-08-05T08:36:24.341Z"}
+{
+  "id": "dehumidificationcontrolcluster",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "dehumidificationcontrolcluster",
+    "fr": "dehumidificationcontrolcluster",
+    "nl": "dehumidificationcontrolcluster",
+    "ta": "dehumidificationcontrolcluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "dehumidificationcontrolcluster",
+  "originalFile": "dehumidificationControl.js",
+  "extracted": "2025-08-05T08:36:24.341Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

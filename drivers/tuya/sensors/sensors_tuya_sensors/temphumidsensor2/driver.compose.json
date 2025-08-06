@@ -1,1 +1,25 @@
-{ "id": "temphumidsensor2", "class": "sensor", "capabilities": [], "name": { "en": "temphumidsensor2", "fr": "temphumidsensor2", "nl": "temphumidsensor2", "ta": "temphumidsensor2" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "temphumidsensor2", "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\temphumidsensor2\\device.js", "originalFile": "device.js", "extracted": "2025-08-05T08:36:08.464Z"}
+{
+  "id": "temphumidsensor2",
+  "class": "sensor",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "temphumidsensor2",
+    "fr": "temphumidsensor2",
+    "nl": "temphumidsensor2",
+    "ta": "temphumidsensor2"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "temphumidsensor2",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:36:08.464Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

@@ -1,1 +1,25 @@
-{ "id": "doorwindowsensor_3", "class": "sensor", "capabilities": [], "name": { "en": "doorwindowsensor_3", "fr": "doorwindowsensor_3", "nl": "doorwindowsensor_3", "ta": "doorwindowsensor_3" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "doorwindowsensor_3", "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\doorwindowsensor_3\\device.js", "originalFile": "device.js", "extracted": "2025-08-05T08:35:47.208Z"}
+{
+  "id": "doorwindowsensor_3",
+  "class": "sensor",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "doorwindowsensor_3",
+    "fr": "doorwindowsensor_3",
+    "nl": "doorwindowsensor_3",
+    "ta": "doorwindowsensor_3"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "doorwindowsensor_3",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:35:47.208Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

@@ -1,1 +1,25 @@
-{ "id": "just", "class": "light", "capabilities": [], "name": { "en": "just", "fr": "just", "nl": "just", "ta": "just" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "just", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\setuptools\\_distutils\\__pycache__\\fancy_getopt.cpython-311.pyc", "originalFile": "fancy_getopt.cpython-311.pyc", "extracted": "2025-08-05T08:33:28.079Z"}
+{
+  "id": "just",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "just",
+    "fr": "just",
+    "nl": "just",
+    "ta": "just"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "just",
+  "originalFile": "fancy_getopt.cpython-311.pyc",
+  "extracted": "2025-08-05T08:33:28.079Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

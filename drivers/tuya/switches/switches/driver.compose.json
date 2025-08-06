@@ -1,20 +1,21 @@
 {
-  "id": "",
-  "class": "switche",
-  "capabilities": [],
+  "id": "switches",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
   "name": {
-    "en": "",
-    "fr": "",
-    "nl": "",
-    "ta": ""
+    "en": "switches",
+    "fr": "switches",
+    "nl": "switches",
+    "ta": "switches"
   },
   "images": {
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png"
   },
   "manufacturername": "Tuya",
-  "model": "",
-  "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\node_modules\\color-space\\hsv.js",
+  "model": "TS0601",
   "originalFile": "hsv.js",
   "extracted": "2025-08-05T08:36:21.315Z",
   "fusion": {
@@ -22,5 +23,9 @@
     "duplicates": [
       "switches"
     ]
-  }
+  },
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
 }

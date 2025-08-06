@@ -1,1 +1,25 @@
-{ "id": "_elffileheader", "class": "light", "capabilities": [], "name": { "en": "_elffileheader", "fr": "_elffileheader", "nl": "_elffileheader", "ta": "_elffileheader" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "_elffileheader", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\packaging\\_manylinux.py", "originalFile": "_manylinux.py", "extracted": "2025-08-05T08:33:45.992Z"}
+{
+  "id": "_elffileheader",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "_elffileheader",
+    "fr": "_elffileheader",
+    "nl": "_elffileheader",
+    "ta": "_elffileheader"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "_elffileheader",
+  "originalFile": "_manylinux.py",
+  "extracted": "2025-08-05T08:33:45.992Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

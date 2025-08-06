@@ -1,1 +1,25 @@
-{ "id": "resolverexception", "class": "light", "capabilities": [], "name": { "en": "resolverexception", "fr": "resolverexception", "nl": "resolverexception", "ta": "resolverexception" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "resolverexception", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\resolvelib\\resolvers.py", "originalFile": "resolvers.py", "extracted": "2025-08-05T08:33:52.371Z"}
+{
+  "id": "resolverexception",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "resolverexception",
+    "fr": "resolverexception",
+    "nl": "resolverexception",
+    "ta": "resolverexception"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "resolverexception",
+  "originalFile": "resolvers.py",
+  "extracted": "2025-08-05T08:33:52.371Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

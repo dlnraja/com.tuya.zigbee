@@ -1,1 +1,25 @@
-{ "id": "ismultiple", "class": "light", "capabilities": [], "name": { "en": "ismultiple", "fr": "ismultiple", "nl": "ismultiple", "ta": "ismultiple" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "ismultiple", "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\node_modules\\mumath\\is-multiple.js", "originalFile": "is-multiple.js", "extracted": "2025-08-05T08:36:17.391Z"}
+{
+  "id": "ismultiple",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "ismultiple",
+    "fr": "ismultiple",
+    "nl": "ismultiple",
+    "ta": "ismultiple"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "ismultiple",
+  "originalFile": "is-multiple.js",
+  "extracted": "2025-08-05T08:36:17.391Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

@@ -1,1 +1,83 @@
-{ "id": "locks_tuya_tuya", "name": { "en": "locks_tuya_tuya", "fr": "locks_tuya_tuya", "nl": "locks_tuya_tuya", "ta": "locks_tuya_tuya" }, "class": "lock", "capabilities": [ "onoff" ], "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "pair": [ { "id": "list_devices", "template": "list_devices" } ], "optimized": { "version": "3.5.4", "performance": "enhanced", "memory": "managed", "errorHandling": "robust" }, "isGeneric": false, "source": "tuya-zigbee", "type": "tuya", "manufacturer": "Tuya", "manufacturername": "_TZE200_FEIT", "model": "feit", "enriched": "2025-08-05T08:40:35.054Z", "category": "locks", "heuristic": { "applied": true, "date": "2025-08-05T09:03:46.256Z", "deduced": { "capabilities": [ "onoff" ], "class": "lock" } }, "renamed": { "from": "locks_tuya_feit", "date": "2025-08-05T10:09:28.436Z", "reason": "automatic_fusion" }, "fusion": { "date": "2025-08-05T10:09:25.170Z", "duplicates": [ "locks_gosund_generic", "locks_smartlife_generic", "locks_tuya_generic", "locks_tuya_keypads", "locks_tuya_smart_locks", "locks_zigbee_connection", "locks_zigbee_createhybridfilterbank", "locks_zigbee_descriptor", "locks_zigbee_from", "locks_zigbee_getdirectoryservice", "locks_zigbee_has", "locks_zigbee_ikea", "locks_zigbee_is", "locks_zigbee_mockrequest", "locks_zigbee_osram", "locks_zigbee_philips", "locks_zigbee_samsung", "locks_zigbee_sylvania", "locks_zigbee_which", "locks_zigbee_xiaomi", "locks_zigbee__anymeta" ], "totalDrivers": 22 }}
+{
+  "id": "locks_tuya_tuya",
+  "name": {
+    "en": "locks_tuya_tuya",
+    "fr": "locks_tuya_tuya",
+    "nl": "locks_tuya_tuya",
+    "ta": "locks_tuya_tuya"
+  },
+  "class": "lock",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  },
+  "isGeneric": false,
+  "source": "tuya-zigbee",
+  "type": "tuya",
+  "manufacturer": "Tuya",
+  "manufacturername": "_TZE200_FEIT",
+  "model": "feit",
+  "enriched": "2025-08-05T08:40:35.054Z",
+  "category": "locks",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.256Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "lock"
+    }
+  },
+  "renamed": {
+    "from": "locks_tuya_feit",
+    "date": "2025-08-05T10:09:28.436Z",
+    "reason": "automatic_fusion"
+  },
+  "fusion": {
+    "date": "2025-08-05T10:09:25.170Z",
+    "duplicates": [
+      "locks_gosund_generic",
+      "locks_smartlife_generic",
+      "locks_tuya_generic",
+      "locks_tuya_keypads",
+      "locks_tuya_smart_locks",
+      "locks_zigbee_connection",
+      "locks_zigbee_createhybridfilterbank",
+      "locks_zigbee_descriptor",
+      "locks_zigbee_from",
+      "locks_zigbee_getdirectoryservice",
+      "locks_zigbee_has",
+      "locks_zigbee_ikea",
+      "locks_zigbee_is",
+      "locks_zigbee_mockrequest",
+      "locks_zigbee_osram",
+      "locks_zigbee_philips",
+      "locks_zigbee_samsung",
+      "locks_zigbee_sylvania",
+      "locks_zigbee_which",
+      "locks_zigbee_xiaomi",
+      "locks_zigbee__anymeta"
+    ],
+    "totalDrivers": 22
+  },
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

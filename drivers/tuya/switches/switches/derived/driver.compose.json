@@ -1,1 +1,25 @@
-{ "id": "derived", "class": "switche", "capabilities": [], "name": { "en": "derived", "fr": "derived", "nl": "derived", "ta": "derived" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "derived", "source": "D:\\Download\\Compressed\\ME_SW_2413.5.67.0\\Drivers\\WMIProvider\\ME\\s\\System\\CIM_ComputerSystem.mof", "originalFile": "CIM_ComputerSystem.mof", "extracted": "2025-08-05T08:31:48.262Z"}
+{
+  "id": "derived",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "derived",
+    "fr": "derived",
+    "nl": "derived",
+    "ta": "derived"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "derived",
+  "originalFile": "CIM_ComputerSystem.mof",
+  "extracted": "2025-08-05T08:31:48.262Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

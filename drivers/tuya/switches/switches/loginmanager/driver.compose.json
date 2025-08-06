@@ -1,1 +1,25 @@
-{ "id": "loginmanager", "class": "switche", "capabilities": [], "name": { "en": "loginmanager", "fr": "loginmanager", "nl": "loginmanager", "ta": "loginmanager" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "loginmanager", "source": "D:\\Download\\Compressed\\katana\\PortableApps\\FirefoxPortable\\App\\Firefox\\components\\nsLoginManager.js", "originalFile": "nsLoginManager.js", "extracted": "2025-08-05T08:26:25.169Z"}
+{
+  "id": "loginmanager",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "loginmanager",
+    "fr": "loginmanager",
+    "nl": "loginmanager",
+    "ta": "loginmanager"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "loginmanager",
+  "originalFile": "nsLoginManager.js",
+  "extracted": "2025-08-05T08:26:25.169Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

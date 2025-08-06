@@ -1,1 +1,25 @@
-{ "id": "socket_power_strip_four", "class": "light", "capabilities": [], "name": { "en": "socket_power_strip_four", "fr": "socket_power_strip_four", "nl": "socket_power_strip_four", "ta": "socket_power_strip_four" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "socket_power_strip_four", "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\socket_power_strip_four\\driver.js", "originalFile": "driver.js", "extracted": "2025-08-05T08:36:06.545Z"}
+{
+  "id": "socket_power_strip_four",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "socket_power_strip_four",
+    "fr": "socket_power_strip_four",
+    "nl": "socket_power_strip_four",
+    "ta": "socket_power_strip_four"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "socket_power_strip_four",
+  "originalFile": "driver.js",
+  "extracted": "2025-08-05T08:36:06.545Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

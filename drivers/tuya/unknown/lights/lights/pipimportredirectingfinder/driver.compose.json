@@ -1,1 +1,25 @@
-{ "id": "pipimportredirectingfinder", "class": "light", "capabilities": [], "name": { "en": "pipimportredirectingfinder", "fr": "pipimportredirectingfinder", "nl": "pipimportredirectingfinder", "ta": "pipimportredirectingfinder" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "pipimportredirectingfinder", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\__pip-runner__.py", "originalFile": "__pip-runner__.py", "extracted": "2025-08-05T08:33:34.329Z"}
+{
+  "id": "pipimportredirectingfinder",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "pipimportredirectingfinder",
+    "fr": "pipimportredirectingfinder",
+    "nl": "pipimportredirectingfinder",
+    "ta": "pipimportredirectingfinder"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "pipimportredirectingfinder",
+  "originalFile": "__pip-runner__.py",
+  "extracted": "2025-08-05T08:33:34.329Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

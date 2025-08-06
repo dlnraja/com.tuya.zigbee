@@ -1,1 +1,25 @@
-{ "id": "within", "class": "light", "capabilities": [], "name": { "en": "within", "fr": "within", "nl": "within", "ta": "within" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "within", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\setuptools\\_distutils\\__pycache__\\errors.cpython-311.pyc", "originalFile": "errors.cpython-311.pyc", "extracted": "2025-08-05T08:33:27.978Z"}
+{
+  "id": "within",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "within",
+    "fr": "within",
+    "nl": "within",
+    "ta": "within"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "within",
+  "originalFile": "errors.cpython-311.pyc",
+  "extracted": "2025-08-05T08:33:27.978Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

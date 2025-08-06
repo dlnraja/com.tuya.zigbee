@@ -1,1 +1,25 @@
-{ "id": "wall_switch_3_gang", "class": "light", "capabilities": [], "name": { "en": "wall_switch_3_gang", "fr": "wall_switch_3_gang", "nl": "wall_switch_3_gang", "ta": "wall_switch_3_gang" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": ", ", "model": "wall_switch_3_gang", "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\wall_switch_3_gang\\device.js", "originalFile": "device.js", "extracted": "2025-08-05T08:36:10.362Z"}
+{
+  "id": "wall_switch_3_gang",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "wall_switch_3_gang",
+    "fr": "wall_switch_3_gang",
+    "nl": "wall_switch_3_gang",
+    "ta": "wall_switch_3_gang"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": ", ",
+  "model": "wall_switch_3_gang",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:36:10.362Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

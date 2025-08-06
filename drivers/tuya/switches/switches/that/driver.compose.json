@@ -1,1 +1,25 @@
-{ "id": "that", "class": "switche", "capabilities": [], "name": { "en": "that", "fr": "that", "nl": "that", "ta": "that" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "that", "source": "D:\\Download\\WSA_2407.40000.4.0_x64\\wsldevicehost.dll", "originalFile": "wsldevicehost.dll", "extracted": "2025-08-05T08:34:55.424Z"}
+{
+  "id": "that",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "that",
+    "fr": "that",
+    "nl": "that",
+    "ta": "that"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "that",
+  "originalFile": "wsldevicehost.dll",
+  "extracted": "2025-08-05T08:34:55.424Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

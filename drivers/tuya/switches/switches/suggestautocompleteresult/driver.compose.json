@@ -1,1 +1,25 @@
-{ "id": "suggestautocompleteresult", "class": "switche", "capabilities": [], "name": { "en": "suggestautocompleteresult", "fr": "suggestautocompleteresult", "nl": "suggestautocompleteresult", "ta": "suggestautocompleteresult" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "suggestautocompleteresult", "source": "D:\\Download\\Compressed\\katana\\PortableApps\\FirefoxPortable\\App\\Firefox\\components\\nsSearchSuggestions.js", "originalFile": "nsSearchSuggestions.js", "extracted": "2025-08-05T08:26:25.725Z"}
+{
+  "id": "suggestautocompleteresult",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "suggestautocompleteresult",
+    "fr": "suggestautocompleteresult",
+    "nl": "suggestautocompleteresult",
+    "ta": "suggestautocompleteresult"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "suggestautocompleteresult",
+  "originalFile": "nsSearchSuggestions.js",
+  "extracted": "2025-08-05T08:26:25.725Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

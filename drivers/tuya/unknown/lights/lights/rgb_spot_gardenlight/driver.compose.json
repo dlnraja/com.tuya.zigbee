@@ -1,1 +1,25 @@
-{ "id": "rgb_spot_gardenlight", "class": "light", "capabilities": [], "name": { "en": "rgb_spot_gardenlight", "fr": "rgb_spot_gardenlight", "nl": "rgb_spot_gardenlight", "ta": "rgb_spot_gardenlight" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "rgb_spot_gardenlight", "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\drivers\\rgb_spot_GardenLight\\device.js", "originalFile": "device.js", "extracted": "2025-08-05T08:35:58.763Z"}
+{
+  "id": "rgb_spot_gardenlight",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "rgb_spot_gardenlight",
+    "fr": "rgb_spot_gardenlight",
+    "nl": "rgb_spot_gardenlight",
+    "ta": "rgb_spot_gardenlight"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "rgb_spot_gardenlight",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:35:58.763Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}
