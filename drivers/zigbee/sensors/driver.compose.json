@@ -1,10 +1,10 @@
 {
-  "id": "tuya-sensor",
+  "id": "zigbee-sensor",
   "title": {
-    "en": "Tuya Sensor",
-    "nl": "Tuya Sensor",
-    "fr": "Capteur Tuya",
-    "de": "Tuya Sensor"
+    "en": "Zigbee Sensor",
+    "nl": "Zigbee Sensor",
+    "fr": "Capteur Zigbee",
+    "de": "Zigbee Sensor"
   },
   "category": [
     "sensor"
@@ -12,7 +12,8 @@
   "capabilities": [
     "measure_temperature",
     "measure_humidity",
-    "measure_pressure"
+    "measure_pressure",
+    "measure_illuminance"
   ],
   "capabilitiesOptions": {
     "measure_temperature": {
@@ -38,6 +39,14 @@
         "fr": "Pression",
         "de": "Druck"
       }
+    },
+    "measure_illuminance": {
+      "title": {
+        "en": "Illuminance",
+        "nl": "Verlichting",
+        "fr": "Éclairement",
+        "de": "Beleuchtungsstärke"
+      }
     }
   },
   "images": {
@@ -61,11 +70,11 @@
     {
       "type": "group",
       "label": {
-        "en": "Sensor Settings",
-        "nl": "Sensor Instellingen",
-        "fr": "Paramètres du capteur",
-        "de": "Sensoreinstellungen"
+        "en": "Zigbee Sensor Settings",
+        "nl": "Zigbee Sensor Instellingen",
+        "fr": "Paramètres du capteur Zigbee",
+        "de": "Zigbee Sensoreinstellungen"
       }
     }
   ]
-}
+} 

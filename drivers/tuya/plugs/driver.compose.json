@@ -1,0 +1,64 @@
+{
+  "id": "tuya-plug",
+  "title": {
+    "en": "Tuya Plug",
+    "nl": "Tuya Stekker",
+    "fr": "Prise Tuya",
+    "de": "Tuya Steckdose"
+  },
+  "category": [
+    "plug"
+  ],
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "measure_voltage",
+    "measure_current"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Plug",
+        "nl": "Stekker",
+        "fr": "Prise",
+        "de": "Steckdose"
+      }
+    },
+    "measure_power": {
+      "title": {
+        "en": "Power",
+        "nl": "Vermogen",
+        "fr": "Puissance",
+        "de": "Leistung"
+      }
+    }
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Plug Settings",
+        "nl": "Stekker Instellingen",
+        "fr": "Paramètres de la prise",
+        "de": "Steckdoseneinstellungen"
+      }
+    }
+  ]
+} 

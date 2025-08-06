@@ -1,684 +1,90 @@
-# 📊 Matrice des Drivers - Universal TUYA Zigbee Device App
+# 📊 Drivers Matrix - Universal TUYA Zigbee Device App
 
-## 📅 Date
-**06/08/2025 08:38:42**
+## 📈 Statistiques Générales
+
+| Métrique | Valeur |
+|----------|--------|
+| **Total Drivers** | 19 |
+| **Drivers Valides** | 19 |
+| **Drivers Invalides** | 0 |
+| **Drivers Enrichis** | 4 |
+| **Mode Lite** | 0 |
+| **Mode Full** | 0 |
+| **Taux de Validité** | 100.0% |
+
+## 🧩 Répartition par Catégories
+
+| Catégorie | Nombre |
+|-----------|--------|
+| **sensors** | 11 |
+| **thermostats** | 3 |
+| **plugs** | 2 |
+| **switches** | 2 |
+| **unknown** | 1 |
+
+## 🏭 Répartition par Fabricants
+
+| Fabricant | Nombre |
+|-----------|--------|
+| **Plugs_tuya_plugs** | 1 |
+| **Plugs_tuya_ts011f** | 1 |
+| **Sensors_tuya_assets** | 1 |
+| **Sensors_tuya_blinds** | 1 |
+| **Sensors_tuya_covers_tuya_tuya** | 1 |
+| **Sensors_tuya_curtains** | 1 |
+| **Sensors_tuya_sensors** | 1 |
+| **Sensors_tuya_shutters** | 1 |
+| **Sensors_tuya_tuya** | 1 |
+| **Tuya** | 1 |
+| **Switches** | 1 |
+| **Switches_tuya_ts0044** | 1 |
+| **Locks** | 1 |
+| **Thermostats** | 1 |
+| **Thermostats_tuya_tuya** | 1 |
+| **Lights** | 1 |
+| **Generic-unknown** | 1 |
+| **Sensors-unknown** | 1 |
+| **Zigbee-sensor-unknown** | 1 |
+
+## 📋 Détails des Drivers
+
+- ✅ **tuya/plugs/plugs_tuya_plugs** 🧠
+- ✅ **tuya/plugs/plugs_tuya_ts011f** 🧠
+- ✅ **tuya/sensors/sensors_tuya_assets**
+- ✅ **tuya/sensors/sensors_tuya_blinds**
+- ✅ **tuya/sensors/sensors_tuya_covers_tuya_tuya**
+- ✅ **tuya/sensors/sensors_tuya_curtains**
+- ✅ **tuya/sensors/sensors_tuya_sensors**
+- ✅ **tuya/sensors/sensors_tuya_shutters**
+- ✅ **tuya/sensors/sensors_tuya_tuya**
+- ✅ **tuya/sensors/tuya**
+- ✅ **tuya/switches/switches**
+- ✅ **tuya/switches/switches_tuya_ts0044**
+- ✅ **tuya/thermostats/locks**
+- ✅ **tuya/thermostats/thermostats**
+- ✅ **tuya/thermostats/thermostats_tuya_tuya**
+- ✅ **tuya/unknown/lights** 🧠
+- ✅ **zigbee/sensors/generic-unknown**
+- ✅ **zigbee/sensors/sensors-unknown** 🧠
+- ✅ **zigbee/sensors/zigbee-sensor-unknown**
+
+## 🚀 Drivers avec Erreurs
+
+
+
+## 📅 Informations
+
+- **Date de génération**: 2025-08-06T12:05:41.272Z
+- **Script**: generate-matrix.js
+- **Version**: 1.0.0
+- **Mode**: Analyse complète récursive
 
 ## 🎯 Objectif
-**Matrice complète des drivers disponibles avec leur statut de validation**
 
-## 📊 Statistiques Globales
+Cette matrice est générée automatiquement pour maintenir une vue d'ensemble complète de l'écosystème Tuya Zigbee.
 
-| Métrique | Nombre | Pourcentage |
-|----------|--------|-------------|
-| **Total Drivers** | 654 | 100% |
-| **Validés** | 0 | 0% |
-| **Avertissements** | 654 | 100% |
-| **Erreurs** | 0 | 0% |
-| **Enrichis** | 7 | 1% |
-
-## 📋 Matrice Détaillée
-
-| Type | Nom | Dossier | JSON | JS | Enrichi | Mode | Fabricant | Modèle |
-|------|-----|---------|------|----|---------|------|-----------|--------|
-| tuya | 3 | `tuya\plugs\plugs_tuya_plugs\3` | ✅ | ❌ | ❌ | full | Tuya | 3 |
-| tuya | also | `tuya\plugs\plugs_tuya_plugs\also` | ✅ | ❌ | ❌ | full | Tuya | also |
-| tuya | azpcaudiodeviceex | `tuya\plugs\plugs_tuya_plugs\azpcaudiodeviceex` | ✅ | ❌ | ❌ | full | Tuya | azpcaudiodeviceex |
-| tuya | build_py | `tuya\plugs\plugs_tuya_plugs\build_py` | ✅ | ❌ | ❌ | full | Tuya | build_py |
-| tuya | by | `tuya\plugs\plugs_tuya_plugs\by` | ✅ | ❌ | ❌ | full | Tuya | by |
-| tuya | call | `tuya\plugs\plugs_tuya_plugs\call` | ✅ | ❌ | ❌ | full | Tuya | call |
-| tuya | comment | `tuya\plugs\plugs_tuya_plugs\comment` | ✅ | ❌ | ❌ | full | Tuya | comment |
-| tuya | declared | `tuya\plugs\plugs_tuya_plugs\declared` | ✅ | ❌ | ❌ | full | Tuya | declared |
-| tuya | descriptor | `tuya\plugs\plugs_tuya_plugs\descriptor` | ✅ | ❌ | ❌ | full | Tuya | descriptor |
-| tuya | distribution | `tuya\plugs\plugs_tuya_plugs\distribution` | ✅ | ❌ | ❌ | full | Tuya | distribution |
-| tuya | plugs_tuya_plugs | `tuya\plugs\plugs_tuya_plugs` | ✅ | ❌ | ✅ | full | Tuya | TS0601 |
-| tuya | for | `tuya\plugs\plugs_tuya_plugs\for` | ✅ | ❌ | ❌ | full | Tuya | for |
-| tuya | from | `tuya\plugs\plugs_tuya_plugs\from` | ✅ | ❌ | ❌ | full | Tuya | from |
-| tuya | metasploit3 | `tuya\plugs\plugs_tuya_plugs\metasploit3` | ✅ | ❌ | ❌ | full | Tuya | metasploit3 |
-| tuya | name | `tuya\plugs\plugs_tuya_plugs\name` | ✅ | ❌ | ❌ | full | Tuya | name |
-| tuya | named | `tuya\plugs\plugs_tuya_plugs\named` | ✅ | ❌ | ❌ | full | Tuya | named |
-| tuya | namez | `tuya\plugs\plugs_tuya_plugs\namez` | ✅ | ❌ | ❌ | full | Tuya | namez |
-| tuya | nssidebar | `tuya\plugs\plugs_tuya_plugs\nssidebar` | ✅ | ❌ | ❌ | full | Tuya | nssidebar |
-| tuya | outdoorplug | `tuya\plugs\plugs_tuya_plugs\outdoorplug` | ✅ | ❌ | ❌ | full | ,  | outdoorplug |
-| tuya | pep440warning | `tuya\plugs\plugs_tuya_plugs\pep440warning` | ✅ | ❌ | ❌ | full | Tuya | pep440warning |
-| tuya | plug | `tuya\plugs\plugs_tuya_plugs\plug` | ✅ | ❌ | ❌ | full | ,  | plug |
-| tuya | pluginbindings | `tuya\plugs\plugs_tuya_plugs\pluginbindings` | ✅ | ❌ | ❌ | full | Tuya | pluginbindings |
-| tuya | returned | `tuya\plugs\plugs_tuya_plugs\returned` | ✅ | ❌ | ❌ | full | Tuya | returned |
-| tuya | should | `tuya\plugs\plugs_tuya_plugs\should` | ✅ | ❌ | ❌ | full | Tuya | should |
-| tuya | smartplug | `tuya\plugs\plugs_tuya_plugs\smartplug` | ✅ | ❌ | ❌ | full | ,  | smartplug |
-| tuya | smartplug_2_socket | `tuya\plugs\plugs_tuya_plugs\smartplug_2_socket` | ✅ | ❌ | ❌ | full | ,  | smartplug_2_socket |
-| tuya | smartplug_2_socket_driver | `tuya\plugs\plugs_tuya_plugs\smartplug_2_socket_driver` | ✅ | ❌ | ❌ | full | Tuya | smartplug_2_socket_driver |
-| tuya | the | `tuya\plugs\plugs_tuya_plugs\the` | ✅ | ❌ | ❌ | full | Tuya | the |
-| tuya | to | `tuya\plugs\plugs_tuya_plugs\to` | ✅ | ❌ | ❌ | full | Tuya | to |
-| tuya | unpickleableexception | `tuya\plugs\plugs_tuya_plugs\unpickleableexception` | ✅ | ❌ | ❌ | full | Tuya | unpickleableexception |
-| tuya | wdf_class_bind_info | `tuya\plugs\plugs_tuya_plugs\wdf_class_bind_info` | ✅ | ❌ | ❌ | full | Tuya | wdf_class_bind_info |
-| tuya | will | `tuya\plugs\plugs_tuya_plugs\will` | ✅ | ❌ | ❌ | full | Tuya | will |
-| tuya | _configexpander | `tuya\plugs\plugs_tuya_plugs\_configexpander` | ✅ | ❌ | ❌ | full | Tuya | _configexpander |
-| tuya | _editablemode | `tuya\plugs\plugs_tuya_plugs\_editablemode` | ✅ | ❌ | ❌ | full | Tuya | _editablemode |
-| tuya | plugs_tuya_ts011f | `tuya\plugs\plugs_tuya_ts011f` | ✅ | ❌ | ✅ | full | Tuya | ts011f-plug |
-| tuya | sensors | `tuya\sensors` | ✅ | ❌ | ✅ | full | : [
-  | TS0601 |
-| tuya | assets | `tuya\sensors\sensors_tuya_assets` | ✅ | ❌ | ❌ | full | _TZE200_ASSETS | assets |
-| tuya | blinds | `tuya\sensors\sensors_tuya_blinds` | ✅ | ❌ | ❌ | full | _TZE200_BLINDS | blinds |
-| tuya | covers_tuya_tuya | `tuya\sensors\sensors_tuya_covers_tuya_tuya` | ✅ | ❌ | ❌ | full | _TZE200_ASSETS | assets |
-| tuya | curtains | `tuya\sensors\sensors_tuya_curtains` | ✅ | ❌ | ❌ | full | _TZE200_CURTAINS | curtains |
-| tuya | analoginputcluster | `tuya\sensors\sensors_tuya_sensors\analoginputcluster` | ✅ | ❌ | ❌ | full | Tuya | analoginputcluster |
-| tuya | binaryinputcluster | `tuya\sensors\sensors_tuya_sensors\binaryinputcluster` | ✅ | ❌ | ❌ | full | Tuya | binaryinputcluster |
-| tuya | doorwindowsensor | `tuya\sensors\sensors_tuya_sensors\doorwindowsensor` | ✅ | ❌ | ❌ | full | Tuya | doorwindowsensor |
-| tuya | doorwindowsensor2 | `tuya\sensors\sensors_tuya_sensors\doorwindowsensor2` | ✅ | ❌ | ❌ | full | Tuya | doorwindowsensor2 |
-| tuya | doorwindowsensor_3 | `tuya\sensors\sensors_tuya_sensors\doorwindowsensor_3` | ✅ | ❌ | ❌ | full | Tuya | doorwindowsensor_3 |
-| tuya | doorwindowsensor_4 | `tuya\sensors\sensors_tuya_sensors\doorwindowsensor_4` | ✅ | ❌ | ❌ | full | :  | doorwindowsensor_4 |
-| tuya | sensors_tuya_sensors | `tuya\sensors\sensors_tuya_sensors` | ✅ | ❌ | ❌ | full | : [
-  | TS0601 |
-| tuya | floodsensor | `tuya\sensors\sensors_tuya_sensors\floodsensor` | ✅ | ❌ | ❌ | full | Tuya | floodsensor |
-| tuya | lcdtemphumidluxsensor | `tuya\sensors\sensors_tuya_sensors\lcdtemphumidluxsensor` | ✅ | ❌ | ❌ | full | :  | lcdtemphumidluxsensor |
-| tuya | lcdtemphumidsensor | `tuya\sensors\sensors_tuya_sensors\lcdtemphumidsensor` | ✅ | ❌ | ❌ | full | Tuya | lcdtemphumidsensor |
-| tuya | lcdtemphumidsensor2 | `tuya\sensors\sensors_tuya_sensors\lcdtemphumidsensor2` | ✅ | ❌ | ❌ | full | :  | lcdtemphumidsensor2 |
-| tuya | motion_sensor | `tuya\sensors\sensors_tuya_sensors\motion_sensor` | ✅ | ❌ | ❌ | full | :  | motion_sensor |
-| tuya | multistateinputcluster | `tuya\sensors\sensors_tuya_sensors\multistateinputcluster` | ✅ | ❌ | ❌ | full | Tuya | multistateinputcluster |
-| tuya | multistatevaluecluster | `tuya\sensors\sensors_tuya_sensors\multistatevaluecluster` | ✅ | ❌ | ❌ | full | Tuya | multistatevaluecluster |
-| tuya | occupancysensing | `tuya\sensors\sensors_tuya_sensors\occupancysensing` | ✅ | ❌ | ❌ | full | Tuya | occupancysensing |
-| tuya | pirsensor | `tuya\sensors\sensors_tuya_sensors\pirsensor` | ✅ | ❌ | ❌ | full | Tuya | pirsensor |
-| tuya | pir_sensor_2 | `tuya\sensors\sensors_tuya_sensors\pir_sensor_2` | ✅ | ❌ | ❌ | full | Tuya | pir_sensor_2 |
-| tuya | said | `tuya\sensors\sensors_tuya_sensors\said` | ✅ | ❌ | ❌ | full | Tuya | said |
-| tuya | slimmotionsensor | `tuya\sensors\sensors_tuya_sensors\slimmotionsensor` | ✅ | ❌ | ❌ | full | Tuya | slimmotionsensor |
-| tuya | smart_motion_sensor | `tuya\sensors\sensors_tuya_sensors\smart_motion_sensor` | ✅ | ❌ | ❌ | full | :  | smart_motion_sensor |
-| tuya | smoke_sensor | `tuya\sensors\sensors_tuya_sensors\smoke_sensor` | ✅ | ❌ | ❌ | full | ,  | smoke_sensor |
-| tuya | temphumidsensor | `tuya\sensors\sensors_tuya_sensors\temphumidsensor` | ✅ | ❌ | ❌ | full | Tuya | temphumidsensor |
-| tuya | temphumidsensor2 | `tuya\sensors\sensors_tuya_sensors\temphumidsensor2` | ✅ | ❌ | ❌ | full | Tuya | temphumidsensor2 |
-| tuya | temphumidsensor3 | `tuya\sensors\sensors_tuya_sensors\temphumidsensor3` | ✅ | ❌ | ❌ | full | Tuya | temphumidsensor3 |
-| tuya | tuyawaterleaksensor | `tuya\sensors\sensors_tuya_sensors\tuyawaterleaksensor` | ✅ | ❌ | ❌ | full | ,  | tuyawaterleaksensor |
-| tuya | waterdetector | `tuya\sensors\sensors_tuya_sensors\waterdetector` | ✅ | ❌ | ❌ | full | :  | waterdetector |
-| tuya | shutters | `tuya\sensors\sensors_tuya_shutters` | ✅ | ❌ | ❌ | full | _TZE200_SHUTTERS | shutters |
-| tuya | sensors_tuya_tuya | `tuya\sensors\sensors_tuya_tuya` | ✅ | ❌ | ❌ | full | :  | motion_sensor_2 |
-| tuya | tuya | `tuya\sensors\tuya` | ✅ | ❌ | ❌ | full | _TZE200_TUYA | tuya |
-| tuya | switches | `tuya\switches` | ✅ | ❌ | ✅ | full | : [
-  | TS0601 |
-| tuya | accordingly | `tuya\switches\switches\accordingly` | ✅ | ❌ | ❌ | full | Tuya | accordingly |
-| tuya | addonsearchresult | `tuya\switches\switches\addonsearchresult` | ✅ | ❌ | ❌ | full | Tuya | addonsearchresult |
-| tuya | aus_gapp | `tuya\switches\switches\aus_gapp` | ✅ | ❌ | ❌ | full | Tuya | aus_gapp |
-| tuya | bls_gpref | `tuya\switches\switches\bls_gpref` | ✅ | ❌ | ❌ | full | Tuya | bls_gpref |
-| tuya | book_tag_sql_fragment | `tuya\switches\switches\book_tag_sql_fragment` | ✅ | ❌ | ❌ | full | Tuya | book_tag_sql_fragment |
-| tuya | browserglue | `tuya\switches\switches\browserglue` | ✅ | ❌ | ❌ | full | Tuya | browserglue |
-| tuya | code | `tuya\switches\switches\code` | ✅ | ❌ | ❌ | full | Tuya | code |
-| tuya | convertdecimalvalueto2bytehexarray | `tuya\switches\switches\convertdecimalvalueto2bytehexarray` | ✅ | ❌ | ❌ | full | Tuya | convertdecimalvalueto2bytehexarray |
-| tuya | debug | `tuya\switches\switches\debug` | ✅ | ❌ | ❌ | full | Tuya | debug |
-| tuya | declarations | `tuya\switches\switches\declarations` | ✅ | ❌ | ❌ | full | Tuya | declarations |
-| tuya | derived | `tuya\switches\switches\derived` | ✅ | ❌ | ❌ | full | Tuya | derived |
-| tuya | descriptor | `tuya\switches\switches\descriptor` | ✅ | ❌ | ❌ | full | Tuya | descriptor |
-| tuya | destructconstprops | `tuya\switches\switches\destructconstprops` | ✅ | ❌ | ❌ | full | Tuya | destructconstprops |
-| tuya | determines | `tuya\switches\switches\determines` | ✅ | ❌ | ❌ | full | Tuya | determines |
-| tuya | dimmer_1_gang_tuya | `tuya\switches\switches\dimmer_1_gang_tuya` | ✅ | ❌ | ❌ | full | ,  | dimmer_1_gang_tuya |
-| tuya | dimmer_2_gang_tuya | `tuya\switches\switches\dimmer_2_gang_tuya` | ✅ | ❌ | ❌ | full | ,  | dimmer_2_gang_tuya |
-| tuya | distributioncustomizer | `tuya\switches\switches\distributioncustomizer` | ✅ | ❌ | ❌ | full | Tuya | distributioncustomizer |
-| tuya | switches | `tuya\switches\switches` | ✅ | ❌ | ❌ | full | Tuya | TS0601 |
-| tuya | enter | `tuya\switches\switches\enter` | ✅ | ❌ | ❌ | full | Tuya | enter |
-| tuya | failed | `tuya\switches\switches\failed` | ✅ | ❌ | ❌ | full | Tuya | failed |
-| tuya | fingerbottuya | `tuya\switches\switches\fingerbottuya` | ✅ | ❌ | ❌ | full | ,  | fingerbottuya |
-| tuya | for | `tuya\switches\switches\for` | ✅ | ❌ | ❌ | full | Tuya | for |
-| tuya | formautocomplete | `tuya\switches\switches\formautocomplete` | ✅ | ❌ | ❌ | full | Tuya | formautocomplete |
-| tuya | from | `tuya\switches\switches\from` | ✅ | ❌ | ❌ | full | Tuya | from |
-| tuya | frombuf | `tuya\switches\switches\frombuf` | ✅ | ❌ | ❌ | full | Tuya | frombuf |
-| tuya | function | `tuya\switches\switches\function` | ✅ | ❌ | ❌ | full | Tuya | function |
-| tuya | getprefbranch | `tuya\switches\switches\getprefbranch` | ✅ | ❌ | ❌ | full | Tuya | getprefbranch |
-| tuya | git | `tuya\switches\switches\git` | ✅ | ❌ | ❌ | full | Tuya | git |
-| tuya | handlerservice | `tuya\switches\switches\handlerservice` | ✅ | ❌ | ❌ | full | Tuya | handlerservice |
-| tuya | hasrootdomain | `tuya\switches\switches\hasrootdomain` | ✅ | ❌ | ❌ | full | Tuya | hasrootdomain |
-| tuya | iaszonecluster | `tuya\switches\switches\iaszonecluster` | ✅ | ❌ | ❌ | full | Tuya | iaszonecluster |
-| tuya | if | `tuya\switches\switches\if` | ✅ | ❌ | ❌ | full | Tuya | if |
-| tuya | in | `tuya\switches\switches\in` | ✅ | ❌ | ❌ | full | Tuya | in |
-| tuya | ioservice | `tuya\switches\switches\ioservice` | ✅ | ❌ | ❌ | full | Tuya | ioservice |
-| tuya | is | `tuya\switches\switches\is` | ✅ | ❌ | ❌ | full | Tuya | is |
-| tuya | isancestor | `tuya\switches\switches\isancestor` | ✅ | ❌ | ❌ | full | Tuya | isancestor |
-| tuya | klass | `tuya\switches\switches\klass` | ✅ | ❌ | ❌ | full | Tuya | klass |
-| tuya | log | `tuya\switches\switches\log` | ✅ | ❌ | ❌ | full | Tuya | log |
-| tuya | loginmanager | `tuya\switches\switches\loginmanager` | ✅ | ❌ | ❌ | full | Tuya | loginmanager |
-| tuya | loginmanagerstorage_legacy | `tuya\switches\switches\loginmanagerstorage_legacy` | ✅ | ❌ | ❌ | full | Tuya | loginmanagerstorage_legacy |
-| tuya | loginmanagerstorage_mozstorage | `tuya\switches\switches\loginmanagerstorage_mozstorage` | ✅ | ❌ | ❌ | full | Tuya | loginmanagerstorage_mozstorage |
-| tuya | mercurial | `tuya\switches\switches\mercurial` | ✅ | ❌ | ❌ | full | Tuya | mercurial |
-| tuya | microsummaryservice | `tuya\switches\switches\microsummaryservice` | ✅ | ❌ | ❌ | full | Tuya | microsummaryservice |
-| tuya | not | `tuya\switches\switches\not` | ✅ | ❌ | ❌ | full | Tuya | not |
-| tuya | nsproxyautoconfig | `tuya\switches\switches\nsproxyautoconfig` | ✅ | ❌ | ❌ | full | Tuya | nsproxyautoconfig |
-| tuya | of | `tuya\switches\switches\of` | ✅ | ❌ | ❌ | full | Tuya | of |
-| tuya | onoffswitchcluster | `tuya\switches\switches\onoffswitchcluster` | ✅ | ❌ | ❌ | full | Tuya | onoffswitchcluster |
-| tuya | optional_callback | `tuya\switches\switches\optional_callback` | ✅ | ❌ | ❌ | full | Tuya | optional_callback |
-| tuya | parse | `tuya\switches\switches\parse` | ✅ | ❌ | ❌ | full | Tuya | parse |
-| tuya | prot_application | `tuya\switches\switches\prot_application` | ✅ | ❌ | ❌ | full | Tuya | prot_application |
-| tuya | provides | `tuya\switches\switches\provides` | ✅ | ❌ | ❌ | full | Tuya | provides |
-| tuya | radarsensor2 | `tuya\switches\switches\radarsensor2` | ✅ | ❌ | ❌ | full | ,  | radarsensor2 |
-| tuya | rainsensor | `tuya\switches\switches\rainsensor` | ✅ | ❌ | ❌ | full | Tuya | rainsensor |
-| tuya | relay_board_1_channel | `tuya\switches\switches\relay_board_1_channel` | ✅ | ❌ | ❌ | full | ,  | relay_board_1_channel |
-| tuya | relay_board_2_channel | `tuya\switches\switches\relay_board_2_channel` | ✅ | ❌ | ❌ | full | ,  | relay_board_2_channel |
-| tuya | relay_board_4_channel | `tuya\switches\switches\relay_board_4_channel` | ✅ | ❌ | ❌ | full | ,  | relay_board_4_channel |
-| tuya | remotenotfounderror | `tuya\switches\switches\remotenotfounderror` | ✅ | ❌ | ❌ | full | Tuya | remotenotfounderror |
-| tuya | sensortemphumidsensor | `tuya\switches\switches\sensortemphumidsensor` | ✅ | ❌ | ❌ | full | Tuya | sensortemphumidsensor |
-| tuya | should | `tuya\switches\switches\should` | ✅ | ❌ | ❌ | full | Tuya | should |
-| tuya | shouldloaduri | `tuya\switches\switches\shouldloaduri` | ✅ | ❌ | ❌ | full | Tuya | shouldloaduri |
-| tuya | siren | `tuya\switches\switches\siren` | ✅ | ❌ | ❌ | full | Tuya | siren |
-| tuya | smart_button_switch | `tuya\switches\switches\smart_button_switch` | ✅ | ❌ | ❌ | full | Tuya | smart_button_switch |
-| tuya | smart_door_window_sensor | `tuya\switches\switches\smart_door_window_sensor` | ✅ | ❌ | ❌ | full | :  | smart_door_window_sensor |
-| tuya | smart_knob_switch | `tuya\switches\switches\smart_knob_switch` | ✅ | ❌ | ❌ | full | Tuya | smart_knob_switch |
-| tuya | smart_switch | `tuya\switches\switches\smart_switch` | ✅ | ❌ | ❌ | full | ,  | smart_switch |
-| tuya | soilsensor2 | `tuya\switches\switches\soilsensor2` | ✅ | ❌ | ❌ | full | ,  | soilsensor2 |
-| tuya | std | `tuya\switches\switches\std` | ✅ | ❌ | ❌ | full | Tuya | std |
-| tuya | subversion | `tuya\switches\switches\subversion` | ✅ | ❌ | ❌ | full | Tuya | subversion |
-| tuya | suggestautocompleteresult | `tuya\switches\switches\suggestautocompleteresult` | ✅ | ❌ | ❌ | full | Tuya | suggestautocompleteresult |
-| tuya | switch_1_gang | `tuya\switches\switches\switch_1_gang` | ✅ | ❌ | ❌ | full | ,  | switch_1_gang |
-| tuya | switch_1_gang_metering | `tuya\switches\switches\switch_1_gang_metering` | ✅ | ❌ | ❌ | full | Tuya | switch_1_gang_metering |
-| tuya | switch_2_gang | `tuya\switches\switches\switch_2_gang` | ✅ | ❌ | ❌ | full | Tuya | switch_2_gang |
-| tuya | switch_2_gang_metering | `tuya\switches\switches\switch_2_gang_metering` | ✅ | ❌ | ❌ | full | Tuya | switch_2_gang_metering |
-| tuya | switch_3_gang | `tuya\switches\switches\switch_3_gang` | ✅ | ❌ | ❌ | full | Tuya | switch_3_gang |
-| tuya | switch_4_gang_metering | `tuya\switches\switches\switch_4_gang_metering` | ✅ | ❌ | ❌ | full | Tuya | switch_4_gang_metering |
-| tuya | temphumidsensor4 | `tuya\switches\switches\temphumidsensor4` | ✅ | ❌ | ❌ | full | ,  | temphumidsensor4 |
-| tuya | temphumidsensor5 | `tuya\switches\switches\temphumidsensor5` | ✅ | ❌ | ❌ | full | Tuya | temphumidsensor5 |
-| tuya | that | `tuya\switches\switches\that` | ✅ | ❌ | ❌ | full | Tuya | that |
-| tuya | thermostaticradiatorvalve | `tuya\switches\switches\thermostaticradiatorvalve` | ✅ | ❌ | ❌ | full | Tuya | thermostaticradiatorvalve |
-| tuya | tm_glogenabled | `tuya\switches\switches\tm_glogenabled` | ✅ | ❌ | ❌ | full | Tuya | tm_glogenabled |
-| tuya | trytoclose | `tuya\switches\switches\trytoclose` | ✅ | ❌ | ❌ | full | Tuya | trytoclose |
-| tuya | tuyadiagnosticdevice | `tuya\switches\switches\tuyadiagnosticdevice` | ✅ | ❌ | ❌ | full | Tuya | tuyadiagnosticdevice |
-| tuya | tuyawindowcoveringcluster | `tuya\switches\switches\tuyawindowcoveringcluster` | ✅ | ❌ | ❌ | full | Tuya | tuyawindowcoveringcluster |
-| tuya | wallcurtainswitch | `tuya\switches\switches\wallcurtainswitch` | ✅ | ❌ | ❌ | full | Tuya | wallcurtainswitch |
-| tuya | wallthermostatdevice | `tuya\switches\switches\wallthermostatdevice` | ✅ | ❌ | ❌ | full | :  | wallthermostatdevice |
-| tuya | wall_dimmer_tuya | `tuya\switches\switches\wall_dimmer_tuya` | ✅ | ❌ | ❌ | full | ,  | wall_dimmer_tuya |
-| tuya | wall_remote_2_gang | `tuya\switches\switches\wall_remote_2_gang` | ✅ | ❌ | ❌ | full | Tuya | wall_remote_2_gang |
-| tuya | wall_remote_4_gang_3 | `tuya\switches\switches\wall_remote_4_gang_3` | ✅ | ❌ | ❌ | full | :  | wall_remote_4_gang_3 |
-| tuya | wall_switch_1_gang | `tuya\switches\switches\wall_switch_1_gang` | ✅ | ❌ | ❌ | full | Tuya | wall_switch_1_gang |
-| tuya | wall_switch_1_gang_tuya | `tuya\switches\switches\wall_switch_1_gang_tuya` | ✅ | ❌ | ❌ | full | ,  | wall_switch_1_gang_tuya |
-| tuya | wall_switch_2_gang | `tuya\switches\switches\wall_switch_2_gang` | ✅ | ❌ | ❌ | full | Tuya | wall_switch_2_gang |
-| tuya | wall_switch_3_gang | `tuya\switches\switches\wall_switch_3_gang` | ✅ | ❌ | ❌ | full | Tuya | wall_switch_3_gang |
-| tuya | wall_switch_4_gang | `tuya\switches\switches\wall_switch_4_gang` | ✅ | ❌ | ❌ | full | Tuya | wall_switch_4_gang |
-| tuya | wall_switch_4_gang_tuya | `tuya\switches\switches\wall_switch_4_gang_tuya` | ✅ | ❌ | ❌ | full | Tuya | wall_switch_4_gang_tuya |
-| tuya | wall_switch_5_gang_tuya | `tuya\switches\switches\wall_switch_5_gang_tuya` | ✅ | ❌ | ❌ | full | Tuya | wall_switch_5_gang_tuya |
-| tuya | wall_switch_6_gang_tuya | `tuya\switches\switches\wall_switch_6_gang_tuya` | ✅ | ❌ | ❌ | full | Tuya | wall_switch_6_gang_tuya |
-| tuya | wdf_class_bind_info | `tuya\switches\switches\wdf_class_bind_info` | ✅ | ❌ | ❌ | full | Tuya | wdf_class_bind_info |
-| tuya | window | `tuya\switches\switches\window` | ✅ | ❌ | ❌ | full | Tuya | window |
-| tuya | windowtitle | `tuya\switches\switches\windowtitle` | ✅ | ❌ | ❌ | full | Tuya | windowtitle |
-| tuya | switches_tuya_ts0044 | `tuya\switches\switches_tuya_ts0044` | ✅ | ❌ | ❌ | full | Tuya | ts0044-switch |
-| tuya | thermostats | `tuya\thermostats` | ✅ | ❌ | ✅ | full | : [
-  | TS0601 |
-| tuya | locks | `tuya\thermostats\locks` | ✅ | ❌ | ❌ | full | : [
-  | TS0601 |
-| tuya | locks | `tuya\thermostats\locks\locks` | ✅ | ❌ | ❌ | full | : [
-  | TS0601 |
-| tuya | feit | `tuya\thermostats\locks\locks\feit` | ✅ | ❌ | ❌ | full | _TZE200_FEIT | feit |
-| tuya | gosund | `tuya\thermostats\locks\locks\gosund` | ✅ | ❌ | ❌ | full | _TZE200_GOSUND | gosund |
-| tuya | keypads | `tuya\thermostats\locks\locks\keypads` | ✅ | ❌ | ❌ | full | _TZE200_KEYPADS | keypads |
-| tuya | smart-lock | `tuya\thermostats\locks\locks\smart-lock` | ✅ | ❌ | ❌ | full | _TZE200_SMART-LOCK | smart-lock |
-| tuya | smartlife | `tuya\thermostats\locks\locks\smartlife` | ✅ | ❌ | ❌ | full | _TZE200_SMARTLIFE | smartlife |
-| tuya | smart_locks | `tuya\thermostats\locks\locks\smart_locks` | ✅ | ❌ | ❌ | full | _TZE200_SMART_LOCKS | smart_locks |
-| tuya | tuya | `tuya\thermostats\locks\locks\tuya` | ✅ | ❌ | ❌ | full | _TZE200_TUYA | tuya |
-| tuya | locks_tuya_smart-lock | `tuya\thermostats\locks\locks_tuya_smart-lock` | ✅ | ❌ | ❌ | full | _TZE200_SMART-LOCK | smart-lock |
-| tuya | locks_tuya_tuya | `tuya\thermostats\locks\locks_tuya_tuya` | ✅ | ❌ | ❌ | full | _TZE200_FEIT | feit |
-| tuya | thermostats | `tuya\thermostats\thermostats` | ✅ | ❌ | ❌ | full | Tuya | TS0601 |
-| tuya | thermostatcluster | `tuya\thermostats\thermostats\thermostatcluster` | ✅ | ❌ | ❌ | full | Tuya | thermostatcluster |
-| tuya | thermostaticradiatorvalvedriver | `tuya\thermostats\thermostats\thermostaticradiatorvalvedriver` | ✅ | ❌ | ❌ | full | Tuya | thermostaticradiatorvalvedriver |
-| tuya | thermostats_tuya_tuya | `tuya\thermostats\thermostats_tuya_tuya` | ✅ | ❌ | ❌ | full | _TZE200_FEIT | feit |
-| tuya | lights | `tuya\unknown\lights` | ✅ | ❌ | ✅ | lite | : [
-  | TS0601 |
-| tuya | 3 | `tuya\unknown\lights\lights\3` | ✅ | ❌ | ❌ | lite | Tuya | 3 |
-| tuya | a | `tuya\unknown\lights\lights\a` | ✅ | ❌ | ❌ | lite | Tuya | a |
-| tuya | abstractdistribution | `tuya\unknown\lights\lights\abstractdistribution` | ✅ | ❌ | ❌ | lite | Tuya | abstractdistribution |
-| tuya | abstractprovider | `tuya\unknown\lights\lights\abstractprovider` | ✅ | ❌ | ❌ | lite | Tuya | abstractprovider |
-| tuya | alarmscluster | `tuya\unknown\lights\lights\alarmscluster` | ✅ | ❌ | ❌ | lite | Tuya | alarmscluster |
-| tuya | alias | `tuya\unknown\lights\lights\alias` | ✅ | ❌ | ❌ | lite | Tuya | alias |
-| tuya | align | `tuya\unknown\lights\lights\align` | ✅ | ❌ | ❌ | lite | Tuya | align |
-| tuya | almostequal | `tuya\unknown\lights\lights\almostequal` | ✅ | ❌ | ❌ | lite | Tuya | almostequal |
-| tuya | analogoutputcluster | `tuya\unknown\lights\lights\analogoutputcluster` | ✅ | ❌ | ❌ | lite | Tuya | analogoutputcluster |
-| tuya | analogvaluecluster | `tuya\unknown\lights\lights\analogvaluecluster` | ✅ | ❌ | ❌ | lite | Tuya | analogvaluecluster |
-| tuya | android | `tuya\unknown\lights\lights\android` | ✅ | ❌ | ❌ | lite | Tuya | android |
-| tuya | ansicodes | `tuya\unknown\lights\lights\ansicodes` | ✅ | ❌ | ❌ | lite | Tuya | ansicodes |
-| tuya | appends | `tuya\unknown\lights\lights\appends` | ✅ | ❌ | ❌ | lite | Tuya | appends |
-| tuya | appengineplatformwarning | `tuya\unknown\lights\lights\appengineplatformwarning` | ✅ | ❌ | ❌ | lite | Tuya | appengineplatformwarning |
-| tuya | arithmetic | `tuya\unknown\lights\lights\arithmetic` | ✅ | ❌ | ❌ | lite | Tuya | arithmetic |
-| tuya | as | `tuya\unknown\lights\lights\as` | ✅ | ❌ | ❌ | lite | Tuya | as |
-| tuya | asyncretrying | `tuya\unknown\lights\lights\asyncretrying` | ✅ | ❌ | ❌ | lite | Tuya | asyncretrying |
-| tuya | attribute | `tuya\unknown\lights\lights\attribute` | ✅ | ❌ | ❌ | lite | Tuya | attribute |
-| tuya | authbase | `tuya\unknown\lights\lights\authbase` | ✅ | ❌ | ❌ | lite | Tuya | authbase |
-| tuya | automagically | `tuya\unknown\lights\lights\automagically` | ✅ | ❌ | ❌ | lite | Tuya | automagically |
-| tuya | backend | `tuya\unknown\lights\lights\backend` | ✅ | ❌ | ❌ | lite | Tuya | backend |
-| tuya | backendunavailable | `tuya\unknown\lights\lights\backendunavailable` | ✅ | ❌ | ❌ | lite | Tuya | backendunavailable |
-| tuya | badmetadata | `tuya\unknown\lights\lights\badmetadata` | ✅ | ❌ | ❌ | lite | Tuya | badmetadata |
-| tuya | ballastconfigurationcluster | `tuya\unknown\lights\lights\ballastconfigurationcluster` | ✅ | ❌ | ❌ | lite | Tuya | ballastconfigurationcluster |
-| tuya | based | `tuya\unknown\lights\lights\based` | ✅ | ❌ | ❌ | lite | Tuya | based |
-| tuya | baseentrypoint | `tuya\unknown\lights\lights\baseentrypoint` | ✅ | ❌ | ❌ | lite | Tuya | baseentrypoint |
-| tuya | baseheuristic | `tuya\unknown\lights\lights\baseheuristic` | ✅ | ❌ | ❌ | lite | Tuya | baseheuristic |
-| tuya | basereporter | `tuya\unknown\lights\lights\basereporter` | ✅ | ❌ | ❌ | lite | Tuya | basereporter |
-| tuya | baseresolver | `tuya\unknown\lights\lights\baseresolver` | ✅ | ❌ | ❌ | lite | Tuya | baseresolver |
-| tuya | basiccluster | `tuya\unknown\lights\lights\basiccluster` | ✅ | ❌ | ❌ | lite | Tuya | basiccluster |
-| tuya | bazaar | `tuya\unknown\lights\lights\bazaar` | ✅ | ❌ | ❌ | lite | Tuya | bazaar |
-| tuya | bbcodeformatter | `tuya\unknown\lights\lights\bbcodeformatter` | ✅ | ❌ | ❌ | lite | Tuya | bbcodeformatter |
-| tuya | bdist_dumb | `tuya\unknown\lights\lights\bdist_dumb` | ✅ | ❌ | ❌ | lite | Tuya | bdist_dumb |
-| tuya | bdist_egg | `tuya\unknown\lights\lights\bdist_egg` | ✅ | ❌ | ❌ | lite | Tuya | bdist_egg |
-| tuya | bdist_rpm | `tuya\unknown\lights\lights\bdist_rpm` | ✅ | ❌ | ❌ | lite | Tuya | bdist_rpm |
-| tuya | binaryoutputcluster | `tuya\unknown\lights\lights\binaryoutputcluster` | ✅ | ❌ | ❌ | lite | Tuya | binaryoutputcluster |
-| tuya | binaryvaluecluster | `tuya\unknown\lights\lights\binaryvaluecluster` | ✅ | ❌ | ❌ | lite | Tuya | binaryvaluecluster |
-| tuya | build | `tuya\unknown\lights\lights\build` | ✅ | ❌ | ❌ | lite | Tuya | build |
-| tuya | buildtracker | `tuya\unknown\lights\lights\buildtracker` | ✅ | ❌ | ❌ | lite | Tuya | buildtracker |
-| tuya | build_clib | `tuya\unknown\lights\lights\build_clib` | ✅ | ❌ | ❌ | lite | Tuya | build_clib |
-| tuya | build_ext | `tuya\unknown\lights\lights\build_ext` | ✅ | ❌ | ❌ | lite | Tuya | build_ext |
-| tuya | build_py | `tuya\unknown\lights\lights\build_py` | ✅ | ❌ | ❌ | lite | Tuya | build_py |
-| tuya | build_scripts | `tuya\unknown\lights\lights\build_scripts` | ✅ | ❌ | ❌ | lite | Tuya | build_scripts |
-| tuya | cache | `tuya\unknown\lights\lights\cache` | ✅ | ❌ | ❌ | lite | Tuya | cache |
-| tuya | cachecommand | `tuya\unknown\lights\lights\cachecommand` | ✅ | ❌ | ❌ | lite | Tuya | cachecommand |
-| tuya | cachecontroladapter | `tuya\unknown\lights\lights\cachecontroladapter` | ✅ | ❌ | ❌ | lite | Tuya | cachecontroladapter |
-| tuya | cachecontroller | `tuya\unknown\lights\lights\cachecontroller` | ✅ | ❌ | ❌ | lite | Tuya | cachecontroller |
-| tuya | cached_property | `tuya\unknown\lights\lights\cached_property` | ✅ | ❌ | ❌ | lite | Tuya | cached_property |
-| tuya | calls | `tuya\unknown\lights\lights\calls` | ✅ | ❌ | ❌ | lite | Tuya | calls |
-| tuya | can | `tuya\unknown\lights\lights\can` | ✅ | ❌ | ❌ | lite | Tuya | can |
-| tuya | caseinsensitivedict | `tuya\unknown\lights\lights\caseinsensitivedict` | ✅ | ❌ | ❌ | lite | Tuya | caseinsensitivedict |
-| tuya | checkcommand | `tuya\unknown\lights\lights\checkcommand` | ✅ | ❌ | ❌ | lite | Tuya | checkcommand |
-| tuya | christmas_lights | `tuya\unknown\lights\lights\christmas_lights` | ✅ | ❌ | ❌ | lite | ,  | christmas_lights |
-| tuya | cim_credential | `tuya\unknown\lights\lights\cim_credential` | ✅ | ❌ | ❌ | lite | Tuya | cim_credential |
-| tuya | cim_hostedservice | `tuya\unknown\lights\lights\cim_hostedservice` | ✅ | ❌ | ❌ | lite | Tuya | cim_hostedservice |
-| tuya | cim_logentry | `tuya\unknown\lights\lights\cim_logentry` | ✅ | ❌ | ❌ | lite | Tuya | cim_logentry |
-| tuya | cim_service | `tuya\unknown\lights\lights\cim_service` | ✅ | ❌ | ❌ | lite | Tuya | cim_service |
-| tuya | class | `tuya\unknown\lights\lights\class` | ✅ | ❌ | ❌ | lite | Tuya | class |
-| tuya | classguid | `tuya\unknown\lights\lights\classguid` | ✅ | ❌ | ❌ | lite | Tuya | classguid |
-| tuya | classnotfound | `tuya\unknown\lights\lights\classnotfound` | ✅ | ❌ | ❌ | lite | Tuya | classnotfound |
-| tuya | clean | `tuya\unknown\lights\lights\clean` | ✅ | ❌ | ❌ | lite | Tuya | clean |
-| tuya | closest | `tuya\unknown\lights\lights\closest` | ✅ | ❌ | ❌ | lite | Tuya | closest |
-| tuya | codec | `tuya\unknown\lights\lights\codec` | ✅ | ❌ | ❌ | lite | Tuya | codec |
-| tuya | codeforevent | `tuya\unknown\lights\lights\codeforevent` | ✅ | ❌ | ❌ | lite | Tuya | codeforevent |
-| tuya | codetagfilter | `tuya\unknown\lights\lights\codetagfilter` | ✅ | ❌ | ❌ | lite | Tuya | codetagfilter |
-| tuya | colorbox | `tuya\unknown\lights\lights\colorbox` | ✅ | ❌ | ❌ | lite | Tuya | colorbox |
-| tuya | colorcontrolcluster | `tuya\unknown\lights\lights\colorcontrolcluster` | ✅ | ❌ | ❌ | lite | Tuya | colorcontrolcluster |
-| tuya | colorsystem | `tuya\unknown\lights\lights\colorsystem` | ✅ | ❌ | ❌ | lite | Tuya | colorsystem |
-| tuya | colortriplet | `tuya\unknown\lights\lights\colortriplet` | ✅ | ❌ | ❌ | lite | Tuya | colortriplet |
-| tuya | command | `tuya\unknown\lights\lights\command` | ✅ | ❌ | ❌ | lite | Tuya | command |
-| tuya | commandcontextmixin | `tuya\unknown\lights\lights\commandcontextmixin` | ✅ | ❌ | ❌ | lite | Tuya | commandcontextmixin |
-| tuya | completedirs | `tuya\unknown\lights\lights\completedirs` | ✅ | ❌ | ❌ | lite | Tuya | completedirs |
-| tuya | configuration | `tuya\unknown\lights\lights\configuration` | ✅ | ❌ | ❌ | lite | Tuya | configuration |
-| tuya | configurationcommand | `tuya\unknown\lights\lights\configurationcommand` | ✅ | ❌ | ❌ | lite | Tuya | configurationcommand |
-| tuya | conflictcause | `tuya\unknown\lights\lights\conflictcause` | ✅ | ❌ | ❌ | lite | Tuya | conflictcause |
-| tuya | consoleerror | `tuya\unknown\lights\lights\consoleerror` | ✅ | ❌ | ❌ | lite | Tuya | consoleerror |
-| tuya | console_screen_buffer_info | `tuya\unknown\lights\lights\console_screen_buffer_info` | ✅ | ❌ | ❌ | lite | Tuya | console_screen_buffer_info |
-| tuya | constrain | `tuya\unknown\lights\lights\constrain` | ✅ | ❌ | ❌ | lite | Tuya | constrain |
-| tuya | constraint | `tuya\unknown\lights\lights\constraint` | ✅ | ❌ | ❌ | lite | Tuya | constraint |
-| tuya | contains | `tuya\unknown\lights\lights\contains` | ✅ | ❌ | ❌ | lite | Tuya | contains |
-| tuya | converthsvtocie | `tuya\unknown\lights\lights\converthsvtocie` | ✅ | ❌ | ❌ | lite | Tuya | converthsvtocie |
-| tuya | converts | `tuya\unknown\lights\lights\converts` | ✅ | ❌ | ❌ | lite | Tuya | converts |
-| tuya | curtain_module_2_gang | `tuya\unknown\lights\lights\curtain_module_2_gang` | ✅ | ❌ | ❌ | lite | Tuya | curtain_module_2_gang |
-| tuya | datatobuf | `tuya\unknown\lights\lights\datatobuf` | ✅ | ❌ | ❌ | lite | Tuya | datatobuf |
-| tuya | datatype | `tuya\unknown\lights\lights\datatype` | ✅ | ❌ | ❌ | lite | Tuya | datatype |
-| tuya | debug | `tuya\unknown\lights\lights\debug` | ✅ | ❌ | ❌ | lite | Tuya | debug |
-| tuya | debugcommand | `tuya\unknown\lights\lights\debugcommand` | ✅ | ❌ | ❌ | lite | Tuya | debugcommand |
-| tuya | decodes | `tuya\unknown\lights\lights\decodes` | ✅ | ❌ | ❌ | lite | Tuya | decodes |
-| tuya | decorator | `tuya\unknown\lights\lights\decorator` | ✅ | ❌ | ❌ | lite | Tuya | decorator |
-| tuya | defines | `tuya\unknown\lights\lights\defines` | ✅ | ❌ | ❌ | lite | Tuya | defines |
-| tuya | dehumidificationcontrolcluster | `tuya\unknown\lights\lights\dehumidificationcontrolcluster` | ✅ | ❌ | ❌ | lite | Tuya | dehumidificationcontrolcluster |
-| tuya | derived | `tuya\unknown\lights\lights\derived` | ✅ | ❌ | ❌ | lite | Tuya | derived |
-| tuya | descriptor | `tuya\unknown\lights\lights\descriptor` | ✅ | ❌ | ❌ | lite | Tuya | descriptor |
-| tuya | determines | `tuya\unknown\lights\lights\determines` | ✅ | ❌ | ❌ | lite | Tuya | determines |
-| tuya | develop | `tuya\unknown\lights\lights\develop` | ✅ | ❌ | ❌ | lite | Tuya | develop |
-| tuya | devicetemperaturecluster | `tuya\unknown\lights\lights\devicetemperaturecluster` | ✅ | ❌ | ❌ | lite | Tuya | devicetemperaturecluster |
-| tuya | diagnosticscluster | `tuya\unknown\lights\lights\diagnosticscluster` | ✅ | ❌ | ❌ | lite | Tuya | diagnosticscluster |
-| tuya | dictstack | `tuya\unknown\lights\lights\dictstack` | ✅ | ❌ | ❌ | lite | Tuya | dictstack |
-| tuya | dimmable_led_strip | `tuya\unknown\lights\lights\dimmable_led_strip` | ✅ | ❌ | ❌ | lite | :  | dimmable_led_strip |
-| tuya | dimmable_recessed_led | `tuya\unknown\lights\lights\dimmable_recessed_led` | ✅ | ❌ | ❌ | lite | Tuya | dimmable_recessed_led |
-| tuya | dimmer_1_gang | `tuya\unknown\lights\lights\dimmer_1_gang` | ✅ | ❌ | ❌ | lite | Tuya | dimmer_1_gang |
-| tuya | dimmer_1_gang_2 | `tuya\unknown\lights\lights\dimmer_1_gang_2` | ✅ | ❌ | ❌ | lite | , 
-  | dimmer_1_gang_2 |
-| tuya | dimmer_2_gang | `tuya\unknown\lights\lights\dimmer_2_gang` | ✅ | ❌ | ❌ | lite | Tuya | dimmer_2_gang |
-| tuya | dimmer_2_gang_tuya | `tuya\unknown\lights\lights\dimmer_2_gang_tuya` | ✅ | ❌ | ❌ | lite | Tuya | dimmer_2_gang_tuya |
-| tuya | directedgraph | `tuya\unknown\lights\lights\directedgraph` | ✅ | ❌ | ❌ | lite | Tuya | directedgraph |
-| tuya | directives | `tuya\unknown\lights\lights\directives` | ✅ | ❌ | ❌ | lite | Tuya | directives |
-| tuya | directurlvalidationerror | `tuya\unknown\lights\lights\directurlvalidationerror` | ✅ | ❌ | ❌ | lite | Tuya | directurlvalidationerror |
-| tuya | distribution | `tuya\unknown\lights\lights\distribution` | ✅ | ❌ | ❌ | lite | Tuya | distribution |
-| tuya | distutilserror | `tuya\unknown\lights\lights\distutilserror` | ✅ | ❌ | ❌ | lite | Tuya | distutilserror |
-| tuya | dist_info | `tuya\unknown\lights\lights\dist_info` | ✅ | ❌ | ❌ | lite | Tuya | dist_info |
-| tuya | docstring | `tuya\unknown\lights\lights\docstring` | ✅ | ❌ | ❌ | lite | Tuya | docstring |
-| tuya | does | `tuya\unknown\lights\lights\does` | ✅ | ❌ | ❌ | lite | Tuya | does |
-| tuya | doublepowerpoint | `tuya\unknown\lights\lights\doublepowerpoint` | ✅ | ❌ | ❌ | lite | Tuya | doublepowerpoint |
-| tuya | doublepowerpoint2 | `tuya\unknown\lights\lights\doublepowerpoint2` | ✅ | ❌ | ❌ | lite | Tuya | doublepowerpoint2 |
-| tuya | downloadcommand | `tuya\unknown\lights\lights\downloadcommand` | ✅ | ❌ | ❌ | lite | Tuya | downloadcommand |
-| tuya | downloader | `tuya\unknown\lights\lights\downloader` | ✅ | ❌ | ❌ | lite | Tuya | downloader |
-| tuya | driver | `tuya\unknown\lights\lights\driver` | ✅ | ❌ | ❌ | lite | Tuya | driver |
-| tuya | lights | `tuya\unknown\lights\lights` | ✅ | ❌ | ❌ | lite | Tuya | TS0601 |
-| tuya | drives | `tuya\unknown\lights\lights\drives` | ✅ | ❌ | ❌ | lite | Tuya | drives |
-| tuya | eachitem | `tuya\unknown\lights\lights\eachitem` | ✅ | ❌ | ❌ | lite | Tuya | eachitem |
-| tuya | electricalmeasurementcluster | `tuya\unknown\lights\lights\electricalmeasurementcluster` | ✅ | ❌ | ❌ | lite | Tuya | electricalmeasurementcluster |
-| tuya | encoding | `tuya\unknown\lights\lights\encoding` | ✅ | ❌ | ❌ | lite | Tuya | encoding |
-| tuya | endoftext | `tuya\unknown\lights\lights\endoftext` | ✅ | ❌ | ❌ | lite | Tuya | endoftext |
-| tuya | entrypoint | `tuya\unknown\lights\lights\entrypoint` | ✅ | ❌ | ❌ | lite | Tuya | entrypoint |
-| tuya | escapesequence | `tuya\unknown\lights\lights\escapesequence` | ✅ | ❌ | ❌ | lite | Tuya | escapesequence |
-| tuya | evaluator | `tuya\unknown\lights\lights\evaluator` | ✅ | ❌ | ❌ | lite | Tuya | evaluator |
-| tuya | eventually | `tuya\unknown\lights\lights\eventually` | ✅ | ❌ | ❌ | lite | Tuya | eventually |
-| tuya | except | `tuya\unknown\lights\lights\except` | ✅ | ❌ | ❌ | lite | Tuya | except |
-| tuya | exceptionwordunicode | `tuya\unknown\lights\lights\exceptionwordunicode` | ✅ | ❌ | ❌ | lite | Tuya | exceptionwordunicode |
-| tuya | explicitrequirement | `tuya\unknown\lights\lights\explicitrequirement` | ✅ | ❌ | ❌ | lite | Tuya | explicitrequirement |
-| tuya | exposes | `tuya\unknown\lights\lights\exposes` | ✅ | ❌ | ❌ | lite | Tuya | exposes |
-| tuya | extends | `tuya\unknown\lights\lights\extends` | ✅ | ❌ | ❌ | lite | Tuya | extends |
-| tuya | extension | `tuya\unknown\lights\lights\extension` | ✅ | ❌ | ❌ | lite | Tuya | extension |
-| tuya | exttype | `tuya\unknown\lights\lights\exttype` | ✅ | ❌ | ❌ | lite | Tuya | exttype |
-| tuya | fancontrolcluster | `tuya\unknown\lights\lights\fancontrolcluster` | ✅ | ❌ | ❌ | lite | Tuya | fancontrolcluster |
-| tuya | file | `tuya\unknown\lights\lights\file` | ✅ | ❌ | ❌ | lite | Tuya | file |
-| tuya | filelist | `tuya\unknown\lights\lights\filelist` | ✅ | ❌ | ❌ | lite | Tuya | filelist |
-| tuya | fileproxy | `tuya\unknown\lights\lights\fileproxy` | ✅ | ❌ | ❌ | lite | Tuya | fileproxy |
-| tuya | filereader | `tuya\unknown\lights\lights\filereader` | ✅ | ❌ | ❌ | lite | Tuya | filereader |
-| tuya | fixes | `tuya\unknown\lights\lights\fixes` | ✅ | ❌ | ❌ | lite | Tuya | fixes |
-| tuya | flowmeasurementcluster | `tuya\unknown\lights\lights\flowmeasurementcluster` | ✅ | ❌ | ❌ | lite | Tuya | flowmeasurementcluster |
-| tuya | foldedcase | `tuya\unknown\lights\lights\foldedcase` | ✅ | ❌ | ❌ | lite | Tuya | foldedcase |
-| tuya | for | `tuya\unknown\lights\lights\for` | ✅ | ❌ | ❌ | lite | Tuya | for |
-| tuya | formatter | `tuya\unknown\lights\lights\formatter` | ✅ | ❌ | ❌ | lite | Tuya | formatter |
-| tuya | freezabledefaultdict | `tuya\unknown\lights\lights\freezabledefaultdict` | ✅ | ❌ | ❌ | lite | Tuya | freezabledefaultdict |
-| tuya | freezecommand | `tuya\unknown\lights\lights\freezecommand` | ✅ | ❌ | ❌ | lite | Tuya | freezecommand |
-| tuya | from | `tuya\unknown\lights\lights\from` | ✅ | ❌ | ❌ | lite | Tuya | from |
-| tuya | getconvertor | `tuya\unknown\lights\lights\getconvertor` | ✅ | ❌ | ❌ | lite | Tuya | getconvertor |
-| tuya | getpropertydescriptor | `tuya\unknown\lights\lights\getpropertydescriptor` | ✅ | ❌ | ❌ | lite | Tuya | getpropertydescriptor |
-| tuya | getupdatedirnocreate | `tuya\unknown\lights\lights\getupdatedirnocreate` | ✅ | ❌ | ❌ | lite | Tuya | getupdatedirnocreate |
-| tuya | get_cookie | `tuya\unknown\lights\lights\get_cookie` | ✅ | ❌ | ❌ | lite | Tuya | get_cookie |
-| tuya | groffformatter | `tuya\unknown\lights\lights\groffformatter` | ✅ | ❌ | ❌ | lite | Tuya | groffformatter |
-| tuya | groupscluster | `tuya\unknown\lights\lights\groupscluster` | ✅ | ❌ | ❌ | lite | Tuya | groupscluster |
-| tuya | handheld_remote_4_buttons | `tuya\unknown\lights\lights\handheld_remote_4_buttons` | ✅ | ❌ | ❌ | lite | :  | handheld_remote_4_buttons |
-| tuya | handles | `tuya\unknown\lights\lights\handles` | ✅ | ❌ | ❌ | lite | Tuya | handles |
-| tuya | hashcommand | `tuya\unknown\lights\lights\hashcommand` | ✅ | ❌ | ❌ | lite | Tuya | hashcommand |
-| tuya | hashes | `tuya\unknown\lights\lights\hashes` | ✅ | ❌ | ❌ | lite | Tuya | hashes |
-| tuya | helpcommand | `tuya\unknown\lights\lights\helpcommand` | ✅ | ❌ | ❌ | lite | Tuya | helpcommand |
-| tuya | helps | `tuya\unknown\lights\lights\helps` | ✅ | ❌ | ❌ | lite | Tuya | helps |
-| tuya | here | `tuya\unknown\lights\lights\here` | ✅ | ❌ | ❌ | lite | Tuya | here |
-| tuya | hierarchy | `tuya\unknown\lights\lights\hierarchy` | ✅ | ❌ | ❌ | lite | Tuya | hierarchy |
-| tuya | highlighter | `tuya\unknown\lights\lights\highlighter` | ✅ | ❌ | ❌ | lite | Tuya | highlighter |
-| tuya | htmlformatter | `tuya\unknown\lights\lights\htmlformatter` | ✅ | ❌ | ❌ | lite | Tuya | htmlformatter |
-| tuya | httperror | `tuya\unknown\lights\lights\httperror` | ✅ | ❌ | ❌ | lite | Tuya | httperror |
-| tuya | iasacecluster | `tuya\unknown\lights\lights\iasacecluster` | ✅ | ❌ | ❌ | lite | Tuya | iasacecluster |
-| tuya | iaswdcluster | `tuya\unknown\lights\lights\iaswdcluster` | ✅ | ❌ | ❌ | lite | Tuya | iaswdcluster |
-| tuya | iaszoneboundcluster | `tuya\unknown\lights\lights\iaszoneboundcluster` | ✅ | ❌ | ❌ | lite | Tuya | iaszoneboundcluster |
-| tuya | identifycluster | `tuya\unknown\lights\lights\identifycluster` | ✅ | ❌ | ❌ | lite | Tuya | identifycluster |
-| tuya | idnaerror | `tuya\unknown\lights\lights\idnaerror` | ✅ | ❌ | ❌ | lite | Tuya | idnaerror |
-| tuya | if | `tuya\unknown\lights\lights\if` | ✅ | ❌ | ❌ | lite | Tuya | if |
-| tuya | illuminancelevelsensingcluster | `tuya\unknown\lights\lights\illuminancelevelsensingcluster` | ✅ | ❌ | ❌ | lite | Tuya | illuminancelevelsensingcluster |
-| tuya | illuminancemeasurementcluster | `tuya\unknown\lights\lights\illuminancemeasurementcluster` | ✅ | ❌ | ❌ | lite | Tuya | illuminancemeasurementcluster |
-| tuya | implementation | `tuya\unknown\lights\lights\implementation` | ✅ | ❌ | ❌ | lite | Tuya | implementation |
-| tuya | implementing | `tuya\unknown\lights\lights\implementing` | ✅ | ❌ | ❌ | lite | Tuya | implementing |
-| tuya | implements | `tuya\unknown\lights\lights\implements` | ✅ | ❌ | ❌ | lite | Tuya | implements |
-| tuya | importclass | `tuya\unknown\lights\lights\importclass` | ✅ | ❌ | ❌ | lite | Tuya | importclass |
-| tuya | in | `tuya\unknown\lights\lights\in` | ✅ | ❌ | ❌ | lite | Tuya | in |
-| tuya | indexcommand | `tuya\unknown\lights\lights\indexcommand` | ✅ | ❌ | ❌ | lite | Tuya | indexcommand |
-| tuya | infinitytype | `tuya\unknown\lights\lights\infinitytype` | ✅ | ❌ | ❌ | lite | Tuya | infinitytype |
-| tuya | inner_i | `tuya\unknown\lights\lights\inner_i` | ✅ | ❌ | ❌ | lite | Tuya | inner_i |
-| tuya | inputstate | `tuya\unknown\lights\lights\inputstate` | ✅ | ❌ | ❌ | lite | Tuya | inputstate |
-| tuya | inspect | `tuya\unknown\lights\lights\inspect` | ✅ | ❌ | ❌ | lite | Tuya | inspect |
-| tuya | inspectcommand | `tuya\unknown\lights\lights\inspectcommand` | ✅ | ❌ | ❌ | lite | Tuya | inspectcommand |
-| tuya | install | `tuya\unknown\lights\lights\install` | ✅ | ❌ | ❌ | lite | Tuya | install |
-| tuya | installationcandidate | `tuya\unknown\lights\lights\installationcandidate` | ✅ | ❌ | ❌ | lite | Tuya | installationcandidate |
-| tuya | installationreport | `tuya\unknown\lights\lights\installationreport` | ✅ | ❌ | ❌ | lite | Tuya | installationreport |
-| tuya | installationresult | `tuya\unknown\lights\lights\installationresult` | ✅ | ❌ | ❌ | lite | Tuya | installationresult |
-| tuya | installcommand | `tuya\unknown\lights\lights\installcommand` | ✅ | ❌ | ❌ | lite | Tuya | installcommand |
-| tuya | installeddistribution | `tuya\unknown\lights\lights\installeddistribution` | ✅ | ❌ | ❌ | lite | Tuya | installeddistribution |
-| tuya | installer | `tuya\unknown\lights\lights\installer` | ✅ | ❌ | ❌ | lite | Tuya | installer |
-| tuya | installrequirement | `tuya\unknown\lights\lights\installrequirement` | ✅ | ❌ | ❌ | lite | Tuya | installrequirement |
-| tuya | install_data | `tuya\unknown\lights\lights\install_data` | ✅ | ❌ | ❌ | lite | Tuya | install_data |
-| tuya | install_egg_info | `tuya\unknown\lights\lights\install_egg_info` | ✅ | ❌ | ❌ | lite | Tuya | install_egg_info |
-| tuya | install_headers | `tuya\unknown\lights\lights\install_headers` | ✅ | ❌ | ❌ | lite | Tuya | install_headers |
-| tuya | install_lib | `tuya\unknown\lights\lights\install_lib` | ✅ | ❌ | ❌ | lite | Tuya | install_lib |
-| tuya | install_scripts | `tuya\unknown\lights\lights\install_scripts` | ✅ | ❌ | ❌ | lite | Tuya | install_scripts |
-| tuya | into | `tuya\unknown\lights\lights\into` | ✅ | ❌ | ❌ | lite | Tuya | into |
-| tuya | invalidmarker | `tuya\unknown\lights\lights\invalidmarker` | ✅ | ❌ | ❌ | lite | Tuya | invalidmarker |
-| tuya | invalidrequirement | `tuya\unknown\lights\lights\invalidrequirement` | ✅ | ❌ | ❌ | lite | Tuya | invalidrequirement |
-| tuya | invalidspecifier | `tuya\unknown\lights\lights\invalidspecifier` | ✅ | ❌ | ❌ | lite | Tuya | invalidspecifier |
-| tuya | invalidversion | `tuya\unknown\lights\lights\invalidversion` | ✅ | ❌ | ❌ | lite | Tuya | invalidversion |
-| tuya | invalidwheelfilename | `tuya\unknown\lights\lights\invalidwheelfilename` | ✅ | ❌ | ❌ | lite | Tuya | invalidwheelfilename |
-| tuya | ircformatter | `tuya\unknown\lights\lights\ircformatter` | ✅ | ❌ | ❌ | lite | Tuya | ircformatter |
-| tuya | irrigationcontroller | `tuya\unknown\lights\lights\irrigationcontroller` | ✅ | ❌ | ❌ | lite | Tuya | irrigationcontroller |
-| tuya | is | `tuya\unknown\lights\lights\is` | ✅ | ❌ | ❌ | lite | Tuya | is |
-| tuya | ismultiple | `tuya\unknown\lights\lights\ismultiple` | ✅ | ❌ | ❌ | lite | Tuya | ismultiple |
-| tuya | jsconsolehandler | `tuya\unknown\lights\lights\jsconsolehandler` | ✅ | ❌ | ❌ | lite | Tuya | jsconsolehandler |
-| tuya | json | `tuya\unknown\lights\lights\json` | ✅ | ❌ | ❌ | lite | Tuya | json |
-| tuya | jsonschemaexception | `tuya\unknown\lights\lights\jsonschemaexception` | ✅ | ❌ | ❌ | lite | Tuya | jsonschemaexception |
-| tuya | jupyterrenderable | `tuya\unknown\lights\lights\jupyterrenderable` | ✅ | ❌ | ❌ | lite | Tuya | jupyterrenderable |
-| tuya | just | `tuya\unknown\lights\lights\just` | ✅ | ❌ | ❌ | lite | Tuya | just |
-| tuya | keybasedcomparemixin | `tuya\unknown\lights\lights\keybasedcomparemixin` | ✅ | ❌ | ❌ | lite | Tuya | keybasedcomparemixin |
-| tuya | keys | `tuya\unknown\lights\lights\keys` | ✅ | ❌ | ❌ | lite | Tuya | keys |
-| tuya | language | `tuya\unknown\lights\lights\language` | ✅ | ❌ | ❌ | lite | Tuya | language |
-| tuya | latexformatter | `tuya\unknown\lights\lights\latexformatter` | ✅ | ❌ | ❌ | lite | Tuya | latexformatter |
-| tuya | layoutrender | `tuya\unknown\lights\lights\layoutrender` | ✅ | ❌ | ❌ | lite | Tuya | layoutrender |
-| tuya | legacywindowserror | `tuya\unknown\lights\lights\legacywindowserror` | ✅ | ❌ | ❌ | lite | Tuya | legacywindowserror |
-| tuya | levelcontrolcluster | `tuya\unknown\lights\lights\levelcontrolcluster` | ✅ | ❌ | ❌ | lite | Tuya | levelcontrolcluster |
-| tuya | lexermeta | `tuya\unknown\lights\lights\lexermeta` | ✅ | ❌ | ❌ | lite | Tuya | lexermeta |
-| tuya | lifoqueue | `tuya\unknown\lights\lights\lifoqueue` | ✅ | ❌ | ❌ | lite | Tuya | lifoqueue |
-| tuya | linksource | `tuya\unknown\lights\lights\linksource` | ✅ | ❌ | ❌ | lite | Tuya | linksource |
-| tuya | linktype | `tuya\unknown\lights\lights\linktype` | ✅ | ❌ | ❌ | lite | Tuya | linktype |
-| tuya | listcompat | `tuya\unknown\lights\lights\listcompat` | ✅ | ❌ | ❌ | lite | Tuya | listcompat |
-| tuya | log | `tuya\unknown\lights\lights\log` | ✅ | ❌ | ❌ | lite | Tuya | log |
-| tuya | logformatter | `tuya\unknown\lights\lights\logformatter` | ✅ | ❌ | ❌ | lite | Tuya | logformatter |
-| tuya | macos | `tuya\unknown\lights\lights\macos` | ✅ | ❌ | ❌ | lite | Tuya | macos |
-| tuya | may | `tuya\unknown\lights\lights\may` | ✅ | ❌ | ❌ | lite | Tuya | may |
-| tuya | measurement | `tuya\unknown\lights\lights\measurement` | ✅ | ❌ | ❌ | lite | Tuya | measurement |
-| tuya | message | `tuya\unknown\lights\lights\message` | ✅ | ❌ | ❌ | lite | Tuya | message |
-| tuya | metadatamissingerror | `tuya\unknown\lights\lights\metadatamissingerror` | ✅ | ❌ | ❌ | lite | Tuya | metadatamissingerror |
-| tuya | metasploit3 | `tuya\unknown\lights\lights\metasploit3` | ✅ | ❌ | ❌ | lite | Tuya | metasploit3 |
-| tuya | meteringcluster | `tuya\unknown\lights\lights\meteringcluster` | ✅ | ❌ | ❌ | lite | Tuya | meteringcluster |
-| tuya | mixin | `tuya\unknown\lights\lights\mixin` | ✅ | ❌ | ❌ | lite | Tuya | mixin |
-| tuya | multidomainbasicauth | `tuya\unknown\lights\lights\multidomainbasicauth` | ✅ | ❌ | ❌ | lite | Tuya | multidomainbasicauth |
-| tuya | multistateoutputcluster | `tuya\unknown\lights\lights\multistateoutputcluster` | ✅ | ❌ | ❌ | lite | Tuya | multistateoutputcluster |
-| tuya | myclass | `tuya\unknown\lights\lights\myclass` | ✅ | ❌ | ❌ | lite | Tuya | myclass |
-| tuya | myzigbeedevice | `tuya\unknown\lights\lights\myzigbeedevice` | ✅ | ❌ | ❌ | lite | Tuya | myzigbeedevice |
-| tuya | nabucasasilabsflasher | `tuya\unknown\lights\lights\nabucasasilabsflasher` | ✅ | ❌ | ❌ | lite | Tuya | nabucasasilabsflasher |
-| tuya | name | `tuya\unknown\lights\lights\name` | ✅ | ❌ | ❌ | lite | Tuya | name |
-| tuya | named | `tuya\unknown\lights\lights\named` | ✅ | ❌ | ❌ | lite | Tuya | named |
-| tuya | normalizes | `tuya\unknown\lights\lights\normalizes` | ✅ | ❌ | ❌ | lite | Tuya | normalizes |
-| tuya | nowinseconds | `tuya\unknown\lights\lights\nowinseconds` | ✅ | ❌ | ❌ | lite | Tuya | nowinseconds |
-| tuya | nsurlformatterservice | `tuya\unknown\lights\lights\nsurlformatterservice` | ✅ | ❌ | ❌ | lite | Tuya | nsurlformatterservice |
-| tuya | ntlmconnectionpool | `tuya\unknown\lights\lights\ntlmconnectionpool` | ✅ | ❌ | ❌ | lite | Tuya | ntlmconnectionpool |
-| tuya | nullformatter | `tuya\unknown\lights\lights\nullformatter` | ✅ | ❌ | ❌ | lite | Tuya | nullformatter |
-| tuya | obsolete | `tuya\unknown\lights\lights\obsolete` | ✅ | ❌ | ❌ | lite | Tuya | obsolete |
-| tuya | of | `tuya\unknown\lights\lights\of` | ✅ | ❌ | ❌ | lite | Tuya | of |
-| tuya | only | `tuya\unknown\lights\lights\only` | ✅ | ❌ | ❌ | lite | Tuya | only |
-| tuya | onlyonce | `tuya\unknown\lights\lights\onlyonce` | ✅ | ❌ | ❌ | lite | Tuya | onlyonce |
-| tuya | onoffboundcluster | `tuya\unknown\lights\lights\onoffboundcluster` | ✅ | ❌ | ❌ | lite | Tuya | onoffboundcluster |
-| tuya | onoffcluster | `tuya\unknown\lights\lights\onoffcluster` | ✅ | ❌ | ❌ | lite | Tuya | onoffcluster |
-| tuya | opassoc | `tuya\unknown\lights\lights\opassoc` | ✅ | ❌ | ❌ | lite | Tuya | opassoc |
-| tuya | option_base | `tuya\unknown\lights\lights\option_base` | ✅ | ❌ | ❌ | lite | Tuya | option_base |
-| tuya | or | `tuya\unknown\lights\lights\or` | ✅ | ❌ | ❌ | lite | Tuya | or |
-| tuya | otacluster | `tuya\unknown\lights\lights\otacluster` | ✅ | ❌ | ❌ | lite | Tuya | otacluster |
-| tuya | outdoor2socket_1 | `tuya\unknown\lights\lights\outdoor2socket_1` | ✅ | ❌ | ❌ | lite | ,  | outdoor2socket_1 |
-| tuya | outdoor2socket_2 | `tuya\unknown\lights\lights\outdoor2socket_2` | ✅ | ❌ | ❌ | lite | ,  | outdoor2socket_2 |
-| tuya | outdoor2socket_driver | `tuya\unknown\lights\lights\outdoor2socket_driver` | ✅ | ❌ | ❌ | lite | Tuya | outdoor2socket_driver |
-| tuya | packagedetails | `tuya\unknown\lights\lights\packagedetails` | ✅ | ❌ | ❌ | lite | Tuya | packagedetails |
-| tuya | palette | `tuya\unknown\lights\lights\palette` | ✅ | ❌ | ❌ | lite | Tuya | palette |
-| tuya | panel | `tuya\unknown\lights\lights\panel` | ✅ | ❌ | ❌ | lite | Tuya | panel |
-| tuya | pangomarkupformatter | `tuya\unknown\lights\lights\pangomarkupformatter` | ✅ | ❌ | ❌ | lite | Tuya | pangomarkupformatter |
-| tuya | parsedrequirement | `tuya\unknown\lights\lights\parsedrequirement` | ✅ | ❌ | ❌ | lite | Tuya | parsedrequirement |
-| tuya | parses | `tuya\unknown\lights\lights\parses` | ✅ | ❌ | ❌ | lite | Tuya | parses |
-| tuya | passes | `tuya\unknown\lights\lights\passes` | ✅ | ❌ | ❌ | lite | Tuya | passes |
-| tuya | peekable | `tuya\unknown\lights\lights\peekable` | ✅ | ❌ | ❌ | lite | Tuya | peekable |
-| tuya | pipdeprecationwarning | `tuya\unknown\lights\lights\pipdeprecationwarning` | ✅ | ❌ | ❌ | lite | Tuya | pipdeprecationwarning |
-| tuya | pipimportredirectingfinder | `tuya\unknown\lights\lights\pipimportredirectingfinder` | ✅ | ❌ | ❌ | lite | Tuya | pipimportredirectingfinder |
-| tuya | pipprovider | `tuya\unknown\lights\lights\pipprovider` | ✅ | ❌ | ❌ | lite | Tuya | pipprovider |
-| tuya | pipreporter | `tuya\unknown\lights\lights\pipreporter` | ✅ | ❌ | ❌ | lite | Tuya | pipreporter |
-| tuya | pipxmlrpctransport | `tuya\unknown\lights\lights\pipxmlrpctransport` | ✅ | ❌ | ❌ | lite | Tuya | pipxmlrpctransport |
-| tuya | pollcontrolcluster | `tuya\unknown\lights\lights\pollcontrolcluster` | ✅ | ❌ | ❌ | lite | Tuya | pollcontrolcluster |
-| tuya | powerconfigurationcluster | `tuya\unknown\lights\lights\powerconfigurationcluster` | ✅ | ❌ | ❌ | lite | Tuya | powerconfigurationcluster |
-| tuya | powerprofilecluster | `tuya\unknown\lights\lights\powerprofilecluster` | ✅ | ❌ | ❌ | lite | Tuya | powerprofilecluster |
-| tuya | pressuremeasurementcluster | `tuya\unknown\lights\lights\pressuremeasurementcluster` | ✅ | ❌ | ❌ | lite | Tuya | pressuremeasurementcluster |
-| tuya | prettyhelpformatter | `tuya\unknown\lights\lights\prettyhelpformatter` | ✅ | ❌ | ❌ | lite | Tuya | prettyhelpformatter |
-| tuya | producing | `tuya\unknown\lights\lights\producing` | ✅ | ❌ | ❌ | lite | Tuya | producing |
-| tuya | providing | `tuya\unknown\lights\lights\providing` | ✅ | ❌ | ❌ | lite | Tuya | providing |
-| tuya | pumpconfigurationandcontrolcluster | `tuya\unknown\lights\lights\pumpconfigurationandcontrolcluster` | ✅ | ❌ | ❌ | lite | Tuya | pumpconfigurationandcontrolcluster |
-| tuya | pygmentsdoc | `tuya\unknown\lights\lights\pygmentsdoc` | ✅ | ❌ | ❌ | lite | Tuya | pygmentsdoc |
-| tuya | pyparsing_test | `tuya\unknown\lights\lights\pyparsing_test` | ✅ | ❌ | ❌ | lite | Tuya | pyparsing_test |
-| tuya | raises | `tuya\unknown\lights\lights\raises` | ✅ | ❌ | ❌ | lite | Tuya | raises |
-| tuya | rather | `tuya\unknown\lights\lights\rather` | ✅ | ❌ | ❌ | lite | Tuya | rather |
-| tuya | rdoc | `tuya\unknown\lights\lights\rdoc` | ✅ | ❌ | ❌ | lite | Tuya | rdoc |
-| tuya | re | `tuya\unknown\lights\lights\re` | ✅ | ❌ | ❌ | lite | Tuya | re |
-| tuya | recursively | `tuya\unknown\lights\lights\recursively` | ✅ | ❌ | ❌ | lite | Tuya | recursively |
-| tuya | redefiningstaticfieldasdynamic | `tuya\unknown\lights\lights\redefiningstaticfieldasdynamic` | ✅ | ❌ | ❌ | lite | Tuya | redefiningstaticfieldasdynamic |
-| tuya | redirecthandler | `tuya\unknown\lights\lights\redirecthandler` | ✅ | ❌ | ❌ | lite | Tuya | redirecthandler |
-| tuya | rediscache | `tuya\unknown\lights\lights\rediscache` | ✅ | ❌ | ❌ | lite | Tuya | rediscache |
-| tuya | region | `tuya\unknown\lights\lights\region` | ✅ | ❌ | ❌ | lite | Tuya | region |
-| tuya | register | `tuya\unknown\lights\lights\register` | ✅ | ❌ | ❌ | lite | Tuya | register |
-| tuya | relativehumiditycluster | `tuya\unknown\lights\lights\relativehumiditycluster` | ✅ | ❌ | ❌ | lite | Tuya | relativehumiditycluster |
-| tuya | relay_board_1_channel | `tuya\unknown\lights\lights\relay_board_1_channel` | ✅ | ❌ | ❌ | lite | Tuya | relay_board_1_channel |
-| tuya | relay_board_2_channel | `tuya\unknown\lights\lights\relay_board_2_channel` | ✅ | ❌ | ❌ | lite | Tuya | relay_board_2_channel |
-| tuya | relay_board_4_channel | `tuya\unknown\lights\lights\relay_board_4_channel` | ✅ | ❌ | ❌ | lite | Tuya | relay_board_4_channel |
-| tuya | renderables | `tuya\unknown\lights\lights\renderables` | ✅ | ❌ | ❌ | lite | Tuya | renderables |
-| tuya | reprerror | `tuya\unknown\lights\lights\reprerror` | ✅ | ❌ | ❌ | lite | Tuya | reprerror |
-| tuya | representing | `tuya\unknown\lights\lights\representing` | ✅ | ❌ | ❌ | lite | Tuya | representing |
-| tuya | represents | `tuya\unknown\lights\lights\represents` | ✅ | ❌ | ❌ | lite | Tuya | represents |
-| tuya | requestencodingmixin | `tuya\unknown\lights\lights\requestencodingmixin` | ✅ | ❌ | ❌ | lite | Tuya | requestencodingmixin |
-| tuya | requestexception | `tuya\unknown\lights\lights\requestexception` | ✅ | ❌ | ❌ | lite | Tuya | requestexception |
-| tuya | requestmethods | `tuya\unknown\lights\lights\requestmethods` | ✅ | ❌ | ❌ | lite | Tuya | requestmethods |
-| tuya | requirementset | `tuya\unknown\lights\lights\requirementset` | ✅ | ❌ | ❌ | lite | Tuya | requirementset |
-| tuya | resolvekeypath | `tuya\unknown\lights\lights\resolvekeypath` | ✅ | ❌ | ❌ | lite | Tuya | resolvekeypath |
-| tuya | resolver | `tuya\unknown\lights\lights\resolver` | ✅ | ❌ | ❌ | lite | Tuya | resolver |
-| tuya | resolverexception | `tuya\unknown\lights\lights\resolverexception` | ✅ | ❌ | ❌ | lite | Tuya | resolverexception |
-| tuya | resourcecache | `tuya\unknown\lights\lights\resourcecache` | ✅ | ❌ | ❌ | lite | Tuya | resourcecache |
-| tuya | resourcereader | `tuya\unknown\lights\lights\resourcereader` | ✅ | ❌ | ❌ | lite | Tuya | resourcereader |
-| tuya | result | `tuya\unknown\lights\lights\result` | ✅ | ❌ | ❌ | lite | Tuya | result |
-| tuya | retry_base | `tuya\unknown\lights\lights\retry_base` | ✅ | ❌ | ❌ | lite | Tuya | retry_base |
-| tuya | returned | `tuya\unknown\lights\lights\returned` | ✅ | ❌ | ❌ | lite | Tuya | returned |
-| tuya | returning | `tuya\unknown\lights\lights\returning` | ✅ | ❌ | ❌ | lite | Tuya | returning |
-| tuya | returns | `tuya\unknown\lights\lights\returns` | ✅ | ❌ | ❌ | lite | Tuya | returns |
-| tuya | rgb_bulb_e14 | `tuya\unknown\lights\lights\rgb_bulb_e14` | ✅ | ❌ | ❌ | lite | Tuya | rgb_bulb_e14 |
-| tuya | rgb_bulb_e27 | `tuya\unknown\lights\lights\rgb_bulb_e27` | ✅ | ❌ | ❌ | lite | Tuya | rgb_bulb_e27 |
-| tuya | rgb_ceiling_led_light | `tuya\unknown\lights\lights\rgb_ceiling_led_light` | ✅ | ❌ | ❌ | lite | Tuya | rgb_ceiling_led_light |
-| tuya | rgb_floor_led_light | `tuya\unknown\lights\lights\rgb_floor_led_light` | ✅ | ❌ | ❌ | lite | Tuya | rgb_floor_led_light |
-| tuya | rgb_led_light_bar | `tuya\unknown\lights\lights\rgb_led_light_bar` | ✅ | ❌ | ❌ | lite | Tuya | rgb_led_light_bar |
-| tuya | rgb_led_strip | `tuya\unknown\lights\lights\rgb_led_strip` | ✅ | ❌ | ❌ | lite | :  | rgb_led_strip |
-| tuya | rgb_led_strip_controller | `tuya\unknown\lights\lights\rgb_led_strip_controller` | ✅ | ❌ | ❌ | lite | Tuya | rgb_led_strip_controller |
-| tuya | rgb_mood_light | `tuya\unknown\lights\lights\rgb_mood_light` | ✅ | ❌ | ❌ | lite | Tuya | rgb_mood_light |
-| tuya | rgb_spot_gardenlight | `tuya\unknown\lights\lights\rgb_spot_gardenlight` | ✅ | ❌ | ❌ | lite | Tuya | rgb_spot_gardenlight |
-| tuya | rgb_spot_gu10 | `tuya\unknown\lights\lights\rgb_spot_gu10` | ✅ | ❌ | ❌ | lite | Tuya | rgb_spot_gu10 |
-| tuya | rgb_wall_led_light | `tuya\unknown\lights\lights\rgb_wall_led_light` | ✅ | ❌ | ❌ | lite | Tuya | rgb_wall_led_light |
-| tuya | richhandler | `tuya\unknown\lights\lights\richhandler` | ✅ | ❌ | ❌ | lite | Tuya | richhandler |
-| tuya | rotate | `tuya\unknown\lights\lights\rotate` | ✅ | ❌ | ❌ | lite | Tuya | rotate |
-| tuya | rundenotests | `tuya\unknown\lights\lights\rundenotests` | ✅ | ❌ | ❌ | lite | Tuya | rundenotests |
-| tuya | runs | `tuya\unknown\lights\lights\runs` | ✅ | ❌ | ❌ | lite | Tuya | runs |
-| tuya | safefilecache | `tuya\unknown\lights\lights\safefilecache` | ✅ | ❌ | ❌ | lite | Tuya | safefilecache |
-| tuya | said | `tuya\unknown\lights\lights\said` | ✅ | ❌ | ❌ | lite | Tuya | said |
-| tuya | saveopts | `tuya\unknown\lights\lights\saveopts` | ✅ | ❌ | ❌ | lite | Tuya | saveopts |
-| tuya | scenescluster | `tuya\unknown\lights\lights\scenescluster` | ✅ | ❌ | ❌ | lite | Tuya | scenescluster |
-| tuya | scheme | `tuya\unknown\lights\lights\scheme` | ✅ | ❌ | ❌ | lite | Tuya | scheme |
-| tuya | screen | `tuya\unknown\lights\lights\screen` | ✅ | ❌ | ❌ | lite | Tuya | screen |
-| tuya | sdist | `tuya\unknown\lights\lights\sdist` | ✅ | ❌ | ❌ | lite | Tuya | sdist |
-| tuya | sdist_add_defaults | `tuya\unknown\lights\lights\sdist_add_defaults` | ✅ | ❌ | ❌ | lite | Tuya | sdist_add_defaults |
-| tuya | searchscope | `tuya\unknown\lights\lights\searchscope` | ✅ | ❌ | ❌ | lite | Tuya | searchscope |
-| tuya | segment | `tuya\unknown\lights\lights\segment` | ✅ | ❌ | ❌ | lite | Tuya | segment |
-| tuya | selectionpreferences | `tuya\unknown\lights\lights\selectionpreferences` | ✅ | ❌ | ❌ | lite | Tuya | selectionpreferences |
-| tuya | serializer | `tuya\unknown\lights\lights\serializer` | ✅ | ❌ | ❌ | lite | Tuya | serializer |
-| tuya | setallbutonehidden | `tuya\unknown\lights\lights\setallbutonehidden` | ✅ | ❌ | ❌ | lite | Tuya | setallbutonehidden |
-| tuya | setup | `tuya\unknown\lights\lights\setup` | ✅ | ❌ | ❌ | lite | Tuya | setup |
-| tuya | setuptoolsdeprecationwarning | `tuya\unknown\lights\lights\setuptoolsdeprecationwarning` | ✅ | ❌ | ❌ | lite | Tuya | setuptoolsdeprecationwarning |
-| tuya | setup_keywords | `tuya\unknown\lights\lights\setup_keywords` | ✅ | ❌ | ❌ | lite | Tuya | setup_keywords |
-| tuya | shadeconfigurationcluster | `tuya\unknown\lights\lights\shadeconfigurationcluster` | ✅ | ❌ | ❌ | lite | Tuya | shadeconfigurationcluster |
-| tuya | should | `tuya\unknown\lights\lights\should` | ✅ | ❌ | ❌ | lite | Tuya | should |
-| tuya | showcommand | `tuya\unknown\lights\lights\showcommand` | ✅ | ❌ | ❌ | lite | Tuya | showcommand |
-| tuya | showextendeddebug | `tuya\unknown\lights\lights\showextendeddebug` | ✅ | ❌ | ❌ | lite | Tuya | showextendeddebug |
-| tuya | silentreporter | `tuya\unknown\lights\lights\silentreporter` | ✅ | ❌ | ❌ | lite | Tuya | silentreporter |
-| tuya | simplereader | `tuya\unknown\lights\lights\simplereader` | ✅ | ❌ | ❌ | lite | Tuya | simplereader |
-| tuya | simply | `tuya\unknown\lights\lights\simply` | ✅ | ❌ | ❌ | lite | Tuya | simply |
-| tuya | since | `tuya\unknown\lights\lights\since` | ✅ | ❌ | ❌ | lite | Tuya | since |
-| tuya | sleep_using_event | `tuya\unknown\lights\lights\sleep_using_event` | ✅ | ❌ | ❌ | lite | Tuya | sleep_using_event |
-| tuya | smart_remote_1b | `tuya\unknown\lights\lights\smart_remote_1b` | ✅ | ❌ | ❌ | lite | Tuya | smart_remote_1b |
-| tuya | smart_remote_1b_2 | `tuya\unknown\lights\lights\smart_remote_1b_2` | ✅ | ❌ | ❌ | lite | Tuya | smart_remote_1b_2 |
-| tuya | smart_remote_4b | `tuya\unknown\lights\lights\smart_remote_4b` | ✅ | ❌ | ❌ | lite | :  | smart_remote_4b |
-| tuya | socket_power_strip | `tuya\unknown\lights\lights\socket_power_strip` | ✅ | ❌ | ❌ | lite | Tuya | socket_power_strip |
-| tuya | socket_power_strip_four | `tuya\unknown\lights\lights\socket_power_strip_four` | ✅ | ❌ | ❌ | lite | Tuya | socket_power_strip_four |
-| tuya | socket_power_strip_four_three | `tuya\unknown\lights\lights\socket_power_strip_four_three` | ✅ | ❌ | ❌ | lite | Tuya | socket_power_strip_four_three |
-| tuya | socket_power_strip_four_two | `tuya\unknown\lights\lights\socket_power_strip_four_two` | ✅ | ❌ | ❌ | lite | Tuya | socket_power_strip_four_two |
-| tuya | sourcedistribution | `tuya\unknown\lights\lights\sourcedistribution` | ✅ | ❌ | ❌ | lite | Tuya | sourcedistribution |
-| tuya | span | `tuya\unknown\lights\lights\span` | ✅ | ❌ | ❌ | lite | Tuya | span |
-| tuya | specloaderadapter | `tuya\unknown\lights\lights\specloaderadapter` | ✅ | ❌ | ❌ | lite | Tuya | specloaderadapter |
-| tuya | spinnerinterface | `tuya\unknown\lights\lights\spinnerinterface` | ✅ | ❌ | ❌ | lite | Tuya | spinnerinterface |
-| tuya | stack | `tuya\unknown\lights\lights\stack` | ✅ | ❌ | ❌ | lite | Tuya | stack |
-| tuya | stasheduninstallpathset | `tuya\unknown\lights\lights\stasheduninstallpathset` | ✅ | ❌ | ❌ | lite | Tuya | stasheduninstallpathset |
-| tuya | stop_base | `tuya\unknown\lights\lights\stop_base` | ✅ | ❌ | ❌ | lite | Tuya | stop_base |
-| tuya | streamwrapper | `tuya\unknown\lights\lights\streamwrapper` | ✅ | ❌ | ❌ | lite | Tuya | streamwrapper |
-| tuya | stringio | `tuya\unknown\lights\lights\stringio` | ✅ | ❌ | ❌ | lite | Tuya | stringio |
-| tuya | struct | `tuya\unknown\lights\lights\struct` | ✅ | ❌ | ❌ | lite | Tuya | struct |
-| tuya | stylemeta | `tuya\unknown\lights\lights\stylemeta` | ✅ | ❌ | ❌ | lite | Tuya | stylemeta |
-| tuya | supplied | `tuya\unknown\lights\lights\supplied` | ✅ | ❌ | ❌ | lite | Tuya | supplied |
-| tuya | syntaxtheme | `tuya\unknown\lights\lights\syntaxtheme` | ✅ | ❌ | ❌ | lite | Tuya | syntaxtheme |
-| tuya | t | `tuya\unknown\lights\lights\t` | ✅ | ❌ | ❌ | lite | Tuya | t |
-| tuya | taking | `tuya\unknown\lights\lights\taking` | ✅ | ❌ | ❌ | lite | Tuya | taking |
-| tuya | targetpython | `tuya\unknown\lights\lights\targetpython` | ✅ | ❌ | ❌ | lite | Tuya | targetpython |
-| tuya | tc_dl_driver | `tuya\unknown\lights\lights\tc_dl_driver` | ✅ | ❌ | ❌ | lite | Tuya | tc_dl_driver |
-| tuya | tempdirectorytyperegistry | `tuya\unknown\lights\lights\tempdirectorytyperegistry` | ✅ | ❌ | ❌ | lite | Tuya | tempdirectorytyperegistry |
-| tuya | temperaturemeasurement | `tuya\unknown\lights\lights\temperaturemeasurement` | ✅ | ❌ | ❌ | lite | Tuya | temperaturemeasurement |
-| tuya | terminaltheme | `tuya\unknown\lights\lights\terminaltheme` | ✅ | ❌ | ❌ | lite | Tuya | terminaltheme |
-| tuya | textfile | `tuya\unknown\lights\lights\textfile` | ✅ | ❌ | ❌ | lite | Tuya | textfile |
-| tuya | that | `tuya\unknown\lights\lights\that` | ✅ | ❌ | ❌ | lite | Tuya | that |
-| tuya | the | `tuya\unknown\lights\lights\the` | ✅ | ❌ | ❌ | lite | Tuya | the |
-| tuya | timecluster | `tuya\unknown\lights\lights\timecluster` | ✅ | ❌ | ❌ | lite | Tuya | timecluster |
-| tuya | to | `tuya\unknown\lights\lights\to` | ✅ | ❌ | ❌ | lite | Tuya | to |
-| tuya | tomldecodeerror | `tuya\unknown\lights\lights\tomldecodeerror` | ✅ | ❌ | ❌ | lite | Tuya | tomldecodeerror |
-| tuya | tooltipwindow | `tuya\unknown\lights\lights\tooltipwindow` | ✅ | ❌ | ❌ | lite | Tuya | tooltipwindow |
-| tuya | tornadoretrying | `tuya\unknown\lights\lights\tornadoretrying` | ✅ | ❌ | ❌ | lite | Tuya | tornadoretrying |
-| tuya | touchlinkcluster | `tuya\unknown\lights\lights\touchlinkcluster` | ✅ | ❌ | ❌ | lite | Tuya | touchlinkcluster |
-| tuya | tpfn | `tuya\unknown\lights\lights\tpfn` | ✅ | ❌ | ❌ | lite | Tuya | tpfn |
-| tuya | transformedhit | `tuya\unknown\lights\lights\transformedhit` | ✅ | ❌ | ❌ | lite | Tuya | transformedhit |
-| tuya | traversableresourcesloader | `tuya\unknown\lights\lights\traversableresourcesloader` | ✅ | ❌ | ❌ | lite | Tuya | traversableresourcesloader |
-| tuya | tree | `tuya\unknown\lights\lights\tree` | ✅ | ❌ | ❌ | lite | Tuya | tree |
-| tuya | tryloadinglibrary | `tuya\unknown\lights\lights\tryloadinglibrary` | ✅ | ❌ | ❌ | lite | Tuya | tryloadinglibrary |
-| tuya | tunable_bulb_e14 | `tuya\unknown\lights\lights\tunable_bulb_e14` | ✅ | ❌ | ❌ | lite | Tuya | tunable_bulb_e14 |
-| tuya | tunable_bulb_e27 | `tuya\unknown\lights\lights\tunable_bulb_e27` | ✅ | ❌ | ❌ | lite | Tuya | tunable_bulb_e27 |
-| tuya | tunable_spot_gu10 | `tuya\unknown\lights\lights\tunable_spot_gu10` | ✅ | ❌ | ❌ | lite | Tuya | tunable_spot_gu10 |
-| tuya | tuyacolorcontrolcluster | `tuya\unknown\lights\lights\tuyacolorcontrolcluster` | ✅ | ❌ | ❌ | lite | Tuya | tuyacolorcontrolcluster |
-| tuya | tuyadiagnosticdriver | `tuya\unknown\lights\lights\tuyadiagnosticdriver` | ✅ | ❌ | ❌ | lite | Tuya | tuyadiagnosticdriver |
-| tuya | tuyaspecificboundcluster | `tuya\unknown\lights\lights\tuyaspecificboundcluster` | ✅ | ❌ | ❌ | lite | Tuya | tuyaspecificboundcluster |
-| tuya | tuyaspecificclusterdevice | `tuya\unknown\lights\lights\tuyaspecificclusterdevice` | ✅ | ❌ | ❌ | lite | Tuya | tuyaspecificclusterdevice |
-| tuya | tuyazigbee | `tuya\unknown\lights\lights\tuyazigbee` | ✅ | ❌ | ❌ | lite | Tuya | tuyazigbee |
-| tuya | tuyazigbeelightdevice | `tuya\unknown\lights\lights\tuyazigbeelightdevice` | ✅ | ❌ | ❌ | lite | ,  | tuyazigbeelightdevice |
-| tuya | unblur | `tuya\unknown\lights\lights\unblur` | ✅ | ❌ | ❌ | lite | Tuya | unblur |
-| tuya | uninstallcommand | `tuya\unknown\lights\lights\uninstallcommand` | ✅ | ❌ | ❌ | lite | Tuya | uninstallcommand |
-| tuya | unix | `tuya\unknown\lights\lights\unix` | ✅ | ❌ | ❌ | lite | Tuya | unix |
-| tuya | unpackexception | `tuya\unknown\lights\lights\unpackexception` | ✅ | ❌ | ❌ | lite | Tuya | unpackexception |
-| tuya | unrecognizedformat | `tuya\unknown\lights\lights\unrecognizedformat` | ✅ | ❌ | ❌ | lite | Tuya | unrecognizedformat |
-| tuya | unsupportedversionerror | `tuya\unknown\lights\lights\unsupportedversionerror` | ✅ | ❌ | ❌ | lite | Tuya | unsupportedversionerror |
-| tuya | upload | `tuya\unknown\lights\lights\upload` | ✅ | ❌ | ❌ | lite | Tuya | upload |
-| tuya | upload_docs | `tuya\unknown\lights\lights\upload_docs` | ✅ | ❌ | ❌ | lite | Tuya | upload_docs |
-| tuya | url | `tuya\unknown\lights\lights\url` | ✅ | ❌ | ❌ | lite | Tuya | url |
-| tuya | use | `tuya\unknown\lights\lights\use` | ✅ | ❌ | ❌ | lite | Tuya | use |
-| tuya | usecolors | `tuya\unknown\lights\lights\usecolors` | ✅ | ❌ | ❌ | lite | Tuya | usecolors |
-| tuya | used | `tuya\unknown\lights\lights\used` | ✅ | ❌ | ❌ | lite | Tuya | used |
-| tuya | uses | `tuya\unknown\lights\lights\uses` | ✅ | ❌ | ❌ | lite | Tuya | uses |
-| tuya | valvecontroller | `tuya\unknown\lights\lights\valvecontroller` | ✅ | ❌ | ❌ | lite | ,  | valvecontroller |
-| tuya | vendorimporter | `tuya\unknown\lights\lights\vendorimporter` | ✅ | ❌ | ❌ | lite | Tuya | vendorimporter |
-| tuya | versiondict | `tuya\unknown\lights\lights\versiondict` | ✅ | ❌ | ❌ | lite | Tuya | versiondict |
-| tuya | versionpredicate | `tuya\unknown\lights\lights\versionpredicate` | ✅ | ❌ | ❌ | lite | Tuya | versionpredicate |
-| tuya | vncdesktop | `tuya\unknown\lights\lights\vncdesktop` | ✅ | ❌ | ❌ | lite | Tuya | vncdesktop |
-| tuya | wait_base | `tuya\unknown\lights\lights\wait_base` | ✅ | ❌ | ❌ | lite | Tuya | wait_base |
-| tuya | wall_remote_1_gang | `tuya\unknown\lights\lights\wall_remote_1_gang` | ✅ | ❌ | ❌ | lite | Tuya | wall_remote_1_gang |
-| tuya | wall_remote_3_gang | `tuya\unknown\lights\lights\wall_remote_3_gang` | ✅ | ❌ | ❌ | lite | Tuya | wall_remote_3_gang |
-| tuya | wall_remote_4_gang | `tuya\unknown\lights\lights\wall_remote_4_gang` | ✅ | ❌ | ❌ | lite | Tuya | wall_remote_4_gang |
-| tuya | wall_remote_4_gang_2 | `tuya\unknown\lights\lights\wall_remote_4_gang_2` | ✅ | ❌ | ❌ | lite | Tuya | wall_remote_4_gang_2 |
-| tuya | wall_remote_6_gang | `tuya\unknown\lights\lights\wall_remote_6_gang` | ✅ | ❌ | ❌ | lite | Tuya | wall_remote_6_gang |
-| tuya | wall_switch_3_gang | `tuya\unknown\lights\lights\wall_switch_3_gang` | ✅ | ❌ | ❌ | lite | ,  | wall_switch_3_gang |
-| tuya | wall_switch_4_gang | `tuya\unknown\lights\lights\wall_switch_4_gang` | ✅ | ❌ | ❌ | lite | ,  | wall_switch_4_gang |
-| tuya | wdf_class_bind_info | `tuya\unknown\lights\lights\wdf_class_bind_info` | ✅ | ❌ | ❌ | lite | Tuya | wdf_class_bind_info |
-| tuya | wheel | `tuya\unknown\lights\lights\wheel` | ✅ | ❌ | ❌ | lite | Tuya | wheel |
-| tuya | wheelcommand | `tuya\unknown\lights\lights\wheelcommand` | ✅ | ❌ | ❌ | lite | Tuya | wheelcommand |
-| tuya | wheeldistribution | `tuya\unknown\lights\lights\wheeldistribution` | ✅ | ❌ | ❌ | lite | Tuya | wheeldistribution |
-| tuya | which | `tuya\unknown\lights\lights\which` | ✅ | ❌ | ❌ | lite | Tuya | which |
-| tuya | will | `tuya\unknown\lights\lights\will` | ✅ | ❌ | ❌ | lite | Tuya | will |
-| tuya | wincolor | `tuya\unknown\lights\lights\wincolor` | ✅ | ❌ | ❌ | lite | Tuya | wincolor |
-| tuya | windows | `tuya\unknown\lights\lights\windows` | ✅ | ❌ | ❌ | lite | Tuya | windows |
-| tuya | windowtitle | `tuya\unknown\lights\lights\windowtitle` | ✅ | ❌ | ❌ | lite | Tuya | windowtitle |
-| tuya | winreg | `tuya\unknown\lights\lights\winreg` | ✅ | ❌ | ❌ | lite | Tuya | winreg |
-| tuya | with | `tuya\unknown\lights\lights\with` | ✅ | ❌ | ❌ | lite | Tuya | with |
-| tuya | within | `tuya\unknown\lights\lights\within` | ✅ | ❌ | ❌ | lite | Tuya | within |
-| tuya | works | `tuya\unknown\lights\lights\works` | ✅ | ❌ | ❌ | lite | Tuya | works |
-| tuya | would | `tuya\unknown\lights\lights\would` | ✅ | ❌ | ❌ | lite | Tuya | would |
-| tuya | x | `tuya\unknown\lights\lights\x` | ✅ | ❌ | ❌ | lite | Tuya | x |
-| tuya | you | `tuya\unknown\lights\lights\you` | ✅ | ❌ | ❌ | lite | Tuya | you |
-| tuya | zigbeedriver | `tuya\unknown\lights\lights\zigbeedriver` | ✅ | ❌ | ❌ | lite | Tuya | zigbeedriver |
-| tuya | zigbeerepeater | `tuya\unknown\lights\lights\zigbeerepeater` | ✅ | ❌ | ❌ | lite | :  | zigbeerepeater |
-| tuya | _bit | `tuya\unknown\lights\lights\_bit` | ✅ | ❌ | ❌ | lite | Tuya | _bit |
-| tuya | _cache | `tuya\unknown\lights\lights\_cache` | ✅ | ❌ | ❌ | lite | Tuya | _cache |
-| tuya | _distributionfinder | `tuya\unknown\lights\lights\_distributionfinder` | ✅ | ❌ | ❌ | lite | Tuya | _distributionfinder |
-| tuya | _distwithlatestinfo | `tuya\unknown\lights\lights\_distwithlatestinfo` | ✅ | ❌ | ❌ | lite | Tuya | _distwithlatestinfo |
-| tuya | _editableinfo | `tuya\unknown\lights\lights\_editableinfo` | ✅ | ❌ | ❌ | lite | Tuya | _editableinfo |
-| tuya | _elffileheader | `tuya\unknown\lights\lights\_elffileheader` | ✅ | ❌ | ❌ | lite | Tuya | _elffileheader |
-| tuya | _installrequirementbackedcandidate | `tuya\unknown\lights\lights\_installrequirementbackedcandidate` | ✅ | ❌ | ❌ | lite | Tuya | _installrequirementbackedcandidate |
-| tuya | _lazyclassproperty | `tuya\unknown\lights\lights\_lazyclassproperty` | ✅ | ❌ | ❌ | lite | Tuya | _lazyclassproperty |
-| tuya | _notapicontent | `tuya\unknown\lights\lights\_notapicontent` | ✅ | ❌ | ❌ | lite | Tuya | _notapicontent |
-| tuya | _parseresultswithoffset | `tuya\unknown\lights\lights\_parseresultswithoffset` | ✅ | ❌ | ❌ | lite | Tuya | _parseresultswithoffset |
-| tuya | _prefix | `tuya\unknown\lights\lights\_prefix` | ✅ | ❌ | ❌ | lite | Tuya | _prefix |
-| tuya | _tokentype | `tuya\unknown\lights\lights\_tokentype` | ✅ | ❌ | ❌ | lite | Tuya | _tokentype |
-| tuya | _trackthread | `tuya\unknown\lights\lights\_trackthread` | ✅ | ❌ | ❌ | lite | Tuya | _trackthread |
-| tuya | _trivialre | `tuya\unknown\lights\lights\_trivialre` | ✅ | ❌ | ❌ | lite | Tuya | _trivialre |
-| tuya | _typeof | `tuya\unknown\lights\lights\_typeof` | ✅ | ❌ | ❌ | lite | Tuya | _typeof |
-| tuya | __config_flags | `tuya\unknown\lights\lights\__config_flags` | ✅ | ❌ | ❌ | lite | Tuya | __config_flags |
-| tuya | lights_tuya_ts0501 | `tuya\unknown\lights\lights_tuya_ts0501` | ✅ | ❌ | ❌ | lite | Tuya | ts0501a-light |
-| zigbee | sensors_zigbee_generic | `zigbee\sensors\generic-unknown` | ✅ | ❌ | ❌ | full | generic | xiaomi-aqara-temperature-4 |
-| zigbee | Sensors | `zigbee\sensors\sensors-unknown` | ✅ | ❌ | ✅ | full | _TZ3000 | TS0601 |
-| zigbee | sensors_zigbee_zigbee-sensor | `zigbee\sensors\zigbee-sensor-unknown` | ✅ | ❌ | ❌ | full | generic | zigbee-sensor |
+---
+**📅 Généré**: 2025-08-06T12:05:41.272Z
+**🎯 Objectif**: Matrice complète des drivers
+**✅ Statut**: **MATRICE GÉNÉRÉE**
+**🚀 MEGA-PROMPT ULTIME - VERSION FINALE 2025**

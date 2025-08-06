@@ -2,7 +2,7 @@
 
 const { ZigBeeDevice } = require('homey-meshdriver');
 
-class TuyaSwitchDevice extends ZigBeeDevice {
+class ZigbeeOnOffDevice extends ZigBeeDevice {
     async onMeshInit() {
         await super.onMeshInit();
         
@@ -12,13 +12,12 @@ class TuyaSwitchDevice extends ZigBeeDevice {
         // Register capabilities
         this.registerCapability('onoff', 'genOnOff');
         
-        // Handle device specific logic
-        this.log('Tuya Switch Device initialized');
+        this.log('Zigbee OnOff Device initialized');
     }
 
     async onSettings({ oldSettings, newSettings, changedKeys }) {
-        this.log('Tuya Switch Device settings changed');
+        this.log('Zigbee OnOff Device settings changed');
     }
 }
 
-module.exports = TuyaSwitchDevice;
+module.exports = ZigbeeOnOffDevice; 
