@@ -1,12 +1,24 @@
-// MEGA-PROMPT ULTIME - VERSION FINALE 2025
-// Enhanced with enrichment mode
-'use strict';const { TuyaDevice } = require('homey-tuya');class Device extends TuyaDevice { async onInit() { await super.onInit(); this.log(' device initialized'); this.log('Source: D:\Download\Compressed\com.tuya.zigbee-SDK3_2\com.tuya.zigbee-SDK3\drivers\wall_switch_6_gang_tuya\driver.compose.json'); this.log('Original file: driver.compose.json'); // Register capabilities } }module.exports = Device;
+'use strict';
 
-// Enhanced error handling
-process.on('unhandledRejection', (reason, promise) => {
-    console.error('Unhandled Rejection at:', promise, 'reason:', reason);
-});
+const { ZigBeeDevice } = require('homey-meshdriver');
 
-process.on('uncaughtException', (error) => {
-    console.error('Uncaught Exception:', error);
-});
+class TuyaSwitchDevice extends ZigBeeDevice {
+    async onMeshInit() {
+        await super.onMeshInit();
+        
+        // Enable debugging
+        this.enableDebug();
+        
+        // Register capabilities
+        this.registerCapability('onoff', 'genOnOff');
+        
+        // Handle device specific logic
+        this.log('Tuya Switch Device initialized');
+    }
+
+    async onSettings({ oldSettings, newSettings, changedKeys }) {
+        this.log('Tuya Switch Device settings changed');
+    }
+}
+
+module.exports = TuyaSwitchDevice;

@@ -1,0 +1,53 @@
+{
+  "id": "zigbee-onoff",
+  "title": {
+    "en": "Zigbee OnOff",
+    "nl": "Zigbee AanUit",
+    "fr": "Zigbee MarcheArrêt",
+    "de": "Zigbee EinAus"
+  },
+  "category": [
+    "switch"
+  ],
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Switch",
+        "nl": "Schakelaar",
+        "fr": "Interrupteur",
+        "de": "Schalter"
+      }
+    }
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "OnOff Settings",
+        "nl": "AanUit Instellingen",
+        "fr": "Paramètres MarcheArrêt",
+        "de": "EinAus Einstellungen"
+      }
+    }
+  ]
+} 

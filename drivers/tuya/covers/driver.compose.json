@@ -1,0 +1,63 @@
+{
+  "id": "tuya-cover",
+  "title": {
+    "en": "Tuya Cover",
+    "nl": "Tuya Bedekking",
+    "fr": "Volet Tuya",
+    "de": "Tuya Abdeckung"
+  },
+  "category": [
+    "windowcoverings"
+  ],
+  "capabilities": [
+    "windowcoverings_state",
+    "windowcoverings_set",
+    "windowcoverings_tilt_set"
+  ],
+  "capabilitiesOptions": {
+    "windowcoverings_state": {
+      "title": {
+        "en": "Cover State",
+        "nl": "Bedekking Status",
+        "fr": "État du volet",
+        "de": "Abdeckungsstatus"
+      }
+    },
+    "windowcoverings_set": {
+      "title": {
+        "en": "Cover Position",
+        "nl": "Bedekking Positie",
+        "fr": "Position du volet",
+        "de": "Abdeckungsposition"
+      }
+    }
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Cover Settings",
+        "nl": "Bedekking Instellingen",
+        "fr": "Paramètres du volet",
+        "de": "Abdeckungseinstellungen"
+      }
+    }
+  ]
+} 

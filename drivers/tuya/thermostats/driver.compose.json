@@ -1,30 +1,66 @@
 {
-  "id": "thermostats",
-  "class": "thermostat",
-  "capabilities": [
-    "onoff"
+  "id": "tuya-thermostat",
+  "title": {
+    "en": "Tuya Thermostat",
+    "nl": "Tuya Thermostaat",
+    "fr": "Thermostat Tuya",
+    "de": "Tuya Thermostat"
+  },
+  "category": [
+    "climate"
   ],
-  "name": {
-    "en": "thermostats",
-    "fr": "thermostats",
-    "nl": "thermostats",
-    "ta": "thermostats"
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "capabilitiesOptions": {
+    "target_temperature": {
+      "title": {
+        "en": "Target Temperature",
+        "nl": "Doeltemperatuur",
+        "fr": "Température cible",
+        "de": "Zieltemperatur"
+      },
+      "min": 5,
+      "max": 30,
+      "step": 0.5
+    },
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature",
+        "nl": "Temperatuur",
+        "fr": "Température",
+        "de": "Temperatur"
+      }
+    }
   },
   "images": {
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png"
   },
-  "manufacturername": ": [\n ",
-  "model": "TS0601",
-  "originalFile": "driver.compose.json",
-  "extracted": "2025-08-05T08:36:09.288Z",
-  "metadata": {
-    "enriched": true,
-    "enrichmentDate": "2025-08-05T17:09:10.865Z",
-    "megaPromptVersion": "ULTIME - VERSION FINALE 2025"
-  },
-  "clusters": [
-    "genBasic",
-    "genOnOff"
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Thermostat Settings",
+        "nl": "Thermostaat Instellingen",
+        "fr": "Paramètres du thermostat",
+        "de": "Thermostateinstellungen"
+      }
+    }
   ]
 }
