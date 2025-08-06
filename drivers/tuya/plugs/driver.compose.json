@@ -1,37 +1,17 @@
 {
   "id": "tuya-plug",
-  "title": {
-    "en": "Tuya Plug",
-    "nl": "Tuya Stekker",
-    "fr": "Prise Tuya",
-    "de": "Tuya Steckdose"
-  },
-  "category": [
-    "plug"
-  ],
+  "class": "socket",
   "capabilities": [
     "onoff",
     "measure_power",
-    "measure_voltage",
-    "measure_current"
+    "measure_current",
+    "measure_voltage"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "title": {
-        "en": "Plug",
-        "nl": "Stekker",
-        "fr": "Prise",
-        "de": "Steckdose"
-      }
-    },
-    "measure_power": {
-      "title": {
-        "en": "Power",
-        "nl": "Vermogen",
-        "fr": "Puissance",
-        "de": "Leistung"
-      }
-    }
+  "name": {
+    "en": "Tuya Plug",
+    "nl": "Tuya Stopcontact",
+    "fr": "Prise Tuya",
+    "de": "Tuya Steckdose"
   },
   "images": {
     "small": "/assets/images/small.png",
@@ -42,22 +22,26 @@
       "id": "list_devices",
       "template": "list_devices",
       "navigation": {
-        "next": "add_devices"
+        "next": "list_devices"
       }
-    },
-    {
-      "id": "add_devices",
-      "template": "add_devices"
     }
   ],
   "settings": [
     {
-      "type": "group",
+      "id": "poll_interval",
+      "type": "number",
       "label": {
-        "en": "Plug Settings",
-        "nl": "Stekker Instellingen",
-        "fr": "Paramètres de la prise",
-        "de": "Steckdoseneinstellungen"
+        "en": "Poll Interval (seconds)",
+        "nl": "Polling Interval (seconden)",
+        "fr": "Intervalle de Polling (secondes)",
+        "de": "Polling Intervall (Sekunden)"
+      },
+      "value": 30,
+      "hint": {
+        "en": "How often to poll the device for status updates",
+        "nl": "Hoe vaak het apparaat wordt gecontroleerd voor status updates",
+        "fr": "Fréquence de vérification des mises à jour de statut",
+        "de": "Wie oft das Gerät auf Statusaktualisierungen abgefragt wird"
       }
     }
   ]
