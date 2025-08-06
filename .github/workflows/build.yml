@@ -48,6 +48,22 @@ jobs:
           name: build-${{ matrix.mode }}
           path: dist/
 
+      - name: Generate documentation
+        run: |
+          if [ "${{ matrix.mode }}" = "full" ]; then
+            node scripts/generate-matrix.js
+            echo "📚 Documentation generated for ${{ matrix.mode }} mode"
+          fi
+
+      - name: Upload documentation
+        uses: actions/upload-artifact@v3
+        with:
+          name: docs-${{ matrix.mode }}
+          path: |
+            drivers-matrix.md
+            drivers-matrix.html
+            README_EN.md
+
       - name: Generate build report
         run: |
           echo "📊 Generating build report for $TUYA_MODE mode..."

@@ -16,7 +16,7 @@
   },
   "manufacturername": "Tuya",
   "model": "TS0601",
-  "originalFile": "thermostat_programming.json",
+  "originalFile": "driver.compose.json",
   "extracted": "2025-08-05T08:35:43.524Z",
   "fusion": {
     "date": "2025-08-05T13:17:00.684Z",
@@ -27,5 +27,24 @@
   "clusters": [
     "genBasic",
     "genOnOff"
-  ]
+  ],
+  "title": {
+    "en": "Thermostats Device",
+    "nl": "Thermostats Apparaat"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "extractedAt": "2025-08-06T08:05:11.466Z",
+  "fixedAt": "2025-08-06T08:05:11.466Z"
 }

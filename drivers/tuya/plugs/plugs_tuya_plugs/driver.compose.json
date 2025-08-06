@@ -16,7 +16,7 @@
   },
   "manufacturername": "Tuya",
   "model": "TS0601",
-  "originalFile": "tuya_zigbee_cursor_full_bundle.txt",
+  "originalFile": "driver.compose.json",
   "extracted": "2025-08-05T08:36:40.760Z",
   "metadata": {
     "enriched": true,
@@ -26,5 +26,24 @@
   "clusters": [
     "genBasic",
     "genOnOff"
-  ]
+  ],
+  "title": {
+    "en": "Plugs_tuya_plugs Device",
+    "nl": "Plugs_tuya_plugs Apparaat"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "extractedAt": "2025-08-06T08:05:11.208Z",
+  "fixedAt": "2025-08-06T08:05:11.208Z"
 }

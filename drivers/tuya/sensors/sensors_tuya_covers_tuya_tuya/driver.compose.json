@@ -84,5 +84,12 @@
   "clusters": [
     "genBasic",
     "genOnOff"
-  ]
+  ],
+  "title": {
+    "en": "Sensors_tuya_covers_tuya_tuya Device",
+    "nl": "Sensors_tuya_covers_tuya_tuya Apparaat"
+  },
+  "originalFile": "driver.compose.json",
+  "extractedAt": "2025-08-06T08:05:11.269Z",
+  "fixedAt": "2025-08-06T08:05:11.269Z"
 }

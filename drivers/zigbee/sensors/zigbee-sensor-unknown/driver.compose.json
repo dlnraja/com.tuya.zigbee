@@ -61,5 +61,12 @@
   "clusters": [
     "genBasic",
     "genOnOff"
-  ]
+  ],
+  "title": {
+    "en": "Zigbee-sensor-unknown Device",
+    "nl": "Zigbee-sensor-unknown Apparaat"
+  },
+  "originalFile": "driver.compose.json",
+  "extractedAt": "2025-08-06T08:05:11.614Z",
+  "fixedAt": "2025-08-06T08:05:11.614Z"
 }
