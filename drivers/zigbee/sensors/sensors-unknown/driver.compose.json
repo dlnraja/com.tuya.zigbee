@@ -49,5 +49,25 @@
     "megaPromptVersion": "ULTIME - VERSION FINALE 2025"
   },
   "manufacturername": "_TZ3000",
-  "model": "TS0601"
+  "model": "TS0601",
+  "title": {
+    "en": "Sensors-unknown Device",
+    "nl": "Sensors-unknown Apparaat"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "originalFile": "driver.compose.json",
+  "extractedAt": "2025-08-06T08:05:11.588Z",
+  "fixedAt": "2025-08-06T08:05:11.588Z"
 }

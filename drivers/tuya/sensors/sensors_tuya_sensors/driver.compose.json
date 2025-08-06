@@ -27,5 +27,24 @@
   "clusters": [
     "genBasic",
     "genOnOff"
-  ]
+  ],
+  "title": {
+    "en": "Sensors_tuya_sensors Device",
+    "nl": "Sensors_tuya_sensors Apparaat"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "extractedAt": "2025-08-06T08:05:11.298Z",
+  "fixedAt": "2025-08-06T08:05:11.298Z"
 }

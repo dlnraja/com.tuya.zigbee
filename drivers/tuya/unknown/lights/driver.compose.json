@@ -16,7 +16,7 @@
   },
   "manufacturername": ": [\n ",
   "model": "TS0601",
-  "originalFile": "app.json",
+  "originalFile": "driver.compose.json",
   "extracted": "2025-08-05T08:36:36.651Z",
   "metadata": {
     "enriched": true,
@@ -26,5 +26,24 @@
   "clusters": [
     "genBasic",
     "genOnOff"
-  ]
+  ],
+  "title": {
+    "en": "Lights Device",
+    "nl": "Lights Apparaat"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "extractedAt": "2025-08-06T08:05:11.551Z",
+  "fixedAt": "2025-08-06T08:05:11.551Z"
 }

@@ -72,5 +72,12 @@
   "clusters": [
     "genBasic",
     "genOnOff"
-  ]
+  ],
+  "title": {
+    "en": "Thermostats_tuya_tuya Device",
+    "nl": "Thermostats_tuya_tuya Apparaat"
+  },
+  "originalFile": "driver.compose.json",
+  "extractedAt": "2025-08-06T08:05:11.529Z",
+  "fixedAt": "2025-08-06T08:05:11.529Z"
 }
