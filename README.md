@@ -1,11 +1,20 @@
 # 🚀 Universal TUYA Zigbee Device App
 
+## 📊 Status
+
 [![Dashboard](https://img.shields.io/badge/Dashboard-Live-green?style=flat-square&logo=github)](https://dlnraja.github.io/com.tuya.zigbee/docs/dashboard.html)
 [![CI Status](https://img.shields.io/badge/CI-Passing-brightgreen?style=flat-square&logo=github-actions)](https://github.com/dlnraja/com.tuya.zigbee/actions)
 [![Drivers](https://img.shields.io/badge/Drivers-147%2B-blue?style=flat-square&logo=homey)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/drivers-matrix.md)
 [![Devices](https://img.shields.io/badge/Devices-300%2B-orange?style=flat-square&logo=zigbee)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/drivers-matrix.md)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square&logo=github)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Version](https://img.shields.io/badge/Version-1.0.0-purple?style=flat-square&logo=homey)](https://github.com/dlnraja/com.tuya.zigbee/releases)
+
+## 🔄 Workflows
+
+[![CI Build](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/build.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/build.yml)
+[![Drivers Validated](https://img.shields.io/badge/Drivers-Validated-blue?style=flat-square&logo=home-assistant)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/validate-drivers.yml)
+[![Sync tuya-light](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/sync-tuya-light.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/sync-tuya-light.yml)
+[![Deploy Dashboard](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/generate-dashboard.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/generate-dashboard.yml)
 
 ## 📅 Date
 **${new Date().toLocaleString('fr-FR')}**
