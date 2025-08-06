@@ -1,14 +1,6 @@
 {
   "id": "tuya-light",
-  "title": {
-    "en": "Tuya Light",
-    "nl": "Tuya Licht",
-    "fr": "Lampe Tuya",
-    "de": "Tuya Licht"
-  },
-  "category": [
-    "light"
-  ],
+  "class": "light",
   "capabilities": [
     "onoff",
     "dim",
@@ -16,47 +8,11 @@
     "light_saturation",
     "light_temperature"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "title": {
-        "en": "Light",
-        "nl": "Licht",
-        "fr": "Lampe",
-        "de": "Licht"
-      }
-    },
-    "dim": {
-      "title": {
-        "en": "Brightness",
-        "nl": "Helderheid",
-        "fr": "Luminosité",
-        "de": "Helligkeit"
-      }
-    },
-    "light_hue": {
-      "title": {
-        "en": "Hue",
-        "nl": "Tint",
-        "fr": "Teinte",
-        "de": "Farbton"
-      }
-    },
-    "light_saturation": {
-      "title": {
-        "en": "Saturation",
-        "nl": "Verzadiging",
-        "fr": "Saturation",
-        "de": "Sättigung"
-      }
-    },
-    "light_temperature": {
-      "title": {
-        "en": "Color Temperature",
-        "nl": "Kleurtemperatuur",
-        "fr": "Température de couleur",
-        "de": "Farbtemperatur"
-      }
-    }
+  "name": {
+    "en": "Tuya Light",
+    "nl": "Tuya Licht",
+    "fr": "Lampe Tuya",
+    "de": "Tuya Lampe"
   },
   "images": {
     "small": "/assets/images/small.png",
@@ -67,22 +23,26 @@
       "id": "list_devices",
       "template": "list_devices",
       "navigation": {
-        "next": "add_devices"
+        "next": "list_devices"
       }
-    },
-    {
-      "id": "add_devices",
-      "template": "add_devices"
     }
   ],
   "settings": [
     {
-      "type": "group",
+      "id": "poll_interval",
+      "type": "number",
       "label": {
-        "en": "Light Settings",
-        "nl": "Licht Instellingen",
-        "fr": "Paramètres de la lampe",
-        "de": "Lichteinstellungen"
+        "en": "Poll Interval (seconds)",
+        "nl": "Polling Interval (seconden)",
+        "fr": "Intervalle de Polling (secondes)",
+        "de": "Polling Intervall (Sekunden)"
+      },
+      "value": 30,
+      "hint": {
+        "en": "How often to poll the device for status updates",
+        "nl": "Hoe vaak het apparaat wordt gecontroleerd voor status updates",
+        "fr": "Fréquence de vérification des mises à jour de statut",
+        "de": "Wie oft das Gerät auf Statusaktualisierungen abgefragt wird"
       }
     }
   ]
