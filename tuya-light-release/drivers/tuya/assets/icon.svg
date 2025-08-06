@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2196F3;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="128" cy="128" r="120" fill="url(#grad1)" stroke="#333" stroke-width="4"/>
+  
+  <!-- Driver specific icon -->
+  <text x="128" y="140" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">
+    TUYA
+  </text>
+  
+  <!-- Tuya Zigbee indicator -->
+  <text x="128" y="220" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16">
+    Tuya Zigbee
+  </text>
+</svg>

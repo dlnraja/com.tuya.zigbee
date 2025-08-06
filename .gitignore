@@ -30,3 +30,6 @@ Thumbs.db
 .env
 .env.local
 .env.*.local 
+
+# Added by Homey CLI
+/.homeybuild/
