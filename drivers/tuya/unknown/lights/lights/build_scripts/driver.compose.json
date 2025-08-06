@@ -1,1 +1,25 @@
-{ "id": "build_scripts", "class": "light", "capabilities": [], "name": { "en": "build_scripts", "fr": "build_scripts", "nl": "build_scripts", "ta": "build_scripts" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "build_scripts", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\setuptools\\_distutils\\command\\build_scripts.py", "originalFile": "build_scripts.py", "extracted": "2025-08-05T08:33:17.714Z"}
+{
+  "id": "build_scripts",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "build_scripts",
+    "fr": "build_scripts",
+    "nl": "build_scripts",
+    "ta": "build_scripts"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "build_scripts",
+  "originalFile": "build_scripts.py",
+  "extracted": "2025-08-05T08:33:17.714Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

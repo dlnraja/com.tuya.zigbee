@@ -1,1 +1,25 @@
-{ "id": "taking", "class": "light", "capabilities": [], "name": { "en": "taking", "fr": "taking", "nl": "taking", "ta": "taking" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "taking", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\setuptools\\__pycache__\\archive_util.cpython-311.pyc", "originalFile": "archive_util.cpython-311.pyc", "extracted": "2025-08-05T08:33:30.645Z"}
+{
+  "id": "taking",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "taking",
+    "fr": "taking",
+    "nl": "taking",
+    "ta": "taking"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "taking",
+  "originalFile": "archive_util.cpython-311.pyc",
+  "extracted": "2025-08-05T08:33:30.645Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

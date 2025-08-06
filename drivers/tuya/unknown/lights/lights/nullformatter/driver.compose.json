@@ -1,1 +1,25 @@
-{ "id": "nullformatter", "class": "light", "capabilities": [], "name": { "en": "nullformatter", "fr": "nullformatter", "nl": "nullformatter", "ta": "nullformatter" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "nullformatter", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\pygments\\formatters\\other.py", "originalFile": "other.py", "extracted": "2025-08-05T08:33:49.937Z"}
+{
+  "id": "nullformatter",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "nullformatter",
+    "fr": "nullformatter",
+    "nl": "nullformatter",
+    "ta": "nullformatter"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "nullformatter",
+  "originalFile": "other.py",
+  "extracted": "2025-08-05T08:33:49.937Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

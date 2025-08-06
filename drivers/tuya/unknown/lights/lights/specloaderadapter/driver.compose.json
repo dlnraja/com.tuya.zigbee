@@ -1,1 +1,25 @@
-{ "id": "specloaderadapter", "class": "light", "capabilities": [], "name": { "en": "specloaderadapter", "fr": "specloaderadapter", "nl": "specloaderadapter", "ta": "specloaderadapter" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "specloaderadapter", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\setuptools\\_vendor\\importlib_resources\\_adapters.py", "originalFile": "_adapters.py", "extracted": "2025-08-05T08:33:18.645Z"}
+{
+  "id": "specloaderadapter",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "specloaderadapter",
+    "fr": "specloaderadapter",
+    "nl": "specloaderadapter",
+    "ta": "specloaderadapter"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "specloaderadapter",
+  "originalFile": "_adapters.py",
+  "extracted": "2025-08-05T08:33:18.645Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

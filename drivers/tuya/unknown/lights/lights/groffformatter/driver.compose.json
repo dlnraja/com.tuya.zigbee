@@ -1,1 +1,25 @@
-{ "id": "groffformatter", "class": "light", "capabilities": [], "name": { "en": "groffformatter", "fr": "groffformatter", "nl": "groffformatter", "ta": "groffformatter" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "groffformatter", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\pygments\\formatters\\groff.py", "originalFile": "groff.py", "extracted": "2025-08-05T08:33:49.616Z"}
+{
+  "id": "groffformatter",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "groffformatter",
+    "fr": "groffformatter",
+    "nl": "groffformatter",
+    "ta": "groffformatter"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "groffformatter",
+  "originalFile": "groff.py",
+  "extracted": "2025-08-05T08:33:49.616Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

@@ -1,1 +1,25 @@
-{ "id": "directedgraph", "class": "light", "capabilities": [], "name": { "en": "directedgraph", "fr": "directedgraph", "nl": "directedgraph", "ta": "directedgraph" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "directedgraph", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\resolvelib\\structs.py", "originalFile": "structs.py", "extracted": "2025-08-05T08:33:52.399Z"}
+{
+  "id": "directedgraph",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "directedgraph",
+    "fr": "directedgraph",
+    "nl": "directedgraph",
+    "ta": "directedgraph"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "directedgraph",
+  "originalFile": "structs.py",
+  "extracted": "2025-08-05T08:33:52.399Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

@@ -1,1 +1,25 @@
-{ "id": "dictstack", "class": "light", "capabilities": [], "name": { "en": "dictstack", "fr": "dictstack", "nl": "dictstack", "ta": "dictstack" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "dictstack", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\setuptools\\_distutils\\_collections.py", "originalFile": "_collections.py", "extracted": "2025-08-05T08:33:16.146Z"}
+{
+  "id": "dictstack",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "dictstack",
+    "fr": "dictstack",
+    "nl": "dictstack",
+    "ta": "dictstack"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "dictstack",
+  "originalFile": "_collections.py",
+  "extracted": "2025-08-05T08:33:16.146Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

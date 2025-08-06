@@ -1,1 +1,25 @@
-{ "id": "resolver", "class": "light", "capabilities": [], "name": { "en": "resolver", "fr": "resolver", "nl": "resolver", "ta": "resolver" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "resolver", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_internal\\resolution\\resolvelib\\resolver.py", "originalFile": "resolver.py", "extracted": "2025-08-05T08:33:38.860Z"}
+{
+  "id": "resolver",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "resolver",
+    "fr": "resolver",
+    "nl": "resolver",
+    "ta": "resolver"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "resolver",
+  "originalFile": "resolver.py",
+  "extracted": "2025-08-05T08:33:38.860Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

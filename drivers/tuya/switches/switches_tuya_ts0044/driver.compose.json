@@ -1,1 +1,51 @@
-{ "id": "switches_tuya_ts0044", "class": "switch", "capabilities": [ "onoff", "measure_temperature", "measure_humidity" ], "name": { "en": "switches_tuya_ts0044", "fr": "switches_tuya_ts0044", "nl": "switches_tuya_ts0044", "ta": "switches_tuya_ts0044" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "ts0044-switch", "created": "2025-08-05T08:40:39.277Z", "type": "tuya", "category": "switches", "heuristic": { "applied": true, "date": "2025-08-05T09:03:46.322Z", "deduced": { "capabilities": [ "onoff" ], "class": "switch" } }, "renamed": { "from": "switches_tuya_ts0044-switch", "date": "2025-08-05T10:09:28.521Z", "reason": "automatic_fusion" }, "fusion": { "date": "2025-08-05T12:19:44.704Z", "duplicates": [ "switches_tuya_tuya", "switches_zigbee_generic" ], "totalDrivers": 3 }}
+{
+  "id": "switches_tuya_ts0044",
+  "class": "switch",
+  "capabilities": [
+    "onoff",
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "name": {
+    "en": "switches_tuya_ts0044",
+    "fr": "switches_tuya_ts0044",
+    "nl": "switches_tuya_ts0044",
+    "ta": "switches_tuya_ts0044"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "ts0044-switch",
+  "created": "2025-08-05T08:40:39.277Z",
+  "type": "tuya",
+  "category": "switches",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.322Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "switch"
+    }
+  },
+  "renamed": {
+    "from": "switches_tuya_ts0044-switch",
+    "date": "2025-08-05T10:09:28.521Z",
+    "reason": "automatic_fusion"
+  },
+  "fusion": {
+    "date": "2025-08-05T12:19:44.704Z",
+    "duplicates": [
+      "switches_tuya_tuya",
+      "switches_zigbee_generic"
+    ],
+    "totalDrivers": 3
+  },
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

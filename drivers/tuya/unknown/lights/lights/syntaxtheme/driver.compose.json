@@ -1,1 +1,25 @@
-{ "id": "syntaxtheme", "class": "light", "capabilities": [], "name": { "en": "syntaxtheme", "fr": "syntaxtheme", "nl": "syntaxtheme", "ta": "syntaxtheme" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "syntaxtheme", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\rich\\syntax.py", "originalFile": "syntax.py", "extracted": "2025-08-05T08:33:57.701Z"}
+{
+  "id": "syntaxtheme",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "syntaxtheme",
+    "fr": "syntaxtheme",
+    "nl": "syntaxtheme",
+    "ta": "syntaxtheme"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "syntaxtheme",
+  "originalFile": "syntax.py",
+  "extracted": "2025-08-05T08:33:57.701Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

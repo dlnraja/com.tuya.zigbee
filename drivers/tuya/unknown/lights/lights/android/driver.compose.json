@@ -1,1 +1,25 @@
-{ "id": "android", "class": "light", "capabilities": [], "name": { "en": "android", "fr": "android", "nl": "android", "ta": "android" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "android", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\platformdirs\\android.py", "originalFile": "android.py", "extracted": "2025-08-05T08:33:48.482Z"}
+{
+  "id": "android",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "android",
+    "fr": "android",
+    "nl": "android",
+    "ta": "android"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "android",
+  "originalFile": "android.py",
+  "extracted": "2025-08-05T08:33:48.482Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

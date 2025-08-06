@@ -1,1 +1,25 @@
-{ "id": "install_data", "class": "light", "capabilities": [], "name": { "en": "install_data", "fr": "install_data", "nl": "install_data", "ta": "install_data" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "install_data", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\setuptools\\_distutils\\command\\install_data.py", "originalFile": "install_data.py", "extracted": "2025-08-05T08:33:17.768Z"}
+{
+  "id": "install_data",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "install_data",
+    "fr": "install_data",
+    "nl": "install_data",
+    "ta": "install_data"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "install_data",
+  "originalFile": "install_data.py",
+  "extracted": "2025-08-05T08:33:17.768Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

@@ -1,1 +1,25 @@
-{ "id": "jsconsolehandler", "class": "light", "capabilities": [], "name": { "en": "jsconsolehandler", "fr": "jsconsolehandler", "nl": "jsconsolehandler", "ta": "jsconsolehandler" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "jsconsolehandler", "source": "D:\\Download\\Compressed\\katana\\PortableApps\\FirefoxPortable\\App\\Firefox\\components\\jsconsole-clhandler.js", "originalFile": "jsconsole-clhandler.js", "extracted": "2025-08-05T08:26:23.885Z"}
+{
+  "id": "jsconsolehandler",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "jsconsolehandler",
+    "fr": "jsconsolehandler",
+    "nl": "jsconsolehandler",
+    "ta": "jsconsolehandler"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "jsconsolehandler",
+  "originalFile": "jsconsole-clhandler.js",
+  "extracted": "2025-08-05T08:26:23.885Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

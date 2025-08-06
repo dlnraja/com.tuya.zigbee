@@ -45,5 +45,9 @@
     "enriched": true,
     "enrichmentDate": "2025-08-05T17:09:10.845Z",
     "megaPromptVersion": "ULTIME - VERSION FINALE 2025"
-  }
+  },
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
 }

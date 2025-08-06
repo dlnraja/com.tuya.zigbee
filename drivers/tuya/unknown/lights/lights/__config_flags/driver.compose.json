@@ -1,1 +1,25 @@
-{ "id": "__config_flags", "class": "light", "capabilities": [], "name": { "en": "__config_flags", "fr": "__config_flags", "nl": "__config_flags", "ta": "__config_flags" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "__config_flags", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\pyparsing\\util.py", "originalFile": "util.py", "extracted": "2025-08-05T08:33:51.319Z"}
+{
+  "id": "__config_flags",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "__config_flags",
+    "fr": "__config_flags",
+    "nl": "__config_flags",
+    "ta": "__config_flags"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "__config_flags",
+  "originalFile": "util.py",
+  "extracted": "2025-08-05T08:33:51.319Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

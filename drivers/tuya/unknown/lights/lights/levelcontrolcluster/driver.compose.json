@@ -1,1 +1,25 @@
-{ "id": "levelcontrolcluster", "class": "light", "capabilities": [], "name": { "en": "levelcontrolcluster", "fr": "levelcontrolcluster", "nl": "levelcontrolcluster", "ta": "levelcontrolcluster" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "levelcontrolcluster", "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\node_modules\\zigbee-clusters\\lib\\clusters\\levelControl.js", "originalFile": "levelControl.js", "extracted": "2025-08-05T08:36:30.011Z"}
+{
+  "id": "levelcontrolcluster",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "levelcontrolcluster",
+    "fr": "levelcontrolcluster",
+    "nl": "levelcontrolcluster",
+    "ta": "levelcontrolcluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "levelcontrolcluster",
+  "originalFile": "levelControl.js",
+  "extracted": "2025-08-05T08:36:30.011Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

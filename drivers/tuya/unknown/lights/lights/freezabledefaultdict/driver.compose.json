@@ -1,1 +1,25 @@
-{ "id": "freezabledefaultdict", "class": "light", "capabilities": [], "name": { "en": "freezabledefaultdict", "fr": "freezabledefaultdict", "nl": "freezabledefaultdict", "ta": "freezabledefaultdict" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "freezabledefaultdict", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata\\_collections.py", "originalFile": "_collections.py", "extracted": "2025-08-05T08:33:18.041Z"}
+{
+  "id": "freezabledefaultdict",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "freezabledefaultdict",
+    "fr": "freezabledefaultdict",
+    "nl": "freezabledefaultdict",
+    "ta": "freezabledefaultdict"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "freezabledefaultdict",
+  "originalFile": "_collections.py",
+  "extracted": "2025-08-05T08:33:18.041Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

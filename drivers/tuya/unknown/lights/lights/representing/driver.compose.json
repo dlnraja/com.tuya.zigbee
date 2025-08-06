@@ -1,1 +1,25 @@
-{ "id": "representing", "class": "light", "capabilities": [], "name": { "en": "representing", "fr": "representing", "nl": "representing", "ta": "representing" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "representing", "source": "D:\\Download\\Compressed\\com.tuya.zigbee-SDK3_2\\com.tuya.zigbee-SDK3\\node_modules\\zigbee-clusters\\lib\\Endpoint.js", "originalFile": "Endpoint.js", "extracted": "2025-08-05T08:36:26.550Z"}
+{
+  "id": "representing",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "representing",
+    "fr": "representing",
+    "nl": "representing",
+    "ta": "representing"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "representing",
+  "originalFile": "Endpoint.js",
+  "extracted": "2025-08-05T08:36:26.550Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

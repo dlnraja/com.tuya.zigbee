@@ -1,1 +1,25 @@
-{ "id": "align", "class": "light", "capabilities": [], "name": { "en": "align", "fr": "align", "nl": "align", "ta": "align" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "align", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\rich\\align.py", "originalFile": "align.py", "extracted": "2025-08-05T08:33:55.360Z"}
+{
+  "id": "align",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "align",
+    "fr": "align",
+    "nl": "align",
+    "ta": "align"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "align",
+  "originalFile": "align.py",
+  "extracted": "2025-08-05T08:33:55.360Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

@@ -1,1 +1,25 @@
-{ "id": "stop_base", "class": "light", "capabilities": [], "name": { "en": "stop_base", "fr": "stop_base", "nl": "stop_base", "ta": "stop_base" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "stop_base", "source": "D:\\Download\\Compressed\\elelabs-zigbee-ezsp-utility-master\\elelabs-zigbee-ezsp-utility-master\\venv\\Lib\\site-packages\\pip\\_vendor\\tenacity\\stop.py", "originalFile": "stop.py", "extracted": "2025-08-05T08:33:58.769Z"}
+{
+  "id": "stop_base",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "stop_base",
+    "fr": "stop_base",
+    "nl": "stop_base",
+    "ta": "stop_base"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "stop_base",
+  "originalFile": "stop.py",
+  "extracted": "2025-08-05T08:33:58.769Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

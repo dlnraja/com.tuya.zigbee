@@ -1,1 +1,25 @@
-{ "id": "cim_hostedservice", "class": "light", "capabilities": [], "name": { "en": "cim_hostedservice", "fr": "cim_hostedservice", "nl": "cim_hostedservice", "ta": "cim_hostedservice" }, "images": { "small": "/assets/images/small.png", "large": "/assets/images/large.png" }, "manufacturername": "Tuya", "model": "cim_hostedservice", "source": "D:\\Download\\Compressed\\ME_SW_2413.5.67.0\\Drivers\\WMIProvider\\ME\\MEMofs\\AMT_HostedService.mof", "originalFile": "AMT_HostedService.mof", "extracted": "2025-08-05T08:31:47.847Z"}
+{
+  "id": "cim_hostedservice",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "cim_hostedservice",
+    "fr": "cim_hostedservice",
+    "nl": "cim_hostedservice",
+    "ta": "cim_hostedservice"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "cim_hostedservice",
+  "originalFile": "AMT_HostedService.mof",
+  "extracted": "2025-08-05T08:31:47.847Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}
