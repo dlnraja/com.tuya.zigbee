@@ -1,26 +1,14 @@
 {
   "id": "zigbee-onoff",
-  "title": {
-    "en": "Zigbee OnOff",
-    "nl": "Zigbee AanUit",
-    "fr": "Zigbee MarcheArrêt",
-    "de": "Zigbee EinAus"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "switch",
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "title": {
-        "en": "Switch",
-        "nl": "Schakelaar",
-        "fr": "Interrupteur",
-        "de": "Schalter"
-      }
-    }
+  "name": {
+    "en": "Zigbee Switch",
+    "nl": "Zigbee Schakelaar",
+    "fr": "Interrupteur Zigbee",
+    "de": "Zigbee Schalter"
   },
   "images": {
     "small": "/assets/images/small.png",
@@ -31,22 +19,26 @@
       "id": "list_devices",
       "template": "list_devices",
       "navigation": {
-        "next": "add_devices"
+        "next": "list_devices"
       }
-    },
-    {
-      "id": "add_devices",
-      "template": "add_devices"
     }
   ],
   "settings": [
     {
-      "type": "group",
+      "id": "poll_interval",
+      "type": "number",
       "label": {
-        "en": "OnOff Settings",
-        "nl": "AanUit Instellingen",
-        "fr": "Paramètres MarcheArrêt",
-        "de": "EinAus Einstellungen"
+        "en": "Poll Interval (seconds)",
+        "nl": "Polling Interval (seconden)",
+        "fr": "Intervalle de Polling (secondes)",
+        "de": "Polling Intervall (Sekunden)"
+      },
+      "value": 30,
+      "hint": {
+        "en": "How often to poll the device for status updates",
+        "nl": "Hoe vaak het apparaat wordt gecontroleerd voor status updates",
+        "fr": "Fréquence de vérification des mises à jour de statut",
+        "de": "Wie oft das Gerät auf Statusaktualisierungen abgefragt wird"
       }
     }
   ]
