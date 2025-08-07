@@ -1,8 +1,8 @@
 {
-  "timestamp": "2025-08-07T14:12:43.999Z",
+  "timestamp": "2025-08-07T15:15:38.556Z",
   "summary": {
-    "total": 64,
-    "complete": 64,
+    "total": 24,
+    "complete": 24,
     "partial": 0,
     "empty": 0,
     "completenessRate": 100
@@ -44,11 +44,11 @@
       "path": "drivers\\tuya\\generic"
     },
     {
-      "name": "bulbs",
+      "name": "lighting",
       "type": "tuya",
-      "category": "lighting",
+      "category": "root",
       "status": "complete",
-      "path": "drivers\\tuya\\lighting\\bulbs"
+      "path": "drivers\\tuya\\lighting"
     },
     {
       "name": "lights",
@@ -58,18 +58,11 @@
       "path": "drivers\\tuya\\lights"
     },
     {
-      "name": "keypads",
+      "name": "locks",
       "type": "tuya",
-      "category": "locks",
+      "category": "root",
       "status": "complete",
-      "path": "drivers\\tuya\\locks\\keypads"
-    },
-    {
-      "name": "smart_locks",
-      "type": "tuya",
-      "category": "locks",
-      "status": "complete",
-      "path": "drivers\\tuya\\locks\\smart_locks"
+      "path": "drivers\\tuya\\locks"
     },
     {
       "name": "plugs",
@@ -114,102 +107,11 @@
       "path": "drivers\\tuya\\unknown"
     },
     {
-      "name": "handheld_remote_4_buttons",
+      "name": "automation",
       "type": "zigbee",
-      "category": "automation",
+      "category": "root",
       "status": "complete",
-      "path": "drivers\\zigbee\\automation\\handheld_remote_4_buttons"
-    },
-    {
-      "name": "irrigation_controller",
-      "type": "zigbee",
-      "category": "automation",
-      "status": "complete",
-      "path": "drivers\\zigbee\\automation\\irrigation_controller"
-    },
-    {
-      "name": "remote_control",
-      "type": "zigbee",
-      "category": "automation",
-      "status": "complete",
-      "path": "drivers\\zigbee\\automation\\remote_control"
-    },
-    {
-      "name": "smart_garden_irrigation_control",
-      "type": "zigbee",
-      "category": "automation",
-      "status": "complete",
-      "path": "drivers\\zigbee\\automation\\smart_garden_irrigation_control"
-    },
-    {
-      "name": "smart_remote_1_button",
-      "type": "zigbee",
-      "category": "automation",
-      "status": "complete",
-      "path": "drivers\\zigbee\\automation\\smart_remote_1_button"
-    },
-    {
-      "name": "smart_remote_1_button_2",
-      "type": "zigbee",
-      "category": "automation",
-      "status": "complete",
-      "path": "drivers\\zigbee\\automation\\smart_remote_1_button_2"
-    },
-    {
-      "name": "smart_remote_4_buttons",
-      "type": "zigbee",
-      "category": "automation",
-      "status": "complete",
-      "path": "drivers\\zigbee\\automation\\smart_remote_4_buttons"
-    },
-    {
-      "name": "wall_remote_1_gang",
-      "type": "zigbee",
-      "category": "automation",
-      "status": "complete",
-      "path": "drivers\\zigbee\\automation\\wall_remote_1_gang"
-    },
-    {
-      "name": "wall_remote_2_gang",
-      "type": "zigbee",
-      "category": "automation",
-      "status": "complete",
-      "path": "drivers\\zigbee\\automation\\wall_remote_2_gang"
-    },
-    {
-      "name": "wall_remote_3_gang",
-      "type": "zigbee",
-      "category": "automation",
-      "status": "complete",
-      "path": "drivers\\zigbee\\automation\\wall_remote_3_gang"
-    },
-    {
-      "name": "wall_remote_4_gang",
-      "type": "zigbee",
-      "category": "automation",
-      "status": "complete",
-      "path": "drivers\\zigbee\\automation\\wall_remote_4_gang"
-    },
-    {
-      "name": "wall_remote_4_gang_2",
-      "type": "zigbee",
-      "category": "automation",
-      "status": "complete",
-      "path": "drivers\\zigbee\\automation\\wall_remote_4_gang_2"
-    },
-    {
-      "name": "wall_remote_4_gang_3",
-      "type": "zigbee",
-      "category": "automation",
-      "status": "complete",
-      "path": "drivers\\zigbee\\automation\\wall_remote_4_gang_3"
-    },
-    {
-      "name": "wall_remote_6_gang",
-      "type": "zigbee",
-      "category": "automation",
-      "status": "complete",
-      "path": "drivers\\zigbee\\automation\\wall_remote_6_gang"
+      "path": "drivers\\zigbee\\automation"
     },
     {
       "name": "covers",
@@ -226,165 +128,11 @@
       "path": "drivers\\zigbee\\dimmers"
     },
     {
-      "name": "dimmer_1_gang",
+      "name": "lights",
       "type": "zigbee",
-      "category": "lights",
+      "category": "root",
       "status": "complete",
-      "path": "drivers\\zigbee\\lights\\dimmer_1_gang"
-    },
-    {
-      "name": "dimmer_1_gang_2",
-      "type": "zigbee",
-      "category": "lights",
-      "status": "complete",
-      "path": "drivers\\zigbee\\lights\\dimmer_1_gang_2"
-    },
-    {
-      "name": "dimmer_1_gang_tuya",
-      "type": "zigbee",
-      "category": "lights",
-      "status": "complete",
-      "path": "drivers\\zigbee\\lights\\dimmer_1_gang_tuya"
-    },
-    {
-      "name": "dimmer_2_gang",
-      "type": "zigbee",
-      "category": "lights",
-      "status": "complete",
-      "path": "drivers\\zigbee\\lights\\dimmer_2_gang"
-    },
-    {
-      "name": "dimmer_2_gang_tuya",
-      "type": "zigbee",
-      "category": "lights",
-      "status": "complete",
-      "path": "drivers\\zigbee\\lights\\dimmer_2_gang_tuya"
-    },
-    {
-      "name": "dimmer_3_gang",
-      "type": "zigbee",
-      "category": "lights",
-      "status": "complete",
-      "path": "drivers\\zigbee\\lights\\dimmer_3_gang"
-    },
-    {
-      "name": "light_rgb_TZ3000_dbou1ap4",
-      "type": "zigbee",
-      "category": "lights",
-      "status": "complete",
-      "path": "drivers\\zigbee\\lights\\light_rgb_TZ3000_dbou1ap4"
-    },
-    {
-      "name": "rgb_bulb_E14",
-      "type": "zigbee",
-      "category": "lights",
-      "status": "complete",
-      "path": "drivers\\zigbee\\lights\\rgb_bulb_E14"
-    },
-    {
-      "name": "rgb_bulb_E27",
-      "type": "zigbee",
-      "category": "lights",
-      "status": "complete",
-      "path": "drivers\\zigbee\\lights\\rgb_bulb_E27"
-    },
-    {
-      "name": "rgb_ceiling_led_light",
-      "type": "zigbee",
-      "category": "lights",
-      "status": "complete",
-      "path": "drivers\\zigbee\\lights\\rgb_ceiling_led_light"
-    },
-    {
-      "name": "rgb_floor_led_light",
-      "type": "zigbee",
-      "category": "lights",
-      "status": "complete",
-      "path": "drivers\\zigbee\\lights\\rgb_floor_led_light"
-    },
-    {
-      "name": "rgb_led_light_bar",
-      "type": "zigbee",
-      "category": "lights",
-      "status": "complete",
-      "path": "drivers\\zigbee\\lights\\rgb_led_light_bar"
-    },
-    {
-      "name": "rgb_led_strip",
-      "type": "zigbee",
-      "category": "lights",
-      "status": "complete",
-      "path": "drivers\\zigbee\\lights\\rgb_led_strip"
-    },
-    {
-      "name": "rgb_led_strip_controller",
-      "type": "zigbee",
-      "category": "lights",
-      "status": "complete",
-      "path": "drivers\\zigbee\\lights\\rgb_led_strip_controller"
-    },
-    {
-      "name": "rgb_mood_light",
-      "type": "zigbee",
-      "category": "lights",
-      "status": "complete",
-      "path": "drivers\\zigbee\\lights\\rgb_mood_light"
-    },
-    {
-      "name": "rgb_spot_GardenLight",
-      "type": "zigbee",
-      "category": "lights",
-      "status": "complete",
-      "path": "drivers\\zigbee\\lights\\rgb_spot_GardenLight"
-    },
-    {
-      "name": "rgb_spot_GU10",
-      "type": "zigbee",
-      "category": "lights",
-      "status": "complete",
-      "path": "drivers\\zigbee\\lights\\rgb_spot_GU10"
-    },
-    {
-      "name": "rgb_wall_led_light",
-      "type": "zigbee",
-      "category": "lights",
-      "status": "complete",
-      "path": "drivers\\zigbee\\lights\\rgb_wall_led_light"
-    },
-    {
-      "name": "tunable_bulb_E14",
-      "type": "zigbee",
-      "category": "lights",
-      "status": "complete",
-      "path": "drivers\\zigbee\\lights\\tunable_bulb_E14"
-    },
-    {
-      "name": "tunable_bulb_E27",
-      "type": "zigbee",
-      "category": "lights",
-      "status": "complete",
-      "path": "drivers\\zigbee\\lights\\tunable_bulb_E27"
-    },
-    {
-      "name": "tunable_spot_GU10",
-      "type": "zigbee",
-      "category": "lights",
-      "status": "complete",
-      "path": "drivers\\zigbee\\lights\\tunable_spot_GU10"
-    },
-    {
-      "name": "wall_dimmer_tuya",
-      "type": "zigbee",
-      "category": "lights",
-      "status": "complete",
-      "path": "drivers\\zigbee\\lights\\wall_dimmer_tuya"
-    },
-    {
-      "name": "zigbee-bulb",
-      "type": "zigbee",
-      "category": "lights",
-      "status": "complete",
-      "path": "drivers\\zigbee\\lights\\zigbee-bulb"
+      "path": "drivers\\zigbee\\lights"
     },
     {
       "name": "onoff",
@@ -401,11 +149,11 @@
       "path": "drivers\\zigbee\\plugs"
     },
     {
-      "name": "siren",
+      "name": "security",
       "type": "zigbee",
-      "category": "security",
+      "category": "root",
       "status": "complete",
-      "path": "drivers\\zigbee\\security\\siren"
+      "path": "drivers\\zigbee\\security"
     },
     {
       "name": "sensors",
@@ -422,39 +170,11 @@
       "path": "drivers\\zigbee\\switches"
     },
     {
-      "name": "radiator_valve",
+      "name": "thermostats",
       "type": "zigbee",
-      "category": "thermostats",
+      "category": "root",
       "status": "complete",
-      "path": "drivers\\zigbee\\thermostats\\radiator_valve"
-    },
-    {
-      "name": "thermostat",
-      "type": "zigbee",
-      "category": "thermostats",
-      "status": "complete",
-      "path": "drivers\\zigbee\\thermostats\\thermostat"
-    },
-    {
-      "name": "thermostatic_radiator_valve",
-      "type": "zigbee",
-      "category": "thermostats",
-      "status": "complete",
-      "path": "drivers\\zigbee\\thermostats\\thermostatic_radiator_valve"
-    },
-    {
-      "name": "valvecontroller",
-      "type": "zigbee",
-      "category": "thermostats",
-      "status": "complete",
-      "path": "drivers\\zigbee\\thermostats\\valvecontroller"
-    },
-    {
-      "name": "wall_thermostat",
-      "type": "zigbee",
-      "category": "thermostats",
-      "status": "complete",
-      "path": "drivers\\zigbee\\thermostats\\wall_thermostat"
+      "path": "drivers\\zigbee\\thermostats"
     }
   ]
 }

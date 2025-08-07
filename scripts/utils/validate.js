@@ -8,6 +8,9 @@ class AppValidator {
     this.errors = [];
     this.warnings = [];
     this.success = true;
+    this.driverCount = 0;
+    this.completeDrivers = [];
+    this.incompleteDrivers = [];
   }
 
   validate() {
@@ -91,50 +94,83 @@ class AppValidator {
     }
 
     const driverTypes = ['tuya', 'zigbee'];
-    let driverCount = 0;
-
+    
     for (const type of driverTypes) {
       const typePath = path.join(driversPath, type);
       if (fs.existsSync(typePath)) {
-        const categories = fs.readdirSync(typePath).filter(f => 
-          fs.statSync(path.join(typePath, f)).isDirectory()
-        );
-        
-        for (const category of categories) {
-          const categoryPath = path.join(typePath, category);
-          const files = fs.readdirSync(categoryPath);
-          
-          // Check if it's a direct driver or has subdirectories
-          if (files.includes('driver.js') && files.includes('driver.compose.json')) {
-            driverCount++;
-            console.log(`✅ Found driver: ${type}/${category}`);
-          } else {
-            // Check subdirectories for drivers
-            const subdirs = files.filter(f => 
-              fs.statSync(path.join(categoryPath, f)).isDirectory()
-            );
-            
-            for (const subdir of subdirs) {
-              const subdirPath = path.join(categoryPath, subdir);
-              const subdirFiles = fs.readdirSync(subdirPath);
-              
-              if (subdirFiles.includes('driver.js') && subdirFiles.includes('driver.compose.json')) {
-                driverCount++;
-                console.log(`✅ Found driver: ${type}/${category}/${subdir}`);
-              } else {
-                this.warnings.push(`⚠️ Incomplete driver: ${type}/${category}/${subdir}`);
-              }
-            }
-            
-            if (subdirs.length === 0) {
-              this.warnings.push(`⚠️ Incomplete driver: ${type}/${category}`);
-            }
-          }
-        }
+        console.log(`\n🔍 Scanning ${type} drivers...`);
+        this.scanDriverDirectory(typePath, type);
       }
     }
 
-    console.log(`📊 Total drivers found: ${driverCount}`);
+    console.log(`\n📊 Total drivers found: ${this.driverCount}`);
+    console.log(`✅ Complete drivers: ${this.completeDrivers.length}`);
+    console.log(`⚠️ Incomplete drivers: ${this.incompleteDrivers.length}`);
+  }
+
+  scanDriverDirectory(dirPath, type, category = '') {
+    try {
+      const items = fs.readdirSync(dirPath);
+      
+      for (const item of items) {
+        const itemPath = path.join(dirPath, item);
+        const stat = fs.statSync(itemPath);
+        
+        if (stat.isDirectory()) {
+          const currentCategory = category ? `${category}/${item}` : item;
+          
+          // Vérifier si c'est un driver complet
+          if (this.isCompleteDriver(itemPath)) {
+            this.driverCount++;
+            this.completeDrivers.push(`${type}/${currentCategory}`);
+            console.log(`✅ Found driver: ${type}/${currentCategory}`);
+          } else {
+            // Scanner les sous-dossiers
+            this.scanDriverDirectory(itemPath, type, currentCategory);
+          }
+        }
+      }
+    } catch (error) {
+      this.warnings.push(`⚠️ Error scanning directory ${dirPath}: ${error.message}`);
+    }
+  }
+
+  isCompleteDriver(driverPath) {
+    try {
+      const files = fs.readdirSync(driverPath);
+      
+      // Vérifier les fichiers requis pour un driver
+      const hasDriverJs = files.includes('driver.js');
+      const hasComposeJson = files.includes('driver.compose.json');
+      const hasDeviceJs = files.includes('device.js');
+      
+      // Un driver est complet s'il a au moins driver.js et driver.compose.json
+      if (hasDriverJs && hasComposeJson) {
+        return true;
+      }
+      
+      // Si ce n'est pas un driver complet, vérifier s'il y a des sous-dossiers avec des drivers
+      const subdirs = files.filter(f => {
+        const subPath = path.join(driverPath, f);
+        return fs.statSync(subPath).isDirectory();
+      });
+      
+      // Si il y a des sous-dossiers, ce n'est pas un driver direct
+      if (subdirs.length > 0) {
+        return false;
+      }
+      
+      // Si pas de sous-dossiers et pas de fichiers requis, c'est incomplet
+      if (!hasDriverJs || !hasComposeJson) {
+        this.incompleteDrivers.push(driverPath);
+        return false;
+      }
+      
+      return true;
+    } catch (error) {
+      this.warnings.push(`⚠️ Error checking driver ${driverPath}: ${error.message}`);
+      return false;
+    }
   }
 
   checkAssets() {
@@ -169,6 +205,14 @@ class AppValidator {
     if (this.warnings.length > 0) {
       console.log('\n⚠️ Warnings:');
       this.warnings.forEach(warning => console.log(`  ${warning}`));
+    }
+
+    if (this.incompleteDrivers.length > 0) {
+      console.log('\n⚠️ Incomplete drivers:');
+      this.incompleteDrivers.forEach(driver => {
+        const relativePath = path.relative(process.cwd(), driver);
+        console.log(`  ⚠️ ${relativePath}`);
+      });
     }
 
     if (this.success) {
