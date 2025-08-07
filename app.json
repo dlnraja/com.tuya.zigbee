@@ -1,7 +1,6 @@
 {
   "id": "com.tuya.zigbee",
-<<<<<<< HEAD
-  "version": "3.3.3",
+  "version": "1.1.0",
   "compatibility": ">=6.0.0",
   "sdk": 3,
   "platforms": ["local"],
@@ -21,42 +20,24 @@
     "de": "Universal Tuya und Zigbee Geräte für Homey - KI-Edition mit Vollständiger Wiederherstellung",
     "es": "Dispositivos Tuya y Zigbee universales para Homey - Edición IA con Recuperación Completa"
   },
-  "category": ["lighting"],
-  "permissions": [
-    "homey:manager:api"
-=======
-  "version": "1.0.0",
-  "compatibility": ">=5.0.0",
   "category": [
     "lights",
     "sensors",
-    "switches"
+    "switches",
+    "lighting"
   ],
   "permissions": [
     "homey:manager:api",
     "homey:manager:drivers"
->>>>>>> master
   ],
   "images": {
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png"
   },
   "author": {
-<<<<<<< HEAD
-    "name": "dlnraja",
-    "email": "dylan.rajasekaram@gmail.com"
-  },
-  "contributors": [
-    {
-      "name": "Peter van Werkhoven",
-      "email": "peter@homey.app"
-    }
-  ],
-=======
     "name": "Dylan Rajasekaram",
     "email": "dylan.rajasekaram+homey@gmail.com"
   },
->>>>>>> master
   "bugs": {
     "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
   },
@@ -64,11 +45,8 @@
     "type": "git",
     "url": "https://github.com/dlnraja/com.tuya.zigbee.git"
   },
-<<<<<<< HEAD
-  "license": "MIT"
-=======
+  "license": "MIT",
   "engines": {
     "node": ">=16.0.0"
   }
->>>>>>> master
 }
