@@ -104,11 +104,31 @@ class AppValidator {
           const categoryPath = path.join(typePath, category);
           const files = fs.readdirSync(categoryPath);
           
+          // Check if it's a direct driver or has subdirectories
           if (files.includes('driver.js') && files.includes('driver.compose.json')) {
             driverCount++;
             console.log(`✅ Found driver: ${type}/${category}`);
           } else {
-            this.warnings.push(`⚠️ Incomplete driver: ${type}/${category}`);
+            // Check subdirectories for drivers
+            const subdirs = files.filter(f => 
+              fs.statSync(path.join(categoryPath, f)).isDirectory()
+            );
+            
+            for (const subdir of subdirs) {
+              const subdirPath = path.join(categoryPath, subdir);
+              const subdirFiles = fs.readdirSync(subdirPath);
+              
+              if (subdirFiles.includes('driver.js') && subdirFiles.includes('driver.compose.json')) {
+                driverCount++;
+                console.log(`✅ Found driver: ${type}/${category}/${subdir}`);
+              } else {
+                this.warnings.push(`⚠️ Incomplete driver: ${type}/${category}/${subdir}`);
+              }
+            }
+            
+            if (subdirs.length === 0) {
+              this.warnings.push(`⚠️ Incomplete driver: ${type}/${category}`);
+            }
           }
         }
       }
