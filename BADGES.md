@@ -1,0 +1,8 @@
+![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)
+![Homey SDK](https://img.shields.io/badge/Homey%20SDK-3.0+-green.svg)
+![Drivers](https://img.shields.io/badge/drivers-24%20complets-brightgreen.svg)
+![Complétude](https://img.shields.io/badge/complétude-100%25-success.svg)
+![Mode](https://img.shields.io/badge/mode-YOLO%20Ultra-orange.svg)
+![License](https://img.shields.io/badge/license-MIT-yellow.svg)
+![Platform](https://img.shields.io/badge/platform-local-lightgrey.svg)
+![Status](https://img.shields.io/badge/status-production%20ready-brightgreen.svg)
