@@ -3,442 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🚀 Universal TUYA Zigbee Device App - Dashboard</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            color: #333;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .header {
-            text-align: center;
-            color: white;
-            margin-bottom: 30px;
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .stat-card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        .stat-card h3 {
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-
-        .stat-card .number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #764ba2;
-        }
-
-        .controls {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .controls h3 {
-            margin-bottom: 15px;
-            color: #667eea;
-        }
-
-        .filter-group {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .filter-group label {
-            font-weight: bold;
-            color: #555;
-        }
-
-        .filter-group select, .filter-group input {
-            padding: 8px 12px;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-
-        .filter-group select:focus, .filter-group input:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-
-        .drivers-table {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .table-header {
-            background: #667eea;
-            color: white;
-            padding: 15px 20px;
-        }
-
-        .table-header h3 {
-            margin: 0;
-        }
-
-        .table-container {
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-        }
-
-        th {
-            background: #f8f9fa;
-            font-weight: bold;
-            color: #555;
-        }
-
-        tr:hover {
-            background: #f8f9fa;
-        }
-
-        .status {
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        .status.valid {
-            background: #d4edda;
-            color: #155724;
-        }
-
-        .status.warning {
-            background: #fff3cd;
-            color: #856404;
-        }
-
-        .status.error {
-            background: #f8d7da;
-            color: #721c24;
-        }
-
-        .status.missing {
-            background: #e2e3e5;
-            color: #383d41;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 30px;
-            color: white;
-            opacity: 0.8;
-        }
-
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: #666;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-            
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .filter-group {
-                flex-direction: column;
-                align-items: stretch;
-            }
-        }
-    </style>
+    <title>Tuya Zigbee Universal - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>🚀 Universal TUYA Zigbee Device App</h1>
-            <p>Dashboard - Suivi en temps réel des drivers et de leur statut</p>
-        </div>
-
+        <header>
+            <h1>🚀 Tuya Zigbee Universal</h1>
+            <p>Dashboard Interactif - Mode YOLO Ultra</p>
+        </header>
+        
         <div class="stats-grid">
             <div class="stat-card">
-                <h3>📦 Total Drivers</h3>
-                <div class="number" id="totalDrivers">-</div>
+                <h3>📊 Statistiques</h3>
+                <div class="stat">
+                    <span class="number" id="total-drivers">24</span>
+                    <span class="label">Drivers Complets</span>
+                </div>
+                <div class="stat">
+                    <span class="number" id="completion-rate">100%</span>
+                    <span class="label">Taux de Complétude</span>
+                </div>
             </div>
+            
             <div class="stat-card">
-                <h3>✅ Validés</h3>
-                <div class="number" id="validDrivers">-</div>
+                <h3>🔌 Drivers Tuya</h3>
+                <div class="stat">
+                    <span class="number" id="tuya-drivers">14</span>
+                    <span class="label">Drivers</span>
+                </div>
             </div>
+            
             <div class="stat-card">
-                <h3>⚠️ Avertissements</h3>
-                <div class="number" id="warningDrivers">-</div>
-            </div>
-            <div class="stat-card">
-                <h3>❌ Erreurs</h3>
-                <div class="number" id="errorDrivers">-</div>
+                <h3>📡 Drivers Zigbee</h3>
+                <div class="stat">
+                    <span class="number" id="zigbee-drivers">10</span>
+                    <span class="label">Drivers</span>
+                </div>
             </div>
         </div>
-
-        <div class="controls">
-            <h3>🔍 Filtres</h3>
-            <div class="filter-group">
-                <label for="typeFilter">Type:</label>
-                <select id="typeFilter">
-                    <option value="">Tous les types</option>
-                    <option value="switch">Switch</option>
-                    <option value="sensor">Sensor</option>
-                    <option value="light">Light</option>
-                    <option value="plug">Plug</option>
-                    <option value="thermostat">Thermostat</option>
-                    <option value="lock">Lock</option>
-                </select>
-
-                <label for="statusFilter">Statut:</label>
-                <select id="statusFilter">
-                    <option value="">Tous les statuts</option>
-                    <option value="valid">Validé</option>
-                    <option value="warning">Avertissement</option>
-                    <option value="error">Erreur</option>
-                    <option value="missing">Manquant</option>
-                </select>
-
-                <label for="searchFilter">Recherche:</label>
-                <input type="text" id="searchFilter" placeholder="Rechercher un driver...">
-            </div>
+        
+        <div class="drivers-section">
+            <h2>📋 Liste des Drivers</h2>
+            <div id="drivers-list" class="drivers-grid"></div>
         </div>
-
-        <div class="drivers-table">
-            <div class="table-header">
-                <h3>📋 Liste des Drivers</h3>
-            </div>
-            <div class="table-container">
-                <table id="driversTable">
-                    <thead>
-                        <tr>
-                            <th>Type</th>
-                            <th>Nom</th>
-                            <th>Chemin</th>
-                            <th>JSON</th>
-                            <th>JS</th>
-                            <th>Enrichi</th>
-                            <th>Mode</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="driversTableBody">
-                        <tr>
-                            <td colspan="8" class="loading">Chargement des données...</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="footer">
-            <p>📅 Dernière mise à jour: <span id="lastUpdate">-</span></p>
-            <p>🎯 MEGA-PROMPT ULTIME - VERSION FINALE 2025</p>
+        
+        <div class="features-section">
+            <h2>⚡ Features MEGA</h2>
+            <div id="features-list" class="features-grid"></div>
         </div>
     </div>
-
-    <script>
-        // Données des drivers (simulées pour l'exemple)
-        const driversData = [
-            {
-                type: 'switch',
-                name: 'Generic Switch',
-                path: 'drivers/tuya/switches/driver.compose.json',
-                jsonStatus: 'valid',
-                jsStatus: 'valid',
-                enriched: true,
-                mode: 'full'
-            },
-            {
-                type: 'sensor',
-                name: 'Temperature Sensor',
-                path: 'drivers/zigbee/sensors/driver.compose.json',
-                jsonStatus: 'valid',
-                jsStatus: 'valid',
-                enriched: false,
-                mode: 'lite'
-            },
-            {
-                type: 'thermostat',
-                name: 'Smart Thermostat',
-                path: 'drivers/tuya/thermostats/driver.compose.json',
-                jsonStatus: 'warning',
-                jsStatus: 'valid',
-                enriched: true,
-                mode: 'full'
-            },
-            {
-                type: 'light',
-                name: 'LED Light',
-                path: 'drivers/tuya/lights/driver.compose.json',
-                jsonStatus: 'valid',
-                jsStatus: 'valid',
-                enriched: true,
-                mode: 'full'
-            },
-            {
-                type: 'plug',
-                name: 'Smart Plug',
-                path: 'drivers/tuya/plugs/driver.compose.json',
-                jsonStatus: 'valid',
-                jsStatus: 'valid',
-                enriched: true,
-                mode: 'full'
-            },
-            {
-                type: 'lock',
-                name: 'Smart Lock',
-                path: 'drivers/tuya/locks/driver.compose.json',
-                jsonStatus: 'error',
-                jsStatus: 'missing',
-                enriched: false,
-                mode: 'lite'
-            }
-        ];
-
-        // Fonction pour mettre à jour les statistiques
-        function updateStats() {
-            const total = driversData.length;
-            const valid = driversData.filter(d => d.jsonStatus === 'valid' && d.jsStatus === 'valid').length;
-            const warning = driversData.filter(d => d.jsonStatus === 'warning' || d.jsStatus === 'warning').length;
-            const error = driversData.filter(d => d.jsonStatus === 'error' || d.jsStatus === 'error' || d.jsStatus === 'missing').length;
-
-            document.getElementById('totalDrivers').textContent = total;
-            document.getElementById('validDrivers').textContent = valid;
-            document.getElementById('warningDrivers').textContent = warning;
-            document.getElementById('errorDrivers').textContent = error;
-        }
-
-        // Fonction pour créer une ligne de tableau
-        function createTableRow(driver) {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${driver.type}</td>
-                <td>${driver.name}</td>
-                <td>${driver.path}</td>
-                <td><span class="status ${driver.jsonStatus}">${driver.jsonStatus}</span></td>
-                <td><span class="status ${driver.jsStatus}">${driver.jsStatus}</span></td>
-                <td><span class="status ${driver.enriched ? 'valid' : 'warning'}">${driver.enriched ? 'Oui' : 'Non'}</span></td>
-                <td>${driver.mode}</td>
-                <td>
-                    <button onclick="viewDriver('${driver.path}')" style="padding: 4px 8px; background: #667eea; color: white; border: none; border-radius: 4px; cursor: pointer;">Voir</button>
-                </td>
-            `;
-            return row;
-        }
-
-        // Fonction pour filtrer les drivers
-        function filterDrivers() {
-            const typeFilter = document.getElementById('typeFilter').value;
-            const statusFilter = document.getElementById('statusFilter').value;
-            const searchFilter = document.getElementById('searchFilter').value.toLowerCase();
-
-            const filteredDrivers = driversData.filter(driver => {
-                const matchesType = !typeFilter || driver.type === typeFilter;
-                const matchesStatus = !statusFilter || 
-                    (statusFilter === 'valid' && driver.jsonStatus === 'valid' && driver.jsStatus === 'valid') ||
-                    (statusFilter === 'warning' && (driver.jsonStatus === 'warning' || driver.jsStatus === 'warning')) ||
-                    (statusFilter === 'error' && (driver.jsonStatus === 'error' || driver.jsStatus === 'error' || driver.jsStatus === 'missing')) ||
-                    (statusFilter === 'missing' && (driver.jsStatus === 'missing'));
-                const matchesSearch = !searchFilter || 
-                    driver.name.toLowerCase().includes(searchFilter) || 
-                    driver.path.toLowerCase().includes(searchFilter);
-
-                return matchesType && matchesStatus && matchesSearch;
-            });
-
-            displayDrivers(filteredDrivers);
-        }
-
-        // Fonction pour afficher les drivers
-        function displayDrivers(drivers) {
-            const tbody = document.getElementById('driversTableBody');
-            tbody.innerHTML = '';
-
-            if (drivers.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 20px; color: #666;">Aucun driver trouvé</td></tr>';
-                return;
-            }
-
-            drivers.forEach(driver => {
-                tbody.appendChild(createTableRow(driver));
-            });
-        }
-
-        // Fonction pour voir un driver
-        function viewDriver(path) {
-            alert(`Voir le driver: ${path}\n\nCette fonctionnalité permettrait d'ouvrir le fichier du driver pour inspection.`);
-        }
-
-        // Initialisation
-        document.addEventListener('DOMContentLoaded', function() {
-            updateStats();
-            displayDrivers(driversData);
-            
-            // Mettre à jour la date de dernière mise à jour
-            document.getElementById('lastUpdate').textContent = new Date().toLocaleString('fr-FR');
-            
-            // Ajouter les event listeners pour les filtres
-            document.getElementById('typeFilter').addEventListener('change', filterDrivers);
-            document.getElementById('statusFilter').addEventListener('change', filterDrivers);
-            document.getElementById('searchFilter').addEventListener('input', filterDrivers);
-        });
-    </script>
+    
+    <script src="script.js"></script>
 </body>
-</html> 
+</html>
