@@ -1,0 +1,3 @@
+# Installation
+
+Follow these steps to install the Tuya Zigbee Universal app...
