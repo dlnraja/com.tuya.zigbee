@@ -1,0 +1,25 @@
+{
+  "id": "is",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "is",
+    "fr": "is",
+    "nl": "is",
+    "ta": "is"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "is",
+  "originalFile": "libusb0_x86.dll",
+  "extracted": "2025-08-05T08:30:02.481Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "dimmer_2_gang",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "dimmer_2_gang",
+    "fr": "dimmer_2_gang",
+    "nl": "dimmer_2_gang",
+    "ta": "dimmer_2_gang"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "dimmer_2_gang",
+  "originalFile": "driver.js",
+  "extracted": "2025-08-05T08:35:46.294Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

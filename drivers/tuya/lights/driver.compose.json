@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "id": "tuya-lights",
+=======
+  "id": "tuya-light",
+>>>>>>> master
   "class": "light",
   "capabilities": [
     "onoff",
@@ -9,10 +13,17 @@
     "light_temperature"
   ],
   "name": {
+<<<<<<< HEAD
     "en": "Tuya Lights",
     "nl": "Tuya Lights",
     "fr": "Tuya Lights",
     "de": "Tuya Lights"
+=======
+    "en": "Tuya Light",
+    "nl": "Tuya Licht",
+    "fr": "Lampe Tuya",
+    "de": "Tuya Lampe"
+>>>>>>> master
   },
   "images": {
     "small": "/assets/images/small.png",
@@ -46,4 +57,8 @@
       }
     }
   ]
+<<<<<<< HEAD
 }
+=======
+} 
+>>>>>>> master

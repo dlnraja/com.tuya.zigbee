@@ -5,10 +5,17 @@
     "onoff"
   ],
   "name": {
+<<<<<<< HEAD
     "en": "Zigbee Onoff",
     "nl": "Zigbee Onoff",
     "fr": "Zigbee Onoff",
     "de": "Zigbee Onoff"
+=======
+    "en": "Zigbee Switch",
+    "nl": "Zigbee Schakelaar",
+    "fr": "Interrupteur Zigbee",
+    "de": "Zigbee Schalter"
+>>>>>>> master
   },
   "images": {
     "small": "/assets/images/small.png",
@@ -42,4 +49,8 @@
       }
     }
   ]
+<<<<<<< HEAD
 }
+=======
+} 
+>>>>>>> master

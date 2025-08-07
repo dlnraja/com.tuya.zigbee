@@ -1,14 +1,25 @@
 {
+<<<<<<< HEAD
   "id": "tuya-switches",
+=======
+  "id": "tuya-switch",
+>>>>>>> master
   "class": "switch",
   "capabilities": [
     "onoff"
   ],
   "name": {
+<<<<<<< HEAD
     "en": "Tuya Switches",
     "nl": "Tuya Switches",
     "fr": "Tuya Switches",
     "de": "Tuya Switches"
+=======
+    "en": "Tuya Switch",
+    "nl": "Tuya Schakelaar",
+    "fr": "Interrupteur Tuya",
+    "de": "Tuya Schalter"
+>>>>>>> master
   },
   "images": {
     "small": "/assets/images/small.png",

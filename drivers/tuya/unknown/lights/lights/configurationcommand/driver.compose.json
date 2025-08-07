@@ -1,0 +1,25 @@
+{
+  "id": "configurationcommand",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "configurationcommand",
+    "fr": "configurationcommand",
+    "nl": "configurationcommand",
+    "ta": "configurationcommand"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "configurationcommand",
+  "originalFile": "configuration.py",
+  "extracted": "2025-08-05T08:33:35.093Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

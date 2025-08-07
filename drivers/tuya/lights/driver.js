@@ -2,6 +2,7 @@
 
 const { TuyaDevice } = require('homey-tuya');
 
+<<<<<<< HEAD
 class TuyaLightsDriver extends TuyaDevice {
   async onInit() {
     await super.onInit();
@@ -11,11 +12,21 @@ class TuyaLightsDriver extends TuyaDevice {
     // Register capabilities based on category
     
     // Register light capabilities
+=======
+class TuyaLightDriver extends TuyaDevice {
+  async onInit() {
+    await super.onInit();
+    
+    this.log('Tuya Light Driver initialized');
+    
+    // Register capabilities
+>>>>>>> master
     this.registerCapability('onoff', 'switch_1');
     this.registerCapability('dim', 'brightness_1');
     this.registerCapability('light_hue', 'colour_data');
     this.registerCapability('light_saturation', 'colour_data');
     this.registerCapability('light_temperature', 'colour_data');
+<<<<<<< HEAD
     
     // Setup polling
     this.setupPolling();
@@ -82,3 +93,13 @@ class TuyaLightsDriver extends TuyaDevice {
 }
 
 module.exports = TuyaLightsDriver;
+=======
+  }
+
+  async onSettings({ oldSettings, newSettings, changedKeys }) {
+    this.log('Tuya Light settings changed');
+  }
+}
+
+module.exports = TuyaLightDriver; 
+>>>>>>> master

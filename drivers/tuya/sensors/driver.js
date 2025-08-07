@@ -2,6 +2,7 @@
 
 const { TuyaDevice } = require('homey-tuya');
 
+<<<<<<< HEAD
 class TuyaSensorsDriver extends TuyaDevice {
   async onInit() {
     await super.onInit();
@@ -11,10 +12,20 @@ class TuyaSensorsDriver extends TuyaDevice {
     // Register capabilities based on category
     
     // Register sensor capabilities
+=======
+class TuyaSensorDriver extends TuyaDevice {
+  async onInit() {
+    await super.onInit();
+    
+    this.log('Tuya Sensor Driver initialized');
+    
+    // Register capabilities based on sensor type
+>>>>>>> master
     this.registerCapability('measure_temperature', 'va_temperature');
     this.registerCapability('measure_humidity', 'va_humidity');
     this.registerCapability('alarm_motion', 'pir_1');
     this.registerCapability('alarm_contact', 'doorcontact_state');
+<<<<<<< HEAD
     
     // Setup polling
     this.setupPolling();
@@ -80,3 +91,13 @@ class TuyaSensorsDriver extends TuyaDevice {
 }
 
 module.exports = TuyaSensorsDriver;
+=======
+  }
+
+  async onSettings({ oldSettings, newSettings, changedKeys }) {
+    this.log('Tuya Sensor settings changed');
+  }
+}
+
+module.exports = TuyaSensorDriver; 
+>>>>>>> master
