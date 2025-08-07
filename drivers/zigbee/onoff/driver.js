@@ -1,52 +1,98 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-meshdriver');
+const { ZigBeeDriver } = require('homey-meshdriver');
 
-<<<<<<< HEAD
-class ZigbeeOnoffDevice extends ZigBeeDevice {
-  async onMeshInit() {
-    await super.onMeshInit();
+class OnoffDriver extends ZigBeeDriver {
     
-    this.log('ZigbeeOnoffDevice initialized');
+    async onMeshInit() {
+        this.log('🚀 onoff Driver - Initialisation MEGA enrichie...');
+        
+        // Configuration MEGA
+        this.megaConfig = {
+            mode: 'enrichment',
+            enrichmentLevel: 'ultra',
+            autoRecovery: true
+        };
+        
+        // Clusters MEGA
+        this.clusters = this.getMegaClusters();
+        
+        // Capacités MEGA
+        this.capabilities = this.getMegaCapabilities();
+        
+        // Enregistrement des capacités MEGA
+        await this.registerMegaCapabilities();
+        
+        this.log('✅ onoff Driver - Initialisation MEGA terminée');
+    }
     
-=======
-class ZigbeeOnOffDevice extends ZigBeeDevice {
-  async onMeshInit() {
-    await super.onMeshInit();
+    getMegaClusters() {
+        const clusters = ['genBasic', 'genIdentify', 'genOnOff'];
+        
+        if (this.driverName.includes('dim')) {
+            clusters.push('genLevelCtrl');
+        }
+        if (this.driverName.includes('color')) {
+            clusters.push('lightingColorCtrl');
+        }
+        if (this.driverName.includes('sensor')) {
+            clusters.push('msTemperatureMeasurement', 'msRelativeHumidity');
+        }
+        
+        return clusters;
+    }
     
->>>>>>> master
-    // Enable debugging
-    this.enableDebug();
+    getMegaCapabilities() {
+        const capabilities = ['onoff'];
+        
+        if (this.driverName.includes('dim')) {
+            capabilities.push('dim');
+        }
+        if (this.driverName.includes('color')) {
+            capabilities.push('light_hue', 'light_saturation');
+        }
+        if (this.driverName.includes('temp')) {
+            capabilities.push('light_temperature');
+        }
+        
+        return capabilities;
+    }
     
-    // Register capabilities
-<<<<<<< HEAD
+    async registerMegaCapabilities() {
+        for (const capability of this.capabilities) {
+            try {
+                await this.registerCapability(capability);
+                this.log(`✅ Capacité driver MEGA enregistrée: ${capability}`);
+            } catch (error) {
+                this.error(`❌ Erreur enregistrement capacité driver MEGA ${capability}:`, error);
+            }
+        }
+    }
     
-    // Register onoff capabilities
-    this.registerCapability('onoff', 'genOnOff');
+    // Méthodes de gestion des devices MEGA
+    async onDeviceAdded(device) {
+        this.log(`📱 Device MEGA ajouté: ${device.getName()}`);
+        
+        // Configuration automatique MEGA
+        await this.configureMegaDevice(device);
+    }
     
-    this.log('ZigbeeOnoffDevice capabilities registered');
-  }
-
-  
-    // Register onoff capabilities
-    this.registerCapability('onoff', 'genOnOff');
-
-  async onSettings({ oldSettings, newSettings, changedKeys }) {
-    this.log('ZigbeeOnoffDevice settings changed');
-  }
+    async onDeviceRemoved(device) {
+        this.log(`🗑️ Device MEGA supprimé: ${device.getName()}`);
+    }
+    
+    async configureMegaDevice(device) {
+        try {
+            // Configuration des clusters MEGA
+            for (const cluster of this.clusters) {
+                await device.configureCluster(cluster);
+            }
+            
+            this.log(`✅ Device MEGA configuré: ${device.getName()}`);
+        } catch (error) {
+            this.error(`❌ Erreur configuration device MEGA ${device.getName()}:`, error);
+        }
+    }
 }
 
-module.exports = ZigbeeOnoffDevice;
-=======
-    this.registerCapability('onoff', 'genOnOff');
-    
-    this.log('Zigbee OnOff Device initialized');
-  }
-
-  async onSettings({ oldSettings, newSettings, changedKeys }) {
-    this.log('Zigbee OnOff Device settings changed');
-  }
-}
-
-module.exports = ZigbeeOnOffDevice; 
->>>>>>> master
+module.exports = OnoffDriver;

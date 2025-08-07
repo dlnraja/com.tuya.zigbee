@@ -1,64 +1,29 @@
 {
-<<<<<<< HEAD
-  "id": "tuya-lights",
-=======
-  "id": "tuya-light",
->>>>>>> master
-  "class": "light",
+  "id": "lights",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_hue",
-    "light_saturation",
-    "light_temperature"
+    "onoff"
   ],
-  "name": {
-<<<<<<< HEAD
-    "en": "Tuya Lights",
-    "nl": "Tuya Lights",
-    "fr": "Tuya Lights",
-    "de": "Tuya Lights"
-=======
-    "en": "Tuya Light",
-    "nl": "Tuya Licht",
-    "fr": "Lampe Tuya",
-    "de": "Tuya Lampe"
->>>>>>> master
-  },
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
   "images": {
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png"
   },
-  "pair": [
-    {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-        "next": "list_devices"
-      }
+  "class": "light",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Lights",
+    "nl": "Lights",
+    "fr": "Lights",
+    "de": "Lights"
+  },
+  "manufacturer": "_TZ3000_xxxxxxxx",
+  "product": "LIGHTS",
+  "dataPoints": {
+    "1": {
+      "name": "switch",
+      "type": "bool",
+      "writable": true
     }
-  ],
-  "settings": [
-    {
-      "id": "poll_interval",
-      "type": "number",
-      "label": {
-        "en": "Poll Interval (seconds)",
-        "nl": "Polling Interval (seconden)",
-        "fr": "Intervalle de Polling (secondes)",
-        "de": "Polling Intervall (Sekunden)"
-      },
-      "value": 30,
-      "hint": {
-        "en": "How often to poll the device for status updates",
-        "nl": "Hoe vaak het apparaat wordt gecontroleerd voor status updates",
-        "fr": "Fréquence de vérification des mises à jour de statut",
-        "de": "Wie oft das Gerät auf Statusaktualisierungen abgefragt wird"
-      }
-    }
-  ]
-<<<<<<< HEAD
+  }
 }
-=======
-} 
->>>>>>> master

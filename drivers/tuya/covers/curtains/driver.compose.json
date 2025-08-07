@@ -1,0 +1,20 @@
+{
+  "id": "curtains",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "class": "light",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Curtains",
+    "nl": "Curtains",
+    "fr": "Curtains",
+    "de": "Curtains"
+  }
+}

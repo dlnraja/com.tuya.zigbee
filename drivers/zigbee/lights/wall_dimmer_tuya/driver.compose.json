@@ -1,49 +1,46 @@
 {
-  "id": "zigbee-lights",
-  "class": "light",
+  "id": "wall_dimmer_tuya",
   "capabilities": [
     "onoff",
-    "dim",
-    "light_hue",
-    "light_saturation",
-    "light_temperature"
+    "dim"
   ],
-  "name": {
-    "en": "Zigbee Lights",
-    "nl": "Zigbee Lights",
-    "fr": "Zigbee Lights",
-    "de": "Zigbee Lights"
+  "capabilitiesOptions": {
+    "dim": {
+      "title": {
+        "en": "Brightness",
+        "nl": "Helderheid",
+        "fr": "Luminosité",
+        "de": "Helligkeit"
+      }
+    }
   },
+  "icon": "/assets/icon.svg",
   "images": {
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png"
   },
-  "pair": [
-    {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-        "next": "list_devices"
-      }
+  "class": "other",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Wall Dimmer Tuya",
+    "nl": "Wall Dimmer Tuya",
+    "fr": "Wall Dimmer Tuya",
+    "de": "Wall Dimmer Tuya"
+  },
+  "manufacturer": "_TZ3000_xxxxxxxx",
+  "product": "WALL_DIMMER_TUYA",
+  "dataPoints": {
+    "1": {
+      "name": "switch",
+      "type": "bool",
+      "writable": true
+    },
+    "2": {
+      "name": "brightness",
+      "type": "value",
+      "min": 0,
+      "max": 1000,
+      "writable": true
     }
-  ],
-  "settings": [
-    {
-      "id": "poll_interval",
-      "type": "number",
-      "label": {
-        "en": "Poll Interval (seconds)",
-        "nl": "Polling Interval (seconden)",
-        "fr": "Intervalle de Polling (secondes)",
-        "de": "Polling Intervall (Sekunden)"
-      },
-      "value": 30,
-      "hint": {
-        "en": "How often to poll the device for status updates",
-        "nl": "Hoe vaak het apparaat wordt gecontroleerd voor status updates",
-        "fr": "Fréquence de vérification des mises à jour de statut",
-        "de": "Wie oft das Gerät auf Statusaktualisierungen abgefragt wird"
-      }
-    }
-  ]
+  }
 }

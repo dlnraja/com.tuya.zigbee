@@ -1,121 +1,29 @@
 {
-<<<<<<< HEAD
-  "id": "zigbee-sensors",
-  "class": "sensor",
+  "id": "sensors",
   "capabilities": [
-    "measure_temperature",
-    "measure_humidity",
-    "alarm_motion"
+    "onoff"
   ],
-  "name": {
-    "en": "Zigbee Sensors",
-    "nl": "Zigbee Sensors",
-    "fr": "Zigbee Sensors",
-    "de": "Zigbee Sensors"
-=======
-  "id": "zigbee-sensor",
-  "title": {
-    "en": "Zigbee Sensor",
-    "nl": "Zigbee Sensor",
-    "fr": "Capteur Zigbee",
-    "de": "Zigbee Sensor"
-  },
-  "category": [
-    "sensor"
-  ],
-  "capabilities": [
-    "measure_temperature",
-    "measure_humidity",
-    "measure_pressure",
-    "measure_illuminance"
-  ],
-  "capabilitiesOptions": {
-    "measure_temperature": {
-      "title": {
-        "en": "Temperature",
-        "nl": "Temperatuur",
-        "fr": "Température",
-        "de": "Temperatur"
-      }
-    },
-    "measure_humidity": {
-      "title": {
-        "en": "Humidity",
-        "nl": "Vochtigheid",
-        "fr": "Humidité",
-        "de": "Luftfeuchtigkeit"
-      }
-    },
-    "measure_pressure": {
-      "title": {
-        "en": "Pressure",
-        "nl": "Druk",
-        "fr": "Pression",
-        "de": "Druck"
-      }
-    },
-    "measure_illuminance": {
-      "title": {
-        "en": "Illuminance",
-        "nl": "Verlichting",
-        "fr": "Éclairement",
-        "de": "Beleuchtungsstärke"
-      }
-    }
->>>>>>> master
-  },
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
   "images": {
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png"
   },
-  "pair": [
-    {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-<<<<<<< HEAD
-        "next": "list_devices"
-      }
-=======
-        "next": "add_devices"
-      }
-    },
-    {
-      "id": "add_devices",
-      "template": "add_devices"
->>>>>>> master
+  "class": "sensor",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Sensors",
+    "nl": "Sensors",
+    "fr": "Sensors",
+    "de": "Sensors"
+  },
+  "manufacturer": "_TZ3000_xxxxxxxx",
+  "product": "SENSORS",
+  "dataPoints": {
+    "1": {
+      "name": "switch",
+      "type": "bool",
+      "writable": true
     }
-  ],
-  "settings": [
-    {
-<<<<<<< HEAD
-      "id": "poll_interval",
-      "type": "number",
-      "label": {
-        "en": "Poll Interval (seconds)",
-        "nl": "Polling Interval (seconden)",
-        "fr": "Intervalle de Polling (secondes)",
-        "de": "Polling Intervall (Sekunden)"
-      },
-      "value": 30,
-      "hint": {
-        "en": "How often to poll the device for status updates",
-        "nl": "Hoe vaak het apparaat wordt gecontroleerd voor status updates",
-        "fr": "Fréquence de vérification des mises à jour de statut",
-        "de": "Wie oft das Gerät auf Statusaktualisierungen abgefragt wird"
-      }
-    }
-  ]
+  }
 }
-=======
-      "type": "group",
-      "label": {
-        "en": "Zigbee Sensor Settings",
-        "nl": "Zigbee Sensor Instellingen",
-        "fr": "Paramètres du capteur Zigbee",
-        "de": "Zigbee Sensoreinstellungen"
-      }
-    }
-  ]
-} 
->>>>>>> master

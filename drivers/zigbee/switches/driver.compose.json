@@ -1,1 +1,29 @@
-{ "id": "switches", "class": "light", "name": { "en": "Switches", "fr": "Switches", "nl": "Switches" }, "capabilities": [ "onoff", "dim" ], "clusters": [ "genOnOff", "genLevelCtrl", "genBasic", "genIdentify" ], "settings": { "pollInterval": { "type": "number", "title": "Poll Interval", "description": "Polling interval in seconds", "default": 60, "minimum": 10, "maximum": 300 } }, "zigbee": { "manufacturerName": "_TZ3000", "modelId": "TS0601", "endpoints": { "1": { "clusters": [ "genBasic", "genOnOff" ], "bindings": [] } } }, "images": { "small": "./assets/images/small.png", "large": "./assets/images/large.png" }}
+{
+  "id": "switches",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "class": "other",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Switches",
+    "nl": "Switches",
+    "fr": "Switches",
+    "de": "Switches"
+  },
+  "manufacturer": "_TZ3000_xxxxxxxx",
+  "product": "SWITCHES",
+  "dataPoints": {
+    "1": {
+      "name": "switch",
+      "type": "bool",
+      "writable": true
+    }
+  }
+}

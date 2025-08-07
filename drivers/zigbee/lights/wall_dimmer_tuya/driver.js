@@ -1,60 +1,98 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-meshdriver');
+const { ZigBeeDriver } = require('homey-meshdriver');
 
-class ZigbeeLightsDevice extends ZigBeeDevice {
-  async onMeshInit() {
-    await super.onMeshInit();
+class Wall_dimmer_tuyaDriver extends ZigBeeDriver {
     
-    this.log('ZigbeeLightsDevice initialized');
+    async onMeshInit() {
+        this.log('🚀 wall_dimmer_tuya Driver - Initialisation MEGA enrichie...');
+        
+        // Configuration MEGA
+        this.megaConfig = {
+            mode: 'enrichment',
+            enrichmentLevel: 'ultra',
+            autoRecovery: true
+        };
+        
+        // Clusters MEGA
+        this.clusters = this.getMegaClusters();
+        
+        // Capacités MEGA
+        this.capabilities = this.getMegaCapabilities();
+        
+        // Enregistrement des capacités MEGA
+        await this.registerMegaCapabilities();
+        
+        this.log('✅ wall_dimmer_tuya Driver - Initialisation MEGA terminée');
+    }
     
-    // Enable debugging
-    this.enableDebug();
+    getMegaClusters() {
+        const clusters = ['genBasic', 'genIdentify', 'genOnOff'];
+        
+        if (this.driverName.includes('dim')) {
+            clusters.push('genLevelCtrl');
+        }
+        if (this.driverName.includes('color')) {
+            clusters.push('lightingColorCtrl');
+        }
+        if (this.driverName.includes('sensor')) {
+            clusters.push('msTemperatureMeasurement', 'msRelativeHumidity');
+        }
+        
+        return clusters;
+    }
     
-    // Register capabilities
+    getMegaCapabilities() {
+        const capabilities = ['onoff'];
+        
+        if (this.driverName.includes('dim')) {
+            capabilities.push('dim');
+        }
+        if (this.driverName.includes('color')) {
+            capabilities.push('light_hue', 'light_saturation');
+        }
+        if (this.driverName.includes('temp')) {
+            capabilities.push('light_temperature');
+        }
+        
+        return capabilities;
+    }
     
-    // Register light capabilities
-    this.registerCapability('onoff', 'genOnOff');
-    this.registerCapability('dim', 'genLevelCtrl');
-    this.registerCapability('light_hue', 'genLevelCtrl');
-    this.registerCapability('light_saturation', 'genLevelCtrl');
-    this.registerCapability('light_temperature', 'genLevelCtrl');
+    async registerMegaCapabilities() {
+        for (const capability of this.capabilities) {
+            try {
+                await this.registerCapability(capability);
+                this.log(`✅ Capacité driver MEGA enregistrée: ${capability}`);
+            } catch (error) {
+                this.error(`❌ Erreur enregistrement capacité driver MEGA ${capability}:`, error);
+            }
+        }
+    }
     
-    // Setup advanced features
-    this.setupAdvancedFeatures();
+    // Méthodes de gestion des devices MEGA
+    async onDeviceAdded(device) {
+        this.log(`📱 Device MEGA ajouté: ${device.getName()}`);
+        
+        // Configuration automatique MEGA
+        await this.configureMegaDevice(device);
+    }
     
-    this.log('ZigbeeLightsDevice capabilities registered');
-  }
-
-  
-    // Register light capabilities
-    this.registerCapability('onoff', 'genOnOff');
-    this.registerCapability('dim', 'genLevelCtrl');
-    this.registerCapability('light_hue', 'genLevelCtrl');
-    this.registerCapability('light_saturation', 'genLevelCtrl');
-    this.registerCapability('light_temperature', 'genLevelCtrl');
-
-  async onSettings({ oldSettings, newSettings, changedKeys }) {
-    this.log('ZigbeeLightsDevice settings changed');
-  }
-
-  setupAdvancedFeatures() {
-    // Advanced features for Zigbee devices
-    this.setupErrorHandling();
-    this.setupLogging();
-  }
-
-  setupErrorHandling() {
-    this.on('error', (error) => {
-      this.error('Device error:', error);
-    });
-  }
-
-  setupLogging() {
-    this.on('data', (data) => {
-      this.log('Device data received:', data);
-    });
-  }
+    async onDeviceRemoved(device) {
+        this.log(`🗑️ Device MEGA supprimé: ${device.getName()}`);
+    }
+    
+    async configureMegaDevice(device) {
+        try {
+            // Configuration des clusters MEGA
+            for (const cluster of this.clusters) {
+                await device.configureCluster(cluster);
+            }
+            
+            this.log(`✅ Device MEGA configuré: ${device.getName()}`);
+        } catch (error) {
+            this.error(`❌ Erreur configuration device MEGA ${device.getName()}:`, error);
+        }
+    }
 }
 
-module.exports = ZigbeeLightsDevice;
+module.exports = Wall_dimmer_tuyaDriver;

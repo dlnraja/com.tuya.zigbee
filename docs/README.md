@@ -1,4 +1,4 @@
-# 📚 Documentation Index
+# 📚 Documentation Index - MEGA ULTIMATE
 
 ## 📊 Reports
 
@@ -66,4 +66,13 @@
 
 ---
 
-*Généré automatiquement par MEGA MD Organizer*
+## 🚀 Maintenance Automatique
+
+Le script `scripts/md-auto-maintenance.js` s'exécute automatiquement pour:
+- Nettoyer les fichiers MD inutiles
+- Organiser les nouveaux fichiers MD
+- Maintenir une structure propre
+
+---
+
+*Généré automatiquement par MEGA MD Cleanup Ultimate*

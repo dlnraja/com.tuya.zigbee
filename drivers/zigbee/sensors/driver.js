@@ -1,35 +1,98 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-meshdriver');
+const { ZigBeeDriver } = require('homey-meshdriver');
 
-class ZigbeeSensorsDevice extends ZigBeeDevice {
-  async onMeshInit() {
-    await super.onMeshInit();
+class SensorsDriver extends ZigBeeDriver {
     
-    this.log('ZigbeeSensorsDevice initialized');
+    async onMeshInit() {
+        this.log('🚀 sensors Driver - Initialisation MEGA enrichie...');
+        
+        // Configuration MEGA
+        this.megaConfig = {
+            mode: 'enrichment',
+            enrichmentLevel: 'ultra',
+            autoRecovery: true
+        };
+        
+        // Clusters MEGA
+        this.clusters = this.getMegaClusters();
+        
+        // Capacités MEGA
+        this.capabilities = this.getMegaCapabilities();
+        
+        // Enregistrement des capacités MEGA
+        await this.registerMegaCapabilities();
+        
+        this.log('✅ sensors Driver - Initialisation MEGA terminée');
+    }
     
-    // Enable debugging
-    this.enableDebug();
+    getMegaClusters() {
+        const clusters = ['genBasic', 'genIdentify', 'genOnOff'];
+        
+        if (this.driverName.includes('dim')) {
+            clusters.push('genLevelCtrl');
+        }
+        if (this.driverName.includes('color')) {
+            clusters.push('lightingColorCtrl');
+        }
+        if (this.driverName.includes('sensor')) {
+            clusters.push('msTemperatureMeasurement', 'msRelativeHumidity');
+        }
+        
+        return clusters;
+    }
     
-    // Register capabilities
+    getMegaCapabilities() {
+        const capabilities = ['onoff'];
+        
+        if (this.driverName.includes('dim')) {
+            capabilities.push('dim');
+        }
+        if (this.driverName.includes('color')) {
+            capabilities.push('light_hue', 'light_saturation');
+        }
+        if (this.driverName.includes('temp')) {
+            capabilities.push('light_temperature');
+        }
+        
+        return capabilities;
+    }
     
-    // Register sensor capabilities
-    this.registerCapability('measure_temperature', 'msTemperatureMeasurement');
-    this.registerCapability('measure_humidity', 'msRelativeHumidity');
-    this.registerCapability('alarm_motion', 'msOccupancySensing');
+    async registerMegaCapabilities() {
+        for (const capability of this.capabilities) {
+            try {
+                await this.registerCapability(capability);
+                this.log(`✅ Capacité driver MEGA enregistrée: ${capability}`);
+            } catch (error) {
+                this.error(`❌ Erreur enregistrement capacité driver MEGA ${capability}:`, error);
+            }
+        }
+    }
     
-    this.log('ZigbeeSensorsDevice capabilities registered');
-  }
-
-  
-    // Register sensor capabilities
-    this.registerCapability('measure_temperature', 'msTemperatureMeasurement');
-    this.registerCapability('measure_humidity', 'msRelativeHumidity');
-    this.registerCapability('alarm_motion', 'msOccupancySensing');
-
-  async onSettings({ oldSettings, newSettings, changedKeys }) {
-    this.log('ZigbeeSensorsDevice settings changed');
-  }
+    // Méthodes de gestion des devices MEGA
+    async onDeviceAdded(device) {
+        this.log(`📱 Device MEGA ajouté: ${device.getName()}`);
+        
+        // Configuration automatique MEGA
+        await this.configureMegaDevice(device);
+    }
+    
+    async onDeviceRemoved(device) {
+        this.log(`🗑️ Device MEGA supprimé: ${device.getName()}`);
+    }
+    
+    async configureMegaDevice(device) {
+        try {
+            // Configuration des clusters MEGA
+            for (const cluster of this.clusters) {
+                await device.configureCluster(cluster);
+            }
+            
+            this.log(`✅ Device MEGA configuré: ${device.getName()}`);
+        } catch (error) {
+            this.error(`❌ Erreur configuration device MEGA ${device.getName()}:`, error);
+        }
+    }
 }
 
-module.exports = ZigbeeSensorsDevice;
+module.exports = SensorsDriver;

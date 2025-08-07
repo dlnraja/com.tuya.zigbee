@@ -1,0 +1,20 @@
+{
+  "id": "rgb",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "class": "light",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Rgb",
+    "nl": "Rgb",
+    "fr": "Rgb",
+    "de": "Rgb"
+  }
+}

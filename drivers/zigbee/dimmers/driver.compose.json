@@ -1,39 +1,10 @@
 {
-<<<<<<< HEAD
-  "id": "zigbee-dimmers",
-  "class": "light",
-=======
-  "id": "zigbee-dimmer",
-  "title": {
-    "en": "Zigbee Dimmer",
-    "nl": "Zigbee Dimmer",
-    "fr": "Variateur Zigbee",
-    "de": "Zigbee Dimmer"
-  },
-  "category": [
-    "light"
-  ],
->>>>>>> master
+  "id": "dimmers",
   "capabilities": [
     "onoff",
     "dim"
   ],
-<<<<<<< HEAD
-  "name": {
-    "en": "Zigbee Dimmers",
-    "nl": "Zigbee Dimmers",
-    "fr": "Zigbee Dimmers",
-    "de": "Zigbee Dimmers"
-=======
   "capabilitiesOptions": {
-    "onoff": {
-      "title": {
-        "en": "Light",
-        "nl": "Licht",
-        "fr": "Lampe",
-        "de": "Licht"
-      }
-    },
     "dim": {
       "title": {
         "en": "Brightness",
@@ -42,60 +13,34 @@
         "de": "Helligkeit"
       }
     }
->>>>>>> master
   },
+  "icon": "/assets/icon.svg",
   "images": {
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png"
   },
-  "pair": [
-    {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-<<<<<<< HEAD
-        "next": "list_devices"
-      }
-=======
-        "next": "add_devices"
-      }
+  "class": "other",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Dimmers",
+    "nl": "Dimmers",
+    "fr": "Dimmers",
+    "de": "Dimmers"
+  },
+  "manufacturer": "_TZ3000_xxxxxxxx",
+  "product": "DIMMERS",
+  "dataPoints": {
+    "1": {
+      "name": "switch",
+      "type": "bool",
+      "writable": true
     },
-    {
-      "id": "add_devices",
-      "template": "add_devices"
->>>>>>> master
+    "2": {
+      "name": "brightness",
+      "type": "value",
+      "min": 0,
+      "max": 1000,
+      "writable": true
     }
-  ],
-  "settings": [
-    {
-<<<<<<< HEAD
-      "id": "poll_interval",
-      "type": "number",
-      "label": {
-        "en": "Poll Interval (seconds)",
-        "nl": "Polling Interval (seconden)",
-        "fr": "Intervalle de Polling (secondes)",
-        "de": "Polling Intervall (Sekunden)"
-      },
-      "value": 30,
-      "hint": {
-        "en": "How often to poll the device for status updates",
-        "nl": "Hoe vaak het apparaat wordt gecontroleerd voor status updates",
-        "fr": "Fréquence de vérification des mises à jour de statut",
-        "de": "Wie oft das Gerät auf Statusaktualisierungen abgefragt wird"
-      }
-    }
-  ]
+  }
 }
-=======
-      "type": "group",
-      "label": {
-        "en": "Dimmer Settings",
-        "nl": "Dimmer Instellingen",
-        "fr": "Paramètres du variateur",
-        "de": "Dimmereinstellungen"
-      }
-    }
-  ]
-} 
->>>>>>> master

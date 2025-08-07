@@ -1,101 +1,29 @@
 {
-<<<<<<< HEAD
-  "id": "tuya-thermostats",
-  "class": "thermostat",
-=======
-  "id": "tuya-thermostat",
-  "title": {
-    "en": "Tuya Thermostat",
-    "nl": "Tuya Thermostaat",
-    "fr": "Thermostat Tuya",
-    "de": "Tuya Thermostat"
-  },
-  "category": [
-    "climate"
-  ],
->>>>>>> master
+  "id": "thermostats",
   "capabilities": [
-    "target_temperature",
-    "measure_temperature",
-    "measure_humidity"
+    "onoff"
   ],
-<<<<<<< HEAD
-  "name": {
-    "en": "Tuya Thermostats",
-    "nl": "Tuya Thermostats",
-    "fr": "Tuya Thermostats",
-    "de": "Tuya Thermostats"
-=======
-  "capabilitiesOptions": {
-    "target_temperature": {
-      "title": {
-        "en": "Target Temperature",
-        "nl": "Doeltemperatuur",
-        "fr": "Température cible",
-        "de": "Zieltemperatur"
-      },
-      "min": 5,
-      "max": 30,
-      "step": 0.5
-    },
-    "measure_temperature": {
-      "title": {
-        "en": "Temperature",
-        "nl": "Temperatuur",
-        "fr": "Température",
-        "de": "Temperatur"
-      }
-    }
->>>>>>> master
-  },
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
   "images": {
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png"
   },
-  "pair": [
-    {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-<<<<<<< HEAD
-        "next": "list_devices"
-      }
-=======
-        "next": "add_devices"
-      }
-    },
-    {
-      "id": "add_devices",
-      "template": "add_devices"
->>>>>>> master
+  "class": "thermostat",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Thermostats",
+    "nl": "Thermostats",
+    "fr": "Thermostats",
+    "de": "Thermostats"
+  },
+  "manufacturer": "_TZ3000_xxxxxxxx",
+  "product": "THERMOSTATS",
+  "dataPoints": {
+    "1": {
+      "name": "switch",
+      "type": "bool",
+      "writable": true
     }
-  ],
-  "settings": [
-    {
-<<<<<<< HEAD
-      "id": "poll_interval",
-      "type": "number",
-      "label": {
-        "en": "Poll Interval (seconds)",
-        "nl": "Polling Interval (seconden)",
-        "fr": "Intervalle de Polling (secondes)",
-        "de": "Polling Intervall (Sekunden)"
-      },
-      "value": 30,
-      "hint": {
-        "en": "How often to poll the device for status updates",
-        "nl": "Hoe vaak het apparaat wordt gecontroleerd voor status updates",
-        "fr": "Fréquence de vérification des mises à jour de statut",
-        "de": "Wie oft das Gerät auf Statusaktualisierungen abgefragt wird"
-=======
-      "type": "group",
-      "label": {
-        "en": "Thermostat Settings",
-        "nl": "Thermostaat Instellingen",
-        "fr": "Paramètres du thermostat",
-        "de": "Thermostateinstellungen"
->>>>>>> master
-      }
-    }
-  ]
+  }
 }
