@@ -1,5 +1,6 @@
 {
   "id": "com.tuya.zigbee",
+<<<<<<< HEAD
   "version": "3.3.3",
   "compatibility": ">=6.0.0",
   "sdk": 3,
@@ -23,12 +24,25 @@
   "category": ["lighting"],
   "permissions": [
     "homey:manager:api"
+=======
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "category": [
+    "lights",
+    "sensors",
+    "switches"
+  ],
+  "permissions": [
+    "homey:manager:api",
+    "homey:manager:drivers"
+>>>>>>> master
   ],
   "images": {
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png"
   },
   "author": {
+<<<<<<< HEAD
     "name": "dlnraja",
     "email": "dylan.rajasekaram@gmail.com"
   },
@@ -38,6 +52,11 @@
       "email": "peter@homey.app"
     }
   ],
+=======
+    "name": "Dylan Rajasekaram",
+    "email": "dylan.rajasekaram+homey@gmail.com"
+  },
+>>>>>>> master
   "bugs": {
     "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
   },
@@ -45,5 +64,11 @@
     "type": "git",
     "url": "https://github.com/dlnraja/com.tuya.zigbee.git"
   },
+<<<<<<< HEAD
   "license": "MIT"
+=======
+  "engines": {
+    "node": ">=16.0.0"
+  }
+>>>>>>> master
 }

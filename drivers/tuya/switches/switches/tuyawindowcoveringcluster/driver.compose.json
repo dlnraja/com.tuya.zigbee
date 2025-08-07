@@ -1,0 +1,25 @@
+{
+  "id": "tuyawindowcoveringcluster",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "tuyawindowcoveringcluster",
+    "fr": "tuyawindowcoveringcluster",
+    "nl": "tuyawindowcoveringcluster",
+    "ta": "tuyawindowcoveringcluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "tuyawindowcoveringcluster",
+  "originalFile": "TuyaWindowCoveringCluster.js",
+  "extracted": "2025-08-05T08:36:10.906Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

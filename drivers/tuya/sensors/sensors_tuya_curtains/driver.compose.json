@@ -1,0 +1,58 @@
+{
+  "id": "curtains",
+  "name": {
+    "en": "curtains",
+    "fr": "curtains",
+    "nl": "curtains",
+    "ta": "curtains"
+  },
+  "class": "cover",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  },
+  "isGeneric": false,
+  "source": "tuya-zigbee",
+  "type": "tuya",
+  "manufacturer": "Tuya",
+  "manufacturername": "_TZE200_CURTAINS",
+  "model": "curtains",
+  "enriched": "2025-08-05T08:40:34.978Z",
+  "category": "covers",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.221Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "cover"
+    }
+  },
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ],
+  "title": {
+    "en": "Sensors_tuya_curtains Device",
+    "nl": "Sensors_tuya_curtains Apparaat"
+  },
+  "originalFile": "driver.compose.json",
+  "extractedAt": "2025-08-06T12:05:40.965Z",
+  "fixedAt": "2025-08-06T12:05:40.965Z"
+}

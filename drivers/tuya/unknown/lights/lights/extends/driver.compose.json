@@ -1,0 +1,25 @@
+{
+  "id": "extends",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "extends",
+    "fr": "extends",
+    "nl": "extends",
+    "ta": "extends"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "extends",
+  "originalFile": "error_reporting.cpython-311.pyc",
+  "extracted": "2025-08-05T08:33:32.272Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

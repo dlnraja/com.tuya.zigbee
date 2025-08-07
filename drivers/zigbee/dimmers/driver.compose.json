@@ -1,15 +1,48 @@
 {
+<<<<<<< HEAD
   "id": "zigbee-dimmers",
   "class": "light",
+=======
+  "id": "zigbee-dimmer",
+  "title": {
+    "en": "Zigbee Dimmer",
+    "nl": "Zigbee Dimmer",
+    "fr": "Variateur Zigbee",
+    "de": "Zigbee Dimmer"
+  },
+  "category": [
+    "light"
+  ],
+>>>>>>> master
   "capabilities": [
     "onoff",
     "dim"
   ],
+<<<<<<< HEAD
   "name": {
     "en": "Zigbee Dimmers",
     "nl": "Zigbee Dimmers",
     "fr": "Zigbee Dimmers",
     "de": "Zigbee Dimmers"
+=======
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Light",
+        "nl": "Licht",
+        "fr": "Lampe",
+        "de": "Licht"
+      }
+    },
+    "dim": {
+      "title": {
+        "en": "Brightness",
+        "nl": "Helderheid",
+        "fr": "Luminosité",
+        "de": "Helligkeit"
+      }
+    }
+>>>>>>> master
   },
   "images": {
     "small": "/assets/images/small.png",
@@ -20,12 +53,22 @@
       "id": "list_devices",
       "template": "list_devices",
       "navigation": {
+<<<<<<< HEAD
         "next": "list_devices"
       }
+=======
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+>>>>>>> master
     }
   ],
   "settings": [
     {
+<<<<<<< HEAD
       "id": "poll_interval",
       "type": "number",
       "label": {
@@ -44,3 +87,15 @@
     }
   ]
 }
+=======
+      "type": "group",
+      "label": {
+        "en": "Dimmer Settings",
+        "nl": "Dimmer Instellingen",
+        "fr": "Paramètres du variateur",
+        "de": "Dimmereinstellungen"
+      }
+    }
+  ]
+} 
+>>>>>>> master

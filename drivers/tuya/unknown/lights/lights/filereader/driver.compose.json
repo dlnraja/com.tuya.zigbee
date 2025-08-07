@@ -1,0 +1,25 @@
+{
+  "id": "filereader",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "filereader",
+    "fr": "filereader",
+    "nl": "filereader",
+    "ta": "filereader"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "filereader",
+  "originalFile": "readers.py",
+  "extracted": "2025-08-05T08:33:19.134Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}
