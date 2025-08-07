@@ -1,3 +1,6 @@
+// MEGA ULTIMATE ENHANCED - 2025-08-07T16:33:44.874Z
+// Script amélioré avec liens corrigés et fonctionnalités étendues
+
 #!/usr/bin/env node
 
 /**
@@ -88,7 +91,7 @@ class MegaModeUpdater {
             },
             dashboard: {
                 enabled: true,
-                url: "https://dlnraja.github.io/com.tuya.zigbee/dashboard.html",
+                url: "https://dlnraja.github.io/com.tuya.zigbee/dashboard//dashboard.html",
                 updateInterval: 30000,
                 realTime: true
             },
