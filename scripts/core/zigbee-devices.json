@@ -1,0 +1,22 @@
+{
+  "zigbee-bulb": {
+    "manufacturer": "Generic",
+    "capabilities": [
+      "onoff",
+      "dim"
+    ]
+  },
+  "zigbee-sensor": {
+    "manufacturer": "Generic",
+    "capabilities": [
+      "measure_temperature",
+      "measure_humidity"
+    ]
+  },
+  "zigbee-switch": {
+    "manufacturer": "Generic",
+    "capabilities": [
+      "onoff"
+    ]
+  }
+}

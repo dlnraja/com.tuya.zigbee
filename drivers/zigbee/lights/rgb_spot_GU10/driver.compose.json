@@ -1,49 +1,45 @@
 {
-  "id": "zigbee-lights",
-  "class": "light",
+  "id": "rgb_spot_GU10",
   "capabilities": [
     "onoff",
-    "dim",
     "light_hue",
-    "light_saturation",
-    "light_temperature"
+    "light_saturation"
   ],
-  "name": {
-    "en": "Zigbee Lights",
-    "nl": "Zigbee Lights",
-    "fr": "Zigbee Lights",
-    "de": "Zigbee Lights"
-  },
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
   "images": {
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png"
   },
-  "pair": [
-    {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-        "next": "list_devices"
-      }
+  "class": "light",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Rgb Spot GU10",
+    "nl": "Rgb Spot GU10",
+    "fr": "Rgb Spot GU10",
+    "de": "Rgb Spot GU10"
+  },
+  "manufacturer": "_TZ3000_xxxxxxxx",
+  "product": "RGB_SPOT_GU10",
+  "dataPoints": {
+    "1": {
+      "name": "switch",
+      "type": "bool",
+      "writable": true
+    },
+    "4": {
+      "name": "color_hue",
+      "type": "value",
+      "min": 0,
+      "max": 360,
+      "writable": true
+    },
+    "5": {
+      "name": "color_saturation",
+      "type": "value",
+      "min": 0,
+      "max": 100,
+      "writable": true
     }
-  ],
-  "settings": [
-    {
-      "id": "poll_interval",
-      "type": "number",
-      "label": {
-        "en": "Poll Interval (seconds)",
-        "nl": "Polling Interval (seconden)",
-        "fr": "Intervalle de Polling (secondes)",
-        "de": "Polling Intervall (Sekunden)"
-      },
-      "value": 30,
-      "hint": {
-        "en": "How often to poll the device for status updates",
-        "nl": "Hoe vaak het apparaat wordt gecontroleerd voor status updates",
-        "fr": "Fréquence de vérification des mises à jour de statut",
-        "de": "Wie oft das Gerät auf Statusaktualisierungen abgefragt wird"
-      }
-    }
-  ]
+  }
 }

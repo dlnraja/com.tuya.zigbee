@@ -1,80 +1,98 @@
 'use strict';
 
-const { TuyaDevice } = require('homey-tuya');
+const { ZigBeeDriver } = require('homey-meshdriver');
 
-class TuyaSecurityDriver extends TuyaDevice {
-  async onInit() {
-    await super.onInit();
+class SecurityDriver extends ZigBeeDriver {
     
-    this.log('TuyaSecurityDriver initialized');
-    
-    // Register capabilities based on category
-    
-    // Register security capabilities
-    this.registerCapability('alarm_motion', 'pir_1');
-    this.registerCapability('alarm_contact', 'doorcontact_state');
-    this.registerCapability('alarm_smoke', 'smoke_sensor');
-    
-    // Setup polling
-    this.setupPolling();
-    
-    // Setup advanced features
-    this.setupAdvancedFeatures();
-  }
-
-  
-    // Register security capabilities
-    this.registerCapability('alarm_motion', 'pir_1');
-    this.registerCapability('alarm_contact', 'doorcontact_state');
-    this.registerCapability('alarm_smoke', 'smoke_sensor');
-
-  async onSettings({ oldSettings, newSettings, changedKeys }) {
-    this.log('TuyaSecurityDriver settings changed');
-  }
-
-  setupPolling() {
-    const pollInterval = this.getSetting('poll_interval') || 30000;
-    this.pollTimer = this.homey.setInterval(async () => {
-      try {
-        await this.poll();
-      } catch (error) {
-        this.error('Polling error:', error);
-      }
-    }, pollInterval);
-  }
-
-  setupAdvancedFeatures() {
-    // Advanced features for Tuya devices
-    this.enableDebug();
-    this.setupErrorHandling();
-    this.setupLogging();
-  }
-
-  setupErrorHandling() {
-    this.on('error', (error) => {
-      this.error('Device error:', error);
-    });
-  }
-
-  setupLogging() {
-    this.on('data', (data) => {
-      this.log('Device data received:', data);
-    });
-  }
-
-  async poll() {
-    try {
-      await this.getData();
-    } catch (error) {
-      this.error('Poll error:', error);
+    async onMeshInit() {
+        this.log('🚀 security Driver - Initialisation MEGA enrichie...');
+        
+        // Configuration MEGA
+        this.megaConfig = {
+            mode: 'enrichment',
+            enrichmentLevel: 'ultra',
+            autoRecovery: true
+        };
+        
+        // Clusters MEGA
+        this.clusters = this.getMegaClusters();
+        
+        // Capacités MEGA
+        this.capabilities = this.getMegaCapabilities();
+        
+        // Enregistrement des capacités MEGA
+        await this.registerMegaCapabilities();
+        
+        this.log('✅ security Driver - Initialisation MEGA terminée');
     }
-  }
-
-  async onUninit() {
-    if (this.pollTimer) {
-      this.homey.clearInterval(this.pollTimer);
+    
+    getMegaClusters() {
+        const clusters = ['genBasic', 'genIdentify', 'genOnOff'];
+        
+        if (this.driverName.includes('dim')) {
+            clusters.push('genLevelCtrl');
+        }
+        if (this.driverName.includes('color')) {
+            clusters.push('lightingColorCtrl');
+        }
+        if (this.driverName.includes('sensor')) {
+            clusters.push('msTemperatureMeasurement', 'msRelativeHumidity');
+        }
+        
+        return clusters;
     }
-  }
+    
+    getMegaCapabilities() {
+        const capabilities = ['onoff'];
+        
+        if (this.driverName.includes('dim')) {
+            capabilities.push('dim');
+        }
+        if (this.driverName.includes('color')) {
+            capabilities.push('light_hue', 'light_saturation');
+        }
+        if (this.driverName.includes('temp')) {
+            capabilities.push('light_temperature');
+        }
+        
+        return capabilities;
+    }
+    
+    async registerMegaCapabilities() {
+        for (const capability of this.capabilities) {
+            try {
+                await this.registerCapability(capability);
+                this.log(`✅ Capacité driver MEGA enregistrée: ${capability}`);
+            } catch (error) {
+                this.error(`❌ Erreur enregistrement capacité driver MEGA ${capability}:`, error);
+            }
+        }
+    }
+    
+    // Méthodes de gestion des devices MEGA
+    async onDeviceAdded(device) {
+        this.log(`📱 Device MEGA ajouté: ${device.getName()}`);
+        
+        // Configuration automatique MEGA
+        await this.configureMegaDevice(device);
+    }
+    
+    async onDeviceRemoved(device) {
+        this.log(`🗑️ Device MEGA supprimé: ${device.getName()}`);
+    }
+    
+    async configureMegaDevice(device) {
+        try {
+            // Configuration des clusters MEGA
+            for (const cluster of this.clusters) {
+                await device.configureCluster(cluster);
+            }
+            
+            this.log(`✅ Device MEGA configuré: ${device.getName()}`);
+        } catch (error) {
+            this.error(`❌ Erreur configuration device MEGA ${device.getName()}:`, error);
+        }
+    }
 }
 
-module.exports = TuyaSecurityDriver;
+module.exports = SecurityDriver;

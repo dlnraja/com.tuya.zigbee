@@ -1,0 +1,20 @@
+{
+  "id": "temperature",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "class": "light",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Temperature",
+    "nl": "Temperature",
+    "fr": "Temperature",
+    "de": "Temperature"
+  }
+}
