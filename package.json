@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "com.tuya.zigbee.light",
   "version": "3.3.3",
   "description": "Lightweight Tuya devices for Homey - Tuya Light Edition",
@@ -16,4 +17,43 @@
   ],
   "author": "dlnraja",
   "license": "MIT"
+=======
+  "name": "com.tuya.zigbee",
+  "version": "1.0.0",
+  "description": "Universal Tuya Zigbee Device App - Support for all Tuya Zigbee devices",
+  "main": "app.js",
+  "dependencies": {
+    "homey": "^2.0.0"
+  },
+  "devDependencies": {
+    "homey-cli": "^1.0.0"
+  },
+  "scripts": {
+    "run": "homey app run",
+    "run:debug": "homey app run --debug",
+    "build": "homey app build",
+    "publish": "homey app publish",
+    "test": "echo \"No tests specified\" && exit 0",
+    "lint": "echo \"No linting specified\" && exit 0"
+  },
+  "keywords": [
+    "tuya",
+    "zigbee",
+    "homey",
+    "smart-home",
+    "iot"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Dylan Rajasekaram",
+    "email": "dylan.rajasekaram+homey@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dlnraja/com.tuya.zigbee.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
+  }
+>>>>>>> master
 }

@@ -1,0 +1,25 @@
+{
+  "id": "providing",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "providing",
+    "fr": "providing",
+    "nl": "providing",
+    "ta": "providing"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "providing",
+  "originalFile": "AMT_Service.mof",
+  "extracted": "2025-08-05T08:31:47.891Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

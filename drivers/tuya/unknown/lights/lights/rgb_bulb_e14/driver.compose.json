@@ -1,0 +1,25 @@
+{
+  "id": "rgb_bulb_e14",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "rgb_bulb_e14",
+    "fr": "rgb_bulb_e14",
+    "nl": "rgb_bulb_e14",
+    "ta": "rgb_bulb_e14"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "rgb_bulb_e14",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:35:56.749Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "id": "zigbee-sensors",
   "class": "sensor",
   "capabilities": [
@@ -11,6 +12,57 @@
     "nl": "Zigbee Sensors",
     "fr": "Zigbee Sensors",
     "de": "Zigbee Sensors"
+=======
+  "id": "zigbee-sensor",
+  "title": {
+    "en": "Zigbee Sensor",
+    "nl": "Zigbee Sensor",
+    "fr": "Capteur Zigbee",
+    "de": "Zigbee Sensor"
+  },
+  "category": [
+    "sensor"
+  ],
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_pressure",
+    "measure_illuminance"
+  ],
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature",
+        "nl": "Temperatuur",
+        "fr": "Température",
+        "de": "Temperatur"
+      }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Humidity",
+        "nl": "Vochtigheid",
+        "fr": "Humidité",
+        "de": "Luftfeuchtigkeit"
+      }
+    },
+    "measure_pressure": {
+      "title": {
+        "en": "Pressure",
+        "nl": "Druk",
+        "fr": "Pression",
+        "de": "Druck"
+      }
+    },
+    "measure_illuminance": {
+      "title": {
+        "en": "Illuminance",
+        "nl": "Verlichting",
+        "fr": "Éclairement",
+        "de": "Beleuchtungsstärke"
+      }
+    }
+>>>>>>> master
   },
   "images": {
     "small": "/assets/images/small.png",
@@ -21,12 +73,22 @@
       "id": "list_devices",
       "template": "list_devices",
       "navigation": {
+<<<<<<< HEAD
         "next": "list_devices"
       }
+=======
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+>>>>>>> master
     }
   ],
   "settings": [
     {
+<<<<<<< HEAD
       "id": "poll_interval",
       "type": "number",
       "label": {
@@ -45,3 +107,15 @@
     }
   ]
 }
+=======
+      "type": "group",
+      "label": {
+        "en": "Zigbee Sensor Settings",
+        "nl": "Zigbee Sensor Instellingen",
+        "fr": "Paramètres du capteur Zigbee",
+        "de": "Zigbee Sensoreinstellungen"
+      }
+    }
+  ]
+} 
+>>>>>>> master

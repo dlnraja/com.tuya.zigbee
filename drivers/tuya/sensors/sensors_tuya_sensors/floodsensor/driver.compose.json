@@ -1,0 +1,25 @@
+{
+  "id": "floodsensor",
+  "class": "sensor",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "floodsensor",
+    "fr": "floodsensor",
+    "nl": "floodsensor",
+    "ta": "floodsensor"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "floodsensor",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:35:49.318Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

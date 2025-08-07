@@ -1,0 +1,25 @@
+{
+  "id": "call",
+  "class": "plug",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "call",
+    "fr": "call",
+    "nl": "call",
+    "ta": "call"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "call",
+  "originalFile": "SETUP.EXE",
+  "extracted": "2025-08-05T08:27:13.191Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

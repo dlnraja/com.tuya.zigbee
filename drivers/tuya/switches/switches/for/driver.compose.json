@@ -1,0 +1,25 @@
+{
+  "id": "for",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "for",
+    "fr": "for",
+    "nl": "for",
+    "ta": "for"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "for",
+  "originalFile": "msvccompiler.py",
+  "extracted": "2025-08-05T08:33:17.276Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "id": "tuya-plugs",
+=======
+  "id": "tuya-plug",
+>>>>>>> master
   "class": "socket",
   "capabilities": [
     "onoff",
@@ -8,10 +12,17 @@
     "measure_voltage"
   ],
   "name": {
+<<<<<<< HEAD
     "en": "Tuya Plugs",
     "nl": "Tuya Plugs",
     "fr": "Tuya Plugs",
     "de": "Tuya Plugs"
+=======
+    "en": "Tuya Plug",
+    "nl": "Tuya Stopcontact",
+    "fr": "Prise Tuya",
+    "de": "Tuya Steckdose"
+>>>>>>> master
   },
   "images": {
     "small": "/assets/images/small.png",
@@ -45,4 +56,8 @@
       }
     }
   ]
+<<<<<<< HEAD
 }
+=======
+} 
+>>>>>>> master

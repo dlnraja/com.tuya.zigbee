@@ -1,0 +1,25 @@
+{
+  "id": "jupyterrenderable",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "jupyterrenderable",
+    "fr": "jupyterrenderable",
+    "nl": "jupyterrenderable",
+    "ta": "jupyterrenderable"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "jupyterrenderable",
+  "originalFile": "jupyter.py",
+  "extracted": "2025-08-05T08:33:55.753Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

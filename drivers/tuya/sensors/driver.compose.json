@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "id": "tuya-sensors",
+=======
+  "id": "tuya-sensor",
+>>>>>>> master
   "class": "sensor",
   "capabilities": [
     "measure_temperature",
@@ -8,10 +12,17 @@
     "alarm_contact"
   ],
   "name": {
+<<<<<<< HEAD
     "en": "Tuya Sensors",
     "nl": "Tuya Sensors",
     "fr": "Tuya Sensors",
     "de": "Tuya Sensors"
+=======
+    "en": "Tuya Sensor",
+    "nl": "Tuya Sensor",
+    "fr": "Capteur Tuya",
+    "de": "Tuya Sensor"
+>>>>>>> master
   },
   "images": {
     "small": "/assets/images/small.png",

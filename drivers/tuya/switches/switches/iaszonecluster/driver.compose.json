@@ -1,0 +1,25 @@
+{
+  "id": "iaszonecluster",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "iaszonecluster",
+    "fr": "iaszonecluster",
+    "nl": "iaszonecluster",
+    "ta": "iaszonecluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "iaszonecluster",
+  "originalFile": "iasZone.js",
+  "extracted": "2025-08-05T08:36:28.370Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

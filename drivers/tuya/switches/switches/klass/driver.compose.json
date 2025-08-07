@@ -1,0 +1,25 @@
+{
+  "id": "klass",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "klass",
+    "fr": "klass",
+    "nl": "klass",
+    "ta": "klass"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "klass",
+  "originalFile": "prototype.js",
+  "extracted": "2025-08-05T08:26:22.604Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

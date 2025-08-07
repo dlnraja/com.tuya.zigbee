@@ -1,0 +1,25 @@
+{
+  "id": "backendunavailable",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "backendunavailable",
+    "fr": "backendunavailable",
+    "nl": "backendunavailable",
+    "ta": "backendunavailable"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "backendunavailable",
+  "originalFile": "_in_process.py",
+  "extracted": "2025-08-05T08:33:48.053Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

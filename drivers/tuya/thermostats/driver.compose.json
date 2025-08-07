@@ -1,16 +1,52 @@
 {
+<<<<<<< HEAD
   "id": "tuya-thermostats",
   "class": "thermostat",
+=======
+  "id": "tuya-thermostat",
+  "title": {
+    "en": "Tuya Thermostat",
+    "nl": "Tuya Thermostaat",
+    "fr": "Thermostat Tuya",
+    "de": "Tuya Thermostat"
+  },
+  "category": [
+    "climate"
+  ],
+>>>>>>> master
   "capabilities": [
     "target_temperature",
     "measure_temperature",
     "measure_humidity"
   ],
+<<<<<<< HEAD
   "name": {
     "en": "Tuya Thermostats",
     "nl": "Tuya Thermostats",
     "fr": "Tuya Thermostats",
     "de": "Tuya Thermostats"
+=======
+  "capabilitiesOptions": {
+    "target_temperature": {
+      "title": {
+        "en": "Target Temperature",
+        "nl": "Doeltemperatuur",
+        "fr": "Température cible",
+        "de": "Zieltemperatur"
+      },
+      "min": 5,
+      "max": 30,
+      "step": 0.5
+    },
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature",
+        "nl": "Temperatuur",
+        "fr": "Température",
+        "de": "Temperatur"
+      }
+    }
+>>>>>>> master
   },
   "images": {
     "small": "/assets/images/small.png",
@@ -21,12 +57,22 @@
       "id": "list_devices",
       "template": "list_devices",
       "navigation": {
+<<<<<<< HEAD
         "next": "list_devices"
       }
+=======
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+>>>>>>> master
     }
   ],
   "settings": [
     {
+<<<<<<< HEAD
       "id": "poll_interval",
       "type": "number",
       "label": {
@@ -41,6 +87,14 @@
         "nl": "Hoe vaak het apparaat wordt gecontroleerd voor status updates",
         "fr": "Fréquence de vérification des mises à jour de statut",
         "de": "Wie oft das Gerät auf Statusaktualisierungen abgefragt wird"
+=======
+      "type": "group",
+      "label": {
+        "en": "Thermostat Settings",
+        "nl": "Thermostaat Instellingen",
+        "fr": "Paramètres du thermostat",
+        "de": "Thermostateinstellungen"
+>>>>>>> master
       }
     }
   ]
