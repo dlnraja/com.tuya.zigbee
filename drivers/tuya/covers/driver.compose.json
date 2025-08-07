@@ -1,103 +1,29 @@
 {
-<<<<<<< HEAD
-  "id": "tuya-covers",
-  "class": "curtain",
+  "id": "covers",
   "capabilities": [
-    "windowcoverings_state",
-    "windowcoverings_set"
+    "onoff"
   ],
-  "name": {
-    "en": "Tuya Covers",
-    "nl": "Tuya Covers",
-    "fr": "Tuya Covers",
-    "de": "Tuya Covers"
-=======
-  "id": "tuya-cover",
-  "title": {
-    "en": "Tuya Cover",
-    "nl": "Tuya Bedekking",
-    "fr": "Volet Tuya",
-    "de": "Tuya Abdeckung"
-  },
-  "category": [
-    "windowcoverings"
-  ],
-  "capabilities": [
-    "windowcoverings_state",
-    "windowcoverings_set",
-    "windowcoverings_tilt_set"
-  ],
-  "capabilitiesOptions": {
-    "windowcoverings_state": {
-      "title": {
-        "en": "Cover State",
-        "nl": "Bedekking Status",
-        "fr": "État du volet",
-        "de": "Abdeckungsstatus"
-      }
-    },
-    "windowcoverings_set": {
-      "title": {
-        "en": "Cover Position",
-        "nl": "Bedekking Positie",
-        "fr": "Position du volet",
-        "de": "Abdeckungsposition"
-      }
-    }
->>>>>>> master
-  },
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
   "images": {
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png"
   },
-  "pair": [
-    {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-<<<<<<< HEAD
-        "next": "list_devices"
-      }
-=======
-        "next": "add_devices"
-      }
-    },
-    {
-      "id": "add_devices",
-      "template": "add_devices"
->>>>>>> master
+  "class": "windowcoverings",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Covers",
+    "nl": "Covers",
+    "fr": "Covers",
+    "de": "Covers"
+  },
+  "manufacturer": "_TZ3000_xxxxxxxx",
+  "product": "COVERS",
+  "dataPoints": {
+    "1": {
+      "name": "switch",
+      "type": "bool",
+      "writable": true
     }
-  ],
-  "settings": [
-    {
-<<<<<<< HEAD
-      "id": "poll_interval",
-      "type": "number",
-      "label": {
-        "en": "Poll Interval (seconds)",
-        "nl": "Polling Interval (seconden)",
-        "fr": "Intervalle de Polling (secondes)",
-        "de": "Polling Intervall (Sekunden)"
-      },
-      "value": 30,
-      "hint": {
-        "en": "How often to poll the device for status updates",
-        "nl": "Hoe vaak het apparaat wordt gecontroleerd voor status updates",
-        "fr": "Fréquence de vérification des mises à jour de statut",
-        "de": "Wie oft das Gerät auf Statusaktualisierungen abgefragt wird"
-      }
-    }
-  ]
+  }
 }
-=======
-      "type": "group",
-      "label": {
-        "en": "Cover Settings",
-        "nl": "Bedekking Instellingen",
-        "fr": "Paramètres du volet",
-        "de": "Abdeckungseinstellungen"
-      }
-    }
-  ]
-} 
->>>>>>> master

@@ -9,12 +9,21 @@
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png"
   },
-  "class": "light",
+  "class": "lock",
   "connectivity": "zigbee",
   "name": {
-    "en": "Ts0602 Lock",
-    "nl": "Ts0602 Lock",
-    "fr": "Ts0602 Lock",
-    "de": "Ts0602 Lock"
+    "en": "TS0602 Lock",
+    "nl": "TS0602 Lock",
+    "fr": "TS0602 Lock",
+    "de": "TS0602 Lock"
+  },
+  "manufacturer": "_TZ3000_xxxxxxxx",
+  "product": "TS0602_LOCK",
+  "dataPoints": {
+    "1": {
+      "name": "switch",
+      "type": "bool",
+      "writable": true
+    }
   }
 }

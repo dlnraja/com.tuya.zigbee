@@ -1,45 +1,29 @@
 {
-  "id": "tuya-automation",
-  "class": "button",
+  "id": "automation",
   "capabilities": [
-    "button"
+    "onoff"
   ],
-  "name": {
-    "en": "Tuya Automation",
-    "nl": "Tuya Automation",
-    "fr": "Tuya Automation",
-    "de": "Tuya Automation"
-  },
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
   "images": {
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png"
   },
-  "pair": [
-    {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-        "next": "list_devices"
-      }
+  "class": "other",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Automation",
+    "nl": "Automation",
+    "fr": "Automation",
+    "de": "Automation"
+  },
+  "manufacturer": "_TZ3000_xxxxxxxx",
+  "product": "AUTOMATION",
+  "dataPoints": {
+    "1": {
+      "name": "switch",
+      "type": "bool",
+      "writable": true
     }
-  ],
-  "settings": [
-    {
-      "id": "poll_interval",
-      "type": "number",
-      "label": {
-        "en": "Poll Interval (seconds)",
-        "nl": "Polling Interval (seconden)",
-        "fr": "Intervalle de Polling (secondes)",
-        "de": "Polling Intervall (Sekunden)"
-      },
-      "value": 30,
-      "hint": {
-        "en": "How often to poll the device for status updates",
-        "nl": "Hoe vaak het apparaat wordt gecontroleerd voor status updates",
-        "fr": "Fréquence de vérification des mises à jour de statut",
-        "de": "Wie oft das Gerät auf Statusaktualisierungen abgefragt wird"
-      }
-    }
-  ]
+  }
 }
