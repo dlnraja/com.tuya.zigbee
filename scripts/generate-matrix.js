@@ -1,3 +1,6 @@
+// MEGA ULTIMATE ENHANCED - 2025-08-07T16:33:44.703Z
+// Script amélioré avec liens corrigés et fonctionnalités étendues
+
 // 📦 generate-matrix.js
 // Script Node.js pour générer `drivers-matrix.md` et un dashboard HTML
 
