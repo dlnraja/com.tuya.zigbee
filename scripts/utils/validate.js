@@ -83,7 +83,7 @@ class AppValidator {
   }
 
   checkDrivers() {
-    const driversPath = path.join(__dirname, '..', 'drivers');
+    const driversPath = 'drivers';
     if (!fs.existsSync(driversPath)) {
       this.errors.push('❌ Missing drivers directory');
       this.success = false;
@@ -118,7 +118,7 @@ class AppValidator {
   }
 
   checkAssets() {
-    const assetsPath = path.join(__dirname, '..', 'assets', 'images');
+    const assetsPath = path.join('assets', 'images');
     if (!fs.existsSync(assetsPath)) {
       this.errors.push('❌ Missing assets/images directory');
       this.success = false;
