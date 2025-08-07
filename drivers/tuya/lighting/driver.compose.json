@@ -1,0 +1,34 @@
+{
+  "id": "tuya_lighting",
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature"
+  ],
+  "name": {
+    "en": "Tuya Lighting",
+    "fr": "Éclairage Tuya",
+    "nl": "Tuya Verlichting",
+    "de": "Tuya Beleuchtung"
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+} 
