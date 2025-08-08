@@ -1,0 +1,25 @@
+{
+  "id": "wall_remote_4_gang_3",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "wall_remote_4_gang_3",
+    "fr": "wall_remote_4_gang_3",
+    "nl": "wall_remote_4_gang_3",
+    "ta": "wall_remote_4_gang_3"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": ": ",
+  "model": "wall_remote_4_gang_3",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:36:09.994Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

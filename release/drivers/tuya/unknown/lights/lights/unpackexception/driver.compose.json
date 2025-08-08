@@ -1,0 +1,25 @@
+{
+  "id": "unpackexception",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "unpackexception",
+    "fr": "unpackexception",
+    "nl": "unpackexception",
+    "ta": "unpackexception"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "unpackexception",
+  "originalFile": "exceptions.py",
+  "extracted": "2025-08-05T08:33:45.815Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

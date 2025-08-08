@@ -1,0 +1,54 @@
+{
+  "id": "dimmer_1_gang_tuya",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "title": {
+        "en": "Brightness",
+        "nl": "Helderheid",
+        "fr": "Luminosité",
+        "de": "Helligkeit"
+      }
+    }
+  },
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "class": "other",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Dimmer 1 Gang Tuya",
+    "nl": "Dimmer 1 Gang Tuya",
+    "fr": "Dimmer 1 Gang Tuya",
+    "de": "Dimmer 1 Gang Tuya"
+  },
+  "manufacturer": "_TZ3000_xxxxxxxx",
+  "product": "DIMMER_1_GANG_TUYA",
+  "dataPoints": {
+    "1": {
+      "name": "switch",
+      "type": "bool",
+      "writable": true
+    },
+    "2": {
+      "name": "brightness",
+      "type": "value",
+      "min": 0,
+      "max": 1000,
+      "writable": true
+    }
+  },
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:55.498Z",
+    "driverType": "zigbee",
+    "category": "lights",
+    "subcategory": "dimmer_1_gang_tuya",
+    "megaUltimateBugFixer": true
+  }
+}

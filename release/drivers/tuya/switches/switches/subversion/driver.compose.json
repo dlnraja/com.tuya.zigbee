@@ -1,0 +1,25 @@
+{
+  "id": "subversion",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "subversion",
+    "fr": "subversion",
+    "nl": "subversion",
+    "ta": "subversion"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "subversion",
+  "originalFile": "subversion.py",
+  "extracted": "2025-08-05T08:33:39.882Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

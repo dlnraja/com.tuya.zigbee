@@ -1,0 +1,66 @@
+{
+  "id": "assets",
+  "name": {
+    "en": "assets",
+    "fr": "assets",
+    "nl": "assets",
+    "ta": "assets"
+  },
+  "class": "cover",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  },
+  "isGeneric": false,
+  "source": "tuya-zigbee",
+  "type": "tuya",
+  "manufacturer": "Tuya",
+  "manufacturername": "_TZE200_ASSETS",
+  "model": "assets",
+  "enriched": "2025-08-05T08:40:34.934Z",
+  "category": "covers",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.203Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "cover"
+    }
+  },
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ],
+  "title": {
+    "en": "Sensors_tuya_assets Device",
+    "nl": "Sensors_tuya_assets Apparaat"
+  },
+  "originalFile": "driver.compose.json",
+  "extractedAt": "2025-08-06T12:05:40.951Z",
+  "fixedAt": "2025-08-06T12:05:40.951Z",
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:54.925Z",
+    "driverType": "tuya",
+    "category": "sensors",
+    "subcategory": "sensors_tuya_assets",
+    "megaUltimateBugFixer": true
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "tuya-switch-ts-settings",
+  "title": {
+    "en": "tuya-switch-ts Settings",
+    "fr": "Paramètres tuya-switch-ts",
+    "nl": "tuya-switch-ts Instellingen",
+    "ta": "tuya-switch-ts அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

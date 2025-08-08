@@ -1,0 +1,25 @@
+{
+  "id": "descriptor",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "descriptor",
+    "fr": "descriptor",
+    "nl": "descriptor",
+    "ta": "descriptor"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "descriptor",
+  "originalFile": "FWUpdateLib_11.dll",
+  "extracted": "2025-08-05T08:31:38.853Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}
