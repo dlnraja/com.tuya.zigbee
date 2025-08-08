@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Driver Type: zigbee
+// Category: sensors
+// Subcategory: temphumidsensor3
+// Enrichment Date: 2025-08-07T17:53:56.919Z
+
 'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');

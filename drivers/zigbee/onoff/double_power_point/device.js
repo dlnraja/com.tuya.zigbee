@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Device Type: zigbee
+// Category: onoff
+// Subcategory: double_power_point
+// Enrichment Date: 2025-08-07T17:53:55.961Z
+
 'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');

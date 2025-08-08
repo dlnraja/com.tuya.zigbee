@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Device Type: zigbee
+// Category: automation
+// Subcategory: smart_garden_irrigation_control
+// Enrichment Date: 2025-08-07T17:53:55.165Z
+
 'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');
@@ -5,6 +11,12 @@ const { ZigBeeDevice } = require('homey-meshdriver');
 class Smart_garden_irrigation_controlDevice extends ZigBeeDevice {
     
     async onMeshInit() {
+    // Enable debugging
+    this.enableDebug();
+    
+    // Print the node when it is included
+    this.printNode();
+    
         this.log('🚀 smart_garden_irrigation_control - Initialisation MEGA enrichie...');
         
         // Configuration MEGA

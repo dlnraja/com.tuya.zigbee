@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Driver Type: zigbee
+// Category: lights
+// Subcategory: tunable_bulb_E27
+// Enrichment Date: 2025-08-07T17:53:55.793Z
+
 'use strict';
 
 const { ZigBeeDriver } = require('homey-meshdriver');
@@ -5,6 +11,12 @@ const { ZigBeeDriver } = require('homey-meshdriver');
 class Tunable_bulb_E27Driver extends ZigBeeDriver {
     
     async onMeshInit() {
+    // Enable debugging
+    this.enableDebug();
+    
+    // Print the node when it is included
+    this.printNode();
+    
         this.log('🚀 tunable_bulb_E27 Driver - Initialisation MEGA enrichie...');
         
         // Configuration MEGA

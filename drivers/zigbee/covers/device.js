@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Device Type: zigbee
+// Category: covers
+
+// Enrichment Date: 2025-08-07T17:53:55.263Z
+
 'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');
@@ -5,6 +11,12 @@ const { ZigBeeDevice } = require('homey-meshdriver');
 class CoversDevice extends ZigBeeDevice {
     
     async onMeshInit() {
+    // Enable debugging
+    this.enableDebug();
+    
+    // Print the node when it is included
+    this.printNode();
+    
         this.log('🚀 covers - Initialisation MEGA enrichie...');
         
         // Configuration MEGA

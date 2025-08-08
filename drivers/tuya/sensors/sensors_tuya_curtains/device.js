@@ -1,5 +1,17 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Device Type: tuya
+// Category: sensors
+// Subcategory: sensors_tuya_curtains
+// Enrichment Date: 2025-08-07T17:53:54.946Z
+
 'use strict';class CurtainsDevice extends TuyaDevice { async onInit() { // OPTIMIZED VERSION 3.5.4 this.log('curtains device initializing (optimized)...'); // Optimisations de performance this.setupOptimizedPolling(); this.setupMemoryManagement(); this.setupErrorHandling(); this.log('curtains device initializing...'); await this.initializeCapabilities(); this.setupPolling(); } async initializeCapabilities() { this.log('Initializing capabilities for curtains'); // Implement specific capability handlers here } setupPolling() { this.pollInterval = setInterval(() => { this.pollDevice(); }, 30000); } async pollDevice() { try { this.log('Polling curtains device...'); // Implement polling logic } catch (error) { this.log('Error polling device:', error.message); } } async onUninit() { if (this.pollInterval) { clearInterval(this.pollInterval); } }
     async onMeshInit() {
+    // Enable debugging
+    this.enableDebug();
+    
+    // Print the node when it is included
+    this.printNode();
+    
         this.log('tuya/sensors/sensors_tuya_curtains - Device initialized');
         
         // Register capabilities

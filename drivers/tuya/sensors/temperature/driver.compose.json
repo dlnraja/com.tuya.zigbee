@@ -16,5 +16,13 @@
     "nl": "Temperature",
     "fr": "Temperature",
     "de": "Temperature"
+  },
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:54.972Z",
+    "driverType": "tuya",
+    "category": "sensors",
+    "subcategory": "temperature",
+    "megaUltimateBugFixer": true
   }
 }

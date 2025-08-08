@@ -41,5 +41,13 @@
       "max": 100,
       "writable": true
     }
+  },
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:55.615Z",
+    "driverType": "zigbee",
+    "category": "lights",
+    "subcategory": "rgb_floor_led_light",
+    "megaUltimateBugFixer": true
   }
 }

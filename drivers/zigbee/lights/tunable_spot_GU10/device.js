@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Device Type: zigbee
+// Category: lights
+// Subcategory: tunable_spot_GU10
+// Enrichment Date: 2025-08-07T17:53:55.802Z
+
 'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');
@@ -5,6 +11,12 @@ const { ZigBeeDevice } = require('homey-meshdriver');
 class Tunable_spot_GU10Device extends ZigBeeDevice {
     
     async onMeshInit() {
+    // Enable debugging
+    this.enableDebug();
+    
+    // Print the node when it is included
+    this.printNode();
+    
         this.log('🚀 tunable_spot_GU10 - Initialisation MEGA enrichie...');
         
         // Configuration MEGA

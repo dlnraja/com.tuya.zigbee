@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Device Type: zigbee
+// Category: automation
+
+// Enrichment Date: 2025-08-07T17:53:55.129Z
+
 'use strict';
 
 const { ZigbeeDevice } = require('homey-zigbee');

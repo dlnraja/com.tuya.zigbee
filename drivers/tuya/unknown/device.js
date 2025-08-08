@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Device Type: tuya
+// Category: unknown
+
+// Enrichment Date: 2025-08-07T17:53:55.114Z
+
 'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');
@@ -5,6 +11,12 @@ const { ZigBeeDevice } = require('homey-meshdriver');
 class UnknownDevice extends ZigBeeDevice {
     
     async onMeshInit() {
+    // Enable debugging
+    this.enableDebug();
+    
+    // Print the node when it is included
+    this.printNode();
+    
         this.log('🚀 unknown - Initialisation MEGA enrichie...');
         
         // Configuration MEGA

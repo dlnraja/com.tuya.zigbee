@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Device Type: zigbee
+// Category: lights
+// Subcategory: wall_dimmer_tuya
+// Enrichment Date: 2025-08-07T17:53:55.857Z
+
 'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');
@@ -5,6 +11,12 @@ const { ZigBeeDevice } = require('homey-meshdriver');
 class Wall_dimmer_tuyaDevice extends ZigBeeDevice {
     
     async onMeshInit() {
+    // Enable debugging
+    this.enableDebug();
+    
+    // Print the node when it is included
+    this.printNode();
+    
         this.log('🚀 wall_dimmer_tuya - Initialisation MEGA enrichie...');
         
         // Configuration MEGA

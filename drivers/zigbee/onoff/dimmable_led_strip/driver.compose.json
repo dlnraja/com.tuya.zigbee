@@ -41,5 +41,13 @@
         "de": "Wie oft das Gerät auf Statusaktualisierungen abgefragt wird"
       }
     }
-  ]
+  ],
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:55.947Z",
+    "driverType": "zigbee",
+    "category": "onoff",
+    "subcategory": "dimmable_led_strip",
+    "megaUltimateBugFixer": true
+  }
 }

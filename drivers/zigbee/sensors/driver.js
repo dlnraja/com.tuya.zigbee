@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Driver Type: zigbee
+// Category: sensors
+
+// Enrichment Date: 2025-08-07T17:53:56.479Z
+
 'use strict';
 
 const { ZigBeeDriver } = require('homey-meshdriver');
@@ -5,6 +11,12 @@ const { ZigBeeDriver } = require('homey-meshdriver');
 class SensorsDriver extends ZigBeeDriver {
     
     async onMeshInit() {
+    // Enable debugging
+    this.enableDebug();
+    
+    // Print the node when it is included
+    this.printNode();
+    
         this.log('🚀 sensors Driver - Initialisation MEGA enrichie...');
         
         // Configuration MEGA

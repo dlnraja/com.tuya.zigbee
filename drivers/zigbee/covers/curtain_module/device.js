@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Device Type: zigbee
+// Category: covers
+// Subcategory: curtain_module
+// Enrichment Date: 2025-08-07T17:53:55.271Z
+
 'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');

@@ -79,5 +79,13 @@
   },
   "originalFile": "driver.compose.json",
   "extractedAt": "2025-08-06T12:05:41.008Z",
-  "fixedAt": "2025-08-06T12:05:41.008Z"
+  "fixedAt": "2025-08-06T12:05:41.008Z",
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:55.095Z",
+    "driverType": "tuya",
+    "category": "thermostats",
+    "subcategory": "thermostats_tuya_tuya",
+    "megaUltimateBugFixer": true
+  }
 }

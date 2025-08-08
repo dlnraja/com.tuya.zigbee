@@ -27,5 +27,13 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ]
-} 
+  ],
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:54.829Z",
+    "driverType": "tuya",
+    "category": "locks",
+    "subcategory": null,
+    "megaUltimateBugFixer": true
+  }
+}

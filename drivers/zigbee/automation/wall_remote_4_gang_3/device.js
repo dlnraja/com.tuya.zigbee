@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Device Type: zigbee
+// Category: automation
+// Subcategory: wall_remote_4_gang_3
+// Enrichment Date: 2025-08-07T17:53:55.250Z
+
 'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');
@@ -5,6 +11,12 @@ const { ZigBeeDevice } = require('homey-meshdriver');
 class Wall_remote_4_gang_3Device extends ZigBeeDevice {
     
     async onMeshInit() {
+    // Enable debugging
+    this.enableDebug();
+    
+    // Print the node when it is included
+    this.printNode();
+    
         this.log('🚀 wall_remote_4_gang_3 - Initialisation MEGA enrichie...');
         
         // Configuration MEGA

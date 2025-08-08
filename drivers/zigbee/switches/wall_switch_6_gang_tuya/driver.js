@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Driver Type: zigbee
+// Category: switches
+// Subcategory: wall_switch_6_gang_tuya
+// Enrichment Date: 2025-08-07T17:53:57.318Z
+
 'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');

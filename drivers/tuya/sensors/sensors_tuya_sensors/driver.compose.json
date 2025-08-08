@@ -46,5 +46,13 @@
     }
   ],
   "extractedAt": "2025-08-06T12:05:40.969Z",
-  "fixedAt": "2025-08-06T12:05:40.969Z"
+  "fixedAt": "2025-08-06T12:05:40.969Z",
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:54.949Z",
+    "driverType": "tuya",
+    "category": "sensors",
+    "subcategory": "sensors_tuya_sensors",
+    "megaUltimateBugFixer": true
+  }
 }

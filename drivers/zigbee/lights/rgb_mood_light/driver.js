@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Driver Type: zigbee
+// Category: lights
+// Subcategory: rgb_mood_light
+// Enrichment Date: 2025-08-07T17:53:55.687Z
+
 'use strict';
 
 const { ZigBeeDriver } = require('homey-meshdriver');
@@ -5,6 +11,12 @@ const { ZigBeeDriver } = require('homey-meshdriver');
 class Rgb_mood_lightDriver extends ZigBeeDriver {
     
     async onMeshInit() {
+    // Enable debugging
+    this.enableDebug();
+    
+    // Print the node when it is included
+    this.printNode();
+    
         this.log('🚀 rgb_mood_light Driver - Initialisation MEGA enrichie...');
         
         // Configuration MEGA

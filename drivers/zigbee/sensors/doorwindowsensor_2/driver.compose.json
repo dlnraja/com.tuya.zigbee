@@ -43,5 +43,13 @@
         "de": "Wie oft das Gerät auf Statusaktualisierungen abgefragt wird"
       }
     }
-  ]
+  ],
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:56.537Z",
+    "driverType": "zigbee",
+    "category": "sensors",
+    "subcategory": "doorwindowsensor_2",
+    "megaUltimateBugFixer": true
+  }
 }

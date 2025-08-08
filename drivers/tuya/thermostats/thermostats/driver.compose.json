@@ -46,5 +46,13 @@
     }
   ],
   "extractedAt": "2025-08-06T12:05:41.004Z",
-  "fixedAt": "2025-08-06T12:05:41.004Z"
+  "fixedAt": "2025-08-06T12:05:41.004Z",
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:55.090Z",
+    "driverType": "tuya",
+    "category": "thermostats",
+    "subcategory": "thermostats",
+    "megaUltimateBugFixer": true
+  }
 }

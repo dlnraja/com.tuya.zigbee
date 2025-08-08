@@ -25,5 +25,13 @@
       "type": "bool",
       "writable": true
     }
+  },
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:57.390Z",
+    "driverType": "zigbee",
+    "category": "thermostats",
+    "subcategory": "wall_thermostat",
+    "megaUltimateBugFixer": true
   }
 }

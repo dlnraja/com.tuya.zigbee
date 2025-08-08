@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Device Type: zigbee
+// Category: sensors
+// Subcategory: alarm_sensor
+// Enrichment Date: 2025-08-07T17:53:56.490Z
+
 'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');

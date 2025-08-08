@@ -41,5 +41,13 @@
       "max": 100,
       "writable": true
     }
+  },
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:55.582Z",
+    "driverType": "zigbee",
+    "category": "lights",
+    "subcategory": "light_rgb_TZ3000_dbou1ap4",
+    "megaUltimateBugFixer": true
   }
 }
