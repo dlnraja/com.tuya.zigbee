@@ -1,0 +1,58 @@
+{
+  "id": "switches",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "switches",
+    "fr": "switches",
+    "nl": "switches",
+    "ta": "switches"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "TS0601",
+  "originalFile": "driver.compose.json",
+  "extracted": "2025-08-05T08:36:21.315Z",
+  "fusion": {
+    "date": "2025-08-05T13:17:00.602Z",
+    "duplicates": [
+      "switches"
+    ]
+  },
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ],
+  "title": {
+    "en": "Switches Device",
+    "nl": "Switches Apparaat"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "extractedAt": "2025-08-06T12:05:40.989Z",
+  "fixedAt": "2025-08-06T12:05:40.989Z",
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:55.012Z",
+    "driverType": "tuya",
+    "category": "switches",
+    "subcategory": "switches",
+    "megaUltimateBugFixer": true
+  }
+}

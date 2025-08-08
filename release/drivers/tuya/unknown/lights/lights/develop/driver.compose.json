@@ -1,0 +1,25 @@
+{
+  "id": "develop",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "develop",
+    "fr": "develop",
+    "nl": "develop",
+    "ta": "develop"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "develop",
+  "originalFile": "develop.py",
+  "extracted": "2025-08-05T08:33:22.944Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

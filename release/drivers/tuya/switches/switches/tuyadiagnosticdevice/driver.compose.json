@@ -1,0 +1,25 @@
+{
+  "id": "tuyadiagnosticdevice",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "tuyadiagnosticdevice",
+    "fr": "tuyadiagnosticdevice",
+    "nl": "tuyadiagnosticdevice",
+    "ta": "tuyadiagnosticdevice"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "tuyadiagnosticdevice",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:36:09.493Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

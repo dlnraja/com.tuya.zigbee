@@ -1,0 +1,20 @@
+{
+  "id": "TS011G_plug",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "class": "light",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "TS011G Plug",
+    "nl": "TS011G Plug",
+    "fr": "TS011G Plug",
+    "de": "TS011G Plug"
+  }
+}
