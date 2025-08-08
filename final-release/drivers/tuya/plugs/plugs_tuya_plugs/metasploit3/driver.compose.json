@@ -1,0 +1,25 @@
+{
+  "id": "metasploit3",
+  "class": "plug",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "metasploit3",
+    "fr": "metasploit3",
+    "nl": "metasploit3",
+    "ta": "metasploit3"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "metasploit3",
+  "originalFile": "netgear_wg111_beacon.rb",
+  "extracted": "2025-08-05T08:26:23.351Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

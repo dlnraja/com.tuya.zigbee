@@ -1,0 +1,20 @@
+{
+  "id": "ts0601_rgb",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "class": "light",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Ts0601 Rgb",
+    "nl": "Ts0601 Rgb",
+    "fr": "Ts0601 Rgb",
+    "de": "Ts0601 Rgb"
+  }
+}

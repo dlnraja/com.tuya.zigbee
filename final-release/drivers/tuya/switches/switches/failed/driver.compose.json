@@ -1,0 +1,25 @@
+{
+  "id": "failed",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "failed",
+    "fr": "failed",
+    "nl": "failed",
+    "ta": "failed"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "failed",
+  "originalFile": "Homey Pro USB Driver v1.0.0.exe",
+  "extracted": "2025-08-05T08:34:57.064Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

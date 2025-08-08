@@ -1,0 +1,51 @@
+{
+  "id": "keypads",
+  "name": {
+    "en": "keypads",
+    "fr": "keypads",
+    "nl": "keypads",
+    "ta": "keypads"
+  },
+  "class": "lock",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  },
+  "isGeneric": false,
+  "source": "tuya-zigbee",
+  "type": "tuya",
+  "manufacturer": "Tuya",
+  "manufacturername": "_TZE200_KEYPADS",
+  "model": "keypads",
+  "enriched": "2025-08-05T08:40:35.079Z",
+  "category": "locks",
+  "heuristic": {
+    "applied": true,
+    "date": "2025-08-05T09:03:46.268Z",
+    "deduced": {
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "lock"
+    }
+  },
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

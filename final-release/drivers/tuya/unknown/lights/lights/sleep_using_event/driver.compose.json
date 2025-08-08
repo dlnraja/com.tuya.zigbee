@@ -1,0 +1,25 @@
+{
+  "id": "sleep_using_event",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "sleep_using_event",
+    "fr": "sleep_using_event",
+    "nl": "sleep_using_event",
+    "ta": "sleep_using_event"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "sleep_using_event",
+  "originalFile": "nap.py",
+  "extracted": "2025-08-05T08:33:58.593Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

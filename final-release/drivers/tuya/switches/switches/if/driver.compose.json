@@ -1,0 +1,25 @@
+{
+  "id": "if",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "if",
+    "fr": "if",
+    "nl": "if",
+    "ta": "if"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "if",
+  "originalFile": "AppleALC.json",
+  "extracted": "2025-08-05T08:29:42.353Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

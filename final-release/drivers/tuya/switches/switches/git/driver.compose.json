@@ -1,0 +1,25 @@
+{
+  "id": "git",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "git",
+    "fr": "git",
+    "nl": "git",
+    "ta": "git"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "git",
+  "originalFile": "git.py",
+  "extracted": "2025-08-05T08:33:39.863Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

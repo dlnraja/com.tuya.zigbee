@@ -1,0 +1,25 @@
+{
+  "id": "wallthermostatdevice",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "wallthermostatdevice",
+    "fr": "wallthermostatdevice",
+    "nl": "wallthermostatdevice",
+    "ta": "wallthermostatdevice"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": ": ",
+  "model": "wallthermostatdevice",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:36:10.645Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

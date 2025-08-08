@@ -1,0 +1,25 @@
+{
+  "id": "handheld_remote_4_buttons",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "handheld_remote_4_buttons",
+    "fr": "handheld_remote_4_buttons",
+    "nl": "handheld_remote_4_buttons",
+    "ta": "handheld_remote_4_buttons"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": ": ",
+  "model": "handheld_remote_4_buttons",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:35:49.763Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

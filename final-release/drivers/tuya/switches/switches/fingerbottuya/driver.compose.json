@@ -1,0 +1,25 @@
+{
+  "id": "fingerbottuya",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "fingerbottuya",
+    "fr": "fingerbottuya",
+    "nl": "fingerbottuya",
+    "ta": "fingerbottuya"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": ", ",
+  "model": "fingerbottuya",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:35:48.630Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

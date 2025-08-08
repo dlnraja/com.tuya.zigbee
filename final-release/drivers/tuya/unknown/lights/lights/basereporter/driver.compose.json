@@ -1,0 +1,25 @@
+{
+  "id": "basereporter",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "basereporter",
+    "fr": "basereporter",
+    "nl": "basereporter",
+    "ta": "basereporter"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "basereporter",
+  "originalFile": "reporters.py",
+  "extracted": "2025-08-05T08:33:52.362Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "destructconstprops",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "destructconstprops",
+    "fr": "destructconstprops",
+    "nl": "destructconstprops",
+    "ta": "destructconstprops"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "destructconstprops",
+  "originalFile": "index.js",
+  "extracted": "2025-08-05T08:36:29.503Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}
