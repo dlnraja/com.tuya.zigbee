@@ -1,36 +1,23 @@
-// Enhanced by Mega Ultimate Bug Fixer
-// Driver Type: zigbee
-// Category: thermostats
+const { ZigbeeDevice } = require('homey-meshdriver');
 
-// Enrichment Date: 2025-08-07T17:53:57.326Z
-
-'use strict';
-
-const { ZigbeeDevice } = require('homey-zigbee');
-
-class ZigbeeThermostatsDriver extends ZigbeeDevice {
-  async onInit() {
-    await super.onInit();
+class ZigbeeThermostats extends ZigbeeDevice {
+    async onMeshInit() {
+        await super.onMeshInit();
+        
+        // Logique spécifique au driver
+        console.log('Zigbee Thermostats initialized');
+        
+        // Enregistrer les capacités
+        this.registerCapability('measure_temperature', 'cluster');
+        this.registerCapability('target_temperature', 'cluster');
+    }
     
-    // Logique d'initialisation spécifique aux thermostats
-    this.log('Zigbee Thermostats Driver initialized');
-    
-    // Enregistrer les capacités
-    this.registerCapability('onoff', 'genOnOff');
-    this.registerCapability('target_temperature', 'hvacThermostat');
-    this.registerCapability('measure_temperature', 'hvacThermostat');
-    this.registerCapability('measure_humidity', 'msRelativeHumidity');
-  }
-
-  async onSettings(oldSettings, newSettings, changedKeys) {
-    // Gestion des paramètres
-    this.log('Settings updated:', changedKeys);
-  }
-
-  async onDeleted() {
-    // Nettoyage lors de la suppression
-    this.log('Zigbee Thermostats Device deleted');
-  }
+    async onSettings(oldSettings, newSettings, changedKeysArr) {
+        await super.onSettings(oldSettings, newSettings, changedKeysArr);
+        
+        // Gestion des paramètres
+        console.log('Settings updated:', changedKeysArr);
+    }
 }
 
-module.exports = ZigbeeThermostatsDriver; 
+module.exports = ZigbeeThermostats;

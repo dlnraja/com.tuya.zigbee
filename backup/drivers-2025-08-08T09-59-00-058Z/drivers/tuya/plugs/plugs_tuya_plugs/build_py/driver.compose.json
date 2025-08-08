@@ -1,0 +1,25 @@
+{
+  "id": "build_py",
+  "class": "plug",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "build_py",
+    "fr": "build_py",
+    "nl": "build_py",
+    "ta": "build_py"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "build_py",
+  "originalFile": "build_py.py",
+  "extracted": "2025-08-05T08:33:22.833Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

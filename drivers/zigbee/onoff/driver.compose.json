@@ -1,38 +1,36 @@
 {
-  "id": "onoff",
+  "id": "zigbee-onoff",
+  "name": {
+    "en": "Zigbee Onoff",
+    "fr": "Zigbee Onoff",
+    "nl": "Zigbee Onoff",
+    "ta": "Zigbee Onoff"
+  },
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {},
-  "icon": "/assets/icon.svg",
+  "class": "socket",
+  "zigbee": {
+    "manufacturerName": [
+      "Generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genOnOff",
+          "genBasic"
+        ],
+        "bindings": [
+          "genOnOff"
+        ]
+      }
+    },
+    "productId": [
+      ""
+    ]
+  },
   "images": {
-    "small": "/assets/images/small.png",
-    "large": "/assets/images/large.png"
-  },
-  "class": "other",
-  "connectivity": "zigbee",
-  "name": {
-    "en": "Onoff",
-    "nl": "Onoff",
-    "fr": "Onoff",
-    "de": "Onoff",
-    "ta": "Onoff"
-  },
-  "manufacturer": "_TZ3000_xxxxxxxx",
-  "product": "ONOFF",
-  "dataPoints": {
-    "1": {
-      "name": "switch",
-      "type": "bool",
-      "writable": true
-    }
-  },
-  "metadata": {
-    "enriched": true,
-    "enrichmentDate": "2025-08-07T17:53:55.866Z",
-    "driverType": "zigbee",
-    "category": "onoff",
-    "subcategory": null,
-    "megaUltimateBugFixer": true
+    "small": "assets/images/zigbee-onoff-small.png",
+    "large": "assets/images/zigbee-onoff-large.png"
   }
 }

@@ -1,38 +1,36 @@
 {
-  "id": "unknown",
+  "id": "tuya-unknown",
+  "name": {
+    "en": "Tuya Unknown",
+    "fr": "Tuya Unknown",
+    "nl": "Tuya Unknown",
+    "ta": "Tuya Unknown"
+  },
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {},
-  "icon": "/assets/icon.svg",
-  "images": {
-    "small": "/assets/images/small.png",
-    "large": "/assets/images/large.png"
-  },
   "class": "other",
-  "connectivity": "zigbee",
-  "name": {
-    "en": "Unknown",
-    "nl": "Unknown",
-    "fr": "Unknown",
-    "de": "Unknown",
-    "ta": "Unknown"
+  "zigbee": {
+    "manufacturerName": [
+      "Generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genOnOff",
+          "genBasic"
+        ],
+        "bindings": [
+          "genOnOff"
+        ]
+      }
+    },
+    "productId": [
+      ""
+    ]
   },
-  "manufacturer": "_TZ3000_xxxxxxxx",
-  "product": "UNKNOWN",
-  "dataPoints": {
-    "1": {
-      "name": "switch",
-      "type": "bool",
-      "writable": true
-    }
-  },
-  "metadata": {
-    "enriched": true,
-    "enrichmentDate": "2025-08-07T17:53:55.113Z",
-    "driverType": "tuya",
-    "category": "unknown",
-    "subcategory": null,
-    "megaUltimateBugFixer": true
+  "images": {
+    "small": "assets/images/tuya-unknown-small.png",
+    "large": "assets/images/tuya-unknown-large.png"
   }
 }

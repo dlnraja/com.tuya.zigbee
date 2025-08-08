@@ -1,0 +1,25 @@
+{
+  "id": "setallbutonehidden",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "setallbutonehidden",
+    "fr": "setallbutonehidden",
+    "nl": "setallbutonehidden",
+    "ta": "setallbutonehidden"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "setallbutonehidden",
+  "originalFile": "exportsheetstohtml.js",
+  "extracted": "2025-08-05T08:26:27.418Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

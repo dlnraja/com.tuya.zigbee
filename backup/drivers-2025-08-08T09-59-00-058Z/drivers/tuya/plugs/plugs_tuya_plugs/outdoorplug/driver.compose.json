@@ -1,0 +1,25 @@
+{
+  "id": "outdoorplug",
+  "class": "plug",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "outdoorplug",
+    "fr": "outdoorplug",
+    "nl": "outdoorplug",
+    "ta": "outdoorplug"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": ", ",
+  "model": "outdoorplug",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:35:52.673Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

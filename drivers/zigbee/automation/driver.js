@@ -1,34 +1,22 @@
-// Enhanced by Mega Ultimate Bug Fixer
-// Driver Type: zigbee
-// Category: automation
+const { ZigbeeDevice } = require('homey-meshdriver');
 
-// Enrichment Date: 2025-08-07T17:53:55.125Z
-
-'use strict';
-
-const { ZigbeeDevice } = require('homey-zigbee');
-
-class ZigbeeAutomationDriver extends ZigbeeDevice {
-  async onInit() {
-    await super.onInit();
+class ZigbeeAutomation extends ZigbeeDevice {
+    async onMeshInit() {
+        await super.onMeshInit();
+        
+        // Logique spécifique au driver
+        console.log('Zigbee Automation initialized');
+        
+        // Enregistrer les capacités
+        this.registerCapability('onoff', 'cluster');
+    }
     
-    // Logique d'initialisation spécifique aux automations
-    this.log('Zigbee Automation Driver initialized');
-    
-    // Enregistrer les capacités
-    this.registerCapability('onoff', 'genOnOff');
-    this.registerCapability('button', 'genBasic');
-  }
-
-  async onSettings(oldSettings, newSettings, changedKeys) {
-    // Gestion des paramètres
-    this.log('Settings updated:', changedKeys);
-  }
-
-  async onDeleted() {
-    // Nettoyage lors de la suppression
-    this.log('Zigbee Automation Device deleted');
-  }
+    async onSettings(oldSettings, newSettings, changedKeysArr) {
+        await super.onSettings(oldSettings, newSettings, changedKeysArr);
+        
+        // Gestion des paramètres
+        console.log('Settings updated:', changedKeysArr);
+    }
 }
 
-module.exports = ZigbeeAutomationDriver; 
+module.exports = ZigbeeAutomation;

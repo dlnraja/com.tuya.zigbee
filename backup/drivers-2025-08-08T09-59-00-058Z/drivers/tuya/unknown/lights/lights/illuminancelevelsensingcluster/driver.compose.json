@@ -1,0 +1,25 @@
+{
+  "id": "illuminancelevelsensingcluster",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "illuminancelevelsensingcluster",
+    "fr": "illuminancelevelsensingcluster",
+    "nl": "illuminancelevelsensingcluster",
+    "ta": "illuminancelevelsensingcluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "illuminancelevelsensingcluster",
+  "originalFile": "illuminanceLevelSensing.js",
+  "extracted": "2025-08-05T08:36:28.888Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

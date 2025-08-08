@@ -1,0 +1,24 @@
+{
+  "id": "tuya-motion-sensor-settings",
+  "title": {
+    "en": "tuya-motion-sensor Settings",
+    "fr": "Paramètres tuya-motion-sensor",
+    "nl": "tuya-motion-sensor Instellingen",
+    "ta": "tuya-motion-sensor அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

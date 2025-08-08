@@ -1,0 +1,25 @@
+{
+  "id": "tuyazigbeelightdevice",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "tuyazigbeelightdevice",
+    "fr": "tuyazigbeelightdevice",
+    "nl": "tuyazigbeelightdevice",
+    "ta": "tuyazigbeelightdevice"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": ", ",
+  "model": "tuyazigbeelightdevice",
+  "originalFile": "TuyaZigBeeLightDevice.js",
+  "extracted": "2025-08-05T08:36:10.914Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

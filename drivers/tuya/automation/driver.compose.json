@@ -1,38 +1,36 @@
 {
-  "id": "automation",
+  "id": "tuya-automation",
+  "name": {
+    "en": "Tuya Automation",
+    "fr": "Tuya Automation",
+    "nl": "Tuya Automation",
+    "ta": "Tuya Automation"
+  },
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {},
-  "icon": "/assets/icon.svg",
-  "images": {
-    "small": "/assets/images/small.png",
-    "large": "/assets/images/large.png"
-  },
   "class": "other",
-  "connectivity": "zigbee",
-  "name": {
-    "en": "Automation",
-    "nl": "Automation",
-    "fr": "Automation",
-    "de": "Automation",
-    "ta": "Automation"
+  "zigbee": {
+    "manufacturerName": [
+      "Generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genOnOff",
+          "genBasic"
+        ],
+        "bindings": [
+          "genOnOff"
+        ]
+      }
+    },
+    "productId": [
+      ""
+    ]
   },
-  "manufacturer": "_TZ3000_xxxxxxxx",
-  "product": "AUTOMATION",
-  "dataPoints": {
-    "1": {
-      "name": "switch",
-      "type": "bool",
-      "writable": true
-    }
-  },
-  "metadata": {
-    "enriched": true,
-    "enrichmentDate": "2025-08-07T17:53:54.697Z",
-    "driverType": "tuya",
-    "category": "automation",
-    "subcategory": null,
-    "megaUltimateBugFixer": true
+  "images": {
+    "small": "assets/images/tuya-automation-small.png",
+    "large": "assets/images/tuya-automation-large.png"
   }
 }

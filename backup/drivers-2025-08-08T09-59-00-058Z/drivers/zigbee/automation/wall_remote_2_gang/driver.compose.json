@@ -1,0 +1,37 @@
+{
+  "id": "wall_remote_2_gang",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "class": "other",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Wall Remote 2 Gang",
+    "nl": "Wall Remote 2 Gang",
+    "fr": "Wall Remote 2 Gang",
+    "de": "Wall Remote 2 Gang"
+  },
+  "manufacturer": "_TZ3000_xxxxxxxx",
+  "product": "WALL_REMOTE_2_GANG",
+  "dataPoints": {
+    "1": {
+      "name": "switch",
+      "type": "bool",
+      "writable": true
+    }
+  },
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:55.205Z",
+    "driverType": "zigbee",
+    "category": "automation",
+    "subcategory": "wall_remote_2_gang",
+    "megaUltimateBugFixer": true
+  }
+}

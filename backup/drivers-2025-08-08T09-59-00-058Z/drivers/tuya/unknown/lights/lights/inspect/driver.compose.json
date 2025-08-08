@@ -1,0 +1,25 @@
+{
+  "id": "inspect",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "inspect",
+    "fr": "inspect",
+    "nl": "inspect",
+    "ta": "inspect"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "inspect",
+  "originalFile": "_inspect.py",
+  "extracted": "2025-08-05T08:33:53.884Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "relay_board_2_channel",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "relay_board_2_channel",
+    "fr": "relay_board_2_channel",
+    "nl": "relay_board_2_channel",
+    "ta": "relay_board_2_channel"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "relay_board_2_channel",
+  "originalFile": "driver.js",
+  "extracted": "2025-08-05T08:35:56.602Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}
