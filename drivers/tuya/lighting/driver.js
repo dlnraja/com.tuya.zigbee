@@ -1,37 +1,24 @@
-// Enhanced by Mega Ultimate Bug Fixer
-// Driver Type: tuya
-// Category: lighting
+const { ZigbeeDevice } = require('homey-meshdriver');
 
-// Enrichment Date: 2025-08-07T17:53:54.762Z
-
-'use strict';
-
-const { TuyaDevice } = require('homey-tuya');
-
-class TuyaLightingDriver extends TuyaDevice {
-  async onInit() {
-    await super.onInit();
+class TuyaLighting extends ZigbeeDevice {
+    async onMeshInit() {
+        await super.onMeshInit();
+        
+        // Logique spécifique au driver
+        console.log('Tuya Lighting initialized');
+        
+        // Enregistrer les capacités
+        this.registerCapability('onoff', 'cluster');
+        this.registerCapability('dim', 'cluster');
+        this.registerCapability('light_temperature', 'cluster');
+    }
     
-    // Logique d'initialisation spécifique aux appareils d'éclairage
-    this.log('Tuya Lighting Driver initialized');
-    
-    // Enregistrer les capacités
-    this.registerCapability('onoff', 'switch_1');
-    this.registerCapability('dim', 'bright_value_1');
-    this.registerCapability('light_hue', 'colour_data');
-    this.registerCapability('light_saturation', 'colour_data');
-    this.registerCapability('light_temperature', 'temp_value');
-  }
-
-  async onSettings(oldSettings, newSettings, changedKeys) {
-    // Gestion des paramètres
-    this.log('Settings updated:', changedKeys);
-  }
-
-  async onDeleted() {
-    // Nettoyage lors de la suppression
-    this.log('Tuya Lighting Device deleted');
-  }
+    async onSettings(oldSettings, newSettings, changedKeysArr) {
+        await super.onSettings(oldSettings, newSettings, changedKeysArr);
+        
+        // Gestion des paramètres
+        console.log('Settings updated:', changedKeysArr);
+    }
 }
 
-module.exports = TuyaLightingDriver; 
+module.exports = TuyaLighting;

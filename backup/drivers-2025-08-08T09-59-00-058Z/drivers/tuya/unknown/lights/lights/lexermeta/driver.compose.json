@@ -1,0 +1,25 @@
+{
+  "id": "lexermeta",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "lexermeta",
+    "fr": "lexermeta",
+    "nl": "lexermeta",
+    "ta": "lexermeta"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "lexermeta",
+  "originalFile": "lexer.py",
+  "extracted": "2025-08-05T08:33:48.935Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

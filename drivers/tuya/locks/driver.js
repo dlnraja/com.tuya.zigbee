@@ -1,34 +1,22 @@
-// Enhanced by Mega Ultimate Bug Fixer
-// Driver Type: tuya
-// Category: locks
+const { ZigbeeDevice } = require('homey-meshdriver');
 
-// Enrichment Date: 2025-08-07T17:53:54.828Z
-
-'use strict';
-
-const { TuyaDevice } = require('homey-tuya');
-
-class TuyaLocksDriver extends TuyaDevice {
-  async onInit() {
-    await super.onInit();
+class TuyaLocks extends ZigbeeDevice {
+    async onMeshInit() {
+        await super.onMeshInit();
+        
+        // Logique spécifique au driver
+        console.log('Tuya Locks initialized');
+        
+        // Enregistrer les capacités
+        this.registerCapability('lock_state', 'cluster');
+    }
     
-    // Logique d'initialisation spécifique aux serrures
-    this.log('Tuya Locks Driver initialized');
-    
-    // Enregistrer les capacités
-    this.registerCapability('onoff', 'switch_1');
-    this.registerCapability('lock_state', 'lock_state');
-  }
-
-  async onSettings(oldSettings, newSettings, changedKeys) {
-    // Gestion des paramètres
-    this.log('Settings updated:', changedKeys);
-  }
-
-  async onDeleted() {
-    // Nettoyage lors de la suppression
-    this.log('Tuya Locks Device deleted');
-  }
+    async onSettings(oldSettings, newSettings, changedKeysArr) {
+        await super.onSettings(oldSettings, newSettings, changedKeysArr);
+        
+        // Gestion des paramètres
+        console.log('Settings updated:', changedKeysArr);
+    }
 }
 
-module.exports = TuyaLocksDriver; 
+module.exports = TuyaLocks;

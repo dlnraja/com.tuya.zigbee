@@ -1,0 +1,25 @@
+{
+  "id": "rgb_ceiling_led_light",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "rgb_ceiling_led_light",
+    "fr": "rgb_ceiling_led_light",
+    "nl": "rgb_ceiling_led_light",
+    "ta": "rgb_ceiling_led_light"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "rgb_ceiling_led_light",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:35:57.044Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

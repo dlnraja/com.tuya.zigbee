@@ -1,0 +1,57 @@
+{
+  "id": "tuya-valve",
+  "title": {
+    "en": "Tuya Valve",
+    "fr": "Tuya Valve",
+    "nl": "Tuya Valve",
+    "ta": "Tuya Valve"
+  },
+  "description": {
+    "en": "TUYA driver for tuya-valve from Tuya (Historical)",
+    "fr": "Driver TUYA pour tuya-valve de Tuya (Historique)",
+    "nl": "TUYA driver voor tuya-valve van Tuya (Historisch)",
+    "ta": "Tuya இலிருந்து tuya-valve க்கான TUYA டிரைவர் (வரலாற்று)"
+  },
+  "category": "climate",
+  "protocol": "tuya",
+  "manufacturer": "Tuya",
+  "source": "README historique (master)",
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature"
+  ],
+  "clusters": [
+    "msTemperatureMeasurement",
+    "genLevelCtrl"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.021Z",
+  "historical": {
+    "commitHash": "e8936adf",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "tuyaCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Tuya",
+    "model": "tuya-valve",
+    "firmware": "latest",
+    "capabilities": [
+      "target_temperature",
+      "measure_temperature"
+    ],
+    "clusters": [
+      "msTemperatureMeasurement",
+      "genLevelCtrl"
+    ]
+  },
+  "homeyCompatibility": {
+    "pro": true,
+    "bridge": true,
+    "cloud": false,
+    "minVersion": "5.0.0",
+    "maxVersion": "6.0.0"
+  }
+}

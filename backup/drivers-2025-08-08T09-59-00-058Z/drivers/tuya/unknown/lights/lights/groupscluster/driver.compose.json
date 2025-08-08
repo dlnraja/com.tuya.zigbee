@@ -1,0 +1,25 @@
+{
+  "id": "groupscluster",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "groupscluster",
+    "fr": "groupscluster",
+    "nl": "groupscluster",
+    "ta": "groupscluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "groupscluster",
+  "originalFile": "groups.js",
+  "extracted": "2025-08-05T08:36:27.978Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

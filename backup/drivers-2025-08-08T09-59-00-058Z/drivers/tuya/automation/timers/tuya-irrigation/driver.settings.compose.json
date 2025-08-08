@@ -1,0 +1,24 @@
+{
+  "id": "tuya-irrigation-settings",
+  "title": {
+    "en": "tuya-irrigation Settings",
+    "fr": "Paramètres tuya-irrigation",
+    "nl": "tuya-irrigation Instellingen",
+    "ta": "tuya-irrigation அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

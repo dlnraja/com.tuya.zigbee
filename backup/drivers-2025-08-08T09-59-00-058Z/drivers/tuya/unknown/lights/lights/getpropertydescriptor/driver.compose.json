@@ -1,0 +1,25 @@
+{
+  "id": "getpropertydescriptor",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "getpropertydescriptor",
+    "fr": "getpropertydescriptor",
+    "nl": "getpropertydescriptor",
+    "ta": "getpropertydescriptor"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "getpropertydescriptor",
+  "originalFile": "index.js",
+  "extracted": "2025-08-05T08:36:29.750Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

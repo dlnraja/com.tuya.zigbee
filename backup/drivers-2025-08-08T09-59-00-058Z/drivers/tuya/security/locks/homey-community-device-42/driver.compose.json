@@ -1,0 +1,51 @@
+{
+  "id": "homey-community-device-42",
+  "title": {
+    "en": "Homey Community Device 42",
+    "fr": "Homey Community Device 42",
+    "nl": "Homey Community Device 42",
+    "ta": "Homey Community Device 42"
+  },
+  "description": {
+    "en": "Driver for homey-community-device-42 from Homey Community",
+    "fr": "Driver pour homey-community-device-42 de Homey Community",
+    "nl": "Driver voor homey-community-device-42 van Homey Community",
+    "ta": "Homey Community இலிருந்து homey-community-device-42 க்கான டிரைவர்"
+  },
+  "category": "security",
+  "protocol": "tuya",
+  "source": "Homey Community",
+  "capabilities": [
+    "onoff",
+    "measure_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "msTemperatureMeasurement"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:11:13.188Z",
+  "tuyaCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Tuya",
+    "model": "homey-community-device-42",
+    "firmware": "latest",
+    "capabilities": [
+      "onoff",
+      "measure_temperature"
+    ],
+    "clusters": [
+      "genOnOff",
+      "msTemperatureMeasurement"
+    ]
+  },
+  "homeyCompatibility": {
+    "pro": true,
+    "bridge": true,
+    "cloud": false,
+    "minVersion": "5.0.0",
+    "maxVersion": "6.0.0"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "handles",
+  "class": "light",
+  "capabilities": [
+    "`onoff`",
+    "`dim`",
+    "* `light_mode`",
+    "`light_hue`",
+    "`light_saturation` and `light_temperature`"
+  ],
+  "name": {
+    "en": "handles",
+    "fr": "handles",
+    "nl": "handles",
+    "ta": "handles"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "handles",
+  "originalFile": "ZigBeeLightDevice.js",
+  "extracted": "2025-08-05T08:36:33.788Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}
