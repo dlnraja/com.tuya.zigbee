@@ -1,7 +1,7 @@
 {
   "version": "3.0.0",
   "name": "Tuya Zigbee Universal v3.0.0",
-  "timestamp": "2025-08-08T08:14:18.545Z",
+  "timestamp": "2025-08-08T09:42:05.379Z",
   "author": "dlnraja / dylan.rajasekaram+homey@gmail.com",
   "repository": "https://github.com/dlnraja/com.tuya.zigbee",
   "files": [
@@ -13,7 +13,7 @@
     {
       "path": "app.json",
       "size": 1792,
-      "modified": "2025-08-08T08:06:09.497Z"
+      "modified": "2025-08-08T09:35:05.315Z"
     },
     {
       "path": "assets\\drivers\\tuya-light-bulb.png",
@@ -63,12 +63,12 @@
     {
       "path": "assets\\images\\icon-large.png",
       "size": 68,
-      "modified": "2025-08-08T08:15:24.063Z"
+      "modified": "2025-08-08T09:42:47.194Z"
     },
     {
       "path": "assets\\images\\icon-small.png",
       "size": 68,
-      "modified": "2025-08-08T08:15:23.979Z"
+      "modified": "2025-08-08T09:42:47.153Z"
     },
     {
       "path": "assets\\images\\icon.svg",
@@ -78,7 +78,7 @@
     {
       "path": "assets\\images\\large.png",
       "size": 68,
-      "modified": "2025-08-08T08:15:23.910Z"
+      "modified": "2025-08-08T09:42:47.094Z"
     },
     {
       "path": "assets\\images\\README.md",
@@ -88,7 +88,7 @@
     {
       "path": "assets\\images\\small.png",
       "size": 68,
-      "modified": "2025-08-08T08:15:23.822Z"
+      "modified": "2025-08-08T09:42:47.023Z"
     },
     {
       "path": "CHANGELOG.md",
@@ -1798,7 +1798,7 @@
     {
       "path": "docs\\README.md",
       "size": 1944,
-      "modified": "2025-08-08T08:15:24.296Z"
+      "modified": "2025-08-08T09:42:47.420Z"
     },
     {
       "path": "docs\\README.nl.md",
@@ -3132,8 +3132,8 @@
     },
     {
       "path": "drivers\\tuya\\automation\\driver.compose.json",
-      "size": 761,
-      "modified": "2025-08-08T08:06:10.335Z"
+      "size": 785,
+      "modified": "2025-08-08T09:35:05.336Z"
     },
     {
       "path": "drivers\\tuya\\automation\\driver.js",
@@ -4067,8 +4067,8 @@
     },
     {
       "path": "drivers\\tuya\\climate\\driver.compose.json",
-      "size": 740,
-      "modified": "2025-08-08T08:06:10.401Z"
+      "size": 761,
+      "modified": "2025-08-08T09:35:05.348Z"
     },
     {
       "path": "drivers\\tuya\\climate\\driver.js",
@@ -5682,8 +5682,8 @@
     },
     {
       "path": "drivers\\tuya\\controllers\\driver.compose.json",
-      "size": 768,
-      "modified": "2025-08-08T08:06:10.635Z"
+      "size": 793,
+      "modified": "2025-08-08T09:35:05.353Z"
     },
     {
       "path": "drivers\\tuya\\controllers\\driver.js",
@@ -8597,8 +8597,8 @@
     },
     {
       "path": "drivers\\tuya\\covers\\driver.compose.json",
-      "size": 743,
-      "modified": "2025-08-08T08:06:10.788Z"
+      "size": 763,
+      "modified": "2025-08-08T09:35:05.360Z"
     },
     {
       "path": "drivers\\tuya\\covers\\driver.js",
@@ -8767,8 +8767,8 @@
     },
     {
       "path": "drivers\\tuya\\generic\\driver.compose.json",
-      "size": 740,
-      "modified": "2025-08-08T08:06:11.019Z"
+      "size": 761,
+      "modified": "2025-08-08T09:35:05.367Z"
     },
     {
       "path": "drivers\\tuya\\generic\\driver.js",
@@ -9217,8 +9217,8 @@
     },
     {
       "path": "drivers\\tuya\\lighting\\driver.compose.json",
-      "size": 819,
-      "modified": "2025-08-08T08:06:11.161Z"
+      "size": 846,
+      "modified": "2025-08-08T09:35:05.370Z"
     },
     {
       "path": "drivers\\tuya\\lighting\\driver.js",
@@ -9477,8 +9477,8 @@
     },
     {
       "path": "drivers\\tuya\\lights\\driver.compose.json",
-      "size": 733,
-      "modified": "2025-08-08T08:06:11.303Z"
+      "size": 753,
+      "modified": "2025-08-08T09:35:05.374Z"
     },
     {
       "path": "drivers\\tuya\\lights\\driver.js",
@@ -9717,8 +9717,8 @@
     },
     {
       "path": "drivers\\tuya\\locks\\driver.compose.json",
-      "size": 742,
-      "modified": "2025-08-08T08:06:11.406Z"
+      "size": 766,
+      "modified": "2025-08-08T09:35:05.382Z"
     },
     {
       "path": "drivers\\tuya\\locks\\driver.js",
@@ -9977,8 +9977,8 @@
     },
     {
       "path": "drivers\\tuya\\plugs\\driver.compose.json",
-      "size": 748,
-      "modified": "2025-08-08T08:06:12.103Z"
+      "size": 767,
+      "modified": "2025-08-08T09:35:05.387Z"
     },
     {
       "path": "drivers\\tuya\\plugs\\driver.js",
@@ -10932,8 +10932,8 @@
     },
     {
       "path": "drivers\\tuya\\security\\driver.compose.json",
-      "size": 747,
-      "modified": "2025-08-08T08:06:12.673Z"
+      "size": 769,
+      "modified": "2025-08-08T09:35:05.394Z"
     },
     {
       "path": "drivers\\tuya\\security\\driver.js",
@@ -12887,8 +12887,8 @@
     },
     {
       "path": "drivers\\tuya\\sensors\\driver.compose.json",
-      "size": 741,
-      "modified": "2025-08-08T08:06:12.871Z"
+      "size": 762,
+      "modified": "2025-08-08T09:35:05.404Z"
     },
     {
       "path": "drivers\\tuya\\sensors\\driver.js",
@@ -15527,8 +15527,8 @@
     },
     {
       "path": "drivers\\tuya\\switches\\driver.compose.json",
-      "size": 747,
-      "modified": "2025-08-08T08:06:19.755Z"
+      "size": 769,
+      "modified": "2025-08-08T09:35:05.416Z"
     },
     {
       "path": "drivers\\tuya\\switches\\driver.js",
@@ -17457,8 +17457,8 @@
     },
     {
       "path": "drivers\\tuya\\thermostats\\driver.compose.json",
-      "size": 773,
-      "modified": "2025-08-08T08:06:21.384Z"
+      "size": 798,
+      "modified": "2025-08-08T09:35:05.420Z"
     },
     {
       "path": "drivers\\tuya\\thermostats\\driver.js",
@@ -18332,8 +18332,8 @@
     },
     {
       "path": "drivers\\tuya\\unknown\\driver.compose.json",
-      "size": 740,
-      "modified": "2025-08-08T08:06:25.620Z"
+      "size": 761,
+      "modified": "2025-08-08T09:35:05.427Z"
     },
     {
       "path": "drivers\\tuya\\unknown\\driver.js",
@@ -25362,8 +25362,8 @@
     },
     {
       "path": "drivers\\zigbee\\automation\\driver.compose.json",
-      "size": 782,
-      "modified": "2025-08-08T08:06:25.701Z"
+      "size": 813,
+      "modified": "2025-08-08T09:35:05.436Z"
     },
     {
       "path": "drivers\\zigbee\\automation\\driver.js",
@@ -26647,8 +26647,8 @@
     },
     {
       "path": "drivers\\zigbee\\covers\\driver.compose.json",
-      "size": 745,
-      "modified": "2025-08-08T08:06:29.581Z"
+      "size": 765,
+      "modified": "2025-08-08T09:35:05.440Z"
     },
     {
       "path": "drivers\\zigbee\\covers\\driver.js",
@@ -26707,8 +26707,8 @@
     },
     {
       "path": "drivers\\zigbee\\dimmers\\driver.compose.json",
-      "size": 1039,
-      "modified": "2025-08-08T08:06:29.840Z"
+      "size": 1060,
+      "modified": "2025-08-08T09:35:05.450Z"
     },
     {
       "path": "drivers\\zigbee\\dimmers\\driver.js",
@@ -27142,8 +27142,8 @@
     },
     {
       "path": "drivers\\zigbee\\lights\\driver.compose.json",
-      "size": 824,
-      "modified": "2025-08-08T08:06:31.607Z"
+      "size": 851,
+      "modified": "2025-08-08T09:35:05.457Z"
     },
     {
       "path": "drivers\\zigbee\\lights\\driver.js",
@@ -28657,8 +28657,8 @@
     },
     {
       "path": "drivers\\zigbee\\onoff\\driver.compose.json",
-      "size": 728,
-      "modified": "2025-08-08T08:06:36.687Z"
+      "size": 747,
+      "modified": "2025-08-08T09:35:05.467Z"
     },
     {
       "path": "drivers\\zigbee\\onoff\\driver.js",
@@ -29847,8 +29847,8 @@
     },
     {
       "path": "drivers\\zigbee\\plugs\\driver.compose.json",
-      "size": 750,
-      "modified": "2025-08-08T08:06:38.304Z"
+      "size": 769,
+      "modified": "2025-08-08T09:35:05.472Z"
     },
     {
       "path": "drivers\\zigbee\\plugs\\driver.js",
@@ -30927,8 +30927,8 @@
     },
     {
       "path": "drivers\\zigbee\\security\\driver.compose.json",
-      "size": 795,
-      "modified": "2025-08-08T08:06:42.345Z"
+      "size": 824,
+      "modified": "2025-08-08T09:35:05.483Z"
     },
     {
       "path": "drivers\\zigbee\\security\\driver.js",
@@ -31477,8 +31477,8 @@
     },
     {
       "path": "drivers\\zigbee\\sensors\\driver.compose.json",
-      "size": 743,
-      "modified": "2025-08-08T08:06:44.249Z"
+      "size": 764,
+      "modified": "2025-08-08T09:35:05.487Z"
     },
     {
       "path": "drivers\\zigbee\\sensors\\driver.js",
@@ -34142,8 +34142,8 @@
     },
     {
       "path": "drivers\\zigbee\\switches\\driver.compose.json",
-      "size": 749,
-      "modified": "2025-08-08T08:06:58.965Z"
+      "size": 771,
+      "modified": "2025-08-08T09:35:05.506Z"
     },
     {
       "path": "drivers\\zigbee\\switches\\driver.js",
@@ -35722,8 +35722,8 @@
     },
     {
       "path": "drivers\\zigbee\\thermostats\\driver.compose.json",
-      "size": 847,
-      "modified": "2025-08-08T08:07:03.096Z"
+      "size": 879,
+      "modified": "2025-08-08T09:35:05.533Z"
     },
     {
       "path": "drivers\\zigbee\\thermostats\\driver.js",
@@ -36167,8 +36167,8 @@
     },
     {
       "path": "package.json",
-      "size": 1022,
-      "modified": "2025-08-07T13:11:14.838Z"
+      "size": 1181,
+      "modified": "2025-08-08T08:40:35.070Z"
     },
     {
       "path": "README.md",
@@ -36176,9 +36176,14 @@
       "modified": "2025-08-08T08:06:09.487Z"
     },
     {
+      "path": "release-manifest.json",
+      "size": 1323743,
+      "modified": "2025-08-08T08:28:48.108Z"
+    },
+    {
       "path": "release-metadata.json",
       "size": 333,
-      "modified": "2025-08-08T08:15:23.547Z"
+      "modified": "2025-08-08T09:42:46.824Z"
     },
     {
       "path": "scripts\\adaptive-caching-system.js",
@@ -36284,6 +36289,11 @@
       "path": "scripts\\check-integrity.js",
       "size": 8106,
       "modified": "2025-08-08T08:08:04.394Z"
+    },
+    {
+      "path": "scripts\\cleanup-branches.sh",
+      "size": 1056,
+      "modified": "2025-08-08T08:22:08.287Z"
     },
     {
       "path": "scripts\\cleanup.js",
@@ -40226,6 +40236,11 @@
       "modified": "2025-08-08T08:08:05.744Z"
     },
     {
+      "path": "scripts\\full-test.js",
+      "size": 854,
+      "modified": "2025-08-08T08:40:35.081Z"
+    },
+    {
       "path": "scripts\\generate-all-drivers.ps1",
       "size": 14196,
       "modified": "2025-08-07T13:11:16.583Z"
@@ -40248,7 +40263,7 @@
     {
       "path": "scripts\\generate-final-release.js",
       "size": 15135,
-      "modified": "2025-08-08T08:12:41.398Z"
+      "modified": "2025-08-08T08:28:53.372Z"
     },
     {
       "path": "scripts\\generate-github-extras.js",
@@ -40561,6 +40576,11 @@
       "modified": "2025-08-08T08:08:08.037Z"
     },
     {
+      "path": "scripts\\quick-test.js",
+      "size": 470,
+      "modified": "2025-08-08T08:40:35.081Z"
+    },
+    {
       "path": "scripts\\README.md",
       "size": 2259,
       "modified": "2025-08-07T07:38:50.926Z"
@@ -40624,6 +40644,36 @@
       "path": "scripts\\resume-interrupted-prompts.js",
       "size": 17051,
       "modified": "2025-08-08T08:08:08.120Z"
+    },
+    {
+      "path": "scripts\\run-coverage.js",
+      "size": 626,
+      "modified": "2025-08-08T08:40:35.069Z"
+    },
+    {
+      "path": "scripts\\setup-cli-interface.js",
+      "size": 27638,
+      "modified": "2025-08-08T09:08:07.145Z"
+    },
+    {
+      "path": "scripts\\setup-community-contribution.js",
+      "size": 27849,
+      "modified": "2025-08-08T09:14:45.375Z"
+    },
+    {
+      "path": "scripts\\setup-interactive-docs.js",
+      "size": 20268,
+      "modified": "2025-08-08T08:51:39.601Z"
+    },
+    {
+      "path": "scripts\\setup-monitoring.js",
+      "size": 22879,
+      "modified": "2025-08-08T08:56:27.461Z"
+    },
+    {
+      "path": "scripts\\setup-testing-suite.js",
+      "size": 13592,
+      "modified": "2025-08-08T08:38:18.702Z"
     },
     {
       "path": "scripts\\smart-community-manager.js",
@@ -40816,6 +40866,16 @@
       "modified": "2025-08-08T08:08:08.998Z"
     },
     {
+      "path": "scripts\\verify-translations.js",
+      "size": 10069,
+      "modified": "2025-08-08T09:33:32.837Z"
+    },
+    {
+      "path": "scripts\\version-migration-system.js",
+      "size": 23636,
+      "modified": "2025-08-08T09:02:47.733Z"
+    },
+    {
       "path": "scripts\\versioning-automation.ps1",
       "size": 7096,
       "modified": "2025-08-07T13:11:16.979Z"
@@ -40829,14 +40889,19 @@
       "path": "scripts\\zalgo-fix.js",
       "size": 8053,
       "modified": "2025-08-08T08:08:08.999Z"
+    },
+    {
+      "path": "scripts\\zigbee2mqtt-bridge.js",
+      "size": 15103,
+      "modified": "2025-08-08T08:47:19.924Z"
     }
   ],
   "statistics": {
-    "totalFiles": 8165,
-    "totalSize": 35101566,
+    "totalFiles": 8178,
+    "totalSize": 36590061,
     "drivers": 6,
     "assets": 4,
     "documentation": 598,
-    "scripts": 134
+    "scripts": 145
   }
 }

@@ -14,9 +14,12 @@
     "run:debug": "homey app run --debug",
     "build": "homey app build",
     "publish": "homey app publish",
-    "test": "homey app validate",
+    "test": "mocha test/**/*.test.js",
     "install": "homey app install",
-    "lint": "echo \"No linting specified\" && exit 0"
+    "lint": "echo \"No linting specified\" && exit 0",
+    "test:coverage": "nyc mocha test/**/*.test.js",
+    "test:watch": "mocha test/**/*.test.js --watch",
+    "test:report": "nyc report --reporter=html"
   },
   "keywords": [
     "tuya",
