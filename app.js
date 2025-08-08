@@ -76,6 +76,14 @@ class TuyaZigbeeApp extends Homey.App {
         let errorCount = 0;
         let newDrivers = 0;
         
+        // Import des drivers manquants
+        try {
+            require('./drivers/tuya/lights/driver.js');
+            this.log('✅ Imported: drivers/tuya/lights/driver.js');
+        } catch (error) {
+            this.log(`❌ Error importing tuya/lights: ${error.message}`);
+        }
+        
         for (const driverPath of drivers) {
             try {
                 this.log(`📂 Registering driver MEGA ULTIMATE at: ${driverPath}`);
