@@ -1,0 +1,25 @@
+{
+  "id": "multistatevaluecluster",
+  "class": "sensor",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "multistatevaluecluster",
+    "fr": "multistatevaluecluster",
+    "nl": "multistatevaluecluster",
+    "ta": "multistatevaluecluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "multistatevaluecluster",
+  "originalFile": "multistateValue.js",
+  "extracted": "2025-08-05T08:36:30.221Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

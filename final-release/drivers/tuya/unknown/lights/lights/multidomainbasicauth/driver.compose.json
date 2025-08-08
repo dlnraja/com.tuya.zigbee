@@ -1,0 +1,25 @@
+{
+  "id": "multidomainbasicauth",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "multidomainbasicauth",
+    "fr": "multidomainbasicauth",
+    "nl": "multidomainbasicauth",
+    "ta": "multidomainbasicauth"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "multidomainbasicauth",
+  "originalFile": "auth.py",
+  "extracted": "2025-08-05T08:33:37.083Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

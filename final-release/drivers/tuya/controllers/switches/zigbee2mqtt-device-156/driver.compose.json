@@ -1,0 +1,55 @@
+{
+  "id": "zigbee2mqtt-device-156",
+  "title": {
+    "en": "Zigbee2mqtt Device 156",
+    "fr": "Zigbee2mqtt Device 156",
+    "nl": "Zigbee2mqtt Device 156",
+    "ta": "Zigbee2mqtt Device 156"
+  },
+  "description": {
+    "en": "Driver for zigbee2mqtt-device-156 from Zigbee2MQTT",
+    "fr": "Driver pour zigbee2mqtt-device-156 de Zigbee2MQTT",
+    "nl": "Driver voor zigbee2mqtt-device-156 van Zigbee2MQTT",
+    "ta": "Zigbee2MQTT இலிருந்து zigbee2mqtt-device-156 க்கான டிரைவர்"
+  },
+  "category": "controllers",
+  "protocol": "tuya",
+  "source": "Zigbee2MQTT",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genPowerCfg"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:11:12.104Z",
+  "tuyaCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Tuya",
+    "model": "zigbee2mqtt-device-156",
+    "firmware": "latest",
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_power"
+    ],
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genPowerCfg"
+    ]
+  },
+  "homeyCompatibility": {
+    "pro": true,
+    "bridge": true,
+    "cloud": false,
+    "minVersion": "5.0.0",
+    "maxVersion": "6.0.0"
+  }
+}

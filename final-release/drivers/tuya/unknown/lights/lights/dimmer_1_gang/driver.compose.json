@@ -1,0 +1,25 @@
+{
+  "id": "dimmer_1_gang",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "dimmer_1_gang",
+    "fr": "dimmer_1_gang",
+    "nl": "dimmer_1_gang",
+    "ta": "dimmer_1_gang"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "dimmer_1_gang",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:35:45.795Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

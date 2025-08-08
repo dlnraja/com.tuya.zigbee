@@ -1,0 +1,25 @@
+{
+  "id": "wall_switch_2_gang",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "wall_switch_2_gang",
+    "fr": "wall_switch_2_gang",
+    "nl": "wall_switch_2_gang",
+    "ta": "wall_switch_2_gang"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "wall_switch_2_gang",
+  "originalFile": "driver.js",
+  "extracted": "2025-08-05T08:36:10.314Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

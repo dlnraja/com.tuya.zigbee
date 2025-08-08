@@ -1,0 +1,25 @@
+{
+  "id": "rundenotests",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "rundenotests",
+    "fr": "rundenotests",
+    "nl": "rundenotests",
+    "ta": "rundenotests"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "rundenotests",
+  "originalFile": "test.js",
+  "extracted": "2025-08-05T08:36:18.704Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}
