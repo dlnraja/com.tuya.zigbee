@@ -16,10 +16,15 @@
     "publish": "homey app publish",
     "test": "mocha test/**/*.test.js",
     "install": "homey app install",
-    "lint": "echo \"No linting specified\" && exit 0",
+    "lint": "eslint src/ scripts/",
+    "lint:fix": "eslint src/ scripts/ --fix",
+    "format": "prettier --write src/ scripts/",
     "test:coverage": "nyc mocha test/**/*.test.js",
     "test:watch": "mocha test/**/*.test.js --watch",
-    "test:report": "nyc report --reporter=html"
+    "test:report": "nyc report --reporter=html",
+    "validate": "homey app validate",
+    "mega": "node scripts/mega-pipeline-ultimate.js",
+    "analyze": "node scripts/project-analyzer-and-improver.js"
   },
   "keywords": [
     "tuya",
