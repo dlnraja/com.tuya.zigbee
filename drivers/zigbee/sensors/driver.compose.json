@@ -1,38 +1,38 @@
 {
-  "id": "sensors",
-  "capabilities": [
-    "onoff"
-  ],
-  "capabilitiesOptions": {},
-  "icon": "/assets/icon.svg",
-  "images": {
-    "small": "/assets/images/small.png",
-    "large": "/assets/images/large.png"
-  },
-  "class": "sensor",
-  "connectivity": "zigbee",
+  "id": "zigbee-sensors",
   "name": {
-    "en": "Sensors",
-    "nl": "Sensors",
-    "fr": "Sensors",
-    "de": "Sensors",
-    "ta": "Sensors"
+    "en": "Zigbee Sensors",
+    "fr": "Zigbee Sensors",
+    "nl": "Zigbee Sensors",
+    "ta": "Zigbee Sensors"
   },
-  "manufacturer": "_TZ3000_xxxxxxxx",
-  "product": "SENSORS",
-  "dataPoints": {
-    "1": {
-      "name": "switch",
-      "type": "bool",
-      "writable": true
-    }
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_pressure"
+  ],
+  "class": "sensor",
+  "zigbee": {
+    "manufacturerName": [
+      "Generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "msTemperatureMeasurement",
+          "msRelativeHumidity"
+        ],
+        "bindings": [
+          "msTemperatureMeasurement"
+        ]
+      }
+    },
+    "productId": [
+      ""
+    ]
   },
-  "metadata": {
-    "enriched": true,
-    "enrichmentDate": "2025-08-07T17:53:56.480Z",
-    "driverType": "zigbee",
-    "category": "sensors",
-    "subcategory": null,
-    "megaUltimateBugFixer": true
+  "images": {
+    "small": "assets/images/zigbee-sensors-small.png",
+    "large": "assets/images/zigbee-sensors-large.png"
   }
 }

@@ -1,0 +1,25 @@
+{
+  "id": "defines",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "defines",
+    "fr": "defines",
+    "nl": "defines",
+    "ta": "defines"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "defines",
+  "originalFile": "TuyaSpecificCluster.js",
+  "extracted": "2025-08-05T08:36:10.894Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

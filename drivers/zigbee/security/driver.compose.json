@@ -1,41 +1,37 @@
 {
-  "id": "zigbee_security",
-  "class": "sensor",
-  "capabilities": [
-    "onoff",
-    "alarm_contact",
-    "alarm_motion"
-  ],
+  "id": "zigbee-security",
   "name": {
     "en": "Zigbee Security",
-    "fr": "Sécurité Zigbee",
-    "nl": "Zigbee Beveiliging",
-    "de": "Zigbee Sicherheit",
+    "fr": "Zigbee Security",
+    "nl": "Zigbee Security",
     "ta": "Zigbee Security"
   },
-  "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
-  },
-  "pair": [
-    {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-        "next": "add_devices"
+  "capabilities": [
+    "alarm_motion",
+    "alarm_contact"
+  ],
+  "class": "sensor",
+  "zigbee": {
+    "manufacturerName": [
+      "Generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genOnOff",
+          "genBasic"
+        ],
+        "bindings": [
+          "genOnOff"
+        ]
       }
     },
-    {
-      "id": "add_devices",
-      "template": "add_devices"
-    }
-  ],
-  "metadata": {
-    "enriched": true,
-    "enrichmentDate": "2025-08-07T17:53:56.466Z",
-    "driverType": "zigbee",
-    "category": "security",
-    "subcategory": null,
-    "megaUltimateBugFixer": true
+    "productId": [
+      ""
+    ]
+  },
+  "images": {
+    "small": "assets/images/zigbee-security-small.png",
+    "large": "assets/images/zigbee-security-large.png"
   }
 }

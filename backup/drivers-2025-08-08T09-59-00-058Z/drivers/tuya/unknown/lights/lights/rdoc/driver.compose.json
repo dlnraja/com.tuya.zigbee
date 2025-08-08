@@ -1,0 +1,25 @@
+{
+  "id": "rdoc",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "rdoc",
+    "fr": "rdoc",
+    "nl": "rdoc",
+    "ta": "rdoc"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "rdoc",
+  "originalFile": "driver.rb",
+  "extracted": "2025-08-05T08:26:21.154Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

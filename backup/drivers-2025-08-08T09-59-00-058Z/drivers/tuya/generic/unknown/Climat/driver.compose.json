@@ -1,0 +1,28 @@
+﻿{
+    "source":  "README-e8936adf",
+    "id":  "Climat",
+    "manufacturer":  "Historical Recovery",
+    "version":  "1.0.0",
+    "category":  "generic",
+    "description":  {
+                        "en":  "Driver for Climat",
+                        "fr":  "Driver pour Climat",
+                        "nl":  "Driver voor Climat",
+                        "ta":  "Driver for Climat"
+                    },
+    "author":  "dlnraja \u003cdylan.rajasekaram+homey@gmail.com\u003e",
+    "createdAt":  "2025-07-29T18:24:48.639Z",
+    "capabilities":  [
+                         "onoff"
+                     ],
+    "title":  {
+                  "en":  "Climat",
+                  "fr":  "Climat",
+                  "nl":  "Climat",
+                  "ta":  "Climat"
+              },
+    "protocol":  "tuya",
+    "clusters":  [
+                     "genBasic"
+                 ]
+}

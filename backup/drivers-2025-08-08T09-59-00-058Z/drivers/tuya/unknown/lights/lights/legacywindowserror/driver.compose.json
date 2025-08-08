@@ -1,0 +1,25 @@
+{
+  "id": "legacywindowserror",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "legacywindowserror",
+    "fr": "legacywindowserror",
+    "nl": "legacywindowserror",
+    "ta": "legacywindowserror"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "legacywindowserror",
+  "originalFile": "_win32_console.py",
+  "extracted": "2025-08-05T08:33:54.819Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

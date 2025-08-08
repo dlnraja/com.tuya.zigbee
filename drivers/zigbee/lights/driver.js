@@ -1,37 +1,25 @@
-// Enhanced by Mega Ultimate Bug Fixer
-// Driver Type: zigbee
-// Category: lights
+const { ZigbeeDevice } = require('homey-meshdriver');
 
-// Enrichment Date: 2025-08-07T17:53:55.414Z
-
-'use strict';
-
-const { ZigbeeDevice } = require('homey-zigbee');
-
-class ZigbeeLightsDriver extends ZigbeeDevice {
-  async onInit() {
-    await super.onInit();
+class ZigbeeLights extends ZigbeeDevice {
+    async onMeshInit() {
+        await super.onMeshInit();
+        
+        // Logique spécifique au driver
+        console.log('Zigbee Lights initialized');
+        
+        // Enregistrer les capacités
+        this.registerCapability('onoff', 'cluster');
+        this.registerCapability('dim', 'cluster');
+        this.registerCapability('light_hue', 'cluster');
+        this.registerCapability('light_saturation', 'cluster');
+    }
     
-    // Logique d'initialisation spécifique aux lumières
-    this.log('Zigbee Lights Driver initialized');
-    
-    // Enregistrer les capacités
-    this.registerCapability('onoff', 'genOnOff');
-    this.registerCapability('dim', 'genLevelCtrl');
-    this.registerCapability('light_hue', 'lightingColorCtrl');
-    this.registerCapability('light_saturation', 'lightingColorCtrl');
-    this.registerCapability('light_temperature', 'lightingColorCtrl');
-  }
-
-  async onSettings(oldSettings, newSettings, changedKeys) {
-    // Gestion des paramètres
-    this.log('Settings updated:', changedKeys);
-  }
-
-  async onDeleted() {
-    // Nettoyage lors de la suppression
-    this.log('Zigbee Lights Device deleted');
-  }
+    async onSettings(oldSettings, newSettings, changedKeysArr) {
+        await super.onSettings(oldSettings, newSettings, changedKeysArr);
+        
+        // Gestion des paramètres
+        console.log('Settings updated:', changedKeysArr);
+    }
 }
 
-module.exports = ZigbeeLightsDriver; 
+module.exports = ZigbeeLights;

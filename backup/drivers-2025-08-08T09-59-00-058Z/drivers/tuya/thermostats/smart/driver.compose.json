@@ -1,0 +1,28 @@
+{
+  "id": "smart",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "class": "light",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Smart",
+    "nl": "Smart",
+    "fr": "Smart",
+    "de": "Smart"
+  },
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:55.082Z",
+    "driverType": "tuya",
+    "category": "thermostats",
+    "subcategory": "smart",
+    "megaUltimateBugFixer": true
+  }
+}

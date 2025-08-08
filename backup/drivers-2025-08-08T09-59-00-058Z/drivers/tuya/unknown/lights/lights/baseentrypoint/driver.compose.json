@@ -1,0 +1,25 @@
+{
+  "id": "baseentrypoint",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "baseentrypoint",
+    "fr": "baseentrypoint",
+    "nl": "baseentrypoint",
+    "ta": "baseentrypoint"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "baseentrypoint",
+  "originalFile": "base.py",
+  "extracted": "2025-08-05T08:33:36.350Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}
