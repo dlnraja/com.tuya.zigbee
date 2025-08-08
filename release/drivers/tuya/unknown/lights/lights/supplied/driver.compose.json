@@ -1,0 +1,25 @@
+{
+  "id": "supplied",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "supplied",
+    "fr": "supplied",
+    "nl": "supplied",
+    "ta": "supplied"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "supplied",
+  "originalFile": "core.cpython-311.pyc",
+  "extracted": "2025-08-05T08:33:27.495Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

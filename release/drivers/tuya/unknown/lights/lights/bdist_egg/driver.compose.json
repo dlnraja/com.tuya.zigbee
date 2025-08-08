@@ -1,0 +1,25 @@
+{
+  "id": "bdist_egg",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "bdist_egg",
+    "fr": "bdist_egg",
+    "nl": "bdist_egg",
+    "ta": "bdist_egg"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "bdist_egg",
+  "originalFile": "bdist_egg.py",
+  "extracted": "2025-08-05T08:33:22.498Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

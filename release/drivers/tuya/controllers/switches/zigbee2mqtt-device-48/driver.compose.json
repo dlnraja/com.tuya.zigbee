@@ -1,0 +1,55 @@
+{
+  "id": "zigbee2mqtt-device-48",
+  "title": {
+    "en": "Zigbee2mqtt Device 48",
+    "fr": "Zigbee2mqtt Device 48",
+    "nl": "Zigbee2mqtt Device 48",
+    "ta": "Zigbee2mqtt Device 48"
+  },
+  "description": {
+    "en": "Driver for zigbee2mqtt-device-48 from Zigbee2MQTT",
+    "fr": "Driver pour zigbee2mqtt-device-48 de Zigbee2MQTT",
+    "nl": "Driver voor zigbee2mqtt-device-48 van Zigbee2MQTT",
+    "ta": "Zigbee2MQTT இலிருந்து zigbee2mqtt-device-48 க்கான டிரைவர்"
+  },
+  "category": "controllers",
+  "protocol": "tuya",
+  "source": "Zigbee2MQTT",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genPowerCfg"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:11:10.956Z",
+  "tuyaCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Tuya",
+    "model": "zigbee2mqtt-device-48",
+    "firmware": "latest",
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_power"
+    ],
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genPowerCfg"
+    ]
+  },
+  "homeyCompatibility": {
+    "pro": true,
+    "bridge": true,
+    "cloud": false,
+    "minVersion": "5.0.0",
+    "maxVersion": "6.0.0"
+  }
+}

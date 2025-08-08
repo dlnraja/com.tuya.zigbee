@@ -1,0 +1,25 @@
+{
+  "id": "should",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "should",
+    "fr": "should",
+    "nl": "should",
+    "ta": "should"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "should",
+  "originalFile": "versioncontrol.cpython-311.pyc",
+  "extracted": "2025-08-05T08:34:27.199Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

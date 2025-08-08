@@ -1,0 +1,25 @@
+{
+  "id": "httperror",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "httperror",
+    "fr": "httperror",
+    "nl": "httperror",
+    "ta": "httperror"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "httperror",
+  "originalFile": "exceptions.py",
+  "extracted": "2025-08-05T08:33:59.449Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

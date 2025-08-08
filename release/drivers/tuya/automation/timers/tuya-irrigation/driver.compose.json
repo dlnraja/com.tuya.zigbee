@@ -1,0 +1,53 @@
+{
+  "id": "tuya-irrigation",
+  "title": {
+    "en": "Tuya Irrigation",
+    "fr": "Tuya Irrigation",
+    "nl": "Tuya Irrigation",
+    "ta": "Tuya Irrigation"
+  },
+  "description": {
+    "en": "TUYA driver for tuya-irrigation from Tuya (Historical)",
+    "fr": "Driver TUYA pour tuya-irrigation de Tuya (Historique)",
+    "nl": "TUYA driver voor tuya-irrigation van Tuya (Historisch)",
+    "ta": "Tuya இலிருந்து tuya-irrigation க்கான TUYA டிரைவர் (வரலாற்று)"
+  },
+  "category": "automation",
+  "protocol": "tuya",
+  "manufacturer": "Tuya",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.031Z",
+  "historical": {
+    "commitHash": "e8936adf",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "tuyaCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Tuya",
+    "model": "tuya-irrigation",
+    "firmware": "latest",
+    "capabilities": [
+      "onoff"
+    ],
+    "clusters": [
+      "genOnOff"
+    ]
+  },
+  "homeyCompatibility": {
+    "pro": true,
+    "bridge": true,
+    "cloud": false,
+    "minVersion": "5.0.0",
+    "maxVersion": "6.0.0"
+  }
+}

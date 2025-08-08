@@ -1,0 +1,25 @@
+{
+  "id": "pluginbindings",
+  "class": "plug",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "pluginbindings",
+    "fr": "pluginbindings",
+    "nl": "pluginbindings",
+    "ta": "pluginbindings"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "pluginbindings",
+  "originalFile": "pluginGlue.js",
+  "extracted": "2025-08-05T08:26:26.233Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

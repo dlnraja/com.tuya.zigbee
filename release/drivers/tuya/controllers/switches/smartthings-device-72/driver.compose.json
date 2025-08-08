@@ -1,0 +1,55 @@
+{
+  "id": "smartthings-device-72",
+  "title": {
+    "en": "Smartthings Device 72",
+    "fr": "Smartthings Device 72",
+    "nl": "Smartthings Device 72",
+    "ta": "Smartthings Device 72"
+  },
+  "description": {
+    "en": "Driver for smartthings-device-72 from SmartThings",
+    "fr": "Driver pour smartthings-device-72 de SmartThings",
+    "nl": "Driver voor smartthings-device-72 van SmartThings",
+    "ta": "SmartThings இலிருந்து smartthings-device-72 க்கான டிரைவர்"
+  },
+  "category": "controllers",
+  "protocol": "tuya",
+  "source": "SmartThings",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genPowerCfg"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:11:16.737Z",
+  "tuyaCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Tuya",
+    "model": "smartthings-device-72",
+    "firmware": "latest",
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_power"
+    ],
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genPowerCfg"
+    ]
+  },
+  "homeyCompatibility": {
+    "pro": true,
+    "bridge": true,
+    "cloud": false,
+    "minVersion": "5.0.0",
+    "maxVersion": "6.0.0"
+  }
+}
