@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Device Type: zigbee
+// Category: onoff
+// Subcategory: relay_board_1_channel
+// Enrichment Date: 2025-08-07T17:53:56.025Z
+
 'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');

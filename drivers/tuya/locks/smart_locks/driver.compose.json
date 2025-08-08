@@ -16,5 +16,13 @@
     "nl": "Smart Locks",
     "fr": "Smart Locks",
     "de": "Smart Locks"
+  },
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:54.845Z",
+    "driverType": "tuya",
+    "category": "locks",
+    "subcategory": "smart_locks",
+    "megaUltimateBugFixer": true
   }
 }

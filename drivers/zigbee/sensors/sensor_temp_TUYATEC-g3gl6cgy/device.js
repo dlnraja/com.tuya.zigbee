@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Device Type: zigbee
+// Category: sensors
+// Subcategory: sensor_temp_TUYATEC-g3gl6cgy
+// Enrichment Date: 2025-08-07T17:53:56.788Z
+
 'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');

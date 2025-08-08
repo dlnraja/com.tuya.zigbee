@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Driver Type: zigbee
+// Category: lights
+// Subcategory: light_rgb_TZ3000_dbou1ap4
+// Enrichment Date: 2025-08-07T17:53:55.526Z
+
 'use strict';
 
 const { ZigBeeDriver } = require('homey-meshdriver');
@@ -5,6 +11,12 @@ const { ZigBeeDriver } = require('homey-meshdriver');
 class Light_rgb_TZ3000_dbou1ap4Driver extends ZigBeeDriver {
     
     async onMeshInit() {
+    // Enable debugging
+    this.enableDebug();
+    
+    // Print the node when it is included
+    this.printNode();
+    
         this.log('🚀 light_rgb_TZ3000_dbou1ap4 Driver - Initialisation MEGA enrichie...');
         
         // Configuration MEGA

@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Device Type: zigbee
+// Category: onoff
+// Subcategory: dimmable_recessed_led
+// Enrichment Date: 2025-08-07T17:53:55.954Z
+
 'use strict';
 
 const TuyaZigBeeLightDevice = require('../../lib/TuyaZigBeeLightDevice');

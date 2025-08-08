@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Device Type: zigbee
+// Category: switches
+// Subcategory: TS0001
+// Enrichment Date: 2025-08-07T17:53:57.131Z
+
 'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');

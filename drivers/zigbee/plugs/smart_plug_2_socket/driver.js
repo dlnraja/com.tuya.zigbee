@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Driver Type: zigbee
+// Category: plugs
+// Subcategory: smart_plug_2_socket
+// Enrichment Date: 2025-08-07T17:53:56.318Z
+
 'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');

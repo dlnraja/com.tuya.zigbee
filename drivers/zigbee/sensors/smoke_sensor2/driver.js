@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Driver Type: zigbee
+// Category: sensors
+// Subcategory: smoke_sensor2
+// Enrichment Date: 2025-08-07T17:53:56.846Z
+
 'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');

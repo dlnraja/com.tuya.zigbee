@@ -5,6 +5,12 @@ const { ZigBeeDevice } = require('homey-meshdriver');
 class Ts0601_lockDevice extends ZigBeeDevice {
     
     async onMeshInit() {
+    // Enable debugging
+    this.enableDebug();
+    
+    // Print the node when it is included
+    this.printNode();
+    
         this.log('🚀 ts0601_lock - Initialisation MEGA enrichie...');
         
         // Configuration MEGA

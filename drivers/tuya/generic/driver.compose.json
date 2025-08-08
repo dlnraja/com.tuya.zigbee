@@ -25,5 +25,13 @@
       "type": "bool",
       "writable": true
     }
+  },
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:54.754Z",
+    "driverType": "tuya",
+    "category": "generic",
+    "subcategory": null,
+    "megaUltimateBugFixer": true
   }
 }

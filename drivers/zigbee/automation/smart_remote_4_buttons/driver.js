@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Driver Type: zigbee
+// Category: automation
+// Subcategory: smart_remote_4_buttons
+// Enrichment Date: 2025-08-07T17:53:55.181Z
+
 'use strict';
 
 const { ZigBeeDriver } = require('homey-meshdriver');
@@ -5,6 +11,12 @@ const { ZigBeeDriver } = require('homey-meshdriver');
 class Smart_remote_4_buttonsDriver extends ZigBeeDriver {
     
     async onMeshInit() {
+    // Enable debugging
+    this.enableDebug();
+    
+    // Print the node when it is included
+    this.printNode();
+    
         this.log('🚀 smart_remote_4_buttons Driver - Initialisation MEGA enrichie...');
         
         // Configuration MEGA

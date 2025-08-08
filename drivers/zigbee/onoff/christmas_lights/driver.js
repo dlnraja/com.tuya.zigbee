@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Driver Type: zigbee
+// Category: onoff
+// Subcategory: christmas_lights
+// Enrichment Date: 2025-08-07T17:53:55.885Z
+
 'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');

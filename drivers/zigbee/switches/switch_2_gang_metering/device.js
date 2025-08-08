@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Device Type: zigbee
+// Category: switches
+// Subcategory: switch_2_gang_metering
+// Enrichment Date: 2025-08-07T17:53:57.086Z
+
 'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');

@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Device Type: tuya
+// Category: locks
+
+// Enrichment Date: 2025-08-07T17:53:54.830Z
+
 'use strict';
 
 const { TuyaDevice } = require('homey-tuya');

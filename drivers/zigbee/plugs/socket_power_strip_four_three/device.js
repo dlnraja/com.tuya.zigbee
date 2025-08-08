@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Device Type: zigbee
+// Category: plugs
+// Subcategory: socket_power_strip_four_three
+// Enrichment Date: 2025-08-07T17:53:56.364Z
+
 'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');

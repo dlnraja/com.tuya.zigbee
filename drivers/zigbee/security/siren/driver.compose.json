@@ -25,5 +25,13 @@
       "type": "bool",
       "writable": true
     }
+  },
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:56.474Z",
+    "driverType": "zigbee",
+    "category": "security",
+    "subcategory": "siren",
+    "megaUltimateBugFixer": true
   }
 }

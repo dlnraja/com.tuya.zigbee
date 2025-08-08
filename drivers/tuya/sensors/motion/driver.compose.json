@@ -57,5 +57,23 @@
     "cloud": false,
     "minVersion": "5.0.0",
     "maxVersion": "6.0.0"
+  },
+  "name": {
+    "en": "Motion Device",
+    "fr": "Appareil Motion",
+    "nl": "Motion Apparaat",
+    "ta": "Motion சாதனம்"
+  },
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:54.915Z",
+    "driverType": "tuya",
+    "category": "sensors",
+    "subcategory": "motion",
+    "megaUltimateBugFixer": true
+  },
+  "images": {
+    "small": "assets/small.png",
+    "large": "assets/large.png"
   }
 }
