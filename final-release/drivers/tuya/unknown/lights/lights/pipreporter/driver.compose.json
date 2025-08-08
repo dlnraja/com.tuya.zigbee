@@ -1,0 +1,25 @@
+{
+  "id": "pipreporter",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "pipreporter",
+    "fr": "pipreporter",
+    "nl": "pipreporter",
+    "ta": "pipreporter"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "pipreporter",
+  "originalFile": "reporter.py",
+  "extracted": "2025-08-05T08:33:38.773Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

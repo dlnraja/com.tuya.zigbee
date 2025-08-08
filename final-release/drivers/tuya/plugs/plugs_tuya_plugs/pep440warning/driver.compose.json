@@ -1,0 +1,25 @@
+{
+  "id": "pep440warning",
+  "class": "plug",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "pep440warning",
+    "fr": "pep440warning",
+    "nl": "pep440warning",
+    "ta": "pep440warning"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "pep440warning",
+  "originalFile": "__init__.py",
+  "extracted": "2025-08-05T08:33:48.185Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

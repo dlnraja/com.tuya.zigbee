@@ -1,0 +1,25 @@
+{
+  "id": "binaryinputcluster",
+  "class": "sensor",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "binaryinputcluster",
+    "fr": "binaryinputcluster",
+    "nl": "binaryinputcluster",
+    "ta": "binaryinputcluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "binaryinputcluster",
+  "originalFile": "binaryInput.js",
+  "extracted": "2025-08-05T08:36:18.729Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

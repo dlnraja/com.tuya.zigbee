@@ -1,0 +1,25 @@
+{
+  "id": "switch_2_gang",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "switch_2_gang",
+    "fr": "switch_2_gang",
+    "nl": "switch_2_gang",
+    "ta": "switch_2_gang"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "switch_2_gang",
+  "originalFile": "driver.js",
+  "extracted": "2025-08-05T08:36:08.035Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "basiccluster",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "basiccluster",
+    "fr": "basiccluster",
+    "nl": "basiccluster",
+    "ta": "basiccluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "basiccluster",
+  "originalFile": "basic.js",
+  "extracted": "2025-08-05T08:36:18.459Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}
