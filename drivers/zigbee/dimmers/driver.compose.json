@@ -42,5 +42,13 @@
       "max": 1000,
       "writable": true
     }
+  },
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:55.409Z",
+    "driverType": "zigbee",
+    "category": "dimmers",
+    "subcategory": null,
+    "megaUltimateBugFixer": true
   }
 }

@@ -16,5 +16,13 @@
     "nl": "Remote",
     "fr": "Remote",
     "de": "Remote"
+  },
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:54.988Z",
+    "driverType": "tuya",
+    "category": "switches",
+    "subcategory": "remote",
+    "megaUltimateBugFixer": true
   }
 }

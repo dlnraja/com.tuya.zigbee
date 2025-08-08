@@ -3,7 +3,9 @@
   "version": "1.1.0",
   "compatibility": ">=6.0.0",
   "sdk": 3,
-  "platforms": ["local"],
+  "platforms": [
+    "local"
+  ],
   "name": {
     "en": "Tuya Zigbee Universal",
     "fr": "Tuya Zigbee Universel",
@@ -21,14 +23,10 @@
     "es": "Dispositivos Tuya y Zigbee universales para Homey - Edición IA con Recuperación Completa"
   },
   "category": [
-    "lights",
-    "sensors",
-    "switches",
-    "lighting"
+    "lights"
   ],
   "permissions": [
-    "homey:manager:api",
-    "homey:manager:drivers"
+    "homey:manager:api"
   ],
   "images": {
     "small": "/assets/images/small.png",
@@ -48,5 +46,10 @@
   "license": "MIT",
   "engines": {
     "node": ">=16.0.0"
+  },
+  "metadata": {
+    "validated": true,
+    "validationDate": "2025-08-08T01:21:11.225Z",
+    "ultimateFinalFixer": true
   }
 }

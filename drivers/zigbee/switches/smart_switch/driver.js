@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Driver Type: zigbee
+// Category: switches
+// Subcategory: smart_switch
+// Enrichment Date: 2025-08-07T17:53:57.049Z
+
 'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');

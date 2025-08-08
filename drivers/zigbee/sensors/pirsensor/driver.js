@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Driver Type: zigbee
+// Category: sensors
+// Subcategory: pirsensor
+// Enrichment Date: 2025-08-07T17:53:56.687Z
+
 'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');

@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Device Type: zigbee
+// Category: onoff
+// Subcategory: buzzer
+// Enrichment Date: 2025-08-07T17:53:55.883Z
+
 'use strict';
 
 const { ZigBeeDevice } = require('homey-meshdriver');

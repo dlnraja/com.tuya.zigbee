@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Device Type: tuya
+// Category: sensors
+// Subcategory: motion
+// Enrichment Date: 2025-08-07T17:53:54.919Z
+
 'use strict';
 
 const { TuyaDevice } = require('homey-tuya');

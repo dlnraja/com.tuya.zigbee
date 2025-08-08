@@ -54,5 +54,13 @@
   },
   "originalFile": "driver.compose.json",
   "extractedAt": "2025-08-06T12:05:40.956Z",
-  "fixedAt": "2025-08-06T12:05:40.956Z"
+  "fixedAt": "2025-08-06T12:05:40.956Z",
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:54.931Z",
+    "driverType": "tuya",
+    "category": "sensors",
+    "subcategory": "sensors_tuya_blinds",
+    "megaUltimateBugFixer": true
+  }
 }

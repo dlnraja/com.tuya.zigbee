@@ -1,3 +1,9 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Driver Type: tuya
+// Category: lighting
+
+// Enrichment Date: 2025-08-07T17:53:54.762Z
+
 'use strict';
 
 const { TuyaDevice } = require('homey-tuya');

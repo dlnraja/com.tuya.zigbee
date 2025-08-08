@@ -26,5 +26,13 @@
       "type": "bool",
       "writable": true
     }
+  },
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:54.850Z",
+    "driverType": "tuya",
+    "category": "plugs",
+    "subcategory": null,
+    "megaUltimateBugFixer": true
   }
 }

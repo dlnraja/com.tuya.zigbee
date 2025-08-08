@@ -1,5 +1,17 @@
+// Enhanced by Mega Ultimate Bug Fixer
+// Device Type: tuya
+// Category: sensors
+// Subcategory: sensors_tuya_blinds
+// Enrichment Date: 2025-08-07T17:53:54.932Z
+
 'use strict';class BlindsDevice extends TuyaDevice { async onInit() { // OPTIMIZED VERSION 3.5.4 this.log('blinds device initializing (optimized)...'); // Optimisations de performance this.setupOptimizedPolling(); this.setupMemoryManagement(); this.setupErrorHandling(); this.log('blinds device initializing...'); await this.initializeCapabilities(); this.setupPolling(); } async initializeCapabilities() { this.log('Initializing capabilities for blinds'); // Implement specific capability handlers here } setupPolling() { this.pollInterval = setInterval(() => { this.pollDevice(); }, 30000); } async pollDevice() { try { this.log('Polling blinds device...'); // Implement polling logic } catch (error) { this.log('Error polling device:', error.message); } } async onUninit() { if (this.pollInterval) { clearInterval(this.pollInterval); } }
     async onMeshInit() {
+    // Enable debugging
+    this.enableDebug();
+    
+    // Print the node when it is included
+    this.printNode();
+    
         this.log('tuya/sensors/sensors_tuya_blinds - Device initialized');
         
         // Register capabilities

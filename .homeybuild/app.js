@@ -1,3 +1,4 @@
+// Total drivers: 237 (74 Tuya, 163 Zigbee)
 'use strict';
 
 const Homey = require('homey');
