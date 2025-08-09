@@ -1,6 +1,3 @@
-# MEGA ULTIMATE ENHANCED - 2025-08-07T16:33:44.910Z
-# Workflow amélioré avec liens corrigés et fonctionnalités étendues
-
 name: Build and Validate
 
 on:
@@ -9,29 +6,64 @@ on:
   pull_request:
     branches: [ master ]
 
+permissions:
+  contents: read
+  issues: write
+  actions: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-        
-    - name: Install dependencies
-      run: npm install
-      
-    - name: Validate app
-      run: homey app validate
-      
-    - name: Build app
-      run: homey app build
-      
-    - name: Upload artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: homey-app
-        path: .homeybuild/
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install (CI)
+        run: |
+          if [ -f package-lock.json ]; then npm ci; else npm install; fi
+
+      - name: Validate app
+        run: npx homey app validate
+
+      - name: Build app
+        run: npx homey app build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: homey-app
+          path: .homeybuild/
+
+      - name: Auto-close CI failure issues on success
+        if: ${{ success() }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const {owner, repo} = context.repo;
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner, repo, state: 'open', per_page: 100
+            });
+            const rx = /Validation Failed - MEGA-PROMPT CURSOR ULTIME/i;
+            for (const is of issues) {
+              if (rx.test(is.title)) {
+                await github.rest.issues.createComment({
+                  owner, repo, issue_number: is.number,
+                  body: "✅ Résolu par le dernier build vert. Fermeture automatique."
+                });
+                await github.rest.issues.update({
+                  owner, repo, issue_number: is.number, state: "closed"
+                });
+              }
+            }
