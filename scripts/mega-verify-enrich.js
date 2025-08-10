@@ -1,80 +1,31 @@
 'use strict';
-const fs=require('fs'),fsp=require('fs/promises'),path=require('path'),{spawnSync}=require('child_process');
-const ROOT=process.cwd(),DRV=path.join(ROOT,'drivers'),TMP=path.join(ROOT,'.tmp_tuya_zip_work');
-const CI=process.env.CI==='1';
-
-async function runScript(name,args=[]){
-  const script=path.join(ROOT,'scripts',name);
-  if(!fs.existsSync(script)){console.log(`[mega] ${name} not found`);return false;}
-  console.log(`[mega] running ${name} ${args.join(' ')}`);
-  const result=spawnSync('node',[script,...args],{stdio:'inherit',cwd:ROOT});
-  return result.status===0;
-}
-
-async function runHomey(){
-  if(CI){console.log('[mega] CI mode, skipping run');return true;}
-  console.log('[mega] attempting to run app...');
-  try{
-    const result=spawnSync('homey',['app','run'],{stdio:'pipe',cwd:ROOT});
-    if(result.status===0)return true;
-    if(process.env.HOMEY_TOKEN||process.env.HOMEY_ACCESS_TOKEN){
-      console.log('[mega] trying remote run...');
-      const remote=spawnSync('homey',['app','run','--remote'],{stdio:'pipe',cwd:ROOT});
-      return remote.status===0;
-    }
-  }catch(e){console.log('[mega] run failed:',e.message);}
-  return false;
-}
-
-async function gitCommit(){
-  if(CI){console.log('[mega] CI mode, skipping git');return true;}
-  try{
-    const user=process.env.GIT_USER||'Local Dev',email=process.env.GIT_EMAIL||'dev@localhost';
-    spawnSync('git',['config','user.name',user],{stdio:'pipe',cwd:ROOT});
-    spawnSync('git',['config','user.email',email],{stdio:'pipe',cwd:ROOT});
-    spawnSync('git',['add','.'],{stdio:'pipe',cwd:ROOT});
-    const msg=`Auto-reorganize drivers ${new Date().toISOString()}`;
-    const commit=spawnSync('git',['commit','-m',msg],{stdio:'pipe',cwd:ROOT});
-    if(commit.status===0){
-      console.log('[mega] committed');
-      const push=spawnSync('git',['push'],{stdio:'pipe',cwd:ROOT});
-      if(push.status===0)console.log('[mega] pushed');
-      return true;
-    }
-  }catch(e){console.log('[mega] git failed:',e.message);}
-  return false;
-}
-
-(async()=>{
-  console.log('🚀 MEGA-PROMPT EXECUTION STARTED');
-  console.log(`📁 Root: ${ROOT}`);
-  console.log(`📁 Drivers: ${DRV}`);
-  console.log(`📁 Temp: ${TMP}`);
-  
-  // 1. Fix package.json
-  await runScript('fix-package.js');
-  
-  // 2. Ingest ZIPs (skip if no new ones)
-  if(fs.existsSync(TMP)&&fs.readdirSync(TMP).length>0){
-    console.log('[mega] temp dir exists, skipping ingest');
-  }else{
-    await runScript('ingest-tuya-zips.js');
-  }
-  
-  // 3. Enrich drivers
-  await runScript('enrich-drivers.js',['--apply']);
-  
-  // 4. Reorganize structure
-  await runScript('reorganize-drivers.js');
-  
-  // 5. Generate assets
-  await runScript('assets-generate.js');
-  
-  // 6. Try to run
-  await runHomey();
-  
-  // 7. Git operations
-  await gitCommit();
-  
-  console.log('✅ MEGA-PROMPT EXECUTION COMPLETED');
-})().catch(e=>{console.error('[mega] fatal:',e);process.exitCode=1;});
+const {spawnSync}=require('child_process');const fs=require('fs'),path=require('path');
+function run(script,args=[],env={}){console.log(`\n🚀 [MEGA] Running: ${script} ${args.join(' ')}`);const r=spawnSync(script,args,{env:{...process.env,...env},stdio:'inherit'});return r.status===0;}
+function main(){console.log('🎯 [MEGA] Tuya Zigbee Project - Complete Reorganization & Migration\n');
+// Phase 1: Fix package.json
+if(!run('node',['scripts/fix-package.js'])){console.error('❌ [MEGA] Package fix failed');return false;}
+// Phase 2: Migration meshdriver → zigbeedriver (if enabled)
+if(process.env.DO_MIGRATE){if(!run('node',['scripts/migrate-meshdriver-to-zigbeedriver.js'])){console.error('❌ [MEGA] Migration failed');return false;}}
+// Phase 3: Ingest and enrich
+if(!run('node',['scripts/ingest-tuya-zips.js'])){console.error('❌ [MEGA] Ingest failed');return false;}
+if(!run('node',['scripts/enrich-drivers.js'])){console.error('❌ [MEGA] Enrich failed');return false;}
+// Phase 4: Verify and reorganize
+if(!run('node',['scripts/verify-coherence-and-enrich.js'])){console.error('❌ [MEGA] Verify failed');return false;}
+if(!run('node',['scripts/reorganize-drivers.js'])){console.error('❌ [MEGA] Reorganize failed');return false;}
+// Phase 5: Generate assets and reindex
+if(!run('node',['scripts/assets-generate.js'])){console.error('❌ [MEGA] Assets generation failed');return false;}
+if(!run('node',['scripts/reindex-drivers.js'])){console.error('❌ [MEGA] Reindex failed');return false;}
+// Phase 6: Update README
+if(!run('node',['scripts/update-readme.js'])){console.error('❌ [MEGA] README update failed');return false;}
+// Phase 7: NPM operations (if not skipped)
+if(!process.env.SKIP_NPM){console.log('\n📦 [MEGA] Installing dependencies...');if(!run('npm',['install'])){console.error('❌ [MEGA] NPM install failed');return false;}}
+// Phase 8: Validation (if not skipped)
+if(!process.env.SKIP_VALIDATE){console.log('\n✅ [MEGA] Validating Homey app...');if(!run('npx',['homey','app','validate'])){console.error('❌ [MEGA] Validation failed');return false;}}
+// Phase 9: Run (if not skipped)
+if(!process.env.SKIP_RUN){console.log('\n🏃 [MEGA] Running Homey app...');if(!run('npx',['homey','app','run'])){console.error('❌ [MEGA] Run failed');return false;}}
+// Phase 10: Git operations (if not skipped)
+if(!process.env.SKIP_GIT_PUSH){console.log('\n📝 [MEGA] Committing changes...');if(!run('git',['add','.'])){console.error('❌ [MEGA] Git add failed');return false;}
+if(!run('git',['commit','-m','🚀 MEGA: Complete project reorganization and migration - '+new Date().toISOString()])){console.error('❌ [MEGA] Git commit failed');return false;}
+if(!process.env.SKIP_GIT_PUSH){console.log('\n📤 [MEGA] Pushing to remote...');if(!run('git',['push'])){console.error('❌ [MEGA] Git push failed');return false;}}}
+console.log('\n🎉 [MEGA] All operations completed successfully!');return true;}
+if(require.main===module)main();

@@ -1,12 +1,13 @@
 'use strict';
-const fs=require('fs'),fsp=require('fs/promises'),path=require('path');
-const ROOT=process.cwd(),DRV=path.join(ROOT,'drivers'),APP=path.join(ROOT,'app.json');
-function load(p){try{return JSON.parse(fs.readFileSync(p,'utf8'));}catch{return null;}}function brand(){const a=load(APP)||{};return String(a?.brandColor||'#00AAFF');}
-function* walk(d){const st=[d];while(st.length){const c=st.pop();let s;try{s=fs.statSync(c);}catch{continue;}if(s.isDirectory()){const es=fs.readdirSync(c);if(es.some(e=>/^driver(\.compose)?\.json$/i.test(e)))yield c;for(const e of es)st.push(path.join(c,e));}}}
-function svg(hex){return`<?xml version="1.0" encoding="UTF-8"?>
+const fs=require('fs'),path=require('path'),glob=require('glob');
+function generateAssets(){let c=0;const drivers=glob.sync('drivers/**/driver.json');
+for(const d of drivers){try{const dir=path.dirname(d);const assets=path.join(dir,'assets');const icon=path.join(assets,'icon.svg');
+if(!fs.existsSync(assets))fs.mkdirSync(assets,{recursive:true});
+if(!fs.existsSync(icon)){const hex='#00AAFF';const svg=`<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
 <rect x="24" y="24" width="208" height="208" rx="32" fill="#f6f8fa" stroke="${hex}" stroke-width="8"/>
 <path d="M72 96h112v64H72z" fill="none" stroke="${hex}" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
 <circle cx="96" cy="128" r="10" fill="${hex}"/><circle cx="160" cy="128" r="10" fill="${hex}"/>
-</svg>`;}
-(async()=>{if(!fs.existsSync(DRV)){console.log('[assets] drivers/ not found');return;}const hex=brand();let c=0;for(const d of walk(DRV)){const as=path.join(d,'assets');const ic=path.join(as,'icon.svg');if(!fs.existsSync(as))fs.mkdirSync(as,{recursive:true});if(!fs.existsSync(ic)){fs.writeFileSync(ic,svg(hex),'utf8');c++;}}console.log(`[assets] ${c} icons generated`);})().catch(e=>{console.error('[assets] fatal',e);process.exitCode=1;});
+</svg>`;fs.writeFileSync(icon,svg,'utf8');c++;console.log(`[assets] ${icon}`);}}catch(e){console.error(`[assets] error with ${d}:`,e.message);}}
+console.log(`[assets] ${c} icons generated`);}
+generateAssets();

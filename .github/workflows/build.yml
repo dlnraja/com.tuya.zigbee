@@ -1,4 +1,4 @@
-name: Build and Validate
+name: 🚀 Build and Validate
 
 on:
   push:
@@ -19,12 +19,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-
-      - name: Cache npm dependencies
+      - name: 📦 Cache npm dependencies
         uses: actions/cache@v4
         with:
           path: ~/.npm
@@ -32,25 +32,38 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Setup Node.js
+      - name: 🟢 Setup Node.js 20
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install
+      - name: 📥 Install dependencies
         run: |
-          if [ -f package-lock.json ]; then npm ci; else npm install --no-fund --no-audit; fi
+          if [ -f package-lock.json ]; then 
+            npm ci
+          else 
+            npm install --no-fund --no-audit
+          fi
 
-      - name: Validate app
+      - name: ✅ Validate Homey app
         run: npx homey app validate
 
-      - name: Build app
+      - name: 🔨 Build Homey app
         run: npx homey app build
 
-      - name: Upload build artifact
+      - name: 📤 Upload build artifact
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: homey-app
+          name: homey-app-build
           path: .homeybuild/
+          retention-days: 30
+
+      - name: 📊 Build Summary
+        if: always()
+        run: |
+          echo "🚀 Build completed successfully!"
+          echo "📅 Timestamp: $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          echo "🔧 Node.js version: $(node --version)"
+          echo "📦 NPM version: $(npm --version)"
