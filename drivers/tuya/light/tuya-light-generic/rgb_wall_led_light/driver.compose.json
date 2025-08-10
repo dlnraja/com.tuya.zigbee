@@ -1,0 +1,57 @@
+{
+  "id": "rgb_wall_led_light",
+  "capabilities": [
+    "onoff",
+    "light_hue",
+    "light_saturation"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "class": "light",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Rgb Wall Led Light",
+    "nl": "Rgb Wall Led Light",
+    "fr": "Rgb Wall Led Light",
+    "de": "Rgb Wall Led Light"
+  },
+  "manufacturer": "_TZ3000_xxxxxxxx",
+  "product": "RGB_WALL_LED_LIGHT",
+  "dataPoints": {
+    "1": {
+      "name": "switch",
+      "type": "bool",
+      "writable": true
+    },
+    "4": {
+      "name": "color_hue",
+      "type": "value",
+      "min": 0,
+      "max": 360,
+      "writable": true
+    },
+    "5": {
+      "name": "color_saturation",
+      "type": "value",
+      "min": 0,
+      "max": 100,
+      "writable": true
+    }
+  },
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:55.783Z",
+    "driverType": "zigbee",
+    "category": "lights",
+    "subcategory": "rgb_wall_led_light",
+    "megaUltimateBugFixer": true
+  },
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "com.tuya.zigbee.soil-sensor",
+  "name": {
+    "en": "Soil Sensor Device",
+    "fr": "Appareil Soil Sensor",
+    "nl": "Soil Sensor Apparaat",
+    "de": "Soil Sensor Gerät",
+    "es": "Dispositivo Soil Sensor"
+  },
+  "class": "device",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_soil_moisture"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "tuyaLight": {
+    "version": "3.5.0",
+    "optimized": true,
+    "autoFingerprint": true,
+    "enhancedPolling": true,
+    "fallbackParsing": true,
+    "category": "sensors",
+    "driverName": "soil-sensor"
+  },
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  }
+}

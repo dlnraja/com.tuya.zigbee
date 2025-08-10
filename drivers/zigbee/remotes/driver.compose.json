@@ -1,1 +1,18 @@
-{"id":"zigbee-remotes"}
+{
+  "id": "zigbee-remotes",
+  "name": {
+    "en": "Tuya Device",
+    "fr": "Appareil Tuya"
+  },
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "measure_voltage"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "manufacturerName": [],
+  "modelId": []
+}

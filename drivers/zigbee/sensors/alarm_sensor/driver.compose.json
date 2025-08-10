@@ -51,5 +51,9 @@
     "category": "sensors",
     "subcategory": "alarm_sensor",
     "megaUltimateBugFixer": true
+  },
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
   }
 }

@@ -49,5 +49,13 @@
     "cloud": false,
     "minVersion": "5.0.0",
     "maxVersion": "6.0.0"
+  },
+  "name": {
+    "en": "Tuya Device",
+    "fr": "Appareil Tuya"
+  },
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
   }
 }

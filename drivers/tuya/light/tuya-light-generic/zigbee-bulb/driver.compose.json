@@ -1,0 +1,41 @@
+{
+  "id": "zigbee-bulb",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "class": "light",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Zigbee-Bulb",
+    "nl": "Zigbee-Bulb",
+    "fr": "Zigbee-Bulb",
+    "de": "Zigbee-Bulb"
+  },
+  "manufacturer": "Generic",
+  "product": "ZIGBEE-BULB",
+  "dataPoints": {
+    "1": {
+      "name": "switch",
+      "type": "bool",
+      "writable": true
+    }
+  },
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:55.862Z",
+    "driverType": "zigbee",
+    "category": "lights",
+    "subcategory": "zigbee-bulb",
+    "megaUltimateBugFixer": true
+  },
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}

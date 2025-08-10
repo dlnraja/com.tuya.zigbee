@@ -461,3 +461,8 @@ dev-dev-settings/
 >>>>>>> master
 # Added by Homey CLI
 /.homeybuild/
+# Dossiers temporaires Tuya
+.tmp*
+
+# Dossiers temporaires Tuya
+.tmp_tuya_zip_work*

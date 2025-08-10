@@ -1,0 +1,41 @@
+{
+  "id": "tunable_bulb_E27",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "class": "light",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Tunable Bulb E27",
+    "nl": "Tunable Bulb E27",
+    "fr": "Tunable Bulb E27",
+    "de": "Tunable Bulb E27"
+  },
+  "manufacturer": "_TZ3000_xxxxxxxx",
+  "product": "TUNABLE_BULB_E27",
+  "dataPoints": {
+    "1": {
+      "name": "switch",
+      "type": "bool",
+      "writable": true
+    }
+  },
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:55.795Z",
+    "driverType": "zigbee",
+    "category": "lights",
+    "subcategory": "tunable_bulb_E27",
+    "megaUltimateBugFixer": true
+  },
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}

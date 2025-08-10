@@ -1,0 +1,57 @@
+{
+  "id": "rgb_spot_GU10",
+  "capabilities": [
+    "onoff",
+    "light_hue",
+    "light_saturation"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "class": "light",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Rgb Spot GU10",
+    "nl": "Rgb Spot GU10",
+    "fr": "Rgb Spot GU10",
+    "de": "Rgb Spot GU10"
+  },
+  "manufacturer": "_TZ3000_xxxxxxxx",
+  "product": "RGB_SPOT_GU10",
+  "dataPoints": {
+    "1": {
+      "name": "switch",
+      "type": "bool",
+      "writable": true
+    },
+    "4": {
+      "name": "color_hue",
+      "type": "value",
+      "min": 0,
+      "max": 360,
+      "writable": true
+    },
+    "5": {
+      "name": "color_saturation",
+      "type": "value",
+      "min": 0,
+      "max": 100,
+      "writable": true
+    }
+  },
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:55.778Z",
+    "driverType": "zigbee",
+    "category": "lights",
+    "subcategory": "rgb_spot_GU10",
+    "megaUltimateBugFixer": true
+  },
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}

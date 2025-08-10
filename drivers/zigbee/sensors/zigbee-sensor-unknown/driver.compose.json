@@ -76,5 +76,9 @@
     "category": "sensors",
     "subcategory": "zigbee-sensor-unknown",
     "megaUltimateBugFixer": true
+  },
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
   }
 }

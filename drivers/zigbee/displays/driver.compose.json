@@ -1,1 +1,22 @@
-{"id":"zigbee-displays","name":{"en":"Zigbee Displays","fr":"Écrans Zigbee","nl":"Zigbee Displays","ta":"ஜிக்பீ டிஸ்ப்ளேக்கள்"},"capabilities":["onoff","display_text"],"class":"display"}
+{
+  "id": "zigbee-displays",
+  "name": {
+    "en": "Zigbee Displays",
+    "fr": "Écrans Zigbee",
+    "nl": "Zigbee Displays",
+    "ta": "ஜிக்பீ டிஸ்ப்ளேக்கள்"
+  },
+  "capabilities": [
+    "onoff",
+    "display_text",
+    "measure_power",
+    "measure_voltage"
+  ],
+  "class": "display",
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "manufacturerName": [],
+  "modelId": []
+}

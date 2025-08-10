@@ -1,0 +1,26 @@
+{
+  "id": "com.tuya.zigbee.indoor",
+  "name": {
+    "en": "Indoor"
+  },
+  "class": "plug",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  }
+}

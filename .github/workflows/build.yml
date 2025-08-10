@@ -23,15 +23,24 @@ jobs:
         with:
           fetch-depth: 0
 
+
+      - name: Cache npm dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install (CI)
+      - name: Install
         run: |
-          if [ -f package-lock.json ]; then npm ci; else npm install; fi
+          if [ -f package-lock.json ]; then npm ci; else npm install --no-fund --no-audit; fi
 
       - name: Validate app
         run: npx homey app validate
@@ -45,25 +54,3 @@ jobs:
         with:
           name: homey-app
           path: .homeybuild/
-
-      - name: Auto-close CI failure issues on success
-        if: ${{ success() }}
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const {owner, repo} = context.repo;
-            const { data: issues } = await github.rest.issues.listForRepo({
-              owner, repo, state: 'open', per_page: 100
-            });
-            const rx = /Validation Failed - MEGA-PROMPT CURSOR ULTIME/i;
-            for (const is of issues) {
-              if (rx.test(is.title)) {
-                await github.rest.issues.createComment({
-                  owner, repo, issue_number: is.number,
-                  body: "✅ Résolu par le dernier build vert. Fermeture automatique."
-                });
-                await github.rest.issues.update({
-                  owner, repo, issue_number: is.number, state: "closed"
-                });
-              }
-            }
