@@ -1,7 +1,9 @@
 {
   "id": "wall_thermostat",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "button",
+    "lock_state"
   ],
   "capabilitiesOptions": {},
   "icon": "/assets/icon.svg",
@@ -33,5 +35,20 @@
     "category": "thermostats",
     "subcategory": "wall_thermostat",
     "megaUltimateBugFixer": true
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "LELLKI",
+      "_TZ3000_kdi2o9m6",
+      "_TZ3000_ew31dmgx",
+      "_TZ3000_dpo1ysak",
+      "_TZ3000_plyvnuf5",
+      "_TZ3000_hyfvrar3",
+      "_TZ3000_cymsnfvf",
+      "_TZ3000_upjrsxh1",
+      "_TZ3000_wamqdr3f",
+      "_TZ3000_u3nv1jwk"
+    ],
+    "modelId": []
   }
 }

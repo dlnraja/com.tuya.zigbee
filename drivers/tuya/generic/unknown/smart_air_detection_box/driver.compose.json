@@ -1,7 +1,8 @@
 {
   "id": "smart_air_detection_box",
   "name": {
-    "en": "Smart Air Detection Box"
+    "en": "Smart Air Detection Box",
+    "fr": "Smart Air Detection Box"
   },
   "class": "sensor",
   "platforms": [
@@ -58,7 +59,10 @@
       "instruction": {
         "en": "Press the RESET pinhole on the side of the unit for 5 seconds until LED blinks."
       }
-    }
+    },
+    "modelId": [
+      "TS0601"
+    ]
   },
   "title": {
     "en": "Smart_air_detection_box",

@@ -1,0 +1,40 @@
+{
+  "id": "com.tuya.zigbee.ts0044-smart-switch",
+  "name": {
+    "en": "TS0044 Device",
+    "fr": "Appareil TS0044",
+    "nl": "TS0044 Apparaat",
+    "de": "TS0044 Gerät",
+    "es": "Dispositivo TS0044"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "tuyaLight": {
+    "version": "3.5.0",
+    "optimized": true,
+    "autoFingerprint": true,
+    "enhancedPolling": true,
+    "fallbackParsing": true,
+    "category": "switches",
+    "driverName": "ts0044-smart-switch"
+  },
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  }
+}

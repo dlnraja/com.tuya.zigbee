@@ -51,5 +51,9 @@
     "category": "sensors",
     "subcategory": "temphumidsensor2",
     "megaUltimateBugFixer": true
+  },
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
   }
 }

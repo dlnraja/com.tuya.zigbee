@@ -22,5 +22,13 @@
     "batteries": [
       "INTERNAL"
     ]
+  },
+  "name": {
+    "en": "Tuya Device",
+    "fr": "Appareil Tuya"
+  },
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
   }
 }

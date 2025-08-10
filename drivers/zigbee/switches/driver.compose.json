@@ -7,7 +7,9 @@
     "ta": "Zigbee Switches"
   },
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_power",
+    "measure_voltage"
   ],
   "class": "socket",
   "zigbee": {
@@ -27,10 +29,13 @@
     },
     "productId": [
       ""
-    ]
+    ],
+    "modelId": []
   },
   "images": {
     "small": "assets/images/zigbee-switches-small.png",
     "large": "assets/images/zigbee-switches-large.png"
-  }
+  },
+  "manufacturerName": [],
+  "modelId": []
 }

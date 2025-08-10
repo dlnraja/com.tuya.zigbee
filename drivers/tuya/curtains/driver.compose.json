@@ -1,1 +1,12 @@
-{"id":"tuya-curtains"}
+{
+  "id": "tuya-curtains",
+  "name": {
+    "en": "Tuya Device",
+    "fr": "Appareil Tuya"
+  },
+  "capabilities": [],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}

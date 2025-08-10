@@ -1,1 +1,12 @@
-{"id":"tuya-fans"}
+{
+  "id": "tuya-fans",
+  "name": {
+    "en": "Tuya Device",
+    "fr": "Appareil Tuya"
+  },
+  "capabilities": [],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}

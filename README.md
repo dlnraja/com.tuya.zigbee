@@ -42,10 +42,13 @@
 - Node.js 18+
 - Homey CLI
 
-### Installation Rapide
-```bash
-# Cloner le repository
-git clone https://github.com/dlnraja/com.tuya.zigbee.git
+### Installation (Test mode only)
+
+- `npm install`
+- `npx homey app validate`
+- `npx homey app run` (Docker) or `--remote`
+
+zigbee.git
 cd com.tuya.zigbee
 
 # Installer les dépendances
@@ -122,7 +125,6 @@ homey app validate --level debug
 homey app build
 
 # Publication
-homey app publish
 ```
 
 ### Scripts de Validation
@@ -189,7 +191,6 @@ Documentation disponible dans l'ordre de priorité :
 - [Development Guide](docs/en/development.md)
 
 ### 🔗 Liens Utiles
-- [Homey App Store](https://apps.homey.app/fr/app/com.tuya.zigbee)
 - [Community Thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352)
 - [GitHub Issues](https://github.com/dlnraja/com.tuya.zigbee/issues)
 - [Releases](https://github.com/dlnraja/com.tuya.zigbee/releases)
@@ -272,3 +273,66 @@ Ce projet est sous licence [MIT](LICENSE).
 > ✍️ **Généré automatiquement** le 2025-01-29T03:10:00.000Z  
 > 🎯 **MEGA-PROMPT ULTIME - VERSION FINALE 2025**  
 > 🚀 **Mode YOLO Ultra Activé**
+
+## Changelog
+
+See `CHANGELOG_AUTO.md` for automated additions/fixes.
+
+## Drivers Coverage
+
+All additions are merged into drivers (no variants).
+
+
+## 🧪 Test-only
+
+This app is currently in **TEST-ONLY** mode. It is not intended for production use.
+
+### ⚠️ Important Notes:
+- This is a development/testing version
+- Features may be incomplete or unstable
+- Use at your own risk
+- Report issues on GitHub
+
+#
+
+## Test-only
+
+⚠️ **ATTENTION**: Cette application est en mode test uniquement.
+
+- **Fonctionnalités**: Fonctionnalités de base uniquement
+- **Support**: Aucun support officiel
+- **Utilisation**: À des fins de test et de développement uniquement
+- **Production**: Ne pas utiliser en production
+
+### Scripts disponibles
+
+```bash
+# Script principal d'orchestration
+npm run mega_ultimate
+
+# Enrichissement depuis les sources .tmp*
+npm run enrich
+
+# Réorganisation des drivers
+npm run reorganize
+
+# Validation de l'application
+npx homey app validate
+```
+
+### Structure des drivers
+
+Les drivers sont organisés selon le schéma: `vendor-category-model`
+
+- **vendor**: tuya, aqara, ikea, philips, generic
+- **category**: light, plug, sensor, switch, cover, etc.
+- **model**: identifiant unique du modèle
+
+Exemple: `tuya-light-ts0501b`, `aqara-sensor-motion`
+
+
+## 🔧 Development Setup:
+```bash
+npm install
+npm run mega
+```

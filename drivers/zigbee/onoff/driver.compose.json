@@ -7,7 +7,9 @@
     "ta": "Zigbee Onoff"
   },
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_power",
+    "measure_voltage"
   ],
   "class": "socket",
   "zigbee": {
@@ -27,10 +29,13 @@
     },
     "productId": [
       ""
-    ]
+    ],
+    "modelId": []
   },
   "images": {
     "small": "assets/images/zigbee-onoff-small.png",
     "large": "assets/images/zigbee-onoff-large.png"
-  }
+  },
+  "manufacturerName": [],
+  "modelId": []
 }

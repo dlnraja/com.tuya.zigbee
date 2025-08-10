@@ -49,5 +49,9 @@
     "category": "onoff",
     "subcategory": "zigbee_repeater",
     "megaUltimateBugFixer": true
+  },
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
   }
 }

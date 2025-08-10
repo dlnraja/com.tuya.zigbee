@@ -1,2 +1,149 @@
-{"id":"radar_sensor_2","name":{"en":"Radar Sensor","nl":"Radar Sensor"},"class":"sensor","platforms":["local"],"connectivity":["zigbee"],"capabilities":["measure_luminance","alarm_motion","target_distance","onoff","measure_battery","measure_temperature","measure_humidity"],"images":{"large":"{{driverAssetsPath}}/images/large.png","small":"{{driverAssetsPath}}/images/small.png"},"energy":{"approximation":{"usageOn":0,"usageOff":0}},"zigbee":{"manufacturerName":["_TZE204_sxm7l9xa","_TZE204_ijxvkhd0"],"productId":["TS0601"],"endpoints":{"1":"@{clusters=System.Object[]; bindings=System.Object[]}"},"learnmode":{"image":"{{driverAssetsPath}}/icon.svg","instruction":"@{en=Press and hold the reset button for 6 seconds. When the indicator light flashes it is in pairing mode.; nl=Druk 6 seconden op de reset knop. Wacht tot de led gaat knipperen.}"}}}
-
+{
+  "id": "radar_sensor_2",
+  "name": {
+    "en": "Radar Sensor",
+    "nl": "Radar Sensor",
+    "fr": "Radar Sensor"
+  },
+  "class": "sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "measure_luminance",
+    "alarm_motion",
+    "target_distance",
+    "onoff",
+    "measure_battery",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_contact",
+    "alarm_water",
+    "alarm_battery",
+    "alarm_tamper",
+    "alarm_cleaning",
+    "measure_luminance.20min",
+    "measure_luminance.daily_max",
+    "measure_voltage.rain"
+  ],
+  "images": {
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 0,
+      "usageOff": 0
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE204_sxm7l9xa",
+      "_TZE204_ijxvkhd0",
+      "_TYZB01_sqmd19i1",
+      "_TYST11_qq9mpfhw",
+      "_TZ3000_fxvjhdyl",
+      "_TZ3000_eit7p838",
+      "_TZ3000_t6jriawg",
+      "_TZ3000_85czd6fy",
+      "_TZ3000_kyb656no",
+      "_TZ3000_0s9gukzt",
+      "_TZ3000_kstbkt6a",
+      "_TZ3000_mugyhz0q",
+      "_TZ3000_upgcbody",
+      "_TZ3000_k4ej3ww2",
+      "_TZ3000_6oabgtzv",
+      "_TZ3000_ocjlo4ea",
+      "_TZ3000_awvmkayh",
+      "_TZ1800_fcdjzz3s",
+      "_TZ1800_ejwkn2h2",
+      "_TZ3000_rcuyhwe3",
+      "_TZ3210_tgvtvdoc",
+      "_TZE200_2aaelwxk",
+      "_TZE200_ztc6ggyl",
+      "_TZE201_ztc6ggyl",
+      "_TZE202_ztc6ggyl",
+      "_TZE203_ztc6ggyl",
+      "_TZE204_ztc6ggyl",
+      "_TZE204_qasjif9e",
+      "_TZE200_sgpeacqp",
+      "_TZE204_xsm7l9xa",
+      "_TZE200_wukb7rhc",
+      "_TZE200_xpq2rzhq",
+      "_TZE200_holel4dk",
+      "_TZE200_jva8ink8",
+      "_TZE200_lyetpprm",
+      "_TZE200_ikvncluo",
+      "_TZE204_ztqnh5cg",
+      "_TZE204_7gclukjs",
+      "_TZE200_3towulqd",
+      "_TZE200_bh3n6gk8",
+      "_TZE200_1ibpyhdc",
+      "_TZE200_ttcovulf",
+      "TUYATEC-bd5faf9p",
+      "TUYATEC-zw6hxafz",
+      "_TZ3000_qaaysllp",
+      "_TYZB01_ftdkanlj",
+      "_TYZB01_kvwjujy9",
+      "_TZ3210_huzkzqyk",
+      "zbeacon",
+      "_TZ3000_zgrffiwg",
+      "_TZ3000_bpkijo14",
+      "_TZ3000_uvti8nkd",
+      "TUYATEC-g3gl6cgy",
+      "TUYATEC-Bfq2i2Sy",
+      "TUYATEC-abkehqus",
+      "TUYATEC-sb6t7ett",
+      "TUYATEC-rkqiqvcs",
+      "TUYATEC-crr8qb0p",
+      "_TZ3000_ebar6ljy",
+      "TUYATEC-kbqf60nt",
+      "TUYATEC-r9hgssol",
+      "TUYATEC-trhrga6p",
+      "TUYATEC-ip9ganvw",
+      "_TYZB01_xph99wvr",
+      "_TZ3000_2mbfxlzr",
+      "_TZ3000_402jjyro",
+      "_TZ3000_6jeesvrt",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_bmg14ax2",
+      "_TZ3000_oxslv1c9",
+      "_TZ3000_bzxlofth",
+      "_TZ3000_bzxloft",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_7d8yme6f",
+      "_TZ3000_rgchmad8",
+      "_TZ3000_au1rjicn",
+      "_TZ3000_4ugnzsli",
+      "TUYATEC-7qunn4gq",
+      "_TZ3000_decxrtwa",
+      "_TZ3000_yxqnffam",
+      "_TZ3000_9eeavbk5",
+      "_TZ3000_a33rw7ou",
+      "_TZ3000_6zvw8ham",
+      "_TZ3000_yfekcy3n",
+      "_TZ3000_cea5xugq",
+      "_TZ3000_1bwpjvlz",
+      "_TZ3000_au2o5e6q",
+      "_TZ3000_v7chgqso",
+      "_TZ3000_qrldbmfn",
+      "_TZ3000_gntwytxo"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": "@{clusters=System.Object[]; bindings=System.Object[]}"
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": "@{en=Press and hold the reset button for 6 seconds. When the indicator light flashes it is in pairing mode.; nl=Druk 6 seconden op de reset knop. Wacht tot de led gaat knipperen.}"
+    },
+    "modelId": [
+      "TS0601"
+    ]
+  }
+}

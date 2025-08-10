@@ -1,0 +1,42 @@
+{
+  "id": "com.tuya.zigbee.ts011f-smart-plug",
+  "name": {
+    "en": "TS011F Device",
+    "fr": "Appareil TS011F",
+    "nl": "TS011F Apparaat",
+    "de": "TS011F Gerät",
+    "es": "Dispositivo TS011F"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "measure_current",
+    "measure_voltage"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "tuyaLight": {
+    "version": "3.5.0",
+    "optimized": true,
+    "autoFingerprint": true,
+    "enhancedPolling": true,
+    "fallbackParsing": true,
+    "category": "plugs",
+    "driverName": "ts011f-smart-plug"
+  },
+  "optimized": {
+    "version": "3.5.4",
+    "performance": "enhanced",
+    "memory": "managed",
+    "errorHandling": "robust"
+  }
+}

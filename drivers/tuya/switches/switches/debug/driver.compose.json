@@ -2,7 +2,6 @@
   "id": "debug",
   "class": "switch",
   "capabilities": [
-    "i",
     "i"
   ],
   "name": {
@@ -22,5 +21,9 @@
   "clusters": [
     "genBasic",
     "genOnOff"
-  ]
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
 }

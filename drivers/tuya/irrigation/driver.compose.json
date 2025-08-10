@@ -1,1 +1,18 @@
-{"id":"tuya-irrigation","name":{"en":"Tuya Irrigation","fr":"Irrigation Tuya","nl":"Tuya Irrigatie","ta":"துயா நீர்ப்பாசனம்"},"capabilities":["onoff","irrigation_control"],"class":"irrigation"}
+{
+  "id": "tuya-irrigation",
+  "name": {
+    "en": "Tuya Irrigation",
+    "fr": "Irrigation Tuya",
+    "nl": "Tuya Irrigatie",
+    "ta": "துயா நீர்ப்பாசனம்"
+  },
+  "capabilities": [
+    "onoff",
+    "irrigation_control"
+  ],
+  "class": "irrigation",
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}

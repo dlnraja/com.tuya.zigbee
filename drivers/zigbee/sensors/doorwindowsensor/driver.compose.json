@@ -51,5 +51,9 @@
     "category": "sensors",
     "subcategory": "doorwindowsensor",
     "megaUltimateBugFixer": true
+  },
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
   }
 }

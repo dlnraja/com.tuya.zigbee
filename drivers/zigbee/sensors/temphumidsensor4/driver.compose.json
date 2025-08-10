@@ -51,5 +51,9 @@
     "category": "sensors",
     "subcategory": "temphumidsensor4",
     "megaUltimateBugFixer": true
+  },
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
   }
 }

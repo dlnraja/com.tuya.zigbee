@@ -9,7 +9,10 @@
   "capabilities": [
     "measure_temperature",
     "measure_humidity",
-    "measure_pressure"
+    "measure_pressure",
+    "onoff",
+    "measure_power",
+    "measure_voltage"
   ],
   "class": "sensor",
   "zigbee": {
@@ -29,10 +32,13 @@
     },
     "productId": [
       ""
-    ]
+    ],
+    "modelId": []
   },
   "images": {
     "small": "assets/images/zigbee-sensors-small.png",
     "large": "assets/images/zigbee-sensors-large.png"
-  }
+  },
+  "manufacturerName": [],
+  "modelId": []
 }

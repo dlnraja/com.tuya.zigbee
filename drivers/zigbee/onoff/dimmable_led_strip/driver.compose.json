@@ -49,5 +49,9 @@
     "category": "onoff",
     "subcategory": "dimmable_led_strip",
     "megaUltimateBugFixer": true
+  },
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
   }
 }

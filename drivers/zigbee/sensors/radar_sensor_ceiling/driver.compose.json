@@ -51,5 +51,9 @@
     "category": "sensors",
     "subcategory": "radar_sensor_ceiling",
     "megaUltimateBugFixer": true
+  },
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
   }
 }

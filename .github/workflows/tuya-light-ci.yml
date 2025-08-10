@@ -1,6 +1,0 @@
-# MEGA ULTIMATE ENHANCED - 2025-08-07T16:33:44.961Z
-# Workflow amélioré avec liens corrigés et fonctionnalités étendues
-
-# MEGA-PROMPT ULTIME - VERSION FINALE 2025
-# Enhanced with enrichment mode
-name: Tuya-Light CICD Pipelineon push branches  master, tuya-light  pull_request branches  master, tuya-light jobs validate runs-on ubuntu-latest steps - uses actionscheckoutv3 - name Setup Node.js uses actionssetup-nodev3 with node-version 18 - name Install dependencies run npm install - name Validate app run npx homey app validate --level debug - name Test drivers run node scriptscorevalidate-all-drivers.js - name Run linting run npx eslint . --ext .js test runs-on ubuntu-latest needs validate steps - uses actionscheckoutv3 - name Setup Node.js uses actionssetup-nodev3 with node-version 18 - name Run tests run npm test - name Generate coverage report run npm run coverage build runs-on ubuntu-latest needs validate, test steps - uses actionscheckoutv3 - name Build app run npx homey app build - name Upload build artifacts uses actionsupload-artifactv3 with name tuya-light-build path .homeybuild
