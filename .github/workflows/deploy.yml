@@ -1,21 +1,32 @@
-# MEGA ULTIMATE ENHANCED - 2025-08-07T16:33:44.921Z
-# Workflow amélioré avec liens corrigés et fonctionnalités étendues
-
-name: Deploy to GitHub Pages
+name: 🚀 Deploy to GitHub Pages
 
 on:
   push:
     branches: [ master ]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     
     steps:
-    - uses: actions/checkout@v4
-    
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Cache npm dependencies
+      - name: 📦 Cache npm dependencies
         uses: actions/cache@v4
         with:
           path: ~/.npm
@@ -23,14 +34,35 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public/dashboard
+      - name: 🟢 Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
 
-      - name: Build Homey App
+      - name: 📥 Install dependencies
+        run: npm ci
+
+      - name: 🔨 Build Homey App
         run: |
-          npm ci
           npm run build
-          homey app validate
+          npx homey app validate
+
+      - name: 🚀 Deploy to GitHub Pages
+        id: deployment
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public/dashboard
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+
+      - name: 📊 Deploy Summary
+        if: always()
+        run: |
+          echo "🚀 Deployment completed successfully!"
+          echo "📅 Timestamp: $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          echo "🌐 Pages URL: ${{ steps.deployment.outputs.page_url }}"
+          echo "🔧 Node.js version: $(node --version)"
+          echo "📦 NPM version: $(npm --version)"
