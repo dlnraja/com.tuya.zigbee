@@ -22,7 +22,9 @@
     "verify": "node scripts/verify-coherence-and-enrich.js",
     "reorg": "node scripts/reorganize-drivers.js",
     "readme": "node scripts/update-readme.js",
-    "fix_package": "node scripts/fix-package.js"
+    "fix_package": "node scripts/fix-package.js",
+    "validate": "npx homey app validate",
+    "build": "npx homey app build"
   },
   "keywords": [
     "tuya",
@@ -34,6 +36,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "glob": "^11.0.3",
     "homey-meshdriver": "^2.0.0",
     "zigbee-clusters": "^2.0.0"
   },
