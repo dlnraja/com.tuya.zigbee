@@ -1,0 +1,29 @@
+{
+  "id": "ioservice",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "ioservice",
+    "fr": "ioservice",
+    "nl": "ioservice",
+    "ta": "ioservice"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "ioservice",
+  "originalFile": "AirportBrcmFixup.json",
+  "extracted": "2025-08-05T08:29:42.274Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}

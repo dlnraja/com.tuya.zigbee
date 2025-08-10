@@ -1,0 +1,49 @@
+{
+  "id": "smart-life-switch",
+  "name": {
+    "en": "smart-life-switch Device",
+    "fr": "Appareil smart-life-switch",
+    "nl": "smart-life-switch Apparaat",
+    "de": "smart-life-switch Gerät",
+    "es": "Dispositivo smart-life-switch"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_temperature",
+    "measure_humidity",
+    "ai_enhanced",
+    "performance_optimized",
+    "ai_enhanced",
+    "performance_optimized"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "enrichment": {
+    "enriched": true,
+    "timestamp": "2025-08-02T14:11:16.148Z",
+    "pipeline": "Mega Pipeline Ultimate",
+    "mode": "YOLO",
+    "version": "3.3.3"
+  },
+  "compatibility": {
+    "enhanced": true,
+    "optimized": true
+  }
+}

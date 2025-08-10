@@ -1,0 +1,29 @@
+{
+  "id": "relay_board_4_channel",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "relay_board_4_channel",
+    "fr": "relay_board_4_channel",
+    "nl": "relay_board_4_channel",
+    "ta": "relay_board_4_channel"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": ", ",
+  "model": "relay_board_4_channel",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:35:56.679Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}

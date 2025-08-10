@@ -1,35 +1,68 @@
 {
-  "id": "tuya",
+  "id": "tuya-switch",
   "name": {
-    "en": "tuya Device",
-    "fr": "Appareil tuya",
-    "nl": "tuya Apparaat",
-    "ta": "tuya Device"
+    "en": "Tuya Switch",
+    "fr": "Interrupteur Tuya",
+    "nl": "Tuya Schakelaar",
+    "ta": "Tuya சுவிட்ச்"
   },
+  "images": {
+    "small": "assets/images/switch-small.png",
+    "large": "assets/images/switch-large.png"
+  },
+  "class": "device",
   "capabilities": [
     "onoff",
-    "measure_power",
-    "measure_voltage"
+    "dim",
+    "measure_power"
   ],
-  "class": "light",
-  "zigbee": {
-    "manufacturerName": [
-      "Generic",
-      "Tuya"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          "genOnOff",
-          "genBasic"
-        ],
-        "bindings": [
-          "genOnOff"
-        ]
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "On/Off",
+        "fr": "Marche/Arrêt",
+        "nl": "Aan/Uit",
+        "ta": "இயக்கு/நிறுத்து"
       }
     },
-    "productId": [
-      ""
+    "dim": {
+      "title": {
+        "en": "Dim",
+        "fr": "Variation",
+        "nl": "Dimmen",
+        "ta": "மங்கலாக்கு"
+      }
+    },
+    "measure_power": {
+      "title": {
+        "en": "Power",
+        "fr": "Puissance",
+        "nl": "Vermogen",
+        "ta": "சக்தி"
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "poll_interval",
+      "type": "number",
+      "label": {
+        "en": "Poll Interval (ms)",
+        "fr": "Intervalle de Polling (ms)",
+        "nl": "Poll Interval (ms)",
+        "ta": "போல் இடைவெளி (ms)"
+      },
+      "value": 30000,
+      "attr": {
+        "min": 1000,
+        "max": 300000,
+        "step": 1000
+      }
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
     "modelId": [
       "ts130f",
@@ -83,11 +116,5 @@
       "rh3040",
       "doorwindow-sensor-zb3.0"
     ]
-  },
-  "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
-  },
-  "manufacturerName": [],
-  "modelId": []
+  }
 }

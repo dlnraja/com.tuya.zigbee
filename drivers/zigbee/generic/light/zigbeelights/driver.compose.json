@@ -1,0 +1,48 @@
+{
+  "id": "zigbee-lights",
+  "name": {
+    "en": "Zigbee Lights",
+    "fr": "Zigbee Lights",
+    "nl": "Zigbee Lights",
+    "ta": "Zigbee Lights"
+  },
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "lidl_xmas_mode",
+    "measure_power",
+    "measure_voltage"
+  ],
+  "class": "light",
+  "zigbee": {
+    "manufacturerName": [
+      "Generic",
+      "_TZE200_s8gkrkxk"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genOnOff",
+          "genLevelCtrl",
+          "lightingColorCtrl"
+        ],
+        "bindings": [
+          "genOnOff",
+          "genLevelCtrl"
+        ]
+      }
+    },
+    "productId": [
+      ""
+    ],
+    "modelId": []
+  },
+  "images": {
+    "small": "assets/images/zigbee-lights-small.png",
+    "large": "assets/images/zigbee-lights-large.png"
+  },
+  "manufacturerName": [],
+  "modelId": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": "ts0601_dimmer",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "class": "light",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Ts0601 Dimmer",
+    "nl": "Ts0601 Dimmer",
+    "fr": "Ts0601 Dimmer",
+    "de": "Ts0601 Dimmer"
+  },
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}

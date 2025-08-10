@@ -1,0 +1,54 @@
+{
+  "id": "wall_thermostat",
+  "capabilities": [
+    "onoff",
+    "button",
+    "lock_state"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "class": "thermostat",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Wall Thermostat",
+    "nl": "Wall Thermostat",
+    "fr": "Wall Thermostat",
+    "de": "Wall Thermostat"
+  },
+  "manufacturer": "_TZ3000_xxxxxxxx",
+  "product": "WALL_THERMOSTAT",
+  "dataPoints": {
+    "1": {
+      "name": "switch",
+      "type": "bool",
+      "writable": true
+    }
+  },
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:57.390Z",
+    "driverType": "zigbee",
+    "category": "thermostats",
+    "subcategory": "wall_thermostat",
+    "megaUltimateBugFixer": true
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "LELLKI",
+      "_TZ3000_kdi2o9m6",
+      "_TZ3000_ew31dmgx",
+      "_TZ3000_dpo1ysak",
+      "_TZ3000_plyvnuf5",
+      "_TZ3000_hyfvrar3",
+      "_TZ3000_cymsnfvf",
+      "_TZ3000_upjrsxh1",
+      "_TZ3000_wamqdr3f",
+      "_TZ3000_u3nv1jwk"
+    ],
+    "modelId": []
+  }
+}

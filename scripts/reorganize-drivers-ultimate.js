@@ -149,8 +149,10 @@ async function mergeDirectories(sourcePath, targetPath) {
 
 // Fonction pour déterminer la catégorie d'un driver
 function getDriverCategory(driverName, capabilities = []) {
-  const name = driverName.toLowerCase();
-  const caps = capabilities.map(c => c.toLowerCase());
+  const name = String(driverName || '').toLowerCase();
+  const caps = Array.isArray(capabilities)
+    ? capabilities.map(c => String(c || '').toLowerCase())
+    : [];
   
   for (const [category, keywords] of Object.entries(CONFIG.DRIVER_CATEGORIES)) {
     for (const keyword of keywords) {
@@ -165,7 +167,10 @@ function getDriverCategory(driverName, capabilities = []) {
 
 // Fonction pour déterminer le vendor d'un driver
 function getDriverVendor(manufacturerName = []) {
-  const names = manufacturerName.map(n => n.toLowerCase());
+  const list = Array.isArray(manufacturerName)
+    ? manufacturerName
+    : [manufacturerName];
+  const names = list.filter(v => v != null).map(n => String(n).toLowerCase());
   
   for (const vendor of CONFIG.VENDOR_PRIORITY) {
     if (names.some(name => name.includes(vendor))) {
@@ -178,23 +183,31 @@ function getDriverVendor(manufacturerName = []) {
 
 // Fonction pour générer un nom de dossier cohérent
 function generateDriverFolderName(driverName, manufacturerName = [], modelId = [], capabilities = []) {
-  const vendor = getDriverVendor(manufacturerName);
-  const category = getDriverCategory(driverName, capabilities);
-  
+  // Sécuriser les entrées
+  if (typeof driverName !== 'string') {
+    driverName = String(driverName || 'unknown');
+  }
+  if (!Array.isArray(modelId)) {
+    modelId = [];
+  }
+
   // Nettoyer le nom du modèle
-  let model = 'unknown';
+  let model = null;
   if (modelId.length > 0) {
-    model = modelId[0].toLowerCase()
-      .replace(/[^a-z0-9._-]/g, '')
-      .substring(0, 20);
+    const firstModel = modelId.find(v => typeof v === 'string' && v.trim());
+    if (firstModel) {
+      model = firstModel.toLowerCase()
+        .replace(/[^a-z0-9._-]/g, '')
+        .substring(0, 20);
+    }
   }
   
   // Nettoyer le nom du driver
-  const cleanDriverName = driverName.toLowerCase()
+  const cleanDriverName = String(driverName).toLowerCase()
     .replace(/[^a-z0-9._-]/g, '')
     .substring(0, 30);
   
-  return `${vendor}-${category}-${model || cleanDriverName}`;
+  return model || cleanDriverName || 'unknown';
 }
 
 // Fonction principale de réorganisation
@@ -273,21 +286,118 @@ async function reorganizeDrivers() {
         driverInfo = { name: driver.name };
       }
       
-      // Générer le nouveau nom de dossier
+      // Normaliser le nom du driver (peut être un objet {en: "...", fr: "..."})
+      let driverName = driver.name;
+      if (driverInfo.name) {
+        if (typeof driverInfo.name === 'string') {
+          driverName = driverInfo.name;
+        } else if (driverInfo.name.en) {
+          driverName = driverInfo.name.en;
+        } else if (driverInfo.name.fr) {
+          driverName = driverInfo.name.fr;
+        } else {
+          // Fallback: première valeur disponible
+          const any = Object.values(driverInfo.name).find(Boolean);
+          if (any) driverName = any;
+        }
+      }
+      
+      // Déterminer le type principal (zigbee ou tuya)
+      const isZigbee = !!(driverInfo.zigbee && (
+        driverInfo.zigbee.manufacturerName || 
+        driverInfo.zigbee.modelId || 
+        driverInfo.zigbee.productId
+      ));
+      
+      // Déterminer le vendor principal
+      let primaryVendor = 'generic';
+      const manufacturerList = Array.isArray(driverInfo.manufacturerName)
+        ? driverInfo.manufacturerName
+        : driverInfo.manufacturerName
+          ? [driverInfo.manufacturerName]
+          : [];
+      
+      if (manufacturerList.length > 0) {
+        const firstManufacturer = String(manufacturerList[0]).toLowerCase();
+        if (firstManufacturer && firstManufacturer !== 'undefined' && firstManufacturer !== 'null') {
+          primaryVendor = firstManufacturer;
+        }
+      } else if (driverInfo.zigbee && driverInfo.zigbee.manufacturerName) {
+        const zigbeeManufacturer = Array.isArray(driverInfo.zigbee.manufacturerName) 
+          ? driverInfo.zigbee.manufacturerName[0]
+          : driverInfo.zigbee.manufacturerName;
+        
+        if (zigbeeManufacturer && String(zigbeeManufacturer).toLowerCase() !== 'undefined') {
+          primaryVendor = String(zigbeeManufacturer).toLowerCase();
+        }
+      }
+      
+      // Normaliser le vendor et s'assurer qu'il n'est pas undefined
+      if (!primaryVendor || primaryVendor === 'undefined' || primaryVendor === 'null') {
+        primaryVendor = 'generic';
+      } else if (primaryVendor.includes('tuya') || primaryVendor.includes('smart life')) {
+        primaryVendor = 'tuya';
+      } else if (primaryVendor.includes('aqara')) {
+        primaryVendor = 'aqara';
+      } else if (primaryVendor.includes('ikea')) {
+        primaryVendor = 'ikea';
+      } else if (primaryVendor.includes('philips')) {
+        primaryVendor = 'philips';
+      } else if (primaryVendor.includes('sonoff')) {
+        primaryVendor = 'sonoff';
+      } else if (primaryVendor.includes('ledvance')) {
+        primaryVendor = 'ledvance';
+      }
+      
+      // Déterminer la catégorie
+      const category = getDriverCategory(driverName, driverInfo.capabilities || []);
+      
+      // S'assurer que la catégorie n'est pas undefined
+      if (!category || category === 'undefined' || category === 'null') {
+        log(`⚠️  Catégorie undefined pour ${driver.name}, utilisation de 'other'`, 'warning');
+        category = 'other';
+      }
+      
+      // Générer le nouveau nom de dossier avec la structure zigbee/tuya
+      const protocolFolder = isZigbee ? 'zigbee' : 'tuya';
       const newFolderName = generateDriverFolderName(
-        driverInfo.name || driver.name,
+        driverName,
         driverInfo.manufacturerName || [],
         driverInfo.modelId || [],
         driverInfo.capabilities || []
       );
       
-      const newPath = path.join(driversDir, newFolderName);
+      // Vérifier que le nom du dossier n'est pas undefined
+      if (!newFolderName || newFolderName === 'undefined' || newFolderName === 'null') {
+        log(`⚠️  Nom de dossier undefined pour ${driver.name}, utilisation du nom original`, 'warning');
+        newFolderName = driver.name || 'unknown';
+      }
+      
+      // Chemin de destination avec structure zigbee/tuya
+      const newPath = path.join(driversDir, protocolFolder, primaryVendor, category, newFolderName);
+      
+      // Log pour debug
+      log(`🔍 Debug - ${driver.name}: protocol=${protocolFolder}, vendor=${primaryVendor}, category=${category}, folder=${newFolderName}`);
       
       // Vérifier si le renommage est nécessaire
-      if (path.basename(driver.path) === newFolderName) {
-        log(`✅ ${driver.name} déjà correctement nommé`);
+      if (path.basename(driver.path) === newFolderName && 
+          path.dirname(driver.path) === path.dirname(newPath)) {
+        log(`✅ ${driver.name} déjà correctement organisé`);
         successCount++;
         continue;
+      }
+      
+      // Créer les dossiers de destination si nécessaire
+      const targetDir = path.dirname(newPath);
+      if (!fs.existsSync(targetDir)) {
+        try {
+          fs.mkdirSync(targetDir, { recursive: true });
+          log(`📁 Création du dossier: ${path.relative(driversDir, targetDir)}`);
+        } catch (mkdirError) {
+          log(`❌ Erreur création dossier ${targetDir}: ${mkdirError.message}`, 'error');
+          errorCount++;
+          continue;
+        }
       }
       
       // Forcer le renommage
@@ -366,13 +476,82 @@ async function cleanupEmptyDirectories() {
   return cleanedCount;
 }
 
+// Fonction pour nettoyer les dossiers problématiques
+async function cleanupProblematicDirectories() {
+  log('🧹 NETTOYAGE DES DOSSIERS PROBLÉMATIQUES...');
+  
+  const driversDir = path.join(process.cwd(), CONFIG.DRIVERS_DIR);
+  let cleanedCount = 0;
+  
+  function cleanupRecursive(dir) {
+    try {
+      const items = fs.readdirSync(dir);
+      let hasContent = false;
+      
+      for (const item of items) {
+        const itemPath = path.join(dir, item);
+        const stat = fs.statSync(itemPath);
+        
+        if (stat.isDirectory()) {
+          // Vérifier si c'est un dossier problématique
+          if (item === 'undefined' || item === 'null' || item.startsWith('_tz') || item.startsWith('_tze')) {
+            try {
+              // Vérifier s'il contient des drivers valides
+              const hasValidDriver = ['driver.compose.json', 'driver.json']
+                .some(name => fs.existsSync(path.join(itemPath, name)));
+              
+              if (!hasValidDriver) {
+                // Supprimer le dossier problématique vide
+                fs.rmSync(itemPath, { recursive: true, force: true });
+                log(`🗑️  Dossier problématique supprimé: ${path.relative(driversDir, itemPath)}`);
+                cleanedCount++;
+                continue;
+              }
+            } catch (e) {
+              // Ignorer les erreurs
+            }
+          }
+          
+          if (cleanupRecursive(itemPath)) {
+            hasContent = true;
+          }
+        } else {
+          hasContent = true;
+        }
+      }
+      
+      if (!hasContent && dir !== driversDir) {
+        try {
+          fs.rmdirSync(dir);
+          log(`🗑️  Dossier vide supprimé: ${path.relative(driversDir, dir)}`);
+          cleanedCount++;
+        } catch (e) {
+          // Ignorer les erreurs de suppression
+        }
+      }
+      
+      return hasContent;
+    } catch (e) {
+      return false;
+    }
+  }
+  
+  cleanupRecursive(driversDir);
+  log(`🧹 ${cleanedCount} dossiers problématiques nettoyés`);
+  
+  return cleanedCount;
+}
+
 // Fonction principale
 async function reorganizeDriversUltimate() {
   try {
     log('🚀 LANCEMENT DE LA RÉORGANISATION ULTIMATE DES DRIVERS...');
     echo();
     
-    // Étape 1: Réorganisation forcée
+    // Étape 1: Nettoyage des dossiers problématiques
+    await cleanupProblematicDirectories();
+    
+    // Étape 2: Réorganisation forcée
     const reorganizationSuccess = await reorganizeDrivers();
     
     if (!reorganizationSuccess) {
@@ -381,7 +560,7 @@ async function reorganizeDriversUltimate() {
     
     echo();
     
-    // Étape 2: Nettoyage des dossiers vides
+    // Étape 3: Nettoyage des dossiers vides
     await cleanupEmptyDirectories();
     
     echo();

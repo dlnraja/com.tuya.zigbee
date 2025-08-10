@@ -15,6 +15,7 @@ class App extends Homey.App {
       
       if (fs.existsSync(root)) {
         const index = [];
+        const summary = { zigbee: { total: 0, vendors: {} }, tuya: { total: 0, vendors: {} }, other: { total: 0, vendors: {} } };
         const st = [root];
         
         while (st.length) {
@@ -34,10 +35,20 @@ class App extends Homey.App {
               .find(p => fs.existsSync(p));
               
             if (compose) {
-              index.push({
-                dir: cur,
-                compose: compose.replace(__dirname + path.sep, '')
-              });
+              const rel = compose.replace(__dirname + path.sep, '');
+              index.push({ dir: cur, compose: rel });
+
+              // Extraire protocole/vendor/catégorie depuis le chemin
+              const parts = rel.split(/[\\/]/);
+              const pIdx = parts.indexOf('drivers') + 1;
+              const proto = (parts[pIdx] || 'other').toLowerCase();
+              const vendor = (parts[pIdx + 1] || 'generic').toLowerCase();
+              const category = (parts[pIdx + 2] || 'other').toLowerCase();
+              const bucket = summary[proto] ? summary[proto] : summary.other;
+              bucket.total += 1;
+              if (!bucket.vendors[vendor]) bucket.vendors[vendor] = { total: 0, categories: {} };
+              bucket.vendors[vendor].total += 1;
+              bucket.vendors[vendor].categories[category] = (bucket.vendors[vendor].categories[category] || 0) + 1;
             }
             
             for (const e of es) {
@@ -48,14 +59,24 @@ class App extends Homey.App {
         
         this.__driverIndex = index;
         this.log(`[drivers-index] ${index.length} drivers indexés`);
-        
-        // Log des drivers trouvés
-        for (const driver of index.slice(0, 10)) { // Afficher les 10 premiers
-          this.log(`  - ${driver.compose}`);
-        }
-        if (index.length > 10) {
-          this.log(`  ... et ${index.length - 10} autres drivers`);
-        }
+
+        // Résumé par protocole/vendor/catégorie (petit aperçu)
+        const showSummary = (proto) => {
+          const bucket = summary[proto];
+          if (!bucket) return;
+          this.log(`[${proto}] total=${bucket.total}`);
+          let shown = 0;
+          for (const [v, info] of Object.entries(bucket.vendors)) {
+            this.log(`  - ${v}: ${info.total}`);
+            let cShown = 0;
+            for (const [cat, cnt] of Object.entries(info.categories)) {
+              if (cShown++ < 3) this.log(`      · ${cat}: ${cnt}`);
+            }
+            if (++shown >= 5) break; // limiter la sortie
+          }
+        };
+        showSummary('zigbee');
+        showSummary('tuya');
       }
     } catch(e) {
       this.error('[drivers-index] skipped', e?.message || e);

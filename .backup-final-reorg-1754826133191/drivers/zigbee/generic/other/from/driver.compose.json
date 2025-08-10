@@ -1,0 +1,29 @@
+{
+  "id": "from",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "from",
+    "fr": "from",
+    "nl": "from",
+    "ta": "from"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "from",
+  "originalFile": "rpcapd.exe",
+  "extracted": "2025-08-05T08:26:27.299Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}
