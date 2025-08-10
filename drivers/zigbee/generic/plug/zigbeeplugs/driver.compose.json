@@ -1,0 +1,41 @@
+{
+  "id": "zigbee-plugs",
+  "name": {
+    "en": "Zigbee Plugs",
+    "fr": "Zigbee Plugs",
+    "nl": "Zigbee Plugs",
+    "ta": "Zigbee Plugs"
+  },
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "measure_voltage"
+  ],
+  "class": "socket",
+  "zigbee": {
+    "manufacturerName": [
+      "Generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genOnOff",
+          "genBasic"
+        ],
+        "bindings": [
+          "genOnOff"
+        ]
+      }
+    },
+    "productId": [
+      ""
+    ],
+    "modelId": []
+  },
+  "images": {
+    "small": "assets/images/zigbee-plugs-small.png",
+    "large": "assets/images/zigbee-plugs-large.png"
+  },
+  "manufacturerName": [],
+  "modelId": []
+}

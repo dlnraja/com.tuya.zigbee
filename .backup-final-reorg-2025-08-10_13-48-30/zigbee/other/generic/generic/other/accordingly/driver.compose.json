@@ -1,0 +1,29 @@
+{
+  "id": "accordingly",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "accordingly",
+    "fr": "accordingly",
+    "nl": "accordingly",
+    "ta": "accordingly"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "accordingly",
+  "originalFile": "nsSearchService.js",
+  "extracted": "2025-08-05T08:26:25.718Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}

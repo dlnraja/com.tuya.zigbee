@@ -1,0 +1,12 @@
+﻿{
+  "id": "tuya",
+  "version": "1.0.0",
+  "category": "other",
+  "protocol": "zigbee",
+  "vendor": "tuya",
+  "name": "tuya",
+  "description": "Driver tuya pour zigbee/other/tuya",
+  "capabilities": [],
+  "capabilitiesOptions": {},
+  "pair": []
+}

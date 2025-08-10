@@ -1,0 +1,29 @@
+{
+  "id": "wallcurtainswitch",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "wallcurtainswitch",
+    "fr": "wallcurtainswitch",
+    "nl": "wallcurtainswitch",
+    "ta": "wallcurtainswitch"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "wallcurtainswitch",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:36:09.597Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "aus_gapp",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "aus_gapp",
+    "fr": "aus_gapp",
+    "nl": "aus_gapp",
+    "ta": "aus_gapp"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "aus_gapp",
+  "originalFile": "nsUpdateService.js",
+  "extracted": "2025-08-05T08:26:25.818Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}

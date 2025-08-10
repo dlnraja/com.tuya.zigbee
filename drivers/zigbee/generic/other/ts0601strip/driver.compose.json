@@ -1,0 +1,24 @@
+{
+  "id": "ts0601_strip",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "class": "light",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Ts0601 Strip",
+    "nl": "Ts0601 Strip",
+    "fr": "Ts0601 Strip",
+    "de": "Ts0601 Strip"
+  },
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}

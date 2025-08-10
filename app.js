@@ -34,10 +34,7 @@ class App extends Homey.App {
               .find(p => fs.existsSync(p));
               
             if (compose) {
-              index.push({
-                dir: cur,
-                compose: compose.replace(__dirname + path.sep, '')
-              });
+              index.push({ dir: cur, compose: compose.replace(__dirname+path.sep,'') });
             }
             
             for (const e of es) {
@@ -47,15 +44,7 @@ class App extends Homey.App {
         }
         
         this.__driverIndex = index;
-        this.log(`[drivers-index] ${index.length} drivers indexés`);
-        
-        // Log des drivers trouvés
-        for (const driver of index.slice(0, 10)) { // Afficher les 10 premiers
-          this.log(`  - ${driver.compose}`);
-        }
-        if (index.length > 10) {
-          this.log(`  ... et ${index.length - 10} autres drivers`);
-        }
+        this.log(`[drivers-index] ${index.length}`);
       }
     } catch(e) {
       this.error('[drivers-index] skipped', e?.message || e);

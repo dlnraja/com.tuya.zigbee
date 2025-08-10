@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-08-10T11:33:00.374Z",
+  "backupDir": "C:\\Users\\HP\\Desktop\\tuya_repair\\.backup-cleanup-1754825480810",
+  "structure": {
+    "zigbee": {
+      "generic": {
+        "cover": 2,
+        "light": 5,
+        "meter-power": 1,
+        "other": 74,
+        "plug": 2,
+        "sensor": 15,
+        "sensor-motion": 1,
+        "sensor-temp": 1,
+        "switch": 17
+      }
+    },
+    "tuya": {
+      "light": 2,
+      "lock": 2,
+      "meter-power": 1,
+      "other": 12,
+      "plug": 1,
+      "sensor": 2,
+      "sensor-motion": 1,
+      "sensor-temp": 1,
+      "switch": 4
+    }
+  }
+}

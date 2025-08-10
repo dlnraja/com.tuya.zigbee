@@ -1,0 +1,12 @@
+﻿{
+  "id": "meter-power",
+  "version": "1.0.0",
+  "category": "other",
+  "protocol": "tuya",
+  "vendor": "generic",
+  "name": "meter-power",
+  "description": "Driver meter-power pour tuya/other/generic",
+  "capabilities": [],
+  "capabilitiesOptions": {},
+  "pair": []
+}

@@ -1,0 +1,46 @@
+{
+  "id": "zigbee-thermostats",
+  "name": {
+    "en": "Zigbee Thermostats",
+    "fr": "Zigbee Thermostats",
+    "nl": "Zigbee Thermostats",
+    "ta": "Zigbee Thermostats"
+  },
+  "capabilities": [
+    "measure_temperature",
+    "target_temperature",
+    "onoff",
+    "measure_power",
+    "measure_voltage"
+  ],
+  "class": "thermostat",
+  "zigbee": {
+    "manufacturerName": [
+      "Generic",
+      "_TZ3000_fa9mlvja",
+      "_TZ3000_yj6k7vfo",
+      "_TZ3000_qgwcxxws"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genOnOff",
+          "genBasic"
+        ],
+        "bindings": [
+          "genOnOff"
+        ]
+      }
+    },
+    "productId": [
+      ""
+    ],
+    "modelId": []
+  },
+  "images": {
+    "small": "assets/images/zigbee-thermostats-small.png",
+    "large": "assets/images/zigbee-thermostats-large.png"
+  },
+  "manufacturerName": [],
+  "modelId": []
+}

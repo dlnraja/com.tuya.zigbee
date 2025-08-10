@@ -1,0 +1,102 @@
+{
+  "id": "tuya-garage-door",
+  "name": {
+    "en": "Tuya Garage Door (Homey)",
+    "fr": "Porte de Garage Tuya (Homey)",
+    "nl": "Tuya Garage Deur (Homey)",
+    "ta": "Tuya கேரேஜ் கதவு (Homey)"
+  },
+  "images": {
+    "small": "assets/images/garage-door-small.png",
+    "large": "assets/images/garage-door-large.png"
+  },
+  "class": "device",
+  "capabilities": [
+    "garage_door_set"
+  ],
+  "capabilitiesOptions": {
+    "garage_door_set": {
+      "title": {
+        "en": "Garage Door",
+        "fr": "Porte de Garage",
+        "nl": "Garage Deur",
+        "ta": "கேரேஜ் கதவு"
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "poll_interval",
+      "type": "number",
+      "label": {
+        "en": "Poll Interval (ms) - Homey",
+        "fr": "Intervalle de Polling (ms) - Homey",
+        "nl": "Poll Interval (ms) - Homey",
+        "ta": "போல் இடைவெளி (ms) - Homey"
+      },
+      "value": 30000,
+      "attr": {
+        "min": 1000,
+        "max": 300000,
+        "step": 1000
+      }
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "modelId": [
+      "ts130f",
+      "ts0601",
+      "ts011f",
+      "ts0121",
+      "tso121",
+      "rh3052",
+      "ts0201",
+      "rh3001",
+      "ts0203",
+      "ts0207",
+      "ts0014",
+      "ts0044",
+      "ts0003",
+      "ts0013",
+      "ts0043",
+      "ts0002",
+      "ts0012",
+      "ts0042",
+      "ts0001",
+      "ts0011",
+      "ts0046",
+      "ts004f",
+      "ts0041",
+      "ts0111",
+      "ts0502a",
+      "ts0004",
+      "ts000f",
+      "ts0115",
+      "ts0205",
+      "ts0215a",
+      "ty0202",
+      "ts0101",
+      "ts0049",
+      "ty0203",
+      "ts0202",
+      "ts0505a",
+      "ts0505b",
+      "ts0503a",
+      "ts0503b",
+      "ts0504b",
+      "ts0225",
+      "ty0201",
+      "ts0222",
+      "mct-340 e",
+      "ts110f",
+      "ts110e",
+      "ts0052",
+      "ts0502b",
+      "rh3040",
+      "doorwindow-sensor-zb3.0"
+    ]
+  }
+}

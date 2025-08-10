@@ -1,0 +1,29 @@
+{
+  "id": "code",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "code",
+    "fr": "code",
+    "nl": "code",
+    "ta": "code"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "code",
+  "originalFile": "deno_asserts@0.168.0.mjs",
+  "extracted": "2025-08-05T08:36:26.443Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}
