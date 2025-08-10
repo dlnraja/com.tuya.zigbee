@@ -8,7 +8,9 @@
   },
   "capabilities": [
     "onoff",
-    "dim"
+    "dim",
+    "measure_power",
+    "measure_voltage"
   ],
   "class": "light",
   "zigbee": {
@@ -28,10 +30,13 @@
     },
     "productId": [
       ""
-    ]
+    ],
+    "modelId": []
   },
   "images": {
     "small": "assets/images/zigbee-dimmers-small.png",
     "large": "assets/images/zigbee-dimmers-large.png"
-  }
+  },
+  "manufacturerName": [],
+  "modelId": []
 }

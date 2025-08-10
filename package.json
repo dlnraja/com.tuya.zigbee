@@ -1,1 +1,37 @@
-{"name":"com.tuya.zigbee","version":"3.0.0","description":"Universal Tuya Zigbee Device App - SDK 3 Compatible","main":"app.js","devDependencies":{"homey":"^3.8.4"},"scripts":{"run":"homey app run","remote":"homey app run --remote","mega":"node scripts/mega-pipeline-ultimate.js","test":"homey app validate","build":"homey app build"},"keywords":["tuya","zigbee","homey","sdk3","meshdriver"],"license":"MIT","private":true,"dependencies":{"homey-meshdriver":"^2.0.4","zigbee-clusters":"^2.4.2"},"engines":{"node":">=18.0.0","homey":">=6.0.0"}}
+{
+  "name": "com.tuya.zigbee",
+  "version": "3.2.0",
+  "description": "Universal Tuya Zigbee Device App - SDK 3 Compatible",
+  "main": "app.js",
+  "devDependencies": {
+    "homey": "^2.0.0"
+  },
+  "scripts": {
+    "test": "homey app validate",
+    "run": "homey app run",
+    "remote": "homey app run --remote",
+    "mega": "node scripts/mega-ultimate-orchestrator.js",
+    "reorganize": "node scripts/reorganize-drivers-ultimate.js",
+    "clean": "node -e \"try{require('fs').rmSync('node_modules',{recursive:true,force:true})}catch{}\"",
+    "update_version": "node scripts/update-version-and-metadata.js",
+    "mega_ultimate": "node scripts/mega-ultimate-orchestrator.js",
+    "enrich": "node scripts/enrich-from-tmp-sources.js"
+  },
+  "keywords": [
+    "tuya",
+    "zigbee",
+    "homey",
+    "sdk3",
+    "meshdriver"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "homey-meshdriver": "^2.0.0",
+    "zigbee-clusters": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "homey": ">=6.0.0"
+  }
+}

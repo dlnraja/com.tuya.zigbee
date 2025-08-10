@@ -1,1 +1,0 @@
-# Cron job pour l'automatisation mensuelle# Exécution le premier jour de chaque mois à 2h000 2 1 * * cd /path/to/tuya_repair && node scripts/monthly-automation.js >> logs/monthly-automation.log 2>&1

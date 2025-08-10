@@ -1,1 +1,19 @@
-{"id":"tuya-speakers","name":{"en":"Tuya Speakers","fr":"Haut-parleurs Tuya","nl":"Tuya Luidsprekers","ta":"துயா ஸ்பீக்கர்கள்"},"capabilities":["onoff","volume_set","volume_mute"],"class":"speaker"}
+{
+  "id": "tuya-speakers",
+  "name": {
+    "en": "Tuya Speakers",
+    "fr": "Haut-parleurs Tuya",
+    "nl": "Tuya Luidsprekers",
+    "ta": "துயா ஸ்பீக்கர்கள்"
+  },
+  "capabilities": [
+    "onoff",
+    "volume_set",
+    "volume_mute"
+  ],
+  "class": "speaker",
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}

@@ -27,5 +27,9 @@
   "clusters": [
     "genBasic",
     "genOnOff"
-  ]
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
 }

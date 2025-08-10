@@ -51,5 +51,9 @@
     "category": "sensors",
     "subcategory": "smart_motion_sensor",
     "megaUltimateBugFixer": true
+  },
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
   }
 }

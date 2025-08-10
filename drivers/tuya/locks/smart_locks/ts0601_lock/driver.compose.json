@@ -25,5 +25,9 @@
       "type": "bool",
       "writable": true
     }
+  },
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
   }
 }

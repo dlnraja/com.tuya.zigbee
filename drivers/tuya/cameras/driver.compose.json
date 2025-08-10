@@ -1,1 +1,18 @@
-{"id":"tuya-cameras","name":{"en":"Tuya Cameras","fr":"Caméras Tuya","nl":"Tuya Cameras","ta":"துயா கேமராக்கள்"},"capabilities":["onoff","camera_stream"],"class":"camera"}
+{
+  "id": "tuya-cameras",
+  "name": {
+    "en": "Tuya Cameras",
+    "fr": "Caméras Tuya",
+    "nl": "Tuya Cameras",
+    "ta": "துயா கேமராக்கள்"
+  },
+  "capabilities": [
+    "onoff",
+    "camera_stream"
+  ],
+  "class": "camera",
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}
