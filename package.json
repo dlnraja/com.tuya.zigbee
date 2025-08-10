@@ -15,7 +15,14 @@
     "clean": "node -e \"try{require('fs').rmSync('node_modules',{recursive:true,force:true})}catch{}\"",
     "update_version": "node scripts/update-version-and-metadata.js",
     "mega_ultimate": "node scripts/mega-ultimate-orchestrator.js",
-    "enrich": "node scripts/enrich-from-tmp-sources.js"
+    "enrich": "node scripts/enrich-from-tmp-sources.js",
+    "ingest": "node scripts/ingest-tuya-zips.js",
+    "assets": "node scripts/assets-generate.js",
+    "reindex": "node scripts/reindex-drivers.js",
+    "verify": "node scripts/verify-coherence-and-enrich.js",
+    "reorg": "node scripts/reorganize-drivers.js",
+    "readme": "node scripts/update-readme.js",
+    "fix_package": "node scripts/fix-package.js"
   },
   "keywords": [
     "tuya",

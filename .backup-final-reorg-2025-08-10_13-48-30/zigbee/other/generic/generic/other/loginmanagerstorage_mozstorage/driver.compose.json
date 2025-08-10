@@ -1,0 +1,29 @@
+{
+  "id": "loginmanagerstorage_mozstorage",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "loginmanagerstorage_mozstorage",
+    "fr": "loginmanagerstorage_mozstorage",
+    "nl": "loginmanagerstorage_mozstorage",
+    "ta": "loginmanagerstorage_mozstorage"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "loginmanagerstorage_mozstorage",
+  "originalFile": "storage-mozStorage.js",
+  "extracted": "2025-08-05T08:26:26.364Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}

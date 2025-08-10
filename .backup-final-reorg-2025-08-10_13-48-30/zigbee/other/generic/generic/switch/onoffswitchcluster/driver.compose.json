@@ -1,0 +1,29 @@
+{
+  "id": "onoffswitchcluster",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "onoffswitchcluster",
+    "fr": "onoffswitchcluster",
+    "nl": "onoffswitchcluster",
+    "ta": "onoffswitchcluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "onoffswitchcluster",
+  "originalFile": "onOffSwitch.js",
+  "extracted": "2025-08-05T08:36:31.068Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}

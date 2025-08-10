@@ -1,0 +1,16 @@
+{
+  "id": "com.tuya.zigbee.smart-switch.settings",
+  "name": {
+    "en": "SmartSwitch Settings",
+    "fr": "Paramètres SmartSwitch",
+    "nl": "SmartSwitch Instellingen",
+    "de": "SmartSwitch Einstellungen",
+    "es": "Configuración SmartSwitch"
+  },
+  "class": "settings",
+  "capabilities": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  }
+}

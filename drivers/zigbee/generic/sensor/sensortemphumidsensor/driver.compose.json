@@ -1,0 +1,29 @@
+{
+  "id": "sensortemphumidsensor",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "sensortemphumidsensor",
+    "fr": "sensortemphumidsensor",
+    "nl": "sensortemphumidsensor",
+    "ta": "sensortemphumidsensor"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "sensortemphumidsensor",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:36:00.228Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}

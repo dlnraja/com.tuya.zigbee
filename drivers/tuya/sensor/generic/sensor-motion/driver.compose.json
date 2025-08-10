@@ -1,0 +1,12 @@
+﻿{
+  "id": "sensor-motion",
+  "version": "1.0.0",
+  "category": "sensor",
+  "protocol": "tuya",
+  "vendor": "generic",
+  "name": "sensor-motion",
+  "description": "Driver sensor-motion pour tuya/sensor/generic",
+  "capabilities": [],
+  "capabilitiesOptions": {},
+  "pair": []
+}

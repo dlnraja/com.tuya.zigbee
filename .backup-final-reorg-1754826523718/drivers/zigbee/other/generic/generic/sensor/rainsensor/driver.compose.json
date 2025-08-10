@@ -1,0 +1,29 @@
+{
+  "id": "rainsensor",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "rainsensor",
+    "fr": "rainsensor",
+    "nl": "rainsensor",
+    "ta": "rainsensor"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "rainsensor",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:35:55.512Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}

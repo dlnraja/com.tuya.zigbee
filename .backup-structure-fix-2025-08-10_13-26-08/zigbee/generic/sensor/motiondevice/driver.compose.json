@@ -1,0 +1,83 @@
+{
+  "id": "motion",
+  "title": {
+    "en": "Motion",
+    "fr": "Motion",
+    "nl": "Motion",
+    "ta": "Motion"
+  },
+  "description": {
+    "en": "TUYA driver for motion from Tuya (Historical)",
+    "fr": "Driver TUYA pour motion de Tuya (Historique)",
+    "nl": "TUYA driver voor motion van Tuya (Historisch)",
+    "ta": "Tuya இலிருந்து motion க்கான TUYA டிரைவர் (வரலாற்று)"
+  },
+  "category": "sensors",
+  "protocol": "tuya",
+  "manufacturer": "Tuya",
+  "source": "README historique (master)",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_pressure"
+  ],
+  "clusters": [
+    "msTemperatureMeasurement",
+    "msRelativeHumidity",
+    "msPressureMeasurement"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:37.777Z",
+  "historical": {
+    "commitHash": "71d2b8b5",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "tuyaCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Tuya",
+    "model": "motion",
+    "firmware": "latest",
+    "capabilities": [
+      "measure_temperature",
+      "measure_humidity",
+      "measure_pressure"
+    ],
+    "clusters": [
+      "msTemperatureMeasurement",
+      "msRelativeHumidity",
+      "msPressureMeasurement"
+    ]
+  },
+  "homeyCompatibility": {
+    "pro": true,
+    "bridge": true,
+    "cloud": false,
+    "minVersion": "5.0.0",
+    "maxVersion": "6.0.0"
+  },
+  "name": {
+    "en": "Motion Device",
+    "fr": "Appareil Motion",
+    "nl": "Motion Apparaat",
+    "ta": "Motion சாதனம்"
+  },
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:54.915Z",
+    "driverType": "tuya",
+    "category": "sensors",
+    "subcategory": "motion",
+    "megaUltimateBugFixer": true
+  },
+  "images": {
+    "small": "assets/small.png",
+    "large": "assets/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}

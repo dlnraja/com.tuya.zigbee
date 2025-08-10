@@ -1,0 +1,24 @@
+{
+  "id": "ts0601_bulb",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "class": "light",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Ts0601 Bulb",
+    "nl": "Ts0601 Bulb",
+    "fr": "Ts0601 Bulb",
+    "de": "Ts0601 Bulb"
+  },
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}
