@@ -30,6 +30,38 @@
 
 ---
 
+## [3.2.0] - 2025-08-10
+
+### ✨ Nouvelles fonctionnalités
+- Réorganisation forcée des drivers avec fusion automatique
+- Enrichissement inspiré des sources .tmp*
+- Nouveau système de catégorisation vendor-category-model
+- Gestion robuste des erreurs EPERM avec retry automatique
+- Analyse complète des sources externes pour amélioration
+
+### 🔧 Améliorations techniques
+- Scripts modulaires et réutilisables
+- Gestion d'erreur complète avec fallback
+- Logs détaillés avec timestamps
+- Validation automatique de l'application
+- Mise à jour automatique des métadonnées
+
+### 📁 Réorganisation
+- Suppression des dossiers "variants"
+- Fusion intelligente des drivers dupliqués
+- Renommage cohérent selon le schéma vendor-category-model
+- Nettoyage automatique des dossiers vides
+- Protection des sources .tmp* comme backup
+
+### 🎯 Objectifs atteints
+- Projet entièrement réorganisé et optimisé
+- Drivers fusionnés et renommés correctement
+- Métadonnées synchronisées et à jour
+- Validation complète de l'application
+- Prêt pour le déploiement
+
+---
+
 ## [3.1.0] - 2025-08-10
 
 ### 🚀 Added
