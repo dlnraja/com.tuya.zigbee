@@ -1,0 +1,27 @@
+{
+  "moves": [
+    {
+      "from": "zigbee\\other\\generic\\tuya",
+      "to": "tuya\\other\\tuya\\ts130f"
+    }
+  ],
+  "merges": [
+    {
+      "from": "zigbee\\other\\generic\\sensor-motion\\tuyadevice",
+      "to": "tuya\\sensor-motion\\tuya\\ts130f"
+    },
+    {
+      "from": "sensor\\zigbeesensors",
+      "to": "zigbee\\climate-thermostat\\generic"
+    },
+    {
+      "from": "other\\zigbeeplugs",
+      "to": "zigbee\\plug\\generic"
+    },
+    {
+      "from": "other\\blinds",
+      "to": "tuya\\plug\\tuya\\ts130f"
+    }
+  ],
+  "structure": "drivers/<domain>/<category>/<vendor>/<model>"
+}
