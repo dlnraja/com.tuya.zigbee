@@ -1,0 +1,1427 @@
+{
+  "timestamp": "2025-08-11T19:28:15.303Z",
+  "total": 203,
+  "drivers": [
+    {
+      "domain": "tuya",
+      "category": "light",
+      "vendor": "tuya",
+      "model": "tuya-bulb-211",
+      "path": "drivers\\tuya\\light\\tuya\\tuya-bulb-211"
+    },
+    {
+      "domain": "tuya",
+      "category": "light",
+      "vendor": "aqara",
+      "model": "aqara-bulb-130",
+      "path": "drivers\\tuya\\light\\aqara\\aqara-bulb-130"
+    },
+    {
+      "domain": "tuya",
+      "category": "light",
+      "vendor": "ikea",
+      "model": "ikea-bulb-320",
+      "path": "drivers\\tuya\\light\\ikea\\ikea-bulb-320"
+    },
+    {
+      "domain": "tuya",
+      "category": "light",
+      "vendor": "tuya",
+      "model": "tuya-strip-782",
+      "path": "drivers\\tuya\\light\\tuya\\tuya-strip-782"
+    },
+    {
+      "domain": "tuya",
+      "category": "light",
+      "vendor": "aqara",
+      "model": "aqara-strip-219",
+      "path": "drivers\\tuya\\light\\aqara\\aqara-strip-219"
+    },
+    {
+      "domain": "tuya",
+      "category": "light",
+      "vendor": "ikea",
+      "model": "ikea-strip-96",
+      "path": "drivers\\tuya\\light\\ikea\\ikea-strip-96"
+    },
+    {
+      "domain": "tuya",
+      "category": "light",
+      "vendor": "tuya",
+      "model": "tuya-ceiling-282",
+      "path": "drivers\\tuya\\light\\tuya\\tuya-ceiling-282"
+    },
+    {
+      "domain": "tuya",
+      "category": "light",
+      "vendor": "aqara",
+      "model": "aqara-ceiling-655",
+      "path": "drivers\\tuya\\light\\aqara\\aqara-ceiling-655"
+    },
+    {
+      "domain": "tuya",
+      "category": "light",
+      "vendor": "ikea",
+      "model": "ikea-ceiling-558",
+      "path": "drivers\\tuya\\light\\ikea\\ikea-ceiling-558"
+    },
+    {
+      "domain": "tuya",
+      "category": "light",
+      "vendor": "tuya",
+      "model": "tuya-wall-287",
+      "path": "drivers\\tuya\\light\\tuya\\tuya-wall-287"
+    },
+    {
+      "domain": "tuya",
+      "category": "light",
+      "vendor": "aqara",
+      "model": "aqara-wall-249",
+      "path": "drivers\\tuya\\light\\aqara\\aqara-wall-249"
+    },
+    {
+      "domain": "tuya",
+      "category": "light",
+      "vendor": "ikea",
+      "model": "ikea-wall-993",
+      "path": "drivers\\tuya\\light\\ikea\\ikea-wall-993"
+    },
+    {
+      "domain": "tuya",
+      "category": "light",
+      "vendor": "tuya",
+      "model": "tuya-table-775",
+      "path": "drivers\\tuya\\light\\tuya\\tuya-table-775"
+    },
+    {
+      "domain": "tuya",
+      "category": "light",
+      "vendor": "aqara",
+      "model": "aqara-table-922",
+      "path": "drivers\\tuya\\light\\aqara\\aqara-table-922"
+    },
+    {
+      "domain": "tuya",
+      "category": "light",
+      "vendor": "ikea",
+      "model": "ikea-table-357",
+      "path": "drivers\\tuya\\light\\ikea\\ikea-table-357"
+    },
+    {
+      "domain": "tuya",
+      "category": "light",
+      "vendor": "tuya",
+      "model": "tuya-floor-269",
+      "path": "drivers\\tuya\\light\\tuya\\tuya-floor-269"
+    },
+    {
+      "domain": "tuya",
+      "category": "light",
+      "vendor": "aqara",
+      "model": "aqara-floor-771",
+      "path": "drivers\\tuya\\light\\aqara\\aqara-floor-771"
+    },
+    {
+      "domain": "tuya",
+      "category": "light",
+      "vendor": "ikea",
+      "model": "ikea-floor-238",
+      "path": "drivers\\tuya\\light\\ikea\\ikea-floor-238"
+    },
+    {
+      "domain": "tuya",
+      "category": "light",
+      "vendor": "tuya",
+      "model": "tuya-garden-409",
+      "path": "drivers\\tuya\\light\\tuya\\tuya-garden-409"
+    },
+    {
+      "domain": "tuya",
+      "category": "light",
+      "vendor": "aqara",
+      "model": "aqara-garden-967",
+      "path": "drivers\\tuya\\light\\aqara\\aqara-garden-967"
+    },
+    {
+      "domain": "tuya",
+      "category": "light",
+      "vendor": "ikea",
+      "model": "ikea-garden-901",
+      "path": "drivers\\tuya\\light\\ikea\\ikea-garden-901"
+    },
+    {
+      "domain": "tuya",
+      "category": "plug",
+      "vendor": "tuya",
+      "model": "tuya-outlet-791",
+      "path": "drivers\\tuya\\plug\\tuya\\tuya-outlet-791"
+    },
+    {
+      "domain": "tuya",
+      "category": "plug",
+      "vendor": "aqara",
+      "model": "aqara-outlet-425",
+      "path": "drivers\\tuya\\plug\\aqara\\aqara-outlet-425"
+    },
+    {
+      "domain": "tuya",
+      "category": "plug",
+      "vendor": "ikea",
+      "model": "ikea-outlet-136",
+      "path": "drivers\\tuya\\plug\\ikea\\ikea-outlet-136"
+    },
+    {
+      "domain": "tuya",
+      "category": "plug",
+      "vendor": "tuya",
+      "model": "tuya-switch-549",
+      "path": "drivers\\tuya\\plug\\tuya\\tuya-switch-549"
+    },
+    {
+      "domain": "tuya",
+      "category": "plug",
+      "vendor": "aqara",
+      "model": "aqara-switch-457",
+      "path": "drivers\\tuya\\plug\\aqara\\aqara-switch-457"
+    },
+    {
+      "domain": "tuya",
+      "category": "plug",
+      "vendor": "ikea",
+      "model": "ikea-switch-783",
+      "path": "drivers\\tuya\\plug\\ikea\\ikea-switch-783"
+    },
+    {
+      "domain": "tuya",
+      "category": "plug",
+      "vendor": "tuya",
+      "model": "tuya-power-890",
+      "path": "drivers\\tuya\\plug\\tuya\\tuya-power-890"
+    },
+    {
+      "domain": "tuya",
+      "category": "plug",
+      "vendor": "aqara",
+      "model": "aqara-power-551",
+      "path": "drivers\\tuya\\plug\\aqara\\aqara-power-551"
+    },
+    {
+      "domain": "tuya",
+      "category": "plug",
+      "vendor": "ikea",
+      "model": "ikea-power-769",
+      "path": "drivers\\tuya\\plug\\ikea\\ikea-power-769"
+    },
+    {
+      "domain": "tuya",
+      "category": "plug",
+      "vendor": "tuya",
+      "model": "tuya-smart-181",
+      "path": "drivers\\tuya\\plug\\tuya\\tuya-smart-181"
+    },
+    {
+      "domain": "tuya",
+      "category": "plug",
+      "vendor": "aqara",
+      "model": "aqara-smart-611",
+      "path": "drivers\\tuya\\plug\\aqara\\aqara-smart-611"
+    },
+    {
+      "domain": "tuya",
+      "category": "plug",
+      "vendor": "ikea",
+      "model": "ikea-smart-315",
+      "path": "drivers\\tuya\\plug\\ikea\\ikea-smart-315"
+    },
+    {
+      "domain": "tuya",
+      "category": "sensor",
+      "vendor": "tuya",
+      "model": "tuya-motion-299",
+      "path": "drivers\\tuya\\sensor\\tuya\\tuya-motion-299"
+    },
+    {
+      "domain": "tuya",
+      "category": "sensor",
+      "vendor": "aqara",
+      "model": "aqara-motion-364",
+      "path": "drivers\\tuya\\sensor\\aqara\\aqara-motion-364"
+    },
+    {
+      "domain": "tuya",
+      "category": "sensor",
+      "vendor": "ikea",
+      "model": "ikea-motion-981",
+      "path": "drivers\\tuya\\sensor\\ikea\\ikea-motion-981"
+    },
+    {
+      "domain": "tuya",
+      "category": "sensor",
+      "vendor": "tuya",
+      "model": "tuya-contact-219",
+      "path": "drivers\\tuya\\sensor\\tuya\\tuya-contact-219"
+    },
+    {
+      "domain": "tuya",
+      "category": "sensor",
+      "vendor": "aqara",
+      "model": "aqara-contact-799",
+      "path": "drivers\\tuya\\sensor\\aqara\\aqara-contact-799"
+    },
+    {
+      "domain": "tuya",
+      "category": "sensor",
+      "vendor": "ikea",
+      "model": "ikea-contact-739",
+      "path": "drivers\\tuya\\sensor\\ikea\\ikea-contact-739"
+    },
+    {
+      "domain": "tuya",
+      "category": "sensor",
+      "vendor": "tuya",
+      "model": "tuya-temperature-622",
+      "path": "drivers\\tuya\\sensor\\tuya\\tuya-temperature-622"
+    },
+    {
+      "domain": "tuya",
+      "category": "sensor",
+      "vendor": "aqara",
+      "model": "aqara-temperature-561",
+      "path": "drivers\\tuya\\sensor\\aqara\\aqara-temperature-561"
+    },
+    {
+      "domain": "tuya",
+      "category": "sensor",
+      "vendor": "ikea",
+      "model": "ikea-temperature-466",
+      "path": "drivers\\tuya\\sensor\\ikea\\ikea-temperature-466"
+    },
+    {
+      "domain": "tuya",
+      "category": "sensor",
+      "vendor": "tuya",
+      "model": "tuya-humidity-498",
+      "path": "drivers\\tuya\\sensor\\tuya\\tuya-humidity-498"
+    },
+    {
+      "domain": "tuya",
+      "category": "sensor",
+      "vendor": "aqara",
+      "model": "aqara-humidity-617",
+      "path": "drivers\\tuya\\sensor\\aqara\\aqara-humidity-617"
+    },
+    {
+      "domain": "tuya",
+      "category": "sensor",
+      "vendor": "ikea",
+      "model": "ikea-humidity-712",
+      "path": "drivers\\tuya\\sensor\\ikea\\ikea-humidity-712"
+    },
+    {
+      "domain": "tuya",
+      "category": "sensor",
+      "vendor": "tuya",
+      "model": "tuya-smoke-927",
+      "path": "drivers\\tuya\\sensor\\tuya\\tuya-smoke-927"
+    },
+    {
+      "domain": "tuya",
+      "category": "sensor",
+      "vendor": "aqara",
+      "model": "aqara-smoke-458",
+      "path": "drivers\\tuya\\sensor\\aqara\\aqara-smoke-458"
+    },
+    {
+      "domain": "tuya",
+      "category": "sensor",
+      "vendor": "ikea",
+      "model": "ikea-smoke-94",
+      "path": "drivers\\tuya\\sensor\\ikea\\ikea-smoke-94"
+    },
+    {
+      "domain": "tuya",
+      "category": "sensor",
+      "vendor": "tuya",
+      "model": "tuya-water-264",
+      "path": "drivers\\tuya\\sensor\\tuya\\tuya-water-264"
+    },
+    {
+      "domain": "tuya",
+      "category": "sensor",
+      "vendor": "aqara",
+      "model": "aqara-water-237",
+      "path": "drivers\\tuya\\sensor\\aqara\\aqara-water-237"
+    },
+    {
+      "domain": "tuya",
+      "category": "sensor",
+      "vendor": "ikea",
+      "model": "ikea-water-667",
+      "path": "drivers\\tuya\\sensor\\ikea\\ikea-water-667"
+    },
+    {
+      "domain": "tuya",
+      "category": "sensor",
+      "vendor": "tuya",
+      "model": "tuya-gas-320",
+      "path": "drivers\\tuya\\sensor\\tuya\\tuya-gas-320"
+    },
+    {
+      "domain": "tuya",
+      "category": "sensor",
+      "vendor": "aqara",
+      "model": "aqara-gas-474",
+      "path": "drivers\\tuya\\sensor\\aqara\\aqara-gas-474"
+    },
+    {
+      "domain": "tuya",
+      "category": "sensor",
+      "vendor": "ikea",
+      "model": "ikea-gas-317",
+      "path": "drivers\\tuya\\sensor\\ikea\\ikea-gas-317"
+    },
+    {
+      "domain": "tuya",
+      "category": "cover",
+      "vendor": "tuya",
+      "model": "tuya-curtain-704",
+      "path": "drivers\\tuya\\cover\\tuya\\tuya-curtain-704"
+    },
+    {
+      "domain": "tuya",
+      "category": "cover",
+      "vendor": "aqara",
+      "model": "aqara-curtain-838",
+      "path": "drivers\\tuya\\cover\\aqara\\aqara-curtain-838"
+    },
+    {
+      "domain": "tuya",
+      "category": "cover",
+      "vendor": "ikea",
+      "model": "ikea-curtain-339",
+      "path": "drivers\\tuya\\cover\\ikea\\ikea-curtain-339"
+    },
+    {
+      "domain": "tuya",
+      "category": "cover",
+      "vendor": "tuya",
+      "model": "tuya-blind-205",
+      "path": "drivers\\tuya\\cover\\tuya\\tuya-blind-205"
+    },
+    {
+      "domain": "tuya",
+      "category": "cover",
+      "vendor": "aqara",
+      "model": "aqara-blind-824",
+      "path": "drivers\\tuya\\cover\\aqara\\aqara-blind-824"
+    },
+    {
+      "domain": "tuya",
+      "category": "cover",
+      "vendor": "ikea",
+      "model": "ikea-blind-14",
+      "path": "drivers\\tuya\\cover\\ikea\\ikea-blind-14"
+    },
+    {
+      "domain": "tuya",
+      "category": "cover",
+      "vendor": "tuya",
+      "model": "tuya-shade-162",
+      "path": "drivers\\tuya\\cover\\tuya\\tuya-shade-162"
+    },
+    {
+      "domain": "tuya",
+      "category": "cover",
+      "vendor": "aqara",
+      "model": "aqara-shade-24",
+      "path": "drivers\\tuya\\cover\\aqara\\aqara-shade-24"
+    },
+    {
+      "domain": "tuya",
+      "category": "cover",
+      "vendor": "ikea",
+      "model": "ikea-shade-756",
+      "path": "drivers\\tuya\\cover\\ikea\\ikea-shade-756"
+    },
+    {
+      "domain": "tuya",
+      "category": "cover",
+      "vendor": "tuya",
+      "model": "tuya-garage-581",
+      "path": "drivers\\tuya\\cover\\tuya\\tuya-garage-581"
+    },
+    {
+      "domain": "tuya",
+      "category": "cover",
+      "vendor": "aqara",
+      "model": "aqara-garage-374",
+      "path": "drivers\\tuya\\cover\\aqara\\aqara-garage-374"
+    },
+    {
+      "domain": "tuya",
+      "category": "cover",
+      "vendor": "ikea",
+      "model": "ikea-garage-4",
+      "path": "drivers\\tuya\\cover\\ikea\\ikea-garage-4"
+    },
+    {
+      "domain": "tuya",
+      "category": "climate",
+      "vendor": "tuya",
+      "model": "tuya-thermostat-435",
+      "path": "drivers\\tuya\\climate\\tuya\\tuya-thermostat-435"
+    },
+    {
+      "domain": "tuya",
+      "category": "climate",
+      "vendor": "aqara",
+      "model": "aqara-thermostat-831",
+      "path": "drivers\\tuya\\climate\\aqara\\aqara-thermostat-831"
+    },
+    {
+      "domain": "tuya",
+      "category": "climate",
+      "vendor": "ikea",
+      "model": "ikea-thermostat-128",
+      "path": "drivers\\tuya\\climate\\ikea\\ikea-thermostat-128"
+    },
+    {
+      "domain": "tuya",
+      "category": "climate",
+      "vendor": "tuya",
+      "model": "tuya-heater-387",
+      "path": "drivers\\tuya\\climate\\tuya\\tuya-heater-387"
+    },
+    {
+      "domain": "tuya",
+      "category": "climate",
+      "vendor": "aqara",
+      "model": "aqara-heater-833",
+      "path": "drivers\\tuya\\climate\\aqara\\aqara-heater-833"
+    },
+    {
+      "domain": "tuya",
+      "category": "climate",
+      "vendor": "ikea",
+      "model": "ikea-heater-399",
+      "path": "drivers\\tuya\\climate\\ikea\\ikea-heater-399"
+    },
+    {
+      "domain": "tuya",
+      "category": "climate",
+      "vendor": "tuya",
+      "model": "tuya-fan-200",
+      "path": "drivers\\tuya\\climate\\tuya\\tuya-fan-200"
+    },
+    {
+      "domain": "tuya",
+      "category": "climate",
+      "vendor": "aqara",
+      "model": "aqara-fan-281",
+      "path": "drivers\\tuya\\climate\\aqara\\aqara-fan-281"
+    },
+    {
+      "domain": "tuya",
+      "category": "climate",
+      "vendor": "ikea",
+      "model": "ikea-fan-18",
+      "path": "drivers\\tuya\\climate\\ikea\\ikea-fan-18"
+    },
+    {
+      "domain": "tuya",
+      "category": "climate",
+      "vendor": "tuya",
+      "model": "tuya-ac-322",
+      "path": "drivers\\tuya\\climate\\tuya\\tuya-ac-322"
+    },
+    {
+      "domain": "tuya",
+      "category": "climate",
+      "vendor": "aqara",
+      "model": "aqara-ac-708",
+      "path": "drivers\\tuya\\climate\\aqara\\aqara-ac-708"
+    },
+    {
+      "domain": "tuya",
+      "category": "climate",
+      "vendor": "ikea",
+      "model": "ikea-ac-728",
+      "path": "drivers\\tuya\\climate\\ikea\\ikea-ac-728"
+    },
+    {
+      "domain": "tuya",
+      "category": "lock",
+      "vendor": "tuya",
+      "model": "tuya-door-537",
+      "path": "drivers\\tuya\\lock\\tuya\\tuya-door-537"
+    },
+    {
+      "domain": "tuya",
+      "category": "lock",
+      "vendor": "aqara",
+      "model": "aqara-door-305",
+      "path": "drivers\\tuya\\lock\\aqara\\aqara-door-305"
+    },
+    {
+      "domain": "tuya",
+      "category": "lock",
+      "vendor": "ikea",
+      "model": "ikea-door-555",
+      "path": "drivers\\tuya\\lock\\ikea\\ikea-door-555"
+    },
+    {
+      "domain": "tuya",
+      "category": "lock",
+      "vendor": "tuya",
+      "model": "tuya-padlock-538",
+      "path": "drivers\\tuya\\lock\\tuya\\tuya-padlock-538"
+    },
+    {
+      "domain": "tuya",
+      "category": "lock",
+      "vendor": "aqara",
+      "model": "aqara-padlock-382",
+      "path": "drivers\\tuya\\lock\\aqara\\aqara-padlock-382"
+    },
+    {
+      "domain": "tuya",
+      "category": "lock",
+      "vendor": "ikea",
+      "model": "ikea-padlock-984",
+      "path": "drivers\\tuya\\lock\\ikea\\ikea-padlock-984"
+    },
+    {
+      "domain": "tuya",
+      "category": "lock",
+      "vendor": "tuya",
+      "model": "tuya-deadbolt-261",
+      "path": "drivers\\tuya\\lock\\tuya\\tuya-deadbolt-261"
+    },
+    {
+      "domain": "tuya",
+      "category": "lock",
+      "vendor": "aqara",
+      "model": "aqara-deadbolt-642",
+      "path": "drivers\\tuya\\lock\\aqara\\aqara-deadbolt-642"
+    },
+    {
+      "domain": "tuya",
+      "category": "lock",
+      "vendor": "ikea",
+      "model": "ikea-deadbolt-42",
+      "path": "drivers\\tuya\\lock\\ikea\\ikea-deadbolt-42"
+    },
+    {
+      "domain": "tuya",
+      "category": "siren",
+      "vendor": "tuya",
+      "model": "tuya-alarm-579",
+      "path": "drivers\\tuya\\siren\\tuya\\tuya-alarm-579"
+    },
+    {
+      "domain": "tuya",
+      "category": "siren",
+      "vendor": "aqara",
+      "model": "aqara-alarm-418",
+      "path": "drivers\\tuya\\siren\\aqara\\aqara-alarm-418"
+    },
+    {
+      "domain": "tuya",
+      "category": "siren",
+      "vendor": "ikea",
+      "model": "ikea-alarm-641",
+      "path": "drivers\\tuya\\siren\\ikea\\ikea-alarm-641"
+    },
+    {
+      "domain": "tuya",
+      "category": "siren",
+      "vendor": "tuya",
+      "model": "tuya-buzzer-702",
+      "path": "drivers\\tuya\\siren\\tuya\\tuya-buzzer-702"
+    },
+    {
+      "domain": "tuya",
+      "category": "siren",
+      "vendor": "aqara",
+      "model": "aqara-buzzer-110",
+      "path": "drivers\\tuya\\siren\\aqara\\aqara-buzzer-110"
+    },
+    {
+      "domain": "tuya",
+      "category": "siren",
+      "vendor": "ikea",
+      "model": "ikea-buzzer-232",
+      "path": "drivers\\tuya\\siren\\ikea\\ikea-buzzer-232"
+    },
+    {
+      "domain": "tuya",
+      "category": "siren",
+      "vendor": "tuya",
+      "model": "tuya-chime-96",
+      "path": "drivers\\tuya\\siren\\tuya\\tuya-chime-96"
+    },
+    {
+      "domain": "tuya",
+      "category": "siren",
+      "vendor": "aqara",
+      "model": "aqara-chime-818",
+      "path": "drivers\\tuya\\siren\\aqara\\aqara-chime-818"
+    },
+    {
+      "domain": "tuya",
+      "category": "siren",
+      "vendor": "ikea",
+      "model": "ikea-chime-608",
+      "path": "drivers\\tuya\\siren\\ikea\\ikea-chime-608"
+    },
+    {
+      "domain": "zigbee",
+      "category": "light",
+      "vendor": "tuya",
+      "model": "tuya-bulb-305",
+      "path": "drivers\\zigbee\\light\\tuya\\tuya-bulb-305"
+    },
+    {
+      "domain": "zigbee",
+      "category": "light",
+      "vendor": "aqara",
+      "model": "aqara-bulb-423",
+      "path": "drivers\\zigbee\\light\\aqara\\aqara-bulb-423"
+    },
+    {
+      "domain": "zigbee",
+      "category": "light",
+      "vendor": "ikea",
+      "model": "ikea-bulb-793",
+      "path": "drivers\\zigbee\\light\\ikea\\ikea-bulb-793"
+    },
+    {
+      "domain": "zigbee",
+      "category": "light",
+      "vendor": "tuya",
+      "model": "tuya-strip-423",
+      "path": "drivers\\zigbee\\light\\tuya\\tuya-strip-423"
+    },
+    {
+      "domain": "zigbee",
+      "category": "light",
+      "vendor": "aqara",
+      "model": "aqara-strip-599",
+      "path": "drivers\\zigbee\\light\\aqara\\aqara-strip-599"
+    },
+    {
+      "domain": "zigbee",
+      "category": "light",
+      "vendor": "ikea",
+      "model": "ikea-strip-461",
+      "path": "drivers\\zigbee\\light\\ikea\\ikea-strip-461"
+    },
+    {
+      "domain": "zigbee",
+      "category": "light",
+      "vendor": "tuya",
+      "model": "tuya-ceiling-36",
+      "path": "drivers\\zigbee\\light\\tuya\\tuya-ceiling-36"
+    },
+    {
+      "domain": "zigbee",
+      "category": "light",
+      "vendor": "aqara",
+      "model": "aqara-ceiling-372",
+      "path": "drivers\\zigbee\\light\\aqara\\aqara-ceiling-372"
+    },
+    {
+      "domain": "zigbee",
+      "category": "light",
+      "vendor": "ikea",
+      "model": "ikea-ceiling-940",
+      "path": "drivers\\zigbee\\light\\ikea\\ikea-ceiling-940"
+    },
+    {
+      "domain": "zigbee",
+      "category": "light",
+      "vendor": "tuya",
+      "model": "tuya-wall-10",
+      "path": "drivers\\zigbee\\light\\tuya\\tuya-wall-10"
+    },
+    {
+      "domain": "zigbee",
+      "category": "light",
+      "vendor": "aqara",
+      "model": "aqara-wall-455",
+      "path": "drivers\\zigbee\\light\\aqara\\aqara-wall-455"
+    },
+    {
+      "domain": "zigbee",
+      "category": "light",
+      "vendor": "ikea",
+      "model": "ikea-wall-697",
+      "path": "drivers\\zigbee\\light\\ikea\\ikea-wall-697"
+    },
+    {
+      "domain": "zigbee",
+      "category": "light",
+      "vendor": "tuya",
+      "model": "tuya-table-5",
+      "path": "drivers\\zigbee\\light\\tuya\\tuya-table-5"
+    },
+    {
+      "domain": "zigbee",
+      "category": "light",
+      "vendor": "aqara",
+      "model": "aqara-table-140",
+      "path": "drivers\\zigbee\\light\\aqara\\aqara-table-140"
+    },
+    {
+      "domain": "zigbee",
+      "category": "light",
+      "vendor": "ikea",
+      "model": "ikea-table-218",
+      "path": "drivers\\zigbee\\light\\ikea\\ikea-table-218"
+    },
+    {
+      "domain": "zigbee",
+      "category": "light",
+      "vendor": "tuya",
+      "model": "tuya-floor-141",
+      "path": "drivers\\zigbee\\light\\tuya\\tuya-floor-141"
+    },
+    {
+      "domain": "zigbee",
+      "category": "light",
+      "vendor": "aqara",
+      "model": "aqara-floor-470",
+      "path": "drivers\\zigbee\\light\\aqara\\aqara-floor-470"
+    },
+    {
+      "domain": "zigbee",
+      "category": "light",
+      "vendor": "ikea",
+      "model": "ikea-floor-708",
+      "path": "drivers\\zigbee\\light\\ikea\\ikea-floor-708"
+    },
+    {
+      "domain": "zigbee",
+      "category": "light",
+      "vendor": "tuya",
+      "model": "tuya-garden-168",
+      "path": "drivers\\zigbee\\light\\tuya\\tuya-garden-168"
+    },
+    {
+      "domain": "zigbee",
+      "category": "light",
+      "vendor": "aqara",
+      "model": "aqara-garden-709",
+      "path": "drivers\\zigbee\\light\\aqara\\aqara-garden-709"
+    },
+    {
+      "domain": "zigbee",
+      "category": "light",
+      "vendor": "ikea",
+      "model": "ikea-garden-130",
+      "path": "drivers\\zigbee\\light\\ikea\\ikea-garden-130"
+    },
+    {
+      "domain": "zigbee",
+      "category": "plug",
+      "vendor": "tuya",
+      "model": "tuya-outlet-692",
+      "path": "drivers\\zigbee\\plug\\tuya\\tuya-outlet-692"
+    },
+    {
+      "domain": "zigbee",
+      "category": "plug",
+      "vendor": "aqara",
+      "model": "aqara-outlet-197",
+      "path": "drivers\\zigbee\\plug\\aqara\\aqara-outlet-197"
+    },
+    {
+      "domain": "zigbee",
+      "category": "plug",
+      "vendor": "ikea",
+      "model": "ikea-outlet-132",
+      "path": "drivers\\zigbee\\plug\\ikea\\ikea-outlet-132"
+    },
+    {
+      "domain": "zigbee",
+      "category": "plug",
+      "vendor": "tuya",
+      "model": "tuya-switch-225",
+      "path": "drivers\\zigbee\\plug\\tuya\\tuya-switch-225"
+    },
+    {
+      "domain": "zigbee",
+      "category": "plug",
+      "vendor": "aqara",
+      "model": "aqara-switch-883",
+      "path": "drivers\\zigbee\\plug\\aqara\\aqara-switch-883"
+    },
+    {
+      "domain": "zigbee",
+      "category": "plug",
+      "vendor": "ikea",
+      "model": "ikea-switch-612",
+      "path": "drivers\\zigbee\\plug\\ikea\\ikea-switch-612"
+    },
+    {
+      "domain": "zigbee",
+      "category": "plug",
+      "vendor": "tuya",
+      "model": "tuya-power-50",
+      "path": "drivers\\zigbee\\plug\\tuya\\tuya-power-50"
+    },
+    {
+      "domain": "zigbee",
+      "category": "plug",
+      "vendor": "aqara",
+      "model": "aqara-power-317",
+      "path": "drivers\\zigbee\\plug\\aqara\\aqara-power-317"
+    },
+    {
+      "domain": "zigbee",
+      "category": "plug",
+      "vendor": "ikea",
+      "model": "ikea-power-457",
+      "path": "drivers\\zigbee\\plug\\ikea\\ikea-power-457"
+    },
+    {
+      "domain": "zigbee",
+      "category": "plug",
+      "vendor": "tuya",
+      "model": "tuya-smart-963",
+      "path": "drivers\\zigbee\\plug\\tuya\\tuya-smart-963"
+    },
+    {
+      "domain": "zigbee",
+      "category": "plug",
+      "vendor": "aqara",
+      "model": "aqara-smart-759",
+      "path": "drivers\\zigbee\\plug\\aqara\\aqara-smart-759"
+    },
+    {
+      "domain": "zigbee",
+      "category": "plug",
+      "vendor": "ikea",
+      "model": "ikea-smart-647",
+      "path": "drivers\\zigbee\\plug\\ikea\\ikea-smart-647"
+    },
+    {
+      "domain": "zigbee",
+      "category": "sensor",
+      "vendor": "tuya",
+      "model": "tuya-motion-362",
+      "path": "drivers\\zigbee\\sensor\\tuya\\tuya-motion-362"
+    },
+    {
+      "domain": "zigbee",
+      "category": "sensor",
+      "vendor": "aqara",
+      "model": "aqara-motion-800",
+      "path": "drivers\\zigbee\\sensor\\aqara\\aqara-motion-800"
+    },
+    {
+      "domain": "zigbee",
+      "category": "sensor",
+      "vendor": "ikea",
+      "model": "ikea-motion-927",
+      "path": "drivers\\zigbee\\sensor\\ikea\\ikea-motion-927"
+    },
+    {
+      "domain": "zigbee",
+      "category": "sensor",
+      "vendor": "tuya",
+      "model": "tuya-contact-202",
+      "path": "drivers\\zigbee\\sensor\\tuya\\tuya-contact-202"
+    },
+    {
+      "domain": "zigbee",
+      "category": "sensor",
+      "vendor": "aqara",
+      "model": "aqara-contact-543",
+      "path": "drivers\\zigbee\\sensor\\aqara\\aqara-contact-543"
+    },
+    {
+      "domain": "zigbee",
+      "category": "sensor",
+      "vendor": "ikea",
+      "model": "ikea-contact-348",
+      "path": "drivers\\zigbee\\sensor\\ikea\\ikea-contact-348"
+    },
+    {
+      "domain": "zigbee",
+      "category": "sensor",
+      "vendor": "tuya",
+      "model": "tuya-temperature-779",
+      "path": "drivers\\zigbee\\sensor\\tuya\\tuya-temperature-779"
+    },
+    {
+      "domain": "zigbee",
+      "category": "sensor",
+      "vendor": "aqara",
+      "model": "aqara-temperature-666",
+      "path": "drivers\\zigbee\\sensor\\aqara\\aqara-temperature-666"
+    },
+    {
+      "domain": "zigbee",
+      "category": "sensor",
+      "vendor": "ikea",
+      "model": "ikea-temperature-892",
+      "path": "drivers\\zigbee\\sensor\\ikea\\ikea-temperature-892"
+    },
+    {
+      "domain": "zigbee",
+      "category": "sensor",
+      "vendor": "tuya",
+      "model": "tuya-humidity-86",
+      "path": "drivers\\zigbee\\sensor\\tuya\\tuya-humidity-86"
+    },
+    {
+      "domain": "zigbee",
+      "category": "sensor",
+      "vendor": "aqara",
+      "model": "aqara-humidity-794",
+      "path": "drivers\\zigbee\\sensor\\aqara\\aqara-humidity-794"
+    },
+    {
+      "domain": "zigbee",
+      "category": "sensor",
+      "vendor": "ikea",
+      "model": "ikea-humidity-288",
+      "path": "drivers\\zigbee\\sensor\\ikea\\ikea-humidity-288"
+    },
+    {
+      "domain": "zigbee",
+      "category": "sensor",
+      "vendor": "tuya",
+      "model": "tuya-smoke-109",
+      "path": "drivers\\zigbee\\sensor\\tuya\\tuya-smoke-109"
+    },
+    {
+      "domain": "zigbee",
+      "category": "sensor",
+      "vendor": "aqara",
+      "model": "aqara-smoke-61",
+      "path": "drivers\\zigbee\\sensor\\aqara\\aqara-smoke-61"
+    },
+    {
+      "domain": "zigbee",
+      "category": "sensor",
+      "vendor": "ikea",
+      "model": "ikea-smoke-360",
+      "path": "drivers\\zigbee\\sensor\\ikea\\ikea-smoke-360"
+    },
+    {
+      "domain": "zigbee",
+      "category": "sensor",
+      "vendor": "tuya",
+      "model": "tuya-water-581",
+      "path": "drivers\\zigbee\\sensor\\tuya\\tuya-water-581"
+    },
+    {
+      "domain": "zigbee",
+      "category": "sensor",
+      "vendor": "aqara",
+      "model": "aqara-water-220",
+      "path": "drivers\\zigbee\\sensor\\aqara\\aqara-water-220"
+    },
+    {
+      "domain": "zigbee",
+      "category": "sensor",
+      "vendor": "ikea",
+      "model": "ikea-water-362",
+      "path": "drivers\\zigbee\\sensor\\ikea\\ikea-water-362"
+    },
+    {
+      "domain": "zigbee",
+      "category": "sensor",
+      "vendor": "tuya",
+      "model": "tuya-gas-695",
+      "path": "drivers\\zigbee\\sensor\\tuya\\tuya-gas-695"
+    },
+    {
+      "domain": "zigbee",
+      "category": "sensor",
+      "vendor": "aqara",
+      "model": "aqara-gas-84",
+      "path": "drivers\\zigbee\\sensor\\aqara\\aqara-gas-84"
+    },
+    {
+      "domain": "zigbee",
+      "category": "sensor",
+      "vendor": "ikea",
+      "model": "ikea-gas-418",
+      "path": "drivers\\zigbee\\sensor\\ikea\\ikea-gas-418"
+    },
+    {
+      "domain": "zigbee",
+      "category": "cover",
+      "vendor": "tuya",
+      "model": "tuya-curtain-601",
+      "path": "drivers\\zigbee\\cover\\tuya\\tuya-curtain-601"
+    },
+    {
+      "domain": "zigbee",
+      "category": "cover",
+      "vendor": "aqara",
+      "model": "aqara-curtain-550",
+      "path": "drivers\\zigbee\\cover\\aqara\\aqara-curtain-550"
+    },
+    {
+      "domain": "zigbee",
+      "category": "cover",
+      "vendor": "ikea",
+      "model": "ikea-curtain-431",
+      "path": "drivers\\zigbee\\cover\\ikea\\ikea-curtain-431"
+    },
+    {
+      "domain": "zigbee",
+      "category": "cover",
+      "vendor": "tuya",
+      "model": "tuya-blind-531",
+      "path": "drivers\\zigbee\\cover\\tuya\\tuya-blind-531"
+    },
+    {
+      "domain": "zigbee",
+      "category": "cover",
+      "vendor": "aqara",
+      "model": "aqara-blind-772",
+      "path": "drivers\\zigbee\\cover\\aqara\\aqara-blind-772"
+    },
+    {
+      "domain": "zigbee",
+      "category": "cover",
+      "vendor": "ikea",
+      "model": "ikea-blind-515",
+      "path": "drivers\\zigbee\\cover\\ikea\\ikea-blind-515"
+    },
+    {
+      "domain": "zigbee",
+      "category": "cover",
+      "vendor": "tuya",
+      "model": "tuya-shade-647",
+      "path": "drivers\\zigbee\\cover\\tuya\\tuya-shade-647"
+    },
+    {
+      "domain": "zigbee",
+      "category": "cover",
+      "vendor": "aqara",
+      "model": "aqara-shade-549",
+      "path": "drivers\\zigbee\\cover\\aqara\\aqara-shade-549"
+    },
+    {
+      "domain": "zigbee",
+      "category": "cover",
+      "vendor": "ikea",
+      "model": "ikea-shade-837",
+      "path": "drivers\\zigbee\\cover\\ikea\\ikea-shade-837"
+    },
+    {
+      "domain": "zigbee",
+      "category": "cover",
+      "vendor": "tuya",
+      "model": "tuya-garage-18",
+      "path": "drivers\\zigbee\\cover\\tuya\\tuya-garage-18"
+    },
+    {
+      "domain": "zigbee",
+      "category": "cover",
+      "vendor": "aqara",
+      "model": "aqara-garage-478",
+      "path": "drivers\\zigbee\\cover\\aqara\\aqara-garage-478"
+    },
+    {
+      "domain": "zigbee",
+      "category": "cover",
+      "vendor": "ikea",
+      "model": "ikea-garage-65",
+      "path": "drivers\\zigbee\\cover\\ikea\\ikea-garage-65"
+    },
+    {
+      "domain": "zigbee",
+      "category": "climate",
+      "vendor": "tuya",
+      "model": "tuya-thermostat-825",
+      "path": "drivers\\zigbee\\climate\\tuya\\tuya-thermostat-825"
+    },
+    {
+      "domain": "zigbee",
+      "category": "climate",
+      "vendor": "aqara",
+      "model": "aqara-thermostat-115",
+      "path": "drivers\\zigbee\\climate\\aqara\\aqara-thermostat-115"
+    },
+    {
+      "domain": "zigbee",
+      "category": "climate",
+      "vendor": "ikea",
+      "model": "ikea-thermostat-39",
+      "path": "drivers\\zigbee\\climate\\ikea\\ikea-thermostat-39"
+    },
+    {
+      "domain": "zigbee",
+      "category": "climate",
+      "vendor": "tuya",
+      "model": "tuya-heater-0",
+      "path": "drivers\\zigbee\\climate\\tuya\\tuya-heater-0"
+    },
+    {
+      "domain": "zigbee",
+      "category": "climate",
+      "vendor": "aqara",
+      "model": "aqara-heater-898",
+      "path": "drivers\\zigbee\\climate\\aqara\\aqara-heater-898"
+    },
+    {
+      "domain": "zigbee",
+      "category": "climate",
+      "vendor": "ikea",
+      "model": "ikea-heater-896",
+      "path": "drivers\\zigbee\\climate\\ikea\\ikea-heater-896"
+    },
+    {
+      "domain": "zigbee",
+      "category": "climate",
+      "vendor": "tuya",
+      "model": "tuya-fan-730",
+      "path": "drivers\\zigbee\\climate\\tuya\\tuya-fan-730"
+    },
+    {
+      "domain": "zigbee",
+      "category": "climate",
+      "vendor": "aqara",
+      "model": "aqara-fan-459",
+      "path": "drivers\\zigbee\\climate\\aqara\\aqara-fan-459"
+    },
+    {
+      "domain": "zigbee",
+      "category": "climate",
+      "vendor": "ikea",
+      "model": "ikea-fan-208",
+      "path": "drivers\\zigbee\\climate\\ikea\\ikea-fan-208"
+    },
+    {
+      "domain": "zigbee",
+      "category": "climate",
+      "vendor": "tuya",
+      "model": "tuya-ac-563",
+      "path": "drivers\\zigbee\\climate\\tuya\\tuya-ac-563"
+    },
+    {
+      "domain": "zigbee",
+      "category": "climate",
+      "vendor": "aqara",
+      "model": "aqara-ac-294",
+      "path": "drivers\\zigbee\\climate\\aqara\\aqara-ac-294"
+    },
+    {
+      "domain": "zigbee",
+      "category": "climate",
+      "vendor": "ikea",
+      "model": "ikea-ac-165",
+      "path": "drivers\\zigbee\\climate\\ikea\\ikea-ac-165"
+    },
+    {
+      "domain": "zigbee",
+      "category": "lock",
+      "vendor": "tuya",
+      "model": "tuya-door-450",
+      "path": "drivers\\zigbee\\lock\\tuya\\tuya-door-450"
+    },
+    {
+      "domain": "zigbee",
+      "category": "lock",
+      "vendor": "aqara",
+      "model": "aqara-door-338",
+      "path": "drivers\\zigbee\\lock\\aqara\\aqara-door-338"
+    },
+    {
+      "domain": "zigbee",
+      "category": "lock",
+      "vendor": "ikea",
+      "model": "ikea-door-491",
+      "path": "drivers\\zigbee\\lock\\ikea\\ikea-door-491"
+    },
+    {
+      "domain": "zigbee",
+      "category": "lock",
+      "vendor": "tuya",
+      "model": "tuya-padlock-551",
+      "path": "drivers\\zigbee\\lock\\tuya\\tuya-padlock-551"
+    },
+    {
+      "domain": "zigbee",
+      "category": "lock",
+      "vendor": "aqara",
+      "model": "aqara-padlock-460",
+      "path": "drivers\\zigbee\\lock\\aqara\\aqara-padlock-460"
+    },
+    {
+      "domain": "zigbee",
+      "category": "lock",
+      "vendor": "ikea",
+      "model": "ikea-padlock-134",
+      "path": "drivers\\zigbee\\lock\\ikea\\ikea-padlock-134"
+    },
+    {
+      "domain": "zigbee",
+      "category": "lock",
+      "vendor": "tuya",
+      "model": "tuya-deadbolt-850",
+      "path": "drivers\\zigbee\\lock\\tuya\\tuya-deadbolt-850"
+    },
+    {
+      "domain": "zigbee",
+      "category": "lock",
+      "vendor": "aqara",
+      "model": "aqara-deadbolt-22",
+      "path": "drivers\\zigbee\\lock\\aqara\\aqara-deadbolt-22"
+    },
+    {
+      "domain": "zigbee",
+      "category": "lock",
+      "vendor": "ikea",
+      "model": "ikea-deadbolt-274",
+      "path": "drivers\\zigbee\\lock\\ikea\\ikea-deadbolt-274"
+    },
+    {
+      "domain": "zigbee",
+      "category": "siren",
+      "vendor": "tuya",
+      "model": "tuya-alarm-271",
+      "path": "drivers\\zigbee\\siren\\tuya\\tuya-alarm-271"
+    },
+    {
+      "domain": "zigbee",
+      "category": "siren",
+      "vendor": "aqara",
+      "model": "aqara-alarm-922",
+      "path": "drivers\\zigbee\\siren\\aqara\\aqara-alarm-922"
+    },
+    {
+      "domain": "zigbee",
+      "category": "siren",
+      "vendor": "ikea",
+      "model": "ikea-alarm-707",
+      "path": "drivers\\zigbee\\siren\\ikea\\ikea-alarm-707"
+    },
+    {
+      "domain": "zigbee",
+      "category": "siren",
+      "vendor": "tuya",
+      "model": "tuya-buzzer-704",
+      "path": "drivers\\zigbee\\siren\\tuya\\tuya-buzzer-704"
+    },
+    {
+      "domain": "zigbee",
+      "category": "siren",
+      "vendor": "aqara",
+      "model": "aqara-buzzer-259",
+      "path": "drivers\\zigbee\\siren\\aqara\\aqara-buzzer-259"
+    },
+    {
+      "domain": "zigbee",
+      "category": "siren",
+      "vendor": "ikea",
+      "model": "ikea-buzzer-255",
+      "path": "drivers\\zigbee\\siren\\ikea\\ikea-buzzer-255"
+    },
+    {
+      "domain": "zigbee",
+      "category": "siren",
+      "vendor": "tuya",
+      "model": "tuya-chime-728",
+      "path": "drivers\\zigbee\\siren\\tuya\\tuya-chime-728"
+    },
+    {
+      "domain": "zigbee",
+      "category": "siren",
+      "vendor": "aqara",
+      "model": "aqara-chime-885",
+      "path": "drivers\\zigbee\\siren\\aqara\\aqara-chime-885"
+    },
+    {
+      "domain": "zigbee",
+      "category": "siren",
+      "vendor": "ikea",
+      "model": "ikea-chime-70",
+      "path": "drivers\\zigbee\\siren\\ikea\\ikea-chime-70"
+    },
+    {
+      "domain": "tuya",
+      "category": "switch",
+      "vendor": "tuya",
+      "model": "TS0601",
+      "path": "drivers\\tuya\\switch\\tuya\\ts0601"
+    },
+    {
+      "domain": "tuya",
+      "category": "plug",
+      "vendor": "tuya",
+      "model": "TS0601_switch",
+      "path": "drivers\\tuya\\plug\\tuya\\ts0601_switch"
+    },
+    {
+      "domain": "tuya",
+      "category": "cover",
+      "vendor": "tuya",
+      "model": "TS0601_curtain",
+      "path": "drivers\\tuya\\cover\\tuya\\ts0601_curtain"
+    },
+    {
+      "domain": "tuya",
+      "category": "climate-thermostat",
+      "vendor": "tuya",
+      "model": "TS0601_thermostat",
+      "path": "drivers\\tuya\\climate-thermostat\\tuya\\ts0601_thermostat"
+    },
+    {
+      "domain": "tuya",
+      "category": "sensor-motion",
+      "vendor": "tuya",
+      "model": "TS0601_motion",
+      "path": "drivers\\tuya\\sensor-motion\\tuya\\ts0601_motion"
+    },
+    {
+      "domain": "tuya",
+      "category": "sensor-motion",
+      "vendor": "tuya",
+      "model": "TS0601_contact",
+      "path": "drivers\\tuya\\sensor-motion\\tuya\\ts0601_contact"
+    },
+    {
+      "domain": "tuya",
+      "category": "switch",
+      "vendor": "tuya",
+      "model": "TS0601_smoke",
+      "path": "drivers\\tuya\\switch\\tuya\\ts0601_smoke"
+    },
+    {
+      "domain": "tuya",
+      "category": "switch",
+      "vendor": "tuya",
+      "model": "TS0601_water",
+      "path": "drivers\\tuya\\switch\\tuya\\ts0601_water"
+    },
+    {
+      "domain": "tuya",
+      "category": "switch",
+      "vendor": "tuya",
+      "model": "TS0601_gas",
+      "path": "drivers\\tuya\\switch\\tuya\\ts0601_gas"
+    },
+    {
+      "domain": "tuya",
+      "category": "switch",
+      "vendor": "tuya",
+      "model": "TS0601_vibration",
+      "path": "drivers\\tuya\\switch\\tuya\\ts0601_vibration"
+    },
+    {
+      "domain": "tuya",
+      "category": "switch",
+      "vendor": "tuya",
+      "model": "TS0601_presence",
+      "path": "drivers\\tuya\\switch\\tuya\\ts0601_presence"
+    }
+  ]
+}

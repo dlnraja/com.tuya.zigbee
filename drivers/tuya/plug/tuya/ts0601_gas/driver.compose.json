@@ -1,0 +1,21 @@
+{
+  "id": "plug-tuya-ts0601_gas",
+  "name": {
+    "en": "Tuya TS0601_gas",
+    "fr": "Tuya TS0601_gas",
+    "nl": "Tuya TS0601_gas",
+    "ta": "Tuya TS0601_gas"
+  },
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "tuya"
+    ],
+    "modelId": [
+      "TS0601_gas",
+      "ts0601_gas"
+    ]
+  }
+}
