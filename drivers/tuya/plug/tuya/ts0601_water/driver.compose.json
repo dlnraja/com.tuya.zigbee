@@ -1,0 +1,21 @@
+{
+  "id": "plug-tuya-ts0601_water",
+  "name": {
+    "en": "Tuya TS0601_water",
+    "fr": "Tuya TS0601_water",
+    "nl": "Tuya TS0601_water",
+    "ta": "Tuya TS0601_water"
+  },
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "tuya"
+    ],
+    "modelId": [
+      "TS0601_water",
+      "ts0601_water"
+    ]
+  }
+}

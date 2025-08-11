@@ -4,7 +4,7 @@ const { extractZipPrefer7z, extractZipPrefer7zAsync } = require('./utils/archive
 
 const CWD = process.cwd();
 const TMP = path.join(CWD, '.tmp_tuya_zip_work');
-const BAK = path.join(CWD, '.backup', 'zips');
+const BAK = path.join(CWD, '.backup-central", 'zips');
 const MANIFEST = path.join(TMP, 'ingest-manifest.json');
 const RX = /(tuya|com\.tuya).*\.zip$/i;
 

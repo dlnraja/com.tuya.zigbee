@@ -1,6 +1,6 @@
 {
   "name": "com.tuya.zigbee",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "Universal Tuya Zigbee Device App - SDK 3 Compatible",
   "main": "app.js",
   "scripts": {
@@ -40,6 +40,8 @@
     "sources-enrich": "node scripts/sources/enrichers/ai-enrichment-engine.js",
     "sources-report": "node scripts/sources/sources-orchestrator.js",
     "sources-restore-tmp": "node scripts/sources/local/restore-tmp-sources.js",
+    "cleanup": "node scripts/cleanup-backup-folders.js",
+    "massive-seed": "node scripts/massive-driver-seed.js",
     "schedule": "powershell -ExecutionPolicy Bypass -File scripts/automation/schedule-tasks.ps1"
   },
   "keywords": [

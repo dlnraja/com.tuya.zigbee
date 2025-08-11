@@ -1,0 +1,22 @@
+{
+  "id": "climate-thermostat-tuya-ts0601_thermostat",
+  "name": {
+    "en": "Tuya TS0601_thermostat",
+    "fr": "Tuya TS0601_thermostat",
+    "nl": "Tuya TS0601_thermostat",
+    "ta": "Tuya TS0601_thermostat"
+  },
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "tuya"
+    ],
+    "modelId": [
+      "TS0601_thermostat",
+      "ts0601_thermostat"
+    ]
+  }
+}

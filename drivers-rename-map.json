@@ -1,5 +1,190 @@
 {
-  "moves": [],
+  "moves": [
+    {
+      "from": "tuya\\plug\\ikea\\ikea-power-769",
+      "to": "zigbee\\plug\\ikea\\ikea-power-769"
+    },
+    {
+      "from": "tuya\\plug\\ikea\\ikea-outlet-136",
+      "to": "zigbee\\plug\\ikea\\ikea-outlet-136"
+    },
+    {
+      "from": "tuya\\plug\\aqara\\aqara-switch-457",
+      "to": "zigbee\\plug\\aqara\\aqara-switch-457"
+    },
+    {
+      "from": "tuya\\plug\\aqara\\aqara-smart-611",
+      "to": "zigbee\\plug\\aqara\\aqara-smart-611"
+    },
+    {
+      "from": "tuya\\plug\\aqara\\aqara-power-551",
+      "to": "zigbee\\plug\\aqara\\aqara-power-551"
+    },
+    {
+      "from": "tuya\\plug\\aqara\\aqara-outlet-425",
+      "to": "zigbee\\plug\\aqara\\aqara-outlet-425"
+    },
+    {
+      "from": "tuya\\lock\\ikea\\ikea-padlock-984",
+      "to": "zigbee\\lock\\ikea\\ikea-padlock-984"
+    },
+    {
+      "from": "tuya\\lock\\ikea\\ikea-door-555",
+      "to": "zigbee\\lock\\ikea\\ikea-door-555"
+    },
+    {
+      "from": "tuya\\lock\\ikea\\ikea-deadbolt-42",
+      "to": "zigbee\\lock\\ikea\\ikea-deadbolt-42"
+    },
+    {
+      "from": "tuya\\lock\\aqara\\aqara-padlock-382",
+      "to": "zigbee\\lock\\aqara\\aqara-padlock-382"
+    },
+    {
+      "from": "tuya\\lock\\aqara\\aqara-door-305",
+      "to": "zigbee\\lock\\aqara\\aqara-door-305"
+    },
+    {
+      "from": "tuya\\lock\\aqara\\aqara-deadbolt-642",
+      "to": "zigbee\\lock\\aqara\\aqara-deadbolt-642"
+    },
+    {
+      "from": "tuya\\light\\ikea\\ikea-wall-993",
+      "to": "zigbee\\light\\ikea\\ikea-wall-993"
+    },
+    {
+      "from": "tuya\\light\\ikea\\ikea-table-357",
+      "to": "zigbee\\light\\ikea\\ikea-table-357"
+    },
+    {
+      "from": "tuya\\light\\ikea\\ikea-strip-96",
+      "to": "zigbee\\light\\ikea\\ikea-strip-96"
+    },
+    {
+      "from": "tuya\\light\\ikea\\ikea-garden-901",
+      "to": "zigbee\\light\\ikea\\ikea-garden-901"
+    },
+    {
+      "from": "tuya\\light\\ikea\\ikea-floor-238",
+      "to": "zigbee\\light\\ikea\\ikea-floor-238"
+    },
+    {
+      "from": "tuya\\light\\ikea\\ikea-ceiling-558",
+      "to": "zigbee\\light\\ikea\\ikea-ceiling-558"
+    },
+    {
+      "from": "tuya\\light\\ikea\\ikea-bulb-320",
+      "to": "zigbee\\light\\ikea\\ikea-bulb-320"
+    },
+    {
+      "from": "tuya\\light\\aqara\\aqara-wall-249",
+      "to": "zigbee\\light\\aqara\\aqara-wall-249"
+    },
+    {
+      "from": "tuya\\light\\aqara\\aqara-table-922",
+      "to": "zigbee\\light\\aqara\\aqara-table-922"
+    },
+    {
+      "from": "tuya\\light\\aqara\\aqara-strip-219",
+      "to": "zigbee\\light\\aqara\\aqara-strip-219"
+    },
+    {
+      "from": "tuya\\light\\aqara\\aqara-garden-967",
+      "to": "zigbee\\light\\aqara\\aqara-garden-967"
+    },
+    {
+      "from": "tuya\\light\\aqara\\aqara-floor-771",
+      "to": "zigbee\\light\\aqara\\aqara-floor-771"
+    },
+    {
+      "from": "tuya\\light\\aqara\\aqara-ceiling-655",
+      "to": "zigbee\\light\\aqara\\aqara-ceiling-655"
+    },
+    {
+      "from": "tuya\\light\\aqara\\aqara-bulb-130",
+      "to": "zigbee\\light\\aqara\\aqara-bulb-130"
+    },
+    {
+      "from": "tuya\\cover\\ikea\\ikea-shade-756",
+      "to": "zigbee\\cover\\ikea\\ikea-shade-756"
+    },
+    {
+      "from": "tuya\\cover\\ikea\\ikea-garage-4",
+      "to": "zigbee\\cover\\ikea\\ikea-garage-4"
+    },
+    {
+      "from": "tuya\\cover\\ikea\\ikea-curtain-339",
+      "to": "zigbee\\cover\\ikea\\ikea-curtain-339"
+    },
+    {
+      "from": "tuya\\cover\\ikea\\ikea-blind-14",
+      "to": "zigbee\\cover\\ikea\\ikea-blind-14"
+    },
+    {
+      "from": "tuya\\cover\\aqara\\aqara-shade-24",
+      "to": "zigbee\\cover\\aqara\\aqara-shade-24"
+    },
+    {
+      "from": "tuya\\cover\\aqara\\aqara-garage-374",
+      "to": "zigbee\\cover\\aqara\\aqara-garage-374"
+    },
+    {
+      "from": "tuya\\cover\\aqara\\aqara-curtain-838",
+      "to": "zigbee\\cover\\aqara\\aqara-curtain-838"
+    },
+    {
+      "from": "tuya\\cover\\aqara\\aqara-blind-824",
+      "to": "zigbee\\cover\\aqara\\aqara-blind-824"
+    },
+    {
+      "from": "tuya\\climate\\tuya\\tuya-thermostat-435",
+      "to": "tuya\\plug\\tuya\\tuya-thermostat-435"
+    },
+    {
+      "from": "tuya\\climate\\tuya\\tuya-heater-387",
+      "to": "tuya\\plug\\tuya\\tuya-heater-387"
+    },
+    {
+      "from": "tuya\\climate\\tuya\\tuya-fan-200",
+      "to": "tuya\\plug\\tuya\\tuya-fan-200"
+    },
+    {
+      "from": "tuya\\climate\\tuya\\tuya-ac-322",
+      "to": "tuya\\plug\\tuya\\tuya-ac-322"
+    },
+    {
+      "from": "tuya\\climate\\ikea\\ikea-thermostat-128",
+      "to": "zigbee\\plug\\ikea\\ikea-thermostat-128"
+    },
+    {
+      "from": "tuya\\climate\\ikea\\ikea-heater-399",
+      "to": "zigbee\\plug\\ikea\\ikea-heater-399"
+    },
+    {
+      "from": "tuya\\climate\\ikea\\ikea-fan-18",
+      "to": "zigbee\\plug\\ikea\\ikea-fan-18"
+    },
+    {
+      "from": "tuya\\climate\\ikea\\ikea-ac-728",
+      "to": "zigbee\\plug\\ikea\\ikea-ac-728"
+    },
+    {
+      "from": "tuya\\climate\\aqara\\aqara-thermostat-831",
+      "to": "zigbee\\plug\\aqara\\aqara-thermostat-831"
+    },
+    {
+      "from": "tuya\\climate\\aqara\\aqara-heater-833",
+      "to": "zigbee\\plug\\aqara\\aqara-heater-833"
+    },
+    {
+      "from": "tuya\\climate\\aqara\\aqara-fan-281",
+      "to": "zigbee\\plug\\aqara\\aqara-fan-281"
+    },
+    {
+      "from": "tuya\\climate\\aqara\\aqara-ac-708",
+      "to": "zigbee\\plug\\aqara\\aqara-ac-708"
+    }
+  ],
   "merges": [
     {
       "from": "tuya\\light\\tuya\\ts130f",
