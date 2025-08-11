@@ -1,0 +1,156 @@
+{
+  "id": "tuya-switch",
+  "name": {
+    "en": "Tuya Switch",
+    "fr": "Interrupteur Tuya",
+    "nl": "Tuya Schakelaar",
+    "ta": "Tuya சுவிட்ச்"
+  },
+  "images": {
+    "small": "assets/images/switch-small.png",
+    "large": "assets/images/switch-large.png"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "On/Off",
+        "fr": "Marche/Arrêt",
+        "nl": "Aan/Uit",
+        "ta": "இயக்கு/நிறுத்து"
+      }
+    },
+    "dim": {
+      "title": {
+        "en": "Dim",
+        "fr": "Variation",
+        "nl": "Dimmen",
+        "ta": "மங்கலாக்கு"
+      }
+    },
+    "measure_power": {
+      "title": {
+        "en": "Power",
+        "fr": "Puissance",
+        "nl": "Vermogen",
+        "ta": "சக்தி"
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "poll_interval",
+      "type": "number",
+      "label": {
+        "en": "Poll Interval (ms)",
+        "fr": "Intervalle de Polling (ms)",
+        "nl": "Poll Interval (ms)",
+        "ta": "போல் இடைவெளி (ms)"
+      },
+      "value": 30000,
+      "attr": {
+        "min": 1000,
+        "max": 300000,
+        "step": 1000
+      }
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya",
+      "TUYATEC-0l6xaqmi",
+      "_TZ3000_7tbsruql",
+      "_TZ3000_osu834un",
+      "Immax",
+      "Visonic",
+      "_TZ3000_hkcpblrs",
+      "_TZ3000_8yhypbo7",
+      "_TZ3000_cqlnswn0",
+      "Generic",
+      "_TZE200_yvx5lh6k",
+      "_TZE200_8ygsuhe1",
+      "_TZE200_mja3fuja",
+      "_TZE200_ryfmq5rl",
+      "_TZE200_c2fmom5z",
+      "_TZE200_la2c2uo9",
+      "_TZE204_hlx9tnzb",
+      "_TZE200_ip2akl4w",
+      "_TZE200_1agwnems",
+      "_TZE200_579lguh2",
+      "_TZE200_vucankjx",
+      "_TZE200_4mh6tyyo",
+      "_TZE204_n9ctkb6j",
+      "_TZE204_9qhuzgo0",
+      "_TZE204_dcnsggvz",
+      "_TZE204_5cuocqty",
+      "_TZE200_sur6q7ko",
+      "_TZE200_hue3yfsn",
+      "_TZE200_husqqvux",
+      "_TZE200_lnbfnyxd",
+      "_TZE200_lllliz3p",
+      "_TZE200_mudxchsu",
+      "_TZE200_7yoranx2",
+      "_TZE200_e9ba97vf",
+      "_TZE200_kds0pmmv",
+      "_TZE200_kly8gjlz",
+      "_TZE200_py4cm3he"
+    ],
+    "modelId": [
+      "ts130f",
+      "ts0601",
+      "ts011f",
+      "ts0121",
+      "tso121",
+      "rh3052",
+      "ts0201",
+      "rh3001",
+      "ts0203",
+      "ts0207",
+      "ts0014",
+      "ts0044",
+      "ts0003",
+      "ts0013",
+      "ts0043",
+      "ts0002",
+      "ts0012",
+      "ts0042",
+      "ts0001",
+      "ts0011",
+      "ts0046",
+      "ts004f",
+      "ts0041",
+      "ts0111",
+      "ts0502a",
+      "ts0004",
+      "ts000f",
+      "ts0115",
+      "ts0205",
+      "ts0215a",
+      "ty0202",
+      "ts0101",
+      "ts0049",
+      "ty0203",
+      "ts0202",
+      "ts0505a",
+      "ts0505b",
+      "ts0503a",
+      "ts0503b",
+      "ts0504b",
+      "ts0225",
+      "ty0201",
+      "ts0222",
+      "mct-340 e",
+      "ts110f",
+      "ts110e",
+      "ts0052",
+      "ts0502b",
+      "rh3040",
+      "doorwindow-sensor-zb3.0"
+    ]
+  }
+}

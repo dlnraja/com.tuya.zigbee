@@ -3,9 +3,6 @@
   "version": "3.2.0",
   "description": "Universal Tuya Zigbee Device App - SDK 3 Compatible",
   "main": "app.js",
-  "devDependencies": {
-    "homey": "^2.0.0"
-  },
   "scripts": {
     "test": "homey app validate",
     "run": "homey app run",
@@ -23,8 +20,11 @@
     "reorg": "node scripts/reorganize-drivers.js",
     "readme": "node scripts/update-readme.js",
     "fix_package": "node scripts/fix-package.js",
-    "validate": "npx homey app validate",
-    "build": "npx homey app build"
+    "validate": "homey app validate",
+    "build": "homey app build",
+    "start": "homey app run",
+    "migrate": "node scripts/migrate-meshdriver-to-zigbeedriver.js",
+    "normbak": "node scripts/normalize-backup.js"
   },
   "keywords": [
     "tuya",
@@ -36,12 +36,21 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "extract-zip": "^2.0.1",
     "glob": "^11.0.3",
-    "homey-meshdriver": "^2.0.0",
+    "homey-zigbeedriver": "^2.0.0",
     "zigbee-clusters": "^2.0.0"
   },
   "engines": {
     "node": ">=18.0.0",
     "homey": ">=6.0.0"
+  },
+  "author": "dlnraja",
+  "homey": {
+    "min": "1.0.0",
+    "max": "1.0.0"
+  },
+  "devDependencies": {
+    "homey": "^2"
   }
 }

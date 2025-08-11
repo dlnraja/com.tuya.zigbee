@@ -1,0 +1,390 @@
+{
+  "moves": [
+    {
+      "from": "other\\ts0601strip",
+      "to": "zigbee\\generic\\plug\\ts0601strip"
+    },
+    {
+      "from": "other\\ts0601rgb",
+      "to": "zigbee\\generic\\plug\\ts0601rgb"
+    },
+    {
+      "from": "other\\ts0601motion",
+      "to": "zigbee\\generic\\plug\\ts0601motion"
+    },
+    {
+      "from": "other\\ts0601dimmer",
+      "to": "zigbee\\generic\\plug\\ts0601dimmer"
+    },
+    {
+      "from": "other\\ts0601bulb",
+      "to": "zigbee\\generic\\plug\\ts0601bulb"
+    },
+    {
+      "from": "other\\ts0203sensor",
+      "to": "zigbee\\generic\\plug\\ts0203sensor"
+    },
+    {
+      "from": "other\\ts0202sensor",
+      "to": "zigbee\\generic\\plug\\ts0202sensor"
+    },
+    {
+      "from": "other\\ts0201sensor",
+      "to": "zigbee\\generic\\plug\\ts0201sensor"
+    },
+    {
+      "from": "other\\ts0003switch",
+      "to": "zigbee\\generic\\plug\\ts0003switch"
+    },
+    {
+      "from": "other\\ts0002switch",
+      "to": "zigbee\\generic\\plug\\ts0002switch"
+    },
+    {
+      "from": "other\\ts0001switch",
+      "to": "zigbee\\generic\\plug\\ts0001switch"
+    },
+    {
+      "from": "other\\trytoclose",
+      "to": "zigbee\\generic\\plug\\trytoclose"
+    },
+    {
+      "from": "other\\tm_glogenabled",
+      "to": "zigbee\\generic\\plug\\tm_glogenabled"
+    },
+    {
+      "from": "other\\thermostaticradiatorvalve",
+      "to": "zigbee\\generic\\plug\\thermostaticradiatorvalve"
+    },
+    {
+      "from": "other\\that",
+      "to": "zigbee\\generic\\plug\\that"
+    },
+    {
+      "from": "other\\temphumidsensor5",
+      "to": "zigbee\\generic\\plug\\temphumidsensor5"
+    },
+    {
+      "from": "other\\temphumidsensor4",
+      "to": "zigbee\\generic\\plug\\temphumidsensor4"
+    },
+    {
+      "from": "other\\temperature",
+      "to": "zigbee\\generic\\plug\\temperature"
+    },
+    {
+      "from": "other\\switch_4_gang_metering",
+      "to": "zigbee\\generic\\plug\\switch_4_gang_metering"
+    },
+    {
+      "from": "other\\switch_3_gang",
+      "to": "zigbee\\generic\\plug\\switch_3_gang"
+    },
+    {
+      "from": "other\\switch_2_gang_metering",
+      "to": "zigbee\\generic\\plug\\switch_2_gang_metering"
+    },
+    {
+      "from": "other\\switch_2_gang",
+      "to": "zigbee\\generic\\plug\\switch_2_gang"
+    },
+    {
+      "from": "other\\switch_1_gang_metering",
+      "to": "zigbee\\generic\\plug\\switch_1_gang_metering"
+    },
+    {
+      "from": "other\\switch_1_gang",
+      "to": "zigbee\\generic\\plug\\switch_1_gang"
+    },
+    {
+      "from": "other\\switches",
+      "to": "zigbee\\generic\\plug\\switches"
+    },
+    {
+      "from": "other\\suggestautocompleteresult",
+      "to": "zigbee\\generic\\plug\\suggestautocompleteresult"
+    },
+    {
+      "from": "other\\subversion",
+      "to": "zigbee\\generic\\plug\\subversion"
+    },
+    {
+      "from": "other\\strips",
+      "to": "zigbee\\generic\\plug\\strips"
+    },
+    {
+      "from": "other\\std",
+      "to": "zigbee\\generic\\plug\\std"
+    },
+    {
+      "from": "other\\soilsensor2",
+      "to": "zigbee\\generic\\plug\\soilsensor2"
+    },
+    {
+      "from": "other\\siren",
+      "to": "zigbee\\generic\\plug\\siren"
+    },
+    {
+      "from": "other\\shouldloaduri",
+      "to": "zigbee\\generic\\plug\\shouldloaduri"
+    },
+    {
+      "from": "other\\should",
+      "to": "zigbee\\generic\\plug\\should"
+    },
+    {
+      "from": "other\\sensortemphumidsensor",
+      "to": "zigbee\\generic\\plug\\sensortemphumidsensor"
+    },
+    {
+      "from": "other\\rgb",
+      "to": "zigbee\\generic\\plug\\rgb"
+    },
+    {
+      "from": "other\\remotenotfounderror",
+      "to": "zigbee\\generic\\plug\\remotenotfounderror"
+    },
+    {
+      "from": "other\\remote",
+      "to": "zigbee\\generic\\plug\\remote"
+    },
+    {
+      "from": "other\\relay_board_4_channel",
+      "to": "zigbee\\generic\\plug\\relay_board_4_channel"
+    },
+    {
+      "from": "other\\relay_board_2_channel",
+      "to": "zigbee\\generic\\plug\\relay_board_2_channel"
+    },
+    {
+      "from": "other\\relay_board_1_channel",
+      "to": "zigbee\\generic\\plug\\relay_board_1_channel"
+    },
+    {
+      "from": "other\\rainsensor",
+      "to": "zigbee\\generic\\plug\\rainsensor"
+    },
+    {
+      "from": "other\\radarsensor2",
+      "to": "zigbee\\generic\\plug\\radarsensor2"
+    },
+    {
+      "from": "other\\provides",
+      "to": "zigbee\\generic\\plug\\provides"
+    },
+    {
+      "from": "other\\prot_application",
+      "to": "zigbee\\generic\\plug\\prot_application"
+    },
+    {
+      "from": "other\\powerstrip4sockets",
+      "to": "zigbee\\lellki\\plug\\jz-zb-004"
+    },
+    {
+      "from": "other\\parse",
+      "to": "zigbee\\generic\\plug\\parse"
+    },
+    {
+      "from": "other\\optional_callback",
+      "to": "zigbee\\generic\\plug\\optional_callback"
+    },
+    {
+      "from": "other\\onoffswitchcluster",
+      "to": "zigbee\\generic\\plug\\onoffswitchcluster"
+    },
+    {
+      "from": "other\\of",
+      "to": "zigbee\\generic\\plug\\of"
+    },
+    {
+      "from": "other\\nsproxyautoconfig",
+      "to": "zigbee\\generic\\plug\\nsproxyautoconfig"
+    },
+    {
+      "from": "other\\not",
+      "to": "zigbee\\generic\\plug\\not"
+    },
+    {
+      "from": "other\\microsummaryservice",
+      "to": "zigbee\\generic\\plug\\microsummaryservice"
+    },
+    {
+      "from": "other\\mercurial",
+      "to": "zigbee\\generic\\plug\\mercurial"
+    },
+    {
+      "from": "other\\loginmanagerstorage_mozstorage",
+      "to": "zigbee\\generic\\plug\\loginmanagerstorage_mozstorage"
+    },
+    {
+      "from": "other\\loginmanagerstorage_legacy",
+      "to": "zigbee\\generic\\plug\\loginmanagerstorage_legacy"
+    },
+    {
+      "from": "other\\loginmanager",
+      "to": "zigbee\\generic\\plug\\loginmanager"
+    },
+    {
+      "from": "other\\log",
+      "to": "zigbee\\generic\\plug\\log"
+    },
+    {
+      "from": "other\\klass",
+      "to": "zigbee\\generic\\plug\\klass"
+    },
+    {
+      "from": "other\\isancestor",
+      "to": "zigbee\\generic\\plug\\isancestor"
+    },
+    {
+      "from": "other\\is",
+      "to": "zigbee\\generic\\plug\\is"
+    },
+    {
+      "from": "other\\ioservice",
+      "to": "zigbee\\generic\\plug\\ioservice"
+    },
+    {
+      "from": "other\\if",
+      "to": "zigbee\\generic\\plug\\if"
+    },
+    {
+      "from": "other\\iaszonecluster",
+      "to": "zigbee\\generic\\plug\\iaszonecluster"
+    },
+    {
+      "from": "other\\humidity",
+      "to": "zigbee\\generic\\plug\\humidity"
+    },
+    {
+      "from": "other\\hasrootdomain",
+      "to": "zigbee\\generic\\plug\\hasrootdomain"
+    },
+    {
+      "from": "other\\handlerservice",
+      "to": "zigbee\\generic\\plug\\handlerservice"
+    },
+    {
+      "from": "other\\git",
+      "to": "zigbee\\generic\\plug\\git"
+    },
+    {
+      "from": "other\\getprefbranch",
+      "to": "zigbee\\generic\\plug\\getprefbranch"
+    },
+    {
+      "from": "other\\function",
+      "to": "zigbee\\generic\\plug\\function"
+    },
+    {
+      "from": "other\\frombuf",
+      "to": "zigbee\\generic\\plug\\frombuf"
+    },
+    {
+      "from": "other\\from",
+      "to": "zigbee\\generic\\plug\\from"
+    },
+    {
+      "from": "other\\formautocomplete",
+      "to": "zigbee\\generic\\plug\\formautocomplete"
+    },
+    {
+      "from": "other\\for",
+      "to": "zigbee\\generic\\plug\\for"
+    },
+    {
+      "from": "other\\failed",
+      "to": "zigbee\\generic\\plug\\failed"
+    },
+    {
+      "from": "other\\enter",
+      "to": "zigbee\\generic\\plug\\enter"
+    },
+    {
+      "from": "other\\distributioncustomizer",
+      "to": "zigbee\\generic\\plug\\distributioncustomizer"
+    },
+    {
+      "from": "other\\dimmers",
+      "to": "zigbee\\generic\\plug\\dimmers"
+    },
+    {
+      "from": "other\\determines",
+      "to": "zigbee\\generic\\plug\\determines"
+    },
+    {
+      "from": "other\\destructconstprops",
+      "to": "zigbee\\generic\\plug\\destructconstprops"
+    },
+    {
+      "from": "other\\descriptor",
+      "to": "zigbee\\generic\\plug\\descriptor"
+    },
+    {
+      "from": "other\\derived",
+      "to": "zigbee\\generic\\plug\\derived"
+    },
+    {
+      "from": "other\\declarations",
+      "to": "zigbee\\generic\\plug\\declarations"
+    },
+    {
+      "from": "other\\debug",
+      "to": "zigbee\\generic\\other\\debug"
+    },
+    {
+      "from": "other\\convertdecimalvalueto2bytehexa",
+      "to": "zigbee\\generic\\plug\\convertdecimalvalueto2bytehexa"
+    },
+    {
+      "from": "other\\code",
+      "to": "zigbee\\generic\\plug\\code"
+    },
+    {
+      "from": "other\\bulbs",
+      "to": "zigbee\\generic\\plug\\bulbs"
+    },
+    {
+      "from": "other\\browserglue",
+      "to": "zigbee\\generic\\plug\\browserglue"
+    },
+    {
+      "from": "other\\book_tag_sql_fragment",
+      "to": "zigbee\\generic\\plug\\book_tag_sql_fragment"
+    },
+    {
+      "from": "other\\bls_gpref",
+      "to": "zigbee\\generic\\plug\\bls_gpref"
+    },
+    {
+      "from": "other\\aus_gapp",
+      "to": "zigbee\\generic\\plug\\aus_gapp"
+    },
+    {
+      "from": "other\\addonsearchresult",
+      "to": "zigbee\\generic\\plug\\addonsearchresult"
+    },
+    {
+      "from": "other\\accordingly",
+      "to": "zigbee\\generic\\plug\\accordingly"
+    },
+    {
+      "from": "light\\zigbeelights",
+      "to": "zigbee\\generic\\light"
+    }
+  ],
+  "merges": [
+    {
+      "from": "sensor\\zigbeesensors",
+      "to": "zigbee\\generic\\climate-thermostat"
+    },
+    {
+      "from": "other\\zigbeeplugs",
+      "to": "zigbee\\generic\\plug"
+    },
+    {
+      "from": "other\\blinds",
+      "to": "zigbee\\tuya\\plug\\ts130f"
+    }
+  ]
+}
