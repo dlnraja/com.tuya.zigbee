@@ -1,0 +1,22 @@
+{
+  "id": "cover-tuya-ts0601_curtain",
+  "name": {
+    "en": "Tuya TS0601_curtain",
+    "fr": "Tuya TS0601_curtain",
+    "nl": "Tuya TS0601_curtain",
+    "ta": "Tuya TS0601_curtain"
+  },
+  "capabilities": [
+    "windowcoverings_set",
+    "windowcoverings_state"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "tuya"
+    ],
+    "modelId": [
+      "TS0601_curtain",
+      "ts0601_curtain"
+    ]
+  }
+}

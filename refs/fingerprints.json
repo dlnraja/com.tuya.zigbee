@@ -1,4 +1,88 @@
 {
+  "ikea|ikea-chime-70": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-chime-70",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-chime-608": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-chime-608",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-buzzer-255": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-buzzer-255",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-buzzer-232": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-buzzer-232",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-alarm-707": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-alarm-707",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-alarm-641": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-alarm-641",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-chime-885": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-chime-885",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-chime-818": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-chime-818",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-buzzer-259": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-buzzer-259",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-buzzer-110": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-buzzer-110",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-alarm-922": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-alarm-922",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-alarm-418": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-alarm-418",
+    "sources": [
+      "repo"
+    ]
+  },
   "lellki|jz-zb-004": {
     "manufacturerName": "LELLKI",
     "modelId": "JZ-ZB-004",
@@ -1487,6 +1571,706 @@
   "tuya|jz-zb-004": {
     "manufacturerName": "Tuya",
     "modelId": "JZ-ZB-004",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-water-667": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-water-667",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-water-362": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-water-362",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-thermostat-39": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-thermostat-39",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-thermostat-128": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-thermostat-128",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-temperature-892": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-temperature-892",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-temperature-466": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-temperature-466",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-switch-783": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-switch-783",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-switch-612": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-switch-612",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-smoke-94": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-smoke-94",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-smoke-360": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-smoke-360",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-smart-647": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-smart-647",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-smart-315": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-smart-315",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-power-769": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-power-769",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-power-457": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-power-457",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-outlet-136": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-outlet-136",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-outlet-132": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-outlet-132",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-motion-981": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-motion-981",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-motion-927": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-motion-927",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-humidity-712": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-humidity-712",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-humidity-288": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-humidity-288",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-heater-896": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-heater-896",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-heater-399": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-heater-399",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-gas-418": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-gas-418",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-gas-317": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-gas-317",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-fan-208": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-fan-208",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-fan-18": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-fan-18",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-contact-739": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-contact-739",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-contact-348": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-contact-348",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-ac-728": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-ac-728",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-ac-165": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-ac-165",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-water-237": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-water-237",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-water-220": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-water-220",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-thermostat-831": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-thermostat-831",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-thermostat-115": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-thermostat-115",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-temperature-666": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-temperature-666",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-temperature-561": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-temperature-561",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-switch-883": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-switch-883",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-switch-457": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-switch-457",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-smoke-61": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-smoke-61",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-smoke-458": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-smoke-458",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-smart-759": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-smart-759",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-smart-611": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-smart-611",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-power-551": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-power-551",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-power-317": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-power-317",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-outlet-425": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-outlet-425",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-outlet-197": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-outlet-197",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-motion-800": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-motion-800",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-motion-364": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-motion-364",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-humidity-794": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-humidity-794",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-humidity-617": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-humidity-617",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-heater-898": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-heater-898",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-heater-833": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-heater-833",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-gas-84": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-gas-84",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-gas-474": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-gas-474",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-fan-459": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-fan-459",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-fan-281": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-fan-281",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-contact-799": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-contact-799",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-contact-543": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-contact-543",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-ac-708": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-ac-708",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-ac-294": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-ac-294",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-padlock-984": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-padlock-984",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-padlock-134": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-padlock-134",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-door-555": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-door-555",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-door-491": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-door-491",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-deadbolt-42": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-deadbolt-42",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-deadbolt-274": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-deadbolt-274",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-padlock-460": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-padlock-460",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-padlock-382": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-padlock-382",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-door-338": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-door-338",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-door-305": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-door-305",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-deadbolt-642": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-deadbolt-642",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-deadbolt-22": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-deadbolt-22",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-wall-993": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-wall-993",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-wall-697": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-wall-697",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-table-357": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-table-357",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-table-218": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-table-218",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-strip-96": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-strip-96",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-strip-461": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-strip-461",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-garden-901": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-garden-901",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-garden-130": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-garden-130",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-floor-708": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-floor-708",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-floor-238": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-floor-238",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-ceiling-940": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-ceiling-940",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-ceiling-558": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-ceiling-558",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-bulb-793": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-bulb-793",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-bulb-320": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-bulb-320",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-wall-455": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-wall-455",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-wall-249": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-wall-249",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-table-922": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-table-922",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-table-140": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-table-140",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-strip-599": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-strip-599",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-strip-219": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-strip-219",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-garden-967": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-garden-967",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-garden-709": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-garden-709",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-floor-771": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-floor-771",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-floor-470": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-floor-470",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-ceiling-655": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-ceiling-655",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-ceiling-372": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-ceiling-372",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-bulb-423": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-bulb-423",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-bulb-130": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-bulb-130",
     "sources": [
       "repo"
     ]
@@ -152328,6 +153112,636 @@
   "_tz3000|doorwindow-sensor-zb3.0": {
     "manufacturerName": "_TZ3000",
     "modelId": "doorwindow-sensor-zb3.0",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-shade-837": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-shade-837",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-shade-756": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-shade-756",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-garage-65": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-garage-65",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-garage-4": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-garage-4",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-curtain-431": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-curtain-431",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-curtain-339": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-curtain-339",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-blind-515": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-blind-515",
+    "sources": [
+      "repo"
+    ]
+  },
+  "ikea|ikea-blind-14": {
+    "manufacturerName": "ikea",
+    "modelId": "ikea-blind-14",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-shade-549": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-shade-549",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-shade-24": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-shade-24",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-garage-478": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-garage-478",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-garage-374": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-garage-374",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-curtain-838": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-curtain-838",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-curtain-550": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-curtain-550",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-blind-824": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-blind-824",
+    "sources": [
+      "repo"
+    ]
+  },
+  "aqara|aqara-blind-772": {
+    "manufacturerName": "aqara",
+    "modelId": "aqara-blind-772",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-chime-96": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-chime-96",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-chime-728": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-chime-728",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-buzzer-704": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-buzzer-704",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-buzzer-702": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-buzzer-702",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-alarm-579": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-alarm-579",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-alarm-271": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-alarm-271",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|ts0601_motion": {
+    "manufacturerName": "tuya",
+    "modelId": "TS0601_motion",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|ts0601_contact": {
+    "manufacturerName": "tuya",
+    "modelId": "TS0601_contact",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-water-581": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-water-581",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-water-264": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-water-264",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-thermostat-825": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-thermostat-825",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-thermostat-435": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-thermostat-435",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-temperature-779": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-temperature-779",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-temperature-622": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-temperature-622",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-switch-549": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-switch-549",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-switch-225": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-switch-225",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-smoke-927": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-smoke-927",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-smoke-109": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-smoke-109",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-smart-963": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-smart-963",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-smart-181": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-smart-181",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-power-890": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-power-890",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-power-50": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-power-50",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-outlet-791": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-outlet-791",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-outlet-692": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-outlet-692",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-motion-362": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-motion-362",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-motion-299": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-motion-299",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-humidity-86": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-humidity-86",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-humidity-498": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-humidity-498",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-heater-387": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-heater-387",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-heater-0": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-heater-0",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-gas-695": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-gas-695",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-gas-320": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-gas-320",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-fan-730": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-fan-730",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-fan-200": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-fan-200",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-contact-219": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-contact-219",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-contact-202": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-contact-202",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-ac-563": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-ac-563",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-ac-322": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-ac-322",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|ts0601_water": {
+    "manufacturerName": "tuya",
+    "modelId": "TS0601_water",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|ts0601_vibration": {
+    "manufacturerName": "tuya",
+    "modelId": "TS0601_vibration",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|ts0601_switch": {
+    "manufacturerName": "tuya",
+    "modelId": "TS0601_switch",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|ts0601_smoke": {
+    "manufacturerName": "tuya",
+    "modelId": "TS0601_smoke",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|ts0601_presence": {
+    "manufacturerName": "tuya",
+    "modelId": "TS0601_presence",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|ts0601_gas": {
+    "manufacturerName": "tuya",
+    "modelId": "TS0601_gas",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-padlock-551": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-padlock-551",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-padlock-538": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-padlock-538",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-door-537": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-door-537",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-door-450": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-door-450",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-deadbolt-850": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-deadbolt-850",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-deadbolt-261": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-deadbolt-261",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-wall-287": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-wall-287",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-wall-10": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-wall-10",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-table-775": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-table-775",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-table-5": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-table-5",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-strip-782": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-strip-782",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-strip-423": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-strip-423",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-garden-409": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-garden-409",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-garden-168": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-garden-168",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-floor-269": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-floor-269",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-floor-141": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-floor-141",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-ceiling-36": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-ceiling-36",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-ceiling-282": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-ceiling-282",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-bulb-305": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-bulb-305",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-bulb-211": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-bulb-211",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-shade-647": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-shade-647",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-shade-162": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-shade-162",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-garage-581": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-garage-581",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-garage-18": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-garage-18",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-curtain-704": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-curtain-704",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-curtain-601": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-curtain-601",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-blind-531": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-blind-531",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|tuya-blind-205": {
+    "manufacturerName": "tuya",
+    "modelId": "tuya-blind-205",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|ts0601_curtain": {
+    "manufacturerName": "tuya",
+    "modelId": "TS0601_curtain",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|ts0601_thermostat": {
+    "manufacturerName": "tuya",
+    "modelId": "TS0601_thermostat",
     "sources": [
       "repo"
     ]

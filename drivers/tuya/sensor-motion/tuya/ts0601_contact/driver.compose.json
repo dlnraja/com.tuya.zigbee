@@ -1,0 +1,21 @@
+{
+  "id": "sensor-motion-tuya-ts0601_contact",
+  "name": {
+    "en": "Tuya TS0601_contact",
+    "fr": "Tuya TS0601_contact",
+    "nl": "Tuya TS0601_contact",
+    "ta": "Tuya TS0601_contact"
+  },
+  "capabilities": [
+    "alarm_motion"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "tuya"
+    ],
+    "modelId": [
+      "TS0601_contact",
+      "ts0601_contact"
+    ]
+  }
+}

@@ -6,6 +6,18 @@ const { spawnSync } = require('child_process');
 
 const ROOT = process.cwd();
 
+// Fonction utilitaire pour exécuter des commandes
+function tryRun(cmd, args) {
+    try {
+        console.log(`[tryRun] ${cmd} ${args.join(' ')}`);
+        const result = spawnSync(cmd, args, { stdio: 'inherit', shell: process.platform === 'win32' });
+        return result.status === 0;
+    } catch (error) {
+        console.error(`[tryRun] Erreur: ${error.message}`);
+        return false;
+    }
+}
+
 // Configuration des variables d'environnement
 const ENV = {
     DO_MIGRATE: process.env.DO_MIGRATE !== '0',
@@ -319,6 +331,25 @@ function generateFinalReport(executionResults) {
 async function main() {
     try {
         console.log('🎯 Démarrage du Mega Script Sources Complete...');
+        
+        // MODE PROGRESSIF: semis Z2M par lots, puis enrich/reorg/verify et push.
+        if (process.env.PROGRESSIVE === '1') {
+            console.log('[mega] progressive mode: Z2M seed batch -> enrich -> reorg -> verify -> assets -> reindex -> dashboard -> push');
+            // 1) seed
+            tryRun('node',['scripts/sources/z2m-seed.js']);
+            // 2) pipeline léger
+            tryRun('node',['scripts/enrich-drivers.js','--apply']);
+            tryRun('node',['scripts/reorganize-drivers.js']);
+            tryRun('node',['scripts/verify-coherence-and-enrich.js']);
+            tryRun('node',['scripts/assets-generate.js']);
+            tryRun('node',['scripts/create-small-png.js']);
+            tryRun('node',['scripts/reindex-drivers.js']);
+            tryRun('node',['scripts/dashboard-generator.js']);
+            // 3) push
+            tryRun('node',['scripts/git-commit-push.js','"build: progressive batch (z2m→enrich→reorg→verify→assets→reindex→dashboard)"']);
+            console.log('[mega] progressive batch done.');
+            process.exit(0);
+        }
         
         // Exécuter toutes les étapes
         const executionResults = await executeAllSteps();
