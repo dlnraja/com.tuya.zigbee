@@ -1,0 +1,107 @@
+{
+  "execution": {
+    "results": {
+      "normalize_backup": {
+        "step": "normalize_backup",
+        "name": "Normalisation des Backups",
+        "success": true,
+        "duration": 6257,
+        "timestamp": "2025-08-11T16:05:22.567Z"
+      },
+      "restore_tmp_sources": {
+        "step": "restore_tmp_sources",
+        "name": "Restauration des Sources Temporaires",
+        "success": true,
+        "duration": 111617,
+        "timestamp": "2025-08-11T16:07:16.289Z"
+      },
+      "ingest_tuya_zips": {
+        "step": "ingest_tuya_zips",
+        "name": "Ingestion des ZIPs Tuya",
+        "success": false,
+        "error": "Script terminé avec le code null",
+        "duration": 180035,
+        "timestamp": "2025-08-11T16:10:18.708Z"
+      },
+      "migrate_meshdriver": {
+        "step": "migrate_meshdriver",
+        "name": "Migration Meshdriver vers Zigbeedriver",
+        "success": true,
+        "duration": 499,
+        "timestamp": "2025-08-11T16:10:21.223Z"
+      },
+      "reorganize_drivers": {
+        "step": "reorganize_drivers",
+        "name": "Réorganisation des Drivers",
+        "success": false,
+        "error": "Script terminé avec le code 1",
+        "duration": 844,
+        "timestamp": "2025-08-11T16:10:24.296Z"
+      },
+      "sources_extraction": {
+        "step": "sources_extraction",
+        "name": "Extraction des Sources",
+        "success": true,
+        "duration": 196804,
+        "timestamp": "2025-08-11T16:13:43.504Z"
+      },
+      "assets_generation": {
+        "step": "assets_generation",
+        "name": "Génération des Assets",
+        "success": true,
+        "duration": 522,
+        "timestamp": "2025-08-11T16:13:46.060Z"
+      },
+      "small_png_generation": {
+        "step": "small_png_generation",
+        "name": "Génération des PNG Small",
+        "success": true,
+        "duration": 436,
+        "timestamp": "2025-08-11T16:13:48.537Z"
+      },
+      "reindex_drivers": {
+        "step": "reindex_drivers",
+        "name": "Réindexation des Drivers",
+        "success": true,
+        "duration": 1202,
+        "timestamp": "2025-08-11T16:13:52.291Z"
+      },
+      "update_readme": {
+        "step": "update_readme",
+        "name": "Mise à jour du README",
+        "success": true,
+        "duration": 789,
+        "timestamp": "2025-08-11T16:13:55.139Z"
+      }
+    },
+    "summary": {
+      "totalSteps": 10,
+      "successfulSteps": 8,
+      "failedSteps": 2,
+      "totalDuration": 520865
+    },
+    "timestamp": "2025-08-11T16:13:57.171Z"
+  },
+  "environment": {
+    "DO_MIGRATE": true,
+    "SKIP_NPM": true,
+    "SKIP_VALIDATE": true,
+    "SKIP_RUN": true,
+    "SKIP_GIT_PUSH": true,
+    "PERSIST_TMP": true,
+    "CLEAN_TMP": false,
+    "KEEP_BACKUP": true,
+    "CI": false,
+    "NODE_ENV": "development",
+    "GIT_USER": "dlnraja",
+    "GIT_EMAIL": "dylan.rajasekaram@gmail.com"
+  },
+  "timestamp": "2025-08-11T16:13:57.179Z",
+  "summary": {
+    "totalSteps": 10,
+    "successfulSteps": 8,
+    "failedSteps": 2,
+    "totalDuration": 520865,
+    "successRate": "80.0%"
+  }
+}

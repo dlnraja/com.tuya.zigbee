@@ -1,39 +1,32 @@
 'use strict';
 
-const { TuyaDevice } = require('homey-tuya');
-const { TuyaZigbeeDevice } = require('homey-tuya-zigbee');
+const { ZigbeeDevice } = require('homey-zigbeedriver');
 
-class TemperatureDevice extends TuyaDevice {
-    
+class ImagesDevice extends ZigbeeDevice {
     async onInit() {
         try {
-        await super.onInit();
-        
-        // Initialize device
-        this.log('temperature device initialized (Historical)');
-        
-        // Register capabilities
-        this.registerCapability('measure_temperature', true);
-        this.registerCapability('measure_humidity', true);
-        this.registerCapability('measure_pressure', true);
-        
-        // Register flows
-        this.registerFlowCards();
+            await super.onInit();
+            
+            // Enregistrer les capacités
+            this.registerCapability('onoff', 'genOnOff');
+            
+            // Gestion d'erreur
+            this.on('error', (error) => {
+                this.log('Erreur device:', error);
+            });
+            
+        } catch (error) {
+            this.log('Erreur initialisation:', error);
+        }
     }
     
     async onUninit() {
-        await super.onUninit();
-        this.log('temperature device uninitialized');
-    }
-    
-    registerFlowCards() {
-        // Register flow cards if needed
-    }
-    
-    async onSettings({ oldSettings, newSettings, changedKeys }) {
-        await super.onSettings({ oldSettings, newSettings, changedKeys });
-        this.log('temperature settings updated');
+        try {
+            await super.onUninit();
+        } catch (error) {
+            this.log('Erreur déinitialisation:', error);
+        }
     }
 }
 
-module.exports = TemperatureDevice;
+module.exports = ImagesDevice;
