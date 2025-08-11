@@ -1,49 +1,5 @@
 'use strict';
-const fs = require('fs');
-const path = require('path');
-
-const ROOT = process.cwd();
-const DRV = path.join(ROOT, 'drivers');
-const OUT = path.join(ROOT, 'drivers-index.json');
-
-function j(p) { try { return JSON.parse(fs.readFileSync(p, 'utf8')); } catch { return null; } }
-
-function* walk(d) {
-  const st = [d];
-  while (st.length) {
-    const c = st.pop();
-    let s;
-    try { s = fs.statSync(c); } catch { continue; }
-    
-    if (s.isDirectory()) {
-      const es = fs.readdirSync(c);
-      for (const e of es) {
-        st.push(path.join(c, e));
-      }
-      
-      const comp = ['driver.compose.json', 'driver.json'].map(n => path.join(c, n)).find(p => fs.existsSync(p));
-      if (comp) yield comp;
-    }
-  }
-}
-
-(function() {
-  if (!fs.existsSync(DRV)) {
-    console.log('[reindex] drivers/ not found');
-    return;
-  }
-  
-  const idx = [];
-  for (const c of walk(DRV)) {
-    const o = j(c);
-    idx.push({
-      compose: path.relative(process.cwd(), c),
-      id: o?.id || null,
-      caps: o?.capabilities || [],
-      domain: path.relative(DRV, path.dirname(c)).split(path.sep)[0] || 'unknown'
-    });
-  }
-  
-  fs.writeFileSync(OUT, JSON.stringify(idx, null, 2));
-  console.log('[reindex] wrote', path.relative(process.cwd(), OUT));
-})();
+const fs=require('fs'),path=require('path');const ROOT=process.cwd(),DRV=path.join(ROOT,'drivers'),OUT=path.join(ROOT,'drivers-index.json');
+function j(p){try{return JSON.parse(fs.readFileSync(p,'utf8'));}catch{return null;}}
+function* walk(d){const st=[d];while(st.length){const c=st.pop();let s;try{s=fs.statSync(c);}catch{continue;}if(s.isDirectory()){const es=fs.readdirSync(c);for(const e of es)st.push(path.join(c,e));const comp=['driver.compose.json','driver.json'].map(n=>path.join(c,n)).find(p=>fs.existsSync(p));if(comp)yield comp;}}}
+(function(){if(!fs.existsSync(DRV)){console.log('[reindex] drivers/ not found');return;}const idx=[];for(const c of walk(DRV)){const o=j(c);idx.push({compose:path.relative(process.cwd(),c),id:o?.id||null,caps:o?.capabilities||[],domain:path.relative(DRV, path.dirname(c)).split(path.sep)[0] || 'unknown'});}fs.writeFileSync(OUT,JSON.stringify(idx,null,2));console.log('[reindex] wrote',path.relative(process.cwd(),OUT));})();
