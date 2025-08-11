@@ -7,7 +7,7 @@ Tous les scripts PowerShell ont été convertis en JavaScript pour une meilleure
 ## 📁 **Structure des Scripts**
 
 ### **Script Principal**
-- **`mega-tuya-ultimate.js`** - Orchestrateur principal qui exécute toute la pipeline
+- **`mega-verify-enrich.js`** - Orchestrateur principal qui exécute toute la pipeline
 
 ### **Gestion des Backups et Sources**
 - **`normalize-backup.js`** - Normalise les backups ZIP dans `.backup/zips/`
@@ -15,8 +15,8 @@ Tous les scripts PowerShell ont été convertis en JavaScript pour une meilleure
 - **`ingest-tuya-zips.js`** - Ingeste les ZIPs Tuya pour extraction des drivers
 
 ### **Réorganisation des Drivers**
-- **`reorganize-drivers-ultimate.js`** - Réorganisation complète vers `domain/category/vendor/model`
-- **`reorganize-drivers.js`** - Version simplifiée de réorganisation
+- **`reorganize-drivers.js`** - Réorganisation complète vers `domain/category/vendor/model`
+- **`reorganize-drivers-ultimate.js`** - Version avancée de réorganisation
 
 ### **Migration et Enrichissement**
 - **`migrate-meshdriver-to-zigbeedriver.js`** - Migration meshdriver → zigbeedriver
@@ -59,7 +59,7 @@ drivers/
 
 ### **Exécution Complète**
 ```bash
-node scripts/mega-tuya-ultimate.js
+node scripts/mega-verify-enrich.js
 ```
 
 ### **Exécution Individuelle**
@@ -71,7 +71,7 @@ node scripts/normalize-backup.js
 node scripts/restore-tmp-sources.js
 
 # Réorganiser drivers
-node scripts/reorganize-drivers-ultimate.js
+node scripts/reorganize-drivers.js
 
 # Migrer vers zigbeedriver
 node scripts/migrate-meshdriver-to-zigbeedriver.js
@@ -140,7 +140,7 @@ Pour mettre à jour les scripts :
 node scripts/cleanup-obsolete.js
 
 # Exécuter le mega-prompt
-node scripts/mega-tuya-ultimate.js
+node scripts/mega-verify-enrich.js
 ```
 
 ---
