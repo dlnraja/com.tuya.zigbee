@@ -202,6 +202,20 @@ function main() {
   log('update readme');
   tryRun('node', ['scripts/update-readme.js']);
   
+  // Auto-fix JSON avant lint
+  log('json auto-fix');
+  tryRun('node', ['scripts/fix-json-files.js']);
+  log('json auto-fix ext');
+  tryRun('node', ['scripts/fix-json-files-extended.js']);
+  
+  // Validations supplémentaires
+  log('json lint');
+  tryRun('node', ['scripts/json-lint.js']);
+  log('compose schema');
+  tryRun('node', ['scripts/validate-compose-schema.js']);
+  log('scan missing files');
+  tryRun('node', ['scripts/scan-missing-required.js']);
+  
   // Tests optionnels
   if (!SKIP_NPM) {
     log('npm install/ci');
