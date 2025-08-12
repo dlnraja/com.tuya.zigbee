@@ -129,7 +129,7 @@ function main() {
     if (!SKIP_GIT_PUSH) {
       const timestamp = new Date().toISOString().slice(0, 16).replace(/[-:T]/g, '');
       log('git commit + push');
-      tryRun('node', ['scripts/git-commit-push.js', `feat: progressive batch ${timestamp}`]);
+      tryRun('node', ['scripts/git-commit-push.js', `feat-progressive-batch-${timestamp}`]);
     }
     
     log('PROGRESSIVE MODE completed');
