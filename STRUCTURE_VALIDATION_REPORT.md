@@ -1,10 +1,10 @@
-# Rapport de Validation Structure - 2025-08-12T16:45:07.108Z
+# Rapport de Validation Structure - 2025-08-12T17:27:05.915Z
 
 ## Résumé
-- **Total drivers**: 213
-- **Valides**: 211
-- **Invalides**: 2
-- **Taux de succès**: 99%
+- **Total drivers**: 210
+- **Valides**: 210
+- **Invalides**: 0
+- **Taux de succès**: 100%
 
 ## Structure attendue
 ```
@@ -29,8 +29,7 @@ drivers/
 ```
 
 ## Erreurs détectées
-- Fichiers manquants: C:\Users\HP\Desktop\tuya_repair\drivers\zigbee\cover\generic\lellki - driver.compose.json, device.js, assets/
-- Fichiers manquants: C:\Users\HP\Desktop\tuya_repair\drivers\zigbee\plug\generic\lellki - driver.compose.json, device.js, assets/
+Aucune erreur
 
 ## Avertissements
 Aucun avertissement

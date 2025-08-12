@@ -36,6 +36,7 @@ function envFlag(name,def){const v=process.env[name];if(v==null||v==='')return d
     tryRun('node',['scripts/reindex-drivers.js']);
     tryRun('node',['scripts/dashboard-generator.js']);
     tryRun('node',['scripts/update-readme.js']);
+    tryRun('node',['scripts/organize-reports.js']);
     if(!SKIP_GIT_PUSH) tryRun('node',['scripts/git-commit-push.js','build-enrich-batch-' + new Date().toISOString().slice(0,16).replace(/[-:T]/g, '')]);
     log('ENRICHMENT progressive done'); process.exit(0);
   }
@@ -56,6 +57,7 @@ function envFlag(name,def){const v=process.env[name];if(v==null||v==='')return d
   log('reindex');                 tryRun('node',['scripts/reindex-drivers.js']);
   log('dashboard');               tryRun('node',['scripts/dashboard-generator.js']);
   log('readme');                  tryRun('node',['scripts/update-readme.js']);
+  log('organize reports');        tryRun('node',['scripts/organize-reports.js']);
   log('sources wildcard');        tryRun('node',['scripts/sources/sources-orchestrator.js','--now']);
 
   if(!SKIP_NPM){
