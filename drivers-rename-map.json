@@ -1,23 +1,6 @@
 {
-  "moves": [
-    {
-      "from": "zigbee\\switch\\generic\\radar-24g",
-      "to": "tuya\\switch\\tuya\\radar-24g"
-    },
-    {
-      "from": "tuya\\sensor-temperature\\tuya\\upagmta9",
-      "to": "tuya\\climate-thermostat\\tuya\\ts0601"
-    },
-    {
-      "from": "tuya\\climate-thermostat\\tuya\\ts130f",
-      "to": "tuya\\siren\\tuya\\ts130f"
-    }
-  ],
+  "moves": [],
   "merges": [
-    {
-      "from": "tuya\\sensor-presence\\tuya\\gkfbdvyx",
-      "to": "tuya\\sensor-motion\\tuya\\ts0601"
-    },
     {
       "from": "tuya\\light\\tuya\\ts130f",
       "to": "tuya\\cover\\tuya\\ts130f"
