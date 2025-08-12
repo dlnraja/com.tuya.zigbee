@@ -1,7 +1,72 @@
 # Verify & Coherence Report
 
 Drivers scanned: 210
-Drivers modified: 0
+Drivers modified: 65
 
-Fingerprints: 40055 (refs/fingerprints.json)
+Fingerprints: 40164 (refs/fingerprints.json)
 
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\siren\tuya\tuya-chime-96\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\siren\tuya\tuya-chime-728\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\siren\tuya\tuya-buzzer-704\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\siren\tuya\tuya-buzzer-702\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\siren\tuya\tuya-alarm-579\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\siren\tuya\tuya-alarm-271\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-water-581\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-water-264\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-thermostat-825\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-thermostat-435\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-temperature-779\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-temperature-622\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-switch-549\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-switch-225\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-smoke-927\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-smoke-109\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-smart-963\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-smart-181\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-power-890\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-power-50\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-outlet-791\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-outlet-692\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-motion-362\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-motion-299\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-humidity-86\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-humidity-498\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-heater-387\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-heater-0\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-gas-695\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-gas-320\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-fan-730\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-fan-200\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-contact-219\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-contact-202\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-ac-563\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\plug\tuya\tuya-ac-322\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\lock\tuya\tuya-padlock-551\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\lock\tuya\tuya-padlock-538\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\lock\tuya\tuya-door-537\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\lock\tuya\tuya-door-450\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\lock\tuya\tuya-deadbolt-850\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\lock\tuya\tuya-deadbolt-261\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\light\tuya\tuya-wall-287\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\light\tuya\tuya-wall-10\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\light\tuya\tuya-table-775\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\light\tuya\tuya-table-5\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\light\tuya\tuya-strip-782\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\light\tuya\tuya-strip-423\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\light\tuya\tuya-garden-409\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\light\tuya\tuya-garden-168\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\light\tuya\tuya-floor-269\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\light\tuya\tuya-floor-141\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\light\tuya\tuya-ceiling-36\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\light\tuya\tuya-ceiling-282\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\light\tuya\tuya-bulb-305\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\light\tuya\tuya-bulb-211\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\light\tuya\ts130f\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\cover\tuya\tuya-shade-647\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\cover\tuya\tuya-shade-162\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\cover\tuya\tuya-garage-581\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\cover\tuya\tuya-garage-18\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\cover\tuya\tuya-curtain-704\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\cover\tuya\tuya-curtain-601\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\cover\tuya\tuya-blind-531\driver.compose.json
+* merged zigbee ids: C:\Users\HP\Desktop\tuya_repair\drivers\tuya\cover\tuya\tuya-blind-205\driver.compose.json
