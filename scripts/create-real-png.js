@@ -20,6 +20,7 @@ const largePng = Buffer.from([
 ]);
 
 // Créer un PNG 250x250 valide (small.png)  
+const smallSize = { width: 250, height: 175 };
 const smallPng = Buffer.from([
   0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A, // PNG signature
   0x00, 0x00, 0x00, 0x0D, // IHDR length
