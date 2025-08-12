@@ -2,7 +2,33 @@
 
 > **Généré automatiquement** par le système d'enrichissement continu
 
-## 🚀 v3.2.0 - 2025-01-29
+## 🚀 v3.3.1 - 2025-01-29 18:15 (MEGA-PIPELINE COMPLÈTE)
+
+### ✨ Nouveautés Majeures
+- **MEGA-PIPELINE** : Pipeline progressive selon MEGA-INDICATIONS Cursor
+- **210 Drivers Enrichis** : Enrichissement massif automatique réussi
+- **GitHub Pages Réparé** : Workflow moderne + dashboard fonctionnel
+- **Helpers Anti-Crash** : `lib/helpers.js` avec `toArray()` sécurisé partout
+
+### 🔧 Corrections Critiques  
+- **Versioning Harmonisé** : app.json + package.json synchronisés en v3.3.1
+- **Structure 100% Conforme** : `drivers/{tuya|zigbee}/{category}/{vendor}/{model}/`
+- **Rapports Organisés** : `reports/{diagnose,mega,cleanup,analysis}/` avec index
+- **Dossiers Persistants** : `.backup/zips` + `.tmp_tuya_zip_work` + `.keep` files
+
+### 📊 Statistiques v3.3.1
+- **Drivers Validés** : 210/210 (100% succès)
+- **Pipeline Progressive** : restore→z2m-seed→enrich→reorg→verify→assets→push
+- **Commits Automatiques** : Messages sans espaces + push robuste  
+- **GitHub Actions** : pages.yml moderne + deploy.yml corrigé
+
+### 🛠️ Drivers Enrichis (Lot Complet)
+- **Tous les Tuya** : manufacturerName[]/modelId[] consolidés
+- **Tous les Zigbee** : fingerprints Aqara/IKEA complétés
+- **Assets Complets** : icon.svg + small.png générés
+- **Structure Stricte** : Aucun variant/ restant, tout fusionné
+
+## 🚀 v3.2.0 - 2025-01-29 (Base Précédente)
 
 ### ✨ Nouveautés
 - **Mode Enrichissement Activé** : Pipeline non-destructive pour amélioration continue
@@ -69,4 +95,7 @@ merged:0 created:0 icons:0
 merged:0 created:0 icons:0
 
 ## Auto-merge 2025-08-12T17:46:30.664Z
+merged:0 created:0 icons:0
+
+## Auto-merge 2025-08-12T19:21:17.944Z
 merged:0 created:0 icons:0
