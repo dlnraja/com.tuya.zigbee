@@ -65,6 +65,14 @@ function main() {
     tryRun('node', ['scripts/backup-drivers-incr.js']);
   }
 
+  // Ajouter après backup incrémental
+  log('AI decision making');
+  tryRun('node', ['scripts/ai-pipeline-script-1.js']);
+  log('AI cache prune');
+  tryRun('node', ['scripts/ai-pipeline-script-2.js']);
+  log('AI health diag');
+  tryRun('node', ['scripts/ai-pipeline-script-10.js']);
+
   if (PROGRESSIVE) {
     log(`PROGRESSIVE MODE: restore → z2m-seed(${BATCH_SIZE}) → enrich → reorg → verify/diag → assets/small → reindex → dashboard → push`);
     
