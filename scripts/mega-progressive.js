@@ -67,6 +67,15 @@ function main() {
   tryRun('node', ['scripts/ai-adv-script-2.js']);
   // ... Ajouter jusqu'à 50 (ex. log('pipeline-ai-step-50'); tryRun('node', ['scripts/ai-adv-script-50.js']);)
 
+  // Ajouter après pipeline-ai-step-50 du lot 1
+  log('scripts-ai-lot2-1');
+  tryRun('node', ['scripts/ai-ext-script-101.js']);
+  log('scripts-ai-lot2-2');
+  tryRun('node', ['scripts/ai-ext-script-102.js']);
+  // ... jusqu'à 50
+  log('scripts-ai-lot2-50');
+  tryRun('node', ['scripts/ai-ext-script-150.js']);
+
   if (BACKUP_INCR) {
     log('Backup incrémental des drivers');
     tryRun('node', ['scripts/backup-drivers-incr.js']);
