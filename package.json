@@ -40,6 +40,7 @@
     "ai-enrichment": "node scripts/ai-enrichment-parser.js",
     "dashboard": "node scripts/dashboard-generator.js",
     "organize-reports": "node scripts/organize-reports.js",
+    "check-pages": "node scripts/check-github-pages.js",
     "sources-extract": "node scripts/sources/sources-orchestrator.js",
     "sources-parse": "node scripts/sources/parsers/driver-metadata-parser.js",
     "sources-enrich": "node scripts/sources/enrichers/ai-enrichment-engine.js",
