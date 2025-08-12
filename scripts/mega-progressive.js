@@ -55,6 +55,16 @@ function main() {
   process.env.CI = '1';
   process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 
+  const SIMULATE = envFlag('SIMULATE', false);
+  const BACKUP_INCR = envFlag('BACKUP_INCR', true);
+
+  if (SIMULATE) log('MODE SIMULATE ACTIVÉ - Pas de changements réels');
+
+  if (BACKUP_INCR) {
+    log('Backup incrémental des drivers');
+    tryRun('node', ['scripts/backup-drivers-incr.js']);
+  }
+
   if (PROGRESSIVE) {
     log(`PROGRESSIVE MODE: restore → z2m-seed(${BATCH_SIZE}) → enrich → reorg → verify/diag → assets/small → reindex → dashboard → push`);
     
