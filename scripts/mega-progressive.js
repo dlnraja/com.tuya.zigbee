@@ -60,6 +60,13 @@ function main() {
 
   if (SIMULATE) log('MODE SIMULATE ACTIVÉ - Pas de changements réels');
 
+  // Ajouter au début de main(), avant backup
+  log('pipeline-ai-step-1');
+  tryRun('node', ['scripts/ai-adv-script-1.js']);
+  log('pipeline-ai-step-2');
+  tryRun('node', ['scripts/ai-adv-script-2.js']);
+  // ... Ajouter jusqu'à 50 (ex. log('pipeline-ai-step-50'); tryRun('node', ['scripts/ai-adv-script-50.js']);)
+
   if (BACKUP_INCR) {
     log('Backup incrémental des drivers');
     tryRun('node', ['scripts/backup-drivers-incr.js']);
