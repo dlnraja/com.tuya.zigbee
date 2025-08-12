@@ -232,4 +232,14 @@ function main() {
   if (!SKIP_GIT_PUSH) {
     const timestamp = new Date().toISOString().slice(0, 16).replace(/[-:T]/g, '');
     log('git commit + push');
-    tryRun('node', ['scripts/git-commit-push.js', `
+    tryRun('node', ['scripts/git-commit-push.js', 'build-full-run-' + timestamp]);
+  }
+  
+  log('FULL MODE completed');
+}
+
+if (require.main === module) {
+  main();
+}
+
+module.exports = { main };

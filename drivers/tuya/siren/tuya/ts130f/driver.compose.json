@@ -639,7 +639,8 @@
       "_TZE204_6wi2mope",
       "_TZE204_iik0pquw",
       "_TZE200_gbagoilo",
-      "_TZE20X_xxxxxxxx"
+      "_TZE20X_xxxxxxxx",
+      "tuya"
     ],
     "modelId": [
       "ts130f",
@@ -702,7 +703,10 @@
       "ts0601_presence",
       "ts0601_gas",
       "ts0601_curtain",
-      "ts0601_thermostat"
+      "ts0601_thermostat",
+      "TS0601_motion",
+      "TS0601_contact",
+      "TS0601_thermostat"
     ]
   }
 }
