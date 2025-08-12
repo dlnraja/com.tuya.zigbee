@@ -111,6 +111,25 @@ com.tuya.zigbee/
 
 ---
 
+## 📚 Sources et Références
+
+### 🔍 **Sources Principales**
+- **[Zigbee2MQTT](https://www.zigbee2mqtt.io/supported-devices/)** - Base de données officielle (4516+ appareils)
+- **[Zigbee-Herdsman Converters](https://github.com/Koenkk/zigbee-herdsman-converters)** - Définitions source de vérité
+- **[Blakadder Zigbee DB](https://zigbee.blakadder.com/)** - Base de données croisée
+- **[ZHA Device Handlers](https://github.com/zigpy/zha-device-handlers)** - Signatures Home Assistant
+- **[deCONZ Supported Devices](https://dresden-elektronik.github.io/deconz-rest-doc/devices/)** - Liste officielle deCONZ
+
+### 🏠 **Sources Homey**
+- **[Homey Community Forum](https://community.homey.app/t/app-pro-tuya-zigbee-app/26439)** - Retours utilisateurs
+- **[Athom Libraries](https://github.com/athombv/node-zigbee-clusters)** - Bibliothèques officielles Homey
+
+### 📖 **Documentation Complète**
+- **[SOURCES.md](SOURCES.md)** - Guide détaillé des sources et références
+- **[MEGA_PIPELINE_GUIDE.md](MEGA_PIPELINE_GUIDE.md)** - Guide du pipeline d'intégration
+
+---
+
 ## 🔧 Validation et Tests
 
 ### Validation Homey

@@ -1,73 +1,39 @@
 {
-  "id": "cover-lellki-ts130f",
-  "capabilities": [
-    "onoff",
-    "button",
-    "lock_state",
-    "`onoff`",
-    "`dim`",
-    "* `light_mode`",
-    "`light_hue`",
-    "`light_saturation` and `light_temperature`",
-    "measure_temperature",
-    "measure_humidity",
-    "i",
-    "measure_pressure",
-    "alarm_motion",
-    "alarm_battery",
-    "alarm_contact",
-    "alarm_tamper",
-    "windowcoverings_state",
-    "windowcoverings_set",
-    "garage_door_set",
-    "target_temperature",
-    "measure_battery",
-    "alarm_water",
-    "thermostat_programming",
-    "child_lock",
-    "alarm_smoke",
-    "alarm_siren",
-    "alarm_cleaning",
-    "measure_luminance",
-    "measure_luminance.20min",
-    "measure_luminance.daily_max",
-    "measure_voltage.rain",
-    "target_distance",
-    "finger_bot_mode"
-  ],
-  "capabilitiesOptions": {},
-  "icon": "/assets/icon.svg",
-  "images": {
-    "small": "/assets/images/small.png",
-    "large": "/assets/images/large.png"
-  },
-  "class": "thermostat",
-  "connectivity": "zigbee",
+  "id": "sensor-motion-tuya-ts0601",
   "name": {
-    "en": "Wall Thermostat",
-    "nl": "Wall Thermostat",
-    "fr": "Wall Thermostat",
-    "de": "Wall Thermostat"
+    "en": "Tuya 24G Radar Motion Sensor",
+    "fr": "Capteur de Mouvement Radar 24G Tuya",
+    "nl": "Tuya 24G Radar Bewegingssensor"
   },
-  "manufacturer": "_TZ3000_xxxxxxxx",
-  "product": "WALL_THERMOSTAT",
-  "dataPoints": {
-    "1": {
-      "name": "switch",
-      "type": "bool",
-      "writable": true
+  "class": "sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "measure_luminance",
+    "alarm_motion",
+    "target_distance",
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "images": {
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 0,
+      "usageOff": 0
     }
-  },
-  "metadata": {
-    "enriched": true,
-    "enrichmentDate": "2025-08-07T17:53:57.390Z",
-    "driverType": "zigbee",
-    "category": "thermostats",
-    "subcategory": "wall_thermostat",
-    "megaUltimateBugFixer": true
   },
   "zigbee": {
     "manufacturerName": [
+      "_TZE204_gkfbdvyx",
+      "ikea",
+      "aqara",
       "LELLKI",
       "_TZ3000_kdi2o9m6",
       "_TZ3000_ew31dmgx",
@@ -94,10 +60,8 @@
       "_TZ3000_eafaa66e",
       "Tuya",
       "Moes",
-      "Aqara",
       "Xiaomi",
       "Philips",
-      "IKEA",
       "Osram",
       "Samsung",
       "LG",
@@ -496,59 +460,60 @@
       "_TZ3210_k1msuvg6",
       "_TZ3000_mgusv51k",
       "_TZ3000_ltt60asa",
-      "_TZ3000"
+      "_TZ3000",
+      "tuya",
+      "_TZE200_r731zlxk",
+      "_TZE200_9mahtqtg",
+      "_TZE200_jwsjbxjs",
+      "_TZE200_shkxsgis",
+      "_TZE204_aagrxlbd",
+      "_TZE200_aqnazj70",
+      "_TZE200_di3tfv5b",
+      "_TZE200_mexisfik",
+      "_TZE204_6wi2mope",
+      "_TZE204_iik0pquw",
+      "_TZE200_gbagoilo",
+      "_TZE20X_xxxxxxxx"
     ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          258,
+          61184
+        ],
+        "bindings": [
+          258,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press and hold the reset button for 6 seconds. When the indicator light flashes it is in pairing mode.",
+        "fr": "Appuyez et maintenez le bouton de réinitialisation pendant 6 secondes. Quand le voyant clignote, il est en mode d'appairage.",
+        "nl": "Druk 6 seconden op de reset knop. Wacht tot de led gaat knipperen."
+      }
+    },
     "modelId": [
-      "ts130f",
+      "TS0601",
       "ts0601",
-      "ts011f",
-      "ts0121",
-      "tso121",
-      "rh3052",
-      "ts0201",
-      "rh3001",
-      "ts0203",
-      "ts0207",
-      "ts0014",
-      "ts0044",
-      "ts0003",
-      "ts0013",
-      "ts0043",
-      "ts0002",
-      "ts0012",
-      "ts0042",
-      "ts0001",
-      "ts0011",
-      "ts0046",
-      "ts004f",
-      "ts0041",
-      "ts0111",
-      "ts0502a",
-      "ts0004",
-      "ts000f",
-      "ts0115",
-      "ts0205",
-      "ts0215a",
-      "ty0202",
-      "ts0101",
-      "ts0049",
-      "ty0203",
-      "ts0202",
-      "ts0505a",
-      "ts0505b",
-      "ts0503a",
-      "ts0503b",
-      "ts0504b",
-      "ts0225",
-      "ty0201",
-      "ts0222",
-      "mct-340 e",
-      "ts110f",
-      "ts110e",
-      "ts0052",
-      "ts0502b",
-      "rh3040",
-      "doorwindow-sensor-zb3.0"
+      "ts0601_motion",
+      "ts0601_contact",
+      "ts0601_water",
+      "ts0601_vibration",
+      "ts0601_switch",
+      "ts0601_smoke",
+      "ts0601_presence",
+      "ts0601_gas",
+      "ts0601_curtain",
+      "ts0601_thermostat"
     ]
   }
 }
