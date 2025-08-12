@@ -36,7 +36,7 @@ function envFlag(name,def){const v=process.env[name];if(v==null||v==='')return d
     tryRun('node',['scripts/reindex-drivers.js']);
     tryRun('node',['scripts/dashboard-generator.js']);
     tryRun('node',['scripts/update-readme.js']);
-    if(!SKIP_GIT_PUSH) tryRun('node',['scripts/git-commit-push.js',`build: enrich batch ${new Date().toISOString().slice(0,16)}`]);
+    if(!SKIP_GIT_PUSH) tryRun('node',['scripts/git-commit-push.js','build-enrich-batch-' + new Date().toISOString().slice(0,16).replace(/[-:T]/g, '')]);
     log('ENRICHMENT progressive done'); process.exit(0);
   }
 
