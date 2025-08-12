@@ -1,6 +1,7 @@
 'use strict';
 const fs=require('fs'),fsp=require('fs/promises'),path=require('path');
-const APPLY=process.argv.includes('--apply');const ROOT=process.cwd();const TMP=path.join(ROOT,'.tmp_tuya_zip_work');const DRV=path.join(ROOT,'drivers');const BK=[path.join(ROOT,'.backup')].filter(fs.existsSync);
+const APPLY=process.argv.includes('--apply');
+const NO_REWRITE=process.argv.includes('--no-rewrite');const ROOT=process.cwd();const TMP=path.join(ROOT,'.tmp_tuya_zip_work');const DRV=path.join(ROOT,'drivers');const BK=[path.join(ROOT,'.backup')].filter(fs.existsSync);
 function listCompose(root){const out=[];if(!fs.existsSync(root))return out;const st=[root];while(st.length){const cur=st.pop();let s;try{s=fs.statSync(cur);}catch{continue;}if(s.isDirectory()){for(const e of fs.readdirSync(cur)){const p=path.join(cur,e);try{const ss=fs.statSync(p);if(ss.isDirectory())st.push(p);else if(ss.isFile()&&/driver(\.compose)?\.json$/i.test(p))out.push(p);}catch{}}}}return out;}
 function j(p){try{return JSON.parse(fs.readFileSync(p,'utf8'));}catch{return null;}}
 function A(v){return Array.isArray(v)?v:(v?[v]:[]);}function M(a,b){return Array.from(new Set([...(A(a)),...(A(b))].filter(Boolean)));}

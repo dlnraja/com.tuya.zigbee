@@ -1,6 +1,7 @@
 'use strict';
 const fs=require('fs'),path=require('path');
 const ROOT=process.cwd(),DRV=path.join(ROOT,'drivers');
+const PRUDENT=process.argv.includes('--prudent');
 function j(p){try{return JSON.parse(fs.readFileSync(p,'utf8'));}catch{return null;}}
 function w(p,o){fs.mkdirSync(path.dirname(p),{recursive:true});fs.writeFileSync(p,JSON.stringify(o,null,2)+'\n');}
 function slug(s){return String(s||'').toLowerCase().replace(/[^a-z0-9._-]+/g,'-').replace(/-{2,}/g,'-').replace(/^-+|-+$/g,'');}

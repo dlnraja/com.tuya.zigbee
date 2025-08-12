@@ -6,31 +6,38 @@ function log(m){console.log('[mega]',m);}
 function envFlag(name,def){const v=process.env[name];if(v==null||v==='')return def;return /^0|false|no$/i.test(String(v))?false:true;}
 
 (function(){
+  const ENRICH_ONLY   = envFlag('ENRICH_ONLY', true);
+  const NO_REWRITE    = envFlag('NO_REWRITE', true);
+  const NO_DELETE     = envFlag('NO_DELETE', true);
   const DO_MIGRATE    = envFlag('DO_MIGRATE', true);
-  const SKIP_NPM     = envFlag('SKIP_NPM', true);
-  const SKIP_VALIDATE= envFlag('SKIP_VALIDATE', true);
-  const SKIP_RUN     = envFlag('SKIP_RUN', true);
-  const SKIP_GIT_PUSH= envFlag('SKIP_GIT_PUSH', true);
-  const PROGRESSIVE  = envFlag('PROGRESSIVE', false);
+  const PERSIST_TMP   = envFlag('PERSIST_TMP', true);
+  const KEEP_BACKUP   = envFlag('KEEP_BACKUP', true);
+  const SKIP_NPM      = envFlag('SKIP_NPM', true);
+  const SKIP_VALIDATE = envFlag('SKIP_VALIDATE', true);
+  const SKIP_RUN      = envFlag('SKIP_RUN', true);
+  const SKIP_GIT_PUSH = envFlag('SKIP_GIT_PUSH', false);
+  const PROGRESSIVE   = envFlag('PROGRESSIVE', true);
 
   process.env.CI='1';process.env.NODE_ENV=process.env.NODE_ENV||'production';
 
   if (PROGRESSIVE) {
-    log('progressive: restore → fixpkg → z2m-seed(batch) → enrich → reorg → verify → diag(fix) → assets → small → reindex → dash → push');
-    tryRun('node',['scripts/normalize-backup.js']);
+    log('ENRICHMENT MODE: restore → fixpkg → z2m-seed(batch) → enrich-only → reorg(prudent) → verify → diag(--fix) → assets → small → reindex → dash → push');
+    if(PERSIST_TMP && KEEP_BACKUP) tryRun('node',['scripts/normalize-backup.js']);
     tryRun('node',['scripts/sources/local/restore-tmp-sources.js']);
     tryRun('node',['scripts/fix-package.js']);
     tryRun('node',['scripts/sources/z2m-seed.js']);
-    tryRun('node',['scripts/enrich-drivers.js','--apply']);
-    tryRun('node',['scripts/reorganize-drivers.js']);
+    tryRun('node',['scripts/enrich-drivers.js','--apply','--no-rewrite']);
+    if(DO_MIGRATE) tryRun('node',['scripts/migrate-meshdriver-to-zigbeedriver.js']);
+    tryRun('node',['scripts/reorganize-drivers.js','--prudent']);
     tryRun('node',['scripts/verify-coherence-and-enrich.js']);
     tryRun('node',['scripts/diagnose-drivers.js','--fix','--fix-assets']);
     tryRun('node',['scripts/assets-generate.js']);
     tryRun('node',['scripts/create-small-png.js']);
     tryRun('node',['scripts/reindex-drivers.js']);
     tryRun('node',['scripts/dashboard-generator.js']);
-    tryRun('node',['scripts/git-commit-push.js','build: progressive batch']);
-    log('progressive batch done'); process.exit(0);
+    tryRun('node',['scripts/update-readme.js']);
+    if(!SKIP_GIT_PUSH) tryRun('node',['scripts/git-commit-push.js',`build: enrich batch ${new Date().toISOString().slice(0,16)}`]);
+    log('ENRICHMENT progressive done'); process.exit(0);
   }
 
   log('normalize backups');       tryRun('node',['scripts/normalize-backup.js']);
