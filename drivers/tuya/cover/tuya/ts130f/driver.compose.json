@@ -1,0 +1,38 @@
+{
+  "id": "cover-tuya-ts130f",
+  "name": { "en": "Tuya Curtain/Blind (TS130F)", "fr": "Tuya Rideau/Volet (TS130F)" },
+  "class": "windowcoverings",
+  "capabilities": [
+    "windowcoverings_set",
+    "windowcoverings_state"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya", "_TZ3000_vd43bbfq", "_TZ3000_fccpjz5z", "_TZ3000_8kzqqzu4",
+      "_TZ3000_l13erpv4", "_TZ3000_fvhunhxb", "_TZ3000_zirycpws",
+      "_TZ3210_dwytrmda", "_TZ3210_ol1uhvza"
+    ],
+    "modelId": ["TS130F"],
+    "endpoints": {
+      "1": {
+        "clusters": [ "genBasic", "genOnOff", "closuresWindowCovering", "manuSpecificTuya" ]
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "invert_direction",
+      "type": "checkbox",
+      "label": { "en": "Invert motor direction", "fr": "Inverser le sens du moteur" },
+      "value": false
+    },
+    {
+      "id": "calibration_time",
+      "type": "number",
+      "label": { "en": "Calibration time (s)", "fr": "Temps de calibration (s)" },
+      "attr": { "min": 5, "max": 120, "step": 1 },
+      "value": 30,
+      "hint": { "en": "If native calibration fails, this is used for time-based fallback.", "fr": "Si la calibration native échoue, ce temps sert de secours basé sur la durée." }
+    }
+  ]
+}

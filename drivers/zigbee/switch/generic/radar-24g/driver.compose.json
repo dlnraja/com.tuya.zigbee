@@ -1,0 +1,106 @@
+{
+  "id": "switch-generic-radar-24g",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "category": [
+    "sensor"
+  ],
+  "name": {
+    "en": "Tuya Radar Sensor 24G",
+    "fr": "Capteur Radar Tuya 24G",
+    "nl": "Tuya Radar Sensor 24G"
+  },
+  "description": {
+    "en": "Tuya 24GHz radar presence sensor with motion detection, illuminance and distance measurement",
+    "fr": "Capteur de présence radar Tuya 24GHz avec détection de mouvement, luminosité et mesure de distance",
+    "nl": "Tuya 24GHz radar aanwezigheidssensor met bewegingsdetectie, verlichting en afstandsmeting"
+  },
+  "images": {
+    "small": "/assets/small.png",
+    "large": "/assets/icon.svg"
+  },
+  "author": "dlnraja",
+  "homepage": "https://github.com/dlnraja/homey-tuya-zigbee",
+  "license": "MIT",
+  "drivers": [
+    {
+      "id": "radar-24g",
+      "name": {
+        "en": "Radar 24G",
+        "fr": "Radar 24G",
+        "nl": "Radar 24G"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance",
+        "target_distance"
+      ],
+      "images": {
+        "small": "/assets/small.png",
+        "large": "/assets/icon.svg"
+      },
+      "pair": [
+        {
+          "id": "pair",
+          "template": "pair"
+        }
+      ],
+      "settings": [
+        {
+          "id": "sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Motion Sensitivity",
+            "fr": "Sensibilité du Mouvement",
+            "nl": "Bewegingsgevoeligheid"
+          },
+          "value": 5,
+          "min": 1,
+          "max": 10,
+          "step": 1
+        },
+        {
+          "id": "detection_distance",
+          "type": "number",
+          "label": {
+            "en": "Detection Distance (m)",
+            "fr": "Distance de Détection (m)",
+            "nl": "Detectieafstand (m)"
+          },
+          "value": 8,
+          "min": 1,
+          "max": 12,
+          "step": 1
+        }
+      ]
+    }
+  ],
+  "dependencies": {
+    "homey": ">=5.0.0"
+  },
+  "keywords": [
+    "tuya",
+    "radar",
+    "24g",
+    "motion",
+    "presence",
+    "sensor",
+    "illuminance",
+    "distance"
+  ],
+  "bugs": "https://github.com/dlnraja/homey-tuya-zigbee/issues",
+  "repository": "https://github.com/dlnraja/homey-tuya-zigbee",
+  "capabilities": [
+    "`onoff`",
+    "`dim`",
+    "* `light_mode`",
+    "`light_hue`",
+    "`light_saturation` and `light_temperature`",
+    "i"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  }
+}

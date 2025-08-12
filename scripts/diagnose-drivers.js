@@ -1,140 +1,22 @@
-"use strict";
-
-const fs = require("fs");
-const path = require("path");
-
-const ROOT = process.cwd();
-const DRIVERS_DIR = path.join(ROOT, "drivers");
-
-const args = process.argv.slice(2);
-const SHOULD_FIX = args.includes("--fix");
-const SHOULD_FIX_ASSETS = args.includes("--fix-assets");
-
-function safeReadJSON(filePath) {
-  try {
-    const raw = fs.readFileSync(filePath, "utf8");
-    return { ok: true, data: JSON.parse(raw) };
-  } catch (e) {
-    return { ok: false, error: e.message };
+'use strict';
+const fs=require('fs'),path=require('path');
+const ROOT=process.cwd(),DRV=path.join(ROOT,'drivers');const STRICT=process.argv.includes('--strict');const FIX=process.argv.includes('--fix');const FIX_ASSETS=process.argv.includes('--fix-assets');
+function j(p){try{return JSON.parse(fs.readFileSync(p,'utf8'));}catch{return null;}}
+function* composeFiles(d){if(!fs.existsSync(d))return;const st=[d];while(st.length){const c=st.pop();let s;try{s=fs.statSync(c);}catch{continue;}if(s.isDirectory()){const es=fs.readdirSync(c,{withFileTypes:true});const comp=['driver.compose.json','driver.json'].map(n=>path.join(c,n)).find(p=>fs.existsSync(p));if(comp)yield comp;for(const e of es)if(e.isDirectory())st.push(path.join(c,e.name));}}}
+(function(){
+  const issues=[]; let fixed=0;
+  for(const f of composeFiles(DRV)){
+    const dir=path.dirname(f); const o=j(f)||{};
+    const parts=path.relative(DRV,dir).split(path.sep);
+    if(parts.length<4){issues.push({type:'layout',file:f,msg:'wrong depth'});}
+    if(!o.id) { issues.push({type:'id',file:f,msg:'missing id'}); if(FIX){o.id=parts.slice(-3).join('-');} }
+    if(typeof o.name==='string' && FIX){ o.name={en:o.name,fr:o.name}; }
+    if(o.capabilities && !Array.isArray(o.capabilities) && FIX){ o.capabilities=[o.capabilities]; }
+    const assets=path.join(dir,'assets'); const icon=path.join(assets,'icon.svg');
+    if(FIX_ASSETS){ if(!fs.existsSync(assets))fs.mkdirSync(assets,{recursive:true}); if(!fs.existsSync(icon)) fs.writeFileSync(icon,`<svg xmlns="http://www.w3.org/2000/svg"><rect width="256" height="256" fill="#f6f8fa"/></svg>`); }
+    if(FIX){ fs.writeFileSync(f,JSON.stringify(o,null,2)); fixed++; }
   }
-}
-
-function ensureDir(dir) {
-  fs.mkdirSync(dir, { recursive: true });
-}
-
-function createDefaultFiles(driverPath, composeData) {
-  // assets
-  const assetsDir = path.join(driverPath, "assets");
-  ensureDir(assetsDir);
-  const imagesDir = path.join(assetsDir, "images");
-  ensureDir(imagesDir);
-
-  const iconPath = path.join(assetsDir, "icon.svg");
-  if (!fs.existsSync(iconPath)) {
-    fs.writeFileSync(
-      iconPath,
-      `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='#0a84ff'/><text x='50' y='55' font-size='28' text-anchor='middle' fill='#fff'>${composeData?.id || "dev"}</text></svg>`
-    );
-  }
-
-  const smallPath = path.join(imagesDir, "small.png");
-  if (!fs.existsSync(smallPath)) {
-    // placeholder b64 1x1 png
-    const b64 = Buffer.from(
-      "89504E470D0A1A0A0000000D49484452000000010000000108060000001F15C4890000000A49444154789C6360000002000154A6A6100000000049454E44AE426082",
-      "hex"
-    );
-    fs.writeFileSync(smallPath, b64);
-  }
-}
-
-function diagnose() {
-  console.log("🚦 Diagnostic des drivers...");
-  const report = {
-    totalDrivers: 0,
-    invalidJSON: [],
-    missingCompose: [],
-    missingDeviceJs: [],
-    missingAssets: [],
-    fixed: [],
-  };
-
-  function scan(dir) {
-    const items = fs.readdirSync(dir);
-    for (const item of items) {
-      const full = path.join(dir, item);
-      const st = fs.statSync(full);
-      if (st.isDirectory()) {
-        scan(full);
-      } else if (item === "driver.compose.json") {
-        report.totalDrivers++;
-        const driverDir = path.dirname(full);
-        const compose = safeReadJSON(full);
-        if (!compose.ok) {
-          report.invalidJSON.push({ path: full, error: compose.error });
-          if (SHOULD_FIX) {
-            try {
-              // tentative de correction minimale: trim et reparse
-              const raw = fs.readFileSync(full, "utf8").trim();
-              JSON.parse(raw);
-              fs.writeFileSync(full, raw);
-              report.fixed.push({ path: full, action: "trim-json" });
-            } catch (_) {}
-          }
-        }
-
-        // device.js
-        const deviceJs = path.join(driverDir, "device.js");
-        if (!fs.existsSync(deviceJs)) {
-          report.missingDeviceJs.push(driverDir);
-          if (SHOULD_FIX) {
-            const id = compose.ok ? compose.data.id : path.basename(driverDir);
-            fs.writeFileSync(
-              deviceJs,
-              `"use strict";\nconst { ZigBeeDevice } = require("homey-zigbeedriver");\nclass Device extends ZigBeeDevice { async onNodeInit() { this.printNode(); } }\nmodule.exports = Device;\n`
-            );
-            report.fixed.push({ path: deviceJs, action: "create-device.js" });
-          }
-        }
-
-        // assets
-        const assetsDir = path.join(driverDir, "assets");
-        const imagesDir = path.join(assetsDir, "images");
-        const iconPath = path.join(assetsDir, "icon.svg");
-        const smallPath = path.join(imagesDir, "small.png");
-
-        const missing = [];
-        if (!fs.existsSync(iconPath)) missing.push("icon.svg");
-        if (!fs.existsSync(smallPath)) missing.push("small.png");
-        if (missing.length) {
-          report.missingAssets.push({ driverDir, missing });
-          if (SHOULD_FIX_ASSETS || SHOULD_FIX) {
-            const id = compose.ok ? compose.data.id : path.basename(driverDir);
-            createDefaultFiles(driverDir, { id });
-            report.fixed.push({ path: driverDir, action: "create-assets" });
-          }
-        }
-      }
-    }
-  }
-
-  if (!fs.existsSync(DRIVERS_DIR)) {
-    console.log("⚠️ Dossier drivers/ introuvable");
-    return report;
-  }
-  scan(DRIVERS_DIR);
-  return report;
-}
-
-function main() {
-  const report = diagnose();
-  const out = path.join(ROOT, `DIAGNOSE_REPORT_${new Date().toISOString().replace(/[:.]/g, '-')}.json`);
-  fs.writeFileSync(out, JSON.stringify(report, null, 2));
-  console.log(`\n📄 Rapport: ${out}`);
-  console.log(`📊 Drivers: ${report.totalDrivers} | JSON invalides: ${report.invalidJSON.length} | Manques device.js: ${report.missingDeviceJs.length} | Assets manquants: ${report.missingAssets.length}`);
-}
-
-if (require.main === module) main();
-
-module.exports = { diagnose };
+  fs.writeFileSync(path.join(ROOT,'diagnose-report.json'),JSON.stringify({issues,fixed,strict:STRICT},null,2));
+  console.log(`[diagnose] issues=${issues.length} fixed=${fixed} (strict=${STRICT})`);
+  if(STRICT && issues.length){ process.exitCode=1; }
+})();

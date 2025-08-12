@@ -1,155 +1,141 @@
 [
   {
+    "compose": "drivers\\zigbee\\switch\\generic\\radar-24g\\driver.compose.json",
+    "id": "switch-generic-radar-24g",
+    "caps": [
+      "`onoff`",
+      "`dim`",
+      "* `light_mode`",
+      "`light_hue`",
+      "`light_saturation` and `light_temperature`",
+      "i"
+    ]
+  },
+  {
     "compose": "drivers\\zigbee\\siren\\ikea\\ikea-chime-70\\driver.compose.json",
     "id": "siren-ikea-ikea-chime-70",
     "caps": [
       "alarm_siren"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\siren\\ikea\\ikea-chime-608\\driver.compose.json",
     "id": "siren-ikea-ikea-chime-608",
     "caps": [
       "alarm_siren"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\siren\\ikea\\ikea-buzzer-255\\driver.compose.json",
     "id": "siren-ikea-ikea-buzzer-255",
     "caps": [
       "alarm_siren"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\siren\\ikea\\ikea-buzzer-232\\driver.compose.json",
     "id": "siren-ikea-ikea-buzzer-232",
     "caps": [
       "alarm_siren"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\siren\\ikea\\ikea-alarm-707\\driver.compose.json",
     "id": "siren-ikea-ikea-alarm-707",
     "caps": [
       "alarm_siren"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\siren\\ikea\\ikea-alarm-641\\driver.compose.json",
     "id": "siren-ikea-ikea-alarm-641",
     "caps": [
       "alarm_siren"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\siren\\aqara\\aqara-chime-885\\driver.compose.json",
     "id": "siren-aqara-aqara-chime-885",
     "caps": [
       "alarm_siren"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\siren\\aqara\\aqara-chime-818\\driver.compose.json",
     "id": "siren-aqara-aqara-chime-818",
     "caps": [
       "alarm_siren"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\siren\\aqara\\aqara-buzzer-259\\driver.compose.json",
     "id": "siren-aqara-aqara-buzzer-259",
     "caps": [
       "alarm_siren"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\siren\\aqara\\aqara-buzzer-110\\driver.compose.json",
     "id": "siren-aqara-aqara-buzzer-110",
     "caps": [
       "alarm_siren"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\siren\\aqara\\aqara-alarm-922\\driver.compose.json",
     "id": "siren-aqara-aqara-alarm-922",
     "caps": [
       "alarm_siren"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\siren\\aqara\\aqara-alarm-418\\driver.compose.json",
     "id": "siren-aqara-aqara-alarm-418",
     "caps": [
       "alarm_siren"
-    ],
-    "domain": "zigbee"
-  },
-  {
-    "compose": "drivers\\zigbee\\plug\\lellki\\jz-zb-004\\driver.compose.json",
-    "id": "plug-lellki-jz-zb-004",
-    "caps": [
-      "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-water-667\\driver.compose.json",
     "id": "plug-ikea-ikea-water-667",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-water-362\\driver.compose.json",
     "id": "plug-ikea-ikea-water-362",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-thermostat-39\\driver.compose.json",
     "id": "plug-ikea-ikea-thermostat-39",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-thermostat-128\\driver.compose.json",
     "id": "plug-ikea-ikea-thermostat-128",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-temperature-892\\driver.compose.json",
     "id": "plug-ikea-ikea-temperature-892",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-temperature-466\\driver.compose.json",
     "id": "plug-ikea-ikea-temperature-466",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-switch-783\\driver.compose.json",
@@ -158,8 +144,7 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-switch-612\\driver.compose.json",
@@ -168,24 +153,21 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-smoke-94\\driver.compose.json",
     "id": "plug-ikea-ikea-smoke-94",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-smoke-360\\driver.compose.json",
     "id": "plug-ikea-ikea-smoke-360",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-smart-647\\driver.compose.json",
@@ -194,8 +176,7 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-smart-315\\driver.compose.json",
@@ -204,8 +185,7 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-power-769\\driver.compose.json",
@@ -214,8 +194,7 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-power-457\\driver.compose.json",
@@ -224,8 +203,7 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-outlet-136\\driver.compose.json",
@@ -234,8 +212,7 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-outlet-132\\driver.compose.json",
@@ -244,168 +221,154 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-motion-981\\driver.compose.json",
     "id": "plug-ikea-ikea-motion-981",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-motion-927\\driver.compose.json",
     "id": "plug-ikea-ikea-motion-927",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-humidity-712\\driver.compose.json",
     "id": "plug-ikea-ikea-humidity-712",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-humidity-288\\driver.compose.json",
     "id": "plug-ikea-ikea-humidity-288",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-heater-896\\driver.compose.json",
     "id": "plug-ikea-ikea-heater-896",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-heater-399\\driver.compose.json",
     "id": "plug-ikea-ikea-heater-399",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-gas-418\\driver.compose.json",
     "id": "plug-ikea-ikea-gas-418",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-gas-317\\driver.compose.json",
     "id": "plug-ikea-ikea-gas-317",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-fan-208\\driver.compose.json",
     "id": "plug-ikea-ikea-fan-208",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-fan-18\\driver.compose.json",
     "id": "plug-ikea-ikea-fan-18",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-contact-739\\driver.compose.json",
     "id": "plug-ikea-ikea-contact-739",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-contact-348\\driver.compose.json",
     "id": "plug-ikea-ikea-contact-348",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-ac-728\\driver.compose.json",
     "id": "plug-ikea-ikea-ac-728",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\ikea\\ikea-ac-165\\driver.compose.json",
     "id": "plug-ikea-ikea-ac-165",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
+  },
+  {
+    "compose": "drivers\\zigbee\\plug\\generic\\lellki\\jz-zb-004\\driver.compose.json",
+    "id": "plug-generic-jz-zb-004",
+    "caps": [
+      "onoff"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-water-237\\driver.compose.json",
     "id": "plug-aqara-aqara-water-237",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-water-220\\driver.compose.json",
     "id": "plug-aqara-aqara-water-220",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-thermostat-831\\driver.compose.json",
     "id": "plug-aqara-aqara-thermostat-831",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-thermostat-115\\driver.compose.json",
     "id": "plug-aqara-aqara-thermostat-115",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-temperature-666\\driver.compose.json",
     "id": "plug-aqara-aqara-temperature-666",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-temperature-561\\driver.compose.json",
     "id": "plug-aqara-aqara-temperature-561",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-switch-883\\driver.compose.json",
@@ -414,8 +377,7 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-switch-457\\driver.compose.json",
@@ -424,24 +386,21 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-smoke-61\\driver.compose.json",
     "id": "plug-aqara-aqara-smoke-61",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-smoke-458\\driver.compose.json",
     "id": "plug-aqara-aqara-smoke-458",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-smart-759\\driver.compose.json",
@@ -450,8 +409,7 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-smart-611\\driver.compose.json",
@@ -460,8 +418,7 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-power-551\\driver.compose.json",
@@ -470,8 +427,7 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-power-317\\driver.compose.json",
@@ -480,8 +436,7 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-outlet-425\\driver.compose.json",
@@ -490,8 +445,7 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-outlet-197\\driver.compose.json",
@@ -500,216 +454,189 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-motion-800\\driver.compose.json",
     "id": "plug-aqara-aqara-motion-800",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-motion-364\\driver.compose.json",
     "id": "plug-aqara-aqara-motion-364",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-humidity-794\\driver.compose.json",
     "id": "plug-aqara-aqara-humidity-794",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-humidity-617\\driver.compose.json",
     "id": "plug-aqara-aqara-humidity-617",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-heater-898\\driver.compose.json",
     "id": "plug-aqara-aqara-heater-898",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-heater-833\\driver.compose.json",
     "id": "plug-aqara-aqara-heater-833",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-gas-84\\driver.compose.json",
     "id": "plug-aqara-aqara-gas-84",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-gas-474\\driver.compose.json",
     "id": "plug-aqara-aqara-gas-474",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-fan-459\\driver.compose.json",
     "id": "plug-aqara-aqara-fan-459",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-fan-281\\driver.compose.json",
     "id": "plug-aqara-aqara-fan-281",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-contact-799\\driver.compose.json",
     "id": "plug-aqara-aqara-contact-799",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-contact-543\\driver.compose.json",
     "id": "plug-aqara-aqara-contact-543",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-ac-708\\driver.compose.json",
     "id": "plug-aqara-aqara-ac-708",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\plug\\aqara\\aqara-ac-294\\driver.compose.json",
     "id": "plug-aqara-aqara-ac-294",
     "caps": [
       "onoff"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\lock\\ikea\\ikea-padlock-984\\driver.compose.json",
     "id": "lock-ikea-ikea-padlock-984",
     "caps": [
       "locked"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\lock\\ikea\\ikea-padlock-134\\driver.compose.json",
     "id": "lock-ikea-ikea-padlock-134",
     "caps": [
       "locked"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\lock\\ikea\\ikea-door-555\\driver.compose.json",
     "id": "lock-ikea-ikea-door-555",
     "caps": [
       "locked"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\lock\\ikea\\ikea-door-491\\driver.compose.json",
     "id": "lock-ikea-ikea-door-491",
     "caps": [
       "locked"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\lock\\ikea\\ikea-deadbolt-42\\driver.compose.json",
     "id": "lock-ikea-ikea-deadbolt-42",
     "caps": [
       "locked"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\lock\\ikea\\ikea-deadbolt-274\\driver.compose.json",
     "id": "lock-ikea-ikea-deadbolt-274",
     "caps": [
       "locked"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\lock\\aqara\\aqara-padlock-460\\driver.compose.json",
     "id": "lock-aqara-aqara-padlock-460",
     "caps": [
       "locked"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\lock\\aqara\\aqara-padlock-382\\driver.compose.json",
     "id": "lock-aqara-aqara-padlock-382",
     "caps": [
       "locked"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\lock\\aqara\\aqara-door-338\\driver.compose.json",
     "id": "lock-aqara-aqara-door-338",
     "caps": [
       "locked"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\lock\\aqara\\aqara-door-305\\driver.compose.json",
     "id": "lock-aqara-aqara-door-305",
     "caps": [
       "locked"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\lock\\aqara\\aqara-deadbolt-642\\driver.compose.json",
     "id": "lock-aqara-aqara-deadbolt-642",
     "caps": [
       "locked"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\lock\\aqara\\aqara-deadbolt-22\\driver.compose.json",
     "id": "lock-aqara-aqara-deadbolt-22",
     "caps": [
       "locked"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\ikea\\ikea-wall-993\\driver.compose.json",
@@ -720,8 +647,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\ikea\\ikea-wall-697\\driver.compose.json",
@@ -732,8 +658,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\ikea\\ikea-table-357\\driver.compose.json",
@@ -744,8 +669,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\ikea\\ikea-table-218\\driver.compose.json",
@@ -756,8 +680,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\ikea\\ikea-strip-96\\driver.compose.json",
@@ -768,8 +691,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\ikea\\ikea-strip-461\\driver.compose.json",
@@ -780,8 +702,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\ikea\\ikea-garden-901\\driver.compose.json",
@@ -792,8 +713,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\ikea\\ikea-garden-130\\driver.compose.json",
@@ -804,8 +724,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\ikea\\ikea-floor-708\\driver.compose.json",
@@ -816,8 +735,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\ikea\\ikea-floor-238\\driver.compose.json",
@@ -828,8 +746,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\ikea\\ikea-ceiling-940\\driver.compose.json",
@@ -840,8 +757,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\ikea\\ikea-ceiling-558\\driver.compose.json",
@@ -852,8 +768,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\ikea\\ikea-bulb-793\\driver.compose.json",
@@ -864,8 +779,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\ikea\\ikea-bulb-320\\driver.compose.json",
@@ -876,8 +790,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\aqara\\aqara-wall-455\\driver.compose.json",
@@ -888,8 +801,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\aqara\\aqara-wall-249\\driver.compose.json",
@@ -900,8 +812,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\aqara\\aqara-table-922\\driver.compose.json",
@@ -912,8 +823,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\aqara\\aqara-table-140\\driver.compose.json",
@@ -924,8 +834,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\aqara\\aqara-strip-599\\driver.compose.json",
@@ -936,8 +845,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\aqara\\aqara-strip-219\\driver.compose.json",
@@ -948,8 +856,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\aqara\\aqara-garden-967\\driver.compose.json",
@@ -960,8 +867,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\aqara\\aqara-garden-709\\driver.compose.json",
@@ -972,8 +878,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\aqara\\aqara-floor-771\\driver.compose.json",
@@ -984,8 +889,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\aqara\\aqara-floor-470\\driver.compose.json",
@@ -996,8 +900,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\aqara\\aqara-ceiling-655\\driver.compose.json",
@@ -1008,8 +911,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\aqara\\aqara-ceiling-372\\driver.compose.json",
@@ -1020,8 +922,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\aqara\\aqara-bulb-423\\driver.compose.json",
@@ -1032,8 +933,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\light\\aqara\\aqara-bulb-130\\driver.compose.json",
@@ -1044,48 +944,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "zigbee"
-  },
-  {
-    "compose": "drivers\\zigbee\\cover\\lellki\\ts130f\\driver.compose.json",
-    "id": "cover-lellki-ts130f",
-    "caps": [
-      "onoff",
-      "button",
-      "lock_state",
-      "`onoff`",
-      "`dim`",
-      "* `light_mode`",
-      "`light_hue`",
-      "`light_saturation` and `light_temperature`",
-      "measure_temperature",
-      "measure_humidity",
-      "i",
-      "measure_pressure",
-      "alarm_motion",
-      "alarm_battery",
-      "alarm_contact",
-      "alarm_tamper",
-      "windowcoverings_state",
-      "windowcoverings_set",
-      "garage_door_set",
-      "target_temperature",
-      "measure_battery",
-      "alarm_water",
-      "thermostat_programming",
-      "child_lock",
-      "alarm_smoke",
-      "alarm_siren",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain",
-      "target_distance",
-      "finger_bot_mode"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\cover\\ikea\\ikea-shade-837\\driver.compose.json",
@@ -1093,8 +952,7 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\cover\\ikea\\ikea-shade-756\\driver.compose.json",
@@ -1102,8 +960,7 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\cover\\ikea\\ikea-garage-65\\driver.compose.json",
@@ -1111,8 +968,7 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\cover\\ikea\\ikea-garage-4\\driver.compose.json",
@@ -1120,8 +976,7 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\cover\\ikea\\ikea-curtain-431\\driver.compose.json",
@@ -1129,8 +984,7 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\cover\\ikea\\ikea-curtain-339\\driver.compose.json",
@@ -1138,8 +992,7 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\cover\\ikea\\ikea-blind-515\\driver.compose.json",
@@ -1147,8 +1000,7 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\cover\\ikea\\ikea-blind-14\\driver.compose.json",
@@ -1156,8 +1008,15 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "zigbee"
+    ]
+  },
+  {
+    "compose": "drivers\\zigbee\\cover\\generic\\lellki\\ts130f\\driver.compose.json",
+    "id": "cover-generic-ts130f",
+    "caps": [
+      "windowcoverings_set",
+      "windowcoverings_state"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\cover\\aqara\\aqara-shade-549\\driver.compose.json",
@@ -1165,8 +1024,7 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\cover\\aqara\\aqara-shade-24\\driver.compose.json",
@@ -1174,8 +1032,7 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\cover\\aqara\\aqara-garage-478\\driver.compose.json",
@@ -1183,8 +1040,7 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\cover\\aqara\\aqara-garage-374\\driver.compose.json",
@@ -1192,8 +1048,7 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\cover\\aqara\\aqara-curtain-838\\driver.compose.json",
@@ -1201,8 +1056,7 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\cover\\aqara\\aqara-curtain-550\\driver.compose.json",
@@ -1210,8 +1064,7 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\cover\\aqara\\aqara-blind-824\\driver.compose.json",
@@ -1219,8 +1072,7 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "zigbee"
+    ]
   },
   {
     "compose": "drivers\\zigbee\\cover\\aqara\\aqara-blind-772\\driver.compose.json",
@@ -1228,120 +1080,144 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "zigbee"
+    ]
+  },
+  {
+    "compose": "drivers\\tuya\\switch\\tuya\\ts0601\\driver.compose.json",
+    "id": "switch-tuya-ts0601",
+    "caps": [
+      "button"
+    ]
   },
   {
     "compose": "drivers\\tuya\\siren\\tuya\\tuya-chime-96\\driver.compose.json",
     "id": "siren-tuya-tuya-chime-96",
     "caps": [
       "alarm_siren"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\siren\\tuya\\tuya-chime-728\\driver.compose.json",
     "id": "siren-tuya-tuya-chime-728",
     "caps": [
       "alarm_siren"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\siren\\tuya\\tuya-buzzer-704\\driver.compose.json",
     "id": "siren-tuya-tuya-buzzer-704",
     "caps": [
       "alarm_siren"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\siren\\tuya\\tuya-buzzer-702\\driver.compose.json",
     "id": "siren-tuya-tuya-buzzer-702",
     "caps": [
       "alarm_siren"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\siren\\tuya\\tuya-alarm-579\\driver.compose.json",
     "id": "siren-tuya-tuya-alarm-579",
     "caps": [
       "alarm_siren"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\siren\\tuya\\tuya-alarm-271\\driver.compose.json",
     "id": "siren-tuya-tuya-alarm-271",
     "caps": [
       "alarm_siren"
-    ],
-    "domain": "tuya"
+    ]
+  },
+  {
+    "compose": "drivers\\tuya\\sensor-temperature\\tuya\\upagmta9\\driver.compose.json",
+    "id": "sensor-temperature-tuya-upagmta9",
+    "caps": [
+      "measure_temperature",
+      "measure_humidity",
+      "measure_battery"
+    ]
+  },
+  {
+    "compose": "drivers\\tuya\\sensor-presence\\tuya\\gkfbdvyx\\driver.compose.json",
+    "id": "sensor-presence-tuya-gkfbdvyx",
+    "caps": [
+      "alarm_motion",
+      "measure_luminance",
+      "measure_distance"
+    ]
   },
   {
     "compose": "drivers\\tuya\\sensor-motion\\tuya\\ts0601_motion\\driver.compose.json",
     "id": "sensor-motion-tuya-ts0601_motion",
     "caps": [
-      "alarm_motion"
-    ],
-    "domain": "tuya"
+      "alarm_motion",
+      "alarm_battery",
+      "measure_battery",
+      "alarm_contact"
+    ]
   },
   {
     "compose": "drivers\\tuya\\sensor-motion\\tuya\\ts0601_contact\\driver.compose.json",
     "id": "sensor-motion-tuya-ts0601_contact",
     "caps": [
       "alarm_motion"
-    ],
-    "domain": "tuya"
+    ]
+  },
+  {
+    "compose": "drivers\\tuya\\sensor-motion\\tuya\\ts0601\\driver.compose.json",
+    "id": "sensor-motion-tuya-ts0601",
+    "caps": [
+      "measure_luminance",
+      "alarm_motion",
+      "target_distance",
+      "measure_battery",
+      "alarm_battery"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-water-581\\driver.compose.json",
     "id": "plug-tuya-tuya-water-581",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-water-264\\driver.compose.json",
     "id": "plug-tuya-tuya-water-264",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-thermostat-825\\driver.compose.json",
     "id": "plug-tuya-tuya-thermostat-825",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-thermostat-435\\driver.compose.json",
     "id": "plug-tuya-tuya-thermostat-435",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-temperature-779\\driver.compose.json",
     "id": "plug-tuya-tuya-temperature-779",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-temperature-622\\driver.compose.json",
     "id": "plug-tuya-tuya-temperature-622",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-switch-549\\driver.compose.json",
@@ -1350,8 +1226,7 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-switch-225\\driver.compose.json",
@@ -1360,24 +1235,21 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-smoke-927\\driver.compose.json",
     "id": "plug-tuya-tuya-smoke-927",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-smoke-109\\driver.compose.json",
     "id": "plug-tuya-tuya-smoke-109",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-smart-963\\driver.compose.json",
@@ -1386,8 +1258,7 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-smart-181\\driver.compose.json",
@@ -1396,8 +1267,7 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-power-890\\driver.compose.json",
@@ -1406,8 +1276,7 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-power-50\\driver.compose.json",
@@ -1416,8 +1285,7 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-outlet-791\\driver.compose.json",
@@ -1426,8 +1294,7 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-outlet-692\\driver.compose.json",
@@ -1436,136 +1303,119 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-motion-362\\driver.compose.json",
     "id": "plug-tuya-tuya-motion-362",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-motion-299\\driver.compose.json",
     "id": "plug-tuya-tuya-motion-299",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-humidity-86\\driver.compose.json",
     "id": "plug-tuya-tuya-humidity-86",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-humidity-498\\driver.compose.json",
     "id": "plug-tuya-tuya-humidity-498",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-heater-387\\driver.compose.json",
     "id": "plug-tuya-tuya-heater-387",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-heater-0\\driver.compose.json",
     "id": "plug-tuya-tuya-heater-0",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-gas-695\\driver.compose.json",
     "id": "plug-tuya-tuya-gas-695",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-gas-320\\driver.compose.json",
     "id": "plug-tuya-tuya-gas-320",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-fan-730\\driver.compose.json",
     "id": "plug-tuya-tuya-fan-730",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-fan-200\\driver.compose.json",
     "id": "plug-tuya-tuya-fan-200",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-contact-219\\driver.compose.json",
     "id": "plug-tuya-tuya-contact-219",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-contact-202\\driver.compose.json",
     "id": "plug-tuya-tuya-contact-202",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-ac-563\\driver.compose.json",
     "id": "plug-tuya-tuya-ac-563",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\tuya-ac-322\\driver.compose.json",
     "id": "plug-tuya-tuya-ac-322",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\ts0601_water\\driver.compose.json",
     "id": "plug-tuya-ts0601_water",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\ts0601_vibration\\driver.compose.json",
     "id": "plug-tuya-ts0601_vibration",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\ts0601_switch\\driver.compose.json",
@@ -1574,88 +1424,77 @@
       "onoff",
       "measure_power",
       "meter_power"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\ts0601_smoke\\driver.compose.json",
     "id": "plug-tuya-ts0601_smoke",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\ts0601_presence\\driver.compose.json",
     "id": "plug-tuya-ts0601_presence",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\ts0601_gas\\driver.compose.json",
     "id": "plug-tuya-ts0601_gas",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\plug\\tuya\\ts0601\\driver.compose.json",
     "id": "plug-tuya-ts0601",
     "caps": [
       "onoff"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\lock\\tuya\\tuya-padlock-551\\driver.compose.json",
     "id": "lock-tuya-tuya-padlock-551",
     "caps": [
       "locked"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\lock\\tuya\\tuya-padlock-538\\driver.compose.json",
     "id": "lock-tuya-tuya-padlock-538",
     "caps": [
       "locked"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\lock\\tuya\\tuya-door-537\\driver.compose.json",
     "id": "lock-tuya-tuya-door-537",
     "caps": [
       "locked"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\lock\\tuya\\tuya-door-450\\driver.compose.json",
     "id": "lock-tuya-tuya-door-450",
     "caps": [
       "locked"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\lock\\tuya\\tuya-deadbolt-850\\driver.compose.json",
     "id": "lock-tuya-tuya-deadbolt-850",
     "caps": [
       "locked"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\lock\\tuya\\tuya-deadbolt-261\\driver.compose.json",
     "id": "lock-tuya-tuya-deadbolt-261",
     "caps": [
       "locked"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\light\\tuya\\tuya-wall-287\\driver.compose.json",
@@ -1666,8 +1505,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\light\\tuya\\tuya-wall-10\\driver.compose.json",
@@ -1678,8 +1516,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\light\\tuya\\tuya-table-775\\driver.compose.json",
@@ -1690,8 +1527,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\light\\tuya\\tuya-table-5\\driver.compose.json",
@@ -1702,8 +1538,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\light\\tuya\\tuya-strip-782\\driver.compose.json",
@@ -1714,8 +1549,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\light\\tuya\\tuya-strip-423\\driver.compose.json",
@@ -1726,8 +1560,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\light\\tuya\\tuya-garden-409\\driver.compose.json",
@@ -1738,8 +1571,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\light\\tuya\\tuya-garden-168\\driver.compose.json",
@@ -1750,8 +1582,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\light\\tuya\\tuya-floor-269\\driver.compose.json",
@@ -1762,8 +1593,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\light\\tuya\\tuya-floor-141\\driver.compose.json",
@@ -1774,8 +1604,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\light\\tuya\\tuya-ceiling-36\\driver.compose.json",
@@ -1786,8 +1615,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\light\\tuya\\tuya-ceiling-282\\driver.compose.json",
@@ -1798,8 +1626,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\light\\tuya\\tuya-bulb-305\\driver.compose.json",
@@ -1810,8 +1637,7 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\light\\tuya\\tuya-bulb-211\\driver.compose.json",
@@ -1822,12 +1648,11 @@
       "light_hue",
       "light_saturation",
       "light_temperature"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\light\\tuya\\ts130f\\driver.compose.json",
-    "id": "tuya-switch",
+    "id": "light-tuya-ts130f",
     "caps": [
       "onoff",
       "dim",
@@ -1842,9 +1667,15 @@
       "measure_current",
       "meter_power",
       "lidl_xmas_mode",
-      "measure_battery"
-    ],
-    "domain": "tuya"
+      "measure_battery",
+      "finger_bot_mode",
+      "windowcoverings_set",
+      "windowcoverings_state",
+      "measure_pressure",
+      "alarm_motion",
+      "measure_luminance",
+      "target_distance"
+    ]
   },
   {
     "compose": "drivers\\tuya\\cover\\tuya\\tuya-shade-647\\driver.compose.json",
@@ -1852,8 +1683,7 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\cover\\tuya\\tuya-shade-162\\driver.compose.json",
@@ -1861,8 +1691,7 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\cover\\tuya\\tuya-garage-581\\driver.compose.json",
@@ -1870,8 +1699,7 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\cover\\tuya\\tuya-garage-18\\driver.compose.json",
@@ -1879,8 +1707,7 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\cover\\tuya\\tuya-curtain-704\\driver.compose.json",
@@ -1888,8 +1715,7 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\cover\\tuya\\tuya-curtain-601\\driver.compose.json",
@@ -1897,8 +1723,7 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\cover\\tuya\\tuya-blind-531\\driver.compose.json",
@@ -1906,8 +1731,7 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\cover\\tuya\\tuya-blind-205\\driver.compose.json",
@@ -1915,8 +1739,15 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "tuya"
+    ]
+  },
+  {
+    "compose": "drivers\\tuya\\cover\\tuya\\ts130f\\driver.compose.json",
+    "id": "cover-tuya-ts130f",
+    "caps": [
+      "windowcoverings_set",
+      "windowcoverings_state"
+    ]
   },
   {
     "compose": "drivers\\tuya\\cover\\tuya\\ts0601_curtain\\driver.compose.json",
@@ -1924,8 +1755,7 @@
     "caps": [
       "windowcoverings_set",
       "windowcoverings_state"
-    ],
-    "domain": "tuya"
+    ]
   },
   {
     "compose": "drivers\\tuya\\climate-thermostat\\tuya\\ts130f\\driver.compose.json",
@@ -1951,9 +1781,21 @@
       "measure_current",
       "meter_power",
       "lidl_xmas_mode",
-      "measure_battery"
-    ],
-    "domain": "tuya"
+      "measure_battery",
+      "alarm_water",
+      "alarm_contact",
+      "thermostat_programming",
+      "child_lock",
+      "alarm_smoke",
+      "alarm_tamper",
+      "alarm_motion",
+      "alarm_siren",
+      "alarm_cleaning",
+      "measure_luminance",
+      "measure_luminance.20min",
+      "measure_luminance.daily_max",
+      "measure_voltage.rain"
+    ]
   },
   {
     "compose": "drivers\\tuya\\climate-thermostat\\tuya\\ts0601_thermostat\\driver.compose.json",
@@ -1961,7 +1803,6 @@
     "caps": [
       "target_temperature",
       "measure_temperature"
-    ],
-    "domain": "tuya"
+    ]
   }
 ]

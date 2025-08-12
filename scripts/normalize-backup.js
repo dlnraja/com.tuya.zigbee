@@ -1,8 +1,7 @@
 'use strict';
 const fs=require('fs'),path=require('path');
-const ROOT=process.cwd(), BAK=path.join(ROOT,'.backup-central"), ZIPS=path.join(BAK,'zips');
+const ROOT=process.cwd(), BAK=path.join(ROOT,'.backup'), ZIPS=path.join(BAK,'zips');
 const RX=/(tuya|com\.tuya).*\.zip$/i;
-
 (function(){
   fs.mkdirSync(BAK,{recursive:true}); fs.mkdirSync(ZIPS,{recursive:true});
   const st=[ROOT]; let moved=0;
@@ -16,15 +15,11 @@ const RX=/(tuya|com\.tuya).*\.zip$/i;
           if(ss.isDirectory()) st.push(p);
           else if(ss.isFile() && RX.test(p)){
             const dst=path.join(ZIPS,path.basename(p));
-            if(path.resolve(p)!==path.resolve(dst)){
-              try{fs.copyFileSync(p,dst); fs.unlinkSync(p);}catch{fs.copyFileSync(p,dst);}
-              moved++;
-              console.log('[normbak] moved zip →', path.relative(ROOT,dst));
-            }
+            if(p!==dst){ try{fs.copyFileSync(p,dst); fs.unlinkSync(p);}catch{fs.copyFileSync(p,dst);} moved++; console.log('[normbak] zip →', path.relative(ROOT,dst)); }
           }
         }catch{}
       }
     }
   }
-  console.log(`[normbak] done; zips dir = ${path.relative(ROOT,ZIPS)}; moved: ${moved}`);
+  console.log(`[normbak] done; moved: ${moved}`);
 })();
