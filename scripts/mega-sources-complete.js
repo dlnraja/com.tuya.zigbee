@@ -35,9 +35,13 @@ function envFlag(name,def){const v=process.env[name];if(v==null||v==='')return d
     tryRun('node',['scripts/create-small-png.js']);
     tryRun('node',['scripts/reindex-drivers.js']);
     tryRun('node',['scripts/dashboard-generator.js']);
-    tryRun('node',['scripts/update-readme.js']);
     tryRun('node',['scripts/organize-reports.js']);
-    if(!SKIP_GIT_PUSH) tryRun('node',['scripts/git-commit-push.js','build-enrich-batch-' + new Date().toISOString().slice(0,16).replace(/[-:T]/g, '')]);
+    tryRun('node',['scripts/json-lint.js']);
+    tryRun('node',['scripts/validate-compose-schema.js']);
+    tryRun('node',['scripts/scan-missing-required.js']);
+    tryRun('node',['scripts/pipeline-health-check.js']);
+    tryRun('node',['scripts/update-readme.js']);
+    if(!SKIP_GIT_PUSH) tryRun('node',['scripts/git-commit-push.js','feat-progressive-batch-' + new Date().toISOString().slice(0,16).replace(/[-:T]/g,'')]);
     log('ENRICHMENT progressive done'); process.exit(0);
   }
 
@@ -56,8 +60,12 @@ function envFlag(name,def){const v=process.env[name];if(v==null||v==='')return d
   log('small.png');               tryRun('node',['scripts/create-small-png.js']);
   log('reindex');                 tryRun('node',['scripts/reindex-drivers.js']);
   log('dashboard');               tryRun('node',['scripts/dashboard-generator.js']);
-  log('readme');                  tryRun('node',['scripts/update-readme.js']);
   log('organize reports');        tryRun('node',['scripts/organize-reports.js']);
+  log('json lint');               tryRun('node',['scripts/json-lint.js']);
+  log('compose schema');          tryRun('node',['scripts/validate-compose-schema.js']);
+  log('scan missing');            tryRun('node',['scripts/scan-missing-required.js']);
+  log('health');                  tryRun('node',['scripts/pipeline-health-check.js']);
+  log('readme');                  tryRun('node',['scripts/update-readme.js']);
   log('sources wildcard');        tryRun('node',['scripts/sources/sources-orchestrator.js','--now']);
 
   if(!SKIP_NPM){
@@ -72,7 +80,7 @@ function envFlag(name,def){const v=process.env[name];if(v==null||v==='')return d
   tryRun('git',['config','--local','user.name',process.env.GIT_USER||'Local Dev']);
   tryRun('git',['config','--local','user.email',process.env.GIT_EMAIL||'dev@localhost']);
   tryRun('git',['add','-A']);
-  tryRun('git',['commit','-m','build: full relaunch']);
+  tryRun('git',['commit','-m','build-full-relaunch-' + new Date().toISOString().slice(0,16).replace(/[-:T]/g,'')]);
   if(!SKIP_GIT_PUSH){ tryRun('git',['push']); } else log('SKIP_GIT_PUSH=1');
 
   log('done.');

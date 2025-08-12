@@ -122,6 +122,14 @@ function main() {
     log('organize reports');
     tryRun('node', ['scripts/organize-reports.js']);
     
+    // Validations supplémentaires
+    log('json lint');
+    tryRun('node', ['scripts/json-lint.js']);
+    log('compose schema');
+    tryRun('node', ['scripts/validate-compose-schema.js']);
+    log('scan missing files');
+    tryRun('node', ['scripts/scan-missing-required.js']);
+    
     // G) README & Push
     log('update readme');
     tryRun('node', ['scripts/update-readme.js']);
@@ -224,14 +232,4 @@ function main() {
   if (!SKIP_GIT_PUSH) {
     const timestamp = new Date().toISOString().slice(0, 16).replace(/[-:T]/g, '');
     log('git commit + push');
-    tryRun('node', ['scripts/git-commit-push.js', `feat: full pipeline ${timestamp}`]);
-  }
-  
-  log('FULL MODE completed');
-}
-
-if (require.main === module) {
-  main();
-}
-
-module.exports = { main };
+    tryRun('node', ['scripts/git-commit-push.js', `
