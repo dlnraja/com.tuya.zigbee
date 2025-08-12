@@ -73,6 +73,22 @@ function main() {
   log('AI health diag');
   tryRun('node', ['scripts/ai-pipeline-script-10.js']);
 
+  // Ajouter après AI health diag du lot 1
+  log('ai-vuln-fix');
+  tryRun('node', ['scripts/ai-script-lot2-1.js']);
+  log('ai-rate-dynamic');
+  tryRun('node', ['scripts/ai-script-lot2-2.js']);
+  log('ai-dashboard-ultra');
+  tryRun('node', ['scripts/ai-script-lot2-10.js']);
+
+  // Ajouter après ai-dashboard-ultra du lot 2
+  log('ai-vuln-fix-ext');
+  tryRun('node', ['scripts/ai-lot3-1.js']);
+  log('ai-rate-dynamic-ext');
+  tryRun('node', ['scripts/ai-lot3-2.js']);
+  log('ai-stats-anomaly');
+  tryRun('node', ['scripts/ai-lot3-10.js']);
+
   if (PROGRESSIVE) {
     log(`PROGRESSIVE MODE: restore → z2m-seed(${BATCH_SIZE}) → enrich → reorg → verify/diag → assets/small → reindex → dashboard → push`);
     
