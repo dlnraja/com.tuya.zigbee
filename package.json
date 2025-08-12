@@ -42,7 +42,12 @@
     "sources-restore-tmp": "node scripts/sources/local/restore-tmp-sources.js",
     "cleanup": "node scripts/cleanup-backup-folders.js",
     "massive-seed": "node scripts/massive-driver-seed.js",
-    "schedule": "powershell -ExecutionPolicy Bypass -File scripts/automation/schedule-tasks.ps1"
+    "schedule": "powershell -ExecutionPolicy Bypass -File scripts/automation/schedule-tasks.ps1",
+    "diag": "node scripts/diagnose-drivers.js --strict",
+    "small": "node scripts/create-small-png.js",
+    "restore": "node scripts/sources/local/restore-tmp-sources.js",
+    "sources": "node scripts/sources/sources-orchestrator.js --now",
+    "z2mseed": "node scripts/sources/z2m-seed.js"
   },
   "keywords": [
     "tuya",
@@ -69,6 +74,8 @@
     "max": "1.0.0"
   },
   "devDependencies": {
-    "homey": "^2"
+    "homey": "^2.0.0",
+    "homey-apps": "^1.0.0",
+    "homey-dev": "^1.0.0"
   }
 }

@@ -1,0 +1,47 @@
+{
+  "id": "sensor-presence-tuya-gkfbdvyx",
+  "name": { "en": "Tuya 24G Radar Presence Sensor", "fr": "Capteur de Présence Radar 24G Tuya" },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_luminance",
+    "measure_distance"
+  ],
+  "capabilitiesOptions": {
+    "measure_distance": {
+      "title": { "en": "Detection Distance", "fr": "Distance de Détection" },
+      "units": { "en": "cm", "fr": "cm" }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE204_gkfbdvyx"
+    ],
+    "modelId": ["TS0601"],
+    "endpoints": {
+      "1": {
+        "clusters": [ "genBasic", "genOnOff", "manuSpecificTuya" ]
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "sensitivity",
+      "type": "dropdown",
+      "label": { "en": "Motion Sensitivity", "fr": "Sensibilité de Mouvement" },
+      "value": "medium",
+      "values": [
+        { "id": "low", "label": { "en": "Low", "fr": "Faible" } },
+        { "id": "medium", "label": { "en": "Medium", "fr": "Moyen" } },
+        { "id": "high", "label": { "en": "High", "fr": "Élevé" } }
+      ]
+    },
+    {
+      "id": "detection_range",
+      "type": "number",
+      "label": { "en": "Detection Range (cm)", "fr": "Portée de Détection (cm)" },
+      "attr": { "min": 50, "max": 1000, "step": 10 },
+      "value": 500
+    }
+  ]
+}
