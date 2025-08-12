@@ -1,0 +1,3 @@
+# queue/ - File d'attente pour enrichissement
+# Contient : todo.json (fingerprints à traiter), z2m-progress.json (progression lots)
+# Utilisé par : sources-orchestrator.js, z2m-seed.js, enrich-drivers.js

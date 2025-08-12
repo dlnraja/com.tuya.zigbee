@@ -8,6 +8,7 @@
     "run": "homey app run",
     "remote": "homey app run --remote",
     "mega": "node scripts/mega-sources-complete.js",
+    "mega-progressive": "node scripts/mega-progressive.js",
     "reorganize": "node scripts/reorganize-drivers-ultimate.js",
     "clean": "node -e \"try{require('fs').rmSync('node_modules',{recursive:true,force:true})}catch{}\"",
     "update_version": "node scripts/update-version-and-metadata.js",
