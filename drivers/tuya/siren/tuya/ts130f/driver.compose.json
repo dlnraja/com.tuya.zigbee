@@ -627,7 +627,19 @@
       "_TZ3000_l13erpv4",
       "_TZ3000_",
       "_TZ3210_",
-      "_TYZB01_"
+      "_TYZB01_",
+      "_TZE200_r731zlxk",
+      "_TZE200_9mahtqtg",
+      "_TZE200_jwsjbxjs",
+      "_TZE200_shkxsgis",
+      "_TZE204_aagrxlbd",
+      "_TZE200_aqnazj70",
+      "_TZE200_di3tfv5b",
+      "_TZE200_mexisfik",
+      "_TZE204_6wi2mope",
+      "_TZE204_iik0pquw",
+      "_TZE200_gbagoilo",
+      "_TZE20X_xxxxxxxx"
     ],
     "modelId": [
       "ts130f",
@@ -680,7 +692,17 @@
       "ts0502b",
       "rh3040",
       "doorwindow-sensor-zb3.0",
-      "TS0601"
+      "TS0601",
+      "ts0601_motion",
+      "ts0601_contact",
+      "ts0601_water",
+      "ts0601_vibration",
+      "ts0601_switch",
+      "ts0601_smoke",
+      "ts0601_presence",
+      "ts0601_gas",
+      "ts0601_curtain",
+      "ts0601_thermostat"
     ]
   }
 }
