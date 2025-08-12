@@ -137921,6 +137921,76 @@
       "repo"
     ]
   },
+  "tuya|wall-switch": {
+    "manufacturerName": "tuya",
+    "modelId": "wall-switch",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|table-lamp": {
+    "manufacturerName": "tuya",
+    "modelId": "table-lamp",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|desk-light": {
+    "manufacturerName": "tuya",
+    "modelId": "desk-light",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|led-strip": {
+    "manufacturerName": "tuya",
+    "modelId": "led-strip",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|garden-light": {
+    "manufacturerName": "tuya",
+    "modelId": "garden-light",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|outdoor-light": {
+    "manufacturerName": "tuya",
+    "modelId": "outdoor-light",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|floor-lamp": {
+    "manufacturerName": "tuya",
+    "modelId": "floor-lamp",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|standing-light": {
+    "manufacturerName": "tuya",
+    "modelId": "standing-light",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|ceiling-light": {
+    "manufacturerName": "tuya",
+    "modelId": "ceiling-light",
+    "sources": [
+      "repo"
+    ]
+  },
+  "tuya|rgbw-bulb": {
+    "manufacturerName": "tuya",
+    "modelId": "rgbw-bulb",
+    "sources": [
+      "repo"
+    ]
+  },
   "tuyatec-0l6xaqmi|ts130f": {
     "manufacturerName": "TUYATEC-0l6xaqmi",
     "modelId": "ts130f",
@@ -280426,13 +280496,6 @@
       "repo"
     ]
   },
-  "tuya|wall-switch": {
-    "manufacturerName": "tuya",
-    "modelId": "wall-switch",
-    "sources": [
-      "repo"
-    ]
-  },
   "_tz3000_|tuya-wall-287": {
     "manufacturerName": "_TZ3000_",
     "modelId": "tuya-wall-287",
@@ -280464,6 +280527,1364 @@
   "_tz3000_|wall-switch": {
     "manufacturerName": "_TZ3000_",
     "modelId": "wall-switch",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-chime-70": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-chime-70",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-chime-608": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-chime-608",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-buzzer-255": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-buzzer-255",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-buzzer-232": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-buzzer-232",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-alarm-707": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-alarm-707",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-alarm-641": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-alarm-641",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-water-667": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-water-667",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-water-362": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-water-362",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-thermostat-39": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-thermostat-39",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-thermostat-128": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-thermostat-128",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-temperature-892": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-temperature-892",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-temperature-466": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-temperature-466",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-switch-783": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-switch-783",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-switch-612": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-switch-612",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-smoke-94": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-smoke-94",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-smoke-360": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-smoke-360",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-smart-647": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-smart-647",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-smart-315": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-smart-315",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-power-769": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-power-769",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-power-457": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-power-457",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-outlet-136": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-outlet-136",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-outlet-132": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-outlet-132",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-motion-981": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-motion-981",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-motion-927": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-motion-927",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-humidity-712": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-humidity-712",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-humidity-288": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-humidity-288",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-heater-896": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-heater-896",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-heater-399": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-heater-399",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-gas-418": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-gas-418",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-gas-317": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-gas-317",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-fan-208": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-fan-208",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-fan-18": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-fan-18",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-contact-739": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-contact-739",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-contact-348": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-contact-348",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-ac-728": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-ac-728",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-ac-165": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-ac-165",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-padlock-984": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-padlock-984",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-padlock-134": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-padlock-134",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-door-555": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-door-555",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-door-491": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-door-491",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-deadbolt-42": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-deadbolt-42",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-deadbolt-274": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-deadbolt-274",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-wall-993": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-wall-993",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-wall-697": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-wall-697",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-table-357": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-table-357",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-table-218": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-table-218",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-strip-96": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-strip-96",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-strip-461": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-strip-461",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-garden-901": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-garden-901",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-garden-130": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-garden-130",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-floor-708": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-floor-708",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-floor-238": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-floor-238",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-ceiling-940": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-ceiling-940",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-ceiling-558": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-ceiling-558",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-bulb-793": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-bulb-793",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-bulb-320": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-bulb-320",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts130f": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts130f",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0601": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0601",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts011f": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts011f",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0121": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0121",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tso121": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tso121",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|rh3052": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "rh3052",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0201": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0201",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|rh3001": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "rh3001",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0203": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0203",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0207": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0207",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0014": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0014",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0044": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0044",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0013": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0013",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0043": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0043",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0012": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0012",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0042": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0042",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0011": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0011",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0046": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0046",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts004f": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts004f",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0041": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0041",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0111": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0111",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0502a": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0502a",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0004": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0004",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts000f": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts000f",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0115": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0115",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0205": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0205",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0215a": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0215a",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ty0202": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ty0202",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0101": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0101",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0049": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0049",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ty0203": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ty0203",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0202": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0202",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0505a": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0505a",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0505b": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0505b",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0503a": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0503a",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0503b": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0503b",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0504b": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0504b",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0225": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0225",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ty0201": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ty0201",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0222": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0222",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|mct-340 e": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "mct-340 e",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts110f": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts110f",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts110e": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts110e",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0052": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0052",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0502b": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0502b",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|rh3040": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "rh3040",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|doorwindow-sensor-zb3.0": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "doorwindow-sensor-zb3.0",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-shade-837": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-shade-837",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-shade-756": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-shade-756",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-garage-65": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-garage-65",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-garage-4": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-garage-4",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-curtain-431": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-curtain-431",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-curtain-339": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-curtain-339",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-blind-515": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-blind-515",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ikea-blind-14": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ikea-blind-14",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0601_motion": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0601_motion",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0601_contact": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0601_contact",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0601_water": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0601_water",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0601_vibration": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0601_vibration",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0601_switch": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0601_switch",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0601_smoke": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0601_smoke",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0601_presence": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0601_presence",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0601_gas": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0601_gas",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0601_curtain": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0601_curtain",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ts0601_thermostat": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ts0601_thermostat",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-chime-96": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-chime-96",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|jz-zb-004": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "jz-zb-004",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-chime-728": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-chime-728",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-buzzer-704": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-buzzer-704",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-buzzer-702": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-buzzer-702",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-alarm-579": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-alarm-579",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-alarm-271": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-alarm-271",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-water-581": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-water-581",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-water-264": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-water-264",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-thermostat-825": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-thermostat-825",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-thermostat-435": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-thermostat-435",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-temperature-779": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-temperature-779",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-temperature-622": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-temperature-622",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-switch-549": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-switch-549",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-switch-225": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-switch-225",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-smoke-927": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-smoke-927",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-smoke-109": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-smoke-109",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-smart-963": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-smart-963",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-smart-181": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-smart-181",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-power-890": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-power-890",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-power-50": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-power-50",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-outlet-791": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-outlet-791",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-outlet-692": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-outlet-692",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-motion-362": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-motion-362",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-motion-299": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-motion-299",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-humidity-86": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-humidity-86",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-humidity-498": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-humidity-498",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-heater-387": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-heater-387",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-heater-0": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-heater-0",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-gas-695": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-gas-695",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-gas-320": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-gas-320",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-fan-730": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-fan-730",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-fan-200": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-fan-200",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-contact-219": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-contact-219",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-contact-202": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-contact-202",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-ac-563": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-ac-563",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-ac-322": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-ac-322",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-padlock-551": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-padlock-551",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-padlock-538": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-padlock-538",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-door-537": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-door-537",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-door-450": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-door-450",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-deadbolt-850": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-deadbolt-850",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-deadbolt-261": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-deadbolt-261",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-wall-10": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-wall-10",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-table-775": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-table-775",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-table-5": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-table-5",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-strip-782": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-strip-782",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-strip-423": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-strip-423",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-garden-409": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-garden-409",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-garden-168": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-garden-168",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-floor-269": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-floor-269",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-floor-141": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-floor-141",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-ceiling-36": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-ceiling-36",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-ceiling-282": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-ceiling-282",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-bulb-305": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-bulb-305",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-bulb-211": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-bulb-211",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-shade-647": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-shade-647",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-shade-162": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-shade-162",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-garage-581": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-garage-581",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-garage-18": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-garage-18",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-curtain-704": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-curtain-704",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-curtain-601": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-curtain-601",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-blind-531": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-blind-531",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|tuya-blind-205": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "tuya-blind-205",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|table-lamp": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "table-lamp",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|desk-light": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "desk-light",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|led-strip": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "led-strip",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|garden-light": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "garden-light",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|outdoor-light": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "outdoor-light",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|floor-lamp": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "floor-lamp",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|standing-light": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "standing-light",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|ceiling-light": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "ceiling-light",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3000_|rgbw-bulb": {
+    "manufacturerName": "_TZ3000_",
+    "modelId": "rgbw-bulb",
     "sources": [
       "repo"
     ]
@@ -280503,6 +281924,1364 @@
       "repo"
     ]
   },
+  "_tz3210_|ikea-chime-70": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-chime-70",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-chime-608": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-chime-608",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-buzzer-255": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-buzzer-255",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-buzzer-232": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-buzzer-232",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-alarm-707": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-alarm-707",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-alarm-641": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-alarm-641",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-water-667": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-water-667",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-water-362": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-water-362",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-thermostat-39": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-thermostat-39",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-thermostat-128": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-thermostat-128",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-temperature-892": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-temperature-892",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-temperature-466": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-temperature-466",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-switch-783": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-switch-783",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-switch-612": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-switch-612",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-smoke-94": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-smoke-94",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-smoke-360": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-smoke-360",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-smart-647": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-smart-647",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-smart-315": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-smart-315",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-power-769": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-power-769",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-power-457": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-power-457",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-outlet-136": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-outlet-136",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-outlet-132": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-outlet-132",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-motion-981": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-motion-981",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-motion-927": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-motion-927",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-humidity-712": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-humidity-712",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-humidity-288": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-humidity-288",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-heater-896": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-heater-896",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-heater-399": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-heater-399",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-gas-418": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-gas-418",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-gas-317": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-gas-317",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-fan-208": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-fan-208",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-fan-18": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-fan-18",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-contact-739": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-contact-739",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-contact-348": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-contact-348",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-ac-728": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-ac-728",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-ac-165": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-ac-165",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-padlock-984": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-padlock-984",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-padlock-134": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-padlock-134",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-door-555": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-door-555",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-door-491": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-door-491",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-deadbolt-42": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-deadbolt-42",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-deadbolt-274": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-deadbolt-274",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-wall-993": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-wall-993",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-wall-697": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-wall-697",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-table-357": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-table-357",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-table-218": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-table-218",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-strip-96": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-strip-96",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-strip-461": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-strip-461",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-garden-901": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-garden-901",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-garden-130": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-garden-130",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-floor-708": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-floor-708",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-floor-238": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-floor-238",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-ceiling-940": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-ceiling-940",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-ceiling-558": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-ceiling-558",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-bulb-793": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-bulb-793",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-bulb-320": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-bulb-320",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts130f": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts130f",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0601": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0601",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts011f": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts011f",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0121": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0121",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tso121": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tso121",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|rh3052": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "rh3052",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0201": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0201",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|rh3001": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "rh3001",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0203": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0203",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0207": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0207",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0014": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0014",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0044": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0044",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0013": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0013",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0043": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0043",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0012": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0012",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0042": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0042",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0011": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0011",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0046": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0046",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts004f": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts004f",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0041": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0041",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0111": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0111",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0502a": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0502a",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0004": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0004",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts000f": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts000f",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0115": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0115",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0205": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0205",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0215a": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0215a",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ty0202": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ty0202",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0101": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0101",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0049": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0049",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ty0203": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ty0203",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0202": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0202",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0505a": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0505a",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0505b": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0505b",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0503a": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0503a",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0503b": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0503b",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0504b": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0504b",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0225": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0225",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ty0201": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ty0201",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0222": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0222",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|mct-340 e": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "mct-340 e",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts110f": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts110f",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts110e": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts110e",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0052": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0052",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0502b": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0502b",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|rh3040": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "rh3040",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|doorwindow-sensor-zb3.0": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "doorwindow-sensor-zb3.0",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-shade-837": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-shade-837",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-shade-756": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-shade-756",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-garage-65": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-garage-65",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-garage-4": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-garage-4",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-curtain-431": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-curtain-431",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-curtain-339": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-curtain-339",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-blind-515": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-blind-515",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ikea-blind-14": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ikea-blind-14",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0601_motion": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0601_motion",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0601_contact": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0601_contact",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0601_water": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0601_water",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0601_vibration": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0601_vibration",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0601_switch": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0601_switch",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0601_smoke": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0601_smoke",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0601_presence": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0601_presence",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0601_gas": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0601_gas",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0601_curtain": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0601_curtain",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ts0601_thermostat": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ts0601_thermostat",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-chime-96": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-chime-96",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|jz-zb-004": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "jz-zb-004",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-chime-728": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-chime-728",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-buzzer-704": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-buzzer-704",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-buzzer-702": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-buzzer-702",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-alarm-579": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-alarm-579",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-alarm-271": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-alarm-271",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-water-581": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-water-581",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-water-264": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-water-264",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-thermostat-825": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-thermostat-825",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-thermostat-435": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-thermostat-435",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-temperature-779": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-temperature-779",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-temperature-622": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-temperature-622",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-switch-549": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-switch-549",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-switch-225": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-switch-225",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-smoke-927": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-smoke-927",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-smoke-109": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-smoke-109",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-smart-963": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-smart-963",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-smart-181": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-smart-181",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-power-890": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-power-890",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-power-50": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-power-50",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-outlet-791": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-outlet-791",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-outlet-692": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-outlet-692",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-motion-362": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-motion-362",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-motion-299": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-motion-299",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-humidity-86": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-humidity-86",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-humidity-498": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-humidity-498",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-heater-387": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-heater-387",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-heater-0": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-heater-0",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-gas-695": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-gas-695",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-gas-320": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-gas-320",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-fan-730": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-fan-730",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-fan-200": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-fan-200",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-contact-219": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-contact-219",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-contact-202": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-contact-202",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-ac-563": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-ac-563",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-ac-322": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-ac-322",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-padlock-551": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-padlock-551",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-padlock-538": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-padlock-538",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-door-537": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-door-537",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-door-450": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-door-450",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-deadbolt-850": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-deadbolt-850",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-deadbolt-261": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-deadbolt-261",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-wall-10": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-wall-10",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-table-775": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-table-775",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-table-5": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-table-5",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-strip-782": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-strip-782",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-strip-423": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-strip-423",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-garden-409": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-garden-409",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-garden-168": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-garden-168",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-floor-269": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-floor-269",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-floor-141": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-floor-141",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-ceiling-36": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-ceiling-36",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-ceiling-282": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-ceiling-282",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-bulb-305": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-bulb-305",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-bulb-211": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-bulb-211",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-shade-647": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-shade-647",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-shade-162": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-shade-162",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-garage-581": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-garage-581",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-garage-18": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-garage-18",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-curtain-704": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-curtain-704",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-curtain-601": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-curtain-601",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-blind-531": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-blind-531",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|tuya-blind-205": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "tuya-blind-205",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|table-lamp": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "table-lamp",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|desk-light": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "desk-light",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|led-strip": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "led-strip",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|garden-light": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "garden-light",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|outdoor-light": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "outdoor-light",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|floor-lamp": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "floor-lamp",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|standing-light": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "standing-light",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|ceiling-light": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "ceiling-light",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tz3210_|rgbw-bulb": {
+    "manufacturerName": "_TZ3210_",
+    "modelId": "rgbw-bulb",
+    "sources": [
+      "repo"
+    ]
+  },
   "_tyzb01_|tuya-wall-287": {
     "manufacturerName": "_TYZB01_",
     "modelId": "tuya-wall-287",
@@ -280538,499 +283317,541 @@
       "repo"
     ]
   },
-  "_tz3000_|tuya-wall-10": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "tuya-wall-10",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|tuya-wall-10": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "tuya-wall-10",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tyzb01_|tuya-wall-10": {
+  "_tyzb01_|ikea-chime-70": {
     "manufacturerName": "_TYZB01_",
-    "modelId": "tuya-wall-10",
+    "modelId": "ikea-chime-70",
     "sources": [
       "repo"
     ]
   },
-  "tuya|table-lamp": {
-    "manufacturerName": "tuya",
-    "modelId": "table-lamp",
-    "sources": [
-      "repo"
-    ]
-  },
-  "tuya|desk-light": {
-    "manufacturerName": "tuya",
-    "modelId": "desk-light",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3000_|tuya-table-775": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "tuya-table-775",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3000_|table-lamp": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "table-lamp",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3000_|desk-light": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "desk-light",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|tuya-table-775": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "tuya-table-775",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|table-lamp": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "table-lamp",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|desk-light": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "desk-light",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tyzb01_|tuya-table-775": {
+  "_tyzb01_|ikea-chime-608": {
     "manufacturerName": "_TYZB01_",
-    "modelId": "tuya-table-775",
+    "modelId": "ikea-chime-608",
     "sources": [
       "repo"
     ]
   },
-  "_tyzb01_|table-lamp": {
+  "_tyzb01_|ikea-buzzer-255": {
     "manufacturerName": "_TYZB01_",
-    "modelId": "table-lamp",
+    "modelId": "ikea-buzzer-255",
     "sources": [
       "repo"
     ]
   },
-  "_tyzb01_|desk-light": {
+  "_tyzb01_|ikea-buzzer-232": {
     "manufacturerName": "_TYZB01_",
-    "modelId": "desk-light",
+    "modelId": "ikea-buzzer-232",
     "sources": [
       "repo"
     ]
   },
-  "_tz3000_|tuya-table-5": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "tuya-table-5",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|tuya-table-5": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "tuya-table-5",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tyzb01_|tuya-table-5": {
+  "_tyzb01_|ikea-alarm-707": {
     "manufacturerName": "_TYZB01_",
-    "modelId": "tuya-table-5",
+    "modelId": "ikea-alarm-707",
     "sources": [
       "repo"
     ]
   },
-  "tuya|led-strip": {
-    "manufacturerName": "tuya",
-    "modelId": "led-strip",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3000_|tuya-strip-782": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "tuya-strip-782",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3000_|ts0503a": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "ts0503a",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3000_|ts0503b": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "ts0503b",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3000_|led-strip": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "led-strip",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|tuya-strip-782": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "tuya-strip-782",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|ts0503a": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "ts0503a",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|ts0503b": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "ts0503b",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|led-strip": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "led-strip",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tyzb01_|tuya-strip-782": {
+  "_tyzb01_|ikea-alarm-641": {
     "manufacturerName": "_TYZB01_",
-    "modelId": "tuya-strip-782",
+    "modelId": "ikea-alarm-641",
     "sources": [
       "repo"
     ]
   },
-  "_tyzb01_|ts0503a": {
+  "_tyzb01_|ikea-water-667": {
     "manufacturerName": "_TYZB01_",
-    "modelId": "ts0503a",
+    "modelId": "ikea-water-667",
     "sources": [
       "repo"
     ]
   },
-  "_tyzb01_|ts0503b": {
+  "_tyzb01_|ikea-water-362": {
     "manufacturerName": "_TYZB01_",
-    "modelId": "ts0503b",
+    "modelId": "ikea-water-362",
     "sources": [
       "repo"
     ]
   },
-  "_tyzb01_|led-strip": {
+  "_tyzb01_|ikea-thermostat-39": {
     "manufacturerName": "_TYZB01_",
-    "modelId": "led-strip",
+    "modelId": "ikea-thermostat-39",
     "sources": [
       "repo"
     ]
   },
-  "_tz3000_|tuya-strip-423": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "tuya-strip-423",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|tuya-strip-423": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "tuya-strip-423",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tyzb01_|tuya-strip-423": {
+  "_tyzb01_|ikea-thermostat-128": {
     "manufacturerName": "_TYZB01_",
-    "modelId": "tuya-strip-423",
+    "modelId": "ikea-thermostat-128",
     "sources": [
       "repo"
     ]
   },
-  "tuya|garden-light": {
-    "manufacturerName": "tuya",
-    "modelId": "garden-light",
-    "sources": [
-      "repo"
-    ]
-  },
-  "tuya|outdoor-light": {
-    "manufacturerName": "tuya",
-    "modelId": "outdoor-light",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3000_|tuya-garden-409": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "tuya-garden-409",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3000_|garden-light": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "garden-light",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3000_|outdoor-light": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "outdoor-light",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|tuya-garden-409": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "tuya-garden-409",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|garden-light": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "garden-light",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|outdoor-light": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "outdoor-light",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tyzb01_|tuya-garden-409": {
+  "_tyzb01_|ikea-temperature-892": {
     "manufacturerName": "_TYZB01_",
-    "modelId": "tuya-garden-409",
+    "modelId": "ikea-temperature-892",
     "sources": [
       "repo"
     ]
   },
-  "_tyzb01_|garden-light": {
+  "_tyzb01_|ikea-temperature-466": {
     "manufacturerName": "_TYZB01_",
-    "modelId": "garden-light",
+    "modelId": "ikea-temperature-466",
     "sources": [
       "repo"
     ]
   },
-  "_tyzb01_|outdoor-light": {
+  "_tyzb01_|ikea-switch-783": {
     "manufacturerName": "_TYZB01_",
-    "modelId": "outdoor-light",
+    "modelId": "ikea-switch-783",
     "sources": [
       "repo"
     ]
   },
-  "_tz3000_|tuya-garden-168": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "tuya-garden-168",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|tuya-garden-168": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "tuya-garden-168",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tyzb01_|tuya-garden-168": {
+  "_tyzb01_|ikea-switch-612": {
     "manufacturerName": "_TYZB01_",
-    "modelId": "tuya-garden-168",
+    "modelId": "ikea-switch-612",
     "sources": [
       "repo"
     ]
   },
-  "tuya|floor-lamp": {
-    "manufacturerName": "tuya",
-    "modelId": "floor-lamp",
-    "sources": [
-      "repo"
-    ]
-  },
-  "tuya|standing-light": {
-    "manufacturerName": "tuya",
-    "modelId": "standing-light",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3000_|tuya-floor-269": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "tuya-floor-269",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3000_|floor-lamp": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "floor-lamp",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3000_|standing-light": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "standing-light",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|tuya-floor-269": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "tuya-floor-269",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|floor-lamp": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "floor-lamp",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|standing-light": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "standing-light",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tyzb01_|tuya-floor-269": {
+  "_tyzb01_|ikea-smoke-94": {
     "manufacturerName": "_TYZB01_",
-    "modelId": "tuya-floor-269",
+    "modelId": "ikea-smoke-94",
     "sources": [
       "repo"
     ]
   },
-  "_tyzb01_|floor-lamp": {
+  "_tyzb01_|ikea-smoke-360": {
     "manufacturerName": "_TYZB01_",
-    "modelId": "floor-lamp",
+    "modelId": "ikea-smoke-360",
     "sources": [
       "repo"
     ]
   },
-  "_tyzb01_|standing-light": {
+  "_tyzb01_|ikea-smart-647": {
     "manufacturerName": "_TYZB01_",
-    "modelId": "standing-light",
+    "modelId": "ikea-smart-647",
     "sources": [
       "repo"
     ]
   },
-  "_tz3000_|tuya-floor-141": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "tuya-floor-141",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|tuya-floor-141": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "tuya-floor-141",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tyzb01_|tuya-floor-141": {
+  "_tyzb01_|ikea-smart-315": {
     "manufacturerName": "_TYZB01_",
-    "modelId": "tuya-floor-141",
+    "modelId": "ikea-smart-315",
     "sources": [
       "repo"
     ]
   },
-  "tuya|ceiling-light": {
-    "manufacturerName": "tuya",
-    "modelId": "ceiling-light",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3000_|tuya-ceiling-36": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "tuya-ceiling-36",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3000_|ts0502a": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "ts0502a",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3000_|ts0502b": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "ts0502b",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3000_|ceiling-light": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "ceiling-light",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|tuya-ceiling-36": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "tuya-ceiling-36",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|ts0502a": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "ts0502a",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|ts0502b": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "ts0502b",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|ceiling-light": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "ceiling-light",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tyzb01_|tuya-ceiling-36": {
+  "_tyzb01_|ikea-power-769": {
     "manufacturerName": "_TYZB01_",
-    "modelId": "tuya-ceiling-36",
+    "modelId": "ikea-power-769",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-power-457": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-power-457",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-outlet-136": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-outlet-136",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-outlet-132": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-outlet-132",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-motion-981": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-motion-981",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-motion-927": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-motion-927",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-humidity-712": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-humidity-712",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-humidity-288": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-humidity-288",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-heater-896": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-heater-896",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-heater-399": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-heater-399",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-gas-418": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-gas-418",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-gas-317": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-gas-317",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-fan-208": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-fan-208",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-fan-18": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-fan-18",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-contact-739": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-contact-739",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-contact-348": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-contact-348",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-ac-728": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-ac-728",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-ac-165": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-ac-165",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-padlock-984": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-padlock-984",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-padlock-134": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-padlock-134",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-door-555": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-door-555",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-door-491": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-door-491",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-deadbolt-42": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-deadbolt-42",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-deadbolt-274": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-deadbolt-274",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-wall-993": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-wall-993",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-wall-697": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-wall-697",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-table-357": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-table-357",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-table-218": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-table-218",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-strip-96": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-strip-96",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-strip-461": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-strip-461",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-garden-901": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-garden-901",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-garden-130": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-garden-130",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-floor-708": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-floor-708",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-floor-238": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-floor-238",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-ceiling-940": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-ceiling-940",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-ceiling-558": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-ceiling-558",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-bulb-793": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-bulb-793",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-bulb-320": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-bulb-320",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts130f": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts130f",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0601": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0601",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts011f": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts011f",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0121": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0121",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tso121": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tso121",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|rh3052": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "rh3052",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0201": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0201",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|rh3001": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "rh3001",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0203": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0203",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0207": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0207",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0014": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0014",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0044": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0044",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0013": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0013",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0043": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0043",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0012": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0012",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0042": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0042",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0011": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0011",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0046": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0046",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts004f": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts004f",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0041": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0041",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0111": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0111",
     "sources": [
       "repo"
     ]
@@ -281042,107 +283863,72 @@
       "repo"
     ]
   },
-  "_tyzb01_|ts0502b": {
+  "_tyzb01_|ts0004": {
     "manufacturerName": "_TYZB01_",
-    "modelId": "ts0502b",
+    "modelId": "ts0004",
     "sources": [
       "repo"
     ]
   },
-  "_tyzb01_|ceiling-light": {
+  "_tyzb01_|ts000f": {
     "manufacturerName": "_TYZB01_",
-    "modelId": "ceiling-light",
+    "modelId": "ts000f",
     "sources": [
       "repo"
     ]
   },
-  "_tz3000_|tuya-ceiling-282": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "tuya-ceiling-282",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|tuya-ceiling-282": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "tuya-ceiling-282",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tyzb01_|tuya-ceiling-282": {
+  "_tyzb01_|ts0115": {
     "manufacturerName": "_TYZB01_",
-    "modelId": "tuya-ceiling-282",
+    "modelId": "ts0115",
     "sources": [
       "repo"
     ]
   },
-  "tuya|rgbw-bulb": {
-    "manufacturerName": "tuya",
-    "modelId": "rgbw-bulb",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3000_|tuya-bulb-305": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "tuya-bulb-305",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3000_|ts0505a": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "ts0505a",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3000_|ts0505b": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "ts0505b",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3000_|rgbw-bulb": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "rgbw-bulb",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|tuya-bulb-305": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "tuya-bulb-305",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|ts0505a": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "ts0505a",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|ts0505b": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "ts0505b",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tz3210_|rgbw-bulb": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "rgbw-bulb",
-    "sources": [
-      "repo"
-    ]
-  },
-  "_tyzb01_|tuya-bulb-305": {
+  "_tyzb01_|ts0205": {
     "manufacturerName": "_TYZB01_",
-    "modelId": "tuya-bulb-305",
+    "modelId": "ts0205",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0215a": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0215a",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ty0202": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ty0202",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0101": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0101",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0049": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0049",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ty0203": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ty0203",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0202": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0202",
     "sources": [
       "repo"
     ]
@@ -281161,23 +283947,604 @@
       "repo"
     ]
   },
-  "_tyzb01_|rgbw-bulb": {
+  "_tyzb01_|ts0503a": {
     "manufacturerName": "_TYZB01_",
-    "modelId": "rgbw-bulb",
+    "modelId": "ts0503a",
     "sources": [
       "repo"
     ]
   },
-  "_tz3000_|tuya-bulb-211": {
-    "manufacturerName": "_TZ3000_",
-    "modelId": "tuya-bulb-211",
+  "_tyzb01_|ts0503b": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0503b",
     "sources": [
       "repo"
     ]
   },
-  "_tz3210_|tuya-bulb-211": {
-    "manufacturerName": "_TZ3210_",
-    "modelId": "tuya-bulb-211",
+  "_tyzb01_|ts0504b": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0504b",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0225": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0225",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ty0201": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ty0201",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0222": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0222",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|mct-340 e": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "mct-340 e",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts110f": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts110f",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts110e": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts110e",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0052": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0052",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0502b": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0502b",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|rh3040": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "rh3040",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|doorwindow-sensor-zb3.0": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "doorwindow-sensor-zb3.0",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-shade-837": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-shade-837",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-shade-756": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-shade-756",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-garage-65": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-garage-65",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-garage-4": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-garage-4",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-curtain-431": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-curtain-431",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-curtain-339": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-curtain-339",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-blind-515": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-blind-515",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ikea-blind-14": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ikea-blind-14",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0601_motion": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0601_motion",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0601_contact": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0601_contact",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0601_water": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0601_water",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0601_vibration": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0601_vibration",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0601_switch": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0601_switch",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0601_smoke": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0601_smoke",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0601_presence": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0601_presence",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0601_gas": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0601_gas",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0601_curtain": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0601_curtain",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ts0601_thermostat": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ts0601_thermostat",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-chime-96": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-chime-96",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|jz-zb-004": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "jz-zb-004",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-chime-728": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-chime-728",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-buzzer-704": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-buzzer-704",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-buzzer-702": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-buzzer-702",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-alarm-579": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-alarm-579",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-alarm-271": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-alarm-271",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-water-581": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-water-581",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-water-264": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-water-264",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-thermostat-825": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-thermostat-825",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-thermostat-435": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-thermostat-435",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-temperature-779": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-temperature-779",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-temperature-622": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-temperature-622",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-switch-549": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-switch-549",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-switch-225": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-switch-225",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-smoke-927": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-smoke-927",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-smoke-109": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-smoke-109",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-smart-963": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-smart-963",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-smart-181": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-smart-181",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-power-890": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-power-890",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-power-50": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-power-50",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-outlet-791": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-outlet-791",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-outlet-692": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-outlet-692",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-motion-362": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-motion-362",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-motion-299": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-motion-299",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-humidity-86": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-humidity-86",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-humidity-498": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-humidity-498",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-heater-387": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-heater-387",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-heater-0": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-heater-0",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-gas-695": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-gas-695",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-gas-320": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-gas-320",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-fan-730": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-fan-730",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-fan-200": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-fan-200",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-contact-219": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-contact-219",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-contact-202": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-contact-202",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-ac-563": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-ac-563",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-ac-322": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-ac-322",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-padlock-551": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-padlock-551",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-padlock-538": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-padlock-538",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-door-537": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-door-537",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-door-450": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-door-450",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-deadbolt-850": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-deadbolt-850",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-deadbolt-261": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-deadbolt-261",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-wall-10": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-wall-10",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-table-775": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-table-775",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-table-5": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-table-5",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-strip-782": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-strip-782",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-strip-423": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-strip-423",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-garden-409": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-garden-409",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-garden-168": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-garden-168",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-floor-269": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-floor-269",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-floor-141": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-floor-141",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-ceiling-36": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-ceiling-36",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-ceiling-282": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-ceiling-282",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-bulb-305": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-bulb-305",
     "sources": [
       "repo"
     ]
@@ -281185,6 +284552,125 @@
   "_tyzb01_|tuya-bulb-211": {
     "manufacturerName": "_TYZB01_",
     "modelId": "tuya-bulb-211",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-shade-647": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-shade-647",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-shade-162": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-shade-162",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-garage-581": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-garage-581",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-garage-18": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-garage-18",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-curtain-704": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-curtain-704",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-curtain-601": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-curtain-601",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-blind-531": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-blind-531",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|tuya-blind-205": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "tuya-blind-205",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|table-lamp": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "table-lamp",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|desk-light": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "desk-light",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|led-strip": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "led-strip",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|garden-light": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "garden-light",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|outdoor-light": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "outdoor-light",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|floor-lamp": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "floor-lamp",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|standing-light": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "standing-light",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|ceiling-light": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "ceiling-light",
+    "sources": [
+      "repo"
+    ]
+  },
+  "_tyzb01_|rgbw-bulb": {
+    "manufacturerName": "_TYZB01_",
+    "modelId": "rgbw-bulb",
     "sources": [
       "repo"
     ]
