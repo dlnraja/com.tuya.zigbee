@@ -1,0 +1,14 @@
+{
+  "id": "tuya-shade-162_cover_standard_settings",
+  "name": "Paramètres tuya tuya-shade-162",
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": "Intervalle de polling (secondes)",
+      "default": 30,
+      "min": 10,
+      "max": 300
+    }
+  ]
+}

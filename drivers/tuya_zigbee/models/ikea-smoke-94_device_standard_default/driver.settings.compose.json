@@ -1,0 +1,14 @@
+{
+  "id": "ikea-smoke-94_plug_standard_settings",
+  "name": "Paramètres ikea ikea-smoke-94",
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": "Intervalle de polling (secondes)",
+      "default": 30,
+      "min": 10,
+      "max": 300
+    }
+  ]
+}

@@ -1,25 +1,25 @@
-# zigbee/sensors/lcdtemphumidluxsensor
+// zigbee/sensors/lcdtemphumidluxsensor
 
-## Description
+#// Description
 
 Driver pour appareil Capteur compatible Tuya/Zigbee.
 
-## Capacités
+#// Capacités
 
 - `onoff`
 - `measure_temperature`
 - `measure_humidity`
 
-## Installation
+#// Installation
 
 1. Installer l'app Tuya Zigbee Universal
 2. Ajouter l'appareil via l'interface Homey
 3. Suivre les instructions de configuration
 
-## Support
+#// Support
 
 Pour le support, visitez: https://github.com/dlnraja/com.tuya.zigbee/issues
 
-## Licence
+#// Licence
 
 MIT License

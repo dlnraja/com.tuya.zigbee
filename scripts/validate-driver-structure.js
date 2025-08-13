@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// !/usr/bin/env node
 'use strict';
 /**
  * VALIDATE DRIVER STRUCTURE
@@ -119,7 +119,7 @@ function validateDriverCompose(driverPath){
   const composePath=path.join(driverPath,'driver.compose.json');
   if(!fs.existsSync(composePath))return{valid:false,reason:'driver.compose.json manquant'};
   
-  try{
+  try {
     const compose=JSON.parse(fs.readFileSync(composePath,'utf8'));
     
     // Validation ID
@@ -256,40 +256,40 @@ function validateStructure(){
   
   // Sauvegarde du rapport
   const reportPath=path.join(ROOT,'STRUCTURE_VALIDATION_REPORT.md');
-  const reportContent=`# Rapport de Validation Structure - ${new Date().toISOString()}
+  const reportContent=`// Rapport de Validation Structure - ${new Date().toISOString()}
 
-## Résumé
+#// Résumé
 - **Total drivers**: ${results.total}
 - **Valides**: ${results.valid}
 - **Invalides**: ${results.invalid}
 - **Taux de succès**: ${results.total>0?Math.round((results.valid/results.total)*100):0}%
 
-## Structure attendue
+#// Structure attendue
 \`\`\`
 drivers/
-├── {tuya|zigbee}/           # Domain
-│   ├── {category}/          # Category (light, plug, sensor-motion, etc.)
-│   │   ├── {vendor}/        # Vendor (tuya, aqara, ikea, philips, sonoff, ledvance, generic)
-│   │   │   └── {model}/     # Model (nom spécifique)
-│   │   │       ├── driver.compose.json  # REQUIS
-│   │   │       ├── device.js            # REQUIS
+├── {tuya|zigbee}/           // Domain
+│   ├── {category}/          // Category (light, plug, sensor-motion, etc.)
+│   │   ├── {vendor}/        // Vendor (tuya, aqara, ikea, philips, sonoff, ledvance, generic)
+│   │   │   └── {model}/     // Model (nom spécifique)
+│   │   │       ├── driver.compose.json  // REQUIS
+│   │   │       ├── device.js            // REQUIS
 │   │   │       ├── assets/
-│   │   │       │   ├── icon.svg        # REQUIS
-│   │   │       │   └── small.png       # REQUIS
-│   │   │       ├── settings.json       # OPTIONNEL
-│   │   │       ├── README.md           # OPTIONNEL
-│   │   │       └── CHANGELOG.md        # OPTIONNEL
+│   │   │       │   ├── icon.svg        // REQUIS
+│   │   │       │   └── small.png       // REQUIS
+│   │   │       ├── settings.json       // OPTIONNEL
+│   │   │       ├── README.md           // OPTIONNEL
+│   │   │       └── CHANGELOG.md        // OPTIONNEL
 \`\`\`
 
-## Format ID attendu
+#// Format ID attendu
 \`\`\`
 <category>-<vendor>-<model>
 \`\`\`
 
-## Erreurs détectées
+#// Erreurs détectées
 ${results.errors.length>0?results.errors.map(e=>`- ${e}`).join('\n'):'Aucune erreur'}
 
-## Avertissements
+#// Avertissements
 ${results.warnings.length>0?results.warnings.map(w=>`- ${w}`).join('\n'):'Aucun avertissement'}
 `;
   

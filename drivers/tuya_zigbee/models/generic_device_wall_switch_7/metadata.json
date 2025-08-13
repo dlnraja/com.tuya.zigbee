@@ -1,0 +1,20 @@
+{
+  "id": "generic_wall_switch_2gang",
+  "name": "generic generic_wall_switch_2gang",
+  "category": "generic",
+  "vendor": "generic",
+  "model": "generic_wall_switch_2gang",
+  "type": "tuya_zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:10.434Z",
+  "updatedAt": "2025-08-13T12:09:10.434Z"
+}

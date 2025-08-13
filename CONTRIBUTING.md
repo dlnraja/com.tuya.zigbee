@@ -1,27 +1,27 @@
-# 🤝 Guide de Contribution - Universal TUYA Zigbee Device App
+// 🤝 Guide de Contribution - Universal TUYA Zigbee Device App
 
-## 📅 Date
+#// 📅 Date
 **${new Date().toLocaleString('fr-FR')}**
 
-## 🎯 Objectif
+#// 🎯 Objectif
 **Guide complet pour contribuer au projet**
 
-## 📋 Table des Matières
+#// 📋 Table des Matières
 
-- [🎯 Introduction](#-introduction)
-- [🚀 Premiers Pas](#-premiers-pas)
-- [📝 Workflow de Contribution](#-workflow-de-contribution)
-- [🔧 Développement](#-développement)
-- [🧪 Tests](#-tests)
-- [📚 Documentation](#-documentation)
-- [🎨 Style de Code](#-style-de-code)
-- [📞 Support](#-support)
+- [🎯 Introduction](// -introduction)
+- [🚀 Premiers Pas](// -premiers-pas)
+- [📝 Workflow de Contribution](// -workflow-de-contribution)
+- [🔧 Développement](// -développement)
+- [🧪 Tests](// -tests)
+- [📚 Documentation](// -documentation)
+- [🎨 Style de Code](// -style-de-code)
+- [📞 Support](// -support)
 
-## 🎯 Introduction
+#// 🎯 Introduction
 
 Merci de votre intérêt pour contribuer au projet **Universal TUYA Zigbee Device App** ! Ce guide vous aidera à comprendre comment contribuer efficacement.
 
-### 🌟 Types de Contributions
+##// 🌟 Types de Contributions
 
 - **🐛 Bug fixes** - Correction de bugs
 - **✨ Nouvelles fonctionnalités** - Ajout de drivers ou fonctionnalités
@@ -30,38 +30,38 @@ Merci de votre intérêt pour contribuer au projet **Universal TUYA Zigbee Devic
 - **🔧 Outils** - Amélioration des scripts et workflows
 - **🌍 Traductions** - Ajout de nouvelles langues
 
-## 🚀 Premiers Pas
+#// 🚀 Premiers Pas
 
-### 📋 Prérequis
+##// 📋 Prérequis
 
 - **Node.js** 18+ installé
 - **Git** configuré
-- **Homey CLI** installé (`npm install -g homey`)
+- **Homey CLI** installé (\npm install -g homey`)
 - Compte **GitHub** actif
 
-### 🔧 Installation Locale
+##// 🔧 Installation Locale
 
 ```bash
-# 1. Fork le repository
-# Allez sur https://github.com/dlnraja/com.tuya.zigbee et cliquez sur "Fork"
+// 1. Fork le repository
+// Allez sur https://github.com/dlnraja/com.tuya.zigbee et cliquez sur "Fork"
 
-# 2. Clone votre fork
+// 2. Clone votre fork
 git clone https://github.com/VOTRE_USERNAME/com.tuya.zigbee.git
 cd com.tuya.zigbee
 
-# 3. Ajoutez le repository original comme upstream
+// 3. Ajoutez le repository original comme upstream
 git remote add upstream https://github.com/dlnraja/com.tuya.zigbee.git
 
-# 4. Installez les dépendances
+// 4. Installez les dépendances
 npm install
 
-# 5. Testez l'installation
+// 5. Testez l'installation
 homey app run
 ```
 
-## 📝 Workflow de Contribution
+#// 📝 Workflow de Contribution
 
-### 🔄 Processus Standard
+##// 🔄 Processus Standard
 
 1. **🔄 Synchronisez votre fork**
    ```bash
@@ -102,67 +102,67 @@ homey app run
    - Cliquez sur "New Pull Request"
    - Remplissez le template
 
-### 📋 Template de Pull Request
+##// 📋 Template de Pull Request
 
 ```markdown
-## 🎯 Description
+#// 🎯 Description
 Brève description de votre contribution
 
-## 🔧 Type de Changement
+#// 🔧 Type de Changement
 - [ ] Bug fix
 - [ ] Nouvelle fonctionnalité
 - [ ] Documentation
 - [ ] Test
 - [ ] Outil/Workflow
 
-## 📊 Impact
+#// 📊 Impact
 - Drivers ajoutés/modifiés: X
 - Tests ajoutés: X
 - Documentation mise à jour: X
 
-## 🧪 Tests
+#// 🧪 Tests
 - [ ] Tests locaux passés
 - [ ] Validation Homey passée
 - [ ] Tests CI passés
 
-## 📚 Documentation
+#// 📚 Documentation
 - [ ] README mis à jour
 - [ ] Changelog mis à jour
 - [ ] Documentation API mise à jour
 
-## 🎯 MEGA-PROMPT ULTIME - VERSION FINALE 2025
+#// 🎯 MEGA-PROMPT ULTIME - VERSION FINALE 2025
 ✅ Contribution conforme aux standards du projet
 ```
 
-## 🔧 Développement
+#// 🔧 Développement
 
-### 📁 Structure du Projet
+##// 📁 Structure du Projet
 
 ```
 com.tuya.zigbee/
-├── drivers/           # Pilotes Homey
-│   ├── tuya/         # Drivers Tuya
-│   └── zigbee/       # Drivers Zigbee génériques
-├── scripts/          # Scripts d'automatisation
-├── docs/             # Documentation
-├── .github/          # Workflows GitHub Actions
-├── app.js            # Point d'entrée principal
-├── app.json          # Configuration Homey
-└── package.json      # Dépendances Node.js
+├── drivers/           // Pilotes Homey
+│   ├── tuya/         // Drivers Tuya
+│   └── zigbee/       // Drivers Zigbee génériques
+├── scripts/          // Scripts d'automatisation
+├── docs/             // Documentation
+├── .github/          // Workflows GitHub Actions
+├── app.js            // Point d'entrée principal
+├── app.json          // Configuration Homey
+└── package.json      // Dépendances Node.js
 ```
 
-### 🎨 Conventions de Nommage
+##// 🎨 Conventions de Nommage
 
-#### 📦 Drivers
-- **Format**: `type_brand_model`
+###// 📦 Drivers
+- **Format**: \type_brand_model`
 - **Exemple**: `lights_tuya_led-strip`
 
-#### 📄 Fichiers
+###// 📄 Fichiers
 - **driver.compose.json** - Configuration du driver
 - **driver.js** - Logique du driver
 - **README.md** - Documentation du driver
 
-#### 🏷️ Commits
+###// 🏷️ Commits
 - **feat**: Nouvelle fonctionnalité
 - **fix**: Correction de bug
 - **docs**: Documentation
@@ -170,7 +170,7 @@ com.tuya.zigbee/
 - **refactor**: Refactoring
 - **ci**: CI/CD
 
-### 🔧 Ajout d'un Nouveau Driver
+##// 🔧 Ajout d'un Nouveau Driver
 
 1. **📁 Créez le dossier**
    ```bash
@@ -214,39 +214,39 @@ com.tuya.zigbee/
 
 4. **📚 Créez README.md**
    ```markdown
-   # Nouveau Driver
+   // Nouveau Driver
    
-   ## Compatibilité
+   #// Compatibilité
    - Fabricant: Tuya
    - Modèle: TS0601
    - Clusters: genOnOff, genLevelCtrl
    
-   ## Installation
+   #// Installation
    Automatique via l'app
    
-   ## Utilisation
+   #// Utilisation
    Support complet on/off et dimming
    ```
 
-## 🧪 Tests
+#// 🧪 Tests
 
-### 🔍 Tests Locaux
+##// 🔍 Tests Locaux
 
 ```bash
-# Tests unitaires
+// Tests unitaires
 npm test
 
-# Validation Homey
+// Validation Homey
 homey app validate
 
-# Tests de build
+// Tests de build
 npm run build
 
-# Tests de lint
+// Tests de lint
 npm run lint
 ```
 
-### 📊 Tests CI/CD
+##// 📊 Tests CI/CD
 
 Les tests automatiques incluent :
 - ✅ Validation des drivers
@@ -255,16 +255,16 @@ Les tests automatiques incluent :
 - ✅ Tests de compatibilité
 - ✅ Tests de documentation
 
-## 📚 Documentation
+#// 📚 Documentation
 
-### 📝 Standards de Documentation
+##// 📝 Standards de Documentation
 
 - **README.md** - Documentation principale
 - **Inline comments** - Commentaires dans le code
 - **API docs** - Documentation des APIs
 - **Examples** - Exemples d'utilisation
 
-### 🌍 Traductions
+##// 🌍 Traductions
 
 Le projet supporte 4 langues :
 - **🇬🇧 English** (par défaut)
@@ -272,7 +272,7 @@ Le projet supporte 4 langues :
 - **🇳🇱 Nederlands**
 - **🇱🇰 தமிழ்** (Tamil)
 
-### 📋 Checklist Documentation
+##// 📋 Checklist Documentation
 
 - [ ] README.md mis à jour
 - [ ] Changelog mis à jour
@@ -280,9 +280,9 @@ Le projet supporte 4 langues :
 - [ ] Exemples fournis
 - [ ] Traductions ajoutées
 
-## 🎨 Style de Code
+#// 🎨 Style de Code
 
-### 📝 JavaScript
+##// 📝 JavaScript
 
 ```javascript
 // ✅ Bon
@@ -302,7 +302,7 @@ var monDriver = {
 };
 ```
 
-### 📄 JSON
+##// 📄 JSON
 
 ```json
 {
@@ -315,14 +315,14 @@ var monDriver = {
 }
 ```
 
-### 📝 Markdown
+##// 📝 Markdown
 
 ```markdown
-# Titre Principal
+// Titre Principal
 
-## Sous-titre
+#// Sous-titre
 
-### Section
+##// Section
 
 - Liste
 - À puces
@@ -330,32 +330,32 @@ var monDriver = {
 **Gras** et *italique*
 ```
 
-## 📞 Support
+#// 📞 Support
 
-### 💬 Communauté
+##// 💬 Communauté
 
 - **Forum Homey**: [Community Thread](https://community.homey.app/t/wip-universal-tuya-zigbee-device-app-cli-install/140352)
 - **GitHub Issues**: [Issues](https://github.com/dlnraja/com.tuya.zigbee/issues)
 - **Discord**: [Serveur Discord](https://discord.gg/homey)
 
-### 📧 Contact
+##// 📧 Contact
 
 - **Mainteneur**: Dylan Rajasekaram
 - **Email**: dylan.rajasekaram+homey@gmail.com
 - **GitHub**: [@dlnraja](https://github.com/dlnraja)
 
-### 🆘 Besoin d'Aide ?
+##// 🆘 Besoin d'Aide ?
 
 1. **📖 Consultez la documentation**
 2. **🔍 Recherchez dans les issues existantes**
 3. **💬 Posez votre question sur le forum**
 4. **🐛 Créez une issue si nécessaire**
 
-## 🎯 MEGA-PROMPT ULTIME - VERSION FINALE 2025
+#// 🎯 MEGA-PROMPT ULTIME - VERSION FINALE 2025
 
 **✅ GUIDE DE CONTRIBUTION COMPLET ET OPTIMISÉ !**
 
-### 🚀 Fonctionnalités du Guide
+##// 🚀 Fonctionnalités du Guide
 
 - **📋 Workflow détaillé** pour les contributions
 - **🔧 Instructions techniques** complètes
@@ -364,7 +364,7 @@ var monDriver = {
 - **📚 Documentation** structurée
 - **🌍 Support multilingue** inclus
 
-### 📊 Statistiques
+##// 📊 Statistiques
 
 - **Sections**: 8 sections principales
 - **Exemples**: 20+ exemples de code

@@ -1,6 +1,6 @@
 {
   "id": "com.tuya.zigbee",
-  "version": "3.3.1",
+  "version": "3.3.0",
   "compatibility": ">=6.0.0",
   "sdk": 3,
   "platforms": [
@@ -47,7 +47,7 @@
   "engines": {
     "node": ">=16.0.0"
   },
-  "brandColor": "#FF6B35",
+  "brandColor": "// FF6B35",
   "metadata": {
     "validated": true,
     "validationDate": "2025-08-08T01:21:11.225Z",

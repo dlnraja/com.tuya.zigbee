@@ -33,7 +33,7 @@ Thumbs.db
 .env.*.local 
 
 =======
-RestoreAndRebuild.ps1
+# RestoreAndRebuild.ps1 → scripts/restore-and-rebuild.js
 D:/Download/fold/
 
 # Fichiers de développement local
@@ -55,17 +55,17 @@ cursor-config/
 
 # Fichiers locaux (NE PAS PUSHER)
 project-tasks.md
-auto-backup.ps1
+# auto-backup.ps1 → scripts/auto-backup.js
 
-# Scripts et automatisations locales
-*.ps1
-monitor.ps1
-quick-save.ps1
+# Scripts et automatisations locales (convertis en JavaScript)
+# *.ps1 → scripts/*.js
+# monitor.ps1 → scripts/monitor.js
+# quick-save.ps1 → scripts/quick-save.js
 
 # Fichiers de configuration locale supplémentaires
 cursor_*.md
 TODO_*.md
-*.ps1
+# *.ps1 → scripts/*.js (convertis en JavaScript)
 *.sh
 logs/
 backups/
@@ -88,7 +88,7 @@ readme_fold_reference.md
 mega_prompt_cursor_tuya.txt
 cursor_recovery_package.zip
 cursor_init.*
-continue.ps1
+# continue.ps1 → scripts/continue.js
 TODO_SCAN_RESULTS.txt
 PROGRESS.md
 README.md.backup

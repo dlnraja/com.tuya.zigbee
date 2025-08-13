@@ -1,12 +1,12 @@
-# 🔧 Drivers API Reference
+// 🔧 Drivers API Reference
 
-## Overview
+#// Overview
 
 The Tuya Zigbee Universal app provides a comprehensive API for managing Tuya and Zigbee devices.
 
-## Driver Classes
+#// Driver Classes
 
-### BaseDriver
+##// BaseDriver
 
 The base class for all drivers.
 
@@ -26,7 +26,7 @@ class BaseDriver extends ZigbeeDevice {
 }
 ```
 
-### TuyaDriver
+##// TuyaDriver
 
 Driver for Tuya devices.
 
@@ -40,7 +40,7 @@ class TuyaDriver extends BaseDriver {
 }
 ```
 
-### ZigbeeDriver
+##// ZigbeeDriver
 
 Driver for Zigbee devices.
 
@@ -54,9 +54,9 @@ class ZigbeeDriver extends BaseDriver {
 }
 ```
 
-## Capabilities
+#// Capabilities
 
-### Light Capabilities
+##// Light Capabilities
 
 - `onoff`: Turn device on/off
 - `dim`: Dimming control
@@ -64,19 +64,19 @@ class ZigbeeDriver extends BaseDriver {
 - `light_hue`: Hue control
 - `light_saturation`: Saturation control
 
-### Sensor Capabilities
+##// Sensor Capabilities
 
 - `measure_temperature`: Temperature measurement
 - `measure_humidity`: Humidity measurement
 - `measure_pressure`: Pressure measurement
 
-### Switch Capabilities
+##// Switch Capabilities
 
 - `onoff`: Switch control
 
-## Events
+#// Events
 
-### Device Events
+##// Device Events
 
 ```javascript
 // Device added
@@ -95,7 +95,7 @@ this.on('device.updated', (device) => {
 });
 ```
 
-### Capability Events
+##// Capability Events
 
 ```javascript
 // Capability changed
@@ -109,9 +109,9 @@ this.on('capability.dim', (value) => {
 });
 ```
 
-## Methods
+#// Methods
 
-### Device Management
+##// Device Management
 
 ```javascript
 // Get device by ID
@@ -127,7 +127,7 @@ await this.addDevice(deviceData);
 await this.removeDevice(deviceId);
 ```
 
-### Capability Management
+##// Capability Management
 
 ```javascript
 // Register capability
@@ -140,7 +140,7 @@ await this.setCapabilityValue('onoff', true);
 const value = this.getCapabilityValue('onoff');
 ```
 
-## Error Handling
+#// Error Handling
 
 ```javascript
 try {
@@ -151,7 +151,7 @@ try {
 }
 ```
 
-## Logging
+#// Logging
 
 ```javascript
 // Log levels
@@ -161,6 +161,6 @@ this.log('Error message', 'error');
 this.log('Warning message', 'warn');
 ```
 
-## Examples
+#// Examples
 
 See the [examples directory](../examples/) for complete code examples.

@@ -1,0 +1,20 @@
+{
+  "id": "tuya-strip-782_light_standard",
+  "name": "tuya tuya-strip-782",
+  "category": "light",
+  "vendor": "tuya",
+  "model": "tuya-strip-782",
+  "type": "tuya_zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:08:57.109Z",
+  "updatedAt": "2025-08-13T12:08:57.109Z"
+}

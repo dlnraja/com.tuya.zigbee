@@ -1,0 +1,13 @@
+{
+  "id": "plug_ts0121",
+  "name": "plug ts0121",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "0x0006"
+  ],
+  "endpoints": [
+    1
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "tuya-thermostat-435_plug_standard",
+  "name": "tuya tuya-thermostat-435",
+  "category": "plug",
+  "vendor": "tuya",
+  "model": "tuya-thermostat-435",
+  "type": "tuya_zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:00.176Z",
+  "updatedAt": "2025-08-13T12:09:00.176Z"
+}

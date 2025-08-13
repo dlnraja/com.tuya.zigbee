@@ -1,1 +1,1 @@
-# AI Adv Script 18
+// AI Adv Script 18

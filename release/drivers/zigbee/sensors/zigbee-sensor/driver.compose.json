@@ -26,8 +26,8 @@
   ],
   "design": {
     "category": "sensors",
-    "primaryColor": "#FF6347",
-    "secondaryColor": "#DC143C",
+    "primaryColor": "// FF6347",
+    "secondaryColor": "// DC143C",
     "icon": "📡",
     "pattern": "wave-gradient"
   },

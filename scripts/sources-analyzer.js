@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// !/usr/bin/env node
 
 /**
  * Script d'analyse des sources externes
@@ -408,96 +408,96 @@ function saveAnalysisResults(mergedInfo, matrix) {
 
 function generateHTMLReport(mergedInfo, matrix) {
   const html = `<!DOCTYPE html>
-<html lang="fr">
+<html lang = "fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <title>Rapport d'Analyse des Sources - Drivers Tuya/Zigbee</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; }
-        .header { background: #f0f0f0; padding: 20px; border-radius: 5px; }
-        .section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .header { background: // f0f0f0; padding: 20px; border-radius: 5px; }
+        .section { margin: 20px 0; padding: 15px; border: 1px solid // ddd; border-radius: 5px; }
         .driver-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; }
-        .driver-card { border: 1px solid #ccc; padding: 10px; border-radius: 5px; background: #f9f9f9; }
-        .capability { display: inline-block; background: #007bff; color: white; padding: 2px 8px; margin: 2px; border-radius: 3px; font-size: 12px; }
+        .driver-card { border: 1px solid // ccc; padding: 10px; border-radius: 5px; background: // f9f9f9; }
+        .capability { display: inline-block; background: // 007bff; color: white; padding: 2px 8px; margin: 2px; border-radius: 3px; font-size: 12px; }
         .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
-        .stat-card { background: #e3f2fd; padding: 15px; border-radius: 5px; text-align: center; }
-        .stat-number { font-size: 2em; font-weight: bold; color: #1976d2; }
+        .stat-card { background: // e3f2fd; padding: 15px; border-radius: 5px; text-align: center; }
+        .stat-number { font-size: 2em; font-weight: bold; color: // 1976d2; }
     </style>
 </head>
 <body>
-    <div class="header">
+    <div class = "header">
         <h1>🚀 Rapport d'Analyse des Sources - Drivers Tuya/Zigbee</h1>
         <p>Généré le: ${new Date(mergedInfo.timestamp).toLocaleString('fr-FR')}</p>
         <p>Sources analysées: ${mergedInfo.sources.join(', ')}</p>
     </div>
     
-    <div class="section">
+    <div class = "section">
         <h2>📊 Statistiques Générales</h2>
-        <div class="stats">
-            <div class="stat-card">
-                <div class="stat-number">${mergedInfo.summary.totalDrivers}</div>
+        <div class = "stats">
+            <div class = "stat-card">
+                <div class = "stat-number">${mergedInfo.summary.totalDrivers}</div>
                 <div>Drivers</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">${mergedInfo.summary.totalManufacturers}</div>
+            <div class = "stat-card">
+                <div class = "stat-number">${mergedInfo.summary.totalManufacturers}</div>
                 <div>Fabricants</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">${mergedInfo.summary.totalModels}</div>
+            <div class = "stat-card">
+                <div class = "stat-number">${mergedInfo.summary.totalModels}</div>
                 <div>Modèles</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">${mergedInfo.summary.totalCapabilities}</div>
+            <div class = "stat-card">
+                <div class = "stat-number">${mergedInfo.summary.totalCapabilities}</div>
                 <div>Capacités</div>
             </div>
         </div>
     </div>
     
-    <div class="section">
+    <div class = "section">
         <h2>🔧 Drivers Identifiés</h2>
-        <div class="driver-grid">
+        <div class = "driver-grid">
             ${mergedInfo.drivers.map(driver => `
-                <div class="driver-card">
+                <div class = "driver-card">
                     <h3>${driver.name}</h3>
                     <p><strong>Type:</strong> ${driver.type}</p>
                     <p><strong>Catégorie:</strong> ${driver.category || 'N/A'}</p>
                     <p><strong>Fabricant:</strong> ${driver.manufacturer}</p>
                     <p><strong>Modèle:</strong> ${driver.model}</p>
                     <p><strong>Capacités:</strong></p>
-                    <div>${(driver.capabilities || []).map(cap => `<span class="capability">${cap}</span>`).join('')}</div>
+                    <div>${(driver.capabilities || []).map(cap => `<span class = "capability">${cap}</span>`).join('')}</div>
                 </div>
             `).join('')}
         </div>
     </div>
     
-    <div class="section">
+    <div class = "section">
         <h2>⚠️ Problèmes Identifiés</h2>
         <ul>
             ${mergedInfo.issues.map(issue => `<li>${issue}</li>`).join('')}
         </ul>
     </div>
     
-    <div class="section">
+    <div class = "section">
         <h2>💡 Solutions Proposées</h2>
         <ul>
             ${mergedInfo.solutions.map(solution => `<li>${solution}</li>`).join('')}
         </ul>
     </div>
     
-    <div class="section">
+    <div class = "section">
         <h2>🏭 Fabricants Identifiés</h2>
         <p>${mergedInfo.manufacturers.join(', ')}</p>
     </div>
     
-    <div class="section">
+    <div class = "section">
         <h2>📋 Modèles Identifiés</h2>
         <p>${mergedInfo.models.join(', ')}</p>
     </div>
     
-    <div class="section">
+    <div class = "section">
         <h2>⚡ Capacités Identifiées</h2>
-        <div>${mergedInfo.capabilities.map(cap => `<span class="capability">${cap}</span>`).join('')}</div>
+        <div>${mergedInfo.capabilities.map(cap => `<span class = "capability">${cap}</span>`).join('')}</div>
     </div>
 </body>
 </html>`;

@@ -1,23 +1,23 @@
-# 💡 zigbee-light-bulb
+// 💡 zigbee-light-bulb
 
-## 📋 Description
+#// 📋 Description
 
 Driver pour appareils ZIGBEE de type lights.
 
-## 🔧 Capacités
+#// 🔧 Capacités
 
 - `onoff`
 - `dim`
 - `light_temperature`
 
-## 📁 Fichier
+#// 📁 Fichier
 
 `drivers/zigbee/zigbee-light-bulb.js`
 
-## 🎯 Utilisation
+#// 🎯 Utilisation
 
 Ce driver est automatiquement détecté par Homey et peut être utilisé avec les appareils compatibles.
 
-## 🔄 Mises à jour
+#// 🔄 Mises à jour
 
 Généré automatiquement par DriversGeneratorUltimate.

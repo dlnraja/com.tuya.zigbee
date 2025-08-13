@@ -1,40 +1,40 @@
-# 📚 Documentation Index
+// 📚 Documentation Index
 
-## 🚀 Tuya Zigbee Universal Documentation
+#// 🚀 Tuya Zigbee Universal Documentation
 
 Welcome to the complete documentation for Tuya Zigbee Universal. This documentation is available in multiple languages and covers all aspects of the application.
 
-## 📖 User Documentation
+#// 📖 User Documentation
 
-### Installation & Setup
+##// Installation & Setup
 - [Installation Guide (EN)](en/installation.md)
 - [Installation Guide (FR)](fr/installation.md)
 - [Installation Guide (TA)](ta/installation.md)
 
-### Configuration
+##// Configuration
 - [Configuration Guide (EN)](en/configuration.md)
 - [Configuration Guide (FR)](fr/configuration.md)
 - [Configuration Guide (TA)](ta/configuration.md)
 
-### Troubleshooting
+##// Troubleshooting
 - [Troubleshooting Guide (EN)](en/troubleshooting.md)
 - [Troubleshooting Guide (FR)](fr/troubleshooting.md)
 - [Troubleshooting Guide (TA)](ta/troubleshooting.md)
 
-## 🔧 Technical Documentation
+#// 🔧 Technical Documentation
 
-### API Reference
+##// API Reference
 - [Drivers API](api/drivers-api.md)
 - [Capabilities API](api/capabilities-api.md)
 
-### Code Examples
+##// Code Examples
 - [Tuya Driver Example](examples/tuya-light-bulb-example.js)
 - [Zigbee Driver Example](examples/zigbee-sensor-example.js)
 
-### User Guides
+##// User Guides
 - [Complete User Guide](guides/user-guide.md)
 
-## 🌍 Language Support
+#// 🌍 Language Support
 
 This documentation is available in the following languages:
 
@@ -45,7 +45,7 @@ This documentation is available in the following languages:
 - 🇩🇪 **Deutsch** (DE) - German
 - 🇪🇸 **Español** (ES) - Spanish
 
-## 📊 Documentation Statistics
+#// 📊 Documentation Statistics
 
 - **Total Pages**: 24
 - **Languages**: 6
@@ -53,11 +53,11 @@ This documentation is available in the following languages:
 - **API References**: 2
 - **User Guides**: 1
 
-## 🔄 Updates
+#// 🔄 Updates
 
 This documentation is automatically generated and updated with each release. The latest version corresponds to the current app version.
 
-## 🤝 Contributing
+#// 🤝 Contributing
 
 To contribute to the documentation:
 
@@ -66,7 +66,7 @@ To contribute to the documentation:
 3. Submit a pull request
 4. Follow the contribution guidelines
 
-## 📞 Support
+#// 📞 Support
 
 For additional support:
 

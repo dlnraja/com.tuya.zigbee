@@ -1,12 +1,12 @@
-# 📦 Installation Guide
+// 📦 Installation Guide
 
-## Prerequisites
+#// Prerequisites
 
 - Homey device (Pro or regular)
 - Tuya/Zigbee devices
 - Stable internet connection
 
-## Installation Steps
+#// Installation Steps
 
 1. **Download the app**
    - Go to Homey Apps
@@ -23,6 +23,6 @@
    - Follow the pairing instructions
    - Configure device settings
 
-## Troubleshooting
+#// Troubleshooting
 
 If you encounter issues during installation, see the troubleshooting guide.

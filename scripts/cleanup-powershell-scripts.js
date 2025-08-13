@@ -1,12 +1,12 @@
-#!/usr/bin/env node
+// !/usr/bin/env node
 
 /**
- * Script de nettoyage des scripts PowerShell
+ * Script de nettoyage des scripts JavaScript
  * Basé sur les instructions du dossier fold
  * 
  * Objectifs :
- * - Supprimer les scripts PowerShell restants
- * - Convertir les scripts .ps1 en .js si nécessaire
+ * - Supprimer les scripts JavaScript restants
+ * - Convertir les scripts .js en .js si nécessaire
  * - Nettoyer les dossiers et fichiers obsolètes
  * - Améliorer la cohérence du projet
  */
@@ -17,38 +17,38 @@ const path = require('path');
 // Configuration
 const ROOT_DIR = '.';
 const SCRIPTS_DIR = 'scripts';
-const BACKUP_DIR = '.backup/ps1-scripts';
+const BACKUP_DIR = '.backup/js-scripts';
 
-// Scripts PowerShell à supprimer ou convertir
-const PS1_SCRIPTS_TO_REMOVE = [
-  'reorganize-drivers.ps1',
-  'run-mega-prompt.ps1',
-  'update-mega-final.ps1',
-  'enrich-drivers-simple.ps1',
-  'enrich-drivers-final.ps1',
-  'run-simple-reorganize.ps1',
-  'fix-drivers-structure.ps1',
-  'run-mega.ps1',
-  'MEGA-COMMANDS.ps1'
+// Scripts JavaScript à supprimer ou convertir
+const JS_SCRIPTS_TO_REMOVE = [
+  'reorganize-drivers.js',
+  'run-mega-prompt.js',
+  'update-mega-final.js',
+  'enrich-drivers-simple.js',
+  'enrich-drivers-final.js',
+  'run-simple-reorganize.js',
+  'fix-drivers-structure.js',
+  'run-mega.js',
+  'MEGA-COMMANDS.js'
 ];
 
-const PS1_SCRIPTS_TO_CONVERT = [
-  'RestoreAndRebuild.ps1' // Garder mais créer une version JS
+const JS_SCRIPTS_TO_CONVERT = [
+  'RestoreAndRebuild.js' // Garder mais créer une version JS
 ];
 
 // Fonction principale
-async function cleanupPowerShellScripts() {
-  console.log('🚀 Début du nettoyage des scripts PowerShell...');
+async function cleanupJavaScriptScripts() {
+  console.log('🚀 Début du nettoyage des scripts JavaScript...');
   
   try {
     // 1. Créer le dossier de backup
     await createBackupDirectory();
     
-    // 2. Supprimer les scripts PowerShell obsolètes
-    await removeObsoletePS1Scripts();
+    // 2. Supprimer les scripts JavaScript obsolètes
+    await removeObsoleteJSScripts();
     
-    // 3. Convertir les scripts PowerShell utiles
-    await convertUsefulPS1Scripts();
+    // 3. Convertir les scripts JavaScript utiles
+    await convertUsefulJSScripts();
     
     // 4. Nettoyer les fichiers .bat
     await cleanupBatchFiles();
@@ -56,7 +56,7 @@ async function cleanupPowerShellScripts() {
     // 5. Mettre à jour les références
     await updateReferences();
     
-    console.log('✅ Nettoyage des scripts PowerShell terminé!');
+    console.log('✅ Nettoyage des scripts JavaScript terminé!');
     
   } catch (error) {
     console.error('❌ Erreur lors du nettoyage:', error.message);
@@ -72,11 +72,11 @@ async function createBackupDirectory() {
   }
 }
 
-// Supprimer les scripts PowerShell obsolètes
-async function removeObsoletePS1Scripts() {
-  console.log('🗑️ Suppression des scripts PowerShell obsolètes...');
+// Supprimer les scripts JavaScript obsolètes
+async function removeObsoleteJSScripts() {
+  console.log('🗑️ Suppression des scripts JavaScript obsolètes...');
   
-  for (const script of PS1_SCRIPTS_TO_REMOVE) {
+  for (const script of JS_SCRIPTS_TO_REMOVE) {
     const scriptPath = path.join(ROOT_DIR, script);
     
     if (fs.existsSync(scriptPath)) {
@@ -91,40 +91,40 @@ async function removeObsoletePS1Scripts() {
   }
 }
 
-// Convertir les scripts PowerShell utiles
-async function convertUsefulPS1Scripts() {
-  console.log('🔄 Conversion des scripts PowerShell utiles...');
+// Convertir les scripts JavaScript utiles
+async function convertUsefulJSScripts() {
+  console.log('🔄 Conversion des scripts JavaScript utiles...');
   
-  for (const script of PS1_SCRIPTS_TO_CONVERT) {
-    const ps1Path = path.join(ROOT_DIR, script);
+  for (const script of JS_SCRIPTS_TO_CONVERT) {
+    const jsPath = path.join(ROOT_DIR, script);
     
-    if (fs.existsSync(ps1Path)) {
+    if (fs.existsSync(jsPath)) {
       // Backup
       const backupPath = path.join(BACKUP_DIR, script);
-      fs.copyFileSync(ps1Path, backupPath);
+      fs.copyFileSync(jsPath, backupPath);
       
       // Créer la version JS
       await createJavaScriptVersion(script);
       
-      console.log(`🔄 Converti: ${script} → ${script.replace('.ps1', '.js')}`);
+      console.log(`🔄 Converti: ${script} → ${script.replace('.js', '.js')}`);
     }
   }
 }
 
-// Créer la version JavaScript d'un script PowerShell
-async function createJavaScriptVersion(ps1Script) {
-  const scriptName = ps1Script.replace('.ps1', '');
+// Créer la version JavaScript d'un script JavaScript
+async function createJavaScriptVersion(jsScript) {
+  const scriptName = jsScript.replace('.js', '');
   const jsPath = path.join(SCRIPTS_DIR, `${scriptName}.js`);
   
   let jsContent = '';
   
   switch (scriptName) {
     case 'RestoreAndRebuild':
-      jsContent = `#!/usr/bin/env node
+      jsContent = `// !/usr/bin/env node
 
 /**
  * Script de restauration et reconstruction du projet
- * Version JavaScript du script PowerShell RestoreAndRebuild.ps1
+ * Version JavaScript du script JavaScript RestoreAndRebuild.js
  */
 
 const { execSync } = require('child_process');
@@ -132,8 +132,8 @@ const fs = require('fs');
 const path = require('path');
 
 // Configuration
-const FORK = "https://github.com/dlnraja/com.tuya.zigbee.git";
-const BRANCH = "master";
+const FORK  = "https://github.com/dlnraja/com.tuya.zigbee.git";
+const BRANCH  = "master";
 const WORK_DIR = path.join(process.env.HOME || process.env.USERPROFILE, "Desktop", "tuya-repair");
 
 async function restoreAndRebuild() {
@@ -151,7 +151,7 @@ async function restoreAndRebuild() {
     // 2. Backup + suppression de l'ancien repo
     if (fs.existsSync('repo')) {
       const stamp = new Date().toISOString().replace(/[:.]/g, '').slice(0, -5);
-      const backupPath = \`repo_backup_\${stamp}.zip\`;
+      const backupPath = \\repo_backup_\${stamp}.zip\`;
       
       console.log(\`💾 Sauvegarde repo → \${backupPath}\`);
       
@@ -209,7 +209,7 @@ async function regenerateWorkflows() {
   }
   
   // CI workflow
-  const ciYaml = \`name: CI & Manifest Sync
+  const ciYaml = \\name: CI & Manifest Sync
 on:
   push:
     branches: [ master ]
@@ -306,17 +306,17 @@ module.exports = { restoreAndRebuild };
       break;
       
     default:
-      jsContent = `#!/usr/bin/env node
+      jsContent = `// !/usr/bin/env node
 
 /**
- * Script converti depuis ${ps1Script}
+ * Script converti depuis ${jsScript}
  * Version JavaScript - à implémenter selon les besoins
  */
 
-console.log('🚧 Script en cours de conversion depuis ${ps1Script}');
+console.log('🚧 Script en cours de conversion depuis ${jsScript}');
 console.log('📝 Implémentation à compléter selon les besoins spécifiques');
 
-// TODO: Implémenter la logique du script PowerShell
+// TODO: Implémenter la logique du script JavaScript
 `;
   }
   
@@ -351,56 +351,56 @@ async function cleanupBatchFiles() {
 async function updateReferences() {
   console.log('📝 Mise à jour des références...');
   
-  // Mettre à jour MEGA-COMMANDS.ps1 en MEGA-COMMANDS.md
-  const megaCommandsPath = path.join(ROOT_DIR, 'MEGA-COMMANDS.ps1');
+  // Mettre à jour MEGA-COMMANDS.js en MEGA-COMMANDS.md
+  const megaCommandsPath = path.join(ROOT_DIR, 'MEGA-COMMANDS.js');
   if (fs.existsSync(megaCommandsPath)) {
-    const backupPath = path.join(BACKUP_DIR, 'MEGA-COMMANDS.ps1');
+    const backupPath = path.join(BACKUP_DIR, 'MEGA-COMMANDS.js');
     fs.copyFileSync(megaCommandsPath, backupPath);
     
     // Convertir en markdown
-    const mdContent = `# 🚀 Commandes MEGA - Tuya Zigbee
+    const mdContent = `// 🚀 Commandes MEGA - Tuya Zigbee
 
-## 📋 Commandes principales
+#// 📋 Commandes principales
 
-### Pipeline Progressive
+##// Pipeline Progressive
 \`\`\`bash
 node scripts/mega-progressive.js
 \`\`\`
 
-### Sources Wildcard
+##// Sources Wildcard
 \`\`\`bash
 node scripts/sources-wildcard.js
 \`\`\`
 
-### Pipeline Complète
+##// Pipeline Complète
 \`\`\`bash
 node scripts/mega-sources-complete.js
 \`\`\`
 
-## 🔧 Scripts de maintenance
+#// 🔧 Scripts de maintenance
 
-### Complétion app.js
+##// Complétion app.js
 \`\`\`bash
 node scripts/complete-app-js.js
 \`\`\`
 
-### Création fichiers manquants
+##// Création fichiers manquants
 \`\`\`bash
 node scripts/create-missing-files.js
 \`\`\`
 
-### Nettoyage PowerShell
+##// Nettoyage JavaScript
 \`\`\`bash
-node scripts/cleanup-powershell-scripts.js
+node scripts/cleanup-javascript-scripts.js
 \`\`\`
 
-## 📁 Structure du projet
+#// 📁 Structure du projet
 - \`scripts/\` - Scripts Node.js d'automatisation
 - \`drivers/\` - Drivers Tuya et Zigbee organisés
 - \`docs/\` - Documentation et guides
 - \`.github/workflows/\` - Actions GitHub automatisées
 
-## 🎯 Mode YOLO activé
+#// 🎯 Mode YOLO activé
 - Exécution automatique de toutes les commandes
 - Mode non-interactif
 - Pushes automatiques après chaque étape
@@ -410,7 +410,7 @@ node scripts/cleanup-powershell-scripts.js
     fs.writeFileSync('MEGA-COMMANDS.md', mdContent, 'utf8');
     fs.unlinkSync(megaCommandsPath);
     
-    console.log('📄 MEGA-COMMANDS.ps1 converti en MEGA-COMMANDS.md');
+    console.log('📄 MEGA-COMMANDS.js converti en MEGA-COMMANDS.md');
   }
   
   // Mettre à jour le README principal
@@ -424,28 +424,28 @@ async function updateMainReadme() {
   if (fs.existsSync(readmePath)) {
     let readmeContent = fs.readFileSync(readmePath, 'utf8');
     
-    // Ajouter section sur le nettoyage PowerShell
-    if (!readmeContent.includes('PowerShell')) {
+    // Ajouter section sur le nettoyage JavaScript
+    if (!readmeContent.includes('JavaScript')) {
       const cleanupSection = `
 
-## 🧹 Nettoyage et maintenance
+#// 🧹 Nettoyage et maintenance
 
-### Scripts PowerShell
-Les scripts PowerShell ont été supprimés et convertis en JavaScript pour améliorer la cohérence du projet.
+##// Scripts JavaScript
+Les scripts JavaScript ont été supprimés et convertis en JavaScript pour améliorer la cohérence du projet.
 
 - **Supprimés** : Scripts obsolètes et redondants
 - **Convertis** : Scripts utiles convertis en JavaScript
-- **Backup** : Sauvegarde dans \`.backup/ps1-scripts/\`
+- **Backup** : Sauvegarde dans \`.backup/js-scripts/\`
 
-### Commandes de maintenance
+##// Commandes de maintenance
 \`\`\`bash
-# Nettoyage PowerShell
-node scripts/cleanup-powershell-scripts.js
+// Nettoyage JavaScript
+node scripts/cleanup-javascript-scripts.js
 
-# Complétion app.js
+// Complétion app.js
 node scripts/complete-app-js.js
 
-# Création fichiers manquants
+// Création fichiers manquants
 node scripts/create-missing-files.js
 \`\`\`
 `;
@@ -460,7 +460,7 @@ node scripts/create-missing-files.js
 
 // Exécution si appelé directement
 if (require.main === module) {
-  cleanupPowerShellScripts().catch(console.error);
+  cleanupJavaScriptScripts().catch(console.error);
 }
 
-module.exports = { cleanupPowerShellScripts };
+module.exports = { cleanupJavaScriptScripts };

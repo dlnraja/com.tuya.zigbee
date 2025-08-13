@@ -1,0 +1,20 @@
+{
+  "id": "aqara-padlock-460_lock_standard",
+  "name": "aqara aqara-padlock-460",
+  "category": "lock",
+  "vendor": "aqara",
+  "model": "aqara-padlock-460",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:03.330Z",
+  "updatedAt": "2025-08-13T12:09:03.330Z"
+}

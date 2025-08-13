@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// !/usr/bin/env node
 
 /**
  * Script de génération des assets manquants
@@ -121,21 +121,21 @@ function generateMissingAssets() {
 
 function generateDefaultIcon(model, category) {
   const colors = {
-    switch: '#FF6B6B',
-    dimmer: '#4ECDC4',
-    light: '#45B7D1',
-    plug: '#96CEB4',
-    sensor: '#FFEAA7',
-    climate: '#DDA0DD',
-    cover: '#98D8C8',
-    siren: '#F7DC6F'
+    switch: '// FF6B6B',
+    dimmer: '// 4ECDC4',
+    light: '// 45B7D1',
+    plug: '// 96CEB4',
+    sensor: '// FFEAA7',
+    climate: '// DDA0DD',
+    cover: '// 98D8C8',
+    siren: '// F7DC6F'
   };
   
-  const color = colors[category] || '#95A5A6';
+  const color = colors[category] || '// 95A5A6';
   
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-  <rect width="24" height="24" fill="${color}" rx="2"/>
-  <text x="12" y="16" font-family="Arial" font-size="8" fill="white" text-anchor="middle">${model}</text>
+  return `<svg xmlns = "http://www.w3.org/2000/svg" viewBox = "0 0 24 24" width = "24" height = "24">
+  <rect width = "24" height = "24" fill = "${color}" rx = "2"/>
+  <text x = "12" y = "16" font-family = "Arial" font-size = "8" fill = "white" text-anchor = "middle">${model}</text>
 </svg>`;
 }
 

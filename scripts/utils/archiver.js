@@ -11,8 +11,8 @@ function extract(zip, out, opts={}) {
   fs.mkdirSync(out, { recursive:true });
   const TIMEOUT = (opts.timeoutSec?opts.timeoutSec:240)*1000;
   if (opts.use7z!==false && has('7z')) { const r = run('7z', ['x','-y', zip, `-o${out}`], TIMEOUT); if (r.ok) return { ok:true, method:'7z' }; }
-  try { const ez = require('extract-zip'); ez.sync ? ez.sync(zip, { dir: out }) : null; return { ok:true, method:'extract-zip' }; } catch {}
-  if (process.platform==='win32') { const ps = `Expand-Archive -LiteralPath '${zip.replace(/'/g,"''")}' -DestinationPath '${out.replace(/'/g,"''")}' -Force`; const r = run('powershell',['-NoProfile','-ExecutionPolicy','Bypass','-Command',ps], TIMEOUT); if (r.ok) return { ok:true, method:'Expand-Archive' }; }
+  try { const ez = require('extract-zip'); ez.sync ? ez.sync(zip, { dir: out }) : null; return { ok:true, method:'extract-zip' }; } catch (error) { /* extract-zip not available */ }
+  if (process.platform==='win32') { const ps = `Expand-Archive -LiteralPath '${zip.replace(/'/g,"''")}' -DestinationPath '${out.replace(/'/g,"''")}' -Force`; const r = run('javascript',['-NoProfile','-ExecutionPolicy','Bypass','-Command',ps], TIMEOUT); if (r.ok) return { ok:true, method:'Expand-Archive' }; }
   const r = run('unzip',['-o', zip, '-d', out], TIMEOUT); if (r.ok) return { ok:true, method:'unzip' }; return { ok:false, method:'none', error:r.stderr || 'all methods failed' };
 }
 module.exports = { extract, has };

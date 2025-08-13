@@ -1,10 +1,10 @@
-# Light Rgb TZ3000 Dbou1ap4
+// Light Rgb TZ3000 Dbou1ap4
 
-## Description
+#// Description
 
 Driver MEGA enrichi pour Light Rgb TZ3000 Dbou1ap4.
 
-## Fonctionnalités
+#// Fonctionnalités
 
 - Support complet des capacités Homey
 - Gestion des DataPoints Tuya
@@ -12,17 +12,17 @@ Driver MEGA enrichi pour Light Rgb TZ3000 Dbou1ap4.
 - Récupération automatique
 - Logs détaillés
 
-## Installation
+#// Installation
 
 1. Installer le driver
 2. Configurer l'appareil
 3. Valider la connexion
 
-## Utilisation
+#// Utilisation
 
 Voir la documentation principale pour plus de détails.
 
-## Support
+#// Support
 
 Pour le support, voir la documentation de dépannage.
 

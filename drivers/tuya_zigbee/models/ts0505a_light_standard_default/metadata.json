@@ -1,0 +1,20 @@
+{
+  "id": "ts0505a_light_standard",
+  "name": "tuya ts0505a",
+  "category": "light",
+  "vendor": "tuya",
+  "model": "ts0505a",
+  "type": "tuya_zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:08:56.114Z",
+  "updatedAt": "2025-08-13T12:08:56.114Z"
+}

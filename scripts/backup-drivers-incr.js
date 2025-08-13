@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// !/usr/bin/env node
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -20,16 +20,16 @@ function listFiles(dir){
 }
 
 function copyIfChanged(src, dest){
-  try{
+  try {
     const sStat = fs.statSync(src);
     let dStat = null;
-    try{ dStat = fs.statSync(dest);}catch{}
+    try { dStat = fs.statSync(dest);}} catch (error) {}
     if (!dStat || sStat.mtimeMs > dStat.mtimeMs || sStat.size !== dStat.size){
       ensureDir(path.dirname(dest));
       fs.copyFileSync(src, dest);
       return true;
     }
-  }catch{}
+  }} catch (error) {}
   return false;
 }
 

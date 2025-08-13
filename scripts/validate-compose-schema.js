@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// !/usr/bin/env node
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -27,7 +27,7 @@ function main(){
   if (!fs.existsSync(root)) { console.log('[compose-schema] no drivers/'); return; }
   const errors = [];
   for (const file of listComposes(root)){
-    try{
+    try {
       const txt = fs.readFileSync(file,'utf8');
       const json = JSON.parse(txt);
       const errs = validateCompose(json);

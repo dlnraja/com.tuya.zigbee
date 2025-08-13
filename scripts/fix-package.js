@@ -8,7 +8,7 @@ function toArray(v) {
   return Array.isArray(v) ? v : [v];
 }
 
-function load(p){try{return JSON.parse(fs.readFileSync(p,'utf8'));}catch{return null;}}
+function load(p){try {return JSON.parse(fs.readFileSync(p,'utf8'));}} catch (error) {return null;}}
 function save(p,o){fs.writeFileSync(p,JSON.stringify(o,null,2)+'\n');}
 function repoUses(mods){
   const patterns=['**/*.js','**/*.ts','**/*.mjs']; 
@@ -16,11 +16,11 @@ function repoUses(mods){
   const files=patterns.flatMap(p=>{
     try {
       return glob.sync(p,{ignore:['node_modules/**','dist/**','.homeybuild/**','.git/**']});
-    } catch {
+    } } catch (error) {
       return [];
     }
   });
-  return files.some(f=>{try{return rx.test(fs.readFileSync(f,'utf8'));}catch{return false;}});
+  return files.some(f=>{try {return rx.test(fs.readFileSync(f,'utf8'));}} catch (error) {return false;}});
 }
 (function(){
   if(!fs.existsSync(PKG)){console.error('[fixpkg] package.json not found');process.exit(1);}

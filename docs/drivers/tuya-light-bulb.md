@@ -1,10 +1,10 @@
-# 💡 tuya-light-bulb
+// 💡 tuya-light-bulb
 
-## 📋 Description
+#// 📋 Description
 
 Driver pour appareils TUYA de type lights.
 
-## 🔧 Capacités
+#// 🔧 Capacités
 
 - `onoff`
 - `dim`
@@ -12,14 +12,14 @@ Driver pour appareils TUYA de type lights.
 - `light_hue`
 - `light_saturation`
 
-## 📁 Fichier
+#// 📁 Fichier
 
 `drivers/tuya/tuya-light-bulb.js`
 
-## 🎯 Utilisation
+#// 🎯 Utilisation
 
 Ce driver est automatiquement détecté par Homey et peut être utilisé avec les appareils compatibles.
 
-## 🔄 Mises à jour
+#// 🔄 Mises à jour
 
 Généré automatiquement par DriversGeneratorUltimate.

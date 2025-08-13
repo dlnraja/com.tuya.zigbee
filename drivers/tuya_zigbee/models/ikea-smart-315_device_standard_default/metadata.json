@@ -1,0 +1,20 @@
+{
+  "id": "ikea-smart-315_plug_standard",
+  "name": "ikea ikea-smart-315",
+  "category": "plug",
+  "vendor": "ikea",
+  "model": "ikea-smart-315",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:08.439Z",
+  "updatedAt": "2025-08-13T12:09:08.439Z"
+}

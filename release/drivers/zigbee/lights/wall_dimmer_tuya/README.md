@@ -1,10 +1,10 @@
-# Wall Dimmer Tuya
+// Wall Dimmer Tuya
 
-## Description
+#// Description
 
 Driver MEGA enrichi pour Wall Dimmer Tuya.
 
-## Fonctionnalités
+#// Fonctionnalités
 
 - Support complet des capacités Homey
 - Gestion des DataPoints Tuya
@@ -12,17 +12,17 @@ Driver MEGA enrichi pour Wall Dimmer Tuya.
 - Récupération automatique
 - Logs détaillés
 
-## Installation
+#// Installation
 
 1. Installer le driver
 2. Configurer l'appareil
 3. Valider la connexion
 
-## Utilisation
+#// Utilisation
 
 Voir la documentation principale pour plus de détails.
 
-## Support
+#// Support
 
 Pour le support, voir la documentation de dépannage.
 

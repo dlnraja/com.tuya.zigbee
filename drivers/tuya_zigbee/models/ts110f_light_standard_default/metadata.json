@@ -1,0 +1,20 @@
+{
+  "id": "ts110f_light_standard",
+  "name": "tuya ts110f",
+  "category": "light",
+  "vendor": "tuya",
+  "model": "ts110f",
+  "type": "tuya_zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:08:56.234Z",
+  "updatedAt": "2025-08-13T12:08:56.234Z"
+}

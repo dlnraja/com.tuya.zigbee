@@ -1,0 +1,14 @@
+{
+  "id": "tuya-deadbolt-850_lock_standard_settings",
+  "name": "Paramètres tuya tuya-deadbolt-850",
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": "Intervalle de polling (secondes)",
+      "default": 30,
+      "min": 10,
+      "max": 300
+    }
+  ]
+}

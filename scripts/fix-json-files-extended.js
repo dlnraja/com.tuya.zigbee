@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// !/usr/bin/env node
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -60,7 +60,7 @@ function tryFix(content){
     removeTrailingCommas
   ];
   for (let i=0;i<transforms.length;i++){
-    try { JSON.parse(txt); return { ok:true, txt }; } catch {}
+    try { JSON.parse(txt); return { ok:true, txt }; } } catch (error) {}
     txt = transforms[i](txt);
   }
   // Dernière tentative
@@ -71,13 +71,13 @@ function main(){
   const files = listJsonFiles(process.cwd());
   let fixed = 0, failed = 0;
   for (const file of files){
-    try{
+    try {
       const raw = fs.readFileSync(file,'utf8');
-      try { JSON.parse(raw); continue; } catch {}
+      try { JSON.parse(raw); continue; } } catch (error) {}
       const { ok, txt } = tryFix(raw);
       if (ok && txt !== raw){ fs.writeFileSync(file, txt); fixed++; }
       else if (!ok) failed++;
-    }catch{ failed++; }
+    }} catch (error) { failed++; }
   }
   console.log(`[json-fix-ext] fixed=${fixed} failed=${failed}`);
 }

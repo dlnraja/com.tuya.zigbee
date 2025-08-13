@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// !/usr/bin/env node
 /**
  * @file fix-tuya-light-actions.js
  * @description Corrige les actions et modelId pour les drivers Tuya light
