@@ -1,0 +1,43 @@
+{
+  "id": "tuya-sensor-ts0203",
+  "name": {
+    "en": "Tuya Door Sensor TS0203",
+    "fr": "Capteur de Porte Tuya TS0203"
+  },
+  "class": "sensor",
+  "capabilities": ["alarm_contact", "measure_battery"],
+  "capabilitiesOptions": {
+    "alarm_contact": {
+      "title": {
+        "en": "Contact",
+        "fr": "Contact"
+      }
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie"
+      }
+    }
+  },
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "zigbee": {
+    "manufacturerName": "_TZ3000_0eje7eyh",
+    "modelId": ["TS0203"],
+    "endpoints": {
+      "1": {
+        "clusters": ["genBasic", "genPowerCfg", "ssIasZone"],
+        "bindings": ["ssIasZone", "genPowerCfg"]
+      }
+    }
+  },
+  "settings": [],
+  "pair": [
+    {
+      "id": "generic_pair"
+    }
+  ]
+}

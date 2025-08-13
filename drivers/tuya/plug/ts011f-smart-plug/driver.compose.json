@@ -1,0 +1,43 @@
+{
+  "id": "tuya-plug-ts011f",
+  "name": {
+    "en": "Tuya Smart Plug TS011F",
+    "fr": "Prise Intelligente Tuya TS011F"
+  },
+  "class": "socket",
+  "capabilities": ["onoff", "measure_power", "measure_current", "measure_voltage"],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Switch",
+        "fr": "Interrupteur"
+      }
+    },
+    "measure_power": {
+      "title": {
+        "en": "Power",
+        "fr": "Puissance"
+      }
+    }
+  },
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "zigbee": {
+    "manufacturerName": "_TZ3000_5f43h46b",
+    "modelId": ["TS011F"],
+    "endpoints": {
+      "1": {
+        "clusters": ["genBasic", "genOnOff", "haElectricalMeasurement"],
+        "bindings": ["genOnOff", "haElectricalMeasurement"]
+      }
+    }
+  },
+  "settings": [],
+  "pair": [
+    {
+      "id": "generic_pair"
+    }
+  ]
+}
