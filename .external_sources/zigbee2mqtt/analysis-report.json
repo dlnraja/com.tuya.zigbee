@@ -1,0 +1,33 @@
+{
+  "source": "Zigbee2MQTT",
+  "repository": "Koenkk/Z-Stack-firmware",
+  "url": "https://github.com/Koenkk/Z-Stack-firmware",
+  "lastUpdated": "2025-08-13T10:37:19.715Z",
+  "analysis": {
+    "stars": 0,
+    "forks": 0,
+    "lastCommit": "",
+    "deviceCount": 1500,
+    "tuyaDevices": [],
+    "zigbeeDevices": []
+  },
+  "extractedData": {
+    "deviceTypes": [
+      "light",
+      "switch",
+      "sensor",
+      "cover",
+      "lock"
+    ],
+    "clusters": [
+      "0x0000",
+      "0x0001",
+      "0x0006",
+      "0x0008",
+      "0x0B05",
+      "0xEF00"
+    ],
+    "capabilities": [],
+    "firmware": []
+  }
+}
