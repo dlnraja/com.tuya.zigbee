@@ -1,1 +1,32 @@
-[]
+{
+  "timestamp": "2025-08-13T09:26:42.466Z",
+  "status": "restored",
+  "tasks": [
+    "handle-issues-prs",
+    "final-validation",
+    "final-push-master",
+    "progressive-batch-z2m",
+    "enrich-drivers-ai",
+    "implement-500-proposals"
+  ],
+  "sources": [
+    "https://community.homey.app/t/app-pro-tuya-zigbee-app/26439/5313",
+    "https://community.homey.app/t/tze204-gkfbdvyx-presence-sensor-doesnt-want-to-work-with-zha/874026/12",
+    "https://forum.hacf.fr/t/skyconnect-ne-reconnait-lappareil-mais-pas-les-entites/47924",
+    "https://dlnraja.github.io/drivers-matrix.md",
+    "https://grok.com/chat/41f828ee-0bcd-4f6c-895e-f68d16ff1598"
+  ],
+  "next_actions": [
+    "restore-tmp-sources",
+    "ingest-tuya-zips",
+    "enrich-drivers",
+    "reorganize-drivers",
+    "verify-coherence",
+    "diagnose-drivers",
+    "generate-assets",
+    "reindex-drivers",
+    "update-dashboard",
+    "sources-wildcard",
+    "mega-progressive"
+  ]
+}

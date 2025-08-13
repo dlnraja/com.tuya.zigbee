@@ -3,7 +3,9 @@
     "compose": "drivers\\zigbee\\siren\\ikea\\ikea-chime-70\\driver.compose.json",
     "id": "siren-ikea-ikea-chime-70",
     "caps": [
-      "alarm_siren"
+      "alarm_siren",
+      "alarm_smoke",
+      "alarm_battery"
     ]
   },
   {
@@ -1075,114 +1077,31 @@
     ]
   },
   {
-    "compose": "drivers\\tuya\\siren\\tuya\\tuya-chime-96\\driver.compose.json",
-    "id": "siren-tuya-tuya-chime-96",
+    "compose": "drivers\\tuya\\sensor-motion\\tuya\\ts0202\\driver.compose.json",
+    "id": "sensor-motion-tuya-ts0202",
     "caps": [
-      "alarm_siren"
+      "alarm_motion",
+      "measure_battery"
     ]
   },
   {
-    "compose": "drivers\\tuya\\siren\\tuya\\tuya-chime-728\\driver.compose.json",
-    "id": "siren-tuya-tuya-chime-728",
+    "compose": "drivers\\tuya\\sensor-contact\\tuya\\ts0205\\driver.compose.json",
+    "id": "sensor-contact-tuya-ts0205",
     "caps": [
-      "alarm_siren"
-    ]
-  },
-  {
-    "compose": "drivers\\tuya\\siren\\tuya\\tuya-buzzer-704\\driver.compose.json",
-    "id": "siren-tuya-tuya-buzzer-704",
-    "caps": [
-      "alarm_siren"
-    ]
-  },
-  {
-    "compose": "drivers\\tuya\\siren\\tuya\\tuya-buzzer-702\\driver.compose.json",
-    "id": "siren-tuya-tuya-buzzer-702",
-    "caps": [
-      "alarm_siren"
-    ]
-  },
-  {
-    "compose": "drivers\\tuya\\siren\\tuya\\tuya-alarm-579\\driver.compose.json",
-    "id": "siren-tuya-tuya-alarm-579",
-    "caps": [
-      "alarm_siren"
-    ]
-  },
-  {
-    "compose": "drivers\\tuya\\siren\\tuya\\tuya-alarm-271\\driver.compose.json",
-    "id": "siren-tuya-tuya-alarm-271",
-    "caps": [
-      "alarm_siren"
-    ]
-  },
-  {
-    "compose": "drivers\\tuya\\siren\\tuya\\ts130f\\driver.compose.json",
-    "id": "siren-tuya-ts130f",
-    "caps": [
-      "onoff",
-      "target_temperature",
-      "measure_temperature",
-      "measure_formaldehyde",
-      "measure_voc",
-      "measure_co2",
-      "measure_humidity",
-      "alarm_battery",
-      "thermostat_preset",
-      "window_open",
-      "dim",
-      "measure_power",
-      "measure_voltage",
-      "light_temperature",
-      "light_hue",
-      "light_saturation",
-      "fan_set",
-      "measure_current",
-      "meter_power",
-      "lidl_xmas_mode",
-      "measure_battery",
       "alarm_water",
-      "alarm_contact",
-      "thermostat_programming",
-      "child_lock",
-      "alarm_smoke",
-      "alarm_tamper",
-      "alarm_motion",
-      "alarm_siren",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ]
-  },
-  {
-    "compose": "drivers\\tuya\\sensor-motion\\tuya\\ts0601_motion\\driver.compose.json",
-    "id": "sensor-motion-tuya-ts0601_motion",
-    "caps": [
-      "alarm_motion",
-      "alarm_battery",
       "measure_battery",
+      "alarm_battery",
       "alarm_contact"
     ]
   },
   {
-    "compose": "drivers\\tuya\\sensor-motion\\tuya\\ts0601_contact\\driver.compose.json",
-    "id": "sensor-motion-tuya-ts0601_contact",
+    "compose": "drivers\\tuya\\sensor-contact\\tuya\\ts0203\\driver.compose.json",
+    "id": "sensor-contact-tuya-ts0203",
     "caps": [
-      "alarm_motion"
-    ]
-  },
-  {
-    "compose": "drivers\\tuya\\sensor-motion\\tuya\\ts0601\\driver.compose.json",
-    "id": "sensor-motion-tuya-ts0601",
-    "caps": [
-      "measure_luminance",
-      "alarm_motion",
-      "target_distance",
+      "alarm_contact",
       "measure_battery",
       "alarm_battery",
-      "measure_distance"
+      "alarm_tamper"
     ]
   },
   {
@@ -1463,6 +1382,40 @@
     ]
   },
   {
+    "compose": "drivers\\tuya\\plug\\tuya\\ts011f\\driver.compose.json",
+    "id": "plug-tuya-ts011f",
+    "caps": [
+      "onoff",
+      "measure_power",
+      "measure_current",
+      "measure_voltage"
+    ]
+  },
+  {
+    "compose": "drivers\\tuya\\plug\\tuya\\ts0003\\driver.compose.json",
+    "id": "plug-tuya-ts0003",
+    "caps": [
+      "onoff",
+      "onoff.1",
+      "onoff.2"
+    ]
+  },
+  {
+    "compose": "drivers\\tuya\\plug\\tuya\\ts0002\\driver.compose.json",
+    "id": "plug-tuya-ts0002",
+    "caps": [
+      "onoff",
+      "onoff.1"
+    ]
+  },
+  {
+    "compose": "drivers\\tuya\\plug\\tuya\\ts0001\\driver.compose.json",
+    "id": "plug-tuya-ts0001",
+    "caps": [
+      "onoff"
+    ]
+  },
+  {
     "compose": "drivers\\tuya\\lock\\tuya\\tuya-padlock-551\\driver.compose.json",
     "id": "lock-tuya-tuya-padlock-551",
     "caps": [
@@ -1682,7 +1635,55 @@
       "measure_pressure",
       "alarm_motion",
       "measure_luminance",
-      "target_distance"
+      "target_distance",
+      "thermostat_programming",
+      "target_temperature",
+      "child_lock",
+      "alarm_battery",
+      "alarm_smoke",
+      "alarm_tamper",
+      "measure_formaldehyde",
+      "measure_voc",
+      "measure_co2",
+      "alarm_siren",
+      "alarm_water",
+      "alarm_cleaning",
+      "measure_luminance.20min",
+      "measure_luminance.daily_max",
+      "measure_voltage.rain",
+      "alarm_contact",
+      "thermostat_preset",
+      "window_open",
+      "measure_distance"
+    ]
+  },
+  {
+    "compose": "drivers\\tuya\\light\\tuya\\ts110f\\driver.compose.json",
+    "id": "light-tuya-ts110f",
+    "caps": [
+      "onoff",
+      "dim"
+    ]
+  },
+  {
+    "compose": "drivers\\tuya\\light\\tuya\\ts0505b\\driver.compose.json",
+    "id": "light-tuya-ts0505b",
+    "caps": [
+      "onoff",
+      "dim",
+      "light_hue",
+      "light_saturation",
+      "light_temperature"
+    ]
+  },
+  {
+    "compose": "drivers\\tuya\\light\\tuya\\ts0505a\\driver.compose.json",
+    "id": "light-tuya-ts0505a",
+    "caps": [
+      "onoff",
+      "dim",
+      "light_hue",
+      "light_saturation"
     ]
   },
   {
@@ -1773,7 +1774,26 @@
       "measure_pressure",
       "alarm_motion",
       "measure_luminance",
-      "target_distance"
+      "target_distance",
+      "thermostat_programming",
+      "target_temperature",
+      "child_lock",
+      "alarm_battery",
+      "alarm_smoke",
+      "alarm_tamper",
+      "measure_formaldehyde",
+      "measure_voc",
+      "measure_co2",
+      "alarm_siren",
+      "alarm_water",
+      "alarm_cleaning",
+      "measure_luminance.20min",
+      "measure_luminance.daily_max",
+      "measure_voltage.rain",
+      "alarm_contact",
+      "thermostat_preset",
+      "window_open",
+      "measure_distance"
     ]
   },
   {
@@ -1785,20 +1805,23 @@
     ]
   },
   {
-    "compose": "drivers\\tuya\\climate-thermostat\\tuya\\ts0601_thermostat\\driver.compose.json",
-    "id": "climate-thermostat-tuya-ts0601_thermostat",
-    "caps": [
-      "target_temperature",
-      "measure_temperature"
-    ]
-  },
-  {
     "compose": "drivers\\tuya\\climate-thermostat\\tuya\\ts0601\\driver.compose.json",
     "id": "climate-thermostat-tuya-ts0601",
     "caps": [
+      "target_temperature",
       "measure_temperature",
       "measure_humidity",
-      "measure_battery"
+      "alarm_battery",
+      "thermostat_preset",
+      "window_open"
+    ]
+  },
+  {
+    "compose": "drivers\\tuya\\climate-thermostat\\tuya\\ts0201\\driver.compose.json",
+    "id": "climate-thermostat-tuya-ts0201",
+    "caps": [
+      "measure_temperature",
+      "measure_humidity"
     ]
   }
 ]
