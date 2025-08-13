@@ -32,7 +32,26 @@
     "measure_pressure",
     "alarm_motion",
     "measure_luminance",
-    "target_distance"
+    "target_distance",
+    "thermostat_programming",
+    "target_temperature",
+    "child_lock",
+    "alarm_battery",
+    "alarm_smoke",
+    "alarm_tamper",
+    "measure_formaldehyde",
+    "measure_voc",
+    "measure_co2",
+    "alarm_siren",
+    "alarm_water",
+    "alarm_cleaning",
+    "measure_luminance.20min",
+    "measure_luminance.daily_max",
+    "measure_voltage.rain",
+    "alarm_contact",
+    "thermostat_preset",
+    "window_open",
+    "measure_distance"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -630,7 +649,8 @@
       "_TZE204_6wi2mope",
       "_TZE204_iik0pquw",
       "_TZE200_gbagoilo",
-      "_TZE20X_xxxxxxxx"
+      "_TZE20X_xxxxxxxx",
+      "tuya"
     ],
     "modelId": [
       "ts130f",
@@ -684,7 +704,21 @@
       "ts0502b",
       "rh3040",
       "doorwindow-sensor-zb3.0",
-      "TS0601"
+      "TS0601",
+      "ts0601_motion",
+      "ts0601_contact",
+      "ts0601_water",
+      "ts0601_vibration",
+      "ts0601_switch",
+      "ts0601_smoke",
+      "ts0601_presence",
+      "ts0601_gas",
+      "ts0601_curtain",
+      "ts0601_thermostat",
+      "TS0601_motion",
+      "TS0601_contact",
+      "TS0601_thermostat",
+      "TS0201"
     ]
   }
 }
