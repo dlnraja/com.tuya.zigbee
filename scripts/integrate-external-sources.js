@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// !/usr/bin/env node
 
 /**
  * Script d'intégration des sources externes
@@ -525,41 +525,41 @@ async function generateHTMLReport(data) {
     const htmlPath = path.join(REPORTS_DIR, 'external-sources-integration-report.html');
     
     const html = `<!DOCTYPE html>
-<html lang="fr">
+<html lang = "fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <title>Rapport d'Intégration des Sources Externes - Tuya Zigbee</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f5f5f5; }
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: // f5f5f5; }
         .container { max-width: 1200px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; }
-        h2 { color: #34495e; margin-top: 30px; }
-        .summary { background: #ecf0f1; padding: 20px; border-radius: 5px; margin: 20px 0; }
-        .source { background: #f8f9fa; padding: 15px; margin: 10px 0; border-left: 4px solid #3498db; border-radius: 3px; }
-        .recommendations { background: #e8f5e8; padding: 20px; border-radius: 5px; margin: 20px 0; }
-        .next-steps { background: #fff3cd; padding: 20px; border-radius: 5px; margin: 20px 0; }
-        .metric { display: inline-block; margin: 10px; padding: 10px; background: #3498db; color: white; border-radius: 5px; }
+        h1 { color: // 2c3e50; border-bottom: 3px solid // 3498db; padding-bottom: 10px; }
+        h2 { color: // 34495e; margin-top: 30px; }
+        .summary { background: // ecf0f1; padding: 20px; border-radius: 5px; margin: 20px 0; }
+        .source { background: // f8f9fa; padding: 15px; margin: 10px 0; border-left: 4px solid // 3498db; border-radius: 3px; }
+        .recommendations { background: // e8f5e8; padding: 20px; border-radius: 5px; margin: 20px 0; }
+        .next-steps { background: // fff3cd; padding: 20px; border-radius: 5px; margin: 20px 0; }
+        .metric { display: inline-block; margin: 10px; padding: 10px; background: // 3498db; color: white; border-radius: 5px; }
         ul { line-height: 1.6; }
-        .timestamp { color: #7f8c8d; font-style: italic; }
+        .timestamp { color: // 7f8c8d; font-style: italic; }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class = "container">
         <h1>🚀 Rapport d'Intégration des Sources Externes</h1>
-        <p class="timestamp">Généré le: ${new Date(data.generated).toLocaleString('fr-FR')}</p>
+        <p class = "timestamp">Généré le: ${new Date(data.generated).toLocaleString('fr-FR')}</p>
         
-        <div class="summary">
+        <div class = "summary">
             <h2>📊 Résumé</h2>
-            <div class="metric">Sources analysées: ${data.summary.sourcesAnalyzed}</div>
-            <div class="metric">Total appareils: ${data.summary.totalDevices}</div>
-            <div class="metric">Appareils Tuya: ${data.summary.tuyaDevices}</div>
-            <div class="metric">Appareils Zigbee: ${data.summary.zigbeeDevices}</div>
+            <div class = "metric">Sources analysées: ${data.summary.sourcesAnalyzed}</div>
+            <div class = "metric">Total appareils: ${data.summary.totalDevices}</div>
+            <div class = "metric">Appareils Tuya: ${data.summary.tuyaDevices}</div>
+            <div class = "metric">Appareils Zigbee: ${data.summary.zigbeeDevices}</div>
         </div>
         
         <h2>🔍 Sources Analysées</h2>
         ${Object.entries(data.sources).map(([key, source]) => `
-        <div class="source">
+        <div class = "source">
             <h3>${source.source || key}</h3>
             <p><strong>URL:</strong> ${source.url || 'N/A'}</p>
             <p><strong>Dernière mise à jour:</strong> ${new Date(source.lastUpdated).toLocaleString('fr-FR')}</p>
@@ -567,14 +567,14 @@ async function generateHTMLReport(data) {
         </div>
         `).join('')}
         
-        <div class="recommendations">
+        <div class = "recommendations">
             <h2>💡 Recommandations</h2>
             <ul>
                 ${data.recommendations.map(rec => `<li>${rec}</li>`).join('')}
             </ul>
         </div>
         
-        <div class="next-steps">
+        <div class = "next-steps">
             <h2>🎯 Prochaines Étapes</h2>
             <ul>
                 ${data.nextSteps.map(step => `<li>${step}</li>`).join('')}

@@ -1,64 +1,64 @@
-# 📖 User Guide
+// 📖 User Guide
 
-## 🎯 Getting Started
+#// 🎯 Getting Started
 
 Welcome to Tuya Zigbee Universal! This guide will help you get started with your smart home setup.
 
-### What You'll Learn
+##// What You'll Learn
 
 - How to install and configure the app
 - How to add and manage devices
 - How to create automation rules
 - How to troubleshoot common issues
 
-### Prerequisites
+##// Prerequisites
 
 - Homey device (Pro or regular)
 - Tuya/Zigbee compatible devices
 - Stable internet connection
 
-## 📱 Installation
+#// 📱 Installation
 
-### Step 1: Install the App
+##// Step 1: Install the App
 
 1. Open your Homey app
 2. Go to the Apps section
 3. Search for "Tuya Zigbee Universal"
 4. Click Install
 
-### Step 2: Initial Setup
+##// Step 2: Initial Setup
 
 1. Open the app settings
 2. Add your Tuya account credentials
 3. Configure Zigbee settings
 4. Test the connection
 
-### Step 3: Add Devices
+##// Step 3: Add Devices
 
 1. Use the device discovery feature
 2. Follow the pairing instructions
 3. Configure device settings
 4. Test device functionality
 
-## 🔧 Configuration
+#// 🔧 Configuration
 
-### Device Management
+##// Device Management
 
 - **Grouping**: Organize devices by room or function
 - **Naming**: Give meaningful names to your devices
 - **Settings**: Configure device-specific settings
 - **Schedules**: Set up time-based automation
 
-### Automation Rules
+##// Automation Rules
 
 - **Triggers**: Set up device triggers
 - **Conditions**: Define automation conditions
 - **Actions**: Configure automation actions
 - **Schedules**: Set up time-based rules
 
-## 🚀 Advanced Features
+#// 🚀 Advanced Features
 
-### Scenes
+##// Scenes
 
 Create custom scenes for different situations:
 - **Home**: All devices in home mode
@@ -66,14 +66,14 @@ Create custom scenes for different situations:
 - **Sleep**: Night mode configuration
 - **Party**: Entertainment mode
 
-### Schedules
+##// Schedules
 
 Set up automated schedules:
 - **Daily**: Regular daily routines
 - **Weekly**: Weekly schedules
 - **Custom**: Custom time-based rules
 
-### Monitoring
+##// Monitoring
 
 Monitor your devices:
 - **Status**: Real-time device status
@@ -81,9 +81,9 @@ Monitor your devices:
 - **Alerts**: Configure device alerts
 - **Reports**: Generate usage reports
 
-## 🔧 Troubleshooting
+#// 🔧 Troubleshooting
 
-### Common Issues
+##// Common Issues
 
 1. **Device not responding**
    - Check device power
@@ -100,13 +100,13 @@ Monitor your devices:
    - Check network speed
    - Update firmware
 
-### Getting Help
+##// Getting Help
 
 - **Documentation**: Check the documentation
 - **Community**: Visit the Homey community
 - **Support**: Contact support team
 
-## 📚 Additional Resources
+#// 📚 Additional Resources
 
 - [API Documentation](api/)
 - [Code Examples](examples/)

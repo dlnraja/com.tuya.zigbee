@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// !/usr/bin/env node
 /**
  * @file check-github-pages.js
  * @description Vérification et diagnostic GitHub Pages

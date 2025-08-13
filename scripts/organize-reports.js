@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// !/usr/bin/env node
 /**
  * @file organize-reports.js
  * @description Organise automatiquement tous les rapports JSON dans le dossier reports/
@@ -121,7 +121,7 @@ function generateReportsIndex() {
                     name: f,
                     size: stats.size,
                     modified: stats.mtime.toISOString(),
-                    path: `reports/${dirName}/${f}`
+                    path: \reports/${dirName}/${f}`
                 };
             })
             .sort((a, b) => new Date(b.modified) - new Date(a.modified));

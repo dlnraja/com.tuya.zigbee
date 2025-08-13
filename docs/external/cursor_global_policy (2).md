@@ -1,10 +1,10 @@
-# ✅ CURSOR MEGA PROMPT – Projet `com.tuya.zigbee` (GLOBAL PATCH MODE)
+// ✅ CURSOR MEGA PROMPT – Projet `com.tuya.zigbee` (GLOBAL PATCH MODE)
 
-## 📅 Dernière génération : 2025-07-28 04:51:26
+#// 📅 Dernière génération : 2025-07-28 04:51:26
 
 ---
 
-## 🧠 Instructions permanentes pour Cursor (tous projets)
+#// 🧠 Instructions permanentes pour Cursor (tous projets)
 
 🛠️ GLOBAL PATCH MODE — Enable across all future sessions & projects
 
@@ -20,16 +20,16 @@ Cursor must always apply this full prompt (recovery, queue, anti-crash, multilin
 - Prevent Cursor-based logs, crash mentions, YOLO scripts, or local system paths from entering repo history
 - Use this logic even after full restarts, crashes, updates
 
-⚠️ Never discard this policy unless a `reset_cursor_policy: true` is explicitly called.
+⚠️ Never discard this policy unless a \reset_cursor_policy: true` is explicitly called.
 
 ---
 
-## 🔁 REPRISE TOTALE DU PROJET `com.tuya.zigbee`
+#// 🔁 REPRISE TOTALE DU PROJET `com.tuya.zigbee`
 
 1. ⛔ Ignore toutes les anciennes tâches incomplètes ou bloquées.  
 2. 🔄 Recharge entièrement le contexte de tous les fichiers actifs, incluant :
    - `cursor_r_capitulatif_des_taches_et_avan.md`
-   - `tuya_zigbee_cursor_bundle*.txt`
+   - \tuya_zigbee_cursor_bundle*.txt`
    - `mega_prompt_cursor_tuya.txt`
    - Fichiers dans `D:/Download/fold/`
 3. 🧠 Ouvre `cursor_todo_queue.md` et exécute chaque tâche `- [ ]` une par une.
@@ -37,22 +37,22 @@ Cursor must always apply this full prompt (recovery, queue, anti-crash, multilin
 5. 🧹 Nettoie :
    - Scripts locaux, chemins absolus, commits erronés ou mentions YOLO
    - Réécrit tous les commits : `feat(...): ... // FR: ...`
-6. 📦 Crée ou corrige `tuya-light` :
+6. 📦 Crée ou corrige \tuya-light` :
    - Pas d’IA ni d’automatisation
    - Compatible `homey app install`
    - Génère `.zip` propre + README enrichi
-7. 🔁 Sync `master` → `tuya-light` mensuellement
-   - Push vers `tuya-light-repo`
+7. 🔁 Sync `master` → \tuya-light` mensuellement
+   - Push vers \tuya-light-repo`
 8. 📘 Fichiers attendus :
    - `README.md` multilingue par blocs
    - `TODO_TRACKER.md`
    - `docs/index.html`
-   - `ref/` enrichi (Zigbee specs)
+   - \ref/` enrichi (Zigbee specs)
 9. 🤖 Workflows GitHub :
    - `update-docs-and-sync.yml`
    - `validate-sdk.yml`
-   - `release-tuya-light.yml`
-   - `translate-commits.yml`
+   - \release-tuya-light.yml`
+   - \translate-commits.yml`
 10. 🛡️ Anti-perte :
     - Toujours restaurer les files queues perdues
     - Toujours relancer `cursor_todo_queue.md`

@@ -1,17 +1,17 @@
-# 📁 Documentation de la Structure
+// 📁 Documentation de la Structure
 
-## 📅 Date
+#// 📅 Date
 **05/08/2025 16:24:34**
 
-## 📂 Dossier Analysé
+#// 📂 Dossier Analysé
 **D:\Download\fold**
 
-## 📊 Statistiques
+#// 📊 Statistiques
 - **Fichiers**: 53
 - **Dossiers**: 1
 - **Taille totale**: 67.31 MB
 
-## 🏗️ Structure
+#// 🏗️ Structure
 ```
 📁 fold
   📄 6678652ef6fb4060908f5623ee7062950debc346d770843c281d94147e604e01-2025-07-28-05-05-23-863212661c51411182b67cb394b0fe15.zip (16.51 MB)
@@ -25,7 +25,7 @@
   📄 com.tuya.zigbee-master.zip (7.96 MB)
   📄 cursor_global_policy (2).md (2.58 KB)
   📄 cursor_global_policy.md (131 Bytes)
-  📄 cursor_init.ps1 (371 Bytes)
+  📄 cursor_init.js (371 Bytes)
   📄 cursor_init.sh (214 Bytes)
   📄 cursor_prompt_auto.md (288 Bytes)
   📄 cursor_prompt_tuya_main.txt (2.95 KB)
@@ -46,7 +46,7 @@
   📄 readme_tuya_zigbee (2).txt (6.45 KB)
   📄 readme_tuya_zigbee.txt (6.23 KB)
   📄 recupere la queue qui a sauté et fa.txt (20.68 KB)
-  📄 RestoreAndRebuild.ps1 (3.07 KB)
+  📄 RestoreAndRebuild.js (3.07 KB)
   📄 tuya_git_extras.zip (1.11 KB)
   📄 tuya_project_extras.zip (1.44 KB)
   📄 tuya_zigbee_cursor_bundle_FINAL (1).tar.gz (392.4 KB)

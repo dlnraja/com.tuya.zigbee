@@ -1,10 +1,10 @@
-# 🚀 Tuya Zigbee Universal
+// 🚀 Tuya Zigbee Universal
 
-## 📋 Overview
+#// 📋 Overview
 
 Universal Tuya and Zigbee devices for Homey - AI-Powered Edition with Complete Recovery.
 
-## 🔧 Features
+#// 🔧 Features
 
 - **Universal Support**: Compatible with all Tuya and Zigbee devices
 - **AI-Powered**: Advanced AI algorithms for device detection
@@ -12,23 +12,23 @@ Universal Tuya and Zigbee devices for Homey - AI-Powered Edition with Complete R
 - **Multi-language**: Support for 6 languages
 - **Real-time Monitoring**: Live device status monitoring
 
-## 🚀 Quick Start
+#// 🚀 Quick Start
 
 1. Install the app on your Homey
 2. Add your Tuya/Zigbee devices
 3. Configure device settings
 4. Enjoy smart home automation!
 
-## 📚 Documentation
+#// 📚 Documentation
 
 - [Installation Guide](installation.md)
 - [Configuration Guide](configuration.md)
 - [Troubleshooting Guide](troubleshooting.md)
 
-## 🤝 Support
+#// 🤝 Support
 
 For support, visit our [GitHub repository](https://github.com/dlnraja/com.tuya.zigbee) or contact us.
 
-## 📄 License
+#// 📄 License
 
 MIT License - see LICENSE file for details.

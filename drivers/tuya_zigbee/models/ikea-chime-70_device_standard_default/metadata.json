@@ -1,0 +1,20 @@
+{
+  "id": "ikea-chime-70_siren_standard",
+  "name": "ikea ikea-chime-70",
+  "category": "siren",
+  "vendor": "ikea",
+  "model": "ikea-chime-70",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:09.966Z",
+  "updatedAt": "2025-08-13T12:09:09.966Z"
+}

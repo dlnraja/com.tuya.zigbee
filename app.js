@@ -4,12 +4,12 @@ const Homey = require('homey');
 
 class TuyaZigbeeApp extends Homey.App {
   async onInit() {
-    this.log('Tuya Zigbee App is running...');
+    this.log('Tuya Zigbee App v3.3.0 - Structure SDK3+ conforme');
     
-    // Index dynamique des drivers
+    // Index dynamique des drivers selon la nouvelle structure
     this.driverIndex = this.buildDriverIndex();
     
-    this.log(`Indexé ${Object.keys(this.driverIndex).length} drivers`);
+    this.log(`Indexé ${Object.keys(this.driverIndex).length} drivers avec la structure SDK3+`);
   }
   
   buildDriverIndex() {
@@ -25,41 +25,34 @@ class TuyaZigbeeApp extends Homey.App {
     const drivers = {};
     
     try {
-      // Scanner les domaines (tuya, zigbee)
-      const domains = fs.readdirSync(driversDir).filter(item => 
+      // Scanner la nouvelle structure 3.3 conforme
+      const domains = fs.readdirSync(driversDir).filter(item =>
         fs.statSync(path.join(driversDir, item)).isDirectory()
       );
       
       for (const domain of domains) {
         const domainPath = path.join(driversDir, domain);
-        const categories = fs.readdirSync(domainPath).filter(item => 
+        const subdirs = fs.readdirSync(domainPath).filter(item =>
           fs.statSync(path.join(domainPath, item)).isDirectory()
         );
         
-        for (const category of categories) {
-          const categoryPath = path.join(domainPath, category);
-          const vendors = fs.readdirSync(categoryPath).filter(item => 
-            fs.statSync(path.join(categoryPath, item)).isDirectory()
-          );
-          
-          for (const vendor of vendors) {
-            const vendorPath = path.join(categoryPath, vendor);
-            const models = fs.readdirSync(vendorPath).filter(item => 
-              fs.statSync(path.join(vendorPath, item)).isDirectory()
+        for (const subdir of subdirs) {
+          if (subdir === 'models' || subdir === '__generic__' || subdir === '__templates__') {
+            const subdirPath = path.join(domainPath, subdir);
+            const driverDirs = fs.readdirSync(subdirPath).filter(item =>
+              fs.statSync(path.join(subdirPath, item)).isDirectory()
             );
             
-            for (const model of models) {
-              const modelPath = path.join(vendorPath, model);
-              const driverId = `${category}-${vendor}-${model}`;
+            for (const driverDir of driverDirs) {
+              const driverPath = path.join(subdirPath, driverDir);
+              const devicePath = path.join(driverPath, 'device.js');
               
-              // Vérifier que le driver a les fichiers nécessaires
-              const devicePath = path.join(modelPath, 'device.js');
               if (fs.existsSync(devicePath)) {
                 try {
-                  const driver = require(`./${path.relative(__dirname, modelPath)}/device`);
-                  drivers[driverId] = driver;
+                  const driver = require(`./${path.relative(__dirname, driverPath)}/device`);
+                  drivers[driverDir] = driver;
                 } catch (error) {
-                  this.log(`Erreur chargement driver ${driverId}:`, error.message);
+                  this.log(`Erreur chargement driver ${driverDir}:`, error.message);
                 }
               }
             }
@@ -67,7 +60,7 @@ class TuyaZigbeeApp extends Homey.App {
         }
       }
     } catch (error) {
-      this.log('Erreur lors de la construction de l\'index des drivers:', error.message);
+      this.log('Erreur lors de la construction de l'index des drivers:', error.message);
     }
     
     return drivers;

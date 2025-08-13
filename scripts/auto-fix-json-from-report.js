@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// !/usr/bin/env node
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -36,7 +36,7 @@ function tryFix(content){
     removeTrailingCommas
   ];
   for (let i=0;i<transforms.length;i++){
-    try { JSON.parse(txt); return { ok:true, txt }; } catch {}
+    try { JSON.parse(txt); return { ok:true, txt }; } } catch (error) {}
     txt = transforms[i](txt);
   }
   try { JSON.parse(txt); return { ok:true, txt }; } catch(err) { return { ok:false, err, txt }; }
@@ -53,12 +53,12 @@ function main(){
   for (const e of errors){
     const file = e.file;
     if (!file || !fs.existsSync(file)) { failed++; continue; }
-    try{
+    try {
       const raw = fs.readFileSync(file,'utf8');
       const { ok, txt } = tryFix(raw);
       if (ok && txt !== raw){ fs.writeFileSync(file, txt); fixed++; }
       else if (!ok) failed++;
-    }catch{ failed++; }
+    }} catch (error) { failed++; }
   }
   console.log(`[auto-fix-report] fixed=${fixed} failed=${failed} of ${errors.length}`);
 }

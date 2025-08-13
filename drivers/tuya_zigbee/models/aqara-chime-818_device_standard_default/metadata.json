@@ -1,0 +1,20 @@
+{
+  "id": "aqara-chime-818_siren_standard",
+  "name": "aqara aqara-chime-818",
+  "category": "siren",
+  "vendor": "aqara",
+  "model": "aqara-chime-818",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:09.529Z",
+  "updatedAt": "2025-08-13T12:09:09.529Z"
+}

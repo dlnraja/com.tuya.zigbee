@@ -1,0 +1,14 @@
+{
+  "id": "aqara-buzzer-259_siren_standard_settings",
+  "name": "Paramètres aqara aqara-buzzer-259",
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": "Intervalle de polling (secondes)",
+      "default": 30,
+      "min": 10,
+      "max": 300
+    }
+  ]
+}

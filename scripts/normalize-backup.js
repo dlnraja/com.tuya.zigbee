@@ -6,18 +6,18 @@ const RX=/(tuya|com\.tuya).*\.zip$/i;
   fs.mkdirSync(BAK,{recursive:true}); fs.mkdirSync(ZIPS,{recursive:true});
   const st=[ROOT]; let moved=0;
   while(st.length){
-    const cur=st.pop(); let s; try{s=fs.statSync(cur);}catch{continue;}
+    const cur=st.pop(); let s; try {s=fs.statSync(cur);}} catch (error) {continue;}
     if(s.isDirectory()){
       for(const e of fs.readdirSync(cur)){const p=path.join(cur,e);
         if(p===BAK||p===ZIPS||/node_modules|\.git|\.homeybuild|\.tmp_tuya_zip_work/.test(p)) continue;
-        try{
+        try {
           const ss=fs.statSync(p);
           if(ss.isDirectory()) st.push(p);
           else if(ss.isFile() && RX.test(p)){
             const dst=path.join(ZIPS,path.basename(p));
-            if(p!==dst){ try{fs.copyFileSync(p,dst); fs.unlinkSync(p);}catch{fs.copyFileSync(p,dst);} moved++; console.log('[normbak] zip →', path.relative(ROOT,dst)); }
+            if(p!==dst){ try {fs.copyFileSync(p,dst); fs.unlinkSync(p);}} catch (error) {fs.copyFileSync(p,dst);} moved++; console.log('[normbak] zip →', path.relative(ROOT,dst)); }
           }
-        }catch{}
+        }} catch (error) {}
       }
     }
   }

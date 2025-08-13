@@ -1,0 +1,20 @@
+{
+  "id": "aqara-door-338_lock_standard",
+  "name": "aqara aqara-door-338",
+  "category": "lock",
+  "vendor": "aqara",
+  "model": "aqara-door-338",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:03.260Z",
+  "updatedAt": "2025-08-13T12:09:03.260Z"
+}

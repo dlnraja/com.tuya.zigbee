@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// !/usr/bin/env node
 
 /**
  * Script principal d'intégration complète basé sur le dossier fold
@@ -23,9 +23,9 @@ const QUEUE_DIR = 'queue';
 // Étapes d'intégration dans l'ordre chronologique
 const INTEGRATION_STEPS = [
   {
-    name: 'Nettoyage des scripts PowerShell',
-    script: 'cleanup-powershell-scripts.js',
-    description: 'Supprimer et convertir les scripts PowerShell obsolètes'
+    name: 'Nettoyage des scripts JavaScript',
+    script: 'cleanup-javascript-scripts.js',
+    description: 'Supprimer et convertir les scripts JavaScript obsolètes'
   },
   {
     name: 'Complétion automatique de app.js',
@@ -108,7 +108,7 @@ async function analyzeFoldContent() {
     const analysis = {
       totalFiles: files.length,
       categories: {
-        scripts: files.filter(f => f.endsWith('.ps1') || f.endsWith('.sh')).length,
+        scripts: files.filter(f => f.endsWith('.js') || f.endsWith('.sh')).length,
         markdown: files.filter(f => f.endsWith('.md') || f.endsWith('.txt')).length,
         archives: files.filter(f => f.endsWith('.zip') || f.endsWith('.tar.gz')).length,
         autres: files.filter(f => !f.includes('.')).length
@@ -160,7 +160,7 @@ async function executeStep(step) {
   
   try {
     // Exécuter le script
-    execSync(`node ${scriptPath}`, { 
+    execSync(\node ${scriptPath}`, { 
       stdio: 'inherit',
       cwd: process.cwd()
     });
@@ -223,12 +223,12 @@ async function updateTodoQueue() {
     
     if (!content.includes('Créer les scripts d\'intégration du dossier fold')) {
       content = content.replace(
-        '## 🎯 Priorité actuelle : Intégration du dossier fold et mise à jour mega',
-        `## 🎯 Priorité actuelle : Intégration du dossier fold et mise à jour mega
+        '#// 🎯 Priorité actuelle : Intégration du dossier fold et mise à jour mega',
+        `#// 🎯 Priorité actuelle : Intégration du dossier fold et mise à jour mega
 
-## 📅 Dernière mise à jour : ${new Date().toLocaleString('fr-FR')}
+#// 📅 Dernière mise à jour : ${new Date().toLocaleString('fr-FR')}
 
-## 🎯 Prochaines étapes : Test et validation des drivers générés`
+#// 🎯 Prochaines étapes : Test et validation des drivers générés`
       );
       
       content += newTasks;
@@ -250,13 +250,13 @@ async function updateMainReadme() {
     if (!content.includes('Dossier fold')) {
       const foldSection = `
 
-## 🚀 Intégration du Dossier Fold
+#// 🚀 Intégration du Dossier Fold
 
 Ce projet a été enrichi en intégrant le contenu complet du dossier D:\\\\Download\\\\fold dans l'ordre chronologique.
 
-### 📋 Améliorations Intégrées
+##// 📋 Améliorations Intégrées
 
-- **Scripts PowerShell** : Nettoyage et conversion en JavaScript
+- **Scripts JavaScript** : Nettoyage et conversion en JavaScript
 - **Complétion automatique** : app.js généré dynamiquement
 - **Fichiers manquants** : Création automatique des assets et métadonnées
 - **Sources externes** : Intégration Z2M, ZHA, SmartLife, Enki, Domoticz
@@ -264,26 +264,26 @@ Ce projet a été enrichi en intégrant le contenu complet du dossier D:\\\\Down
 - **Issues GitHub** : Analyse automatique des demandes d'appareils
 - **Forum Homey** : Scanner et extraction des discussions
 
-### 🔧 Scripts d'Intégration
+##// 🔧 Scripts d'Intégration
 
 \`\`\`bash
-# Intégration complète du dossier fold
+// Intégration complète du dossier fold
 node scripts/mega-fold-integration.js
 
-# Nettoyage PowerShell
-node scripts/cleanup-powershell-scripts.js
+// Nettoyage JavaScript
+node scripts/cleanup-javascript-scripts.js
 
-# Complétion app.js
+// Complétion app.js
 node scripts/complete-app-js.js
 
-# Création fichiers manquants
+// Création fichiers manquants
 node scripts/create-missing-files.js
 
-# Intégration sources externes
+// Intégration sources externes
 node scripts/integrate-external-sources.js
 \`\`\`
 
-### 📊 Sources Intégrées
+##// 📊 Sources Intégrées
 
 - **Zigbee2MQTT** : 1500+ appareils et convertisseurs
 - **ZHA (Home Assistant)** : 800+ device handlers
@@ -311,11 +311,11 @@ async function updateChangelog() {
     
     // Ajouter l'entrée d'intégration du dossier fold
     if (!content.includes('Intégration du dossier fold')) {
-      const newEntry = `## [1.4.0] - ${new Date().toISOString().split('T')[0]}
+      const newEntry = `#// [1.4.0] - ${new Date().toISOString().split('T')[0]}
 
-### 🚀 Ajouté
+##// 🚀 Ajouté
 - Intégration complète du dossier fold D:\\Download\\fold
-- Scripts de nettoyage et conversion PowerShell → JavaScript
+- Scripts de nettoyage et conversion JavaScript → JavaScript
 - Complétion automatique de app.js avec tous les drivers
 - Création automatique des fichiers manquants (driver.compose.json, icon.svg, etc.)
 - Intégration des sources externes (Z2M, ZHA, SmartLife, Enki, Domoticz)
@@ -323,18 +323,18 @@ async function updateChangelog() {
 - Scanner automatique des issues GitHub et forum Homey
 - Pipeline d'intégration 100% auto-réparable
 
-### 🔧 Modifié
+##// 🔧 Modifié
 - Structure des drivers réorganisée et standardisée
-- Scripts PowerShell convertis en JavaScript
+- Scripts JavaScript convertis en JavaScript
 - Documentation mise à jour avec toutes les améliorations
 - Queue des tâches enrichie avec les nouvelles fonctionnalités
 
-### 🗑️ Supprimé
-- Scripts PowerShell obsolètes et redondants
-- Fichiers .bat et .ps1 inutiles
+##// 🗑️ Supprimé
+- Scripts JavaScript obsolètes et redondants
+- Fichiers .bat et .js inutiles
 - Structure de drivers dupliquée et mal organisée
 
-### 📊 Statistiques
+##// 📊 Statistiques
 - **Sources analysées** : 6 sources externes majeures
 - **Appareils détectés** : 3000+ appareils Tuya et Zigbee
 - **Drivers générés** : Structure complète pour tous les modèles
@@ -367,14 +367,14 @@ async function generateFinalReport() {
       },
       improvements: {
         scriptsCreated: [
-          'cleanup-powershell-scripts.js',
+          'cleanup-javascript-scripts.js',
           'complete-app-js.js',
           'create-missing-files.js',
           'integrate-external-sources.js',
           'mega-fold-integration.js'
         ],
         featuresImplemented: [
-          'Nettoyage automatique des scripts PowerShell',
+          'Nettoyage automatique des scripts JavaScript',
           'Complétion dynamique de app.js',
           'Création automatique des fichiers manquants',
           'Intégration des sources externes',
@@ -427,40 +427,40 @@ async function generateHTMLFinalReport(data) {
     const htmlPath = path.join(REPORTS_DIR, 'fold-integration-final-report.html');
     
     const html = `<!DOCTYPE html>
-<html lang="fr">
+<html lang = "fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <title>Rapport Final d'Intégration du Dossier Fold - Tuya Zigbee</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f5f5f5; }
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: // f5f5f5; }
         .container { max-width: 1200px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        h1 { color: #2c3e50; border-bottom: 3px solid #27ae60; padding-bottom: 10px; }
-        h2 { color: #34495e; margin-top: 30px; }
-        .success { background: #d4edda; padding: 20px; border-radius: 5px; margin: 20px 0; border-left: 4px solid #27ae60; }
-        .improvements { background: #e8f4fd; padding: 20px; border-radius: 5px; margin: 20px 0; border-left: 4px solid #3498db; }
-        .sources { background: #f8f9fa; padding: 20px; border-radius: 5px; margin: 20px 0; border-left: 4px solid #f39c12; }
-        .next-steps { background: #fff3cd; padding: 20px; border-radius: 5px; margin: 20px 0; border-left: 4px solid #ffc107; }
-        .recommendations { background: #f8d7da; padding: 20px; border-radius: 5px; margin: 20px 0; border-left: 4px solid #dc3545; }
-        .metric { display: inline-block; margin: 10px; padding: 10px; background: #27ae60; color: white; border-radius: 5px; }
+        h1 { color: // 2c3e50; border-bottom: 3px solid // 27ae60; padding-bottom: 10px; }
+        h2 { color: // 34495e; margin-top: 30px; }
+        .success { background: // d4edda; padding: 20px; border-radius: 5px; margin: 20px 0; border-left: 4px solid // 27ae60; }
+        .improvements { background: // e8f4fd; padding: 20px; border-radius: 5px; margin: 20px 0; border-left: 4px solid // 3498db; }
+        .sources { background: // f8f9fa; padding: 20px; border-radius: 5px; margin: 20px 0; border-left: 4px solid // f39c12; }
+        .next-steps { background: // fff3cd; padding: 20px; border-radius: 5px; margin: 20px 0; border-left: 4px solid // ffc107; }
+        .recommendations { background: // f8d7da; padding: 20px; border-radius: 5px; margin: 20px 0; border-left: 4px solid // dc3545; }
+        .metric { display: inline-block; margin: 10px; padding: 10px; background: // 27ae60; color: white; border-radius: 5px; }
         ul { line-height: 1.6; }
-        .timestamp { color: #7f8c8d; font-style: italic; }
-        .status { font-weight: bold; color: #27ae60; }
+        .timestamp { color: // 7f8c8d; font-style: italic; }
+        .status { font-weight: bold; color: // 27ae60; }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class = "container">
         <h1>🎉 Rapport Final d'Intégration du Dossier Fold</h1>
-        <p class="timestamp">Généré le: ${new Date(data.generated).toLocaleString('fr-FR')}</p>
+        <p class = "timestamp">Généré le: ${new Date(data.generated).toLocaleString('fr-FR')}</p>
         
-        <div class="success">
+        <div class = "success">
             <h2>✅ Statut de l'Intégration</h2>
-            <div class="status">${data.integration.status.toUpperCase()}</div>
+            <div class = "status">${data.integration.status.toUpperCase()}</div>
             <p><strong>Source:</strong> ${data.integration.source}</p>
             <p><strong>Étapes:</strong> ${data.integration.completed}/${data.integration.steps} terminées</p>
         </div>
         
-        <div class="improvements">
+        <div class = "improvements">
             <h2>🚀 Améliorations Implémentées</h2>
             <h3>Scripts Créés (${data.improvements.scriptsCreated.length})</h3>
             <ul>
@@ -473,30 +473,30 @@ async function generateHTMLFinalReport(data) {
             </ul>
         </div>
         
-        <div class="sources">
+        <div class = "sources">
             <h2>🔍 Sources Intégrées</h2>
             ${Object.entries(data.sources).map(([key, description]) => `
-            <div style="margin: 10px 0; padding: 10px; background: #f8f9fa; border-radius: 3px;">
+            <div style = "margin: 10px 0; padding: 10px; background: // f8f9fa; border-radius: 3px;">
                 <strong>${key.toUpperCase()}:</strong> ${description}
             </div>
             `).join('')}
         </div>
         
-        <div class="next-steps">
+        <div class = "next-steps">
             <h2>🎯 Prochaines Étapes</h2>
             <ul>
                 ${data.nextSteps.map(step => `<li>${step}</li>`).join('')}
             </ul>
         </div>
         
-        <div class="recommendations">
+        <div class = "recommendations">
             <h2>💡 Recommandations</h2>
             <ul>
                 ${data.recommendations.map(rec => `<li>${rec}</li>`).join('')}
             </ul>
         </div>
         
-        <div style="text-align: center; margin-top: 40px; padding: 20px; background: #ecf0f1; border-radius: 5px;">
+        <div style = "text-align: center; margin-top: 40px; padding: 20px; background: // ecf0f1; border-radius: 5px;">
             <h3>🎊 Intégration du Dossier Fold Terminée avec Succès!</h3>
             <p>Le projet Tuya Zigbee a été enrichi avec toutes les améliorations du dossier fold.</p>
             <p><strong>Prochaine étape:</strong> Test et validation des drivers générés</p>

@@ -1,4 +1,4 @@
-# 500 Améliorations et Automatisations (Plan)
+// 500 Améliorations et Automatisations (Plan)
 
 Ce document liste 500 améliorations techniques et d'automatisation internes pour le projet. Elles sont regroupées par thèmes et seront implémentées par lots dans la pipeline.
 

@@ -1,0 +1,14 @@
+{
+  "display": {
+    "name": {
+      "en": "IKEA Device",
+      "fr": "Appareil IKEA"
+    }
+  },
+  "zigbee": {
+    "scaling": {
+      "power_divisor": 10,
+      "energy_divisor": 3600000
+    }
+  }
+}

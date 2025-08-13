@@ -1,1 +1,1 @@
-# AI Script Lot2 4
+// AI Script Lot2 4

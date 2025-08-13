@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// !/usr/bin/env node
 /**
  * @file generate-app-images.js
  * @description Génère les images requises pour l'app Homey (large.png, small.png)

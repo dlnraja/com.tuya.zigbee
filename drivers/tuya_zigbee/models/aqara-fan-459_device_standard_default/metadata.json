@@ -1,0 +1,20 @@
+{
+  "id": "aqara-fan-459_plug_standard",
+  "name": "aqara aqara-fan-459",
+  "category": "plug",
+  "vendor": "aqara",
+  "model": "aqara-fan-459",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:04.710Z",
+  "updatedAt": "2025-08-13T12:09:04.710Z"
+}

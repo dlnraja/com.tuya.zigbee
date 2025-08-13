@@ -1,7 +1,7 @@
 'use strict';
 const { spawnSync } = require('child_process');
 function run(c,a){return spawnSync(c,a,{stdio:'inherit',shell:process.platform==='win32'}).status===0;}
-function tryRun(c,a){try{return run(c,a);}catch{return false;}}
+function tryRun(c,a){try {return run(c,a);}} catch (error) {return false;}}
 function log(m){console.log('[mega]',m);}
 function envFlag(name,def){const v=process.env[name];if(v==null||v==='')return def;return /^0|false|no$/i.test(String(v))?false:true;}
 

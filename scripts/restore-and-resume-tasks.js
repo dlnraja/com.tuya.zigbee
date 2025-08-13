@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// !/usr/bin/env node
 
 /**
  * Script de restauration et reprise des tâches
@@ -159,7 +159,7 @@ function executeTasks() {
     
     if (fs.existsSync(scriptPath)) {
       log(`🔧 Exécution de: ${task}`);
-      const result = runCommand(`node ${scriptPath}`, `Tâche ${task}`);
+      const result = runCommand(\node ${scriptPath}`, `Tâche ${task}`);
       results.push({ task, ...result });
     } else {
       log(`⚠️  Script non trouvé: ${scriptPath}`);

@@ -1,0 +1,18 @@
+{
+  "namespace": "zigbee",
+  "slug": "generic_zigbee_switch_1gang",
+  "vendor": "Generic",
+  "brand": "Generic",
+  "category": "switch",
+  "form_factor": "wall",
+  "features": ["onoff"],
+  "zigbee": {
+    "endpoints": [1],
+    "clusters_in": ["genOnOff"],
+    "clusters_out": ["genOnOff"],
+    "manufacturerName": ["Generic"],
+    "modelId": ["GenericSwitch1Gang"]
+  },
+  "capabilities": ["onoff"],
+  "notes": "Generic Zigbee 1-gang switch driver for compatibility"
+}

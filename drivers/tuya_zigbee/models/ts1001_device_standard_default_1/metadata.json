@@ -1,0 +1,13 @@
+{
+  "id": "siren_ts1001",
+  "name": "siren ts1001",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "0x0006"
+  ],
+  "endpoints": [
+    1
+  ]
+}

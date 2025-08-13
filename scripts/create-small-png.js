@@ -7,7 +7,7 @@ function* walk(d){
   if(!fs.existsSync(d))return;
   const st=[d];
   while(st.length){
-    const c=st.pop(); let s; try{s=fs.statSync(c);}catch{continue;}
+    const c=st.pop(); let s; try {s=fs.statSync(c);}} catch (error) {continue;}
     if(s.isDirectory()){
       const es=fs.readdirSync(c);
       if(es.some(e=>/^driver(\.compose)?\.json$/i.test(e)))yield c;
@@ -32,7 +32,7 @@ function* walk(d){
           } 
         }).png().toFile(png); 
       }
-      catch { 
+      } catch (error) { 
         fs.writeFileSync(png, Buffer.from(PNG_PLACEHOLDER_BASE64,'base64')); 
       }
       created++; 

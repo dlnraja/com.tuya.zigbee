@@ -1,0 +1,20 @@
+{
+  "id": "aqara-shade-549_cover_standard",
+  "name": "aqara aqara-shade-549",
+  "category": "cover",
+  "vendor": "aqara",
+  "model": "aqara-shade-549",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:00.976Z",
+  "updatedAt": "2025-08-13T12:09:00.976Z"
+}

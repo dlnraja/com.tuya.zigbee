@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// !/usr/bin/env node
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -32,19 +32,19 @@ function main(){
   const files = listJsonFiles(process.cwd());
   let fixed = 0;
   for (const file of files){
-    try{
+    try {
       const raw = fs.readFileSync(file,'utf8');
-      try { JSON.parse(raw); continue; } catch {}
+      try { JSON.parse(raw); continue; } } catch (error) {}
       let txt = stripBOM(raw);
-      try { JSON.parse(txt); } catch {
+      try { JSON.parse(txt); } } catch (error) {
         const cleaned = removeTrailingCommas(txt);
-        try { JSON.parse(cleaned); txt = cleaned; } catch { /* leave as is */ }
+        try { JSON.parse(cleaned); txt = cleaned; } } catch (error) { /* leave as is */ }
       }
       if (txt !== raw){
         fs.writeFileSync(file, txt);
         fixed++;
       }
-    }catch{}
+    }} catch (error) {}
   }
   console.log(`[json-fix] fixed ${fixed} files`);
 }

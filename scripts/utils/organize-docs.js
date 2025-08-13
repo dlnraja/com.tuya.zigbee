@@ -97,7 +97,7 @@ function createMarkdownFile(filePath, title, content) {
     const fullPath = path.join(__dirname, '..', filePath);
     ensureDir(path.dirname(fullPath));
     
-    const markdownContent = `# ${title}
+    const markdownContent = `// ${title}
 
 ${content}
 
@@ -142,11 +142,11 @@ function createFolderStructure(basePath, structure) {
 function getDefaultContent(title) {
     const contentMap = {
         'Documentation principale': `
-## Universal Tuya Zigbee App
+#// Universal Tuya Zigbee App
 
 Application universelle pour tous les appareils Tuya Zigbee.
 
-### Fonctionnalités
+##// Fonctionnalités
 
 - Support complet des appareils Tuya Zigbee
 - Drivers enrichis avec référentiels
@@ -154,42 +154,42 @@ Application universelle pour tous les appareils Tuya Zigbee.
 - Validation automatique Homey
 - Mode YOLO Ultra activé
 
-### Installation
+##// Installation
 
 Voir le guide d'installation dans \`docs/installation/\`.
 
-### Utilisation
+##// Utilisation
 
 Voir les tutoriels dans \`docs/tutorials/\`.
 
-### Dépannage
+##// Dépannage
 
 Voir le guide de dépannage dans \`docs/troubleshooting/\`.
 `,
         'Guide d\'installation': `
-## Guide d'Installation
+#// Guide d'Installation
 
-### Prérequis
+##// Prérequis
 
 - Homey v5.0.0 ou plus récent
 - Appareils Tuya Zigbee compatibles
 - Connexion Zigbee fonctionnelle
 
-### Installation
+##// Installation
 
 1. Télécharger l'application
 2. Installer via Homey CLI
 3. Configurer les appareils
 4. Valider l'installation
 
-### Configuration
+##// Configuration
 
 Voir les tutoriels spécifiques pour chaque type d'appareil.
 `,
         'Tutoriels': `
-## Tutoriels
+#// Tutoriels
 
-### Drivers Supportés
+##// Drivers Supportés
 
 - **Lights**: Ampoules, rubans, variateurs
 - **Sensors**: Température, humidité, mouvement, eau
@@ -199,33 +199,33 @@ Voir les tutoriels spécifiques pour chaque type d'appareil.
 - **Locks**: Serrures intelligentes
 - **Thermostats**: Thermostats connectés
 
-### Guides par Type
+##// Guides par Type
 
 Voir les guides spécifiques dans \`drivers/\`.
 `,
         'Références': `
-## Références
+#// Références
 
-### Device IDs
+##// Device IDs
 
 Liste complète des identifiants d'appareils supportés.
 
-### Capabilities
+##// Capabilities
 
 Capacités Homey supportées par type d'appareil.
 
-### Data Points
+##// Data Points
 
 Points de données Tuya avec types et permissions.
 
-### Clusters
+##// Clusters
 
 Clusters Zigbee utilisés par l'application.
 `,
         'Dépannage': `
-## Guide de Dépannage
+#// Guide de Dépannage
 
-### Problèmes Courants
+##// Problèmes Courants
 
 1. **Appareil non détecté**
    - Vérifier la compatibilité
@@ -242,13 +242,13 @@ Clusters Zigbee utilisés par l'application.
    - Corriger les fichiers JSON
    - Relancer la validation
 
-### Debugging
+##// Debugging
 
 Voir le guide de débogage pour plus de détails.
 `
     };
     
-    return contentMap[title] || `# ${title}
+    return contentMap[title] || `// ${title}
 
 Contenu à compléter.
 
@@ -266,109 +266,109 @@ function fixDashboard() {
     
     // Créer index.html
     const dashboardHtml = `<!DOCTYPE html>
-<html lang="fr">
+<html lang = "fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <title>Universal Tuya Zigbee - Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel = "stylesheet" href = "style.css">
+    <link href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel = "stylesheet">
 </head>
 <body>
-    <div class="container">
+    <div class = "container">
         <header>
-            <h1><i class="fas fa-home"></i> Universal Tuya Zigbee</h1>
+            <h1><i class = "fas fa-home"></i> Universal Tuya Zigbee</h1>
             <p>Dashboard de l'application universelle Tuya Zigbee</p>
         </header>
         
         <nav>
             <ul>
-                <li><a href="#overview">Vue d'ensemble</a></li>
-                <li><a href="#drivers">Drivers</a></li>
-                <li><a href="#devices">Appareils</a></li>
-                <li><a href="#stats">Statistiques</a></li>
+                <li><a href = "// overview">Vue d'ensemble</a></li>
+                <li><a href = "// drivers">Drivers</a></li>
+                <li><a href = "// devices">Appareils</a></li>
+                <li><a href = "// stats">Statistiques</a></li>
             </ul>
         </nav>
         
         <main>
-            <section id="overview">
-                <h2><i class="fas fa-chart-line"></i> Vue d'ensemble</h2>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <i class="fas fa-microchip"></i>
+            <section id = "overview">
+                <h2><i class = "fas fa-chart-line"></i> Vue d'ensemble</h2>
+                <div class = "stats-grid">
+                    <div class = "stat-card">
+                        <i class = "fas fa-microchip"></i>
                         <h3>Drivers</h3>
-                        <p id="driver-count">23+</p>
+                        <p id = "driver-count">23+</p>
                     </div>
-                    <div class="stat-card">
-                        <i class="fas fa-lightbulb"></i>
+                    <div class = "stat-card">
+                        <i class = "fas fa-lightbulb"></i>
                         <h3>Types</h3>
-                        <p id="type-count">7</p>
+                        <p id = "type-count">7</p>
                     </div>
-                    <div class="stat-card">
-                        <i class="fas fa-globe"></i>
+                    <div class = "stat-card">
+                        <i class = "fas fa-globe"></i>
                         <h3>Langues</h3>
-                        <p id="lang-count">4</p>
+                        <p id = "lang-count">4</p>
                     </div>
-                    <div class="stat-card">
-                        <i class="fas fa-check-circle"></i>
+                    <div class = "stat-card">
+                        <i class = "fas fa-check-circle"></i>
                         <h3>Status</h3>
-                        <p id="status">Validé</p>
+                        <p id = "status">Validé</p>
                     </div>
                 </div>
             </section>
             
-            <section id="drivers">
-                <h2><i class="fas fa-cogs"></i> Drivers Supportés</h2>
-                <div class="drivers-grid" id="drivers-list">
+            <section id = "drivers">
+                <h2><i class = "fas fa-cogs"></i> Drivers Supportés</h2>
+                <div class = "drivers-grid" id = "drivers-list">
                     <!-- Rempli dynamiquement -->
                 </div>
             </section>
             
-            <section id="devices">
-                <h2><i class="fas fa-mobile-alt"></i> Types d'Appareils</h2>
-                <div class="devices-grid">
-                    <div class="device-type">
-                        <i class="fas fa-lightbulb"></i>
+            <section id = "devices">
+                <h2><i class = "fas fa-mobile-alt"></i> Types d'Appareils</h2>
+                <div class = "devices-grid">
+                    <div class = "device-type">
+                        <i class = "fas fa-lightbulb"></i>
                         <h3>Lights</h3>
                         <p>Ampoules, rubans, variateurs</p>
                     </div>
-                    <div class="device-type">
-                        <i class="fas fa-sensor"></i>
+                    <div class = "device-type">
+                        <i class = "fas fa-sensor"></i>
                         <h3>Sensors</h3>
                         <p>Température, humidité, mouvement</p>
                     </div>
-                    <div class="device-type">
-                        <i class="fas fa-toggle-on"></i>
+                    <div class = "device-type">
+                        <i class = "fas fa-toggle-on"></i>
                         <h3>Switches</h3>
                         <p>Interrupteurs, télécommandes</p>
                     </div>
-                    <div class="device-type">
-                        <i class="fas fa-plug"></i>
+                    <div class = "device-type">
+                        <i class = "fas fa-plug"></i>
                         <h3>Plugs</h3>
                         <p>Prises intelligentes</p>
                     </div>
-                    <div class="device-type">
-                        <i class="fas fa-window-maximize"></i>
+                    <div class = "device-type">
+                        <i class = "fas fa-window-maximize"></i>
                         <h3>Covers</h3>
                         <p>Volets, rideaux, stores</p>
                     </div>
-                    <div class="device-type">
-                        <i class="fas fa-lock"></i>
+                    <div class = "device-type">
+                        <i class = "fas fa-lock"></i>
                         <h3>Locks</h3>
                         <p>Serrures intelligentes</p>
                     </div>
-                    <div class="device-type">
-                        <i class="fas fa-thermometer-half"></i>
+                    <div class = "device-type">
+                        <i class = "fas fa-thermometer-half"></i>
                         <h3>Thermostats</h3>
                         <p>Thermostats connectés</p>
                     </div>
                 </div>
             </section>
             
-            <section id="stats">
-                <h2><i class="fas fa-chart-bar"></i> Statistiques</h2>
-                <div class="stats-container">
-                    <canvas id="stats-chart"></canvas>
+            <section id = "stats">
+                <h2><i class = "fas fa-chart-bar"></i> Statistiques</h2>
+                <div class = "stats-container">
+                    <canvas id = "stats-chart"></canvas>
                 </div>
             </section>
         </main>
@@ -378,7 +378,7 @@ function fixDashboard() {
         </footer>
     </div>
     
-    <script src="script.js"></script>
+    <script src = "script.js"></script>
 </body>
 </html>`;
     
@@ -396,8 +396,8 @@ function fixDashboard() {
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: // 333;
+    background: linear-gradient(135deg, // 667eea 0%, // 764ba2 100%);
     min-height: 100vh;
 }
 
@@ -463,7 +463,7 @@ section {
 }
 
 section h2 {
-    color: #333;
+    color: // 333;
     margin-bottom: 20px;
     font-size: 1.8rem;
 }
@@ -476,7 +476,7 @@ section h2 {
 }
 
 .stat-card {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, // 667eea 0%, // 764ba2 100%);
     color: white;
     padding: 20px;
     border-radius: 10px;
@@ -509,8 +509,8 @@ section h2 {
 }
 
 .driver-card {
-    background: #f8f9fa;
-    border: 1px solid #e9ecef;
+    background: // f8f9fa;
+    border: 1px solid // e9ecef;
     border-radius: 10px;
     padding: 20px;
     transition: transform 0.3s;
@@ -522,12 +522,12 @@ section h2 {
 }
 
 .driver-card h3 {
-    color: #333;
+    color: // 333;
     margin-bottom: 10px;
 }
 
 .driver-card p {
-    color: #666;
+    color: // 666;
     margin-bottom: 5px;
 }
 
@@ -538,8 +538,8 @@ section h2 {
 }
 
 .device-type {
-    background: #f8f9fa;
-    border: 1px solid #e9ecef;
+    background: // f8f9fa;
+    border: 1px solid // e9ecef;
     border-radius: 10px;
     padding: 20px;
     text-align: center;
@@ -553,21 +553,21 @@ section h2 {
 
 .device-type i {
     font-size: 2rem;
-    color: #667eea;
+    color: // 667eea;
     margin-bottom: 15px;
 }
 
 .device-type h3 {
-    color: #333;
+    color: // 333;
     margin-bottom: 10px;
 }
 
 .device-type p {
-    color: #666;
+    color: // 666;
 }
 
 .stats-container {
-    background: #f8f9fa;
+    background: // f8f9fa;
     border-radius: 10px;
     padding: 20px;
     height: 300px;
@@ -662,7 +662,7 @@ function displayDrivers(drivers) {
             <h3>\${driver.name}</h3>
             <p><strong>Type:</strong> \${driver.type}</p>
             <p><strong>Capacités:</strong> \${driver.capabilities.join(', ')}</p>
-            <p><strong>Status:</strong> <span style="color: green;">\${driver.status}</span></p>
+            <p><strong>Status:</strong> <span style = "color: green;">\${driver.status}</span></p>
         \`;
         
         driversList.appendChild(driverCard);
@@ -686,8 +686,8 @@ function initChart() {
     if (!ctx) return;
     
     // Simulation d'un graphique (Chart.js pourrait être ajouté)
-    ctx.style.background = '#f0f0f0';
-    ctx.style.border = '1px solid #ccc';
+    ctx.style.background = '// f0f0f0';
+    ctx.style.border = '1px solid // ccc';
     ctx.style.borderRadius = '5px';
     
     const canvas = document.createElement('canvas');
@@ -697,11 +697,11 @@ function initChart() {
     
     // Dessiner un graphique simple
     const context = canvas.getContext('2d');
-    context.fillStyle = '#667eea';
+    context.fillStyle = '// 667eea';
     context.fillRect(50, 50, 100, 50);
-    context.fillStyle = '#764ba2';
+    context.fillStyle = '// 764ba2';
     context.fillRect(200, 50, 100, 50);
-    context.fillStyle = '#f093fb';
+    context.fillStyle = '// f093fb';
     context.fillRect(350, 50, 100, 50);
 }
 
@@ -849,7 +849,7 @@ function fixWorkflows() {
     console.log('⚙️ Correction des workflows...');
     
     // Créer un workflow de déploiement du dashboard
-    const dashboardWorkflow = `name: Deploy Dashboard
+    const dashboardWorkflow = \name: Deploy Dashboard
 
 on:
   push:

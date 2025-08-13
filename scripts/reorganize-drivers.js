@@ -2,7 +2,7 @@
 const fs=require('fs'),path=require('path');
 const ROOT=process.cwd(),DRV=path.join(ROOT,'drivers');
 const PRUDENT=process.argv.includes('--prudent');
-function j(p){try{return JSON.parse(fs.readFileSync(p,'utf8'));}catch{return null;}}
+function j(p){try {return JSON.parse(fs.readFileSync(p,'utf8'));}} catch (error) {return null;}}
 function w(p,o){fs.mkdirSync(path.dirname(p),{recursive:true});fs.writeFileSync(p,JSON.stringify(o,null,2)+'\n');}
 function slug(s){return String(s||'').toLowerCase().replace(/[^a-z0-9._-]+/g,'-').replace(/-{2,}/g,'-').replace(/^-+|-+$/g,'');}
 function A(v){return Array.isArray(v)?v:(v?[v]:[]);}
@@ -26,11 +26,11 @@ function ensureFiles(dir,id,obj){
   const o=j(comp)||obj||{id,name:{en:id,fr:id},capabilities:[],zigbee:{}};
   if(typeof o.name==='string')o.name={en:o.name,fr:o.name}; o.id=id; w(comp,o);
   if(!fs.existsSync(dev))fs.writeFileSync(dev,`'use strict';\nconst { ZigBeeDevice } = require('homey-zigbeedriver');\nclass Device extends ZigBeeDevice{async onNodeInit(){this.log('init');}}\nmodule.exports = Device;\n`);
-  if(!fs.existsSync(assets))fs.mkdirSync(assets,{recursive:true}); if(!fs.existsSync(icon)){const hex='#00AAFF';fs.writeFileSync(icon,`<?xml version="1.0"?>\n<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">\n<rect x="24" y="24" width="208" height="208" rx="32" fill="#f6f8fa" stroke="${hex}" stroke-width="8"/>\n</svg>`);}
+  if(!fs.existsSync(assets))fs.mkdirSync(assets,{recursive:true}); if(!fs.existsSync(icon)){const hex='// 00AAFF';fs.writeFileSync(icon,`<?xml version = "1.0"?>\n<svg xmlns = "http://www.w3.org/2000/svg" width = "256" height = "256" viewBox = "0 0 256 256">\n<rect x = "24" y = "24" width = "208" height = "208" rx = "32" fill = "// f6f8fa" stroke = "${hex}" stroke-width = "8"/>\n</svg>`);}
 }
 function flattenVariants(root){
   const st=[root];let merged=0;
-  while(st.length){const cur=st.pop();let s;try{s=fs.statSync(cur);}catch{continue;}
+  while(st.length){const cur=st.pop();let s;try {s=fs.statSync(cur);}} catch (error) {continue;}
     if(s.isDirectory()){
       const es=fs.readdirSync(cur,{withFileTypes:true});
       for(const e of es){
@@ -50,7 +50,7 @@ function flattenVariants(root){
               merged++;
             }
             w(compP||path.join(parent,'driver.compose.json'),base);
-            try{fs.rmSync(p,{recursive:true,force:true});}catch{}
+            try {fs.rmSync(p,{recursive:true,force:true});}} catch (error) {}
           } else { st.push(p); }
         }
       }
@@ -63,7 +63,7 @@ function flattenVariants(root){
   flattenVariants(DRV);
   const allDirs=[]; const walk=[DRV];
   while(walk.length){
-    const d=walk.pop(); let st; try{st=fs.statSync(d);}catch{continue;}
+    const d=walk.pop(); let st; try {st=fs.statSync(d);}} catch (error) {continue;}
     if(st.isDirectory()){
       const es=fs.readdirSync(d,{withFileTypes:true});
       const hasCompose=es.some(e=>/^driver(\.compose)?\.json$/i.test(e.name));
@@ -89,18 +89,18 @@ function flattenVariants(root){
       bz.manufacturerName=[...new Set([...(A(bz.manufacturerName)),...(A(az.manufacturerName||obj.manufacturerName))].filter(Boolean))];
       bz.modelId=[...new Set([...(A(bz.modelId)),...(A(az.modelId||obj.modelId||obj.productId))].filter(Boolean))];
       w(tComp||path.join(newDir,'driver.compose.json'),base);
-      try{
+      try {
         const srcA=path.join(dir,'assets'), dstA=path.join(newDir,'assets');
         if(fs.existsSync(srcA)){fs.mkdirSync(dstA,{recursive:true});for(const f of fs.readdirSync(srcA))fs.copyFileSync(path.join(srcA,f),path.join(dstA,f));}
         fs.rmSync(dir,{recursive:true,force:true});
-      }catch{}
+      }} catch (error) {}
       merges.push({from:path.relative(DRV,dir),to:path.relative(DRV,newDir)});
       continue;
     }
     if(newDir!==dir){
       fs.mkdirSync(newDir,{recursive:true});
       for(const f of fs.readdirSync(dir)) fs.renameSync(path.join(dir,f),path.join(newDir,f));
-      try{fs.rmdirSync(dir);}catch{}
+      try {fs.rmdirSync(dir);}} catch (error) {}
       moves.push({from:path.relative(DRV,dir),to:path.relative(DRV,newDir)});
     }
     ensureFiles(newDir,newId,obj);

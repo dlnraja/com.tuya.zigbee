@@ -1,0 +1,20 @@
+{
+  "id": "ikea-humidity-712_plug_standard",
+  "name": "ikea ikea-humidity-712",
+  "category": "plug",
+  "vendor": "ikea",
+  "model": "ikea-humidity-712",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:08.060Z",
+  "updatedAt": "2025-08-13T12:09:08.060Z"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "generic_wall_switch_1gang___generic___standard_default",
+  "name": "generic wall switch 1gang   generic   standard default",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "0x0006"
+  ],
+  "endpoints": [
+    1
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_"
+    ],
+    "modelId": [
+      "TS0001"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          {
+            "id": "0x0006",
+            "server": true,
+            "client": false
+          }
+        ]
+      }
+    }
+  }
+}
