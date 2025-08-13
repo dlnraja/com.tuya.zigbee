@@ -1,102 +1,86 @@
 'use strict';
+
 const Homey = require('homey');
 
-class App extends Homey.App {
-  onInit() {
-    this.log('com.tuya.zigbee → App init (IA refait tout le projet)');
+class TuyaZigbeeApp extends Homey.App {
+  async onInit() {
+    this.log('Tuya Zigbee App is running...');
     
-    // Indexation dynamique robuste et non-bloquante
-    try {
-      const fs = require('fs'), path = require('path');
-      const root = path.join(__dirname, 'drivers');
-      
-      if (fs.existsSync(root)) {
-        const index = []; 
-        const stack = [root];
-        let processed = 0;
-        
-        while (stack.length && processed < 1000) { // Limite de sécurité
-          const current = stack.pop();
-          let stat;
-          
-          try {
-            stat = fs.statSync(current);
-          } catch {
-            continue; // Ignore les erreurs d'accès
-          }
-          
-          if (stat.isDirectory()) {
-            try {
-              const entries = fs.readdirSync(current);
-              const compose = ['driver.compose.json','driver.json']
-                .map(n => path.join(current, n))
-                .find(p => {
-                  try { return fs.existsSync(p); } catch { return false; }
-                });
-              
-              if (compose) {
-                index.push({ 
-                  dir: current, 
-                  compose: compose.replace(__dirname + path.sep, ''),
-                  relative: path.relative(root, current)
-                });
-              }
-              
-              // Ajouter les sous-répertoires à la pile
-              for (const entry of entries) {
-                const entryPath = path.join(current, entry);
-                try {
-                  const entryStat = fs.statSync(entryPath);
-                  if (entryStat.isDirectory()) {
-                    stack.push(entryPath);
-                  }
-                } catch {
-                  // Ignore les erreurs d'accès aux sous-répertoires
-                }
-              }
-            } catch {
-              // Ignore les erreurs de lecture de répertoire
-            }
-          }
-          processed++;
-        }
-        
-        this.__driverIndex = index;
-        this.log(`[drivers-index] ${index.length} drivers indexés (${processed} répertoires traités)`);
-        
-        // Statistiques par domaine
-        const stats = index.reduce((acc, item) => {
-          const parts = item.relative.split(path.sep);
-          const domain = parts[0] || 'unknown';
-          acc[domain] = (acc[domain] || 0) + 1;
-          return acc;
-        }, {});
-        
-        for (const [domain, count] of Object.entries(stats)) {
-          this.log(`[drivers-index] ${domain}: ${count} drivers`);
-        }
-      } else {
-        this.log('[drivers-index] drivers/ directory not found');
-        this.__driverIndex = [];
-      }
-    } catch(error) {
-      this.error('[drivers-index] indexation failed:', error?.message || error);
-      this.__driverIndex = [];
+    // Index dynamique des drivers
+    this.driverIndex = this.buildDriverIndex();
+    
+    this.log(`Indexé ${Object.keys(this.driverIndex).length} drivers`);
+  }
+  
+  buildDriverIndex() {
+    const fs = require('fs');
+    const path = require('path');
+    const driversDir = path.join(__dirname, 'drivers');
+    
+    if (!fs.existsSync(driversDir)) {
+      this.log('Dossier drivers/ non trouvé');
+      return {};
     }
     
-    this.log('App ready - IA automation active');
+    const drivers = {};
+    
+    try {
+      // Scanner les domaines (tuya, zigbee)
+      const domains = fs.readdirSync(driversDir).filter(item => 
+        fs.statSync(path.join(driversDir, item)).isDirectory()
+      );
+      
+      for (const domain of domains) {
+        const domainPath = path.join(driversDir, domain);
+        const categories = fs.readdirSync(domainPath).filter(item => 
+          fs.statSync(path.join(domainPath, item)).isDirectory()
+        );
+        
+        for (const category of categories) {
+          const categoryPath = path.join(domainPath, category);
+          const vendors = fs.readdirSync(categoryPath).filter(item => 
+            fs.statSync(path.join(categoryPath, item)).isDirectory()
+          );
+          
+          for (const vendor of vendors) {
+            const vendorPath = path.join(categoryPath, vendor);
+            const models = fs.readdirSync(vendorPath).filter(item => 
+              fs.statSync(path.join(vendorPath, item)).isDirectory()
+            );
+            
+            for (const model of models) {
+              const modelPath = path.join(vendorPath, model);
+              const driverId = `${category}-${vendor}-${model}`;
+              
+              // Vérifier que le driver a les fichiers nécessaires
+              const devicePath = path.join(modelPath, 'device.js');
+              if (fs.existsSync(devicePath)) {
+                try {
+                  const driver = require(`./${path.relative(__dirname, modelPath)}/device`);
+                  drivers[driverId] = driver;
+                } catch (error) {
+                  this.log(`Erreur chargement driver ${driverId}:`, error.message);
+                }
+              }
+            }
+          }
+        }
+      }
+    } catch (error) {
+      this.log('Erreur lors de la construction de l\'index des drivers:', error.message);
+    }
+    
+    return drivers;
   }
   
-  // Méthode utilitaire pour accéder à l'index
   getDriverIndex() {
-    return this.__driverIndex || [];
+    return this.driverIndex;
   }
   
-  // Méthode pour recharger l'index
-  async reloadDriverIndex() {
-    this.log('[drivers-index] reloading...');
-    this.onInit(); // Re-exécute l'indexation
+  reloadDriverIndex() {
+    this.driverIndex = this.buildDriverIndex();
+    return this.driverIndex;
   }
 }
 
-module.exports = App;
+module.exports = TuyaZigbeeApp;

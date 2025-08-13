@@ -1,0 +1,103 @@
+{
+  "source": "Tuya Zigbee Firmware",
+  "lastUpdated": "2025-08-13T10:37:20.027Z",
+  "firmware": {
+    "TS0001": {
+      "type": "switch",
+      "capabilities": [
+        "onoff"
+      ],
+      "clusters": [
+        "0x0000",
+        "0x0001",
+        "0x0006"
+      ],
+      "description": "Single channel switch"
+    },
+    "TS0002": {
+      "type": "switch",
+      "capabilities": [
+        "onoff"
+      ],
+      "clusters": [
+        "0x0000",
+        "0x0001",
+        "0x0006"
+      ],
+      "description": "Dual channel switch"
+    },
+    "TS0003": {
+      "type": "switch",
+      "capabilities": [
+        "onoff"
+      ],
+      "clusters": [
+        "0x0000",
+        "0x0001",
+        "0x0006"
+      ],
+      "description": "Triple channel switch"
+    },
+    "TS011F": {
+      "type": "plug",
+      "capabilities": [
+        "onoff"
+      ],
+      "clusters": [
+        "0x0000",
+        "0x0001",
+        "0x0006",
+        "0x0B05"
+      ],
+      "description": "Smart plug with power monitoring"
+    },
+    "TS0201": {
+      "type": "sensor",
+      "capabilities": [
+        "measure_temperature"
+      ],
+      "clusters": [
+        "0x0000",
+        "0x0001",
+        "0x0402"
+      ],
+      "description": "Temperature sensor"
+    },
+    "TS0202": {
+      "type": "sensor",
+      "capabilities": [
+        "measure_humidity"
+      ],
+      "clusters": [
+        "0x0000",
+        "0x0001",
+        "0x0405"
+      ],
+      "description": "Humidity sensor"
+    },
+    "TS0203": {
+      "type": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity"
+      ],
+      "clusters": [
+        "0x0000",
+        "0x0001",
+        "0x0402",
+        "0x0405"
+      ],
+      "description": "Temperature and humidity sensor"
+    }
+  },
+  "clusters": {
+    "0x0000": "Basic",
+    "0x0001": "Power Configuration",
+    "0x0006": "On/Off",
+    "0x0008": "Level Control",
+    "0x0402": "Temperature Measurement",
+    "0x0405": "Relative Humidity Measurement",
+    "0x0B05": "Diagnostics",
+    "0xEF00": "Tuya Proprietary"
+  }
+}

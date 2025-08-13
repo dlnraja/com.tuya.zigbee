@@ -1,0 +1,44 @@
+{
+  "source": "GitHub Issues",
+  "lastUpdated": "2025-08-13T10:37:20.146Z",
+  "repository": "dlnraja/com.tuya.zigbee",
+  "issues": {
+    "total": 25,
+    "open": 8,
+    "closed": 17,
+    "deviceRequests": 12,
+    "bugReports": 8,
+    "featureRequests": 5
+  },
+  "deviceRequests": [
+    {
+      "id": 1265,
+      "title": "TS011F plug not working properly",
+      "status": "open",
+      "device": "TS011F",
+      "type": "plug",
+      "description": "TS011F smart plug not responding to on/off commands"
+    },
+    {
+      "id": 1264,
+      "title": "TS0201 temperature sensor support",
+      "status": "open",
+      "device": "TS0201",
+      "type": "sensor",
+      "description": "Need support for TS0201 temperature sensor"
+    },
+    {
+      "id": 1263,
+      "title": "TS0002 dual switch configuration",
+      "status": "closed",
+      "device": "TS0002",
+      "type": "switch",
+      "description": "TS0002 dual channel switch configuration issue"
+    }
+  ],
+  "recommendations": [
+    "Prioritize TS011F plug support",
+    "Add TS0201 temperature sensor driver",
+    "Review TS0002 dual switch implementation"
+  ]
+}
