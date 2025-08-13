@@ -1,0 +1,52 @@
+{
+  "id": "tuya-thermostat-ts0601",
+  "name": {
+    "en": "Tuya Thermostat TS0601",
+    "fr": "Thermostat Tuya TS0601"
+  },
+  "class": "thermostat",
+  "capabilities": ["target_temperature", "measure_temperature", "measure_humidity"],
+  "capabilitiesOptions": {
+    "target_temperature": {
+      "title": {
+        "en": "Target Temperature",
+        "fr": "Température Cible"
+      },
+      "min": 5,
+      "max": 30,
+      "step": 0.5
+    },
+    "measure_temperature": {
+      "title": {
+        "en": "Current Temperature",
+        "fr": "Température Actuelle"
+      }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Current Humidity",
+        "fr": "Humidité Actuelle"
+      }
+    }
+  },
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "zigbee": {
+    "manufacturerName": "_TZE204_xalsoe3m",
+    "modelId": ["TS0601"],
+    "endpoints": {
+      "1": {
+        "clusters": ["genBasic", "genPowerCfg", "msTemperatureMeasurement", "msRelativeHumidity", "hvacThermostat"],
+        "bindings": ["msTemperatureMeasurement", "msRelativeHumidity", "hvacThermostat"]
+      }
+    }
+  },
+  "settings": [],
+  "pair": [
+    {
+      "id": "generic_pair"
+    }
+  ]
+}
