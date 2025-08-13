@@ -355,3 +355,25 @@ Exemple: `tuya-light-ts0501b`, `aqara-sensor-motion`
 npm install
 npm run mega
 ```
+
+
+## 🧹 Nettoyage et maintenance
+
+### Scripts PowerShell
+Les scripts PowerShell ont été supprimés et convertis en JavaScript pour améliorer la cohérence du projet.
+
+- **Supprimés** : Scripts obsolètes et redondants
+- **Convertis** : Scripts utiles convertis en JavaScript
+- **Backup** : Sauvegarde dans `.backup/ps1-scripts/`
+
+### Commandes de maintenance
+```bash
+# Nettoyage PowerShell
+node scripts/cleanup-powershell-scripts.js
+
+# Complétion app.js
+node scripts/complete-app-js.js
+
+# Création fichiers manquants
+node scripts/create-missing-files.js
+```
