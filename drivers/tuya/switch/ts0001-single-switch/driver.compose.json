@@ -1,0 +1,37 @@
+{
+  "id": "tuya-switch-ts0001",
+  "name": {
+    "en": "Tuya Single Switch TS0001",
+    "fr": "Interrupteur Simple Tuya TS0001"
+  },
+  "class": "socket",
+  "capabilities": ["onoff"],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Switch",
+        "fr": "Interrupteur"
+      }
+    }
+  },
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "zigbee": {
+    "manufacturerName": "_TZ3000_mdj7kra9",
+    "modelId": ["TS0001"],
+    "endpoints": {
+      "1": {
+        "clusters": ["genBasic", "genOnOff"],
+        "bindings": ["genOnOff"]
+      }
+    }
+  },
+  "settings": [],
+  "pair": [
+    {
+      "id": "generic_pair"
+    }
+  ]
+}
