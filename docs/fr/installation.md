@@ -1,12 +1,12 @@
-# 📦 Guide d'installation
+// 📦 Guide d'installation
 
-## Prérequis
+#// Prérequis
 
 - Appareil Homey (Pro ou régulier)
 - Appareils Tuya/Zigbee
 - Connexion internet stable
 
-## Étapes d'installation
+#// Étapes d'installation
 
 1. **Télécharger l'application**
    - Allez dans Applications Homey
@@ -23,6 +23,6 @@
    - Suivez les instructions de jumelage
    - Configurez les paramètres des appareils
 
-## Dépannage
+#// Dépannage
 
 Si vous rencontrez des problèmes lors de l'installation, consultez le guide de dépannage.

@@ -1,0 +1,26 @@
+{
+  "timestamp": "2025-08-13T21:08:04.005Z",
+  "project": "tuya_repair",
+  "validation": {
+    "structure": true,
+    "drivers": true,
+    "schemas": true
+  },
+  "stats": {
+    "totalDrivers": 786,
+    "validDrivers": 786,
+    "invalidDrivers": 0,
+    "missingAssets": 0,
+    "missingMetadata": 0
+  },
+  "errors": [],
+  "warnings": [
+    "Image size validation requires additional libraries (skipped)"
+  ],
+  "summary": {
+    "total": 786,
+    "valid": 786,
+    "invalid": 0,
+    "successRate": 100
+  }
+}

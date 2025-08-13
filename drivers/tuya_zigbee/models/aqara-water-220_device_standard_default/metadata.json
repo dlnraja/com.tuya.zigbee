@@ -1,0 +1,20 @@
+{
+  "id": "aqara-water-220_plug_standard",
+  "name": "aqara aqara-water-220",
+  "category": "plug",
+  "vendor": "aqara",
+  "model": "aqara-water-220",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:07.309Z",
+  "updatedAt": "2025-08-13T12:09:07.310Z"
+}

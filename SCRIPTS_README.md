@@ -1,52 +1,52 @@
-# Scripts Tuya Zigbee - Nouvelle Architecture JavaScript
+// Scripts Tuya Zigbee - Nouvelle Architecture JavaScript
 
-## 🚀 **MEGA-PROMPT ULTIMATE**
+#// 🚀 **MEGA-PROMPT ULTIMATE**
 
-Tous les scripts PowerShell ont été convertis en JavaScript pour une meilleure compatibilité et performance.
+Tous les scripts JavaScript ont été convertis en JavaScript pour une meilleure compatibilité et performance.
 
-## 📁 **Structure des Scripts**
+#// 📁 **Structure des Scripts**
 
-### **Script Principal**
+##// **Script Principal**
 - **`mega-verify-enrich.js`** - Orchestrateur principal qui exécute toute la pipeline
 
-### **Gestion des Backups et Sources**
-- **`normalize-backup.js`** - Normalise les backups ZIP dans `.backup/zips/`
-- **`restore-tmp-sources.js`** - Restaure `.tmp_tuya_zip_work` depuis les backups
+##// **Gestion des Backups et Sources**
+- **\normalize-backup.js`** - Normalise les backups ZIP dans `.backup/zips/`
+- **\restore-tmp-sources.js`** - Restaure `.tmp_tuya_zip_work` depuis les backups
 - **`ingest-tuya-zips.js`** - Ingeste les ZIPs Tuya pour extraction des drivers
 
-### **Réorganisation des Drivers**
-- **`reorganize-drivers.js`** - Réorganisation complète vers `domain/category/vendor/model`
-- **`reorganize-drivers-ultimate.js`** - Version avancée de réorganisation
+##// **Réorganisation des Drivers**
+- **\reorganize-drivers.js`** - Réorganisation complète vers `domain/category/vendor/model`
+- **\reorganize-drivers-ultimate.js`** - Version avancée de réorganisation
 
-### **Migration et Enrichissement**
+##// **Migration et Enrichissement**
 - **`migrate-meshdriver-to-zigbeedriver.js`** - Migration meshdriver → zigbeedriver
 - **`enrich-drivers.js`** - Enrichit les drivers avec les métadonnées des backups
 - **`verify-coherence-and-enrich.js`** - Vérifie la cohérence et enrichit
 
-### **Génération et Maintenance**
+##// **Génération et Maintenance**
 - **`assets-generate.js`** - Génère les icônes SVG manquantes
 - **`create-small-png.js`** - Crée le PNG small requis par Homey
 - **`fix-package.js`** - Corrige et optimise package.json
 - **`update-readme.js`** - Met à jour README.md
-- **`reindex-drivers.js`** - Réindexe tous les drivers
+- **\reindex-drivers.js`** - Réindexe tous les drivers
 
-### **Nettoyage**
-- **`cleanup-obsolete.js`** - Supprime les scripts obsolètes et PowerShell
+##// **Nettoyage**
+- **`cleanup-obsolete.js`** - Supprime les scripts obsolètes et JavaScript
 
-## 🎯 **Structure des Drivers**
+#// 🎯 **Structure des Drivers**
 
 ```
 drivers/
-├── tuya/                    # Domaine Tuya
-│   ├── light/              # Catégorie
-│   │   ├── tuya/           # Vendor
-│   │   │   └── model-1/    # Modèle
+├── tuya/                    // Domaine Tuya
+│   ├── light/              // Catégorie
+│   │   ├── tuya/           // Vendor
+│   │   │   └── model-1/    // Modèle
 │   │   └── aqara/
 │   │       └── model-2/
 │   └── sensor/
 │       └── generic/
 │           └── model-3/
-└── zigbee/                  # Domaine Zigbee
+└── zigbee/                  // Domaine Zigbee
     ├── plug/
     │   └── sonoff/
     │       └── model-4/
@@ -55,38 +55,38 @@ drivers/
             └── model-5/
 ```
 
-## 🔧 **Utilisation**
+#// 🔧 **Utilisation**
 
-### **Exécution Complète**
+##// **Exécution Complète**
 ```bash
 node scripts/mega-verify-enrich.js
 ```
 
-### **Exécution Individuelle**
+##// **Exécution Individuelle**
 ```bash
-# Normaliser backups
+// Normaliser backups
 node scripts/normalize-backup.js
 
-# Restaurer sources temporaires
+// Restaurer sources temporaires
 node scripts/restore-tmp-sources.js
 
-# Réorganiser drivers
+// Réorganiser drivers
 node scripts/reorganize-drivers.js
 
-# Migrer vers zigbeedriver
+// Migrer vers zigbeedriver
 node scripts/migrate-meshdriver-to-zigbeedriver.js
 
-# Enrichir drivers
+// Enrichir drivers
 node scripts/enrich-drivers.js --apply
 
-# Générer assets
+// Générer assets
 node scripts/assets-generate.js
 
-# Vérifier cohérence
+// Vérifier cohérence
 node scripts/verify-coherence-and-enrich.js
 ```
 
-## 🌍 **Variables d'Environnement**
+#// 🌍 **Variables d'Environnement**
 
 - **`DO_MIGRATE=1`** - Active la migration meshdriver → zigbeedriver (défaut: 1)
 - **`SKIP_NPM=1`** - Saute npm install (défaut: 1)
@@ -96,7 +96,7 @@ node scripts/verify-coherence-and-enrich.js
 - **`PERSIST_TMP=1`** - Garde `.tmp_tuya_zip_work` (défaut: 1)
 - **`KEEP_BACKUP=1`** - Garde `.backup` (défaut: 1)
 
-## 📋 **Pipeline Complète**
+#// 📋 **Pipeline Complète**
 
 1. **Normalisation des backups** → `.backup/zips/`
 2. **Restauration des sources** → `.tmp_tuya_zip_work/`
@@ -111,9 +111,9 @@ node scripts/verify-coherence-and-enrich.js
 11. **Commit Git** → Sauvegarde locale
 12. **Rapport final** → Statut complet
 
-## 🎨 **Caractéristiques**
+#// 🎨 **Caractéristiques**
 
-- ✅ **100% JavaScript** - Plus de PowerShell
+- ✅ **100% JavaScript** - Plus de JavaScript
 - ✅ **Structure hiérarchique** - Domain/Category/Vendor/Model
 - ✅ **Séparation automatique** - Tuya vs Zigbee
 - ✅ **Persistance des sources** - `.tmp_tuya_zip_work` jamais supprimé
@@ -123,7 +123,7 @@ node scripts/verify-coherence-and-enrich.js
 - ✅ **Validation complète** - Cohérence et métadonnées
 - ✅ **Documentation automatique** - README et changelog
 
-## 🚨 **Notes Importantes**
+#// 🚨 **Notes Importantes**
 
 - **`.tmp_tuya_zip_work`** est **PERSISTANT** et ne doit jamais être supprimé
 - **`.backup/zips/`** contient tous les ZIPs Tuya et est **PRÉSERVÉ**
@@ -131,20 +131,20 @@ node scripts/verify-coherence-and-enrich.js
 - Tous les **variants** sont **aplatis** et **fusionnés** dans le parent
 - La **migration meshdriver** est **automatique** et **sécurisée**
 
-## 🔄 **Mise à Jour**
+#// 🔄 **Mise à Jour**
 
 Pour mettre à jour les scripts :
 
 ```bash
-# Nettoyer les scripts obsolètes
+// Nettoyer les scripts obsolètes
 node scripts/cleanup-obsolete.js
 
-# Exécuter le mega-prompt
+// Exécuter le mega-prompt
 node scripts/mega-verify-enrich.js
 ```
 
 ---
 
 **📅 Créé**: 29/07/2025  
-**🎯 Objectif**: Conversion complète PowerShell → JavaScript  
+**🎯 Objectif**: Conversion complète JavaScript → JavaScript  
 **🚀 Statut**: ARCHITECTURE COMPLÈTE ET OPÉRATIONNELLE

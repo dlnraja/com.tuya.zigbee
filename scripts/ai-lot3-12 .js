@@ -1,1 +1,1 @@
-# AI Lot3 Script 12
+// AI Lot3 Script 12

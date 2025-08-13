@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// !/usr/bin/env node
 
 /**
  * Script de complétion automatique de app.js
@@ -216,7 +216,9 @@ function generateAppJSContent() {
   // Générer les requires
   for (const key of driverKeys) {
     const driver = allDrivers[key];
-    const requirePath = `./${driver.path}/device`;
+    // Nettoyer le chemin en supprimant les espaces multiples
+    const cleanPath = driver.path.replace(/\s+/g, ' ').trim();
+    const requirePath = `./${cleanPath}/device`;
     requires.push(`const ${key.replace(/[^a-zA-Z0-9]/g, '_')} = require('${requirePath}');`);
   }
   
@@ -224,7 +226,8 @@ function generateAppJSContent() {
   for (const key of driverKeys) {
     const driver = allDrivers[key];
     const varName = key.replace(/[^a-zA-Z0-9]/g, '_');
-    driverExports.push(`  ${key}: ${varName},`);
+    const safeKey = `"${key}"`; // Mettre les clés entre guillemets
+    driverExports.push(`  ${safeKey}: ${varName},`);
   }
   
   return `'use strict';

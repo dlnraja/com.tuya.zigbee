@@ -1,0 +1,20 @@
+{
+  "id": "ts0203_sensor_battery",
+  "name": "tuya ts0203",
+  "category": "sensor-contact",
+  "vendor": "tuya",
+  "model": "ts0203",
+  "type": "tuya_zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:00.466Z",
+  "updatedAt": "2025-08-13T12:09:00.466Z"
+}

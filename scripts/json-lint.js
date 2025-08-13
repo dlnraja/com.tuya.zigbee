@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// !/usr/bin/env node
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -18,11 +18,11 @@ function listJsonFiles(dir){
 }
 
 function main(){
-  try{ fs.mkdirSync(path.dirname(REPORT_PATH), { recursive: true }); }catch{}
+  try { fs.mkdirSync(path.dirname(REPORT_PATH), { recursive: true }); }} catch (error) {}
   const files = listJsonFiles(process.cwd());
   const errors = [];
   for (const file of files){
-    try{
+    try {
       const txt = fs.readFileSync(file,'utf8');
       JSON.parse(txt);
     }catch(err){

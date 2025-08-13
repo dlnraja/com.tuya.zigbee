@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// !/usr/bin/env node
 
 /**
  * Script de mise à jour du dashboard
@@ -105,60 +105,60 @@ function updateDashboard() {
 
 function generateDashboardHTML(summary, driversIndex) {
   return `<!DOCTYPE html>
-<html lang="fr">
+<html lang = "fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <title>Dashboard Drivers Tuya/Zigbee</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        body { font-family: Arial, sans-serif; margin: 20px; background: // f5f5f5; }
         .container { max-width: 1200px; margin: 0 auto; }
-        .header { background: #2c3e50; color: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
+        .header { background: // 2c3e50; color: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 20px 0; }
         .stat-card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center; }
-        .stat-number { font-size: 2.5em; font-weight: bold; color: #3498db; }
+        .stat-number { font-size: 2.5em; font-weight: bold; color: // 3498db; }
         .drivers-table { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         table { width: 100%; border-collapse: collapse; }
-        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
-        th { background: #ecf0f1; font-weight: bold; }
-        .capability { display: inline-block; background: #3498db; color: white; padding: 4px 8px; margin: 2px; border-radius: 15px; font-size: 12px; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid // ddd; }
+        th { background: // ecf0f1; font-weight: bold; }
+        .capability { display: inline-block; background: // 3498db; color: white; padding: 4px 8px; margin: 2px; border-radius: 15px; font-size: 12px; }
         .search { margin: 20px 0; }
-        #searchInput { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; }
+        // searchInput { width: 100%; padding: 12px; border: 1px solid // ddd; border-radius: 5px; font-size: 16px; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
+    <div class = "container">
+        <div class = "header">
             <h1>🚀 Dashboard Drivers Tuya/Zigbee</h1>
             <p>Généré le: ${new Date(summary.timestamp).toLocaleString('fr-FR')}</p>
         </div>
         
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number">${summary.totalDrivers}</div>
+        <div class = "stats-grid">
+            <div class = "stat-card">
+                <div class = "stat-number">${summary.totalDrivers}</div>
                 <div>Total Drivers</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">${Object.keys(summary.domains).length}</div>
+            <div class = "stat-card">
+                <div class = "stat-number">${Object.keys(summary.domains).length}</div>
                 <div>Domaines</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">${Object.keys(summary.categories).length}</div>
+            <div class = "stat-card">
+                <div class = "stat-number">${Object.keys(summary.categories).length}</div>
                 <div>Catégories</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">${Object.keys(summary.manufacturers).length}</div>
+            <div class = "stat-card">
+                <div class = "stat-number">${Object.keys(summary.manufacturers).length}</div>
                 <div>Fabricants</div>
             </div>
         </div>
         
-        <div class="search">
-            <input type="text" id="searchInput" placeholder="Rechercher un driver..." onkeyup="filterDrivers()">
+        <div class = "search">
+            <input type = "text" id = "searchInput" placeholder = "Rechercher un driver..." onkeyup = "filterDrivers()">
         </div>
         
-        <div class="drivers-table">
+        <div class = "drivers-table">
             <h2>📋 Liste des Drivers</h2>
-            <table id="driversTable">
+            <table id = "driversTable">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -174,7 +174,7 @@ function generateDashboardHTML(summary, driversIndex) {
                         <tr>
                             <td><strong>${driver.id}</strong></td>
                             <td>${driver.name?.en || driver.name || 'N/A'}</td>
-                            <td>${(driver.capabilities || []).map(cap => `<span class="capability">${cap}</span>`).join('')}</td>
+                            <td>${(driver.capabilities || []).map(cap => `<span class = "capability">${cap}</span>`).join('')}</td>
                             <td>${driver.id.split('-')[0]}</td>
                             <td>${driver.id.split('-')[1]}</td>
                             <td>${driver.id.split('-')[2]}</td>

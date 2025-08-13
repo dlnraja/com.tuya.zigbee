@@ -1,0 +1,14 @@
+{
+  "id": "ikea-floor-238_light_standard_settings",
+  "name": "Paramètres ikea ikea-floor-238",
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": "Intervalle de polling (secondes)",
+      "default": 30,
+      "min": 10,
+      "max": 300
+    }
+  ]
+}

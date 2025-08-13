@@ -1,6 +1,6 @@
-# ✅ Cursor Persistent Queue (tuya-zigbee)
+// ✅ Cursor Persistent Queue (tuya-zigbee)
 
-## ⏳ Tâches en attente Cursor
+#// ⏳ Tâches en attente Cursor
 
 - [ ] Reprendre la Phase 4 du méga prompt (GitHub Action release-tuya-light.yml)
 - [ ] Générer automatiquement la matrice Zigbee dans /ref/
@@ -9,7 +9,7 @@
 - [ ] Nettoyer les commits avec git-filter-repo
 - [ ] Générer le dashboard statique dans /docs/
 
-## 🔁 Instructions pour Cursor après crash ou redémarrage
+#// 🔁 Instructions pour Cursor après crash ou redémarrage
 
 > Cursor, please resume the following tasks from this list one by one.
 > Skip already completed ones. Reinject the results in this file automatically.

@@ -1,21 +1,21 @@
-# 🔌 tuya-switch
+// 🔌 tuya-switch
 
-## 📋 Description
+#// 📋 Description
 
 Driver pour appareils TUYA de type switches.
 
-## 🔧 Capacités
+#// 🔧 Capacités
 
 - `onoff`
 
-## 📁 Fichier
+#// 📁 Fichier
 
 `drivers/tuya/tuya-switch.js`
 
-## 🎯 Utilisation
+#// 🎯 Utilisation
 
 Ce driver est automatiquement détecté par Homey et peut être utilisé avec les appareils compatibles.
 
-## 🔄 Mises à jour
+#// 🔄 Mises à jour
 
 Généré automatiquement par DriversGeneratorUltimate.

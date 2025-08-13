@@ -1,10 +1,10 @@
-# TUYA Locks Driver
+// TUYA Locks Driver
 
 > Universal tuya locks driver for Homey - AI-Powered Edition
 
-## 🌍 Multi-Language Support / Support Multilingue
+#// 🌍 Multi-Language Support / Support Multilingue
 
-### 🇬🇧 English
+##// 🇬🇧 English
 Universal tuya locks driver for Homey - AI-Powered Edition
 
 **Features:**
@@ -14,7 +14,7 @@ Universal tuya locks driver for Homey - AI-Powered Edition
 - Real-time monitoring
 - Automatic validation
 
-### 🇫🇷 Français
+##// 🇫🇷 Français
 Driver tuya locks universel pour Homey - Édition IA
 
 **Fonctionnalités:**
@@ -24,7 +24,7 @@ Driver tuya locks universel pour Homey - Édition IA
 - Monitoring temps réel
 - Validation automatique
 
-### 🇳🇱 Nederlands
+##// 🇳🇱 Nederlands
 Universele tuya locks driver voor Homey - AI Editie
 
 **Functies:**
@@ -34,7 +34,7 @@ Universele tuya locks driver voor Homey - AI Editie
 - Real-time monitoring
 - Automatische validatie
 
-### 🇹🇦 தமிழ்
+##// 🇹🇦 தமிழ்
 ஹோமியுக்கான உலகளாவிய tuya locks டிரைவர் - AI-பவர்டு பதிப்பு
 
 **அம்சங்கள்:**
@@ -46,7 +46,7 @@ Universele tuya locks driver voor Homey - AI Editie
 
 ---
 
-## 📊 Driver Information
+#// 📊 Driver Information
 
 - **Type**: tuya
 - **Category**: locks
@@ -54,25 +54,25 @@ Universele tuya locks driver voor Homey - AI Editie
 - **Validation**: ✅ Passed
 - **AI Enhanced**: ✅ Yes
 
-## 🚀 Installation
+#// 🚀 Installation
 
 ```bash
-# Install via Homey CLI
+// Install via Homey CLI
 homey app install com.tuya.zigbee
 
-# Or clone and install manually
+// Or clone and install manually
 git clone https://github.com/dlnraja/com.tuya.zigbee.git
 cd com.tuya.zigbee
 homey app run
 ```
 
-## 🔧 Configuration
+#// 🔧 Configuration
 
 1. Add your tuya locks device to Homey
 2. The driver will automatically detect and configure your device
 3. Enjoy full functionality with AI-powered features
 
-## 📈 Statistics
+#// 📈 Statistics
 
 - **Compatibility**: 100%
 - **Performance**: Optimized

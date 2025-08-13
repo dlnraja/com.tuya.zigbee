@@ -1,1 +1,1 @@
-# AI Ext Script 118
+// AI Ext Script 118

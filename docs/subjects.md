@@ -1,12 +1,12 @@
-# 🎯 Documentation des Sujets
+// 🎯 Documentation des Sujets
 
-## 📅 Date
+#// 📅 Date
 **05/08/2025 16:24:34**
 
-## 📊 Sujets Identifiés
+#// 📊 Sujets Identifiés
 **77 sujets trouvés**
 
-## 📋 Liste des Sujets
+#// 📋 Liste des Sujets
 - **fold**
 - **6678652ef6fb4060908f5623ee7062950debc346d770843c281d94147e604e01**
 - **2025**
@@ -27,7 +27,7 @@
 - **global**
 - **policy**
 - **init**
-- **ps1**
+- **js**
 - **prompt**
 - **auto**
 - **main**
@@ -85,7 +85,7 @@
 - **community**
 - **forum**
 
-## 🔍 Analyse
+#// 🔍 Analyse
 Les sujets ont été extraits automatiquement des noms de fichiers et dossiers.
 
 ---

@@ -1,1 +1,1 @@
-# AI Lot3 Script 8
+// AI Lot3 Script 8

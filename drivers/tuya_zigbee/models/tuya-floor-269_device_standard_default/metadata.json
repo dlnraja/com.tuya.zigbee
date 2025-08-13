@@ -1,0 +1,20 @@
+{
+  "id": "tuya-floor-269_light_standard",
+  "name": "tuya tuya-floor-269",
+  "category": "light",
+  "vendor": "tuya",
+  "model": "tuya-floor-269",
+  "type": "tuya_zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:08:56.840Z",
+  "updatedAt": "2025-08-13T12:08:56.840Z"
+}

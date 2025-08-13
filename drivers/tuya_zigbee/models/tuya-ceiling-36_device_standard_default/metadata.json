@@ -1,0 +1,20 @@
+{
+  "id": "tuya-ceiling-36_light_standard",
+  "name": "tuya tuya-ceiling-36",
+  "category": "light",
+  "vendor": "tuya",
+  "model": "tuya-ceiling-36",
+  "type": "tuya_zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:08:56.753Z",
+  "updatedAt": "2025-08-13T12:08:56.753Z"
+}

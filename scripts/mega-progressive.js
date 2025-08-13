@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// !/usr/bin/env node
 /**
  * @file mega-progressive.js
  * @description Pipeline progressive selon MEGA-INDICATIONS CURSOR

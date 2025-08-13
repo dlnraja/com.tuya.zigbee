@@ -1,8 +1,8 @@
-# 🔧 Troubleshooting Guide
+// 🔧 Troubleshooting Guide
 
-## Common Issues
+#// Common Issues
 
-### Device Not Found
+##// Device Not Found
 
 **Problem**: Device not detected during pairing
 **Solution**: 
@@ -11,7 +11,7 @@
 3. Restart the discovery process
 4. Check network connectivity
 
-### Connection Issues
+##// Connection Issues
 
 **Problem**: Device shows as offline
 **Solution**:
@@ -20,7 +20,7 @@
 3. Restart the device
 4. Check Homey connectivity
 
-### Performance Issues
+##// Performance Issues
 
 **Problem**: Slow response or delays
 **Solution**:
@@ -29,9 +29,9 @@
 3. Update firmware
 4. Restart Homey
 
-## Advanced Troubleshooting
+#// Advanced Troubleshooting
 
-### Log Analysis
+##// Log Analysis
 
 Check the app logs for detailed error information:
 1. Open Homey Developer Tools
@@ -39,14 +39,14 @@ Check the app logs for detailed error information:
 3. Check the logs tab
 4. Look for error messages
 
-### Factory Reset
+##// Factory Reset
 
 If all else fails, perform a factory reset:
 1. Backup your configuration
 2. Reset the device to factory settings
 3. Reconfigure from scratch
 
-## Support
+#// Support
 
 For additional support:
 - GitHub Issues: [Repository](https://github.com/dlnraja/com.tuya.zigbee/issues)

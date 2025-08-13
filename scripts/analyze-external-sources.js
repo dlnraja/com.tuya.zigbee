@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// !/usr/bin/env node
 
 /**
  * Script d'analyse des sources externes
@@ -377,43 +377,43 @@ async function generateHTMLReport() {
     const htmlPath = path.join(REPORTS_DIR, 'sources-analysis', 'sources-analysis-report.html');
     
     const html = `<!DOCTYPE html>
-<html lang="fr">
+<html lang = "fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <title>Rapport d'Analyse des Sources Externes - Tuya Zigbee</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f5f5f5; }
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: // f5f5f5; }
         .container { max-width: 1200px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; }
-        h2 { color: #34495e; margin-top: 30px; }
-        .summary { background: #ecf0f1; padding: 20px; border-radius: 5px; margin: 20px 0; }
-        .source { background: #f8f9fa; padding: 15px; margin: 10px 0; border-left: 4px solid #3498db; border-radius: 3px; }
-        .devices { background: #e8f5e8; padding: 20px; border-radius: 5px; margin: 20px 0; }
-        .recommendations { background: #fff3cd; padding: 20px; border-radius: 5px; margin: 20px 0; }
-        .metric { display: inline-block; margin: 10px; padding: 10px; background: #3498db; color: white; border-radius: 5px; }
+        h1 { color: // 2c3e50; border-bottom: 3px solid // 3498db; padding-bottom: 10px; }
+        h2 { color: // 34495e; margin-top: 30px; }
+        .summary { background: // ecf0f1; padding: 20px; border-radius: 5px; margin: 20px 0; }
+        .source { background: // f8f9fa; padding: 15px; margin: 10px 0; border-left: 4px solid // 3498db; border-radius: 3px; }
+        .devices { background: // e8f5e8; padding: 20px; border-radius: 5px; margin: 20px 0; }
+        .recommendations { background: // fff3cd; padding: 20px; border-radius: 5px; margin: 20px 0; }
+        .metric { display: inline-block; margin: 10px; padding: 10px; background: // 3498db; color: white; border-radius: 5px; }
         ul { line-height: 1.6; }
-        .timestamp { color: #7f8c8d; font-style: italic; }
-        .status-supported { color: #27ae60; font-weight: bold; }
-        .status-needs-driver { color: #e74c3c; font-weight: bold; }
+        .timestamp { color: // 7f8c8d; font-style: italic; }
+        .status-supported { color: // 27ae60; font-weight: bold; }
+        .status-needs-driver { color: // e74c3c; font-weight: bold; }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class = "container">
         <h1>🔍 Rapport d'Analyse des Sources Externes</h1>
-        <p class="timestamp">Généré le: ${new Date().toISOString().split('T')[0]}</p>
+        <p class = "timestamp">Généré le: ${new Date().toISOString().split('T')[0]}</p>
         
-        <div class="summary">
+        <div class = "summary">
             <h2>📊 Résumé de l'Analyse</h2>
-            <div class="metric">Sources analysées: ${Object.keys(SOURCES).length}</div>
-            <div class="metric">Appareils détectés: ${EXTRACTED_INFO.devices.length}</div>
-            <div class="metric">Capabilities: ${EXTRACTED_INFO.capabilities.length}</div>
-            <div class="metric">Clusters: ${EXTRACTED_INFO.clusters.length}</div>
+            <div class = "metric">Sources analysées: ${Object.keys(SOURCES).length}</div>
+            <div class = "metric">Appareils détectés: ${EXTRACTED_INFO.devices.length}</div>
+            <div class = "metric">Capabilities: ${EXTRACTED_INFO.capabilities.length}</div>
+            <div class = "metric">Clusters: ${EXTRACTED_INFO.clusters.length}</div>
         </div>
         
         <h2>📡 Sources Analysées</h2>
         ${Object.entries(SOURCES).map(([key, source]) => `
-        <div class="source">
+        <div class = "source">
             <h3>${source.name}</h3>
             <p><strong>URL:</strong> ${source.url}</p>
             <p><strong>Type:</strong> ${source.type}</p>
@@ -421,30 +421,30 @@ async function generateHTMLReport() {
         </div>
         `).join('')}
         
-        <div class="devices">
+        <div class = "devices">
             <h2>📱 Appareils Détectés</h2>
             <ul>
                 ${EXTRACTED_INFO.devices.map(device => `
                 <li>
                     <strong>${device.model}</strong> (${device.type}) - 
-                    <span class="status-${device.status}">${device.status}</span><br>
+                    <span class = "status-${device.status}">${device.status}</span><br>
                     <em>Capabilities:</em> ${device.capabilities.join(', ')}
                 </li>
                 `).join('')}
             </ul>
         </div>
         
-        <div class="recommendations">
+        <div class = "recommendations">
             <h2>💡 Recommandations</h2>
             <ul>
                 ${EXTRACTED_INFO.recommendations.map(rec => `<li>${rec}</li>`).join('')}
             </ul>
         </div>
         
-        <div style="text-align: center; margin-top: 40px; padding: 20px; background: #ecf0f1; border-radius: 5px;">
+        <div style = "text-align: center; margin-top: 40px; padding: 20px; background: // ecf0f1; border-radius: 5px;">
             <h3>🎯 Prochaines Étapes</h3>
             <p>Basé sur cette analyse, les priorités sont :</p>
-            <ol style="text-align: left; display: inline-block;">
+            <ol style = "text-align: left; display: inline-block;">
                 <li>Implémenter le support pour TS011F (smart plug)</li>
                 <li>Ajouter le support pour TS0201 (capteur de température)</li>
                 <li>Développer le driver pour TZE204 (détecteur de présence)</li>

@@ -1,4 +1,4 @@
-# 🚀 Tuya Zigbee Universal - Homey App
+// 🚀 Tuya Zigbee Universal - Homey App
 
 > **Universal Tuya and Zigbee devices for Homey - AI-Powered Edition with Complete Recovery**
 
@@ -13,19 +13,19 @@
 
 ---
 
-## 📊 Dashboard Live
+#// 📊 Dashboard Live
 
 🔗 **[Dashboard Interactif](https://dlnraja.github.io/com.tuya.zigbee/dashboard//)** - Statistiques en temps réel
 
 ---
 
-## 🎯 Features Principales
+#// 🎯 Features Principales
 
-### ✅ **Drivers Complets (24/24)**
+##// ✅ **Drivers Complets (24/24)**
 - **🔌 Tuya Drivers (14)** : Automation, Climate, Controllers, Covers, Generic, Lighting, Lights, Locks, Plugs, Security, Sensors, Switches, Thermostats
 - **📡 Zigbee Drivers (10)** : Automation, Covers, Dimmers, Lights, OnOff, Plugs, Security, Sensors, Switches, Thermostats
 
-### 🚀 **Mode YOLO Ultra**
+##// 🚀 **Mode YOLO Ultra**
 - **🤖 IA Enrichment** : Analyse automatique et amélioration des drivers
 - **🔄 Auto-Sync** : Synchronisation automatique entre branches
 - **📊 Dashboard Live** : Interface temps réel pour monitoring
@@ -35,42 +35,42 @@
 
 ---
 
-## 🛠️ Installation
+#// 🛠️ Installation
 
-### Prérequis
+##// Prérequis
 - Homey Pro avec SDK3
 - Node.js 18+
 - Homey CLI
 
-### Installation Rapide
+##// Installation Rapide
 ```bash
-# Cloner le repository
+// Cloner le repository
 git clone https://github.com/dlnraja/com.tuya.zigbee.git
 cd com.tuya.zigbee
 
-# Installer les dépendances
+// Installer les dépendances
 npm install
 
-# Valider l'app
+// Valider l'app
 homey app validate
 
-# Lancer l'app
+// Lancer l'app
 homey app run
 ```
 
-### Installation via Homey CLI
+##// Installation via Homey CLI
 ```bash
 homey app install com.tuya.zigbee
 ```
 
 ---
 
-## 📁 Structure du Projet
+#// 📁 Structure du Projet
 
 ```
 com.tuya.zigbee/
-├── drivers/                    # Drivers Homey
-│   ├── tuya/                  # Drivers Tuya (14)
+├── drivers/                    // Drivers Homey
+│   ├── tuya/                  // Drivers Tuya (14)
 │   │   ├── automation/
 │   │   ├── climate/
 │   │   ├── controllers/
@@ -84,7 +84,7 @@ com.tuya.zigbee/
 │   │   ├── sensors/
 │   │   ├── switches/
 │   │   └── thermostats/
-│   └── zigbee/                # Drivers Zigbee (10)
+│   └── zigbee/                // Drivers Zigbee (10)
 │       ├── automation/
 │       ├── covers/
 │       ├── dimmers/
@@ -95,51 +95,51 @@ com.tuya.zigbee/
 │       ├── sensors/
 │       ├── switches/
 │       └── thermostats/
-├── scripts/                   # Scripts d'automatisation
-│   ├── mega-features-sync.js  # Synchronisation des features
-│   ├── utils/                 # Utilitaires
+├── scripts/                   // Scripts d'automatisation
+│   ├── mega-features-sync.js  // Synchronisation des features
+│   ├── utils/                 // Utilitaires
 │   └── drivers-check-ultimate.js
-├── public/                    # Assets publics
-│   └── dashboard/             # Dashboard interactif
-├── docs/                      # Documentation
-├── .github/workflows/         # Workflows CI/CD
-└── CHANGELOG.md              # Historique des versions
+├── public/                    // Assets publics
+│   └── dashboard/             // Dashboard interactif
+├── docs/                      // Documentation
+├── .github/workflows/         // Workflows CI/CD
+└── CHANGELOG.md              // Historique des versions
 ```
 
 ---
 
-## 🔧 Validation et Tests
+#// 🔧 Validation et Tests
 
-### Validation Homey
+##// Validation Homey
 ```bash
-# Validation complète
+// Validation complète
 homey app validate
 
-# Validation en mode debug
+// Validation en mode debug
 homey app validate --level debug
 
-# Build de l'app
+// Build de l'app
 homey app build
 
-# Publication
+// Publication
 homey app publish
 ```
 
-### Scripts de Validation
+##// Scripts de Validation
 ```bash
-# Vérification des drivers
+// Vérification des drivers
 node scripts/utils/validate.js
 
-# Check complet des drivers
+// Check complet des drivers
 node scripts/drivers-check-ultimate.js
 
-# Synchronisation des features
+// Synchronisation des features
 node scripts/mega-features-sync.js
 ```
 
 ---
 
-## 📊 Workflows GitHub Actions
+#// 📊 Workflows GitHub Actions
 
 | Workflow | Description | Statut |
 |----------|-------------|--------|
@@ -149,7 +149,7 @@ node scripts/mega-features-sync.js
 
 ---
 
-## 🌍 Support Multilingue
+#// 🌍 Support Multilingue
 
 Documentation disponible dans l'ordre de priorité :
 1. **English (EN)** - Primary
@@ -159,36 +159,36 @@ Documentation disponible dans l'ordre de priorité :
 
 ---
 
-## 🤝 Contribution
+#// 🤝 Contribution
 
-### Comment Contribuer
+##// Comment Contribuer
 1. **Fork** le repository
 2. Créez une branche `feature/nouveau-driver`
 3. Validez vos changements : `homey app validate`
 4. Soumettez une **Pull Request**
 
-### Standards de Code
+##// Standards de Code
 - Respecter la structure des drivers
 - Inclure les fichiers `driver.js`, `driver.compose.json`, `device.js`
 - Ajouter les images `small.png` et `large.png`
 - Documenter en 4 langues (EN, FR, NL, TA)
 
-### Templates
+##// Templates
 - [Driver Template](docs/templates/driver-template.md)
 - [Issue Template](.github/ISSUE_TEMPLATE/bug_report.md)
 - [PR Template](.github/pull_request_template.md)
 
 ---
 
-## 📚 Documentation
+#// 📚 Documentation
 
-### 📖 Guides
+##// 📖 Guides
 - [Installation Guide](docs/en/installation.md)
 - [Usage Guide](docs/en/usage.md)
 - [Troubleshooting](docs/en/troubleshooting.md)
 - [Development Guide](docs/en/development.md)
 
-### 🔗 Liens Utiles
+##// 🔗 Liens Utiles
 - [Homey App Store](https://apps.homey.app/fr/app/com.tuya.zigbee)
 - [Community Thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352)
 - [GitHub Issues](https://github.com/dlnraja/com.tuya.zigbee/issues)
@@ -196,7 +196,7 @@ Documentation disponible dans l'ordre de priorité :
 
 ---
 
-## 🏷️ Badges
+#// 🏷️ Badges
 
 ![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)
 ![Homey SDK](https://img.shields.io/badge/Homey%20SDK-3.0+-green.svg)
@@ -209,7 +209,7 @@ Documentation disponible dans l'ordre de priorité :
 
 ---
 
-## 📈 Statistiques
+#// 📈 Statistiques
 
 - **📊 Drivers Complets** : 24/24 (100%)
 - **🔌 Drivers Tuya** : 14
@@ -221,7 +221,7 @@ Documentation disponible dans l'ordre de priorité :
 
 ---
 
-## 🚀 Mode YOLO Ultra
+#// 🚀 Mode YOLO Ultra
 
 Ce projet fonctionne en **Mode YOLO Ultra** avec :
 - ✅ **Automatisation complète**
@@ -233,20 +233,20 @@ Ce projet fonctionne en **Mode YOLO Ultra** avec :
 
 ---
 
-## 📞 Support
+#// 📞 Support
 
-### 🐛 Signaler un Bug
+##// 🐛 Signaler un Bug
 [Ouvrir une Issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new)
 
-### 💡 Demander une Feature
+##// 💡 Demander une Feature
 [Créer une Feature Request](https://github.com/dlnraja/com.tuya.zigbee/issues/new?template=feature_request.md)
 
-### 💬 Discussion
+##// 💬 Discussion
 [Forum Homey Community](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352)
 
 ---
 
-## 👨‍💻 Mainteneur
+#// 👨‍💻 Mainteneur
 
 **Dylan Rajasekaram** - [GitHub](https://github.com/dlnraja) · [LinkedIn](https://linkedin.com/in/dlnraja)
 
@@ -254,13 +254,13 @@ Ce projet fonctionne en **Mode YOLO Ultra** avec :
 
 ---
 
-## 📄 License
+#// 📄 License
 
 Ce projet est sous licence [MIT](LICENSE).
 
 ---
 
-## 🎉 Remerciements
+#// 🎉 Remerciements
 
 - **Homey Community** pour le support
 - **Contributors** pour les drivers

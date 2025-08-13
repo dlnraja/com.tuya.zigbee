@@ -1,0 +1,13 @@
+{
+  "id": "aqara_device_standard_default",
+  "name": "aqara sensor motion battery",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "0x0006"
+  ],
+  "endpoints": [
+    1
+  ]
+}

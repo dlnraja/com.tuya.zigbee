@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// !/usr/bin/env node
 
 /**
  * Script de création automatique des fichiers manquants
@@ -35,10 +35,10 @@ const DEFAULT_DRIVER_COMPOSE = {
   }
 };
 
-const DEFAULT_ICON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-  <circle cx="8.5" cy="8.5" r="1.5"/>
-  <polyline points="21,15 16,10 5,21"/>
+const DEFAULT_ICON_SVG = `<svg xmlns = "http://www.w3.org/2000/svg" width = "24" height = "24" viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round">
+  <rect x = "3" y = "3" width = "18" height = "18" rx = "2" ry = "2"/>
+  <circle cx = "8.5" cy = "8.5" r = "1.5"/>
+  <polyline points = "21,15 16,10 5,21"/>
 </svg>`;
 
 const DEFAULT_MANIFEST = {
@@ -49,27 +49,27 @@ const DEFAULT_MANIFEST = {
   "license": "MIT"
 };
 
-const DEFAULT_README = `# Driver {DRIVER_NAME}
+const DEFAULT_README = `// Driver {DRIVER_NAME}
 
-## Description
+#// Description
 Driver pour appareil {CATEGORY} {VENDOR} {MODEL}
 
-## Capabilities
+#// Capabilities
 - onoff (par défaut)
 
-## Support
+#// Support
 - Test mode only
 - Non publié sur Homey Store
 
-## Installation
+#// Installation
 1. Copier ce dossier dans \`drivers/{DOMAIN}/{CATEGORY}/{VENDOR}/{MODEL}/\`
 2. Redémarrer l'app Homey
 3. L'appareil sera automatiquement détecté
 
-## Configuration
+#// Configuration
 Modifier \`driver.compose.json\` pour ajuster les capabilities et paramètres Zigbee.
 
-## Support
+#// Support
 Issues et PRs sur [GitHub](https://github.com/dlnraja/com.tuya.zigbee)
 `;
 
@@ -216,26 +216,26 @@ async function createMissingReadmes() {
   // README dans docs/
   const docsReadmePath = path.join(DOCS_DIR, 'README.md');
   if (!fs.existsSync(docsReadmePath)) {
-    const docsReadme = `# Documentation Tuya Zigbee
+    const docsReadme = `// Documentation Tuya Zigbee
 
-## 📚 Guides et références
+#// 📚 Guides et références
 
-### Drivers
+##// Drivers
 - [Structure des drivers](./drivers-structure.md)
 - [Capabilities supportées](./capabilities.md)
 - [Clusters Zigbee](./clusters.md)
 
-### Développement
+##// Développement
 - [Guide de contribution](./CONTRIBUTING.md)
 - [Standards de code](./code-standards.md)
 - [Tests et validation](./testing.md)
 
-### Déploiement
+##// Déploiement
 - [Installation locale](./local-installation.md)
 - [Configuration](./configuration.md)
 - [Troubleshooting](./troubleshooting.md)
 
-## 🔗 Liens utiles
+#// 🔗 Liens utiles
 - [Dashboard GitHub Pages](https://dlnraja.github.io/com.tuya.zigbee/)
 - [Repository GitHub](https://github.com/dlnraja/com.tuya.zigbee)
 - [Issues et PRs](https://github.com/dlnraja/com.tuya.zigbee/issues)
@@ -248,43 +248,43 @@ async function createMissingReadmes() {
   // README dans scripts/
   const scriptsReadmePath = path.join(SCRIPTS_DIR, 'README.md');
   if (!fs.existsSync(scriptsReadmePath)) {
-    const scriptsReadme = `# Scripts d'automatisation
+    const scriptsReadme = `// Scripts d'automatisation
 
-## 🚀 Scripts principaux
+#// 🚀 Scripts principaux
 
-### Pipeline complète
+##// Pipeline complète
 - \`mega-progressive.js\` - Pipeline progressive avec pushes intermédiaires
 - \`mega-sources-complete.js\` - Pipeline complète avec sources wildcard
 
-### Gestion des drivers
+##// Gestion des drivers
 - \`complete-app-js.js\` - Complétion automatique de app.js
 - \`create-missing-files.js\` - Création des fichiers manquants
 - \`enrich-drivers.js\` - Enrichissement des drivers existants
-- \`reorganize-drivers.js\` - Réorganisation de la structure
+- \\reorganize-drivers.js\` - Réorganisation de la structure
 
-### Sources externes
+##// Sources externes
 - \`sources-wildcard.js\` - Collecte depuis toutes les sources
 - \`analyze-external-sources.js\` - Analyse des sources externes
 
-### Validation et diagnostic
+##// Validation et diagnostic
 - \`validate-driver-structure.js\` - Validation de la structure
 - \`diagnose-drivers.js\` - Diagnostic des drivers
 - \`fix-driver-structure.js\` - Correction de la structure
 
-## 🔧 Utilisation
+#// 🔧 Utilisation
 
 \`\`\`bash
-# Pipeline complète
+// Pipeline complète
 node scripts/mega-progressive.js
 
-# Complétion app.js
+// Complétion app.js
 node scripts/complete-app-js.js
 
-# Création fichiers manquants
+// Création fichiers manquants
 node scripts/create-missing-files.js
 \`\`\`
 
-## 📋 Dépendances
+#// 📋 Dépendances
 - Node.js 18+
 - npm packages: homey, homey-zigbeedriver, zigbee-clusters
 `;

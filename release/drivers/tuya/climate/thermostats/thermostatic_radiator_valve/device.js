@@ -14,7 +14,7 @@ Cluster.addCluster(TuyaSpecificCluster);
 * Sources:
 * 
 * - PR with simple impl.:  https://github.com/danielgajdos/com.tuya.zigbee/blob/SDK3/drivers/thermostatic_radiator_valve/device.js
-* - Datapoint Zigbee2MQTT: https://github.com/Koenkk/zigbee-herdsman-converters/blob/v15.116.0/src/devices/tuya.ts#L2802-L2831
+* - Datapoint Zigbee2MQTT: https://github.com/Koenkk/zigbee-herdsman-converters/blob/v15.116.0/src/devices/tuya.ts// L2802-L2831
 * - Zigbee2MQTT Device description: https://www.zigbee2mqtt.io/devices/TV02-Zigbee.html
 * 
 */

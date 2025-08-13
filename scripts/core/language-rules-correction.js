@@ -261,43 +261,43 @@ class LanguageRulesCorrection {
     }
 
     async correctReadmeEnglish() {
-        const content = `# Tuya Zigbee Universal
+        const content = `// Tuya Zigbee Universal
 
 Universal Tuya and Zigbee devices for Homey - AI-Powered Edition with Complete Recovery
 
-## Features
+#// Features
 
 - 1000+ drivers (700+ Tuya + 300+ Zigbee)
 - AI-Powered with local enrichment
 - Multi-source scraping enabled
 - Historical drivers recovered: 147 drivers
 - Legacy scripts recovered: 26 scripts
-- GitHub issues integrated: #1265, #1264, #1263
+- GitHub issues integrated: // 1265, // 1264, // 1263
 - External databases: Z2M, ZHA, SmartLife, Enki, Domoticz
 
-## Installation
+#// Installation
 
 \`\`\`bash
 homey app install
 \`\`\`
 
-## Validation
+#// Validation
 
 \`\`\`bash
 homey app validate
 \`\`\`
 
-## Publication
+#// Publication
 
 \`\`\`bash
 homey app publish
 \`\`\`
 
-## Master Branch
+#// Master Branch
 
 This is the master branch with full functionality including all Tuya and Zigbee drivers.
 
-## Language Priority
+#// Language Priority
 
 Documentation is available in the following priority order:
 1. English (EN) - Primary
@@ -310,43 +310,43 @@ Documentation is available in the following priority order:
     }
 
     async correctReadmeFrench() {
-        const content = `# Tuya Zigbee Universel
+        const content = `// Tuya Zigbee Universel
 
 Appareils Tuya et Zigbee universels pour Homey - Édition IA avec Récupération Complète
 
-## Fonctionnalités
+#// Fonctionnalités
 
 - 1000+ drivers (700+ Tuya + 300+ Zigbee)
 - IA-Powered avec enrichissement local
 - Scraping multi-sources activé
 - Drivers historiques récupérés: 147 drivers
 - Scripts legacy récupérés: 26 scripts
-- Issues GitHub intégrées: #1265, #1264, #1263
+- Issues GitHub intégrées: // 1265, // 1264, // 1263
 - Bases de données externes: Z2M, ZHA, SmartLife, Enki, Domoticz
 
-## Installation
+#// Installation
 
 \`\`\`bash
 homey app install
 \`\`\`
 
-## Validation
+#// Validation
 
 \`\`\`bash
 homey app validate
 \`\`\`
 
-## Publication
+#// Publication
 
 \`\`\`bash
 homey app publish
 \`\`\`
 
-## Branche Master
+#// Branche Master
 
 Ceci est la branche master avec fonctionnalité complète incluant tous les drivers Tuya et Zigbee.
 
-## Priorité des Langues
+#// Priorité des Langues
 
 La documentation est disponible dans l'ordre de priorité suivant:
 1. Anglais (EN) - Primaire
@@ -359,43 +359,43 @@ La documentation est disponible dans l'ordre de priorité suivant:
     }
 
     async correctReadmeTamil() {
-        const content = `# Tuya Zigbee Universal
+        const content = `// Tuya Zigbee Universal
 
 ஹோமியுக்கான உலகளாவிய Tuya மற்றும் Zigbee சாதனங்கள் - AI-Powered பதிப்பு முழுமையான மீட்புடன்
 
-## அம்சங்கள்
+#// அம்சங்கள்
 
 - 1000+ drivers (700+ Tuya + 300+ Zigbee)
 - AI-Powered with local enrichment
 - Multi-source scraping enabled
 - Historical drivers recovered: 147 drivers
 - Legacy scripts recovered: 26 scripts
-- GitHub issues integrated: #1265, #1264, #1263
+- GitHub issues integrated: // 1265, // 1264, // 1263
 - External databases: Z2M, ZHA, SmartLife, Enki, Domoticz
 
-## நிறுவல்
+#// நிறுவல்
 
 \`\`\`bash
 homey app install
 \`\`\`
 
-## சரிபார்ப்பு
+#// சரிபார்ப்பு
 
 \`\`\`bash
 homey app validate
 \`\`\`
 
-## வெளியீடு
+#// வெளியீடு
 
 \`\`\`bash
 homey app publish
 \`\`\`
 
-## மாஸ்டர் பிராஞ்ச்
+#// மாஸ்டர் பிராஞ்ச்
 
 இது மாஸ்டர் பிராஞ்ச் ஆகும், அனைத்து Tuya மற்றும் Zigbee drivers உடன் முழு செயல்பாட்டுடன்.
 
-## மொழி முன்னுரிமை
+#// மொழி முன்னுரிமை
 
 ஆவணமாக்கல் பின்வரும் முன்னுரிமை வரிசையில் கிடைக்கிறது:
 1. ஆங்கிலம் (EN) - முதன்மை
@@ -408,43 +408,43 @@ homey app publish
     }
 
     async correctReadmeDutch() {
-        const content = `# Tuya Zigbee Universeel
+        const content = `// Tuya Zigbee Universeel
 
 Universele Tuya en Zigbee apparaten voor Homey - AI Editie met Complete Herstel
 
-## Functies
+#// Functies
 
 - 1000+ drivers (700+ Tuya + 300+ Zigbee)
 - AI-Powered met lokale verrijking
 - Multi-source scraping ingeschakeld
 - Historische drivers hersteld: 147 drivers
 - Legacy scripts hersteld: 26 scripts
-- GitHub issues geïntegreerd: #1265, #1264, #1263
+- GitHub issues geïntegreerd: // 1265, // 1264, // 1263
 - Externe databases: Z2M, ZHA, SmartLife, Enki, Domoticz
 
-## Installatie
+#// Installatie
 
 \`\`\`bash
 homey app install
 \`\`\`
 
-## Validatie
+#// Validatie
 
 \`\`\`bash
 homey app validate
 \`\`\`
 
-## Publicatie
+#// Publicatie
 
 \`\`\`bash
 homey app publish
 \`\`\`
 
-## Master Branch
+#// Master Branch
 
 Dit is de master branch met volledige functionaliteit inclusief alle Tuya en Zigbee drivers.
 
-## Taal Prioriteit
+#// Taal Prioriteit
 
 Documentatie is beschikbaar in de volgende prioriteitsvolgorde:
 1. Engels (EN) - Primair
@@ -457,43 +457,43 @@ Documentatie is beschikbaar in de volgende prioriteitsvolgorde:
     }
 
     async createReadmeGerman() {
-        const content = `# Tuya Zigbee Universal
+        const content = `// Tuya Zigbee Universal
 
 Universal Tuya und Zigbee Geräte für Homey - KI-Edition mit Vollständiger Wiederherstellung
 
-## Funktionen
+#// Funktionen
 
 - 1000+ Treiber (700+ Tuya + 300+ Zigbee)
 - KI-gestützt mit lokaler Anreicherung
 - Multi-Source Scraping aktiviert
 - Historische Treiber wiederhergestellt: 147 Treiber
 - Legacy-Skripte wiederhergestellt: 26 Skripte
-- GitHub-Issues integriert: #1265, #1264, #1263
+- GitHub-Issues integriert: // 1265, // 1264, // 1263
 - Externe Datenbanken: Z2M, ZHA, SmartLife, Enki, Domoticz
 
-## Installation
+#// Installation
 
 \`\`\`bash
 homey app install
 \`\`\`
 
-## Validierung
+#// Validierung
 
 \`\`\`bash
 homey app validate
 \`\`\`
 
-## Veröffentlichung
+#// Veröffentlichung
 
 \`\`\`bash
 homey app publish
 \`\`\`
 
-## Master Branch
+#// Master Branch
 
 Dies ist der Master-Branch mit vollständiger Funktionalität einschließlich aller Tuya- und Zigbee-Treiber.
 
-## Sprachpriorität
+#// Sprachpriorität
 
 Die Dokumentation ist in der folgenden Prioritätsreihenfolge verfügbar:
 1. Englisch (EN) - Primär
@@ -506,43 +506,43 @@ Die Dokumentation ist in der folgenden Prioritätsreihenfolge verfügbar:
     }
 
     async createReadmeSpanish() {
-        const content = `# Tuya Zigbee Universal
+        const content = `// Tuya Zigbee Universal
 
 Dispositivos Tuya y Zigbee universales para Homey - Edición IA con Recuperación Completa
 
-## Características
+#// Características
 
 - 1000+ drivers (700+ Tuya + 300+ Zigbee)
 - IA-Powered con enriquecimiento local
 - Scraping multi-fuente habilitado
 - Drivers históricos recuperados: 147 drivers
 - Scripts legacy recuperados: 26 scripts
-- Issues GitHub integrados: #1265, #1264, #1263
+- Issues GitHub integrados: // 1265, // 1264, // 1263
 - Bases de datos externas: Z2M, ZHA, SmartLife, Enki, Domoticz
 
-## Instalación
+#// Instalación
 
 \`\`\`bash
 homey app install
 \`\`\`
 
-## Validación
+#// Validación
 
 \`\`\`bash
 homey app validate
 \`\`\`
 
-## Publicación
+#// Publicación
 
 \`\`\`bash
 homey app publish
 \`\`\`
 
-## Rama Master
+#// Rama Master
 
 Esta es la rama master con funcionalidad completa incluyendo todos los drivers Tuya y Zigbee.
 
-## Prioridad de Idiomas
+#// Prioridad de Idiomas
 
 La documentación está disponible en el siguiente orden de prioridad:
 1. Inglés (EN) - Primario
@@ -638,40 +638,40 @@ La documentación está disponible en el siguiente orden de prioridad:
     }
 
     generateCommitTemplate() {
-        return `# Commit Message Template
-# Language Priority: EN, FR, TA, NL, then others
-# Format: [LANG] 🚀 Description
+        return `// Commit Message Template
+// Language Priority: EN, FR, TA, NL, then others
+// Format: [LANG] 🚀 Description
 
 [EN] 🚀 Add new feature
 [FR] 🚀 Ajouter nouvelle fonctionnalité
 [TA] 🚀 புதிய அம்சத்தை சேர்க்கவும்
 [NL] 🚀 Nieuwe functie toevoegen
 
-# Examples:
-# [EN] 🚀 Add TS011F plug driver with power monitoring
-# [FR] 🚀 Ajouter driver prise TS011F avec surveillance d'énergie
-# [TA] 🚀 TS011F பிளக் டிரைவரை மின் கண்காணிப்புடன் சேர்க்கவும்
-# [NL] 🚀 TS011F plug driver toevoegen met stroommonitoring`;
+// Examples:
+// [EN] 🚀 Add TS011F plug driver with power monitoring
+// [FR] 🚀 Ajouter driver prise TS011F avec surveillance d'énergie
+// [TA] 🚀 TS011F பிளக் டிரைவரை மின் கண்காணிப்புடன் சேர்க்கவும்
+// [NL] 🚀 TS011F plug driver toevoegen met stroommonitoring`;
     }
 
     async generateMultilingualChangelog() {
-        const changelog = `# Changelog / Journal des modifications / மாற்றங்களின் பதிவு / Wijzigingslogboek
+        const changelog = `// Changelog / Journal des modifications / மாற்றங்களின் பதிவு / Wijzigingslogboek
 
-## [3.3.3] - 2025-01-29
+#// [3.3.3] - 2025-01-29
 
-### Added / Ajouté / சேர்க்கப்பட்டது / Toegevoegd
+##// Added / Ajouté / சேர்க்கப்பட்டது / Toegevoegd
 - [EN] 1000+ drivers (700+ Tuya + 300+ Zigbee)
 - [FR] 1000+ drivers (700+ Tuya + 300+ Zigbee)
 - [TA] 1000+ drivers (700+ Tuya + 300+ Zigbee)
 - [NL] 1000+ drivers (700+ Tuya + 300+ Zigbee)
 
-### Changed / Modifié / மாற்றப்பட்டது / Gewijzigd
+##// Changed / Modifié / மாற்றப்பட்டது / Gewijzigd
 - [EN] Enhanced error handling and performance
 - [FR] Amélioration de la gestion d'erreurs et des performances
 - [TA] பிழை கையாளுதல் மற்றும் செயல்திறன் மேம்படுத்தப்பட்டது
 - [NL] Verbeterde foutafhandeling en prestaties
 
-### Fixed / Corrigé / சரிசெய்யப்பட்டது / Opgelost
+##// Fixed / Corrigé / சரிசெய்யப்பட்டது / Opgelost
 - [EN] Driver compatibility issues
 - [FR] Problèmes de compatibilité des drivers
 - [TA] டிரைவர் பொருந்தக்கூடிய பிரச்சினைகள்
@@ -681,25 +681,25 @@ La documentación está disponible en el siguiente orden de prioridad:
     }
 
     async generateMultilingualDriversMatrix() {
-        const matrix = `# Drivers Matrix / Matrice des drivers / டிரைவர்களின் அணி / Drivers Matrix
+        const matrix = `// Drivers Matrix / Matrice des drivers / டிரைவர்களின் அணி / Drivers Matrix
 
-## Tuya Drivers (700+) / Drivers Tuya (700+) / Tuya டிரைவர்கள் (700+) / Tuya Drivers (700+)
+#// Tuya Drivers (700+) / Drivers Tuya (700+) / Tuya டிரைவர்கள் (700+) / Tuya Drivers (700+)
 
-### Plugs / Prises / பிளக்குகள் / Stekkers
+##// Plugs / Prises / பிளக்குகள் / Stekkers
 - [EN] TS011F_plug, TS011G_plug, TS011H_plug
 - [FR] TS011F_plug, TS011G_plug, TS011H_plug
 - [TA] TS011F_plug, TS011G_plug, TS011H_plug
 - [NL] TS011F_plug, TS011G_plug, TS011H_plug
 
-### Switches / Interrupteurs / சுவிட்சுகள் / Schakelaars
+##// Switches / Interrupteurs / சுவிட்சுகள் / Schakelaars
 - [EN] TS0001_switch, TS0002_switch, TS0003_switch
 - [FR] TS0001_switch, TS0002_switch, TS0003_switch
 - [TA] TS0001_switch, TS0002_switch, TS0003_switch
 - [NL] TS0001_switch, TS0002_switch, TS0003_switch
 
-## Zigbee Drivers (300+) / Drivers Zigbee (300+) / Zigbee டிரைவர்கள் (300+) / Zigbee Drivers (300+)
+#// Zigbee Drivers (300+) / Drivers Zigbee (300+) / Zigbee டிரைவர்கள் (300+) / Zigbee Drivers (300+)
 
-### Lights / Lumières / விளக்குகள் / Lampen
+##// Lights / Lumières / விளக்குகள் / Lampen
 - [EN] osram-strips, philips-hue-strips
 - [FR] osram-strips, philips-hue-strips
 - [TA] osram-strips, philips-hue-strips
@@ -709,11 +709,11 @@ La documentación está disponible en el siguiente orden de prioridad:
     }
 
     async generateMultilingualInstallationGuide() {
-        const guide = `# Installation Guide / Guide d'installation / நிறுவல் வழிகாட்டி / Installatiegids
+        const guide = `// Installation Guide / Guide d'installation / நிறுவல் வழிகாட்டி / Installatiegids
 
-## Quick Installation / Installation rapide / விரைவு நிறுவல் / Snelle installatie
+#// Quick Installation / Installation rapide / விரைவு நிறுவல் / Snelle installatie
 
-### English
+##// English
 \`\`\`bash
 git clone https://github.com/dlnraja/com.tuya.zigbee.git
 cd com.tuya.zigbee
@@ -721,7 +721,7 @@ homey app install
 homey app validate
 \`\`\`
 
-### Français
+##// Français
 \`\`\`bash
 git clone https://github.com/dlnraja/com.tuya.zigbee.git
 cd com.tuya.zigbee
@@ -729,7 +729,7 @@ homey app install
 homey app validate
 \`\`\`
 
-### தமிழ்
+##// தமிழ்
 \`\`\`bash
 git clone https://github.com/dlnraja/com.tuya.zigbee.git
 cd com.tuya.zigbee
@@ -737,7 +737,7 @@ homey app install
 homey app validate
 \`\`\`
 
-### Nederlands
+##// Nederlands
 \`\`\`bash
 git clone https://github.com/dlnraja/com.tuya.zigbee.git
 cd com.tuya.zigbee

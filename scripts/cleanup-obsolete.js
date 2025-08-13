@@ -31,12 +31,12 @@ const OBSOLETE_SCRIPTS=[
   'mega.js',
   'simple-reorg.js',
   'run-final-reorg.bat',
-  'run-final-reorg.ps1',
+  'run-final-reorg.js',
   'reorganize-drivers-final.js',
   'cleanup-and-reorganize-drivers.js',
-  'final-reorganize.ps1',
+  'final-reorganize.js',
   'cleanup-drivers.bat',
-  'cleanup-and-reorganize.ps1',
+  'cleanup-and-reorganize.js',
   'test-reorganize.js',
   'update-version-and-metadata.js',
   'mega-ultimate-orchestrator.js',
@@ -63,11 +63,11 @@ function cleanupObsoleteScripts(){
     const stat=fs.statSync(filePath);
     
     if(stat.isFile()){
-      // Supprimer les scripts PowerShell et batch
-      if(file.endsWith('.ps1') || file.endsWith('.bat')){
-        try{
+      // Supprimer les scripts JavaScript et batch
+      if(file.endsWith('.js') || file.endsWith('.bat')){
+        try {
           fs.unlinkSync(filePath);
-          console.log(`[cleanup] Deleted PowerShell/Batch: ${file}`);
+          console.log(`[cleanup] Deleted JavaScript/Batch: ${file}`);
           deleted++;
         }catch(e){
           console.log(`[cleanup] Could not delete ${file}:`,e.message);
@@ -77,7 +77,7 @@ function cleanupObsoleteScripts(){
       
       // Supprimer les scripts JavaScript obsolètes
       if(file.endsWith('.js') && OBSOLETE_SCRIPTS.includes(file)){
-        try{
+        try {
           fs.unlinkSync(filePath);
           console.log(`[cleanup] Deleted obsolete JS: ${file}`);
           deleted++;
@@ -101,7 +101,7 @@ function cleanupObsoleteScripts(){
       
       // Supprimer les autres fichiers non reconnus
       if(file.endsWith('.js')){
-        try{
+        try {
           fs.unlinkSync(filePath);
           console.log(`[cleanup] Deleted unrecognized JS: ${file}`);
           deleted++;

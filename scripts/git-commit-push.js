@@ -7,10 +7,10 @@ function run(c,a){
 }
 
 // Configure git user if not set
-try{ 
+try { 
   run('git',['config','--local','user.name', process.env.GIT_USER||'tuya-bot']); 
   run('git',['config','--local','user.email', process.env.GIT_EMAIL||'tuya-bot@local']); 
-}catch{}
+}} catch (error) {}
 
 // Check if there are changes
 const hasChanges = spawnSync('git',['status','--porcelain'],{encoding:'utf8'}).stdout.trim();
