@@ -1,0 +1,55 @@
+{
+  "id": "tuya-light-ts0505a",
+  "name": {
+    "en": "Tuya RGB Bulb TS0505A",
+    "fr": "Ampoule RGB Tuya TS0505A"
+  },
+  "class": "light",
+  "capabilities": ["onoff", "dim", "light_hue", "light_saturation"],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Switch",
+        "fr": "Interrupteur"
+      }
+    },
+    "dim": {
+      "title": {
+        "en": "Brightness",
+        "fr": "Luminosité"
+      }
+    },
+    "light_hue": {
+      "title": {
+        "en": "Hue",
+        "fr": "Teinte"
+      }
+    },
+    "light_saturation": {
+      "title": {
+        "en": "Saturation",
+        "fr": "Saturation"
+      }
+    }
+  },
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "zigbee": {
+    "manufacturerName": "_TZ3000_dbou1ap4",
+    "modelId": ["TS0505A"],
+    "endpoints": {
+      "1": {
+        "clusters": ["genBasic", "genOnOff", "genLevelCtrl", "lightingColorCtrl"],
+        "bindings": ["genOnOff", "genLevelCtrl", "lightingColorCtrl"]
+      }
+    }
+  },
+  "settings": [],
+  "pair": [
+    {
+      "id": "generic_pair"
+    }
+  ]
+}
