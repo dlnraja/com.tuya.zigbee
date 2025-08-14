@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "version": "3.4.0",
+    "last_updated": "2025-08-13",
+    "source": "Universal Tuya Zigbee Project",
+    "confidence": "high"
+  },
+  "tuya": {
+    "protocol": "TS0601",
+    "manufacturerCode": "0xE001",
+    "dps": {
+      "1": {
+        "id": 1,
+        "type": "bool",
+        "name": {
+          "en": "Switch 1",
+          "fr": "Interrupteur 1",
+          "nl": "Schakelaar 1",
+          "ta": "சுவிட்ச் 1"
+        },
+        "capability": "onoff",
+        "description": "Main switch control for gang 1",
+        "values": {
+          "true": "on",
+          "false": "off"
+        },
+        "readable": true,
+        "writable": true,
+        "reportable": true
+      },
+      "2": {
+        "id": 2,
+        "type": "bool",
+        "name": {
+          "en": "Switch 2",
+          "fr": "Interrupteur 2",
+          "nl": "Schakelaar 2",
+          "ta": "சுவிட்ச் 2"
+        },
+        "capability": "onoff.2",
+        "description": "Switch control for gang 2",
+        "values": {
+          "true": "on",
+          "false": "off"
+        },
+        "readable": true,
+        "writable": true,
+        "reportable": true
+      },
+      "3": {
+        "id": 3,
+        "type": "bool",
+        "name": {
+          "en": "Switch 3",
+          "fr": "Interrupteur 3",
+          "nl": "Schakelaar 3",
+          "ta": "சுவிட்ச் 3"
+        },
+        "capability": "onoff.3",
+        "description": "Switch control for gang 3",
+        "values": {
+          "true": "on",
+          "false": "off"
+        },
+        "readable": true,
+        "writable": true,
+        "reportable": true
+      },
+      "101": {
+        "id": 101,
+        "type": "enum",
+        "name": {
+          "en": "Power-On Behavior",
+          "fr": "Comportement à la Remise Sous Tension",
+          "nl": "Aanzet Gedrag",
+          "ta": "மின் இணைப்பு நடத்தை"
+        },
+        "capability": "setting",
+        "description": "What happens when power is restored",
+        "values": {
+          "0": "off",
+          "1": "on",
+          "2": "last_state"
+        },
+        "readable": true,
+        "writable": true,
+        "reportable": false
+      },
+      "102": {
+        "id": 102,
+        "type": "number",
+        "name": {
+          "en": "Auto-Off Delay",
+          "fr": "Délai d'Extinction Auto",
+          "nl": "Auto-Uitschakel Vertraging",
+          "ta": "ஆட்டோ-ஆஃப் தாமதம்"
+        },
+        "capability": "setting",
+        "description": "Automatic turn-off delay in seconds",
+        "unit": "s",
+        "min": 0,
+        "max": 86400,
+        "readable": true,
+        "writable": true,
+        "reportable": false
+      },
+      "103": {
+        "id": 103,
+        "type": "bool",
+        "name": {
+          "en": "LED Indicator",
+          "fr": "Indicateur LED",
+          "nl": "LED Indicator",
+          "ta": "எல்இடி காட்டி"
+        },
+        "capability": "setting",
+        "description": "Enable/disable the status LED",
+        "values": {
+          "true": "enabled",
+          "false": "disabled"
+        },
+        "readable": true,
+        "writable": true,
+        "reportable": false
+      }
+    },
+    "dp_mapping": {
+      "onoff": {
+        "dp": 1,
+        "type": "bool",
+        "transform": {
+          "read": "value",
+          "write": "value"
+        }
+      },
+      "onoff.2": {
+        "dp": 2,
+        "type": "bool",
+        "transform": {
+          "read": "value",
+          "write": "value"
+        }
+      },
+      "onoff.3": {
+        "dp": 3,
+        "type": "bool",
+        "transform": {
+          "read": "value",
+          "write": "value"
+        }
+      }
+    },
+    "settings_mapping": {
+      "power_on_behavior": {
+        "dp": 101,
+        "type": "enum",
+        "transform": {
+          "read": "value",
+          "write": "value"
+        }
+      },
+      "auto_off_delay": {
+        "dp": 102,
+        "type": "number",
+        "transform": {
+          "read": "value",
+          "write": "value"
+        }
+      },
+      "led_indicator": {
+        "dp": 103,
+        "type": "bool",
+        "transform": {
+          "read": "value",
+          "write": "value"
+        }
+      }
+    },
+    "inferred_dps": {
+      "4": {
+        "id": 4,
+        "type": "bool",
+        "name": "Switch 4 (if exists)",
+        "capability": "onoff.4",
+        "confidence": "low",
+        "description": "Inferred from similar devices"
+      }
+    }
+  }
+}

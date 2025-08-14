@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "version": "3.4.0",
+    "last_updated": "2025-08-13",
+    "source": "Universal Tuya Zigbee Project"
+  },
+  "brands": [
+    {
+      "name": "Tuya",
+      "aliases": ["tuya", "tuya_inc", "tuya_technology"],
+      "confidence": "high",
+      "source": "Official documentation"
+    },
+    {
+      "name": "Nous",
+      "aliases": ["nous", "nous_smart"],
+      "confidence": "high",
+      "source": "Community reports"
+    },
+    {
+      "name": "Moes",
+      "aliases": ["moes", "moes_go", "moes_smart"],
+      "confidence": "high",
+      "source": "Community reports"
+    },
+    {
+      "name": "Zemismart",
+      "aliases": ["zemismart", "zemi_smart", "zemi"],
+      "confidence": "high",
+      "source": "Community reports"
+    },
+    {
+      "name": "Lidl Silvercrest",
+      "aliases": ["lidl", "silvercrest", "lidl_silvercrest"],
+      "confidence": "medium",
+      "source": "Community reports"
+    },
+    {
+      "name": "BlitzWolf",
+      "aliases": ["blitzwolf", "blitz_wolf", "bw"],
+      "confidence": "medium",
+      "source": "Community reports"
+    },
+    {
+      "name": "Gosund",
+      "aliases": ["gosund", "go_sund"],
+      "confidence": "medium",
+      "source": "Community reports"
+    },
+    {
+      "name": "Teckin",
+      "aliases": ["teckin", "teckin_smart"],
+      "confidence": "medium",
+      "source": "Community reports"
+    }
+  ],
+  "white_label_patterns": [
+    "Generic 3-Gang Switch",
+    "Smart 3-Gang Switch",
+    "WiFi 3-Gang Switch",
+    "Zigbee 3-Gang Switch"
+  ],
+  "notes": "This model is commonly rebranded by various vendors. All use the same Tuya TS0601 protocol and have identical functionality."
+}
