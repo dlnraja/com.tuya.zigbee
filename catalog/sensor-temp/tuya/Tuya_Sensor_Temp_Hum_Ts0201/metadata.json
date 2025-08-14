@@ -1,0 +1,9 @@
+{
+  "name": "Tuya_Sensor_Temp_Hum_Ts0201",
+  "type": "tuya_zigbee",
+  "category": "sensor-temp",
+  "source": "drivers\\tuya_zigbee\\models\\tuya_sensor_temp_hum_ts0201",
+  "created": "2025-08-14T15:26:17.330Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

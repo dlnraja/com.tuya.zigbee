@@ -1,0 +1,9 @@
+{
+  "name": "_Climate_Thermostat_Standard_Default",
+  "type": "tuya_zigbee",
+  "category": "sensor-temp",
+  "source": "drivers\\tuya_zigbee\\models\\ts0601_climate-thermostat_standard_default_1",
+  "created": "2025-08-14T15:24:50.383Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

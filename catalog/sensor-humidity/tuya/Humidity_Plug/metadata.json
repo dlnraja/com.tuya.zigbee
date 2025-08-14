@@ -1,0 +1,9 @@
+{
+  "name": "Humidity_Plug",
+  "type": "tuya_zigbee",
+  "category": "sensor-humidity",
+  "source": "drivers\\tuya_zigbee\\models\\tuya-humidity-86_plug_standard_default_1",
+  "created": "2025-08-14T15:25:46.537Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

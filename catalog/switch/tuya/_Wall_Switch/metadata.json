@@ -1,0 +1,9 @@
+{
+  "name": "_Wall_Switch",
+  "type": "tuya_zigbee",
+  "category": "switch",
+  "source": "drivers\\tuya_zigbee\\models\\ts0003_wall_switch_standard",
+  "created": "2025-08-14T15:24:33.404Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

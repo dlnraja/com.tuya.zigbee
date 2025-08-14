@@ -1,0 +1,9 @@
+{
+  "name": "Ikea_Floor_Light",
+  "type": "tuya_zigbee",
+  "category": "light",
+  "source": "drivers\\tuya_zigbee\\models\\ikea-floor-708_light_standard_default_1",
+  "created": "2025-08-14T15:23:42.462Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

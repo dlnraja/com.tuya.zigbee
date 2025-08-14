@@ -1,11 +1,13 @@
-'use strict';
+const { ZigBeeDriver } = require('homey-meshdriver');
 
-const { ZigBeeDriver } = require('homey-zigbeedriver');
-
-class MotionSensorDriver extends ZigBeeDriver {
-  async onNodeInit({ zclNode }) {
-    this.log('motion_sensor driver initialized');
+class TuyaDriver extends ZigBeeDriver {
+  async onMeshInit() {
+    await super.onMeshInit();
+    
+    // Configuration des clusters
+    this.enableDebug();
+    this.printNode();
   }
 }
 
-module.exports = MotionSensorDriver;
+module.exports = TuyaDriver;

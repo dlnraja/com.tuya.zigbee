@@ -1,0 +1,12 @@
+{
+  "id": "tuya__common",
+  "title": "Tuya _common",
+  "category": "other",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "assets/small.png",
+    "large": "assets/large.png"
+  }
+}

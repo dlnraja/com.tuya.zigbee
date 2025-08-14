@@ -1,0 +1,9 @@
+{
+  "name": "Generic_Device_Sensor_Humidity",
+  "type": "tuya_zigbee",
+  "category": "sensor-humidity",
+  "source": "drivers\\tuya_zigbee\\models\\generic_device_sensor_humidity_1",
+  "created": "2025-08-14T15:22:20.112Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

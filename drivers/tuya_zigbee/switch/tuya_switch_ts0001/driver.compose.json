@@ -1,0 +1,178 @@
+{
+  "id": "tuya_switch_ts0001",
+  "name": {
+    "en": "Tuya Smart Switch 1-Gang",
+    "fr": "Interrupteur Intelligent Tuya 1-Gang"
+  },
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_*",
+      "Tuya",
+      "Generic"
+    ],
+    "productId": [
+      "TS0001",
+      "TS0001_switch_1",
+      "TS0001_switch_2"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genBasic",
+          "genOnOff",
+          "genIdentify",
+          "genGroups",
+          "genScenes",
+          "genOta",
+          "manuSpecificTuya"
+        ],
+        "bindings": [
+          "genOnOff",
+          "manuSpecificTuya"
+        ]
+      }
+    },
+    "clusters": {
+      "genBasic": {
+        "attributes": [
+          "zclVersion",
+          "appVersion",
+          "stackVersion",
+          "hwVersion",
+          "manufacturerName",
+          "modelId",
+          "dateCode",
+          "powerSource"
+        ]
+      },
+      "genOnOff": {
+        "attributes": [
+          "onOff"
+        ]
+      },
+      "manuSpecificTuya": {
+        "attributes": [
+          "dp1",
+          "dp2"
+        ]
+      }
+    }
+  },
+  "pair": [
+    {
+      "id": "generic_pair",
+      "template": "generic"
+    }
+  ],
+  "settings": [
+    {
+      "id": "tuya_dp_log",
+      "type": "boolean",
+      "label": {
+        "en": "Log Tuya DPs",
+        "fr": "Logger les DPs Tuya"
+      },
+      "value": false
+    }
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "switch_changed",
+        "title": {
+          "en": "Switch state changed",
+          "fr": "État de l'interrupteur modifié"
+        },
+        "titleFormatted": {
+          "en": "Switch changed to {{state}}",
+          "fr": "Interrupteur changé à {{state}}"
+        },
+        "hint": {
+          "en": "This flow card is triggered when the switch state changes.",
+          "fr": "Cette carte de flux est déclenchée quand l'état de l'interrupteur change."
+        },
+        "args": [
+          {
+            "name": "state",
+            "type": "string",
+            "title": {
+              "en": "State",
+              "fr": "État"
+            },
+            "options": [
+              {
+                "label": {
+                  "en": "On",
+                  "fr": "Allumé"
+                },
+                "value": "on"
+              },
+              {
+                "label": {
+                  "en": "Off",
+                  "fr": "Éteint"
+                },
+                "value": "off"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "tuya_dp_send",
+        "title": {
+          "en": "Send Tuya DP",
+          "fr": "Envoyer un DP Tuya"
+        },
+        "hint": {
+          "en": "Send a custom Tuya Data Point command.",
+          "fr": "Envoyer une commande DP Tuya personnalisée."
+        },
+        "args": [
+          {
+            "name": "dp_id",
+            "type": "number",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID du DP"
+            },
+            "min": 1,
+            "max": 65535
+          },
+          {
+            "name": "dp_value",
+            "type": "string",
+            "title": {
+              "en": "DP Value",
+              "fr": "Valeur du DP"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "flags": [
+    "enableTuyaDpLogging",
+    "enableHeuristicMapping"
+  ],
+  "meta": {
+    "sourceRefs": [
+      "Zigbee2MQTT",
+      "Blakadder",
+      "Homey Community"
+    ],
+    "confidence": "high",
+    "lastReviewed": "2025-08-13",
+    "notes": "Simple 1-gang switch with Tuya DP support for advanced control."
+  }
+}
