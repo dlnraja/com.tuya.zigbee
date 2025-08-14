@@ -1,1 +1,22 @@
----name: Feature requestabout: Do you have an idea or suggestion? Something you miss or like to see added? Create a feature request!title: Feature Request - [Short description]labels: enhancementassignees: ''---**Is your feature request related to a problem or is it a nice addition? Please describe.**> A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]**Describe the solution you'd like**> A clear and concise description of what you want to happen.**Describe alternatives you've considered**> A clear and concise description of any alternative solutions or features you've considered.**Additional context**> Add any other context or screenshots about the feature request here.
+---
+name: ✨ Feature Request
+about: Suggest an idea for this project
+title: '[FEATURE] '
+labels: ['enhancement', 'needs-triage']
+assignees: ['dlnraja']
+---
+
+## 🎯 Problem Statement
+A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+
+## 💡 Proposed Solution
+A clear and concise description of what you want to happen.
+
+## 🔄 Alternative Solutions
+A clear and concise description of any alternative solutions or features you've considered.
+
+## 📋 Additional Context
+Add any other context or screenshots about the feature request here.
+
+## 🏷️ Related Issues
+Link any related issues here.
