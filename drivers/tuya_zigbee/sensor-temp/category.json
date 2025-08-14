@@ -1,0 +1,42 @@
+{
+  "category": "sensor-temp",
+  "name": {
+    "en": "Temperature Sensors",
+    "fr": "Capteurs de Température",
+    "nl": "Temperatuursensoren",
+    "ta": "வெப்பநிலை சென்சார்கள்"
+  },
+  "description": {
+    "en": "Tuya Zigbee temperature sensors devices",
+    "fr": "Dispositifs capteurs de température Tuya Zigbee",
+    "nl": "Tuya Zigbee temperatuursensoren apparaten",
+    "ta": "துயா ஜிக்பீ வெப்பநிலை சென்சார்கள் சாதனங்கள்"
+  },
+  "version": "3.4.1",
+  "totalDrivers": 29,
+  "capabilities": [
+    "measure_temperature",
+    "target_temperature",
+    "measure_humidity",
+    "measure_pressure"
+  ],
+  "clusters": [
+    "0x0402",
+    "0x0201",
+    "0x0405",
+    "0x0403",
+    "0x0000"
+  ],
+  "vendors": [
+    "tuya",
+    "aqara",
+    "ikea"
+  ],
+  "deviceTypes": [
+    "temperature_sensor",
+    "thermostat",
+    "climate_sensor"
+  ],
+  "status": "active",
+  "lastUpdate": "2025-08-14T17:38:42.416Z"
+}

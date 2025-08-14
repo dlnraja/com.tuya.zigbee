@@ -1,0 +1,47 @@
+{
+  "category": "other",
+  "name": {
+    "en": "Other Devices",
+    "fr": "Autres Dispositifs",
+    "nl": "Andere Apparaten",
+    "ta": "பிற சாதனங்கள்"
+  },
+  "description": {
+    "en": "Tuya Zigbee other devices devices",
+    "fr": "Dispositifs autres dispositifs Tuya Zigbee",
+    "nl": "Tuya Zigbee andere apparaten apparaten",
+    "ta": "துயா ஜிக்பீ பிற சாதனங்கள் சாதனங்கள்"
+  },
+  "version": "3.4.1",
+  "totalDrivers": 66,
+  "capabilities": [
+    "onoff",
+    "alarm_smoke",
+    "alarm_gas",
+    "alarm_water",
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "clusters": [
+    "0x0006",
+    "0x0500",
+    "0x0402",
+    "0x0405",
+    "0x0000"
+  ],
+  "vendors": [
+    "tuya",
+    "aqara",
+    "ikea"
+  ],
+  "deviceTypes": [
+    "alarm",
+    "siren",
+    "buzzer",
+    "chime",
+    "generic",
+    "template"
+  ],
+  "status": "active",
+  "lastUpdate": "2025-08-14T17:38:42.450Z"
+}

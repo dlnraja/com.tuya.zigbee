@@ -1,0 +1,47 @@
+{
+  "category": "light",
+  "name": {
+    "en": "Lighting",
+    "fr": "Éclairage",
+    "nl": "Verlichting",
+    "ta": "விளக்கு"
+  },
+  "description": {
+    "en": "Tuya Zigbee lighting devices",
+    "fr": "Dispositifs éclairage Tuya Zigbee",
+    "nl": "Tuya Zigbee verlichting apparaten",
+    "ta": "துயா ஜிக்பீ விளக்கு சாதனங்கள்"
+  },
+  "version": "3.4.1",
+  "totalDrivers": 48,
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature",
+    "light_mode"
+  ],
+  "clusters": [
+    "0x0006",
+    "0x0008",
+    "0x0300",
+    "0x0000"
+  ],
+  "vendors": [
+    "tuya",
+    "aqara",
+    "ikea"
+  ],
+  "deviceTypes": [
+    "bulb",
+    "strip",
+    "panel",
+    "ceiling",
+    "table",
+    "garden",
+    "floor"
+  ],
+  "status": "active",
+  "lastUpdate": "2025-08-14T17:38:42.403Z"
+}

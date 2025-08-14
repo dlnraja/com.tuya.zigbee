@@ -1,0 +1,41 @@
+{
+  "category": "generic",
+  "name": {
+    "en": "Generic Zigbee Drivers",
+    "fr": "Drivers Zigbee Génériques",
+    "nl": "Generieke Zigbee Drivers",
+    "ta": "பொதுவான ஜிக்பீ டிரைவர்கள்"
+  },
+  "description": {
+    "en": "Generic generic zigbee drivers for standard devices",
+    "fr": "drivers zigbee génériques génériques pour dispositifs standards",
+    "nl": "Generieke generieke zigbee drivers voor standaardapparaten",
+    "ta": "நிலையான சாதனங்களுக்கான பொதுவான பொதுவான ஜிக்பீ டிரைவர்கள்"
+  },
+  "version": "3.4.1",
+  "totalDrivers": 4,
+  "capabilities": [
+    "onoff",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_motion"
+  ],
+  "clusters": [
+    "0x0000",
+    "0x0006",
+    "0x0008",
+    "0x0402",
+    "0x0405"
+  ],
+  "vendors": [
+    "generic",
+    "standard"
+  ],
+  "deviceTypes": [
+    "generic_device",
+    "fallback_driver",
+    "template_device"
+  ],
+  "status": "active",
+  "lastUpdate": "2025-08-14T17:38:42.452Z"
+}

@@ -1,0 +1,43 @@
+{
+  "category": "ac",
+  "name": {
+    "en": "Air Conditioning",
+    "fr": "Climatisation",
+    "nl": "Airconditioning",
+    "ta": "குளிர்சாதனம்"
+  },
+  "description": {
+    "en": "Tuya Zigbee air conditioning devices",
+    "fr": "Dispositifs climatisation Tuya Zigbee",
+    "nl": "Tuya Zigbee airconditioning apparaten",
+    "ta": "துயா ஜிக்பீ குளிர்சாதனம் சாதனங்கள்"
+  },
+  "version": "3.4.1",
+  "totalDrivers": 6,
+  "capabilities": [
+    "onoff",
+    "target_temperature",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_power"
+  ],
+  "clusters": [
+    "0x0006",
+    "0x0201",
+    "0x0402",
+    "0x0405",
+    "0x0B04"
+  ],
+  "vendors": [
+    "tuya",
+    "aqara",
+    "ikea"
+  ],
+  "deviceTypes": [
+    "ac_unit",
+    "climate_control",
+    "air_conditioner"
+  ],
+  "status": "active",
+  "lastUpdate": "2025-08-14T17:38:42.446Z"
+}

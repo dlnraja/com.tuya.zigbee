@@ -1,0 +1,43 @@
+{
+  "category": "thermostat",
+  "name": {
+    "en": "Thermostats & Climate Control",
+    "fr": "Thermostats & Contrôle Climatique",
+    "nl": "Thermostaten & Klimaatregeling",
+    "ta": "தெர்மோஸ்டாட்கள் & காலநிலை கட்டுப்பாடு"
+  },
+  "description": {
+    "en": "Tuya Zigbee thermostats & climate control devices",
+    "fr": "Dispositifs thermostats & contrôle climatique Tuya Zigbee",
+    "nl": "Tuya Zigbee thermostaten & klimaatregeling apparaten",
+    "ta": "துயா ஜிக்பீ தெர்மோஸ்டாட்கள் & காலநிலை கட்டுப்பாடு சாதனங்கள்"
+  },
+  "version": "3.4.1",
+  "totalDrivers": 0,
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_pressure"
+  ],
+  "clusters": [
+    "0x0201",
+    "0x0402",
+    "0x0405",
+    "0x0403",
+    "0x0000"
+  ],
+  "vendors": [
+    "tuya",
+    "aqara",
+    "ikea"
+  ],
+  "deviceTypes": [
+    "thermostat",
+    "climate_controller",
+    "temperature_controller",
+    "hvac_controller"
+  ],
+  "status": "active",
+  "lastUpdate": "2025-08-14T17:38:42.449Z"
+}
