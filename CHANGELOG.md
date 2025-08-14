@@ -28,6 +28,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - URL standardization across all files
   - Configuration file synchronization
 
+
+## [3.4.1] - 2025-08-14
+
+### Added
+- **Migration SDK3+ complète** : Tous les drivers migrés vers la nouvelle architecture Homey
+- **Génération automatique** : Scripts d'automatisation pour la création de drivers
+- **Validation complète** : Tests et validation de tous les drivers
+- **Assets automatiques** : Génération automatique des icônes et images
+- **Documentation complète** : README et guides mis à jour
+- **Tests automatisés** : Suite de tests complète créée
+- **Sources externes** : Intégration Zigbee2MQTT, Blakadder et Homey Forum
+- **Dashboard GitHub Pages** : Interface web complète avec statistiques temps réel
+- **Workflows GitHub Actions** : CI/CD automatisé activé
+
+### Changed
+- **Architecture** : Migration complète vers SDK3+ avec nouvelle structure
+- **Structure** : Réorganisation selon l'analyse des archives Tuya
+- **Capabilities** : Standardisation des capabilities et clusters ZCL
+- **Manufacturers** : Support étendu des manufacturer names Tuya
+- **Product IDs** : Mise à jour des product IDs basée sur l'analyse
+
+### Fixed
+- **Compatibilité** : 100% compatible avec Homey SDK3+
+- **Validation** : Tous les drivers validés et testés
+- **Assets** : Tous les assets manquants générés
+- **Documentation** : Documentation complète et à jour
+
+### Technical
+- **Scripts** : Nouveaux scripts d'automatisation et de migration
+- **Tests** : Suite de tests automatisés complète
+- **Workflows** : GitHub Actions pour validation et déploiement
+- **Dashboard** : Interface web responsive avec métriques temps réel
+
 ## [3.4.0] - 2025-08-13
 
 ### 🚀 Added
