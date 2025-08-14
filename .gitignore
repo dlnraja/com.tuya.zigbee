@@ -66,7 +66,19 @@ mcp-powershell-server.js
 update-all-workflows.yml
 tatus
 README.txt
-olution-strategy 
+olution-strategy
+
+# Fichiers de documentation et développement (NE PAS PUSHER)
+*.md
+*.txt
+*.json.backup
+*.md.backup
+*.txt.backup
+reports/
+docs/
+queue/
+refs/
+.external_sources/
 
 =======
 # RestoreAndRebuild.ps1 → scripts/restore-and-rebuild.js
