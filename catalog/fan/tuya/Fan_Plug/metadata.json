@@ -1,0 +1,9 @@
+{
+  "name": "Fan_Plug",
+  "type": "tuya_zigbee",
+  "category": "fan",
+  "source": "drivers\\tuya_zigbee\\models\\tuya-fan-730_plug_standard_default_1",
+  "created": "2025-08-14T15:25:25.602Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

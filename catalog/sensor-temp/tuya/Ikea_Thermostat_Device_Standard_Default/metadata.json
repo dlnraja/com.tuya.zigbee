@@ -1,0 +1,9 @@
+{
+  "name": "Ikea_Thermostat_Device_Standard_Default",
+  "type": "tuya_zigbee",
+  "category": "sensor-temp",
+  "source": "drivers\\tuya_zigbee\\models\\ikea-thermostat-39_device_standard_default",
+  "created": "2025-08-14T15:24:20.653Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

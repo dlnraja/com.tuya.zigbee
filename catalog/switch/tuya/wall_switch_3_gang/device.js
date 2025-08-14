@@ -1,30 +1,15 @@
-'use strict';
+const { ZigBeeDevice } = require('homey-meshdriver');
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
-const { CLUSTER, Cluster, ZCLDataTypes } = require('zigbee-clusters');
-
-class WallSwitch3GangDevice extends ZigBeeDevice {
-  async onNodeInit({ zclNode }) {
-    this.log('wall_switch_3_gang device initialized');
+class TuyaDevice extends ZigBeeDevice {
+  async onMeshInit() {
+    await super.onMeshInit();
     
-    // Register capabilities based on device type
-    await this.registerCapability('onoff', CLUSTER.ON_OFF, {
-      getOpts: {
-        getOnStart: true,
-        pollInterval: 300000,
-        getOnOnline: true
-      }
-    });
-    await this.registerCapability('dim', CLUSTER.LEVEL_CONTROL, {
-      getOpts: {
-        getOnStart: true,
-        pollInterval: 300000,
-        getOnOnline: true
-      }
-    });
-    
-    this.log('wall_switch_3_gang capabilities registered successfully');
+    // Configuration des capacités
+    const capabilities = ["onoff"];
+    for (const capability of capabilities) {
+      await this.registerCapability(capability, 'genOnOff');
+    }
   }
 }
 
-module.exports = WallSwitch3GangDevice;
+module.exports = TuyaDevice;

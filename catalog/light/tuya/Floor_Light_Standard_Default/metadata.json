@@ -1,0 +1,9 @@
+{
+  "name": "Floor_Light_Standard_Default",
+  "type": "tuya_zigbee",
+  "category": "light",
+  "source": "drivers\\tuya_zigbee\\models\\tuya-floor-269_light_standard_default",
+  "created": "2025-08-14T15:25:27.381Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

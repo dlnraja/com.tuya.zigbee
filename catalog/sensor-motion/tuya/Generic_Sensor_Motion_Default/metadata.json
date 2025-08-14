@@ -1,0 +1,9 @@
+{
+  "name": "Generic_Sensor_Motion_Default",
+  "type": "tuya_zigbee",
+  "category": "sensor-motion",
+  "source": "drivers\\tuya_zigbee\\models\\generic_sensor_motion_default_1",
+  "created": "2025-08-14T15:22:45.161Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

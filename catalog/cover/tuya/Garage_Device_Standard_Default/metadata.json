@@ -1,0 +1,9 @@
+{
+  "name": "Garage_Device_Standard_Default",
+  "type": "tuya_zigbee",
+  "category": "cover",
+  "source": "drivers\\tuya_zigbee\\models\\tuya-garage-581_device_standard_default",
+  "created": "2025-08-14T15:25:29.052Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

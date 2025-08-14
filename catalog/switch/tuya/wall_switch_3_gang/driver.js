@@ -1,11 +1,13 @@
-'use strict';
+const { ZigBeeDriver } = require('homey-meshdriver');
 
-const { ZigBeeDriver } = require('homey-zigbeedriver');
-
-class WallSwitch3GangDriver extends ZigBeeDriver {
-  async onNodeInit({ zclNode }) {
-    this.log('wall_switch_3_gang driver initialized');
+class TuyaDriver extends ZigBeeDriver {
+  async onMeshInit() {
+    await super.onMeshInit();
+    
+    // Configuration des clusters
+    this.enableDebug();
+    this.printNode();
   }
 }
 
-module.exports = WallSwitch3GangDriver;
+module.exports = TuyaDriver;

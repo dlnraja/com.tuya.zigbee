@@ -1,0 +1,9 @@
+{
+  "name": "_Water_Plug",
+  "type": "tuya_zigbee",
+  "category": "sensor-water",
+  "source": "drivers\\tuya_zigbee\\models\\ts0601_water_plug_standard_1",
+  "created": "2025-08-14T15:24:58.912Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

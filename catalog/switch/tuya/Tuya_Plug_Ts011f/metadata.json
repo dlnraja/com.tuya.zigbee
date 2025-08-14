@@ -1,0 +1,9 @@
+{
+  "name": "Tuya_Plug_Ts011f",
+  "type": "tuya_zigbee",
+  "category": "switch",
+  "source": "drivers\\tuya_zigbee\\models\\tuya_plug_ts011f",
+  "created": "2025-08-14T15:26:17.262Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

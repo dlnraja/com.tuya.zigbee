@@ -1,0 +1,9 @@
+{
+  "name": "Ikea_Bulb_Light_Standard_Default",
+  "type": "tuya_zigbee",
+  "category": "light",
+  "source": "drivers\\tuya_zigbee\\models\\ikea-bulb-793_light_standard_default",
+  "created": "2025-08-14T15:23:02.452Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

@@ -1,50 +1,12 @@
 {
-  "id": "smartplug",
-  "name": {
-    "en": "Smartplug",
-    "fr": "Smartplug",
-    "nl": "Smartplug",
-    "ta": "Smartplug"
-  },
-  "class": "plug",
+  "id": "tuya_smartplug",
+  "title": "Tuya smartplug",
+  "category": "switch",
   "capabilities": [
-    "onoff",
-    "measure_power",
-    "measure_current",
-    "measure_voltage"
+    "onoff"
   ],
-  "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_3ooaz3ng",
-      "_TZ3000_g5xawfcq",
-      "_TZ3000_vtscrpmw"
-    ],
-    "productId": [
-      "TS0121",
-      "TS011F",
-      "TS0601"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          4,
-          5,
-          6,
-          1794,
-          2820
-        ],
-        "bindings": [
-          0,
-          4,
-          5,
-          6,
-          1794,
-          2820
-        ]
-      }
-    }
-  },
-  "version": "3.4.1",
-  "generated": "2025-08-14T10:39:27.882Z"
+  "images": {
+    "small": "assets/small.png",
+    "large": "assets/large.png"
+  }
 }

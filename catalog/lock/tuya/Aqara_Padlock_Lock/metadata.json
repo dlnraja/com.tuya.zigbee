@@ -1,0 +1,9 @@
+{
+  "name": "Aqara_Padlock_Lock",
+  "type": "tuya_zigbee",
+  "category": "lock",
+  "source": "drivers\\tuya_zigbee\\models\\aqara-padlock-460_lock_standard_default_1",
+  "created": "2025-08-14T15:21:37.680Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Aqara_Water_Plug_Standard_Default",
+  "type": "tuya_zigbee",
+  "category": "sensor-water",
+  "source": "drivers\\tuya_zigbee\\models\\aqara-water-237_plug_standard_default",
+  "created": "2025-08-14T15:22:12.267Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}
