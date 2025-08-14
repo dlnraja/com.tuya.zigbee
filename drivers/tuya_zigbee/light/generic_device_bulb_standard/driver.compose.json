@@ -4,5 +4,23 @@
   "images": {
     "small": "/drivers/generic_device_bulb_standard/assets/images/small.png",
     "large": "/drivers/generic_device_bulb_standard/assets/images/large.png"
-  }
+  },
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "min": 0,
+      "max": 100
+    },
+    "light_temperature": {
+      "min": 2700,
+      "max": 6500
+    }
+  },
+  "icon": "assets/icon.svg"
 }

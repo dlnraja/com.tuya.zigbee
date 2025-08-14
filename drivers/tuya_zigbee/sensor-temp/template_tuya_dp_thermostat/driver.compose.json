@@ -4,5 +4,10 @@
   "images": {
     "small": "/drivers/template_tuya_dp_thermostat/assets/images/small.png",
     "large": "/drivers/template_tuya_dp_thermostat/assets/images/large.png"
-  }
+  },
+  "capabilities": [
+    "measure_temperature"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "assets/icon.svg"
 }

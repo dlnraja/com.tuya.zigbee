@@ -4,5 +4,10 @@
   "images": {
     "small": "/drivers/aqara_sensor_motion_battery/assets/images/small.png",
     "large": "/drivers/aqara_sensor_motion_battery/assets/images/large.png"
-  }
+  },
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "assets/icon.svg"
 }

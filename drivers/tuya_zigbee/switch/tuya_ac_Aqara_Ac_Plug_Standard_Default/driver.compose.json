@@ -4,5 +4,11 @@
   "images": {
     "small": "/drivers/aqara-ac-708_plug_standard_default/assets/images/small.png",
     "large": "/drivers/aqara-ac-708_plug_standard_default/assets/images/large.png"
-  }
+  },
+  "capabilities": [
+    "onoff",
+    "measure_power"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "assets/icon.svg"
 }

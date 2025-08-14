@@ -1,0 +1,13 @@
+{
+  "id": "tuya-deadbolt-850_lock_standard_default",
+  "name": "drivers-backup-2025-08-13T12-14-20-255Z tuya-deadbolt-850 lock standard models standard default",
+  "images": {
+    "small": "/drivers/tuya-deadbolt-850_lock_standard_default/assets/images/small.png",
+    "large": "/drivers/tuya-deadbolt-850_lock_standard_default/assets/images/large.png"
+  },
+  "capabilities": [
+    "lock_state"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "assets/icon.svg"
+}

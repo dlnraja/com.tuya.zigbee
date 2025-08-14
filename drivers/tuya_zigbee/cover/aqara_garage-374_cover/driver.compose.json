@@ -1,0 +1,13 @@
+{
+  "id": "aqara-garage-374_cover_standard_default",
+  "name": "drivers-backup-2025-08-13T12-14-20-255Z aqara-garage-374 cover standard models standard default",
+  "images": {
+    "small": "/drivers/aqara-garage-374_cover_standard_default/assets/images/small.png",
+    "large": "/drivers/aqara-garage-374_cover_standard_default/assets/images/large.png"
+  },
+  "capabilities": [
+    "windowcoverings_state"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "assets/icon.svg"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "tuya-smoke-927_plug_standard_default",
+  "name": "drivers-backup-2025-08-13T12-14-20-255Z tuya-smoke-927 plug standard models standard default",
+  "images": {
+    "small": "/drivers/tuya-smoke-927_plug_standard_default/assets/images/small.png",
+    "large": "/drivers/tuya-smoke-927_plug_standard_default/assets/images/large.png"
+  },
+  "capabilities": [
+    "onoff",
+    "measure_power"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "assets/icon.svg"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "ts0601_curtain_cover_default",
+  "name": "drivers-backup-2025-08-13T12-14-20-255Z ts0601 curtain cover standard models standard default",
+  "images": {
+    "small": "/drivers/ts0601_curtain_cover_default/assets/images/small.png",
+    "large": "/drivers/ts0601_curtain_cover_default/assets/images/large.png"
+  },
+  "capabilities": [
+    "windowcoverings_state"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "assets/icon.svg"
+}
