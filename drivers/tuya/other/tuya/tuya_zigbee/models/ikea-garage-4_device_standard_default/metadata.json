@@ -1,0 +1,20 @@
+{
+  "id": "ikea-garage-4_cover_standard",
+  "name": "ikea ikea-garage-4",
+  "category": "cover",
+  "vendor": "ikea",
+  "model": "ikea-garage-4",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:01.205Z",
+  "updatedAt": "2025-08-13T12:09:01.205Z"
+}

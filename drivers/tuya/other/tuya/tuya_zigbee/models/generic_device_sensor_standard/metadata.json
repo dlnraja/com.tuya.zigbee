@@ -1,0 +1,20 @@
+{
+  "id": "generic_zigbee_sensor",
+  "name": "generic generic_zigbee_sensor",
+  "category": "generic",
+  "vendor": "generic",
+  "model": "generic_zigbee_sensor",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:10.741Z",
+  "updatedAt": "2025-08-13T12:09:10.741Z"
+}

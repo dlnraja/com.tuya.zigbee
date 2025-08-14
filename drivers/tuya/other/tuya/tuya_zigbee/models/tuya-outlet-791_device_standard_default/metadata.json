@@ -1,0 +1,20 @@
+{
+  "id": "tuya-outlet-791_plug_standard",
+  "name": "tuya tuya-outlet-791",
+  "category": "plug",
+  "vendor": "tuya",
+  "model": "tuya-outlet-791",
+  "type": "tuya_zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:08:59.359Z",
+  "updatedAt": "2025-08-13T12:08:59.359Z"
+}

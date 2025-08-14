@@ -1,0 +1,20 @@
+{
+  "id": "ts130f_cover_standard",
+  "name": "tuya ts130f",
+  "category": "cover",
+  "vendor": "tuya",
+  "model": "ts130f",
+  "type": "tuya_zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:08:54.983Z",
+  "updatedAt": "2025-08-13T12:08:54.983Z"
+}

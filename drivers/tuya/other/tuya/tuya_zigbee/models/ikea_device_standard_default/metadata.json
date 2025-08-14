@@ -1,0 +1,32 @@
+{
+  "id": "ikea_device_standard_default",
+  "name": "drivers-backup-2025-08-13T12-08-28-817Z ikea models standard default",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "0x0006"
+  ],
+  "endpoints": [
+    1
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_"
+    ],
+    "modelId": [
+      "TS0001"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          {
+            "id": "0x0006",
+            "server": true,
+            "client": false
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "tuya-smart-181_plug_standard",
+  "name": "tuya tuya-smart-181",
+  "category": "plug",
+  "vendor": "tuya",
+  "model": "tuya-smart-181",
+  "type": "tuya_zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:08:59.617Z",
+  "updatedAt": "2025-08-13T12:08:59.617Z"
+}

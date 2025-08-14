@@ -1,0 +1,14 @@
+{
+  "id": "aqara-switch-457_plug_standard_settings",
+  "name": "Paramètres aqara aqara-switch-457",
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": "Intervalle de polling (secondes)",
+      "default": 30,
+      "min": 10,
+      "max": 300
+    }
+  ]
+}

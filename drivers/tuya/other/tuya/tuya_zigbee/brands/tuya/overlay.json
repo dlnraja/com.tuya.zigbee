@@ -1,0 +1,14 @@
+{
+  "display": {
+    "name": {
+      "en": "TUYA Device",
+      "fr": "Appareil TUYA"
+    }
+  },
+  "zigbee": {
+    "scaling": {
+      "power_divisor": 10,
+      "energy_divisor": 3600000
+    }
+  }
+}

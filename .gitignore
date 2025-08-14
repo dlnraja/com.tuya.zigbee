@@ -30,7 +30,43 @@ Thumbs.db
 # Local configuration
 .env
 .env.local
-.env.*.local 
+.env.*.local
+
+# Backup and temporary directories (NE PAS PUSHER)
+backups/
+*.backup
+*.tmp
+*.bak
+*.log
+cursor_temp*
+*.zip
+*.tar.gz
+.cursor/
+local-processing/
+cursor-config/
+project-tasks.md
+cursor_*.md
+TODO_*.md
+*.sh
+logs/
+FINAL_VALIDATION_REPORT.md
+cursor_r_capitulatif_des_t_ches_et_avan.md
+cursor_prompt_auto.md
+cursor_global_policy*.md
+tasks.md
+readme_fold_reference.md
+mega_prompt_cursor_tuya.txt
+cursor_recovery_package.zip
+cursor_init.*
+TODO_SCAN_RESULTS.txt
+PROGRESS.md
+README.md.backup
+zigbee-cluster-referential-system.js
+mcp-powershell-server.js
+update-all-workflows.yml
+tatus
+README.txt
+olution-strategy 
 
 =======
 # RestoreAndRebuild.ps1 → scripts/restore-and-rebuild.js

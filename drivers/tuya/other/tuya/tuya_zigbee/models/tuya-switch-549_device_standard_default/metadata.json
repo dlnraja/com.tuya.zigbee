@@ -1,0 +1,20 @@
+{
+  "id": "tuya-switch-549_plug_standard",
+  "name": "tuya tuya-switch-549",
+  "category": "plug",
+  "vendor": "tuya",
+  "model": "tuya-switch-549",
+  "type": "tuya_zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:08:59.998Z",
+  "updatedAt": "2025-08-13T12:08:59.998Z"
+}

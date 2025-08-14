@@ -1,0 +1,14 @@
+{
+  "id": "aqara-power-317_plug_standard_settings",
+  "name": "Paramètres aqara aqara-power-317",
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": "Intervalle de polling (secondes)",
+      "default": 30,
+      "min": 10,
+      "max": 300
+    }
+  ]
+}
