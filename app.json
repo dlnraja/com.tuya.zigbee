@@ -1,56 +1,60 @@
 {
   "id": "com.tuya.zigbee",
-  "version": "3.3.0",
-  "compatibility": ">=6.0.0",
+  "version": "3.4.0",
+  "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
     "local"
   ],
   "name": {
-    "en": "Tuya Zigbee Universal",
+    "en": "Universal Tuya Zigbee",
     "fr": "Tuya Zigbee Universel",
-    "ta": "Tuya Zigbee Universal",
-    "nl": "Tuya Zigbee Universeel",
-    "de": "Tuya Zigbee Universal",
-    "es": "Tuya Zigbee Universal"
+    "nl": "Universele Tuya Zigbee",
+    "ta": "உலகளாவிய துயா ஜிக்பீ"
   },
   "description": {
-    "en": "Universal Tuya and Zigbee devices for Homey - AI-Powered Edition with Complete Recovery",
-    "fr": "Appareils Tuya et Zigbee universels pour Homey - Édition IA avec Récupération Complète",
-    "ta": "ஹோமியுக்கான உலகளாவிய Tuya மற்றும் Zigbee சாதனங்கள் - AI-Powered பதிப்பு முழுமையான மீட்புடன்",
-    "nl": "Universele Tuya en Zigbee apparaten voor Homey - AI Editie met Complete Herstel",
-    "de": "Universal Tuya und Zigbee Geräte für Homey - KI-Edition mit Vollständiger Wiederherstellung",
-    "es": "Dispositivos Tuya y Zigbee universales para Homey - Edición IA con Recuperación Completa"
+    "en": "Universal Tuya Zigbee device support for Homey with Full/Lite modes",
+    "fr": "Support universel des appareils Tuya Zigbee pour Homey avec modes Complet/Léger",
+    "nl": "Universele ondersteuning voor Tuya Zigbee-apparaten voor Homey met Volledig/Licht modi",
+    "ta": "ஹோமியில் உலகளாவிய துயா ஜிக்பீ சாதன ஆதரவு முழு/லைட் பயன்முறைகளுடன்"
   },
   "category": [
-    "lights"
+    "home"
   ],
-  "permissions": [
-    "homey:manager:api"
-  ],
+  "permissions": [],
   "images": {
-    "small": "/assets/images/small.png",
-    "large": "/assets/images/large.png"
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
   },
   "author": {
-    "name": "Dylan Rajasekaram",
+    "name": "dlnraja",
     "email": "dylan.rajasekaram+homey@gmail.com"
   },
-  "bugs": {
-    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
+  "homepage": "https://github.com/dlnraja/homey-tuya-zigbee",
+  "bugs": "https://github.com/dlnraja/homey-tuya-zigbee/issues",
+  "repository": "https://github.com/dlnraja/homey-tuya-zigbee",
+  "contributors": [
+    {
+      "name": "dlnraja",
+      "email": "dylan.rajasekaram+homey@gmail.com"
+    }
+  ],
+  "drivers": [
+    {
+      "id": "tuya_zigbee",
+      "name": {
+        "en": "Tuya Zigbee Universal",
+        "fr": "Tuya Zigbee Universel",
+        "nl": "Tuya Zigbee Universeel",
+        "ta": "துயா ஜிக்பீ உலகளாவிய"
+      }
+    }
+  ],
+  "dependencies": {
+    "homey-meshdriver": "^1.3.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dlnraja/com.tuya.zigbee.git"
-  },
-  "license": "MIT",
   "engines": {
-    "node": ">=16.0.0"
-  },
-  "brandColor": "// FF6B35",
-  "metadata": {
-    "validated": true,
-    "validationDate": "2025-08-08T01:21:11.225Z",
-    "ultimateFinalFixer": true
+    "node": ">=18.0.0"
   }
 }

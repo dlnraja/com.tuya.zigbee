@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Catalog - Universal Tuya Zigbee</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="container">
+            <h1><i class="fas fa-th-large"></i> Device Catalog</h1>
+            <p>Complete catalog of supported Tuya Zigbee devices</p>
+        </div>
+    </header>
+
+    <nav class="dashboard-nav">
+        <div class="container">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="catalog.html" class="active"><i class="fas fa-th-large"></i> Device Catalog</a></li>
+                <li><a href="statistics.html"><i class="fas fa-chart-bar"></i> Statistics</a></li>
+                <li><a href="changelog.html"><i class="fas fa-history"></i> Changelog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="dashboard-main">
+        <div class="container">
+            <section class="catalog-overview">
+                <h2><i class="fas fa-info-circle"></i> Catalog Overview</h2>
+                <div class="catalog-stats">
+                    <div class="stat-item">
+                        <strong>Categories:</strong> 11
+                    </div>
+                    <div class="stat-item">
+                        <strong>Vendors:</strong> 21
+                    </div>
+                </div>
+            </section>
+
+            <section class="categories-section">
+                <h2><i class="fas fa-tags"></i> Device Categories</h2>
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <i class="fas fa-plug"></i>
+                        <h3>Smart Plug</h3>
+                        <p>Supports 3 capabilities</p>
+                        <div class="category-capabilities">
+                            <span class="capability-tag">onoff</span><span class="capability-tag">measure_power</span><span class="capability-tag">meter_power</span>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <i class="fas fa-switch"></i>
+                        <h3>Wall Switch</h3>
+                        <p>Supports 1 capabilities</p>
+                        <div class="category-capabilities">
+                            <span class="capability-tag">onoff</span>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <i class="fas fa-light"></i>
+                        <h3>Smart Light</h3>
+                        <p>Supports 5 capabilities</p>
+                        <div class="category-capabilities">
+                            <span class="capability-tag">onoff</span><span class="capability-tag">dim</span><span class="capability-tag">light_hue</span><span class="capability-tag">light_saturation</span><span class="capability-tag">light_temperature</span>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <i class="fas fa-cover"></i>
+                        <h3>Window Covering</h3>
+                        <p>Supports 2 capabilities</p>
+                        <div class="category-capabilities">
+                            <span class="capability-tag">windowcoverings_state</span><span class="capability-tag">windowcoverings_set</span>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <i class="fas fa-sensor"></i>
+                        <h3>Temperature & Humidity Sensor</h3>
+                        <p>Supports 2 capabilities</p>
+                        <div class="category-capabilities">
+                            <span class="capability-tag">measure_temperature</span><span class="capability-tag">measure_humidity</span>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <i class="fas fa-motion"></i>
+                        <h3>Motion Sensor</h3>
+                        <p>Supports 1 capabilities</p>
+                        <div class="category-capabilities">
+                            <span class="capability-tag">alarm_motion</span>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <i class="fas fa-contact"></i>
+                        <h3>Contact Sensor</h3>
+                        <p>Supports 1 capabilities</p>
+                        <div class="category-capabilities">
+                            <span class="capability-tag">alarm_contact</span>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <i class="fas fa-meter"></i>
+                        <h3>Power Meter</h3>
+                        <p>Supports 4 capabilities</p>
+                        <div class="category-capabilities">
+                            <span class="capability-tag">measure_power</span><span class="capability-tag">meter_power</span><span class="capability-tag">measure_voltage</span><span class="capability-tag">measure_current</span>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <i class="fas fa-thermostat"></i>
+                        <h3>Thermostat</h3>
+                        <p>Supports 2 capabilities</p>
+                        <div class="category-capabilities">
+                            <span class="capability-tag">target_temperature</span><span class="capability-tag">measure_temperature_thermostat</span>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <i class="fas fa-remote"></i>
+                        <h3>Scene Controller</h3>
+                        <p>Supports 1 capabilities</p>
+                        <div class="category-capabilities">
+                            <span class="capability-tag">button</span>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <i class="fas fa-generic"></i>
+                        <h3>Other Device</h3>
+                        <p>Supports 0 capabilities</p>
+                        <div class="category-capabilities">
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="vendors-section">
+                <h2><i class="fas fa-building"></i> Supported Vendors</h2>
+                <div class="vendors-grid">
+                    <div class="vendor-card high">
+                        <h3>Tuya</h3>
+                        <div class="vendor-confidence high">
+                            <i class="fas fa-check-circle"></i>
+                            high confidence
+                        </div>
+                        <div class="vendor-aliases">
+                            <span class="alias-tag">tuya</span><span class="alias-tag">tuya_inc</span><span class="alias-tag">tuya_technology</span>
+                        </div>
+                    </div>
+                    <div class="vendor-card high">
+                        <h3>Zemismart</h3>
+                        <div class="vendor-confidence high">
+                            <i class="fas fa-check-circle"></i>
+                            high confidence
+                        </div>
+                        <div class="vendor-aliases">
+                            <span class="alias-tag">zemismart</span><span class="alias-tag">zemi_smart</span><span class="alias-tag">zemi</span>
+                        </div>
+                    </div>
+                    <div class="vendor-card high">
+                        <h3>Moes</h3>
+                        <div class="vendor-confidence high">
+                            <i class="fas fa-check-circle"></i>
+                            high confidence
+                        </div>
+                        <div class="vendor-aliases">
+                            <span class="alias-tag">moes</span><span class="alias-tag">moes_go</span><span class="alias-tag">moes_smart</span>
+                        </div>
+                    </div>
+                    <div class="vendor-card high">
+                        <h3>Nous</h3>
+                        <div class="vendor-confidence high">
+                            <i class="fas fa-check-circle"></i>
+                            high confidence
+                        </div>
+                        <div class="vendor-aliases">
+                            <span class="alias-tag">nous</span><span class="alias-tag">nous_smart</span>
+                        </div>
+                    </div>
+                    <div class="vendor-card high">
+                        <h3>Lidl Silvercrest</h3>
+                        <div class="vendor-confidence high">
+                            <i class="fas fa-check-circle"></i>
+                            high confidence
+                        </div>
+                        <div class="vendor-aliases">
+                            <span class="alias-tag">lidl</span><span class="alias-tag">silvercrest</span><span class="alias-tag">lidl_silvercrest</span>
+                        </div>
+                    </div>
+                    <div class="vendor-card high">
+                        <h3>BlitzWolf</h3>
+                        <div class="vendor-confidence high">
+                            <i class="fas fa-check-circle"></i>
+                            high confidence
+                        </div>
+                        <div class="vendor-aliases">
+                            <span class="alias-tag">blitzwolf</span><span class="alias-tag">blitz_wolf</span><span class="alias-tag">bw</span>
+                        </div>
+                    </div>
+                    <div class="vendor-card high">
+                        <h3>Gosund</h3>
+                        <div class="vendor-confidence high">
+                            <i class="fas fa-check-circle"></i>
+                            high confidence
+                        </div>
+                        <div class="vendor-aliases">
+                            <span class="alias-tag">gosund</span><span class="alias-tag">go_sund</span>
+                        </div>
+                    </div>
+                    <div class="vendor-card high">
+                        <h3>Teckin</h3>
+                        <div class="vendor-confidence high">
+                            <i class="fas fa-check-circle"></i>
+                            high confidence
+                        </div>
+                        <div class="vendor-aliases">
+                            <span class="alias-tag">teckin</span><span class="alias-tag">teckin_smart</span>
+                        </div>
+                    </div>
+                    <div class="vendor-card high">
+                        <h3>Smart Life</h3>
+                        <div class="vendor-confidence high">
+                            <i class="fas fa-check-circle"></i>
+                            high confidence
+                        </div>
+                        <div class="vendor-aliases">
+                            <span class="alias-tag">smartlife</span><span class="alias-tag">smart_life</span><span class="alias-tag">tuya_smart</span>
+                        </div>
+                    </div>
+                    <div class="vendor-card medium">
+                        <h3>Jinvoo</h3>
+                        <div class="vendor-confidence medium">
+                            <i class="fas fa-exclamation-circle"></i>
+                            medium confidence
+                        </div>
+                        <div class="vendor-aliases">
+                            <span class="alias-tag">jinvoo</span><span class="alias-tag">jin_woo</span>
+                        </div>
+                    </div>
+                    <div class="vendor-card medium">
+                        <h3>Meross</h3>
+                        <div class="vendor-confidence medium">
+                            <i class="fas fa-exclamation-circle"></i>
+                            medium confidence
+                        </div>
+                        <div class="vendor-aliases">
+                            <span class="alias-tag">meross</span><span class="alias-tag">meross_smart</span>
+                        </div>
+                    </div>
+                    <div class="vendor-card medium">
+                        <h3>Eachen</h3>
+                        <div class="vendor-confidence medium">
+                            <i class="fas fa-exclamation-circle"></i>
+                            medium confidence
+                        </div>
+                        <div class="vendor-aliases">
+                            <span class="alias-tag">eachen</span><span class="alias-tag">eachen_smart</span>
+                        </div>
+                    </div>
+                    <div class="vendor-card medium">
+                        <h3>Feit Electric</h3>
+                        <div class="vendor-confidence medium">
+                            <i class="fas fa-exclamation-circle"></i>
+                            medium confidence
+                        </div>
+                        <div class="vendor-aliases">
+                            <span class="alias-tag">feit</span><span class="alias-tag">feit_electric</span><span class="alias-tag">feit_elec</span>
+                        </div>
+                    </div>
+                    <div class="vendor-card medium">
+                        <h3>Geeni</h3>
+                        <div class="vendor-confidence medium">
+                            <i class="fas fa-exclamation-circle"></i>
+                            medium confidence
+                        </div>
+                        <div class="vendor-aliases">
+                            <span class="alias-tag">geeni</span><span class="alias-tag">geeni_smart</span>
+                        </div>
+                    </div>
+                    <div class="vendor-card high">
+                        <h3>Innr</h3>
+                        <div class="vendor-confidence high">
+                            <i class="fas fa-check-circle"></i>
+                            high confidence
+                        </div>
+                        <div class="vendor-aliases">
+                            <span class="alias-tag">innr</span><span class="alias-tag">innr_lighting</span>
+                        </div>
+                    </div>
+                    <div class="vendor-card high">
+                        <h3>Ledvance</h3>
+                        <div class="vendor-confidence high">
+                            <i class="fas fa-check-circle"></i>
+                            high confidence
+                        </div>
+                        <div class="vendor-aliases">
+                            <span class="alias-tag">ledvance</span><span class="alias-tag">osram</span><span class="alias-tag">sylvania</span>
+                        </div>
+                    </div>
+                    <div class="vendor-card high">
+                        <h3>Philips</h3>
+                        <div class="vendor-confidence high">
+                            <i class="fas fa-check-circle"></i>
+                            high confidence
+                        </div>
+                        <div class="vendor-aliases">
+                            <span class="alias-tag">philips</span><span class="alias-tag">philips_hue</span><span class="alias-tag">hue</span>
+                        </div>
+                    </div>
+                    <div class="vendor-card high">
+                        <h3>Sengled</h3>
+                        <div class="vendor-confidence high">
+                            <i class="fas fa-check-circle"></i>
+                            high confidence
+                        </div>
+                        <div class="vendor-aliases">
+                            <span class="alias-tag">sengled</span><span class="alias-tag">sengled_element</span>
+                        </div>
+                    </div>
+                    <div class="vendor-card medium">
+                        <h3>Tapo</h3>
+                        <div class="vendor-confidence medium">
+                            <i class="fas fa-exclamation-circle"></i>
+                            medium confidence
+                        </div>
+                        <div class="vendor-aliases">
+                            <span class="alias-tag">tapo</span><span class="alias-tag">tp_link</span><span class="alias-tag">tplink</span>
+                        </div>
+                    </div>
+                    <div class="vendor-card high">
+                        <h3>WeMo</h3>
+                        <div class="vendor-confidence high">
+                            <i class="fas fa-check-circle"></i>
+                            high confidence
+                        </div>
+                        <div class="vendor-aliases">
+                            <span class="alias-tag">wemo</span><span class="alias-tag">belkin</span><span class="alias-tag">belkin_wemo</span>
+                        </div>
+                    </div>
+                    <div class="vendor-card medium">
+                        <h3>Wyze</h3>
+                        <div class="vendor-confidence medium">
+                            <i class="fas fa-exclamation-circle"></i>
+                            medium confidence
+                        </div>
+                        <div class="vendor-aliases">
+                            <span class="alias-tag">wyze</span><span class="alias-tag">wyze_labs</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="dashboard-footer">
+        <div class="container">
+            <p>&copy; 2025 Universal Tuya Zigbee Project. Maintained by <a href="https://github.com/dlnraja">dlnraja</a></p>
+        </div>
+    </footer>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

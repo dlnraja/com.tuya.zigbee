@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "version": "3.4.0",
+    "last_updated": "2025-08-13",
+    "source": "Universal Tuya Zigbee Project"
+  },
+  "zigbee": {
+    "manufacturerName": ["_TZ3000_", "_TZE200_", "Tuya"],
+    "zigbeeModel": ["TS0003", "TS0601"],
+    "endpoints": {
+      "1": {
+        "clusters": {
+          "input": ["genBasic", "genOnOff", "genPowerCfg"],
+          "output": ["genBasic", "genOnOff", "genPowerCfg"]
+        },
+        "bindings": {
+          "genOnOff": "onoff"
+        }
+      },
+      "2": {
+        "clusters": {
+          "input": ["genBasic", "genOnOff"],
+          "output": ["genBasic", "genOnOff"]
+        },
+        "bindings": {
+          "genOnOff": "onoff.2"
+        }
+      },
+      "3": {
+        "clusters": {
+          "input": ["genBasic", "genOnOff"],
+          "output": ["genBasic", "genOnOff"]
+        },
+        "bindings": {
+          "genOnOff": "onoff.3"
+        }
+      }
+    }
+  },
+  "clusters": {
+    "genBasic": {
+      "attributes": {
+        "zclVersion": "read",
+        "appVersion": "read",
+        "stackVersion": "read",
+        "hwVersion": "read",
+        "manufacturerName": "read",
+        "modelId": "read",
+        "dateCode": "read",
+        "powerSource": "read"
+      }
+    },
+    "genOnOff": {
+      "attributes": {
+        "onOff": "read",
+        "globalSceneControl": "read",
+        "onTime": "read_write",
+        "offWaitTime": "read_write",
+        "startUpOnOff": "read_write"
+      },
+      "commands": {
+        "off": "send",
+        "on": "send",
+        "toggle": "send",
+        "offWithEffect": "send",
+        "onWithRecallGlobalScene": "send",
+        "onWithTimedOff": "send"
+      }
+    },
+    "genPowerCfg": {
+      "attributes": {
+        "mainsVoltage": "read",
+        "mainsFrequency": "read",
+        "mainsAlarmMask": "read_write",
+        "mainsVoltageMinThreshold": "read_write",
+        "mainsVoltageMaxThreshold": "read_write",
+        "mainsVoltageDwellTripPoint": "read_write"
+      }
+    }
+  },
+  "attributes": {
+    "genOnOff.onOff": {
+      "type": "boolean",
+      "description": "Current state of the switch",
+      "default": false
+    },
+    "genPowerCfg.mainsVoltage": {
+      "type": "number",
+      "description": "Mains voltage in V",
+      "unit": "V",
+      "min": 0,
+      "max": 1000
+    }
+  }
+}
