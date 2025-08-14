@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.4.1] - 2025-08-14
+
+### 🚀 Added
+- **Version Increment and Repository Updates**
+  - Bumped version to 3.4.1 for enhanced stability
+  - Updated repository references to tuya-zigbee-universal
+  - Enhanced package.json configuration
+  - Improved project naming consistency
+
+### 🔧 Changed
+- **Repository Standardization**
+  - Repository URLs updated to reflect new project structure
+  - Package name consistency across all configuration files
+  - Homepage and bug tracking URLs standardized
+  - Project naming alignment across all components
+
+### 🐛 Fixed
+- **Configuration Consistency**
+  - Repository reference inconsistencies resolved
+  - Package naming alignment completed
+  - URL standardization across all files
+  - Configuration file synchronization
+
 ## [3.4.0] - 2025-08-13
 
 ### 🚀 Added
@@ -106,7 +129,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 | Version | Date | Major Features | Status |
 |---------|------|----------------|---------|
-| 3.4.0 | 2025-08-13 | Complete SOT Architecture, Advanced Scripting, SDK3+ | ✅ Current |
+| 3.4.1 | 2025-08-14 | Version Increment, Repository Updates, Configuration Consistency | ✅ Current |
+| 3.4.0 | 2025-08-13 | Complete SOT Architecture, Advanced Scripting, SDK3+ | 🔄 Completed |
 | 3.3.0 | 2025-08-12 | Initial SOT Structure | 🔄 Completed |
 | 3.2.0 | 2025-08-11 | Basic Driver Support, SDK Migration | 🔄 Completed |
 | 3.1.0 | 2025-08-10 | Project Foundation | 🔄 Completed |
@@ -142,7 +166,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-**📅 Last Updated**: 2025-08-13  
-**🎯 Current Version**: 3.4.0  
+**📅 Last Updated**: 2025-08-14  
+**🎯 Current Version**: 3.4.1  
 **🚀 Next Version**: 3.5.0  
 **📋 Maintainer**: dlnraja <[redacted-email]>
