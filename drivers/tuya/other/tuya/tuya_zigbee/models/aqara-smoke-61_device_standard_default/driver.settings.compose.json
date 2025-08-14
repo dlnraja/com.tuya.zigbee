@@ -1,0 +1,14 @@
+{
+  "id": "aqara-smoke-61_plug_standard_settings",
+  "name": "Paramètres aqara aqara-smoke-61",
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": "Intervalle de polling (secondes)",
+      "default": 30,
+      "min": 10,
+      "max": 300
+    }
+  ]
+}

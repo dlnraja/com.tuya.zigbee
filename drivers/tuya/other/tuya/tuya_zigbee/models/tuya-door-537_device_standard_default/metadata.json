@@ -1,0 +1,20 @@
+{
+  "id": "tuya-door-537_lock_standard",
+  "name": "tuya tuya-door-537",
+  "category": "lock",
+  "vendor": "tuya",
+  "model": "tuya-door-537",
+  "type": "tuya_zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:08:57.743Z",
+  "updatedAt": "2025-08-13T12:08:57.743Z"
+}

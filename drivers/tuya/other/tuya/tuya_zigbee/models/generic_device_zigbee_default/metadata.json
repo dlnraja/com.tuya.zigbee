@@ -1,0 +1,20 @@
+{
+  "id": "generic_zigbee_light",
+  "name": "generic generic_zigbee_light",
+  "category": "generic",
+  "vendor": "generic",
+  "model": "generic_zigbee_light",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:10.757Z",
+  "updatedAt": "2025-08-13T12:09:10.757Z"
+}

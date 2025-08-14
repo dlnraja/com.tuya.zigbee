@@ -1,0 +1,14 @@
+{
+  "id": "tuya-thermostat-435_plug_standard_settings",
+  "name": "Paramètres tuya tuya-thermostat-435",
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": "Intervalle de polling (secondes)",
+      "default": 30,
+      "min": 10,
+      "max": 300
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "ikea-table-218_light_standard",
+  "name": "ikea ikea-table-218",
+  "category": "light",
+  "vendor": "ikea",
+  "model": "ikea-table-218",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:02.784Z",
+  "updatedAt": "2025-08-13T12:09:02.784Z"
+}

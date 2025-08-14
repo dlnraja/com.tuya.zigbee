@@ -1,0 +1,20 @@
+{
+  "id": "tuya-garden-409_light_standard",
+  "name": "tuya tuya-garden-409",
+  "category": "light",
+  "vendor": "tuya",
+  "model": "tuya-garden-409",
+  "type": "tuya_zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:08:56.925Z",
+  "updatedAt": "2025-08-13T12:08:56.925Z"
+}

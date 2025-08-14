@@ -1,0 +1,20 @@
+{
+  "id": "ikea-curtain-339_cover_standard",
+  "name": "ikea ikea-curtain-339",
+  "category": "cover",
+  "vendor": "ikea",
+  "model": "ikea-curtain-339",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:01.101Z",
+  "updatedAt": "2025-08-13T12:09:01.101Z"
+}

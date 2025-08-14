@@ -1,0 +1,11 @@
+'use strict';
+
+const { ZigBeeDevice } = require('homey-zigbeedriver');
+
+class light_ts0502aDevice extends ZigBeeDevice {
+  async onNodeInit({ zclNode }) {
+    // TODO: Implémenter la logique de l'appareil
+  }
+}
+
+module.exports = light_ts0502aDevice;

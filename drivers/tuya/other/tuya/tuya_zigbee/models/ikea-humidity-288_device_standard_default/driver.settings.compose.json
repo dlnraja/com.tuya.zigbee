@@ -1,0 +1,14 @@
+{
+  "id": "ikea-humidity-288_plug_standard_settings",
+  "name": "Paramètres ikea ikea-humidity-288",
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": "Intervalle de polling (secondes)",
+      "default": 30,
+      "min": 10,
+      "max": 300
+    }
+  ]
+}

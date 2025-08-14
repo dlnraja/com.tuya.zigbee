@@ -1,0 +1,20 @@
+{
+  "id": "aqara-garage-374_cover_standard",
+  "name": "aqara aqara-garage-374",
+  "category": "cover",
+  "vendor": "aqara",
+  "model": "aqara-garage-374",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:00.857Z",
+  "updatedAt": "2025-08-13T12:09:00.857Z"
+}
