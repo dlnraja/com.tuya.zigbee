@@ -1,0 +1,9 @@
+{
+  "name": "Generic_Device_Smart_Plug",
+  "type": "tuya_zigbee",
+  "category": "switch",
+  "source": "drivers\\tuya_zigbee\\models\\generic_device_smart_plug_2",
+  "created": "2025-08-14T15:22:36.732Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

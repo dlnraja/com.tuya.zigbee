@@ -1,0 +1,9 @@
+{
+  "name": "F_Smart_Plug_Mains",
+  "type": "tuya_zigbee",
+  "category": "switch",
+  "source": "drivers\\tuya_zigbee\\models\\ts011f_smart_plug_mains_5",
+  "created": "2025-08-14T15:24:37.424Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

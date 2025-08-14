@@ -1,0 +1,9 @@
+{
+  "name": "Aqara_Chime_Siren",
+  "type": "tuya_zigbee",
+  "category": "other",
+  "source": "drivers\\tuya_zigbee\\models\\aqara-chime-885_siren_standard_default_1",
+  "created": "2025-08-14T15:21:18.287Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

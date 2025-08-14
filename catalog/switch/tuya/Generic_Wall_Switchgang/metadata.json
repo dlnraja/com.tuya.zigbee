@@ -1,0 +1,9 @@
+{
+  "name": "Generic_Wall_Switchgang",
+  "type": "tuya_zigbee",
+  "category": "switch",
+  "source": "drivers\\tuya_zigbee\\models\\generic_wall_switch_3gang",
+  "created": "2025-08-14T15:22:46.682Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

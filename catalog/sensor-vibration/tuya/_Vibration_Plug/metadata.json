@@ -1,0 +1,9 @@
+{
+  "name": "_Vibration_Plug",
+  "type": "tuya_zigbee",
+  "category": "sensor-vibration",
+  "source": "drivers\\tuya_zigbee\\models\\ts0601_vibration_plug_standard_1",
+  "created": "2025-08-14T15:24:58.077Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

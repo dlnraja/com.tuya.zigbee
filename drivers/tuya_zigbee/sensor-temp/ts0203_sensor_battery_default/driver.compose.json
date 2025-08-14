@@ -1,0 +1,14 @@
+{
+  "id": "ts0203_sensor_battery_default",
+  "name": "drivers-backup-2025-08-13T12-08-28-817Z ts0203 models standard default",
+  "images": {
+    "small": "/drivers/ts0203_sensor_battery_default/assets/images/small.png",
+    "large": "/drivers/ts0203_sensor_battery_default/assets/images/large.png"
+  },
+  "capabilities": [
+    "alarm_contact",
+    "measure_battery",
+    "alarm_battery",
+    "alarm_tamper"
+  ]
+}

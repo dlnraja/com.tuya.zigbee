@@ -1,46 +1,12 @@
 {
-  "id": "wall_switch_1_gang",
-  "name": {
-    "en": "Wall Switch 1 Gang",
-    "fr": "Wall Switch 1 Gang",
-    "nl": "Wall Switch 1 Gang",
-    "ta": "Wall Switch 1 Gang"
-  },
-  "class": "switch",
+  "id": "tuya_wall_switch_1_gang",
+  "title": "Tuya wall_switch_1_gang",
+  "category": "switch",
   "capabilities": [
-    "onoff",
-    "dim"
+    "onoff"
   ],
-  "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_3ooaz3ng",
-      "_TZ3000_g5xawfcq",
-      "_TZ3000_vtscrpmw"
-    ],
-    "productId": [
-      "TS0121",
-      "TS011F",
-      "TS0601"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          4,
-          5,
-          6,
-          8
-        ],
-        "bindings": [
-          0,
-          4,
-          5,
-          6,
-          8
-        ]
-      }
-    }
-  },
-  "version": "3.4.1",
-  "generated": "2025-08-14T10:39:27.774Z"
+  "images": {
+    "small": "assets/small.png",
+    "large": "assets/large.png"
+  }
 }

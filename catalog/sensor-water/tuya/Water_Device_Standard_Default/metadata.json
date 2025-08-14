@@ -1,0 +1,9 @@
+{
+  "name": "Water_Device_Standard_Default",
+  "type": "tuya_zigbee",
+  "category": "sensor-water",
+  "source": "drivers\\tuya_zigbee\\models\\tuya-water-581_device_standard_default",
+  "created": "2025-08-14T15:26:15.390Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

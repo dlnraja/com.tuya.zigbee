@@ -1,10 +1,12 @@
 {
-  "name": "tuya_zigbee",
-  "category": "unknown",
-  "vendor": "unknown",
+  "id": "tuya_tuya_zigbee",
+  "title": "Tuya tuya_zigbee",
+  "category": "other",
   "capabilities": [
     "onoff"
   ],
-  "version": "3.4.0",
-  "generated": "2025-08-14T08:32:42.707Z"
+  "images": {
+    "small": "assets/small.png",
+    "large": "assets/large.png"
+  }
 }

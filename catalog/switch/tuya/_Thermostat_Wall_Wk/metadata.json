@@ -1,0 +1,9 @@
+{
+  "name": "_Thermostat_Wall_Wk",
+  "type": "tuya_zigbee",
+  "category": "switch",
+  "source": "drivers\\tuya_zigbee\\models\\ts0601_thermostat_wall_wk",
+  "created": "2025-08-14T15:24:56.892Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}
