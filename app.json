@@ -1,10 +1,14 @@
 {
   "id": "com.tuya.zigbee",
-  "version": "3.4.1",
+  "version": "3.4.2",
   "compatibility": ">=5.0.0",
-  "sdk": 3,
-  "platforms": [
-    "local"
+  "category": [
+    "light",
+    "switch",
+    "sensor",
+    "cover",
+    "lock",
+    "climate"
   ],
   "name": {
     "en": "Universal Tuya Zigbee",
@@ -12,49 +16,163 @@
     "nl": "Universele Tuya Zigbee",
     "ta": "உலகளாவிய துயா ஜிக்பீ"
   },
-  "description": {
-    "en": "Universal Tuya Zigbee device support for Homey with Full/Lite modes",
-    "fr": "Support universel des appareils Tuya Zigbee pour Homey avec modes Complet/Léger",
-    "nl": "Universele ondersteuning voor Tuya Zigbee-apparaten voor Homey met Volledig/Licht modi",
-    "ta": "ஹோமியில் உலகளாவிய துயா ஜிக்பீ சாதன ஆதரவு முழு/லைட் பயன்முறைகளுடன்"
-  },
-  "category": [
-    "home"
-  ],
-  "permissions": [],
-  "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
-  },
+  "description": "Universal Tuya Zigbee - Drivers unifiés et optimisés pour Homey SDK3+",
   "author": {
-    "name": "dlnraja",
-    "email": "dylan.rajasekaram+homey@gmail.com"
+    "name": "Tuya Community",
+    "email": "support@tuya.com"
   },
-  "homepage": "https://github.com/dlnraja/homey-tuya-zigbee",
-  "bugs": "https://github.com/dlnraja/homey-tuya-zigbee/issues",
-  "repository": "https://github.com/dlnraja/homey-tuya-zigbee",
   "contributors": [
     {
-      "name": "dlnraja",
-      "email": "dylan.rajasekaram+homey@gmail.com"
+      "name": "Johan Benz",
+      "email": "johan@homey.app"
     }
+  ],
+  "homepage": "https://github.com/tuya-community/homey-tuya-zigbee",
+  "bugs": {
+    "url": "https://github.com/tuya-community/homey-tuya-zigbee/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tuya-community/homey-tuya-zigbee.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "tuya",
+    "zigbee",
+    "smart home",
+    "home automation",
+    "lighting",
+    "sensors",
+    "climate"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "homey": "^2.0.0",
+    "homey-zigbeedriver": "^1.0.0"
+  },
+  "devDependencies": {
+    "homey": "^2.0.0",
+    "homey-zigbeedriver": "^1.0.0"
+  },
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint .",
+    "validate": "homey app validate",
+    "build": "homey app build",
+    "publish": "homey app publish",
+    "mega": "node scripts/mega-enrichment-fixed.js",
+    "organize": "node scripts/fix-homey-structure.js",
+    "restore": "node scripts/restore-homey-files.js"
+  },
+  "permissions": [
+    "homey:manager:api",
+    "homey:manager:drivers",
+    "homey:manager:flow",
+    "homey:manager:geolocation",
+    "homey:manager:ledring",
+    "homey:manager:media",
+    "homey:manager:notifications",
+    "homey:manager:speech-output",
+    "homey:manager:speech-input",
+    "homey:manager:storage",
+    "homey:manager:util",
+    "homey:manager:z-wave"
   ],
   "drivers": [
     {
-      "id": "tuya_zigbee",
+      "id": "tuya_zigbee_light",
       "name": {
-        "en": "Tuya Zigbee Universal",
-        "fr": "Tuya Zigbee Universel",
-        "nl": "Tuya Zigbee Universeel",
-        "ta": "துயா ஜிக்பீ உலகளாவிய"
+        "en": "Tuya Zigbee Light",
+        "fr": "Éclairage Tuya Zigbee",
+        "nl": "Tuya Zigbee Verlichting",
+        "ta": "துயா ஜிக்பீ விளக்கு"
+      },
+      "description": {
+        "en": "Universal Tuya Zigbee light driver",
+        "fr": "Driver d'éclairage Tuya Zigbee universel",
+        "nl": "Universele Tuya Zigbee verlichtingsdriver",
+        "ta": "உலகளாவிய துயா ஜிக்பீ விளக்கு டிரைவர்"
+      },
+      "category": [
+        "light"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode"
+      ],
+      "capabilitiesOptions": {
+        "dim": {
+          "min": 0,
+          "max": 100
+        },
+        "light_temperature": {
+          "min": 2700,
+          "max": 6500
+        }
       }
+    },
+    {
+      "id": "tuya_zigbee_switch",
+      "name": {
+        "en": "Tuya Zigbee Switch",
+        "fr": "Interrupteur Tuya Zigbee",
+        "nl": "Tuya Zigbee Schakelaar",
+        "ta": "துயா ஜிக்பீ சுவிட்ச்"
+      },
+      "description": {
+        "en": "Universal Tuya Zigbee switch and plug driver",
+        "fr": "Driver d'interrupteur et prise Tuya Zigbee universel",
+        "nl": "Universele Tuya Zigbee schakelaar en stekker driver",
+        "ta": "உலகளாவிய துயா ஜிக்பீ சுவிட்ச் மற்றும் பிளக் டிரைவர்"
+      },
+      "category": [
+        "switch"
+      ],
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power"
+      ]
+    },
+    {
+      "id": "tuya_zigbee_sensor",
+      "name": {
+        "en": "Tuya Zigbee Sensor",
+        "fr": "Capteur Tuya Zigbee",
+        "nl": "Tuya Zigbee Sensor",
+        "ta": "துயா ஜிக்பீ சென்சார்"
+      },
+      "description": {
+        "en": "Universal Tuya Zigbee sensor driver",
+        "fr": "Driver de capteur Tuya Zigbee universel",
+        "nl": "Universele Tuya Zigbee sensor driver",
+        "ta": "உலகளாவிய துயா ஜிக்பீ சென்சார் டிரைவர்"
+      },
+      "category": [
+        "sensor"
+      ],
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_pressure",
+        "alarm_motion",
+        "alarm_contact",
+        "alarm_water",
+        "alarm_smoke",
+        "alarm_gas"
+      ]
     }
   ],
-  "dependencies": {
-    "homey-meshdriver": "^1.3.0"
+  "images": {
+    "small": "assets/small.png",
+    "large": "assets/large.png",
+    "xlarge": "assets/xlarge.png"
   },
-  "engines": {
-    "node": ">=18.0.0"
-  }
+  "icon": "assets/icon.svg"
 }
