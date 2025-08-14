@@ -1,0 +1,42 @@
+{
+  "name": "com.tuya.zigbee",
+  "version": "1.1.0",
+  "description": "Universal Tuya Zigbee Device App - Support for all Tuya Zigbee devices",
+  "main": "app.js",
+  "dependencies": {
+    "homey": "^2.0.0"
+  },
+  "devDependencies": {
+    "homey-cli": "^1.0.0"
+  },
+  "scripts": {
+    "run": "homey app run",
+    "run:debug": "homey app run --debug",
+    "build": "homey app build",
+    "publish": "homey app publish",
+    "test": "homey app validate",
+    "install": "homey app install",
+    "lint": "echo \"No linting specified\" && exit 0"
+  },
+  "keywords": [
+    "tuya",
+    "zigbee",
+    "homey",
+    "smart-home",
+    "iot",
+    "universal"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Dylan Rajasekaram",
+    "email": "dylan.rajasekaram+homey@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dlnraja/com.tuya.zigbee.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
+  },
+  "homepage": "https://github.com/dlnraja/com.tuya.zigbee// readme"
+}

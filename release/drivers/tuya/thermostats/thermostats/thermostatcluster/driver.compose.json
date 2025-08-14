@@ -1,0 +1,25 @@
+{
+  "id": "thermostatcluster",
+  "class": "thermostat",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "thermostatcluster",
+    "fr": "thermostatcluster",
+    "nl": "thermostatcluster",
+    "ta": "thermostatcluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "thermostatcluster",
+  "originalFile": "thermostat.js",
+  "extracted": "2025-08-05T08:36:32.087Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "TS011F_plug",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "class": "light",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "TS011F Plug",
+    "nl": "TS011F Plug",
+    "fr": "TS011F Plug",
+    "de": "TS011F Plug"
+  }
+}

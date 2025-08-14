@@ -1,0 +1,25 @@
+{
+  "id": "returning",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "returning",
+    "fr": "returning",
+    "nl": "returning",
+    "ta": "returning"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "returning",
+  "originalFile": "package_index.py",
+  "extracted": "2025-08-05T08:33:15.937Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

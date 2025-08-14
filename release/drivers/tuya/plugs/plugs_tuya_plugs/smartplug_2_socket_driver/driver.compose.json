@@ -1,0 +1,25 @@
+{
+  "id": "smartplug_2_socket_driver",
+  "class": "plug",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "smartplug_2_socket_driver",
+    "fr": "smartplug_2_socket_driver",
+    "nl": "smartplug_2_socket_driver",
+    "ta": "smartplug_2_socket_driver"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "smartplug_2_socket_driver",
+  "originalFile": "driver.js",
+  "extracted": "2025-08-05T08:36:00.833Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "id": "tuya-hvac",
+  "name": {
+    "en": " $args[0].Value.ToUpper() uya  $args[0].Value.ToUpper() vac",
+    "fr": " $args[0].Value.ToUpper() uya  $args[0].Value.ToUpper() vac",
+    "nl": " $args[0].Value.ToUpper() uya  $args[0].Value.ToUpper() vac",
+    "ta": " $args[0].Value.ToUpper() uya  $args[0].Value.ToUpper() vac"
+  },
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature",
+    "onoff"
+  ],
+  "class": "light",
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genOnOff",
+          "genLevelCtrl",
+          "genBasic"
+        ],
+        "bindings": [
+          "genOnOff",
+          "genLevelCtrl"
+        ]
+      }
+    },
+    "productId": [
+      ""
+    ]
+  },
+  "images": {
+    "icon": "assets/images/icon.svg"
+  },
+  "title": {
+    "en": "Tuya Hvac",
+    "fr": "Tuya Hvac",
+    "nl": "Tuya Hvac",
+    "ta": "Tuya Hvac"
+  },
+  "category": "controllers",
+  "optimized": true,
+  "optimizationDate": "2025-07-29T14:41:45.879Z",
+  "version": "1.0.12-20250729-1405",
+  "platformCompatibility": {
+    "homeyModels": [
+      "homey_pro_2016",
+      "homey_pro_2019",
+      "homey_pro_2023",
+      "homey_bridge",
+      "homey_cloud"
+    ],
+    "minHomeyVersion": "3.0.0",
+    "firmware": {
+      "detected": "TS0603",
+      "category": "official",
+      "confidence": "high"
+    },
+    "compatibility": {
+      "homeyModel": "homey_pro_2023",
+      "compatible": true,
+      "capabilities": {
+        "supported": [
+          "onoff",
+          "measure_temperature"
+        ],
+        "unsupported": []
+      },
+      "clusters": {
+        "supported": [
+          "genOnOff",
+          "msTemperatureMeasurement"
+        ],
+        "unsupported": []
+      },
+      "limitations": [],
+      "fallback": false
+    },
+    "fallbackBehavior": null,
+    "warnings": []
+  },
+  "firmwareMetadata": {
+    "detected": "TS0603",
+    "category": "official",
+    "confidence": "high",
+    "capabilities": [
+      "onoff",
+      "measure_temperature"
+    ],
+    "clusters": [
+      "genOnOff",
+      "msTemperatureMeasurement"
+    ],
+    "fallback": false,
+    "unknown": false
+  },
+  "clusters": [
+    "genOnOff"
+  ],
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-07-29T13:21:52.659Z",
+    "originalType": "generic",
+    "suggestedCapabilities": [
+      "onoff"
+    ]
+  },
+  "description": {
+    "en": "Optimized tuya-hvac driver",
+    "fr": "Driver tuya-hvac optimisé",
+    "nl": "Geoptimaliseerde tuya-hvac driver",
+    "ta": "ஒப்படைக்கப்பட்ட tuya-hvac டிரைவர்"
+  },
+  "capabilitiesOptions": {
+    "target_temperature": {
+      "title": {
+        "en": "Target Temperature",
+        "fr": "Target Temperature",
+        "nl": "Target Temperature",
+        "ta": "Target Temperature"
+      }
+    },
+    "measure_temperature": {
+      "title": {
+        "en": "Measure Temperature",
+        "fr": "Measure Temperature",
+        "nl": "Measure Temperature",
+        "ta": "Measure Temperature"
+      }
+    },
+    "onoff": {
+      "title": {
+        "en": "Onoff",
+        "fr": "Onoff",
+        "nl": "Onoff",
+        "ta": "Onoff"
+      }
+    }
+  },
+  "tuyaCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Tuya",
+    "model": "tuya-hvac",
+    "firmware": "latest",
+    "capabilities": [
+      "target_temperature",
+      "measure_temperature",
+      "onoff"
+    ],
+    "clusters": [
+      "genOnOff"
+    ]
+  },
+  "homeyCompatibility": {
+    "pro": true,
+    "bridge": true,
+    "cloud": false,
+    "minVersion": "5.0.0",
+    "maxVersion": "6.0.0"
+  }
+}

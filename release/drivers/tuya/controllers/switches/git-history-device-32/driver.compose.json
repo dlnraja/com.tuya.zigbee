@@ -1,0 +1,51 @@
+{
+  "id": "git-history-device-32",
+  "title": {
+    "en": "Git History Device 32",
+    "fr": "Git History Device 32",
+    "nl": "Git History Device 32",
+    "ta": "Git History Device 32"
+  },
+  "description": {
+    "en": "Driver for git-history-device-32 from Local Git History",
+    "fr": "Driver pour git-history-device-32 de Local Git History",
+    "nl": "Driver voor git-history-device-32 van Local Git History",
+    "ta": "Local Git History இலிருந்து git-history-device-32 க்கான டிரைவர்"
+  },
+  "category": "controllers",
+  "protocol": "tuya",
+  "source": "Local Git History",
+  "capabilities": [
+    "onoff",
+    "measure_power"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genPowerCfg"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:11:25.428Z",
+  "tuyaCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Tuya",
+    "model": "git-history-device-32",
+    "firmware": "latest",
+    "capabilities": [
+      "onoff",
+      "measure_power"
+    ],
+    "clusters": [
+      "genOnOff",
+      "genPowerCfg"
+    ]
+  },
+  "homeyCompatibility": {
+    "pro": true,
+    "bridge": true,
+    "cloud": false,
+    "minVersion": "5.0.0",
+    "maxVersion": "6.0.0"
+  }
+}

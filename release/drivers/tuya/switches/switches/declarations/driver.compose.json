@@ -1,0 +1,25 @@
+{
+  "id": "declarations",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "declarations",
+    "fr": "declarations",
+    "nl": "declarations",
+    "ta": "declarations"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "declarations",
+  "originalFile": "Activate.js",
+  "extracted": "2025-08-05T08:34:54.395Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

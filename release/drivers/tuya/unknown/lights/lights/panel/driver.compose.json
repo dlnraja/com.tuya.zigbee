@@ -1,0 +1,25 @@
+{
+  "id": "panel",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "panel",
+    "fr": "panel",
+    "nl": "panel",
+    "ta": "panel"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "panel",
+  "originalFile": "panel.py",
+  "extracted": "2025-08-05T08:33:55.989Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

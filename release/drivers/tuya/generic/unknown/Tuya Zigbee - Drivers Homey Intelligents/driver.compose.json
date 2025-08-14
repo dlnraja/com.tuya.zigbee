@@ -1,0 +1,28 @@
+{
+    "source":  "README-c736301a",
+    "id":  "Tuya Zigbee - Drivers Homey Intelligents",
+    "manufacturer":  "Historical Recovery",
+    "version":  "1.0.0",
+    "category":  "generic",
+    "description":  {
+                        "en":  "Driver for Tuya Zigbee - Drivers Homey Intelligents",
+                        "fr":  "Driver pour Tuya Zigbee - Drivers Homey Intelligents",
+                        "nl":  "Driver voor Tuya Zigbee - Drivers Homey Intelligents",
+                        "ta":  "Driver for Tuya Zigbee - Drivers Homey Intelligents"
+                    },
+    "author":  "dlnraja \u003cdylan.rajasekaram+homey@gmail.com\u003e",
+    "createdAt":  "2025-07-29T18:24:46.596Z",
+    "capabilities":  [
+                         "onoff"
+                     ],
+    "title":  {
+                  "en":  "Tuya Zigbee - Drivers Homey Intelligents",
+                  "fr":  "Tuya Zigbee - Drivers Homey Intelligents",
+                  "nl":  "Tuya Zigbee - Drivers Homey Intelligents",
+                  "ta":  "Tuya Zigbee - Drivers Homey Intelligents"
+              },
+    "protocol":  "tuya",
+    "clusters":  [
+                     "genBasic"
+                 ]
+}

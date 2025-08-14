@@ -1,0 +1,25 @@
+{
+  "id": "pir_sensor_2",
+  "class": "sensor",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "pir_sensor_2",
+    "fr": "pir_sensor_2",
+    "nl": "pir_sensor_2",
+    "ta": "pir_sensor_2"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "pir_sensor_2",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:35:53.450Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

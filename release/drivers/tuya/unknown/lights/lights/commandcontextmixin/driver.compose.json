@@ -1,0 +1,25 @@
+{
+  "id": "commandcontextmixin",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "commandcontextmixin",
+    "fr": "commandcontextmixin",
+    "nl": "commandcontextmixin",
+    "ta": "commandcontextmixin"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "commandcontextmixin",
+  "originalFile": "command_context.py",
+  "extracted": "2025-08-05T08:33:34.963Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

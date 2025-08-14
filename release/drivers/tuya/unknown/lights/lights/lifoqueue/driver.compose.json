@@ -1,0 +1,25 @@
+{
+  "id": "lifoqueue",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "lifoqueue",
+    "fr": "lifoqueue",
+    "nl": "lifoqueue",
+    "ta": "lifoqueue"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "lifoqueue",
+  "originalFile": "queue.py",
+  "extracted": "2025-08-05T08:34:01.441Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}
