@@ -1,0 +1,37 @@
+{
+  "id": "wall_remote_4_gang_3",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "class": "other",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Wall Remote 4 Gang 3",
+    "nl": "Wall Remote 4 Gang 3",
+    "fr": "Wall Remote 4 Gang 3",
+    "de": "Wall Remote 4 Gang 3"
+  },
+  "manufacturer": "_TZ3000_xxxxxxxx",
+  "product": "WALL_REMOTE_4_GANG_3",
+  "dataPoints": {
+    "1": {
+      "name": "switch",
+      "type": "bool",
+      "writable": true
+    }
+  },
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:55.248Z",
+    "driverType": "zigbee",
+    "category": "automation",
+    "subcategory": "wall_remote_4_gang_3",
+    "megaUltimateBugFixer": true
+  }
+}

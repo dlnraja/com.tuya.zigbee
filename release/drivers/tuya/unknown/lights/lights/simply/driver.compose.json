@@ -1,0 +1,25 @@
+{
+  "id": "simply",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "simply",
+    "fr": "simply",
+    "nl": "simply",
+    "ta": "simply"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "simply",
+  "originalFile": "utf1632prober.cpython-311.pyc",
+  "extracted": "2025-08-05T08:34:34.174Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

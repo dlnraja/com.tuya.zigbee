@@ -1,0 +1,25 @@
+{
+  "id": "electricalmeasurementcluster",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "electricalmeasurementcluster",
+    "fr": "electricalmeasurementcluster",
+    "nl": "electricalmeasurementcluster",
+    "ta": "electricalmeasurementcluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "electricalmeasurementcluster",
+  "originalFile": "electricalMeasurement.js",
+  "extracted": "2025-08-05T08:36:26.025Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "rgb_led_strip_controller",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "rgb_led_strip_controller",
+    "fr": "rgb_led_strip_controller",
+    "nl": "rgb_led_strip_controller",
+    "ta": "rgb_led_strip_controller"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "rgb_led_strip_controller",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:35:58.587Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

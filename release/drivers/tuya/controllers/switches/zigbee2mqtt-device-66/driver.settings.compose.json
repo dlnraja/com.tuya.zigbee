@@ -1,0 +1,24 @@
+{
+  "id": "zigbee2mqtt-device-66-settings",
+  "title": {
+    "en": "zigbee2mqtt-device-66 Settings",
+    "fr": "Paramètres zigbee2mqtt-device-66",
+    "nl": "zigbee2mqtt-device-66 Instellingen",
+    "ta": "zigbee2mqtt-device-66 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}
