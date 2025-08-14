@@ -4,5 +4,10 @@
   "images": {
     "small": "/drivers/template_device_template_device/assets/images/small.png",
     "large": "/drivers/template_device_template_device/assets/images/large.png"
-  }
+  },
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "assets/icon.svg"
 }

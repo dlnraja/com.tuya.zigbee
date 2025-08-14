@@ -1,0 +1,13 @@
+{
+  "id": "ikea-buzzer-232_siren_standard_default",
+  "name": "drivers-backup-2025-08-13T12-14-20-255Z ikea-buzzer-232 siren standard models standard default",
+  "images": {
+    "small": "/drivers/ikea-buzzer-232_siren_standard_default/assets/images/small.png",
+    "large": "/drivers/ikea-buzzer-232_siren_standard_default/assets/images/large.png"
+  },
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "assets/icon.svg"
+}

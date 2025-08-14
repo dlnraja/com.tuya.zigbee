@@ -1,0 +1,13 @@
+{
+  "id": "ts0203_device_standard_default",
+  "name": "sensor ts0203",
+  "images": {
+    "small": "/drivers/ts0203_device_standard_default/assets/images/small.png",
+    "large": "/drivers/ts0203_device_standard_default/assets/images/large.png"
+  },
+  "capabilities": [
+    "measure_temperature"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "assets/icon.svg"
+}

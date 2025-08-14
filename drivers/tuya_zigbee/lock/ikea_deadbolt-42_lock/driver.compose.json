@@ -1,0 +1,13 @@
+{
+  "id": "ikea-deadbolt-42_lock_standard_default",
+  "name": "drivers-backup-2025-08-13T12-14-20-255Z ikea-deadbolt-42 lock standard models standard default",
+  "images": {
+    "small": "/drivers/ikea-deadbolt-42_lock_standard_default/assets/images/small.png",
+    "large": "/drivers/ikea-deadbolt-42_lock_standard_default/assets/images/large.png"
+  },
+  "capabilities": [
+    "lock_state"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "assets/icon.svg"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "generic_sensor_temperature_default",
+  "name": "drivers-backup-2025-08-13T12-14-20-255Z generic sensor temperature models standard default",
+  "images": {
+    "small": "/drivers/generic_sensor_temperature_default/assets/images/small.png",
+    "large": "/drivers/generic_sensor_temperature_default/assets/images/large.png"
+  },
+  "capabilities": [
+    "measure_temperature"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "assets/icon.svg"
+}

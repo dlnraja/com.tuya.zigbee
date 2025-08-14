@@ -4,5 +4,10 @@
   "images": {
     "small": "/drivers/generic_device_sensor_temperature/assets/images/small.png",
     "large": "/drivers/generic_device_sensor_temperature/assets/images/large.png"
-  }
+  },
+  "capabilities": [
+    "measure_temperature"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "assets/icon.svg"
 }

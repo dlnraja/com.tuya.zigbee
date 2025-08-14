@@ -4,5 +4,11 @@
   "images": {
     "small": "/drivers/generic_smart_plug_em/assets/images/small.png",
     "large": "/drivers/generic_smart_plug_em/assets/images/large.png"
-  }
+  },
+  "capabilities": [
+    "onoff",
+    "measure_power"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "assets/icon.svg"
 }

@@ -1,0 +1,14 @@
+{
+  "id": "tuya-heater-387_plug_standard_default",
+  "name": "drivers-backup-2025-08-13T12-14-20-255Z tuya-heater-387 plug standard models standard default",
+  "images": {
+    "small": "/drivers/tuya-heater-387_plug_standard_default/assets/images/small.png",
+    "large": "/drivers/tuya-heater-387_plug_standard_default/assets/images/large.png"
+  },
+  "capabilities": [
+    "onoff",
+    "measure_power"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "assets/icon.svg"
+}

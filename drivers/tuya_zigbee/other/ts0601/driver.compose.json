@@ -1,0 +1,13 @@
+{
+  "id": "ts0601_device_standard_default",
+  "name": "climate ts0601",
+  "images": {
+    "small": "/drivers/ts0601_device_standard_default/assets/images/small.png",
+    "large": "/drivers/ts0601_device_standard_default/assets/images/large.png"
+  },
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "assets/icon.svg"
+}
