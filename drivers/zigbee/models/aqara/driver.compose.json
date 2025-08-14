@@ -1,0 +1,13 @@
+{
+  "id": "aqara_device_standard_default",
+  "name": "aqara sensor motion battery",
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
+  },
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "assets/icon.svg"
+}

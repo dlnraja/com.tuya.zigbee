@@ -4,5 +4,10 @@
   "images": {
     "small": "/drivers/ts0601_curtain_cover_standard/assets/images/small.png",
     "large": "/drivers/ts0601_curtain_cover_standard/assets/images/large.png"
-  }
+  },
+  "capabilities": [
+    "windowcoverings_state"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "assets/icon.svg"
 }

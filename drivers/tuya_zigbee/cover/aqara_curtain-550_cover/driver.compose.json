@@ -1,0 +1,13 @@
+{
+  "id": "aqara-curtain-550_cover_standard_default",
+  "name": "drivers-backup-2025-08-13T12-14-20-255Z aqara-curtain-550 cover standard models standard default",
+  "images": {
+    "small": "/drivers/aqara-curtain-550_cover_standard_default/assets/images/small.png",
+    "large": "/drivers/aqara-curtain-550_cover_standard_default/assets/images/large.png"
+  },
+  "capabilities": [
+    "windowcoverings_state"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "assets/icon.svg"
+}

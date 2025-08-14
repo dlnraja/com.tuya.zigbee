@@ -4,5 +4,11 @@
   "images": {
     "small": "/drivers/ts0002_wall_switch_standard/assets/images/small.png",
     "large": "/drivers/ts0002_wall_switch_standard/assets/images/large.png"
-  }
+  },
+  "capabilities": [
+    "onoff",
+    "measure_power"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "assets/icon.svg"
 }

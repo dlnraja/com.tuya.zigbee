@@ -4,5 +4,10 @@
   "images": {
     "small": "/drivers/generic_device_zigbee_sensor/assets/images/small.png",
     "large": "/drivers/generic_device_zigbee_sensor/assets/images/large.png"
-  }
+  },
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "assets/icon.svg"
 }

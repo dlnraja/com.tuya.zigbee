@@ -1,0 +1,13 @@
+{
+  "id": "tuya-garage-581_cover_standard_default",
+  "name": "drivers-backup-2025-08-13T12-14-20-255Z tuya-garage-581 cover standard models standard default",
+  "images": {
+    "small": "/drivers/tuya-garage-581_cover_standard_default/assets/images/small.png",
+    "large": "/drivers/tuya-garage-581_cover_standard_default/assets/images/large.png"
+  },
+  "capabilities": [
+    "windowcoverings_state"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "assets/icon.svg"
+}

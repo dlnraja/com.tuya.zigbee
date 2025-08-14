@@ -1,0 +1,26 @@
+{
+  "id": "ts0505b_standard_standard_default",
+  "name": "drivers-backup-2025-08-13T12-08-28-817Z ts0505b models standard default models standard default",
+  "images": {
+    "small": "/drivers/ts0505b_standard_standard_default/assets/images/small.png",
+    "large": "/drivers/ts0505b_standard_standard_default/assets/images/large.png"
+  },
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "min": 0,
+      "max": 100
+    },
+    "light_temperature": {
+      "min": 2700,
+      "max": 6500
+    }
+  },
+  "icon": "assets/icon.svg"
+}

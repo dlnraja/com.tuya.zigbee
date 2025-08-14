@@ -1,7 +1,11 @@
 {
   "id": "com.tuya.zigbee",
   "version": "3.4.2",
+  "sdk": 3,
   "compatibility": ">=5.0.0",
+  "compose": {
+    "enable": true
+  },
   "category": [
     "light",
     "switch",
@@ -21,12 +25,9 @@
     "name": "Tuya Community",
     "email": "support@tuya.com"
   },
-  "contributors": [
-    {
-      "name": "Johan Benz",
-      "email": "johan@homey.app"
-    }
-  ],
+  "contributors": {
+    "Johan Benz": "johan@homey.app"
+  },
   "homepage": "https://github.com/tuya-community/homey-tuya-zigbee",
   "bugs": {
     "url": "https://github.com/tuya-community/homey-tuya-zigbee/issues"
@@ -83,6 +84,7 @@
   "drivers": [
     {
       "id": "tuya_zigbee_light",
+      "class": "light",
       "name": {
         "en": "Tuya Zigbee Light",
         "fr": "Éclairage Tuya Zigbee",
@@ -119,6 +121,7 @@
     },
     {
       "id": "tuya_zigbee_switch",
+      "class": "switch",
       "name": {
         "en": "Tuya Zigbee Switch",
         "fr": "Interrupteur Tuya Zigbee",
@@ -142,6 +145,7 @@
     },
     {
       "id": "tuya_zigbee_sensor",
+      "class": "sensor",
       "name": {
         "en": "Tuya Zigbee Sensor",
         "fr": "Capteur Tuya Zigbee",

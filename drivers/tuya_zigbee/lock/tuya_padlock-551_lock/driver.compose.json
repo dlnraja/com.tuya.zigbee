@@ -1,0 +1,13 @@
+{
+  "id": "tuya-padlock-551_lock_standard_default",
+  "name": "drivers-backup-2025-08-13T12-14-20-255Z tuya-padlock-551 lock standard models standard default",
+  "images": {
+    "small": "/drivers/tuya-padlock-551_lock_standard_default/assets/images/small.png",
+    "large": "/drivers/tuya-padlock-551_lock_standard_default/assets/images/large.png"
+  },
+  "capabilities": [
+    "lock_state"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "assets/icon.svg"
+}
