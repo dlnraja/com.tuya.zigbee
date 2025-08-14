@@ -10,7 +10,13 @@
     "build": "homey app build",
     "publish": "homey app publish",
     "mega": "node scripts/mega-enrichment-fixed.js",
-    "organize": "node scripts/fix-homey-structure.js"
+    "organize": "node scripts/fix-homey-structure.js",
+    "build:drivers": "node scripts/build/generate_from_catalog.mjs",
+    "export:dashboard": "node scripts/build/export_dashboard_data.mjs",
+    "update:readme": "node scripts/build/update_readme_stats.mjs",
+    "validate:assets": "node scripts/build/validate_assets.mjs",
+    "validate:links": "node scripts/build/validate_links.mjs",
+    "build:all": "npm run export:dashboard && npm run update:readme && npm run validate:assets && npm run validate:links"
   },
   "keywords": [
     "tuya",
