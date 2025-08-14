@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 console.log('🚀 PUSH FINAL SIMPLE - BRIEF "BÉTON" IMPLÉMENTÉ');
+console.log('=' .repeat(60));
 
 const { execSync } = require('child_process');
 
@@ -14,7 +15,7 @@ try {
     console.log('📤 Push vers master...');
     execSync('git push origin master', { stdio: 'inherit' });
     
-    console.log('🏷️ Tag v3.4.2...');
+    console.log('🏷️  Tag v3.4.2...');
     execSync('git tag -f v3.4.2', { stdio: 'inherit' });
     execSync('git push origin v3.4.2 --force', { stdio: 'inherit' });
     
@@ -32,3 +33,6 @@ try {
         console.error('❌ Push forcé échoué:', forceError.message);
     }
 }
+
+console.log('\n🎉 TERMINÉ ! Retour à la ligne ajouté.');
+console.log('🚀 Prochaines étapes: npx homey app validate');
