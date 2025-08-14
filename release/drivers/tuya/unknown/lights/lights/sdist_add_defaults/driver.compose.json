@@ -1,0 +1,25 @@
+{
+  "id": "sdist_add_defaults",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "sdist_add_defaults",
+    "fr": "sdist_add_defaults",
+    "nl": "sdist_add_defaults",
+    "ta": "sdist_add_defaults"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "sdist_add_defaults",
+  "originalFile": "py36compat.py",
+  "extracted": "2025-08-05T08:33:23.202Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

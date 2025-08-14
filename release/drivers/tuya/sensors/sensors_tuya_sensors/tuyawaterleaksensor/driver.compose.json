@@ -1,0 +1,25 @@
+{
+  "id": "tuyawaterleaksensor",
+  "class": "sensor",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "tuyawaterleaksensor",
+    "fr": "tuyawaterleaksensor",
+    "nl": "tuyawaterleaksensor",
+    "ta": "tuyawaterleaksensor"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": ", ",
+  "model": "tuyawaterleaksensor",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:36:10.749Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+    "source":  "README-e8936adf",
+    "id":  "Security",
+    "manufacturer":  "Historical Recovery",
+    "version":  "1.0.0",
+    "category":  "generic",
+    "description":  {
+                        "en":  "Driver for Security",
+                        "fr":  "Driver pour Security",
+                        "nl":  "Driver voor Security",
+                        "ta":  "Driver for Security"
+                    },
+    "author":  "dlnraja \u003cdylan.rajasekaram+homey@gmail.com\u003e",
+    "createdAt":  "2025-07-29T18:24:48.181Z",
+    "capabilities":  [
+                         "onoff"
+                     ],
+    "title":  {
+                  "en":  "Security",
+                  "fr":  "Security",
+                  "nl":  "Security",
+                  "ta":  "Security"
+              },
+    "protocol":  "tuya",
+    "clusters":  [
+                     "genBasic"
+                 ]
+}

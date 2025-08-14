@@ -1,0 +1,25 @@
+{
+  "id": "switch_3_gang",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "switch_3_gang",
+    "fr": "switch_3_gang",
+    "nl": "switch_3_gang",
+    "ta": "switch_3_gang"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "switch_3_gang",
+  "originalFile": "driver.js",
+  "extracted": "2025-08-05T08:36:08.246Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

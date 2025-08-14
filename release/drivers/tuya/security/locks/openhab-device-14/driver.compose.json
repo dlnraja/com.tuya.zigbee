@@ -1,0 +1,51 @@
+{
+  "id": "openhab-device-14",
+  "title": {
+    "en": "Openhab Device 14",
+    "fr": "Openhab Device 14",
+    "nl": "Openhab Device 14",
+    "ta": "Openhab Device 14"
+  },
+  "description": {
+    "en": "Driver for openhab-device-14 from OpenHAB",
+    "fr": "Driver pour openhab-device-14 de OpenHAB",
+    "nl": "Driver voor openhab-device-14 van OpenHAB",
+    "ta": "OpenHAB இலிருந்து openhab-device-14 க்கான டிரைவர்"
+  },
+  "category": "security",
+  "protocol": "tuya",
+  "source": "OpenHAB",
+  "capabilities": [
+    "onoff",
+    "measure_power"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genPowerCfg"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:11:19.691Z",
+  "tuyaCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Tuya",
+    "model": "openhab-device-14",
+    "firmware": "latest",
+    "capabilities": [
+      "onoff",
+      "measure_power"
+    ],
+    "clusters": [
+      "genOnOff",
+      "genPowerCfg"
+    ]
+  },
+  "homeyCompatibility": {
+    "pro": true,
+    "bridge": true,
+    "cloud": false,
+    "minVersion": "5.0.0",
+    "maxVersion": "6.0.0"
+  }
+}

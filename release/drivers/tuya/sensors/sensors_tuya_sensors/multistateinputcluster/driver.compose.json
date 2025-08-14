@@ -1,0 +1,25 @@
+{
+  "id": "multistateinputcluster",
+  "class": "sensor",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "multistateinputcluster",
+    "fr": "multistateinputcluster",
+    "nl": "multistateinputcluster",
+    "ta": "multistateinputcluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "multistateinputcluster",
+  "originalFile": "multistateInput.js",
+  "extracted": "2025-08-05T08:36:30.123Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

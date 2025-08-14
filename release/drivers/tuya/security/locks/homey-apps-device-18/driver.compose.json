@@ -1,0 +1,55 @@
+{
+  "id": "homey-apps-device-18",
+  "title": {
+    "en": "Homey Apps Device 18",
+    "fr": "Homey Apps Device 18",
+    "nl": "Homey Apps Device 18",
+    "ta": "Homey Apps Device 18"
+  },
+  "description": {
+    "en": "Driver for homey-apps-device-18 from Homey Apps",
+    "fr": "Driver pour homey-apps-device-18 de Homey Apps",
+    "nl": "Driver voor homey-apps-device-18 van Homey Apps",
+    "ta": "Homey Apps இலிருந்து homey-apps-device-18 க்கான டிரைவர்"
+  },
+  "category": "security",
+  "protocol": "tuya",
+  "source": "Homey Apps",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genPowerCfg"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:11:23.445Z",
+  "tuyaCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Tuya",
+    "model": "homey-apps-device-18",
+    "firmware": "latest",
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_power"
+    ],
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genPowerCfg"
+    ]
+  },
+  "homeyCompatibility": {
+    "pro": true,
+    "bridge": true,
+    "cloud": false,
+    "minVersion": "5.0.0",
+    "maxVersion": "6.0.0"
+  }
+}

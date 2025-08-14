@@ -1,0 +1,25 @@
+{
+  "id": "as",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "as",
+    "fr": "as",
+    "nl": "as",
+    "ta": "as"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "as",
+  "originalFile": "README.md",
+  "extracted": "2025-08-05T08:36:14.768Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

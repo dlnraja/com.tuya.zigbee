@@ -1,0 +1,25 @@
+{
+  "id": "which",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "which",
+    "fr": "which",
+    "nl": "which",
+    "ta": "which"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "which",
+  "originalFile": "containers.cpython-311.pyc",
+  "extracted": "2025-08-05T08:34:47.763Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

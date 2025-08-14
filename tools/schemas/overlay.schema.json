@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/overlay.schema.json",
+  "title": "Driver Overlay (Homey SDK3+)",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "display": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        },
+        "description": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        },
+        "assets": {
+          "type": "object",
+          "properties": {
+            "small": { "type": "string" },
+            "large": { "type": "string" },
+            "xlarge": { "type": "string" }
+          }
+        }
+      }
+    },
+    "zigbee": {
+      "type": "object",
+      "properties": {
+        "scaling": {
+          "type": "object",
+          "additionalProperties": { "type": "number" }
+        },
+        "filters": {
+          "type": "object",
+          "additionalProperties": { "type": "object" }
+        },
+        "dp_map": {
+          "type": "object",
+          "additionalProperties": { "type": "object" }
+        }
+      }
+    },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": { "type": "object" }
+    },
+    "settings": {
+      "type": "object"
+    }
+  }
+}

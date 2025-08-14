@@ -1,0 +1,25 @@
+{
+  "id": "addonsearchresult",
+  "class": "switch",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "addonsearchresult",
+    "fr": "addonsearchresult",
+    "nl": "addonsearchresult",
+    "ta": "addonsearchresult"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "addonsearchresult",
+  "originalFile": "nsAddonRepository.js",
+  "extracted": "2025-08-05T08:26:24.118Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

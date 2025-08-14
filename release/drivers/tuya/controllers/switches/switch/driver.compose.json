@@ -1,0 +1,57 @@
+{
+  "id": "switch",
+  "title": {
+    "en": "Switch",
+    "fr": "Switch",
+    "nl": "Switch",
+    "ta": "Switch"
+  },
+  "description": {
+    "en": "TUYA driver for switch from Tuya (Historical)",
+    "fr": "Driver TUYA pour switch de Tuya (Historique)",
+    "nl": "TUYA driver voor switch van Tuya (Historisch)",
+    "ta": "Tuya இலிருந்து switch க்கான TUYA டிரைவர் (வரலாற்று)"
+  },
+  "category": "controllers",
+  "protocol": "tuya",
+  "manufacturer": "Tuya",
+  "source": "README historique (master)",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:37.923Z",
+  "historical": {
+    "commitHash": "f989d92e",
+    "branch": "master",
+    "extractedFrom": "README historique"
+  },
+  "tuyaCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Tuya",
+    "model": "switch",
+    "firmware": "latest",
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl"
+    ]
+  },
+  "homeyCompatibility": {
+    "pro": true,
+    "bridge": true,
+    "cloud": false,
+    "minVersion": "5.0.0",
+    "maxVersion": "6.0.0"
+  }
+}
