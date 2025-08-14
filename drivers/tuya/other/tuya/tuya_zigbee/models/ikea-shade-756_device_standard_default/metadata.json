@@ -1,0 +1,20 @@
+{
+  "id": "ikea-shade-756_cover_standard",
+  "name": "ikea ikea-shade-756",
+  "category": "cover",
+  "vendor": "ikea",
+  "model": "ikea-shade-756",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:01.300Z",
+  "updatedAt": "2025-08-13T12:09:01.300Z"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "aqara-alarm-922_siren_standard",
+  "name": "aqara aqara-alarm-922",
+  "category": "siren",
+  "vendor": "aqara",
+  "model": "aqara-alarm-922",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:09.343Z",
+  "updatedAt": "2025-08-13T12:09:09.343Z"
+}

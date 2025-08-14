@@ -1,0 +1,13 @@
+{
+  "id": "light_ts0505b",
+  "name": "light ts0505b",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "0x0006"
+  ],
+  "endpoints": [
+    1
+  ]
+}

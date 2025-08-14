@@ -1,0 +1,20 @@
+{
+  "id": "tuya-wall-287_light_standard",
+  "name": "tuya tuya-wall-287",
+  "category": "light",
+  "vendor": "tuya",
+  "model": "tuya-wall-287",
+  "type": "tuya_zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:08:57.316Z",
+  "updatedAt": "2025-08-13T12:08:57.316Z"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "ts0505c_plug_standard_default",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/drivers/ts0505c_plug_standard_default/assets/images/small.png",
+    "large": "/drivers/ts0505c_plug_standard_default/assets/images/large.png"
+  },
+  "name": {
+    "en": "Device",
+    "fr": "Appareil"
+  }
+}

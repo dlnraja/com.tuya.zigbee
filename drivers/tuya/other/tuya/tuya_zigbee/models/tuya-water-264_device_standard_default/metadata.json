@@ -1,0 +1,20 @@
+{
+  "id": "tuya-water-264_plug_standard",
+  "name": "tuya tuya-water-264",
+  "category": "plug",
+  "vendor": "tuya",
+  "model": "tuya-water-264",
+  "type": "tuya_zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:00.394Z",
+  "updatedAt": "2025-08-13T12:09:00.394Z"
+}

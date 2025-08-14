@@ -1,0 +1,20 @@
+{
+  "id": "ikea-outlet-136_plug_standard",
+  "name": "ikea ikea-outlet-136",
+  "category": "plug",
+  "vendor": "ikea",
+  "model": "ikea-outlet-136",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:08.255Z",
+  "updatedAt": "2025-08-13T12:09:08.255Z"
+}

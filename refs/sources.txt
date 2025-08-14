@@ -1,4 +1,0 @@
-// Ajoute ici des URLs JSON de référentiels d'empreintes (une par ligne)
-// Actif uniquement si ALLOW_NET=1 (secret GitHub conseillé)
-// Format attendu : URLs pointant vers des fichiers JSON contenant des fingerprints
-// Exemple : https://api.github.com/repos/user/repo/contents/fingerprints.json

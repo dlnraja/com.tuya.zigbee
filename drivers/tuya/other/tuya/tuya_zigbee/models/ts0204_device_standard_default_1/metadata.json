@@ -1,0 +1,13 @@
+{
+  "id": "sensor_ts0204",
+  "name": "sensor ts0204",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "0x0006"
+  ],
+  "endpoints": [
+    1
+  ]
+}
