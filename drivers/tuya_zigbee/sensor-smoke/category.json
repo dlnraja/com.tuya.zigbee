@@ -1,0 +1,41 @@
+{
+  "category": "sensor-smoke",
+  "name": {
+    "en": "Smoke Sensors",
+    "fr": "Capteurs de Fumée",
+    "nl": "Rooksensoren",
+    "ta": "புகை சென்சார்கள்"
+  },
+  "description": {
+    "en": "Tuya Zigbee smoke sensors devices",
+    "fr": "Dispositifs capteurs de fumée Tuya Zigbee",
+    "nl": "Tuya Zigbee rooksensoren apparaten",
+    "ta": "துயா ஜிக்பீ புகை சென்சார்கள் சாதனங்கள்"
+  },
+  "version": "3.4.1",
+  "totalDrivers": 6,
+  "capabilities": [
+    "alarm_smoke",
+    "measure_temperature",
+    "measure_battery"
+  ],
+  "clusters": [
+    "0x0500",
+    "0x0402",
+    "0x0001",
+    "0x0000"
+  ],
+  "vendors": [
+    "tuya",
+    "aqara",
+    "ikea"
+  ],
+  "deviceTypes": [
+    "smoke_sensor",
+    "smoke_detector",
+    "fire_sensor",
+    "smoke_alarm"
+  ],
+  "status": "active",
+  "lastUpdate": "2025-08-14T17:38:42.423Z"
+}

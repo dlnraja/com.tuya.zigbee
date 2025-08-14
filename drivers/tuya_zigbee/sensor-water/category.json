@@ -1,0 +1,41 @@
+{
+  "category": "sensor-water",
+  "name": {
+    "en": "Water Sensors",
+    "fr": "Capteurs d'Eau",
+    "nl": "Watersensoren",
+    "ta": "தண்ணீர் சென்சார்கள்"
+  },
+  "description": {
+    "en": "Tuya Zigbee water sensors devices",
+    "fr": "Dispositifs capteurs d'eau Tuya Zigbee",
+    "nl": "Tuya Zigbee watersensoren apparaten",
+    "ta": "துயா ஜிக்பீ தண்ணீர் சென்சார்கள் சாதனங்கள்"
+  },
+  "version": "3.4.1",
+  "totalDrivers": 6,
+  "capabilities": [
+    "alarm_water",
+    "measure_temperature",
+    "measure_battery"
+  ],
+  "clusters": [
+    "0x0500",
+    "0x0402",
+    "0x0001",
+    "0x0000"
+  ],
+  "vendors": [
+    "tuya",
+    "aqara",
+    "ikea"
+  ],
+  "deviceTypes": [
+    "water_sensor",
+    "leak_detector",
+    "moisture_sensor",
+    "flood_sensor"
+  ],
+  "status": "active",
+  "lastUpdate": "2025-08-14T17:38:42.421Z"
+}

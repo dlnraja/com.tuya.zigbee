@@ -1,0 +1,37 @@
+{
+  "category": "switch",
+  "name": {
+    "en": "Tuya Switches",
+    "fr": "Interrupteurs Tuya",
+    "nl": "Tuya Schakelaars",
+    "ta": "துயா சுவிட்ச்கள்"
+  },
+  "description": {
+    "en": "Pure Tuya tuya switches (non-Zigbee)",
+    "fr": "interrupteurs tuya Tuya purs (non-Zigbee)",
+    "nl": "Pure Tuya tuya schakelaars (niet-Zigbee)",
+    "ta": "தூய துயா துயா சுவிட்ச்கள் (ஜிக்பீ அல்ல)"
+  },
+  "version": "3.4.1",
+  "totalDrivers": 0,
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power"
+  ],
+  "clusters": [
+    "0x0006",
+    "0x0B04",
+    "0x0702"
+  ],
+  "vendors": [
+    "tuya"
+  ],
+  "deviceTypes": [
+    "tuya_device",
+    "tuya_sensor",
+    "tuya_switch"
+  ],
+  "status": "active",
+  "lastUpdate": "2025-08-14T17:38:42.466Z"
+}

@@ -4,5 +4,12 @@
   "images": {
     "small": "/drivers/ts0505b_device_standard_default/assets/images/small.png",
     "large": "/drivers/ts0505b_device_standard_default/assets/images/large.png"
-  }
+  },
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature"
+  ]
 }
