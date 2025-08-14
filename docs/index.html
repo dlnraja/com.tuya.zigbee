@@ -1,285 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🏠 Universal Tuya Zigbee - Homey SDK3 Integration</title>
-    
-    <!-- Meta tags -->
-    <meta name="description" content="Comprehensive Tuya Zigbee device integration for Homey SDK3 with automated driver generation and multilingual support">
-    <meta name="keywords" content="Homey, Tuya, Zigbee, SDK3, automation, drivers, smart home">
-    <meta name="author" content="dlnraja">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="🏠 Universal Tuya Zigbee - Homey SDK3 Integration">
-    <meta property="og:description" content="Comprehensive Tuya Zigbee device integration for Homey SDK3">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://dlnraja.github.io/homey-tuya-zigbee/">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../assets/icon.svg">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Tuya Zigbee Dashboard v3.4.1</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="nav-brand">
-                <img src="../assets/icon.svg" alt="Logo" class="logo">
-                <span class="brand-text">Universal Tuya Zigbee</span>
-            </div>
-            
-            <div class="nav-controls">
-                <div class="language-selector">
-                    <select id="languageSelect" class="lang-select">
-                        <option value="en">🇺🇸 English</option>
-                        <option value="fr">🇫🇷 Français</option>
-                        <option value="nl">🇳🇱 Nederlands</option>
-                        <option value="ta">🇱🇰 தமிழ்</option>
-                    </select>
-                </div>
-                
-                <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </div>
-        </nav>
-        
-        <div class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title" data-i18n="hero.title">Universal Tuya Zigbee Integration</h1>
-                <p class="hero-subtitle" data-i18n="hero.subtitle">Comprehensive Homey SDK3 integration with automated driver generation and multilingual support</p>
-                
-                <div class="hero-buttons">
-                    <button class="btn btn-primary" data-i18n="hero.viewDrivers">View Drivers</button>
-                    <button class="btn btn-secondary" data-i18n="hero.viewStats">View Stats</button>
-                    <button class="btn btn-outline" data-i18n="hero.contribute">Contribute</button>
-                </div>
-            </div>
-        </div>
+    <header>
+        <h1>🚀 Tuya Zigbee Universal Dashboard</h1>
+        <p>Version 3.4.1 - 100+ Drivers Analysés et Implémentés</p>
     </header>
-
-    <!-- Main Content -->
-    <main class="main">
-        <!-- KPI Cards Section -->
-        <section class="kpi-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="kpi.title">Key Performance Indicators</h2>
-                
-                <div class="kpi-grid">
-                    <div class="kpi-card" data-metric="totalDrivers">
-                        <div class="kpi-icon">
-                            <i class="fas fa-microchip"></i>
-                        </div>
-                        <div class="kpi-content">
-                            <h3 class="kpi-title" data-i18n="kpi.totalDrivers">Total Drivers</h3>
-                            <div class="kpi-value" id="totalDrivers">0</div>
-                            <div class="kpi-trend positive">
-                                <i class="fas fa-arrow-up"></i>
-                                <span data-i18n="kpi.trend">Growing</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="kpi-card" data-metric="totalVendors">
-                        <div class="kpi-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <div class="kpi-content">
-                            <h3 class="kpi-title" data-i18n="kpi.totalVendors">Total Vendors</h3>
-                            <div class="kpi-value" id="totalVendors">0</div>
-                            <div class="kpi-trend positive">
-                                <i class="fas fa-arrow-up"></i>
-                                <span data-i18n="kpi.trend">Growing</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="kpi-card" data-metric="totalCategories">
-                        <div class="kpi-icon">
-                            <i class="fas fa-folder"></i>
-                        </div>
-                        <div class="kpi-content">
-                            <h3 class="kpi-title" data-i18n="kpi.totalCategories">Categories</h3>
-                            <div class="kpi-value" id="totalCategories">0</div>
-                            <div class="kpi-trend positive">
-                                <i class="fas fa-arrow-up"></i>
-                                <span data-i18n="kpi.trend">Growing</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="kpi-card" data-metric="assetsCompleteness">
-                        <div class="kpi-icon">
-                            <i class="fas fa-images"></i>
-                        </div>
-                        <div class="kpi-content">
-                            <h3 class="kpi-title" data-i18n="kpi.assetsCompleteness">Assets Complete</h3>
-                            <div class="kpi-value" id="assetsCompleteness">0%</div>
-                            <div class="kpi-trend positive">
-                                <i class="fas fa-arrow-up"></i>
-                                <span data-i18n="kpi.trend">Growing</span>
-                            </div>
-                        </div>
-                    </div>
+    
+    <main>
+        <section class="stats">
+            <h2>📊 Statistiques en Temps Réel</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Drivers</h3>
+                    <p class="stat-number" id="drivers-count">100+</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Capabilities</h3>
+                    <p class="stat-number" id="capabilities-count">20+</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Clusters ZCL</h3>
+                    <p class="stat-number" id="clusters-count">15+</p>
                 </div>
             </div>
         </section>
-
-        <!-- Sources Table Section -->
-        <section class="sources-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="sources.title">Integration Sources</h2>
-                
-                <div class="table-container">
-                    <table class="sources-table">
-                        <thead>
-                            <tr>
-                                <th data-i18n="sources.source">Source</th>
-                                <th data-i18n="sources.link">Link</th>
-                                <th data-i18n="sources.integration">% Integrated</th>
-                                <th data-i18n="sources.status">Status</th>
-                                <th data-i18n="sources.lastSync">Last Sync</th>
-                            </tr>
-                        </thead>
-                        <tbody id="sourcesTableBody">
-                            <!-- Populated by JavaScript -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- Drivers Section -->
-        <section class="drivers-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="drivers.title">Device Drivers</h2>
-                
-                <div class="drivers-controls">
-                    <div class="search-box">
-                        <input type="text" id="driverSearch" class="search-input" placeholder="Search drivers...">
-                        <i class="fas fa-search search-icon"></i>
-                    </div>
-                    
-                    <div class="filters">
-                        <select id="categoryFilter" class="filter-select">
-                            <option value="">All Categories</option>
-                        </select>
-                        
-                        <select id="vendorFilter" class="filter-select">
-                            <option value="">All Vendors</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="drivers-grid" id="driversGrid">
-                    <!-- Populated by JavaScript -->
-                </div>
-                
-                <div class="pagination" id="pagination">
-                    <!-- Populated by JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Charts Section -->
-        <section class="charts-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="charts.title">Statistics & Analytics</h2>
-                
-                <div class="charts-grid">
-                    <div class="chart-card">
-                        <h3 class="chart-title" data-i18n="charts.categories">Drivers by Category</h3>
-                        <div class="chart-container">
-                            <canvas id="categoryChart"></canvas>
-                        </div>
-                    </div>
-                    
-                    <div class="chart-card">
-                        <h3 class="chart-title" data-i18n="charts.vendors">Top Vendors</h3>
-                        <div class="chart-container">
-                            <canvas id="vendorChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Changelog Section -->
-        <section class="changelog-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="changelog.title">Changelog</h2>
-                
-                <div class="changelog-container" id="changelogContainer">
-                    <!-- Populated by JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Roadmap Section -->
-        <section class="roadmap-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="roadmap.title">Roadmap</h2>
-                
-                <div class="roadmap-timeline" id="roadmapTimeline">
-                    <!-- Populated by JavaScript -->
-                </div>
+        
+        <section class="drivers">
+            <h2>🚗 Drivers Implémentés</h2>
+            <div id="drivers-list" class="drivers-grid">
+                <!-- Rempli dynamiquement -->
             </div>
         </section>
     </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3 data-i18n="footer.project">Project</h3>
-                    <ul>
-                        <li><a href="https://github.com/dlnraja/homey-tuya-zigbee" target="_blank">GitHub Repository</a></li>
-                        <li><a href="https://community.homey.app/" target="_blank">Homey Community</a></li>
-                        <li><a href="https://developers.homey.app/" target="_blank">Homey Developer Docs</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3 data-i18n="footer.resources">Resources</h3>
-                    <ul>
-                        <li><a href="https://www.zigbee2mqtt.io/" target="_blank">Zigbee2MQTT</a></li>
-                        <li><a href="https://blakadder.com/zigbee/" target="_blank">Blakadder Database</a></li>
-                        <li><a href="https://developer.tuya.com/" target="_blank">Tuya Developer</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3 data-i18n="footer.license">License</h3>
-                    <p>MIT License</p>
-                    <p class="footer-credits">
-                        Made with ❤️ by the Homey Community
-                    </p>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Universal Tuya Zigbee Project. All rights reserved.</p>
-                <p class="last-update" data-i18n="footer.lastUpdate">Last updated: <span id="lastUpdateDate">Loading...</span></p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Loading Overlay -->
-    <div id="loadingOverlay" class="loading-overlay">
-        <div class="loading-spinner">
-            <i class="fas fa-spinner fa-spin"></i>
-            <p data-i18n="loading.message">Loading dashboard data...</p>
-        </div>
-    </div>
-
-    <!-- JavaScript -->
-    <script src="js/app.js" type="module"></script>
+    
+    <script src="script.js"></script>
 </body>
 </html>

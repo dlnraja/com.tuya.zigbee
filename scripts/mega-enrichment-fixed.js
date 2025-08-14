@@ -220,6 +220,119 @@ class MegaEnrichmentFixed {
     console.log(`✅ Generated sources.json for ${product}`);
   }
 
+  // Nouvelles méthodes basées sur l'analyse des archives Tuya
+  async generateTuyaSpecificFiles(productPath, product, vendor, category) {
+    console.log(`🔧 Génération des fichiers spécifiques Tuya pour ${product}`);
+    
+    // Génération du fichier manufacturer.json basé sur l'analyse
+    const manufacturerPath = path.join(productPath, 'manufacturer.json');
+    await this.generateManufacturerJson(manufacturerPath, product, vendor, category);
+    
+    // Génération du fichier dataPoints.json basé sur l'analyse
+    const dataPointsPath = path.join(productPath, 'dataPoints.json');
+    await this.generateDataPointsJson(dataPointsPath, product, vendor, category);
+  }
+
+  async generateManufacturerJson(filePath, product, vendor, category) {
+    const manufacturerData = {
+      version: "3.4.1",
+      generated: new Date().toISOString(),
+      product: product,
+      vendor: vendor,
+      category: category,
+      manufacturers: [
+        "_TZ3000_3ooaz3ng",
+        "_TZ3000_g5xawfcq",
+        "_TZ3000_vtscrpmw",
+        "_TZ3000_rdtixbnu",
+        "_TZ3000_8nkb7mof",
+        "_TZ3000_cphmq0q7",
+        "_TZ3000_ew3ldmgx",
+        "_TZ3000_dpo1ysak",
+        "_TZ3000_w0qqde0g",
+        "_TZ3000_mraovvmm"
+      ],
+      productIds: this.getProductIdsForCategory(category),
+      notes: "Manufacturers basés sur l'analyse des archives Tuya"
+    };
+    
+    await fs.writeJson(filePath, manufacturerData, { spaces: 2 });
+    console.log(`✅ Manufacturer JSON généré: ${filePath}`);
+  }
+
+  async generateDataPointsJson(filePath, product, vendor, category) {
+    const dataPointsData = {
+      version: "3.4.1",
+      generated: new Date().toISOString(),
+      product: product,
+      vendor: vendor,
+      category: category,
+      dataPoints: this.getDataPointsForCategory(category),
+      capabilities: this.getDefaultCapabilities(category),
+      clusters: this.getDefaultClusters(category),
+      notes: "Data Points basés sur l'analyse des archives Tuya"
+    };
+    
+    await fs.writeJson(filePath, dataPointsData, { spaces: 2 });
+    console.log(`✅ Data Points JSON généré: ${filePath}`);
+  }
+
+  getProductIdsForCategory(category) {
+    const productIdsMap = {
+      'switch': ['TS0121', 'TS011F', 'TS0601', 'TS0602', 'TS0603'],
+      'light': ['TS0501', 'TS0502', 'TS0503', 'TS0504', 'TS0505'],
+      'sensor': ['TS0201', 'TS0202', 'TS0203', 'TS0204', 'TS0205', 'TS0206', 'TS0207', 'TS0208'],
+      'plug': ['TS0121', 'TS011F', 'TS0601'],
+      'cover': ['TS0601', 'TS0602', 'TS0603'],
+      'thermostat': ['TS0602', 'TS0603'],
+      'default': ['TS0001', 'TS0002', 'TS0003']
+    };
+    
+    return productIdsMap[category] || productIdsMap.default;
+  }
+
+  getDataPointsForCategory(category) {
+    const dataPointsMap = {
+      'switch': {
+        "1": "On/Off",
+        "2": "Mode",
+        "3": "Brightness",
+        "8": "Child Lock"
+      },
+      'light': {
+        "1": "On/Off",
+        "2": "Mode",
+        "3": "Brightness",
+        "4": "Color Temperature",
+        "5": "Color",
+        "6": "Scene"
+      },
+      'sensor': {
+        "20": "Temperature",
+        "21": "Humidity",
+        "22": "Pressure",
+        "23": "Power",
+        "24": "Current",
+        "25": "Voltage"
+      },
+      'plug': {
+        "1": "On/Off",
+        "2": "Mode",
+        "23": "Power",
+        "24": "Current",
+        "25": "Voltage",
+        "26": "Energy"
+      },
+      'default': {
+        "1": "On/Off",
+        "2": "Mode",
+        "3": "Brightness"
+      }
+    };
+    
+    return dataPointsMap[category] || dataPointsMap.default;
+  }
+
   humanizeProductName(product) {
     return product
       .split('_')

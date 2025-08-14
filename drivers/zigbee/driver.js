@@ -1,8 +1,9 @@
-const { ZigBeeDevice } = require('homey-meshdriver');
+'use strict';
 
-class ZigbeeDriver extends ZigBeeDevice {
-  async onMeshInit() {
-    // Initialize device
+const { ZigBeeDriver } = require('homey-zigbeedriver');
+
+class ZigbeeDriver extends ZigBeeDriver {
+  async onNodeInit({ zclNode }) {
     this.log('zigbee driver initialized');
   }
 }
