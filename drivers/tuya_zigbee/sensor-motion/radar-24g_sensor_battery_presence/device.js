@@ -1,92 +1,104 @@
 'use strict';
 
-const { TuyaDevice } = require('homey-tuya');
+const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class Radar24GDevice extends TuyaDevice {
-  async onInit() {
-    this.log('Radar 24G device initialized');
+class Radar-24gSensorBatteryPresence extends ZigBeeDevice {
     
-    // Configuration des capabilities
-    this.registerCapabilityListener('alarm_motion', this.onMotionAlarm.bind(this));
-    
-    // Polling des données
-    this.pollInterval = setInterval(this.pollData.bind(this), 30000); // 30 secondes
-    
-    // Initialisation
-    await this.pollData();
-  }
-  
-  async onDeleted() {
-    if (this.pollInterval) {
-      clearInterval(this.pollInterval);
+    async onNodeInit({ zclNode, node }) {
+        await super.onNodeInit({ zclNode, node });
+        
+        // Mode heuristique : découverte automatique des fonctionnalités
+        await this.discoverDeviceCapabilities(zclNode);
+        
+        // Enregistrement des capacités avec fallback intelligent
+        await this.registerCapabilitiesIntelligently(zclNode);
     }
-  }
-  
-  async pollData() {
-    try {
-      const data = await this.getData();
-      
-      if (data) {
-        // Mise à jour de la luminosité avec fallback
-        await this.setCapabilityValue('measure_luminance', data.illuminance ?? 0);
-        
-        // Mise à jour de la distance avec limite (inspiré de HA quirks)
-        await this.setCapabilityValue('target_distance', Math.min(data.distance ?? 0, 12));
-        
-        // Mise à jour du mouvement avec debounce
-        if (data.motion !== undefined) {
-          if (data.motion !== this.getCapabilityValue('alarm_motion')) {
-            await this.setCapabilityValue('alarm_motion', data.motion);
-          }
+    
+    async discoverDeviceCapabilities(zclNode) {
+        try {
+            // Découverte automatique des clusters disponibles
+            const clusters = zclNode.clusters;
+            this.log('🔍 Clusters découverts:', Object.keys(clusters));
+            
+            // Découverte des attributs et commandes
+            for (const [clusterId, cluster] of Object.entries(clusters)) {
+                if (cluster.attributes) {
+                    this.log(`📊 Cluster ${clusterId} - Attributs:`, Object.keys(cluster.attributes));
+                }
+                if (cluster.commands) {
+                    this.log(`🎮 Cluster ${clusterId} - Commandes:`, Object.keys(cluster.commands));
+                }
+            }
+        } catch (error) {
+            this.log('⚠️ Erreur lors de la découverte des capacités:', error.message);
         }
-        
-        // Ajout sensitivity et illuminance lux (data points from HA)
-        if (data.sensitivity) this.setSetting('sensitivity', data.sensitivity);
-        if (data.illuminance_lux) await this.setCapabilityValue('measure_luminance', data.illuminance_lux);
-      }
-    } catch (error) {
-      this.log('Error polling data (HA-inspired quirk):', error);
-      // Fallback: Reset to defaults
-      await this.setCapabilityValue('alarm_motion', false);
     }
-  }
-  
-  async onMotionAlarm(value) {
-    try {
-      // Activation/désactivation de l'alarme de mouvement
-      await this.setData({ motion: value });
-      this.log(`Motion alarm ${value ? 'activated' : 'deactivated'}`);
-    } catch (error) {
-      this.log('Error setting motion alarm:', error);
+    
+    async registerCapabilitiesIntelligently(zclNode) {
+        try {
+            // Enregistrement intelligent des capacités selon la catégorie
+            const fallback = this.genericFallbacks.get('sensor-motion') || this.genericFallbacks.get('light');
+            
+            for (const capability of fallback.capabilities) {
+                try {
+                    await this.registerCapability(capability, capability, {
+                        get: 'get',
+                        set: capability.startsWith('measure_') ? false : 'set',
+                        report: 'report'
+                    });
+                    this.log(`✅ Capacité ${capability} enregistrée`);
+                } catch (error) {
+                    this.log(`⚠️ Impossible d'enregistrer la capacité ${capability}:`, error.message);
+                }
+            }
+            
+            // Configuration du reporting Zigbee
+            await this.configureZigbeeReporting(zclNode);
+            
+        } catch (error) {
+            this.log('❌ Erreur lors de l'enregistrement des capacités:', error.message);
+        }
     }
-  }
-  
-  async getData() {
-    try {
-      // Simulation des données du capteur radar 24G
-      // En production, ces données viendraient du protocole Tuya
-      return {
-        illuminance: Math.random() * 1000, // 0-1000 lux
-        distance: Math.random() * 12,      // 0-12 mètres
-        motion: Math.random() > 0.5        // Mouvement détecté ou non
-      };
-    } catch (error) {
-      this.log('Error getting data:', error);
-      return null;
+    
+    async configureZigbeeReporting(zclNode) {
+        try {
+            // Configuration intelligente du reporting selon les clusters disponibles
+            const clusters = zclNode.clusters;
+            
+            if (clusters.genBasic) {
+                await zclNode.endpoints[1].clusters.genBasic.read('zclVersion');
+            }
+            
+            if (clusters.genOnOff) {
+                await zclNode.endpoints[1].clusters.genOnOff.read('onOff');
+            }
+            
+            if (clusters.genLevelCtrl) {
+                await zclNode.endpoints[1].clusters.genLevelCtrl.read('currentLevel');
+            }
+            
+            this.log('📡 Reporting Zigbee configuré');
+            
+        } catch (error) {
+            this.log('⚠️ Erreur lors de la configuration du reporting:', error.message);
+        }
     }
-  }
-  
-  async setData(data) {
-    try {
-      // Envoi des commandes au capteur
-      // En production, utilisation du protocole Tuya
-      this.log('Setting data:', data);
-      return true;
-    } catch (error) {
-      this.log('Error setting data:', error);
-      return false;
+    
+    // Méthodes de fallback pour la compatibilité firmware
+    async onSettings(oldSettings, newSettings, changedKeys) {
+        this.log('⚙️ Paramètres mis à jour:', changedKeys);
+        return super.onSettings(oldSettings, newSettings, changedKeys);
     }
-  }
+    
+    async onRenamed(name) {
+        this.log('🏷️ Appareil renommé:', name);
+        return super.onRenamed(name);
+    }
+    
+    async onDeleted() {
+        this.log('🗑️ Appareil supprimé');
+        return super.onDeleted();
+    }
 }
 
-module.exports = Radar24GDevice;
+module.exports = Radar-24gSensorBatteryPresence;

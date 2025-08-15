@@ -1,13 +1,50 @@
 {
-  "id": "ts110f_device_standard_default",
-  "name": "dimmer ts110f",
-  "images": {
-    "small": "/drivers/ts110f_device_standard_default/assets/images/small.png",
-    "large": "/drivers/ts110f_device_standard_default/assets/images/large.png"
-  },
+  "class": "ZigBeeDevice",
   "capabilities": [
     "onoff",
-    "dim"
+    "dim",
+    "light_temperature",
+    "light_mode"
   ],
-  "capabilitiesOptions": {}
+  "capabilitiesOptions": {
+    "onoff": {
+      "set": true,
+      "get": true
+    },
+    "dim": {
+      "set": true,
+      "get": true
+    },
+    "light_temperature": {
+      "set": true,
+      "get": true
+    },
+    "light_mode": {
+      "set": true,
+      "get": true
+    }
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
+  "icon": "assets/icon.svg",
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "ts110f",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genBasic",
+          "genOnOff",
+          "genLevelCtrl"
+        ],
+        "bindings": [
+          "genOnOff",
+          "genLevelCtrl"
+        ]
+      }
+    }
+  }
 }
