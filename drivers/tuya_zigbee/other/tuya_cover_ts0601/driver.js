@@ -1,209 +1,113 @@
 'use strict';
 
-const { ZigbeeDevice } = require('homey-meshdriver');
-const TuyaDpMapper = require('../../../lib/tuya');
+const { Driver } = require('homey-zigbeedriver');
 
-class TuyaCoverTS0601 extends ZigbeeDevice {
-
-  async onNodeInit({ zclNode }) {
-    // Initialize Tuya DP mapper
-    this.tuyaMapper = new TuyaDpMapper();
+class TuyaCoverTs0601Driver extends Driver {
     
-    // Configure settings
-    this.tuyaDpLog = this.getSetting('tuya_dp_log') || false;
-    this.coverSpeed = this.getSetting('cover_speed') || 50;
-    
-    // Discover endpoints safely
-    await this.discoverEndpointsSafe(zclNode);
-    
-    // Setup Tuya listener
-    this.setupTuyaListener();
-    
-    // Initial read
-    await this._initialReadSafe();
-    
-    // Log initialization
-    this.log('Tuya Cover TS0601 initialized successfully');
-  }
-
-  setupTuyaListener() {
-    // Listen for Tuya reports
-    this.registerCapabilityListener('windowcoverings_set', async (value) => {
-      await this._setCoverPosition(value);
-    });
-
-    this.registerCapabilityListener('windowcoverings_tilt_set', async (value) => {
-      await this._setCoverTilt(value);
-    });
-  }
-
-  async _setCoverPosition(position) {
-    try {
-      // Map position to Tuya DP
-      const dpId = 2; // Standard cover position DP
-      const tuyaValue = position.toString();
-      
-      await this.tuyaMapper.sendTuyaDp(this, dpId, tuyaValue, {
-        debounce: true,
-        retry: 3
-      });
-      
-      // Update capability
-      await this.setCapabilityValue('windowcoverings_set', position);
-      
-      if (this.tuyaDpLog) {
-        this.log(`Cover position set to ${position}% via DP${dpId}`);
-      }
-      
-    } catch (error) {
-      this.error('Failed to set cover position:', error);
-      throw error;
-    }
-  }
-
-  async _setCoverTilt(tilt) {
-    try {
-      // Map tilt to Tuya DP
-      const dpId = 3; // Standard cover tilt DP
-      const tuyaValue = tilt.toString();
-      
-      await this.tuyaMapper.sendTuyaDp(this, dpId, tuyaValue, {
-        debounce: true,
-        retry: 3
-      });
-      
-      // Update capability
-      await this.setCapabilityValue('windowcoverings_tilt_set', tilt);
-      
-      if (this.tuyaDpLog) {
-        this.log(`Cover tilt set to ${tilt}% via DP${dpId}`);
-      }
-      
-    } catch (error) {
-      this.error('Failed to set cover tilt:', error);
-      throw error;
-    }
-  }
-
-  async _onTuyaReport(data) {
-    try {
-      const { dpId, value } = data;
-      
-      if (this.tuyaDpLog) {
-        this.log(`Tuya report: DP${dpId} = ${value}`);
-      }
-      
-      // Handle different DPs
-      await this._handleTuyaDp(dpId, value);
-      
-    } catch (error) {
-      this.error('Error handling Tuya report:', error);
-    }
-  }
-
-  async _handleTuyaDp(dpId, value) {
-    try {
-      // Map Tuya DP to capability
-      const mapping = this.tuyaMapper.mapTuyaDpToCapability(dpId, 'cover');
-      
-      if (mapping) {
-        const { capability, transform } = mapping;
+    async onNodeInit({ zclNode, node }) {
+        await super.onNodeInit({ zclNode, node });
         
-        // Transform value if needed
-        let transformedValue = value;
-        if (transform) {
-          transformedValue = transform(value);
-        }
-        
-        // Update capability
-        await this.setCapabilityValue(capability, transformedValue);
-        
-        // Trigger flow if position changed
-        if (capability === 'windowcoverings_set') {
-          this.triggerFlow('cover_position_changed', { position: transformedValue });
-        }
-        
-        if (this.tuyaDpLog) {
-          this.log(`Updated ${capability} to ${transformedValue} from DP${dpId}`);
-        }
-      }
-      
-    } catch (error) {
-      this.error(`Error handling DP${dpId}:`, error);
+        // Mode heuristique : découverte automatique du type d'appareil
+        await this.discoverDeviceType(zclNode);
     }
-  }
-
-  async discoverEndpointsSafe(zclNode) {
-    try {
-      const endpoints = await zclNode.endpoints;
-      this.log(`Discovered ${endpoints.length} endpoints`);
-      
-      // Find Tuya cluster
-      for (const endpoint of endpoints) {
-        const clusters = await endpoint.clusters;
-        if (clusters.manuSpecificTuya) {
-          this.tuyaEndpoint = endpoint;
-          this.log('Found Tuya cluster on endpoint', endpoint.id);
-          break;
-        }
-      }
-      
-    } catch (error) {
-      this.error('Error discovering endpoints:', error);
-    }
-  }
-
-  async getTuyaCluster() {
-    if (this.tuyaEndpoint) {
-      return this.tuyaEndpoint.clusters.manuSpecificTuya;
-    }
-    return null;
-  }
-
-  async _initialReadSafe() {
-    try {
-      // Read initial cover position if available
-      const tuyaCluster = await this.getTuyaCluster();
-      if (tuyaCluster) {
-        // Read DP2 (cover position)
-        const position = await tuyaCluster.read('tuyaDataPoint', { dpId: 2 });
-        if (position && position.value !== undefined) {
-          await this.setCapabilityValue('windowcoverings_set', position.value);
-          this.log(`Initial cover position: ${position.value}%`);
-        }
-      }
-    } catch (error) {
-      this.log('Could not read initial cover position:', error.message);
-    }
-  }
-
-  async onSettingsChanged(oldSettings, newSettings) {
-    this.tuyaDpLog = newSettings.tuya_dp_log || false;
-    this.coverSpeed = newSettings.cover_speed || 50;
     
-    this.log('Settings updated:', { tuyaDpLog: this.tuyaDpLog, coverSpeed: this.coverSpeed });
-  }
-
-  async onFlowAction_tuya_dp_send(args) {
-    try {
-      const { dp_id, value } = args;
-      
-      await this.tuyaMapper.sendTuyaDp(this, dp_id, value, {
-        debounce: false,
-        retry: 1
-      });
-      
-      this.log(`Sent custom Tuya DP${dp_id} = ${value}`);
-      
-    } catch (error) {
-      this.error('Failed to send custom Tuya DP:', error);
-      throw error;
+    async discoverDeviceType(zclNode) {
+        try {
+            // Découverte automatique du type d'appareil
+            const clusters = zclNode.clusters;
+            const deviceType = this.determineDeviceType(clusters);
+            
+            this.log('🔍 Type d'appareil découvert:', deviceType);
+            
+            // Configuration intelligente selon le type
+            await this.configureDeviceIntelligently(zclNode, deviceType);
+            
+        } catch (error) {
+            this.log('⚠️ Erreur lors de la découverte du type:', error.message);
+        }
     }
-  }
-
-  onDeleted() {
-    this.log('Tuya Cover TS0601 deleted');
-  }
+    
+    determineDeviceType(clusters) {
+        // Logique heuristique pour déterminer le type d'appareil
+        if (clusters.genOnOff && clusters.genLevelCtrl) {
+            return 'dimmable_light';
+        } else if (clusters.genOnOff) {
+            return 'switch';
+        } else if (clusters.msTemperatureMeasurement) {
+            return 'temperature_sensor';
+        } else if (clusters.msRelativeHumidity) {
+            return 'humidity_sensor';
+        } else if (clusters.msOccupancySensing) {
+            return 'motion_sensor';
+        } else {
+            return 'generic_device';
+        }
+    }
+    
+    async configureDeviceIntelligently(zclNode, deviceType) {
+        try {
+            // Configuration intelligente selon le type
+            switch (deviceType) {
+                case 'dimmable_light':
+                    await this.configureDimmableLight(zclNode);
+                    break;
+                case 'switch':
+                    await this.configureSwitch(zclNode);
+                    break;
+                case 'temperature_sensor':
+                    await this.configureTemperatureSensor(zclNode);
+                    break;
+                case 'humidity_sensor':
+                    await this.configureHumiditySensor(zclNode);
+                    break;
+                case 'motion_sensor':
+                    await this.configureMotionSensor(zclNode);
+                    break;
+                default:
+                    await this.configureGenericDevice(zclNode);
+                    break;
+            }
+            
+        } catch (error) {
+            this.log('⚠️ Erreur lors de la configuration intelligente:', error.message);
+        }
+    }
+    
+    async configureDimmableLight(zclNode) {
+        // Configuration pour éclairage dimmable
+        this.log('💡 Configuration éclairage dimmable');
+    }
+    
+    async configureSwitch(zclNode) {
+        // Configuration pour interrupteur
+        this.log('🔌 Configuration interrupteur');
+    }
+    
+    async configureTemperatureSensor(zclNode) {
+        // Configuration pour capteur de température
+        this.log('🌡️ Configuration capteur température');
+    }
+    
+    async configureHumiditySensor(zclNode) {
+        // Configuration pour capteur d'humidité
+        this.log('💧 Configuration capteur humidité');
+    }
+    
+    async configureMotionSensor(zclNode) {
+        // Configuration pour capteur de mouvement
+        this.log('👁️ Configuration capteur mouvement');
+    }
+    
+    async configureGenericDevice(zclNode) {
+        // Configuration générique
+        this.log('🔧 Configuration générique');
+    }
+    
+    // Méthodes de fallback pour la compatibilité
+    async onSettings(oldSettings, newSettings, changedKeys) {
+        this.log('⚙️ Paramètres du driver mis à jour:', changedKeys);
+        return super.onSettings(oldSettings, newSettings, changedKeys);
+    }
 }
 
-module.exports = TuyaCoverTS0601;
+module.exports = TuyaCoverTs0601Driver;

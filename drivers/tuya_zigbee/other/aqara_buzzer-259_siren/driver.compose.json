@@ -1,13 +1,50 @@
 {
-  "id": "aqara-buzzer-259_siren_standard_default",
-  "name": "drivers-backup-2025-08-13T12-14-20-255Z aqara-buzzer-259 siren standard models standard default",
-  "images": {
-    "small": "/drivers/aqara-buzzer-259_siren_standard_default/assets/images/small.png",
-    "large": "/drivers/aqara-buzzer-259_siren_standard_default/assets/images/large.png"
-  },
+  "class": "ZigBeeDevice",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "dim",
+    "light_temperature",
+    "light_mode"
   ],
-  "capabilitiesOptions": {},
-  "icon": "assets/icon.svg"
+  "capabilitiesOptions": {
+    "onoff": {
+      "set": true,
+      "get": true
+    },
+    "dim": {
+      "set": true,
+      "get": true
+    },
+    "light_temperature": {
+      "set": true,
+      "get": true
+    },
+    "light_mode": {
+      "set": true,
+      "get": true
+    }
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
+  "icon": "assets/icon.svg",
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "aqara_buzzer-259_siren",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genBasic",
+          "genOnOff",
+          "genLevelCtrl"
+        ],
+        "bindings": [
+          "genOnOff",
+          "genLevelCtrl"
+        ]
+      }
+    }
+  }
 }

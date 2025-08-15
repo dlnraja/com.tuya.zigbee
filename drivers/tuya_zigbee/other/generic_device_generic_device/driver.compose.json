@@ -1,13 +1,50 @@
 {
-  "id": "generic_device_generic_device",
-  "name": "drivers-backup-2025-08-13T12-08-28-817Z generic models standard default",
-  "images": {
-    "small": "/drivers/generic_device_generic_device/assets/images/small.png",
-    "large": "/drivers/generic_device_generic_device/assets/images/large.png"
-  },
+  "class": "ZigBeeDevice",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "dim",
+    "light_temperature",
+    "light_mode"
   ],
-  "capabilitiesOptions": {},
-  "icon": "assets/icon.svg"
+  "capabilitiesOptions": {
+    "onoff": {
+      "set": true,
+      "get": true
+    },
+    "dim": {
+      "set": true,
+      "get": true
+    },
+    "light_temperature": {
+      "set": true,
+      "get": true
+    },
+    "light_mode": {
+      "set": true,
+      "get": true
+    }
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
+  "icon": "assets/icon.svg",
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "generic_device_generic_device",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genBasic",
+          "genOnOff",
+          "genLevelCtrl"
+        ],
+        "bindings": [
+          "genOnOff",
+          "genLevelCtrl"
+        ]
+      }
+    }
+  }
 }
