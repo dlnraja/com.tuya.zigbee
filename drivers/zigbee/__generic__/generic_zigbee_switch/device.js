@@ -1,6 +1,7 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const attachZBVerbose = require('../../..//lib/zb-verbose');
 
 class generic_zigbee_switchDevice extends ZigBeeDevice {
   async onNodeInit({ zclNode, node }) {
