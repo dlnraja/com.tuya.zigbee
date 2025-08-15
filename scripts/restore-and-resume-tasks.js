@@ -34,7 +34,7 @@ const SOURCES_TO_SCAN = [
 ];
 
 function log(message) {
-  console.log(`[${new Date().toISOString()}] ${message}`);
+  this.log(`[${new Date().toISOString()}] ${message}`);
 }
 
 function runCommand(command, description) {

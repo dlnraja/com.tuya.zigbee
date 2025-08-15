@@ -569,5 +569,11 @@
       "TS0601_vibration",
       "ts0601_vibration"
     ]
+  },
+  "capabilitiesOptions": {},
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
   }
 }

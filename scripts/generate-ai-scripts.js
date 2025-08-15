@@ -106,7 +106,7 @@ const AI_SCRIPTS = {
 
 // Fonction principale
 async function generateAIScripts() {
-  console.log('🚀 Début de la génération des scripts AI manquants...');
+  this.log('🚀 Début de la génération des scripts AI manquants...');
   
   try {
     // 1. Vérifier le dossier scripts
@@ -118,7 +118,7 @@ async function generateAIScripts() {
     // 3. Créer un index des scripts
     await createScriptsIndex();
     
-    console.log('✅ Génération des scripts AI terminée!');
+    this.log('✅ Génération des scripts AI terminée!');
     
   } catch (error) {
     console.error('❌ Erreur lors de la génération:', error.message);
@@ -130,13 +130,13 @@ async function generateAIScripts() {
 async function ensureScriptsDirectory() {
   if (!fs.existsSync(SCRIPTS_DIR)) {
     fs.mkdirSync(SCRIPTS_DIR, { recursive: true });
-    console.log(`📁 Dossier créé: ${SCRIPTS_DIR}/`);
+    this.log(`📁 Dossier créé: ${SCRIPTS_DIR}/`);
   }
 }
 
 // Générer tous les scripts AI
 async function generateAllAIScripts() {
-  console.log('🔧 Génération des scripts AI...');
+  this.log('🔧 Génération des scripts AI...');
   
   let created = 0;
   let skipped = 0;
@@ -145,7 +145,7 @@ async function generateAllAIScripts() {
     const filepath = path.join(SCRIPTS_DIR, filename);
     
     if (fs.existsSync(filepath)) {
-      console.log(`⏭️ Script existant: ${filename}`);
+      this.log(`⏭️ Script existant: ${filename}`);
       skipped++;
       continue;
     }
@@ -153,13 +153,13 @@ async function generateAllAIScripts() {
     try {
       await generateAIScript(filename, config);
       created++;
-      console.log(`✅ Script créé: ${filename}`);
+      this.log(`✅ Script créé: ${filename}`);
     } catch (error) {
-      console.log(`⚠️ Erreur création ${filename}:`, error.message);
+      this.log(`⚠️ Erreur création ${filename}:`, error.message);
     }
   }
   
-  console.log(`📊 Résumé: ${created} créés, ${skipped} ignorés`);
+  this.log(`📊 Résumé: ${created} créés, ${skipped} ignorés`);
 }
 
 // Générer un script AI spécifique
@@ -198,13 +198,13 @@ const PRIORITY = '${priority}';
 
 // Fonction principale
 async function ${scriptName.replace(/[^a-zA-Z0-9]/g, '_')}() {
-  console.log(\`🚀 Début de l'exécution de ${scriptName}...\`);
-  console.log(\`📊 Catégorie: ${category}\`);
-  console.log(\`🎯 Priorité: ${priority}\`);
+  this.log(\`🚀 Début de l'exécution de ${scriptName}...\`);
+  this.log(\`📊 Catégorie: ${category}\`);
+  this.log(\`🎯 Priorité: ${priority}\`);
   
   try {
     // TODO: Implémenter la logique spécifique à ce script
-    console.log('📝 Logique à implémenter selon les besoins spécifiques');
+    this.log('📝 Logique à implémenter selon les besoins spécifiques');
     
     // Exemple de logique selon la catégorie
     switch (CATEGORY) {
@@ -245,10 +245,10 @@ async function ${scriptName.replace(/[^a-zA-Z0-9]/g, '_')}() {
         await handleAnalyticsLogic();
         break;
       default:
-        console.log('⚠️ Catégorie non reconnue, logique générique');
+        this.log('⚠️ Catégorie non reconnue, logique générique');
     }
     
-    console.log(\`✅ ${scriptName} exécuté avec succès\`);
+    this.log(\`✅ ${scriptName} exécuté avec succès\`);
     
   } catch (error) {
     console.error(\`❌ Erreur lors de l'exécution de ${scriptName}:\`, error.message);
@@ -258,62 +258,62 @@ async function ${scriptName.replace(/[^a-zA-Z0-9]/g, '_')}() {
 
 // Gestionnaires de logique par catégorie
 async function handlePipelineLogic() {
-  console.log('🔧 Logique de pipeline à implémenter');
+  this.log('🔧 Logique de pipeline à implémenter');
   // TODO: Optimisation des pipelines, gestion des étapes
 }
 
 async function handleAnalysisLogic() {
-  console.log('🔍 Logique d\'analyse à implémenter');
+  this.log('🔍 Logique d\'analyse à implémenter');
   // TODO: Analyse des drivers, détection des patterns
 }
 
 async function handleMonitoringLogic() {
-  console.log('📊 Logique de monitoring à implémenter');
+  this.log('📊 Logique de monitoring à implémenter');
   // TODO: Surveillance des performances, métriques
 }
 
 async function handleIntegrationLogic() {
-  console.log('🔗 Logique d\'intégration à implémenter');
+  this.log('🔗 Logique d\'intégration à implémenter');
   // TODO: Intégration des sources externes
 }
 
 async function handleValidationLogic() {
-  console.log('✅ Logique de validation à implémenter');
+  this.log('✅ Logique de validation à implémenter');
   // TODO: Validation des données, vérification de cohérence
 }
 
 async function handleReportingLogic() {
-  console.log('📋 Logique de reporting à implémenter');
+  this.log('📋 Logique de reporting à implémenter');
   // TODO: Génération de rapports, export de données
 }
 
 async function handleCacheLogic() {
-  console.log('💾 Logique de cache à implémenter');
+  this.log('💾 Logique de cache à implémenter');
   // TODO: Gestion du cache, optimisation mémoire
 }
 
 async function handleDiagnosticsLogic() {
-  console.log('🏥 Logique de diagnostics à implémenter');
+  this.log('🏥 Logique de diagnostics à implémenter');
   // TODO: Diagnostic des problèmes, santé du système
 }
 
 async function handleSecurityLogic() {
-  console.log('🔒 Logique de sécurité à implémenter');
+  this.log('🔒 Logique de sécurité à implémenter');
   // TODO: Correction des vulnérabilités, sécurité
 }
 
 async function handlePerformanceLogic() {
-  console.log('⚡ Logique de performance à implémenter');
+  this.log('⚡ Logique de performance à implémenter');
   // TODO: Optimisation des performances, rate limiting
 }
 
 async function handleUILogic() {
-  console.log('🎨 Logique d\'interface à implémenter');
+  this.log('🎨 Logique d\'interface à implémenter');
   // TODO: Amélioration du dashboard, interface utilisateur
 }
 
 async function handleAnalyticsLogic() {
-  console.log('📈 Logique d\'analytics à implémenter');
+  this.log('📈 Logique d\'analytics à implémenter');
   // TODO: Analyse des statistiques, détection d\'anomalies
 }
 
@@ -328,7 +328,7 @@ module.exports = { ${scriptName.replace(/[^a-zA-Z0-9]/g, '_')} };
 
 // Créer un index des scripts
 async function createScriptsIndex() {
-  console.log('📋 Création de l\'index des scripts...');
+  this.log('📋 Création de l\'index des scripts...');
   
   const indexPath = path.join(SCRIPTS_DIR, 'ai-scripts-index.json');
   
@@ -363,7 +363,7 @@ async function createScriptsIndex() {
   
   // Sauvegarder l'index
   fs.writeFileSync(indexPath, JSON.stringify(index, null, 2), 'utf8');
-  console.log('📄 Index des scripts créé');
+  this.log('📄 Index des scripts créé');
 }
 
 // Exécution si appelé directement

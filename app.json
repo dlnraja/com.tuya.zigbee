@@ -25,9 +25,7 @@
     "name": "Tuya Community",
     "email": "support@tuya.com"
   },
-  "contributors": {
-    "Johan Benz": "johan@homey.app"
-  },
+
   "homepage": "https://github.com/tuya-community/homey-tuya-zigbee",
   "bugs": {
     "url": "https://github.com/tuya-community/homey-tuya-zigbee/issues"
@@ -69,7 +67,6 @@
   },
   "permissions": [
     "homey:manager:api",
-    "homey:manager:drivers",
     "homey:manager:flow",
     "homey:manager:geolocation",
     "homey:manager:ledring",
@@ -78,8 +75,7 @@
     "homey:manager:speech-output",
     "homey:manager:speech-input",
     "homey:manager:storage",
-    "homey:manager:util",
-    "homey:manager:z-wave"
+    "homey:manager:util"
   ],
   "drivers": [
     {

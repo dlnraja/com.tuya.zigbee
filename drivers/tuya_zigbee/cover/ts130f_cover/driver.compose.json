@@ -710,5 +710,11 @@
         "fr": "Si la calibration native échoue, ce temps sert de secours basé sur la durée."
       }
     }
-  ]
+  ],
+  "capabilitiesOptions": {},
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  }
 }

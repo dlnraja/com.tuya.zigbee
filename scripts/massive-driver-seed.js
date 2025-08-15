@@ -166,7 +166,7 @@ module.exports = Device;`;
 }
 
 function generateMassiveDrivers() {
-    console.log('🚀 === GÉNÉRATION MASSIVE DE DRIVERS ===');
+    this.log('🚀 === GÉNÉRATION MASSIVE DE DRIVERS ===');
     
     let totalGenerated = 0;
     const generated = [];
@@ -235,8 +235,8 @@ function generateMassiveDrivers() {
         }
     }
     
-    console.log(`✅ ${totalGenerated} drivers générés avec succès`);
-    console.log('');
+    this.log(`✅ ${totalGenerated} drivers générés avec succès`);
+    this.log('');
     
     // Sauvegarder la liste des drivers générés
     const generatedList = path.join(ROOT, 'generated-drivers-list.json');
@@ -246,7 +246,7 @@ function generateMassiveDrivers() {
         drivers: generated
     }, null, 2));
     
-    console.log(`📄 Liste des drivers sauvegardée: ${generatedList}`);
+    this.log(`📄 Liste des drivers sauvegardée: ${generatedList}`);
     return { totalGenerated, generated };
 }
 
@@ -281,20 +281,20 @@ function main() {
         // Générer les drivers
         const result = generateMassiveDrivers();
         
-        console.log('🎉 === GÉNÉRATION TERMINÉE ===');
-        console.log(`📊 Total drivers générés: ${result.totalGenerated}`);
-        console.log(`📁 Dossier drivers: ${path.relative(ROOT, DRV)}`);
+        this.log('🎉 === GÉNÉRATION TERMINÉE ===');
+        this.log(`📊 Total drivers générés: ${result.totalGenerated}`);
+        this.log(`📁 Dossier drivers: ${path.relative(ROOT, DRV)}`);
         
         // Commit des changements
         try {
-            console.log('');
-            console.log('💾 Commit des changements...');
+            this.log('');
+            this.log('💾 Commit des changements...');
             spawnSync('git', ['add', 'drivers/'], { stdio: 'inherit', shell: true });
             spawnSync('git', ['add', 'generated-drivers-list.json'], { stdio: 'inherit', shell: true });
             spawnSync('git', ['commit', '-m', `feat: génération massive de ${result.totalGenerated} drivers`], { stdio: 'inherit', shell: true });
-            console.log('✅ Changements commités');
+            this.log('✅ Changements commités');
         } catch (err) {
-            console.log('⚠️ Commit échoué (peut-être pas de repo Git)');
+            this.log('⚠️ Commit échoué (peut-être pas de repo Git)');
         }
         
     } catch (error) {

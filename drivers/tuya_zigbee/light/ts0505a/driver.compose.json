@@ -10,5 +10,11 @@
     "dim",
     "light_hue",
     "light_saturation"
-  ]
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "min": 0,
+      "max": 100
+    }
+  }
 }

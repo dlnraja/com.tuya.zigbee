@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-console.log('🧹 NETTOYAGE COMPLET DES FICHIERS TEMPORAIRES ET DOCS v3.4.1...');
+this.log('🧹 NETTOYAGE COMPLET DES FICHIERS TEMPORAIRES ET DOCS v3.4.1...');
 
 const fs = require('fs-extra');
 const path = require('path');
@@ -45,7 +45,7 @@ async function cleanupTemporaryFiles() {
       'CONTRIBUTING.md'
     ];
     
-    console.log('🧹 Nettoyage des fichiers temporaires...');
+    this.log('🧹 Nettoyage des fichiers temporaires...');
     
     let cleanedCount = 0;
     let movedCount = 0;
@@ -61,12 +61,12 @@ async function cleanupTemporaryFiles() {
           if (tempFile.includes('.json') || tempFile.includes('.md') || tempFile.includes('.txt')) {
             const targetPath = path.join(projectRoot, 'backups', tempFile);
             await fs.move(filePath, targetPath);
-            console.log(`📁 Déplacé: ${tempFile} -> backups/`);
+            this.log(`📁 Déplacé: ${tempFile} -> backups/`);
             movedCount++;
           } else {
             // Supprimer les fichiers vraiment temporaires
             await fs.remove(filePath);
-            console.log(`🗑️ Supprimé: ${tempFile}`);
+            this.log(`🗑️ Supprimé: ${tempFile}`);
             cleanedCount++;
           }
         }
@@ -86,12 +86,12 @@ async function cleanupTemporaryFiles() {
       if (await fs.pathExists(dirPath)) {
         const targetPath = path.join(projectRoot, 'backups', tempDir);
         await fs.move(dirPath, targetPath);
-        console.log(`📁 Déplacé: ${tempDir} -> backups/`);
+        this.log(`📁 Déplacé: ${tempDir} -> backups/`);
         movedCount++;
       }
     }
     
-    console.log('📄 Recherche et rangement de tous les fichiers backup, txt et md...');
+    this.log('📄 Recherche et rangement de tous les fichiers backup, txt et md...');
     
     // Rechercher et ranger tous les fichiers restants
     const remainingFiles = await findRemainingFiles(projectRoot);
@@ -103,13 +103,13 @@ async function cleanupTemporaryFiles() {
       await fs.ensureDir(targetDir);
       await fs.move(fileInfo.fullPath, targetPath);
       
-      console.log(`📁 Déplacé: ${fileInfo.name} -> backups/${fileInfo.category}/`);
+      this.log(`📁 Déplacé: ${fileInfo.name} -> backups/${fileInfo.category}/`);
       movedCount++;
     }
     
-    console.log('\n✅ NETTOYAGE COMPLET TERMINÉ !');
-    console.log(`🗑️ Fichiers supprimés: ${cleanedCount}`);
-    console.log(`📁 Fichiers déplacés: ${movedCount}`);
+    this.log('\n✅ NETTOYAGE COMPLET TERMINÉ !');
+    this.log(`🗑️ Fichiers supprimés: ${cleanedCount}`);
+    this.log(`📁 Fichiers déplacés: ${movedCount}`);
     
     // Mettre à jour le .gitignore
     await updateGitignore();
@@ -250,7 +250,7 @@ SCRIPTS_*.md
     
     if (!currentContent.includes('# Fichiers temporaires et de développement')) {
       await fs.writeFile(gitignorePath, currentContent + additionalExclusions);
-      console.log('📝 .gitignore mis à jour');
+      this.log('📝 .gitignore mis à jour');
     }
     
   } catch (error) {
