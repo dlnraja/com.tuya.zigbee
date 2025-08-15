@@ -1,14 +1,41 @@
 {
-  "id": "ts0001_standard_standard_default",
-  "name": "drivers-backup-2025-08-13T12-08-28-817Z ts0001 models standard default models standard default",
-  "images": {
-    "small": "/drivers/ts0001_standard_standard_default/assets/images/small.png",
-    "large": "/drivers/ts0001_standard_standard_default/assets/images/large.png"
+  "id": "ts0001_standard",
+  "class": "switch",
+  "name": {
+    "en": "Ts0001 Standard (Intelligent)",
+    "fr": "Ts0001 Standard (Intelligent)",
+    "nl": "Ts0001 Standard (Intelligent)",
+    "ta": "Ts0001 Standard (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Ts0001 Standard driver with auto-discovery",
+    "fr": "Driver Ts0001 Standard intelligent avec découverte automatique",
+    "nl": "Intelligente Ts0001 Standard driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Ts0001 Standard டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "switch"
+  ],
   "capabilities": [
-    "onoff",
-    "measure_power"
+    "onoff"
   ],
   "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "ts0001_standard_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "ts0001_standard_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
   "icon": "assets/icon.svg"
 }

@@ -1,14 +1,41 @@
 {
-  "id": "ikea-motion-927_plug_standard_default",
-  "name": "drivers-backup-2025-08-13T12-14-20-255Z ikea-motion-927 plug standard models standard default",
-  "images": {
-    "small": "/drivers/ikea-motion-927_plug_standard_default/assets/images/small.png",
-    "large": "/drivers/ikea-motion-927_plug_standard_default/assets/images/large.png"
+  "id": "ikea_motion-927_plug",
+  "class": "switch",
+  "name": {
+    "en": "Ikea Motion-927 Plug (Intelligent)",
+    "fr": "Ikea Motion-927 Plug (Intelligent)",
+    "nl": "Ikea Motion-927 Plug (Intelligent)",
+    "ta": "Ikea Motion-927 Plug (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Ikea Motion-927 Plug driver with auto-discovery",
+    "fr": "Driver Ikea Motion-927 Plug intelligent avec découverte automatique",
+    "nl": "Intelligente Ikea Motion-927 Plug driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Ikea Motion-927 Plug டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "switch"
+  ],
   "capabilities": [
-    "onoff",
-    "measure_power"
+    "onoff"
   ],
   "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "ikea_motion-927_plug_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "ikea_motion-927_plug_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
   "icon": "assets/icon.svg"
 }

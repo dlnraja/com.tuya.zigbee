@@ -1,51 +1,42 @@
 {
-  "id": "ts130f_device_standard_default",
-  "name": "cover ts130f",
-  "images": {
-    "small": "/drivers/ts130f_device_standard_default/assets/images/small.png",
-    "large": "/drivers/ts130f_device_standard_default/assets/images/large.png"
+  "id": "ts130f",
+  "class": "cover",
+  "name": {
+    "en": "Ts130f (Intelligent)",
+    "fr": "Ts130f (Intelligent)",
+    "nl": "Ts130f (Intelligent)",
+    "ta": "Ts130f (ஸ்மார்ட்)"
   },
-  "capabilities": [
-    "onoff",
-    "dim",
-    "measure_power",
-    "measure_temperature",
-    "measure_humidity",
-    "measure_voltage",
-    "light_temperature",
-    "light_hue",
-    "light_saturation",
-    "fan_set",
-    "measure_current",
-    "meter_power",
-    "lidl_xmas_mode",
-    "measure_battery",
-    "finger_bot_mode",
-    "windowcoverings_set",
-    "windowcoverings_state",
-    "measure_pressure",
-    "alarm_motion",
-    "measure_luminance",
-    "target_distance",
-    "thermostat_programming",
-    "target_temperature",
-    "child_lock",
-    "alarm_battery",
-    "alarm_smoke",
-    "alarm_tamper",
-    "measure_formaldehyde",
-    "measure_voc",
-    "measure_co2",
-    "alarm_siren",
-    "alarm_water",
-    "alarm_cleaning",
-    "measure_luminance.20min",
-    "measure_luminance.daily_max",
-    "measure_voltage.rain",
-    "alarm_contact",
-    "thermostat_preset",
-    "window_open",
-    "measure_distance"
+  "description": {
+    "en": "Intelligent Ts130f driver with auto-discovery",
+    "fr": "Driver Ts130f intelligent avec découverte automatique",
+    "nl": "Intelligente Ts130f driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Ts130f டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "cover"
   ],
-  "capabilitiesOptions": {}
+  "capabilities": [
+    "windowcoverings_state",
+    "windowcoverings_set"
+  ],
+  "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "ts130f_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "ts130f_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
+  "icon": "assets/icon.svg"
 }

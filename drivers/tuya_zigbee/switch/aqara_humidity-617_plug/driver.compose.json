@@ -1,14 +1,41 @@
 {
-  "id": "aqara-humidity-617_plug_standard_default",
-  "name": "drivers-backup-2025-08-13T12-14-20-255Z aqara-humidity-617 plug standard models standard default",
-  "images": {
-    "small": "/drivers/aqara-humidity-617_plug_standard_default/assets/images/small.png",
-    "large": "/drivers/aqara-humidity-617_plug_standard_default/assets/images/large.png"
+  "id": "aqara_humidity-617_plug",
+  "class": "switch",
+  "name": {
+    "en": "Aqara Humidity-617 Plug (Intelligent)",
+    "fr": "Aqara Humidity-617 Plug (Intelligent)",
+    "nl": "Aqara Humidity-617 Plug (Intelligent)",
+    "ta": "Aqara Humidity-617 Plug (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Aqara Humidity-617 Plug driver with auto-discovery",
+    "fr": "Driver Aqara Humidity-617 Plug intelligent avec découverte automatique",
+    "nl": "Intelligente Aqara Humidity-617 Plug driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Aqara Humidity-617 Plug டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "switch"
+  ],
   "capabilities": [
-    "onoff",
-    "measure_power"
+    "onoff"
   ],
   "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "aqara_humidity-617_plug_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "aqara_humidity-617_plug_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
   "icon": "assets/icon.svg"
 }

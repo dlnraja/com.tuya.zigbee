@@ -1,14 +1,41 @@
 {
-  "id": "aqara-contact-799_plug_standard_default",
-  "name": "drivers-backup-2025-08-13T12-14-20-255Z aqara-contact-799 plug standard models standard default",
-  "images": {
-    "small": "/drivers/aqara-contact-799_plug_standard_default/assets/images/small.png",
-    "large": "/drivers/aqara-contact-799_plug_standard_default/assets/images/large.png"
+  "id": "aqara_contact-799_plug",
+  "class": "switch",
+  "name": {
+    "en": "Aqara Contact-799 Plug (Intelligent)",
+    "fr": "Aqara Contact-799 Plug (Intelligent)",
+    "nl": "Aqara Contact-799 Plug (Intelligent)",
+    "ta": "Aqara Contact-799 Plug (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Aqara Contact-799 Plug driver with auto-discovery",
+    "fr": "Driver Aqara Contact-799 Plug intelligent avec découverte automatique",
+    "nl": "Intelligente Aqara Contact-799 Plug driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Aqara Contact-799 Plug டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "switch"
+  ],
   "capabilities": [
-    "onoff",
-    "measure_power"
+    "onoff"
   ],
   "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "aqara_contact-799_plug_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "aqara_contact-799_plug_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
   "icon": "assets/icon.svg"
 }

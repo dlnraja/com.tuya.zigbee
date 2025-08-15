@@ -1,14 +1,41 @@
 {
-  "id": "aqara-ac-708_plug_standard_default",
-  "name": "drivers-backup-2025-08-13T12-14-20-255Z aqara-ac-708 plug standard models standard default",
-  "images": {
-    "small": "/drivers/aqara-ac-708_plug_standard_default/assets/images/small.png",
-    "large": "/drivers/aqara-ac-708_plug_standard_default/assets/images/large.png"
+  "id": "tuya_ac_Aqara_Ac_Plug_Standard_Default",
+  "class": "switch",
+  "name": {
+    "en": "Tuya Ac Aqara Ac Plug Standard Default (Intelligent)",
+    "fr": "Tuya Ac Aqara Ac Plug Standard Default (Intelligent)",
+    "nl": "Tuya Ac Aqara Ac Plug Standard Default (Intelligent)",
+    "ta": "Tuya Ac Aqara Ac Plug Standard Default (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Tuya Ac Aqara Ac Plug Standard Default driver with auto-discovery",
+    "fr": "Driver Tuya Ac Aqara Ac Plug Standard Default intelligent avec découverte automatique",
+    "nl": "Intelligente Tuya Ac Aqara Ac Plug Standard Default driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Tuya Ac Aqara Ac Plug Standard Default டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "switch"
+  ],
   "capabilities": [
-    "onoff",
-    "measure_power"
+    "onoff"
   ],
   "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "tuya_ac_Aqara_Ac_Plug_Standard_Default_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "tuya_ac_Aqara_Ac_Plug_Standard_Default_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
   "icon": "assets/icon.svg"
 }

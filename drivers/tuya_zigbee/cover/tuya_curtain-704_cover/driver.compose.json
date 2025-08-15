@@ -1,13 +1,42 @@
 {
-  "id": "tuya-curtain-704_cover_standard_default",
-  "name": "drivers-backup-2025-08-13T12-14-20-255Z tuya-curtain-704 cover standard models standard default",
-  "images": {
-    "small": "/drivers/tuya-curtain-704_cover_standard_default/assets/images/small.png",
-    "large": "/drivers/tuya-curtain-704_cover_standard_default/assets/images/large.png"
+  "id": "tuya_curtain-704_cover",
+  "class": "cover",
+  "name": {
+    "en": "Tuya Curtain-704 Cover (Intelligent)",
+    "fr": "Tuya Curtain-704 Cover (Intelligent)",
+    "nl": "Tuya Curtain-704 Cover (Intelligent)",
+    "ta": "Tuya Curtain-704 Cover (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Tuya Curtain-704 Cover driver with auto-discovery",
+    "fr": "Driver Tuya Curtain-704 Cover intelligent avec découverte automatique",
+    "nl": "Intelligente Tuya Curtain-704 Cover driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Tuya Curtain-704 Cover டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "cover"
+  ],
   "capabilities": [
-    "windowcoverings_state"
+    "windowcoverings_state",
+    "windowcoverings_set"
   ],
   "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "tuya_curtain-704_cover_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "tuya_curtain-704_cover_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
   "icon": "assets/icon.svg"
 }

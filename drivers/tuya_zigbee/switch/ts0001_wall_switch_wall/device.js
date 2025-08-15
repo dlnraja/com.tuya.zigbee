@@ -1,27 +1,49 @@
-'use strict';
+#!/usr/bin/env node
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
-const { Cluster, CLUSTER } = require('zigbee-clusters');
 
-class TS0001SingleSwitch extends ZigBeeDevice {
-
-  async onNodeInit({ zclNode }) {
-    // Enable debugging
-    this.enableDebug();
-    this.printNode();
-
-    // Register capabilities
-    this.registerCapability('onoff', CLUSTER.ON_OFF, {
-      get: 'onOff',
-      set: 'setOnOff',
-      setParser: (value) => ({ value }),
-      reportParser: (value) => value === 1,
-    });
-  }
-
-  onDeleted() {
-    this.log('TS0001 Single Switch removed');
-  }
+class Ts0001WallSwitchWallDevice extends ZigBeeDevice {
+    async onNodeInit({ zclNode }) {
+        this.log('🔧 Ts0001WallSwitchWallDevice initialisé (mode intelligent)');
+        
+        // Configuration intelligente des endpoints
+        this.registerCapability('onoff', 'genOnOff', {
+            endpoint: 1,
+            cluster: 'genOnOff',
+            attribute: 'onOff',
+            reportParser: (value) => this.parseOnoff(value)
+        });
+        
+        // Configuration des commandes
+        this.registerCapabilityListener('onoff', async (value) => {
+            this.log('🎯 Commande onoff:', value);
+            await this.zclNode.endpoints[1].clusters.genOnOff.toggle(value);
+        });
+        
+        // Configuration des rapports intelligents
+        await this.configureAttributeReporting([
+            {
+                endpointId: 1,
+                clusterId: 'genOnOff',
+                attributeId: 'onOff',
+                minInterval: 0,
+                maxInterval: 300,
+                reportableChange: 1
+            }
+        ]);
+    }
+    
+    // Parsers intelligents
+    parseOnoff(value) {
+        // Parser intelligent pour onoff
+        if (typeof value === 'number') return value;
+        if (typeof value === 'boolean') return value ? 1 : 0;
+        return 0;
+    }
+    
+    async onDeleted() {
+        this.log('🗑️  Ts0001WallSwitchWallDevice supprimé');
+    }
 }
 
-module.exports = TS0001SingleSwitch;
+module.exports = Ts0001WallSwitchWallDevice;

@@ -1,0 +1,36 @@
+{
+  "id": "generic_cover",
+  "class": "cover",
+  "name": {
+    "en": "Generic Cover (Intelligent)",
+    "fr": "Cover Générique (Intelligent)",
+    "nl": "Generieke Cover (Intelligent)",
+    "ta": "பொதுவான Cover (ஸ்மார்ட்)"
+  },
+  "description": {
+    "en": "Generic intelligent cover driver with auto-discovery",
+    "fr": "Driver cover générique intelligent avec découverte automatique",
+    "nl": "Generieke intelligente cover driver met auto-detectie",
+    "ta": "பொதுவான ஸ்மார்ட் cover டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "cover"
+  ],
+  "capabilities": [
+    "windowcoverings_state",
+    "windowcoverings_set"
+  ],
+  "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "generic_cover",
+        "vendor": "Generic",
+        "description": "Generic intelligent ${category} device"
+      }
+    ],
+    "models": [
+      "generic_cover"
+    ]
+  }
+}

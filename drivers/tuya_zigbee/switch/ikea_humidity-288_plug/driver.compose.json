@@ -1,14 +1,41 @@
 {
-  "id": "ikea-humidity-288_plug_standard_default",
-  "name": "drivers-backup-2025-08-13T12-14-20-255Z ikea-humidity-288 plug standard models standard default",
-  "images": {
-    "small": "/drivers/ikea-humidity-288_plug_standard_default/assets/images/small.png",
-    "large": "/drivers/ikea-humidity-288_plug_standard_default/assets/images/large.png"
+  "id": "ikea_humidity-288_plug",
+  "class": "switch",
+  "name": {
+    "en": "Ikea Humidity-288 Plug (Intelligent)",
+    "fr": "Ikea Humidity-288 Plug (Intelligent)",
+    "nl": "Ikea Humidity-288 Plug (Intelligent)",
+    "ta": "Ikea Humidity-288 Plug (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Ikea Humidity-288 Plug driver with auto-discovery",
+    "fr": "Driver Ikea Humidity-288 Plug intelligent avec découverte automatique",
+    "nl": "Intelligente Ikea Humidity-288 Plug driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Ikea Humidity-288 Plug டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "switch"
+  ],
   "capabilities": [
-    "onoff",
-    "measure_power"
+    "onoff"
   ],
   "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "ikea_humidity-288_plug_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "ikea_humidity-288_plug_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
   "icon": "assets/icon.svg"
 }

@@ -1,13 +1,42 @@
 {
-  "id": "aqara-shade-549_cover_standard_default",
-  "name": "drivers-backup-2025-08-13T12-14-20-255Z aqara-shade-549 cover standard models standard default",
-  "images": {
-    "small": "/drivers/aqara-shade-549_cover_standard_default/assets/images/small.png",
-    "large": "/drivers/aqara-shade-549_cover_standard_default/assets/images/large.png"
+  "id": "aqara_shade-549_cover",
+  "class": "cover",
+  "name": {
+    "en": "Aqara Shade-549 Cover (Intelligent)",
+    "fr": "Aqara Shade-549 Cover (Intelligent)",
+    "nl": "Aqara Shade-549 Cover (Intelligent)",
+    "ta": "Aqara Shade-549 Cover (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Aqara Shade-549 Cover driver with auto-discovery",
+    "fr": "Driver Aqara Shade-549 Cover intelligent avec découverte automatique",
+    "nl": "Intelligente Aqara Shade-549 Cover driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Aqara Shade-549 Cover டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "cover"
+  ],
   "capabilities": [
-    "windowcoverings_state"
+    "windowcoverings_state",
+    "windowcoverings_set"
   ],
   "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "aqara_shade-549_cover_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "aqara_shade-549_cover_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
   "icon": "assets/icon.svg"
 }

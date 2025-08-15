@@ -1,14 +1,41 @@
 {
-  "id": "ikea-fan-208_plug_standard_default",
-  "name": "drivers-backup-2025-08-13T12-14-20-255Z ikea-fan-208 plug standard models standard default",
-  "images": {
-    "small": "/drivers/ikea-fan-208_plug_standard_default/assets/images/small.png",
-    "large": "/drivers/ikea-fan-208_plug_standard_default/assets/images/large.png"
+  "id": "ikea_fan-208_plug",
+  "class": "switch",
+  "name": {
+    "en": "Ikea Fan-208 Plug (Intelligent)",
+    "fr": "Ikea Fan-208 Plug (Intelligent)",
+    "nl": "Ikea Fan-208 Plug (Intelligent)",
+    "ta": "Ikea Fan-208 Plug (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Ikea Fan-208 Plug driver with auto-discovery",
+    "fr": "Driver Ikea Fan-208 Plug intelligent avec découverte automatique",
+    "nl": "Intelligente Ikea Fan-208 Plug driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Ikea Fan-208 Plug டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "switch"
+  ],
   "capabilities": [
-    "onoff",
-    "measure_power"
+    "onoff"
   ],
   "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "ikea_fan-208_plug_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "ikea_fan-208_plug_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
   "icon": "assets/icon.svg"
 }

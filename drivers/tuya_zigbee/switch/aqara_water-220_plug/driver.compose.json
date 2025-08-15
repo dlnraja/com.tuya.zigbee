@@ -1,14 +1,41 @@
 {
-  "id": "aqara-water-220_plug_standard_default",
-  "name": "drivers-backup-2025-08-13T12-14-20-255Z aqara-water-220 plug standard models standard default",
-  "images": {
-    "small": "/drivers/aqara-water-220_plug_standard_default/assets/images/small.png",
-    "large": "/drivers/aqara-water-220_plug_standard_default/assets/images/large.png"
+  "id": "aqara_water-220_plug",
+  "class": "switch",
+  "name": {
+    "en": "Aqara Water-220 Plug (Intelligent)",
+    "fr": "Aqara Water-220 Plug (Intelligent)",
+    "nl": "Aqara Water-220 Plug (Intelligent)",
+    "ta": "Aqara Water-220 Plug (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Aqara Water-220 Plug driver with auto-discovery",
+    "fr": "Driver Aqara Water-220 Plug intelligent avec découverte automatique",
+    "nl": "Intelligente Aqara Water-220 Plug driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Aqara Water-220 Plug டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "switch"
+  ],
   "capabilities": [
-    "onoff",
-    "measure_power"
+    "onoff"
   ],
   "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "aqara_water-220_plug_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "aqara_water-220_plug_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
   "icon": "assets/icon.svg"
 }
