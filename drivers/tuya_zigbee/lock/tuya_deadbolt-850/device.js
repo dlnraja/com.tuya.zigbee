@@ -1,6 +1,7 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const attachZBVerbose = require('../../..//lib/zb-verbose');
 
 class TuyaDeadbolt-850 extends ZigBeeDevice {
     

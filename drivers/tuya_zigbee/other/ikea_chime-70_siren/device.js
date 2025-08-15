@@ -1,6 +1,7 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const attachZBVerbose = require('../../..//lib/zb-verbose');
 
 class IkeaChime-70Siren extends ZigBeeDevice {
     

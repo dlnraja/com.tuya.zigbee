@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const attachZBVerbose = require('../..//lib/zb-verbose');
 
 class GenericSensorDevice extends ZigBeeDevice {
     async onNodeInit({ zclNode }) {
