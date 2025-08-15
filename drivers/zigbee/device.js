@@ -1,4 +1,5 @@
 const { ZigBeeDevice } = require('homey-meshdriver');
+const attachZBVerbose = require('..//lib/zb-verbose');
 
 class TuyaDevice extends ZigBeeDevice {
   async onMeshInit() {
