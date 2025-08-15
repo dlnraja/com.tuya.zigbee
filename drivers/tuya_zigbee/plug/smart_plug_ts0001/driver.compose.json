@@ -1,0 +1,57 @@
+{
+  "id": "smart_plug_ts0001",
+  "name": {
+    "en": "Tuya Smart Plug TS0001",
+    "fr": "Prise intelligente Tuya TS0001"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Plug State",
+        "fr": "État de la prise"
+      }
+    },
+    "measure_power": {
+      "title": {
+        "en": "Power Consumption",
+        "fr": "Consommation électrique"
+      },
+      "units": "W"
+    },
+    "meter_power": {
+      "title": {
+        "en": "Total Energy",
+        "fr": "Énergie totale"
+      },
+      "units": "kWh"
+    }
+  },
+  "zigbee": {
+    "manufacturerName": ["Tuya"],
+    "modelId": ["TS0001"],
+    "productId": ["TS0001"]
+  },
+  "tuya_dps": {
+    "1": {
+      "name": "Switch",
+      "type": "bool",
+      "capability": "onoff"
+    },
+    "2": {
+      "name": "Power",
+      "type": "value",
+      "capability": "measure_power"
+    },
+    "3": {
+      "name": "Energy",
+      "type": "value",
+      "capability": "meter_power"
+    }
+  }
+}
