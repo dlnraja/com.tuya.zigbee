@@ -1,225 +1,104 @@
 'use strict';
 
-const TuyaCoverTS0601 = require('./driver');
+const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class TuyaCoverTS0601Device extends TuyaCoverTS0601 {
-
-  constructor() {
-    super();
+class TuyaCoverTs0601 extends ZigBeeDevice {
     
-    // Device-specific metadata
-    this.deviceMetadata = {
-      model: 'TS0601_cover',
-      manufacturer: 'Tuya',
-      category: 'cover',
-      capabilities: ['windowcoverings_state', 'windowcoverings_set', 'windowcoverings_tilt_set'],
-      tuyaDps: {
-        1: { capability: 'windowcoverings_state', description: 'Cover State', type: 'enum', values: ['open', 'close', 'stop'] },
-        2: { capability: 'windowcoverings_set', description: 'Cover Position', type: 'value', range: [0, 100] },
-        3: { capability: 'windowcoverings_tilt_set', description: 'Cover Tilt', type: 'value', range: [0, 100] }
-      },
-      zigbeeModel: 'TS0601_cover',
-      endpoints: [1],
-      clusters: ['genBasic', 'genIdentify', 'manuSpecificTuya']
-    };
-  }
-
-  async onNodeInit({ zclNode }) {
-    // Call parent initialization
-    await super.onNodeInit({ zclNode });
+    async onNodeInit({ zclNode, node }) {
+        await super.onNodeInit({ zclNode, node });
+        
+        // Mode heuristique : découverte automatique des fonctionnalités
+        await this.discoverDeviceCapabilities(zclNode);
+        
+        // Enregistrement des capacités avec fallback intelligent
+        await this.registerCapabilitiesIntelligently(zclNode);
+    }
     
-    // Configure device-specific settings
-    await this._configureTS0601Specific();
+    async discoverDeviceCapabilities(zclNode) {
+        try {
+            // Découverte automatique des clusters disponibles
+            const clusters = zclNode.clusters;
+            this.log('🔍 Clusters découverts:', Object.keys(clusters));
+            
+            // Découverte des attributs et commandes
+            for (const [clusterId, cluster] of Object.entries(clusters)) {
+                if (cluster.attributes) {
+                    this.log(`📊 Cluster ${clusterId} - Attributs:`, Object.keys(cluster.attributes));
+                }
+                if (cluster.commands) {
+                    this.log(`🎮 Cluster ${clusterId} - Commandes:`, Object.keys(cluster.commands));
+                }
+            }
+        } catch (error) {
+            this.log('⚠️ Erreur lors de la découverte des capacités:', error.message);
+        }
+    }
     
-    // Setup device-specific listeners
-    this._setupDeviceSpecificListeners();
+    async registerCapabilitiesIntelligently(zclNode) {
+        try {
+            // Enregistrement intelligent des capacités selon la catégorie
+            const fallback = this.genericFallbacks.get('other') || this.genericFallbacks.get('light');
+            
+            for (const capability of fallback.capabilities) {
+                try {
+                    await this.registerCapability(capability, capability, {
+                        get: 'get',
+                        set: capability.startsWith('measure_') ? false : 'set',
+                        report: 'report'
+                    });
+                    this.log(`✅ Capacité ${capability} enregistrée`);
+                } catch (error) {
+                    this.log(`⚠️ Impossible d'enregistrer la capacité ${capability}:`, error.message);
+                }
+            }
+            
+            // Configuration du reporting Zigbee
+            await this.configureZigbeeReporting(zclNode);
+            
+        } catch (error) {
+            this.log('❌ Erreur lors de l'enregistrement des capacités:', error.message);
+        }
+    }
     
-    this.log('TS0601 Cover device initialized with specific configuration');
-  }
-
-  async _configureTS0601Specific() {
-    try {
-      // Cover-specific configuration
-      this.coverConfig = {
-        maxPosition: 100,
-        minPosition: 0,
-        defaultSpeed: this.coverSpeed || 50,
-        hasTilt: true,
-        tiltRange: [0, 100],
-        motorType: 'stepper', // or 'servo'
-        reverseDirection: false,
-        calibrationMode: false
-      };
-      
-      // Apply configuration
-      await this._applyTS0601Configuration();
-      
-      this.log('TS0601 cover configuration applied:', this.coverConfig);
-      
-    } catch (error) {
-      this.error('Failed to configure TS0601 specific settings:', error);
+    async configureZigbeeReporting(zclNode) {
+        try {
+            // Configuration intelligente du reporting selon les clusters disponibles
+            const clusters = zclNode.clusters;
+            
+            if (clusters.genBasic) {
+                await zclNode.endpoints[1].clusters.genBasic.read('zclVersion');
+            }
+            
+            if (clusters.genOnOff) {
+                await zclNode.endpoints[1].clusters.genOnOff.read('onOff');
+            }
+            
+            if (clusters.genLevelCtrl) {
+                await zclNode.endpoints[1].clusters.genLevelCtrl.read('currentLevel');
+            }
+            
+            this.log('📡 Reporting Zigbee configuré');
+            
+        } catch (error) {
+            this.log('⚠️ Erreur lors de la configuration du reporting:', error.message);
+        }
     }
-  }
-
-  async _applyTS0601Configuration() {
-    try {
-      // Set default position if not set
-      const currentPosition = await this.getCapabilityValue('windowcoverings_set');
-      if (currentPosition === null || currentPosition === undefined) {
-        await this.setCapabilityValue('windowcoverings_set', 0);
-        this.log('Set default cover position to 0%');
-      }
-      
-      // Set default tilt if not set
-      const currentTilt = await this.getCapabilityValue('windowcoverings_tilt_set');
-      if (currentTilt === null || currentTilt === undefined) {
-        await this.setCapabilityValue('windowcoverings_tilt_set', 0);
-        this.log('Set default cover tilt to 0%');
-      }
-      
-      // Set default state
-      await this.setCapabilityValue('windowcoverings_state', 'close');
-      
-    } catch (error) {
-      this.error('Failed to apply TS0601 configuration:', error);
-    }
-  }
-
-  _setupDeviceSpecificListeners() {
-    // Listen for capability changes
-    this.on('capability.windowcoverings_set', async (value) => {
-      await this._validateTS0601Position(value);
-    });
     
-    this.on('capability.windowcoverings_tilt_set', async (value) => {
-      await this._validateTS0601Tilt(value);
-    });
+    // Méthodes de fallback pour la compatibilité firmware
+    async onSettings(oldSettings, newSettings, changedKeys) {
+        this.log('⚙️ Paramètres mis à jour:', changedKeys);
+        return super.onSettings(oldSettings, newSettings, changedKeys);
+    }
     
-    // Listen for state changes
-    this.on('capability.windowcoverings_state', async (value) => {
-      await this._validateTS0601State(value);
-    });
-  }
-
-  async _validateTS0601Position(position) {
-    try {
-      // Validate position range
-      if (position < this.coverConfig.minPosition || position > this.coverConfig.maxPosition) {
-        this.log(`Invalid position ${position}%, clamping to valid range`);
-        const clampedPosition = Math.max(this.coverConfig.minPosition, 
-                                       Math.min(this.coverConfig.maxPosition, position));
-        await this.setCapabilityValue('windowcoverings_set', clampedPosition);
-        return;
-      }
-      
-      // Update state based on position
-      let newState = 'close';
-      if (position === 0) {
-        newState = 'close';
-      } else if (position === 100) {
-        newState = 'open';
-      } else {
-        newState = 'open'; // Partially open
-      }
-      
-      await this.setCapabilityValue('windowcoverings_state', newState);
-      
-      this.log(`Cover position validated: ${position}%, state: ${newState}`);
-      
-    } catch (error) {
-      this.error('Error validating cover position:', error);
+    async onRenamed(name) {
+        this.log('🏷️ Appareil renommé:', name);
+        return super.onRenamed(name);
     }
-  }
-
-  async _validateTS0601Tilt(tilt) {
-    try {
-      // Validate tilt range
-      if (tilt < this.coverConfig.tiltRange[0] || tilt > this.coverConfig.tiltRange[1]) {
-        this.log(`Invalid tilt ${tilt}%, clamping to valid range`);
-        const clampedTilt = Math.max(this.coverConfig.tiltRange[0], 
-                                    Math.min(this.coverConfig.tiltRange[1], tilt));
-        await this.setCapabilityValue('windowcoverings_tilt_set', clampedTilt);
-        return;
-      }
-      
-      this.log(`Cover tilt validated: ${tilt}%`);
-      
-    } catch (error) {
-      this.error('Error validating cover tilt:', error);
+    
+    async onDeleted() {
+        this.log('🗑️ Appareil supprimé');
+        return super.onDeleted();
     }
-  }
-
-  async _validateTS0601State(state) {
-    try {
-      // Validate state values
-      const validStates = ['open', 'close', 'stop'];
-      if (!validStates.includes(state)) {
-        this.log(`Invalid state ${state}, using 'close'`);
-        await this.setCapabilityValue('windowcoverings_state', 'close');
-        return;
-      }
-      
-      // Update position based on state
-      if (state === 'close') {
-        await this.setCapabilityValue('windowcoverings_set', 0);
-      } else if (state === 'open') {
-        await this.setCapabilityValue('windowcoverings_set', 100);
-      }
-      // 'stop' doesn't change position
-      
-      this.log(`Cover state validated: ${state}`);
-      
-    } catch (error) {
-      this.error('Error validating cover state:', error);
-    }
-  }
-
-  async getTS0601Diagnostics() {
-    try {
-      const diagnostics = {
-        deviceId: this.getData().id,
-        model: this.deviceMetadata.model,
-        manufacturer: this.deviceMetadata.manufacturer,
-        capabilities: await this.getCapabilities(),
-        position: await this.getCapabilityValue('windowcoverings_set'),
-        tilt: await this.getCapabilityValue('windowcoverings_tilt_set'),
-        state: await this.getCapabilityValue('windowcoverings_state'),
-        config: this.coverConfig,
-        tuyaDps: this.deviceMetadata.tuyaDps,
-        lastSeen: new Date().toISOString(),
-        uptime: process.uptime()
-      };
-      
-      return diagnostics;
-      
-    } catch (error) {
-      this.error('Failed to get diagnostics:', error);
-      return { error: error.message };
-    }
-  }
-
-  async updateTS0601Config(newConfig) {
-    try {
-      // Merge new config with existing
-      this.coverConfig = { ...this.coverConfig, ...newConfig };
-      
-      // Apply updated configuration
-      await this._applyTS0601Configuration();
-      
-      this.log('TS0601 configuration updated:', this.coverConfig);
-      
-      return true;
-      
-    } catch (error) {
-      this.error('Failed to update TS0601 configuration:', error);
-      return false;
-    }
-  }
-
-  onDeleted() {
-    this.log('TS0601 Cover device deleted');
-    super.onDeleted();
-  }
 }
 
-module.exports = TuyaCoverTS0601Device;
+module.exports = TuyaCoverTs0601;

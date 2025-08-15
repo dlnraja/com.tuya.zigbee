@@ -1,167 +1,50 @@
 {
-  "id": "tuya_cover_ts0601",
-  "name": {
-    "en": "Tuya Smart Cover",
-    "fr": "Volet Intelligent Tuya"
-  },
-  "class": "cover",
+  "class": "ZigBeeDevice",
   "capabilities": [
-    "windowcoverings_state",
-    "windowcoverings_set",
-    "windowcoverings_tilt_set"
+    "onoff",
+    "dim",
+    "light_temperature",
+    "light_mode"
   ],
-  "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+  "capabilitiesOptions": {
+    "onoff": {
+      "set": true,
+      "get": true
+    },
+    "dim": {
+      "set": true,
+      "get": true
+    },
+    "light_temperature": {
+      "set": true,
+      "get": true
+    },
+    "light_mode": {
+      "set": true,
+      "get": true
+    }
   },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
+  "icon": "assets/icon.svg",
   "zigbee": {
-    "manufacturerName": "_TZE200_*",
-    "productId": "TS0601_cover",
+    "manufacturerName": "Tuya",
+    "modelId": "tuya_cover_ts0601",
     "endpoints": {
       "1": {
         "clusters": [
           "genBasic",
-          "genIdentify",
-          "manuSpecificTuya"
+          "genOnOff",
+          "genLevelCtrl"
         ],
         "bindings": [
-          "genBasic",
-          "genIdentify"
+          "genOnOff",
+          "genLevelCtrl"
         ]
       }
-    },
-    "clusters": [
-      "genBasic",
-      "genIdentify",
-      "manuSpecificTuya"
-    ]
-  },
-  "pair": [
-    {
-      "id": "generic_cover_pair",
-      "template": "generic_cover"
     }
-  ],
-  "settings": [
-    {
-      "id": "tuya_dp_log",
-      "type": "boolean",
-      "label": {
-        "en": "Log Tuya DP",
-        "fr": "Logger les DP Tuya"
-      },
-      "value": false
-    },
-    {
-      "id": "cover_speed",
-      "type": "number",
-      "label": {
-        "en": "Cover Speed",
-        "fr": "Vitesse du Volet"
-      },
-      "value": 50,
-      "min": 10,
-      "max": 100
-    }
-  ],
-  "flow": {
-    "triggers": [
-      {
-        "id": "cover_position_changed",
-        "title": {
-          "en": "Cover position changed",
-          "fr": "Position du volet changée"
-        },
-        "hint": {
-          "en": "Triggered when cover position changes",
-          "fr": "Déclenché quand la position du volet change"
-        },
-        "args": [
-          {
-            "name": "position",
-            "type": "number",
-            "title": {
-              "en": "Position",
-              "fr": "Position"
-            }
-          }
-        ]
-      }
-    ],
-    "actions": [
-      {
-        "id": "set_cover_position",
-        "title": {
-          "en": "Set cover position",
-          "fr": "Définir la position du volet"
-        },
-        "hint": {
-          "en": "Set the cover to a specific position",
-          "fr": "Définir le volet à une position spécifique"
-        },
-        "args": [
-          {
-            "name": "position",
-            "type": "number",
-            "title": {
-              "en": "Position",
-              "fr": "Position"
-            },
-            "min": 0,
-            "max": 100
-          }
-        ]
-      },
-      {
-        "id": "tuya_dp_send",
-        "title": {
-          "en": "Send Tuya DP",
-          "fr": "Envoyer un DP Tuya"
-        },
-        "hint": {
-          "en": "Send a custom Tuya Data Point",
-          "fr": "Envoyer un Data Point Tuya personnalisé"
-        },
-        "args": [
-          {
-            "name": "dp_id",
-            "type": "number",
-            "title": {
-              "en": "DP ID",
-              "fr": "ID du DP"
-            }
-          },
-          {
-            "name": "value",
-            "type": "string",
-            "title": {
-              "en": "Value",
-              "fr": "Valeur"
-            }
-          }
-        ]
-      }
-    ]
-  },
-  "flags": [
-    "tuya",
-    "cover",
-    "zigbee"
-  ],
-  "meta": {
-    "sourceRefs": [
-      "tuya_zigbee_cover_ts0601",
-      "blakadder_cover",
-      "z2m_cover"
-    ],
-    "confidence": "high",
-    "lastReviewed": "2025-08-13T21:24:00Z",
-    "version": "3.3.0",
-    "author": "dlnraja",
-    "contributors": [
-      "tuya_community",
-      "homey_community"
-    ]
-  },
-  "capabilitiesOptions": {}
+  }
 }

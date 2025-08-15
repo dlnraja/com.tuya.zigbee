@@ -1,112 +1,104 @@
-/**
- * 🔧 Tuya Temperature & Humidity Sensor Device
- * TS0201 - Temperature and Humidity Sensor
- */
+'use strict';
 
-const { ZigbeeDevice } = require('homey-meshdriver');
-const { debounce } = require('../../../../_common');
+const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class TuyaTempHumSensor extends ZigbeeDevice {
-  async onMeshInit() {
-    // Enable debug logging
-    this.enableDebug();
-    this.printNode();
-
-    // Register capabilities
-    this.registerCapability('measure_temperature', 'msTemperatureMeasurement', {
-      get: 'measuredValue',
-      report: 'measuredValue',
-      reportParser: (value) => {
-        // Convert from 0.01°C to °C
-        return Math.round(value / 100) / 10;
-      }
-    });
-
-    this.registerCapability('measure_humidity', 'msRelativeHumidity', {
-      get: 'measuredValue',
-      report: 'measuredValue',
-      reportParser: (value) => {
-        // Convert from 0.01% to %
-        return Math.round(value / 100) / 10;
-      }
-    });
-
-    // Battery monitoring
-    if (this.hasCapability('measure_battery')) {
-      this.registerCapability('measure_battery', 'genPowerCfg', {
-        get: 'batteryPercentageRemaining',
-        report: 'batteryPercentageRemaining',
-        reportParser: (value) => {
-          return value / 2; // Convert from 0.5% to %
-        }
-      });
-    }
-
-    // Tuya specific clusters
-    this.registerTuyaCluster('manuSpecificTuya');
+class TuyaSensorTempHumTs0201 extends ZigBeeDevice {
     
-    // Set up polling for sensor data
-    this.setPollInterval(300000); // 5 minutes
-  }
-
-  /**
-   * Register Tuya cluster for DP handling
-   */
-  registerTuyaCluster(clusterName) {
-    try {
-      const cluster = this.getClusterEndpoint(clusterName);
-      if (cluster) {
-        cluster.on('attr.manufacturerCode', (value) => {
-          this.log('Tuya manufacturer code:', value);
-        });
-      }
-    } catch (error) {
-      this.error('Failed to register Tuya cluster:', error);
-    }
-  }
-
-  /**
-   * Set polling interval for sensor data
-   */
-  setPollInterval(interval) {
-    if (this.pollInterval) {
-      clearInterval(this.pollInterval);
+    async onNodeInit({ zclNode, node }) {
+        await super.onNodeInit({ zclNode, node });
+        
+        // Mode heuristique : découverte automatique des fonctionnalités
+        await this.discoverDeviceCapabilities(zclNode);
+        
+        // Enregistrement des capacités avec fallback intelligent
+        await this.registerCapabilitiesIntelligently(zclNode);
     }
     
-    this.pollInterval = setInterval(async () => {
-      try {
-        await this.refreshCapabilityValue('measure_temperature');
-        await this.refreshCapabilityValue('measure_humidity');
-        if (this.hasCapability('measure_battery')) {
-          await this.refreshCapabilityValue('measure_battery');
+    async discoverDeviceCapabilities(zclNode) {
+        try {
+            // Découverte automatique des clusters disponibles
+            const clusters = zclNode.clusters;
+            this.log('🔍 Clusters découverts:', Object.keys(clusters));
+            
+            // Découverte des attributs et commandes
+            for (const [clusterId, cluster] of Object.entries(clusters)) {
+                if (cluster.attributes) {
+                    this.log(`📊 Cluster ${clusterId} - Attributs:`, Object.keys(cluster.attributes));
+                }
+                if (cluster.commands) {
+                    this.log(`🎮 Cluster ${clusterId} - Commandes:`, Object.keys(cluster.commands));
+                }
+            }
+        } catch (error) {
+            this.log('⚠️ Erreur lors de la découverte des capacités:', error.message);
         }
-      } catch (error) {
-        this.error('Polling error:', error);
-      }
-    }, interval);
-  }
-
-  /**
-   * Refresh capability value
-   */
-  async refreshCapabilityValue(capability) {
-    try {
-      const value = await this.getCapabilityValue(capability);
-      this.log(`Refreshed ${capability}:`, value);
-    } catch (error) {
-      this.error(`Failed to refresh ${capability}:`, error);
     }
-  }
-
-  /**
-   * Cleanup on device removal
-   */
-  async onDeleted() {
-    if (this.pollInterval) {
-      clearInterval(this.pollInterval);
+    
+    async registerCapabilitiesIntelligently(zclNode) {
+        try {
+            // Enregistrement intelligent des capacités selon la catégorie
+            const fallback = this.genericFallbacks.get('sensor-temp') || this.genericFallbacks.get('light');
+            
+            for (const capability of fallback.capabilities) {
+                try {
+                    await this.registerCapability(capability, capability, {
+                        get: 'get',
+                        set: capability.startsWith('measure_') ? false : 'set',
+                        report: 'report'
+                    });
+                    this.log(`✅ Capacité ${capability} enregistrée`);
+                } catch (error) {
+                    this.log(`⚠️ Impossible d'enregistrer la capacité ${capability}:`, error.message);
+                }
+            }
+            
+            // Configuration du reporting Zigbee
+            await this.configureZigbeeReporting(zclNode);
+            
+        } catch (error) {
+            this.log('❌ Erreur lors de l'enregistrement des capacités:', error.message);
+        }
     }
-    this.log('Tuya Temp & Humidity Sensor removed');
-  }
+    
+    async configureZigbeeReporting(zclNode) {
+        try {
+            // Configuration intelligente du reporting selon les clusters disponibles
+            const clusters = zclNode.clusters;
+            
+            if (clusters.genBasic) {
+                await zclNode.endpoints[1].clusters.genBasic.read('zclVersion');
+            }
+            
+            if (clusters.genOnOff) {
+                await zclNode.endpoints[1].clusters.genOnOff.read('onOff');
+            }
+            
+            if (clusters.genLevelCtrl) {
+                await zclNode.endpoints[1].clusters.genLevelCtrl.read('currentLevel');
+            }
+            
+            this.log('📡 Reporting Zigbee configuré');
+            
+        } catch (error) {
+            this.log('⚠️ Erreur lors de la configuration du reporting:', error.message);
+        }
+    }
+    
+    // Méthodes de fallback pour la compatibilité firmware
+    async onSettings(oldSettings, newSettings, changedKeys) {
+        this.log('⚙️ Paramètres mis à jour:', changedKeys);
+        return super.onSettings(oldSettings, newSettings, changedKeys);
+    }
+    
+    async onRenamed(name) {
+        this.log('🏷️ Appareil renommé:', name);
+        return super.onRenamed(name);
+    }
+    
+    async onDeleted() {
+        this.log('🗑️ Appareil supprimé');
+        return super.onDeleted();
+    }
 }
 
-module.exports = TuyaTempHumSensor;
+module.exports = TuyaSensorTempHumTs0201;
