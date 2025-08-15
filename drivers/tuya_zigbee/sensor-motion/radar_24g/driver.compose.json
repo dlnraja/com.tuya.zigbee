@@ -1,0 +1,73 @@
+{
+  "id": "radar_24g",
+  "name": {
+    "en": "Tuya 24GHz Radar Motion Sensor",
+    "fr": "Capteur de mouvement radar 24GHz Tuya"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "alarm_motion": {
+      "title": {
+        "en": "Motion Detected",
+        "fr": "Mouvement détecté"
+      }
+    },
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature",
+        "fr": "Température"
+      },
+      "decimals": 1,
+      "units": "°C"
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Humidity",
+        "fr": "Humidité"
+      },
+      "decimals": 1,
+      "units": "%RH"
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery Level",
+        "fr": "Niveau de batterie"
+      },
+      "decimals": 0,
+      "units": "%"
+    }
+  },
+  "zigbee": {
+    "manufacturerName": ["Tuya"],
+    "modelId": ["TS0202"],
+    "productId": ["TS0202"]
+  },
+  "tuya_dps": {
+    "1": {
+      "name": "Motion",
+      "type": "bool",
+      "capability": "alarm_motion"
+    },
+    "2": {
+      "name": "Temperature",
+      "type": "value",
+      "capability": "measure_temperature"
+    },
+    "3": {
+      "name": "Humidity",
+      "type": "value",
+      "capability": "measure_humidity"
+    },
+    "4": {
+      "name": "Battery",
+      "type": "value",
+      "capability": "measure_battery"
+    }
+  }
+}

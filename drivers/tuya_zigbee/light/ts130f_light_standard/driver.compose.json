@@ -1,0 +1,67 @@
+{
+  "id": "ts130f_light_standard",
+  "name": {
+    "en": "Tuya TS130F Standard Light",
+    "fr": "Ampoule Tuya TS130F Standard"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature",
+    "light_mode"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Light State",
+        "fr": "État de l'ampoule"
+      }
+    },
+    "dim": {
+      "title": {
+        "en": "Brightness",
+        "fr": "Luminosité"
+      }
+    },
+    "light_temperature": {
+      "title": {
+        "en": "Color Temperature",
+        "fr": "Température de couleur"
+      }
+    },
+    "light_mode": {
+      "title": {
+        "en": "Light Mode",
+        "fr": "Mode d'éclairage"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": ["Tuya"],
+    "modelId": ["TS130F"],
+    "productId": ["TS130F"]
+  },
+  "tuya_dps": {
+    "1": {
+      "name": "Switch",
+      "type": "bool",
+      "capability": "onoff"
+    },
+    "2": {
+      "name": "Brightness",
+      "type": "value",
+      "capability": "dim"
+    },
+    "3": {
+      "name": "Color Temperature",
+      "type": "value",
+      "capability": "light_temperature"
+    },
+    "4": {
+      "name": "Mode",
+      "type": "enum",
+      "capability": "light_mode"
+    }
+  }
+}

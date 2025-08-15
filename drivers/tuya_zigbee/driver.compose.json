@@ -1,0 +1,30 @@
+{
+  "id": "tuya_zigbee",
+  "name": {
+    "en": "Tuya Zigbee Universal",
+    "fr": "Tuya Zigbee Universel"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Device State",
+        "fr": "État de l'appareil"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "modelId": [
+      "Tuya"
+    ],
+    "productId": [
+      "Tuya"
+    ]
+  }
+}

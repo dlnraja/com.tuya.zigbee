@@ -1,0 +1,30 @@
+{
+  "id": "generic",
+  "name": {
+    "en": "Generic Zigbee Device",
+    "fr": "Appareil Zigbee Générique"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Device State",
+        "fr": "État de l'appareil"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Generic"
+    ],
+    "modelId": [
+      "Generic"
+    ],
+    "productId": [
+      "Generic"
+    ]
+  }
+}
