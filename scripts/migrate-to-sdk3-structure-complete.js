@@ -8,7 +8,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🚀 Migration complète vers la structure SDK3+ conforme...');
+this.log('🚀 Migration complète vers la structure SDK3+ conforme...');
 
 // Configuration
 const DRIVERS_DIR = 'drivers';
@@ -37,46 +37,46 @@ const NEW_STRUCTURE = {
 async function migrateToSDK3StructureComplete() {
   try {
     // 1. Créer la sauvegarde
-    console.log('💾 Création de la sauvegarde...');
+    this.log('💾 Création de la sauvegarde...');
     await createBackup();
     
     // 2. Créer la nouvelle structure
-    console.log('📁 Création de la nouvelle structure...');
+    this.log('📁 Création de la nouvelle structure...');
     await createNewStructure();
     
     // 3. Analyser et migrer les drivers existants
-    console.log('🔧 Migration des drivers existants...');
+    this.log('🔧 Migration des drivers existants...');
     const migrationResult = await migrateExistingDrivers();
     
     // 4. Créer les drivers génériques et templates
-    console.log('🎯 Création des drivers génériques et templates...');
+    this.log('🎯 Création des drivers génériques et templates...');
     await createGenericDriversAndTemplates();
     
     // 5. Créer les overlays par marque et catégorie
-    console.log('🏷️ Création des overlays...');
+    this.log('🏷️ Création des overlays...');
     await createOverlays();
     
     // 6. Générer toutes les images conformes
-    console.log('🎨 Génération des images conformes SDK3+...');
+    this.log('🎨 Génération des images conformes SDK3+...');
     await generateConformImages();
     
     // 7. Mettre à jour app.js pour la nouvelle structure
-    console.log('⚙️ Mise à jour de app.js...');
+    this.log('⚙️ Mise à jour de app.js...');
     await updateAppJSForNewStructure();
     
     // 8. Mettre à jour la version et le changelog
-    console.log('📦 Mise à jour version 3.2 → 3.3...');
+    this.log('📦 Mise à jour version 3.2 → 3.3...');
     await updateVersionAndChangelog();
     
     // 9. Générer la matrice des drivers
-    console.log('📋 Génération de la matrice des drivers...');
+    this.log('📋 Génération de la matrice des drivers...');
     await generateDriversMatrix();
     
     // 10. Générer le rapport final
-    console.log('📄 Génération du rapport final...');
+    this.log('📄 Génération du rapport final...');
     await generateFinalReport(migrationResult);
     
-    console.log('🎉 Migration vers SDK3+ conforme terminée avec succès!');
+    this.log('🎉 Migration vers SDK3+ conforme terminée avec succès!');
     
   } catch (error) {
     console.error('❌ Erreur lors de la migration:', error.message);
@@ -95,7 +95,7 @@ async function createBackup() {
     const backupPath = path.join(BACKUP_DIR, `drivers-backup-${timestamp}`);
     
     await copyDirectory(DRIVERS_DIR, backupPath);
-    console.log(`📦 Sauvegarde créée: ${backupPath}`);
+    this.log(`📦 Sauvegarde créée: ${backupPath}`);
   }
 }
 
@@ -106,7 +106,7 @@ async function createNewStructure() {
       const fullPath = path.join(DRIVERS_DIR, domain, subdir);
       if (!fs.existsSync(fullPath)) {
         fs.mkdirSync(fullPath, { recursive: true });
-        console.log(`✅ Créé: ${fullPath}`);
+        this.log(`✅ Créé: ${fullPath}`);
       }
     }
   }
@@ -115,7 +115,7 @@ async function createNewStructure() {
 // Migrer les drivers existants
 async function migrateExistingDrivers() {
   const oldDrivers = await scanOldStructure();
-  console.log(`📊 ${oldDrivers.length} drivers trouvés dans l'ancienne structure`);
+  this.log(`📊 ${oldDrivers.length} drivers trouvés dans l'ancienne structure`);
   
   let migrated = 0;
   let skipped = 0;
@@ -125,18 +125,18 @@ async function migrateExistingDrivers() {
       const success = await migrateDriver(driver);
       if (success) {
         migrated++;
-        console.log(`✅ Migré: ${driver.oldPath} → ${driver.newPath}`);
+        this.log(`✅ Migré: ${driver.oldPath} → ${driver.newPath}`);
       } else {
         skipped++;
-        console.log(`⏭️ Ignoré: ${driver.oldPath}`);
+        this.log(`⏭️ Ignoré: ${driver.oldPath}`);
       }
     } catch (error) {
-      console.log(`⚠️ Erreur migration ${driver.oldPath}:`, error.message);
+      this.log(`⚠️ Erreur migration ${driver.oldPath}:`, error.message);
       skipped++;
     }
   }
   
-  console.log(`📊 Résumé: ${migrated} migrés, ${skipped} ignorés`);
+  this.log(`📊 Résumé: ${migrated} migrés, ${skipped} ignorés`);
   
   return { migrated, skipped, total: oldDrivers.length };
 }
@@ -484,7 +484,7 @@ async function createGenericDriver(name, domain) {
     const driverInfo = { newPath: `${domain}/__generic__/${name}` };
     await createMissingSDK3Files(driverPath, driverInfo);
     
-    console.log(`✅ Driver générique créé: ${name}`);
+    this.log(`✅ Driver générique créé: ${name}`);
   }
 }
 
@@ -499,7 +499,7 @@ async function createTemplate(name, domain) {
     const driverInfo = { newPath: `${domain}/__templates__/${name}` };
     await createMissingSDK3Files(templatePath, driverInfo);
     
-    console.log(`✅ Template créé: ${name}`);
+    this.log(`✅ Template créé: ${name}`);
   }
 }
 
@@ -546,7 +546,7 @@ async function createBrandOverlay(brand) {
     const overlayJsonPath = path.join(overlayPath, 'overlay.json');
     fs.writeFileSync(overlayJsonPath, JSON.stringify(overlayContent, null, 2));
     
-    console.log(`✅ Overlay marque créé: ${brand}`);
+    this.log(`✅ Overlay marque créé: ${brand}`);
   }
 }
 
@@ -570,7 +570,7 @@ async function createCategoryOverlay(category) {
     const overlayJsonPath = path.join(overlayPath, 'overlay.json');
     fs.writeFileSync(overlayJsonPath, JSON.stringify(overlayContent, null, 2));
     
-    console.log(`✅ Overlay catégorie créé: ${category}`);
+    this.log(`✅ Overlay catégorie créé: ${category}`);
   }
 }
 
@@ -609,7 +609,7 @@ async function generateConformImages() {
     }
   }
   
-  console.log(`✅ ${generated} images conformes SDK3+ générées`);
+  this.log(`✅ ${generated} images conformes SDK3+ générées`);
 }
 
 // Créer un PNG conforme aux spécifications
@@ -755,7 +755,7 @@ class TuyaZigbeeApp extends Homey.App {
 module.exports = TuyaZigbeeApp;`;
   
   fs.writeFileSync(appJsPath, appJsContent);
-  console.log('✅ app.js mis à jour pour la structure SDK3+');
+  this.log('✅ app.js mis à jour pour la structure SDK3+');
 }
 
 // Mettre à jour la version et le changelog
@@ -766,7 +766,7 @@ async function updateVersionAndChangelog() {
     const appJson = JSON.parse(fs.readFileSync(appJsonPath, 'utf8'));
     appJson.version = '3.3.0';
     fs.writeFileSync(appJsonPath, JSON.stringify(appJson, null, 2));
-    console.log('✅ Version mise à jour: 3.3.0');
+    this.log('✅ Version mise à jour: 3.3.0');
   }
   
   // Créer le changelog
@@ -790,7 +790,7 @@ async function updateVersionAndChangelog() {
 `;
   
   fs.writeFileSync(changelogPath, changelogContent);
-  console.log('✅ Changelog créé');
+  this.log('✅ Changelog créé');
 }
 
 // Générer la matrice des drivers
@@ -846,7 +846,7 @@ ${drivers.filter(d => d.domain === 'zigbee').map(d => `- ${d.name} (${d.type})`)
 `;
   
   fs.writeFileSync(matrixPath, matrixContent);
-  console.log('✅ Matrice des drivers générée');
+  this.log('✅ Matrice des drivers générée');
 }
 
 // Générer le rapport final
@@ -868,7 +868,7 @@ async function generateFinalReport(migrationResult) {
   const reportPath = path.join(reportsDir, 'migration-3.3-sdk3-complete-report.json');
   fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
   
-  console.log(`📄 Rapport final sauvegardé: ${reportPath}`);
+  this.log(`📄 Rapport final sauvegardé: ${reportPath}`);
 }
 
 // Copier un répertoire

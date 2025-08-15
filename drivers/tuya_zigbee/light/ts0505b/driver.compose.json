@@ -11,5 +11,11 @@
     "light_hue",
     "light_saturation",
     "light_temperature"
-  ]
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "min": 0,
+      "max": 100
+    }
+  }
 }

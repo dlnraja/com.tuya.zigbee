@@ -23,8 +23,8 @@ class LocalValidator {
 
     async run() {
         try {
-            console.log('🚀 VALIDATION LOCALE RAPIDE');
-            console.log('=' .repeat(50));
+            this.log('🚀 VALIDATION LOCALE RAPIDE');
+            this.log('=' .repeat(50));
             
             // 1. Vérifier app.json
             await this.validateAppJson();
@@ -45,7 +45,7 @@ class LocalValidator {
     }
 
     async validateAppJson() {
-        console.log('\n🔍 VALIDATION APP.JSON...');
+        this.log('\n🔍 VALIDATION APP.JSON...');
         
         const appJsonPath = path.join(this.projectRoot, 'app.json');
         
@@ -95,7 +95,7 @@ class LocalValidator {
                 }
             }
             
-            console.log('✅ app.json validé');
+            this.log('✅ app.json validé');
             
         } catch (error) {
             this.addError(`Erreur lecture app.json: ${error.message}`);
@@ -103,7 +103,7 @@ class LocalValidator {
     }
 
     async validateDriversStructure() {
-        console.log('\n🔍 VALIDATION STRUCTURE DRIVERS...');
+        this.log('\n🔍 VALIDATION STRUCTURE DRIVERS...');
         
         const driversPath = path.join(this.projectRoot, 'drivers');
         
@@ -215,7 +215,7 @@ class LocalValidator {
     }
 
     async validateCriticalFiles() {
-        console.log('\n🔍 VALIDATION FICHIERS CRITIQUES...');
+        this.log('\n🔍 VALIDATION FICHIERS CRITIQUES...');
         
         const criticalFiles = [
             'package.json',
@@ -226,7 +226,7 @@ class LocalValidator {
         for (const file of criticalFiles) {
             const filePath = path.join(this.projectRoot, file);
             if (await fs.pathExists(filePath)) {
-                console.log(`  ✅ ${file}`);
+                this.log(`  ✅ ${file}`);
             } else {
                 this.addWarning(`${file} manquant`);
             }
@@ -246,40 +246,40 @@ class LocalValidator {
     }
 
     generateReport() {
-        console.log('\n📋 RAPPORT DE VALIDATION LOCALE');
-        console.log('=' .repeat(50));
+        this.log('\n📋 RAPPORT DE VALIDATION LOCALE');
+        this.log('=' .repeat(50));
         
-        console.log(`📊 STATISTIQUES:`);
-        console.log(`  Total drivers: ${this.stats.total}`);
-        console.log(`  Valides: ${this.stats.valid}`);
-        console.log(`  Invalides: ${this.stats.invalid}`);
+        this.log(`📊 STATISTIQUES:`);
+        this.log(`  Total drivers: ${this.stats.total}`);
+        this.log(`  Valides: ${this.stats.valid}`);
+        this.log(`  Invalides: ${this.stats.invalid}`);
         
         if (this.errors.length > 0) {
-            console.log(`\n❌ ERREURS (${this.errors.length}):`);
-            this.errors.forEach(error => console.log(`  - ${error}`));
+            this.log(`\n❌ ERREURS (${this.errors.length}):`);
+            this.errors.forEach(error => this.log(`  - ${error}`));
         }
         
         if (this.warnings.length > 0) {
-            console.log(`\n⚠️  AVERTISSEMENTS (${this.warnings.length}):`);
-            this.warnings.forEach(warning => console.log(`  - ${warning}`));
+            this.log(`\n⚠️  AVERTISSEMENTS (${this.warnings.length}):`);
+            this.warnings.forEach(warning => this.log(`  - ${warning}`));
         }
         
         if (this.errors.length === 0) {
-            console.log('\n🎉 VALIDATION LOCALE RÉUSSIE !');
-            console.log('✅ L\'app est prête pour la validation Homey complète');
+            this.log('\n🎉 VALIDATION LOCALE RÉUSSIE !');
+            this.log('✅ L\'app est prête pour la validation Homey complète');
         } else {
-            console.log('\n🔧 CORRECTIONS REQUISES:');
-            console.log('  Corrigez les erreurs ci-dessus avant de continuer');
+            this.log('\n🔧 CORRECTIONS REQUISES:');
+            this.log('  Corrigez les erreurs ci-dessus avant de continuer');
         }
         
-        console.log('\n🚀 PROCHAINES ÉTAPES:');
+        this.log('\n🚀 PROCHAINES ÉTAPES:');
         if (this.errors.length === 0) {
-            console.log('  1. Lancer: npx homey app validate (validation complète)');
-            console.log('  2. Tester en local: npx homey app run');
-            console.log('  3. Push vers GitHub');
+            this.log('  1. Lancer: npx homey app validate (validation complète)');
+            this.log('  2. Tester en local: npx homey app run');
+            this.log('  3. Push vers GitHub');
         } else {
-            console.log('  1. Corriger les erreurs ci-dessus');
-            console.log('  2. Relancer la validation locale');
+            this.log('  1. Corriger les erreurs ci-dessus');
+            this.log('  2. Relancer la validation locale');
         }
     }
 }

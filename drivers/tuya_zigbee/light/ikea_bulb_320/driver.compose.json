@@ -768,5 +768,16 @@
       "ceiling-light",
       "rgbw-bulb"
     ]
+  },
+  "capabilitiesOptions": {
+    "dim": {
+      "min": 0,
+      "max": 100
+    }
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
   }
 }
