@@ -1,14 +1,41 @@
 {
-  "id": "ts0003_device_standard_default",
-  "name": "switch ts0003",
-  "images": {
-    "small": "/drivers/ts0003_device_standard_default/assets/images/small.png",
-    "large": "/drivers/ts0003_device_standard_default/assets/images/large.png"
+  "id": "ts0003",
+  "class": "switch",
+  "name": {
+    "en": "Ts0003 (Intelligent)",
+    "fr": "Ts0003 (Intelligent)",
+    "nl": "Ts0003 (Intelligent)",
+    "ta": "Ts0003 (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Ts0003 driver with auto-discovery",
+    "fr": "Driver Ts0003 intelligent avec découverte automatique",
+    "nl": "Intelligente Ts0003 driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Ts0003 டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "switch"
+  ],
   "capabilities": [
-    "onoff",
-    "measure_power"
+    "onoff"
   ],
   "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "ts0003_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "ts0003_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
   "icon": "assets/icon.svg"
 }

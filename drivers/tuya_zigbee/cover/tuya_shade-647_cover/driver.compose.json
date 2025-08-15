@@ -1,13 +1,42 @@
 {
-  "id": "tuya-shade-647_cover_standard_default",
-  "name": "drivers-backup-2025-08-13T12-14-20-255Z tuya-shade-647 cover standard models standard default",
-  "images": {
-    "small": "/drivers/tuya-shade-647_cover_standard_default/assets/images/small.png",
-    "large": "/drivers/tuya-shade-647_cover_standard_default/assets/images/large.png"
+  "id": "tuya_shade-647_cover",
+  "class": "cover",
+  "name": {
+    "en": "Tuya Shade-647 Cover (Intelligent)",
+    "fr": "Tuya Shade-647 Cover (Intelligent)",
+    "nl": "Tuya Shade-647 Cover (Intelligent)",
+    "ta": "Tuya Shade-647 Cover (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Tuya Shade-647 Cover driver with auto-discovery",
+    "fr": "Driver Tuya Shade-647 Cover intelligent avec découverte automatique",
+    "nl": "Intelligente Tuya Shade-647 Cover driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Tuya Shade-647 Cover டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "cover"
+  ],
   "capabilities": [
-    "windowcoverings_state"
+    "windowcoverings_state",
+    "windowcoverings_set"
   ],
   "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "tuya_shade-647_cover_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "tuya_shade-647_cover_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
   "icon": "assets/icon.svg"
 }

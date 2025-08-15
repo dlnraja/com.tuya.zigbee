@@ -1,14 +1,41 @@
 {
-  "id": "ts011f_device_standard_default",
-  "name": "plug ts011f",
-  "images": {
-    "small": "/drivers/ts011f_device_standard_default/assets/images/small.png",
-    "large": "/drivers/ts011f_device_standard_default/assets/images/large.png"
+  "id": "ts011f",
+  "class": "switch",
+  "name": {
+    "en": "Ts011f (Intelligent)",
+    "fr": "Ts011f (Intelligent)",
+    "nl": "Ts011f (Intelligent)",
+    "ta": "Ts011f (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Ts011f driver with auto-discovery",
+    "fr": "Driver Ts011f intelligent avec découverte automatique",
+    "nl": "Intelligente Ts011f driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Ts011f டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "switch"
+  ],
   "capabilities": [
-    "onoff",
-    "measure_power"
+    "onoff"
   ],
   "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "ts011f_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "ts011f_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
   "icon": "assets/icon.svg"
 }

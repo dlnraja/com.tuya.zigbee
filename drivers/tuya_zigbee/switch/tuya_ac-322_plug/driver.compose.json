@@ -1,14 +1,41 @@
 {
-  "id": "tuya-ac-322_plug_standard_default",
-  "name": "drivers-backup-2025-08-13T12-14-20-255Z tuya-ac-322 plug standard models standard default",
-  "images": {
-    "small": "/drivers/tuya-ac-322_plug_standard_default/assets/images/small.png",
-    "large": "/drivers/tuya-ac-322_plug_standard_default/assets/images/large.png"
+  "id": "tuya_ac-322_plug",
+  "class": "switch",
+  "name": {
+    "en": "Tuya Ac-322 Plug (Intelligent)",
+    "fr": "Tuya Ac-322 Plug (Intelligent)",
+    "nl": "Tuya Ac-322 Plug (Intelligent)",
+    "ta": "Tuya Ac-322 Plug (ஸ்மார்ட்)"
   },
-  "capabilities": [
-    "onoff",
-    "measure_power",
-    "meter_power"
+  "description": {
+    "en": "Intelligent Tuya Ac-322 Plug driver with auto-discovery",
+    "fr": "Driver Tuya Ac-322 Plug intelligent avec découverte automatique",
+    "nl": "Intelligente Tuya Ac-322 Plug driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Tuya Ac-322 Plug டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "switch"
   ],
-  "capabilitiesOptions": {}
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "tuya_ac-322_plug_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "tuya_ac-322_plug_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
+  "icon": "assets/icon.svg"
 }

@@ -1,137 +1,49 @@
-'use strict';
+#!/usr/bin/env node
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class AqaraHumidity617PlugStandardDefaultDevice extends ZigBeeDevice {
-  
-  async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
+class AqaraHumidity-617PlugDevice extends ZigBeeDevice {
+    async onNodeInit({ zclNode }) {
+        this.log('🔧 AqaraHumidity-617PlugDevice initialisé (mode intelligent)');
+        
+        // Configuration intelligente des endpoints
+        this.registerCapability('onoff', 'genOnOff', {
+            endpoint: 1,
+            cluster: 'genOnOff',
+            attribute: 'onOff',
+            reportParser: (value) => this.parseOnoff(value)
+        });
+        
+        // Configuration des commandes
+        this.registerCapabilityListener('onoff', async (value) => {
+            this.log('🎯 Commande onoff:', value);
+            await this.zclNode.endpoints[1].clusters.genOnOff.toggle(value);
+        });
+        
+        // Configuration des rapports intelligents
+        await this.configureAttributeReporting([
+            {
+                endpointId: 1,
+                clusterId: 'genOnOff',
+                attributeId: 'onOff',
+                minInterval: 0,
+                maxInterval: 300,
+                reportableChange: 1
+            }
+        ]);
+    }
     
-    this.log('Device initialized:', this.getData().id);
+    // Parsers intelligents
+    parseOnoff(value) {
+        // Parser intelligent pour onoff
+        if (typeof value === 'number') return value;
+        if (typeof value === 'boolean') return value ? 1 : 0;
+        return 0;
+    }
     
-    // Enregistrement des capabilities selon la catégorie
-    if (category === 'light') {
-      await this.registerLightCapabilities();
-    } else if (category === 'switch' || category === 'plug') {
-      await this.registerSwitchCapabilities();
-    } else if (category.startsWith('sensor-')) {
-      await this.registerSensorCapabilities(category);
-    } else if (category === 'cover') {
-      await this.registerCoverCapabilities();
-    } else if (category === 'lock') {
-      await this.registerLockCapabilities();
+    async onDeleted() {
+        this.log('🗑️  AqaraHumidity-617PlugDevice supprimé');
     }
-  }
-  
-  async registerLightCapabilities() {
-    try {
-      // Capability onoff
-      await this.registerCapability('onoff', 'genOnOff', {
-        get: 'onOff',
-        set: 'toggle',
-        setParser: () => ({}),
-        report: 'onOff',
-        reportParser: (value) => value === 1,
-      });
-      
-      // Capability dim
-      await this.registerCapability('dim', 'genLevelCtrl', {
-        get: 'currentLevel',
-        set: 'moveToLevel',
-        setParser: (value) => ({ level: Math.round(value * 255) }),
-        report: 'currentLevel',
-        reportParser: (value) => value / 255,
-      });
-      
-      this.log('Capabilities lumière enregistrées');
-    } catch (error) {
-      this.error('Erreur enregistrement capabilities lumière:', error);
-    }
-  }
-  
-  async registerSwitchCapabilities() {
-    try {
-      await this.registerCapability('onoff', 'genOnOff', {
-        get: 'onOff',
-        set: 'toggle',
-        setParser: () => ({}),
-        report: 'onOff',
-        reportParser: (value) => value === 1,
-      });
-      
-      this.log('Capabilities switch enregistrées');
-    } catch (error) {
-      this.error('Erreur enregistrement capabilities switch:', error);
-    }
-  }
-  
-  async registerSensorCapabilities(sensorType) {
-    try {
-      if (sensorType.includes('temp')) {
-        await this.registerCapability('measure_temperature', 'genBasic', {
-          get: 'currentTemperature',
-          report: 'currentTemperature',
-          reportParser: (value) => value / 100,
-        });
-      }
-      
-      if (sensorType.includes('humidity')) {
-        await this.registerCapability('measure_humidity', 'genBasic', {
-          get: 'currentHumidity',
-          report: 'currentHumidity',
-          reportParser: (value) => value / 100,
-        });
-      }
-      
-      if (sensorType.includes('motion')) {
-        await this.registerCapability('alarm_motion', 'genBasic', {
-          get: 'motionDetected',
-          report: 'motionDetected',
-          reportParser: (value) => value === 1,
-        });
-      }
-      
-      this.log('Capabilities capteur enregistrées');
-    } catch (error) {
-      this.error('Erreur enregistrement capabilities capteur:', error);
-    }
-  }
-  
-  async registerCoverCapabilities() {
-    try {
-      await this.registerCapability('windowcoverings_state', 'genWindowCovering', {
-        get: 'currentPositionLiftPercentage',
-        set: 'goToLiftPercentage',
-        setParser: (value) => ({ percentageLift: Math.round(value * 100) }),
-        report: 'currentPositionLiftPercentage',
-        reportParser: (value) => value / 100,
-      });
-      
-      this.log('Capabilities cover enregistrées');
-    } catch (error) {
-      this.error('Erreur enregistrement capabilities cover:', error);
-    }
-  }
-  
-  async registerLockCapabilities() {
-    try {
-      await this.registerCapability('lock_state', 'genDoorLock', {
-        get: 'lockState',
-        set: 'setDoorLockState',
-        setParser: (value) => ({ doorLockState: value === 'locked' ? 1 : 2 }),
-        report: 'lockState',
-        reportParser: (value) => value === 1 ? 'locked' : 'unlocked',
-      });
-      
-      this.log('Capabilities lock enregistrées');
-    } catch (error) {
-      this.error('Erreur enregistrement capabilities lock:', error);
-    }
-  }
-  
-  async onDeleted() {
-    this.log('Device deleted:', this.getData().id);
-  }
 }
 
-module.exports = AqaraHumidity617PlugStandardDefaultDevice;
+module.exports = AqaraHumidity-617PlugDevice;

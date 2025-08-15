@@ -1,13 +1,42 @@
 {
   "id": "ts0601_curtain_cover_standard",
-  "name": "drivers-backup-2025-08-13T12-14-20-255Z ts0601 curtain cover standard models standard default models standard default",
-  "images": {
-    "small": "/drivers/ts0601_curtain_cover_standard/assets/images/small.png",
-    "large": "/drivers/ts0601_curtain_cover_standard/assets/images/large.png"
+  "class": "cover",
+  "name": {
+    "en": "Ts0601 Curtain Cover Standard (Intelligent)",
+    "fr": "Ts0601 Curtain Cover Standard (Intelligent)",
+    "nl": "Ts0601 Curtain Cover Standard (Intelligent)",
+    "ta": "Ts0601 Curtain Cover Standard (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Ts0601 Curtain Cover Standard driver with auto-discovery",
+    "fr": "Driver Ts0601 Curtain Cover Standard intelligent avec découverte automatique",
+    "nl": "Intelligente Ts0601 Curtain Cover Standard driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Ts0601 Curtain Cover Standard டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "cover"
+  ],
   "capabilities": [
-    "windowcoverings_state"
+    "windowcoverings_state",
+    "windowcoverings_set"
   ],
   "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "ts0601_curtain_cover_standard_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "ts0601_curtain_cover_standard_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
   "icon": "assets/icon.svg"
 }

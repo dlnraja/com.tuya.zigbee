@@ -1,13 +1,42 @@
 {
-  "id": "ts130f_standard_standard_default",
-  "name": "drivers-backup-2025-08-13T12-08-28-817Z ts130f models standard default models standard default",
-  "images": {
-    "small": "/drivers/ts130f_standard_standard_default/assets/images/small.png",
-    "large": "/drivers/ts130f_standard_standard_default/assets/images/large.png"
+  "id": "ts130f_standard",
+  "class": "cover",
+  "name": {
+    "en": "Ts130f Standard (Intelligent)",
+    "fr": "Ts130f Standard (Intelligent)",
+    "nl": "Ts130f Standard (Intelligent)",
+    "ta": "Ts130f Standard (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Ts130f Standard driver with auto-discovery",
+    "fr": "Driver Ts130f Standard intelligent avec découverte automatique",
+    "nl": "Intelligente Ts130f Standard driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Ts130f Standard டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "cover"
+  ],
   "capabilities": [
-    "windowcoverings_state"
+    "windowcoverings_state",
+    "windowcoverings_set"
   ],
   "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "ts130f_standard_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "ts130f_standard_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
   "icon": "assets/icon.svg"
 }

@@ -1,14 +1,41 @@
 {
-  "id": "tuya-heater-0_plug_standard_default",
-  "name": "drivers-backup-2025-08-13T12-14-20-255Z tuya-heater-0 plug standard models standard default",
-  "images": {
-    "small": "/drivers/tuya-heater-0_plug_standard_default/assets/images/small.png",
-    "large": "/drivers/tuya-heater-0_plug_standard_default/assets/images/large.png"
+  "id": "tuya_heater-0_plug",
+  "class": "switch",
+  "name": {
+    "en": "Tuya Heater-0 Plug (Intelligent)",
+    "fr": "Tuya Heater-0 Plug (Intelligent)",
+    "nl": "Tuya Heater-0 Plug (Intelligent)",
+    "ta": "Tuya Heater-0 Plug (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Tuya Heater-0 Plug driver with auto-discovery",
+    "fr": "Driver Tuya Heater-0 Plug intelligent avec découverte automatique",
+    "nl": "Intelligente Tuya Heater-0 Plug driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Tuya Heater-0 Plug டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "switch"
+  ],
   "capabilities": [
-    "onoff",
-    "measure_power"
+    "onoff"
   ],
   "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "tuya_heater-0_plug_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "tuya_heater-0_plug_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
   "icon": "assets/icon.svg"
 }

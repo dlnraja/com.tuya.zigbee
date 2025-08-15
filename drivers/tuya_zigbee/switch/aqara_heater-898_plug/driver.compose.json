@@ -1,14 +1,41 @@
 {
-  "id": "aqara-heater-898_plug_standard_default",
-  "name": "drivers-backup-2025-08-13T12-14-20-255Z aqara-heater-898 plug standard models standard default",
-  "images": {
-    "small": "/drivers/aqara-heater-898_plug_standard_default/assets/images/small.png",
-    "large": "/drivers/aqara-heater-898_plug_standard_default/assets/images/large.png"
+  "id": "aqara_heater-898_plug",
+  "class": "switch",
+  "name": {
+    "en": "Aqara Heater-898 Plug (Intelligent)",
+    "fr": "Aqara Heater-898 Plug (Intelligent)",
+    "nl": "Aqara Heater-898 Plug (Intelligent)",
+    "ta": "Aqara Heater-898 Plug (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Aqara Heater-898 Plug driver with auto-discovery",
+    "fr": "Driver Aqara Heater-898 Plug intelligent avec découverte automatique",
+    "nl": "Intelligente Aqara Heater-898 Plug driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Aqara Heater-898 Plug டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "switch"
+  ],
   "capabilities": [
-    "onoff",
-    "measure_power"
+    "onoff"
   ],
   "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "aqara_heater-898_plug_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "aqara_heater-898_plug_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
   "icon": "assets/icon.svg"
 }

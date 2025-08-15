@@ -1,21 +1,53 @@
 {
-  "id": "ts0505b_device_standard_default",
-  "name": "light ts0505b",
-  "images": {
-    "small": "/drivers/ts0505b_device_standard_default/assets/images/small.png",
-    "large": "/drivers/ts0505b_device_standard_default/assets/images/large.png"
+  "id": "ts0505b",
+  "class": "light",
+  "name": {
+    "en": "Ts0505b (Intelligent)",
+    "fr": "Ts0505b (Intelligent)",
+    "nl": "Ts0505b (Intelligent)",
+    "ta": "Ts0505b (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Ts0505b driver with auto-discovery",
+    "fr": "Driver Ts0505b intelligent avec découverte automatique",
+    "nl": "Intelligente Ts0505b driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Ts0505b டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "light"
+  ],
   "capabilities": [
     "onoff",
     "dim",
-    "light_hue",
-    "light_saturation",
-    "light_temperature"
+    "light_temperature",
+    "light_mode"
   ],
   "capabilitiesOptions": {
     "dim": {
       "min": 0,
       "max": 100
+    },
+    "light_temperature": {
+      "min": 153,
+      "max": 500
     }
-  }
+  },
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "ts0505b_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "ts0505b_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
+  "icon": "assets/icon.svg"
 }

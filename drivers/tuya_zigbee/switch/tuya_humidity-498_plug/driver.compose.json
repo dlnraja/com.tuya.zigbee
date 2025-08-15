@@ -1,14 +1,41 @@
 {
-  "id": "tuya-humidity-498_plug_standard_default",
-  "name": "drivers-backup-2025-08-13T12-14-20-255Z tuya-humidity-498 plug standard models standard default",
-  "images": {
-    "small": "/drivers/tuya-humidity-498_plug_standard_default/assets/images/small.png",
-    "large": "/drivers/tuya-humidity-498_plug_standard_default/assets/images/large.png"
+  "id": "tuya_humidity-498_plug",
+  "class": "switch",
+  "name": {
+    "en": "Tuya Humidity-498 Plug (Intelligent)",
+    "fr": "Tuya Humidity-498 Plug (Intelligent)",
+    "nl": "Tuya Humidity-498 Plug (Intelligent)",
+    "ta": "Tuya Humidity-498 Plug (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Tuya Humidity-498 Plug driver with auto-discovery",
+    "fr": "Driver Tuya Humidity-498 Plug intelligent avec découverte automatique",
+    "nl": "Intelligente Tuya Humidity-498 Plug driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Tuya Humidity-498 Plug டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "switch"
+  ],
   "capabilities": [
-    "onoff",
-    "measure_power"
+    "onoff"
   ],
   "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "tuya_humidity-498_plug_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "tuya_humidity-498_plug_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
   "icon": "assets/icon.svg"
 }

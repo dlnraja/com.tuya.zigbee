@@ -1,0 +1,47 @@
+{
+  "id": "generic_light",
+  "class": "light",
+  "name": {
+    "en": "Generic Light (Intelligent)",
+    "fr": "Light Générique (Intelligent)",
+    "nl": "Generieke Light (Intelligent)",
+    "ta": "பொதுவான Light (ஸ்மார்ட்)"
+  },
+  "description": {
+    "en": "Generic intelligent light driver with auto-discovery",
+    "fr": "Driver light générique intelligent avec découverte automatique",
+    "nl": "Generieke intelligente light driver met auto-detectie",
+    "ta": "பொதுவான ஸ்மார்ட் light டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "light"
+  ],
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature",
+    "light_mode"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "min": 0,
+      "max": 100
+    },
+    "light_temperature": {
+      "min": 153,
+      "max": 500
+    }
+  },
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "generic_light",
+        "vendor": "Generic",
+        "description": "Generic intelligent ${category} device"
+      }
+    ],
+    "models": [
+      "generic_light"
+    ]
+  }
+}

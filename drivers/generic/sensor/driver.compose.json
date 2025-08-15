@@ -1,0 +1,47 @@
+{
+  "id": "generic_sensor",
+  "class": "sensor",
+  "name": {
+    "en": "Generic Sensor (Intelligent)",
+    "fr": "Sensor Générique (Intelligent)",
+    "nl": "Generieke Sensor (Intelligent)",
+    "ta": "பொதுவான Sensor (ஸ்மார்ட்)"
+  },
+  "description": {
+    "en": "Generic intelligent sensor driver with auto-discovery",
+    "fr": "Driver sensor générique intelligent avec découverte automatique",
+    "nl": "Generieke intelligente sensor driver met auto-detectie",
+    "ta": "பொதுவான ஸ்மார்ட் sensor டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "sensor"
+  ],
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_pressure",
+    "measure_luminance"
+  ],
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "min": -40,
+      "max": 80
+    },
+    "measure_humidity": {
+      "min": 0,
+      "max": 100
+    }
+  },
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "generic_sensor",
+        "vendor": "Generic",
+        "description": "Generic intelligent ${category} device"
+      }
+    ],
+    "models": [
+      "generic_sensor"
+    ]
+  }
+}

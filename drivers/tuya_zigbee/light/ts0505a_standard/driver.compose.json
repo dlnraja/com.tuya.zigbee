@@ -1,16 +1,26 @@
 {
-  "id": "ts0505a_standard_standard_default",
-  "name": "drivers-backup-2025-08-13T12-08-28-817Z ts0505a models standard default models standard default",
-  "images": {
-    "small": "/drivers/ts0505a_standard_standard_default/assets/images/small.png",
-    "large": "/drivers/ts0505a_standard_standard_default/assets/images/large.png"
+  "id": "ts0505a_standard",
+  "class": "light",
+  "name": {
+    "en": "Ts0505a Standard (Intelligent)",
+    "fr": "Ts0505a Standard (Intelligent)",
+    "nl": "Ts0505a Standard (Intelligent)",
+    "ta": "Ts0505a Standard (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Ts0505a Standard driver with auto-discovery",
+    "fr": "Driver Ts0505a Standard intelligent avec découverte automatique",
+    "nl": "Intelligente Ts0505a Standard driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Ts0505a Standard டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "light"
+  ],
   "capabilities": [
     "onoff",
     "dim",
-    "light_hue",
-    "light_saturation",
-    "light_temperature"
+    "light_temperature",
+    "light_mode"
   ],
   "capabilitiesOptions": {
     "dim": {
@@ -18,9 +28,26 @@
       "max": 100
     },
     "light_temperature": {
-      "min": 2700,
-      "max": 6500
+      "min": 153,
+      "max": 500
     }
+  },
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "ts0505a_standard_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "ts0505a_standard_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
   },
   "icon": "assets/icon.svg"
 }

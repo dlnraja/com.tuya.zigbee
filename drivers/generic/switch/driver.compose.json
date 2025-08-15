@@ -1,0 +1,35 @@
+{
+  "id": "generic_switch",
+  "class": "switch",
+  "name": {
+    "en": "Generic Switch (Intelligent)",
+    "fr": "Switch Générique (Intelligent)",
+    "nl": "Generieke Switch (Intelligent)",
+    "ta": "பொதுவான Switch (ஸ்மார்ட்)"
+  },
+  "description": {
+    "en": "Generic intelligent switch driver with auto-discovery",
+    "fr": "Driver switch générique intelligent avec découverte automatique",
+    "nl": "Generieke intelligente switch driver met auto-detectie",
+    "ta": "பொதுவான ஸ்மார்ட் switch டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "switch"
+  ],
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "generic_switch",
+        "vendor": "Generic",
+        "description": "Generic intelligent ${category} device"
+      }
+    ],
+    "models": [
+      "generic_switch"
+    ]
+  }
+}

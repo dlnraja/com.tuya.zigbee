@@ -1,14 +1,41 @@
 {
   "id": "generic_wall_switch_2gang",
-  "name": "drivers-backup-2025-08-13T12-14-20-255Z generic wall switch 2gang models standard default",
-  "images": {
-    "small": "/drivers/generic_wall_switch_2gang/assets/images/small.png",
-    "large": "/drivers/generic_wall_switch_2gang/assets/images/large.png"
+  "class": "switch",
+  "name": {
+    "en": "Generic Wall Switch 2gang (Intelligent)",
+    "fr": "Generic Wall Switch 2gang (Intelligent)",
+    "nl": "Generic Wall Switch 2gang (Intelligent)",
+    "ta": "Generic Wall Switch 2gang (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Generic Wall Switch 2gang driver with auto-discovery",
+    "fr": "Driver Generic Wall Switch 2gang intelligent avec découverte automatique",
+    "nl": "Intelligente Generic Wall Switch 2gang driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Generic Wall Switch 2gang டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "switch"
+  ],
   "capabilities": [
-    "onoff",
-    "measure_power"
+    "onoff"
   ],
   "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "generic_wall_switch_2gang_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "generic_wall_switch_2gang_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
   "icon": "assets/icon.svg"
 }

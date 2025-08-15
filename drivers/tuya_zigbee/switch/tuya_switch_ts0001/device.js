@@ -1,76 +1,49 @@
-/**
- * Tuya Smart Switch TS0001 Device
- * Logique spécifique à l'appareil pour l'interrupteur intelligent Tuya
- */
+#!/usr/bin/env node
 
-const TuyaSwitchTS0001 = require('./driver');
+const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class TuyaSwitchTS0001Device extends TuyaSwitchTS0001 {
-  
-  constructor() {
-    super();
+class TuyaSwitchTs0001Device extends ZigBeeDevice {
+    async onNodeInit({ zclNode }) {
+        this.log('🔧 TuyaSwitchTs0001Device initialisé (mode intelligent)');
+        
+        // Configuration intelligente des endpoints
+        this.registerCapability('onoff', 'genOnOff', {
+            endpoint: 1,
+            cluster: 'genOnOff',
+            attribute: 'onOff',
+            reportParser: (value) => this.parseOnoff(value)
+        });
+        
+        // Configuration des commandes
+        this.registerCapabilityListener('onoff', async (value) => {
+            this.log('🎯 Commande onoff:', value);
+            await this.zclNode.endpoints[1].clusters.genOnOff.toggle(value);
+        });
+        
+        // Configuration des rapports intelligents
+        await this.configureAttributeReporting([
+            {
+                endpointId: 1,
+                clusterId: 'genOnOff',
+                attributeId: 'onOff',
+                minInterval: 0,
+                maxInterval: 300,
+                reportableChange: 1
+            }
+        ]);
+    }
     
-    // Configuration spécifique à l'appareil
-    this.deviceType = 'switch';
-    this.modelName = 'TS0001';
-    this.manufacturer = 'Tuya';
+    // Parsers intelligents
+    parseOnoff(value) {
+        // Parser intelligent pour onoff
+        if (typeof value === 'number') return value;
+        if (typeof value === 'boolean') return value ? 1 : 0;
+        return 0;
+    }
     
-    // Métadonnées de l'appareil
-    this.metadata = {
-      category: 'switch',
-      capabilities: ['onoff'],
-      tuyaDps: [1, 2],
-      zigbeeClusters: ['genOnOff', 'manuSpecificTuya']
-    };
-  }
-  
-  /**
-   * Initialisation spécifique à l'appareil
-   */
-  async onNodeInit({ zclNode, node }) {
-    // Appeler l'initialisation parent
-    await super.onNodeInit({ zclNode, node });
-    
-    // Configuration spécifique TS0001
-    this._configureTS0001Specific();
-    
-    this.log('TS0001 device-specific initialization completed');
-  }
-  
-  /**
-   * Configuration spécifique au modèle TS0001
-   */
-  _configureTS0001Specific() {
-    // Paramètres spécifiques au TS0001
-    this.ts0001Config = {
-      maxLoad: 16,           // Courant maximal en A
-      maxVoltage: 250,       // Tension maximale en V
-      maxPower: 4000,        // Puissance maximale en W
-      switchType: 'toggle',  // Type d'interrupteur
-      hasIndicator: true     // Indicateur LED
-    };
-    
-    this.log(`TS0001 configuration: maxLoad=${this.ts0001Config.maxLoad}A, maxPower=${this.ts0001Config.maxPower}W`);
-  }
-  
-  /**
-   * Obtient les informations de diagnostic TS0001
-   */
-  getTS0001Diagnostics() {
-    return {
-      deviceType: this.deviceType,
-      modelName: this.modelName,
-      manufacturer: this.manufacturer,
-      maxLoad: this.ts0001Config.maxLoad,
-      maxPower: this.ts0001Config.maxPower,
-      switchType: this.ts0001Config.switchType,
-      hasIndicator: this.ts0001Config.hasIndicator,
-      status: {
-        healthy: true,
-        lastUpdate: new Date().toISOString()
-      }
-    };
-  }
+    async onDeleted() {
+        this.log('🗑️  TuyaSwitchTs0001Device supprimé');
+    }
 }
 
-module.exports = TuyaSwitchTS0001Device;
+module.exports = TuyaSwitchTs0001Device;
