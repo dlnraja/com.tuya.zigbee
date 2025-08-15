@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "format": "prettier -w .",
+    "lint": "eslint . --ext .js",
+    "validate:fast": "homey app validate -l debug",
+    "compose:on": "node tools/enable-compose.js",
+    "json:bom": "node tools/strip-bom.js",
+    "json:lint": "node tools/lint-json.js",
+    "json:clean": "node tools/clean-json-only.js",
+    "check:drivers": "node tools/check-drivers.js",
+    "matrix": "node tools/matrix-build.js && node tools/build-references.js",
+    "dashboard": "node tools/build-dashboard.js",
+    "enrich:heur": "node tools/enrich-heuristics.js",
+    "enrich:evidence": "node tools/enrich-from-evidence.js",
+    "orchestrate": "node tools/orchestrate.js",
+    "orchestrate:simple": "node tools/orchestrate-simple.js"
+  },
+  "devDependencies": {
+    "eslint": "^9.9.0",
+    "prettier": "^3.3.3",
+    "glob": "^11.0.0",
+    "nodemon": "^3.1.0",
+    "node-fetch": "^3.3.2"
+  }
+}
