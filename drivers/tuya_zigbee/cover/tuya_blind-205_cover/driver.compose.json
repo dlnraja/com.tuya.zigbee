@@ -1,13 +1,42 @@
 {
-  "id": "tuya-blind-205_cover_standard_default",
-  "name": "drivers-backup-2025-08-13T12-14-20-255Z tuya-blind-205 cover standard models standard default",
-  "images": {
-    "small": "/drivers/tuya-blind-205_cover_standard_default/assets/images/small.png",
-    "large": "/drivers/tuya-blind-205_cover_standard_default/assets/images/large.png"
+  "id": "tuya_blind-205_cover",
+  "class": "cover",
+  "name": {
+    "en": "Tuya Blind-205 Cover (Intelligent)",
+    "fr": "Tuya Blind-205 Cover (Intelligent)",
+    "nl": "Tuya Blind-205 Cover (Intelligent)",
+    "ta": "Tuya Blind-205 Cover (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Tuya Blind-205 Cover driver with auto-discovery",
+    "fr": "Driver Tuya Blind-205 Cover intelligent avec découverte automatique",
+    "nl": "Intelligente Tuya Blind-205 Cover driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Tuya Blind-205 Cover டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "cover"
+  ],
   "capabilities": [
-    "windowcoverings_state"
+    "windowcoverings_state",
+    "windowcoverings_set"
   ],
   "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "tuya_blind-205_cover_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "tuya_blind-205_cover_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
   "icon": "assets/icon.svg"
 }

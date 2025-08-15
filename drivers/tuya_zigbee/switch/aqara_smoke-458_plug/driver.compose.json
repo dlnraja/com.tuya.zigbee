@@ -1,14 +1,41 @@
 {
-  "id": "aqara-smoke-458_plug_standard_default",
-  "name": "drivers-backup-2025-08-13T12-14-20-255Z aqara-smoke-458 plug standard models standard default",
-  "images": {
-    "small": "/drivers/aqara-smoke-458_plug_standard_default/assets/images/small.png",
-    "large": "/drivers/aqara-smoke-458_plug_standard_default/assets/images/large.png"
+  "id": "aqara_smoke-458_plug",
+  "class": "switch",
+  "name": {
+    "en": "Aqara Smoke-458 Plug (Intelligent)",
+    "fr": "Aqara Smoke-458 Plug (Intelligent)",
+    "nl": "Aqara Smoke-458 Plug (Intelligent)",
+    "ta": "Aqara Smoke-458 Plug (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Aqara Smoke-458 Plug driver with auto-discovery",
+    "fr": "Driver Aqara Smoke-458 Plug intelligent avec découverte automatique",
+    "nl": "Intelligente Aqara Smoke-458 Plug driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Aqara Smoke-458 Plug டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "switch"
+  ],
   "capabilities": [
-    "onoff",
-    "measure_power"
+    "onoff"
   ],
   "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "aqara_smoke-458_plug_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "aqara_smoke-458_plug_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
   "icon": "assets/icon.svg"
 }

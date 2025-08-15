@@ -1,16 +1,26 @@
 {
   "id": "generic_device_bulb_standard",
-  "name": "generic bulb rgbcw   generic   standard default",
-  "images": {
-    "small": "/drivers/generic_device_bulb_standard/assets/images/small.png",
-    "large": "/drivers/generic_device_bulb_standard/assets/images/large.png"
+  "class": "light",
+  "name": {
+    "en": "Generic Device Bulb Standard (Intelligent)",
+    "fr": "Generic Device Bulb Standard (Intelligent)",
+    "nl": "Generic Device Bulb Standard (Intelligent)",
+    "ta": "Generic Device Bulb Standard (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Generic Device Bulb Standard driver with auto-discovery",
+    "fr": "Driver Generic Device Bulb Standard intelligent avec découverte automatique",
+    "nl": "Intelligente Generic Device Bulb Standard driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Generic Device Bulb Standard டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "light"
+  ],
   "capabilities": [
     "onoff",
     "dim",
-    "light_hue",
-    "light_saturation",
-    "light_temperature"
+    "light_temperature",
+    "light_mode"
   ],
   "capabilitiesOptions": {
     "dim": {
@@ -18,9 +28,26 @@
       "max": 100
     },
     "light_temperature": {
-      "min": 2700,
-      "max": 6500
+      "min": 153,
+      "max": 500
     }
+  },
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "generic_device_bulb_standard_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "generic_device_bulb_standard_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
   },
   "icon": "assets/icon.svg"
 }

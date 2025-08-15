@@ -1,14 +1,41 @@
 {
-  "id": "aqara-motion-364_plug_standard_default",
-  "name": "drivers-backup-2025-08-13T12-14-20-255Z aqara-motion-364 plug standard models standard default",
-  "images": {
-    "small": "/drivers/aqara-motion-364_plug_standard_default/assets/images/small.png",
-    "large": "/drivers/aqara-motion-364_plug_standard_default/assets/images/large.png"
+  "id": "aqara_motion-364_plug",
+  "class": "switch",
+  "name": {
+    "en": "Aqara Motion-364 Plug (Intelligent)",
+    "fr": "Aqara Motion-364 Plug (Intelligent)",
+    "nl": "Aqara Motion-364 Plug (Intelligent)",
+    "ta": "Aqara Motion-364 Plug (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Aqara Motion-364 Plug driver with auto-discovery",
+    "fr": "Driver Aqara Motion-364 Plug intelligent avec découverte automatique",
+    "nl": "Intelligente Aqara Motion-364 Plug driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Aqara Motion-364 Plug டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "switch"
+  ],
   "capabilities": [
-    "onoff",
-    "measure_power"
+    "onoff"
   ],
   "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "aqara_motion-364_plug_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "aqara_motion-364_plug_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
   "icon": "assets/icon.svg"
 }

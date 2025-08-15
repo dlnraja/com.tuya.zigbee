@@ -1,13 +1,42 @@
 {
-  "id": "aqara-curtain-550_cover_standard_default",
-  "name": "drivers-backup-2025-08-13T12-14-20-255Z aqara-curtain-550 cover standard models standard default",
-  "images": {
-    "small": "/drivers/aqara-curtain-550_cover_standard_default/assets/images/small.png",
-    "large": "/drivers/aqara-curtain-550_cover_standard_default/assets/images/large.png"
+  "id": "aqara_curtain-550_cover",
+  "class": "cover",
+  "name": {
+    "en": "Aqara Curtain-550 Cover (Intelligent)",
+    "fr": "Aqara Curtain-550 Cover (Intelligent)",
+    "nl": "Aqara Curtain-550 Cover (Intelligent)",
+    "ta": "Aqara Curtain-550 Cover (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Aqara Curtain-550 Cover driver with auto-discovery",
+    "fr": "Driver Aqara Curtain-550 Cover intelligent avec découverte automatique",
+    "nl": "Intelligente Aqara Curtain-550 Cover driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Aqara Curtain-550 Cover டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "cover"
+  ],
   "capabilities": [
-    "windowcoverings_state"
+    "windowcoverings_state",
+    "windowcoverings_set"
   ],
   "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "aqara_curtain-550_cover_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "aqara_curtain-550_cover_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
   "icon": "assets/icon.svg"
 }

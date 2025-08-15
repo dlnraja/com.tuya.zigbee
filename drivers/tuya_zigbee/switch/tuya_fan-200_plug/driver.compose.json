@@ -1,14 +1,41 @@
 {
-  "id": "tuya-fan-200_plug_standard_default",
-  "name": "drivers-backup-2025-08-13T12-14-20-255Z tuya-fan-200 plug standard models standard default",
-  "images": {
-    "small": "/drivers/tuya-fan-200_plug_standard_default/assets/images/small.png",
-    "large": "/drivers/tuya-fan-200_plug_standard_default/assets/images/large.png"
+  "id": "tuya_fan-200_plug",
+  "class": "switch",
+  "name": {
+    "en": "Tuya Fan-200 Plug (Intelligent)",
+    "fr": "Tuya Fan-200 Plug (Intelligent)",
+    "nl": "Tuya Fan-200 Plug (Intelligent)",
+    "ta": "Tuya Fan-200 Plug (ஸ்மார்ட்)"
   },
+  "description": {
+    "en": "Intelligent Tuya Fan-200 Plug driver with auto-discovery",
+    "fr": "Driver Tuya Fan-200 Plug intelligent avec découverte automatique",
+    "nl": "Intelligente Tuya Fan-200 Plug driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Tuya Fan-200 Plug டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "switch"
+  ],
   "capabilities": [
-    "onoff",
-    "measure_power"
+    "onoff"
   ],
   "capabilitiesOptions": {},
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "tuya_fan-200_plug_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "tuya_fan-200_plug_generic"
+    ]
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
   "icon": "assets/icon.svg"
 }

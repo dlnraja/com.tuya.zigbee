@@ -1,37 +1,49 @@
-'use strict';
+#!/usr/bin/env node
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
-const { Cluster, CLUSTER } = require('zigbee-clusters');
 
-class TS0002DoubleSwitch extends ZigBeeDevice {
-
-  async onNodeInit({ zclNode }) {
-    // Enable debugging
-    this.enableDebug();
-    this.printNode();
-
-    // Register capabilities for Switch 1 (endpoint 1)
-    this.registerCapability('onoff', CLUSTER.ON_OFF, {
-      get: 'onOff',
-      set: 'setOnOff',
-      setParser: (value) => ({ value }),
-      reportParser: (value) => value === 1,
-      endpoint: 1,
-    });
-
-    // Register capabilities for Switch 2 (endpoint 2)
-    this.registerCapability('onoff.1', CLUSTER.ON_OFF, {
-      get: 'onOff',
-      set: 'setOnOff',
-      setParser: (value) => ({ value }),
-      reportParser: (value) => value === 1,
-      endpoint: 2,
-    });
-  }
-
-  onDeleted() {
-    this.log('TS0002 Double Switch removed');
-  }
+class Ts0002WallSwitchWallDevice extends ZigBeeDevice {
+    async onNodeInit({ zclNode }) {
+        this.log('🔧 Ts0002WallSwitchWallDevice initialisé (mode intelligent)');
+        
+        // Configuration intelligente des endpoints
+        this.registerCapability('onoff', 'genOnOff', {
+            endpoint: 1,
+            cluster: 'genOnOff',
+            attribute: 'onOff',
+            reportParser: (value) => this.parseOnoff(value)
+        });
+        
+        // Configuration des commandes
+        this.registerCapabilityListener('onoff', async (value) => {
+            this.log('🎯 Commande onoff:', value);
+            await this.zclNode.endpoints[1].clusters.genOnOff.toggle(value);
+        });
+        
+        // Configuration des rapports intelligents
+        await this.configureAttributeReporting([
+            {
+                endpointId: 1,
+                clusterId: 'genOnOff',
+                attributeId: 'onOff',
+                minInterval: 0,
+                maxInterval: 300,
+                reportableChange: 1
+            }
+        ]);
+    }
+    
+    // Parsers intelligents
+    parseOnoff(value) {
+        // Parser intelligent pour onoff
+        if (typeof value === 'number') return value;
+        if (typeof value === 'boolean') return value ? 1 : 0;
+        return 0;
+    }
+    
+    async onDeleted() {
+        this.log('🗑️  Ts0002WallSwitchWallDevice supprimé');
+    }
 }
 
-module.exports = TS0002DoubleSwitch;
+module.exports = Ts0002WallSwitchWallDevice;
