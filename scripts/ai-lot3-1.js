@@ -20,13 +20,13 @@ const PRIORITY = 'high';
 
 // Fonction principale
 async function ai_lot3_1() {
-  console.log(`🚀 Début de l'exécution de ai-lot3-1...`);
-  console.log(`📊 Catégorie: security`);
-  console.log(`🎯 Priorité: high`);
+  this.log(`🚀 Début de l'exécution de ai-lot3-1...`);
+  this.log(`📊 Catégorie: security`);
+  this.log(`🎯 Priorité: high`);
   
   try {
     // TODO: Implémenter la logique spécifique à ce script
-    console.log('📝 Logique à implémenter selon les besoins spécifiques');
+    this.log('📝 Logique à implémenter selon les besoins spécifiques');
     
     // Exemple de logique selon la catégorie
     switch (CATEGORY) {
@@ -67,10 +67,10 @@ async function ai_lot3_1() {
         await handleAnalyticsLogic();
         break;
       default:
-        console.log('⚠️ Catégorie non reconnue, logique générique');
+        this.log('⚠️ Catégorie non reconnue, logique générique');
     }
     
-    console.log(`✅ ai-lot3-1 exécuté avec succès`);
+    this.log(`✅ ai-lot3-1 exécuté avec succès`);
     
   } catch (error) {
     console.error(`❌ Erreur lors de l'exécution de ai-lot3-1:`, error.message);
@@ -80,62 +80,62 @@ async function ai_lot3_1() {
 
 // Gestionnaires de logique par catégorie
 async function handlePipelineLogic() {
-  console.log('🔧 Logique de pipeline à implémenter');
+  this.log('🔧 Logique de pipeline à implémenter');
   // TODO: Optimisation des pipelines, gestion des étapes
 }
 
 async function handleAnalysisLogic() {
-  console.log('🔍 Logique d'analyse à implémenter');
+  this.log('🔍 Logique d'analyse à implémenter');
   // TODO: Analyse des drivers, détection des patterns
 }
 
 async function handleMonitoringLogic() {
-  console.log('📊 Logique de monitoring à implémenter');
+  this.log('📊 Logique de monitoring à implémenter');
   // TODO: Surveillance des performances, métriques
 }
 
 async function handleIntegrationLogic() {
-  console.log('🔗 Logique d'intégration à implémenter');
+  this.log('🔗 Logique d'intégration à implémenter');
   // TODO: Intégration des sources externes
 }
 
 async function handleValidationLogic() {
-  console.log('✅ Logique de validation à implémenter');
+  this.log('✅ Logique de validation à implémenter');
   // TODO: Validation des données, vérification de cohérence
 }
 
 async function handleReportingLogic() {
-  console.log('📋 Logique de reporting à implémenter');
+  this.log('📋 Logique de reporting à implémenter');
   // TODO: Génération de rapports, export de données
 }
 
 async function handleCacheLogic() {
-  console.log('💾 Logique de cache à implémenter');
+  this.log('💾 Logique de cache à implémenter');
   // TODO: Gestion du cache, optimisation mémoire
 }
 
 async function handleDiagnosticsLogic() {
-  console.log('🏥 Logique de diagnostics à implémenter');
+  this.log('🏥 Logique de diagnostics à implémenter');
   // TODO: Diagnostic des problèmes, santé du système
 }
 
 async function handleSecurityLogic() {
-  console.log('🔒 Logique de sécurité à implémenter');
+  this.log('🔒 Logique de sécurité à implémenter');
   // TODO: Correction des vulnérabilités, sécurité
 }
 
 async function handlePerformanceLogic() {
-  console.log('⚡ Logique de performance à implémenter');
+  this.log('⚡ Logique de performance à implémenter');
   // TODO: Optimisation des performances, rate limiting
 }
 
 async function handleUILogic() {
-  console.log('🎨 Logique d'interface à implémenter');
+  this.log('🎨 Logique d'interface à implémenter');
   // TODO: Amélioration du dashboard, interface utilisateur
 }
 
 async function handleAnalyticsLogic() {
-  console.log('📈 Logique d'analytics à implémenter');
+  this.log('📈 Logique d'analytics à implémenter');
   // TODO: Analyse des statistiques, détection d'anomalies
 }
 

@@ -8,7 +8,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🏗️ Création des placeholders AI Lot3...');
+this.log('🏗️ Création des placeholders AI Lot3...');
 
 const scriptsDir = path.join(__dirname);
 const numScripts = 20;
@@ -29,13 +29,13 @@ for (let i = 1; i <= numScripts; i++) {
  * @date ${new Date().toISOString().split('T')[0]}
  */
 
-console.log('🤖 AI Lot3 Script ${i} - En attente d\'implémentation...');
+this.log('🤖 AI Lot3 Script ${i} - En attente d\'implémentation...');
 
 // TODO: Implémenter la logique spécifique au script ${i}
 // TODO: Ajouter les fonctionnalités requises
 // TODO: Intégrer avec le système principal
 
-console.log('✅ Script ${i} initialisé avec succès !');
+this.log('✅ Script ${i} initialisé avec succès !');
 
 module.exports = {
   scriptId: ${i},
@@ -46,12 +46,12 @@ module.exports = {
 
   try {
     fs.writeFileSync(filepath, content);
-    console.log(`✅ ${filename} créé`);
+    this.log(`✅ ${filename} créé`);
   } catch (error) {
     console.error(`❌ Erreur lors de la création de ${filename}:`, error.message);
   }
 }
 
-console.log(`🎯 ${numScripts} placeholders AI Lot3 créés avec succès !`);
-console.log('📍 Emplacement: scripts/');
-console.log('💡 Ces scripts sont prêts à être implémentés par l\'IA');
+this.log(`🎯 ${numScripts} placeholders AI Lot3 créés avec succès !`);
+this.log('📍 Emplacement: scripts/');
+this.log('💡 Ces scripts sont prêts à être implémentés par l\'IA');

@@ -1,4 +1,5 @@
-// !/usr/bin/env node
+try {
+    // !/usr/bin/env node
 
 /**
  * Migration directe 3.2 → 3.3
@@ -8,7 +9,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🚀 Migration 3.2 → 3.3 en cours...');
+this.log('🚀 Migration 3.2 → 3.3 en cours...');
 
 // 1. Créer la nouvelle structure
 const newStructure = {
@@ -16,20 +17,20 @@ const newStructure = {
   'zigbee': ['models', 'brands', 'categories', '__generic__', '__templates__']
 };
 
-console.log('📁 Création de la nouvelle structure...');
+this.log('📁 Création de la nouvelle structure...');
 
 for (const [domain, folders] of Object.entries(newStructure)) {
   for (const folder of folders) {
     const fullPath = path.join('drivers', domain, folder);
     if (!fs.existsSync(fullPath)) {
       fs.mkdirSync(fullPath, { recursive: true });
-      console.log(`✅ Créé: ${fullPath}`);
+      this.log(`✅ Créé: ${fullPath}`);
     }
   }
 }
 
 // 2. Créer les drivers d'exemple
-console.log('🔧 Création des drivers d\'exemple...');
+this.log('🔧 Création des drivers d\'exemple...');
 
 const exampleDrivers = [
   'drivers/tuya_zigbee/models/ts011f_smart_plug_mains_em',
@@ -41,12 +42,12 @@ const exampleDrivers = [
 for (const driverPath of exampleDrivers) {
   if (!fs.existsSync(driverPath)) {
     fs.mkdirSync(driverPath, { recursive: true });
-    console.log(`✅ Créé: ${driverPath}`);
+    this.log(`✅ Créé: ${driverPath}`);
   }
 }
 
 // 3. Créer les fichiers de base
-console.log('📄 Création des fichiers de base...');
+this.log('📄 Création des fichiers de base...');
 
 const baseFiles = [
   'driver.compose.json',
@@ -62,7 +63,7 @@ for (const driverPath of exampleDrivers) {
     if (!fs.existsSync(filePath)) {
       const content = generateFileContent(file, path.basename(driverPath));
       fs.writeFileSync(filePath, content);
-      console.log(`✅ Créé: ${filePath}`);
+      this.log(`✅ Créé: ${filePath}`);
     }
   }
   
@@ -77,23 +78,23 @@ for (const driverPath of exampleDrivers) {
   if (!fs.existsSync(iconPath)) {
     const iconContent = generateIconSVG();
     fs.writeFileSync(iconPath, iconContent);
-    console.log(`✅ Créé: ${iconPath}`);
+    this.log(`✅ Créé: ${iconPath}`);
   }
 }
 
 // 4. Mettre à jour la version
-console.log('📦 Mise à jour de la version...');
+this.log('📦 Mise à jour de la version...');
 
 const appJsonPath = 'app.json';
 if (fs.existsSync(appJsonPath)) {
   const appJson = JSON.parse(fs.readFileSync(appJsonPath, 'utf8'));
   appJson.version = '3.3.0';
   fs.writeFileSync(appJsonPath, JSON.stringify(appJson, null, 2));
-  console.log('✅ Version mise à jour: 3.3.0');
+  this.log('✅ Version mise à jour: 3.3.0');
 }
 
 // 5. Créer le changelog
-console.log('📝 Création du changelog...');
+this.log('📝 Création du changelog...');
 
 const changelogPath = 'CHANGELOG.md';
 const changelogContent = `// Changelog
@@ -116,10 +117,10 @@ const changelogContent = `// Changelog
 
 if (!fs.existsSync(changelogPath)) {
   fs.writeFileSync(changelogPath, changelogContent);
-  console.log('✅ Changelog créé');
+  this.log('✅ Changelog créé');
 }
 
-console.log('🎉 Migration 3.2 → 3.3 terminée !');
+this.log('🎉 Migration 3.2 → 3.3 terminée !');
 
 function generateFileContent(fileType, driverName) {
   switch (fileType) {
@@ -199,4 +200,8 @@ function generateIconSVG() {
   <circle cx = "480" cy = "480" r = "200" fill = "// 3498db" stroke = "// 2980b9" stroke-width = "20"/>
   <path d = "M400 400 L560 480 L400 560 Z" fill = "white"/>
 </svg>`;
+}
+
+} catch (error) {
+    this.error('❌ Erreur dans migrate-3.3-direct.js:', error);
 }

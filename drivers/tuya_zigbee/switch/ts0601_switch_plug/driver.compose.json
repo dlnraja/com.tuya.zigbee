@@ -571,5 +571,11 @@
       "TS0601_switch",
       "ts0601_switch"
     ]
+  },
+  "capabilitiesOptions": {},
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
   }
 }

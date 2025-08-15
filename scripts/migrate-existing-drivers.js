@@ -8,7 +8,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🚀 Migration des drivers existants vers la nouvelle structure 3.3...');
+this.log('🚀 Migration des drivers existants vers la nouvelle structure 3.3...');
 
 // Configuration
 const OLD_DRIVERS_DIR = '.backup/migration-3.2-to-3.3';
@@ -19,13 +19,13 @@ async function migrateExistingDrivers() {
   try {
     // 1. Vérifier si la sauvegarde existe
     if (!fs.existsSync(OLD_DRIVERS_DIR)) {
-      console.log('⚠️ Aucune sauvegarde trouvée. Création d\'une sauvegarde de l\'ancienne structure...');
+      this.log('⚠️ Aucune sauvegarde trouvée. Création d\'une sauvegarde de l\'ancienne structure...');
       await createBackup();
     }
     
     // 2. Scanner l'ancienne structure
     const oldDrivers = await scanOldStructure();
-    console.log(`📊 ${oldDrivers.length} drivers trouvés dans l'ancienne structure`);
+    this.log(`📊 ${oldDrivers.length} drivers trouvés dans l'ancienne structure`);
     
     // 3. Migrer chaque driver
     let migrated = 0;
@@ -36,23 +36,23 @@ async function migrateExistingDrivers() {
         const success = await migrateDriver(driver);
         if (success) {
           migrated++;
-          console.log(`✅ Migré: ${driver.oldPath} → ${driver.newPath}`);
+          this.log(`✅ Migré: ${driver.oldPath} → ${driver.newPath}`);
         } else {
           skipped++;
-          console.log(`⏭️ Ignoré: ${driver.oldPath}`);
+          this.log(`⏭️ Ignoré: ${driver.oldPath}`);
         }
       } catch (error) {
-        console.log(`⚠️ Erreur migration ${driver.oldPath}:`, error.message);
+        this.log(`⚠️ Erreur migration ${driver.oldPath}:`, error.message);
         skipped++;
       }
     }
     
-    console.log(`📊 Résumé: ${migrated} migrés, ${skipped} ignorés`);
+    this.log(`📊 Résumé: ${migrated} migrés, ${skipped} ignorés`);
     
     // 4. Nettoyer l'ancienne structure
     await cleanupOldStructure();
     
-    console.log('🎉 Migration des drivers existants terminée !');
+    this.log('🎉 Migration des drivers existants terminée !');
     
   } catch (error) {
     console.error('❌ Erreur lors de la migration:', error.message);
@@ -78,7 +78,7 @@ async function createBackup() {
     await copyDirectory(driver.fullPath, backupPath);
   }
   
-  console.log('💾 Sauvegarde créée dans .backup/migration-3.2-to-3.3/');
+  this.log('💾 Sauvegarde créée dans .backup/migration-3.2-to-3.3/');
 }
 
 // Scanner la structure actuelle des drivers
@@ -354,9 +354,9 @@ async function copyDirectory(src, dest) {
 // Nettoyer l'ancienne structure
 async function cleanupOldStructure() {
   if (fs.existsSync(OLD_DRIVERS_DIR)) {
-    console.log('🧹 Nettoyage de l\'ancienne structure...');
+    this.log('🧹 Nettoyage de l\'ancienne structure...');
     // Garder la sauvegarde pour sécurité
-    console.log('💾 Sauvegarde conservée dans .backup/migration-3.2-to-3.3/');
+    this.log('💾 Sauvegarde conservée dans .backup/migration-3.2-to-3.3/');
   }
 }
 

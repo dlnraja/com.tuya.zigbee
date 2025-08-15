@@ -570,5 +570,11 @@
       "TS0601_curtain",
       "ts0601_curtain"
     ]
+  },
+  "capabilitiesOptions": {},
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
   }
 }

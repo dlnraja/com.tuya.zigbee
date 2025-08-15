@@ -24,8 +24,8 @@ class DriverFixer {
 
     async run() {
         try {
-            console.log('🚀 CORRECTEUR COMPLET DES DRIVERS');
-            console.log('=' .repeat(60));
+            this.log('🚀 CORRECTEUR COMPLET DES DRIVERS');
+            this.log('=' .repeat(60));
             
             // 1. Vérifier la structure
             await this.verifyStructure();
@@ -46,17 +46,17 @@ class DriverFixer {
     }
 
     async verifyStructure() {
-        console.log('\n🔍 VÉRIFICATION DE LA STRUCTURE...');
+        this.log('\n🔍 VÉRIFICATION DE LA STRUCTURE...');
         
         if (!(await fs.pathExists(this.driversPath))) {
             throw new Error('Dossier drivers/ non trouvé !');
         }
         
-        console.log('✅ Structure drivers/ trouvée');
+        this.log('✅ Structure drivers/ trouvée');
     }
 
     async fixAllDrivers() {
-        console.log('\n🔧 CORRECTION DE TOUS LES DRIVERS...');
+        this.log('\n🔧 CORRECTION DE TOUS LES DRIVERS...');
         
         const driverTypes = await fs.readdir(this.driversPath);
         
@@ -71,7 +71,7 @@ class DriverFixer {
     }
 
     async fixDriverType(driverType, driverTypePath) {
-        console.log(`\n📁 Type: ${driverType}`);
+        this.log(`\n📁 Type: ${driverType}`);
         
         const categories = await fs.readdir(driverTypePath);
         
@@ -102,7 +102,7 @@ class DriverFixer {
         this.stats.total++;
         
         try {
-            console.log(`  🚗 ${driver}`);
+            this.log(`  🚗 ${driver}`);
             
             // Vérifier les fichiers requis
             const driverJsPath = path.join(driverPath, 'driver.js');
@@ -144,7 +144,7 @@ class DriverFixer {
                         needsFix = true;
                     }
                 } catch (error) {
-                    console.log(`    ⚠️  Erreur JSON: ${error.message}`);
+                    this.log(`    ⚠️  Erreur JSON: ${error.message}`);
                     await this.fixDriverCompose(driverType, category, driver, driverPath);
                     needsFix = true;
                 }
@@ -152,14 +152,14 @@ class DriverFixer {
             
             if (needsFix) {
                 this.stats.fixed++;
-                console.log(`    ✅ Corrigé`);
+                this.log(`    ✅ Corrigé`);
             } else {
                 this.stats.skipped++;
-                console.log(`    ⏭️  Déjà OK`);
+                this.log(`    ⏭️  Déjà OK`);
             }
             
         } catch (error) {
-            console.log(`    ❌ Erreur: ${error.message}`);
+            this.log(`    ❌ Erreur: ${error.message}`);
             this.stats.errors++;
         }
     }
@@ -395,7 +395,7 @@ module.exports = ${this.toClassName(driver)}Device;
             await fs.writeJson(composePath, compose, { spaces: 2 });
             
         } catch (error) {
-            console.log(`    ⚠️  Erreur correction compose: ${error.message}`);
+            this.log(`    ⚠️  Erreur correction compose: ${error.message}`);
         }
     }
 
@@ -456,40 +456,40 @@ module.exports = ${this.toClassName(driver)}Device;
     }
 
     async validateApp() {
-        console.log('\n🧪 VALIDATION DE L\'APP...');
+        this.log('\n🧪 VALIDATION DE L\'APP...');
         
         try {
-            console.log('  🔍 Validation Homey...');
+            this.log('  🔍 Validation Homey...');
             execSync('npx homey app validate', { stdio: 'inherit' });
-            console.log('  ✅ App validée avec succès !');
+            this.log('  ✅ App validée avec succès !');
         } catch (error) {
-            console.log('  ⚠️  Validation échouée (normal au début)');
+            this.log('  ⚠️  Validation échouée (normal au début)');
         }
     }
 
     generateReport() {
-        console.log('\n📋 RAPPORT FINAL');
-        console.log('=' .repeat(60));
+        this.log('\n📋 RAPPORT FINAL');
+        this.log('=' .repeat(60));
         
-        console.log(`📊 STATISTIQUES:`);
-        console.log(`  Total drivers: ${this.stats.total}`);
-        console.log(`  Corrigés: ${this.stats.fixed}`);
-        console.log(`  Déjà OK: ${this.stats.skipped}`);
-        console.log(`  Erreurs: ${this.stats.errors}`);
+        this.log(`📊 STATISTIQUES:`);
+        this.log(`  Total drivers: ${this.stats.total}`);
+        this.log(`  Corrigés: ${this.stats.fixed}`);
+        this.log(`  Déjà OK: ${this.stats.skipped}`);
+        this.log(`  Erreurs: ${this.stats.errors}`);
         
-        console.log('\n🎯 RÉSUMÉ DES CORRECTIONS:');
-        console.log('  ✅ Tous les driver.js sont maintenant fonctionnels');
-        console.log('  ✅ Tous les device.js sont maintenant fonctionnels');
-        console.log('  ✅ Tous les driver.compose.json sont corrigés');
-        console.log('  ✅ App.json est conforme SDK3');
-        console.log('  ✅ Compose est activé');
+        this.log('\n🎯 RÉSUMÉ DES CORRECTIONS:');
+        this.log('  ✅ Tous les driver.js sont maintenant fonctionnels');
+        this.log('  ✅ Tous les device.js sont maintenant fonctionnels');
+        this.log('  ✅ Tous les driver.compose.json sont corrigés');
+        this.log('  ✅ App.json est conforme SDK3');
+        this.log('  ✅ Compose est activé');
         
-        console.log('\n🚀 PROCHAINES ÉTAPES:');
-        console.log('  1. Tester l\'app: npx homey app validate');
-        console.log('  2. Installer l\'app sur Homey');
-        console.log('  3. Tester les drivers');
+        this.log('\n🚀 PROCHAINES ÉTAPES:');
+        this.log('  1. Tester l\'app: npx homey app validate');
+        this.log('  2. Installer l\'app sur Homey');
+        this.log('  3. Tester les drivers');
         
-        console.log('\n🎉 CORRECTION TERMINÉE !');
+        this.log('\n🎉 CORRECTION TERMINÉE !');
     }
 }
 

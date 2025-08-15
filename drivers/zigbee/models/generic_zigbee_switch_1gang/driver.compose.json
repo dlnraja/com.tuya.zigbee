@@ -2,7 +2,9 @@
   "id": "generic_zigbee_switch_1gang",
   "version": "1.0.0",
   "compatibility": ">=3.0.0",
-  "category": ["switch"],
+  "category": [
+    "switch"
+  ],
   "capabilities": [
     "onoff"
   ],
