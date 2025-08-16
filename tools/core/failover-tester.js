@@ -27,7 +27,7 @@ class FailoverTester {
   }
 
   async run() {
-    console.log('🔄 Test des mécanismes de failover...');
+    console.log('Test des mecanismes de failover...');
     
     try {
       await this.ensureOutputDirectory();
@@ -35,10 +35,10 @@ class FailoverTester {
       await this.calculateResilienceScore();
       await this.generateReport();
       
-      console.log('✅ Tests de failover terminés');
-      console.log(📊 Résumé: / tests réussis);
+      console.log('Tests de failover termines');
+      console.log('Resume: ' + this.stats.successfulTests + '/' + this.stats.totalTests + ' tests reussis');
     } catch (error) {
-      console.error('❌ Erreur lors des tests de failover:', error.message);
+      console.error('Erreur lors des tests de failover:', error.message);
     }
   }
 
@@ -49,15 +49,15 @@ class FailoverTester {
   }
 
   async runFailoverTests() {
-    console.log('  🧪 Exécution des tests de failover...');
+    console.log('  Execution des tests de failover...');
     
     for (const scenario of this.config.testScenarios) {
       try {
-        console.log(    🔄 Test: );
+        console.log('    Test: ' + scenario);
         await this.testFailoverScenario(scenario);
         this.stats.successfulTests++;
       } catch (error) {
-        console.log(      ❌ Échec: );
+        console.log('      Echec: ' + error.message);
         this.stats.failedTests++;
       }
       this.stats.totalTests++;
@@ -65,7 +65,6 @@ class FailoverTester {
   }
 
   async testFailoverScenario(scenario) {
-    // Simulation des tests de failover
     switch (scenario) {
       case 'primary-source-failure':
         return await this.simulatePrimarySourceFailure();
@@ -78,37 +77,36 @@ class FailoverTester {
       case 'service-unavailable':
         return await this.simulateServiceUnavailable();
       default:
-        throw new Error(Scénario inconnu: );
+        throw new Error('Scenario inconnu: ' + scenario);
     }
   }
 
   async simulatePrimarySourceFailure() {
-    console.log('      🔄 Simulation: échec source primaire');
-    // Simulation d'un délai
+    console.log('      Simulation: echec source primaire');
     await new Promise(resolve => setTimeout(resolve, 1000));
     return true;
   }
 
   async simulateSecondarySourceFailure() {
-    console.log('      🔄 Simulation: échec source secondaire');
+    console.log('      Simulation: echec source secondaire');
     await new Promise(resolve => setTimeout(resolve, 1000));
     return true;
   }
 
   async simulateNetworkTimeout() {
-    console.log('      🔄 Simulation: timeout réseau');
+    console.log('      Simulation: timeout reseau');
     await new Promise(resolve => setTimeout(resolve, 1000));
     return true;
   }
 
   async simulateApiRateLimit() {
-    console.log('      🔄 Simulation: limite API');
+    console.log('      Simulation: limite API');
     await new Promise(resolve => setTimeout(resolve, 1000));
     return true;
   }
 
   async simulateServiceUnavailable() {
-    console.log('      🔄 Simulation: service indisponible');
+    console.log('      Simulation: service indisponible');
     await new Promise(resolve => setTimeout(resolve, 1000));
     return true;
   }
@@ -120,7 +118,7 @@ class FailoverTester {
   }
 
   async generateReport() {
-    console.log('  📊 Génération du rapport de test...');
+    console.log('  Generation du rapport de test...');
     
     const report = {
       timestamp: new Date().toISOString(),
@@ -136,7 +134,7 @@ class FailoverTester {
     const reportPath = path.join(this.config.outputDir, 'failover_test_report.json');
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
-    console.log(    📄 Rapport: );
+    console.log('    Rapport: ' + reportPath);
   }
 }
 
