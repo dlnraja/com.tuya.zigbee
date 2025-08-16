@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+'use strict';
+
+#!/usr/bin/env node
 
 console.log('🚀 PUSH FINAL INTELLIGENT COMPLET - BRIEF "BÉTON"');
 console.log('=' .repeat(60));

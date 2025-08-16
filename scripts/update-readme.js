@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 'use strict';
 const fs=require('fs'),path=require('path');const README=path.join(process.cwd(),'README.md');
 function upd(t,r,repl){return r.test(t)?t.replace(r,repl):(t+'\n'+repl+'\n');}

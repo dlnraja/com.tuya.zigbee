@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 try {
     // !/usr/bin/env node
 

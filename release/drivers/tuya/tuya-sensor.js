@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 /**
  * 🌡️ tuya-sensor
  * Driver pour appareils TUYA - sensors

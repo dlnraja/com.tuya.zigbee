@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+'use strict';
+
+#!/usr/bin/env node
 
 /**
  * 🚀 SILENT BACKGROUND PROCESSOR FALLBACK - BRIEF "BÉTON"

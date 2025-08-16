@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 // !/usr/bin/env node
 /**
  * @file organize-reports.js

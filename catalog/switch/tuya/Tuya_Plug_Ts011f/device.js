@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 /**
  * Tuya Smart Plug TS011F Device
  * Logique spécifique à l'appareil pour la prise intelligente Tuya

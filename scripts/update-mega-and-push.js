@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+'use strict';
+
+#!/usr/bin/env node
 
 console.log('🔄 MISE À JOUR MEGA ET PUSH v3.4.1...');
 

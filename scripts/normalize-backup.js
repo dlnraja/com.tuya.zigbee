@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 'use strict';
 const fs=require('fs'),path=require('path');
 const ROOT=process.cwd(), BAK=path.join(ROOT,'.backup'), ZIPS=path.join(BAK,'zips');

@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 const { expect } = require('chai');
 
 describe('Tuya Zigbee Drivers - Integration Tests', () => {

@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 'use strict';
 const fs=require('fs'),path=require('path');
 const ROOT=process.cwd(),DRV=path.join(ROOT,'drivers');

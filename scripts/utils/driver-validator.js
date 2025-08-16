@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+'use strict';
+
+#!/usr/bin/env node
 
 // Script de validation des drivers basé sur l'analyse de D:\Download\
 

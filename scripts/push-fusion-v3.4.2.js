@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+'use strict';
+
+#!/usr/bin/env node
 
 console.log('🚀 PUSH DE LA FUSION COMPLÈTE v3.4.2 VERS GITHUB...');
 

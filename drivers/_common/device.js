@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 const { ZigBeeDevice } = require('homey-meshdriver');
 const attachZBVerbose = require('..//lib/zb-verbose');
 

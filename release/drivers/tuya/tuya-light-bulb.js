@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 /**
  * 💡 tuya-light-bulb
  * Driver pour appareils TUYA - lights
