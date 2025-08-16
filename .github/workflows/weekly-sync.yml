@@ -1,0 +1,87 @@
+name: Weekly Enrichment Sync
+
+on:
+  schedule:
+    # Every Monday at 05:00 UTC
+    - cron: '0 5 * * 1'
+  workflow_dispatch:
+    inputs:
+      batch_size:
+        description: 'Batch size for progressive mode'
+        required: false
+        default: '80'
+        type: string
+
+jobs:
+  enrich-drivers:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Configure git
+        run: |
+          git config user.name "tuya-bot"
+          git config user.email "tuya-bot@users.noreply.github.com"
+
+      - name: Install dependencies
+        run: npm ci --only=production
+
+      - name: Run sources orchestrator
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FORUM_COOKIES: ${{ secrets.FORUM_COOKIES }}
+        run: node scripts/sources/sources-orchestrator.js --now
+
+      - name: Run enrichment pipeline (progressive)
+        env:
+          PROGRESSIVE: '1'
+          ENRICH_ONLY: '1'
+          NO_REWRITE: '1'
+          NO_DELETE: '1'
+          BATCH_SIZE: ${{ github.event.inputs.batch_size || '80' }}
+          PERSIST_TMP: '1'
+          KEEP_BACKUP: '1'
+          SKIP_GIT_PUSH: '0'
+          SKIP_NPM: '1'
+          SKIP_VALIDATE: '1'
+          SKIP_RUN: '1'
+          DO_MIGRATE: '1'
+        run: node scripts/mega-sources-complete.js
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create summary
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          echo "## 📊 Weekly Enrichment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- **Date**: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "- **Batch Size**: ${{ github.event.inputs.batch_size || '80' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Changes**: $(git status --porcelain | wc -l) files modified" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Modified Files:" >> $GITHUB_STEP_SUMMARY
+          git status --porcelain | head -20 >> $GITHUB_STEP_SUMMARY
+
+      - name: No changes summary
+        if: steps.check_changes.outputs.changes == 'false'
+        run: |
+          echo "## ✅ No Changes Required" >> $GITHUB_STEP_SUMMARY
+          echo "Weekly enrichment completed - no updates needed." >> $GITHUB_STEP_SUMMARY

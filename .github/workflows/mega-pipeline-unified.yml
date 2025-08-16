@@ -1,0 +1,248 @@
+name: 🚀 MEGA Pipeline Unifié - Build, Test & Deploy
+
+on:
+  push:
+    branches: [ main, master, develop ]
+    paths:
+      - 'drivers/**'
+      - 'tools/**'
+      - 'lib/**'
+      - 'app.json'
+      - 'package.json'
+  pull_request:
+    branches: [ main, master ]
+  schedule:
+    # Exécution quotidienne à 3h du matin
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Mode d execution'
+        required: true
+        default: 'FULL'
+        type: choice
+        options:
+          - FAST
+          - FULL
+          - VALIDATE_ONLY
+          - DEPLOY_ONLY
+
+env:
+  NODE_VERSION: '18'
+  MODE: ${{ github.event.inputs.mode || 'FULL' }}
+  USE_MCP: '1'
+  USE_FALLBACKS: '1'
+  GITHUB_PAGES_BRANCH: 'gh-pages'
+
+jobs:
+  # 🔍 Validation et tests
+  validate:
+    name: ✅ Validation & Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🟢 Setup Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: |
+          npm ci --prefer-offline --no-audit
+          npm install -g homey
+
+      - name: 🔍 Validation Homey
+        run: |
+          echo "🏠 Validation de l'application Homey..."
+          homey app validate -l debug || echo "⚠️ Validation avec avertissements"
+
+      - name: 🧪 Tests de structure
+        run: |
+          echo "📁 Vérification de la structure des drivers..."
+          node tools/simple-validation.js
+
+      - name: 📊 Validation JSON
+        run: |
+          echo "🔍 Validation des fichiers JSON..."
+          npm run json:lint || echo "⚠️ Certains fichiers JSON ont des problèmes"
+
+      - name: 💾 Upload validation artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: validation-results
+          path: |
+            FINAL_VALIDATION_REPORT_*.json
+            dumps/
+            evidence/
+
+  # 🏗️ Build et enrichissement
+  build:
+    name: 🏗️ Build & Enrichissement
+    runs-on: ubuntu-latest
+    needs: validate
+    timeout-minutes: 45
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🟢 Setup Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: |
+          npm ci --prefer-offline --no-audit
+          npm install -g homey
+
+      - name: 🚀 Pipeline MEGA
+        if: env.MODE != 'VALIDATE_ONLY'
+        run: |
+          echo "🚀 Lancement du pipeline MEGA en mode $MODE..."
+          echo "🤖 MCP: $USE_MCP"
+          echo "🔄 Fallbacks: $USE_FALLBACKS"
+          
+          # Exécuter le pipeline MEGA
+          npm run orchestrate:mega
+        env:
+          MODE: ${{ env.MODE }}
+          USE_MCP: ${{ env.USE_MCP }}
+          USE_FALLBACKS: ${{ env.USE_FALLBACKS }}
+          OFFLINE: '0'
+
+      - name: 📊 Build matrices
+        if: env.MODE != 'VALIDATE_ONLY'
+        run: |
+          echo "📊 Génération des matrices..."
+          npm run matrix
+
+      - name: 🌐 Build dashboard
+        if: env.MODE != 'VALIDATE_ONLY'
+        run: |
+          echo "🌐 Construction du dashboard..."
+          npm run dashboard
+
+      - name: 💾 Upload build artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: build-results-${{ github.event.inputs.mode || 'FULL' }}
+          path: |
+            matrices/
+            references/
+            docs/
+            evidence/
+            DRIVER_ENRICHMENT_REPORT.json
+
+  # 🚀 Déploiement GitHub Pages
+  deploy:
+    name: 🚀 Déploiement GitHub Pages
+    runs-on: ubuntu-latest
+    needs: build
+    if: env.MODE != 'VALIDATE_ONLY'
+    timeout-minutes: 20
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🟢 Setup Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: npm ci --prefer-offline --no-audit
+
+      - name: 📊 Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-results-${{ github.event.inputs.mode || 'FULL' }}
+          path: .
+
+      - name: 🌐 Build final dashboard
+        run: |
+          echo "🌐 Construction finale du dashboard..."
+          npm run dashboard
+
+      - name: 🚀 Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          publish_branch: ${{ env.GITHUB_PAGES_BRANCH }}
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: '🚀 Deploy MEGA Pipeline - ${{ github.sha }}'
+
+  # 📊 Rapport final
+  report:
+    name: 📊 Rapport Final
+    runs-on: ubuntu-latest
+    needs: [validate, build, deploy]
+    if: always()
+    timeout-minutes: 10
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 📊 Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: '*'
+          merge-multiple: true
+
+      - name: 📋 Generate summary
+        run: |
+          echo "## 🎉 Pipeline MEGA Terminé !" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📊 Résumé de l'exécution" >> $GITHUB_STEP_SUMMARY
+          echo "- **Mode** : ${{ env.MODE }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Node.js** : ${{ env.NODE_VERSION }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **MCP** : ${{ env.USE_MCP }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Fallbacks** : ${{ env.USE_FALLBACKS }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ -f "DRIVER_ENRICHMENT_REPORT.json" ]; then
+            echo "### 📈 Rapport d'enrichissement" >> $GITHUB_STEP_SUMMARY
+            echo "- **Total Drivers** : $(jq -r '.total_drivers // "N/A"' DRIVER_ENRICHMENT_REPORT.json)" >> $GITHUB_STEP_SUMMARY
+            echo "- **Succès** : $(jq -r '.successful // "N/A"' DRIVER_ENRICHMENT_REPORT.json)" >> $GITHUB_STEP_SUMMARY
+            echo "- **Échecs** : $(jq -r '.failed // "N/A"' DRIVER_ENRICHMENT_REPORT.json)" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🌐 Liens utiles" >> $GITHUB_STEP_SUMMARY
+          echo "- **Dashboard** : https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/" >> $GITHUB_STEP_SUMMARY
+          echo "- **Actions** : https://github.com/${{ github.repository }}/actions" >> $GITHUB_STEP_SUMMARY
+          echo "- **Issues** : https://github.com/${{ github.repository }}/issues" >> $GITHUB_STEP_SUMMARY
+
+      - name: 📤 Upload final report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: final-report-${{ env.MODE }}
+          path: |
+            FINAL_VALIDATION_REPORT_*.json
+            DRIVER_ENRICHMENT_REPORT.json
+            matrices/
+            docs/

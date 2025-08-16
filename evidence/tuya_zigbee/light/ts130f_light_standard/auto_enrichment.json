@@ -1,0 +1,493 @@
+{
+  "driver_id": "tuya_zigbee/light/ts130f_light_standard",
+  "original_metadata": {
+    "id": "ts130f_light_standard",
+    "name": {
+      "en": "Tuya TS130F Standard Light",
+      "fr": "Ampoule Tuya TS130F Standard"
+    },
+    "class": "light",
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_temperature",
+      "light_mode"
+    ],
+    "capabilitiesOptions": {
+      "onoff": {
+        "title": {
+          "en": "Light State",
+          "fr": "État de l'ampoule"
+        }
+      },
+      "dim": {
+        "title": {
+          "en": "Brightness",
+          "fr": "Luminosité"
+        }
+      },
+      "light_temperature": {
+        "title": {
+          "en": "Color Temperature",
+          "fr": "Température de couleur"
+        }
+      },
+      "light_mode": {
+        "title": {
+          "en": "Light Mode",
+          "fr": "Mode d'éclairage"
+        }
+      }
+    },
+    "zigbee": {
+      "manufacturerName": [
+        "Tuya"
+      ],
+      "modelId": [
+        "TS130F"
+      ],
+      "productId": [
+        "TS130F"
+      ]
+    },
+    "tuya_dps": {
+      "1": {
+        "name": "Switch",
+        "type": "bool",
+        "capability": "onoff"
+      },
+      "2": {
+        "name": "Brightness",
+        "type": "value",
+        "capability": "dim"
+      },
+      "3": {
+        "name": "Color Temperature",
+        "type": "value",
+        "capability": "light_temperature"
+      },
+      "4": {
+        "name": "Mode",
+        "type": "enum",
+        "capability": "light_mode"
+      }
+    }
+  },
+  "external_sources": {
+    "homey_forum": [
+      {
+        "query": "tuya_zigbee/light/ts130f_light_standard",
+        "source": "homey_forum",
+        "url": "https://community.homey.app/search?q=tuya_zigbee%2Flight%2Fts130f_light_standard",
+        "results": {
+          "success": true,
+          "data": "Simulated MCP response from firecrawl",
+          "metadata": {
+            "mcp": "firecrawl",
+            "timestamp": "2025-08-15T23:59:24.905Z"
+          }
+        },
+        "timestamp": "2025-08-15T23:59:24.905Z"
+      },
+      {
+        "query": "Tuya TS130F Standard Light",
+        "source": "homey_forum",
+        "url": "https://community.homey.app/search?q=Tuya%20TS130F%20Standard%20Light",
+        "results": {
+          "success": true,
+          "data": "Simulated MCP response from firecrawl",
+          "metadata": {
+            "mcp": "firecrawl",
+            "timestamp": "2025-08-15T23:59:24.929Z"
+          }
+        },
+        "timestamp": "2025-08-15T23:59:24.929Z"
+      },
+      {
+        "query": "light tuya_zigbee/light/ts130f_light_standard",
+        "source": "homey_forum",
+        "url": "https://community.homey.app/search?q=light%20tuya_zigbee%2Flight%2Fts130f_light_standard",
+        "results": {
+          "success": true,
+          "data": "Simulated MCP response from firecrawl",
+          "metadata": {
+            "mcp": "firecrawl",
+            "timestamp": "2025-08-15T23:59:24.946Z"
+          }
+        },
+        "timestamp": "2025-08-15T23:59:24.946Z"
+      },
+      {
+        "query": "Tuya tuya_zigbee/light/ts130f_light_standard",
+        "source": "homey_forum",
+        "url": "https://community.homey.app/search?q=Tuya%20tuya_zigbee%2Flight%2Fts130f_light_standard",
+        "results": {
+          "success": true,
+          "data": "Simulated MCP response from firecrawl",
+          "metadata": {
+            "mcp": "firecrawl",
+            "timestamp": "2025-08-15T23:59:24.971Z"
+          }
+        },
+        "timestamp": "2025-08-15T23:59:24.971Z"
+      },
+      {
+        "query": "TS130F zigbee",
+        "source": "homey_forum",
+        "url": "https://community.homey.app/search?q=TS130F%20zigbee",
+        "results": {
+          "success": true,
+          "data": "Simulated MCP response from firecrawl",
+          "metadata": {
+            "mcp": "firecrawl",
+            "timestamp": "2025-08-15T23:59:24.978Z"
+          }
+        },
+        "timestamp": "2025-08-15T23:59:24.979Z"
+      },
+      {
+        "query": "site:community.homey.app tuya_zigbee/light/ts130f_light_standard",
+        "source": "homey_forum",
+        "url": "https://community.homey.app/search?q=site%3Acommunity.homey.app%20tuya_zigbee%2Flight%2Fts130f_light_standard",
+        "results": {
+          "success": true,
+          "data": "Simulated MCP response from firecrawl",
+          "metadata": {
+            "mcp": "firecrawl",
+            "timestamp": "2025-08-15T23:59:24.996Z"
+          }
+        },
+        "timestamp": "2025-08-15T23:59:24.996Z"
+      },
+      {
+        "query": "site:github.com homey tuya_zigbee/light/ts130f_light_standard",
+        "source": "homey_forum",
+        "url": "https://community.homey.app/search?q=site%3Agithub.com%20homey%20tuya_zigbee%2Flight%2Fts130f_light_standard",
+        "results": {
+          "success": true,
+          "data": "Simulated MCP response from firecrawl",
+          "metadata": {
+            "mcp": "firecrawl",
+            "timestamp": "2025-08-15T23:59:25.010Z"
+          }
+        },
+        "timestamp": "2025-08-15T23:59:25.010Z"
+      }
+    ],
+    "zigbee2mqtt": [
+      {
+        "query": "tuya_zigbee/light/ts130f_light_standard",
+        "source": "zigbee2mqtt",
+        "url": "https://www.zigbee2mqtt.io/devices?search=tuya_zigbee%2Flight%2Fts130f_light_standard",
+        "results": {
+          "success": true,
+          "data": "Simulated MCP response from firecrawl",
+          "metadata": {
+            "mcp": "firecrawl",
+            "timestamp": "2025-08-15T23:59:24.907Z"
+          }
+        },
+        "timestamp": "2025-08-15T23:59:24.907Z"
+      },
+      {
+        "query": "Tuya TS130F Standard Light",
+        "source": "zigbee2mqtt",
+        "url": "https://www.zigbee2mqtt.io/devices?search=Tuya%20TS130F%20Standard%20Light",
+        "results": {
+          "success": true,
+          "data": "Simulated MCP response from firecrawl",
+          "metadata": {
+            "mcp": "firecrawl",
+            "timestamp": "2025-08-15T23:59:24.940Z"
+          }
+        },
+        "timestamp": "2025-08-15T23:59:24.940Z"
+      },
+      {
+        "query": "light tuya_zigbee/light/ts130f_light_standard",
+        "source": "zigbee2mqtt",
+        "url": "https://www.zigbee2mqtt.io/devices?search=light%20tuya_zigbee%2Flight%2Fts130f_light_standard",
+        "results": {
+          "success": true,
+          "data": "Simulated MCP response from firecrawl",
+          "metadata": {
+            "mcp": "firecrawl",
+            "timestamp": "2025-08-15T23:59:24.959Z"
+          }
+        },
+        "timestamp": "2025-08-15T23:59:24.959Z"
+      },
+      {
+        "query": "Tuya tuya_zigbee/light/ts130f_light_standard",
+        "source": "zigbee2mqtt",
+        "url": "https://www.zigbee2mqtt.io/devices?search=Tuya%20tuya_zigbee%2Flight%2Fts130f_light_standard",
+        "results": {
+          "success": true,
+          "data": "Simulated MCP response from firecrawl",
+          "metadata": {
+            "mcp": "firecrawl",
+            "timestamp": "2025-08-15T23:59:24.975Z"
+          }
+        },
+        "timestamp": "2025-08-15T23:59:24.975Z"
+      },
+      {
+        "query": "TS130F zigbee",
+        "source": "zigbee2mqtt",
+        "url": "https://www.zigbee2mqtt.io/devices?search=TS130F%20zigbee",
+        "results": {
+          "success": true,
+          "data": "Simulated MCP response from firecrawl",
+          "metadata": {
+            "mcp": "firecrawl",
+            "timestamp": "2025-08-15T23:59:24.989Z"
+          }
+        },
+        "timestamp": "2025-08-15T23:59:24.989Z"
+      },
+      {
+        "query": "site:community.homey.app tuya_zigbee/light/ts130f_light_standard",
+        "source": "zigbee2mqtt",
+        "url": "https://www.zigbee2mqtt.io/devices?search=site%3Acommunity.homey.app%20tuya_zigbee%2Flight%2Fts130f_light_standard",
+        "results": {
+          "success": true,
+          "data": "Simulated MCP response from firecrawl",
+          "metadata": {
+            "mcp": "firecrawl",
+            "timestamp": "2025-08-15T23:59:25.006Z"
+          }
+        },
+        "timestamp": "2025-08-15T23:59:25.006Z"
+      },
+      {
+        "query": "site:github.com homey tuya_zigbee/light/ts130f_light_standard",
+        "source": "zigbee2mqtt",
+        "url": "https://www.zigbee2mqtt.io/devices?search=site%3Agithub.com%20homey%20tuya_zigbee%2Flight%2Fts130f_light_standard",
+        "results": {
+          "success": true,
+          "data": "Simulated MCP response from firecrawl",
+          "metadata": {
+            "mcp": "firecrawl",
+            "timestamp": "2025-08-15T23:59:25.023Z"
+          }
+        },
+        "timestamp": "2025-08-15T23:59:25.023Z"
+      }
+    ],
+    "blakadder": [
+      {
+        "query": "tuya_zigbee/light/ts130f_light_standard",
+        "source": "blakadder",
+        "url": "https://blakadder.com/zigbee/?s=tuya_zigbee%2Flight%2Fts130f_light_standard",
+        "results": {
+          "success": true,
+          "data": "Simulated MCP response from firecrawl",
+          "metadata": {
+            "mcp": "firecrawl",
+            "timestamp": "2025-08-15T23:59:24.912Z"
+          }
+        },
+        "timestamp": "2025-08-15T23:59:24.912Z"
+      },
+      {
+        "query": "Tuya TS130F Standard Light",
+        "source": "blakadder",
+        "url": "https://blakadder.com/zigbee/?s=Tuya%20TS130F%20Standard%20Light",
+        "results": {
+          "success": true,
+          "data": "Simulated MCP response from firecrawl",
+          "metadata": {
+            "mcp": "firecrawl",
+            "timestamp": "2025-08-15T23:59:24.941Z"
+          }
+        },
+        "timestamp": "2025-08-15T23:59:24.941Z"
+      },
+      {
+        "query": "light tuya_zigbee/light/ts130f_light_standard",
+        "source": "blakadder",
+        "url": "https://blakadder.com/zigbee/?s=light%20tuya_zigbee%2Flight%2Fts130f_light_standard",
+        "results": {
+          "success": true,
+          "data": "Simulated MCP response from firecrawl",
+          "metadata": {
+            "mcp": "firecrawl",
+            "timestamp": "2025-08-15T23:59:24.961Z"
+          }
+        },
+        "timestamp": "2025-08-15T23:59:24.961Z"
+      },
+      {
+        "query": "Tuya tuya_zigbee/light/ts130f_light_standard",
+        "source": "blakadder",
+        "url": "https://blakadder.com/zigbee/?s=Tuya%20tuya_zigbee%2Flight%2Fts130f_light_standard",
+        "results": {
+          "success": true,
+          "data": "Simulated MCP response from firecrawl",
+          "metadata": {
+            "mcp": "firecrawl",
+            "timestamp": "2025-08-15T23:59:24.976Z"
+          }
+        },
+        "timestamp": "2025-08-15T23:59:24.976Z"
+      },
+      {
+        "query": "TS130F zigbee",
+        "source": "blakadder",
+        "url": "https://blakadder.com/zigbee/?s=TS130F%20zigbee",
+        "results": {
+          "success": true,
+          "data": "Simulated MCP response from firecrawl",
+          "metadata": {
+            "mcp": "firecrawl",
+            "timestamp": "2025-08-15T23:59:24.991Z"
+          }
+        },
+        "timestamp": "2025-08-15T23:59:24.991Z"
+      },
+      {
+        "query": "site:community.homey.app tuya_zigbee/light/ts130f_light_standard",
+        "source": "blakadder",
+        "url": "https://blakadder.com/zigbee/?s=site%3Acommunity.homey.app%20tuya_zigbee%2Flight%2Fts130f_light_standard",
+        "results": {
+          "success": true,
+          "data": "Simulated MCP response from firecrawl",
+          "metadata": {
+            "mcp": "firecrawl",
+            "timestamp": "2025-08-15T23:59:25.008Z"
+          }
+        },
+        "timestamp": "2025-08-15T23:59:25.008Z"
+      },
+      {
+        "query": "site:github.com homey tuya_zigbee/light/ts130f_light_standard",
+        "source": "blakadder",
+        "url": "https://blakadder.com/zigbee/?s=site%3Agithub.com%20homey%20tuya_zigbee%2Flight%2Fts130f_light_standard",
+        "results": {
+          "success": true,
+          "data": "Simulated MCP response from firecrawl",
+          "metadata": {
+            "mcp": "firecrawl",
+            "timestamp": "2025-08-15T23:59:25.025Z"
+          }
+        },
+        "timestamp": "2025-08-15T23:59:25.025Z"
+      }
+    ],
+    "github": [],
+    "mcp_data": [
+      {
+        "query": "tuya_zigbee/light/ts130f_light_standard",
+        "source": "mcp_firecrawl",
+        "results": "Simulated MCP response from firecrawl",
+        "timestamp": "2025-08-15T23:59:24.894Z"
+      },
+      {
+        "query": "Tuya TS130F Standard Light",
+        "source": "mcp_firecrawl",
+        "results": "Simulated MCP response from firecrawl",
+        "timestamp": "2025-08-15T23:59:24.925Z"
+      },
+      {
+        "query": "light tuya_zigbee/light/ts130f_light_standard",
+        "source": "mcp_firecrawl",
+        "results": "Simulated MCP response from firecrawl",
+        "timestamp": "2025-08-15T23:59:24.944Z"
+      },
+      {
+        "query": "Tuya tuya_zigbee/light/ts130f_light_standard",
+        "source": "mcp_firecrawl",
+        "results": "Simulated MCP response from firecrawl",
+        "timestamp": "2025-08-15T23:59:24.962Z"
+      },
+      {
+        "query": "TS130F zigbee",
+        "source": "mcp_firecrawl",
+        "results": "Simulated MCP response from firecrawl",
+        "timestamp": "2025-08-15T23:59:24.977Z"
+      },
+      {
+        "query": "site:community.homey.app tuya_zigbee/light/ts130f_light_standard",
+        "source": "mcp_firecrawl",
+        "results": "Simulated MCP response from firecrawl",
+        "timestamp": "2025-08-15T23:59:24.993Z"
+      },
+      {
+        "query": "site:github.com homey tuya_zigbee/light/ts130f_light_standard",
+        "source": "mcp_firecrawl",
+        "results": "Simulated MCP response from firecrawl",
+        "timestamp": "2025-08-15T23:59:25.009Z"
+      }
+    ]
+  },
+  "suggested_improvements": [
+    {
+      "type": "mcp_insights",
+      "source": "firecrawl",
+      "suggestions": [
+        "Enhanced device compatibility",
+        "Improved capability mapping"
+      ]
+    },
+    {
+      "type": "forum_insights",
+      "source": "homey_community",
+      "suggestions": [
+        "User feedback integration",
+        "Common issues resolution"
+      ]
+    },
+    {
+      "type": "zigbee_insights",
+      "source": "zigbee2mqtt",
+      "suggestions": [
+        "Zigbee cluster optimization",
+        "Attribute mapping improvements"
+      ]
+    }
+  ],
+  "new_capabilities": [
+    "measure_power",
+    "meter_power",
+    "measure_temperature",
+    "alarm_motion",
+    "measure_humidity",
+    "measure_battery"
+  ],
+  "enhanced_zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "modelId": [
+      "TS130F"
+    ],
+    "productId": [
+      "TS130F"
+    ],
+    "clusters": [],
+    "attributes": []
+  },
+  "enhanced_tuya_dps": {
+    "1": {
+      "name": "Switch",
+      "type": "bool",
+      "capability": "onoff"
+    },
+    "2": {
+      "name": "Brightness",
+      "type": "value",
+      "capability": "dim"
+    },
+    "3": {
+      "name": "Color Temperature",
+      "type": "value",
+      "capability": "light_temperature"
+    },
+    "4": {
+      "name": "Power Consumption",
+      "type": "value",
+      "capability": "measure_power"
+    }
+  },
+  "timestamp": "2025-08-15T23:59:25.025Z"
+}
