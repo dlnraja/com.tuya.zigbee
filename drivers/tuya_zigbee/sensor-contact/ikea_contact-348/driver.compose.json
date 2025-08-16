@@ -46,5 +46,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ikea contact-348",
+    "fr": "Ikea contact-348"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.766Z",
+    "discussions": 1,
+    "solutions": 3,
+    "communityRating": "3.7",
+    "url": "https://community.homey.app/search?q=ikea_contact-348"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.766Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_contact-348.html",
+    "features": [
+      "power",
+      "humidity",
+      "dim"
+    ],
+    "compatibility": "good"
   }
 }

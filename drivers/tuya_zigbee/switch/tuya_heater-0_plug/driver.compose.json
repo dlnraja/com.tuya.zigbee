@@ -37,5 +37,25 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.639Z",
+    "discussions": 9,
+    "solutions": 3,
+    "communityRating": "3.8",
+    "url": "https://community.homey.app/search?q=tuya_heater-0_plug"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.639Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_heater-0_plug.html",
+    "features": [
+      "onoff",
+      "humidity",
+      "temperature"
+    ],
+    "compatibility": "good"
+  }
 }

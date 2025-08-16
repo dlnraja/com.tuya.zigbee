@@ -31,5 +31,28 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Aqara deadbolt-642 lock",
+    "fr": "Aqara deadbolt-642 lock"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.951Z",
+    "discussions": 3,
+    "solutions": 2,
+    "communityRating": "3.6",
+    "url": "https://community.homey.app/search?q=aqara_deadbolt-642_lock"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.951Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_deadbolt-642_lock.html",
+    "features": [
+      "onoff",
+      "color"
+    ],
+    "compatibility": "excellent"
   }
 }

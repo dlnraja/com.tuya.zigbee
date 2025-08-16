@@ -46,5 +46,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Generic sensor motion",
+    "fr": "Generic capteur mouvement"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:16.252Z",
+    "discussions": 7,
+    "solutions": 4,
+    "communityRating": "4.0",
+    "url": "https://community.homey.app/search?q=generic_sensor_motion"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:16.252Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/generic_sensor_motion.html",
+    "features": [
+      "color",
+      "humidity",
+      "dim"
+    ],
+    "compatibility": "fair"
   }
 }

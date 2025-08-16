@@ -37,5 +37,26 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.444Z",
+    "discussions": 6,
+    "solutions": 4,
+    "communityRating": "3.3",
+    "url": "https://community.homey.app/search?q=generic_wall_switch_2gang"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.444Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/generic_wall_switch_2gang.html",
+    "features": [
+      "onoff",
+      "motion",
+      "power",
+      "color"
+    ],
+    "compatibility": "good"
+  }
 }

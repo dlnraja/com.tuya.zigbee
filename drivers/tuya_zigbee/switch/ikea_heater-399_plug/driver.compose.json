@@ -37,5 +37,23 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.469Z",
+    "discussions": 6,
+    "solutions": 4,
+    "communityRating": "3.9",
+    "url": "https://community.homey.app/search?q=ikea_heater-399_plug"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.469Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_heater-399_plug.html",
+    "features": [
+      "onoff"
+    ],
+    "compatibility": "good"
+  }
 }

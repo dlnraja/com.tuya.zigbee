@@ -37,5 +37,24 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.416Z",
+    "discussions": 7,
+    "solutions": 4,
+    "communityRating": "4.7",
+    "url": "https://community.homey.app/search?q=aqara_switch-457_plug"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.416Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_switch-457_plug.html",
+    "features": [
+      "motion",
+      "humidity"
+    ],
+    "compatibility": "good"
+  }
 }

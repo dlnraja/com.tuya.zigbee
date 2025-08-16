@@ -41,5 +41,28 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Tuya heater-387",
+    "fr": "Tuya heater-387"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.370Z",
+    "discussions": 1,
+    "solutions": 4,
+    "communityRating": "4.7",
+    "url": "https://community.homey.app/search?q=tuya_heater-387"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.370Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_heater-387.html",
+    "features": [
+      "temperature",
+      "motion"
+    ],
+    "compatibility": "excellent"
   }
 }

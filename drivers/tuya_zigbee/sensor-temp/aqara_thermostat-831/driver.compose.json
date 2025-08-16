@@ -46,5 +46,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Aqara thermostat-831",
+    "fr": "Aqara thermostat-831"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:16.714Z",
+    "discussions": 2,
+    "solutions": 5,
+    "communityRating": "3.5",
+    "url": "https://community.homey.app/search?q=aqara_thermostat-831"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:16.714Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_thermostat-831.html",
+    "features": [
+      "power",
+      "color",
+      "dim"
+    ],
+    "compatibility": "good"
   }
 }

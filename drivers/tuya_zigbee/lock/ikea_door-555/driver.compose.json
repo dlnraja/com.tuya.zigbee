@@ -31,5 +31,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ikea door-555",
+    "fr": "Ikea door-555"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:13.606Z",
+    "discussions": 5,
+    "solutions": 1,
+    "communityRating": "3.8",
+    "url": "https://community.homey.app/search?q=ikea_door-555"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:13.606Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_door-555.html",
+    "features": [
+      "dim"
+    ],
+    "compatibility": "poor"
   }
 }

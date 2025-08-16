@@ -46,5 +46,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Radar-24g sensor battery presence",
+    "fr": "Radar-24g capteur battery presence"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:16.287Z",
+    "discussions": 4,
+    "solutions": 4,
+    "communityRating": "5.0",
+    "url": "https://community.homey.app/search?q=radar-24g_sensor_battery_presence"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:16.287Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/radar-24g_sensor_battery_presence.html",
+    "features": [
+      "motion"
+    ],
+    "compatibility": "poor"
   }
 }

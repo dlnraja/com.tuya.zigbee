@@ -46,5 +46,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ts0207",
+    "fr": "Ts0207"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.674Z",
+    "discussions": 2,
+    "solutions": 3,
+    "communityRating": "4.1",
+    "url": "https://community.homey.app/search?q=ts0207"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.674Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ts0207.html",
+    "features": [
+      "dim"
+    ],
+    "compatibility": "excellent"
   }
 }

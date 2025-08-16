@@ -46,5 +46,28 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Aqara standard",
+    "fr": "Aqara standard"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:14.905Z",
+    "discussions": 5,
+    "solutions": 5,
+    "communityRating": "4.9",
+    "url": "https://community.homey.app/search?q=aqara_standard"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:14.905Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_standard.html",
+    "features": [
+      "humidity",
+      "onoff"
+    ],
+    "compatibility": "fair"
   }
 }

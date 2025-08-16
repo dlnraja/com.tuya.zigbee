@@ -46,5 +46,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ikea chime-608",
+    "fr": "Ikea chime-608"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.465Z",
+    "discussions": 6,
+    "solutions": 3,
+    "communityRating": "3.4",
+    "url": "https://community.homey.app/search?q=ikea_chime-608"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.465Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_chime-608.html",
+    "features": [
+      "color",
+      "dim",
+      "power"
+    ],
+    "compatibility": "poor"
   }
 }

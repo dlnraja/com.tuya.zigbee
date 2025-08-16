@@ -46,5 +46,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Aqara smoke-458",
+    "fr": "Aqara smoke-458"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:16.382Z",
+    "discussions": 4,
+    "solutions": 2,
+    "communityRating": "4.3",
+    "url": "https://community.homey.app/search?q=aqara_smoke-458"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:16.382Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_smoke-458.html",
+    "features": [
+      "color",
+      "onoff",
+      "motion"
+    ],
+    "compatibility": "good"
   }
 }

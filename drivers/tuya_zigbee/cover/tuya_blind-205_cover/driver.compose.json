@@ -38,5 +38,23 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.267Z",
+    "discussions": 10,
+    "solutions": 5,
+    "communityRating": "3.3",
+    "url": "https://community.homey.app/search?q=tuya_blind-205_cover"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.267Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_blind-205_cover.html",
+    "features": [
+      "motion"
+    ],
+    "compatibility": "excellent"
+  }
 }

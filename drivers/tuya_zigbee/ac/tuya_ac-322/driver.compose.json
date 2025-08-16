@@ -46,5 +46,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Tuya ac-322",
+    "fr": "Tuya ac-322"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.133Z",
+    "discussions": 6,
+    "solutions": 5,
+    "communityRating": "4.3",
+    "url": "https://community.homey.app/search?q=tuya_ac-322"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.133Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_ac-322.html",
+    "features": [
+      "humidity"
+    ],
+    "compatibility": "good"
   }
 }

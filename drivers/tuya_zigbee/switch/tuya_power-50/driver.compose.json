@@ -37,5 +37,23 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.656Z",
+    "discussions": 3,
+    "solutions": 2,
+    "communityRating": "3.4",
+    "url": "https://community.homey.app/search?q=tuya_power-50"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.656Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_power-50.html",
+    "features": [
+      "dim"
+    ],
+    "compatibility": "fair"
+  }
 }

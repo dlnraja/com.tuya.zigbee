@@ -31,5 +31,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Aqara door-305 lock",
+    "fr": "Aqara door-305 lock"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:13.059Z",
+    "discussions": 8,
+    "solutions": 3,
+    "communityRating": "3.4",
+    "url": "https://community.homey.app/search?q=aqara_door-305_lock"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:13.059Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_door-305_lock.html",
+    "features": [
+      "onoff"
+    ],
+    "compatibility": "excellent"
   }
 }

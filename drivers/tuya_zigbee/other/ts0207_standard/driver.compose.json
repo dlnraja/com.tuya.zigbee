@@ -46,5 +46,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ts0207 standard",
+    "fr": "Ts0207 standard"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.680Z",
+    "discussions": 3,
+    "solutions": 1,
+    "communityRating": "4.4",
+    "url": "https://community.homey.app/search?q=ts0207_standard"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.680Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ts0207_standard.html",
+    "features": [
+      "temperature"
+    ],
+    "compatibility": "good"
   }
 }

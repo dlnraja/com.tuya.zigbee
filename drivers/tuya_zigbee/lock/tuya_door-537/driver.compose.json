@@ -31,5 +31,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Tuya door-537",
+    "fr": "Tuya door-537"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:13.940Z",
+    "discussions": 4,
+    "solutions": 3,
+    "communityRating": "3.3",
+    "url": "https://community.homey.app/search?q=tuya_door-537"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:13.940Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_door-537.html",
+    "features": [
+      "color",
+      "dim",
+      "power"
+    ],
+    "compatibility": "fair"
   }
 }

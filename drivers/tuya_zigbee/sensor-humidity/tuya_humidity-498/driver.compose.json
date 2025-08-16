@@ -46,5 +46,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Tuya humidity-498",
+    "fr": "Tuya humidité-498"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:16.051Z",
+    "discussions": 9,
+    "solutions": 5,
+    "communityRating": "4.0",
+    "url": "https://community.homey.app/search?q=tuya_humidity-498"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:16.051Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_humidity-498.html",
+    "features": [
+      "temperature"
+    ],
+    "compatibility": "fair"
   }
 }

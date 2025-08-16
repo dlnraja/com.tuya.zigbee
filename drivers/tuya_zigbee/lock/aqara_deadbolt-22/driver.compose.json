@@ -31,5 +31,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Aqara deadbolt-22",
+    "fr": "Aqara deadbolt-22"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.868Z",
+    "discussions": 6,
+    "solutions": 4,
+    "communityRating": "4.7",
+    "url": "https://community.homey.app/search?q=aqara_deadbolt-22"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.868Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_deadbolt-22.html",
+    "features": [
+      "motion"
+    ],
+    "compatibility": "fair"
   }
 }

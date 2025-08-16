@@ -37,5 +37,24 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.488Z",
+    "discussions": 9,
+    "solutions": 5,
+    "communityRating": "4.8",
+    "url": "https://community.homey.app/search?q=ikea_power-769"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.488Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_power-769.html",
+    "features": [
+      "power",
+      "temperature"
+    ],
+    "compatibility": "poor"
+  }
 }

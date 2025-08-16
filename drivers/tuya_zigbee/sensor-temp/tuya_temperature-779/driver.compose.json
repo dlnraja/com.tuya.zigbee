@@ -46,5 +46,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Tuya temperature-779",
+    "fr": "Tuya température-779"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.265Z",
+    "discussions": 10,
+    "solutions": 2,
+    "communityRating": "3.8",
+    "url": "https://community.homey.app/search?q=tuya_temperature-779"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.265Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_temperature-779.html",
+    "features": [
+      "motion"
+    ],
+    "compatibility": "fair"
   }
 }

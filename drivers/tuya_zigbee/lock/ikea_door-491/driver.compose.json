@@ -31,5 +31,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ikea door-491",
+    "fr": "Ikea door-491"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:13.513Z",
+    "discussions": 7,
+    "solutions": 1,
+    "communityRating": "4.0",
+    "url": "https://community.homey.app/search?q=ikea_door-491"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:13.513Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_door-491.html",
+    "features": [
+      "power"
+    ],
+    "compatibility": "good"
   }
 }

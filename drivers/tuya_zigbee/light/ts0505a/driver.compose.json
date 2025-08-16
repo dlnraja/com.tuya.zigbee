@@ -49,5 +49,23 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.524Z",
+    "discussions": 5,
+    "solutions": 3,
+    "communityRating": "3.9",
+    "url": "https://community.homey.app/search?q=ts0505a"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.524Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ts0505a.html",
+    "features": [
+      "dim"
+    ],
+    "compatibility": "excellent"
+  }
 }

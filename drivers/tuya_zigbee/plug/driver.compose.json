@@ -13,5 +13,37 @@
   "images": {
     "small": "assets/images/small.png",
     "large": "assets/images/large.png"
+  },
+  "name": {
+    "en": "Plug",
+    "fr": "prise"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "modelId": [
+      "PLUG"
+    ]
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.742Z",
+    "discussions": 1,
+    "solutions": 2,
+    "communityRating": "3.6",
+    "url": "https://community.homey.app/search?q=plug"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.742Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/plug.html",
+    "features": [
+      "dim",
+      "humidity",
+      "temperature"
+    ],
+    "compatibility": "good"
   }
 }

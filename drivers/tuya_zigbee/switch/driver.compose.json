@@ -13,5 +13,35 @@
   "images": {
     "small": "assets/images/small.png",
     "large": "assets/images/large.png"
+  },
+  "name": {
+    "en": "Switch",
+    "fr": "interrupteur"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "modelId": [
+      "SWITCH"
+    ]
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.370Z",
+    "discussions": 1,
+    "solutions": 2,
+    "communityRating": "4.9",
+    "url": "https://community.homey.app/search?q=switch"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.370Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/switch.html",
+    "features": [
+      "humidity"
+    ],
+    "compatibility": "good"
   }
 }

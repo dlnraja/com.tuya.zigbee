@@ -9,5 +9,23 @@
     "onoff"
   ],
   "capabilitiesOptions": {},
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:18.019Z",
+    "discussions": 1,
+    "solutions": 5,
+    "communityRating": "3.2",
+    "url": "https://community.homey.app/search?q=generic_device_zigbee_switch"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:18.019Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/generic_device_zigbee_switch.html",
+    "features": [
+      "motion"
+    ],
+    "compatibility": "good"
+  }
 }

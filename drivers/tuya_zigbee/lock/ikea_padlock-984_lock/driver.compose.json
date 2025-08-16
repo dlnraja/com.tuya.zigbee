@@ -31,5 +31,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ikea padlock-984 lock",
+    "fr": "Ikea padlock-984 lock"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:13.771Z",
+    "discussions": 3,
+    "solutions": 2,
+    "communityRating": "3.8",
+    "url": "https://community.homey.app/search?q=ikea_padlock-984_lock"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:13.771Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_padlock-984_lock.html",
+    "features": [
+      "temperature"
+    ],
+    "compatibility": "fair"
   }
 }

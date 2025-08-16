@@ -46,5 +46,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ikea temperature-892",
+    "fr": "Ikea température-892"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:16.853Z",
+    "discussions": 1,
+    "solutions": 2,
+    "communityRating": "4.3",
+    "url": "https://community.homey.app/search?q=ikea_temperature-892"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:16.853Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_temperature-892.html",
+    "features": [
+      "onoff"
+    ],
+    "compatibility": "good"
   }
 }

@@ -46,5 +46,30 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ts0502a",
+    "fr": "Ts0502a"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.687Z",
+    "discussions": 3,
+    "solutions": 2,
+    "communityRating": "3.8",
+    "url": "https://community.homey.app/search?q=ts0502a"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.687Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ts0502a.html",
+    "features": [
+      "dim",
+      "color",
+      "power",
+      "motion"
+    ],
+    "compatibility": "good"
   }
 }

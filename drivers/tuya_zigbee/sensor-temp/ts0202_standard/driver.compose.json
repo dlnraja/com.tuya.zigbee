@@ -46,5 +46,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ts0202 standard",
+    "fr": "Ts0202 standard"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:16.986Z",
+    "discussions": 7,
+    "solutions": 3,
+    "communityRating": "4.0",
+    "url": "https://community.homey.app/search?q=ts0202_standard"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:16.986Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ts0202_standard.html",
+    "features": [
+      "color"
+    ],
+    "compatibility": "fair"
   }
 }

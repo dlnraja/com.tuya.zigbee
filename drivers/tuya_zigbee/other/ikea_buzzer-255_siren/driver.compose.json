@@ -46,5 +46,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ikea buzzer-255 siren",
+    "fr": "Ikea buzzer-255 siren"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.436Z",
+    "discussions": 8,
+    "solutions": 1,
+    "communityRating": "4.7",
+    "url": "https://community.homey.app/search?q=ikea_buzzer-255_siren"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.436Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_buzzer-255_siren.html",
+    "features": [
+      "motion"
+    ],
+    "compatibility": "good"
   }
 }

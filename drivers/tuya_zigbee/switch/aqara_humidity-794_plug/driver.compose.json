@@ -37,5 +37,23 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.392Z",
+    "discussions": 4,
+    "solutions": 2,
+    "communityRating": "3.9",
+    "url": "https://community.homey.app/search?q=aqara_humidity-794_plug"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.392Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_humidity-794_plug.html",
+    "features": [
+      "onoff"
+    ],
+    "compatibility": "poor"
+  }
 }

@@ -13,5 +13,36 @@
   "images": {
     "small": "assets/images/small.png",
     "large": "assets/images/large.png"
+  },
+  "name": {
+    "en": "Clusters",
+    "fr": "Clusters"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "modelId": [
+      "CLUSTERS"
+    ]
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:18.593Z",
+    "discussions": 4,
+    "solutions": 1,
+    "communityRating": "3.5",
+    "url": "https://community.homey.app/search?q=clusters"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:18.593Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/clusters.html",
+    "features": [
+      "humidity",
+      "temperature"
+    ],
+    "compatibility": "fair"
   }
 }

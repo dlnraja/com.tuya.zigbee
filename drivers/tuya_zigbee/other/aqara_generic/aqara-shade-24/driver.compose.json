@@ -280,5 +280,23 @@
       "ceiling-light",
       "rgbw-bulb"
     ]
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:14.890Z",
+    "discussions": 9,
+    "solutions": 3,
+    "communityRating": "4.6",
+    "url": "https://community.homey.app/search?q=aqara-shade-24"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:14.890Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara-shade-24.html",
+    "features": [
+      "onoff"
+    ],
+    "compatibility": "fair"
   }
 }

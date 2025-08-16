@@ -41,5 +41,28 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Aqara heater-833",
+    "fr": "Aqara heater-833"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.342Z",
+    "discussions": 8,
+    "solutions": 1,
+    "communityRating": "4.2",
+    "url": "https://community.homey.app/search?q=aqara_heater-833"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.342Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_heater-833.html",
+    "features": [
+      "humidity",
+      "dim"
+    ],
+    "compatibility": "fair"
   }
 }

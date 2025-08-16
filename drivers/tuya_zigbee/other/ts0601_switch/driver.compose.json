@@ -46,5 +46,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ts0601 switch",
+    "fr": "Ts0601 interrupteur"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.706Z",
+    "discussions": 5,
+    "solutions": 1,
+    "communityRating": "3.5",
+    "url": "https://community.homey.app/search?q=ts0601_switch"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.706Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ts0601_switch.html",
+    "features": [
+      "power"
+    ],
+    "compatibility": "fair"
   }
 }

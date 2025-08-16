@@ -280,5 +280,23 @@
       "ceiling-light",
       "rgbw-bulb"
     ]
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:14.884Z",
+    "discussions": 9,
+    "solutions": 2,
+    "communityRating": "4.7",
+    "url": "https://community.homey.app/search?q=aqara-curtain-838"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:14.884Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara-curtain-838.html",
+    "features": [
+      "power"
+    ],
+    "compatibility": "fair"
   }
 }

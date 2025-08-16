@@ -46,5 +46,30 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Aqara water-220",
+    "fr": "Aqara water-220"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.339Z",
+    "discussions": 2,
+    "solutions": 4,
+    "communityRating": "4.7",
+    "url": "https://community.homey.app/search?q=aqara_water-220"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.339Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_water-220.html",
+    "features": [
+      "color",
+      "temperature",
+      "humidity",
+      "motion"
+    ],
+    "compatibility": "fair"
   }
 }

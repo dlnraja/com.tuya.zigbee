@@ -46,5 +46,28 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Tuya ac  Ikea  Ac  Device  Standard  Default",
+    "fr": "Tuya ac  Ikea  Ac  Device  Standard  Default"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.146Z",
+    "discussions": 10,
+    "solutions": 5,
+    "communityRating": "3.4",
+    "url": "https://community.homey.app/search?q=tuya_ac_Ikea_Ac_Device_Standard_Default"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.146Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_ac_Ikea_Ac_Device_Standard_Default.html",
+    "features": [
+      "onoff",
+      "power"
+    ],
+    "compatibility": "excellent"
   }
 }

@@ -46,5 +46,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Tuya ac  Aqara  Ac  Device  Standard  Default",
+    "fr": "Tuya ac  Aqara  Ac  Device  Standard  Default"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.140Z",
+    "discussions": 9,
+    "solutions": 3,
+    "communityRating": "3.9",
+    "url": "https://community.homey.app/search?q=tuya_ac_Aqara_Ac_Device_Standard_Default"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.140Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_ac_Aqara_Ac_Device_Standard_Default.html",
+    "features": [
+      "dim"
+    ],
+    "compatibility": "excellent"
   }
 }

@@ -31,5 +31,28 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ikea door-491 lock",
+    "fr": "Ikea door-491 lock"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:13.556Z",
+    "discussions": 8,
+    "solutions": 1,
+    "communityRating": "4.4",
+    "url": "https://community.homey.app/search?q=ikea_door-491_lock"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:13.556Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_door-491_lock.html",
+    "features": [
+      "onoff",
+      "temperature"
+    ],
+    "compatibility": "good"
   }
 }

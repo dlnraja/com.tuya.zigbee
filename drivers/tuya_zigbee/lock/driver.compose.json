@@ -13,5 +13,36 @@
   "images": {
     "small": "assets/images/small.png",
     "large": "assets/images/large.png"
+  },
+  "name": {
+    "en": "Lock",
+    "fr": "Lock"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "modelId": [
+      "LOCK"
+    ]
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.792Z",
+    "discussions": 6,
+    "solutions": 3,
+    "communityRating": "3.9",
+    "url": "https://community.homey.app/search?q=lock"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.792Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/lock.html",
+    "features": [
+      "temperature",
+      "motion"
+    ],
+    "compatibility": "poor"
   }
 }

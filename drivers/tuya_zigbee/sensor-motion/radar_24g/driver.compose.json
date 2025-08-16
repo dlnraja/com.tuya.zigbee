@@ -44,9 +44,15 @@
     }
   },
   "zigbee": {
-    "manufacturerName": ["Tuya"],
-    "modelId": ["TS0202"],
-    "productId": ["TS0202"]
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "modelId": [
+      "TS0202"
+    ],
+    "productId": [
+      "TS0202"
+    ]
   },
   "tuya_dps": {
     "1": {
@@ -69,5 +75,25 @@
       "type": "value",
       "capability": "measure_battery"
     }
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:16.288Z",
+    "discussions": 2,
+    "solutions": 3,
+    "communityRating": "4.0",
+    "url": "https://community.homey.app/search?q=radar_24g"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:16.288Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/radar_24g.html",
+    "features": [
+      "dim",
+      "temperature",
+      "motion"
+    ],
+    "compatibility": "excellent"
   }
 }

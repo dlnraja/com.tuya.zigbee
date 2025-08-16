@@ -765,5 +765,24 @@
       "ceiling-light",
       "rgbw-bulb"
     ]
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.538Z",
+    "discussions": 3,
+    "solutions": 5,
+    "communityRating": "4.6",
+    "url": "https://community.homey.app/search?q=ikea-shade-756"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.538Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea-shade-756.html",
+    "features": [
+      "dim",
+      "temperature"
+    ],
+    "compatibility": "excellent"
   }
 }

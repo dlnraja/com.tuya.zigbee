@@ -49,5 +49,25 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.382Z",
+    "discussions": 10,
+    "solutions": 1,
+    "communityRating": "3.1",
+    "url": "https://community.homey.app/search?q=aqara_bulb_423"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.382Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_bulb_423.html",
+    "features": [
+      "temperature",
+      "power",
+      "dim"
+    ],
+    "compatibility": "poor"
+  }
 }

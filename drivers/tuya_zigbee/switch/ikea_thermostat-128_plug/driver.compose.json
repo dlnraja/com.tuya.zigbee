@@ -37,5 +37,24 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.506Z",
+    "discussions": 9,
+    "solutions": 2,
+    "communityRating": "4.4",
+    "url": "https://community.homey.app/search?q=ikea_thermostat-128_plug"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.506Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_thermostat-128_plug.html",
+    "features": [
+      "color",
+      "dim"
+    ],
+    "compatibility": "poor"
+  }
 }

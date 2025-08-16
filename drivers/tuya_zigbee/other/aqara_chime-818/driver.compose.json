@@ -46,5 +46,30 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Aqara chime-818",
+    "fr": "Aqara chime-818"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:14.725Z",
+    "discussions": 6,
+    "solutions": 2,
+    "communityRating": "4.3",
+    "url": "https://community.homey.app/search?q=aqara_chime-818"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:14.726Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_chime-818.html",
+    "features": [
+      "humidity",
+      "dim",
+      "temperature",
+      "color"
+    ],
+    "compatibility": "good"
   }
 }

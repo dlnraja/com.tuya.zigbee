@@ -41,5 +41,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ikea heater-896",
+    "fr": "Ikea heater-896"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.359Z",
+    "discussions": 8,
+    "solutions": 5,
+    "communityRating": "4.6",
+    "url": "https://community.homey.app/search?q=ikea_heater-896"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.359Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_heater-896.html",
+    "features": [
+      "power"
+    ],
+    "compatibility": "good"
   }
 }

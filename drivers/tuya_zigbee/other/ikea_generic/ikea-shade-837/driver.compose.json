@@ -768,5 +768,24 @@
       "ceiling-light",
       "rgbw-bulb"
     ]
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.540Z",
+    "discussions": 8,
+    "solutions": 3,
+    "communityRating": "5.0",
+    "url": "https://community.homey.app/search?q=ikea-shade-837"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.540Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea-shade-837.html",
+    "features": [
+      "dim",
+      "power"
+    ],
+    "compatibility": "excellent"
   }
 }

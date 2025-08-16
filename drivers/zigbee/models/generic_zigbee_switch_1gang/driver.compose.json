@@ -34,5 +34,35 @@
   ],
   "support": "https://community.homey.app",
   "bugs": "https://github.com/dlnraja/com.tuya.zigbee/issues",
-  "source": "https://github.com/dlnraja/com.tuya.zigbee"
+  "source": "https://github.com/dlnraja/com.tuya.zigbee",
+  "name": {
+    "en": "Generic zigbee switch 1gang",
+    "fr": "Generic zigbee interrupteur 1gang"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "modelId": [
+      "GENERIC_ZIGBEE_SWITCH_1GANG"
+    ]
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:18.024Z",
+    "discussions": 10,
+    "solutions": 3,
+    "communityRating": "3.7",
+    "url": "https://community.homey.app/search?q=generic_zigbee_switch_1gang"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:18.024Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/generic_zigbee_switch_1gang.html",
+    "features": [
+      "motion"
+    ],
+    "compatibility": "fair"
+  }
 }

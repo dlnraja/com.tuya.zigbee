@@ -46,5 +46,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ikea water-362",
+    "fr": "Ikea water-362"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.352Z",
+    "discussions": 1,
+    "solutions": 5,
+    "communityRating": "4.2",
+    "url": "https://community.homey.app/search?q=ikea_water-362"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.352Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_water-362.html",
+    "features": [
+      "motion"
+    ],
+    "compatibility": "good"
   }
 }

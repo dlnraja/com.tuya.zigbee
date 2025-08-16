@@ -765,5 +765,23 @@
       "ceiling-light",
       "rgbw-bulb"
     ]
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.531Z",
+    "discussions": 4,
+    "solutions": 4,
+    "communityRating": "3.5",
+    "url": "https://community.homey.app/search?q=ikea-garage-4"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.531Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea-garage-4.html",
+    "features": [
+      "onoff"
+    ],
+    "compatibility": "good"
   }
 }

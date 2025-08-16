@@ -280,5 +280,25 @@
       "ceiling-light",
       "rgbw-bulb"
     ]
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:14.888Z",
+    "discussions": 4,
+    "solutions": 3,
+    "communityRating": "4.5",
+    "url": "https://community.homey.app/search?q=aqara-garage-478"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:14.888Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara-garage-478.html",
+    "features": [
+      "temperature",
+      "power",
+      "motion"
+    ],
+    "compatibility": "fair"
   }
 }

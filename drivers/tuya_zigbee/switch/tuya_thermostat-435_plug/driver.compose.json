@@ -37,5 +37,24 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.690Z",
+    "discussions": 5,
+    "solutions": 5,
+    "communityRating": "4.7",
+    "url": "https://community.homey.app/search?q=tuya_thermostat-435_plug"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.690Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_thermostat-435_plug.html",
+    "features": [
+      "temperature",
+      "dim"
+    ],
+    "compatibility": "excellent"
+  }
 }

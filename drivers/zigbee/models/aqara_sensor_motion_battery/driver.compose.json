@@ -9,5 +9,23 @@
     "onoff"
   ],
   "capabilitiesOptions": {},
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.976Z",
+    "discussions": 10,
+    "solutions": 3,
+    "communityRating": "3.2",
+    "url": "https://community.homey.app/search?q=aqara_sensor_motion_battery"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.976Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_sensor_motion_battery.html",
+    "features": [
+      "temperature"
+    ],
+    "compatibility": "poor"
+  }
 }

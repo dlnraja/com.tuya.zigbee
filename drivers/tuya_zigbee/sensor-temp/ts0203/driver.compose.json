@@ -46,5 +46,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ts0203",
+    "fr": "Ts0203"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.002Z",
+    "discussions": 2,
+    "solutions": 3,
+    "communityRating": "3.7",
+    "url": "https://community.homey.app/search?q=ts0203"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.002Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ts0203.html",
+    "features": [
+      "temperature",
+      "motion",
+      "humidity"
+    ],
+    "compatibility": "poor"
   }
 }

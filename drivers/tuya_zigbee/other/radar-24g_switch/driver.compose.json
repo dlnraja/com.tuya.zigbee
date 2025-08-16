@@ -46,5 +46,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Radar-24g switch",
+    "fr": "Radar-24g interrupteur"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.602Z",
+    "discussions": 8,
+    "solutions": 3,
+    "communityRating": "3.4",
+    "url": "https://community.homey.app/search?q=radar-24g_switch"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.602Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/radar-24g_switch.html",
+    "features": [
+      "dim"
+    ],
+    "compatibility": "good"
   }
 }

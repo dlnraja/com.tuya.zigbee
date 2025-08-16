@@ -1,0 +1,15 @@
+{
+  "timestamp": "2025-08-16T03:32:11.747Z",
+  "version": "3.5.0",
+  "stats": {
+    "driversProcessed": 520,
+    "driversEnriched": 255,
+    "errors": 9
+  },
+  "summary": {
+    "totalDrivers": 520,
+    "enrichedDrivers": 255,
+    "enrichmentRate": "49.04",
+    "errors": 9
+  }
+}
