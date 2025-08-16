@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-08-16T14:18:43.264Z",
+  "version": "3.6.0",
+  "stats": {
+    "totalTests": 5,
+    "successfulTests": 5,
+    "failedTests": 0,
+    "resilienceScore": 100
+  },
+  "scenarios": [
+    "primary-source-failure",
+    "secondary-source-failure",
+    "network-timeout",
+    "api-rate-limit",
+    "service-unavailable"
+  ],
+  "summary": {
+    "success": true,
+    "resilienceScore": 100
+  }
+}
