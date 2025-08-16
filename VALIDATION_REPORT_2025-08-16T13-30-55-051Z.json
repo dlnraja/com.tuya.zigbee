@@ -1,14 +1,12 @@
 {
-  "timestamp": "2025-08-16T13:33:55.893Z",
+  "timestamp": "2025-08-16T13:30:55.048Z",
   "version": "3.5.0",
   "summary": {
     "totalDrivers": 520,
     "validDrivers": 241,
     "invalidDrivers": 279,
-    "enrichedDrivers": 520,
     "warnings": 1058,
-    "successRate": "46.35",
-    "enrichmentRate": "100.00"
+    "successRate": "46.35"
   },
   "errors": [
     {
@@ -47,8 +45,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_zigbee",
@@ -86,8 +83,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ac",
@@ -125,8 +121,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_ac-294",
@@ -164,8 +159,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "assets",
@@ -203,8 +197,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_ac-165",
@@ -242,8 +235,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_ac-322",
@@ -281,8 +273,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_ac_Ac_Device_Standard_Default",
@@ -320,8 +311,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_ac_Aqara_Ac_Device_Standard_Default",
@@ -359,8 +349,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_ac_Ikea_Ac_Device_Standard_Default",
@@ -398,8 +387,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "assets",
@@ -437,8 +425,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "images",
@@ -476,8 +463,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "cover",
@@ -515,8 +501,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "fan",
@@ -554,8 +539,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_fan-281",
@@ -593,8 +577,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_fan-459",
@@ -632,8 +615,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "assets",
@@ -671,8 +653,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_fan-18",
@@ -710,8 +691,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_fan-208",
@@ -749,8 +729,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_fan-200",
@@ -788,8 +767,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_fan-730",
@@ -827,8 +805,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "heater",
@@ -866,8 +843,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_heater-833",
@@ -905,8 +881,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_heater-898",
@@ -944,8 +919,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "assets",
@@ -983,8 +957,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_heater-399",
@@ -1022,8 +995,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_heater-896",
@@ -1061,8 +1033,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_heater-0",
@@ -1100,8 +1071,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_heater-387",
@@ -1139,8 +1109,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "light",
@@ -1178,8 +1147,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "lock",
@@ -1217,8 +1185,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_deadbolt-22",
@@ -1256,8 +1223,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_deadbolt-22_lock",
@@ -1295,8 +1261,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_deadbolt-642",
@@ -1334,8 +1299,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_deadbolt-642_lock",
@@ -1373,8 +1337,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_door-305",
@@ -1412,8 +1375,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_door-305_lock",
@@ -1451,8 +1413,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_door-338",
@@ -1490,8 +1451,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_door-338_lock",
@@ -1529,8 +1489,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_padlock-382",
@@ -1568,8 +1527,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_padlock-382_lock",
@@ -1607,8 +1565,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_padlock-460",
@@ -1646,8 +1603,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_padlock-460_lock",
@@ -1685,8 +1641,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_deadbolt-274",
@@ -1724,8 +1679,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_deadbolt-274_lock",
@@ -1763,8 +1717,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_deadbolt-42",
@@ -1802,8 +1755,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_deadbolt-42_lock",
@@ -1841,8 +1793,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_door-491",
@@ -1880,8 +1831,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_door-491_lock",
@@ -1919,8 +1869,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_door-555",
@@ -1958,8 +1907,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_door-555_lock",
@@ -1997,8 +1945,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_padlock-134",
@@ -2036,8 +1983,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_padlock-134_lock",
@@ -2075,8 +2021,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_padlock-984",
@@ -2114,8 +2059,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_padlock-984_lock",
@@ -2153,8 +2097,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_deadbolt-261",
@@ -2192,8 +2135,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_deadbolt-261_lock",
@@ -2231,8 +2173,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_deadbolt-850",
@@ -2270,8 +2211,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_deadbolt-850_lock",
@@ -2309,8 +2249,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_door-450",
@@ -2348,8 +2287,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_door-450_lock",
@@ -2387,8 +2325,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_door-537",
@@ -2426,8 +2363,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_door-537_lock",
@@ -2465,8 +2401,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_padlock-538",
@@ -2504,8 +2439,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_padlock-538_lock",
@@ -2543,8 +2477,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_padlock-551",
@@ -2582,8 +2515,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_padlock-551_lock",
@@ -2621,8 +2553,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "other",
@@ -2660,8 +2591,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara",
@@ -2699,8 +2629,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_alarm-418",
@@ -2738,8 +2667,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_alarm-418_siren",
@@ -2777,8 +2705,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_alarm-922",
@@ -2816,8 +2743,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_alarm-922_siren",
@@ -2855,8 +2781,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_buzzer-110",
@@ -2894,8 +2819,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_buzzer-110_siren",
@@ -2933,8 +2857,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_buzzer-259",
@@ -2972,8 +2895,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_buzzer-259_siren",
@@ -3011,8 +2933,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_chime-818",
@@ -3050,8 +2971,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_chime-818_siren",
@@ -3089,8 +3009,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_chime-885",
@@ -3128,8 +3047,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_chime-885_siren",
@@ -3167,8 +3085,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_generic",
@@ -3206,8 +3123,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara-blind-772",
@@ -3246,10 +3162,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -3289,10 +3201,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -3332,10 +3240,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -3375,10 +3279,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -3418,10 +3318,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -3461,10 +3357,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -3504,10 +3396,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -3547,10 +3435,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -3589,8 +3473,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_switch-457",
@@ -3628,8 +3511,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_switch-883",
@@ -3667,8 +3549,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "assets",
@@ -3706,8 +3587,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "generic_device_generic_device",
@@ -3745,8 +3625,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "generic_zigbee_light",
@@ -3784,8 +3663,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "generic_zigbee_sensor",
@@ -3823,8 +3701,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "generic_zigbee_switch",
@@ -3862,8 +3739,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea",
@@ -3901,8 +3777,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_alarm-641",
@@ -3940,8 +3815,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_alarm-641_siren",
@@ -3979,8 +3853,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_alarm-707",
@@ -4018,8 +3891,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_alarm-707_siren",
@@ -4057,8 +3929,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_buzzer-232",
@@ -4096,8 +3967,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_buzzer-232_siren",
@@ -4135,8 +4005,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_buzzer-255",
@@ -4174,8 +4043,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_buzzer-255_siren",
@@ -4213,8 +4081,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_chime-608",
@@ -4252,8 +4119,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_chime-608_siren",
@@ -4291,8 +4157,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_chime-70",
@@ -4330,8 +4195,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_chime-70_siren",
@@ -4369,8 +4233,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_generic",
@@ -4408,8 +4271,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea-blind-14",
@@ -4448,10 +4310,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -4491,10 +4349,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -4534,10 +4388,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -4577,10 +4427,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -4620,10 +4466,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -4663,10 +4505,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -4706,10 +4544,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -4749,10 +4583,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -4791,8 +4621,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_switch-612",
@@ -4830,8 +4659,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_switch-783",
@@ -4869,8 +4697,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "radar-24g_switch",
@@ -4908,8 +4735,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "template_device_template_device",
@@ -4947,8 +4773,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "template_tuya_dp_sensor",
@@ -4986,8 +4811,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "template_tuya_dp_switch",
@@ -5025,8 +4849,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts004f",
@@ -5064,8 +4887,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts004f_standard",
@@ -5103,8 +4925,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0121",
@@ -5142,8 +4963,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0121_standard",
@@ -5181,8 +5001,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0204",
@@ -5220,8 +5039,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0204_standard",
@@ -5259,8 +5077,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0207",
@@ -5298,8 +5115,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0207_standard",
@@ -5337,8 +5153,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0502a",
@@ -5376,8 +5191,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0502a_standard",
@@ -5415,8 +5229,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0601",
@@ -5454,8 +5267,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0601_sensor_battery",
@@ -5493,8 +5305,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0601_standard",
@@ -5532,8 +5343,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0601_switch",
@@ -5571,8 +5381,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts1001",
@@ -5610,8 +5419,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts1001_standard",
@@ -5649,8 +5457,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts110f",
@@ -5688,8 +5495,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts110f_standard",
@@ -5727,8 +5533,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya",
@@ -5766,8 +5571,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_cover_ts0601",
@@ -5805,8 +5609,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_generic",
@@ -5844,8 +5647,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_standard",
@@ -5883,8 +5685,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_switch-225",
@@ -5922,8 +5723,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_switch-549",
@@ -5961,8 +5761,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "plug",
@@ -6000,8 +5799,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "sensor-contact",
@@ -6039,8 +5837,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_contact-543",
@@ -6078,8 +5875,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_contact-799",
@@ -6117,8 +5913,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "assets",
@@ -6156,8 +5951,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_contact-348",
@@ -6195,8 +5989,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_contact-739",
@@ -6234,8 +6027,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_contact-202",
@@ -6273,8 +6065,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_contact-219",
@@ -6312,8 +6103,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "sensor-gas",
@@ -6351,8 +6141,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_gas-474",
@@ -6390,8 +6179,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_gas-84",
@@ -6429,8 +6217,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "assets",
@@ -6468,8 +6255,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_gas-317",
@@ -6507,8 +6293,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_gas-418",
@@ -6546,8 +6331,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_gas-320",
@@ -6585,8 +6369,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_gas-695",
@@ -6624,8 +6407,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "sensor-humidity",
@@ -6663,8 +6445,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_humidity-617",
@@ -6702,8 +6483,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_humidity-794",
@@ -6741,8 +6521,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "assets",
@@ -6780,8 +6559,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "generic_device_sensor_humidity",
@@ -6819,8 +6597,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "generic_sensor_humidity",
@@ -6858,8 +6635,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_humidity-288",
@@ -6897,8 +6673,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_humidity-712",
@@ -6936,8 +6711,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_humidity-498",
@@ -6975,8 +6749,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_humidity-86",
@@ -7014,8 +6787,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "sensor-motion",
@@ -7053,8 +6825,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_motion-364",
@@ -7092,8 +6863,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_motion-800",
@@ -7131,8 +6901,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "assets",
@@ -7170,8 +6939,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "generic_device_sensor_motion",
@@ -7209,8 +6977,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "generic_sensor_motion",
@@ -7248,8 +7015,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_motion-927",
@@ -7287,8 +7053,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_motion-981",
@@ -7326,8 +7091,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "radar-24g_sensor_battery_presence",
@@ -7365,8 +7129,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_motion-299",
@@ -7404,8 +7167,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_motion-362",
@@ -7443,8 +7205,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "sensor-smoke",
@@ -7482,8 +7243,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_smoke-458",
@@ -7521,8 +7281,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_smoke-61",
@@ -7560,8 +7319,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "assets",
@@ -7599,8 +7357,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_smoke-360",
@@ -7638,8 +7395,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_smoke-94",
@@ -7677,8 +7433,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_smoke-109",
@@ -7716,8 +7471,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_smoke-927",
@@ -7755,8 +7509,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "sensor-temp",
@@ -7794,8 +7547,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_temperature-561",
@@ -7833,8 +7585,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_temperature-666",
@@ -7872,8 +7623,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_thermostat-115",
@@ -7911,8 +7661,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_thermostat-831",
@@ -7950,8 +7699,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "assets",
@@ -7989,8 +7737,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "generic_device_sensor_temperature",
@@ -8028,8 +7775,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "generic_sensor_temperature",
@@ -8067,8 +7813,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_temperature-466",
@@ -8106,8 +7851,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_temperature-892",
@@ -8145,8 +7889,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_thermostat-128",
@@ -8184,8 +7927,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_thermostat-39",
@@ -8223,8 +7965,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "template_tuya_dp_thermostat",
@@ -8262,8 +8003,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0201",
@@ -8301,8 +8041,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0201_sensor_battery",
@@ -8340,8 +8079,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0201_standard",
@@ -8379,8 +8117,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0202",
@@ -8418,8 +8155,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0202_sensor_battery",
@@ -8457,8 +8193,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0202_standard",
@@ -8496,8 +8231,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0203",
@@ -8535,8 +8269,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0203_sensor_battery",
@@ -8574,8 +8307,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0203_standard",
@@ -8613,8 +8345,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0205",
@@ -8652,8 +8383,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0205_sensor_battery",
@@ -8691,8 +8421,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0205_standard",
@@ -8730,8 +8459,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ts0601_climate-thermostat",
@@ -8769,8 +8497,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_sensor_temp_hum_ts0201",
@@ -8808,8 +8535,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_temperature-622",
@@ -8847,8 +8573,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_temperature-779",
@@ -8886,8 +8611,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_thermostat-435",
@@ -8925,8 +8649,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_thermostat-825",
@@ -8964,8 +8687,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "sensor-vibration",
@@ -9003,8 +8725,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "assets",
@@ -9042,8 +8763,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "sensor-water",
@@ -9081,8 +8801,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_water-220",
@@ -9120,8 +8839,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara_water-237",
@@ -9159,8 +8877,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "assets",
@@ -9198,8 +8915,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_water-362",
@@ -9237,8 +8953,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "ikea_water-667",
@@ -9276,8 +8991,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_water-264",
@@ -9315,8 +9029,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "tuya_water-581",
@@ -9354,8 +9067,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "siren",
@@ -9393,8 +9105,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "switch",
@@ -9432,8 +9143,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "thermostat",
@@ -9471,8 +9181,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "assets",
@@ -9510,8 +9219,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "zigbee",
@@ -9549,10 +9257,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -9591,8 +9295,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "images",
@@ -9630,8 +9333,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "brands",
@@ -9669,8 +9371,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "categories",
@@ -9708,8 +9409,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "generic",
@@ -9747,8 +9447,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "models",
@@ -9786,8 +9485,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "aqara",
@@ -9825,10 +9523,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -9867,10 +9561,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -9909,10 +9599,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -9951,10 +9637,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -9993,10 +9675,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -10035,10 +9713,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -10077,10 +9751,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -10119,10 +9789,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -10161,10 +9827,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -10203,10 +9865,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -10245,8 +9903,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "__generic__",
@@ -10284,8 +9941,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "generic_cover",
@@ -10323,8 +9979,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "generic_fan",
@@ -10362,8 +10017,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "generic_generic",
@@ -10401,8 +10055,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "generic_heater",
@@ -10440,8 +10093,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "generic_light",
@@ -10479,8 +10131,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "generic_lock",
@@ -10518,8 +10169,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "generic_plug",
@@ -10557,8 +10207,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "generic_sensor",
@@ -10596,8 +10245,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "generic_siren",
@@ -10635,8 +10283,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "generic_switch",
@@ -10674,8 +10321,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "generic_thermostat",
@@ -10713,8 +10359,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "generic_zigbee_switch",
@@ -10752,8 +10397,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "__templates__",
@@ -10791,8 +10435,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "_common",
@@ -10830,10 +10473,6 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {
-        "homeyForum": true,
-        "zigbee2mqtt": true
       }
     },
     {
@@ -10872,8 +10511,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "capabilities",
@@ -10911,8 +10549,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "clusters",
@@ -10950,8 +10587,7 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
+      }
     },
     {
       "id": "lib",
@@ -10989,30 +10625,12 @@
           "exists": false,
           "valid": false
         }
-      },
-      "enrichment": {}
-    }
-  ],
-  "enrichmentReports": {
-    "enrichment_report.json": {
-      "timestamp": "2025-08-16T10:28:05.833Z",
-      "version": "3.5.0",
-      "stats": {
-        "driversProcessed": 520,
-        "driversEnriched": 2,
-        "errors": 9
-      },
-      "summary": {
-        "totalDrivers": 520,
-        "enrichedDrivers": 2,
-        "enrichmentRate": "0.38",
-        "errors": 9
       }
     }
-  },
+  ],
   "recommendations": [
-    "Corriger 279 drivers invalides",
-    "Traiter 1058 avertissements",
-    "Améliorer le taux de validation des drivers (>95%)"
+    "Corriger les drivers invalides identifiés",
+    "Traiter les avertissements pour améliorer la qualité",
+    "Améliorer le taux de validation des drivers"
   ]
 }
