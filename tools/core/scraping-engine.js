@@ -35,16 +35,16 @@ class ScrapingEngine {
     const args = process.argv.slice(2);
     const source = this.parseArgs(args);
     
-    console.log(🌐 Scraping Engine - Source: );
+    console.log('Scraping Engine - Source: ' + source);
     
     try {
       await this.ensureOutputDirectory();
       await this.scrapeSource(source);
       await this.generateReport();
       
-      console.log('✅ Scraping terminé');
+      console.log('Scraping termine');
     } catch (error) {
-      console.error('❌ Erreur:', error.message);
+      console.error('Erreur:', error.message);
     }
   }
 
@@ -64,25 +64,25 @@ class ScrapingEngine {
   }
 
   async scrapeSource(source) {
-    console.log(  🔍 Scraping de la source: );
+    console.log('  Scraping de la source: ' + source);
     
     if (!this.config.sources[source]) {
-      throw new Error(Source inconnue: );
+      throw new Error('Source inconnue: ' + source);
     }
     
     for (const url of this.config.sources[source]) {
       try {
-        console.log(    ✅  - OK);
+        console.log('    OK: ' + url);
         this.stats.scrapedSources++;
       } catch (error) {
-        console.log(    ❌  - Erreur);
+        console.log('    Erreur: ' + url);
         this.stats.failedSources++;
       }
     }
   }
 
   async generateReport() {
-    console.log('  📊 Génération du rapport...');
+    console.log('  Generation du rapport...');
     
     const report = {
       timestamp: new Date().toISOString(),
@@ -93,7 +93,7 @@ class ScrapingEngine {
     const reportPath = path.join(this.config.outputDir, 'scraping_report.json');
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
-    console.log(    📄 Rapport: );
+    console.log('    Rapport: ' + reportPath);
   }
 }
 
