@@ -1,0 +1,148 @@
+name: 📊 Update README Stats
+
+on:
+  push:
+    paths:
+      - 'docs/data/*.json'
+      - 'catalog/**'
+      - 'drivers/**'
+  pull_request:
+    paths:
+      - 'docs/data/*.json'
+      - 'catalog/**'
+      - 'drivers/**'
+  schedule:
+    # Exécution quotidienne à 3h du matin UTC
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: 📥 Install dependencies
+        run: npm ci
+        
+      - name: 📊 Export dashboard data
+        run: |
+          echo "📊 Export des données pour le dashboard..."
+          node scripts/build/export_dashboard_data.mjs
+          
+      - name: 📈 Update README stats
+        run: |
+          echo "📈 Mise à jour des statistiques du README..."
+          node scripts/build/update_readme_stats.mjs
+          
+      - name: 🔍 Check for changes
+        id: check-changes
+        run: |
+          if git diff --quiet README.md; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "📝 Aucun changement dans le README"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "📝 Changements détectés dans le README"
+          fi
+          
+      - name: 📤 Commit README changes
+        if: steps.check-changes.outputs.has_changes == 'true'
+        run: |
+          echo "💾 Commit des changements du README..."
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git commit -m "📊 README stats updated [skip ci] - Auto-updated project statistics - Generated from latest catalog and drivers data - Timestamp: $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          
+      - name: 📤 Push changes
+        if: steps.check-changes.outputs.has_changes == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+          
+      - name: 🎉 Success
+        run: |
+          if [[ "${{ steps.check-changes.outputs.has_changes }}" == "true" ]]; then
+            echo "✅ Statistiques du README mises à jour et poussées !"
+          else
+            echo "⏭️ Aucune mise à jour nécessaire"
+          fi
+          
+  validate-stats:
+    needs: update-stats
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: 📥 Install dependencies
+        run: npm ci
+        
+      - name: 🔍 Validate README format
+        run: |
+          echo "🔍 Validation du format du README..."
+          
+          # Vérifier que les marqueurs KPI sont présents
+          if ! grep -q "<!-- KPI-START -->" README.md; then
+            echo "❌ Marqueur KPI-START manquant dans README.md"
+            exit 1
+          fi
+          
+          if ! grep -q "<!-- KPI-END -->" README.md; then
+            echo "❌ Marqueur KPI-END manquant dans README.md"
+            exit 1
+          fi
+          
+          # Vérifier que les statistiques sont présentes
+          if ! grep -q "## 📊 Project Statistics" README.md; then
+            echo "❌ Section statistiques manquante dans README.md"
+            exit 1
+          fi
+          
+          echo "✅ Format du README validé"
+          
+      - name: 🔍 Validate data files
+        run: |
+          echo "🔍 Validation des fichiers de données..."
+          
+          # Vérifier que les fichiers de données existent
+          required_files=("docs/data/summary.json" "docs/data/kpi.json" "docs/data/categories.json" "docs/data/vendors.json")
+          
+          for file in "${required_files[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "❌ Fichier manquant: $file"
+              exit 1
+            fi
+            
+            # Valider la syntaxe JSON
+            if ! node -e "JSON.parse(require('fs').readFileSync('$file', 'utf8'))" 2>/dev/null; then
+              echo "❌ Fichier JSON invalide: $file"
+              exit 1
+            fi
+            
+            echo "✅ $file validé"
+          done
+          
+          echo "✅ Tous les fichiers de données sont valides"
+          
+      - name: 🎉 Validation complete
+        run: |
+          echo "✅ Validation complète réussie !"
+          echo "📊 README et données sont conformes"

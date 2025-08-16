@@ -12,8 +12,11 @@
     "dashboard": "node tools/build-dashboard.js",
     "enrich:heur": "node tools/enrich-heuristics.js",
     "enrich:evidence": "node tools/enrich-from-evidence.js",
+    "enrich:auto": "node tools/auto-driver-enricher.js",
+    "scrape:web": "node tools/web-scraper.js",
     "orchestrate": "node tools/orchestrate.js",
-    "orchestrate:simple": "node tools/orchestrate-simple.js"
+    "orchestrate:simple": "node tools/orchestrate-simple.js",
+    "orchestrate:mega": "node tools/orchestrate.js && node tools/auto-driver-enricher.js"
   },
   "devDependencies": {
     "eslint": "^9.9.0",

@@ -17,7 +17,14 @@
     "enrich:heur": "node tools/enrich-heuristics.js",
     "enrich:evidence": "node tools/enrich-from-evidence.js",
     "orchestrate": "node tools/orchestrate.js",
-    "orchestrate:simple": "node tools/orchestrate-simple.js"
+    "orchestrate:simple": "node tools/orchestrate-simple.js",
+    "enrich:auto": "node tools/auto-driver-enricher.js",
+    "scrape:web": "node tools/web-scraper.js",
+    "orchestrate:mega": "node tools/orchestrate.js && node tools/auto-driver-enricher.js",
+    "dump:homey": "node tools/dump.js",
+    "dump:homey:fast": "node tools/dump.js 60",
+    "validate:final": "node tools/final-validation.js",
+    "fix:validation": "node tools/fix-validation-issues.js"
   },
   "keywords": [
     "tuya",
@@ -30,12 +37,13 @@
   "license": "MIT",
   "devDependencies": {
     "eslint": "^9.9.0",
-    "prettier": "^3.3.3",
     "glob": "^11.0.0",
+    "node-fetch": "^3.3.2",
     "nodemon": "^3.1.0",
-    "node-fetch": "^3.3.2"
+    "prettier": "^3.3.3"
   },
   "dependencies": {
+    "archiver": "^7.0.1",
     "homey": "^2.0.0"
   },
   "engines": {
