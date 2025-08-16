@@ -13,5 +13,35 @@
   "images": {
     "small": "assets/images/small.png",
     "large": "assets/images/large.png"
+  },
+  "name": {
+    "en": "Sensor-humidity",
+    "fr": "capteur-humidité"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "modelId": [
+      "SENSOR-HUMIDITY"
+    ]
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.817Z",
+    "discussions": 9,
+    "solutions": 3,
+    "communityRating": "4.6",
+    "url": "https://community.homey.app/search?q=sensor-humidity"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.817Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/sensor-humidity.html",
+    "features": [
+      "dim"
+    ],
+    "compatibility": "fair"
   }
 }

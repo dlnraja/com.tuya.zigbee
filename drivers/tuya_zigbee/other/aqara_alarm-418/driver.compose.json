@@ -46,5 +46,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Aqara alarm-418",
+    "fr": "Aqara alarm-418"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:14.607Z",
+    "discussions": 1,
+    "solutions": 2,
+    "communityRating": "4.8",
+    "url": "https://community.homey.app/search?q=aqara_alarm-418"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:14.607Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_alarm-418.html",
+    "features": [
+      "color",
+      "dim",
+      "humidity"
+    ],
+    "compatibility": "excellent"
   }
 }

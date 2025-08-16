@@ -49,5 +49,24 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.620Z",
+    "discussions": 6,
+    "solutions": 1,
+    "communityRating": "3.7",
+    "url": "https://community.homey.app/search?q=tuya_bulb_211"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.620Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_bulb_211.html",
+    "features": [
+      "power",
+      "dim"
+    ],
+    "compatibility": "excellent"
+  }
 }

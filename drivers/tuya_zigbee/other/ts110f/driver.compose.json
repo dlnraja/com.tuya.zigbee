@@ -46,5 +46,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ts110f",
+    "fr": "Ts110f"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.715Z",
+    "discussions": 9,
+    "solutions": 4,
+    "communityRating": "3.6",
+    "url": "https://community.homey.app/search?q=ts110f"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.715Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ts110f.html",
+    "features": [
+      "power",
+      "color",
+      "dim"
+    ],
+    "compatibility": "good"
   }
 }

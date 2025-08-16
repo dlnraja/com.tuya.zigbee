@@ -31,5 +31,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Tuya padlock-538",
+    "fr": "Tuya padlock-538"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:13.959Z",
+    "discussions": 3,
+    "solutions": 5,
+    "communityRating": "3.2",
+    "url": "https://community.homey.app/search?q=tuya_padlock-538"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:13.959Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_padlock-538.html",
+    "features": [
+      "humidity",
+      "onoff",
+      "temperature"
+    ],
+    "compatibility": "fair"
   }
 }

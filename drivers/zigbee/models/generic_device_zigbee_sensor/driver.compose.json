@@ -9,5 +9,25 @@
     "onoff"
   ],
   "capabilitiesOptions": {},
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:18.015Z",
+    "discussions": 4,
+    "solutions": 4,
+    "communityRating": "4.0",
+    "url": "https://community.homey.app/search?q=generic_device_zigbee_sensor"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:18.015Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/generic_device_zigbee_sensor.html",
+    "features": [
+      "temperature",
+      "motion",
+      "humidity"
+    ],
+    "compatibility": "fair"
+  }
 }

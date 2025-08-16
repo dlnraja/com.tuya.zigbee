@@ -46,5 +46,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Tuya standard",
+    "fr": "Tuya standard"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.734Z",
+    "discussions": 8,
+    "solutions": 3,
+    "communityRating": "3.6",
+    "url": "https://community.homey.app/search?q=tuya_standard"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.734Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_standard.html",
+    "features": [
+      "dim",
+      "onoff",
+      "motion"
+    ],
+    "compatibility": "excellent"
   }
 }

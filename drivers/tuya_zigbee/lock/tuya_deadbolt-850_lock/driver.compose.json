@@ -31,5 +31,28 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Tuya deadbolt-850 lock",
+    "fr": "Tuya deadbolt-850 lock"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:13.925Z",
+    "discussions": 5,
+    "solutions": 5,
+    "communityRating": "4.8",
+    "url": "https://community.homey.app/search?q=tuya_deadbolt-850_lock"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:13.925Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_deadbolt-850_lock.html",
+    "features": [
+      "power",
+      "color"
+    ],
+    "compatibility": "poor"
   }
 }

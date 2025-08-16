@@ -46,5 +46,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Tuya temperature-622",
+    "fr": "Tuya température-622"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.226Z",
+    "discussions": 2,
+    "solutions": 2,
+    "communityRating": "4.2",
+    "url": "https://community.homey.app/search?q=tuya_temperature-622"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.226Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_temperature-622.html",
+    "features": [
+      "humidity"
+    ],
+    "compatibility": "good"
   }
 }

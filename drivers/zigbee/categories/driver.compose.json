@@ -13,5 +13,35 @@
   "images": {
     "small": "assets/images/small.png",
     "large": "assets/images/large.png"
+  },
+  "name": {
+    "en": "Categories",
+    "fr": "Categories"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "modelId": [
+      "CATEGORIES"
+    ]
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.887Z",
+    "discussions": 4,
+    "solutions": 3,
+    "communityRating": "4.7",
+    "url": "https://community.homey.app/search?q=categories"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.887Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/categories.html",
+    "features": [
+      "power"
+    ],
+    "compatibility": "poor"
   }
 }

@@ -36,5 +36,30 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Tuya fan-200",
+    "fr": "Tuya fan-200"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.334Z",
+    "discussions": 2,
+    "solutions": 1,
+    "communityRating": "3.6",
+    "url": "https://community.homey.app/search?q=tuya_fan-200"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.334Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_fan-200.html",
+    "features": [
+      "humidity",
+      "temperature",
+      "dim",
+      "onoff"
+    ],
+    "compatibility": "fair"
   }
 }

@@ -46,5 +46,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ikea standard",
+    "fr": "Ikea standard"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.560Z",
+    "discussions": 10,
+    "solutions": 2,
+    "communityRating": "3.6",
+    "url": "https://community.homey.app/search?q=ikea_standard"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.560Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_standard.html",
+    "features": [
+      "onoff",
+      "motion",
+      "color"
+    ],
+    "compatibility": "good"
   }
 }

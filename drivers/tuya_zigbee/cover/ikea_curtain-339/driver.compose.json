@@ -38,5 +38,23 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.218Z",
+    "discussions": 10,
+    "solutions": 1,
+    "communityRating": "4.0",
+    "url": "https://community.homey.app/search?q=ikea_curtain-339"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.218Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_curtain-339.html",
+    "features": [
+      "power"
+    ],
+    "compatibility": "good"
+  }
 }

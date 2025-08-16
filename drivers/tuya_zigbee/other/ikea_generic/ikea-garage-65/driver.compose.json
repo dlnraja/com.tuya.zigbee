@@ -765,5 +765,24 @@
       "ceiling-light",
       "rgbw-bulb"
     ]
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.535Z",
+    "discussions": 8,
+    "solutions": 3,
+    "communityRating": "3.4",
+    "url": "https://community.homey.app/search?q=ikea-garage-65"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.535Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea-garage-65.html",
+    "features": [
+      "humidity",
+      "motion"
+    ],
+    "compatibility": "poor"
   }
 }

@@ -49,5 +49,25 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.598Z",
+    "discussions": 7,
+    "solutions": 3,
+    "communityRating": "4.6",
+    "url": "https://community.homey.app/search?q=ts0505a_standard"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.598Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ts0505a_standard.html",
+    "features": [
+      "onoff",
+      "color",
+      "power"
+    ],
+    "compatibility": "poor"
+  }
 }

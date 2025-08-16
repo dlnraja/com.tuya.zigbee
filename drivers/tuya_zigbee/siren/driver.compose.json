@@ -13,5 +13,37 @@
   "images": {
     "small": "assets/images/small.png",
     "large": "assets/images/large.png"
+  },
+  "name": {
+    "en": "Siren",
+    "fr": "Siren"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "modelId": [
+      "SIREN"
+    ]
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.367Z",
+    "discussions": 3,
+    "solutions": 4,
+    "communityRating": "4.9",
+    "url": "https://community.homey.app/search?q=siren"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.367Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/siren.html",
+    "features": [
+      "dim",
+      "temperature",
+      "humidity"
+    ],
+    "compatibility": "fair"
   }
 }

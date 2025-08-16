@@ -31,5 +31,30 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Tuya deadbolt-850",
+    "fr": "Tuya deadbolt-850"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:13.877Z",
+    "discussions": 8,
+    "solutions": 3,
+    "communityRating": "3.5",
+    "url": "https://community.homey.app/search?q=tuya_deadbolt-850"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:13.877Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_deadbolt-850.html",
+    "features": [
+      "temperature",
+      "onoff",
+      "power",
+      "humidity"
+    ],
+    "compatibility": "good"
   }
 }

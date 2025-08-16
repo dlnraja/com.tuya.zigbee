@@ -38,5 +38,23 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.238Z",
+    "discussions": 6,
+    "solutions": 3,
+    "communityRating": "3.9",
+    "url": "https://community.homey.app/search?q=ikea_shade-756"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.238Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_shade-756.html",
+    "features": [
+      "onoff"
+    ],
+    "compatibility": "good"
+  }
 }

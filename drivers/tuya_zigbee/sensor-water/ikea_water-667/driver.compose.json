@@ -46,5 +46,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ikea water-667",
+    "fr": "Ikea water-667"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.354Z",
+    "discussions": 3,
+    "solutions": 1,
+    "communityRating": "4.0",
+    "url": "https://community.homey.app/search?q=ikea_water-667"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.354Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_water-667.html",
+    "features": [
+      "motion",
+      "power",
+      "humidity"
+    ],
+    "compatibility": "good"
   }
 }

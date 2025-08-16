@@ -37,5 +37,25 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.523Z",
+    "discussions": 8,
+    "solutions": 5,
+    "communityRating": "4.5",
+    "url": "https://community.homey.app/search?q=ts0001_standard"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.523Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ts0001_standard.html",
+    "features": [
+      "color",
+      "dim",
+      "power"
+    ],
+    "compatibility": "good"
+  }
 }

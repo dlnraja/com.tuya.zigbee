@@ -46,5 +46,28 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Aqara buzzer-259",
+    "fr": "Aqara buzzer-259"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:14.692Z",
+    "discussions": 2,
+    "solutions": 3,
+    "communityRating": "4.9",
+    "url": "https://community.homey.app/search?q=aqara_buzzer-259"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:14.692Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_buzzer-259.html",
+    "features": [
+      "power",
+      "dim"
+    ],
+    "compatibility": "excellent"
   }
 }

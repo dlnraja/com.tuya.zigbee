@@ -46,5 +46,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ikea ac-165",
+    "fr": "Ikea ac-165"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.126Z",
+    "discussions": 10,
+    "solutions": 2,
+    "communityRating": "4.3",
+    "url": "https://community.homey.app/search?q=ikea_ac-165"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.126Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_ac-165.html",
+    "features": [
+      "power",
+      "color",
+      "onoff"
+    ],
+    "compatibility": "poor"
   }
 }

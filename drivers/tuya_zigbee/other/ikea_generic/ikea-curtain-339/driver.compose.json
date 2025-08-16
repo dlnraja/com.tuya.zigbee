@@ -765,5 +765,25 @@
       "ceiling-light",
       "rgbw-bulb"
     ]
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.525Z",
+    "discussions": 6,
+    "solutions": 1,
+    "communityRating": "3.4",
+    "url": "https://community.homey.app/search?q=ikea-curtain-339"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.525Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea-curtain-339.html",
+    "features": [
+      "motion",
+      "power",
+      "color"
+    ],
+    "compatibility": "excellent"
   }
 }

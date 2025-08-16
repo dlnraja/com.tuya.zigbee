@@ -41,5 +41,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Generic heater",
+    "fr": "Generic heater"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:18.224Z",
+    "discussions": 9,
+    "solutions": 3,
+    "communityRating": "3.8",
+    "url": "https://community.homey.app/search?q=generic_heater"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:18.224Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/generic_heater.html",
+    "features": [
+      "color"
+    ],
+    "compatibility": "fair"
   }
 }

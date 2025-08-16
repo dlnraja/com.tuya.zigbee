@@ -8,5 +8,5 @@
   "extension": [
     "js"
   ],
-  "spec": "test/**/*.test.js"
+  "spec": "test*.test.js"
 }

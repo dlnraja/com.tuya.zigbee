@@ -46,5 +46,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Tuya smoke-109",
+    "fr": "Tuya smoke-109"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:16.558Z",
+    "discussions": 9,
+    "solutions": 5,
+    "communityRating": "3.6",
+    "url": "https://community.homey.app/search?q=tuya_smoke-109"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:16.558Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_smoke-109.html",
+    "features": [
+      "temperature"
+    ],
+    "compatibility": "excellent"
   }
 }

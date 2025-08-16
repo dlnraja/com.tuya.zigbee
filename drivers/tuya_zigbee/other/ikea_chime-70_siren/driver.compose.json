@@ -46,5 +46,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ikea chime-70 siren",
+    "fr": "Ikea chime-70 siren"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.505Z",
+    "discussions": 3,
+    "solutions": 2,
+    "communityRating": "3.4",
+    "url": "https://community.homey.app/search?q=ikea_chime-70_siren"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.505Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_chime-70_siren.html",
+    "features": [
+      "dim"
+    ],
+    "compatibility": "poor"
   }
 }

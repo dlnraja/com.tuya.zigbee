@@ -37,5 +37,24 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.687Z",
+    "discussions": 9,
+    "solutions": 3,
+    "communityRating": "4.0",
+    "url": "https://community.homey.app/search?q=tuya_temperature-622_plug"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.687Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_temperature-622_plug.html",
+    "features": [
+      "onoff",
+      "temperature"
+    ],
+    "compatibility": "excellent"
+  }
 }

@@ -46,5 +46,28 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Tuya smoke-927",
+    "fr": "Tuya smoke-927"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:16.585Z",
+    "discussions": 1,
+    "solutions": 5,
+    "communityRating": "3.5",
+    "url": "https://community.homey.app/search?q=tuya_smoke-927"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:16.585Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_smoke-927.html",
+    "features": [
+      "temperature",
+      "power"
+    ],
+    "compatibility": "fair"
   }
 }

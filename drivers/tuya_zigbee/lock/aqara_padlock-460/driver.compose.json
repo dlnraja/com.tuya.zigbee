@@ -31,5 +31,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Aqara padlock-460",
+    "fr": "Aqara padlock-460"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:13.203Z",
+    "discussions": 8,
+    "solutions": 1,
+    "communityRating": "4.2",
+    "url": "https://community.homey.app/search?q=aqara_padlock-460"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:13.203Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_padlock-460.html",
+    "features": [
+      "onoff"
+    ],
+    "compatibility": "excellent"
   }
 }

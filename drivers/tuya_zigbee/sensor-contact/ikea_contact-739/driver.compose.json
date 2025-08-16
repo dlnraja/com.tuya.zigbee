@@ -46,5 +46,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ikea contact-739",
+    "fr": "Ikea contact-739"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.769Z",
+    "discussions": 7,
+    "solutions": 2,
+    "communityRating": "3.4",
+    "url": "https://community.homey.app/search?q=ikea_contact-739"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.769Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_contact-739.html",
+    "features": [
+      "onoff",
+      "color",
+      "temperature"
+    ],
+    "compatibility": "good"
   }
 }

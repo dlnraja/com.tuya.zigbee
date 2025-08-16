@@ -31,5 +31,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Tuya door-450 lock",
+    "fr": "Tuya door-450 lock"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:13.936Z",
+    "discussions": 7,
+    "solutions": 2,
+    "communityRating": "3.1",
+    "url": "https://community.homey.app/search?q=tuya_door-450_lock"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:13.936Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_door-450_lock.html",
+    "features": [
+      "power"
+    ],
+    "compatibility": "good"
   }
 }

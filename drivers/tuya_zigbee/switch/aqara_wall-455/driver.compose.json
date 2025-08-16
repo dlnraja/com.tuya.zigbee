@@ -37,5 +37,25 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.430Z",
+    "discussions": 7,
+    "solutions": 2,
+    "communityRating": "5.0",
+    "url": "https://community.homey.app/search?q=aqara_wall-455"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.430Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_wall-455.html",
+    "features": [
+      "temperature",
+      "onoff",
+      "motion"
+    ],
+    "compatibility": "fair"
+  }
 }

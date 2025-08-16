@@ -46,5 +46,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Template tuya dp sensor",
+    "fr": "Template tuya dp capteur"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.618Z",
+    "discussions": 1,
+    "solutions": 1,
+    "communityRating": "3.1",
+    "url": "https://community.homey.app/search?q=template_tuya_dp_sensor"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.618Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/template_tuya_dp_sensor.html",
+    "features": [
+      "onoff"
+    ],
+    "compatibility": "good"
   }
 }

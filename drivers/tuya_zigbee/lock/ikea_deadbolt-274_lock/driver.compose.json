@@ -31,5 +31,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ikea deadbolt-274 lock",
+    "fr": "Ikea deadbolt-274 lock"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:13.362Z",
+    "discussions": 3,
+    "solutions": 5,
+    "communityRating": "3.8",
+    "url": "https://community.homey.app/search?q=ikea_deadbolt-274_lock"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:13.362Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_deadbolt-274_lock.html",
+    "features": [
+      "dim"
+    ],
+    "compatibility": "excellent"
   }
 }

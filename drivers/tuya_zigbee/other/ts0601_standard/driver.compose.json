@@ -46,5 +46,28 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ts0601 standard",
+    "fr": "Ts0601 standard"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.703Z",
+    "discussions": 7,
+    "solutions": 5,
+    "communityRating": "3.8",
+    "url": "https://community.homey.app/search?q=ts0601_standard"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.703Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ts0601_standard.html",
+    "features": [
+      "motion",
+      "dim"
+    ],
+    "compatibility": "excellent"
   }
 }

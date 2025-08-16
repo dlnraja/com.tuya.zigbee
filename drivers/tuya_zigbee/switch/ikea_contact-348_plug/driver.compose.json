@@ -37,5 +37,25 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.455Z",
+    "discussions": 6,
+    "solutions": 2,
+    "communityRating": "3.6",
+    "url": "https://community.homey.app/search?q=ikea_contact-348_plug"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.455Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_contact-348_plug.html",
+    "features": [
+      "humidity",
+      "color",
+      "motion"
+    ],
+    "compatibility": "poor"
+  }
 }

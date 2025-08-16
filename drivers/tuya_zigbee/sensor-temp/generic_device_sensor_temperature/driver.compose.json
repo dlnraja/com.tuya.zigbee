@@ -46,5 +46,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Generic device sensor temperature",
+    "fr": "Generic device capteur température"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:16.768Z",
+    "discussions": 7,
+    "solutions": 2,
+    "communityRating": "3.0",
+    "url": "https://community.homey.app/search?q=generic_device_sensor_temperature"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:16.768Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/generic_device_sensor_temperature.html",
+    "features": [
+      "temperature",
+      "motion",
+      "color"
+    ],
+    "compatibility": "good"
   }
 }

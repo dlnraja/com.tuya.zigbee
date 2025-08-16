@@ -46,5 +46,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ikea smoke-94",
+    "fr": "Ikea smoke-94"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:16.511Z",
+    "discussions": 9,
+    "solutions": 1,
+    "communityRating": "3.4",
+    "url": "https://community.homey.app/search?q=ikea_smoke-94"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:16.511Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_smoke-94.html",
+    "features": [
+      "power",
+      "color",
+      "humidity"
+    ],
+    "compatibility": "good"
   }
 }

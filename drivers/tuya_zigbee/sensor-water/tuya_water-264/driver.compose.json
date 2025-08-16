@@ -46,5 +46,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Tuya water-264",
+    "fr": "Tuya water-264"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.358Z",
+    "discussions": 6,
+    "solutions": 5,
+    "communityRating": "4.8",
+    "url": "https://community.homey.app/search?q=tuya_water-264"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.358Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_water-264.html",
+    "features": [
+      "temperature",
+      "onoff",
+      "dim"
+    ],
+    "compatibility": "poor"
   }
 }

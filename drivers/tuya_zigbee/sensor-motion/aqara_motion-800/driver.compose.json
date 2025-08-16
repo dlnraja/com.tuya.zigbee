@@ -46,5 +46,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Aqara motion-800",
+    "fr": "Aqara mouvement-800"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:16.193Z",
+    "discussions": 6,
+    "solutions": 5,
+    "communityRating": "4.6",
+    "url": "https://community.homey.app/search?q=aqara_motion-800"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:16.193Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_motion-800.html",
+    "features": [
+      "color"
+    ],
+    "compatibility": "excellent"
   }
 }

@@ -31,5 +31,30 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ikea deadbolt-42 lock",
+    "fr": "Ikea deadbolt-42 lock"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:13.468Z",
+    "discussions": 1,
+    "solutions": 3,
+    "communityRating": "3.1",
+    "url": "https://community.homey.app/search?q=ikea_deadbolt-42_lock"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:13.468Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_deadbolt-42_lock.html",
+    "features": [
+      "humidity",
+      "temperature",
+      "power",
+      "motion"
+    ],
+    "compatibility": "poor"
   }
 }

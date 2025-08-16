@@ -31,5 +31,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Generic switch",
+    "fr": "Generic interrupteur"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:18.490Z",
+    "discussions": 4,
+    "solutions": 3,
+    "communityRating": "3.8",
+    "url": "https://community.homey.app/search?q=generic_switch"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:18.490Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/generic_switch.html",
+    "features": [
+      "power"
+    ],
+    "compatibility": "poor"
   }
 }

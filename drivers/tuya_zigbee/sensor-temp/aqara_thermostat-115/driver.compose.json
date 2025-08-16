@@ -46,5 +46,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Aqara thermostat-115",
+    "fr": "Aqara thermostat-115"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:16.668Z",
+    "discussions": 9,
+    "solutions": 5,
+    "communityRating": "4.3",
+    "url": "https://community.homey.app/search?q=aqara_thermostat-115"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:16.668Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_thermostat-115.html",
+    "features": [
+      "temperature"
+    ],
+    "compatibility": "good"
   }
 }
