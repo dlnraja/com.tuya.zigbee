@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+'use strict';
+
+#!/usr/bin/env node
 
 console.log('🔄 RÉORGANISATION COMPLÈTE v3.4.1 - FICHIERS JSON ET DRIVERS...');
 

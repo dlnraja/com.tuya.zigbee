@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+'use strict';
+
+#!/usr/bin/env node
 
 console.log('🔧 CORRECTION INTELLIGENTE DE LA STRUCTURE ET ÉLIMINATION DES DOUBLONS...');
 

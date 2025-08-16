@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+'use strict';
+
+#!/usr/bin/env node
 
 console.log('🚨 PROCESSING ISSUES AND PRs v3.4.1 Starting...');
 

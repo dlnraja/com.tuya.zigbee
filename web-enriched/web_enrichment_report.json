@@ -1,9 +1,9 @@
 {
-  "timestamp": "2025-08-16T03:32:18.633Z",
+  "timestamp": "2025-08-16T10:28:06.547Z",
   "version": "3.5.0",
   "stats": {
     "driversProcessed": 520,
-    "driversEnriched": 520,
+    "driversEnriched": 0,
     "errors": 0,
     "sourcesUsed": []
   },
@@ -14,8 +14,8 @@
   },
   "summary": {
     "totalDrivers": 520,
-    "enrichedDrivers": 520,
-    "enrichmentRate": "100.00",
+    "enrichedDrivers": 0,
+    "enrichmentRate": "0.00",
     "errors": 0
   }
 }

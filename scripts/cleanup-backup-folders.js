@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 'use strict';
 /**
  * Script de rangement des dossiers .backup*

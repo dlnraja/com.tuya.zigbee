@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 /**
  * 🔧 Capability Mapping - Universal Tuya Zigbee
  * Homey capability to cluster/attribute mapping

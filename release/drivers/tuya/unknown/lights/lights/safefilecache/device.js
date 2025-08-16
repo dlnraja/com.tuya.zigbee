@@ -1,1 +1,4 @@
+#!/usr/bin/env node
+'use strict';
+
 'use strict';const { ZigbeeDevice } = require('homey-unknown');class SafefilecacheDevice extends ZigbeeDevice { async onInit() { await super.onInit(); this.log('safefilecache device initialized'); this.log('Source: D:\Download\Compressed\elelabs-zigbee-ezsp-utility-master\elelabs-zigbee-ezsp-utility-master\venv\Lib\site-packages\pip\_internal\network\cache.py'); this.log('Original file: cache.py'); // Register capabilities } }module.exports = SafefilecacheDevice;

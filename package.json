@@ -30,6 +30,8 @@
     "mega:web": "node tools/core/web-enricher.js",
     "mega:final": "node tools/core/final-validator.js",
     "mega:deploy": "node tools/core/deployer.js",
+    "mega:convert": "node tools/core/script-converter.js",
+    "mega:consolidate": "node tools/core/script-consolidator.js",
     "dump:homey": "node tools/dump.js",
     "dump:homey:fast": "node tools/dump.js 60",
     "validate:final": "node tools/final-validation.js",

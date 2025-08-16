@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+'use strict';
+
+#!/usr/bin/env node
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 

@@ -1,1 +1,4 @@
+#!/usr/bin/env node
+'use strict';
+
 const { TuyaDevice } = require('homey-tuya');class Ts0601_stripDevice extends TuyaDevice { async onInit() { this.log('ts0601_strip device initialized'); // Configuration des capacités selon le type await this.setCapabilityValue('onoff', false); await this.setCapabilityValue('dim', 0); if (this.hasCapability('light_hue')) { await this.setCapabilityValue('light_hue', 0); await this.setCapabilityValue('light_saturation', 0); } this.log('ts0601_strip device ready'); } async onSettings({ oldSettings, newSettings, changedKeys }) { this.log('ts0601_strip settings updated'); }}module.exports = Ts0601_stripDevice;

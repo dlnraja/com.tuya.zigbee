@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 /**
  * Tuya Smart Plug TS011F Driver
  * Driver pour prise intelligente Tuya avec monitoring de puissance

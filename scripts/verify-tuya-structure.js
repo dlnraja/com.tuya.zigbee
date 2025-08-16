@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+'use strict';
+
+#!/usr/bin/env node
 
 console.log('🔍 VÉRIFICATION DE LA STRUCTURE TUYA v3.4.1...');
 

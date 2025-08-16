@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 /**
  * 🔌 tuya-switch
  * Driver pour appareils TUYA - switches

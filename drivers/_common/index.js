@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 /**
  * 🔧 Common Utilities Index - Universal Tuya Zigbee
  * Main entry point for all shared utilities

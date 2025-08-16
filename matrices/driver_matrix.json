@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "3.5.0",
-    "generated": "2025-08-16T03:31:43.563Z",
+    "generated": "2025-08-16T10:27:37.773Z",
     "totalDrivers": 520
   },
   "drivers": [
@@ -253,8 +253,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Ac",
+        "fr": "Ac"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "AC"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -263,7 +273,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "AC"
+      ],
+      "productId": []
     },
     {
       "id": "aqara_ac-294",
@@ -275,7 +292,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara ac-294",
+        "fr": "Aqara ac-294"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_ac-294",
@@ -319,7 +339,14 @@
         "nl": "Assets",
         "ta": "Assets"
       },
-      "zigbee": {},
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "ASSETS"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -328,7 +355,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "ASSETS"
+      ],
+      "productId": []
     },
     {
       "id": "ikea_ac-165",
@@ -340,7 +374,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea ac-165",
+        "fr": "Ikea ac-165"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_ac-165",
@@ -381,7 +418,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya ac-322",
+        "fr": "Tuya ac-322"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_ac-322",
@@ -422,7 +462,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya ac  Ac  Device  Standard  Default",
+        "fr": "Tuya ac  Ac  Device  Standard  Default"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_ac_Ac_Device_Standard_Default",
@@ -463,7 +506,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya ac  Aqara  Ac  Device  Standard  Default",
+        "fr": "Tuya ac  Aqara  Ac  Device  Standard  Default"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_ac_Aqara_Ac_Device_Standard_Default",
@@ -504,7 +550,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya ac  Ikea  Ac  Device  Standard  Default",
+        "fr": "Tuya ac  Ikea  Ac  Device  Standard  Default"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_ac_Ikea_Ac_Device_Standard_Default",
@@ -542,8 +591,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Assets",
+        "fr": "Assets"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "ASSETS"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -552,7 +611,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "ASSETS"
+      ],
+      "productId": []
     },
     {
       "id": "images",
@@ -567,7 +633,14 @@
         "nl": "Images",
         "ta": "Images"
       },
-      "zigbee": {},
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "IMAGES"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -576,7 +649,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "IMAGES"
+      ],
+      "productId": []
     },
     {
       "id": "cover",
@@ -585,8 +665,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Cover",
+        "fr": "Cover"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "COVER"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -595,7 +685,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "COVER"
+      ],
+      "productId": []
     },
     {
       "id": "aqara_blind-772",
@@ -2749,8 +2846,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Fan",
+        "fr": "Fan"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "FAN"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -2759,7 +2866,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "FAN"
+      ],
+      "productId": []
     },
     {
       "id": "aqara_fan-281",
@@ -2769,7 +2883,10 @@
         "onoff",
         "dim"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara fan-281",
+        "fr": "Aqara fan-281"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_fan-281",
@@ -2808,7 +2925,10 @@
         "onoff",
         "dim"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara fan-459",
+        "fr": "Aqara fan-459"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_fan-459",
@@ -2852,7 +2972,14 @@
         "nl": "Assets",
         "ta": "Assets"
       },
-      "zigbee": {},
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "ASSETS"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -2861,7 +2988,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "ASSETS"
+      ],
+      "productId": []
     },
     {
       "id": "ikea_fan-18",
@@ -2871,7 +3005,10 @@
         "onoff",
         "dim"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea fan-18",
+        "fr": "Ikea fan-18"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_fan-18",
@@ -2910,7 +3047,10 @@
         "onoff",
         "dim"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea fan-208",
+        "fr": "Ikea fan-208"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_fan-208",
@@ -2949,7 +3089,10 @@
         "onoff",
         "dim"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya fan-200",
+        "fr": "Tuya fan-200"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_fan-200",
@@ -2988,7 +3131,10 @@
         "onoff",
         "dim"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya fan-730",
+        "fr": "Tuya fan-730"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_fan-730",
@@ -3026,8 +3172,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Heater",
+        "fr": "Heater"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "HEATER"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -3036,7 +3192,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "HEATER"
+      ],
+      "productId": []
     },
     {
       "id": "aqara_heater-833",
@@ -3047,7 +3210,10 @@
         "dim",
         "target_temperature"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara heater-833",
+        "fr": "Aqara heater-833"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_heater-833",
@@ -3087,7 +3253,10 @@
         "dim",
         "target_temperature"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara heater-898",
+        "fr": "Aqara heater-898"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_heater-898",
@@ -3131,7 +3300,14 @@
         "nl": "Assets",
         "ta": "Assets"
       },
-      "zigbee": {},
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "ASSETS"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -3140,7 +3316,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "ASSETS"
+      ],
+      "productId": []
     },
     {
       "id": "ikea_heater-399",
@@ -3151,7 +3334,10 @@
         "dim",
         "target_temperature"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea heater-399",
+        "fr": "Ikea heater-399"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_heater-399",
@@ -3191,7 +3377,10 @@
         "dim",
         "target_temperature"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea heater-896",
+        "fr": "Ikea heater-896"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_heater-896",
@@ -3231,7 +3420,10 @@
         "dim",
         "target_temperature"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya heater-0",
+        "fr": "Tuya heater-0"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_heater-0",
@@ -3271,7 +3463,10 @@
         "dim",
         "target_temperature"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya heater-387",
+        "fr": "Tuya heater-387"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_heater-387",
@@ -3309,8 +3504,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Light",
+        "fr": "lampe"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "LIGHT"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -3319,7 +3524,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "LIGHT"
+      ],
+      "productId": []
     },
     {
       "id": "aqara_bulb_130",
@@ -5402,8 +5614,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Lock",
+        "fr": "Lock"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "LOCK"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -5412,7 +5634,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "LOCK"
+      ],
+      "productId": []
     },
     {
       "id": "aqara_deadbolt-22",
@@ -5421,7 +5650,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara deadbolt-22",
+        "fr": "Aqara deadbolt-22"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_deadbolt-22",
@@ -5459,7 +5691,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara deadbolt-22 lock",
+        "fr": "Aqara deadbolt-22 lock"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_deadbolt-22_lock",
@@ -5497,7 +5732,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara deadbolt-642",
+        "fr": "Aqara deadbolt-642"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_deadbolt-642",
@@ -5535,7 +5773,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara deadbolt-642 lock",
+        "fr": "Aqara deadbolt-642 lock"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_deadbolt-642_lock",
@@ -5573,7 +5814,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara door-305",
+        "fr": "Aqara door-305"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_door-305",
@@ -5611,7 +5855,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara door-305 lock",
+        "fr": "Aqara door-305 lock"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_door-305_lock",
@@ -5649,7 +5896,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara door-338",
+        "fr": "Aqara door-338"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_door-338",
@@ -5687,7 +5937,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara door-338 lock",
+        "fr": "Aqara door-338 lock"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_door-338_lock",
@@ -5725,7 +5978,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara padlock-382",
+        "fr": "Aqara padlock-382"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_padlock-382",
@@ -5763,7 +6019,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara padlock-382 lock",
+        "fr": "Aqara padlock-382 lock"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_padlock-382_lock",
@@ -5801,7 +6060,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara padlock-460",
+        "fr": "Aqara padlock-460"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_padlock-460",
@@ -5839,7 +6101,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara padlock-460 lock",
+        "fr": "Aqara padlock-460 lock"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_padlock-460_lock",
@@ -5883,7 +6148,14 @@
         "nl": "Assets",
         "ta": "Assets"
       },
-      "zigbee": {},
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "ASSETS"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -5892,7 +6164,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "ASSETS"
+      ],
+      "productId": []
     },
     {
       "id": "ikea_deadbolt-274",
@@ -5901,7 +6180,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea deadbolt-274",
+        "fr": "Ikea deadbolt-274"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_deadbolt-274",
@@ -5939,7 +6221,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea deadbolt-274 lock",
+        "fr": "Ikea deadbolt-274 lock"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_deadbolt-274_lock",
@@ -5977,7 +6262,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea deadbolt-42",
+        "fr": "Ikea deadbolt-42"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_deadbolt-42",
@@ -6015,7 +6303,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea deadbolt-42 lock",
+        "fr": "Ikea deadbolt-42 lock"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_deadbolt-42_lock",
@@ -6053,7 +6344,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea door-491",
+        "fr": "Ikea door-491"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_door-491",
@@ -6091,7 +6385,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea door-491 lock",
+        "fr": "Ikea door-491 lock"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_door-491_lock",
@@ -6129,7 +6426,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea door-555",
+        "fr": "Ikea door-555"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_door-555",
@@ -6167,7 +6467,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea door-555 lock",
+        "fr": "Ikea door-555 lock"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_door-555_lock",
@@ -6205,7 +6508,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea padlock-134",
+        "fr": "Ikea padlock-134"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_padlock-134",
@@ -6243,7 +6549,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea padlock-134 lock",
+        "fr": "Ikea padlock-134 lock"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_padlock-134_lock",
@@ -6281,7 +6590,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea padlock-984",
+        "fr": "Ikea padlock-984"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_padlock-984",
@@ -6319,7 +6631,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea padlock-984 lock",
+        "fr": "Ikea padlock-984 lock"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_padlock-984_lock",
@@ -6357,7 +6672,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya deadbolt-261",
+        "fr": "Tuya deadbolt-261"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_deadbolt-261",
@@ -6395,7 +6713,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya deadbolt-261 lock",
+        "fr": "Tuya deadbolt-261 lock"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_deadbolt-261_lock",
@@ -6433,7 +6754,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya deadbolt-850",
+        "fr": "Tuya deadbolt-850"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_deadbolt-850",
@@ -6471,7 +6795,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya deadbolt-850 lock",
+        "fr": "Tuya deadbolt-850 lock"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_deadbolt-850_lock",
@@ -6509,7 +6836,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya door-450",
+        "fr": "Tuya door-450"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_door-450",
@@ -6547,7 +6877,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya door-450 lock",
+        "fr": "Tuya door-450 lock"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_door-450_lock",
@@ -6585,7 +6918,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya door-537",
+        "fr": "Tuya door-537"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_door-537",
@@ -6623,7 +6959,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya door-537 lock",
+        "fr": "Tuya door-537 lock"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_door-537_lock",
@@ -6661,7 +7000,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya padlock-538",
+        "fr": "Tuya padlock-538"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_padlock-538",
@@ -6699,7 +7041,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya padlock-538 lock",
+        "fr": "Tuya padlock-538 lock"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_padlock-538_lock",
@@ -6737,7 +7082,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya padlock-551",
+        "fr": "Tuya padlock-551"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_padlock-551",
@@ -6775,7 +7123,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya padlock-551 lock",
+        "fr": "Tuya padlock-551 lock"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_padlock-551_lock",
@@ -6813,8 +7164,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Other",
+        "fr": "Other"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "OTHER"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -6823,7 +7184,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "OTHER"
+      ],
+      "productId": []
     },
     {
       "id": "aqara",
@@ -6835,7 +7203,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara",
+        "fr": "Aqara"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara",
@@ -6876,7 +7247,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara alarm-418",
+        "fr": "Aqara alarm-418"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_alarm-418",
@@ -6917,7 +7291,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara alarm-418 siren",
+        "fr": "Aqara alarm-418 siren"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_alarm-418_siren",
@@ -6958,7 +7335,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara alarm-922",
+        "fr": "Aqara alarm-922"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_alarm-922",
@@ -6999,7 +7379,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara alarm-922 siren",
+        "fr": "Aqara alarm-922 siren"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_alarm-922_siren",
@@ -7040,7 +7423,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara buzzer-110",
+        "fr": "Aqara buzzer-110"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_buzzer-110",
@@ -7081,7 +7467,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara buzzer-110 siren",
+        "fr": "Aqara buzzer-110 siren"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_buzzer-110_siren",
@@ -7122,7 +7511,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara buzzer-259",
+        "fr": "Aqara buzzer-259"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_buzzer-259",
@@ -7163,7 +7555,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara buzzer-259 siren",
+        "fr": "Aqara buzzer-259 siren"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_buzzer-259_siren",
@@ -7204,7 +7599,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara chime-818",
+        "fr": "Aqara chime-818"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_chime-818",
@@ -7245,7 +7643,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara chime-818 siren",
+        "fr": "Aqara chime-818 siren"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_chime-818_siren",
@@ -7286,7 +7687,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara chime-885",
+        "fr": "Aqara chime-885"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_chime-885",
@@ -7327,7 +7731,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara chime-885 siren",
+        "fr": "Aqara chime-885 siren"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_chime-885_siren",
@@ -7368,7 +7775,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara generic",
+        "fr": "Aqara generic"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_generic",
@@ -11929,7 +12339,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara standard",
+        "fr": "Aqara standard"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_standard",
@@ -11970,7 +12383,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara switch-457",
+        "fr": "Aqara interrupteur-457"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_switch-457",
@@ -12011,7 +12427,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara switch-883",
+        "fr": "Aqara interrupteur-883"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_switch-883",
@@ -12055,7 +12474,14 @@
         "nl": "Assets",
         "ta": "Assets"
       },
-      "zigbee": {},
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "ASSETS"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -12064,7 +12490,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "ASSETS"
+      ],
+      "productId": []
     },
     {
       "id": "generic_device_generic_device",
@@ -12076,7 +12509,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Generic device generic device",
+        "fr": "Generic device generic device"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "generic_device_generic_device",
@@ -12117,7 +12553,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Generic zigbee light",
+        "fr": "Generic zigbee lampe"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "generic_zigbee_light",
@@ -12158,7 +12597,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Generic zigbee sensor",
+        "fr": "Generic zigbee capteur"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "generic_zigbee_sensor",
@@ -12199,7 +12641,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Generic zigbee switch",
+        "fr": "Generic zigbee interrupteur"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "generic_zigbee_switch",
@@ -12240,7 +12685,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea",
+        "fr": "Ikea"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea",
@@ -12281,7 +12729,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea alarm-641",
+        "fr": "Ikea alarm-641"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_alarm-641",
@@ -12322,7 +12773,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea alarm-641 siren",
+        "fr": "Ikea alarm-641 siren"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_alarm-641_siren",
@@ -12363,7 +12817,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea alarm-707",
+        "fr": "Ikea alarm-707"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_alarm-707",
@@ -12404,7 +12861,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea alarm-707 siren",
+        "fr": "Ikea alarm-707 siren"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_alarm-707_siren",
@@ -12445,7 +12905,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea buzzer-232",
+        "fr": "Ikea buzzer-232"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_buzzer-232",
@@ -12486,7 +12949,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea buzzer-232 siren",
+        "fr": "Ikea buzzer-232 siren"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_buzzer-232_siren",
@@ -12527,7 +12993,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea buzzer-255",
+        "fr": "Ikea buzzer-255"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_buzzer-255",
@@ -12568,7 +13037,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea buzzer-255 siren",
+        "fr": "Ikea buzzer-255 siren"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_buzzer-255_siren",
@@ -12609,7 +13081,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea chime-608",
+        "fr": "Ikea chime-608"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_chime-608",
@@ -12650,7 +13125,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea chime-608 siren",
+        "fr": "Ikea chime-608 siren"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_chime-608_siren",
@@ -12691,7 +13169,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea chime-70",
+        "fr": "Ikea chime-70"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_chime-70",
@@ -12732,7 +13213,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea chime-70 siren",
+        "fr": "Ikea chime-70 siren"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_chime-70_siren",
@@ -12773,7 +13257,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea generic",
+        "fr": "Ikea generic"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_generic",
@@ -25100,7 +25587,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea standard",
+        "fr": "Ikea standard"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_standard",
@@ -25141,7 +25631,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea switch-612",
+        "fr": "Ikea interrupteur-612"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_switch-612",
@@ -25182,7 +25675,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea switch-783",
+        "fr": "Ikea interrupteur-783"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_switch-783",
@@ -25223,7 +25719,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Radar-24g switch",
+        "fr": "Radar-24g interrupteur"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "radar-24g_switch",
@@ -25264,7 +25763,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Template device template device",
+        "fr": "Template device template device"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "template_device_template_device",
@@ -25305,7 +25807,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Template tuya dp sensor",
+        "fr": "Template tuya dp capteur"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "template_tuya_dp_sensor",
@@ -25346,7 +25851,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Template tuya dp switch",
+        "fr": "Template tuya dp interrupteur"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "template_tuya_dp_switch",
@@ -25387,7 +25895,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts004f",
+        "fr": "Ts004f"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts004f",
@@ -25428,7 +25939,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts004f standard",
+        "fr": "Ts004f standard"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts004f_standard",
@@ -25469,7 +25983,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0121",
+        "fr": "Ts0121"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0121",
@@ -25510,7 +26027,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0121 standard",
+        "fr": "Ts0121 standard"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0121_standard",
@@ -25551,7 +26071,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0204",
+        "fr": "Ts0204"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0204",
@@ -25592,7 +26115,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0204 standard",
+        "fr": "Ts0204 standard"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0204_standard",
@@ -25633,7 +26159,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0207",
+        "fr": "Ts0207"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0207",
@@ -25674,7 +26203,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0207 standard",
+        "fr": "Ts0207 standard"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0207_standard",
@@ -25715,7 +26247,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0502a",
+        "fr": "Ts0502a"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0502a",
@@ -25756,7 +26291,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0502a standard",
+        "fr": "Ts0502a standard"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0502a_standard",
@@ -25797,7 +26335,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0601",
+        "fr": "Ts0601"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0601",
@@ -25838,7 +26379,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0601 sensor battery",
+        "fr": "Ts0601 capteur battery"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0601_sensor_battery",
@@ -25879,7 +26423,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0601 standard",
+        "fr": "Ts0601 standard"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0601_standard",
@@ -25920,7 +26467,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0601 switch",
+        "fr": "Ts0601 interrupteur"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0601_switch",
@@ -25961,7 +26511,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts1001",
+        "fr": "Ts1001"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts1001",
@@ -26002,7 +26555,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts1001 standard",
+        "fr": "Ts1001 standard"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts1001_standard",
@@ -26043,7 +26599,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts110f",
+        "fr": "Ts110f"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts110f",
@@ -26084,7 +26643,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts110f standard",
+        "fr": "Ts110f standard"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts110f_standard",
@@ -26125,7 +26687,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya",
+        "fr": "Tuya"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya",
@@ -26166,7 +26731,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya cover ts0601",
+        "fr": "Tuya cover ts0601"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_cover_ts0601",
@@ -26207,7 +26775,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya generic",
+        "fr": "Tuya generic"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_generic",
@@ -26248,7 +26819,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya standard",
+        "fr": "Tuya standard"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_standard",
@@ -26289,7 +26863,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya switch-225",
+        "fr": "Tuya interrupteur-225"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_switch-225",
@@ -26330,7 +26907,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya switch-549",
+        "fr": "Tuya interrupteur-549"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_switch-549",
@@ -26368,8 +26948,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Plug",
+        "fr": "prise"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "PLUG"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -26378,7 +26968,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "PLUG"
+      ],
+      "productId": []
     },
     {
       "id": "smart_plug_ts0001",
@@ -26446,8 +27043,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Sensor-contact",
+        "fr": "capteur-contact"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "SENSOR-CONTACT"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -26456,7 +27063,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "SENSOR-CONTACT"
+      ],
+      "productId": []
     },
     {
       "id": "aqara_contact-543",
@@ -26468,7 +27082,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara contact-543",
+        "fr": "Aqara contact-543"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_contact-543",
@@ -26509,7 +27126,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara contact-799",
+        "fr": "Aqara contact-799"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_contact-799",
@@ -26553,7 +27173,14 @@
         "nl": "Assets",
         "ta": "Assets"
       },
-      "zigbee": {},
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "ASSETS"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -26562,7 +27189,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "ASSETS"
+      ],
+      "productId": []
     },
     {
       "id": "ikea_contact-348",
@@ -26574,7 +27208,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea contact-348",
+        "fr": "Ikea contact-348"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_contact-348",
@@ -26615,7 +27252,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea contact-739",
+        "fr": "Ikea contact-739"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_contact-739",
@@ -26656,7 +27296,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya contact-202",
+        "fr": "Tuya contact-202"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_contact-202",
@@ -26697,7 +27340,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya contact-219",
+        "fr": "Tuya contact-219"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_contact-219",
@@ -26735,8 +27381,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Sensor-gas",
+        "fr": "capteur-gas"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "SENSOR-GAS"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -26745,7 +27401,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "SENSOR-GAS"
+      ],
+      "productId": []
     },
     {
       "id": "aqara_gas-474",
@@ -26757,7 +27420,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara gas-474",
+        "fr": "Aqara gas-474"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_gas-474",
@@ -26798,7 +27464,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara gas-84",
+        "fr": "Aqara gas-84"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_gas-84",
@@ -26842,7 +27511,14 @@
         "nl": "Assets",
         "ta": "Assets"
       },
-      "zigbee": {},
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "ASSETS"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -26851,7 +27527,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "ASSETS"
+      ],
+      "productId": []
     },
     {
       "id": "ikea_gas-317",
@@ -26863,7 +27546,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea gas-317",
+        "fr": "Ikea gas-317"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_gas-317",
@@ -26904,7 +27590,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea gas-418",
+        "fr": "Ikea gas-418"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_gas-418",
@@ -26945,7 +27634,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya gas-320",
+        "fr": "Tuya gas-320"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_gas-320",
@@ -26986,7 +27678,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya gas-695",
+        "fr": "Tuya gas-695"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_gas-695",
@@ -27024,8 +27719,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Sensor-humidity",
+        "fr": "capteur-humidité"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "SENSOR-HUMIDITY"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -27034,7 +27739,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "SENSOR-HUMIDITY"
+      ],
+      "productId": []
     },
     {
       "id": "aqara_humidity-617",
@@ -27046,7 +27758,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara humidity-617",
+        "fr": "Aqara humidité-617"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_humidity-617",
@@ -27087,7 +27802,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara humidity-794",
+        "fr": "Aqara humidité-794"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_humidity-794",
@@ -27131,7 +27849,14 @@
         "nl": "Assets",
         "ta": "Assets"
       },
-      "zigbee": {},
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "ASSETS"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -27140,7 +27865,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "ASSETS"
+      ],
+      "productId": []
     },
     {
       "id": "generic_device_sensor_humidity",
@@ -27152,7 +27884,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Generic device sensor humidity",
+        "fr": "Generic device capteur humidité"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "generic_device_sensor_humidity",
@@ -27193,7 +27928,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Generic sensor humidity",
+        "fr": "Generic capteur humidité"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "generic_sensor_humidity",
@@ -27234,7 +27972,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea humidity-288",
+        "fr": "Ikea humidité-288"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_humidity-288",
@@ -27275,7 +28016,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea humidity-712",
+        "fr": "Ikea humidité-712"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_humidity-712",
@@ -27316,7 +28060,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya humidity-498",
+        "fr": "Tuya humidité-498"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_humidity-498",
@@ -27357,7 +28104,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya humidity-86",
+        "fr": "Tuya humidité-86"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_humidity-86",
@@ -27395,8 +28145,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Sensor-motion",
+        "fr": "capteur-mouvement"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "SENSOR-MOTION"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -27405,7 +28165,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "SENSOR-MOTION"
+      ],
+      "productId": []
     },
     {
       "id": "aqara_motion-364",
@@ -27417,7 +28184,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara motion-364",
+        "fr": "Aqara mouvement-364"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_motion-364",
@@ -27458,7 +28228,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara motion-800",
+        "fr": "Aqara mouvement-800"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_motion-800",
@@ -27502,7 +28275,14 @@
         "nl": "Assets",
         "ta": "Assets"
       },
-      "zigbee": {},
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "ASSETS"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -27511,7 +28291,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "ASSETS"
+      ],
+      "productId": []
     },
     {
       "id": "generic_device_sensor_motion",
@@ -27523,7 +28310,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Generic device sensor motion",
+        "fr": "Generic device capteur mouvement"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "generic_device_sensor_motion",
@@ -27564,7 +28354,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Generic sensor motion",
+        "fr": "Generic capteur mouvement"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "generic_sensor_motion",
@@ -27605,7 +28398,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea motion-927",
+        "fr": "Ikea mouvement-927"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_motion-927",
@@ -27646,7 +28442,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea motion-981",
+        "fr": "Ikea mouvement-981"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_motion-981",
@@ -27687,7 +28486,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Radar-24g sensor battery presence",
+        "fr": "Radar-24g capteur battery presence"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "radar-24g_sensor_battery_presence",
@@ -27793,7 +28595,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya motion-299",
+        "fr": "Tuya mouvement-299"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_motion-299",
@@ -27834,7 +28639,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya motion-362",
+        "fr": "Tuya mouvement-362"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_motion-362",
@@ -27872,8 +28680,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Sensor-smoke",
+        "fr": "capteur-smoke"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "SENSOR-SMOKE"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -27882,7 +28700,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "SENSOR-SMOKE"
+      ],
+      "productId": []
     },
     {
       "id": "aqara_smoke-458",
@@ -27894,7 +28719,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara smoke-458",
+        "fr": "Aqara smoke-458"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_smoke-458",
@@ -27935,7 +28763,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara smoke-61",
+        "fr": "Aqara smoke-61"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_smoke-61",
@@ -27979,7 +28810,14 @@
         "nl": "Assets",
         "ta": "Assets"
       },
-      "zigbee": {},
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "ASSETS"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -27988,7 +28826,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "ASSETS"
+      ],
+      "productId": []
     },
     {
       "id": "ikea_smoke-360",
@@ -28000,7 +28845,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea smoke-360",
+        "fr": "Ikea smoke-360"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_smoke-360",
@@ -28041,7 +28889,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea smoke-94",
+        "fr": "Ikea smoke-94"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_smoke-94",
@@ -28082,7 +28933,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya smoke-109",
+        "fr": "Tuya smoke-109"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_smoke-109",
@@ -28123,7 +28977,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya smoke-927",
+        "fr": "Tuya smoke-927"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_smoke-927",
@@ -28161,8 +29018,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Sensor-temp",
+        "fr": "capteur-temp"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "SENSOR-TEMP"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -28171,7 +29038,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "SENSOR-TEMP"
+      ],
+      "productId": []
     },
     {
       "id": "aqara_temperature-561",
@@ -28183,7 +29057,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara temperature-561",
+        "fr": "Aqara température-561"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_temperature-561",
@@ -28224,7 +29101,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara temperature-666",
+        "fr": "Aqara température-666"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_temperature-666",
@@ -28265,7 +29145,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara thermostat-115",
+        "fr": "Aqara thermostat-115"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_thermostat-115",
@@ -28306,7 +29189,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara thermostat-831",
+        "fr": "Aqara thermostat-831"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_thermostat-831",
@@ -28350,7 +29236,14 @@
         "nl": "Assets",
         "ta": "Assets"
       },
-      "zigbee": {},
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "ASSETS"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -28359,7 +29252,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "ASSETS"
+      ],
+      "productId": []
     },
     {
       "id": "generic_device_sensor_temperature",
@@ -28371,7 +29271,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Generic device sensor temperature",
+        "fr": "Generic device capteur température"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "generic_device_sensor_temperature",
@@ -28412,7 +29315,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Generic sensor temperature",
+        "fr": "Generic capteur température"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "generic_sensor_temperature",
@@ -28453,7 +29359,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea temperature-466",
+        "fr": "Ikea température-466"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_temperature-466",
@@ -28494,7 +29403,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea temperature-892",
+        "fr": "Ikea température-892"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_temperature-892",
@@ -28535,7 +29447,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea thermostat-128",
+        "fr": "Ikea thermostat-128"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_thermostat-128",
@@ -28576,7 +29491,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea thermostat-39",
+        "fr": "Ikea thermostat-39"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_thermostat-39",
@@ -28617,7 +29535,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Template tuya dp thermostat",
+        "fr": "Template tuya dp thermostat"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "template_tuya_dp_thermostat",
@@ -28658,7 +29579,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0201",
+        "fr": "Ts0201"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0201",
@@ -28699,7 +29623,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0201 sensor battery",
+        "fr": "Ts0201 capteur battery"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0201_sensor_battery",
@@ -28740,7 +29667,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0201 standard",
+        "fr": "Ts0201 standard"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0201_standard",
@@ -28781,7 +29711,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0202",
+        "fr": "Ts0202"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0202",
@@ -28822,7 +29755,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0202 sensor battery",
+        "fr": "Ts0202 capteur battery"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0202_sensor_battery",
@@ -28863,7 +29799,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0202 standard",
+        "fr": "Ts0202 standard"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0202_standard",
@@ -28904,7 +29843,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0203",
+        "fr": "Ts0203"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0203",
@@ -28945,7 +29887,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0203 sensor battery",
+        "fr": "Ts0203 capteur battery"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0203_sensor_battery",
@@ -28986,7 +29931,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0203 standard",
+        "fr": "Ts0203 standard"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0203_standard",
@@ -29027,7 +29975,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0205",
+        "fr": "Ts0205"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0205",
@@ -29068,7 +30019,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0205 sensor battery",
+        "fr": "Ts0205 capteur battery"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0205_sensor_battery",
@@ -29109,7 +30063,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0205 standard",
+        "fr": "Ts0205 standard"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0205_standard",
@@ -29150,7 +30107,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ts0601 climate-thermostat",
+        "fr": "Ts0601 climate-thermostat"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ts0601_climate-thermostat",
@@ -29191,7 +30151,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya sensor temp hum ts0201",
+        "fr": "Tuya capteur temp hum ts0201"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_sensor_temp_hum_ts0201",
@@ -29232,7 +30195,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya temperature-622",
+        "fr": "Tuya température-622"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_temperature-622",
@@ -29273,7 +30239,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya temperature-779",
+        "fr": "Tuya température-779"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_temperature-779",
@@ -29314,7 +30283,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya thermostat-435",
+        "fr": "Tuya thermostat-435"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_thermostat-435",
@@ -29355,7 +30327,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya thermostat-825",
+        "fr": "Tuya thermostat-825"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_thermostat-825",
@@ -29393,8 +30368,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Sensor-vibration",
+        "fr": "capteur-vibration"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "SENSOR-VIBRATION"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -29403,7 +30388,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "SENSOR-VIBRATION"
+      ],
+      "productId": []
     },
     {
       "id": "assets",
@@ -29418,7 +30410,14 @@
         "nl": "Assets",
         "ta": "Assets"
       },
-      "zigbee": {},
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "ASSETS"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -29427,7 +30426,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "ASSETS"
+      ],
+      "productId": []
     },
     {
       "id": "sensor-water",
@@ -29436,8 +30442,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Sensor-water",
+        "fr": "capteur-water"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "SENSOR-WATER"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -29446,7 +30462,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "SENSOR-WATER"
+      ],
+      "productId": []
     },
     {
       "id": "aqara_water-220",
@@ -29458,7 +30481,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara water-220",
+        "fr": "Aqara water-220"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_water-220",
@@ -29499,7 +30525,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Aqara water-237",
+        "fr": "Aqara water-237"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "aqara_water-237",
@@ -29543,7 +30572,14 @@
         "nl": "Assets",
         "ta": "Assets"
       },
-      "zigbee": {},
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "ASSETS"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -29552,7 +30588,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "ASSETS"
+      ],
+      "productId": []
     },
     {
       "id": "ikea_water-362",
@@ -29564,7 +30607,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea water-362",
+        "fr": "Ikea water-362"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_water-362",
@@ -29605,7 +30651,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Ikea water-667",
+        "fr": "Ikea water-667"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "ikea_water-667",
@@ -29646,7 +30695,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya water-264",
+        "fr": "Tuya water-264"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_water-264",
@@ -29687,7 +30739,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Tuya water-581",
+        "fr": "Tuya water-581"
+      },
       "zigbee": {
         "manufacturerName": "Tuya",
         "modelId": "tuya_water-581",
@@ -29725,8 +30780,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Siren",
+        "fr": "Siren"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "SIREN"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -29735,7 +30800,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "SIREN"
+      ],
+      "productId": []
     },
     {
       "id": "switch",
@@ -29744,8 +30816,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Switch",
+        "fr": "interrupteur"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "SWITCH"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -29754,7 +30836,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "SWITCH"
+      ],
+      "productId": []
     },
     {
       "id": "aqara_ac-294_plug",
@@ -34665,8 +35754,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Thermostat",
+        "fr": "Thermostat"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "THERMOSTAT"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -34675,7 +35774,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "THERMOSTAT"
+      ],
+      "productId": []
     },
     {
       "id": "assets",
@@ -34690,7 +35796,14 @@
         "nl": "Assets",
         "ta": "Assets"
       },
-      "zigbee": {},
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "ASSETS"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -34699,7 +35812,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "ASSETS"
+      ],
+      "productId": []
     },
     {
       "id": "zigbee",
@@ -34708,8 +35828,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Zigbee",
+        "fr": "Zigbee"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "ZIGBEE"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -34718,7 +35848,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "ZIGBEE"
+      ],
+      "productId": []
     },
     {
       "id": "assets",
@@ -34727,8 +35864,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Assets",
+        "fr": "Assets"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "ASSETS"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -34737,7 +35884,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "ASSETS"
+      ],
+      "productId": []
     },
     {
       "id": "images",
@@ -34752,7 +35906,14 @@
         "nl": "Images",
         "ta": "Images"
       },
-      "zigbee": {},
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "IMAGES"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -34761,7 +35922,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "IMAGES"
+      ],
+      "productId": []
     },
     {
       "id": "brands",
@@ -34770,8 +35938,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Brands",
+        "fr": "Brands"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "BRANDS"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -34780,7 +35958,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "BRANDS"
+      ],
+      "productId": []
     },
     {
       "id": "categories",
@@ -34789,8 +35974,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Categories",
+        "fr": "Categories"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "CATEGORIES"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -34799,7 +35994,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "CATEGORIES"
+      ],
+      "productId": []
     },
     {
       "id": "generic",
@@ -34808,8 +36010,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Generic",
+        "fr": "Generic"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "GENERIC"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -34818,7 +36030,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "GENERIC"
+      ],
+      "productId": []
     },
     {
       "id": "models",
@@ -34827,8 +36046,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Models",
+        "fr": "Models"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "MODELS"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -34837,7 +36066,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "MODELS"
+      ],
+      "productId": []
     },
     {
       "id": "aqara",
@@ -35017,8 +36253,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Generic zigbee switch 1gang",
+        "fr": "Generic zigbee interrupteur 1gang"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "GENERIC_ZIGBEE_SWITCH_1GANG"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -35027,7 +36273,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "GENERIC_ZIGBEE_SWITCH_1GANG"
+      ],
+      "productId": []
     },
     {
       "id": "templates",
@@ -35036,8 +36289,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Templates",
+        "fr": "Templates"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "TEMPLATES"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -35046,7 +36309,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "TEMPLATES"
+      ],
+      "productId": []
     },
     {
       "id": "__generic__",
@@ -35055,8 +36325,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "generic",
+        "fr": "generic"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "__GENERIC__"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -35065,7 +36345,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "__GENERIC__"
+      ],
+      "productId": []
     },
     {
       "id": "generic_cover",
@@ -35075,7 +36362,10 @@
         "windowcoverings_state",
         "windowcoverings_set"
       ],
-      "name": {},
+      "name": {
+        "en": "Generic cover",
+        "fr": "Generic cover"
+      },
       "zigbee": {
         "manufacturerName": "Generic",
         "modelId": "generic_cover",
@@ -35114,7 +36404,10 @@
         "onoff",
         "dim"
       ],
-      "name": {},
+      "name": {
+        "en": "Generic fan",
+        "fr": "Generic fan"
+      },
       "zigbee": {
         "manufacturerName": "Generic",
         "modelId": "generic_fan",
@@ -35158,7 +36451,14 @@
         "nl": "Generic Generic",
         "ta": "Generic Generic"
       },
-      "zigbee": {},
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "GENERIC_GENERIC"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -35167,7 +36467,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "GENERIC_GENERIC"
+      ],
+      "productId": []
     },
     {
       "id": "generic_heater",
@@ -35178,7 +36485,10 @@
         "dim",
         "target_temperature"
       ],
-      "name": {},
+      "name": {
+        "en": "Generic heater",
+        "fr": "Generic heater"
+      },
       "zigbee": {
         "manufacturerName": "Generic",
         "modelId": "generic_heater",
@@ -35219,7 +36529,10 @@
         "light_temperature",
         "light_mode"
       ],
-      "name": {},
+      "name": {
+        "en": "Generic light",
+        "fr": "Generic lampe"
+      },
       "zigbee": {
         "manufacturerName": "Generic",
         "modelId": "generic_light",
@@ -35257,7 +36570,10 @@
       "capabilities": [
         "lock_state"
       ],
-      "name": {},
+      "name": {
+        "en": "Generic lock",
+        "fr": "Generic lock"
+      },
       "zigbee": {
         "manufacturerName": "Generic",
         "modelId": "generic_lock",
@@ -35298,7 +36614,10 @@
         "measure_current",
         "measure_voltage"
       ],
-      "name": {},
+      "name": {
+        "en": "Generic plug",
+        "fr": "Generic prise"
+      },
       "zigbee": {
         "manufacturerName": "Generic",
         "modelId": "generic_plug",
@@ -35338,7 +36657,10 @@
         "measure_humidity",
         "alarm_motion"
       ],
-      "name": {},
+      "name": {
+        "en": "Generic sensor",
+        "fr": "Generic capteur"
+      },
       "zigbee": {
         "manufacturerName": "Generic",
         "modelId": "generic_sensor",
@@ -35377,7 +36699,10 @@
         "onoff",
         "alarm_generic"
       ],
-      "name": {},
+      "name": {
+        "en": "Generic siren",
+        "fr": "Generic siren"
+      },
       "zigbee": {
         "manufacturerName": "Generic",
         "modelId": "generic_siren",
@@ -35415,7 +36740,10 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
+      "name": {
+        "en": "Generic switch",
+        "fr": "Generic interrupteur"
+      },
       "zigbee": {
         "manufacturerName": "Generic",
         "modelId": "generic_switch",
@@ -35454,7 +36782,10 @@
         "target_temperature",
         "measure_temperature"
       ],
-      "name": {},
+      "name": {
+        "en": "Generic thermostat",
+        "fr": "Generic thermostat"
+      },
       "zigbee": {
         "manufacturerName": "Generic",
         "modelId": "generic_thermostat",
@@ -35498,7 +36829,14 @@
         "nl": "Generic Zigbee Switch",
         "ta": "Generic Zigbee Switch"
       },
-      "zigbee": {},
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "GENERIC_ZIGBEE_SWITCH"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -35507,7 +36845,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "GENERIC_ZIGBEE_SWITCH"
+      ],
+      "productId": []
     },
     {
       "id": "__templates__",
@@ -35516,8 +36861,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "templates",
+        "fr": "templates"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "__TEMPLATES__"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -35526,7 +36881,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "__TEMPLATES__"
+      ],
+      "productId": []
     },
     {
       "id": "_common",
@@ -35535,8 +36897,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "common",
+        "fr": "common"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "_COMMON"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -35545,7 +36917,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "_COMMON"
+      ],
+      "productId": []
     },
     {
       "id": "assets",
@@ -35554,8 +36933,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Assets",
+        "fr": "Assets"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "ASSETS"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -35564,7 +36953,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "ASSETS"
+      ],
+      "productId": []
     },
     {
       "id": "capabilities",
@@ -35573,8 +36969,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Capabilities",
+        "fr": "Capabilities"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "CAPABILITIES"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -35583,7 +36989,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "CAPABILITIES"
+      ],
+      "productId": []
     },
     {
       "id": "clusters",
@@ -35592,8 +37005,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Clusters",
+        "fr": "Clusters"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "CLUSTERS"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -35602,7 +37025,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "CLUSTERS"
+      ],
+      "productId": []
     },
     {
       "id": "lib",
@@ -35611,8 +37041,18 @@
       "capabilities": [
         "onoff"
       ],
-      "name": {},
-      "zigbee": {},
+      "name": {
+        "en": "Lib",
+        "fr": "Lib"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "LIB"
+        ]
+      },
       "tuya_dps": {},
       "files": {
         "driver.compose.json": true,
@@ -35621,7 +37061,14 @@
         "pair.js": false,
         "assets/icon.svg": true,
         "settings.json": false
-      }
+      },
+      "manufacturer": [
+        "Tuya"
+      ],
+      "modelId": [
+        "LIB"
+      ],
+      "productId": []
     }
   ]
 }

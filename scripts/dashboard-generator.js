@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 'use strict';
 const fs=require('fs'),path=require('path');
 const ROOT=process.cwd(),IDX=path.join(ROOT,'drivers-index.json'),OUT=path.join(ROOT,'dashboard');

@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 const { TuyaDevice } = require('homey-tuya');
 const { TuyaZigbeeDevice } = require('homey-tuya-zigbee');
 

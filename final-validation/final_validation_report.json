@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-16T03:32:24.256Z",
+  "timestamp": "2025-08-16T10:28:07.602Z",
   "version": "3.5.0",
   "summary": {
     "totalDrivers": 520,
@@ -10995,17 +10995,17 @@
   ],
   "enrichmentReports": {
     "enrichment_report.json": {
-      "timestamp": "2025-08-16T03:32:11.747Z",
+      "timestamp": "2025-08-16T10:28:05.833Z",
       "version": "3.5.0",
       "stats": {
         "driversProcessed": 520,
-        "driversEnriched": 255,
+        "driversEnriched": 2,
         "errors": 9
       },
       "summary": {
         "totalDrivers": 520,
-        "enrichedDrivers": 255,
-        "enrichmentRate": "49.04",
+        "enrichedDrivers": 2,
+        "enrichmentRate": "0.38",
         "errors": 9
       }
     }
