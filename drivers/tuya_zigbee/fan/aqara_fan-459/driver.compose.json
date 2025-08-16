@@ -36,5 +36,28 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Aqara fan-459",
+    "fr": "Aqara fan-459"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.308Z",
+    "discussions": 9,
+    "solutions": 2,
+    "communityRating": "3.4",
+    "url": "https://community.homey.app/search?q=aqara_fan-459"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.308Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_fan-459.html",
+    "features": [
+      "humidity",
+      "power"
+    ],
+    "compatibility": "poor"
   }
 }

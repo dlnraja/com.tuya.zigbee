@@ -46,5 +46,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Aqara motion-364",
+    "fr": "Aqara mouvement-364"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:16.169Z",
+    "discussions": 6,
+    "solutions": 4,
+    "communityRating": "3.1",
+    "url": "https://community.homey.app/search?q=aqara_motion-364"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:16.169Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_motion-364.html",
+    "features": [
+      "temperature",
+      "power",
+      "color"
+    ],
+    "compatibility": "good"
   }
 }

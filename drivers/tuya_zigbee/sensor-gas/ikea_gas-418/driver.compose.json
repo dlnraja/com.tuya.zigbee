@@ -46,5 +46,30 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ikea gas-418",
+    "fr": "Ikea gas-418"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.793Z",
+    "discussions": 8,
+    "solutions": 5,
+    "communityRating": "4.9",
+    "url": "https://community.homey.app/search?q=ikea_gas-418"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.793Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_gas-418.html",
+    "features": [
+      "humidity",
+      "power",
+      "dim",
+      "color"
+    ],
+    "compatibility": "excellent"
   }
 }

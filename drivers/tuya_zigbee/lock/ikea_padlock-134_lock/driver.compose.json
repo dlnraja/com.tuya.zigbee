@@ -31,5 +31,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ikea padlock-134 lock",
+    "fr": "Ikea padlock-134 lock"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:13.705Z",
+    "discussions": 6,
+    "solutions": 2,
+    "communityRating": "4.1",
+    "url": "https://community.homey.app/search?q=ikea_padlock-134_lock"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:13.705Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_padlock-134_lock.html",
+    "features": [
+      "power"
+    ],
+    "compatibility": "fair"
   }
 }

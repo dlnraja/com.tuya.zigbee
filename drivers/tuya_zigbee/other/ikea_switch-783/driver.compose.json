@@ -46,5 +46,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ikea switch-783",
+    "fr": "Ikea interrupteur-783"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.588Z",
+    "discussions": 7,
+    "solutions": 5,
+    "communityRating": "3.0",
+    "url": "https://community.homey.app/search?q=ikea_switch-783"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.588Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_switch-783.html",
+    "features": [
+      "color"
+    ],
+    "compatibility": "excellent"
   }
 }

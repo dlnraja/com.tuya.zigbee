@@ -37,5 +37,25 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.474Z",
+    "discussions": 2,
+    "solutions": 1,
+    "communityRating": "3.7",
+    "url": "https://community.homey.app/search?q=ikea_humidity-712_plug"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.474Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_humidity-712_plug.html",
+    "features": [
+      "temperature",
+      "power",
+      "onoff"
+    ],
+    "compatibility": "good"
+  }
 }

@@ -31,5 +31,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Aqara padlock-382 lock",
+    "fr": "Aqara padlock-382 lock"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:13.188Z",
+    "discussions": 10,
+    "solutions": 3,
+    "communityRating": "3.3",
+    "url": "https://community.homey.app/search?q=aqara_padlock-382_lock"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:13.188Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_padlock-382_lock.html",
+    "features": [
+      "color"
+    ],
+    "compatibility": "poor"
   }
 }

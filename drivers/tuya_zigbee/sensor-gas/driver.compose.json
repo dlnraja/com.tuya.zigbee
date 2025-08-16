@@ -13,5 +13,37 @@
   "images": {
     "small": "assets/images/small.png",
     "large": "assets/images/large.png"
+  },
+  "name": {
+    "en": "Sensor-gas",
+    "fr": "capteur-gas"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "modelId": [
+      "SENSOR-GAS"
+    ]
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.776Z",
+    "discussions": 2,
+    "solutions": 4,
+    "communityRating": "4.8",
+    "url": "https://community.homey.app/search?q=sensor-gas"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.776Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/sensor-gas.html",
+    "features": [
+      "onoff",
+      "power",
+      "temperature"
+    ],
+    "compatibility": "fair"
   }
 }

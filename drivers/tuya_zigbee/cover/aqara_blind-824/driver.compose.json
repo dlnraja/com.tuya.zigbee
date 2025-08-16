@@ -38,5 +38,26 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.168Z",
+    "discussions": 9,
+    "solutions": 2,
+    "communityRating": "3.8",
+    "url": "https://community.homey.app/search?q=aqara_blind-824"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.168Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_blind-824.html",
+    "features": [
+      "humidity",
+      "power",
+      "dim",
+      "temperature"
+    ],
+    "compatibility": "fair"
+  }
 }

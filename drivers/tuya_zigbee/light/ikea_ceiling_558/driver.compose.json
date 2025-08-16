@@ -49,5 +49,23 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.500Z",
+    "discussions": 5,
+    "solutions": 5,
+    "communityRating": "3.9",
+    "url": "https://community.homey.app/search?q=ikea_ceiling_558"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.500Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_ceiling_558.html",
+    "features": [
+      "dim"
+    ],
+    "compatibility": "excellent"
+  }
 }

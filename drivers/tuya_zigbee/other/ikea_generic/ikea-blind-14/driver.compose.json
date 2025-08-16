@@ -765,5 +765,23 @@
       "ceiling-light",
       "rgbw-bulb"
     ]
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.521Z",
+    "discussions": 3,
+    "solutions": 2,
+    "communityRating": "4.1",
+    "url": "https://community.homey.app/search?q=ikea-blind-14"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.521Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea-blind-14.html",
+    "features": [
+      "temperature"
+    ],
+    "compatibility": "good"
   }
 }

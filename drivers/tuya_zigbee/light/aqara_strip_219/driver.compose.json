@@ -49,5 +49,24 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.404Z",
+    "discussions": 9,
+    "solutions": 1,
+    "communityRating": "3.1",
+    "url": "https://community.homey.app/search?q=aqara_strip_219"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.404Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_strip_219.html",
+    "features": [
+      "dim",
+      "humidity"
+    ],
+    "compatibility": "fair"
+  }
 }

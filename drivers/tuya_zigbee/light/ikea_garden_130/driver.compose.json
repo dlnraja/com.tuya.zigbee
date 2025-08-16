@@ -49,5 +49,24 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.507Z",
+    "discussions": 8,
+    "solutions": 1,
+    "communityRating": "3.5",
+    "url": "https://community.homey.app/search?q=ikea_garden_130"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.507Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_garden_130.html",
+    "features": [
+      "temperature",
+      "dim"
+    ],
+    "compatibility": "poor"
+  }
 }

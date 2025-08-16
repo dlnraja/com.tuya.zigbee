@@ -43,5 +43,23 @@
     "models": [
       "generic_light"
     ]
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.104Z",
+    "discussions": 4,
+    "solutions": 2,
+    "communityRating": "3.9",
+    "url": "https://community.homey.app/search?q=light"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.104Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/light.html",
+    "features": [
+      "dim"
+    ],
+    "compatibility": "fair"
   }
 }

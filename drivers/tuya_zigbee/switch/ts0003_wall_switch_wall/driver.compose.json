@@ -37,5 +37,25 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.544Z",
+    "discussions": 6,
+    "solutions": 2,
+    "communityRating": "5.0",
+    "url": "https://community.homey.app/search?q=ts0003_wall_switch_wall"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.544Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ts0003_wall_switch_wall.html",
+    "features": [
+      "temperature",
+      "humidity",
+      "power"
+    ],
+    "compatibility": "excellent"
+  }
 }

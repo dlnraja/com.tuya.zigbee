@@ -9,5 +9,36 @@
     "small": "assets/small.png",
     "large": "assets/large.png"
   },
-  "capabilitiesOptions": {}
+  "capabilitiesOptions": {},
+  "name": {
+    "en": "Zigbee",
+    "fr": "Zigbee"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "modelId": [
+      "ZIGBEE"
+    ]
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.785Z",
+    "discussions": 5,
+    "solutions": 2,
+    "communityRating": "4.2",
+    "url": "https://community.homey.app/search?q=zigbee"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.785Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/zigbee.html",
+    "features": [
+      "humidity",
+      "dim"
+    ],
+    "compatibility": "excellent"
+  }
 }

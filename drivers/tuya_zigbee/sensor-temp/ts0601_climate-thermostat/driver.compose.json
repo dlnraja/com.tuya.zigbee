@@ -46,5 +46,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ts0601 climate-thermostat",
+    "fr": "Ts0601 climate-thermostat"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.167Z",
+    "discussions": 1,
+    "solutions": 4,
+    "communityRating": "3.8",
+    "url": "https://community.homey.app/search?q=ts0601_climate-thermostat"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.167Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ts0601_climate-thermostat.html",
+    "features": [
+      "onoff",
+      "motion",
+      "dim"
+    ],
+    "compatibility": "excellent"
   }
 }

@@ -31,5 +31,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Tuya deadbolt-261",
+    "fr": "Tuya deadbolt-261"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:13.789Z",
+    "discussions": 1,
+    "solutions": 2,
+    "communityRating": "4.8",
+    "url": "https://community.homey.app/search?q=tuya_deadbolt-261"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:13.789Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_deadbolt-261.html",
+    "features": [
+      "humidity",
+      "temperature",
+      "onoff"
+    ],
+    "compatibility": "good"
   }
 }

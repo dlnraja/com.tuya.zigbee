@@ -38,5 +38,25 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.287Z",
+    "discussions": 9,
+    "solutions": 4,
+    "communityRating": "4.3",
+    "url": "https://community.homey.app/search?q=tuya_garage-581_cover"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.287Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_garage-581_cover.html",
+    "features": [
+      "dim",
+      "onoff",
+      "humidity"
+    ],
+    "compatibility": "excellent"
+  }
 }

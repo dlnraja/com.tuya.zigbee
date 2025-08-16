@@ -36,5 +36,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ikea fan-18",
+    "fr": "Ikea fan-18"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.322Z",
+    "discussions": 1,
+    "solutions": 4,
+    "communityRating": "4.7",
+    "url": "https://community.homey.app/search?q=ikea_fan-18"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.322Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_fan-18.html",
+    "features": [
+      "color",
+      "dim",
+      "motion"
+    ],
+    "compatibility": "fair"
   }
 }

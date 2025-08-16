@@ -37,5 +37,23 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.576Z",
+    "discussions": 4,
+    "solutions": 4,
+    "communityRating": "4.8",
+    "url": "https://community.homey.app/search?q=tuya_ac_Ac_Plug_Standard_Default"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.576Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_ac_Ac_Plug_Standard_Default.html",
+    "features": [
+      "power"
+    ],
+    "compatibility": "poor"
+  }
 }

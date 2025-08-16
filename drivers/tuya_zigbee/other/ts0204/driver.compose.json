@@ -46,5 +46,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ts0204",
+    "fr": "Ts0204"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.665Z",
+    "discussions": 9,
+    "solutions": 3,
+    "communityRating": "3.1",
+    "url": "https://community.homey.app/search?q=ts0204"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.665Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ts0204.html",
+    "features": [
+      "dim"
+    ],
+    "compatibility": "fair"
   }
 }

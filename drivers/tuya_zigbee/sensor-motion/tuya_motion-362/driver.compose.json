@@ -46,5 +46,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Tuya motion-362",
+    "fr": "Tuya mouvement-362"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:16.321Z",
+    "discussions": 8,
+    "solutions": 4,
+    "communityRating": "4.5",
+    "url": "https://community.homey.app/search?q=tuya_motion-362"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:16.322Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_motion-362.html",
+    "features": [
+      "color",
+      "onoff",
+      "power"
+    ],
+    "compatibility": "fair"
   }
 }

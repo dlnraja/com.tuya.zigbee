@@ -49,5 +49,25 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.521Z",
+    "discussions": 6,
+    "solutions": 5,
+    "communityRating": "4.8",
+    "url": "https://community.homey.app/search?q=ikea_table_218"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.521Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_table_218.html",
+    "features": [
+      "motion",
+      "onoff",
+      "dim"
+    ],
+    "compatibility": "good"
+  }
 }

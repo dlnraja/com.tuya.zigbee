@@ -46,5 +46,30 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Template tuya dp thermostat",
+    "fr": "Template tuya dp thermostat"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:16.905Z",
+    "discussions": 4,
+    "solutions": 1,
+    "communityRating": "4.0",
+    "url": "https://community.homey.app/search?q=template_tuya_dp_thermostat"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:16.905Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/template_tuya_dp_thermostat.html",
+    "features": [
+      "dim",
+      "power",
+      "temperature",
+      "humidity"
+    ],
+    "compatibility": "good"
   }
 }

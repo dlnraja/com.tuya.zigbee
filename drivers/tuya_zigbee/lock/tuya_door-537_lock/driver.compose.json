@@ -31,5 +31,28 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Tuya door-537 lock",
+    "fr": "Tuya door-537 lock"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:13.953Z",
+    "discussions": 6,
+    "solutions": 3,
+    "communityRating": "4.8",
+    "url": "https://community.homey.app/search?q=tuya_door-537_lock"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:13.953Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_door-537_lock.html",
+    "features": [
+      "motion",
+      "humidity"
+    ],
+    "compatibility": "poor"
   }
 }

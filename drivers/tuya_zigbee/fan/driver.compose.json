@@ -13,5 +13,35 @@
   "images": {
     "small": "assets/images/small.png",
     "large": "assets/images/large.png"
+  },
+  "name": {
+    "en": "Fan",
+    "fr": "Fan"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "modelId": [
+      "FAN"
+    ]
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.302Z",
+    "discussions": 6,
+    "solutions": 2,
+    "communityRating": "3.8",
+    "url": "https://community.homey.app/search?q=fan"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.302Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/fan.html",
+    "features": [
+      "temperature"
+    ],
+    "compatibility": "fair"
   }
 }

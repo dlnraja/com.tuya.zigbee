@@ -38,5 +38,25 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.269Z",
+    "discussions": 4,
+    "solutions": 5,
+    "communityRating": "4.0",
+    "url": "https://community.homey.app/search?q=tuya_blind-531"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.269Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_blind-531.html",
+    "features": [
+      "humidity",
+      "power",
+      "motion"
+    ],
+    "compatibility": "good"
+  }
 }

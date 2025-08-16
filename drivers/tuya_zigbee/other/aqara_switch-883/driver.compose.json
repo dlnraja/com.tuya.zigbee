@@ -46,5 +46,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Aqara switch-883",
+    "fr": "Aqara interrupteur-883"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:14.934Z",
+    "discussions": 5,
+    "solutions": 5,
+    "communityRating": "3.8",
+    "url": "https://community.homey.app/search?q=aqara_switch-883"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:14.934Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_switch-883.html",
+    "features": [
+      "humidity"
+    ],
+    "compatibility": "excellent"
   }
 }

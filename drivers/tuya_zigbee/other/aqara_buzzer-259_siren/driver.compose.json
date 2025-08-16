@@ -46,5 +46,28 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Aqara buzzer-259 siren",
+    "fr": "Aqara buzzer-259 siren"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:14.705Z",
+    "discussions": 6,
+    "solutions": 2,
+    "communityRating": "3.8",
+    "url": "https://community.homey.app/search?q=aqara_buzzer-259_siren"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:14.705Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_buzzer-259_siren.html",
+    "features": [
+      "humidity",
+      "power"
+    ],
+    "compatibility": "excellent"
   }
 }

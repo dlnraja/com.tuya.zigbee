@@ -46,5 +46,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ikea chime-608 siren",
+    "fr": "Ikea chime-608 siren"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.478Z",
+    "discussions": 8,
+    "solutions": 4,
+    "communityRating": "3.6",
+    "url": "https://community.homey.app/search?q=ikea_chime-608_siren"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.478Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_chime-608_siren.html",
+    "features": [
+      "onoff",
+      "color",
+      "temperature"
+    ],
+    "compatibility": "good"
   }
 }

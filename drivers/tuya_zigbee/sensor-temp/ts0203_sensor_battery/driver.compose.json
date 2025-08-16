@@ -46,5 +46,27 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ts0203 sensor battery",
+    "fr": "Ts0203 capteur battery"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.018Z",
+    "discussions": 5,
+    "solutions": 2,
+    "communityRating": "3.4",
+    "url": "https://community.homey.app/search?q=ts0203_sensor_battery"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.018Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ts0203_sensor_battery.html",
+    "features": [
+      "dim"
+    ],
+    "compatibility": "fair"
   }
 }

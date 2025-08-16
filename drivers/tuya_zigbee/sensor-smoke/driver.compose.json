@@ -13,5 +13,35 @@
   "images": {
     "small": "assets/images/small.png",
     "large": "assets/images/large.png"
+  },
+  "name": {
+    "en": "Sensor-smoke",
+    "fr": "capteur-smoke"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "modelId": [
+      "SENSOR-SMOKE"
+    ]
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:16.342Z",
+    "discussions": 3,
+    "solutions": 4,
+    "communityRating": "3.6",
+    "url": "https://community.homey.app/search?q=sensor-smoke"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:16.342Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/sensor-smoke.html",
+    "features": [
+      "dim"
+    ],
+    "compatibility": "fair"
   }
 }

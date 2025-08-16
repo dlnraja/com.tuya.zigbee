@@ -1,0 +1,25 @@
+{
+  "timestamp": "2025-08-16T02:47:27.984Z",
+  "version": "3.5.0",
+  "success": false,
+  "duration": 60157,
+  "steps": [
+    {
+      "name": "Préparation",
+      "success": false,
+      "duration": 60104,
+      "error": "Commande échouée avec le code null: "
+    }
+  ],
+  "errors": [
+    "Commande échouée avec le code null: "
+  ],
+  "warnings": [],
+  "summary": {
+    "totalSteps": 1,
+    "successfulSteps": 0,
+    "failedSteps": 1,
+    "totalErrors": 1,
+    "totalWarnings": 0
+  }
+}

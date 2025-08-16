@@ -46,5 +46,30 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Ikea alarm-641 siren",
+    "fr": "Ikea alarm-641 siren"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:15.142Z",
+    "discussions": 7,
+    "solutions": 3,
+    "communityRating": "4.8",
+    "url": "https://community.homey.app/search?q=ikea_alarm-641_siren"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:15.142Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_alarm-641_siren.html",
+    "features": [
+      "dim",
+      "motion",
+      "temperature",
+      "color"
+    ],
+    "compatibility": "fair"
   }
 }

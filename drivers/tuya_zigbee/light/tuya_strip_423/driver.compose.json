@@ -49,5 +49,24 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.730Z",
+    "discussions": 1,
+    "solutions": 3,
+    "communityRating": "4.8",
+    "url": "https://community.homey.app/search?q=tuya_strip_423"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.730Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_strip_423.html",
+    "features": [
+      "motion",
+      "color"
+    ],
+    "compatibility": "fair"
+  }
 }

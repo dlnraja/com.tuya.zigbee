@@ -41,5 +41,28 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Tuya heater-0",
+    "fr": "Tuya heater-0"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.367Z",
+    "discussions": 2,
+    "solutions": 3,
+    "communityRating": "4.5",
+    "url": "https://community.homey.app/search?q=tuya_heater-0"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.367Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_heater-0.html",
+    "features": [
+      "motion",
+      "temperature"
+    ],
+    "compatibility": "good"
   }
 }

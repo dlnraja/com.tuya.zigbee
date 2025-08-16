@@ -37,5 +37,23 @@
     "large": "assets/images/large.png",
     "xlarge": "assets/images/xlarge.png"
   },
-  "icon": "assets/icon.svg"
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.409Z",
+    "discussions": 2,
+    "solutions": 5,
+    "communityRating": "3.2",
+    "url": "https://community.homey.app/search?q=aqara_smart-759"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.409Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_smart-759.html",
+    "features": [
+      "temperature"
+    ],
+    "compatibility": "excellent"
+  }
 }

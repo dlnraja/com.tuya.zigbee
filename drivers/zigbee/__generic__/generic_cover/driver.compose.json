@@ -36,5 +36,29 @@
         ]
       }
     }
+  },
+  "name": {
+    "en": "Generic cover",
+    "fr": "Generic cover"
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:18.086Z",
+    "discussions": 6,
+    "solutions": 3,
+    "communityRating": "3.1",
+    "url": "https://community.homey.app/search?q=generic_cover"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:18.086Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/generic_cover.html",
+    "features": [
+      "temperature",
+      "power",
+      "humidity"
+    ],
+    "compatibility": "poor"
   }
 }

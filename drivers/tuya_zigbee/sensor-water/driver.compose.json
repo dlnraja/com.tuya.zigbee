@@ -13,5 +13,37 @@
   "images": {
     "small": "assets/images/small.png",
     "large": "assets/images/large.png"
+  },
+  "name": {
+    "en": "Sensor-water",
+    "fr": "capteur-water"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "modelId": [
+      "SENSOR-WATER"
+    ]
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.336Z",
+    "discussions": 9,
+    "solutions": 4,
+    "communityRating": "3.7",
+    "url": "https://community.homey.app/search?q=sensor-water"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.336Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/sensor-water.html",
+    "features": [
+      "onoff",
+      "dim",
+      "power"
+    ],
+    "compatibility": "good"
   }
 }

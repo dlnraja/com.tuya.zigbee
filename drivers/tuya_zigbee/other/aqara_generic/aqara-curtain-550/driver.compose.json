@@ -280,5 +280,25 @@
       "ceiling-light",
       "rgbw-bulb"
     ]
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:14.876Z",
+    "discussions": 3,
+    "solutions": 4,
+    "communityRating": "4.8",
+    "url": "https://community.homey.app/search?q=aqara-curtain-550"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:14.876Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara-curtain-550.html",
+    "features": [
+      "dim",
+      "power",
+      "motion"
+    ],
+    "compatibility": "good"
   }
 }
