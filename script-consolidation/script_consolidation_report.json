@@ -1,617 +1,527 @@
 {
-  "timestamp": "2025-08-16T13:01:59.856Z",
+  "timestamp": "2025-08-16T13:33:20.612Z",
   "version": "3.5.0",
   "summary": {
-    "totalScripts": 6159,
-    "consolidatedScripts": 117,
-    "removedScripts": 117,
+    "totalScripts": 6141,
+    "consolidatedScripts": 99,
+    "removedScripts": 99,
     "warnings": 0,
-    "consolidationRate": "1.90"
+    "consolidationRate": "1.61"
   },
   "consolidationGroups": {
     "validation": {
       "scripts": [
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\release\\drivers\\tuya\\unknown\\lights\\lights\\checkcommand\\device.js",
-          "relativePath": "release\\drivers\\tuya\\unknown\\lights\\lights\\checkcommand\\device.js",
-          "size": 500
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\release\\drivers\\tuya\\unknown\\lights\\lights\\directurlvalidationerror\\device.js",
-          "relativePath": "release\\drivers\\tuya\\unknown\\lights\\lights\\directurlvalidationerror\\device.js",
-          "size": 544
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\release\\lib\\validation-manager.js",
-          "relativePath": "release\\lib\\validation-manager.js",
-          "size": 973
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\auto-fix-and-validate.js",
-          "relativePath": "scripts\\auto-fix-and-validate.js",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\auto-fix-and-validate.js",
+          "relativePath": "script-consolidation\\validation\\auto-fix-and-validate.js",
           "size": 30187
         },
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\check-git-config.js",
-          "relativePath": "scripts\\check-git-config.js",
-          "size": 1404
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\check-github-pages.js",
-          "relativePath": "scripts\\check-github-pages.js",
-          "size": 5403
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\final-validation-test.js",
-          "relativePath": "scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\final-validation-test.js",
-          "size": 7125
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\quick-validate-fix.js",
-          "relativePath": "scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\quick-validate-fix.js",
-          "size": 12480
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\tools\\validate.js",
-          "relativePath": "scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\tools\\validate.js",
-          "size": 795
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\final-push-with-validation.js",
-          "relativePath": "scripts\\final-push-with-validation.js",
-          "size": 4074
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\final-validation-and-push.js",
-          "relativePath": "scripts\\final-validation-and-push.js",
-          "size": 9812
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\final-validation.js",
-          "relativePath": "scripts\\final-validation.js",
-          "size": 11052
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\homey-validation-complete.js",
-          "relativePath": "scripts\\homey-validation-complete.js",
-          "size": 20404
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\mega-validation-system.js",
-          "relativePath": "scripts\\mega-validation-system.js",
-          "size": 1024
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\pipeline-health-check.js",
-          "relativePath": "scripts\\pipeline-health-check.js",
-          "size": 1005
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\quick-final-validation.js",
-          "relativePath": "scripts\\quick-final-validation.js",
-          "size": 10954
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\quick-status-check.js",
-          "relativePath": "scripts\\quick-status-check.js",
-          "size": 4674
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\quick-validate-simple.js",
-          "relativePath": "scripts\\quick-validate-simple.js",
-          "size": 4323
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\quick-validate.js",
-          "relativePath": "scripts\\quick-validate.js",
-          "size": 4300
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\run-validation-3.3.js",
-          "relativePath": "scripts\\run-validation-3.3.js",
-          "size": 581
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\safe-validation.js",
-          "relativePath": "scripts\\safe-validation.js",
-          "size": 870
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\utils\\validate.js",
-          "relativePath": "scripts\\utils\\validate.js",
-          "size": 6772
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\validate-and-test-drivers.js",
-          "relativePath": "scripts\\validate-and-test-drivers.js",
-          "size": 16701
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\validate-compose-schema.js",
-          "relativePath": "scripts\\validate-compose-schema.js",
-          "size": 1814
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\validate-driver-structure.js",
-          "relativePath": "scripts\\validate-driver-structure.js",
-          "size": 10445
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\validate-final-sdk3.js",
-          "relativePath": "scripts\\validate-final-sdk3.js",
-          "size": 6961
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\validate-fusion-final.js",
-          "relativePath": "scripts\\validate-fusion-final.js",
-          "size": 7708
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\validate-homey.js",
-          "relativePath": "scripts\\validate-homey.js",
-          "size": 5065
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\validate-local.js",
-          "relativePath": "scripts\\validate-local.js",
-          "size": 10814
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\validate-main.js",
-          "relativePath": "scripts\\validate-main.js",
-          "size": 10546
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\validate-migration-3.3.js",
-          "relativePath": "scripts\\validate-migration-3.3.js",
-          "size": 8638
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\validate-sdk3-structure.js",
-          "relativePath": "scripts\\validate-sdk3-structure.js",
-          "size": 11785
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\validate-tuya-final.js",
-          "relativePath": "scripts\\validate-tuya-final.js",
-          "size": 3977
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tests\\validation\\validation.test.js",
-          "relativePath": "tests\\validation\\validation.test.js",
-          "size": 410
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\check-drivers.js",
-          "relativePath": "tools\\check-drivers.js",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\check-drivers.js",
+          "relativePath": "script-consolidation\\validation\\check-drivers.js",
           "size": 888
         },
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\final-validation.js",
-          "relativePath": "tools\\final-validation.js",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\check-git-config.js",
+          "relativePath": "script-consolidation\\validation\\check-git-config.js",
+          "size": 1404
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\check-github-pages.js",
+          "relativePath": "script-consolidation\\validation\\check-github-pages.js",
+          "size": 5403
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\device.js",
+          "relativePath": "script-consolidation\\validation\\device.js",
+          "size": 544
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\final-push-with-validation.js",
+          "relativePath": "script-consolidation\\validation\\final-push-with-validation.js",
+          "size": 4074
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\final-validation-and-push.js",
+          "relativePath": "script-consolidation\\validation\\final-validation-and-push.js",
+          "size": 9812
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\final-validation-test.js",
+          "relativePath": "script-consolidation\\validation\\final-validation-test.js",
+          "size": 7125
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\final-validation.js",
+          "relativePath": "script-consolidation\\validation\\final-validation.js",
           "size": 15880
         },
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\fix-validation-issues.js",
-          "relativePath": "tools\\fix-validation-issues.js",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\fix-validation-issues.js",
+          "relativePath": "script-consolidation\\validation\\fix-validation-issues.js",
           "size": 7756
         },
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\simple-validation.js",
-          "relativePath": "tools\\simple-validation.js",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\homey-validation-complete.js",
+          "relativePath": "script-consolidation\\validation\\homey-validation-complete.js",
+          "size": 20404
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\mega-validation-system.js",
+          "relativePath": "script-consolidation\\validation\\mega-validation-system.js",
+          "size": 1024
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\pipeline-health-check.js",
+          "relativePath": "script-consolidation\\validation\\pipeline-health-check.js",
+          "size": 1005
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\quick-final-validation.js",
+          "relativePath": "script-consolidation\\validation\\quick-final-validation.js",
+          "size": 10954
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\quick-status-check.js",
+          "relativePath": "script-consolidation\\validation\\quick-status-check.js",
+          "size": 4674
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\quick-validate-fix.js",
+          "relativePath": "script-consolidation\\validation\\quick-validate-fix.js",
+          "size": 12480
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\quick-validate-simple.js",
+          "relativePath": "script-consolidation\\validation\\quick-validate-simple.js",
+          "size": 4323
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\quick-validate.js",
+          "relativePath": "script-consolidation\\validation\\quick-validate.js",
+          "size": 4300
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\run-validation-3.3.js",
+          "relativePath": "script-consolidation\\validation\\run-validation-3.3.js",
+          "size": 581
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\safe-validation.js",
+          "relativePath": "script-consolidation\\validation\\safe-validation.js",
+          "size": 870
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\simple-validation.js",
+          "relativePath": "script-consolidation\\validation\\simple-validation.js",
           "size": 292
         },
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\validate-sdk3-complete.js",
-          "relativePath": "tools\\validate-sdk3-complete.js",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\validate-and-test-drivers.js",
+          "relativePath": "script-consolidation\\validation\\validate-and-test-drivers.js",
+          "size": 16701
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\validate-compose-schema.js",
+          "relativePath": "script-consolidation\\validation\\validate-compose-schema.js",
+          "size": 1814
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\validate-driver-structure.js",
+          "relativePath": "script-consolidation\\validation\\validate-driver-structure.js",
+          "size": 10445
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\validate-final-sdk3.js",
+          "relativePath": "script-consolidation\\validation\\validate-final-sdk3.js",
+          "size": 6961
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\validate-fusion-final.js",
+          "relativePath": "script-consolidation\\validation\\validate-fusion-final.js",
+          "size": 7708
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\validate-homey.js",
+          "relativePath": "script-consolidation\\validation\\validate-homey.js",
+          "size": 5065
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\validate-local.js",
+          "relativePath": "script-consolidation\\validation\\validate-local.js",
+          "size": 10814
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\validate-main.js",
+          "relativePath": "script-consolidation\\validation\\validate-main.js",
+          "size": 10546
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\validate-migration-3.3.js",
+          "relativePath": "script-consolidation\\validation\\validate-migration-3.3.js",
+          "size": 8638
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\validate-sdk3-complete.js",
+          "relativePath": "script-consolidation\\validation\\validate-sdk3-complete.js",
           "size": 11998
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\validate-sdk3-structure.js",
+          "relativePath": "script-consolidation\\validation\\validate-sdk3-structure.js",
+          "size": 11785
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\validate-tuya-final.js",
+          "relativePath": "script-consolidation\\validation\\validate-tuya-final.js",
+          "size": 3977
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\validate.js",
+          "relativePath": "script-consolidation\\validation\\validate.js",
+          "size": 6772
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\validation-manager.js",
+          "relativePath": "script-consolidation\\validation\\validation-manager.js",
+          "size": 973
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\validation.test.js",
+          "relativePath": "script-consolidation\\validation\\validation.test.js",
+          "size": 410
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\core\\validation-suite.js",
+          "relativePath": "tools\\core\\validation-suite.js",
+          "size": 5356
         }
       ],
-      "count": 39,
+      "count": 37,
       "target": "tools/core/validation-suite.js",
       "description": "Suite de validation unifiée"
     },
     "enrichment": {
       "scripts": [
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\backups\\backup_20251008_140924\\tuya\\driver-ai-enhanced.js",
-          "relativePath": "backups\\backup_20251008_140924\\tuya\\driver-ai-enhanced.js",
-          "size": 540
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\backups\\backup_20251008_140924\\tuya\\other\\tuyadevice\\driver-ai-enhanced.js",
-          "relativePath": "backups\\backup_20251008_140924\\tuya\\other\\tuyadevice\\driver-ai-enhanced.js",
-          "size": 540
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\backups\\backup_20251008_140924\\tuya\\tuya\\light\\lightstuya\\driver-ai-enhanced.js",
-          "relativePath": "backups\\backup_20251008_140924\\tuya\\tuya\\light\\lightstuya\\driver-ai-enhanced.js",
-          "size": 592
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\other\\tuya\\tuya\\light\\tuya\\ts130f\\driver-ai-enhanced.js",
-          "relativePath": "catalog\\other\\tuya\\tuya\\light\\tuya\\ts130f\\driver-ai-enhanced.js",
-          "size": 707
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\other\\tuya\\tuya\\other\\tuya\\tuya_zigbee\\models\\ts130f_light_standard_default\\driver-ai-enhanced.js",
-          "relativePath": "catalog\\other\\tuya\\tuya\\other\\tuya\\tuya_zigbee\\models\\ts130f_light_standard_default\\driver-ai-enhanced.js",
-          "size": 708
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\docs\\docs\\enhanced\\app.js",
-          "relativePath": "docs\\docs\\enhanced\\app.js",
-          "size": 36
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\docs\\docs\\enhanced\\charts.js",
-          "relativePath": "docs\\docs\\enhanced\\charts.js",
-          "size": 36
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\docs\\docs\\enhanced\\index.js",
-          "relativePath": "docs\\docs\\enhanced\\index.js",
-          "size": 269
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\docs\\docs\\enhanced\\script.js",
-          "relativePath": "docs\\docs\\enhanced\\script.js",
-          "size": 6045
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\audit-based-enrichment.js",
-          "relativePath": "scripts\\audit-based-enrichment.js",
-          "size": 18745
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\auto-zip-enrichment.js",
-          "relativePath": "scripts\\auto-zip-enrichment.js",
-          "size": 17513
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\core\\enrich-drivers.js",
-          "relativePath": "scripts\\core\\enrich-drivers.js",
-          "size": 37498
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\docs\\enhanced\\app.js",
-          "relativePath": "scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\docs\\enhanced\\app.js",
-          "size": 36
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\docs\\enhanced\\charts.js",
-          "relativePath": "scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\docs\\enhanced\\charts.js",
-          "size": 36
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\docs\\enhanced\\index.js",
-          "relativePath": "scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\docs\\enhanced\\index.js",
-          "size": 269
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\docs\\enhanced\\script.js",
-          "relativePath": "scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\docs\\enhanced\\script.js",
-          "size": 6045
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\enrichment-engine.js",
-          "relativePath": "scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\enrichment-engine.js",
-          "size": 12443
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\enrichment-pipeline-ultimate.js",
-          "relativePath": "scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\enrichment-pipeline-ultimate.js",
-          "size": 28580
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\mega-pipeline-ultimate-enhanced.js",
-          "relativePath": "scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\mega-pipeline-ultimate-enhanced.js",
-          "size": 19213
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\smart-enrich-drivers.js",
-          "relativePath": "scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\smart-enrich-drivers.js",
-          "size": 12731
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\download-analyzer-enricher.js",
-          "relativePath": "scripts\\download-analyzer-enricher.js",
-          "size": 29662
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\enrich-drivers.js",
-          "relativePath": "scripts\\enrich-drivers.js",
-          "size": 4958
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\mega-catalog-enricher.js",
-          "relativePath": "scripts\\mega-catalog-enricher.js",
-          "size": 1018
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\mega-enrichment-advanced.js",
-          "relativePath": "scripts\\mega-enrichment-advanced.js",
-          "size": 23023
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\mega-enrichment-complete.js",
-          "relativePath": "scripts\\mega-enrichment-complete.js",
-          "size": 23085
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\mega-enrichment-debug.js",
-          "relativePath": "scripts\\mega-enrichment-debug.js",
-          "size": 5421
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\mega-enrichment-fixed.js",
-          "relativePath": "scripts\\mega-enrichment-fixed.js",
-          "size": 22586
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\mega-enrichment-ultimate.js",
-          "relativePath": "scripts\\mega-enrichment-ultimate.js",
-          "size": 24201
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\reconstruct-and-enrich.js",
-          "relativePath": "scripts\\reconstruct-and-enrich.js",
-          "size": 37
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\sources\\enrichers\\ai-enrichment-engine.js",
-          "relativePath": "scripts\\sources\\enrichers\\ai-enrichment-engine.js",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\ai-enrichment-engine.js",
+          "relativePath": "script-consolidation\\enrichment\\ai-enrichment-engine.js",
           "size": 15198
         },
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\test-ai-enrichment.js",
-          "relativePath": "scripts\\test-ai-enrichment.js",
-          "size": 2659
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\app.js",
+          "relativePath": "script-consolidation\\enrichment\\app.js",
+          "size": 36
         },
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\verify-coherence-and-enrich.js",
-          "relativePath": "scripts\\verify-coherence-and-enrich.js",
-          "size": 4624
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\audit-based-enrichment.js",
+          "relativePath": "script-consolidation\\enrichment\\audit-based-enrichment.js",
+          "size": 18745
         },
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\auto-driver-enricher.js",
-          "relativePath": "tools\\auto-driver-enricher.js",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\auto-driver-enricher.js",
+          "relativePath": "script-consolidation\\enrichment\\auto-driver-enricher.js",
           "size": 12702
         },
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\auto-enrich-drivers.js",
-          "relativePath": "tools\\auto-enrich-drivers.js",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\auto-enrich-drivers.js",
+          "relativePath": "script-consolidation\\enrichment\\auto-enrich-drivers.js",
           "size": 19735
         },
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\core\\enricher.js",
-          "relativePath": "tools\\core\\enricher.js",
-          "size": 7305
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\auto-zip-enrichment.js",
+          "relativePath": "script-consolidation\\enrichment\\auto-zip-enrichment.js",
+          "size": 17513
         },
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\core\\web-enricher.js",
-          "relativePath": "tools\\core\\web-enricher.js",
-          "size": 6127
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\charts.js",
+          "relativePath": "script-consolidation\\enrichment\\charts.js",
+          "size": 36
         },
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\enrich-from-evidence.js",
-          "relativePath": "tools\\enrich-from-evidence.js",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\download-analyzer-enricher.js",
+          "relativePath": "script-consolidation\\enrichment\\download-analyzer-enricher.js",
+          "size": 29662
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\driver-ai-enhanced.js",
+          "relativePath": "script-consolidation\\enrichment\\driver-ai-enhanced.js",
+          "size": 708
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\enrich-drivers.js",
+          "relativePath": "script-consolidation\\enrichment\\enrich-drivers.js",
+          "size": 4958
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\enrich-from-evidence.js",
+          "relativePath": "script-consolidation\\enrichment\\enrich-from-evidence.js",
           "size": 3236
         },
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\enrich-heuristics.js",
-          "relativePath": "tools\\enrich-heuristics.js",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\enrich-heuristics.js",
+          "relativePath": "script-consolidation\\enrichment\\enrich-heuristics.js",
           "size": 1538
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\enricher.js",
+          "relativePath": "script-consolidation\\enrichment\\enricher.js",
+          "size": 7305
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\enrichment-engine.js",
+          "relativePath": "script-consolidation\\enrichment\\enrichment-engine.js",
+          "size": 12443
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\enrichment-pipeline-ultimate.js",
+          "relativePath": "script-consolidation\\enrichment\\enrichment-pipeline-ultimate.js",
+          "size": 28580
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\index.js",
+          "relativePath": "script-consolidation\\enrichment\\index.js",
+          "size": 269
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\mega-catalog-enricher.js",
+          "relativePath": "script-consolidation\\enrichment\\mega-catalog-enricher.js",
+          "size": 1018
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\mega-enrichment-advanced.js",
+          "relativePath": "script-consolidation\\enrichment\\mega-enrichment-advanced.js",
+          "size": 23023
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\mega-enrichment-complete.js",
+          "relativePath": "script-consolidation\\enrichment\\mega-enrichment-complete.js",
+          "size": 23085
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\mega-enrichment-debug.js",
+          "relativePath": "script-consolidation\\enrichment\\mega-enrichment-debug.js",
+          "size": 5421
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\mega-enrichment-fixed.js",
+          "relativePath": "script-consolidation\\enrichment\\mega-enrichment-fixed.js",
+          "size": 22586
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\mega-enrichment-ultimate.js",
+          "relativePath": "script-consolidation\\enrichment\\mega-enrichment-ultimate.js",
+          "size": 24201
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\mega-pipeline-ultimate-enhanced.js",
+          "relativePath": "script-consolidation\\enrichment\\mega-pipeline-ultimate-enhanced.js",
+          "size": 19213
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\reconstruct-and-enrich.js",
+          "relativePath": "script-consolidation\\enrichment\\reconstruct-and-enrich.js",
+          "size": 37
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\script.js",
+          "relativePath": "script-consolidation\\enrichment\\script.js",
+          "size": 6045
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\smart-enrich-drivers.js",
+          "relativePath": "script-consolidation\\enrichment\\smart-enrich-drivers.js",
+          "size": 12731
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\test-ai-enrichment.js",
+          "relativePath": "script-consolidation\\enrichment\\test-ai-enrichment.js",
+          "size": 2659
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\verify-coherence-and-enrich.js",
+          "relativePath": "script-consolidation\\enrichment\\verify-coherence-and-enrich.js",
+          "size": 4624
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\web-enricher.js",
+          "relativePath": "script-consolidation\\enrichment\\web-enricher.js",
+          "size": 6127
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\core\\enrichment-suite.js",
+          "relativePath": "tools\\core\\enrichment-suite.js",
+          "size": 6201
         }
       ],
-      "count": 38,
+      "count": 30,
       "target": "tools/core/enrichment-suite.js",
       "description": "Suite d'enrichissement unifiée"
     },
     "build": {
       "scripts": [
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\release\\drivers\\tuya\\plugs\\plugs_tuya_plugs\\build_py\\device.js",
-          "relativePath": "release\\drivers\\tuya\\plugs\\plugs_tuya_plugs\\build_py\\device.js",
-          "size": 490
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\release\\drivers\\tuya\\unknown\\lights\\lights\\build\\device.js",
-          "relativePath": "release\\drivers\\tuya\\unknown\\lights\\lights\\build\\device.js",
-          "size": 475
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\release\\drivers\\tuya\\unknown\\lights\\lights\\buildtracker\\device.js",
-          "relativePath": "release\\drivers\\tuya\\unknown\\lights\\lights\\buildtracker\\device.js",
-          "size": 524
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\release\\drivers\\tuya\\unknown\\lights\\lights\\build_clib\\device.js",
-          "relativePath": "release\\drivers\\tuya\\unknown\\lights\\lights\\build_clib\\device.js",
-          "size": 500
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\release\\drivers\\tuya\\unknown\\lights\\lights\\build_ext\\device.js",
-          "relativePath": "release\\drivers\\tuya\\unknown\\lights\\lights\\build_ext\\device.js",
-          "size": 495
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\release\\drivers\\tuya\\unknown\\lights\\lights\\build_py\\device.js",
-          "relativePath": "release\\drivers\\tuya\\unknown\\lights\\lights\\build_py\\device.js",
-          "size": 501
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\release\\drivers\\tuya\\unknown\\lights\\lights\\build_scripts\\device.js",
-          "relativePath": "release\\drivers\\tuya\\unknown\\lights\\lights\\build_scripts\\device.js",
-          "size": 526
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\release\\drivers\\tuya\\unknown\\lights\\lights\\getupdatedirnocreate\\device.js",
-          "relativePath": "release\\drivers\\tuya\\unknown\\lights\\lights\\getupdatedirnocreate\\device.js",
-          "size": 495
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\assets-generate.js",
-          "relativePath": "scripts\\assets-generate.js",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\assets-generate.js",
+          "relativePath": "script-consolidation\\build\\assets-generate.js",
           "size": 1508
         },
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\build\\utils\\slug.js",
-          "relativePath": "scripts\\build\\utils\\slug.js",
-          "size": 7493
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\build-dashboard.js",
-          "relativePath": "scripts\\build-dashboard.js",
-          "size": 27674
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\create-base-drivers.js",
-          "relativePath": "scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\create-base-drivers.js",
-          "size": 5039
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\create-final-drivers.js",
-          "relativePath": "scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\create-final-drivers.js",
-          "size": 7180
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\create-png-images.js",
-          "relativePath": "scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\create-png-images.js",
-          "size": 3205
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\create-real-png.js",
-          "relativePath": "scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\create-real-png.js",
-          "size": 4414
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\generate-app-js.js",
-          "relativePath": "scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\generate-app-js.js",
-          "size": 10267
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\generate-images.js",
-          "relativePath": "scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\generate-images.js",
-          "size": 2279
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\generate-missing-zigbee-drivers.js",
-          "relativePath": "scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\generate-missing-zigbee-drivers.js",
-          "size": 18235
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\master-project-rebuilder.js",
-          "relativePath": "scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\master-project-rebuilder.js",
-          "size": 18085
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\master-rebuilder-final.js",
-          "relativePath": "scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\scripts\\core\\master-rebuilder-final.js",
-          "size": 20177
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\create-lot3-placeholders.js",
-          "relativePath": "scripts\\create-lot3-placeholders.js",
-          "size": 1649
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\create-missing-files.js",
-          "relativePath": "scripts\\create-missing-files.js",
-          "size": 10139
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\create-real-png.js",
-          "relativePath": "scripts\\create-real-png.js",
-          "size": 1818
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\create-small-png.js",
-          "relativePath": "scripts\\create-small-png.js",
-          "size": 1515
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\generate-ai-scripts.js",
-          "relativePath": "scripts\\generate-ai-scripts.js",
-          "size": 10669
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\generate-all-driver-images.js",
-          "relativePath": "scripts\\generate-all-driver-images.js",
-          "size": 9373
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\generate-app-images.js",
-          "relativePath": "scripts\\generate-app-images.js",
-          "size": 3720
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\generate-assets.js",
-          "relativePath": "scripts\\generate-assets.js",
-          "size": 5677
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\generate-deployment-report.js",
-          "relativePath": "scripts\\generate-deployment-report.js",
-          "size": 11352
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\generate-migration-images.js",
-          "relativePath": "scripts\\generate-migration-images.js",
-          "size": 8306
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\generate-personalized-images.js",
-          "relativePath": "scripts\\generate-personalized-images.js",
-          "size": 17974
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\generate-restoration-report.js",
-          "relativePath": "scripts\\generate-restoration-report.js",
-          "size": 5282
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\generate-test-report.js",
-          "relativePath": "scripts\\generate-test-report.js",
-          "size": 8595
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\restore-and-rebuild.js",
-          "relativePath": "scripts\\restore-and-rebuild.js",
-          "size": 6889
-        },
-        {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\build-dashboard.js",
-          "relativePath": "tools\\build-dashboard.js",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\build-dashboard.js",
+          "relativePath": "script-consolidation\\build\\build-dashboard.js",
           "size": 945
         },
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\build-references.js",
-          "relativePath": "tools\\build-references.js",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\build-references.js",
+          "relativePath": "script-consolidation\\build\\build-references.js",
           "size": 1306
         },
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\build-tools.js",
-          "relativePath": "tools\\build-tools.js",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\build-tools.js",
+          "relativePath": "script-consolidation\\build\\build-tools.js",
           "size": 9318
         },
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\core\\dashboard-builder.js",
-          "relativePath": "tools\\core\\dashboard-builder.js",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\create-base-drivers.js",
+          "relativePath": "script-consolidation\\build\\create-base-drivers.js",
+          "size": 5039
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\create-final-drivers.js",
+          "relativePath": "script-consolidation\\build\\create-final-drivers.js",
+          "size": 7180
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\create-lot3-placeholders.js",
+          "relativePath": "script-consolidation\\build\\create-lot3-placeholders.js",
+          "size": 1649
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\create-missing-files.js",
+          "relativePath": "script-consolidation\\build\\create-missing-files.js",
+          "size": 10139
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\create-png-images.js",
+          "relativePath": "script-consolidation\\build\\create-png-images.js",
+          "size": 3205
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\create-real-png.js",
+          "relativePath": "script-consolidation\\build\\create-real-png.js",
+          "size": 1818
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\create-small-png.js",
+          "relativePath": "script-consolidation\\build\\create-small-png.js",
+          "size": 1515
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\dashboard-builder.js",
+          "relativePath": "script-consolidation\\build\\dashboard-builder.js",
           "size": 27163
         },
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\core\\matrix-builder.js",
-          "relativePath": "tools\\core\\matrix-builder.js",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\device.js",
+          "relativePath": "script-consolidation\\build\\device.js",
+          "size": 495
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\generate-ai-scripts.js",
+          "relativePath": "script-consolidation\\build\\generate-ai-scripts.js",
+          "size": 10669
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\generate-all-driver-images.js",
+          "relativePath": "script-consolidation\\build\\generate-all-driver-images.js",
+          "size": 9373
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\generate-app-images.js",
+          "relativePath": "script-consolidation\\build\\generate-app-images.js",
+          "size": 3720
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\generate-app-js.js",
+          "relativePath": "script-consolidation\\build\\generate-app-js.js",
+          "size": 10267
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\generate-assets.js",
+          "relativePath": "script-consolidation\\build\\generate-assets.js",
+          "size": 5677
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\generate-deployment-report.js",
+          "relativePath": "script-consolidation\\build\\generate-deployment-report.js",
+          "size": 11352
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\generate-images.js",
+          "relativePath": "script-consolidation\\build\\generate-images.js",
+          "size": 2279
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\generate-migration-images.js",
+          "relativePath": "script-consolidation\\build\\generate-migration-images.js",
+          "size": 8306
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\generate-missing-zigbee-drivers.js",
+          "relativePath": "script-consolidation\\build\\generate-missing-zigbee-drivers.js",
+          "size": 18235
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\generate-personalized-images.js",
+          "relativePath": "script-consolidation\\build\\generate-personalized-images.js",
+          "size": 17974
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\generate-restoration-report.js",
+          "relativePath": "script-consolidation\\build\\generate-restoration-report.js",
+          "size": 5282
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\generate-test-report.js",
+          "relativePath": "script-consolidation\\build\\generate-test-report.js",
+          "size": 8595
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\master-project-rebuilder.js",
+          "relativePath": "script-consolidation\\build\\master-project-rebuilder.js",
+          "size": 18085
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\master-rebuilder-final.js",
+          "relativePath": "script-consolidation\\build\\master-rebuilder-final.js",
+          "size": 20177
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\matrix-build.js",
+          "relativePath": "script-consolidation\\build\\matrix-build.js",
+          "size": 2880
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\matrix-builder.js",
+          "relativePath": "script-consolidation\\build\\matrix-builder.js",
           "size": 10011
         },
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\matrix-build.js",
-          "relativePath": "tools\\matrix-build.js",
-          "size": 2880
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\restore-and-rebuild.js",
+          "relativePath": "script-consolidation\\build\\restore-and-rebuild.js",
+          "size": 6889
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\slug.js",
+          "relativePath": "script-consolidation\\build\\slug.js",
+          "size": 7493
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\core\\build-suite.js",
+          "relativePath": "tools\\core\\build-suite.js",
+          "size": 6554
         }
       ],
-      "count": 40,
+      "count": 32,
       "target": "tools/core/build-suite.js",
       "description": "Suite de construction unifiée"
     }
