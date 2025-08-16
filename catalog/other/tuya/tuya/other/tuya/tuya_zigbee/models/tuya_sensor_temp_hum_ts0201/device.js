@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 /**
  * 🔧 Tuya Temperature & Humidity Sensor Device
  * TS0201 - Temperature and Humidity Sensor

@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+'use strict';
+
+#!/usr/bin/env node
 
 console.log('🔄 RÉORGANISATION COMPLÈTE DES BACKUPS ET DOCS v3.4.1...');
 

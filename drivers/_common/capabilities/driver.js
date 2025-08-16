@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class TuyaDriver extends ZigBeeDriver {

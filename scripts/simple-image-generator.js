@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+'use strict';
+
+#!/usr/bin/env node
 
 console.log('🎨 GÉNÉRATEUR D\'IMAGES SIMPLE...');
 

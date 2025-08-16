@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+'use strict';
+
+#!/usr/bin/env node
 
 console.log('🚀 ORGANISATION INTELLIGENTE ET PUSH FORCÉ v3.4.1...');
 

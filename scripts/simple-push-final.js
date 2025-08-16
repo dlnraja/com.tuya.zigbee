@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+'use strict';
+
+#!/usr/bin/env node
 
 console.log('🚀 PUSH FINAL SIMPLE - BRIEF "BÉTON" IMPLÉMENTÉ');
 console.log('=' .repeat(60));

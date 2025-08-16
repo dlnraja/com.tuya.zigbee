@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 'use strict';
 const fs=require('fs'),path=require('path');
 const ROOT=process.cwd(),DRV=path.join(ROOT,'drivers');const STRICT=process.argv.includes('--strict');const FIX=process.argv.includes('--fix');const FIX_ASSETS=process.argv.includes('--fix-assets');

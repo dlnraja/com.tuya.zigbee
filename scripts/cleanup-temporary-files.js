@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+'use strict';
+
+#!/usr/bin/env node
 
 this.log('🧹 NETTOYAGE COMPLET DES FICHIERS TEMPORAIRES ET DOCS v3.4.1...');
 

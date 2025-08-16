@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 'use strict';
 const {spawnSync}=require('child_process');
 const msg = process.argv.slice(2).join(' ') || 'chore: batch update';

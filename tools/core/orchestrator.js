@@ -82,22 +82,36 @@ class MEGAOrchestrator {
    * 📋 Définition des étapes du pipeline
    */
   getPipelineSteps(mode, options) {
-    const baseSteps = [
-      {
-        name: 'Préparation',
-        command: 'node',
-        args: ['tools/core/preparation.js'],
-        critical: true,
-        timeout: 60000
-      },
-      {
-        name: 'Validation structure',
-        command: 'node',
-        args: ['tools/core/validator.js'],
-        critical: true,
-        timeout: 120000
-      }
-    ];
+            const baseSteps = [
+          {
+            name: 'Préparation',
+            command: 'node',
+            args: ['tools/core/preparation.js'],
+            critical: true,
+            timeout: 60000
+          },
+          {
+            name: 'Validation structure',
+            command: 'node',
+            args: ['tools/core/validator.js'],
+            critical: true,
+            timeout: 120000
+          },
+          {
+            name: 'Conversion scripts',
+            command: 'node',
+            args: ['tools/core/script-converter.js'],
+            critical: false,
+            timeout: 180000
+          },
+          {
+            name: 'Consolidation scripts',
+            command: 'node',
+            args: ['tools/core/script-consolidator.js'],
+            critical: false,
+            timeout: 240000
+          }
+        ];
 
     if (mode === 'VALIDATE_ONLY') {
       return baseSteps;

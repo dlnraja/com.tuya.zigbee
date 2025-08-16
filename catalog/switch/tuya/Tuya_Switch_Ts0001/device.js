@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 /**
  * Tuya Smart Switch TS0001 Device
  * Logique spécifique à l'appareil pour l'interrupteur intelligent Tuya

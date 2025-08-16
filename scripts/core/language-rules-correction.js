@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 // language-rules-correction.js
 // Script pour analyser et corriger les règles de langues dans tout le projet
 // Basé sur les préférences utilisateur: EN, FR, TA, NL, puis autres

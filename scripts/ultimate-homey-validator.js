@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+'use strict';
+
+#!/usr/bin/env node
 
 /**
  * 🚀 ULTIMATE HOMEY VALIDATOR - BRIEF "BÉTON"

@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+'use strict';
+
+#!/usr/bin/env node
 
 console.log('🔄 FUSION COMPLÈTE TUYA + MISE À JOUR PROJET v3.4.2...');
 

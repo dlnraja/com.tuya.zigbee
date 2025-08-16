@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+'use strict';
+
+#!/usr/bin/env node
 
 /**
  * 🧪 Test Generation Pipeline - Universal Tuya Zigbee

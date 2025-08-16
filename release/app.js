@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 // Total drivers: 237 (74 Tuya, 163 Zigbee)
 'use strict';
 

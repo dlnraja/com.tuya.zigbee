@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+'use strict';
+
+#!/usr/bin/env node
 
 /**
  * 🚀 MEGA DRIVER INTELLIGENCE VALIDATOR - BRIEF "BÉTON"

@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 console.log('TEST TERMINAL - DÉMARRAGE');
 console.log('=' .repeat(30));
 

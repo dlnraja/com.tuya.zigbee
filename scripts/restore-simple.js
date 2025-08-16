@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+'use strict';
+
+#!/usr/bin/env node
 
 console.log('🔄 RESTAURATION SIMPLE DES DRIVERS v3.4.1...');
 

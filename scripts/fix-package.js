@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 'use strict';
 const fs=require('fs'),path=require('path'),glob=require('glob');
 const PKG=path.join(process.cwd(),'package.json');

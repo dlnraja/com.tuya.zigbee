@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 'use strict';
 const { spawnSync } = require('child_process');
 function run(c,a){return spawnSync(c,a,{stdio:'inherit',shell:process.platform==='win32'}).status===0;}

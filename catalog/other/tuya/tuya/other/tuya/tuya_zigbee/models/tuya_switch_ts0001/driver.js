@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 /**
  * Tuya Smart Switch TS0001 Driver
  * Driver pour interrupteur intelligent Tuya 1-gang

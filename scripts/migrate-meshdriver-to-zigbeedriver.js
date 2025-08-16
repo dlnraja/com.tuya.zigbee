@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 'use strict';
 const fs=require('fs'),path=require('path');
 function* jsFiles(root){const st=[root];while(st.length){const cur=st.pop();let s;try {s=fs.statSync(cur);}} catch (error) {continue;}if(s.isDirectory()){for(const e of fs.readdirSync(cur,{withFileTypes:true})){if(e.name==='node_modules'||e.name==='.homeybuild'||e.name==='.git') continue;const p=path.join(cur,e.name);if(e.isDirectory()) st.push(p);else if(e.isFile()&&/\.m?js$/i.test(e.name)) yield p;}}}}

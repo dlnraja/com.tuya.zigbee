@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 /**
  * 💡 zigbee-light-bulb
  * Driver pour appareils ZIGBEE - lights

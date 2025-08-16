@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 ﻿'use strict';
 
 const { debug, Cluster } = require('zigbee-clusters');

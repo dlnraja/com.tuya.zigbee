@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 /**
  * 🔧 Cluster Helpers - Universal Tuya Zigbee
  * ZCL cluster binding and attribute helpers

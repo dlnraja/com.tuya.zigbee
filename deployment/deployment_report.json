@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-08-16T10:26:47.764Z",
+  "version": "3.5.0",
+  "stats": {
+    "filesDeployed": 0,
+    "errors": 0,
+    "warnings": 1
+  },
+  "targets": [
+    "docs",
+    "matrices",
+    "reports"
+  ],
+  "summary": {
+    "success": true,
+    "filesDeployed": 0,
+    "errors": 0,
+    "warnings": 1
+  }
+}
