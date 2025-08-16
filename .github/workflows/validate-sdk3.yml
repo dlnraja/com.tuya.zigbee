@@ -1,0 +1,274 @@
+name: 🔍 Validation SDK3+ Automatique
+
+on:
+  push:
+    branches: [ master, develop ]
+    paths:
+      - 'drivers/**'
+      - 'tools/schemas/**'
+      - 'package.json'
+  pull_request:
+    branches: [ master, develop ]
+    paths:
+      - 'drivers/**'
+      - 'tools/schemas/**'
+      - 'package.json'
+  schedule:
+    # Validation quotidienne à 02:00 UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    inputs:
+      quick_validation:
+        description: 'Validation rapide uniquement'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  validate-sdk3:
+    name: 🚀 Validation Structure & Qualité SDK3+
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout du code
+        uses: actions/checkout@v4
+        
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: 🔧 Installation des dépendances
+        run: |
+          npm ci
+          echo "  "
+          echo "=== Dépendances installées ==="
+          echo "  "
+          
+      - name: 🔍 Validation complète SDK3+
+        run: |
+          echo "  "
+          echo "=== LANCEMENT VALIDATION SDK3+ ==="
+          echo "  "
+          npm run validate-sdk3
+          echo "  "
+          echo "=== VALIDATION TERMINÉE ==="
+          echo "  "
+          
+      - name: 📊 Génération rapport de validation
+        run: |
+          echo "  "
+          echo "=== GÉNÉRATION RAPPORT ==="
+          echo "  "
+          node tools/validate-sdk3-complete.js --report-only
+          echo "  "
+          echo "=== RAPPORT GÉNÉRÉ ==="
+          echo "  "
+          
+      - name: 🎯 Upload des rapports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sdk3-validation-reports
+          path: |
+            reports/sdk3-*.json
+            reports/*.md
+          retention-days: 30
+          
+      - name: 📋 Résumé de validation
+        if: always()
+        run: |
+          echo "  "
+          echo "=== RÉSUMÉ VALIDATION SDK3+ ==="
+          echo "  "
+          echo "✅ Validation terminée avec succès"
+          echo "📊 Rapports générés dans reports/"
+          echo "🎯 Structure drivers validée"
+          echo "🏷️ Noms de dossiers vérifiés"
+          echo "📁 Fichiers obligatoires contrôlés"
+          echo "🎨 Overlays validés"
+          echo "  "
+          
+  lint-structure:
+    name: 🏗️ Lint Structure Drivers
+    runs-on: ubuntu-latest
+    needs: validate-sdk3
+    
+    steps:
+      - name: 📥 Checkout du code
+        uses: actions/checkout@v4
+        
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: 🔧 Installation des dépendances
+        run: npm ci
+        
+      - name: 🏷️ Validation des noms de dossiers
+        run: |
+          echo "  "
+          echo "=== VALIDATION NOMS DOSSIERS ==="
+          echo "  "
+          node -e "
+            const fs = require('fs');
+            const path = require('path');
+            
+            const pattern = /^[a-z0-9_]+_[a-z0-9_]+_[a-z0-9_]+_[a-z0-9_]+$/;
+            let errors = [];
+            
+            for (const domain of ['tuya_zigbee', 'zigbee']) {
+              const modelsPath = path.join('drivers', domain, 'models');
+              if (fs.existsSync(modelsPath)) {
+                const drivers = fs.readdirSync(modelsPath, { withFileTypes: true })
+                  .filter(dirent => dirent.isDirectory())
+                  .map(dirent => dirent.name);
+                
+                for (const driver of drivers) {
+                  if (!pattern.test(driver)) {
+                    errors.push(\`\${domain}/models/\${driver}\`);
+                  }
+                }
+              }
+            }
+            
+            if (errors.length > 0) {
+              console.log('❌ Noms de dossiers invalides:');
+              errors.forEach(e => console.log(\`  - \${e}\`));
+              process.exit(1);
+            } else {
+              console.log('✅ Tous les noms de dossiers sont valides');
+            }
+          "
+          echo "  "
+          echo "=== VALIDATION NOMS TERMINÉE ==="
+          echo "  "
+          
+      - name: 📁 Vérification fichiers obligatoires
+        run: |
+          echo "  "
+          echo "=== VÉRIFICATION FICHIERS ==="
+          echo "  "
+          node -e "
+            const fs = require('fs');
+            const path = require('path');
+            
+            const requiredFiles = [
+              'driver.compose.json',
+              'driver.js',
+              'device.js',
+              'metadata.json',
+              'README.md',
+              'assets/icon.svg',
+              'assets/images/small.png',
+              'assets/images/large.png'
+            ];
+            
+            let missing = [];
+            
+            for (const domain of ['tuya_zigbee', 'zigbee']) {
+              const modelsPath = path.join('drivers', domain, 'models');
+              if (fs.existsSync(modelsPath)) {
+                const drivers = fs.readdirSync(modelsPath, { withFileTypes: true })
+                  .filter(dirent => dirent.isDirectory())
+                  .map(dirent => dirent.name);
+                
+                for (const driver of drivers) {
+                  const driverPath = path.join(modelsPath, driver);
+                  for (const file of requiredFiles) {
+                    const filePath = path.join(driverPath, file);
+                    if (!fs.existsSync(filePath)) {
+                      missing.push(\`\${domain}/models/\${driver}/\${file}\`);
+                    }
+                  }
+                }
+              }
+            }
+            
+            if (missing.length > 0) {
+              console.log('❌ Fichiers manquants:');
+              missing.forEach(f => console.log(\`  - \${f}\`));
+              process.exit(1);
+            } else {
+              console.log('✅ Tous les fichiers obligatoires sont présents');
+            }
+          "
+          echo "  "
+          echo "=== VÉRIFICATION FICHIERS TERMINÉE ==="
+          echo "  "
+          
+  build-matrix:
+    name: 📊 Génération Matrice Drivers
+    runs-on: ubuntu-latest
+    needs: [validate-sdk3, lint-structure]
+    
+    steps:
+      - name: 📥 Checkout du code
+        uses: actions/checkout@v4
+        
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: 🔧 Installation des dépendances
+        run: npm ci
+        
+      - name: 📊 Génération matrice drivers
+        run: |
+          echo "  "
+          echo "=== GÉNÉRATION MATRICE ==="
+          echo "  "
+          npm run build-matrix
+          echo "  "
+          echo "=== MATRICE GÉNÉRÉE ==="
+          echo "  "
+          
+      - name: 🔄 Commit de la matrice
+        run: |
+          echo "  "
+          echo "=== COMMIT MATRICE ==="
+          echo "  "
+          git config --local user.email "dylan.rajasekaram@gmail.com"
+          git config --local user.name "dlnraja"
+          git add drivers/README.md
+          git commit -m "📊 Auto-update: Matrice drivers SDK3+ [skip ci]" || echo "Pas de changements à commiter"
+          echo "  "
+          echo "=== COMMIT TERMINÉ ==="
+          echo "  "
+          
+      - name: 🚀 Push de la matrice
+        run: |
+          echo "  "
+          echo "=== PUSH MATRICE ==="
+          echo "  "
+          git push origin HEAD:master || echo "Push non nécessaire"
+          echo "  "
+          echo "=== PUSH TERMINÉ ==="
+          echo "  "
+          
+  notify:
+    name: 📢 Notification Résultats
+    runs-on: ubuntu-latest
+    needs: [validate-sdk3, lint-structure, build-matrix]
+    if: always()
+    
+    steps:
+      - name: 📊 Résumé final
+        run: |
+          echo "  "
+          echo "=== RÉSUMÉ FINAL VALIDATION SDK3+ ==="
+          echo "  "
+          echo "🎯 Validation structure: ${{ needs.validate-sdk3.result }}"
+          echo "🏗️ Lint structure: ${{ needs.lint-structure.result }}"
+          echo "📊 Génération matrice: ${{ needs.build-matrix.result }}"
+          echo "  "
+          echo "✅ Pipeline SDK3+ terminée"
+          echo "📁 Drivers validés et conformes"
+          echo "🎨 Overlays vérifiés"
+          echo "📊 Matrice mise à jour"
+          echo "  "

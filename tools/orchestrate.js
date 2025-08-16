@@ -24,7 +24,13 @@ try{
   // 3) Enrichissement heuristique (toujours, pour base)
   tryRun('node',['tools/enrich-heuristics.js']);
 
-  // 4) Enrichissement depuis l'evidence (si créée)
+  // 4) Enrichissement automatique avec scraping web
+  if(MODE==='FULL' && !OFFLINE){
+    console.log('🌐 Phase d\'enrichissement automatique avec sources externes...');
+    tryRun('node',['tools/auto-driver-enricher.js']);
+  }
+
+  // 5) Enrichissement depuis l'evidence (si créée)
   tryRun('node',['tools/enrich-from-evidence.js']);
 
   // 5) Validation unique à la fin
