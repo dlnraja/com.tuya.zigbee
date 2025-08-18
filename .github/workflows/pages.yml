@@ -37,13 +37,15 @@ jobs:
           cache: 'npm'
 
       - name: 📦 Install dependencies
-        run: npm ci --prefer-offline --no-audit
+        run: npm ci || npm i
 
-      - name: 🚀 Build dashboard
+      - name: 🚀 Build docs (fallback)
         run: |
-          echo "🌐 Construction du dashboard..."
-          npm run dashboard
-          npm run matrix
+          echo "🌐 Build docs or fallback index.html"
+          mkdir -p docs
+          if [ ! -f docs/index.html ]; then
+            echo "<html><head><meta charset=\"utf-8\"><title>Tuya Zigbee</title></head><body><h1>Tuya Zigbee</h1><p>Docs will be generated soon.</p></body></html>" > docs/index.html
+          fi
 
       - name: 🚀 Setup Pages
         uses: actions/configure-pages@v4

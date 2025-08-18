@@ -1,18 +1,25 @@
 name: Validate Homey App
-on: { pull_request: {}, push: { branches: [ main, master ] } }
+on:
+  pull_request: {}
+  push:
+    branches: [ main, master ]
+
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: { node-version: '18' }
+        with:
+          node-version: '18'
+          cache: 'npm'
       - run: npm i -g homey
       - run: npm ci || npm i
-      - run: node tools/strip-bom.js
-      - run: node tools/lint-json.js || true
-      - run: node tools/matrix-build.js
-      - run: node tools/build-dashboard.js
-      - run: homey app validate -l debug || true
-      - uses: actions/upload-artifact@v4
-        with: { name: drivers-dashboard, path: docs/data/drivers.json }
+      - name: Validate Homey (debug)
+        run: npm run validate
+      - name: Upload validation log (if exists)
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: integration-log
+          path: INTEGRATION_LOG.md
