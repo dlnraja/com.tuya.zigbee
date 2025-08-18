@@ -50,9 +50,18 @@
     "modelId": [
       "TS0202"
     ],
-    "productId": [
-      "TS0202"
-    ]
+    "productId": "TS0202",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genBasic",
+          "genOnOff"
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
   },
   "tuya_dps": {
     "1": {

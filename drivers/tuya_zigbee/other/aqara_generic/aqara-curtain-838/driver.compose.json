@@ -279,7 +279,18 @@
       "standing-light",
       "ceiling-light",
       "rgbw-bulb"
-    ]
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genBasic",
+          "genOnOff"
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
   },
   "homeyForum": {
     "source": "homey_forum",
@@ -298,5 +309,6 @@
       "power"
     ],
     "compatibility": "fair"
-  }
+  },
+  "class": "other"
 }

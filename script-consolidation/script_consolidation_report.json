@@ -1,47 +1,72 @@
 {
-  "timestamp": "2025-08-16T14:31:25.222Z",
+  "timestamp": "2025-08-16T19:35:18.748Z",
   "version": "3.5.0",
   "summary": {
-    "totalScripts": 6049,
-    "consolidatedScripts": 3,
-    "removedScripts": 3,
+    "totalScripts": 6058,
+    "consolidatedScripts": 8,
+    "removedScripts": 8,
     "warnings": 0,
-    "consolidationRate": "0.05"
+    "consolidationRate": "0.13"
   },
   "consolidationGroups": {
     "validation": {
       "scripts": [
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\validation\\validation-suite.js",
-          "relativePath": "script-consolidation\\validation\\validation-suite.js",
-          "size": 5356
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\core\\validation-suite.js",
+          "relativePath": "tools\\core\\validation-suite.js",
+          "size": 2105
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\validate-project.js",
+          "relativePath": "tools\\validate-project.js",
+          "size": 2701
         }
       ],
-      "count": 1,
+      "count": 2,
       "target": "tools/core/validation-suite.js",
       "description": "Suite de validation unifiée"
     },
     "enrichment": {
       "scripts": [
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\enrichment\\enrichment-suite.js",
-          "relativePath": "script-consolidation\\enrichment\\enrichment-suite.js",
-          "size": 6201
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\core\\enricher.js",
+          "relativePath": "tools\\core\\enricher.js",
+          "size": 1291
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\core\\enrichment-suite.js",
+          "relativePath": "tools\\core\\enrichment-suite.js",
+          "size": 2214
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\core\\web-enricher.js",
+          "relativePath": "tools\\core\\web-enricher.js",
+          "size": 5773
         }
       ],
-      "count": 1,
+      "count": 3,
       "target": "tools/core/enrichment-suite.js",
       "description": "Suite d'enrichissement unifiée"
     },
     "build": {
       "scripts": [
         {
-          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\script-consolidation\\build\\build-suite.js",
-          "relativePath": "script-consolidation\\build\\build-suite.js",
-          "size": 6554
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\core\\build-suite.js",
+          "relativePath": "tools\\core\\build-suite.js",
+          "size": 2281
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\core\\dashboard-builder.js",
+          "relativePath": "tools\\core\\dashboard-builder.js",
+          "size": 1347
+        },
+        {
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\core\\matrix-builder.js",
+          "relativePath": "tools\\core\\matrix-builder.js",
+          "size": 60
         }
       ],
-      "count": 1,
+      "count": 3,
       "target": "tools/core/build-suite.js",
       "description": "Suite de construction unifiée"
     }

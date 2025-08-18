@@ -1,0 +1,170 @@
+{
+  "pipeline": {
+    "name": "MEGA-PIPELINE Tuya/Zigbee Homey SDK v3",
+    "version": "2.1.0",
+    "description": "Pipeline complet avec sources wildcard et gestion vendors/modèles pour projet Tuya/Zigbee",
+    "modes": {
+      "progressive": {
+        "description": "Traitement par lots avec pushes intermédiaires",
+        "steps": ["restore", "fixpkg", "z2m-seed", "enrich", "reorg", "verify", "validate-structure", "diag", "assets", "small", "reindex", "dashboard", "push"],
+        "batch_size": 50,
+        "git_push_after_each": true
+      },
+      "complete": {
+        "description": "Traitement complet en une passe",
+        "steps": ["restore", "ingest", "migrate", "enrich", "reorg", "verify", "validate-structure", "diag", "assets", "small", "reindex", "dashboard", "sources", "readme", "push"],
+        "batch_size": null,
+        "git_push_after_each": false
+      }
+    }
+  },
+  "structure": {
+    "validation": {
+      "enabled": true,
+      "description": "Validation complète de la structure vendors/modèles",
+      "levels": {
+        "domain": "drivers/{tuya|zigbee}/",
+        "category": "drivers/{tuya|zigbee}/{category}/",
+        "vendor": "drivers/{tuya|zigbee}/{category}/{vendor}/",
+        "model": "drivers/{tuya|zigbee}/{category}/{vendor}/{model}/"
+      },
+      "required_files": ["driver.compose.json", "device.js", "assets/icon.svg", "assets/small.png"],
+      "optional_files": ["settings.json", "README.md", "CHANGELOG.md"],
+      "id_format": "<category>-<vendor>-<model>"
+    },
+    "domains": ["tuya", "zigbee"],
+    "categories": [
+      "light", "plug", "switch", "sensor-motion", "sensor-contact", "sensor-temperature", 
+      "sensor-humidity", "sensor-gas", "sensor-smoke", "sensor-water", "sensor-vibration", 
+      "sensor-presence", "lock", "cover", "climate-thermostat", "siren", "fan", "heater", 
+      "ac", "outlet", "motion", "contact", "temperature", "humidity", "gas", "smoke", 
+      "water", "vibration", "presence"
+    ],
+    "vendors": ["tuya", "aqara", "ikea", "philips", "sonoff", "ledvance", "generic"],
+    "capabilities": [
+      "onoff", "dim", "light_hue", "light_saturation", "light_temperature", "light_mode", 
+      "measure_power", "measure_current", "measure_voltage", "measure_temperature", 
+      "measure_humidity", "measure_luminance", "measure_pressure", "measure_co2", 
+      "measure_tvoc", "measure_pm25", "measure_noise", "measure_water", "measure_gas", 
+      "alarm_motion", "alarm_contact", "alarm_tamper", "alarm_smoke", "alarm_co", 
+      "alarm_water", "alarm_gas", "alarm_battery", "alarm_heat", "alarm_fire", 
+      "alarm_panic", "alarm_burglar", "alarm_emergency", "alarm_clock", "alarm_system", 
+      "alarm_doorbell", "alarm_lock", "alarm_cover", "alarm_thermostat", "alarm_siren", 
+      "alarm_fan", "alarm_heater", "alarm_ac", "alarm_outlet"
+    ]
+  },
+  "sources": {
+    "wildcard": {
+      "enabled": true,
+      "description": "Pack sources wildcard pour couverture maximale",
+      "fetchers": [
+        {
+          "name": "z2m-seed",
+          "type": "github",
+          "repo": "Koenkk/zigbee-herdsman-converters",
+          "path": "devices",
+          "requires_token": true,
+          "description": "Import progressif depuis Z2M converters"
+        },
+        {
+          "name": "blakadder-seed",
+          "type": "github+web",
+          "repo": "blakadder/zigbee",
+          "fallback": "https://zigbee.blakadder.com",
+          "requires_token": true,
+          "description": "Base de données Blakadder Zigbee"
+        },
+        {
+          "name": "zha-seed",
+          "type": "github",
+          "repo": "zigpy/zha-device-handlers",
+          "path": "zhaquirks",
+          "requires_token": true,
+          "description": "Device handlers ZHA (Home Assistant)"
+        },
+        {
+          "name": "deconz-scan",
+          "type": "web",
+          "url": "https://dresden-elektronik.github.io/deconz-rest-doc/devices/",
+          "requires_token": false,
+          "description": "Devices supportés deCONZ"
+        }
+      ],
+      "orchestrator": {
+        "github_scraping": true,
+        "forum_scraping": true,
+        "z2m_supported_page": true,
+        "todo_queue_building": true
+      }
+    }
+  },
+  "validation": {
+    "structure": {
+      "enabled": true,
+      "script": "scripts/validate-driver-structure.js",
+      "checks": [
+        "folder_depth",
+        "required_files",
+        "driver_compose_json",
+        "id_format",
+        "path_consistency"
+      ],
+      "report": "STRUCTURE_VALIDATION_REPORT.md"
+    },
+    "drivers": {
+      "enabled": true,
+      "script": "scripts/diagnose-drivers.js",
+      "auto_fix": true,
+      "strict_mode": false
+    },
+    "coherence": {
+      "enabled": true,
+      "script": "scripts/verify-coherence-and-enrich.js",
+      "report": "VERIFY_REPORT.md"
+    }
+  },
+  "assets": {
+    "icon_svg": {
+      "enabled": true,
+      "template": "default",
+      "size": "256x256"
+    },
+    "small_png": {
+      "enabled": true,
+      "size": "250x175",
+      "fallback": "base64_placeholder"
+    }
+  },
+  "git": {
+    "auto_commit": true,
+    "auto_push": true,
+    "commit_message_template": "{mode}: {steps}",
+    "branch": "main"
+  },
+  "environment": {
+    "variables": {
+      "PROGRESSIVE": "0",
+      "BATCH_SIZE": "50",
+      "DO_MIGRATE": "1",
+      "SKIP_NPM": "1",
+      "SKIP_VALIDATE": "1",
+      "SKIP_RUN": "1",
+      "SKIP_GIT_PUSH": "1",
+      "GITHUB_TOKEN": "",
+      "USE_7Z": "1",
+      "TUYA_PARALLEL_LIMIT": "4",
+      "TIMEOUT_EXTRACT": "240",
+      "VALIDATE_STRUCTURE": "1"
+    }
+  },
+  "reports": {
+    "enabled": true,
+    "formats": ["json", "markdown"],
+    "locations": {
+      "sources": "scripts/sources/reports/",
+      "drivers": "VERIFY_REPORT.md",
+      "structure": "STRUCTURE_VALIDATION_REPORT.md",
+      "dashboard": "dashboard/"
+    }
+  }
+}

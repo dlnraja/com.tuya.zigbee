@@ -1,0 +1,59 @@
+{
+  "id": "lib",
+  "class": "other",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "set": true,
+      "get": true
+    }
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
+  },
+  "name": {
+    "en": "Lib",
+    "fr": "Lib"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "modelId": [
+      "LIB"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genBasic",
+          "genOnOff"
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:18.627Z",
+    "discussions": 6,
+    "solutions": 1,
+    "communityRating": "3.7",
+    "url": "https://community.homey.app/search?q=lib"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:18.627Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/lib.html",
+    "features": [
+      "power",
+      "humidity"
+    ],
+    "compatibility": "good"
+  }
+}

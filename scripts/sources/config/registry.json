@@ -1,0 +1,10 @@
+{
+  "z2m_converters": { "kind": "github", "owner": "Koenkk", "repo": "zigbee-herdsman-converters", "path": "devices", "enabled": true },
+  "z2m_supported_page": { "kind": "web", "url": "https://www.zigbee2mqtt.io/supported-devices/", "enabled": true },
+  "blakadder_repo": { "kind": "github", "owner": "blakadder", "repo": "zigbee", "path": "", "enabled": true },
+  "zha_device_handlers": { "kind": "github", "owner": "zigpy", "repo": "zha-device-handlers", "path": "zhaquirks", "enabled": true },
+  "deconz_supported": { "kind": "web", "url": "https://dresden-elektronik.github.io/deconz-rest-doc/devices/", "enabled": true },
+  "csa_certified": { "kind": "web", "url": "https://csa-iot.org/csa-iot_products/", "enabled": false },
+  "homey_forum_tuya": { "kind": "web", "url": "https://community.homey.app/t/app-pro-tuya-zigbee-app/26439", "enabled": true },
+  "athom_libs": { "kind": "github", "owner": "athombv", "repo": "node-zigbee-clusters", "path": "", "enabled": true }
+}

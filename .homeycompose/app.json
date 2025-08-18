@@ -1,0 +1,12 @@
+{
+  "id": "com.tuya.zigbee",
+  "name": "Tuya Zigbee Drivers",
+  "version": "3.7.0",
+  "category": "light",
+  "author": "dlnraja",
+  "compatibility": ">=3.0.0",
+  "permissions": [
+    "homey:device:tuya",
+    "homey:device:zigbee"
+  ]
+}

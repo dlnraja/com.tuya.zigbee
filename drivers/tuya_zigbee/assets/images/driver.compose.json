@@ -1,0 +1,66 @@
+{
+  "id": "images",
+  "class": "other",
+  "name": {
+    "en": "Images",
+    "fr": "Images",
+    "nl": "Images",
+    "ta": "Images"
+  },
+  "description": {
+    "en": "Enhanced Images driver for Homey",
+    "fr": "Driver amélioré Images pour Homey",
+    "nl": "Verbeterde Images driver voor Homey",
+    "ta": "மேம்பட்ட Images டிரைவர் Homey க்கு"
+  },
+  "category": [
+    "other"
+  ],
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
+  "icon": "assets/icon.svg",
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "modelId": [
+      "IMAGES"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genBasic",
+          "genOnOff"
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.155Z",
+    "discussions": 6,
+    "solutions": 2,
+    "communityRating": "3.5",
+    "url": "https://community.homey.app/search?q=images"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.155Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/images.html",
+    "features": [
+      "dim"
+    ],
+    "compatibility": "poor"
+  }
+}

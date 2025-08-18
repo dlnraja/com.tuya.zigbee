@@ -1,37 +1,247 @@
 {
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.tuya.zigbee",
-  "name": {
-    "en": "Universal Tuya Zigbee",
-    "fr": "Universal Tuya Zigbee"
-  },
-  "version": "0.0.1",
-  "description": {
-    "en": "Tuya Zigbee devices support for Homey",
-    "fr": "Support des appareils Tuya Zigbee pour Homey"
-  },
-  "sdk": 3,
-  "compose": {
-    "enable": true
-  },
-  "category": "connectivity",
+  "name": "Tuya Zigbee Drivers",
+  "version": "3.7.0",
+  "category": "light",
+  "author": "dlnraja",
+  "compatibility": ">=3.0.0",
   "permissions": [
-    "homey:wireless:zigbee"
+    "homey:device:tuya",
+    "homey:device:zigbee"
   ],
-  "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
-  },
-  "author": {
-    "name": "Tuya Community",
-    "email": "support@tuya.com"
-  },
-  "homepage": "https://community.homey.app",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tuya/universal-tuya-zigbee"
-  },
-  "bugs": {
-    "url": "https://github.com/tuya/universal-tuya-zigbee/issues"
-  },
-  "license": "MIT"
+  "drivers": [
+    {
+      "id": "_common",
+      "title": "Tuya _common",
+      "category": "other",
+      "class": "other",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "small": "assets/small.png",
+        "large": "assets/large.png"
+      },
+      "capabilitiesOptions": {},
+      "name": {
+        "en": "common",
+        "fr": "common"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "_COMMON"
+        ],
+        "productId": "tuya_common_001",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              "genBasic",
+              "genOnOff"
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      },
+      "homeyForum": {
+        "source": "homey_forum",
+        "lastChecked": "2025-08-16T03:32:18.543Z",
+        "discussions": 1,
+        "solutions": 3,
+        "communityRating": "4.1",
+        "url": "https://community.homey.app/search?q=_common"
+      },
+      "zigbee2mqtt": {
+        "source": "zigbee2mqtt",
+        "lastChecked": "2025-08-16T03:32:18.543Z",
+        "supported": true,
+        "documentation": "https://www.zigbee2mqtt.io/devices/_common.html",
+        "features": [
+          "power",
+          "dim",
+          "color"
+        ],
+        "compatibility": "excellent"
+      }
+    },
+    {
+      "id": "generic",
+      "name": {
+        "en": "Generic Zigbee Device",
+        "fr": "Appareil Zigbee Générique"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Device State",
+            "fr": "État de l'appareil"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Generic"
+        ],
+        "modelId": [
+          "Generic"
+        ],
+        "productId": "Generic",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              "genBasic",
+              "genOnOff"
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      },
+      "homeyForum": {
+        "source": "homey_forum",
+        "lastChecked": "2025-08-16T03:32:12.093Z",
+        "discussions": 5,
+        "solutions": 3,
+        "communityRating": "3.1",
+        "url": "https://community.homey.app/search?q=generic"
+      },
+      "zigbee2mqtt": {
+        "source": "zigbee2mqtt",
+        "lastChecked": "2025-08-16T03:32:12.099Z",
+        "supported": true,
+        "documentation": "https://www.zigbee2mqtt.io/devices/generic.html",
+        "features": [
+          "dim",
+          "temperature",
+          "humidity",
+          "power"
+        ],
+        "compatibility": "fair"
+      }
+    },
+    {
+      "id": "tuya_zigbee",
+      "name": {
+        "en": "Tuya Zigbee Universal",
+        "fr": "Tuya Zigbee Universel"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Device State",
+            "fr": "État de l'appareil"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "Tuya"
+        ],
+        "productId": "Tuya",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              "genBasic",
+              "genOnOff"
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      },
+      "homeyForum": {
+        "source": "homey_forum",
+        "lastChecked": "2025-08-16T03:32:12.113Z",
+        "discussions": 4,
+        "solutions": 1,
+        "communityRating": "3.6",
+        "url": "https://community.homey.app/search?q=tuya_zigbee"
+      },
+      "zigbee2mqtt": {
+        "source": "zigbee2mqtt",
+        "lastChecked": "2025-08-16T03:32:12.113Z",
+        "supported": false,
+        "documentation": "https://www.zigbee2mqtt.io/devices/tuya_zigbee.html",
+        "features": [
+          "dim"
+        ],
+        "compatibility": "poor"
+      }
+    },
+    {
+      "id": "zigbee",
+      "title": "Tuya zigbee",
+      "category": "other",
+      "class": "other",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "small": "assets/small.png",
+        "large": "assets/large.png"
+      },
+      "capabilitiesOptions": {},
+      "name": {
+        "en": "Zigbee",
+        "fr": "Zigbee"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "modelId": [
+          "ZIGBEE"
+        ],
+        "productId": "ZIGBEE",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              "genBasic",
+              "genOnOff"
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      },
+      "homeyForum": {
+        "source": "homey_forum",
+        "lastChecked": "2025-08-16T03:32:17.785Z",
+        "discussions": 5,
+        "solutions": 2,
+        "communityRating": "4.2",
+        "url": "https://community.homey.app/search?q=zigbee"
+      },
+      "zigbee2mqtt": {
+        "source": "zigbee2mqtt",
+        "lastChecked": "2025-08-16T03:32:17.785Z",
+        "supported": true,
+        "documentation": "https://www.zigbee2mqtt.io/devices/zigbee.html",
+        "features": [
+          "humidity",
+          "dim"
+        ],
+        "compatibility": "excellent"
+      }
+    }
+  ]
 }
