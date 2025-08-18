@@ -13,235 +13,189 @@
   ],
   "drivers": [
     {
-      "id": "_common",
-      "title": "Tuya _common",
-      "category": "other",
-      "class": "other",
+      "id": "climate-trv-tuya",
+      "name": {
+        "en": "Tuya TRV",
+        "fr": "Vanne thermostatique Tuya"
+      },
+      "class": "thermostat",
       "capabilities": [
-        "onoff"
+        "target_temperature",
+        "measure_temperature",
+        "locked",
+        "alarm_battery"
       ],
       "images": {
-        "small": "assets/small.png",
-        "large": "assets/large.png"
-      },
-      "capabilitiesOptions": {},
-      "name": {
-        "en": "common",
-        "fr": "common"
+        "small": "drivers/climate-trv-tuya/assets/small.png",
+        "large": "drivers/climate-trv-tuya/assets/large.png",
+        "xlarge": "drivers/climate-trv-tuya/assets/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
+          "_TZE200_*",
+          "_TZ3000_*",
           "Tuya"
         ],
-        "modelId": [
-          "_COMMON"
+        "productId": [
+          "TS0601"
         ],
-        "productId": "tuya_common_001",
         "endpoints": {
           "1": {
-            "clusters": [
-              0,
-              6
-            ],
-            "bindings": [
-              6
-            ]
+            "clusters": {
+              "input": [
+                "genBasic",
+                "genPowerCfg",
+                "hvacThermostat",
+                "hvacUserInterfaceCfg"
+              ],
+              "output": [
+                "genBasic",
+                "genPowerCfg",
+                "hvacThermostat"
+              ]
+            }
           }
         }
-      },
-      "homeyForum": {
-        "source": "homey_forum",
-        "lastChecked": "2025-08-16T03:32:18.543Z",
-        "discussions": 1,
-        "solutions": 3,
-        "communityRating": "4.1",
-        "url": "https://community.homey.app/search?q=_common"
-      },
-      "zigbee2mqtt": {
-        "source": "zigbee2mqtt",
-        "lastChecked": "2025-08-16T03:32:18.543Z",
-        "supported": true,
-        "documentation": "https://www.zigbee2mqtt.io/devices/_common.html",
-        "features": [
-          "power",
-          "dim",
-          "color"
-        ],
-        "compatibility": "excellent"
       }
     },
     {
-      "id": "generic",
+      "id": "cover-curtain-tuya",
       "name": {
-        "en": "Generic Zigbee Device",
-        "fr": "Appareil Zigbee Générique"
+        "en": "Tuya Curtain/Blind",
+        "fr": "Rideau/Store Tuya"
       },
-      "class": "other",
+      "class": "windowcoverings",
       "capabilities": [
-        "onoff"
-      ],
-      "capabilitiesOptions": {
-        "onoff": {
-          "title": {
-            "en": "Device State",
-            "fr": "État de l'appareil"
-          }
-        }
-      },
-      "zigbee": {
-        "manufacturerName": [
-          "Generic"
-        ],
-        "modelId": [
-          "Generic"
-        ],
-        "productId": "Generic",
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              6
-            ],
-            "bindings": [
-              6
-            ]
-          }
-        }
-      },
-      "homeyForum": {
-        "source": "homey_forum",
-        "lastChecked": "2025-08-16T03:32:12.093Z",
-        "discussions": 5,
-        "solutions": 3,
-        "communityRating": "3.1",
-        "url": "https://community.homey.app/search?q=generic"
-      },
-      "zigbee2mqtt": {
-        "source": "zigbee2mqtt",
-        "lastChecked": "2025-08-16T03:32:12.099Z",
-        "supported": true,
-        "documentation": "https://www.zigbee2mqtt.io/devices/generic.html",
-        "features": [
-          "dim",
-          "temperature",
-          "humidity",
-          "power"
-        ],
-        "compatibility": "fair"
-      }
-    },
-    {
-      "id": "tuya_zigbee",
-      "name": {
-        "en": "Tuya Zigbee Universal",
-        "fr": "Tuya Zigbee Universel"
-      },
-      "class": "other",
-      "capabilities": [
-        "onoff"
-      ],
-      "capabilitiesOptions": {
-        "onoff": {
-          "title": {
-            "en": "Device State",
-            "fr": "État de l'appareil"
-          }
-        }
-      },
-      "zigbee": {
-        "manufacturerName": [
-          "Tuya"
-        ],
-        "modelId": [
-          "Tuya"
-        ],
-        "productId": "Tuya",
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              6
-            ],
-            "bindings": [
-              6
-            ]
-          }
-        }
-      },
-      "homeyForum": {
-        "source": "homey_forum",
-        "lastChecked": "2025-08-16T03:32:12.113Z",
-        "discussions": 4,
-        "solutions": 1,
-        "communityRating": "3.6",
-        "url": "https://community.homey.app/search?q=tuya_zigbee"
-      },
-      "zigbee2mqtt": {
-        "source": "zigbee2mqtt",
-        "lastChecked": "2025-08-16T03:32:12.113Z",
-        "supported": false,
-        "documentation": "https://www.zigbee2mqtt.io/devices/tuya_zigbee.html",
-        "features": [
-          "dim"
-        ],
-        "compatibility": "poor"
-      }
-    },
-    {
-      "id": "zigbee",
-      "title": "Tuya zigbee",
-      "category": "other",
-      "class": "other",
-      "capabilities": [
-        "onoff"
+        "windowcoverings_set",
+        "windowcoverings_state",
+        "alarm_battery"
       ],
       "images": {
-        "small": "assets/small.png",
-        "large": "assets/large.png"
-      },
-      "capabilitiesOptions": {},
-      "name": {
-        "en": "Zigbee",
-        "fr": "Zigbee"
+        "small": "drivers/cover-curtain-tuya/assets/small.png",
+        "large": "drivers/cover-curtain-tuya/assets/large.png",
+        "xlarge": "drivers/cover-curtain-tuya/assets/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
+          "_TZE200_*",
+          "_TZ3000_*",
           "Tuya"
         ],
-        "modelId": [
-          "ZIGBEE"
+        "productId": [
+          "TS0601"
         ],
-        "productId": "ZIGBEE",
         "endpoints": {
           "1": {
-            "clusters": [
-              0,
-              6
-            ],
-            "bindings": [
-              6
-            ]
+            "clusters": {
+              "input": [
+                "genBasic",
+                "genPowerCfg",
+                "closuresWindowCovering"
+              ],
+              "output": [
+                "genBasic",
+                "genPowerCfg",
+                "closuresWindowCovering"
+              ]
+            }
           }
         }
+      }
+    },
+    {
+      "id": "plug-tuya-universal",
+      "name": {
+        "en": "Tuya Plug (TS011F)",
+        "fr": "Prise Tuya (TS011F)"
       },
-      "homeyForum": {
-        "source": "homey_forum",
-        "lastChecked": "2025-08-16T03:32:17.785Z",
-        "discussions": 5,
-        "solutions": 2,
-        "communityRating": "4.2",
-        "url": "https://community.homey.app/search?q=zigbee"
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power"
+      ],
+      "images": {
+        "small": "drivers/plug-tuya-universal/assets/small.png",
+        "large": "drivers/plug-tuya-universal/assets/large.png",
+        "xlarge": "drivers/plug-tuya-universal/assets/xlarge.png"
       },
-      "zigbee2mqtt": {
-        "source": "zigbee2mqtt",
-        "lastChecked": "2025-08-16T03:32:17.785Z",
-        "supported": true,
-        "documentation": "https://www.zigbee2mqtt.io/devices/zigbee.html",
-        "features": [
-          "humidity",
-          "dim"
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_iiacqpdz",
+          "_TZ3000_*",
+          "Tuya"
         ],
-        "compatibility": "excellent"
+        "productId": [
+          "TS011F",
+          "TS0115",
+          "TS0*"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": {
+              "input": [
+                "genBasic",
+                "genOnOff",
+                "haElectricalMeasurement",
+                "seMetering"
+              ],
+              "output": [
+                "genBasic",
+                "genOnOff"
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "remote-scene-tuya",
+      "name": {
+        "en": "Tuya Scene Remote (TS004x)",
+        "fr": "Télécommande de scènes Tuya (TS004x)"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery"
+      ],
+      "images": {
+        "small": "drivers/remote-scene-tuya/assets/small.png",
+        "large": "drivers/remote-scene-tuya/assets/large.png",
+        "xlarge": "drivers/remote-scene-tuya/assets/xlarge.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_gwkzibhs",
+          "_TZ3000_5bpeda8u",
+          "_TZ3000_bzzgvet0",
+          "_TZ3000_*",
+          "_TZE200_*",
+          "Tuya"
+        ],
+        "productId": [
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS004F",
+          "TS0*"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": {
+              "input": [
+                "genBasic",
+                "genPowerCfg",
+                "genOnOff"
+              ],
+              "output": [
+                "genBasic",
+                "genPowerCfg",
+                "genOnOff"
+              ]
+            }
+          }
+        }
       }
     }
   ]

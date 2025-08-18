@@ -1,0 +1,22 @@
+{
+  "family": "plug",
+  "manufacturer": "_TZ3000",
+  "products": ["TS011F", "TS0115"],
+  "dp": {
+    "1": { "cap": "onoff", "to": "bool", "from": "bool" },
+    "16": { "cap": "measure_power", "to": "num/10", "from": "num/10" },
+    "17": { "cap": "meter_power", "to": "num/1000", "from": "num/1000" },
+    "18": { "cap": "measure_voltage", "to": "num/10", "from": "num/10" },
+    "19": { "cap": "measure_current", "to": "num/1000", "from": "num/1000" }
+  },
+  "reports": {
+    "power_interval_sec": 30,
+    "voltage_interval_sec": 60,
+    "current_interval_sec": 60
+  },
+  "metadata": {
+    "description": "Tuya Smart Plug with power metering (_TZ3000 series)",
+    "capabilities": ["onoff", "measure_power", "meter_power", "measure_voltage", "measure_current"],
+    "flow_cards": ["onoff", "measure_power", "meter_power"]
+  }
+}
