@@ -73,9 +73,11 @@ npm start
 - `npm run enrich` - Lance l'enrichissement des drivers
 - `npm run build:suite` - Lance la suite de construction
 
-## 📊 **Dashboard**
+## 📊 **Dashboard & Pages**
 
-Ouvrez `dist/dashboard/index.html` pour voir le dashboard en temps réel avec :
+- GitHub Pages: activées via `.github/workflows/pages.yml`.
+- Une page par défaut `docs/index.html` est générée si absente.
+- Dashboard local (si généré): `dist/dashboard/index.html`.
 - 📊 Statut du projet
 - 🔌 Drivers Tuya
 - ⚡ Capacités supportées
