@@ -49,3 +49,43 @@
 
 ---
 *Généré automatiquement le 2025-08-18*
+
+
+[VALIDATE_LOOP_START] 2025-08-18T18:06:46.154Z
+
+
+[validate run 1]
+```
+[32m✓ Pre-processing app...[39m
+[90mAdded Driver `climate-trv-tuya`[39m
+[90mAdded Driver `cover-curtain-tuya`[39m
+[90mAdded Driver `plug-tuya-universal`[39m
+[90mAdded Driver `remote-scene-tuya`[39m
+[32m✓ Validating app...[39m
+[31m× App did not validate against level `publish`:[39m
+[31m× manifest.drivers['climate-trv-tuya'].zigbee should have required property 'endpoints' [39m
+[31mmanifest.drivers['cover-curtain-tuya'].zigbee should have required property 'endpoints' [39m
+[31mmanifest.drivers['plug-tuya-universal'].zigbee should have required property 'endpoints' [39m
+[31mmanifest.drivers['remote-scene-tuya'].zigbee should have required property 'endpoints' [39m
+
+```
+
+❌ NO_MORE_AUTOFIX après 1 passes
+
+[build]
+```
+
+```
+
+[validate]
+```
+
+```
+
+[validate]
+```
+
+```
+
+
+[VALIDATE_LOOP_START] 2025-08-18T22:29:40.994Z

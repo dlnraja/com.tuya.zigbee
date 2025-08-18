@@ -10,6 +10,14 @@
   },
   "zigbee": {
     "manufacturerName": ["_TZE200_*","_TZ3000_*","Tuya"],
-    "productId": ["TS0601"]
+    "productId": ["TS0601"],
+    "endpoints": {
+      "1": {
+        "clusters": {
+          "input": ["genBasic", "genPowerCfg", "hvacThermostat", "hvacUserInterfaceCfg"],
+          "output": ["genBasic", "genPowerCfg", "hvacThermostat"]
+        }
+      }
+    }
   }
 }
