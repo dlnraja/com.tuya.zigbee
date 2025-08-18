@@ -58,3 +58,23 @@ stderr=
 [2025-08-18T10:08:59.143Z] Validation Success
 
 Homey validation passed at debug level.
+
+
+[2025-08-18T14:05:04.860Z] Validate Loop Start
+
+Ensure compose integrity, then validate
+
+
+[2025-08-18T14:05:22.455Z] Validation Run
+
+code=0
+stdout=
+
+
+stderr=
+
+
+
+[2025-08-18T14:05:22.457Z] Validation Success
+
+Homey validation passed at debug level.

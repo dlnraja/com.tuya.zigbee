@@ -46,8 +46,8 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic",
-          "genOnOff"
+          0,
+          6
         ],
         "bindings": [
           6
