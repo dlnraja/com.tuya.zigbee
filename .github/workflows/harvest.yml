@@ -1,0 +1,24 @@
+name: Harvest & Plan Integration
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      - run: npm ci || npm i
+      - run: npm run crawl:forum
+      - run: npm run crawl:github
+      - run: node tools/extract_devices.js
+      - run: node tools/plan_integration.js
+      - uses: actions/upload-artifact@v4
+        with:
+          name: research-artifacts
+          path: research/
+

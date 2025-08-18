@@ -13,7 +13,10 @@
     "validate": "homey app validate -l debug",
     "validate:loop": "node tools/validate_loop.js",
     "lint": "eslint src/**/*.js",
-    "format": "prettier --write src/**/*.js"
+    "format": "prettier --write src/**/*.js",
+    "crawl:forum": "node tools/crawl/crawl_discourse.js https://community.homey.app/t/app-pro-tuya-zigbee-app/26439 https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352 https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352/31",
+    "crawl:github": "node tools/crawl/crawl_github.js",
+    "harvest": "npm run crawl:forum && npm run crawl:github && node tools/extract_devices.js && node tools/plan_integration.js"
   },
   "dependencies": {
     "homey": "^3.0.0"
