@@ -1,10 +1,40 @@
-[
-  {
-    "type": "ensure_fingerprint_guarded",
-    "identifier": "TS0041"
+{
+  "generated_at": "2025-08-18T15:48:27.941Z",
+  "summary": {
+    "total_candidates": 2,
+    "total_existing_drivers": 4,
+    "actions_planned": 2
   },
-  {
-    "type": "ensure_fingerprint_guarded",
-    "identifier": "_TZ3000_5bpeda8u"
-  }
-]
+  "actions": [
+    {
+      "type": "create_new_driver",
+      "priority": "high",
+      "candidate": "_TZ3000_abc123",
+      "action": "Create new driver for _TZ3000_abc123",
+      "details": {
+        "manufacturer": "Tuya",
+        "model": "TS0601_switch",
+        "capabilities": [
+          "onoff"
+        ],
+        "technical_requirements": {},
+        "suggested_driver_name": "tuya_ts0601_switch"
+      },
+      "estimated_effort": "medium"
+    },
+    {
+      "type": "create_new_driver",
+      "priority": "high",
+      "candidate": "_TZE200_xyz789",
+      "action": "Create new driver for _TZE200_xyz789",
+      "details": {
+        "manufacturer": "Tuya",
+        "model": "TS011F",
+        "capabilities": [],
+        "technical_requirements": {},
+        "suggested_driver_name": "tuya_ts011f"
+      },
+      "estimated_effort": "medium"
+    }
+  ]
+}

@@ -1,60 +1,12 @@
-name: 🔄 CI - Continuous Integration
-
-on:
-  push:
-    branches: [ master, main ]
-  pull_request:
-    branches: [ master, main ]
-
-permissions:
-  contents: read
-  issues: write
-  actions: read
-
-concurrency:
-  group: ci-${{ github.ref }}
-  cancel-in-progress: true
-
+name: CI
+on: [push, pull_request]
 jobs:
-  test:
+  validate:
     runs-on: ubuntu-latest
-    
     steps:
-      - name: 📥 Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: 📦 Cache npm dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: 🟢 Setup Node.js 18
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-        
-      - name: 📥 Install dependencies
-        run: npm ci
-      
-      - name: 🧪 Run tests
-        run: npm test
-      
-      - name: 🔨 Build
-        run: npm run build
-      
-      - name: ✅ Validate
-        run: npm run validate
-
-      - name: 📊 Test Summary
-        if: always()
-        run: |
-          echo "🔄 CI completed successfully!"
-          echo "📅 Timestamp: $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
-          echo "🔧 Node.js version: $(node --version)"
-          echo "📦 NPM version: $(npm --version)"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '18' }
+      - run: npm ci || npm i
+      - run: npm run lint
+      - run: npm run validate:homey

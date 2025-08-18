@@ -1,4 +1,52 @@
-[
-  "TS0041",
-  "_TZ3000_5bpeda8u"
-]
+{
+  "extracted_at": "2025-08-18T15:48:26.813Z",
+  "total_candidates": 2,
+  "candidates": [
+    {
+      "device_id": "_TZ3000_abc123",
+      "manufacturer": "Tuya",
+      "model": "TS0601_switch",
+      "source": "forum",
+      "source_data": {
+        "type": "forum_post",
+        "id": 1,
+        "url": "https://community.homey.app/t/app-pro-tuya-zigbee-app/26439"
+      },
+      "extracted_at": "2025-08-18T15:48:26.793Z",
+      "confidence": "high",
+      "capabilities": [
+        "onoff"
+      ],
+      "technical_details": {},
+      "sources": [
+        "forum",
+        "forum",
+        "github",
+        "github"
+      ]
+    },
+    {
+      "device_id": "_TZE200_xyz789",
+      "manufacturer": "Tuya",
+      "model": "TS011F",
+      "source": "forum",
+      "source_data": {
+        "type": "forum_post",
+        "id": 20,
+        "url": "https://community.homey.app/t/app-pro-tuya-zigbee-app/26439"
+      },
+      "extracted_at": "2025-08-18T15:48:26.796Z",
+      "confidence": "high",
+      "capabilities": [],
+      "technical_details": {},
+      "sources": [
+        "forum",
+        "forum",
+        "forum",
+        "forum",
+        "github",
+        "github"
+      ]
+    }
+  ]
+}

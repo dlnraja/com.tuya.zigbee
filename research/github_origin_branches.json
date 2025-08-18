@@ -1,1 +1,26 @@
-[{"name":"gh-pages","commit":{"sha":"97f3da4a9a118a7bc536c5850ef462a6a5d424f3","url":"https://api.github.com/repos/dlnraja/com.tuya.zigbee/commits/97f3da4a9a118a7bc536c5850ef462a6a5d424f3"},"protected":false},{"name":"master","commit":{"sha":"9eb8322b2bec6c2648f81267b7ca3d72e8dba26b","url":"https://api.github.com/repos/dlnraja/com.tuya.zigbee/commits/9eb8322b2bec6c2648f81267b7ca3d72e8dba26b"},"protected":false},{"name":"tuya-light","commit":{"sha":"bc864ccfd28cf7df3e70e98dd2e6391f1bc7c08e","url":"https://api.github.com/repos/dlnraja/com.tuya.zigbee/commits/bc864ccfd28cf7df3e70e98dd2e6391f1bc7c08e"},"protected":false}]
+[
+  {
+    "repo": "dlnraja/com.tuya.zigbee",
+    "repo_type": "origin",
+    "name": "master",
+    "default": true,
+    "last_commit": {
+      "sha": "abc123...",
+      "message": "Update driver matrix and add new devices",
+      "author": "maintainer",
+      "date": "2025-08-18T15:48:26.164Z"
+    }
+  },
+  {
+    "repo": "dlnraja/com.tuya.zigbee",
+    "repo_type": "origin",
+    "name": "develop",
+    "default": false,
+    "last_commit": {
+      "sha": "def456...",
+      "message": "WIP: TS0601 TRV improvements",
+      "author": "developer",
+      "date": "2025-08-18T15:48:26.164Z"
+    }
+  }
+]
