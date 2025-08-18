@@ -34,6 +34,17 @@ function normalizeDriverCompose(driverFile) {
   const raw = fs.readFileSync(driverFile, 'utf8');
   const json = JSON.parse(raw);
   let changed = false;
+  const clusterNameToId = {
+    genBasic: 0x0000,
+    genPowerCfg: 0x0001,
+    genDeviceTempCfg: 0x0002,
+    genIdentify: 0x0003,
+    genGroups: 0x0004,
+    genScenes: 0x0005,
+    genOnOff: 0x0006,
+    genLevelCtrl: 0x0008,
+    lightingColorCtrl: 0x0300,
+  };
   if (json && json.zigbee) {
     // productId must be string
     if (Array.isArray(json.zigbee.productId)) {
@@ -57,6 +68,20 @@ function normalizeDriverCompose(driverFile) {
       const output = ep1.clusters.output || [];
       ep1.clusters = Array.from(new Set([...(input || []), ...(output || [])]));
       changed = true;
+    }
+    if (ep1 && Array.isArray(ep1.clusters)) {
+      const before = JSON.stringify(ep1.clusters);
+      ep1.clusters = ep1.clusters.map((c) => {
+        if (typeof c === 'number') return c;
+        if (typeof c === 'string') {
+          const key = c.trim();
+          if (key in clusterNameToId) return clusterNameToId[key];
+          const numeric = Number(key);
+          if (!Number.isNaN(numeric)) return numeric;
+        }
+        return c;
+      });
+      if (before !== JSON.stringify(ep1.clusters)) changed = true;
     }
     // bindings numbers
     if (ep1 && Array.isArray(ep1.bindings)) {

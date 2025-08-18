@@ -26,8 +26,13 @@
     "productId": "Generic",
     "endpoints": {
       "1": {
-        "clusters": ["genBasic", "genOnOff"],
-        "bindings": [6]
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
       }
     }
   },
