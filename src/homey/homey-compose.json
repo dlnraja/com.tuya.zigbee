@@ -1,0 +1,9 @@
+{
+  "id": "com.tuya.zigbee",
+  "version": "3.7.0",
+  "category": "light",
+  "permissions": [
+    "homey:device:tuya",
+    "homey:device:zigbee"
+  ]
+}

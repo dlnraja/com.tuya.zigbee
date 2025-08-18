@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="lightGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="lightGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFFF00;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:0.2" />
+    </radialGradient>
+  </defs>
+  <rect width="256" height="256" rx="40" fill="#2C3E50"/>
+  <circle cx="128" cy="128" r="80" fill="url(#lightGlow)"/>
+  <path d="M128 60 L140 100 L180 100 L150 130 L160 170 L128 150 L96 170 L106 130 L76 100 L116 100 Z" fill="url(#lightGrad)"/>
+  <circle cx="128" cy="128" r="20" fill="#FFFFFF"/>
+  <text x="128" y="200" text-anchor="middle" font-family="Arial" font-size="16" fill="white" font-weight="bold">LIGHT</text>
+</svg>

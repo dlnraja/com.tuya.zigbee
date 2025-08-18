@@ -1,7 +1,8 @@
 {
-  "id": "tuya_zigbee",
+  "id": "zigbee",
   "title": "Tuya zigbee",
   "category": "other",
+  "class": "other",
   "capabilities": [
     "onoff"
   ],
@@ -20,7 +21,19 @@
     ],
     "modelId": [
       "ZIGBEE"
-    ]
+    ],
+    "productId": "ZIGBEE",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genBasic",
+          "genOnOff"
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
   },
   "homeyForum": {
     "source": "homey_forum",

@@ -31,7 +31,18 @@
     ],
     "models": [
       "ikea_shade-837_cover_generic"
-    ]
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genBasic",
+          "genOnOff"
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
   },
   "images": {
     "small": "assets/images/small.png",

@@ -1,0 +1,58 @@
+{
+  "id": "templates",
+  "class": "other",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "set": true,
+      "get": true
+    }
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
+  },
+  "name": {
+    "en": "Templates",
+    "fr": "Templates"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "modelId": [
+      "TEMPLATES"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genBasic",
+          "genOnOff"
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:18.043Z",
+    "discussions": 7,
+    "solutions": 4,
+    "communityRating": "3.4",
+    "url": "https://community.homey.app/search?q=templates"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:18.043Z",
+    "supported": false,
+    "documentation": "https://www.zigbee2mqtt.io/devices/templates.html",
+    "features": [
+      "power"
+    ],
+    "compatibility": "poor"
+  }
+}

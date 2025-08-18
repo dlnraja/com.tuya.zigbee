@@ -45,7 +45,18 @@
     ],
     "modelId": [
       "GENERIC_ZIGBEE_SWITCH_1GANG"
-    ]
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genBasic",
+          "genOnOff"
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
   },
   "homeyForum": {
     "source": "homey_forum",
@@ -64,5 +75,6 @@
       "motion"
     ],
     "compatibility": "fair"
-  }
+  },
+  "class": "other"
 }

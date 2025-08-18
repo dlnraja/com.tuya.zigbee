@@ -39,9 +39,18 @@
     "modelId": [
       "TS0001"
     ],
-    "productId": [
-      "TS0001"
-    ]
+    "productId": "TS0001",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genBasic",
+          "genOnOff"
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
   },
   "tuya_dps": {
     "1": {

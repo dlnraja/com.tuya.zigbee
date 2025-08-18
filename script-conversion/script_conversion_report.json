@@ -1,22 +1,15 @@
 {
-  "timestamp": "2025-08-16T14:30:36.473Z",
+  "timestamp": "2025-08-16T19:34:58.247Z",
   "version": "3.5.0",
   "summary": {
-    "totalScripts": 1,
-    "convertedScripts": 1,
+    "totalScripts": 0,
+    "convertedScripts": 0,
     "failedConversions": 0,
     "warnings": 0,
-    "successRate": "100.00"
+    "successRate": 0
   },
-  "convertedFiles": [
-    {
-      "original": "add-scripts.ps1",
-      "converted": "add-scripts.js",
-      "backup": "script-conversion\\add-scripts.ps1.backup"
-    }
-  ],
+  "convertedFiles": [],
   "recommendations": [
-    "Tester tous les scripts convertis pour vérifier leur bon fonctionnement",
     "Mettre à jour la documentation pour refléter les nouveaux scripts JavaScript",
     "Ajouter les nouveaux scripts aux workflows MEGA orchestrator"
   ]

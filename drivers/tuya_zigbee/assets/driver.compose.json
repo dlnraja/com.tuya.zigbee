@@ -1,0 +1,59 @@
+{
+  "id": "assets",
+  "class": "other",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "set": true,
+      "get": true
+    }
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
+  },
+  "name": {
+    "en": "Assets",
+    "fr": "Assets"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "modelId": [
+      "ASSETS"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genBasic",
+          "genOnOff"
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.151Z",
+    "discussions": 7,
+    "solutions": 5,
+    "communityRating": "5.0",
+    "url": "https://community.homey.app/search?q=assets"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.151Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/assets.html",
+    "features": [
+      "humidity",
+      "onoff"
+    ],
+    "compatibility": "excellent"
+  }
+}

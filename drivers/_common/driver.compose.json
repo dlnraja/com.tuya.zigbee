@@ -1,7 +1,8 @@
 {
-  "id": "tuya__common",
+  "id": "_common",
   "title": "Tuya _common",
   "category": "other",
+  "class": "other",
   "capabilities": [
     "onoff"
   ],
@@ -20,7 +21,14 @@
     ],
     "modelId": [
       "_COMMON"
-    ]
+    ],
+    "productId": "tuya_common_001",
+    "endpoints": {
+      "1": {
+        "clusters": ["genBasic", "genOnOff"],
+        "bindings": [6]
+      }
+    }
   },
   "homeyForum": {
     "source": "homey_forum",

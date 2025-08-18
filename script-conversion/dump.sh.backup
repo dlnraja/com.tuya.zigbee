@@ -1,0 +1,183 @@
+#!/bin/bash
+
+# 🚀 HOMEY DUMP BUNDLE - BRIEF 'BÉTON'
+# Script de dump complet pour Linux/macOS
+
+set -e
+
+# Paramètres
+RUN_SECONDS=${1:-300}
+TIMESTAMP=$(date +"%Y%m%d-%H%M")
+DUMP_DIR="dumps/$TIMESTAMP"
+DUMP_PATH="dumps/dump-$TIMESTAMP"
+
+echo "🚀 HOMEY DUMP BUNDLE - BRIEF 'BÉTON'"
+echo "============================================================"
+
+# Créer le dossier de dump
+mkdir -p "dumps"
+mkdir -p "$DUMP_DIR"
+
+echo "📁 Dossier de dump créé: $DUMP_DIR"
+
+# 1. Capture de l'environnement
+echo "🔍 Capture de l'environnement..."
+cat > "$DUMP_DIR/env.txt" << EOF
+=== ENVIRONNEMENT ===
+Date: $(date)
+PWD: $(pwd)
+Node: $(node --version 2>/dev/null || echo "Non installé")
+NPM: $(npm --version 2>/dev/null || echo "Non installé")
+Homey CLI: $(homey --version 2>/dev/null || echo "Non installé")
+Git: $(git --version 2>/dev/null || echo "Non installé")
+EOF
+
+echo "✅ Environnement capturé"
+
+# 2. Copie app.json
+if [ -f "app.json" ]; then
+    cp "app.json" "$DUMP_DIR/app.json"
+    echo "✅ app.json copié"
+else
+    echo "❌ app.json non trouvé"
+fi
+
+# 3. Strip BOM des JSON
+echo "🧹 Nettoyage BOM des JSON..."
+BOM_LOG=()
+JSON_FILES=$(find . -name "*.json" -not -path "./node_modules/*" -not -path "./dumps/*")
+
+for file in $JSON_FILES; do
+    if [ -f "$file" ]; then
+        if head -c3 "$file" | grep -q $'\xef\xbb\xbf'; then
+            # BOM détecté, le retirer
+            tail -c +4 "$file" > "${file}.tmp" && mv "${file}.tmp" "$file"
+            BOM_LOG+=("✅ BOM retiré: $file")
+        fi
+    fi
+done
+
+printf "%s\n" "${BOM_LOG[@]}" > "$DUMP_DIR/strip-bom.log"
+echo "✅ BOM nettoyé sur $(echo "$JSON_FILES" | wc -w) fichiers"
+
+# 4. Lint JSON
+echo "🔍 Validation JSON..."
+LINT_LOG=()
+INVALID_JSON=()
+
+for file in $JSON_FILES; do
+    if [ -f "$file" ]; then
+        if jq empty "$file" >/dev/null 2>&1; then
+            LINT_LOG+=("✅ $file")
+        else
+            LINT_LOG+=("❌ $file - Erreur de parsing")
+            INVALID_JSON+=("$file")
+        fi
+    fi
+done
+
+printf "%s\n" "${LINT_LOG[@]}" > "$DUMP_DIR/lint-json.log"
+VALID_COUNT=$(($(echo "$JSON_FILES" | wc -w) - ${#INVALID_JSON[@]}))
+echo "✅ JSON validé: $VALID_COUNT/$(echo "$JSON_FILES" | wc -w) valides"
+
+# 5. Tree de l'arborescence
+echo "🌳 Génération de l'arborescence..."
+cat > "$DUMP_DIR/tree.txt" << EOF
+=== ARBORESCENCE PROJET ===
+Date: $(date)
+EOF
+
+tree -I 'node_modules|.git|dumps' >> "$DUMP_DIR/tree.txt" 2>/dev/null || find . -type d -not -path "./node_modules" -not -path "./.git" -not -path "./dumps" | sort >> "$DUMP_DIR/tree.txt"
+
+echo "✅ Arborescence générée"
+
+# 6. Validation Homey (debug)
+echo "🔍 Validation Homey (debug)..."
+if command -v homey >/dev/null 2>&1; then
+    homey app validate -l debug > "$DUMP_DIR/validate.log" 2>&1 || true
+    
+    if grep -q "✓" "$DUMP_DIR/validate.log"; then
+        echo "✅ Validation Homey réussie"
+    else
+        echo "⚠️ Validation Homey avec avertissements"
+    fi
+else
+    echo "❌ Homey CLI non installé" > "$DUMP_DIR/validate.log"
+    echo "❌ Homey CLI non installé"
+fi
+
+# 7. Lancement Homey app run
+echo "🚀 Lancement Homey app run..."
+echo "⏱️ Durée: $RUN_SECONDS secondes"
+echo "🛑 Arrêt automatique dans $RUN_SECONDS secondes (Ctrl+C pour arrêt manuel)"
+
+cat > "$DUMP_DIR/run.log" << EOF
+=== LOGS HOMEY APP RUN ===
+Date: $(date)
+Durée: $RUN_SECONDS secondes
+
+EOF
+
+# Timer pour arrêt automatique
+(
+    sleep $RUN_SECONDS
+    echo "⏰ Arrêt automatique après $RUN_SECONDS secondes"
+    pkill -f "homey app run" 2>/dev/null || true
+) &
+
+TIMER_PID=$!
+
+# Lancer homey app run et capturer les logs
+if command -v homey >/dev/null 2>&1; then
+    echo "🚀 Lancement de homey app run..."
+    timeout $RUN_SECONDS homey app run 2>&1 | tee -a "$DUMP_DIR/run.log" || true
+else
+    echo "❌ Homey CLI non installé" | tee -a "$DUMP_DIR/run.log"
+fi
+
+# Arrêter le timer
+kill $TIMER_PID 2>/dev/null || true
+
+# 8. Création du ZIP final
+echo "📦 Création du ZIP final..."
+if command -v zip >/dev/null 2>&1; then
+    cd dumps
+    zip -r "dump-$TIMESTAMP.zip" "$TIMESTAMP" >/dev/null 2>&1
+    cd ..
+    echo "✅ ZIP créé: dumps/dump-$TIMESTAMP.zip"
+elif command -v tar >/dev/null 2>&1; then
+    tar -czf "$DUMP_PATH.tar.gz" -C dumps "$TIMESTAMP"
+    echo "✅ TAR créé: $DUMP_PATH.tar.gz"
+else
+    echo "⚠️ Aucun outil de compression disponible, copie simple"
+    cp -r "$DUMP_DIR" "$DUMP_PATH"
+fi
+
+# 9. Rapport final
+echo ""
+echo "🎉 DUMP COMPLET TERMINÉ !"
+echo "============================================================"
+echo "📁 Dossier: $DUMP_DIR"
+if [ -f "dumps/dump-$TIMESTAMP.zip" ]; then
+    echo "📦 Archive: dumps/dump-$TIMESTAMP.zip"
+elif [ -f "$DUMP_PATH.tar.gz" ]; then
+    echo "📦 Archive: $DUMP_PATH.tar.gz"
+else
+    echo "📁 Copie: $DUMP_PATH"
+fi
+
+echo ""
+echo "📋 CONTENU DU DUMP:"
+ls -la "$DUMP_DIR" | while read line; do
+    echo "  📄 $line"
+done
+
+echo ""
+echo "🚀 PROCHAINES ÉTAPES:"
+echo "1. Analyser les logs dans $DUMP_DIR"
+echo "2. Corriger les erreurs JSON si nécessaire"
+echo "3. Relancer la validation si besoin"
+echo "4. Tester l'appairage des devices"
+
+echo ""
+echo "🎯 DUMP TERMINÉ AVEC SUCCÈS !"

@@ -1,0 +1,143 @@
+{
+  "timestamp": "2025-08-11T16:10:42.315Z",
+  "duration": "14542ms",
+  "results": {
+    "homey-community": [
+      {
+        "owner": "homey-community",
+        "repo": "drivers",
+        "foundKeywords": [],
+        "lastCommit": "N/A",
+        "lastCommitDate": "N/A",
+        "openIssues": 0,
+        "stars": 0,
+        "forks": 0,
+        "description": "N/A",
+        "language": "N/A",
+        "updatedAt": "N/A"
+      },
+      {
+        "owner": "homey-community",
+        "repo": "apps",
+        "foundKeywords": [],
+        "lastCommit": "N/A",
+        "lastCommitDate": "N/A",
+        "openIssues": 0,
+        "stars": 0,
+        "forks": 0,
+        "description": "N/A",
+        "language": "N/A",
+        "updatedAt": "N/A"
+      },
+      {
+        "owner": "homey-community",
+        "repo": "zigbee",
+        "foundKeywords": [],
+        "lastCommit": "N/A",
+        "lastCommitDate": "N/A",
+        "openIssues": 0,
+        "stars": 0,
+        "forks": 0,
+        "description": "N/A",
+        "language": "N/A",
+        "updatedAt": "N/A"
+      }
+    ],
+    "johanbenz": [
+      {
+        "owner": "johanbenz",
+        "repo": "com.tuya.zigbee",
+        "foundKeywords": [
+          "issue"
+        ],
+        "lastCommit": "N/A",
+        "lastCommitDate": "N/A",
+        "openIssues": 0,
+        "stars": 0,
+        "forks": 0,
+        "description": "N/A",
+        "language": "N/A",
+        "updatedAt": "N/A"
+      },
+      {
+        "owner": "johanbenz",
+        "repo": "homey-tuya-zigbee",
+        "foundKeywords": [
+          "issue"
+        ],
+        "lastCommit": "N/A",
+        "lastCommitDate": "N/A",
+        "openIssues": 0,
+        "stars": 0,
+        "forks": 0,
+        "description": "N/A",
+        "language": "N/A",
+        "updatedAt": "N/A"
+      }
+    ],
+    "zigbee-community": [
+      {
+        "owner": "Koenkk",
+        "repo": "zigbee2mqtt",
+        "foundKeywords": [
+          "tuya",
+          "device",
+          "fingerprint",
+          "cluster"
+        ],
+        "lastCommit": "chore(deps-dev): bump tmp from 0.2.3 to 0.2.4 (// 28186)",
+        "lastCommitDate": "2025-08-06T18:04:33Z",
+        "openIssues": 34,
+        "stars": 13803,
+        "forks": 1813,
+        "description": "Zigbee 🐝 to MQTT bridge 🌉, get rid of your proprietary Zigbee bridges 🔨",
+        "language": "TypeScript",
+        "updatedAt": "2025-08-11T12:05:48Z"
+      },
+      {
+        "owner": "Koenkk",
+        "repo": "zigbee-herdsman",
+        "foundKeywords": [
+          "device",
+          "cluster"
+        ],
+        "lastCommit": "fix(ignore): bump the minor-patch group across 1 directory with 2 updates (// 1478)\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>\nCo-authored-by: Koen Kanters <koenkanters94@gmail.com>",
+        "lastCommitDate": "2025-08-10T19:10:41Z",
+        "openIssues": 5,
+        "stars": 513,
+        "forks": 339,
+        "description": "A Node.js Zigbee library",
+        "language": "TypeScript",
+        "updatedAt": "2025-08-10T19:10:45Z"
+      }
+    ],
+    "home-assistant": [
+      {
+        "owner": "home-assistant",
+        "repo": "core",
+        "foundKeywords": [
+          "tuya",
+          "zigbee",
+          "integration",
+          "device"
+        ],
+        "lastCommit": "Smarla integration sensor platform (// 145748)",
+        "lastCommitDate": "2025-08-11T15:08:07Z",
+        "openIssues": 28,
+        "stars": 80674,
+        "forks": 34637,
+        "description": ":house_with_garden: Open source home automation that puts local control and privacy first.",
+        "language": "Python",
+        "updatedAt": "2025-08-11T15:18:00Z"
+      }
+    ]
+  },
+  "summary": {
+    "totalSources": 4,
+    "totalRepos": 8,
+    "totalKeywordsFound": 12,
+    "totalErrors": 0,
+    "totalStars": 94990,
+    "durationMs": 14542
+  }
+}

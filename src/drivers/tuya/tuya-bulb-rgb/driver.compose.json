@@ -1,0 +1,78 @@
+{
+  "id": "tuya-bulb-rgb",
+  "name": {
+    "en": "Tuya RGB Bulb",
+    "fr": "Ampoule RGB Tuya",
+    "nl": "Tuya RGB Lamp"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "title": {
+        "en": "Brightness",
+        "fr": "Luminosité",
+        "nl": "Helderheid"
+      }
+    },
+    "light_hue": {
+      "title": {
+        "en": "Color",
+        "fr": "Couleur",
+        "nl": "Kleur"
+      }
+    },
+    "light_saturation": {
+      "title": {
+        "en": "Saturation",
+        "fr": "Saturation",
+        "nl": "Verzadiging"
+      }
+    }
+  },
+  "images": {
+    "small": "/assets/images/drivers/tuya-bulb-rgb-small.png",
+    "large": "/assets/images/drivers/tuya-bulb-rgb-large.png"
+  },
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "productId": "TS0505B",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genBasic",
+          "genOnOff",
+          "genLevelCtrl",
+          "lightingColorCtrl"
+        ],
+        "bindings": [
+          "genOnOff",
+          "genLevelCtrl",
+          "lightingColorCtrl"
+        ]
+      }
+    },
+    "topology": {
+      "type": "endpoint"
+    }
+  },
+  "settings": [
+    {
+      "id": "transition_time",
+      "type": "number",
+      "label": {
+        "en": "Transition Time (seconds)",
+        "fr": "Temps de transition (secondes)",
+        "nl": "Overgangstijd (seconden)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 60
+    }
+  ]
+}

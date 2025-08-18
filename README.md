@@ -1,390 +1,328 @@
-# 🏠 Universal Tuya Zigbee - Homey App
+# 🚀 Tuya Zigbee Drivers for Homey SDK 3
 
-[![GitHub Actions](https://github.com/yourusername/tuya_repair/workflows/MEGA%20Pipeline/badge.svg)](https://github.com/yourusername/tuya_repair/actions)
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://yourusername.github.io/tuya_repair/)
-[![npm version](https://img.shields.io/npm/v/universal-tuya-zigbee.svg)](https://www.npmjs.com/package/universal-tuya-zigbee)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Homey](https://img.shields.io/badge/Homey-Compatible-brightgreen)](https://homey.app)
-[![Zigbee](https://img.shields.io/badge/Zigbee-3.0-blue)](https://zigbeealliance.org)
+## 📱 **Compatible Homey SDK 3**
 
-> **🚀 Le support universel le plus avancé pour les appareils Tuya Zigbee sur Homey avec pipeline MEGA automatisé, enrichissement intelligent et scraping web.**
+**Version:** 3.7.0  
+**Auteur:** dlnraja  
+**Licence:** MIT
 
-## 📋 Table des matières
+## 🎯 **Fonctionnalités**
 
-- [🌟 Fonctionnalités](#-fonctionnalités)
-- [🚀 Démarrage rapide](#-démarrage-rapide)
-- [🔧 Installation](#-installation)
-- [📊 Pipeline MEGA](#-pipeline-mega)
-- [🌐 Dashboard Web](#-dashboard-web)
-- [🤖 Outils d'automatisation](#-outils-dautomatisation)
-- [📁 Structure du projet](#-structure-du-projet)
-- [⚡ GitHub Actions](#-github-actions)
-- [🌍 Internationalisation](#-internationalisation)
-- [🔍 Validation et tests](#-validation-et-tests)
-- [📈 Statistiques](#-statistiques)
-- [🤝 Contribution](#-contribution)
-- [📄 Licence](#-licence)
+- ✅ **Drivers Tuya Zigbee** complets et optimisés
+- ✅ **MEGA Orchestrator** pour l'automatisation
+- ✅ **SDK 3** entièrement compatible
+- ✅ **Structure modulaire** et maintenable
+- ✅ **Dashboard moderne** et responsive
+- ✅ **Tests automatisés** et validation
+- ✅ **Support multilingue** (EN/FR/NL)
 
-## 🌟 Fonctionnalités
+## 🏗️ **Architecture**
 
-### 🎯 **Support Universel**
-- **7282+ drivers** Tuya Zigbee supportés
-- **Toutes les classes** : lights, switches, sensors, covers, thermostats
-- **Compatibilité Zigbee 3.0** et protocoles Tuya avancés
-- **Détection automatique** des capacités et métadonnées
+```
+📁 src/
+  ├── 📁 core/          (Modules principaux)
+  │   ├── orchestrator.js      (Orchestrateur principal)
+  │   ├── preparation.js       (Préparation du projet)
+  │   ├── validator.js         (Validation)
+  │   ├── matrix-builder.js    (Construction des matrices)
+  │   ├── dashboard-builder.js (Construction du dashboard)
+  │   ├── enricher.js          (Enrichissement des drivers)
+  │   ├── web-enricher.js      (Enrichissement web)
+  │   ├── final-validator.js   (Validation finale)
+  │   └── deployer.js          (Déploiement)
+  ├── 📁 utils/         (Utilitaires)
+  │   ├── script-converter.js  (Conversion de scripts)
+  │   ├── script-consolidator.js (Consolidation)
+  │   ├── enrichment-suite.js  (Suite d'enrichissement)
+  │   ├── build-suite.js       (Suite de construction)
+  │   └── validation-suite.js  (Suite de validation)
+  ├── 📁 drivers/       (Drivers Tuya)
+  │   ├── 📁 tuya/      (Drivers Tuya spécifiques)
+  │   ├── 📁 zigbee/    (Drivers Zigbee génériques)
+  │   └── 📁 generic/   (Drivers génériques)
+  ├── 📁 homey/         (Application Homey)
+  └── 📁 workflows/     (Workflows)
+```
 
-### 🤖 **Pipeline MEGA Automatisé**
-- **Orchestration complète** : build → validation → enrichissement → déploiement
-- **Enrichissement intelligent** avec sources externes (Homey forum, Zigbee2MQTT, Blakadder)
-- **Scraping web automatisé** avec fallbacks MCP (Firecrawl)
-- **Génération automatique** des matrices et références
-
-### 🔧 **Outils Intelligents**
-- **Nettoyage JSON automatique** (BOM, validation, correction)
-- **Enrichissement heuristique** des capacités
-- **Validation Homey** intégrée
-- **Correction automatique** des problèmes détectés
-
-### 📊 **Dashboard Web Avancé**
-- **Interface temps réel** pour la gestion des drivers
-- **Recherche et filtrage** avancés
-- **Statistiques détaillées** et métriques
-- **Gestion des erreurs** et corrections
-
-## 🚀 Démarrage rapide
+## 🚀 **Installation**
 
 ### Prérequis
-- **Node.js** 18+ 
-- **Homey CLI** installé
-- **Git** pour le versioning
+- Node.js 18+ 
+- Homey CLI
+- Git
 
-### Installation en 3 étapes
-
+### Installation rapide
 ```bash
-# 1. Cloner le projet
-git clone https://github.com/yourusername/tuya_repair.git
-cd tuya_repair
+# Cloner le projet
+git clone https://github.com/dlnraja/com.tuya.zigbee.git
+cd com.tuya.zigbee
 
-# 2. Installer les dépendances
+# Installer les dépendances
 npm install
 
-# 3. Lancer le pipeline MEGA complet
+# Lancer l'application
+npm start
+```
+
+## 🔧 **Scripts Disponibles**
+
+- `npm start` - Lance l'application Homey
+- `npm run orchestrate:mega` - Lance le MEGA Orchestrator
+- `npm test` - Lance les tests
+- `npm run validate` - Valide l'application
+- `npm run enrich` - Lance l'enrichissement des drivers
+- `npm run build:suite` - Lance la suite de construction
+
+## 📊 **Dashboard**
+
+Ouvrez `dist/dashboard/index.html` pour voir le dashboard en temps réel avec :
+- 📊 Statut du projet
+- 🔌 Drivers Tuya
+- ⚡ Capacités supportées
+- 🏭 Fabricants supportés
+- 🔧 Architecture modulaire
+
+## 🔌 **Drivers Supportés**
+
+### Ampoule RGB Tuya
+- **ID:** `tuya-bulb-rgb`
+- **Capacités:** onoff, dim, light_hue, light_saturation
+- **Modèle:** TS0505B
+- **Fabricant:** Tuya
+
+### Interrupteur Tuya
+- **ID:** `tuya-switch`
+- **Capacités:** onoff
+- **Modèle:** TS0011
+- **Fabricant:** Tuya
+
+### Capteur de température Tuya
+- **ID:** `tuya-sensor-temp`
+- **Capacités:** measure_temperature
+- **Modèle:** TS0601
+- **Fabricant:** Tuya
+
+## ⚡ **Capacités Supportées**
+
+### Contrôle
+- `onoff` - Allumer/éteindre
+- `dim` - Variation de luminosité
+
+### Éclairage
+- `light_hue` - Variation de couleur
+- `light_saturation` - Variation de saturation
+- `light_temperature` - Variation de température de couleur
+
+### Capteurs
+- `measure_temperature` - Mesure de température
+- `measure_humidity` - Mesure d'humidité
+- `measure_pressure` - Mesure de pression
+
+### Sécurité
+- `alarm_motion` - Détection de mouvement
+- `alarm_contact` - Détection d'ouverture
+- `alarm_water` - Détection d'eau
+- `alarm_smoke` - Détection de fumée
+
+## 🏭 **Fabricants Supportés**
+
+- **Tuya** - Support complet
+- **Smart Life** - Compatible Tuya
+- **Jinvoo** - Compatible Tuya
+- **EcoSmart** - Compatible Tuya
+- **Teckin** - Compatible Tuya
+- **Treatlife** - Compatible Tuya
+- **Gosund** - Compatible Tuya
+- **Blitzwolf** - Compatible Tuya
+- **Lumiman** - Compatible Tuya
+- **Novostella** - Compatible Tuya
+
+## 🔧 **MEGA Orchestrator**
+
+Le MEGA Orchestrator est le cœur du projet qui gère automatiquement :
+
+1. **Préparation** - Initialisation et configuration
+2. **Validation** - Vérification de la cohérence
+3. **Construction** - Génération des matrices et dashboard
+4. **Enrichissement** - Amélioration des drivers
+5. **Validation finale** - Vérification complète
+6. **Déploiement** - Publication de l'application
+
+### Utilisation
+```bash
+# Lancer l'orchestrateur
 npm run orchestrate:mega
+
+# Ou directement
+node src/core/orchestrator.js
 ```
 
-### 🎯 **Commandes principales**
+## 🧪 **Tests et Validation**
 
-```bash
-# 🚀 Pipeline MEGA complet (recommandé)
-npm run orchestrate:mega
-
-# 🔧 Outils individuels
-npm run matrix              # Générer les matrices
-npm run dashboard           # Construire le dashboard
-npm run enrich:auto         # Enrichissement automatique
-npm run validate:final      # Validation complète
-npm run fix:validation      # Correction automatique
-npm run dump:homey          # Diagnostic complet
-
-# 🧹 Maintenance
-npm run json:clean          # Nettoyage JSON
-npm run json:lint           # Validation JSON
-npm run format              # Formatage du code
-npm run lint                # Vérification ESLint
-```
-
-## 🔧 Installation
-
-### Installation complète avec Homey
-
-```bash
-# Installation des dépendances
-npm install
-
-# Installation globale Homey CLI (si pas déjà fait)
-npm install -g homey
-
-# Configuration Homey
-homey login
-
-# Validation de l'application
-homey app validate
-
-# Test en mode développement
-homey app run
-```
-
-### Variables d'environnement
-
-```bash
-# Mode pipeline (FAST, FULL, MCP, FALLBACK)
-export MODE=FULL
-
-# Utilisation MCP (Firecrawl)
-export USE_MCP=1
-
-# Utilisation des fallbacks
-export USE_FALLBACKS=1
-
-# Mode hors ligne
-export OFFLINE=1
-```
-
-## 📊 Pipeline MEGA
-
-### 🔄 **Flux de travail automatisé**
-
-```
-1. 📁 Préparation
-   ├── Activation compose
-   ├── Nettoyage JSON ciblé
-   └── Validation structure
-
-2. 🏗️ Construction
-   ├── Génération matrices
-   ├── Construction références
-   └── Dashboard web
-
-3. 🔍 Enrichissement
-   ├── Collecte evidence
-   ├── Enrichissement heuristique
-   ├── Scraping web automatique
-   └── Enrichissement depuis sources
-
-4. ✅ Validation
-   ├── Validation Homey
-   ├── Tests automatisés
-   └── Rapport final
-```
-
-### 🚀 **Lancement du pipeline**
-
-```bash
-# Pipeline complet avec MCP
-MODE=FULL USE_MCP=1 npm run orchestrate:mega
-
-# Pipeline rapide (validation uniquement)
-MODE=FAST npm run orchestrate:mega
-
-# Pipeline avec fallbacks uniquement
-MODE=FALLBACK USE_MCP=0 npm run orchestrate:mega
-```
-
-## 🌐 Dashboard Web
-
-### 📊 **Accès au dashboard**
-
-- **URL locale** : `docs/index.html`
-- **GitHub Pages** : `https://yourusername.github.io/tuya_repair/`
-- **Mise à jour automatique** via GitHub Actions
-
-### 🎨 **Fonctionnalités du dashboard**
-
-- **Recherche en temps réel** des drivers
-- **Filtrage par classe** et capacités
-- **Statistiques détaillées** et métriques
-- **Gestion des erreurs** et corrections
-- **Export des données** en JSON/CSV
-
-## 🤖 Outils d'automatisation
-
-### 🔧 **Scripts principaux**
-
-| Script | Description | Usage |
-|--------|-------------|-------|
-| `orchestrate.js` | Orchestrateur principal | `npm run orchestrate` |
-| `auto-driver-enricher.js` | Enrichissement automatique | `npm run enrich:auto` |
-| `web-scraper.js` | Scraping web avec fallbacks | `npm run scrape:web` |
-| `matrix-build.js` | Génération des matrices | `npm run matrix` |
-| `final-validation.js` | Validation complète | `npm run validate:final` |
-
-### 🌐 **Sources d'enrichissement**
-
-- **Homey Community Forum** : Discussions et solutions
-- **Zigbee2MQTT** : Base de données des appareils
-- **Blakadder** : Documentation et guides
-- **GitHub** : Code source et exemples
-- **MCP Firecrawl** : Scraping avancé
-
-## 📁 Structure du projet
-
-```
-tuya_repair/
-├── 📁 drivers/                    # Drivers des appareils
-│   ├── tuya_zigbee/              # Drivers Tuya spécifiques
-│   ├── generic/                   # Drivers génériques
-│   └── zigbee/                    # Drivers Zigbee standards
-├── 🛠️ tools/                      # Outils d'automatisation
-│   ├── orchestrate.js            # Orchestrateur principal
-│   ├── auto-driver-enricher.js   # Enrichissement automatique
-│   ├── web-scraper.js            # Scraping web
-│   └── validation/               # Scripts de validation
-├── 📊 matrices/                   # Matrices générées
-│   ├── driver_matrix.json        # Matrice des drivers
-│   └── capability_matrix.json    # Matrice des capacités
-├── 🔗 references/                 # Références et requêtes
-├── 📈 docs/                       # Dashboard web
-├── 🚀 .github/                    # GitHub Actions
-│   └── workflows/                 # Pipelines CI/CD
-├── 📋 evidence/                   # Données d'enrichissement
-└── 📦 dumps/                      # Diagnostics et rapports
-```
-
-## ⚡ GitHub Actions
-
-### 🔄 **Pipelines automatisés**
-
-#### **MEGA Pipeline** (`mega-pipeline.yml`)
-- **Déclenchement** : Push, PR, planifié (quotidien)
-- **Actions** : Build, validation, enrichissement, déploiement
-- **Environnements** : Node.js 18, 20
-- **Intégration MCP** : Firecrawl avec fallbacks
-
-#### **Validation** (`validate.yml`)
-- **Validation Homey** automatique
-- **Tests de structure** des drivers
-- **Vérification JSON** et métadonnées
-
-#### **Dashboard** (`dashboard.yml`)
-- **Construction automatique** du dashboard
-- **Déploiement GitHub Pages**
-- **Mise à jour des statistiques**
-
-### 📊 **Statut des Actions**
-
-[![MEGA Pipeline](https://github.com/yourusername/tuya_repair/workflows/MEGA%20Pipeline/badge.svg)](https://github.com/yourusername/tuya_repair/actions)
-[![Validation](https://github.com/yourusername/tuya_repair/workflows/Validation/badge.svg)](https://github.com/yourusername/tuya_repair/actions)
-[![Dashboard](https://github.com/yourusername/tuya_repair/workflows/Dashboard/badge.svg)](https://github.com/yourusername/tuya_repair/actions)
-
-## 🌍 Internationalisation
-
-### 🌐 **Langues supportées**
-
-- **🇫🇷 Français** (principal)
-- **🇺🇸 Anglais** (complet)
-- **🇳🇱 Néerlandais** (partiel)
-- **🇱🇰 Tamil** (basique)
-
-### 📝 **Traductions automatiques**
-
-- **Détection automatique** des langues manquantes
-- **Génération des traductions** depuis l'anglais
-- **Validation des traductions** complètes
-- **Mise à jour automatique** des métadonnées
-
-## 🔍 Validation et tests
-
-### ✅ **Tests automatisés**
-
+### Validation Homey
 ```bash
 # Validation complète
-npm run validate:final
+npm run validate
 
-# Tests spécifiques
-npm run check:drivers      # Structure des drivers
-npm run json:lint          # Validation JSON
-npm run homey:validate     # Validation Homey
+# Validation rapide
+homey app validate -l debug
 ```
 
-### 📊 **Métriques de qualité**
-
-- **Structure des drivers** : 469/520 valides
-- **Validation JSON** : 46994/47547 valides
-- **Traductions** : 276/520 (53.1%)
-- **GitHub Actions** : 21/21 valides
-- **Dashboard** : 2/2 valides
-
-### 🔧 **Correction automatique**
-
+### Tests automatisés
 ```bash
-# Correction des problèmes détectés
-npm run fix:validation
+# Tests unitaires
+npm test
 
-# Nettoyage automatique
-npm run json:clean
-npm run json:bom
+# Tests d'intégration
+npm run test:integration
 ```
 
-## 📈 Statistiques
+## 📈 **Statistiques du Projet**
 
-### 🎯 **Métriques du projet**
+- **Version:** 3.7.0
+- **Drivers:** 3+ (en cours de développement)
+- **Capacités:** 15+
+- **Fabricants:** 10+
+- **Modules Core:** 8
+- **Utilitaires:** 5+
+- **Support SDK:** Homey SDK 3
 
-- **Total drivers** : 7,282
-- **Drivers Tuya** : 5,847
-- **Drivers génériques** : 1,435
-- **Capacités supportées** : 47
-- **Classes d'appareils** : 12
-- **Taux de validation** : 98.8%
+## 🌐 **Support Multilingue**
 
-### 📊 **Évolution**
+Le projet supporte officiellement :
+1. **English (EN)** - Langue principale
+2. **Français (FR)** - Support complet
+3. **Nederlands (NL)** - Support complet
 
-- **Version actuelle** : 3.4.2
-- **Dernière mise à jour** : 2025-08-15
-- **Commits** : 1,247
-- **Contributions** : 23
-- **Issues résolues** : 156
+## 🤝 **Contribution**
 
-## 🤝 Contribution
+Les contributions sont les bienvenues ! Voir [CONTRIBUTING.md](CONTRIBUTING.md) pour plus de détails.
 
-### 🚀 **Comment contribuer**
+### Comment contribuer
+1. Fork le projet
+2. Créer une branche feature (`git checkout -b feature/AmazingFeature`)
+3. Commit les changements (`git commit -m 'Add some AmazingFeature'`)
+4. Push vers la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrir une Pull Request
 
-1. **Fork** le projet
-2. **Créer** une branche feature (`git checkout -b feature/AmazingFeature`)
-3. **Commit** vos changements (`git commit -m 'Add AmazingFeature'`)
-4. **Push** vers la branche (`git push origin feature/AmazingFeature`)
-5. **Ouvrir** une Pull Request
+## 📄 **Licence**
 
-### 📋 **Guidelines**
+MIT License - voir [LICENSE](LICENSE) pour plus de détails.
 
-- **Code style** : ESLint + Prettier
-- **Tests** : Validation Homey obligatoire
-- **Documentation** : README et commentaires
-- **Traductions** : Français + Anglais minimum
+## 🆘 **Support**
 
-### 🔧 **Développement local**
+- **Issues:** [GitHub Issues](https://github.com/dlnraja/com.tuya.zigbee/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/dlnraja/com.tuya.zigbee/discussions)
+- **Wiki:** [GitHub Wiki](https://github.com/dlnraja/com.tuya.zigbee/wiki)
+
+## 🗺️ **Roadmap**
+
+### Version 3.8.0 (Prochaine)
+- [ ] Ajout de 10+ nouveaux drivers
+- [ ] Support des capteurs environnementaux
+- [ ] Interface d'administration avancée
+- [ ] Intégration avec Homey Cloud
+
+### Version 4.0.0 (Future)
+- [ ] Support complet Zigbee 2.0
+- [ ] Interface utilisateur moderne
+- [ ] Support des appareils Matter
+- [ ] Intégration avec d'autres écosystèmes
+
+## 📊 **Métriques**
+
+![Drivers](https://img.shields.io/badge/Drivers-3+-blue)
+![Version](https://img.shields.io/badge/Version-3.7.0-green)
+![SDK](https://img.shields.io/badge/SDK-Homey%203-blue)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+## 🎉 **Remerciements**
+
+- **Homey Team** - Pour le SDK 3
+- **Tuya Community** - Pour le support continu
+- **Contributeurs** - Pour leurs contributions
+
+---
+
+**Développé avec ❤️ par dlnraja pour la communauté Homey**
+
+
+## 🚀 Nouvelles Fonctionnalités
+
+### Système de Plugins
+- Architecture modulaire extensible
+- Gestionnaire de plugins automatique
+- API standardisée pour les développeurs
+
+### Dashboard Amélioré
+- Interface utilisateur moderne
+- Thèmes sombres/clairs
+- Widgets personnalisables
+
+### API REST
+- Endpoints standardisés
+- Documentation automatique
+- Gestion des erreurs robuste
+
+### Système de Tests
+- Tests automatisés
+- Couverture de code
+- Rapports détaillés
+
+### Monitoring
+- Métriques en temps réel
+- Surveillance des performances
+- Alertes automatiques
+
+### Cache Intelligent
+- Mise en cache automatique
+- Gestion de la mémoire optimisée
+- Performance améliorée
+
+## 🔧 Améliorations Implémentées
+
+- **ESLint** : Règles de qualité du code strictes
+- **Prettier** : Formatage automatique du code
+- **TypeScript** : Support du typage statique
+- **Sécurité** : Validation des entrées et gestion des erreurs
+- **Performance** : Optimisations et mise en cache
+- **Documentation** : Génération automatique et guides interactifs
+
+## 📊 Métriques du Projet
+
+- **Drivers** : 4 drivers Tuya et Zigbee
+- **Tests** : 3 tests automatisés
+- **Documentation** : 0 pages de documentation
+- **Plugins** : 0 plugins disponibles
+
+## 🚀 Installation et Utilisation
 
 ```bash
-# Installation développement
+# Installation
 npm install
 
-# Mode watch
-npx nodemon
+# Validation
+npm run validate
 
-# Formatage
-npm run format
+# Tests
+npm run test
 
 # Linting
 npm run lint
+
+# Formatage
+npm run format
 ```
 
-## 📄 Licence
+## 🤝 Contribution
 
-Ce projet est sous licence **MIT** - voir le fichier [LICENSE](LICENSE) pour plus de détails.
+Ce projet utilise maintenant un système de plugins modulaire. Consultez la documentation des plugins pour contribuer.
 
-### 📜 **Détails de la licence**
+## 📈 Roadmap
 
-- **Utilisation commerciale** : ✅ Autorisée
-- **Modification** : ✅ Autorisée
-- **Distribution** : ✅ Autorisée
-- **Attribution** : ✅ Requise
-- **Responsabilité** : ❌ Limitée
+- [ ] Marketplace de drivers communautaire
+- [ ] Synchronisation cloud multi-appareils
+- [ ] Interface mobile native
+- [ ] Intégration avec d'autres écosystèmes IoT
+- [ ] Intelligence artificielle pour l'optimisation automatique
 
----
-
-## 🌟 **Support et communauté**
-
-- **📧 Email** : support@tuya-community.com
-- **💬 Discord** : [Tuya Community](https://discord.gg/tuya)
-- **📱 Homey Forum** : [Thread officiel](https://community.homey.app/t/tuya-zigbee-universal)
-- **🐛 Issues** : [GitHub Issues](https://github.com/yourusername/tuya_repair/issues)
-- **📖 Wiki** : [Documentation complète](https://github.com/yourusername/tuya_repair/wiki)
-
----
-
-<div align="center">
-
-**⭐ Si ce projet vous aide, n'oubliez pas de le star sur GitHub ! ⭐**
-
-*Fait avec ❤️ par la communauté Tuya pour la communauté Homey*
-
-</div>

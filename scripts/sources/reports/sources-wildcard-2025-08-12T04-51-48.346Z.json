@@ -1,0 +1,27 @@
+{
+  "timestamp": "2025-08-12T04:51:48.346Z",
+  "sources": {
+    "github": {
+      "issues": 0,
+      "prs": 0,
+      "forks": 0
+    },
+    "forum": {
+      "enabled": false,
+      "notes": "topic Tuya Zigbee scanned superficially"
+    },
+    "z2m_supported": {
+      "enabled": true,
+      "note": "Zigbee2MQTT supported devices page"
+    },
+    "fetchers": [
+      "blakadder-seed",
+      "zha-seed",
+      "deconz-scan"
+    ]
+  },
+  "queue": {
+    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\queue\\todo.json",
+    "note": "Aggregated data from all sources for driver enrichment"
+  }
+}

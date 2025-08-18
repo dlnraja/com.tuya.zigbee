@@ -1,0 +1,23 @@
+# Ajout des nouveaux scripts au package.json
+ = 'package.json'
+ = Get-Content  | ConvertFrom-Json
+
+# Nouveaux scripts à ajouter
+ = @{
+    'mega:scraping' = 'node tools/core/scraping-engine.js'
+    'mega:failover' = 'node tools/core/failover-tester.js'
+    'mega:scraping:homey' = 'node tools/core/scraping-engine.js --source=homey-forums'
+    'mega:scraping:alternatives' = 'node tools/core/scraping-engine.js --source=alternative-sources'
+    'mega:scraping:repos' = 'node tools/core/scraping-engine.js --source=driver-repositories'
+    'mega:test:failover' = 'node tools/core/failover-tester.js --mode=comprehensive'
+}
+
+# Ajouter les nouveaux scripts
+foreach ( in .GetEnumerator()) {
+    .scripts[.Key] = .Value
+}
+
+# Sauvegarder le package.json
+ | ConvertTo-Json -Depth 10 | Set-Content  -Encoding UTF8
+
+Write-Host '✅ Nouveaux scripts ajoutés au package.json'

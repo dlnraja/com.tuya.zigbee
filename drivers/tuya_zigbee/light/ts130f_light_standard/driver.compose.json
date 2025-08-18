@@ -44,9 +44,18 @@
     "modelId": [
       "TS130F"
     ],
-    "productId": [
-      "TS130F"
-    ]
+    "productId": "TS130F",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genBasic",
+          "genOnOff"
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
   },
   "tuya_dps": {
     "1": {

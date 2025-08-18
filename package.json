@@ -1,63 +1,25 @@
 {
-  "name": "universal-tuya-zigbee",
-  "version": "3.6.0",
-  "description": "Universal Tuya Zigbee devices support for Homey",
-  "main": "app.js",
+  "name": "com.tuya.zigbee",
+  "version": "3.7.0",
+  "description": "Tuya Zigbee Drivers for Homey SDK 3",
+  "main": "src/core/orchestrator.js",
   "scripts": {
-    "format": "prettier -w .",
-    "lint": "eslint . --ext .js",
-    "validate:fast": "homey app validate -l debug",
-    "compose:on": "node tools/enable-compose.js",
-    "json:bom": "node tools/strip-bom.js",
-    "json:lint": "node tools/lint-json.js",
-    "json:clean": "node tools/clean-json-only.js",
-    "check:drivers": "node tools/check-drivers.js",
-    "matrix": "node tools/matrix-build.js && node tools/build-references.js",
-    "dashboard": "node tools/build-dashboard.js",
-    "enrich:heur": "node tools/enrich-heuristics.js",
-    "enrich:evidence": "node tools/enrich-from-evidence.js",
-    "orchestrate": "node tools/orchestrate.js",
-    "orchestrate:simple": "node tools/orchestrate-simple.js",
-    "enrich:auto": "node tools/auto-driver-enricher.js",
-    "scrape:web": "node tools/web-scraper.js",
-    "orchestrate:mega": "node tools/core/orchestrator.js",
-    "mega:prep": "node tools/core/preparation.js",
-    "mega:validate": "node tools/core/validator.js",
-    "mega:matrix": "node tools/core/matrix-builder.js",
-    "mega:dashboard": "node tools/core/dashboard-builder.js",
-    "mega:evidence": "node tools/core/evidence-collector.js",
-    "mega:enrich": "node tools/core/enricher.js",
-    "mega:web": "node tools/core/web-enricher.js",
-    "mega:final": "node tools/core/final-validator.js",
-    "mega:deploy": "node tools/core/deployer.js",
-    "mega:convert": "node tools/core/script-converter.js",
-    "mega:consolidate": "node tools/core/script-consolidator.js",
-    "dump:homey": "node tools/dump.js",
-    "dump:homey:fast": "node tools/dump.js 60",
-    "validate:final": "node tools/final-validation.js",
-    "fix:validation": "node tools/fix-validation-issues.js"
-  },
-  "keywords": [
-    "tuya",
-    "zigbee",
-    "homey",
-    "smart-home",
-    "automation"
-  ],
-  "author": "Tuya Community",
-  "license": "MIT",
-  "devDependencies": {
-    "eslint": "^9.9.0",
-    "glob": "^11.0.0",
-    "node-fetch": "^3.3.2",
-    "nodemon": "^3.1.0",
-    "prettier": "^3.3.3"
+    "start": "homey app run",
+    "run": "homey app run",
+    "build": "homey app build",
+    "deploy": "homey app deploy",
+    "orchestrate:mega": "node src/core/orchestrator.js",
+    "test": "node src/testing/test-runner.js",
+    "validate": "homey app validate -l debug",
+    "validate:loop": "node tools/validate_loop.js",
+    "lint": "eslint src/**/*.js",
+    "format": "prettier --write src/**/*.js"
   },
   "dependencies": {
-    "archiver": "^7.0.1",
-    "homey": "^2.0.0"
+    "homey": "^3.0.0"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=18.0.0",
+    "homey": ">=3.0.0"
   }
 }
