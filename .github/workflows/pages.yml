@@ -1,60 +1,21 @@
-name: 🚀 Deploy to GitHub Pages
-
+name: Deploy Dashboard
 on:
-  push:
-    branches: [ main, master ]
-    paths:
-      - 'docs/**'
-      - 'matrices/**'
-      - 'references/**'
   workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
+  push:
+    paths:
+      - 'public/**'
+      - '.github/workflows/pages.yml'
+permissions: { pages: write, id-token: write, contents: read }
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: 📥 Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: 🟢 Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-
-      - name: 📦 Install dependencies
-        run: npm ci || npm i
-
-      - name: 🚀 Build docs (fallback)
-        run: |
-          echo "🌐 Build docs or fallback index.html"
-          mkdir -p docs
-          if [ ! -f docs/index.html ]; then
-            echo "<html><head><meta charset=\"utf-8\"><title>Tuya Zigbee</title></head><body><h1>Tuya Zigbee</h1><p>Docs will be generated soon.</p></body></html>" > docs/index.html
-          fi
-
-      - name: 🚀 Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: 📤 Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './docs'
-
-      - name: 🚀 Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - uses: actions/checkout@v4
+      - run: mkdir -p dist && cp -r public/dashboard dist/
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: 'dist' }
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/deploy-pages@v4
