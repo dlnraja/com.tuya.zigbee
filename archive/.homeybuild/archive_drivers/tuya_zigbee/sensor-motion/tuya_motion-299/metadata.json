@@ -1,0 +1,20 @@
+{
+  "id": "tuya-motion-299_plug_standard",
+  "name": "tuya tuya-motion-299",
+  "category": "plug",
+  "vendor": "tuya",
+  "model": "tuya-motion-299",
+  "type": "tuya_zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:08:59.179Z",
+  "updatedAt": "2025-08-13T12:08:59.180Z"
+}

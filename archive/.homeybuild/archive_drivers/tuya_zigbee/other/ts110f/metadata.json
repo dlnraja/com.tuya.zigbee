@@ -1,0 +1,13 @@
+{
+  "id": "dimmer_ts110f",
+  "name": "dimmer ts110f",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "0x0006"
+  ],
+  "endpoints": [
+    1
+  ]
+}

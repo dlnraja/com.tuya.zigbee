@@ -1,0 +1,260 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.dlnraja.tuya.zigbee",
+  "name": "Tuya Zigbee Drivers",
+  "version": "3.7.0",
+  "sdk": 3,
+  "category": "light",
+  "author": "dlnraja",
+  "compatibility": ">=3.0.0",
+  "permissions": [
+    "homey:device:tuya",
+    "homey:device:zigbee"
+  ],
+  "drivers": [
+    {
+      "id": "climate-trv-tuya",
+      "name": {
+        "en": "Tuya TRV",
+        "fr": "Vanne thermostatique Tuya"
+      },
+      "class": "thermostat",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "locked",
+        "alarm_battery"
+      ],
+      "capabilitiesOptions": {
+        "target_temperature": {
+          "min": 5,
+          "max": 30,
+          "step": 0.5
+        },
+        "measure_temperature": {
+          "decimals": 1
+        },
+        "alarm_battery": {
+          "title": {
+            "en": "Low battery",
+            "fr": "Batterie faible"
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/climate-trv-tuya/assets/small.png",
+        "large": "drivers/climate-trv-tuya/assets/large.png",
+        "xlarge": "drivers/climate-trv-tuya/assets/xlarge.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_*",
+          "_TZ3000_*",
+          "Tuya",
+          "Moes",
+          "HOBEIAN"
+        ],
+        "productId": [
+          "TS0601",
+          "TS0201",
+          "TS0202"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": {
+              "input": [
+                "genBasic",
+                "genPowerCfg",
+                "hvacThermostat",
+                "hvacUserInterfaceCfg"
+              ],
+              "output": [
+                "genBasic",
+                "genPowerCfg",
+                "hvacThermostat"
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cover-curtain-tuya",
+      "name": {
+        "en": "Tuya Curtain/Blind",
+        "fr": "Rideau/Store Tuya"
+      },
+      "class": "windowcoverings",
+      "capabilities": [
+        "windowcoverings_set",
+        "windowcoverings_state",
+        "alarm_battery"
+      ],
+      "capabilitiesOptions": {
+        "windowcoverings_set": {
+          "min": 0,
+          "max": 1,
+          "step": 0.01
+        },
+        "alarm_battery": {
+          "title": {
+            "en": "Low battery",
+            "fr": "Batterie faible"
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/cover-curtain-tuya/assets/small.png",
+        "large": "drivers/cover-curtain-tuya/assets/large.png",
+        "xlarge": "drivers/cover-curtain-tuya/assets/xlarge.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_*",
+          "_TZ3000_*",
+          "Tuya"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": {
+              "input": [
+                "genBasic",
+                "genPowerCfg",
+                "closuresWindowCovering"
+              ],
+              "output": [
+                "genBasic",
+                "genPowerCfg",
+                "closuresWindowCovering"
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "plug-tuya-universal",
+      "name": {
+        "en": "Tuya Plug (TS011F)",
+        "fr": "Prise Tuya (TS011F)"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power"
+      ],
+      "capabilitiesOptions": {
+        "measure_power": {
+          "decimals": 1,
+          "units": {
+            "en": "W",
+            "fr": "W"
+          }
+        },
+        "meter_power": {
+          "decimals": 3,
+          "units": {
+            "en": "kWh",
+            "fr": "kWh"
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/plug-tuya-universal/assets/small.png",
+        "large": "drivers/plug-tuya-universal/assets/large.png",
+        "xlarge": "drivers/plug-tuya-universal/assets/xlarge.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_iiacqpdz",
+          "_TZ3000_*",
+          "_TZE200_*",
+          "Tuya"
+        ],
+        "productId": [
+          "TS011F",
+          "TS0115",
+          "TS0*"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": {
+              "input": [
+                "genBasic",
+                "genOnOff",
+                "haElectricalMeasurement",
+                "seMetering"
+              ],
+              "output": [
+                "genBasic",
+                "genOnOff"
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "remote-scene-tuya",
+      "name": {
+        "en": "Tuya Scene Remote (TS004x)",
+        "fr": "Télécommande de scènes Tuya (TS004x)"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery"
+      ],
+      "capabilitiesOptions": {
+        "alarm_battery": {
+          "title": {
+            "en": "Low battery",
+            "fr": "Batterie faible"
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/remote-scene-tuya/assets/small.png",
+        "large": "drivers/remote-scene-tuya/assets/large.png",
+        "xlarge": "drivers/remote-scene-tuya/assets/xlarge.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_gwkzibhs",
+          "_TZ3000_5bpeda8u",
+          "_TZ3000_bzzgvet0",
+          "_TZ3000_*",
+          "_TZE200_*",
+          "Tuya"
+        ],
+        "productId": [
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS004F",
+          "TS0*"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": {
+              "input": [
+                "genBasic",
+                "genPowerCfg",
+                "genOnOff"
+              ],
+              "output": [
+                "genBasic",
+                "genPowerCfg",
+                "genOnOff"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Ac_Plug_Standard_Default",
+  "type": "tuya_zigbee",
+  "category": "ac",
+  "source": "drivers\\tuya_zigbee\\models\\tuya-ac-563_plug_standard_default",
+  "created": "2025-08-14T15:25:13.813Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

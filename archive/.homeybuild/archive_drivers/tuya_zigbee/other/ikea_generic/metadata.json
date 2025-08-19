@@ -1,0 +1,13 @@
+{
+  "id": "cover_ikea",
+  "name": "cover ikea",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "0x0006"
+  ],
+  "endpoints": [
+    1
+  ]
+}

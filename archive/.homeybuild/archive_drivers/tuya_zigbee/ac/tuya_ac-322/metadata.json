@@ -1,0 +1,20 @@
+{
+  "id": "tuya-ac-322_plug_standard",
+  "name": "tuya tuya-ac-322",
+  "category": "plug",
+  "vendor": "tuya",
+  "model": "tuya-ac-322",
+  "type": "tuya_zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:08:58.537Z",
+  "updatedAt": "2025-08-13T12:08:58.537Z"
+}

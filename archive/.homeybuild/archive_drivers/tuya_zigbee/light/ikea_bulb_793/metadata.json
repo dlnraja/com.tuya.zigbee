@@ -1,0 +1,20 @@
+{
+  "id": "ikea-bulb-793_light_standard",
+  "name": "ikea ikea-bulb-793",
+  "category": "light",
+  "vendor": "ikea",
+  "model": "ikea-bulb-793",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:02.281Z",
+  "updatedAt": "2025-08-13T12:09:02.282Z"
+}

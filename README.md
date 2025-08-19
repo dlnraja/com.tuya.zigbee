@@ -1,11 +1,24 @@
-# 🌐 Tuya Zigbee Drivers for Homey (Lite)
+# 🌐 Tuya Zigbee Drivers for Homey
 
-[![CI](https://github.com/dlnraja/tuya-zigbee/actions/workflows/ci.yml/badge.svg)](https://github.com/dlnraja/tuya-zigbee/actions/workflows/ci.yml)
-[![Pages](https://github.com/dlnraja/tuya-zigbee/actions/workflows/pages.yml/badge.svg)](https://dlnraja.github.io/tuya-zigbee/)
+[![CI](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/ci.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/ci.yml)
+[![Pages](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/pages.yml/badge.svg)](https://dlnraja.github.io/com.tuya.zigbee/)
+[![SDK3](https://img.shields.io/badge/SDK-3-green)](https://apps.developer.homey.app/)
 
 ## Overview
 
 This Homey app provides **100% local Zigbee drivers** for Tuya devices. No cloud API, no network dependencies at runtime.
+
+## How We Differ from Upstream
+
+This is a fork of [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) with significant architectural improvements:
+
+- **Clean architecture**: Drivers organized by product type (not TSxxxx codes)
+- **Overlay system**: Vendor/firmware specifics in JSON overlays (only confirmed ones at runtime)
+- **Offline scoring**: Confidence-based device proposal system
+- **Performance**: FIFO DP queue, debouncing, retry logic with jitter
+- **Fixed writeInteger**: Implements the missing Tuya cluster write with retry (#1263)
+
+We thank JohanBendz and all contributors to the original project. This fork is MIT licensed.
 
 ### Key Features
 - **SDK3 + Homey Compose** - Modern architecture

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="smokeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#636E72;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2D3436;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="40" fill="#2C3E50"/>
+  <circle cx="128" cy="128" r="60" fill="url(#smokeGrad)"/>
+  <circle cx="128" cy="128" r="40" fill="#FFFFFF" opacity="0.3"/>
+  <circle cx="128" cy="128" r="20" fill="#FFFFFF"/>
+  <path d="M128 68 L140 108 L180 108 L150 138 L160 178 L128 158 L96 178 L106 138 L76 108 L116 108 Z" fill="#E74C3C"/>
+  <text x="128" y="200" text-anchor="middle" font-family="Arial" font-size="14" fill="white" font-weight="bold">SMOKE</text>
+</svg>
