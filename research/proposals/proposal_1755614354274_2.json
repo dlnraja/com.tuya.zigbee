@@ -1,0 +1,31 @@
+{
+  "status": "proposed",
+  "confidence": 0.919,
+  "sources": [
+    "https://github.com/JohanBendz/com.tuya.zigbee/issues/123"
+  ],
+  "productIds": [
+    "TS011F"
+  ],
+  "manufacturerName": "_TZ3000_18ejxno0",
+  "type": "plug",
+  "dp": {
+    "1": {
+      "cap": "onoff",
+      "to": "bool"
+    },
+    "16": {
+      "cap": "power_w",
+      "to": "num/10"
+    },
+    "17": {
+      "cap": "energy_kwh",
+      "to": "num/1000"
+    }
+  },
+  "reports": {
+    "power_interval_sec": 30,
+    "energy_interval_sec": 300
+  },
+  "notes": "Auto-inferred from 1 sources"
+}

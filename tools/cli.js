@@ -126,6 +126,68 @@ function test() {
   console.log('::END::TEST::OK\n');
 }
 
+// Commands implementation
+function harvest() {
+  console.log('🌾 Harvesting...');
+  const HarvestSystem = require('./harvest');
+  const harvester = new HarvestSystem();
+  const results = harvester.harvest();
+  console.log(`✅ Harvest OK (${results.length} items)`);
+  console.log('::END::HARVEST::OK\n');
+}
+
+function infer() {
+  console.log('🧮 Inferring...');
+  const InferenceEngine = require('./inference');
+  const engine = new InferenceEngine();
+  const proposals = engine.infer();
+  console.log(`✅ Infer OK (${proposals.length} proposals)`);
+  console.log('::END::INFER::OK\n');
+}
+
+function propose() {
+  console.log('💡 Proposing overlays...');
+  // Move proposals to overlays directory
+  const proposalsDir = 'research/proposals';
+  const overlaysDir = 'lib/tuya/overlays/vendors';
+  
+  if (fs.existsSync(proposalsDir)) {
+    const files = fs.readdirSync(proposalsDir).filter(f => f.endsWith('.json'));
+    files.forEach(file => {
+      const proposal = JSON.parse(fs.readFileSync(path.join(proposalsDir, file), 'utf8'));
+      
+      // Determine target directory
+      const vendor = proposal.manufacturerName || '_unknown';
+      const vendorDir = path.join(overlaysDir, vendor);
+      if (!fs.existsSync(vendorDir)) fs.mkdirSync(vendorDir, { recursive: true });
+      
+      // Save overlay
+      const targetFile = path.join(vendorDir, `${proposal.type || 'generic'}.json`);
+      fs.writeFileSync(targetFile, JSON.stringify(proposal, null, 2));
+    });
+    console.log(`  Moved ${files.length} proposals to overlays`);
+  }
+  
+  console.log('✅ Propose OK');
+  console.log('::END::PROPOSE::OK\n');
+}
+
+function fixValidate() {
+  console.log('🔧 Fix-validate loop...');
+  for (let i = 0; i < 3; i++) {
+    const r = runCmd('node', ['tools/validate-local.js'], 'FIX_VALIDATE');
+    if (/OK/i.test(r.out)) {
+      console.log('✅ Fix-validate OK');
+      console.log('::END::FIX_VALIDATE::OK\n');
+      return;
+    }
+    // Apply fixes here if needed
+  }
+  console.log('❌ Fix-validate failed');
+  console.log('::END::FIX_VALIDATE::FAIL\n');
+  process.exit(1);
+}
+
 // Main
 const cmd = process.argv[2];
 if (!fs.existsSync('reports')) fs.mkdirSync('reports');
@@ -136,13 +198,13 @@ switch (cmd) {
   case 'validate': validate(); break;
   case 'lint': lint(); break;
   case 'test': test(); break;
+  case 'harvest': harvest(); break;
+  case 'infer': infer(); break;
+  case 'propose': propose(); break;
+  case 'fix-validate': fixValidate(); break;
   case 'refactor':
   case 'schema-check':
   case 'images-check':
-  case 'fix-validate':
-  case 'ingest':
-  case 'infer':
-  case 'propose':
   case 'doctor':
   case 'assert':
   case 'pack':
