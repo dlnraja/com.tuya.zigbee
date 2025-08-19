@@ -1,0 +1,26 @@
+{
+  "status": "proposed",
+  "productIds": [
+    "TS0601"
+  ],
+  "dp": {
+    "1": {
+      "cap": "ctrl"
+    },
+    "2": {
+      "cap": "set_position"
+    },
+    "3": {
+      "cap": "position"
+    },
+    "4": {
+      "cap": "direction"
+    }
+  },
+  "reports": {},
+  "sources": [
+    "https://github.com/JohanBendz/com.tuya.zigbee/issues/123"
+  ],
+  "notes": "type:curtain",
+  "confidence": 0.9
+}

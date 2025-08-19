@@ -1,0 +1,24 @@
+{
+  "status": "proposed",
+  "confidence": 0.75,
+  "sources": [
+    "file://pairing-2025-08-10.log"
+  ],
+  "productIds": [
+    "TS011F"
+  ],
+  "dp": {
+    "1": {
+      "cap": "onoff"
+    },
+    "16": {
+      "cap": "measure_power",
+      "to": "num/10"
+    },
+    "17": {
+      "cap": "meter_power",
+      "to": "num/1000"
+    }
+  },
+  "notes": "type:plug"
+}

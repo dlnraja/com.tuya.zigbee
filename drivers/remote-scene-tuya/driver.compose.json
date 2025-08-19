@@ -3,6 +3,9 @@
   "name": { "en": "Tuya Scene Remote (TS004x)", "fr": "Télécommande de scènes Tuya (TS004x)" },
   "class": "sensor",
   "capabilities": ["alarm_battery"],
+  "capabilitiesOptions": {
+    "alarm_battery": { "title": { "en": "Low battery", "fr": "Batterie faible" } }
+  },
   "images": {
     "small": "drivers/remote-scene-tuya/assets/small.png",
     "large": "drivers/remote-scene-tuya/assets/large.png",

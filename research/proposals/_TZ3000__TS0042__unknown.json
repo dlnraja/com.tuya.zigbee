@@ -1,0 +1,19 @@
+{
+  "status": "proposed",
+  "confidence": 0.87,
+  "sources": [
+    "https://.../zigbee2mqtt/..."
+  ],
+  "productIds": [
+    "TS0042"
+  ],
+  "dp": {
+    "button1": {
+      "cap": "press"
+    },
+    "button2": {
+      "cap": "press"
+    }
+  },
+  "notes": "type:unknown"
+}
