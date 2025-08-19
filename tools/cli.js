@@ -22,16 +22,20 @@ function runCmd(cmd, argv, label, timeoutMs = 60000) {
       env: ENV,
       stdio: ['ignore', 'pipe', 'pipe'],
       timeout: timeoutMs,
-      windowsHide: true
+      windowsHide: true,
+      shell: false
     }).toString();
-    process.stdout.write(out);
-    process.stdout.write(`\n::END::${label}::OK\n`);
+    // Force multiple line breaks for PowerShell
+    console.log(out);
+    console.log(`::END::${label}::OK`);
+    console.log('');
     console.log('');
     return { code: 0, out };
   } catch (e) {
     const out = (e.stdout?.toString() || '') + (e.stderr?.toString() || e.message);
-    process.stdout.write(out);
-    process.stdout.write(`\n::END::${label}::FAIL\n`);
+    console.log(out);
+    console.log(`::END::${label}::FAIL`);
+    console.log('');
     console.log('');
     return { code: e.status ?? 1, out };
   }
