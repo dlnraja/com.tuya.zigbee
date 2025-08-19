@@ -1,0 +1,12 @@
+{
+  "family": "remote",
+  "description": "Tuya Scene Remote family overlay",
+  "dp": {
+    "1": { "cap": "button", "to": "num", "from": "num" },
+    "45": { "cap": "measure_battery", "to": "num", "from": "num" }
+  },
+  "reports": {
+    "button_interval_sec": 0,
+    "battery_interval_sec": 3600
+  }
+}
