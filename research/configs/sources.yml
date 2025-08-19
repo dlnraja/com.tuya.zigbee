@@ -1,34 +1,36 @@
 defaults:
   official_manufacturer: 0.92
-  official_platform:     0.88
-  zigbee_cert_listing:   0.86
-  upstream_repo:         0.85
-  z2m_converters_repo:   0.82
+  official_platform: 0.88
+  zigbee_cert_listing: 0.86
+  upstream_repo: 0.85
+  z2m_converters_repo: 0.82
   other_hub_driver_repo: 0.72
-  reputable_forum:       0.75
-  product_manual_pdf:    0.70
-  large_retailer:        0.55
-  tech_blog:             0.55
-  video_demo:            0.52
-  small_shop:            0.40
-  unknown_site:          0.25
-  local_pairing_log:     0.90
-  local_event_log:       0.88
-  local_sniffer_dump:    0.93
+  reputable_forum: 0.75
+  product_manual_pdf: 0.70
+  large_retailer: 0.55
+  tech_blog: 0.55
+  video_demo: 0.52
+  small_shop: 0.40
+  unknown_site: 0.25
+  local_pairing_log: 0.90
+  local_event_log: 0.88
+  local_sniffer_dump: 0.93
 
 bonuses:
   multi_source_agreement: +0.10
-  dp_log_evidence:        +0.15
-  xdevice_analogy:        +0.05
+  dp_log_evidence: +0.15
+  xdevice_analogy: +0.05
 
 penalties:
-  mf_mismatch:            -0.15
-  contradiction:          -0.20
-  single_source_only:     -0.10
+  mf_mismatch: -0.15
+  contradiction: -0.20
+  single_source_only: -0.10
 
-# (optionnel) Overrides par domaine si tu veux affiner plus tard
+# Overrides par domaine pour affiner
 overrides:
-  github.com/JohanBendz:  0.88
-  zigbee2mqtt.io:         0.82
-  community.homey.app:    0.75
-
+  github.com/JohanBendz: 0.88
+  github.com/Koenkk: 0.85
+  zigbee2mqtt.io: 0.82
+  community.homey.app: 0.75
+  developer.tuya.com: 0.92
+  csa-iot.org: 0.86

@@ -1,4 +1,12 @@
-propose: 0.60
-confirm: 0.85
-quarantine: 0.45
+propose_threshold: 0.60
+confirm_threshold: 0.85
+quarantine_threshold: 0.45
 
+# Règles additionnelles
+diversity_bonus_threshold: 3  # >= 3 domaines distincts pour bonus
+max_confidence: 1.0
+min_confidence: 0.0
+
+# Timeouts pour promotion automatique
+days_before_auto_quarantine: 90
+days_before_auto_disable: 180

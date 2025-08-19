@@ -1,63 +1,29 @@
 {
-  "productIds": [
-    "TS0601"
-  ],
-  "fwVariants": {
-    "1.x": {
-      "dp": {
-        "2": {
-          "cap": "target_temperature",
-          "to": "num/10",
-          "from": "mul/10"
-        },
-        "4": {
-          "cap": "measure_temperature",
-          "to": "num/10"
-        },
-        "7": {
-          "cap": "locked",
-          "to": "bool",
-          "from": "bool"
-        }
-      }
-    },
-    "2.x": {
-      "dp": {
-        "2": {
-          "cap": "target_temperature",
-          "to": "num/10",
-          "from": "mul/10"
-        },
-        "4": {
-          "cap": "measure_temperature",
-          "to": "num/10"
-        },
-        "7": {
-          "cap": "locked",
-          "to": "bool",
-          "from": "bool"
-        },
-        "45": {
-          "cap": "measure_battery",
-          "to": "num"
-        }
-      }
-    }
-  },
-  "status": "proposed",
-  "sources": [
-    "file://events-2025-08-19.log"
-  ],
-  "confidence": 0.93,
-  "notes": "type:climate-trv",
+  "status": "confirmed",
+  "confidence": 0.85,
+  "overlayVersion": "1.0.0",
+  "productIds": ["TS0601"],
+  "fwRange": ">=1.0 <3.0",
   "dp": {
-    "2": {
-      "cap": "target",
-      "to": "num/10"
-    },
-    "4": {
-      "cap": "measure",
-      "to": "num/10"
-    }
-  }
+    "2": { "cap": "target_temperature", "to": "num/10" },
+    "4": { "cap": "measure_temperature", "to": "num/10" },
+    "7": { "cap": "locked", "to": "bool" },
+    "45": { "cap": "alarm_battery", "to": "bool" }
+  },
+  "reports": {
+    "temperature_interval_sec": 60,
+    "battery_interval_sec": 3600
+  },
+  "features": {
+    "supportsChildLock": true,
+    "supportsBatteryAlarm": true,
+    "temperatureRange": { "min": 5, "max": 30 }
+  },
+  "exclusions": [],
+  "sources": [
+    "https://github.com/JohanBendz/com.tuya.zigbee",
+    "https://www.zigbee2mqtt.io/devices/TS0601_thermostat.html",
+    "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352/74"
+  ],
+  "notes": "TRV with child lock and battery monitoring"
 }
