@@ -1,0 +1,20 @@
+{
+  "id": "aqara-gas-474_plug_standard",
+  "name": "aqara aqara-gas-474",
+  "category": "plug",
+  "vendor": "aqara",
+  "model": "aqara-gas-474",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:04.737Z",
+  "updatedAt": "2025-08-13T12:09:04.737Z"
+}

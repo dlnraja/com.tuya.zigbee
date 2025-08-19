@@ -1,0 +1,32 @@
+{
+  "id": "generic_sensor_standard_default",
+  "name": "generic zigbee sensor   generic   standard default",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "0x0006"
+  ],
+  "endpoints": [
+    1
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_"
+    ],
+    "modelId": [
+      "TS0001"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          {
+            "id": "0x0006",
+            "server": true,
+            "client": false
+          }
+        ]
+      }
+    }
+  }
+}

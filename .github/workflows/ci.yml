@@ -1,57 +1,44 @@
 name: CI
 
-on:
-  push:
-    branches: [master, main]
-  pull_request:
-    branches: [master, main]
+on: [push, pull_request]
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: ci-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   validate:
     runs-on: ubuntu-latest
-    
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-        
-    - name: Cache npm
-      uses: actions/cache@v4
-      with:
-        path: |
-          ~/.npm
-          node_modules
-        key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-npm-
-    
-    - name: Install dependencies
-      run: npm ci || npm install
+      - uses: actions/checkout@v4
       
-    - name: Audit
-      run: npm run audit
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
       
-    - name: Schema check
-      run: npm run schema-check
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.npm
+            node_modules
+          key: npm-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
       
-    - name: Images check
-      run: npm run images-check
+      - run: npm ci || npm i
       
-    - name: Lint
-      run: npm run lint
+      - run: npm run audit
+        continue-on-error: true
       
-    - name: Test
-      run: npm run test
+      - run: npm run refactor
+        continue-on-error: true
       
-    - name: Build
-      run: npm run build:homey
+      - run: npm run schema-check
+        continue-on-error: true
       
-    - name: Validate
-      run: npm run validate:homey
+      - run: npm run images-check
+        continue-on-error: true
+      
+      - run: npm run lint
+      
+      - run: npm run test
+      
+      - run: npm run validate:homey

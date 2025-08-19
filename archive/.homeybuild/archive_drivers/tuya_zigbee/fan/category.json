@@ -1,0 +1,43 @@
+{
+  "category": "fan",
+  "name": {
+    "en": "Fans & Ventilation",
+    "fr": "Ventilateurs & Ventilation",
+    "nl": "Ventilatoren & Ventilatie",
+    "ta": "விசிறிகள் & காற்றோட்டம்"
+  },
+  "description": {
+    "en": "Tuya Zigbee fans & ventilation devices",
+    "fr": "Dispositifs ventilateurs & ventilation Tuya Zigbee",
+    "nl": "Tuya Zigbee ventilatoren & ventilatie apparaten",
+    "ta": "துயா ஜிக்பீ விசிறிகள் & காற்றோட்டம் சாதனங்கள்"
+  },
+  "version": "3.4.1",
+  "totalDrivers": 6,
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power",
+    "measure_temperature"
+  ],
+  "clusters": [
+    "0x0006",
+    "0x0008",
+    "0x0B04",
+    "0x0402",
+    "0x0000"
+  ],
+  "vendors": [
+    "tuya",
+    "aqara",
+    "ikea"
+  ],
+  "deviceTypes": [
+    "fan",
+    "ventilator",
+    "ceiling_fan",
+    "exhaust_fan"
+  ],
+  "status": "active",
+  "lastUpdate": "2025-08-14T17:38:42.440Z"
+}

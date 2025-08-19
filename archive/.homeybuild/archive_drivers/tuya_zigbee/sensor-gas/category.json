@@ -1,0 +1,43 @@
+{
+  "category": "sensor-gas",
+  "name": {
+    "en": "Gas Sensors",
+    "fr": "Capteurs de Gaz",
+    "nl": "Gassensoren",
+    "ta": "வாயு சென்சார்கள்"
+  },
+  "description": {
+    "en": "Tuya Zigbee gas sensors devices",
+    "fr": "Dispositifs capteurs de gaz Tuya Zigbee",
+    "nl": "Tuya Zigbee gassensoren apparaten",
+    "ta": "துயா ஜிக்பீ வாயு சென்சார்கள் சாதனங்கள்"
+  },
+  "version": "3.4.1",
+  "totalDrivers": 6,
+  "capabilities": [
+    "alarm_gas",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+  ],
+  "clusters": [
+    "0x0500",
+    "0x0402",
+    "0x0405",
+    "0x0001",
+    "0x0000"
+  ],
+  "vendors": [
+    "tuya",
+    "aqara",
+    "ikea"
+  ],
+  "deviceTypes": [
+    "gas_sensor",
+    "gas_detector",
+    "air_quality_sensor",
+    "co2_sensor"
+  ],
+  "status": "active",
+  "lastUpdate": "2025-08-14T17:38:42.432Z"
+}

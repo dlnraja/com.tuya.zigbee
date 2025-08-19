@@ -1,0 +1,9 @@
+{
+  "name": "Aqara_Strip_Device_Standard_Default",
+  "type": "tuya_zigbee",
+  "category": "light",
+  "source": "drivers\\tuya_zigbee\\models\\aqara-strip-599_device_standard_default",
+  "created": "2025-08-14T15:21:43.981Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

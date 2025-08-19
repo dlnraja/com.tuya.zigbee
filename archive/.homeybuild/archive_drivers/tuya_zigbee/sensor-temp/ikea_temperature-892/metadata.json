@@ -1,0 +1,20 @@
+{
+  "id": "ikea-temperature-892_plug_standard",
+  "name": "ikea ikea-temperature-892",
+  "category": "plug",
+  "vendor": "ikea",
+  "model": "ikea-temperature-892",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:08.868Z",
+  "updatedAt": "2025-08-13T12:09:08.868Z"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Ikea_Padlock_Device_Standard_Default",
+  "type": "tuya_zigbee",
+  "category": "lock",
+  "source": "drivers\\tuya_zigbee\\models\\ikea-padlock-984_device_standard_default",
+  "created": "2025-08-14T15:24:06.385Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

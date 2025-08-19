@@ -1,0 +1,20 @@
+{
+  "id": "aqara-shade-24_cover_standard",
+  "name": "aqara aqara-shade-24",
+  "category": "cover",
+  "vendor": "aqara",
+  "model": "aqara-shade-24",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:00.946Z",
+  "updatedAt": "2025-08-13T12:09:00.946Z"
+}

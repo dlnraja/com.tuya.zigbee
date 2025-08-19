@@ -1,0 +1,20 @@
+{
+  "id": "aqara-thermostat-831_plug_standard",
+  "name": "aqara aqara-thermostat-831",
+  "category": "plug",
+  "vendor": "aqara",
+  "model": "aqara-thermostat-831",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:06.783Z",
+  "updatedAt": "2025-08-13T12:09:06.783Z"
+}

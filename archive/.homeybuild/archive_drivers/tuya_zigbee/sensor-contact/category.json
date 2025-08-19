@@ -1,0 +1,37 @@
+{
+  "category": "sensor-contact",
+  "name": {
+    "en": "Tuya Contact Sensors",
+    "fr": "Capteurs de Contact Tuya",
+    "nl": "Tuya Contactsensoren",
+    "ta": "துயா தொடர்பு சென்சார்கள்"
+  },
+  "description": {
+    "en": "Pure Tuya tuya contact sensors (non-Zigbee)",
+    "fr": "capteurs de contact tuya Tuya purs (non-Zigbee)",
+    "nl": "Pure Tuya tuya contactsensoren (niet-Zigbee)",
+    "ta": "தூய துயா துயா தொடர்பு சென்சார்கள் (ஜிக்பீ அல்ல)"
+  },
+  "version": "3.4.1",
+  "totalDrivers": 0,
+  "capabilities": [
+    "alarm_contact",
+    "measure_temperature",
+    "measure_battery"
+  ],
+  "clusters": [
+    "0x0500",
+    "0x0402",
+    "0x0001"
+  ],
+  "vendors": [
+    "tuya"
+  ],
+  "deviceTypes": [
+    "tuya_device",
+    "tuya_sensor",
+    "tuya_switch"
+  ],
+  "status": "active",
+  "lastUpdate": "2025-08-14T17:38:42.457Z"
+}
