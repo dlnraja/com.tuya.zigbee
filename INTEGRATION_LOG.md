@@ -142,3 +142,123 @@
 ```
 
 ```
+
+[validate]
+```
+
+
+```
+
+[validate]
+```
+spawnSync npx ENOENT
+
+```
+
+[build]
+```
+spawnSync npx ENOENT
+
+```
+
+[build]
+```
+spawnSync npx ENOENT
+
+```
+
+[build]
+```
+spawnSync npx ENOENT
+
+```
+
+[build]
+```
+spawnSync npx ENOENT
+
+```
+
+[build]
+```
+spawnSync homey ENOENT
+
+```
+
+[build]
+```
+spawnSync homey ENOENT
+
+```
+
+[validate]
+```
+spawnSync npx ENOENT
+
+```
+
+[validate]
+```
+spawnSync npx ENOENT
+
+```
+
+[validate]
+```
+spawnSync homey ENOENT
+
+```
+
+[build]
+```
+spawnSync homey ENOENT
+
+```
+
+[build]
+```
+spawnSync homey ENOENT
+
+```
+
+[build]
+```
+Building app.json from Compose files...
+  Adding driver: climate-trv-tuya
+  Adding driver: cover-curtain-tuya
+  Adding driver: plug-tuya-universal
+  Adding driver: remote-scene-tuya
+✓ app.json built successfully
+  Total drivers: 4
+
+```
+
+[validate]
+```
+Validating app.json locally...
+Running local homey validate...
+
+❌ ERRORS:
+  - Homey: Error: missing ) after argument list
+
+⚠️  WARNINGS:
+  - Driver[0] (climate-trv-tuya): Missing driver.js (will use default)
+  - Driver[1] (cover-curtain-tuya): Missing driver.js (will use default)
+  - Driver[2] (plug-tuya-universal): Missing driver.js (will use default)
+  - Driver[3] (remote-scene-tuya): Missing driver.js (will use default)
+
+✗ Validation result: FAILED
+
+```
+
+[validate]
+```
+Validating app.json locally...
+Running local homey validate...
+
+❌ ERRORS:
+  - Homey: Error: missing ) after argument list
+
+✗ Validation result: FAILED
+
+```

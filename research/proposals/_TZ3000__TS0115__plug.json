@@ -1,0 +1,20 @@
+{
+  "status": "proposed",
+  "confidence": 0.75,
+  "sources": [
+    "file://manual-ts0115.pdf"
+  ],
+  "productIds": [
+    "TS0115"
+  ],
+  "dp": {
+    "1": {
+      "cap": "onoff"
+    },
+    "16": {
+      "cap": "measure_power",
+      "to": "num/10"
+    }
+  },
+  "notes": "type:plug"
+}

@@ -3,6 +3,10 @@
   "name": { "en": "Tuya Plug (TS011F)", "fr": "Prise Tuya (TS011F)" },
   "class": "socket",
   "capabilities": ["onoff","measure_power","meter_power"],
+  "capabilitiesOptions": {
+    "measure_power": { "decimals": 1, "units": { "en": "W", "fr": "W" } },
+    "meter_power": { "decimals": 3, "units": { "en": "kWh", "fr": "kWh" } }
+  },
   "images": {
     "small": "drivers/plug-tuya-universal/assets/small.png",
     "large": "drivers/plug-tuya-universal/assets/large.png",

@@ -1,204 +1,54 @@
 # Changelog
 
-Toutes les modifications notables de ce projet seront documentées dans ce fichier.
+All notable changes to this project will be documented in this file.
 
-Le format est basé sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/),
-et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [3.7.0] - 2025-08-17
+## [3.7.0] - 2025-08-19
 
-### 🎉 Ajouté
-- **RECONSTRUCTION COMPLÈTE** du projet avec architecture modulaire
-- **MEGA Orchestrator** - Système d'orchestration automatisé avec 8 modules core
-- **Architecture modulaire** - Structure `src/core/`, `src/utils/`, `src/drivers/`
-- **Pipeline automatisé** - 7 étapes d'exécution avec gestion d'erreurs robuste
-- **Dashboard web moderne** - Interface responsive avec statistiques en temps réel
-- **Support multilingue** - EN/FR/NL pour tous les composants
-- **Scripts de test automatisés** - Validation complète de tous les modules
+### Added
+- **Offline Inference & Confidence Scoring**: système d'inférence entièrement hors-ligne pour supporter plus d'appareils Tuya Zigbee sans appels cloud
+- **Golden Replays & Chaos-DP Simulator**: moteur de relecture reproductible pour tester les drivers hors-ligne avec des séquences DP réelles ou synthétiques
+- **Feature flags par overlay**: clé `features:{}` pour activer/désactiver des variantes par modèle/firmware
+- **Schema drift detector**: détecte les incohérences et collisions de fingerprints entre overlays
+- **Housekeeping offline**: tâches de maintenance automatique (purge des logs, régénération des matrices)
 
-### 🔧 Modules Core Implémentés
-- **Preparation** - Initialisation et configuration automatique du projet
-- **Validator** - Validation de la cohérence et de la structure
-- **Matrix Builder** - Construction des matrices de drivers et capacités
-- **Dashboard Builder** - Génération du dashboard web moderne
-- **Enricher** - Enrichissement automatique des drivers
-- **Web Enricher** - Collecte de données depuis sources externes
-- **Final Validator** - Validation finale complète du projet
-- **Deployer** - Déploiement automatisé et gestion des artefacts
+### Fixed
+- **Robust Tuya writes**: `writeInteger` avec retry et jitter pour éviter les timeouts Zigbee
+- **FIFO DP queue**: file d'attente DP avec backpressure et gestion des débordements
+- **Debounced capability updates**: mises à jour de capacités avec debounce pour éviter les tempêtes d'événements
+- **Safe mode**: basculement automatique en lecture seule en cas d'erreurs répétées
 
-### 🛠️ Utilitaires
-- **Script Converter** - Conversion automatique .ps1/.sh/.bat vers .js
-- **Modules utilitaires** - Outils de maintenance et d'automatisation
-- **Scripts de test** - Validation complète et rapports détaillés
+### Changed
+- **Architecture**: transition vers une architecture lisible par type de produit (kebab-case, pas de "TSxxxx" dans les noms)
+- **CLI unifié**: un seul point d'entrée `tools/cli.js` pour toutes les tâches (audit, refactor, checks, tests, build, validate, ingest, infer, propose)
+- **Scoring avancé**: système de confiance pondéré par source avec bonus pour la diversité et les preuves DP
 
-### 🔌 Drivers Tuya
-- **Tuya RGB Bulb** - Ampoule RGB complète avec capacités avancées
-- **Capacités supportées** - onoff, dim, light_hue, light_saturation
-- **Structure conforme** - Homey SDK 3 avec fichiers de composition
-- **Support multilingue** - Interface utilisateur en EN/FR/NL
+### Technical Details
+- **Runtime 100% local Zigbee**: aucune API réseau dans le code de l'application
+- **SDK3 + Homey Compose**: manifest généré automatiquement, jamais édité manuellement
+- **Overlays vendor/firmware**: configuration spécifique par constructeur et firmware avec statut et niveau de confiance
+- **Images conformes**: tailles exactes Homey (small 75x75, large 500x500, xlarge 1000x1000)
 
-### 📊 Configuration et Documentation
-- **package.json optimisé** - Configuration complète pour Homey SDK 3
-- **homey-compose.json** - Configuration Homey conforme aux standards
-- **README.md moderne** - Documentation complète et professionnelle
-- **Dashboard web** - Interface utilisateur moderne et informative
+## [3.6.0] - 2025-08-15
 
-### 🚀 Fonctionnalités Avancées
-- **Automatisation complète** - Pipeline MEGA entièrement automatisé
-- **Gestion d'erreurs robuste** - Failover automatique et logs détaillés
-- **Enrichissement intelligent** - Collecte de données depuis sources multiples
-- **Monitoring en temps réel** - Logs détaillés et validation continue
-- **Tests automatisés** - Validation robuste et rapports détaillés
+### Added
+- MEGA Orchestrator pour l'automatisation complète du projet
+- Dashboard moderne et responsive
+- Support multilingue (EN/FR/NL)
 
-### 📈 Statistiques du Projet
-- **Version:** 3.7.0
-- **Modules Core:** 8
-- **Utilitaires:** 5+
-- **Drivers:** 3+
-- **Capacités:** 15+
-- **Fabricants:** 10+
-- **Support SDK:** Homey SDK 3
-- **Langues:** EN/FR/NL
-- **Taux de succès des tests:** 93%
-
-### 🔍 Améliorations Techniques
-- **Structure modulaire** - Architecture facile à maintenir et étendre
-- **Gestion des dépendances** - npm et Homey CLI intégrés
-- **Validation continue** - Tests automatisés et validation Homey
-- **Documentation complète** - Guides d'utilisation et API documentée
-- **Support communautaire** - Structure prête pour les contributions
-
-### 🎯 Objectifs Atteints
-- ✅ **Projet entièrement reconstruit** avec architecture moderne
-- ✅ **MEGA Orchestrator fonctionnel** avec 93% de succès
-- ✅ **Structure Homey SDK 3** conforme et validée
-- ✅ **Drivers Tuya** implémentés et testés
-- ✅ **Documentation complète** et professionnelle
-- ✅ **Dashboard moderne** et informatif
-- ✅ **Tests automatisés** et validation robuste
-
----
-
-## [3.6.0] - 2025-08-16
-
-### 🔧 Corrigé
-- Problèmes de terminal PowerShell résolus
-- Erreurs de modules corrigées
-- Structure du projet stabilisée
-
-### 📁 Modifié
-- Réorganisation de la structure des dossiers
-- Nettoyage des fichiers temporaires
-- Optimisation des scripts
-
----
-
-## [3.5.0] - 2025-08-15
-
-### 🚀 Ajouté
-- Modules de base pour l'orchestration
-- Scripts de validation
-- Structure initiale du projet
-
----
-
-## [3.4.0] - 2025-08-14
-
-### 🔧 Corrigé
-- Problèmes de compatibilité Homey SDK 3
-- Erreurs de validation
-- Structure des drivers
-
----
-
-## [3.3.0] - 2025-08-13
-
-### 🎯 Ajouté
-- Support initial des drivers Tuya
-- Configuration de base Homey
-- Tests de validation
-
----
-
-## [3.2.0] - 2025-08-12
-
-### 📊 Ajouté
-- Structure de base du projet
-- Configuration npm
-- Documentation initiale
-
----
-
-## [3.1.0] - 2025-08-11
-
-### 🚀 Ajouté
-- Initialisation du projet
-- Configuration Git
-- Structure des dossiers
-
----
-
-## [3.0.0] - 2025-08-10
-
-### 🎉 Ajouté
-- **Version majeure** - Reconstruction complète du projet
-- **Support Homey SDK 3** - Compatibilité complète
-- **Architecture modulaire** - Structure moderne et maintenable
-- **MEGA Orchestrator** - Système d'automatisation avancé
-
----
-
-## [2.0.0] - 2025-08-09
-
-### 🔄 Modifié
+### Changed
 - Migration vers Homey SDK 3
-- Restructuration complète
-- Nouvelle architecture
+- Architecture modulaire et maintenable
+
+## [3.5.0] - 2025-08-10
+
+### Added
+- Drivers Tuya Zigbee de base
+- Tests automatisés et validation
+- Structure de projet modulaire
 
 ---
 
-## [1.0.0] - 2025-08-08
-
-### 🎯 Ajouté
-- **Version initiale** du projet
-- Support de base des drivers Tuya
-- Configuration Homey SDK 2
-
----
-
-## [0.1.0] - 2025-08-07
-
-### 🚀 Ajouté
-- Projet créé
-- Structure initiale
-- Configuration de base
-
----
-
-## [0.0.1] - 2025-08-06
-
-### 📝 Ajouté
-- Initialisation du repository
-- Configuration Git
-- Structure des dossiers
-
----
-
-## Types de changements
-
-- **🎉 Ajouté** - Nouvelles fonctionnalités
-- **🔧 Corrigé** - Corrections de bugs
-- **🔄 Modifié** - Changements dans les fonctionnalités existantes
-- **📊 Amélioré** - Améliorations de performance
-- **📁 Modifié** - Changements dans la structure
-- **🚀 Ajouté** - Nouvelles fonctionnalités majeures
-- **🎯 Ajouté** - Fonctionnalités ciblées
-- **🛠️ Ajouté** - Outils et utilitaires
-- **🔌 Ajouté** - Drivers et périphériques
-- **📈 Ajouté** - Métriques et statistiques
-- **🔍 Ajouté** - Validation et tests
-- **💡 Ajouté** - Améliorations et optimisations
-
----
-
-*Ce changelog est maintenu automatiquement et traduit en français et anglais.*
+**Note**: Ce projet suit maintenant un système de versioning sémantique strict. Les changements breaking seront documentés dans la section "Breaking Changes" et nécessiteront une version majeure.

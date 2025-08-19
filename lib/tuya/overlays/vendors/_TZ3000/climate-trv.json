@@ -1,0 +1,9 @@
+{
+  "productIds": ["TS0601"],
+  "dp": {
+    "2": { "cap": "target_temperature",  "to": "num/10", "from": "mul/10" },
+    "4": { "cap": "measure_temperature", "to": "num/10" },
+    "7": { "cap": "locked",              "to": "bool",   "from": "bool" },
+    "45":{ "cap": "measure_battery",     "to": "num" }
+  }
+}

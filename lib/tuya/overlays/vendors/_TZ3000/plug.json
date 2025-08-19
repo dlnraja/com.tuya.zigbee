@@ -1,9 +1,30 @@
 {
-  "productIds": ["TS011F", "TS0115"],
+  "productIds": [
+    "TS011F",
+    "TS0115",
+    "TS0*"
+  ],
   "dp": {
-    "1":  { "cap": "onoff", "to": "bool" },
-    "16": { "cap": "measure_power", "to": "num/10" },
-    "17": { "cap": "meter_power",   "to": "num/1000" }
+    "1": {
+      "cap": "onoff"
+    },
+    "16": {
+      "cap": "measure_power",
+      "to": "num/10"
+    },
+    "17": {
+      "cap": "meter_power",
+      "to": "num/1000"
+    }
   },
-  "reports": { "power_interval_sec": 30 }
+  "reports": {
+    "power_interval_sec": 30
+  },
+  "status": "proposed",
+  "sources": [
+    "file://manual-ts0115.pdf",
+    "file://pairing-2025-08-10.log"
+  ],
+  "confidence": 0.75,
+  "notes": "type:plug | type:plug"
 }

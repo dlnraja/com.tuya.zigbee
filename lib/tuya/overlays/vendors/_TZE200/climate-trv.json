@@ -1,20 +1,63 @@
 {
-  "productIds": ["TS0601"],
+  "productIds": [
+    "TS0601"
+  ],
   "fwVariants": {
     "1.x": {
       "dp": {
-        "2": { "cap": "target_temperature",  "to": "num/10", "from": "mul/10" },
-        "4": { "cap": "measure_temperature", "to": "num/10" },
-        "7": { "cap": "locked",              "to": "bool",   "from": "bool" }
+        "2": {
+          "cap": "target_temperature",
+          "to": "num/10",
+          "from": "mul/10"
+        },
+        "4": {
+          "cap": "measure_temperature",
+          "to": "num/10"
+        },
+        "7": {
+          "cap": "locked",
+          "to": "bool",
+          "from": "bool"
+        }
       }
     },
     "2.x": {
       "dp": {
-        "2": { "cap": "target_temperature",  "to": "num/10", "from": "mul/10" },
-        "4": { "cap": "measure_temperature", "to": "num/10" },
-        "7": { "cap": "locked",              "to": "bool",   "from": "bool" },
-        "45":{ "cap": "measure_battery",     "to": "num" }
+        "2": {
+          "cap": "target_temperature",
+          "to": "num/10",
+          "from": "mul/10"
+        },
+        "4": {
+          "cap": "measure_temperature",
+          "to": "num/10"
+        },
+        "7": {
+          "cap": "locked",
+          "to": "bool",
+          "from": "bool"
+        },
+        "45": {
+          "cap": "measure_battery",
+          "to": "num"
+        }
       }
+    }
+  },
+  "status": "proposed",
+  "sources": [
+    "file://events-2025-08-19.log"
+  ],
+  "confidence": 0.93,
+  "notes": "type:climate-trv",
+  "dp": {
+    "2": {
+      "cap": "target",
+      "to": "num/10"
+    },
+    "4": {
+      "cap": "measure",
+      "to": "num/10"
     }
   }
 }

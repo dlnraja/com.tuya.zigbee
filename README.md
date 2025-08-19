@@ -249,37 +249,40 @@ MIT License - voir [LICENSE](LICENSE) pour plus de détails.
 **Développé avec ❤️ par dlnraja pour la communauté Homey**
 
 
+## 🧠 Innovation: Offline Inference & Confidence Scoring
+This app introduces a **fully offline** inference system that helps us support more Tuya Zigbee devices **without any cloud calls**.
+
+- **Manual sources only**: we ingest structured notes in `research/manual/*.jsonl` (no scraping).
+- **Weighted confidence**: each source type has a weight; we reward **diversity** (independent domains) and **explicit DP evidence**; we penalize contradictions.
+- **Safe-by-default**: proposals are written as overlays with `status:"proposed"` and are **never loaded** at runtime. Only `status:"confirmed"` overlays are shipped.
+- **Reproducible**: we version snapshots of proposals, device matrix and inference inputs.
+
+### Why it's safe
+- The **runtime** loads **only** confirmed overlays.
+- All inference runs in **tools** (not in app), with deterministic inputs.
+- A **fallback** exists for each family (e.g., Plug, TRV, Curtain, Remote), so the app never crashes on an unknown DP.
+
+### How to contribute
+1. Add manual facts into `research/manual/*.jsonl` (see template below).
+2. Run: `npm run ingest && npm run infer && npm run propose`.
+3. Test with replays: `npm run replay -- file=tests/replays/sample.replay.jsonl`.
+4. Validate: `npm run validate:homey`.
+
+---
+
+## 🧪 Innovation: Golden Replays & Chaos-DP Simulator
+We ship a reproducible **replay engine** to test drivers offline with real or synthetic DP sequences.
+
+- **Golden Replays** (`.replay.jsonl`): recorded pairing/event logs you can replay against the driver.
+- **Chaos-DP**: stress sequences (bursts, out-of-order, unknown DP) to validate FIFO & debounces.
+
+**Commands**
+- `npm run replay -- file=path/to/file.replay.jsonl`
+- `npm run simulate -- scenario=chaos-basic` (uses built-in scenarios)
+
+---
+
 ## 🚀 Nouvelles Fonctionnalités
-
-### Système de Plugins
-- Architecture modulaire extensible
-- Gestionnaire de plugins automatique
-- API standardisée pour les développeurs
-
-### Dashboard Amélioré
-- Interface utilisateur moderne
-- Thèmes sombres/clairs
-- Widgets personnalisables
-
-### API REST
-- Endpoints standardisés
-- Documentation automatique
-- Gestion des erreurs robuste
-
-### Système de Tests
-- Tests automatisés
-- Couverture de code
-- Rapports détaillés
-
-### Monitoring
-- Métriques en temps réel
-- Surveillance des performances
-- Alertes automatiques
-
-### Cache Intelligent
-- Mise en cache automatique
-- Gestion de la mémoire optimisée
-- Performance améliorée
 
 ## 🔧 Améliorations Implémentées
 

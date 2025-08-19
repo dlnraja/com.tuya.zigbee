@@ -3,6 +3,10 @@
   "name": { "en": "Tuya Curtain/Blind", "fr": "Rideau/Store Tuya" },
   "class": "windowcoverings",
   "capabilities": ["windowcoverings_set","windowcoverings_state","alarm_battery"],
+  "capabilitiesOptions": {
+    "windowcoverings_set": { "min": 0, "max": 1, "step": 0.01 },
+    "alarm_battery": { "title": { "en": "Low battery", "fr": "Batterie faible" } }
+  },
   "images": {
     "small": "drivers/cover-curtain-tuya/assets/small.png",
     "large": "drivers/cover-curtain-tuya/assets/large.png",
