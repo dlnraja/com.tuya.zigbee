@@ -1,27 +1,21 @@
 {
   "id": "cover-curtain-tuya",
-  "name": { "en": "Tuya Curtain/Blind", "fr": "Rideau/Store Tuya" },
   "class": "windowcoverings",
-  "capabilities": ["windowcoverings_set","windowcoverings_state","alarm_battery"],
+  "capabilities": [
+    "windowcoverings_set",
+    "windowcoverings_state",
+    "alarm_battery"
+  ],
   "capabilitiesOptions": {
-    "windowcoverings_set": { "min": 0, "max": 1, "step": 0.01 },
-    "alarm_battery": { "title": { "en": "Low battery", "fr": "Batterie faible" } }
+    "windowcoverings_set": {
+      "min": 0,
+      "max": 100,
+      "step": 1
+    }
   },
   "images": {
-    "small": "drivers/cover-curtain-tuya/assets/small.png",
-    "large": "drivers/cover-curtain-tuya/assets/large.png",
-    "xlarge": "drivers/cover-curtain-tuya/assets/xlarge.png"
-  },
-  "zigbee": {
-    "manufacturerName": ["_TZE200_*","_TZ3000_*","Tuya"],
-    "productId": ["TS0601"],
-    "endpoints": {
-      "1": {
-        "clusters": {
-          "input": ["genBasic", "genPowerCfg", "closuresWindowCovering"],
-          "output": ["genBasic", "genPowerCfg", "closuresWindowCovering"]
-        }
-      }
-    }
+    "small": "assets/small.png",
+    "large": "assets/large.png",
+    "xlarge": "assets/xlarge.png"
   }
 }
