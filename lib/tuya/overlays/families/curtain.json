@@ -1,0 +1,13 @@
+{
+  "family": "curtain",
+  "description": "Tuya Curtain/Blind family overlay",
+  "dp": {
+    "1": { "cap": "windowcoverings_set", "to": "num", "from": "num" },
+    "2": { "cap": "windowcoverings_state", "to": "num", "from": "num" },
+    "45": { "cap": "measure_battery", "to": "num", "from": "num" }
+  },
+  "reports": {
+    "position_interval_sec": 120,
+    "battery_interval_sec": 3600
+  }
+}

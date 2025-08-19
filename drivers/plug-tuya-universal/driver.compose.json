@@ -9,7 +9,7 @@
     "xlarge": "drivers/plug-tuya-universal/assets/xlarge.png"
   },
   "zigbee": {
-    "manufacturerName": ["_TZ3000_iiacqpdz","_TZ3000_*","Tuya"],
+    "manufacturerName": ["_TZ3000_iiacqpdz","_TZ3000_*","_TZE200_*","Tuya"],
     "productId": ["TS011F","TS0115","TS0*"],
     "endpoints": {
       "1": {

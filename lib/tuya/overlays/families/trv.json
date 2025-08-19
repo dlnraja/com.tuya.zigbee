@@ -1,0 +1,16 @@
+{
+  "family": "trv",
+  "description": "Tuya Thermostatic Radiator Valve family overlay",
+  "dp": {
+    "1": { "cap": "target_temperature", "to": "num/10", "from": "mul/10" },
+    "2": { "cap": "measure_temperature", "to": "num/10", "from": "num/10" },
+    "5": { "cap": "measure_humidity", "to": "num", "from": "num" },
+    "7": { "cap": "locked", "to": "bool", "from": "bool" },
+    "45": { "cap": "measure_battery", "to": "num", "from": "num" }
+  },
+  "reports": {
+    "temperature_interval_sec": 60,
+    "humidity_interval_sec": 120,
+    "battery_interval_sec": 3600
+  }
+}
