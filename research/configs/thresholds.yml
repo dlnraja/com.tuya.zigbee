@@ -1,12 +1,12 @@
-propose_threshold: 0.60
-confirm_threshold: 0.85
-quarantine_threshold: 0.45
+propose_threshold: 0.60    # Create overlay as "proposed" if score >= 0.60
+confirm_threshold: 0.85    # Eligible for "confirmed" (still manual gate)
+quarantine_threshold: 0.45 # Below -> store facts but no overlay yet
 
-# Règles additionnelles
-diversity_bonus_threshold: 3  # >= 3 domaines distincts pour bonus
+# Additional rules
+diversity_bonus_threshold: 3  # >= 3 distinct domains for bonus
 max_confidence: 1.0
 min_confidence: 0.0
 
-# Timeouts pour promotion automatique
+# Auto-management timeouts
 days_before_auto_quarantine: 90
 days_before_auto_disable: 180

@@ -1,0 +1,27 @@
+{
+  "status": "proposed",
+  "confidence": 0.791,
+  "sources": [
+    "https://community.homey.app/t/app-pro-universal-tuya-zigbee/140352"
+  ],
+  "productIds": [
+    "TS0601"
+  ],
+  "manufacturerName": "_TZE200_dfxkcots",
+  "type": "climate-trv",
+  "dp": {
+    "2": {
+      "cap": "target",
+      "to": "num/10"
+    },
+    "4": {
+      "cap": "current",
+      "to": "num/10"
+    }
+  },
+  "reports": {
+    "temperature_interval_sec": 60,
+    "battery_interval_sec": 3600
+  },
+  "notes": "Auto-inferred from 1 sources"
+}
