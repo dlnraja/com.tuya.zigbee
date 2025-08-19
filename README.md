@@ -1,333 +1,187 @@
-# 🚀 Tuya Zigbee Drivers for Homey SDK 3
+# 🌐 Tuya Zigbee Drivers for Homey (Lite)
 
-## 📱 **Compatible Homey SDK 3**
+[![CI](https://github.com/dlnraja/tuya-zigbee/actions/workflows/ci.yml/badge.svg)](https://github.com/dlnraja/tuya-zigbee/actions/workflows/ci.yml)
+[![Pages](https://github.com/dlnraja/tuya-zigbee/actions/workflows/pages.yml/badge.svg)](https://dlnraja.github.io/tuya-zigbee/)
 
-**Version:** 3.7.0  
-**Auteur:** dlnraja  
-**Licence:** MIT
+## Overview
 
-## 🎯 **Fonctionnalités**
+This Homey app provides **100% local Zigbee drivers** for Tuya devices. No cloud API, no network dependencies at runtime.
 
-- ✅ **Drivers Tuya Zigbee** complets et optimisés
-- ✅ **MEGA Orchestrator** pour l'automatisation
-- ✅ **SDK 3** entièrement compatible
-- ✅ **Structure modulaire** et maintenable
-- ✅ **Dashboard moderne** et responsive
-- ✅ **Tests automatisés** et validation
-- ✅ **Support multilingue** (EN/FR/NL)
+### Key Features
+- **SDK3 + Homey Compose** - Modern architecture
+- **Runtime 100% local** - No network calls
+- **Offline scoring** - Confidence-based overlay system
+- **4 device families** - Plug, TRV, Curtain, Remote
+- **Robust runtime** - FIFO DP queue, debouncing, retry logic
 
-## 🏗️ **Architecture**
+## Innovation: Offline Reliability Scoring
 
-```
-📁 src/
-  ├── 📁 core/          (Modules principaux)
-  │   ├── orchestrator.js      (Orchestrateur principal)
-  │   ├── preparation.js       (Préparation du projet)
-  │   ├── validator.js         (Validation)
-  │   ├── matrix-builder.js    (Construction des matrices)
-  │   ├── dashboard-builder.js (Construction du dashboard)
-  │   ├── enricher.js          (Enrichissement des drivers)
-  │   ├── web-enricher.js      (Enrichissement web)
-  │   ├── final-validator.js   (Validation finale)
-  │   └── deployer.js          (Déploiement)
-  ├── 📁 utils/         (Utilitaires)
-  │   ├── script-converter.js  (Conversion de scripts)
-  │   ├── script-consolidator.js (Consolidation)
-  │   ├── enrichment-suite.js  (Suite d'enrichissement)
-  │   ├── build-suite.js       (Suite de construction)
-  │   └── validation-suite.js  (Suite de validation)
-  ├── 📁 drivers/       (Drivers Tuya)
-  │   ├── 📁 tuya/      (Drivers Tuya spécifiques)
-  │   ├── 📁 zigbee/    (Drivers Zigbee génériques)
-  │   └── 📁 generic/   (Drivers génériques)
-  ├── 📁 homey/         (Application Homey)
-  └── 📁 workflows/     (Workflows)
-```
+Our unique scoring system evaluates device configurations based on multiple sources:
 
-## 🚀 **Installation**
+### How it works
+1. **Manual data ingestion** from trusted sources (no web scraping)
+2. **Confidence calculation** based on source reliability (0.0 to 1.0)
+3. **Automatic proposals** when confidence ≥ 0.60
+4. **Confirmation** after real-world testing + confidence ≥ 0.85
+5. **Runtime safety** - only confirmed overlays are active
 
-### Prérequis
-- Node.js 18+ 
-- Homey CLI
-- Git
+### Source Weights
+- Official manufacturer: 0.92
+- Zigbee certification: 0.86
+- Upstream repos: 0.85
+- Local logs: 0.90+
+- Forums: 0.75
+- Retailers: 0.55
 
-### Installation rapide
+### Bonuses & Penalties
+- Multi-source agreement: +0.10
+- DP evidence: +0.15
+- Contradictions: -0.20
+- Single source: -0.10
+
+## Supported Devices
+
+### Plugs (class: socket)
+- **TS011F** - Single socket with power monitoring
+- **TS0115** - Multi-socket (up to 5 channels)
+- Capabilities: `onoff`, `measure_power`, `meter_power`
+
+### Thermostats (class: thermostat)
+- **TS0601** - Radiator valves (TRV)
+- Capabilities: `target_temperature`, `measure_temperature`, `locked`, `alarm_battery`
+- Temperature range: 5-30°C (step 0.5°C)
+
+### Curtains (class: windowcoverings)
+- **TS0601**, **TS130F** - Motor controllers
+- Capabilities: `windowcoverings_set`, `windowcoverings_state`, `alarm_battery`
+
+### Remotes (class: sensor)
+- **TS004x** - Scene controllers (1-4 buttons)
+- Flow triggers: `button_pressed`, `button_double`, `button_held`
+
+## Installation
+
+### From Homey App Store
+Coming soon...
+
+### From Source
 ```bash
-# Cloner le projet
-git clone https://github.com/dlnraja/com.tuya.zigbee.git
-cd com.tuya.zigbee
-
-# Installer les dépendances
+git clone https://github.com/dlnraja/tuya-zigbee.git
+cd tuya-zigbee
 npm install
-
-# Lancer l'application
-npm start
+npm run build:homey
+npm run validate:homey
 ```
 
-## 🔧 **Scripts Disponibles**
+## Development
 
-- `npm start` - Lance l'application Homey
-- `npm run orchestrate:mega` - Lance le MEGA Orchestrator
-- `npm test` - Lance les tests
-- `npm run validate` - Valide l'application
-- `npm run enrich` - Lance l'enrichissement des drivers
-- `npm run build:suite` - Lance la suite de construction
+### Architecture
+```
+drivers/
+  plug-tuya-universal/     # Readable names by type
+  climate-trv-tuya/        # No TSxxxx in folder names
+  cover-curtain-tuya/
+  remote-scene-tuya/
+lib/
+  common/                  # Shared helpers
+  zigbee/                  # Interview, reporting
+  tuya/                    # DP conversion, overlays
+research/
+  manual/*.jsonl           # Manual data input
+  configs/                 # Scoring configuration
+tools/
+  cli.js                   # Unified Node.js CLI
+```
 
-## 📊 **Dashboard & Pages**
-
-- GitHub Pages: activées via `.github/workflows/pages.yml`.
-- Une page par défaut `docs/index.html` est générée si absente.
-- Dashboard local (si généré): `dist/dashboard/index.html`.
-- 📊 Statut du projet
-- 🔌 Drivers Tuya
-- ⚡ Capacités supportées
-- 🏭 Fabricants supportés
-- 🔧 Architecture modulaire
-
-## 🔌 **Drivers Supportés**
-
-### Ampoule RGB Tuya
-- **ID:** `tuya-bulb-rgb`
-- **Capacités:** onoff, dim, light_hue, light_saturation
-- **Modèle:** TS0505B
-- **Fabricant:** Tuya
-
-### Interrupteur Tuya
-- **ID:** `tuya-switch`
-- **Capacités:** onoff
-- **Modèle:** TS0011
-- **Fabricant:** Tuya
-
-### Capteur de température Tuya
-- **ID:** `tuya-sensor-temp`
-- **Capacités:** measure_temperature
-- **Modèle:** TS0601
-- **Fabricant:** Tuya
-
-## ⚡ **Capacités Supportées**
-
-### Contrôle
-- `onoff` - Allumer/éteindre
-- `dim` - Variation de luminosité
-
-### Éclairage
-- `light_hue` - Variation de couleur
-- `light_saturation` - Variation de saturation
-- `light_temperature` - Variation de température de couleur
-
-### Capteurs
-- `measure_temperature` - Mesure de température
-- `measure_humidity` - Mesure d'humidité
-- `measure_pressure` - Mesure de pression
-
-### Sécurité
-- `alarm_motion` - Détection de mouvement
-- `alarm_contact` - Détection d'ouverture
-- `alarm_water` - Détection d'eau
-- `alarm_smoke` - Détection de fumée
-
-## 🏭 **Fabricants Supportés**
-
-- **Tuya** - Support complet
-- **Smart Life** - Compatible Tuya
-- **Jinvoo** - Compatible Tuya
-- **EcoSmart** - Compatible Tuya
-- **Teckin** - Compatible Tuya
-- **Treatlife** - Compatible Tuya
-- **Gosund** - Compatible Tuya
-- **Blitzwolf** - Compatible Tuya
-- **Lumiman** - Compatible Tuya
-- **Novostella** - Compatible Tuya
-
-## 🔧 **MEGA Orchestrator**
-
-Le MEGA Orchestrator est le cœur du projet qui gère automatiquement :
-
-1. **Préparation** - Initialisation et configuration
-2. **Validation** - Vérification de la cohérence
-3. **Construction** - Génération des matrices et dashboard
-4. **Enrichissement** - Amélioration des drivers
-5. **Validation finale** - Vérification complète
-6. **Déploiement** - Publication de l'application
-
-### Utilisation
+### Commands
 ```bash
-# Lancer l'orchestrateur
-npm run orchestrate:mega
-
-# Ou directement
-node src/core/orchestrator.js
+npm run audit              # Check structure & network usage
+npm run lint               # Enforce naming conventions
+npm run test               # Run unit tests
+npm run build:homey        # Generate app.json
+npm run validate:homey     # Validate manifest
+npm run ingest             # Process manual data
+npm run infer              # Calculate confidence scores
+npm run propose            # Generate overlay proposals
 ```
 
-## 🧪 **Tests et Validation**
+### Contributing
 
-### Validation Homey
-```bash
-# Validation complète
-npm run validate
+#### Requesting New Device Support
+1. Pair your device with Homey
+2. Collect the Zigbee interview log:
+   - Developer Tools → Zigbee → Interview
+   - Copy manufacturerName, productId, endpoints
+3. Monitor DP values during device operation
+4. Open an issue with:
+   - Interview data
+   - DP observations
+   - Device manual/links
 
-# Validation rapide
-homey app validate -l debug
+#### Data Format (research/manual/*.jsonl)
+```json
+{
+  "manufacturerName": "_TZ3000_xxxxxxxx",
+  "productId": "TS011F",
+  "typeHints": ["plug", "meter"],
+  "capabilityHints": ["onoff", "measure_power"],
+  "dpEvidence": {
+    "1": "onoff",
+    "16": "measure_power/10"
+  },
+  "source": {
+    "type": "local_pairing_log",
+    "url": "local://homey/logs/2025-01-19",
+    "date": "2025-01-19"
+  }
+}
 ```
 
-### Tests automatisés
-```bash
-# Tests unitaires
-npm test
+## Runtime Robustness
 
-# Tests d'intégration
-npm run test:integration
-```
+### FIFO DP Queue
+- Max 100 items per device
+- Drop & warn on overflow
+- Sequential processing
 
-## 📈 **Statistiques du Projet**
+### Debouncing
+- 150-300ms per capability
+- Prevents Zigbee flooding
 
-- **Version:** 3.7.0
-- **Drivers:** 3+ (en cours de développement)
-- **Capacités:** 15+
-- **Fabricants:** 10+
-- **Modules Core:** 8
-- **Utilitaires:** 5+
-- **Support SDK:** Homey SDK 3
+### Tuya Write Retry
+- 2 attempts with jitter (50-120ms)
+- Error classification: Timeout/Unsupported/Range
 
-## 🌐 **Support Multilingue**
+### Safe Mode
+- ≥5 write errors/60s → read-only mode
+- Auto-recovery after cooldown
 
-Le projet supporte officiellement :
-1. **English (EN)** - Langue principale
-2. **Français (FR)** - Support complet
-3. **Nederlands (NL)** - Support complet
+## Links
 
-## 🤝 **Contribution**
+- [Dashboard](https://dlnraja.github.io/tuya-zigbee/)
+- [GitHub](https://github.com/dlnraja/tuya-zigbee)
+- [Homey Community](https://community.homey.app/t/tuya-zigbee-app/26439)
 
-Les contributions sont les bienvenues ! Voir [CONTRIBUTING.md](CONTRIBUTING.md) pour plus de détails.
+## Sources & References
 
-### Comment contribuer
-1. Fork le projet
-2. Créer une branche feature (`git checkout -b feature/AmazingFeature`)
-3. Commit les changements (`git commit -m 'Add some AmazingFeature'`)
-4. Push vers la branche (`git push origin feature/AmazingFeature`)
-5. Ouvrir une Pull Request
+### Official
+- [Tuya IoT Platform](https://developer.tuya.com/en/docs/iot)
+- [Homey Apps SDK](https://apps.developer.homey.app/)
+- [Zigbee Cluster Library](https://csa-iot.org/developer-resources/zigbee/)
 
-## 📄 **Licence**
+### Community
+- [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee)
+- [Zigbee2MQTT Converters](https://github.com/Koenkk/zigbee-herdsman-converters)
+- [ZHA Device Handlers](https://github.com/zigpy/zha-device-handlers)
 
-MIT License - voir [LICENSE](LICENSE) pour plus de détails.
+## License
 
-## 🆘 **Support**
+MIT
 
-- **Issues:** [GitHub Issues](https://github.com/dlnraja/com.tuya.zigbee/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/dlnraja/com.tuya.zigbee/discussions)
-- **Wiki:** [GitHub Wiki](https://github.com/dlnraja/com.tuya.zigbee/wiki)
+## Changelog
 
-## 🗺️ **Roadmap**
-
-### Version 3.8.0 (Prochaine)
-- [ ] Ajout de 10+ nouveaux drivers
-- [ ] Support des capteurs environnementaux
-- [ ] Interface d'administration avancée
-- [ ] Intégration avec Homey Cloud
-
-### Version 4.0.0 (Future)
-- [ ] Support complet Zigbee 2.0
-- [ ] Interface utilisateur moderne
-- [ ] Support des appareils Matter
-- [ ] Intégration avec d'autres écosystèmes
-
-## 📊 **Métriques**
-
-![Drivers](https://img.shields.io/badge/Drivers-3+-blue)
-![Version](https://img.shields.io/badge/Version-3.7.0-green)
-![SDK](https://img.shields.io/badge/SDK-Homey%203-blue)
-![License](https://img.shields.io/badge/License-MIT-yellow)
-
-## 🎉 **Remerciements**
-
-- **Homey Team** - Pour le SDK 3
-- **Tuya Community** - Pour le support continu
-- **Contributeurs** - Pour leurs contributions
+See [CHANGELOG.md](CHANGELOG.md) for version history.
 
 ---
 
-**Développé avec ❤️ par dlnraja pour la communauté Homey**
-
-
-## 🧠 Innovation: Offline Inference & Confidence Scoring
-This app introduces a **fully offline** inference system that helps us support more Tuya Zigbee devices **without any cloud calls**.
-
-- **Manual sources only**: we ingest structured notes in `research/manual/*.jsonl` (no scraping).
-- **Weighted confidence**: each source type has a weight; we reward **diversity** (independent domains) and **explicit DP evidence**; we penalize contradictions.
-- **Safe-by-default**: proposals are written as overlays with `status:"proposed"` and are **never loaded** at runtime. Only `status:"confirmed"` overlays are shipped.
-- **Reproducible**: we version snapshots of proposals, device matrix and inference inputs.
-
-### Why it's safe
-- The **runtime** loads **only** confirmed overlays.
-- All inference runs in **tools** (not in app), with deterministic inputs.
-- A **fallback** exists for each family (e.g., Plug, TRV, Curtain, Remote), so the app never crashes on an unknown DP.
-
-### How to contribute
-1. Add manual facts into `research/manual/*.jsonl` (see template below).
-2. Run: `npm run ingest && npm run infer && npm run propose`.
-3. Test with replays: `npm run replay -- file=tests/replays/sample.replay.jsonl`.
-4. Validate: `npm run validate:homey`.
-
----
-
-## 🧪 Innovation: Golden Replays & Chaos-DP Simulator
-We ship a reproducible **replay engine** to test drivers offline with real or synthetic DP sequences.
-
-- **Golden Replays** (`.replay.jsonl`): recorded pairing/event logs you can replay against the driver.
-- **Chaos-DP**: stress sequences (bursts, out-of-order, unknown DP) to validate FIFO & debounces.
-
-**Commands**
-- `npm run replay -- file=path/to/file.replay.jsonl`
-- `npm run simulate -- scenario=chaos-basic` (uses built-in scenarios)
-
----
-
-## 🚀 Nouvelles Fonctionnalités
-
-## 🔧 Améliorations Implémentées
-
-- **ESLint** : Règles de qualité du code strictes
-- **Prettier** : Formatage automatique du code
-- **TypeScript** : Support du typage statique
-- **Sécurité** : Validation des entrées et gestion des erreurs
-- **Performance** : Optimisations et mise en cache
-- **Documentation** : Génération automatique et guides interactifs
-
-## 📊 Métriques du Projet
-
-- **Drivers** : 4 drivers Tuya et Zigbee
-- **Tests** : 3 tests automatisés
-- **Documentation** : 0 pages de documentation
-- **Plugins** : 0 plugins disponibles
-
-## 🚀 Installation et Utilisation
-
-```bash
-# Installation
-npm install
-
-# Validation
-npm run validate
-
-# Tests
-npm run test
-
-# Linting
-npm run lint
-
-# Formatage
-npm run format
-```
-
-## 🤝 Contribution
-
-Ce projet utilise maintenant un système de plugins modulaire. Consultez la documentation des plugins pour contribuer.
-
-## 📈 Roadmap
-
-- [ ] Marketplace de drivers communautaire
-- [ ] Synchronisation cloud multi-appareils
-- [ ] Interface mobile native
-- [ ] Intégration avec d'autres écosystèmes IoT
-- [ ] Intelligence artificielle pour l'optimisation automatique
-
+*Built with ❤️ for the Homey community*

@@ -1,25 +1,21 @@
 {
   "name": "com.tuya.zigbee",
-  "version": "3.7.0",
-  "description": "Tuya Zigbee Drivers for Homey SDK 3",
-  "main": "src/core/orchestrator.js",
+  "version": "3.8.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
-    "start": "homey app run",
-    "run": "homey app run",
-    "build": "homey app build",
-    "deploy": "homey app deploy",
-    "orchestrate:mega": "node src/core/orchestrator.js",
-    "test": "homey app test",
-    "validate": "homey app validate",
     "audit": "node tools/cli.js audit",
     "refactor": "node tools/cli.js refactor",
     "schema-check": "node tools/cli.js schema-check",
     "images-check": "node tools/cli.js images-check",
     "lint": "node tools/cli.js lint",
     "test": "node tools/cli.js test",
-    "build:homey": "node tools/cli.js build",
-    "validate:homey": "node tools/cli.js validate",
-    "fix:validate": "node tools/cli.js fix-validate",
+    "build:homey": "node tools/cli.js build && node -e \"console.log('::END::NPM_BUILD::OK')\"",
+    "validate:homey": "node tools/cli.js validate && node -e \"console.log('::END::NPM_VALIDATE::OK')\"",
+    "fix:validate": "node tools/cli.js fix-validate && node -e \"console.log('::END::NPM_FIXVALIDATE::OK')\"",
     "ingest": "node tools/cli.js ingest",
     "infer": "node tools/cli.js infer",
     "propose": "node tools/cli.js propose",
@@ -30,13 +26,17 @@
     "replay": "node tools/cli.js replay",
     "simulate": "node tools/cli.js simulate",
     "housekeep": "node tools/cli.js housekeep",
-    "publish:rc": "node tools/cli.js pack"
+    "docs:build": "node tools/docs.js"
   },
-  "dependencies": {
-    "homey": "^3.0.0"
-  },
-  "engines": {
-    "node": ">=18.0.0",
-    "homey": ">=3.0.0"
+  "devDependencies": {
+    "ajv": "^8.12.0",
+    "ajv-formats": "^3.0.1",
+    "chalk": "^5.3.0",
+    "conventional-changelog-cli": "^4.1.0",
+    "eslint": "^9.9.0",
+    "eslint-plugin-n": "^17.9.0",
+    "image-size": "^1.0.2",
+    "prettier": "^3.3.3",
+    "yaml": "^2.4.5"
   }
 }

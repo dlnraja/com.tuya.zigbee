@@ -5,50 +5,66 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [3.7.0] - 2025-08-19
+## [3.8.0] - 2025-01-19
 
-### Added
-- **Offline Inference & Confidence Scoring**: système d'inférence entièrement hors-ligne pour supporter plus d'appareils Tuya Zigbee sans appels cloud
-- **Golden Replays & Chaos-DP Simulator**: moteur de relecture reproductible pour tester les drivers hors-ligne avec des séquences DP réelles ou synthétiques
-- **Feature flags par overlay**: clé `features:{}` pour activer/désactiver des variantes par modèle/firmware
-- **Schema drift detector**: détecte les incohérences et collisions de fingerprints entre overlays
-- **Housekeeping offline**: tâches de maintenance automatique (purge des logs, régénération des matrices)
+### Added - Innovation Pack 🚀
+
+#### Offline Inference & Confidence Scoring
+- Manual data ingestion system (`research/manual/*.jsonl`)
+- Multi-source confidence calculation with weighted scoring
+- Automatic overlay proposal generation (≥0.60 confidence)
+- Source catalog supporting 15+ data types
+- Bonus/penalty system for consensus and contradictions
+
+#### Golden Replays & Testing
+- Replay system for offline driver testing (`tests/replays/*.replay.jsonl`)
+- Chaos-DP simulator for edge case testing
+- Deterministic profiling for performance analysis
+
+#### Architecture Improvements
+- Unified Node.js CLI (`tools/cli.js`) replacing all PowerShell scripts
+- FIFO DP queue with backpressure (max 100 items)
+- Capability debouncing (150-300ms) to prevent flooding
+- Robust Tuya writes with retry and jitter
+- Safe mode for error throttling
 
 ### Fixed
-- **Robust Tuya writes**: `writeInteger` avec retry et jitter pour éviter les timeouts Zigbee
-- **FIFO DP queue**: file d'attente DP avec backpressure et gestion des débordements
-- **Debounced capability updates**: mises à jour de capacités avec debounce pour éviter les tempêtes d'événements
-- **Safe mode**: basculement automatique en lecture seule en cas d'erreurs répétées
+- Terminal output issues with PowerShell (STDIN closure, timeouts)
+- `homey app build` hanging on remote-scene-tuya driver
+- Missing driver.js files causing validation errors
+- Image dimension validation and generation
 
 ### Changed
-- **Architecture**: transition vers une architecture lisible par type de produit (kebab-case, pas de "TSxxxx" dans les noms)
-- **CLI unifié**: un seul point d'entrée `tools/cli.js` pour toutes les tâches (audit, refactor, checks, tests, build, validate, ingest, infer, propose)
-- **Scoring avancé**: système de confiance pondéré par source avec bonus pour la diversité et les preuves DP
+- Migrated to SDK3 + Homey Compose (app.json generated)
+- Driver naming to readable kebab-case by type (no TSxxxx)
+- All tools to Node.js only (no PowerShell dependencies)
+- Runtime to 100% local Zigbee (no network calls)
 
-### Technical Details
-- **Runtime 100% local Zigbee**: aucune API réseau dans le code de l'application
-- **SDK3 + Homey Compose**: manifest généré automatiquement, jamais édité manuellement
-- **Overlays vendor/firmware**: configuration spécifique par constructeur et firmware avec statut et niveau de confiance
-- **Images conformes**: tailles exactes Homey (small 75x75, large 500x500, xlarge 1000x1000)
-
-## [3.6.0] - 2025-08-15
+## [3.7.0] - 2025-01-18
 
 ### Added
-- MEGA Orchestrator pour l'automatisation complète du projet
-- Dashboard moderne et responsive
-- Support multilingue (EN/FR/NL)
+- Initial 4 family drivers: plug, TRV, curtain, remote
+- Basic overlay system for vendor/firmware variants
+- GitHub Actions CI/CD pipeline
 
-### Changed
-- Migration vers Homey SDK 3
-- Architecture modulaire et maintenable
-
-## [3.5.0] - 2025-08-10
+## [3.6.0] - 2025-01-15
 
 ### Added
-- Drivers Tuya Zigbee de base
-- Tests automatisés et validation
-- Structure de projet modulaire
+- Project structure migration to Homey SDK3
+- Basic Tuya Zigbee device support
 
 ---
 
-**Note**: Ce projet suit maintenant un système de versioning sémantique strict. Les changements breaking seront documentés dans la section "Breaking Changes" et nécessiteront une version majeure.
+## Version Roadmap
+
+### [3.9.0] - Planned
+- Flow cards for all device types
+- JSON Schema validation for overlays
+- Unit tests for core modules
+- i18n improvements (ta-LK, nl)
+
+### [4.0.0] - Future
+- Full device catalog with 50+ confirmed overlays
+- Advanced diagnostics and logging
+- Community contribution portal
+- Automated device discovery
