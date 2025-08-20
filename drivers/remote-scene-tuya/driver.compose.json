@@ -1,5 +1,10 @@
 {
   "id": "remote-scene-tuya",
+  "name": {
+    "en": "Tuya Zigbee Remote/Scene",
+    "fr": "Télécommande/Scène Tuya Zigbee",
+    "nl": "Tuya Zigbee Afstandsbediening/Scène"
+  },
   "class": "sensor",
   "capabilities": [
     "alarm_battery"
@@ -8,5 +13,9 @@
     "small": "assets/small.png",
     "large": "assets/large.png",
     "xlarge": "assets/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": ["_TZ3000_*", "_TZE200_*"],
+    "productId": ["TS0041", "TS0042", "TS0043", "TS0044"]
   }
 }

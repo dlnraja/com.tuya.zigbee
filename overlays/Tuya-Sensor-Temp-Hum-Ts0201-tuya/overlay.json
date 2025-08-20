@@ -1,0 +1,35 @@
+{
+  "id": "Tuya-Sensor-Temp-Hum-Ts0201-tuya",
+  "name": {
+    "en": "Tuya_Sensor_Temp_Hum_Ts0201 (Tuya)"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "alarm_battery"
+  ],
+  "images": {
+    "small": "assets/small.png",
+    "large": "assets/large.png",
+    "xlarge": "assets/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_*",
+      "_TZE200_*"
+    ],
+    "productId": [
+      "TS011F",
+      "TS0601",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044"
+    ]
+  },
+  "tuya": {
+    "local": true,
+    "api": false,
+    "version": "1.0.0"
+  }
+}

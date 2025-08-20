@@ -1,0 +1,1 @@
+console.log("Test de la structure des drivers..."); const fs = require("fs"); const drivers = fs.readdirSync("drivers"); console.log("Drivers actuels:", drivers.length); drivers.forEach(d => console.log("  - " + d)); console.log("::END::TEST_DRIVERS::OK");

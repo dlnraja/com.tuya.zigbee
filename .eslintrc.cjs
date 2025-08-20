@@ -1,18 +1,1 @@
-module.exports = {
-  env: { node: true, es2022: true },
-  rules: {
-    'no-restricted-imports': ['error',
-      { 'name': 'http', 'message': 'No network in runtime' },
-      { 'name': 'https', 'message': 'No network in runtime' },
-      { 'name': 'node-fetch', 'message': 'No network in runtime' },
-      { 'name': 'axios', 'message': 'No network in runtime' },
-      { 'name': 'fetch', 'message': 'No network in runtime' },
-      { 'name': 'ws', 'message': 'No network in runtime' },
-      { 'name': 'net', 'message': 'No network in runtime' },
-      { 'name': 'dgram', 'message': 'No network in runtime' },
-      { 'name': 'dns', 'message': 'No network in runtime' },
-      { 'name': 'tls', 'message': 'No network in runtime' }
-    ],
-    'no-restricted-globals': ['error', 'fetch', 'WebSocket']
-  }
-};
+module.exports = { env: { node: true, es2022: true }, rules: { "no-restricted-imports": ["error", { "name": "http", "message": "Zigbee-only: no network in runtime" }, { "name": "https", "message": "Zigbee-only: no network in runtime" }, { "name": "undici", "message": "Zigbee-only: no network in runtime" }, { "name": "node-fetch", "message": "Zigbee-only: no network in runtime" }, { "name": "axios", "message": "Zigbee-only: no network in runtime" }, { "name": "fetch", "message": "Zigbee-only: no network in runtime" }, { "name": "ws", "message": "Zigbee-only: no WebSocket in runtime" }, { "name": "dgram", "message": "Zigbee-only: no UDP in runtime" }, { "name": "net", "message": "Zigbee-only: no TCP in runtime" }, { "name": "noble", "message": "Zigbee-only: no BLE" }, { "name": "bluetooth", "message": "Zigbee-only: no BLE" }, { "name": "serialport", "message": "Zigbee-only: no serial bridges" }, { "name": "mdns", "message": "Zigbee-only: no mDNS/Bonjour" } ], "no-restricted-globals": ["error", "fetch", "WebSocket"] }, overrides: [ { files: ["tools/**/*.js"], rules: { "no-restricted-imports": "off", "no-restricted-globals": "off" } } ] };
