@@ -1,0 +1,27 @@
+[
+  {"lang":"en","type":"official_manufacturer","weight":0.90,"urls":["https://developer.tuya.com/en/docs/iot","https://support.tuya.com/en/help"]},
+  {"lang":"zh","type":"official_manufacturer","weight":0.90,"urls":["https://developer.tuya.com/cn/docs/iot","https://iot.tuya.com/cn/help"]},
+  {"lang":"ru","type":"official_manufacturer","weight":0.90,"urls":["https://developer.tuya.com/ru/docs/iot"]},
+  {"lang":"es","type":"official_manufacturer","weight":0.90,"urls":["https://developer.tuya.com/es/docs/iot"]},
+  {"lang":"de","type":"official_manufacturer","weight":0.90,"urls":["https://developer.tuya.com/de/docs/iot"]},
+  {"lang":"ar","type":"official_manufacturer","weight":0.90,"urls":["https://developer.tuya.com/ar/docs/iot"]},
+
+  {"lang":"en","type":"upstream_repo","weight":0.85,"urls":["https://github.com/JohanBendz/com.tuya.zigbee","https://github.com/Koenkk/zigbee-herdsman-converters"]},
+  {"lang":"zh","type":"upstream_repo","weight":0.85,"urls":["https://gitee.com/mirrors/zigbee-herdsman-converters","https://github.com/zigbee2mqtt/zigbee2mqtt/issues (zh tags)"]},
+
+  {"lang":"en","type":"reputable_forum","weight":0.75,"urls":["https://community.homey.app/t/tuya-zigbee-app","https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version"]},
+  {"lang":"zh","type":"reputable_forum","weight":0.75,"urls":["https://bbs.elecfans.com","https://www.chiphell.com","https://tieba.baidu.com/f?kw=tuya"]},
+  {"lang":"ru","type":"reputable_forum","weight":0.75,"urls":["https://habr.com/ru/search/?q=tuya","https://www.rcl-radio.ru/forum/viewtopic.php?t=1234"]},
+  {"lang":"es","type":"reputable_forum","weight":0.75,"urls":["https://www.forocoches.com/foro/showthread.php?t=876543","https://t.me/TuyaESP_ES"]},
+  {"lang":"de","type":"reputable_forum","weight":0.75,"urls":["https://forum.iobroker.net/topic/1234-tuya","https://www.smarthome-tricks.de/tuya-zigbee/"]},
+
+  {"lang":"en","type":"video_demo","weight":0.55,"urls":["https://www.youtube.com/results?search_query=tuya+zigbee+interview"]},
+  {"lang":"zh","type":"video_demo","weight":0.55,"urls":["https://search.bilibili.com/all?keyword=tuya+zigbee"]},
+  {"lang":"ru","type":"video_demo","weight":0.55,"urls":["https://rutube.ru/search?query=tuya+zigbee"]},
+  {"lang":"es","type":"video_demo","weight":0.55,"urls":["https://www.youtube.com/results?search_query=tuya+zigbee+español"]},
+
+  {"lang":"en","type":"retailer_specs","weight":0.50,"urls":["https://www.aliexpress.com/item/100500123456789.html","https://www.amazon.com/dp/B08XXXXXXX"]},
+  {"lang":"zh","type":"retailer_specs","weight":0.50,"urls":["https://detail.tmall.com/item.htm?id=123456","https://item.jd.com/100012345.html"]},
+  {"lang":"ru","type":"retailer_specs","weight":0.50,"urls":["https://www.ozon.ru/product/12345678"]},
+  {"lang":"de","type":"retailer_specs","weight":0.50,"urls":["https://www.conrad.de/p/tuya-zigbee-123456"]}
+]

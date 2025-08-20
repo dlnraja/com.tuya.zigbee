@@ -1,0 +1,703 @@
+{
+  "drivers": [
+    {
+      "path": "tuya\\light\\tuya\\ts130f\\driver.compose.json",
+      "fullPath": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya\\light\\tuya\\ts130f\\driver.compose.json",
+      "compose": {
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya\\light\\tuya\\ts130f\\driver.compose.json",
+        "data": {
+          "id": "tuya-switch",
+          "name": {
+            "en": "Tuya Switch",
+            "fr": "Interrupteur Tuya",
+            "nl": "Tuya Schakelaar",
+            "ta": "Tuya சுவிட்ச்"
+          },
+          "images": {
+            "small": "assets/images/switch-small.png",
+            "large": "assets/images/switch-large.png"
+          },
+          "class": "device",
+          "capabilities": [
+            "onoff",
+            "dim",
+            "measure_power",
+            "measure_temperature",
+            "measure_humidity",
+            "measure_voltage",
+            "light_temperature",
+            "light_hue",
+            "light_saturation",
+            "fan_set",
+            "measure_current"
+          ],
+          "capabilitiesOptions": {
+            "onoff": {
+              "title": {
+                "en": "On/Off",
+                "fr": "Marche/Arrêt",
+                "nl": "Aan/Uit",
+                "ta": "இயக்கு/நிறுத்து"
+              }
+            },
+            "dim": {
+              "title": {
+                "en": "Dim",
+                "fr": "Variation",
+                "nl": "Dimmen",
+                "ta": "மங்கலாக்கு"
+              }
+            },
+            "measure_power": {
+              "title": {
+                "en": "Power",
+                "fr": "Puissance",
+                "nl": "Vermogen",
+                "ta": "சக்தி"
+              }
+            }
+          },
+          "settings": [
+            {
+              "id": "poll_interval",
+              "type": "number",
+              "label": {
+                "en": "Poll Interval (ms)",
+                "fr": "Intervalle de Polling (ms)",
+                "nl": "Poll Interval (ms)",
+                "ta": "போல் இடைவெளி (ms)"
+              },
+              "value": 30000,
+              "attr": {
+                "min": 1000,
+                "max": 300000,
+                "step": 1000
+              }
+            }
+          ],
+          "zigbee": {
+            "manufacturerName": [
+              "Tuya",
+              "TUYATEC-0l6xaqmi",
+              "_TZ3000_7tbsruql",
+              "_TZ3000_osu834un",
+              "Immax",
+              "Visonic",
+              "_TZ3000_hkcpblrs",
+              "_TZ3000_8yhypbo7",
+              "_TZ3000_cqlnswn0",
+              "Generic",
+              "_TZE200_yvx5lh6k",
+              "_TZE200_8ygsuhe1",
+              "_TZE200_mja3fuja",
+              "_TZE200_ryfmq5rl",
+              "_TZE200_c2fmom5z",
+              "_TZE200_la2c2uo9",
+              "_TZE204_hlx9tnzb",
+              "_TZE200_ip2akl4w",
+              "_TZE200_1agwnems",
+              "_TZE200_579lguh2",
+              "_TZE200_vucankjx",
+              "_TZE200_4mh6tyyo",
+              "_TZE204_n9ctkb6j",
+              "_TZE204_9qhuzgo0",
+              "_TZE204_dcnsggvz",
+              "_TZE204_5cuocqty",
+              "_TZE200_sur6q7ko",
+              "_TZE200_hue3yfsn",
+              "_TZE200_husqqvux",
+              "_TZE200_lnbfnyxd",
+              "_TZE200_lllliz3p",
+              "_TZE200_mudxchsu",
+              "_TZE200_7yoranx2",
+              "_TZE200_e9ba97vf",
+              "_TZE200_kds0pmmv",
+              "_TZE200_kly8gjlz",
+              "_TZE200_py4cm3he",
+              "_TZE200_s8gkrkxk",
+              "_TZ3000_fa9mlvja",
+              "_TZ3000_yj6k7vfo",
+              "_TZ3000_qgwcxxws"
+            ],
+            "modelId": [
+              "ts130f",
+              "ts0601",
+              "ts011f",
+              "ts0121",
+              "tso121",
+              "rh3052",
+              "ts0201",
+              "rh3001",
+              "ts0203",
+              "ts0207",
+              "ts0014",
+              "ts0044",
+              "ts0003",
+              "ts0013",
+              "ts0043",
+              "ts0002",
+              "ts0012",
+              "ts0042",
+              "ts0001",
+              "ts0011",
+              "ts0046",
+              "ts004f",
+              "ts0041",
+              "ts0111",
+              "ts0502a",
+              "ts0004",
+              "ts000f",
+              "ts0115",
+              "ts0205",
+              "ts0215a",
+              "ty0202",
+              "ts0101",
+              "ts0049",
+              "ty0203",
+              "ts0202",
+              "ts0505a",
+              "ts0505b",
+              "ts0503a",
+              "ts0503b",
+              "ts0504b",
+              "ts0225",
+              "ty0201",
+              "ts0222",
+              "mct-340 e",
+              "ts110f",
+              "ts110e",
+              "ts0052",
+              "ts0502b",
+              "rh3040",
+              "doorwindow-sensor-zb3.0"
+            ]
+          }
+        },
+        "isValid": true,
+        "errors": []
+      },
+      "device": {
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya\\light\\tuya\\ts130f\\device.js",
+        "manufacturerName": null,
+        "modelId": null,
+        "productId": null,
+        "isValid": true,
+        "errors": []
+      },
+      "hasCompose": true,
+      "hasDevice": true,
+      "isValid": true
+    },
+    {
+      "path": "tuya\\plug\\tuya\\ts130f\\driver.compose.json",
+      "fullPath": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya\\plug\\tuya\\ts130f\\driver.compose.json",
+      "compose": {
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya\\plug\\tuya\\ts130f\\driver.compose.json",
+        "data": {
+          "id": "gateway",
+          "title": {
+            "en": "Gateway",
+            "fr": "Gateway",
+            "nl": "Gateway",
+            "ta": "Gateway"
+          },
+          "description": {
+            "en": "TUYA driver for gateway from Tuya (Historical)",
+            "fr": "Driver TUYA pour gateway de Tuya (Historique)",
+            "nl": "TUYA driver voor gateway van Tuya (Historisch)",
+            "ta": "Tuya இலிருந்து gateway க்கான TUYA டிரைவர் (வரலாற்று)"
+          },
+          "category": "automation",
+          "protocol": "tuya",
+          "manufacturer": "Tuya",
+          "source": "README historique (master)",
+          "capabilities": [
+            "onoff",
+            "target_temperature",
+            "measure_temperature",
+            "measure_formaldehyde",
+            "measure_voc",
+            "measure_co2",
+            "measure_humidity",
+            "alarm_battery",
+            "thermostat_preset",
+            "window_open"
+          ],
+          "clusters": [
+            "genOnOff"
+          ],
+          "version": "1.0.0",
+          "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+          "createdAt": "2025-07-29T15:41:38.054Z",
+          "historical": {
+            "commitHash": "e8936adf",
+            "branch": "master",
+            "extractedFrom": "README historique"
+          },
+          "tuyaCompatibility": {
+            "supported": true,
+            "protocol": "zigbee",
+            "manufacturer": "Tuya",
+            "model": "gateway",
+            "firmware": "latest",
+            "capabilities": [
+              "onoff"
+            ],
+            "clusters": [
+              "genOnOff"
+            ]
+          },
+          "homeyCompatibility": {
+            "pro": true,
+            "bridge": true,
+            "cloud": false,
+            "minVersion": "5.0.0",
+            "maxVersion": "6.0.0"
+          },
+          "name": {
+            "en": "Tuya Device",
+            "fr": "Appareil Tuya"
+          },
+          "zigbee": {
+            "manufacturerName": [
+              "Tuya",
+              "TUYATEC-0l6xaqmi",
+              "_TZ3000_7tbsruql",
+              "_TZ3000_osu834un",
+              "Immax",
+              "Visonic",
+              "_TZ3000_hkcpblrs",
+              "_TZ3000_8yhypbo7",
+              "_TZ3000_cqlnswn0",
+              "Generic",
+              "_TZE200_yvx5lh6k",
+              "_TZE200_8ygsuhe1",
+              "_TZE200_mja3fuja",
+              "_TZE200_ryfmq5rl",
+              "_TZE200_c2fmom5z",
+              "_TZE200_la2c2uo9",
+              "_TZE204_hlx9tnzb",
+              "_TZE200_ip2akl4w",
+              "_TZE200_1agwnems",
+              "_TZE200_579lguh2",
+              "_TZE200_vucankjx",
+              "_TZE200_4mh6tyyo",
+              "_TZE204_n9ctkb6j",
+              "_TZE204_9qhuzgo0",
+              "_TZE204_dcnsggvz",
+              "_TZE204_5cuocqty",
+              "_TZE200_sur6q7ko",
+              "_TZE200_hue3yfsn",
+              "_TZE200_husqqvux",
+              "_TZE200_lnbfnyxd",
+              "_TZE200_lllliz3p",
+              "_TZE200_mudxchsu",
+              "_TZE200_7yoranx2",
+              "_TZE200_e9ba97vf",
+              "_TZE200_kds0pmmv",
+              "_TZE200_kly8gjlz",
+              "_TZE200_py4cm3he",
+              "_TZE200_s8gkrkxk",
+              "_TZ3000_fa9mlvja",
+              "_TZ3000_yj6k7vfo",
+              "_TZ3000_qgwcxxws"
+            ],
+            "modelId": [
+              "ts130f",
+              "ts0601",
+              "ts011f",
+              "ts0121",
+              "tso121",
+              "rh3052",
+              "ts0201",
+              "rh3001",
+              "ts0203",
+              "ts0207",
+              "ts0014",
+              "ts0044",
+              "ts0003",
+              "ts0013",
+              "ts0043",
+              "ts0002",
+              "ts0012",
+              "ts0042",
+              "ts0001",
+              "ts0011",
+              "ts0046",
+              "ts004f",
+              "ts0041",
+              "ts0111",
+              "ts0502a",
+              "ts0004",
+              "ts000f",
+              "ts0115",
+              "ts0205",
+              "ts0215a",
+              "ty0202",
+              "ts0101",
+              "ts0049",
+              "ty0203",
+              "ts0202",
+              "ts0505a",
+              "ts0505b",
+              "ts0503a",
+              "ts0503b",
+              "ts0504b",
+              "ts0225",
+              "ty0201",
+              "ts0222",
+              "mct-340 e",
+              "ts110f",
+              "ts110e",
+              "ts0052",
+              "ts0502b",
+              "rh3040",
+              "doorwindow-sensor-zb3.0"
+            ]
+          }
+        },
+        "isValid": true,
+        "errors": []
+      },
+      "device": {
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya\\plug\\tuya\\ts130f\\device.js",
+        "manufacturerName": null,
+        "modelId": null,
+        "productId": null,
+        "isValid": true,
+        "errors": []
+      },
+      "hasCompose": true,
+      "hasDevice": true,
+      "isValid": true
+    },
+    {
+      "path": "zigbee\\plug\\lellki\\generic\\driver.compose.json",
+      "fullPath": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\zigbee\\plug\\lellki\\generic\\driver.compose.json",
+      "compose": {
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\zigbee\\plug\\lellki\\generic\\driver.compose.json",
+        "data": {
+          "id": "wall_thermostat",
+          "capabilities": [
+            "onoff",
+            "button",
+            "lock_state",
+            "`onoff`",
+            "`dim`",
+            "* `light_mode`",
+            "`light_hue`",
+            "`light_saturation` and `light_temperature`",
+            "measure_temperature",
+            "measure_humidity",
+            "i",
+            "measure_pressure",
+            "alarm_motion",
+            "alarm_battery",
+            "alarm_contact",
+            "alarm_tamper",
+            "windowcoverings_state",
+            "windowcoverings_set",
+            "garage_door_set",
+            "target_temperature",
+            "measure_battery"
+          ],
+          "capabilitiesOptions": {},
+          "icon": "/assets/icon.svg",
+          "images": {
+            "small": "/assets/images/small.png",
+            "large": "/assets/images/large.png"
+          },
+          "class": "thermostat",
+          "connectivity": "zigbee",
+          "name": {
+            "en": "Wall Thermostat",
+            "nl": "Wall Thermostat",
+            "fr": "Wall Thermostat",
+            "de": "Wall Thermostat"
+          },
+          "manufacturer": "_TZ3000_xxxxxxxx",
+          "product": "WALL_THERMOSTAT",
+          "dataPoints": {
+            "1": {
+              "name": "switch",
+              "type": "bool",
+              "writable": true
+            }
+          },
+          "metadata": {
+            "enriched": true,
+            "enrichmentDate": "2025-08-07T17:53:57.390Z",
+            "driverType": "zigbee",
+            "category": "thermostats",
+            "subcategory": "wall_thermostat",
+            "megaUltimateBugFixer": true
+          },
+          "zigbee": {
+            "manufacturerName": [
+              "LELLKI",
+              "_TZ3000_kdi2o9m6",
+              "_TZ3000_ew31dmgx",
+              "_TZ3000_dpo1ysak",
+              "_TZ3000_plyvnuf5",
+              "_TZ3000_hyfvrar3",
+              "_TZ3000_cymsnfvf",
+              "_TZ3000_upjrsxh1",
+              "_TZ3000_wamqdr3f",
+              "_TZ3000_u3nv1jwk",
+              "Generic",
+              "_TZ3000_vd43bbfq",
+              "_TZ3000_1dd0d5yi",
+              "_TZ3000_ke7pzj5d",
+              "_TZ3000_fccpjz5z",
+              "_TZ3000_4uuaja4a",
+              "_TZ3000_zirycpws",
+              "_TZ3000_femsaaua",
+              "_TZ3000_e3vhyirx",
+              "_TZ3000_jwv3cwak",
+              "_TZ3210_dwytrmda",
+              "_TZ3210_ol1uhvza",
+              "_TZ3000_eg7awg6a",
+              "_TZ3000_eafaa66e",
+              "Tuya",
+              "Moes",
+              "Aqara",
+              "Xiaomi",
+              "Philips",
+              "IKEA",
+              "Osram",
+              "Samsung",
+              "LG",
+              "Bosch"
+            ],
+            "modelId": [
+              "ts130f",
+              "ts0601",
+              "ts011f",
+              "ts0121",
+              "tso121",
+              "rh3052",
+              "ts0201",
+              "rh3001",
+              "ts0203",
+              "ts0207",
+              "ts0014",
+              "ts0044",
+              "ts0003",
+              "ts0013",
+              "ts0043",
+              "ts0002",
+              "ts0012",
+              "ts0042",
+              "ts0001",
+              "ts0011",
+              "ts0046",
+              "ts004f",
+              "ts0041",
+              "ts0111",
+              "ts0502a",
+              "ts0004",
+              "ts000f",
+              "ts0115",
+              "ts0205",
+              "ts0215a",
+              "ty0202",
+              "ts0101",
+              "ts0049",
+              "ty0203",
+              "ts0202",
+              "ts0505a",
+              "ts0505b",
+              "ts0503a",
+              "ts0503b",
+              "ts0504b",
+              "ts0225",
+              "ty0201",
+              "ts0222",
+              "mct-340 e",
+              "ts110f",
+              "ts110e",
+              "ts0052",
+              "ts0502b",
+              "rh3040",
+              "doorwindow-sensor-zb3.0"
+            ]
+          }
+        },
+        "isValid": true,
+        "errors": []
+      },
+      "device": {
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\zigbee\\plug\\lellki\\generic\\device.js",
+        "manufacturerName": null,
+        "modelId": null,
+        "productId": null,
+        "isValid": true,
+        "errors": []
+      },
+      "hasCompose": true,
+      "hasDevice": true,
+      "isValid": true
+    },
+    {
+      "path": "zigbee\\plug\\lellki\\generic\\jz-zb-004-jz-zb-004\\driver.compose.json",
+      "fullPath": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\zigbee\\plug\\lellki\\generic\\jz-zb-004-jz-zb-004\\driver.compose.json",
+      "compose": {
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\zigbee\\plug\\lellki\\generic\\jz-zb-004-jz-zb-004\\driver.compose.json",
+        "data": {
+          "id": "socket_power_strip_four_three",
+          "name": {
+            "en": "Power Strip 4 Sockets",
+            "fr": "Power Strip 4 Sockets"
+          },
+          "class": "socket",
+          "platforms": [
+            "local"
+          ],
+          "connectivity": [
+            "zigbee"
+          ],
+          "capabilities": [
+            "onoff"
+          ],
+          "capabilitiesOptions": {
+            "measure_power": {
+              "approximated": true
+            }
+          },
+          "images": {
+            "large": "{{driverAssetsPath}}/images/large.png",
+            "small": "{{driverAssetsPath}}/images/small.png"
+          },
+          "zigbee": {
+            "manufacturerName": [
+              "LELLKI"
+            ],
+            "productId": [
+              "JZ-ZB-004"
+            ],
+            "endpoints": {
+              "1": {
+                "clusters": [
+                  0,
+                  4,
+                  5,
+                  6
+                ],
+                "bindings": [
+                  6
+                ]
+              },
+              "2": {
+                "clusters": [
+                  4,
+                  5,
+                  6
+                ],
+                "bindings": [
+                  6
+                ]
+              },
+              "3": {
+                "clusters": [
+                  4,
+                  5,
+                  6
+                ],
+                "bindings": [
+                  6
+                ]
+              },
+              "4": {
+                "clusters": [
+                  4,
+                  5,
+                  6
+                ],
+                "bindings": [
+                  6
+                ]
+              }
+            },
+            "devices": {
+              "socket2": {
+                "class": "socket",
+                "capabilities": [
+                  "onoff"
+                ],
+                "name": {
+                  "en": "Power Strip Socket 2/4"
+                },
+                "energy": {
+                  "approximation": {
+                    "usageOn": 0,
+                    "usageOff": 0
+                  }
+                }
+              },
+              "socket3": {
+                "class": "socket",
+                "capabilities": [
+                  "onoff"
+                ],
+                "name": {
+                  "en": "Power Strip Socket 3/4"
+                },
+                "energy": {
+                  "approximation": {
+                    "usageOn": 0,
+                    "usageOff": 0
+                  }
+                }
+              },
+              "socket4": {
+                "class": "socket",
+                "capabilities": [
+                  "onoff"
+                ],
+                "name": {
+                  "en": "Power Strip Socket 4/4"
+                },
+                "energy": {
+                  "approximation": {
+                    "usageOn": 0,
+                    "usageOff": 0
+                  }
+                }
+              }
+            },
+            "learnmode": {
+              "instruction": {
+                "en": "A tile for each socket will be created. Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
+              }
+            },
+            "modelId": [
+              "JZ-ZB-004",
+              "jz-zb-004"
+            ]
+          }
+        },
+        "isValid": true,
+        "errors": []
+      },
+      "device": {
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\zigbee\\plug\\lellki\\generic\\jz-zb-004-jz-zb-004\\device.js",
+        "manufacturerName": null,
+        "modelId": null,
+        "productId": null,
+        "isValid": true,
+        "errors": []
+      },
+      "hasCompose": true,
+      "hasDevice": true,
+      "isValid": true
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "valid": 4,
+    "invalid": 0,
+    "withCompose": 4,
+    "withDevice": 4,
+    "withBoth": 4
+  }
+}

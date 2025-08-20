@@ -1,0 +1,586 @@
+{
+  "timestamp": "2025-08-11T21:05:05.754Z",
+  "duration": "30518ms",
+  "totalForums": 3,
+  "results": {
+    "homey-community": {
+      "forum": "homey-community",
+      "url": "https://community.homey.app",
+      "sections": {
+        "t/tuya/": {
+          "url": "https://community.homey.app/t/tuya/",
+          "foundKeywords": [
+            "tuya",
+            "zigbee",
+            "device",
+            "compatibility"
+          ],
+          "topics": [
+            "Homey Community Forum",
+            "Oops! That page doesn’t exist or is private."
+          ],
+          "links": [
+            {
+              "href": "/signup",
+              "text": "Sign Up"
+            },
+            {
+              "href": "/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352",
+              "text": "[APP][PRO]Universal TUYA Zigbee Device App - lite version"
+            },
+            {
+              "href": "/t/homey-energy-dynamic-pricing-is-here-experimental/140709",
+              "text": "Homey Energy - Dynamic pricing is here (Experimental)"
+            },
+            {
+              "href": "/t/app-pro-slimladen-voor-marstek-stuur-je-marstek-venus-slim-aan-nl/140156",
+              "text": "[App][Pro] SlimLaden voor Marstek - Stuur je Marstek Venus slim aan (NL)"
+            },
+            {
+              "href": "/t/airco-aanzetten-temperatuur-checken-en-aanpassen/140042",
+              "text": "Airco aanzetten, temperatuur checken en aanpassen"
+            },
+            {
+              "href": "/t/homey-keeps-restarting/140344",
+              "text": "Homey Keeps restarting"
+            },
+            {
+              "href": "/t/when-dynamic-prices/139850",
+              "text": "When Dynamic prices?"
+            },
+            {
+              "href": "/t/keeping-time-without-internet-connection/140208",
+              "text": "Keeping time without internet connection"
+            },
+            {
+              "href": "/t/question-about-somfy-rts-operation-and-state/139942",
+              "text": "Question about Somfy RTS operation and state"
+            },
+            {
+              "href": "/t/push-notification-when-a-flow-is-started/141286",
+              "text": "Push notification when a flow is started"
+            },
+            {
+              "href": "/t/aqara-temperature-and-humidity-sensors-report-time/140405",
+              "text": "Aqara temperature and humidity sensors report time"
+            },
+            {
+              "href": "/top",
+              "text": "More&hellip;"
+            },
+            {
+              "href": "/t/aqara-compatibility/141433",
+              "text": "Aqara compatibility"
+            },
+            {
+              "href": "/t/notification-about-power-outage-in-2025/141431",
+              "text": "Notification about power outage in 2025?"
+            },
+            {
+              "href": "/t/app-pro-kef-connect-app/141385",
+              "text": "[APP][Pro] KEF Connect App"
+            },
+            {
+              "href": "/t/zigbee-device-not-detected-after-removal-need-help/141384",
+              "text": "Zigbee Device Not Detected After Removal – Need Help"
+            },
+            {
+              "href": "/t/homey-pro-2023-zigbee-problemen/141382",
+              "text": "Homey Pro 2023 Zigbee Problemen"
+            },
+            {
+              "href": "/t/nar-kommunens-lampor-tands-slacks/141369",
+              "text": "När kommunens lampor tänds/släcks"
+            },
+            {
+              "href": "/t/bug-dashboard-widget-electricity-prices-does-not-update-at-00-00/141367",
+              "text": "[BUG] Dashboard widget &quot;Electricity Prices&quot; does not update at 00:00"
+            },
+            {
+              "href": "/t/no-power-insights-shelly-3-phase-meter/141365",
+              "text": "No power insights shelly 3 phase meter"
+            }
+          ],
+          "dates": [],
+          "contentLength": 23944,
+          "scrapedAt": "2025-08-11T21:04:38.346Z"
+        },
+        "t/zigbee/": {
+          "url": "https://community.homey.app/t/zigbee/",
+          "foundKeywords": [
+            "tuya",
+            "zigbee",
+            "device",
+            "compatibility"
+          ],
+          "topics": [
+            "Homey Community Forum",
+            "Oops! That page doesn’t exist or is private."
+          ],
+          "links": [
+            {
+              "href": "/signup",
+              "text": "Sign Up"
+            },
+            {
+              "href": "/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352",
+              "text": "[APP][PRO]Universal TUYA Zigbee Device App - lite version"
+            },
+            {
+              "href": "/t/homey-energy-dynamic-pricing-is-here-experimental/140709",
+              "text": "Homey Energy - Dynamic pricing is here (Experimental)"
+            },
+            {
+              "href": "/t/app-pro-slimladen-voor-marstek-stuur-je-marstek-venus-slim-aan-nl/140156",
+              "text": "[App][Pro] SlimLaden voor Marstek - Stuur je Marstek Venus slim aan (NL)"
+            },
+            {
+              "href": "/t/airco-aanzetten-temperatuur-checken-en-aanpassen/140042",
+              "text": "Airco aanzetten, temperatuur checken en aanpassen"
+            },
+            {
+              "href": "/t/homey-keeps-restarting/140344",
+              "text": "Homey Keeps restarting"
+            },
+            {
+              "href": "/t/when-dynamic-prices/139850",
+              "text": "When Dynamic prices?"
+            },
+            {
+              "href": "/t/keeping-time-without-internet-connection/140208",
+              "text": "Keeping time without internet connection"
+            },
+            {
+              "href": "/t/question-about-somfy-rts-operation-and-state/139942",
+              "text": "Question about Somfy RTS operation and state"
+            },
+            {
+              "href": "/t/push-notification-when-a-flow-is-started/141286",
+              "text": "Push notification when a flow is started"
+            },
+            {
+              "href": "/t/aqara-temperature-and-humidity-sensors-report-time/140405",
+              "text": "Aqara temperature and humidity sensors report time"
+            },
+            {
+              "href": "/top",
+              "text": "More&hellip;"
+            },
+            {
+              "href": "/t/aqara-compatibility/141433",
+              "text": "Aqara compatibility"
+            },
+            {
+              "href": "/t/notification-about-power-outage-in-2025/141431",
+              "text": "Notification about power outage in 2025?"
+            },
+            {
+              "href": "/t/app-pro-kef-connect-app/141385",
+              "text": "[APP][Pro] KEF Connect App"
+            },
+            {
+              "href": "/t/zigbee-device-not-detected-after-removal-need-help/141384",
+              "text": "Zigbee Device Not Detected After Removal – Need Help"
+            },
+            {
+              "href": "/t/homey-pro-2023-zigbee-problemen/141382",
+              "text": "Homey Pro 2023 Zigbee Problemen"
+            },
+            {
+              "href": "/t/nar-kommunens-lampor-tands-slacks/141369",
+              "text": "När kommunens lampor tänds/släcks"
+            },
+            {
+              "href": "/t/bug-dashboard-widget-electricity-prices-does-not-update-at-00-00/141367",
+              "text": "[BUG] Dashboard widget &quot;Electricity Prices&quot; does not update at 00:00"
+            },
+            {
+              "href": "/t/no-power-insights-shelly-3-phase-meter/141365",
+              "text": "No power insights shelly 3 phase meter"
+            }
+          ],
+          "dates": [],
+          "contentLength": 23948,
+          "scrapedAt": "2025-08-11T21:04:40.767Z"
+        },
+        "t/drivers/": {
+          "url": "https://community.homey.app/t/drivers/",
+          "foundKeywords": [
+            "tuya",
+            "zigbee",
+            "driver",
+            "device",
+            "compatibility"
+          ],
+          "topics": [
+            "Homey Community Forum",
+            "Oops! That page doesn’t exist or is private."
+          ],
+          "links": [
+            {
+              "href": "/signup",
+              "text": "Sign Up"
+            },
+            {
+              "href": "/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352",
+              "text": "[APP][PRO]Universal TUYA Zigbee Device App - lite version"
+            },
+            {
+              "href": "/t/homey-energy-dynamic-pricing-is-here-experimental/140709",
+              "text": "Homey Energy - Dynamic pricing is here (Experimental)"
+            },
+            {
+              "href": "/t/app-pro-slimladen-voor-marstek-stuur-je-marstek-venus-slim-aan-nl/140156",
+              "text": "[App][Pro] SlimLaden voor Marstek - Stuur je Marstek Venus slim aan (NL)"
+            },
+            {
+              "href": "/t/airco-aanzetten-temperatuur-checken-en-aanpassen/140042",
+              "text": "Airco aanzetten, temperatuur checken en aanpassen"
+            },
+            {
+              "href": "/t/homey-keeps-restarting/140344",
+              "text": "Homey Keeps restarting"
+            },
+            {
+              "href": "/t/when-dynamic-prices/139850",
+              "text": "When Dynamic prices?"
+            },
+            {
+              "href": "/t/keeping-time-without-internet-connection/140208",
+              "text": "Keeping time without internet connection"
+            },
+            {
+              "href": "/t/question-about-somfy-rts-operation-and-state/139942",
+              "text": "Question about Somfy RTS operation and state"
+            },
+            {
+              "href": "/t/push-notification-when-a-flow-is-started/141286",
+              "text": "Push notification when a flow is started"
+            },
+            {
+              "href": "/t/aqara-temperature-and-humidity-sensors-report-time/140405",
+              "text": "Aqara temperature and humidity sensors report time"
+            },
+            {
+              "href": "/top",
+              "text": "More&hellip;"
+            },
+            {
+              "href": "/t/aqara-compatibility/141433",
+              "text": "Aqara compatibility"
+            },
+            {
+              "href": "/t/notification-about-power-outage-in-2025/141431",
+              "text": "Notification about power outage in 2025?"
+            },
+            {
+              "href": "/t/app-pro-kef-connect-app/141385",
+              "text": "[APP][Pro] KEF Connect App"
+            },
+            {
+              "href": "/t/zigbee-device-not-detected-after-removal-need-help/141384",
+              "text": "Zigbee Device Not Detected After Removal – Need Help"
+            },
+            {
+              "href": "/t/homey-pro-2023-zigbee-problemen/141382",
+              "text": "Homey Pro 2023 Zigbee Problemen"
+            },
+            {
+              "href": "/t/nar-kommunens-lampor-tands-slacks/141369",
+              "text": "När kommunens lampor tänds/släcks"
+            },
+            {
+              "href": "/t/bug-dashboard-widget-electricity-prices-does-not-update-at-00-00/141367",
+              "text": "[BUG] Dashboard widget &quot;Electricity Prices&quot; does not update at 00:00"
+            },
+            {
+              "href": "/t/no-power-insights-shelly-3-phase-meter/141365",
+              "text": "No power insights shelly 3 phase meter"
+            }
+          ],
+          "dates": [],
+          "contentLength": 23950,
+          "scrapedAt": "2025-08-11T21:04:43.141Z"
+        },
+        "t/development/": {
+          "url": "https://community.homey.app/t/development/",
+          "foundKeywords": [
+            "tuya",
+            "zigbee",
+            "device",
+            "compatibility"
+          ],
+          "topics": [
+            "Homey Community Forum",
+            "Oops! That page doesn’t exist or is private."
+          ],
+          "links": [
+            {
+              "href": "/signup",
+              "text": "Sign Up"
+            },
+            {
+              "href": "/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352",
+              "text": "[APP][PRO]Universal TUYA Zigbee Device App - lite version"
+            },
+            {
+              "href": "/t/homey-energy-dynamic-pricing-is-here-experimental/140709",
+              "text": "Homey Energy - Dynamic pricing is here (Experimental)"
+            },
+            {
+              "href": "/t/app-pro-slimladen-voor-marstek-stuur-je-marstek-venus-slim-aan-nl/140156",
+              "text": "[App][Pro] SlimLaden voor Marstek - Stuur je Marstek Venus slim aan (NL)"
+            },
+            {
+              "href": "/t/airco-aanzetten-temperatuur-checken-en-aanpassen/140042",
+              "text": "Airco aanzetten, temperatuur checken en aanpassen"
+            },
+            {
+              "href": "/t/homey-keeps-restarting/140344",
+              "text": "Homey Keeps restarting"
+            },
+            {
+              "href": "/t/when-dynamic-prices/139850",
+              "text": "When Dynamic prices?"
+            },
+            {
+              "href": "/t/keeping-time-without-internet-connection/140208",
+              "text": "Keeping time without internet connection"
+            },
+            {
+              "href": "/t/question-about-somfy-rts-operation-and-state/139942",
+              "text": "Question about Somfy RTS operation and state"
+            },
+            {
+              "href": "/t/push-notification-when-a-flow-is-started/141286",
+              "text": "Push notification when a flow is started"
+            },
+            {
+              "href": "/t/aqara-temperature-and-humidity-sensors-report-time/140405",
+              "text": "Aqara temperature and humidity sensors report time"
+            },
+            {
+              "href": "/top",
+              "text": "More&hellip;"
+            },
+            {
+              "href": "/t/aqara-compatibility/141433",
+              "text": "Aqara compatibility"
+            },
+            {
+              "href": "/t/notification-about-power-outage-in-2025/141431",
+              "text": "Notification about power outage in 2025?"
+            },
+            {
+              "href": "/t/app-pro-kef-connect-app/141385",
+              "text": "[APP][Pro] KEF Connect App"
+            },
+            {
+              "href": "/t/zigbee-device-not-detected-after-removal-need-help/141384",
+              "text": "Zigbee Device Not Detected After Removal – Need Help"
+            },
+            {
+              "href": "/t/homey-pro-2023-zigbee-problemen/141382",
+              "text": "Homey Pro 2023 Zigbee Problemen"
+            },
+            {
+              "href": "/t/nar-kommunens-lampor-tands-slacks/141369",
+              "text": "När kommunens lampor tänds/släcks"
+            },
+            {
+              "href": "/t/bug-dashboard-widget-electricity-prices-does-not-update-at-00-00/141367",
+              "text": "[BUG] Dashboard widget &quot;Electricity Prices&quot; does not update at 00:00"
+            },
+            {
+              "href": "/t/no-power-insights-shelly-3-phase-meter/141365",
+              "text": "No power insights shelly 3 phase meter"
+            }
+          ],
+          "dates": [],
+          "contentLength": 23958,
+          "scrapedAt": "2025-08-11T21:04:45.531Z"
+        }
+      },
+      "summary": {
+        "totalKeywordsFound": 17,
+        "totalTopics": 8,
+        "totalLinks": 80,
+        "totalErrors": 0
+      }
+    },
+    "tuya-developer": {
+      "forum": "tuya-developer",
+      "url": "https://developer.tuya.com",
+      "sections": {
+        "en/docs/iot/": {
+          "url": "https://developer.tuya.com/en/docs/iot/",
+          "foundKeywords": [
+            "zigbee",
+            "protocol",
+            "device"
+          ],
+          "topics": [],
+          "links": [
+            {
+              "href": "/docs/iot",
+              "text": "Tuya Developer Platform"
+            },
+            {
+              "href": "/en/docs/iot/introduction-of-tuya?id=K914joffendwh",
+              "text": "Overview"
+            },
+            {
+              "href": "/en/docs/iot/device-intelligentize-in-5-minutes?id=K914joxbogkm6",
+              "text": "Quick Start"
+            },
+            {
+              "href": "/en/docs/iot/development-overview?id=Ka3redtxl6g4k",
+              "text": "Product Development"
+            },
+            {
+              "href": "/en/docs/iot/app-development?id=Kaacelrbxwoch",
+              "text": "App Development"
+            },
+            {
+              "href": "/en/docs/iot/miniapp-development?id=Kdntpibtrsjek",
+              "text": "MiniApp Development"
+            },
+            {
+              "href": "/en/docs/iot/introduction-to-tuya-iot-platform?id=Ka6vijvqb3uhn",
+              "text": "Cloud Development"
+            },
+            {
+              "href": "/en/docs/iot/agent?id=Kdxnn04ancnc8",
+              "text": "AI Agent Development"
+            },
+            {
+              "href": "/en/docs/iot/SaaS-develop?id=Kbtqi5uecpvkc",
+              "text": "SaaS Development"
+            },
+            {
+              "href": "/en/docs/iot/data-center?id=K914jk01pvsqu",
+              "text": "Data Services"
+            },
+            {
+              "href": "/en/docs/iot/smart-product-solutions?id=Ka5nx1vj8kisg",
+              "text": "Product Solutions"
+            },
+            {
+              "href": "/en/docs/iot/operation-management?id=Kbd9xv2m3h25w",
+              "text": "Operation Management"
+            },
+            {
+              "href": "/en/docs/iot/smart-business?id=Ka5oc1bq0aej9",
+              "text": "Smart Industries"
+            },
+            {
+              "href": "/en/docs/iot/production?id=Kbohijqprugxv",
+              "text": "Manufacturing"
+            },
+            {
+              "href": "/en/docs/iot/api-reference?id=Kbd2pu2ompov0",
+              "text": "API Reference"
+            },
+            {
+              "href": "/en/docs/iot/sdk-reference?id=Kbd2uhl6cbha1",
+              "text": "SDK Reference"
+            },
+            {
+              "href": "/en/docs/iot/download?id=Kbd668dicz9r6",
+              "text": "Downloads"
+            },
+            {
+              "href": "/en/docs/iot/troubleshooting?id=K9258orwg9heh",
+              "text": "Service &amp; Support"
+            },
+            {
+              "href": "/en/docs/iot/legacy-topics?id=Kaiuzxaxtoxfh",
+              "text": "Legacy Topics"
+            },
+            {
+              "href": "https://developer.tuya.com/en/docs/iot/introduction-of-tuya?id=K914joffendwh",
+              "text": "Overview"
+            }
+          ],
+          "dates": [
+            "2020-03-10",
+            "2021-05-14"
+          ],
+          "contentLength": 548998,
+          "scrapedAt": "2025-08-11T21:04:51.031Z"
+        },
+        "en/docs/zigbee/": {
+          "url": "https://developer.tuya.com/en/docs/zigbee/",
+          "foundKeywords": [],
+          "topics": [],
+          "links": [],
+          "dates": [],
+          "contentLength": 0,
+          "scrapedAt": "2025-08-11T21:04:53.476Z"
+        },
+        "en/docs/device-management/": {
+          "url": "https://developer.tuya.com/en/docs/device-management/",
+          "foundKeywords": [],
+          "topics": [],
+          "links": [],
+          "dates": [],
+          "contentLength": 0,
+          "scrapedAt": "2025-08-11T21:04:55.781Z"
+        }
+      },
+      "summary": {
+        "totalKeywordsFound": 3,
+        "totalTopics": 0,
+        "totalLinks": 20,
+        "totalErrors": 0
+      }
+    },
+    "zigbee-alliance": {
+      "forum": "zigbee-alliance",
+      "url": "https://zigbeealliance.org",
+      "sections": {
+        "developers/": {
+          "url": "https://zigbeealliance.org/developers/",
+          "foundKeywords": [],
+          "topics": [],
+          "links": [],
+          "dates": [],
+          "contentLength": 62,
+          "scrapedAt": "2025-08-11T21:04:59.201Z"
+        },
+        "specifications/": {
+          "url": "https://zigbeealliance.org/specifications/",
+          "foundKeywords": [],
+          "topics": [],
+          "links": [],
+          "dates": [],
+          "contentLength": 62,
+          "scrapedAt": "2025-08-11T21:05:01.545Z"
+        },
+        "certification/": {
+          "url": "https://zigbeealliance.org/certification/",
+          "foundKeywords": [],
+          "topics": [
+            "301 Moved Permanently"
+          ],
+          "links": [],
+          "dates": [],
+          "contentLength": 162,
+          "scrapedAt": "2025-08-11T21:05:03.711Z"
+        }
+      },
+      "summary": {
+        "totalKeywordsFound": 0,
+        "totalTopics": 1,
+        "totalLinks": 0,
+        "totalErrors": 0
+      }
+    }
+  },
+  "summary": {
+    "totalKeywordsFound": 20,
+    "totalTopics": 9,
+    "totalLinks": 100,
+    "totalErrors": 0
+  }
+}

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="45" fill="#4A90E2" stroke="#2C5AA0" stroke-width="2"/>
+  
+  <!-- Power plug symbol -->
+  <g fill="#FFFFFF" stroke="#2C5AA0" stroke-width="1.5">
+    <!-- Main plug body -->
+    <rect x="35" y="25" width="30" height="40" rx="3" ry="3"/>
+    
+    <!-- Plug pins -->
+    <rect x="40" y="15" width="4" height="15" rx="1" ry="1"/>
+    <rect x="56" y="15" width="4" height="15" rx="1" ry="1"/>
+    
+    <!-- Power indicator -->
+    <circle cx="50" cy="45" r="8" fill="#FFD700"/>
+    <path d="M 50 40 L 50 50 M 45 45 L 55 45" stroke="#2C5AA0" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Energy waves -->
+  <g fill="none" stroke="#FFD700" stroke-width="2" opacity="0.7">
+    <path d="M 15 50 Q 25 40, 35 50" stroke-dasharray="3,2"/>
+    <path d="M 65 50 Q 75 40, 85 50" stroke-dasharray="3,2"/>
+  </g>
+  
+  <!-- Tuya branding -->
+  <text x="50" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#FFFFFF" font-weight="bold">TUYA</text>
+</svg>

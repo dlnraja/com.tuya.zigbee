@@ -1,0 +1,37 @@
+{
+  "category": "templates",
+  "name": {
+    "en": "Zigbee Templates",
+    "fr": "Modèles Zigbee",
+    "nl": "Zigbee Sjablonen",
+    "ta": "ஜிக்பீ டெம்ப்ளேட்கள்"
+  },
+  "description": {
+    "en": "Generic zigbee templates for standard devices",
+    "fr": "modèles zigbee génériques pour dispositifs standards",
+    "nl": "Generieke zigbee sjablonen voor standaardapparaten",
+    "ta": "நிலையான சாதனங்களுக்கான பொதுவான ஜிக்பீ டெம்ப்ளேட்கள்"
+  },
+  "version": "3.4.1",
+  "totalDrivers": 1,
+  "capabilities": [
+    "onoff",
+    "measure_temperature"
+  ],
+  "clusters": [
+    "0x0000",
+    "0x0006",
+    "0x0402"
+  ],
+  "vendors": [
+    "generic",
+    "standard"
+  ],
+  "deviceTypes": [
+    "generic_device",
+    "fallback_driver",
+    "template_device"
+  ],
+  "status": "active",
+  "lastUpdate": "2025-08-14T17:38:42.453Z"
+}

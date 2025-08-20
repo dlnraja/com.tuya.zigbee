@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-08-11T13:51:30.362Z",
+  "backupAnalysis": {
+    "backups": [],
+    "summary": {
+      "totalBackups": 0
+    }
+  },
+  "gitAnalysis": {
+    "error": "Erreur git log: '%an' n'est pas reconnu en tant que commande interne\r\nou externe, un programme ex�cutable ou un fichier de commandes.\r\n",
+    "analysisDate": "2025-08-11T13:51:30.360Z"
+  },
+  "summary": {
+    "totalBackups": 0,
+    "totalCommits": 0,
+    "relevantCommits": 0
+  }
+}

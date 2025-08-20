@@ -1,0 +1,20 @@
+{
+  "id": "aqara-thermostat-115_plug_standard",
+  "name": "aqara aqara-thermostat-115",
+  "category": "plug",
+  "vendor": "aqara",
+  "model": "aqara-thermostat-115",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:06.738Z",
+  "updatedAt": "2025-08-13T12:09:06.738Z"
+}

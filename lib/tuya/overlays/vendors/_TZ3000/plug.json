@@ -1,0 +1,27 @@
+{
+  "status": "confirmed",
+  "confidence": 0.88,
+  "overlayVersion": "1.0.0",
+  "productIds": ["TS011F"],
+  "fwRange": ">=1.0 <2.0",
+  "dp": {
+    "1": { "cap": "onoff", "to": "bool" },
+    "16": { "cap": "measure_power", "to": "num/10" },
+    "17": { "cap": "meter_power", "to": "num/1000" }
+  },
+  "reports": {
+    "power_interval_sec": 30,
+    "energy_interval_sec": 300
+  },
+  "features": {
+    "supportsPowerMeasurement": true,
+    "supportsEnergyMeter": true
+  },
+  "exclusions": [],
+  "sources": [
+    "https://github.com/JohanBendz/com.tuya.zigbee",
+    "https://github.com/Koenkk/zigbee-herdsman-converters",
+    "https://community.homey.app/t/tuya-zigbee-app/26439"
+  ],
+  "notes": "Standard Tuya plug with power monitoring, widely tested"
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Device Matrix",
+  "type": "object",
+  "patternProperties": {
+    "^[^:]+:[^:]+$": {
+      "type": "object",
+      "required": ["vendor", "productIds", "type", "status", "confidence"],
+      "properties": {
+        "vendor": {
+          "type": "string",
+          "description": "Manufacturer/vendor identifier"
+        },
+        "productIds": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "description": "Product IDs supported"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["plug", "climate-trv", "cover-curtain", "remote-scene", "generic"],
+          "description": "Device family type"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["proposed", "confirmed", "disabled"],
+          "description": "Overlay status"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence score"
+        },
+        "sources": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Source references"
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update timestamp"
+        }
+      }
+    }
+  }
+}

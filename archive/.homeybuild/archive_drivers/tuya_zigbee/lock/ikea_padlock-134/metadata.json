@@ -1,0 +1,20 @@
+{
+  "id": "ikea-padlock-134_lock_standard",
+  "name": "ikea ikea-padlock-134",
+  "category": "lock",
+  "vendor": "ikea",
+  "model": "ikea-padlock-134",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:03.518Z",
+  "updatedAt": "2025-08-13T12:09:03.518Z"
+}

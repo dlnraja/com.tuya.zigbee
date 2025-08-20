@@ -1,37 +1,108 @@
 {
-  "id": "com.tuya.zigbee",
-  "name": {
-    "en": "Universal Tuya Zigbee",
-    "fr": "Universal Tuya Zigbee"
-  },
-  "version": "0.0.1",
-  "description": {
-    "en": "Tuya Zigbee devices support for Homey",
-    "fr": "Support des appareils Tuya Zigbee pour Homey"
-  },
+  "id": "com.dlnraja.tuya.zigbee",
+  "name": "Tuya Zigbee Drivers",
+  "version": "3.7.0",
   "sdk": 3,
-  "compose": {
-    "enable": true
-  },
-  "category": "connectivity",
+  "category": "light",
+  "author": "dlnraja",
+  "compatibility": ">=3.0.0",
   "permissions": [
-    "homey:wireless:zigbee"
+    "homey:device:tuya",
+    "homey:device:zigbee"
   ],
-  "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
-  },
-  "author": {
-    "name": "Tuya Community",
-    "email": "support@tuya.com"
-  },
-  "homepage": "https://community.homey.app",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tuya/universal-tuya-zigbee"
-  },
-  "bugs": {
-    "url": "https://github.com/tuya/universal-tuya-zigbee/issues"
-  },
-  "license": "MIT"
+  "drivers": [
+    {
+      "id": "climate-trv-tuya",
+      "class": "thermostat",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "locked",
+        "alarm_battery"
+      ],
+      "capabilitiesOptions": {
+        "target_temperature": {
+          "min": 5,
+          "max": 30,
+          "step": 0.5
+        }
+      },
+      "images": {
+        "small": "assets/small.png",
+        "large": "assets/large.png",
+        "xlarge": "assets/xlarge.png"
+      },
+      "name": {
+        "en": "climate-trv-tuya"
+      }
+    },
+    {
+      "id": "cover-curtain-tuya",
+      "class": "windowcoverings",
+      "capabilities": [
+        "windowcoverings_set",
+        "windowcoverings_state",
+        "alarm_battery"
+      ],
+      "capabilitiesOptions": {
+        "windowcoverings_set": {
+          "min": 0,
+          "max": 100,
+          "step": 1
+        }
+      },
+      "images": {
+        "small": "assets/small.png",
+        "large": "assets/large.png",
+        "xlarge": "assets/xlarge.png"
+      },
+      "name": {
+        "en": "cover-curtain-tuya"
+      }
+    },
+    {
+      "id": "plug-tuya-universal",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power"
+      ],
+      "capabilitiesOptions": {
+        "measure_power": {
+          "decimals": 0,
+          "min": 0,
+          "max": 3680
+        },
+        "meter_power": {
+          "decimals": 3
+        }
+      },
+      "images": {
+        "small": "assets/small.png",
+        "large": "assets/large.png",
+        "xlarge": "assets/xlarge.png"
+      },
+      "name": {
+        "en": "plug-tuya-universal"
+      }
+    },
+    {
+      "id": "remote-scene-tuya",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery"
+      ],
+      "images": {
+        "small": "assets/small.png",
+        "large": "assets/large.png",
+        "xlarge": "assets/xlarge.png"
+      },
+      "name": {
+        "en": "remote-scene-tuya"
+      }
+    }
+  ],
+  "flow": {},
+  "capabilities": {}
 }

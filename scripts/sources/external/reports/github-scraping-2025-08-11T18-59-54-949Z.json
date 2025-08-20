@@ -1,0 +1,130 @@
+{
+  "timestamp": "2025-08-11T18:59:54.954Z",
+  "duration": "7277ms",
+  "results": {
+    "homey-community": [
+      {
+        "owner": "homey-community",
+        "repo": "drivers",
+        "foundKeywords": [],
+        "lastCommit": "N/A",
+        "lastCommitDate": "N/A",
+        "openIssues": 0,
+        "stars": 0,
+        "forks": 0,
+        "description": "N/A",
+        "language": "N/A",
+        "updatedAt": "N/A"
+      },
+      {
+        "owner": "homey-community",
+        "repo": "apps",
+        "foundKeywords": [],
+        "lastCommit": "N/A",
+        "lastCommitDate": "N/A",
+        "openIssues": 0,
+        "stars": 0,
+        "forks": 0,
+        "description": "N/A",
+        "language": "N/A",
+        "updatedAt": "N/A"
+      },
+      {
+        "owner": "homey-community",
+        "repo": "zigbee",
+        "foundKeywords": [],
+        "lastCommit": "N/A",
+        "lastCommitDate": "N/A",
+        "openIssues": 0,
+        "stars": 0,
+        "forks": 0,
+        "description": "N/A",
+        "language": "N/A",
+        "updatedAt": "N/A"
+      }
+    ],
+    "johanbenz": [
+      {
+        "owner": "johanbenz",
+        "repo": "com.tuya.zigbee",
+        "foundKeywords": [
+          "issue"
+        ],
+        "lastCommit": "N/A",
+        "lastCommitDate": "N/A",
+        "openIssues": 0,
+        "stars": 0,
+        "forks": 0,
+        "description": "N/A",
+        "language": "N/A",
+        "updatedAt": "N/A"
+      },
+      {
+        "owner": "johanbenz",
+        "repo": "homey-tuya-zigbee",
+        "foundKeywords": [
+          "issue"
+        ],
+        "lastCommit": "N/A",
+        "lastCommitDate": "N/A",
+        "openIssues": 0,
+        "stars": 0,
+        "forks": 0,
+        "description": "N/A",
+        "language": "N/A",
+        "updatedAt": "N/A"
+      }
+    ],
+    "zigbee-community": [
+      {
+        "owner": "Koenkk",
+        "repo": "zigbee2mqtt",
+        "foundKeywords": [],
+        "lastCommit": "N/A",
+        "lastCommitDate": "N/A",
+        "openIssues": 0,
+        "stars": 0,
+        "forks": 0,
+        "description": "N/A",
+        "language": "N/A",
+        "updatedAt": "N/A"
+      },
+      {
+        "owner": "Koenkk",
+        "repo": "zigbee-herdsman",
+        "foundKeywords": [],
+        "lastCommit": "N/A",
+        "lastCommitDate": "N/A",
+        "openIssues": 0,
+        "stars": 0,
+        "forks": 0,
+        "description": "N/A",
+        "language": "N/A",
+        "updatedAt": "N/A"
+      }
+    ],
+    "home-assistant": [
+      {
+        "owner": "home-assistant",
+        "repo": "core",
+        "foundKeywords": [],
+        "lastCommit": "N/A",
+        "lastCommitDate": "N/A",
+        "openIssues": 0,
+        "stars": 0,
+        "forks": 0,
+        "description": "N/A",
+        "language": "N/A",
+        "updatedAt": "N/A"
+      }
+    ]
+  },
+  "summary": {
+    "totalSources": 4,
+    "totalRepos": 8,
+    "totalKeywordsFound": 2,
+    "totalErrors": 0,
+    "totalStars": 0,
+    "durationMs": 7277
+  }
+}

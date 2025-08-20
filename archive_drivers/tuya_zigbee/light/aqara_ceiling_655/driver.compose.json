@@ -1,0 +1,84 @@
+{
+  "id": "aqara_ceiling_655",
+  "class": "light",
+  "name": {
+    "en": "Aqara Ceiling 655 (Intelligent)",
+    "fr": "Aqara Ceiling 655 (Intelligent)",
+    "nl": "Aqara Ceiling 655 (Intelligent)",
+    "ta": "Aqara Ceiling 655 (ஸ்மார்ட்)"
+  },
+  "description": {
+    "en": "Intelligent Aqara Ceiling 655 driver with auto-discovery",
+    "fr": "Driver Aqara Ceiling 655 intelligent avec découverte automatique",
+    "nl": "Intelligente Aqara Ceiling 655 driver met auto-detectie",
+    "ta": "ஸ்மார்ட் Aqara Ceiling 655 டிரைவர் தானாக கண்டறியும்"
+  },
+  "category": [
+    "light"
+  ],
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature",
+    "light_mode"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "min": 0,
+      "max": 100
+    },
+    "light_temperature": {
+      "min": 153,
+      "max": 500
+    }
+  },
+  "zigbee": {
+    "fingerprints": [
+      {
+        "model": "aqara_ceiling_655_generic",
+        "vendor": "Generic",
+        "description": "Generic ${category} device"
+      }
+    ],
+    "models": [
+      "aqara_ceiling_655_generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
+  "icon": "assets/icon.svg",
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:12.387Z",
+    "discussions": 3,
+    "solutions": 4,
+    "communityRating": "4.3",
+    "url": "https://community.homey.app/search?q=aqara_ceiling_655"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:12.387Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_ceiling_655.html",
+    "features": [
+      "onoff",
+      "dim",
+      "color"
+    ],
+    "compatibility": "poor"
+  }
+}

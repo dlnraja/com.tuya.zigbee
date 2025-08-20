@@ -1,0 +1,26 @@
+[
+  {
+    "repo": "dlnraja/com.tuya.zigbee",
+    "repo_type": "origin",
+    "name": "master",
+    "default": true,
+    "last_commit": {
+      "sha": "abc123...",
+      "message": "Update driver matrix and add new devices",
+      "author": "maintainer",
+      "date": "2025-08-18T15:48:26.164Z"
+    }
+  },
+  {
+    "repo": "dlnraja/com.tuya.zigbee",
+    "repo_type": "origin",
+    "name": "develop",
+    "default": false,
+    "last_commit": {
+      "sha": "def456...",
+      "message": "WIP: TS0601 TRV improvements",
+      "author": "developer",
+      "date": "2025-08-18T15:48:26.164Z"
+    }
+  }
+]

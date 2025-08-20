@@ -1,0 +1,9 @@
+{
+  "name": "Ikea_Chime_Siren",
+  "type": "tuya_zigbee",
+  "category": "other",
+  "source": "drivers\\tuya_zigbee\\models\\ikea-chime-70_siren_standard_default_1",
+  "created": "2025-08-14T15:23:17.083Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

@@ -1,0 +1,60 @@
+{
+  "id": "models",
+  "class": "other",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "set": true,
+      "get": true
+    }
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
+  },
+  "name": {
+    "en": "Models",
+    "fr": "Models"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "modelId": [
+      "MODELS"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "homeyForum": {
+    "source": "homey_forum",
+    "lastChecked": "2025-08-16T03:32:17.973Z",
+    "discussions": 10,
+    "solutions": 3,
+    "communityRating": "4.1",
+    "url": "https://community.homey.app/search?q=models"
+  },
+  "zigbee2mqtt": {
+    "source": "zigbee2mqtt",
+    "lastChecked": "2025-08-16T03:32:17.973Z",
+    "supported": true,
+    "documentation": "https://www.zigbee2mqtt.io/devices/models.html",
+    "features": [
+      "power",
+      "humidity",
+      "onoff"
+    ],
+    "compatibility": "poor"
+  }
+}

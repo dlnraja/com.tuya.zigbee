@@ -1,0 +1,20 @@
+{
+  "id": "aqara-floor-470_light_standard",
+  "name": "aqara aqara-floor-470",
+  "category": "light",
+  "vendor": "aqara",
+  "model": "aqara-floor-470",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:01.713Z",
+  "updatedAt": "2025-08-13T12:09:01.713Z"
+}

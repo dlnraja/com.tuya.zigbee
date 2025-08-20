@@ -1,0 +1,31 @@
+{
+  "id": "climate-trv-tuya",
+  "name": {
+    "en": "Tuya Zigbee TRV",
+    "fr": "Vanne thermostatique Tuya Zigbee",
+    "nl": "Tuya Zigbee TRV"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature",
+    "locked",
+    "alarm_battery"
+  ],
+  "capabilitiesOptions": {
+    "target_temperature": {
+      "min": 5,
+      "max": 30,
+      "step": 0.5
+    }
+  },
+  "images": {
+    "small": "assets/small.png",
+    "large": "assets/large.png",
+    "xlarge": "assets/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": ["_TZE200_*"],
+    "productId": ["TS0601"]
+  }
+}

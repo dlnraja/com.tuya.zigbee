@@ -1,0 +1,29 @@
+# Default weights by domain type (0..1)
+defaults:
+  official_manufacturer: 0.90     # Brand docs, datasheets
+  official_platform:     0.88     # Homey/Athom official docs
+  upstream_repo:         0.85     # JohanBendz repo (issues/PRs)
+  reputable_forum:       0.70     # Homey community forum, device threads
+  large_retailer:        0.55     # Amazon/LDLC/Conrad (specs often terse)
+  tech_blog:             0.55
+  video_demo:            0.50     # Youtube hands-on (parse captions/descriptions)
+  small_shop:            0.40
+  unknown_site:          0.25
+
+# Per-domain overrides
+overrides:
+  community.homey.app:   0.75
+  github.com/JohanBendz: 0.88
+  github.com:            0.70
+  youtube.com:           0.52
+  docs.tuya.com:         0.90
+
+# Penalties/bonuses
+bonuses:
+  multi_source_agreement: +0.10    # Consensus across ≥3 distinct domains
+  dp_log_evidence:        +0.15    # Explicit DP snippets/logs observed
+  recency_boost_days:     180      # Linear time-decay if older than N days
+
+penalties:
+  contradiction:          -0.20
+  single_source_only:     -0.10

@@ -1,0 +1,29 @@
+{
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_*",
+      "_TZE200_*"
+    ],
+    "productId": [
+      "TS011F",
+      "TS0601",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044"
+    ]
+  },
+  "capabilities": [
+    "alarm_battery"
+  ],
+  "name": {
+    "en": "Ikea_Buzzer_Siren (Tuya)"
+  },
+  "id": "Ikea_Buzzer_Siren-tuya",
+  "images": {
+    "small": "assets/small.png",
+    "large": "assets/large.png",
+    "xlarge": "assets/xlarge.png"
+  },
+  "class": "sensor"
+}

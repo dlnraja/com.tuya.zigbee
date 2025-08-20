@@ -1,0 +1,21 @@
+{
+  "status": "proposed",
+  "confidence": 0.93,
+  "sources": [
+    "file://events-2025-08-19.log"
+  ],
+  "productIds": [
+    "TS0601"
+  ],
+  "dp": {
+    "2": {
+      "cap": "target",
+      "to": "num/10"
+    },
+    "4": {
+      "cap": "measure",
+      "to": "num/10"
+    }
+  },
+  "notes": "type:climate-trv"
+}

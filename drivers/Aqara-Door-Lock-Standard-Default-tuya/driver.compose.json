@@ -1,0 +1,29 @@
+{
+  "id": "Aqara-Door-Lock-Standard-Default-tuya",
+  "name": {
+    "en": "Aqara_Door_Lock_Standard_Default (Tuya)"
+  },
+  "class": "lock",
+  "capabilities": [
+    "locked"
+  ],
+  "images": {
+    "small": "assets/small.png",
+    "large": "assets/large.png",
+    "xlarge": "assets/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_*",
+      "_TZE200_*"
+    ],
+    "productId": [
+      "TS011F",
+      "TS0601",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044"
+    ]
+  }
+}

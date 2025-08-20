@@ -1,0 +1,22 @@
+{
+  "id": "remote-scene-tuya",
+  "name": { "en": "Tuya Scene Remote", "fr": "Télécommande de scènes Tuya" },
+  "class": "sensor",
+  "capabilities": ["alarm_battery"],
+  "images": {
+    "small": "drivers/remote-scene-tuya/assets/small.png",
+    "large": "drivers/remote-scene-tuya/assets/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": ["_TZ3000_*", "_TZE200_*", "Tuya"],
+    "productId": ["TS0041", "TS0042", "TS0043", "TS0044", "TS004F"],
+    "endpoints": {
+      "1": {
+        "clusters": {
+          "input": ["genBasic", "genPowerCfg", "genOnOff"],
+          "output": ["genBasic", "genPowerCfg", "genOnOff"]
+        }
+      }
+    }
+  }
+}

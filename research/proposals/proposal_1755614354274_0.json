@@ -1,0 +1,27 @@
+{
+  "status": "proposed",
+  "confidence": 0.79,
+  "sources": [
+    "https://community.homey.app/t/tuya-zigbee-app/26439"
+  ],
+  "productIds": [
+    "TS011F"
+  ],
+  "manufacturerName": "_TZ3000_xr3htd96",
+  "type": "plug",
+  "dp": {
+    "1": {
+      "cap": "onoff",
+      "to": "bool"
+    },
+    "16": {
+      "cap": "power",
+      "to": "num/10"
+    }
+  },
+  "reports": {
+    "power_interval_sec": 30,
+    "energy_interval_sec": 300
+  },
+  "notes": "Auto-inferred from 1 sources"
+}

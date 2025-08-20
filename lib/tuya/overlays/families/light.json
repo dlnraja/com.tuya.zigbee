@@ -1,0 +1,15 @@
+{
+  "family": "light",
+  "description": "Tuya Light family overlay",
+  "dp": {
+    "1": { "cap": "onoff", "to": "bool", "from": "bool" },
+    "2": { "cap": "dim", "to": "num", "from": "num" },
+    "3": { "cap": "light_hue", "to": "num", "from": "num" },
+    "4": { "cap": "light_saturation", "to": "num", "from": "num" },
+    "5": { "cap": "light_temperature", "to": "num", "from": "num" }
+  },
+  "reports": {
+    "state_interval_sec": 30,
+    "color_interval_sec": 60
+  }
+}

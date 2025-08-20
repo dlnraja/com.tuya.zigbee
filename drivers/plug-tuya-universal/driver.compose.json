@@ -1,0 +1,33 @@
+{
+  "id": "plug-tuya-universal",
+  "name": {
+    "en": "Tuya Zigbee Plug (Universal)",
+    "fr": "Prise Tuya Zigbee (Universelle)",
+    "nl": "Tuya Zigbee Plug (Universeel)"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power"
+  ],
+  "capabilitiesOptions": {
+    "measure_power": {
+      "decimals": 0,
+      "min": 0,
+      "max": 3680
+    },
+    "meter_power": {
+      "decimals": 3
+    }
+  },
+  "images": {
+    "small": "assets/small.png",
+    "large": "assets/large.png",
+    "xlarge": "assets/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": ["_TZ3000_*", "_TZE200_*"],
+    "productId": ["TS011F", "TS0601"]
+  }
+}
