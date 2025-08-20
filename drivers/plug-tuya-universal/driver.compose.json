@@ -1,5 +1,10 @@
 {
   "id": "plug-tuya-universal",
+  "name": {
+    "en": "Tuya Zigbee Plug (Universal)",
+    "fr": "Prise Tuya Zigbee (Universelle)",
+    "nl": "Tuya Zigbee Plug (Universeel)"
+  },
   "class": "socket",
   "capabilities": [
     "onoff",
@@ -20,5 +25,9 @@
     "small": "assets/small.png",
     "large": "assets/large.png",
     "xlarge": "assets/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": ["_TZ3000_*", "_TZE200_*"],
+    "productId": ["TS011F", "TS0601"]
   }
 }

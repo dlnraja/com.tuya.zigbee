@@ -1,5 +1,10 @@
 {
   "id": "cover-curtain-tuya",
+  "name": {
+    "en": "Tuya Zigbee Curtain/Blind",
+    "fr": "Store/Rideau Tuya Zigbee",
+    "nl": "Tuya Zigbee Gordijn/Rolgordijn"
+  },
   "class": "windowcoverings",
   "capabilities": [
     "windowcoverings_set",
@@ -8,14 +13,20 @@
   ],
   "capabilitiesOptions": {
     "windowcoverings_set": {
-      "min": 0,
-      "max": 100,
-      "step": 1
+      "title": {
+        "en": "Position",
+        "fr": "Position",
+        "nl": "Positie"
+      }
     }
   },
   "images": {
     "small": "assets/small.png",
     "large": "assets/large.png",
     "xlarge": "assets/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": ["_TZE200_*"],
+    "productId": ["TS0601"]
   }
 }

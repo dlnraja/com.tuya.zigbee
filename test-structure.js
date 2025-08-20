@@ -1,0 +1,1 @@
+console.log("Test de la structure complète"); console.log("Drivers existants:"); const fs = require("fs"); const drivers = fs.readdirSync("drivers"); console.log(drivers); console.log("::END::TEST_STRUCTURE::OK");
