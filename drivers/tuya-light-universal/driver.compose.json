@@ -20,15 +20,28 @@
     "large": "assets/large.png"
   },
   "zigbee": {
-    "manufacturer": "Tuya",
-    "model": "Universal",
-    "vendor": "Tuya",
-    "description": "Lumière Tuya universelle avec contrôle complet",
-    "supports": "Zigbee 1.2",
-    "firmware": "1.0.0",
-    "clusters": [
-      "genColorCtrl"
-    ]
+    "manufacturerName": "_TZ3000_qa8s8vca",
+    "productId": "TS0501B",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          6,
+          8,
+          768,
+          5
+        ],
+        "bindings": [
+          0,
+          1,
+          6,
+          8,
+          768,
+          5
+        ]
+      }
+    }
   },
   "metadata": {
     "version": "1.1.0",

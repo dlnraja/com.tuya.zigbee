@@ -1,4 +1,5 @@
 {
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya-zigbee-lite",
   "name": "Tuya Zigbee (Lite)",
   "version": "1.0.0",
@@ -8,23 +9,116 @@
     "email": "dylan.rajasekaram+homey@gmail.com"
   },
   "platforms": [
-    {
-      "id": "tuya-zigbee",
-      "name": {
-        "en": "Tuya Zigbee (Lite)",
-        "fr": "Tuya Zigbee (Léger)",
-        "nl": "Tuya Zigbee (Licht)",
-        "ta": "Tuya Zigbee (இலேசானது)"
-      },
-      "class": "platform"
-    }
+    "local"
   ],
-  "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
-  },
-  "icon": "assets/icon.svg",
   "drivers": [
+    {
+      "id": "climates-TS0601_ac",
+      "name": {
+        "en": "climates TS0601_ac",
+        "fr": "climates TS0601_ac",
+        "nl": "climates TS0601_ac",
+        "ta": "climates TS0601_ac"
+      },
+      "class": "climate",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "measure_humidity"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_1h2x4akh",
+        "productId": "TS0601",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              1026,
+              1029,
+              513
+            ],
+            "bindings": [
+              0,
+              1,
+              1026,
+              1029,
+              513
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:29:22.896Z",
+        "confidence_score": 95,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community",
+          "Home Assistant",
+          "Blakadder",
+          "Ultimate Analysis"
+        ],
+        "type": "tuya",
+        "category": "climates"
+      }
+    },
+    {
+      "id": "covers-TS0602_cover",
+      "name": {
+        "en": "covers TS0602_cover",
+        "fr": "covers TS0602_cover",
+        "nl": "covers TS0602_cover",
+        "ta": "covers TS0602_cover"
+      },
+      "class": "cover",
+      "capabilities": [
+        "windowcoverings_set",
+        "windowcoverings_state"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_vd43bbfq",
+        "productId": "TS0602",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              258,
+              10,
+              9
+            ],
+            "bindings": [
+              0,
+              1,
+              258,
+              10,
+              9
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.361Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
     {
       "id": "fan-tuya-universal",
       "name": {
@@ -63,12 +157,26 @@
         "large": "assets/large.svg"
       },
       "zigbee": {
-        "manufacturer": "Tuya",
-        "model": "Universal",
-        "vendor": "Tuya",
-        "description": "Universal Tuya fan device",
-        "supports": "Zigbee 1.2",
-        "firmware": "1.0.0"
+        "manufacturerName": "_TZ3000_1h2x4akh",
+        "productId": "TS0601",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6,
+              8,
+              514
+            ],
+            "bindings": [
+              0,
+              1,
+              6,
+              8,
+              514
+            ]
+          }
+        }
       },
       "metadata": {
         "version": "1.1.0",
@@ -95,6 +203,306 @@
           "genOnOff",
           "genLevelCtrl"
         ]
+      }
+    },
+    {
+      "id": "fans-TS0601_fan",
+      "name": {
+        "en": "fans TS0601_fan",
+        "fr": "fans TS0601_fan",
+        "nl": "fans TS0601_fan",
+        "ta": "fans TS0601_fan"
+      },
+      "class": "fan",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "fan_mode"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_1h2x4akh",
+        "productId": "TS0601",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6,
+              8,
+              514
+            ],
+            "bindings": [
+              0,
+              1,
+              6,
+              8,
+              514
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.376Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "fans-TS0602_fan",
+      "name": {
+        "en": "fans TS0602_fan",
+        "fr": "fans TS0602_fan",
+        "nl": "fans TS0602_fan",
+        "ta": "fans TS0602_fan"
+      },
+      "class": "fan",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "fan_mode"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_generic",
+        "productId": "TS0602_fan",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6
+            ],
+            "bindings": [
+              0,
+              1,
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.381Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "lights-TS0501B",
+      "name": {
+        "en": "lights TS0501B",
+        "fr": "lights TS0501B",
+        "nl": "lights TS0501B",
+        "ta": "lights TS0501B"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_femsaaua",
+        "productId": "TS0501B",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6,
+              8,
+              768
+            ],
+            "bindings": [
+              0,
+              1,
+              6,
+              8,
+              768
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:29:22.881Z",
+        "confidence_score": 95,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community",
+          "Home Assistant",
+          "Blakadder",
+          "Ultimate Analysis"
+        ],
+        "type": "tuya",
+        "category": "lights"
+      }
+    },
+    {
+      "id": "lights-TS0601_dimmer",
+      "name": {
+        "en": "lights TS0601_dimmer",
+        "fr": "lights TS0601_dimmer",
+        "nl": "lights TS0601_dimmer",
+        "ta": "lights TS0601_dimmer"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_generic",
+        "productId": "TS0601_dimmer",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6
+            ],
+            "bindings": [
+              0,
+              1,
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.328Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "lights-TS0601_rgb",
+      "name": {
+        "en": "lights TS0601_rgb",
+        "fr": "lights TS0601_rgb",
+        "nl": "lights TS0601_rgb",
+        "ta": "lights TS0601_rgb"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_generic",
+        "productId": "TS0601_rgb",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6
+            ],
+            "bindings": [
+              0,
+              1,
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.313Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "lights-TS0601_switch",
+      "name": {
+        "en": "lights TS0601_switch",
+        "fr": "lights TS0601_switch",
+        "nl": "lights TS0601_switch",
+        "ta": "lights TS0601_switch"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_generic",
+        "productId": "TS0601_switch",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6
+            ],
+            "bindings": [
+              0,
+              1,
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.337Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
       }
     },
     {
@@ -130,12 +538,26 @@
         "large": "assets/large.svg"
       },
       "zigbee": {
-        "manufacturer": "Tuya",
-        "model": "Universal",
-        "vendor": "Tuya",
-        "description": "Universal Tuya lock device",
-        "supports": "Zigbee 1.2",
-        "firmware": "1.0.0"
+        "manufacturerName": "_TZ3000_8kzqqzu4",
+        "productId": "TS0601",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              257,
+              9,
+              10
+            ],
+            "bindings": [
+              0,
+              1,
+              257,
+              9,
+              10
+            ]
+          }
+        }
       },
       "metadata": {
         "version": "1.1.0",
@@ -165,6 +587,975 @@
       }
     },
     {
+      "id": "locks-TS0601_lock",
+      "name": {
+        "en": "locks TS0601_lock",
+        "fr": "locks TS0601_lock",
+        "nl": "locks TS0601_lock",
+        "ta": "locks TS0601_lock"
+      },
+      "class": "lock",
+      "capabilities": [
+        "lock"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_8kzqqzu4",
+        "productId": "TS0601",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              257,
+              9,
+              10
+            ],
+            "bindings": [
+              0,
+              1,
+              257,
+              9,
+              10
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.366Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "plugs-TS011F",
+      "name": {
+        "en": "plugs TS011F",
+        "fr": "plugs TS011F",
+        "nl": "plugs TS011F",
+        "ta": "plugs TS011F"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_b28wrpvx",
+        "productId": "TS011F",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6,
+              2820,
+              1794
+            ],
+            "bindings": [
+              0,
+              1,
+              6,
+              2820,
+              1794
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.066Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "plugs-TS011G",
+      "name": {
+        "en": "plugs TS011G",
+        "fr": "plugs TS011G",
+        "nl": "plugs TS011G",
+        "ta": "plugs TS011G"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_generic",
+        "productId": "TS011G",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6
+            ],
+            "bindings": [
+              0,
+              1,
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.081Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "plugs-TS011H",
+      "name": {
+        "en": "plugs TS011H",
+        "fr": "plugs TS011H",
+        "nl": "plugs TS011H",
+        "ta": "plugs TS011H"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_generic",
+        "productId": "TS011H",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6
+            ],
+            "bindings": [
+              0,
+              1,
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.093Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "plugs-TS011I",
+      "name": {
+        "en": "plugs TS011I",
+        "fr": "plugs TS011I",
+        "nl": "plugs TS011I",
+        "ta": "plugs TS011I"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_generic",
+        "productId": "TS011I",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6
+            ],
+            "bindings": [
+              0,
+              1,
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.104Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "plugs-TS011J",
+      "name": {
+        "en": "plugs TS011J",
+        "fr": "plugs TS011J",
+        "nl": "plugs TS011J",
+        "ta": "plugs TS011J"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_generic",
+        "productId": "TS011J",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6
+            ],
+            "bindings": [
+              0,
+              1,
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.112Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "plugs-TS0121",
+      "name": {
+        "en": "plugs TS0121",
+        "fr": "plugs TS0121",
+        "nl": "plugs TS0121",
+        "ta": "plugs TS0121"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_qeuvnohg",
+        "productId": "TS0121",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6,
+              2820
+            ],
+            "bindings": [
+              0,
+              1,
+              6,
+              2820
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.125Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "plugs-TS0122",
+      "name": {
+        "en": "plugs TS0122",
+        "fr": "plugs TS0122",
+        "nl": "plugs TS0122",
+        "ta": "plugs TS0122"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_generic",
+        "productId": "TS0122",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6
+            ],
+            "bindings": [
+              0,
+              1,
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.129Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "plugs-TS0123",
+      "name": {
+        "en": "plugs TS0123",
+        "fr": "plugs TS0123",
+        "nl": "plugs TS0123",
+        "ta": "plugs TS0123"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_generic",
+        "productId": "TS0123",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6
+            ],
+            "bindings": [
+              0,
+              1,
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.138Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "plugs-TS0124",
+      "name": {
+        "en": "plugs TS0124",
+        "fr": "plugs TS0124",
+        "nl": "plugs TS0124",
+        "ta": "plugs TS0124"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_generic",
+        "productId": "TS0124",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6
+            ],
+            "bindings": [
+              0,
+              1,
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.145Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "plugs-TS0125",
+      "name": {
+        "en": "plugs TS0125",
+        "fr": "plugs TS0125",
+        "nl": "plugs TS0125",
+        "ta": "plugs TS0125"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_generic",
+        "productId": "TS0125",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6
+            ],
+            "bindings": [
+              0,
+              1,
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.157Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "remotes-TS0601_remote",
+      "name": {
+        "en": "remotes TS0601_remote",
+        "fr": "remotes TS0601_remote",
+        "nl": "remotes TS0601_remote",
+        "ta": "remotes TS0601_remote"
+      },
+      "class": "remote",
+      "capabilities": [
+        "button",
+        "scene"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_8kzqqzu4",
+        "productId": "TS0601",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              5
+            ],
+            "bindings": [
+              0,
+              1,
+              5
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:29:22.916Z",
+        "confidence_score": 95,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community",
+          "Home Assistant",
+          "Blakadder",
+          "Ultimate Analysis"
+        ],
+        "type": "tuya",
+        "category": "remotes"
+      }
+    },
+    {
+      "id": "sensors-TS0201",
+      "name": {
+        "en": "sensors TS0201",
+        "fr": "sensors TS0201",
+        "nl": "sensors TS0201",
+        "ta": "sensors TS0201"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_femsaaua",
+        "productId": "TS0201",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              1026,
+              1029,
+              1030
+            ],
+            "bindings": [
+              0,
+              1,
+              1026,
+              1029,
+              1030
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.231Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "sensors-TS0601_contact",
+      "name": {
+        "en": "sensors TS0601_contact",
+        "fr": "sensors TS0601_contact",
+        "nl": "sensors TS0601_contact",
+        "ta": "sensors TS0601_contact"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_generic",
+        "productId": "TS0601_contact",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6
+            ],
+            "bindings": [
+              0,
+              1,
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.252Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "sensors-TS0601_gas",
+      "name": {
+        "en": "sensors TS0601_gas",
+        "fr": "sensors TS0601_gas",
+        "nl": "sensors TS0601_gas",
+        "ta": "sensors TS0601_gas"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_generic",
+        "productId": "TS0601_gas",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6
+            ],
+            "bindings": [
+              0,
+              1,
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.262Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "sensors-TS0601_motion",
+      "name": {
+        "en": "sensors TS0601_motion",
+        "fr": "sensors TS0601_motion",
+        "nl": "sensors TS0601_motion",
+        "ta": "sensors TS0601_motion"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_generic",
+        "productId": "TS0601_motion",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6
+            ],
+            "bindings": [
+              0,
+              1,
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.282Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "sensors-TS0601_sensor",
+      "name": {
+        "en": "sensors TS0601_sensor",
+        "fr": "sensors TS0601_sensor",
+        "nl": "sensors TS0601_sensor",
+        "ta": "sensors TS0601_sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_generic",
+        "productId": "TS0601_sensor",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6
+            ],
+            "bindings": [
+              0,
+              1,
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.303Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "sensors-TS0601_smoke",
+      "name": {
+        "en": "sensors TS0601_smoke",
+        "fr": "sensors TS0601_smoke",
+        "nl": "sensors TS0601_smoke",
+        "ta": "sensors TS0601_smoke"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_smoke",
+        "alarm_battery"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_4ux0ondb",
+        "productId": "TS0601",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              9
+            ],
+            "bindings": [
+              0,
+              1,
+              9
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:29:22.819Z",
+        "confidence_score": 95,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community",
+          "Home Assistant",
+          "Blakadder",
+          "Ultimate Analysis"
+        ],
+        "type": "tuya",
+        "category": "sensors"
+      }
+    },
+    {
+      "id": "sensors-TS0601_vibration",
+      "name": {
+        "en": "sensors TS0601_vibration",
+        "fr": "sensors TS0601_vibration",
+        "nl": "sensors TS0601_vibration",
+        "ta": "sensors TS0601_vibration"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_vibration",
+        "alarm_battery"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_y4ona9me",
+        "productId": "TS0601",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              9
+            ],
+            "bindings": [
+              0,
+              1,
+              9
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:29:22.846Z",
+        "confidence_score": 95,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community",
+          "Home Assistant",
+          "Blakadder",
+          "Ultimate Analysis"
+        ],
+        "type": "tuya",
+        "category": "sensors"
+      }
+    },
+    {
+      "id": "sensors-TS0601_water",
+      "name": {
+        "en": "sensors TS0601_water",
+        "fr": "sensors TS0601_water",
+        "nl": "sensors TS0601_water",
+        "ta": "sensors TS0601_water"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_water",
+        "alarm_battery"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_qqdbccb3",
+        "productId": "TS0601",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              9
+            ],
+            "bindings": [
+              0,
+              1,
+              9
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:29:22.865Z",
+        "confidence_score": 95,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community",
+          "Home Assistant",
+          "Blakadder",
+          "Ultimate Analysis"
+        ],
+        "type": "tuya",
+        "category": "sensors"
+      }
+    },
+    {
       "id": "switch",
       "name": {
         "en": "Tuya Switch Universal",
@@ -182,16 +1573,24 @@
         "large": "assets/large.svg"
       },
       "zigbee": {
-        "manufacturer": "Tuya",
-        "model": "Universal",
-        "vendor": "Tuya",
-        "description": "Universal Tuya switch device",
-        "supports": "Zigbee 1.2",
-        "firmware": "1.0.0",
-        "clusters": [
-          "genOnOff",
-          "genElectricalMeasurement"
-        ]
+        "manufacturerName": "_TZ3000_b28wrpvx",
+        "productId": "TS011F",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6,
+              2820,
+              1
+            ],
+            "bindings": [
+              0,
+              6,
+              2820,
+              1
+            ]
+          }
+        }
       },
       "metadata": {
         "version": "1.0.0",
@@ -201,6 +1600,472 @@
         "sources": [
           "Auto-correction engine"
         ]
+      }
+    },
+    {
+      "id": "switches-TS0001",
+      "name": {
+        "en": "switches TS0001",
+        "fr": "switches TS0001",
+        "nl": "switches TS0001",
+        "ta": "switches TS0001"
+      },
+      "class": "switch",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_ltiqubue",
+        "productId": "TS0001",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6,
+              1
+            ],
+            "bindings": [
+              0,
+              6,
+              1
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.162Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "switches-TS0002",
+      "name": {
+        "en": "switches TS0002",
+        "fr": "switches TS0002",
+        "nl": "switches TS0002",
+        "ta": "switches TS0002"
+      },
+      "class": "switch",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_generic",
+        "productId": "TS0002",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6
+            ],
+            "bindings": [
+              0,
+              1,
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.174Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "switches-TS0003",
+      "name": {
+        "en": "switches TS0003",
+        "fr": "switches TS0003",
+        "nl": "switches TS0003",
+        "ta": "switches TS0003"
+      },
+      "class": "switch",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_generic",
+        "productId": "TS0003",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6
+            ],
+            "bindings": [
+              0,
+              1,
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.180Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "switches-TS0004",
+      "name": {
+        "en": "switches TS0004",
+        "fr": "switches TS0004",
+        "nl": "switches TS0004",
+        "ta": "switches TS0004"
+      },
+      "class": "switch",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_generic",
+        "productId": "TS0004",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6
+            ],
+            "bindings": [
+              0,
+              1,
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.192Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "switches-TS0005",
+      "name": {
+        "en": "switches TS0005",
+        "fr": "switches TS0005",
+        "nl": "switches TS0005",
+        "ta": "switches TS0005"
+      },
+      "class": "switch",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_generic",
+        "productId": "TS0005",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6
+            ],
+            "bindings": [
+              0,
+              1,
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.202Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "switches-TS0006",
+      "name": {
+        "en": "switches TS0006",
+        "fr": "switches TS0006",
+        "nl": "switches TS0006",
+        "ta": "switches TS0006"
+      },
+      "class": "switch",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_generic",
+        "productId": "TS0006",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6
+            ],
+            "bindings": [
+              0,
+              1,
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.209Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "switches-TS0007",
+      "name": {
+        "en": "switches TS0007",
+        "fr": "switches TS0007",
+        "nl": "switches TS0007",
+        "ta": "switches TS0007"
+      },
+      "class": "switch",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_generic",
+        "productId": "TS0007",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6
+            ],
+            "bindings": [
+              0,
+              1,
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.217Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "switches-TS0008",
+      "name": {
+        "en": "switches TS0008",
+        "fr": "switches TS0008",
+        "nl": "switches TS0008",
+        "ta": "switches TS0008"
+      },
+      "class": "switch",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_generic",
+        "productId": "TS0008",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6
+            ],
+            "bindings": [
+              0,
+              1,
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.224Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "thermostats-TS0601_thermostat",
+      "name": {
+        "en": "thermostats TS0601_thermostat",
+        "fr": "thermostats TS0601_thermostat",
+        "nl": "thermostats TS0601_thermostat",
+        "ta": "thermostats TS0601_thermostat"
+      },
+      "class": "thermostat",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_ltiqubue",
+        "productId": "TS0601",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              1029,
+              1026,
+              513
+            ],
+            "bindings": [
+              0,
+              1,
+              1029,
+              1026,
+              513
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.344Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
+      }
+    },
+    {
+      "id": "thermostats-TS0603_thermostat",
+      "name": {
+        "en": "thermostats TS0603_thermostat",
+        "fr": "thermostats TS0603_thermostat",
+        "nl": "thermostats TS0603_thermostat",
+        "ta": "thermostats TS0603_thermostat"
+      },
+      "class": "thermostat",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_generic",
+        "productId": "TS0603_thermostat",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6
+            ],
+            "bindings": [
+              0,
+              1,
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "version": "1.0.0",
+        "last_updated": "2025-08-22T18:02:06.353Z",
+        "confidence_score": 85,
+        "sources": [
+          "Tuya Developer Portal",
+          "Zigbee2MQTT",
+          "Homey Community"
+        ],
+        "type": "tuya"
       }
     },
     {
@@ -225,15 +2090,26 @@
         "large": "assets/large.png"
       },
       "zigbee": {
-        "manufacturer": "Tuya",
-        "model": "Universal",
-        "vendor": "Tuya",
-        "description": "Thermostat Tuya universel avec contrôle climatique",
-        "supports": "Zigbee 1.2",
-        "firmware": "1.0.0",
-        "clusters": [
-          "genHumidityMeasurement"
-        ]
+        "manufacturerName": "_TZ3000_ltiqubue",
+        "productId": "TS0601",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              1029,
+              1026,
+              513
+            ],
+            "bindings": [
+              0,
+              1,
+              1029,
+              1026,
+              513
+            ]
+          }
+        }
       },
       "metadata": {
         "version": "1.1.0",
@@ -295,12 +2171,26 @@
         "large": "assets/large.png"
       },
       "zigbee": {
-        "manufacturer": "Tuya",
-        "model": "Universal",
-        "vendor": "Tuya",
-        "description": "Volet Tuya universel avec contrôle de position",
-        "supports": "Zigbee 1.2",
-        "firmware": "1.0.0"
+        "manufacturerName": "_TZ3000_vd43bbfq",
+        "productId": "TS0601",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              258,
+              10,
+              9
+            ],
+            "bindings": [
+              0,
+              1,
+              258,
+              10,
+              9
+            ]
+          }
+        }
       },
       "metadata": {
         "version": "1.1.0",
@@ -363,15 +2253,28 @@
         "large": "assets/large.png"
       },
       "zigbee": {
-        "manufacturer": "Tuya",
-        "model": "Universal",
-        "vendor": "Tuya",
-        "description": "Lumière Tuya universelle avec contrôle complet",
-        "supports": "Zigbee 1.2",
-        "firmware": "1.0.0",
-        "clusters": [
-          "genColorCtrl"
-        ]
+        "manufacturerName": "_TZ3000_qa8s8vca",
+        "productId": "TS0501B",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6,
+              8,
+              768,
+              5
+            ],
+            "bindings": [
+              0,
+              1,
+              6,
+              8,
+              768,
+              5
+            ]
+          }
+        }
       },
       "metadata": {
         "version": "1.1.0",
@@ -437,15 +2340,26 @@
         "large": "assets/large.png"
       },
       "zigbee": {
-        "manufacturer": "Tuya",
-        "model": "Universal",
-        "vendor": "Tuya",
-        "description": "Prise Tuya universelle avec monitoring de puissance",
-        "supports": "Zigbee 1.2",
-        "firmware": "1.0.0",
-        "clusters": [
-          "genElectricalMeasurement"
-        ]
+        "manufacturerName": "_TZ3000_4ux0ondb",
+        "productId": "TS011F",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6,
+              2820,
+              1794
+            ],
+            "bindings": [
+              0,
+              1,
+              6,
+              2820,
+              1794
+            ]
+          }
+        }
       },
       "metadata": {
         "version": "1.1.0",
@@ -510,12 +2424,26 @@
         "large": "assets/large.png"
       },
       "zigbee": {
-        "manufacturer": "Tuya",
-        "model": "Universal",
-        "vendor": "Tuya",
-        "description": "Télécommande Tuya universelle pour scènes",
-        "supports": "Zigbee 1.2",
-        "firmware": "1.0.0"
+        "manufacturerName": "_TZ3000_qqdbccb3",
+        "productId": "TS0041",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6,
+              5,
+              4
+            ],
+            "bindings": [
+              0,
+              1,
+              6,
+              5,
+              4
+            ]
+          }
+        }
       },
       "metadata": {
         "version": "1.1.0",
@@ -574,15 +2502,26 @@
         "large": "assets/large.png"
       },
       "zigbee": {
-        "manufacturer": "Tuya",
-        "model": "Universal",
-        "vendor": "Tuya",
-        "description": "Capteur Tuya universel multi-fonctions",
-        "supports": "Zigbee 1.2",
-        "firmware": "1.0.0",
-        "clusters": [
-          "genPressureMeasurement"
-        ]
+        "manufacturerName": "_TZ3000_femsaaua",
+        "productId": "TS0201",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              1026,
+              1029,
+              1030
+            ],
+            "bindings": [
+              0,
+              1,
+              1026,
+              1029,
+              1030
+            ]
+          }
+        }
       },
       "metadata": {
         "version": "1.1.0",
@@ -643,12 +2582,26 @@
         "large": "assets/large.png"
       },
       "zigbee": {
-        "manufacturer": "Tuya",
-        "model": "Universal",
-        "vendor": "Tuya",
-        "description": "Device Tuya Zigbee universel avec capacités de base",
-        "supports": "Zigbee 1.2",
-        "firmware": "1.0.0"
+        "manufacturerName": "_TZ3000_y4ona9me",
+        "productId": "TS011F",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6,
+              10,
+              9
+            ],
+            "bindings": [
+              0,
+              1,
+              6,
+              10,
+              9
+            ]
+          }
+        }
       },
       "metadata": {
         "version": "1.1.0",

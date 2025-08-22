@@ -24,15 +24,26 @@
     "large": "assets/large.png"
   },
   "zigbee": {
-    "manufacturer": "Tuya",
-    "model": "Universal",
-    "vendor": "Tuya",
-    "description": "Capteur Tuya universel multi-fonctions",
-    "supports": "Zigbee 1.2",
-    "firmware": "1.0.0",
-    "clusters": [
-      "genPressureMeasurement"
-    ]
+    "manufacturerName": "_TZ3000_femsaaua",
+    "productId": "TS0201",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1026,
+          1029,
+          1030
+        ],
+        "bindings": [
+          0,
+          1,
+          1026,
+          1029,
+          1030
+        ]
+      }
+    }
   },
   "metadata": {
     "version": "1.1.0",

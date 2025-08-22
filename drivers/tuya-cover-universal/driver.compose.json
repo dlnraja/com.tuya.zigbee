@@ -19,12 +19,26 @@
     "large": "assets/large.png"
   },
   "zigbee": {
-    "manufacturer": "Tuya",
-    "model": "Universal",
-    "vendor": "Tuya",
-    "description": "Volet Tuya universel avec contrôle de position",
-    "supports": "Zigbee 1.2",
-    "firmware": "1.0.0"
+    "manufacturerName": "_TZ3000_vd43bbfq",
+    "productId": "TS0601",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          258,
+          10,
+          9
+        ],
+        "bindings": [
+          0,
+          1,
+          258,
+          10,
+          9
+        ]
+      }
+    }
   },
   "metadata": {
     "version": "1.1.0",
