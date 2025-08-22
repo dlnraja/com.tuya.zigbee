@@ -10,7 +10,9 @@
   "capabilities": [
     "lock",
     "alarm_battery",
-    "measure_temperature"
+    "measure_temperature",
+    "alarm_contact",
+    "alarm_tamper"
   ],
   "capabilitiesOptions": {
     "measure_temperature": {

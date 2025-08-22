@@ -3,7 +3,7 @@
   "name": "Blakadder Database",
   "url": "https://blakadder.com/templates.html",
   "description": "Templates et configurations Tuya",
-  "last_updated": "2025-08-22T08:32:30.288Z",
+  "last_updated": "2025-08-22T09:21:39.301Z",
   "devices": [
     {
       "id": "TS011F_switch_1ch",
@@ -22,8 +22,8 @@
         "supports": "Zigbee 1.2"
       },
       "source": "blakadder",
-      "confidence_score": 82,
-      "last_seen": "2025-08-11T10:58:05.551Z"
+      "confidence_score": 73,
+      "last_seen": "2025-08-02T16:00:43.643Z"
     },
     {
       "id": "TS0601_switch_2ch",
@@ -42,8 +42,8 @@
         "supports": "Zigbee 1.2"
       },
       "source": "blakadder",
-      "confidence_score": 70,
-      "last_seen": "2025-08-08T17:45:15.950Z"
+      "confidence_score": 94,
+      "last_seen": "2025-07-31T17:44:31.947Z"
     },
     {
       "id": "TS0501B_light",
@@ -63,8 +63,8 @@
         "supports": "Zigbee 1.2"
       },
       "source": "blakadder",
-      "confidence_score": 74,
-      "last_seen": "2025-07-23T23:36:09.564Z"
+      "confidence_score": 98,
+      "last_seen": "2025-08-22T05:39:32.136Z"
     }
   ],
   "issues": [

@@ -3,7 +3,7 @@
   "name": "Tuya Developer Portal",
   "url": "https://developer.tuya.com",
   "description": "Documentation officielle Tuya",
-  "last_updated": "2025-08-22T08:32:30.341Z",
+  "last_updated": "2025-08-22T09:21:39.321Z",
   "devices": [
     {
       "id": "TS011F_switch_1ch",
@@ -22,8 +22,8 @@
         "supports": "Zigbee 1.2"
       },
       "source": "tuya-developer",
-      "confidence_score": 76,
-      "last_seen": "2025-08-14T20:54:49.273Z"
+      "confidence_score": 90,
+      "last_seen": "2025-07-24T01:53:53.077Z"
     },
     {
       "id": "TS0601_switch_2ch",
@@ -43,7 +43,7 @@
       },
       "source": "tuya-developer",
       "confidence_score": 99,
-      "last_seen": "2025-08-02T03:17:54.397Z"
+      "last_seen": "2025-08-03T13:02:36.691Z"
     },
     {
       "id": "TS0501B_light",
@@ -63,8 +63,8 @@
         "supports": "Zigbee 1.2"
       },
       "source": "tuya-developer",
-      "confidence_score": 82,
-      "last_seen": "2025-07-31T02:30:30.286Z"
+      "confidence_score": 78,
+      "last_seen": "2025-08-09T00:36:46.049Z"
     }
   ],
   "issues": [

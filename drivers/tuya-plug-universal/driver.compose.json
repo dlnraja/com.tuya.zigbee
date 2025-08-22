@@ -25,7 +25,10 @@
     "vendor": "Tuya",
     "description": "Prise Tuya universelle avec monitoring de puissance",
     "supports": "Zigbee 1.2",
-    "firmware": "1.0.0"
+    "firmware": "1.0.0",
+    "clusters": [
+      "genElectricalMeasurement"
+    ]
   },
   "metadata": {
     "version": "1.1.0",

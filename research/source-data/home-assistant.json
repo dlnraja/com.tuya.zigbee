@@ -3,7 +3,7 @@
   "name": "Home Assistant",
   "url": "https://www.home-assistant.io",
   "description": "Intégrations et configurations",
-  "last_updated": "2025-08-22T08:32:30.370Z",
+  "last_updated": "2025-08-22T09:21:39.355Z",
   "devices": [
     {
       "id": "TS011F_switch_1ch",
@@ -22,8 +22,8 @@
         "supports": "Zigbee 1.2"
       },
       "source": "home-assistant",
-      "confidence_score": 99,
-      "last_seen": "2025-08-17T11:22:10.033Z"
+      "confidence_score": 96,
+      "last_seen": "2025-08-16T05:13:46.707Z"
     },
     {
       "id": "TS0601_switch_2ch",
@@ -42,8 +42,8 @@
         "supports": "Zigbee 1.2"
       },
       "source": "home-assistant",
-      "confidence_score": 75,
-      "last_seen": "2025-08-15T14:50:26.141Z"
+      "confidence_score": 99,
+      "last_seen": "2025-07-27T15:36:26.403Z"
     },
     {
       "id": "TS0501B_light",
@@ -63,8 +63,8 @@
         "supports": "Zigbee 1.2"
       },
       "source": "home-assistant",
-      "confidence_score": 94,
-      "last_seen": "2025-08-09T13:45:25.825Z"
+      "confidence_score": 82,
+      "last_seen": "2025-07-27T19:54:10.651Z"
     }
   ],
   "issues": [

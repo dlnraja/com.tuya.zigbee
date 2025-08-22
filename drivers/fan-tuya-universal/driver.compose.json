@@ -11,7 +11,9 @@
     "onoff",
     "dim",
     "measure_power",
-    "alarm_battery"
+    "alarm_battery",
+    "measure_temperature",
+    "fan_mode"
   ],
   "capabilitiesOptions": {
     "measure_power": {

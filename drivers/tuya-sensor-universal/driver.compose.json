@@ -13,7 +13,11 @@
     "measure_presence",
     "alarm_contact",
     "alarm_battery",
-    "measure_pressure"
+    "measure_pressure",
+    "measure_co2",
+    "measure_tvoc",
+    "measure_pm25",
+    "measure_noise"
   ],
   "images": {
     "small": "assets/small.png",
@@ -25,7 +29,10 @@
     "vendor": "Tuya",
     "description": "Capteur Tuya universel multi-fonctions",
     "supports": "Zigbee 1.2",
-    "firmware": "1.0.0"
+    "firmware": "1.0.0",
+    "clusters": [
+      "genPressureMeasurement"
+    ]
   },
   "metadata": {
     "version": "1.1.0",
