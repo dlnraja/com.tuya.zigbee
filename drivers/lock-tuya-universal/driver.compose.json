@@ -1,0 +1,65 @@
+{
+  "id": "lock-tuya-universal",
+  "name": {
+    "en": "Tuya Lock Universal",
+    "fr": "Tuya Lock Universel",
+    "nl": "Tuya Lock Universeel",
+    "ta": "Tuya Lock உலகளாவிய"
+  },
+  "class": "lock",
+  "capabilities": [
+    "lock",
+    "alarm_battery",
+    "measure_temperature"
+  ],
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "approximated": true
+    }
+  },
+  "flowCards": [
+    "lock",
+    "unlock",
+    "lock_status",
+    "battery_alert",
+    "temperature_alert"
+  ],
+  "images": {
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "zigbee": {
+    "manufacturer": "Tuya",
+    "model": "Universal",
+    "vendor": "Tuya",
+    "description": "Universal Tuya lock device",
+    "supports": "Zigbee 1.2",
+    "firmware": "1.0.0"
+  },
+  "metadata": {
+    "version": "1.1.0",
+    "last_updated": "2025-08-22",
+    "confidence_score": 95,
+    "advanced_features": [
+      "lock_control",
+      "battery_monitoring",
+      "temperature_monitoring"
+    ],
+    "sources": [
+      "Zigbee2MQTT",
+      "Blakadder Database",
+      "Homey Community",
+      "Tuya Developer Portal"
+    ],
+    "tested_devices": [
+      "TS0601_lock",
+      "TS0602_lock"
+    ],
+    "zigbee_clusters": [
+      "genBasic",
+      "genPowerCfg",
+      "genDoorLock",
+      "genBasic"
+    ]
+  }
+}
