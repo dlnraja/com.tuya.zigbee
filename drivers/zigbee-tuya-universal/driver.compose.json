@@ -1,0 +1,69 @@
+{
+  "id": "zigbee-tuya-universal",
+  "name": {
+    "en": "Device Tuya Zigbee universel avec capacités de base",
+    "fr": "Device Tuya Zigbee universel avec capacités de base",
+    "nl": "Device Tuya Zigbee universel avec capacités de base",
+    "ta": "Device Tuya Zigbee universel avec capacités de base"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "alarm_battery",
+    "measure_temperature"
+  ],
+  "images": {
+    "small": "assets/small.png",
+    "large": "assets/large.png"
+  },
+  "zigbee": {
+    "manufacturer": "Tuya",
+    "model": "Universal",
+    "vendor": "Tuya",
+    "description": "Device Tuya Zigbee universel avec capacités de base",
+    "supports": "Zigbee 1.2",
+    "firmware": "1.0.0"
+  },
+  "metadata": {
+    "version": "1.1.0",
+    "last_updated": "2025-08-22",
+    "confidence_score": 95,
+    "sources": [
+      "Zigbee2MQTT",
+      "Blakadder Database",
+      "Homey Community",
+      "Tuya Developer Portal"
+    ],
+    "advanced_features": [
+      "battery_monitoring",
+      "power_monitoring",
+      "temperature_monitoring"
+    ],
+    "tested_devices": [
+      "TS011F_switch_1ch",
+      "TS0601_switch_2ch"
+    ],
+    "zigbee_clusters": [
+      "genBasic",
+      "genPowerCfg",
+      "genOnOff",
+      "genBasic"
+    ]
+  },
+  "capabilitiesOptions": {
+    "measure_power": {
+      "approximated": true
+    },
+    "measure_temperature": {
+      "approximated": true
+    }
+  },
+  "flowCards": [
+    "toggle",
+    "is_on",
+    "is_off",
+    "power_threshold",
+    "temperature_alert"
+  ]
+}

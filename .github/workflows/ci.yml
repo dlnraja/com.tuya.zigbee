@@ -5,9 +5,10 @@ name: CI
 
 on:
   push:
-    branches: [ master, main ]
+    branches: [ master, main, tuya-light ]
   pull_request:
-    branches: [ master, main ]
+    branches: [ master, main, tuya-light ]
+  workflow_dispatch:
 
 jobs:
   test:
@@ -32,8 +33,22 @@ jobs:
       
     - name: Validate
       run: npm run validate
-
----
-**📅 Généré**: 2025-08-05T23:45:25.666Z
-**🎯 Objectif**: Workflow CI/CD
-**✅ Statut**: **WORKFLOW ROBUSTE**
+      
+    - name: Tuya Light specific validation
+      if: github.ref == 'refs/heads/tuya-light'
+      run: |
+        npm run bootstrap:arch
+        npm run repair:drivers
+        npm run assert:drivers
+        npm run harvest:all
+        echo "  \n"
+        
+    - name: Upload Tuya Light artifacts
+      if: github.ref == 'refs/heads/tuya-light'
+      uses: actions/upload-artifact@v3
+      with:
+        name: tuya-light-results
+        path: |
+          research/
+          logs/
+          reports/

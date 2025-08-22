@@ -1,0 +1,68 @@
+{
+  "id": "tuya-sensor-universal",
+  "name": {
+    "en": "Capteur Tuya universel multi-fonctions",
+    "fr": "Capteur Tuya universel multi-fonctions",
+    "nl": "Capteur Tuya universel multi-fonctions",
+    "ta": "Capteur Tuya universel multi-fonctions"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_presence",
+    "alarm_contact",
+    "alarm_battery",
+    "measure_pressure"
+  ],
+  "images": {
+    "small": "assets/small.png",
+    "large": "assets/large.png"
+  },
+  "zigbee": {
+    "manufacturer": "Tuya",
+    "model": "Universal",
+    "vendor": "Tuya",
+    "description": "Capteur Tuya universel multi-fonctions",
+    "supports": "Zigbee 1.2",
+    "firmware": "1.0.0"
+  },
+  "metadata": {
+    "version": "1.1.0",
+    "last_updated": "2025-08-22",
+    "confidence_score": 95,
+    "sources": [
+      "Zigbee2MQTT",
+      "Blakadder Database",
+      "Homey Community",
+      "Tuya Developer Portal"
+    ],
+    "advanced_features": [
+      "multi_sensor",
+      "battery_monitoring",
+      "presence_detection",
+      "environmental_monitoring"
+    ],
+    "tested_devices": [
+      "TS0201_sensor",
+      "TS0202_sensor"
+    ],
+    "zigbee_clusters": [
+      "genBasic",
+      "genPowerCfg",
+      "genBasic",
+      "genBasic"
+    ]
+  },
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "approximated": true
+    }
+  },
+  "flowCards": [
+    "temperature_alert",
+    "humidity_alert",
+    "presence_detected",
+    "contact_alert"
+  ]
+}

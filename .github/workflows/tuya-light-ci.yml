@@ -3,4 +3,108 @@
 
 # MEGA-PROMPT ULTIME - VERSION FINALE 2025
 # Enhanced with enrichment mode
-name: Tuya-Light CICD Pipelineon push branches  master, tuya-light  pull_request branches  master, tuya-light jobs validate runs-on ubuntu-latest steps - uses actionscheckoutv3 - name Setup Node.js uses actionssetup-nodev3 with node-version 18 - name Install dependencies run npm install - name Validate app run npx homey app validate --level debug - name Test drivers run node scriptscorevalidate-all-drivers.js - name Run linting run npx eslint . --ext .js test runs-on ubuntu-latest needs validate steps - uses actionscheckoutv3 - name Setup Node.js uses actionssetup-nodev3 with node-version 18 - name Run tests run npm test - name Generate coverage report run npm run coverage build runs-on ubuntu-latest needs validate, test steps - uses actionscheckoutv3 - name Build app run npx homey app build - name Upload build artifacts uses actionsupload-artifactv3 with name tuya-light-build path .homeybuild
+name: Tuya Light CI/CD
+
+on:
+  push:
+    branches: [ tuya-light ]
+  pull_request:
+    branches: [ tuya-light ]
+  workflow_dispatch:
+
+jobs:
+  validate-tuya-light:
+    runs-on: ubuntu-latest
+    name: Validate Tuya Light Branch
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: |
+        npm ci
+        echo "  \n"
+        
+    - name: Validate architecture
+      run: |
+        npm run bootstrap:arch
+        echo "  \n"
+        
+    - name: Repair drivers
+      run: |
+        npm run repair:drivers
+        echo "  \n"
+        
+    - name: Assert drivers
+      run: |
+        npm run assert:drivers
+        echo "  \n"
+        
+    - name: Run harvesting
+      run: |
+        npm run harvest:all
+        echo "  \n"
+        
+    - name: Run scoring engine
+      run: |
+        node lib/heuristics/scoring-engine.js
+        echo "  \n"
+        
+    - name: Run tests
+      run: |
+        node tests/test-enriched-drivers.js
+        echo "  \n"
+        
+    - name: Build Homey app
+      run: |
+        npm run build:homey
+        echo "  \n"
+        
+    - name: Validate Homey app
+      run: |
+        npm run validate:homey
+        echo "  \n"
+        
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: tuya-light-validation-results
+        path: |
+          research/
+          logs/
+          reports/
+          
+  deploy-tuya-light:
+    needs: validate-tuya-light
+    runs-on: ubuntu-latest
+    name: Deploy Tuya Light
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Download artifacts
+      uses: actions/download-artifact@v3
+      with:
+        name: tuya-light-validation-results
+        
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
+        publish_branch: gh-pages-tuya-light
+        
+    - name: Update branch status
+      run: |
+        echo "✅ Tuya Light branch validated and deployed successfully!"
+        echo "📅 Timestamp: $(date -u)"
+        echo "🚀 Status: READY FOR PRODUCTION"
+        echo "  \n"
