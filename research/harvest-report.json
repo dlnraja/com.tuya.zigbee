@@ -1,12 +1,12 @@
 {
-  "timestamp": "2025-08-22T08:27:20.164Z",
+  "timestamp": "2025-08-22T08:32:30.271Z",
   "sources": {
     "zigbee2mqtt": {
       "source": "zigbee2mqtt",
       "name": "Zigbee2MQTT Database",
       "url": "https://github.com/Koenkk/Z-Stack-firmware",
       "description": "Base de données des devices Zigbee",
-      "last_updated": "2025-08-22T08:27:20.168Z",
+      "last_updated": "2025-08-22T08:32:30.280Z",
       "devices": [
         {
           "id": "TS011F_switch_1ch",
@@ -25,8 +25,8 @@
             "supports": "Zigbee 1.2"
           },
           "source": "zigbee2mqtt",
-          "confidence_score": 82,
-          "last_seen": "2025-08-08T09:26:09.628Z"
+          "confidence_score": 84,
+          "last_seen": "2025-08-16T15:05:59.439Z"
         },
         {
           "id": "TS0601_switch_2ch",
@@ -45,8 +45,8 @@
             "supports": "Zigbee 1.2"
           },
           "source": "zigbee2mqtt",
-          "confidence_score": 76,
-          "last_seen": "2025-08-04T00:46:51.470Z"
+          "confidence_score": 78,
+          "last_seen": "2025-08-08T08:54:55.523Z"
         },
         {
           "id": "TS0501B_light",
@@ -66,8 +66,8 @@
             "supports": "Zigbee 1.2"
           },
           "source": "zigbee2mqtt",
-          "confidence_score": 70,
-          "last_seen": "2025-07-26T04:07:44.794Z"
+          "confidence_score": 85,
+          "last_seen": "2025-08-01T20:41:59.783Z"
         }
       ],
       "issues": [
@@ -105,7 +105,7 @@
       "name": "Blakadder Database",
       "url": "https://blakadder.com/templates.html",
       "description": "Templates et configurations Tuya",
-      "last_updated": "2025-08-22T08:27:20.170Z",
+      "last_updated": "2025-08-22T08:32:30.288Z",
       "devices": [
         {
           "id": "TS011F_switch_1ch",
@@ -124,8 +124,8 @@
             "supports": "Zigbee 1.2"
           },
           "source": "blakadder",
-          "confidence_score": 94,
-          "last_seen": "2025-08-10T06:51:20.545Z"
+          "confidence_score": 82,
+          "last_seen": "2025-08-11T10:58:05.551Z"
         },
         {
           "id": "TS0601_switch_2ch",
@@ -144,8 +144,8 @@
             "supports": "Zigbee 1.2"
           },
           "source": "blakadder",
-          "confidence_score": 97,
-          "last_seen": "2025-07-29T06:46:07.623Z"
+          "confidence_score": 70,
+          "last_seen": "2025-08-08T17:45:15.950Z"
         },
         {
           "id": "TS0501B_light",
@@ -165,8 +165,8 @@
             "supports": "Zigbee 1.2"
           },
           "source": "blakadder",
-          "confidence_score": 78,
-          "last_seen": "2025-08-07T06:22:29.608Z"
+          "confidence_score": 74,
+          "last_seen": "2025-07-23T23:36:09.564Z"
         }
       ],
       "issues": [
@@ -204,7 +204,7 @@
       "name": "Homey Community Forums",
       "url": "https://community.homey.app",
       "description": "Discussions et solutions utilisateurs",
-      "last_updated": "2025-08-22T08:27:20.178Z",
+      "last_updated": "2025-08-22T08:32:30.307Z",
       "devices": [
         {
           "id": "TS011F_switch_1ch",
@@ -223,8 +223,8 @@
             "supports": "Zigbee 1.2"
           },
           "source": "homey-forums",
-          "confidence_score": 78,
-          "last_seen": "2025-08-22T01:58:16.945Z"
+          "confidence_score": 76,
+          "last_seen": "2025-07-23T18:09:26.761Z"
         },
         {
           "id": "TS0601_switch_2ch",
@@ -243,8 +243,8 @@
             "supports": "Zigbee 1.2"
           },
           "source": "homey-forums",
-          "confidence_score": 91,
-          "last_seen": "2025-08-07T03:58:13.502Z"
+          "confidence_score": 86,
+          "last_seen": "2025-07-30T23:08:16.091Z"
         },
         {
           "id": "TS0501B_light",
@@ -264,8 +264,8 @@
             "supports": "Zigbee 1.2"
           },
           "source": "homey-forums",
-          "confidence_score": 97,
-          "last_seen": "2025-08-12T14:15:36.104Z"
+          "confidence_score": 82,
+          "last_seen": "2025-07-29T11:49:42.579Z"
         }
       ],
       "issues": [
@@ -303,7 +303,7 @@
       "name": "Tuya Developer Portal",
       "url": "https://developer.tuya.com",
       "description": "Documentation officielle Tuya",
-      "last_updated": "2025-08-22T08:27:20.182Z",
+      "last_updated": "2025-08-22T08:32:30.341Z",
       "devices": [
         {
           "id": "TS011F_switch_1ch",
@@ -322,8 +322,8 @@
             "supports": "Zigbee 1.2"
           },
           "source": "tuya-developer",
-          "confidence_score": 85,
-          "last_seen": "2025-07-30T10:16:51.186Z"
+          "confidence_score": 76,
+          "last_seen": "2025-08-14T20:54:49.273Z"
         },
         {
           "id": "TS0601_switch_2ch",
@@ -342,8 +342,8 @@
             "supports": "Zigbee 1.2"
           },
           "source": "tuya-developer",
-          "confidence_score": 86,
-          "last_seen": "2025-08-18T18:10:36.670Z"
+          "confidence_score": 99,
+          "last_seen": "2025-08-02T03:17:54.397Z"
         },
         {
           "id": "TS0501B_light",
@@ -363,8 +363,8 @@
             "supports": "Zigbee 1.2"
           },
           "source": "tuya-developer",
-          "confidence_score": 72,
-          "last_seen": "2025-08-13T22:52:59.658Z"
+          "confidence_score": 82,
+          "last_seen": "2025-07-31T02:30:30.286Z"
         }
       ],
       "issues": [
@@ -402,7 +402,7 @@
       "name": "Home Assistant",
       "url": "https://www.home-assistant.io",
       "description": "Intégrations et configurations",
-      "last_updated": "2025-08-22T08:27:20.186Z",
+      "last_updated": "2025-08-22T08:32:30.370Z",
       "devices": [
         {
           "id": "TS011F_switch_1ch",
@@ -421,8 +421,8 @@
             "supports": "Zigbee 1.2"
           },
           "source": "home-assistant",
-          "confidence_score": 74,
-          "last_seen": "2025-08-17T01:08:14.119Z"
+          "confidence_score": 99,
+          "last_seen": "2025-08-17T11:22:10.033Z"
         },
         {
           "id": "TS0601_switch_2ch",
@@ -441,8 +441,8 @@
             "supports": "Zigbee 1.2"
           },
           "source": "home-assistant",
-          "confidence_score": 77,
-          "last_seen": "2025-08-04T18:47:13.457Z"
+          "confidence_score": 75,
+          "last_seen": "2025-08-15T14:50:26.141Z"
         },
         {
           "id": "TS0501B_light",
@@ -462,8 +462,8 @@
             "supports": "Zigbee 1.2"
           },
           "source": "home-assistant",
-          "confidence_score": 77,
-          "last_seen": "2025-08-09T14:22:41.977Z"
+          "confidence_score": 94,
+          "last_seen": "2025-08-09T13:45:25.825Z"
         }
       ],
       "issues": [

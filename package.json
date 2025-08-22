@@ -7,6 +7,8 @@
     "bootstrap:arch": "node tools/repair/bootstrap-arch.js",
     "repair:drivers": "node tools/repair/drivers.js",
     "enhance:drivers": "node tools/repair/enhance-drivers.js",
+    "fix:drivers": "node tools/repair/fix-missing-drivers.js",
+    "cleanup:drivers": "node tools/repair/cleanup-and-fix.js",
     "assert:drivers": "node tools/repair/assert-drivers.js",
     "harvest:all": "node tools/harvest/run-all.js",
     "ingest": "node tools/cli.js ingest",

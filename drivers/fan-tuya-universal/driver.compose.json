@@ -1,0 +1,70 @@
+{
+  "id": "fan-tuya-universal",
+  "name": {
+    "en": "Tuya Fan Universal",
+    "fr": "Tuya Fan Universel",
+    "nl": "Tuya Fan Universeel",
+    "ta": "Tuya Fan உலகளாவிய"
+  },
+  "class": "fan",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power",
+    "alarm_battery"
+  ],
+  "capabilitiesOptions": {
+    "measure_power": {
+      "approximated": true
+    },
+    "dim": {
+      "approximated": true
+    }
+  },
+  "flowCards": [
+    "toggle",
+    "is_on",
+    "is_off",
+    "fan_speed_up",
+    "fan_speed_down",
+    "power_threshold"
+  ],
+  "images": {
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "zigbee": {
+    "manufacturer": "Tuya",
+    "model": "Universal",
+    "vendor": "Tuya",
+    "description": "Universal Tuya fan device",
+    "supports": "Zigbee 1.2",
+    "firmware": "1.0.0"
+  },
+  "metadata": {
+    "version": "1.1.0",
+    "last_updated": "2025-08-22",
+    "confidence_score": 95,
+    "advanced_features": [
+      "fan_speed_control",
+      "power_monitoring",
+      "battery_monitoring"
+    ],
+    "sources": [
+      "Zigbee2MQTT",
+      "Blakadder Database",
+      "Homey Community",
+      "Tuya Developer Portal"
+    ],
+    "tested_devices": [
+      "TS0601_fan",
+      "TS0602_fan"
+    ],
+    "zigbee_clusters": [
+      "genBasic",
+      "genPowerCfg",
+      "genOnOff",
+      "genLevelCtrl"
+    ]
+  }
+}
