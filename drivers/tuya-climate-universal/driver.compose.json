@@ -11,7 +11,9 @@
     "target_temperature",
     "measure_temperature",
     "measure_humidity",
-    "alarm_battery"
+    "alarm_battery",
+    "target_humidity",
+    "measure_pressure"
   ],
   "images": {
     "small": "assets/small.png",
@@ -23,7 +25,10 @@
     "vendor": "Tuya",
     "description": "Thermostat Tuya universel avec contrôle climatique",
     "supports": "Zigbee 1.2",
-    "firmware": "1.0.0"
+    "firmware": "1.0.0",
+    "clusters": [
+      "genHumidityMeasurement"
+    ]
   },
   "metadata": {
     "version": "1.1.0",

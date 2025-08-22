@@ -10,7 +10,8 @@
   "capabilities": [
     "alarm_battery",
     "button",
-    "scene"
+    "scene",
+    "measure_battery"
   ],
   "images": {
     "small": "assets/small.png",

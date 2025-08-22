@@ -1,0 +1,39 @@
+{
+  "id": "switch",
+  "name": {
+    "en": "Tuya Switch Universal",
+    "fr": "Tuya Switch Universel",
+    "nl": "Tuya Switch Universeel",
+    "ta": "Tuya Switch உலகளாவிய"
+  },
+  "class": "switch",
+  "capabilities": [
+    "onoff",
+    "measure_power"
+  ],
+  "images": {
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "zigbee": {
+    "manufacturer": "Tuya",
+    "model": "Universal",
+    "vendor": "Tuya",
+    "description": "Universal Tuya switch device",
+    "supports": "Zigbee 1.2",
+    "firmware": "1.0.0",
+    "clusters": [
+      "genOnOff",
+      "genElectricalMeasurement"
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2025-08-22",
+    "confidence_score": 90,
+    "auto_corrected": true,
+    "sources": [
+      "Auto-correction engine"
+    ]
+  }
+}
