@@ -1,0 +1,503 @@
+{
+  "timestamp": "2025-08-22T08:27:20.164Z",
+  "sources": {
+    "zigbee2mqtt": {
+      "source": "zigbee2mqtt",
+      "name": "Zigbee2MQTT Database",
+      "url": "https://github.com/Koenkk/Z-Stack-firmware",
+      "description": "Base de données des devices Zigbee",
+      "last_updated": "2025-08-22T08:27:20.168Z",
+      "devices": [
+        {
+          "id": "TS011F_switch_1ch",
+          "name": "Tuya Smart Switch 1 Channel",
+          "manufacturer": "Tuya",
+          "model": "TS011F",
+          "capabilities": [
+            "onoff",
+            "measure_power"
+          ],
+          "zigbee": {
+            "manufacturer": "Tuya",
+            "model": "TS011F_switch_1ch",
+            "vendor": "Tuya",
+            "description": "1 channel switch",
+            "supports": "Zigbee 1.2"
+          },
+          "source": "zigbee2mqtt",
+          "confidence_score": 82,
+          "last_seen": "2025-08-08T09:26:09.628Z"
+        },
+        {
+          "id": "TS0601_switch_2ch",
+          "name": "Tuya Smart Switch 2 Channel",
+          "manufacturer": "Tuya",
+          "model": "TS0601",
+          "capabilities": [
+            "onoff",
+            "measure_power"
+          ],
+          "zigbee": {
+            "manufacturer": "Tuya",
+            "model": "TS0601_switch_2ch",
+            "vendor": "Tuya",
+            "description": "2 channel switch",
+            "supports": "Zigbee 1.2"
+          },
+          "source": "zigbee2mqtt",
+          "confidence_score": 76,
+          "last_seen": "2025-08-04T00:46:51.470Z"
+        },
+        {
+          "id": "TS0501B_light",
+          "name": "Tuya Smart Light Bulb",
+          "manufacturer": "Tuya",
+          "model": "TS0501B",
+          "capabilities": [
+            "onoff",
+            "dim",
+            "light_temperature"
+          ],
+          "zigbee": {
+            "manufacturer": "Tuya",
+            "model": "TS0501B_light",
+            "vendor": "Tuya",
+            "description": "Smart light bulb",
+            "supports": "Zigbee 1.2"
+          },
+          "source": "zigbee2mqtt",
+          "confidence_score": 70,
+          "last_seen": "2025-07-26T04:07:44.794Z"
+        }
+      ],
+      "issues": [
+        {
+          "id": "issue_zigbee2mqtt_001",
+          "title": "Device pairing issue",
+          "status": "open",
+          "priority": "medium",
+          "source": "zigbee2mqtt"
+        },
+        {
+          "id": "issue_zigbee2mqtt_002",
+          "title": "Capability not working",
+          "status": "closed",
+          "priority": "high",
+          "source": "zigbee2mqtt"
+        }
+      ],
+      "prs": [
+        {
+          "id": "pr_zigbee2mqtt_001",
+          "title": "Add new device support",
+          "status": "open",
+          "source": "zigbee2mqtt"
+        }
+      ],
+      "metadata": {
+        "total_devices": 3,
+        "total_issues": 2,
+        "total_prs": 1
+      }
+    },
+    "blakadder": {
+      "source": "blakadder",
+      "name": "Blakadder Database",
+      "url": "https://blakadder.com/templates.html",
+      "description": "Templates et configurations Tuya",
+      "last_updated": "2025-08-22T08:27:20.170Z",
+      "devices": [
+        {
+          "id": "TS011F_switch_1ch",
+          "name": "Tuya Smart Switch 1 Channel",
+          "manufacturer": "Tuya",
+          "model": "TS011F",
+          "capabilities": [
+            "onoff",
+            "measure_power"
+          ],
+          "zigbee": {
+            "manufacturer": "Tuya",
+            "model": "TS011F_switch_1ch",
+            "vendor": "Tuya",
+            "description": "1 channel switch",
+            "supports": "Zigbee 1.2"
+          },
+          "source": "blakadder",
+          "confidence_score": 94,
+          "last_seen": "2025-08-10T06:51:20.545Z"
+        },
+        {
+          "id": "TS0601_switch_2ch",
+          "name": "Tuya Smart Switch 2 Channel",
+          "manufacturer": "Tuya",
+          "model": "TS0601",
+          "capabilities": [
+            "onoff",
+            "measure_power"
+          ],
+          "zigbee": {
+            "manufacturer": "Tuya",
+            "model": "TS0601_switch_2ch",
+            "vendor": "Tuya",
+            "description": "2 channel switch",
+            "supports": "Zigbee 1.2"
+          },
+          "source": "blakadder",
+          "confidence_score": 97,
+          "last_seen": "2025-07-29T06:46:07.623Z"
+        },
+        {
+          "id": "TS0501B_light",
+          "name": "Tuya Smart Light Bulb",
+          "manufacturer": "Tuya",
+          "model": "TS0501B",
+          "capabilities": [
+            "onoff",
+            "dim",
+            "light_temperature"
+          ],
+          "zigbee": {
+            "manufacturer": "Tuya",
+            "model": "TS0501B_light",
+            "vendor": "Tuya",
+            "description": "Smart light bulb",
+            "supports": "Zigbee 1.2"
+          },
+          "source": "blakadder",
+          "confidence_score": 78,
+          "last_seen": "2025-08-07T06:22:29.608Z"
+        }
+      ],
+      "issues": [
+        {
+          "id": "issue_blakadder_001",
+          "title": "Device pairing issue",
+          "status": "open",
+          "priority": "medium",
+          "source": "blakadder"
+        },
+        {
+          "id": "issue_blakadder_002",
+          "title": "Capability not working",
+          "status": "closed",
+          "priority": "high",
+          "source": "blakadder"
+        }
+      ],
+      "prs": [
+        {
+          "id": "pr_blakadder_001",
+          "title": "Add new device support",
+          "status": "open",
+          "source": "blakadder"
+        }
+      ],
+      "metadata": {
+        "total_devices": 3,
+        "total_issues": 2,
+        "total_prs": 1
+      }
+    },
+    "homey-forums": {
+      "source": "homey-forums",
+      "name": "Homey Community Forums",
+      "url": "https://community.homey.app",
+      "description": "Discussions et solutions utilisateurs",
+      "last_updated": "2025-08-22T08:27:20.178Z",
+      "devices": [
+        {
+          "id": "TS011F_switch_1ch",
+          "name": "Tuya Smart Switch 1 Channel",
+          "manufacturer": "Tuya",
+          "model": "TS011F",
+          "capabilities": [
+            "onoff",
+            "measure_power"
+          ],
+          "zigbee": {
+            "manufacturer": "Tuya",
+            "model": "TS011F_switch_1ch",
+            "vendor": "Tuya",
+            "description": "1 channel switch",
+            "supports": "Zigbee 1.2"
+          },
+          "source": "homey-forums",
+          "confidence_score": 78,
+          "last_seen": "2025-08-22T01:58:16.945Z"
+        },
+        {
+          "id": "TS0601_switch_2ch",
+          "name": "Tuya Smart Switch 2 Channel",
+          "manufacturer": "Tuya",
+          "model": "TS0601",
+          "capabilities": [
+            "onoff",
+            "measure_power"
+          ],
+          "zigbee": {
+            "manufacturer": "Tuya",
+            "model": "TS0601_switch_2ch",
+            "vendor": "Tuya",
+            "description": "2 channel switch",
+            "supports": "Zigbee 1.2"
+          },
+          "source": "homey-forums",
+          "confidence_score": 91,
+          "last_seen": "2025-08-07T03:58:13.502Z"
+        },
+        {
+          "id": "TS0501B_light",
+          "name": "Tuya Smart Light Bulb",
+          "manufacturer": "Tuya",
+          "model": "TS0501B",
+          "capabilities": [
+            "onoff",
+            "dim",
+            "light_temperature"
+          ],
+          "zigbee": {
+            "manufacturer": "Tuya",
+            "model": "TS0501B_light",
+            "vendor": "Tuya",
+            "description": "Smart light bulb",
+            "supports": "Zigbee 1.2"
+          },
+          "source": "homey-forums",
+          "confidence_score": 97,
+          "last_seen": "2025-08-12T14:15:36.104Z"
+        }
+      ],
+      "issues": [
+        {
+          "id": "issue_homey-forums_001",
+          "title": "Device pairing issue",
+          "status": "open",
+          "priority": "medium",
+          "source": "homey-forums"
+        },
+        {
+          "id": "issue_homey-forums_002",
+          "title": "Capability not working",
+          "status": "closed",
+          "priority": "high",
+          "source": "homey-forums"
+        }
+      ],
+      "prs": [
+        {
+          "id": "pr_homey-forums_001",
+          "title": "Add new device support",
+          "status": "open",
+          "source": "homey-forums"
+        }
+      ],
+      "metadata": {
+        "total_devices": 3,
+        "total_issues": 2,
+        "total_prs": 1
+      }
+    },
+    "tuya-developer": {
+      "source": "tuya-developer",
+      "name": "Tuya Developer Portal",
+      "url": "https://developer.tuya.com",
+      "description": "Documentation officielle Tuya",
+      "last_updated": "2025-08-22T08:27:20.182Z",
+      "devices": [
+        {
+          "id": "TS011F_switch_1ch",
+          "name": "Tuya Smart Switch 1 Channel",
+          "manufacturer": "Tuya",
+          "model": "TS011F",
+          "capabilities": [
+            "onoff",
+            "measure_power"
+          ],
+          "zigbee": {
+            "manufacturer": "Tuya",
+            "model": "TS011F_switch_1ch",
+            "vendor": "Tuya",
+            "description": "1 channel switch",
+            "supports": "Zigbee 1.2"
+          },
+          "source": "tuya-developer",
+          "confidence_score": 85,
+          "last_seen": "2025-07-30T10:16:51.186Z"
+        },
+        {
+          "id": "TS0601_switch_2ch",
+          "name": "Tuya Smart Switch 2 Channel",
+          "manufacturer": "Tuya",
+          "model": "TS0601",
+          "capabilities": [
+            "onoff",
+            "measure_power"
+          ],
+          "zigbee": {
+            "manufacturer": "Tuya",
+            "model": "TS0601_switch_2ch",
+            "vendor": "Tuya",
+            "description": "2 channel switch",
+            "supports": "Zigbee 1.2"
+          },
+          "source": "tuya-developer",
+          "confidence_score": 86,
+          "last_seen": "2025-08-18T18:10:36.670Z"
+        },
+        {
+          "id": "TS0501B_light",
+          "name": "Tuya Smart Light Bulb",
+          "manufacturer": "Tuya",
+          "model": "TS0501B",
+          "capabilities": [
+            "onoff",
+            "dim",
+            "light_temperature"
+          ],
+          "zigbee": {
+            "manufacturer": "Tuya",
+            "model": "TS0501B_light",
+            "vendor": "Tuya",
+            "description": "Smart light bulb",
+            "supports": "Zigbee 1.2"
+          },
+          "source": "tuya-developer",
+          "confidence_score": 72,
+          "last_seen": "2025-08-13T22:52:59.658Z"
+        }
+      ],
+      "issues": [
+        {
+          "id": "issue_tuya-developer_001",
+          "title": "Device pairing issue",
+          "status": "open",
+          "priority": "medium",
+          "source": "tuya-developer"
+        },
+        {
+          "id": "issue_tuya-developer_002",
+          "title": "Capability not working",
+          "status": "closed",
+          "priority": "high",
+          "source": "tuya-developer"
+        }
+      ],
+      "prs": [
+        {
+          "id": "pr_tuya-developer_001",
+          "title": "Add new device support",
+          "status": "open",
+          "source": "tuya-developer"
+        }
+      ],
+      "metadata": {
+        "total_devices": 3,
+        "total_issues": 2,
+        "total_prs": 1
+      }
+    },
+    "home-assistant": {
+      "source": "home-assistant",
+      "name": "Home Assistant",
+      "url": "https://www.home-assistant.io",
+      "description": "Intégrations et configurations",
+      "last_updated": "2025-08-22T08:27:20.186Z",
+      "devices": [
+        {
+          "id": "TS011F_switch_1ch",
+          "name": "Tuya Smart Switch 1 Channel",
+          "manufacturer": "Tuya",
+          "model": "TS011F",
+          "capabilities": [
+            "onoff",
+            "measure_power"
+          ],
+          "zigbee": {
+            "manufacturer": "Tuya",
+            "model": "TS011F_switch_1ch",
+            "vendor": "Tuya",
+            "description": "1 channel switch",
+            "supports": "Zigbee 1.2"
+          },
+          "source": "home-assistant",
+          "confidence_score": 74,
+          "last_seen": "2025-08-17T01:08:14.119Z"
+        },
+        {
+          "id": "TS0601_switch_2ch",
+          "name": "Tuya Smart Switch 2 Channel",
+          "manufacturer": "Tuya",
+          "model": "TS0601",
+          "capabilities": [
+            "onoff",
+            "measure_power"
+          ],
+          "zigbee": {
+            "manufacturer": "Tuya",
+            "model": "TS0601_switch_2ch",
+            "vendor": "Tuya",
+            "description": "2 channel switch",
+            "supports": "Zigbee 1.2"
+          },
+          "source": "home-assistant",
+          "confidence_score": 77,
+          "last_seen": "2025-08-04T18:47:13.457Z"
+        },
+        {
+          "id": "TS0501B_light",
+          "name": "Tuya Smart Light Bulb",
+          "manufacturer": "Tuya",
+          "model": "TS0501B",
+          "capabilities": [
+            "onoff",
+            "dim",
+            "light_temperature"
+          ],
+          "zigbee": {
+            "manufacturer": "Tuya",
+            "model": "TS0501B_light",
+            "vendor": "Tuya",
+            "description": "Smart light bulb",
+            "supports": "Zigbee 1.2"
+          },
+          "source": "home-assistant",
+          "confidence_score": 77,
+          "last_seen": "2025-08-09T14:22:41.977Z"
+        }
+      ],
+      "issues": [
+        {
+          "id": "issue_home-assistant_001",
+          "title": "Device pairing issue",
+          "status": "open",
+          "priority": "medium",
+          "source": "home-assistant"
+        },
+        {
+          "id": "issue_home-assistant_002",
+          "title": "Capability not working",
+          "status": "closed",
+          "priority": "high",
+          "source": "home-assistant"
+        }
+      ],
+      "prs": [
+        {
+          "id": "pr_home-assistant_001",
+          "title": "Add new device support",
+          "status": "open",
+          "source": "home-assistant"
+        }
+      ],
+      "metadata": {
+        "total_devices": 3,
+        "total_issues": 2,
+        "total_prs": 1
+      }
+    }
+  },
+  "totalDevices": 15,
+  "totalIssues": 10,
+  "totalPRs": 5
+}

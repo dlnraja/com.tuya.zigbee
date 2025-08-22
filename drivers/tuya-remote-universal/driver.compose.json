@@ -1,0 +1,57 @@
+{
+  "id": "tuya-remote-universal",
+  "name": {
+    "en": "Télécommande Tuya universelle pour scènes",
+    "fr": "Télécommande Tuya universelle pour scènes",
+    "nl": "Télécommande Tuya universelle pour scènes",
+    "ta": "Télécommande Tuya universelle pour scènes"
+  },
+  "class": "remote",
+  "capabilities": [
+    "alarm_battery",
+    "button",
+    "scene"
+  ],
+  "images": {
+    "small": "assets/small.png",
+    "large": "assets/large.png"
+  },
+  "zigbee": {
+    "manufacturer": "Tuya",
+    "model": "Universal",
+    "vendor": "Tuya",
+    "description": "Télécommande Tuya universelle pour scènes",
+    "supports": "Zigbee 1.2",
+    "firmware": "1.0.0"
+  },
+  "metadata": {
+    "version": "1.1.0",
+    "last_updated": "2025-08-22",
+    "confidence_score": 95,
+    "sources": [
+      "Zigbee2MQTT",
+      "Blakadder Database",
+      "Homey Community",
+      "Tuya Developer Portal"
+    ],
+    "advanced_features": [
+      "scene_control",
+      "battery_monitoring",
+      "multi_button_support"
+    ],
+    "tested_devices": [
+      "TS0041_remote",
+      "TS0042_remote"
+    ],
+    "zigbee_clusters": [
+      "genBasic",
+      "genPowerCfg"
+    ]
+  },
+  "capabilitiesOptions": {},
+  "flowCards": [
+    "scene_trigger",
+    "button_press",
+    "battery_alert"
+  ]
+}
