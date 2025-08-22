@@ -1,0 +1,48 @@
+{
+  "id": "lights-TS0601_switch",
+  "name": {
+    "en": "lights TS0601_switch",
+    "fr": "lights TS0601_switch",
+    "nl": "lights TS0601_switch",
+    "ta": "lights TS0601_switch"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature"
+  ],
+  "images": {
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "zigbee": {
+    "manufacturerName": "_TZ3000_generic",
+    "productId": "TS0601_switch",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          6
+        ],
+        "bindings": [
+          0,
+          1,
+          6
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2025-08-22T18:02:06.337Z",
+    "confidence_score": 85,
+    "sources": [
+      "Tuya Developer Portal",
+      "Zigbee2MQTT",
+      "Homey Community"
+    ],
+    "type": "tuya"
+  }
+}

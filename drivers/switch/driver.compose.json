@@ -16,16 +16,24 @@
     "large": "assets/large.svg"
   },
   "zigbee": {
-    "manufacturer": "Tuya",
-    "model": "Universal",
-    "vendor": "Tuya",
-    "description": "Universal Tuya switch device",
-    "supports": "Zigbee 1.2",
-    "firmware": "1.0.0",
-    "clusters": [
-      "genOnOff",
-      "genElectricalMeasurement"
-    ]
+    "manufacturerName": "_TZ3000_b28wrpvx",
+    "productId": "TS011F",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6,
+          2820,
+          1
+        ],
+        "bindings": [
+          0,
+          6,
+          2820,
+          1
+        ]
+      }
+    }
   },
   "metadata": {
     "version": "1.0.0",

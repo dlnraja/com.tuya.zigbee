@@ -20,15 +20,26 @@
     "large": "assets/large.png"
   },
   "zigbee": {
-    "manufacturer": "Tuya",
-    "model": "Universal",
-    "vendor": "Tuya",
-    "description": "Thermostat Tuya universel avec contrôle climatique",
-    "supports": "Zigbee 1.2",
-    "firmware": "1.0.0",
-    "clusters": [
-      "genHumidityMeasurement"
-    ]
+    "manufacturerName": "_TZ3000_ltiqubue",
+    "productId": "TS0601",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1029,
+          1026,
+          513
+        ],
+        "bindings": [
+          0,
+          1,
+          1029,
+          1026,
+          513
+        ]
+      }
+    }
   },
   "metadata": {
     "version": "1.1.0",

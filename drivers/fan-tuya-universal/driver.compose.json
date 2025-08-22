@@ -36,12 +36,26 @@
     "large": "assets/large.svg"
   },
   "zigbee": {
-    "manufacturer": "Tuya",
-    "model": "Universal",
-    "vendor": "Tuya",
-    "description": "Universal Tuya fan device",
-    "supports": "Zigbee 1.2",
-    "firmware": "1.0.0"
+    "manufacturerName": "_TZ3000_1h2x4akh",
+    "productId": "TS0601",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          6,
+          8,
+          514
+        ],
+        "bindings": [
+          0,
+          1,
+          6,
+          8,
+          514
+        ]
+      }
+    }
   },
   "metadata": {
     "version": "1.1.0",

@@ -18,12 +18,26 @@
     "large": "assets/large.png"
   },
   "zigbee": {
-    "manufacturer": "Tuya",
-    "model": "Universal",
-    "vendor": "Tuya",
-    "description": "Device Tuya Zigbee universel avec capacités de base",
-    "supports": "Zigbee 1.2",
-    "firmware": "1.0.0"
+    "manufacturerName": "_TZ3000_y4ona9me",
+    "productId": "TS011F",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          6,
+          10,
+          9
+        ],
+        "bindings": [
+          0,
+          1,
+          6,
+          10,
+          9
+        ]
+      }
+    }
   },
   "metadata": {
     "version": "1.1.0",

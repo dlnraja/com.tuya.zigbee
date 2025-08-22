@@ -1,0 +1,56 @@
+{
+  "id": "lights-TS0501B",
+  "name": {
+    "en": "lights TS0501B",
+    "fr": "lights TS0501B",
+    "nl": "lights TS0501B",
+    "ta": "lights TS0501B"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature"
+  ],
+  "images": {
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "zigbee": {
+    "manufacturerName": "_TZ3000_femsaaua",
+    "productId": "TS0501B",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          6,
+          8,
+          768
+        ],
+        "bindings": [
+          0,
+          1,
+          6,
+          8,
+          768
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2025-08-22T18:29:22.881Z",
+    "confidence_score": 95,
+    "sources": [
+      "Tuya Developer Portal",
+      "Zigbee2MQTT",
+      "Homey Community",
+      "Home Assistant",
+      "Blakadder",
+      "Ultimate Analysis"
+    ],
+    "type": "tuya",
+    "category": "lights"
+  }
+}
