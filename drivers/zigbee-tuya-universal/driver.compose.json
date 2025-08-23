@@ -1,0 +1,86 @@
+{
+  "id": "zigbee-tuya-universal",
+  "name": {
+    "en": "Device Tuya Zigbee universel avec capacités de base",
+    "fr": "Device Tuya Zigbee universel avec capacités de base",
+    "nl": "Device Tuya Zigbee universel avec capacités de base",
+    "ta": "Device Tuya Zigbee universel avec capacités de base"
+  },
+  "class": "switch",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "alarm_battery",
+    "measure_temperature"
+  ],
+  "images": {
+    "small": "small.png",
+    "large": "large.png"
+  },
+  "zigbee": {
+    "manufacturerName": "_TZ3000_y4ona9me",
+    "productId": "TS011F",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          6,
+          10,
+          9
+        ],
+        "bindings": [
+          0,
+          1,
+          6,
+          10,
+          9
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.1.0",
+    "last_updated": "2025-08-22",
+    "confidence_score": 95,
+    "sources": [
+      "Zigbee2MQTT",
+      "Blakadder Database",
+      "Homey Community",
+      "Tuya Developer Portal"
+    ],
+    "advanced_features": [
+      "battery_monitoring",
+      "power_monitoring",
+      "temperature_monitoring"
+    ],
+    "tested_devices": [
+      "TS011F_switch_1ch",
+      "TS0601_switch_2ch"
+    ],
+    "zigbee_clusters": [
+      "genBasic",
+      "genPowerCfg",
+      "genOnOff",
+      "genBasic"
+    ],
+    "sdk3_optimized": true,
+    "sdk3_version": "3.8.4",
+    "optimization_date": "2025-08-23T08:22:37.879Z"
+  },
+  "capabilitiesOptions": {
+    "measure_power": {
+      "approximated": true
+    },
+    "measure_temperature": {
+      "approximated": true
+    }
+  },
+  "flowCards": [
+    "toggle",
+    "is_on",
+    "is_off",
+    "power_threshold",
+    "temperature_alert"
+  ]
+}

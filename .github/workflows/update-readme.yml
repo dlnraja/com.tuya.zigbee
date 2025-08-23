@@ -1,0 +1,84 @@
+# MEGA ULTIMATE ENHANCED - 2025-08-07T16:33:44.964Z
+# Workflow amélioré avec liens corrigés et fonctionnalités étendues
+
+name: 📝 Update README with Dashboard Stats
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'drivers/**'
+      - 'scripts/generate-matrix.js'
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Generate dashboard
+        run: node scripts/generate-matrix.js
+
+      - name: Update README with dashboard link
+        run: |
+          echo "📝 Mise à jour du README avec les liens du dashboard..."
+          
+          # Lire le README actuel
+          README_CONTENT=$(cat README.md)
+          
+          # Ajouter la section dashboard si elle n'existe pas
+          if ! echo "$README_CONTENT" | grep -q "## 🚀 Dashboard"; then
+            DASHBOARD_SECTION="
+## 🚀 Dashboard Interactif
+
+### 📊 Dashboard en Temps Réel
+- **Dashboard HTML**: [Voir le Dashboard](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/docs/dashboard.html)
+- **Matrice des Drivers**: [drivers-matrix.md](./drivers-matrix.md)
+- **Statistiques Live**: Mise à jour automatique à chaque push
+
+### 🔧 Génération Automatique
+Le dashboard est généré automatiquement via le workflow GitHub Actions :
+- **Script**: `scripts/generate-matrix.js`
+- **Workflow**: `.github/workflows/generate-dashboard.yml`
+- **Fréquence**: À chaque push + quotidien à 2h00 UTC
+"
+            
+            # Insérer la section après la table des matières
+            NEW_README=$(echo "$README_CONTENT" | sed '/## 📋 Table des Matières/a\'"$DASHBOARD_SECTION")
+            echo "$NEW_README" > README.md
+          fi
+          
+          echo "✅ README mis à jour avec les liens du dashboard"
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add README.md drivers-matrix.md
+          git commit -m "📝 Update README with dashboard links - Auto-generated" || echo "No changes to commit"
+          git push origin master
+
+      - name: Create update notification
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '📝 README mis à jour avec Dashboard',
+              body: `✅ README mis à jour automatiquement avec les liens du dashboard!
+              
+              🔗 **Liens ajoutés:**
+              - Dashboard HTML: https://${context.repo.owner}.github.io/${context.repo.repo}/docs/dashboard.html
+              - Matrice des Drivers: drivers-matrix.md
+              
+              🎯 **MEGA-PROMPT ULTIME - VERSION FINALE 2025**`
+            }) 

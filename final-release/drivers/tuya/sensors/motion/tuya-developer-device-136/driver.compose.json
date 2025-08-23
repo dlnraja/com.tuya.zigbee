@@ -1,0 +1,63 @@
+{
+  "id": "tuya-developer-device-136",
+  "title": {
+    "en": "Tuya Developer Device 136",
+    "fr": "Tuya Developer Device 136",
+    "nl": "Tuya Developer Device 136",
+    "ta": "Tuya Developer Device 136"
+  },
+  "description": {
+    "en": "Driver for tuya-developer-device-136 from Tuya Developer",
+    "fr": "Driver pour tuya-developer-device-136 de Tuya Developer",
+    "nl": "Driver voor tuya-developer-device-136 van Tuya Developer",
+    "ta": "Tuya Developer இலிருந்து tuya-developer-device-136 க்கான டிரைவர்"
+  },
+  "category": "sensors",
+  "protocol": "tuya",
+  "source": "Tuya Developer",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power",
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genPowerCfg",
+    "msTemperatureMeasurement",
+    "msRelativeHumidity"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:11:22.271Z",
+  "tuyaCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Tuya",
+    "model": "tuya-developer-device-136",
+    "firmware": "latest",
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_power",
+      "measure_temperature",
+      "measure_humidity"
+    ],
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genPowerCfg",
+      "msTemperatureMeasurement",
+      "msRelativeHumidity"
+    ]
+  },
+  "homeyCompatibility": {
+    "pro": true,
+    "bridge": true,
+    "cloud": false,
+    "minVersion": "5.0.0",
+    "maxVersion": "6.0.0"
+  }
+}

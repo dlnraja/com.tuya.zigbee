@@ -1,0 +1,50 @@
+{
+  "id": "plugs-TS011J",
+  "name": {
+    "en": "plugs TS011J",
+    "fr": "plugs TS011J",
+    "nl": "plugs TS011J",
+    "ta": "plugs TS011J"
+  },
+  "class": "switch",
+  "capabilities": [
+    "onoff",
+    "measure_power"
+  ],
+  "images": {
+    "small": "small.png",
+    "large": "large.png"
+  },
+  "zigbee": {
+    "manufacturerName": "_TZ3000_generic",
+    "productId": "TS011J",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          6
+        ],
+        "bindings": [
+          0,
+          1,
+          6
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2025-08-22T18:02:06.112Z",
+    "confidence_score": 85,
+    "sources": [
+      "Tuya Developer Portal",
+      "Zigbee2MQTT",
+      "Homey Community"
+    ],
+    "type": "tuya",
+    "sdk3_optimized": true,
+    "sdk3_version": "3.8.4",
+    "optimization_date": "2025-08-23T08:22:37.689Z"
+  }
+}

@@ -30,58 +30,10 @@ Thumbs.db
 # Local configuration
 .env
 .env.local
-.env.*.local
-
-# Backup and temporary directories (NE PAS PUSHER)
-backups/
-*.backup
-*.tmp
-*.bak
-*.log
-cursor_temp*
-*.zip
-*.tar.gz
-.cursor/
-local-processing/
-cursor-config/
-project-tasks.md
-cursor_*.md
-TODO_*.md
-*.sh
-logs/
-FINAL_VALIDATION_REPORT.md
-cursor_r_capitulatif_des_t_ches_et_avan.md
-cursor_prompt_auto.md
-cursor_global_policy*.md
-tasks.md
-readme_fold_reference.md
-mega_prompt_cursor_tuya.txt
-cursor_recovery_package.zip
-cursor_init.*
-TODO_SCAN_RESULTS.txt
-PROGRESS.md
-README.md.backup
-zigbee-cluster-referential-system.js
-mcp-powershell-server.js
-update-all-workflows.yml
-tatus
-README.txt
-olution-strategy
-
-# Fichiers de documentation et développement (NE PAS PUSHER)
-*.md
-*.txt
-*.json.backup
-*.md.backup
-*.txt.backup
-reports/
-docs/
-queue/
-refs/
-.external_sources/
+.env.*.local 
 
 =======
-# RestoreAndRebuild.ps1 → scripts/restore-and-rebuild.js
+RestoreAndRebuild.ps1
 D:/Download/fold/
 
 # Fichiers de développement local
@@ -103,17 +55,17 @@ cursor-config/
 
 # Fichiers locaux (NE PAS PUSHER)
 project-tasks.md
-# auto-backup.ps1 → scripts/auto-backup.js
+auto-backup.ps1
 
-# Scripts et automatisations locales (convertis en JavaScript)
-# *.ps1 → scripts/*.js
-# monitor.ps1 → scripts/monitor.js
-# quick-save.ps1 → scripts/quick-save.js
+# Scripts et automatisations locales
+*.ps1
+monitor.ps1
+quick-save.ps1
 
 # Fichiers de configuration locale supplémentaires
 cursor_*.md
 TODO_*.md
-# *.ps1 → scripts/*.js (convertis en JavaScript)
+*.ps1
 *.sh
 logs/
 backups/
@@ -136,7 +88,7 @@ readme_fold_reference.md
 mega_prompt_cursor_tuya.txt
 cursor_recovery_package.zip
 cursor_init.*
-# continue.ps1 → scripts/continue.js
+continue.ps1
 TODO_SCAN_RESULTS.txt
 PROGRESS.md
 README.md.backup
@@ -509,8 +461,3 @@ dev-dev-settings/
 >>>>>>> master
 # Added by Homey CLI
 /.homeybuild/
-# Dossiers temporaires Tuya
-.tmp*
-
-# Dossiers temporaires Tuya
-.tmp_tuya_zip_work*

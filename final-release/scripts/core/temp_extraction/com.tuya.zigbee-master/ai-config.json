@@ -1,0 +1,1 @@
+{ "version": "3.4.4", "features": [ "Auto-detection des nouveaux devices", "Mapping intelligent des capabilities", "Fallback local sans OpenAI", "Génération automatique de drivers", "Optimisation des performances" ], "design": "homey-coherent", "autoDetection": true, "localAI": true, "performance": "optimized"}

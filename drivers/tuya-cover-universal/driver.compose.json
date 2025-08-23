@@ -1,0 +1,84 @@
+{
+  "id": "tuya-cover-universal",
+  "name": {
+    "en": "Volet Tuya universel avec contrôle de position",
+    "fr": "Volet Tuya universel avec contrôle de position",
+    "nl": "Volet Tuya universel avec contrôle de position",
+    "ta": "Volet Tuya universel avec contrôle de position"
+  },
+  "class": "cover",
+  "capabilities": [
+    "windowcoverings_set",
+    "windowcoverings_state",
+    "measure_temperature",
+    "alarm_battery",
+    "windowcoverings_tilt_set"
+  ],
+  "images": {
+    "small": "small.png",
+    "large": "large.png"
+  },
+  "zigbee": {
+    "manufacturerName": "_TZ3000_vd43bbfq",
+    "productId": "TS0601",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          258,
+          10,
+          9
+        ],
+        "bindings": [
+          0,
+          1,
+          258,
+          10,
+          9
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.1.0",
+    "last_updated": "2025-08-22",
+    "confidence_score": 95,
+    "sources": [
+      "Zigbee2MQTT",
+      "Blakadder Database",
+      "Homey Community",
+      "Tuya Developer Portal"
+    ],
+    "advanced_features": [
+      "position_control",
+      "temperature_monitoring",
+      "battery_monitoring",
+      "schedule_support"
+    ],
+    "tested_devices": [
+      "TS0601_cover",
+      "TS0602_cover"
+    ],
+    "zigbee_clusters": [
+      "genBasic",
+      "genPowerCfg",
+      "genBasic"
+    ],
+    "sdk3_optimized": true,
+    "sdk3_version": "3.8.4",
+    "optimization_date": "2025-08-23T08:22:37.858Z"
+  },
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "approximated": true
+    }
+  },
+  "flowCards": [
+    "open",
+    "close",
+    "stop",
+    "position_set",
+    "temperature_alert"
+  ]
+}

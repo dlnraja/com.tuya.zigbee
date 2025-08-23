@@ -1,0 +1,37 @@
+{
+  "id": "thermostatic_radiator_valve",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "class": "thermostat",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Thermostatic Radiator Valve",
+    "nl": "Thermostatic Radiator Valve",
+    "fr": "Thermostatic Radiator Valve",
+    "de": "Thermostatic Radiator Valve"
+  },
+  "manufacturer": "_TZ3000_xxxxxxxx",
+  "product": "THERMOSTATIC_RADIATOR_VALVE",
+  "dataPoints": {
+    "1": {
+      "name": "switch",
+      "type": "bool",
+      "writable": true
+    }
+  },
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:57.375Z",
+    "driverType": "zigbee",
+    "category": "thermostats",
+    "subcategory": "thermostatic_radiator_valve",
+    "megaUltimateBugFixer": true
+  }
+}

@@ -1,27 +1,28 @@
-#!/usr/bin/env node
-'use strict';
+const Homey = require('homey');
 
-'use strict';
-
-const { App } = require('homey');
-
-class TuyaZigbeeApp extends App {
-  
+class TuyaZigbeeLiteApp extends Homey.App {
   async onInit() {
-    this.log('Tuya Zigbee App is running...');
+    this.log('🚀 Tuya Zigbee (Lite) App initialisée');
     
-    // Initialisation des drivers
-    this.log('Initializing drivers...');
+    // Initialiser les modules
+    await this.initializeModules();
     
-    // Log des informations de l'app
-    this.log('App ID:', this.homey.manifest.id);
-    this.log('App Version:', this.homey.manifest.version);
-    this.log('SDK Version:', this.homey.manifest.sdk);
+    this.log('✅ App initialisée avec succès');
   }
   
-  async onUninit() {
-    this.log('Tuya Zigbee App is stopping...');
+  async initializeModules() {
+    try {
+      // Initialiser les modules heuristiques
+      const dpGuess = require('./lib/heuristics/dp-guess');
+      const zclGuess = require('./lib/heuristics/zcl-guess');
+      const scoring = require('./lib/heuristics/scoring-engine');
+      
+      this.log('🤖 Modules IA initialisés');
+      
+    } catch (error) {
+      this.log('⚠️ Erreur initialisation modules:', error.message);
+    }
   }
 }
 
-module.exports = TuyaZigbeeApp;
+module.exports = TuyaZigbeeLiteApp;

@@ -1,0 +1,25 @@
+{
+  "id": "ballastconfigurationcluster",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "ballastconfigurationcluster",
+    "fr": "ballastconfigurationcluster",
+    "nl": "ballastconfigurationcluster",
+    "ta": "ballastconfigurationcluster"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "ballastconfigurationcluster",
+  "originalFile": "ballastConfiguration.js",
+  "extracted": "2025-08-05T08:36:17.591Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

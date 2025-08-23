@@ -1,0 +1,25 @@
+{
+  "id": "smartplug",
+  "class": "plug",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "smartplug",
+    "fr": "smartplug",
+    "nl": "smartplug",
+    "ta": "smartplug"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": ", ",
+  "model": "smartplug",
+  "originalFile": "device.js",
+  "extracted": "2025-08-05T08:36:01.337Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

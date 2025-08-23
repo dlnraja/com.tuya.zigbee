@@ -1,0 +1,25 @@
+{
+  "id": "span",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "span",
+    "fr": "span",
+    "nl": "span",
+    "ta": "span"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "span",
+  "originalFile": "text.py",
+  "extracted": "2025-08-05T08:33:58.063Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

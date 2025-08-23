@@ -1,0 +1,53 @@
+{
+  "id": "locks-TS0601_lock",
+  "name": {
+    "en": "locks TS0601_lock",
+    "fr": "locks TS0601_lock",
+    "nl": "locks TS0601_lock",
+    "ta": "locks TS0601_lock"
+  },
+  "class": "lock",
+  "capabilities": [
+    "lock"
+  ],
+  "images": {
+    "small": "small.png",
+    "large": "large.png"
+  },
+  "zigbee": {
+    "manufacturerName": "_TZ3000_8kzqqzu4",
+    "productId": "TS0601",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          257,
+          9,
+          10
+        ],
+        "bindings": [
+          0,
+          1,
+          257,
+          9,
+          10
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2025-08-22T18:02:06.366Z",
+    "confidence_score": 85,
+    "sources": [
+      "Tuya Developer Portal",
+      "Zigbee2MQTT",
+      "Homey Community"
+    ],
+    "type": "tuya",
+    "sdk3_optimized": true,
+    "sdk3_version": "3.8.4",
+    "optimization_date": "2025-08-23T08:22:37.675Z"
+  }
+}

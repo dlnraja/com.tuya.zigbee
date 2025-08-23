@@ -1,0 +1,58 @@
+{
+  "id": "sensors_tuya_sensors",
+  "class": "sensor",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "sensors_tuya_sensors",
+    "fr": "sensors_tuya_sensors",
+    "nl": "sensors_tuya_sensors",
+    "ta": "sensors_tuya_sensors"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": ": [\n ",
+  "model": "TS0601",
+  "originalFile": "driver.compose.json",
+  "extracted": "2025-08-05T08:36:10.701Z",
+  "fusion": {
+    "date": "2025-08-05T13:17:00.568Z",
+    "duplicates": [
+      "sensors"
+    ]
+  },
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ],
+  "title": {
+    "en": "Sensors_tuya_sensors Device",
+    "nl": "Sensors_tuya_sensors Apparaat"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "extractedAt": "2025-08-06T12:05:40.969Z",
+  "fixedAt": "2025-08-06T12:05:40.969Z",
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:54.949Z",
+    "driverType": "tuya",
+    "category": "sensors",
+    "subcategory": "sensors_tuya_sensors",
+    "megaUltimateBugFixer": true
+  }
+}

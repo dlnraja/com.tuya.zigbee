@@ -1,0 +1,47 @@
+# MEGA ULTIMATE ENHANCED - 2025-08-07T16:33:44.959Z
+# Workflow amélioré avec liens corrigés et fonctionnalités étendues
+
+name: 🔄 Sync tuya-light from master
+
+on:
+  schedule:
+    - cron: '0 4 1 * *' # chaque 1er du mois à 04:00 UTC
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+      - name: Sync master ➔ tuya-light
+        run: |
+          git fetch origin
+          git checkout tuya-light
+          git merge origin/master --strategy=ours -m "🔄 Monthly sync from master"
+          git push origin tuya-light
+
+      - name: Create sync notification
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '🔄 Monthly Sync Completed',
+              body: `✅ Synchronisation mensuelle master → tuya-light terminée!
+              
+              📅 **Date**: ${new Date().toISOString()}
+              🔄 **Type**: Sync automatique mensuel
+              📊 **Statut**: Succès
+              
+              🎯 **MEGA-PROMPT ULTIME - VERSION FINALE 2025**`
+            }) 

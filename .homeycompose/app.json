@@ -1,0 +1,161 @@
+{
+  "id": "com.tuya.zigbee",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "category": [
+    "appliances"
+  ],
+  "name": {
+    "en": "Tuya Zigbee",
+    "fr": "Tuya Zigbee",
+    "nl": "Tuya Zigbee",
+    "ta": "Tuya Zigbee"
+  },
+  "description": {
+    "en": "Tuya Zigbee devices support with universal drivers",
+    "fr": "Support des appareils Tuya Zigbee avec drivers universaux",
+    "nl": "Ondersteuning voor Tuya Zigbee-apparaten met universele drivers",
+    "ta": "Tuya Zigbee சாதனங்களுக்கான ஆதரவு உலகளாவிய drivers உடன்"
+  },
+  "author": {
+    "name": "dlnraja",
+    "email": "dylan.rajasekaram@gmail.com"
+  },
+  "contributors": {},
+  "support": "mailto:dylan.rajasekaram@gmail.com",
+  "homepage": "https://github.com/dlnraja/tuya_repair",
+  "license": "MIT",
+  "platforms": [
+    "local"
+  ],
+  "drivers": [
+    {
+      "id": "climates-TS0601_ac",
+      "name": {
+        "en": "climates TS0601_ac",
+        "fr": "climates TS0601_ac",
+        "nl": "climates TS0601_ac",
+        "ta": "climates TS0601_ac"
+      },
+      "class": "thermostat",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "measure_humidity"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_1h2x4akh",
+        "productId": "TS0601",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              1026,
+              1029,
+              513
+            ],
+            "bindings": [
+              0,
+              1,
+              1026,
+              1029,
+              513
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "covers-TS0602_cover",
+      "name": {
+        "en": "covers TS0602_cover",
+        "fr": "covers TS0602_cover",
+        "nl": "covers TS0602_cover",
+        "ta": "covers TS0602_cover"
+      },
+      "class": "cover",
+      "capabilities": [
+        "windowcoverings_set",
+        "windowcoverings_state"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_vd43bbfq",
+        "productId": "TS0602",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              258,
+              10,
+              9
+            ],
+            "bindings": [
+              0,
+              1,
+              258,
+              10,
+              9
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "fan-tuya-universal",
+      "name": {
+        "en": "Tuya Fan Universal",
+        "fr": "Tuya Fan Universel",
+        "nl": "Tuya Fan Universeel",
+        "ta": "Tuya Fan உலகளாவிய"
+      },
+      "class": "fan",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_power"
+      ],
+      "images": {
+        "small": "assets/small.svg",
+        "large": "assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_2jxgpoqh",
+        "productId": "TS0603",
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6,
+              8,
+              514
+            ],
+            "bindings": [
+              0,
+              1,
+              6,
+              8,
+              514
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "images": {
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "icon": "assets/icon.svg",
+  "color": "#FF6B35"
+}

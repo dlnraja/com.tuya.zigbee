@@ -1,0 +1,53 @@
+{
+  "id": "tuya-zigbee-app",
+  "title": {
+    "en": "Tuya Zigbee App",
+    "fr": "Tuya Zigbee App",
+    "nl": "Tuya Zigbee App",
+    "ta": "Tuya Zigbee App"
+  },
+  "description": {
+    "en": "TUYA driver for tuya-zigbee-app from Tuya (Historical)",
+    "fr": "Driver TUYA pour tuya-zigbee-app de Tuya (Historique)",
+    "nl": "TUYA driver voor tuya-zigbee-app van Tuya (Historisch)",
+    "ta": "Tuya இலிருந்து tuya-zigbee-app க்கான TUYA டிரைவர் (வரலாற்று)"
+  },
+  "category": "unknown",
+  "protocol": "tuya",
+  "manufacturer": "Tuya",
+  "source": "README historique (main)",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "genOnOff"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:41:38.650Z",
+  "historical": {
+    "commitHash": "79744356",
+    "branch": "main",
+    "extractedFrom": "README historique"
+  },
+  "tuyaCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Tuya",
+    "model": "tuya-zigbee-app",
+    "firmware": "latest",
+    "capabilities": [
+      "onoff"
+    ],
+    "clusters": [
+      "genOnOff"
+    ]
+  },
+  "homeyCompatibility": {
+    "pro": true,
+    "bridge": true,
+    "cloud": false,
+    "minVersion": "5.0.0",
+    "maxVersion": "6.0.0"
+  }
+}

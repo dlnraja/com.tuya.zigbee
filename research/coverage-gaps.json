@@ -1,0 +1,64 @@
+[
+  {
+    "deviceType": "sensor",
+    "driver": "tuya-sensor-universal",
+    "missingCapabilities": [
+      "measure_co2",
+      "measure_tvoc",
+      "measure_pm25",
+      "measure_noise"
+    ],
+    "severity": "medium"
+  },
+  {
+    "deviceType": "switch",
+    "driver": null,
+    "missingCapabilities": [
+      "onoff"
+    ],
+    "severity": "high"
+  },
+  {
+    "deviceType": "cover",
+    "driver": "tuya-cover-universal",
+    "missingCapabilities": [
+      "windowcoverings_tilt_set"
+    ],
+    "severity": "medium"
+  },
+  {
+    "deviceType": "climate",
+    "driver": "tuya-climate-universal",
+    "missingCapabilities": [
+      "target_humidity",
+      "measure_pressure"
+    ],
+    "severity": "medium"
+  },
+  {
+    "deviceType": "lock",
+    "driver": "lock-tuya-universal",
+    "missingCapabilities": [
+      "alarm_contact",
+      "alarm_tamper"
+    ],
+    "severity": "medium"
+  },
+  {
+    "deviceType": "fan",
+    "driver": "fan-tuya-universal",
+    "missingCapabilities": [
+      "measure_temperature",
+      "fan_mode"
+    ],
+    "severity": "medium"
+  },
+  {
+    "deviceType": "remote",
+    "driver": "tuya-remote-universal",
+    "missingCapabilities": [
+      "measure_battery"
+    ],
+    "severity": "medium"
+  }
+]

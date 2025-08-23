@@ -1,0 +1,53 @@
+{
+  "id": "rgb_floor_led_light",
+  "capabilities": [
+    "onoff",
+    "light_hue",
+    "light_saturation"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "class": "light",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Rgb Floor Led Light",
+    "nl": "Rgb Floor Led Light",
+    "fr": "Rgb Floor Led Light",
+    "de": "Rgb Floor Led Light"
+  },
+  "manufacturer": "_TZ3000_xxxxxxxx",
+  "product": "RGB_FLOOR_LED_LIGHT",
+  "dataPoints": {
+    "1": {
+      "name": "switch",
+      "type": "bool",
+      "writable": true
+    },
+    "4": {
+      "name": "color_hue",
+      "type": "value",
+      "min": 0,
+      "max": 360,
+      "writable": true
+    },
+    "5": {
+      "name": "color_saturation",
+      "type": "value",
+      "min": 0,
+      "max": 100,
+      "writable": true
+    }
+  },
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:55.615Z",
+    "driverType": "zigbee",
+    "category": "lights",
+    "subcategory": "rgb_floor_led_light",
+    "megaUltimateBugFixer": true
+  }
+}
