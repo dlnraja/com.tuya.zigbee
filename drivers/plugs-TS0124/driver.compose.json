@@ -12,8 +12,8 @@
     "measure_power"
   ],
   "images": {
-    "small": "assets/small.svg",
-    "large": "assets/large.svg"
+    "small": "small.png",
+    "large": "large.png"
   },
   "zigbee": {
     "manufacturerName": "_TZ3000_generic",
@@ -42,6 +42,9 @@
       "Zigbee2MQTT",
       "Homey Community"
     ],
-    "type": "tuya"
+    "type": "tuya",
+    "sdk3_optimized": true,
+    "sdk3_version": "3.8.4",
+    "optimization_date": "2025-08-23T08:22:37.704Z"
   }
 }

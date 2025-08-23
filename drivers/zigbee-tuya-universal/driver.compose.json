@@ -14,8 +14,8 @@
     "measure_temperature"
   ],
   "images": {
-    "small": "assets/small.png",
-    "large": "assets/large.png"
+    "small": "small.png",
+    "large": "large.png"
   },
   "zigbee": {
     "manufacturerName": "_TZ3000_y4ona9me",
@@ -63,7 +63,10 @@
       "genPowerCfg",
       "genOnOff",
       "genBasic"
-    ]
+    ],
+    "sdk3_optimized": true,
+    "sdk3_version": "3.8.4",
+    "optimization_date": "2025-08-23T08:22:37.879Z"
   },
   "capabilitiesOptions": {
     "measure_power": {

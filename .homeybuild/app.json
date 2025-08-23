@@ -1,16 +1,43 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
-  "id": "com.dlnraja.tuya-zigbee-lite",
-  "name": "Tuya Zigbee (Lite)",
+  "id": "com.tuya.zigbee",
   "version": "1.0.0",
-  "compatibility": ">=5.0.0",
-  "author": {
-    "name": "Dylan Rajasekaram",
-    "email": "dylan.rajasekaram+homey@gmail.com"
+  "compatibility": ">=6.0.0",
+  "category": [
+    "appliances"
+  ],
+  "permissions": [
+    "homey:manager:api"
+  ],
+  "name": {
+    "en": "Tuya Zigbee",
+    "fr": "Tuya Zigbee",
+    "nl": "Tuya Zigbee",
+    "ta": "Tuya Zigbee"
   },
+  "description": {
+    "en": "Tuya Zigbee devices support with universal drivers",
+    "fr": "Support des appareils Tuya Zigbee avec drivers universaux",
+    "nl": "Ondersteuning voor Tuya Zigbee-apparaten met universele drivers",
+    "ta": "Tuya Zigbee சாதனங்களுக்கான ஆதரவு உலகளாவிய drivers உடன்"
+  },
+  "author": {
+    "name": "dlnraja",
+    "email": "dylan.rajasekaram@gmail.com"
+  },
+  "contributors": {},
+  "support": "mailto:dylan.rajasekaram@gmail.com",
+  "homepage": "https://github.com/dlnraja/tuya_repair",
+  "license": "MIT",
   "platforms": [
     "local"
   ],
+  "images": {
+    "small": "assets/small.png",
+    "large": "assets/large.png"
+  },
+  "icon": "assets/icon.svg",
+  "color": "#FF6B35",
   "drivers": [
     {
       "id": "climates-TS0601_ac",
@@ -20,15 +47,15 @@
         "nl": "climates TS0601_ac",
         "ta": "climates TS0601_ac"
       },
-      "class": "climate",
+      "class": "thermostat",
       "capabilities": [
         "target_temperature",
         "measure_temperature",
         "measure_humidity"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_1h2x4akh",
@@ -65,7 +92,10 @@
           "Ultimate Analysis"
         ],
         "type": "tuya",
-        "category": "climates"
+        "category": "climates",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.407Z"
       }
     },
     {
@@ -82,8 +112,8 @@
         "windowcoverings_state"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_vd43bbfq",
@@ -116,7 +146,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.414Z"
       }
     },
     {
@@ -153,8 +186,8 @@
         "power_threshold"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_1h2x4akh",
@@ -202,7 +235,10 @@
           "genPowerCfg",
           "genOnOff",
           "genLevelCtrl"
-        ]
+        ],
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.487Z"
       }
     },
     {
@@ -220,8 +256,8 @@
         "fan_mode"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_1h2x4akh",
@@ -254,7 +290,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.603Z"
       }
     },
     {
@@ -272,8 +311,8 @@
         "fan_mode"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -302,7 +341,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.608Z"
       }
     },
     {
@@ -320,8 +362,8 @@
         "light_temperature"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_femsaaua",
@@ -358,7 +400,10 @@
           "Ultimate Analysis"
         ],
         "type": "tuya",
-        "category": "lights"
+        "category": "lights",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.613Z"
       }
     },
     {
@@ -376,8 +421,8 @@
         "light_temperature"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -406,7 +451,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.616Z"
       }
     },
     {
@@ -424,8 +472,8 @@
         "light_temperature"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -454,7 +502,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.618Z"
       }
     },
     {
@@ -472,8 +523,8 @@
         "light_temperature"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -502,7 +553,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.620Z"
       }
     },
     {
@@ -534,8 +588,8 @@
         "temperature_alert"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_8kzqqzu4",
@@ -583,7 +637,10 @@
           "genPowerCfg",
           "genDoorLock",
           "genBasic"
-        ]
+        ],
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.670Z"
       }
     },
     {
@@ -599,8 +656,8 @@
         "lock"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_8kzqqzu4",
@@ -633,7 +690,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.675Z"
       }
     },
     {
@@ -650,8 +710,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_b28wrpvx",
@@ -684,7 +744,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.679Z"
       }
     },
     {
@@ -701,8 +764,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -731,7 +794,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.681Z"
       }
     },
     {
@@ -748,8 +814,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -778,7 +844,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.684Z"
       }
     },
     {
@@ -795,8 +864,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -825,7 +894,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.686Z"
       }
     },
     {
@@ -842,8 +914,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -872,7 +944,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.689Z"
       }
     },
     {
@@ -889,8 +964,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_qeuvnohg",
@@ -921,7 +996,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.698Z"
       }
     },
     {
@@ -938,8 +1016,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -968,7 +1046,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.700Z"
       }
     },
     {
@@ -985,8 +1066,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1015,7 +1096,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.702Z"
       }
     },
     {
@@ -1032,8 +1116,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1062,7 +1146,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.704Z"
       }
     },
     {
@@ -1079,8 +1166,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1109,7 +1196,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.708Z"
       }
     },
     {
@@ -1126,8 +1216,8 @@
         "scene"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_8kzqqzu4",
@@ -1160,7 +1250,10 @@
           "Ultimate Analysis"
         ],
         "type": "tuya",
-        "category": "remotes"
+        "category": "remotes",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.713Z"
       }
     },
     {
@@ -1177,8 +1270,8 @@
         "measure_humidity"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_femsaaua",
@@ -1211,7 +1304,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.730Z"
       }
     },
     {
@@ -1228,8 +1324,8 @@
         "measure_humidity"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1258,7 +1354,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.735Z"
       }
     },
     {
@@ -1275,8 +1374,8 @@
         "measure_humidity"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1305,7 +1404,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.737Z"
       }
     },
     {
@@ -1322,8 +1424,8 @@
         "measure_humidity"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1352,7 +1454,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.743Z"
       }
     },
     {
@@ -1369,8 +1474,8 @@
         "measure_humidity"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1399,7 +1504,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.747Z"
       }
     },
     {
@@ -1416,8 +1524,8 @@
         "alarm_battery"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_4ux0ondb",
@@ -1450,7 +1558,10 @@
           "Ultimate Analysis"
         ],
         "type": "tuya",
-        "category": "sensors"
+        "category": "sensors",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.751Z"
       }
     },
     {
@@ -1467,8 +1578,8 @@
         "alarm_battery"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_y4ona9me",
@@ -1501,7 +1612,10 @@
           "Ultimate Analysis"
         ],
         "type": "tuya",
-        "category": "sensors"
+        "category": "sensors",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.766Z"
       }
     },
     {
@@ -1518,8 +1632,8 @@
         "alarm_battery"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_qqdbccb3",
@@ -1552,7 +1666,10 @@
           "Ultimate Analysis"
         ],
         "type": "tuya",
-        "category": "sensors"
+        "category": "sensors",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.770Z"
       }
     },
     {
@@ -1569,8 +1686,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_b28wrpvx",
@@ -1599,7 +1716,10 @@
         "auto_corrected": true,
         "sources": [
           "Auto-correction engine"
-        ]
+        ],
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.776Z"
       }
     },
     {
@@ -1615,8 +1735,8 @@
         "onoff"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ltiqubue",
@@ -1645,7 +1765,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.780Z"
       }
     },
     {
@@ -1661,8 +1784,8 @@
         "onoff"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1691,7 +1814,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.782Z"
       }
     },
     {
@@ -1707,8 +1833,8 @@
         "onoff"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1737,7 +1863,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.784Z"
       }
     },
     {
@@ -1753,8 +1882,8 @@
         "onoff"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1783,7 +1912,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.799Z"
       }
     },
     {
@@ -1799,8 +1931,8 @@
         "onoff"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1829,7 +1961,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.801Z"
       }
     },
     {
@@ -1845,8 +1980,8 @@
         "onoff"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1875,7 +2010,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.813Z"
       }
     },
     {
@@ -1891,8 +2029,8 @@
         "onoff"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1921,7 +2059,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.815Z"
       }
     },
     {
@@ -1937,8 +2078,8 @@
         "onoff"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1967,7 +2108,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.817Z"
       }
     },
     {
@@ -1984,8 +2128,8 @@
         "measure_temperature"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ltiqubue",
@@ -2018,7 +2162,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.819Z"
       }
     },
     {
@@ -2035,8 +2182,8 @@
         "measure_temperature"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -2065,7 +2212,10 @@
           "Zigbee2MQTT",
           "Homey Community"
         ],
-        "type": "tuya"
+        "type": "tuya",
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.823Z"
       }
     },
     {
@@ -2086,8 +2236,8 @@
         "measure_pressure"
       ],
       "images": {
-        "small": "assets/small.png",
-        "large": "assets/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ltiqubue",
@@ -2136,7 +2286,10 @@
           "genPowerCfg",
           "genBasic",
           "genBasic"
-        ]
+        ],
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.827Z"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -2167,8 +2320,8 @@
         "windowcoverings_tilt_set"
       ],
       "images": {
-        "small": "assets/small.png",
-        "large": "assets/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_vd43bbfq",
@@ -2216,7 +2369,10 @@
           "genBasic",
           "genPowerCfg",
           "genBasic"
-        ]
+        ],
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.858Z"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -2249,8 +2405,8 @@
         "light_saturation"
       ],
       "images": {
-        "small": "assets/small.png",
-        "large": "assets/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_qa8s8vca",
@@ -2301,7 +2457,10 @@
           "genPowerCfg",
           "genOnOff",
           "genLevelCtrl"
-        ]
+        ],
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.864Z"
       },
       "capabilitiesOptions": {
         "dim": {
@@ -2336,8 +2495,8 @@
         "measure_voltage"
       ],
       "images": {
-        "small": "assets/small.png",
-        "large": "assets/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_4ux0ondb",
@@ -2385,7 +2544,10 @@
           "genBasic",
           "genPowerCfg",
           "genOnOff"
-        ]
+        ],
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.867Z"
       },
       "capabilitiesOptions": {
         "measure_power": {
@@ -2420,8 +2582,8 @@
         "measure_battery"
       ],
       "images": {
-        "small": "assets/small.png",
-        "large": "assets/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_qqdbccb3",
@@ -2467,7 +2629,10 @@
         "zigbee_clusters": [
           "genBasic",
           "genPowerCfg"
-        ]
+        ],
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.870Z"
       },
       "capabilitiesOptions": {},
       "flowCards": [
@@ -2498,8 +2663,8 @@
         "measure_noise"
       ],
       "images": {
-        "small": "assets/small.png",
-        "large": "assets/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_femsaaua",
@@ -2548,7 +2713,10 @@
           "genPowerCfg",
           "genBasic",
           "genBasic"
-        ]
+        ],
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.875Z"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -2578,8 +2746,8 @@
         "measure_temperature"
       ],
       "images": {
-        "small": "assets/small.png",
-        "large": "assets/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_y4ona9me",
@@ -2627,7 +2795,10 @@
           "genPowerCfg",
           "genOnOff",
           "genBasic"
-        ]
+        ],
+        "sdk3_optimized": true,
+        "sdk3_version": "3.8.4",
+        "optimization_date": "2025-08-23T08:22:37.879Z"
       },
       "capabilitiesOptions": {
         "measure_power": {
@@ -2645,5 +2816,6 @@
         "temperature_alert"
       ]
     }
-  ]
+  ],
+  "sdk": 3
 }

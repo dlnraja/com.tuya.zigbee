@@ -6,15 +6,15 @@
     "nl": "climates TS0601_ac",
     "ta": "climates TS0601_ac"
   },
-  "class": "climate",
+  "class": "thermostat",
   "capabilities": [
     "target_temperature",
     "measure_temperature",
     "measure_humidity"
   ],
   "images": {
-    "small": "assets/small.svg",
-    "large": "assets/large.svg"
+    "small": "small.png",
+    "large": "large.png"
   },
   "zigbee": {
     "manufacturerName": "_TZ3000_1h2x4akh",
@@ -51,6 +51,9 @@
       "Ultimate Analysis"
     ],
     "type": "tuya",
-    "category": "climates"
+    "category": "climates",
+    "sdk3_optimized": true,
+    "sdk3_version": "3.8.4",
+    "optimization_date": "2025-08-23T08:22:37.407Z"
   }
 }

@@ -1,8 +1,12 @@
 {
   "name": "com.dlnraja.tuya-zigbee-lite",
   "version": "1.0.0",
-  "description": "Tuya Zigbee (Lite) - Runtime 100% Zigbee-only",
+  "description": "Tuya Zigbee (Lite) - Runtime 100% Zigbee-only - Homey SDK3",
   "main": "app.js",
+  "homey": {
+    "min": "5.0.0",
+    "max": "6.0.0"
+  },
   "scripts": {
     "bootstrap:arch": "node tools/repair/bootstrap-arch.js",
     "repair:drivers": "node tools/repair/drivers.js",
@@ -27,6 +31,14 @@
     "build:homey": "node tools/cli.js build",
     "validate:homey": "node tools/cli.js validate",
     "full:relaunch": "npm run bootstrap:arch && npm run repair:drivers && npm run assert:drivers && npm run harvest:all",
+    "optimize:sdk3": "node tools/optimize-sdk3.js",
+    "convert:images": "node tools/convert-images.js",
+    "create:coherent": "node tools/create-coherent-images.js",
+    "fix:placement": "node tools/fix-image-placement.js",
+    "fix:app-json": "node tools/fix-app-json-images.js",
+    "validate:custom": "node tools/validate-homey.js",
+    "validate:recursive": "node tools/recursive-validator.js",
+    "test:final": "node tools/final-test.js",
     "test": "homey app validate",
     "build": "homey app build",
     "run": "homey app run",
@@ -47,12 +59,13 @@
     "yaml": "^2.3.4"
   },
   "dependencies": {
-    "homey-meshdriver": "^1.3.0"
+    "homey": "^2.0.0"
   },
   "keywords": [
     "tuya",
     "zigbee",
     "homey",
+    "homey-sdk3",
     "smart-home",
     "iot",
     "universal",
