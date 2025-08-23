@@ -1,6 +1,3 @@
-#!/usr/bin/env node
-'use strict';
-
 /**
  * Driver Tuya Light - Tuya
  * Compatible avec tous les lights Tuya

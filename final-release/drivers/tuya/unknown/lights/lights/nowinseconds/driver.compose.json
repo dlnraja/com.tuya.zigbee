@@ -1,0 +1,25 @@
+{
+  "id": "nowinseconds",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "nowinseconds",
+    "fr": "nowinseconds",
+    "nl": "nowinseconds",
+    "ta": "nowinseconds"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "nowinseconds",
+  "originalFile": "NetworkGeolocationProvider.js",
+  "extracted": "2025-08-05T08:26:23.992Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

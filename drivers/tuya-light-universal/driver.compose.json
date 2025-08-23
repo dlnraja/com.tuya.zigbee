@@ -1,0 +1,90 @@
+{
+  "id": "tuya-light-universal",
+  "name": {
+    "en": "Lumière Tuya universelle avec contrôle complet",
+    "fr": "Lumière Tuya universelle avec contrôle complet",
+    "nl": "Lumière Tuya universelle avec contrôle complet",
+    "ta": "Lumière Tuya universelle avec contrôle complet"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature",
+    "light_mode",
+    "light_hue",
+    "light_saturation"
+  ],
+  "images": {
+    "small": "small.png",
+    "large": "large.png"
+  },
+  "zigbee": {
+    "manufacturerName": "_TZ3000_qa8s8vca",
+    "productId": "TS0501B",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          6,
+          8,
+          768,
+          5
+        ],
+        "bindings": [
+          0,
+          1,
+          6,
+          8,
+          768,
+          5
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.1.0",
+    "last_updated": "2025-08-22",
+    "confidence_score": 95,
+    "sources": [
+      "Zigbee2MQTT",
+      "Blakadder Database",
+      "Homey Community",
+      "Tuya Developer Portal"
+    ],
+    "advanced_features": [
+      "color_control",
+      "temperature_control",
+      "scene_support",
+      "schedule_support"
+    ],
+    "tested_devices": [
+      "TS0501B_light",
+      "TS0502B_light"
+    ],
+    "zigbee_clusters": [
+      "genBasic",
+      "genPowerCfg",
+      "genOnOff",
+      "genLevelCtrl"
+    ],
+    "sdk3_optimized": true,
+    "sdk3_version": "3.8.4",
+    "optimization_date": "2025-08-23T08:22:37.864Z"
+  },
+  "capabilitiesOptions": {
+    "dim": {
+      "approximated": true
+    }
+  },
+  "flowCards": [
+    "toggle",
+    "is_on",
+    "is_off",
+    "dim_up",
+    "dim_down",
+    "color_change",
+    "temperature_change"
+  ]
+}

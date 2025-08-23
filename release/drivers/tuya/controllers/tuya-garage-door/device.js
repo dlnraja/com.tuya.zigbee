@@ -1,6 +1,3 @@
-#!/usr/bin/env node
-'use strict';
-
 /**
  * Driver Tuya Garage Door - Tuya
  * Porte de garage Tuya

@@ -1,0 +1,122 @@
+# MEGA ULTIMATE ENHANCED - 2025-08-07T16:33:44.957Z
+# Workflow amélioré avec liens corrigés et fonctionnalités étendues
+
+name: 🔄 Synchronisation Mensuelle tuya-light ← master
+
+on:
+  schedule:
+    # Exécution le premier jour de chaque mois à 2h00 UTC
+    - cron: '0 2 1 * *'
+  workflow_dispatch:
+    inputs:
+      force_sync:
+        description: 'Forcer la synchronisation même si pas de changements'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  sync-tuya-light:
+    runs-on: ubuntu-latest
+    name: 🔄 Synchronisation tuya-light ← master
+    
+    steps:
+      - name: 📥 Checkout du repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: 📦 Installation des dépendances
+        run: npm ci
+      
+      - name: 🔍 Vérification de l'état actuel
+        run: |
+          echo "=== ÉTAT ACTUEL ==="
+          echo "Branch actuel: $(git branch --show-current)"
+          echo "Drivers master: $(find drivers/tuya -name "*.js" -o -name "*.json" | grep -v node_modules | wc -l)"
+          echo "Drivers tuya-light: $(git show origin/tuya-light:drivers/tuya | wc -l || echo '0')"
+      
+      - name: 🔄 Exécution de la synchronisation
+        run: npm run sync-tuya-light
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: 📊 Vérification post-synchronisation
+        run: |
+          echo "=== VÉRIFICATION POST-SYNC ==="
+          git checkout tuya-light
+          echo "Drivers tuya-light après sync: $(find drivers/tuya -name "*.js" -o -name "*.json" | grep -v node_modules | wc -l)"
+          git checkout master
+      
+      - name: 📝 Création du rapport de synchronisation
+        run: |
+          echo "=== RAPPORT DE SYNCHRONISATION ==="
+          echo "Date: $(date)"
+          echo "Workflow: ${{ github.workflow }}"
+          echo "Run ID: ${{ github.run_id }}"
+          echo "Branch source: master"
+          echo "Branch cible: tuya-light"
+          echo "Mode: ${{ github.event_name == 'workflow_dispatch' && 'Manuel' || 'Automatique' }}"
+      
+      - name: 🏷️ Création du tag de release
+        if: success()
+        run: |
+          TIMESTAMP=$(date -u +"%Y%m%d-%H%M%S")
+          TAG_NAME="tuya-light-sync-$TIMESTAMP"
+          git tag $TAG_NAME
+          git push origin $TAG_NAME
+          echo "Tag créé: $TAG_NAME"
+      
+      - name: 📦 Création du ZIP de release
+        if: success()
+        run: |
+          TIMESTAMP=$(date -u +"%Y%m%d-%H%M%S")
+          ZIP_NAME="tuya-light-$TIMESTAMP.zip"
+          
+          # Créer le ZIP du projet
+          git checkout tuya-light
+          zip -r $ZIP_NAME . -x "node_modules/*" ".git/*" "*.log" "backups/*"
+          
+          # Uploader comme artifact
+          echo "ZIP créé: $ZIP_NAME"
+      
+      - name: 📤 Upload des artifacts
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tuya-light-release-${{ github.run_id }}
+          path: |
+            tuya-light-*.zip
+            reports/sync-tuya-light-report-*.json
+            logs/sync-tuya-light.log
+          retention-days: 30
+      
+      - name: 🔔 Notification de succès
+        if: success()
+        run: |
+          echo "✅ Synchronisation tuya-light ← master réussie!"
+          echo "📅 Date: $(date)"
+          echo "🔄 Mode: ${{ github.event_name == 'workflow_dispatch' && 'Manuel' || 'Automatique' }}"
+          echo "📦 Release: tuya-light-${{ github.run_id }}"
+      
+      - name: ⚠️ Notification d'échec
+        if: failure()
+        run: |
+          echo "❌ Synchronisation tuya-light ← master échouée!"
+          echo "📅 Date: $(date)"
+          echo "🔄 Mode: ${{ github.event_name == 'workflow_dispatch' && 'Manuel' || 'Automatique' }}"
+          echo "🔍 Vérifier les logs pour plus de détails"
+      
+      - name: 🧹 Nettoyage
+        if: always()
+        run: |
+          echo "🧹 Nettoyage des fichiers temporaires..."
+          rm -f tuya-light-*.zip || true
+          git checkout master

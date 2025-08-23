@@ -1,6 +1,3 @@
-#!/usr/bin/env node
-'use strict';
-
 ﻿const { ZigbeeDevice } = require('homey-zigbeedriver');
 
 class TuyaContactSensorDevice extends ZigbeeDevice {

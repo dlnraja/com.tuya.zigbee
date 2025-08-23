@@ -1,6 +1,3 @@
-#!/usr/bin/env node
-'use strict';
-
 'use strict';
 
 const { ZigBeeDriver } = require('homey-meshdriver');

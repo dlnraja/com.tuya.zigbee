@@ -1,0 +1,25 @@
+{
+  "id": "tornadoretrying",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "tornadoretrying",
+    "fr": "tornadoretrying",
+    "nl": "tornadoretrying",
+    "ta": "tornadoretrying"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "tornadoretrying",
+  "originalFile": "tornadoweb.py",
+  "extracted": "2025-08-05T08:33:58.871Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

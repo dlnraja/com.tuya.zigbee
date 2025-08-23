@@ -1,23 +1,21 @@
-name: Déploiement Automatique
+# MEGA ULTIMATE ENHANCED - 2025-08-07T16:33:44.921Z
+# Workflow amélioré avec liens corrigés et fonctionnalités étendues
+
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
-  release:
-    types: [ published ]
+    branches: [ master ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-    - run: npm install
-    - run: npm run build
+    
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs
+        publish_dir: ./public/dashboard

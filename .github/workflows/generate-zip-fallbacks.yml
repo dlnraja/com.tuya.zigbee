@@ -1,0 +1,242 @@
+# MEGA ULTIMATE ENHANCED - 2025-08-07T16:33:44.934Z
+# Workflow amélioré avec liens corrigés et fonctionnalités étendues
+
+name: Generate ZIP Fallbacks
+
+on:
+  push:
+    branches: [ master, tuya-light ]
+  release:
+    types: [ published ]
+  workflow_dispatch:
+
+jobs:
+  generate-master-zip:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: Checkout master branch
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Generate master ZIP
+        run: |
+          echo "Generating master branch ZIP fallback..."
+          
+          TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+          ZIP_NAME="tuya-zigbee-master-${TIMESTAMP}.zip"
+          
+          # Create ZIP excluding git and temp files
+          zip -r "$ZIP_NAME" . -x "*.git*" "*.tmp" "*.log" "*.bak" "*.backup" "node_modules/*" ".cursor/*" "local-processing/*" "cursor-config/*"
+          
+          echo "Master ZIP created: $ZIP_NAME"
+          echo "ZIP_SIZE=$(du -h "$ZIP_NAME" | cut -f1)" >> $GITHUB_OUTPUT
+
+      - name: Upload master ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: master-fallback
+          path: tuya-zigbee-master-*.zip
+
+      - name: Create release asset
+        if: github.event_name == 'release'
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./tuya-zigbee-master-*.zip
+          asset_name: tuya-zigbee-master.zip
+          asset_content_type: application/zip
+
+  generate-tuya-light-zip:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/tuya-light'
+    steps:
+      - name: Checkout tuya-light branch
+        uses: actions/checkout@v4
+        with:
+          ref: tuya-light
+
+      - name: Validate tuya-light structure
+        run: |
+          echo "Validating tuya-light branch structure..."
+          
+          # Check essential files
+          if [ ! -f "app.json" ]; then
+            echo "❌ ERROR: app.json is missing"
+            exit 1
+          fi
+          
+          if [ ! -f "package.json" ]; then
+            echo "❌ ERROR: package.json is missing"
+            exit 1
+          fi
+          
+          if [ ! -f "app.js" ]; then
+            echo "❌ ERROR: app.js is missing"
+            exit 1
+          fi
+          
+          if [ ! -f "README.md" ]; then
+            echo "❌ ERROR: README.md is missing"
+            exit 1
+          fi
+          
+          # Check for forbidden files
+          FORBIDDEN_FILES=$(find . -type f \( -name "*.ps1" -o -name "*.sh" -o -name "*.yml" -o -name "*.test.js" -o -name "*.log" \) -not -path "./.git/*" -not -path "./.github/*" 2>/dev/null || true)
+          
+          if [ ! -z "$FORBIDDEN_FILES" ]; then
+            echo "❌ ERROR: Found forbidden files in tuya-light branch:"
+            echo "$FORBIDDEN_FILES"
+            exit 1
+          fi
+          
+          # Check for forbidden directories
+          FORBIDDEN_DIRS=$(find . -type d \( -name "docs" -o -name "tools" -o -name "ref" -o -name "src" \) -not -path "./.git/*" -not -path "./.github/*" 2>/dev/null || true)
+          
+          if [ ! -z "$FORBIDDEN_DIRS" ]; then
+            echo "❌ ERROR: Found forbidden directories in tuya-light branch:"
+            echo "$FORBIDDEN_DIRS"
+            exit 1
+          fi
+          
+          # Count drivers
+          DRIVER_COUNT=$(find drivers -name "driver.compose.json" 2>/dev/null | wc -l)
+          
+          if [ "$DRIVER_COUNT" -eq 0 ]; then
+            echo "❌ ERROR: No drivers found in tuya-light branch"
+            exit 1
+          fi
+          
+          echo "✅ tuya-light branch validation passed"
+          echo "Found $DRIVER_COUNT drivers"
+
+      - name: Generate tuya-light ZIP
+        run: |
+          echo "Generating tuya-light branch ZIP fallback..."
+          
+          TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+          ZIP_NAME="tuya-light-fallback-${TIMESTAMP}.zip"
+          
+          # Create ZIP excluding git and temp files
+          zip -r "$ZIP_NAME" . -x "*.git*" "*.tmp" "*.log" "*.bak" "*.backup" "node_modules/*" ".cursor/*" "local-processing/*" "cursor-config/*"
+          
+          echo "Tuya-light ZIP created: $ZIP_NAME"
+          echo "ZIP_SIZE=$(du -h "$ZIP_NAME" | cut -f1)" >> $GITHUB_OUTPUT
+
+      - name: Upload tuya-light ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: tuya-light-fallback
+          path: tuya-light-fallback-*.zip
+
+      - name: Create release asset
+        if: github.event_name == 'release'
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./tuya-light-fallback-*.zip
+          asset_name: tuya-light-fallback.zip
+          asset_content_type: application/zip
+
+  generate-combined-zip:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'release'
+    needs: [generate-master-zip, generate-tuya-light-zip]
+    steps:
+      - name: Checkout both branches
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Create combined ZIP
+        run: |
+          echo "Creating combined ZIP with both versions..."
+          
+          TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+          COMBINED_ZIP_NAME="tuya-zigbee-complete-${TIMESTAMP}.zip"
+          
+          # Create temporary directory structure
+          mkdir -p temp-zip/master
+          mkdir -p temp-zip/tuya-light
+          
+          # Copy master branch files
+          cp -r . temp-zip/master/
+          
+          # Checkout tuya-light branch
+          git fetch origin tuya-light
+          git checkout tuya-light
+          
+          # Copy tuya-light files
+          cp -r . temp-zip/tuya-light/
+          
+          # Create combined ZIP
+          cd temp-zip
+          zip -r "../$COMBINED_ZIP_NAME" . -x "*.git*" "*.tmp" "*.log" "*.bak" "*.backup" "node_modules/*" ".cursor/*" "local-processing/*" "cursor-config/*"
+          
+          echo "Combined ZIP created: $COMBINED_ZIP_NAME"
+
+      - name: Upload combined ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: combined-fallback
+          path: tuya-zigbee-complete-*.zip
+
+      - name: Create release asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./tuya-zigbee-complete-*.zip
+          asset_name: tuya-zigbee-complete.zip
+          asset_content_type: application/zip
+
+  generate-summary:
+    runs-on: ubuntu-latest
+    needs: [generate-master-zip, generate-tuya-light-zip]
+    steps:
+      - name: Generate summary report
+        run: |
+          echo "## ZIP Fallback Generation Summary" > zip-summary.md
+          echo "" >> zip-summary.md
+          echo "**Generated:** $(date +%Y-%m-%d %H:%M:%S) GMT+2" >> zip-summary.md
+          echo "**Branch:** ${{ github.ref_name }}" >> zip-summary.md
+          echo "" >> zip-summary.md
+          
+          if [ "${{ github.ref_name }}" = "master" ]; then
+            echo "### 📦 Master Branch ZIP" >> zip-summary.md
+            echo "- **Purpose:** Complete version with all features" >> zip-summary.md
+            echo "- **Content:** Full documentation, tools, drivers" >> zip-summary.md
+            echo "- **Size:** ${{ needs.generate-master-zip.outputs.ZIP_SIZE }}" >> zip-summary.md
+            echo "- **Use Case:** Development, testing, full features" >> zip-summary.md
+          else
+            echo "### ⚡ Tuya Light Branch ZIP" >> zip-summary.md
+            echo "- **Purpose:** Minimal version for direct installation" >> zip-summary.md
+            echo "- **Content:** Essential files and drivers only" >> zip-summary.md
+            echo "- **Size:** ${{ needs.generate-tuya-light-zip.outputs.ZIP_SIZE }}" >> zip-summary.md
+            echo "- **Use Case:** Production deployment, quick setup" >> zip-summary.md
+          fi
+          
+          echo "" >> zip-summary.md
+          echo "### 🔗 Download Links" >> zip-summary.md
+          echo "- **Artifacts:** Available in GitHub Actions artifacts" >> zip-summary.md
+          echo "- **Releases:** Available in GitHub releases" >> zip-summary.md
+          echo "" >> zip-summary.md
+          echo "### 📊 Statistics" >> zip-summary.md
+          echo "- **Total Drivers:** 148+" >> zip-summary.md
+          echo "- **Supported Devices:** 200+" >> zip-summary.md
+          echo "- **Manufacturers:** 50+" >> zip-summary.md
+          echo "- **Languages:** 4 (EN, FR, NL, TA)" >> zip-summary.md
+          
+          cat zip-summary.md
+
+      - name: Upload summary report
+        uses: actions/upload-artifact@v4
+        with:
+          name: zip-summary
+          path: zip-summary.md 

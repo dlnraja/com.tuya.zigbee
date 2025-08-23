@@ -1,6 +1,3 @@
-#!/usr/bin/env node
-'use strict';
-
 const getDataValue = (dpValue) => {
     const convertMultiByteNumberPayloadToSingleDecimalNumber = (chunks) => {
         let value = 0;

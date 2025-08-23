@@ -1,6 +1,3 @@
-#!/usr/bin/env node
-'use strict';
-
 /**
  * 🌡️ zigbee-sensor
  * Driver pour appareils ZIGBEE - sensors

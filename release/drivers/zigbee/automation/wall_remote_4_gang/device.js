@@ -1,6 +1,3 @@
-#!/usr/bin/env node
-'use strict';
-
 // Enhanced by Mega Ultimate Bug Fixer
 // Device Type: zigbee
 // Category: automation

@@ -1,6 +1,3 @@
-#!/usr/bin/env node
-'use strict';
-
 /**
  * 🔌 zigbee-switch
  * Driver pour appareils ZIGBEE - switches

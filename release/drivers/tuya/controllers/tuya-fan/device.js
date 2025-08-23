@@ -1,6 +1,3 @@
-#!/usr/bin/env node
-'use strict';
-
 /**
  * Driver Tuya Fan - Tuya
  * Ventilateur Tuya

@@ -1,0 +1,24 @@
+{
+  "id": "github-tuya-device-1-settings",
+  "title": {
+    "en": "github-tuya-device-1 Settings",
+    "fr": "Paramètres github-tuya-device-1",
+    "nl": "github-tuya-device-1 Instellingen",
+    "ta": "github-tuya-device-1 அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "tuya-zigbee-app-settings",
+  "title": {
+    "en": "tuya-zigbee-app Settings",
+    "fr": "Paramètres tuya-zigbee-app",
+    "nl": "tuya-zigbee-app Instellingen",
+    "ta": "tuya-zigbee-app அமைப்புகள்"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "title": {
+        "en": "Polling Interval",
+        "fr": "Intervalle de sondage",
+        "nl": "Polling interval",
+        "ta": "போலிங் இடைவெளி"
+      },
+      "default": 30,
+      "min": 5,
+      "max": 300
+    }
+  ]
+}

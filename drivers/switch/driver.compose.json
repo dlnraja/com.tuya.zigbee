@@ -1,0 +1,50 @@
+{
+  "id": "switch",
+  "name": {
+    "en": "Tuya Switch Universal",
+    "fr": "Tuya Switch Universel",
+    "nl": "Tuya Switch Universeel",
+    "ta": "Tuya Switch உலகளாவிய"
+  },
+  "class": "switch",
+  "capabilities": [
+    "onoff",
+    "measure_power"
+  ],
+  "images": {
+    "small": "small.png",
+    "large": "large.png"
+  },
+  "zigbee": {
+    "manufacturerName": "_TZ3000_b28wrpvx",
+    "productId": "TS011F",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6,
+          2820,
+          1
+        ],
+        "bindings": [
+          0,
+          6,
+          2820,
+          1
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2025-08-22",
+    "confidence_score": 90,
+    "auto_corrected": true,
+    "sources": [
+      "Auto-correction engine"
+    ],
+    "sdk3_optimized": true,
+    "sdk3_version": "3.8.4",
+    "optimization_date": "2025-08-23T08:22:37.776Z"
+  }
+}

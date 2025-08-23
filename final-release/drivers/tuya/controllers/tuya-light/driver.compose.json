@@ -1,0 +1,81 @@
+{
+  "id": "tuya-light",
+  "name": {
+    "en": "Tuya Light",
+    "fr": "Lampe Tuya",
+    "nl": "Tuya Licht",
+    "ta": "Tuya விளக்கு"
+  },
+  "images": {
+    "small": "assets/images/light-small.png",
+    "large": "assets/images/light-large.png"
+  },
+  "class": "device",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "On/Off",
+        "fr": "Marche/Arrêt",
+        "nl": "Aan/Uit",
+        "ta": "இயக்கு/நிறுத்து"
+      }
+    },
+    "dim": {
+      "title": {
+        "en": "Dim",
+        "fr": "Variation",
+        "nl": "Dimmen",
+        "ta": "மங்கலாக்கு"
+      }
+    },
+    "light_hue": {
+      "title": {
+        "en": "Hue",
+        "fr": "Teinte",
+        "nl": "Tint",
+        "ta": "நிறம்"
+      }
+    },
+    "light_saturation": {
+      "title": {
+        "en": "Saturation",
+        "fr": "Saturation",
+        "nl": "Verzadiging",
+        "ta": "செறிவு"
+      }
+    },
+    "light_temperature": {
+      "title": {
+        "en": "Color Temperature",
+        "fr": "Température de Couleur",
+        "nl": "Kleurtemperatuur",
+        "ta": "வண்ண வெப்பநிலை"
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "poll_interval",
+      "type": "number",
+      "label": {
+        "en": "Poll Interval (ms)",
+        "fr": "Intervalle de Polling (ms)",
+        "nl": "Poll Interval (ms)",
+        "ta": "போல் இடைவெளி (ms)"
+      },
+      "value": 30000,
+      "attr": {
+        "min": 1000,
+        "max": 300000,
+        "step": 1000
+      }
+    }
+  ]
+}

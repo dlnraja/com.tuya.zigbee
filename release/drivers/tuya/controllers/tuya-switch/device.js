@@ -1,6 +1,3 @@
-#!/usr/bin/env node
-'use strict';
-
 /**
  * Driver Tuya Switch - Tuya
  * Compatible avec tous les switches Tuya

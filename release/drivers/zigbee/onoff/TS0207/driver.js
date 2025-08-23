@@ -1,6 +1,3 @@
-#!/usr/bin/env node
-'use strict';
-
 // Enhanced by Mega Ultimate Bug Fixer
 // Driver Type: zigbee
 // Category: onoff
