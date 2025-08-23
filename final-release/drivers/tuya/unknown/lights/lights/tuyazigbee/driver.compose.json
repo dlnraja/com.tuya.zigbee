@@ -1,0 +1,25 @@
+{
+  "id": "tuyazigbee",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "tuyazigbee",
+    "fr": "tuyazigbee",
+    "nl": "tuyazigbee",
+    "ta": "tuyazigbee"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "tuyazigbee",
+  "originalFile": "app.js",
+  "extracted": "2025-08-05T08:35:44.331Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

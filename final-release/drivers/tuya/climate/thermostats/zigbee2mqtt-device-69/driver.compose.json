@@ -1,0 +1,55 @@
+{
+  "id": "zigbee2mqtt-device-69",
+  "title": {
+    "en": "Zigbee2mqtt Device 69",
+    "fr": "Zigbee2mqtt Device 69",
+    "nl": "Zigbee2mqtt Device 69",
+    "ta": "Zigbee2mqtt Device 69"
+  },
+  "description": {
+    "en": "Driver for zigbee2mqtt-device-69 from Zigbee2MQTT",
+    "fr": "Driver pour zigbee2mqtt-device-69 de Zigbee2MQTT",
+    "nl": "Driver voor zigbee2mqtt-device-69 van Zigbee2MQTT",
+    "ta": "Zigbee2MQTT இலிருந்து zigbee2mqtt-device-69 க்கான டிரைவர்"
+  },
+  "category": "climate",
+  "protocol": "tuya",
+  "source": "Zigbee2MQTT",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genPowerCfg"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:11:11.175Z",
+  "tuyaCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Tuya",
+    "model": "zigbee2mqtt-device-69",
+    "firmware": "latest",
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_power"
+    ],
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genPowerCfg"
+    ]
+  },
+  "homeyCompatibility": {
+    "pro": true,
+    "bridge": true,
+    "cloud": false,
+    "minVersion": "5.0.0",
+    "maxVersion": "6.0.0"
+  }
+}

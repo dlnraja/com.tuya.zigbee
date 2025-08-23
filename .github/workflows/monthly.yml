@@ -1,0 +1,26 @@
+# MEGA ULTIMATE ENHANCED - 2025-08-07T16:33:44.949Z
+# Workflow amélioré avec liens corrigés et fonctionnalités étendues
+
+name: 📅 Monthly Maintenance
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'
+  workflow_dispatch:
+
+jobs:
+  maintenance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Run monthly maintenance
+        run: |
+          npm install
+          node scripts/monthly-maintenance.js

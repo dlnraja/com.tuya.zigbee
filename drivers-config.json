@@ -1,0 +1,12 @@
+{
+  "tuya": [
+    "tuya-light-bulb",
+    "tuya-switch",
+    "tuya-sensor"
+  ],
+  "zigbee": [
+    "zigbee-light-bulb",
+    "zigbee-switch",
+    "zigbee-sensor"
+  ]
+}

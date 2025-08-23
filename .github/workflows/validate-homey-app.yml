@@ -1,0 +1,49 @@
+# MEGA ULTIMATE ENHANCED - 2025-08-07T16:33:44.991Z
+# Workflow amélioré avec liens corrigés et fonctionnalités étendues
+
+name: Validate Homey App
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    name: Validate Homey App
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install Homey CLI
+        run: npm install -g @homey/homey-cli
+        
+      - name: Validate App (Debug Level)
+        uses: athombv/github-action-homey-app-validate@master
+        with:
+          level: debug
+          
+      - name: Validate App (Publish Level)
+        uses: athombv/github-action-homey-app-validate@master
+        with:
+          level: publish
+          
+      - name: Validate App (Verified Level)
+        uses: athombv/github-action-homey-app-validate@master
+        with:
+          level: verified
+          
+      - name: Generate Validation Report
+        run: |
+          echo "Validation completed successfully"
+          echo "App validated at all levels: debug, publish, verified"
+          
+      - name: Upload Validation Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-report
+          path: reports/validation-report.json

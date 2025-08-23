@@ -1,0 +1,63 @@
+{
+  "id": "tuya-motion-sensor-community",
+  "title": {
+    "en": "Tuya Motion Sensor (Community)",
+    "fr": "Capteur de Mouvement Tuya (Communauté)",
+    "nl": "Tuya Bewegingssensor (Gemeenschap)",
+    "ta": "Tuya இயக்க சென்சார் (சமூகம்)"
+  },
+  "description": {
+    "en": "Motion sensor with temperature and humidity from Homey Community",
+    "fr": "Capteur de mouvement avec température et humidité de la communauté Homey",
+    "nl": "Bewegingssensor met temperatuur en vochtigheid van Homey Community",
+    "ta": "ஹோமி சமூகத்திலிருந்து வெப்பநிலை மற்றும் ஈரப்பதத்துடன் இயக்க சென்சார்"
+  },
+  "capabilities": [
+    "alarm_motion",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_battery"
+  ],
+  "capabilitiesOptions": {
+    "alarm_motion": {
+      "title": {
+        "en": "Motion",
+        "fr": "Mouvement",
+        "nl": "Beweging",
+        "ta": "இயக்கம்"
+      }
+    }
+  },
+  "images": {
+    "icon": "assets/images/icon.svg"
+  },
+  "category": "sensors",
+  "protocol": "tuya",
+  "source": "homey-community",
+  "communityRating": 4.2,
+  "downloads": 890,
+  "tuyaCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Tuya",
+    "model": "tuya-motion-sensor-community",
+    "firmware": "latest",
+    "capabilities": [
+      "alarm_motion",
+      "measure_temperature",
+      "measure_humidity",
+      "alarm_battery"
+    ],
+    "clusters": [
+      "genBasic",
+      "genOnOff"
+    ]
+  },
+  "homeyCompatibility": {
+    "pro": true,
+    "bridge": true,
+    "cloud": false,
+    "minVersion": "5.0.0",
+    "maxVersion": "6.0.0"
+  }
+}

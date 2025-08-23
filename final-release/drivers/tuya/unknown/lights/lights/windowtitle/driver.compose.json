@@ -1,0 +1,25 @@
+{
+  "id": "windowtitle",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "windowtitle",
+    "fr": "windowtitle",
+    "nl": "windowtitle",
+    "ta": "windowtitle"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "windowtitle",
+  "originalFile": "OOB_Service.html",
+  "extracted": "2025-08-05T08:31:47.541Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

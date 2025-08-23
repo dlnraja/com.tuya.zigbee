@@ -1,0 +1,50 @@
+{
+  "id": "plugs-TS011H",
+  "name": {
+    "en": "plugs TS011H",
+    "fr": "plugs TS011H",
+    "nl": "plugs TS011H",
+    "ta": "plugs TS011H"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power"
+  ],
+  "images": {
+    "small": "small.png",
+    "large": "large.png"
+  },
+  "zigbee": {
+    "manufacturerName": "_TZ3000_generic",
+    "productId": "TS011H",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          6
+        ],
+        "bindings": [
+          0,
+          1,
+          6
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2025-08-22T18:02:06.093Z",
+    "confidence_score": 85,
+    "sources": [
+      "Tuya Developer Portal",
+      "Zigbee2MQTT",
+      "Homey Community"
+    ],
+    "type": "tuya",
+    "sdk3_optimized": true,
+    "sdk3_version": "3.8.4",
+    "optimization_date": "2025-08-23T08:22:37.684Z"
+  }
+}

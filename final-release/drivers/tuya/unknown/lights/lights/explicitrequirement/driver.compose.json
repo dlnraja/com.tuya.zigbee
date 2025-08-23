@@ -1,0 +1,25 @@
+{
+  "id": "explicitrequirement",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "explicitrequirement",
+    "fr": "explicitrequirement",
+    "nl": "explicitrequirement",
+    "ta": "explicitrequirement"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "explicitrequirement",
+  "originalFile": "requirements.py",
+  "extracted": "2025-08-05T08:33:38.784Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

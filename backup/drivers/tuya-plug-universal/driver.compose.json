@@ -1,0 +1,89 @@
+{
+  "id": "tuya-plug-universal",
+  "name": {
+    "en": "Prise Tuya universelle avec monitoring de puissance",
+    "fr": "Prise Tuya universelle avec monitoring de puissance",
+    "nl": "Prise Tuya universelle avec monitoring de puissance",
+    "ta": "Prise Tuya universelle avec monitoring de puissance"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power",
+    "alarm_battery",
+    "measure_current",
+    "measure_voltage"
+  ],
+  "images": {
+    "small": "small.png",
+    "large": "large.png"
+  },
+  "zigbee": {
+    "manufacturerName": "_TZ3000_4ux0ondb",
+    "productId": "TS011F",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          6,
+          2820,
+          1794
+        ],
+        "bindings": [
+          0,
+          1,
+          6,
+          2820,
+          1794
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.1.0",
+    "last_updated": "2025-08-22",
+    "confidence_score": 95,
+    "sources": [
+      "Zigbee2MQTT",
+      "Blakadder Database",
+      "Homey Community",
+      "Tuya Developer Portal"
+    ],
+    "advanced_features": [
+      "power_monitoring",
+      "energy_tracking",
+      "overload_protection",
+      "schedule_support"
+    ],
+    "tested_devices": [
+      "TS011F_plug_1ch",
+      "TS0601_plug_2ch"
+    ],
+    "zigbee_clusters": [
+      "genBasic",
+      "genPowerCfg",
+      "genOnOff"
+    ],
+    "sdk3_optimized": true,
+    "sdk3_version": "3.8.4",
+    "optimization_date": "2025-08-23T08:22:37.867Z"
+  },
+  "capabilitiesOptions": {
+    "measure_power": {
+      "approximated": true
+    },
+    "meter_power": {
+      "approximated": true
+    }
+  },
+  "flowCards": [
+    "toggle",
+    "is_on",
+    "is_off",
+    "power_threshold",
+    "energy_consumption",
+    "overload_alert"
+  ]
+}

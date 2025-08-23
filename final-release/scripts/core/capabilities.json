@@ -1,0 +1,45 @@
+{
+  "onoff": {
+    "type": "boolean",
+    "writable": true
+  },
+  "dim": {
+    "type": "number",
+    "min": 0,
+    "max": 1,
+    "writable": true
+  },
+  "light_temperature": {
+    "type": "number",
+    "min": 0,
+    "max": 1000,
+    "writable": true
+  },
+  "light_hue": {
+    "type": "number",
+    "min": 0,
+    "max": 360,
+    "writable": true
+  },
+  "light_saturation": {
+    "type": "number",
+    "min": 0,
+    "max": 1,
+    "writable": true
+  },
+  "measure_power": {
+    "type": "number",
+    "unit": "W",
+    "writable": false
+  },
+  "measure_temperature": {
+    "type": "number",
+    "unit": "°C",
+    "writable": false
+  },
+  "measure_humidity": {
+    "type": "number",
+    "unit": "%",
+    "writable": false
+  }
+}

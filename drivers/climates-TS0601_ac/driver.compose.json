@@ -1,0 +1,59 @@
+{
+  "id": "climates-TS0601_ac",
+  "name": {
+    "en": "climates TS0601_ac",
+    "fr": "climates TS0601_ac",
+    "nl": "climates TS0601_ac",
+    "ta": "climates TS0601_ac"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "images": {
+    "small": "small.png",
+    "large": "large.png"
+  },
+  "zigbee": {
+    "manufacturerName": "_TZ3000_1h2x4akh",
+    "productId": "TS0601",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1026,
+          1029,
+          513
+        ],
+        "bindings": [
+          0,
+          1,
+          1026,
+          1029,
+          513
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2025-08-22T18:29:22.896Z",
+    "confidence_score": 95,
+    "sources": [
+      "Tuya Developer Portal",
+      "Zigbee2MQTT",
+      "Homey Community",
+      "Home Assistant",
+      "Blakadder",
+      "Ultimate Analysis"
+    ],
+    "type": "tuya",
+    "category": "climates",
+    "sdk3_optimized": true,
+    "sdk3_version": "3.8.4",
+    "optimization_date": "2025-08-23T08:22:37.407Z"
+  }
+}

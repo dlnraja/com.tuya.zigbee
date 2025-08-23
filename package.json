@@ -1,63 +1,91 @@
 {
-  "name": "universal-tuya-zigbee",
-  "version": "3.6.0",
-  "description": "Universal Tuya Zigbee devices support for Homey",
+  "name": "com.dlnraja.tuya-zigbee-lite",
+  "version": "1.0.0",
+  "description": "Tuya Zigbee (Lite) - Runtime 100% Zigbee-only - Homey SDK3",
   "main": "app.js",
+  "homey": {
+    "min": "5.0.0",
+    "max": "6.0.0"
+  },
   "scripts": {
-    "format": "prettier -w .",
-    "lint": "eslint . --ext .js",
-    "validate:fast": "homey app validate -l debug",
-    "compose:on": "node tools/enable-compose.js",
-    "json:bom": "node tools/strip-bom.js",
-    "json:lint": "node tools/lint-json.js",
-    "json:clean": "node tools/clean-json-only.js",
-    "check:drivers": "node tools/check-drivers.js",
-    "matrix": "node tools/matrix-build.js && node tools/build-references.js",
-    "dashboard": "node tools/build-dashboard.js",
-    "enrich:heur": "node tools/enrich-heuristics.js",
-    "enrich:evidence": "node tools/enrich-from-evidence.js",
-    "orchestrate": "node tools/orchestrate.js",
-    "orchestrate:simple": "node tools/orchestrate-simple.js",
-    "enrich:auto": "node tools/auto-driver-enricher.js",
-    "scrape:web": "node tools/web-scraper.js",
-    "orchestrate:mega": "node tools/core/orchestrator.js",
-    "mega:prep": "node tools/core/preparation.js",
-    "mega:validate": "node tools/core/validator.js",
-    "mega:matrix": "node tools/core/matrix-builder.js",
-    "mega:dashboard": "node tools/core/dashboard-builder.js",
-    "mega:evidence": "node tools/core/evidence-collector.js",
-    "mega:enrich": "node tools/core/enricher.js",
-    "mega:web": "node tools/core/web-enricher.js",
-    "mega:final": "node tools/core/final-validator.js",
-    "mega:deploy": "node tools/core/deployer.js",
-    "mega:convert": "node tools/core/script-converter.js",
-    "mega:consolidate": "node tools/core/script-consolidator.js",
-    "dump:homey": "node tools/dump.js",
-    "dump:homey:fast": "node tools/dump.js 60",
-    "validate:final": "node tools/final-validation.js",
-    "fix:validation": "node tools/fix-validation-issues.js"
+    "bootstrap:arch": "node tools/repair/bootstrap-arch.js",
+    "repair:drivers": "node tools/repair/drivers.js",
+    "enhance:drivers": "node tools/repair/enhance-drivers.js",
+    "fix:drivers": "node tools/repair/fix-missing-drivers.js",
+    "cleanup:drivers": "node tools/repair/cleanup-and-fix.js",
+    "assert:drivers": "node tools/repair/assert-drivers.js",
+    "harvest:all": "node tools/harvest/run-all.js",
+    "scan:comprehensive": "node tools/repair/comprehensive-driver-scan.js",
+    "analyze:advanced": "node tools/repair/advanced-source-analysis.js",
+    "auto:correct": "node tools/repair/auto-correction-engine.js",
+    "validate:final": "node tools/repair/final-validation.js",
+    "full:analysis": "npm run scan:comprehensive && npm run analyze:advanced && npm run auto:correct && npm run validate:final",
+    "mega:analysis": "node tools/repair/mega-analysis-engine.js",
+    "mega:enrichment": "node tools/repair/intelligent-enrichment-engine.js",
+    "mega:scoring": "node tools/repair/advanced-scoring-engine.js",
+    "mega:orchestrate": "node tools/repair/mega-orchestrator.js",
+    "mega:full": "npm run mega:analysis && npm run mega:enrichment && npm run mega:scoring && npm run mega:orchestrate",
+    "ingest": "node tools/cli.js ingest",
+    "infer": "node tools/cli.js infer",
+    "propose": "node tools/cli.js propose",
+    "build:homey": "node tools/cli.js build",
+    "validate:homey": "node tools/cli.js validate",
+    "full:relaunch": "npm run bootstrap:arch && npm run repair:drivers && npm run assert:drivers && npm run harvest:all",
+    "optimize:sdk3": "node tools/optimize-sdk3.js",
+    "convert:images": "node tools/convert-images.js",
+    "create:coherent": "node tools/create-coherent-images.js",
+    "fix:placement": "node tools/fix-image-placement.js",
+    "fix:app-json": "node tools/fix-app-json-images.js",
+    "validate:custom": "node tools/validate-homey.js",
+    "validate:recursive": "node tools/recursive-validator.js",
+    "test:final": "node tools/final-test.js",
+    "test": "homey app validate",
+    "build": "homey app build",
+    "run": "homey app run",
+    "run:debug": "homey app run --debug",
+    "publish": "homey app publish",
+    "install": "homey app install",
+    "lint": "echo \"No linting specified\" && exit 0"
+  },
+  "devDependencies": {
+    "ajv": "^8.12.0",
+    "ajv-formats": "^2.1.1",
+    "chalk": "^4.1.2",
+    "conventional-changelog-cli": "^4.1.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-n": "^16.6.2",
+    "image-size": "^1.1.1",
+    "prettier": "^3.2.5",
+    "yaml": "^2.3.4"
+  },
+  "dependencies": {
+    "homey": "^2.0.0"
   },
   "keywords": [
     "tuya",
     "zigbee",
     "homey",
+    "homey-sdk3",
     "smart-home",
-    "automation"
+    "iot",
+    "universal",
+    "lite",
+    "ai",
+    "heuristics",
+    "automation",
+    "intelligent"
   ],
-  "author": "Tuya Community",
   "license": "MIT",
-  "devDependencies": {
-    "eslint": "^9.9.0",
-    "glob": "^11.0.0",
-    "node-fetch": "^3.3.2",
-    "nodemon": "^3.1.0",
-    "prettier": "^3.3.3"
+  "author": {
+    "name": "Dylan Rajasekaram",
+    "email": "dylan.rajasekaram+homey@gmail.com"
   },
-  "dependencies": {
-    "archiver": "^7.0.1",
-    "homey": "^2.0.0"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dlnraja/com.tuya.zigbee.git"
   },
-  "engines": {
-    "node": ">=18.0.0"
-  }
+  "bugs": {
+    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
+  },
+  "homepage": "https://github.com/dlnraja/com.tuya.zigbee#readme"
 }

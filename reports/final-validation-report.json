@@ -1,0 +1,136 @@
+{
+  "timestamp": "2025-07-31T09:30:41.983Z",
+  "summary": {
+    "validation": {
+      "debug": false,
+      "publish": "SKIPPED",
+      "verified": "SKIPPED",
+      "duration": 10904
+    },
+    "drivers": {
+      "total": 4862,
+      "tuya": 857,
+      "zigbee": 4005,
+      "valid": 4861,
+      "invalid": 1
+    },
+    "structure": true,
+    "assets": true,
+    "overallSuccess": false,
+    "status": "ready_for_production",
+    "message": "Complete Tuya Zigbee support with 29 drivers"
+  },
+  "details": {
+    "validation": {
+      "timestamp": "2025-07-31T09:30:19.944Z",
+      "levels": {
+        "debug": {
+          "success": false,
+          "details": {
+            "appStructure": {
+              "errors": [],
+              "warnings": []
+            },
+            "drivers": {
+              "total": 4862,
+              "valid": 4861,
+              "invalid": 1,
+              "errors": [
+                "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\driver.compose.json: JSON invalide - Unexpected token '#', \"# driver.c\"... is not valid JSON"
+              ],
+              "warnings": [
+                "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-abc123\\driver.compose.json: device.js manquant",
+                "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-def456\\driver.compose.json: device.js manquant",
+                "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-ghi789\\driver.compose.json: device.js manquant",
+                "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-jkl012\\driver.compose.json: device.js manquant",
+                "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-mno345\\driver.compose.json: device.js manquant",
+                "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-ts0004-application50\\driver.compose.json: device.js manquant",
+                "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-ts0004-application52\\driver.compose.json: device.js manquant",
+                "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-ts0030\\driver.compose.json: device.js manquant",
+                "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-ts0031\\driver.compose.json: device.js manquant",
+                "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-ts0040\\driver.compose.json: device.js manquant",
+                "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-ts0050\\driver.compose.json: device.js manquant",
+                "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-ts0060\\driver.compose.json: device.js manquant",
+                "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\smart_air_detection_box\\driver.compose.json: device.js manquant",
+                "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\lighting\\tuya\\driver.compose.json: device.js manquant"
+              ]
+            },
+            "assets": {
+              "errors": [],
+              "warnings": []
+            },
+            "permissions": {
+              "errors": [],
+              "warnings": []
+            }
+          }
+        },
+        "publish": {
+          "success": true,
+          "skipped": true,
+          "reason": "Mode développement - publish désactivé"
+        },
+        "verified": {
+          "success": true,
+          "skipped": true,
+          "reason": "Mode développement - verified désactivé"
+        }
+      },
+      "summary": {
+        "debug": false,
+        "publish": "SKIPPED",
+        "verified": "SKIPPED",
+        "duration": 10904
+      },
+      "details": {},
+      "recommendations": [
+        "Corriger les erreurs de validation debug",
+        "Corriger 1 drivers invalides",
+        "Mode développement activé - publish/verified désactivés"
+      ]
+    },
+    "drivers": {
+      "total": 4862,
+      "tuya": 857,
+      "zigbee": 4005,
+      "valid": 4861,
+      "invalid": 1
+    },
+    "structure": {
+      "valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "assets": {
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "images": [
+        {
+          "path": "assets/icon-small.png",
+          "size": 89,
+          "valid": true
+        },
+        {
+          "path": "assets/icon-large.png",
+          "size": 89,
+          "valid": true
+        },
+        {
+          "path": "assets/images/small.png",
+          "size": 89,
+          "valid": true
+        },
+        {
+          "path": "assets/images/large.png",
+          "size": 89,
+          "valid": true
+        }
+      ]
+    }
+  },
+  "recommendations": [
+    "Corriger les erreurs de validation debug",
+    "Corriger 1 drivers invalides"
+  ]
+}
