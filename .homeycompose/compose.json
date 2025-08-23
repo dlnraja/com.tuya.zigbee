@@ -66,8 +66,8 @@
       "class": "device",
       "capabilities": ["onoff", "measure_power", "alarm_battery"],
       "images": {
-        "small": "drivers/zigbee-tuya-universal/assets/small.png",
-        "large": "drivers/zigbee-tuya-universal/assets/large.png"
+        "small": "drivers/zigbee-tuya-universal/small.png",
+        "large": "drivers/zigbee-tuya-universal/large.png"
       },
       "zigbee": {
         "manufacturerName": "Tuya",
@@ -85,8 +85,8 @@
       "class": "socket",
       "capabilities": ["onoff", "measure_power", "meter_power", "alarm_battery"],
       "images": {
-        "small": "drivers/tuya-plug-universal/assets/small.png",
-        "large": "drivers/tuya-plug-universal/assets/large.png"
+        "small": "drivers/tuya-plug-universal/small.png",
+        "large": "drivers/tuya-plug-universal/large.png"
       },
       "zigbee": {
         "manufacturerName": "Tuya",
@@ -104,8 +104,8 @@
       "class": "light",
       "capabilities": ["onoff", "dim", "light_temperature", "light_mode"],
       "images": {
-        "small": "drivers/tuya-light-universal/assets/small.png",
-        "large": "drivers/tuya-light-universal/assets/large.png"
+        "small": "drivers/tuya-light-universal/small.png",
+        "large": "drivers/tuya-light-universal/large.png"
       },
       "zigbee": {
         "manufacturerName": "Tuya",
