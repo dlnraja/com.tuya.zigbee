@@ -6,7 +6,7 @@
     "nl": "Device Tuya Zigbee universel avec capacités de base",
     "ta": "Device Tuya Zigbee universel avec capacités de base"
   },
-  "class": "device",
+  "class": "switch",
   "capabilities": [
     "onoff",
     "measure_power",

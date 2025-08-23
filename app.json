@@ -6,9 +6,6 @@
   "category": [
     "appliances"
   ],
-  "permissions": [
-    "homey:manager:api"
-  ],
   "name": {
     "en": "Tuya Zigbee",
     "fr": "Tuya Zigbee",
@@ -33,8 +30,8 @@
     "local"
   ],
   "images": {
-    "small": "assets/small.png",
-    "large": "assets/large.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
   "icon": "assets/icon.svg",
   "color": "#FF6B35",
@@ -704,7 +701,7 @@
         "nl": "plugs TS011F",
         "ta": "plugs TS011F"
       },
-      "class": "socket",
+      "class": "switch",
       "capabilities": [
         "onoff",
         "measure_power"
@@ -758,7 +755,7 @@
         "nl": "plugs TS011G",
         "ta": "plugs TS011G"
       },
-      "class": "socket",
+      "class": "switch",
       "capabilities": [
         "onoff",
         "measure_power"
@@ -808,7 +805,7 @@
         "nl": "plugs TS011H",
         "ta": "plugs TS011H"
       },
-      "class": "socket",
+      "class": "switch",
       "capabilities": [
         "onoff",
         "measure_power"
@@ -858,7 +855,7 @@
         "nl": "plugs TS011I",
         "ta": "plugs TS011I"
       },
-      "class": "socket",
+      "class": "switch",
       "capabilities": [
         "onoff",
         "measure_power"
@@ -908,7 +905,7 @@
         "nl": "plugs TS011J",
         "ta": "plugs TS011J"
       },
-      "class": "socket",
+      "class": "switch",
       "capabilities": [
         "onoff",
         "measure_power"
@@ -958,7 +955,7 @@
         "nl": "plugs TS0121",
         "ta": "plugs TS0121"
       },
-      "class": "socket",
+      "class": "switch",
       "capabilities": [
         "onoff",
         "measure_power"
@@ -1010,7 +1007,7 @@
         "nl": "plugs TS0122",
         "ta": "plugs TS0122"
       },
-      "class": "socket",
+      "class": "switch",
       "capabilities": [
         "onoff",
         "measure_power"
@@ -1060,7 +1057,7 @@
         "nl": "plugs TS0123",
         "ta": "plugs TS0123"
       },
-      "class": "socket",
+      "class": "switch",
       "capabilities": [
         "onoff",
         "measure_power"
@@ -1110,7 +1107,7 @@
         "nl": "plugs TS0124",
         "ta": "plugs TS0124"
       },
-      "class": "socket",
+      "class": "switch",
       "capabilities": [
         "onoff",
         "measure_power"
@@ -1160,7 +1157,7 @@
         "nl": "plugs TS0125",
         "ta": "plugs TS0125"
       },
-      "class": "socket",
+      "class": "switch",
       "capabilities": [
         "onoff",
         "measure_power"
@@ -2485,7 +2482,7 @@
         "nl": "Prise Tuya universelle avec monitoring de puissance",
         "ta": "Prise Tuya universelle avec monitoring de puissance"
       },
-      "class": "socket",
+      "class": "switch",
       "capabilities": [
         "onoff",
         "measure_power",
@@ -2738,7 +2735,7 @@
         "nl": "Device Tuya Zigbee universel avec capacités de base",
         "ta": "Device Tuya Zigbee universel avec capacités de base"
       },
-      "class": "device",
+      "class": "switch",
       "capabilities": [
         "onoff",
         "measure_power",
@@ -2816,6 +2813,9 @@
         "temperature_alert"
       ]
     }
+  ],
+  "permissions": [
+    "homey:manager:api"
   ],
   "sdk": 3
 }

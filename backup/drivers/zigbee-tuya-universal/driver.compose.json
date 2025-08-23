@@ -1,26 +1,24 @@
 {
-  "id": "tuya-plug-universal",
+  "id": "zigbee-tuya-universal",
   "name": {
-    "en": "Prise Tuya universelle avec monitoring de puissance",
-    "fr": "Prise Tuya universelle avec monitoring de puissance",
-    "nl": "Prise Tuya universelle avec monitoring de puissance",
-    "ta": "Prise Tuya universelle avec monitoring de puissance"
+    "en": "Device Tuya Zigbee universel avec capacités de base",
+    "fr": "Device Tuya Zigbee universel avec capacités de base",
+    "nl": "Device Tuya Zigbee universel avec capacités de base",
+    "ta": "Device Tuya Zigbee universel avec capacités de base"
   },
-  "class": "switch",
+  "class": "device",
   "capabilities": [
     "onoff",
     "measure_power",
-    "meter_power",
     "alarm_battery",
-    "measure_current",
-    "measure_voltage"
+    "measure_temperature"
   ],
   "images": {
     "small": "small.png",
     "large": "large.png"
   },
   "zigbee": {
-    "manufacturerName": "_TZ3000_4ux0ondb",
+    "manufacturerName": "_TZ3000_y4ona9me",
     "productId": "TS011F",
     "endpoints": {
       "1": {
@@ -28,15 +26,15 @@
           0,
           1,
           6,
-          2820,
-          1794
+          10,
+          9
         ],
         "bindings": [
           0,
           1,
           6,
-          2820,
-          1794
+          10,
+          9
         ]
       }
     }
@@ -52,29 +50,29 @@
       "Tuya Developer Portal"
     ],
     "advanced_features": [
+      "battery_monitoring",
       "power_monitoring",
-      "energy_tracking",
-      "overload_protection",
-      "schedule_support"
+      "temperature_monitoring"
     ],
     "tested_devices": [
-      "TS011F_plug_1ch",
-      "TS0601_plug_2ch"
+      "TS011F_switch_1ch",
+      "TS0601_switch_2ch"
     ],
     "zigbee_clusters": [
       "genBasic",
       "genPowerCfg",
-      "genOnOff"
+      "genOnOff",
+      "genBasic"
     ],
     "sdk3_optimized": true,
     "sdk3_version": "3.8.4",
-    "optimization_date": "2025-08-23T08:22:37.867Z"
+    "optimization_date": "2025-08-23T08:22:37.879Z"
   },
   "capabilitiesOptions": {
     "measure_power": {
       "approximated": true
     },
-    "meter_power": {
+    "measure_temperature": {
       "approximated": true
     }
   },
@@ -83,7 +81,6 @@
     "is_on",
     "is_off",
     "power_threshold",
-    "energy_consumption",
-    "overload_alert"
+    "temperature_alert"
   ]
 }
