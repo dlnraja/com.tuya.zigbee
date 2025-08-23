@@ -6,7 +6,7 @@
     "nl": "plugs TS0123",
     "ta": "plugs TS0123"
   },
-  "class": "socket",
+  "class": "switch",
   "capabilities": [
     "onoff",
     "measure_power"

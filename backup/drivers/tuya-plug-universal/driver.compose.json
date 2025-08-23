@@ -6,7 +6,7 @@
     "nl": "Prise Tuya universelle avec monitoring de puissance",
     "ta": "Prise Tuya universelle avec monitoring de puissance"
   },
-  "class": "switch",
+  "class": "socket",
   "capabilities": [
     "onoff",
     "measure_power",
