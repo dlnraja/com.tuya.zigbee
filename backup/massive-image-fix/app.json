@@ -30,8 +30,8 @@
     "local"
   ],
   "images": {
-    "small": "assets/small.png",
-    "large": "assets/large.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
   "icon": "assets/icon.svg",
   "color": "#FF6B35",
@@ -51,8 +51,8 @@
         "measure_humidity"
       ],
       "images": {
-        "small": "drivers/climates-TS0601_ac/small.png",
-        "large": "drivers/climates-TS0601_ac/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_1h2x4akh",
@@ -109,8 +109,8 @@
         "windowcoverings_state"
       ],
       "images": {
-        "small": "drivers/covers-TS0602_cover/small.png",
-        "large": "drivers/covers-TS0602_cover/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_vd43bbfq",
@@ -183,8 +183,8 @@
         "power_threshold"
       ],
       "images": {
-        "small": "drivers/fan-tuya-universal/small.png",
-        "large": "drivers/fan-tuya-universal/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_1h2x4akh",
@@ -253,8 +253,8 @@
         "fan_mode"
       ],
       "images": {
-        "small": "drivers/fans-TS0601_fan/small.png",
-        "large": "drivers/fans-TS0601_fan/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_1h2x4akh",
@@ -308,8 +308,8 @@
         "fan_mode"
       ],
       "images": {
-        "small": "drivers/fans-TS0602_fan/small.png",
-        "large": "drivers/fans-TS0602_fan/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -359,8 +359,8 @@
         "light_temperature"
       ],
       "images": {
-        "small": "drivers/lights-TS0501B/small.png",
-        "large": "drivers/lights-TS0501B/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_femsaaua",
@@ -418,8 +418,8 @@
         "light_temperature"
       ],
       "images": {
-        "small": "drivers/lights-TS0601_dimmer/small.png",
-        "large": "drivers/lights-TS0601_dimmer/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -469,8 +469,8 @@
         "light_temperature"
       ],
       "images": {
-        "small": "drivers/lights-TS0601_rgb/small.png",
-        "large": "drivers/lights-TS0601_rgb/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -520,8 +520,8 @@
         "light_temperature"
       ],
       "images": {
-        "small": "drivers/lights-TS0601_switch/small.png",
-        "large": "drivers/lights-TS0601_switch/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -585,8 +585,8 @@
         "temperature_alert"
       ],
       "images": {
-        "small": "drivers/lock-tuya-universal/small.png",
-        "large": "drivers/lock-tuya-universal/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_8kzqqzu4",
@@ -653,8 +653,8 @@
         "lock"
       ],
       "images": {
-        "small": "drivers/locks-TS0601_lock/small.png",
-        "large": "drivers/locks-TS0601_lock/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_8kzqqzu4",
@@ -707,8 +707,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "drivers/plugs-TS011F/small.png",
-        "large": "drivers/plugs-TS011F/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_b28wrpvx",
@@ -761,8 +761,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "drivers/plugs-TS011G/small.png",
-        "large": "drivers/plugs-TS011G/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -811,8 +811,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "drivers/plugs-TS011H/small.png",
-        "large": "drivers/plugs-TS011H/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -861,8 +861,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "drivers/plugs-TS011I/small.png",
-        "large": "drivers/plugs-TS011I/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -911,8 +911,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "drivers/plugs-TS011J/small.png",
-        "large": "drivers/plugs-TS011J/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -961,8 +961,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "drivers/plugs-TS0121/small.png",
-        "large": "drivers/plugs-TS0121/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_qeuvnohg",
@@ -1013,8 +1013,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "drivers/plugs-TS0122/small.png",
-        "large": "drivers/plugs-TS0122/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1063,8 +1063,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "drivers/plugs-TS0123/small.png",
-        "large": "drivers/plugs-TS0123/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1113,8 +1113,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "drivers/plugs-TS0124/small.png",
-        "large": "drivers/plugs-TS0124/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1163,8 +1163,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "drivers/plugs-TS0125/small.png",
-        "large": "drivers/plugs-TS0125/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1213,8 +1213,8 @@
         "scene"
       ],
       "images": {
-        "small": "drivers/remotes-TS0601_remote/small.png",
-        "large": "drivers/remotes-TS0601_remote/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_8kzqqzu4",
@@ -1267,8 +1267,8 @@
         "measure_humidity"
       ],
       "images": {
-        "small": "drivers/sensors-TS0201/small.png",
-        "large": "drivers/sensors-TS0201/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_femsaaua",
@@ -1321,8 +1321,8 @@
         "measure_humidity"
       ],
       "images": {
-        "small": "drivers/sensors-TS0601_contact/small.png",
-        "large": "drivers/sensors-TS0601_contact/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1371,8 +1371,8 @@
         "measure_humidity"
       ],
       "images": {
-        "small": "drivers/sensors-TS0601_gas/small.png",
-        "large": "drivers/sensors-TS0601_gas/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1421,8 +1421,8 @@
         "measure_humidity"
       ],
       "images": {
-        "small": "drivers/sensors-TS0601_motion/small.png",
-        "large": "drivers/sensors-TS0601_motion/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1471,8 +1471,8 @@
         "measure_humidity"
       ],
       "images": {
-        "small": "drivers/sensors-TS0601_sensor/small.png",
-        "large": "drivers/sensors-TS0601_sensor/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1521,8 +1521,8 @@
         "alarm_battery"
       ],
       "images": {
-        "small": "drivers/sensors-TS0601_smoke/small.png",
-        "large": "drivers/sensors-TS0601_smoke/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_4ux0ondb",
@@ -1575,8 +1575,8 @@
         "alarm_battery"
       ],
       "images": {
-        "small": "drivers/sensors-TS0601_vibration/small.png",
-        "large": "drivers/sensors-TS0601_vibration/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_y4ona9me",
@@ -1629,8 +1629,8 @@
         "alarm_battery"
       ],
       "images": {
-        "small": "drivers/sensors-TS0601_water/small.png",
-        "large": "drivers/sensors-TS0601_water/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_qqdbccb3",
@@ -1683,8 +1683,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "drivers/switch/small.png",
-        "large": "drivers/switch/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_b28wrpvx",
@@ -1732,8 +1732,8 @@
         "onoff"
       ],
       "images": {
-        "small": "drivers/switches-TS0001/small.png",
-        "large": "drivers/switches-TS0001/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ltiqubue",
@@ -1781,8 +1781,8 @@
         "onoff"
       ],
       "images": {
-        "small": "drivers/switches-TS0002/small.png",
-        "large": "drivers/switches-TS0002/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1830,8 +1830,8 @@
         "onoff"
       ],
       "images": {
-        "small": "drivers/switches-TS0003/small.png",
-        "large": "drivers/switches-TS0003/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1879,8 +1879,8 @@
         "onoff"
       ],
       "images": {
-        "small": "drivers/switches-TS0004/small.png",
-        "large": "drivers/switches-TS0004/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1928,8 +1928,8 @@
         "onoff"
       ],
       "images": {
-        "small": "drivers/switches-TS0005/small.png",
-        "large": "drivers/switches-TS0005/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -1977,8 +1977,8 @@
         "onoff"
       ],
       "images": {
-        "small": "drivers/switches-TS0006/small.png",
-        "large": "drivers/switches-TS0006/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -2026,8 +2026,8 @@
         "onoff"
       ],
       "images": {
-        "small": "drivers/switches-TS0007/small.png",
-        "large": "drivers/switches-TS0007/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -2075,8 +2075,8 @@
         "onoff"
       ],
       "images": {
-        "small": "drivers/switches-TS0008/small.png",
-        "large": "drivers/switches-TS0008/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -2125,8 +2125,8 @@
         "measure_temperature"
       ],
       "images": {
-        "small": "drivers/thermostats-TS0601_thermostat/small.png",
-        "large": "drivers/thermostats-TS0601_thermostat/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ltiqubue",
@@ -2179,8 +2179,8 @@
         "measure_temperature"
       ],
       "images": {
-        "small": "drivers/thermostats-TS0603_thermostat/small.png",
-        "large": "drivers/thermostats-TS0603_thermostat/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_generic",
@@ -2233,8 +2233,8 @@
         "measure_pressure"
       ],
       "images": {
-        "small": "drivers/tuya-climate-universal/small.png",
-        "large": "drivers/tuya-climate-universal/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ltiqubue",
@@ -2317,8 +2317,8 @@
         "windowcoverings_tilt_set"
       ],
       "images": {
-        "small": "drivers/tuya-cover-universal/small.png",
-        "large": "drivers/tuya-cover-universal/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_vd43bbfq",
@@ -2402,8 +2402,8 @@
         "light_saturation"
       ],
       "images": {
-        "small": "drivers/tuya-light-universal/small.png",
-        "large": "drivers/tuya-light-universal/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_qa8s8vca",
@@ -2492,8 +2492,8 @@
         "measure_voltage"
       ],
       "images": {
-        "small": "drivers/tuya-plug-universal/small.png",
-        "large": "drivers/tuya-plug-universal/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_4ux0ondb",
@@ -2579,8 +2579,8 @@
         "measure_battery"
       ],
       "images": {
-        "small": "drivers/tuya-remote-universal/small.png",
-        "large": "drivers/tuya-remote-universal/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_qqdbccb3",
@@ -2660,8 +2660,8 @@
         "measure_noise"
       ],
       "images": {
-        "small": "drivers/tuya-sensor-universal/small.png",
-        "large": "drivers/tuya-sensor-universal/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_femsaaua",
@@ -2743,8 +2743,8 @@
         "measure_temperature"
       ],
       "images": {
-        "small": "drivers/zigbee-tuya-universal/small.png",
-        "large": "drivers/zigbee-tuya-universal/large.png"
+        "small": "small.png",
+        "large": "large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_y4ona9me",
