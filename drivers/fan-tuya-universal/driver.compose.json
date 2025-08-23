@@ -32,8 +32,8 @@
     "power_threshold"
   ],
   "images": {
-    "small": "assets/small.svg",
-    "large": "assets/large.svg"
+    "small": "small.png",
+    "large": "large.png"
   },
   "zigbee": {
     "manufacturerName": "_TZ3000_1h2x4akh",
@@ -81,6 +81,9 @@
       "genPowerCfg",
       "genOnOff",
       "genLevelCtrl"
-    ]
+    ],
+    "sdk3_optimized": true,
+    "sdk3_version": "3.8.4",
+    "optimization_date": "2025-08-23T08:22:37.487Z"
   }
 }

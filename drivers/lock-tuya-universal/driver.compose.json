@@ -27,8 +27,8 @@
     "temperature_alert"
   ],
   "images": {
-    "small": "assets/small.svg",
-    "large": "assets/large.svg"
+    "small": "small.png",
+    "large": "large.png"
   },
   "zigbee": {
     "manufacturerName": "_TZ3000_8kzqqzu4",
@@ -76,6 +76,9 @@
       "genPowerCfg",
       "genDoorLock",
       "genBasic"
-    ]
+    ],
+    "sdk3_optimized": true,
+    "sdk3_version": "3.8.4",
+    "optimization_date": "2025-08-23T08:22:37.670Z"
   }
 }

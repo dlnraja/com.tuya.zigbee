@@ -27,6 +27,30 @@
             "singular": true
           }
         }
+      ],
+      "settings": [
+        {
+          "id": "debug",
+          "type": "boolean",
+          "label": {
+            "en": "Debug Mode",
+            "fr": "Mode Debug",
+            "nl": "Debug Modus",
+            "ta": "டீபக் பயன்முறை"
+          },
+          "value": false
+        },
+        {
+          "id": "auto_discovery",
+          "type": "boolean",
+          "label": {
+            "en": "Auto Discovery",
+            "fr": "Découverte Automatique",
+            "nl": "Automatische Ontdekking",
+            "ta": "தானியங்கி கண்டுபிடிப்பு"
+          },
+          "value": true
+        }
       ]
     }
   ],
@@ -44,6 +68,10 @@
       "images": {
         "small": "drivers/zigbee-tuya-universal/assets/small.png",
         "large": "drivers/zigbee-tuya-universal/assets/large.png"
+      },
+      "zigbee": {
+        "manufacturerName": "Tuya",
+        "productId": "Universal"
       }
     },
     {
@@ -59,6 +87,10 @@
       "images": {
         "small": "drivers/tuya-plug-universal/assets/small.png",
         "large": "drivers/tuya-plug-universal/assets/large.png"
+      },
+      "zigbee": {
+        "manufacturerName": "Tuya",
+        "productId": "Universal"
       }
     },
     {
@@ -74,6 +106,10 @@
       "images": {
         "small": "drivers/tuya-light-universal/assets/small.png",
         "large": "drivers/tuya-light-universal/assets/large.png"
+      },
+      "zigbee": {
+        "manufacturerName": "Tuya",
+        "productId": "Universal"
       }
     },
     {
@@ -89,6 +125,10 @@
       "images": {
         "small": "drivers/tuya-cover-universal/assets/small.png",
         "large": "drivers/tuya-cover-universal/assets/large.png"
+      },
+      "zigbee": {
+        "manufacturerName": "Tuya",
+        "productId": "Universal"
       }
     },
     {
@@ -104,6 +144,10 @@
       "images": {
         "small": "drivers/tuya-climate-universal/assets/small.png",
         "large": "drivers/tuya-climate-universal/assets/large.png"
+      },
+      "zigbee": {
+        "manufacturerName": "Tuya",
+        "productId": "Universal"
       }
     },
     {
@@ -119,6 +163,10 @@
       "images": {
         "small": "drivers/tuya-sensor-universal/assets/small.png",
         "large": "drivers/tuya-sensor-universal/assets/large.png"
+      },
+      "zigbee": {
+        "manufacturerName": "Tuya",
+        "productId": "Universal"
       }
     },
     {
@@ -134,6 +182,10 @@
       "images": {
         "small": "drivers/tuya-remote-universal/assets/small.png",
         "large": "drivers/tuya-remote-universal/assets/large.png"
+      },
+      "zigbee": {
+        "manufacturerName": "Tuya",
+        "productId": "Universal"
       }
     }
   ],
