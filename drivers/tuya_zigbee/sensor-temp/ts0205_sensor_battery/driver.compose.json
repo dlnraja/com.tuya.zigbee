@@ -1,73 +1,35 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_ts0205_sensor_battery",
+  "title": {
+    "en": "Ts0205 Sensor Battery Control",
+    "fr": "Contrôle Ts0205 Sensor Battery"
+  },
+  "class": "sensor",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "measure_temperature"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    },
-    "dim": {
-      "set": true,
-      "get": true
-    },
-    "light_temperature": {
-      "set": true,
-      "get": true
-    },
-    "light_mode": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
+  "name": {
+    "en": "Ts0205 Sensor Battery",
+    "fr": "Ts0205 Sensor Battery"
+  },
   "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "ts0205_sensor_battery",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
+          0,
+          6
         ]
       }
     }
-  },
-  "name": {
-    "en": "Ts0205 sensor battery",
-    "fr": "Ts0205 capteur battery"
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.104Z",
-    "discussions": 7,
-    "solutions": 3,
-    "communityRating": "4.7",
-    "url": "https://community.homey.app/search?q=ts0205_sensor_battery"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.104Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ts0205_sensor_battery.html",
-    "features": [
-      "color",
-      "dim"
-    ],
-    "compatibility": "fair"
   }
 }

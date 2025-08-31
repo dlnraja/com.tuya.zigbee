@@ -1,68 +1,35 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_aqara_heater-833",
+  "title": {
+    "en": "Aqara Heater-833 Control",
+    "fr": "Contrôle Aqara Heater-833"
+  },
+  "class": "other",
   "capabilities": [
-    "onoff",
-    "dim",
-    "target_temperature"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    },
-    "dim": {
-      "set": true,
-      "get": true
-    },
-    "target_temperature": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
+  "name": {
+    "en": "Aqara Heater-833",
+    "fr": "Aqara Heater-833"
+  },
   "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "aqara_heater-833",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
+          0,
+          6
         ]
       }
     }
-  },
-  "name": {
-    "en": "Aqara heater-833",
-    "fr": "Aqara heater-833"
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.342Z",
-    "discussions": 8,
-    "solutions": 1,
-    "communityRating": "4.2",
-    "url": "https://community.homey.app/search?q=aqara_heater-833"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.342Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_heater-833.html",
-    "features": [
-      "humidity",
-      "dim"
-    ],
-    "compatibility": "fair"
   }
 }

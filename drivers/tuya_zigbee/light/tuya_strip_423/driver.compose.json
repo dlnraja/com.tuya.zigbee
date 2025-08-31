@@ -1,72 +1,35 @@
 {
-  "id": "tuya_strip_423",
-  "class": "light",
-  "name": {
-    "en": "Tuya Strip 423 (Intelligent)",
-    "fr": "Tuya Strip 423 (Intelligent)",
-    "nl": "Tuya Strip 423 (Intelligent)",
-    "ta": "Tuya Strip 423 (ஸ்மார்ட்)"
+  "id": "tuya_tuya_strip_423",
+  "title": {
+    "en": "Tuya Strip 423 Control",
+    "fr": "Contrôle Tuya Strip 423"
   },
-  "description": {
-    "en": "Intelligent Tuya Strip 423 driver with auto-discovery",
-    "fr": "Driver Tuya Strip 423 intelligent avec découverte automatique",
-    "nl": "Intelligente Tuya Strip 423 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Tuya Strip 423 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "light"
-  ],
+  "class": "other",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "dim": {
-      "min": 0,
-      "max": 100
-    },
-    "light_temperature": {
-      "min": 153,
-      "max": 500
-    }
+  "images": {
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Tuya Strip 423",
+    "fr": "Tuya Strip 423"
   },
   "zigbee": {
-    "fingerprints": [
-      {
-        "model": "tuya_strip_423_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
       }
-    ],
-    "models": [
-      "tuya_strip_423_generic"
-    ]
-  },
-  "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
-  },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.730Z",
-    "discussions": 1,
-    "solutions": 3,
-    "communityRating": "4.8",
-    "url": "https://community.homey.app/search?q=tuya_strip_423"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.730Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_strip_423.html",
-    "features": [
-      "motion",
-      "color"
-    ],
-    "compatibility": "fair"
+    }
   }
 }

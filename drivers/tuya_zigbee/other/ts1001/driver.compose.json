@@ -1,73 +1,35 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_ts1001",
+  "title": {
+    "en": "Ts1001 Control",
+    "fr": "Contrôle Ts1001"
+  },
+  "class": "other",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    },
-    "dim": {
-      "set": true,
-      "get": true
-    },
-    "light_temperature": {
-      "set": true,
-      "get": true
-    },
-    "light_mode": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
-  },
-  "icon": "assets/icon.svg",
-  "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "ts1001",
-    "endpoints": {
-      "1": {
-        "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
-        ]
-      }
-    }
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
   "name": {
     "en": "Ts1001",
     "fr": "Ts1001"
   },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:15.708Z",
-    "discussions": 3,
-    "solutions": 4,
-    "communityRating": "4.7",
-    "url": "https://community.homey.app/search?q=ts1001"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:15.708Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ts1001.html",
-    "features": [
-      "dim",
-      "color"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "fair"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

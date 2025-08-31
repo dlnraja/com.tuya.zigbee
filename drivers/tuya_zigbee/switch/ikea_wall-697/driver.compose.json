@@ -1,59 +1,35 @@
 {
-  "id": "ikea_wall-697",
-  "class": "switch",
-  "name": {
-    "en": "Ikea Wall-697 (Intelligent)",
-    "fr": "Ikea Wall-697 (Intelligent)",
-    "nl": "Ikea Wall-697 (Intelligent)",
-    "ta": "Ikea Wall-697 (ஸ்மார்ட்)"
+  "id": "tuya_ikea_wall-697",
+  "title": {
+    "en": "Ikea Wall-697 Control",
+    "fr": "Contrôle Ikea Wall-697"
   },
-  "description": {
-    "en": "Intelligent Ikea Wall-697 driver with auto-discovery",
-    "fr": "Driver Ikea Wall-697 intelligent avec découverte automatique",
-    "nl": "Intelligente Ikea Wall-697 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Ikea Wall-697 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "other",
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "ikea_wall-697_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "ikea_wall-697_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.510Z",
-    "discussions": 4,
-    "solutions": 3,
-    "communityRating": "3.5",
-    "url": "https://community.homey.app/search?q=ikea_wall-697"
+  "name": {
+    "en": "Ikea Wall-697",
+    "fr": "Ikea Wall-697"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.510Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_wall-697.html",
-    "features": [
-      "onoff"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "good"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

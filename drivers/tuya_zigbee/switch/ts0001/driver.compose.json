@@ -1,61 +1,35 @@
 {
-  "id": "ts0001",
-  "class": "switch",
-  "name": {
-    "en": "Ts0001 (Intelligent)",
-    "fr": "Ts0001 (Intelligent)",
-    "nl": "Ts0001 (Intelligent)",
-    "ta": "Ts0001 (ஸ்மார்ட்)"
+  "id": "tuya_ts0001",
+  "title": {
+    "en": "Ts0001 Control",
+    "fr": "Contrôle Ts0001"
   },
-  "description": {
-    "en": "Intelligent Ts0001 driver with auto-discovery",
-    "fr": "Driver Ts0001 intelligent avec découverte automatique",
-    "nl": "Intelligente Ts0001 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Ts0001 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "other",
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "ts0001_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "ts0001_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.522Z",
-    "discussions": 5,
-    "solutions": 1,
-    "communityRating": "4.7",
-    "url": "https://community.homey.app/search?q=ts0001"
+  "name": {
+    "en": "Ts0001",
+    "fr": "Ts0001"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.522Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ts0001.html",
-    "features": [
-      "onoff",
-      "temperature",
-      "dim"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "poor"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

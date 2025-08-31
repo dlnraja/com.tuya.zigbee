@@ -1,71 +1,35 @@
 {
-  "id": "tuya_table_775",
-  "class": "light",
-  "name": {
-    "en": "Tuya Table 775 (Intelligent)",
-    "fr": "Tuya Table 775 (Intelligent)",
-    "nl": "Tuya Table 775 (Intelligent)",
-    "ta": "Tuya Table 775 (ஸ்மார்ட்)"
+  "id": "tuya_tuya_table_775",
+  "title": {
+    "en": "Tuya Table 775 Control",
+    "fr": "Contrôle Tuya Table 775"
   },
-  "description": {
-    "en": "Intelligent Tuya Table 775 driver with auto-discovery",
-    "fr": "Driver Tuya Table 775 intelligent avec découverte automatique",
-    "nl": "Intelligente Tuya Table 775 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Tuya Table 775 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "light"
-  ],
+  "class": "other",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "dim": {
-      "min": 0,
-      "max": 100
-    },
-    "light_temperature": {
-      "min": 153,
-      "max": 500
-    }
+  "images": {
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Tuya Table 775",
+    "fr": "Tuya Table 775"
   },
   "zigbee": {
-    "fingerprints": [
-      {
-        "model": "tuya_table_775_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
       }
-    ],
-    "models": [
-      "tuya_table_775_generic"
-    ]
-  },
-  "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
-  },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.738Z",
-    "discussions": 4,
-    "solutions": 2,
-    "communityRating": "4.4",
-    "url": "https://community.homey.app/search?q=tuya_table_775"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.738Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_table_775.html",
-    "features": [
-      "dim"
-    ],
-    "compatibility": "poor"
+    }
   }
 }

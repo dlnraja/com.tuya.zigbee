@@ -1,61 +1,35 @@
 {
-  "id": "tuya_switch-549_plug",
+  "id": "tuya_tuya_switch-549_plug",
+  "title": {
+    "en": "Tuya Switch-549 Plug Control",
+    "fr": "Contrôle Tuya Switch-549 Plug"
+  },
   "class": "switch",
-  "name": {
-    "en": "Tuya Switch-549 Plug (Intelligent)",
-    "fr": "Tuya Switch-549 Plug (Intelligent)",
-    "nl": "Tuya Switch-549 Plug (Intelligent)",
-    "ta": "Tuya Switch-549 Plug (ஸ்மார்ட்)"
-  },
-  "description": {
-    "en": "Intelligent Tuya Switch-549 Plug driver with auto-discovery",
-    "fr": "Driver Tuya Switch-549 Plug intelligent avec découverte automatique",
-    "nl": "Intelligente Tuya Switch-549 Plug driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Tuya Switch-549 Plug டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "tuya_switch-549_plug_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "tuya_switch-549_plug_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.681Z",
-    "discussions": 5,
-    "solutions": 1,
-    "communityRating": "3.3",
-    "url": "https://community.homey.app/search?q=tuya_switch-549_plug"
+  "name": {
+    "en": "Tuya Switch-549 Plug",
+    "fr": "Tuya Switch-549 Plug"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.681Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_switch-549_plug.html",
-    "features": [
-      "onoff",
-      "motion",
-      "dim"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "excellent"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

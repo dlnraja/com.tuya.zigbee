@@ -1,75 +1,35 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_aqara_chime-818",
+  "title": {
+    "en": "Aqara Chime-818 Control",
+    "fr": "Contrôle Aqara Chime-818"
+  },
+  "class": "other",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    },
-    "dim": {
-      "set": true,
-      "get": true
-    },
-    "light_temperature": {
-      "set": true,
-      "get": true
-    },
-    "light_mode": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
+  "name": {
+    "en": "Aqara Chime-818",
+    "fr": "Aqara Chime-818"
+  },
   "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "aqara_chime-818",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
+          0,
+          6
         ]
       }
     }
-  },
-  "name": {
-    "en": "Aqara chime-818",
-    "fr": "Aqara chime-818"
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:14.725Z",
-    "discussions": 6,
-    "solutions": 2,
-    "communityRating": "4.3",
-    "url": "https://community.homey.app/search?q=aqara_chime-818"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:14.726Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_chime-818.html",
-    "features": [
-      "humidity",
-      "dim",
-      "temperature",
-      "color"
-    ],
-    "compatibility": "good"
   }
 }

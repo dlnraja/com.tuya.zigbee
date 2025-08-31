@@ -1,73 +1,35 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_ikea_motion-981",
+  "title": {
+    "en": "Ikea Motion-981 Control",
+    "fr": "Contrôle Ikea Motion-981"
+  },
+  "class": "other",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    },
-    "dim": {
-      "set": true,
-      "get": true
-    },
-    "light_temperature": {
-      "set": true,
-      "get": true
-    },
-    "light_mode": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
+  "name": {
+    "en": "Ikea Motion-981",
+    "fr": "Ikea Motion-981"
+  },
   "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "ikea_motion-981",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
+          0,
+          6
         ]
       }
     }
-  },
-  "name": {
-    "en": "Ikea motion-981",
-    "fr": "Ikea mouvement-981"
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:16.271Z",
-    "discussions": 8,
-    "solutions": 2,
-    "communityRating": "4.2",
-    "url": "https://community.homey.app/search?q=ikea_motion-981"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:16.271Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_motion-981.html",
-    "features": [
-      "humidity",
-      "onoff"
-    ],
-    "compatibility": "fair"
   }
 }

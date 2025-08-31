@@ -1,49 +1,35 @@
 {
-  "id": "switches-TS0001",
-  "name": {
-    "en": "switches TS0001",
-    "fr": "switches TS0001",
-    "nl": "switches TS0001",
-    "ta": "switches TS0001"
+  "id": "tuya_switches-ts0001",
+  "title": {
+    "en": "Switches-Ts0001 Control",
+    "fr": "Contrôle Switches-Ts0001"
   },
   "class": "switch",
   "capabilities": [
     "onoff"
   ],
   "images": {
-    "small": "small.png",
-    "large": "large.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Switches-Ts0001",
+    "fr": "Switches-Ts0001"
   },
   "zigbee": {
-    "manufacturerName": "_TZ3000_ltiqubue",
-    "productId": "TS0001",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          6,
-          1
-        ],
-        "bindings": [
-          0,
-          6,
-          1
+          6
         ]
       }
     }
-  },
-  "metadata": {
-    "version": "1.0.0",
-    "last_updated": "2025-08-22T18:02:06.162Z",
-    "confidence_score": 85,
-    "sources": [
-      "Tuya Developer Portal",
-      "Zigbee2MQTT",
-      "Homey Community"
-    ],
-    "type": "tuya",
-    "sdk3_optimized": true,
-    "sdk3_version": "3.8.4",
-    "optimization_date": "2025-08-23T08:22:37.780Z"
   }
 }

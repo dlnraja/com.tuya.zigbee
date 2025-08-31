@@ -1,18 +1,16 @@
 {
-  "id": "ac",
+  "id": "tuya_ac",
+  "title": {
+    "en": "Ac Control",
+    "fr": "Contrôle Ac"
+  },
   "class": "other",
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
   "name": {
     "en": "Ac",
@@ -22,26 +20,16 @@
     "manufacturerName": [
       "Tuya"
     ],
-    "modelId": [
-      "AC"
-    ]
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.118Z",
-    "discussions": 6,
-    "solutions": 5,
-    "communityRating": "4.3",
-    "url": "https://community.homey.app/search?q=ac"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.118Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ac.html",
-    "features": [
-      "temperature"
+    "productId": [
+      "TS0601"
     ],
-    "compatibility": "good"
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

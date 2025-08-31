@@ -1,52 +1,36 @@
 {
-  "id": "plugs-TS0121",
-  "name": {
-    "en": "plugs TS0121",
-    "fr": "plugs TS0121",
-    "nl": "plugs TS0121",
-    "ta": "plugs TS0121"
+  "id": "tuya_plugs-ts0121",
+  "title": {
+    "en": "Plugs-Ts0121 Control",
+    "fr": "Contrôle Plugs-Ts0121"
   },
-  "class": "switch",
+  "class": "socket",
   "capabilities": [
     "onoff",
     "measure_power"
   ],
   "images": {
-    "small": "small.png",
-    "large": "large.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Plugs-Ts0121",
+    "fr": "Plugs-Ts0121"
   },
   "zigbee": {
-    "manufacturerName": "_TZ3000_qeuvnohg",
-    "productId": "TS0121",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          1,
-          6,
-          2820
-        ],
-        "bindings": [
-          0,
-          1,
-          6,
-          2820
+          6
         ]
       }
     }
-  },
-  "metadata": {
-    "version": "1.0.0",
-    "last_updated": "2025-08-22T18:02:06.125Z",
-    "confidence_score": 85,
-    "sources": [
-      "Tuya Developer Portal",
-      "Zigbee2MQTT",
-      "Homey Community"
-    ],
-    "type": "tuya",
-    "sdk3_optimized": true,
-    "sdk3_version": "3.8.4",
-    "optimization_date": "2025-08-23T08:22:37.698Z"
   }
 }

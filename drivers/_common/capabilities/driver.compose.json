@@ -1,18 +1,16 @@
 {
-  "id": "capabilities",
+  "id": "tuya_capabilities",
+  "title": {
+    "en": "Capabilities Control",
+    "fr": "Contrôle Capabilities"
+  },
   "class": "other",
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
   "name": {
     "en": "Capabilities",
@@ -22,26 +20,16 @@
     "manufacturerName": [
       "Tuya"
     ],
-    "modelId": [
-      "CAPABILITIES"
-    ]
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:18.573Z",
-    "discussions": 7,
-    "solutions": 1,
-    "communityRating": "3.5",
-    "url": "https://community.homey.app/search?q=capabilities"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:18.573Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/capabilities.html",
-    "features": [
-      "power"
+    "productId": [
+      "TS0601"
     ],
-    "compatibility": "good"
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

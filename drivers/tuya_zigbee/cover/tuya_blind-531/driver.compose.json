@@ -1,62 +1,35 @@
 {
-  "id": "tuya_blind-531",
-  "class": "cover",
-  "name": {
-    "en": "Tuya Blind-531 (Intelligent)",
-    "fr": "Tuya Blind-531 (Intelligent)",
-    "nl": "Tuya Blind-531 (Intelligent)",
-    "ta": "Tuya Blind-531 (ஸ்மார்ட்)"
+  "id": "tuya_tuya_blind-531",
+  "title": {
+    "en": "Tuya Blind-531 Control",
+    "fr": "Contrôle Tuya Blind-531"
   },
-  "description": {
-    "en": "Intelligent Tuya Blind-531 driver with auto-discovery",
-    "fr": "Driver Tuya Blind-531 intelligent avec découverte automatique",
-    "nl": "Intelligente Tuya Blind-531 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Tuya Blind-531 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "cover"
-  ],
+  "class": "other",
   "capabilities": [
-    "windowcoverings_state",
-    "windowcoverings_set"
+    "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "tuya_blind-531_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "tuya_blind-531_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.269Z",
-    "discussions": 4,
-    "solutions": 5,
-    "communityRating": "4.0",
-    "url": "https://community.homey.app/search?q=tuya_blind-531"
+  "name": {
+    "en": "Tuya Blind-531",
+    "fr": "Tuya Blind-531"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.269Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_blind-531.html",
-    "features": [
-      "humidity",
-      "power",
-      "motion"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "good"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

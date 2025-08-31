@@ -1,60 +1,35 @@
 {
-  "id": "tuya_blind-205_cover",
+  "id": "tuya_tuya_blind-205_cover",
+  "title": {
+    "en": "Tuya Blind-205 Cover Control",
+    "fr": "Contrôle Tuya Blind-205 Cover"
+  },
   "class": "cover",
-  "name": {
-    "en": "Tuya Blind-205 Cover (Intelligent)",
-    "fr": "Tuya Blind-205 Cover (Intelligent)",
-    "nl": "Tuya Blind-205 Cover (Intelligent)",
-    "ta": "Tuya Blind-205 Cover (ஸ்மார்ட்)"
-  },
-  "description": {
-    "en": "Intelligent Tuya Blind-205 Cover driver with auto-discovery",
-    "fr": "Driver Tuya Blind-205 Cover intelligent avec découverte automatique",
-    "nl": "Intelligente Tuya Blind-205 Cover driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Tuya Blind-205 Cover டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "cover"
-  ],
   "capabilities": [
-    "windowcoverings_state",
-    "windowcoverings_set"
+    "windowcoverings_state"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "tuya_blind-205_cover_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "tuya_blind-205_cover_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.267Z",
-    "discussions": 10,
-    "solutions": 5,
-    "communityRating": "3.3",
-    "url": "https://community.homey.app/search?q=tuya_blind-205_cover"
+  "name": {
+    "en": "Tuya Blind-205 Cover",
+    "fr": "Tuya Blind-205 Cover"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.267Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_blind-205_cover.html",
-    "features": [
-      "motion"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "excellent"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

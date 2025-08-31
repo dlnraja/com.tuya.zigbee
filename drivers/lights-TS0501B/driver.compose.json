@@ -1,59 +1,36 @@
 {
-  "id": "lights-TS0501B",
-  "name": {
-    "en": "lights TS0501B",
-    "fr": "lights TS0501B",
-    "nl": "lights TS0501B",
-    "ta": "lights TS0501B"
+  "id": "tuya_lights-ts0501b",
+  "title": {
+    "en": "Lights-Ts0501B Control",
+    "fr": "Contrôle Lights-Ts0501B"
   },
   "class": "light",
   "capabilities": [
     "onoff",
-    "dim",
-    "light_temperature"
+    "dim"
   ],
   "images": {
-    "small": "small.png",
-    "large": "large.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Lights-Ts0501B",
+    "fr": "Lights-Ts0501B"
   },
   "zigbee": {
-    "manufacturerName": "_TZ3000_femsaaua",
-    "productId": "TS0501B",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          1,
-          6,
-          8,
-          768
-        ],
-        "bindings": [
-          0,
-          1,
-          6,
-          8,
-          768
+          6
         ]
       }
     }
-  },
-  "metadata": {
-    "version": "1.0.0",
-    "last_updated": "2025-08-22T18:29:22.881Z",
-    "confidence_score": 95,
-    "sources": [
-      "Tuya Developer Portal",
-      "Zigbee2MQTT",
-      "Homey Community",
-      "Home Assistant",
-      "Blakadder",
-      "Ultimate Analysis"
-    ],
-    "type": "tuya",
-    "category": "lights",
-    "sdk3_optimized": true,
-    "sdk3_version": "3.8.4",
-    "optimization_date": "2025-08-23T08:22:37.613Z"
   }
 }

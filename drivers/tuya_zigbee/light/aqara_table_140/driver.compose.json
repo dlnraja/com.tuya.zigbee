@@ -1,73 +1,35 @@
 {
-  "id": "aqara_table_140",
-  "class": "light",
-  "name": {
-    "en": "Aqara Table 140 (Intelligent)",
-    "fr": "Aqara Table 140 (Intelligent)",
-    "nl": "Aqara Table 140 (Intelligent)",
-    "ta": "Aqara Table 140 (ஸ்மார்ட்)"
+  "id": "tuya_aqara_table_140",
+  "title": {
+    "en": "Aqara Table 140 Control",
+    "fr": "Contrôle Aqara Table 140"
   },
-  "description": {
-    "en": "Intelligent Aqara Table 140 driver with auto-discovery",
-    "fr": "Driver Aqara Table 140 intelligent avec découverte automatique",
-    "nl": "Intelligente Aqara Table 140 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Aqara Table 140 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "light"
-  ],
+  "class": "other",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "dim": {
-      "min": 0,
-      "max": 100
-    },
-    "light_temperature": {
-      "min": 153,
-      "max": 500
-    }
+  "images": {
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Aqara Table 140",
+    "fr": "Aqara Table 140"
   },
   "zigbee": {
-    "fingerprints": [
-      {
-        "model": "aqara_table_140_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
       }
-    ],
-    "models": [
-      "aqara_table_140_generic"
-    ]
-  },
-  "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
-  },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.409Z",
-    "discussions": 6,
-    "solutions": 4,
-    "communityRating": "3.5",
-    "url": "https://community.homey.app/search?q=aqara_table_140"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.409Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_table_140.html",
-    "features": [
-      "temperature",
-      "power",
-      "dim"
-    ],
-    "compatibility": "good"
+    }
   }
 }

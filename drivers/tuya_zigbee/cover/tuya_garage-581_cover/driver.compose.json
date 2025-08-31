@@ -1,62 +1,35 @@
 {
-  "id": "tuya_garage-581_cover",
+  "id": "tuya_tuya_garage-581_cover",
+  "title": {
+    "en": "Tuya Garage-581 Cover Control",
+    "fr": "Contrôle Tuya Garage-581 Cover"
+  },
   "class": "cover",
-  "name": {
-    "en": "Tuya Garage-581 Cover (Intelligent)",
-    "fr": "Tuya Garage-581 Cover (Intelligent)",
-    "nl": "Tuya Garage-581 Cover (Intelligent)",
-    "ta": "Tuya Garage-581 Cover (ஸ்மார்ட்)"
-  },
-  "description": {
-    "en": "Intelligent Tuya Garage-581 Cover driver with auto-discovery",
-    "fr": "Driver Tuya Garage-581 Cover intelligent avec découverte automatique",
-    "nl": "Intelligente Tuya Garage-581 Cover driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Tuya Garage-581 Cover டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "cover"
-  ],
   "capabilities": [
-    "windowcoverings_state",
-    "windowcoverings_set"
+    "windowcoverings_state"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "tuya_garage-581_cover_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "tuya_garage-581_cover_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.287Z",
-    "discussions": 9,
-    "solutions": 4,
-    "communityRating": "4.3",
-    "url": "https://community.homey.app/search?q=tuya_garage-581_cover"
+  "name": {
+    "en": "Tuya Garage-581 Cover",
+    "fr": "Tuya Garage-581 Cover"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.287Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_garage-581_cover.html",
-    "features": [
-      "dim",
-      "onoff",
-      "humidity"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "excellent"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

@@ -1,60 +1,35 @@
 {
-  "id": "aqara_curtain-550_cover",
+  "id": "tuya_aqara_curtain-550_cover",
+  "title": {
+    "en": "Aqara Curtain-550 Cover Control",
+    "fr": "Contrôle Aqara Curtain-550 Cover"
+  },
   "class": "cover",
-  "name": {
-    "en": "Aqara Curtain-550 Cover (Intelligent)",
-    "fr": "Aqara Curtain-550 Cover (Intelligent)",
-    "nl": "Aqara Curtain-550 Cover (Intelligent)",
-    "ta": "Aqara Curtain-550 Cover (ஸ்மார்ட்)"
-  },
-  "description": {
-    "en": "Intelligent Aqara Curtain-550 Cover driver with auto-discovery",
-    "fr": "Driver Aqara Curtain-550 Cover intelligent avec découverte automatique",
-    "nl": "Intelligente Aqara Curtain-550 Cover driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Aqara Curtain-550 Cover டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "cover"
-  ],
   "capabilities": [
-    "windowcoverings_state",
-    "windowcoverings_set"
+    "windowcoverings_state"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "aqara_curtain-550_cover_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "aqara_curtain-550_cover_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.173Z",
-    "discussions": 2,
-    "solutions": 1,
-    "communityRating": "3.4",
-    "url": "https://community.homey.app/search?q=aqara_curtain-550_cover"
+  "name": {
+    "en": "Aqara Curtain-550 Cover",
+    "fr": "Aqara Curtain-550 Cover"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.173Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_curtain-550_cover.html",
-    "features": [
-      "humidity"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "excellent"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

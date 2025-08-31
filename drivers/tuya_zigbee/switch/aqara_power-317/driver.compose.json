@@ -1,62 +1,35 @@
 {
-  "id": "aqara_power-317",
-  "class": "switch",
-  "name": {
-    "en": "Aqara Power-317 (Intelligent)",
-    "fr": "Aqara Power-317 (Intelligent)",
-    "nl": "Aqara Power-317 (Intelligent)",
-    "ta": "Aqara Power-317 (ஸ்மார்ட்)"
+  "id": "tuya_aqara_power-317",
+  "title": {
+    "en": "Aqara Power-317 Control",
+    "fr": "Contrôle Aqara Power-317"
   },
-  "description": {
-    "en": "Intelligent Aqara Power-317 driver with auto-discovery",
-    "fr": "Driver Aqara Power-317 intelligent avec découverte automatique",
-    "nl": "Intelligente Aqara Power-317 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Aqara Power-317 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "other",
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "aqara_power-317_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "aqara_power-317_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.404Z",
-    "discussions": 9,
-    "solutions": 1,
-    "communityRating": "3.2",
-    "url": "https://community.homey.app/search?q=aqara_power-317"
+  "name": {
+    "en": "Aqara Power-317",
+    "fr": "Aqara Power-317"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.404Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_power-317.html",
-    "features": [
-      "color",
-      "power",
-      "temperature",
-      "onoff"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "excellent"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

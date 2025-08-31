@@ -1,59 +1,35 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_aqara_deadbolt-22_lock",
+  "title": {
+    "en": "Aqara Deadbolt-22 Lock Control",
+    "fr": "Contrôle Aqara Deadbolt-22 Lock"
+  },
+  "class": "lock",
   "capabilities": [
     "lock_state"
   ],
-  "capabilitiesOptions": {
-    "lock_state": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
+  "name": {
+    "en": "Aqara Deadbolt-22 Lock",
+    "fr": "Aqara Deadbolt-22 Lock"
+  },
   "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "aqara_deadbolt-22_lock",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
+          0,
+          6
         ]
       }
     }
-  },
-  "name": {
-    "en": "Aqara deadbolt-22 lock",
-    "fr": "Aqara deadbolt-22 lock"
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.886Z",
-    "discussions": 10,
-    "solutions": 2,
-    "communityRating": "3.4",
-    "url": "https://community.homey.app/search?q=aqara_deadbolt-22_lock"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.886Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_deadbolt-22_lock.html",
-    "features": [
-      "dim",
-      "power",
-      "humidity"
-    ],
-    "compatibility": "poor"
   }
 }

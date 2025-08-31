@@ -1,73 +1,35 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_ikea_humidity-288",
+  "title": {
+    "en": "Ikea Humidity-288 Control",
+    "fr": "Contrôle Ikea Humidity-288"
+  },
+  "class": "other",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    },
-    "dim": {
-      "set": true,
-      "get": true
-    },
-    "light_temperature": {
-      "set": true,
-      "get": true
-    },
-    "light_mode": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
+  "name": {
+    "en": "Ikea Humidity-288",
+    "fr": "Ikea Humidity-288"
+  },
   "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "ikea_humidity-288",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
+          0,
+          6
         ]
       }
     }
-  },
-  "name": {
-    "en": "Ikea humidity-288",
-    "fr": "Ikea humidité-288"
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:15.960Z",
-    "discussions": 1,
-    "solutions": 3,
-    "communityRating": "3.4",
-    "url": "https://community.homey.app/search?q=ikea_humidity-288"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:15.960Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_humidity-288.html",
-    "features": [
-      "dim",
-      "onoff"
-    ],
-    "compatibility": "poor"
   }
 }

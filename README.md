@@ -1,52 +1,226 @@
-# 🚀 Tuya Zigbee Universal - Homey App
+# 🏠 Homey Universal Tuya Zigbee App
 
-> **Universal Tuya and Zigbee devices for Homey - AI-Powered Edition with Complete Recovery**
+> **Universal Tuya Zigbee Device Support for Homey - Professional Edition**
 
-[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee/releases)
+[![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee/releases)
 [![Homey SDK](https://img.shields.io/badge/Homey%20SDK-3.0+-green.svg)](https://apps.homey.app/fr/app/com.tuya.zigbee)
-[![Drivers](https://img.shields.io/badge/drivers-24%20complets-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/tree/master/drivers)
-[![Complétude](https://img.shields.io/badge/complétude-100%25-success.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions)
-[![Mode](https://img.shields.io/badge/mode-YOLO%20Ultra-orange.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![License](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/platform-local-lightgrey.svg)](https://apps.homey.app/fr/app/com.tuya.zigbee)
-[![Status](https://img.shields.io/badge/status-production%20ready-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
----
+## 📜 Attribution
 
-## 📊 Dashboard Live
+This project is based on the original work by Johan Bentz ([JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee)) and is released under the MIT License. Special thanks to the Homey community for their contributions and feedback.
 
-🔗 **[Dashboard Interactif](https://dlnraja.github.io/com.tuya.zigbee/dashboard//)** - Statistiques en temps réel
+## 🚀 Project Status
 
----
+✅ **Stable**: Actively maintained with regular updates  
+🔧 **Supported Devices**: 300+ device IDs across 80+ drivers  
+🌍 **Community-Driven**: Enhanced with community contributions  
 
-## 🎯 Features Principales
+> **Note**: This is the lite version focused on stability and core functionality.
 
-### ✅ **Drivers Complets (24/24)**
-- **🔌 Tuya Drivers (14)** : Automation, Climate, Controllers, Covers, Generic, Lighting, Lights, Locks, Plugs, Security, Sensors, Switches, Thermostats
-- **📡 Zigbee Drivers (10)** : Automation, Covers, Dimmers, Lights, OnOff, Plugs, Security, Sensors, Switches, Thermostats
+## 📝 Overview
 
-### 🚀 **Mode YOLO Ultra**
-- **🤖 IA Enrichment** : Analyse automatique et amélioration des drivers
-- **🔄 Auto-Sync** : Synchronisation automatique entre branches
-- **📊 Dashboard Live** : Interface temps réel pour monitoring
-- **🌍 Support Multilingue** : EN, FR, NL, TA
-- **⚡ Workflows GitHub Actions** : Automatisation complète
-- **🔧 Driver Validation** : Vérification automatique de tous les drivers
+This is a comprehensive Homey app that provides support for various Tuya Zigbee devices. The app is built with a focus on stability, performance, and maintainability.
 
----
+## ✨ Features
 
-## 🛠️ Installation
+- **Wide Device Support**: Comprehensive support for Tuya Zigbee devices
+- **Modular Architecture**: Clean, maintainable code structure
+- **Automated Testing**: Comprehensive test suite with unit and integration tests
+- **CI/CD Pipeline**: Automated testing and deployment
+- **Validation Tools**: Built-in tools for validating configuration and drivers
+- **Python Microservice**: Optional Python service for advanced device analytics
 
-### Prérequis
-- Homey Pro avec SDK3
-- Node.js 18+
-- Homey CLI
+## 🚀 Getting Started
 
-### Installation Rapide
+### Prerequisites
+
+- Homey Pro with SDK 3.0+
+- Node.js 16.x or 18.x
+- Homey CLI installed globally
+- Python 3.9+ (for the Python microservice)
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/dlnraja/com.tuya.zigbee.git
+   cd com.tuya.zigbee
+   ```
+
+2. **Install Node.js dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Install Python dependencies (optional)**
+   ```bash
+   cd python_service
+   pip install -r requirements.txt
+   cd ..
+   ```
+
+4. **Start the development environment**
+   ```bash
+   # In one terminal
+   npm run dev
+   
+   # In another terminal (for Python service)
+   npm run python:start
+   ```
+
+## 🧪 Testing
+
+Run the test suite using the following commands:
+
 ```bash
-# Cloner le repository
-git clone https://github.com/dlnraja/com.tuya.zigbee.git
-cd com.tuya.zigbee
+# Run all tests
+npm test
+
+# Run unit tests only
+npm run test:unit
+
+# Run integration tests only
+npm run test:integration
+
+# Run Python tests
+cd python_service
+pytest
+```
+
+## 🛠️ Development
+
+### Project Structure
+
+```
+.
+├── drivers/           # Device drivers
+├── python_service/    # Python microservice
+├── test/              # Test files
+│   ├── unit/          # Unit tests
+│   └── integration/   # Integration tests
+├── tools/             # Validation and utility scripts
+└── app.json           # App configuration
+```
+
+### Validation Scripts
+
+We provide several validation scripts to ensure code quality:
+
+- `npm run validate:drivers` - Validate driver IDs
+- `npm run validate:app-json` - Validate app.json against schema
+- `npm run validate:zigbee` - Validate Zigbee properties
+- `npm run validate:all` - Run all validations
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Johan Bendz for the original work
+- Homey community for support and testing
+- All contributors who helped improve this project
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+## 📝 Overview
+
+This is a comprehensive Homey app that provides support for various Tuya Zigbee devices. The app is built with a focus on stability, performance, and maintainability.
+
+## ✨ Features
+
+- **Wide Device Support**: Comprehensive support for Tuya Zigbee devices
+- **Modular Architecture**: Clean, maintainable code structure
+- **Automated Testing**: Comprehensive test suite with unit and integration tests
+- **CI/CD Pipeline**: Automated testing and deployment
+- **Validation Tools**: Built-in tools for validating configuration and drivers
+- **Python Microservice**: Optional Python service for advanced device analytics
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Homey Pro with SDK 3.0+
+- Node.js 16.x or 18.x
+- Homey CLI installed globally
+- Python 3.8+ (for the Python microservice)
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/dlnraja/com.tuya.zigbee.git
+   cd com.tuya.zigbee
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Install Python dependencies (optional)**
+   ```bash
+   cd python_service
+   pip install -r requirements.txt
+   ```
+
+## 🧪 Testing
+
+Run the test suite using the following commands:
+
+```bash
+# Run unit tests
+npm run test:unit
+
+# Run integration tests
+npm run test:integration
+
+# Run all tests
+npm test
+```
+
+## 🛠️ Development
+
+### Project Structure
+
+```
+.
+├── drivers/           # Device drivers
+├── python_service/    # Python microservice
+├── test/              # Test files
+│   ├── unit/          # Unit tests
+│   └── integration/   # Integration tests
+├── tools/             # Validation and utility scripts
+└── app.json           # App configuration
+```
+
+### Validation Scripts
+
+We provide several validation scripts to ensure code quality:
+
+- `npm run validate:drivers` - Validate driver IDs
+- `npm run validate:app-json` - Validate app.json against schema
+- `npm run validate:zigbee` - Validate Zigbee properties
+- `npm run validate:all` - Run all validations
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Johan Bendz for the original work
+- Homey community for support and testing
+- All contributors who helped improve this project
 
 # Installer les dépendances
 npm install
@@ -185,6 +359,7 @@ Documentation disponible dans l'ordre de priorité :
 ### 📖 Guides
 - [Installation Guide](docs/en/installation.md)
 - [Usage Guide](docs/en/usage.md)
+- [Requested Devices](docs/REQUESTED_DEVICES.md)
 - [Troubleshooting](docs/en/troubleshooting.md)
 - [Development Guide](docs/en/development.md)
 

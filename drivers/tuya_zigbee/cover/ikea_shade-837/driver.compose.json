@@ -1,62 +1,35 @@
 {
-  "id": "ikea_shade-837",
-  "class": "cover",
-  "name": {
-    "en": "Ikea Shade-837 (Intelligent)",
-    "fr": "Ikea Shade-837 (Intelligent)",
-    "nl": "Ikea Shade-837 (Intelligent)",
-    "ta": "Ikea Shade-837 (ஸ்மார்ட்)"
+  "id": "tuya_ikea_shade-837",
+  "title": {
+    "en": "Ikea Shade-837 Control",
+    "fr": "Contrôle Ikea Shade-837"
   },
-  "description": {
-    "en": "Intelligent Ikea Shade-837 driver with auto-discovery",
-    "fr": "Driver Ikea Shade-837 intelligent avec découverte automatique",
-    "nl": "Intelligente Ikea Shade-837 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Ikea Shade-837 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "cover"
-  ],
+  "class": "other",
   "capabilities": [
-    "windowcoverings_state",
-    "windowcoverings_set"
+    "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "ikea_shade-837_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "ikea_shade-837_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.242Z",
-    "discussions": 3,
-    "solutions": 4,
-    "communityRating": "3.9",
-    "url": "https://community.homey.app/search?q=ikea_shade-837"
+  "name": {
+    "en": "Ikea Shade-837",
+    "fr": "Ikea Shade-837"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.242Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_shade-837.html",
-    "features": [
-      "dim",
-      "temperature",
-      "power"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "excellent"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

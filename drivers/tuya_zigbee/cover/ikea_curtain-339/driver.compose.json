@@ -1,60 +1,35 @@
 {
-  "id": "ikea_curtain-339",
-  "class": "cover",
-  "name": {
-    "en": "Ikea Curtain-339 (Intelligent)",
-    "fr": "Ikea Curtain-339 (Intelligent)",
-    "nl": "Ikea Curtain-339 (Intelligent)",
-    "ta": "Ikea Curtain-339 (ஸ்மார்ட்)"
+  "id": "tuya_ikea_curtain-339",
+  "title": {
+    "en": "Ikea Curtain-339 Control",
+    "fr": "Contrôle Ikea Curtain-339"
   },
-  "description": {
-    "en": "Intelligent Ikea Curtain-339 driver with auto-discovery",
-    "fr": "Driver Ikea Curtain-339 intelligent avec découverte automatique",
-    "nl": "Intelligente Ikea Curtain-339 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Ikea Curtain-339 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "cover"
-  ],
+  "class": "other",
   "capabilities": [
-    "windowcoverings_state",
-    "windowcoverings_set"
+    "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "ikea_curtain-339_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "ikea_curtain-339_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.218Z",
-    "discussions": 10,
-    "solutions": 1,
-    "communityRating": "4.0",
-    "url": "https://community.homey.app/search?q=ikea_curtain-339"
+  "name": {
+    "en": "Ikea Curtain-339",
+    "fr": "Ikea Curtain-339"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.218Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_curtain-339.html",
-    "features": [
-      "power"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "good"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

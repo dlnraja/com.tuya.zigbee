@@ -1,74 +1,35 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_aqara_motion-364",
+  "title": {
+    "en": "Aqara Motion-364 Control",
+    "fr": "Contrôle Aqara Motion-364"
+  },
+  "class": "other",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    },
-    "dim": {
-      "set": true,
-      "get": true
-    },
-    "light_temperature": {
-      "set": true,
-      "get": true
-    },
-    "light_mode": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
+  "name": {
+    "en": "Aqara Motion-364",
+    "fr": "Aqara Motion-364"
+  },
   "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "aqara_motion-364",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
+          0,
+          6
         ]
       }
     }
-  },
-  "name": {
-    "en": "Aqara motion-364",
-    "fr": "Aqara mouvement-364"
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:16.169Z",
-    "discussions": 6,
-    "solutions": 4,
-    "communityRating": "3.1",
-    "url": "https://community.homey.app/search?q=aqara_motion-364"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:16.169Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_motion-364.html",
-    "features": [
-      "temperature",
-      "power",
-      "color"
-    ],
-    "compatibility": "good"
   }
 }

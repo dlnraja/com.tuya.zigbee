@@ -1,50 +1,35 @@
 {
-  "id": "thermostats-TS0603_thermostat",
-  "name": {
-    "en": "thermostats TS0603_thermostat",
-    "fr": "thermostats TS0603_thermostat",
-    "nl": "thermostats TS0603_thermostat",
-    "ta": "thermostats TS0603_thermostat"
+  "id": "tuya_thermostats-ts0603_thermostat",
+  "title": {
+    "en": "Thermostats-Ts0603 Thermostat Control",
+    "fr": "Contrôle Thermostats-Ts0603 Thermostat"
   },
-  "class": "thermostat",
+  "class": "other",
   "capabilities": [
-    "target_temperature",
-    "measure_temperature"
+    "onoff"
   ],
   "images": {
-    "small": "small.png",
-    "large": "large.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Thermostats-Ts0603 Thermostat",
+    "fr": "Thermostats-Ts0603 Thermostat"
   },
   "zigbee": {
-    "manufacturerName": "_TZ3000_generic",
-    "productId": "TS0603_thermostat",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          1,
-          6
-        ],
-        "bindings": [
-          0,
-          1,
           6
         ]
       }
     }
-  },
-  "metadata": {
-    "version": "1.0.0",
-    "last_updated": "2025-08-22T18:02:06.353Z",
-    "confidence_score": 85,
-    "sources": [
-      "Tuya Developer Portal",
-      "Zigbee2MQTT",
-      "Homey Community"
-    ],
-    "type": "tuya",
-    "sdk3_optimized": true,
-    "sdk3_version": "3.8.4",
-    "optimization_date": "2025-08-23T08:22:37.823Z"
   }
 }

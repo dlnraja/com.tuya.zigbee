@@ -1,72 +1,35 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_generic_sensor_temperature",
+  "title": {
+    "en": "Generic Sensor Temperature Control",
+    "fr": "Contrôle Generic Sensor Temperature"
+  },
+  "class": "sensor",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "measure_temperature"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    },
-    "dim": {
-      "set": true,
-      "get": true
-    },
-    "light_temperature": {
-      "set": true,
-      "get": true
-    },
-    "light_mode": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
+  "name": {
+    "en": "Generic Sensor Temperature",
+    "fr": "Generic Sensor Temperature"
+  },
   "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "generic_sensor_temperature",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
+          0,
+          6
         ]
       }
     }
-  },
-  "name": {
-    "en": "Generic sensor temperature",
-    "fr": "Generic capteur température"
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:16.792Z",
-    "discussions": 10,
-    "solutions": 4,
-    "communityRating": "4.9",
-    "url": "https://community.homey.app/search?q=generic_sensor_temperature"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:16.792Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/generic_sensor_temperature.html",
-    "features": [
-      "humidity"
-    ],
-    "compatibility": "good"
   }
 }

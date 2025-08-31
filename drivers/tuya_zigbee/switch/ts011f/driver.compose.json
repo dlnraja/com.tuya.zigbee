@@ -1,60 +1,35 @@
 {
-  "id": "ts011f",
-  "class": "switch",
-  "name": {
-    "en": "Ts011f (Intelligent)",
-    "fr": "Ts011f (Intelligent)",
-    "nl": "Ts011f (Intelligent)",
-    "ta": "Ts011f (ஸ்மார்ட்)"
+  "id": "tuya_ts011f",
+  "title": {
+    "en": "Ts011F Control",
+    "fr": "Contrôle Ts011F"
   },
-  "description": {
-    "en": "Intelligent Ts011f driver with auto-discovery",
-    "fr": "Driver Ts011f intelligent avec découverte automatique",
-    "nl": "Intelligente Ts011f driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Ts011f டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "other",
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "ts011f_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "ts011f_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.549Z",
-    "discussions": 9,
-    "solutions": 3,
-    "communityRating": "4.9",
-    "url": "https://community.homey.app/search?q=ts011f"
+  "name": {
+    "en": "Ts011F",
+    "fr": "Ts011F"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.549Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ts011f.html",
-    "features": [
-      "motion",
-      "color"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "fair"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

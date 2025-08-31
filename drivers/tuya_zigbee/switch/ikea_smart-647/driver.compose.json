@@ -1,59 +1,35 @@
 {
-  "id": "ikea_smart-647",
-  "class": "switch",
-  "name": {
-    "en": "Ikea Smart-647 (Intelligent)",
-    "fr": "Ikea Smart-647 (Intelligent)",
-    "nl": "Ikea Smart-647 (Intelligent)",
-    "ta": "Ikea Smart-647 (ஸ்மார்ட்)"
+  "id": "tuya_ikea_smart-647",
+  "title": {
+    "en": "Ikea Smart-647 Control",
+    "fr": "Contrôle Ikea Smart-647"
   },
-  "description": {
-    "en": "Intelligent Ikea Smart-647 driver with auto-discovery",
-    "fr": "Driver Ikea Smart-647 intelligent avec découverte automatique",
-    "nl": "Intelligente Ikea Smart-647 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Ikea Smart-647 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "other",
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "ikea_smart-647_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "ikea_smart-647_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.491Z",
-    "discussions": 1,
-    "solutions": 2,
-    "communityRating": "3.7",
-    "url": "https://community.homey.app/search?q=ikea_smart-647"
+  "name": {
+    "en": "Ikea Smart-647",
+    "fr": "Ikea Smart-647"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.491Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_smart-647.html",
-    "features": [
-      "humidity"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "excellent"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

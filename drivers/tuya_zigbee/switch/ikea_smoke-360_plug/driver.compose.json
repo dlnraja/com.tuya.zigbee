@@ -1,61 +1,36 @@
 {
-  "id": "ikea_smoke-360_plug",
-  "class": "switch",
-  "name": {
-    "en": "Ikea Smoke-360 Plug (Intelligent)",
-    "fr": "Ikea Smoke-360 Plug (Intelligent)",
-    "nl": "Ikea Smoke-360 Plug (Intelligent)",
-    "ta": "Ikea Smoke-360 Plug (ஸ்மார்ட்)"
+  "id": "tuya_ikea_smoke-360_plug",
+  "title": {
+    "en": "Ikea Smoke-360 Plug Control",
+    "fr": "Contrôle Ikea Smoke-360 Plug"
   },
-  "description": {
-    "en": "Intelligent Ikea Smoke-360 Plug driver with auto-discovery",
-    "fr": "Driver Ikea Smoke-360 Plug intelligent avec découverte automatique",
-    "nl": "Intelligente Ikea Smoke-360 Plug driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Ikea Smoke-360 Plug டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_power"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "ikea_smoke-360_plug_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "ikea_smoke-360_plug_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.493Z",
-    "discussions": 10,
-    "solutions": 5,
-    "communityRating": "3.6",
-    "url": "https://community.homey.app/search?q=ikea_smoke-360_plug"
+  "name": {
+    "en": "Ikea Smoke-360 Plug",
+    "fr": "Ikea Smoke-360 Plug"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.493Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_smoke-360_plug.html",
-    "features": [
-      "dim",
-      "onoff",
-      "power"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "good"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

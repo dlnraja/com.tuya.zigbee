@@ -1,72 +1,35 @@
 {
-  "id": "ikea_floor_238",
-  "class": "light",
-  "name": {
-    "en": "Ikea Floor 238 (Intelligent)",
-    "fr": "Ikea Floor 238 (Intelligent)",
-    "nl": "Ikea Floor 238 (Intelligent)",
-    "ta": "Ikea Floor 238 (ஸ்மார்ட்)"
+  "id": "tuya_ikea_floor_238",
+  "title": {
+    "en": "Ikea Floor 238 Control",
+    "fr": "Contrôle Ikea Floor 238"
   },
-  "description": {
-    "en": "Intelligent Ikea Floor 238 driver with auto-discovery",
-    "fr": "Driver Ikea Floor 238 intelligent avec découverte automatique",
-    "nl": "Intelligente Ikea Floor 238 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Ikea Floor 238 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "light"
-  ],
+  "class": "other",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "dim": {
-      "min": 0,
-      "max": 100
-    },
-    "light_temperature": {
-      "min": 153,
-      "max": 500
-    }
+  "images": {
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Ikea Floor 238",
+    "fr": "Ikea Floor 238"
   },
   "zigbee": {
-    "fingerprints": [
-      {
-        "model": "ikea_floor_238_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
       }
-    ],
-    "models": [
-      "ikea_floor_238_generic"
-    ]
-  },
-  "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
-  },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.504Z",
-    "discussions": 8,
-    "solutions": 1,
-    "communityRating": "3.1",
-    "url": "https://community.homey.app/search?q=ikea_floor_238"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.504Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_floor_238.html",
-    "features": [
-      "onoff",
-      "power"
-    ],
-    "compatibility": "excellent"
+    }
   }
 }

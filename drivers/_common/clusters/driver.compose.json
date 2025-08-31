@@ -1,18 +1,16 @@
 {
-  "id": "clusters",
+  "id": "tuya_clusters",
+  "title": {
+    "en": "Clusters Control",
+    "fr": "Contrôle Clusters"
+  },
   "class": "other",
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
   "name": {
     "en": "Clusters",
@@ -22,27 +20,16 @@
     "manufacturerName": [
       "Tuya"
     ],
-    "modelId": [
-      "CLUSTERS"
-    ]
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:18.593Z",
-    "discussions": 4,
-    "solutions": 1,
-    "communityRating": "3.5",
-    "url": "https://community.homey.app/search?q=clusters"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:18.593Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/clusters.html",
-    "features": [
-      "humidity",
-      "temperature"
+    "productId": [
+      "TS0601"
     ],
-    "compatibility": "fair"
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

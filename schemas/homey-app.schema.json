@@ -1,0 +1,168 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Homey App Schema",
+  "type": "object",
+  "required": ["id", "version", "sdk", "name", "brandColor"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9\\.-]+$",
+      "description": "The unique identifier of the app (e.g., 'com.tuya.zigbee')"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "description": "The version of the app (semver format: x.y.z)"
+    },
+    "sdk": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "The minimum required Homey SDK version"
+    },
+    "name": {
+      "type": "object",
+      "description": "Localized app name",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "description": {
+      "type": "object",
+      "description": "Localized app description",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "brandColor": {
+      "type": "string",
+      "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "description": "Brand color in hex format (e.g., #FF0000)"
+    },
+    "drivers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "class", "images"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$",
+            "description": "Unique identifier for the driver"
+          },
+          "name": {
+            "type": "object",
+            "description": "Localized driver name",
+            "minProperties": 1,
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "class": {
+            "type": "string",
+            "enum": [
+              "light", "socket", "sensor", "heater", "thermostat", "fan", "curtain",
+              "blinds", "lock", "switch", "button", "other"
+            ],
+            "description": "The class of the device"
+          },
+          "images": {
+            "type": "object",
+            "required": ["small", "large"],
+            "properties": {
+              "small": {
+                "type": "string",
+                "description": "Path to small icon (24x24px)"
+              },
+              "large": {
+                "type": "string",
+                "description": "Path to large icon (128x128px)"
+              }
+            }
+          },
+          "zigbee": {
+            "type": "object",
+            "required": ["manufacturerName", "modelId"],
+            "properties": {
+              "manufacturerName": {
+                "type": "array",
+                "items": {"type": "string"},
+                "minItems": 1,
+                "description": "Zigbee manufacturer names"
+              },
+              "modelId": {
+                "type": "array",
+                "items": {"type": "string"},
+                "minItems": 1,
+                "description": "Zigbee model IDs"
+              },
+              "productId": {
+                "type": "array",
+                "items": {"type": "string"},
+                "description": "Zigbee product IDs (optional)"
+              }
+            }
+          },
+          "capabilities": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "List of supported capabilities"
+          },
+          "capabilitiesOptions": {
+            "type": "object",
+            "description": "Options for capabilities"
+          },
+          "settings": {
+            "type": "array",
+            "items": {"type": "object"},
+            "description": "Driver settings"
+          }
+        }
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "App dependencies"
+    },
+    "permissions": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Required permissions"
+    },
+    "homeyCommunityTopicId": {
+      "type": "integer",
+      "description": "Homey Community topic ID"
+    },
+    "source": {
+      "type": "string",
+      "description": "Source code URL"
+    },
+    "homepage": {
+      "type": "string",
+      "format": "uri",
+      "description": "Project homepage"
+    },
+    "support": {
+      "type": "string",
+      "format": "uri",
+      "description": "Support URL"
+    },
+    "authors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": {"type": "string"},
+          "email": {"type": "string", "format": "email"},
+          "homepage": {"type": "string", "format": "uri"}
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

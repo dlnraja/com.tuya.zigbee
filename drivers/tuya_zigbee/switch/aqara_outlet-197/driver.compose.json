@@ -1,62 +1,35 @@
 {
-  "id": "aqara_outlet-197",
-  "class": "switch",
-  "name": {
-    "en": "Aqara Outlet-197 (Intelligent)",
-    "fr": "Aqara Outlet-197 (Intelligent)",
-    "nl": "Aqara Outlet-197 (Intelligent)",
-    "ta": "Aqara Outlet-197 (ஸ்மார்ட்)"
+  "id": "tuya_aqara_outlet-197",
+  "title": {
+    "en": "Aqara Outlet-197 Control",
+    "fr": "Contrôle Aqara Outlet-197"
   },
-  "description": {
-    "en": "Intelligent Aqara Outlet-197 driver with auto-discovery",
-    "fr": "Driver Aqara Outlet-197 intelligent avec découverte automatique",
-    "nl": "Intelligente Aqara Outlet-197 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Aqara Outlet-197 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "other",
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "aqara_outlet-197_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "aqara_outlet-197_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.399Z",
-    "discussions": 1,
-    "solutions": 5,
-    "communityRating": "3.5",
-    "url": "https://community.homey.app/search?q=aqara_outlet-197"
+  "name": {
+    "en": "Aqara Outlet-197",
+    "fr": "Aqara Outlet-197"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.399Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_outlet-197.html",
-    "features": [
-      "humidity",
-      "color",
-      "power",
-      "temperature"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "fair"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

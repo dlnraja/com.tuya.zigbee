@@ -1,60 +1,35 @@
 {
-  "id": "aqara_shade-549",
-  "class": "cover",
-  "name": {
-    "en": "Aqara Shade-549 (Intelligent)",
-    "fr": "Aqara Shade-549 (Intelligent)",
-    "nl": "Aqara Shade-549 (Intelligent)",
-    "ta": "Aqara Shade-549 (ஸ்மார்ட்)"
+  "id": "tuya_aqara_shade-549",
+  "title": {
+    "en": "Aqara Shade-549 Control",
+    "fr": "Contrôle Aqara Shade-549"
   },
-  "description": {
-    "en": "Intelligent Aqara Shade-549 driver with auto-discovery",
-    "fr": "Driver Aqara Shade-549 intelligent avec découverte automatique",
-    "nl": "Intelligente Aqara Shade-549 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Aqara Shade-549 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "cover"
-  ],
+  "class": "other",
   "capabilities": [
-    "windowcoverings_state",
-    "windowcoverings_set"
+    "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "aqara_shade-549_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "aqara_shade-549_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.192Z",
-    "discussions": 2,
-    "solutions": 3,
-    "communityRating": "4.1",
-    "url": "https://community.homey.app/search?q=aqara_shade-549"
+  "name": {
+    "en": "Aqara Shade-549",
+    "fr": "Aqara Shade-549"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.192Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_shade-549.html",
-    "features": [
-      "motion"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "excellent"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

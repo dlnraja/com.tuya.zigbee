@@ -1,49 +1,36 @@
 {
-  "id": "light",
-  "class": "other",
-  "capabilities": [
-    "onoff"
-  ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    }
+  "id": "tuya_light",
+  "title": {
+    "en": "Light Control",
+    "fr": "Contrôle Light"
   },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
   "name": {
     "en": "Light",
-    "fr": "lampe"
+    "fr": "Light"
   },
   "zigbee": {
     "manufacturerName": [
       "Tuya"
     ],
-    "modelId": [
-      "LIGHT"
-    ]
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.372Z",
-    "discussions": 4,
-    "solutions": 3,
-    "communityRating": "3.4",
-    "url": "https://community.homey.app/search?q=light"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.372Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/light.html",
-    "features": [
-      "motion",
-      "temperature",
-      "dim"
+    "productId": [
+      "TS0601"
     ],
-    "compatibility": "poor"
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

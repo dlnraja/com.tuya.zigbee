@@ -1,81 +1,36 @@
 {
-  "id": "smart_plug_ts0001",
-  "name": {
-    "en": "Tuya Smart Plug TS0001",
-    "fr": "Prise intelligente Tuya TS0001"
+  "id": "tuya_smart_plug_ts0001",
+  "title": {
+    "en": "Smart Plug Ts0001 Control",
+    "fr": "Contrôle Smart Plug Ts0001"
   },
   "class": "socket",
   "capabilities": [
     "onoff",
-    "measure_power",
-    "meter_power"
+    "measure_power"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "title": {
-        "en": "Plug State",
-        "fr": "État de la prise"
-      }
-    },
-    "measure_power": {
-      "title": {
-        "en": "Power Consumption",
-        "fr": "Consommation électrique"
-      },
-      "units": "W"
-    },
-    "meter_power": {
-      "title": {
-        "en": "Total Energy",
-        "fr": "Énergie totale"
-      },
-      "units": "kWh"
-    }
+  "images": {
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Smart Plug Ts0001",
+    "fr": "Smart Plug Ts0001"
   },
   "zigbee": {
     "manufacturerName": [
       "Tuya"
     ],
-    "modelId": [
-      "TS0001"
-    ],
     "productId": [
-      "TS0001"
-    ]
-  },
-  "tuya_dps": {
-    "1": {
-      "name": "Switch",
-      "type": "bool",
-      "capability": "onoff"
-    },
-    "2": {
-      "name": "Power",
-      "type": "value",
-      "capability": "measure_power"
-    },
-    "3": {
-      "name": "Energy",
-      "type": "value",
-      "capability": "meter_power"
-    }
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:15.744Z",
-    "discussions": 9,
-    "solutions": 5,
-    "communityRating": "3.2",
-    "url": "https://community.homey.app/search?q=smart_plug_ts0001"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:15.744Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/smart_plug_ts0001.html",
-    "features": [
-      "temperature"
+      "TS0601"
     ],
-    "compatibility": "good"
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }
