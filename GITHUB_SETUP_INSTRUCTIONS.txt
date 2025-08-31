@@ -1,0 +1,32 @@
+# GitHub Repository Setup Instructions
+
+## 1. Create a new repository on GitHub
+   - Go to: https://github.com/new
+   - Repository name: tuya_repair
+   - Description: "Universal Tuya Zigbee Device Support for Homey"
+   - Choose "Public" or "Private" as needed
+   - DO NOT initialize with README, .gitignore, or license
+   - Click "Create repository"
+
+## 2. Run the setup script
+   - Double-click on `push-to-github.bat`
+   - Follow the on-screen instructions
+   - When prompted, enter your GitHub repository URL (e.g., https://github.com/dlnraja/tuya_repair.git)
+
+## 3. Verify the push
+   - Go to your GitHub repository page
+   - Verify that all files have been uploaded
+   - Check that the README.md is properly displayed
+
+## 4. Next Steps
+   - Set up GitHub Actions for CI/CD
+   - Configure code quality tools
+   - Add collaborators if needed
+
+## Troubleshooting
+- If you get authentication errors, you may need to set up a Personal Access Token:
+  1. Go to: https://github.com/settings/tokens
+  2. Generate a new token with 'repo' scope
+  3. Use the token as your password when pushing
+
+For any issues, please refer to the documentation or open an issue on GitHub.
