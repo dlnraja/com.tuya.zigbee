@@ -1,47 +1,35 @@
 {
-  "id": "sensor-smoke",
-  "class": "other",
-  "capabilities": [
-    "onoff"
-  ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    }
+  "id": "tuya_sensor-smoke",
+  "title": {
+    "en": "Sensor-Smoke Control",
+    "fr": "Contrôle Sensor-Smoke"
   },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature"
+  ],
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
   "name": {
-    "en": "Sensor-smoke",
-    "fr": "capteur-smoke"
+    "en": "Sensor-Smoke",
+    "fr": "Sensor-Smoke"
   },
   "zigbee": {
     "manufacturerName": [
       "Tuya"
     ],
-    "modelId": [
-      "SENSOR-SMOKE"
-    ]
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:16.342Z",
-    "discussions": 3,
-    "solutions": 4,
-    "communityRating": "3.6",
-    "url": "https://community.homey.app/search?q=sensor-smoke"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:16.342Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/sensor-smoke.html",
-    "features": [
-      "dim"
+    "productId": [
+      "TS0601"
     ],
-    "compatibility": "fair"
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

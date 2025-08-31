@@ -1,51 +1,36 @@
 {
-  "id": "lights-TS0601_switch",
-  "name": {
-    "en": "lights TS0601_switch",
-    "fr": "lights TS0601_switch",
-    "nl": "lights TS0601_switch",
-    "ta": "lights TS0601_switch"
+  "id": "tuya_lights-ts0601_switch",
+  "title": {
+    "en": "Lights-Ts0601 Switch Control",
+    "fr": "Contrôle Lights-Ts0601 Switch"
   },
   "class": "light",
   "capabilities": [
     "onoff",
-    "dim",
-    "light_temperature"
+    "dim"
   ],
   "images": {
-    "small": "small.png",
-    "large": "large.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Lights-Ts0601 Switch",
+    "fr": "Lights-Ts0601 Switch"
   },
   "zigbee": {
-    "manufacturerName": "_TZ3000_generic",
-    "productId": "TS0601_switch",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          1,
-          6
-        ],
-        "bindings": [
-          0,
-          1,
           6
         ]
       }
     }
-  },
-  "metadata": {
-    "version": "1.0.0",
-    "last_updated": "2025-08-22T18:02:06.337Z",
-    "confidence_score": 85,
-    "sources": [
-      "Tuya Developer Portal",
-      "Zigbee2MQTT",
-      "Homey Community"
-    ],
-    "type": "tuya",
-    "sdk3_optimized": true,
-    "sdk3_version": "3.8.4",
-    "optimization_date": "2025-08-23T08:22:37.620Z"
   }
 }

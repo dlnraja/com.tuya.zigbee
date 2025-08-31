@@ -1,54 +1,35 @@
 {
-  "id": "sensors-TS0201",
-  "name": {
-    "en": "sensors TS0201",
-    "fr": "sensors TS0201",
-    "nl": "sensors TS0201",
-    "ta": "sensors TS0201"
+  "id": "tuya_sensors-ts0201",
+  "title": {
+    "en": "Sensors-Ts0201 Control",
+    "fr": "Contrôle Sensors-Ts0201"
   },
   "class": "sensor",
   "capabilities": [
-    "measure_temperature",
-    "measure_humidity"
+    "measure_temperature"
   ],
   "images": {
-    "small": "small.png",
-    "large": "large.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Sensors-Ts0201",
+    "fr": "Sensors-Ts0201"
   },
   "zigbee": {
-    "manufacturerName": "_TZ3000_femsaaua",
-    "productId": "TS0201",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          1,
-          1026,
-          1029,
-          1030
-        ],
-        "bindings": [
-          0,
-          1,
-          1026,
-          1029,
-          1030
+          6
         ]
       }
     }
-  },
-  "metadata": {
-    "version": "1.0.0",
-    "last_updated": "2025-08-22T18:02:06.231Z",
-    "confidence_score": 85,
-    "sources": [
-      "Tuya Developer Portal",
-      "Zigbee2MQTT",
-      "Homey Community"
-    ],
-    "type": "tuya",
-    "sdk3_optimized": true,
-    "sdk3_version": "3.8.4",
-    "optimization_date": "2025-08-23T08:22:37.730Z"
   }
 }

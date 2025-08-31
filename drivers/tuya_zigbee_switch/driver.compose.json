@@ -1,0 +1,111 @@
+{
+  "id": "tuya_zigbee_switch",
+  "name": {
+    "en": "Tuya Zigbee Switch",
+    "fr": "Interrupteur Tuya Zigbee",
+    "nl": "Tuya Zigbee Schakelaar"
+  },
+  "icon": "/drivers/tuya_zigbee_switch/assets/icon.svg",
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "On/Off",
+        "fr": "Marche/Arrêt",
+        "nl": "Aan/Uit"
+      }
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij"
+      },
+      "type": "number",
+      "decimals": 0,
+      "units": "%"
+    }
+  },
+  "images": {
+    "large": "/drivers/tuya_zigbee_switch/assets/images/large.png",
+    "small": "/drivers/tuya_zigbee_switch/assets/images/small.png"
+  },
+  "settings": [
+    {
+      "id": "poll_interval",
+      "type": "number",
+      "value": 60,
+      "label": {
+        "en": "Polling interval (seconds)",
+        "fr": "Intervalle d'interrogation (secondes)",
+        "nl": "Polling interval (seconden)"
+      },
+      "hint": {
+        "en": "How often to check device status (60-3600 seconds)",
+        "fr": "Fréquence de vérification de l'état de l'appareil (60-3600 secondes)",
+        "nl": "Hoe vaak het apparaat moet worden gecontroleerd (60-3600 seconden)"
+      },
+      "attr": {
+        "min": 60,
+        "max": 3600
+      }
+    },
+    {
+      "id": "invert_switch",
+      "type": "boolean",
+      "value": false,
+      "label": {
+        "en": "Invert switch",
+        "fr": "Inverser la commande",
+        "nl": "Schakelaar omkeren"
+      },
+      "hint": {
+        "en": "Invert the switch behavior (ON becomes OFF and vice versa)",
+        "fr": "Inverser le comportement du commutateur (ON devient OFF et vice versa)",
+        "nl": "Keer het schakelgedrag om (AAN wordt UIT en omgekeerd)"
+      }
+    }
+  ],
+  "pair": [
+    {
+      "id": "start",
+      "title": {
+        "en": "Add Device",
+        "fr": "Ajouter un appareil",
+        "nl": "Apparaat toevoegen"
+      },
+      "next": "list_devices"
+    },
+    {
+      "id": "list_devices",
+      "title": {
+        "en": "Searching...",
+        "fr": "Recherche...",
+        "nl": "Zoeken..."
+      },
+      "next": "add_devices"
+    },
+    {
+      "id": "add_devices",
+      "title": {
+        "en": "Add Devices",
+        "fr": "Ajouter des appareils",
+        "nl": "Apparaten toevoegen"
+      },
+      "next": "done"
+    },
+    {
+      "id": "done",
+      "title": {
+        "en": "Done",
+        "fr": "Terminé",
+        "nl": "Voltooid"
+      }
+    }
+  ]
+}

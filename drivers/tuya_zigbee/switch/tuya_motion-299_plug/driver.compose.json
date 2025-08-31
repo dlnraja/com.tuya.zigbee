@@ -1,62 +1,36 @@
 {
-  "id": "tuya_motion-299_plug",
-  "class": "switch",
-  "name": {
-    "en": "Tuya Motion-299 Plug (Intelligent)",
-    "fr": "Tuya Motion-299 Plug (Intelligent)",
-    "nl": "Tuya Motion-299 Plug (Intelligent)",
-    "ta": "Tuya Motion-299 Plug (ஸ்மார்ட்)"
+  "id": "tuya_tuya_motion-299_plug",
+  "title": {
+    "en": "Tuya Motion-299 Plug Control",
+    "fr": "Contrôle Tuya Motion-299 Plug"
   },
-  "description": {
-    "en": "Intelligent Tuya Motion-299 Plug driver with auto-discovery",
-    "fr": "Driver Tuya Motion-299 Plug intelligent avec découverte automatique",
-    "nl": "Intelligente Tuya Motion-299 Plug driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Tuya Motion-299 Plug டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_power"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "tuya_motion-299_plug_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "tuya_motion-299_plug_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.647Z",
-    "discussions": 6,
-    "solutions": 1,
-    "communityRating": "4.6",
-    "url": "https://community.homey.app/search?q=tuya_motion-299_plug"
+  "name": {
+    "en": "Tuya Motion-299 Plug",
+    "fr": "Tuya Motion-299 Plug"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.647Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_motion-299_plug.html",
-    "features": [
-      "motion",
-      "temperature",
-      "humidity",
-      "power"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "fair"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

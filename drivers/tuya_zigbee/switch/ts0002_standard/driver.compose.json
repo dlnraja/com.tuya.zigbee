@@ -1,61 +1,35 @@
 {
-  "id": "ts0002_standard",
-  "class": "switch",
-  "name": {
-    "en": "Ts0002 Standard (Intelligent)",
-    "fr": "Ts0002 Standard (Intelligent)",
-    "nl": "Ts0002 Standard (Intelligent)",
-    "ta": "Ts0002 Standard (ஸ்மார்ட்)"
+  "id": "tuya_ts0002_standard",
+  "title": {
+    "en": "Ts0002 Standard Control",
+    "fr": "Contrôle Ts0002 Standard"
   },
-  "description": {
-    "en": "Intelligent Ts0002 Standard driver with auto-discovery",
-    "fr": "Driver Ts0002 Standard intelligent avec découverte automatique",
-    "nl": "Intelligente Ts0002 Standard driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Ts0002 Standard டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "other",
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "ts0002_standard_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "ts0002_standard_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.534Z",
-    "discussions": 1,
-    "solutions": 5,
-    "communityRating": "3.1",
-    "url": "https://community.homey.app/search?q=ts0002_standard"
+  "name": {
+    "en": "Ts0002 Standard",
+    "fr": "Ts0002 Standard"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.534Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ts0002_standard.html",
-    "features": [
-      "humidity",
-      "onoff",
-      "power"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "poor"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

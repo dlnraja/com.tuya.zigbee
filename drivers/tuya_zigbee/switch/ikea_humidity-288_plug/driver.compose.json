@@ -1,59 +1,36 @@
 {
-  "id": "ikea_humidity-288_plug",
-  "class": "switch",
-  "name": {
-    "en": "Ikea Humidity-288 Plug (Intelligent)",
-    "fr": "Ikea Humidity-288 Plug (Intelligent)",
-    "nl": "Ikea Humidity-288 Plug (Intelligent)",
-    "ta": "Ikea Humidity-288 Plug (ஸ்மார்ட்)"
+  "id": "tuya_ikea_humidity-288_plug",
+  "title": {
+    "en": "Ikea Humidity-288 Plug Control",
+    "fr": "Contrôle Ikea Humidity-288 Plug"
   },
-  "description": {
-    "en": "Intelligent Ikea Humidity-288 Plug driver with auto-discovery",
-    "fr": "Driver Ikea Humidity-288 Plug intelligent avec découverte automatique",
-    "nl": "Intelligente Ikea Humidity-288 Plug driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Ikea Humidity-288 Plug டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_power"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "ikea_humidity-288_plug_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "ikea_humidity-288_plug_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.472Z",
-    "discussions": 1,
-    "solutions": 1,
-    "communityRating": "4.8",
-    "url": "https://community.homey.app/search?q=ikea_humidity-288_plug"
+  "name": {
+    "en": "Ikea Humidity-288 Plug",
+    "fr": "Ikea Humidity-288 Plug"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.472Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_humidity-288_plug.html",
-    "features": [
-      "power"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "good"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

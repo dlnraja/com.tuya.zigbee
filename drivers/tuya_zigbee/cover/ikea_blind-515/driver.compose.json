@@ -1,60 +1,35 @@
 {
-  "id": "ikea_blind-515",
-  "class": "cover",
-  "name": {
-    "en": "Ikea Blind-515 (Intelligent)",
-    "fr": "Ikea Blind-515 (Intelligent)",
-    "nl": "Ikea Blind-515 (Intelligent)",
-    "ta": "Ikea Blind-515 (ஸ்மார்ட்)"
+  "id": "tuya_ikea_blind-515",
+  "title": {
+    "en": "Ikea Blind-515 Control",
+    "fr": "Contrôle Ikea Blind-515"
   },
-  "description": {
-    "en": "Intelligent Ikea Blind-515 driver with auto-discovery",
-    "fr": "Driver Ikea Blind-515 intelligent avec découverte automatique",
-    "nl": "Intelligente Ikea Blind-515 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Ikea Blind-515 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "cover"
-  ],
+  "class": "other",
   "capabilities": [
-    "windowcoverings_state",
-    "windowcoverings_set"
+    "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "ikea_blind-515_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "ikea_blind-515_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.207Z",
-    "discussions": 4,
-    "solutions": 5,
-    "communityRating": "3.5",
-    "url": "https://community.homey.app/search?q=ikea_blind-515"
+  "name": {
+    "en": "Ikea Blind-515",
+    "fr": "Ikea Blind-515"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.207Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_blind-515.html",
-    "features": [
-      "power"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "good"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

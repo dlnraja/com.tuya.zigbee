@@ -1,72 +1,35 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_radar-24g_sensor_battery_presence",
+  "title": {
+    "en": "Radar-24G Sensor Battery Presence Control",
+    "fr": "Contrôle Radar-24G Sensor Battery Presence"
+  },
+  "class": "sensor",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "measure_temperature"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    },
-    "dim": {
-      "set": true,
-      "get": true
-    },
-    "light_temperature": {
-      "set": true,
-      "get": true
-    },
-    "light_mode": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
+  "name": {
+    "en": "Radar-24G Sensor Battery Presence",
+    "fr": "Radar-24G Sensor Battery Presence"
+  },
   "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "radar-24g_sensor_battery_presence",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
+          0,
+          6
         ]
       }
     }
-  },
-  "name": {
-    "en": "Radar-24g sensor battery presence",
-    "fr": "Radar-24g capteur battery presence"
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:16.287Z",
-    "discussions": 4,
-    "solutions": 4,
-    "communityRating": "5.0",
-    "url": "https://community.homey.app/search?q=radar-24g_sensor_battery_presence"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:16.287Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/radar-24g_sensor_battery_presence.html",
-    "features": [
-      "motion"
-    ],
-    "compatibility": "poor"
   }
 }

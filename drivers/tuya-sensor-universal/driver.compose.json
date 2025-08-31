@@ -1,89 +1,35 @@
 {
-  "id": "tuya-sensor-universal",
-  "name": {
-    "en": "Capteur Tuya universel multi-fonctions",
-    "fr": "Capteur Tuya universel multi-fonctions",
-    "nl": "Capteur Tuya universel multi-fonctions",
-    "ta": "Capteur Tuya universel multi-fonctions"
+  "id": "tuya_tuya-sensor-universal",
+  "title": {
+    "en": "Tuya-Sensor-Universal Control",
+    "fr": "Contrôle Tuya-Sensor-Universal"
   },
   "class": "sensor",
   "capabilities": [
-    "measure_temperature",
-    "measure_humidity",
-    "measure_presence",
-    "alarm_contact",
-    "alarm_battery",
-    "measure_pressure",
-    "measure_co2",
-    "measure_tvoc",
-    "measure_pm25",
-    "measure_noise"
+    "measure_temperature"
   ],
   "images": {
-    "small": "small.png",
-    "large": "large.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Tuya-Sensor-Universal",
+    "fr": "Tuya-Sensor-Universal"
   },
   "zigbee": {
-    "manufacturerName": "_TZ3000_femsaaua",
-    "productId": "TS0201",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          1,
-          1026,
-          1029,
-          1030
-        ],
-        "bindings": [
-          0,
-          1,
-          1026,
-          1029,
-          1030
+          6
         ]
       }
     }
-  },
-  "metadata": {
-    "version": "1.1.0",
-    "last_updated": "2025-08-22",
-    "confidence_score": 95,
-    "sources": [
-      "Zigbee2MQTT",
-      "Blakadder Database",
-      "Homey Community",
-      "Tuya Developer Portal"
-    ],
-    "advanced_features": [
-      "multi_sensor",
-      "battery_monitoring",
-      "presence_detection",
-      "environmental_monitoring"
-    ],
-    "tested_devices": [
-      "TS0201_sensor",
-      "TS0202_sensor"
-    ],
-    "zigbee_clusters": [
-      "genBasic",
-      "genPowerCfg",
-      "genBasic",
-      "genBasic"
-    ],
-    "sdk3_optimized": true,
-    "sdk3_version": "3.8.4",
-    "optimization_date": "2025-08-23T08:22:37.875Z"
-  },
-  "capabilitiesOptions": {
-    "measure_temperature": {
-      "approximated": true
-    }
-  },
-  "flowCards": [
-    "temperature_alert",
-    "humidity_alert",
-    "presence_detected",
-    "contact_alert"
-  ]
+  }
 }

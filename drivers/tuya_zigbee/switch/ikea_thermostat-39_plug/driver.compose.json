@@ -1,60 +1,36 @@
 {
-  "id": "ikea_thermostat-39_plug",
-  "class": "switch",
-  "name": {
-    "en": "Ikea Thermostat-39 Plug (Intelligent)",
-    "fr": "Ikea Thermostat-39 Plug (Intelligent)",
-    "nl": "Ikea Thermostat-39 Plug (Intelligent)",
-    "ta": "Ikea Thermostat-39 Plug (ஸ்மார்ட்)"
+  "id": "tuya_ikea_thermostat-39_plug",
+  "title": {
+    "en": "Ikea Thermostat-39 Plug Control",
+    "fr": "Contrôle Ikea Thermostat-39 Plug"
   },
-  "description": {
-    "en": "Intelligent Ikea Thermostat-39 Plug driver with auto-discovery",
-    "fr": "Driver Ikea Thermostat-39 Plug intelligent avec découverte automatique",
-    "nl": "Intelligente Ikea Thermostat-39 Plug driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Ikea Thermostat-39 Plug டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_power"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "ikea_thermostat-39_plug_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "ikea_thermostat-39_plug_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.508Z",
-    "discussions": 3,
-    "solutions": 4,
-    "communityRating": "3.1",
-    "url": "https://community.homey.app/search?q=ikea_thermostat-39_plug"
+  "name": {
+    "en": "Ikea Thermostat-39 Plug",
+    "fr": "Ikea Thermostat-39 Plug"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.508Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_thermostat-39_plug.html",
-    "features": [
-      "power",
-      "onoff"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "poor"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

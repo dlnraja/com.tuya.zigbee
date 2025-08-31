@@ -1,62 +1,35 @@
 {
-  "id": "ikea_garage-65_cover",
+  "id": "tuya_ikea_garage-65_cover",
+  "title": {
+    "en": "Ikea Garage-65 Cover Control",
+    "fr": "Contrôle Ikea Garage-65 Cover"
+  },
   "class": "cover",
-  "name": {
-    "en": "Ikea Garage-65 Cover (Intelligent)",
-    "fr": "Ikea Garage-65 Cover (Intelligent)",
-    "nl": "Ikea Garage-65 Cover (Intelligent)",
-    "ta": "Ikea Garage-65 Cover (ஸ்மார்ட்)"
-  },
-  "description": {
-    "en": "Intelligent Ikea Garage-65 Cover driver with auto-discovery",
-    "fr": "Driver Ikea Garage-65 Cover intelligent avec découverte automatique",
-    "nl": "Intelligente Ikea Garage-65 Cover driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Ikea Garage-65 Cover டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "cover"
-  ],
   "capabilities": [
-    "windowcoverings_state",
-    "windowcoverings_set"
+    "windowcoverings_state"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "ikea_garage-65_cover_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "ikea_garage-65_cover_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.237Z",
-    "discussions": 7,
-    "solutions": 4,
-    "communityRating": "4.7",
-    "url": "https://community.homey.app/search?q=ikea_garage-65_cover"
+  "name": {
+    "en": "Ikea Garage-65 Cover",
+    "fr": "Ikea Garage-65 Cover"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.237Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_garage-65_cover.html",
-    "features": [
-      "power",
-      "motion",
-      "dim"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "good"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

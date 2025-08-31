@@ -1,61 +1,35 @@
 {
-  "id": "ts130f_standard",
-  "class": "cover",
-  "name": {
-    "en": "Ts130f Standard (Intelligent)",
-    "fr": "Ts130f Standard (Intelligent)",
-    "nl": "Ts130f Standard (Intelligent)",
-    "ta": "Ts130f Standard (ஸ்மார்ட்)"
+  "id": "tuya_ts130f_standard",
+  "title": {
+    "en": "Ts130F Standard Control",
+    "fr": "Contrôle Ts130F Standard"
   },
-  "description": {
-    "en": "Intelligent Ts130f Standard driver with auto-discovery",
-    "fr": "Driver Ts130f Standard intelligent avec découverte automatique",
-    "nl": "Intelligente Ts130f Standard driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Ts130f Standard டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "cover"
-  ],
+  "class": "other",
   "capabilities": [
-    "windowcoverings_state",
-    "windowcoverings_set"
+    "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "ts130f_standard_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "ts130f_standard_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.258Z",
-    "discussions": 4,
-    "solutions": 1,
-    "communityRating": "4.9",
-    "url": "https://community.homey.app/search?q=ts130f_standard"
+  "name": {
+    "en": "Ts130F Standard",
+    "fr": "Ts130F Standard"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.259Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ts130f_standard.html",
-    "features": [
-      "power",
-      "motion"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "poor"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

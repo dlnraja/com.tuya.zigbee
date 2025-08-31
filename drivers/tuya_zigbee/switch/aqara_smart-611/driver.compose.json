@@ -1,61 +1,35 @@
 {
-  "id": "aqara_smart-611",
-  "class": "switch",
-  "name": {
-    "en": "Aqara Smart-611 (Intelligent)",
-    "fr": "Aqara Smart-611 (Intelligent)",
-    "nl": "Aqara Smart-611 (Intelligent)",
-    "ta": "Aqara Smart-611 (ஸ்மார்ட்)"
+  "id": "tuya_aqara_smart-611",
+  "title": {
+    "en": "Aqara Smart-611 Control",
+    "fr": "Contrôle Aqara Smart-611"
   },
-  "description": {
-    "en": "Intelligent Aqara Smart-611 driver with auto-discovery",
-    "fr": "Driver Aqara Smart-611 intelligent avec découverte automatique",
-    "nl": "Intelligente Aqara Smart-611 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Aqara Smart-611 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "other",
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "aqara_smart-611_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "aqara_smart-611_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.407Z",
-    "discussions": 8,
-    "solutions": 2,
-    "communityRating": "4.8",
-    "url": "https://community.homey.app/search?q=aqara_smart-611"
+  "name": {
+    "en": "Aqara Smart-611",
+    "fr": "Aqara Smart-611"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.407Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_smart-611.html",
-    "features": [
-      "humidity",
-      "temperature",
-      "motion"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "fair"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

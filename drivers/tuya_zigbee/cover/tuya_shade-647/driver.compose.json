@@ -1,61 +1,35 @@
 {
-  "id": "tuya_shade-647",
-  "class": "cover",
-  "name": {
-    "en": "Tuya Shade-647 (Intelligent)",
-    "fr": "Tuya Shade-647 (Intelligent)",
-    "nl": "Tuya Shade-647 (Intelligent)",
-    "ta": "Tuya Shade-647 (ஸ்மார்ட்)"
+  "id": "tuya_tuya_shade-647",
+  "title": {
+    "en": "Tuya Shade-647 Control",
+    "fr": "Contrôle Tuya Shade-647"
   },
-  "description": {
-    "en": "Intelligent Tuya Shade-647 driver with auto-discovery",
-    "fr": "Driver Tuya Shade-647 intelligent avec découverte automatique",
-    "nl": "Intelligente Tuya Shade-647 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Tuya Shade-647 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "cover"
-  ],
+  "class": "other",
   "capabilities": [
-    "windowcoverings_state",
-    "windowcoverings_set"
+    "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "tuya_shade-647_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "tuya_shade-647_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.293Z",
-    "discussions": 5,
-    "solutions": 1,
-    "communityRating": "3.4",
-    "url": "https://community.homey.app/search?q=tuya_shade-647"
+  "name": {
+    "en": "Tuya Shade-647",
+    "fr": "Tuya Shade-647"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.293Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_shade-647.html",
-    "features": [
-      "color",
-      "power"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "good"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

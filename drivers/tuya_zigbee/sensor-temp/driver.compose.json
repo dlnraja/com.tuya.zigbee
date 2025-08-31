@@ -1,48 +1,35 @@
 {
-  "id": "sensor-temp",
-  "class": "other",
-  "capabilities": [
-    "onoff"
-  ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    }
+  "id": "tuya_sensor-temp",
+  "title": {
+    "en": "Sensor-Temp Control",
+    "fr": "Contrôle Sensor-Temp"
   },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature"
+  ],
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
   "name": {
-    "en": "Sensor-temp",
-    "fr": "capteur-temp"
+    "en": "Sensor-Temp",
+    "fr": "Sensor-Temp"
   },
   "zigbee": {
     "manufacturerName": [
       "Tuya"
     ],
-    "modelId": [
-      "SENSOR-TEMP"
-    ]
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:16.601Z",
-    "discussions": 4,
-    "solutions": 2,
-    "communityRating": "4.5",
-    "url": "https://community.homey.app/search?q=sensor-temp"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:16.601Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/sensor-temp.html",
-    "features": [
-      "onoff",
-      "temperature"
+    "productId": [
+      "TS0601"
     ],
-    "compatibility": "good"
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

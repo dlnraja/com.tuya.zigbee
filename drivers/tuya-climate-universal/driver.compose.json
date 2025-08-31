@@ -1,85 +1,35 @@
 {
-  "id": "tuya-climate-universal",
-  "name": {
-    "en": "Thermostat Tuya universel avec contrôle climatique",
-    "fr": "Thermostat Tuya universel avec contrôle climatique",
-    "nl": "Thermostat Tuya universel avec contrôle climatique",
-    "ta": "Thermostat Tuya universel avec contrôle climatique"
+  "id": "tuya_tuya-climate-universal",
+  "title": {
+    "en": "Tuya-Climate-Universal Control",
+    "fr": "Contrôle Tuya-Climate-Universal"
   },
-  "class": "thermostat",
+  "class": "climate",
   "capabilities": [
-    "target_temperature",
-    "measure_temperature",
-    "measure_humidity",
-    "alarm_battery",
-    "target_humidity",
-    "measure_pressure"
+    "target_temperature"
   ],
   "images": {
-    "small": "small.png",
-    "large": "large.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Tuya-Climate-Universal",
+    "fr": "Tuya-Climate-Universal"
   },
   "zigbee": {
-    "manufacturerName": "_TZ3000_ltiqubue",
-    "productId": "TS0601",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          1,
-          1029,
-          1026,
-          513
-        ],
-        "bindings": [
-          0,
-          1,
-          1029,
-          1026,
-          513
+          6
         ]
       }
     }
-  },
-  "metadata": {
-    "version": "1.1.0",
-    "last_updated": "2025-08-22",
-    "confidence_score": 95,
-    "sources": [
-      "Zigbee2MQTT",
-      "Blakadder Database",
-      "Homey Community",
-      "Tuya Developer Portal"
-    ],
-    "advanced_features": [
-      "temperature_control",
-      "humidity_monitoring",
-      "schedule_support",
-      "eco_mode"
-    ],
-    "tested_devices": [
-      "TS0601_trv",
-      "TS0602_trv"
-    ],
-    "zigbee_clusters": [
-      "genBasic",
-      "genPowerCfg",
-      "genBasic",
-      "genBasic"
-    ],
-    "sdk3_optimized": true,
-    "sdk3_version": "3.8.4",
-    "optimization_date": "2025-08-23T08:22:37.827Z"
-  },
-  "capabilitiesOptions": {
-    "measure_temperature": {
-      "approximated": true
-    }
-  },
-  "flowCards": [
-    "temperature_set",
-    "humidity_alert",
-    "eco_mode_toggle",
-    "schedule_set"
-  ]
+  }
 }

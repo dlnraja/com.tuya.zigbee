@@ -1,12 +1,25 @@
 {
   "require": [
+    "@babel/register",
+    "@babel/polyfill",
     "chai/register-expect"
   ],
-  "timeout": 5000,
+  "timeout": 20000,
+  "exit": true,
+  "color": true,
   "reporter": "spec",
   "recursive": true,
-  "extension": [
-    "js"
+  "extension": ["test.js"],
+  "bail": false,
+  "full-trace": true,
+  "spec": ["test/unit/**/*.test.js"],
+  "ignore": ["node_modules/**"],
+  "watch-files": [
+    "test/**/*.js",
+    "app.js",
+    "drivers/**/*.js"
   ],
-  "spec": "test*.test.js"
+  "watch-ignore": [
+    "node_modules/**"
+  ]
 }

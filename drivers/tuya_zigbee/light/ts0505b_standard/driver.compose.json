@@ -1,72 +1,35 @@
 {
-  "id": "ts0505b_standard",
-  "class": "light",
-  "name": {
-    "en": "Ts0505b Standard (Intelligent)",
-    "fr": "Ts0505b Standard (Intelligent)",
-    "nl": "Ts0505b Standard (Intelligent)",
-    "ta": "Ts0505b Standard (ஸ்மார்ட்)"
+  "id": "tuya_ts0505b_standard",
+  "title": {
+    "en": "Ts0505B Standard Control",
+    "fr": "Contrôle Ts0505B Standard"
   },
-  "description": {
-    "en": "Intelligent Ts0505b Standard driver with auto-discovery",
-    "fr": "Driver Ts0505b Standard intelligent avec découverte automatique",
-    "nl": "Intelligente Ts0505b Standard driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Ts0505b Standard டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "light"
-  ],
+  "class": "other",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "dim": {
-      "min": 0,
-      "max": 100
-    },
-    "light_temperature": {
-      "min": 153,
-      "max": 500
-    }
+  "images": {
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Ts0505B Standard",
+    "fr": "Ts0505B Standard"
   },
   "zigbee": {
-    "fingerprints": [
-      {
-        "model": "ts0505b_standard_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
       }
-    ],
-    "models": [
-      "ts0505b_standard_generic"
-    ]
-  },
-  "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
-  },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.605Z",
-    "discussions": 10,
-    "solutions": 3,
-    "communityRating": "4.7",
-    "url": "https://community.homey.app/search?q=ts0505b_standard"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.605Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ts0505b_standard.html",
-    "features": [
-      "onoff",
-      "dim"
-    ],
-    "compatibility": "excellent"
+    }
   }
 }

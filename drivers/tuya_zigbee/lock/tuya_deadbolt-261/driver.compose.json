@@ -1,59 +1,35 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_tuya_deadbolt-261",
+  "title": {
+    "en": "Tuya Deadbolt-261 Control",
+    "fr": "Contrôle Tuya Deadbolt-261"
+  },
+  "class": "other",
   "capabilities": [
-    "lock_state"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "lock_state": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
+  "name": {
+    "en": "Tuya Deadbolt-261",
+    "fr": "Tuya Deadbolt-261"
+  },
   "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "tuya_deadbolt-261",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
+          0,
+          6
         ]
       }
     }
-  },
-  "name": {
-    "en": "Tuya deadbolt-261",
-    "fr": "Tuya deadbolt-261"
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:13.789Z",
-    "discussions": 1,
-    "solutions": 2,
-    "communityRating": "4.8",
-    "url": "https://community.homey.app/search?q=tuya_deadbolt-261"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:13.789Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_deadbolt-261.html",
-    "features": [
-      "humidity",
-      "temperature",
-      "onoff"
-    ],
-    "compatibility": "good"
   }
 }

@@ -1,89 +1,36 @@
 {
-  "id": "fan-tuya-universal",
-  "name": {
-    "en": "Tuya Fan Universal",
-    "fr": "Tuya Fan Universel",
-    "nl": "Tuya Fan Universeel",
-    "ta": "Tuya Fan உலகளாவிய"
+  "id": "tuya_fan-tuya-universal",
+  "title": {
+    "en": "Fan-Tuya-Universal Control",
+    "fr": "Contrôle Fan-Tuya-Universal"
   },
   "class": "fan",
   "capabilities": [
     "onoff",
-    "dim",
-    "measure_power",
-    "alarm_battery",
-    "measure_temperature",
-    "fan_mode"
-  ],
-  "capabilitiesOptions": {
-    "measure_power": {
-      "approximated": true
-    },
-    "dim": {
-      "approximated": true
-    }
-  },
-  "flowCards": [
-    "toggle",
-    "is_on",
-    "is_off",
-    "fan_speed_up",
-    "fan_speed_down",
-    "power_threshold"
+    "fan_speed"
   ],
   "images": {
-    "small": "small.png",
-    "large": "large.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Fan-Tuya-Universal",
+    "fr": "Fan-Tuya-Universal"
   },
   "zigbee": {
-    "manufacturerName": "_TZ3000_1h2x4akh",
-    "productId": "TS0601",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          1,
-          6,
-          8,
-          514
-        ],
-        "bindings": [
-          0,
-          1,
-          6,
-          8,
-          514
+          6
         ]
       }
     }
-  },
-  "metadata": {
-    "version": "1.1.0",
-    "last_updated": "2025-08-22",
-    "confidence_score": 95,
-    "advanced_features": [
-      "fan_speed_control",
-      "power_monitoring",
-      "battery_monitoring"
-    ],
-    "sources": [
-      "Zigbee2MQTT",
-      "Blakadder Database",
-      "Homey Community",
-      "Tuya Developer Portal"
-    ],
-    "tested_devices": [
-      "TS0601_fan",
-      "TS0602_fan"
-    ],
-    "zigbee_clusters": [
-      "genBasic",
-      "genPowerCfg",
-      "genOnOff",
-      "genLevelCtrl"
-    ],
-    "sdk3_optimized": true,
-    "sdk3_version": "3.8.4",
-    "optimization_date": "2025-08-23T08:22:37.487Z"
   }
 }

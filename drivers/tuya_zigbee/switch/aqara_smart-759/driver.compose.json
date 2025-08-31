@@ -1,59 +1,35 @@
 {
-  "id": "aqara_smart-759",
-  "class": "switch",
-  "name": {
-    "en": "Aqara Smart-759 (Intelligent)",
-    "fr": "Aqara Smart-759 (Intelligent)",
-    "nl": "Aqara Smart-759 (Intelligent)",
-    "ta": "Aqara Smart-759 (ஸ்மார்ட்)"
+  "id": "tuya_aqara_smart-759",
+  "title": {
+    "en": "Aqara Smart-759 Control",
+    "fr": "Contrôle Aqara Smart-759"
   },
-  "description": {
-    "en": "Intelligent Aqara Smart-759 driver with auto-discovery",
-    "fr": "Driver Aqara Smart-759 intelligent avec découverte automatique",
-    "nl": "Intelligente Aqara Smart-759 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Aqara Smart-759 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "other",
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "aqara_smart-759_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "aqara_smart-759_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.409Z",
-    "discussions": 2,
-    "solutions": 5,
-    "communityRating": "3.2",
-    "url": "https://community.homey.app/search?q=aqara_smart-759"
+  "name": {
+    "en": "Aqara Smart-759",
+    "fr": "Aqara Smart-759"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.409Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_smart-759.html",
-    "features": [
-      "temperature"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "excellent"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

@@ -1,72 +1,35 @@
 {
-  "id": "tuya_bulb_211",
-  "class": "light",
-  "name": {
-    "en": "Tuya Bulb 211 (Intelligent)",
-    "fr": "Tuya Bulb 211 (Intelligent)",
-    "nl": "Tuya Bulb 211 (Intelligent)",
-    "ta": "Tuya Bulb 211 (ஸ்மார்ட்)"
+  "id": "tuya_tuya_bulb_211",
+  "title": {
+    "en": "Tuya Bulb 211 Control",
+    "fr": "Contrôle Tuya Bulb 211"
   },
-  "description": {
-    "en": "Intelligent Tuya Bulb 211 driver with auto-discovery",
-    "fr": "Driver Tuya Bulb 211 intelligent avec découverte automatique",
-    "nl": "Intelligente Tuya Bulb 211 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Tuya Bulb 211 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "light"
-  ],
+  "class": "other",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "dim": {
-      "min": 0,
-      "max": 100
-    },
-    "light_temperature": {
-      "min": 153,
-      "max": 500
-    }
+  "images": {
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Tuya Bulb 211",
+    "fr": "Tuya Bulb 211"
   },
   "zigbee": {
-    "fingerprints": [
-      {
-        "model": "tuya_bulb_211_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
       }
-    ],
-    "models": [
-      "tuya_bulb_211_generic"
-    ]
-  },
-  "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
-  },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.620Z",
-    "discussions": 6,
-    "solutions": 1,
-    "communityRating": "3.7",
-    "url": "https://community.homey.app/search?q=tuya_bulb_211"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.620Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_bulb_211.html",
-    "features": [
-      "power",
-      "dim"
-    ],
-    "compatibility": "excellent"
+    }
   }
 }

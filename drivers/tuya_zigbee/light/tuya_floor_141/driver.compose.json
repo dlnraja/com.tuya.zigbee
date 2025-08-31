@@ -1,73 +1,35 @@
 {
-  "id": "tuya_floor_141",
-  "class": "light",
-  "name": {
-    "en": "Tuya Floor 141 (Intelligent)",
-    "fr": "Tuya Floor 141 (Intelligent)",
-    "nl": "Tuya Floor 141 (Intelligent)",
-    "ta": "Tuya Floor 141 (ஸ்மார்ட்)"
+  "id": "tuya_tuya_floor_141",
+  "title": {
+    "en": "Tuya Floor 141 Control",
+    "fr": "Contrôle Tuya Floor 141"
   },
-  "description": {
-    "en": "Intelligent Tuya Floor 141 driver with auto-discovery",
-    "fr": "Driver Tuya Floor 141 intelligent avec découverte automatique",
-    "nl": "Intelligente Tuya Floor 141 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Tuya Floor 141 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "light"
-  ],
+  "class": "other",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "dim": {
-      "min": 0,
-      "max": 100
-    },
-    "light_temperature": {
-      "min": 153,
-      "max": 500
-    }
+  "images": {
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Tuya Floor 141",
+    "fr": "Tuya Floor 141"
   },
   "zigbee": {
-    "fingerprints": [
-      {
-        "model": "tuya_floor_141_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
       }
-    ],
-    "models": [
-      "tuya_floor_141_generic"
-    ]
-  },
-  "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
-  },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.626Z",
-    "discussions": 8,
-    "solutions": 3,
-    "communityRating": "4.8",
-    "url": "https://community.homey.app/search?q=tuya_floor_141"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.626Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_floor_141.html",
-    "features": [
-      "humidity",
-      "power",
-      "onoff"
-    ],
-    "compatibility": "good"
+    }
   }
 }

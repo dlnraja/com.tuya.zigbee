@@ -1,61 +1,35 @@
 {
-  "id": "aqara_blind-772_cover",
+  "id": "tuya_aqara_blind-772_cover",
+  "title": {
+    "en": "Aqara Blind-772 Cover Control",
+    "fr": "Contrôle Aqara Blind-772 Cover"
+  },
   "class": "cover",
-  "name": {
-    "en": "Aqara Blind-772 Cover (Intelligent)",
-    "fr": "Aqara Blind-772 Cover (Intelligent)",
-    "nl": "Aqara Blind-772 Cover (Intelligent)",
-    "ta": "Aqara Blind-772 Cover (ஸ்மார்ட்)"
-  },
-  "description": {
-    "en": "Intelligent Aqara Blind-772 Cover driver with auto-discovery",
-    "fr": "Driver Aqara Blind-772 Cover intelligent avec découverte automatique",
-    "nl": "Intelligente Aqara Blind-772 Cover driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Aqara Blind-772 Cover டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "cover"
-  ],
   "capabilities": [
-    "windowcoverings_state",
-    "windowcoverings_set"
+    "windowcoverings_state"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "aqara_blind-772_cover_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "aqara_blind-772_cover_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.164Z",
-    "discussions": 10,
-    "solutions": 1,
-    "communityRating": "4.2",
-    "url": "https://community.homey.app/search?q=aqara_blind-772_cover"
+  "name": {
+    "en": "Aqara Blind-772 Cover",
+    "fr": "Aqara Blind-772 Cover"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.164Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_blind-772_cover.html",
-    "features": [
-      "humidity",
-      "temperature"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "poor"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

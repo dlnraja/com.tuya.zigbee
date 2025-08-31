@@ -1,74 +1,35 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_ts0205",
+  "title": {
+    "en": "Ts0205 Control",
+    "fr": "Contrôle Ts0205"
+  },
+  "class": "other",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    },
-    "dim": {
-      "set": true,
-      "get": true
-    },
-    "light_temperature": {
-      "set": true,
-      "get": true
-    },
-    "light_mode": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
-  },
-  "icon": "assets/icon.svg",
-  "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "ts0205",
-    "endpoints": {
-      "1": {
-        "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
-        ]
-      }
-    }
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
   "name": {
     "en": "Ts0205",
     "fr": "Ts0205"
   },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.072Z",
-    "discussions": 9,
-    "solutions": 2,
-    "communityRating": "3.1",
-    "url": "https://community.homey.app/search?q=ts0205"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.072Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ts0205.html",
-    "features": [
-      "color",
-      "power",
-      "onoff"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "excellent"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

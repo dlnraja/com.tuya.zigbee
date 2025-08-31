@@ -1,73 +1,35 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_ikea_generic",
+  "title": {
+    "en": "Ikea Generic Control",
+    "fr": "Contrôle Ikea Generic"
+  },
+  "class": "other",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    },
-    "dim": {
-      "set": true,
-      "get": true
-    },
-    "light_temperature": {
-      "set": true,
-      "get": true
-    },
-    "light_mode": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
+  "name": {
+    "en": "Ikea Generic",
+    "fr": "Ikea Generic"
+  },
   "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "ikea_generic",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
+          0,
+          6
         ]
       }
     }
-  },
-  "name": {
-    "en": "Ikea generic",
-    "fr": "Ikea generic"
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:15.519Z",
-    "discussions": 6,
-    "solutions": 2,
-    "communityRating": "3.7",
-    "url": "https://community.homey.app/search?q=ikea_generic"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:15.519Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_generic.html",
-    "features": [
-      "power",
-      "motion"
-    ],
-    "compatibility": "poor"
   }
 }

@@ -1,62 +1,35 @@
 {
-  "id": "ts0601_curtain_cover_standard",
+  "id": "tuya_ts0601_curtain_cover_standard",
+  "title": {
+    "en": "Ts0601 Curtain Cover Standard Control",
+    "fr": "Contrôle Ts0601 Curtain Cover Standard"
+  },
   "class": "cover",
-  "name": {
-    "en": "Ts0601 Curtain Cover Standard (Intelligent)",
-    "fr": "Ts0601 Curtain Cover Standard (Intelligent)",
-    "nl": "Ts0601 Curtain Cover Standard (Intelligent)",
-    "ta": "Ts0601 Curtain Cover Standard (ஸ்மார்ட்)"
-  },
-  "description": {
-    "en": "Intelligent Ts0601 Curtain Cover Standard driver with auto-discovery",
-    "fr": "Driver Ts0601 Curtain Cover Standard intelligent avec découverte automatique",
-    "nl": "Intelligente Ts0601 Curtain Cover Standard driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Ts0601 Curtain Cover Standard டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "cover"
-  ],
   "capabilities": [
-    "windowcoverings_state",
-    "windowcoverings_set"
+    "windowcoverings_state"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "ts0601_curtain_cover_standard_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "ts0601_curtain_cover_standard_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.253Z",
-    "discussions": 9,
-    "solutions": 4,
-    "communityRating": "4.9",
-    "url": "https://community.homey.app/search?q=ts0601_curtain_cover_standard"
+  "name": {
+    "en": "Ts0601 Curtain Cover Standard",
+    "fr": "Ts0601 Curtain Cover Standard"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.253Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ts0601_curtain_cover_standard.html",
-    "features": [
-      "humidity",
-      "power",
-      "temperature"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "good"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

@@ -1,61 +1,35 @@
 {
-  "id": "ts0002_wall_switch_wall",
+  "id": "tuya_ts0002_wall_switch_wall",
+  "title": {
+    "en": "Ts0002 Wall Switch Wall Control",
+    "fr": "Contrôle Ts0002 Wall Switch Wall"
+  },
   "class": "switch",
-  "name": {
-    "en": "Ts0002 Wall Switch Wall (Intelligent)",
-    "fr": "Ts0002 Wall Switch Wall (Intelligent)",
-    "nl": "Ts0002 Wall Switch Wall (Intelligent)",
-    "ta": "Ts0002 Wall Switch Wall (ஸ்மார்ட்)"
-  },
-  "description": {
-    "en": "Intelligent Ts0002 Wall Switch Wall driver with auto-discovery",
-    "fr": "Driver Ts0002 Wall Switch Wall intelligent avec découverte automatique",
-    "nl": "Intelligente Ts0002 Wall Switch Wall driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Ts0002 Wall Switch Wall டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "ts0002_wall_switch_wall_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "ts0002_wall_switch_wall_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.538Z",
-    "discussions": 9,
-    "solutions": 5,
-    "communityRating": "4.7",
-    "url": "https://community.homey.app/search?q=ts0002_wall_switch_wall"
+  "name": {
+    "en": "Ts0002 Wall Switch Wall",
+    "fr": "Ts0002 Wall Switch Wall"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.538Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ts0002_wall_switch_wall.html",
-    "features": [
-      "humidity",
-      "onoff",
-      "dim"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "poor"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

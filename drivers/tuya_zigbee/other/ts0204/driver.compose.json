@@ -1,72 +1,35 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_ts0204",
+  "title": {
+    "en": "Ts0204 Control",
+    "fr": "Contrôle Ts0204"
+  },
+  "class": "other",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    },
-    "dim": {
-      "set": true,
-      "get": true
-    },
-    "light_temperature": {
-      "set": true,
-      "get": true
-    },
-    "light_mode": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
-  },
-  "icon": "assets/icon.svg",
-  "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "ts0204",
-    "endpoints": {
-      "1": {
-        "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
-        ]
-      }
-    }
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
   "name": {
     "en": "Ts0204",
     "fr": "Ts0204"
   },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:15.665Z",
-    "discussions": 9,
-    "solutions": 3,
-    "communityRating": "3.1",
-    "url": "https://community.homey.app/search?q=ts0204"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:15.665Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ts0204.html",
-    "features": [
-      "dim"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "fair"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

@@ -1,61 +1,35 @@
 {
-  "id": "ikea_curtain-431",
-  "class": "cover",
-  "name": {
-    "en": "Ikea Curtain-431 (Intelligent)",
-    "fr": "Ikea Curtain-431 (Intelligent)",
-    "nl": "Ikea Curtain-431 (Intelligent)",
-    "ta": "Ikea Curtain-431 (ஸ்மார்ட்)"
+  "id": "tuya_ikea_curtain-431",
+  "title": {
+    "en": "Ikea Curtain-431 Control",
+    "fr": "Contrôle Ikea Curtain-431"
   },
-  "description": {
-    "en": "Intelligent Ikea Curtain-431 driver with auto-discovery",
-    "fr": "Driver Ikea Curtain-431 intelligent avec découverte automatique",
-    "nl": "Intelligente Ikea Curtain-431 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Ikea Curtain-431 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "cover"
-  ],
+  "class": "other",
   "capabilities": [
-    "windowcoverings_state",
-    "windowcoverings_set"
+    "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "ikea_curtain-431_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "ikea_curtain-431_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.222Z",
-    "discussions": 4,
-    "solutions": 3,
-    "communityRating": "3.4",
-    "url": "https://community.homey.app/search?q=ikea_curtain-431"
+  "name": {
+    "en": "Ikea Curtain-431",
+    "fr": "Ikea Curtain-431"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.222Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_curtain-431.html",
-    "features": [
-      "humidity",
-      "motion"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "poor"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

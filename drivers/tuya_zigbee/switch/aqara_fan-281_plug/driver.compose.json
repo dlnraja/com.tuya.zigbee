@@ -1,60 +1,36 @@
 {
-  "id": "aqara_fan-281_plug",
-  "class": "switch",
-  "name": {
-    "en": "Aqara Fan-281 Plug (Intelligent)",
-    "fr": "Aqara Fan-281 Plug (Intelligent)",
-    "nl": "Aqara Fan-281 Plug (Intelligent)",
-    "ta": "Aqara Fan-281 Plug (ஸ்மார்ட்)"
+  "id": "tuya_aqara_fan-281_plug",
+  "title": {
+    "en": "Aqara Fan-281 Plug Control",
+    "fr": "Contrôle Aqara Fan-281 Plug"
   },
-  "description": {
-    "en": "Intelligent Aqara Fan-281 Plug driver with auto-discovery",
-    "fr": "Driver Aqara Fan-281 Plug intelligent avec découverte automatique",
-    "nl": "Intelligente Aqara Fan-281 Plug driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Aqara Fan-281 Plug டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_power"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "aqara_fan-281_plug_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "aqara_fan-281_plug_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.377Z",
-    "discussions": 9,
-    "solutions": 3,
-    "communityRating": "3.8",
-    "url": "https://community.homey.app/search?q=aqara_fan-281_plug"
+  "name": {
+    "en": "Aqara Fan-281 Plug",
+    "fr": "Aqara Fan-281 Plug"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.377Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_fan-281_plug.html",
-    "features": [
-      "power",
-      "humidity"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "poor"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }
