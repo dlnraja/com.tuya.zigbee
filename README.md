@@ -2,14 +2,18 @@
 
 > **Universal Tuya Zigbee Device Support for Homey - Professional Edition**
 
-[![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](https://github.com/dlnraja/tuya_repair.tuya.zigbee/releases)
+[![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](https://github.com/dlnraja/tuya_repair/releases)
 [![Homey SDK](https://img.shields.io/badge/Homey%20SDK-3.0+-green.svg)](https://apps.homey.app/fr/app/com.tuya.zigbee)
 [![License](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-## 📜 Attribution
+## 📜 Project Information
 
-This project is based on the original work by Johan Bentz ([JohanBendz/com.tuya.zigbee](https://github.com/dlnraja/tuya_repair.tuya.zigbee)) and is released under the MIT License. Special thanks to the Homey community for their contributions and feedback.
+This is a fork of the original Tuya Zigbee app for Homey, enhanced with additional device support and features. The project is maintained by dlnraja.
+
+- **Author**: dlnraja
+- **Email**: [redacted-email]
+- **GitHub**: [https://github.com/dlnraja/tuya_repair](https://github.com/dlnraja/tuya_repair)
 
 ## 🚀 Project Status
 
@@ -17,7 +21,28 @@ This project is based on the original work by Johan Bentz ([JohanBendz/com.tuya.
 🔧 **Supported Devices**: 300+ device IDs across 80+ drivers  
 🌍 **Community-Driven**: Enhanced with community contributions  
 
-> **Note**: This is the lite version focused on stability and core functionality.
+## 🛠️ Quick Setup
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/dlnraja/tuya_repair.git
+   cd tuya_repair
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Run the setup script**:
+   - On Windows: Double-click `run-git-setup.bat`
+   - On macOS/Linux: Run `./Initialize-Git.ps1` in terminal
+
+4. **Push to your repository**:
+   ```bash
+   git remote add origin https://github.com/dlnraja/tuya_repair.git
+   git push -u origin main
+   ```
 
 ## 📝 Overview
 
