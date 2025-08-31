@@ -150,7 +150,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/dlnraja/com.tuya.zigbee.git"
+    "url": "https://github.com/dlnraja/tuya_repair.tuya.zigbee.git"
   },
   "keywords": [
     "homey",
@@ -159,13 +159,13 @@
     "iot",
     "smart-home"
   ],
-  "author": "DLN Raja <dlnraja@example.com> (https://github.com/dlnraja)",
+  "author": "DLN Raja <dylan.rajasekaram@gmail.com> (https://github.com/dlnraja)",
   "license": "MIT",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
+    "url": "https://github.com/dlnraja/tuya_repair.tuya.zigbee/issues"
   },
-  "homepage": "https://github.com/dlnraja/com.tuya.zigbee#readme",
+  "homepage": "https://github.com/dlnraja/tuya_repair.tuya.zigbee#readme",
   "contributors": [
     {
       "name": "dlnraja",
@@ -173,7 +173,7 @@
     },
     {
       "name": "Johan Bendz",
-      "email": "johan.bendz@gmail.com"
+      "email": "dylan.rajasekaram@gmail.com"
     }
   ],
   "license": "MIT"
