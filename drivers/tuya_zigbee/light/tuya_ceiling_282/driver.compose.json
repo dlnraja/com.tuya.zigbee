@@ -1,73 +1,35 @@
 {
-  "id": "tuya_ceiling_282",
-  "class": "light",
-  "name": {
-    "en": "Tuya Ceiling 282 (Intelligent)",
-    "fr": "Tuya Ceiling 282 (Intelligent)",
-    "nl": "Tuya Ceiling 282 (Intelligent)",
-    "ta": "Tuya Ceiling 282 (ஸ்மார்ட்)"
+  "id": "tuya_tuya_ceiling_282",
+  "title": {
+    "en": "Tuya Ceiling 282 Control",
+    "fr": "Contrôle Tuya Ceiling 282"
   },
-  "description": {
-    "en": "Intelligent Tuya Ceiling 282 driver with auto-discovery",
-    "fr": "Driver Tuya Ceiling 282 intelligent avec découverte automatique",
-    "nl": "Intelligente Tuya Ceiling 282 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Tuya Ceiling 282 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "light"
-  ],
+  "class": "other",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "dim": {
-      "min": 0,
-      "max": 100
-    },
-    "light_temperature": {
-      "min": 153,
-      "max": 500
-    }
+  "images": {
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Tuya Ceiling 282",
+    "fr": "Tuya Ceiling 282"
   },
   "zigbee": {
-    "fingerprints": [
-      {
-        "model": "tuya_ceiling_282_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
       }
-    ],
-    "models": [
-      "tuya_ceiling_282_generic"
-    ]
-  },
-  "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
-  },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.623Z",
-    "discussions": 1,
-    "solutions": 5,
-    "communityRating": "3.1",
-    "url": "https://community.homey.app/search?q=tuya_ceiling_282"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.623Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_ceiling_282.html",
-    "features": [
-      "temperature",
-      "dim",
-      "onoff"
-    ],
-    "compatibility": "poor"
+    }
   }
 }

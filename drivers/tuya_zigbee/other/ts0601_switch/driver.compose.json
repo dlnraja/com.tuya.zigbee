@@ -1,72 +1,35 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_ts0601_switch",
+  "title": {
+    "en": "Ts0601 Switch Control",
+    "fr": "Contrôle Ts0601 Switch"
+  },
+  "class": "switch",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    },
-    "dim": {
-      "set": true,
-      "get": true
-    },
-    "light_temperature": {
-      "set": true,
-      "get": true
-    },
-    "light_mode": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
+  "name": {
+    "en": "Ts0601 Switch",
+    "fr": "Ts0601 Switch"
+  },
   "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "ts0601_switch",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
+          0,
+          6
         ]
       }
     }
-  },
-  "name": {
-    "en": "Ts0601 switch",
-    "fr": "Ts0601 interrupteur"
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:15.706Z",
-    "discussions": 5,
-    "solutions": 1,
-    "communityRating": "3.5",
-    "url": "https://community.homey.app/search?q=ts0601_switch"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:15.706Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ts0601_switch.html",
-    "features": [
-      "power"
-    ],
-    "compatibility": "fair"
   }
 }

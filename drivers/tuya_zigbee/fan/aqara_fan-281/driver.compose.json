@@ -1,63 +1,36 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_aqara_fan-281",
+  "title": {
+    "en": "Aqara Fan-281 Control",
+    "fr": "Contrôle Aqara Fan-281"
+  },
+  "class": "fan",
   "capabilities": [
     "onoff",
-    "dim"
+    "fan_speed"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    },
-    "dim": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
+  "name": {
+    "en": "Aqara Fan-281",
+    "fr": "Aqara Fan-281"
+  },
   "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "aqara_fan-281",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
+          0,
+          6
         ]
       }
     }
-  },
-  "name": {
-    "en": "Aqara fan-281",
-    "fr": "Aqara fan-281"
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.305Z",
-    "discussions": 7,
-    "solutions": 3,
-    "communityRating": "4.1",
-    "url": "https://community.homey.app/search?q=aqara_fan-281"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.305Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_fan-281.html",
-    "features": [
-      "humidity",
-      "color"
-    ],
-    "compatibility": "good"
   }
 }

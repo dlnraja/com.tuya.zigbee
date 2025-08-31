@@ -1,61 +1,36 @@
 {
-  "id": "tuya_gas-695_plug",
-  "class": "switch",
-  "name": {
-    "en": "Tuya Gas-695 Plug (Intelligent)",
-    "fr": "Tuya Gas-695 Plug (Intelligent)",
-    "nl": "Tuya Gas-695 Plug (Intelligent)",
-    "ta": "Tuya Gas-695 Plug (ஸ்மார்ட்)"
+  "id": "tuya_tuya_gas-695_plug",
+  "title": {
+    "en": "Tuya Gas-695 Plug Control",
+    "fr": "Contrôle Tuya Gas-695 Plug"
   },
-  "description": {
-    "en": "Intelligent Tuya Gas-695 Plug driver with auto-discovery",
-    "fr": "Driver Tuya Gas-695 Plug intelligent avec découverte automatique",
-    "nl": "Intelligente Tuya Gas-695 Plug driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Tuya Gas-695 Plug டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_power"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "tuya_gas-695_plug_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "tuya_gas-695_plug_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.637Z",
-    "discussions": 4,
-    "solutions": 2,
-    "communityRating": "4.1",
-    "url": "https://community.homey.app/search?q=tuya_gas-695_plug"
+  "name": {
+    "en": "Tuya Gas-695 Plug",
+    "fr": "Tuya Gas-695 Plug"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.637Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_gas-695_plug.html",
-    "features": [
-      "temperature",
-      "power",
-      "color"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "fair"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

@@ -1,61 +1,35 @@
 {
-  "id": "tuya_smart-963",
-  "class": "switch",
-  "name": {
-    "en": "Tuya Smart-963 (Intelligent)",
-    "fr": "Tuya Smart-963 (Intelligent)",
-    "nl": "Tuya Smart-963 (Intelligent)",
-    "ta": "Tuya Smart-963 (ஸ்மார்ட்)"
+  "id": "tuya_tuya_smart-963",
+  "title": {
+    "en": "Tuya Smart-963 Control",
+    "fr": "Contrôle Tuya Smart-963"
   },
-  "description": {
-    "en": "Intelligent Tuya Smart-963 driver with auto-discovery",
-    "fr": "Driver Tuya Smart-963 intelligent avec découverte automatique",
-    "nl": "Intelligente Tuya Smart-963 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Tuya Smart-963 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "other",
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "tuya_smart-963_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "tuya_smart-963_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.672Z",
-    "discussions": 7,
-    "solutions": 1,
-    "communityRating": "4.3",
-    "url": "https://community.homey.app/search?q=tuya_smart-963"
+  "name": {
+    "en": "Tuya Smart-963",
+    "fr": "Tuya Smart-963"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.672Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_smart-963.html",
-    "features": [
-      "power",
-      "color",
-      "dim"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "excellent"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

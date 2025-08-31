@@ -1,61 +1,36 @@
 {
-  "id": "tuya_ac_Ikea_Ac_Plug_Standard_Default",
-  "class": "switch",
-  "name": {
-    "en": "Tuya Ac Ikea Ac Plug Standard Default (Intelligent)",
-    "fr": "Tuya Ac Ikea Ac Plug Standard Default (Intelligent)",
-    "nl": "Tuya Ac Ikea Ac Plug Standard Default (Intelligent)",
-    "ta": "Tuya Ac Ikea Ac Plug Standard Default (ஸ்மார்ட்)"
+  "id": "tuya_tuya_ac_ikea_ac_plug_standard_default",
+  "title": {
+    "en": "Tuya Ac Ikea Ac Plug Standard Default Control",
+    "fr": "Contrôle Tuya Ac Ikea Ac Plug Standard Default"
   },
-  "description": {
-    "en": "Intelligent Tuya Ac Ikea Ac Plug Standard Default driver with auto-discovery",
-    "fr": "Driver Tuya Ac Ikea Ac Plug Standard Default intelligent avec découverte automatique",
-    "nl": "Intelligente Tuya Ac Ikea Ac Plug Standard Default driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Tuya Ac Ikea Ac Plug Standard Default டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_power"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "tuya_ac_Ikea_Ac_Plug_Standard_Default_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "tuya_ac_Ikea_Ac_Plug_Standard_Default_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.623Z",
-    "discussions": 6,
-    "solutions": 1,
-    "communityRating": "3.3",
-    "url": "https://community.homey.app/search?q=tuya_ac_Ikea_Ac_Plug_Standard_Default"
+  "name": {
+    "en": "Tuya Ac Ikea Ac Plug Standard Default",
+    "fr": "Tuya Ac Ikea Ac Plug Standard Default"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.623Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_ac_Ikea_Ac_Plug_Standard_Default.html",
-    "features": [
-      "temperature",
-      "onoff",
-      "dim"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "fair"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

@@ -1,47 +1,35 @@
 {
-  "id": "sensor-contact",
-  "class": "other",
-  "capabilities": [
-    "onoff"
-  ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    }
+  "id": "tuya_sensor-contact",
+  "title": {
+    "en": "Sensor-Contact Control",
+    "fr": "Contrôle Sensor-Contact"
   },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature"
+  ],
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
   "name": {
-    "en": "Sensor-contact",
-    "fr": "capteur-contact"
+    "en": "Sensor-Contact",
+    "fr": "Sensor-Contact"
   },
   "zigbee": {
     "manufacturerName": [
       "Tuya"
     ],
-    "modelId": [
-      "SENSOR-CONTACT"
-    ]
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:15.751Z",
-    "discussions": 4,
-    "solutions": 4,
-    "communityRating": "4.6",
-    "url": "https://community.homey.app/search?q=sensor-contact"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:15.751Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/sensor-contact.html",
-    "features": [
-      "temperature"
+    "productId": [
+      "TS0601"
     ],
-    "compatibility": "poor"
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

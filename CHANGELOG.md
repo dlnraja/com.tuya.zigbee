@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.0.1] - 2025-08-31
+
+### Added
+- ✅ Comprehensive test suite for device management
+- ✅ Improved error handling and logging
+- ✅ Enhanced test coverage for Python microservice
+- ✅ GitHub Actions workflow for CI/CD
+- ✅ Code quality checks and linting
+
+### Fixed
+- 🐛 Fixed test configurations
+- 🐛 Resolved dependency issues
+- 🐛 Improved error messages for better debugging
+
+### Changed
+- 🔄 Updated dependencies to latest stable versions
+- 🔄 Improved test execution time
+- 🔄 Enhanced documentation
+
 ## [1.1.0] - 2025-01-29
 
 ### Added

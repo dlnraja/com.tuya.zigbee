@@ -1,73 +1,35 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_template_device_template_device",
+  "title": {
+    "en": "Template Device Template Device Control",
+    "fr": "Contrôle Template Device Template Device"
+  },
+  "class": "other",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    },
-    "dim": {
-      "set": true,
-      "get": true
-    },
-    "light_temperature": {
-      "set": true,
-      "get": true
-    },
-    "light_mode": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
+  "name": {
+    "en": "Template Device Template Device",
+    "fr": "Template Device Template Device"
+  },
   "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "template_device_template_device",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
+          0,
+          6
         ]
       }
     }
-  },
-  "name": {
-    "en": "Template device template device",
-    "fr": "Template device template device"
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:15.609Z",
-    "discussions": 1,
-    "solutions": 1,
-    "communityRating": "3.6",
-    "url": "https://community.homey.app/search?q=template_device_template_device"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:15.609Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/template_device_template_device.html",
-    "features": [
-      "motion",
-      "onoff"
-    ],
-    "compatibility": "fair"
   }
 }

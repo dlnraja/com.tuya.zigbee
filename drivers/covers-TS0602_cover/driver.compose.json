@@ -1,54 +1,35 @@
 {
-  "id": "covers-TS0602_cover",
-  "name": {
-    "en": "covers TS0602_cover",
-    "fr": "covers TS0602_cover",
-    "nl": "covers TS0602_cover",
-    "ta": "covers TS0602_cover"
+  "id": "tuya_covers-ts0602_cover",
+  "title": {
+    "en": "Covers-Ts0602 Cover Control",
+    "fr": "Contrôle Covers-Ts0602 Cover"
   },
   "class": "cover",
   "capabilities": [
-    "windowcoverings_set",
     "windowcoverings_state"
   ],
   "images": {
-    "small": "small.png",
-    "large": "large.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Covers-Ts0602 Cover",
+    "fr": "Covers-Ts0602 Cover"
   },
   "zigbee": {
-    "manufacturerName": "_TZ3000_vd43bbfq",
-    "productId": "TS0602",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          1,
-          258,
-          10,
-          9
-        ],
-        "bindings": [
-          0,
-          1,
-          258,
-          10,
-          9
+          6
         ]
       }
     }
-  },
-  "metadata": {
-    "version": "1.0.0",
-    "last_updated": "2025-08-22T18:02:06.361Z",
-    "confidence_score": 85,
-    "sources": [
-      "Tuya Developer Portal",
-      "Zigbee2MQTT",
-      "Homey Community"
-    ],
-    "type": "tuya",
-    "sdk3_optimized": true,
-    "sdk3_version": "3.8.4",
-    "optimization_date": "2025-08-23T08:22:37.414Z"
   }
 }

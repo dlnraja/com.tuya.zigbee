@@ -1,74 +1,35 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_ts004f_standard",
+  "title": {
+    "en": "Ts004F Standard Control",
+    "fr": "Contrôle Ts004F Standard"
+  },
+  "class": "other",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    },
-    "dim": {
-      "set": true,
-      "get": true
-    },
-    "light_temperature": {
-      "set": true,
-      "get": true
-    },
-    "light_mode": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
+  "name": {
+    "en": "Ts004F Standard",
+    "fr": "Ts004F Standard"
+  },
   "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "ts004f_standard",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
+          0,
+          6
         ]
       }
     }
-  },
-  "name": {
-    "en": "Ts004f standard",
-    "fr": "Ts004f standard"
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:15.642Z",
-    "discussions": 6,
-    "solutions": 3,
-    "communityRating": "3.5",
-    "url": "https://community.homey.app/search?q=ts004f_standard"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:15.642Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ts004f_standard.html",
-    "features": [
-      "power",
-      "dim",
-      "humidity"
-    ],
-    "compatibility": "poor"
   }
 }

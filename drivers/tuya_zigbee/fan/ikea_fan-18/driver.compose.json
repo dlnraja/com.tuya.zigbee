@@ -1,64 +1,36 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_ikea_fan-18",
+  "title": {
+    "en": "Ikea Fan-18 Control",
+    "fr": "Contrôle Ikea Fan-18"
+  },
+  "class": "fan",
   "capabilities": [
     "onoff",
-    "dim"
+    "fan_speed"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    },
-    "dim": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
+  "name": {
+    "en": "Ikea Fan-18",
+    "fr": "Ikea Fan-18"
+  },
   "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "ikea_fan-18",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
+          0,
+          6
         ]
       }
     }
-  },
-  "name": {
-    "en": "Ikea fan-18",
-    "fr": "Ikea fan-18"
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.322Z",
-    "discussions": 1,
-    "solutions": 4,
-    "communityRating": "4.7",
-    "url": "https://community.homey.app/search?q=ikea_fan-18"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.322Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_fan-18.html",
-    "features": [
-      "color",
-      "dim",
-      "motion"
-    ],
-    "compatibility": "fair"
   }
 }

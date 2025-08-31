@@ -1,60 +1,35 @@
 {
-  "id": "tuya_switch-225_plug",
+  "id": "tuya_tuya_switch-225_plug",
+  "title": {
+    "en": "Tuya Switch-225 Plug Control",
+    "fr": "Contrôle Tuya Switch-225 Plug"
+  },
   "class": "switch",
-  "name": {
-    "en": "Tuya Switch-225 Plug (Intelligent)",
-    "fr": "Tuya Switch-225 Plug (Intelligent)",
-    "nl": "Tuya Switch-225 Plug (Intelligent)",
-    "ta": "Tuya Switch-225 Plug (ஸ்மார்ட்)"
-  },
-  "description": {
-    "en": "Intelligent Tuya Switch-225 Plug driver with auto-discovery",
-    "fr": "Driver Tuya Switch-225 Plug intelligent avec découverte automatique",
-    "nl": "Intelligente Tuya Switch-225 Plug driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Tuya Switch-225 Plug டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "tuya_switch-225_plug_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "tuya_switch-225_plug_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.677Z",
-    "discussions": 2,
-    "solutions": 4,
-    "communityRating": "3.7",
-    "url": "https://community.homey.app/search?q=tuya_switch-225_plug"
+  "name": {
+    "en": "Tuya Switch-225 Plug",
+    "fr": "Tuya Switch-225 Plug"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.677Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_switch-225_plug.html",
-    "features": [
-      "humidity",
-      "onoff"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "fair"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

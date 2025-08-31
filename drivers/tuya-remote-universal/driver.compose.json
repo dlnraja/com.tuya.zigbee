@@ -1,75 +1,35 @@
 {
-  "id": "tuya-remote-universal",
-  "name": {
-    "en": "Télécommande Tuya universelle pour scènes",
-    "fr": "Télécommande Tuya universelle pour scènes",
-    "nl": "Télécommande Tuya universelle pour scènes",
-    "ta": "Télécommande Tuya universelle pour scènes"
+  "id": "tuya_tuya-remote-universal",
+  "title": {
+    "en": "Tuya-Remote-Universal Control",
+    "fr": "Contrôle Tuya-Remote-Universal"
   },
-  "class": "remote",
+  "class": "other",
   "capabilities": [
-    "alarm_battery",
-    "button",
-    "scene",
-    "measure_battery"
+    "onoff"
   ],
   "images": {
-    "small": "small.png",
-    "large": "large.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Tuya-Remote-Universal",
+    "fr": "Tuya-Remote-Universal"
   },
   "zigbee": {
-    "manufacturerName": "_TZ3000_qqdbccb3",
-    "productId": "TS0041",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          1,
-          6,
-          5,
-          4
-        ],
-        "bindings": [
-          0,
-          1,
-          6,
-          5,
-          4
+          6
         ]
       }
     }
-  },
-  "metadata": {
-    "version": "1.1.0",
-    "last_updated": "2025-08-22",
-    "confidence_score": 95,
-    "sources": [
-      "Zigbee2MQTT",
-      "Blakadder Database",
-      "Homey Community",
-      "Tuya Developer Portal"
-    ],
-    "advanced_features": [
-      "scene_control",
-      "battery_monitoring",
-      "multi_button_support"
-    ],
-    "tested_devices": [
-      "TS0041_remote",
-      "TS0042_remote"
-    ],
-    "zigbee_clusters": [
-      "genBasic",
-      "genPowerCfg"
-    ],
-    "sdk3_optimized": true,
-    "sdk3_version": "3.8.4",
-    "optimization_date": "2025-08-23T08:22:37.870Z"
-  },
-  "capabilitiesOptions": {},
-  "flowCards": [
-    "scene_trigger",
-    "button_press",
-    "battery_alert"
-  ]
+  }
 }

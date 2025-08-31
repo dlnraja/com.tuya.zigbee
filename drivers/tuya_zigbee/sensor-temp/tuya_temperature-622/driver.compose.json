@@ -1,72 +1,35 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_tuya_temperature-622",
+  "title": {
+    "en": "Tuya Temperature-622 Control",
+    "fr": "Contrôle Tuya Temperature-622"
+  },
+  "class": "other",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    },
-    "dim": {
-      "set": true,
-      "get": true
-    },
-    "light_temperature": {
-      "set": true,
-      "get": true
-    },
-    "light_mode": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
+  "name": {
+    "en": "Tuya Temperature-622",
+    "fr": "Tuya Temperature-622"
+  },
   "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "tuya_temperature-622",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
+          0,
+          6
         ]
       }
     }
-  },
-  "name": {
-    "en": "Tuya temperature-622",
-    "fr": "Tuya température-622"
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.226Z",
-    "discussions": 2,
-    "solutions": 2,
-    "communityRating": "4.2",
-    "url": "https://community.homey.app/search?q=tuya_temperature-622"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.226Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_temperature-622.html",
-    "features": [
-      "humidity"
-    ],
-    "compatibility": "good"
   }
 }

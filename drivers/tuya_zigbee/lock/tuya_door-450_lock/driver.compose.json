@@ -1,57 +1,35 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_tuya_door-450_lock",
+  "title": {
+    "en": "Tuya Door-450 Lock Control",
+    "fr": "Contrôle Tuya Door-450 Lock"
+  },
+  "class": "lock",
   "capabilities": [
     "lock_state"
   ],
-  "capabilitiesOptions": {
-    "lock_state": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
+  "name": {
+    "en": "Tuya Door-450 Lock",
+    "fr": "Tuya Door-450 Lock"
+  },
   "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "tuya_door-450_lock",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
+          0,
+          6
         ]
       }
     }
-  },
-  "name": {
-    "en": "Tuya door-450 lock",
-    "fr": "Tuya door-450 lock"
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:13.936Z",
-    "discussions": 7,
-    "solutions": 2,
-    "communityRating": "3.1",
-    "url": "https://community.homey.app/search?q=tuya_door-450_lock"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:13.936Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_door-450_lock.html",
-    "features": [
-      "power"
-    ],
-    "compatibility": "good"
   }
 }

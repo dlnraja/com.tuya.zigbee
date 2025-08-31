@@ -1,53 +1,35 @@
 {
-  "id": "generic_switch",
+  "id": "tuya_switch",
+  "title": {
+    "en": "Switch Control",
+    "fr": "Contrôle Switch"
+  },
   "class": "switch",
-  "name": {
-    "en": "Generic Switch (Intelligent)",
-    "fr": "Switch Générique (Intelligent)",
-    "nl": "Generieke Switch (Intelligent)",
-    "ta": "பொதுவான Switch (ஸ்மார்ட்)"
-  },
-  "description": {
-    "en": "Generic intelligent switch driver with auto-discovery",
-    "fr": "Driver switch générique intelligent avec découverte automatique",
-    "nl": "Generieke intelligente switch driver met auto-detectie",
-    "ta": "பொதுவான ஸ்மார்ட் switch டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {},
+  "images": {
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Switch",
+    "fr": "Switch"
+  },
   "zigbee": {
-    "fingerprints": [
-      {
-        "model": "generic_switch",
-        "vendor": "Generic",
-        "description": "Generic intelligent ${category} device"
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
       }
-    ],
-    "models": [
-      "generic_switch"
-    ]
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.109Z",
-    "discussions": 10,
-    "solutions": 5,
-    "communityRating": "4.0",
-    "url": "https://community.homey.app/search?q=switch"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.109Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/switch.html",
-    "features": [
-      "dim"
-    ],
-    "compatibility": "good"
+    }
   }
 }

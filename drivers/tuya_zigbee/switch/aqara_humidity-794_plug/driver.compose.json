@@ -1,59 +1,36 @@
 {
-  "id": "aqara_humidity-794_plug",
-  "class": "switch",
-  "name": {
-    "en": "Aqara Humidity-794 Plug (Intelligent)",
-    "fr": "Aqara Humidity-794 Plug (Intelligent)",
-    "nl": "Aqara Humidity-794 Plug (Intelligent)",
-    "ta": "Aqara Humidity-794 Plug (ஸ்மார்ட்)"
+  "id": "tuya_aqara_humidity-794_plug",
+  "title": {
+    "en": "Aqara Humidity-794 Plug Control",
+    "fr": "Contrôle Aqara Humidity-794 Plug"
   },
-  "description": {
-    "en": "Intelligent Aqara Humidity-794 Plug driver with auto-discovery",
-    "fr": "Driver Aqara Humidity-794 Plug intelligent avec découverte automatique",
-    "nl": "Intelligente Aqara Humidity-794 Plug driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Aqara Humidity-794 Plug டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_power"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "aqara_humidity-794_plug_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "aqara_humidity-794_plug_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.392Z",
-    "discussions": 4,
-    "solutions": 2,
-    "communityRating": "3.9",
-    "url": "https://community.homey.app/search?q=aqara_humidity-794_plug"
+  "name": {
+    "en": "Aqara Humidity-794 Plug",
+    "fr": "Aqara Humidity-794 Plug"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.392Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_humidity-794_plug.html",
-    "features": [
-      "onoff"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "poor"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

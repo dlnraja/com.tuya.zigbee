@@ -1,61 +1,36 @@
 {
-  "id": "ikea_temperature-892_plug",
-  "class": "switch",
-  "name": {
-    "en": "Ikea Temperature-892 Plug (Intelligent)",
-    "fr": "Ikea Temperature-892 Plug (Intelligent)",
-    "nl": "Ikea Temperature-892 Plug (Intelligent)",
-    "ta": "Ikea Temperature-892 Plug (ஸ்மார்ட்)"
+  "id": "tuya_ikea_temperature-892_plug",
+  "title": {
+    "en": "Ikea Temperature-892 Plug Control",
+    "fr": "Contrôle Ikea Temperature-892 Plug"
   },
-  "description": {
-    "en": "Intelligent Ikea Temperature-892 Plug driver with auto-discovery",
-    "fr": "Driver Ikea Temperature-892 Plug intelligent avec découverte automatique",
-    "nl": "Intelligente Ikea Temperature-892 Plug driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Ikea Temperature-892 Plug டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_power"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "ikea_temperature-892_plug_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "ikea_temperature-892_plug_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.505Z",
-    "discussions": 6,
-    "solutions": 4,
-    "communityRating": "3.1",
-    "url": "https://community.homey.app/search?q=ikea_temperature-892_plug"
+  "name": {
+    "en": "Ikea Temperature-892 Plug",
+    "fr": "Ikea Temperature-892 Plug"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.505Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_temperature-892_plug.html",
-    "features": [
-      "power",
-      "temperature",
-      "dim"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "good"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

@@ -1,57 +1,35 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_aqara_door-305",
+  "title": {
+    "en": "Aqara Door-305 Control",
+    "fr": "Contrôle Aqara Door-305"
+  },
+  "class": "other",
   "capabilities": [
-    "lock_state"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "lock_state": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
+  "name": {
+    "en": "Aqara Door-305",
+    "fr": "Aqara Door-305"
+  },
   "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "aqara_door-305",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
+          0,
+          6
         ]
       }
     }
-  },
-  "name": {
-    "en": "Aqara door-305",
-    "fr": "Aqara door-305"
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:13.002Z",
-    "discussions": 6,
-    "solutions": 1,
-    "communityRating": "4.3",
-    "url": "https://community.homey.app/search?q=aqara_door-305"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:13.002Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_door-305.html",
-    "features": [
-      "onoff"
-    ],
-    "compatibility": "good"
   }
 }

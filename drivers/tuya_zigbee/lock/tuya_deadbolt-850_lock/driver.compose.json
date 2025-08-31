@@ -1,58 +1,35 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_tuya_deadbolt-850_lock",
+  "title": {
+    "en": "Tuya Deadbolt-850 Lock Control",
+    "fr": "Contrôle Tuya Deadbolt-850 Lock"
+  },
+  "class": "lock",
   "capabilities": [
     "lock_state"
   ],
-  "capabilitiesOptions": {
-    "lock_state": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
+  "name": {
+    "en": "Tuya Deadbolt-850 Lock",
+    "fr": "Tuya Deadbolt-850 Lock"
+  },
   "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "tuya_deadbolt-850_lock",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
+          0,
+          6
         ]
       }
     }
-  },
-  "name": {
-    "en": "Tuya deadbolt-850 lock",
-    "fr": "Tuya deadbolt-850 lock"
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:13.925Z",
-    "discussions": 5,
-    "solutions": 5,
-    "communityRating": "4.8",
-    "url": "https://community.homey.app/search?q=tuya_deadbolt-850_lock"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:13.925Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_deadbolt-850_lock.html",
-    "features": [
-      "power",
-      "color"
-    ],
-    "compatibility": "poor"
   }
 }

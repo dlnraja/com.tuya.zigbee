@@ -1,60 +1,35 @@
 {
-  "id": "generic_device_smart",
-  "class": "switch",
-  "name": {
-    "en": "Generic Device Smart (Intelligent)",
-    "fr": "Generic Device Smart (Intelligent)",
-    "nl": "Generic Device Smart (Intelligent)",
-    "ta": "Generic Device Smart (ஸ்மார்ட்)"
+  "id": "tuya_generic_device_smart",
+  "title": {
+    "en": "Generic Device Smart Control",
+    "fr": "Contrôle Generic Device Smart"
   },
-  "description": {
-    "en": "Intelligent Generic Device Smart driver with auto-discovery",
-    "fr": "Driver Generic Device Smart intelligent avec découverte automatique",
-    "nl": "Intelligente Generic Device Smart driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Generic Device Smart டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "other",
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "generic_device_smart_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "generic_device_smart_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.439Z",
-    "discussions": 4,
-    "solutions": 4,
-    "communityRating": "4.3",
-    "url": "https://community.homey.app/search?q=generic_device_smart"
+  "name": {
+    "en": "Generic Device Smart",
+    "fr": "Generic Device Smart"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.439Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/generic_device_smart.html",
-    "features": [
-      "temperature",
-      "onoff"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "excellent"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

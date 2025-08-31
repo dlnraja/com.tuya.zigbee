@@ -1,74 +1,35 @@
 {
-  "id": "tuya_floor_269",
-  "class": "light",
-  "name": {
-    "en": "Tuya Floor 269 (Intelligent)",
-    "fr": "Tuya Floor 269 (Intelligent)",
-    "nl": "Tuya Floor 269 (Intelligent)",
-    "ta": "Tuya Floor 269 (ஸ்மார்ட்)"
+  "id": "tuya_tuya_floor_269",
+  "title": {
+    "en": "Tuya Floor 269 Control",
+    "fr": "Contrôle Tuya Floor 269"
   },
-  "description": {
-    "en": "Intelligent Tuya Floor 269 driver with auto-discovery",
-    "fr": "Driver Tuya Floor 269 intelligent avec découverte automatique",
-    "nl": "Intelligente Tuya Floor 269 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Tuya Floor 269 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "light"
-  ],
+  "class": "other",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "dim": {
-      "min": 0,
-      "max": 100
-    },
-    "light_temperature": {
-      "min": 153,
-      "max": 500
-    }
+  "images": {
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Tuya Floor 269",
+    "fr": "Tuya Floor 269"
   },
   "zigbee": {
-    "fingerprints": [
-      {
-        "model": "tuya_floor_269_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
       }
-    ],
-    "models": [
-      "tuya_floor_269_generic"
-    ]
-  },
-  "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
-  },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.677Z",
-    "discussions": 8,
-    "solutions": 1,
-    "communityRating": "3.7",
-    "url": "https://community.homey.app/search?q=tuya_floor_269"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.678Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_floor_269.html",
-    "features": [
-      "dim",
-      "power",
-      "motion",
-      "color"
-    ],
-    "compatibility": "good"
+    }
   }
 }

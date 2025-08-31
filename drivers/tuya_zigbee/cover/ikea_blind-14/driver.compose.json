@@ -1,61 +1,35 @@
 {
-  "id": "ikea_blind-14",
-  "class": "cover",
-  "name": {
-    "en": "Ikea Blind-14 (Intelligent)",
-    "fr": "Ikea Blind-14 (Intelligent)",
-    "nl": "Ikea Blind-14 (Intelligent)",
-    "ta": "Ikea Blind-14 (ஸ்மார்ட்)"
+  "id": "tuya_ikea_blind-14",
+  "title": {
+    "en": "Ikea Blind-14 Control",
+    "fr": "Contrôle Ikea Blind-14"
   },
-  "description": {
-    "en": "Intelligent Ikea Blind-14 driver with auto-discovery",
-    "fr": "Driver Ikea Blind-14 intelligent avec découverte automatique",
-    "nl": "Intelligente Ikea Blind-14 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Ikea Blind-14 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "cover"
-  ],
+  "class": "other",
   "capabilities": [
-    "windowcoverings_state",
-    "windowcoverings_set"
+    "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "ikea_blind-14_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "ikea_blind-14_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.203Z",
-    "discussions": 4,
-    "solutions": 3,
-    "communityRating": "4.6",
-    "url": "https://community.homey.app/search?q=ikea_blind-14"
+  "name": {
+    "en": "Ikea Blind-14",
+    "fr": "Ikea Blind-14"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.203Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_blind-14.html",
-    "features": [
-      "humidity",
-      "motion"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "fair"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

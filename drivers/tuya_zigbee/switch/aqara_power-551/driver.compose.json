@@ -1,62 +1,35 @@
 {
-  "id": "aqara_power-551",
-  "class": "switch",
-  "name": {
-    "en": "Aqara Power-551 (Intelligent)",
-    "fr": "Aqara Power-551 (Intelligent)",
-    "nl": "Aqara Power-551 (Intelligent)",
-    "ta": "Aqara Power-551 (ஸ்மார்ட்)"
+  "id": "tuya_aqara_power-551",
+  "title": {
+    "en": "Aqara Power-551 Control",
+    "fr": "Contrôle Aqara Power-551"
   },
-  "description": {
-    "en": "Intelligent Aqara Power-551 driver with auto-discovery",
-    "fr": "Driver Aqara Power-551 intelligent avec découverte automatique",
-    "nl": "Intelligente Aqara Power-551 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Aqara Power-551 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "other",
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "aqara_power-551_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "aqara_power-551_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.406Z",
-    "discussions": 8,
-    "solutions": 1,
-    "communityRating": "3.6",
-    "url": "https://community.homey.app/search?q=aqara_power-551"
+  "name": {
+    "en": "Aqara Power-551",
+    "fr": "Aqara Power-551"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.406Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_power-551.html",
-    "features": [
-      "power",
-      "dim",
-      "humidity",
-      "temperature"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "fair"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

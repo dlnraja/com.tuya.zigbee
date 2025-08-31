@@ -1,73 +1,35 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_aqara_chime-885_siren",
+  "title": {
+    "en": "Aqara Chime-885 Siren Control",
+    "fr": "Contrôle Aqara Chime-885 Siren"
+  },
+  "class": "other",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "onoff"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    },
-    "dim": {
-      "set": true,
-      "get": true
-    },
-    "light_temperature": {
-      "set": true,
-      "get": true
-    },
-    "light_mode": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
+  "name": {
+    "en": "Aqara Chime-885 Siren",
+    "fr": "Aqara Chime-885 Siren"
+  },
   "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "aqara_chime-885_siren",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
+          0,
+          6
         ]
       }
     }
-  },
-  "name": {
-    "en": "Aqara chime-885 siren",
-    "fr": "Aqara chime-885 siren"
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:14.804Z",
-    "discussions": 5,
-    "solutions": 3,
-    "communityRating": "3.8",
-    "url": "https://community.homey.app/search?q=aqara_chime-885_siren"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:14.804Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_chime-885_siren.html",
-    "features": [
-      "color",
-      "temperature"
-    ],
-    "compatibility": "good"
   }
 }

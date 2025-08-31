@@ -1,62 +1,36 @@
 {
-  "id": "aqara_motion-364_plug",
-  "class": "switch",
-  "name": {
-    "en": "Aqara Motion-364 Plug (Intelligent)",
-    "fr": "Aqara Motion-364 Plug (Intelligent)",
-    "nl": "Aqara Motion-364 Plug (Intelligent)",
-    "ta": "Aqara Motion-364 Plug (ஸ்மார்ட்)"
+  "id": "tuya_aqara_motion-364_plug",
+  "title": {
+    "en": "Aqara Motion-364 Plug Control",
+    "fr": "Contrôle Aqara Motion-364 Plug"
   },
-  "description": {
-    "en": "Intelligent Aqara Motion-364 Plug driver with auto-discovery",
-    "fr": "Driver Aqara Motion-364 Plug intelligent avec découverte automatique",
-    "nl": "Intelligente Aqara Motion-364 Plug driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Aqara Motion-364 Plug டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_power"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "aqara_motion-364_plug_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "aqara_motion-364_plug_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.393Z",
-    "discussions": 3,
-    "solutions": 3,
-    "communityRating": "3.9",
-    "url": "https://community.homey.app/search?q=aqara_motion-364_plug"
+  "name": {
+    "en": "Aqara Motion-364 Plug",
+    "fr": "Aqara Motion-364 Plug"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.393Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_motion-364_plug.html",
-    "features": [
-      "temperature",
-      "power",
-      "onoff",
-      "dim"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "good"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

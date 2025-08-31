@@ -1,62 +1,35 @@
 {
-  "id": "tuya_curtain-601",
-  "class": "cover",
-  "name": {
-    "en": "Tuya Curtain-601 (Intelligent)",
-    "fr": "Tuya Curtain-601 (Intelligent)",
-    "nl": "Tuya Curtain-601 (Intelligent)",
-    "ta": "Tuya Curtain-601 (ஸ்மார்ட்)"
+  "id": "tuya_tuya_curtain-601",
+  "title": {
+    "en": "Tuya Curtain-601 Control",
+    "fr": "Contrôle Tuya Curtain-601"
   },
-  "description": {
-    "en": "Intelligent Tuya Curtain-601 driver with auto-discovery",
-    "fr": "Driver Tuya Curtain-601 intelligent avec découverte automatique",
-    "nl": "Intelligente Tuya Curtain-601 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Tuya Curtain-601 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "cover"
-  ],
+  "class": "other",
   "capabilities": [
-    "windowcoverings_state",
-    "windowcoverings_set"
+    "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "tuya_curtain-601_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "tuya_curtain-601_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.272Z",
-    "discussions": 3,
-    "solutions": 5,
-    "communityRating": "3.3",
-    "url": "https://community.homey.app/search?q=tuya_curtain-601"
+  "name": {
+    "en": "Tuya Curtain-601",
+    "fr": "Tuya Curtain-601"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.272Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_curtain-601.html",
-    "features": [
-      "humidity",
-      "color",
-      "onoff"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "excellent"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

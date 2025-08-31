@@ -1,59 +1,36 @@
 {
-  "id": "aqara_water-220_plug",
-  "class": "switch",
-  "name": {
-    "en": "Aqara Water-220 Plug (Intelligent)",
-    "fr": "Aqara Water-220 Plug (Intelligent)",
-    "nl": "Aqara Water-220 Plug (Intelligent)",
-    "ta": "Aqara Water-220 Plug (ஸ்மார்ட்)"
+  "id": "tuya_aqara_water-220_plug",
+  "title": {
+    "en": "Aqara Water-220 Plug Control",
+    "fr": "Contrôle Aqara Water-220 Plug"
   },
-  "description": {
-    "en": "Intelligent Aqara Water-220 Plug driver with auto-discovery",
-    "fr": "Driver Aqara Water-220 Plug intelligent avec découverte automatique",
-    "nl": "Intelligente Aqara Water-220 Plug driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Aqara Water-220 Plug டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_power"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "aqara_water-220_plug_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "aqara_water-220_plug_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.433Z",
-    "discussions": 1,
-    "solutions": 3,
-    "communityRating": "4.9",
-    "url": "https://community.homey.app/search?q=aqara_water-220_plug"
+  "name": {
+    "en": "Aqara Water-220 Plug",
+    "fr": "Aqara Water-220 Plug"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.433Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_water-220_plug.html",
-    "features": [
-      "onoff"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "fair"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

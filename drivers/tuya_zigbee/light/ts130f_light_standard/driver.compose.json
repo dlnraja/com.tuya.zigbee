@@ -1,91 +1,36 @@
 {
-  "id": "ts130f_light_standard",
-  "name": {
-    "en": "Tuya TS130F Standard Light",
-    "fr": "Ampoule Tuya TS130F Standard"
+  "id": "tuya_ts130f_light_standard",
+  "title": {
+    "en": "Ts130F Light Standard Control",
+    "fr": "Contrôle Ts130F Light Standard"
   },
   "class": "light",
   "capabilities": [
     "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "dim"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "title": {
-        "en": "Light State",
-        "fr": "État de l'ampoule"
-      }
-    },
-    "dim": {
-      "title": {
-        "en": "Brightness",
-        "fr": "Luminosité"
-      }
-    },
-    "light_temperature": {
-      "title": {
-        "en": "Color Temperature",
-        "fr": "Température de couleur"
-      }
-    },
-    "light_mode": {
-      "title": {
-        "en": "Light Mode",
-        "fr": "Mode d'éclairage"
-      }
-    }
+  "images": {
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Ts130F Light Standard",
+    "fr": "Ts130F Light Standard"
   },
   "zigbee": {
     "manufacturerName": [
       "Tuya"
     ],
-    "modelId": [
-      "TS130F"
-    ],
     "productId": [
-      "TS130F"
-    ]
-  },
-  "tuya_dps": {
-    "1": {
-      "name": "Switch",
-      "type": "bool",
-      "capability": "onoff"
-    },
-    "2": {
-      "name": "Brightness",
-      "type": "value",
-      "capability": "dim"
-    },
-    "3": {
-      "name": "Color Temperature",
-      "type": "value",
-      "capability": "light_temperature"
-    },
-    "4": {
-      "name": "Mode",
-      "type": "enum",
-      "capability": "light_mode"
-    }
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.618Z",
-    "discussions": 4,
-    "solutions": 2,
-    "communityRating": "4.0",
-    "url": "https://community.homey.app/search?q=ts130f_light_standard"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.618Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ts130f_light_standard.html",
-    "features": [
-      "motion"
+      "TS0601"
     ],
-    "compatibility": "poor"
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

@@ -1,73 +1,35 @@
 {
-  "class": "ZigBeeDevice",
+  "id": "tuya_generic_zigbee_sensor",
+  "title": {
+    "en": "Generic Zigbee Sensor Control",
+    "fr": "Contrôle Generic Zigbee Sensor"
+  },
+  "class": "sensor",
   "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature",
-    "light_mode"
+    "measure_temperature"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "set": true,
-      "get": true
-    },
-    "dim": {
-      "set": true,
-      "get": true
-    },
-    "light_temperature": {
-      "set": true,
-      "get": true
-    },
-    "light_mode": {
-      "set": true,
-      "get": true
-    }
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
+  "name": {
+    "en": "Generic Zigbee Sensor",
+    "fr": "Generic Zigbee Sensor"
+  },
   "zigbee": {
-    "manufacturerName": "Tuya",
-    "modelId": "generic_zigbee_sensor",
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic",
-          "genOnOff",
-          "genLevelCtrl"
-        ],
-        "bindings": [
-          "genOnOff",
-          "genLevelCtrl"
+          0,
+          6
         ]
       }
     }
-  },
-  "name": {
-    "en": "Generic zigbee sensor",
-    "fr": "Generic zigbee capteur"
-  },
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:15.010Z",
-    "discussions": 6,
-    "solutions": 1,
-    "communityRating": "3.8",
-    "url": "https://community.homey.app/search?q=generic_zigbee_sensor"
-  },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:15.010Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/generic_zigbee_sensor.html",
-    "features": [
-      "humidity",
-      "temperature"
-    ],
-    "compatibility": "good"
   }
 }

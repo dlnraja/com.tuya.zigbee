@@ -1,61 +1,35 @@
 {
-  "id": "ikea_shade-756_cover",
+  "id": "tuya_ikea_shade-756_cover",
+  "title": {
+    "en": "Ikea Shade-756 Cover Control",
+    "fr": "Contrôle Ikea Shade-756 Cover"
+  },
   "class": "cover",
-  "name": {
-    "en": "Ikea Shade-756 Cover (Intelligent)",
-    "fr": "Ikea Shade-756 Cover (Intelligent)",
-    "nl": "Ikea Shade-756 Cover (Intelligent)",
-    "ta": "Ikea Shade-756 Cover (ஸ்மார்ட்)"
-  },
-  "description": {
-    "en": "Intelligent Ikea Shade-756 Cover driver with auto-discovery",
-    "fr": "Driver Ikea Shade-756 Cover intelligent avec découverte automatique",
-    "nl": "Intelligente Ikea Shade-756 Cover driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Ikea Shade-756 Cover டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "cover"
-  ],
   "capabilities": [
-    "windowcoverings_state",
-    "windowcoverings_set"
+    "windowcoverings_state"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "ikea_shade-756_cover_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "ikea_shade-756_cover_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.240Z",
-    "discussions": 8,
-    "solutions": 2,
-    "communityRating": "5.0",
-    "url": "https://community.homey.app/search?q=ikea_shade-756_cover"
+  "name": {
+    "en": "Ikea Shade-756 Cover",
+    "fr": "Ikea Shade-756 Cover"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.240Z",
-    "supported": false,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_shade-756_cover.html",
-    "features": [
-      "humidity",
-      "dim"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "fair"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

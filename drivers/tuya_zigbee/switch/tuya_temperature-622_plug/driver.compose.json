@@ -1,60 +1,36 @@
 {
-  "id": "tuya_temperature-622_plug",
-  "class": "switch",
-  "name": {
-    "en": "Tuya Temperature-622 Plug (Intelligent)",
-    "fr": "Tuya Temperature-622 Plug (Intelligent)",
-    "nl": "Tuya Temperature-622 Plug (Intelligent)",
-    "ta": "Tuya Temperature-622 Plug (ஸ்மார்ட்)"
+  "id": "tuya_tuya_temperature-622_plug",
+  "title": {
+    "en": "Tuya Temperature-622 Plug Control",
+    "fr": "Contrôle Tuya Temperature-622 Plug"
   },
-  "description": {
-    "en": "Intelligent Tuya Temperature-622 Plug driver with auto-discovery",
-    "fr": "Driver Tuya Temperature-622 Plug intelligent avec découverte automatique",
-    "nl": "Intelligente Tuya Temperature-622 Plug driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Tuya Temperature-622 Plug டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_power"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "tuya_temperature-622_plug_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "tuya_temperature-622_plug_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.687Z",
-    "discussions": 9,
-    "solutions": 3,
-    "communityRating": "4.0",
-    "url": "https://community.homey.app/search?q=tuya_temperature-622_plug"
+  "name": {
+    "en": "Tuya Temperature-622 Plug",
+    "fr": "Tuya Temperature-622 Plug"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.687Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/tuya_temperature-622_plug.html",
-    "features": [
-      "onoff",
-      "temperature"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "excellent"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

@@ -1,63 +1,35 @@
 {
-  "id": "aqara_blind-824",
-  "class": "cover",
-  "name": {
-    "en": "Aqara Blind-824 (Intelligent)",
-    "fr": "Aqara Blind-824 (Intelligent)",
-    "nl": "Aqara Blind-824 (Intelligent)",
-    "ta": "Aqara Blind-824 (ஸ்மார்ட்)"
+  "id": "tuya_aqara_blind-824",
+  "title": {
+    "en": "Aqara Blind-824 Control",
+    "fr": "Contrôle Aqara Blind-824"
   },
-  "description": {
-    "en": "Intelligent Aqara Blind-824 driver with auto-discovery",
-    "fr": "Driver Aqara Blind-824 intelligent avec découverte automatique",
-    "nl": "Intelligente Aqara Blind-824 driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Aqara Blind-824 டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "cover"
-  ],
+  "class": "other",
   "capabilities": [
-    "windowcoverings_state",
-    "windowcoverings_set"
+    "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "aqara_blind-824_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "aqara_blind-824_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:12.168Z",
-    "discussions": 9,
-    "solutions": 2,
-    "communityRating": "3.8",
-    "url": "https://community.homey.app/search?q=aqara_blind-824"
+  "name": {
+    "en": "Aqara Blind-824",
+    "fr": "Aqara Blind-824"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:12.168Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_blind-824.html",
-    "features": [
-      "humidity",
-      "power",
-      "dim",
-      "temperature"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "fair"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

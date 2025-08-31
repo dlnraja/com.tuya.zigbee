@@ -1,59 +1,36 @@
 {
-  "id": "ikea_heater-399_plug",
-  "class": "switch",
-  "name": {
-    "en": "Ikea Heater-399 Plug (Intelligent)",
-    "fr": "Ikea Heater-399 Plug (Intelligent)",
-    "nl": "Ikea Heater-399 Plug (Intelligent)",
-    "ta": "Ikea Heater-399 Plug (ஸ்மார்ட்)"
+  "id": "tuya_ikea_heater-399_plug",
+  "title": {
+    "en": "Ikea Heater-399 Plug Control",
+    "fr": "Contrôle Ikea Heater-399 Plug"
   },
-  "description": {
-    "en": "Intelligent Ikea Heater-399 Plug driver with auto-discovery",
-    "fr": "Driver Ikea Heater-399 Plug intelligent avec découverte automatique",
-    "nl": "Intelligente Ikea Heater-399 Plug driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Ikea Heater-399 Plug டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
+  "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_power"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "ikea_heater-399_plug_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "ikea_heater-399_plug_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.469Z",
-    "discussions": 6,
-    "solutions": 4,
-    "communityRating": "3.9",
-    "url": "https://community.homey.app/search?q=ikea_heater-399_plug"
+  "name": {
+    "en": "Ikea Heater-399 Plug",
+    "fr": "Ikea Heater-399 Plug"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.469Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/ikea_heater-399_plug.html",
-    "features": [
-      "onoff"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "good"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }

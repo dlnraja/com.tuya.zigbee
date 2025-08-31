@@ -1,60 +1,35 @@
 {
-  "id": "aqara_switch-457_plug",
+  "id": "tuya_aqara_switch-457_plug",
+  "title": {
+    "en": "Aqara Switch-457 Plug Control",
+    "fr": "Contrôle Aqara Switch-457 Plug"
+  },
   "class": "switch",
-  "name": {
-    "en": "Aqara Switch-457 Plug (Intelligent)",
-    "fr": "Aqara Switch-457 Plug (Intelligent)",
-    "nl": "Aqara Switch-457 Plug (Intelligent)",
-    "ta": "Aqara Switch-457 Plug (ஸ்மார்ட்)"
-  },
-  "description": {
-    "en": "Intelligent Aqara Switch-457 Plug driver with auto-discovery",
-    "fr": "Driver Aqara Switch-457 Plug intelligent avec découverte automatique",
-    "nl": "Intelligente Aqara Switch-457 Plug driver met auto-detectie",
-    "ta": "ஸ்மார்ட் Aqara Switch-457 Plug டிரைவர் தானாக கண்டறியும்"
-  },
-  "category": [
-    "switch"
-  ],
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {},
-  "zigbee": {
-    "fingerprints": [
-      {
-        "model": "aqara_switch-457_plug_generic",
-        "vendor": "Generic",
-        "description": "Generic ${category} device"
-      }
-    ],
-    "models": [
-      "aqara_switch-457_plug_generic"
-    ]
-  },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "icon": "assets/icon.svg",
-  "homeyForum": {
-    "source": "homey_forum",
-    "lastChecked": "2025-08-16T03:32:17.416Z",
-    "discussions": 7,
-    "solutions": 4,
-    "communityRating": "4.7",
-    "url": "https://community.homey.app/search?q=aqara_switch-457_plug"
+  "name": {
+    "en": "Aqara Switch-457 Plug",
+    "fr": "Aqara Switch-457 Plug"
   },
-  "zigbee2mqtt": {
-    "source": "zigbee2mqtt",
-    "lastChecked": "2025-08-16T03:32:17.416Z",
-    "supported": true,
-    "documentation": "https://www.zigbee2mqtt.io/devices/aqara_switch-457_plug.html",
-    "features": [
-      "motion",
-      "humidity"
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
     ],
-    "compatibility": "good"
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   }
 }
