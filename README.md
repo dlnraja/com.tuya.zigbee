@@ -2,14 +2,14 @@
 
 > **Universal Tuya Zigbee Device Support for Homey - Professional Edition**
 
-[![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee/releases)
+[![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](https://github.com/dlnraja/tuya_repair.tuya.zigbee/releases)
 [![Homey SDK](https://img.shields.io/badge/Homey%20SDK-3.0+-green.svg)](https://apps.homey.app/fr/app/com.tuya.zigbee)
 [![License](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 ## 📜 Attribution
 
-This project is based on the original work by Johan Bentz ([JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee)) and is released under the MIT License. Special thanks to the Homey community for their contributions and feedback.
+This project is based on the original work by Johan Bentz ([JohanBendz/com.tuya.zigbee](https://github.com/dlnraja/tuya_repair.tuya.zigbee)) and is released under the MIT License. Special thanks to the Homey community for their contributions and feedback.
 
 ## 🚀 Project Status
 
@@ -45,7 +45,7 @@ This is a comprehensive Homey app that provides support for various Tuya Zigbee 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/dlnraja/com.tuya.zigbee.git
+   git clone https://github.com/dlnraja/tuya_repair.tuya.zigbee.git
    cd com.tuya.zigbee
    ```
 
@@ -154,7 +154,7 @@ This is a comprehensive Homey app that provides support for various Tuya Zigbee 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/dlnraja/com.tuya.zigbee.git
+   git clone https://github.com/dlnraja/tuya_repair.tuya.zigbee.git
    cd com.tuya.zigbee
    ```
 
@@ -317,9 +317,9 @@ node scripts/mega-features-sync.js
 
 | Workflow | Description | Statut |
 |----------|-------------|--------|
-| [Build & Validate](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/build.yml) | Compilation et validation | ✅ |
-| [Deploy Dashboard](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/deploy.yml) | Déploiement GitHub Pages | ✅ |
-| [Sync Branches](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/sync-tuya-light.yml) | Synchronisation master ↔ tuya-light | ✅ |
+| [Build & Validate](https://github.com/dlnraja/tuya_repair.tuya.zigbee/actions/workflows/build.yml) | Compilation et validation | ✅ |
+| [Deploy Dashboard](https://github.com/dlnraja/tuya_repair.tuya.zigbee/actions/workflows/deploy.yml) | Déploiement GitHub Pages | ✅ |
+| [Sync Branches](https://github.com/dlnraja/tuya_repair.tuya.zigbee/actions/workflows/sync-tuya-light.yml) | Synchronisation master ↔ tuya-light | ✅ |
 
 ---
 
@@ -366,8 +366,8 @@ Documentation disponible dans l'ordre de priorité :
 ### 🔗 Liens Utiles
 - [Homey App Store](https://apps.homey.app/fr/app/com.tuya.zigbee)
 - [Community Thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352)
-- [GitHub Issues](https://github.com/dlnraja/com.tuya.zigbee/issues)
-- [Releases](https://github.com/dlnraja/com.tuya.zigbee/releases)
+- [GitHub Issues](https://github.com/dlnraja/tuya_repair.tuya.zigbee/issues)
+- [Releases](https://github.com/dlnraja/tuya_repair.tuya.zigbee/releases)
 
 ---
 
@@ -411,10 +411,10 @@ Ce projet fonctionne en **Mode YOLO Ultra** avec :
 ## 📞 Support
 
 ### 🐛 Signaler un Bug
-[Ouvrir une Issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new)
+[Ouvrir une Issue](https://github.com/dlnraja/tuya_repair.tuya.zigbee/issues/new)
 
 ### 💡 Demander une Feature
-[Créer une Feature Request](https://github.com/dlnraja/com.tuya.zigbee/issues/new?template=feature_request.md)
+[Créer une Feature Request](https://github.com/dlnraja/tuya_repair.tuya.zigbee/issues/new?template=feature_request.md)
 
 ### 💬 Discussion
 [Forum Homey Community](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352)
