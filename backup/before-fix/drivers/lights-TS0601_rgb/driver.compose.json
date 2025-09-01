@@ -1,0 +1,36 @@
+{
+  "id": "tuya_lights-ts0601_rgb",
+  "title": {
+    "en": "Lights-Ts0601 Rgb Control",
+    "fr": "Contrôle Lights-Ts0601 Rgb"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "images": {
+    "small": "assets/small.png",
+    "large": "assets/large.png"
+  },
+  "name": {
+    "en": "Lights-Ts0601 Rgb",
+    "fr": "Lights-Ts0601 Rgb"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
+  }
+}
