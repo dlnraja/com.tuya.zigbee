@@ -8,37 +8,80 @@ class TuyaTS011FDevice extends ZigBeeDevice {
   async onNodeInit({ zclNode }) {
     this.log('TS011F Device has been initialized');
 
-    // Register capabilities
+    // Enregistrement des capacités de base
     this.registerCapability('onoff', CLUSTER.ON_OFF);
     
-    // Register energy monitoring capabilities if supported
-    if (this.hasCapability('measure_power')) {
-      this.registerCapability('measure_power', CLUSTER.ELECTRICAL_MEASUREMENT, {
-        get: 'activePower',
-        report: 'activePower',
-        reportParser: value => value / 10, // Convert to Watts
-      });
-    }
+    // Enregistrement des capacités de mesure avancées
+    this.registerCapability('measure_power', CLUSTER.ELECTRICAL_MEASUREMENT, {
+      get: 'activePower',
+      report: 'activePower',
+      reportParser: value => value / 10, // Conversion en Watts
+    });
 
-    if (this.hasCapability('meter_power')) {
-      this.registerCapability('meter_power', CLUSTER.METERING, {
-        get: 'currentSummationDelivered',
-        report: 'currentSummationDelivered',
-        reportParser: value => value / 1000, // Convert to kWh
-      });
-    }
+    this.registerCapability('measure_voltage', CLUSTER.ELECTRICAL_MEASUREMENT, {
+      get: 'rmsVoltage',
+      report: 'rmsVoltage',
+      reportParser: value => value, // Conservation de la valeur en Volts
+    });
 
-    // Handle device specific settings
+    this.registerCapability('measure_current', CLUSTER.ELECTRICAL_MEASUREMENT, {
+      get: 'rmsCurrent',
+      report: 'rmsCurrent',
+      reportParser: value => value / 1000, // Conversion en Ampères
+    });
+
+    this.registerCapability('meter_power', CLUSTER.METERING, {
+      get: 'currentSummationDelivered',
+      report: 'currentSummationDelivered',
+      reportParser: value => value / 1000, // Conversion en kWh
+    });
+
+    // Initialisation du score de fiabilité
+    this._reliabilityScore = this.calculateReliabilityScore();
+    this.log(`Reliability score initialized: ${this._reliabilityScore}`);
+
+    // Gestion des paramètres spécifiques
     this.registerSettings();
   }
 
+  // Calcul du score de fiabilité basé sur les sources
+  calculateReliabilityScore() {
+    const sources = this.getStoreValue('sources') || [];
+    const weights = {
+      'tuya-official': 1.0,
+      'blakadder': 0.9,
+      'zigbee2mqtt': 0.8,
+      'homey-forum': 0.7,
+      'user-submitted': 0.6
+    };
+    
+    return sources.reduce((score, source) => {
+      return score + (weights[source.type] || 0.5) * source.confidence;
+    }, 0);
+  }
+
   registerSettings() {
-    // Register settings specific to this device
-    this.registerSetting('powerOnState', (value) => {
-      return {
-        powerOnState: value ? 1 : 0,
-      };
-    });
+    // Paramètre pour l'état au démarrage
+    this.registerSetting('powerOnState', value => ({
+      powerOnState: value ? 1 : 0
+    }));
+
+    // Contrôle de la LED
+    this.registerSetting('ledIndicator', value => ({
+      ledIndicator: value ? 1 : 0
+    }));
+
+    // Verrouillage enfant
+    this.registerSetting('childLock', value => ({
+      childLock: value ? 1 : 0
+    }));
+  }
+
+  // Mise à jour automatique via le système d'automatisation
+  async updateFromSources(sources) {
+    this.setStoreValue('sources', sources);
+    this._reliabilityScore = this.calculateReliabilityScore();
+    this.log(`Reliability score updated: ${this._reliabilityScore}`);
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {

@@ -1,0 +1,50 @@
+﻿=== validator ===
+Date: 2025-09-01 10:34:27
+DurÃ©e: 0,86 secondes
+Code de sortie: 1
+
+=== SORTIE ===
+node.exe : 
+node:internal/modules/package_json_reader:255
+Au caractère C:\Users\HP\Desktop\tuya_repair\r
+un-scans.ps1:39 : 19
++         $output = & node $scriptPath 2>&1 | 
+Out-String
++                   ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ( 
+   node:internal/m...json_reader:255:String)  
+   [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandEr 
+   ror
+ 
+  throw new ERR_MODULE_NOT_FOUND(packageName, 
+fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find 
+package 'fs-extra' imported from C:\Users\HP\D
+esktop\tuya_repair\scripts\validator.js
+    at Object.getPackageJSONURL (node:internal
+/modules/package_json_reader:255:9)
+    at packageResolve 
+(node:internal/modules/esm/resolve:767:81)
+    at moduleResolve 
+(node:internal/modules/esm/resolve:853:18)
+    at defaultResolve 
+(node:internal/modules/esm/resolve:983:11)
+    at ModuleLoader.defaultResolve 
+(node:internal/modules/esm/loader:783:12)
+    at #cachedDefaultResolve 
+(node:internal/modules/esm/loader:707:25)
+    at ModuleLoader.resolve 
+(node:internal/modules/esm/loader:690:38)
+    at ModuleLoader.getModuleJobForImport 
+(node:internal/modules/esm/loader:307:38)
+    at ModuleJob._link 
+(node:internal/modules/esm/module_job:183:49) 
+{
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v22.18.0
+

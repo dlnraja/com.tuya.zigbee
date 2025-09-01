@@ -40,6 +40,11 @@ D:/Download/fold/
 *.backup
 *.tmp
 
+# Fichiers d'automatisation
+reports/
+.temp/
+.auto-generated/
+
 # Exclusion automatique de toute config locale
 .vscode/
 local-scripts/
