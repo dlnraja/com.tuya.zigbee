@@ -1,0 +1,20 @@
+{
+  "name": "tuya-zigbee-scripts",
+  "version": "1.0.0",
+  "description": "Scripts for managing Tuya Zigbee drivers",
+  "type": "module",
+  "scripts": {
+    "start": "node update-drivers.js",
+    "test": "node test-deps.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "chalk": "^5.3.0",
+    "fs-extra": "^11.1.1",
+    "glob": "^10.3.3",
+    "uuid": "^9.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
