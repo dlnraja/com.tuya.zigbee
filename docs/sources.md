@@ -317,5 +317,24 @@
 ## 🔍 Analyse
 Les sources ont été extraites automatiquement du contenu des fichiers.
 
+# Sources du projet Tuya Zigbee
+
+## GitHub Repositories
+- https://github.com/JohanBendz/com.tuya.zigbee
+- https://github.com/blakadder/zigbee
+
+## Bases de données
+- https://www.zigbee2mqtt.io/devices/
+
+## Forums
+- https://community.homey.app
+
+## Documentation
+- https://developer.tuya.com
+- https://apps.developer.homey.app
+
+## Spécifications
+- https://zigbeealliance.org
+
 ---
 *Généré automatiquement par ExternalFolderProcessor*

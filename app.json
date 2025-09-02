@@ -37,28 +37,6 @@
   "color": "#FF6B35",
   "drivers": [
     {
-      "id": "tuya-ts011f",
-      "title": {
-        "en": "Tuya Smart Plug (TS011F)",
-        "fr": "Prise intelligente Tuya (TS011F)",
-        "nl": "Tuya Slimme stekker (TS011F)",
-        "ta": "Tuya ஸ்மார்ட் பிளக் (TS011F)"
-      },
-      "icon": "/drivers/tuya-ts011f/assets/icon.svg",
-      "class": "socket",
-      "capabilities": ["onoff", "measure_power", "meter_power"],
-      "images": {
-        "large": "/drivers/tuya-ts011f/assets/images/large.png",
-        "small": "/drivers/tuya-ts011f/assets/images/small.png"
-      },
-      "energy": {
-        "approximation": {
-          "usageOn": 0.5,
-          "usageOff": 0
-        }
-      }
-    },
-    {
       "id": "_common",
       "title": {
         "en": " Common Control",
@@ -139,8 +117,8 @@
         "target_temperature"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Climate",
@@ -174,8 +152,8 @@
         "target_temperature"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Climates-Ts0601 Ac",
@@ -209,8 +187,8 @@
         "windowcoverings_state"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Cover",
@@ -244,8 +222,8 @@
         "windowcoverings_state"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Covers-Ts0602 Cover",
@@ -280,8 +258,8 @@
         "fan_speed"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Fan",
@@ -316,8 +294,8 @@
         "fan_speed"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Fan-Tuya-Universal",
@@ -352,8 +330,8 @@
         "fan_speed"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Fans-Ts0601 Fan",
@@ -388,8 +366,8 @@
         "fan_speed"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Fans-Ts0602 Fan",
@@ -459,8 +437,8 @@
         "dim"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Light",
@@ -495,8 +473,8 @@
         "dim"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Lights-Ts0501B",
@@ -531,8 +509,8 @@
         "dim"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Lights-Ts0601 Dimmer",
@@ -567,8 +545,8 @@
         "dim"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Lights-Ts0601 Rgb",
@@ -603,8 +581,8 @@
         "dim"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Lights-Ts0601 Switch",
@@ -638,8 +616,8 @@
         "lock_state"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Lock",
@@ -673,8 +651,8 @@
         "lock_state"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Lock-Tuya-Universal",
@@ -708,8 +686,8 @@
         "lock_state"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Locks-Ts0601 Lock",
@@ -744,8 +722,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Plug",
@@ -780,8 +758,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Plugs-Ts011F",
@@ -816,8 +794,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Plugs-Ts011G",
@@ -852,8 +830,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Plugs-Ts011H",
@@ -888,8 +866,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Plugs-Ts011I",
@@ -924,8 +902,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Plugs-Ts011J",
@@ -960,8 +938,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Plugs-Ts0121",
@@ -996,8 +974,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Plugs-Ts0122",
@@ -1032,8 +1010,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Plugs-Ts0123",
@@ -1068,8 +1046,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Plugs-Ts0124",
@@ -1104,8 +1082,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Plugs-Ts0125",
@@ -1139,8 +1117,8 @@
         "onoff"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Remotes-Ts0601 Remote",
@@ -1174,8 +1152,8 @@
         "measure_temperature"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Sensor",
@@ -1209,8 +1187,8 @@
         "measure_temperature"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Sensors-Ts0201",
@@ -1244,8 +1222,8 @@
         "measure_temperature"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Sensors-Ts0601 Contact",
@@ -1279,8 +1257,8 @@
         "measure_temperature"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Sensors-Ts0601 Gas",
@@ -1306,24 +1284,121 @@
     {
       "id": "sensors-TS0601_motion",
       "title": {
-        "en": "Sensors-Ts0601 Motion Control",
-        "fr": "Contrôle Sensors-Ts0601 Motion"
+        "en": "Tuya TS0601 Motion Sensor",
+        "fr": "Détecteur de mouvement Tuya TS0601",
+        "nl": "Tuya TS0601 Bewegingssensor",
+        "ta": "Tuya TS0601 இயக்க உணரி"
       },
       "class": "sensor",
       "capabilities": [
-        "measure_temperature"
+        "alarm_motion",
+        "measure_temperature",
+        "measure_battery",
+        "alarm_battery"
       ],
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Motion",
+            "fr": "Mouvement",
+            "nl": "Beweging",
+            "ta": "இயக்கம்"
+          }
+        },
+        "measure_temperature": {
+          "title": {
+            "en": "Temperature",
+            "fr": "Température",
+            "nl": "Temperatuur",
+            "ta": "வெப்பநிலை"
+          },
+          "units": "°C"
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie",
+            "nl": "Batterij",
+            "ta": "பேட்டரி"
+          },
+          "units": "%"
+        },
+        "alarm_battery": {
+          "title": {
+            "en": "Battery Alarm",
+            "fr": "Alerte batterie",
+            "nl": "Batterij alarm",
+            "ta": "பேட்டரி எச்சரிக்கை"
+          }
+        }
+      },
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
-        "en": "Sensors-Ts0601 Motion",
-        "fr": "Sensors-Ts0601 Motion"
+        "en": "Tuya TS0601 Motion Sensor",
+        "fr": "Détecteur de mouvement Tuya TS0601",
+        "nl": "Tuya TS0601 Bewegingssensor",
+        "ta": "Tuya TS0601 இயக்க உணரி"
       },
+      "settings": [
+        {
+          "id": "motion_reset",
+          "type": "number",
+          "value": 60,
+          "label": {
+            "en": "Motion Reset Time (seconds)",
+            "fr": "Temps de réinitialisation du détecteur (secondes)",
+            "nl": "Bewegingshersteltijd (seconden)",
+            "ta": "இயக்க மீட்டமைப்பு நேரம் (விநாடிகள்)"
+          },
+          "hint": {
+            "en": "Time after which motion alarm is reset (default: 60s)",
+            "fr": "Temps après lequel l'alarme de mouvement est réinitialisée (par défaut : 60s)",
+            "nl": "Tijd waarna het bewegingsalarm wordt gereset (standaard: 60s)",
+            "ta": "இயக்க எச்சரிக்கை மீட்டமைக்கப்படும் நேரம் (இயல்புநிலை: 60 வினாடிகள்)"
+          },
+          "attr": {
+            "min": 10,
+            "max": 300
+          }
+        },
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "value": 0,
+          "label": {
+            "en": "Temperature Offset",
+            "fr": "Décalage de température",
+            "nl": "Temperatuur correctie",
+            "ta": "வெப்பநிலை ஈடுசெய்தல்"
+          },
+          "hint": {
+            "en": "Adjust the temperature reading by this value",
+            "fr": "Ajuster la lecture de température de cette valeur",
+            "nl": "Pas de temperatuuraflezing aan met deze waarde",
+            "ta": "வெப்பநிலை வாசிப்பை இந்த மதிப்பால் சரிசெய்யவும்"
+          },
+          "attr": {
+            "min": -10,
+            "max": 10,
+            "step": 0.1
+          }
+        }
+      ],
       "zigbee": {
         "manufacturerName": [
-          "Tuya"
+          "_TZE200_7tdtqgwv",
+          "_TZE200_amp6tsvy",
+          "_TZE200_7yodxhya",
+          "_TZE200_locansqn",
+          "_TZE200_3i3exu4n",
+          "_TZE200_7hfcudw5",
+          "_TZE200_3towulqd",
+          "_TZE200_whpb9y8z",
+          "_TZE200_7yuohek9",
+          "_TZE200_3towolqd"
         ],
         "productId": [
           "TS0601"
@@ -1332,11 +1407,54 @@
           "1": {
             "clusters": [
               0,
-              6
+              1,
+              3,
+              6,
+              1280
+            ],
+            "bindings": [
+              {
+                "type": "report",
+                "cluster": "msTemperatureMeasurement",
+                "attribute": "measuredValue",
+                "minInterval": 60,
+                "maxInterval": 3600,
+                "minChange": 10
+              },
+              {
+                "type": "report",
+                "cluster": "genPowerCfg",
+                "attribute": "batteryPercentageRemaining",
+                "minInterval": 3600,
+                "maxInterval": 21600,
+                "minChange": 1
+              }
             ]
           }
+        },
+        "learnmode": {
+          "image": "/drivers/sensors-TS0601_motion/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the pairing button on the device for 5 seconds until the LED starts blinking",
+            "fr": "Appuyez et maintenez le bouton d'appairage sur l'appareil pendant 5 secondes jusqu'à ce que la LED clignote",
+            "nl": "Houd de koppelknop op het apparaat 5 seconden ingedrukt totdat de LED gaat knipperen",
+            "ta": "சாதனத்தில் இணைப்பு பொத்தானை 5 விநாடிகள் அழுத்திப் பிடிக்கவும், LED ஒளிரும் வரை"
+          }
         }
-      }
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
     },
     {
       "id": "sensors-TS0601_sensor",
@@ -1349,8 +1467,8 @@
         "measure_temperature"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Sensors-Ts0601 Sensor",
@@ -1384,8 +1502,8 @@
         "measure_temperature"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Sensors-Ts0601 Smoke",
@@ -1419,8 +1537,8 @@
         "measure_temperature"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Sensors-Ts0601 Vibration",
@@ -1454,8 +1572,8 @@
         "measure_temperature"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Sensors-Ts0601 Water",
@@ -1489,8 +1607,8 @@
         "onoff"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Switch",
@@ -1524,8 +1642,8 @@
         "onoff"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Switches-Ts0001",
@@ -1559,8 +1677,8 @@
         "onoff"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Switches-Ts0002",
@@ -1594,8 +1712,8 @@
         "onoff"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Switches-Ts0003",
@@ -1629,8 +1747,8 @@
         "onoff"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Switches-Ts0004",
@@ -1664,8 +1782,8 @@
         "onoff"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Switches-Ts0005",
@@ -1699,8 +1817,8 @@
         "onoff"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Switches-Ts0006",
@@ -1734,8 +1852,8 @@
         "onoff"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Switches-Ts0007",
@@ -1769,8 +1887,8 @@
         "onoff"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Switches-Ts0008",
@@ -1804,8 +1922,8 @@
         "onoff"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Thermostats-Ts0601 Thermostat",
@@ -1839,8 +1957,8 @@
         "onoff"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Thermostats-Ts0603 Thermostat",
@@ -1864,6 +1982,19 @@
       }
     },
     {
+      "id": "tuya",
+      "class": "other",
+      "name": {
+        "en": "tuya",
+        "fr": "tuya"
+      },
+      "capabilities": [],
+      "images": {
+        "small": "assets/small.png",
+        "large": "assets/large.png"
+      }
+    },
+    {
       "id": "tuya-climate-universal",
       "title": {
         "en": "Tuya-Climate-Universal Control",
@@ -1874,8 +2005,8 @@
         "target_temperature"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Tuya-Climate-Universal",
@@ -1909,8 +2040,8 @@
         "windowcoverings_state"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Tuya-Cover-Universal",
@@ -1945,8 +2076,8 @@
         "dim"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Tuya-Light-Universal",
@@ -1981,8 +2112,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Tuya-Plug-Universal",
@@ -2016,8 +2147,8 @@
         "onoff"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Tuya-Remote-Universal",
@@ -2051,8 +2182,8 @@
         "measure_temperature"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Tuya-Sensor-Universal",
@@ -2074,6 +2205,202 @@
           }
         }
       }
+    },
+    {
+      "id": "tuya-ts0011",
+      "name": {
+        "en": "Tuya TS0011 Smart Switch"
+      },
+      "description": {
+        "en": "Adds support for Tuya TS0011 Smart Switch"
+      },
+      "category": [
+        "switch"
+      ],
+      "compat": true,
+      "images": {
+        "large": "/drivers/tuya-ts0011/assets/images/device-large.png",
+        "small": "/drivers/tuya-ts0011/assets/images/device-small.png"
+      },
+      "zigbee": {
+        "manufacturerName": "_TZ3000_1ddk5snb",
+        "productId": [
+          "TS0011"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6,
+              4096,
+              61184
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/tuya-ts0011/assets/learn.svg",
+          "instruction": {
+            "en": "Toggle the switch on and off repeatedly until the device is found"
+          }
+        }
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "name": {
+        "en": "Tuya Smart Plug (TS011F)",
+        "fr": "Prise intelligente Tuya (TS011F)",
+        "nl": "Tuya Slimme stekker (TS011F)"
+      },
+      "images": {
+        "large": "/drivers/tuya-ts011f/assets/images/large.png",
+        "small": "/drivers/tuya-ts011f/assets/images/small.png"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "On/Off",
+            "fr": "Marche/Arrêt",
+            "nl": "Aan/Uit"
+          }
+        },
+        "measure_power": {
+          "title": {
+            "en": "Power",
+            "fr": "Puissance",
+            "nl": "Vermogen"
+          },
+          "units": "W"
+        },
+        "meter_power": {
+          "title": {
+            "en": "Energy Consumption",
+            "fr": "Consommation d'énergie",
+            "nl": "Energieverbruik"
+          },
+          "units": "kWh"
+        }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device Settings",
+            "fr": "Paramètres de l'appareil",
+            "nl": "Apparaatinstellingen"
+          },
+          "children": [
+            {
+              "id": "powerOnState",
+              "type": "dropdown",
+              "label": {
+                "en": "Power On State",
+                "fr": "État après coupure de courant",
+                "nl": "Status na stroomonderbreking"
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Last State",
+                    "fr": "Dernier état",
+                    "nl": "Laatste status"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Always On",
+                    "fr": "Toujours allumé",
+                    "nl": "Altijd aan"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Always Off",
+                    "fr": "Toujours éteint",
+                    "nl": "Altijd uit"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "zigbee": {
+        "manufacturerName": "_TZ3000_12345678",
+        "modelId": [
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              6,
+              1794,
+              2820
+            ]
+          }
+        },
+        "class": "socket"
+      },
+      "pair": [
+        {
+          "id": "start",
+          "title": {
+            "en": "Start pairing",
+            "fr": "Démarrer l'appairage",
+            "nl": "Start koppelen"
+          },
+          "text": {
+            "en": "Put your device in pairing mode by pressing and holding the button for 5 seconds until the LED starts blinking.",
+            "fr": "Mettez votre appareil en mode d'appairage en maintenant le bouton enfoncé pendant 5 secondes jusqu'à ce que la LED se mette à clignoter.",
+            "nl": "Zet uw apparaat in de koppelmodus door 5 seconden op de knop te drukken totdat het LED-lampje begint te knipperen."
+          },
+          "next": "list_devices"
+        },
+        {
+          "id": "list_devices",
+          "title": {
+            "en": "Searching...",
+            "fr": "Recherche en cours...",
+            "nl": "Zoeken..."
+          }
+        }
+      ],
+      "id": "tuya-ts011f"
     },
     {
       "id": "tuya_zigbee",
@@ -2232,8 +2559,8 @@
         "onoff"
       ],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "assets/small.png",
+        "large": "assets/large.png"
       },
       "name": {
         "en": "Zigbee-Tuya-Universal",
