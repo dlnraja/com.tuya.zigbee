@@ -1,20 +1,163 @@
+'use strict';
+
 const Homey = require('homey');
 const { Log } = require('homey-log');
-const { spawn } = require('child_process');
-const path = require('path');
-const fs = require('fs');
-const { promisify } = require('util');
+const config = require('./lib/config');
+const TuyaAPI = require('./lib/api/tuya');
+const DeviceManager = require('./lib/DeviceManager');
+const { v4: uuidv4 } = require('uuid');
 
-// Promisify fs methods
-const readFile = promisify(fs.readFile);
-const writeFile = promisify(fs.writeFile);
-const access = promisify(fs.access);
+// Import drivers
+const TuyaPlugDriver = require('./drivers/tuya_plug/driver');
 
 /**
  * Main application class for Tuya Zigbee integration
  * @extends Homey.App
  */
 class TuyaZigbeeApp extends Homey.App {
+  
+  /**
+   * Initialize the application
+   * @async
+   */
+  async onInit() {
+    // Initialize logger
+    this.logger = new Log({ 
+      homey: this.homey, 
+      logLevel: config.logging.level,
+      logToConsole: true,
+      logToFile: config.logging.file.enabled,
+      logFilePath: config.logging.file.path,
+      logFileName: config.logging.file.filename,
+      maxSize: config.logging.file.maxSize,
+      maxFiles: config.logging.file.maxFiles,
+    });
+    
+    this.logger.info('Initializing Tuya Zigbee App');
+    this.logger.debug('App configuration:', config);
+    
+    try {
+      // Initialize API clients
+      this.tuyaAPI = new TuyaAPI({
+        clientId: this.homey.settings.get('tuyaClientId') || '',
+        clientSecret: this.homey.settings.get('tuyaClientSecret') || '',
+        region: this.homey.settings.get('tuyaRegion') || 'eu',
+        logger: this.logger
+      });
+      
+      // Initialize device manager
+      this.deviceManager = new DeviceManager(this);
+      
+      // Register flow cards
+      await this.registerFlowCards();
+      
+      // Initialize services
+      await this.initializeServices();
+      
+      // Register event listeners
+      this.registerEventListeners();
+      
+      this.logger.info('Tuya Zigbee App has been initialized');
+      
+      // Check for updates
+      if (config.app.checkForUpdates) {
+        await this.checkForUpdates();
+      }
+      
+    } catch (err) {
+      this.logger.error('Error initializing app:', err);
+      throw err; // Let Homey handle the error
+    }
+  }
+  
+  /**
+   * Register flow cards
+   * @private
+   * @async
+   */
+  async registerFlowCards() {
+    try {
+      // Global flow cards (not tied to specific devices)
+      this.flowCards = {
+        // Example global trigger
+        deviceDiscovered: this.homey.flow.getTriggerCard('device_discovered'),
+        
+        // Example global action
+        syncAllDevices: this.homey.flow.getActionCard('sync_all_devices')
+          .registerRunListener(async (args) => {
+            await this.deviceManager.syncAllDevices();
+            return true;
+          })
+      };
+      
+      this.logger.info('Flow cards registered');
+    } catch (error) {
+      this.logger.error('Error registering flow cards:', error);
+      throw error;
+    }
+  }
+  
+  /**
+   * Register event listeners
+   * @private
+   */
+  registerEventListeners() {
+    // Listen for system events
+    this.homey
+      .on('unload', this.onUnload.bind(this))
+      .on('cpuwarn', this.onCpuWarn.bind(this))
+      .on('memwarn', this.onMemWarn.bind(this));
+      
+    // Listen for device events
+    this.homey.on('device.added', this.onDeviceAdded.bind(this));
+    this.homey.on('device.deleted', this.onDeviceDeleted.bind(this));
+  }
+  
+  /**
+   * Initialize services
+   * @private
+   * @async
+   */
+  async initializeServices() {
+    // Initialize services here
+    // Example: this.zigbeeService = new ZigbeeService(this.homey);
+  }
+  
+  /**
+   * Handle device pairing
+   * @param {Object} session - The pairing session
+   * @param {Object} device - The device being paired
+   * @param {Object} data - Additional pairing data
+   * @async
+   */
+  async onPair(session) {
+    try {
+      // Show device selection view
+      session.setHandler('list_devices', async () => {
+        try {
+          // Return list of available devices
+          return []; // Replace with actual device discovery
+        } catch (err) {
+          this.logger.error('Error listing devices:', err);
+          throw new Error(this.homey.__('error.device_not_found'));
+        }
+      });
+      
+      // Handle device selection
+      session.setHandler('list_devices_selection', async (data) => {
+        try {
+          // Handle device selection
+          return true; // Return true if successful
+        } catch (err) {
+          this.logger.error('Error selecting device:', err);
+          throw new Error(this.homey.__('error.pairing_failed'));
+        }
+      });
+    } catch (err) {
+      this.logger.error('Pairing error:', err);
+      throw err;
+    }
+  }
   
   // Configuration with default values
   config = {
@@ -145,163 +288,261 @@ class TuyaZigbeeApp extends Homey.App {
           }
         });
         
-        // Handle Python service exit
-        this.pythonService.on('close', (code, signal) => {
-          if (code !== null) {
-            this.logger.warn(`Python service exited with code ${code}`);
-            if (code !== 0) {
-              this.logger.error('Python service encountered an error and stopped');
-              // Attempt to restart the service after a delay
-              setTimeout(() => this.startPythonService(), 5000);
-            }
-          } else if (signal) {
-            this.logger.info(`Python service terminated by signal: ${signal}`);
-          }
-        });
-        
-        // Handle process errors
-        this.pythonService.on('error', (error) => {
-          this.logger.error('Failed to start Python service:', error);
-          reject(error);
-        });
-        
-        // Verify service is running
-        const checkService = setInterval(() => {
-          if (this.isPythonServiceRunning()) {
-            clearInterval(checkService);
-            this.logger.info('Python microservice started successfully');
-            resolve();
-          }
-        }, 1000);
-        
-        // Timeout for service startup
-        setTimeout(() => {
-          clearInterval(checkService);
-          if (!this.isPythonServiceRunning()) {
-            reject(new Error('Python service failed to start within timeout period'));
-          }
-        }, 30000);
-        
-      } catch (error) {
-        this.logger.error('Failed to start Python service:', error);
-        reject(error);
-      }
-        
-        this.pythonService.on('close', (code) => {
-          this.log(`Python service exited with code ${code}`);
-        });
-        
-        // Give the service time to start
-        setTimeout(resolve, 3000);
+      this.tuyaAPI = new TuyaAPI({
+        clientId,
+        clientSecret,
+        region: region || config.tuya.defaultRegion,
+        logger: this.logger,
       });
-    });
-  }
-  
-  async initializeCore() {
-    try {
+
       // Initialize device manager
       this.deviceManager = new DeviceManager(this);
-      
+      await this.deviceManager.init();
+
+      // Initialize drivers
+      await this.initializeDrivers();
+
       // Register flow cards
-      this.registerFlowCards();
+      await this.registerFlowCards();
       
-      this.log('🤖 Core modules initialized');
+      // Register event listeners
+      this.registerEventListeners();
+      
+      // Initialize services
+      await this.initializeServices();
+      
+      this.logger.info('Tuya Zigbee app has been initialized');
     } catch (error) {
-      this.error('Failed to initialize core modules:', error);
-      throw error;
+      this.logger.error('Failed to initialize Tuya Zigbee app:', error);
+      throw error; // Rethrow to let Homey handle the error
     }
   }
-  
-  initializeDiscovery() {
-    // Register discovery strategy
-    this.homey.discovery.registerStrategy('tuya_zigbee', {
-      discover: async () => {
-        try {
-          const response = await this.callPythonService('POST', '/discover', {
-            timeout: 30,
-            scan_type: 'active'
-          });
-          return response.devices || [];
-        } catch (error) {
-          this.error('Discovery failed:', error);
-          return [];
-        }
-      }
-    });
-  }
-  
-  async callPythonService(method, endpoint, data = null) {
-    const url = `http://localhost:${this.PYTHON_SERVICE_PORT}${endpoint}`;
-    
-    const options = {
-      method,
-      headers: {
-        'Content-Type': 'application/json',
-        'X-API-Key': this.API_KEY
-      }
-    };
-    
-    if (data) {
-      options.body = JSON.stringify(data);
-    }
-    
+
+  /**
+   * Initialize drivers
+   */
+  async initializeDrivers() {
     try {
-      const response = await fetch(url, options);
+      // Load all drivers from the drivers directory
+      const driversPath = path.join(__dirname, 'drivers');
+      const driverDirs = fs.readdirSync(driversPath, { withFileTypes: true })
+        .filter(dirent => dirent.isDirectory())
+        .map(dirent => dirent.name);
       
-      if (!response.ok) {
-        const error = await response.text();
-        throw new Error(`HTTP error! status: ${response.status}, ${error}`);
+      this.drivers = new Map();
+      
+      for (const driverName of driverDirs) {
+        try {
+          const Driver = require(`./drivers/${driverName}/driver`);
+          const driver = new Driver({
+            homey: this.homey,
+            logger: this.logger,
+            deviceManager: this.deviceManager,
+            api: this.tuyaAPI,
+          });
+          
+          this.drivers.set(driverName, driver);
+          this.logger.info(`Initialized driver: ${driverName}`);
+        } catch (error) {
+          this.logger.error(`Failed to initialize driver ${driverName}:`, error);
+        }
       }
-      
-      return await response.json();
     } catch (error) {
-      this.error(`Failed to call Python service (${endpoint}):`, error);
+      this.logger.error('Error initializing drivers:', error);
       throw error;
     }
   }
-  
-  registerFlowCards() {
-    // Action cards
-    this.homey.flow.getActionCard('send_command')
-      .registerRunListener(async (args) => {
-        try {
-          await this.callPythonService('POST', '/command', {
-            device_id: args.device.id,
-            command: args.command,
-            params: args.params
-          });
-          return true;
-        } catch (error) {
-          this.error('Flow action failed:', error);
-          throw new Error(this.homey.__('errors.command_failed'));
-        }
+
+  /**
+   * Register flow cards
+   */
+  async registerFlowCards() {
+    try {
+      // Device discovered trigger
+      this.flowCards = {
+        deviceDiscovered: this.homey.flow.getDeviceTriggerCard('device_discovered')
+          .registerRunListener(async (args, state) => {
+            return args.device.id === state.deviceId;
+          }),
+        
+        // Add more flow cards as needed
+      };
+      
+      this.logger.info('Flow cards registered');
+    } catch (error) {
+      this.logger.error('Failed to register flow cards:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Register event listeners
+   */
+  registerEventListeners() {
+    // Listen for device added events
+    this.homey.on('device.added', device => this.onDeviceAdded(device).catch(error => {
+      this.logger.error('Error handling device added event:', error);
+    }));
+    
+    // Listen for device deleted events
+    this.homey.on('device.deleted', device => this.onDeviceDeleted(device).catch(error => {
+      this.logger.error('Error handling device deleted event:', error);
+    }));
+    
+    // Listen for system warnings
+    process.on('warning', warning => {
+      this.logger.warn('System warning:', warning);
+    });
+    
+    this.logger.info('Event listeners registered');
+  }
+
+  /**
+   * Initialize services
+   */
+  async initializeServices() {
+    try {
+      // Start the Python service if enabled
+      if (this.settings.enablePythonService) {
+        await this.startPythonService();
+      }
+      
+      this.logger.info('Services initialized');
+    } catch (error) {
+      this.logger.error('Failed to initialize services:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Handle device added event
+   * @param {Object} device - The added device
+   */
+  async onDeviceAdded(device) {
+    try {
+      this.logger.info(`Device added: ${device.name} (${device.id})`);
+      
+      // Add device to device manager
+      await this.deviceManager.addDevice({
+        id: device.id,
+        name: device.getName(),
+        driverId: device.driverId,
+        data: device.getData(),
+        settings: device.getSettings(),
       });
       
-    // Condition cards
-    this.homey.flow.getConditionCard('device_online')
-      .registerRunListener(async (args) => {
-        try {
-          const status = await this.callPythonService('GET', `/device/${args.device.id}/status`);
-          return status.online === true;
-        } catch (error) {
-          this.error('Flow condition check failed:', error);
-          return false;
-        }
-      });
+      // Trigger device discovered flow card
+      if (this.flowCards && this.flowCards.deviceDiscovered) {
+        await this.flowCards.deviceDiscovered.trigger({
+          id: device.id,
+          name: device.getName(),
+          driverId: device.driverId,
+        });
+      }
+    } catch (error) {
+      this.logger.error(`Error adding device ${device.id}:`, error);
+      throw error;
+    }
+  }
+
+  /**
+   * Handle device deleted event
+   * @param {Object} device - The deleted device
+   */
+  async onDeviceDeleted(device) {
+    try {
+      this.logger.info(`Device deleted: ${device.name} (${device.id})`);
+      
+      // Remove device from device manager
+      await this.deviceManager.removeDevice(device.id);
+    } catch (error) {
+      this.logger.error(`Error removing device ${device.id}:`, error);
+      throw error;
+    }
+  }
+
+  /**
+   * Start Python service
+   */
+  async startPythonService() {
+    // Implementation for starting Python service
+    // This is a placeholder for future implementation
+    this.logger.info('Python service is not yet implemented');
+  }
+
+  /**
+   * onUninit is called when the app is shutting down
+   */
+  async onUninit() {
+    try {
+      this.logger.info('Shutting down Tuya Zigbee app...');
+      
+      // Clean up device manager
+      if (this.deviceManager) {
+        await this.deviceManager.cleanup();
+      }
+      
+      // Disconnect from Tuya API
+      if (this.tuyaAPI) {
+        await this.tuyaAPI.disconnect();
+      }
+      
+      // Clear any intervals or timeouts
+      if (this.intervals) {
+        Object.values(this.intervals).forEach(interval => clearInterval(interval));
+      }
+      
+      this.logger.info('Tuya Zigbee app has been shut down');
+    } catch (error) {
+      this.logger.error('Error during app shutdown:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Handle CPU warning
+   */
+  onCpuWarn() {
+    this.logger.warn('CPU usage warning: App is using too much CPU');
+  }
+
+  /**
+   * Handle memory warning
+   */
+  onMemoryWarn() {
+    this.logger.warn('Memory usage warning: App is using too much memory');
+  }
+   * @async
+   */
+  async checkForUpdates() {
+    try {
+      this.logger.debug('Checking for updates...');
+      
+      // In a real implementation, this would check for updates from a repository
+      // For now, we'll just log that we're checking
+      this.logger.info('Update check completed');
+      
+    } catch (error) {
+      this.logger.error('Error checking for updates:', error);
+    }
   }
   
-  // Cleanup on app unload
-  async onUninit() {
-    if (this.pythonService) {
-    }
-  });
-
-  // Handle process errors
-  this.pythonService.on('error', (error) => {
-    this.logger.error('Failed to start Python service:', error);
-    reject(error);
-  });
-
+  /**
+   * Get Tuya API instance
+   * @returns {TuyaAPI} Tuya API instance
+   */
+  getTuyaAPI() {
+    return this.tuyaAPI;
+  }
+  
+  /**
+   * Get device manager instance
+   * @returns {DeviceManager} Device manager instance
+   */
+  getDeviceManager() {
+    return this.deviceManager;
+  }
+  
   // Verify service is running
   const checkService = setInterval(() => {
     if (this.isPythonServiceRunning()) {
