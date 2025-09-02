@@ -1,21 +1,20 @@
-#!/usr/bin/env node
-'use strict';
+// tuya_zigbee - Migrated device
+import { ZigBeeDevice } from 'homey-meshdriver';
 
-'use strict';
-
-const { ZigBeeDevice } = require('homey-zigbeedriver');
-const attachZBVerbose = require('../../lib/zb-verbose');
-
-class TuyaZigbeeDevice extends ZigBeeDevice {
-  async onNodeInit({ zclNode }) {
-    this.log('🚀 Tuya Zigbee device init');
-    attachZBVerbose(this, {
-      dumpOnInit: true,
-      readBasicAttrs: true,
-      subscribeReports: false,
-      hookCapabilities: true
-    });
+class tuya_zigbeeDevice extends ZigBeeDevice {
+  
+  async onMeshInit() {
+    await super.onMeshInit();
+    
+    // Enregistrement des capacités
+    
+    
+    // Configuration du monitoring
+    this.setupMonitoring();
+    
+    // Configuration des flow cards
+    this.setupFlowCards();
   }
 }
 
-module.exports = TuyaZigbeeDevice;
+export default tuya_zigbeeDevice;

@@ -1,0 +1,114 @@
+{
+  "id": "tuya_plug",
+  "name": {
+    "en": "Tuya Smart Plug",
+    "fr": "Prise intelligente Tuya",
+    "nl": "Tuya Slimme Stekker",
+    "ta": "Tuya ஸ்மார்ட் பிளக்"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Power",
+        "fr": "Alimentation",
+        "nl": "Aan/Uit",
+        "ta": "மின்சாரம்"
+      }
+    },
+    "measure_power": {
+      "title": {
+        "en": "Power Consumption",
+        "fr": "Consommation électrique",
+        "nl": "Stroomverbruik",
+        "ta": "மின்சார நுகர்வு"
+      },
+      "units": "W"
+    },
+    "meter_power": {
+      "title": {
+        "en": "Energy Consumed",
+        "fr": "Énergie consommée",
+        "nl": "Energie verbruikt",
+        "ta": "நுகரப்பட்ட ஆற்றல்"
+      },
+      "units": "kWh"
+    }
+  },
+  "images": {
+    "large": "/drivers/tuya_plug/assets/images/large.png",
+    "small": "/drivers/tuya_plug/assets/images/small.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "value": 30,
+      "label": {
+        "en": "Polling Interval (seconds)",
+        "fr": "Intervalle d'interrogation (secondes)",
+        "nl": "Polling Interval (seconden)",
+        "ta": "ஒருங்கிணைப்பு இடைவெளி (விநாடிகள்)"
+      },
+      "hint": {
+        "en": "How often to check the device status (in seconds). Minimum 30 seconds.",
+        "fr": "Fréquence de vérification de l'état du périphérique (en secondes). Minimum 30 secondes.",
+        "nl": "Hoe vaak de apparaatstatus moet worden gecontroleerd (in seconden). Minimaal 30 seconden.",
+        "ta": "சாதன நிலையை எவ்வளவு அடிக்கடி சரிபார்க்க வேண்டும் (விநாடிகளில்). குறைந்தபட்சம் 30 விநாடிகள்."
+      }
+    },
+    {
+      "id": "power_threshold",
+      "type": "number",
+      "value": 5,
+      "label": {
+        "en": "Power Threshold (W)",
+        "fr": "Seuil de puissance (W)",
+        "nl": "Vermogensdrempel (W)",
+        "ta": "மின் வரம்பு (வாட்ஸ்)"
+      },
+      "hint": {
+        "en": "Minimum power change (in Watts) to trigger an update. Helps reduce unnecessary updates.",
+        "fr": "Changement de puissance minimum (en Watts) pour déclencher une mise à jour. Aide à réduire les mises à jour inutiles.",
+        "nl": "Minimale vermogensverandering (in Watt) om een update te activeren. Helpt onnodige updates te verminderen.",
+        "ta": "புதுப்பிப்பைத் தூண்டுவதற்கான குறைந்தபட்ச மின் மாற்றம் (வாட்களில்). தேவையற்ற புதுப்பிப்புகளைக் குறைக்க உதவுகிறது."
+      }
+    }
+  ],
+  "platforms": ["local", "cloud"],
+  "connectivity": ["lan", "cloud"],
+  "energy": {
+    "batteries": []
+  },
+  "permissions": [
+    "homey:app:com.tuya.zigbee:tuya"
+  ],
+  "deprecated": false,
+  "pairingInstructions": {
+    "en": "1. Make sure your Tuya plug is in pairing mode (usually by pressing and holding the power button for 5-10 seconds until the LED starts blinking rapidly).\n2. Select your device from the list.\n3. Follow the on-screen instructions to complete the pairing process.",
+    "fr": "1. Assurez-vous que votre prise Tuya est en mode d'appairage (généralement en maintenant le bouton d'alimentation enfoncé pendant 5 à 10 secondes jusqu'à ce que la LED clignote rapidement).\n2. Sélectionnez votre appareil dans la liste.\n3. Suivez les instructions à l'écran pour terminer le processus d'appairage.",
+    "nl": "1. Zorg ervoor dat uw Tuya-stekker in de koppelmodus staat (meestal door 5-10 seconden op de aan/uit-knop te drukken totdat de LED snel gaat knipperen).\n2. Selecteer uw apparaat uit de lijst.\n3. Volg de instructies op het scherm om het koppelingsproces te voltooien.",
+    "ta": "1. உங்கள் Tuya பிளக் இணைப்பு முறையில் உள்ளது என்பதை உறுதிப்படுத்தவும் (பொதுவாக மின் பொத்தானை 5-10 விநாடிகள் அழுத்தி வைத்திருப்பதன் மூலம் LED வேகமாக ஒளிரும் வரை).\n2. பட்டியலிலிருந்து உங்கள் சாதனத்தைத் தேர்ந்தெடுக்கவும்.\n3. இணைப்பு செயல்முறையை முடிக்க திரையில் தோன்றும் வழிமுறைகளைப் பின்பற்றவும்."
+  },
+  "tags": ["energy", "power", "socket", "switch", "tuya", "zigbee"],
+  "version": "1.0.0",
+  "compatibility": ["homey:>=6.0.0"]
+}

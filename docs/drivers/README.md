@@ -2,22 +2,19 @@
 
 ## 📋 Vue d'ensemble
 
-Ce projet contient 6 drivers générés automatiquement pour les appareils Tuya et Zigbee.
+Ce projet contient maintenant 60+ drivers pour appareils Tuya et Zigbee.
 
 ### 📊 Statistiques
 
-- **Drivers Tuya**: 3
-- **Drivers Zigbee**: 3
-- **Total**: 6
+- **Drivers Tuya**: 35
+- **Drivers Zigbee**: 25
+- **Total**: 60+
 
-### 🔧 Types de drivers
+### 🔧 Structure standardisée
 
-- 💡 **tuya-light-bulb** (tuya) - lights
-- 🔌 **tuya-switch** (tuya) - switches
-- 🌡️ **tuya-sensor** (tuya) - sensors
-- 💡 **zigbee-light-bulb** (zigbee) - lights
-- 🔌 **zigbee-switch** (zigbee) - switches
-- 🌡️ **zigbee-sensor** (zigbee) - sensors
+- **Template unifié**: `_template/device.js` et `driver.js`
+- **Drivers universels**: Plug, Light, Sensor, etc.
+- **Drivers spécifiques**: Modèles TS011F, TS0601, etc.
 
 ## 🚀 Installation
 
@@ -28,3 +25,7 @@ Ce projet contient 6 drivers générés automatiquement pour les appareils Tuya 
 ## 📝 Support
 
 Pour toute question ou problème, consultez la documentation officielle ou contactez l'équipe de développement.
+
+## 🛠️ Migration
+
+Utiliser `scripts/migrate-drivers.js` pour migrer vers la nouvelle structure.

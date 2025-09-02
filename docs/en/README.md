@@ -6,11 +6,17 @@ Universal Tuya and Zigbee devices for Homey - AI-Powered Edition with Complete R
 
 ## 🔧 Features
 
-- **Universal Support**: Compatible with all Tuya and Zigbee devices
-- **AI-Powered**: Advanced AI algorithms for device detection
-- **Complete Recovery**: Automatic recovery and error handling
-- **Multi-language**: Support for 6 languages
-- **Real-time Monitoring**: Live device status monitoring
+- **60+ Universal Drivers**: Standardized template structure
+- **Modular Design**: Shared capabilities and clusters
+- **Automated Testing**: CI/CD pipeline integration
+- **Multi-language**: 6 supported languages
+- **Validation Tools**: `homey app validate` ready
+
+## 🛠️ Project Structure
+
+- `drivers/`: Standardized driver implementations
+- `scripts/`: Migration and validation tools
+- `matrices/`: Compatibility matrices
 
 ## 🚀 Quick Start
 

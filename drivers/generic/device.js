@@ -1,21 +1,20 @@
-#!/usr/bin/env node
-'use strict';
+// generic - Migrated device
+import { ZigBeeDevice } from 'homey-meshdriver';
 
-'use strict';
-
-const { ZigBeeDevice } = require('homey-zigbeedriver');
-const attachZBVerbose = require('../../lib/zb-verbose');
-
-class GenericDevice extends ZigBeeDevice {
-  async onNodeInit({ zclNode }) {
-    this.log('🚀 Generic device init');
-    attachZBVerbose(this, {
-      dumpOnInit: true,
-      readBasicAttrs: true,
-      subscribeReports: false,
-      hookCapabilities: true
-    });
+class genericDevice extends ZigBeeDevice {
+  
+  async onMeshInit() {
+    await super.onMeshInit();
+    
+    // Enregistrement des capacités
+    
+    
+    // Configuration du monitoring
+    this.setupMonitoring();
+    
+    // Configuration des flow cards
+    this.setupFlowCards();
   }
 }
 
-module.exports = GenericDevice;
+export default genericDevice;
