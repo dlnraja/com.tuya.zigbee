@@ -2,16 +2,24 @@
 # Language Priority: EN, FR, TA, NL, then others
 # Format: [LANG] 🚀 Description
 
+# English Title (required, max 50 chars)
 [EN] 🚀 Add new feature
+
+# French Title (required, max 50 chars)
 [FR] 🚀 Ajouter nouvelle fonctionnalité
-[TA] 🚀 புதிய அம்சத்தை சேர்க்கவும்
-[NL] 🚀 Nieuwe functie toevoegen
+
+# English Description (optional)
+[EN] This feature does something.
+
+# French Description (optional)
+[FR] Cette fonctionnalité fait quelque chose.
 
 # Examples:
 # [EN] 🚀 Add TS011F plug driver with power monitoring
 # [FR] 🚀 Ajouter driver prise TS011F avec surveillance d'énergie
-# [TA] 🚀 TS011F பிளக் டிரைவரை மின் கண்காணிப்புடன் சேர்க்கவும்
-# [NL] 🚀 TS011F plug driver toevoegen met stroommonitoring
+#
+# [EN] This feature adds support for TS011F plug with power monitoring.
+# [FR] Cette fonctionnalité ajoute la prise en charge de la prise TS011F avec surveillance d'énergie.
 
 # Language Rules:
 # 1. English (EN) - Primary
