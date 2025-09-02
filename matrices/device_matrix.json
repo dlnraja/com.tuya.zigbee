@@ -1,0 +1,807 @@
+{
+  "updated": "2025-09-02T08:26:31.839Z",
+  "count": 64,
+  "devices": [
+    {
+      "id": "_common",
+      "name": "_common",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff"
+      ],
+      "lastModified": "2025-08-31",
+      "path": "drivers\\_common"
+    },
+    {
+      "id": "_template",
+      "name": "_template",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\_template"
+    },
+    {
+      "id": "base",
+      "name": "base",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\base"
+    },
+    {
+      "id": "climate",
+      "name": "climate",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "target_temperature"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\climate"
+    },
+    {
+      "id": "climates-TS0601_ac",
+      "name": "climates-TS0601_ac",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "target_temperature"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\climates-TS0601_ac"
+    },
+    {
+      "id": "cover",
+      "name": "cover",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "windowcoverings_state"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\cover"
+    },
+    {
+      "id": "covers-TS0602_cover",
+      "name": "covers-TS0602_cover",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "windowcoverings_state"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\covers-TS0602_cover"
+    },
+    {
+      "id": "fan",
+      "name": "fan",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff",
+        "fan_speed"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\fan"
+    },
+    {
+      "id": "fan-tuya-universal",
+      "name": "fan-tuya-universal",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff",
+        "fan_speed"
+      ],
+      "lastModified": "2025-08-24",
+      "path": "drivers\\fan-tuya-universal"
+    },
+    {
+      "id": "fans-TS0601_fan",
+      "name": "fans-TS0601_fan",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff",
+        "fan_speed"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\fans-TS0601_fan"
+    },
+    {
+      "id": "fans-TS0602_fan",
+      "name": "fans-TS0602_fan",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff",
+        "fan_speed"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\fans-TS0602_fan"
+    },
+    {
+      "id": "generic",
+      "name": "generic",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\generic"
+    },
+    {
+      "id": "light",
+      "name": "light",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\light"
+    },
+    {
+      "id": "lights-TS0501B",
+      "name": "lights-TS0501B",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\lights-TS0501B"
+    },
+    {
+      "id": "lights-TS0601_dimmer",
+      "name": "lights-TS0601_dimmer",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\lights-TS0601_dimmer"
+    },
+    {
+      "id": "lights-TS0601_rgb",
+      "name": "lights-TS0601_rgb",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\lights-TS0601_rgb"
+    },
+    {
+      "id": "lights-TS0601_switch",
+      "name": "lights-TS0601_switch",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\lights-TS0601_switch"
+    },
+    {
+      "id": "lock",
+      "name": "lock",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "lock_state"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\lock"
+    },
+    {
+      "id": "lock-tuya-universal",
+      "name": "lock-tuya-universal",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "lock_state"
+      ],
+      "lastModified": "2025-08-24",
+      "path": "drivers\\lock-tuya-universal"
+    },
+    {
+      "id": "locks-TS0601_lock",
+      "name": "locks-TS0601_lock",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "lock_state"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\locks-TS0601_lock"
+    },
+    {
+      "id": "plug",
+      "name": "plug",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\plug"
+    },
+    {
+      "id": "plugs-TS011F",
+      "name": "plugs-TS011F",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "lastModified": "2025-09-01",
+      "path": "drivers\\plugs-TS011F"
+    },
+    {
+      "id": "plugs-TS011G",
+      "name": "plugs-TS011G",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\plugs-TS011G"
+    },
+    {
+      "id": "plugs-TS011H",
+      "name": "plugs-TS011H",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\plugs-TS011H"
+    },
+    {
+      "id": "plugs-TS011I",
+      "name": "plugs-TS011I",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\plugs-TS011I"
+    },
+    {
+      "id": "plugs-TS011J",
+      "name": "plugs-TS011J",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\plugs-TS011J"
+    },
+    {
+      "id": "plugs-TS0121",
+      "name": "plugs-TS0121",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\plugs-TS0121"
+    },
+    {
+      "id": "plugs-TS0122",
+      "name": "plugs-TS0122",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\plugs-TS0122"
+    },
+    {
+      "id": "plugs-TS0123",
+      "name": "plugs-TS0123",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\plugs-TS0123"
+    },
+    {
+      "id": "plugs-TS0124",
+      "name": "plugs-TS0124",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\plugs-TS0124"
+    },
+    {
+      "id": "plugs-TS0125",
+      "name": "plugs-TS0125",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\plugs-TS0125"
+    },
+    {
+      "id": "remotes-TS0601_remote",
+      "name": "remotes-TS0601_remote",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\remotes-TS0601_remote"
+    },
+    {
+      "id": "sensor",
+      "name": "sensor",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "measure_temperature"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\sensor"
+    },
+    {
+      "id": "sensors-TS0201",
+      "name": "sensors-TS0201",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "measure_temperature"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\sensors-TS0201"
+    },
+    {
+      "id": "sensors-TS0601_contact",
+      "name": "sensors-TS0601_contact",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "measure_temperature"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\sensors-TS0601_contact"
+    },
+    {
+      "id": "sensors-TS0601_gas",
+      "name": "sensors-TS0601_gas",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "measure_temperature"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\sensors-TS0601_gas"
+    },
+    {
+      "id": "sensors-TS0601_motion",
+      "name": "sensors-TS0601_motion",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "alarm_motion",
+        "measure_temperature",
+        "measure_battery",
+        "alarm_battery",
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "fan_speed",
+        "dim",
+        "target_temperature",
+        "windowcoverings_state",
+        "lock_state"
+      ],
+      "lastModified": "2025-08-31",
+      "path": "drivers\\sensors-TS0601_motion"
+    },
+    {
+      "id": "sensors-TS0601_sensor",
+      "name": "sensors-TS0601_sensor",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "measure_temperature"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\sensors-TS0601_sensor"
+    },
+    {
+      "id": "sensors-TS0601_smoke",
+      "name": "sensors-TS0601_smoke",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "measure_temperature"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\sensors-TS0601_smoke"
+    },
+    {
+      "id": "sensors-TS0601_vibration",
+      "name": "sensors-TS0601_vibration",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "measure_temperature"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\sensors-TS0601_vibration"
+    },
+    {
+      "id": "sensors-TS0601_water",
+      "name": "sensors-TS0601_water",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "measure_temperature"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\sensors-TS0601_water"
+    },
+    {
+      "id": "switch",
+      "name": "switch",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff"
+      ],
+      "lastModified": "2025-08-24",
+      "path": "drivers\\switch"
+    },
+    {
+      "id": "switches-TS0001",
+      "name": "switches-TS0001",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\switches-TS0001"
+    },
+    {
+      "id": "switches-TS0002",
+      "name": "switches-TS0002",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\switches-TS0002"
+    },
+    {
+      "id": "switches-TS0003",
+      "name": "switches-TS0003",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\switches-TS0003"
+    },
+    {
+      "id": "switches-TS0004",
+      "name": "switches-TS0004",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\switches-TS0004"
+    },
+    {
+      "id": "switches-TS0005",
+      "name": "switches-TS0005",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\switches-TS0005"
+    },
+    {
+      "id": "switches-TS0006",
+      "name": "switches-TS0006",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\switches-TS0006"
+    },
+    {
+      "id": "switches-TS0007",
+      "name": "switches-TS0007",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\switches-TS0007"
+    },
+    {
+      "id": "switches-TS0008",
+      "name": "switches-TS0008",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\switches-TS0008"
+    },
+    {
+      "id": "thermostats-TS0601_thermostat",
+      "name": "thermostats-TS0601_thermostat",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\thermostats-TS0601_thermostat"
+    },
+    {
+      "id": "thermostats-TS0603_thermostat",
+      "name": "thermostats-TS0603_thermostat",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\thermostats-TS0603_thermostat"
+    },
+    {
+      "id": "tuya",
+      "name": "tuya",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\tuya"
+    },
+    {
+      "id": "tuya_zigbee",
+      "name": "tuya_zigbee",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\tuya_zigbee"
+    },
+    {
+      "id": "tuya_zigbee_switch",
+      "name": "tuya_zigbee_switch",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\tuya_zigbee_switch"
+    },
+    {
+      "id": "tuya-climate-universal",
+      "name": "tuya-climate-universal",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "target_temperature"
+      ],
+      "lastModified": "2025-08-24",
+      "path": "drivers\\tuya-climate-universal"
+    },
+    {
+      "id": "tuya-cover-universal",
+      "name": "tuya-cover-universal",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "windowcoverings_state"
+      ],
+      "lastModified": "2025-08-24",
+      "path": "drivers\\tuya-cover-universal"
+    },
+    {
+      "id": "tuya-light-universal",
+      "name": "tuya-light-universal",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "lastModified": "2025-08-24",
+      "path": "drivers\\tuya-light-universal"
+    },
+    {
+      "id": "tuya-plug-universal",
+      "name": "tuya-plug-universal",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "lastModified": "2025-08-24",
+      "path": "drivers\\tuya-plug-universal"
+    },
+    {
+      "id": "tuya-remote-universal",
+      "name": "tuya-remote-universal",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff"
+      ],
+      "lastModified": "2025-08-24",
+      "path": "drivers\\tuya-remote-universal"
+    },
+    {
+      "id": "tuya-sensor-universal",
+      "name": "tuya-sensor-universal",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "measure_temperature"
+      ],
+      "lastModified": "2025-08-24",
+      "path": "drivers\\tuya-sensor-universal"
+    },
+    {
+      "id": "tuya-ts0011",
+      "name": "tuya-ts0011",
+      "type": [
+        "switch"
+      ],
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [],
+      "lastModified": "2025-08-31",
+      "path": "drivers\\tuya-ts0011"
+    },
+    {
+      "id": "tuya-ts011f",
+      "name": "tuya-ts011f",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power"
+      ],
+      "lastModified": "2025-09-02",
+      "path": "drivers\\tuya-ts011f"
+    },
+    {
+      "id": "zigbee-tuya-universal",
+      "name": "zigbee-tuya-universal",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": [
+        "onoff"
+      ],
+      "lastModified": "2025-08-24",
+      "path": "drivers\\zigbee-tuya-universal"
+    }
+  ]
+}

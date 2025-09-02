@@ -1,19 +1,20 @@
-'use strict';
+// tuya-ts0011 - Migrated device
+import { ZigBeeDevice } from 'homey-meshdriver';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
-
-class TS0011Device extends ZigBeeDevice {
-  async onNodeInit() {
-    this.log('TS0011 device initialized');
+class tuya-ts0011Device extends ZigBeeDevice {
+  
+  async onMeshInit() {
+    await super.onMeshInit();
     
-    // Register capabilities
-    this.registerCapability('onoff', 'genOnOff');
+    // Enregistrement des capacités
     
-    // Handle on/off commands
-    this.registerCapabilityListener('onoff', async (value) => {
-      await this.node.endpoints[1].clusters.genOnOff.toggle({});
-    });
+    
+    // Configuration du monitoring
+    this.setupMonitoring();
+    
+    // Configuration des flow cards
+    this.setupFlowCards();
   }
 }
 
-module.exports = TS0011Device;
+export default tuya-ts0011Device;

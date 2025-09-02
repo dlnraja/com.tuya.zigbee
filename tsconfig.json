@@ -1,10 +1,17 @@
 {
   "compilerOptions": {
+    /* Language and Environment */
     "target": "es2020",
+    "lib": ["es2020"],
+    
+    /* Modules */
     "module": "commonjs",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    
+    /* Type Checking */
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
@@ -13,21 +20,31 @@
     "noImplicitThis": true,
     "alwaysStrict": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedParameters": false, // Disabled to allow unused parameters in callbacks
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    
+    /* Emit */
     "sourceMap": true,
     "outDir": ".homeybuild",
-    "rootDir": ".",
+    
+    /* Paths */
     "baseUrl": ".",
     "paths": {
-      "@app/*": ["src/*"],
-      "@drivers/*": ["src/drivers/*"],
-      "@devices/*": ["src/devices/*"],
-      "@services/*": ["src/services/*"],
-      "@utils/*": ["src/utils/*"],
-      "@config": ["src/config"]
+      "@app/*": ["app/*"],
+      "@drivers/*": ["drivers/*"],
+      "@lib/*": ["lib/*"],
+      "@utils/*": ["lib/utils/*"],
+      "@config": ["lib/config.js"],
+      "@test/*": ["test/*"]
     },
+    
+    /* Linting */
+    "skipLibCheck": true,
+    "allowJs": true,
+    "checkJs": true,
+    "rootDir": ".",
     "typeRoots": [
       "./node_modules/@types",
       "./node_modules/@homey"
@@ -38,12 +55,23 @@
     ]
   },
   "include": [
-    "src/**/*.ts",
-    "test/**/*.ts"
+    "app.js",
+    "app.json",
+    "drivers/**/*.js",
+    "drivers/**/*.ts",
+    "lib/**/*.js",
+    "lib/**/*.ts",
+    "test/**/*.js",
+    "test/**/*.ts",
+    ".homeycompose/**/*.json"
   ],
   "exclude": [
     "node_modules",
     ".homey*",
-    "dist"
+    "dist",
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/*.d.ts",
+    "**/node_modules/**"
   ]
 }

@@ -11,7 +11,15 @@
     "alarm_motion",
     "measure_temperature",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "onoff",
+    "measure_power",
+    "meter_power",
+    "fan_speed",
+    "dim",
+    "target_temperature",
+    "windowcoverings_state",
+    "lock_state"
   ],
   "capabilitiesOptions": {
     "alarm_motion": {

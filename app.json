@@ -72,6 +72,43 @@
       }
     },
     {
+      "id": "_template",
+      "name": {
+        "en": "Template Device",
+        "fr": "Modèle d'appareil"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Switch",
+            "fr": "Interrupteur"
+          }
+        }
+      },
+      "icon": "/drivers/template/assets/icon.svg",
+      "images": {
+        "large": "/drivers/template/assets/images/large.png",
+        "small": "/drivers/template/assets/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
       "id": "base",
       "title": {
         "en": "Base Control",
@@ -1294,7 +1331,15 @@
         "alarm_motion",
         "measure_temperature",
         "measure_battery",
-        "alarm_battery"
+        "alarm_battery",
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "fan_speed",
+        "dim",
+        "target_temperature",
+        "windowcoverings_state",
+        "lock_state"
       ],
       "capabilitiesOptions": {
         "alarm_motion": {
