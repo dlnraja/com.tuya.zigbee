@@ -1,0 +1,37 @@
+{
+  "id": "automation",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "class": "other",
+  "connectivity": "zigbee",
+  "name": {
+    "en": "Automation",
+    "nl": "Automation",
+    "fr": "Automation",
+    "de": "Automation"
+  },
+  "manufacturer": "_TZ3000_xxxxxxxx",
+  "product": "AUTOMATION",
+  "dataPoints": {
+    "1": {
+      "name": "switch",
+      "type": "bool",
+      "writable": true
+    }
+  },
+  "metadata": {
+    "enriched": true,
+    "enrichmentDate": "2025-08-07T17:53:54.697Z",
+    "driverType": "tuya",
+    "category": "automation",
+    "subcategory": null,
+    "megaUltimateBugFixer": true
+  }
+}

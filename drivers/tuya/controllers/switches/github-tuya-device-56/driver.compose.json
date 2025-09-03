@@ -1,0 +1,59 @@
+{
+  "id": "github-tuya-device-56",
+  "title": {
+    "en": "Github Tuya Device 56",
+    "fr": "Github Tuya Device 56",
+    "nl": "Github Tuya Device 56",
+    "ta": "Github Tuya Device 56"
+  },
+  "description": {
+    "en": "Driver for github-tuya-device-56 from GitHub Tuya",
+    "fr": "Driver pour github-tuya-device-56 de GitHub Tuya",
+    "nl": "Driver voor github-tuya-device-56 van GitHub Tuya",
+    "ta": "GitHub Tuya இலிருந்து github-tuya-device-56 க்கான டிரைவர்"
+  },
+  "category": "controllers",
+  "protocol": "tuya",
+  "source": "GitHub Tuya",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power",
+    "measure_temperature"
+  ],
+  "clusters": [
+    "genOnOff",
+    "genLevelCtrl",
+    "genPowerCfg",
+    "msTemperatureMeasurement"
+  ],
+  "version": "1.0.0",
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T15:11:15.051Z",
+  "tuyaCompatibility": {
+    "supported": true,
+    "protocol": "zigbee",
+    "manufacturer": "Tuya",
+    "model": "github-tuya-device-56",
+    "firmware": "latest",
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_power",
+      "measure_temperature"
+    ],
+    "clusters": [
+      "genOnOff",
+      "genLevelCtrl",
+      "genPowerCfg",
+      "msTemperatureMeasurement"
+    ]
+  },
+  "homeyCompatibility": {
+    "pro": true,
+    "bridge": true,
+    "cloud": false,
+    "minVersion": "5.0.0",
+    "maxVersion": "6.0.0"
+  }
+}

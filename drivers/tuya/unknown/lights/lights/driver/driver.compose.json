@@ -1,0 +1,25 @@
+{
+  "id": "driver",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "driver",
+    "fr": "driver",
+    "nl": "driver",
+    "ta": "driver"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "driver",
+  "originalFile": "driver.py",
+  "extracted": "2025-08-05T08:26:30.387Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

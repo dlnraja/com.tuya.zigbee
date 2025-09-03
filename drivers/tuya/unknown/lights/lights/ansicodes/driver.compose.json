@@ -1,0 +1,25 @@
+{
+  "id": "ansicodes",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "name": {
+    "en": "ansicodes",
+    "fr": "ansicodes",
+    "nl": "ansicodes",
+    "ta": "ansicodes"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "manufacturername": "Tuya",
+  "model": "ansicodes",
+  "originalFile": "ansi.py",
+  "extracted": "2025-08-05T08:33:43.541Z",
+  "clusters": [
+    "genBasic",
+    "genOnOff"
+  ]
+}

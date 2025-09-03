@@ -1,9 +1,10 @@
 {
   "id": "com.tuya.zigbee",
   "version": "1.0.0",
-  "compatibility": ">=5.0.0",
-  "category": [
-    "appliances"
+  "compatibility": ">=3.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
   ],
   "name": {
     "en": "Tuya Zigbee",
@@ -12,10 +13,18 @@
     "ta": "Tuya Zigbee"
   },
   "description": {
-    "en": "Tuya Zigbee devices support with universal drivers",
-    "fr": "Support des appareils Tuya Zigbee avec drivers universaux",
-    "nl": "Ondersteuning voor Tuya Zigbee-apparaten met universele drivers",
-    "ta": "Tuya Zigbee சாதனங்களுக்கான ஆதரவு உலகளாவிய drivers உடன்"
+    "en": "Support for Tuya Zigbee devices",
+    "fr": "Support des appareils Tuya Zigbee",
+    "nl": "Ondersteuning voor Tuya Zigbee-apparaten",
+    "ta": "Tuya Zigbee சாதனங்களுக்கான ஆதரவு"
+  },
+  "category": [
+    "lights"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
   },
   "author": {
     "name": "dlnraja",
@@ -25,9 +34,6 @@
   "support": "mailto:dylan.rajasekaram@gmail.com",
   "homepage": "https://github.com/dlnraja/tuya_repair",
   "license": "MIT",
-  "platforms": [
-    "local"
-  ],
   "drivers": [
     {
       "id": "climates-TS0601_ac",
@@ -152,10 +158,6 @@
       }
     }
   ],
-  "images": {
-    "small": "assets/small.svg",
-    "large": "assets/large.svg"
-  },
   "icon": "assets/icon.svg",
   "color": "#FF6B35"
 }

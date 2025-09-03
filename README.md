@@ -8,6 +8,8 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Reliability Score](https://img.shields.io/badge/reliability-98%25-brightgreen)](device-matrix.md)
 
+[Français](README.fr.md) | [Nederlands](README.nl.md) | [தமிழ்](README.ta.md)
+
 ## 📊 Device Matrix
 
 For the complete list of supported devices with reliability scores, please see the [Device Matrix](device-matrix.md).

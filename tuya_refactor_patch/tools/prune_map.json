@@ -1,0 +1,15 @@
+{
+  "exclude": [
+    "**/archive/**",
+    "**/backup/**",
+    "**/mega/**",
+    "**/patches/**",
+    "**/tuya-light-release/**"
+  ],
+  "include": [
+    "drivers/**",
+    "lib/**",
+    "tools/**",
+    "docs/**"
+  ]
+}
