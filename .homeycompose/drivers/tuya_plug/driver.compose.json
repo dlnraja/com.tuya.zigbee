@@ -8,9 +8,7 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff",
-    "measure_power",
-    "meter_power"
+    "onoff"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -20,24 +18,6 @@
         "nl": "Aan/Uit",
         "ta": "மின்சாரம்"
       }
-    },
-    "measure_power": {
-      "title": {
-        "en": "Power Consumption",
-        "fr": "Consommation électrique",
-        "nl": "Stroomverbruik",
-        "ta": "மின்சார நுகர்வு"
-      },
-      "units": "W"
-    },
-    "meter_power": {
-      "title": {
-        "en": "Energy Consumed",
-        "fr": "Énergie consommée",
-        "nl": "Energie verbruikt",
-        "ta": "நுகரப்பட்ட ஆற்றல்"
-      },
-      "units": "kWh"
     }
   },
   "images": {
@@ -110,5 +90,15 @@
   },
   "tags": ["energy", "power", "socket", "switch", "tuya", "zigbee"],
   "version": "1.0.0",
-  "compatibility": ["homey:>=6.0.0"]
+  "compatibility": ["homey:>=6.0.0"],
+  "variations": [
+    {
+      "id": "basic",
+      "name": "Plug Basic"
+    },
+    {
+      "id": "power",
+      "name": "Plug with Power Monitoring"
+    }
+  ]
 }

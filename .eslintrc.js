@@ -2,52 +2,57 @@ module.exports = {
   root: true,
   env: {
     node: true,
-    es2022: true,
+    es2020: true,
     jest: true,
     browser: true
   },
   extends: [
     'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
+    'plugin:import/typescript',
     'plugin:prettier/recommended',
-    'plugin:security/recommended'
+    'plugin:security/recommended',
+    'plugin:sonarjs/recommended'
   ],
-  parser: '@babel/eslint-parser',
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 2022,
+    ecmaVersion: 2020,
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
-      modules: true,
-      experimentalObjectRestSpread: true
+      modules: true
     },
-    requireConfigFile: false,
-    babelOptions: {
-      presets: ['@babel/preset-env'],
-      plugins: [
-        [
-          'module-resolver',
-          {
-            root: ['./src'],
-            alias: {
-              '@': './src',
-              '@config': './src/config',
-              '@services': './src/services',
-              '@drivers': './src/drivers',
-              '@utils': './src/utils'
-            }
-          }
-        ]
-      ]
-    }
+    project: './tsconfig.json'
   },
-  plugins: ['prettier', 'import', 'security', 'unicorn', 'promise'],
+  plugins: [
+    '@typescript-eslint',
+    'prettier',
+    'import',
+    'security',
+    'unicorn',
+    'promise',
+    'sonarjs',
+    'deprecation',
+    'jsdoc'
+  ],
   settings: {
     'import/resolver': {
-      'babel-module': {},
+      typescript: {},
       node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx']
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts']
+      },
+      alias: {
+        map: [
+          ['@app', './src/app'],
+          ['@drivers', './src/drivers'],
+          ['@common', './src/common'],
+          ['@lib', './src/lib'],
+          ['@utils', './src/utils'],
+          ['@test', './test']
+        ],
+        extensions: ['.ts', '.js', '.json']
       }
     },
     react: {
@@ -56,10 +61,10 @@ module.exports = {
   },
   rules: {
     // Base rules
-    indent: ['error', 2],
+    'indent': ['error', 2],
     'linebreak-style': ['error', 'unix'],
-    quotes: ['error', 'single', { avoidEscape: true }],
-    semi: ['error', 'always'],
+    'quotes': ['error', 'single', { avoidEscape: true }],
+    'semi': ['error', 'always'],
     'no-console': 'warn',
     'no-var': 'error',
     'prefer-const': 'error',
