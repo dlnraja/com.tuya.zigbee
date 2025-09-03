@@ -1,0 +1,28 @@
+version: '3.1'
+mode: hybrid
+thinking_timeout: 30000
+non_thinking_batch_size: 50
+
+features:
+  multilingual: true
+  json_mode: true
+  function_calling: true
+  vision: false
+
+optimization:
+  memory_management: auto
+  cache_enabled: true
+  retry_attempts: 3
+
+sources:
+  forums:
+    - "https://community.homey.app/t/app-pro-tuya-zigbee-app/26439"
+    - "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352"
+  github:
+    - "dlnraja/com.tuya.zigbee"
+    - "JohanBendz/com.tuya.zigbee"
+    - "athombv/com.tuya"
+  databases:
+    - "Blakadder Zigbee DB"
+    - "Zigbee2MQTT devices"
+    - "Tuya Official Documentation"
