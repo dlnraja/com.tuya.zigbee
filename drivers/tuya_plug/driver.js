@@ -3,6 +3,7 @@
 const Homey = require('homey');
 const { Log } = require('homey-log');
 const TuyaUtils = require('../../lib/utils/tuya');
+const TuyaDevice = require('./device');
 
 class TuyaPlugDriver extends Homey.Driver {
   /**
@@ -29,6 +30,9 @@ class TuyaPlugDriver extends Homey.Driver {
     
     // Listen for device deleted events
     this.homey.on('device.deleted', this.onDeviceDeleted.bind(this));
+    
+    // Listen for device changes
+    this.homey.on('device.changed', this.onDeviceChanged.bind(this));
   }
   
   /**
@@ -53,6 +57,16 @@ class TuyaPlugDriver extends Homey.Driver {
     }
   }
 
+  /**
+   * Handle device changed event
+   * @param {Homey.Device} device - The changed device
+   */
+  onDeviceChanged(device) {
+    if (device.driver.id === this.id) {
+      this.logger.debug(`Device changed: ${device.name} (${device.id})`);
+    }
+  }
+  
   /**
    * Register flow cards
    */

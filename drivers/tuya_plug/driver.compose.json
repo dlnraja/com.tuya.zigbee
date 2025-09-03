@@ -1,0 +1,267 @@
+{
+  "id": "tuya_plug",
+  "name": {
+    "en": "Tuya Smart Plug",
+    "fr": "Prise intelligente Tuya",
+    "nl": "Tuya Slimme Stekker",
+    "ta": "Tuya ஸ்மார்ட் பிளக்"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "measure_voltage",
+    "measure_current",
+    "measure_power.consumed",
+    "alarm_generic"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Power",
+        "fr": "Alimentation",
+        "nl": "Aan/Uit",
+        "ta": "மின்சாரம்"
+      },
+      "trueOptional": true
+    },
+    "measure_power": {
+      "title": {
+        "en": "Power Consumption",
+        "fr": "Consommation électrique",
+        "nl": "Stroomverbruik",
+        "ta": "மின் நுகர்வு"
+      },
+      "approximated": true,
+      "units": "W"
+    },
+    "measure_voltage": {
+      "title": {
+        "en": "Voltage",
+        "fr": "Tension",
+        "nl": "Spanning",
+        "ta": "மின்னழுத்தம்"
+      },
+      "approximated": true,
+      "units": "V"
+    },
+    "measure_current": {
+      "title": {
+        "en": "Current",
+        "fr": "Courant",
+        "nl": "Stroomsterkte",
+        "ta": "மின்னோட்டம்"
+      },
+      "approximated": true,
+      "units": "A"
+    },
+    "measure_power.consumed": {
+      "title": {
+        "en": "Energy Consumed",
+        "fr": "Énergie consommée",
+        "nl": "Energieverbruik",
+        "ta": "நுகரப்பட்ட ஆற்றல்"
+      },
+      "units": "kWh"
+    },
+    "alarm_generic": {
+      "title": {
+        "en": "Alarm",
+        "fr": "Alarme",
+        "nl": "Alarm",
+        "ta": "எச்சரிக்கை"
+      },
+      "pro": true
+    }
+  },
+  "energy": {
+    "batteries": []
+  },
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "start",
+      "template": "start",
+      "navigation": {
+        "next": "list_devices"
+      }
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      },
+      "options": {
+        "primary": {
+          "type": "text",
+          "label": {
+            "en": "Device Name",
+            "fr": "Nom de l'appareil",
+            "nl": "Apparaatnaam",
+            "ta": "கருவியின் பெயர்"
+          }
+        },
+        "secondary": {
+          "type": "text",
+          "label": {
+            "en": "Device ID",
+            "fr": "ID de l'appareil",
+            "nl": "Apparaat-ID",
+            "ta": "கருவி ஐடி"
+          }
+        }
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "label": {
+        "en": "Polling Interval (seconds)",
+        "fr": "Intervalle d'interrogation (secondes)",
+        "nl": "Polling interval (seconden)",
+        "ta": "போலிங் இடைவெளி (விநாடிகள்)"
+      },
+      "hint": {
+        "en": "How often to check device status (default: 30)",
+        "fr": "Fréquence de vérification de l'état de l'appareil (par défaut : 30)",
+        "nl": "Hoe vaak de apparaatstatus moet worden gecontroleerd (standaard: 30)",
+        "ta": "சாதன நிலையை எத்தனை நேரம் சரிபார்க்க வேண்டும் (இயல்புநிலை: 30)"
+      },
+      "value": 30,
+      "attr": {
+        "min": 5,
+        "max": 300
+      }
+    },
+    {
+      "id": "power_threshold",
+      "type": "number",
+      "label": {
+        "en": "Power Threshold (W)",
+        "fr": "Seuil de puissance (W)",
+        "nl": "Vermogensdrempel (W)",
+        "ta": "சக்தி வரம்பு (W)"
+      },
+      "hint": {
+        "en": "Minimum power change to trigger an update (default: 5)",
+        "fr": "Changement de puissance minimum pour déclencher une mise à jour (par défaut : 5)",
+        "nl": "Minimale vermogensverandering om een update te activeren (standaard: 5)",
+        "ta": "புதுப்பிப்பைத் தூண்டுவதற்கான குறைந்தபட்ச மின் மாற்றம் (இயல்புநிலை: 5)"
+      },
+      "value": 5,
+      "attr": {
+        "min": 0.1,
+        "max": 1000,
+        "step": 0.1
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "power_changed",
+        "title": {
+          "en": "Power state changed",
+          "fr": "État d'alimentation modifié",
+          "nl": "Voedingstoestand gewijzigd",
+          "ta": "மின்சார நிலை மாற்றப்பட்டது"
+        },
+        "tokens": [
+          {
+            "name": "state",
+            "type": "string",
+            "title": {
+              "en": "Power State",
+              "fr": "État de l'alimentation",
+              "nl": "Voedingstoestand",
+              "ta": "மின்சார நிலை"
+            }
+          }
+        ]
+      },
+      {
+        "id": "power_consumed",
+        "title": {
+          "en": "Power consumption changed",
+          "fr": "Consommation électrique modifiée",
+          "nl": "Stroomverbruik gewijzigd",
+          "ta": "மின் நுகர்வு மாற்றப்பட்டது"
+        },
+        "tokens": [
+          {
+            "name": "power",
+            "type": "number",
+            "title": {
+              "en": "Power (W)",
+              "fr": "Puissance (W)",
+              "nl": "Vermogen (W)",
+              "ta": "சக்தி (W)"
+            }
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "set_power",
+        "title": {
+          "en": "Set Power",
+          "fr": "Définir l'alimentation",
+          "nl": "Voeding instellen",
+          "ta": "மின்சாரத்தை அமைக்க"
+        },
+        "args": [
+          {
+            "name": "state",
+            "type": "dropdown",
+            "title": {
+              "en": "Power State",
+              "fr": "État de l'alimentation",
+              "nl": "Voedingstoestand",
+              "ta": "மின்சார நிலை"
+            },
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "fr": "Marche",
+                  "nl": "Aan",
+                  "ta": "ஆன்"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Arrêt",
+                  "nl": "Uit",
+                  "ta": "ஆஃப்"
+                }
+              },
+              {
+                "id": "toggle",
+                "label": {
+                  "en": "Toggle",
+                  "fr": "Basculer",
+                  "nl": "Wisselen",
+                  "ta": "மாற்று"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
