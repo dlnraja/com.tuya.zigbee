@@ -8,16 +8,16 @@
     "local"
   ],
   "name": {
-    "en": "Tuya Zigbee",
-    "fr": "Tuya Zigbee",
-    "nl": "Tuya Zigbee",
-    "ta": "Tuya Zigbee"
+    "en": "{app.name}",
+    "fr": "{app.name}",
+    "nl": "{app.name}",
+    "ta": "{app.name}"
   },
   "description": {
-    "en": "Support for Tuya Zigbee devices",
-    "fr": "Support des appareils Tuya Zigbee",
-    "nl": "Ondersteuning voor Tuya Zigbee-apparaten",
-    "ta": "Tuya Zigbee சாதனங்களுக்கான ஆதரவு"
+    "en": "{app.description}",
+    "fr": "{app.description}",
+    "nl": "{app.description}",
+    "ta": "{app.description}"
   },
   "category": [
     "lights"
@@ -35,9 +35,16 @@
   "support": "mailto:dylan.rajasekaram@gmail.com",
   "homepage": "https://github.com/dlnraja/tuya_repair",
   "license": "MIT",
+  "zigbee": {
+    "version": "3.0"
+  },
   "icon": "assets/icon.svg",
   "color": "#FF6B35",
   "drivers": [
+    {
+      "name": "Base",
+      "id": "base"
+    },
     {
       "id": "tuya",
       "name": {
