@@ -10,7 +10,18 @@ async function buildCompleteMatrix() {
     ],
     output: './data/device_matrix.csv',
     format: 'csv',
-    include: ['metadata', 'capabilities', 'sources', 'scores']
+    columns: [
+      'id',
+      'model',
+      'manufacturer',
+      'category',
+      'capabilities',
+      'clusters',
+      'status',
+      'score',
+      'sources',
+      'regions'
+    ]
   });
 
   console.log(`📊 Matrice générée avec ${matrix.devices.length} devices`);
