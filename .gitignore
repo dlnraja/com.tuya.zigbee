@@ -19,35 +19,52 @@ Thumbs.db
 
 # Logs
 *.log
-<<<<<<< HEAD
 
-# Temporary files
+# Fichiers temporaires
 *.tmp
 *.temp
 *.bak
 *.backup
 
-# Local configuration
+# Configuration locale
 .env
 .env.local
-.env.*.local 
+.env.*.local
 
-=======
-RestoreAndRebuild.ps1
-D:/Download/fold/
+# Dossiers générés
+dist/
+build/
+.coverage/
+.nyc_output/
+
+# Fichiers de test
+coverage/
+.nyc_output/
+
+# Fichiers de cache
+.cache/
+.parcel-cache/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
 
 # Fichiers de développement local
-*.backup
-*.tmp
+RestoreAndRebuild.ps1
+D:/Download/fold/
 
 # Fichiers d'automatisation
 reports/
 .temp/
 .auto-generated/
 
-# Exclusion automatique de toute config locale
-.vscode/
+# Fichiers de migration
+temp_migration/
+backup_*/
+
+# Fichiers de configuration locale
 local-scripts/
+*.local.json
 cursor_temp*
 *.log
 D:/Download/fold/

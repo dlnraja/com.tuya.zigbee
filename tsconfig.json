@@ -2,7 +2,7 @@
   "compilerOptions": {
     /* Language and Environment */
     "target": "es2020",
-    "lib": ["es2020"],
+    "lib": ["es2020", "dom"],
     
     /* Modules */
     "module": "commonjs",
@@ -20,39 +20,41 @@
     "noImplicitThis": true,
     "alwaysStrict": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": false, // Disabled to allow unused parameters in callbacks
+    "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
     
     /* Emit */
     "sourceMap": true,
-    "outDir": ".homeybuild",
+    "outDir": "dist",
+    "declaration": true,
+    "declarationMap": true,
+    "incremental": true,
     
     /* Paths */
     "baseUrl": ".",
     "paths": {
-      "@app/*": ["app/*"],
-      "@drivers/*": ["drivers/*"],
-      "@lib/*": ["lib/*"],
-      "@utils/*": ["lib/utils/*"],
-      "@config": ["lib/config.js"],
-      "@test/*": ["test/*"]
+      "@app/*": ["src/app/*"],
+      "@drivers/*": ["src/drivers/*"],
+      "@common/*": ["src/common/*"],
+      "@lib/*": ["src/lib/*"],
+      "@utils/*": ["src/utils/*"],
+      "@config": ["src/config"],
+      "@test/*": ["test/*"],
+      "@types/*": ["types/*"]
     },
     
-    /* Linting */
+    /* Type Resolution */
     "skipLibCheck": true,
     "allowJs": true,
     "checkJs": true,
-    "rootDir": ".",
+    "rootDir": "src",
     "typeRoots": [
       "./node_modules/@types",
-      "./node_modules/@homey"
+      "./types"
     ],
-    "types": [
-      "node",
-      "@homey/homey-app"
-    ]
+    "types": ["node"]
   },
   "include": [
     "app.js",
