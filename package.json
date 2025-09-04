@@ -11,11 +11,13 @@
     "minHomeyVersion": "7.0.0"
   },
   "dependencies": {
+    "axios": "^1.7.2",
     "homey": "^8.0.0",
-    "homey-zw-lib": "^1.0.0",
-    "axios": "^1.6.7",
     "homey-log": "^2.0.0",
-    "uuid": "^9.0.1"
+    "homey-zw-lib": "^1.0.0",
+    "simple-git": "^3.25.0",
+    "uuid": "^9.0.1",
+    "dockerode": "^4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.23.5",
@@ -23,16 +25,15 @@
     "@babel/preset-env": "^7.23.5",
     "@babel/preset-typescript": "^7.23.3",
     "@types/chai": "^4.3.11",
-    "@types/jest": "^29.5.11",
-    "@types/mocha": "^10.0.8",
-    "@types/node": "^20.10.3",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.12",
     "@types/uuid": "^9.0.7",
     "babel-jest": "^29.7.0",
     "chai": "^4.4.1",
     "eslint": "^8.55.0",
-    "eslint-config-homey-app": "^0.0.1",
     "jest": "^29.7.0",
     "mocha": "^10.2.0",
+    "rimraf": "^5.0.5",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
@@ -40,6 +41,7 @@
   },
   "scripts": {
     "test": "mocha -r ts-node/register -r tsconfig-paths/register test/**/*.test.ts",
+    "test:jest": "jest -c jest.config.js",
     "test:watch": "mocha -w -r ts-node/register -r tsconfig-paths/register test/**/*.test.ts",
     "test:integration": "mocha -r ts-node/register -r tsconfig-paths/register test/integration/**/*.test.ts",
     "test:e2e": "mocha -r ts-node/register -r tsconfig-paths/register test/e2e/**/*.test.ts",
@@ -50,6 +52,26 @@
     "build": "homey app build",
     "validate": "homey app validate",
     "migrate": "node scripts/migrate.js",
-    "clean": "rimraf dist && rimraf node_modules/.cache"
+    "clean": "rimraf dist && rimraf node_modules/.cache",
+    "assets:verify": "node tools/verify-assets.js",
+    "json:validate": "node tools/validate-json.js",
+    "json:fix": "node tools/validate-json.js --fix",
+    "test:structure": "node tools/test-structure.js",
+    "reorganize": "node tools/reorganize-root.js --dry-run",
+    "reorganize:apply": "node tools/reorganize-root.js --apply",
+    "diag": "node scripts/js/diagnostic.js",
+    "report:integration": "node scripts/js/createIntegrationReport.js",
+    "project:check": "node scripts/js/checkProjectStructure.js",
+    "git:push": "node scripts/js/pushToGitHub.js",
+    "env:verify": "node scripts/js/verifyNodeEnv.js",
+    "system:check": "node scripts/js/systemCheck.js",
+    "analysis:run": "node scripts/run-analysis.js",
+    "report:generate": "node scripts/generate-report.js",
+    "git:check": "node scripts/check-git.js",
+    "monitor:start": "node scripts/js/monitor.js",
+    "drivers:validate": "node scripts/js/validate-all-drivers.js",
+    "tuya:auto:validate": "node scripts/js/tuya-zigbee-automation.js validate",
+    "tuya:auto:filter": "node scripts/js/tuya-zigbee-automation.js filter",
+    "tuya:auto:update": "node scripts/js/tuya-zigbee-automation.js update"
   }
 }

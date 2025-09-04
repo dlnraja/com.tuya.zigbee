@@ -6,7 +6,9 @@
   "description": {
     "en": "Adds support for Tuya TS0011 Smart Switch"
   },
-  "category": ["switch"],
+  "category": [
+    "switch"
+  ],
   "compat": true,
   "images": {
     "large": "/drivers/tuya-ts0011/assets/images/device-large.png",
@@ -14,7 +16,9 @@
   },
   "zigbee": {
     "manufacturerName": "_TZ3000_1ddk5snb",
-    "productId": ["TS0011"],
+    "productId": [
+      "TS0011"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -49,5 +53,7 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ]
+  ],
+  "class": "sensor",
+  "capabilities": []
 }

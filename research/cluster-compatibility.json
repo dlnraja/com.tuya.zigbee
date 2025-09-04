@@ -54,7 +54,16 @@
       "genScenes",
       "genGroups"
     ],
-    "compatibility": {}
+    "compatibility": {
+      "current": [],
+      "missing": [
+        "genOnOff",
+        "genLevelCtrl",
+        "genPowerCfg",
+        "haElectricalMeasurement"
+      ],
+      "extra": []
+    }
   },
   "cover": {
     "required": [

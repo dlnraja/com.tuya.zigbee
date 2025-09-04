@@ -1,14 +1,16 @@
 const fs = require('fs');
 const path = require('path');
 
-const driversPath = path.join(__dirname, '..', 'drivers', 'tuya_zigbee');
+// Root des drivers (tous sous-dossiers seront scannés récursivement)
+const driversRoot = path.join(__dirname, '..', 'drivers');
+// Fichiers requis pour un driver Homey standard
 const requiredFiles = [
-  'device.js',
   'driver.compose.json',
-  'icon.svg',
-  'images/icon.svg',
-  'images/learnmode.svg',
-  'metadata.json'
+  'driver.js',
+  'device.js',
+  'assets/icon.svg',
+  'assets/images/large.png',
+  'assets/images/small.png'
 ];
 
 function checkDriver(driverPath) {
@@ -23,32 +25,45 @@ function checkDriver(driverPath) {
 }
 
 function findDriverDirs(basePath) {
-  const driverDirs = [];
-  const categories = fs.readdirSync(basePath, { withFileTypes: true })
-    .filter(dirent => dirent.isDirectory())
-    .map(dirent => dirent.name);
+  // Recherche récursive de répertoires driver (présence de driver.compose.json ou device.js)
+  const results = [];
+  if (!fs.existsSync(basePath)) return results;
 
-  for (const category of categories) {
-    const categoryPath = path.join(basePath, category);
-    const drivers = fs.readdirSync(categoryPath, { withFileTypes: true })
-      .filter(dirent => dirent.isDirectory())
-      .map(dirent => path.join(category, dirent.name));
-    driverDirs.push(...drivers);
+  const stack = [basePath];
+  while (stack.length) {
+    const current = stack.pop();
+    const entries = fs.readdirSync(current, { withFileTypes: true });
+
+    const hasDriverCompose = entries.some(e => e.isFile() && e.name === 'driver.compose.json');
+    const hasDeviceOrDriver = entries.some(e => e.isFile() && (e.name === 'device.js' || e.name === 'driver.js'));
+    if (hasDriverCompose || hasDeviceOrDriver) {
+      // On considère ce dossier comme racine d'un driver
+      results.push(current);
+      continue; // ne pas descendre plus bas
+    }
+
+    for (const entry of entries) {
+      if (entry.isDirectory()) {
+        const name = entry.name;
+        if (['.git', 'node_modules', 'final-release', 'releases', '.homeycompose'].includes(name)) continue;
+        stack.push(path.join(current, name));
+      }
+    }
   }
-  return driverDirs;
+  return results;
 }
 
 function main() {
-  const driverDirs = findDriverDirs(driversPath);
+  const driverDirs = findDriverDirs(driversRoot);
   const report = {};
-  
-  for (const driverDir of driverDirs) {
-    const driverPath = path.join(driversPath, driverDir);
-    console.log(`Scanning driver: ${driverDir}`);
+
+  for (const driverPath of driverDirs) {
+    const rel = path.relative(driversRoot, driverPath) || path.basename(driverPath);
+    console.log(`Scanning driver: ${rel}`);
     const missingFiles = checkDriver(driverPath);
     if (missingFiles.length > 0) {
       console.log(`Missing files: ${missingFiles.join(', ')}`);
-      report[driverDir] = missingFiles;
+      report[rel] = missingFiles;
     }
   }
 

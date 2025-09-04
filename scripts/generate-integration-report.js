@@ -1,237 +1,213 @@
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
-const axios = require('axios');
 
 // Configuration
 const CONFIG = {
-  rootDir: path.join(__dirname, '..'),
-  outputDir: path.join(__dirname, '../reports'),
-  repoUrl: 'https://github.com/dlnraja/com.tuya.zigbee',
-  sources: {
-    blakadder: 'https://zigbee.blakadder.com/tuya.json',
-    z2m: 'https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices/tuya.ts',
-    issues: 'https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues?per_page=200&state=all'
-  },
-  reportFile: 'integration-report.md',
-  matrixFile: 'device-matrix.csv'
+  rootDir: __dirname,
+  outputDir: path.join(__dirname, 'reports'),
+  driversDir: path.join(__dirname, 'drivers'),
+  reportFile: 'tuya-integration-report.md',
+  maxDriversToAnalyze: 10 // Limite pour l'analyse détaillée
 };
 
-// Fonction pour récupérer les données des sources externes
-async function fetchExternalData() {
-  console.log('🔍 Récupération des données externes...');
+// Créer le dossier de sortie s'il n'existe pas
+if (!fs.existsSync(CONFIG.outputDir)) {
+  fs.mkdirSync(CONFIG.outputDir, { recursive: true });
+}
+
+// Fonction pour analyser un driver
+function analyzeDriver(driverPath) {
+  const configPath = path.join(driverPath, 'driver.compose.json');
+  
+  if (!fs.existsSync(configPath)) {
+    return {
+      name: path.basename(driverPath),
+      valid: false,
+      error: 'Fichier de configuration manquant'
+    };
+  }
   
   try {
-    const [blakadderRes, z2mRes, issuesRes] = await Promise.all([
-      axios.get(CONFIG.sources.blakadder),
-      axios.get(CONFIG.sources.z2m),
-      axios.get(CONFIG.sources.issues, {
-        headers: {
-          'Accept': 'application/vnd.github.v3+json'
-        }
-      })
-    ]);
-
-    return {
-      blakadder: blakadderRes.data,
-      z2m: z2mRes.data,
-      issues: issuesRes.data
-    };
-  } catch (error) {
-    console.error('Erreur lors de la récupération des données externes:', error.message);
-    return { blakadder: [], z2m: '', issues: [] };
-  }
-}
-
-// Analyser les drivers locaux
-function analyzeLocalDrivers() {
-  console.log('🔍 Analyse des drivers locaux...');
-  
-  const driversDir = path.join(CONFIG.rootDir, 'drivers');
-  const drivers = [];
-  
-  fs.readdirSync(driversDir, { withFileTypes: true })
-    .filter(dirent => dirent.isDirectory())
-    .forEach(dirent => {
-      const driverPath = path.join(driversDir, dirent.name);
-      const configPath = path.join(driverPath, 'driver.compose.json');
+    const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+    const assetsDir = path.join(driverPath, 'assets');
+    const assetsExist = fs.existsSync(assetsDir);
+    
+    // Vérifier les icônes
+    let hasIcons = false;
+    let iconStatus = {};
+    
+    if (config.images) {
+      hasIcons = true;
       
-      if (fs.existsSync(configPath)) {
-        try {
-          const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-          drivers.push({
-            id: config.id || dirent.name,
-            name: dirent.name,
-            config: config,
-            hasIcon: checkDriverIcons(driverPath, config),
-            hasTranslations: checkTranslations(config)
-          });
-        } catch (error) {
-          console.error(`Erreur lors de l'analyse du driver ${dirent.name}:`, error.message);
-        }
-      }
-    });
-  
-  return drivers;
-}
-
-// Vérifier les icônes du driver
-function checkDriverIcons(driverPath, config) {
-  if (!config.images) return false;
-  
-  const iconPaths = [
-    path.join(driverPath, config.images.small || ''),
-    path.join(driverPath, config.images.large || '')
-  ];
-  
-  return iconPaths.every(iconPath => fs.existsSync(iconPath));
-}
-
-// Vérifier les traductions
-function checkTranslations(config) {
-  if (!config.name || typeof config.name !== 'object') return 0;
-  return Object.keys(config.name).length;
-}
-
-// Générer la matrice des appareils
-function generateDeviceMatrix(drivers, externalData) {
-  console.log('📊 Génération de la matrice des appareils...');
-  
-  const headers = [
-    'ID', 'Device', 'Manufacturer', 'ProductId', 'Clusters', 
-    'Datapoints', 'Capabilities', 'Traductions', 'Icone', 'Code', 'Source', 'MissingFields'
-  ];
-  
-  const rows = drivers.map((driver, index) => {
-    const config = driver.config;
-    const zigbee = config.zigbee || {};
+      ['small', 'large'].forEach(size => {
+        const iconPath = path.join(driverPath, config.images[size]);
+        const exists = fs.existsSync(iconPath);
+        iconStatus[size] = {
+          path: config.images[size],
+          exists: exists,
+          size: exists ? fs.statSync(iconPath).size : 0
+        };
+        
+        if (!exists) hasIcons = false;
+      });
+    }
     
-    // Détecter les champs manquants
-    const missingFields = [];
-    if (!driver.hasIcon) missingFields.push('icon');
-    if (driver.hasTranslations < 5) missingFields.push('translations');
+    return {
+      name: path.basename(driverPath),
+      valid: true,
+      config: {
+        id: config.id,
+        class: config.class,
+        name: config.name,
+        capabilities: config.capabilities || [],
+        zigbee: config.zigbee ? {
+          manufacturer: config.zigbee.manufacturerName?.[0],
+          productId: config.zigbee.productId?.[0],
+          endpoints: config.zigbee.endpoints ? Object.keys(config.zigbee.endpoints).length : 0
+        } : null
+      },
+      assets: {
+        hasAssetsDir: assetsExist,
+        hasIcons: hasIcons,
+        icons: iconStatus
+      },
+      translations: config.name ? Object.keys(config.name).length : 0
+    };
     
-    return [
-      index + 1,
-      config.name?.en || driver.name,
-      zigbee.manufacturerName?.[0] || 'N/A',
-      zigbee.productId?.[0] || 'N/A',
-      zigbee.endpoints ? Object.values(zigbee.endpoints).flat().join(',') : 'N/A',
-      'N/A', // Datapoints
-      config.capabilities?.join(',') || 'N/A',
-      driver.hasTranslations,
-      driver.hasIcon ? '✅' : '❌',
-      '✅', // Code toujours présent
-      'GitHub',
-      missingFields.join(',')
-    ];
-  });
-  
-  return { headers, rows };
+  } catch (error) {
+    return {
+      name: path.basename(driverPath),
+      valid: false,
+      error: `Erreur de lecture: ${error.message}`
+    };
+  }
 }
 
 // Générer le rapport Markdown
-function generateMarkdownReport(matrix, drivers, externalData) {
-  console.log('📝 Génération du rapport...');
-  
-  let report = `# 🚀 Rapport d'Intégration Tuya Zigbee
+function generateReport(drivers, stats) {
+  let report = `# Rapport d'Intégration Tuya Zigbee
 
-`;
-  
-  // En-tête
-  report += `**Date:** ${new Date().toISOString()}\n`;
-  report += `**Dépôt:** ${CONFIG.repoUrl}\n`;
-  report += `**Commit:** ${getCurrentCommitHash()}\n\n`;
-  
-  // Résumé
-  report += `## 📊 Résumé\n\n`;
-  report += `- **Total des drivers:** ${drivers.length}\n`;
-  report += `- **Drivers avec icônes:** ${drivers.filter(d => d.hasIcon).length}\n`;
-  report += `- **Moyenne des traductions par driver:** ${(drivers.reduce((sum, d) => sum + d.hasTranslations, 0) / drivers.length).toFixed(1)}\n\n`;
-  
-  // Matrice des appareils
-  report += `## 📋 Matrice des Appareils\n\n`;
-  report += generateMarkdownTable(matrix.headers, matrix.rows);
-  
-  // Problèmes identifiés
-  report += `\n## ⚠️ Problèmes Identifiés\n\n`;
-  
-  const issues = [];
-  drivers.forEach((driver, index) => {
-    if (!driver.hasIcon) {
-      issues.push(`- ❌ **${driver.name}**: Icône manquante`);
-    }
-    if (driver.hasTranslations < 5) {
-      issues.push(`- 🌐 **${driver.name}**: Traductions manquantes (${driver.hasTranslations}/5)`);
-    }
-  });
-  
-  report += issues.length > 0 ? issues.join('\n') : 'Aucun problème critique identifié.';
-  
-  // Sources externes
-  report += `\n\n## 🔗 Sources Externes\n\n`;
-  report += `- **Blakadder:** ${CONFIG.sources.blakadder}\n`;
-  report += `- **Zigbee2MQTT:** ${CONFIG.sources.z2m}\n`;
-  report += `- **Issues GitHub:** ${CONFIG.sources.issues}\n`;
-  
+**Date de génération:** ${new Date().toISOString()}
+**Nombre total de drivers analysés:** ${drivers.length}
+
+## 📊 Statistiques
+
+- **Drivers valides:** ${stats.valid} (${Math.round((stats.valid / drivers.length) * 100)}%)
+- **Avec icônes:** ${stats.withIcons} (${Math.round((stats.withIcons / drivers.length) * 100)}%)
+- **Moyenne de traductions par driver:** ${(stats.totalTranslations / drivers.length).toFixed(1)}
+- **Capacités les plus courantes:** ${Object.entries(stats.capabilities)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5)
+    .map(([cap, count]) => `${cap} (${count})`)
+    .join(', ')}
+
+## 🔍 Analyse des Drivers
+
+### Drivers avec problèmes (${stats.invalidDrivers.length})
+
+${stats.invalidDrivers.length > 0 ? 
+  stats.invalidDrivers.map(d => `- **${d.name}**: ${d.error}`).join('\n') : 
+  'Aucun problème détecté.'}
+
+### Exemples de Drivers Valides (${stats.validDrivers.length} au total)
+
+${stats.validDrivers.slice(0, 5).map(driver => {
+  return `#### ${driver.name}
+- **ID:** ${driver.config.id}
+- **Classe:** ${driver.config.class}
+- **Traductions:** ${driver.translations} langues
+- **Capacités:** ${driver.config.capabilities.join(', ')}
+- **Zigbee:** ${driver.config.zigbee ? `${driver.config.zigbee.manufacturer} (${driver.config.zigbee.productId})` : 'Non configuré'}
+- **Assets:** ${driver.assets.hasIcons ? '✅ Icônes présentes' : '❌ Icônes manquantes'}`;
+}).join('\n\n')}
+
+## 🔧 Recommandations
+
+1. **Gestion des icônes:**
+   - ${stats.missingIcons > 0 ? `**${stats.missingIcons} drivers** ont des icônes manquantes.` : 'Tous les drivers ont leurs icônes.'}
+   - Vérifier que les chemins dans `driver.compose.json` sont corrects.
+   - Convertir les SVG en PNG pour une meilleure compatibilité.
+
+2. **Traductions:**
+   - La moyenne de ${(stats.totalTranslations / drivers.length).toFixed(1)} langues par driver peut être améliorée.
+   - Ajouter des traductions manquantes pour une meilleure internationalisation.
+
+3. **Validation des drivers:**
+   - ${stats.invalidDrivers.length} drivers présentent des erreurs de configuration.
+   - Vérifier les fichiers de configuration et corriger les erreurs signalées.
+
+## 📈 Métriques
+
+- **Taux de complétion des drivers:** ${Math.round((stats.valid / drivers.length) * 100)}%
+- **Taux de couverture des icônes:** ${Math.round((stats.withIcons / drivers.length) * 100)}%
+- **Moyenne de capacités par driver:** ${(stats.totalCapabilities / drivers.length).toFixed(1)}
+
+---
+
+*Rapport généré automatiquement - Tuya Zigbee Integration*`;
+
   return report;
 }
 
-// Générer un tableau Markdown
-function generateMarkdownTable(headers, rows) {
-  let table = `| ${headers.join(' | ')} |\n`;
-  table += `|${' --- |'.repeat(headers.length)}\n`;
-  
-  rows.forEach(row => {
-    table += `| ${row.join(' | ')} |\n`;
-  });
-  
-  return table;
-}
-
-// Obtenir le hash du commit actuel
-function getCurrentCommitHash() {
-  try {
-    return execSync('git rev-parse --short HEAD').toString().trim();
-  } catch (error) {
-    return 'N/A';
-  }
-}
-
 // Fonction principale
-async function main() {
+function main() {
   try {
-    // Créer le dossier de sortie s'il n'existe pas
-    if (!fs.existsSync(CONFIG.outputDir)) {
-      fs.mkdirSync(CONFIG.outputDir, { recursive: true });
-    }
+    console.log('🔍 Analyse des drivers...');
     
-    // Récupérer les données externes
-    const externalData = await fetchExternalData();
+    // Lire les dossiers de drivers
+    const driverDirs = fs.readdirSync(CONFIG.driversDir, { withFileTypes: true })
+      .filter(dirent => dirent.isDirectory())
+      .map(dirent => path.join(CONFIG.driversDir, dirent.name));
     
-    // Analyser les drivers locaux
-    const drivers = analyzeLocalDrivers();
+    // Analyser chaque driver
+    const drivers = driverDirs.map(driverPath => analyzeDriver(driverPath));
     
-    // Générer la matrice des appareils
-    const matrix = generateDeviceMatrix(drivers, externalData);
+    // Calculer les statistiques
+    const stats = {
+      valid: 0,
+      withIcons: 0,
+      missingIcons: 0,
+      totalTranslations: 0,
+      totalCapabilities: 0,
+      capabilities: {},
+      validDrivers: [],
+      invalidDrivers: []
+    };
     
-    // Générer le rapport Markdown
-    const markdown = generateMarkdownReport(matrix, drivers, externalData);
+    drivers.forEach(driver => {
+      if (driver.valid) {
+        stats.valid++;
+        stats.validDrivers.push(driver);
+        
+        if (driver.assets.hasIcons) {
+          stats.withIcons++;
+        } else {
+          stats.missingIcons++;
+        }
+        
+        stats.totalTranslations += driver.translations;
+        stats.totalCapabilities += driver.config.capabilities.length;
+        
+        // Compter les capacités
+        driver.config.capabilities.forEach(cap => {
+          stats.capabilities[cap] = (stats.capabilities[cap] || 0) + 1;
+        });
+      } else {
+        stats.invalidDrivers.push(driver);
+      }
+    });
     
-    // Enregistrer les fichiers
+    // Trier les drivers valides par nom
+    stats.validDrivers.sort((a, b) => a.name.localeCompare(b.name));
+    
+    console.log('📊 Génération du rapport...');
+    const report = generateReport(drivers, stats);
+    
+    // Enregistrer le rapport
     const reportPath = path.join(CONFIG.outputDir, CONFIG.reportFile);
-    fs.writeFileSync(reportPath, markdown);
+    fs.writeFileSync(reportPath, report);
     
-    const matrixPath = path.join(CONFIG.outputDir, CONFIG.matrixFile);
-    const csvContent = [
-      matrix.headers.join(','),
-      ...matrix.rows.map(row => row.join(','))
-    ].join('\n');
-    fs.writeFileSync(matrixPath, csvContent);
-    
-    console.log(`\n✅ Rapport généré avec succès !`);
-    console.log(`📄 Rapport: ${reportPath}`);
-    console.log(`📊 Matrice: ${matrixPath}`);
+    console.log(`✅ Rapport généré avec succès: ${reportPath}`);
     
   } catch (error) {
     console.error('❌ Erreur lors de la génération du rapport:', error);
@@ -239,5 +215,5 @@ async function main() {
   }
 }
 
-// Démarrer le processus
+// Démarrer l'analyse
 main();

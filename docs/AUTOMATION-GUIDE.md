@@ -1,99 +1,134 @@
-# Guide d'Automatisation Tuya Zigbee
+# Tuya Zigbee SDK3 - Automation Guide
 
-Ce guide explique comment utiliser les outils d'automatisation pour le projet Tuya Zigbee.
+This document outlines the automation processes in place for the Tuya Zigbee SDK3 project, including monthly driver enrichment, testing, and validation.
 
-## 📋 Prérequis
+## 📋 Table of Contents
+- [Automation Overview](#-automation-overview)
+- [Monthly Enrichment Process](#-monthly-enrichment-process)
+- [Manual Execution](#-manual-execution)
+- [Adding New Drivers](#-adding-new-drivers)
+- [Troubleshooting](#-troubleshooting)
+- [Contributing](#-contributing)
 
-- Node.js 18 ou supérieur
-- Homey CLI installé globalement (`npm install -g homey`)
-- Git installé et configuré
-- Accès en écriture au dépôt Git
+## 🤖 Automation Overview
 
-## 🚀 Installation
+The project includes automated processes to:
+- **Monthly** collect updates from source repositories
+- Analyze and enrich existing drivers
+- Generate placeholders for missing drivers
+- Run tests and generate coverage reports
+- Create pull requests with updates
 
-1. Cloner le dépôt :
+## 🔄 Monthly Enrichment Process
+
+Runs automatically on the 1st of each month via GitHub Actions:
+
+1. **Source Collection**
+   - Clones/updates source repositories
+   - Extracts driver information
+   - Identifies new devices and features
+
+2. **Driver Analysis**
+   - Scans for Tuya/Zigbee specific code
+   - Identifies missing functionality
+   - Checks for updates in dependencies
+
+3. **Enrichment**
+   - Updates existing drivers with new features
+   - Creates placeholders for missing drivers
+   - Updates documentation
+
+4. **Testing & Validation**
+   - Runs unit and integration tests
+   - Generates coverage reports
+   - Validates driver configurations
+
+5. **Pull Request**
+   - Creates a PR with all changes
+   - Includes detailed changelog
+   - Triggers CI/CD pipeline
+
+## 🖥️ Manual Execution
+
+To run the enrichment process manually:
+
+```bash
+# Install dependencies
+npm ci
+
+# Run the enrichment script
+node tools/analyze-and-enrich-drivers.js
+
+# Run tests and generate coverage
+npm run test:coverage
+```
+
+## ➕ Adding New Drivers
+
+1. Place new drivers in the `drivers/` directory
+2. Follow the naming convention: `tuya-{model}`
+3. Include these required files:
+   - `device.js` - Device implementation
+   - `driver.js` - Driver implementation
+   - `driver.compose.json` - Driver metadata
+
+Example structure:
+```
+drivers/
+  tuya-ts011f/
+    device.js
+    driver.js
+    driver.compose.json
+    assets/
+      images/
+        large.png
+        small.png
+```
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+1. **Missing Dependencies**
    ```bash
-   git clone https://github.com/dlnraja/com.tuya.zigbee.git
-   cd com.tuya.zigbee
-   git checkout tuya-light
+   npm ci
    ```
 
-2. Installer les dépendances :
-   ```bash
-   npm install
-   npm install -g homey
-   ```
+2. **Test Failures**
+   Check the test output and logs in `test-results/`
 
-## 🛠️ Scripts Disponibles
+3. **Coverage Issues**
+   Review the coverage report at `coverage/`
 
-### 1. Orchestrateur Principal (`orchestrate.js`)
+4. **Enrichment Errors**
+   Check the log file: `enrichment-log.txt`
 
-Analyse, valide et met à jour les drivers.
+## 🤝 Contributing
 
-```bash
-node orchestrate.js
-```
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests and ensure coverage remains high
+5. Submit a pull request
 
-**Actions effectuées :**
-- Scan des drivers existants
-- Validation avec `homey app validate`
-- Traduction des textes
-- Mise à jour de la version et commit
+### Code Style
+- Follow existing code style
+- Add JSDoc comments for all functions
+- Include tests for new features
+- Update documentation
 
-### 2. Générateur de Drivers (`generate-driver.js`)
+## 📊 Monitoring
 
-Crée un nouveau driver avec la structure de base.
+- **Test Coverage**: Check `coverage/` directory
+- **Build Status**: View GitHub Actions
+- **Enrichment Logs**: `enrichment-log.txt`
 
-```bash
-node generate-driver.js <driver-id> [capability1] [capability2] ...
-```
+## 🔒 Security
 
-**Exemple :**
-```bash
-node generate-driver.js my-tuya-device onoff dim
-```
+- Never commit sensitive information
+- Use environment variables for secrets
+- Follow security best practices in code
 
-### 3. Validation Manuelle
+---
 
-```bash
-# Valider l'application
-homey app validate --level debug
-
-# Générer les traductions
-npx homey translate --force
-```
-
-## 🔄 GitHub Actions
-
-Le workflow est configuré pour s'exécuter :
-- Tous les lundis à 09:00 UTC
-- À chaque push sur la branche `tuya-light`
-- Manuellement depuis l'interface GitHub
-
-## 📊 Rapports
-
-Les rapports sont générés dans le dossier `reports/` :
-- `integration-report.md` : Résumé de l'analyse
-- Fichiers de validation dans `.homeybuild/`
-
-## 🛠️ Dépannage
-
-### Problèmes de Validation
-1. Vérifiez les erreurs dans la sortie de `homey app validate`
-2. Consultez le rapport d'intégration
-3. Vérifiez les logs GitHub Actions
-
-### Problèmes de Traduction
-1. Exécutez `npx homey translate --force`
-2. Vérifiez les fichiers dans `locales/`
-
-## 📝 Bonnes Pratiques
-
-1. Toujours créer une branche pour les modifications
-2. Tester localement avant de pousser
-3. Mettre à jour la documentation
-4. Suivre les conventions de nommage
-
-## 📞 Support
-
-Pour toute question, ouvrez une issue sur GitHub ou contactez l'équipe de développement.
+*Last updated: $(date +'%Y-%m-%d')*
