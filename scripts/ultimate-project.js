@@ -1153,3 +1153,35 @@ async function main() {
 
 // Démarrer le script
 main();
+
+// Fonctions de validation des appareils
+async function validateDevices() {
+  const deviceManager = new DeviceManager();
+  const devices = await deviceManager.discoverDevices();
+  const validationReport = await deviceManager.validateDevices(devices);
+  saveReport(validationReport, 'device-validation-report.json');
+}
+
+// Fonctions de benchmarking des performances
+async function benchmarkPerformance() {
+  const benchmarker = new PerformanceBenchmarker();
+  const performanceReport = await benchmarker.run();
+  saveReport(performanceReport, 'performance-report.json');
+}
+
+// Fonctions d'audit de sécurité
+async function auditSecurity() {
+  const auditor = new SecurityAuditor();
+  const securityReport = await auditor.run();
+  saveReport(securityReport, 'security-report.json');
+}
+
+// Ajouter les nouvelles phases à l'orchestrateur
+const phases = [
+  { name: 'Validation', execute: validateDevices },
+  { name: 'Performance Benchmarking', execute: benchmarkPerformance },
+  { name: 'Security Audit', execute: auditSecurity },
+  // ... phases existantes ...
+];
+
+// ... code existant ...
