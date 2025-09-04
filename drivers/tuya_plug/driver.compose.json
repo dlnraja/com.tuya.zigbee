@@ -7,6 +7,7 @@
     "ta": "Tuya ஸ்மார்ட் பிளக்"
   },
   "class": "socket",
+  "icon": "./assets/icon.png",
   "capabilities": [
     "onoff",
     "measure_power",
