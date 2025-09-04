@@ -1,0 +1,13 @@
+{
+  "id": "tuya_sensor",
+  "name": {
+    "en": "Tuya Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [],
+  "images": {
+    "large": "drivers/tuya_sensor/assets/images/large.png",
+    "small": "drivers/tuya_sensor/assets/images/small.png"
+  },
+  "pair": []
+}

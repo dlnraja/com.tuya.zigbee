@@ -1,0 +1,59 @@
+{
+  "timestamp": "2025-08-14T17:38:42.488Z",
+  "status": "COMPLETELY_RESTORED",
+  "files": {
+    "essential": [
+      "app.json",
+      "package.json",
+      "app.js",
+      "README.md",
+      "CHANGELOG.md"
+    ],
+    "drivers": [],
+    "assets": [],
+    "docs": []
+  },
+  "structure": {
+    "drivers": {
+      "tuya_zigbee": {
+        "ac": 7,
+        "assets": 2,
+        "cover": 55,
+        "fan": 7,
+        "heater": 7,
+        "light": 49,
+        "lock": 37,
+        "other": 67,
+        "sensor-contact": 7,
+        "sensor-gas": 7,
+        "sensor-humidity": 9,
+        "sensor-motion": 10,
+        "sensor-smoke": 7,
+        "sensor-temp": 30,
+        "sensor-vibration": 1,
+        "sensor-water": 7,
+        "switch": 129,
+        "thermostat": 1
+      },
+      "zigbee": {
+        "__generic__": 4,
+        "__templates__": 1,
+        "assets": 2,
+        "brands": 1,
+        "categories": 1,
+        "generic": 1,
+        "models": 11,
+        "templates": 1
+      },
+      "tuya": {
+        "plug": 1,
+        "sensor-contact": 1,
+        "sensor-motion": 1,
+        "siren": 1,
+        "switch": 1
+      }
+    },
+    "categories": 34,
+    "totalDrivers": 466
+  }
+}

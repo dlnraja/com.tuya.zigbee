@@ -1,0 +1,35 @@
+{
+  "id": "tuya_aqara_blind-824_cover",
+  "title": {
+    "en": "Aqara Blind-824 Cover Control",
+    "fr": "Contrôle Aqara Blind-824 Cover"
+  },
+  "class": "cover",
+  "capabilities": [
+    "windowcoverings_state"
+  ],
+  "images": {
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Aqara Blind-824 Cover",
+    "fr": "Aqara Blind-824 Cover"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
+  }
+}

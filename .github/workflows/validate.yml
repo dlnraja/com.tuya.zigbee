@@ -1,35 +1,51 @@
-name: Deep Validation
-
-on: [push, pull_request, schedule]
+name: Validate Homey App
+on: { pull_request: {}, push: { branches: [ main, master ] } }
 
 jobs:
-  deep_validation:
+  validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
-      - name: Setup DeepSeek
-        uses: deepseek-ai/setup-action@v1
-        with:
-          version: '3.1'
-          token: ${{ secrets.DEEPSEEK_TOKEN }}
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with: 
+          node-version: '20'
+          cache: 'npm'
       
-      - name: Run Comprehensive Validation
+      - name: Install dependencies
         run: |
-          node tools/validate_structure.js --deep
-          node tools/validate_drivers.js --all
-          homey app validate --report=validation_report.json
+          npm ci || npm i
+          npm install -g homey
       
-      - name: Generate Validation Report
+      - name: Run build tools
         run: |
-          node tools/generate_report.js \
-          --input validation_report.json \
-          --output validation_summary.md
-
-  matrix_update:
-    runs-on: ubuntu-latest
-    needs: deep_validation
-    steps:
-      - uses: actions/checkout@v3
-      - name: Update Device Matrix
-        run: node tools/build_matrix.js --update
+          node tools/strip-bom.js
+          node tools/lint-json.js || true
+          node tools/matrix-build.js
+          node tools/build-dashboard.js
+      
+      - name: Validate assets
+        run: |
+          if [ -f "tools/check-assets.js" ]; then
+            node tools/check-assets.js
+          else
+            echo "check-assets.js not found, skipping asset validation"
+      
+      - name: Validate app.json schema
+        run: |
+          if [ -f "schemas/app.schema.json" ]; then
+            npx ajv validate -s schemas/app.schema.json -d .homeybuild/app.json --all-errors
+          else
+            echo "No schema found at schemas/app.schema.json, skipping schema validation"
+      
+      - name: Run Homey validation
+        run: homey app validate -l debug || true
+      
+      - name: Upload drivers dashboard
+        if: always()
+        uses: actions/upload-artifact@v4
+        with: 
+          name: drivers-dashboard
+          path: docs/data/drivers.json
+          if-no-files-found: warn

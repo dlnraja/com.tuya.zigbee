@@ -1,0 +1,20 @@
+{
+  "id": "ikea-garden-901_light_standard",
+  "name": "ikea ikea-garden-901",
+  "category": "light",
+  "vendor": "ikea",
+  "model": "ikea-garden-901",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:02.597Z",
+  "updatedAt": "2025-08-13T12:09:02.597Z"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "tuya_ikea_fan-208",
+  "title": {
+    "en": "Ikea Fan-208 Control",
+    "fr": "Contrôle Ikea Fan-208"
+  },
+  "class": "fan",
+  "capabilities": [
+    "onoff",
+    "fan_speed"
+  ],
+  "images": {
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
+  },
+  "name": {
+    "en": "Ikea Fan-208",
+    "fr": "Ikea Fan-208"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
+  }
+}

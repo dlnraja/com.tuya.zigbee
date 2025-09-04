@@ -8,8 +8,6 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Reliability Score](https://img.shields.io/badge/reliability-98%25-brightgreen)](device-matrix.md)
 
-[Français](README.fr.md) | [Nederlands](README.nl.md) | [தமிழ்](README.ta.md)
-
 ## 📊 Device Matrix
 
 For the complete list of supported devices with reliability scores, please see the [Device Matrix](device-matrix.md).
@@ -384,23 +382,3 @@ Ce projet est sous licence [MIT](LICENSE).
 > ✍️ **Généré automatiquement** le 2025-01-29T03:10:00.000Z
 > 🎯 **MEGA-PROMPT ULTIME - VERSION FINALE 2025**
 > 🚀 **Mode YOLO Ultra Activé**
-
-# Tuya Zigbee Homey App
-
-This app integrates Tuya Zigbee devices with Homey.
-
-## Features
-- Support for various Tuya Zigbee devices
-- NLP integration for natural language queries
-- Automated driver validation and enrichment
-
-## Installation
-1. Clone this repository
-2. Run `npm install`
-3. Run `homey app run` to start the development server
-
-## Validation
-Run `homey app validate` to validate the app.
-
-## CI/CD
-We have GitHub Actions workflows for CI and monthly enrichment.

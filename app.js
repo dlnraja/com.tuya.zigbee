@@ -6,7 +6,6 @@ const config = require('./lib/config');
 const TuyaAPI = require('./lib/api/tuya');
 const DeviceManager = require('./lib/DeviceManager');
 const { v4: uuidv4 } = require('uuid');
-const NLPIntegration = require('./lib/nlpIntegration');
 
 // Import drivers
 const TuyaPlugDriver = require('./drivers/tuya_plug/driver');
@@ -48,29 +47,17 @@ class TuyaZigbeeApp extends Homey.App {
       
       // Initialize device manager
       this.deviceManager = new DeviceManager(this);
-      await this.deviceManager.init();
-
-      // Initialize NLP module
-      this.nlpIntegration = new NLPIntegration(this);
-      await this.nlpIntegration.init();
-
-      // Register NLP flow cards
-      const NLPFlowCards = require('./drivers/nlp/flow_cards');
-      await NLPFlowCards.createCards(this);
-
-      // Initialize drivers
-      await this.initializeDrivers();
-
+      
       // Register flow cards
       await this.registerFlowCards();
-      
-      // Register event listeners
-      this.registerEventListeners();
       
       // Initialize services
       await this.initializeServices();
       
-      this.logger.info('Tuya Zigbee app has been initialized');
+      // Register event listeners
+      this.registerEventListeners();
+      
+      this.logger.info('Tuya Zigbee App has been initialized');
       
       // Check for updates
       if (config.app.checkForUpdates) {

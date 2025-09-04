@@ -1,0 +1,25 @@
+{
+  "timestamp": "2025-09-03T20:40:28.103Z",
+  "version": "3.5.0",
+  "success": false,
+  "duration": 60532,
+  "steps": [
+    {
+      "name": "Préparation",
+      "success": false,
+      "duration": 60401,
+      "error": "Commande échouée avec le code null:     ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\.eslintrc.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\app.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\autonomous-processing-results.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\other\\tuya\\tuya\\light\\tuya\\ts130f\\driver.settings.compose.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\other\\tuya\\tuya\\other\\tuya\\tuya_zigbee\\models\\radar-24g_sensor_battery_presence\\driver.compose.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\other\\tuya\\tuya\\other\\tuya\\tuya_zigbee\\models\\ts0601_switch_standard_default\\driver.compose.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\other\\tuya\\tuya\\other\\tuya\\tuya_zigbee\\models\\ts130f_light_standard_default\\driver.settings.compose.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\other\\tuya\\tuya\\other\\tuya\\tuya_zigbee\\models\\tuya_sensor_temp_hum_ts0201\\metadata.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\other\\tuya\\tuya\\other\\tuya\\tuya_zigbee\\models\\tuya_switch_ts0001\\metadata.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\other\\tuya\\tuya\\other\\tuya\\zigbee\\models\\generic_zigbee_switch_1gang\\driver.compose.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\other\\tuya\\tuya\\switch\\tuya\\radar-24g\\driver.compose.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\other\\tuya\\tuya\\switch\\tuya\\ts0601\\driver.compose.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\sensor-motion\\tuya\\Radarg_Sensor_Battery_Presence\\driver.compose.json\n"
+    }
+  ],
+  "errors": [
+    "Commande échouée avec le code null:     ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\.eslintrc.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\app.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\autonomous-processing-results.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\other\\tuya\\tuya\\light\\tuya\\ts130f\\driver.settings.compose.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\other\\tuya\\tuya\\other\\tuya\\tuya_zigbee\\models\\radar-24g_sensor_battery_presence\\driver.compose.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\other\\tuya\\tuya\\other\\tuya\\tuya_zigbee\\models\\ts0601_switch_standard_default\\driver.compose.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\other\\tuya\\tuya\\other\\tuya\\tuya_zigbee\\models\\ts130f_light_standard_default\\driver.settings.compose.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\other\\tuya\\tuya\\other\\tuya\\tuya_zigbee\\models\\tuya_sensor_temp_hum_ts0201\\metadata.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\other\\tuya\\tuya\\other\\tuya\\tuya_zigbee\\models\\tuya_switch_ts0001\\metadata.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\other\\tuya\\tuya\\other\\tuya\\zigbee\\models\\generic_zigbee_switch_1gang\\driver.compose.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\other\\tuya\\tuya\\switch\\tuya\\radar-24g\\driver.compose.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\other\\tuya\\tuya\\switch\\tuya\\ts0601\\driver.compose.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\sensor-motion\\tuya\\Radarg_Sensor_Battery_Presence\\driver.compose.json\n"
+  ],
+  "warnings": [],
+  "summary": {
+    "totalSteps": 1,
+    "successfulSteps": 0,
+    "failedSteps": 1,
+    "totalErrors": 1,
+    "totalWarnings": 0
+  }
+}

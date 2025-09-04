@@ -1,37 +1,35 @@
 {
-  "id": "generic",
+  "id": "tuya_generic",
+  "title": {
+    "en": "Generic Control",
+    "fr": "Contrôle Generic"
+  },
+  "class": "other",
   "capabilities": [
     "onoff"
   ],
-  "capabilitiesOptions": {},
-  "icon": "/assets/icon.svg",
   "images": {
-    "small": "/assets/images/small.png",
-    "large": "/assets/images/large.png"
+    "small": "assets/small.svg",
+    "large": "assets/large.svg"
   },
-  "class": "other",
-  "connectivity": "zigbee",
   "name": {
     "en": "Generic",
-    "nl": "Generic",
-    "fr": "Generic",
-    "de": "Generic"
+    "fr": "Generic"
   },
-  "manufacturer": "_TZ3000_xxxxxxxx",
-  "product": "GENERIC",
-  "dataPoints": {
-    "1": {
-      "name": "switch",
-      "type": "bool",
-      "writable": true
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
     }
-  },
-  "metadata": {
-    "enriched": true,
-    "enrichmentDate": "2025-08-07T17:53:54.754Z",
-    "driverType": "tuya",
-    "category": "generic",
-    "subcategory": null,
-    "megaUltimateBugFixer": true
   }
 }

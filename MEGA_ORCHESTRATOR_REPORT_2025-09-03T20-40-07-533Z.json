@@ -1,0 +1,25 @@
+{
+  "timestamp": "2025-09-03T20:40:07.530Z",
+  "version": "3.5.0",
+  "success": false,
+  "duration": 60371,
+  "steps": [
+    {
+      "name": "Préparation",
+      "success": false,
+      "duration": 60361,
+      "error": "Commande échouée avec le code null:     ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\.eslintrc.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\app.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\autonomous-processing-results.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\other\\tuya\\tuya\\light\\tuya\\ts130f\\driver.settings.compose.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\other\\tuya\\tuya\\other\\tuya\\tuya_zigbee\\models\\radar-24g_sensor_battery_presence\\driver.compose.json\n"
+    }
+  ],
+  "errors": [
+    "Commande échouée avec le code null:     ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\.eslintrc.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\app.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\autonomous-processing-results.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\other\\tuya\\tuya\\light\\tuya\\ts130f\\driver.settings.compose.json\n    ⚠️ Fichier JSON invalide: C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\other\\tuya\\tuya\\other\\tuya\\tuya_zigbee\\models\\radar-24g_sensor_battery_presence\\driver.compose.json\n"
+  ],
+  "warnings": [],
+  "summary": {
+    "totalSteps": 1,
+    "successfulSteps": 0,
+    "failedSteps": 1,
+    "totalErrors": 1,
+    "totalWarnings": 0
+  }
+}

@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "deepseek-sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
   }
 }
