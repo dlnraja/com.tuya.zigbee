@@ -28,127 +28,75 @@
   "platforms": [
     "local"
   ],
+  "main": "app.js",
   "drivers": [
     {
-      "id": "climates-TS0601_ac",
-      "name": {
-        "en": "climates TS0601_ac",
-        "fr": "climates TS0601_ac",
-        "nl": "climates TS0601_ac",
-        "ta": "climates TS0601_ac"
+      "id": "_common",
+      "title": {
+        "en": " Common Control",
+        "fr": "Contrôle  Common"
       },
-      "class": "thermostat",
+      "class": "other",
       "capabilities": [
-        "target_temperature",
-        "measure_temperature",
-        "measure_humidity"
+        "onoff"
       ],
       "images": {
         "small": "assets/small.svg",
         "large": "assets/large.svg"
       },
+      "name": {
+        "en": " Common",
+        "fr": " Common"
+      },
       "zigbee": {
-        "manufacturerName": "_TZ3000_1h2x4akh",
-        "productId": "TS0601",
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "productId": [
+          "TS0601"
+        ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              1026,
-              1029,
-              513
-            ],
-            "bindings": [
-              0,
-              1,
-              1026,
-              1029,
-              513
+              6
             ]
           }
         }
       }
     },
     {
-      "id": "covers-TS0602_cover",
-      "name": {
-        "en": "covers TS0602_cover",
-        "fr": "covers TS0602_cover",
-        "nl": "covers TS0602_cover",
-        "ta": "covers TS0602_cover"
+      "id": "tuya_plug",
+      "title": {
+        "en": "Tuya Smart Plug",
+        "fr": "Prise intelligente Tuya"
       },
-      "class": "cover",
-      "capabilities": [
-        "windowcoverings_set",
-        "windowcoverings_state"
-      ],
+      "class": "socket",
+      "capabilities": ["onoff", "measure_power"],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "drivers/tuya_plug/assets/small.svg",
+        "large": "drivers/tuya_plug/assets/large.svg"
       },
       "zigbee": {
-        "manufacturerName": "_TZ3000_vd43bbfq",
-        "productId": "TS0602",
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              1,
-              258,
-              10,
-              9
-            ],
-            "bindings": [
-              0,
-              1,
-              258,
-              10,
-              9
-            ]
-          }
-        }
+        "manufacturerName": ["Tuya"],
+        "productId": ["TS011F", "TS0121"]
       }
     },
     {
-      "id": "fan-tuya-universal",
-      "name": {
-        "en": "Tuya Fan Universal",
-        "fr": "Tuya Fan Universel",
-        "nl": "Tuya Fan Universeel",
-        "ta": "Tuya Fan உலகளாவிய"
+      "id": "tuya_sensor",
+      "title": {
+        "en": "Tuya Sensor",
+        "fr": "Capteur Tuya"
       },
-      "class": "fan",
-      "capabilities": [
-        "onoff",
-        "dim",
-        "measure_power"
-      ],
+      "class": "sensor",
+      "capabilities": ["measure_temperature", "measure_humidity"],
       "images": {
-        "small": "assets/small.svg",
-        "large": "assets/large.svg"
+        "small": "drivers/tuya_sensor/assets/small.svg",
+        "large": "drivers/tuya_sensor/assets/large.svg"
       },
       "zigbee": {
-        "manufacturerName": "_TZ3000_2jxgpoqh",
-        "productId": "TS0603",
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              1,
-              6,
-              8,
-              514
-            ],
-            "bindings": [
-              0,
-              1,
-              6,
-              8,
-              514
-            ]
-          }
-        }
+        "manufacturerName": ["Tuya"],
+        "productId": ["RH3052", "TS0201"]
       }
     }
   ],

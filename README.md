@@ -36,6 +36,28 @@ Voor de volledige lijst van ondersteunde apparaten met betrouwbaarheidsscores, z
 நம்பகத்தன்மை மதிப்பெண்களுடன் ஆதரிக்கப்படும் சாதனங்களின் முழுமையான பட்டியலுக்கு, [சாதன அணி](device-matrix.md) காண்க.
 </details>
 
+## 🏗 Architecture Technique
+
+La nouvelle architecture du projet est organisée comme suit :
+
+```
+tuya_zigbee_homey/
+├── lib/
+│   ├── zigbee/                  # Stack Zigbee native
+│   │   ├── zcl/                 # Zigbee Cluster Library
+│   │   ├── zdp/                 # Zigbee Device Profile
+│   │   └── security.js          # Couche sécurité
+│   ├── localapi/                # API locale Homey
+│   └── utils/                   # Utilities
+├── drivers/                     # Pilotes pour appareils
+│   ├── tuya/                    # Appareils Tuya
+│   └── zigbee/                  # Appareils Zigbee génériques
+├── scripts/                     # Scripts utilitaires
+│   ├── monitoring/              # Surveillance
+│   └── automation/              # Automatisation
+└── ...
+```
+
 ## 📜 Project Information
 
 This is a fork of the original Tuya Zigbee app for Homey, enhanced with additional device support and features. The project is maintained by dlnraja.

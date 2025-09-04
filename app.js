@@ -9,6 +9,8 @@ const { v4: uuidv4 } = require('uuid');
 const path = require('path');
 const fs = require('fs');
 const spawn = require('child_process').spawn;
+const ZigbeeNetwork = require('./lib/zigbee/core/ZigbeeNetwork');
+const LocalDeviceManager = require('./lib/localapi/deviceManager');
 
 // Import drivers
 const TuyaPlugDriver = require('./drivers/tuya_plug/driver');
