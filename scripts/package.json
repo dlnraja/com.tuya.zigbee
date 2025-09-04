@@ -2,7 +2,6 @@
   "name": "tuya-zigbee-scripts",
   "version": "1.0.0",
   "description": "Scripts for managing Tuya Zigbee drivers",
-  "type": "module",
   "scripts": {
     "start": "node update-drivers.js",
     "test": "node test-deps.js"
