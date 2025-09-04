@@ -1,8 +1,21 @@
 [
   {
-    "deviceType": "sensor",
-    "driver": "tuya-sensor-universal",
+    "deviceType": "light",
+    "driver": "light",
     "missingCapabilities": [
+      "light_temperature",
+      "light_hue",
+      "light_saturation",
+      "light_mode"
+    ],
+    "severity": "medium"
+  },
+  {
+    "deviceType": "sensor",
+    "driver": "sensor",
+    "missingCapabilities": [
+      "measure_humidity",
+      "measure_pressure",
       "measure_co2",
       "measure_tvoc",
       "measure_pm25",
@@ -12,24 +25,29 @@
   },
   {
     "deviceType": "switch",
-    "driver": null,
+    "driver": "lights-TS0601_switch",
     "missingCapabilities": [
-      "onoff"
+      "measure_power",
+      "meter_power"
     ],
-    "severity": "high"
+    "severity": "medium"
   },
   {
     "deviceType": "cover",
-    "driver": "tuya-cover-universal",
+    "driver": "cover",
     "missingCapabilities": [
-      "windowcoverings_tilt_set"
+      "windowcoverings_set",
+      "windowcoverings_tilt_set",
+      "measure_temperature"
     ],
     "severity": "medium"
   },
   {
     "deviceType": "climate",
-    "driver": "tuya-climate-universal",
+    "driver": "climate",
     "missingCapabilities": [
+      "measure_temperature",
+      "measure_humidity",
       "target_humidity",
       "measure_pressure"
     ],
@@ -37,8 +55,11 @@
   },
   {
     "deviceType": "lock",
-    "driver": "lock-tuya-universal",
+    "driver": "lock",
     "missingCapabilities": [
+      "lock",
+      "alarm_battery",
+      "measure_temperature",
       "alarm_contact",
       "alarm_tamper"
     ],
@@ -46,18 +67,33 @@
   },
   {
     "deviceType": "fan",
-    "driver": "fan-tuya-universal",
+    "driver": "fan",
     "missingCapabilities": [
+      "dim",
+      "measure_power",
       "measure_temperature",
       "fan_mode"
     ],
     "severity": "medium"
   },
   {
-    "deviceType": "remote",
-    "driver": "tuya-remote-universal",
+    "deviceType": "plug",
+    "driver": "plug",
     "missingCapabilities": [
-      "measure_battery"
+      "meter_power",
+      "measure_voltage",
+      "measure_current",
+      "alarm_battery"
+    ],
+    "severity": "medium"
+  },
+  {
+    "deviceType": "remote",
+    "driver": "remotes-TS0601_remote",
+    "missingCapabilities": [
+      "button",
+      "measure_battery",
+      "alarm_battery"
     ],
     "severity": "medium"
   }

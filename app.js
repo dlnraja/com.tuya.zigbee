@@ -6,6 +6,9 @@ const config = require('./lib/config');
 const TuyaAPI = require('./lib/api/tuya');
 const DeviceManager = require('./lib/DeviceManager');
 const { v4: uuidv4 } = require('uuid');
+const path = require('path');
+const fs = require('fs');
+const spawn = require('child_process').spawn;
 
 // Import drivers
 const TuyaPlugDriver = require('./drivers/tuya_plug/driver');
@@ -16,6 +19,14 @@ const TuyaPlugDriver = require('./drivers/tuya_plug/driver');
  */
 class TuyaZigbeeApp extends Homey.App {
   
+  // Configuration with default values
+  static config = {
+    PYTHON_SERVICE_PORT: process.env.PYTHON_SERVICE_PORT || 8000,
+    PYTHON_SERVICE_PATH: path.join(__dirname, 'python_service'),
+    DEBUG: process.env.DEBUG === '1',
+    API_KEY: process.env.API_KEY || 'your-secure-api-key'
+  };
+
   /**
    * Initialize the application
    * @async
@@ -159,165 +170,6 @@ class TuyaZigbeeApp extends Homey.App {
     }
   }
   
-  // Configuration with default values
-  config = {
-    PYTHON_SERVICE_PORT: process.env.PYTHON_SERVICE_PORT || 8000,
-    PYTHON_SERVICE_PATH: path.join(__dirname, 'python_service'),
-    DEBUG: process.env.DEBUG === '1',
-    API_KEY: process.env.API_KEY || 'your-secure-api-key', // In production, use Homey's settings
-  };
-  
-  /**
-   * Application initialization
-   * @async
-   */
-  async onInit() {
-    // Initialize logger
-    this.logger = new Log({ homey: this.homey, logLevel: this.config.DEBUG ? 'debug' : 'info' });
-    this.logger.info('🚀 Universal Tuya Zigbee App initializing...');
-    
-    try {
-      // Load configuration
-      await this.loadConfig();
-      
-      // Initialize Python microservice
-      await this.startPythonService();
-      
-      // Initialize core modules
-      await this.initializeCore();
-      
-      // Initialize device discovery
-      this.initializeDiscovery();
-      
-      // Register event handlers
-      this.registerEventHandlers();
-      
-      this.logger.info('✅ App initialized successfully');
-    } catch (error) {
-      this.logger.error('❌ App initialization failed:', error);
-      throw error;
-    }
-  }
-  
-  /**
-   * Load configuration from file or environment variables
-   * @async
-   * @private
-   */
-  async loadConfig() {
-    const configPath = path.join(this.homey.configPath, 'config.json');
-    
-    try {
-      // Check if config file exists
-      await access(configPath, fs.constants.F_OK);
-      const configData = await readFile(configPath, 'utf8');
-      this.config = { ...this.config, ...JSON.parse(configData) };
-      this.logger.debug('Configuration loaded successfully');
-    } catch (error) {
-      if (error.code === 'ENOENT') {
-        // Config file doesn't exist, create with defaults
-        await writeFile(configPath, JSON.stringify(this.config, null, 2));
-        this.logger.info('Created default configuration file');
-      } else {
-        this.logger.warn('Failed to load configuration, using defaults:', error);
-      }
-    }
-  }
-  
-  /**
-   * Start the Python microservice
-   * @async
-   * @private
-   */
-  async startPythonService() {
-    if (!this.config.ENABLE_PYTHON_SERVICE) {
-      this.logger.info('Python microservice is disabled in configuration');
-      return;
-    }
-    
-    return new Promise((resolve, reject) => {
-      try {
-        const pythonPath = process.platform === 'win32' ? 'python' : 'python3';
-        const requirementsPath = path.join(this.config.PYTHON_SERVICE_PATH, 'requirements.txt');
-        const servicePath = path.join(this.config.PYTHON_SERVICE_PATH, 'main.py');
-        
-        // Verify Python service files exist
-        if (!fs.existsSync(servicePath)) {
-          this.logger.warn('Python service not found at:', servicePath);
-          return resolve();
-        }
-        
-        // Install Python dependencies
-        this.logger.info('Installing Python dependencies...');
-        const pipInstall = spawn(pythonPath, ['-m', 'pip', 'install', '--upgrade', '-r', requirementsPath]);
-        
-        pipInstall.on('close', (code) => {
-          if (code !== 0) {
-            this.logger.warn('Python dependencies installation completed with code:', code);
-          } else {
-            this.logger.info('Python dependencies installed successfully');
-          }
-          
-          // Start the Python service
-          this.logger.info('Starting Python microservice...');
-          this.pythonService = spawn(pythonPath, ['main.py'], {
-            cwd: this.config.PYTHON_SERVICE_PATH,
-            env: { 
-              ...process.env, 
-              PYTHONUNBUFFERED: '1',
-              PORT: this.config.PYTHON_SERVICE_PORT,
-              API_KEY: this.config.API_KEY,
-              DEBUG: this.config.DEBUG ? '1' : '0'
-            }
-        });
-        
-        // Log Python service output
-        // Handle Python service output
-        this.pythonService.stdout.on('data', (data) => {
-          const output = data.toString().trim();
-          if (output) {
-            this.logger.debug(`[Python Service] ${output}`);
-          }
-        });
-        
-        // Handle Python service errors
-        this.pythonService.stderr.on('data', (data) => {
-          const error = data.toString().trim();
-          if (error) {
-            this.logger.error(`[Python Service Error] ${error}`);
-          }
-        });
-        
-      this.tuyaAPI = new TuyaAPI({
-        clientId,
-        clientSecret,
-        region: region || config.tuya.defaultRegion,
-        logger: this.logger,
-      });
-
-      // Initialize device manager
-      this.deviceManager = new DeviceManager(this);
-      await this.deviceManager.init();
-
-      // Initialize drivers
-      await this.initializeDrivers();
-
-      // Register flow cards
-      await this.registerFlowCards();
-      
-      // Register event listeners
-      this.registerEventListeners();
-      
-      // Initialize services
-      await this.initializeServices();
-      
-      this.logger.info('Tuya Zigbee app has been initialized');
-    } catch (error) {
-      this.logger.error('Failed to initialize Tuya Zigbee app:', error);
-      throw error; // Rethrow to let Homey handle the error
-    }
-  }
-
   /**
    * Initialize drivers
    */
@@ -354,64 +206,100 @@ class TuyaZigbeeApp extends Homey.App {
   }
 
   /**
-   * Register flow cards
+   * Start Python service
    */
-  async registerFlowCards() {
+  async startPythonService() {
     try {
-      // Device discovered trigger
-      this.flowCards = {
-        deviceDiscovered: this.homey.flow.getDeviceTriggerCard('device_discovered')
-          .registerRunListener(async (args, state) => {
-            return args.device.id === state.deviceId;
-          }),
+      this.logger.info('Starting Python microservice...');
+      
+      // Start the Python service
+      this.pythonService = spawn('python', [
+        '-m', 'uvicorn',
+        'main:app',
+        '--port', this.config.PYTHON_SERVICE_PORT.toString(),
+        '--app-dir', this.config.PYTHON_SERVICE_PATH
+      ], {
+        stdio: ['pipe', 'pipe', 'pipe'],
+        env: {
+          ...process.env,
+          API_KEY: this.config.API_KEY
+        }
+      });
+      
+      // Log output
+      this.pythonService.stdout.on('data', (data) => {
+        this.logger.debug(`Python service: ${data}`);
+      });
+      
+      this.pythonService.stderr.on('data', (data) => {
+        this.logger.error(`Python service error: ${data}`);
+      });
+      
+      // Verify service is running
+      return new Promise((resolve, reject) => {
+        const checkService = setInterval(() => {
+          if (this.isPythonServiceRunning()) {
+            clearInterval(checkService);
+            this.logger.info('Python microservice started successfully');
+            resolve();
+          }
+        }, 1000);
         
-        // Add more flow cards as needed
-      };
-      
-      this.logger.info('Flow cards registered');
+        // Timeout for service startup
+        setTimeout(() => {
+          clearInterval(checkService);
+          if (!this.isPythonServiceRunning()) {
+            reject(new Error('Python service failed to start within timeout period'));
+          }
+        }, 30000);
+      });
     } catch (error) {
-      this.logger.error('Failed to register flow cards:', error);
+      this.logger.error('Failed to start Python service:', error);
       throw error;
     }
   }
-
+  
   /**
-   * Register event listeners
+   * Check if Python service is running
+   * @returns {boolean} True if service is running
+   * @private
    */
-  registerEventListeners() {
-    // Listen for device added events
-    this.homey.on('device.added', device => this.onDeviceAdded(device).catch(error => {
-      this.logger.error('Error handling device added event:', error);
-    }));
-    
-    // Listen for device deleted events
-    this.homey.on('device.deleted', device => this.onDeviceDeleted(device).catch(error => {
-      this.logger.error('Error handling device deleted event:', error);
-    }));
-    
-    // Listen for system warnings
-    process.on('warning', warning => {
-      this.logger.warn('System warning:', warning);
-    });
-    
-    this.logger.info('Event listeners registered');
+  isPythonServiceRunning() {
+    return this.pythonService && !this.pythonService.killed && this.pythonService.exitCode === null;
   }
-
+  
   /**
-   * Initialize services
+   * Stop the Python microservice
+   * @async
+   * @private
    */
-  async initializeServices() {
-    try {
-      // Start the Python service if enabled
-      if (this.settings.enablePythonService) {
-        await this.startPythonService();
+  async stopPythonService() {
+    if (!this.pythonService) return;
+    
+    return new Promise((resolve) => {
+      this.logger.info('Stopping Python microservice...');
+      
+      // Try graceful shutdown first
+      if (this.pythonService.kill('SIGTERM')) {
+        // Give it some time to shut down gracefully
+        const timeout = setTimeout(() => {
+          if (this.pythonService && !this.pythonService.killed) {
+            this.logger.warn('Forcing Python service to stop...');
+            this.pythonService.kill('SIGKILL');
+          }
+          resolve();
+        }, 5000);
+        
+        this.pythonService.once('exit', () => {
+          clearTimeout(timeout);
+          this.logger.info('Python microservice stopped');
+          resolve();
+        });
+      } else {
+        this.logger.warn('Python service was not running');
+        resolve();
       }
-      
-      this.logger.info('Services initialized');
-    } catch (error) {
-      this.logger.error('Failed to initialize services:', error);
-      throw error;
-    }
+    });
   }
 
   /**
@@ -462,15 +350,6 @@ class TuyaZigbeeApp extends Homey.App {
   }
 
   /**
-   * Start Python service
-   */
-  async startPythonService() {
-    // Implementation for starting Python service
-    // This is a placeholder for future implementation
-    this.logger.info('Python service is not yet implemented');
-  }
-
-  /**
    * onUninit is called when the app is shutting down
    */
   async onUninit() {
@@ -502,16 +381,19 @@ class TuyaZigbeeApp extends Homey.App {
   /**
    * Handle CPU warning
    */
-  onCpuWarn() {
+  onCpuWarn() {      
     this.logger.warn('CPU usage warning: App is using too much CPU');
   }
 
   /**
    * Handle memory warning
    */
-  onMemoryWarn() {
+  onMemoryWarn() {   
     this.logger.warn('Memory usage warning: App is using too much memory');
   }
+  
+  /**
+   * Check for updates
    * @async
    */
   async checkForUpdates() {
@@ -531,7 +413,7 @@ class TuyaZigbeeApp extends Homey.App {
    * Get Tuya API instance
    * @returns {TuyaAPI} Tuya API instance
    */
-  getTuyaAPI() {
+  getTuyaAPI() {     
     return this.tuyaAPI;
   }
   
@@ -542,202 +424,8 @@ class TuyaZigbeeApp extends Homey.App {
   getDeviceManager() {
     return this.deviceManager;
   }
-  
-  // Verify service is running
-  const checkService = setInterval(() => {
-    if (this.isPythonServiceRunning()) {
-      clearInterval(checkService);
-      this.logger.info('Python microservice started successfully');
-      resolve();
-    }
-  }, 1000);
-
-  // Timeout for service startup
-  setTimeout(() => {
-    clearInterval(checkService);
-    if (!this.isPythonServiceRunning()) {
-      reject(new Error('Python service failed to start within timeout period'));
-    }
-  }, 30000);
-});
-
-catch (error) {
-  this.logger.error('Failed to start Python service:', error);
-  reject(error);
 }
 
-this.pythonService.on('close', (code) => {
-  this.log(`Python service exited with code ${code}`);
-});
-
-// Give the service time to start
-setTimeout(resolve, 3000);
-});
-
-/**
- * Check if Python service is running
- * @returns {boolean} True if service is running
- * @private
- */
-isPythonServiceRunning() {
-  return this.pythonService && !this.pythonService.killed && this.pythonService.exitCode === null;
-}
-
-/**
- * Stop the Python microservice
- * @async
- * @private
- */
-async stopPythonService() {
-  if (!this.pythonService) return;
-
-  return new Promise((resolve) => {
-    this.logger.info('Stopping Python microservice...');
-
-    // Try graceful shutdown first
-    if (this.pythonService.kill('SIGTERM')) {
-      // Give it some time to shut down gracefully
-      const timeout = setTimeout(() => {
-        if (this.pythonService && !this.pythonService.killed) {
-          this.logger.warn('Forcing Python service to stop...');
-          this.pythonService.kill('SIGKILL');
-        }
-        resolve();
-      }, 5000);
-
-      this.pythonService.once('exit', () => {
-        clearTimeout(timeout);
-        this.logger.info('Python microservice stopped');
-        resolve();
-      });
-    } else {
-      this.logger.warn('Python service was not running');
-      resolve();
-    }
-  });
-}
-
-/**
- * Initialize core application modules
- * @async
- * @private
- */
-async initializeCore() {
-  try {
-    this.logger.info('Initializing core modules...');
-
-    // Initialize device manager
-    this.deviceManager = new DeviceManager(this);
-
-    // Initialize other core modules here
-    // this.apiClient = new ApiClient(this.config.API_URL);
-
-    this.logger.info('Core modules initialized');
-  } catch (error) {
-    this.logger.error('Failed to initialize core modules:', error);
-    throw error;
-  }
-}
-
-/**
- * Initialize device discovery
- * @private
- */
-initializeDiscovery() {
-  this.logger.info('Initializing device discovery...');
-
-  // Register device discovery
-  this.homey.appDiscovery.on('discover', this.handleDeviceDiscovery.bind(this));
-
-  // Start periodic discovery
-  this.discoveryInterval = setInterval(
-    () => this.startDeviceDiscovery(), 
-    this.config.DISCOVERY_INTERVAL || 300000 // Default: 5 minutes
-  );
-
-  // Initial discovery
-  this.startDeviceDiscovery();
-}
-
-/**
- * Start device discovery process
- * @async
- */
-async startDeviceDiscovery() {
-  try {
-    this.logger.debug('Starting device discovery...');
-    // Implement device discovery logic here
-    // await this.deviceManager.discoverDevices();
-  } catch (error) {
-    this.logger.error('Device discovery failed:', error);
-  }
-}
-
-/**
- * Handle discovered device
- * @param {Object} device - Discovered device data
- * @private
- */
-async handleDeviceDiscovery(device) {
-  try {
-    this.logger.debug('Device discovered:', device.id);
-    // Process discovered device
-    // await this.deviceManager.addDevice(device);
-  } catch (error) {
-    this.logger.error('Failed to process discovered device:', error);
-  }
-}
-
-/**
- * Register event handlers
- * @private
- */
-registerEventHandlers() {
-  // Handle Homey events
-  this.homey
-    .on('unload', this.onUnload.bind(this))
-    .on('unload', () => this.cleanup())
-    .on('reboot', () => this.cleanup())
-    .on('cpuwarn', () => this.logger.warn('CPU usage is high!'))
-    .on('memwarn', () => this.logger.warn('Memory usage is high!'))
-    .on('online', () => this.logger.info('Homey is online'))
-    .on('offline', () => this.logger.warn('Homey is offline'));
-}
-
-/**
- * Clean up resources when app is being unloaded
- * @async
- */
-async onUnload() {
-  this.logger.info('App is being unloaded, cleaning up...');
-  await this.cleanup();
-}
-
-/**
- * Clean up resources
- * @async
- */
-async cleanup() {
-  try {
-    // Stop discovery interval
-    if (this.discoveryInterval) {
-      clearInterval(this.discoveryInterval);
-      this.discoveryInterval = null;
-    }
-
-    // Stop Python service
-    await this.stopPythonService();
-
-    // Clean up other resources
-    // await this.deviceManager.cleanup();
-
-    this.logger.info('Cleanup completed');
-  } catch (error) {
-    this.logger.error('Error during cleanup:', error);
-  }
-}
-
-// Device Manager
 class DeviceManager {
   constructor(app) {
     this.app = app;

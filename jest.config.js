@@ -1,6 +1,9 @@
 module.exports = {
   testEnvironment: 'node',
-  testMatch: ['**/test/**/*.test.js'],
+  testMatch: ['**/test/**/*.test.js', '**/tests/**/*.test.js'],
+  moduleNameMapper: {
+    '^homey-zigbeedriver$': '<rootDir>/tests/mocks/homey-zigbeedriver.js'
+  },
   collectCoverage: true,
   coverageDirectory: 'coverage',
   collectCoverageFrom: [

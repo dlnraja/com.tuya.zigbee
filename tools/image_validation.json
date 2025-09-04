@@ -1,0 +1,28 @@
+{
+  "description": "Verify images match Johan Benz design standards and device type themes",
+  "rules": [
+    {
+      "type": "svg",
+      "max_size": 20480,
+      "dimensions": {
+        "width": 200,
+        "height": 200
+      }
+    },
+    {
+      "type": "png",
+      "max_size": 51200,
+      "dimensions": {
+        "width": 500,
+        "height": 500
+      }
+    },
+    {
+      "theme_requirements": {
+        "sensor": "blue theme",
+        "switch": "green theme",
+        "light": "yellow theme"
+      }
+    }
+  ]
+}

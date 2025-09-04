@@ -1,34 +1,64 @@
-// Simple test script to verify basic Node.js functionality
+#!/usr/bin/env node
+
+const { execSync } = require('child_process');
 const fs = require('fs');
-const path = require('path');
 
-console.log('=== Début du test ===');
-console.log('Répertoire courant:', process.cwd());
+console.log('🔍 TEST VALIDATION HOMEY SIMPLE');
+console.log('================================');
 
-// Test d'écriture de fichier
-const testFilePath = path.join(process.cwd(), 'test-simple-output.txt');
-const testContent = 'Ceci est un test de fonctionnement de Node.js\n' + 
-                   `Date et heure: ${new Date().toISOString()}\n` +
-                   'Si vous voyez ce message, le test est réussi!';
-
-try {
-  fs.writeFileSync(testFilePath, testContent, 'utf8');
-  console.log(`Fichier de test créé avec succès: ${testFilePath}`);
-  
-  // Vérifier la lecture du fichier
-  const fileContent = fs.readFileSync(testFilePath, 'utf8');
-  console.log('Contenu du fichier de test:');
-  console.log('--- DÉBUT ---');
-  console.log(fileContent);
-  console.log('--- FIN ---');
-  
-  // Nettoyer
-  fs.unlinkSync(testFilePath);
-  console.log('Fichier de test supprimé');
-  
-} catch (error) {
-  console.error('ERREUR lors du test:');
-  console.error(error);
+// Vérifier app.json
+if (fs.existsSync('app.json')) {
+    console.log('✅ app.json trouvé');
+    
+    const stats = fs.statSync('app.json');
+    console.log(`📊 Taille: ${stats.size} bytes`);
+    
+    // Vérifier les clusters
+    const content = fs.readFileSync('app.json', 'utf8');
+    const clusterMatches = content.match(/"clusters":\s*\[[^\]]*\]/g);
+    
+    if (clusterMatches) {
+        console.log(`✅ ${clusterMatches.length} sections clusters trouvées`);
+        
+        // Vérifier si les clusters sont numériques
+        const numericClusters = clusterMatches.filter(match => 
+            match.match(/"clusters":\s*\[\s*\d+/)
+        );
+        
+        console.log(`✅ ${numericClusters.length} sections avec clusters numériques`);
+        
+        if (numericClusters.length === clusterMatches.length) {
+            console.log('🎉 TOUS les clusters sont numériques !');
+        } else {
+            console.log('⚠️  Certains clusters ne sont pas numériques');
+        }
+    }
+} else {
+    console.log('❌ app.json non trouvé');
+    process.exit(1);
 }
 
-console.log('=== Fin du test ===');
+console.log('\n🚀 Test de validation Homey...');
+
+try {
+    const result = execSync('homey app validate', { 
+        encoding: 'utf8',
+        stdio: 'pipe'
+    });
+    
+    console.log('✅ Validation réussie !');
+    console.log('📋 Sortie:');
+    console.log(result);
+    
+} catch (error) {
+    console.log('❌ Validation échouée');
+    console.log('📋 Erreur:');
+    console.log(error.stdout || error.message);
+    
+    if (error.stderr) {
+        console.log('📋 Stderr:');
+        console.log(error.stderr);
+    }
+}
+
+console.log('\n🎯 Test terminé');
