@@ -1,14 +1,15 @@
 #!/usr/bin/env node
 'use strict';
 
-#!/usr/bin/env node
-
+const Homey = require('homey');
 const { ZigBeeDevice } = require('homey-zigbeedriver');
-const attachZBVerbose = require('../../..//lib/zb-verbose');
+const { ZBVer } = require('../../../lib/zb-verbose');
 
-class IkeaContact-739PlugDevice extends ZigBeeDevice {
-    async onNodeInit({ zclNode }) {
-        this.log('🔧 IkeaContact-739PlugDevice initialisé (mode intelligent)');
+class PlugDevice extends ZigBeeDevice {
+    async onNodeInit() {
+        this.log('Device initialized');
+        await super.onNodeInit();
+        this.registerCapability('onoff', 'genOnOff');
         
         // Configuration intelligente des endpoints
         this.registerCapability('onoff', 'genOnOff', {
@@ -46,8 +47,8 @@ class IkeaContact-739PlugDevice extends ZigBeeDevice {
     }
     
     async onDeleted() {
-        this.log('🗑️  IkeaContact-739PlugDevice supprimé');
+        this.log('Device removed');
     }
 }
 
-module.exports = IkeaContact-739PlugDevice;
+module.exports = PlugDevice;
