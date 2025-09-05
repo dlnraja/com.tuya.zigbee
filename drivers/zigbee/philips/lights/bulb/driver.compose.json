@@ -1,0 +1,26 @@
+{
+  "id": "philips_hue_bulb",
+  "name": {
+    "en": "Philips Hue Bulb",
+    "fr": "Ampoule Philips Hue"
+  },
+  "class": "light",
+  "capabilities": ["onoff", "dim", "light_temperature"],
+  "capabilitiesOptions": {
+    "light_temperature": {
+      "min": 2200,
+      "max": 6500
+    }
+  },
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
+  },
+  "icon": "assets/icon.svg",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ]
+}

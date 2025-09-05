@@ -1,0 +1,20 @@
+{
+  "id": "ts0202_motion",
+  "name": {
+    "en": "Tuya Motion Sensor",
+    "fr": "Capteur de Mouvement Tuya"
+  },
+  "class": "sensor",
+  "capabilities": ["alarm_motion"],
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
+  },
+  "icon": "assets/icon.svg",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ]
+}
