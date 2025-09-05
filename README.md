@@ -74,25 +74,20 @@ This is a fork of the original Tuya Zigbee app for Homey, enhanced with addition
 
 ## 🛠️ Quick Setup
 
-1. **Clone the repository**:
+1. **Clonez le dépôt**:
    ```bash
    git clone https://github.com/dlnraja/tuya_repair.git
    cd tuya_repair
    ```
 
-2. **Install dependencies**:
+2. **Exécutez `npm install`**:
    ```bash
    npm install
    ```
 
-3. **Run the setup script**:
-   - On Windows: Double-click `run-git-setup.bat`
-   - On macOS/Linux: Run `./Initialize-Git.ps1` in terminal
-
-4. **Push to your repository**:
+3. **Lancez `homey app install`**:
    ```bash
-   git remote add origin https://github.com/dlnraja/tuya_repair.git
-   git push -u origin main
+   homey app install
    ```
 
 ## 📝 Overview
@@ -119,31 +114,20 @@ This is a comprehensive Homey app that provides support for various Tuya Zigbee 
 
 ### Installation
 
-1. **Clone the repository**
+1. **Clonez le dépôt**
    ```bash
    git clone https://github.com/dlnraja/tuya_repair.tuya.zigbee.git
    cd com.tuya.zigbee
    ```
 
-2. **Install Node.js dependencies**
+2. **Exécutez `npm install`**
    ```bash
    npm install
    ```
 
-3. **Install Python dependencies (optional)**
+3. **Exécutez `homey app install`**
    ```bash
-   cd python_service
-   pip install -r requirements.txt
-   cd ..
-   ```
-
-4. **Start the development environment**
-   ```bash
-   # In one terminal
-   npm run dev
-
-   # In another terminal (for Python service)
-   npm run python:start
+   homey app install
    ```
 
 ## 🧪 Testing
