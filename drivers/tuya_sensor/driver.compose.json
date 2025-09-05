@@ -1,0 +1,24 @@
+{
+  "name": {
+    "en": "Tuya Sensor",
+    "fr": "Capteur Tuya",
+    "nl": "Tuya Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+  ],
+  "icon": "/drivers/tuya_sensor/assets/icon.svg",
+  "images": {
+    "large": "/drivers/tuya_sensor/assets/images/large.png",
+    "small": "/drivers/tuya_sensor/assets/images/small.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ]
+}

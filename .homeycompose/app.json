@@ -1,9 +1,10 @@
 {
+  "main": "app.js",
   "id": "com.tuya.zigbee",
   "version": "1.0.0",
-  "compatibility": ">=5.0.0",
+  "compatibility": ">=8.0.0",
   "category": [
-    "appliances"
+    "lights"
   ],
   "name": {
     "en": "Tuya Zigbee",
@@ -12,10 +13,10 @@
     "ta": "Tuya Zigbee"
   },
   "description": {
-    "en": "Tuya Zigbee devices support with universal drivers",
-    "fr": "Support des appareils Tuya Zigbee avec drivers universaux",
-    "nl": "Ondersteuning voor Tuya Zigbee-apparaten met universele drivers",
-    "ta": "Tuya Zigbee சாதனங்களுக்கான ஆதரவு உலகளாவிய drivers உடன்"
+    "en": "Control Tuya Zigbee devices locally",
+    "fr": "Contrôle local des appareils Tuya Zigbee",
+    "nl": "Bedien Tuya Zigbee-apparaten lokaal",
+    "ta": "உள்ளூர் Tuya Zigbee சாதனங்களை கட்டுப்படுத்தவும்"
   },
   "author": {
     "name": "dlnraja",
@@ -28,8 +29,75 @@
   "platforms": [
     "local"
   ],
-  "main": "app.js",
   "drivers": [
+    {
+      "id": "tuya_plug",
+      "title": {
+        "en": "Tuya Smart Plug",
+        "fr": "Prise intelligente Tuya"
+      },
+      "class": "socket",
+      "capabilities": ["onoff", "measure_power"],
+      "images": {
+        "small": "drivers/tuya_plug/assets/small.svg",
+        "large": "drivers/tuya_plug/assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": ["Tuya"],
+        "productId": ["TS011F", "TS0121"]
+      }
+    },
+    {
+      "id": "tuya_switch",
+      "title": {
+        "en": "Tuya Switch",
+        "fr": "Interrupteur Tuya"
+      },
+      "class": "switch",
+      "capabilities": ["onoff"],
+      "images": {
+        "small": "drivers/tuya_switch/assets/small.svg",
+        "large": "drivers/tuya_switch/assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": ["Tuya"],
+        "productId": ["TS0011"]
+      }
+    },
+    {
+      "id": "tuya_light",
+      "title": {
+        "en": "Tuya Light",
+        "fr": "Lumière Tuya"
+      },
+      "class": "light",
+      "capabilities": ["onoff", "dim"],
+      "images": {
+        "small": "drivers/tuya_light/assets/small.svg",
+        "large": "drivers/tuya_light/assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": ["Tuya"],
+        "productId": ["TS0012"]
+      }
+    },
+    {
+      "id": "tuya_thermostat",
+      "title": {
+        "en": "Tuya Thermostat",
+        "fr": "Thermostat Tuya"
+      },
+      "class": "thermostat",
+      "capabilities": ["measure_temperature", "set_temperature"],
+      "images": {
+        "small": "drivers/tuya_thermostat/assets/small.svg",
+        "large": "drivers/tuya_thermostat/assets/large.svg"
+      },
+      "zigbee": {
+        "manufacturerName": ["Tuya"],
+        "productId": ["TS0013"]
+      }
+    },
     {
       "id": "_common",
       "title": {
@@ -66,23 +134,6 @@
       }
     },
     {
-      "id": "tuya_plug",
-      "title": {
-        "en": "Tuya Smart Plug",
-        "fr": "Prise intelligente Tuya"
-      },
-      "class": "socket",
-      "capabilities": ["onoff", "measure_power"],
-      "images": {
-        "small": "drivers/tuya_plug/assets/small.svg",
-        "large": "drivers/tuya_plug/assets/large.svg"
-      },
-      "zigbee": {
-        "manufacturerName": ["Tuya"],
-        "productId": ["TS011F", "TS0121"]
-      }
-    },
-    {
       "id": "tuya_sensor",
       "title": {
         "en": "Tuya Sensor",
@@ -101,9 +152,14 @@
     }
   ],
   "images": {
-    "small": "assets/small.svg",
-    "large": "assets/large.svg"
+    "large": "./assets/images/large.png",
+    "small": "./assets/images/small.png"
   },
   "icon": "assets/icon.svg",
-  "color": "#FF6B35"
+  "color": "#FF6B35",
+  "brandColor": "#FF0000",
+  "permissions": [
+    "homey:manager:api"
+  ],
+  "homey": "1.0.0"
 }
