@@ -1,0 +1,11 @@
+{
+  "name": "temp-install",
+  "version": "1.0.0",
+  "description": "Temporary package.json for dependency installation",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "simple-git": "^3.20.0",
+    "dockerode": "^3.3.5"
+  }
+}

@@ -50,7 +50,7 @@
     "skipLibCheck": true,
     "allowJs": true,
     "checkJs": false,
-    "rootDir": "src",
+    "rootDir": ".",
     "typeRoots": [
       "./node_modules/@types",
       "./types"
@@ -58,15 +58,7 @@
     "types": ["node"]
   },
   "include": [
-    "app.js",
-    "app.json",
-    "drivers/**/*.js",
-    "drivers/**/*.ts",
-    "lib/**/*.js",
-    "lib/**/*.ts",
-    "test/**/*.js",
-    "test/**/*.ts",
-    ".homeycompose/**/*.json"
+    "src/**/*"
   ],
   "exclude": [
     "node_modules",
