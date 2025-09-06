@@ -88,15 +88,33 @@
     }
   ],
   "zigbee": {
-    "manufacturerName": "_TZ3000_12345678",
-    "modelId": ["TS011F"],
+    "manufacturerName": [
+      "Tuya-ts011f"
+    ],
+    "modelId": [
+      "TS011F"
+    ],
     "endpoints": {
       "1": {
-        "clusters": [0, 4, 5, 6, 1794, 2820],
-        "bindings": [6, 1794, 2820]
+        "clusters": [
+          0,
+          4,
+          5,
+          6,
+          1794,
+          2820
+        ],
+        "bindings": [
+          6,
+          1794,
+          2820
+        ]
       }
     },
-    "class": "socket"
+    "class": "socket",
+    "productId": [
+      "GENERIC"
+    ]
   },
   "pair": [
     {
@@ -121,5 +139,7 @@
         "nl": "Zoeken..."
       }
     }
-  ]
+  ],
+  "id": "tuya-ts011f",
+  "icon": "/drivers/manufacturers/tuya-ts011f/tuya-ts011f/assets/icon.svg"
 }

@@ -5,9 +5,33 @@
     "en": "tuya",
     "fr": "tuya"
   },
-  "capabilities": [],
+  "capabilities": [
+    "onoff"
+  ],
   "images": {
     "small": "assets/small.png",
     "large": "assets/large.png"
+  },
+  "icon": "/drivers/manufacturers/tuya/tuya/assets/icon.svg",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "GENERIC"
+    ]
   }
 }
