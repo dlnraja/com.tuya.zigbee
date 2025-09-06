@@ -20,5 +20,14 @@
       "id": "list_devices",
       "template": "list_devices"
     }
-  ]
+  ],
+  "id": "tuya_sensor",
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "GENERIC"
+    ]
+  }
 }

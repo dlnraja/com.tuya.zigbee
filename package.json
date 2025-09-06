@@ -1,5 +1,5 @@
 {
-  "name": "homey-app-tuya-zigbee",
+  "name": "homey-ultimate-zigbee-hub",
   "version": "1.0.0",
   "description": "Tuya Zigbee device support for Homey",
   "private": true,
@@ -7,7 +7,7 @@
     "requirements": {
       "sdk": "^3.0.0"
     },
-    "id": "com.tuya.zigbee",
+    "id": "com.dlnraja.ultimate.zigbee.hub",
     "minHomeyVersion": "7.0.0"
   },
   "dependencies": {
@@ -42,38 +42,14 @@
     "typescript": "^5.3.2"
   },
   "scripts": {
-    "test": "node node_modules/mocha/bin/mocha -r ts-node/register -r tsconfig-paths/register test/**/*.test.ts",
-    "test:jest": "jest -c jest.config.js",
-    "test:watch": "mocha -w -r ts-node/register -r tsconfig-paths/register test/**/*.test.ts",
-    "test:integration": "mocha -r ts-node/register -r tsconfig-paths/register test/integration/**/*.test.ts",
-    "test:e2e": "mocha -r ts-node/register -r tsconfig-paths/register test/e2e/**/*.test.ts",
-    "lint": "eslint . --ext .ts,.js",
-    "lint:fix": "eslint . --ext .ts,.js --fix",
-    "type-check": "tsc --noEmit",
-    "start": "node scripts_tools/ultimate-project.js",
-    "build": "homey app build",
-    "validate": "homey app validate",
-    "migrate": "node scripts/migrate.js",
-    "clean": "rimraf dist && rimraf node_modules/.cache",
-    "assets:verify": "node tools/verify-assets.js",
+    "drivers:validate": "node scripts/js/validate-all-drivers.js",
     "json:validate": "node tools/validate-json.js",
     "json:fix": "node tools/validate-json.js --fix",
-    "test:structure": "node tools/test-structure.js",
-    "reorganize": "node tools/reorganize-root.js --dry-run",
-    "reorganize:apply": "node tools/reorganize-root.js --apply",
-    "diag": "node scripts/js/diagnostic.js",
-    "report:integration": "node scripts/js/createIntegrationReport.js",
-    "project:check": "node scripts/js/checkProjectStructure.js",
-    "git:push": "node scripts/js/pushToGitHub.js",
-    "env:verify": "node scripts/js/verifyNodeEnv.js",
-    "system:check": "node scripts/js/systemCheck.js",
-    "analysis:run": "node scripts/run-analysis.js",
-    "report:generate": "node scripts/generate-report.js",
-    "git:check": "node scripts/check-git.js",
-    "monitor:start": "node scripts/js/monitor.js",
-    "drivers:validate": "node scripts/js/validate-all-drivers.js",
-    "tuya:auto:validate": "node scripts/js/tuya-zigbee-automation.js validate",
-    "tuya:auto:filter": "node scripts/js/tuya-zigbee-automation.js filter",
-    "tuya:auto:update": "node scripts/js/tuya-zigbee-automation.js update"
+    "lint": "eslint . --ext .ts,.js",
+    "lint:fix": "eslint . --ext .ts,.js --fix",
+    "test": "mocha test/**/*.test.js",
+    "test:loop": "node scripts/recursive-validation.js --mode=test --iterations=10",
+    "validate": "npm run drivers:validate && npm run json:validate && npm run lint && homey app validate",
+    "validate:recursive": "node scripts/recursive-validation.js --mode=validate --iterations=10"
   }
 }

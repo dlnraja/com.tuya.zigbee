@@ -5,7 +5,10 @@
     "nl": "Tuya Licht"
   },
   "class": "light",
-  "capabilities": ["onoff", "dim"],
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",
     "small": "{{driverAssetsPath}}/images/small.png"
@@ -22,5 +25,15 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ]
+  ],
+  "id": "tuya_light",
+  "icon": "/drivers/manufacturers/tuya/tuya_light/assets/icon.svg",
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "GENERIC"
+    ]
+  }
 }

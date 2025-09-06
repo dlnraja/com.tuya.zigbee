@@ -1,0 +1,47 @@
+{
+  "id": "philips_hue_white_bulb",
+  "name": {
+    "en": "Philips Hue White Bulb",
+    "fr": "Ampoule Philips Hue White"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "icon": "/drivers/manufacturers/philips/hue_white_bulb/assets/icon.svg",
+  "images": {
+    "large": "/drivers/manufacturers/philips/hue_white_bulb/assets/images/large.png",
+    "small": "/drivers/manufacturers/philips/hue_white_bulb/assets/images/small.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "Philips"
+    ],
+    "productId": [
+      "LWB010"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6,
+          8
+        ]
+      }
+    }
+  }
+}

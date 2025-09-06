@@ -31,5 +31,19 @@
         ]
       }
     }
-  }
+  },
+  "icon": "/drivers/manufacturers/sensors-TS0601/sensors-TS0601_vibration/assets/icon.svg",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
 }

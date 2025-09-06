@@ -107,5 +107,13 @@
         "nl": "Voltooid"
       }
     }
-  ]
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "GENERIC"
+    ]
+  }
 }
