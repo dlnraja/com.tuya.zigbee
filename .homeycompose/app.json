@@ -1,22 +1,22 @@
 {
   "main": "app.js",
-  "id": "com.tuya.zigbee",
+  "id": "com.dlnraja.ultimate.zigbee.hub",
   "version": "1.0.0",
   "compatibility": ">=8.0.0",
   "category": [
     "lights"
   ],
   "name": {
-    "en": "Tuya Zigbee",
-    "fr": "Tuya Zigbee",
-    "nl": "Tuya Zigbee",
-    "ta": "Tuya Zigbee"
+    "en": "Homey Ultimate Zigbee Hub",
+    "fr": "Homey Ultimate Zigbee Hub",
+    "nl": "Homey Ultimate Zigbee Hub",
+    "ta": "Homey Ultimate Zigbee Hub"
   },
   "description": {
-    "en": "Control Tuya Zigbee devices locally",
-    "fr": "Contrôle local des appareils Tuya Zigbee",
-    "nl": "Bedien Tuya Zigbee-apparaten lokaal",
-    "ta": "உள்ளூர் Tuya Zigbee சாதனங்களை கட்டுப்படுத்தவும்"
+    "en": "Homey Ultimate Zigbee Hub: unified community Zigbee drivers with modular architecture and Windows 11 optimizations",
+    "fr": "Homey Ultimate Zigbee Hub : unification des drivers Zigbee communautaires avec architecture modulaire et optimisations Windows 11",
+    "nl": "Homey Ultimate Zigbee Hub: verenigde community Zigbee-drivers met modulaire architectuur en Windows 11-optimalisaties",
+    "ta": "Homey Ultimate Zigbee Hub: சமூக Zigbee இயக்கிகள் ஒன்றுபட்டவை, தொகுதி நிர்மாணமும் Windows 11 மேம்பாடுகளும்"
   },
   "author": {
     "name": "dlnraja",

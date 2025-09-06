@@ -15,7 +15,9 @@
     "small": "/drivers/tuya-ts0011/assets/images/device-small.png"
   },
   "zigbee": {
-    "manufacturerName": "_TZ3000_1ddk5snb",
+    "manufacturerName": [
+      "Tuya-ts0011"
+    ],
     "productId": [
       "TS0011"
     ],
@@ -55,5 +57,8 @@
     }
   ],
   "class": "sensor",
-  "capabilities": []
+  "capabilities": [
+    "onoff"
+  ],
+  "icon": "/drivers/manufacturers/tuya-ts0011/tuya-ts0011/assets/icon.svg"
 }

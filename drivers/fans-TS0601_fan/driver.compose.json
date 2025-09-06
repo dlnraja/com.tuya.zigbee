@@ -32,5 +32,19 @@
         ]
       }
     }
-  }
+  },
+  "icon": "/drivers/manufacturers/fans-TS0601/fans-TS0601_fan/assets/icon.svg",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
 }

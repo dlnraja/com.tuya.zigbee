@@ -31,5 +31,19 @@
         ]
       }
     }
-  }
+  },
+  "icon": "/drivers/manufacturers/climates-TS0601/climates-TS0601_ac/assets/icon.svg",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
 }
