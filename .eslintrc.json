@@ -1,11 +1,27 @@
 {
+  "root": true,
   "env": {
+    "es2021": true,
     "node": true,
-    "es2021": true
+    "commonjs": true
   },
-  "extends": "eslint:recommended",
+  "extends": [
+    "eslint:recommended",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
+  ],
   "parserOptions": {
-    "ecmaVersion": 2021
+    "ecmaVersion": 12
   },
-  "rules": {}
+  "rules": {
+    "prettier/prettier": "warn",
+    "no-unused-vars": ["warn", { "args": "none" }],
+    "no-console": "off",
+    "curly": "error",
+    "eqeqeq": "error",
+    "no-throw-literal": "error",
+    "semi": ["error", "always"]
+  }
 }

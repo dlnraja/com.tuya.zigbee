@@ -388,3 +388,36 @@ Ce projet est sous licence [MIT](LICENSE).
 > ✍️ **Généré automatiquement** le 2025-01-29T03:10:00.000Z
 > 🎯 **MEGA-PROMPT ULTIME - VERSION FINALE 2025**
 > 🚀 **Mode YOLO Ultra Activé**
+
+# Universal TUYA Zigbee Device App
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+A Homey app supporting Tuya Zigbee devices without cloud dependency.
+
+## Features
+- Supports 300+ Tuya Zigbee devices
+- Local control only - no cloud dependency
+- Modular driver architecture
+- Automated validation suite
+
+## Installation
+```bash
+homey app install github:dlnraja/com.tuya.zigbee
+```
+
+## Contributing
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on:
+- Adding new device drivers
+- Reporting issues
+- Submitting pull requests
+
+## Supported Devices
+See [DEVICE-MATRIX.md](docs/DEVICE-MATRIX.md) for the full list of supported devices.
+
+## Development Setup
+```bash
+npm install
+npm run validate  # Run validation checks
+npm test         # Run test suite
+```
