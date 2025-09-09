@@ -1,55 +1,47 @@
 {
-  "name": "homey-ultimate-zigbee-hub",
-  "version": "1.0.0",
-  "description": "Tuya Zigbee device support for Homey",
-  "private": true,
-  "homey": {
-    "requirements": {
-      "sdk": "^3.0.0"
-    },
-    "id": "com.dlnraja.ultimate.zigbee.hub",
-    "minHomeyVersion": "7.0.0"
+  "name": "com.tuya.zigbee",
+  "version": "2.1.0",
+  "description": "Universal Tuya Zigbee Device Integration for Homey",
+  "main": "app.js",
+  "scripts": {
+    "test": "node tests/full-validation-suite.js",
+    "validate": "node scripts/recursive-validation.js",
+    "precleanup": "rimraf node_modules package-lock.json",
+    "cleanup": "node scripts/master-cleanup.js",
+    "repair-json": "node scripts/deep-json-repair.js",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "start": "homey app run",
+    "build": "homey app build",
+    "publish": "homey app publish"
   },
   "dependencies": {
-    "axios": "^1.7.2",
-    "homey": "^8.0.0",
-    "homey-log": "^2.0.0",
-    "homey-zw-lib": "^1.0.0",
-    "simple-git": "^3.25.0",
-    "uuid": "^9.0.1",
-    "dockerode": "^4.0.0"
+    "homey-zigbeedriver": "^1.9.0",
+    "zigbee-clusters": "^1.8.0",
+    "fs-extra": "^11.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.5",
-    "@babel/eslint-parser": "^7.23.3",
-    "@babel/preset-env": "^7.23.5",
-    "@babel/preset-typescript": "^7.23.3",
-    "@types/chai": "^4.3.11",
-    "@types/jest": "^29.5.12",
-    "@types/node": "^20.12.12",
-    "@types/uuid": "^9.0.7",
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.0.0",
-    "babel-jest": "^29.7.0",
-    "chai": "^4.4.1",
-    "eslint": "^8.0.0",
-    "jest": "^29.7.0",
-    "mocha": "^10.2.0",
-    "rimraf": "^5.0.5",
-    "ts-jest": "^29.1.2",
-    "ts-node": "^10.9.2",
-    "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.3.2"
+    "eslint": "^8.45.0",
+    "prettier": "^3.0.0",
+    "jest": "^29.5.0",
+    "jsonschema": "^1.4.1",
+    "homey-mock": "^1.0.0",
+    "rimraf": "^5.0.0"
   },
-  "scripts": {
-    "drivers:validate": "node scripts/js/validate-all-drivers.js",
-    "json:validate": "node tools/validate-json.js",
-    "json:fix": "node tools/validate-json.js --fix",
-    "lint": "eslint . --ext .ts,.js",
-    "lint:fix": "eslint . --ext .ts,.js --fix",
-    "test": "mocha test/**/*.test.js",
-    "test:loop": "node scripts/recursive-validation.js --mode=test --iterations=10",
-    "validate": "npm run drivers:validate && npm run json:validate && npm run lint && homey app validate",
-    "validate:recursive": "node scripts/recursive-validation.js --mode=validate --iterations=10"
-  }
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "Tuya Zigbee Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dlnraja/com.tuya.zigbee"
+  },
+  "keywords": [
+    "homey",
+    "zigbee",
+    "tuya",
+    "smart home",
+    "iot"
+  ]
 }

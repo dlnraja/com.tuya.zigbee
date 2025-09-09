@@ -1,0 +1,327 @@
+{
+  "version": "2.1.0",
+  "updated": "2025-01-09",
+  "total_devices": 85,
+  "categories": {
+    "sensors": {
+      "temperature_humidity": [
+        {
+          "model": "TS0201",
+          "name": "Temperature & Humidity Sensor",
+          "manufacturers": [
+            "_TZ3000_xr3htd96", "_TZ3000_qaayslip", "_TZ3000_saiqcn0y",
+            "_TZ3000_fllyghyj", "_TZ3210_ncw88jfq", "_TYZB01_hjsgdkfl",
+            "_TYZB01_a476raq2", "_TYZB01_cbiezpds"
+          ],
+          "capabilities": ["measure_temperature", "measure_humidity", "measure_battery"],
+          "status": "implemented"
+        }
+      ],
+      "motion": [
+        {
+          "model": "TS0202",
+          "name": "Motion Sensor",
+          "manufacturers": [
+            "_TZ3000_mcxw5ehu", "_TZ3000_msl6wxk9", "_TZ3000_6ygjfyll",
+            "_TZ3040_bb6xaihh", "_TZ3040_wqmtjsyk", "_TZ3000_otvn3lho"
+          ],
+          "capabilities": ["alarm_motion", "measure_luminance", "measure_battery"],
+          "status": "implemented"
+        },
+        {
+          "model": "TS0601_presence",
+          "name": "Human Presence Sensor",
+          "manufacturers": ["_TZE200_hl0ss9oa", "_TZE200_ar0slwnd"],
+          "capabilities": ["alarm_presence", "measure_distance", "sensitivity"],
+          "status": "planned"
+        }
+      ],
+      "contact": [
+        {
+          "model": "TS0203",
+          "name": "Door/Window Sensor",
+          "manufacturers": ["_TZ3000_n2egfsli", "_TZ3000_oxslv1c9"],
+          "capabilities": ["alarm_contact", "measure_battery"],
+          "status": "planned"
+        }
+      ],
+      "water": [
+        {
+          "model": "TS0207",
+          "name": "Water Leak Sensor",
+          "manufacturers": ["_TZ3000_kyb656no", "_TZ3000_upgcbody"],
+          "capabilities": ["alarm_water", "measure_battery"],
+          "status": "planned"
+        }
+      ],
+      "smoke": [
+        {
+          "model": "TS0205",
+          "name": "Smoke Detector",
+          "manufacturers": ["_TZ3000_atp0lbfw", "_TZ3210_up3pngle"],
+          "capabilities": ["alarm_smoke", "measure_battery"],
+          "status": "planned"
+        }
+      ],
+      "vibration": [
+        {
+          "model": "TS0210",
+          "name": "Vibration Sensor",
+          "manufacturers": ["_TZ3000_bmfw9ykl", "_TZ3000_1dd0d5yi"],
+          "capabilities": ["alarm_vibration", "measure_battery"],
+          "status": "planned"
+        }
+      ]
+    },
+    "switches": {
+      "wall_switches": [
+        {
+          "model": "TS0001",
+          "name": "1 Gang Wall Switch",
+          "manufacturers": ["_TZ3000_46t1rvdu", "_TZ3000_5ng23zjs"],
+          "capabilities": ["onoff"],
+          "status": "planned"
+        },
+        {
+          "model": "TS0002",
+          "name": "2 Gang Wall Switch",
+          "manufacturers": ["_TZ3000_18ejxno0", "_TZ3000_pmz6mjyu"],
+          "capabilities": ["onoff.gang1", "onoff.gang2"],
+          "status": "planned"
+        },
+        {
+          "model": "TS0003",
+          "name": "3 Gang Wall Switch",
+          "manufacturers": ["_TZ3000_cvis4qmw", "_TZ3000_b3mgfu0d"],
+          "capabilities": ["onoff.gang1", "onoff.gang2", "onoff.gang3"],
+          "status": "planned"
+        }
+      ],
+      "scene_switches": [
+        {
+          "model": "TS0041",
+          "name": "1 Button Scene Switch",
+          "manufacturers": ["_TZ3000_tk3s5tyg", "_TZ3000_ja5osu5g"],
+          "capabilities": ["button.press", "button.hold", "measure_battery"],
+          "status": "planned"
+        },
+        {
+          "model": "TS0042",
+          "name": "2 Button Scene Switch",
+          "manufacturers": ["_TZ3000_owgcnkrh", "_TZ3000_adkvzooy"],
+          "capabilities": ["button.press", "button.hold", "measure_battery"],
+          "status": "planned"
+        },
+        {
+          "model": "TS0043",
+          "name": "3 Button Scene Switch",
+          "manufacturers": ["_TZ3000_w8jwkczz", "_TZ3000_qzjcsmar"],
+          "capabilities": ["button.press", "button.hold", "measure_battery"],
+          "status": "planned"
+        },
+        {
+          "model": "TS0044",
+          "name": "4 Button Scene Switch",
+          "manufacturers": ["_TZ3000_vp6clf9d", "_TZ3000_wkai4ga5"],
+          "capabilities": ["button.press", "button.hold", "measure_battery"],
+          "status": "planned"
+        },
+        {
+          "model": "TS004F",
+          "name": "4 Gang Wireless Switch",
+          "manufacturers": ["_TZ3000_xabckq1v", "_TZ3000_ixla93vd"],
+          "capabilities": ["button.press", "button.hold", "measure_battery"],
+          "status": "planned"
+        }
+      ],
+      "smart_plugs": [
+        {
+          "model": "TS011F",
+          "name": "Smart Plug with Power Monitoring",
+          "manufacturers": [
+            "_TZ3000_g5xawfcq", "_TZ3000_3ooaz3ng", "_TZ3000_dpo1ysak",
+            "_TZ3000_cphmq0q7", "_TZ3000_w0qqde0g", "_TZ3000_typdpbpg"
+          ],
+          "capabilities": ["onoff", "measure_power", "measure_current", "measure_voltage", "meter_power"],
+          "status": "implemented"
+        },
+        {
+          "model": "TS0121",
+          "name": "10A/16A Smart Plug",
+          "manufacturers": ["_TZ3000_rdtixbnu", "_TZ3000_8nkb7mof"],
+          "capabilities": ["onoff", "measure_power", "meter_power"],
+          "status": "planned"
+        },
+        {
+          "model": "TS0115",
+          "name": "USB Smart Socket",
+          "manufacturers": ["_TZ3000_o005nuxx"],
+          "capabilities": ["onoff", "usb_power"],
+          "status": "planned"
+        }
+      ]
+    },
+    "lights": {
+      "rgb_bulbs": [
+        {
+          "model": "TS0505A",
+          "name": "RGB+CCT Bulb (E27)",
+          "manufacturers": ["_TZ3000_riwp3k79", "_TZ3000_dbou1ap4"],
+          "capabilities": ["onoff", "dim", "light_hue", "light_saturation", "light_temperature"],
+          "status": "planned"
+        },
+        {
+          "model": "TS0505B",
+          "name": "RGB+CCT Bulb (E14)",
+          "manufacturers": ["_TZ3000_kdpxju99", "_TZ3000_s1dfsuvf"],
+          "capabilities": ["onoff", "dim", "light_hue", "light_saturation", "light_temperature"],
+          "status": "planned"
+        }
+      ],
+      "cct_bulbs": [
+        {
+          "model": "TS0502A",
+          "name": "CCT Bulb (E27)",
+          "manufacturers": ["_TZ3000_49qchf10", "_TZ3000_obacbukl"],
+          "capabilities": ["onoff", "dim", "light_temperature"],
+          "status": "planned"
+        },
+        {
+          "model": "TS0502B",
+          "name": "CCT Bulb (E14)",
+          "manufacturers": ["_TZ3000_el5kt5im", "_TZ3000_gjnozsaz"],
+          "capabilities": ["onoff", "dim", "light_temperature"],
+          "status": "planned"
+        }
+      ],
+      "dimmers": [
+        {
+          "model": "TS110E",
+          "name": "1 Gang Dimmer",
+          "manufacturers": ["_TZ3000_ktuoyvt5", "_TZ3210_weaqkhab"],
+          "capabilities": ["onoff", "dim"],
+          "status": "planned"
+        },
+        {
+          "model": "TS110F",
+          "name": "2 Gang Dimmer",
+          "manufacturers": ["_TZ3000_92chsky7", "_TZ3210_pagajpog"],
+          "capabilities": ["onoff", "dim"],
+          "status": "planned"
+        }
+      ],
+      "led_controllers": [
+        {
+          "model": "TS0503A",
+          "name": "RGB LED Controller",
+          "manufacturers": ["_TZ3000_i8l0nqdu"],
+          "capabilities": ["onoff", "dim", "light_hue", "light_saturation"],
+          "status": "planned"
+        },
+        {
+          "model": "TS0504A",
+          "name": "RGBW LED Controller",
+          "manufacturers": ["_TZ3000_ukuvyhaa"],
+          "capabilities": ["onoff", "dim", "light_hue", "light_saturation", "white_channel"],
+          "status": "planned"
+        }
+      ]
+    },
+    "climate": {
+      "thermostats": [
+        {
+          "model": "TS0601_thermostat",
+          "name": "Smart Thermostat",
+          "manufacturers": ["_TZE200_c88teujp", "_TZE200_zion52ef"],
+          "capabilities": ["target_temperature", "measure_temperature", "thermostat_mode"],
+          "status": "planned"
+        },
+        {
+          "model": "TS0601_thermostat_weekly",
+          "name": "Weekly Programmable Thermostat",
+          "manufacturers": ["_TZE200_b6wax7g0"],
+          "capabilities": ["target_temperature", "measure_temperature", "thermostat_mode", "weekly_schedule"],
+          "status": "planned"
+        }
+      ],
+      "trv": [
+        {
+          "model": "TS0601_trv",
+          "name": "Thermostatic Radiator Valve",
+          "manufacturers": ["_TZE200_ckud7u2l", "_TZE200_kfvq6avy"],
+          "capabilities": ["target_temperature", "measure_temperature", "valve_position", "measure_battery"],
+          "status": "planned"
+        },
+        {
+          "model": "TS0601_trv_sas",
+          "name": "Saswell TRV",
+          "manufacturers": ["_TZE200_c88teujp"],
+          "capabilities": ["target_temperature", "measure_temperature", "valve_position", "child_lock"],
+          "status": "planned"
+        }
+      ]
+    },
+    "covers": {
+      "curtain_motors": [
+        {
+          "model": "TS130F",
+          "name": "Curtain Motor",
+          "manufacturers": ["_TZ3000_1dd0d5yi", "_TZ3000_vd43bbfq"],
+          "capabilities": ["windowcoverings_state", "windowcoverings_set", "measure_battery"],
+          "status": "planned"
+        },
+        {
+          "model": "TS0601_cover",
+          "name": "Smart Curtain",
+          "manufacturers": ["_TZE200_cowvfni3", "_TZE200_wmcdj3aq"],
+          "capabilities": ["windowcoverings_state", "windowcoverings_set", "position"],
+          "status": "planned"
+        }
+      ],
+      "blind_controllers": [
+        {
+          "model": "TS0601_blind",
+          "name": "Blind Controller",
+          "manufacturers": ["_TZE200_xuzcvlku", "_TZE200_nogaemzt"],
+          "capabilities": ["windowcoverings_state", "windowcoverings_tilt_set"],
+          "status": "planned"
+        }
+      ]
+    },
+    "security": {
+      "locks": [
+        {
+          "model": "TS0601_lock",
+          "name": "Smart Door Lock",
+          "manufacturers": ["_TZE200_xpq2rzhq", "_TZE200_1vsjpz7y"],
+          "capabilities": ["locked", "alarm_battery", "alarm_tamper"],
+          "status": "planned"
+        }
+      ],
+      "sirens": [
+        {
+          "model": "TS0216",
+          "name": "Siren with Strobe",
+          "manufacturers": ["_TZ3000_mgxy2d9f", "_TZ3210_hy2b6a0f"],
+          "capabilities": ["onoff", "alarm_siren", "alarm_duration", "volume"],
+          "status": "planned"
+        }
+      ],
+      "keypads": [
+        {
+          "model": "TS0601_keypad",
+          "name": "Security Keypad",
+          "manufacturers": ["_TZE200_ufhtdg6s"],
+          "capabilities": ["alarm_mode", "keypad_lock", "measure_battery"],
+          "status": "planned"
+        }
+      ]
+    }
+  },
+  "statistics": {
+    "total_models": 85,
+    "implemented": 3,
+    "planned": 82,
+    "coverage_percentage": 3.5
+  }
+}

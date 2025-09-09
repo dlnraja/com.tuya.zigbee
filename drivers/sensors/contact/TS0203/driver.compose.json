@@ -1,0 +1,58 @@
+{
+  "id": "TS0203",
+  "name": {
+    "en": "Door/Window Sensor",
+    "nl": "Deur/Raam Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_contact",
+    "measure_battery",
+    "alarm_tamper",
+    "alarm_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "images": {
+    "small": "/drivers/sensors/contact/TS0203/assets/images/small.png",
+    "large": "/drivers/sensors/contact/TS0203/assets/images/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_n2egfsli",
+      "_TZ3000_oxslv1c9",
+      "_TZ3000_2mbfxlzr",
+      "_TZ3000_402jjyro",
+      "_TZ3000_7d8yme6f",
+      "_TZ3000_ydcz22cp",
+      "_TZ3000_rgbpbrot"
+    ],
+    "productId": [
+      "TS0203",
+      "DS01"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1280,
+          61184
+        ],
+        "bindings": [
+          1,
+          1280
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press the button 3 times quickly",
+        "nl": "Druk 3 keer snel op de knop"
+      }
+    }
+  }
+}
