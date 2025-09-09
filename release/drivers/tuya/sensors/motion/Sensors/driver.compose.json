@@ -1,28 +1,27 @@
-﻿{
-    "source":  "README-e8936adf",
-    "id":  "Sensors",
-    "manufacturer":  "Historical Recovery",
-    "version":  "1.0.0",
-    "category":  "sensors",
-    "description":  {
-                        "en":  "Driver for Sensors",
-                        "fr":  "Driver pour Sensors",
-                        "nl":  "Driver voor Sensors",
-                        "ta":  "Driver for Sensors"
-                    },
-    "author":  "dlnraja \u003cdylan.rajasekaram+homey@gmail.com\u003e",
-    "createdAt":  "2025-07-29T18:24:48.029Z",
-    "capabilities":  [
-                         "onoff"
-                     ],
-    "title":  {
-                  "en":  "Sensors",
-                  "fr":  "Sensors",
-                  "nl":  "Sensors",
-                  "ta":  "Sensors"
-              },
-    "protocol":  "tuya",
-    "clusters":  [
-                     "genBasic"
-                 ]
+{
+  "source": "README-e8936adf",
+  "id": "Sensors",
+  "manufacturer": "Historical Recovery",
+  "version": "1.0.0",
+  "category": "sensors",
+  "description": {},
+  "author": "dlnraja <dylan.rajasekaram+homey@gmail.com>",
+  "createdAt": "2025-07-29T18:24:48.029Z",
+  "capabilities": [
+    "onoff"
+  ],
+  "title": {
+    "fr": "Sensors",
+    "nl": "Sensors",
+    "ta": "Sensors"
+  },
+  "protocol": "tuya",
+  "clusters": [
+    "genBasic"
+  ],
+  "name": {
+    "en": "Unknown Device"
+  },
+  "class": "socket",
+  "zigbee": {}
 }

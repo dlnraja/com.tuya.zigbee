@@ -1,12 +1,15 @@
-﻿{
+{
   "id": "tuya-fan",
   "title": "tuya-fan Device",
   "category": "controllers",
-  "capabilities": [
-    
-  ],
+  "capabilities": [],
   "images": {
     "small": "assets/images/small.png",
     "large": "assets/images/large.png"
-  }
+  },
+  "name": {
+    "en": "Unknown Device"
+  },
+  "class": "socket",
+  "zigbee": {}
 }
