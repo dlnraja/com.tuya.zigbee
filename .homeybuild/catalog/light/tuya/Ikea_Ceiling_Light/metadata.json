@@ -1,0 +1,9 @@
+{
+  "name": "Ikea_Ceiling_Light",
+  "type": "tuya_zigbee",
+  "category": "light",
+  "source": "drivers\\tuya_zigbee\\models\\ikea-ceiling-940_light_standard_default_1",
+  "created": "2025-08-14T15:23:12.191Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

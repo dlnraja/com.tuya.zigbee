@@ -1,0 +1,20 @@
+{
+  "id": "ikea-heater-896_plug_standard",
+  "name": "ikea ikea-heater-896",
+  "category": "plug",
+  "vendor": "ikea",
+  "model": "ikea-heater-896",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:07.972Z",
+  "updatedAt": "2025-08-13T12:09:07.972Z"
+}

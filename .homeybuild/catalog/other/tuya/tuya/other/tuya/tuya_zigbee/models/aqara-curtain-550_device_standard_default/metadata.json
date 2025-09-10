@@ -1,0 +1,20 @@
+{
+  "id": "aqara-curtain-550_cover_standard",
+  "name": "aqara aqara-curtain-550",
+  "category": "cover",
+  "vendor": "aqara",
+  "model": "aqara-curtain-550",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:00.765Z",
+  "updatedAt": "2025-08-13T12:09:00.765Z"
+}

@@ -1,0 +1,26 @@
+name: Mega Script Execution
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'  # Le premier jour de chaque mois à minuit
+  workflow_dispatch:
+
+jobs:
+  execute_mega_script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Mega Script
+        run: node scripts/mega_script.js
+        env:
+          DEEPSEEK_TOKEN: ${{ secrets.DEEPSEEK_TOKEN }}

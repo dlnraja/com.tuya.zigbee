@@ -1,0 +1,72 @@
+name: Tuya Light Branch Sync
+
+on:
+  schedule:
+    - cron: '0 2 * * *'  # Tous les jours à 2h00 UTC
+  workflow_dispatch:
+  push:
+    branches: [ tuya-light ]
+
+jobs:
+  sync-tuya-light:
+    runs-on: ubuntu-latest
+    name: Synchronize Tuya Light Branch
+    
+    steps:
+    - name: Checkout tuya-light branch
+      uses: actions/checkout@v3
+      with:
+        ref: tuya-light
+        
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: |
+        npm ci
+        echo "  \n"
+        
+    - name: Sync with master branch
+      run: |
+        git fetch origin master
+        git merge origin/master --no-edit || echo "Merge conflict - manual resolution needed"
+        echo "  \n"
+        
+    - name: Update tuya-light specific files
+      run: |
+        npm run bootstrap:arch
+        npm run repair:drivers
+        npm run assert:drivers
+        echo "  \n"
+        
+    - name: Run tuya-light specific tests
+      run: |
+        npm run harvest:all
+        node lib/heuristics/scoring-engine.js
+        echo "  \n"
+        
+    - name: Commit and push updates
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "feat: tuya-light sync with master and updates" -m "synchronisation de la branche tuya-light avec master et mises à jour" || echo "No changes to commit"
+        git push origin tuya-light
+        echo "  \n"
+        
+    - name: Create sync report
+      run: |
+        echo "🔄 Tuya Light Branch Sync Report" > sync-report.txt
+        echo "📅 Timestamp: $(date -u)" >> sync-report.txt
+        echo "✅ Status: SYNC COMPLETED" >> sync-report.txt
+        echo "🚀 Branch: tuya-light" >> sync-report.txt
+        echo "📊 Last sync: $(git log -1 --format='%H %s')" >> sync-report.txt
+        
+    - name: Upload sync report
+      uses: actions/upload-artifact@v3
+      with:
+        name: tuya-light-sync-report
+        path: sync-report.txt

@@ -1,0 +1,20 @@
+{
+  "id": "ikea-wall-993_light_standard",
+  "name": "ikea ikea-wall-993",
+  "category": "light",
+  "vendor": "ikea",
+  "model": "ikea-wall-993",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:03.048Z",
+  "updatedAt": "2025-08-13T12:09:03.048Z"
+}

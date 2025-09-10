@@ -1,0 +1,13 @@
+{
+  "id": "switch_ts0001",
+  "name": "switch ts0001",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "0x0006"
+  ],
+  "endpoints": [
+    1
+  ]
+}

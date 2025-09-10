@@ -1,0 +1,55 @@
+# config/sources.yml
+sources:
+  forums:
+    - name: "Homey Community - Tuya Zigbee"
+      url: "https://community.homey.app/t/app-pro-tuya-zigbee-app/26439"
+      priority: 100
+      refresh: "daily"
+      selectors:
+        posts: ".post-content"
+        code: "pre code"
+        images: ".post-image"
+
+    - name: "Homey Community - Lite Version"
+      url: "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352"
+      priority: 90
+      refresh: "daily"
+
+  github:
+    - name: "dlnraja/com.tuya.zigbee"
+      url: "https://github.com/dlnraja/com.tuya.zigbee"
+      priority: 100
+      refresh: "on_push"
+      paths:
+        - "drivers/**"
+        - "lib/**"
+        - "tools/**"
+
+    - name: "JohanBendz/com.tuya.zigbee"
+      url: "https://github.com/JohanBendz/com.tuya.zigbee"
+      priority: 90
+      refresh: "weekly"
+
+  databases:
+    - name: "Zigbee2MQTT Devices"
+      url: "https://devices.zigbee2mqtt.io/devices.json"
+      priority: 100
+      refresh: "weekly"
+      format: "json"
+
+    - name: "Blakadder Zigbee DB"
+      url: "https://zigbee.blakadder.com/devices.json"
+      priority: 80
+      refresh: "monthly"
+      format: "json"
+
+  documentation:
+    - name: "Tuya Developer Documentation"
+      url: "https://developer.tuya.com/en/docs/iot-device-dev/Zigbee_2"
+      priority: 100
+      refresh: "monthly"
+
+    - name: "Zigbee Cluster Library"
+      url: "https://github.com/ZigbeeProject/ZigbeeClusterLibrary"
+      priority: 90
+      refresh: "monthly"

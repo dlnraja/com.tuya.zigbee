@@ -1,0 +1,20 @@
+{
+  "id": "template_template_standard_thermostat",
+  "name": "template template_template_standard_thermostat",
+  "category": "template",
+  "vendor": "template",
+  "model": "template_template_standard_thermostat",
+  "type": "tuya_zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:14:54.169Z",
+  "updatedAt": "2025-08-13T12:14:54.169Z"
+}

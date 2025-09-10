@@ -1,0 +1,83 @@
+{
+  "homey_sdk3": {
+    "version": "3.8.4",
+    "compatibility": {
+      "min": "5.0.0",
+      "max": "6.0.0",
+      "recommended": "5.0.0"
+    },
+    "features": {
+      "homeycompose": true,
+      "zigbee": true,
+      "meshdriver": false,
+      "legacy_support": false
+    },
+    "optimizations": {
+      "memory_usage": "optimized",
+      "performance": "enhanced",
+      "battery_life": "improved",
+      "network_efficiency": "maximized"
+    },
+    "capabilities": {
+      "standard": [
+        "onoff",
+        "dim",
+        "light_temperature",
+        "light_mode",
+        "measure_power",
+        "meter_power",
+        "measure_temperature",
+        "measure_humidity",
+        "target_temperature",
+        "windowcoverings_set",
+        "windowcoverings_state",
+        "alarm_battery",
+        "alarm_contact",
+        "measure_presence"
+      ],
+      "tuya_specific": [
+        "tuya_mode",
+        "tuya_scene",
+        "tuya_timer",
+        "tuya_schedule"
+      ]
+    },
+    "zigbee_clusters": {
+      "basic": 0,
+      "power_config": 1,
+      "identify": 3,
+      "groups": 4,
+      "scenes": 5,
+      "on_off": 6,
+      "level_control": 8,
+      "color_control": 768,
+      "temperature_measurement": 1026,
+      "humidity_measurement": 1029,
+      "occupancy_sensing": 1030,
+      "illuminance_measurement": 1024,
+      "electrical_measurement": 2820,
+      "metering": 1794,
+      "thermostat": 513,
+      "fan_control": 514,
+      "door_lock": 257,
+      "window_covering": 258,
+      "alarms": 1280,
+      "time": 10,
+      "ota": 25
+    },
+    "best_practices": {
+      "driver_structure": "homeycompose",
+      "capability_usage": "standard_only",
+      "zigbee_implementation": "native",
+      "error_handling": "comprehensive",
+      "logging": "structured",
+      "testing": "automated"
+    },
+    "performance_targets": {
+      "response_time": "< 100ms",
+      "memory_footprint": "< 50MB",
+      "battery_optimization": "> 90%",
+      "network_efficiency": "> 95%"
+    }
+  }
+}

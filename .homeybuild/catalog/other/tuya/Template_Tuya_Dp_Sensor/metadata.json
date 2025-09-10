@@ -1,0 +1,9 @@
+{
+  "name": "Template_Tuya_Dp_Sensor",
+  "type": "tuya_zigbee",
+  "category": "other",
+  "source": "drivers\\tuya_zigbee\\models\\template_tuya_dp_sensor",
+  "created": "2025-08-14T15:24:28.018Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

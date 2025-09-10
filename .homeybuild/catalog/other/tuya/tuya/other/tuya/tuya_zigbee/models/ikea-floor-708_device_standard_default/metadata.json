@@ -1,0 +1,20 @@
+{
+  "id": "ikea-floor-708_light_standard",
+  "name": "ikea ikea-floor-708",
+  "category": "light",
+  "vendor": "ikea",
+  "model": "ikea-floor-708",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:02.471Z",
+  "updatedAt": "2025-08-13T12:09:02.471Z"
+}

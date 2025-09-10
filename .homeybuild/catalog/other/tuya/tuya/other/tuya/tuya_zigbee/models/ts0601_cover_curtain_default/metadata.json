@@ -1,0 +1,20 @@
+{
+  "id": "ts0601_curtain_cover_standard",
+  "name": "tuya ts0601_curtain",
+  "category": "cover",
+  "vendor": "tuya",
+  "model": "ts0601_curtain",
+  "type": "tuya_zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:08:54.952Z",
+  "updatedAt": "2025-08-13T12:08:54.952Z"
+}

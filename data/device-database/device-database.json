@@ -1,0 +1,84 @@
+{
+  "devices": [
+    {
+      "model": "TS0121",
+      "manufacturer": "Tuya",
+      "description": "Smart Plug",
+      "type": "On/Off Plug",
+      "features": ["onoff", "power_measurement", "energy_measurement"],
+      "supported": true
+    },
+    {
+      "model": "TS0201",
+      "manufacturer": "Tuya",
+      "description": "Temperature & Humidity Sensor",
+      "type": "Sensor",
+      "features": ["temperature", "humidity", "battery"],
+      "supported": true
+    },
+    {
+      "model": "TS0215A",
+      "manufacturer": "Tuya",
+      "description": "Smart Button",
+      "type": "Remote",
+      "features": ["button", "battery"],
+      "supported": false
+    },
+    {
+      "model": "TS0012",
+      "manufacturer": "Tuya",
+      "description": "2-Gang Switch",
+      "type": "Switch",
+      "features": ["onoff", "power_measurement"],
+      "supported": false
+    },
+    {
+      "model": "TS0501B",
+      "manufacturer": "Tuya",
+      "description": "RGB LED Controller",
+      "type": "Light",
+      "features": ["onoff", "dim", "color_rgb"],
+      "supported": false
+    },
+    {
+      "model": "TS004F",
+      "manufacturer": "Tuya",
+      "description": "Wireless Switch",
+      "type": "Remote",
+      "features": ["button", "battery"],
+      "supported": false
+    },
+    {
+      "model": "TS011F",
+      "manufacturer": "Tuya",
+      "description": "Smart Plug with Power Monitoring",
+      "type": "On/Off Plug",
+      "features": ["onoff", "power_measurement", "energy_measurement"],
+      "supported": false
+    },
+    {
+      "model": "TS0219",
+      "manufacturer": "Tuya",
+      "description": "Vibration Sensor",
+      "type": "Sensor",
+      "features": ["vibration", "battery"],
+      "supported": false
+    },
+    {
+      "model": "TS0601",
+      "manufacturer": "Tuya",
+      "description": "Thermostat",
+      "type": "Thermostat",
+      "features": ["temperature", "thermostat", "battery"],
+      "supported": false
+    },
+    {
+      "model": "TS0222",
+      "manufacturer": "Tuya",
+      "description": "Light Sensor",
+      "type": "Sensor",
+      "features": ["illuminance", "battery"],
+      "supported": false
+    }
+  ]
+}

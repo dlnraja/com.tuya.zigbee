@@ -1,0 +1,20 @@
+{
+  "id": "ikea-door-555_lock_standard",
+  "name": "ikea ikea-door-555",
+  "category": "lock",
+  "vendor": "ikea",
+  "model": "ikea-door-555",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:03.486Z",
+  "updatedAt": "2025-08-13T12:09:03.486Z"
+}

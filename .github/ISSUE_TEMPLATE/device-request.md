@@ -1,32 +1,29 @@
 ---
-name: Device Support Request
+name: Device request
 about: Request support for a new Tuya Zigbee device
-labels: 'enhancement', 'device-request'
+title: '[DEVICE] '
+labels: enhancement, device-request
+assignees: ''
+
 ---
 
-## Device Information
+**Device Information**
+- Model Number: (e.g., TS0505B)
+- Manufacturer: (printed on device or from Zigbee2MQTT)
+- Device Type: (e.g., RGB Bulb, Smart Switch, Sensor)
+- Purchase Link: (optional, helps with research)
 
-- **Device Name**: [e.g., Smart Plug, Motion Sensor]
-- **Manufacturer**: [e.g., Tuya, Moes, Lonsonho]
-- **Model Number**: [e.g., TS011F, ZY-M100]
-- **Device Type**: [e.g., Switch, Sensor, Light]
-- **Does the device work with the official Tuya app?** [Yes/No]
+**Current Status**
+- [ ] Device is not recognized by Homey
+- [ ] Device pairs but some features don't work
+- [ ] Device works but could be improved
 
-## Technical Details
+**Zigbee Information (if available)**
+- Cluster IDs: (from Zigbee2MQTT or other tools)
+- Endpoints: (if multi-gang or complex device)
+- Power Source: (battery/mains)
 
-- **Zigbee Model ID**: [e.g., TS011F]
-- **Zigbee Manufacturer**: [e.g., _TZ3000_12345678]
-- **Device Image**: [Attach a clear image of the device and its label]
-- **Device Documentation**: [Link to any available documentation]
-
-## Additional Context
-
-- **Why is this device important to support?**
-- **Are you able to help with testing?** [Yes/No]
-- **Any additional information that might help with implementation**
-
-## Checklist
-
-- [ ] I have searched existing issues to ensure this is not a duplicate
-- [ ] I have provided all requested information
-- [ ] I am willing to help with testing if needed
+**Additional Information**
+- Any other relevant details
+- Photos of the device (if helpful)
+- Zigbee2MQTT compatibility info

@@ -1,0 +1,20 @@
+{
+  "id": "aqara-water-237_plug_standard",
+  "name": "aqara aqara-water-237",
+  "category": "plug",
+  "vendor": "aqara",
+  "model": "aqara-water-237",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:07.384Z",
+  "updatedAt": "2025-08-13T12:09:07.384Z"
+}

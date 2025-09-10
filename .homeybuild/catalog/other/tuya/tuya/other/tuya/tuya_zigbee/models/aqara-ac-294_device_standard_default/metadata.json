@@ -1,0 +1,20 @@
+{
+  "id": "aqara-ac-294_plug_standard",
+  "name": "aqara aqara-ac-294",
+  "category": "plug",
+  "vendor": "aqara",
+  "model": "aqara-ac-294",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:03.685Z",
+  "updatedAt": "2025-08-13T12:09:03.685Z"
+}

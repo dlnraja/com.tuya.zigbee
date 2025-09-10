@@ -1,0 +1,13 @@
+{
+  "id": "cover_aqara",
+  "name": "cover aqara",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "0x0006"
+  ],
+  "endpoints": [
+    1
+  ]
+}

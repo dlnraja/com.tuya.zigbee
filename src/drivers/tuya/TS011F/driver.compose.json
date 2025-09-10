@@ -1,0 +1,162 @@
+{
+  "id": "TS011F",
+  "name": {
+    "en": "Tuya Zigbee Plug"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power",
+    "measure_voltage",
+    "measure_current"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "On/off"
+      }
+    },
+    "measure_power": {
+      "title": {
+        "en": "Power"
+      },
+      "units": {
+        "en": "W"
+      }
+    },
+    "meter_power": {
+      "title": {
+        "en": "Energy"
+      },
+      "units": {
+        "en": "kWh"
+      }
+    },
+    "measure_voltage": {
+      "title": {
+        "en": "Voltage"
+      },
+      "units": {
+        "en": "V"
+      }
+    },
+    "measure_current": {
+      "title": {
+        "en": "Current"
+      },
+      "units": {
+        "en": "A"
+      }
+    }
+  },
+  "images": {
+    "large": "/drivers/tuya/TS011F/assets/images/large.png",
+    "small": "/drivers/tuya/TS011F/assets/images/small.png"
+  },
+  "zigbee": {
+    "manufacturerName": "_TZ3000_1dd0d5yi",
+    "productId": ["TS011F"],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          1794,
+          2820,
+          4096
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/learn.svg",
+      "instruction": {
+        "en": "Toggle the plug on/off to complete pairing"
+      }
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Device Settings"
+      },
+      "children": [
+        {
+          "id": "led_enabled",
+          "type": "boolean",
+          "value": true,
+          "label": {
+            "en": "LED Indicator"
+          },
+          "hint": {
+            "en": "Enable/disable the LED indicator on the device"
+          }
+        },
+        {
+          "id": "power_on_behavior",
+          "type": "dropdown",
+          "value": "previous",
+          "values": [
+            {
+              "id": "previous",
+              "label": {
+                "en": "Previous state"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "Always on"
+              }
+            },
+            {
+              "id": "off",
+              "label": {
+                "en": "Always off"
+              }
+            }
+          ],
+          "label": {
+            "en": "Power on behavior"
+          },
+          "hint": {
+            "en": "What should happen when the device is powered on"
+          }
+        }
+      ]
+    }
+  ],
+  "pair": [
+    {
+      "id": "start",
+      "navigation": {
+        "next": "select_device"
+      }
+    },
+    {
+      "id": "select_device",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "navigation": {
+        "next": "done"
+      }
+    },
+    {
+      "id": "done",
+      "navigation": {
+        "next": null
+      }
+    }
+  ]
+}

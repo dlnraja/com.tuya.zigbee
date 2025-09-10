@@ -1,0 +1,18 @@
+{
+  "id": "{{DRIVER_ID}}",
+  "class": "{{CLASS}}",
+  "name": {
+    "en": "{{NAME_EN}}",
+    "fr": "{{NAME_FR}}"
+  },
+  "capabilities": [{{CAPABILITIES}}],
+  "images": {
+    "large": "{{ASSETS_DIR}}/images/large.png",
+    "small": "{{ASSETS_DIR}}/images/small.png"
+  },
+  "pair": [
+    {
+      "id": "pair_start"
+    }
+  ]
+}

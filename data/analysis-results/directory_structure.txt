@@ -1,0 +1,3154 @@
+📄 .babelrc (0.29 KB)
+📄 .cursor-prompt.md (4.63 KB)
+📄 .cursorrules (5.12 KB)
+📄 .env (0.38 KB)
+📄 .eslintrc.js (9.89 KB)
+📄 .eslintrc.json (12.67 KB)
+📄 .eslintrc.new.json (1.37 KB)
+📁 .git/
+  📄 COMMIT_EDITMSG (0.06 KB)
+  📄 config (0.85 KB)
+  📄 cursor_metadata.pb (0.06 KB)
+  📄 description (0.07 KB)
+  📄 FETCH_HEAD (0.47 KB)
+  📄 HEAD (0.02 KB)
+  📁 hooks/
+    📄 applypatch-msg.sample (0.47 KB)
+    📄 commit-msg.sample (0.88 KB)
+    📄 fsmonitor-watchman.sample (4.62 KB)
+    📄 post-update.sample (0.18 KB)
+    📄 pre-applypatch.sample (0.41 KB)
+    📄 pre-commit.sample (1.61 KB)
+    📄 pre-merge-commit.sample (0.41 KB)
+    📄 pre-push.sample (1.34 KB)
+    📄 pre-rebase.sample (4.78 KB)
+    📄 pre-receive.sample (0.53 KB)
+    📄 prepare-commit-msg.sample (1.46 KB)
+    📄 push-to-checkout.sample (2.72 KB)
+    📄 sendemail-validate.sample (2.25 KB)
+    📄 update.sample (3.56 KB)
+  📄 index (3786.72 KB)
+  📁 info/
+    📄 exclude (0.23 KB)
+    📄 refs (3.93 KB)
+  📁 logs/
+    📄 HEAD (69.17 KB)
+    📁 refs/
+  📁 objects/
+    📁 03/
+    📁 04/
+    📁 06/
+    📁 07/
+    📁 08/
+    📁 0a/
+    📁 0d/
+    📁 10/
+    📁 11/
+    📁 12/
+    📁 14/
+    📁 15/
+    📁 16/
+    📁 17/
+    📁 19/
+    📁 1a/
+    📁 1c/
+    📁 1d/
+    📁 1e/
+    📁 1f/
+    📁 21/
+    📁 23/
+    📁 24/
+    📁 25/
+    📁 27/
+    📁 28/
+    📁 29/
+    📁 2a/
+    📁 2b/
+    📁 2c/
+    📁 2d/
+    📁 2f/
+    📁 30/
+    📁 31/
+    📁 32/
+    📁 37/
+    📁 38/
+    📁 39/
+    📁 3b/
+    📁 3c/
+    📁 3f/
+    📁 40/
+    📁 41/
+    📁 43/
+    📁 44/
+    📁 45/
+    📁 46/
+    📁 48/
+    📁 49/
+    📁 4a/
+    📁 4c/
+    📁 4d/
+    📁 4f/
+    📁 50/
+    📁 51/
+    📁 52/
+    📁 53/
+    📁 54/
+    📁 55/
+    📁 56/
+    📁 57/
+    📁 59/
+    📁 5b/
+    📁 5d/
+    📁 5f/
+    📁 60/
+    📁 61/
+    📁 62/
+    📁 63/
+    📁 65/
+    📁 66/
+    📁 68/
+    📁 69/
+    📁 6b/
+    📁 6c/
+    📁 6e/
+    📁 6f/
+    📁 70/
+    📁 71/
+    📁 72/
+    📁 73/
+    📁 74/
+    📁 75/
+    📁 76/
+    📁 78/
+    📁 79/
+    📁 7a/
+    📁 7b/
+    📁 7c/
+    📁 7d/
+    📁 7e/
+    📁 7f/
+    📁 81/
+    📁 82/
+    📁 83/
+    📁 84/
+    📁 85/
+    📁 86/
+    📁 88/
+    📁 89/
+    📁 8a/
+    📁 8c/
+    📁 8e/
+    📁 8f/
+    📁 90/
+    📁 91/
+    📁 92/
+    📁 93/
+    📁 94/
+    📁 95/
+    📁 96/
+    📁 97/
+    📁 98/
+    📁 99/
+    📁 9a/
+    📁 9b/
+    📁 9c/
+    📁 9d/
+    📁 9e/
+    📁 9f/
+    📁 a1/
+    📁 a2/
+    📁 a3/
+    📁 a4/
+    📁 a5/
+    📁 a6/
+    📁 a7/
+    📁 a8/
+    📁 a9/
+    📁 aa/
+    📁 ac/
+    📁 ad/
+    📁 af/
+    📁 b0/
+    📁 b1/
+    📁 b2/
+    📁 b4/
+    📁 b5/
+    📁 b6/
+    📁 b7/
+    📁 b9/
+    📁 ba/
+    📁 bb/
+    📁 bd/
+    📁 be/
+    📁 c0/
+    📁 c1/
+    📁 c2/
+    📁 c3/
+    📁 c6/
+    📁 c7/
+    📁 c9/
+    📁 ca/
+    📁 cd/
+    📁 d0/
+    📁 d2/
+    📁 d3/
+    📁 d4/
+    📁 d5/
+    📁 d6/
+    📁 d7/
+    📁 d9/
+    📁 da/
+    📁 db/
+    📁 dc/
+    📁 dd/
+    📁 de/
+    📁 df/
+    📁 e0/
+    📁 e1/
+    📁 e2/
+    📁 e3/
+    📁 e4/
+    📁 e5/
+    📁 e6/
+    📁 e7/
+    📁 e8/
+    📁 e9/
+    📁 ea/
+    📁 eb/
+    📁 ec/
+    📁 ed/
+    📁 ee/
+    📁 f0/
+    📁 f1/
+    📁 f2/
+    📁 f4/
+    📁 f5/
+    📁 f6/
+    📁 f7/
+    📁 f8/
+    📁 f9/
+    📁 fa/
+    📁 fb/
+    📁 fd/
+    📁 info/
+    📁 pack/
+  📄 ORIG_HEAD (0.04 KB)
+  📄 packed-refs (2.66 KB)
+  📁 refs/
+    📁 heads/
+    📁 remotes/
+    📁 tags/
+📁 .github/
+  📄 CODEOWNERS (1.49 KB)
+  📄 dependabot.yml (0.17 KB)
+  📁 ISSUE_TEMPLATE/
+    📄 bug_report.md (0.75 KB)
+    📄 device-request.md (1.01 KB)
+    📄 feature_request.md (0.70 KB)
+    📄 tuya-zigbee---new-device-request.md (1.51 KB)
+  📁 pages-build/
+    📄 app.json (2.62 KB)
+    📄 CHANGELOG.md (12.90 KB)
+    📄 package.json (0.94 KB)
+    📄 README.md (8.31 KB)
+  📁 workflows/
+    📄 auto-changelog.yml (1.46 KB)
+    📄 auto-enrich.yml (2.25 KB)
+    📄 auto-translation.yml (4.36 KB)
+    📄 build.yml (0.74 KB)
+    📄 build_dashboard.yml (3.06 KB)
+    📄 ci-cd.yml (4.64 KB)
+    📄 ci-device-matrix.yml (2.20 KB)
+    📄 ci-pipeline-tuya.yml (0.93 KB)
+    📄 ci-release-lite.yml (0.03 KB)
+    📄 ci-sync-upstream.yml (0.04 KB)
+    📄 ci-validate.yml (2.77 KB)
+    📄 ci.yml (3.99 KB)
+    📄 dashboard-deploy-workflow.yml (1.73 KB)
+    📄 dashboard.yml (1.83 KB)
+    📄 deploy-github-pages.yml (6.68 KB)
+    📄 deploy.yml (0.46 KB)
+    📄 documentation.yml (7.54 KB)
+    📄 driver-testing.yml (9.62 KB)
+    📄 driver-validation.yml (4.92 KB)
+    📄 enhanced-ci-cd.yml (5.55 KB)
+    📄 enrich.yml (8.08 KB)
+    📄 forum-analysis-automation.yml (20.17 KB)
+    📄 full-ci.yml (1.64 KB)
+    📄 generate-dashboard.yml (3.70 KB)
+    📄 generate-matrix.yml (1.98 KB)
+    📄 generate-zip-fallbacks.yml (8.73 KB)
+    📄 intelligent-driver-determination.yml (20.62 KB)
+    📄 intelligent-integration.yml (16.58 KB)
+    📄 main.yml (1.92 KB)
+    📄 mega-pipeline-unified.yml (7.74 KB)
+    📄 mega-pipeline.yml (5.14 KB)
+    📄 monthly-automation.yml (0.79 KB)
+    📄 monthly-driver-update.yml (4.13 KB)
+    📄 monthly.yml (0.56 KB)
+    📄 monthly_driver_update.yml (3.98 KB)
+    📄 monthly_enrichment.yml (4.36 KB)
+    📄 nightly-enrich.yml (0.31 KB)
+    📄 pages.yml (1.25 KB)
+    📄 publish.yml (7.54 KB)
+    📄 release-changelog.yml (3.45 KB)
+    📄 security.yml (0.74 KB)
+    📄 sync-light-version.yml (5.18 KB)
+    📄 sync-lite.yml (7.84 KB)
+    📄 sync-maintenance.yml (4.90 KB)
+    📄 sync-tuya-light-monthly.yml (4.18 KB)
+    📄 sync-tuya-light.yml (1.43 KB)
+    📄 test.yml (0.68 KB)
+    📄 tests.yml (0.51 KB)
+    📄 tuya-light-ci.yml (2.48 KB)
+    📄 tuya-light-monthly-sync.yml (9.34 KB)
+    📄 tuya-light-sync.yml (2.11 KB)
+    📄 update-deps.yml (8.13 KB)
+    📄 update-readme.yml (2.95 KB)
+    📄 update_readme_stats.yml (4.79 KB)
+    📄 validate-app-structure.yml (2.50 KB)
+    📄 validate-drivers.yml (1.61 KB)
+    📄 validate-homey-app.yml (1.33 KB)
+    📄 validate-only.yml (5.16 KB)
+    📄 validate-sdk3.yml (8.59 KB)
+    📄 validate-tuya-light.yml (6.69 KB)
+    📄 validate.yml (1.46 KB)
+    📄 version-functional-release.yml (17.61 KB)
+    📄 versioning-automation.yml (3.55 KB)
+    📄 weekly-sync.yml (2.78 KB)
+📄 .gitignore (7.61 KB)
+📄 .gitmessage (0.88 KB)
+📁 .homeybuild/
+  📁 archive/
+    📁 release/
+  📁 catalog/
+    📁 other/
+  📁 drivers/
+    📁 tuya_zigbee/
+  📁 final-release/
+    📁 drivers/
+    📁 scripts/
+  📁 release/
+    📁 drivers/
+  📁 scripts/
+    📁 core/
+📁 .homeycompose/
+  📄 app.json (3.56 KB)
+  📁 capabilities/
+  📄 compose.json (5.91 KB)
+  📁 flow/
+📄 .homeyignore (0.80 KB)
+📄 .mocharc.json (0.45 KB)
+📄 .nycrc.json (0.51 KB)
+📄 .prettierrc (0.77 KB)
+📄 .tuya-config.json (0.32 KB)
+📁 .vscode/
+  📄 launch.json (1.20 KB)
+  📄 settings.json (1.40 KB)
+  📄 tasks.json (1.37 KB)
+📄 add-scripts.js (1.20 KB)
+📄 ai-config.json (2.61 KB)
+📁 analysis-results/
+  📄 analysis-report-2025-09-01T08-15-49-882Z.json (1.95 KB)
+  📄 architect-2025-09-01T08-15-46-864Z.txt (1.96 KB)
+  📄 architect-error.txt (0.95 KB)
+  📄 driver-analysis-2025-09-01T20-41-10-076Z.json (8.05 KB)
+  📄 driver-analysis.json (18.41 KB)
+  📄 driver_data_20250902_ 515.json (11.37 KB)
+  📄 driver_report_20250902_ 515.txt (0.59 KB)
+  📄 multi-ia-analysis-report.json (0.85 KB)
+  📄 optimizer-2025-09-01T08-15-48-630Z.txt (1.96 KB)
+  📄 optimizer-error.txt (0.95 KB)
+  📄 project-analysis.json (21.26 KB)
+  📄 project-analysis.md (1.24 KB)
+  📄 quick-analysis.json (16.55 KB)
+  📄 quick-analysis.md (1.03 KB)
+  📄 scout-2025-09-01T08-15-44-675Z.txt (1.95 KB)
+  📄 scout-error.txt (0.95 KB)
+  📄 validator-2025-09-01T08-15-49-402Z.txt (1.96 KB)
+  📄 validator-error.txt (0.95 KB)
+📄 analyze-driver.js (2.87 KB)
+📄 analyze-drivers.bat (3.09 KB)
+📄 analyze.py (5.01 KB)
+📄 analyze_drivers.ps1 (5.30 KB)
+📄 analyze_project.js (11.54 KB)
+📄 app.js (16.14 KB)
+📄 app.json (54.60 KB)
+📄 app.json.backup.1755959212932 (64.28 KB)
+📄 app.json.bak (44.43 KB)
+📁 archive/
+  📄 DRIVERS_CONFIG.json (1.12 KB)
+  📄 generate-drivers.js (0.39 KB)
+  📄 HOMEY_VALIDATE.js (1.76 KB)
+  📄 HOMEY_VALIDATE_FULL.js (1.58 KB)
+  📄 MEGA_DRIVER_RESTORE.js (6.17 KB)
+  📄 MEGA_PIPELINE.js (1.12 KB)
+  📄 MEGA_RESTORE_DRIVERS.js (6.82 KB)
+  📄 MEGA_SOLUTION.js (0.04 KB)
+  📄 MEGA_SOLUTION_COMPLETE.js (4.90 KB)
+  📁 release/
+    📁 assets/
+    📁 drivers/
+  📄 TUYA_OVERLAYS.js (2.37 KB)
+📁 assets/
+  📁 documentation/
+  📄 icon-large.png (0.06 KB)
+  📄 icon-small.png (0.06 KB)
+  📄 icon.png (64.07 KB)
+  📄 icon.svg (1.19 KB)
+  📁 images/
+    📁 app/
+    📁 devices/
+    📄 icon.svg (0.24 KB)
+    📄 large.png (256.07 KB)
+    📄 README.md (1.49 KB)
+    📄 small.png (16.07 KB)
+  📄 large.png (256.07 KB)
+  📄 large.svg (0.42 KB)
+  📁 locales/
+  📄 small.png (16.07 KB)
+  📄 small.svg (0.31 KB)
+📄 assets-structure.json (0.36 KB)
+📄 audit_drivers.py (2.09 KB)
+📄 audit_project.py (6.53 KB)
+📄 auto-commit.js (3.54 KB)
+📄 automate.js (10.34 KB)
+📄 automated-test-report.json (0.34 KB)
+📄 automated-test-suite.js (9.02 KB)
+📄 AUTOMATION-GUIDE.md (3.12 KB)
+📄 automation-report.json (3.47 KB)
+📄 automation-report.md (0.91 KB)
+📄 automation.log (1.49 KB)
+📁 backup/
+  📁 app-json-driver-images-fix/
+    📄 app.json (66.73 KB)
+  📄 app.json (64.28 KB)
+  📁 before-fix/
+    📁 drivers/
+  📁 drivers/
+    📁 plugs-TS011F/
+    📁 plugs-TS011G/
+    📁 plugs-TS011H/
+    📁 plugs-TS011I/
+    📁 plugs-TS011J/
+    📁 plugs-TS0121/
+    📁 plugs-TS0122/
+    📁 plugs-TS0123/
+    📁 plugs-TS0124/
+    📁 plugs-TS0125/
+    📁 tuya-plug-universal/
+    📁 zigbee-tuya-universal/
+  📁 massive-image-fix/
+    📄 app.json (64.28 KB)
+📄 BADGES.md (0.56 KB)
+📁 catalog/
+  📁 ac/
+    📁 tuya/
+  📄 categories.json (4.71 KB)
+  📁 cover/
+    📁 tuya/
+  📁 fan/
+    📁 tuya/
+  📁 heater/
+    📁 tuya/
+  📁 light/
+    📁 tuya/
+  📁 lock/
+    📁 tuya/
+  📁 other/
+    📁 tuya/
+    📁 zigbee/
+  📁 sensor-contact/
+    📁 tuya/
+  📁 sensor-gas/
+    📁 tuya/
+  📁 sensor-humidity/
+    📁 tuya/
+  📁 sensor-motion/
+    📁 tuya/
+  📁 sensor-smoke/
+    📁 tuya/
+  📁 sensor-temp/
+    📁 tuya/
+  📁 sensor-vibration/
+    📁 tuya/
+  📁 sensor-water/
+    📁 tuya/
+  📁 switch/
+    📁 tuya/
+  📄 vendors.json (8.19 KB)
+📄 CHANGELOG.md (1.48 KB)
+📄 check-access.js (4.72 KB)
+📄 check-dependencies.js (4.10 KB)
+📄 check-drivers-simple.js (3.60 KB)
+📄 check-drivers.bat (2.19 KB)
+📄 check-drivers.ps1 (3.10 KB)
+📄 check-env.bat (1.70 KB)
+📄 check-env.ps1 (2.75 KB)
+📄 check-execution-context.js (1.23 KB)
+📄 check-git.bat (0.23 KB)
+📄 check-git.js (1.83 KB)
+📄 check-node-env.cmd (1.30 KB)
+📄 check-node-env.js (1.11 KB)
+📄 check-node-env.ps1 (2.61 KB)
+📄 check-node-installation.ps1 (2.65 KB)
+📄 check-node-version.js (0.82 KB)
+📄 check-node.cmd (1.71 KB)
+📄 check-permissions.ps1 (2.49 KB)
+📄 check-project.bat (3.37 KB)
+📄 check-structure.js (3.85 KB)
+📄 check-tuya-drivers.bat (2.24 KB)
+📄 check-tuya-simple.bat (2.25 KB)
+📄 check-tuya.bat (2.44 KB)
+📄 check_dependencies.js (1.98 KB)
+📄 check_drivers.js (2.61 KB)
+📄 check_env.ps1 (2.64 KB)
+📄 check_project.bat (1.42 KB)
+📄 check_project.ps1 (5.02 KB)
+📄 check_project_structure.bat (2.09 KB)
+📄 clean-install.ps1 (2.32 KB)
+📄 clean-zigbee.js (0.37 KB)
+📄 CODEOWNERS (0.27 KB)
+📄 commit-corrections.ps1 (1.83 KB)
+📄 commit-report.json (0.23 KB)
+📄 complete-verification-fix.js (20.92 KB)
+📄 complete_analysis.ps1 (6.58 KB)
+📄 COMPLETE_RESTORATION_REPORT_v3.4.1.json (1.16 KB)
+📄 CONTRIBUTING.md (8.13 KB)
+📄 convert-ps1.js (2.11 KB)
+📄 create-architecture.ps1 (0.90 KB)
+📄 create-integration-report.ps1 (5.21 KB)
+📄 create-new-app-json.js (3.16 KB)
+📄 create-report.bat (1.52 KB)
+📄 create-simple-report.bat (1.41 KB)
+📄 create_all_missing_drivers.py (8.61 KB)
+📄 create_base_images.py (1.55 KB)
+📄 create_missing_assets.py (2.66 KB)
+📄 create_png_images.ps1 (1.57 KB)
+📄 cursor_prompt.md (1.38 KB)
+📁 data/
+  📄 cluster-map.json (0.39 KB)
+  📄 external-sources.json (0.40 KB)
+  📄 known-bugs.json (0.26 KB)
+  📄 tuya-inference-db.json (0.74 KB)
+  📄 tuya-models.json (0.93 KB)
+  📄 zigbee-clusters.json (0.39 KB)
+📄 debug-app-json.js (2.67 KB)
+📄 dependency-report.json (0.37 KB)
+📁 deployment/
+  📄 deployment_report.json (0.30 KB)
+📄 device-matrix.md (2.45 KB)
+📄 diagnose.cmd (2.04 KB)
+📄 diagnostic-simple.bat (1.97 KB)
+📄 diagnostic.bat (0.93 KB)
+📄 diagnostic.js (2.58 KB)
+📄 diagnostic.ps1 (4.97 KB)
+📄 direct-push.ps1 (2.62 KB)
+📁 dist/
+  📄 ai-analysis-report.json (24.71 KB)
+  📁 dashboard/
+  📄 implementation-report.json (39.79 KB)
+  📁 releases/
+  📄 test-results.json (1.82 KB)
+📁 docs/
+  📄 additional-sources-analysis-report.json (11.87 KB)
+  📁 ai/
+    📁 intelligent-systems/
+    📁 machine-learning/
+    📁 neural-networks/
+    📁 predictive-analytics/
+  📄 all-sources-analysis-report.json (8.12 KB)
+  📁 api/
+    📄 drivers-api.md (2.98 KB)
+  📄 api-reference.md (1.39 KB)
+  📄 API_REFERENCE.md (0.63 KB)
+  📄 architecture.md (0.98 KB)
+  📄 AUTOMATION-GUIDE.md (2.22 KB)
+  📄 AUTOMATISATION_TUYA_LIGHT_RELEASE_FINALE.md (7.45 KB)
+  📄 branch-principles-report.md (8.30 KB)
+  📁 CHANGELOG/
+    📄 CHANGELOG.md (0.38 KB)
+  📄 CHANGELOG.md (0.50 KB)
+  📄 CLI_COMPATIBILITY_FIX.md (5.98 KB)
+  📄 CLI_INSTALLATION_GUIDE.md (2.84 KB)
+  📁 CODE_OF_CONDUCT/
+    📄 CODE_OF_CONDUCT.md (3.22 KB)
+  📄 COMMIT_FINAL_APP_JS.md (5.39 KB)
+  📄 complete-drivers-restoration-report.md (13.08 KB)
+  📄 complete-execution-report.json (7.87 KB)
+  📁 CONTRIBUTING/
+    📄 CONTRIBUTING.md (4.82 KB)
+  📄 CONTRIBUTING.md (4.61 KB)
+  📄 cursor-allow-list.md (8.08 KB)
+  📁 dashboard/
+    📄 drivers-table.md (4.27 KB)
+    📄 index.html (5.94 KB)
+    📄 monitoring.md (0.34 KB)
+    📁 public/
+    📄 script.js (5.81 KB)
+    📄 stats.json (0.17 KB)
+    📄 UPDATE_REPORT.md (1.22 KB)
+  📄 dashboard.html (7.48 KB)
+  📁 data/
+  📁 de/
+    📄 configuration.md (0.77 KB)
+    📄 installation.md (0.57 KB)
+    📄 README.md (0.91 KB)
+    📄 troubleshooting.md (1.18 KB)
+  📄 deployment.md (1.17 KB)
+  📁 developer/
+    📄 SCRIPTS_DOCUMENTATION.md (0.00 KB)
+    📄 SCRIPTS_INDEX.md (0.00 KB)
+  📄 DEVELOPER_GUIDE.md (9.22 KB)
+  📁 devices/
+    📄 switches.md (4.82 KB)
+  📁 drivers/
+    📄 README.md (0.79 KB)
+    📄 tuya-light-bulb.md (0.43 KB)
+    📄 tuya-sensor.md (0.42 KB)
+    📄 tuya-switch.md (0.36 KB)
+    📄 zigbee-light-bulb.md (0.41 KB)
+    📄 zigbee-sensor.md (0.41 KB)
+    📄 zigbee-switch.md (0.37 KB)
+  📄 drivers-matrix-ultimate.md (4.16 KB)
+  📄 drivers-matrix.md (2.72 KB)
+  📄 drivers-reorganization-report.md (7.81 KB)
+  📄 drivers-restoration-report.md (10.66 KB)
+  📄 DRIVERS_ANALYSIS_REPORT.md (4.45 KB)
+  📄 DRIVER_DEVELOPMENT.md (1.46 KB)
+  📄 DRIVER_MATRIX.md (3.23 KB)
+  📁 en/
+    📄 configuration.md (0.77 KB)
+    📄 development.md (0.16 KB)
+    📄 gpmachado-integration-en.md (1.15 KB)
+    📄 gpmachado-integration-es.md (1.33 KB)
+    📄 gpmachado-integration-fr.md (0.11 KB)
+    📄 gpmachado-integration.md (7.72 KB)
+    📄 index.md (8.17 KB)
+    📄 installation.md (0.57 KB)
+    📄 README.md (0.91 KB)
+    📄 troubleshooting.md (1.18 KB)
+    📄 usage.md (0.17 KB)
+  📁 enhanced/
+    📄 app.js (0.00 KB)
+    📄 AUTOMATISATION_MENSUELLE.md (0.72 KB)
+    📄 BUT_PRINCIPAL.md (0.77 KB)
+    📄 CHANGELOG.md (1.13 KB)
+    📄 charts.js (0.00 KB)
+    📄 CODE_OF_CONDUCT.md (3.03 KB)
+    📄 COMPATIBILITE_SDK3.md (21.49 KB)
+    📄 COMPLETION_FINAL_REPORT_20250725.md (4.85 KB)
+    📄 CONFIRMATION-ORGANISATION-FINALE.md (4.97 KB)
+    📄 CONFLICT-RESOLUTION-REPORT.md (5.96 KB)
+    📄 CONFLITS-PR-RESOLUS.md (3.91 KB)
+    📄 CONTRIBUTING.md (4.62 KB)
+    📄 CORRECTION-COMPLETE-RAPPORT.md (5.58 KB)
+    📄 CURSOR-AUTO-EDIT-STATUS.md (2.47 KB)
+    📄 curtain_module_tutorial.md (1.34 KB)
+    📄 de.md (4.15 KB)
+    📄 DEVICES-TABLE.md (2.60 KB)
+    📄 drivers-table.md (4.27 KB)
+    📄 DRIVER_ANALYSIS_REPORT_20250725.md (41.64 KB)
+    📄 en.md (5.75 KB)
+    📄 es.md (4.18 KB)
+    📄 ETAT_AVANCEMENT_CURSOR.md (2.19 KB)
+    📄 ETAT_FINAL_BRANCHES.md (4.51 KB)
+    📄 ETAT_FINAL_PROJET.md (6.65 KB)
+    📄 FICHIERS-INUTILES-LISTE.txt (23.28 KB)
+    📄 fr.md (6.18 KB)
+    📄 INDEX-RAPPORTS.md (5.58 KB)
+    📄 index.js (0.23 KB)
+    📄 INDEX.md (1.24 KB)
+    📄 INSTALLATION_GUIDE.md (1.56 KB)
+    📄 INTEGRATION_AVANCEE.md (1.30 KB)
+    📄 it.md (4.12 KB)
+    📄 LISTE-CODE-SCRIPTS.txt (52.10 KB)
+    📄 LISTE-DOCS-TXT.txt (5.62 KB)
+    📄 LOCAL.md (8.31 KB)
+    📄 MERGE-REPORT-20250724_060948.md (0.11 KB)
+    📄 MISSION-ACCOMPLIE-FINALE.md (9.13 KB)
+    📄 MODE-YOLO-INTELLIGENT.md (8.76 KB)
+    📄 monitoring.md (0.34 KB)
+    📄 MULTILINGUAL_COMMIT_REPORT_20250725.md (2.44 KB)
+    📄 MULTILINGUAL_COMMIT_REPORT_20250726.md (2.42 KB)
+    📄 multi_sensor_tutorial.md (1.33 KB)
+    📄 NETTOYAGE_BRANCHES.md (3.77 KB)
+    📄 nl.md (2.80 KB)
+    📄 OPTIMISATION_CONTINUE.md (0.88 KB)
+    📄 OPTIMISATION_FINALE.md (5.82 KB)
+    📄 OPTIMISATION_PERFORMANCES.md (1.14 KB)
+    📄 PLAN-IMPLEMENTATION-COMPLETE.md (3.58 KB)
+    📄 PRIORITY_MIGRATION_REPORT_20250725.md (1.02 KB)
+    📄 rain_sensor_tutorial.md (1.32 KB)
+    📄 RAPPORT-AMELIORATION-DRIVERS-INTELLIGENT.md (1.64 KB)
+    📄 RAPPORT-AMELIORATION-DRIVERS.md (9.00 KB)
+    📄 RAPPORT-ANALYSE-PR-ISSUE.md (7.47 KB)
+    📄 RAPPORT-AUTO-EDIT-CURSOR.md (6.70 KB)
+    📄 RAPPORT-COMPATIBILITE-CROSS-PLATFORM.md (7.34 KB)
+    📄 RAPPORT-DRIVERS-PROBLEMES.md (1.34 KB)
+    📄 RAPPORT-EMERGENCY-REDUCE.md (4.09 KB)
+    📄 RAPPORT-ETAT-AVANCEMENT.md (7.69 KB)
+    📄 RAPPORT-FINAL-COMPLET-2025.md (9.87 KB)
+    📄 RAPPORT-FINAL-COMPLET.md (9.00 KB)
+    📄 RAPPORT-FINAL-IMPLEMENTATION-COMPLETE.md (7.68 KB)
+    📄 RAPPORT-FINAL-VALIDATION.md (1.16 KB)
+    📄 RAPPORT-FIX-GIT-CURSOR.md (5.69 KB)
+    📄 RAPPORT-FUSION-INTELLIGENTE-20250724_101010.md (1.50 KB)
+    📄 RAPPORT-FUSION-INTELLIGENTE-FINAL.md (3.81 KB)
+    📄 RAPPORT-NETTOYAGE-20250724_063037.md (0.90 KB)
+    📄 RAPPORT-OPTIMISATION-FINALE.md (7.96 KB)
+    📄 RAPPORT-ORGANISATION-FINALE.md (4.53 KB)
+    📄 RAPPORT-PUSH-INTELLIGENT-20250724_053518.md (1.17 KB)
+    📄 RAPPORT-RECUPERATION-DRIVERS.md (6.75 KB)
+    📄 RAPPORT-SYNTHESE-FINALE-2025.md (10.90 KB)
+    📄 RAPPORT-TEST-WORKFLOWS.md (5.75 KB)
+    📄 RAPPORT-VERIFICATION-DRIVERS.md (8.64 KB)
+    📄 RAPPORT_CORRECTION_GITHUB_PAGES.md (4.53 KB)
+    📄 RAPPORT_FINAL_COMPLET.md (7.17 KB)
+    📄 RAPPORT_FINAL_COMPLETION.md (6.63 KB)
+    📄 RAPPORT_FINAL_CURSOR.md (7.93 KB)
+    📄 RAPPORT_FINAL_ENRICHISSEMENT.md (2.31 KB)
+    📄 RAPPORT_FINAL_EXECUTION.md (6.26 KB)
+    📄 RAPPORT_FINAL_ZIGBEE_ENRICHMENT.md (8.16 KB)
+    📄 RAPPORT_REORGANISATION_COMPLETE.md (5.31 KB)
+    📄 README-AUTO-DOC.md (1.47 KB)
+    📄 README-UPDATE-REPORT.md (0.70 KB)
+    📄 README.md (0.38 KB)
+    📄 REALISATION_DRIVERS.md (1.87 KB)
+    📄 RELAUNCH-SIMPLE-20250724_064615.md (3.02 KB)
+    📄 RELAUNCH-SIMPLE-FIXED-20250724_070629.md (0.41 KB)
+    📄 REMAINING_DRIVERS_ANALYSIS_20250725.md (19.83 KB)
+    📄 remote_control_tutorial.md (1.34 KB)
+    📄 REPO-OPTIMIZATION-REPORT.md (6.57 KB)
+    📄 RESUME-TACHES-REPRISES.md (4.39 KB)
+    📄 RESUME_FINAL_20250725.md (3.92 KB)
+    📄 RESUME_FINAL_CURSOR.md (4.69 KB)
+    📄 script.js (5.81 KB)
+    📄 SDK3_FIX_ENRICH_REPORT_20250725_015116.md (69.05 KB)
+    📄 SDK3_FIX_ENRICH_REPORT_20250725_015347.md (47.69 KB)
+    📄 SDK3_FIX_ENRICH_REPORT_20250725_020206.md (43.07 KB)
+    📄 SDK3_MIGRATION_REPORT_20250725.md (2.97 KB)
+    📄 smart_plug_tutorial.md (1.32 KB)
+    📄 stats.json (0.17 KB)
+    📄 STATUS-ACTIONS-COURS.md (4.85 KB)
+    📄 STATUS_COMMUNAUTAIRE.md (7.25 KB)
+    📄 SYNTHESE-FINALE-COMPLETE.md (8.22 KB)
+    📄 SYNTHESE-FINALE.md (1.24 KB)
+    📄 SYNTHESE_FINALE_OPTIMISATION.md (4.89 KB)
+    📄 ta.md (6.24 KB)
+    📄 TASK_TRACKER_REPORT_20250725.md (3.08 KB)
+    📄 TIMEOUTS-IMPLEMENTATION-RAPPORT.md (6.32 KB)
+    📄 TODO_COMPLETE_FIX.md (2.00 KB)
+    📄 TODO_CURSOR_COMPLET.md (2.00 KB)
+    📄 TODO_CURSOR_INCREMENTAL.md (2.00 KB)
+    📄 TODO_CURSOR_NATIVE.md (2.78 KB)
+    📄 TODO_ENRICHISSEMENT_COMPLET.md (5.50 KB)
+    📄 TODO_PROJET.md (2.00 KB)
+    📄 TODO_REPRISE_49H.md (5.44 KB)
+    📄 TROUBLESHOOTING.md (1.63 KB)
+    📄 tuya-manual.md (8.49 KB)
+    📄 tuya-zigbee-features-list.md (15.82 KB)
+    📄 tuya-zigbee-features-realistic.md (9.96 KB)
+    📄 tuya-zigbee-guide.md (5.30 KB)
+    📄 ULTRA_SIMPLE_CHECK_REPORT_20250725.md (0.13 KB)
+    📄 UPDATE_REPORT.md (1.22 KB)
+    📄 VALIDATION-FINALE-COMPLETE.md (9.98 KB)
+    📄 validation-report-20250726-115710.md (7.89 KB)
+    📄 VALIDATION_DRIVERS.md (1.56 KB)
+    📄 VEILLE_COMMUNAUTAIRE.md (0.90 KB)
+    📄 VERIFICATION-FINALE-20250724_053728.md (1.25 KB)
+    📄 VERIFICATION-FINALE-20250724_084054.md (1.36 KB)
+    📄 VERIFICATION-FINALE-20250724_084151.md (1.37 KB)
+    📄 VERIFICATION-FINALE-20250724_084357.md (1.37 KB)
+    📄 VERIFICATION-FINALE-20250724_090733.md (1.27 KB)
+    📄 VERIFICATION-FINALE-20250724_091702.md (1.31 KB)
+    📄 VERIFICATION-FINALE-20250724_091755.md (1.32 KB)
+    📄 VERIFICATION-FINALE-20250724_092107.md (1.32 KB)
+    📄 VERIFICATION-FINALE-COMPLETE-20250724_054614.md (1.26 KB)
+    📄 WEEKLY_REPORT_20250725.md (0.58 KB)
+    📄 workflow-enhancement-plan.md (32.49 KB)
+    📄 workflow-test-20250726-164442.md (0.81 KB)
+    📄 WORKFLOW_ANALYSIS_REPORT_20250725.md (14.57 KB)
+    📄 WORKFLOW_TEST_REPORT_20250725.md (11.93 KB)
+  📁 es/
+    📄 configuration.md (0.77 KB)
+    📄 installation.md (0.57 KB)
+    📄 README.md (0.91 KB)
+    📄 troubleshooting.md (1.18 KB)
+  📁 examples/
+    📄 tuya-light-bulb-example.js (1.66 KB)
+    📄 zigbee-sensor-example.js (2.24 KB)
+  📁 external/
+    📄 cursor_global_policy (2).md (2.58 KB)
+    📄 cursor_global_policy.md (0.12 KB)
+    📄 cursor_prompt_auto.md (0.27 KB)
+    📄 cursor_prompt_tuya_main.txt (2.84 KB)
+    📄 cursor_prompt_tuya_reorg.txt (5.12 KB)
+    📄 cursor_r_capitulatif_des_t_ches_et_avan.md (173.81 KB)
+    📄 cursor_todo_queue.md (0.67 KB)
+    📄 en comprennant toutes les versions.txt (1.83 KB)
+    📄 instruction_cursor_com_tuya_zigbee.txt (4.65 KB)
+    📄 mdr.txt (5.55 KB)
+    📄 mega promot premier relase .txt (4.74 KB)
+    📄 mega_prompt_cursor_tuya.txt (0.50 KB)
+    📄 new.txt (4.92 KB)
+    📄 readme.md (2.15 KB)
+    📄 README_SYNTHESIZED_MASTER.md (0.73 KB)
+    📄 readme_tuya_zigbee (2).txt (6.27 KB)
+    📄 readme_tuya_zigbee.txt (6.05 KB)
+    📄 tuya_zigbee_cursor_bundle_final.txt (1563.81 KB)
+    📄 tuya_zigbee_cursor_full_bundle (1).txt (5.36 KB)
+    📄 tuya_zigbee_cursor_full_bundle.txt (3.64 KB)
+    📄 ultime.txt (4.90 KB)
+    📄 zigbee ref.txt (8.78 KB)
+    📄 [APP][PRO]Universal TUYA Zigbee Device App - lite version - Apps - Homey Community Forum.pdf (489.51 KB)
+  📄 FILE_ORGANIZATION_REPORT.md (1.23 KB)
+  📄 final-project-report.md (7.56 KB)
+  📄 FINAL_IMPLEMENTATION.md (1.94 KB)
+  📄 FINAL_REORGANIZATION_REPORT.md (1.45 KB)
+  📁 fold-integration/
+    📄 integration-report-2025-07-27_10-07-08.md (0.63 KB)
+    📄 integration-report-2025-07-27_12-01-41.md (0.61 KB)
+    📄 readme-fold-template.md (2.15 KB)
+  📁 fr/
+    📄 configuration.md (1.00 KB)
+    📄 development.md (0.16 KB)
+    📄 index.md (8.91 KB)
+    📄 installation.md (0.69 KB)
+    📄 README.md (1.09 KB)
+    📄 troubleshooting.md (1.49 KB)
+    📄 usage.md (0.18 KB)
+  📄 GETTING_STARTED.md (0.79 KB)
+  📄 GITHUB_ACTIONS_INTEGRATION.md (1.72 KB)
+  📄 GITHUB_ISSUES_INTEGRATION.md (0.99 KB)
+  📁 guides/
+    📁 api/
+    📁 development/
+    📁 troubleshooting/
+    📄 user-guide.md (2.52 KB)
+  📄 HOMEY_COMMUNITY_FIXES.md (6.08 KB)
+  📁 i18n/
+    📄 README_EN.md (0.19 KB)
+    📄 README_ES.md (2.28 KB)
+    📄 README_FR.md (0.66 KB)
+  📄 index.html (8.16 KB)
+  📄 index.js (0.23 KB)
+  📁 installation/
+    📄 installation-guide-en.md (0.62 KB)
+    📄 installation-guide-fr.md (0.62 KB)
+    📄 installation-guide-nl.md (0.62 KB)
+    📄 installation-guide-ta.md (0.82 KB)
+  📁 it/
+    📄 README.md (0.38 KB)
+  📄 johan-validation-report.json (5.02 KB)
+  📄 local-mode-guide.md (6.36 KB)
+  📁 locales/
+    📄 changelog_de.md (32.97 KB)
+    📄 changelog_en.md (32.97 KB)
+    📄 changelog_es.md (32.97 KB)
+    📄 changelog_fr.md (32.97 KB)
+    📄 changelog_it.md (32.97 KB)
+    📄 changelog_nl.md (32.97 KB)
+    📄 changelog_ta.md (32.97 KB)
+    📄 de.md (32.97 KB)
+    📁 en/
+    📄 en.md (32.97 KB)
+    📄 es.md (32.97 KB)
+    📄 fr.md (32.97 KB)
+    📄 it.md (32.97 KB)
+    📄 nl.md (32.97 KB)
+    📄 ta.md (32.97 KB)
+  📁 matrix/
+    📄 driver-matrix.md (12.32 KB)
+  📄 MEGA_PIPELINE_FINAL_REPORT.md (1.19 KB)
+  📄 MEGA_PIPELINE_REPORT.md (2.03 KB)
+  📄 MEGA_PROMPT_GUIDE.md (3.77 KB)
+  📄 MEGA_RECAP_24H.md (5.37 KB)
+  📄 MISSING_FUNCTIONS_IMPLEMENTED.md (1.52 KB)
+  📄 modules-test-report.json (0.12 KB)
+  📄 MULTI_SENSOR_GUIDE.md (5.73 KB)
+  📁 nl/
+    📄 configuration.md (0.77 KB)
+    📄 development.md (0.16 KB)
+    📄 index.md (8.40 KB)
+    📄 installation.md (0.57 KB)
+    📄 README.md (0.91 KB)
+    📄 troubleshooting.md (1.18 KB)
+    📄 usage.md (0.17 KB)
+  📄 OFFLINE_RELIABILITY.md (1.14 KB)
+  📄 PETER_CLI_INSTALLATION_FIX.md (2.31 KB)
+  📄 PHASE_0_PREPARATION.md (6.30 KB)
+  📄 PHASE_1_SOCLE.md (26.04 KB)
+  📄 pipeline_instructions_extend_appjs.txt (16.56 KB)
+  📁 pl/
+    📄 README.md (0.38 KB)
+  📄 project-policies.md (6.92 KB)
+  📄 prompts-72h-analysis.json (6.02 KB)
+  📄 prompts-72h-analysis.md (6.23 KB)
+  📁 pt/
+    📄 README.md (0.39 KB)
+  📄 RAPPORT_ADAPTATION_COMPLETE.md (9.68 KB)
+  📄 RAPPORT_FINALISATION_APP_JS.md (7.73 KB)
+  📄 RAPPORT_FINAL_ANALYSE_ULTIME.md (11.02 KB)
+  📄 RAPPORT_FINAL_APP_JS_ET_FICHIERS_COMPLETS.md (10.91 KB)
+  📄 RAPPORT_FINAL_COMPLET.md (9.65 KB)
+  📄 RAPPORT_FINAL_COMPLET_PROJET.md (8.18 KB)
+  📄 RAPPORT_FINAL_DRIVERS_ZIGBEE_COMPLETS.md (14.18 KB)
+  📄 RAPPORT_FINAL_ETAT_PROJET.md (3.53 KB)
+  📄 RAPPORT_FINAL_FUSION_TUYA_LIGHT.md (22.04 KB)
+  📄 RAPPORT_FINAL_RECUPERATION_COMPLETE.md (14.18 KB)
+  📄 RAPPORT_FINAL_TUYA_LIGHT_ET_RELEASE.md (22.62 KB)
+  📄 RAPPORT_GENERATION_APP_JS.md (1.61 KB)
+  📄 RAPPORT_GENERATION_APP_JS_COMPLET.md (2.79 KB)
+  📄 RAPPORT_GENERATION_DRIVERS_ZIGBEE_MANQUANTS.md (2.88 KB)
+  📄 RAPPORT_IMPLEMENTATION_FONCTIONS_MANQUANTES.md (2.03 KB)
+  📄 RAPPORT_OPTIMISATION_FINALE.md (7.56 KB)
+  📄 RAPPORT_README_COMPLET.md (11.12 KB)
+  📄 RAPPORT_RECUPERATION_COMPLETE.md (10.87 KB)
+  📄 RAPPORT_SCRAPING_ULTIME_COMPLET.md (10.15 KB)
+  📄 RAPPORT_SUPPRESSION_TUYA_LIGHT.md (5.68 KB)
+  📄 RAPPORT_TUYA_LIGHT_RELEASE.md (3.42 KB)
+  📁 README/
+    📄 README.md (7.77 KB)
+  📄 README.en.md (0.46 KB)
+  📄 README.fr.md (0.52 KB)
+  📄 README.md (2.23 KB)
+  📄 README.nl.md (0.50 KB)
+  📄 README.ta.md (0.89 KB)
+  📄 README_DEVELOPMENT.md (1.18 KB)
+  📄 README_megaproject_full_multilang.md (15.09 KB)
+  📄 README_megaproject_full_multilang.txt (15.21 KB)
+  📄 README_MEGA_PIPELINE.md (11.17 KB)
+  📄 recovery-report.json (4.43 KB)
+  📄 REFACTORING_REPORT.md (6.75 KB)
+  📁 reference/
+    📄 cursor_prompt_tuya_main.txt (2.84 KB)
+    📄 en comprennant toutes les versions.txt (1.83 KB)
+    📄 mega promot premier relase .txt (4.74 KB)
+    📄 tuya_zigbee_cursor_bundle_final.txt (1563.81 KB)
+    📄 tuya_zigbee_cursor_full_bundle (1).txt (5.36 KB)
+    📄 tuya_zigbee_cursor_full_bundle.txt (3.64 KB)
+    📄 zigbee ref.txt (8.78 KB)
+  📁 referentials/
+    📁 zigbee-clusters/
+  📄 RELEASE_FINALE_3.1.0.md (8.66 KB)
+  📄 RELEASE_FINALE_3.1.0_COMPLETE.md (9.76 KB)
+  📄 RELEASE_NOTES.md (5.47 KB)
+  📄 REORGANIZATION_REPORT.md (1.17 KB)
+  📁 reports/
+    📁 analysis/
+    📄 driver-recovery-report-20250729-121303.json (1.14 KB)
+    📄 driver-recovery-report-20250729-121326.json (1.14 KB)
+    📁 final/
+    📄 MULTILINGUAL_COMMIT_REPORT_20250726.md (2.42 KB)
+    📄 reorganization-report.md (3.31 KB)
+    📄 sdk3-migration-report-20250729-123005.json (1.03 KB)
+    📄 sdk3-migration-report-20250729-123336.json (1.03 KB)
+    📄 sdk3-migration-report-20250729-123346.json (1.03 KB)
+    📄 tuya-driver-creation-report-20250729-121633.json (0.57 KB)
+    📄 workflow-test-20250726-164442.md (0.81 KB)
+  📄 REQUESTED_DEVICES.md (1.08 KB)
+  📄 RESUME_FINAL_RELEASE_3.1.0.md (5.30 KB)
+  📁 roadmaps/
+    📁 future/
+  📁 ru/
+    📄 README.md (0.38 KB)
+  📄 SDK3_OPTIMIZATION_GUIDE.md (5.30 KB)
+  📄 separation-tuya-zigbee-report.md (6.67 KB)
+  📄 sources.md (20.53 KB)
+  📁 specs/
+    📄 AUTHOR.md (0.31 KB)
+    📄 BUT_PRINCIPAL.md (0.77 KB)
+    📄 CHANGELOG.md (1.69 KB)
+    📄 CODE_OF_CONDUCT.md (0.02 KB)
+    📄 CONTRIBUTING.md (4.82 KB)
+    📄 CREDITS.md (2.34 KB)
+    📄 INDEX.md (1.24 KB)
+    📄 LICENSE.md (1.03 KB)
+    📄 linux-support.md (0.00 KB)
+    📄 MEGA_PROMPT_CONSOLIDE.md (1.35 KB)
+    📄 MEGA_PROMPT_CURSOR.md (0.50 KB)
+    📄 PROJECT_STRUCTURE.md (4.21 KB)
+    📄 README.md (0.44 KB)
+    📄 RELEASE_NOTES_v1.0.0.md (0.54 KB)
+    📄 SOCIAL.md (0.61 KB)
+    📄 STATUS_FINAL.md (1.76 KB)
+    📄 STRUCTURE_CONFIG.md (1.54 KB)
+    📄 tuya-zigbee-features-list.md (15.82 KB)
+    📄 tuya-zigbee-features-realistic.md (9.96 KB)
+    📄 tuya-zigbee-guide.md (5.30 KB)
+    📄 VERSIONING.md (2.58 KB)
+    📄 workflow-enhancement-plan.md (32.49 KB)
+    📄 zigbee-clusters.md (3.76 KB)
+  📄 structure.md (2.96 KB)
+  📄 subjects.md (1.38 KB)
+  📄 SUCCES_FINAL_RELEASE_3.1.1.md (6.63 KB)
+  📄 SYNTHESE_FINALE_MISSION_ACCOMPLIE.md (8.18 KB)
+  📁 ta/
+    📄 configuration.md (2.21 KB)
+    📄 development.md (0.24 KB)
+    📄 index.md (18.22 KB)
+    📄 installation.md (1.57 KB)
+    📄 README.md (2.16 KB)
+    📄 troubleshooting.md (3.41 KB)
+    📄 usage.md (0.34 KB)
+  📄 tasks-72h-complete-analysis.md (6.96 KB)
+  📁 todo/
+    📁 current/
+    📄 TODO_COMPLETE_FIX.md (2.00 KB)
+    📄 TODO_CURSOR_COMPLET.md (2.00 KB)
+    📄 TODO_CURSOR_INCREMENTAL.md (2.00 KB)
+    📄 TODO_CURSOR_NATIVE.md (2.78 KB)
+    📄 TODO_PROJET.md (2.00 KB)
+  📁 tools/
+    📄 tools-documentation.json (3.52 KB)
+    📄 tools-documentation.md (3.80 KB)
+    📄 verify-drivers.md (5.35 KB)
+  📄 translation-rules.md (13.79 KB)
+  📁 tutorials/
+    📄 curtain_module_tutorial.md (1.34 KB)
+    📄 INSTALLATION_GUIDE.md (1.56 KB)
+    📄 multi_sensor_tutorial.md (1.33 KB)
+    📄 rain_sensor_tutorial.md (1.32 KB)
+    📄 remote_control_tutorial.md (1.34 KB)
+    📄 smart_plug_tutorial.md (1.32 KB)
+    📄 TROUBLESHOOTING.md (1.63 KB)
+  📄 tuya-drivers-recovery-report.md (11.50 KB)
+  📄 tuya-zigbee-rules.md (4.08 KB)
+  📁 validation-reports/
+    📄 validation-report-20250726-115710.md (7.89 KB)
+  📄 versioning-rules.md (4.92 KB)
+  📄 zigbee2mqtt-migration-plan.md (5.90 KB)
+  📄 _config.yml (2.12 KB)
+📄 driver-analysis-report.txt (4.68 KB)
+📄 driver-analysis.json (22.41 KB)
+📄 driver-enrichment-report.json (6.61 KB)
+📄 driver-status-report.md (9.89 KB)
+📄 driver-validation-report.json (9.45 KB)
+📁 drivers/
+  📁 base/
+    📁 assets/
+    📄 device.js (5.51 KB)
+    📄 driver.compose.json (0.52 KB)
+    📄 driver.compose.json.backup (1.93 KB)
+    📄 driver.js (3.18 KB)
+  📁 climate/
+    📁 assets/
+    📄 driver.compose.json (0.51 KB)
+    📄 driver.compose.json.backup (0.73 KB)
+  📁 climates-TS0601_ac/
+    📁 assets/
+    📄 device.js (1.42 KB)
+    📄 driver.compose.json (0.57 KB)
+    📄 driver.compose.json.backup (1.14 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 cover/
+    📁 assets/
+    📄 driver.compose.json (0.50 KB)
+    📄 driver.compose.json.backup (0.72 KB)
+  📁 covers-TS0602_cover/
+    📁 assets/
+    📄 driver.compose.json (0.57 KB)
+    📄 driver.compose.json.backup (1.01 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📄 drivers-config.json (2.89 KB)
+  📁 fan/
+    📁 assets/
+    📄 driver.compose.json (0.49 KB)
+    📄 driver.compose.json.backup (0.73 KB)
+  📁 fan-tuya-universal/
+    📁 assets/
+    📄 device.js (4.53 KB)
+    📄 driver.compose.json (0.57 KB)
+    📄 driver.compose.json.backup (1.61 KB)
+    📁 flow/
+    📄 large.png (256.07 KB)
+    📄 README.md (0.58 KB)
+    📄 small.png (16.07 KB)
+  📁 fans-TS0601_fan/
+    📁 assets/
+    📄 driver.compose.json (0.55 KB)
+    📄 driver.compose.json.backup (0.97 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 fans-TS0602_fan/
+    📁 assets/
+    📄 driver.compose.json (0.55 KB)
+    📄 driver.compose.json.backup (0.92 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 generic/
+    📁 assets/
+    📁 cover/
+    📄 device.js (0.48 KB)
+    📄 driver.compose.json (0.53 KB)
+    📄 driver.compose.json.backup (1.06 KB)
+    📄 driver.js (0.27 KB)
+    📁 light/
+    📁 sensor/
+    📁 switch/
+  📁 light/
+    📁 assets/
+    📄 driver.compose.json (0.50 KB)
+    📄 driver.compose.json.backup (0.83 KB)
+  📁 lights-TS0501B/
+    📁 assets/
+    📄 device.js (1.41 KB)
+    📄 driver.compose.json (0.54 KB)
+    📄 driver.compose.json.backup (1.07 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 lights-TS0601_dimmer/
+    📁 assets/
+    📄 driver.compose.json (0.57 KB)
+    📄 driver.compose.json.backup (0.96 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 lights-TS0601_rgb/
+    📁 assets/
+    📄 driver.compose.json (0.56 KB)
+    📄 driver.compose.json.backup (0.94 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 lights-TS0601_switch/
+    📁 assets/
+    📄 driver.compose.json (0.57 KB)
+    📄 driver.compose.json.backup (0.96 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 lock/
+    📁 assets/
+    📄 driver.compose.json (0.49 KB)
+    📄 driver.compose.json.backup (0.69 KB)
+  📁 lock-tuya-universal/
+    📁 assets/
+    📄 device.js (4.04 KB)
+    📄 driver.compose.json (0.56 KB)
+    📄 driver.compose.json.backup (1.55 KB)
+    📁 flow/
+    📄 large.png (256.07 KB)
+    📄 README.md (0.58 KB)
+    📄 small.png (16.07 KB)
+  📁 locks-TS0601_lock/
+    📁 assets/
+    📄 driver.compose.json (0.55 KB)
+    📄 driver.compose.json.backup (0.96 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 plug/
+    📁 assets/
+    📄 driver.compose.json (0.51 KB)
+    📄 driver.compose.json.backup (0.92 KB)
+  📁 plugs-TS011F/
+    📁 assets/
+    📄 device.js (1.42 KB)
+    📄 driver.compose.json (0.54 KB)
+    📄 driver.compose.json.backup (0.96 KB)
+    📄 driver.js (1.26 KB)
+    📄 large.png (256.07 KB)
+    📄 README.md (0.94 KB)
+    📄 small.png (16.07 KB)
+    📁 test/
+  📁 plugs-TS011G/
+    📁 assets/
+    📄 driver.compose.json (0.54 KB)
+    📄 driver.compose.json.backup (0.90 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 plugs-TS011H/
+    📁 assets/
+    📄 driver.compose.json (0.54 KB)
+    📄 driver.compose.json.backup (0.90 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 plugs-TS011I/
+    📁 assets/
+    📄 driver.compose.json (0.54 KB)
+    📄 driver.compose.json.backup (0.90 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 plugs-TS011J/
+    📁 assets/
+    📄 driver.compose.json (0.54 KB)
+    📄 driver.compose.json.backup (0.90 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 plugs-TS0121/
+    📁 assets/
+    📄 driver.compose.json (0.54 KB)
+    📄 driver.compose.json.backup (0.93 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 plugs-TS0122/
+    📁 assets/
+    📄 driver.compose.json (0.54 KB)
+    📄 driver.compose.json.backup (0.90 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 plugs-TS0123/
+    📁 assets/
+    📄 driver.compose.json (0.54 KB)
+    📄 driver.compose.json.backup (0.90 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 plugs-TS0124/
+    📁 assets/
+    📄 driver.compose.json (0.54 KB)
+    📄 driver.compose.json.backup (0.90 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 plugs-TS0125/
+    📁 assets/
+    📄 driver.compose.json (0.54 KB)
+    📄 driver.compose.json.backup (0.90 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 remotes-TS0601_remote/
+    📁 assets/
+    📄 device.js (1.43 KB)
+    📄 driver.compose.json (0.57 KB)
+    📄 driver.compose.json.backup (1.03 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 sensor/
+    📁 assets/
+    📄 driver.compose.json (0.51 KB)
+    📄 driver.compose.json.backup (0.91 KB)
+  📁 sensors-TS0201/
+    📁 assets/
+    📄 driver.compose.json (0.55 KB)
+    📄 driver.compose.json.backup (1.00 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 sensors-TS0601_contact/
+    📁 assets/
+    📄 driver.compose.json (0.59 KB)
+    📄 driver.compose.json.backup (0.97 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 sensors-TS0601_gas/
+    📁 assets/
+    📄 driver.compose.json (0.57 KB)
+    📄 driver.compose.json.backup (0.95 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 sensors-TS0601_motion/
+    📁 assets/
+    📄 device.js (11.05 KB)
+    📄 driver.compose.json (4.96 KB)
+    📄 driver.compose.json.backup (0.97 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 sensors-TS0601_sensor/
+    📁 assets/
+    📄 driver.compose.json (0.58 KB)
+    📄 driver.compose.json.backup (0.97 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 sensors-TS0601_smoke/
+    📁 assets/
+    📄 device.js (1.43 KB)
+    📄 driver.compose.json (0.58 KB)
+    📄 driver.compose.json.backup (1.04 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 sensors-TS0601_vibration/
+    📁 assets/
+    📄 device.js (1.44 KB)
+    📄 driver.compose.json (0.60 KB)
+    📄 driver.compose.json.backup (1.06 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 sensors-TS0601_water/
+    📁 assets/
+    📄 device.js (1.43 KB)
+    📄 driver.compose.json (0.58 KB)
+    📄 driver.compose.json.backup (1.04 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 switch/
+    📁 assets/
+    📄 device.js (0.87 KB)
+    📄 driver.compose.json (0.50 KB)
+    📄 driver.compose.json.backup (0.77 KB)
+    📁 flow/
+    📄 large.png (256.07 KB)
+    📄 README.md (0.48 KB)
+    📄 small.png (16.07 KB)
+  📁 switches-TS0001/
+    📁 assets/
+    📄 driver.compose.json (0.54 KB)
+    📄 driver.compose.json.backup (0.89 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 switches-TS0002/
+    📁 assets/
+    📄 driver.compose.json (0.54 KB)
+    📄 driver.compose.json.backup (0.89 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 switches-TS0003/
+    📁 assets/
+    📄 driver.compose.json (0.54 KB)
+    📄 driver.compose.json.backup (0.89 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 switches-TS0004/
+    📁 assets/
+    📄 driver.compose.json (0.54 KB)
+    📄 driver.compose.json.backup (0.89 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 switches-TS0005/
+    📁 assets/
+    📄 driver.compose.json (0.54 KB)
+    📄 driver.compose.json.backup (0.89 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 switches-TS0006/
+    📁 assets/
+    📄 driver.compose.json (0.54 KB)
+    📄 driver.compose.json.backup (0.89 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 switches-TS0007/
+    📁 assets/
+    📄 driver.compose.json (0.54 KB)
+    📄 driver.compose.json.backup (0.89 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 switches-TS0008/
+    📁 assets/
+    📄 driver.compose.json (0.54 KB)
+    📄 driver.compose.json.backup (0.89 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 thermostats-TS0601_thermostat/
+    📁 assets/
+    📄 driver.compose.json (0.61 KB)
+    📄 driver.compose.json.backup (1.07 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 thermostats-TS0603_thermostat/
+    📁 assets/
+    📄 driver.compose.json (0.61 KB)
+    📄 driver.compose.json.backup (1.02 KB)
+    📄 large.png (256.07 KB)
+    📄 small.png (16.07 KB)
+  📁 tuya/
+    📁 assets/
+    📄 driver.compose.json (0.20 KB)
+    📁 MS01/
+  📁 tuya-climate-universal/
+    📁 assets/
+    📄 device.js (3.80 KB)
+    📄 driver.compose.json (0.59 KB)
+    📄 driver.compose.json.backup (1.74 KB)
+    📁 flow/
+    📄 large.png (256.07 KB)
+    📄 README.md (0.53 KB)
+    📄 small.png (16.07 KB)
+  📁 tuya-cover-universal/
+    📁 assets/
+    📄 device.js (3.44 KB)
+    📄 driver.compose.json (0.58 KB)
+    📄 driver.compose.json.backup (1.69 KB)
+    📁 flow/
+    📄 large.png (256.07 KB)
+    📄 README.md (0.50 KB)
+    📄 small.png (16.07 KB)
+  📁 tuya-light-universal/
+    📁 assets/
+    📄 device.js (3.58 KB)
+    📄 driver.compose.json (0.57 KB)
+    📄 driver.compose.json.backup (1.72 KB)
+    📁 flow/
+    📄 large.png (256.07 KB)
+    📄 README.md (0.51 KB)
+    📄 small.png (16.07 KB)
+  📁 tuya-plug-universal/
+    📁 assets/
+    📄 device.js (3.96 KB)
+    📄 driver.compose.json (0.58 KB)
+    📄 driver.compose.json.backup (1.77 KB)
+    📁 flow/
+    📄 large.png (256.07 KB)
+    📄 README.md (0.52 KB)
+    📄 small.png (16.07 KB)
+  📁 tuya-remote-universal/
+    📁 assets/
+    📄 device.js (2.99 KB)
+    📄 driver.compose.json (0.57 KB)
+    📄 driver.compose.json.backup (1.48 KB)
+    📁 flow/
+    📄 large.png (256.07 KB)
+    📄 README.md (0.47 KB)
+    📄 small.png (16.07 KB)
+  📁 tuya-sensor-universal/
+    📁 assets/
+    📄 device.js (3.80 KB)
+    📄 driver.compose.json (0.58 KB)
+    📄 driver.compose.json.backup (1.78 KB)
+    📁 flow/
+    📄 large.png (256.07 KB)
+    📄 README.md (0.53 KB)
+    📄 small.png (16.07 KB)
+  📁 tuya-ts0011/
+    📁 assets/
+    📄 device.js (0.46 KB)
+    📄 driver.compose.json (1.04 KB)
+    📄 driver.js (1.05 KB)
+  📁 tuya-ts011f/
+    📁 assets/
+    📄 device.js (2.86 KB)
+    📄 driver.compose.json (3.01 KB)
+    📄 driver.js (0.98 KB)
+  📁 tuya_zigbee/
+    📁 ac/
+    📁 assets/
+    📁 cover/
+    📄 device.js (0.49 KB)
+    📄 driver.compose.json (0.55 KB)
+    📄 driver.compose.json.backup (0.96 KB)
+    📄 driver.js (0.28 KB)
+    📁 fan/
+    📁 heater/
+    📁 light/
+    📁 lock/
+    📁 other/
+    📁 plug/
+    📁 sensor-contact/
+    📁 sensor-gas/
+    📁 sensor-humidity/
+    📁 sensor-motion/
+    📁 sensor-smoke/
+    📁 sensor-temp/
+    📁 sensor-vibration/
+    📁 sensor-water/
+    📁 siren/
+    📁 switch/
+    📁 thermostat/
+  📁 tuya_zigbee_switch/
+    📁 assets/
+    📄 device.js (2.09 KB)
+    📄 driver.compose.json (2.55 KB)
+  📁 zigbee-tuya-universal/
+    📁 assets/
+    📄 device.js (4.30 KB)
+    📄 driver.compose.json (0.57 KB)
+    📄 driver.compose.json.backup (1.72 KB)
+    📁 flow/
+    📄 large.png (256.07 KB)
+    📄 README.md (0.50 KB)
+    📄 small.png (16.07 KB)
+  📁 _common/
+    📁 assets/
+    📁 capabilities/
+    📁 clusters/
+    📄 device.js (0.45 KB)
+    📄 driver.compose.json (0.53 KB)
+    📄 driver.compose.json.backup (1.01 KB)
+    📄 driver.js (2.32 KB)
+    📄 index.js (1.95 KB)
+    📄 README.md (0.86 KB)
+    📄 zigbee-integration.js (9.33 KB)
+📄 drivers-check-report.json (3.83 KB)
+📄 drivers-config.json (0.16 KB)
+📄 drivers-count.json (0.49 KB)
+📄 drivers-index.json (1.37 KB)
+📄 drivers-matrix.json (281.62 KB)
+📄 drivers-report.txt (11.95 KB)
+📄 drivers-structure-index.json (1.26 KB)
+📄 DRIVERS_STATUS_REPORT.md (4.12 KB)
+📄 DRIVER_COVERAGE_ANALYSIS_REPORT.md (7.63 KB)
+📄 DRIVER_ENRICHMENT_REPORT.json (15.38 KB)
+📄 dump.js (5.94 KB)
+📁 dumps/
+📁 enriched/
+  📄 enrichment_report.json (0.27 KB)
+📄 enrichment-engine.js (1.84 KB)
+📄 env-check.js (2.00 KB)
+📄 ersHPDesktoptuya_repair' (1.67 KB)
+📄 eslint.config.js (1.36 KB)
+📁 evidence/
+  📄 project_evidence.json (0.85 KB)
+📁 examples/
+  📁 fused-driver-example/
+    📄 device.js (1.98 KB)
+    📄 driver.compose.json (1.12 KB)
+    📄 README.md (1.59 KB)
+📁 failover-test-results/
+  📄 failover_test_report.json (0.39 KB)
+📄 FAQ.md (0.61 KB)
+📁 final-release/
+  📄 app.js (4.23 KB)
+  📄 app.json (1.75 KB)
+  📄 CHANGELOG.md (0.97 KB)
+  📁 docs/
+    📄 additional-sources-analysis-report.json (11.87 KB)
+    📁 ai/
+    📄 all-sources-analysis-report.json (8.12 KB)
+    📁 api/
+    📄 api-reference.md (1.39 KB)
+    📄 architecture.md (0.98 KB)
+    📄 AUTOMATISATION_TUYA_LIGHT_RELEASE_FINALE.md (7.45 KB)
+    📄 branch-principles-report.md (8.30 KB)
+    📁 CHANGELOG/
+    📄 CHANGELOG.md (0.50 KB)
+    📄 CLI_COMPATIBILITY_FIX.md (5.98 KB)
+    📄 CLI_INSTALLATION_GUIDE.md (2.84 KB)
+    📁 CODE_OF_CONDUCT/
+    📄 COMMIT_FINAL_APP_JS.md (5.39 KB)
+    📄 complete-drivers-restoration-report.md (13.08 KB)
+    📄 complete-execution-report.json (7.87 KB)
+    📁 CONTRIBUTING/
+    📄 cursor-allow-list.md (8.08 KB)
+    📄 dashboard.html (7.48 KB)
+    📁 de/
+    📄 deployment.md (1.17 KB)
+    📁 developer/
+    📁 devices/
+    📁 drivers/
+    📄 drivers-matrix-ultimate.md (4.16 KB)
+    📄 drivers-matrix.md (2.72 KB)
+    📄 drivers-reorganization-report.md (7.81 KB)
+    📄 drivers-restoration-report.md (10.66 KB)
+    📄 DRIVERS_ANALYSIS_REPORT.md (4.45 KB)
+    📄 DRIVER_MATRIX.md (3.23 KB)
+    📁 en/
+    📁 enhanced/
+    📁 es/
+    📁 examples/
+    📁 external/
+    📄 FILE_ORGANIZATION_REPORT.md (1.23 KB)
+    📄 final-project-report.md (7.56 KB)
+    📄 FINAL_IMPLEMENTATION.md (1.94 KB)
+    📄 FINAL_REORGANIZATION_REPORT.md (1.45 KB)
+    📁 fold-integration/
+    📁 fr/
+    📄 GITHUB_ACTIONS_INTEGRATION.md (1.72 KB)
+    📄 GITHUB_ISSUES_INTEGRATION.md (0.99 KB)
+    📁 guides/
+    📄 HOMEY_COMMUNITY_FIXES.md (6.08 KB)
+    📁 i18n/
+    📄 index.html (8.16 KB)
+    📄 index.js (0.23 KB)
+    📁 installation/
+    📁 it/
+    📄 johan-validation-report.json (5.02 KB)
+    📄 local-mode-guide.md (6.36 KB)
+    📁 matrix/
+    📄 MEGA_PIPELINE_FINAL_REPORT.md (1.19 KB)
+    📄 MEGA_PIPELINE_REPORT.md (2.03 KB)
+    📄 MEGA_RECAP_24H.md (5.37 KB)
+    📄 MISSING_FUNCTIONS_IMPLEMENTED.md (1.52 KB)
+    📄 modules-test-report.json (0.12 KB)
+    📁 nl/
+    📄 PETER_CLI_INSTALLATION_FIX.md (2.31 KB)
+    📄 pipeline_instructions_extend_appjs.txt (16.56 KB)
+    📁 pl/
+    📄 project-policies.md (6.92 KB)
+    📄 prompts-72h-analysis.json (6.02 KB)
+    📄 prompts-72h-analysis.md (6.23 KB)
+    📁 pt/
+    📄 RAPPORT_ADAPTATION_COMPLETE.md (9.68 KB)
+    📄 RAPPORT_FINALISATION_APP_JS.md (7.73 KB)
+    📄 RAPPORT_FINAL_ANALYSE_ULTIME.md (11.02 KB)
+    📄 RAPPORT_FINAL_APP_JS_ET_FICHIERS_COMPLETS.md (10.91 KB)
+    📄 RAPPORT_FINAL_COMPLET.md (9.65 KB)
+    📄 RAPPORT_FINAL_COMPLET_PROJET.md (8.18 KB)
+    📄 RAPPORT_FINAL_DRIVERS_ZIGBEE_COMPLETS.md (14.18 KB)
+    📄 RAPPORT_FINAL_ETAT_PROJET.md (3.53 KB)
+    📄 RAPPORT_FINAL_FUSION_TUYA_LIGHT.md (22.04 KB)
+    📄 RAPPORT_FINAL_RECUPERATION_COMPLETE.md (14.18 KB)
+    📄 RAPPORT_FINAL_TUYA_LIGHT_ET_RELEASE.md (22.62 KB)
+    📄 RAPPORT_GENERATION_APP_JS.md (1.61 KB)
+    📄 RAPPORT_GENERATION_APP_JS_COMPLET.md (2.79 KB)
+    📄 RAPPORT_GENERATION_DRIVERS_ZIGBEE_MANQUANTS.md (2.88 KB)
+    📄 RAPPORT_IMPLEMENTATION_FONCTIONS_MANQUANTES.md (2.03 KB)
+    📄 RAPPORT_OPTIMISATION_FINALE.md (7.56 KB)
+    📄 RAPPORT_README_COMPLET.md (11.12 KB)
+    📄 RAPPORT_RECUPERATION_COMPLETE.md (10.87 KB)
+    📄 RAPPORT_SCRAPING_ULTIME_COMPLET.md (10.15 KB)
+    📄 RAPPORT_SUPPRESSION_TUYA_LIGHT.md (5.68 KB)
+    📄 RAPPORT_TUYA_LIGHT_RELEASE.md (3.42 KB)
+    📁 README/
+    📄 README.en.md (0.46 KB)
+    📄 README.fr.md (0.52 KB)
+    📄 README.md (1.90 KB)
+    📄 README.nl.md (0.50 KB)
+    📄 README.ta.md (0.89 KB)
+    📄 README_DEVELOPMENT.md (1.18 KB)
+    📄 README_megaproject_full_multilang.md (15.09 KB)
+    📄 README_megaproject_full_multilang.txt (15.21 KB)
+    📄 README_MEGA_PIPELINE.md (11.17 KB)
+    📄 recovery-report.json (4.43 KB)
+    📄 REFACTORING_REPORT.md (6.75 KB)
+    📁 reference/
+    📄 RELEASE_FINALE_3.1.0.md (8.66 KB)
+    📄 RELEASE_FINALE_3.1.0_COMPLETE.md (9.76 KB)
+    📄 RELEASE_NOTES.md (5.47 KB)
+    📄 REORGANIZATION_REPORT.md (1.17 KB)
+    📄 RESUME_FINAL_RELEASE_3.1.0.md (5.30 KB)
+    📁 roadmaps/
+    📁 ru/
+    📄 separation-tuya-zigbee-report.md (6.67 KB)
+    📄 sources.md (20.16 KB)
+    📁 specs/
+    📄 structure.md (2.96 KB)
+    📄 subjects.md (1.38 KB)
+    📄 SUCCES_FINAL_RELEASE_3.1.1.md (6.63 KB)
+    📄 SYNTHESE_FINALE_MISSION_ACCOMPLIE.md (8.18 KB)
+    📁 ta/
+    📄 tasks-72h-complete-analysis.md (6.96 KB)
+    📁 tools/
+    📄 translation-rules.md (13.79 KB)
+    📁 tutorials/
+    📄 tuya-drivers-recovery-report.md (11.50 KB)
+    📄 tuya-zigbee-rules.md (4.08 KB)
+    📄 versioning-rules.md (4.92 KB)
+    📄 zigbee2mqtt-migration-plan.md (5.90 KB)
+    📄 _config.yml (2.12 KB)
+  📁 drivers/
+    📁 tuya/
+    📁 zigbee/
+  📄 package.json (1.00 KB)
+  📄 README.md (8.24 KB)
+  📄 release-manifest.json (1292.72 KB)
+  📄 release-metadata.json (0.33 KB)
+  📁 scripts/
+    📄 adaptive-caching-system.js (3.15 KB)
+    📄 advanced-driver-optimizer.js (3.17 KB)
+    📄 advanced-performance-optimizer.js (3.16 KB)
+    📄 advanced-testing-pipeline.js (10.81 KB)
+    📄 ai-driver-generator.js (1.76 KB)
+    📄 ai-monitoring-system.js (12.26 KB)
+    📄 ai-powered-driver-generator.js (3.16 KB)
+    📄 ai-powered-enhancer.js (3.15 KB)
+    📄 amélioration-complète-projet.js (18.10 KB)
+    📄 analyze-fold-zip-docs.js (14.20 KB)
+    📄 auto-commit-ultimate.js (4.85 KB)
+    📄 automated-testing-suite.js (1.77 KB)
+    📄 bug-fixer-ultimate.js (28.66 KB)
+    📄 check-integrity.js (7.92 KB)
+    📄 cleanup.js (7.35 KB)
+    📄 community-contribution-manager.js (3.17 KB)
+    📄 complete-file-generator.js (3.16 KB)
+    📄 continue-implementation-tasks.js (18.72 KB)
+    📁 core/
+    📄 correction-drivers-app-js.js (12.44 KB)
+    📄 create-github-release.js (11.76 KB)
+    📄 create-missing-images.js (14.30 KB)
+    📄 dashboard-fix.js (7.58 KB)
+    📄 detect-driver-anomalies.js (11.08 KB)
+    📄 documentation-generator-ultimate.js (39.03 KB)
+    📄 drivers-check-ultimate.js (14.48 KB)
+    📄 drivers-generator-ultimate.js (9.48 KB)
+    📄 dynamic-documentation-generator.js (3.16 KB)
+    📄 dynamic-ui-generator.js (3.14 KB)
+    📄 final-push-and-sync.js (11.08 KB)
+    📄 final-structure-cleaner.js (13.41 KB)
+    📄 final-unknown-fusion.js (15.86 KB)
+    📄 final-validation.js (15.11 KB)
+    📄 finalize-structure-and-mega.js (24.38 KB)
+    📄 fix-drivers.js (15.96 KB)
+    📄 fix-remaining-unknown.js (13.56 KB)
+    📄 full-project-rebuild.js (22.70 KB)
+    📄 generate-driver-readmes.js (6.90 KB)
+    📄 generate-drivers-matrix.js (13.39 KB)
+    📄 generate-final-release.js (14.78 KB)
+    📄 generate-github-extras.js (13.68 KB)
+    📄 generate-images.js (1.85 KB)
+    📄 generate-matrix.js (10.97 KB)
+    📄 github-sync.js (11.32 KB)
+    📄 image-analyzer-and-fixer.js (14.31 KB)
+    📄 image-size-fixer.js (5.98 KB)
+    📄 image-validator-and-fixer.js (6.16 KB)
+    📄 implement-fold-chatgpt-discussion.js (18.00 KB)
+    📄 intelligent-device-analyzer.js (3.16 KB)
+    📄 intelligent-error-handler.js (3.14 KB)
+    📄 intelligent-structure-optimizer.js (3.18 KB)
+    📄 link-validator.js (3.31 KB)
+    📄 local-validation-pipeline.js (6.63 KB)
+    📄 md-auto-maintenance.js (2.20 KB)
+    📄 md-maintenance-auto.js (2.46 KB)
+    📄 mega-complete-processor.js (16.61 KB)
+    📄 mega-driver-corrector-simple.js (21.04 KB)
+    📄 mega-driver-corrector.js (21.24 KB)
+    📄 mega-enriched-mode.js (18.70 KB)
+    📄 mega-enrichment-mode.js (22.73 KB)
+    📄 mega-enrichment.js (16.45 KB)
+    📄 mega-features-sync.js (21.43 KB)
+    📄 mega-hierarchical-validator.js (11.33 KB)
+    📄 mega-link-fixer.js (1.64 KB)
+    📄 mega-md-cleanup-ultimate.js (13.88 KB)
+    📄 mega-md-organizer.js (13.59 KB)
+    📄 mega-optimizer.js (16.63 KB)
+    📄 mega-pipeline.js (14.97 KB)
+    📄 mega-prompt-enrichment-push.js (21.75 KB)
+    📄 mega-prompt-ultimate-enriched.js (29.16 KB)
+    📄 mega-prompt-ultimate-reconstruction.js (32.13 KB)
+    📄 mega-readme-fixer.js (11.49 KB)
+    📄 mega-recommendations-fixer.js (11.84 KB)
+    📄 mega-reorganization-cleanup.js (18.86 KB)
+    📄 mega-ultimate-bug-fixer.js (27.64 KB)
+    📄 mega-ultimate-enhancer.js (7.41 KB)
+    📄 mega-ultimate-enrichment.js (3.16 KB)
+    📄 mega-ultimate-resume.js (37.03 KB)
+    📄 mega-ultimate-sync.js (1.54 KB)
+    📄 mega-ultimate.js (5.86 KB)
+    📄 multi-language-translator.js (1.78 KB)
+    📄 neural-network-analyzer.js (3.14 KB)
+    📄 neural-network-classifier.js (3.16 KB)
+    📄 neural-network-completor.js (3.16 KB)
+    📄 predictive-analytics-engine.js (3.16 KB)
+    📄 predictive-device-classifier.js (3.15 KB)
+    📄 predictive-file-generator.js (3.17 KB)
+    📄 process-external-folder.js (15.01 KB)
+    📄 process-fold-download-ultimate.js (42.86 KB)
+    📄 process-fold-download-wildcard.js (18.81 KB)
+    📄 process-fold-folder-ultimate.js (38.63 KB)
+    📄 process-unknown-folders.js (14.59 KB)
+    📄 quantum-completion-engine.js (3.17 KB)
+    📄 quantum-computing-preparator.js (3.15 KB)
+    📄 quantum-driver-generator.js (3.14 KB)
+    📄 quick-drivers-list.js (3.45 KB)
+    📄 README.md (2.21 KB)
+    📄 real-time-validator.js (1.76 KB)
+    📄 reclass-drivers.js (16.44 KB)
+    📄 relance-mega-enrichi-complet.js (17.58 KB)
+    📄 renamer.js (15.83 KB)
+    📄 reorganisation-optimisation-complete.js (36.19 KB)
+    📄 reorganize-drivers-structure.js (20.74 KB)
+    📄 restore-complete-drivers.js (18.57 KB)
+    📄 restore-complete-structure.js (19.26 KB)
+    📄 resume-interrupted-prompts.js (16.65 KB)
+    📄 smart-community-manager.js (3.14 KB)
+    📄 smart-device-analyzer.js (1.77 KB)
+    📄 smart-error-recovery.js (3.14 KB)
+    📄 solve-unknown-drivers.js (23.27 KB)
+    📄 sync-tuya-light-branch.js (10.91 KB)
+    📄 terminal-fixer-and-validator.js (12.97 KB)
+    📄 terminal-test.js (0.78 KB)
+    📄 test-bugs-fixed.js (14.06 KB)
+    📄 test-fold-download-wildcard-complete.js (13.49 KB)
+    📄 test-fold-processing-complete.js (23.59 KB)
+    📄 test-mega-enrichment-push-complete.js (23.18 KB)
+    📄 test-mega-final.js (9.77 KB)
+    📄 test-mega-prompt.js (5.36 KB)
+    📄 test-prompts-resumed.js (15.82 KB)
+    📄 test-structure.js (2.17 KB)
+    📄 test-unknown-drivers-solved.js (16.72 KB)
+    📄 translate-logs.js (11.68 KB)
+    📄 ultimate-final-fixer.js (15.13 KB)
+    📄 ultimate-fix.js (6.39 KB)
+    📄 ultimate-unknown-fix.js (16.54 KB)
+    📄 ultimate-validator.js (7.54 KB)
+    📄 update-dashboard.js (17.78 KB)
+    📄 update-mega-mode.js (13.71 KB)
+    📁 utils/
+    📄 validate-final.js (7.90 KB)
+    📄 validate-no-publish.js (6.41 KB)
+    📄 validate.js (10.77 KB)
+    📄 verify-app-js-and-push.js (12.35 KB)
+    📄 verify-functioning-and-push.js (13.25 KB)
+    📄 verify-integrity-and-push.js (15.93 KB)
+    📄 zalgo-fix.js (7.86 KB)
+📁 final-validation/
+  📄 final_validation_report.json (259.56 KB)
+📄 final-validation.js (6.75 KB)
+📄 FINAL_REPORT.md (2.04 KB)
+📄 FINAL_VALIDATION_REPORT_2025-08-15T23-21-05.json (224.41 KB)
+📄 FINAL_VALIDATION_REPORT_2025-08-15T23-52-15.json (214.17 KB)
+📄 FINAL_VALIDATION_REPORT_2025-08-15T23-58-38.json (214.17 KB)
+📄 fix-all-drivers-global.js (5.26 KB)
+📄 fix-all-drivers.js (2.37 KB)
+📄 fix-all-drivers.ps1 (0.71 KB)
+📄 fix-all.ps1 (1.14 KB)
+📄 fix-and-run.bat (1.63 KB)
+📄 fix-and-run.ps1 (2.20 KB)
+📄 fix-app-json-final.js (4.13 KB)
+📄 fix-app-json-images.ps1 (5.00 KB)
+📄 fix-category.js (1.12 KB)
+📄 fix-clusters.ps1 (1.13 KB)
+📄 fix-common.js (0.32 KB)
+📄 fix-deps.bat (1.35 KB)
+📄 fix-drivers-global.ps1 (0.89 KB)
+📄 fix-environment.ps1 (7.27 KB)
+📄 fix-final.ps1 (1.14 KB)
+📄 fix-homeycompose.js (1.50 KB)
+📄 fix-json-errors.js (4.21 KB)
+📄 fix-json-errors.ps1 (5.74 KB)
+📄 fix-json-parsing-errors.js (7.38 KB)
+📄 fix-zigbee.js (0.38 KB)
+📄 fix.js (0.83 KB)
+📄 fix.ps1 (1.06 KB)
+📄 fix_drivers_intelligently.py (7.54 KB)
+📄 fix_image_paths.py (3.46 KB)
+📄 fix_image_sizes.py (2.70 KB)
+📄 full-diagnostic.ps1 (12.87 KB)
+📄 FUSION_VALIDATION_FINAL_v3.4.2.json (0.85 KB)
+📄 gen-report.bat (2.64 KB)
+📄 generate-driver.js (8.76 KB)
+📄 generate-integration-report.js (6.82 KB)
+📄 generate-integration-report.ps1 (6.45 KB)
+📄 Generate-IntegrationReport.ps1 (7.63 KB)
+📄 generate-local-report.bat (2.61 KB)
+📄 generate-matrix.js (16.52 KB)
+📄 generate-report.bat (5.39 KB)
+📄 generate-report.js (6.18 KB)
+📄 generate-report.ps1 (5.06 KB)
+📄 generate_report.py (6.32 KB)
+📄 Get-TuyaReport.ps1 (5.00 KB)
+📄 git-push-final.bat (0.50 KB)
+📄 git-push-simple.bat (1.40 KB)
+📄 git-push.bat (0.52 KB)
+📄 git-setup.bat (1.12 KB)
+📄 GITHUB_SETUP_INSTRUCTIONS.txt (1.14 KB)
+📄 homey-validation-final.js (6.97 KB)
+📄 homey-validation-report.json (0.44 KB)
+📄 homey.compose.json (0.74 KB)
+📄 HOMEY_RESTORATION_REPORT_v3.4.1.json (1.11 KB)
+📄 HOMEY_STRUCTURE_VALIDATION_v3.4.1.json (23.40 KB)
+📄 Initialize-Git.ps1 (2.46 KB)
+📄 install-and-run.ps1 (1.72 KB)
+📄 install-deps.js (1.43 KB)
+📄 install-required-deps.ps1 (3.52 KB)
+📄 integration-report.js (5.43 KB)
+📄 jest.config.js (0.40 KB)
+📄 JSON_PARSING_FIX_REPORT.json (0.14 KB)
+📁 lib/
+  📄 capabilities.js (1.88 KB)
+  📁 common/
+  📁 community/
+  📄 comprehensive-logger.js (0.61 KB)
+  📄 device.js (0.74 KB)
+  📄 driver.js (0.64 KB)
+  📄 file-ensurer.js (0.61 KB)
+  📄 generator.js (1.64 KB)
+  📁 heuristics/
+  📄 logger.js (1.07 KB)
+  📁 reliability/
+    📄 overlayManager.js (0.12 KB)
+    📄 scoringEngine.js (5.71 KB)
+    📄 sourceManager.js (0.11 KB)
+  📁 tuya/
+    📁 overlays/
+  📁 utils/
+  📄 validation-manager.js (0.92 KB)
+  📁 zigbee/
+    📄 clusterMap.js (2.28 KB)
+📄 list-files.ps1 (0.54 KB)
+📄 list-root.ps1 (1.37 KB)
+📄 list_files.js (2.50 KB)
+📁 logs/
+  📄 analysis-20250902-051353.log (3.70 KB)
+📁 matrices/
+  📄 capability_matrix.json (35.01 KB)
+  📄 class_matrix.json (15.18 KB)
+  📄 driver_matrix.csv (102.73 KB)
+  📄 driver_matrix.json (937.23 KB)
+  📄 driver_matrix_stats.json (0.30 KB)
+  📄 manufacturer_matrix.json (187.56 KB)
+  📄 matrix_summary.json (0.63 KB)
+📁 mega/
+  📄 final-structure.json (0.24 KB)
+  📄 finalization-report.md (0.45 KB)
+📄 mega-enrichment-engine.js (20.01 KB)
+📄 mega-prompt-config.json (2.68 KB)
+📄 MEGA_ENHANCEMENT_ULTIMATE_COMPLETE_REPORT.md (10.43 KB)
+📄 MEGA_INTELLIGENCE_REPORT.json (12.86 KB)
+📄 MEGA_ORCHESTRATOR_REPORT_2025-08-16T02-47-28-000Z.json (0.48 KB)
+📄 MEGA_ORCHESTRATOR_REPORT_2025-08-16T03-32-24-325Z.json (31.20 KB)
+📄 MEGA_ORCHESTRATOR_REPORT_2025-08-16T10-28-07-649Z.json (174.80 KB)
+📄 MEGA_ORCHESTRATOR_REPORT_2025-08-16T11-55-16-110Z.json (145.75 KB)
+📄 MEGA_ORCHESTRATOR_REPORT_2025-08-16T13-07-53-174Z.json (147.14 KB)
+📄 MEGA_ORCHESTRATOR_REPORT_2025-08-16T13-33-56-381Z.json (179.17 KB)
+📄 MEGA_ORCHESTRATOR_REPORT_2025-08-16T13-55-01-646Z.json (145.75 KB)
+📄 MEGA_ORCHESTRATOR_REPORT_2025-08-16T14-32-57-556Z.json (179.24 KB)
+📄 MEGA_PROMPT_500_STEPS.md (28.33 KB)
+📄 mega_prompt_checklist.csv (0.13 KB)
+📄 mega_prompt_checklist.md (4.29 KB)
+📄 MEGA_PROMPT_CURSOR.md (13.91 KB)
+📄 mega_prompt_full.md (7.42 KB)
+📄 minimal-setup.ps1 (2.91 KB)
+📄 nodemon.json (0.34 KB)
+📄 orchestrate.js (8.72 KB)
+📄 output.txt (3.04 KB)
+📄 package.json (7.89 KB)
+📁 patches/
+  📄 package.scripts.merge.json (1.08 KB)
+📄 placeholder-update-report.md (428.61 KB)
+📄 project_analyzer.js (13.32 KB)
+📁 public/
+  📁 dashboard/
+    📄 index.html (2.06 KB)
+    📄 meta.json (1.76 KB)
+📄 push-changes.bat (0.72 KB)
+📄 push-commands.bat (0.42 KB)
+📄 push-to-github.bat (1.19 KB)
+📄 push-to-master.ps1 (2.74 KB)
+📄 push.ps1 (1.99 KB)
+📁 python_service/
+  📄 .env (0.03 KB)
+  📁 app/
+    📁 core/
+    📄 main.py (3.32 KB)
+  📄 main.py (3.56 KB)
+  📄 pytest.ini (0.15 KB)
+  📄 requirements.txt (0.65 KB)
+  📁 tests/
+    📄 conftest.py (0.82 KB)
+    📄 test_analytics.py (2.17 KB)
+    📄 test_commands.py (2.99 KB)
+    📄 test_discovery.py (2.43 KB)
+    📄 test_fastapi.py (0.97 KB)
+    📄 test_main.py (1.78 KB)
+    📁 __pycache__/
+📄 quick-save.ps1 (1.13 KB)
+📄 quick-validation.js (2.86 KB)
+📄 quick_analysis.js (3.97 KB)
+📄 README.md (11.79 KB)
+📁 ref/
+  📁 documentation/
+    📄 documentation-finalization-report.md (1.69 KB)
+    📄 documentation-finalization.json (0.15 KB)
+  📄 drivers-index.json (3.19 KB)
+  📄 drivers-matrix.md (2.15 KB)
+  📄 validation-report.json (0.17 KB)
+📁 references/
+  📄 device-references.json (273.64 KB)
+  📄 driver_search_queries.csv (207.58 KB)
+  📄 driver_search_queries.json (269.97 KB)
+📁 release/
+  📄 app.js (4.23 KB)
+  📄 app.json (1.75 KB)
+  📄 CHANGELOG.md (0.97 KB)
+  📁 drivers/
+    📁 tuya/
+    📁 zigbee/
+  📄 package.json (1.00 KB)
+  📄 README.md (8.24 KB)
+  📄 release-info.json (0.21 KB)
+  📄 release-stats.json (0.16 KB)
+📁 releases/
+  📄 final-report.md (2.94 KB)
+  📄 releases-summary.json (4.08 KB)
+  📁 v1.0.0/
+    📄 manifest.json (0.19 KB)
+    📄 README.md (1.48 KB)
+    📄 release.json (0.21 KB)
+  📁 v1.1.0/
+    📄 manifest.json (0.19 KB)
+    📄 README.md (1.56 KB)
+    📄 release.json (0.22 KB)
+  📁 v1.2.0/
+    📄 manifest.json (0.19 KB)
+    📄 README.md (1.62 KB)
+    📄 release.json (0.22 KB)
+  📁 v1.3.0/
+    📄 manifest.json (0.19 KB)
+    📄 README.md (1.57 KB)
+    📄 release.json (0.22 KB)
+  📁 v1.4.0/
+    📄 manifest.json (0.19 KB)
+    📄 README.md (1.58 KB)
+    📄 release.json (0.21 KB)
+📄 repair-terminal.js (4.32 KB)
+📁 reports/
+  📄 ai-local-report.json (0.78 KB)
+  📄 cleanup-report.json (1.84 KB)
+  📄 cleanup-report.md (2.04 KB)
+  📄 cli-installation-test.json (1.02 KB)
+  📄 community-report.json (0.66 KB)
+  📄 complete-657-drivers-report.json (0.54 KB)
+  📄 complete-drivers-restoration-report.json (1.93 KB)
+  📄 complete-drivers-restoration.json (715.79 KB)
+  📄 complete-fix-report.json (1.18 KB)
+  📄 complete-optimization-report-1753977588491.json (0.44 KB)
+  📄 complete-optimization-report-1753978288482.json (0.44 KB)
+  📄 complete-project-optimization-report.json (9.06 KB)
+  📄 complete-project-validation-report.json (5.83 KB)
+  📄 complete-task-queue-report.json (3.76 KB)
+  📄 comprehensive-analysis-20250729-125633.json (0.32 KB)
+  📄 comprehensive-analysis-20250729-133703.json (0.32 KB)
+  📄 comprehensive-analysis-20250729-135154.json (0.31 KB)
+  📄 comprehensive-analysis-report.json (0.49 KB)
+  📄 comprehensive-analysis.json (1051.53 KB)
+  📄 comprehensive-driver-recovery-report.json (3.96 KB)
+  📄 comprehensive-recovery-pipeline-report.json (93.13 KB)
+  📄 comprehensive-scraping-report.json (8.94 KB)
+  📄 device-matrix.csv (6.21 KB)
+  📄 driver-analysis-improvement-report.json (29.28 KB)
+  📄 driver-anomalies-report.json (2.11 KB)
+  📄 driver-anomalies-report.md (1.33 KB)
+  📄 driver-conflicts-resolution.json (3.01 KB)
+  📄 driver-integration-report.json (0.29 KB)
+  📄 driver-optimization-report.json (13.86 KB)
+  📄 driver-restoration-report.json (883.83 KB)
+  📄 driver-validation-report.json (233.27 KB)
+  📄 driver-validation-report.md (3.63 KB)
+  📄 driver-verification-report.json (0.67 KB)
+  📄 drivers-clean-report.json (1.21 KB)
+  📄 drivers-merge-improve-report.json (468.45 KB)
+  📄 drivers-test-validation-report.json (2719.64 KB)
+  📄 external-folder-analysis.json (2.88 KB)
+  📄 external-folder-analysis.md (21.95 KB)
+  📄 fetch-report.json (2.43 KB)
+  📄 final-cleanup-optimized-report.json (0.30 KB)
+  📄 final-cleanup-report.json (0.25 KB)
+  📄 final-integration-report.json (0.70 KB)
+  📄 final-project-report.json (0.77 KB)
+  📄 final-project-restoration-report.json (1.08 KB)
+  📄 final-validation-report.json (4.83 KB)
+  📄 final-validation-report.md (5.79 KB)
+  📄 fix-changelog-generation-report.json (0.93 KB)
+  📄 fix-invalid-drivers-report.json (800.65 KB)
+  📄 fix-last-invalid-driver-report.json (0.53 KB)
+  📄 fix-new-forum-bugs-report.json (0.78 KB)
+  📄 fix-report.md (1.19 KB)
+  📄 fix-validation-issues-report.json (0.22 KB)
+  📄 forum-bugs-processor-report.json (0.67 KB)
+  📄 forum-bugs-report.json (2.13 KB)
+  📄 forum-errors-fix-report.json (0.78 KB)
+  📄 fusion-tuya-light-report.json (63.19 KB)
+  📄 gaps-analysis.json (73.07 KB)
+  📄 github-actions-integration-report.json (1.19 KB)
+  📄 github-sync-report.json (1.68 KB)
+  📄 github-sync-report.md (0.97 KB)
+  📄 healing-report-1753980986425.json (3096.17 KB)
+  📄 healing-report-1754125438839.json (257.83 KB)
+  📄 healing-report-1754129358490.json (141.43 KB)
+  📄 historical-analysis-report-1753804294677.json (0.47 KB)
+  📄 historical-analysis-report-1753804313363.json (0.47 KB)
+  📄 historical-analysis-report-1753804319189.json (0.47 KB)
+  📄 historical-driver-recovery-report.json (89.07 KB)
+  📄 historical-readme-analysis-1753803698704.json (1.33 KB)
+  📄 installation-bug-report.json (4.31 KB)
+  📄 integration-report-20250831-233544.md (2.83 KB)
+  📄 integration-report.md (8.09 KB)
+  📄 legacy-script-recovery-report.json (1.39 KB)
+  📄 local-validation-report.json (0.16 KB)
+  📄 massive-drivers-restoration-report.json (1.25 KB)
+  📄 massive-recovery-report-1753801713225.json (0.69 KB)
+  📄 massive-recovery-report-1753801886227.json (0.69 KB)
+  📄 master-optimization-pipeline-report.json (1126.73 KB)
+  📄 master-rebuild-final-report.json (9.27 KB)
+  📄 master-rebuild-report.json (4.71 KB)
+  📄 matrix-generation-report.json (0.22 KB)
+  📄 matrix-generation-report.md (0.98 KB)
+  📄 mega-optimization-report.json (0.39 KB)
+  📄 mega-optimization-report.md (1.19 KB)
+  📄 mega-pipeline-final-report.json (1.09 KB)
+  📄 mega-pipeline-results.json (3.67 KB)
+  📄 mega-pipeline-ultimate-complete-report.json (104.76 KB)
+  📄 mega-pipeline-ultimate-report.json (0.49 KB)
+  📄 mega-renamer-final-report.json (0.51 KB)
+  📄 mega-renamer-final-report.md (1.07 KB)
+  📄 new-forum-post-analysis.json (7.86 KB)
+  📄 optimization-plan.json (0.42 KB)
+  📄 optimize-ai-models-report.json (1.40 KB)
+  📄 performance-report.json (1.18 KB)
+  📄 pipeline-report-1753792960443.json (0.42 KB)
+  📄 pipeline-report-1753800111275.json (0.45 KB)
+  📄 project-stabilization-report.json (1.09 KB)
+  📄 project-validation-report.json (1928.29 KB)
+  📄 publication-ready-report-2025-07-31T12-09-23-123Z.json (0.72 KB)
+  📄 publication-ready-report-2025-07-31T12-14-59-682Z.json (0.50 KB)
+  📄 quick-driver-restoration-report.json (28.08 KB)
+  📄 readme-update-scripts-report.json (15.05 KB)
+  📄 reclass-drivers-report.json (0.25 KB)
+  📄 reclass-drivers-report.md (1.02 KB)
+  📄 release-manager-report.json (3.72 KB)
+  📄 sdk3-optimization-report.json (0.25 KB)
+  📄 simple-tuya-report-20250901-075223.txt (5.75 KB)
+  📄 smart-enrichment-report.json (0.45 KB)
+  📄 structure-optimized.json (0.63 KB)
+  📄 sync-tuya-light-report-1753800952802.json (0.79 KB)
+  📄 tuya-integration-report.md (8.10 KB)
+  📄 tuya-light-recovery-report.json (65.29 KB)
+  📄 ultimate-driver-analysis-report.json (1.55 KB)
+  📄 ultimate-enrichment-report.json (0.63 KB)
+  📄 unified-optimization-report.json (4.23 KB)
+  📄 validation-cache.json (538.67 KB)
+  📄 validation-report.json (0.65 KB)
+  📄 validation-report.md (5.49 KB)
+  📄 verify-releases-zip-report-1753801324403.json (0.65 KB)
+  📄 verify-report.json (24.47 KB)
+  📄 zigbee-recovery-report-1753802479474.json (0.84 KB)
+📁 research/
+  📄 advanced-analysis-report.json (11.17 KB)
+  📄 advanced-scoring-report.json (22.26 KB)
+  📄 auto-correction-report.json (10.43 KB)
+  📄 cluster-compatibility.json (3.26 KB)
+  📄 comprehensive-scan-report.json (7.52 KB)
+  📄 coverage-gaps.json (1.20 KB)
+  📁 device-matrix/
+    📄 device-matrix.json (9.77 KB)
+  📁 examples/
+  📁 extract/
+  📄 final-validation-report.json (9.35 KB)
+  📄 harvest-report.json (13.99 KB)
+  📄 intelligent-enrichment-report.json (28.24 KB)
+  📄 mega-analysis-report.json (28.79 KB)
+  📄 mega-orchestration-report.json (8.92 KB)
+  📁 raw/
+  📁 scoring-results/
+  📁 snapshots/
+  📁 source-data/
+    📄 blakadder.json (2.34 KB)
+    📄 home-assistant.json (2.38 KB)
+    📄 homey-forums.json (2.37 KB)
+    📄 tuya-developer.json (2.38 KB)
+    📄 zigbee2mqtt.json (2.37 KB)
+  📄 validation-report.json (1.80 KB)
+📄 run-analysis.bat (1.32 KB)
+📄 run-analysis.js (4.55 KB)
+📄 run-diagnostic.bat (1.98 KB)
+📄 run-each-scan.bat (2.63 KB)
+📄 run-git-setup.bat (0.22 KB)
+📄 run-multi-ia-analysis.js (5.14 KB)
+📄 run-scans-simple.bat (1.10 KB)
+📄 run-scans.js (2.72 KB)
+📄 run-scans.ps1 (4.13 KB)
+📄 run-scout.bat (1.01 KB)
+📄 run-simple-scan.bat (1.83 KB)
+📄 run-tuya-scan.bat (2.19 KB)
+📄 run-update-drivers.ps1 (3.66 KB)
+📄 run_analysis.bat (0.28 KB)
+📄 run_analysis_and_fix.bat (1.94 KB)
+📄 scan-drivers.js (5.36 KB)
+📁 scan-results/
+  📄 architect-20250901-102347.txt (1.44 KB)
+  📄 architect-20250901-103417.txt (1.44 KB)
+  📄 architect-error.txt (1.03 KB)
+  📄 optimizer-20250901-102347.txt (1.44 KB)
+  📄 optimizer-20250901-103417.txt (1.44 KB)
+  📄 optimizer-error.txt (1.03 KB)
+  📄 scan-report.json (4.91 KB)
+  📄 scout-20250901-102347.txt (1.44 KB)
+  📄 scout-20250901-103417.txt (1.44 KB)
+  📄 scout-error.txt (1.02 KB)
+  📄 validator-20250901-102347.txt (1.44 KB)
+  📄 validator-20250901-103417.txt (1.44 KB)
+  📄 validator-error.txt (1.03 KB)
+📄 scan-tuya.bat (2.22 KB)
+📁 schemas/
+  📄 homey-app.schema.json (4.66 KB)
+📁 scraping-data/
+  📄 scraping_report.json (0.15 KB)
+📄 scraping-engine.js (1.77 KB)
+📁 script-consolidation/
+  📁 build/
+    📄 build-suite.js (2.23 KB)
+    📄 dashboard-builder.js (1.32 KB)
+    📄 matrix-builder.js (0.06 KB)
+  📄 script_consolidation_report.json (1.72 KB)
+📁 script-conversion/
+  📄 script_conversion_report.json (0.63 KB)
+📁 scripts/
+  📄 adaptive-caching-system.js (3.15 KB)
+  📄 advanced-driver-optimizer.js (3.17 KB)
+  📄 advanced-performance-optimizer.js (3.16 KB)
+  📄 advanced-testing-pipeline.js (10.81 KB)
+  📄 ai-adv-script-1 .js (0.05 KB)
+  📄 ai-adv-script-1.js (4.04 KB)
+  📄 ai-adv-script-10 .js (0.05 KB)
+  📄 ai-adv-script-100 .js (0.05 KB)
+  📄 ai-adv-script-11 .js (0.05 KB)
+  📄 ai-adv-script-12 .js (0.05 KB)
+  📄 ai-adv-script-13 .js (0.05 KB)
+  📄 ai-adv-script-14 .js (0.05 KB)
+  📄 ai-adv-script-15 .js (0.05 KB)
+  📄 ai-adv-script-16 .js (0.05 KB)
+  📄 ai-adv-script-17 .js (0.05 KB)
+  📄 ai-adv-script-18 .js (0.05 KB)
+  📄 ai-adv-script-19 .js (0.05 KB)
+  📄 ai-adv-script-2 .js (0.05 KB)
+  📄 ai-adv-script-2.js (4.03 KB)
+  📄 ai-adv-script-20 .js (0.05 KB)
+  📄 ai-adv-script-21 .js (0.05 KB)
+  📄 ai-adv-script-22 .js (0.05 KB)
+  📄 ai-adv-script-23 .js (0.05 KB)
+  📄 ai-adv-script-24 .js (0.05 KB)
+  📄 ai-adv-script-25 .js (0.05 KB)
+  📄 ai-adv-script-26 .js (0.05 KB)
+  📄 ai-adv-script-27 .js (0.05 KB)
+  📄 ai-adv-script-28 .js (0.05 KB)
+  📄 ai-adv-script-29 .js (0.05 KB)
+  📄 ai-adv-script-3 .js (0.05 KB)
+  📄 ai-adv-script-30 .js (0.05 KB)
+  📄 ai-adv-script-31 .js (0.05 KB)
+  📄 ai-adv-script-32 .js (0.05 KB)
+  📄 ai-adv-script-33 .js (0.05 KB)
+  📄 ai-adv-script-34 .js (0.05 KB)
+  📄 ai-adv-script-35 .js (0.05 KB)
+  📄 ai-adv-script-36 .js (0.05 KB)
+  📄 ai-adv-script-37 .js (0.05 KB)
+  📄 ai-adv-script-38 .js (0.05 KB)
+  📄 ai-adv-script-39 .js (0.05 KB)
+  📄 ai-adv-script-4 .js (0.05 KB)
+  📄 ai-adv-script-40 .js (0.05 KB)
+  📄 ai-adv-script-41 .js (0.05 KB)
+  📄 ai-adv-script-42 .js (0.05 KB)
+  📄 ai-adv-script-43 .js (0.05 KB)
+  📄 ai-adv-script-44 .js (0.05 KB)
+  📄 ai-adv-script-45 .js (0.05 KB)
+  📄 ai-adv-script-46 .js (0.05 KB)
+  📄 ai-adv-script-47 .js (0.05 KB)
+  📄 ai-adv-script-48 .js (0.05 KB)
+  📄 ai-adv-script-49 .js (0.05 KB)
+  📄 ai-adv-script-5 .js (0.05 KB)
+  📄 ai-adv-script-50 .js (0.05 KB)
+  📄 ai-adv-script-50.js (4.06 KB)
+  📄 ai-adv-script-51 .js (0.05 KB)
+  📄 ai-adv-script-52 .js (0.05 KB)
+  📄 ai-adv-script-53 .js (0.05 KB)
+  📄 ai-adv-script-54 .js (0.05 KB)
+  📄 ai-adv-script-55 .js (0.05 KB)
+  📄 ai-adv-script-56 .js (0.05 KB)
+  📄 ai-adv-script-57 .js (0.05 KB)
+  📄 ai-adv-script-58 .js (0.05 KB)
+  📄 ai-adv-script-59 .js (0.05 KB)
+  📄 ai-adv-script-6 .js (0.05 KB)
+  📄 ai-adv-script-60 .js (0.05 KB)
+  📄 ai-adv-script-61 .js (0.05 KB)
+  📄 ai-adv-script-62 .js (0.05 KB)
+  📄 ai-adv-script-63 .js (0.05 KB)
+  📄 ai-adv-script-64 .js (0.05 KB)
+  📄 ai-adv-script-65 .js (0.05 KB)
+  📄 ai-adv-script-66 .js (0.05 KB)
+  📄 ai-adv-script-67 .js (0.05 KB)
+  📄 ai-adv-script-68 .js (0.05 KB)
+  📄 ai-adv-script-69 .js (0.05 KB)
+  📄 ai-adv-script-7 .js (0.05 KB)
+  📄 ai-adv-script-70 .js (0.05 KB)
+  📄 ai-adv-script-71 .js (0.05 KB)
+  📄 ai-adv-script-72 .js (0.05 KB)
+  📄 ai-adv-script-73 .js (0.05 KB)
+  📄 ai-adv-script-74 .js (0.05 KB)
+  📄 ai-adv-script-75 .js (0.05 KB)
+  📄 ai-adv-script-76 .js (0.05 KB)
+  📄 ai-adv-script-77 .js (0.05 KB)
+  📄 ai-adv-script-78 .js (0.05 KB)
+  📄 ai-adv-script-79 .js (0.05 KB)
+  📄 ai-adv-script-8 .js (0.05 KB)
+  📄 ai-adv-script-80 .js (0.05 KB)
+  📄 ai-adv-script-81 .js (0.05 KB)
+  📄 ai-adv-script-82 .js (0.05 KB)
+  📄 ai-adv-script-83 .js (0.05 KB)
+  📄 ai-adv-script-84 .js (0.05 KB)
+  📄 ai-adv-script-85 .js (0.05 KB)
+  📄 ai-adv-script-86 .js (0.05 KB)
+  📄 ai-adv-script-87 .js (0.05 KB)
+  📄 ai-adv-script-88 .js (0.05 KB)
+  📄 ai-adv-script-89 .js (0.05 KB)
+  📄 ai-adv-script-9 .js (0.05 KB)
+  📄 ai-adv-script-90 .js (0.05 KB)
+  📄 ai-adv-script-91 .js (0.05 KB)
+  📄 ai-adv-script-92 .js (0.05 KB)
+  📄 ai-adv-script-93 .js (0.05 KB)
+  📄 ai-adv-script-94 .js (0.05 KB)
+  📄 ai-adv-script-95 .js (0.05 KB)
+  📄 ai-adv-script-96 .js (0.05 KB)
+  📄 ai-adv-script-97 .js (0.05 KB)
+  📄 ai-adv-script-98 .js (0.05 KB)
+  📄 ai-adv-script-99 .js (0.05 KB)
+  📄 ai-driver-generator.js (1.76 KB)
+  📄 ai-ext-script-101 .js (0.05 KB)
+  📄 ai-ext-script-101.js (4.07 KB)
+  📄 ai-ext-script-102 .js (0.05 KB)
+  📄 ai-ext-script-102.js (4.06 KB)
+  📄 ai-ext-script-103 .js (0.05 KB)
+  📄 ai-ext-script-104 .js (0.05 KB)
+  📄 ai-ext-script-105 .js (0.05 KB)
+  📄 ai-ext-script-106 .js (0.05 KB)
+  📄 ai-ext-script-107 .js (0.05 KB)
+  📄 ai-ext-script-108 .js (0.05 KB)
+  📄 ai-ext-script-109 .js (0.05 KB)
+  📄 ai-ext-script-110 .js (0.05 KB)
+  📄 ai-ext-script-111 .js (0.05 KB)
+  📄 ai-ext-script-112 .js (0.05 KB)
+  📄 ai-ext-script-113 .js (0.05 KB)
+  📄 ai-ext-script-114 .js (0.05 KB)
+  📄 ai-ext-script-115 .js (0.05 KB)
+  📄 ai-ext-script-116 .js (0.05 KB)
+  📄 ai-ext-script-117 .js (0.05 KB)
+  📄 ai-ext-script-118 .js (0.05 KB)
+  📄 ai-ext-script-119 .js (0.05 KB)
+  📄 ai-ext-script-120 .js (0.05 KB)
+  📄 ai-ext-script-121 .js (0.05 KB)
+  📄 ai-ext-script-122 .js (0.05 KB)
+  📄 ai-ext-script-123 .js (0.05 KB)
+  📄 ai-ext-script-124 .js (0.05 KB)
+  📄 ai-ext-script-125 .js (0.05 KB)
+  📄 ai-ext-script-126 .js (0.05 KB)
+  📄 ai-ext-script-127 .js (0.05 KB)
+  📄 ai-ext-script-128 .js (0.05 KB)
+  📄 ai-ext-script-129 .js (0.05 KB)
+  📄 ai-ext-script-130 .js (0.05 KB)
+  📄 ai-ext-script-131 .js (0.05 KB)
+  📄 ai-ext-script-132 .js (0.05 KB)
+  📄 ai-ext-script-133 .js (0.05 KB)
+  📄 ai-ext-script-134 .js (0.05 KB)
+  📄 ai-ext-script-135 .js (0.05 KB)
+  📄 ai-ext-script-136 .js (0.05 KB)
+  📄 ai-ext-script-137 .js (0.05 KB)
+  📄 ai-ext-script-138 .js (0.05 KB)
+  📄 ai-ext-script-139 .js (0.05 KB)
+  📄 ai-ext-script-140 .js (0.05 KB)
+  📄 ai-ext-script-141 .js (0.05 KB)
+  📄 ai-ext-script-142 .js (0.05 KB)
+  📄 ai-ext-script-143 .js (0.05 KB)
+  📄 ai-ext-script-144 .js (0.05 KB)
+  📄 ai-ext-script-145 .js (0.05 KB)
+  📄 ai-ext-script-146 .js (0.05 KB)
+  📄 ai-ext-script-147 .js (0.05 KB)
+  📄 ai-ext-script-148 .js (0.05 KB)
+  📄 ai-ext-script-149 .js (0.05 KB)
+  📄 ai-ext-script-150 .js (0.05 KB)
+  📄 ai-ext-script-150.js (4.06 KB)
+  📄 ai-ext-script-151 .js (0.05 KB)
+  📄 ai-ext-script-152 .js (0.05 KB)
+  📄 ai-ext-script-153 .js (0.05 KB)
+  📄 ai-ext-script-154 .js (0.05 KB)
+  📄 ai-ext-script-155 .js (0.05 KB)
+  📄 ai-ext-script-156 .js (0.05 KB)
+  📄 ai-ext-script-157 .js (0.05 KB)
+  📄 ai-ext-script-158 .js (0.05 KB)
+  📄 ai-ext-script-159 .js (0.05 KB)
+  📄 ai-ext-script-160 .js (0.05 KB)
+  📄 ai-ext-script-161 .js (0.05 KB)
+  📄 ai-ext-script-162 .js (0.05 KB)
+  📄 ai-ext-script-163 .js (0.05 KB)
+  📄 ai-ext-script-164 .js (0.05 KB)
+  📄 ai-ext-script-165 .js (0.05 KB)
+  📄 ai-ext-script-166 .js (0.05 KB)
+  📄 ai-ext-script-167 .js (0.05 KB)
+  📄 ai-ext-script-168 .js (0.05 KB)
+  📄 ai-ext-script-169 .js (0.05 KB)
+  📄 ai-ext-script-170 .js (0.05 KB)
+  📄 ai-ext-script-171 .js (0.05 KB)
+  📄 ai-ext-script-172 .js (0.05 KB)
+  📄 ai-ext-script-173 .js (0.05 KB)
+  📄 ai-ext-script-174 .js (0.05 KB)
+  📄 ai-ext-script-175 .js (0.05 KB)
+  📄 ai-ext-script-176 .js (0.05 KB)
+  📄 ai-ext-script-177 .js (0.05 KB)
+  📄 ai-ext-script-178 .js (0.05 KB)
+  📄 ai-ext-script-179 .js (0.05 KB)
+  📄 ai-ext-script-180 .js (0.05 KB)
+  📄 ai-ext-script-181 .js (0.05 KB)
+  📄 ai-ext-script-182 .js (0.05 KB)
+  📄 ai-ext-script-183 .js (0.05 KB)
+  📄 ai-ext-script-184 .js (0.05 KB)
+  📄 ai-ext-script-185 .js (0.05 KB)
+  📄 ai-ext-script-186 .js (0.05 KB)
+  📄 ai-ext-script-187 .js (0.05 KB)
+  📄 ai-ext-script-188 .js (0.05 KB)
+  📄 ai-ext-script-189 .js (0.05 KB)
+  📄 ai-ext-script-190 .js (0.05 KB)
+  📄 ai-ext-script-191 .js (0.05 KB)
+  📄 ai-ext-script-192 .js (0.05 KB)
+  📄 ai-ext-script-193 .js (0.05 KB)
+  📄 ai-ext-script-194 .js (0.05 KB)
+  📄 ai-ext-script-195 .js (0.05 KB)
+  📄 ai-ext-script-196 .js (0.05 KB)
+  📄 ai-ext-script-197 .js (0.05 KB)
+  📄 ai-ext-script-198 .js (0.05 KB)
+  📄 ai-ext-script-199 .js (0.05 KB)
+  📄 ai-ext-script-200 .js (0.05 KB)
+  📄 ai-lot3-1 .js (0.05 KB)
+  📄 ai-lot3-1.js (3.99 KB)
+  📄 ai-lot3-10 .js (0.05 KB)
+  📄 ai-lot3-10.js (4.00 KB)
+  📄 ai-lot3-11 .js (0.05 KB)
+  📄 ai-lot3-12 .js (0.05 KB)
+  📄 ai-lot3-13 .js (0.05 KB)
+  📄 ai-lot3-14 .js (0.05 KB)
+  📄 ai-lot3-15 .js (0.05 KB)
+  📄 ai-lot3-16 .js (0.05 KB)
+  📄 ai-lot3-17 .js (0.05 KB)
+  📄 ai-lot3-18 .js (0.05 KB)
+  📄 ai-lot3-19 .js (0.05 KB)
+  📄 ai-lot3-2 .js (0.05 KB)
+  📄 ai-lot3-2.js (4.00 KB)
+  📄 ai-lot3-20 .js (0.05 KB)
+  📄 ai-lot3-3 .js (0.05 KB)
+  📄 ai-lot3-4 .js (0.05 KB)
+  📄 ai-lot3-5 .js (0.05 KB)
+  📄 ai-lot3-6 .js (0.05 KB)
+  📄 ai-lot3-7 .js (0.05 KB)
+  📄 ai-lot3-8 .js (0.05 KB)
+  📄 ai-lot3-9 .js (0.05 KB)
+  📄 ai-monitoring-system.js (12.26 KB)
+  📄 ai-pipeline-script-1.js (4.07 KB)
+  📄 ai-pipeline-script-10.js (4.09 KB)
+  📄 ai-pipeline-script-2.js (4.07 KB)
+  📄 ai-powered-driver-generator.js (3.16 KB)
+  📄 ai-powered-enhancer.js (3.15 KB)
+  📄 ai-script-lot2-1.js (4.04 KB)
+  📄 ai-script-lot2-10 .js (0.05 KB)
+  📄 ai-script-lot2-10.js (4.04 KB)
+  📄 ai-script-lot2-11 .js (0.05 KB)
+  📄 ai-script-lot2-12 .js (0.05 KB)
+  📄 ai-script-lot2-13 .js (0.05 KB)
+  📄 ai-script-lot2-14 .js (0.05 KB)
+  📄 ai-script-lot2-15 .js (0.05 KB)
+  📄 ai-script-lot2-16 .js (0.05 KB)
+  📄 ai-script-lot2-17 .js (0.05 KB)
+  📄 ai-script-lot2-18 .js (0.05 KB)
+  📄 ai-script-lot2-19 .js (0.05 KB)
+  📄 ai-script-lot2-2.js (4.05 KB)
+  📄 ai-script-lot2-20 .js (0.05 KB)
+  📄 ai-script-lot2-7 .js (0.05 KB)
+  📄 ai-script-lot2-8 .js (0.05 KB)
+  📄 ai-script-lot2-9 .js (0.05 KB)
+  📄 ai-scripts-index.json (4.08 KB)
+  📄 ai_cluster_mapping.js (1.01 KB)
+  📄 amélioration-complète-projet.js (18.10 KB)
+  📄 analyze-all-github-repos.ps1 (8.69 KB)
+  📄 analyze-all-sources.ps1 (15.68 KB)
+  📄 analyze-drivers.js (8.02 KB)
+  📄 analyze-external-sources.js (15.31 KB)
+  📄 analyze-fold-zip-docs.js (14.20 KB)
+  📄 analyze-project.js (9.73 KB)
+  📄 analyze-prompts-72h.ps1 (10.25 KB)
+  📄 analyze-tuya-archives.js (18.04 KB)
+  📄 analyze-tuya-simple.js (1.73 KB)
+  📄 analyze-tuya-smart-life.ps1 (3.78 KB)
+  📄 analyze-zigbee2mqtt-features.ps1 (8.35 KB)
+  📄 apply-local-drivers-rules.ps1 (10.59 KB)
+  📄 architect.js (8.80 KB)
+  📄 auto-commit-ultimate.js (4.85 KB)
+  📄 auto-fix-json-from-report.js (2.05 KB)
+  📄 automated-testing-suite.js (1.77 KB)
+  📁 automation/
+    📄 deploy-sdk3.js (6.12 KB)
+    📄 deploy-sdk3.ps1 (5.73 KB)
+    📄 schedule-tasks.js (1.39 KB)
+  📄 background-zip-extractor.js (5.50 KB)
+  📄 background-zip-processor.js (13.27 KB)
+  📄 backup-drivers-incr.js (1.38 KB)
+  📄 bug-fixer-ultimate.js (28.66 KB)
+  📁 build/
+    📄 debug-export.mjs (4.13 KB)
+    📄 export_dashboard_data.mjs (13.02 KB)
+    📄 export_dashboard_data_complete.mjs (17.40 KB)
+    📄 export_dashboard_data_final.mjs (17.40 KB)
+    📄 export_dashboard_data_fixed.mjs (17.40 KB)
+    📄 generate_from_catalog.mjs (14.42 KB)
+    📄 simple-export.mjs (1.63 KB)
+    📄 test-dashboard.mjs (1.42 KB)
+    📄 test-export.mjs (1.15 KB)
+    📄 update_readme_stats.mjs (7.66 KB)
+    📁 utils/
+    📄 validate_assets.mjs (9.57 KB)
+    📄 validate_links.mjs (12.67 KB)
+  📄 build-lite-version.js (1.52 KB)
+  📄 chatgptversion-processor.js (11.88 KB)
+  📄 check-driver-updates.js (4.12 KB)
+  📄 check-integrity.js (7.92 KB)
+  📄 check-quality.mjs (3.46 KB)
+  📄 cleanup-backup-folders.js (7.64 KB)
+  📄 cleanup-complete.js (4.60 KB)
+  📄 cleanup-driver-names.js (7.18 KB)
+  📄 cleanup-final-simple.js (2.63 KB)
+  📄 cleanup-obsolete.js (3.38 KB)
+  📄 cleanup-powershell-references.js (4.75 KB)
+  📄 cleanup-powershell-scripts.js (13.27 KB)
+  📄 cleanup-temporary-files.js (8.42 KB)
+  📄 cleanup-with-exec.js (3.87 KB)
+  📄 cleanup.js (7.35 KB)
+  📄 community-contribution-manager.js (3.17 KB)
+  📄 complete-app-js.js (9.01 KB)
+  📄 complete-file-generator.js (3.16 KB)
+  📄 complete-restoration.js (27.28 KB)
+  📄 continue-implementation-tasks.js (18.72 KB)
+  📄 convert_assets.py (1.55 KB)
+  📄 coordination-finale.js (16.17 KB)
+  📁 core/
+    📄 capabilities.json (0.71 KB)
+    📄 enrich-drivers.js (36.58 KB)
+    📄 language-rules-correction.js (26.04 KB)
+    📁 temp_extraction/
+    📄 tuya-devices.json (0.77 KB)
+    📄 zigbee-devices.json (0.34 KB)
+  📄 correction-drivers-app-js.js (12.44 KB)
+  📄 create-github-release.js (11.76 KB)
+  📄 create-missing-images.js (14.30 KB)
+  📄 create-standard-releases.ps1 (9.01 KB)
+  📄 create-vlc-style-releases.ps1 (8.97 KB)
+  📄 dashboard-fix.js (7.58 KB)
+  📄 dashboard-generator.js (1.11 KB)
+  📄 detect-driver-anomalies.js (11.08 KB)
+  📄 diagnose-drivers.js (1.98 KB)
+  📄 diagnose-env.js (3.42 KB)
+  📄 documentation-generator-ultimate.js (39.03 KB)
+  📄 driver-intelligence-validator.js (30.25 KB)
+  📄 drivers-check-ultimate.js (14.48 KB)
+  📄 drivers-generator-ultimate.js (9.48 KB)
+  📄 dynamic-documentation-generator.js (3.16 KB)
+  📄 dynamic-ui-generator.js (3.14 KB)
+  📄 enable-compose.js (1.61 KB)
+  📁 external/
+  📄 fetch_external_sources.mjs (2.06 KB)
+  📄 final-cleanup.js (2.69 KB)
+  📄 final-complete-validator.js (28.67 KB)
+  📄 final-folder-processor.js (11.33 KB)
+  📄 final-homey-preparation.js (14.43 KB)
+  📄 final-push-and-sync.js (11.08 KB)
+  📄 final-push-complete-validator.js (5.81 KB)
+  📄 final-push-intelligent-complete.js (5.20 KB)
+  📄 final-push-intelligent.js (3.74 KB)
+  📄 final-push-mega.js (3.52 KB)
+  📄 final-push-structure-complete.js (5.34 KB)
+  📄 final-push-with-images.js (11.81 KB)
+  📄 final-push.js (1.55 KB)
+  📄 final-reorganization-push.js (20.73 KB)
+  📄 final-simple.js (1.87 KB)
+  📄 final-structure-cleaner.js (13.41 KB)
+  📄 final-unknown-fusion.js (15.86 KB)
+  📄 final-validation.js (15.11 KB)
+  📄 finalize-migration-3.3.js (12.21 KB)
+  📄 finalize-structure-and-mega.js (24.38 KB)
+  📄 fix-all-complete.js (8.40 KB)
+  📄 fix-assets-structure.js (8.40 KB)
+  📄 fix-driver-issues.js (8.64 KB)
+  📄 fix-driver-names-sdk3.js (10.78 KB)
+  📄 fix-driver-structure.js (6.65 KB)
+  📄 fix-drivers-complete.js (16.98 KB)
+  📄 fix-drivers.js (15.96 KB)
+  📄 fix-duplicate-structure.js (15.14 KB)
+  📄 fix-git-branch.js (4.22 KB)
+  📄 fix-git-master.js (1.61 KB)
+  📄 fix-homey-structure.js (15.65 KB)
+  📄 fix-js.js (4.26 KB)
+  📄 fix-json-files-extended.js (2.58 KB)
+  📄 fix-json-files.js (1.53 KB)
+  📄 fix-package.js (4.17 KB)
+  📄 fix-remaining-unknown.js (13.56 KB)
+  📄 fix-tuya-light-actions.js (5.45 KB)
+  📄 full-project-rebuild.js (22.70 KB)
+  📄 fusion-drivers-complete.js (22.02 KB)
+  📄 fusion-drivers-simple.js (2.43 KB)
+  📄 fusion-tuya-complete.js (11.99 KB)
+  📄 generate-all-drivers.ps1 (13.86 KB)
+  📄 generate-driver-readmes.js (6.90 KB)
+  📄 generate-drivers-matrix.js (13.39 KB)
+  📄 generate-drivers-simple.ps1 (13.16 KB)
+  📄 generate-final-release.js (14.78 KB)
+  📄 generate-full-report.js (9.21 KB)
+  📄 generate-github-extras.js (13.68 KB)
+  📄 generate-icons.js (4.13 KB)
+  📄 generate-images.js (1.85 KB)
+  📄 generate-integration-report.js (7.40 KB)
+  📄 generate-matrix.js (10.97 KB)
+  📄 generate_combined_sources.js (1.65 KB)
+  📄 generate_documentation.mjs (9.06 KB)
+  📄 git-commit-push.js (1.08 KB)
+  📄 github-sync.js (11.32 KB)
+  📄 image-analyzer-and-fixer.js (14.31 KB)
+  📄 image-size-fixer.js (5.98 KB)
+  📄 image-validator-and-fixer.js (6.16 KB)
+  📄 implement-fold-chatgpt-discussion.js (18.00 KB)
+  📄 implement-zigbee2mqtt-features.ps1 (7.78 KB)
+  📄 implementation-complete-tuya.js (41.94 KB)
+  📄 ingest-tuya-zips.js (4.08 KB)
+  📄 inject-zb-verbose-robust.js (12.68 KB)
+  📄 inject-zb-verbose.js (10.42 KB)
+  📄 integrate-blakadder.js (0.39 KB)
+  📄 integrate-dashboard-table.ps1 (7.83 KB)
+  📄 integrate-external-sources.js (20.20 KB)
+  📄 integrate-homey-forum.js (0.39 KB)
+  📄 integrate-zigbee2mqtt-devices.ps1 (11.76 KB)
+  📄 integrate-zigbee2mqtt.js (0.40 KB)
+  📄 integrate.js (5.68 KB)
+  📄 INTEGRATION_GUIDE.md (1.61 KB)
+  📄 intelligent-device-analyzer.js (3.16 KB)
+  📄 intelligent-error-handler.js (3.14 KB)
+  📄 intelligent-folder-reorganization.ps1 (10.71 KB)
+  📄 intelligent-structure-optimizer.js (3.18 KB)
+  📄 intelligent-tuya-fusion.js (16.17 KB)
+  📄 json-lint.js (1.33 KB)
+  📄 link-validator.js (3.31 KB)
+  📄 lint-json.js (5.68 KB)
+  📄 list-drivers.js (1.31 KB)
+  📄 live-update.js (4.84 KB)
+  📄 local-report.js (4.37 KB)
+  📄 local-validation-pipeline.js (6.63 KB)
+  📄 localizer.js (7.22 KB)
+  📄 manual-tuya-analysis.js (16.39 KB)
+  📄 massive-driver-seed.js (12.86 KB)
+  📄 md-auto-maintenance.js (2.20 KB)
+  📄 md-maintenance-auto.js (2.46 KB)
+  📄 mega-complete-processor.js (16.61 KB)
+  📄 mega-deployment-automation.js (1.02 KB)
+  📄 mega-driver-corrector-simple.js (21.04 KB)
+  📄 mega-driver-corrector.js (21.24 KB)
+  📄 mega-driver-generator.js (0.99 KB)
+  📄 mega-driver-intelligence-validator.js (27.70 KB)
+  📄 mega-enriched-mode.js (18.70 KB)
+  📄 mega-enrichment-debug.mjs (4.99 KB)
+  📄 mega-enrichment-mode.js (22.73 KB)
+  📄 mega-enrichment-v3.4.0.mjs (22.47 KB)
+  📄 mega-enrichment.js (16.45 KB)
+  📄 mega-features-sync.js (21.43 KB)
+  📄 mega-final-complete.js (9.66 KB)
+  📄 mega-fold-integration.js (18.81 KB)
+  📄 mega-hierarchical-validator.js (11.33 KB)
+  📄 mega-link-fixer.js (1.64 KB)
+  📄 mega-md-cleanup-ultimate.js (13.88 KB)
+  📄 mega-md-organizer.js (13.59 KB)
+  📄 mega-optimizer.js (16.63 KB)
+  📄 mega-pipeline.js (14.97 KB)
+  📄 mega-progressive.js (9.14 KB)
+  📄 mega-prompt-enrichment-push.js (21.75 KB)
+  📄 mega-prompt-ultimate-enriched.js (29.16 KB)
+  📄 mega-prompt-ultimate-reconstruction.js (32.13 KB)
+  📄 mega-readme-fixer.js (11.49 KB)
+  📄 mega-recommendations-fixer.js (11.84 KB)
+  📄 mega-reorganization-cleanup.js (18.86 KB)
+  📄 mega-sources-complete.js (5.40 KB)
+  📄 mega-ultimate-bug-fixer.js (27.64 KB)
+  📄 mega-ultimate-enhancer.js (7.41 KB)
+  📄 mega-ultimate-enrichment.js (3.16 KB)
+  📄 mega-ultimate-resume.js (37.03 KB)
+  📄 mega-ultimate-sync.js (1.54 KB)
+  📄 mega-ultimate.js (5.86 KB)
+  📄 migrate-3.3-direct.js (5.74 KB)
+  📄 migrate-existing-drivers.js (10.36 KB)
+  📄 migrate-meshdriver-to-zigbeedriver.js (1.52 KB)
+  📄 migrate-to-sdk3-structure-complete.js (27.29 KB)
+  📄 migrate-to-sdk3-structure.js (26.45 KB)
+  📄 multi-language-translator.js (1.78 KB)
+  📄 neural-network-analyzer.js (3.14 KB)
+  📄 neural-network-classifier.js (3.16 KB)
+  📄 neural-network-completor.js (3.16 KB)
+  📁 node_modules/
+    📁 .bin/
+    📄 .package-lock.json (22.29 KB)
+    📁 @isaacs/
+    📁 @pkgjs/
+    📁 ansi-regex/
+    📁 ansi-styles/
+    📁 asynckit/
+    📁 axios/
+    📁 balanced-match/
+    📁 brace-expansion/
+    📁 chalk/
+    📁 color-convert/
+    📁 color-name/
+    📁 combined-stream/
+    📁 delayed-stream/
+    📁 eastasianwidth/
+    📁 emoji-regex/
+    📁 es-define-property/
+    📁 es-object-atoms/
+    📁 es-set-tostringtag/
+    📁 follow-redirects/
+    📁 foreground-child/
+    📁 form-data/
+    📁 fs-extra/
+    📁 get-intrinsic/
+    📁 get-proto/
+    📁 glob/
+    📁 gopd/
+    📁 graceful-fs/
+    📁 hasown/
+    📁 is-fullwidth-code-point/
+    📁 isexe/
+    📁 jackspeak/
+    📁 jsonfile/
+    📁 mime-db/
+    📁 mime-types/
+    📁 minimatch/
+    📁 minipass/
+    📁 path-key/
+    📁 path-scurry/
+    📁 proxy-from-env/
+    📁 shebang-command/
+    📁 shebang-regex/
+    📁 string-width/
+    📁 string-width-cjs/
+    📁 strip-ansi/
+    📁 strip-ansi-cjs/
+    📁 universalify/
+    📁 uuid/
+    📁 which/
+    📁 wrap-ansi/
+    📁 wrap-ansi-cjs/
+  📄 normalize-backup.js (1.13 KB)
+  📄 optimizer.js (5.01 KB)
+  📄 organize-and-push-force.js (15.10 KB)
+  📄 organize-reports.js (5.07 KB)
+  📄 package.json (0.41 KB)
+  📄 parallel-small-zip-processor.js (8.54 KB)
+  📄 phase1.js (1.84 KB)
+  📄 predictive-analytics-engine.js (3.16 KB)
+  📄 predictive-device-classifier.js (3.15 KB)
+  📄 predictive-file-generator.js (3.17 KB)
+  📄 process-all-todos-and-logs.ps1 (10.34 KB)
+  📄 process-external-folder.js (15.01 KB)
+  📄 process-fold-download-ultimate.js (42.86 KB)
+  📄 process-fold-download-wildcard.js (18.81 KB)
+  📄 process-fold-folder-ultimate.js (38.63 KB)
+  📄 process-issues-prs.js (13.19 KB)
+  📄 process-unknown-folders.js (14.59 KB)
+  📄 push-fusion-v3.4.2.js (2.17 KB)
+  📄 push-to-github-final.js (2.25 KB)
+  📄 push-to-github.js (5.86 KB)
+  📄 quality-gates.js (11.67 KB)
+  📄 quantum-completion-engine.js (3.17 KB)
+  📄 quantum-computing-preparator.js (3.15 KB)
+  📄 quantum-driver-generator.js (3.14 KB)
+  📄 quick-drivers-list.js (3.45 KB)
+  📄 quick-structure-validator.js (12.19 KB)
+  📄 README.md (3.57 KB)
+  📄 real-time-validator.js (1.76 KB)
+  📄 reclass-drivers.js (16.44 KB)
+  📄 recover-all-actions.ps1 (8.84 KB)
+  📄 recover-all-tuya-drivers.ps1 (22.14 KB)
+  📄 reindex-drivers.js (0.95 KB)
+  📄 relance-mega-enrichi-complet.js (17.58 KB)
+  📄 renamer.js (15.83 KB)
+  📄 reorganisation-optimisation-complete.js (36.19 KB)
+  📄 reorganization-complete-v3.4.1.js (8.92 KB)
+  📄 reorganize-backup-structure.js (7.62 KB)
+  📄 reorganize-drivers-structure.js (20.74 KB)
+  📄 reorganize-drivers.js (9.13 KB)
+  📄 restart-silent-processor.js (5.68 KB)
+  📄 restore-and-convert-only.js (22.40 KB)
+  📄 restore-and-fusion-complete.js (27.57 KB)
+  📄 restore-and-resume-tasks.js (7.36 KB)
+  📄 restore-complete-drivers.js (18.57 KB)
+  📄 restore-complete-structure.js (19.26 KB)
+  📄 restore-homey-files.js (14.46 KB)
+  📄 restore-lost-actions.ps1 (7.98 KB)
+  📄 restore-simple.js (3.98 KB)
+  📄 restore-tmp-sources.js (3.57 KB)
+  📄 restore-tuya-complete.js (25.68 KB)
+  📄 resume-interrupted-prompts.js (16.65 KB)
+  📄 run-migration-sdk3.js (0.61 KB)
+  📄 run-tests.mjs (8.99 KB)
+  📄 run_mega_prompt.js (2.56 KB)
+  📄 run_phase.js (0.92 KB)
+  📄 safe-pipeline.js (0.84 KB)
+  📄 scan-missing-required.js (1.29 KB)
+  📄 scout.js (5.21 KB)
+  📁 scrape/
+    📄 fetch_blakadder.mjs (8.19 KB)
+  📄 scrape_homey_threads.js (1.70 KB)
+  📄 setup-dev-env.js (9.96 KB)
+  📄 silent-background-processor-fallback.js (16.55 KB)
+  📄 silent-background-processor.js (14.20 KB)
+  📄 silent-controller.js (11.30 KB)
+  📄 simple-driver-report.js (3.17 KB)
+  📄 simple-fix-structure.js (3.74 KB)
+  📄 simple-image-generator.js (2.35 KB)
+  📄 simple-organize.js (3.22 KB)
+  📄 simple-push-final.js (1.49 KB)
+  📄 simple-push.js (1.84 KB)
+  📄 simple-report.js (5.52 KB)
+  📄 simple-test.js (1.08 KB)
+  📄 smart-community-manager.js (3.14 KB)
+  📄 smart-device-analyzer.js (1.77 KB)
+  📄 smart-error-recovery.js (3.14 KB)
+  📄 solve-unknown-drivers.js (23.27 KB)
+  📁 sources/
+    📁 enrichers/
+  📄 sources-analyzer.js (17.10 KB)
+  📄 sources-wildcard.js (7.74 KB)
+  📄 strip-bom.js (3.70 KB)
+  📄 sync-tuya-light-branch.js (10.91 KB)
+  📄 sync-tuya-light.js (4.52 KB)
+  📄 sync_lite_version.mjs (7.98 KB)
+  📁 templates/
+    📄 README.md (1.91 KB)
+  📄 terminal-fixer-and-validator.js (12.97 KB)
+  📄 terminal-test.js (0.78 KB)
+  📄 test-all-workflows-enhanced.ps1 (11.99 KB)
+  📄 test-all-workflows.ps1 (2.31 KB)
+  📄 test-and-push-final.js (9.00 KB)
+  📄 test-bugs-fixed.js (14.06 KB)
+  📄 test-deps.js (1.52 KB)
+  📄 test-env.js (1.33 KB)
+  📄 test-fetch.js (1.54 KB)
+  📄 test-fold-download-wildcard-complete.js (13.49 KB)
+  📄 test-fold-processing-complete.js (23.59 KB)
+  📄 test-generation-pipeline.js (11.26 KB)
+  📄 test-intelligent-modules.ps1 (6.99 KB)
+  📄 test-mega-enrichment-push-complete.js (23.18 KB)
+  📄 test-mega-final.js (9.77 KB)
+  📄 test-mega-prompt.js (5.36 KB)
+  📄 test-prompts-resumed.js (15.82 KB)
+  📄 test-scan.cjs (1.40 KB)
+  📄 test-scan.js (1.57 KB)
+  📄 test-simple-execution.js (1.12 KB)
+  📄 test-simple.mjs (0.47 KB)
+  📄 test-sources.js (5.65 KB)
+  📄 test-structure.js (2.17 KB)
+  📄 test-terminal.js (0.48 KB)
+  📄 test-unknown-drivers-solved.js (16.72 KB)
+  📄 test-update.js (3.58 KB)
+  📄 translate-logs.js (11.68 KB)
+  📄 tuya-smart-life-integration.ps1 (5.81 KB)
+  📄 tuya-zigbee-automation.ps1 (6.23 KB)
+  📄 ultimate-final-fixer.js (15.13 KB)
+  📄 ultimate-fix.js (6.39 KB)
+  📄 ultimate-homey-validator.js (20.15 KB)
+  📄 ultimate-unknown-fix.js (16.54 KB)
+  📄 ultimate-validator.js (7.54 KB)
+  📄 ultra-simple-push.js (1.52 KB)
+  📄 update-dashboard.js (17.78 KB)
+  📄 update-drivers.js (28.46 KB)
+  📄 update-mega-and-push.js (3.93 KB)
+  📄 update-mega-mode.js (13.71 KB)
+  📄 update-mega-simple.js (19.58 KB)
+  📄 update-readme.js (0.92 KB)
+  📄 update_device_matrix.mjs (7.31 KB)
+  📁 utils/
+    📄 archiver.js (1.50 KB)
+    📄 classifier.js (3.80 KB)
+    📄 driver-validator.js (0.69 KB)
+    📄 helpers.js (3.88 KB)
+    📄 organize-docs.js (26.83 KB)
+    📄 test.js (6.92 KB)
+    📄 validate.js (6.58 KB)
+  📄 validate-all-drivers.ps1 (2.89 KB)
+  📄 validate-drivers.js (6.92 KB)
+  📄 validate-final.js (7.90 KB)
+  📄 validate-no-publish.js (6.41 KB)
+  📄 validate.js (10.77 KB)
+  📄 validator.js (7.69 KB)
+  📄 verify-app-js-and-push.js (12.35 KB)
+  📄 verify-coherence.js (6.47 KB)
+  📄 verify-functioning-and-push.js (13.25 KB)
+  📄 verify-integrity-and-push.js (15.93 KB)
+  📄 verify-tuya-structure.js (3.44 KB)
+  📄 versioning-automation.ps1 (6.93 KB)
+  📄 windsurf-scan.js (1.69 KB)
+  📄 workflows-optimization.ps1 (6.07 KB)
+  📄 zalgo-fix.js (7.86 KB)
+  📄 zip-processor-controller.js (11.72 KB)
+📄 sdk-config.json (1.81 KB)
+📄 sdk3-config.json (2.05 KB)
+📁 settings/
+  📁 deviceDatabase/
+    📁 confirmed/
+    📁 proposed/
+    📁 templates/
+  📁 network/
+  📁 overlays/
+📄 setup-and-run.bat (4.77 KB)
+📄 setup-dev-env.ps1 (5.57 KB)
+📄 setup-env.ps1 (3.87 KB)
+📄 setup-git.bat (1.12 KB)
+📄 simple-check.bat (0.88 KB)
+📄 simple-homey-test.js (1.41 KB)
+📄 simple-push.ps1 (2.00 KB)
+📄 simple-report.bat (4.50 KB)
+📄 simple-report.cmd (1.53 KB)
+📄 simple-report.ps1 (4.32 KB)
+📄 simple-scan.js (5.44 KB)
+📄 simple-test.bat (1.24 KB)
+📄 simple-test.js (1.88 KB)
+📄 simple-test.ps1 (1.63 KB)
+📄 simple_check.js (4.02 KB)
+📄 simple_check.ps1 (3.49 KB)
+📄 simple_fix.py (3.46 KB)
+📁 src/
+  📄 app.js (7.94 KB)
+  📁 config/
+    📄 default.js (1.89 KB)
+    📄 index.js (6.37 KB)
+  📁 devices/
+    📄 BaseDevice.js (9.63 KB)
+  📁 drivers/
+    📄 BaseDriver.js (7.36 KB)
+    📁 core/
+    📁 tuya/
+  📁 lib/
+  📁 services/
+    📄 capability-manager.js (6.19 KB)
+    📄 device-manager.js (12.92 KB)
+    📄 discovery-manager.js (11.80 KB)
+    📄 group-manager.js (8.76 KB)
+    📄 python.js (6.88 KB)
+    📄 schedule-manager.js (12.75 KB)
+    📄 TuyaApiService.js (13.44 KB)
+    📄 zigbee-service.js (15.42 KB)
+    📄 ZigbeeService.js (19.21 KB)
+  📁 utils/
+    📄 config.js (4.02 KB)
+    📄 errorHandler.js (4.07 KB)
+    📄 logger.js (2.63 KB)
+  📁 workflows/
+📄 STRUCTURE_REPORT_v3.4.1.json (20.65 KB)
+📄 switch-to-master.ps1 (0.54 KB)
+📁 sync/
+  📄 sync-master-tuya-light.sh (0.23 KB)
+📄 system-check.bat (2.97 KB)
+📁 templates/
+  📁 assets/
+    📄 placeholder.svg (0.43 KB)
+  📄 device-template.js (6.48 KB)
+  📄 driver-compose.template.json (1.96 KB)
+  📄 driver-readme.md (0.54 KB)
+  📁 driver-template/
+    📄 device.js (1.85 KB)
+    📄 driver.compose.json (0.90 KB)
+  📄 multi-sensor-device.js (13.18 KB)
+  📄 README-multilingual-template.md (1.35 KB)
+  📄 switch-device.js (14.47 KB)
+📁 test/
+  📁 config/
+    📄 mocha-multi-reporters.json (0.60 KB)
+  📁 integration/
+    📄 app.test.js (4.57 KB)
+    📄 climate.test.js (0.92 KB)
+    📄 device.test.js (3.07 KB)
+    📄 plug.test.js (1.03 KB)
+  📄 offline-scoring.test.js (3.80 KB)
+  📄 test-helper.js (4.36 KB)
+  📁 unit/
+    📄 app.test.js (1.54 KB)
+    📄 device-manager.test.js (6.60 KB)
+    📄 device.test.js (4.74 KB)
+    📁 services/
+    📄 simple.test.js (0.23 KB)
+    📄 tuya-ts0011.test.js (1.32 KB)
+    📄 tuya-ts011f.test.js (1.67 KB)
+📄 test-all-scripts.js (4.48 KB)
+📄 test-architect.js (1.72 KB)
+📄 test-cmd.bat (0.07 KB)
+📄 test-deps.js (0.77 KB)
+📄 test-diagnostic.js (1.49 KB)
+📄 test-env-check.js (0.76 KB)
+📄 test-env-complete.js (1.24 KB)
+📄 test-env.bat (0.58 KB)
+📄 test-env.js (1.96 KB)
+📄 test-env.ps1 (2.17 KB)
+📄 test-esm-check.js (1.02 KB)
+📄 test-esm.js (1.06 KB)
+📄 test-imports.js (1.22 KB)
+📄 test-mega-modules.js (1.29 KB)
+📄 test-minimal.js (0.64 KB)
+📄 test-node-basic.js (0.81 KB)
+📄 test-node-check.js (1.28 KB)
+📄 test-node-env-check.js (1.97 KB)
+📄 test-node-env-minimal.js (0.84 KB)
+📄 test-node-env.js (2.88 KB)
+📄 test-node-exec.js (0.83 KB)
+📄 test-node-install.ps1 (1.70 KB)
+📄 test-node-script.js (0.14 KB)
+📄 test-node.bat (0.97 KB)
+📄 test-node.js (0.63 KB)
+📄 test-optimizer.js (1.90 KB)
+📄 test-output.txt (0.46 KB)
+📄 test-powershell.ps1 (4.87 KB)
+📄 test-report.json (1.09 KB)
+📄 test-runner.js (0.69 KB)
+📄 test-scout.js (1.29 KB)
+📄 test-script.js (0.13 KB)
+📄 test-simple.bat (1.18 KB)
+📄 test-simple.js (0.06 KB)
+📄 test-simple.ps1 (3.89 KB)
+📄 test-suite.js (1.11 KB)
+📄 test-validation-simple.js (2.48 KB)
+📄 test-validation.ps1 (1.54 KB)
+📄 test-validator.js (2.12 KB)
+📄 test.txt (0.03 KB)
+📄 TESTING.md (5.82 KB)
+📁 tests/
+  📁 devices/
+    📄 multi_sensor.test.js (10.11 KB)
+    📄 water_leak_sensor.test.js (5.08 KB)
+  📁 e2e/
+  📁 integration/
+    📁 drivers/
+    📄 integration.test.js (0.36 KB)
+    📄 README.md (0.63 KB)
+  📁 mocks/
+  📁 performance/
+    📄 README.md (0.63 KB)
+  📁 security/
+    📄 README.md (0.62 KB)
+  📁 unit/
+    📄 basic.test.js (0.16 KB)
+    📁 drivers/
+    📄 drivers.test.js (0.39 KB)
+    📄 README.md (0.62 KB)
+  📁 validation/
+    📄 README.md (0.63 KB)
+📄 test_script.js (1.17 KB)
+📁 tools/
+  📄 analyze-and-enrich-drivers.js (6.93 KB)
+  📄 analyze-drivers.js (2.28 KB)
+  📄 autonomous-processor.js (16.22 KB)
+  📄 build-homey.js (6.33 KB)
+  📄 check-assets.js (2.99 KB)
+  📄 clean-json-only.js (2.64 KB)
+  📄 cleanup-driver-names-ultimate.js (9.34 KB)
+  📄 cli.js (8.26 KB)
+  📄 convert-images.js (6.08 KB)
+  📁 core/
+    📄 automation-manager.js (0.00 KB)
+    📄 build-suite.js (2.02 KB)
+    📄 deployer.js (3.54 KB)
+    📄 enrichment-suite.js (2.06 KB)
+    📄 evidence-collector.js (7.47 KB)
+    📄 failover-tester.js (4.00 KB)
+    📄 final-validator.js (9.77 KB)
+    📄 orchestrator.js (8.51 KB)
+    📄 preparation.js (6.71 KB)
+    📄 scraping-engine.js (2.42 KB)
+    📄 script-consolidator.js (9.68 KB)
+    📄 script-converter.js (11.90 KB)
+    📄 validation-suite.js (2.06 KB)
+    📄 validator.js (8.69 KB)
+  📄 create-app-images.js (4.79 KB)
+  📄 create-coherent-images.js (15.20 KB)
+  📄 driver-enrichment-engine.js (12.29 KB)
+  📄 dump.js (10.69 KB)
+  📄 dynamic-repo-recognition.ps1 (25.51 KB)
+  📄 enable-compose.js (0.38 KB)
+  📄 enrich-drivers.js (4.61 KB)
+  📄 evidence-collect.js (2.33 KB)
+  📄 evidence-collector.js (18.16 KB)
+  📄 final-test.js (18.93 KB)
+  📄 fix-app-json-driver-images.js (8.90 KB)
+  📄 fix-app-json-images.js (6.52 KB)
+  📄 fix-driver-images-in-app-json.js (2.77 KB)
+  📄 fix-image-placement.js (5.38 KB)
+  📄 fix-sdk3-naming-complete.js (10.24 KB)
+  📄 generate-coverage-report.js (13.37 KB)
+  📄 generate-device-matrix.js (0.09 KB)
+  📄 generate-driver-report.js (6.50 KB)
+  📄 generate-lite-version.sh (9.11 KB)
+  📄 generate-tuya-light.sh (7.46 KB)
+  📁 harvest/
+    📁 adapters/
+    📁 cache/
+    📄 run-all.js (9.81 KB)
+  📄 lint-json.js (0.59 KB)
+  📄 logger.js (0.37 KB)
+  📄 massive-image-fix.js (8.11 KB)
+  📄 merge-package.js (0.64 KB)
+  📄 offline-reliability-scoring.js (0.14 KB)
+  📄 optimize-sdk3.js (8.16 KB)
+  📄 orchestrate-mega-ultimate.js (15.94 KB)
+  📄 orchestrate-mega.js (7.79 KB)
+  📄 orchestrate-simple.js (3.46 KB)
+  📄 orchestrate.js (2.05 KB)
+  📄 process-assets.js (7.22 KB)
+  📄 process-dumps.js (6.61 KB)
+  📄 recursive-validator.js (19.65 KB)
+  📁 repair/
+    📄 advanced-scoring-engine.js (34.83 KB)
+    📄 advanced-source-analysis.js (18.92 KB)
+    📄 assert-drivers.js (6.45 KB)
+    📄 auto-correction-engine.js (23.38 KB)
+    📄 bootstrap-arch.js (4.45 KB)
+    📄 cleanup-and-fix.js (22.86 KB)
+    📄 comprehensive-analysis.ps1 (24.58 KB)
+    📄 comprehensive-driver-analysis.js (26.27 KB)
+    📄 comprehensive-driver-scan.js (14.48 KB)
+    📄 diagnostic.ps1 (3.30 KB)
+    📄 driver-coverage-analyzer.js (14.31 KB)
+    📄 drivers.js (9.64 KB)
+    📄 enhance-drivers.js (19.05 KB)
+    📄 final-validation.js (11.98 KB)
+    📄 fix-all-clusters.js (3.34 KB)
+    📄 fix-app-json-direct.js (4.42 KB)
+    📄 fix-app-json-final.js (6.78 KB)
+    📄 fix-app-json-v2.js (4.65 KB)
+    📄 fix-app-json.js (4.75 KB)
+    📄 fix-clusters-final.js (3.15 KB)
+    📄 fix-clusters-powershell.ps1 (3.32 KB)
+    📄 fix-clusters-simple.js (2.52 KB)
+    📄 fix-clusters-to-numbers.js (5.30 KB)
+    📄 fix-clusters.js (9.00 KB)
+    📄 fix-driver-compose-clusters.js (3.71 KB)
+    📄 fix-driver-compose-files.js (6.37 KB)
+    📄 fix-drivers-realistic.js (8.70 KB)
+    📄 fix-endpoints-structure.js (2.64 KB)
+    📄 fix-homey-structure.js (3.82 KB)
+    📄 fix-missing-drivers.js (23.18 KB)
+    📄 fix-universal-drivers.js (8.50 KB)
+    📄 fix-universal-drivers.ps1 (10.10 KB)
+    📄 generate-app-json.js (3.85 KB)
+    📄 intelligent-driver-enrichment.js (16.83 KB)
+    📄 intelligent-enrichment-engine.js (30.89 KB)
+    📄 manual-fix.js (0.98 KB)
+    📄 mega-analysis-engine.js (14.80 KB)
+    📄 mega-orchestrator.js (18.76 KB)
+    📄 quick-fix.js (6.34 KB)
+    📄 quick-validate.js (2.49 KB)
+    📄 simple-enrichment.js (3.83 KB)
+    📄 test-simple.js (0.99 KB)
+    📄 ultimate-cluster-fix.js (7.97 KB)
+    📄 ultimate-driver-enrichment.js (26.65 KB)
+    📄 ultimate-enrichment.ps1 (23.05 KB)
+  📁 schemas/
+    📄 metadata.schema.json (1.83 KB)
+    📄 overlay.schema.json (1.37 KB)
+  📄 strip-bom.js (0.58 KB)
+  📄 test.js (0.57 KB)
+  📄 ultimate-corrector-simple.js (16.48 KB)
+  📄 ultimate-corrector.js (17.05 KB)
+  📄 ultimate-image-fix-complete.js (3.56 KB)
+  📄 ultimate-small-png-fix.js (8.21 KB)
+  📄 update-placeholders.js (6.14 KB)
+  📄 update-references.js (3.46 KB)
+  📁 validate/
+  📄 validate-app-json.js (4.94 KB)
+  📄 validate-config.js (4.03 KB)
+  📄 validate-driver-configs.js (6.46 KB)
+  📄 validate-driver-ids.js (1.26 KB)
+  📄 validate-homey.js (7.12 KB)
+  📄 validate-zigbee-properties.js (4.74 KB)
+  📄 validate.js (0.99 KB)
+  📄 version-manager-and-release-creator.js (26.76 KB)
+  📄 web-scraper.js (6.53 KB)
+📄 tsconfig.json (1.08 KB)
+📄 tuya-check.cmd (2.52 KB)
+📄 tuya-integration-report.js (6.56 KB)
+📁 tuya-light-release/
+  📄 app.js (57.16 KB)
+  📄 app.json (1.19 KB)
+  📄 CONTRIBUTING.md (3.05 KB)
+  📁 drivers/
+    📁 tuya/
+  📄 LICENSE (1.04 KB)
+  📄 package.json (0.38 KB)
+  📄 README.md (6.15 KB)
+📄 tuya-report.bat (2.18 KB)
+📄 tuya-scan.bat (2.21 KB)
+📄 update-author-info.js (4.32 KB)
+📄 update-drivers-error.log (1.08 KB)
+📄 update-drivers.log (0.18 KB)
+📄 update-git-config.js (1.95 KB)
+📄 valid-categories.json (0.57 KB)
+📄 validate-homey.ps1 (6.94 KB)
+📄 validation-fixes.json (0.32 KB)
+📄 VALIDATION_FINAL_REPORT.md (4.01 KB)
+📄 VALIDATION_REPORT_2025-08-16T03-26-30-208Z.json (250.99 KB)
+📄 VALIDATION_REPORT_2025-08-16T03-31-40-367Z.json (250.99 KB)
+📄 VALIDATION_REPORT_2025-08-16T10-27-32-997Z.json (250.89 KB)
+📄 VALIDATION_REPORT_2025-08-16T13-30-55-051Z.json (250.89 KB)
+📄 VALIDATION_REPORT_2025-08-16T14-28-30-181Z.json (250.89 KB)
+📄 verify-git.js (1.18 KB)
+📄 verify-node-env.bat (1.42 KB)
+📁 web-enriched/
+  📄 web_enrichment_report.json (0.44 KB)
+📁 workflows/
+  📁 auto-changelog.yml/
+  📁 build.yml/
+  📁 deploy-dashboard.yml/
+  📁 validate-drivers.yml/
+📁 _site/
+📁 __pycache__/
+  📄 fix_drivers_intelligently.cpython-313.pyc (9.55 KB)

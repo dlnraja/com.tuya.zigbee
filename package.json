@@ -3,6 +3,32 @@
   "version": "2.1.0",
   "description": "Universal Tuya Zigbee Device Integration for Homey",
   "main": "app.js",
+  "keywords": [
+    "homey",
+    "zigbee",
+    "tuya",
+    "smart home",
+    "iot"
+  ],
+  "author": "Tuya Zigbee Team",
+  "contributors": [
+    {
+      "name": "Community Contributors",
+      "email": "community@homey.app"
+    }
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dlnraja/com.tuya.zigbee"
+  },
+  "bugs": {
+    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
+  },
+  "homepage": "https://dlnraja.github.io/com.tuya.zigbee",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "test": "mocha",
     "test:watch": "mocha --watch",
@@ -58,21 +84,5 @@
     "rimraf": "^5.0.5",
     "eslint-config-homey-app": "^3.0.0",
     "eslint-plugin-import": "^2.29.1"
-  },
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "author": "Tuya Zigbee Team",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dlnraja/com.tuya.zigbee"
-  },
-  "keywords": [
-    "homey",
-    "zigbee",
-    "tuya",
-    "smart home",
-    "iot"
-  ]
+  }
 }

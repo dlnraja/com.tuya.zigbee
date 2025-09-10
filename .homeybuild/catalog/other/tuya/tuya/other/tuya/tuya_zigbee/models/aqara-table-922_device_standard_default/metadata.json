@@ -1,0 +1,20 @@
+{
+  "id": "aqara-table-922_light_standard",
+  "name": "aqara aqara-table-922",
+  "category": "light",
+  "vendor": "aqara",
+  "model": "aqara-table-922",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:02.096Z",
+  "updatedAt": "2025-08-13T12:09:02.097Z"
+}

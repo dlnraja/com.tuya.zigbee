@@ -1,0 +1,13 @@
+{
+  "app": {
+    "name": "Tuya Zigbee",
+    "description": "Ondersteuning voor Tuya Zigbee-apparaten met universele stuurprogramma's",
+    "pair": {
+      "select_device": "Selecteer uw apparaat"
+    }
+  },
+  "error": {
+    "device_not_found": "Apparaat niet gevonden",
+    "pairing_failed": "Koppelen mislukt. Probeer het opnieuw."
+  }
+}

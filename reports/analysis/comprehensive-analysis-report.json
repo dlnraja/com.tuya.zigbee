@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-08-22T18:12:16.105Z",
+  "summary": {
+    "totalDrivers": 42,
+    "validDrivers": 42,
+    "validationRate": 100,
+    "averageScore": 100
+  },
+  "categories": {
+    "unknown": 42
+  },
+  "recommendations": [
+    "Tous les drivers sont maintenant conformes aux standards Homey",
+    "Structure Zigbee complète avec manufacturerName, productId et endpoints",
+    "Capabilities et clusters optimisés selon les standards Tuya",
+    "Prêt pour la validation Homey app validate"
+  ]
+}

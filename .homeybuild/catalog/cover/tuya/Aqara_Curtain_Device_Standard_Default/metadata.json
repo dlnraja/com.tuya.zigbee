@@ -1,0 +1,9 @@
+{
+  "name": "Aqara_Curtain_Device_Standard_Default",
+  "type": "tuya_zigbee",
+  "category": "cover",
+  "source": "drivers\\tuya_zigbee\\models\\aqara-curtain-838_device_standard_default",
+  "created": "2025-08-14T15:21:20.698Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}
