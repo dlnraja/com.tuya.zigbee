@@ -5,7 +5,11 @@
     "fr": "Capteur de Température IKEA"
   },
   "class": "sensor",
-  "capabilities": ["measure_temperature", "measure_humidity", "measure_battery"],
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+  ],
   "images": {
     "large": "assets/images/large.png",
     "small": "assets/images/small.png"
@@ -16,5 +20,24 @@
       "id": "list_devices",
       "template": "list_devices"
     }
-  ]
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "ikea_tradfri_temperature"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    }
+  }
 }

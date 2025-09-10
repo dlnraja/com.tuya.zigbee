@@ -1,0 +1,13 @@
+cluster_id,cluster_name,capability,description
+0x0000,Basic,"identify","Device identification"
+0x0001,Power Configuration,"measure_battery","Battery level"
+0x0003,Identify,"identify","Identify device"
+0x0004,Groups,"","Group management"
+0x0005,Scenes,"","Scene management"
+0x0006,On/Off,"onoff","On/off control"
+0x0008,Level Control,"dim","Brightness control"
+0x0300,Color Control,"light_hue,light_saturation,light_temperature","Color control"
+0x0402,Temperature Measurement,"measure_temperature","Temperature sensor"
+0x0405,Relative Humidity,"measure_humidity","Humidity sensor"
+0x0406,Occupancy Sensing,"alarm_motion","Motion detection"
+0x0500,IAS Zone,"alarm_contact,alarm_smoke,alarm_water","Security sensors"

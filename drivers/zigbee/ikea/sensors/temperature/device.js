@@ -1,4 +1,4 @@
-class IKEATemperatureDevice extends Homey.Device {
+class IKEATemperatureDevice extends BaseZigbeeDevice.Device {
   async onInit() {
     this.log('IKEA Temperature Sensor initialized');
     this.registerCapabilityListener('measure_temperature', this.onCapabilityMeasureTemperature.bind(this));

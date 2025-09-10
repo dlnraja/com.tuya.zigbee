@@ -1,5 +1,5 @@
 const StandardTuyaDriver = require('../../_template/standard_driver');
-const { Cluster } = require('zigbee-clusters');
+const { Cluster, CLUSTER } = require("zigbee-clusters");
 
 class WaterLeakDriver extends StandardTuyaDriver {
 

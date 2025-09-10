@@ -1,1 +1,29 @@
-{}
+{
+  "id": "_base",
+  "name": {
+    "en": "Base Driver"
+  },
+  "class": "sensor",
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "_base"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    }
+  },
+  "capabilities": [
+    "measure_battery"
+  ]
+}

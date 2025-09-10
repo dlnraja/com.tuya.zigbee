@@ -1,0 +1,6 @@
+model,vendor,description,capabilities,clusters,source,status,patches_applied,last_updated
+TS0011,Tuya,"Smart switch (1 gang)","switch","0x0006,0x0000",zigbee2mqtt,supported,1,2025-09-10T08:12:13.537Z
+TS0012,Tuya,"Smart switch (2 gang)","switch_left;switch_right","0x0006,0x0000",zigbee2mqtt,supported,1,2025-09-10T08:12:13.540Z
+TS004F,Tuya,"Wireless switch (4 button)","battery;action","0x0006,0x0000",zigbee2mqtt,supported,0,2025-09-10T08:12:13.540Z
+TS0011,Tuya,"1 Gang Switch","on/off","0x0006,0x0000",blakadder,supported,1,2025-09-10T08:12:13.540Z
+TS0012,Tuya,"2 Gang Switch","on/off","0x0006,0x0000",blakadder,supported,1,2025-09-10T08:12:13.540Z

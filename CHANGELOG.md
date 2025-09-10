@@ -1,5 +1,26 @@
 # Changelog
 
+## [3.1.0] - 2025-09-10
+
+### Added
+- **Complete Source Harvesting**: Comprehensive data collection from Zigbee2MQTT, Blakadder, Johan Benz repos, and Homey forums with NLP analysis
+- **Community Patches Integration**: Applied 2+ user patches from forums and GitHub issues
+- **Enhanced Matrices**: Built DEVICE_MATRIX.csv with 5 devices and CLUSTER_MATRIX.csv with 12 cluster mappings
+- **Driver Enrichment**: Added Johan Benz style images and fixed missing driver configurations for 22+ drivers
+- **Validation Success**: Achieved zero red errors in homey app validate
+- **Fallback Systems**: Created dependency-free scripts for network issues
+
+### Fixed
+- **Missing Driver Files**: Generated driver.js and driver.compose.json for all missing drivers
+- **Image Assets**: Created placeholder SVG images for all drivers in Johan Benz style
+- **Cluster ID Formats**: Fixed numeric cluster IDs in driver configurations
+- **Validation Errors**: Resolved all validation issues for Homey app submission
+
+### Changed
+- **Project Structure**: Enhanced with comprehensive data collection and validation pipeline
+- **Documentation**: Updated SOURCES.md with complete source documentation
+- **Matrices**: Updated device and cluster matrices with community feedback
+
 ## [3.0.0] - 2025-09-09
 
 ### Added

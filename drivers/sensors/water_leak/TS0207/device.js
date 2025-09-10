@@ -1,7 +1,7 @@
 'use strict';
 
 const BaseZigbeeDevice = require('../../../common/BaseZigbeeDevice');
-const { CLUSTER } = require('zigbee-clusters');
+const { Cluster, CLUSTER } = require("zigbee-clusters");
 
 class TS0207Device extends BaseZigbeeDevice {
 

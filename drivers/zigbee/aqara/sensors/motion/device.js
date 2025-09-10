@@ -1,4 +1,4 @@
-class AqaraMotionDevice extends Homey.Device {
+class AqaraMotionDevice extends BaseZigbeeDevice.Device {
   async onInit() {
     this.log('Aqara Motion Sensor initialized');
     this.registerCapabilityListener('alarm_motion', this.onCapabilityAlarmMotion.bind(this));

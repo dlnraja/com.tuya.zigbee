@@ -1,0 +1,32 @@
+{
+  "id": "tuya_ts0501b",
+  "name": {
+    "en": "Tuya TS0501B"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "light_hue",
+    "light_saturation"
+  ],
+  "images": {
+    "large": "./assets/images/large/tuya_ts0501b.png",
+    "small": "./assets/images/small/tuya_ts0501b.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      },
+      "options": {
+        "singular": true
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

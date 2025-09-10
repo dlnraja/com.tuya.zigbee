@@ -8,6 +8,22 @@ console.log('CWD:', process.cwd());
 
 console.log('\n=== Test des imports de base ===');
 try {
+// Fallback implementations for missing dependencies
+
+const https = require('https');
+const http = require('http');
+// Fallback HTTP client
+const axios = {
+  get: (url) => new Promise((resolve, reject) => {
+    const client = url.startsWith('https:') ? https : http;
+    client.get(url, (res) => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => resolve({ data }));
+    }).on('error', reject);
+  })
+};
+
   const fs = require('fs');
   const path = require('path');
   console.log('✅ Modules de base (fs, path) chargés');

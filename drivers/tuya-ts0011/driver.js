@@ -1,6 +1,6 @@
 'use strict';
 
-const { ZigBeeDriver } = require('homey-zigbeedriver');
+const { ZigBeeDriver } = require("homey-zigbeedriver");
 
 class TS0011Driver extends ZigBeeDriver {
   async onInit() {

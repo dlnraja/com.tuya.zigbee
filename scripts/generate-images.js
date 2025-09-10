@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // MEGA ULTIMATE ENHANCED - 2025-08-07T16:33:44.699Z
 // Script amélioré avec liens corrigés et fonctionnalités étendues
 
@@ -48,6 +49,17 @@ class ImageGenerator {
         console.log('✅ Toutes les images ont été générées !');
     }
 }
+
+// Enhanced error handling wrapper
+process.on('uncaughtException', (error) => {
+  console.error('❌ Uncaught Exception:', error.message);
+  process.exit(1);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('❌ Unhandled Rejection at:', promise, 'reason:', reason);
+  process.exit(1);
+});
 
 async function main() {
     const generator = new ImageGenerator();
