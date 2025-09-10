@@ -1,6 +1,1 @@
-device,homey_support,zigbee2mqtt,zha,deconz,tasmota,community_rating,issues,recommended
-"TS0011","full","full","full","full","limited",4.5,"none","yes"
-"TS0012","full","full","full","full","limited",4.3,"endpoint mapping needed","yes"
-"TS004F","full","full","partial","partial","no",4.2,"battery optimization needed","yes"
-"TS011F","full","full","full","partial","no",4.7,"power calibration may be needed","yes"
-"TS0121","full","full","full","full","limited",4.4,"none","yes"
+Device_Model,Homey_Pro_2016,Homey_Pro_2019,Homey_Pro_2023,Zigbee_Channel,Range_Issues,Pairing_Success_Rate,Community_Rating,Known_Issues,Recommended_Settings

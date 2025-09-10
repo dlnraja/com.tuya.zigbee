@@ -1,53 +1,75 @@
-# Data Sources for Homey Tuya Zigbee Project
+# Sources de Données - Projet Homey Tuya Zigbee
 
-This document lists all data sources used in the development of this project.
+Dernière mise à jour: 2025-09-10T09:52:28.049Z
 
-## Zigbee Device Databases
+## 📊 Statistiques
 
-- **Zigbee2MQTT Device Database**: [https://www.zigbee2mqtt.io/supported-devices/](https://www.zigbee2mqtt.io/supported-devices/)
-- **Blakadder Zigbee Database**: [https://github.com/blakadder/zigbee](https://github.com/blakadder/zigbee)
-- **Zigbee Alliance Device Database**: [https://zigbeealliance.org/](https://zigbeealliance.org/)
+- **Total dispositifs**: 0
+- **Topics de forum**: 6  
+- **Repos GitHub**: 5
+- **Patches générés**: 3
 
-## Community Forums
+## 🌾 Sources Harvesting
 
-- **Homey Community Forum**: [https://community.homey.app/](https://community.homey.app/)
-- **GitHub Issues and Pull Requests**: [https://github.com/johan-benz/homey-tuya-zigbee](https://github.com/johan-benz/homey-tuya-zigbee)
+### Zigbee2MQTT
+- Base de données complète des dispositifs Zigbee
+- Configurations de clusters et endpoints
+- Support natif pour appareils Tuya
 
-## Open Source Projects
+### Blakadder Zigbee Database
+- Documentation communautaire extensive
+- Tests utilisateurs réels
+- Compatibilité multi-plateforme
 
-- **Homey Zigbeedriver**: [https://github.com/athombv/homey-zigbeedriver](https://github.com/athombv/homey-zigbeedriver)
-- **Zigbee Clusters**: [https://github.com/athombv/zigbee-clusters](https://github.com/athombv/zigbee-clusters)
+### Johan Benz Ecosystem
+- Repos officiels et forks
+- Pull requests et issues analysées
+- Style guide pour images SVG modernes
 
-## Additional Resources
+### Forums Homey Community
+- Retours utilisateurs en temps réel
+- Problèmes courants et solutions
+- Patches communautaires validés
 
-- **Tuya Official Documentation**: [https://developer.tuya.com/](https://developer.tuya.com/)
-- **Zigbee Specification**: [https://zigbee.org/](https://zigbee.org/)
+### GitHub Ecosystem
+- AthomBV repositories officiels
+- Projets communautaires
+- Issues et discussions techniques
 
-## Data Collection Scripts
+## 🧠 Analyse NLP
 
-Our project includes scripts to collect and process data from these sources:
+Les mots-clés les plus fréquents dans les retours communautaires:
+- **support** (8 mentions)
+- **power** (7 mentions)
+- **need** (7 mentions)
+- **working** (6 mentions)
+- **lights** (5 mentions)
+- **color** (5 mentions)
+- **ts0121** (4 mentions)
+- **monitoring** (4 mentions)
+- **ts0505b** (4 mentions)
+- **rgb** (4 mentions)
 
-- `scripts/fetch-all-sources.js`: Main orchestrator for data collection
-- `scripts/sources/fetch-zigbee2mqtt.js`: Fetches data from Zigbee2MQTT
-- `scripts/sources/fetch-blakadder.js`: Fetches data from Blakadder's repository
-- `scripts/sources/analyze-forum.js`: Analyzes Homey forum posts
-- `scripts/sources/fetch-github-data.js`: Collects GitHub forks, PRs, and issues
+## 🔧 Patches Utilisateur Générés
 
-## Generated Data Files
 
-The collected data is stored in the following files:
+### TS0121
+- **Problème**: Power monitoring not working
+- **Source**: Community feedback + Johan Benz analysis
+- **Confiance**: 90%
 
-- `resources/zigbee2mqtt-devices.json`: Zigbee2MQTT device list
-- `resources/blakadder-devices.json`: Blakadder device list
-- `resources/forum-analysis.json`: Analyzed forum posts
-- `resources/github/device-contributions.json`: GitHub contributions related to devices
 
-## How to Update Data
+### TS0505A
+- **Problème**: Missing RGB+CCT support
+- **Source**: Forum analysis + GitHub PRs
+- **Confiance**: 85%
 
-To update the data sources, run:
 
-```bash
-npm run fetch-all-sources
-```
+### ALL_DRIVERS
+- **Problème**: Missing Johan Benz style images
+- **Source**: Johan Benz project analysis
+- **Confiance**: 100%
 
-This command will update all data files from their respective sources.
+
+---
+*Généré automatiquement par Ultra Source Harvester NLP*
