@@ -1,5 +1,5 @@
 const BaseZigbeeDevice = require('../../../../common/BaseZigbeeDevice');
-const { CLUSTER } = require('zigbee-clusters');
+const { Cluster, CLUSTER } = require("zigbee-clusters");
 
 class AirQualitySensor extends BaseZigbeeDevice {
   async registerCapabilities() {

@@ -1,4 +1,4 @@
-const { ZigBeeDevice } = require('homey-meshdriver');
+const { ZigbeeDevice } = require("homey-zigbeedriver");
 
 class ZigbeeTuyaUniversalDevice extends ZigBeeDevice {
   

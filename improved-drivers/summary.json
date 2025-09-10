@@ -1,0 +1,91 @@
+{
+  "generatedAt": "2025-09-09T19:27:18.857Z",
+  "totalDrivers": 11,
+  "drivers": [
+    {
+      "model": "TS0121",
+      "driver": "tuya_ts0121",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power"
+      ]
+    },
+    {
+      "model": "TS0201",
+      "driver": "tuya_ts0201",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "model": "TS0215A",
+      "driver": "tuya_ts0215a",
+      "capabilities": []
+    },
+    {
+      "model": "TS0012",
+      "driver": "tuya_ts0012",
+      "capabilities": []
+    },
+    {
+      "model": "TS0501B",
+      "driver": "tuya_ts0501b",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation"
+      ]
+    },
+    {
+      "model": "TS004F",
+      "driver": "tuya_ts004f",
+      "capabilities": [
+        "button",
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "model": "TS011F",
+      "driver": "tuya_ts011f",
+      "capabilities": [
+        "onoff",
+        "usb_onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ]
+    },
+    {
+      "model": "TS0219",
+      "driver": "tuya_ts0219",
+      "capabilities": []
+    },
+    {
+      "model": "TS0601",
+      "driver": "tuya_ts0601",
+      "capabilities": []
+    },
+    {
+      "model": "TS0222",
+      "driver": "tuya_ts0222",
+      "capabilities": []
+    },
+    {
+      "model": "TS0202",
+      "driver": "tuya_ts0202",
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance",
+        "measure_battery",
+        "alarm_battery"
+      ]
+    }
+  ]
+}

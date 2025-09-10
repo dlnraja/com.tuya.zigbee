@@ -1,7 +1,7 @@
 {
   "main": "app.js",
   "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "1.0.0",
+  "version": "4.0.0",
   "compatibility": ">=8.0.0",
   "category": [
     "lights"
@@ -37,14 +37,22 @@
         "fr": "Prise intelligente Tuya"
       },
       "class": "socket",
-      "capabilities": ["onoff", "measure_power"],
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
       "images": {
         "small": "drivers/tuya_plug/assets/small.svg",
         "large": "drivers/tuya_plug/assets/large.svg"
       },
       "zigbee": {
-        "manufacturerName": ["Tuya"],
-        "productId": ["TS011F", "TS0121"]
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "productId": [
+          "TS011F",
+          "TS0121"
+        ]
       }
     },
     {
@@ -54,14 +62,20 @@
         "fr": "Interrupteur Tuya"
       },
       "class": "switch",
-      "capabilities": ["onoff"],
+      "capabilities": [
+        "onoff"
+      ],
       "images": {
         "small": "drivers/tuya_switch/assets/small.svg",
         "large": "drivers/tuya_switch/assets/large.svg"
       },
       "zigbee": {
-        "manufacturerName": ["Tuya"],
-        "productId": ["TS0011"]
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "productId": [
+          "TS0011"
+        ]
       }
     },
     {
@@ -71,14 +85,21 @@
         "fr": "Lumière Tuya"
       },
       "class": "light",
-      "capabilities": ["onoff", "dim"],
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
       "images": {
         "small": "drivers/tuya_light/assets/small.svg",
         "large": "drivers/tuya_light/assets/large.svg"
       },
       "zigbee": {
-        "manufacturerName": ["Tuya"],
-        "productId": ["TS0012"]
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "productId": [
+          "TS0012"
+        ]
       }
     },
     {
@@ -88,14 +109,21 @@
         "fr": "Thermostat Tuya"
       },
       "class": "thermostat",
-      "capabilities": ["measure_temperature", "set_temperature"],
+      "capabilities": [
+        "measure_temperature",
+        "set_temperature"
+      ],
       "images": {
         "small": "drivers/tuya_thermostat/assets/small.svg",
         "large": "drivers/tuya_thermostat/assets/large.svg"
       },
       "zigbee": {
-        "manufacturerName": ["Tuya"],
-        "productId": ["TS0013"]
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "productId": [
+          "TS0013"
+        ]
       }
     },
     {
@@ -140,14 +168,22 @@
         "fr": "Capteur Tuya"
       },
       "class": "sensor",
-      "capabilities": ["measure_temperature", "measure_humidity"],
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity"
+      ],
       "images": {
         "small": "drivers/tuya_sensor/assets/small.svg",
         "large": "drivers/tuya_sensor/assets/large.svg"
       },
       "zigbee": {
-        "manufacturerName": ["Tuya"],
-        "productId": ["RH3052", "TS0201"]
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "productId": [
+          "RH3052",
+          "TS0201"
+        ]
       }
     }
   ],

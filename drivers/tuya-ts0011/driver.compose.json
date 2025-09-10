@@ -58,7 +58,8 @@
   ],
   "class": "sensor",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_battery"
   ],
   "icon": "/drivers/manufacturers/tuya-ts0011/tuya-ts0011/assets/icon.svg"
 }

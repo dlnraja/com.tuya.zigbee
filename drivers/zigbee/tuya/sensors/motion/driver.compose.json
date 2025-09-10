@@ -5,7 +5,10 @@
     "fr": "Capteur de Mouvement Tuya"
   },
   "class": "sensor",
-  "capabilities": ["alarm_motion"],
+  "capabilities": [
+    "alarm_motion",
+    "measure_battery"
+  ],
   "images": {
     "large": "assets/images/large.png",
     "small": "assets/images/small.png"
@@ -16,5 +19,24 @@
       "id": "list_devices",
       "template": "list_devices"
     }
-  ]
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "ts0202_motion"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    }
+  }
 }

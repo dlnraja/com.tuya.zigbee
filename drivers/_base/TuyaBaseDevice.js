@@ -1,5 +1,5 @@
 const { ZigbeeDevice } = require('homey-zigbeedriver');
-const { CLUSTER } = require('zigbee-clusters');
+const { Cluster, CLUSTER } = require("zigbee-clusters");
 
 /**
  * Base class for all Tuya Zigbee devices

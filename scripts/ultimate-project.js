@@ -10,6 +10,22 @@ import { execSync, spawn } from 'child_process';
 import axios from 'axios';
 
 // Configuration
+// Fallback implementations for missing dependencies
+
+const https = require('https');
+const http = require('http');
+// Fallback HTTP client
+const axios = {
+  get: (url) => new Promise((resolve, reject) => {
+    const client = url.startsWith('https:') ? https : http;
+    client.get(url, (res) => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => resolve({ data }));
+    }).on('error', reject);
+  })
+};
+
 const PROJECT_ROOT = process.cwd();
 const BACKUP_DIR = path.join(PROJECT_ROOT, `../backup-ultimate-${Date.now()}`);
 const LOG_FILE = path.join(PROJECT_ROOT, 'ultimate-project.log');

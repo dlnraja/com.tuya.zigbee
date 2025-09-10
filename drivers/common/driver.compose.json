@@ -1,5 +1,28 @@
 {
   "id": "common",
   "name": "Common Utilities",
-  "icon": "/drivers/common/assets/icon.svg"
+  "icon": "/drivers/common/assets/icon.svg",
+  "class": "sensor",
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "common"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    }
+  },
+  "capabilities": [
+    "measure_battery"
+  ]
 }

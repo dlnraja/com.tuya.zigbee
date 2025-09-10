@@ -1,4 +1,4 @@
-class XiaomiTemperatureDevice extends Homey.Device {
+class XiaomiTemperatureDevice extends BaseZigbeeDevice.Device {
   async onInit() {
     this.log('Xiaomi Temperature Sensor initialized');
     this.registerCapabilityListener('measure_temperature', this.onCapabilityMeasureTemperature.bind(this));

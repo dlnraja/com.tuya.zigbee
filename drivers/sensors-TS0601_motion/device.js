@@ -1,5 +1,5 @@
 const TuyaZigbeeMultiSensorDevice = require('../../templates/multi-sensor-device');
-const { CLUSTER } = require('zigbee-clusters');
+const { Cluster, CLUSTER } = require("zigbee-clusters");
 const { wait } = require('homey-zigbeedriver/lib/util');
 
 // Constants
@@ -11,7 +11,7 @@ const MOTION_TIMEOUT_MS = 60 * 1000; // 1 minute
  * TS0601 Motion Sensor Device
  * @extends TuyaZigbeeMultiSensorDevice
  */
-class TS0601MotionSensorDevice extends TuyaZigbeeMultiSensorDevice {
+class TS0601MotionSensorDevice extends BaseZigbeeDevice {
   
   /**
    * Device initialization

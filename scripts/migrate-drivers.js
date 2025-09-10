@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -59,6 +60,17 @@ export default ${driverName}Device;`;
   fs.writeFileSync(deviceFile, newDeviceCode);
   console.log(`Migrated ${driverName} device.js`);
 }
+
+// Enhanced error handling wrapper
+process.on('uncaughtException', (error) => {
+  console.error('❌ Uncaught Exception:', error.message);
+  process.exit(1);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('❌ Unhandled Rejection at:', promise, 'reason:', reason);
+  process.exit(1);
+});
 
 async function main() {
   // Trouver tous les drivers à migrer

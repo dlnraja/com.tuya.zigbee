@@ -1,0 +1,58 @@
+{
+  "id": "rs0201",
+  "name": {
+    "en": "Tuya Motion Sensor",
+    "fr": "Détecteur de mouvement Tuya"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": "_TZ3000_qaaysllp",
+    "modelId": "RS0201",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genBasic",
+          "genIdentify",
+          "genPowerCfg",
+          "msOccupancySensing"
+        ],
+        "bindings": [
+          "genPowerCfg",
+          "msOccupancySensing"
+        ]
+      }
+    }
+  },
+  "images": {
+    "large": "assets/images/large/motion.png",
+    "small": "assets/images/small/motion.png"
+  },
+  "settings": [
+    {
+      "id": "sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Motion Sensitivity",
+        "fr": "Sensibilité du mouvement"
+      },
+      "value": 5,
+      "attr": {
+        "min": 1,
+        "max": 10
+      }
+    },
+    {
+      "id": "apply_battery_fix",
+      "type": "checkbox",
+      "label": {
+        "en": "Apply battery reporting fix",
+        "fr": "Appliquer le correctif de reporting batterie"
+      },
+      "value": true
+    }
+  ]
+}

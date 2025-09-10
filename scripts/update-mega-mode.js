@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // MEGA ULTIMATE ENHANCED - 2025-08-07T16:33:44.874Z
 // Script amélioré avec liens corrigés et fonctionnalités étendues
 
@@ -188,6 +189,17 @@ class MegaTestRunner {
         console.log('✅ Tous les tests mega terminés');
     }
 }
+
+// Enhanced error handling wrapper
+process.on('uncaughtException', (error) => {
+  console.error('❌ Uncaught Exception:', error.message);
+  process.exit(1);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('❌ Unhandled Rejection at:', promise, 'reason:', reason);
+  process.exit(1);
+});
 
 if (require.main === module) {
     const runner = new MegaTestRunner();

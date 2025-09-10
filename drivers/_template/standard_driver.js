@@ -1,5 +1,5 @@
 const { ZigbeeDevice } = require('homey-zigbeedriver');
-const { Cluster } = require('zigbee-clusters');
+const { Cluster, CLUSTER } = require("zigbee-clusters");
 
 class StandardTuyaDriver extends ZigbeeDevice {
 

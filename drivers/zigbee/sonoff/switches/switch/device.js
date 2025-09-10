@@ -1,4 +1,4 @@
-class SonoffSwitchDevice extends Homey.Device {
+class SonoffSwitchDevice extends BaseZigbeeDevice.Device {
   async onInit() {
     this.log('Sonoff Switch initialized');
     this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));

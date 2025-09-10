@@ -1,6 +1,6 @@
 // Placeholder for temperature device
 
-class TemperatureDevice extends Homey.Device {
+class TemperatureDevice extends BaseZigbeeDevice.Device {
   async onInit() {
     this.log('Tuya Temperature Sensor initialized');
     this.registerCapabilityListener('measure_temperature', this.onCapabilityMeasureTemperature.bind(this));

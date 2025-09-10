@@ -1,0 +1,30 @@
+{
+  "id": "tuya_ts0012",
+  "name": {
+    "en": "Tuya TS0012"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "large": "./assets/images/large/tuya_ts0012.png",
+    "small": "./assets/images/small/tuya_ts0012.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      },
+      "options": {
+        "singular": true
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}
