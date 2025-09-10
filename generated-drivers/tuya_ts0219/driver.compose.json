@@ -1,0 +1,31 @@
+{
+  "id": "tuya_ts0219",
+  "name": {
+    "en": "Tuya TS0219"
+  },
+  "class": "other",
+  "capabilities": [
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "images": {
+    "large": "./assets/images/large/tuya_ts0219.png",
+    "small": "./assets/images/small/tuya_ts0219.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      },
+      "options": {
+        "singular": true
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

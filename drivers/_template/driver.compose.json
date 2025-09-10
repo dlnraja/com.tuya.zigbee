@@ -33,5 +33,24 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ]
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "template"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    }
+  }
 }

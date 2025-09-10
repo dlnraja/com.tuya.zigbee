@@ -1,5 +1,25 @@
 {
   "id": "protocols_container",
   "name": "Protocols Container",
-  "class": "folder"
+  "class": "folder",
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "protocols_container"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    }
+  },
+  "capabilities": []
 }

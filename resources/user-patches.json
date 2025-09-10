@@ -1,0 +1,39 @@
+[
+  {
+    "device": "TS0011",
+    "type": "fix",
+    "description": "Add debounce delay for switch responsiveness",
+    "author": "community",
+    "patch": {
+      "driver": {
+        "settings": {
+          "debounce": 100
+        }
+      }
+    }
+  },
+  {
+    "device": "TS0012",
+    "type": "enhancement",
+    "description": "Support for double gang switch with proper endpoints",
+    "author": "johan-benz",
+    "patch": {
+      "zigbee": {
+        "endpoints": {
+          "1": {
+            "clusters": [
+              6,
+              0
+            ]
+          },
+          "2": {
+            "clusters": [
+              6,
+              0
+            ]
+          }
+        }
+      }
+    }
+  }
+]

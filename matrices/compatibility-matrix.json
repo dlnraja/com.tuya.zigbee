@@ -1,0 +1,57 @@
+[
+  {
+    "device": "TS0011",
+    "homey_support": "full",
+    "zigbee2mqtt": "full",
+    "zha": "full",
+    "deconz": "full",
+    "tasmota": "limited",
+    "community_rating": 4.5,
+    "issues": "none",
+    "recommended": "yes"
+  },
+  {
+    "device": "TS0012",
+    "homey_support": "full",
+    "zigbee2mqtt": "full",
+    "zha": "full",
+    "deconz": "full",
+    "tasmota": "limited",
+    "community_rating": 4.3,
+    "issues": "endpoint mapping needed",
+    "recommended": "yes"
+  },
+  {
+    "device": "TS004F",
+    "homey_support": "full",
+    "zigbee2mqtt": "full",
+    "zha": "partial",
+    "deconz": "partial",
+    "tasmota": "no",
+    "community_rating": 4.2,
+    "issues": "battery optimization needed",
+    "recommended": "yes"
+  },
+  {
+    "device": "TS011F",
+    "homey_support": "full",
+    "zigbee2mqtt": "full",
+    "zha": "full",
+    "deconz": "partial",
+    "tasmota": "no",
+    "community_rating": 4.7,
+    "issues": "power calibration may be needed",
+    "recommended": "yes"
+  },
+  {
+    "device": "TS0121",
+    "homey_support": "full",
+    "zigbee2mqtt": "full",
+    "zha": "full",
+    "deconz": "full",
+    "tasmota": "limited",
+    "community_rating": 4.4,
+    "issues": "none",
+    "recommended": "yes"
+  }
+]

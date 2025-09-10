@@ -1,7 +1,7 @@
 'use strict';
 
 const Homey = require('homey');
-const { ZigBeeDriver } = require('homey-zigbeedriver');
+const { ZigBeeDriver } = require("homey-zigbeedriver");
 
 class TuyaTS011FDriver extends ZigBeeDriver {
 

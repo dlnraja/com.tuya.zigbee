@@ -1,33 +1,58 @@
 'use strict';
 
 const { ZigbeeDevice } = require('homey-zigbeedriver');
-const { CLUSTER } = require('zigbee-clusters');
+const { Cluster, CLUSTER } = require("zigbee-clusters");
+const { EventEmitter } = require('events');
 const ErrorHandler = require('./errorHandler');
-const { POLLING_INTERVALS_MS } = require('./constants');
+const { POLLING_INTERVALS_MS, TUYA_CLUSTER_ID } = require('./constants');
 
 class BaseDevice extends ZigbeeDevice {
+  /**
+   * Device initialization
+   * @param {Object} options - Device initialization options
+   * @param {Object} options.zclNode - The ZCL node instance
+   */
   async onNodeInit({ zclNode }) {
-    this.log(`Device initialized: ${this.getName()}`);
+    this.log(`[${this.constructor.name}] Device initialized: ${this.getName()}`);
+    this._events = new EventEmitter();
+    this._batteryPollInterval = null;
+    this._lastBatteryUpdate = null;
 
+    // Enable debug mode if configured
     if (this.getSetting('debug_enabled')) {
       this.enableDebug();
       this.printNode();
+      this.log('[DEBUG] Debug logging enabled');
     }
 
     try {
+      // Register device capabilities
+      this.log(`[${this.constructor.name}] Registering capabilities...`);
       await this.registerCapabilities();
+
+      // Initialize device-specific logic
+      this.log(`[${this.constructor.name}] Initializing device...`);
       await this.initializeDevice();
 
+      // Set up battery polling if supported
       if (this.hasCapability('measure_battery')) {
-        this.setupBatteryPolling();
+        this.log(`[${this.constructor.name}] Setting up battery polling...`);
+        await this.setupBatteryPolling();
       }
 
-      // Listen for Tuya-specific datapoint messages
-      if (this.zclNode.endpoints[1].clusters[CLUSTERS.TUYA_MANUFACTURER_CLUSTER]) {
-        this.zclNode.endpoints[1].clusters[CLUSTERS.TUYA_MANUFACTURER_CLUSTER].on('data', this.onTuyaData.bind(this));
+      // Set up Tuya-specific handlers if available
+      if (this.supportsTuyaCluster()) {
+        this.log(`[${this.constructor.name}] Setting up Tuya cluster handlers...`);
+        this.setupTuyaHandlers();
       }
+
+      this.log(`[${this.constructor.name}] Initialization complete`);
+      this._events.emit('initialized');
     } catch (error) {
+      const errorMessage = `[${this.constructor.name}] Initialization failed: ${error.message}`;
+      this.error(errorMessage, error);
       ErrorHandler.handleDeviceError(this, error, 'initialization');
+      throw error;
     }
   }
 

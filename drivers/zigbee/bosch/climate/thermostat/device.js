@@ -1,4 +1,4 @@
-class BoschThermostatDevice extends Homey.Device {
+class BoschThermostatDevice extends BaseZigbeeDevice.Device {
   async onInit() {
     this.log('Bosch Thermostat initialized');
     this.registerCapabilityListener('measure_temperature', this.onCapabilityMeasureTemperature.bind(this));

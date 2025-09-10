@@ -1,5 +1,28 @@
 {
   "id": "sensors",
   "name": "Sensors",
-  "icon": "/drivers/sensors/assets/icon.svg"
+  "icon": "/drivers/sensors/assets/icon.svg",
+  "class": "sensor",
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "sensors"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    }
+  },
+  "capabilities": [
+    "measure_battery"
+  ]
 }
