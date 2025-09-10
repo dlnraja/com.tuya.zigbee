@@ -1,76 +1,50 @@
 # 🏠 Homey Universal Tuya Zigbee App
 
-> **Universal Tuya Zigbee Device Support for Homey - Professional Edition**
+> **Complete Tuya Zigbee Device Support for Homey - Community Enhanced Edition**
 
-[![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](https://github.com/dlnraja/tuya_repair/releases)
-[![Homey SDK](https://img.shields.io/badge/Homey%20SDK-3.0+-green.svg)](https://apps.homey.app/fr/app/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/version-3.1.0-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee/releases)
+[![Homey SDK](https://img.shields.io/badge/Homey%20SDK-3.0+-green.svg)](https://apps.homey.app/app/com.tuya.zigbee)
 [![License](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Reliability Score](https://img.shields.io/badge/reliability-98%25-brightgreen)](device-matrix.md)
+[![Community Patches](https://img.shields.io/badge/community%20patches-4+-orange.svg)](resources/enhanced-community-patches.json)
+[![Devices](https://img.shields.io/badge/devices-500+-success.svg)](matrices/ENHANCED_DEVICE_MATRIX.csv)
+[![Validation](https://img.shields.io/badge/homey%20validate-✅%20passing-brightgreen.svg)](#validation)
+[![GitHub Pages](https://img.shields.io/badge/docs-GitHub%20Pages-blue.svg)](https://dlnraja.github.io/com.tuya.zigbee)
+[![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-green.svg)](.github/workflows)
 
-## 📊 Device Matrix
+## ⚡ Quick Start
 
-For the complete list of supported devices with reliability scores, please see the [Device Matrix](device-matrix.md).
+```bash
+# Install via Homey CLI
+homey app install github:dlnraja/com.tuya.zigbee
 
-<details>
-<summary>French / Français</summary>
-
-## 📊 Matrice des Devices
-
-Pour la liste complète des appareils pris en charge avec les scores de fiabilité, veuillez consulter la [Matrice des Appareils](device-matrix.md).
-</details>
-
-<details>
-<summary>Dutch / Nederlands</summary>
-
-## 📊 Apparaatmatrix
-
-Voor de volledige lijst van ondersteunde apparaten met betrouwbaarheidsscores, zie de [Apparaatmatrix](device-matrix.md).
-</details>
-
-<details>
-<summary>Tamil / தமிழ்</summary>
-
-## 📊 சாதன அணி
-
-நம்பகத்தன்மை மதிப்பெண்களுடன் ஆதரிக்கப்படும் சாதனங்களின் முழுமையான பட்டியலுக்கு, [சாதன அணி](device-matrix.md) காண்க.
-</details>
-
-## 🏗 Architecture Technique
-
-La nouvelle architecture du projet est organisée comme suit :
-
-```
-tuya_zigbee_homey/
-├── lib/
-│   ├── zigbee/                  # Stack Zigbee native
-│   │   ├── zcl/                 # Zigbee Cluster Library
-│   │   ├── zdp/                 # Zigbee Device Profile
-│   │   └── security.js          # Couche sécurité
-│   ├── localapi/                # API locale Homey
-│   └── utils/                   # Utilities
-├── drivers/                     # Pilotes pour appareils
-│   ├── tuya/                    # Appareils Tuya
-│   └── zigbee/                  # Appareils Zigbee génériques
-├── scripts/                     # Scripts utilitaires
-│   ├── monitoring/              # Surveillance
-│   └── automation/              # Automatisation
-└── ...
+# Or add to Homey via App Store
+# Search for "Universal Tuya Zigbee" in Homey App Store
 ```
 
-## 📜 Project Information
+## 🎯 Key Features
 
-This is a fork of the original Tuya Zigbee app for Homey, enhanced with additional device support and features. The project is maintained by dlnraja.
+- 🔌 **500+ Tuya Devices**: Comprehensive support with community patches
+- 🌐 **Pure Zigbee**: No cloud dependency, local control only
+- 🎨 **Modern UI**: Johan Benz inspired design with professional assets
+- 💬 **Community Driven**: Enhanced with real user feedback from forums
+- 🔄 **Auto-Updates**: GitHub Actions workflows for continuous integration
+- 📊 **Live Dashboard**: Real-time device statistics and health monitoring
+- 💡 **Tuya Lights**: Complete RGB, CCT, and dimmable bulb support
+- 🏠 **Smart Home Ready**: Switches, plugs, sensors, thermostats, and more
 
-- **Author**: dlnraja
-- **Email**: dylan.rajasekaram@gmail.com
-- **GitHub**: [https://github.com/dlnraja/tuya_repair](https://github.com/dlnraja/tuya_repair)
+## 📊 Supported Devices
 
-## 🚀 Project Status
+| Category | Models | Status | Community Patches |
+|----------|--------|--------|------------------|
+| 💡 **Lights** | TS0505B, TS0502A, TS0501A | ✅ Full Support | 2 patches applied |
+| 🔌 **Plugs** | TS011F, TS0121 | ✅ Full Support | Energy monitoring |
+| 🎛️ **Switches** | TS0011, TS0012, TS0013 | ✅ Full Support | Debounce fixes |
+| 🎮 **Controllers** | TS004F, TS0043 | ✅ Full Support | Battery optimization |
+| 🌡️ **Sensors** | TS0201, TS0601 | ✅ Full Support | Accuracy improvements |
+| 🚪 **Security** | TS0203, TS0207 | ✅ Full Support | IAS zone fixes |
 
-✅ **Stable**: Actively maintained with regular updates
-🔧 **Supported Devices**: 300+ device IDs across 80+ drivers
-🌍 **Community-Driven**: Enhanced with community contributions
+📋 **[Complete Device Matrix](matrices/ENHANCED_DEVICE_MATRIX.csv)** • 📈 **[Compatibility Report](matrices/COMPATIBILITY_MATRIX.csv)** • 💬 **[Community Feedback](matrices/COMMUNITY_FEEDBACK_MATRIX.csv)**
 
 ## 🛠️ Quick Setup
 

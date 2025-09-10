@@ -1,0 +1,141 @@
+name: Tuya Zigbee Monthly Enrichment
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'  # Runs at 00:00 on the 1st of every month
+  workflow_dispatch:  # Allow manual triggering
+
+env:
+  NODE_ENV: production
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  HOMEY_APP_ID: com.tuya.zigbee
+
+jobs:
+  enrich:
+    name: Enrich and Update Drivers
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0  # Fetch all history for version comparison
+        token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: |
+        npm ci
+        npm install -g @homey/homey-cli
+    
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Run driver analysis and enrichment
+      run: |
+        # Clone and analyze source repositories
+        mkdir -p sources
+        cd sources
+        
+        # Clone repositories if they don't exist
+        [ ! -d "com.tuya.zigbee" ] && git clone https://github.com/JohanBendz/com.tuya.zigbee.git
+        [ ! -d "com.tuya" ] && git clone https://github.com/athombv/com.tuya.git
+        [ ! -d "node-homey-zigbeedriver" ] && git clone https://github.com/athombv/node-homey-zigbeedriver.git
+        [ ! -d "blakadder-zigbee" ] && git clone https://github.com/blakadder/zigbee blakadder-zigbee
+        [ ! -d "z2m" ] && git clone https://github.com/Koenkk/zigbee-herdsman-converters z2m
+        
+        # Update repositories
+        for repo in */; do
+          cd "$repo"
+          git pull
+          cd ..
+        done
+        
+        # Run analysis and enrichment script
+        cd ..
+        node scripts/update_device_matrix.mjs
+        
+        # Update documentation
+        node scripts/update_documentation.mjs
+        
+        # Generate reports
+        node scripts/generate_reports.mjs
+    
+    - name: Validate changes
+      run: |
+        npm run lint
+        npm run test
+        
+        # Validate app.json
+        homey app validate
+        
+        # Validate drivers
+        node scripts/validate_drivers.mjs
+    
+    - name: Create Pull Request
+      if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        commit-message: "chore: monthly driver updates and improvements"
+        title: "🔧 Monthly Driver Updates (${{ github.sha }})"
+        body: |
+          ## Monthly Driver Updates
+          
+          This is an automated PR containing driver updates and improvements.
+          
+          ### Changes:
+          - Updated device matrix with latest compatibility data
+          - Added new device definitions
+          - Improved existing drivers
+          - Updated documentation
+          
+          ### Next Steps:
+          - Review the changes
+          - Run additional tests if needed
+          - Merge when ready
+        branch: "monthly-update-$(date +%Y%m%d)"
+        delete-branch: true
+        labels: "automated,enhancement"
+    
+    - name: Sync to Tuya Light
+      if: success() && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+      run: |
+        bash scripts/sync_tuya_light.sh origin tuya-light
+    
+    - name: Run tests and generate coverage
+      run: |
+        npm run test:coverage
+    
+    - name: Create Pull Request
+      if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: "chore: monthly driver enrichment and updates"
+        title: "Monthly Driver Enrichment - $(date +'%B %Y')"
+        body: |
+          ## Monthly Driver Enrichment
+          
+          This PR includes:
+          - Updated drivers from source repositories
+          - New device support
+          - Bug fixes and improvements
+          - Test coverage updates
+          
+          Generated automatically by GitHub Actions.
+        branch: "monthly-update-$(date +%Y%m%d)"
+        delete-branch: true
+        labels: "automated,enhancement"

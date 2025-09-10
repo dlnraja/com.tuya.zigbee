@@ -1,0 +1,29 @@
+{
+  "reporterEnabled": "mocha-multi-reporters",
+  "mochaJunitReporterReporterOptions": {
+    "mochaFile": "test-results/junit/results.xml"
+  },
+  "mochaSonarqubeReporterReporterOptions": {
+    "output": "test-results/sonar/results.xml"
+  },
+  "reporters": [
+    {
+      "stdout": "-",
+      "options": {
+        "verbose": true
+      }
+    },
+    {
+      "stdout": "mocha-junit-reporter",
+      "options": {
+        "mochaFile": "test-results/junit/results.xml"
+      }
+    },
+    {
+      "stdout": "mocha-sonarqube-reporter",
+      "options": {
+        "output": "test-results/sonar/results.xml"
+      }
+    }
+  ]
+}

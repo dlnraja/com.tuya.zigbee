@@ -1,0 +1,51 @@
+name: Complete Enrichment Pipeline
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'  # Weekly on Monday at 00:00
+  workflow_dispatch:
+
+jobs:
+  complete_enrichment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Scraping Tools
+        run: node tools/scrape_forum.js
+
+      - name: Process Forum Data
+        run: node tools/process_forum_data.js
+
+      - name: Analyze Commits
+        run: node tools/analyze_commits.js
+
+      - name: Extract Devices from Commits
+        run: node tools/extract_devices_from_commits.js
+
+      - name: Run DeepSeek Enhanced Analysis
+        run: node tools/deepseek_enhanced.js
+        env:
+          DEEPSEEK_TOKEN: ${{ secrets.DEEPSEEK_TOKEN }}
+
+      - name: Build Device Matrix
+        run: node tools/build_matrix.js
+
+      - name: Commit Results
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add analysis/ data/
+          git commit -m "Update enrichment results" || echo "No changes to commit"
+          git push

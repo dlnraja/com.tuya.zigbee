@@ -1,0 +1,81 @@
+name: Full CI/CD Pipeline
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  schedule:
+    - cron: '0 0 1 * *'  # Monthly at midnight
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Lint code
+      run: npm run lint
+
+    - name: Run tests
+      run: npm test
+
+    - name: Build Homey app
+      run: homey app build
+
+    - name: Validate app
+      run: homey app validate
+
+  enrich:
+    runs-on: ubuntu-latest
+    needs: build-test
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Run enrichment
+      run: node scripts/fetch_external_sources.mjs
+
+    - name: Generate documentation
+      run: node scripts/generate_documentation.mjs
+
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "chore: auto-update from enrichment" || echo "No changes to commit"
+        git push
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build-test, enrich]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs

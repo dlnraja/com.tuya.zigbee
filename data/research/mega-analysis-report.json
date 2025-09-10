@@ -1,0 +1,1207 @@
+{
+  "timestamp": "2025-08-22T11:34:14.026Z",
+  "summary": {
+    "totalDrivers": 10,
+    "universalDrivers": 9,
+    "legacyDrivers": 1,
+    "missingAssets": 0,
+    "missingDocs": 0
+  },
+  "drivers": {
+    "fan-tuya-universal": {
+      "path": "fan-tuya-universal",
+      "exists": true,
+      "files": {
+        "driver.compose.json": {
+          "exists": true,
+          "size": 1414
+        },
+        "device.js": {
+          "exists": true,
+          "size": 4642
+        },
+        "driver.js": {
+          "exists": false,
+          "size": 0
+        },
+        "README.md": {
+          "exists": true,
+          "size": 594
+        },
+        "assets": {
+          "assets/icon.svg": {
+            "exists": true,
+            "size": 245
+          },
+          "assets/images/small.png": {
+            "exists": false,
+            "size": 0
+          },
+          "assets/images/large.png": {
+            "exists": false,
+            "size": 0
+          }
+        }
+      },
+      "completeness": 43,
+      "issues": [
+        "Complétude: 43%"
+      ],
+      "recommendations": []
+    },
+    "lock-tuya-universal": {
+      "path": "lock-tuya-universal",
+      "exists": true,
+      "files": {
+        "driver.compose.json": {
+          "exists": true,
+          "size": 1359
+        },
+        "device.js": {
+          "exists": true,
+          "size": 4138
+        },
+        "driver.js": {
+          "exists": false,
+          "size": 0
+        },
+        "README.md": {
+          "exists": true,
+          "size": 594
+        },
+        "assets": {
+          "assets/icon.svg": {
+            "exists": true,
+            "size": 245
+          },
+          "assets/images/small.png": {
+            "exists": false,
+            "size": 0
+          },
+          "assets/images/large.png": {
+            "exists": false,
+            "size": 0
+          }
+        }
+      },
+      "completeness": 43,
+      "issues": [
+        "Complétude: 43%"
+      ],
+      "recommendations": []
+    },
+    "switch": {
+      "path": "switch",
+      "exists": true,
+      "files": {
+        "driver.compose.json": {
+          "exists": true,
+          "size": 820
+        },
+        "device.js": {
+          "exists": true,
+          "size": 887
+        },
+        "driver.js": {
+          "exists": false,
+          "size": 0
+        },
+        "README.md": {
+          "exists": true,
+          "size": 496
+        },
+        "assets": {
+          "assets/icon.svg": {
+            "exists": true,
+            "size": 245
+          },
+          "assets/images/small.png": {
+            "exists": false,
+            "size": 0
+          },
+          "assets/images/large.png": {
+            "exists": false,
+            "size": 0
+          }
+        }
+      },
+      "completeness": 43,
+      "issues": [
+        "Complétude: 43%"
+      ],
+      "recommendations": []
+    },
+    "tuya-climate-universal": {
+      "path": "tuya-climate-universal",
+      "exists": true,
+      "files": {
+        "driver.compose.json": {
+          "exists": true,
+          "size": 1617
+        },
+        "device.js": {
+          "exists": true,
+          "size": 3893
+        },
+        "driver.js": {
+          "exists": false,
+          "size": 0
+        },
+        "README.md": {
+          "exists": true,
+          "size": 540
+        },
+        "assets": {
+          "assets/icon.svg": {
+            "exists": true,
+            "size": 245
+          },
+          "assets/images/small.png": {
+            "exists": false,
+            "size": 0
+          },
+          "assets/images/large.png": {
+            "exists": false,
+            "size": 0
+          }
+        }
+      },
+      "completeness": 43,
+      "issues": [
+        "Complétude: 43%"
+      ],
+      "recommendations": []
+    },
+    "tuya-cover-universal": {
+      "path": "tuya-cover-universal",
+      "exists": true,
+      "files": {
+        "driver.compose.json": {
+          "exists": true,
+          "size": 1515
+        },
+        "device.js": {
+          "exists": true,
+          "size": 3518
+        },
+        "driver.js": {
+          "exists": false,
+          "size": 0
+        },
+        "README.md": {
+          "exists": true,
+          "size": 513
+        },
+        "assets": {
+          "assets/icon.svg": {
+            "exists": true,
+            "size": 245
+          },
+          "assets/images/small.png": {
+            "exists": false,
+            "size": 0
+          },
+          "assets/images/large.png": {
+            "exists": false,
+            "size": 0
+          }
+        }
+      },
+      "completeness": 43,
+      "issues": [
+        "Complétude: 43%"
+      ],
+      "recommendations": []
+    },
+    "tuya-light-universal": {
+      "path": "tuya-light-universal",
+      "exists": true,
+      "files": {
+        "driver.compose.json": {
+          "exists": true,
+          "size": 1570
+        },
+        "device.js": {
+          "exists": true,
+          "size": 3663
+        },
+        "driver.js": {
+          "exists": false,
+          "size": 0
+        },
+        "README.md": {
+          "exists": true,
+          "size": 519
+        },
+        "assets": {
+          "assets/icon.svg": {
+            "exists": true,
+            "size": 245
+          },
+          "assets/images/small.png": {
+            "exists": false,
+            "size": 0
+          },
+          "assets/images/large.png": {
+            "exists": false,
+            "size": 0
+          }
+        }
+      },
+      "completeness": 43,
+      "issues": [
+        "Complétude: 43%"
+      ],
+      "recommendations": []
+    },
+    "tuya-plug-universal": {
+      "path": "tuya-plug-universal",
+      "exists": true,
+      "files": {
+        "driver.compose.json": {
+          "exists": true,
+          "size": 1656
+        },
+        "device.js": {
+          "exists": true,
+          "size": 4051
+        },
+        "driver.js": {
+          "exists": false,
+          "size": 0
+        },
+        "README.md": {
+          "exists": true,
+          "size": 530
+        },
+        "assets": {
+          "assets/icon.svg": {
+            "exists": true,
+            "size": 245
+          },
+          "assets/images/small.png": {
+            "exists": false,
+            "size": 0
+          },
+          "assets/images/large.png": {
+            "exists": false,
+            "size": 0
+          }
+        }
+      },
+      "completeness": 43,
+      "issues": [
+        "Complétude: 43%"
+      ],
+      "recommendations": []
+    },
+    "tuya-remote-universal": {
+      "path": "tuya-remote-universal",
+      "exists": true,
+      "files": {
+        "driver.compose.json": {
+          "exists": true,
+          "size": 1305
+        },
+        "device.js": {
+          "exists": true,
+          "size": 3058
+        },
+        "driver.js": {
+          "exists": false,
+          "size": 0
+        },
+        "README.md": {
+          "exists": true,
+          "size": 479
+        },
+        "assets": {
+          "assets/icon.svg": {
+            "exists": true,
+            "size": 245
+          },
+          "assets/images/small.png": {
+            "exists": false,
+            "size": 0
+          },
+          "assets/images/large.png": {
+            "exists": false,
+            "size": 0
+          }
+        }
+      },
+      "completeness": 43,
+      "issues": [
+        "Complétude: 43%"
+      ],
+      "recommendations": []
+    },
+    "tuya-sensor-universal": {
+      "path": "tuya-sensor-universal",
+      "exists": true,
+      "files": {
+        "driver.compose.json": {
+          "exists": true,
+          "size": 1644
+        },
+        "device.js": {
+          "exists": true,
+          "size": 3892
+        },
+        "driver.js": {
+          "exists": false,
+          "size": 0
+        },
+        "README.md": {
+          "exists": true,
+          "size": 539
+        },
+        "assets": {
+          "assets/icon.svg": {
+            "exists": true,
+            "size": 245
+          },
+          "assets/images/small.png": {
+            "exists": false,
+            "size": 0
+          },
+          "assets/images/large.png": {
+            "exists": false,
+            "size": 0
+          }
+        }
+      },
+      "completeness": 43,
+      "issues": [
+        "Complétude: 43%"
+      ],
+      "recommendations": []
+    },
+    "zigbee-tuya-universal": {
+      "path": "zigbee-tuya-universal",
+      "exists": true,
+      "files": {
+        "driver.compose.json": {
+          "exists": true,
+          "size": 1554
+        },
+        "device.js": {
+          "exists": true,
+          "size": 4400
+        },
+        "driver.js": {
+          "exists": false,
+          "size": 0
+        },
+        "README.md": {
+          "exists": true,
+          "size": 515
+        },
+        "assets": {
+          "assets/icon.svg": {
+            "exists": true,
+            "size": 245
+          },
+          "assets/images/small.png": {
+            "exists": false,
+            "size": 0
+          },
+          "assets/images/large.png": {
+            "exists": false,
+            "size": 0
+          }
+        }
+      },
+      "completeness": 43,
+      "issues": [
+        "Complétude: 43%"
+      ],
+      "recommendations": []
+    }
+  },
+  "gaps": {
+    "missingDrivers": [
+      "tuya-button-universal",
+      "tuya-curtain-universal",
+      "tuya-garage-universal",
+      "tuya-ir-universal",
+      "tuya-lock-universal",
+      "tuya-motor-universal",
+      "tuya-outlet-universal",
+      "tuya-relay-universal",
+      "tuya-thermostat-universal",
+      "tuya-valve-universal"
+    ],
+    "incompleteDrivers": [
+      {
+        "name": "fan-tuya-universal",
+        "completeness": 43,
+        "issues": [
+          "Complétude: 43%"
+        ]
+      },
+      {
+        "name": "lock-tuya-universal",
+        "completeness": 43,
+        "issues": [
+          "Complétude: 43%"
+        ]
+      },
+      {
+        "name": "switch",
+        "completeness": 43,
+        "issues": [
+          "Complétude: 43%"
+        ]
+      },
+      {
+        "name": "tuya-climate-universal",
+        "completeness": 43,
+        "issues": [
+          "Complétude: 43%"
+        ]
+      },
+      {
+        "name": "tuya-cover-universal",
+        "completeness": 43,
+        "issues": [
+          "Complétude: 43%"
+        ]
+      },
+      {
+        "name": "tuya-light-universal",
+        "completeness": 43,
+        "issues": [
+          "Complétude: 43%"
+        ]
+      },
+      {
+        "name": "tuya-plug-universal",
+        "completeness": 43,
+        "issues": [
+          "Complétude: 43%"
+        ]
+      },
+      {
+        "name": "tuya-remote-universal",
+        "completeness": 43,
+        "issues": [
+          "Complétude: 43%"
+        ]
+      },
+      {
+        "name": "tuya-sensor-universal",
+        "completeness": 43,
+        "issues": [
+          "Complétude: 43%"
+        ]
+      },
+      {
+        "name": "zigbee-tuya-universal",
+        "completeness": 43,
+        "issues": [
+          "Complétude: 43%"
+        ]
+      }
+    ],
+    "missingCapabilities": [],
+    "missingAssets": [],
+    "missingDocumentation": []
+  },
+  "recommendations": {
+    "immediate": [
+      "Créer 10 drivers manquants",
+      "Compléter 10 drivers incomplets"
+    ],
+    "shortTerm": [],
+    "longTerm": [
+      "Implémenter un système de scoring avancé",
+      "Créer un pipeline d'enrichissement automatique",
+      "Développer des algorithmes heuristiques pour la détection de patterns"
+    ],
+    "critical": [
+      "Drivers critiques à corriger: fan-tuya-universal, lock-tuya-universal, switch, tuya-climate-universal, tuya-cover-universal, tuya-light-universal, tuya-plug-universal, tuya-remote-universal, tuya-sensor-universal, zigbee-tuya-universal"
+    ]
+  },
+  "scoring": {
+    "overall": 15,
+    "drivers": 43,
+    "assets": 33,
+    "documentation": 0,
+    "coverage": 0,
+    "quality": 0
+  },
+  "heuristics": {},
+  "sources": {
+    "zigbee2mqtt": {
+      "exists": true,
+      "devices": 3,
+      "lastUpdate": "Unknown",
+      "coverage": 0
+    },
+    "blakadder": {
+      "exists": true,
+      "devices": 3,
+      "lastUpdate": "Unknown",
+      "coverage": 0
+    },
+    "homeyForums": {},
+    "tuyaDeveloper": {},
+    "homeAssistant": {},
+    "homey-forums": {
+      "exists": true,
+      "devices": 3,
+      "lastUpdate": "Unknown",
+      "coverage": 0
+    },
+    "tuya-developer": {
+      "exists": true,
+      "devices": 3,
+      "lastUpdate": "Unknown",
+      "coverage": 0
+    },
+    "home-assistant": {
+      "exists": true,
+      "devices": 3,
+      "lastUpdate": "Unknown",
+      "coverage": 0
+    }
+  },
+  "coverage": {},
+  "universalDrivers": {
+    "fan-tuya-universal": {
+      "exists": true,
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\fan-tuya-universal",
+      "analysis": {
+        "files": {
+          "device": {
+            "exists": true,
+            "size": 4572,
+            "hasOnInit": false,
+            "hasOnSettings": false,
+            "hasCapabilities": true
+          },
+          "assets": {
+            "exists": true,
+            "icon": true,
+            "small": false,
+            "large": false
+          }
+        },
+        "capabilities": [
+          "onoff",
+          "dim",
+          "measure_power",
+          "alarm_battery",
+          "measure_temperature",
+          "fan_mode"
+        ],
+        "zigbee": {
+          "manufacturer": "Tuya",
+          "model": "Universal",
+          "vendor": "Tuya",
+          "description": "Universal Tuya fan device",
+          "supports": "Zigbee 1.2",
+          "firmware": "1.0.0"
+        },
+        "metadata": {
+          "version": "1.1.0",
+          "last_updated": "2025-08-22",
+          "confidence_score": 95,
+          "advanced_features": [
+            "fan_speed_control",
+            "power_monitoring",
+            "battery_monitoring"
+          ],
+          "sources": [
+            "Zigbee2MQTT",
+            "Blakadder Database",
+            "Homey Community",
+            "Tuya Developer Portal"
+          ],
+          "tested_devices": [
+            "TS0601_fan",
+            "TS0602_fan"
+          ],
+          "zigbee_clusters": [
+            "genBasic",
+            "genPowerCfg",
+            "genOnOff",
+            "genLevelCtrl"
+          ]
+        },
+        "issues": []
+      }
+    },
+    "lock-tuya-universal": {
+      "exists": true,
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lock-tuya-universal",
+      "analysis": {
+        "files": {
+          "device": {
+            "exists": true,
+            "size": 4075,
+            "hasOnInit": false,
+            "hasOnSettings": false,
+            "hasCapabilities": true
+          },
+          "assets": {
+            "exists": true,
+            "icon": true,
+            "small": false,
+            "large": false
+          }
+        },
+        "capabilities": [
+          "lock",
+          "alarm_battery",
+          "measure_temperature",
+          "alarm_contact",
+          "alarm_tamper"
+        ],
+        "zigbee": {
+          "manufacturer": "Tuya",
+          "model": "Universal",
+          "vendor": "Tuya",
+          "description": "Universal Tuya lock device",
+          "supports": "Zigbee 1.2",
+          "firmware": "1.0.0"
+        },
+        "metadata": {
+          "version": "1.1.0",
+          "last_updated": "2025-08-22",
+          "confidence_score": 95,
+          "advanced_features": [
+            "lock_control",
+            "battery_monitoring",
+            "temperature_monitoring"
+          ],
+          "sources": [
+            "Zigbee2MQTT",
+            "Blakadder Database",
+            "Homey Community",
+            "Tuya Developer Portal"
+          ],
+          "tested_devices": [
+            "TS0601_lock",
+            "TS0602_lock"
+          ],
+          "zigbee_clusters": [
+            "genBasic",
+            "genPowerCfg",
+            "genDoorLock",
+            "genBasic"
+          ]
+        },
+        "issues": []
+      }
+    },
+    "switch": {
+      "exists": true,
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switch",
+      "analysis": {
+        "files": {
+          "device": {
+            "exists": true,
+            "size": 870,
+            "hasOnInit": false,
+            "hasOnSettings": false,
+            "hasCapabilities": true
+          },
+          "assets": {
+            "exists": true,
+            "icon": true,
+            "small": false,
+            "large": false
+          }
+        },
+        "capabilities": [
+          "onoff",
+          "measure_power"
+        ],
+        "zigbee": {
+          "manufacturer": "Tuya",
+          "model": "Universal",
+          "vendor": "Tuya",
+          "description": "Universal Tuya switch device",
+          "supports": "Zigbee 1.2",
+          "firmware": "1.0.0",
+          "clusters": [
+            "genOnOff",
+            "genElectricalMeasurement"
+          ]
+        },
+        "metadata": {
+          "version": "1.0.0",
+          "last_updated": "2025-08-22",
+          "confidence_score": 90,
+          "auto_corrected": true,
+          "sources": [
+            "Auto-correction engine"
+          ]
+        },
+        "issues": []
+      }
+    },
+    "tuya-climate-universal": {
+      "exists": true,
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya-climate-universal",
+      "analysis": {
+        "files": {
+          "device": {
+            "exists": true,
+            "size": 3837,
+            "hasOnInit": false,
+            "hasOnSettings": false,
+            "hasCapabilities": true
+          },
+          "assets": {
+            "exists": true,
+            "icon": true,
+            "small": false,
+            "large": false
+          }
+        },
+        "capabilities": [
+          "target_temperature",
+          "measure_temperature",
+          "measure_humidity",
+          "alarm_battery",
+          "target_humidity",
+          "measure_pressure"
+        ],
+        "zigbee": {
+          "manufacturer": "Tuya",
+          "model": "Universal",
+          "vendor": "Tuya",
+          "description": "Thermostat Tuya universel avec contrôle climatique",
+          "supports": "Zigbee 1.2",
+          "firmware": "1.0.0",
+          "clusters": [
+            "genHumidityMeasurement"
+          ]
+        },
+        "metadata": {
+          "version": "1.1.0",
+          "last_updated": "2025-08-22",
+          "confidence_score": 95,
+          "sources": [
+            "Zigbee2MQTT",
+            "Blakadder Database",
+            "Homey Community",
+            "Tuya Developer Portal"
+          ],
+          "advanced_features": [
+            "temperature_control",
+            "humidity_monitoring",
+            "schedule_support",
+            "eco_mode"
+          ],
+          "tested_devices": [
+            "TS0601_trv",
+            "TS0602_trv"
+          ],
+          "zigbee_clusters": [
+            "genBasic",
+            "genPowerCfg",
+            "genBasic",
+            "genBasic"
+          ]
+        },
+        "issues": []
+      }
+    },
+    "tuya-cover-universal": {
+      "exists": true,
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya-cover-universal",
+      "analysis": {
+        "files": {
+          "device": {
+            "exists": true,
+            "size": 3464,
+            "hasOnInit": false,
+            "hasOnSettings": false,
+            "hasCapabilities": true
+          },
+          "assets": {
+            "exists": true,
+            "icon": true,
+            "small": false,
+            "large": false
+          }
+        },
+        "capabilities": [
+          "windowcoverings_set",
+          "windowcoverings_state",
+          "measure_temperature",
+          "alarm_battery",
+          "windowcoverings_tilt_set"
+        ],
+        "zigbee": {
+          "manufacturer": "Tuya",
+          "model": "Universal",
+          "vendor": "Tuya",
+          "description": "Volet Tuya universel avec contrôle de position",
+          "supports": "Zigbee 1.2",
+          "firmware": "1.0.0"
+        },
+        "metadata": {
+          "version": "1.1.0",
+          "last_updated": "2025-08-22",
+          "confidence_score": 95,
+          "sources": [
+            "Zigbee2MQTT",
+            "Blakadder Database",
+            "Homey Community",
+            "Tuya Developer Portal"
+          ],
+          "advanced_features": [
+            "position_control",
+            "temperature_monitoring",
+            "battery_monitoring",
+            "schedule_support"
+          ],
+          "tested_devices": [
+            "TS0601_cover",
+            "TS0602_cover"
+          ],
+          "zigbee_clusters": [
+            "genBasic",
+            "genPowerCfg",
+            "genBasic"
+          ]
+        },
+        "issues": []
+      }
+    },
+    "tuya-light-universal": {
+      "exists": true,
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya-light-universal",
+      "analysis": {
+        "files": {
+          "device": {
+            "exists": true,
+            "size": 3597,
+            "hasOnInit": false,
+            "hasOnSettings": false,
+            "hasCapabilities": true
+          },
+          "assets": {
+            "exists": true,
+            "icon": true,
+            "small": false,
+            "large": false
+          }
+        },
+        "capabilities": [
+          "onoff",
+          "dim",
+          "light_temperature",
+          "light_mode",
+          "light_hue",
+          "light_saturation"
+        ],
+        "zigbee": {
+          "manufacturer": "Tuya",
+          "model": "Universal",
+          "vendor": "Tuya",
+          "description": "Lumière Tuya universelle avec contrôle complet",
+          "supports": "Zigbee 1.2",
+          "firmware": "1.0.0",
+          "clusters": [
+            "genColorCtrl"
+          ]
+        },
+        "metadata": {
+          "version": "1.1.0",
+          "last_updated": "2025-08-22",
+          "confidence_score": 95,
+          "sources": [
+            "Zigbee2MQTT",
+            "Blakadder Database",
+            "Homey Community",
+            "Tuya Developer Portal"
+          ],
+          "advanced_features": [
+            "color_control",
+            "temperature_control",
+            "scene_support",
+            "schedule_support"
+          ],
+          "tested_devices": [
+            "TS0501B_light",
+            "TS0502B_light"
+          ],
+          "zigbee_clusters": [
+            "genBasic",
+            "genPowerCfg",
+            "genOnOff",
+            "genLevelCtrl"
+          ]
+        },
+        "issues": []
+      }
+    },
+    "tuya-plug-universal": {
+      "exists": true,
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya-plug-universal",
+      "analysis": {
+        "files": {
+          "device": {
+            "exists": true,
+            "size": 3993,
+            "hasOnInit": false,
+            "hasOnSettings": false,
+            "hasCapabilities": true
+          },
+          "assets": {
+            "exists": true,
+            "icon": true,
+            "small": false,
+            "large": false
+          }
+        },
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "alarm_battery",
+          "measure_current",
+          "measure_voltage"
+        ],
+        "zigbee": {
+          "manufacturer": "Tuya",
+          "model": "Universal",
+          "vendor": "Tuya",
+          "description": "Prise Tuya universelle avec monitoring de puissance",
+          "supports": "Zigbee 1.2",
+          "firmware": "1.0.0",
+          "clusters": [
+            "genElectricalMeasurement"
+          ]
+        },
+        "metadata": {
+          "version": "1.1.0",
+          "last_updated": "2025-08-22",
+          "confidence_score": 95,
+          "sources": [
+            "Zigbee2MQTT",
+            "Blakadder Database",
+            "Homey Community",
+            "Tuya Developer Portal"
+          ],
+          "advanced_features": [
+            "power_monitoring",
+            "energy_tracking",
+            "overload_protection",
+            "schedule_support"
+          ],
+          "tested_devices": [
+            "TS011F_plug_1ch",
+            "TS0601_plug_2ch"
+          ],
+          "zigbee_clusters": [
+            "genBasic",
+            "genPowerCfg",
+            "genOnOff"
+          ]
+        },
+        "issues": []
+      }
+    },
+    "tuya-remote-universal": {
+      "exists": true,
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya-remote-universal",
+      "analysis": {
+        "files": {
+          "device": {
+            "exists": true,
+            "size": 3008,
+            "hasOnInit": false,
+            "hasOnSettings": false,
+            "hasCapabilities": true
+          },
+          "assets": {
+            "exists": true,
+            "icon": true,
+            "small": false,
+            "large": false
+          }
+        },
+        "capabilities": [
+          "alarm_battery",
+          "button",
+          "scene",
+          "measure_battery"
+        ],
+        "zigbee": {
+          "manufacturer": "Tuya",
+          "model": "Universal",
+          "vendor": "Tuya",
+          "description": "Télécommande Tuya universelle pour scènes",
+          "supports": "Zigbee 1.2",
+          "firmware": "1.0.0"
+        },
+        "metadata": {
+          "version": "1.1.0",
+          "last_updated": "2025-08-22",
+          "confidence_score": 95,
+          "sources": [
+            "Zigbee2MQTT",
+            "Blakadder Database",
+            "Homey Community",
+            "Tuya Developer Portal"
+          ],
+          "advanced_features": [
+            "scene_control",
+            "battery_monitoring",
+            "multi_button_support"
+          ],
+          "tested_devices": [
+            "TS0041_remote",
+            "TS0042_remote"
+          ],
+          "zigbee_clusters": [
+            "genBasic",
+            "genPowerCfg"
+          ]
+        },
+        "issues": []
+      }
+    },
+    "tuya-sensor-universal": {
+      "exists": true,
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya-sensor-universal",
+      "analysis": {
+        "files": {
+          "device": {
+            "exists": true,
+            "size": 3836,
+            "hasOnInit": false,
+            "hasOnSettings": false,
+            "hasCapabilities": true
+          },
+          "assets": {
+            "exists": true,
+            "icon": true,
+            "small": false,
+            "large": false
+          }
+        },
+        "capabilities": [
+          "measure_temperature",
+          "measure_humidity",
+          "measure_presence",
+          "alarm_contact",
+          "alarm_battery",
+          "measure_pressure",
+          "measure_co2",
+          "measure_tvoc",
+          "measure_pm25",
+          "measure_noise"
+        ],
+        "zigbee": {
+          "manufacturer": "Tuya",
+          "model": "Universal",
+          "vendor": "Tuya",
+          "description": "Capteur Tuya universel multi-fonctions",
+          "supports": "Zigbee 1.2",
+          "firmware": "1.0.0",
+          "clusters": [
+            "genPressureMeasurement"
+          ]
+        },
+        "metadata": {
+          "version": "1.1.0",
+          "last_updated": "2025-08-22",
+          "confidence_score": 95,
+          "sources": [
+            "Zigbee2MQTT",
+            "Blakadder Database",
+            "Homey Community",
+            "Tuya Developer Portal"
+          ],
+          "advanced_features": [
+            "multi_sensor",
+            "battery_monitoring",
+            "presence_detection",
+            "environmental_monitoring"
+          ],
+          "tested_devices": [
+            "TS0201_sensor",
+            "TS0202_sensor"
+          ],
+          "zigbee_clusters": [
+            "genBasic",
+            "genPowerCfg",
+            "genBasic",
+            "genBasic"
+          ]
+        },
+        "issues": []
+      }
+    },
+    "zigbee-tuya-universal": {
+      "exists": true,
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\zigbee-tuya-universal",
+      "analysis": {
+        "files": {
+          "device": {
+            "exists": true,
+            "size": 4338,
+            "hasOnInit": false,
+            "hasOnSettings": false,
+            "hasCapabilities": true
+          },
+          "assets": {
+            "exists": true,
+            "icon": true,
+            "small": false,
+            "large": false
+          }
+        },
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "alarm_battery",
+          "measure_temperature"
+        ],
+        "zigbee": {
+          "manufacturer": "Tuya",
+          "model": "Universal",
+          "vendor": "Tuya",
+          "description": "Device Tuya Zigbee universel avec capacités de base",
+          "supports": "Zigbee 1.2",
+          "firmware": "1.0.0"
+        },
+        "metadata": {
+          "version": "1.1.0",
+          "last_updated": "2025-08-22",
+          "confidence_score": 95,
+          "sources": [
+            "Zigbee2MQTT",
+            "Blakadder Database",
+            "Homey Community",
+            "Tuya Developer Portal"
+          ],
+          "advanced_features": [
+            "battery_monitoring",
+            "power_monitoring",
+            "temperature_monitoring"
+          ],
+          "tested_devices": [
+            "TS011F_switch_1ch",
+            "TS0601_switch_2ch"
+          ],
+          "zigbee_clusters": [
+            "genBasic",
+            "genPowerCfg",
+            "genOnOff",
+            "genBasic"
+          ]
+        },
+        "issues": []
+      }
+    }
+  }
+}

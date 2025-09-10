@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-07-29T15:41:38.703Z",
+  "version": "1.0.12-20250729-1520",
+  "branches": [
+    "master",
+    "main",
+    "beta",
+    "tuya-light",
+    "remotes/origin/master",
+    "remotes/origin/main",
+    "remotes/origin/beta",
+    "remotes/origin/tuya-light"
+  ],
+  "commits": 50,
+  "totalDrivers": 98,
+  "organization": {
+    "organized": 98,
+    "errors": 0
+  },
+  "summary": {
+    "totalDrivers": 98,
+    "organized": 98,
+    "errors": 0,
+    "successRate": 100,
+    "status": "ready_for_production",
+    "message": "Complete Tuya Zigbee support with 29 drivers"
+  },
+  "byProtocol": {
+    "tuya": 45,
+    "zigbee": 53
+  },
+  "byManufacturer": {
+    "Tuya": 45,
+    "GE": 2,
+    "RTI": 1,
+    "URC": 1,
+    "Unknown Manufacturer": 22,
+    "Ring": 1,
+    "Samsung SmartThings": 2,
+    "Fibaro": 1,
+    "Elan": 1,
+    "Amazon": 1,
+    "Google": 1,
+    "Apple": 1,
+    "LG": 1,
+    "Philips Hue": 2,
+    "IKEA TRÅDFRI": 2,
+    "Xiaomi/Aqara": 2,
+    "Meross": 1,
+    "Gosund": 1,
+    "Teckin": 1,
+    "Lutron": 1,
+    "Kwikset": 1,
+    "August": 1,
+    "Arlo": 1,
+    "Aeotec": 1,
+    "Zooz": 1,
+    "Inovelli": 1,
+    "Jasco": 1,
+    "Leviton": 1
+  },
+  "byCategory": {
+    "controllers": 20,
+    "sensors": 17,
+    "unknown": 43,
+    "security": 3,
+    "climate": 9,
+    "automation": 6
+  },
+  "byBranch": {
+    "master": 96,
+    "main": 2
+  }
+}

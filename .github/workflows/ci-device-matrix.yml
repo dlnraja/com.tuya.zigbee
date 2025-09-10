@@ -1,0 +1,79 @@
+name: 📊 Device Matrix Generator
+
+on:
+  schedule:
+    - cron: '0 2 * * 1'  # Every Monday at 2 AM
+  push:
+    branches: [ master, tuya-light ]
+    paths:
+      - 'drivers/**'
+      - 'lib/**'
+  workflow_dispatch:
+
+jobs:
+  generate-matrix:
+    name: 🔍 Generate Device Matrix
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout code
+      uses: actions/checkout@v4
+      
+    - name: 🟢 Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 'lts/*'
+        cache: 'npm'
+        
+    - name: 📦 Install dependencies
+      run: |
+        npm ci
+        echo "  \n"
+        
+    - name: 📊 Generate Device Matrix
+      run: |
+        echo "📊 Generating device matrix..."
+        node tools/generate-device-matrix.js
+        echo "  \n"
+        
+    - name: 📋 Validate Matrix Format
+      run: |
+        echo "📋 Validating matrix format..."
+        if [ -f "device-matrix.csv" ]; then
+          echo "✅ Matrix file generated successfully"
+          echo "📊 Matrix preview:"
+          head -5 device-matrix.csv
+        else
+          echo "❌ Matrix file not found"
+          exit 1
+        fi
+        echo "  \n"
+        
+    - name: 🔄 Commit Matrix Updates
+      run: |
+        echo "🔄 Committing matrix updates..."
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add device-matrix.csv
+        git diff --staged --quiet || git commit -m "📊 Auto-update device matrix [skip ci]"
+        echo "  \n"
+        
+    - name: 📤 Push Matrix Updates
+      run: |
+        echo "📤 Pushing matrix updates..."
+        git push origin ${{ github.ref }}
+        echo "  \n"
+        
+    - name: 📊 Upload Matrix Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: device-matrix
+        path: device-matrix.csv
+        retention-days: 90
+        
+    - name: 🎯 Matrix Generation Complete
+      run: |
+        echo "🎯 Device matrix generation completed!"
+        echo "✅ Matrix file generated and validated"
+        echo "✅ Matrix committed to repository"
+        echo "✅ Matrix available as artifact"

@@ -1,0 +1,78 @@
+{
+  "timestamp": "2025-08-22T09:17:41.112Z",
+  "structure": {
+    "total": 7,
+    "found": 7,
+    "missing": [],
+    "valid": [
+      "zigbee-tuya-universal",
+      "tuya-plug-universal",
+      "tuya-light-universal",
+      "tuya-cover-universal",
+      "tuya-climate-universal",
+      "tuya-sensor-universal",
+      "tuya-remote-universal"
+    ]
+  },
+  "drivers": {
+    "total": 7,
+    "valid": 7,
+    "invalid": [],
+    "details": {
+      "zigbee-tuya-universal": {
+        "driverId": "zigbee-tuya-universal",
+        "isValid": true,
+        "missingFiles": [],
+        "missingDirs": [],
+        "errors": []
+      },
+      "tuya-plug-universal": {
+        "driverId": "tuya-plug-universal",
+        "isValid": true,
+        "missingFiles": [],
+        "missingDirs": [],
+        "errors": []
+      },
+      "tuya-light-universal": {
+        "driverId": "tuya-light-universal",
+        "isValid": true,
+        "missingFiles": [],
+        "missingDirs": [],
+        "errors": []
+      },
+      "tuya-cover-universal": {
+        "driverId": "tuya-cover-universal",
+        "isValid": true,
+        "missingFiles": [],
+        "missingDirs": [],
+        "errors": []
+      },
+      "tuya-climate-universal": {
+        "driverId": "tuya-climate-universal",
+        "isValid": true,
+        "missingFiles": [],
+        "missingDirs": [],
+        "errors": []
+      },
+      "tuya-sensor-universal": {
+        "driverId": "tuya-sensor-universal",
+        "isValid": true,
+        "missingFiles": [],
+        "missingDirs": [],
+        "errors": []
+      },
+      "tuya-remote-universal": {
+        "driverId": "tuya-remote-universal",
+        "isValid": true,
+        "missingFiles": [],
+        "missingDirs": [],
+        "errors": []
+      }
+    }
+  },
+  "summary": {
+    "totalDrivers": 7,
+    "validDrivers": 7,
+    "successRate": 100
+  }
+}

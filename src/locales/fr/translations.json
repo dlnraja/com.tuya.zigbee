@@ -1,0 +1,13 @@
+{
+  "app": {
+    "name": "Tuya Zigbee",
+    "description": "Support pour les appareils Tuya Zigbee avec pilotes universels",
+    "pair": {
+      "select_device": "Sélectionnez votre appareil"
+    }
+  },
+  "error": {
+    "device_not_found": "Appareil non trouvé",
+    "pairing_failed": "L'appariement a échoué. Veuillez réessayer."
+  }
+}

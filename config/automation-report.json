@@ -1,0 +1,92 @@
+{
+  "startTime": "2025-08-31T20:36:11.053Z",
+  "endTime": "2025-08-31T20:36:24.023Z",
+  "duration": 12970,
+  "steps": [
+    {
+      "name": "Analyzing existing drivers",
+      "startTime": "2025-08-31T20:36:11.080Z",
+      "success": true,
+      "endTime": "2025-08-31T20:36:11.612Z",
+      "duration": 532,
+      "result": {
+        "stdout": "Analysis complete. Results saved to C:\\Users\\HP\\Desktop\\tuya_repair\\driver-analysis.json\n",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "Processing device dumps",
+      "startTime": "2025-08-31T20:36:11.614Z",
+      "success": true,
+      "endTime": "2025-08-31T20:36:11.997Z",
+      "duration": 383,
+      "result": {
+        "stdout": "No dump files found in the dumps directory\n",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "Updating device references",
+      "startTime": "2025-08-31T20:36:11.998Z",
+      "success": true,
+      "endTime": "2025-08-31T20:36:12.717Z",
+      "duration": 719,
+      "result": {
+        "stdout": "No existing references found, starting fresh\nProcessing driver_search_queries.json...\nAdded reference for TS011F\nUpdated references saved to C:\\Users\\HP\\Desktop\\tuya_repair\\references\\device-references.json\nTotal references: 521\n",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "Enriching drivers",
+      "startTime": "2025-08-31T20:36:12.718Z",
+      "success": true,
+      "endTime": "2025-08-31T20:36:13.304Z",
+      "duration": 586,
+      "result": {
+        "stdout": "Enrichment complete. Report saved to C:\\Users\\HP\\Desktop\\tuya_repair\\driver-enrichment-report.json\nUpdated 0 drivers\nSkipped 63 drivers\n",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "Updating placeholders",
+      "startTime": "2025-08-31T20:36:13.305Z",
+      "success": true,
+      "endTime": "2025-08-31T20:36:23.581Z",
+      "duration": 10276,
+      "result": {
+        "stdout": "\nPlaceholder update complete. Report saved to C:\\Users\\HP\\Desktop\\tuya_repair\\placeholder-update-report.md\nUpdated 0 files\n",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "Generating final report",
+      "startTime": "2025-08-31T20:36:23.582Z",
+      "success": true,
+      "endTime": "2025-08-31T20:36:24.023Z",
+      "duration": 441,
+      "result": {
+        "stdout": "",
+        "stderr": "Error generating driver report: ReferenceError: writeFile is not defined\n    at generateDriverReport (C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\generate-driver-report.js:167:5)\nReferenceError: writeFile is not defined\n    at generateDriverReport (C:\\Users\\HP\\Desktop\\tuya_repair\\tools\\generate-driver-report.js:167:5)\n"
+      }
+    }
+  ],
+  "errors": [],
+  "summary": {},
+  "config": {
+    "rootDir": "C:\\Users\\HP\\Desktop\\tuya_repair",
+    "toolsDir": "C:\\Users\\HP\\Desktop\\tuya_repair\\tools",
+    "driversDir": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers",
+    "referencesDir": "C:\\Users\\HP\\Desktop\\tuya_repair\\references",
+    "dumpsDir": "C:\\Users\\HP\\Desktop\\tuya_repair\\dumps",
+    "logFile": "C:\\Users\\HP\\Desktop\\tuya_repair\\automation.log",
+    "reportFile": "C:\\Users\\HP\\Desktop\\tuya_repair\\automation-report.md",
+    "scripts": {
+      "analyzeDrivers": "\\tools\\analyze-drivers.js",
+      "updateReferences": "\\tools\\update-references.js",
+      "enrichDrivers": "\\tools\\enrich-drivers.js",
+      "generateReport": "\\tools\\generate-driver-report.js",
+      "processDumps": "\\tools\\process-dumps.js",
+      "updatePlaceholders": "\\tools\\update-placeholders.js"
+    }
+  }
+}

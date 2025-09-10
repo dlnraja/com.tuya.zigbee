@@ -1,0 +1,8 @@
+{
+  "app.name": "Tuya Zigbee",
+  "app.description": "Support for Tuya Zigbee devices",
+  "drivers.tuya_plug.name": "Tuya Smart Plug",
+  "drivers.climates-TS0601_ac.name": "Tuya Thermostat",
+  "drivers.covers-TS0602_cover.name": "Tuya Cover",
+  "drivers.fan-tuya-universal.name": "Tuya Universal Fan"
+}

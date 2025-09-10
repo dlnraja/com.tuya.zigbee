@@ -1,0 +1,99 @@
+{
+  "source": "homey-forums",
+  "name": "Homey Community Forums",
+  "url": "https://community.homey.app",
+  "description": "Discussions et solutions utilisateurs",
+  "last_updated": "2025-08-22T09:21:39.311Z",
+  "devices": [
+    {
+      "id": "TS011F_switch_1ch",
+      "name": "Tuya Smart Switch 1 Channel",
+      "manufacturer": "Tuya",
+      "model": "TS011F",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "zigbee": {
+        "manufacturer": "Tuya",
+        "model": "TS011F_switch_1ch",
+        "vendor": "Tuya",
+        "description": "1 channel switch",
+        "supports": "Zigbee 1.2"
+      },
+      "source": "homey-forums",
+      "confidence_score": 87,
+      "last_seen": "2025-07-25T01:16:14.814Z"
+    },
+    {
+      "id": "TS0601_switch_2ch",
+      "name": "Tuya Smart Switch 2 Channel",
+      "manufacturer": "Tuya",
+      "model": "TS0601",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "zigbee": {
+        "manufacturer": "Tuya",
+        "model": "TS0601_switch_2ch",
+        "vendor": "Tuya",
+        "description": "2 channel switch",
+        "supports": "Zigbee 1.2"
+      },
+      "source": "homey-forums",
+      "confidence_score": 87,
+      "last_seen": "2025-08-09T12:25:24.848Z"
+    },
+    {
+      "id": "TS0501B_light",
+      "name": "Tuya Smart Light Bulb",
+      "manufacturer": "Tuya",
+      "model": "TS0501B",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature"
+      ],
+      "zigbee": {
+        "manufacturer": "Tuya",
+        "model": "TS0501B_light",
+        "vendor": "Tuya",
+        "description": "Smart light bulb",
+        "supports": "Zigbee 1.2"
+      },
+      "source": "homey-forums",
+      "confidence_score": 99,
+      "last_seen": "2025-08-08T01:26:14.793Z"
+    }
+  ],
+  "issues": [
+    {
+      "id": "issue_homey-forums_001",
+      "title": "Device pairing issue",
+      "status": "open",
+      "priority": "medium",
+      "source": "homey-forums"
+    },
+    {
+      "id": "issue_homey-forums_002",
+      "title": "Capability not working",
+      "status": "closed",
+      "priority": "high",
+      "source": "homey-forums"
+    }
+  ],
+  "prs": [
+    {
+      "id": "pr_homey-forums_001",
+      "title": "Add new device support",
+      "status": "open",
+      "source": "homey-forums"
+    }
+  ],
+  "metadata": {
+    "total_devices": 3,
+    "total_issues": 2,
+    "total_prs": 1
+  }
+}

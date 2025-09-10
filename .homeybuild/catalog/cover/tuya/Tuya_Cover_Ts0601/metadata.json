@@ -1,0 +1,9 @@
+{
+  "name": "Tuya_Cover_Ts0601",
+  "type": "tuya_zigbee",
+  "category": "cover",
+  "source": "drivers\\tuya_zigbee\\models\\tuya_cover_ts0601",
+  "created": "2025-08-14T15:26:16.246Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

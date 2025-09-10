@@ -1,0 +1,90 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.tuya.zigbee",
+  "version": "1.0.0",
+  "compatibility": ">=3.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "{app.name}",
+    "fr": "{app.name}",
+    "nl": "{app.name}",
+    "ta": "{app.name}"
+  },
+  "description": {
+    "en": "{app.description}",
+    "fr": "{app.description}",
+    "nl": "{app.description}",
+    "ta": "{app.description}"
+  },
+  "category": [
+    "lights"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
+  },
+  "author": {
+    "name": "dlnraja",
+    "email": "dylan.rajasekaram@gmail.com"
+  },
+  "contributors": {},
+  "support": "mailto:dylan.rajasekaram@gmail.com",
+  "homepage": "https://github.com/dlnraja/tuya_repair",
+  "license": "MIT",
+  "zigbee": {
+    "version": "3.0"
+  },
+  "icon": "assets/icon.svg",
+  "color": "#FF6B35",
+  "drivers": [
+    {
+      "name": "Base",
+      "id": "base"
+    },
+    {
+      "id": "tuya",
+      "name": {
+        "en": "tuya Device",
+        "fr": "Appareil tuya",
+        "nl": "tuya Apparaat",
+        "ta": "tuya Device"
+      },
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light",
+      "zigbee": {
+        "manufacturerName": [
+          "Generic"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              "genOnOff",
+              "genBasic"
+            ],
+            "bindings": [
+              "genOnOff"
+            ]
+          }
+        },
+        "productId": [
+          ""
+        ]
+      },
+      "images": {
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "name": "Zigbee",
+      "id": "zigbee"
+    }
+  ]
+}

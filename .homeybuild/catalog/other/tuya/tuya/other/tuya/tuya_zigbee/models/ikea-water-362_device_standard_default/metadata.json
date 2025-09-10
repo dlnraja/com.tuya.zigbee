@@ -1,0 +1,20 @@
+{
+  "id": "ikea-water-362_plug_standard",
+  "name": "ikea ikea-water-362",
+  "category": "plug",
+  "vendor": "ikea",
+  "model": "ikea-water-362",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:09.048Z",
+  "updatedAt": "2025-08-13T12:09:09.048Z"
+}

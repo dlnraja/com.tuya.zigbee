@@ -1,0 +1,20 @@
+{
+  "id": "tuya-bulb-211_light_standard",
+  "name": "tuya tuya-bulb-211",
+  "category": "light",
+  "vendor": "tuya",
+  "model": "tuya-bulb-211",
+  "type": "tuya_zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:08:56.462Z",
+  "updatedAt": "2025-08-13T12:08:56.462Z"
+}

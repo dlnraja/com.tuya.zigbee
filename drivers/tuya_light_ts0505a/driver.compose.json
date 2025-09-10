@@ -1,0 +1,62 @@
+{
+  "name": {
+    "en": "Tuya RGB+CCT Bulb Alt",
+    "fr": "Tuya RGB+CCT Bulb Alt",
+    "nl": "Tuya RGB+CCT Bulb Alt",
+    "de": "Tuya RGB+CCT Bulb Alt"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature"
+  ],
+  "energy": {
+    "approximation": {
+      "usageConstant": 9
+    }
+  },
+  "images": {
+    "large": "/drivers/tuya_light_ts0505a/assets/images/large.png",
+    "small": "/drivers/tuya_light_ts0505a/assets/images/small.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_*",
+      "_TZ3210_*",
+      "_TYZB01_*"
+    ],
+    "productId": [
+      "TS0505A"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768
+        ],
+        "bindings": [
+          6,
+          8,
+          768
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/tuya_light_ts0505a/assets/images/large.png",
+      "instruction": {
+        "en": "Toggle the power button on the device to start pairing.",
+        "fr": "Appuyez sur le bouton d'alimentation de l'appareil pour commencer l'appairage.",
+        "nl": "Zet de aan/uit-knop op het apparaat om te beginnen met koppelen.",
+        "de": "Drücken Sie die Ein-/Aus-Taste am Gerät, um mit der Kopplung zu beginnen."
+      }
+    }
+  }
+}

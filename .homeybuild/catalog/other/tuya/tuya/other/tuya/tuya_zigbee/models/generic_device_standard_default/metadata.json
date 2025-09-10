@@ -1,0 +1,13 @@
+{
+  "id": "cover_generic",
+  "name": "cover generic",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "0x0006"
+  ],
+  "endpoints": [
+    1
+  ]
+}

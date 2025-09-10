@@ -1,0 +1,9 @@
+{
+  "name": "Aqara_Buzzer_Siren",
+  "type": "tuya_zigbee",
+  "category": "other",
+  "source": "drivers\\tuya_zigbee\\models\\aqara-buzzer-259_siren_standard_default_1",
+  "created": "2025-08-14T15:21:15.119Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

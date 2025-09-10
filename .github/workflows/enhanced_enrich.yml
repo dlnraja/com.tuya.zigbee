@@ -1,0 +1,36 @@
+name: Enhanced Enrichment Pipeline
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'  # Weekly on Monday at 00:00
+  workflow_dispatch:
+
+jobs:
+  enhanced_enrichment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Needed for git log analysis
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run DeepSeek Enhanced Analysis
+        run: node tools/deepseek_enhanced.js
+        env:
+          DEEPSEEK_TOKEN: ${{ secrets.DEEPSEEK_TOKEN }}
+
+      - name: Commit Analysis Results
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add analysis/
+          git commit -m "Update enhanced analysis results" || echo "No changes to commit"
+          git push

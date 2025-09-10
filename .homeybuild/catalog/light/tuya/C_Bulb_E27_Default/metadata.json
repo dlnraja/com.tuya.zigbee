@@ -1,0 +1,9 @@
+{
+  "name": "C_Bulb_E27_Default",
+  "type": "tuya_zigbee",
+  "category": "light",
+  "source": "drivers\\tuya_zigbee\\models\\ts0505c_bulb_e27_default",
+  "created": "2025-08-14T15:24:48.160Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

@@ -1,0 +1,83 @@
+name: Auto-Enrich & Validate
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'  # Tous les lundis à 09:00 UTC
+  workflow_dispatch:  # Permet un déclenchement manuel
+  push:
+    branches: [ tuya-light ]
+    paths:
+      - 'drivers/**'
+      - '.github/workflows/auto-enrich.yml'
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        ref: tuya-light
+        fetch-depth: 0
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18.x'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: |
+        npm ci
+        npm install -g homey@latest
+    
+    - name: Configure Git
+      run: |
+        git config --global user.name "Tuya AutoBot"
+        git config --global user.email "autobot@tuya-helper.com"
+    
+    - name: Run validation
+      run: |
+        # Installer les dépendances manquantes
+        npm install fs-extra chalk glob
+        
+        # Exécuter le script d'orchestration
+        node orchestrate.js
+        
+        # Vérifier s'il y a des changements
+        if [ -n "$(git status --porcelain)" ]; then
+          # Faire un commit des changements
+          git add .
+          git commit -m "autobot: update drivers [skip ci]"
+          git push origin tuya-light
+          
+          # Créer un tag pour le suivi
+          VERSION=$(node -p "require('./app.json').version")
+          git tag -a v$VERSION -m "Version $VERSION"
+          git push origin v$VERSION
+        else
+          echo "Aucun changement détecté, pas de commit nécessaire."
+        fi
+      
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Upload validation report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: validation-report
+        path: |
+          reports/integration-report.md
+          .homeybuild/report.json
+        retention-days: 7
+    
+    - name: Notify on failure
+      if: failure()
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+        SLACK_TITLE: 'Échec de la validation Tuya Zigbee'
+        SLACK_MESSAGE: 'La validation du dépôt a échoué. Voir les détails dans les logs.'
+        SLACK_COLOR: 'danger'

@@ -1,12 +1,8 @@
 {
-  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
-  "main": "app.js",
   "id": "com.dlnraja.ultimate.zigbee.hub",
   "version": "4.0.0",
   "compatibility": ">=8.0.0",
-  "category": [
-    "lights"
-  ],
+  "sdk": 3,
   "name": {
     "en": "Homey Ultimate Zigbee Hub",
     "fr": "Homey Ultimate Zigbee Hub",
@@ -19,27 +15,71 @@
     "nl": "Homey Ultimate Zigbee Hub: verenigde community Zigbee-drivers met modulaire architectuur en Windows 11-optimalisaties",
     "ta": "Homey Ultimate Zigbee Hub: சமூக Zigbee இயக்கிகள் ஒன்றுபட்டவை, தொகுதி நிர்மாணமும் Windows 11 மேம்பாடுகளும்"
   },
-  "author": {
-    "name": "dlnraja",
-    "email": "dylan.rajasekaram@gmail.com"
-  },
-  "contributors": {},
-  "support": "mailto:dylan.rajasekaram@gmail.com",
-  "homepage": "https://github.com/dlnraja/tuya_repair",
-  "license": "MIT",
-  "platforms": [
-    "local"
+  "category": [
+    "lights"
+  ],
+  "permissions": [
+    "homey:manager:api"
   ],
   "images": {
     "large": "./assets/images/large.png",
     "small": "./assets/images/small.png"
   },
+  "author": {
+    "name": "dlnraja",
+    "email": "dylan.rajasekaram@gmail.com"
+  },
+  "contributors": {},
+  "tags": {
+    "en": [
+      "tuya",
+      "zigbee",
+      "smart home",
+      "automation",
+      "community",
+      "enhanced"
+    ],
+    "fr": [
+      "tuya",
+      "zigbee",
+      "maison connectée",
+      "automatisation",
+      "communauté",
+      "amélioré"
+    ],
+    "nl": [
+      "tuya",
+      "zigbee",
+      "slim huis",
+      "automatisering",
+      "gemeenschap",
+      "verbeterd"
+    ],
+    "de": [
+      "tuya",
+      "zigbee",
+      "smart home",
+      "automatisierung",
+      "gemeinschaft",
+      "verbessert"
+    ]
+  },
+  "source": "https://github.com/dlnraja/com.tuya.zigbee",
+  "homepage": "https://github.com/dlnraja/tuya_repair",
+  "support": "mailto:dylan.rajasekaram@gmail.com",
+  "bugs": {
+    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
+  },
+  "homeyCommunityTopicId": 140352,
+  "brandColor": "#FF0000",
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "main": "app.js",
+  "license": "MIT",
+  "platforms": [
+    "local"
+  ],
   "icon": "assets/icon.svg",
   "color": "#FF6B35",
-  "brandColor": "#FF0000",
-  "permissions": [
-    "homey:manager:api"
-  ],
   "homey": "1.0.0",
   "drivers": [
     {
@@ -1035,6 +1075,383 @@
       ],
       "id": "tuya-ts011f",
       "icon": "/drivers/manufacturers/tuya-ts011f/tuya-ts011f/assets/icon.svg"
+    },
+    {
+      "name": {
+        "en": "Tuya Dimmable Bulb",
+        "fr": "Tuya Dimmable Bulb",
+        "nl": "Tuya Dimmable Bulb",
+        "de": "Tuya Dimmable Bulb"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 6
+        }
+      },
+      "images": {
+        "large": "/drivers/tuya_light_ts0501a/assets/images/large.png",
+        "small": "/drivers/tuya_light_ts0501a/assets/images/small.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_*",
+          "_TZ3210_*",
+          "_TYZB01_*"
+        ],
+        "productId": [
+          "TS0501A"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/tuya_light_ts0501a/assets/images/large.png",
+          "instruction": {
+            "en": "Toggle the power button on the device to start pairing.",
+            "fr": "Appuyez sur le bouton d'alimentation de l'appareil pour commencer l'appairage.",
+            "nl": "Zet de aan/uit-knop op het apparaat om te beginnen met koppelen.",
+            "de": "Drücken Sie die Ein-/Aus-Taste am Gerät, um mit der Kopplung zu beginnen."
+          }
+        }
+      },
+      "id": "tuya_light_ts0501a"
+    },
+    {
+      "name": {
+        "en": "Tuya CCT Bulb",
+        "fr": "Tuya CCT Bulb",
+        "nl": "Tuya CCT Bulb",
+        "de": "Tuya CCT Bulb"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 7
+        }
+      },
+      "images": {
+        "large": "/drivers/tuya_light_ts0502a/assets/images/large.png",
+        "small": "/drivers/tuya_light_ts0502a/assets/images/small.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_*",
+          "_TZ3210_*",
+          "_TYZB01_*"
+        ],
+        "productId": [
+          "TS0502A"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8,
+              768
+            ],
+            "bindings": [
+              6,
+              8,
+              768
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/tuya_light_ts0502a/assets/images/large.png",
+          "instruction": {
+            "en": "Toggle the power button on the device to start pairing.",
+            "fr": "Appuyez sur le bouton d'alimentation de l'appareil pour commencer l'appairage.",
+            "nl": "Zet de aan/uit-knop op het apparaat om te beginnen met koppelen.",
+            "de": "Drücken Sie die Ein-/Aus-Taste am Gerät, um mit der Kopplung zu beginnen."
+          }
+        }
+      },
+      "id": "tuya_light_ts0502a"
+    },
+    {
+      "name": {
+        "en": "Tuya CCT Bulb v2",
+        "fr": "Tuya CCT Bulb v2",
+        "nl": "Tuya CCT Bulb v2",
+        "de": "Tuya CCT Bulb v2"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 7
+        }
+      },
+      "images": {
+        "large": "/drivers/tuya_light_ts0502b/assets/images/large.png",
+        "small": "/drivers/tuya_light_ts0502b/assets/images/small.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_*",
+          "_TZ3210_*",
+          "_TYZB01_*"
+        ],
+        "productId": [
+          "TS0502B"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8,
+              768
+            ],
+            "bindings": [
+              6,
+              8,
+              768
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/tuya_light_ts0502b/assets/images/large.png",
+          "instruction": {
+            "en": "Toggle the power button on the device to start pairing.",
+            "fr": "Appuyez sur le bouton d'alimentation de l'appareil pour commencer l'appairage.",
+            "nl": "Zet de aan/uit-knop op het apparaat om te beginnen met koppelen.",
+            "de": "Drücken Sie die Ein-/Aus-Taste am Gerät, um mit der Kopplung zu beginnen."
+          }
+        }
+      },
+      "id": "tuya_light_ts0502b"
+    },
+    {
+      "name": {
+        "en": "Tuya RGB+CCT Bulb Alt",
+        "fr": "Tuya RGB+CCT Bulb Alt",
+        "nl": "Tuya RGB+CCT Bulb Alt",
+        "de": "Tuya RGB+CCT Bulb Alt"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 9
+        }
+      },
+      "images": {
+        "large": "/drivers/tuya_light_ts0505a/assets/images/large.png",
+        "small": "/drivers/tuya_light_ts0505a/assets/images/small.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_*",
+          "_TZ3210_*",
+          "_TYZB01_*"
+        ],
+        "productId": [
+          "TS0505A"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8,
+              768
+            ],
+            "bindings": [
+              6,
+              8,
+              768
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/tuya_light_ts0505a/assets/images/large.png",
+          "instruction": {
+            "en": "Toggle the power button on the device to start pairing.",
+            "fr": "Appuyez sur le bouton d'alimentation de l'appareil pour commencer l'appairage.",
+            "nl": "Zet de aan/uit-knop op het apparaat om te beginnen met koppelen.",
+            "de": "Drücken Sie die Ein-/Aus-Taste am Gerät, um mit der Kopplung zu beginnen."
+          }
+        }
+      },
+      "id": "tuya_light_ts0505a"
+    },
+    {
+      "name": {
+        "en": "Tuya RGB+CCT Bulb",
+        "fr": "Tuya RGB+CCT Bulb",
+        "nl": "Tuya RGB+CCT Bulb",
+        "de": "Tuya RGB+CCT Bulb"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 9
+        }
+      },
+      "images": {
+        "large": "/drivers/tuya_light_ts0505b/assets/images/large.png",
+        "small": "/drivers/tuya_light_ts0505b/assets/images/small.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_*",
+          "_TZ3210_*",
+          "_TYZB01_*"
+        ],
+        "productId": [
+          "TS0505B"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8,
+              768
+            ],
+            "bindings": [
+              6,
+              8,
+              768
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/tuya_light_ts0505b/assets/images/large.png",
+          "instruction": {
+            "en": "Toggle the power button on the device to start pairing.",
+            "fr": "Appuyez sur le bouton d'alimentation de l'appareil pour commencer l'appairage.",
+            "nl": "Zet de aan/uit-knop op het apparaat om te beginnen met koppelen.",
+            "de": "Drücken Sie die Ein-/Aus-Taste am Gerät, um mit der Kopplung zu beginnen."
+          }
+        }
+      },
+      "id": "tuya_light_ts0505b"
+    },
+    {
+      "name": {
+        "en": "Tuya Smart Light (Universal)",
+        "fr": "Tuya Smart Light (Universel)",
+        "nl": "Tuya Smart Light (Universeel)",
+        "de": "Tuya Smart Light (Universal)"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        }
+      },
+      "energy": {
+        "approximation": {
+          "usageConstant": 7
+        }
+      },
+      "images": {
+        "large": "/drivers/tuya_light_universal/assets/images/large.png",
+        "small": "/drivers/tuya_light_universal/assets/images/small.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_*",
+          "_TZ3210_*",
+          "_TYZB01_*",
+          "_TZ3300_*"
+        ],
+        "productId": [
+          "TS0505B",
+          "TS0502A",
+          "TS0501A",
+          "TS0502B",
+          "TS0505A"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8,
+              768
+            ],
+            "bindings": [
+              6,
+              8,
+              768
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/tuya_light_universal/assets/images/large.png",
+          "instruction": {
+            "en": "Toggle the power button on the device to start pairing.",
+            "fr": "Appuyez sur le bouton d'alimentation de l'appareil pour commencer l'appairage.",
+            "nl": "Zet de aan/uit-knop op het apparaat om te beginnen met koppelen.",
+            "de": "Drücken Sie die Ein-/Aus-Taste am Gerät, um mit der Kopplung zu beginnen."
+          }
+        }
+      },
+      "id": "tuya_light_universal"
     },
     {
       "id": "tuya_thermostat",

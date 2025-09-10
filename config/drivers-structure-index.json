@@ -1,0 +1,81 @@
+{
+  "tuya": {
+    "locks": [
+      "smart_locks",
+      "keypads"
+    ],
+    "sensors": [
+      "temperature",
+      "humidity",
+      "motion",
+      "water"
+    ],
+    "switches": [
+      "remote",
+      "smart",
+      "wall"
+    ],
+    "thermostats": [
+      "floor",
+      "smart",
+      "wall"
+    ],
+    "plugs": [
+      "indoor",
+      "outdoor",
+      "power"
+    ],
+    "covers": [
+      "blinds",
+      "curtains",
+      "shutters"
+    ],
+    "lights": [
+      "bulbs",
+      "dimmers",
+      "rgb",
+      "strips"
+    ]
+  },
+  "zigbee": {
+    "automation": [
+      "handheld_remote_4_buttons",
+      "irrigation_controller",
+      "remote_control"
+    ],
+    "sensors": [
+      "alarm_sensor",
+      "doorwindowsensor",
+      "motion_sensor",
+      "temperature_sensor"
+    ],
+    "switches": [
+      "button_switch",
+      "smart_switch",
+      "wall_switch_1_gang"
+    ],
+    "lights": [
+      "dimmer_1_gang",
+      "rgb_bulb_E27",
+      "tunable_bulb_E27"
+    ],
+    "onoff": [
+      "blind_motor",
+      "relay_board",
+      "power_strip"
+    ],
+    "plugs": [
+      "smartplug",
+      "outdoor_plug",
+      "wall_socket"
+    ],
+    "covers": [
+      "curtain_module",
+      "curtain_motor"
+    ],
+    "thermostats": [
+      "radiator_valve",
+      "wall_thermostat"
+    ]
+  }
+}

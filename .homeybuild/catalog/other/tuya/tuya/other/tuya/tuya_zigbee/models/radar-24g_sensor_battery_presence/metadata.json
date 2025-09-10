@@ -1,0 +1,20 @@
+{
+  "id": "radar-24g_switch_standard",
+  "name": "tuya radar-24g",
+  "category": "switch",
+  "vendor": "tuya",
+  "model": "radar-24g",
+  "type": "tuya_zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:00.618Z",
+  "updatedAt": "2025-08-13T12:09:00.618Z"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "ikea-fan-18_plug_standard",
+  "name": "ikea ikea-fan-18",
+  "category": "plug",
+  "vendor": "ikea",
+  "model": "ikea-fan-18",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:07.735Z",
+  "updatedAt": "2025-08-13T12:09:07.735Z"
+}

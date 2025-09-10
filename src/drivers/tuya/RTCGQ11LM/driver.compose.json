@@ -1,0 +1,149 @@
+{
+  "id": "RTCGQ11LM",
+  "name": {
+    "en": "Tuya Motion Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "capabilitiesOptions": {
+    "alarm_motion": {
+      "title": {
+        "en": "Motion"
+      }
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery"
+      },
+      "units": {
+        "en": "%"
+      }
+    },
+    "alarm_battery": {
+      "title": {
+        "en": "Battery low"
+      }
+    }
+  },
+  "images": {
+    "large": "/drivers/tuya/RTCGQ11LM/assets/images/large.png",
+    "small": "/drivers/tuya/RTCGQ11LM/assets/images/small.png"
+  },
+  "zigbee": {
+    "manufacturerName": "_TZ3000_1dd0d5yi",
+    "productId": ["RTCGQ11LM"],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genBasic",
+          "genIdentify",
+          "genPowerCfg",
+          "msOccupancySensing",
+          "ssIasZone",
+          "genOta"
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/learn.svg",
+      "instruction": {
+        "en": "Press the button on the motion sensor to start pairing"
+      }
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Device Settings"
+      },
+      "children": [
+        {
+          "id": "sensitivity",
+          "type": "dropdown",
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High"
+              }
+            }
+          ],
+          "label": {
+            "en": "Motion Sensitivity"
+          },
+          "hint": {
+            "en": "Adjust the motion detection sensitivity"
+          }
+        },
+        {
+          "id": "led_enabled",
+          "type": "boolean",
+          "value": true,
+          "label": {
+            "en": "LED Indicator"
+          },
+          "hint": {
+            "en": "Enable/disable the LED indicator on the device"
+          }
+        },
+        {
+          "id": "detection_interval",
+          "type": "number",
+          "value": 60,
+          "min": 10,
+          "max": 600,
+          "label": {
+            "en": "Detection Interval (seconds)"
+          },
+          "hint": {
+            "en": "Time in seconds before motion is cleared (10-600)"
+          }
+        }
+      ]
+    }
+  ],
+  "pair": [
+    {
+      "id": "start",
+      "navigation": {
+        "next": "select_device"
+      }
+    },
+    {
+      "id": "select_device",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "navigation": {
+        "next": "done"
+      }
+    },
+    {
+      "id": "done",
+      "navigation": {
+        "next": null
+      }
+    }
+  ]
+}

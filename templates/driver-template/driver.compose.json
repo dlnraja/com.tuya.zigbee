@@ -1,0 +1,39 @@
+{
+  "id": "tuya_MODEL_ID",
+  "name": {
+    "en": "Tuya DEVICE_NAME",
+    "fr": "Tuya NOM_APPAREIL",
+    "nl": "Tuya APPARAATNAAM",
+    "ta": "Tuya சாதன_பெயர்"
+  },
+  "class": "sensor|light|switch|thermostat|other",
+  "capabilities": ["onoff", "measure_temperature", "measure_humidity"],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Power",
+        "fr": "Alimentation",
+        "nl": "Aan/Uit",
+        "ta": "மின்சாரம்"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/tuya_MODEL_ID/assets/images/small.png",
+    "large": "/drivers/tuya_MODEL_ID/assets/images/large.png"
+  },
+  "icon": "/drivers/tuya_MODEL_ID/assets/icon.svg",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

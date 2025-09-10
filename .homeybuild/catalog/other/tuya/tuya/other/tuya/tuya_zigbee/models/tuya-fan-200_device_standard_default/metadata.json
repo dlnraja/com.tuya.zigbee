@@ -1,0 +1,20 @@
+{
+  "id": "tuya-fan-200_plug_standard",
+  "name": "tuya tuya-fan-200",
+  "category": "plug",
+  "vendor": "tuya",
+  "model": "tuya-fan-200",
+  "type": "tuya_zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:08:58.764Z",
+  "updatedAt": "2025-08-13T12:08:58.764Z"
+}

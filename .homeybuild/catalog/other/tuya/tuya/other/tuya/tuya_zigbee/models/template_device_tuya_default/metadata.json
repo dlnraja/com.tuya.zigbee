@@ -1,0 +1,32 @@
+{
+  "id": "drivers-backup-2025-08-13T12-14-20-255Z_template_tuya_dp_sensor_basic_models_standard_default",
+  "name": "drivers-backup-2025-08-13T12-14-20-255Z template tuya dp sensor basic models standard default",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "0x0006"
+  ],
+  "endpoints": [
+    1
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_"
+    ],
+    "modelId": [
+      "TS0001"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          {
+            "id": "0x0006",
+            "server": true,
+            "client": false
+          }
+        ]
+      }
+    }
+  }
+}

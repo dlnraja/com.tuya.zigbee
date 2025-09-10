@@ -1,0 +1,9 @@
+{
+  "name": "Ikea_Switch_Plug_Standard_Default",
+  "type": "tuya_zigbee",
+  "category": "other",
+  "source": "drivers\\tuya_zigbee\\models\\ikea-switch-783_plug_standard_default",
+  "created": "2025-08-14T15:24:15.895Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}
