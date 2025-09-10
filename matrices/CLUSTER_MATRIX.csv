@@ -1,13 +1,6 @@
-cluster_id,cluster_name,capability,description
-0x0000,Basic,"identify","Device identification"
-0x0001,Power Configuration,"measure_battery","Battery level"
-0x0003,Identify,"identify","Identify device"
-0x0004,Groups,"","Group management"
-0x0005,Scenes,"","Scene management"
-0x0006,On/Off,"onoff","On/off control"
-0x0008,Level Control,"dim","Brightness control"
-0x0300,Color Control,"light_hue,light_saturation,light_temperature","Color control"
-0x0402,Temperature Measurement,"measure_temperature","Temperature sensor"
-0x0405,Relative Humidity,"measure_humidity","Humidity sensor"
-0x0406,Occupancy Sensing,"alarm_motion","Motion detection"
-0x0500,IAS Zone,"alarm_contact,alarm_smoke,alarm_water","Security sensors"
+Cluster_ID,Cluster_Name,Homey_Capability,Command_Types,Attribute_IDs,Tuya_Devices,Community_Feedback,Status,Implementation_Notes
+0x0006,genOnOff,onoff,"on, off, toggle",0x0000,"TS0001, TS0011, TS0012, TS0121",Generally stable,WORKING,Standard implementation works well
+0x0008,genLevelCtrl,dim,"moveToLevel, move, step",0x0000,"TS0501A, TS0502A, TS0505A",Some smoothness issues reported,NEEDS_IMPROVEMENT,Add transition time for smooth dimming
+0x0300,lightingColorCtrl,"light_hue, light_saturation, light_temperature","moveToHue, moveToSaturation, moveToColorTemp","0x0000, 0x0001, 0x0007","TS0502A, TS0505A, TS0505B",Color accuracy needs improvement,PATCH_AVAILABLE,Use XY color space for better accuracy
+0x0B04,haElectricalMeasurement,measure_power,getProfileInfo,"0x050B, 0x050F",TS0121,Power values often incorrect,CRITICAL_PATCH_NEEDED,Implement proper divisor and multiplier
+0x0702,seMetering,meter_power,getProfile,0x0000,TS0121,Energy metering unreliable,PATCH_AVAILABLE,Check unit of measure attribute
