@@ -1,0 +1,20 @@
+{
+  "id": "aqara-switch-457_plug_standard",
+  "name": "aqara aqara-switch-457",
+  "category": "plug",
+  "vendor": "aqara",
+  "model": "aqara-switch-457",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:06.491Z",
+  "updatedAt": "2025-08-13T12:09:06.491Z"
+}

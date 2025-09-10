@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-09-01T12:14:14.786Z",
+  "totalScripts": 4,
+  "successful": 0,
+  "failed": 4,
+  "details": [
+    {
+      "script": "scout",
+      "success": false,
+      "error": "Command failed: node C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\scout.js\nnode:internal/modules/package_json_reader:255\r\n  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);\r\n        ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find package 'fs-extra' imported from C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\scout.js\r\n    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:255:9)\r\n    at packageResolve (node:internal/modules/esm/resolve:767:81)\r\n    at moduleResolve (node:internal/modules/esm/resolve:853:18)\r\n    at defaultResolve (node:internal/modules/esm/resolve:983:11)\r\n    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:783:12)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:707:25)\r\n    at ModuleLoader.resolve (node:internal/modules/esm/loader:690:38)\r\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:307:38)\r\n    at ModuleJob._link (node:internal/modules/esm/module_job:183:49) {\r\n  code: 'ERR_MODULE_NOT_FOUND'\r\n}\r\n\r\nNode.js v22.18.0\r\n",
+      "timestamp": "2025-09-01T12:14:05.663Z"
+    },
+    {
+      "script": "architect",
+      "success": false,
+      "error": "Command failed: node C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\architect.js\nnode:internal/modules/package_json_reader:255\r\n  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);\r\n        ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find package 'fs-extra' imported from C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\architect.js\r\n    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:255:9)\r\n    at packageResolve (node:internal/modules/esm/resolve:767:81)\r\n    at moduleResolve (node:internal/modules/esm/resolve:853:18)\r\n    at defaultResolve (node:internal/modules/esm/resolve:983:11)\r\n    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:783:12)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:707:25)\r\n    at ModuleLoader.resolve (node:internal/modules/esm/loader:690:38)\r\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:307:38)\r\n    at ModuleJob._link (node:internal/modules/esm/module_job:183:49) {\r\n  code: 'ERR_MODULE_NOT_FOUND'\r\n}\r\n\r\nNode.js v22.18.0\r\n",
+      "timestamp": "2025-09-01T12:14:07.104Z"
+    },
+    {
+      "script": "optimizer",
+      "success": false,
+      "error": "Command failed: node C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\optimizer.js\nnode:internal/modules/package_json_reader:255\r\n  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);\r\n        ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find package 'fs-extra' imported from C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\optimizer.js\r\n    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:255:9)\r\n    at packageResolve (node:internal/modules/esm/resolve:767:81)\r\n    at moduleResolve (node:internal/modules/esm/resolve:853:18)\r\n    at defaultResolve (node:internal/modules/esm/resolve:983:11)\r\n    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:783:12)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:707:25)\r\n    at ModuleLoader.resolve (node:internal/modules/esm/loader:690:38)\r\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:307:38)\r\n    at ModuleJob._link (node:internal/modules/esm/module_job:183:49) {\r\n  code: 'ERR_MODULE_NOT_FOUND'\r\n}\r\n\r\nNode.js v22.18.0\r\n",
+      "timestamp": "2025-09-01T12:14:10.904Z"
+    },
+    {
+      "script": "validator",
+      "success": false,
+      "error": "Command failed: node C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\validator.js\nnode:internal/modules/package_json_reader:255\r\n  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);\r\n        ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find package 'fs-extra' imported from C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\validator.js\r\n    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:255:9)\r\n    at packageResolve (node:internal/modules/esm/resolve:767:81)\r\n    at moduleResolve (node:internal/modules/esm/resolve:853:18)\r\n    at defaultResolve (node:internal/modules/esm/resolve:983:11)\r\n    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:783:12)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:707:25)\r\n    at ModuleLoader.resolve (node:internal/modules/esm/loader:690:38)\r\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:307:38)\r\n    at ModuleJob._link (node:internal/modules/esm/module_job:183:49) {\r\n  code: 'ERR_MODULE_NOT_FOUND'\r\n}\r\n\r\nNode.js v22.18.0\r\n",
+      "timestamp": "2025-09-01T12:14:13.779Z"
+    }
+  ]
+}

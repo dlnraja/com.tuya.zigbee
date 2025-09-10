@@ -1,0 +1,24 @@
+{
+  "id": "template",
+  "name": {
+    "en": "Template Device"
+  },
+  "class": "sensor",
+  "capabilities": [],
+  "zigbee": {
+    "manufacturerName": "Manufacturer",
+    "modelId": ["Model"],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genBasic"
+        ]
+      }
+    }
+  },
+  "images": {
+    "large": "assets/images/large/template.png",
+    "small": "assets/images/small/template.png"
+  },
+  "settings": []
+}

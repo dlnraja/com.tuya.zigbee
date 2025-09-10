@@ -1,0 +1,20 @@
+{
+  "id": "ikea-bulb-320_light_standard",
+  "name": "ikea ikea-bulb-320",
+  "category": "light",
+  "vendor": "ikea",
+  "model": "ikea-bulb-320",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:02.252Z",
+  "updatedAt": "2025-08-13T12:09:02.252Z"
+}

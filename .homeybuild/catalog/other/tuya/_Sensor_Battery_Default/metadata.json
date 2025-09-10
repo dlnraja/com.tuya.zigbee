@@ -1,0 +1,9 @@
+{
+  "name": "_Sensor_Battery_Default",
+  "type": "tuya_zigbee",
+  "category": "other",
+  "source": "drivers\\tuya_zigbee\\models\\ts0601_sensor_battery_default",
+  "created": "2025-08-14T15:24:53.171Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

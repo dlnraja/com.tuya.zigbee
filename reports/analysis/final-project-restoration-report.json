@@ -1,0 +1,56 @@
+{
+  "version": "1.0.0",
+  "timestamp": "2025-07-31T11:06:59.895Z",
+  "summary": {
+    "drivers": true,
+    "scripts": true,
+    "validation": true,
+    "overallSuccess": true,
+    "status": "ready_for_production",
+    "message": "Complete Tuya Zigbee support with 29 drivers"
+  },
+  "details": {
+    "drivers": {
+      "success": true,
+      "createdCount": 24
+    },
+    "scripts": {
+      "success": true,
+      "fixedCount": 3
+    },
+    "validation": {
+      "drivers": {
+        "total": 17,
+        "valid": 0,
+        "invalid": 17,
+        "byCategory": {
+          "tuya": {
+            "total": 16,
+            "valid": 0,
+            "invalid": 8
+          },
+          "zigbee": {
+            "total": 18,
+            "valid": 0,
+            "invalid": 9
+          }
+        }
+      },
+      "scripts": {
+        "total": 8,
+        "valid": 8,
+        "invalid": 0
+      },
+      "structure": {
+        "valid": true
+      },
+      "validation": {
+        "success": false
+      }
+    }
+  },
+  "recommendations": [
+    "Corriger 17 drivers invalides",
+    "Corriger les erreurs de validation"
+  ]
+}

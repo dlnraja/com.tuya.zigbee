@@ -1,0 +1,96 @@
+{
+  "timestamp": "2025-08-19T10:15:17.232Z",
+  "version": "3.7.0",
+  "summary": {
+    "total": 14,
+    "ok": 14,
+    "failed": 0,
+    "successRate": 100
+  },
+  "results": [
+    {
+      "module": "orchestrator",
+      "type": "core",
+      "status": "✅ OK",
+      "version": "3.7.0"
+    },
+    {
+      "module": "preparation",
+      "type": "core",
+      "status": "✅ OK",
+      "version": "3.7.0"
+    },
+    {
+      "module": "validator",
+      "type": "core",
+      "status": "✅ OK",
+      "version": "3.7.0"
+    },
+    {
+      "module": "matrix-builder",
+      "type": "core",
+      "status": "✅ OK",
+      "version": "3.7.0"
+    },
+    {
+      "module": "dashboard-builder",
+      "type": "core",
+      "status": "✅ OK",
+      "version": "3.7.0"
+    },
+    {
+      "module": "enricher",
+      "type": "core",
+      "status": "✅ OK",
+      "version": "3.7.0"
+    },
+    {
+      "module": "web-enricher",
+      "type": "core",
+      "status": "✅ OK",
+      "version": "3.7.0"
+    },
+    {
+      "module": "final-validator",
+      "type": "core",
+      "status": "✅ OK",
+      "version": "3.7.0"
+    },
+    {
+      "module": "deployer",
+      "type": "core",
+      "status": "✅ OK",
+      "version": "3.7.0"
+    },
+    {
+      "module": "script-converter",
+      "type": "utils",
+      "status": "✅ OK",
+      "version": "3.7.0"
+    },
+    {
+      "module": "tuya/tuya-bulb-rgb",
+      "type": "driver",
+      "status": "✅ OK",
+      "version": "3.7.0"
+    },
+    {
+      "module": "package.json",
+      "type": "config",
+      "status": "✅ OK",
+      "version": "3.7.0"
+    },
+    {
+      "module": "src/homey/homey-compose.json",
+      "type": "config",
+      "status": "✅ OK",
+      "version": "3.7.0"
+    },
+    {
+      "module": "README.md",
+      "type": "config",
+      "status": "✅ OK",
+      "version": "3.7.0"
+    }
+  ]
+}

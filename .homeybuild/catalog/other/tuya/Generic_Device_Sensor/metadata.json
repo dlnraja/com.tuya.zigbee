@@ -1,0 +1,9 @@
+{
+  "name": "Generic_Device_Sensor",
+  "type": "tuya_zigbee",
+  "category": "other",
+  "source": "drivers\\tuya_zigbee\\models\\generic_device_sensor_standard_3",
+  "created": "2025-08-14T15:22:28.294Z",
+  "version": "3.4.1",
+  "sdk": "3.4.1"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "template_tuya_dp_sensor_battery___templates___standard_default",
+  "name": "template tuya dp sensor battery   templates   standard default",
+  "capabilities": [
+    "onoff"
+  ],
+  "clusters": [
+    "0x0006"
+  ],
+  "endpoints": [
+    1
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_"
+    ],
+    "modelId": [
+      "TS0001"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          {
+            "id": "0x0006",
+            "server": true,
+            "client": false
+          }
+        ]
+      }
+    }
+  }
+}

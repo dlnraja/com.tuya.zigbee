@@ -1,0 +1,20 @@
+{
+  "id": "generic_sensor_standard_motion",
+  "name": "generic generic_sensor_standard_motion",
+  "category": "generic",
+  "vendor": "generic",
+  "model": "generic_sensor_standard_motion",
+  "type": "tuya_zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:14:53.995Z",
+  "updatedAt": "2025-08-13T12:14:53.995Z"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "aqara-smoke-458_plug_standard",
+  "name": "aqara aqara-smoke-458",
+  "category": "plug",
+  "vendor": "aqara",
+  "model": "aqara-smoke-458",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:06.416Z",
+  "updatedAt": "2025-08-13T12:09:06.416Z"
+}

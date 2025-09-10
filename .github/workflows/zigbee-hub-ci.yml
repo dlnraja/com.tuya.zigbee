@@ -1,0 +1,55 @@
+name: Homey Ultimate Zigbee Hub CI/CD
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies (ci)
+        run: npm ci
+
+      - name: Install Homey CLI
+        run: npm i -g homey
+
+      - name: Validate Homey app
+        run: homey app validate
+
+      - name: Recursive validation (5 iterations)
+        run: node scripts/recursive-validation.js --mode=validate --iterations=5
+
+      - name: Test loop (5 iterations)
+        run: node scripts/recursive-validation.js --mode=test --iterations=5
+
+  windows-tests:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies (ci)
+        run: npm ci
+
+      - name: Install Homey CLI
+        run: npm i -g homey
+
+      - name: Validate Homey app (Windows)
+        run: homey app validate
+
+      - name: Run tests (Windows)
+        run: npm test

@@ -1,0 +1,149 @@
+name: 🔄 Sync Light Version
+
+on:
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'drivers/**'
+      - 'app.js'
+      - 'app.json'
+      - 'package.json'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Force sync even if no changes are detected'
+        required: false
+        default: 'false'
+        type: boolean
+
+jobs:
+  sync-light-version:
+    name: 🔄 Sync with Tuya Light
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.11.0
+        with:
+          access_token: ${{ github.token }}
+
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: ⎔ Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: 📦 Install Dependencies
+        run: npm ci
+
+      - name: 🔍 Check for Changes
+        id: changes
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.force }}" = "true" ]; then
+            echo "changes_detected=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          # Check for changes in relevant directories
+          CHANGES=$(git diff --name-only HEAD^ HEAD -- \
+            drivers/ \
+            app.js \
+            app.json \
+            package.json
+          )
+          
+          if [ -z "$CHANGES" ]; then
+            echo "No relevant changes detected."
+            echo "changes_detected=false" >> $GITHUB_OUTPUT
+          else
+            echo "Changes detected in: $CHANGES"
+            echo "changes_detected=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 🔄 Sync with Tuya Light
+        if: steps.changes.outputs.changes_detected == 'true'
+        run: |
+          # Clone the light version repo if it doesn't exist
+          if [ ! -d "tuya-light-release" ]; then
+            git clone --depth=1 --branch=main https://${{ secrets.GITHUB_TOKEN }}@github.com/dlnraja/tuya-light.git tuya-light-release || \
+            git clone --depth=1 --branch=master https://${{ secrets.GITHUB_TOKEN }}@github.com/dlnraja/tuya-light.git tuya-light-release || \
+            { echo "Failed to clone tuya-light repository"; exit 1; }
+          fi
+          
+          # Run the sync script
+          node scripts/sync-tuya-light.js
+          
+          # Push changes to the light version repo
+          cd tuya-light-release
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          
+          # Only push if there are changes
+          if [ -n "$(git status --porcelain)" ]; then
+            git add .
+            git commit -m "chore: sync with main repository (${GITHUB_SHA:0:7})"
+            git push origin main || git push origin master
+            echo "✅ Successfully synced with tuya-light repository"
+          else
+            echo "ℹ️ No changes to commit"
+          fi
+
+      - name: 📝 Create Status Comment
+        uses: actions/github-script@v6
+        if: always()
+        with:
+          script: |
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            
+            // Delete previous comments from this action
+            for (const comment of comments) {
+              if (comment.user.login === 'github-actions[bot]' && 
+                  comment.body.includes('## 🔄 Tuya Light Sync Status')) {
+                await github.rest.issues.deleteComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  comment_id: comment.id,
+                });
+              }
+            }
+            
+            // Only post comment for PRs
+            if (context.payload.pull_request) {
+              const { data: pr } = await github.rest.pulls.get({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: context.issue.number,
+              });
+              
+              const baseBranch = pr.base.ref;
+              const headBranch = pr.head.ref;
+              
+              let body = '## 🔄 Tuya Light Sync Status\n\n';
+              
+              if ('${{ steps.changes.outputs.changes_detected }}' === 'true') {
+                body += '✅ Changes detected and synced to tuya-light repository.\n';
+                body += `- Base branch: ${baseBranch}\n`;
+                body += `- Head branch: ${headBranch}\n`;
+                body += `- Commit: [${process.env.GITHUB_SHA}](${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/commit/${process.env.GITHUB_SHA})\n`;
+              } else {
+                body += 'ℹ️ No relevant changes detected for tuya-light sync.\n';
+              }
+              
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: body,
+              });
+            }

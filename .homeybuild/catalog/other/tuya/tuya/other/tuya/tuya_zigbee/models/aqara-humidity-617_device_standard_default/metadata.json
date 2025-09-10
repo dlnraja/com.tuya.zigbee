@@ -1,0 +1,20 @@
+{
+  "id": "aqara-humidity-617_plug_standard",
+  "name": "aqara aqara-humidity-617",
+  "category": "plug",
+  "vendor": "aqara",
+  "model": "aqara-humidity-617",
+  "type": "zigbee",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [],
+    "modelId": []
+  },
+  "tuya": {
+    "dataPoints": []
+  },
+  "createdAt": "2025-08-13T12:09:05.863Z",
+  "updatedAt": "2025-08-13T12:09:05.863Z"
+}

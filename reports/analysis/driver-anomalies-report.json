@@ -1,0 +1,98 @@
+{
+  "timestamp": "2025-08-05T14:32:29.867Z",
+  "anomalies": [
+    {
+      "type": "misclassified_category",
+      "path": "drivers\\tuya\\covers",
+      "parent": "tuya",
+      "expected": "lights, switches, plugs, sensors, thermostats",
+      "found": "covers"
+    }
+  ],
+  "misclassified": [
+    {
+      "driver": "assets",
+      "currentPath": "drivers\\tuya\\sensors\\assets",
+      "category": "sensors",
+      "parent": "tuya",
+      "expectedPattern": [
+        "sensor",
+        "motion",
+        "temperature",
+        "humidity",
+        "ts020"
+      ],
+      "suggestion": "sensors_tuya_assets"
+    },
+    {
+      "driver": "blinds",
+      "currentPath": "drivers\\tuya\\sensors\\blinds",
+      "category": "sensors",
+      "parent": "tuya",
+      "expectedPattern": [
+        "sensor",
+        "motion",
+        "temperature",
+        "humidity",
+        "ts020"
+      ],
+      "suggestion": "sensors_tuya_blinds"
+    },
+    {
+      "driver": "shutters",
+      "currentPath": "drivers\\tuya\\sensors\\shutters",
+      "category": "sensors",
+      "parent": "tuya",
+      "expectedPattern": [
+        "sensor",
+        "motion",
+        "temperature",
+        "humidity",
+        "ts020"
+      ],
+      "suggestion": "sensors_tuya_shutters"
+    },
+    {
+      "driver": "tuya",
+      "currentPath": "drivers\\tuya\\sensors\\tuya",
+      "category": "sensors",
+      "parent": "tuya",
+      "expectedPattern": [
+        "sensor",
+        "motion",
+        "temperature",
+        "humidity",
+        "ts020"
+      ],
+      "suggestion": "sensors_tuya_tuya"
+    },
+    {
+      "driver": "locks",
+      "currentPath": "drivers\\tuya\\thermostats\\locks",
+      "category": "thermostats",
+      "parent": "tuya",
+      "expectedPattern": [
+        "thermostat",
+        "climate",
+        "ts060"
+      ],
+      "suggestion": "thermostats_tuya_locks"
+    }
+  ],
+  "orphaned": [],
+  "duplicates": [
+    {
+      "driverId": "sensors",
+      "paths": [
+        "drivers\\tuya\\sensors",
+        "drivers\\zigbee\\sensors"
+      ],
+      "count": 2
+    }
+  ],
+  "performance": {
+    "startTime": 1754404349867,
+    "endTime": null,
+    "duration": null
+  }
+}

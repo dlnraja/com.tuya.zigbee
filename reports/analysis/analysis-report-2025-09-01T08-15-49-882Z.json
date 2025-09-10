@@ -1,0 +1,62 @@
+{
+  "startTime": "2025-09-01T08:15:44.002Z",
+  "nodeVersion": "v22.18.0",
+  "platform": "win32",
+  "arch": "x64",
+  "cwd": "C:\\Users\\HP\\Desktop\\tuya_repair",
+  "scripts": {
+    "scout": {
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\scout.js",
+      "exists": true,
+      "size": 5046,
+      "result": {
+        "startTime": "2025-09-01T08:15:44.675Z",
+        "endTime": "2025-09-01T08:15:46.839Z",
+        "duration": 2164,
+        "command": "node scripts/scout.js",
+        "success": false,
+        "outputFile": "analysis-results\\scout-2025-09-01T08-15-44-675Z.txt"
+      }
+    },
+    "architect": {
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\architect.js",
+      "exists": true,
+      "size": 9016,
+      "result": {
+        "startTime": "2025-09-01T08:15:46.864Z",
+        "endTime": "2025-09-01T08:15:48.536Z",
+        "duration": 1672,
+        "command": "node scripts/architect.js",
+        "success": false,
+        "outputFile": "analysis-results\\architect-2025-09-01T08-15-46-864Z.txt"
+      }
+    },
+    "optimizer": {
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\optimizer.js",
+      "exists": true,
+      "size": 5131,
+      "result": {
+        "startTime": "2025-09-01T08:15:48.630Z",
+        "endTime": "2025-09-01T08:15:49.387Z",
+        "duration": 757,
+        "command": "node scripts/optimizer.js",
+        "success": false,
+        "outputFile": "analysis-results\\optimizer-2025-09-01T08-15-48-630Z.txt"
+      }
+    },
+    "validator": {
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\validator.js",
+      "exists": true,
+      "size": 7878,
+      "result": {
+        "startTime": "2025-09-01T08:15:49.402Z",
+        "endTime": "2025-09-01T08:15:49.876Z",
+        "duration": 474,
+        "command": "node scripts/validator.js",
+        "success": false,
+        "outputFile": "analysis-results\\validator-2025-09-01T08-15-49-402Z.txt"
+      }
+    }
+  },
+  "endTime": "2025-09-01T08:15:49.882Z"
+}
