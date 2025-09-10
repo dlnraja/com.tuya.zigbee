@@ -41,3 +41,6 @@ __pycache__/
 # Analysis results (keep structure, ignore content)
 analysis-results/*.json
 !analysis-results/.gitkeep
+
+# Added by Homey CLI
+/.homeybuild/

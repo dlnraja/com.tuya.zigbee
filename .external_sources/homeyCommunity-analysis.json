@@ -1,0 +1,42 @@
+{
+  "source": "Homey Community Forum",
+  "url": "https://community.homey.app",
+  "type": "forum",
+  "priority": "high",
+  "lastUpdated": "2025-09-10T09:57:07.141Z",
+  "extractedData": {
+    "threads": 72,
+    "devices": [
+      {
+        "model": "TS011F",
+        "type": "plug",
+        "capabilities": [
+          "onoff",
+          "measure_power"
+        ],
+        "status": "needs_driver"
+      },
+      {
+        "model": "TS0201",
+        "type": "sensor",
+        "capabilities": [
+          "measure_temperature"
+        ],
+        "status": "needs_driver"
+      },
+      {
+        "model": "TZE204",
+        "type": "sensor",
+        "capabilities": [
+          "alarm_motion"
+        ],
+        "status": "needs_driver"
+      }
+    ],
+    "issues": [
+      "TS011F plug not working properly",
+      "TS0201 temperature sensor support needed",
+      "TZE204 presence sensor configuration"
+    ]
+  }
+}
