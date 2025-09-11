@@ -19,5 +19,9 @@
         ]
       }
     }
+  },
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   }
 }
