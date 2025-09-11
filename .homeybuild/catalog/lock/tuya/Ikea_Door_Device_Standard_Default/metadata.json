@@ -1,9 +1,0 @@
-{
-  "name": "Ikea_Door_Device_Standard_Default",
-  "type": "tuya_zigbee",
-  "category": "lock",
-  "source": "drivers\\tuya_zigbee\\models\\ikea-door-555_device_standard_default",
-  "created": "2025-08-14T15:23:37.460Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

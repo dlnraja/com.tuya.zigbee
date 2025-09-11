@@ -1,9 +1,0 @@
-{
-  "name": "Aqara_Heater_Device_Standard_Default",
-  "type": "tuya_zigbee",
-  "category": "heater",
-  "source": "drivers\\tuya_zigbee\\models\\aqara-heater-898_device_standard_default",
-  "created": "2025-08-14T15:21:31.609Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}
