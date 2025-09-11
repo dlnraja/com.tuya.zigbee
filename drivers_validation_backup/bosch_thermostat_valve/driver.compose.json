@@ -1,0 +1,55 @@
+{
+  "name": {
+    "en": "Bosch Thermostat Valve",
+    "fr": "Tête Thermostatique Bosch"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "measure_temperature",
+    "target_temperature",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {},
+  "zigbee": {
+    "manufacturerName": [
+      "Bosch"
+    ],
+    "productId": [
+      "TRV"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1026,
+          513
+        ]
+      }
+    }
+  },
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
+  },
+  "id": "bosch_thermostat_valve",
+  "icon": "/drivers/bosch_thermostat_valve/assets/icon.svg",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  }
+}

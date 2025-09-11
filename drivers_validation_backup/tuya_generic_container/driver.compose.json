@@ -1,0 +1,29 @@
+{
+  "id": "tuya_generic_container",
+  "name": {
+    "en": "Tuya Generic Drivers Container",
+    "fr": "Conteneur Drivers Génériques Tuya",
+    "nl": "Tuya Generieke Drivers Container"
+  },
+  "class": "other",
+  "capabilities": [],
+  "zigbee": {
+    "manufacturerName": "_PLACEHOLDER_",
+    "productId": "_PLACEHOLDER_",
+    "endpoints": {
+      "1": {
+        "clusters": [],
+        "bindings": []
+      }
+    }
+  },
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
+  },
+  "settings": [],
+  "_internal": {
+    "container_only": true,
+    "hidden": true
+  }
+}

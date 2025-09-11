@@ -1,0 +1,54 @@
+{
+  "id": "ts0201_temperature",
+  "name": {
+    "en": "Tuya Temperature Sensor",
+    "fr": "Capteur Température Tuya"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+  ],
+  "icon": "/drivers/manufacturers/tuya/ts0201_temperature/assets/icon.svg",
+  "images": {
+    "large": "/drivers/manufacturers/tuya/ts0201_temperature/assets/images/large.png",
+    "small": "/drivers/manufacturers/tuya/ts0201_temperature/assets/images/small.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0201"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1026,
+          1029
+        ]
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  }
+}

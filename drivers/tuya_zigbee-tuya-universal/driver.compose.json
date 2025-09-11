@@ -1,0 +1,52 @@
+{
+  "name": {
+    "en": "Zigbee-Tuya-Universal",
+    "fr": "Zigbee-Tuya-Universal"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6,
+          1,
+          3
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
+  },
+  "id": "tuya_zigbee-tuya-universal",
+  "title": {
+    "en": "Zigbee-Tuya-Universal Control",
+    "fr": "Contrôle Zigbee-Tuya-Universal"
+  },
+  "icon": "/drivers/manufacturers/zigbee-tuya-universal/zigbee-tuya-universal/assets/icon.svg",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

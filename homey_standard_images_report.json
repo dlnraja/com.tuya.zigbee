@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-09-11T19:02:11.105Z",
+  "imagesGenerated": 5,
+  "errorsEncountered": 0,
+  "compliance": "Homey Store Standards + Johan Benz Style",
+  "specifications": {
+    "small": "75x75 PNG, optimized size",
+    "large": "500x500 PNG, detailed",
+    "transparency": "Required",
+    "format": "PNG only"
+  },
+  "generated": [
+    "Template créé: generic_device (small + large)",
+    "Template créé: light (small + large)",
+    "Template créé: generic_sensor (small + large)",
+    "Template créé: thermostat (small + large)",
+    "Template créé: temperature_sensor (small + large)"
+  ],
+  "errors": []
+}

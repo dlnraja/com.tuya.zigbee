@@ -1,0 +1,40 @@
+{
+  "timestamp": "2025-09-11T19:00:31.586Z",
+  "enrichmentsApplied": 25,
+  "errorsEncountered": 0,
+  "enrichments": [
+    "aqara_motion_sensor: Added capabilities onoff, dim, measure_power",
+    "aqara_motion_sensor: Updated Zigbee endpoints",
+    "bosch_thermostat_valve: Added capabilities onoff, dim, measure_power",
+    "bosch_thermostat_valve: Updated Zigbee endpoints",
+    "climate: Added capabilities onoff, dim, measure_power",
+    "climate: Updated Zigbee endpoints",
+    "common: Added capabilities onoff, dim, measure_power",
+    "common: Updated Zigbee endpoints",
+    "covers: Added capabilities onoff, dim, measure_power",
+    "covers: Updated Zigbee endpoints",
+    "ikea_tradfri_bulb: Added capabilities measure_power",
+    "ikea_tradfri_bulb: Updated Zigbee endpoints",
+    "lights: Added capabilities onoff, dim, measure_power",
+    "lights: Updated Zigbee endpoints",
+    "manufacturers_root: Added capabilities onoff, dim, measure_power",
+    "manufacturers_root: Updated Zigbee endpoints",
+    "protocols_container: Added capabilities onoff, dim, measure_power",
+    "protocols_container: Updated Zigbee endpoints",
+    "security: Added capabilities onoff, dim, measure_power",
+    "security: Updated Zigbee endpoints",
+    "climate: Added missing capabilities target_temperature, measure_temperature",
+    "Standardized 4 images to proper sizes",
+    "Updated README.md with enrichment information",
+    "lights: Added product models light",
+    "switches: Added product models switch_1ch, switch, switch_2ch"
+  ],
+  "errors": [],
+  "summary": {
+    "johanDataIntegrated": true,
+    "forumDataIntegrated": true,
+    "imagesOptimized": true,
+    "prsIssuesAddressed": true,
+    "nlpOptimizationsApplied": true
+  }
+}
