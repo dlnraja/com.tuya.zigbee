@@ -1,0 +1,272 @@
+{
+  "timestamp": "2025-09-11T17:41:34.347Z",
+  "summary": {
+    "corrections": 41,
+    "moved": 41,
+    "created": 4,
+    "deleted": 5
+  },
+  "corrections": [
+    "Updated aqara_motion_sensor configuration",
+    "Updated climate configuration",
+    "Updated covers configuration",
+    "Updated lights configuration",
+    "Updated manufacturers_root configuration",
+    "Updated security configuration",
+    "Updated sensors configuration",
+    "Updated tuya_sensors-ts0601_motion configuration",
+    "Updated switches configuration",
+    "Updated tuya-ts0011 configuration",
+    "Updated tuya-ts011f configuration",
+    "Updated tuya_generic_universal configuration",
+    "Updated tuya_radar_sensor configuration",
+    "Updated tuya_soil_sensor configuration",
+    "Updated tuya_water_sensor configuration",
+    "Updated bosch_thermostat_valve configuration",
+    "Updated TS0601_climate configuration",
+    "Updated tuya_thermostat configuration",
+    "Updated tuya_generic_container configuration",
+    "Updated protocols_container configuration",
+    "Updated TS0601_cover configuration",
+    "Updated TS0601_irrigation configuration",
+    "Updated TS0601_siren configuration",
+    "Updated tuya_tuya configuration",
+    "Updated tuya_future_ai_device configuration",
+    "Updated tuya_generic_fallback configuration",
+    "Updated tuya_generic_light configuration",
+    "Updated tuya_generic_plug configuration",
+    "Updated tuya_generic_sensor configuration",
+    "Updated tuya_generic_switch configuration",
+    "Updated tuya_universal_adapter configuration",
+    "Updated zigbee configuration",
+    "Updated tuya_zigbee-tuya-universal configuration",
+    "Updated ikea_tradfri_bulb configuration",
+    "Updated tuya_light_ts0501a configuration",
+    "Updated tuya_light_ts0502a configuration",
+    "Updated tuya_light_ts0502b configuration",
+    "Updated tuya_light_ts0505a configuration",
+    "Updated tuya_light_ts0505b configuration",
+    "Updated tuya_light_universal configuration",
+    "Updated TS0601_lock configuration"
+  ],
+  "moved": [
+    {
+      "from": "drivers\\aqara_motion_sensor",
+      "to": "drivers_new\\sensor\\aqara_motion_sensor",
+      "category": "sensor"
+    },
+    {
+      "from": "drivers\\climate",
+      "to": "drivers_new\\sensor\\climate",
+      "category": "sensor"
+    },
+    {
+      "from": "drivers\\covers",
+      "to": "drivers_new\\sensor\\covers",
+      "category": "sensor"
+    },
+    {
+      "from": "drivers\\lights",
+      "to": "drivers_new\\sensor\\lights",
+      "category": "sensor"
+    },
+    {
+      "from": "drivers\\manufacturers",
+      "to": "drivers_new\\sensor\\manufacturers_root",
+      "category": "sensor"
+    },
+    {
+      "from": "drivers\\security",
+      "to": "drivers_new\\sensor\\security",
+      "category": "sensor"
+    },
+    {
+      "from": "drivers\\sensors",
+      "to": "drivers_new\\sensor\\sensors",
+      "category": "sensor"
+    },
+    {
+      "from": "drivers\\sensors-TS0601_motion",
+      "to": "drivers_new\\sensor\\tuya_sensors-ts0601_motion",
+      "category": "sensor"
+    },
+    {
+      "from": "drivers\\switches",
+      "to": "drivers_new\\sensor\\switches",
+      "category": "sensor"
+    },
+    {
+      "from": "drivers\\tuya-ts0011",
+      "to": "drivers_new\\sensor\\tuya-ts0011",
+      "category": "sensor"
+    },
+    {
+      "from": "drivers\\tuya-ts011f",
+      "to": "drivers_new\\sensor\\tuya-ts011f",
+      "category": "sensor"
+    },
+    {
+      "from": "drivers\\tuya_generic_universal",
+      "to": "drivers_new\\sensor\\tuya_generic_universal",
+      "category": "sensor"
+    },
+    {
+      "from": "drivers\\tuya_radar_sensor",
+      "to": "drivers_new\\sensor\\tuya_radar_sensor",
+      "category": "sensor"
+    },
+    {
+      "from": "drivers\\tuya_soil_sensor",
+      "to": "drivers_new\\sensor\\tuya_soil_sensor",
+      "category": "sensor"
+    },
+    {
+      "from": "drivers\\tuya_water_sensor",
+      "to": "drivers_new\\sensor\\tuya_water_sensor",
+      "category": "sensor"
+    },
+    {
+      "from": "drivers\\bosch_thermostat_valve",
+      "to": "drivers_new\\thermostat\\bosch_thermostat_valve",
+      "category": "thermostat"
+    },
+    {
+      "from": "drivers\\TS0601_climate",
+      "to": "drivers_new\\thermostat\\TS0601_climate",
+      "category": "thermostat"
+    },
+    {
+      "from": "drivers\\tuya_thermostat",
+      "to": "drivers_new\\thermostat\\tuya_thermostat",
+      "category": "thermostat"
+    },
+    {
+      "from": "drivers\\generic",
+      "to": "drivers_new\\other\\tuya_generic_container",
+      "category": "other"
+    },
+    {
+      "from": "drivers\\protocols",
+      "to": "drivers_new\\other\\protocols_container",
+      "category": "other"
+    },
+    {
+      "from": "drivers\\TS0601_cover",
+      "to": "drivers_new\\other\\TS0601_cover",
+      "category": "other"
+    },
+    {
+      "from": "drivers\\TS0601_irrigation",
+      "to": "drivers_new\\other\\TS0601_irrigation",
+      "category": "other"
+    },
+    {
+      "from": "drivers\\TS0601_siren",
+      "to": "drivers_new\\other\\TS0601_siren",
+      "category": "other"
+    },
+    {
+      "from": "drivers\\tuya",
+      "to": "drivers_new\\other\\tuya_tuya",
+      "category": "other"
+    },
+    {
+      "from": "drivers\\tuya_future_ai_device",
+      "to": "drivers_new\\other\\tuya_future_ai_device",
+      "category": "other"
+    },
+    {
+      "from": "drivers\\tuya_generic_fallback",
+      "to": "drivers_new\\other\\tuya_generic_fallback",
+      "category": "other"
+    },
+    {
+      "from": "drivers\\tuya_generic_light",
+      "to": "drivers_new\\other\\tuya_generic_light",
+      "category": "other"
+    },
+    {
+      "from": "drivers\\tuya_generic_plug",
+      "to": "drivers_new\\other\\tuya_generic_plug",
+      "category": "other"
+    },
+    {
+      "from": "drivers\\tuya_generic_sensor",
+      "to": "drivers_new\\other\\tuya_generic_sensor",
+      "category": "other"
+    },
+    {
+      "from": "drivers\\tuya_generic_switch",
+      "to": "drivers_new\\other\\tuya_generic_switch",
+      "category": "other"
+    },
+    {
+      "from": "drivers\\tuya_universal_adapter",
+      "to": "drivers_new\\other\\tuya_universal_adapter",
+      "category": "other"
+    },
+    {
+      "from": "drivers\\zigbee",
+      "to": "drivers_new\\other\\zigbee",
+      "category": "other"
+    },
+    {
+      "from": "drivers\\zigbee-tuya-universal",
+      "to": "drivers_new\\other\\tuya_zigbee-tuya-universal",
+      "category": "other"
+    },
+    {
+      "from": "drivers\\ikea_tradfri_bulb",
+      "to": "drivers_new\\light\\ikea_tradfri_bulb",
+      "category": "light"
+    },
+    {
+      "from": "drivers\\tuya_light_ts0501a",
+      "to": "drivers_new\\light\\tuya_light_ts0501a",
+      "category": "light"
+    },
+    {
+      "from": "drivers\\tuya_light_ts0502a",
+      "to": "drivers_new\\light\\tuya_light_ts0502a",
+      "category": "light"
+    },
+    {
+      "from": "drivers\\tuya_light_ts0502b",
+      "to": "drivers_new\\light\\tuya_light_ts0502b",
+      "category": "light"
+    },
+    {
+      "from": "drivers\\tuya_light_ts0505a",
+      "to": "drivers_new\\light\\tuya_light_ts0505a",
+      "category": "light"
+    },
+    {
+      "from": "drivers\\tuya_light_ts0505b",
+      "to": "drivers_new\\light\\tuya_light_ts0505b",
+      "category": "light"
+    },
+    {
+      "from": "drivers\\tuya_light_universal",
+      "to": "drivers_new\\light\\tuya_light_universal",
+      "category": "light"
+    },
+    {
+      "from": "drivers\\TS0601_lock",
+      "to": "drivers_new\\lock\\TS0601_lock",
+      "category": "lock"
+    }
+  ],
+  "created": [
+    "drivers_new\\other\\tuya_generic_fallback\\driver.js",
+    "drivers_new\\sensor\\tuya_radar_sensor\\driver.js",
+    "drivers_new\\sensor\\tuya_soil_sensor\\driver.js",
+    "./app.json"
+  ],
+  "deleted": [
+    "drivers\\_base",
+    "drivers\\_template",
+    "drivers\\templates",
+    "drivers\\types",
+    "drivers\\common"
+  ]
+}

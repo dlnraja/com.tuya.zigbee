@@ -1,0 +1,68 @@
+{
+  "actions": [
+    {
+      "id": "set_color_scene",
+      "title": {
+        "en": "Set Color Scene",
+        "fr": "Définir Scène Couleur",
+        "nl": "Kleurscène Instellen",
+        "de": "Farbszene Einstellen"
+      },
+      "args": [
+        {
+          "name": "scene",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "warm",
+              "label": {
+                "en": "Warm White"
+              }
+            },
+            {
+              "id": "cool",
+              "label": {
+                "en": "Cool White"
+              }
+            },
+            {
+              "id": "red",
+              "label": {
+                "en": "Red"
+              }
+            },
+            {
+              "id": "green",
+              "label": {
+                "en": "Green"
+              }
+            },
+            {
+              "id": "blue",
+              "label": {
+                "en": "Blue"
+              }
+            },
+            {
+              "id": "rainbow",
+              "label": {
+                "en": "Rainbow"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "is_color_mode",
+      "title": {
+        "en": "Light is in color mode",
+        "fr": "L'éclairage est en mode couleur",
+        "nl": "Licht is in kleurmodus",
+        "de": "Licht ist im Farbmodus"
+      }
+    }
+  ]
+}

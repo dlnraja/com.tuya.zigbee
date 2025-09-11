@@ -1,0 +1,101 @@
+{
+  "name": {
+    "en": "Generic Tuya Switch (1-6 gangs)",
+    "fr": "Generic Tuya Switch (1-6 gangs)",
+    "nl": "Generic Tuya Switch (1-6 gangs)"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {},
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_*",
+      "_TZ3210_*",
+      "_TYZB01_*",
+      "_TYZB02_*",
+      "_TZ3400_*"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "deviceId": 81,
+    "profileId": 260,
+    "learnmode": {
+      "image": "./assets/images/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the reset button for 10 seconds",
+        "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+        "nl": "Houd de resetknop 10 seconden ingedrukt"
+      }
+    },
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "2": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "3": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "4": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "5": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "6": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
+  },
+  "id": "tuya_generic_switch",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}
