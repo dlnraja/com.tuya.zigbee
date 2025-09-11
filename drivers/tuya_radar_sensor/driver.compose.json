@@ -153,5 +153,10 @@
       "template": "add_devices"
     }
   ],
-  "icon": "/drivers/tuya_radar_sensor/assets/icon.svg"
+  "icon": "/drivers/tuya_radar_sensor/assets/icon.svg",
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  }
 }

@@ -9,7 +9,7 @@
   "class": "sensor",
   "capabilities": [
     "measure_temperature",
-    "measure_humidity", 
+    "measure_humidity",
     "measure_battery",
     "alarm_motion",
     "measure_co2",
@@ -25,7 +25,7 @@
     },
     "measure_humidity": {
       "title": {
-        "en": "Humidity", 
+        "en": "Humidity",
         "fr": "Humidité"
       },
       "units": "%"
@@ -122,7 +122,7 @@
         {
           "id": "radar_motion",
           "label": {
-            "en": "Radar Motion Sensor", 
+            "en": "Radar Motion Sensor",
             "fr": "Capteur de mouvement radar"
           }
         },
@@ -164,7 +164,7 @@
     },
     {
       "id": "debug_dp_logging",
-      "type": "checkbox", 
+      "type": "checkbox",
       "value": false,
       "label": {
         "en": "Debug DP Logging",
@@ -175,5 +175,10 @@
         "fr": "Logger toute l'activité des datapoints pour les appareils inconnus"
       }
     }
-  ]
+  ],
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  }
 }
