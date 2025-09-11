@@ -365,7 +365,12 @@
       },
       "capabilities": [
         "measure_battery"
-      ]
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "id": "_template",
@@ -527,7 +532,12 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ]
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "name": {
@@ -577,7 +587,12 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ]
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "name": "Climate Devices",
@@ -610,7 +625,12 @@
         "small": "assets/images/small.png"
       },
       "id": "climate",
-      "icon": "/drivers/climate/assets/icon.svg"
+      "icon": "/drivers/climate/assets/icon.svg",
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "name": "Common Utilities",
@@ -643,7 +663,12 @@
         "small": "/drivers/common/assets/images/small.png"
       },
       "id": "common",
-      "icon": "/drivers/common/assets/icon.svg"
+      "icon": "/drivers/common/assets/icon.svg",
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "name": "Covers",
@@ -676,7 +701,12 @@
         "small": "assets/images/small.png"
       },
       "id": "covers",
-      "icon": "/drivers/covers/assets/icon.svg"
+      "icon": "/drivers/covers/assets/icon.svg",
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "id": "generic",
@@ -792,7 +822,12 @@
         "small": "assets/images/small.png"
       },
       "id": "lights",
-      "icon": "/drivers/lights/assets/icon.svg"
+      "icon": "/drivers/lights/assets/icon.svg",
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "name": "Manufacturers Container",
@@ -824,7 +859,12 @@
         "large": "assets/images/large.png",
         "small": "assets/images/small.png"
       },
-      "id": "manufacturers"
+      "id": "manufacturers",
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "name": "Protocols Container",
@@ -887,7 +927,12 @@
         "small": "assets/images/small.png"
       },
       "id": "security",
-      "icon": "/drivers/security/assets/icon.svg"
+      "icon": "/drivers/security/assets/icon.svg",
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "name": "Sensors",
@@ -929,7 +974,12 @@
         "small": "assets/images/small.png"
       },
       "id": "sensors",
-      "icon": "/drivers/sensors/assets/icon.svg"
+      "icon": "/drivers/sensors/assets/icon.svg",
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "name": {
@@ -1092,7 +1142,12 @@
           "template": "add_devices"
         }
       ],
-      "icon": "/drivers/manufacturers/sensors-TS0601/sensors-TS0601_motion/assets/icon.svg"
+      "icon": "/drivers/manufacturers/sensors-TS0601/sensors-TS0601_motion/assets/icon.svg",
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "name": "Switches",
@@ -1125,7 +1180,12 @@
         "small": "assets/images/small.png"
       },
       "id": "switches",
-      "icon": "/drivers/switches/assets/icon.svg"
+      "icon": "/drivers/switches/assets/icon.svg",
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "name": {
@@ -1277,7 +1337,12 @@
           "template": "add_devices"
         }
       ],
-      "icon": "/drivers/manufacturers/tuya-ts0011/tuya-ts0011/assets/icon.svg"
+      "icon": "/drivers/manufacturers/tuya-ts0011/tuya-ts0011/assets/icon.svg",
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "name": {
@@ -2134,7 +2199,12 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ]
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "name": {
@@ -2673,7 +2743,12 @@
           "template": "add_devices"
         }
       ],
-      "icon": "/drivers/tuya_radar_sensor/assets/icon.svg"
+      "icon": "/drivers/tuya_radar_sensor/assets/icon.svg",
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "name": {
@@ -2815,7 +2890,12 @@
           "template": "add_devices"
         }
       ],
-      "icon": "/drivers/tuya_soil_sensor/assets/icon.svg"
+      "icon": "/drivers/tuya_soil_sensor/assets/icon.svg",
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "name": "Tuya Thermostat",
@@ -2933,7 +3013,12 @@
         "large": "assets/images/large.png",
         "small": "assets/images/small.png"
       },
-      "id": "tuya_water_sensor"
+      "id": "tuya_water_sensor",
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "name": {
