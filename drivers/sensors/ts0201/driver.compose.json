@@ -47,31 +47,18 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0x0000, // Basic
-          0x0001, // Power Configuration
-          0x0003, // Identify
-          0x0402, // Temperature Measurement
-          0x0405  // Relative Humidity Measurement
+          0,
+          1,
+          3,
+          1026,
+          1029
         ],
         "bindings": [
-          {
-            "cluster": 0x0402, // Temperature Measurement
-            "target": {
-              "type": "endpoint",
-              "endpoint": 1
-            }
-          },
-          {
-            "cluster": 0x0405, // Relative Humidity Measurement
-            "target": {
-              "type": "endpoint",
-              "endpoint": 1
-            }
-          }
+          1026,
+          1029
         ]
       }
-    },
-    "class": 10 // Measurement and Sensing
+    }
   },
   "settings": [
     {

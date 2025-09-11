@@ -29,5 +29,10 @@
     "small": "/drivers/common/assets/images/small.png"
   },
   "id": "common",
-  "icon": "/drivers/common/assets/icon.svg"
+  "icon": "/drivers/common/assets/icon.svg",
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  }
 }
