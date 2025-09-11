@@ -28,5 +28,10 @@
     "large": "assets/images/large.png",
     "small": "assets/images/small.png"
   },
-  "id": "manufacturers_root"
+  "id": "manufacturers_root",
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  }
 }

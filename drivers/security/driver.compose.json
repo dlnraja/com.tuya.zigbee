@@ -29,5 +29,10 @@
     "small": "assets/images/small.png"
   },
   "id": "security",
-  "icon": "/drivers/security/assets/icon.svg"
+  "icon": "/drivers/security/assets/icon.svg",
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  }
 }

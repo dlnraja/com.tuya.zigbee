@@ -138,5 +138,10 @@
       "template": "add_devices"
     }
   ],
-  "icon": "/drivers/tuya_soil_sensor/assets/icon.svg"
+  "icon": "/drivers/tuya_soil_sensor/assets/icon.svg",
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  }
 }

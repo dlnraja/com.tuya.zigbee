@@ -28,5 +28,10 @@
     "large": "assets/images/large.png",
     "small": "assets/images/small.png"
   },
-  "id": "tuya_water_sensor"
+  "id": "tuya_water_sensor",
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  }
 }

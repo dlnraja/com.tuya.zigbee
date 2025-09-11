@@ -29,5 +29,10 @@
     "small": "assets/images/small.png"
   },
   "id": "climate",
-  "icon": "/drivers/climate/assets/icon.svg"
+  "icon": "/drivers/climate/assets/icon.svg",
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  }
 }

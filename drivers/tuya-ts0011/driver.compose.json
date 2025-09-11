@@ -62,5 +62,10 @@
       "template": "add_devices"
     }
   ],
-  "icon": "/drivers/manufacturers/tuya-ts0011/tuya-ts0011/assets/icon.svg"
+  "icon": "/drivers/manufacturers/tuya-ts0011/tuya-ts0011/assets/icon.svg",
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  }
 }

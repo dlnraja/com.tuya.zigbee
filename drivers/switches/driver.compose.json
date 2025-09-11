@@ -29,5 +29,10 @@
     "small": "assets/images/small.png"
   },
   "id": "switches",
-  "icon": "/drivers/switches/assets/icon.svg"
+  "icon": "/drivers/switches/assets/icon.svg",
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  }
 }

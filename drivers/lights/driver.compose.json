@@ -32,5 +32,10 @@
     "small": "assets/images/small.png"
   },
   "id": "lights",
-  "icon": "/drivers/lights/assets/icon.svg"
+  "icon": "/drivers/lights/assets/icon.svg",
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  }
 }

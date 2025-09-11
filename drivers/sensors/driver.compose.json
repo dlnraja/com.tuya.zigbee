@@ -38,5 +38,10 @@
     "small": "assets/images/small.png"
   },
   "id": "sensors",
-  "icon": "/drivers/sensors/assets/icon.svg"
+  "icon": "/drivers/sensors/assets/icon.svg",
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  }
 }
