@@ -1,0 +1,58 @@
+{
+  "name": {
+    "en": "Tuya Smart Irrigation Controller",
+    "fr": "Tuya Smart Irrigation Controller",
+    "nl": "Tuya Smart Irrigation Controller"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "measure_humidity"
+  ],
+  "capabilitiesOptions": {},
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_*",
+      "_TZ3210_*",
+      "_TYZB01_*",
+      "_TYZB02_*",
+      "_TZ3400_*"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "deviceId": 81,
+    "profileId": 260,
+    "learnmode": {
+      "image": "./assets/images/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the reset button for 10 seconds",
+        "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+        "nl": "Houd de resetknop 10 seconden ingedrukt"
+      }
+    },
+    "endpoints": {
+      "1": {
+        "clusters": [
+          6,
+          1029
+        ],
+        "bindings": [
+          6,
+          1029
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
+  },
+  "id": "TS0601_irrigation",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}

@@ -1,6 +1,6 @@
 # Tuya Zigbee Device Matrix
 
-> Last updated: 2025-09-11T11:08:15.424Z
+> Last updated: 2025-09-11T17:43:16.820Z
 
 This document contains a comprehensive list of Tuya Zigbee devices and their compatibility status with the Homey integration.
 

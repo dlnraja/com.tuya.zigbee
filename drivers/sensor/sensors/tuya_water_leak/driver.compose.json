@@ -1,0 +1,27 @@
+{
+  "id": "tuya_water_leak",
+  "name": {
+    "en": "Tuya Water Leak Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_water"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "productId": [
+      "vdlm4glu"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "ssIasZone"
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
+  }
+}
