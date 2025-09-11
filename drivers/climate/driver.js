@@ -20,7 +20,13 @@ class TemplateDriver extends Homey.Driver {
   }
   
   /**
-   * onPairListDevices is called when a user is adding a device.
+   * onPairListDevices(data, callback) {
+    // Enhanced discovery with filtering
+    this.discoveryFilter = (device) => {
+      return device.manufacturerName && device.modelId;
+    };
+    
+    return super.onPairListDevices is called when a user is adding a device.
    */
   async onPairListDevices() {
     return [
@@ -36,7 +42,6 @@ class TemplateDriver extends Homey.Driver {
         store: {
           // Add store data here
         },
-      },
     ];
   }
   
@@ -51,7 +56,6 @@ class TemplateDriver extends Homey.Driver {
     } catch (error) {
       return callback(error);
     }
-  }
   */
 }
 

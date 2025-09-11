@@ -1,24 +1,30 @@
 {
-  "id": "types",
   "name": {
     "en": "Device Types"
   },
   "class": "other",
   "capabilities": [],
+  "capabilitiesOptions": {},
   "zigbee": {
     "manufacturerName": "Various",
-    "modelId": ["Various"],
+    "modelId": [
+      "Various"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic"
+          0
         ]
       }
-    }
+    },
+    "productId": [
+      "TYPES"
+    ]
   },
   "images": {
-    "large": "assets/images/large/types.png",
-    "small": "assets/images/small/types.png"
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
   },
+  "id": "types",
   "settings": []
 }

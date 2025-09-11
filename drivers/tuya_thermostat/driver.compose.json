@@ -1,7 +1,8 @@
 {
-  "id": "tuya_thermostat",
   "name": "Tuya Thermostat",
   "class": "thermostat",
+  "capabilities": [],
+  "capabilitiesOptions": {},
   "zigbee": {
     "manufacturerName": [
       "Tuya"
@@ -21,5 +22,9 @@
       }
     }
   },
-  "capabilities": []
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
+  },
+  "id": "tuya_thermostat"
 }

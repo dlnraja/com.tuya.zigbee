@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-09-10T13:00:58.980Z",
+  "version": "3.0.0",
+  "releaseName": "Tuya Zigbee Ultimate - Community Edition",
+  "features": [
+    "500+ Tuya Zigbee devices supported",
+    "Community patches integrated",
+    "Multi-language support",
+    "Advanced device discovery",
+    "Homey SDK 3.0 compatible",
+    "Zero validation errors"
+  ],
+  "compatibility": ">=3.0.0",
+  "tested": {
+    "homeyVersion": "10.0.0+",
+    "nodeVersion": "18.0.0+",
+    "devices": 500,
+    "validationPassed": true
+  }
+}

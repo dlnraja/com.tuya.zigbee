@@ -43,6 +43,5 @@ class TS0201Device extends BaseZigbeeDevice {
     // The 'measure_battery' capability is automatically handled by the BaseDevice
     // as long as it's defined in the driver's manifest (driver.compose.json).
   }
-}
 
 module.exports = TS0201Device;

@@ -1,7 +1,10 @@
 {
-  "id": "tuya_water_sensor",
   "name": "Tuya Water Sensor",
   "class": "sensor",
+  "capabilities": [
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {},
   "zigbee": {
     "manufacturerName": [
       "Tuya"
@@ -21,7 +24,9 @@
       }
     }
   },
-  "capabilities": [
-    "measure_battery"
-  ]
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
+  },
+  "id": "tuya_water_sensor"
 }

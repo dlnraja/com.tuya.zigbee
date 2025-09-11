@@ -1,11 +1,22 @@
 {
-  "id": "sensors",
   "name": "Sensors",
-  "icon": "/drivers/sensors/assets/icon.svg",
   "class": "sensor",
+  "capabilities": [
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {},
   "zigbee": {
     "manufacturerName": [
-      "Tuya"
+      "_TZE200_7tdtqgwv",
+      "_TZE200_amp6tsvy",
+      "_TZE200_7yodxhya",
+      "_TZE200_locansqn",
+      "_TZE200_3i3exu4n",
+      "_TZE200_7hfcudw5",
+      "_TZE200_3towulqd",
+      "_TZE200_whpb9y8z",
+      "_TZE200_7yuohek9",
+      "_TZE200_3towolqd"
     ],
     "productId": [
       "sensors"
@@ -22,7 +33,10 @@
       }
     }
   },
-  "capabilities": [
-    "measure_battery"
-  ]
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
+  },
+  "id": "sensors",
+  "icon": "/drivers/sensors/assets/icon.svg"
 }

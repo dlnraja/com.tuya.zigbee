@@ -6,6 +6,5 @@ class AirQualitySensor extends BaseZigbeeDevice {
     this.registerCapability('measure_co2', CLUSTER.AIR_QUALITY);
     this.registerCapability('measure_tvoc', CLUSTER.AIR_QUALITY);
   }
-}
 
 module.exports = AirQualitySensor;

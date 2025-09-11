@@ -1,0 +1,27 @@
+{
+  "id": "manufacturers_root",
+  "name": "Manufacturers Container",
+  "class": "sensor",
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "manufacturers_root"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    }
+  },
+  "capabilities": [
+    "measure_battery"
+  ]
+}

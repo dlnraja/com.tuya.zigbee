@@ -25,7 +25,6 @@ class TuyaLightTS0501A extends ZigBeeDevice {
             maxInterval: 3600,
             minChange: 1,
           },
-        },
       });
     }
     
@@ -38,7 +37,6 @@ class TuyaLightTS0501A extends ZigBeeDevice {
             maxInterval: 3600,
             minChange: 1,
           },
-        },
       });
     }
     
@@ -47,7 +45,6 @@ class TuyaLightTS0501A extends ZigBeeDevice {
       this.registerCapability('light_hue', 'colorControl');
       this.registerCapability('light_saturation', 'colorControl');
     }
-  }
 }
 
 module.exports = TuyaLightTS0501A;

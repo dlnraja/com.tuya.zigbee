@@ -1,11 +1,16 @@
 {
-  "id": "lights",
   "name": "Lights",
-  "icon": "/drivers/lights/assets/icon.svg",
   "class": "sensor",
+  "capabilities": [
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {},
   "zigbee": {
     "manufacturerName": [
-      "Tuya"
+      "_TZ3000_*",
+      "_TZ3210_*",
+      "_TYZB01_*",
+      "_TZ3300_*"
     ],
     "productId": [
       "lights"
@@ -22,7 +27,10 @@
       }
     }
   },
-  "capabilities": [
-    "measure_battery"
-  ]
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
+  },
+  "id": "lights",
+  "icon": "/drivers/lights/assets/icon.svg"
 }

@@ -10,6 +10,5 @@ class TemperatureDevice extends BaseZigbeeDevice.Device {
     // Handle temperature measurement updates
     this.log('Temperature measurement updated:', value);
   }
-}
 
 module.exports = TemperatureDevice;

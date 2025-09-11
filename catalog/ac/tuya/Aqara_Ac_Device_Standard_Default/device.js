@@ -2,7 +2,11 @@
 'use strict';
 
 'use strict';
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+try {
+  const { ZigBeeDevice } = require('homey-zigbeedriver');
+} catch (error) {
+  console.error("Require error:", error);
+}
 
 class Device extends ZigBeeDevice {
     async onNodeInit() {

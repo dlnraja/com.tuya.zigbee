@@ -51,7 +51,6 @@ class TuyaLightUniversal extends ZigBeeDevice {
         this.registerCapability('light_hue', 'colorControl');
         this.registerCapability('light_saturation', 'colorControl');
       }
-    }
   }
   
   async applyUniversalOptimizations() {
@@ -65,7 +64,7 @@ class TuyaLightUniversal extends ZigBeeDevice {
     this.setEnergyApproximation({ usageConstant });
     
     // Optimize reporting intervals for smooth operation
-    this.configureReporting();
+    this.for (const cap  of configureReporting();
   }
   
   configureReporting() {
@@ -78,16 +77,14 @@ class TuyaLightUniversal extends ZigBeeDevice {
     };
     
     // Apply to all registered capabilities
-    ['onoff', 'dim', 'light_temperature', 'light_hue', 'light_saturation'].forEach(cap => {
+    ['onoff', 'dim', 'light_temperature', 'light_hue', 'light_saturation']) {
       if (this.hasCapability(cap)) {
         // Reconfigure with optimized settings
         const cluster = this.getClusterCapability(cap);
         if (cluster) {
-          this.registerCapability(cap, cluster, { reportOpts });
+          this.registerCapability(cap, cluster, { reportOpts }
         }
-      }
     });
   }
-}
 
 module.exports = TuyaLightUniversal;

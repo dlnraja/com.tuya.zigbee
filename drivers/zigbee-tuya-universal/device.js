@@ -34,10 +34,9 @@ class ZigbeeTuyaUniversalDevice extends ZigBeeDevice {
         if (powerCluster) {
           powerCluster.report('activePower', 1, 60, 1, (value) => {
             this.setCapabilityValue('measure_power', value);
-            this.log(`⚡ Consommation: ${value}W`);
+            this.log("⚡ Consommation: ${value}W");
           });
         }
-      }
       
       // Temperature monitoring
       
@@ -46,10 +45,9 @@ class ZigbeeTuyaUniversalDevice extends ZigBeeDevice {
         if (tempCluster) {
           tempCluster.report('temperature', 1, 300, 1, (value) => {
             this.setCapabilityValue('measure_temperature', value);
-            this.log(`🌡️ Température: ${value}°C`);
+            this.log("🌡️ Température: ${value}°C");
           });
         }
-      }
       
       // Battery monitoring
       
@@ -65,7 +63,6 @@ class ZigbeeTuyaUniversalDevice extends ZigBeeDevice {
             }
           });
         }
-      }
       
       // Environmental monitoring
       // Monitoring environnemental non configuré
@@ -73,7 +70,6 @@ class ZigbeeTuyaUniversalDevice extends ZigBeeDevice {
     } catch (error) {
       this.log('⚠️ Configuration monitoring avancé échouée:', error.message);
     }
-  }
   
   setupFlowCards() {
     try {
@@ -88,12 +84,11 @@ class ZigbeeTuyaUniversalDevice extends ZigBeeDevice {
     } catch (error) {
       this.log('⚠️ Configuration flow cards échouée:', error.message);
     }
-  }
   
   
   async onCapabilityOnoff(value, opts) {
     try {
-      this.log(`🔌 Définition onoff: ${value}`);
+      this.log("🔌 Définition onoff: ${value}");
       
       const onoffCluster = this.getClusterEndpoint('genOnOff');
       if (onoffCluster) {
@@ -103,13 +98,12 @@ class ZigbeeTuyaUniversalDevice extends ZigBeeDevice {
           await onoffCluster.off();
         }
         
-        this.log(`✅ Onoff défini: ${value}`);
+        this.log("✅ Onoff défini: ${value}");
       }
     } catch (error) {
       this.log('❌ Échec définition onoff:', error.message);
       throw error;
     }
-  }
   
   // Advanced error handling and recovery
   async onMeshInitFailed(error) {
@@ -144,7 +138,6 @@ class ZigbeeTuyaUniversalDevice extends ZigBeeDevice {
       this.log('❌ Health check échoué:', error.message);
       return { status: 'error', error: error.message };
     }
-  }
 }
 
 module.exports = ZigbeeTuyaUniversalDevice;

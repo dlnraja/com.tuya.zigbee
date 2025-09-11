@@ -1,7 +1,8 @@
 {
-  "id": "protocols_container",
   "name": "Protocols Container",
   "class": "folder",
+  "capabilities": [],
+  "capabilitiesOptions": {},
   "zigbee": {
     "manufacturerName": [
       "Tuya"
@@ -21,5 +22,9 @@
       }
     }
   },
-  "capabilities": []
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
+  },
+  "id": "protocols_container"
 }

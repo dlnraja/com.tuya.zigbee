@@ -1,1 +1,22 @@
-version: 2updates: - package-ecosystem: npm directory: "/" schedule: { interval: weekly } - package-ecosystem: github-actions directory: "/" schedule: { interval: weekly }
+version: 2
+updates:
+  - "package-ecosystem": npm
+    directory: /
+    schedule:
+      interval: weekly
+    "open-pull-requests-limit": 5
+    reviewers:
+      - @your-username
+    assignees:
+      - @your-username
+    "commit_message":
+      prefix: chore
+      "prefix-development": chore
+      include: scope
+
+  - "package-ecosystem": github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    "open-pull-requests-limit": 3
+

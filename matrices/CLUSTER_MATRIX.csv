@@ -1,6 +1,33 @@
-Cluster_ID,Cluster_Name,Homey_Capability,Command_Types,Attribute_IDs,Tuya_Devices,Community_Feedback,Status,Implementation_Notes
-0x0006,genOnOff,onoff,"on, off, toggle",0x0000,"TS0001, TS0011, TS0012, TS0121",Generally stable,WORKING,Standard implementation works well
-0x0008,genLevelCtrl,dim,"moveToLevel, move, step",0x0000,"TS0501A, TS0502A, TS0505A",Some smoothness issues reported,NEEDS_IMPROVEMENT,Add transition time for smooth dimming
-0x0300,lightingColorCtrl,"light_hue, light_saturation, light_temperature","moveToHue, moveToSaturation, moveToColorTemp","0x0000, 0x0001, 0x0007","TS0502A, TS0505A, TS0505B",Color accuracy needs improvement,PATCH_AVAILABLE,Use XY color space for better accuracy
-0x0B04,haElectricalMeasurement,measure_power,getProfileInfo,"0x050B, 0x050F",TS0121,Power values often incorrect,CRITICAL_PATCH_NEEDED,Implement proper divisor and multiplier
-0x0702,seMetering,meter_power,getProfile,0x0000,TS0121,Energy metering unreliable,PATCH_AVAILABLE,Check unit of measure attribute
+Cluster Name,Frequency,Drivers Using,Capabilities
+"0","24","aqara_motion_sensor;bosch_thermostat_valve;climate;common;covers;ikea_tradfri_bulb;lights;manufacturers;protocols;security;sensors;sensors-TS0601_motion;switches;tuya-ts0011;tuya-ts011f;tuya_light_ts0501a;tuya_light_ts0502a;tuya_light_ts0502b;tuya_light_ts0505a;tuya_light_ts0505b;tuya_light_universal;tuya_thermostat;tuya_water_sensor;zigbee-tuya-universal","alarm_motion;measure_battery;measure_temperature;target_temperature;onoff;dim;light_temperature;alarm_battery;measure_power;meter_power;fan_speed;windowcoverings_state;lock_state;light_hue;light_saturation"
+"1","14","aqara_motion_sensor;bosch_thermostat_valve;climate;common;covers;lights;manufacturers;protocols;security;sensors;sensors-TS0601_motion;switches;tuya_thermostat;tuya_water_sensor","alarm_motion;measure_battery;measure_temperature;target_temperature;alarm_battery;onoff;measure_power;meter_power;fan_speed;dim;windowcoverings_state;lock_state"
+"genBasic","12","templates;tuya_future_ai_device;tuya_generic_light;tuya_generic_plug;tuya_generic_switch;tuya_generic_switch;tuya_generic_switch;tuya_generic_switch;tuya_generic_switch;tuya_generic_switch;types;zigbee","onoff;measure_generic;alarm_generic;dim;light_hue;light_saturation;light_temperature;measure_power;meter_power"
+"6","11","ikea_tradfri_bulb;sensors-TS0601_motion;tuya-ts0011;tuya-ts011f;tuya_light_ts0501a;tuya_light_ts0502a;tuya_light_ts0502b;tuya_light_ts0505a;tuya_light_ts0505b;tuya_light_universal;zigbee-tuya-universal","onoff;dim;light_temperature;alarm_motion;measure_temperature;measure_battery;alarm_battery;measure_power;meter_power;fan_speed;target_temperature;windowcoverings_state;lock_state;light_hue;light_saturation"
+"genOnOff","11","TS0601_irrigation;TS0601_siren;tuya_future_ai_device;tuya_generic_light;tuya_generic_plug;tuya_generic_switch;tuya_generic_switch;tuya_generic_switch;tuya_generic_switch;tuya_generic_switch;tuya_generic_switch","onoff;measure_humidity;alarm_generic;measure_generic;dim;light_hue;light_saturation;light_temperature;measure_power;meter_power"
+"4","8","tuya-ts0011;tuya-ts011f;tuya_light_ts0501a;tuya_light_ts0502a;tuya_light_ts0502b;tuya_light_ts0505a;tuya_light_ts0505b;tuya_light_universal","onoff;measure_battery;measure_power;meter_power;dim;light_temperature;light_hue;light_saturation"
+"5","8","tuya-ts0011;tuya-ts011f;tuya_light_ts0501a;tuya_light_ts0502a;tuya_light_ts0502b;tuya_light_ts0505a;tuya_light_ts0505b;tuya_light_universal","onoff;measure_battery;measure_power;meter_power;dim;light_temperature;light_hue;light_saturation"
+"3","7","sensors-TS0601_motion;tuya_light_ts0501a;tuya_light_ts0502a;tuya_light_ts0502b;tuya_light_ts0505a;tuya_light_ts0505b;tuya_light_universal","alarm_motion;measure_temperature;measure_battery;alarm_battery;onoff;measure_power;meter_power;fan_speed;dim;target_temperature;windowcoverings_state;lock_state;light_temperature;light_hue;light_saturation"
+"8","7","ikea_tradfri_bulb;tuya_light_ts0501a;tuya_light_ts0502a;tuya_light_ts0502b;tuya_light_ts0505a;tuya_light_ts0505b;tuya_light_universal","onoff;dim;light_temperature;light_hue;light_saturation"
+"768","6","ikea_tradfri_bulb;tuya_light_ts0502a;tuya_light_ts0502b;tuya_light_ts0505a;tuya_light_ts0505b;tuya_light_universal","onoff;dim;light_temperature;light_hue;light_saturation"
+"1280","2","aqara_motion_sensor;sensors-TS0601_motion","alarm_motion;measure_battery;measure_temperature;alarm_battery;onoff;measure_power;meter_power;fan_speed;dim;target_temperature;windowcoverings_state;lock_state"
+"msTemperatureMeasurement","2","TS0601_climate;tuya_generic_sensor","target_temperature;measure_temperature;thermostat_mode;measure_humidity;alarm_motion;alarm_contact"
+"msRelativeHumidity","2","TS0601_irrigation;tuya_generic_sensor","onoff;measure_humidity;measure_temperature;alarm_motion;alarm_contact"
+"ssIasZone","2","TS0601_lock;tuya_generic_sensor","locked;alarm_generic;measure_temperature;measure_humidity;alarm_motion;alarm_contact"
+"513","1","bosch_thermostat_valve","measure_temperature;target_temperature;measure_battery"
+"1026","1","bosch_thermostat_valve","measure_temperature;target_temperature;measure_battery"
+"1794","1","tuya-ts011f","onoff;measure_power;meter_power"
+"2820","1","tuya-ts011f","onoff;measure_power;meter_power"
+"4096","1","tuya-ts0011","onoff;measure_battery"
+"61184","1","tuya-ts0011","onoff;measure_battery"
+"hvacThermostat","1","TS0601_climate","target_temperature;measure_temperature;thermostat_mode"
+"hvacFanCtrl","1","TS0601_climate","target_temperature;measure_temperature;thermostat_mode"
+"closuresWindowCovering","1","TS0601_cover","windowcoverings_state;dim"
+"closuresDoorLock","1","TS0601_lock","locked;alarm_generic"
+"ssIasWd","1","TS0601_siren","alarm_generic;onoff"
+"0xFFF0","1","tuya_future_ai_device","onoff;measure_generic;alarm_generic"
+"0xFFF1","1","tuya_future_ai_device","onoff;measure_generic;alarm_generic"
+"genLevelCtrl","1","tuya_generic_light","onoff;dim;light_hue;light_saturation;light_temperature"
+"lightingColorCtrl","1","tuya_generic_light","onoff;dim;light_hue;light_saturation;light_temperature"
+"haElectricalMeasurement","1","tuya_generic_plug","onoff;measure_power;meter_power"
+"seMetering","1","tuya_generic_plug","onoff;measure_power;meter_power"
+"dynamic","1","tuya_universal_adapter","dynamic"

@@ -13,9 +13,14 @@ class TuyaDriverTemplate extends Homey.Driver {
     // Flow cards communes
   }
   
-  async onPairListDevices() {
+  async onPairListDevices(data, callback) {
+    // Enhanced discovery with filtering
+    this.discoveryFilter = (device) => {
+      return device.manufacturerName && device.modelId;
+    };
+    
+    return super.onPairListDevices() {
     // Logique de pairing standard
   }
-}
 
 module.exports = TuyaDriverTemplate;

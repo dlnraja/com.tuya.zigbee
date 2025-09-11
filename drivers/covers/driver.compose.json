@@ -1,8 +1,10 @@
 {
-  "id": "covers",
   "name": "Covers",
-  "icon": "/drivers/covers/assets/icon.svg",
   "class": "sensor",
+  "capabilities": [
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {},
   "zigbee": {
     "manufacturerName": [
       "Tuya"
@@ -22,7 +24,10 @@
       }
     }
   },
-  "capabilities": [
-    "measure_battery"
-  ]
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
+  },
+  "id": "covers",
+  "icon": "/drivers/covers/assets/icon.svg"
 }

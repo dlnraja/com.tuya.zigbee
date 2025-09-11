@@ -1,0 +1,124 @@
+{
+  "homeyVersions": [
+    "v5.0+",
+    "v8.0+",
+    "v10.0+"
+  ],
+  "zigbeeVersions": [
+    "ZB3.0",
+    "ZB3.1"
+  ],
+  "categories": {
+    "sensors": {
+      "drivers": [
+        "aqara_motion_sensor",
+        "sensors",
+        "tuya_generic_sensor",
+        "tuya_water_sensor"
+      ],
+      "deviceCount": 20,
+      "compatibility": {
+        "v5.0+": true,
+        "v8.0+": true,
+        "v10.0+": true,
+        "ZB3.0": true,
+        "ZB3.1": true
+      }
+    },
+    "climate": {
+      "drivers": [
+        "bosch_thermostat_valve",
+        "climate",
+        "TS0601_climate"
+      ],
+      "deviceCount": 7,
+      "compatibility": {
+        "v5.0+": true,
+        "v8.0+": true,
+        "v10.0+": true,
+        "ZB3.0": true,
+        "ZB3.1": true
+      }
+    },
+    "other": {
+      "drivers": [
+        "common",
+        "manufacturers",
+        "protocols",
+        "security",
+        "templates",
+        "TS0601_lock",
+        "tuya_thermostat",
+        "tuya_universal_adapter",
+        "types",
+        "zigbee"
+      ],
+      "deviceCount": 18,
+      "compatibility": {
+        "v5.0+": true,
+        "v8.0+": true,
+        "v10.0+": true,
+        "ZB3.0": true,
+        "ZB3.1": true
+      }
+    },
+    "covers": {
+      "drivers": [
+        "covers"
+      ],
+      "deviceCount": 1,
+      "compatibility": {
+        "v5.0+": true,
+        "v8.0+": true,
+        "v10.0+": true,
+        "ZB3.0": true,
+        "ZB3.1": true
+      }
+    },
+    "lights": {
+      "drivers": [
+        "ikea_tradfri_bulb",
+        "lights",
+        "sensors-TS0601_motion",
+        "TS0601_cover",
+        "tuya_generic_light",
+        "tuya_light_ts0501a",
+        "tuya_light_ts0502a",
+        "tuya_light_ts0502b",
+        "tuya_light_ts0505a",
+        "tuya_light_ts0505b",
+        "tuya_light_universal"
+      ],
+      "deviceCount": 61,
+      "compatibility": {
+        "v5.0+": true,
+        "v8.0+": true,
+        "v10.0+": true,
+        "ZB3.0": true,
+        "ZB3.1": true
+      }
+    },
+    "switches": {
+      "drivers": [
+        "switches",
+        "TS0601_irrigation",
+        "TS0601_siren",
+        "tuya",
+        "tuya-ts0011",
+        "tuya-ts011f",
+        "tuya_future_ai_device",
+        "tuya_generic_plug",
+        "tuya_generic_switch",
+        "zigbee-tuya-universal"
+      ],
+      "deviceCount": 30,
+      "compatibility": {
+        "v5.0+": true,
+        "v8.0+": true,
+        "v10.0+": true,
+        "ZB3.0": true,
+        "ZB3.1": true
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+name: Automation Suite
+on:
+  schedule:
+    - cron: 0 2 * * 1
+
+    - cron: 0 3 1 * *
+
+  "workflow_dispatch":
+    inputs:
+      task:
+        description: Automation task to run
+        required: true
+        default: enrich
+        type: choice
+        options:
+          - enrich
+          - update-drivers
+          - sync-sources
+          - all
+jobs:
+  enrichment:
+    "runs-on": ubuntu-latest
+    if: github.event.inputs.task == 'enrich' || github.event.inputs.task == 'all' || github.event_name == 'schedule'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          "node-version": 18
+          cache: npm
+
+      - run: npm ci
+
+      - name: Run enrichment pipeline
+        run: node scripts/fetch-all-sources.js
+        env:
+          "GITHUB_TOKEN": "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Update matrices
+        run: node compatibility-matrix.js
+
+      - name: Commit updates
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          "commit_message": "chore: automated enrichment update"
+          "file_pattern": matrices/ data/ resources/
+
+  "driver_updates":
+    "runs-on": ubuntu-latest
+    if: github.event.inputs.task == 'update-drivers' || github.event.inputs.task == 'all'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          "node-version": 18
+          cache: npm
+
+      - run: npm ci
+
+      - name: Enhance drivers
+        run: node scripts/drivers-historical-enhancement.js
+
+      - name: Validate enhanced drivers
+        run: node scripts/comprehensive-validation-testing.js
+
+  "security_scan":
+    "runs-on": ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run security scan
+        uses: github/super-linter@v4
+        env:
+          "DEFAULT_BRANCH": main
+          "GITHUB_TOKEN": "${{ secrets.GITHUB_TOKEN }}"
+          "VALIDATE_ALL_CODEBASE": false
+          "VALIDATE_JAVASCRIPT_ES": true
+          "VALIDATE_JSON": true
+          "VALIDATE_YAML": true
+

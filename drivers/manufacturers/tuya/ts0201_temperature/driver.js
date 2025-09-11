@@ -9,6 +9,5 @@ class TuyaTs0201Driver extends Homey.Driver {
     // Static pairing for manual add; real pairing discovered via Zigbee normally
     return [];
   }
-}
 
 module.exports = TuyaTs0201Driver;

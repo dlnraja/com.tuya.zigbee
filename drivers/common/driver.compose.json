@@ -1,8 +1,10 @@
 {
-  "id": "common",
   "name": "Common Utilities",
-  "icon": "/drivers/common/assets/icon.svg",
   "class": "sensor",
+  "capabilities": [
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {},
   "zigbee": {
     "manufacturerName": [
       "Tuya"
@@ -22,7 +24,10 @@
       }
     }
   },
-  "capabilities": [
-    "measure_battery"
-  ]
+  "images": {
+    "large": "/drivers/common/assets/images/large.png",
+    "small": "/drivers/common/assets/images/small.png"
+  },
+  "id": "common",
+  "icon": "/drivers/common/assets/icon.svg"
 }

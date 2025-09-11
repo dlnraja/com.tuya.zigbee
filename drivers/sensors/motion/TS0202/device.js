@@ -121,7 +121,6 @@ class TS0202Device extends TuyaBaseDevice {
     } catch (err) {
       this.error('Failed to setup reporting:', err);
     }
-  }
   
   isSleepingDevice() {
     return true;
@@ -133,6 +132,5 @@ class TS0202Device extends TuyaBaseDevice {
     }
     super.onDeleted();
   }
-}
 
 module.exports = TS0202Device;
