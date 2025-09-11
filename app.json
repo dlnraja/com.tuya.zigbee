@@ -394,10 +394,9 @@
           }
         }
       },
-      "icon": "/drivers/template/assets/icon.svg",
       "images": {
-        "large": "/drivers/template/assets/images/large.png",
-        "small": "/drivers/template/assets/images/small.png"
+        "large": "/drivers/_template/assets/images/large.png",
+        "small": "/drivers/_template/assets/images/small.png"
       },
       "pair": [
         {
