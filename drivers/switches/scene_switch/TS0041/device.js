@@ -30,9 +30,8 @@ class TuyaSceneSwitch extends BaseDevice {
           this.homey.flow.getDeviceTriggerCard('ts0041_hold').trigger(this, {}, {});
           break;
         default:
-          this.log(`Unknown button action: ${action}`);
+          this.log("Unknown button action: ${action}");
       }
-    }
   }
 
 }

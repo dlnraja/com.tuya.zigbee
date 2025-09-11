@@ -12,6 +12,5 @@ class BoschThermostatDevice extends BaseZigbeeDevice.Device {
   async onCapabilityTargetTemperature(value, opts) {
     this.log('Target temperature set to:', value);
   }
-}
 
 module.exports = BoschThermostatDevice;

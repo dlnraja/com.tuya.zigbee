@@ -7,6 +7,5 @@ class IKEATemperatureDevice extends BaseZigbeeDevice.Device {
   async onCapabilityMeasureTemperature(value, opts) {
     this.log('Temperature measurement updated:', value);
   }
-}
 
 module.exports = IKEATemperatureDevice;

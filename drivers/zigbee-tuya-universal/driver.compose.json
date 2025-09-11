@@ -1,21 +1,13 @@
 {
-  "id": "tuya_zigbee-tuya-universal",
-  "title": {
-    "en": "Zigbee-Tuya-Universal Control",
-    "fr": "Contrôle Zigbee-Tuya-Universal"
+  "name": {
+    "en": "Zigbee-Tuya-Universal",
+    "fr": "Zigbee-Tuya-Universal"
   },
   "class": "other",
   "capabilities": [
     "onoff"
   ],
-  "images": {
-    "small": "assets/small.png",
-    "large": "assets/large.png"
-  },
-  "name": {
-    "en": "Zigbee-Tuya-Universal",
-    "fr": "Zigbee-Tuya-Universal"
-  },
+  "capabilitiesOptions": {},
   "zigbee": {
     "manufacturerName": [
       "Tuya"
@@ -31,6 +23,15 @@
         ]
       }
     }
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
+  },
+  "id": "tuya_zigbee-tuya-universal",
+  "title": {
+    "en": "Zigbee-Tuya-Universal Control",
+    "fr": "Contrôle Zigbee-Tuya-Universal"
   },
   "icon": "/drivers/manufacturers/zigbee-tuya-universal/zigbee-tuya-universal/assets/icon.svg",
   "pair": [

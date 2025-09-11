@@ -12,6 +12,5 @@ class PhilipsHueBulbDevice extends BaseZigbeeDevice.Device {
   async onCapabilityDim(value, opts) {
     this.log('Light dim level changed to:', value);
   }
-}
 
 module.exports = PhilipsHueBulbDevice;

@@ -70,7 +70,6 @@ class TS011FDevice extends BaseDevice {
     } catch (error) {
       this.error('Failed to configure plug settings:', error);
     }
-  }
 }
 
 module.exports = TS011FDevice;

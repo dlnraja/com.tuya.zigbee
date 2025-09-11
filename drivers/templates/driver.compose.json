@@ -1,24 +1,32 @@
 {
-  "id": "template",
   "name": {
     "en": "Template Device"
   },
   "class": "sensor",
   "capabilities": [],
+  "capabilitiesOptions": {},
   "zigbee": {
-    "manufacturerName": "Manufacturer",
-    "modelId": ["Model"],
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "modelId": [
+      "Model"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic"
+          0
         ]
       }
-    }
+    },
+    "productId": [
+      "TEMPLATE"
+    ]
   },
   "images": {
-    "large": "assets/images/large/template.png",
-    "small": "assets/images/small/template.png"
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
   },
+  "id": "template",
   "settings": []
 }

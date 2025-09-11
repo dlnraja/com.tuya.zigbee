@@ -1,5 +1,4 @@
 {
-  "id": "aqara_motion_sensor",
   "name": {
     "en": "Aqara Motion Sensor",
     "fr": "Capteur de Mouvement Aqara"
@@ -9,24 +8,7 @@
     "alarm_motion",
     "measure_battery"
   ],
-  "icon": "/drivers/aqara_motion_sensor/assets/icon.svg",
-  "images": {
-    "large": "/drivers/aqara_motion_sensor/assets/images/large.png",
-    "small": "/drivers/aqara_motion_sensor/assets/images/small.png"
-  },
-  "pair": [
-    {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-        "next": "add_devices"
-      }
-    },
-    {
-      "id": "add_devices",
-      "template": "add_devices"
-    }
-  ],
+  "capabilitiesOptions": {},
   "zigbee": {
     "manufacturerName": [
       "Aqara",
@@ -45,5 +27,24 @@
         ]
       }
     }
-  }
+  },
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
+  },
+  "id": "aqara_motion_sensor",
+  "icon": "/drivers/aqara_motion_sensor/assets/icon.svg",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
 }

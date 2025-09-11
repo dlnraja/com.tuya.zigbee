@@ -127,7 +127,6 @@ class TS0201Sensor extends BaseZigbeeDevice {
       this.error('Failed to read temperature:', error);
       throw error;
     }
-  }
 
   /**
    * Read humidity manually
@@ -148,7 +147,6 @@ class TS0201Sensor extends BaseZigbeeDevice {
       this.error('Failed to read humidity:', error);
       throw error;
     }
-  }
 
   /**
    * Read battery level manually
@@ -169,7 +167,6 @@ class TS0201Sensor extends BaseZigbeeDevice {
       this.error('Failed to read battery level:', error);
       throw error;
     }
-  }
 }
 
 module.exports = TS0201Sensor;

@@ -6,6 +6,5 @@ class Thermostat extends BaseZigbeeDevice {
     this.registerCapability('target_temperature', CLUSTER.THERMOSTAT);
     this.registerCapability('measure_temperature', CLUSTER.TEMPERATURE_MEASUREMENT);
   }
-}
 
 module.exports = Thermostat;

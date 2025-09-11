@@ -5,6 +5,5 @@ class SmartLock extends BaseZigbeeDevice {
   async registerCapabilities() {
     this.registerCapability('lock_state', CLUSTER.DOOR_LOCK);
   }
-}
 
 module.exports = SmartLock;

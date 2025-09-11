@@ -1,0 +1,1111 @@
+{
+  "commits": {
+    "commits": [
+      {
+        "hash": "456ce3d9f",
+        "message": "(HEAD -> master, origin/master, origin/HEAD) 🚀 RELEASE v3.0.0 - ULTIMATE VALIDATION COMPLETE",
+        "timestamp": "2025-09-10T13:22:17.626Z"
+      },
+      {
+        "hash": "177883f2c",
+        "message": "feat: Complete project overhaul with comprehensive enhancements",
+        "timestamp": "2025-09-10T13:22:17.628Z"
+      },
+      {
+        "hash": "f881182f3",
+        "message": "feat: Complete comprehensive enhancement of Homey Tuya Zigbee project",
+        "timestamp": "2025-09-10T13:22:17.628Z"
+      },
+      {
+        "hash": "52ed58416",
+        "message": "Mise à jour complète du projet",
+        "timestamp": "2025-09-10T13:22:17.628Z"
+      },
+      {
+        "hash": "2bbc73155",
+        "message": "feat: restructuration complète + nouveaux drivers",
+        "timestamp": "2025-09-10T13:22:17.628Z"
+      },
+      {
+        "hash": "7c51ed5ac",
+        "message": "Fix JSON validation errors",
+        "timestamp": "2025-09-10T13:22:17.628Z"
+      },
+      {
+        "hash": "b467b6d0d",
+        "message": "Final fixes",
+        "timestamp": "2025-09-10T13:22:17.628Z"
+      },
+      {
+        "hash": "21e95ba4d",
+        "message": "Final fixes",
+        "timestamp": "2025-09-10T13:22:17.628Z"
+      },
+      {
+        "hash": "4c3e58ab0",
+        "message": "Add driver.compose.json for tuya_water_sensor",
+        "timestamp": "2025-09-10T13:22:17.628Z"
+      },
+      {
+        "hash": "d825f7c80",
+        "message": "Final fixes",
+        "timestamp": "2025-09-10T13:22:17.628Z"
+      },
+      {
+        "hash": "bc7b901b7",
+        "message": "Add driver.compose.json for protocols directory",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "83e59e40d",
+        "message": "Finalisation complète du projet Ultimate Zigbee Hub",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "37417680e",
+        "message": "Finalisation complète du projet Ultimate Zigbee Hub",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "ba081635e",
+        "message": "Final push - Complete Ultimate Zigbee Homey Integration project",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "5a6aad1cc",
+        "message": "Final project restructuring",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "f9b247561",
+        "message": "Restructure project directories",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "cf7b43d02",
+        "message": "Ajout des drivers manquants et travail sur ultimate-project.js",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "d19feff10",
+        "message": "Add new device drivers, enhance tests, extend orchestrator",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "18949c168",
+        "message": "Finalize project automation",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "436e6a8d5",
+        "message": "Génération finale des assets manquants",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "705a675ba",
+        "message": "(origin/gh-pages) deploy: 5a6aad1cc674d2d0c1b51c1111c7340c4e297f25",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "8dc80f2f2",
+        "message": "deploy: 436e6a8d527d4a1559d67cd8d4cd1d09d09fb6d7",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "4b7a41de4",
+        "message": "(refactor/homey-compose-20250903) Organize files using Node.js script",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "0c17edebb",
+        "message": "Organize files",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "eec89e7f6",
+        "message": "(origin/refactor/homey-compose-20250903) Results of mega_script execution",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "e553fbf70",
+        "message": "Implement full DeepSeek integration",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "56a24ce61",
+        "message": "Update scrape.yml to run weekly",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "e98f5e7c5",
+        "message": "Add Zigbee 3.0 support and localization improvements",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "350791546",
+        "message": "Phase 3: Library & Base Driver",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "3391c67a0",
+        "message": "Phase 2: Target Structure & Templates",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "4e76aac35",
+        "message": "Refactoring complet avec validation CI",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "c5c992a56",
+        "message": "feat: Implement core Tuya Zigbee app structure and device management",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "32a2c9dbf",
+        "message": "feat: Implement driver enrichment, repair, and multilingual documentation",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "41eecf6cd",
+        "message": "feat: Add device matrix file and update README",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "503638200",
+        "message": "feat: Add multilingual device matrix and reorganize drivers",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "6b8529a00",
+        "message": "Mise à jour du projet Tuya Zigbee",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "5d61c82f7",
+        "message": "Initial commit: Tuya Zigbee project setup",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "170d9bd2c",
+        "message": "feat: Add automation tools and update TS011F driver",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "530f48864",
+        "message": "🔍 OFFLINE RELIABILITY SCORING SYSTEM - Système de scoring de fiabilité hors ligne",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "d6a1d48df",
+        "message": "🔧 COPIE COMPLÈTE: Version tuya-light vers master - Problème 'small.png' résolu",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "b32aedff9",
+        "message": "(origin/tuya-light, tuya-light) 🔧 CORRECTION MASSIVE - Problème 'Filepath does not exist: small.png' résolu définitivement",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "63fad6191",
+        "message": "🔧 CORRECTION SPÉCIFIQUE - Images des drivers dans app.json - 2025-08-23 16:44:34 - 48 drivers corrigés, chemins d'images résolus, problème 'Filepath does not exist: small.png' résolu",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "1c44e5152",
+        "message": "🚀 CORRECTION ULTIME HOMEY SDK3 - 2025-08-23 15:58:56 - 12 classes de drivers corrigées (socket→switch, device→switch), app.json optimisé, structure validée",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "9c75762b0",
+        "message": "🔧 CORRECTION RÉCURSIVE - Validation Homey SDK3 complète - 2025-08-23 15:28:32 - Correction des chemins d'images, validation des drivers, optimisation SDK3",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "6c5e7d280",
+        "message": "🔧 CORRECTION ULTIME CLUSTERS - Validation Homey",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "22c789cb0",
+        "message": "📋 RAPPORT FINAL MEGA ENHANCEMENT ULTIMATE COMPLETE",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "c00c12c60",
+        "message": "🚀 MEGA ENHANCEMENT ULTIMATE COMPLETE - Systèmes d'IA et d'enrichissement intelligent",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "b37014414",
+        "message": "🔧 CORRECTION COMPLÈTE DES DRIVERS MANQUANTS ET INCOMPLETS",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "f131b093f",
+        "message": "🚀 MEGA ENHANCEMENT ULTIMATE - Nouvelle architecture + Drivers améliorés + Fonctionnalités avancées",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "38dcf5efa",
+        "message": "(origin/integration/harvest-20250818) 🚀 MEGA PIPELINE: Scripts de récupération massive et validation des drivers Tuya - 20/08/2025 23:51 GMT+2 - Création des scripts MEGA_DRIVER_RESTORE.js, HOMEY_VALIDATE.js, TUYA_OVERLAYS.js et MEGA_PIPELINE.js pour automatiser la récupération, validation et création d'overlays de 763 drivers Tuya - Tous les drivers sont validés et fonctionnels - Support complet des familles: light, switch, sensor, cover, fan, heater, lock, ac - Configuration Tuya en mode local sans API externe - Pipeline automatisé pour maintenance continue",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "11b93ce8e",
+        "message": "feat: Apply drivers from archive with new architecture",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "d404b6d05",
+        "message": "📋 MEGA CLEAN & FIX Report - Mission accomplie",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "40f9d9420",
+        "message": "🧹 MEGA CLEAN & FIX: Clean repo, fix workflows, correct Pages, align upstream",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "be331e716",
+        "message": "🚀 MEGA-PROMPT ULTIMATE Implementation Complete",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "fb443002d",
+        "message": "✨ Complete lib implementation & tests",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "31de12ebf",
+        "message": "✅ Validation 100% SUCCESS - Production Ready",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "e9d5f3d41",
+        "message": "✅ Terminal fixes & validation complete (v3.8.0 Final)",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "664eee11a",
+        "message": "🚀 MEGA Implementation: Complete architecture overhaul (v3.8.0) - 2025-01-19 14:30 GMT+2",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "07df36ca1",
+        "message": "🚀 Fix terminal issues & implement Innovation Pack (2025-01-19 12:00 GMT+2)",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "b20a32837",
+        "message": "feat(architecture): restructure complete - clean naming + overlays + device matrix",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "e50a3ee4a",
+        "message": "feat(overlays): add family overlays + tuya-cluster + device-helpers + endpoint-utils",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "c353b362d",
+        "message": "feat(validation): fix zigbee endpoints + overlays + diagnostics - SDK3 compliance",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "dd7a3de10",
+        "message": "feat(architecture): restructure complete - 4 drivers by type, unified CLI, SDK3 compose",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "f6997136c",
+        "message": "EN: chore(pipeline): fix run script to use initialize+executePipeline; run MEGA and add enriched outputs\\nFR: chore(pipeline): correctif run pour initialize+executePipeline; exécution MEGA et ajouts enrichis",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "e464693c5",
+        "message": "EN: chore(harvest,libs): add harvest workflow and npm scripts; add tuya convert + diagnostics libs\\nFR: chore(harvest,libs): ajout workflow harvest et scripts npm; ajout libs convert tuya + diagnostics",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "5d1e8cd96",
+        "message": "EN: fix(validate): map cluster names to numeric IDs (e.g., genBasic=0x0000, genOnOff=0x0006); validation green\\nFR: fix(validate): conversion des noms de clusters en IDs numériques; validation verte",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "bb61c5512",
+        "message": "EN: chore(drivers): normalize all driver.compose.json (clusters array, numeric bindings, endpoints); green validate\\nFR: chore(drivers): normalisation complète driver.compose.json (clusters array, bindings numériques, endpoints); validation OK",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "96dc195b5",
+        "message": "EN: ci(pages,validate): fix workflows; add docs index; update README\\nFR: ci(pages,validate): correction workflows; ajout index docs; mise à jour README",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "150de45ed",
+        "message": "EN: chore(tools): add crawlers + validate loop; fix compose and drivers for green validation\\nFR: chore(outils): ajouts crawlers + boucle de validation; corrections compose et drivers (validation OK)",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "9eb8322b2",
+        "message": "🚀 MEGA Automation Avancée - Scraping & Failover v3.6.0",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "dcd714427",
+        "message": "🚀 Déploiement automatique v3.5.0 - 2025-08-16T14:06:20.694Z",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "9b29f1531",
+        "message": "🚀 Finalisation de la transformation des scripts et consolidation MEGA v3.5.0",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "8550fd1ba",
+        "message": "🚀 Déploiement automatique v3.5.0 - 2025-08-16T13:12:33.647Z",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "fe79f0d4a",
+        "message": "🚀 Release Majeure v0.1.0 - Refactoring MEGA Orchestrator et Architecture Modulaire",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "207ce4b44",
+        "message": "feat: MEGA pipeline complet avec scraping, automatisation et GitHub Pages",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "623baea36",
+        "message": "🚀 MEGA-PROMPT Implementation Complete - Full Auto Tooling & Drivers",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "c9cdab47e",
+        "message": "(tag: v3.4.6) 🚀 VALIDATION FINALE RAPIDE RÉUSSIE - 84.2% - Projet 100% prêt pour Homey ! - Version 3.4.6",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "920a11e34",
+        "message": "🚀 COORDINATION FINALE COMPLÈTE - Projet 100% prêt pour Homey !",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "3e9ec1b5d",
+        "message": "(tag: v3.4.5) 🚀 INTÉGRATION COMPLÈTE YOLO - Tous les drivers enrichis + Scripts intelligents + Fallbacks génériques + Mode heuristique",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "25070a69f",
+        "message": "🚀 VALIDATION FINALE COMPLÈTE RÉUSSIE - 83.9% - Corrections automatiques appliquées - Prêt pour Homey !",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "ef2d8cf71",
+        "message": "🚀 VALIDATION FINALE ULTIME RÉUSSIE - 80.6% - Tous les critères critiques satisfaits - Prêt pour Homey !",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "8eeadb03f",
+        "message": "(tag: v3.4.4) 🚀 STRUCTURE COMPLÈTE VALIDÉE À 100% - 437 drivers complets + Fallbacks génériques + Validation rapide réussie",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "6596825d4",
+        "message": "(tag: v3.4.3) 🚀 VALIDATION INTELLIGENTE COMPLÈTE - Drivers fonctionnels + Fallbacks génériques + Mode heuristique + Compatibilité firmware universelle",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "699692917",
+        "message": "(tag: v3.4.2) 🧠 MEGA INTELLIGENCE VALIDATOR COMPLET v3.4.2 - Drivers intelligents + Fallbacks génériques + Mode heuristique + Compatibilité firmware universelle",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "adfc3c3e6",
+        "message": "🚀 MEGA ENRICHISSEMENT ULTIME COMPLET v3.4.2 - 452 drivers améliorés + Scripts MEGA + Validation + Structure complète",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "4ae6dff84",
+        "message": "🚀 IMPLÉMENTATION BRIEF BÉTON COMPLÈTE v3.4.2 - Dashboard dynamique + Utilitaires slug + Scripts génération + Validation + KPI temps réel",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "f83208cfb",
+        "message": "🚀 BRIEF BÉTON COMPLÈTE v3.4.2",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "0364575d9",
+        "message": "🚀 IMPLÉMENTATION BRIEF BÉTON COMPLÈTE v3.4.2 - Dashboard dynamique + Utilitaires slug + Scripts génération + Validation + KPI temps réel",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "1fec41ee6",
+        "message": "🚀 IMPLÉMENTATION BRIEF BÉTON COMPLÈTE v3.4.2 - Validation locale + Structure drivers + App.json corrigé + Compose activé",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "0a4aca4e2",
+        "message": "🚀 FUSION COMPLÈTE v3.4.2",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "ddbaf3b3c",
+        "message": "🚀 IMPLÉMENTATION BRIEF BÉTON COMPLÈTE v3.4.2",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "d8fbd4b0c",
+        "message": "🚀 FUSION COMPLÈTE v3.4.2 - ÉLIMINATION DUPLICATION TUYA",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "7d2c7fc70",
+        "message": "(tag: v3.4.1) feat: Organisation intelligente des drivers par catégorie v3.4.1",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "841ceaef3",
+        "message": "feat: Organisation intelligente des drivers et fusion automatique v3.4.1",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "5e6dc5ef3",
+        "message": "🔄 RESTAURATION ET CONVERSION v3.4.1",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "891268260",
+        "message": "🔄 RÉORGANISATION COMPLÈTE v3.4.1",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "fdcfecdc9",
+        "message": "🔄 RESTAURATION COMPLÈTE TUYA v3.4.1",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "8ffb230b3",
+        "message": "🚀 IMPLÉMENTATION COMPLÈTE TUYA v3.4.1 - Migration SDK3+ complète - 7 nouveaux drivers créés - 9 assets générés - Tests automatisés - Dashboard GitHub Pages - Workflows GitHub Actions - Sources externes intégrées",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "ab9d9c18f",
+        "message": "📝 RAPPORT FINAL: Mise à jour version 3.4.1 complète et réussie - Validation 100% - Déploiement GitHub réussi",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "1c6d508a1",
+        "message": "🚀 VERSION 3.4.1: Incrémentation version et mise à jour référentiels",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "d9cddd918",
+        "message": "🚀 COMPLETE DASHBOARD IMPLEMENTATION - v3.4.0",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "1e93f5b06",
+        "message": "🚀 Version 3.4.0 - Complete SOT Architecture & Advanced CI/CD Pipeline",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "f5dffdc97",
+        "message": "🚀 v3.3.0 - Complete Recovery & Enrichment-Max Implementation",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "f1d96b798",
+        "message": "(origin/chatgptversion) feat-progressive-batch-202508131050",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "e29fa6d39",
+        "message": "feat-progressive-batch-202508131046",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "1701bb05a",
+        "message": "feat-progressive-batch-202508130933",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "3264e8ffe",
+        "message": "fix: Restructuration nomenclature drivers - structure drivers/{tuya|zigbee}/{category}/{vendor}/{model} - 29/01/2025 22:35",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "a40e0cc69",
+        "message": "feat: Lot 1/10 - 10 drivers Tuya critiques (switches, sensors, plugs) - 29/01/2025 22:30",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "4305e91c8",
+        "message": "feat-progressive-batch-202508130728",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "3fb57e598",
+        "message": "fix: Safe scripts PS + récupération erreurs Cursor - 29/01/2025 21:45",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "5f49d46b0",
+        "message": "feat-progressive-batch-202508122220",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "382984af2",
+        "message": "feat-progressive-batch-202508122049",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "e5f18e9c7",
+        "message": "feat-progressive-batch-202508122045",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "a66b2085a",
+        "message": "feat-progressive-batch-202508122040",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "67d3a37ba",
+        "message": "feat-progressive-batch-202508122028",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "b3bb0a639",
+        "message": "feat-progressive-batch-202508122013",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "9e569077e",
+        "message": "fix: JSON auto-fix étendu + pipeline continue - 29/01/2025 20:10",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "594f922a3",
+        "message": "feat-progressive-batch-202508122005",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "c7ad63c6d",
+        "message": "fix: auto-fix JSON avant lint + pipeline continue - 29/01/2025 20:05",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "288cac0b2",
+        "message": "feat-progressive-batch-202508122000",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "fc43778c2",
+        "message": "feat: 500 améliorations (phase 1) - validations étendues + health-check + commits sûrs - 29/01/2025 19:55",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "885a68493",
+        "message": "feat-progressive-batch-202508121950",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "dfc4ad152",
+        "message": "feat: Lot 1/7 - 50 améliorations pipeline/structure - 29/01/2025 18:45",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "2d02d9109",
+        "message": "feat: implémentation complète 50 améliorations - projet automatisé - 29/01/2025 18:30",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "c17634706",
+        "message": "feat: progressive batch enrichissement complet - 210 drivers mis à jour - 29/01/2025 18:15",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "3637b549f",
+        "message": "feat: MEGA-PIPELINE selon indications Cursor - helpers anti-crash + progressive + 3 commandes - 29/01/2025 18:10",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "66031a087",
+        "message": "feat: GitHub Pages complètement réparé - workflow moderne + diagnostic auto - 29/01/2025 17:50",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "890d155fc",
+        "message": "fix: correction GitHub Pages - workflow moderne + dashboard amélioré - 29/01/2025 17:45",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "f95010d15",
+        "message": "feat: organisation complète des rapports JSON + validation structure drivers - 29/01/2025 17:30",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "2155c9268",
+        "message": "build-enrich-batch-202508121715",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "8ed52a6ad",
+        "message": "fix: correction message commit mega-pipeline + enrichissement continu - 29/01/2025 17:15",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "b7374afe7",
+        "message": "feat: finalisation mode enrichissement - git robuste + changelog auto + scripts npm - 29/01/2025 17:10",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "54218d5f0",
+        "message": "feat: mode enrichissement + CI hebdo + helpers sécurisés - 29/01/2025 17:00",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "d6f8466ae",
+        "message": "Ajout nouveaux drivers + corrections structure - TS130F cover, radar 24G, temp/humidity sensor + corrections IDs/vendors - 29/01/2025 16:45",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "7f001cc3e",
+        "message": "feat: v3.3.0 - Génération massive de 203 drivers + réorganisation complète + corrections AI Enrichment",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "52d7aae7f",
+        "message": "chore: full pipeline sans scan ZIP (enrich/reorg/verify/diagnose/assets/reindex/dashboard)",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "fc79f7aa4",
+        "message": "build: reorg to drivers/{tuya|zigbee}/category/vendor/model + enrich + verify + assets + docs (tmp/backup persistent)",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "80837b010",
+        "message": "🚀 MEGA: Complete project reorganization and migration - 2025-08-10 15:30:00",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "b2fa33a2e",
+        "message": "🔄 REORGANISATION COMPLÈTE - Nettoyage et restructuration des drivers (29/07/2025 01:45:00 GMT+2) - Suppression des drivers obsolètes et réorganisation de la structure - Optimisation de la hiérarchie des dossiers - Nettoyage des fichiers temporaires et scripts de migration - Préparation pour la nouvelle architecture modulaire",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "443be7209",
+        "message": "🚀 MEGA-ULTIMATE-ORCHESTRATOR V3.2.0 - Réorganisation complète et enrichissement",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "7be605a30",
+        "message": "🚀 MEGA-ULTIMATE-ORCHESTRATOR V3.2.0 - Réorganisation complète et enrichissement",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "45c50a50e",
+        "message": "🔧 Git Identity Update: dlnraja / dylan.rajasekaram+homey@gmail.com - Configuration correcte de l'identité git pour tous les futurs commits et pushes",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "8e13f9039",
+        "message": "🚀 MEGA UPDATE 3.0.0: SDK 3 + Mega Pipeline + Drivers Enrichment + Version Update",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "526a9cf68",
+        "message": "🔧 MEGA UPDATE: package.json optimisé + scripts remote + private:true + dépendances nettoyées",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "0b84864aa",
+        "message": "🚀 EXÉCUTION COMPLÈTE DES SCRIPTS D'ENRICHISSEMENT - 2025-01-29 02:35:00 - v3.0.0 - Tous les scripts d'enrichissement exécutés et corrigés, script unifié créé, validation finale réussie - Mode 100% local garanti",
+        "timestamp": "2025-09-10T13:22:17.629Z"
+      },
+      {
+        "hash": "ea17b7af8",
+        "message": "🚀 CORRECTION BUGS ET AVANCEMENT MEGA ULTIMATE - 2025-01-29 02:30:00 - v3.0.0 - Correction des bugs, script enrich-drivers-ai-heuristic-mega-fixed.js créé, drivers AI Enhanced supplémentaires - Mode 100% local garanti",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "b5ee3eb58",
+        "message": "🚀 AMÉLIORATION AI HEURISTIQUE MEGA ULTIMATE - 2025-01-29 02:25:00 - v3.0.0 - Enrichissement des drivers avec IA, forums, sources et heuristique avancée - Mode 100% local garanti",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "149c848a8",
+        "message": "🚀 PROCHAINES ÉTAPES MEGA ULTIMATE - 2025-01-29 02:20:00 - v3.0.0 - Installation Docker, enrichissement complet des drivers, tests automatisés et mise à jour documentation - Mode 100% local garanti",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "df63e8b03",
+        "message": "🚀 ENRICHISSEMENT MEGA ULTIMATE DES DRIVERS JS - 2025-01-29 02:15:00 - v3.0.0 - Complétion et enrichissement de tous les drivers JavaScript avec fonctionnalités avancées, système de monitoring MEGA ULTIMATE, fallback systems, et capacités étendues pour TUYA et ZIGBEE - Mode 100% local garanti",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "40b6fffa7",
+        "message": "🔧 CORRECTION ASSETS ET DRIVERS - 2025-01-29 17:15 - v3.0.0 - Images, assets et JS manquants corrigés - Driver Tuya lights créé avec tous les fichiers - Synchronisation avec app.js - Validation Homey SDK",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "b5e78fdb0",
+        "message": "🔧 HOMEY VALIDATE LOCAL DEBUG - 2025-01-29 17:10 - v3.0.0 - Script de validation locale créé - Vérification équivalente à homey validate en mode debug - Correction automatique des fichiers manquants",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "bc2c0cb5c",
+        "message": "🚀 MEGA SCRAPER ENHANCED - 2025-01-29 17:05 - v3.0.0 - Scraper de sources avancé créé - Sources GitHub, NPM, Homey, Tuya, Zigbee - Amélioration du pipeline mega avec scraper intégré",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "cbc5e7be0",
+        "message": "🔧 CORRECTION TERMINAL - 2025-01-29 17:00 - v3.0.0 - Script de correction terminal créé - Configuration Git corrigée - Terminal stabilisé et optimisé",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "38efd31a6",
+        "message": "🚀 AMÉLIORATION MAJEURE - Structure, Tests, Linting - 2025-01-29 16:57 - v3.0.0 - Ajout ESLint, Prettier, structure src/, tests unitaires, configuration TypeScript - Couverture étendue à 39 types de drivers - Amélioration de la qualité du code et de la documentation",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "defaefe9e",
+        "message": "🚀 CORRECTION TERMINAL + VALIDATION PROJET - 1476 drivers + Mode 100% local + Scripts de validation",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "90361b934",
+        "message": "🚀 AVANCEMENT MAJEUR - Nouveaux drivers: Speakers, Displays, Robots - Couverture étendue à 39 types de devices",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "0c26d701e",
+        "message": "🚀 PROJET ENRICHİ ET AMÉLIORÉ - Nouveaux drivers: Cameras, Gateways, IR, Remotes - Couverture complète des types de devices",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "4c498db92",
+        "message": "🚀 AJOUT DRIVERS MANQUANTS FINAL - Buttons + Switches + Sensors + Automation + Security - 1466 drivers total",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "874914607",
+        "message": "🚀 AJOUT DRIVERS MANQUANTS - Curtains + Fans + Valves + Buttons + Mega.js enrichissement",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "83d1dd1c7",
+        "message": "🔗 CORRECTION LIENS GITHUB PAGES - Liens cassés corrigés + Support multilingue + Drapeaux langues",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "7c367d76e",
+        "message": "🧹 NETTOYAGE BRANCHES - Seulement master et tuya-light conservées",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "2c41502d9",
+        "message": "🧹 NETTOYAGE COMPLET - Branches inutiles supprimées + Validation projet + Drivers corrigés",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "5654bd723",
+        "message": "🚀 IMPLÉMENTATION COMPLÈTE DES PROCHAINES ÉTAPES - Tests + CI/CD + Bridge + Docs + Monitoring + CLI + Community + Cursor",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "4855ee5a2",
+        "message": "🚀 PASSAGE EN MODE LOCAL 100% - Dashboard local + Traductions complètes + Bundle local",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "cb656b679",
+        "message": "🚀 IMPLÉMENTATION COMPLÈTE DES SUGGESTIONS RESTANTES - Version Migration + CLI + Community + Cursor Config",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "9627a7a87",
+        "message": "🚀 IMPLÉMENTATION COMPLÈTE DES SUGGESTIONS - Tests + CI/CD + Bridge + Docs + Monitoring",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "bc864ccfd",
+        "message": "🚀 RELEASE v3.0.0 FINAL COMPLETE - MEGA PIPELINE + VALIDATION + RELEASE + SYNC + ASSETS",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "cebfa5a2e",
+        "message": "🚀 SYNC MASTER TO TUYA-LIGHT - ULTIMATE UPDATE",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "6f0d1d0c1",
+        "message": "🚀 RELEASE v3.0.0 - ULTIMATE VALIDATION COMPLETE",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "8e5ffb814",
+        "message": "(tag: v3.0.0) 🚀 RELEASE v3.0.0 - ULTIMATE VALIDATION COMPLETE",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "925643a73",
+        "message": "🚀 RELEASE v3.0.0 - ULTIMATE FINAL FIXER COMPLETE - 2025-01-29 02:15:00 - Terminal issues fixed - All drivers validated - Images corrected - Homey validation successful - Ready for publication - YOLO Ultra Mode confirmed",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "6c9e964d9",
+        "message": "🚀 [2025-01-29 03:15:00] MEGA RECOMMENDATIONS FIXER ULTIMATE - 6 README manquants créés - 24 drivers avec assets générés - Taux de complétude 100% - Validation complète réussie - Mode YOLO Ultra confirmé",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "7380bc8db",
+        "message": "🚀 [2025-01-29 03:10:00] MEGA README ENHANCEMENT ULTIMATE - README amélioré avec liens corrigés - Scripts JS adaptés avec nouveaux liens - Workflows GitHub Actions optimisés - Dashboard interactif fonctionnel - Documentation multilingue complète - Mode YOLO Ultra confirmé",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "6f2f8267b",
+        "message": "🚀 [2025-01-29 03:05:00] MEGA FEATURES SYNC ULTIMATE - Dashboard interactif créé - Badges Markdown professionnels - Workflows CI/CD complets - Changelog automatique - Documentation multilingue - Scripts MEGA synchronisés - Mode YOLO Ultra confirmé",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "c82eb4a30",
+        "message": "🚀 [2025-01-29 03:00:00] CORRECTION ET ENRICHISSEMENT ULTIMATE - Tous les drivers incomplets corrigés - Script de validation amélioré - Détection récursive des sous-dossiers - 24 drivers complets détectés - Taux de complétude 100% - Mode YOLO Ultra confirmé",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "394a446b1",
+        "message": "🚀 [2025-01-29 02:55:00] CRÉATION IMAGES ET README ULTIMATE - Générateur d'images automatique - Cohérence de design appliquée - Couleurs harmonisées - Formats SVG et PNG - README manquants créés - Mode YOLO Ultra confirmé",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "41e564ed7",
+        "message": "🚀 [2025-01-29 02:50:00] CORRECTION ERREUR VALIDATION - Script de validation amélioré - Détection des sous-dossiers drivers - Validation Homey réussie - Mode YOLO Ultra confirmé",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "b39619628",
+        "message": "🚀 [2025-01-29 02:45:00] CHECK COMPLET ULTIMATE - Validation Homey CLI mise à jour - Script de validation corrigé - 64 drivers complets détectés - Taux de complétude 100% - Mode YOLO Ultra confirmé",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "9ea724ad6",
+        "message": "🚀 [2025-01-29 02:30:00] MEGA RELANCE COMPLET - Enrichissement des drivers - Réorganisation et nettoyage - Validation Homey réussie - Scripts MEGA opérationnels - Mode YOLO Ultra activé",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "582afc6fb",
+        "message": "🚀 [2025-01-29 02:28:00] MEGA MD ORGANIZER COMPLET - Organisation automatique des fichiers MD - Structure de documentation créée - Fichiers MD organisés par catégorie - Index de documentation généré - Script de maintenance automatique créé - Rapports JSON nettoyés - Mode YOLO Ultra activé",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "e3dc745c7",
+        "message": "🚀 [2025-01-29 02:26:00] MEGA ULTIMATE RESUME COMPLET - Toutes les tâches suspendues/annulées reprises - Drivers corrigés et enrichis - Scripts restaurés - Documentation fixée - Assets créés - Workflows corrigés - Validation Homey réussie - Mode ULTIMATE activé",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "eb2e426cb",
+        "message": "🚀 [2025-01-29 02:24:00] MEGA RÉORGANISATION ET ENRICHISSEMENT COMPLET - Doublons supprimés et fichiers inutiles nettoyés - Structure réorganisée et optimisée - Fichiers renommés et adaptés - Drivers enrichis en mode MEGA - app.js mis à jour avec mode MEGA - Validation Homey réussie - Mode YOLO Ultra activé",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "1b3e8a571",
+        "message": "🚀 [2025-01-29 02:22:00] ORGANISATION DOCUMENTATION COMPLÈTE - Structure MD organisée - Dashboard corrigé et fonctionnel - Scripts adaptés et optimisés - Workflows d'automatisation corrigés - Bug CRLF résolu - Mode YOLO Ultra activé",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "56a48b5d5",
+        "message": "🚀 [2025-01-29 02:18:00] RESTAURATION COMPLÈTE - Structure corrigée et enrichie - 20+ drivers Tuya restaurés - 3+ drivers Zigbee restaurés - Assets créés - app.js mis à jour - Validation Homey réussie - Mode YOLO Ultra activé",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "cd4da49ad",
+        "message": "🔧 FIX: Complete app validation and bug fixes - All drivers completed and validated - Fixed CLI installation issues - Added comprehensive test suite - Resolved Homey Community thread bugs - App now ready for deployment",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "8efcc2fe4",
+        "message": "🚀 MEGA YOLO: Drivers réparés + Images générées + Structure complète",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "6d705e1d4",
+        "message": "🚀 MEGA ULTIMATE: Correction complète et automatisation",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "8f43a4bbc",
+        "message": "🚀 MEGA UPDATE: Workflows CI/CD + README Enhanced + Drivers Fixed + Auto Changelog",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "7c9b261a0",
+        "message": "📖 docs: intégration workflow changelog automatique et README multilingue complet",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "34372664e",
+        "message": "🚀 PACK COMPLET DE BADGES MARKDOWN - ÉCOSYSTÈME PROFESSIONNEL",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "2c2a7ff07",
+        "message": "🚀 BADGES MARKDOWN ET WORKFLOWS COMPLETS - ÉCOSYSTÈME FINAL",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "b70712e78",
+        "message": "🚀 WORKFLOWS GITHUB ACTIONS COMPLETS - DASHBOARD AUTOMATIQUE",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "b36dbedce",
+        "message": "🚀 SCRIPT GÉNÉRATEUR MATRICE OPTIMISÉ - VERSION CONCISE ET EFFICACE",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "4a051df8b",
+        "message": "🚀 DASHBOARD HTML ET GÉNÉRATEUR MATRICE DRIVERS",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "aa72efa98",
+        "message": "🚀 WORKFLOWS CI/CD COMPLETS - CORRECTION DRIVERS ET APP.JS",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "bb6f913f2",
+        "message": "🚀 RÉORGANISATION ET OPTIMISATION COMPLÈTE DU PROJET",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "ebfff1830",
+        "message": "🚀 AMÉLIORATION COMPLÈTE DU PROJET - TRANSFORMATION EN RESSOURCE ROBUSTE",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "b721da040",
+        "message": "🚀 RELANCE MEGA ENRICHISSEMENT COMPLET - COMPLÉTION DES FICHIERS MANQUANTS",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "90319b34f",
+        "message": "🗑️ NETTOYAGE DÉFINITIF - SUPPRESSION DOSSIERS PROBLÉMATIQUES",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      },
+      {
+        "hash": "dbab5244a",
+        "message": "🎯 MEGA-PROMPT ULTIME - VERSION FINALE 2025",
+        "timestamp": "2025-09-10T13:22:17.630Z"
+      }
+    ],
+    "insights": [
+      {
+        "type": "commit_category",
+        "category": "features",
+        "count": 58,
+        "percentage": "100.0",
+        "examples": [
+          "feat: Complete project overhaul with comprehensive enhancements",
+          "feat: Complete comprehensive enhancement of Homey Tuya Zigbee project",
+          "feat: restructuration complète + nouveaux drivers"
+        ]
+      },
+      {
+        "type": "commit_category",
+        "category": "improvements",
+        "count": 19,
+        "percentage": "100.0",
+        "examples": [
+          "feat: Complete project overhaul with comprehensive enhancements",
+          "feat: Complete comprehensive enhancement of Homey Tuya Zigbee project",
+          "Add new device drivers, enhance tests, extend orchestrator"
+        ]
+      },
+      {
+        "type": "commit_category",
+        "category": "drivers",
+        "count": 84,
+        "percentage": "100.0",
+        "examples": [
+          "feat: Complete comprehensive enhancement of Homey Tuya Zigbee project",
+          "feat: restructuration complète + nouveaux drivers",
+          "Add driver.compose.json for tuya_water_sensor"
+        ]
+      },
+      {
+        "type": "commit_category",
+        "category": "fixes",
+        "count": 46,
+        "percentage": "100.0",
+        "examples": [
+          "Fix JSON validation errors",
+          "Final fixes",
+          "Final fixes"
+        ]
+      },
+      {
+        "type": "commit_category",
+        "category": "config",
+        "count": 17,
+        "percentage": "100.0",
+        "examples": [
+          "Fix JSON validation errors",
+          "Add driver.compose.json for tuya_water_sensor",
+          "Add driver.compose.json for protocols directory"
+        ]
+      }
+    ]
+  },
+  "files": [],
+  "resources": {
+    "drivers": [],
+    "configs": [],
+    "algorithms": [],
+    "matrices": [
+      {
+        "file": "tuya-light\\drivers\\drivers-config.json",
+        "type": "config",
+        "keys": 9,
+        "structure": {
+          "type": "object",
+          "keys": 9,
+          "nestedObjects": 7
+        }
+      }
+    ]
+  },
+  "timestamp": "2025-09-10T13:26:17.351Z",
+  "duration": "241.69s",
+  "recommendations": [
+    {
+      "type": "code_quality",
+      "priority": "high",
+      "message": "High number of fix commits (46) suggests need for better testing",
+      "action": "Implement comprehensive test suite and CI/CD validation"
+    },
+    {
+      "type": "documentation",
+      "priority": "medium",
+      "message": "Enhance inline documentation and code comments",
+      "action": "Add JSDoc comments to all public methods and classes"
+    },
+    {
+      "type": "testing",
+      "priority": "high",
+      "message": "Implement automated testing for driver functionality",
+      "action": "Create mock tests for all device capabilities and flows"
+    }
+  ],
+  "summary": {
+    "totalCommits": 200,
+    "totalInsights": 5,
+    "analyzedFiles": 0,
+    "extractedDrivers": 0,
+    "extractedMatrices": 1,
+    "recommendationsCount": 3
+  }
+}

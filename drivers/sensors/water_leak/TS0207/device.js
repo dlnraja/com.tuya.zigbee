@@ -17,6 +17,5 @@ class TS0207Device extends BaseZigbeeDevice {
 
     // Battery capability is handled by the BaseDevice
   }
-}
 
 module.exports = TS0207Device;

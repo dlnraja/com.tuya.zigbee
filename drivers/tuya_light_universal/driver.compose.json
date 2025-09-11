@@ -16,15 +16,6 @@
       }
     }
   },
-  "energy": {
-    "approximation": {
-      "usageConstant": 7
-    }
-  },
-  "images": {
-    "large": "/drivers/tuya_light_universal/assets/images/large.png",
-    "small": "/drivers/tuya_light_universal/assets/images/small.png"
-  },
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_*",
@@ -66,5 +57,15 @@
         "de": "Drücken Sie die Ein-/Aus-Taste am Gerät, um mit der Kopplung zu beginnen."
       }
     }
-  }
+  },
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
+  },
+  "energy": {
+    "approximation": {
+      "usageConstant": 7
+    }
+  },
+  "id": "tuya_light_universal"
 }
