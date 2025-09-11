@@ -16,10 +16,9 @@
       }
     }
   },
-  "icon": "/drivers/template/assets/icon.svg",
   "images": {
-    "large": "/drivers/template/assets/images/large.png",
-    "small": "/drivers/template/assets/images/small.png"
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
   },
   "pair": [
     {
