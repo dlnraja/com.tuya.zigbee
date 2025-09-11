@@ -1,9 +1,0 @@
-{
-  "name": "Door_Device_Standard_Default",
-  "type": "tuya_zigbee",
-  "category": "lock",
-  "source": "drivers\\tuya_zigbee\\models\\tuya-door-537_device_standard_default",
-  "created": "2025-08-14T15:25:23.765Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

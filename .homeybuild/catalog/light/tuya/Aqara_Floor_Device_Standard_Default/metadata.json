@@ -1,9 +1,0 @@
-{
-  "name": "Aqara_Floor_Device_Standard_Default",
-  "type": "tuya_zigbee",
-  "category": "light",
-  "source": "drivers\\tuya_zigbee\\models\\aqara-floor-771_device_standard_default",
-  "created": "2025-08-14T15:21:25.868Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

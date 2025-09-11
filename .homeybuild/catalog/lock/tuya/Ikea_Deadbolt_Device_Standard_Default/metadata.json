@@ -1,9 +1,0 @@
-{
-  "name": "Ikea_Deadbolt_Device_Standard_Default",
-  "type": "tuya_zigbee",
-  "category": "lock",
-  "source": "drivers\\tuya_zigbee\\models\\ikea-deadbolt-42_device_standard_default",
-  "created": "2025-08-14T15:23:31.225Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

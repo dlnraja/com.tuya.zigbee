@@ -1,9 +1,0 @@
-{
-  "name": "Generic_Device_Bulb",
-  "type": "tuya_zigbee",
-  "category": "light",
-  "source": "drivers\\tuya_zigbee\\models\\generic_device_bulb_standard",
-  "created": "2025-08-14T15:22:16.560Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "Heater_Device_Standard_Default",
-  "type": "tuya_zigbee",
-  "category": "heater",
-  "source": "drivers\\tuya_zigbee\\models\\tuya-heater-387_device_standard_default",
-  "created": "2025-08-14T15:25:42.552Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

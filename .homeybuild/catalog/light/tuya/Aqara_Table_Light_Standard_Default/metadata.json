@@ -1,9 +1,0 @@
-{
-  "name": "Aqara_Table_Light_Standard_Default",
-  "type": "tuya_zigbee",
-  "category": "light",
-  "source": "drivers\\tuya_zigbee\\models\\aqara-table-922_light_standard_default",
-  "created": "2025-08-14T15:21:47.487Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}
