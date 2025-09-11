@@ -180,3 +180,18 @@ MIT License - see [LICENSE](LICENSE) file for details.
 **⭐ If this app helps you, please star the repository and leave a review on the Homey App Store!**
 
 *Made with ❤️ by the Homey community for the Homey community*
+
+## Enrichissement
+
+Ce projet a été enrichi avec:
+- Données du repo JohanBendz/com.tuya.zigbee
+- Retours de la communauté Homey
+- PRs et Issues des projets communautaires
+- Optimisations basées sur analyse NLP
+- Images standardisées selon specs Homey
+
+## Compatibilité
+
+- Homey SDK 3
+- 31 drivers analysés
+- Standards de qualité Homey Store

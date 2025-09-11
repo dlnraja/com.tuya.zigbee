@@ -1,29 +1,14 @@
+'use strict';
+
 const Homey = require('homey');
 
-class TuyaZigbeeApp extends Homey.App {
+class UltimateZigbeeApp extends Homey.App {
   
-  async async onInit() {
-    try {
-      await this.initializeApp();
-      this.log("App initialized successfully");
-    } catch (error) {
-      this.error("App initialization failed:", error);
-    }
-  }
-
-  async initializeApp() {
-    try {
-      this.log('🚀 Tuya Zigbee App is running...');
-      
-      // In a driver-based app, most logic resides within the drivers themselves.
-      // This onInit is kept simple. For more complex apps, you might initialize
-      // global services or APIs here.
-    } catch (error) {
-      this.error('App initialization failed:', error);
-      throw error;
-    }
+  async onInit() {
+    this.log('🚀 Ultimate Zigbee Hub - Complete Restoration - App initialized');
+    this.log(`📊 App running with ${Object.keys(this.homey.drivers.getDrivers()).length} drivers`);
   }
   
 }
 
-module.exports = TuyaZigbeeApp;
+module.exports = UltimateZigbeeApp;

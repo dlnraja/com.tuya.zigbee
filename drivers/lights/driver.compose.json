@@ -1,0 +1,49 @@
+{
+  "name": {
+    "en": "Smart Light",
+    "fr": "Éclairage Intelligent",
+    "nl": "Slimme Verlichting"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_battery",
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "capabilitiesOptions": {},
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_*",
+      "_TZ3210_*",
+      "_TYZB01_*",
+      "_TZ3300_*"
+    ],
+    "productId": [
+      "lights",
+      "LIGHT"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
+  },
+  "id": "lights",
+  "icon": "/drivers/lights/assets/icon.svg",
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  }
+}

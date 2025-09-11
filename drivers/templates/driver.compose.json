@@ -1,0 +1,34 @@
+{
+  "name": {
+    "en": "Template Device"
+  },
+  "class": "sensor",
+  "capabilities": [],
+  "capabilitiesOptions": {},
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "modelId": [
+      "Model"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3
+        ]
+      }
+    },
+    "productId": [
+      "TEMPLATE"
+    ]
+  },
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
+  },
+  "id": "templates",
+  "settings": []
+}

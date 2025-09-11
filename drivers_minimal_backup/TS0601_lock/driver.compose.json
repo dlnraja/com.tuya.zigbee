@@ -1,0 +1,59 @@
+{
+  "name": {
+    "en": "Tuya Smart Door Lock",
+    "fr": "Tuya Smart Door Lock",
+    "nl": "Tuya Smart Door Lock"
+  },
+  "class": "lock",
+  "capabilities": [
+    "locked",
+    "alarm_generic"
+  ],
+  "capabilitiesOptions": {},
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_*",
+      "_TZ3210_*",
+      "_TYZB01_*",
+      "_TYZB02_*",
+      "_TZ3400_*"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "deviceId": 81,
+    "profileId": 260,
+    "learnmode": {
+      "image": "./assets/images/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the reset button for 10 seconds",
+        "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+        "nl": "Houd de resetknop 10 seconden ingedrukt"
+      }
+    },
+    "endpoints": {
+      "1": {
+        "clusters": [
+          257,
+          1280
+        ],
+        "bindings": [
+          257,
+          1280
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png",
+    "xlarge": "./assets/images/xlarge.svg"
+  },
+  "id": "TS0601_lock",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}

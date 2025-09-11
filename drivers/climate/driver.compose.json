@@ -1,0 +1,47 @@
+{
+  "name": {
+    "en": "Tuya Device",
+    "fr": "Appareil Tuya",
+    "nl": "Tuya Apparaat"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_battery",
+    "onoff",
+    "dim",
+    "measure_power",
+    "target_temperature",
+    "measure_temperature"
+  ],
+  "capabilitiesOptions": {},
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "climate"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
+  },
+  "id": "climate",
+  "icon": "/drivers/climate/assets/icon.svg",
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "main": "app.js",
+  "id": "com.dlnraja.ultimate.zigbee.hub",
+  "version": "4.0.1",
+  "compatibility": ">=8.0.0",
+  "category": [
+    "lights"
+  ],
+  "name": {
+    "en": "Homey Ultimate Zigbee Hub",
+    "fr": "Homey Ultimate Zigbee Hub",
+    "nl": "Homey Ultimate Zigbee Hub",
+    "ta": "Homey Ultimate Zigbee Hub"
+  },
+  "description": {
+    "en": "Homey Ultimate Zigbee Hub: unified community Zigbee drivers with modular architecture and Windows 11 optimizations",
+    "fr": "Homey Ultimate Zigbee Hub : unification des drivers Zigbee communautaires avec architecture modulaire et optimisations Windows 11",
+    "nl": "Homey Ultimate Zigbee Hub: verenigde community Zigbee-drivers met modulaire architectuur en Windows 11-optimalisaties",
+    "ta": "Homey Ultimate Zigbee Hub: சமூக Zigbee இயக்கிகள் ஒன்றுபட்டவை, தொகுதி நிர்மாணமும் Windows 11 மேம்பாடுகளும்"
+  },
+  "author": {
+    "name": "dlnraja",
+    "email": "dylan.rajasekaram@gmail.com"
+  },
+  "contributors": {},
+  "support": "mailto:dylan.rajasekaram@gmail.com",
+  "homepage": "https://github.com/dlnraja/tuya_repair",
+  "license": "MIT",
+  "platforms": [
+    "local"
+  ],
+  "images": {
+    "large": "./assets/images/large.png",
+    "small": "./assets/images/small.png"
+  },
+  "icon": "assets/icon.svg",
+  "color": "#FF6B35",
+  "brandColor": "#FF0000",
+  "permissions": [
+    "homey:manager:api"
+  ],
+  "homey": "1.0.0",
+  "drivers": [
+    {
+      "id": "test_light",
+      "name": {
+        "en": "Test Light"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "Test"
+        ],
+        "productId": [
+          "TEST001"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/test_light/assets/images/small.png",
+        "large": "/drivers/test_light/assets/images/large.png"
+      }
+    }
+  ]
+}
