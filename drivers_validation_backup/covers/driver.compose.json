@@ -1,0 +1,38 @@
+{
+  "name": "Covers",
+  "class": "sensor",
+  "capabilities": [
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {},
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "covers"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    }
+  },
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
+  },
+  "id": "covers",
+  "icon": "/drivers/covers/assets/icon.svg",
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  }
+}

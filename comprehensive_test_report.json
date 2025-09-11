@@ -1,0 +1,91 @@
+{
+  "timestamp": "2025-09-11T18:44:13.991Z",
+  "summary": {
+    "totalTests": 13,
+    "successfulTests": 11,
+    "failedTests": 2,
+    "successRate": 85,
+    "errorsFound": 2
+  },
+  "results": [
+    {
+      "test": "Cache Cleanup",
+      "success": true
+    },
+    {
+      "test": "Project Structure",
+      "success": true,
+      "score": "6/6"
+    },
+    {
+      "test": "Driver Structure",
+      "success": true,
+      "score": "48/48",
+      "details": "48 drivers analyzed"
+    },
+    {
+      "test": "App.json Integrity",
+      "success": false,
+      "score": "6/7 fields",
+      "driverCoherence": true
+    },
+    {
+      "test": "Package.json Integrity",
+      "success": "^3.0.0",
+      "score": "4/4 fields",
+      "zigbeeDriverDep": true
+    },
+    {
+      "test": "Assets Integrity",
+      "success": true,
+      "score": "96/96 images"
+    },
+    {
+      "test": "JavaScript Syntax",
+      "success": true,
+      "score": "97/97 files"
+    },
+    {
+      "test": "JSON Validity",
+      "success": true,
+      "score": "50/50 files"
+    },
+    {
+      "test": "Imports Validity",
+      "success": true,
+      "score": "96/96 imports"
+    },
+    {
+      "test": "File Sizes",
+      "success": true,
+      "score": "3/3 reasonable"
+    },
+    {
+      "test": "Driver Count",
+      "success": true,
+      "count": 48,
+      "optimal": true
+    },
+    {
+      "test": "SDK3 Compatibility",
+      "success": false,
+      "compatibility": ">=8.0.0"
+    },
+    {
+      "test": "Homey Compatibility",
+      "success": "^3.0.0",
+      "hasZigbeeDep": true
+    }
+  ],
+  "errors": [
+    {
+      "test": "Homey CLI Validation",
+      "error": "Command failed: homey app validate --level publish"
+    },
+    {
+      "test": "App.json Integrity",
+      "error": "Missing field: sdk"
+    }
+  ],
+  "recommendation": "Le projet est fonctionnel mais nécessite quelques corrections mineures avant publication."
+}

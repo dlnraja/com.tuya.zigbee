@@ -1,0 +1,38 @@
+{
+  "name": "Security Devices",
+  "class": "sensor",
+  "capabilities": [
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {},
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "security"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    }
+  },
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
+  },
+  "id": "security",
+  "icon": "/drivers/security/assets/icon.svg",
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  }
+}

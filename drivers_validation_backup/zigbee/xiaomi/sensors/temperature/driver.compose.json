@@ -1,0 +1,48 @@
+{
+  "id": "lumi_sensor_ht",
+  "name": {
+    "en": "Xiaomi Temperature Sensor",
+    "fr": "Capteur de Température Xiaomi"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+  ],
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
+  },
+  "icon": "assets/icon.svg",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "lumi_sensor_ht"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  }
+}

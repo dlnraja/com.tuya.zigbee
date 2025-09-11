@@ -1,0 +1,345 @@
+{
+  "timestamp": "2025-09-11T18:57:07.999Z",
+  "extractedData": {
+    "johanRepoDriversCount": 31,
+    "homeyForumPostsCount": 0,
+    "openPRsCount": 0,
+    "openIssuesCount": 2,
+    "nlpAnalysis": {
+      "deviceModelsCount": 43,
+      "manufacturersCount": 0,
+      "capabilitiesCount": 4,
+      "clustersCount": 50,
+      "topDeviceModels": [
+        "ts0601",
+        "ts0501b",
+        "tuya",
+        "tuya-developer",
+        "zigbee",
+        "zigbee2mqtt",
+        "switch_1ch",
+        "switch",
+        "switch_2ch",
+        "light"
+      ],
+      "topCapabilities": [
+        "onoff",
+        "dim",
+        "measure_power",
+        "light_temperature"
+      ]
+    }
+  },
+  "enrichmentPlan": {
+    "driverEnhancements": [
+      {
+        "driverId": "aqara_motion_sensor",
+        "currentCapabilities": [
+          "alarm_motion",
+          "measure_battery",
+          "measure_luminance"
+        ],
+        "suggestedCapabilities": [
+          "onoff",
+          "dim",
+          "measure_power"
+        ],
+        "zigbeeOptimizations": [
+          {
+            "type": "clusters",
+            "suggestion": {
+              "1": {
+                "clusters": [
+                  0,
+                  1,
+                  1280
+                ]
+              }
+            }
+          }
+        ],
+        "imageUpdates": []
+      },
+      {
+        "driverId": "bosch_thermostat_valve",
+        "currentCapabilities": [
+          "measure_temperature",
+          "target_temperature",
+          "measure_battery"
+        ],
+        "suggestedCapabilities": [
+          "onoff",
+          "dim",
+          "measure_power"
+        ],
+        "zigbeeOptimizations": [
+          {
+            "type": "clusters",
+            "suggestion": {
+              "1": {
+                "clusters": [
+                  0,
+                  1,
+                  1026,
+                  513
+                ]
+              }
+            }
+          }
+        ],
+        "imageUpdates": []
+      },
+      {
+        "driverId": "climate",
+        "currentCapabilities": [
+          "measure_battery"
+        ],
+        "suggestedCapabilities": [
+          "onoff",
+          "dim",
+          "measure_power"
+        ],
+        "zigbeeOptimizations": [
+          {
+            "type": "clusters",
+            "suggestion": {
+              "1": {
+                "clusters": [
+                  0,
+                  1
+                ],
+                "bindings": [
+                  1
+                ]
+              }
+            }
+          }
+        ],
+        "imageUpdates": []
+      },
+      {
+        "driverId": "common",
+        "currentCapabilities": [
+          "measure_battery"
+        ],
+        "suggestedCapabilities": [
+          "onoff",
+          "dim",
+          "measure_power"
+        ],
+        "zigbeeOptimizations": [
+          {
+            "type": "clusters",
+            "suggestion": {
+              "1": {
+                "clusters": [
+                  0,
+                  1
+                ],
+                "bindings": [
+                  1
+                ]
+              }
+            }
+          }
+        ],
+        "imageUpdates": []
+      },
+      {
+        "driverId": "covers",
+        "currentCapabilities": [
+          "measure_battery"
+        ],
+        "suggestedCapabilities": [
+          "onoff",
+          "dim",
+          "measure_power"
+        ],
+        "zigbeeOptimizations": [
+          {
+            "type": "clusters",
+            "suggestion": {
+              "1": {
+                "clusters": [
+                  0,
+                  1
+                ],
+                "bindings": [
+                  1
+                ]
+              }
+            }
+          }
+        ],
+        "imageUpdates": []
+      },
+      {
+        "driverId": "ikea_tradfri_bulb",
+        "currentCapabilities": [
+          "onoff",
+          "dim",
+          "light_temperature"
+        ],
+        "suggestedCapabilities": [
+          "measure_power"
+        ],
+        "zigbeeOptimizations": [
+          {
+            "type": "clusters",
+            "suggestion": {
+              "1": {
+                "clusters": [
+                  0,
+                  6,
+                  8,
+                  768
+                ]
+              }
+            }
+          }
+        ],
+        "imageUpdates": []
+      },
+      {
+        "driverId": "lights",
+        "currentCapabilities": [
+          "measure_battery"
+        ],
+        "suggestedCapabilities": [
+          "onoff",
+          "dim",
+          "measure_power"
+        ],
+        "zigbeeOptimizations": [
+          {
+            "type": "clusters",
+            "suggestion": {
+              "1": {
+                "clusters": [
+                  0,
+                  1
+                ],
+                "bindings": [
+                  1
+                ]
+              }
+            }
+          }
+        ],
+        "imageUpdates": []
+      },
+      {
+        "driverId": "manufacturers_root",
+        "currentCapabilities": [
+          "measure_battery"
+        ],
+        "suggestedCapabilities": [
+          "onoff",
+          "dim",
+          "measure_power"
+        ],
+        "zigbeeOptimizations": [
+          {
+            "type": "clusters",
+            "suggestion": {
+              "1": {
+                "clusters": [
+                  0,
+                  1
+                ],
+                "bindings": [
+                  1
+                ]
+              }
+            }
+          }
+        ],
+        "imageUpdates": []
+      },
+      {
+        "driverId": "protocols_container",
+        "currentCapabilities": [],
+        "suggestedCapabilities": [
+          "onoff",
+          "dim",
+          "measure_power"
+        ],
+        "zigbeeOptimizations": [
+          {
+            "type": "clusters",
+            "suggestion": {
+              "1": {
+                "clusters": [
+                  0,
+                  1
+                ],
+                "bindings": [
+                  1
+                ]
+              }
+            }
+          }
+        ],
+        "imageUpdates": []
+      },
+      {
+        "driverId": "security",
+        "currentCapabilities": [
+          "measure_battery"
+        ],
+        "suggestedCapabilities": [
+          "onoff",
+          "dim",
+          "measure_power"
+        ],
+        "zigbeeOptimizations": [
+          {
+            "type": "clusters",
+            "suggestion": {
+              "1": {
+                "clusters": [
+                  0,
+                  1
+                ],
+                "bindings": [
+                  1
+                ]
+              }
+            }
+          }
+        ],
+        "imageUpdates": []
+      }
+    ],
+    "newDriverOpportunities": [
+      "ts0501b",
+      "tuya-developer",
+      "switch_1ch",
+      "switch_2ch",
+      "light_temperature"
+    ],
+    "imageImprovements": [],
+    "configurationUpdates": [
+      {
+        "type": "permissions",
+        "suggestion": [
+          "homey:manager:api"
+        ],
+        "source": "johan_repo"
+      },
+      {
+        "type": "compatibility",
+        "suggestion": ">=8.0.0",
+        "source": "johan_repo"
+      }
+    ],
+    "documentationUpdates": []
+  },
+  "recommendations": [
+    "Appliquer enrichissements drivers identifiés",
+    "Mettre à jour images selon standards Homey + style Johan",
+    "Intégrer nouvelles capabilities découvertes",
+    "Optimiser configurations Zigbee",
+    "Ajouter nouveaux drivers pour devices manquants"
+  ]
+}

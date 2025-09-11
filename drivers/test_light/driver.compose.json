@@ -1,0 +1,35 @@
+{
+  "id": "test_light",
+  "name": {
+    "en": "Test Light"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "Test"
+    ],
+    "productId": [
+      "TEST001"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6,
+          1,
+          3
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
+  }
+}
