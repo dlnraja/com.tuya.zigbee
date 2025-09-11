@@ -1,9 +1,0 @@
-{
-  "name": "Deadbolt_Lock",
-  "type": "tuya_zigbee",
-  "category": "lock",
-  "source": "drivers\\tuya_zigbee\\models\\tuya-deadbolt-850_lock_standard_default_1",
-  "created": "2025-08-14T15:25:23.393Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}
