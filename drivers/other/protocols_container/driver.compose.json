@@ -1,0 +1,34 @@
+{
+  "name": {
+    "en": "Tuya protocols_container",
+    "fr": "Tuya protocols_container",
+    "nl": "Tuya protocols_container"
+  },
+  "class": "other",
+  "capabilities": [],
+  "capabilitiesOptions": {},
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "protocols_container"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
+  },
+  "id": "protocols_container"
+}

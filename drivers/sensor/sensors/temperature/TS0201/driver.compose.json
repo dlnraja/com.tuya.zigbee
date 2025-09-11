@@ -1,0 +1,62 @@
+{
+  "id": "TS0201",
+  "name": {
+    "en": "Temperature & Humidity Sensor",
+    "nl": "Temperatuur & Vochtigheid Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "images": {
+    "small": "/drivers/sensors/temperature/TS0201/assets/images/small.png",
+    "large": "/drivers/sensors/temperature/TS0201/assets/images/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya",
+      "Tuya",
+      "_TZ3000_saiqcn0y",
+      "_TZ3000_fllyghyj",
+      "_TZ3210_ncw88jfq",
+      "_TYZB01_hjsgdkfl",
+      "_TYZB01_a476raq2",
+      "_TYZB01_cbiezpds"
+    ],
+    "productId": [
+      "TS0201",
+      "TH01",
+      "TH02"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1026,
+          1029,
+          61184
+        ],
+        "bindings": [
+          1,
+          1026,
+          1029
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the button for 5 seconds until the LED blinks",
+        "nl": "Houd de knop 5 seconden ingedrukt tot de LED knippert"
+      }
+    }
+  }
+}

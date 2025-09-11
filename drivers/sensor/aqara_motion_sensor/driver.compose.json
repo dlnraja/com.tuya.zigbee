@@ -1,0 +1,56 @@
+{
+  "name": {
+    "en": "Aqara Motion Sensor",
+    "fr": "Capteur de Mouvement Aqara"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_battery",
+    "measure_luminance"
+  ],
+  "capabilitiesOptions": {},
+  "zigbee": {
+    "manufacturerName": [
+      "Aqara",
+      "LUMI"
+    ],
+    "productId": [
+      "RTCGQ11LM",
+      "lumi.sensor_motion"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1280
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
+  },
+  "id": "aqara_motion_sensor",
+  "icon": "/drivers/aqara_motion_sensor/assets/icon.svg",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  }
+}

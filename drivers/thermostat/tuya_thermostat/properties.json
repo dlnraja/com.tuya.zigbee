@@ -1,0 +1,13 @@
+{
+  "name": "Thermostat",
+  "description": "Tuya Zigbee Thermostat",
+  "type": "thermostat",
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "thermostat"
+  }
+}
