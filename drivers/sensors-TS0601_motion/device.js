@@ -11,7 +11,10 @@ const MOTION_TIMEOUT_MS = 60 * 1000; // 1 minute
  * TS0601 Motion Sensor Device
  * @extends TuyaZigbeeMultiSensorDevice
  */
-class TS0601MotionSensorDevice extends BaseZigbeeDevice {
+class TS0601MotionSensorDeviceDevice {
+  constructor() {
+    this.clusterCache = new Map();
+  } extends BaseZigbeeDevice {
   
   /**
    * Device initialization
@@ -89,7 +92,6 @@ class TS0601MotionSensorDevice extends BaseZigbeeDevice {
       this.logger.error('Error applying device configuration:', error);
       throw error;
     }
-  }
   
   /**
    * Set up IAS Zone enrollment
@@ -112,7 +114,6 @@ class TS0601MotionSensorDevice extends BaseZigbeeDevice {
     } catch (error) {
       this.logger.error('Error during IAS Zone enrollment:', error);
     }
-  }
   
   /**
    * Handle IAS Zone updates for motion detection
@@ -137,7 +138,6 @@ class TS0601MotionSensorDevice extends BaseZigbeeDevice {
       } catch (error) {
         this.logger.error('Error handling IAS Zone update:', error);
       }
-    }
   }
   
   /**
@@ -175,7 +175,6 @@ class TS0601MotionSensorDevice extends BaseZigbeeDevice {
       clearTimeout(this.motionTimeout);
       this.motionTimeout = null;
     }
-  }
   
   /**
    * Handle setting changes
@@ -200,7 +199,6 @@ class TS0601MotionSensorDevice extends BaseZigbeeDevice {
           .catch(err => this.logger.error('Error clearing motion state:', err));
       }, newValue * 1000);
     }
-  }
   
   /**
    * Handle temperature offset setting change
@@ -214,7 +212,6 @@ class TS0601MotionSensorDevice extends BaseZigbeeDevice {
     if (this.hasCapability('measure_temperature')) {
       await this.readTemperature();
     }
-  }
   
   /**
    * Set up periodic polling for device state
@@ -237,7 +234,6 @@ class TS0601MotionSensorDevice extends BaseZigbeeDevice {
         );
       }, 6 * 60 * 60 * 1000);
     }
-  }
   
   /**
    * Read temperature from the device
@@ -266,7 +262,6 @@ class TS0601MotionSensorDevice extends BaseZigbeeDevice {
       this.logger.error('Error reading temperature:', error);
       throw error;
     }
-  }
   
   /**
    * Read battery level from the device
@@ -300,7 +295,6 @@ class TS0601MotionSensorDevice extends BaseZigbeeDevice {
       this.logger.error('Error reading battery level:', error);
       throw error;
     }
-  }
   
   /**
    * Sync device state with the actual device
@@ -333,13 +327,10 @@ class TS0601MotionSensorDevice extends BaseZigbeeDevice {
             if (motionDetected) {
               this.onMotionDetected();
             }
-          }
         }
-      }
     } catch (error) {
       this.logger.error('Error syncing device state:', error);
     }
-  }
   
   /**
    * Clean up resources when device is deleted
@@ -363,6 +354,5 @@ class TS0601MotionSensorDevice extends BaseZigbeeDevice {
     
     await super.onDeleted();
   }
-}
 
 module.exports = TS0601MotionSensorDevice;

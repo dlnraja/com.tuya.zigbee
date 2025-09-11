@@ -43,6 +43,302 @@
   "homey": "1.0.0",
   "drivers": [
     {
+      "name": {
+        "en": "Tuya Smart Thermostat/Climate Controller",
+        "fr": "Tuya Smart Thermostat/Climate Controller",
+        "nl": "Tuya Smart Thermostat/Climate Controller"
+      },
+      "class": "thermostat",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "thermostat_mode"
+      ],
+      "capabilitiesOptions": {},
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_*",
+          "_TZ3210_*",
+          "_TYZB01_*",
+          "_TYZB02_*",
+          "_TZ3400_*"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "deviceId": 81,
+        "profileId": 260,
+        "learnmode": {
+          "image": "./assets/images/learnmode.svg",
+          "instruction": {
+            "en": "Press and hold the reset button for 10 seconds",
+            "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+            "nl": "Houd de resetknop 10 seconden ingedrukt"
+          }
+        },
+        "endpoints": {
+          "1": {
+            "clusters": [
+              513,
+              514,
+              1026
+            ],
+            "bindings": [
+              513,
+              514,
+              1026
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.svg"
+      },
+      "id": "TS0601_climate",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ]
+    },
+    {
+      "name": {
+        "en": "Tuya Smart Curtain/Blind Controller",
+        "fr": "Tuya Smart Curtain/Blind Controller",
+        "nl": "Tuya Smart Curtain/Blind Controller"
+      },
+      "class": "windowcoverings",
+      "capabilities": [
+        "windowcoverings_state",
+        "dim"
+      ],
+      "capabilitiesOptions": {},
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_*",
+          "_TZ3210_*",
+          "_TYZB01_*",
+          "_TYZB02_*",
+          "_TZ3400_*"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "deviceId": 81,
+        "profileId": 260,
+        "learnmode": {
+          "image": "./assets/images/learnmode.svg",
+          "instruction": {
+            "en": "Press and hold the reset button for 10 seconds",
+            "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+            "nl": "Houd de resetknop 10 seconden ingedrukt"
+          }
+        },
+        "endpoints": {
+          "1": {
+            "clusters": [
+              258
+            ],
+            "bindings": [
+              258
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.svg"
+      },
+      "id": "TS0601_cover",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ]
+    },
+    {
+      "name": {
+        "en": "Tuya Smart Irrigation Controller",
+        "fr": "Tuya Smart Irrigation Controller",
+        "nl": "Tuya Smart Irrigation Controller"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "measure_humidity"
+      ],
+      "capabilitiesOptions": {},
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_*",
+          "_TZ3210_*",
+          "_TYZB01_*",
+          "_TYZB02_*",
+          "_TZ3400_*"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "deviceId": 81,
+        "profileId": 260,
+        "learnmode": {
+          "image": "./assets/images/learnmode.svg",
+          "instruction": {
+            "en": "Press and hold the reset button for 10 seconds",
+            "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+            "nl": "Houd de resetknop 10 seconden ingedrukt"
+          }
+        },
+        "endpoints": {
+          "1": {
+            "clusters": [
+              6,
+              1029
+            ],
+            "bindings": [
+              6,
+              1029
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.svg"
+      },
+      "id": "TS0601_irrigation",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ]
+    },
+    {
+      "name": {
+        "en": "Tuya Smart Door Lock",
+        "fr": "Tuya Smart Door Lock",
+        "nl": "Tuya Smart Door Lock"
+      },
+      "class": "lock",
+      "capabilities": [
+        "locked",
+        "alarm_generic"
+      ],
+      "capabilitiesOptions": {},
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_*",
+          "_TZ3210_*",
+          "_TYZB01_*",
+          "_TYZB02_*",
+          "_TZ3400_*"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "deviceId": 81,
+        "profileId": 260,
+        "learnmode": {
+          "image": "./assets/images/learnmode.svg",
+          "instruction": {
+            "en": "Press and hold the reset button for 10 seconds",
+            "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+            "nl": "Houd de resetknop 10 seconden ingedrukt"
+          }
+        },
+        "endpoints": {
+          "1": {
+            "clusters": [
+              257,
+              1280
+            ],
+            "bindings": [
+              257,
+              1280
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.svg"
+      },
+      "id": "TS0601_lock",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ]
+    },
+    {
+      "name": {
+        "en": "Tuya Smart Siren/Alarm",
+        "fr": "Tuya Smart Siren/Alarm",
+        "nl": "Tuya Smart Siren/Alarm"
+      },
+      "class": "other",
+      "capabilities": [
+        "alarm_generic",
+        "onoff"
+      ],
+      "capabilitiesOptions": {},
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_*",
+          "_TZ3210_*",
+          "_TYZB01_*",
+          "_TYZB02_*",
+          "_TZ3400_*"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "deviceId": 81,
+        "profileId": 260,
+        "learnmode": {
+          "image": "./assets/images/learnmode.svg",
+          "instruction": {
+            "en": "Press and hold the reset button for 10 seconds",
+            "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+            "nl": "Houd de resetknop 10 seconden ingedrukt"
+          }
+        },
+        "endpoints": {
+          "1": {
+            "clusters": [
+              1282,
+              6
+            ],
+            "bindings": [
+              1282,
+              6
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.svg"
+      },
+      "id": "TS0601_siren",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ]
+    },
+    {
       "id": "_base",
       "name": {
         "en": "Base Driver"
@@ -184,7 +480,6 @@
       }
     },
     {
-      "id": "aqara_motion_sensor",
       "name": {
         "en": "Aqara Motion Sensor",
         "fr": "Capteur de Mouvement Aqara"
@@ -194,24 +489,7 @@
         "alarm_motion",
         "measure_battery"
       ],
-      "icon": "/drivers/aqara_motion_sensor/assets/icon.svg",
-      "images": {
-        "large": "/drivers/aqara_motion_sensor/assets/images/large.png",
-        "small": "/drivers/aqara_motion_sensor/assets/images/small.png"
-      },
-      "pair": [
-        {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
-        },
-        {
-          "id": "add_devices",
-          "template": "add_devices"
-        }
-      ],
+      "capabilitiesOptions": {},
       "zigbee": {
         "manufacturerName": [
           "Aqara",
@@ -230,25 +508,13 @@
             ]
           }
         }
-      }
-    },
-    {
-      "id": "bosch_thermostat_valve",
-      "name": {
-        "en": "Bosch Thermostat Valve",
-        "fr": "Tête Thermostatique Bosch"
       },
-      "class": "thermostat",
-      "capabilities": [
-        "measure_temperature",
-        "target_temperature",
-        "measure_battery"
-      ],
-      "icon": "/drivers/bosch_thermostat_valve/assets/icon.svg",
       "images": {
-        "large": "/drivers/bosch_thermostat_valve/assets/images/large.png",
-        "small": "/drivers/bosch_thermostat_valve/assets/images/small.png"
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
       },
+      "id": "aqara_motion_sensor",
+      "icon": "/drivers/aqara_motion_sensor/assets/icon.svg",
       "pair": [
         {
           "id": "list_devices",
@@ -261,7 +527,20 @@
           "id": "add_devices",
           "template": "add_devices"
         }
+      ]
+    },
+    {
+      "name": {
+        "en": "Bosch Thermostat Valve",
+        "fr": "Tête Thermostatique Bosch"
+      },
+      "class": "thermostat",
+      "capabilities": [
+        "measure_temperature",
+        "target_temperature",
+        "measure_battery"
       ],
+      "capabilitiesOptions": {},
       "zigbee": {
         "manufacturerName": [
           "Bosch"
@@ -279,13 +558,34 @@
             ]
           }
         }
-      }
+      },
+      "images": {
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
+      },
+      "id": "bosch_thermostat_valve",
+      "icon": "/drivers/bosch_thermostat_valve/assets/icon.svg",
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
     },
     {
-      "id": "climate",
       "name": "Climate Devices",
-      "icon": "/drivers/climate/assets/icon.svg",
       "class": "sensor",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "capabilitiesOptions": {},
       "zigbee": {
         "manufacturerName": [
           "Tuya"
@@ -305,15 +605,20 @@
           }
         }
       },
-      "capabilities": [
-        "measure_battery"
-      ]
+      "images": {
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
+      },
+      "id": "climate",
+      "icon": "/drivers/climate/assets/icon.svg"
     },
     {
-      "id": "common",
       "name": "Common Utilities",
-      "icon": "/drivers/common/assets/icon.svg",
       "class": "sensor",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "capabilitiesOptions": {},
       "zigbee": {
         "manufacturerName": [
           "Tuya"
@@ -333,15 +638,20 @@
           }
         }
       },
-      "capabilities": [
-        "measure_battery"
-      ]
+      "images": {
+        "large": "/drivers/common/assets/images/large.png",
+        "small": "/drivers/common/assets/images/small.png"
+      },
+      "id": "common",
+      "icon": "/drivers/common/assets/icon.svg"
     },
     {
-      "id": "covers",
       "name": "Covers",
-      "icon": "/drivers/covers/assets/icon.svg",
       "class": "sensor",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "capabilitiesOptions": {},
       "zigbee": {
         "manufacturerName": [
           "Tuya"
@@ -361,12 +671,43 @@
           }
         }
       },
-      "capabilities": [
-        "measure_battery"
-      ]
+      "images": {
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
+      },
+      "id": "covers",
+      "icon": "/drivers/covers/assets/icon.svg"
     },
     {
-      "id": "ikea_tradfri_bulb",
+      "id": "generic",
+      "name": {
+        "en": "Tuya Generic Drivers Container",
+        "fr": "Conteneur Drivers Génériques Tuya",
+        "nl": "Tuya Generieke Drivers Container"
+      },
+      "class": "other",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": "_PLACEHOLDER_",
+        "productId": "_PLACEHOLDER_",
+        "endpoints": {
+          "1": {
+            "clusters": [],
+            "bindings": []
+          }
+        }
+      },
+      "images": {
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
+      },
+      "settings": [],
+      "_internal": {
+        "container_only": true,
+        "hidden": true
+      }
+    },
+    {
       "name": {
         "en": "IKEA TRÅDFRI Bulb",
         "fr": "Ampoule IKEA TRÅDFRI"
@@ -377,24 +718,7 @@
         "dim",
         "light_temperature"
       ],
-      "icon": "/drivers/ikea_tradfri_bulb/assets/icon.svg",
-      "images": {
-        "large": "/drivers/ikea_tradfri_bulb/assets/images/large.png",
-        "small": "/drivers/ikea_tradfri_bulb/assets/images/small.png"
-      },
-      "pair": [
-        {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
-        },
-        {
-          "id": "add_devices",
-          "template": "add_devices"
-        }
-      ],
+      "capabilitiesOptions": {},
       "zigbee": {
         "manufacturerName": [
           "IKEA"
@@ -413,16 +737,40 @@
             ]
           }
         }
-      }
+      },
+      "images": {
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
+      },
+      "id": "ikea_tradfri_bulb",
+      "icon": "/drivers/ikea_tradfri_bulb/assets/icon.svg",
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
     },
     {
-      "id": "lights",
       "name": "Lights",
-      "icon": "/drivers/lights/assets/icon.svg",
       "class": "sensor",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "capabilitiesOptions": {},
       "zigbee": {
         "manufacturerName": [
-          "Tuya"
+          "_TZ3000_*",
+          "_TZ3210_*",
+          "_TYZB01_*",
+          "_TZ3300_*"
         ],
         "productId": [
           "lights"
@@ -439,14 +787,20 @@
           }
         }
       },
-      "capabilities": [
-        "measure_battery"
-      ]
+      "images": {
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
+      },
+      "id": "lights",
+      "icon": "/drivers/lights/assets/icon.svg"
     },
     {
-      "id": "manufacturers",
       "name": "Manufacturers Container",
       "class": "sensor",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "capabilitiesOptions": {},
       "zigbee": {
         "manufacturerName": [
           "Tuya"
@@ -466,14 +820,17 @@
           }
         }
       },
-      "capabilities": [
-        "measure_battery"
-      ]
+      "images": {
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
+      },
+      "id": "manufacturers"
     },
     {
-      "id": "protocols",
       "name": "Protocols Container",
       "class": "folder",
+      "capabilities": [],
+      "capabilitiesOptions": {},
       "zigbee": {
         "manufacturerName": [
           "Tuya"
@@ -493,13 +850,19 @@
           }
         }
       },
-      "capabilities": []
+      "images": {
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
+      },
+      "id": "protocols"
     },
     {
-      "id": "security",
       "name": "Security Devices",
-      "icon": "/drivers/security/assets/icon.svg",
       "class": "sensor",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "capabilitiesOptions": {},
       "zigbee": {
         "manufacturerName": [
           "Tuya"
@@ -519,18 +882,32 @@
           }
         }
       },
-      "capabilities": [
-        "measure_battery"
-      ]
+      "images": {
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
+      },
+      "id": "security",
+      "icon": "/drivers/security/assets/icon.svg"
     },
     {
-      "id": "sensors",
       "name": "Sensors",
-      "icon": "/drivers/sensors/assets/icon.svg",
       "class": "sensor",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "capabilitiesOptions": {},
       "zigbee": {
         "manufacturerName": [
-          "Tuya"
+          "_TZE200_7tdtqgwv",
+          "_TZE200_amp6tsvy",
+          "_TZE200_7yodxhya",
+          "_TZE200_locansqn",
+          "_TZE200_3i3exu4n",
+          "_TZE200_7hfcudw5",
+          "_TZE200_3towulqd",
+          "_TZE200_whpb9y8z",
+          "_TZE200_7yuohek9",
+          "_TZE200_3towolqd"
         ],
         "productId": [
           "sensors"
@@ -547,13 +924,15 @@
           }
         }
       },
-      "capabilities": [
-        "measure_battery"
-      ]
+      "images": {
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
+      },
+      "id": "sensors",
+      "icon": "/drivers/sensors/assets/icon.svg"
     },
     {
-      "id": "sensors-TS0601_motion",
-      "title": {
+      "name": {
         "en": "Tuya TS0601 Motion Sensor",
         "fr": "Détecteur de mouvement Tuya TS0601",
         "nl": "Tuya TS0601 Bewegingssensor",
@@ -565,14 +944,7 @@
         "measure_temperature",
         "measure_battery",
         "alarm_battery",
-        "onoff",
-        "measure_power",
-        "meter_power",
-        "fan_speed",
-        "dim",
-        "target_temperature",
-        "windowcoverings_state",
-        "lock_state"
+        "measure_power"
       ],
       "capabilitiesOptions": {
         "alarm_motion": {
@@ -610,11 +982,53 @@
           }
         }
       },
-      "images": {
-        "small": "assets/small.png",
-        "large": "assets/large.png"
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_7tdtqgwv",
+          "_TZE200_amp6tsvy",
+          "_TZE200_7yodxhya",
+          "_TZE200_locansqn",
+          "_TZE200_3i3exu4n",
+          "_TZE200_7hfcudw5",
+          "_TZE200_3towulqd",
+          "_TZE200_whpb9y8z",
+          "_TZE200_7yuohek9",
+          "_TZE200_3towolqd"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6,
+              1280
+            ],
+            "bindings": [
+              1026,
+              1
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/sensors-TS0601_motion/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the pairing button on the device for 5 seconds until the LED starts blinking",
+            "fr": "Appuyez et maintenez le bouton d'appairage sur l'appareil pendant 5 secondes jusqu'à ce que la LED clignote",
+            "nl": "Houd de koppelknop op het apparaat 5 seconden ingedrukt totdat de LED gaat knipperen",
+            "ta": "சாதனத்தில் இணைப்பு பொத்தானை 5 விநாடிகள் அழுத்திப் பிடிக்கவும், LED ஒளிரும் வரை"
+          }
+        }
       },
-      "name": {
+      "images": {
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
+      },
+      "id": "sensors-TS0601_motion",
+      "title": {
         "en": "Tuya TS0601 Motion Sensor",
         "fr": "Détecteur de mouvement Tuya TS0601",
         "nl": "Tuya TS0601 Bewegingssensor",
@@ -665,61 +1079,6 @@
           }
         }
       ],
-      "zigbee": {
-        "manufacturerName": [
-          "_TZE200_7tdtqgwv",
-          "_TZE200_amp6tsvy",
-          "_TZE200_7yodxhya",
-          "_TZE200_locansqn",
-          "_TZE200_3i3exu4n",
-          "_TZE200_7hfcudw5",
-          "_TZE200_3towulqd",
-          "_TZE200_whpb9y8z",
-          "_TZE200_7yuohek9",
-          "_TZE200_3towolqd"
-        ],
-        "productId": [
-          "TS0601"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              1,
-              3,
-              6,
-              1280
-            ],
-            "bindings": [
-              {
-                "type": "report",
-                "cluster": "msTemperatureMeasurement",
-                "attribute": "measuredValue",
-                "minInterval": 60,
-                "maxInterval": 3600,
-                "minChange": 10
-              },
-              {
-                "type": "report",
-                "cluster": "genPowerCfg",
-                "attribute": "batteryPercentageRemaining",
-                "minInterval": 3600,
-                "maxInterval": 21600,
-                "minChange": 1
-              }
-            ]
-          }
-        },
-        "learnmode": {
-          "image": "/drivers/sensors-TS0601_motion/assets/learn.svg",
-          "instruction": {
-            "en": "Press and hold the pairing button on the device for 5 seconds until the LED starts blinking",
-            "fr": "Appuyez et maintenez le bouton d'appairage sur l'appareil pendant 5 secondes jusqu'à ce que la LED clignote",
-            "nl": "Houd de koppelknop op het apparaat 5 seconden ingedrukt totdat de LED gaat knipperen",
-            "ta": "சாதனத்தில் இணைப்பு பொத்தானை 5 விநாடிகள் அழுத்திப் பிடிக்கவும், LED ஒளிரும் வரை"
-          }
-        }
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -736,10 +1095,12 @@
       "icon": "/drivers/manufacturers/sensors-TS0601/sensors-TS0601_motion/assets/icon.svg"
     },
     {
-      "id": "switches",
       "name": "Switches",
-      "icon": "/drivers/switches/assets/icon.svg",
       "class": "sensor",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "capabilitiesOptions": {},
       "zigbee": {
         "manufacturerName": [
           "Tuya"
@@ -759,50 +1120,84 @@
           }
         }
       },
-      "capabilities": [
-        "measure_battery"
-      ]
+      "images": {
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
+      },
+      "id": "switches",
+      "icon": "/drivers/switches/assets/icon.svg"
     },
     {
-      "id": "templates",
       "name": {
         "en": "Template Device"
       },
       "class": "sensor",
       "capabilities": [],
+      "capabilitiesOptions": {},
       "zigbee": {
-        "manufacturerName": "Manufacturer",
+        "manufacturerName": [
+          "Tuya"
+        ],
         "modelId": [
           "Model"
         ],
         "endpoints": {
           "1": {
             "clusters": [
-              "genBasic"
+              0
+            ]
+          }
+        },
+        "productId": [
+          "TEMPLATE"
+        ]
+      },
+      "images": {
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
+      },
+      "id": "templates",
+      "settings": []
+    },
+    {
+      "name": {
+        "en": "tuya",
+        "fr": "tuya"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff"
+      ],
+      "capabilitiesOptions": {},
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "productId": [
+          "GENERIC"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
             ]
           }
         }
       },
       "images": {
-        "large": "assets/images/large/template.png",
-        "small": "assets/images/small/template.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
-      "settings": []
-    },
-    {
       "id": "tuya",
-      "class": "other",
-      "name": {
-        "en": "tuya",
-        "fr": "tuya"
-      },
-      "capabilities": [
-        "onoff"
-      ],
-      "images": {
-        "small": "assets/small.png",
-        "large": "assets/large.png"
-      },
       "icon": "/drivers/manufacturers/tuya/tuya/assets/icon.svg",
       "pair": [
         {
@@ -816,32 +1211,18 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "Tuya"
-        ],
-        "productId": [
-          "GENERIC"
-        ]
-      }
+      ]
     },
     {
-      "id": "tuya-ts0011",
       "name": {
         "en": "Tuya TS0011 Smart Switch"
       },
-      "description": {
-        "en": "Adds support for Tuya TS0011 Smart Switch"
-      },
-      "category": [
-        "switch"
+      "class": "sensor",
+      "capabilities": [
+        "onoff",
+        "measure_battery"
       ],
-      "compat": true,
-      "images": {
-        "large": "/drivers/tuya-ts0011/assets/images/device-large.png",
-        "small": "/drivers/tuya-ts0011/assets/images/device-small.png"
-      },
+      "capabilitiesOptions": {},
       "zigbee": {
         "manufacturerName": [
           "Tuya-ts0011"
@@ -871,6 +1252,18 @@
           }
         }
       },
+      "images": {
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
+      },
+      "id": "tuya-ts0011",
+      "description": {
+        "en": "Adds support for Tuya TS0011 Smart Switch"
+      },
+      "category": [
+        "switch"
+      ],
+      "compat": true,
       "pair": [
         {
           "id": "list_devices",
@@ -884,11 +1277,6 @@
           "template": "add_devices"
         }
       ],
-      "class": "sensor",
-      "capabilities": [
-        "onoff",
-        "measure_battery"
-      ],
       "icon": "/drivers/manufacturers/tuya-ts0011/tuya-ts0011/assets/icon.svg"
     },
     {
@@ -896,10 +1284,6 @@
         "en": "Tuya Smart Plug (TS011F)",
         "fr": "Prise intelligente Tuya (TS011F)",
         "nl": "Tuya Slimme stekker (TS011F)"
-      },
-      "images": {
-        "large": "/drivers/tuya-ts011f/assets/images/large.png",
-        "small": "/drivers/tuya-ts011f/assets/images/small.png"
       },
       "class": "socket",
       "capabilities": [
@@ -931,6 +1315,39 @@
           },
           "units": "kWh"
         }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya-ts011f"
+        ],
+        "modelId": [
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              6,
+              1794,
+              2820
+            ]
+          }
+        },
+        "class": "socket",
+        "productId": [
+          "GENERIC"
+        ]
+      },
+      "images": {
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
       },
       "settings": [
         {
@@ -980,35 +1397,6 @@
           ]
         }
       ],
-      "zigbee": {
-        "manufacturerName": [
-          "Tuya-ts011f"
-        ],
-        "modelId": [
-          "TS011F"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              4,
-              5,
-              6,
-              1794,
-              2820
-            ],
-            "bindings": [
-              6,
-              1794,
-              2820
-            ]
-          }
-        },
-        "class": "socket",
-        "productId": [
-          "GENERIC"
-        ]
-      },
       "pair": [
         {
           "id": "start",
@@ -1038,6 +1426,718 @@
     },
     {
       "name": {
+        "en": "Future Tuya AI-Enhanced Device",
+        "fr": "Future Tuya AI-Enhanced Device",
+        "nl": "Future Tuya AI-Enhanced Device"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "measure_generic",
+        "alarm_generic"
+      ],
+      "capabilitiesOptions": {},
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_*",
+          "_TZ3210_*",
+          "_TYZB01_*",
+          "_TYZB02_*",
+          "_TZ3400_*"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "deviceId": 81,
+        "profileId": 260,
+        "learnmode": {
+          "image": "./assets/images/learnmode.svg",
+          "instruction": {
+            "en": "Press and hold the reset button for 10 seconds",
+            "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+            "nl": "Houd de resetknop 10 seconden ingedrukt"
+          }
+        },
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6,
+              0,
+              0
+            ],
+            "bindings": [
+              6,
+              0,
+              0
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.svg"
+      },
+      "id": "tuya_future_ai_device",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ]
+    },
+    {
+      "name": {
+        "en": "Universal Tuya Device (Unknown/Future)",
+        "fr": "Appareil Tuya Universel (Inconnu/Futur)",
+        "nl": "Universeel Tuya Apparaat (Onbekend/Toekomst)",
+        "ta": "உலகளாவிய Tuya சாதனம் (அறியப்படாத/எதிர்கால)"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "measure_generic",
+        "alarm_generic"
+      ],
+      "capabilitiesOptions": {
+        "measure_generic": {
+          "title": {
+            "en": "Generic Value",
+            "fr": "Valeur générique",
+            "nl": "Generieke waarde",
+            "ta": "பொதுவான மதிப்பு"
+          }
+        },
+        "alarm_generic": {
+          "title": {
+            "en": "Generic Alarm",
+            "fr": "Alarme générique",
+            "nl": "Generiek alarm",
+            "ta": "பொதுவான எச்சரிக்கை"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ*",
+          "_TZE*",
+          "_TYZB*",
+          "TUYA*"
+        ],
+        "productId": [
+          "TS*",
+          "TY*",
+          "*"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8,
+              61184
+            ],
+            "bindings": [
+              6,
+              8,
+              1
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/tuya_generic_fallback/assets/learn.svg",
+          "instruction": {
+            "en": "Put device in pairing mode according to manual. This driver logs all data for analysis.",
+            "fr": "Mettez l'appareil en mode d'appairage selon le manuel. Ce pilote enregistre toutes les données pour analyse.",
+            "nl": "Zet apparaat in koppelingsmodus volgens handleiding. Deze driver logt alle data voor analyse.",
+            "ta": "கையேட்டின் படி சாதனத்தை இணைப்பு முறையில் வைக்கவும். இந்த இயக்கி பகுப்பாய்வுக்காக அனைத்து தரவுகளையும் பதிவு செய்கிறது."
+          }
+        }
+      },
+      "images": {
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
+      },
+      "id": "tuya_generic_fallback",
+      "settings": [
+        {
+          "id": "enable_logging",
+          "type": "checkbox",
+          "value": true,
+          "label": {
+            "en": "Enable Data Logging",
+            "fr": "Activer l'enregistrement des données",
+            "nl": "Data logging inschakelen",
+            "ta": "தரவு பதிவை இயக்கவும்"
+          },
+          "hint": {
+            "en": "Log all unknown datapoints for future driver development",
+            "fr": "Enregistrer tous les points de données inconnus pour le développement futur du pilote",
+            "nl": "Log alle onbekende datapunten voor toekomstige driver ontwikkeling",
+            "ta": "எதிர்கால இயக்கி மேம்பாட்டிற்காக அனைத்து அறியப்படாத தரவு புள்ளிகளையும் பதிவு செய்யவும்"
+          }
+        },
+        {
+          "id": "ai_analysis_mode",
+          "type": "checkbox",
+          "value": false,
+          "label": {
+            "en": "AI Analysis Mode",
+            "fr": "Mode d'analyse IA",
+            "nl": "AI Analyse Modus",
+            "ta": "AI பகுப்பாய்வு முறை"
+          },
+          "hint": {
+            "en": "Enable automatic pattern recognition for unknown devices",
+            "fr": "Activer la reconnaissance automatique de motifs pour les appareils inconnus",
+            "nl": "Schakel automatische patroonherkenning in voor onbekende apparaten",
+            "ta": "அறியப்படாத சாதனங்களுக்கான தானியங்கி வடிவ அங்கீகாரத்தை இயக்கவும்"
+          }
+        }
+      ],
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "icon": "/drivers/tuya_generic_fallback/assets/icon.svg"
+    },
+    {
+      "name": {
+        "en": "Generic Tuya Light Controller",
+        "fr": "Generic Tuya Light Controller",
+        "nl": "Generic Tuya Light Controller"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature"
+      ],
+      "capabilitiesOptions": {},
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_*",
+          "_TZ3210_*",
+          "_TYZB01_*",
+          "_TYZB02_*",
+          "_TZ3400_*"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "deviceId": 81,
+        "profileId": 260,
+        "learnmode": {
+          "image": "./assets/images/learnmode.svg",
+          "instruction": {
+            "en": "Press and hold the reset button for 10 seconds",
+            "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+            "nl": "Houd de resetknop 10 seconden ingedrukt"
+          }
+        },
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6,
+              8,
+              768
+            ],
+            "bindings": [
+              6,
+              8,
+              768
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.svg"
+      },
+      "id": "tuya_generic_light",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ]
+    },
+    {
+      "name": {
+        "en": "Generic Tuya Smart Plug",
+        "fr": "Generic Tuya Smart Plug",
+        "nl": "Generic Tuya Smart Plug"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power"
+      ],
+      "capabilitiesOptions": {},
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_*",
+          "_TZ3210_*",
+          "_TYZB01_*",
+          "_TYZB02_*",
+          "_TZ3400_*"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "deviceId": 81,
+        "profileId": 260,
+        "learnmode": {
+          "image": "./assets/images/learnmode.svg",
+          "instruction": {
+            "en": "Press and hold the reset button for 10 seconds",
+            "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+            "nl": "Houd de resetknop 10 seconden ingedrukt"
+          }
+        },
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6,
+              2820,
+              1794
+            ],
+            "bindings": [
+              6,
+              2820,
+              1794
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.svg"
+      },
+      "id": "tuya_generic_plug",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ]
+    },
+    {
+      "name": {
+        "en": "Generic Tuya Multi-Sensor",
+        "fr": "Generic Tuya Multi-Sensor",
+        "nl": "Generic Tuya Multi-Sensor"
+      },
+      "class": "other",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_motion",
+        "alarm_contact"
+      ],
+      "capabilitiesOptions": {},
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_*",
+          "_TZ3210_*",
+          "_TYZB01_*",
+          "_TYZB02_*",
+          "_TZ3400_*"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "deviceId": 81,
+        "profileId": 260,
+        "learnmode": {
+          "image": "./assets/images/learnmode.svg",
+          "instruction": {
+            "en": "Press and hold the reset button for 10 seconds",
+            "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+            "nl": "Houd de resetknop 10 seconden ingedrukt"
+          }
+        },
+        "endpoints": {
+          "1": {
+            "clusters": [
+              1026,
+              1029,
+              1280
+            ],
+            "bindings": [
+              1026,
+              1029,
+              1280
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.svg"
+      },
+      "id": "tuya_generic_sensor",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ]
+    },
+    {
+      "name": {
+        "en": "Generic Tuya Switch (1-6 gangs)",
+        "fr": "Generic Tuya Switch (1-6 gangs)",
+        "nl": "Generic Tuya Switch (1-6 gangs)"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff"
+      ],
+      "capabilitiesOptions": {},
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_*",
+          "_TZ3210_*",
+          "_TYZB01_*",
+          "_TYZB02_*",
+          "_TZ3400_*"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "deviceId": 81,
+        "profileId": 260,
+        "learnmode": {
+          "image": "./assets/images/learnmode.svg",
+          "instruction": {
+            "en": "Press and hold the reset button for 10 seconds",
+            "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+            "nl": "Houd de resetknop 10 seconden ingedrukt"
+          }
+        },
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "3": {
+            "clusters": [
+              0,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "4": {
+            "clusters": [
+              0,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "5": {
+            "clusters": [
+              0,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "6": {
+            "clusters": [
+              0,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.svg"
+      },
+      "id": "tuya_generic_switch",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ]
+    },
+    {
+      "id": "tuya_generic_universal",
+      "name": {
+        "en": "Tuya Universal Device",
+        "fr": "Appareil Tuya Universel",
+        "nl": "Tuya Universeel Apparaat"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery",
+        "alarm_motion",
+        "alarm_contact",
+        "windowcoverings_state",
+        "target_temperature"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Power",
+            "fr": "Alimentation",
+            "nl": "Stroom"
+          }
+        },
+        "measure_temperature": {
+          "title": {
+            "en": "Temperature",
+            "fr": "Température",
+            "nl": "Temperatuur"
+          }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie",
+            "nl": "Batterij"
+          }
+        }
+      },
+      "images": {
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ*",
+          "_TZE*",
+          "Tuya",
+          "TS*"
+        ],
+        "productId": [
+          "TS0601",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS0201",
+          "TS0202",
+          "TS0203",
+          "TS0204",
+          "TS0205",
+          "TS0206",
+          "TS0207"
+        ],
+        "deviceId": [
+          81,
+          256,
+          257,
+          258,
+          259,
+          260
+        ],
+        "profileId": 260,
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6,
+              8,
+              768,
+              258,
+              513,
+              1026,
+              1029,
+              1280,
+              1030,
+              61184
+            ],
+            "bindings": [
+              6,
+              8,
+              1,
+              1026,
+              1029,
+              1280
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "./assets/learn.svg",
+          "instruction": {
+            "en": "Hold the device's pairing button for 5 seconds until LED starts flashing",
+            "fr": "Maintenez le bouton d'appairage de l'appareil pendant 5 secondes jusqu'à ce que la LED clignote",
+            "nl": "Houd de koppelknop van het apparaat 5 seconden ingedrukt totdat de LED gaat knipperen"
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "device_type_override",
+          "type": "dropdown",
+          "value": "auto",
+          "label": {
+            "en": "Device Type Override",
+            "fr": "Remplacement du Type d'Appareil",
+            "nl": "Apparaattype Overschrijving"
+          },
+          "hint": {
+            "en": "Override automatic device type detection",
+            "fr": "Remplacer la détection automatique du type d'appareil",
+            "nl": "Automatische apparaattype detectie overschrijven"
+          },
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-detect",
+                "fr": "Détection automatique",
+                "nl": "Automatisch detecteren"
+              }
+            },
+            {
+              "id": "sensor",
+              "label": {
+                "en": "Sensor",
+                "fr": "Capteur",
+                "nl": "Sensor"
+              }
+            },
+            {
+              "id": "light",
+              "label": {
+                "en": "Light",
+                "fr": "Éclairage",
+                "nl": "Verlichting"
+              }
+            },
+            {
+              "id": "switch",
+              "label": {
+                "en": "Switch",
+                "fr": "Interrupteur",
+                "nl": "Schakelaar"
+              }
+            },
+            {
+              "id": "cover",
+              "label": {
+                "en": "Window Covering",
+                "fr": "Store/Rideau",
+                "nl": "Raamdekking"
+              }
+            },
+            {
+              "id": "climate",
+              "label": {
+                "en": "Climate Control",
+                "fr": "Contrôle Climatique",
+                "nl": "Klimaatbeheersing"
+              }
+            }
+          ]
+        },
+        {
+          "id": "debug_logging",
+          "type": "checkbox",
+          "value": false,
+          "label": {
+            "en": "Enable Debug Logging",
+            "fr": "Activer la Journalisation de Debug",
+            "nl": "Debug Logging Inschakelen"
+          },
+          "hint": {
+            "en": "Log unknown data points for community enhancement",
+            "fr": "Enregistrer les points de données inconnus pour l'amélioration communautaire",
+            "nl": "Log onbekende datapunten voor community verbetering"
+          }
+        },
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1,
+          "units": "°C",
+          "label": {
+            "en": "Temperature Offset",
+            "fr": "Décalage de Température",
+            "nl": "Temperatuur Correctie"
+          },
+          "hint": {
+            "en": "Adjust temperature readings by this amount",
+            "fr": "Ajuster les lectures de température de cette valeur",
+            "nl": "Temperatuurmetingen met dit bedrag aanpassen"
+          }
+        }
+      ],
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "name": {
         "en": "Tuya Dimmable Bulb",
         "fr": "Tuya Dimmable Bulb",
         "nl": "Tuya Dimmable Bulb",
@@ -1048,15 +2148,7 @@
         "onoff",
         "dim"
       ],
-      "energy": {
-        "approximation": {
-          "usageConstant": 6
-        }
-      },
-      "images": {
-        "large": "/drivers/tuya_light_ts0501a/assets/images/large.png",
-        "small": "/drivers/tuya_light_ts0501a/assets/images/small.png"
-      },
+      "capabilitiesOptions": {},
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_*",
@@ -1092,6 +2184,15 @@
           }
         }
       },
+      "images": {
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
+      },
+      "energy": {
+        "approximation": {
+          "usageConstant": 6
+        }
+      },
       "id": "tuya_light_ts0501a"
     },
     {
@@ -1107,15 +2208,7 @@
         "dim",
         "light_temperature"
       ],
-      "energy": {
-        "approximation": {
-          "usageConstant": 7
-        }
-      },
-      "images": {
-        "large": "/drivers/tuya_light_ts0502a/assets/images/large.png",
-        "small": "/drivers/tuya_light_ts0502a/assets/images/small.png"
-      },
+      "capabilitiesOptions": {},
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_*",
@@ -1153,6 +2246,15 @@
           }
         }
       },
+      "images": {
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
+      },
+      "energy": {
+        "approximation": {
+          "usageConstant": 7
+        }
+      },
       "id": "tuya_light_ts0502a"
     },
     {
@@ -1168,15 +2270,7 @@
         "dim",
         "light_temperature"
       ],
-      "energy": {
-        "approximation": {
-          "usageConstant": 7
-        }
-      },
-      "images": {
-        "large": "/drivers/tuya_light_ts0502b/assets/images/large.png",
-        "small": "/drivers/tuya_light_ts0502b/assets/images/small.png"
-      },
+      "capabilitiesOptions": {},
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_*",
@@ -1214,6 +2308,15 @@
           }
         }
       },
+      "images": {
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
+      },
+      "energy": {
+        "approximation": {
+          "usageConstant": 7
+        }
+      },
       "id": "tuya_light_ts0502b"
     },
     {
@@ -1231,15 +2334,7 @@
         "light_saturation",
         "light_temperature"
       ],
-      "energy": {
-        "approximation": {
-          "usageConstant": 9
-        }
-      },
-      "images": {
-        "large": "/drivers/tuya_light_ts0505a/assets/images/large.png",
-        "small": "/drivers/tuya_light_ts0505a/assets/images/small.png"
-      },
+      "capabilitiesOptions": {},
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_*",
@@ -1277,6 +2372,15 @@
           }
         }
       },
+      "images": {
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
+      },
+      "energy": {
+        "approximation": {
+          "usageConstant": 9
+        }
+      },
       "id": "tuya_light_ts0505a"
     },
     {
@@ -1294,15 +2398,7 @@
         "light_saturation",
         "light_temperature"
       ],
-      "energy": {
-        "approximation": {
-          "usageConstant": 9
-        }
-      },
-      "images": {
-        "large": "/drivers/tuya_light_ts0505b/assets/images/large.png",
-        "small": "/drivers/tuya_light_ts0505b/assets/images/small.png"
-      },
+      "capabilitiesOptions": {},
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_*",
@@ -1340,6 +2436,15 @@
           }
         }
       },
+      "images": {
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
+      },
+      "energy": {
+        "approximation": {
+          "usageConstant": 9
+        }
+      },
       "id": "tuya_light_ts0505b"
     },
     {
@@ -1359,15 +2464,6 @@
             "duration": true
           }
         }
-      },
-      "energy": {
-        "approximation": {
-          "usageConstant": 7
-        }
-      },
-      "images": {
-        "large": "/drivers/tuya_light_universal/assets/images/large.png",
-        "small": "/drivers/tuya_light_universal/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -1411,12 +2507,321 @@
           }
         }
       },
+      "images": {
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
+      },
+      "energy": {
+        "approximation": {
+          "usageConstant": 7
+        }
+      },
       "id": "tuya_light_universal"
     },
     {
-      "id": "tuya_thermostat",
+      "name": {
+        "en": "Tuya mmWave Radar Sensor (TS0601)",
+        "fr": "Capteur radar mmWave Tuya (TS0601)",
+        "nl": "Tuya mmWave Radar Sensor (TS0601)",
+        "ta": "Tuya mmWave ரேடார் உணரி (TS0601)"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Presence Detection",
+            "fr": "Détection de présence",
+            "nl": "Aanwezigheidsdetectie",
+            "ta": "இருப்பு கண்டறிதல்"
+          }
+        },
+        "measure_luminance": {
+          "title": {
+            "en": "Illuminance",
+            "fr": "Luminosité",
+            "nl": "Verlichtingssterkte",
+            "ta": "ஒளி அளவு"
+          },
+          "units": "lux"
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_ztc6ggyl",
+          "_TZE200_jkbljri7",
+          "_TZE200_ar0slwnd",
+          "_TZE200_sfiy5tfs",
+          "_TZE200_holel4dk"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              61184
+            ],
+            "bindings": [
+              1024,
+              1
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/tuya_radar_sensor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the reset button for 5 seconds until the LED starts blinking",
+            "fr": "Appuyez et maintenez le bouton de réinitialisation pendant 5 secondes jusqu'à ce que la LED clignote",
+            "nl": "Houd de resetknop 5 seconden ingedrukt totdat de LED knippert",
+            "ta": "LED ஒளிரும் வரை மீட்டமை பொத்தானை 5 விநாடிகள் அழுத்திப் பிடிக்கவும்"
+          }
+        }
+      },
+      "images": {
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
+      },
+      "id": "tuya_radar_sensor",
+      "settings": [
+        {
+          "id": "radar_sensitivity",
+          "type": "dropdown",
+          "value": "medium",
+          "label": {
+            "en": "Radar Sensitivity",
+            "fr": "Sensibilité du radar",
+            "nl": "Radar gevoeligheid",
+            "ta": "ரேடார் உணர்திறன்"
+          },
+          "hint": {
+            "en": "Adjust detection sensitivity for presence",
+            "fr": "Ajuster la sensibilité de détection de présence",
+            "nl": "Pas de detectiegevoeligheid voor aanwezigheid aan",
+            "ta": "இருப்பு கண்டறிதலுக்கான உணர்திறனை சரிசெய்யவும்"
+          },
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low",
+                "fr": "Faible",
+                "nl": "Laag",
+                "ta": "குறைவு"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium",
+                "fr": "Moyen",
+                "nl": "Gemiddeld",
+                "ta": "நடுத்தர"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High",
+                "fr": "Élevé",
+                "nl": "Hoog",
+                "ta": "அதிக"
+              }
+            }
+          ]
+        },
+        {
+          "id": "presence_timeout",
+          "type": "number",
+          "value": 30,
+          "label": {
+            "en": "Presence Timeout (seconds)",
+            "fr": "Délai de présence (secondes)",
+            "nl": "Aanwezigheid timeout (seconden)",
+            "ta": "இருப்பு காலக்கெடு (விநாடிகள்)"
+          },
+          "hint": {
+            "en": "Time before presence is cleared after no detection",
+            "fr": "Temps avant que la présence soit effacée après aucune détection",
+            "nl": "Tijd voordat aanwezigheid wordt gewist na geen detectie",
+            "ta": "கண்டறிதல் இல்லாத பிறகு இருப்பு அழிக்கப்படும் நேரம்"
+          },
+          "attr": {
+            "min": 5,
+            "max": 300
+          }
+        }
+      ],
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "icon": "/drivers/tuya_radar_sensor/assets/icon.svg"
+    },
+    {
+      "name": {
+        "en": "Tuya Soil Moisture Sensor (QT-07S)",
+        "fr": "Capteur d'humidité du sol Tuya (QT-07S)",
+        "nl": "Tuya Bodem Vocht Sensor (QT-07S)",
+        "ta": "Tuya மண் ஈரப்பத உணரி (QT-07S)"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_humidity",
+        "measure_temperature",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "capabilitiesOptions": {
+        "measure_humidity": {
+          "title": {
+            "en": "Soil Moisture",
+            "fr": "Humidité du sol",
+            "nl": "Bodemvochtigheid",
+            "ta": "மண் ஈரப்பதம்"
+          },
+          "units": "%"
+        },
+        "measure_temperature": {
+          "title": {
+            "en": "Soil Temperature",
+            "fr": "Température du sol",
+            "nl": "Bodemtemperatuur",
+            "ta": "மண் வெப்பநிலை"
+          },
+          "units": "°C"
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie",
+            "nl": "Batterij",
+            "ta": "பேட்டரி"
+          },
+          "units": "%"
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_4fjiwweb",
+          "_TZE200_myd45weu"
+        ],
+        "productId": [
+          "QT-07S",
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              61184
+            ],
+            "bindings": [
+              1026,
+              1
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/tuya_soil_sensor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the pairing button for 5 seconds until the LED blinks",
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote",
+            "nl": "Houd de koppelknop 5 seconden ingedrukt totdat de LED knippert",
+            "ta": "LED ஒளிரும் வரை இணைப்பு பொத்தானை 5 விநாடிகள் அழுத்திப் பிடிக்கவும்"
+          }
+        }
+      },
+      "images": {
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
+      },
+      "id": "tuya_soil_sensor",
+      "settings": [
+        {
+          "id": "moisture_offset",
+          "type": "number",
+          "value": 0,
+          "label": {
+            "en": "Moisture Offset (%)",
+            "fr": "Décalage d'humidité (%)",
+            "nl": "Vochtigheid correctie (%)",
+            "ta": "ஈரப்பத ஈடுசெய்தல் (%)"
+          },
+          "hint": {
+            "en": "Adjust moisture reading by this percentage",
+            "fr": "Ajuster la lecture d'humidité de ce pourcentage",
+            "nl": "Pas de vochtaflezing aan met dit percentage",
+            "ta": "ஈரப்பத வாசிப்பை இந்த சதவீதத்தால் சரிசெய்யவும்"
+          },
+          "attr": {
+            "min": -20,
+            "max": 20,
+            "step": 1
+          }
+        },
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "value": 0,
+          "label": {
+            "en": "Temperature Offset (°C)",
+            "fr": "Décalage de température (°C)",
+            "nl": "Temperatuur correctie (°C)",
+            "ta": "வெப்பநிலை ஈடுசெய்தல் (°C)"
+          },
+          "hint": {
+            "en": "Adjust temperature reading by this value",
+            "fr": "Ajuster la lecture de température de cette valeur",
+            "nl": "Pas de temperatuuraflezing aan met deze waarde",
+            "ta": "வெப்பநிலை வாசிப்பை இந்த மதிப்பால் சரிசெய்யவும்"
+          },
+          "attr": {
+            "min": -10,
+            "max": 10,
+            "step": 0.5
+          }
+        }
+      ],
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "icon": "/drivers/tuya_soil_sensor/assets/icon.svg"
+    },
+    {
       "name": "Tuya Thermostat",
       "class": "thermostat",
+      "capabilities": [],
+      "capabilitiesOptions": {},
       "zigbee": {
         "manufacturerName": [
           "Tuya"
@@ -1436,12 +2841,75 @@
           }
         }
       },
-      "capabilities": []
+      "images": {
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
+      },
+      "id": "tuya_thermostat"
     },
     {
-      "id": "tuya_water_sensor",
+      "name": {
+        "en": "Universal Tuya Device Adapter",
+        "fr": "Universal Tuya Device Adapter",
+        "nl": "Universal Tuya Device Adapter"
+      },
+      "class": "other",
+      "capabilities": [
+        "dynamic"
+      ],
+      "capabilitiesOptions": {},
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_*",
+          "_TZ3210_*",
+          "_TYZB01_*",
+          "_TYZB02_*",
+          "_TZ3400_*"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "deviceId": 81,
+        "profileId": 260,
+        "learnmode": {
+          "image": "./assets/images/learnmode.svg",
+          "instruction": {
+            "en": "Press and hold the reset button for 10 seconds",
+            "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+            "nl": "Houd de resetknop 10 seconden ingedrukt"
+          }
+        },
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ],
+            "bindings": [
+              0
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.svg"
+      },
+      "id": "tuya_universal_adapter",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ]
+    },
+    {
       "name": "Tuya Water Sensor",
       "class": "sensor",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "capabilitiesOptions": {},
       "zigbee": {
         "manufacturerName": [
           "Tuya"
@@ -1461,17 +2929,19 @@
           }
         }
       },
-      "capabilities": [
-        "measure_battery"
-      ]
+      "images": {
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
+      },
+      "id": "tuya_water_sensor"
     },
     {
-      "id": "types",
       "name": {
         "en": "Device Types"
       },
       "class": "other",
       "capabilities": [],
+      "capabilitiesOptions": {},
       "zigbee": {
         "manufacturerName": "Various",
         "modelId": [
@@ -1480,24 +2950,28 @@
         "endpoints": {
           "1": {
             "clusters": [
-              "genBasic"
+              0
             ]
           }
-        }
+        },
+        "productId": [
+          "TYPES"
+        ]
       },
       "images": {
-        "large": "assets/images/large/types.png",
-        "small": "assets/images/small/types.png"
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
       },
+      "id": "types",
       "settings": []
     },
     {
-      "id": "zigbee",
       "name": {
         "en": "Zigbee Devices"
       },
       "class": "other",
       "capabilities": [],
+      "capabilitiesOptions": {},
       "zigbee": {
         "manufacturerName": "Various",
         "modelId": [
@@ -1506,35 +2980,31 @@
         "endpoints": {
           "1": {
             "clusters": [
-              "genBasic"
+              0
             ]
           }
-        }
+        },
+        "productId": [
+          "ZIGBEE"
+        ]
       },
       "images": {
-        "large": "assets/images/large/zigbee.png",
-        "small": "assets/images/small/zigbee.png"
+        "large": "assets/images/large.png",
+        "small": "assets/images/small.png"
       },
+      "id": "zigbee",
       "settings": []
     },
     {
-      "id": "zigbee-tuya-universal",
-      "title": {
-        "en": "Zigbee-Tuya-Universal Control",
-        "fr": "Contrôle Zigbee-Tuya-Universal"
+      "name": {
+        "en": "Zigbee-Tuya-Universal",
+        "fr": "Zigbee-Tuya-Universal"
       },
       "class": "other",
       "capabilities": [
         "onoff"
       ],
-      "images": {
-        "small": "assets/small.png",
-        "large": "assets/large.png"
-      },
-      "name": {
-        "en": "Zigbee-Tuya-Universal",
-        "fr": "Zigbee-Tuya-Universal"
-      },
+      "capabilitiesOptions": {},
       "zigbee": {
         "manufacturerName": [
           "Tuya"
@@ -1550,6 +3020,15 @@
             ]
           }
         }
+      },
+      "images": {
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
+      },
+      "id": "zigbee-tuya-universal",
+      "title": {
+        "en": "Zigbee-Tuya-Universal Control",
+        "fr": "Contrôle Zigbee-Tuya-Universal"
       },
       "icon": "/drivers/manufacturers/zigbee-tuya-universal/zigbee-tuya-universal/assets/icon.svg",
       "pair": [

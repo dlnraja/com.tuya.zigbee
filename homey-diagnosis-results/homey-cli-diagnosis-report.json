@@ -1,0 +1,262 @@
+{
+  "timestamp": "2025-09-10T12:51:19.251Z",
+  "duration": "83.26s",
+  "rootCause": "Unknown",
+  "summary": {
+    "cli": {
+      "total": 5,
+      "passed": 4,
+      "critical": 1
+    },
+    "structure": {
+      "total": 7,
+      "passed": 7,
+      "critical": 0
+    },
+    "connectivity": {
+      "total": 3,
+      "passed": 2,
+      "critical": 1
+    },
+    "repairs": {
+      "attempted": 0,
+      "successful": 0
+    },
+    "postRepair": {
+      "total": 3,
+      "passed": 1
+    }
+  },
+  "diagnostics": {
+    "cli": [
+      {
+        "test": "CLI Installation",
+        "success": true,
+        "details": "Version: 3.9.4",
+        "output": {
+          "success": true,
+          "stdout": "3.9.4\n",
+          "stderr": "",
+          "error": null,
+          "code": 0,
+          "signal": null,
+          "command": "homey --version"
+        }
+      },
+      {
+        "test": "CLI Help",
+        "success": true,
+        "details": "Help accessible",
+        "output": {
+          "success": true,
+          "stdout": "homey.js <command>\n\nCommands:\n  homey.js app       App related commands\n  homey.js docs      Open Homey Developer Documentation\n  homey.js list      List all Homeys\n  homey.js login     Log in with an Athom account\n  homey.js logout    Log out the current user\n  homey.js select    Select a Homey as active\n  homey.js tools     Open Homey Developer Tools\n  homey.js unselect  Unselect the active Homey\n  homey.js whoami    Show the current logged in user\n\nOptions:\n  --version  Show version number                                       [boolean]\n  --help     Show help                                                 [boolean]\n",
+          "stderr": "",
+          "error": null,
+          "code": 0,
+          "signal": null,
+          "command": "homey --help"
+        }
+      },
+      {
+        "test": "App Subcommands",
+        "success": true,
+        "details": "App commands available",
+        "output": {
+          "success": true,
+          "stdout": "homey.js app\n\nApp related commands\n\nCommands:\n  homey.js app add-github-workflows  Add GitHub Workflows (validate, update\n                                     version, publish)\n  homey.js app add-types             Install the Apps SDK TypeScript\n                                     declarations\n  homey.js app build                 Build a Homey App for publishing\n  homey.js app compose               Migrate app to Homey compose\n  homey.js app create                Create a new Homey App\n  homey.js app discovery             Discovery related commands\n  homey.js app driver                Driver related commands\n  homey.js app flow                  Flow related commands\n  homey.js app install               Install a Homey App\n  homey.js app manage                View your app in the Homey Developer Tools\n  homey.js app publish               Publish a Homey App to the Homey Apps Store\n  homey.js app run                   Run a Homey App in development mode\n  homey.js app translate             Translate a Homey App with OpenAI\n  homey.js app validate              Validate a Homey App\n  homey.js app version <next>        Update a Homey App's version\n  homey.js app view                  View your app in the Homey App Store\n  homey.js app widget                Widget related commands\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n",
+          "stderr": "",
+          "error": null,
+          "code": 0,
+          "signal": null,
+          "command": "homey app --help"
+        }
+      },
+      {
+        "test": "Authentication",
+        "success": true,
+        "details": "Logged in as: Dylan Rajasekaram <senetmarne@gmail.com>",
+        "output": {
+          "success": true,
+          "stdout": "Dylan Rajasekaram <senetmarne@gmail.com>\n",
+          "stderr": "",
+          "error": null,
+          "code": 0,
+          "signal": null,
+          "command": "homey whoami"
+        }
+      },
+      {
+        "test": "Homey Config Directory",
+        "success": false,
+        "details": "No config directory found",
+        "output": {
+          "configDir": "C:\\Users\\HP\\.homey",
+          "exists": false
+        }
+      }
+    ],
+    "structure": [
+      {
+        "test": "Homey app manifest (app.json)",
+        "success": true,
+        "critical": true,
+        "details": "Valid app.json",
+        "additionalInfo": {
+          "id": "com.dlnraja.ultimate.zigbee.hub",
+          "version": "4.0.0",
+          "compatibility": ">=8.0.0",
+          "driversCount": 42
+        },
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\app.json"
+      },
+      {
+        "test": "Node.js package manifest (package.json)",
+        "success": true,
+        "critical": true,
+        "details": "Valid package.json",
+        "additionalInfo": {
+          "name": "com.tuya.zigbee",
+          "version": "2.1.0",
+          "hasHomeyDep": true
+        },
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\package.json"
+      },
+      {
+        "test": "Main app entry point (app.js)",
+        "success": true,
+        "critical": true,
+        "details": "File exists",
+        "additionalInfo": null,
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\app.js"
+      },
+      {
+        "test": "Homey compose manifest (.homeycompose/app.json)",
+        "success": true,
+        "critical": false,
+        "details": "File exists",
+        "additionalInfo": null,
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\.homeycompose\\app.json"
+      },
+      {
+        "test": "Drivers directory (drivers)",
+        "success": true,
+        "critical": false,
+        "details": "File exists",
+        "additionalInfo": null,
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers"
+      },
+      {
+        "test": "Assets directory (assets)",
+        "success": true,
+        "critical": false,
+        "details": "File exists",
+        "additionalInfo": null,
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\assets"
+      },
+      {
+        "test": "File Permissions",
+        "success": true,
+        "details": "Read/write permissions OK",
+        "critical": true
+      }
+    ],
+    "connectivity": [
+      {
+        "test": "Internet Connectivity",
+        "success": true,
+        "details": "Internet accessible",
+        "output": {
+          "success": true,
+          "stdout": "\r\nEnvoi d'une requ�te 'ping' sur google.com [2a00:1450:4007:80d::200e] avec 32 octets de donn�es�:\r\nR�ponse de 2a00:1450:4007:80d::200e�: temps=8 ms \r\n\r\nStatistiques Ping pour 2a00:1450:4007:80d::200e:\r\n    Paquets�: envoy�s = 1, re�us = 1, perdus = 0 (perte 0%),\r\nDur�e approximative des boucles en millisecondes :\r\n    Minimum = 8ms, Maximum = 8ms, Moyenne = 8ms\r\n",
+          "stderr": "",
+          "error": null,
+          "code": 0,
+          "signal": null,
+          "command": "ping -n 1 google.com"
+        }
+      },
+      {
+        "test": "Homey Cloud Connectivity",
+        "success": false,
+        "details": "Cannot reach Homey Cloud",
+        "output": {
+          "success": false,
+          "stdout": "La requ�te Ping n'a pas pu trouver l'h�te cloud.athom.com. V�rifiez le nom et essayez � nouveau.\r\n",
+          "stderr": "",
+          "error": "Command failed: ping -n 1 cloud.athom.com\n",
+          "code": 1,
+          "signal": null,
+          "command": "ping -n 1 cloud.athom.com"
+        }
+      },
+      {
+        "test": "DNS Resolution",
+        "success": true,
+        "details": "DNS working",
+        "output": {
+          "success": true,
+          "stdout": "Serveur :   dns3.proxad.net\r\nAddress:  2a01:e00::2\r\n\r\nNom :    athom.com\r\nAddresses:  52.31.167.191\r\n\t  52.48.120.199\r\n\r\n",
+          "stderr": "R�ponse ne faisant pas autorit� :\r\r\n",
+          "error": null,
+          "code": 0,
+          "signal": null,
+          "command": "nslookup athom.com"
+        }
+      }
+    ]
+  },
+  "repairs": [],
+  "postRepairTests": [
+    {
+      "test": "App info test",
+      "command": "homey app info",
+      "success": false,
+      "details": "Command failed: homey app info\nhomey.js app\n\nApp related commands\n\nCommands:\n  homey.js app add-github-workflows  Add GitHub Workflows (validate, update\n                                     version, publish)\n  homey.js app add-types             Install the Apps SDK TypeScript\n                                     declarations\n  homey.js app build                 Build a Homey App for publishing\n  homey.js app compose               Migrate app to Homey compose\n  homey.js app create                Create a new Homey App\n  homey.js app discovery             Discovery related commands\n  homey.js app driver                Driver related commands\n  homey.js app flow                  Flow related commands\n  homey.js app install               Install a Homey App\n  homey.js app manage                View your app in the Homey Developer Tools\n  homey.js app publish               Publish a Homey App to the Homey Apps Store\n  homey.js app run                   Run a Homey App in development mode\n  homey.js app translate             Translate a Homey App with OpenAI\n  homey.js app validate              Validate a Homey App\n  homey.js app version <next>        Update a Homey App's version\n  homey.js app view                  View your app in the Homey App Store\n  homey.js app widget                Widget related commands\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n\nUnknown argument: info\n",
+      "output": {
+        "success": false,
+        "stdout": "",
+        "stderr": "homey.js app\n\nApp related commands\n\nCommands:\n  homey.js app add-github-workflows  Add GitHub Workflows (validate, update\n                                     version, publish)\n  homey.js app add-types             Install the Apps SDK TypeScript\n                                     declarations\n  homey.js app build                 Build a Homey App for publishing\n  homey.js app compose               Migrate app to Homey compose\n  homey.js app create                Create a new Homey App\n  homey.js app discovery             Discovery related commands\n  homey.js app driver                Driver related commands\n  homey.js app flow                  Flow related commands\n  homey.js app install               Install a Homey App\n  homey.js app manage                View your app in the Homey Developer Tools\n  homey.js app publish               Publish a Homey App to the Homey Apps Store\n  homey.js app run                   Run a Homey App in development mode\n  homey.js app translate             Translate a Homey App with OpenAI\n  homey.js app validate              Validate a Homey App\n  homey.js app version <next>        Update a Homey App's version\n  homey.js app view                  View your app in the Homey App Store\n  homey.js app widget                Widget related commands\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n\nUnknown argument: info\n",
+        "error": "Command failed: homey app info\nhomey.js app\n\nApp related commands\n\nCommands:\n  homey.js app add-github-workflows  Add GitHub Workflows (validate, update\n                                     version, publish)\n  homey.js app add-types             Install the Apps SDK TypeScript\n                                     declarations\n  homey.js app build                 Build a Homey App for publishing\n  homey.js app compose               Migrate app to Homey compose\n  homey.js app create                Create a new Homey App\n  homey.js app discovery             Discovery related commands\n  homey.js app driver                Driver related commands\n  homey.js app flow                  Flow related commands\n  homey.js app install               Install a Homey App\n  homey.js app manage                View your app in the Homey Developer Tools\n  homey.js app publish               Publish a Homey App to the Homey Apps Store\n  homey.js app run                   Run a Homey App in development mode\n  homey.js app translate             Translate a Homey App with OpenAI\n  homey.js app validate              Validate a Homey App\n  homey.js app version <next>        Update a Homey App's version\n  homey.js app view                  View your app in the Homey App Store\n  homey.js app widget                Widget related commands\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n\nUnknown argument: info\n",
+        "code": 1,
+        "signal": null,
+        "command": "homey app info"
+      }
+    },
+    {
+      "test": "Basic validation test",
+      "command": "homey app validate --level error",
+      "success": false,
+      "details": "Timeout after 60000ms",
+      "output": {
+        "success": false,
+        "stdout": "",
+        "stderr": "Command timeout",
+        "error": "Timeout after 60000ms",
+        "code": 1,
+        "signal": "SIGKILL",
+        "command": "homey app validate --level error"
+      }
+    },
+    {
+      "test": "Syntax check",
+      "command": "node -c app.js",
+      "success": true,
+      "details": "Passed",
+      "output": {
+        "success": true,
+        "stdout": "",
+        "stderr": "",
+        "error": null,
+        "code": 0,
+        "signal": null,
+        "command": "node -c app.js"
+      }
+    }
+  ],
+  "recommendations": [],
+  "nextSteps": [
+    "Manual intervention required",
+    "Address remaining critical issues",
+    "Retry validation after fixes"
+  ]
+}

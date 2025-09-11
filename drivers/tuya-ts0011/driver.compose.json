@@ -1,19 +1,13 @@
 {
-  "id": "tuya-ts0011",
   "name": {
     "en": "Tuya TS0011 Smart Switch"
   },
-  "description": {
-    "en": "Adds support for Tuya TS0011 Smart Switch"
-  },
-  "category": [
-    "switch"
+  "class": "sensor",
+  "capabilities": [
+    "onoff",
+    "measure_battery"
   ],
-  "compat": true,
-  "images": {
-    "large": "/drivers/tuya-ts0011/assets/images/device-large.png",
-    "small": "/drivers/tuya-ts0011/assets/images/device-small.png"
-  },
+  "capabilitiesOptions": {},
   "zigbee": {
     "manufacturerName": [
       "Tuya-ts0011"
@@ -43,6 +37,18 @@
       }
     }
   },
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
+  },
+  "id": "tuya-ts0011",
+  "description": {
+    "en": "Adds support for Tuya TS0011 Smart Switch"
+  },
+  "category": [
+    "switch"
+  ],
+  "compat": true,
   "pair": [
     {
       "id": "list_devices",
@@ -55,11 +61,6 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ],
-  "class": "sensor",
-  "capabilities": [
-    "onoff",
-    "measure_battery"
   ],
   "icon": "/drivers/manufacturers/tuya-ts0011/tuya-ts0011/assets/icon.svg"
 }

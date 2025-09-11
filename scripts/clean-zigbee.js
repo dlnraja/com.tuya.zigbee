@@ -1,1 +1,0 @@
-const fs = require("fs"); let content = fs.readFileSync("drivers/zigbee/driver.compose.json", "utf8"); content = content.replace(/"endpoints":\s*\{[^}]+\},\s*"endpoints":\s*\{[^}]+\}/s, `"endpoints": {\n      "1": {\n        "clusters": [0, 6]\n      }\n    }`); fs.writeFileSync("drivers/zigbee/driver.compose.json", content); console.log("✅ Doublon des endpoints supprimé !");

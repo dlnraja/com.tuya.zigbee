@@ -1,5 +1,4 @@
 {
-  "id": "ikea_tradfri_bulb",
   "name": {
     "en": "IKEA TRÅDFRI Bulb",
     "fr": "Ampoule IKEA TRÅDFRI"
@@ -10,24 +9,7 @@
     "dim",
     "light_temperature"
   ],
-  "icon": "/drivers/ikea_tradfri_bulb/assets/icon.svg",
-  "images": {
-    "large": "/drivers/ikea_tradfri_bulb/assets/images/large.png",
-    "small": "/drivers/ikea_tradfri_bulb/assets/images/small.png"
-  },
-  "pair": [
-    {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-        "next": "add_devices"
-      }
-    },
-    {
-      "id": "add_devices",
-      "template": "add_devices"
-    }
-  ],
+  "capabilitiesOptions": {},
   "zigbee": {
     "manufacturerName": [
       "IKEA"
@@ -46,5 +28,24 @@
         ]
       }
     }
-  }
+  },
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
+  },
+  "id": "ikea_tradfri_bulb",
+  "icon": "/drivers/ikea_tradfri_bulb/assets/icon.svg",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
 }

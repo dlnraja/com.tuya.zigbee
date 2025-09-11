@@ -6,12 +6,16 @@ const { CLUSTER } = require("zigbee-clusters");
 /**
  * Template for a Tuya Zigbee device
  */
-class TemplateDevice extends ZigbeeDevice {
+class TemplateDeviceDevice {
+  constructor() {
+    this.clusterCache = new Map();
+  } extends ZigbeeDevice {
   
   /**
    * onInit is called when the device is initialized.
    */
   async onNodeInit() {
+    try {
     this.log('TemplateDevice has been initialized');
     
     // Register capabilities
@@ -31,6 +35,7 @@ class TemplateDevice extends ZigbeeDevice {
    * onAdded is called when the user adds the device.
    */
   async onAdded() {
+    try {
     this.log('TemplateDevice has been added');
   }
   
@@ -38,6 +43,7 @@ class TemplateDevice extends ZigbeeDevice {
    * onSettings is called when the user changes the device settings.
    */
   async onSettings({ oldSettings, newSettings, changedKeys }) {
+    try {
     this.log('TemplateDevice settings were changed');
     // Handle settings changes here
   }
@@ -46,6 +52,7 @@ class TemplateDevice extends ZigbeeDevice {
    * onRenamed is called when the user changes the device name.
    */
   async onRenamed(name) {
+    try {
     this.log('TemplateDevice was renamed to', name);
   }
   
@@ -53,9 +60,12 @@ class TemplateDevice extends ZigbeeDevice {
    * onDeleted is called when the user deletes the device.
    */
   async onDeleted() {
+    try {
     this.log('TemplateDevice has been deleted');
     await super.onDeleted();
   }
-}
+    } catch (error) {
+      this.error("Error in $1:", error);
+    }
 
 module.exports = TemplateDevice;

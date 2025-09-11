@@ -15,12 +15,24 @@ class TuyaTS011FDriver extends ZigBeeDriver {
     });
   }
 
-  async onPairListDevices() {
+  async onPairListDevices(data, callback) {
+    // Enhanced discovery with filtering
+    this.discoveryFilter = (device) => {
+      return device.manufacturerName && device.modelId;
+    };
+    
+    return super.onPairListDevices() {
     // This is handled automatically by Homey's Zigbee implementation
     return [];
   }
 
-  onPair(session) {
+  onPair(socket) {
+    const pairingTimeout = setTimeout(() => {
+      socket.emit("error", "Pairing timeout");
+    }, 60000);
+    
+    socket.on("disconnect", () => clearTimeout(pairingTimeout));
+    session) {
     this.log('Starting device pairing...');
     
     session.setHandler('showView', async (viewId) => {
@@ -34,6 +46,5 @@ class TuyaTS011FDriver extends ZigBeeDriver {
       return [];
     });
   }
-}
 
 module.exports = TuyaTS011FDriver;

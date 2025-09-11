@@ -14,11 +14,9 @@ class WaterLeakDriver extends StandardTuyaDriver {
           maxInterval: 300,
           minChange: 1,
         },
-      },
     });
     
     this.log('Water leak sensor initialized');
   }
-}
 
 module.exports = WaterLeakDriver;

@@ -1,0 +1,24 @@
+{
+  "id": "zigbee",
+  "name": {
+    "en": "Zigbee Devices"
+  },
+  "class": "other",
+  "capabilities": [],
+  "zigbee": {
+    "manufacturerName": "Various",
+    "modelId": ["Various"],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "genBasic"
+        ]
+      }
+    }
+  },
+  "images": {
+    "large": "assets/images/large/zigbee.png",
+    "small": "assets/images/small/zigbee.png"
+  },
+  "settings": []
+}

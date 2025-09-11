@@ -7,6 +7,5 @@ class AqaraMotionDevice extends BaseZigbeeDevice.Device {
   async onCapabilityAlarmMotion(value, opts) {
     this.log('Motion detection updated:', value);
   }
-}
 
 module.exports = AqaraMotionDevice;

@@ -1,0 +1,394 @@
+[
+  {
+    "id": "aqara_motion_sensor",
+    "name": {
+      "en": "Aqara Motion Sensor",
+      "fr": "Capteur de Mouvement Aqara"
+    },
+    "path": "drivers\\aqara_motion_sensor",
+    "category": ""
+  },
+  {
+    "id": "bosch_thermostat_valve",
+    "name": {
+      "en": "Bosch Thermostat Valve",
+      "fr": "Tête Thermostatique Bosch"
+    },
+    "path": "drivers\\bosch_thermostat_valve",
+    "category": ""
+  },
+  {
+    "id": "climate",
+    "name": "Climate Devices",
+    "path": "drivers\\climate",
+    "category": ""
+  },
+  {
+    "id": "common",
+    "name": "Common Utilities",
+    "path": "drivers\\common",
+    "category": ""
+  },
+  {
+    "id": "covers",
+    "name": "Covers",
+    "path": "drivers\\covers",
+    "category": ""
+  },
+  {
+    "id": "ikea_tradfri_bulb",
+    "name": {
+      "en": "IKEA TRÅDFRI Bulb",
+      "fr": "Ampoule IKEA TRÅDFRI"
+    },
+    "path": "drivers\\ikea_tradfri_bulb",
+    "category": ""
+  },
+  {
+    "id": "lights",
+    "name": "Lights",
+    "path": "drivers\\lights",
+    "category": ""
+  },
+  {
+    "id": "manufacturers_root",
+    "name": "Manufacturers Container",
+    "path": "drivers\\manufacturers",
+    "category": ""
+  },
+  {
+    "id": "philips_hue_white_bulb",
+    "name": {
+      "en": "Philips Hue White Bulb",
+      "fr": "Ampoule Philips Hue White"
+    },
+    "path": "drivers\\manufacturers\\philips\\hue_white_bulb",
+    "category": ""
+  },
+  {
+    "id": "sonoff_zigbee_switch",
+    "name": {
+      "en": "SONOFF Zigbee Switch",
+      "fr": "Interrupteur Zigbee SONOFF"
+    },
+    "path": "drivers\\manufacturers\\sonoff\\zigbee_switch",
+    "category": ""
+  },
+  {
+    "id": "ts0201_temperature",
+    "name": {
+      "en": "Tuya Temperature Sensor",
+      "fr": "Capteur Température Tuya"
+    },
+    "path": "drivers\\manufacturers\\tuya\\ts0201_temperature",
+    "category": ""
+  },
+  {
+    "id": "xiaomi_lumi_sensor_ht",
+    "name": {
+      "en": "Xiaomi Temp/Humidity",
+      "fr": "Xiaomi Température/Humidité"
+    },
+    "path": "drivers\\manufacturers\\xiaomi\\lumi_sensor_ht",
+    "category": ""
+  },
+  {
+    "id": "protocols_container",
+    "name": "Protocols Container",
+    "path": "drivers\\protocols",
+    "category": ""
+  },
+  {
+    "id": "security",
+    "name": "Security Devices",
+    "path": "drivers\\security",
+    "category": ""
+  },
+  {
+    "id": "TS0203",
+    "name": {
+      "en": "Door/Window Sensor",
+      "nl": "Deur/Raam Sensor"
+    },
+    "path": "drivers\\sensors\\contact\\TS0203",
+    "category": ""
+  },
+  {
+    "id": "sensors",
+    "name": "Sensors",
+    "path": "drivers\\sensors",
+    "category": ""
+  },
+  {
+    "id": "rs0201",
+    "name": {
+      "en": "Tuya Motion Sensor",
+      "fr": "Détecteur de mouvement Tuya"
+    },
+    "path": "drivers\\sensors\\rs0201",
+    "category": ""
+  },
+  {
+    "id": "TS0201",
+    "name": {
+      "en": "Temperature & Humidity Sensor",
+      "nl": "Temperatuur & Vochtigheid Sensor"
+    },
+    "path": "drivers\\sensors\\temperature\\TS0201",
+    "category": ""
+  },
+  {
+    "id": "tuya_water_leak",
+    "name": {
+      "en": "Tuya Water Leak Sensor"
+    },
+    "path": "drivers\\sensors\\tuya_water_leak",
+    "category": ""
+  },
+  {
+    "id": "tuya_sensors-ts0601_motion",
+    "name": {
+      "en": "Tuya TS0601 Motion Sensor",
+      "fr": "Détecteur de mouvement Tuya TS0601",
+      "nl": "Tuya TS0601 Bewegingssensor",
+      "ta": "Tuya TS0601 இயக்க உணரி"
+    },
+    "path": "drivers\\sensors-TS0601_motion",
+    "category": ""
+  },
+  {
+    "id": "switches",
+    "name": "Switches",
+    "path": "drivers\\switches",
+    "category": ""
+  },
+  {
+    "id": "template",
+    "name": {
+      "en": "Template Device"
+    },
+    "path": "drivers\\templates",
+    "category": ""
+  },
+  {
+    "id": "tuya_tuya",
+    "name": {
+      "en": "tuya",
+      "fr": "tuya"
+    },
+    "path": "drivers\\tuya",
+    "category": ""
+  },
+  {
+    "id": "tuya-ts0011",
+    "name": {
+      "en": "Tuya TS0011 Smart Switch"
+    },
+    "path": "drivers\\tuya-ts0011",
+    "category": ""
+  },
+  {
+    "id": "tuya-ts011f",
+    "name": {
+      "en": "Tuya Smart Plug (TS011F)",
+      "fr": "Prise intelligente Tuya (TS011F)",
+      "nl": "Tuya Slimme stekker (TS011F)"
+    },
+    "path": "drivers\\tuya-ts011f",
+    "category": ""
+  },
+  {
+    "name": {
+      "en": "Tuya Dimmable Bulb",
+      "fr": "Tuya Dimmable Bulb",
+      "nl": "Tuya Dimmable Bulb",
+      "de": "Tuya Dimmable Bulb"
+    },
+    "path": "drivers\\tuya_light_ts0501a",
+    "category": ""
+  },
+  {
+    "name": {
+      "en": "Tuya CCT Bulb",
+      "fr": "Tuya CCT Bulb",
+      "nl": "Tuya CCT Bulb",
+      "de": "Tuya CCT Bulb"
+    },
+    "path": "drivers\\tuya_light_ts0502a",
+    "category": ""
+  },
+  {
+    "name": {
+      "en": "Tuya CCT Bulb v2",
+      "fr": "Tuya CCT Bulb v2",
+      "nl": "Tuya CCT Bulb v2",
+      "de": "Tuya CCT Bulb v2"
+    },
+    "path": "drivers\\tuya_light_ts0502b",
+    "category": ""
+  },
+  {
+    "name": {
+      "en": "Tuya RGB+CCT Bulb Alt",
+      "fr": "Tuya RGB+CCT Bulb Alt",
+      "nl": "Tuya RGB+CCT Bulb Alt",
+      "de": "Tuya RGB+CCT Bulb Alt"
+    },
+    "path": "drivers\\tuya_light_ts0505a",
+    "category": ""
+  },
+  {
+    "name": {
+      "en": "Tuya RGB+CCT Bulb",
+      "fr": "Tuya RGB+CCT Bulb",
+      "nl": "Tuya RGB+CCT Bulb",
+      "de": "Tuya RGB+CCT Bulb"
+    },
+    "path": "drivers\\tuya_light_ts0505b",
+    "category": ""
+  },
+  {
+    "name": {
+      "en": "Tuya Smart Light (Universal)",
+      "fr": "Tuya Smart Light (Universel)",
+      "nl": "Tuya Smart Light (Universeel)",
+      "de": "Tuya Smart Light (Universal)"
+    },
+    "path": "drivers\\tuya_light_universal",
+    "category": ""
+  },
+  {
+    "id": "tuya_thermostat",
+    "name": "Tuya Thermostat",
+    "path": "drivers\\tuya_thermostat",
+    "category": ""
+  },
+  {
+    "id": "tuya_water_sensor",
+    "name": "Tuya Water Sensor",
+    "path": "drivers\\tuya_water_sensor",
+    "category": ""
+  },
+  {
+    "id": "types",
+    "name": {
+      "en": "Device Types"
+    },
+    "path": "drivers\\types",
+    "category": ""
+  },
+  {
+    "id": "lumi_sensor_motion_aqara",
+    "name": {
+      "en": "Aqara Motion Sensor",
+      "fr": "Capteur de Mouvement Aqara"
+    },
+    "path": "drivers\\zigbee\\aqara\\sensors\\motion",
+    "category": ""
+  },
+  {
+    "id": "bosch_thermostat",
+    "name": {
+      "en": "Bosch Thermostat",
+      "fr": "Thermostat Bosch"
+    },
+    "path": "drivers\\zigbee\\bosch\\climate\\thermostat",
+    "category": ""
+  },
+  {
+    "id": "zigbee",
+    "name": {
+      "en": "Zigbee Devices"
+    },
+    "path": "drivers\\zigbee",
+    "category": ""
+  },
+  {
+    "id": "ikea_tradfri_temperature",
+    "name": {
+      "en": "IKEA Temperature Sensor",
+      "fr": "Capteur de Température IKEA"
+    },
+    "path": "drivers\\zigbee\\ikea\\sensors\\temperature",
+    "category": ""
+  },
+  {
+    "id": "philips_hue_bulb",
+    "name": {
+      "en": "Philips Hue Bulb",
+      "fr": "Ampoule Philips Hue"
+    },
+    "path": "drivers\\zigbee\\philips\\lights\\bulb",
+    "category": ""
+  },
+  {
+    "id": "sonoff_switch",
+    "name": {
+      "en": "Sonoff Switch",
+      "fr": "Interrupteur Sonoff"
+    },
+    "path": "drivers\\zigbee\\sonoff\\switches\\switch",
+    "category": ""
+  },
+  {
+    "id": "ts0202_motion",
+    "name": {
+      "en": "Tuya Motion Sensor",
+      "fr": "Capteur de Mouvement Tuya"
+    },
+    "path": "drivers\\zigbee\\tuya\\sensors\\motion",
+    "category": ""
+  },
+  {
+    "id": "ts0201_temperature",
+    "name": {
+      "en": "Tuya Temperature Sensor",
+      "fr": "Capteur de Température Tuya"
+    },
+    "path": "drivers\\zigbee\\tuya\\sensors\\temperature",
+    "category": ""
+  },
+  {
+    "id": "lumi_sensor_ht",
+    "name": {
+      "en": "Xiaomi Temperature Sensor",
+      "fr": "Capteur de Température Xiaomi"
+    },
+    "path": "drivers\\zigbee\\xiaomi\\sensors\\temperature",
+    "category": ""
+  },
+  {
+    "id": "tuya_zigbee-tuya-universal",
+    "name": {
+      "en": "Zigbee-Tuya-Universal",
+      "fr": "Zigbee-Tuya-Universal"
+    },
+    "path": "drivers\\zigbee-tuya-universal",
+    "category": ""
+  },
+  {
+    "id": "_base",
+    "name": {
+      "en": "Base Driver"
+    },
+    "path": "drivers\\_base",
+    "category": ""
+  },
+  {
+    "id": "template",
+    "name": {
+      "en": "Template Device",
+      "fr": "Modèle d'appareil"
+    },
+    "path": "drivers\\_template",
+    "category": ""
+  },
+  {
+    "id": "template_driver",
+    "name": {
+      "en": "Tuya Device Template"
+    },
+    "path": "drivers\\_templates",
+    "category": ""
+  }
+]

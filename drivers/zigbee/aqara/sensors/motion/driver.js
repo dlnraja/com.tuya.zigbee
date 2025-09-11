@@ -10,9 +10,7 @@ class AqaraMotionDriver extends Homey.Driver {
         data: {
           id: this.homey.uuid.generate(),
         },
-      },
     ];
   }
-}
 
 module.exports = AqaraMotionDriver;

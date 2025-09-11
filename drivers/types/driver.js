@@ -8,7 +8,6 @@ class MyDevice extends ZigBeeDevice {
     if (this.hasCapability('onoff')) {
       this.registerCapability('onoff', 'onOff');
     }
-  }
 }
 
 module.exports = MyDevice;

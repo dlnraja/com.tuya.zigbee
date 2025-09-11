@@ -1,0 +1,42 @@
+{
+  "id": "lumi_sensor_motion_aqara",
+  "name": {
+    "en": "Aqara Motion Sensor",
+    "fr": "Capteur de Mouvement Aqara"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_battery"
+  ],
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
+  },
+  "icon": "assets/icon.svg",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices"
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "lumi_sensor_motion_aqara"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    }
+  }
+}

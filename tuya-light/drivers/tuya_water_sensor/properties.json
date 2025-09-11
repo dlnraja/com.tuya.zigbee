@@ -1,0 +1,12 @@
+{
+  "name": "Water Sensor",
+  "description": "Tuya Zigbee Water Leak Sensor",
+  "type": "sensor",
+  "capabilities": [
+    "alarm_water"
+  ],
+  "zigbee": {
+    "manufacturerName": "Tuya",
+    "modelId": "waterSensor"
+  }
+}

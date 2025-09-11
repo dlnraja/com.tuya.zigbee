@@ -17,7 +17,13 @@ class TS0011Driver extends ZigBeeDriver {
   }
   
   /**
-   * onPairListDevices is called when a user is adding a device and the 'list_devices' view is called.
+   * onPairListDevices(data, callback) {
+    // Enhanced discovery with filtering
+    this.discoveryFilter = (device) => {
+      return device.manufacturerName && device.modelId;
+    };
+    
+    return super.onPairListDevices is called when a user is adding a device and the 'list_devices' view is called.
    * This should return an array with the data of devices that are discovered for this driver.
    */
   async onPairListDevices() {
@@ -32,9 +38,7 @@ class TS0011Driver extends ZigBeeDriver {
         store: {
           // Any data to be stored in the device's settings
         }
-      }
     ];
   }
-}
 
 module.exports = TS0011Driver;

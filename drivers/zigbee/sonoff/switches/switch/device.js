@@ -8,6 +8,5 @@ class SonoffSwitchDevice extends BaseZigbeeDevice.Device {
     this.log('Switch state changed to:', value);
     // Implement actual switch control here
   }
-}
 
 module.exports = SonoffSwitchDevice;

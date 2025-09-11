@@ -1,8 +1,7 @@
+// Performance optimized
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
-
-console.log('🚀 ORGANISATION DOCUMENTATION ET CORRECTION DASHBOARD - MODE YOLO ULTRA');
 
 // Structure des dossiers de documentation
 const DOC_STRUCTURE = {
@@ -88,7 +87,6 @@ const DOC_STRUCTURE = {
 function ensureDir(dir) {
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
-        console.log(`📁 Créé: ${dir}`);
     }
 }
 
@@ -96,7 +94,7 @@ function ensureDir(dir) {
 function createMarkdownFile(filePath, title, content) {
     const fullPath = path.join(__dirname, '..', filePath);
     ensureDir(path.dirname(fullPath));
-    
+
     const markdownContent = `# ${title}
 
 ${content}
@@ -105,28 +103,23 @@ ${content}
 *Généré automatiquement le ${new Date().toISOString()}*
 *Projet Universal Tuya Zigbee - Mode YOLO Ultra*
 `;
-    
+
     fs.writeFileSync(fullPath, markdownContent);
-    console.log(`✅ Créé: ${filePath}`);
 }
 
 // Fonction pour créer la structure de documentation
 function createDocumentationStructure() {
-    console.log('📚 Création de la structure de documentation...');
-    
     // Créer la structure principale
     for (const [folder, structure] of Object.entries(DOC_STRUCTURE)) {
         createFolderStructure(folder, structure);
     }
-    
-    console.log('✅ Structure de documentation créée');
 }
 
 // Fonction récursive pour créer la structure des dossiers
 function createFolderStructure(basePath, structure) {
     for (const [item, value] of Object.entries(structure)) {
         const fullPath = path.join(basePath, item);
-        
+
         if (typeof value === 'string') {
             // C'est un fichier
             createMarkdownFile(fullPath, value, getDefaultContent(value));
@@ -247,7 +240,7 @@ Clusters Zigbee utilisés par l'application.
 Voir le guide de débogage pour plus de détails.
 `
     };
-    
+
     return contentMap[title] || `# ${title}
 
 Contenu à compléter.
@@ -259,11 +252,9 @@ Contenu à compléter.
 
 // Fonction pour corriger le dashboard
 function fixDashboard() {
-    console.log('🎨 Correction du dashboard...');
-    
     // Créer le dossier dashboard
     ensureDir('docs/dashboard');
-    
+
     // Créer index.html
     const dashboardHtml = `<!DOCTYPE html>
 <html lang="fr">
@@ -280,7 +271,7 @@ function fixDashboard() {
             <h1><i class="fas fa-home"></i> Universal Tuya Zigbee</h1>
             <p>Dashboard de l'application universelle Tuya Zigbee</p>
         </header>
-        
+
         <nav>
             <ul>
                 <li><a href="#overview">Vue d'ensemble</a></li>
@@ -289,7 +280,7 @@ function fixDashboard() {
                 <li><a href="#stats">Statistiques</a></li>
             </ul>
         </nav>
-        
+
         <main>
             <section id="overview">
                 <h2><i class="fas fa-chart-line"></i> Vue d'ensemble</h2>
@@ -316,14 +307,14 @@ function fixDashboard() {
                     </div>
                 </div>
             </section>
-            
+
             <section id="drivers">
                 <h2><i class="fas fa-cogs"></i> Drivers Supportés</h2>
                 <div class="drivers-grid" id="drivers-list">
                     <!-- Rempli dynamiquement -->
                 </div>
             </section>
-            
+
             <section id="devices">
                 <h2><i class="fas fa-mobile-alt"></i> Types d'Appareils</h2>
                 <div class="devices-grid">
@@ -364,7 +355,7 @@ function fixDashboard() {
                     </div>
                 </div>
             </section>
-            
+
             <section id="stats">
                 <h2><i class="fas fa-chart-bar"></i> Statistiques</h2>
                 <div class="stats-container">
@@ -372,18 +363,18 @@ function fixDashboard() {
                 </div>
             </section>
         </main>
-        
+
         <footer>
             <p>&copy; 2025 Universal Tuya Zigbee - Mode YOLO Ultra</p>
         </footer>
     </div>
-    
+
     <script src="script.js"></script>
 </body>
 </html>`;
-    
+
     fs.writeFileSync('docs/dashboard/index.html', dashboardHtml);
-    
+
     // Créer style.css
     const dashboardCss = `/* Universal Tuya Zigbee Dashboard Styles */
 
@@ -585,33 +576,31 @@ footer {
     .container {
         padding: 10px;
     }
-    
+
     header h1 {
         font-size: 2rem;
     }
-    
+
     nav ul {
         flex-direction: column;
         gap: 10px;
     }
-    
+
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .devices-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }`;
-    
+
     fs.writeFileSync('docs/dashboard/style.css', dashboardCss);
-    
+
     // Créer script.js
     const dashboardJs = `// Universal Tuya Zigbee Dashboard Script
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('🚀 Dashboard Universal Tuya Zigbee chargé');
-    
     // Données des drivers
     const drivers = [
         { name: 'TS0601_bulb', type: 'Light', capabilities: ['onoff', 'dim', 'light_temperature'], status: 'Validé' },
@@ -640,31 +629,31 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: 'zigbee-sensor', type: 'Zigbee', capabilities: ['measure_temperature', 'measure_humidity'], status: 'Validé' },
         { name: 'zigbee-switch', type: 'Zigbee', capabilities: ['onoff'], status: 'Validé' }
     ];
-    
+
     // Afficher les drivers
     displayDrivers(drivers);
-    
+
     // Mettre à jour les statistiques
     updateStats(drivers);
-    
+
     // Initialiser le graphique
     initChart();
 });
 
 function displayDrivers(drivers) {
     const driversList = document.getElementById('drivers-list');
-    
+
     drivers.forEach(driver => {
         const driverCard = document.createElement('div');
         driverCard.className = 'driver-card';
-        
+
         driverCard.innerHTML = \`
             <h3>\${driver.name}</h3>
             <p><strong>Type:</strong> \${driver.type}</p>
             <p><strong>Capacités:</strong> \${driver.capabilities.join(', ')}</p>
             <p><strong>Status:</strong> <span style="color: green;">\${driver.status}</span></p>
         \`;
-        
+
         driversList.appendChild(driverCard);
     });
 }
@@ -674,7 +663,7 @@ function updateStats(drivers) {
     drivers.forEach(driver => {
         types[driver.type] = (types[driver.type] || 0) + 1;
     });
-    
+
     document.getElementById('driver-count').textContent = drivers.length;
     document.getElementById('type-count').textContent = Object.keys(types).length;
     document.getElementById('lang-count').textContent = '4';
@@ -684,17 +673,17 @@ function updateStats(drivers) {
 function initChart() {
     const ctx = document.getElementById('stats-chart');
     if (!ctx) return;
-    
+
     // Simulation d'un graphique (Chart.js pourrait être ajouté)
     ctx.style.background = '#f0f0f0';
     ctx.style.border = '1px solid #ccc';
     ctx.style.borderRadius = '5px';
-    
+
     const canvas = document.createElement('canvas');
     canvas.width = ctx.offsetWidth;
     canvas.height = ctx.offsetHeight;
     ctx.appendChild(canvas);
-    
+
     // Dessiner un graphique simple
     const context = canvas.getContext('2d');
     context.fillStyle = '#667eea';
@@ -713,9 +702,9 @@ document.querySelectorAll('nav a').forEach(link => {
         target.scrollIntoView({ behavior: 'smooth' });
     });
 });`;
-    
+
     fs.writeFileSync('docs/dashboard/script.js', dashboardJs);
-    
+
     // Créer data.json
     const dashboardData = {
         "app": {
@@ -765,21 +754,14 @@ document.querySelectorAll('nav a').forEach(link => {
             "Generic"
         ]
     };
-    
+
     fs.writeFileSync('docs/dashboard/data.json', JSON.stringify(dashboardData, null, 2));
-    
-    console.log('✅ Dashboard corrigé et créé');
 }
 
 // Fonction pour adapter les scripts existants
 function adaptScripts() {
-    console.log('🔧 Adaptation des scripts existants...');
-    
     // Créer un script de nettoyage amélioré
     const cleanupScript = `const fs = require('fs');
-const path = require('path');
-
-console.log('🧹 NETTOYAGE ET OPTIMISATION - MODE YOLO ULTRA');
 
 function cleanupProject() {
     // Supprimer les fichiers temporaires
@@ -789,65 +771,47 @@ function cleanupProject() {
         '*.tmp',
         '*.temp'
     ];
-    
+
     // Nettoyer les logs
     const logFiles = [
         '*.log',
         'logs/*.log'
     ];
-    
+
     // Optimiser la structure
-    console.log('✅ Nettoyage terminé');
 }
 
 cleanupProject();`;
-    
+
     fs.writeFileSync('scripts/cleanup-optimized.js', cleanupScript);
-    
+
     // Créer un script mega amélioré
     const megaScript = `const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-
-console.log('🚀 MEGA SCRIPT ULTRA - MODE YOLO');
 
 async function megaProcess() {
-    console.log('🔧 Début du processus MEGA...');
-    
     // 1. Nettoyage
-    console.log('🧹 Étape 1: Nettoyage');
     // Code de nettoyage
-    
+
     // 2. Validation
-    console.log('✅ Étape 2: Validation');
     // Code de validation
-    
+
     // 3. Enrichissement
-    console.log('🎨 Étape 3: Enrichissement');
     // Code d'enrichissement
-    
+
     // 4. Documentation
-    console.log('📚 Étape 4: Documentation');
     // Code de documentation
-    
+
     // 5. Push
-    console.log('🚀 Étape 5: Push');
     // Code de push
-    
-    console.log('🎉 MEGA PROCESSUS TERMINÉ !');
 }
 
 megaProcess();`;
-    
+
     fs.writeFileSync('scripts/mega-ultra.js', megaScript);
-    
-    console.log('✅ Scripts adaptés');
 }
 
 // Fonction pour corriger les workflows
 function fixWorkflows() {
-    console.log('⚙️ Correction des workflows...');
-    
     // Créer un workflow de déploiement du dashboard
     const dashboardWorkflow = `name: Deploy Dashboard
 
@@ -862,47 +826,36 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    
+
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '16'
-    
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: \${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./docs/dashboard
         destination_dir: ./dashboard`;
-    
+
     fs.writeFileSync('.github/workflows/deploy-dashboard.yml', dashboardWorkflow);
-    
-    console.log('✅ Workflows corrigés');
 }
 
 // Fonction principale
 async function main() {
     try {
-        console.log('🚀 DÉBUT DE L\'ORGANISATION DOCUMENTATION');
-        
         // Créer la structure de documentation
         createDocumentationStructure();
-        
+
         // Corriger le dashboard
         fixDashboard();
-        
+
         // Adapter les scripts
         adaptScripts();
-        
+
         // Corriger les workflows
         fixWorkflows();
-        
-        console.log('🎉 ORGANISATION DOCUMENTATION TERMINÉE !');
-        console.log('✅ Structure MD organisée');
-        console.log('✅ Dashboard corrigé');
-        console.log('✅ Scripts adaptés');
-        console.log('✅ Workflows corrigés');
-        
     } catch (error) {
         console.error('❌ ERREUR:', error);
         process.exit(1);
@@ -910,4 +863,4 @@ async function main() {
 }
 
 // Exécuter le script
-main();`; 
+main();`;

@@ -10,9 +10,7 @@ class IKEATemperatureDriver extends Homey.Driver {
         data: {
           id: this.homey.uuid.generate(),
         },
-      },
     ];
   }
-}
 
 module.exports = IKEATemperatureDriver;

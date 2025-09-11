@@ -1,114 +1,53 @@
-'use strict';
 
-class ZigbeeDevice {
+const { Driver, Device } = require('./homey');
+
+class ZigBeeDevice extends Device {
   constructor() {
-    this.log = jest.fn();
-    this.error = jest.fn();
-    this.debug = jest.fn();
-    this.printNode = jest.fn();
-    this.enableDebug = jest.fn();
+    super();
     this.zclNode = {
-      on: jest.fn(),
-      endpoints: {},
+      endpoints: new Map(),
+      on: () => {},
+      off: () => {}
     };
-    this.capabilities = new Map();
-    this.settings = new Map();
   }
 
-  async ready() {
+  async onNodeInit() {
+    return this.onInit();
+  }
+
+  async registerCapability(capability, cluster, options = {}) {
+    await this.addCapability(capability);
     return Promise.resolve();
   }
 
-  hasCapability(capability) {
-    return this.capabilities.has(capability);
-  }
-
-  async setCapabilityValue(capability, value) {
-    this.capabilities.set(capability, value);
+  async configureAttributeReporting(reports) {
     return Promise.resolve();
   }
 
-  async getCapabilityValue(capability) {
-    return this.capabilities.get(capability);
+  async readAttributes(cluster, attributes) {
+    const result = {};
+    for (const attr of attributes) {
+      result[attr] = Math.random() * 100;
+    }
+    return Promise.resolve(result);
   }
 
-  async registerCapabilityListener(capability, handler) {
-    this.capabilities.set(capability, handler);
+  async writeAttributes(cluster, attributes) {
     return Promise.resolve();
   }
 
-  async registerMultipleCapabilityListener(capabilities, handler) {
-    capabilities.forEach(capability => {
-      this.capabilities.set(capability, handler);
-    });
-    return Promise.resolve();
+  async executeCommand(cluster, command, args) {
+    return Promise.resolve({ success: true });
   }
+}
 
-  async setSettings(settings) {
-    Object.entries(settings).forEach(([key, value]) => {
-      this.settings.set(key, value);
-    });
-    return Promise.resolve();
-  }
-
-  async getSettings() {
-    const settings = {};
-    this.settings.forEach((value, key) => {
-      settings[key] = value;
-    });
-    return Promise.resolve(settings);
-  }
-
-  async getSetting(key) {
-    return Promise.resolve(this.settings.get(key));
-  }
-
-  async setSetting(key, value) {
-    this.settings.set(key, value);
-    return Promise.resolve();
+class ZigBeeDriver extends Driver {
+  constructor() {
+    super();
   }
 }
 
 module.exports = {
-  ZigbeeDevice,
-  CLUSTER: {
-    BASIC: 'basic',
-    POWER_CONFIGURATION: 'powerConfiguration',
-    IDENTIFY: 'identify',
-    GROUPS: 'groups',
-    SCENES: 'scenes',
-    ON_OFF: 'onOff',
-    LEVEL_CONTROL: 'levelControl',
-    COLOR_CONTROL: 'colorControl',
-    TEMPERATURE_MEASUREMENT: 'temperatureMeasurement',
-    RELATIVE_HUMIDITY_MEASUREMENT: 'relativeHumidityMeasurement',
-    PRESSURE_MEASUREMENT: 'pressureMeasurement',
-    ILLUMINANCE_MEASUREMENT: 'illuminanceMeasurement',
-    OCCUPANCY_SENSING: 'occupancySensing',
-    METER_IDENTIFICATION: 'meterIdentification',
-    ELECTRICAL_MEASUREMENT: 'electricalMeasurement',
-    METERING: 'metering',
-    DIAGNOSTICS: 'diagnostics',
-    WINDOW_COVERING: 'windowCovering',
-    FAN_CONTROL: 'fanControl',
-    THERMOSTAT: 'thermostat',
-    PUMP_CONFIGURATION_AND_CONTROL: 'pumpConfigurationAndControl',
-    TEMPERATURE_CONFIGURATION: 'temperatureConfiguration',
-    DOOR_LOCK: 'doorLock',
-  },
-  Cluster: {
-    getCluster: jest.fn().mockImplementation((clusterName) => ({
-      attributes: {},
-      commands: {},
-    })),
-  },
-  ZCLNode: jest.fn().mockImplementation(() => ({
-    endpoints: {},
-    on: jest.fn(),
-    log: {
-      info: jest.fn(),
-      debug: jest.fn(),
-      error: jest.fn(),
-    },
-  })),
+  ZigBeeDevice,
+  ZigBeeDriver
 };

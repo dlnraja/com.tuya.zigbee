@@ -1,24 +1,30 @@
 {
-  "id": "zigbee",
   "name": {
     "en": "Zigbee Devices"
   },
   "class": "other",
   "capabilities": [],
+  "capabilitiesOptions": {},
   "zigbee": {
     "manufacturerName": "Various",
-    "modelId": ["Various"],
+    "modelId": [
+      "Various"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
-          "genBasic"
+          0
         ]
       }
-    }
+    },
+    "productId": [
+      "ZIGBEE"
+    ]
   },
   "images": {
-    "large": "assets/images/large/zigbee.png",
-    "small": "assets/images/small/zigbee.png"
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
   },
+  "id": "zigbee",
   "settings": []
 }

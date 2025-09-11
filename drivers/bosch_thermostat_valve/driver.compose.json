@@ -1,5 +1,4 @@
 {
-  "id": "bosch_thermostat_valve",
   "name": {
     "en": "Bosch Thermostat Valve",
     "fr": "Tête Thermostatique Bosch"
@@ -10,24 +9,7 @@
     "target_temperature",
     "measure_battery"
   ],
-  "icon": "/drivers/bosch_thermostat_valve/assets/icon.svg",
-  "images": {
-    "large": "/drivers/bosch_thermostat_valve/assets/images/large.png",
-    "small": "/drivers/bosch_thermostat_valve/assets/images/small.png"
-  },
-  "pair": [
-    {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-        "next": "add_devices"
-      }
-    },
-    {
-      "id": "add_devices",
-      "template": "add_devices"
-    }
-  ],
+  "capabilitiesOptions": {},
   "zigbee": {
     "manufacturerName": [
       "Bosch"
@@ -45,5 +27,24 @@
         ]
       }
     }
-  }
+  },
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
+  },
+  "id": "bosch_thermostat_valve",
+  "icon": "/drivers/bosch_thermostat_valve/assets/icon.svg",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
 }

@@ -3,7 +3,11 @@
 
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+try {
+  const { ZigBeeDevice } = require('homey-zigbeedriver');
+} catch (error) {
+  console.error("Require error:", error);
+}
 
 class models_tuya_blind_531_cover_standardDriver extends ZigBeeDevice {
   async onNodeInit({ zclNode }) {

@@ -1,0 +1,2956 @@
+{
+  "timestamp": "2025-09-10T12:44:06.284Z",
+  "duration": "566.06s",
+  "overallSuccess": false,
+  "statistics": {
+    "homeyTests": {
+      "total": 17,
+      "passed": 2,
+      "failed": 15,
+      "criticalFailed": 5
+    },
+    "driverTests": {
+      "total": 0,
+      "passed": 0,
+      "failed": 0
+    },
+    "compatibilityTests": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0
+    }
+  },
+  "homeyValidationResults": [
+    {
+      "cmd": "homey app validate",
+      "description": "Basic validation",
+      "critical": true,
+      "success": false,
+      "stdout": "\u001b[32m✓ Pre-processing app...\u001b[39m\n\u001b[90mAdded Driver `TS0601_climate`\u001b[39m\n\u001b[90mAdded Driver `TS0601_cover`\u001b[39m\n\u001b[90mAdded Driver `TS0601_irrigation`\u001b[39m\n\u001b[90mAdded Driver `TS0601_lock`\u001b[39m\n\u001b[90mAdded Driver `TS0601_siren`\u001b[39m\n\u001b[90mAdded Driver `_base`\u001b[39m\n\u001b[90mAdded Driver `_template`\u001b[39m\n\u001b[90mAdded Driver `_templates`\u001b[39m\n\u001b[90mAdded Driver `aqara_motion_sensor`\u001b[39m\n\u001b[90mAdded Driver `bosch_thermostat_valve`\u001b[39m\n\u001b[90mAdded Driver `climate`\u001b[39m\n\u001b[90mAdded Driver `common`\u001b[39m\n\u001b[90mAdded Driver `covers`\u001b[39m\n\u001b[90mAdded Driver `ikea_tradfri_bulb`\u001b[39m\n\u001b[90mAdded Driver `lights`\u001b[39m\n\u001b[90mAdded Driver `manufacturers`\u001b[39m\n\u001b[90mAdded Driver `protocols`\u001b[39m\n\u001b[90mAdded Driver `security`\u001b[39m\n\u001b[90mAdded Driver `sensors`\u001b[39m\n\u001b[90mAdded Driver `sensors-TS0601_motion`\u001b[39m\n\u001b[90mAdded Driver `switches`\u001b[39m\n\u001b[90mAdded Driver `templates`\u001b[39m\n\u001b[90mAdded Driver `tuya`\u001b[39m\n\u001b[90mAdded Driver `tuya-ts0011`\u001b[39m\n\u001b[90mAdded Driver `tuya-ts011f`\u001b[39m\n\u001b[90mAdded Driver `tuya_future_ai_device`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_light`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_plug`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_sensor`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_switch`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0501a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0502a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0502b`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0505a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0505b`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_universal`\u001b[39m\n\u001b[90mAdded Driver `tuya_thermostat`\u001b[39m\n\u001b[90mAdded Driver `tuya_universal_adapter`\u001b[39m\n\u001b[90mAdded Driver `tuya_water_sensor`\u001b[39m\n\u001b[90mAdded Driver `types`\u001b[39m\n\u001b[90mAdded Driver `zigbee`\u001b[39m\n\u001b[90mAdded Driver `zigbee-tuya-universal`\u001b[39m\n\u001b[31m× ENOTEMPTY: directory not empty, rmdir 'C:\\Users\\HP\\Desktop\\tuya_repair\\.homeybuild\\catalog\\switch\\tuya'\u001b[39m\n",
+      "stderr": "",
+      "error": "Command failed: homey app validate\n",
+      "attempt": 2,
+      "command": "homey app validate",
+      "duration": "91.11s",
+      "timestamp": "2025-09-10T12:36:11.361Z",
+      "errors": [],
+      "warnings": [],
+      "infos": [
+        "Added Driver `TS0601_climate`\u001b[39m",
+        "Added Driver `TS0601_cover`\u001b[39m",
+        "Added Driver `TS0601_irrigation`\u001b[39m",
+        "Added Driver `TS0601_lock`\u001b[39m",
+        "Added Driver `TS0601_siren`\u001b[39m",
+        "Added Driver `_base`\u001b[39m",
+        "Added Driver `_template`\u001b[39m",
+        "Added Driver `_templates`\u001b[39m",
+        "Added Driver `aqara_motion_sensor`\u001b[39m",
+        "Added Driver `bosch_thermostat_valve`\u001b[39m",
+        "Added Driver `climate`\u001b[39m",
+        "Added Driver `common`\u001b[39m",
+        "Added Driver `covers`\u001b[39m",
+        "Added Driver `ikea_tradfri_bulb`\u001b[39m",
+        "Added Driver `lights`\u001b[39m",
+        "Added Driver `manufacturers`\u001b[39m",
+        "Added Driver `protocols`\u001b[39m",
+        "Added Driver `security`\u001b[39m",
+        "Added Driver `sensors`\u001b[39m",
+        "Added Driver `sensors-TS0601_motion`\u001b[39m",
+        "Added Driver `switches`\u001b[39m",
+        "Added Driver `templates`\u001b[39m",
+        "Added Driver `tuya`\u001b[39m",
+        "Added Driver `tuya-ts0011`\u001b[39m",
+        "Added Driver `tuya-ts011f`\u001b[39m",
+        "Added Driver `tuya_future_ai_device`\u001b[39m",
+        "Added Driver `tuya_generic_light`\u001b[39m",
+        "Added Driver `tuya_generic_plug`\u001b[39m",
+        "Added Driver `tuya_generic_sensor`\u001b[39m",
+        "Added Driver `tuya_generic_switch`\u001b[39m",
+        "Added Driver `tuya_light_ts0501a`\u001b[39m",
+        "Added Driver `tuya_light_ts0502a`\u001b[39m",
+        "Added Driver `tuya_light_ts0502b`\u001b[39m",
+        "Added Driver `tuya_light_ts0505a`\u001b[39m",
+        "Added Driver `tuya_light_ts0505b`\u001b[39m",
+        "Added Driver `tuya_light_universal`\u001b[39m",
+        "Added Driver `tuya_thermostat`\u001b[39m",
+        "Added Driver `tuya_universal_adapter`\u001b[39m",
+        "Added Driver `tuya_water_sensor`\u001b[39m",
+        "Added Driver `types`\u001b[39m",
+        "Added Driver `zigbee`\u001b[39m",
+        "Added Driver `zigbee-tuya-universal`\u001b[39m",
+        "✓ Pre-processing app...\u001b[39m"
+      ]
+    },
+    {
+      "cmd": "homey app validate --level error",
+      "description": "Error-only validation",
+      "critical": true,
+      "success": false,
+      "stdout": "\u001b[32m✓ Pre-processing app...\u001b[39m\n\u001b[90mAdded Driver `TS0601_climate`\u001b[39m\n\u001b[90mAdded Driver `TS0601_cover`\u001b[39m\n\u001b[90mAdded Driver `TS0601_irrigation`\u001b[39m\n\u001b[90mAdded Driver `TS0601_lock`\u001b[39m\n\u001b[90mAdded Driver `TS0601_siren`\u001b[39m\n\u001b[90mAdded Driver `_base`\u001b[39m\n\u001b[90mAdded Driver `_template`\u001b[39m\n\u001b[90mAdded Driver `_templates`\u001b[39m\n\u001b[90mAdded Driver `aqara_motion_sensor`\u001b[39m\n\u001b[90mAdded Driver `bosch_thermostat_valve`\u001b[39m\n\u001b[90mAdded Driver `climate`\u001b[39m\n\u001b[90mAdded Driver `common`\u001b[39m\n\u001b[90mAdded Driver `covers`\u001b[39m\n\u001b[90mAdded Driver `ikea_tradfri_bulb`\u001b[39m\n\u001b[90mAdded Driver `lights`\u001b[39m\n\u001b[90mAdded Driver `manufacturers`\u001b[39m\n\u001b[90mAdded Driver `protocols`\u001b[39m\n\u001b[90mAdded Driver `security`\u001b[39m\n\u001b[90mAdded Driver `sensors`\u001b[39m\n\u001b[90mAdded Driver `sensors-TS0601_motion`\u001b[39m\n\u001b[90mAdded Driver `switches`\u001b[39m\n\u001b[90mAdded Driver `templates`\u001b[39m\n\u001b[90mAdded Driver `tuya`\u001b[39m\n\u001b[90mAdded Driver `tuya-ts0011`\u001b[39m\n\u001b[90mAdded Driver `tuya-ts011f`\u001b[39m\n\u001b[90mAdded Driver `tuya_future_ai_device`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_light`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_plug`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_sensor`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_switch`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0501a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0502a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0502b`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0505a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0505b`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_universal`\u001b[39m\n\u001b[90mAdded Driver `tuya_thermostat`\u001b[39m\n\u001b[90mAdded Driver `tuya_universal_adapter`\u001b[39m\n\u001b[90mAdded Driver `tuya_water_sensor`\u001b[39m\n\u001b[90mAdded Driver `types`\u001b[39m\n\u001b[90mAdded Driver `zigbee`\u001b[39m\n\u001b[90mAdded Driver `zigbee-tuya-universal`\u001b[39m\n\u001b[31m× ENOTEMPTY: directory not empty, rmdir 'C:\\Users\\HP\\Desktop\\tuya_repair\\.homeybuild\\drivers'\u001b[39m\n",
+      "stderr": "",
+      "error": "Command failed: homey app validate --level error\n",
+      "attempt": 2,
+      "command": "homey app validate --level error",
+      "duration": "45.09s",
+      "timestamp": "2025-09-10T12:36:58.453Z",
+      "errors": [],
+      "warnings": [],
+      "infos": [
+        "Added Driver `TS0601_climate`\u001b[39m",
+        "Added Driver `TS0601_cover`\u001b[39m",
+        "Added Driver `TS0601_irrigation`\u001b[39m",
+        "Added Driver `TS0601_lock`\u001b[39m",
+        "Added Driver `TS0601_siren`\u001b[39m",
+        "Added Driver `_base`\u001b[39m",
+        "Added Driver `_template`\u001b[39m",
+        "Added Driver `_templates`\u001b[39m",
+        "Added Driver `aqara_motion_sensor`\u001b[39m",
+        "Added Driver `bosch_thermostat_valve`\u001b[39m",
+        "Added Driver `climate`\u001b[39m",
+        "Added Driver `common`\u001b[39m",
+        "Added Driver `covers`\u001b[39m",
+        "Added Driver `ikea_tradfri_bulb`\u001b[39m",
+        "Added Driver `lights`\u001b[39m",
+        "Added Driver `manufacturers`\u001b[39m",
+        "Added Driver `protocols`\u001b[39m",
+        "Added Driver `security`\u001b[39m",
+        "Added Driver `sensors`\u001b[39m",
+        "Added Driver `sensors-TS0601_motion`\u001b[39m",
+        "Added Driver `switches`\u001b[39m",
+        "Added Driver `templates`\u001b[39m",
+        "Added Driver `tuya`\u001b[39m",
+        "Added Driver `tuya-ts0011`\u001b[39m",
+        "Added Driver `tuya-ts011f`\u001b[39m",
+        "Added Driver `tuya_future_ai_device`\u001b[39m",
+        "Added Driver `tuya_generic_light`\u001b[39m",
+        "Added Driver `tuya_generic_plug`\u001b[39m",
+        "Added Driver `tuya_generic_sensor`\u001b[39m",
+        "Added Driver `tuya_generic_switch`\u001b[39m",
+        "Added Driver `tuya_light_ts0501a`\u001b[39m",
+        "Added Driver `tuya_light_ts0502a`\u001b[39m",
+        "Added Driver `tuya_light_ts0502b`\u001b[39m",
+        "Added Driver `tuya_light_ts0505a`\u001b[39m",
+        "Added Driver `tuya_light_ts0505b`\u001b[39m",
+        "Added Driver `tuya_light_universal`\u001b[39m",
+        "Added Driver `tuya_thermostat`\u001b[39m",
+        "Added Driver `tuya_universal_adapter`\u001b[39m",
+        "Added Driver `tuya_water_sensor`\u001b[39m",
+        "Added Driver `types`\u001b[39m",
+        "Added Driver `zigbee`\u001b[39m",
+        "Added Driver `zigbee-tuya-universal`\u001b[39m",
+        "✓ Pre-processing app...\u001b[39m"
+      ]
+    },
+    {
+      "cmd": "homey app validate --level warn",
+      "description": "Warning-level validation",
+      "critical": false,
+      "success": false,
+      "stdout": "\u001b[32m✓ Pre-processing app...\u001b[39m\n\u001b[90mAdded Driver `TS0601_climate`\u001b[39m\n\u001b[90mAdded Driver `TS0601_cover`\u001b[39m\n\u001b[90mAdded Driver `TS0601_irrigation`\u001b[39m\n\u001b[90mAdded Driver `TS0601_lock`\u001b[39m\n\u001b[90mAdded Driver `TS0601_siren`\u001b[39m\n\u001b[90mAdded Driver `_base`\u001b[39m\n\u001b[90mAdded Driver `_template`\u001b[39m\n\u001b[90mAdded Driver `_templates`\u001b[39m\n\u001b[90mAdded Driver `aqara_motion_sensor`\u001b[39m\n\u001b[90mAdded Driver `bosch_thermostat_valve`\u001b[39m\n\u001b[90mAdded Driver `climate`\u001b[39m\n\u001b[90mAdded Driver `common`\u001b[39m\n\u001b[90mAdded Driver `covers`\u001b[39m\n\u001b[90mAdded Driver `ikea_tradfri_bulb`\u001b[39m\n\u001b[90mAdded Driver `lights`\u001b[39m\n\u001b[90mAdded Driver `manufacturers`\u001b[39m\n\u001b[90mAdded Driver `protocols`\u001b[39m\n\u001b[90mAdded Driver `security`\u001b[39m\n\u001b[90mAdded Driver `sensors`\u001b[39m\n\u001b[90mAdded Driver `sensors-TS0601_motion`\u001b[39m\n\u001b[90mAdded Driver `switches`\u001b[39m\n\u001b[90mAdded Driver `templates`\u001b[39m\n\u001b[90mAdded Driver `tuya`\u001b[39m\n\u001b[90mAdded Driver `tuya-ts0011`\u001b[39m\n\u001b[90mAdded Driver `tuya-ts011f`\u001b[39m\n\u001b[90mAdded Driver `tuya_future_ai_device`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_light`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_plug`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_sensor`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_switch`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0501a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0502a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0502b`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0505a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0505b`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_universal`\u001b[39m\n\u001b[90mAdded Driver `tuya_thermostat`\u001b[39m\n\u001b[90mAdded Driver `tuya_universal_adapter`\u001b[39m\n\u001b[90mAdded Driver `tuya_water_sensor`\u001b[39m\n\u001b[90mAdded Driver `types`\u001b[39m\n\u001b[90mAdded Driver `zigbee`\u001b[39m\n\u001b[90mAdded Driver `zigbee-tuya-universal`\u001b[39m\n\u001b[31m× ENOTEMPTY: directory not empty, rmdir 'C:\\Users\\HP\\Desktop\\tuya_repair\\.homeybuild\\final-release\\drivers\\tuya\\sensors\\motion'\u001b[39m\n",
+      "stderr": "",
+      "error": "Command failed: homey app validate --level warn\n",
+      "attempt": 2,
+      "command": "homey app validate --level warn",
+      "duration": "51.77s",
+      "timestamp": "2025-09-10T12:37:52.236Z",
+      "errors": [],
+      "warnings": [],
+      "infos": [
+        "Added Driver `TS0601_climate`\u001b[39m",
+        "Added Driver `TS0601_cover`\u001b[39m",
+        "Added Driver `TS0601_irrigation`\u001b[39m",
+        "Added Driver `TS0601_lock`\u001b[39m",
+        "Added Driver `TS0601_siren`\u001b[39m",
+        "Added Driver `_base`\u001b[39m",
+        "Added Driver `_template`\u001b[39m",
+        "Added Driver `_templates`\u001b[39m",
+        "Added Driver `aqara_motion_sensor`\u001b[39m",
+        "Added Driver `bosch_thermostat_valve`\u001b[39m",
+        "Added Driver `climate`\u001b[39m",
+        "Added Driver `common`\u001b[39m",
+        "Added Driver `covers`\u001b[39m",
+        "Added Driver `ikea_tradfri_bulb`\u001b[39m",
+        "Added Driver `lights`\u001b[39m",
+        "Added Driver `manufacturers`\u001b[39m",
+        "Added Driver `protocols`\u001b[39m",
+        "Added Driver `security`\u001b[39m",
+        "Added Driver `sensors`\u001b[39m",
+        "Added Driver `sensors-TS0601_motion`\u001b[39m",
+        "Added Driver `switches`\u001b[39m",
+        "Added Driver `templates`\u001b[39m",
+        "Added Driver `tuya`\u001b[39m",
+        "Added Driver `tuya-ts0011`\u001b[39m",
+        "Added Driver `tuya-ts011f`\u001b[39m",
+        "Added Driver `tuya_future_ai_device`\u001b[39m",
+        "Added Driver `tuya_generic_light`\u001b[39m",
+        "Added Driver `tuya_generic_plug`\u001b[39m",
+        "Added Driver `tuya_generic_sensor`\u001b[39m",
+        "Added Driver `tuya_generic_switch`\u001b[39m",
+        "Added Driver `tuya_light_ts0501a`\u001b[39m",
+        "Added Driver `tuya_light_ts0502a`\u001b[39m",
+        "Added Driver `tuya_light_ts0502b`\u001b[39m",
+        "Added Driver `tuya_light_ts0505a`\u001b[39m",
+        "Added Driver `tuya_light_ts0505b`\u001b[39m",
+        "Added Driver `tuya_light_universal`\u001b[39m",
+        "Added Driver `tuya_thermostat`\u001b[39m",
+        "Added Driver `tuya_universal_adapter`\u001b[39m",
+        "Added Driver `tuya_water_sensor`\u001b[39m",
+        "Added Driver `types`\u001b[39m",
+        "Added Driver `zigbee`\u001b[39m",
+        "Added Driver `zigbee-tuya-universal`\u001b[39m",
+        "✓ Pre-processing app...\u001b[39m"
+      ]
+    },
+    {
+      "cmd": "homey app validate --level info",
+      "description": "Info-level validation",
+      "critical": false,
+      "success": false,
+      "stdout": "\u001b[32m✓ Pre-processing app...\u001b[39m\n\u001b[90mAdded Driver `TS0601_climate`\u001b[39m\n\u001b[90mAdded Driver `TS0601_cover`\u001b[39m\n\u001b[90mAdded Driver `TS0601_irrigation`\u001b[39m\n\u001b[90mAdded Driver `TS0601_lock`\u001b[39m\n\u001b[90mAdded Driver `TS0601_siren`\u001b[39m\n\u001b[90mAdded Driver `_base`\u001b[39m\n\u001b[90mAdded Driver `_template`\u001b[39m\n\u001b[90mAdded Driver `_templates`\u001b[39m\n\u001b[90mAdded Driver `aqara_motion_sensor`\u001b[39m\n\u001b[90mAdded Driver `bosch_thermostat_valve`\u001b[39m\n\u001b[90mAdded Driver `climate`\u001b[39m\n\u001b[90mAdded Driver `common`\u001b[39m\n\u001b[90mAdded Driver `covers`\u001b[39m\n\u001b[90mAdded Driver `ikea_tradfri_bulb`\u001b[39m\n\u001b[90mAdded Driver `lights`\u001b[39m\n\u001b[90mAdded Driver `manufacturers`\u001b[39m\n\u001b[90mAdded Driver `protocols`\u001b[39m\n\u001b[90mAdded Driver `security`\u001b[39m\n\u001b[90mAdded Driver `sensors`\u001b[39m\n\u001b[90mAdded Driver `sensors-TS0601_motion`\u001b[39m\n\u001b[90mAdded Driver `switches`\u001b[39m\n\u001b[90mAdded Driver `templates`\u001b[39m\n\u001b[90mAdded Driver `tuya`\u001b[39m\n\u001b[90mAdded Driver `tuya-ts0011`\u001b[39m\n\u001b[90mAdded Driver `tuya-ts011f`\u001b[39m\n\u001b[90mAdded Driver `tuya_future_ai_device`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_light`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_plug`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_sensor`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_switch`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0501a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0502a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0502b`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0505a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0505b`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_universal`\u001b[39m\n\u001b[90mAdded Driver `tuya_thermostat`\u001b[39m\n\u001b[90mAdded Driver `tuya_universal_adapter`\u001b[39m\n\u001b[90mAdded Driver `tuya_water_sensor`\u001b[39m\n\u001b[90mAdded Driver `types`\u001b[39m\n\u001b[90mAdded Driver `zigbee`\u001b[39m\n\u001b[90mAdded Driver `zigbee-tuya-universal`\u001b[39m\n\u001b[31m× ENOTEMPTY: directory not empty, rmdir 'C:\\Users\\HP\\Desktop\\tuya_repair\\.homeybuild\\final-release\\drivers\\tuya\\unknown\\lights\\lights'\u001b[39m\n",
+      "stderr": "",
+      "error": "Command failed: homey app validate --level info\n",
+      "attempt": 2,
+      "command": "homey app validate --level info",
+      "duration": "52.07s",
+      "timestamp": "2025-09-10T12:38:46.326Z",
+      "errors": [],
+      "warnings": [],
+      "infos": [
+        "Added Driver `TS0601_climate`\u001b[39m",
+        "Added Driver `TS0601_cover`\u001b[39m",
+        "Added Driver `TS0601_irrigation`\u001b[39m",
+        "Added Driver `TS0601_lock`\u001b[39m",
+        "Added Driver `TS0601_siren`\u001b[39m",
+        "Added Driver `_base`\u001b[39m",
+        "Added Driver `_template`\u001b[39m",
+        "Added Driver `_templates`\u001b[39m",
+        "Added Driver `aqara_motion_sensor`\u001b[39m",
+        "Added Driver `bosch_thermostat_valve`\u001b[39m",
+        "Added Driver `climate`\u001b[39m",
+        "Added Driver `common`\u001b[39m",
+        "Added Driver `covers`\u001b[39m",
+        "Added Driver `ikea_tradfri_bulb`\u001b[39m",
+        "Added Driver `lights`\u001b[39m",
+        "Added Driver `manufacturers`\u001b[39m",
+        "Added Driver `protocols`\u001b[39m",
+        "Added Driver `security`\u001b[39m",
+        "Added Driver `sensors`\u001b[39m",
+        "Added Driver `sensors-TS0601_motion`\u001b[39m",
+        "Added Driver `switches`\u001b[39m",
+        "Added Driver `templates`\u001b[39m",
+        "Added Driver `tuya`\u001b[39m",
+        "Added Driver `tuya-ts0011`\u001b[39m",
+        "Added Driver `tuya-ts011f`\u001b[39m",
+        "Added Driver `tuya_future_ai_device`\u001b[39m",
+        "Added Driver `tuya_generic_light`\u001b[39m",
+        "Added Driver `tuya_generic_plug`\u001b[39m",
+        "Added Driver `tuya_generic_sensor`\u001b[39m",
+        "Added Driver `tuya_generic_switch`\u001b[39m",
+        "Added Driver `tuya_light_ts0501a`\u001b[39m",
+        "Added Driver `tuya_light_ts0502a`\u001b[39m",
+        "Added Driver `tuya_light_ts0502b`\u001b[39m",
+        "Added Driver `tuya_light_ts0505a`\u001b[39m",
+        "Added Driver `tuya_light_ts0505b`\u001b[39m",
+        "Added Driver `tuya_light_universal`\u001b[39m",
+        "Added Driver `tuya_thermostat`\u001b[39m",
+        "Added Driver `tuya_universal_adapter`\u001b[39m",
+        "Added Driver `tuya_water_sensor`\u001b[39m",
+        "Added Driver `types`\u001b[39m",
+        "Added Driver `zigbee`\u001b[39m",
+        "Added Driver `zigbee-tuya-universal`\u001b[39m",
+        "✓ Pre-processing app...\u001b[39m"
+      ]
+    },
+    {
+      "cmd": "homey app validate --level debug",
+      "description": "Debug-level validation",
+      "critical": false,
+      "success": false,
+      "stdout": "\u001b[32m✓ Pre-processing app...\u001b[39m\n\u001b[90mAdded Driver `TS0601_climate`\u001b[39m\n\u001b[90mAdded Driver `TS0601_cover`\u001b[39m\n\u001b[90mAdded Driver `TS0601_irrigation`\u001b[39m\n\u001b[90mAdded Driver `TS0601_lock`\u001b[39m\n\u001b[90mAdded Driver `TS0601_siren`\u001b[39m\n\u001b[90mAdded Driver `_base`\u001b[39m\n\u001b[90mAdded Driver `_template`\u001b[39m\n\u001b[90mAdded Driver `_templates`\u001b[39m\n\u001b[90mAdded Driver `aqara_motion_sensor`\u001b[39m\n\u001b[90mAdded Driver `bosch_thermostat_valve`\u001b[39m\n\u001b[90mAdded Driver `climate`\u001b[39m\n\u001b[90mAdded Driver `common`\u001b[39m\n\u001b[90mAdded Driver `covers`\u001b[39m\n\u001b[90mAdded Driver `ikea_tradfri_bulb`\u001b[39m\n\u001b[90mAdded Driver `lights`\u001b[39m\n\u001b[90mAdded Driver `manufacturers`\u001b[39m\n\u001b[90mAdded Driver `protocols`\u001b[39m\n\u001b[90mAdded Driver `security`\u001b[39m\n\u001b[90mAdded Driver `sensors`\u001b[39m\n\u001b[90mAdded Driver `sensors-TS0601_motion`\u001b[39m\n\u001b[90mAdded Driver `switches`\u001b[39m\n\u001b[90mAdded Driver `templates`\u001b[39m\n\u001b[90mAdded Driver `tuya`\u001b[39m\n\u001b[90mAdded Driver `tuya-ts0011`\u001b[39m\n\u001b[90mAdded Driver `tuya-ts011f`\u001b[39m\n\u001b[90mAdded Driver `tuya_future_ai_device`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_light`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_plug`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_sensor`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_switch`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0501a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0502a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0502b`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0505a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0505b`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_universal`\u001b[39m\n\u001b[90mAdded Driver `tuya_thermostat`\u001b[39m\n\u001b[90mAdded Driver `tuya_universal_adapter`\u001b[39m\n\u001b[90mAdded Driver `tuya_water_sensor`\u001b[39m\n\u001b[90mAdded Driver `types`\u001b[39m\n\u001b[90mAdded Driver `zigbee`\u001b[39m\n\u001b[90mAdded Driver `zigbee-tuya-universal`\u001b[39m\n\u001b[31m× ENOTEMPTY: directory not empty, rmdir 'C:\\Users\\HP\\Desktop\\tuya_repair\\.homeybuild\\final-release\\scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\drivers\\tuya\\sensors\\tuya'\u001b[39m\n",
+      "stderr": "",
+      "error": "Command failed: homey app validate --level debug\n",
+      "attempt": 2,
+      "command": "homey app validate --level debug",
+      "duration": "49.68s",
+      "timestamp": "2025-09-10T12:39:38.018Z",
+      "errors": [],
+      "warnings": [],
+      "infos": [
+        "Added Driver `TS0601_climate`\u001b[39m",
+        "Added Driver `TS0601_cover`\u001b[39m",
+        "Added Driver `TS0601_irrigation`\u001b[39m",
+        "Added Driver `TS0601_lock`\u001b[39m",
+        "Added Driver `TS0601_siren`\u001b[39m",
+        "Added Driver `_base`\u001b[39m",
+        "Added Driver `_template`\u001b[39m",
+        "Added Driver `_templates`\u001b[39m",
+        "Added Driver `aqara_motion_sensor`\u001b[39m",
+        "Added Driver `bosch_thermostat_valve`\u001b[39m",
+        "Added Driver `climate`\u001b[39m",
+        "Added Driver `common`\u001b[39m",
+        "Added Driver `covers`\u001b[39m",
+        "Added Driver `ikea_tradfri_bulb`\u001b[39m",
+        "Added Driver `lights`\u001b[39m",
+        "Added Driver `manufacturers`\u001b[39m",
+        "Added Driver `protocols`\u001b[39m",
+        "Added Driver `security`\u001b[39m",
+        "Added Driver `sensors`\u001b[39m",
+        "Added Driver `sensors-TS0601_motion`\u001b[39m",
+        "Added Driver `switches`\u001b[39m",
+        "Added Driver `templates`\u001b[39m",
+        "Added Driver `tuya`\u001b[39m",
+        "Added Driver `tuya-ts0011`\u001b[39m",
+        "Added Driver `tuya-ts011f`\u001b[39m",
+        "Added Driver `tuya_future_ai_device`\u001b[39m",
+        "Added Driver `tuya_generic_light`\u001b[39m",
+        "Added Driver `tuya_generic_plug`\u001b[39m",
+        "Added Driver `tuya_generic_sensor`\u001b[39m",
+        "Added Driver `tuya_generic_switch`\u001b[39m",
+        "Added Driver `tuya_light_ts0501a`\u001b[39m",
+        "Added Driver `tuya_light_ts0502a`\u001b[39m",
+        "Added Driver `tuya_light_ts0502b`\u001b[39m",
+        "Added Driver `tuya_light_ts0505a`\u001b[39m",
+        "Added Driver `tuya_light_ts0505b`\u001b[39m",
+        "Added Driver `tuya_light_universal`\u001b[39m",
+        "Added Driver `tuya_thermostat`\u001b[39m",
+        "Added Driver `tuya_universal_adapter`\u001b[39m",
+        "Added Driver `tuya_water_sensor`\u001b[39m",
+        "Added Driver `types`\u001b[39m",
+        "Added Driver `zigbee`\u001b[39m",
+        "Added Driver `zigbee-tuya-universal`\u001b[39m",
+        "✓ Pre-processing app...\u001b[39m"
+      ]
+    },
+    {
+      "cmd": "homey app validate --verbose",
+      "description": "Verbose validation with detailed output",
+      "critical": false,
+      "success": false,
+      "stdout": "",
+      "stderr": "homey.js app validate\n\nValidate a Homey App\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n  -l, --level    Validation level. Can be: debug, publish, verified.\n                                                   [string] [default: \"publish\"]\n\nUnknown argument: verbose\n",
+      "error": "Command failed: homey app validate --verbose\nhomey.js app validate\n\nValidate a Homey App\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n  -l, --level    Validation level. Can be: debug, publish, verified.\n                                                   [string] [default: \"publish\"]\n\nUnknown argument: verbose\n",
+      "attempt": 2,
+      "command": "homey app validate --verbose",
+      "duration": "27.94s",
+      "timestamp": "2025-09-10T12:40:07.988Z",
+      "errors": [],
+      "warnings": [],
+      "infos": []
+    },
+    {
+      "cmd": "homey app validate --strict",
+      "description": "Strict validation mode",
+      "critical": true,
+      "success": false,
+      "stdout": "",
+      "stderr": "homey.js app validate\n\nValidate a Homey App\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n  -l, --level    Validation level. Can be: debug, publish, verified.\n                                                   [string] [default: \"publish\"]\n\nUnknown argument: strict\n",
+      "error": "Command failed: homey app validate --strict\nhomey.js app validate\n\nValidate a Homey App\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n  -l, --level    Validation level. Can be: debug, publish, verified.\n                                                   [string] [default: \"publish\"]\n\nUnknown argument: strict\n",
+      "attempt": 2,
+      "command": "homey app validate --strict",
+      "duration": "25.12s",
+      "timestamp": "2025-09-10T12:40:35.127Z",
+      "errors": [],
+      "warnings": [],
+      "infos": []
+    },
+    {
+      "cmd": "homey app build",
+      "description": "Standard build test",
+      "critical": true,
+      "success": false,
+      "stdout": "\u001b[32m✓ Building app...\u001b[39m\n\u001b[32m✓ Pre-processing app...\u001b[39m\n\u001b[90mAdded Driver `TS0601_climate`\u001b[39m\n\u001b[90mAdded Driver `TS0601_cover`\u001b[39m\n\u001b[90mAdded Driver `TS0601_irrigation`\u001b[39m\n\u001b[90mAdded Driver `TS0601_lock`\u001b[39m\n\u001b[90mAdded Driver `TS0601_siren`\u001b[39m\n\u001b[90mAdded Driver `_base`\u001b[39m\n\u001b[90mAdded Driver `_template`\u001b[39m\n\u001b[90mAdded Driver `_templates`\u001b[39m\n\u001b[90mAdded Driver `aqara_motion_sensor`\u001b[39m\n\u001b[90mAdded Driver `bosch_thermostat_valve`\u001b[39m\n\u001b[90mAdded Driver `climate`\u001b[39m\n\u001b[90mAdded Driver `common`\u001b[39m\n\u001b[90mAdded Driver `covers`\u001b[39m\n\u001b[90mAdded Driver `ikea_tradfri_bulb`\u001b[39m\n\u001b[90mAdded Driver `lights`\u001b[39m\n\u001b[90mAdded Driver `manufacturers`\u001b[39m\n\u001b[90mAdded Driver `protocols`\u001b[39m\n\u001b[90mAdded Driver `security`\u001b[39m\n\u001b[90mAdded Driver `sensors`\u001b[39m\n\u001b[90mAdded Driver `sensors-TS0601_motion`\u001b[39m\n\u001b[90mAdded Driver `switches`\u001b[39m\n\u001b[90mAdded Driver `templates`\u001b[39m\n\u001b[90mAdded Driver `tuya`\u001b[39m\n\u001b[90mAdded Driver `tuya-ts0011`\u001b[39m\n\u001b[90mAdded Driver `tuya-ts011f`\u001b[39m\n\u001b[90mAdded Driver `tuya_future_ai_device`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_light`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_plug`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_sensor`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_switch`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0501a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0502a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0502b`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0505a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0505b`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_universal`\u001b[39m\n\u001b[90mAdded Driver `tuya_thermostat`\u001b[39m\n\u001b[90mAdded Driver `tuya_universal_adapter`\u001b[39m\n\u001b[90mAdded Driver `tuya_water_sensor`\u001b[39m\n\u001b[90mAdded Driver `types`\u001b[39m\n\u001b[90mAdded Driver `zigbee`\u001b[39m\n\u001b[90mAdded Driver `zigbee-tuya-universal`\u001b[39m\n\u001b[31m× ENOTEMPTY: directory not empty, rmdir 'C:\\Users\\HP\\Desktop\\tuya_repair\\.homeybuild\\release\\drivers\\zigbee\\thermostats'\u001b[39m\n",
+      "stderr": "",
+      "error": "Command failed: homey app build\n",
+      "attempt": 2,
+      "command": "homey app build",
+      "duration": "77.94s",
+      "timestamp": "2025-09-10T12:41:55.076Z",
+      "errors": [],
+      "warnings": [],
+      "infos": [
+        "Added Driver `TS0601_climate`\u001b[39m",
+        "Added Driver `TS0601_cover`\u001b[39m",
+        "Added Driver `TS0601_irrigation`\u001b[39m",
+        "Added Driver `TS0601_lock`\u001b[39m",
+        "Added Driver `TS0601_siren`\u001b[39m",
+        "Added Driver `_base`\u001b[39m",
+        "Added Driver `_template`\u001b[39m",
+        "Added Driver `_templates`\u001b[39m",
+        "Added Driver `aqara_motion_sensor`\u001b[39m",
+        "Added Driver `bosch_thermostat_valve`\u001b[39m",
+        "Added Driver `climate`\u001b[39m",
+        "Added Driver `common`\u001b[39m",
+        "Added Driver `covers`\u001b[39m",
+        "Added Driver `ikea_tradfri_bulb`\u001b[39m",
+        "Added Driver `lights`\u001b[39m",
+        "Added Driver `manufacturers`\u001b[39m",
+        "Added Driver `protocols`\u001b[39m",
+        "Added Driver `security`\u001b[39m",
+        "Added Driver `sensors`\u001b[39m",
+        "Added Driver `sensors-TS0601_motion`\u001b[39m",
+        "Added Driver `switches`\u001b[39m",
+        "Added Driver `templates`\u001b[39m",
+        "Added Driver `tuya`\u001b[39m",
+        "Added Driver `tuya-ts0011`\u001b[39m",
+        "Added Driver `tuya-ts011f`\u001b[39m",
+        "Added Driver `tuya_future_ai_device`\u001b[39m",
+        "Added Driver `tuya_generic_light`\u001b[39m",
+        "Added Driver `tuya_generic_plug`\u001b[39m",
+        "Added Driver `tuya_generic_sensor`\u001b[39m",
+        "Added Driver `tuya_generic_switch`\u001b[39m",
+        "Added Driver `tuya_light_ts0501a`\u001b[39m",
+        "Added Driver `tuya_light_ts0502a`\u001b[39m",
+        "Added Driver `tuya_light_ts0502b`\u001b[39m",
+        "Added Driver `tuya_light_ts0505a`\u001b[39m",
+        "Added Driver `tuya_light_ts0505b`\u001b[39m",
+        "Added Driver `tuya_light_universal`\u001b[39m",
+        "Added Driver `tuya_thermostat`\u001b[39m",
+        "Added Driver `tuya_universal_adapter`\u001b[39m",
+        "Added Driver `tuya_water_sensor`\u001b[39m",
+        "Added Driver `types`\u001b[39m",
+        "Added Driver `zigbee`\u001b[39m",
+        "Added Driver `zigbee-tuya-universal`\u001b[39m",
+        "✓ Building app...\u001b[39m",
+        "✓ Pre-processing app...\u001b[39m"
+      ]
+    },
+    {
+      "cmd": "homey app build --clean",
+      "description": "Clean build test",
+      "critical": true,
+      "success": false,
+      "stdout": "",
+      "stderr": "homey.js app build\n\nBuild a Homey App for publishing\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n\nUnknown argument: clean\n",
+      "error": "Command failed: homey app build --clean\nhomey.js app build\n\nBuild a Homey App for publishing\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n\nUnknown argument: clean\n",
+      "attempt": 2,
+      "command": "homey app build --clean",
+      "duration": "33.00s",
+      "timestamp": "2025-09-10T12:42:30.080Z",
+      "errors": [],
+      "warnings": [],
+      "infos": []
+    },
+    {
+      "cmd": "homey app build --verbose",
+      "description": "Verbose build test",
+      "critical": false,
+      "success": false,
+      "stdout": "",
+      "stderr": "homey.js app build\n\nBuild a Homey App for publishing\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n\nUnknown argument: verbose\n",
+      "error": "Command failed: homey app build --verbose\nhomey.js app build\n\nBuild a Homey App for publishing\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n\nUnknown argument: verbose\n",
+      "attempt": 2,
+      "command": "homey app build --verbose",
+      "duration": "18.44s",
+      "timestamp": "2025-09-10T12:42:50.536Z",
+      "errors": [],
+      "warnings": [],
+      "infos": []
+    },
+    {
+      "cmd": "homey app info",
+      "description": "App information display",
+      "critical": false,
+      "success": false,
+      "stdout": "",
+      "stderr": "homey.js app\n\nApp related commands\n\nCommands:\n  homey.js app add-github-workflows  Add GitHub Workflows (validate, update\n                                     version, publish)\n  homey.js app add-types             Install the Apps SDK TypeScript\n                                     declarations\n  homey.js app build                 Build a Homey App for publishing\n  homey.js app compose               Migrate app to Homey compose\n  homey.js app create                Create a new Homey App\n  homey.js app discovery             Discovery related commands\n  homey.js app driver                Driver related commands\n  homey.js app flow                  Flow related commands\n  homey.js app install               Install a Homey App\n  homey.js app manage                View your app in the Homey Developer Tools\n  homey.js app publish               Publish a Homey App to the Homey Apps Store\n  homey.js app run                   Run a Homey App in development mode\n  homey.js app translate             Translate a Homey App with OpenAI\n  homey.js app validate              Validate a Homey App\n  homey.js app version <next>        Update a Homey App's version\n  homey.js app view                  View your app in the Homey App Store\n  homey.js app widget                Widget related commands\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n\nUnknown argument: info\n",
+      "error": "Command failed: homey app info\nhomey.js app\n\nApp related commands\n\nCommands:\n  homey.js app add-github-workflows  Add GitHub Workflows (validate, update\n                                     version, publish)\n  homey.js app add-types             Install the Apps SDK TypeScript\n                                     declarations\n  homey.js app build                 Build a Homey App for publishing\n  homey.js app compose               Migrate app to Homey compose\n  homey.js app create                Create a new Homey App\n  homey.js app discovery             Discovery related commands\n  homey.js app driver                Driver related commands\n  homey.js app flow                  Flow related commands\n  homey.js app install               Install a Homey App\n  homey.js app manage                View your app in the Homey Developer Tools\n  homey.js app publish               Publish a Homey App to the Homey Apps Store\n  homey.js app run                   Run a Homey App in development mode\n  homey.js app translate             Translate a Homey App with OpenAI\n  homey.js app validate              Validate a Homey App\n  homey.js app version <next>        Update a Homey App's version\n  homey.js app view                  View your app in the Homey App Store\n  homey.js app widget                Widget related commands\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n\nUnknown argument: info\n",
+      "attempt": 2,
+      "command": "homey app info",
+      "duration": "15.51s",
+      "timestamp": "2025-09-10T12:43:08.056Z",
+      "errors": [],
+      "warnings": [],
+      "infos": []
+    },
+    {
+      "cmd": "homey app drivers",
+      "description": "Drivers listing",
+      "critical": false,
+      "success": false,
+      "stdout": "",
+      "stderr": "homey.js app\n\nApp related commands\n\nCommands:\n  homey.js app add-github-workflows  Add GitHub Workflows (validate, update\n                                     version, publish)\n  homey.js app add-types             Install the Apps SDK TypeScript\n                                     declarations\n  homey.js app build                 Build a Homey App for publishing\n  homey.js app compose               Migrate app to Homey compose\n  homey.js app create                Create a new Homey App\n  homey.js app discovery             Discovery related commands\n  homey.js app driver                Driver related commands\n  homey.js app flow                  Flow related commands\n  homey.js app install               Install a Homey App\n  homey.js app manage                View your app in the Homey Developer Tools\n  homey.js app publish               Publish a Homey App to the Homey Apps Store\n  homey.js app run                   Run a Homey App in development mode\n  homey.js app translate             Translate a Homey App with OpenAI\n  homey.js app validate              Validate a Homey App\n  homey.js app version <next>        Update a Homey App's version\n  homey.js app view                  View your app in the Homey App Store\n  homey.js app widget                Widget related commands\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n\nUnknown argument: drivers\n",
+      "error": "Command failed: homey app drivers\nhomey.js app\n\nApp related commands\n\nCommands:\n  homey.js app add-github-workflows  Add GitHub Workflows (validate, update\n                                     version, publish)\n  homey.js app add-types             Install the Apps SDK TypeScript\n                                     declarations\n  homey.js app build                 Build a Homey App for publishing\n  homey.js app compose               Migrate app to Homey compose\n  homey.js app create                Create a new Homey App\n  homey.js app discovery             Discovery related commands\n  homey.js app driver                Driver related commands\n  homey.js app flow                  Flow related commands\n  homey.js app install               Install a Homey App\n  homey.js app manage                View your app in the Homey Developer Tools\n  homey.js app publish               Publish a Homey App to the Homey Apps Store\n  homey.js app run                   Run a Homey App in development mode\n  homey.js app translate             Translate a Homey App with OpenAI\n  homey.js app validate              Validate a Homey App\n  homey.js app version <next>        Update a Homey App's version\n  homey.js app view                  View your app in the Homey App Store\n  homey.js app widget                Widget related commands\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n\nUnknown argument: drivers\n",
+      "attempt": 2,
+      "command": "homey app drivers",
+      "duration": "14.25s",
+      "timestamp": "2025-09-10T12:43:24.316Z",
+      "errors": [],
+      "warnings": [],
+      "infos": []
+    },
+    {
+      "cmd": "node -c app.js",
+      "description": "App.js syntax check",
+      "critical": true,
+      "success": true,
+      "stdout": "",
+      "stderr": "",
+      "error": null,
+      "attempt": 1,
+      "command": "node -c app.js",
+      "duration": "0.19s",
+      "timestamp": "2025-09-10T12:43:26.508Z",
+      "errors": [],
+      "warnings": [],
+      "infos": []
+    },
+    {
+      "cmd": "node -e \"console.log('Node.js runtime test')\"",
+      "description": "Node.js runtime test",
+      "critical": true,
+      "success": true,
+      "stdout": "Node.js runtime test\n",
+      "stderr": "",
+      "error": null,
+      "attempt": 1,
+      "command": "node -e \"console.log('Node.js runtime test')\"",
+      "duration": "0.15s",
+      "timestamp": "2025-09-10T12:43:28.663Z",
+      "errors": [],
+      "warnings": [],
+      "infos": []
+    },
+    {
+      "cmd": "npm audit --audit-level moderate",
+      "description": "Security audit (moderate)",
+      "critical": false,
+      "success": false,
+      "stdout": "",
+      "stderr": "npm error code ENOLOCK\nnpm error audit This command requires an existing lockfile.\nnpm error audit Try creating one first with: npm i --package-lock-only\nnpm error audit Original error: loadVirtual requires existing shrinkwrap file\nnpm error A complete log of this run can be found in: C:\\Users\\HP\\AppData\\Local\\npm-cache\\_logs\\2025-09-10T12_43_40_396Z-debug-0.log\n",
+      "error": "Command failed: npm audit --audit-level moderate\nnpm error code ENOLOCK\nnpm error audit This command requires an existing lockfile.\nnpm error audit Try creating one first with: npm i --package-lock-only\nnpm error audit Original error: loadVirtual requires existing shrinkwrap file\nnpm error A complete log of this run can be found in: C:\\Users\\HP\\AppData\\Local\\npm-cache\\_logs\\2025-09-10T12_43_40_396Z-debug-0.log\n",
+      "attempt": 2,
+      "command": "npm audit --audit-level moderate",
+      "duration": "11.59s",
+      "timestamp": "2025-09-10T12:43:42.259Z",
+      "errors": [],
+      "warnings": [],
+      "infos": []
+    },
+    {
+      "cmd": "npm test",
+      "description": "NPM test suite",
+      "critical": false,
+      "success": false,
+      "stdout": "\n> com.tuya.zigbee@2.1.0 test\n> mocha\n\n",
+      "stderr": "'mocha' n'est pas reconnu en tant que commande interne\r\nou externe, un programme ex�cutable ou un fichier de commandes.\r\n",
+      "error": "Command failed: npm test\n'mocha' n'est pas reconnu en tant que commande interne\r\nou externe, un programme ex�cutable ou un fichier de commandes.\r\n",
+      "attempt": 2,
+      "command": "npm test",
+      "duration": "8.10s",
+      "timestamp": "2025-09-10T12:43:52.372Z",
+      "errors": [],
+      "warnings": [],
+      "infos": []
+    },
+    {
+      "cmd": "npm run validate",
+      "description": "Custom validation script",
+      "critical": false,
+      "success": false,
+      "stdout": "\n> com.tuya.zigbee@2.1.0 validate\n> node scripts/enhanced-validate.js\n\n",
+      "stderr": "node:internal/modules/cjs/loader:1386\r\n  throw err;\r\n  ^\r\n\r\nError: Cannot find module 'C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\enhanced-validate.js'\r\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)\r\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)\r\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)\r\n    at Function._load (node:internal/modules/cjs/loader:1192:37)\r\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)\r\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\r\n    at node:internal/main/run_main_module:36:49 {\r\n  code: 'MODULE_NOT_FOUND',\r\n  requireStack: []\r\n}\r\n\r\nNode.js v22.19.0\r\n",
+      "error": "Command failed: npm run validate\nnode:internal/modules/cjs/loader:1386\r\n  throw err;\r\n  ^\r\n\r\nError: Cannot find module 'C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\enhanced-validate.js'\r\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)\r\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)\r\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)\r\n    at Function._load (node:internal/modules/cjs/loader:1192:37)\r\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)\r\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\r\n    at node:internal/main/run_main_module:36:49 {\r\n  code: 'MODULE_NOT_FOUND',\r\n  requireStack: []\r\n}\r\n\r\nNode.js v22.19.0\r\n",
+      "attempt": 2,
+      "command": "npm run validate",
+      "duration": "7.53s",
+      "timestamp": "2025-09-10T12:44:01.913Z",
+      "errors": [
+        "Error: Cannot find module 'C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\enhanced-validate.js'"
+      ],
+      "warnings": [],
+      "infos": []
+    }
+  ],
+  "driverTestResults": [],
+  "compatibilityResults": [
+    {
+      "name": "Node.js version compatibility",
+      "success": true,
+      "details": "Node.js v22.19.0 (requires >= 18)",
+      "version": "v22.19.0"
+    },
+    {
+      "name": "Homey CLI version compatibility",
+      "success": true,
+      "details": "Homey CLI 3.9.4",
+      "version": "3.9.4"
+    },
+    {
+      "name": "Package.json validity",
+      "success": true,
+      "details": "com.tuya.zigbee@2.1.0",
+      "packageJson": {
+        "name": "com.tuya.zigbee",
+        "version": "2.1.0",
+        "description": "Universal Tuya Zigbee Device Integration for Homey",
+        "main": "app.js",
+        "keywords": [
+          "homey",
+          "zigbee",
+          "tuya",
+          "smart home",
+          "iot"
+        ],
+        "author": "Tuya Zigbee Team",
+        "contributors": [
+          {
+            "name": "Community Contributors",
+            "email": "community@homey.app"
+          }
+        ],
+        "license": "MIT",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/dlnraja/com.tuya.zigbee"
+        },
+        "bugs": {
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
+        },
+        "homepage": "https://dlnraja.github.io/com.tuya.zigbee",
+        "engines": {
+          "node": ">=18.0.0"
+        },
+        "scripts": {
+          "test": "mocha",
+          "test:watch": "mocha --watch",
+          "test:coverage": "nyc mocha",
+          "test:ci": "mocha --reporter mocha-junit-reporter --reporter-options mochaFile=./test-results.xml",
+          "test:simulate": "node scripts/simulate-device.js",
+          "validate": "node scripts/enhanced-validate.js",
+          "validate:legacy": "node scripts/validate-and-fix.js",
+          "validate:z2m": "node scripts/validate-z2m-compatibility.js",
+          "fix": "node scripts/fix-common-issues.js",
+          "verify": "node scripts/verify-zigbee-drivers.js",
+          "lint": "eslint . --fix",
+          "format": "prettier --write .",
+          "start": "homey app run",
+          "build": "homey app build",
+          "publish": "homey app publish",
+          "precommit": "npm run lint && npm test",
+          "fetch-sources": "node scripts/fetch-all-sources.js",
+          "build-matrices": "node scripts/build-matrices.js",
+          "repair": "node scripts/repair-json.js",
+          "check-env": "node scripts/check-environment.js",
+          "generate-docs": "node scripts/generate-docs.js",
+          "release": "npm run fetch-sources && npm run repair && npm run validate && npm test && npm run build-matrices && homey app validate"
+        },
+        "dependencies": {
+          "homey-zigbeedriver": "^2.0.0",
+          "zigbee-clusters": "^2.0.0",
+          "fs-extra": "^11.2.0",
+          "homey-log": "^3.0.0",
+          "axios": "^1.6.7",
+          "jsdom": "^24.0.0",
+          "natural": "^6.3.0",
+          "compromise": "^14.11.0",
+          "csv-stringify": "^6.4.5",
+          "ajv": "^8.12.0",
+          "vm2": "^3.9.19",
+          "cheerio": "^1.0.0-rc.12",
+          "stopword": "^3.1.0",
+          "@octokit/rest": "^20.0.2",
+          "homey": "^3.0.0"
+        },
+        "devDependencies": {
+          "eslint": "^8.57.0",
+          "eslint-config-prettier": "^9.1.0",
+          "eslint-plugin-node": "^11.1.0",
+          "prettier": "^3.2.4",
+          "mocha": "^10.2.0",
+          "chai": "^4.3.7",
+          "sinon": "^17.0.0",
+          "nyc": "^15.1.0",
+          "jest": "^29.7.0",
+          "jsonschema": "^1.4.1",
+          "homey-mock": "^2.0.0",
+          "rimraf": "^5.0.5",
+          "eslint-config-homey-app": "^3.0.0",
+          "eslint-plugin-import": "^2.29.1"
+        }
+      }
+    },
+    {
+      "name": "App.json validity",
+      "success": true,
+      "details": "All required fields present",
+      "appJson": {
+        "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+        "main": "app.js",
+        "id": "com.dlnraja.ultimate.zigbee.hub",
+        "version": "4.0.0",
+        "compatibility": ">=8.0.0",
+        "category": [
+          "lights"
+        ],
+        "name": {
+          "en": "Homey Ultimate Zigbee Hub",
+          "fr": "Homey Ultimate Zigbee Hub",
+          "nl": "Homey Ultimate Zigbee Hub",
+          "ta": "Homey Ultimate Zigbee Hub"
+        },
+        "description": {
+          "en": "Homey Ultimate Zigbee Hub: unified community Zigbee drivers with modular architecture and Windows 11 optimizations",
+          "fr": "Homey Ultimate Zigbee Hub : unification des drivers Zigbee communautaires avec architecture modulaire et optimisations Windows 11",
+          "nl": "Homey Ultimate Zigbee Hub: verenigde community Zigbee-drivers met modulaire architectuur en Windows 11-optimalisaties",
+          "ta": "Homey Ultimate Zigbee Hub: சமூக Zigbee இயக்கிகள் ஒன்றுபட்டவை, தொகுதி நிர்மாணமும் Windows 11 மேம்பாடுகளும்"
+        },
+        "author": {
+          "name": "dlnraja",
+          "email": "dylan.rajasekaram@gmail.com"
+        },
+        "contributors": {},
+        "support": "mailto:dylan.rajasekaram@gmail.com",
+        "homepage": "https://github.com/dlnraja/tuya_repair",
+        "license": "MIT",
+        "platforms": [
+          "local"
+        ],
+        "images": {
+          "large": "./assets/images/large.png",
+          "small": "./assets/images/small.png"
+        },
+        "icon": "assets/icon.svg",
+        "color": "#FF6B35",
+        "brandColor": "#FF0000",
+        "permissions": [
+          "homey:manager:api"
+        ],
+        "homey": "1.0.0",
+        "drivers": [
+          {
+            "id": "TS0601_climate",
+            "name": {
+              "en": "Tuya Smart Thermostat/Climate Controller",
+              "fr": "Tuya Smart Thermostat/Climate Controller",
+              "nl": "Tuya Smart Thermostat/Climate Controller"
+            },
+            "class": "thermostat",
+            "capabilities": [
+              "target_temperature",
+              "measure_temperature",
+              "thermostat_mode"
+            ],
+            "platforms": [
+              "local"
+            ],
+            "connectivity": [
+              "zigbee"
+            ],
+            "images": {
+              "small": "./assets/images/small.svg",
+              "large": "./assets/images/large.svg",
+              "xlarge": "./assets/images/xlarge.svg"
+            },
+            "zigbee": {
+              "manufacturerName": [
+                "_TZ3000_*",
+                "_TZ3210_*",
+                "_TYZB01_*",
+                "_TYZB02_*",
+                "_TZ3400_*"
+              ],
+              "productId": [
+                "TS0601"
+              ],
+              "deviceId": 81,
+              "profileId": 260,
+              "learnmode": {
+                "image": "./assets/images/learnmode.svg",
+                "instruction": {
+                  "en": "Press and hold the reset button for 10 seconds",
+                  "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+                  "nl": "Houd de resetknop 10 seconden ingedrukt"
+                }
+              },
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    "hvacThermostat",
+                    "hvacFanCtrl",
+                    "msTemperatureMeasurement"
+                  ],
+                  "bindings": [
+                    "hvacThermostat",
+                    "hvacFanCtrl",
+                    "msTemperatureMeasurement"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "id": "TS0601_cover",
+            "name": {
+              "en": "Tuya Smart Curtain/Blind Controller",
+              "fr": "Tuya Smart Curtain/Blind Controller",
+              "nl": "Tuya Smart Curtain/Blind Controller"
+            },
+            "class": "windowcoverings",
+            "capabilities": [
+              "windowcoverings_state",
+              "dim"
+            ],
+            "platforms": [
+              "local"
+            ],
+            "connectivity": [
+              "zigbee"
+            ],
+            "images": {
+              "small": "./assets/images/small.svg",
+              "large": "./assets/images/large.svg",
+              "xlarge": "./assets/images/xlarge.svg"
+            },
+            "zigbee": {
+              "manufacturerName": [
+                "_TZ3000_*",
+                "_TZ3210_*",
+                "_TYZB01_*",
+                "_TYZB02_*",
+                "_TZ3400_*"
+              ],
+              "productId": [
+                "TS0601"
+              ],
+              "deviceId": 81,
+              "profileId": 260,
+              "learnmode": {
+                "image": "./assets/images/learnmode.svg",
+                "instruction": {
+                  "en": "Press and hold the reset button for 10 seconds",
+                  "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+                  "nl": "Houd de resetknop 10 seconden ingedrukt"
+                }
+              },
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    "closuresWindowCovering"
+                  ],
+                  "bindings": [
+                    "closuresWindowCovering"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "id": "TS0601_irrigation",
+            "name": {
+              "en": "Tuya Smart Irrigation Controller",
+              "fr": "Tuya Smart Irrigation Controller",
+              "nl": "Tuya Smart Irrigation Controller"
+            },
+            "class": "other",
+            "capabilities": [
+              "onoff",
+              "measure_humidity"
+            ],
+            "platforms": [
+              "local"
+            ],
+            "connectivity": [
+              "zigbee"
+            ],
+            "images": {
+              "small": "./assets/images/small.svg",
+              "large": "./assets/images/large.svg",
+              "xlarge": "./assets/images/xlarge.svg"
+            },
+            "zigbee": {
+              "manufacturerName": [
+                "_TZ3000_*",
+                "_TZ3210_*",
+                "_TYZB01_*",
+                "_TYZB02_*",
+                "_TZ3400_*"
+              ],
+              "productId": [
+                "TS0601"
+              ],
+              "deviceId": 81,
+              "profileId": 260,
+              "learnmode": {
+                "image": "./assets/images/learnmode.svg",
+                "instruction": {
+                  "en": "Press and hold the reset button for 10 seconds",
+                  "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+                  "nl": "Houd de resetknop 10 seconden ingedrukt"
+                }
+              },
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    "genOnOff",
+                    "msRelativeHumidity"
+                  ],
+                  "bindings": [
+                    "genOnOff",
+                    "msRelativeHumidity"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "id": "TS0601_lock",
+            "name": {
+              "en": "Tuya Smart Door Lock",
+              "fr": "Tuya Smart Door Lock",
+              "nl": "Tuya Smart Door Lock"
+            },
+            "class": "lock",
+            "capabilities": [
+              "locked",
+              "alarm_generic"
+            ],
+            "platforms": [
+              "local"
+            ],
+            "connectivity": [
+              "zigbee"
+            ],
+            "images": {
+              "small": "./assets/images/small.svg",
+              "large": "./assets/images/large.svg",
+              "xlarge": "./assets/images/xlarge.svg"
+            },
+            "zigbee": {
+              "manufacturerName": [
+                "_TZ3000_*",
+                "_TZ3210_*",
+                "_TYZB01_*",
+                "_TYZB02_*",
+                "_TZ3400_*"
+              ],
+              "productId": [
+                "TS0601"
+              ],
+              "deviceId": 81,
+              "profileId": 260,
+              "learnmode": {
+                "image": "./assets/images/learnmode.svg",
+                "instruction": {
+                  "en": "Press and hold the reset button for 10 seconds",
+                  "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+                  "nl": "Houd de resetknop 10 seconden ingedrukt"
+                }
+              },
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    "closuresDoorLock",
+                    "ssIasZone"
+                  ],
+                  "bindings": [
+                    "closuresDoorLock",
+                    "ssIasZone"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "id": "TS0601_siren",
+            "name": {
+              "en": "Tuya Smart Siren/Alarm",
+              "fr": "Tuya Smart Siren/Alarm",
+              "nl": "Tuya Smart Siren/Alarm"
+            },
+            "class": "other",
+            "capabilities": [
+              "alarm_generic",
+              "onoff"
+            ],
+            "platforms": [
+              "local"
+            ],
+            "connectivity": [
+              "zigbee"
+            ],
+            "images": {
+              "small": "./assets/images/small.svg",
+              "large": "./assets/images/large.svg",
+              "xlarge": "./assets/images/xlarge.svg"
+            },
+            "zigbee": {
+              "manufacturerName": [
+                "_TZ3000_*",
+                "_TZ3210_*",
+                "_TYZB01_*",
+                "_TYZB02_*",
+                "_TZ3400_*"
+              ],
+              "productId": [
+                "TS0601"
+              ],
+              "deviceId": 81,
+              "profileId": 260,
+              "learnmode": {
+                "image": "./assets/images/learnmode.svg",
+                "instruction": {
+                  "en": "Press and hold the reset button for 10 seconds",
+                  "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+                  "nl": "Houd de resetknop 10 seconden ingedrukt"
+                }
+              },
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    "ssIasWd",
+                    "genOnOff"
+                  ],
+                  "bindings": [
+                    "ssIasWd",
+                    "genOnOff"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "id": "_base",
+            "name": {
+              "en": "Base Driver"
+            },
+            "class": "sensor",
+            "zigbee": {
+              "manufacturerName": [
+                "Tuya"
+              ],
+              "productId": [
+                "_base"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    1
+                  ],
+                  "bindings": [
+                    1
+                  ]
+                }
+              }
+            },
+            "capabilities": [
+              "measure_battery"
+            ]
+          },
+          {
+            "id": "_template",
+            "name": {
+              "en": "Template Device",
+              "fr": "Modèle d'appareil"
+            },
+            "class": "other",
+            "capabilities": [
+              "onoff"
+            ],
+            "capabilitiesOptions": {
+              "onoff": {
+                "title": {
+                  "en": "Switch",
+                  "fr": "Interrupteur"
+                }
+              }
+            },
+            "icon": "/drivers/template/assets/icon.svg",
+            "images": {
+              "large": "/drivers/template/assets/images/large.png",
+              "small": "/drivers/template/assets/images/small.png"
+            },
+            "pair": [
+              {
+                "id": "list_devices",
+                "template": "list_devices",
+                "navigation": {
+                  "next": "add_devices"
+                }
+              },
+              {
+                "id": "add_devices",
+                "template": "add_devices"
+              }
+            ],
+            "zigbee": {
+              "manufacturerName": [
+                "Tuya"
+              ],
+              "productId": [
+                "template"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    1
+                  ],
+                  "bindings": [
+                    1
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "id": "_templates",
+            "name": {
+              "en": "Tuya Device Template"
+            },
+            "class": "other",
+            "capabilities": [
+              "onoff"
+            ],
+            "capabilitiesOptions": {
+              "onoff": {
+                "title": {
+                  "en": "Power"
+                }
+              }
+            },
+            "images": {
+              "large": "./assets/images/large/device.png",
+              "small": "./assets/images/small/device.png"
+            },
+            "pair": [
+              {
+                "id": "list_devices",
+                "template": "list_devices",
+                "navigation": {
+                  "next": "add_devices"
+                },
+                "options": {
+                  "singular": true
+                }
+              },
+              {
+                "id": "add_devices",
+                "template": "add_devices"
+              }
+            ],
+            "zigbee": {
+              "manufacturerName": [
+                "Tuya"
+              ],
+              "productId": [
+                "template_driver"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    1
+                  ],
+                  "bindings": [
+                    1
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "id": "aqara_motion_sensor",
+            "name": {
+              "en": "Aqara Motion Sensor",
+              "fr": "Capteur de Mouvement Aqara"
+            },
+            "class": "sensor",
+            "capabilities": [
+              "alarm_motion",
+              "measure_battery"
+            ],
+            "icon": "/drivers/aqara_motion_sensor/assets/icon.svg",
+            "images": {
+              "large": "/drivers/aqara_motion_sensor/assets/images/large.png",
+              "small": "/drivers/aqara_motion_sensor/assets/images/small.png"
+            },
+            "pair": [
+              {
+                "id": "list_devices",
+                "template": "list_devices",
+                "navigation": {
+                  "next": "add_devices"
+                }
+              },
+              {
+                "id": "add_devices",
+                "template": "add_devices"
+              }
+            ],
+            "zigbee": {
+              "manufacturerName": [
+                "Aqara",
+                "LUMI"
+              ],
+              "productId": [
+                "RTCGQ11LM",
+                "lumi.sensor_motion"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    1,
+                    1280
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "id": "bosch_thermostat_valve",
+            "name": {
+              "en": "Bosch Thermostat Valve",
+              "fr": "Tête Thermostatique Bosch"
+            },
+            "class": "thermostat",
+            "capabilities": [
+              "measure_temperature",
+              "target_temperature",
+              "measure_battery"
+            ],
+            "icon": "/drivers/bosch_thermostat_valve/assets/icon.svg",
+            "images": {
+              "large": "/drivers/bosch_thermostat_valve/assets/images/large.png",
+              "small": "/drivers/bosch_thermostat_valve/assets/images/small.png"
+            },
+            "pair": [
+              {
+                "id": "list_devices",
+                "template": "list_devices",
+                "navigation": {
+                  "next": "add_devices"
+                }
+              },
+              {
+                "id": "add_devices",
+                "template": "add_devices"
+              }
+            ],
+            "zigbee": {
+              "manufacturerName": [
+                "Bosch"
+              ],
+              "productId": [
+                "TRV"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    1,
+                    1026,
+                    513
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "id": "climate",
+            "name": "Climate Devices",
+            "icon": "/drivers/climate/assets/icon.svg",
+            "class": "sensor",
+            "zigbee": {
+              "manufacturerName": [
+                "Tuya"
+              ],
+              "productId": [
+                "climate"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    1
+                  ],
+                  "bindings": [
+                    1
+                  ]
+                }
+              }
+            },
+            "capabilities": [
+              "measure_battery"
+            ]
+          },
+          {
+            "id": "common",
+            "name": "Common Utilities",
+            "icon": "/drivers/common/assets/icon.svg",
+            "class": "sensor",
+            "zigbee": {
+              "manufacturerName": [
+                "Tuya"
+              ],
+              "productId": [
+                "common"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    1
+                  ],
+                  "bindings": [
+                    1
+                  ]
+                }
+              }
+            },
+            "capabilities": [
+              "measure_battery"
+            ]
+          },
+          {
+            "id": "covers",
+            "name": "Covers",
+            "icon": "/drivers/covers/assets/icon.svg",
+            "class": "sensor",
+            "zigbee": {
+              "manufacturerName": [
+                "Tuya"
+              ],
+              "productId": [
+                "covers"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    1
+                  ],
+                  "bindings": [
+                    1
+                  ]
+                }
+              }
+            },
+            "capabilities": [
+              "measure_battery"
+            ]
+          },
+          {
+            "id": "ikea_tradfri_bulb",
+            "name": {
+              "en": "IKEA TRÅDFRI Bulb",
+              "fr": "Ampoule IKEA TRÅDFRI"
+            },
+            "class": "light",
+            "capabilities": [
+              "onoff",
+              "dim",
+              "light_temperature"
+            ],
+            "icon": "/drivers/ikea_tradfri_bulb/assets/icon.svg",
+            "images": {
+              "large": "/drivers/ikea_tradfri_bulb/assets/images/large.png",
+              "small": "/drivers/ikea_tradfri_bulb/assets/images/small.png"
+            },
+            "pair": [
+              {
+                "id": "list_devices",
+                "template": "list_devices",
+                "navigation": {
+                  "next": "add_devices"
+                }
+              },
+              {
+                "id": "add_devices",
+                "template": "add_devices"
+              }
+            ],
+            "zigbee": {
+              "manufacturerName": [
+                "IKEA"
+              ],
+              "productId": [
+                "LED1650R5",
+                "TRADFRI bulb E27 WS opal 980lm"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    6,
+                    8,
+                    768
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "id": "lights",
+            "name": "Lights",
+            "icon": "/drivers/lights/assets/icon.svg",
+            "class": "sensor",
+            "zigbee": {
+              "manufacturerName": [
+                "Tuya"
+              ],
+              "productId": [
+                "lights"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    1
+                  ],
+                  "bindings": [
+                    1
+                  ]
+                }
+              }
+            },
+            "capabilities": [
+              "measure_battery"
+            ]
+          },
+          {
+            "id": "manufacturers",
+            "name": "Manufacturers Container",
+            "class": "sensor",
+            "zigbee": {
+              "manufacturerName": [
+                "Tuya"
+              ],
+              "productId": [
+                "manufacturers_root"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    1
+                  ],
+                  "bindings": [
+                    1
+                  ]
+                }
+              }
+            },
+            "capabilities": [
+              "measure_battery"
+            ]
+          },
+          {
+            "id": "protocols",
+            "name": "Protocols Container",
+            "class": "folder",
+            "zigbee": {
+              "manufacturerName": [
+                "Tuya"
+              ],
+              "productId": [
+                "protocols_container"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    1
+                  ],
+                  "bindings": [
+                    1
+                  ]
+                }
+              }
+            },
+            "capabilities": []
+          },
+          {
+            "id": "security",
+            "name": "Security Devices",
+            "icon": "/drivers/security/assets/icon.svg",
+            "class": "sensor",
+            "zigbee": {
+              "manufacturerName": [
+                "Tuya"
+              ],
+              "productId": [
+                "security"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    1
+                  ],
+                  "bindings": [
+                    1
+                  ]
+                }
+              }
+            },
+            "capabilities": [
+              "measure_battery"
+            ]
+          },
+          {
+            "id": "sensors",
+            "name": "Sensors",
+            "icon": "/drivers/sensors/assets/icon.svg",
+            "class": "sensor",
+            "zigbee": {
+              "manufacturerName": [
+                "Tuya"
+              ],
+              "productId": [
+                "sensors"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    1
+                  ],
+                  "bindings": [
+                    1
+                  ]
+                }
+              }
+            },
+            "capabilities": [
+              "measure_battery"
+            ]
+          },
+          {
+            "id": "sensors-TS0601_motion",
+            "title": {
+              "en": "Tuya TS0601 Motion Sensor",
+              "fr": "Détecteur de mouvement Tuya TS0601",
+              "nl": "Tuya TS0601 Bewegingssensor",
+              "ta": "Tuya TS0601 இயக்க உணரி"
+            },
+            "class": "sensor",
+            "capabilities": [
+              "alarm_motion",
+              "measure_temperature",
+              "measure_battery",
+              "alarm_battery",
+              "onoff",
+              "measure_power",
+              "meter_power",
+              "fan_speed",
+              "dim",
+              "target_temperature",
+              "windowcoverings_state",
+              "lock_state"
+            ],
+            "capabilitiesOptions": {
+              "alarm_motion": {
+                "title": {
+                  "en": "Motion",
+                  "fr": "Mouvement",
+                  "nl": "Beweging",
+                  "ta": "இயக்கம்"
+                }
+              },
+              "measure_temperature": {
+                "title": {
+                  "en": "Temperature",
+                  "fr": "Température",
+                  "nl": "Temperatuur",
+                  "ta": "வெப்பநிலை"
+                },
+                "units": "°C"
+              },
+              "measure_battery": {
+                "title": {
+                  "en": "Battery",
+                  "fr": "Batterie",
+                  "nl": "Batterij",
+                  "ta": "பேட்டரி"
+                },
+                "units": "%"
+              },
+              "alarm_battery": {
+                "title": {
+                  "en": "Battery Alarm",
+                  "fr": "Alerte batterie",
+                  "nl": "Batterij alarm",
+                  "ta": "பேட்டரி எச்சரிக்கை"
+                }
+              }
+            },
+            "images": {
+              "small": "assets/small.png",
+              "large": "assets/large.png"
+            },
+            "name": {
+              "en": "Tuya TS0601 Motion Sensor",
+              "fr": "Détecteur de mouvement Tuya TS0601",
+              "nl": "Tuya TS0601 Bewegingssensor",
+              "ta": "Tuya TS0601 இயக்க உணரி"
+            },
+            "settings": [
+              {
+                "id": "motion_reset",
+                "type": "number",
+                "value": 60,
+                "label": {
+                  "en": "Motion Reset Time (seconds)",
+                  "fr": "Temps de réinitialisation du détecteur (secondes)",
+                  "nl": "Bewegingshersteltijd (seconden)",
+                  "ta": "இயக்க மீட்டமைப்பு நேரம் (விநாடிகள்)"
+                },
+                "hint": {
+                  "en": "Time after which motion alarm is reset (default: 60s)",
+                  "fr": "Temps après lequel l'alarme de mouvement est réinitialisée (par défaut : 60s)",
+                  "nl": "Tijd waarna het bewegingsalarm wordt gereset (standaard: 60s)",
+                  "ta": "இயக்க எச்சரிக்கை மீட்டமைக்கப்படும் நேரம் (இயல்புநிலை: 60 வினாடிகள்)"
+                },
+                "attr": {
+                  "min": 10,
+                  "max": 300
+                }
+              },
+              {
+                "id": "temperature_offset",
+                "type": "number",
+                "value": 0,
+                "label": {
+                  "en": "Temperature Offset",
+                  "fr": "Décalage de température",
+                  "nl": "Temperatuur correctie",
+                  "ta": "வெப்பநிலை ஈடுசெய்தல்"
+                },
+                "hint": {
+                  "en": "Adjust the temperature reading by this value",
+                  "fr": "Ajuster la lecture de température de cette valeur",
+                  "nl": "Pas de temperatuuraflezing aan met deze waarde",
+                  "ta": "வெப்பநிலை வாசிப்பை இந்த மதிப்பால் சரிசெய்யவும்"
+                },
+                "attr": {
+                  "min": -10,
+                  "max": 10,
+                  "step": 0.1
+                }
+              }
+            ],
+            "zigbee": {
+              "manufacturerName": [
+                "_TZE200_7tdtqgwv",
+                "_TZE200_amp6tsvy",
+                "_TZE200_7yodxhya",
+                "_TZE200_locansqn",
+                "_TZE200_3i3exu4n",
+                "_TZE200_7hfcudw5",
+                "_TZE200_3towulqd",
+                "_TZE200_whpb9y8z",
+                "_TZE200_7yuohek9",
+                "_TZE200_3towolqd"
+              ],
+              "productId": [
+                "TS0601"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    1,
+                    3,
+                    6,
+                    1280
+                  ],
+                  "bindings": [
+                    {
+                      "type": "report",
+                      "cluster": "msTemperatureMeasurement",
+                      "attribute": "measuredValue",
+                      "minInterval": 60,
+                      "maxInterval": 3600,
+                      "minChange": 10
+                    },
+                    {
+                      "type": "report",
+                      "cluster": "genPowerCfg",
+                      "attribute": "batteryPercentageRemaining",
+                      "minInterval": 3600,
+                      "maxInterval": 21600,
+                      "minChange": 1
+                    }
+                  ]
+                }
+              },
+              "learnmode": {
+                "image": "/drivers/sensors-TS0601_motion/assets/learn.svg",
+                "instruction": {
+                  "en": "Press and hold the pairing button on the device for 5 seconds until the LED starts blinking",
+                  "fr": "Appuyez et maintenez le bouton d'appairage sur l'appareil pendant 5 secondes jusqu'à ce que la LED clignote",
+                  "nl": "Houd de koppelknop op het apparaat 5 seconden ingedrukt totdat de LED gaat knipperen",
+                  "ta": "சாதனத்தில் இணைப்பு பொத்தானை 5 விநாடிகள் அழுத்திப் பிடிக்கவும், LED ஒளிரும் வரை"
+                }
+              }
+            },
+            "pair": [
+              {
+                "id": "list_devices",
+                "template": "list_devices",
+                "navigation": {
+                  "next": "add_devices"
+                }
+              },
+              {
+                "id": "add_devices",
+                "template": "add_devices"
+              }
+            ],
+            "icon": "/drivers/manufacturers/sensors-TS0601/sensors-TS0601_motion/assets/icon.svg"
+          },
+          {
+            "id": "switches",
+            "name": "Switches",
+            "icon": "/drivers/switches/assets/icon.svg",
+            "class": "sensor",
+            "zigbee": {
+              "manufacturerName": [
+                "Tuya"
+              ],
+              "productId": [
+                "switches"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    1
+                  ],
+                  "bindings": [
+                    1
+                  ]
+                }
+              }
+            },
+            "capabilities": [
+              "measure_battery"
+            ]
+          },
+          {
+            "id": "templates",
+            "name": {
+              "en": "Template Device"
+            },
+            "class": "sensor",
+            "capabilities": [],
+            "zigbee": {
+              "manufacturerName": "Manufacturer",
+              "modelId": [
+                "Model"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    "genBasic"
+                  ]
+                }
+              }
+            },
+            "images": {
+              "large": "assets/images/large/template.png",
+              "small": "assets/images/small/template.png"
+            },
+            "settings": []
+          },
+          {
+            "id": "tuya",
+            "class": "other",
+            "name": {
+              "en": "tuya",
+              "fr": "tuya"
+            },
+            "capabilities": [
+              "onoff"
+            ],
+            "images": {
+              "small": "assets/small.png",
+              "large": "assets/large.png"
+            },
+            "icon": "/drivers/manufacturers/tuya/tuya/assets/icon.svg",
+            "pair": [
+              {
+                "id": "list_devices",
+                "template": "list_devices",
+                "navigation": {
+                  "next": "add_devices"
+                }
+              },
+              {
+                "id": "add_devices",
+                "template": "add_devices"
+              }
+            ],
+            "zigbee": {
+              "manufacturerName": [
+                "Tuya"
+              ],
+              "productId": [
+                "GENERIC"
+              ]
+            }
+          },
+          {
+            "id": "tuya-ts0011",
+            "name": {
+              "en": "Tuya TS0011 Smart Switch"
+            },
+            "description": {
+              "en": "Adds support for Tuya TS0011 Smart Switch"
+            },
+            "category": [
+              "switch"
+            ],
+            "compat": true,
+            "images": {
+              "large": "/drivers/tuya-ts0011/assets/images/device-large.png",
+              "small": "/drivers/tuya-ts0011/assets/images/device-small.png"
+            },
+            "zigbee": {
+              "manufacturerName": [
+                "Tuya-ts0011"
+              ],
+              "productId": [
+                "TS0011"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    4,
+                    5,
+                    6,
+                    4096,
+                    61184
+                  ],
+                  "bindings": [
+                    6
+                  ]
+                }
+              },
+              "learnmode": {
+                "image": "/drivers/tuya-ts0011/assets/learn.svg",
+                "instruction": {
+                  "en": "Toggle the switch on and off repeatedly until the device is found"
+                }
+              }
+            },
+            "pair": [
+              {
+                "id": "list_devices",
+                "template": "list_devices",
+                "navigation": {
+                  "next": "add_devices"
+                }
+              },
+              {
+                "id": "add_devices",
+                "template": "add_devices"
+              }
+            ],
+            "class": "sensor",
+            "capabilities": [
+              "onoff",
+              "measure_battery"
+            ],
+            "icon": "/drivers/manufacturers/tuya-ts0011/tuya-ts0011/assets/icon.svg"
+          },
+          {
+            "name": {
+              "en": "Tuya Smart Plug (TS011F)",
+              "fr": "Prise intelligente Tuya (TS011F)",
+              "nl": "Tuya Slimme stekker (TS011F)"
+            },
+            "images": {
+              "large": "/drivers/tuya-ts011f/assets/images/large.png",
+              "small": "/drivers/tuya-ts011f/assets/images/small.png"
+            },
+            "class": "socket",
+            "capabilities": [
+              "onoff",
+              "measure_power",
+              "meter_power"
+            ],
+            "capabilitiesOptions": {
+              "onoff": {
+                "title": {
+                  "en": "On/Off",
+                  "fr": "Marche/Arrêt",
+                  "nl": "Aan/Uit"
+                }
+              },
+              "measure_power": {
+                "title": {
+                  "en": "Power",
+                  "fr": "Puissance",
+                  "nl": "Vermogen"
+                },
+                "units": "W"
+              },
+              "meter_power": {
+                "title": {
+                  "en": "Energy Consumption",
+                  "fr": "Consommation d'énergie",
+                  "nl": "Energieverbruik"
+                },
+                "units": "kWh"
+              }
+            },
+            "settings": [
+              {
+                "type": "group",
+                "label": {
+                  "en": "Device Settings",
+                  "fr": "Paramètres de l'appareil",
+                  "nl": "Apparaatinstellingen"
+                },
+                "children": [
+                  {
+                    "id": "powerOnState",
+                    "type": "dropdown",
+                    "label": {
+                      "en": "Power On State",
+                      "fr": "État après coupure de courant",
+                      "nl": "Status na stroomonderbreking"
+                    },
+                    "value": "0",
+                    "values": [
+                      {
+                        "id": "0",
+                        "label": {
+                          "en": "Last State",
+                          "fr": "Dernier état",
+                          "nl": "Laatste status"
+                        }
+                      },
+                      {
+                        "id": "1",
+                        "label": {
+                          "en": "Always On",
+                          "fr": "Toujours allumé",
+                          "nl": "Altijd aan"
+                        }
+                      },
+                      {
+                        "id": "2",
+                        "label": {
+                          "en": "Always Off",
+                          "fr": "Toujours éteint",
+                          "nl": "Altijd uit"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "zigbee": {
+              "manufacturerName": [
+                "Tuya-ts011f"
+              ],
+              "modelId": [
+                "TS011F"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    4,
+                    5,
+                    6,
+                    1794,
+                    2820
+                  ],
+                  "bindings": [
+                    6,
+                    1794,
+                    2820
+                  ]
+                }
+              },
+              "class": "socket",
+              "productId": [
+                "GENERIC"
+              ]
+            },
+            "pair": [
+              {
+                "id": "start",
+                "title": {
+                  "en": "Start pairing",
+                  "fr": "Démarrer l'appairage",
+                  "nl": "Start koppelen"
+                },
+                "text": {
+                  "en": "Put your device in pairing mode by pressing and holding the button for 5 seconds until the LED starts blinking.",
+                  "fr": "Mettez votre appareil en mode d'appairage en maintenant le bouton enfoncé pendant 5 secondes jusqu'à ce que la LED se mette à clignoter.",
+                  "nl": "Zet uw apparaat in de koppelmodus door 5 seconden op de knop te drukken totdat het LED-lampje begint te knipperen."
+                },
+                "next": "list_devices"
+              },
+              {
+                "id": "list_devices",
+                "title": {
+                  "en": "Searching...",
+                  "fr": "Recherche en cours...",
+                  "nl": "Zoeken..."
+                }
+              }
+            ],
+            "id": "tuya-ts011f",
+            "icon": "/drivers/manufacturers/tuya-ts011f/tuya-ts011f/assets/icon.svg"
+          },
+          {
+            "id": "tuya_future_ai_device",
+            "name": {
+              "en": "Future Tuya AI-Enhanced Device",
+              "fr": "Future Tuya AI-Enhanced Device",
+              "nl": "Future Tuya AI-Enhanced Device"
+            },
+            "class": "other",
+            "capabilities": [
+              "onoff",
+              "measure_generic",
+              "alarm_generic"
+            ],
+            "platforms": [
+              "local"
+            ],
+            "connectivity": [
+              "zigbee"
+            ],
+            "images": {
+              "small": "./assets/images/small.svg",
+              "large": "./assets/images/large.svg",
+              "xlarge": "./assets/images/xlarge.svg"
+            },
+            "zigbee": {
+              "manufacturerName": [
+                "_TZ3000_*",
+                "_TZ3210_*",
+                "_TYZB01_*",
+                "_TYZB02_*",
+                "_TZ3400_*"
+              ],
+              "productId": [
+                "TS0601"
+              ],
+              "deviceId": 81,
+              "profileId": 260,
+              "learnmode": {
+                "image": "./assets/images/learnmode.svg",
+                "instruction": {
+                  "en": "Press and hold the reset button for 10 seconds",
+                  "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+                  "nl": "Houd de resetknop 10 seconden ingedrukt"
+                }
+              },
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    "genBasic",
+                    "genOnOff",
+                    "0xFFF0",
+                    "0xFFF1"
+                  ],
+                  "bindings": [
+                    "genOnOff",
+                    "0xFFF0",
+                    "0xFFF1"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "id": "tuya_generic_light",
+            "name": {
+              "en": "Generic Tuya Light Controller",
+              "fr": "Generic Tuya Light Controller",
+              "nl": "Generic Tuya Light Controller"
+            },
+            "class": "other",
+            "capabilities": [
+              "onoff",
+              "dim",
+              "light_hue",
+              "light_saturation",
+              "light_temperature"
+            ],
+            "platforms": [
+              "local"
+            ],
+            "connectivity": [
+              "zigbee"
+            ],
+            "images": {
+              "small": "./assets/images/small.svg",
+              "large": "./assets/images/large.svg",
+              "xlarge": "./assets/images/xlarge.svg"
+            },
+            "zigbee": {
+              "manufacturerName": [
+                "_TZ3000_*",
+                "_TZ3210_*",
+                "_TYZB01_*",
+                "_TYZB02_*",
+                "_TZ3400_*"
+              ],
+              "productId": [
+                "TS0601"
+              ],
+              "deviceId": 81,
+              "profileId": 260,
+              "learnmode": {
+                "image": "./assets/images/learnmode.svg",
+                "instruction": {
+                  "en": "Press and hold the reset button for 10 seconds",
+                  "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+                  "nl": "Houd de resetknop 10 seconden ingedrukt"
+                }
+              },
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    "genBasic",
+                    "genOnOff",
+                    "genLevelCtrl",
+                    "lightingColorCtrl"
+                  ],
+                  "bindings": [
+                    "genOnOff",
+                    "genLevelCtrl",
+                    "lightingColorCtrl"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "id": "tuya_generic_plug",
+            "name": {
+              "en": "Generic Tuya Smart Plug",
+              "fr": "Generic Tuya Smart Plug",
+              "nl": "Generic Tuya Smart Plug"
+            },
+            "class": "other",
+            "capabilities": [
+              "onoff",
+              "measure_power",
+              "meter_power"
+            ],
+            "platforms": [
+              "local"
+            ],
+            "connectivity": [
+              "zigbee"
+            ],
+            "images": {
+              "small": "./assets/images/small.svg",
+              "large": "./assets/images/large.svg",
+              "xlarge": "./assets/images/xlarge.svg"
+            },
+            "zigbee": {
+              "manufacturerName": [
+                "_TZ3000_*",
+                "_TZ3210_*",
+                "_TYZB01_*",
+                "_TYZB02_*",
+                "_TZ3400_*"
+              ],
+              "productId": [
+                "TS0601"
+              ],
+              "deviceId": 81,
+              "profileId": 260,
+              "learnmode": {
+                "image": "./assets/images/learnmode.svg",
+                "instruction": {
+                  "en": "Press and hold the reset button for 10 seconds",
+                  "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+                  "nl": "Houd de resetknop 10 seconden ingedrukt"
+                }
+              },
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    "genBasic",
+                    "genOnOff",
+                    "haElectricalMeasurement",
+                    "seMetering"
+                  ],
+                  "bindings": [
+                    "genOnOff",
+                    "haElectricalMeasurement",
+                    "seMetering"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "id": "tuya_generic_sensor",
+            "name": {
+              "en": "Generic Tuya Multi-Sensor",
+              "fr": "Generic Tuya Multi-Sensor",
+              "nl": "Generic Tuya Multi-Sensor"
+            },
+            "class": "other",
+            "capabilities": [
+              "measure_temperature",
+              "measure_humidity",
+              "alarm_motion",
+              "alarm_contact"
+            ],
+            "platforms": [
+              "local"
+            ],
+            "connectivity": [
+              "zigbee"
+            ],
+            "images": {
+              "small": "./assets/images/small.svg",
+              "large": "./assets/images/large.svg",
+              "xlarge": "./assets/images/xlarge.svg"
+            },
+            "zigbee": {
+              "manufacturerName": [
+                "_TZ3000_*",
+                "_TZ3210_*",
+                "_TYZB01_*",
+                "_TYZB02_*",
+                "_TZ3400_*"
+              ],
+              "productId": [
+                "TS0601"
+              ],
+              "deviceId": 81,
+              "profileId": 260,
+              "learnmode": {
+                "image": "./assets/images/learnmode.svg",
+                "instruction": {
+                  "en": "Press and hold the reset button for 10 seconds",
+                  "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+                  "nl": "Houd de resetknop 10 seconden ingedrukt"
+                }
+              },
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    "msTemperatureMeasurement",
+                    "msRelativeHumidity",
+                    "ssIasZone"
+                  ],
+                  "bindings": [
+                    "msTemperatureMeasurement",
+                    "msRelativeHumidity",
+                    "ssIasZone"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "id": "tuya_generic_switch",
+            "name": {
+              "en": "Generic Tuya Switch (1-6 gangs)",
+              "fr": "Generic Tuya Switch (1-6 gangs)",
+              "nl": "Generic Tuya Switch (1-6 gangs)"
+            },
+            "class": "other",
+            "capabilities": [
+              "onoff"
+            ],
+            "platforms": [
+              "local"
+            ],
+            "connectivity": [
+              "zigbee"
+            ],
+            "images": {
+              "small": "./assets/images/small.svg",
+              "large": "./assets/images/large.svg",
+              "xlarge": "./assets/images/xlarge.svg"
+            },
+            "zigbee": {
+              "manufacturerName": [
+                "_TZ3000_*",
+                "_TZ3210_*",
+                "_TYZB01_*",
+                "_TYZB02_*",
+                "_TZ3400_*"
+              ],
+              "productId": [
+                "TS0601"
+              ],
+              "deviceId": 81,
+              "profileId": 260,
+              "learnmode": {
+                "image": "./assets/images/learnmode.svg",
+                "instruction": {
+                  "en": "Press and hold the reset button for 10 seconds",
+                  "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+                  "nl": "Houd de resetknop 10 seconden ingedrukt"
+                }
+              },
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    "genBasic",
+                    "genOnOff"
+                  ],
+                  "bindings": [
+                    "genOnOff"
+                  ]
+                },
+                "2": {
+                  "clusters": [
+                    "genBasic",
+                    "genOnOff"
+                  ],
+                  "bindings": [
+                    "genOnOff"
+                  ]
+                },
+                "3": {
+                  "clusters": [
+                    "genBasic",
+                    "genOnOff"
+                  ],
+                  "bindings": [
+                    "genOnOff"
+                  ]
+                },
+                "4": {
+                  "clusters": [
+                    "genBasic",
+                    "genOnOff"
+                  ],
+                  "bindings": [
+                    "genOnOff"
+                  ]
+                },
+                "5": {
+                  "clusters": [
+                    "genBasic",
+                    "genOnOff"
+                  ],
+                  "bindings": [
+                    "genOnOff"
+                  ]
+                },
+                "6": {
+                  "clusters": [
+                    "genBasic",
+                    "genOnOff"
+                  ],
+                  "bindings": [
+                    "genOnOff"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "name": {
+              "en": "Tuya Dimmable Bulb",
+              "fr": "Tuya Dimmable Bulb",
+              "nl": "Tuya Dimmable Bulb",
+              "de": "Tuya Dimmable Bulb"
+            },
+            "class": "light",
+            "capabilities": [
+              "onoff",
+              "dim"
+            ],
+            "energy": {
+              "approximation": {
+                "usageConstant": 6
+              }
+            },
+            "images": {
+              "large": "/drivers/tuya_light_ts0501a/assets/images/large.png",
+              "small": "/drivers/tuya_light_ts0501a/assets/images/small.png"
+            },
+            "zigbee": {
+              "manufacturerName": [
+                "_TZ3000_*",
+                "_TZ3210_*",
+                "_TYZB01_*"
+              ],
+              "productId": [
+                "TS0501A"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    3,
+                    4,
+                    5,
+                    6,
+                    8
+                  ],
+                  "bindings": [
+                    6,
+                    8
+                  ]
+                }
+              },
+              "learnmode": {
+                "image": "/drivers/tuya_light_ts0501a/assets/images/large.png",
+                "instruction": {
+                  "en": "Toggle the power button on the device to start pairing.",
+                  "fr": "Appuyez sur le bouton d'alimentation de l'appareil pour commencer l'appairage.",
+                  "nl": "Zet de aan/uit-knop op het apparaat om te beginnen met koppelen.",
+                  "de": "Drücken Sie die Ein-/Aus-Taste am Gerät, um mit der Kopplung zu beginnen."
+                }
+              }
+            },
+            "id": "tuya_light_ts0501a"
+          },
+          {
+            "name": {
+              "en": "Tuya CCT Bulb",
+              "fr": "Tuya CCT Bulb",
+              "nl": "Tuya CCT Bulb",
+              "de": "Tuya CCT Bulb"
+            },
+            "class": "light",
+            "capabilities": [
+              "onoff",
+              "dim",
+              "light_temperature"
+            ],
+            "energy": {
+              "approximation": {
+                "usageConstant": 7
+              }
+            },
+            "images": {
+              "large": "/drivers/tuya_light_ts0502a/assets/images/large.png",
+              "small": "/drivers/tuya_light_ts0502a/assets/images/small.png"
+            },
+            "zigbee": {
+              "manufacturerName": [
+                "_TZ3000_*",
+                "_TZ3210_*",
+                "_TYZB01_*"
+              ],
+              "productId": [
+                "TS0502A"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    3,
+                    4,
+                    5,
+                    6,
+                    8,
+                    768
+                  ],
+                  "bindings": [
+                    6,
+                    8,
+                    768
+                  ]
+                }
+              },
+              "learnmode": {
+                "image": "/drivers/tuya_light_ts0502a/assets/images/large.png",
+                "instruction": {
+                  "en": "Toggle the power button on the device to start pairing.",
+                  "fr": "Appuyez sur le bouton d'alimentation de l'appareil pour commencer l'appairage.",
+                  "nl": "Zet de aan/uit-knop op het apparaat om te beginnen met koppelen.",
+                  "de": "Drücken Sie die Ein-/Aus-Taste am Gerät, um mit der Kopplung zu beginnen."
+                }
+              }
+            },
+            "id": "tuya_light_ts0502a"
+          },
+          {
+            "name": {
+              "en": "Tuya CCT Bulb v2",
+              "fr": "Tuya CCT Bulb v2",
+              "nl": "Tuya CCT Bulb v2",
+              "de": "Tuya CCT Bulb v2"
+            },
+            "class": "light",
+            "capabilities": [
+              "onoff",
+              "dim",
+              "light_temperature"
+            ],
+            "energy": {
+              "approximation": {
+                "usageConstant": 7
+              }
+            },
+            "images": {
+              "large": "/drivers/tuya_light_ts0502b/assets/images/large.png",
+              "small": "/drivers/tuya_light_ts0502b/assets/images/small.png"
+            },
+            "zigbee": {
+              "manufacturerName": [
+                "_TZ3000_*",
+                "_TZ3210_*",
+                "_TYZB01_*"
+              ],
+              "productId": [
+                "TS0502B"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    3,
+                    4,
+                    5,
+                    6,
+                    8,
+                    768
+                  ],
+                  "bindings": [
+                    6,
+                    8,
+                    768
+                  ]
+                }
+              },
+              "learnmode": {
+                "image": "/drivers/tuya_light_ts0502b/assets/images/large.png",
+                "instruction": {
+                  "en": "Toggle the power button on the device to start pairing.",
+                  "fr": "Appuyez sur le bouton d'alimentation de l'appareil pour commencer l'appairage.",
+                  "nl": "Zet de aan/uit-knop op het apparaat om te beginnen met koppelen.",
+                  "de": "Drücken Sie die Ein-/Aus-Taste am Gerät, um mit der Kopplung zu beginnen."
+                }
+              }
+            },
+            "id": "tuya_light_ts0502b"
+          },
+          {
+            "name": {
+              "en": "Tuya RGB+CCT Bulb Alt",
+              "fr": "Tuya RGB+CCT Bulb Alt",
+              "nl": "Tuya RGB+CCT Bulb Alt",
+              "de": "Tuya RGB+CCT Bulb Alt"
+            },
+            "class": "light",
+            "capabilities": [
+              "onoff",
+              "dim",
+              "light_hue",
+              "light_saturation",
+              "light_temperature"
+            ],
+            "energy": {
+              "approximation": {
+                "usageConstant": 9
+              }
+            },
+            "images": {
+              "large": "/drivers/tuya_light_ts0505a/assets/images/large.png",
+              "small": "/drivers/tuya_light_ts0505a/assets/images/small.png"
+            },
+            "zigbee": {
+              "manufacturerName": [
+                "_TZ3000_*",
+                "_TZ3210_*",
+                "_TYZB01_*"
+              ],
+              "productId": [
+                "TS0505A"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    3,
+                    4,
+                    5,
+                    6,
+                    8,
+                    768
+                  ],
+                  "bindings": [
+                    6,
+                    8,
+                    768
+                  ]
+                }
+              },
+              "learnmode": {
+                "image": "/drivers/tuya_light_ts0505a/assets/images/large.png",
+                "instruction": {
+                  "en": "Toggle the power button on the device to start pairing.",
+                  "fr": "Appuyez sur le bouton d'alimentation de l'appareil pour commencer l'appairage.",
+                  "nl": "Zet de aan/uit-knop op het apparaat om te beginnen met koppelen.",
+                  "de": "Drücken Sie die Ein-/Aus-Taste am Gerät, um mit der Kopplung zu beginnen."
+                }
+              }
+            },
+            "id": "tuya_light_ts0505a"
+          },
+          {
+            "name": {
+              "en": "Tuya RGB+CCT Bulb",
+              "fr": "Tuya RGB+CCT Bulb",
+              "nl": "Tuya RGB+CCT Bulb",
+              "de": "Tuya RGB+CCT Bulb"
+            },
+            "class": "light",
+            "capabilities": [
+              "onoff",
+              "dim",
+              "light_hue",
+              "light_saturation",
+              "light_temperature"
+            ],
+            "energy": {
+              "approximation": {
+                "usageConstant": 9
+              }
+            },
+            "images": {
+              "large": "/drivers/tuya_light_ts0505b/assets/images/large.png",
+              "small": "/drivers/tuya_light_ts0505b/assets/images/small.png"
+            },
+            "zigbee": {
+              "manufacturerName": [
+                "_TZ3000_*",
+                "_TZ3210_*",
+                "_TYZB01_*"
+              ],
+              "productId": [
+                "TS0505B"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    3,
+                    4,
+                    5,
+                    6,
+                    8,
+                    768
+                  ],
+                  "bindings": [
+                    6,
+                    8,
+                    768
+                  ]
+                }
+              },
+              "learnmode": {
+                "image": "/drivers/tuya_light_ts0505b/assets/images/large.png",
+                "instruction": {
+                  "en": "Toggle the power button on the device to start pairing.",
+                  "fr": "Appuyez sur le bouton d'alimentation de l'appareil pour commencer l'appairage.",
+                  "nl": "Zet de aan/uit-knop op het apparaat om te beginnen met koppelen.",
+                  "de": "Drücken Sie die Ein-/Aus-Taste am Gerät, um mit der Kopplung zu beginnen."
+                }
+              }
+            },
+            "id": "tuya_light_ts0505b"
+          },
+          {
+            "name": {
+              "en": "Tuya Smart Light (Universal)",
+              "fr": "Tuya Smart Light (Universel)",
+              "nl": "Tuya Smart Light (Universeel)",
+              "de": "Tuya Smart Light (Universal)"
+            },
+            "class": "light",
+            "capabilities": [
+              "onoff"
+            ],
+            "capabilitiesOptions": {
+              "dim": {
+                "opts": {
+                  "duration": true
+                }
+              }
+            },
+            "energy": {
+              "approximation": {
+                "usageConstant": 7
+              }
+            },
+            "images": {
+              "large": "/drivers/tuya_light_universal/assets/images/large.png",
+              "small": "/drivers/tuya_light_universal/assets/images/small.png"
+            },
+            "zigbee": {
+              "manufacturerName": [
+                "_TZ3000_*",
+                "_TZ3210_*",
+                "_TYZB01_*",
+                "_TZ3300_*"
+              ],
+              "productId": [
+                "TS0505B",
+                "TS0502A",
+                "TS0501A",
+                "TS0502B",
+                "TS0505A"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    3,
+                    4,
+                    5,
+                    6,
+                    8,
+                    768
+                  ],
+                  "bindings": [
+                    6,
+                    8,
+                    768
+                  ]
+                }
+              },
+              "learnmode": {
+                "image": "/drivers/tuya_light_universal/assets/images/large.png",
+                "instruction": {
+                  "en": "Toggle the power button on the device to start pairing.",
+                  "fr": "Appuyez sur le bouton d'alimentation de l'appareil pour commencer l'appairage.",
+                  "nl": "Zet de aan/uit-knop op het apparaat om te beginnen met koppelen.",
+                  "de": "Drücken Sie die Ein-/Aus-Taste am Gerät, um mit der Kopplung zu beginnen."
+                }
+              }
+            },
+            "id": "tuya_light_universal"
+          },
+          {
+            "id": "tuya_thermostat",
+            "name": "Tuya Thermostat",
+            "class": "thermostat",
+            "zigbee": {
+              "manufacturerName": [
+                "Tuya"
+              ],
+              "productId": [
+                "tuya_thermostat"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    1
+                  ],
+                  "bindings": [
+                    1
+                  ]
+                }
+              }
+            },
+            "capabilities": []
+          },
+          {
+            "id": "tuya_universal_adapter",
+            "name": {
+              "en": "Universal Tuya Device Adapter",
+              "fr": "Universal Tuya Device Adapter",
+              "nl": "Universal Tuya Device Adapter"
+            },
+            "class": "other",
+            "capabilities": [
+              "dynamic"
+            ],
+            "platforms": [
+              "local"
+            ],
+            "connectivity": [
+              "zigbee"
+            ],
+            "images": {
+              "small": "./assets/images/small.svg",
+              "large": "./assets/images/large.svg",
+              "xlarge": "./assets/images/xlarge.svg"
+            },
+            "zigbee": {
+              "manufacturerName": [
+                "_TZ3000_*",
+                "_TZ3210_*",
+                "_TYZB01_*",
+                "_TYZB02_*",
+                "_TZ3400_*"
+              ],
+              "productId": [
+                "TS0601"
+              ],
+              "deviceId": 81,
+              "profileId": 260,
+              "learnmode": {
+                "image": "./assets/images/learnmode.svg",
+                "instruction": {
+                  "en": "Press and hold the reset button for 10 seconds",
+                  "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes",
+                  "nl": "Houd de resetknop 10 seconden ingedrukt"
+                }
+              },
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    "dynamic"
+                  ],
+                  "bindings": [
+                    "dynamic"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "id": "tuya_water_sensor",
+            "name": "Tuya Water Sensor",
+            "class": "sensor",
+            "zigbee": {
+              "manufacturerName": [
+                "Tuya"
+              ],
+              "productId": [
+                "tuya_water_sensor"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    1
+                  ],
+                  "bindings": [
+                    1
+                  ]
+                }
+              }
+            },
+            "capabilities": [
+              "measure_battery"
+            ]
+          },
+          {
+            "id": "types",
+            "name": {
+              "en": "Device Types"
+            },
+            "class": "other",
+            "capabilities": [],
+            "zigbee": {
+              "manufacturerName": "Various",
+              "modelId": [
+                "Various"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    "genBasic"
+                  ]
+                }
+              }
+            },
+            "images": {
+              "large": "assets/images/large/types.png",
+              "small": "assets/images/small/types.png"
+            },
+            "settings": []
+          },
+          {
+            "id": "zigbee",
+            "name": {
+              "en": "Zigbee Devices"
+            },
+            "class": "other",
+            "capabilities": [],
+            "zigbee": {
+              "manufacturerName": "Various",
+              "modelId": [
+                "Various"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    "genBasic"
+                  ]
+                }
+              }
+            },
+            "images": {
+              "large": "assets/images/large/zigbee.png",
+              "small": "assets/images/small/zigbee.png"
+            },
+            "settings": []
+          },
+          {
+            "id": "zigbee-tuya-universal",
+            "title": {
+              "en": "Zigbee-Tuya-Universal Control",
+              "fr": "Contrôle Zigbee-Tuya-Universal"
+            },
+            "class": "other",
+            "capabilities": [
+              "onoff"
+            ],
+            "images": {
+              "small": "assets/small.png",
+              "large": "assets/large.png"
+            },
+            "name": {
+              "en": "Zigbee-Tuya-Universal",
+              "fr": "Zigbee-Tuya-Universal"
+            },
+            "zigbee": {
+              "manufacturerName": [
+                "Tuya"
+              ],
+              "productId": [
+                "TS0601"
+              ],
+              "endpoints": {
+                "1": {
+                  "clusters": [
+                    0,
+                    6
+                  ]
+                }
+              }
+            },
+            "icon": "/drivers/manufacturers/zigbee-tuya-universal/zigbee-tuya-universal/assets/icon.svg",
+            "pair": [
+              {
+                "id": "list_devices",
+                "template": "list_devices",
+                "navigation": {
+                  "next": "add_devices"
+                }
+              },
+              {
+                "id": "add_devices",
+                "template": "add_devices"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "totalTests": 21,
+    "totalPassed": 6,
+    "totalFailed": 15,
+    "criticalIssues": 5
+  },
+  "recommendations": [
+    "Address critical validation failures before proceeding",
+    "Review failed driver tests and fix issues",
+    "Ensure all compatibility requirements are met"
+  ]
+}

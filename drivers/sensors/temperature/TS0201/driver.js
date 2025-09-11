@@ -11,6 +11,5 @@ class TS0201Driver extends ZigbeeDriver {
   onPairListDevices() {
     return []; // No pairing, only manual adding
   }
-}
 
 module.exports = TS0201Driver;

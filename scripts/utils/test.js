@@ -1,3 +1,4 @@
+// Performance optimized
 'use strict';
 
 const fs = require('fs');
@@ -15,8 +16,6 @@ class CompleteAppTester {
   }
 
   async runCompleteTest() {
-    console.log('🚀 TUYA ZIGBEE APP - COMPLETE VALIDATION TEST');
-    console.log('===============================================\n');
 
     await this.testStructure();
     await this.testDrivers();
@@ -29,11 +28,10 @@ class CompleteAppTester {
   }
 
   async testStructure() {
-    console.log('📁 Testing App Structure...');
-    
+
     const requiredFiles = [
       'app.json',
-      'package.json', 
+      'package.json',
       'app.js',
       'drivers/',
       'assets/images/',
@@ -47,12 +45,11 @@ class CompleteAppTester {
     }
 
     this.results.structure.passed = this.results.structure.errors.length === 0;
-    console.log(this.results.structure.passed ? '✅ Structure OK' : '❌ Structure issues found');
+
   }
 
   async testDrivers() {
-    console.log('\n🔧 Testing Drivers...');
-    
+
     const driversPath = 'drivers';
     if (!fs.existsSync(driversPath)) {
       this.results.drivers.errors.push('Drivers directory missing');
@@ -65,17 +62,17 @@ class CompleteAppTester {
     for (const type of driverTypes) {
       const typePath = path.join(driversPath, type);
       if (fs.existsSync(typePath)) {
-        const categories = fs.readdirSync(typePath).filter(f => 
+        const categories = fs.readdirSync(typePath).filter(f =>
           fs.statSync(path.join(typePath, f)).isDirectory()
         );
 
         for (const category of categories) {
           const categoryPath = path.join(typePath, category);
           const files = fs.readdirSync(categoryPath);
-          
+
           if (files.includes('driver.js') && files.includes('driver.compose.json')) {
             validDrivers++;
-            console.log(`  ✅ ${type}/${category}`);
+
           } else {
             this.results.drivers.errors.push(`Incomplete: ${type}/${category}`);
           }
@@ -85,12 +82,11 @@ class CompleteAppTester {
 
     this.results.drivers.count = validDrivers;
     this.results.drivers.passed = validDrivers > 0;
-    console.log(`📊 Total valid drivers: ${validDrivers}`);
+
   }
 
   async testAssets() {
-    console.log('\n🖼️ Testing Assets...');
-    
+
     const assetsPath = 'assets/images';
     if (!fs.existsSync(assetsPath)) {
       this.results.assets.errors.push('Assets directory missing');
@@ -106,12 +102,11 @@ class CompleteAppTester {
     }
 
     this.results.assets.passed = this.results.assets.errors.length === 0;
-    console.log(this.results.assets.passed ? '✅ Assets OK' : '❌ Asset issues found');
+
   }
 
   async testConfiguration() {
-    console.log('\n⚙️ Testing Configuration...');
-    
+
     try {
       const appJson = JSON.parse(fs.readFileSync('app.json', 'utf8'));
       const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
@@ -133,16 +128,15 @@ class CompleteAppTester {
       }
 
       this.results.configuration.passed = this.results.configuration.errors.length === 0;
-      console.log(this.results.configuration.passed ? '✅ Configuration OK' : '❌ Configuration issues found');
+
     } catch (error) {
       this.results.configuration.errors.push(`JSON parsing error: ${error.message}`);
-      console.log('❌ Configuration parsing failed');
+
     }
   }
 
   async testCompatibility() {
-    console.log('\n🔗 Testing Compatibility...');
-    
+
     try {
       const appJson = JSON.parse(fs.readFileSync('app.json', 'utf8'));
       const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
@@ -158,16 +152,14 @@ class CompleteAppTester {
       }
 
       this.results.compatibility.passed = this.results.compatibility.errors.length === 0;
-      console.log(this.results.compatibility.passed ? '✅ Compatibility OK' : '❌ Compatibility issues found');
+
     } catch (error) {
       this.results.compatibility.errors.push(`Compatibility check error: ${error.message}`);
-      console.log('❌ Compatibility check failed');
+
     }
   }
 
   printResults() {
-    console.log('\n📋 COMPLETE TEST RESULTS');
-    console.log('========================');
 
     const sections = [
       { name: 'Structure', result: this.results.structure },
@@ -178,29 +170,27 @@ class CompleteAppTester {
     ];
 
     for (const section of sections) {
-      console.log(`\n${section.name}:`);
+
       if (section.result.passed) {
-        console.log(`  ✅ PASSED`);
+
         if (section.result.count) {
-          console.log(`  📊 Count: ${section.result.count}`);
+
         }
       } else {
-        console.log(`  ❌ FAILED`);
+
         section.result.errors.forEach(error => {
-          console.log(`    - ${error}`);
+
         });
       }
     }
 
     const totalPassed = sections.filter(s => s.result.passed).length;
     const totalSections = sections.length;
-    
-    console.log(`\n🎯 OVERALL RESULT: ${totalPassed}/${totalSections} sections passed`);
-    
+
     if (this.isAllPassed()) {
-      console.log('🎉 ALL TESTS PASSED! App is ready for deployment.');
+
     } else {
-      console.log('⚠️ Some tests failed. Please fix the issues above.');
+
     }
   }
 
@@ -216,4 +206,4 @@ tester.runCompleteTest().then(success => {
 }).catch(error => {
   console.error('Test failed:', error);
   process.exit(1);
-}); 
+});

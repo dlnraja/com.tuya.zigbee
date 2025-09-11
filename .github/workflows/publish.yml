@@ -1,275 +1,34 @@
-name: 📦 Publish to Homey Store
+name: Homey App Publish
 
 on:
   release:
     types: [published]
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version to publish'
-        required: true
-        default: '3.3.0'
-      channel:
-        description: 'Release channel'
-        required: false
-        default: 'stable'
-        type: choice
-        options:
-          - stable
-          - beta
-          - alpha
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - name: 📥 Checkout code
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-        
-    - name: 🟢 Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20.x'
-        cache: 'npm'
-        
-    - name: 📦 Install dependencies
-      run: |
-        npm ci
-        npm install -g @homey/cli
-        
-    - name: 🔍 Validate before build
-      run: |
-        npm run validate:pre-build
-        echo "Pre-build validation completed"
-        
-    - name: 🏗️ Build app
-      run: |
-        npm run build
-        echo "App build completed"
-        
-    - name: 🔍 Validate build artifacts
-      run: |
-        npm run validate:build
-        echo "Build validation completed"
-        
-    - name: 📊 Generate build report
-      run: |
-        npm run report:build
-        echo "Build report generated"
-        
-    - name: 📤 Upload build artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: build-artifacts
-        path: |
-          dist/
-          build/
-          reports/build/
-        retention-days: 90
-
-  test:
-    runs-on: ubuntu-latest
-    needs: build
-    
-    steps:
-    - name: 📥 Checkout code
-      uses: actions/checkout@v4
-      
-    - name: 🟢 Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20.x'
-        cache: 'npm'
-        
-    - name: 📦 Install dependencies
-      run: npm ci
-        
-    - name: 📥 Download build artifacts
-      uses: actions/download-artifact@v4
-      with:
-        name: build-artifacts
-        path: ./
-        
-    - name: 🧪 Run unit tests
-      run: |
-        npm test
-        echo "Unit tests completed"
-        
-    - name: 🧪 Run integration tests
-      run: |
-        npm run test:integration
-        echo "Integration tests completed"
-        
-    - name: 🧪 Run driver tests
-      run: |
-        npm run test:drivers
-        echo "Driver tests completed"
-        
-    - name: 📊 Generate test report
-      run: |
-        npm run report:test
-        echo "Test report generated"
-        
-    - name: 📤 Upload test artifacts
-      uses: actions/upload-artifact@v4
-      if: always()
-      with:
-        name: test-artifacts
-        path: |
-          reports/test/
-          coverage/
-          logs/
-        retention-days: 30
-
   publish:
     runs-on: ubuntu-latest
-    needs: [build, test]
-    if: success()
     
     steps:
-    - name: 📥 Checkout code
-      uses: actions/checkout@v4
-      
-    - name: 🟢 Setup Node.js
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '20.x'
+        node-version: '18'
         cache: 'npm'
-        
-    - name: 📦 Install dependencies
-      run: |
-        npm ci
-        npm install -g @homey/cli
-        
-    - name: 📥 Download build artifacts
-      uses: actions/download-artifact@v4
-      with:
-        name: build-artifacts
-        path: ./
-        
-    - name: 🔐 Setup Homey credentials
-      env:
-        HOMEY_CLI_TOKEN: ${{ secrets.HOMEY_CLI_TOKEN }}
-        HOMEY_CLI_USERNAME: ${{ secrets.HOMEY_CLI_USERNAME }}
-        HOMEY_CLI_PASSWORD: ${{ secrets.HOMEY_CLI_PASSWORD }}
-      run: |
-        homey login --username $HOMEY_CLI_USERNAME --password $HOMEY_CLI_PASSWORD
-        echo "Homey CLI authenticated"
-        
-    - name: 📋 Get version info
-      id: version
-      run: |
-        if [ "${{ github.event_name }}" == "release" ]; then
-          echo "version=${{ github.event.release.tag_name }}" >> $GITHUB_OUTPUT
-        else
-          echo "version=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
-        fi
-        echo "channel=${{ github.event.inputs.channel || 'stable' }}" >> $GITHUB_OUTPUT
-        
-    - name: 📝 Update app.json
-      run: |
-        npm run update:app-json -- --version ${{ steps.version.outputs.version }}
-        echo "app.json updated to version ${{ steps.version.outputs.version }}"
-        
-    - name: 🏗️ Build for publishing
-      run: |
-        npm run build:publish
-        echo "Publish build completed"
-        
-    - name: 📦 Publish to Homey Store
-      run: |
-        if [ "${{ steps.version.outputs.channel }}" == "stable" ]; then
-          homey publish
-        else
-          homey publish --channel ${{ steps.version.outputs.channel }}
-        fi
-        echo "App published to Homey Store"
-        
-    - name: 📊 Generate publish report
-      run: |
-        npm run report:publish
-        echo "Publish report generated"
-        
-    - name: 📤 Upload publish artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: publish-artifacts
-        path: |
-          dist/
-          reports/publish/
-          logs/
-        retention-days: 90
-
-  notification:
-    runs-on: ubuntu-latest
-    needs: [build, test, publish]
-    if: always()
     
-    steps:
-    - name: 📧 Send notification
-      run: |
-        echo "## 📦 Publish Notification" >> $GITHUB_STEP_SUMMARY
-        
-        if [ "${{ needs.publish.result }}" == "success" ]; then
-          echo "✅ App published successfully to Homey Store" >> $GITHUB_STEP_SUMMARY
-          echo "📱 Version: ${{ needs.publish.outputs.version }}" >> $GITHUB_STEP_SUMMARY
-          echo "📺 Channel: ${{ needs.publish.outputs.channel }}" >> $GITHUB_STEP_SUMMARY
-        else
-          echo "❌ Publish failed" >> $GITHUB_STEP_SUMMARY
-        fi
-        
-        if [ "${{ needs.test.result }}" == "success" ]; then
-          echo "✅ All tests passed" >> $GITHUB_STEP_SUMMARY
-        else
-          echo "❌ Some tests failed" >> $GITHUB_STEP_SUMMARY
-        fi
-        
-        echo "📊 Build artifacts uploaded" >> $GITHUB_STEP_SUMMARY
-        echo "🔄 Next release: Manual or on tag" >> $GITHUB_STEP_SUMMARY
-        
-    - name: 📧 Send Discord notification
-      if: ${{ needs.publish.result == 'success' }}
-      uses: sarisia/actions-status-discord@v1
-      with:
-        webhook: ${{ secrets.DISCORD_WEBHOOK }}
-        status: ${{ job.status }}
-        title: "Homey App Published"
-        description: |
-          **Universal Tuya Zigbee** v${{ needs.publish.outputs.version }}
-          
-          ✅ Successfully published to Homey Store
-          📺 Channel: ${{ needs.publish.outputs.channel }}
-          🔗 [View on GitHub](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
-        color: "00ff00"
-        
-
-
-  cleanup:
-    runs-on: ubuntu-latest
-    needs: [build, test, publish, notification]
-    if: always()
+    - name: Install dependencies
+      run: npm ci
     
-    steps:
-    - name: 🧹 Cleanup temporary files
-      run: |
-        npm run cleanup:temp
-        echo "Temporary files cleaned up"
-        
-    - name: 📊 Update release metrics
-      run: |
-        npm run update:release-metrics
-        echo "Release metrics updated"
-        
-    - name: 📤 Upload final artifacts
-      uses: actions/upload-artifact@v4
-      if: always()
+    - name: Update version
+      uses: athombv/github-action-homey-app-update-version@v1
       with:
-        name: final-artifacts
-        path: |
-          reports/
-          logs/
-          metrics/
-        retention-days: 365
+        path: .
+        version: ${{ github.event.release.tag_name }}
+    
+    - name: Publish to Homey App Store
+      uses: athombv/github-action-homey-app-publish@v1
+      with:
+        path: .
+        email: ${{ secrets.HOMEY_EMAIL }}
+        password: ${{ secrets.HOMEY_PASSWORD }}

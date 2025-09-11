@@ -4,10 +4,6 @@
     "fr": "Prise intelligente Tuya (TS011F)",
     "nl": "Tuya Slimme stekker (TS011F)"
   },
-  "images": {
-    "large": "/drivers/tuya-ts011f/assets/images/large.png",
-    "small": "/drivers/tuya-ts011f/assets/images/small.png"
-  },
   "class": "socket",
   "capabilities": [
     "onoff",
@@ -38,6 +34,39 @@
       },
       "units": "kWh"
     }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya-ts011f"
+    ],
+    "modelId": [
+      "TS011F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          6,
+          1794,
+          2820
+        ],
+        "bindings": [
+          6,
+          1794,
+          2820
+        ]
+      }
+    },
+    "class": "socket",
+    "productId": [
+      "GENERIC"
+    ]
+  },
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
   },
   "settings": [
     {
@@ -87,35 +116,6 @@
       ]
     }
   ],
-  "zigbee": {
-    "manufacturerName": [
-      "Tuya-ts011f"
-    ],
-    "modelId": [
-      "TS011F"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          4,
-          5,
-          6,
-          1794,
-          2820
-        ],
-        "bindings": [
-          6,
-          1794,
-          2820
-        ]
-      }
-    },
-    "class": "socket",
-    "productId": [
-      "GENERIC"
-    ]
-  },
   "pair": [
     {
       "id": "start",

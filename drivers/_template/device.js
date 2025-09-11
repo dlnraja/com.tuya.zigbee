@@ -3,6 +3,7 @@ const { ZigbeeDevice } = require("homey-zigbeedriver");
 class TuyaDeviceTemplate extends ZigBeeDevice {
   
   async onMeshInit() {
+    try {
     await super.onMeshInit();
     
     // 1. Enregistrement des capacités
@@ -29,9 +30,12 @@ class TuyaDeviceTemplate extends ZigBeeDevice {
   
   // Gestion des erreurs standardisée
   async onMeshInitFailed(error) {
+    try {
     this.log('Initialization failed:', error);
     // Auto-récupération
   }
-}
+    } catch (error) {
+      this.error("Error in $1:", error);
+    }
 
 module.exports = TuyaDeviceTemplate;

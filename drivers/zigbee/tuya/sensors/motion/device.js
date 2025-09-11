@@ -7,6 +7,5 @@ class MotionDevice extends BaseZigbeeDevice.Device {
   async onCapabilityAlarmMotion(value, opts) {
     this.log('Motion detection:', value);
   }
-}
 
 module.exports = MotionDevice;

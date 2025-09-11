@@ -13,15 +13,7 @@
     "light_saturation",
     "light_temperature"
   ],
-  "energy": {
-    "approximation": {
-      "usageConstant": 9
-    }
-  },
-  "images": {
-    "large": "/drivers/tuya_light_ts0505b/assets/images/large.png",
-    "small": "/drivers/tuya_light_ts0505b/assets/images/small.png"
-  },
+  "capabilitiesOptions": {},
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_*",
@@ -58,5 +50,15 @@
         "de": "Drücken Sie die Ein-/Aus-Taste am Gerät, um mit der Kopplung zu beginnen."
       }
     }
-  }
+  },
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
+  },
+  "energy": {
+    "approximation": {
+      "usageConstant": 9
+    }
+  },
+  "id": "tuya_light_ts0505b"
 }

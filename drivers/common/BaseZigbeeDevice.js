@@ -1,15 +1,20 @@
-const { ZigbeeDevice } = require('homey-zigbeedriver');
+const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
 const path = require('path');
 const fs = require('fs').promises;
 
-class BaseZigbeeDevice extends ZigbeeDevice {
+class BaseZigbeeDevice extends ZigBeeDevice {
   /**
-   * Device initialization
+   * Enhanced device initialization for SDK3 compatibility
    */
   async onNodeInit({ zclNode }) {
     this.zclNode = zclNode;
     this._patchesApplied = false;
+    this._initializationRetries = 0;
+    this._maxRetries = 3;
+    
+    // SDK3 logging compatibility
+    this.logLevel = this.getSetting('log_level') || 'info';
     
     // Enable debug mode if configured
     if (this.getSetting('debug_enabled')) {
@@ -18,16 +23,78 @@ class BaseZigbeeDevice extends ZigbeeDevice {
     }
     
     try {
-      await this.applyUserPatches();
-      await this.registerCapabilities();
-      await this.configureReporting();
-      await this.initializeDevice();
-      
-      this.log('Device initialized successfully');
+      await this.initializeWithRetries();
+      this.log('Device initialized successfully with SDK3 enhancements');
     } catch (error) {
-      this.error('Device initialization failed:', error);
-      throw error; // Rethrow to be caught by the framework
+      this.error('Device initialization failed after retries:', error);
+      throw error;
     }
+  }
+
+  /**
+   * Initialization with retry logic for better reliability
+   */
+  async initializeWithRetries() {
+    while (this._initializationRetries < this._maxRetries) {
+      try {
+        await this.applyUserPatches();
+        await this.registerCapabilities();
+        await this.configureReporting();
+        await this.initializeDevice();
+        
+        // Validate initialization
+        if (await this.validateInitialization()) {
+          return; // Success
+        }
+        throw new Error('Initialization validation failed');
+        
+      } catch (error) {
+        this._initializationRetries++;
+        this.error(`Initialization attempt ${this._initializationRetries} failed:`, error);
+        
+        if (this._initializationRetries >= this._maxRetries) {
+          throw error;
+        }
+        
+        // Exponential backoff
+        await this.delay(Math.pow(2, this._initializationRetries) * 1000);
+      }
+    }
+  }
+
+  /**
+   * Validate device initialization
+   */
+  async validateInitialization() {
+    try {
+      // Check if essential capabilities are registered
+      const essentialCaps = this.getCapabilities().filter(cap => 
+        cap.startsWith('alarm_') || cap.startsWith('measure_') || cap === 'onoff'
+      );
+      
+      if (essentialCaps.length === 0) {
+        this.log('Warning: No essential capabilities found');
+        return false;
+      }
+      
+      // Check cluster availability
+      if (!this.zclNode || !this.zclNode.endpoints) {
+        this.error('ZCL node not properly initialized');
+        return false;
+      }
+      
+      return true;
+    } catch (error) {
+      this.error('Validation error:', error);
+      return false;
+    }
+  }
+
+  /**
+   * Enhanced delay utility
+   */
+  delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
   
   /**

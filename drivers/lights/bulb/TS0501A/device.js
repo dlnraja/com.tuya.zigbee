@@ -8,6 +8,5 @@ class RGBBulb extends BaseZigbeeDevice {
     this.registerCapability('light_hue', CLUSTER.COLOR_CONTROL);
     this.registerCapability('light_saturation', CLUSTER.COLOR_CONTROL);
   }
-}
 
 module.exports = RGBBulb;

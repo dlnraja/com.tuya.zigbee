@@ -1,8 +1,10 @@
 {
-  "id": "switches",
   "name": "Switches",
-  "icon": "/drivers/switches/assets/icon.svg",
   "class": "sensor",
+  "capabilities": [
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {},
   "zigbee": {
     "manufacturerName": [
       "Tuya"
@@ -22,7 +24,10 @@
       }
     }
   },
-  "capabilities": [
-    "measure_battery"
-  ]
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
+  },
+  "id": "switches",
+  "icon": "/drivers/switches/assets/icon.svg"
 }
