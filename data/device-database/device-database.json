@@ -1,84 +1,92 @@
 {
+  "metadata": {
+    "generatedAt": "2025-09-11T11:08:15.422Z",
+    "deviceCount": 3,
+    "source": "homey-tuya-zigbee",
+    "version": "1.0.0"
+  },
   "devices": [
     {
-      "model": "TS0121",
-      "manufacturer": "Tuya",
-      "description": "Smart Plug",
-      "type": "On/Off Plug",
-      "features": ["onoff", "power_measurement", "energy_measurement"],
-      "supported": true
+      "model": "TZE200",
+      "sources": [
+        "forum"
+      ],
+      "features": [
+        "protocol:zigbee",
+        "protocol:tuya",
+        "type:sensor",
+        "type:plug",
+        "type:thermostat",
+        "type:curtain"
+      ],
+      "repositories": [
+        "https://github.com/JohanBendz/com.tuya.zigbee"
+      ],
+      "lastSeen": "2025-09-11T11:08:15.420Z",
+      "firstSeen": "2024-09-01T00:00:00.000Z",
+      "source": [
+        "forum"
+      ],
+      "status": "unverified",
+      "notes": "",
+      "forumPosts": [
+        {
+          "url": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352",
+          "title": "Universal TUYA Zigbee Device App - lite version",
+          "date": "2024-09-01T00:00:00Z"
+        }
+      ],
+      "repositoryCount": 1,
+      "forumPostCount": 1,
+      "lastUpdated": "2025-09-11T11:08:15.422Z"
     },
     {
-      "model": "TS0201",
-      "manufacturer": "Tuya",
-      "description": "Temperature & Humidity Sensor",
-      "type": "Sensor",
-      "features": ["temperature", "humidity", "battery"],
-      "supported": true
+      "model": "RH3052",
+      "sources": [],
+      "features": [
+        "protocol:zigbee",
+        "protocol:tuya"
+      ],
+      "repositories": [
+        "https://github.com/JohanBendz/com.tuya.zigbee"
+      ],
+      "lastSeen": "2025-09-11T11:08:15.419Z",
+      "firstSeen": "2024-12-01T00:00:00.000Z",
+      "source": [],
+      "status": "unverified",
+      "notes": "",
+      "forumPosts": [],
+      "repositoryCount": 1,
+      "forumPostCount": 0,
+      "lastUpdated": "2025-09-11T11:08:15.422Z"
     },
     {
-      "model": "TS0215A",
-      "manufacturer": "Tuya",
-      "description": "Smart Button",
-      "type": "Remote",
-      "features": ["button", "battery"],
-      "supported": false
-    },
-    {
-      "model": "TS0012",
-      "manufacturer": "Tuya",
-      "description": "2-Gang Switch",
-      "type": "Switch",
-      "features": ["onoff", "power_measurement"],
-      "supported": false
-    },
-    {
-      "model": "TS0501B",
-      "manufacturer": "Tuya",
-      "description": "RGB LED Controller",
-      "type": "Light",
-      "features": ["onoff", "dim", "color_rgb"],
-      "supported": false
-    },
-    {
-      "model": "TS004F",
-      "manufacturer": "Tuya",
-      "description": "Wireless Switch",
-      "type": "Remote",
-      "features": ["button", "battery"],
-      "supported": false
-    },
-    {
-      "model": "TS011F",
-      "manufacturer": "Tuya",
-      "description": "Smart Plug with Power Monitoring",
-      "type": "On/Off Plug",
-      "features": ["onoff", "power_measurement", "energy_measurement"],
-      "supported": false
-    },
-    {
-      "model": "TS0219",
-      "manufacturer": "Tuya",
-      "description": "Vibration Sensor",
-      "type": "Sensor",
-      "features": ["vibration", "battery"],
-      "supported": false
-    },
-    {
-      "model": "TS0601",
-      "manufacturer": "Tuya",
-      "description": "Thermostat",
-      "type": "Thermostat",
-      "features": ["temperature", "thermostat", "battery"],
-      "supported": false
-    },
-    {
-      "model": "TS0222",
-      "manufacturer": "Tuya",
-      "description": "Light Sensor",
-      "type": "Sensor",
-      "features": ["illuminance", "battery"],
-      "supported": false
+      "model": "TS130F",
+      "sources": [],
+      "features": [
+        "type:sensor",
+        "type:plug",
+        "type:thermostat",
+        "type:curtain",
+        "protocol:zigbee",
+        "protocol:tuya"
+      ],
+      "forumPosts": [
+        {
+          "url": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352",
+          "title": "Universal TUYA Zigbee Device App - lite version",
+          "date": "2024-09-01T00:00:00Z"
+        }
+      ],
+      "lastSeen": "2025-09-11T11:08:15.420Z",
+      "firstSeen": "2024-09-01T00:00:00.000Z",
+      "source": [],
+      "status": "unverified",
+      "notes": "",
+      "repositories": [],
+      "repositoryCount": 0,
+      "forumPostCount": 1,
+      "lastUpdated": "2025-09-11T11:08:15.422Z"
     }
   ]
 }
