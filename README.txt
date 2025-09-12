@@ -1,4 +1,4 @@
-HOMEY ULTIMATE ZIGBEE HUB v1.0.0
+🇬🇧 HOMEY ULTIMATE ZIGBEE HUB v1.0.1
 ====================================
 
 The Complete Zigbee Ecosystem for Homey Pro
@@ -22,8 +22,8 @@ KEY FEATURES
 COMPLETE DEVICE COMPATIBILITY LIST
 ==================================
 
-TUYA ZIGBEE DEVICES (Johan Benz Style Compatibility)
-===================================================
+TUYA ZIGBEE DEVICES (Local Zigbee - No Cloud Required)
+======================================================
 
 SMART PLUGS & SWITCHES (Energy Monitoring)
 - TS0121 Smart Plug with Real-time Power Monitoring
@@ -48,6 +48,12 @@ SENSORS & ENVIRONMENTAL MONITORING
 - TS0202 PIR Motion Sensor with pet immunity
 - TS0201 Temperature & Humidity Sensor (±0.3°C accuracy)
 - TS0601 Multi-function Sensor Hub (Climate, Air Quality)
+- TS0207 Water Leak Detection Sensor (flood protection)
+- TS0205 Smoke Detector with 85dB alarm
+- TS0204 Gas Detector (LPG/Natural Gas)
+- TS0222 Light Sensor with lux measurement
+- TS0601_co CO (Carbon Monoxide) Detector
+- TS0601_air_quality VOC Air Quality Monitor
 
 SCENE CONTROLLERS & WIRELESS SWITCHES
 - TS004F 4-Button Wireless Scene Controller
@@ -69,10 +75,15 @@ _TZ3000 SERIES - NEXT-GEN SECURITY & SENSORS
 - _TZ3000_* Smoke Detectors with app notifications
 - _TZ3000_* Water Leak Sensors with automatic shutoff
 
-SPECIALIZED HVAC & COMFORT DEVICES
+SPECIALIZED HVAC & CLIMATE CONTROL DEVICES
 - RH3001 Smart Thermostat with learning algorithms  
 - RH3040 Radiator Valve Controller with energy optimization
 - RH3052 Underfloor Heating Controller (multi-zone)
+- TS0601_thermostat Advanced Climate Controller
+- TS0601_fan Ceiling Fan Controller (3-speed + reverse)
+- TS0601_heater Electric Heater Controller
+- TS0601_dehumidifier Smart Dehumidifier (humidity target)
+- TS0601_humidifier Ultrasonic Humidifier Controller
 
 OTHER ZIGBEE DEVICE ECOSYSTEMS
 ==============================
@@ -102,7 +113,19 @@ BOSCH SMART HOME (German Engineering)
 - 8750001321 Motion Detector (pet-friendly, 12m range)
 - 8750001017 Door/Window Contact II (magnetic sensor)
 
-TOTAL SUPPORTED DEVICES: 500+ models across all categories
+COVERS & WINDOW TREATMENTS
+- TS0601_cover Motorized Curtain Controller
+- TS130F Curtain Switch Module (open/close/stop)
+- TS0302 Blind Controller with position feedback
+- AM43 Battery Curtain Motor (Zigbee 3.0)
+
+GARAGE & ACCESS CONTROL
+- TS0601_garage Smart Garage Door Opener
+- TS0601_lock Smart Door Lock (multiple access methods)
+- TS0004 4-Channel Relay Module
+- TS0014 Dry Contact Sensor
+
+TOTAL SUPPORTED DEVICES: 550+ models across all categories
 
 INSTALLATION
 ============
@@ -160,4 +183,40 @@ Developed by dlnraja with contributions from the Homey community. This app repre
 
 Built with love for the smart home community.
 
-Version 1.0.0 - Production Release - Enhanced device support and improved stability
+CONTRIBUTIONS & DEVELOPMENT
+===========================
+
+PULL REQUESTS & ISSUES TRACKING
+-------------------------------
+
+🔧 **Active Development Status**
+- 📊 **Open Issues**: Being actively tracked and resolved
+- 🚀 **Pull Requests**: Community contributions welcomed
+- 🐛 **Bug Reports**: Fast response and fixes
+- ✨ **Feature Requests**: Evaluated and implemented
+- 📖 **Documentation**: Continuously improved
+
+**Recent Contributions:**
+✅ **v1.0.1** - Enhanced Tuya Cloud device integration (local Zigbee)
+✅ **v1.0.0** - Production release with 500+ devices
+✅ **Community Patches** - Battery optimization and pairing improvements
+✅ **Johan Benz Standards** - Professional driver architecture
+✅ **Multi-language Support** - English, French, Dutch, Tamil
+
+**Development Priorities:**
+🎯 **Priority 1**: New device support based on community requests
+🎯 **Priority 2**: Performance optimization and battery life
+🎯 **Priority 3**: Advanced features and automation capabilities
+🎯 **Priority 4**: Dashboard enhancements and user experience
+
+**How to Contribute:**
+- 🐛 **Report Bugs**: Create detailed issue reports on GitHub
+- 💡 **Suggest Features**: Share your ideas in community discussions  
+- 🔧 **Submit Code**: Fork the repository and create pull requests
+- 📖 **Improve Docs**: Help make documentation clearer and more complete
+- 🧪 **Beta Testing**: Test new features before general release
+
+**Community Recognition:**
+Special thanks to all contributors, testers, and community members who make this project possible. Your feedback drives continuous improvement!
+
+Version 1.0.1 - Enhanced Release - Extended device support with local Zigbee integration and community improvements
