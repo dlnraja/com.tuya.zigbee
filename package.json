@@ -1,8 +1,44 @@
 {
   "name": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "4.0.2",
-  "description": "Ultimate Zigbee Hub with comprehensive driver support",
+  "version": "1.0.0",
+  "description": "🏠 Ultimate Zigbee Hub - Comprehensive support for 4776+ Tuya & Zigbee devices. Johan Benz style integration with 48 professional drivers for lights, sensors, switches, climate control, security, and more.",
   "main": "app.js",
+  "keywords": [
+    "homey",
+    "zigbee",
+    "tuya",
+    "smart-home",
+    "iot",
+    "automation",
+    "lights",
+    "sensors",
+    "switches",
+    "climate",
+    "security",
+    "johan-benz",
+    "community",
+    "ts0121",
+    "ts011f",
+    "ts0001",
+    "ts0011",
+    "ts0002",
+    "ts0003",
+    "ts110f",
+    "ts1111",
+    "ts130f",
+    "ts0203",
+    "ts0202",
+    "ts0201",
+    "ts0601",
+    "ts004f",
+    "ts0041",
+    "ts0505b",
+    "tze200",
+    "_tz3000",
+    "rh3001",
+    "rh3040",
+    "rh3052"
+  ],
   "dependencies": {
     "homey-zigbeedriver": "^1.5.0"
   },
@@ -11,8 +47,63 @@
   },
   "scripts": {
     "test": "echo \"No tests specified\"",
-    "start": "node app.js"
+    "start": "node app.js",
+    "validate": "homey app validate",
+    "build": "homey app build",
+    "publish": "homey app publish"
   },
-  "author": "dlnraja",
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dlnraja/com.tuya.zigbee.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
+  },
+  "homepage": "https://github.com/dlnraja/com.tuya.zigbee#readme",
+  "author": {
+    "name": "dlnraja",
+    "url": "https://github.com/dlnraja"
+  },
+  "contributors": [
+    {
+      "name": "Johan Benz",
+      "url": "https://github.com/JohanBendz",
+      "role": "Architecture inspiration & community standards"
+    },
+    {
+      "name": "Homey Community",
+      "role": "Testing, feedback & device contributions"
+    }
+  ],
+  "license": "MIT",
+  "homey": {
+    "id": "com.dlnraja.ultimate.zigbee.hub",
+    "name": {
+      "en": "Ultimate Zigbee Hub"
+    },
+    "description": {
+      "en": "🏠 Ultimate Zigbee Hub - Comprehensive support for 4776+ Tuya & Zigbee devices with 48 professional drivers"
+    },
+    "category": "lighting",
+    "tags": [
+      "zigbee",
+      "tuya",
+      "lights",
+      "sensors",
+      "switches",
+      "climate",
+      "security"
+    ],
+    "version": "1.0.0",
+    "compatibility": ">=5.0.0",
+    "sdk": 3,
+    "brandColor": "#00A8E8",
+    "permissions": [
+      "homey:manager:zigbee"
+    ],
+    "images": {
+      "large": "/assets/images/large.png",
+      "small": "/assets/images/small.png"
+    }
+  }
 }
