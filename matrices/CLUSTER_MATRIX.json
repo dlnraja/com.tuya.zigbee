@@ -1,574 +1,100 @@
-[
-  {
-    "name": 0,
-    "driversUsing": [
-      "aqara_motion_sensor",
-      "bosch_thermostat_valve",
-      "climate",
-      "common",
-      "covers",
-      "ikea_tradfri_bulb",
-      "lights",
-      "manufacturers",
-      "protocols",
-      "security",
-      "sensors",
-      "sensors-TS0601_motion",
-      "switches",
-      "tuya-ts0011",
-      "tuya-ts011f",
-      "tuya_light_ts0501a",
-      "tuya_light_ts0502a",
-      "tuya_light_ts0502b",
-      "tuya_light_ts0505a",
-      "tuya_light_ts0505b",
-      "tuya_light_universal",
-      "tuya_thermostat",
-      "tuya_water_sensor",
-      "zigbee-tuya-universal"
-    ],
-    "frequency": 24,
-    "capabilities": [
-      "alarm_motion",
-      "measure_battery",
-      "measure_temperature",
-      "target_temperature",
-      "onoff",
-      "dim",
-      "light_temperature",
-      "alarm_battery",
-      "measure_power",
-      "meter_power",
-      "fan_speed",
-      "windowcoverings_state",
-      "lock_state",
-      "light_hue",
-      "light_saturation"
-    ]
+{
+  "zigbeeClusters": {
+    "basic": {
+      "id": 0,
+      "description": "Basic device information",
+      "required": true
+    },
+    "powerConfig": {
+      "id": 1,
+      "description": "Power configuration",
+      "batteryDevices": true
+    },
+    "identify": {
+      "id": 3,
+      "description": "Device identification",
+      "required": true
+    },
+    "groups": {
+      "id": 4,
+      "description": "Group management"
+    },
+    "scenes": {
+      "id": 5,
+      "description": "Scene management"
+    },
+    "onOff": {
+      "id": 6,
+      "description": "On/off control",
+      "lighting": true,
+      "switches": true
+    },
+    "levelControl": {
+      "id": 8,
+      "description": "Level/dimming control",
+      "lighting": true
+    },
+    "doorLock": {
+      "id": 257,
+      "description": "Door lock control",
+      "security": true
+    },
+    "windowCovering": {
+      "id": 258,
+      "description": "Window covering control",
+      "covers": true
+    },
+    "thermostat": {
+      "id": 513,
+      "description": "Thermostat control",
+      "climate": true
+    },
+    "colorControl": {
+      "id": 768,
+      "description": "Color control",
+      "lighting": true
+    },
+    "illuminance": {
+      "id": 1024,
+      "description": "Illuminance measurement",
+      "sensors": true
+    },
+    "temperature": {
+      "id": 1026,
+      "description": "Temperature measurement",
+      "sensors": true
+    },
+    "pressure": {
+      "id": 1027,
+      "description": "Pressure measurement",
+      "sensors": true
+    },
+    "humidity": {
+      "id": 1029,
+      "description": "Humidity measurement",
+      "sensors": true
+    },
+    "occupancy": {
+      "id": 1030,
+      "description": "Occupancy sensing",
+      "sensors": true
+    },
+    "iasZone": {
+      "id": 1280,
+      "description": "IAS Zone (security)",
+      "security": true
+    },
+    "iasWd": {
+      "id": 1282,
+      "description": "IAS Warning Device",
+      "security": true
+    }
   },
-  {
-    "name": 1,
-    "driversUsing": [
-      "aqara_motion_sensor",
-      "bosch_thermostat_valve",
-      "climate",
-      "common",
-      "covers",
-      "lights",
-      "manufacturers",
-      "protocols",
-      "security",
-      "sensors",
-      "sensors-TS0601_motion",
-      "switches",
-      "tuya_thermostat",
-      "tuya_water_sensor"
-    ],
-    "frequency": 14,
-    "capabilities": [
-      "alarm_motion",
-      "measure_battery",
-      "measure_temperature",
-      "target_temperature",
-      "alarm_battery",
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "fan_speed",
-      "dim",
-      "windowcoverings_state",
-      "lock_state"
-    ]
-  },
-  {
-    "name": "genBasic",
-    "driversUsing": [
-      "templates",
-      "tuya_future_ai_device",
-      "tuya_generic_light",
-      "tuya_generic_plug",
-      "tuya_generic_switch",
-      "tuya_generic_switch",
-      "tuya_generic_switch",
-      "tuya_generic_switch",
-      "tuya_generic_switch",
-      "tuya_generic_switch",
-      "types",
-      "zigbee"
-    ],
-    "frequency": 12,
-    "capabilities": [
-      "onoff",
-      "measure_generic",
-      "alarm_generic",
-      "dim",
-      "light_hue",
-      "light_saturation",
-      "light_temperature",
-      "measure_power",
-      "meter_power"
-    ]
-  },
-  {
-    "name": 6,
-    "driversUsing": [
-      "ikea_tradfri_bulb",
-      "sensors-TS0601_motion",
-      "tuya-ts0011",
-      "tuya-ts011f",
-      "tuya_light_ts0501a",
-      "tuya_light_ts0502a",
-      "tuya_light_ts0502b",
-      "tuya_light_ts0505a",
-      "tuya_light_ts0505b",
-      "tuya_light_universal",
-      "zigbee-tuya-universal"
-    ],
-    "frequency": 11,
-    "capabilities": [
-      "onoff",
-      "dim",
-      "light_temperature",
-      "alarm_motion",
-      "measure_temperature",
-      "measure_battery",
-      "alarm_battery",
-      "measure_power",
-      "meter_power",
-      "fan_speed",
-      "target_temperature",
-      "windowcoverings_state",
-      "lock_state",
-      "light_hue",
-      "light_saturation"
-    ]
-  },
-  {
-    "name": "genOnOff",
-    "driversUsing": [
-      "TS0601_irrigation",
-      "TS0601_siren",
-      "tuya_future_ai_device",
-      "tuya_generic_light",
-      "tuya_generic_plug",
-      "tuya_generic_switch",
-      "tuya_generic_switch",
-      "tuya_generic_switch",
-      "tuya_generic_switch",
-      "tuya_generic_switch",
-      "tuya_generic_switch"
-    ],
-    "frequency": 11,
-    "capabilities": [
-      "onoff",
-      "measure_humidity",
-      "alarm_generic",
-      "measure_generic",
-      "dim",
-      "light_hue",
-      "light_saturation",
-      "light_temperature",
-      "measure_power",
-      "meter_power"
-    ]
-  },
-  {
-    "name": 4,
-    "driversUsing": [
-      "tuya-ts0011",
-      "tuya-ts011f",
-      "tuya_light_ts0501a",
-      "tuya_light_ts0502a",
-      "tuya_light_ts0502b",
-      "tuya_light_ts0505a",
-      "tuya_light_ts0505b",
-      "tuya_light_universal"
-    ],
-    "frequency": 8,
-    "capabilities": [
-      "onoff",
-      "measure_battery",
-      "measure_power",
-      "meter_power",
-      "dim",
-      "light_temperature",
-      "light_hue",
-      "light_saturation"
-    ]
-  },
-  {
-    "name": 5,
-    "driversUsing": [
-      "tuya-ts0011",
-      "tuya-ts011f",
-      "tuya_light_ts0501a",
-      "tuya_light_ts0502a",
-      "tuya_light_ts0502b",
-      "tuya_light_ts0505a",
-      "tuya_light_ts0505b",
-      "tuya_light_universal"
-    ],
-    "frequency": 8,
-    "capabilities": [
-      "onoff",
-      "measure_battery",
-      "measure_power",
-      "meter_power",
-      "dim",
-      "light_temperature",
-      "light_hue",
-      "light_saturation"
-    ]
-  },
-  {
-    "name": 3,
-    "driversUsing": [
-      "sensors-TS0601_motion",
-      "tuya_light_ts0501a",
-      "tuya_light_ts0502a",
-      "tuya_light_ts0502b",
-      "tuya_light_ts0505a",
-      "tuya_light_ts0505b",
-      "tuya_light_universal"
-    ],
-    "frequency": 7,
-    "capabilities": [
-      "alarm_motion",
-      "measure_temperature",
-      "measure_battery",
-      "alarm_battery",
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "fan_speed",
-      "dim",
-      "target_temperature",
-      "windowcoverings_state",
-      "lock_state",
-      "light_temperature",
-      "light_hue",
-      "light_saturation"
-    ]
-  },
-  {
-    "name": 8,
-    "driversUsing": [
-      "ikea_tradfri_bulb",
-      "tuya_light_ts0501a",
-      "tuya_light_ts0502a",
-      "tuya_light_ts0502b",
-      "tuya_light_ts0505a",
-      "tuya_light_ts0505b",
-      "tuya_light_universal"
-    ],
-    "frequency": 7,
-    "capabilities": [
-      "onoff",
-      "dim",
-      "light_temperature",
-      "light_hue",
-      "light_saturation"
-    ]
-  },
-  {
-    "name": 768,
-    "driversUsing": [
-      "ikea_tradfri_bulb",
-      "tuya_light_ts0502a",
-      "tuya_light_ts0502b",
-      "tuya_light_ts0505a",
-      "tuya_light_ts0505b",
-      "tuya_light_universal"
-    ],
-    "frequency": 6,
-    "capabilities": [
-      "onoff",
-      "dim",
-      "light_temperature",
-      "light_hue",
-      "light_saturation"
-    ]
-  },
-  {
-    "name": 1280,
-    "driversUsing": [
-      "aqara_motion_sensor",
-      "sensors-TS0601_motion"
-    ],
-    "frequency": 2,
-    "capabilities": [
-      "alarm_motion",
-      "measure_battery",
-      "measure_temperature",
-      "alarm_battery",
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "fan_speed",
-      "dim",
-      "target_temperature",
-      "windowcoverings_state",
-      "lock_state"
-    ]
-  },
-  {
-    "name": "msTemperatureMeasurement",
-    "driversUsing": [
-      "TS0601_climate",
-      "tuya_generic_sensor"
-    ],
-    "frequency": 2,
-    "capabilities": [
-      "target_temperature",
-      "measure_temperature",
-      "thermostat_mode",
-      "measure_humidity",
-      "alarm_motion",
-      "alarm_contact"
-    ]
-  },
-  {
-    "name": "msRelativeHumidity",
-    "driversUsing": [
-      "TS0601_irrigation",
-      "tuya_generic_sensor"
-    ],
-    "frequency": 2,
-    "capabilities": [
-      "onoff",
-      "measure_humidity",
-      "measure_temperature",
-      "alarm_motion",
-      "alarm_contact"
-    ]
-  },
-  {
-    "name": "ssIasZone",
-    "driversUsing": [
-      "TS0601_lock",
-      "tuya_generic_sensor"
-    ],
-    "frequency": 2,
-    "capabilities": [
-      "locked",
-      "alarm_generic",
-      "measure_temperature",
-      "measure_humidity",
-      "alarm_motion",
-      "alarm_contact"
-    ]
-  },
-  {
-    "name": 513,
-    "driversUsing": [
-      "bosch_thermostat_valve"
-    ],
-    "frequency": 1,
-    "capabilities": [
-      "measure_temperature",
-      "target_temperature",
-      "measure_battery"
-    ]
-  },
-  {
-    "name": 1026,
-    "driversUsing": [
-      "bosch_thermostat_valve"
-    ],
-    "frequency": 1,
-    "capabilities": [
-      "measure_temperature",
-      "target_temperature",
-      "measure_battery"
-    ]
-  },
-  {
-    "name": 1794,
-    "driversUsing": [
-      "tuya-ts011f"
-    ],
-    "frequency": 1,
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power"
-    ]
-  },
-  {
-    "name": 2820,
-    "driversUsing": [
-      "tuya-ts011f"
-    ],
-    "frequency": 1,
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power"
-    ]
-  },
-  {
-    "name": 4096,
-    "driversUsing": [
-      "tuya-ts0011"
-    ],
-    "frequency": 1,
-    "capabilities": [
-      "onoff",
-      "measure_battery"
-    ]
-  },
-  {
-    "name": 61184,
-    "driversUsing": [
-      "tuya-ts0011"
-    ],
-    "frequency": 1,
-    "capabilities": [
-      "onoff",
-      "measure_battery"
-    ]
-  },
-  {
-    "name": "hvacThermostat",
-    "driversUsing": [
-      "TS0601_climate"
-    ],
-    "frequency": 1,
-    "capabilities": [
-      "target_temperature",
-      "measure_temperature",
-      "thermostat_mode"
-    ]
-  },
-  {
-    "name": "hvacFanCtrl",
-    "driversUsing": [
-      "TS0601_climate"
-    ],
-    "frequency": 1,
-    "capabilities": [
-      "target_temperature",
-      "measure_temperature",
-      "thermostat_mode"
-    ]
-  },
-  {
-    "name": "closuresWindowCovering",
-    "driversUsing": [
-      "TS0601_cover"
-    ],
-    "frequency": 1,
-    "capabilities": [
-      "windowcoverings_state",
-      "dim"
-    ]
-  },
-  {
-    "name": "closuresDoorLock",
-    "driversUsing": [
-      "TS0601_lock"
-    ],
-    "frequency": 1,
-    "capabilities": [
-      "locked",
-      "alarm_generic"
-    ]
-  },
-  {
-    "name": "ssIasWd",
-    "driversUsing": [
-      "TS0601_siren"
-    ],
-    "frequency": 1,
-    "capabilities": [
-      "alarm_generic",
-      "onoff"
-    ]
-  },
-  {
-    "name": "0xFFF0",
-    "driversUsing": [
-      "tuya_future_ai_device"
-    ],
-    "frequency": 1,
-    "capabilities": [
-      "onoff",
-      "measure_generic",
-      "alarm_generic"
-    ]
-  },
-  {
-    "name": "0xFFF1",
-    "driversUsing": [
-      "tuya_future_ai_device"
-    ],
-    "frequency": 1,
-    "capabilities": [
-      "onoff",
-      "measure_generic",
-      "alarm_generic"
-    ]
-  },
-  {
-    "name": "genLevelCtrl",
-    "driversUsing": [
-      "tuya_generic_light"
-    ],
-    "frequency": 1,
-    "capabilities": [
-      "onoff",
-      "dim",
-      "light_hue",
-      "light_saturation",
-      "light_temperature"
-    ]
-  },
-  {
-    "name": "lightingColorCtrl",
-    "driversUsing": [
-      "tuya_generic_light"
-    ],
-    "frequency": 1,
-    "capabilities": [
-      "onoff",
-      "dim",
-      "light_hue",
-      "light_saturation",
-      "light_temperature"
-    ]
-  },
-  {
-    "name": "haElectricalMeasurement",
-    "driversUsing": [
-      "tuya_generic_plug"
-    ],
-    "frequency": 1,
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power"
-    ]
-  },
-  {
-    "name": "seMetering",
-    "driversUsing": [
-      "tuya_generic_plug"
-    ],
-    "frequency": 1,
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power"
-    ]
-  },
-  {
-    "name": "dynamic",
-    "driversUsing": [
-      "tuya_universal_adapter"
-    ],
-    "frequency": 1,
-    "capabilities": [
-      "dynamic"
-    ]
+  "customClusters": {
+    "tuyaSpecific": {
+      "id": 61184,
+      "description": "Tuya specific cluster",
+      "manufacturer": "Tuya"
+    }
   }
-]
+}
