@@ -2,74 +2,76 @@
   {
     "id": "device_is_on",
     "title": {
-      "en": "Device is turned on",
+      "en": "Device is on",
       "fr": "L'appareil est allumé",
-      "nl": "Apparaat is ingeschakeld",
-      "de": "Gerät ist eingeschaltet"
+      "nl": "Apparaat is aan",
+      "de": "Gerät ist an"
     },
     "titleFormatted": {
-      "en": "[[device]] is turned !{{on|off}}",
-      "fr": "[[device]] is !{{allumé|éteint}}",
-      "nl": "[[device]] is !{{ingeschakeld|uitgeschakeld}}",
-      "de": "[[device]] ist !{{eingeschaltet|ausgeschaltet}}"
+      "en": "[[device]] is !{{on|off}}",
+      "fr": "[[device]] est !{{allumé|éteint}}",
+      "nl": "[[device]] is !{{aan|uit}}",
+      "de": "[[device]] ist !{{an|aus}}"
     },
     "args": [
       {
         "name": "device",
         "type": "device",
-        "filter": "driver_id=tuya_light_ts0505a|tuya_light_ts0505b|tuya_light_ts0501a|tuya_light_ts0502a|tuya_light_ts0502b|tuya_generic_light|tuya_light_universal|tuya-ts011f|tuya_generic_plug|tuya-ts0011|tuya_generic_switch|TS0601_irrigation|TS0601_siren|tuya_generic_universal|tuya_universal_adapter"
+        "filter": "capability_id=onoff"
       }
     ]
   },
   {
-    "id": "motion_detected_condition",
+    "id": "temperature_comparison",
     "title": {
-      "en": "Motion is detected",
-      "fr": "Le mouvement est détecté",
-      "nl": "Beweging wordt gedetecteerd",
-      "de": "Bewegung wird erkannt"
+      "en": "Temperature comparison",
+      "fr": "Comparaison de température",
+      "nl": "Temperatuur vergelijking",
+      "de": "Temperaturvergleich"
     },
     "titleFormatted": {
-      "en": "Motion is !{{detected|not detected}} by [[device]]",
-      "fr": "Le mouvement est !{{détecté|non détecté}} par [[device]]",
-      "nl": "Beweging wordt !{{gedetecteerd|niet gedetecteerd}} door [[device]]",
-      "de": "Bewegung wird !{{erkannt|nicht erkannt}} von [[device]]"
+      "en": "Temperature of [[device]] is [[comparison]] [[temperature]]°C",
+      "fr": "Température de [[device]] est [[comparison]] [[temperature]]°C",
+      "nl": "Temperatuur van [[device]] is [[comparison]] [[temperature]]°C",
+      "de": "Temperatur von [[device]] ist [[comparison]] [[temperature]]°C"
     },
     "args": [
       {
         "name": "device",
         "type": "device",
-        "filter": "driver_id=aqara_motion_sensor|tuya_sensors-ts0601_motion|tuya_radar_sensor|tuya_generic_sensor"
-      }
-    ]
-  },
-  {
-    "id": "temperature_threshold",
-    "title": {
-      "en": "Temperature is above/below",
-      "fr": "La température est au-dessus/en dessous",
-      "nl": "Temperatuur is boven/onder",
-      "de": "Temperatur ist über/unter"
-    },
-    "titleFormatted": {
-      "en": "Temperature of [[device]] is [[operator]] [[temperature]]°C",
-      "fr": "La température de [[device]] est [[operator]] [[temperature]]°C",
-      "nl": "Temperatuur van [[device]] is [[operator]] [[temperature]]°C",
-      "de": "Temperatur von [[device]] ist [[operator]] [[temperature]]°C"
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": "driver_id=TS0601_climate|tuya_thermostat|tuya_generic_sensor|bosch_thermostat_valve"
+        "filter": "capability_id=measure_temperature"
       },
       {
-        "name": "operator",
+        "name": "comparison",
         "type": "dropdown",
         "values": [
-          {"id": "greater_than", "label": {"en": "greater than", "fr": "supérieur à", "nl": "groter dan", "de": "größer als"}},
-          {"id": "less_than", "label": {"en": "less than", "fr": "inférieur à", "nl": "kleiner dan", "de": "kleiner als"}},
-          {"id": "equal", "label": {"en": "equal to", "fr": "égal à", "nl": "gelijk aan", "de": "gleich"}}
+          {
+            "id": "greater",
+            "label": {
+              "en": "greater than",
+              "fr": "supérieure à",
+              "nl": "groter dan",
+              "de": "größer als"
+            }
+          },
+          {
+            "id": "less",
+            "label": {
+              "en": "less than",
+              "fr": "inférieure à",
+              "nl": "kleiner dan",
+              "de": "kleiner als"
+            }
+          },
+          {
+            "id": "equal",
+            "label": {
+              "en": "equal to",
+              "fr": "égale à",
+              "nl": "gelijk aan",
+              "de": "gleich"
+            }
+          }
         ]
       },
       {
@@ -77,90 +79,7 @@
         "type": "number",
         "min": -40,
         "max": 80,
-        "step": 0.1,
-        "placeholder": {"en": "Temperature", "fr": "Température", "nl": "Temperatuur", "de": "Temperatur"}
-      }
-    ]
-  },
-  {
-    "id": "battery_threshold",
-    "title": {
-      "en": "Battery level is below",
-      "fr": "Le niveau de batterie est en dessous",
-      "nl": "Batterijniveau is onder",
-      "de": "Batteriestand ist unter"
-    },
-    "titleFormatted": {
-      "en": "Battery level of [[device]] is [[operator]] [[level]]%",
-      "fr": "Le niveau de batterie de [[device]] est [[operator]] [[level]]%",
-      "nl": "Batterijniveau van [[device]] is [[operator]] [[level]]%",
-      "de": "Batteriestand von [[device]] ist [[operator]] [[level]]%"
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": "driver_id=aqara_motion_sensor|tuya_sensors-ts0601_motion|tuya_radar_sensor|tuya_generic_sensor|tuya_water_sensor"
-      },
-      {
-        "name": "operator",
-        "type": "dropdown",
-        "values": [
-          {"id": "less_than", "label": {"en": "less than", "fr": "inférieur à", "nl": "kleiner dan", "de": "kleiner als"}},
-          {"id": "greater_than", "label": {"en": "greater than", "fr": "supérieur à", "nl": "groter dan", "de": "größer als"}}
-        ]
-      },
-      {
-        "name": "level",
-        "type": "range",
-        "min": 0,
-        "max": 100,
-        "step": 1,
-        "label": "%"
-      }
-    ]
-  },
-  {
-    "id": "water_leak_condition",
-    "title": {
-      "en": "Water leak is detected",
-      "fr": "Une fuite d'eau est détectée",
-      "nl": "Waterlek wordt gedetecteerd",
-      "de": "Wasserleck wird erkannt"
-    },
-    "titleFormatted": {
-      "en": "Water leak is !{{detected|not detected}} by [[device]]",
-      "fr": "Fuite d'eau !{{détectée|non détectée}} par [[device]]",
-      "nl": "Waterlek !{{gedetecteerd|niet gedetecteerd}} door [[device]]",
-      "de": "Wasserleck !{{erkannt|nicht erkannt}} von [[device]]"
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": "driver_id=tuya_water_sensor"
-      }
-    ]
-  },
-  {
-    "id": "device_locked",
-    "title": {
-      "en": "Device is locked",
-      "fr": "L'appareil est verrouillé",
-      "nl": "Apparaat is vergrendeld",
-      "de": "Gerät ist gesperrt"
-    },
-    "titleFormatted": {
-      "en": "[[device]] is !{{locked|unlocked}}",
-      "fr": "[[device]] est !{{verrouillé|déverrouillé}}",
-      "nl": "[[device]] is !{{vergrendeld|ontgrendeld}}",
-      "de": "[[device]] ist !{{gesperrt|entsperrt}}"
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": "driver_id=TS0601_lock"
+        "step": 0.1
       }
     ]
   }
