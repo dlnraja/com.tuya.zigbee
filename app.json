@@ -1,7 +1,6 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "main": "app.js",
-  "sdk": 3,
   "id": "com.dlnraja.ultimate.zigbee.hub",
   "version": "4.0.1",
   "compatibility": ">=8.0.0",
@@ -1396,10 +1395,15 @@
       "class": "other",
       "capabilities": [
         "onoff",
-        "measure_generic",
-        "alarm_generic"
+        "measure_power",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {},
+      "energy": {
+        "batteries": [
+          "OTHER"
+        ]
+      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_*",
@@ -1491,26 +1495,14 @@
       "class": "other",
       "capabilities": [
         "onoff",
-        "measure_generic",
-        "alarm_generic"
+        "measure_power",
+        "alarm_battery"
       ],
-      "capabilitiesOptions": {
-        "measure_generic": {
-          "title": {
-            "en": "Generic Value",
-            "fr": "Valeur générique",
-            "nl": "Generieke waarde",
-            "ta": "பொதுவான மதிப்பு"
-          }
-        },
-        "alarm_generic": {
-          "title": {
-            "en": "Generic Alarm",
-            "fr": "Alarme générique",
-            "nl": "Generiek alarm",
-            "ta": "பொதுவான எச்சரிக்கை"
-          }
-        }
+      "capabilitiesOptions": {},
+      "energy": {
+        "batteries": [
+          "OTHER"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -3122,7 +3114,7 @@
       },
       "class": "other",
       "capabilities": [
-        "dynamic"
+        "onoff"
       ],
       "capabilitiesOptions": {},
       "zigbee": {

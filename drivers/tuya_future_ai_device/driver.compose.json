@@ -7,10 +7,13 @@
   "class": "other",
   "capabilities": [
     "onoff",
-    "measure_generic",
-    "alarm_generic"
+    "measure_power",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {},
+  "energy": {
+    "batteries": ["OTHER"]
+  },
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_*",
