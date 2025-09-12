@@ -1,12 +1,18 @@
 {
   "name": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "5.0.0",
+  "version": "4.0.2",
   "description": "Ultimate Zigbee Hub with comprehensive driver support",
   "main": "app.js",
   "dependencies": {
-    "homey-zigbeedriver": "^3.0.0"
+    "homey-zigbeedriver": "^1.5.0"
   },
   "engines": {
     "node": ">=16"
-  }
+  },
+  "scripts": {
+    "test": "echo \"No tests specified\"",
+    "start": "node app.js"
+  },
+  "author": "dlnraja",
+  "license": "MIT"
 }
