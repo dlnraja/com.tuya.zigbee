@@ -1,0 +1,419 @@
+[
+  {
+    "id": "turn_on_device",
+    "title": {
+      "en": "Turn on",
+      "fr": "Allumer",
+      "nl": "Inschakelen",
+      "de": "Einschalten"
+    },
+    "titleFormatted": {
+      "en": "Turn on [[device]]",
+      "fr": "Allumer [[device]]",
+      "nl": "Schakel [[device]] in",
+      "de": "Schalte [[device]] ein"
+    },
+    "hint": {
+      "en": "This will turn on the selected Tuya device",
+      "fr": "Cela allumera l'appareil Tuya sélectionné",
+      "nl": "Dit zal het geselecteerde Tuya-apparaat inschakelen",
+      "de": "Dies schaltet das ausgewählte Tuya-Gerät ein"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=tuya_light_ts0505a|tuya_light_ts0505b|tuya_light_ts0501a|tuya_light_ts0502a|tuya_light_ts0502b|tuya_generic_light|tuya_light_universal|tuya-ts011f|tuya_generic_plug|tuya-ts0011|tuya_generic_switch|TS0601_irrigation|TS0601_siren|tuya_generic_universal|tuya_universal_adapter|tuya_zigbee-tuya-universal"
+      }
+    ]
+  },
+  {
+    "id": "turn_off_device",
+    "title": {
+      "en": "Turn off",
+      "fr": "Éteindre",
+      "nl": "Uitschakelen",
+      "de": "Ausschalten"
+    },
+    "titleFormatted": {
+      "en": "Turn off [[device]]",
+      "fr": "Éteindre [[device]]",
+      "nl": "Schakel [[device]] uit",
+      "de": "Schalte [[device]] aus"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=tuya_light_ts0505a|tuya_light_ts0505b|tuya_light_ts0501a|tuya_light_ts0502a|tuya_light_ts0502b|tuya_generic_light|tuya_light_universal|tuya-ts011f|tuya_generic_plug|tuya-ts0011|tuya_generic_switch|TS0601_irrigation|TS0601_siren|tuya_generic_universal|tuya_universal_adapter|tuya_zigbee-tuya-universal"
+      }
+    ]
+  },
+  {
+    "id": "toggle_device",
+    "title": {
+      "en": "Toggle on or off",
+      "fr": "Basculer allumé/éteint",
+      "nl": "Schakel in of uit",
+      "de": "Ein- oder ausschalten"
+    },
+    "titleFormatted": {
+      "en": "Toggle [[device]] on or off",
+      "fr": "Basculer [[device]] allumé/éteint",
+      "nl": "Schakel [[device]] in of uit",
+      "de": "Schalte [[device]] ein oder aus"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=tuya_light_ts0505a|tuya_light_ts0505b|tuya_light_ts0501a|tuya_light_ts0502a|tuya_light_ts0502b|tuya_generic_light|tuya_light_universal|tuya-ts011f|tuya_generic_plug|tuya-ts0011|tuya_generic_switch|TS0601_irrigation|TS0601_siren|tuya_generic_universal|tuya_universal_adapter|tuya_zigbee-tuya-universal"
+      }
+    ]
+  },
+  {
+    "id": "dim_device",
+    "title": {
+      "en": "Dim to %",
+      "fr": "Régler l'intensité à %",
+      "nl": "Dim naar %",
+      "de": "Dimme auf %"
+    },
+    "titleFormatted": {
+      "en": "Dim [[device]] to [[brightness]]%",
+      "fr": "Régler l'intensité de [[device]] à [[brightness]]%",
+      "nl": "Dim [[device]] naar [[brightness]]%",
+      "de": "Dimme [[device]] auf [[brightness]]%"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=tuya_light_ts0505a|tuya_light_ts0505b|tuya_light_ts0501a|tuya_light_ts0502a|tuya_light_ts0502b|tuya_generic_light|tuya_light_universal|tuya_generic_universal|TS0601_cover"
+      },
+      {
+        "name": "brightness",
+        "type": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "label": "%",
+        "labelMultiplier": 100,
+        "labelDecimals": 0
+      }
+    ]
+  },
+  {
+    "id": "set_relative_dim",
+    "title": {
+      "en": "Set relative dim-level %",
+      "fr": "Définir le niveau de gradation relatif %",
+      "nl": "Stel relatief dimniveau in %",
+      "de": "Setze relative Dimmung %"
+    },
+    "titleFormatted": {
+      "en": "Set relative dim-level of [[device]] [[relative_brightness]]%",
+      "fr": "Définir le niveau de gradation relatif de [[device]] [[relative_brightness]]%",
+      "nl": "Stel relatief dimniveau van [[device]] in [[relative_brightness]]%",
+      "de": "Setze relative Dimmung von [[device]] [[relative_brightness]]%"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=tuya_light_ts0505a|tuya_light_ts0505b|tuya_light_ts0501a|tuya_light_ts0502a|tuya_light_ts0502b|tuya_generic_light|tuya_light_universal|tuya_generic_universal|TS0601_cover"
+      },
+      {
+        "name": "relative_brightness",
+        "type": "range",
+        "min": -1,
+        "max": 1,
+        "step": 0.01,
+        "label": "%",
+        "labelMultiplier": 100,
+        "labelDecimals": 0
+      }
+    ]
+  },
+  {
+    "id": "set_hue",
+    "title": {
+      "en": "Set the hue °",
+      "fr": "Définir la teinte °",
+      "nl": "Stel de tint in °",
+      "de": "Setze den Farbton °"
+    },
+    "titleFormatted": {
+      "en": "Set the hue of [[device]] to [[hue]]°",
+      "fr": "Définir la teinte de [[device]] à [[hue]]°",
+      "nl": "Stel de tint van [[device]] in op [[hue]]°",
+      "de": "Setze den Farbton von [[device]] auf [[hue]]°"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=tuya_light_ts0505a|tuya_light_ts0505b"
+      },
+      {
+        "name": "hue",
+        "type": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "label": "°",
+        "labelMultiplier": 360,
+        "labelDecimals": 0
+      }
+    ]
+  },
+  {
+    "id": "set_color",
+    "title": {
+      "en": "Set a color ...",
+      "fr": "Définir une couleur ...",
+      "nl": "Stel een kleur in ...",
+      "de": "Setze eine Farbe ..."
+    },
+    "titleFormatted": {
+      "en": "Set the color of [[device]] to [[color]]",
+      "fr": "Définir la couleur de [[device]] sur [[color]]",
+      "nl": "Stel de kleur van [[device]] in op [[color]]",
+      "de": "Setze die Farbe von [[device]] auf [[color]]"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=tuya_light_ts0505a|tuya_light_ts0505b"
+      },
+      {
+        "name": "color",
+        "type": "color"
+      }
+    ]
+  },
+  {
+    "id": "set_random_color",
+    "title": {
+      "en": "Set a random color",
+      "fr": "Définir une couleur aléatoire",
+      "nl": "Stel een willekeurige kleur in",
+      "de": "Setze eine zufällige Farbe"
+    },
+    "titleFormatted": {
+      "en": "Set a random color for [[device]]",
+      "fr": "Définir une couleur aléatoire pour [[device]]",
+      "nl": "Stel een willekeurige kleur in voor [[device]]",
+      "de": "Setze eine zufällige Farbe für [[device]]"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=tuya_light_ts0505a|tuya_light_ts0505b"
+      }
+    ]
+  },
+  {
+    "id": "set_saturation",
+    "title": {
+      "en": "Set the saturation %",
+      "fr": "Définir la saturation %",
+      "nl": "Stel de verzadiging in %",
+      "de": "Setze die Sättigung %"
+    },
+    "titleFormatted": {
+      "en": "Set the saturation of [[device]] to [[saturation]]%",
+      "fr": "Définir la saturation de [[device]] à [[saturation]]%",
+      "nl": "Stel de verzadiging van [[device]] in op [[saturation]]%",
+      "de": "Setze die Sättigung von [[device]] auf [[saturation]]%"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=tuya_light_ts0505a|tuya_light_ts0505b"
+      },
+      {
+        "name": "saturation",
+        "type": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "label": "%",
+        "labelMultiplier": 100,
+        "labelDecimals": 0
+      }
+    ]
+  },
+  {
+    "id": "set_temperature",
+    "title": {
+      "en": "Set a temperature %",
+      "fr": "Définir une température %",
+      "nl": "Stel een temperatuur in %",
+      "de": "Setze eine Temperatur %"
+    },
+    "titleFormatted": {
+      "en": "Set the temperature of [[device]] to [[temperature]]%",
+      "fr": "Définir la température de [[device]] à [[temperature]]%",
+      "nl": "Stel de temperatuur van [[device]] in op [[temperature]]%",
+      "de": "Setze die Temperatur von [[device]] auf [[temperature]]%"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=tuya_light_ts0505a|tuya_light_ts0505b|tuya_light_ts0502a|tuya_light_ts0502b"
+      },
+      {
+        "name": "temperature",
+        "type": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "label": "%",
+        "labelMultiplier": 100,
+        "labelDecimals": 0
+      }
+    ]
+  },
+  {
+    "id": "set_cover_state",
+    "title": {
+      "en": "Set state ...",
+      "fr": "Définir l'état ...",
+      "nl": "Stel status in ...",
+      "de": "Setze Zustand ..."
+    },
+    "titleFormatted": {
+      "en": "Set [[device]] to [[state]]",
+      "fr": "Régler [[device]] sur [[state]]",
+      "nl": "Stel [[device]] in op [[state]]",
+      "de": "Setze [[device]] auf [[state]]"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=TS0601_cover"
+      },
+      {
+        "name": "state",
+        "type": "dropdown",
+        "values": [
+          {"id": "up", "label": {"en": "Up", "fr": "Haut", "nl": "Omhoog", "de": "Oben"}},
+          {"id": "idle", "label": {"en": "Idle", "fr": "Arrêt", "nl": "Stil", "de": "Stopp"}},
+          {"id": "down", "label": {"en": "Down", "fr": "Bas", "nl": "Omlaag", "de": "Unten"}}
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lock_device",
+    "title": {
+      "en": "Lock",
+      "fr": "Verrouiller",
+      "nl": "Vergrendelen",
+      "de": "Sperren"
+    },
+    "titleFormatted": {
+      "en": "Lock [[device]]",
+      "fr": "Verrouiller [[device]]",
+      "nl": "Vergrendel [[device]]",
+      "de": "Sperre [[device]]"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=TS0601_lock"
+      }
+    ]
+  },
+  {
+    "id": "unlock_device",
+    "title": {
+      "en": "Unlock",
+      "fr": "Déverrouiller",
+      "nl": "Ontgrendelen",
+      "de": "Entsperren"
+    },
+    "titleFormatted": {
+      "en": "Unlock [[device]]",
+      "fr": "Déverrouiller [[device]]",
+      "nl": "Ontgrendel [[device]]",
+      "de": "Entsperre [[device]]"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=TS0601_lock"
+      }
+    ]
+  },
+  {
+    "id": "set_thermostat_temperature",
+    "title": {
+      "en": "Set the temperature °C",
+      "fr": "Définir la température °C",
+      "nl": "Stel de temperatuur in °C",
+      "de": "Setze die Temperatur °C"
+    },
+    "titleFormatted": {
+      "en": "Set the temperature of [[device]] to [[temperature]]°C",
+      "fr": "Définir la température de [[device]] à [[temperature]]°C",
+      "nl": "Stel de temperatuur van [[device]] in op [[temperature]]°C",
+      "de": "Setze die Temperatur von [[device]] auf [[temperature]]°C"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=TS0601_climate|tuya_thermostat|bosch_thermostat_valve"
+      },
+      {
+        "name": "temperature",
+        "type": "range",
+        "min": 5,
+        "max": 35,
+        "step": 0.5,
+        "label": "°C"
+      }
+    ]
+  },
+  {
+    "id": "set_thermostat_mode",
+    "title": {
+      "en": "Set the mode ...",
+      "fr": "Définir le mode ...",
+      "nl": "Stel de modus in ...",
+      "de": "Setze den Modus ..."
+    },
+    "titleFormatted": {
+      "en": "Set the mode of [[device]] to [[mode]]",
+      "fr": "Définir le mode de [[device]] sur [[mode]]",
+      "nl": "Stel de modus van [[device]] in op [[mode]]",
+      "de": "Setze den Modus von [[device]] auf [[mode]]"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=TS0601_climate|tuya_thermostat"
+      },
+      {
+        "name": "mode",
+        "type": "dropdown",
+        "values": [
+          {"id": "heat", "label": {"en": "Heat", "fr": "Chauffe", "nl": "Verwarming", "de": "Heizen"}},
+          {"id": "cool", "label": {"en": "Cool", "fr": "Refroidir", "nl": "Koeling", "de": "Kühlen"}},
+          {"id": "auto", "label": {"en": "Auto", "fr": "Auto", "nl": "Auto", "de": "Auto"}},
+          {"id": "off", "label": {"en": "Off", "fr": "Arrêt", "nl": "Uit", "de": "Aus"}}
+        ]
+      }
+    ]
+  }
+]

@@ -1,13 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
-  <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#7ED321;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  <rect width="500" height="500" fill="url(#grad)" rx="25"/>
-  <circle cx="250" cy="230" r="83.33333333333333" fill="white" opacity="0.9"/>
-  <text x="250" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="white" font-weight="bold">
-    SWITCHES
-  </text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150" height="150" viewBox="0 0 75 75" xmlns="http://www.w3.org/2000/svg">
+    <rect x="15" y="15" width="45" height="45" rx="8" fill="#4A90E2" stroke="#2C5F8B" stroke-width="2"/>
+    <rect x="22" y="22" width="14" height="20" rx="3" fill="#E8F4FD" stroke="#2C5F8B"/>
+    <rect x="39" y="22" width="14" height="20" rx="3" fill="#E8F4FD" stroke="#2C5F8B"/>
+    <circle cx="29" cy="27" r="2" fill="#4A90E2"/>
+    <circle cx="46" cy="37" r="2" fill="#4A90E2"/>
+    <rect x="20" y="48" width="35" height="3" rx="1.5" fill="#2C5F8B"/>
 </svg>
