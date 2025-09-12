@@ -1,19 +1,19 @@
 # 🏠 Ultimate Zigbee Hub - Comprehensive Device Support
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)
 ![Homey](https://img.shields.io/badge/homey->=5.0.0-green.svg)
-![Devices](https://img.shields.io/badge/devices-4776+-orange.svg)
+![Devices](https://img.shields.io/badge/devices-550+-orange.svg)
 ![Drivers](https://img.shields.io/badge/drivers-48-brightgreen.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Community](https://img.shields.io/badge/community-johan--benz--style-purple.svg)
 
-**🎯 The Ultimate Zigbee Hub for Homey - Comprehensive support for 4,776+ Tuya & Zigbee devices with 48 professional drivers. Built with Johan Benz style architecture and community-driven excellence.**
+**🎯 The Ultimate Zigbee Hub for Homey - Comprehensive support for 550+ Tuya & Zigbee devices with 48 professional drivers. Built with Johan Benz style architecture and community-driven excellence. LOCAL ZIGBEE ONLY - No Cloud Required!**
 
 ---
 
 ## 🌟 Why Choose Ultimate Zigbee Hub?
 
-✨ **Most Comprehensive** - 4,776+ supported devices across all major brands  
+✨ **Most Comprehensive** - 550+ supported devices across all major brands  
 🎯 **Professional Grade** - 48 specialized drivers with optimal device recognition  
 🏆 **Johan Benz Style** - Following community best practices and standards  
 🚀 **Future-Proof** - AI-powered device recognition for new Zigbee devices  
@@ -25,7 +25,7 @@
 ## 🚀 Key Features
 
 ### 🎯 **Massive Device Support**
-- **4,776+ devices** from leading manufacturers
+- **550+ devices** from leading manufacturers
 - **48 professional drivers** optimized for each device type
 - **Universal compatibility** with all major Zigbee brands
 - **Automatic device recognition** with intelligent fallbacks
