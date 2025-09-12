@@ -1,0 +1,216 @@
+[
+  {
+    "id": "motion_detected",
+    "title": {
+      "en": "Motion detected",
+      "fr": "Mouvement détecté",
+      "nl": "Beweging gedetecteerd",
+      "de": "Bewegung erkannt"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=aqara_motion_sensor|tuya_sensors-ts0601_motion|tuya_radar_sensor|tuya_generic_sensor"
+      }
+    ],
+    "hint": {
+      "en": "Triggered when motion is detected by the sensor",
+      "fr": "Déclenché lorsqu'un mouvement est détecté par le capteur",
+      "nl": "Geactiveerd wanneer beweging wordt gedetecteerd door de sensor",
+      "de": "Ausgelöst, wenn Bewegung vom Sensor erkannt wird"
+    }
+  },
+  {
+    "id": "motion_cleared",
+    "title": {
+      "en": "Motion stopped",
+      "fr": "Mouvement arrêté",
+      "nl": "Beweging gestopt",
+      "de": "Bewegung gestoppt"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=aqara_motion_sensor|tuya_sensors-ts0601_motion|tuya_radar_sensor|tuya_generic_sensor"
+      }
+    ]
+  },
+  {
+    "id": "temperature_changed",
+    "title": {
+      "en": "Temperature changed",
+      "fr": "Température changée",
+      "nl": "Temperatuur veranderd",
+      "de": "Temperatur geändert"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=TS0601_climate|tuya_thermostat|tuya_generic_sensor|bosch_thermostat_valve"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "temperature",
+        "type": "number",
+        "title": {
+          "en": "Temperature",
+          "fr": "Température",
+          "nl": "Temperatuur",
+          "de": "Temperatur"
+        },
+        "example": 21.5
+      }
+    ],
+    "hint": {
+      "en": "Triggered when the temperature changes by more than 0.5°C",
+      "fr": "Déclenché lorsque la température change de plus de 0,5°C",
+      "nl": "Geactiveerd wanneer de temperatuur meer dan 0,5°C verandert",
+      "de": "Ausgelöst, wenn sich die Temperatur um mehr als 0,5°C ändert"
+    }
+  },
+  {
+    "id": "humidity_changed",
+    "title": {
+      "en": "Humidity changed",
+      "fr": "Humidité changée",
+      "nl": "Luchtvochtigheid veranderd",
+      "de": "Luftfeuchtigkeit geändert"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=tuya_generic_sensor"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "humidity",
+        "type": "number",
+        "title": {
+          "en": "Humidity",
+          "fr": "Humidité",
+          "nl": "Luchtvochtigheid",
+          "de": "Luftfeuchtigkeit"
+        },
+        "example": 65
+      }
+    ]
+  },
+  {
+    "id": "battery_low",
+    "title": {
+      "en": "Battery is low",
+      "fr": "Batterie faible",
+      "nl": "Batterij bijna leeg",
+      "de": "Batterie schwach"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=aqara_motion_sensor|tuya_sensors-ts0601_motion|tuya_radar_sensor|tuya_generic_sensor|tuya_water_sensor"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "battery_level",
+        "type": "number",
+        "title": {
+          "en": "Battery level",
+          "fr": "Niveau de batterie",
+          "nl": "Batterijniveau",
+          "de": "Batteriestand"
+        },
+        "example": 15
+      }
+    ],
+    "hint": {
+      "en": "Triggered when battery level drops below 20%",
+      "fr": "Déclenché lorsque le niveau de batterie descend sous 20%",
+      "nl": "Geactiveerd wanneer het batterijniveau onder 20% komt",
+      "de": "Ausgelöst, wenn der Batteriestand unter 20% fällt"
+    }
+  },
+  {
+    "id": "water_leak_detected",
+    "title": {
+      "en": "Water leak detected",
+      "fr": "Fuite d'eau détectée",
+      "nl": "Waterlek gedetecteerd",
+      "de": "Wasserleck erkannt"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=tuya_water_sensor"
+      }
+    ]
+  },
+  {
+    "id": "soil_moisture_changed",
+    "title": {
+      "en": "Soil moisture changed",
+      "fr": "Humidité du sol changée",
+      "nl": "Bodemvochtigheid veranderd",
+      "de": "Bodenfeuchtigkeit geändert"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=tuya_soil_sensor"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "moisture",
+        "type": "number",
+        "title": {
+          "en": "Moisture level",
+          "fr": "Niveau d'humidité",
+          "nl": "Vochtigheidsniveau",
+          "de": "Feuchtigkeitsniveau"
+        },
+        "example": 45
+      }
+    ]
+  },
+  {
+    "id": "device_turned_on",
+    "title": {
+      "en": "Device turned on",
+      "fr": "Appareil allumé",
+      "nl": "Apparaat ingeschakeld",
+      "de": "Gerät eingeschaltet"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=tuya_light_ts0505a|tuya_light_ts0505b|tuya_light_ts0501a|tuya_light_ts0502a|tuya_light_ts0502b|tuya_generic_light|tuya_light_universal|tuya-ts011f|tuya_generic_plug|tuya-ts0011|tuya_generic_switch|TS0601_irrigation|TS0601_siren|tuya_generic_universal|tuya_universal_adapter"
+      }
+    ]
+  },
+  {
+    "id": "device_turned_off",
+    "title": {
+      "en": "Device turned off",
+      "fr": "Appareil éteint",
+      "nl": "Apparaat uitgeschakeld",
+      "de": "Gerät ausgeschaltet"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=tuya_light_ts0505a|tuya_light_ts0505b|tuya_light_ts0501a|tuya_light_ts0502a|tuya_light_ts0502b|tuya_generic_light|tuya_light_universal|tuya-ts011f|tuya_generic_plug|tuya-ts0011|tuya_generic_switch|TS0601_irrigation|TS0601_siren|tuya_generic_universal|tuya_universal_adapter"
+      }
+    ]
+  }
+]

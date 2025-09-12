@@ -1,13 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75">
-  <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#7ED321;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  <rect width="75" height="75" fill="url(#grad)" rx="25"/>
-  <circle cx="37.5" cy="17.5" r="12.5" fill="white" opacity="0.9"/>
-  <text x="37.5" y="77.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white" font-weight="bold">
-    TUYAWATE
-  </text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50" height="50" viewBox="0 0 75 75" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="37.5" cy="37.5" r="32" fill="#50C878" stroke="#2E7D32" stroke-width="2"/>
+    <circle cx="37.5" cy="30" r="8" fill="#FFF" opacity="0.9"/>
+    <circle cx="37.5" cy="30" r="4" fill="#2E7D32"/>
+    <path d="M20 45 Q37.5 35 55 45" stroke="#FFF" stroke-width="3" fill="none" opacity="0.8"/>
+    <path d="M25 52 Q37.5 47 50 52" stroke="#FFF" stroke-width="2" fill="none" opacity="0.6"/>
+    <circle cx="25" cy="35" r="2" fill="#FFF" opacity="0.7"/>
+    <circle cx="50" cy="35" r="2" fill="#FFF" opacity="0.7"/>
 </svg>

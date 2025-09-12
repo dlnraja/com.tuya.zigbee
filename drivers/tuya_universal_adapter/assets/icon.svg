@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-  <rect width="200" height="200" fill="#0066CC" rx="20"/>
-  <text x="100" y="100" font-family="Arial" font-size="16" fill="white" text-anchor="middle" dy=".3em">
-    TUYA_UNIVERSAL_ADAPTER
-  </text>
-  <circle cx="100" cy="140" r="20" fill="white" opacity="0.8"/>
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="12" cy="12" r="10" fill="#4CAF50" stroke="#fff" stroke-width="2"/>
+  <path d="M8 12L12 16L16 8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="6" cy="6" r="2" fill="#fff"/>
+  <circle cx="18" cy="18" r="2" fill="#fff"/>
+  <path d="M6 6L18 18" stroke="#fff" stroke-width="1" opacity="0.5"/>
 </svg>

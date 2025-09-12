@@ -1,13 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
-  <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#7ED321;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  <rect width="500" height="500" fill="url(#grad)" rx="25"/>
-  <circle cx="250" cy="230" r="83.33333333333333" fill="white" opacity="0.9"/>
-  <text x="250" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="white" font-weight="bold">
-    BOSCHTHE
-  </text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150" height="150" viewBox="0 0 75 75" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="37.5" cy="37.5" r="30" fill="#2196F3" stroke="#1976D2" stroke-width="2"/>
+    <circle cx="37.5" cy="37.5" r="20" fill="#FFF" opacity="0.9"/>
+    <path d="M37.5 20 L37.5 37.5 L50 45" stroke="#FF6B35" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="37.5" cy="37.5" r="3" fill="#FF6B35"/>
+    <text x="30" y="52" font-size="8" fill="#1976D2" font-weight="bold">°C</text>
 </svg>
