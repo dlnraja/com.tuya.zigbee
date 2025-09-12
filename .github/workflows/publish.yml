@@ -1,34 +1,71 @@
-name: Homey App Publish
+name: Publish to Homey App Store
 
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to publish (e.g., 1.0.5)'
+        required: true
+        type: string
+      changelog:
+        description: 'Changelog entry'
+        required: true
+        type: string
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-        cache: 'npm'
-    
-    - name: Install dependencies
-      run: npm ci
-    
-    - name: Update version
-      uses: athombv/github-action-homey-app-update-version@v1
-      with:
-        path: .
-        version: ${{ github.event.release.tag_name }}
-    
-    - name: Publish to Homey App Store
-      uses: athombv/github-action-homey-app-publish@v1
-      with:
-        path: .
-        email: ${{ secrets.HOMEY_EMAIL }}
-        password: ${{ secrets.HOMEY_PASSWORD }}
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Install Homey CLI
+        run: npm install -g homey
+      
+      - name: Authenticate with Homey
+        env:
+          HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+        run: |
+          homey login --token $HOMEY_TOKEN
+      
+      - name: Validate app
+        run: |
+          homey app validate --level publish
+      
+      - name: Build app
+        run: |
+          npm install
+          homey app build
+      
+      - name: Publish to test
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          homey app publish --changelog "${{ github.event.inputs.changelog }}"
+      
+      - name: Publish from tag
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/v}
+          CHANGELOG=$(cat .homeychangelog.json | jq -r ".[\"$VERSION\"].en" || echo "New release")
+          homey app publish --changelog "$CHANGELOG"
+      
+      - name: Create GitHub Release
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body_path: CHANGELOG.md
+          draft: false
+          prerelease: false
