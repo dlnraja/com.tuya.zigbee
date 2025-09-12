@@ -3,7 +3,8 @@
   "main": "app.js",
   "id": "com.dlnraja.ultimate.zigbee.hub",
   "version": "1.0.1",
-  "compatibility": ">=8.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
   "category": [
     "lights"
   ],
@@ -40,7 +41,6 @@
   "permissions": [
     "homey:manager:api"
   ],
-  "homey": "1.0.0",
   "drivers": [
     {
       "name": {
