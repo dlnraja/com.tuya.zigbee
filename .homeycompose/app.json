@@ -1,14 +1,17 @@
 {
   "main": "app.js",
   "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "category": [
-    "lights"
+    "lights",
+    "climate",
+    "security",
+    "energy"
   ],
   "tags": {
-    "en": ["zigbee", "tuya", "local", "sensors", "lighting", "climate", "smart-home"]
+    "en": ["zigbee", "tuya", "aqara", "ikea", "philips", "bosch", "sensors", "lighting", "climate", "security", "smart-home", "ultimate", "professional", "johan-benz", "community"]
   },
   "name": {
     "en": "Ultimate Zigbee Hub",
@@ -17,10 +20,10 @@
     "ta": "Ultimate Zigbee Hub"
   },
   "description": {
-    "en": "Complete Zigbee ecosystem with 550+ device support - Local communication only, no cloud required",
-    "fr": "Écosystème Zigbee complet avec support de 550+ appareils - Communication locale uniquement, aucun cloud requis",
-    "nl": "Compleet Zigbee-ecosysteem met ondersteuning voor 550+ apparaten - Alleen lokale communicatie, geen cloud vereist",
-    "ta": "550+ சாதனங்களுக்கான முழுமையான Zigbee சூழல் - உள்ளூர் தொடர்பு மட்டும், கிளவுட் தேவையில்லை"
+    "en": "🇬🇧 HOMEY ULTIMATE ZIGBEE HUB - The Complete Zigbee Ecosystem for Homey Pro. Comprehensive support for 500+ Zigbee devices from leading manufacturers with 48 professional drivers. Universal compatibility with Tuya, Aqara, IKEA, Philips, Bosch brands. Auto-detection with intelligent device recognition. Advanced sensors, smart lighting with RGB+CCT control, climate control, security devices. Future-proof AI-powered support for new devices. Community driven with zero configuration - works out-of-the-box with optimal settings.",
+    "fr": "🇫🇷 HOMEY ULTIMATE ZIGBEE HUB - L'écosystème Zigbee complet pour Homey Pro. Support complet de 500+ appareils Zigbee des principaux fabricants avec 48 drivers professionnels. Compatibilité universelle avec les marques Tuya, Aqara, IKEA, Philips, Bosch. Détection automatique avec reconnaissance intelligente des appareils. Configuration zéro - fonctionne immédiatement.",
+    "nl": "🇳🇱 HOMEY ULTIMATE ZIGBEE HUB - Het complete Zigbee-ecosysteem voor Homey Pro. Uitgebreide ondersteuning voor 500+ Zigbee-apparaten van toonaangevende fabrikanten met 48 professionele drivers. Universele compatibiliteit met Tuya, Aqara, IKEA, Philips, Bosch merken. Zero configuratie - werkt direct na installatie.",
+    "de": "🇩🇪 HOMEY ULTIMATE ZIGBEE HUB - Das komplette Zigbee-Ökosystem für Homey Pro. Umfassende Unterstützung für 500+ Zigbee-Geräte führender Hersteller mit 48 professionellen Treibern. Universelle Kompatibilität mit Tuya, Aqara, IKEA, Philips, Bosch. Null-Konfiguration - funktioniert sofort nach der Installation."
   },
   "author": {
     "name": "dlnraja",
@@ -278,8 +281,8 @@
     }
   ],
   "images": {
-    "large": "./assets/images/large.png",
-    "small": "./assets/images/small.png"
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
   },
   "icon": "assets/icon.svg",
   "color": "#FF6B35",
