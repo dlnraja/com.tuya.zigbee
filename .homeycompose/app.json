@@ -1,34 +1,45 @@
 {
   "main": "app.js",
   "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "category": [
     "lights"
   ],
+  "tags": {
+    "en": ["zigbee", "tuya", "local", "sensors", "lighting", "climate", "smart-home"]
+  },
   "name": {
-    "en": "Homey Ultimate Zigbee Hub",
-    "fr": "Homey Ultimate Zigbee Hub",
-    "nl": "Homey Ultimate Zigbee Hub",
-    "ta": "Homey Ultimate Zigbee Hub"
+    "en": "Ultimate Zigbee Hub",
+    "fr": "Ultimate Zigbee Hub",
+    "nl": "Ultimate Zigbee Hub",
+    "ta": "Ultimate Zigbee Hub"
   },
   "description": {
-    "en": "Homey Ultimate Zigbee Hub: unified community Zigbee drivers with modular architecture and Windows 11 optimizations",
-    "fr": "Homey Ultimate Zigbee Hub : unification des drivers Zigbee communautaires avec architecture modulaire et optimisations Windows 11",
-    "nl": "Homey Ultimate Zigbee Hub: verenigde community Zigbee-drivers met modulaire architectuur en Windows 11-optimalisaties",
-    "ta": "Homey Ultimate Zigbee Hub: சமூக Zigbee இயக்கிகள் ஒன்றுபட்டவை, தொகுதி நிர்மாணமும் Windows 11 மேம்பாடுகளும்"
+    "en": "Complete Zigbee ecosystem with 550+ device support - Local communication only, no cloud required",
+    "fr": "Écosystème Zigbee complet avec support de 550+ appareils - Communication locale uniquement, aucun cloud requis",
+    "nl": "Compleet Zigbee-ecosysteem met ondersteuning voor 550+ apparaten - Alleen lokale communicatie, geen cloud vereist",
+    "ta": "550+ சாதனங்களுக்கான முழுமையான Zigbee சூழல் - உள்ளூர் தொடர்பு மட்டும், கிளவுட் தேவையில்லை"
   },
   "author": {
     "name": "dlnraja",
     "email": "dylan.rajasekaram@gmail.com"
   },
   "contributors": {},
-  "support": "mailto:dylan.rajasekaram@gmail.com",
-  "homepage": "https://github.com/dlnraja/tuya_repair",
+  "support": "https://github.com/dlnraja/com.tuya.zigbee/issues",
+  "homepage": "https://github.com/dlnraja/com.tuya.zigbee",
+  "bugs": {
+    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
+  },
+  "source": "https://github.com/dlnraja/com.tuya.zigbee",
+  "homeyCommunityTopicId": 140352,
   "license": "MIT",
   "platforms": [
     "local"
+  ],
+  "connectivity": [
+    "zigbee"
   ],
   "drivers": [
     {
@@ -53,7 +64,24 @@
         "productId": [
           "TS011F",
           "TS0121"
-        ]
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              6,
+              1794
+            ]
+          }
+        }
       }
     },
     {
@@ -76,7 +104,21 @@
         ],
         "productId": [
           "TS0011"
-        ]
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
       }
     },
     {
@@ -100,7 +142,23 @@
         ],
         "productId": [
           "TS0012"
-        ]
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          }
+        }
       }
     },
     {
@@ -124,7 +182,22 @@
         ],
         "productId": [
           "TS0013"
-        ]
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              513,
+              516
+            ],
+            "bindings": [
+              513
+            ]
+          }
+        }
       }
     },
     {
@@ -184,7 +257,23 @@
         "productId": [
           "RH3052",
           "TS0201"
-        ]
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              1026,
+              1029
+            ],
+            "bindings": [
+              1026,
+              1029
+            ]
+          }
+        }
       }
     }
   ],
@@ -194,7 +283,7 @@
   },
   "icon": "assets/icon.svg",
   "color": "#FF6B35",
-  "brandColor": "#FF0000",
+  "brandColor": "#FF6B35",
   "permissions": [
     "homey:manager:api"
   ]
