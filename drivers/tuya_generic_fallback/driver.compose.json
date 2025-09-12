@@ -8,26 +8,12 @@
   "class": "other",
   "capabilities": [
     "onoff",
-    "measure_generic",
-    "alarm_generic"
+    "measure_power",
+    "alarm_battery"
   ],
-  "capabilitiesOptions": {
-    "measure_generic": {
-      "title": {
-        "en": "Generic Value",
-        "fr": "Valeur générique",
-        "nl": "Generieke waarde",
-        "ta": "பொதுவான மதிப்பு"
-      }
-    },
-    "alarm_generic": {
-      "title": {
-        "en": "Generic Alarm",
-        "fr": "Alarme générique",
-        "nl": "Generiek alarm",
-        "ta": "பொதுவான எச்சரிக்கை"
-      }
-    }
+  "capabilitiesOptions": {},
+  "energy": {
+    "batteries": ["OTHER"]
   },
   "zigbee": {
     "manufacturerName": [
