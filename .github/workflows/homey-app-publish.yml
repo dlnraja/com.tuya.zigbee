@@ -1,0 +1,92 @@
+name: Homey App Publish
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to publish (e.g., 1.0.3)'
+        required: true
+        default: '1.0.3'
+      publish_test:
+        description: 'Publish to test channel'
+        type: boolean
+        default: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install Homey CLI
+        run: npm install -g homey
+        
+      - name: Validate app
+        run: homey app validate --level publish
+        
+  publish:
+    runs-on: ubuntu-latest
+    needs: validate
+    if: success()
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install Homey CLI
+        run: npm install -g homey
+        
+      - name: Update version
+        if: github.event.inputs.version
+        uses: athombv/github-action-homey-app-update-version@v1
+        with:
+          version: ${{ github.event.inputs.version }}
+          
+      - name: Validate updated app
+        run: homey app validate --level publish
+        
+      - name: Publish Homey app
+        uses: athombv/github-action-homey-app-publish@v1
+        with:
+          personal-access-token: ${{ secrets.HOMEY_ACCESS_TOKEN }}
+          changelog: |
+            🚀 v${{ github.event.inputs.version || github.ref_name }} - Enhanced Zigbee Device Support
+            
+            ✨ NEW FEATURES:
+            • Extended device support to 550+ Zigbee devices (local only - no cloud required)
+            • Enhanced Tuya Cloud device integration with pure Zigbee communication  
+            • Added comprehensive PR/Issues tracking section in documentation
+            • Community contributions and development roadmap added
+            • Enhanced sensor support: smoke, gas, CO, water leak, air quality monitors
+            • New climate devices: fans, heaters, dehumidifiers, humidifiers
+            • Covers & blinds: motorized curtains, garage doors, access control
+            • Improved device categories with detailed compatibility lists
+
+            🔧 IMPROVEMENTS:
+            • Local Zigbee communication - no cloud dependencies
+            • Enhanced documentation with community contribution guidelines
+            • Professional development status tracking
+            • Extended device compatibility matrix
+            • Improved user experience and device recognition
+            • Fixed SDK version specification and validation errors
+
+            🐛 BUG FIXES:
+            • Optimized battery life for wireless sensors
+            • Enhanced device pairing stability
+            • Improved error handling and diagnostics
+            • Fixed publication metadata and validation issues
+
+            Built by the community, for the community! 🏆
