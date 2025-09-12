@@ -1,8 +1,9 @@
 {
   "main": "app.js",
   "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "1.0.1",
-  "compatibility": ">=8.0.0",
+  "version": "1.0.2",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
   "category": [
     "lights"
   ],
@@ -196,6 +197,5 @@
   "brandColor": "#FF0000",
   "permissions": [
     "homey:manager:api"
-  ],
-  "homey": "1.0.0"
+  ]
 }
