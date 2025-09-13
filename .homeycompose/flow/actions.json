@@ -4,20 +4,12 @@
     "title": {
       "en": "Turn on",
       "fr": "Allumer",
-      "nl": "Inschakelen",
-      "de": "Einschalten"
     },
     "titleFormatted": {
       "en": "Turn on [[device]]",
       "fr": "Allumer [[device]]",
-      "nl": "Schakel [[device]] in",
-      "de": "Schalte [[device]] ein"
-    },
-    "hint": {
-      "en": "Turn on any compatible device",
-      "fr": "Allumer tout appareil compatible",
-      "nl": "Schakel elk compatibel apparaat in",
-      "de": "Schalte jedes kompatible Gerät ein"
+      "nl": "[[device]] inschakelen",
+      "de": "[[device]] einschalten"
     },
     "args": [
       {
@@ -28,24 +20,122 @@
     ]
   },
   {
-    "id": "device_turn_off",
+    "id": "turn_off_device",
     "title": {
-      "en": "Turn off",
-      "fr": "Éteindre",
-      "nl": "Uitschakelen",
-      "de": "Ausschalten"
+      "en": "Turn off device",
+      "fr": "Éteindre l'appareil", 
+      "nl": "Apparaat uitschakelen",
+      "de": "Gerät ausschalten"
     },
     "titleFormatted": {
       "en": "Turn off [[device]]",
       "fr": "Éteindre [[device]]",
-      "nl": "Schakel [[device]] uit",
-      "de": "Schalte [[device]] aus"
+      "nl": "[[device]] uitschakelen",
+      "de": "[[device]] ausschalten"
     },
     "args": [
       {
         "name": "device",
         "type": "device",
         "filter": "capability_id=onoff"
+      }
+    ]
+  },
+  {
+    "id": "dim_device",
+    "title": {
+      "en": "Dim device",
+      "fr": "Régler luminosité",
+      "nl": "Apparaat dimmen",
+      "de": "Gerät dimmen"
+    },
+    "titleFormatted": {
+      "en": "Set [[device]] brightness to [[brightness]]%",
+      "fr": "Régler luminosité de [[device]] à [[brightness]]%",
+      "nl": "Stel helderheid van [[device]] in op [[brightness]]%",
+      "de": "Helligkeit von [[device]] auf [[brightness]]% einstellen"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "capability_id=dim"
+      },
+      {
+        "name": "brightness",
+        "type": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "label": {
+          "en": "Brightness",
+          "fr": "Luminosité",
+          "nl": "Helderheid",
+          "de": "Helligkeit"
+        },
+        "labelMultiplier": 100,
+        "labelDecimals": 0
+      }
+    ]
+  },
+  {
+    "id": "set_light_temperature",
+    "title": {
+      "en": "Set light temperature",
+      "fr": "Régler température couleur",
+      "nl": "Lichttemperatuur instellen",
+      "de": "Lichttemperatur einstellen"
+    },
+    "titleFormatted": {
+      "en": "Set [[device]] temperature to [[temperature]]K",
+      "fr": "Régler température de [[device]] à [[temperature]]K",
+      "nl": "Stel temperatuur van [[device]] in op [[temperature]]K",
+      "de": "Temperatur von [[device]] auf [[temperature]]K einstellen"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "capability_id=light_temperature"
+      },
+      {
+        "name": "temperature",
+        "type": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "label": {
+          "en": "Temperature",
+          "fr": "Température",
+          "nl": "Temperatuur",
+          "de": "Temperatur"
+        }
+      }
+    ]
+  },
+  {
+    "id": "set_light_color",
+    "title": {
+      "en": "Set light color",
+      "fr": "Régler couleur",
+      "nl": "Lichtkleur instellen",
+      "de": "Lichtfarbe einstellen"
+    },
+    "titleFormatted": {
+      "en": "Set [[device]] color",
+      "fr": "Régler couleur de [[device]]",
+      "nl": "Stel kleur van [[device]] in",
+      "de": "Farbe von [[device]] einstellen"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "capability_id=light_hue"
+      },
+      {
+        "name": "color",
+        "type": "color"
       }
     ]
   },

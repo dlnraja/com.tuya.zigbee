@@ -1,1 +1,127 @@
-# 🚀 Universal Tuya ZigBee Device Integration[![Version](https://img.shields.io/badge/version-1.0.19-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)[![Homey SDK](https://img.shields.io/badge/Homey%20SDK-3.0-green.svg)](https://developers.homey.app/)[![License](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)[![Drivers](https://img.shields.io/badge/drivers-249%20active-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/tree/master/drivers)[![Workflows](https://img.shields.io/badge/workflows-92%20CI%2FCD-orange.svg)](https://github.com/dlnraja/com.tuya.zigbee/tree/master/.github/workflows)[![AI Integration](https://img.shields.io/badge/AI%20Integration-100%25-purple.svg)](https://github.com/dlnraja/com.tuya.zigbee#-intelligence-artificielle)[![Local Mode](https://img.shields.io/badge/Local%20Mode-Enabled-success.svg)](https://github.com/dlnraja/com.tuya.zigbee#-mode-local-sans-api)[![Multilingual](https://img.shields.io/badge/Multilingual-4%20languages-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee#-support-multilingue)> **Universal Tuya ZigBee Device Integration with AI-Powered Features and Zigbee Cluster Referential System**## 🌟 Fonctionnalités Principales### 🤖 Intelligence Artificielle- **Intégration OpenAI & Claude** : Génération automatique de drivers et analyse prédictive- **Parsing intelligent Z2M/Tuya** : Détection automatique d'appareils et génération de templates- **Génération d'icônes SVG IA** : Création automatique d'icônes personnalisées- **Benchmarks automatiques** : Analyse de performance et optimisation continue### 🔌 Intégration Zigbee Universelle- **Mode local sécurisé** : Fonctionnement sans API externe- **Support multi-fabricants** : Tuya, Zemismart, et autres fabricants- **Système de référentiel Zigbee Cluster** : Base de données complète des clusters- **Détection automatique** : Reconnaissance intelligente des appareils### 🌍 Support Multilingue- **4 langues supportées** : Français, Anglais, Tamoul, Néerlandais- **Traduction automatique** : Workflows de traduction automatisés- **Interface i18n complète** : Documentation et interface multilingues- **Traduction en temps réel** : Mise à jour automatique des contenus### ⚡ Automatisation Avancée- **92 workflows CI/CD** : Automatisation complète du développement- **Déploiement automatique** : Mise en production sans intervention- **Tests automatisés** : Validation continue de la qualité- **Monitoring en temps réel** : Surveillance et alertes automatiques## 📊 Métriques du Projet| Métrique | Valeur | Statut ||----------|--------|--------|| **Drivers Actifs** | 249 | ✅ Actif || **Workflows CI/CD** | 92 | ✅ Opérationnel || **Version Actuelle** | 1.0.19 | ✅ Stable || **IA Integration** | 100% | ✅ Complète || **Compatibilité** | Homey Pro/Cloud/Mini | ✅ Validé || **License** | MIT | ✅ Libre |## 🚀 Installation Rapide```bash# Cloner le repositorygit clone https://github.com/dlnraja/com.tuya.zigbee.gitcd com.tuya.zigbee# Installer les dépendancesnpm install# Construire le projetnpm run build# Lancer en mode développementnpm run run:clean```## 🛠️ Scripts Disponibles```bash# Développementnpm run build # Construire l'applicationnpm run run:clean # Lancer avec nettoyagenpm run install # Installer sur Homeynpm run uninstall # Désinstaller# Tests & Validationnpm run test # Tests completsnpm run lint # Vérification du codenpm run validate # Validation complète# IA & Automatisationnpm run chatgpt-process # Traitement ChatGPTnpm run yolo-mode # Mode YOLOnpm run auto-translate # Traduction automatique```## 📁 Structure du Projet```com.tuya.zigbee/├── 📁 drivers/ # 249 drivers actifs│ ├── 📁 active/ # Drivers en production│ ├── 📁 sdk3/ # Drivers SDK3│ ├── 📁 legacy/ # Drivers legacy│ └── 📁 testing/ # Drivers en test├── 📁 .github/workflows/ # 92 workflows CI/CD├── 📁 dashboard/ # Dashboard GitHub Pages├── 📁 docs/ # Documentation multilingue├── 📁 scripts/ # Scripts d'automatisation├── 📁 templates/ # Templates IA└── 📁 ref/ # Référentiel Zigbee```## 🎯 Drivers Supportés### 🔌 Prises Intelligentes- **Tuya Smart Plug** : Prise intelligente basique- **Tuya Smart Plug (Generic)** : Prise générique universelle- **Zemismart Plugs** : Prises Zemismart compatibles### 💡 Éclairage- **RGB Bulb E27** : Ampoule RGB E27- **Smart Bulbs** : Ampoules intelligentes- **LED Strips** : Bandes LED RGB### 🌡️ Capteurs- **Temperature Sensors** : Capteurs de température- **Humidity Sensors** : Capteurs d'humidité- **Motion Sensors** : Détecteurs de mouvement## 🤖 Fonctionnalités IA### Génération Automatique- **Templates de drivers** : Création automatique basée sur les clusters- **Code intelligent** : Génération de code optimisé- **Documentation IA** : Création automatique de docs### Analyse Prédictive- **Détection d'appareils** : Reconnaissance automatique- **Optimisation** : Suggestions d'amélioration- **Benchmarks** : Analyse de performance## 🌐 Support Multilingue### Langues Supportées- 🇫🇷 **Français** : Langue principale- 🇬🇧 **Anglais** : Documentation technique- 🇮🇳 **Tamoul** : Support communautaire- 🇳🇱 **Néerlandais** : Support européen### Traduction Automatique```bashnpm run auto-translate # Traduction automatiquenpm run translate-push # Traduction + push```## 🔧 Configuration### Mode Local```javascript// Configuration pour mode local{ "local": true, "noApiRequired": true, "permissions": ["homey:manager:zigbee"]}```### Compatibilité- ✅ **Homey Pro** : Support complet- ✅ **Homey Cloud** : Compatible- ✅ **Homey Mini** : Optimisé## 📈 Dashboard en Temps RéelVisitez notre **[Dashboard GitHub Pages](https://dlnraja.github.io/com.tuya.zigbee/)** pour voir :- 📊 **Métriques en temps réel**- 🤖 **Statut des fonctionnalités IA**- 🔧 **État des workflows CI/CD**- 📈 **Analytics et KPIs**## 👨💻 Développeur**Dylan Rajasekaram**- 📧 **Email** : dylan.rajasekaram@gmail.com- 📍 **Localisation** : Lieusaint, France- 🕐 **Timezone** : GMT+2- 🔗 **LinkedIn** : [dlnraja](https://linkedin.com/in/dlnraja)- 🐦 **Twitter** : [@dlnraja](https://twitter.com/dlnraja)- 💻 **GitHub** : [dlnraja](https://github.com/dlnraja)## 📄 LicenseCe projet est sous licence **MIT** - voir le fichier [LICENSE](LICENSE) pour plus de détails.## 🤝 ContributionLes contributions sont les bienvenues ! Consultez notre [Guide de Contribution](CONTRIBUTING.md) pour plus d'informations.### Comment Contribuer1. 🍴 Fork le projet2. 🌿 Créer une branche feature (`git checkout -b feature/AmazingFeature`)3. 💾 Commit les changements (`git commit -m 'Add some AmazingFeature'`)4. 📤 Push vers la branche (`git push origin feature/AmazingFeature`)5. 🔄 Ouvrir une Pull Request## 📞 Support- 🐛 **Bugs** : [Issues GitHub](https://github.com/dlnraja/com.tuya.zigbee/issues)- 💡 **Suggestions** : [Discussions](https://github.com/dlnraja/com.tuya.zigbee/discussions)- 📧 **Contact** : dylan.rajasekaram@gmail.com## 🚀 Roadmap### Version 1.1.0 (Prochaine)- [ ] Support de nouveaux fabricants- [ ] Amélioration des fonctionnalités IA- [ ] Interface utilisateur enrichie- [ ] Performance optimisée### Version 1.2.0 (Futur)- [ ] Intégration de nouveaux protocoles- [ ] Dashboard avancé- [ ] API publique- [ ] Marketplace Homey---<div align="center">**🌟 Star ce projet si vous l'aimez ! 🌟**[![GitHub stars](https://img.shields.io/github/stars/dlnraja/com.tuya.zigbee?style=social)](https://github.com/dlnraja/com.tuya.zigbee)[![GitHub forks](https://img.shields.io/github/forks/dlnraja/com.tuya.zigbee?style=social)](https://github.com/dlnraja/com.tuya.zigbee)[![GitHub watchers](https://img.shields.io/github/watchers/dlnraja/com.tuya.zigbee?style=social)](https://github.com/dlnraja/com.tuya.zigbee)</div>
+# 🏆 Ultimate Zigbee Hub for Homey Pro
+
+[![Version](https://img.shields.io/badge/version-1.0.5-blue.svg)](https://homey.app/en-us/app/com.dlnraja.ultimate.zigbee.hub/)
+[![Homey](https://img.shields.io/badge/Homey-Pro-green.svg)](https://homey.app)
+[![Devices](https://img.shields.io/badge/devices-550+-orange.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Forum](https://img.shields.io/badge/forum-Homey%20Community-red.svg)](https://community.homey.app/t/app-ultimate-zigbee-hub-dlnraja-500-devices-supported/140352)
+
+## 🌟 The Most Comprehensive Zigbee App for Homey Pro
+
+Ultimate Zigbee Hub brings professional-grade Zigbee device support to your Homey Pro, following the highest quality standards set by Johan Benz.
+
+### ✨ Key Features
+
+- **550+ Certified Devices**: Extensive support for devices from 50+ manufacturers
+- **Zero Configuration**: Works out-of-the-box with optimal settings
+- **100% Local**: All communication happens locally, no cloud required
+- **Professional Standards**: Following Johan Benz quality implementation
+- **Advanced Automation**: Comprehensive flow cards for complex scenarios
+- **AI-Powered**: Intelligent device recognition and fallback support
+- **Community Driven**: Integrated patches and contributions from the community
+- **Multi-Language**: Full support for EN, FR, NL, DE
+
+### 🔧 Supported Manufacturers
+
+#### Premium Brands
+- **Tuya**: Complete ecosystem support with 200+ device models
+- **Aqara/Xiaomi**: Full sensor and controller lineup
+- **IKEA TRÅDFRI**: All lighting and control products
+- **Philips Hue**: Extended compatibility beyond official app
+- **Bosch**: Smart home and climate control devices
+
+#### Additional Brands
+- Sonoff, eWeLink, GLEDOPTO, Lidl SilverCrest, OSRAM, innr, Eurotronic, Danfoss, HEIMAN, Develco, and many more!
+
+### 📦 Device Categories
+
+#### 💡 Lighting
+- RGB+CCT bulbs with full color control
+- Dimmable white bulbs
+- LED strips and controllers
+- Smart switches and dimmers
+
+#### 🌡️ Climate Control
+- Thermostats and TRVs
+- Temperature/humidity sensors
+- Smart heaters and fans
+- Air quality monitors
+
+#### 🔒 Security
+- Motion and presence sensors
+- Door/window sensors
+- Water leak detectors
+- Smoke/gas/CO detectors
+- Smart locks and sirens
+
+#### ⚡ Energy & Control
+- Smart plugs with power monitoring
+- Wall switches (1-4 gang)
+- Smart relays and modules
+- Scene controllers and remotes
+
+#### 🏠 Home Automation
+- Motorized curtains and blinds
+- Irrigation controllers
+- Soil moisture sensors
+- Universal adapters
+
+### 🚀 Installation
+
+1. Install from [Homey App Store](https://homey.app/en-us/app/com.dlnraja.ultimate.zigbee.hub/)
+2. Add your Zigbee devices through Homey
+3. Devices are automatically recognized and configured
+4. Start creating flows immediately!
+
+### 🎯 Flow Cards
+
+#### Triggers (When...)
+- Motion detected/stopped
+- Temperature/humidity changed
+- Battery low warning
+- Water leak detected
+- Device turned on/off
+- And many more...
+
+#### Conditions (And...)
+- Device state checks
+- Temperature thresholds
+- Battery level monitoring
+- Motion detection status
+- Lock state verification
+
+#### Actions (Then...)
+- Turn devices on/off/toggle
+- Set brightness and color
+- Control temperature
+- Lock/unlock devices
+- Set curtain positions
+- Trigger alarms
+
+### 🤝 Community & Support
+
+- **Forum**: [Homey Community Discussion](https://community.homey.app/t/app-ultimate-zigbee-hub-dlnraja-500-devices-supported/140352)
+- **Issues**: [GitHub Issues](https://github.com/dlnraja/com.tuya.zigbee/issues)
+- **Source**: [GitHub Repository](https://github.com/dlnraja/com.tuya.zigbee)
+
+### 💖 Support Development
+
+If you love this app, consider supporting its development:
+- ⭐ Star the repository on GitHub
+- 💬 Share feedback on the forum
+- 🐛 Report issues and suggestions
+- ☕ [Buy me a coffee](https://paypal.me/dlnraja)
+
+### 📄 License
+
+MIT License - See [LICENSE](LICENSE) file for details
+
+### 🏆 Credits
+
+Special thanks to:
+- Johan Benz for setting the quality standards
+- The Homey Community for testing and feedback
+- All contributors and supporters
+
+---
+
+**Made with ❤️ for the Homey Community**
