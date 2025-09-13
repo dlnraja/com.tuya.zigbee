@@ -1,0 +1,63 @@
+{
+  "name": {
+    "en": "Motion Sensor",
+    "fr": "Détecteur de Mouvement",
+    "nl": "Bewegingssensor",
+    "de": "Bewegungsmelder"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "alarm_motion": {
+      "title": {
+        "en": "Motion",
+        "fr": "Mouvement",
+        "nl": "Beweging",
+        "de": "Bewegung"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_3towulqd",
+      "_TZE200_bq5c8xfe",
+      "_TZE200_hsmsj6zh",
+      "_TZE200_tv3wxhcz",
+      "_TZE200_whpb9y8z",
+      "_TZE200_7yuohek9"
+    ],
+    "productId": [
+      "TS0202",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [0, 1, 1280],
+        "bindings": [1, 1280]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/tuya_motion_sensor/assets/images/small.png",
+    "large": "/drivers/tuya_motion_sensor/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "energy": {
+    "batteries": ["INTERNAL"]
+  }
+}

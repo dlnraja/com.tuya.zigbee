@@ -1,6 +1,6 @@
 [
   {
-    "id": "device_motion_detected",
+    "id": "motion_alarm_true",
     "title": {
       "en": "Motion detected",
       "fr": "Mouvement détecté",
@@ -8,34 +8,16 @@
       "de": "Bewegung erkannt"
     },
     "titleFormatted": {
-      "en": "Motion detected by [[device]]",
+      "en": "Motion was detected by [[device]]",
       "fr": "Mouvement détecté par [[device]]",
       "nl": "Beweging gedetecteerd door [[device]]",
       "de": "Bewegung erkannt von [[device]]"
-    },
-    "hint": {
-      "en": "Triggered when motion is detected",
-      "fr": "Déclenché lors d'une détection de mouvement",
-      "nl": "Geactiveerd bij bewegingsdetectie",
-      "de": "Ausgelöst bei Bewegungserkennung"
     },
     "args": [
       {
         "name": "device",
         "type": "device",
-        "filter": "driver_id=sensors|aqara_motion_sensor|tuya_radar_sensor"
-      }
-    ],
-    "tokens": [
-      {
-        "name": "motion",
-        "type": "boolean",
-        "title": {
-          "en": "Motion detected",
-          "fr": "Mouvement détecté",
-          "nl": "Beweging gedetecteerd",
-          "de": "Bewegung erkannt"
-        }
+        "filter": "driver_id=tuya_motion_sensor"
       }
     ]
   },
