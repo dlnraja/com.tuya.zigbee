@@ -1,0 +1,49 @@
+{
+  "id": "tuya_radar_sensor",
+  "name": {
+    "en": "Radar Motion Sensor",
+    "fr": "Capteur Mouvement Radar",
+    "nl": "Radar Bewegingssensor",
+    "de": "Radar Bewegungssensor"
+  },
+  "class": "sensor",
+  "capabilities": ["alarm_motion", "measure_luminance", "measure_battery"],
+  "capabilitiesOptions": {
+    "alarm_motion": {
+      "title": {
+        "en": "Motion",
+        "fr": "Mouvement",
+        "nl": "Beweging",
+        "de": "Bewegung"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_ztc6ggyl", "_TZE204_qasjif9e", "_TZE204_ijxvkhd0", "_TZE200_wukb7rhc"
+    ],
+    "productId": ["TS0601"],
+    "endpoints": {
+      "1": {
+        "clusters": [0, 4, 5, 61184],
+        "bindings": [0]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/tuya_radar_sensor/assets/images/small.png",
+    "large": "/drivers/tuya_radar_sensor/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {"next": "add_devices"}
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "energy": {"batteries": ["INTERNAL"]}
+}

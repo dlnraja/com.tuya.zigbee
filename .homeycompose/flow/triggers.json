@@ -188,5 +188,149 @@
         }
       }
     ]
+  },
+  {
+    "id": "humidity_changed",
+    "title": {
+      "en": "Humidity changed",
+      "fr": "Humidité changée",
+      "nl": "Luchtvochtigheid veranderd",
+      "de": "Luftfeuchtigkeit geändert"
+    },
+    "titleFormatted": {
+      "en": "Humidity of [[device]] changed to [[humidity]]%",
+      "fr": "Humidité de [[device]] changée à [[humidity]]%",
+      "nl": "Luchtvochtigheid van [[device]] veranderd naar [[humidity]]%",
+      "de": "Luftfeuchtigkeit von [[device]] geändert zu [[humidity]]%"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "capability_id=measure_humidity"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "humidity",
+        "type": "number",
+        "title": {
+          "en": "Humidity (%)",
+          "fr": "Humidité (%)",
+          "nl": "Luchtvochtigheid (%)",
+          "de": "Luftfeuchtigkeit (%)"
+        }
+      }
+    ]
+  },
+  {
+    "id": "curtain_position_changed",
+    "title": {
+      "en": "Curtain position changed",
+      "fr": "Position rideau changée",
+      "nl": "Gordijnpositie veranderd",
+      "de": "Vorhangposition geändert"
+    },
+    "titleFormatted": {
+      "en": "[[device]] position changed to [[position]]%",
+      "fr": "Position de [[device]] changée à [[position]]%",
+      "nl": "Positie van [[device]] veranderd naar [[position]]%",
+      "de": "Position von [[device]] geändert zu [[position]]%"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=tuya_curtain_motor"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "position",
+        "type": "number",
+        "title": {
+          "en": "Position (%)",
+          "fr": "Position (%)",
+          "nl": "Positie (%)",
+          "de": "Position (%)"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power_consumption_changed",
+    "title": {
+      "en": "Power consumption changed",
+      "fr": "Consommation énergétique changée",
+      "nl": "Stroomverbruik veranderd",
+      "de": "Stromverbrauch geändert"
+    },
+    "titleFormatted": {
+      "en": "Power consumption of [[device]] changed to [[power]]W",
+      "fr": "Consommation de [[device]] changée à [[power]]W",
+      "nl": "Stroomverbruik van [[device]] veranderd naar [[power]]W",
+      "de": "Stromverbrauch von [[device]] geändert zu [[power]]W"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "capability_id=measure_power"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "power",
+        "type": "number",
+        "title": {
+          "en": "Power (W)",
+          "fr": "Puissance (W)",
+          "nl": "Vermogen (W)",
+          "de": "Leistung (W)"
+        }
+      }
+    ]
+  },
+  {
+    "id": "device_offline",
+    "title": {
+      "en": "Device went offline",
+      "fr": "Appareil hors ligne",
+      "nl": "Apparaat offline gegaan",
+      "de": "Gerät offline gegangen"
+    },
+    "titleFormatted": {
+      "en": "[[device]] went offline",
+      "fr": "[[device]] est passé hors ligne",
+      "nl": "[[device]] is offline gegaan",
+      "de": "[[device]] ist offline gegangen"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device"
+      }
+    ]
+  },
+  {
+    "id": "device_online",
+    "title": {
+      "en": "Device came online",
+      "fr": "Appareil en ligne",
+      "nl": "Apparaat online gekomen",
+      "de": "Gerät online gekommen"
+    },
+    "titleFormatted": {
+      "en": "[[device]] came online",
+      "fr": "[[device]] est passé en ligne",
+      "nl": "[[device]] is online gekomen",
+      "de": "[[device]] ist online gekommen"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device"
+      }
+    ]
   }
 ]
