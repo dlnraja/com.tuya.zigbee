@@ -1,4 +1,4 @@
-name: Monthly Device Database Update
+name: "Monthly Device Database Update"
 
 on:
   schedule:
