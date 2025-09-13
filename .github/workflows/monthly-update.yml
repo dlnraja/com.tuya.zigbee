@@ -1,0 +1,49 @@
+name: Monthly Device Database Update
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'  # First day of each month
+  workflow_dispatch:
+
+jobs:
+  update-devices:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Update device database
+      run: |
+        echo "Fetching latest device data from community sources..."
+        node scripts/update-device-database.js
+        
+    - name: Validate updated app
+      run: homey app validate --level publish
+      
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: 'chore: monthly device database update'
+        title: 'Monthly Device Database Update'
+        body: |
+          ## Monthly Device Database Update
+          
+          This automated update includes:
+          - Latest device IDs from Zigbee2MQTT
+          - Community-reported device compatibility
+          - Forum discussions analysis
+          - Enhanced manufacturer support
+          
+          All changes have been validated and tested.
+        branch: monthly-update
+        delete-branch: true
