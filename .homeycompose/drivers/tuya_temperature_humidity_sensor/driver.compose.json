@@ -1,0 +1,104 @@
+{
+  "id": "tuya_temperature_humidity_sensor",
+  "name": {
+    "en": "Temperature & Humidity Sensor",
+    "fr": "Capteur Température & Humidité",
+    "nl": "Temperatuur & Vochtigheid Sensor",
+    "de": "Temperatur & Feuchtigkeits Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "de": "Temperatur"
+      }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Humidity",
+        "fr": "Humidité",
+        "nl": "Luchtvochtigheid",
+        "de": "Luftfeuchtigkeit"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_i8jfiezr",
+      "_TZ3000_bguser20",
+      "_TZ3000_dowj6gyi",
+      "_TZ3000_fllyghyj",
+      "_TZ3000_8ybe88nf",
+      "_TZ3000_fie1dpkm",
+      "_TZ3000_0s1izerx",
+      "_TZ3000_xr3htd96",
+      "_TZ3000_saiqcn0y",
+      "_TZ2000_a476raq2",
+      "_TZ2000_xogb73am",
+      "_TZ2000_avdnvykf",
+      "_TZ2000_hjsgdkfl",
+      "_TYZB01_a476raq2",
+      "_TYZB01_hjsgdkfl",
+      "_TYZB01_iuepbmpv"
+    ],
+    "productId": [
+      "TS0201"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          1026,
+          1029
+        ],
+        "bindings": [
+          1,
+          1026,
+          1029
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/tuya_temperature_humidity_sensor/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the reset button for 10 seconds until the LED blinks",
+        "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes jusqu'à ce que la LED clignote",
+        "nl": "Houd de resetknop 10 seconden ingedrukt totdat de LED knippert",
+        "de": "Halten Sie die Reset-Taste 10 Sekunden lang gedrückt, bis die LED blinkt"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/tuya_temperature_humidity_sensor/assets/images/small.png",
+    "large": "/drivers/tuya_temperature_humidity_sensor/assets/images/large.png"
+  },
+  "icon": "/drivers/tuya_temperature_humidity_sensor/assets/icon.svg",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  }
+}

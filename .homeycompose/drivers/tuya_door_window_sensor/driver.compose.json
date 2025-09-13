@@ -1,0 +1,98 @@
+{
+  "id": "tuya_door_window_sensor",
+  "name": {
+    "en": "Door & Window Sensor",
+    "fr": "Capteur Porte & Fenêtre",
+    "nl": "Deur & Raam Sensor",
+    "de": "Tür & Fenster Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_contact",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "alarm_contact": {
+      "title": {
+        "en": "Contact",
+        "fr": "Contact",
+        "nl": "Contact",
+        "de": "Kontakt"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_ebar6ljy",
+      "_TZ3000_2mbfxlzr",
+      "_TZ3000_402jjyro",
+      "_TZ3000_6jeesvrt",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_bmg14ax2",
+      "_TZ3000_oxslv1c9",
+      "_TZ3000_bzxlofth",
+      "_TZ3000_7tbsruql",
+      "_TZ3000_osu834un",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_7d8yme6f",
+      "_TZ3000_rgchmad8",
+      "_TZ3000_au1rjicn",
+      "_TZ3000_4ugnzsli",
+      "_TZ3000_zgrffiwg",
+      "_TZ3000_decxrtwa",
+      "_TZ3000_hkcpblrs",
+      "_TZ3000_yxqnffam"
+    ],
+    "productId": [
+      "TS0203",
+      "RH3001"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          1280
+        ],
+        "bindings": [
+          1,
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/tuya_door_window_sensor/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the reset button for 10 seconds until the LED blinks",
+        "fr": "Maintenez le bouton de réinitialisation pendant 10 secondes jusqu'à ce que la LED clignote",
+        "nl": "Houd de resetknop 10 seconden ingedrukt totdat de LED knippert",
+        "de": "Halten Sie die Reset-Taste 10 Sekunden lang gedrückt, bis die LED blinkt"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/tuya_door_window_sensor/assets/images/small.png",
+    "large": "/drivers/tuya_door_window_sensor/assets/images/large.png"
+  },
+  "icon": "/drivers/tuya_door_window_sensor/assets/icon.svg",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  }
+}
