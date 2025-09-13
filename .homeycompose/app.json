@@ -1,38 +1,126 @@
 {
-  "id": "com.tuya.zigbee",
+  "id": "com.dlnraja.tuya.zigbee",
   "version": "1.0.10", 
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": ["local"],
   "name": {
-    "en": "Tuya Zigbee",
-    "fr": "Tuya Zigbee",
-    "nl": "Tuya Zigbee", 
-    "de": "Tuya Zigbee"
+    "en": "Universal Tuya Zigbee Device",
+    "fr": "Périphérique Tuya Zigbee Universel",
+    "nl": "Universeel Tuya Zigbee Apparaat", 
+    "de": "Universelles Tuya Zigbee Gerät"
   },
   "description": {
-    "en": "Professional support for 650+ Tuya Zigbee devices with local communication only",
-    "fr": "Support professionnel pour 650+ appareils Tuya Zigbee avec communication locale uniquement", 
-    "nl": "Professionele ondersteuning voor 650+ Tuya Zigbee apparaten met alleen lokale communicatie",
-    "de": "Professionelle Unterstützung für 650+ Tuya Zigbee Geräte mit nur lokaler Kommunikation"
+    "en": "Local Zigbee support for 500+ Tuya devices - sensors, lights, plugs, switches, covers. No cloud required!",
+    "fr": "Support Zigbee local pour 500+ appareils Tuya - capteurs, éclairage, prises, interrupteurs, stores. Aucun cloud requis!", 
+    "nl": "Lokale Zigbee ondersteuning voor 500+ Tuya apparaten - sensoren, lampen, stekkers, schakelaars, covers. Geen cloud vereist!",
+    "de": "Lokale Zigbee Unterstützung für 500+ Tuya Geräte - Sensoren, Lichter, Stecker, Schalter, Abdeckungen. Keine Cloud erforderlich!"
   },
   "category": ["lights", "appliances"],
   "brandColor": "#FF6900",
-  "permissions": ["homey:manager:api"],
+  "permissions": [],
   "images": {
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png",
     "xlarge": "/assets/images/xlarge.png"
   },
   "author": {
-    "name": "Community Contributors",
-    "email": "support@homey.community"
+    "name": "dlnraja",
+    "email": "support@community.tuya.zigbee"
   },
   "bugs": {
-    "url": "https://community.homey.app/t/app-tuya-zigbee/42159"
+    "url": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352"
   },
-  "support": "https://community.homey.app/t/app-tuya-zigbee/42159",
-  "homeyCommunityTopicId": 42159,
+  "support": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352",
+  "homeyCommunityTopicId": 140352,
+  "flow": {
+    "triggers": [
+      {
+        "id": "motion_detected",
+        "title": {
+          "en": "Motion detected",
+          "fr": "Mouvement détecté",
+          "nl": "Beweging gedetecteerd",
+          "de": "Bewegung erkannt"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=tuya_motion_sensor"
+          }
+        ]
+      },
+      {
+        "id": "contact_opened",
+        "title": {
+          "en": "Contact opened",
+          "fr": "Contact ouvert",
+          "nl": "Contact geopend",
+          "de": "Kontakt geöffnet"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=tuya_door_window_sensor"
+          }
+        ]
+      },
+      {
+        "id": "water_leak_detected",
+        "title": {
+          "en": "Water leak detected",
+          "fr": "Fuite d'eau détectée",
+          "nl": "Waterlek gedetecteerd",
+          "de": "Wasserleck erkannt"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=tuya_water_leak_sensor"
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "is_motion_active",
+        "title": {
+          "en": "Motion is active",
+          "fr": "Le mouvement est actif",
+          "nl": "Beweging is actief",
+          "de": "Bewegung ist aktiv"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=tuya_motion_sensor"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "turn_on_light",
+        "title": {
+          "en": "Turn light on",
+          "fr": "Allumer la lumière",
+          "nl": "Licht aanzetten",
+          "de": "Licht anschalten"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=tuya_smart_light|tuya_light_switch"
+          }
+        ]
+      }
+    ]
+  },
   "drivers": [
     {
       "id": "tuya_temperature_humidity_sensor",
@@ -66,12 +154,14 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZE200_locansqn", "_TZE200_bjawzodf", "_TZE200_zl1kmjqx", 
-          "_TZE200_8ygsuhe1", "_TZE200_yvx5lh6k", "_TZE200_9yapgbuv",
-          "_TZ3000_i8jfiezr", "_TZ3000_bguser20", "_TZ3000_dowj6gyi",
-          "_TZ3000_fllyghyj", "_TZ3000_8ybe88nf", "_TZ3000_fie1dpkm"
+          "TUYATEC-g3gl6cgy", "TUYATEC-Bfq2i2Sy", "TUYATEC-abkehqus", "TUYATEC-yg5dcbfu", "TUYATEC-prhs1rsd", "TUYATEC-gqhxixyk",
+          "_TZ2000_a476raq2", "_TZ2000_xogb73am", "_TZ2000_avdnvykf", "_TZ2000_hjsgdkfl", 
+          "_TZ3000_i8jfiezr", "_TZ3000_bguser20", "_TZ3000_dowj6gyi", "_TZ3000_fllyghyj", "_TZ3000_8ybe88nf", "_TZ3000_fie1dpkm", 
+          "_TZ3000_rusu2vzb", "_TZ3000_yd2e749y", "_TZ3000_ywagc4rj", "_TZ3000_itnrsufe", "_TZ3000_qaaysllp",
+          "_TZE200_bjawzodf", "_TZE200_zl1kmjqx", "_TZE200_locansqn", "_TZE200_8ygsuhe1", "_TZE200_yvx5lh6k", "_TZE200_9yapgbuv", 
+          "_TZE200_cirvgep4", "_TZE200_bq5c8xfe", "_TZE200_qyflbnbj", "_TZE200_vs0skpuc", "_TZE200_44af8vyi"
         ],
-        "productId": ["TS0201", "TS0601"],
+        "productId": ["TS0201", "TS0601", "TS0222", "RH3052", "SM0201", "TY0201"],
         "endpoints": {
           "1": {
             "clusters": [0, 1, 1026, 1029],
@@ -118,10 +208,12 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZE200_3towulqd", "_TZE200_bq5c8xfe", "_TZE200_hsmsj6zh", 
-          "_TZE200_tv3wxhcz", "_TZE200_whpb9y8z", "_TZE200_7yuohek9"
+          "TUYATEC-lha8pbwd", "TUYATEC-zn9wyqtr", "TUYATEC-53o41joc", "TUYATEC-bd5faf9p", "TUYATEC-zw6hxafz",
+          "_TZ3000_mmtwjmaq", "_TZ3000_kmh5qpmb", "_TZ3000_msl6wxk9", "_TZ3000_mcxw5ehu", "_TZ3000_otvn3lne", "_TZ3000_6ygjfyll", "_TZ3000_nss8amz9", "_TZ3000_lf56vpxj",
+          "_TZ1800_fcdjzz3s", "_TYZB01_jytabjkb", "_TYZB01_dl7cejts",
+          "_TZE200_3towulqd", "_TZE200_bh3n6gk8", "_TZE200_1ibpyhdc", "_TZE200_ttcovulf", "_TZE200_hsmsj6zh", "_TZE200_tv3wxhcz", "_TZE200_whpb9y8z", "_TZE200_7yuohek9"
         ],
-        "productId": ["TS0202", "TS0601"],
+        "productId": ["TS0202", "TS0601", "RH3040", "TY0202"],
         "endpoints": {
           "1": {
             "clusters": [0, 1, 1280],
@@ -168,10 +260,12 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZE200_pay2byax", "_TZE200_cirvgep4", "_TZE200_kfvq6avy", 
-          "_TZE200_ztc6ggyl", "_TZE200_7hfcudw5", "_TZE200_locansqn"
+          "TUYATEC-g3gl6cgy", "TUYATEC-Bfq2i2Sy", "TUYATEC-abkehqus", "TUYATEC-sb6t7ett", "TUYATEC-rkqiqvcs", "TUYATEC-crr8qb0p", "TUYATEC-kbqf60nt", "TUYATEC-r9hgssol",
+          "_TZ3000_ebar6ljy", "_TZ3000_2mbfxlzr", "_TZ3000_402jjyro", "_TZ3000_6jeesvrt", "_TZ3000_26fmupbb", "_TZ3000_bmg14ax2", "_TZ3000_oxslv1c9", "_TZ3000_bzxlofth", "_TZ3000_7tbsruql", "_TZ3000_osu834un", "_TZ3000_n2egfsli", "_TZ3000_7d8yme6f", "_TZ3000_rgchmad8", "_TZ3000_au1rjicn", "_TZ3000_4ugnzsli", "_TZ3000_zgrffiwg", "_TZ3000_decxrtwa", "_TZ3000_hkcpblrs", "_TZ3000_yxqnffam", "_TZ3000_9eeavbk5", "_TZ3000_bpkijo14", "_TZ3000_a33rw7ou", "_TZ3000_6zvw8ham", "_TZ3000_yfekcy3n", "_TZ3000_cea5xugq", "_TZ3000_rcuyhwe3", "_TZ3000_1bwpjvlz", "_TZ3000_au2o5e6q", "_TZ3000_uvti8nkd", "_TZ3000_v7chgqso",
+          "_TZ1800_ejwkn2h2", "_TYZB01_xph99wvr",
+          "_TZE200_pay2byax", "_TZE200_cirvgep4", "_TZE200_kfvq6avy", "_TZE200_ztc6ggyl", "_TZE200_7hfcudw5", "_TZE200_locansqn"
         ],
-        "productId": ["TS0203", "TS0601"],
+        "productId": ["TS0203", "TS0601", "RH3001", "TY0203"],
         "endpoints": {
           "1": {
             "clusters": [0, 1, 1280],
@@ -304,6 +398,202 @@
         {
           "id": "list_devices",
           "template": "list_devices", 
+          "navigation": {"next": "add_devices"}
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "id": "tuya_water_leak_sensor",
+      "name": {
+        "en": "Water Leak Sensor",
+        "fr": "Capteur de Fuite d'Eau",
+        "nl": "Waterlek Sensor",
+        "de": "Wasserleck Sensor"
+      },
+      "class": "sensor",
+      "capabilities": ["alarm_water", "measure_battery"],
+      "capabilitiesOptions": {
+        "alarm_water": {
+          "title": {
+            "en": "Water Leak",
+            "fr": "Fuite d'Eau",
+            "nl": "Waterlek",
+            "de": "Wasserleck"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TYZB01_sqmd19i1", "_TYST11_qq9mpfhw", "_TZ3000_fxvjhdyl", "_TZ3000_eit7p838", "_TZ3000_t6jriawg", "_TZ3000_85czd6fy", "_TZ3000_kyb656no", "_TZ3000_0s9gukzt", "_TZ3000_kstbkt6a", "_TZ3000_mugyhz0q", "_TZ3000_upgcbody", "_TZ3000_k4ej3ww2", "_TZ3000_6oabgtzv", "_TZ3000_ocjlo4ea", "_TZ3000_awvmkayh",
+          "_TZ3000_4uvovz4r", "_TZ3000_3dfewsk1", "_TZ3000_ww9i3e0y", "_TZ3000_wuep9zng", "TUYATEC-3tipnsrx",
+          "_TZE200_qq9mpfhw", "_TZE200_jthf7vb6"
+        ],
+        "productId": ["TS0207", "TS0601", "q9mpfhw", "RH3001"],
+        "endpoints": {
+          "1": {
+            "clusters": [0, 1, 1280],
+            "bindings": [1, 1280]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya_water_leak_sensor/assets/images/small.png",
+        "large": "/drivers/tuya_water_leak_sensor/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {"next": "add_devices"}
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "energy": {"batteries": ["INTERNAL"]}
+    },
+    {
+      "id": "tuya_smoke_sensor",
+      "name": {
+        "en": "Smoke Detector",
+        "fr": "Détecteur de Fumée",
+        "nl": "Rookmelder",
+        "de": "Rauchmelder"
+      },
+      "class": "sensor",
+      "capabilities": ["alarm_smoke", "measure_battery"],
+      "capabilitiesOptions": {
+        "alarm_smoke": {
+          "title": {
+            "en": "Smoke",
+            "fr": "Fumée",
+            "nl": "Rook",
+            "de": "Rauch"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TYZB01_dsjszp0x", "_TZ3210_up3pngle", "_TZE200_ntcy3xu1", "_TZE200_m9skfctm"
+        ],
+        "productId": ["TS0205", "TS0601"],
+        "endpoints": {
+          "1": {
+            "clusters": [0, 1, 1280],
+            "bindings": [1, 1280]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya_smoke_sensor/assets/images/small.png",
+        "large": "/drivers/tuya_smoke_sensor/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {"next": "add_devices"}
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "energy": {"batteries": ["INTERNAL"]}
+    },
+    {
+      "id": "tuya_light_switch",
+      "name": {
+        "en": "Light Switch",
+        "fr": "Interrupteur Lumière",
+        "nl": "Lichtschakelaar",
+        "de": "Lichtschalter"
+      },
+      "class": "light",
+      "capabilities": ["onoff"],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Power",
+            "fr": "Alimentation",
+            "nl": "Stroom",
+            "de": "Strom"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_ji4araar", "_TZ3000_9cpuaca6", "_TZ3000_oborybow", "_TZ3000_49qchf10", "_TZ3000_qzjcsmar", "_TZ3000_vzopcetz", "_TZ3000_8nkb7mof", "_TZ3000_mraovvmm", "_TZ3000_cphmq0q7", "_TZ3000_ew3ldmgx", "_TZ3000_w0qqde0g"
+        ],
+        "productId": ["TS0001", "TS0011", "TS0002", "TS0003", "TS110F", "TS1111"],
+        "endpoints": {
+          "1": {
+            "clusters": [0, 6],
+            "bindings": [6]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya_light_switch/assets/images/small.png",
+        "large": "/drivers/tuya_light_switch/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {"next": "add_devices"}
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "id": "tuya_curtain_motor",
+      "name": {
+        "en": "Curtain Motor",
+        "fr": "Moteur de Rideau",
+        "nl": "Gordijnmotor",
+        "de": "Vorhangmotor"
+      },
+      "class": "windowcoverings",
+      "capabilities": ["windowcoverings_state", "dim"],
+      "capabilitiesOptions": {
+        "windowcoverings_state": {
+          "title": {
+            "en": "Position",
+            "fr": "Position",
+            "nl": "Positie",
+            "de": "Position"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_cowvfni3", "_TZE200_rddyvrci", "_TZE200_wmcdj3aq", "_TZE200_nogaemzt", "_TZE200_xuzcvlku", "_TZE200_yenbr4om", "_TZE200_nkoabg8w", "_TZE200_pk0sfzvr", "_TZE200_fdtjuw7u", "_TZE200_zpzndjez", "_TZE200_wmcdj3aq", "_TZE200_5zbp6j0u"
+        ],
+        "productId": ["TS130F", "TS0601"],
+        "endpoints": {
+          "1": {
+            "clusters": [0, 6, 8, 258],
+            "bindings": [6, 8, 258]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya_curtain_motor/assets/images/small.png",
+        "large": "/drivers/tuya_curtain_motor/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
           "navigation": {"next": "add_devices"}
         },
         {

@@ -110,5 +110,83 @@
         }
       }
     ]
+  },
+  {
+    "id": "water_leak_detected",
+    "title": {
+      "en": "Water leak detected",
+      "fr": "Fuite d'eau détectée",
+      "nl": "Waterlek gedetecteerd",
+      "de": "Wasserleck erkannt"
+    },
+    "titleFormatted": {
+      "en": "Water leak detected by [[device]]",
+      "fr": "Fuite d'eau détectée par [[device]]",
+      "nl": "Waterlek gedetecteerd door [[device]]",
+      "de": "Wasserleck erkannt von [[device]]"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=tuya_water_leak_sensor"
+      }
+    ]
+  },
+  {
+    "id": "smoke_detected",
+    "title": {
+      "en": "Smoke detected",
+      "fr": "Fumée détectée",
+      "nl": "Rook gedetecteerd", 
+      "de": "Rauch erkannt"
+    },
+    "titleFormatted": {
+      "en": "Smoke detected by [[device]]",
+      "fr": "Fumée détectée par [[device]]",
+      "nl": "Rook gedetecteerd door [[device]]",
+      "de": "Rauch erkannt von [[device]]"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=tuya_smoke_sensor"
+      }
+    ]
+  },
+  {
+    "id": "contact_alarm_changed",
+    "title": {
+      "en": "Door/Window opened or closed",
+      "fr": "Porte/Fenêtre ouverte ou fermée",
+      "nl": "Deur/Raam geopend of gesloten",
+      "de": "Tür/Fenster geöffnet oder geschlossen"
+    },
+    "titleFormatted": {
+      "en": "[[device]] was [[state]]",
+      "fr": "[[device]] a été [[state]]",
+      "nl": "[[device]] werd [[state]]", 
+      "de": "[[device]] wurde [[state]]"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=tuya_door_window_sensor"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "state",
+        "type": "string",
+        "title": {
+          "en": "State",
+          "fr": "État",
+          "nl": "Status",
+          "de": "Zustand"
+        }
+      }
+    ]
   }
 ]
