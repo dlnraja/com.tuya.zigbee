@@ -73,5 +73,176 @@
         "step": 0.1
       }
     ]
+  },
+  {
+    "id": "device_battery_level",
+    "title": {
+      "en": "Battery level comparison",
+      "fr": "Comparaison niveau batterie",
+      "nl": "Batterijniveau vergelijking",
+      "de": "Batteriestand Vergleich"
+    },
+    "titleFormatted": {
+      "en": "Battery level of [[device]] is [[operator]] [[level]]%",
+      "fr": "Niveau batterie de [[device]] est [[operator]] [[level]]%",
+      "nl": "Batterijniveau van [[device]] is [[operator]] [[level]]%",
+      "de": "Batteriestand von [[device]] ist [[operator]] [[level]]%"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "capability_id=measure_battery"
+      },
+      {
+        "name": "operator",
+        "type": "dropdown",
+        "values": [
+          {
+            "id": "greater",
+            "label": {
+              "en": "higher than",
+              "fr": "supérieur à",
+              "nl": "hoger dan",
+              "de": "höher als"
+            }
+          },
+          {
+            "id": "less",
+            "label": {
+              "en": "lower than",
+              "fr": "inférieur à",
+              "nl": "lager dan",
+              "de": "niedriger als"
+            }
+          }
+        ]
+      },
+      {
+        "name": "level",
+        "type": "range",
+        "min": 0,
+        "max": 100,
+        "step": 5
+      }
+    ]
+  },
+  {
+    "id": "device_motion_detected",
+    "title": {
+      "en": "Motion is detected",
+      "fr": "Mouvement détecté",
+      "nl": "Beweging gedetecteerd",
+      "de": "Bewegung erkannt"
+    },
+    "titleFormatted": {
+      "en": "[[device]] !{{detects|does not detect}} motion",
+      "fr": "[[device]] !{{détecte|ne détecte pas}} de mouvement",
+      "nl": "[[device]] !{{detecteert|detecteert geen}} beweging",
+      "de": "[[device]] !{{erkennt|erkennt keine}} Bewegung"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "capability_id=alarm_motion"
+      }
+    ]
+  },
+  {
+    "id": "device_contact_open",
+    "title": {
+      "en": "Door/Window is open",
+      "fr": "Porte/Fenêtre ouverte",
+      "nl": "Deur/Raam open",
+      "de": "Tür/Fenster offen"
+    },
+    "titleFormatted": {
+      "en": "[[device]] is !{{open|closed}}",
+      "fr": "[[device]] est !{{ouvert|fermé}}",
+      "nl": "[[device]] is !{{open|gesloten}}",
+      "de": "[[device]] ist !{{offen|geschlossen}}"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "capability_id=alarm_contact"
+      }
+    ]
+  },
+  {
+    "id": "device_online_status",
+    "title": {
+      "en": "Device is online",
+      "fr": "Appareil en ligne",
+      "nl": "Apparaat online",
+      "de": "Gerät online"
+    },
+    "titleFormatted": {
+      "en": "[[device]] is !{{online|offline}}",
+      "fr": "[[device]] est !{{en ligne|hors ligne}}",
+      "nl": "[[device]] is !{{online|offline}}",
+      "de": "[[device]] ist !{{online|offline}}"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device"
+      }
+    ]
+  },
+  {
+    "id": "humidity_level_compare",
+    "title": {
+      "en": "Humidity level comparison",
+      "fr": "Comparaison humidité",
+      "nl": "Luchtvochtigheid vergelijking",
+      "de": "Luftfeuchtigkeit Vergleich"
+    },
+    "titleFormatted": {
+      "en": "Humidity of [[device]] is [[operator]] [[humidity]]%",
+      "fr": "Humidité de [[device]] est [[operator]] [[humidity]]%",
+      "nl": "Luchtvochtigheid van [[device]] is [[operator]] [[humidity]]%",
+      "de": "Luftfeuchtigkeit von [[device]] ist [[operator]] [[humidity]]%"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "capability_id=measure_humidity"
+      },
+      {
+        "name": "operator",
+        "type": "dropdown",
+        "values": [
+          {
+            "id": "greater",
+            "label": {
+              "en": "higher than",
+              "fr": "supérieure à",
+              "nl": "hoger dan",
+              "de": "höher als"
+            }
+          },
+          {
+            "id": "less",
+            "label": {
+              "en": "lower than",
+              "fr": "inférieure à",
+              "nl": "lager dan",
+              "de": "niedriger als"
+            }
+          }
+        ]
+      },
+      {
+        "name": "humidity",
+        "type": "range",
+        "min": 0,
+        "max": 100,
+        "step": 5
+      }
+    ]
   }
 ]
