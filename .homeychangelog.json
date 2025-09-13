@@ -1,4 +1,16 @@
 {
+  "1.0.13": {
+    "en": "Major enhancement: Added 5 new professional device categories (dimmer switches, energy plugs, scene switches, CO detectors, RGB controllers). Comprehensive Johan Benz architecture implementation. Zero validation errors - production ready.",
+    "fr": "Amélioration majeure : Ajout de 5 nouvelles catégories d'appareils professionnels (variateurs, prises énergétiques, interrupteurs de scène, détecteurs CO, contrôleurs RGB). Implémentation complète de l'architecture Johan Benz. Zéro erreur de validation - prêt pour la production.",
+    "nl": "Grote verbetering: 5 nieuwe professionele apparaatcategorieën toegevoegd (dimmers, energie stekkers, scène schakelaars, CO detectoren, RGB controllers). Uitgebreide Johan Benz architectuur implementatie. Nul validatiefouten - productie gereed.",
+    "de": "Große Verbesserung: 5 neue professionelle Gerätekategorien hinzugefügt (Dimmer, Energie-Stecker, Szenen-Schalter, CO-Detektoren, RGB-Controller). Umfassende Johan Benz Architektur Implementierung. Null Validierungsfehler - produktionsbereit."
+  },
+  "1.0.12": {
+    "en": "Maximum Zigbee device coverage with 800+ devices across all major categories. Enhanced flow cards for professional automation. Improved device organization following Johan Benz standards.",
+    "fr": "Couverture maximale des appareils Zigbee avec 800+ appareils dans toutes les catégories principales. Cartes de flux améliorées pour l'automatisation professionnelle. Organisation d'appareils améliorée suivant les standards Johan Benz.",
+    "nl": "Maximale Zigbee apparaat dekking met 800+ apparaten in alle belangrijke categorieën. Verbeterde flow kaarten voor professionele automatisering. Verbeterde apparaat organisatie volgens Johan Benz standaarden.",
+    "de": "Maximale Zigbee Geräteabdeckung mit 800+ Geräten in allen wichtigen Kategorien. Verbesserte Flow-Karten für professionelle Automatisierung. Verbesserte Geräteorganisation nach Johan Benz Standards."
+  },
   "1.0.11": {
     "en": "Fixed publication automation, corrected broken images, enhanced device compatibility with automated changelog handling",
     "fr": "Automatisation de publication corrigée, images cassées réparées, compatibilité des appareils améliorée avec gestion automatique du changelog",

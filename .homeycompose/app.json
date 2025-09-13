@@ -1,20 +1,20 @@
 {
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "1.0.11", 
+  "version": "1.0.13", 
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": ["local"],
   "name": {
-    "en": "Universal Tuya Zigbee Device",
-    "fr": "Périphérique Tuya Zigbee Universel",
-    "nl": "Universeel Tuya Zigbee Apparaat", 
-    "de": "Universelles Tuya Zigbee Gerät"
+    "en": "Ultimate Zigbee Hub",
+    "fr": "Ultimate Zigbee Hub",
+    "nl": "Ultimate Zigbee Hub", 
+    "de": "Ultimate Zigbee Hub"
   },
   "description": {
-    "en": "Local Zigbee support for 500+ Tuya devices - sensors, lights, plugs, switches, covers. No cloud required!",
-    "fr": "Support Zigbee local pour 500+ appareils Tuya - capteurs, éclairage, prises, interrupteurs, stores. Aucun cloud requis!", 
-    "nl": "Lokale Zigbee ondersteuning voor 500+ Tuya apparaten - sensoren, lampen, stekkers, schakelaars, covers. Geen cloud vereist!",
-    "de": "Lokale Zigbee Unterstützung für 500+ Tuya Geräte - Sensoren, Lichter, Stecker, Schalter, Abdeckungen. Keine Cloud erforderlich!"
+    "en": "Professional Zigbee support for 800+ Tuya devices. Clean SDK3 architecture with comprehensive device categories. Local communication only - no cloud dependencies!",
+    "fr": "Support Zigbee professionnel pour 800+ appareils Tuya. Architecture SDK3 propre avec catégories complètes. Communication locale uniquement - aucune dépendance cloud!",
+    "nl": "Professionele Zigbee ondersteuning voor 800+ Tuya apparaten. Schone SDK3 architectuur met uitgebreide apparaatcategorieën. Alleen lokale communicatie - geen cloud afhankelijkheden!",
+    "de": "Professionelle Zigbee Unterstützung für 800+ Tuya Geräte. Saubere SDK3 Architektur mit umfassenden Gerätekategorien. Nur lokale Kommunikation - keine Cloud Abhängigkeiten!"
   },
   "category": ["lights", "appliances"],
   "brandColor": "#FF6900",
@@ -601,6 +601,330 @@
           "template": "add_devices"
         }
       ]
+    },
+    {
+      "id": "tuya_radar_sensor",
+      "name": {
+        "en": "Radar Motion Sensor",
+        "fr": "Capteur Mouvement Radar",
+        "nl": "Radar Bewegingssensor",
+        "de": "Radar Bewegungssensor"
+      },
+      "class": "sensor",
+      "capabilities": ["alarm_motion", "measure_luminance", "measure_battery"],
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Motion",
+            "fr": "Mouvement",
+            "nl": "Beweging",
+            "de": "Bewegung"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_ztc6ggyl", "_TZE204_qasjif9e", "_TZE204_ijxvkhd0", "_TZE200_wukb7rhc"
+        ],
+        "productId": ["TS0601"],
+        "endpoints": {
+          "1": {
+            "clusters": [0, 4, 5, 61184],
+            "bindings": [0]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya_radar_sensor/assets/images/small.png",
+        "large": "/drivers/tuya_radar_sensor/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {"next": "add_devices"}
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "energy": {"batteries": ["INTERNAL"]}
+    },
+    {
+      "id": "tuya_air_quality_sensor",
+      "name": {
+        "en": "Air Quality Monitor",
+        "fr": "Moniteur Qualité Air",
+        "nl": "Luchtkwaliteit Monitor",
+        "de": "Luftqualität Monitor"
+      },
+      "class": "sensor",
+      "capabilities": ["measure_co2", "measure_pm25", "measure_temperature", "measure_humidity"],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_yvx5lh6k", "_TZE200_8ygsuhe1", "_TZE200_mja3fuja"
+        ],
+        "productId": ["TS0601"],
+        "endpoints": {
+          "1": {
+            "clusters": [0, 4, 5, 61184],
+            "bindings": [0]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya_air_quality_sensor/assets/images/small.png",
+        "large": "/drivers/tuya_air_quality_sensor/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {"next": "add_devices"}
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "id": "tuya_thermostat",
+      "name": {
+        "en": "Smart Thermostat",
+        "fr": "Thermostat Intelligent", 
+        "nl": "Slimme Thermostaat",
+        "de": "Intelligenter Thermostat"
+      },
+      "class": "thermostat",
+      "capabilities": ["target_temperature", "measure_temperature", "measure_humidity", "thermostat_mode"],
+      "capabilitiesOptions": {
+        "target_temperature": {
+          "min": 5,
+          "max": 35,
+          "step": 0.5
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_aoclfnxz", "_TZE200_u9bfwha0", "_TZE200_ztvwu4nk"
+        ],
+        "productId": ["TS0601"],
+        "endpoints": {
+          "1": {
+            "clusters": [0, 4, 5, 61184],
+            "bindings": [0]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya_thermostat/assets/images/small.png",
+        "large": "/drivers/tuya_thermostat/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {"next": "add_devices"}
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "id": "tuya_rgb_controller",
+      "name": {
+        "en": "RGB LED Controller",
+        "fr": "Contrôleur LED RGB",
+        "nl": "RGB LED Controller",
+        "de": "RGB LED Controller"
+      },
+      "class": "light",
+      "capabilities": ["onoff", "dim", "light_hue", "light_saturation", "light_temperature"],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3210_778drfdt", "_TZ3210_mja6r5ix", "_TZ3210_sroezl0s"
+        ],
+        "productId": ["TS0505", "TS110E"],
+        "endpoints": {
+          "1": {
+            "clusters": [0, 3, 4, 5, 6, 8, 768],
+            "bindings": [6, 8, 768]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya_rgb_controller/assets/images/small.png",
+        "large": "/drivers/tuya_rgb_controller/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {"next": "add_devices"}
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "id": "tuya_dimmer_switch",
+      "name": {
+        "en": "Dimmer Switch",
+        "fr": "Variateur",
+        "nl": "Dimmer Schakelaar",
+        "de": "Dimmer Schalter"
+      },
+      "class": "light",
+      "capabilities": ["onoff", "dim"],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_qzjcsmar", "_TZ3000_ktuoyvt9", "_TZ3210_k1msuvg6", "_TZ3210_ngqk6jia"
+        ],
+        "productId": ["TS110F", "TS1111"],
+        "endpoints": {
+          "1": {
+            "clusters": [0, 3, 4, 5, 6, 8],
+            "bindings": [6, 8]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya_dimmer_switch/assets/images/small.png",
+        "large": "/drivers/tuya_dimmer_switch/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {"next": "add_devices"}
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "id": "tuya_energy_plug",
+      "name": {
+        "en": "Smart Plug with Energy Meter",
+        "fr": "Prise Intelligente avec Compteur",
+        "nl": "Slimme Stekker met Energiemeter",
+        "de": "Intelligente Steckdose mit Energiezähler"
+      },
+      "class": "socket",
+      "capabilities": ["onoff", "measure_power", "measure_current", "measure_voltage", "meter_power"],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_g5xawfcq", "_TZ3000_vzopcetz", "_TZ3000_1obwwnmq", "_TZ3000_cphmq0q7"
+        ],
+        "productId": ["TS011F", "TS0115"],
+        "endpoints": {
+          "1": {
+            "clusters": [0, 3, 4, 5, 6, 1794, 2820],
+            "bindings": [6, 1794, 2820]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya_energy_plug/assets/images/small.png",
+        "large": "/drivers/tuya_energy_plug/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {"next": "add_devices"}
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "id": "tuya_scene_switch",
+      "name": {
+        "en": "Scene Switch",
+        "fr": "Interrupteur Scène",
+        "nl": "Scène Schakelaar",
+        "de": "Szenen Schalter"
+      },
+      "class": "button",
+      "capabilities": ["button"],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_xabckq1v", "_TZ3000_abrsvsou", "_TZ3000_adkvzooy", "_TZ3000_bi6lpsew"
+        ],
+        "productId": ["TS004F", "TS0041", "TS0042", "TS0043", "TS0044"],
+        "endpoints": {
+          "1": {
+            "clusters": [0, 1, 3, 4096],
+            "bindings": [1, 4096]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya_scene_switch/assets/images/small.png",
+        "large": "/drivers/tuya_scene_switch/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {"next": "add_devices"}
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "energy": {"batteries": ["CR2032"]}
+    },
+    {
+      "id": "tuya_co_detector",
+      "name": {
+        "en": "CO Detector",
+        "fr": "Détecteur CO",
+        "nl": "CO Detector",
+        "de": "CO Melder"
+      },
+      "class": "sensor",
+      "capabilities": ["alarm_co", "measure_battery", "alarm_tamper"],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_3iu2bjlp", "_TZE200_rccxox8p", "_TZ3000_26fmupbb"
+        ],
+        "productId": ["TS0601", "TS0205"],
+        "endpoints": {
+          "1": {
+            "clusters": [0, 1, 1280],
+            "bindings": [1, 1280]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya_co_detector/assets/images/small.png",
+        "large": "/drivers/tuya_co_detector/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {"next": "add_devices"}
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "energy": {"batteries": ["INTERNAL"]}
     }
   ]
 }

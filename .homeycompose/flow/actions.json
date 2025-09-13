@@ -4,6 +4,8 @@
     "title": {
       "en": "Turn on",
       "fr": "Allumer",
+      "nl": "Inschakelen",
+      "de": "Einschalten"
     },
     "titleFormatted": {
       "en": "Turn on [[device]]",
@@ -197,6 +199,126 @@
         "max": 35,
         "step": 0.5,
         "label": "°C"
+      }
+    ]
+  },
+  {
+    "id": "set_curtain_position",
+    "title": {
+      "en": "Set curtain position",
+      "fr": "Régler position rideau",
+      "nl": "Gordijnpositie instellen",
+      "de": "Vorhangposition einstellen"
+    },
+    "titleFormatted": {
+      "en": "Set [[device]] position to [[position]]%",
+      "fr": "Régler position de [[device]] à [[position]]%",
+      "nl": "Stel positie van [[device]] in op [[position]]%",
+      "de": "Setze Position von [[device]] auf [[position]]%"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=tuya_curtain_motor"
+      },
+      {
+        "name": "position",
+        "type": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "label": "%",
+        "labelMultiplier": 100
+      }
+    ]
+  },
+  {
+    "id": "toggle_device",
+    "title": {
+      "en": "Toggle device",
+      "fr": "Basculer appareil",
+      "nl": "Apparaat omschakelen",
+      "de": "Gerät umschalten"
+    },
+    "titleFormatted": {
+      "en": "Toggle [[device]] on/off",
+      "fr": "Basculer [[device]] marche/arrêt",
+      "nl": "Schakel [[device]] aan/uit",
+      "de": "Schalte [[device]] ein/aus"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "capability_id=onoff"
+      }
+    ]
+  },
+  {
+    "id": "start_pairing_mode",
+    "title": {
+      "en": "Start pairing mode",
+      "fr": "Démarrer mode appairage",
+      "nl": "Start koppelingsmodus",
+      "de": "Kopplungsmodus starten"
+    },
+    "titleFormatted": {
+      "en": "Start pairing mode for [[duration]] seconds",
+      "fr": "Démarrer mode appairage pendant [[duration]] secondes",
+      "nl": "Start koppelingsmodus voor [[duration]] seconden",
+      "de": "Starte Kopplungsmodus für [[duration]] Sekunden"
+    },
+    "args": [
+      {
+        "name": "duration",
+        "type": "range",
+        "min": 30,
+        "max": 300,
+        "step": 30,
+        "label": "s"
+      }
+    ]
+  },
+  {
+    "id": "reset_device",
+    "title": {
+      "en": "Reset device",
+      "fr": "Réinitialiser appareil",
+      "nl": "Apparaat resetten",
+      "de": "Gerät zurücksetzen"
+    },
+    "titleFormatted": {
+      "en": "Reset [[device]] to factory settings",
+      "fr": "Réinitialiser [[device]] aux paramètres d'usine",
+      "nl": "Reset [[device]] naar fabrieksinstellingen",
+      "de": "Setze [[device]] auf Werkseinstellungen zurück"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device"
+      }
+    ]
+  },
+  {
+    "id": "identify_device",
+    "title": {
+      "en": "Identify device",
+      "fr": "Identifier appareil",
+      "nl": "Apparaat identificeren",
+      "de": "Gerät identifizieren"
+    },
+    "titleFormatted": {
+      "en": "Make [[device]] identify itself (blink/beep)",
+      "fr": "Faire que [[device]] s'identifie (clignoter/biper)",
+      "nl": "Laat [[device]] zichzelf identificeren (knipperen/piepen)",
+      "de": "Lasse [[device]] sich identifizieren (blinken/piepen)"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device"
       }
     ]
   }
