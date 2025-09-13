@@ -1,27 +1,23 @@
 [
   {
-    "id": "turn_on",
+    "id": "device_turn_on",
     "title": {
       "en": "Turn on",
       "fr": "Allumer",
       "nl": "Inschakelen",
       "de": "Einschalten"
     },
-    "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": "capability_id=onoff"
-      }
-    ]
-  },
-  {
-    "id": "turn_off",
-    "title": {
-      "en": "Turn off",
-      "fr": "Éteindre",
-      "nl": "Uitschakelen",
-      "de": "Ausschalten"
+    "titleFormatted": {
+      "en": "Turn on [[device]]",
+      "fr": "Allumer [[device]]",
+      "nl": "Schakel [[device]] in",
+      "de": "Schalte [[device]] ein"
+    },
+    "hint": {
+      "en": "Turn on any compatible device",
+      "fr": "Allumer tout appareil compatible",
+      "nl": "Schakel elk compatibel apparaat in",
+      "de": "Schalte jedes kompatible Gerät ein"
     },
     "args": [
       {
@@ -32,12 +28,40 @@
     ]
   },
   {
-    "id": "set_brightness",
+    "id": "device_turn_off",
+    "title": {
+      "en": "Turn off",
+      "fr": "Éteindre",
+      "nl": "Uitschakelen",
+      "de": "Ausschalten"
+    },
+    "titleFormatted": {
+      "en": "Turn off [[device]]",
+      "fr": "Éteindre [[device]]",
+      "nl": "Schakel [[device]] uit",
+      "de": "Schalte [[device]] aus"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "capability_id=onoff"
+      }
+    ]
+  },
+  {
+    "id": "device_set_brightness",
     "title": {
       "en": "Set brightness",
       "fr": "Régler luminosité",
       "nl": "Helderheid instellen",
       "de": "Helligkeit einstellen"
+    },
+    "titleFormatted": {
+      "en": "Set [[device]] brightness to [[brightness]]%",
+      "fr": "Régler la luminosité de [[device]] à [[brightness]]%",
+      "nl": "Stel helderheid van [[device]] in op [[brightness]]%",
+      "de": "Setze Helligkeit von [[device]] auf [[brightness]]%"
     },
     "args": [
       {
@@ -50,7 +74,39 @@
         "type": "range",
         "min": 0,
         "max": 1,
-        "step": 0.01
+        "step": 0.01,
+        "label": "%",
+        "labelMultiplier": 100
+      }
+    ]
+  },
+  {
+    "id": "device_set_temperature",
+    "title": {
+      "en": "Set temperature",
+      "fr": "Régler température",
+      "nl": "Temperatuur instellen",
+      "de": "Temperatur einstellen"
+    },
+    "titleFormatted": {
+      "en": "Set [[device]] to [[temperature]]°C",
+      "fr": "Régler [[device]] à [[temperature]]°C",
+      "nl": "Stel [[device]] in op [[temperature]]°C",
+      "de": "Setze [[device]] auf [[temperature]]°C"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "capability_id=target_temperature"
+      },
+      {
+        "name": "temperature",
+        "type": "range",
+        "min": 5,
+        "max": 35,
+        "step": 0.5,
+        "label": "°C"
       }
     ]
   }

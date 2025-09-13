@@ -1,17 +1,76 @@
 [
   {
-    "id": "is_on",
+    "id": "device_is_on",
     "title": {
       "en": "Device is on",
       "fr": "Appareil allumé",
       "nl": "Apparaat aan",
       "de": "Gerät an"
     },
+    "titleFormatted": {
+      "en": "[[device]] is !{{on|off}}",
+      "fr": "[[device]] est !{{allumé|éteint}}",
+      "nl": "[[device]] is !{{aan|uit}}",
+      "de": "[[device]] ist !{{an|aus}}"
+    },
     "args": [
       {
         "name": "device",
         "type": "device",
         "filter": "capability_id=onoff"
+      }
+    ]
+  },
+  {
+    "id": "device_temperature_compare",
+    "title": {
+      "en": "Temperature comparison",
+      "fr": "Comparaison température",
+      "nl": "Temperatuur vergelijking",
+      "de": "Temperaturvergleich"
+    },
+    "titleFormatted": {
+      "en": "Temperature of [[device]] is [[operator]] [[temperature]]°C",
+      "fr": "Température de [[device]] est [[operator]] [[temperature]]°C",
+      "nl": "Temperatuur van [[device]] is [[operator]] [[temperature]]°C",
+      "de": "Temperatur von [[device]] ist [[operator]] [[temperature]]°C"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "capability_id=measure_temperature"
+      },
+      {
+        "name": "operator",
+        "type": "dropdown",
+        "values": [
+          {
+            "id": "greater",
+            "label": {
+              "en": "higher than",
+              "fr": "supérieure à",
+              "nl": "hoger dan",
+              "de": "höher als"
+            }
+          },
+          {
+            "id": "less",
+            "label": {
+              "en": "lower than",
+              "fr": "inférieure à",
+              "nl": "lager dan",
+              "de": "niedriger als"
+            }
+          }
+        ]
+      },
+      {
+        "name": "temperature",
+        "type": "number",
+        "min": -40,
+        "max": 80,
+        "step": 0.1
       }
     ]
   }
