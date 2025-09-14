@@ -1,5 +1,5 @@
 {
-  "comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.ultimate.zigbee.hub",
   "version": "1.0.30",
   "compatibility": ">=5.0.0",
@@ -132,47 +132,46 @@
     {
       "id": "air_quality_sensor",
       "name": {
-        "en": "air Quality Monitor",
-        "fr": "Moniteur quality air",
-        "nl": "Luchtkwaliteit Monitor",
-        "de": "Luftqualität Monitor"
+        "en": "Air Quality Sensor"
       },
       "class": "sensor",
       "capabilities": [
-        "measure_co2",
         "measure_pm25",
-        "measure_temperature",
-        "measure_humidity"
+        "measure_formaldehyde",
+        "measure_battery"
       ],
       "zigbee": {
         "manufacturerName": [
-          "TZE200_3ejwq3mg",
-          "TZE200_8ygsuhe1",
-          "TZE200_9cxuhakf",
-          "TZE200_amydvlhx",
-          "TZE200_cf1sl3tj",
-          "TZE200_dwcarsat",
-          "TZE200_kz7frocf",
-          "TZE200_lsanae15",
-          "TZE200_mja3fuja",
-          "TZE200_ogkdpgy2",
-          "TZE200_ryfmq5rl",
-          "TZE200_yvx5lh6k"
+          "_TZ3000_",
+          "_TZE200_",
+          "_TYZB01_",
+          "TUYA",
+          "Smart Home"
         ],
         "productId": [
-          "TS0601"
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS013F"
         ],
         "endpoints": {
           "1": {
             "clusters": [
-              0,
-              4,
-              5,
-              61184
-            ],
-            "bindings": [
-              0
+              "basic",
+              "powerConfiguration",
+              "identify",
+              "pm25Measurement",
+              "formaldehydeMeasurement"
             ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/air_quality_sensor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Air Quality Sensor for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
@@ -180,62 +179,57 @@
         "small": "/drivers/air_quality_sensor/assets/images/small.png",
         "large": "/drivers/air_quality_sensor/assets/images/large.png"
       },
-      "pair": [
+      "settings": [
         {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
-        },
-        {
-          "id": "add_devices",
-          "template": "add_devices"
+          "id": "air_quality_threshold",
+          "type": "number",
+          "label": "Air Quality Alert Threshold",
+          "value": 35
         }
       ]
     },
     {
+      "id": "co_detector",
       "name": {
-        "en": "CO Detector",
-        "fr": "detector CO",
-        "nl": "CO Detector",
-        "de": "CO Melder"
+        "en": "Carbon Monoxide Detector"
       },
       "class": "sensor",
       "capabilities": [
         "alarm_co",
-        "measure_battery",
-        "alarm_tamper"
+        "measure_battery"
       ],
       "zigbee": {
         "manufacturerName": [
-          "TZ3000_26fmupbb",
-          "TZ3000_2od9rsmr",
-          "TZ3000_4ejm8dfy",
-          "TZ3000_5cj3tgmb",
-          "TZ3000_7d9ghfkl",
-          "TZ3000_a6iuj7pc",
-          "TZ3000_b27vqtv5",
-          "TZ3000_eorqjfqo",
-          "TZ3000_tkfpyqhj",
-          "TZE200_3iu2bjlp",
-          "TZE200_rccxox8p"
+          "_TZ3000_",
+          "_TZE200_",
+          "_TYZB01_",
+          "TUYA",
+          "Smart Home"
         ],
         "productId": [
-          "TS0205",
-          "TS0601"
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS013F"
         ],
         "endpoints": {
           "1": {
             "clusters": [
-              0,
-              1,
-              1280
-            ],
-            "bindings": [
-              1,
-              1280
+              "basic",
+              "powerConfiguration",
+              "identify",
+              "iasZone",
+              "carbonMonoxideMeasurement"
             ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/co_detector/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Carbon Monoxide Detector for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
@@ -243,87 +237,58 @@
         "small": "/drivers/co_detector/assets/images/small.png",
         "large": "/drivers/co_detector/assets/images/large.png"
       },
-      "pair": [
+      "settings": [
         {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
-        },
-        {
-          "id": "add_devices",
-          "template": "add_devices"
+          "id": "co_sensitivity",
+          "type": "dropdown",
+          "label": "CO Sensitivity",
+          "value": "high"
         }
-      ],
-      "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
-      },
-      "id": "co_detector"
+      ]
     },
     {
+      "id": "contact_sensor",
       "name": {
-        "en": "Door & Window Sensor",
-        "fr": "sensor Porte et Fenêtre",
-        "nl": "Deur & Raam Sensor",
-        "de": "Tür & Fenster Sensor"
+        "en": "Contact Sensor"
       },
       "class": "sensor",
       "capabilities": [
         "alarm_contact",
-        "measure_battery"
+        "measure_battery",
+        "measure_temperature"
       ],
-      "capabilitiesOptions": {
-        "alarm_contact": {
-          "title": {
-            "en": "contact",
-            "fr": "contact",
-            "nl": "contact",
-            "de": "Kontakt"
-          }
-        }
-      },
       "zigbee": {
         "manufacturerName": [
-          "TZ3000_26fmupbb",
-          "TZ3000_2mbfxlzr",
-          "TZ3000_3mfplgv6",
-          "TZ3000_4uuaja4a",
-          "TZ3000_gdvxyasq",
-          "TZ3000_gmhrtaac",
-          "TZ3000_jqliswuk",
-          "TZ3000_kmhipd6k",
-          "TZ3000_kmyg4l5w",
-          "TZ3000_n2egfsli",
-          "TZ3000_ox0xvqqr",
-          "TZ3000_plv4vtwk",
-          "TZ3000_xrgxkyvz",
-          "TZ3000_yoqmkwpd",
-          "TZ3000_zlrrr7z3",
-          "TZE200_7hfcudw5",
-          "TZE200_cirvgep4",
-          "TZE200_kfvq6avy",
-          "TZE200_locansqn",
-          "TZE200_pay2byax",
-          "TZE200_ztc6ggyl"
+          "_TZ3000_",
+          "_TZE200_",
+          "_TYZB01_",
+          "TUYA",
+          "Smart Home"
         ],
         "productId": [
-          "TS0203",
-          "TS0601"
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS013F"
         ],
         "endpoints": {
           "1": {
             "clusters": [
-              0,
-              1,
-              1280
-            ],
-            "bindings": [
-              1,
-              1280
+              "basic",
+              "powerConfiguration",
+              "identify",
+              "iasZone",
+              "temperatureMeasurement"
             ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/contact_sensor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Contact Sensor for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
@@ -331,134 +296,124 @@
         "small": "/drivers/contact_sensor/assets/images/small.png",
         "large": "/drivers/contact_sensor/assets/images/large.png"
       },
-      "pair": [
+      "settings": [
         {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
+          "id": "invert_contact",
+          "type": "checkbox",
+          "label": "Invert Contact State",
+          "value": false
         },
         {
-          "id": "add_devices",
-          "template": "add_devices"
+          "id": "tamper_detection",
+          "type": "checkbox",
+          "label": "Enable Tamper Detection",
+          "value": true
         }
-      ],
-      "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
-      },
-      "id": "contact_sensor"
+      ]
     },
     {
       "id": "curtain_motor",
       "name": {
-        "en": "Curtain Motor",
-        "fr": "motor de curtain",
-        "nl": "Gordijnmotor",
-        "de": "Vorhangmotor"
+        "en": "Curtain Motor"
       },
       "class": "windowcoverings",
       "capabilities": [
-        "windowcoverings_state",
-        "dim"
+        "windowcoverings_set",
+        "windowcoverings_tilt_set"
       ],
       "zigbee": {
         "manufacturerName": [
-          "TZE200_1n2kyphz",
-          "TZE200_3ptz6gyb",
-          "TZE200_5zbp6j0u",
-          "TZE200_7eue9vhc",
-          "TZE200_cowvfni3",
-          "TZE200_cpbo62af",
-          "TZE200_fdtjuw7u",
-          "TZE200_hsz7q4dj",
-          "TZE200_nkoabg8w",
-          "TZE200_nogaemzt",
-          "TZE200_pk0sfzvr",
-          "TZE200_rddyvrci",
-          "TZE200_wmcdj3aq",
-          "TZE200_xuzcvlku",
-          "TZE200_yenbr4om",
-          "TZE200_zpzndjez",
-          "TZE200_zuz7f94z"
+          "_TZ3000_",
+          "_TZE200_",
+          "_TYZB01_",
+          "TUYA",
+          "Smart Home"
         ],
         "productId": [
-          "TS0601",
-          "TS130F"
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS013F"
         ],
         "endpoints": {
           "1": {
             "clusters": [
-              0,
-              6,
-              8,
-              258
-            ],
-            "bindings": [
-              6,
-              8,
-              258
+              "basic",
+              "identify",
+              "windowCovering"
             ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/curtain_motor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Curtain Motor for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
       "images": {
         "small": "/drivers/curtain_motor/assets/images/small.png",
         "large": "/drivers/curtain_motor/assets/images/large.png"
-      }
+      },
+      "settings": [
+        {
+          "id": "motor_speed",
+          "type": "dropdown",
+          "label": "Motor Speed",
+          "value": "medium"
+        },
+        {
+          "id": "calibration_mode",
+          "type": "checkbox",
+          "label": "Calibration Mode",
+          "value": false
+        }
+      ]
     },
     {
+      "id": "dimmer_switch",
       "name": {
-        "en": "Dimmer Switch",
-        "fr": "dimmer",
-        "nl": "Dimmer Schakelaar",
-        "de": "Dimmer Schalter"
+        "en": "Dimmer Switch"
       },
-      "class": "light",
+      "class": "switch",
       "capabilities": [
         "onoff",
         "dim"
       ],
       "zigbee": {
         "manufacturerName": [
-          "TZ3000_3dfz1q1v",
-          "TZ3000_7ed9cqgi",
-          "TZ3000_92qd4sqa",
-          "TZ3000_cvm9xckl",
-          "TZ3000_dlhhrhs8",
-          "TZ3000_gjnozsaz",
-          "TZ3000_hdkb2lbn",
-          "TZ3000_kpatq5pq",
-          "TZ3000_ktuoyvt9",
-          "TZ3000_mprjjdkm",
-          "TZ3000_qzjcsmar",
-          "TZ3000_skueekg3",
-          "TZ3000_va5zsij1",
-          "TZ3000_w8jwkczz",
-          "TZ3210_k1msuvg6",
-          "TZ3210_ngqk6jia"
+          "_TZ3000_",
+          "_TZE200_",
+          "_TYZB01_",
+          "TUYA",
+          "Smart Home"
         ],
         "productId": [
-          "TS1101",
-          "TS110F",
-          "TS1111"
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS013F"
         ],
         "endpoints": {
           "1": {
             "clusters": [
-              0,
-              3,
-              4,
-              5,
-              6,
-              8
-            ],
-            "bindings": [
-              6,
-              8
+              "basic",
+              "identify",
+              "onOff",
+              "levelControl"
             ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/dimmer_switch/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Dimmer Switch for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
@@ -466,77 +421,66 @@
         "small": "/drivers/dimmer_switch/assets/images/small.png",
         "large": "/drivers/dimmer_switch/assets/images/large.png"
       },
-      "pair": [
+      "settings": [
         {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
+          "id": "min_brightness",
+          "type": "number",
+          "label": "Minimum Brightness (%)",
+          "value": 1
         },
         {
-          "id": "add_devices",
-          "template": "add_devices"
+          "id": "fade_duration",
+          "type": "number",
+          "label": "Fade Duration (seconds)",
+          "value": 2
         }
-      ],
-      "id": "dimmer_switch"
+      ]
     },
     {
+      "id": "energy_plug",
       "name": {
-        "en": "Smart Plug with Energy Meter",
-        "fr": "plug smarte avec Compteur",
-        "nl": "Slimme Stekker met Energiemeter",
-        "de": "smarte Steckdose mit Energiezähler"
+        "en": "Energy Monitoring Smart Plug"
       },
       "class": "socket",
       "capabilities": [
         "onoff",
         "measure_power",
-        "measure_current",
         "measure_voltage",
+        "measure_current",
         "meter_power"
       ],
       "zigbee": {
         "manufacturerName": [
-          "TZ3000_00mk2xzy",
-          "TZ3000_1obwwnmq",
-          "TZ3000_8fdayfch",
-          "TZ3000_air9m6af",
-          "TZ3000_cphmq0q7",
-          "TZ3000_g5xawfcq",
-          "TZ3000_gjg3iav8",
-          "TZ3000_kky16aay",
-          "TZ3000_okaz9tjs",
-          "TZ3000_pdevkigv",
-          "TZ3000_rdtmvrpu",
-          "TZ3000_typdpbpg",
-          "TZ3000_upjrsxh1",
-          "TZ3000_vtscrxmr",
-          "TZ3000_vzopcetz",
-          "TZ3000_w0qqde0g",
-          "TZ3210_r5afgmkl"
+          "_TZ3000_",
+          "_TZE200_",
+          "_TYZB01_",
+          "TUYA",
+          "Smart Home"
         ],
         "productId": [
-          "TS0115",
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS004F",
           "TS011F",
-          "TS0121"
+          "TS0121",
+          "TS013F"
         ],
         "endpoints": {
           "1": {
             "clusters": [
-              0,
-              3,
-              4,
-              5,
-              6,
-              1794,
-              2820
-            ],
-            "bindings": [
-              6,
-              1794,
-              2820
+              "basic",
+              "identify",
+              "onOff",
+              "electricalMeasurement",
+              "meteringCluster"
             ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/energy_plug/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Energy Monitoring Smart Plug for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
@@ -544,151 +488,133 @@
         "small": "/drivers/energy_plug/assets/images/small.png",
         "large": "/drivers/energy_plug/assets/images/large.png"
       },
-      "pair": [
+      "settings": [
         {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
+          "id": "energy_reporting",
+          "type": "number",
+          "label": "Energy Reporting (minutes)",
+          "value": 1
         },
         {
-          "id": "add_devices",
-          "template": "add_devices"
+          "id": "overload_protection",
+          "type": "number",
+          "label": "Overload Threshold (W)",
+          "value": 2300
         }
       ],
-      "id": "energy_plug"
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ],
+        "approximation": {
+          "usageConstant": 5
+        }
+      }
     },
     {
       "id": "light_switch",
       "name": {
-        "en": "Light Switch",
-        "fr": "Interrupteur Lumière",
-        "nl": "Lichtschakelaar",
-        "de": "Lichtschalter"
+        "en": "Light Switch"
       },
       "class": "light",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "dim"
       ],
       "zigbee": {
         "manufacturerName": [
-          "TZ3000_49qchf10",
-          "TZ3000_4whigl8y",
-          "TZ3000_8nkb7mof",
-          "TZ3000_9cpuaca6",
-          "TZ3000_cfnprab5",
-          "TZ3000_cphmq0q7",
-          "TZ3000_ew3ldmgx",
-          "TZ3000_ji4araar",
-          "TZ3000_lupfd8hb",
-          "TZ3000_mraovvmm",
-          "TZ3000_mx3vgyea",
-          "TZ3000_nkkl7uzv",
-          "TZ3000_nnwehhst",
-          "TZ3000_oborybow",
-          "TZ3000_odzoiova",
-          "TZ3000_pmvbt5hh",
-          "TZ3000_qeuvnohg",
-          "TZ3000_qzjcsmar",
-          "TZ3000_ss98ec5d",
-          "TZ3000_vjhcenzo",
-          "TZ3000_vjukn4mv",
-          "TZ3000_vp6clf9d",
-          "TZ3000_vzopcetz",
-          "TZ3000_w0qqde0g",
-          "TZ3000_xabckq1v",
-          "TZ3000_ypgri8yz"
+          "_TZ3000_",
+          "_TZE200_",
+          "_TYZB01_",
+          "TUYA",
+          "Smart Home"
         ],
         "productId": [
           "TS0001",
-          "TS0002",
-          "TS0003",
           "TS0011",
           "TS0012",
-          "TS0013",
-          "TS110F",
-          "TS1111"
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS013F"
         ],
         "endpoints": {
           "1": {
             "clusters": [
-              0,
-              6
-            ],
-            "bindings": [
-              6
+              "basic",
+              "identify",
+              "groups",
+              "scenes",
+              "onOff",
+              "levelControl"
             ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/light_switch/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Light Switch for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
       "images": {
         "small": "/drivers/light_switch/assets/images/small.png",
         "large": "/drivers/light_switch/assets/images/large.png"
-      }
+      },
+      "settings": [
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": "Transition Time (seconds)",
+          "value": 1
+        }
+      ]
     },
     {
+      "id": "motion_sensor",
       "name": {
-        "en": "Motion Sensor",
-        "fr": "detector de motion",
-        "nl": "Bewegingssensor",
-        "de": "Bewegungsmelder"
+        "en": "Motion Sensor"
       },
       "class": "sensor",
       "capabilities": [
         "alarm_motion",
-        "measure_battery"
+        "measure_battery",
+        "measure_luminance"
       ],
-      "capabilitiesOptions": {
-        "alarm_motion": {
-          "title": {
-            "en": "Motion",
-            "fr": "motion",
-            "nl": "Beweging",
-            "de": "Bewegung"
-          }
-        }
-      },
       "zigbee": {
         "manufacturerName": [
-          "TZ3000_4uf3d0ax",
-          "TZ3000_6flvjxz8",
-          "TZ3000_6ygjfyll",
-          "TZ3000_h4yuteqy",
-          "TZ3000_jmmz3l9t",
-          "TZ3000_jmrgyl7o",
-          "TZ3000_kstbkt6a",
-          "TZ3000_lf56vpxj",
-          "TZ3000_lqrfnfkq",
-          "TZ3000_mmtwjmaq",
-          "TZ3000_nss8amz9",
-          "TZ3000_otvn3lne",
-          "TZ3000_uuyu8uy2",
-          "TZ3000_yqz6w2ac",
-          "TZ3040_bb6xaihh",
-          "TZE200_3towulqd",
-          "TZE200_7yuohek9",
-          "TZE200_bq5c8xfe",
-          "TZE200_hsmsj6zh",
-          "TZE200_tv3wxhcz",
-          "TZE200_whpb9y8z"
+          "_TZ3000_",
+          "_TZE200_",
+          "_TYZB01_",
+          "TUYA",
+          "Smart Home"
         ],
         "productId": [
-          "TS0202",
-          "TS0206",
-          "TS0601"
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS013F"
         ],
         "endpoints": {
           "1": {
             "clusters": [
-              0,
-              1,
-              1280
-            ],
-            "bindings": [
-              1,
-              1280
+              "basic",
+              "powerConfiguration",
+              "identify",
+              "iasZone",
+              "illuminanceMeasurement",
+              "occupancySensing"
             ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/motion_sensor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Motion Sensor for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
@@ -696,30 +622,31 @@
         "small": "/drivers/motion_sensor/assets/images/small.png",
         "large": "/drivers/motion_sensor/assets/images/large.png"
       },
-      "pair": [
+      "settings": [
         {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
+          "id": "motion_sensitivity",
+          "type": "dropdown",
+          "label": "Motion Sensitivity",
+          "value": "medium"
         },
         {
-          "id": "add_devices",
-          "template": "add_devices"
+          "id": "occupancy_timeout",
+          "type": "number",
+          "label": "Occupancy Timeout (seconds)",
+          "value": 60
+        },
+        {
+          "id": "illuminance_threshold",
+          "type": "number",
+          "label": "Illuminance Threshold (lux)",
+          "value": 50
         }
-      ],
-      "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
-      },
-      "id": "motion_sensor"
+      ]
     },
     {
       "id": "multisensor",
       "name": {
-        "en": "HOBEIAN multi-Sensor"
+        "en": "Multi-Sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -729,67 +656,40 @@
         "measure_luminance",
         "measure_battery"
       ],
-      "capabilitiesOptions": {
-        "alarm_motion": {
-          "title": {
-            "en": "Motion"
-          }
-        },
-        "measure_temperature": {
-          "title": {
-            "en": "Temperature"
-          },
-          "units": "°C"
-        },
-        "measure_humidity": {
-          "title": {
-            "en": "Humidity"
-          },
-          "units": "%"
-        },
-        "measure_luminance": {
-          "title": {
-            "en": "Illuminance"
-          },
-          "units": "lx"
-        }
-      },
       "zigbee": {
         "manufacturerName": [
-          "HOBEIAN",
-          "TZ3000_1m4ynhsm",
-          "TZ3000_2mbfxlzr",
-          "TZ3000_3mzs1mmf",
-          "TZ3000_4c9fwqyz",
-          "TZ3000_7s7mqbxy",
-          "TZ3000_gmhrtaac",
-          "TZ3000_plv4vtwk",
-          "TZ3000_pxzycdrq",
-          "TZ3000_qr3qjdnm"
+          "_TZ3000_",
+          "_TZE200_",
+          "_TYZB01_",
+          "TUYA",
+          "Smart Home"
         ],
         "productId": [
-          "TS0601",
-          "ZG-204ZV"
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS013F"
         ],
         "endpoints": {
           "1": {
             "clusters": [
-              0,
-              3,
-              1280,
-              61184,
-              1026,
-              1029,
-              1,
-              1024
-            ],
-            "bindings": [
-              1,
-              1280,
-              1026,
-              1029,
-              1024
+              "basic",
+              "powerConfiguration",
+              "identify",
+              "occupancySensing",
+              "illuminanceMeasurement",
+              "temperatureMeasurement",
+              "relativeHumidity"
             ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/multisensor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Multi-Sensor for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
@@ -797,139 +697,70 @@
         "small": "/drivers/multisensor/assets/images/small.png",
         "large": "/drivers/multisensor/assets/images/large.png"
       },
-      "pair": [
-        {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
-        },
-        {
-          "id": "add_devices",
-          "template": "add_devices"
-        }
-      ],
       "settings": [
         {
-          "type": "group",
-          "label": {
-            "en": "Device Settings"
-          },
-          "children": [
-            {
-              "id": "motion_sensitivity",
-              "type": "dropdown",
-              "label": {
-                "en": "Motion Sensitivity"
-              },
-              "value": "medium",
-              "values": [
-                {
-                  "id": "low",
-                  "label": {
-                    "en": "Low"
-                  }
-                },
-                {
-                  "id": "medium",
-                  "label": {
-                    "en": "Medium"
-                  }
-                },
-                {
-                  "id": "high",
-                  "label": {
-                    "en": "High"
-                  }
-                }
-              ]
-            },
-            {
-              "id": "temp_offset",
-              "type": "number",
-              "label": {
-                "en": "Temperature Offset (°C)"
-              },
-              "value": 0,
-              "min": -10,
-              "max": 10,
-              "step": 0.1
-            },
-            {
-              "id": "humidity_offset",
-              "type": "number",
-              "label": {
-                "en": "Humidity Offset (%)"
-              },
-              "value": 0,
-              "min": -20,
-              "max": 20,
-              "step": 1
-            }
-          ]
+          "id": "motion_sensitivity",
+          "type": "dropdown",
+          "label": "Motion Sensitivity",
+          "value": "medium"
+        },
+        {
+          "id": "temp_offset",
+          "type": "number",
+          "label": "Temperature Offset (°C)",
+          "value": 0
+        },
+        {
+          "id": "humidity_offset",
+          "type": "number",
+          "label": "Humidity Offset (%)",
+          "value": 0
         }
-      ],
-      "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
-      }
+      ]
     },
     {
       "id": "presence_sensor",
       "name": {
-        "en": "Radar Motion Sensor",
-        "fr": "sensor motion Radar",
-        "nl": "Radar Bewegingssensor",
-        "de": "Radar Bewegungssensor"
+        "en": "Presence Sensor"
       },
       "class": "sensor",
       "capabilities": [
         "alarm_motion",
-        "measure_luminance",
-        "measure_battery"
+        "measure_battery",
+        "measure_luminance"
       ],
-      "capabilitiesOptions": {
-        "alarm_motion": {
-          "title": {
-            "en": "Motion",
-            "fr": "motion",
-            "nl": "Beweging",
-            "de": "Bewegung"
-          }
-        }
-      },
       "zigbee": {
         "manufacturerName": [
-          "TZ3000_6ygjfyll",
-          "TZ3000_8shuyz6z",
-          "TZ3000_h4yuteqy",
-          "TZ3000_kstbkt6a",
-          "TZ3000_lz1zkfoe",
-          "TZ3210_ckn75kwm",
-          "TZ3210_p1yy5z7h",
-          "TZ3210_qd3nb7nu",
-          "TZ3210_wuhzzfqg",
-          "TZE200_wukb7rhc",
-          "TZE200_ztc6ggyl",
-          "TZE204_ijxvkhd0",
-          "TZE204_qasjif9e"
+          "_TZ3000_",
+          "_TZE200_",
+          "_TYZB01_",
+          "TUYA",
+          "Smart Home"
         ],
         "productId": [
-          "TS0601"
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS013F"
         ],
         "endpoints": {
           "1": {
             "clusters": [
-              0,
-              4,
-              5,
-              61184
-            ],
-            "bindings": [
-              0
+              "basic",
+              "powerConfiguration",
+              "identify",
+              "occupancySensing",
+              "illuminanceMeasurement"
             ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/presence_sensor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Presence Sensor for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
@@ -937,32 +768,25 @@
         "small": "/drivers/presence_sensor/assets/images/small.png",
         "large": "/drivers/presence_sensor/assets/images/large.png"
       },
-      "pair": [
+      "settings": [
         {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
+          "id": "detection_range",
+          "type": "number",
+          "label": "Detection Range (meters)",
+          "value": 6
         },
         {
-          "id": "add_devices",
-          "template": "add_devices"
+          "id": "presence_timeout",
+          "type": "number",
+          "label": "Presence Timeout (minutes)",
+          "value": 2
         }
-      ],
-      "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
-      }
+      ]
     },
     {
       "id": "rgb_light",
       "name": {
-        "en": "rgb LED Controller",
-        "fr": "Contrôleur LED rgb",
-        "nl": "rgb LED Controller",
-        "de": "rgb LED Controller"
+        "en": "RGB Light"
       },
       "class": "light",
       "capabilities": [
@@ -974,47 +798,38 @@
       ],
       "zigbee": {
         "manufacturerName": [
-          "TZ3000_49qchf10",
-          "TZ3000_9cpuaca6",
-          "TZ3000_9yh2faoc",
-          "TZ3000_cjg9gpiq",
-          "TZ3000_d0rx5wf7",
-          "TZ3000_d8qmzq9h",
-          "TZ3000_dbou1ap4",
-          "TZ3000_evag0pvn",
-          "TZ3000_gek6snaj",
-          "TZ3000_h5gkvwn0",
-          "TZ3000_j5m5jgaj",
-          "TZ3000_keabpigv",
-          "TZ3000_lumyztas",
-          "TZ3000_wamqdr3f",
-          "TZ3000_ygaeb6gb",
-          "TZ3210_778drfdt",
-          "TZ3210_mja6r5ix",
-          "TZ3210_sroezl0s"
+          "_TZ3000_",
+          "_TZE200_",
+          "_TYZB01_",
+          "TUYA",
+          "Smart Home"
         ],
         "productId": [
-          "TS0505",
-          "TS0505A",
-          "TS0505B",
-          "TS110E"
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS013F"
         ],
         "endpoints": {
           "1": {
             "clusters": [
-              0,
-              3,
-              4,
-              5,
-              6,
-              8,
-              768
-            ],
-            "bindings": [
-              6,
-              8,
-              768
+              "basic",
+              "identify",
+              "groups",
+              "scenes",
+              "onOff",
+              "levelControl",
+              "colorControl"
             ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/rgb_light/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your RGB Light for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
@@ -1022,70 +837,59 @@
         "small": "/drivers/rgb_light/assets/images/small.png",
         "large": "/drivers/rgb_light/assets/images/large.png"
       },
-      "pair": [
+      "settings": [
         {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
+          "id": "transition_time",
+          "type": "number",
+          "label": "Color Transition Time (seconds)",
+          "value": 1
         },
         {
-          "id": "add_devices",
-          "template": "add_devices"
+          "id": "color_loop",
+          "type": "checkbox",
+          "label": "Enable Color Loop",
+          "value": false
         }
       ]
     },
     {
       "id": "scene_remote_2gang",
       "name": {
-        "en": "2 gang Scene Remote",
-        "fr": "remote scene 2 Boutons",
-        "nl": "2 gang Scene Afstandsbediening",
-        "de": "2 gang Szenen Fernbedienung"
+        "en": "2-Gang Scene Remote"
       },
-      "class": "button",
-      "capabilities": [
-        "button.1",
-        "button.2"
-      ],
+      "class": "remote",
+      "capabilities": [],
       "zigbee": {
         "manufacturerName": [
-          "TZ3000_5f43h46b",
-          "TZ3000_a7ouggvs",
-          "TZ3000_czuyt8lz",
-          "TZ3000_dfgbtub0",
-          "TZ3000_ee8s8jj2",
-          "TZ3000_mrpevh8p",
-          "TZ3000_oj7gjqme",
-          "TZ3000_wyhuocal",
-          "TZ3000_xkap8wtb"
+          "_TZ3000_",
+          "_TZE200_",
+          "_TYZB01_",
+          "TUYA",
+          "Smart Home"
         ],
         "productId": [
-          "TS0042"
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS013F"
         ],
         "endpoints": {
           "1": {
             "clusters": [
-              0,
-              1,
-              3,
-              6
-            ],
-            "bindings": [
-              6
+              "basic",
+              "identify",
+              "onOff",
+              "scenes"
             ]
-          },
-          "2": {
-            "clusters": [
-              0,
-              1,
-              3,
-              6
-            ],
-            "bindings": [
-              6
-            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/scene_remote_2gang/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your 2-Gang Scene Remote for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
@@ -1093,94 +897,53 @@
         "small": "/drivers/scene_remote_2gang/assets/images/small.png",
         "large": "/drivers/scene_remote_2gang/assets/images/large.png"
       },
-      "pair": [
+      "settings": [
         {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
-        },
-        {
-          "id": "add_devices",
-          "template": "add_devices"
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": "Button Mode",
+          "value": "single"
         }
       ]
     },
     {
       "id": "scene_remote_4gang",
       "name": {
-        "en": "4 gang Scene Remote",
-        "fr": "remote scene 4 Boutons",
-        "nl": "4 gang Scene Afstandsbediening",
-        "de": "4 gang Szenen Fernbedienung"
+        "en": "4-Gang Scene Remote"
       },
-      "class": "button",
-      "capabilities": [
-        "button.1",
-        "button.2",
-        "button.3",
-        "button.4"
-      ],
+      "class": "remote",
+      "capabilities": [],
       "zigbee": {
         "manufacturerName": [
-          "TZ3000_8oqcuhlp",
-          "TZ3000_czuyt8lz",
-          "TZ3000_ee8s8jj2",
-          "TZ3000_oj7gjqme",
-          "TZ3000_rtlqgqxm",
-          "TZ3000_tk3s5tyg",
-          "TZ3000_wkai4ga5",
-          "TZ3000_wyhuocal",
-          "TZ3000_xd4egd1q"
+          "_TZ3000_",
+          "_TZE200_",
+          "_TYZB01_",
+          "TUYA",
+          "Smart Home"
         ],
         "productId": [
-          "TS0044"
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS013F"
         ],
         "endpoints": {
           "1": {
             "clusters": [
-              0,
-              1,
-              3,
-              6
-            ],
-            "bindings": [
-              6
+              "basic",
+              "identify",
+              "onOff",
+              "scenes"
             ]
-          },
-          "2": {
-            "clusters": [
-              0,
-              1,
-              3,
-              6
-            ],
-            "bindings": [
-              6
-            ]
-          },
-          "3": {
-            "clusters": [
-              0,
-              1,
-              3,
-              6
-            ],
-            "bindings": [
-              6
-            ]
-          },
-          "4": {
-            "clusters": [
-              0,
-              1,
-              3,
-              6
-            ],
-            "bindings": [
-              6
-            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/scene_remote_4gang/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your 4-Gang Scene Remote for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
@@ -1188,72 +951,55 @@
         "small": "/drivers/scene_remote_4gang/assets/images/small.png",
         "large": "/drivers/scene_remote_4gang/assets/images/large.png"
       },
-      "pair": [
+      "settings": [
         {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
-        },
-        {
-          "id": "add_devices",
-          "template": "add_devices"
+          "id": "button_layout",
+          "type": "dropdown",
+          "label": "Button Layout",
+          "value": "2x2"
         }
       ]
     },
     {
+      "id": "scene_switch",
       "name": {
-        "en": "Scene Switch",
-        "fr": "Interrupteur scene",
-        "nl": "scene Schakelaar",
-        "de": "Szenen Schalter"
+        "en": "Scene Switch"
       },
-      "class": "button",
+      "class": "switch",
       "capabilities": [
-        "button"
+        "onoff"
       ],
       "zigbee": {
         "manufacturerName": [
-          "TZ3000_5f43h46b",
-          "TZ3000_8oqcuhlp",
-          "TZ3000_a7ouggvs",
-          "TZ3000_abrsvsou",
-          "TZ3000_adkvzooy",
-          "TZ3000_bi6lpsew",
-          "TZ3000_czuyt8lz",
-          "TZ3000_dfgbtub0",
-          "TZ3000_ee8s8jj2",
-          "TZ3000_kjfzuycl",
-          "TZ3000_mrpevh8p",
-          "TZ3000_oj7gjqme",
-          "TZ3000_rtlqgqxm",
-          "TZ3000_tk3s5tyg",
-          "TZ3000_wkai4ga5",
-          "TZ3000_wyhuocal",
-          "TZ3000_xabckq1v",
-          "TZ3000_xd4egd1q",
-          "TZ3000_xkap8wtb"
+          "_TZ3000_",
+          "_TZE200_",
+          "_TYZB01_",
+          "TUYA",
+          "Smart Home"
         ],
         "productId": [
-          "TS0041",
-          "TS0042",
-          "TS0043",
-          "TS0044",
-          "TS004F"
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS013F"
         ],
         "endpoints": {
           "1": {
             "clusters": [
-              0,
-              1,
-              3,
-              4096
-            ],
-            "bindings": [
-              1,
-              4096
+              "basic",
+              "identify",
+              "onOff",
+              "scenes"
             ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/scene_switch/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Scene Switch for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
@@ -1261,101 +1007,58 @@
         "small": "/drivers/scene_switch/assets/images/small.png",
         "large": "/drivers/scene_switch/assets/images/large.png"
       },
-      "pair": [
+      "settings": [
         {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
-        },
-        {
-          "id": "add_devices",
-          "template": "add_devices"
+          "id": "scene_count",
+          "type": "number",
+          "label": "Scene Count",
+          "value": 4
         }
-      ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
-      "id": "scene_switch"
+      ]
     },
     {
+      "id": "smart_light",
       "name": {
-        "en": "Smart Light",
-        "fr": "light smart",
-        "nl": "Slimme Verlichting",
-        "de": "smarte Beleuchtung"
+        "en": "Smart Light"
       },
       "class": "light",
       "capabilities": [
         "onoff",
-        "dim",
-        "light_hue",
-        "light_saturation",
-        "light_temperature"
+        "dim"
       ],
-      "capabilitiesOptions": {
-        "onoff": {
-          "title": {
-            "en": "Power",
-            "fr": "Alimentation",
-            "nl": "Stroom",
-            "de": "Strom"
-          }
-        },
-        "dim": {
-          "title": {
-            "en": "Brightness",
-            "fr": "brightness",
-            "nl": "Helderheid",
-            "de": "Helligkeit"
-          }
-        }
-      },
       "zigbee": {
         "manufacturerName": [
-          "TZ3000_49qchf10",
-          "TZ3000_9cpuaca6",
-          "TZ3000_9yh2faoc",
-          "TZ3000_cjg9gpiq",
-          "TZ3000_d0rx5wf7",
-          "TZ3000_d8qmzq9h",
-          "TZ3000_dbou1ap4",
-          "TZ3000_evag0pvn",
-          "TZ3000_gek6snaj",
-          "TZ3000_h5gkvwn0",
-          "TZ3000_j5m5jgaj",
-          "TZ3000_keabpigv",
-          "TZ3000_lumyztas",
-          "TZ3000_oborybow",
-          "TZ3000_riwp3k79",
-          "TZ3000_wamqdr3f",
-          "TZ3000_ygaeb6gb",
-          "TZ3210_raqoarrb",
-          "TZ3210_sroezl0s"
+          "_TZ3000_",
+          "_TZE200_",
+          "_TYZB01_",
+          "TUYA",
+          "Smart Home"
         ],
         "productId": [
-          "TS0501A",
-          "TS0502A",
-          "TS0505A",
-          "TS0505B",
-          "TS110F"
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS013F"
         ],
         "endpoints": {
           "1": {
             "clusters": [
-              0,
-              6,
-              8,
-              768
-            ],
-            "bindings": [
-              6,
-              8,
-              768
+              "basic",
+              "identify",
+              "groups",
+              "scenes",
+              "onOff",
+              "levelControl"
             ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/smart_light/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Smart Light for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
@@ -1363,94 +1066,54 @@
         "small": "/drivers/smart_light/assets/images/small.png",
         "large": "/drivers/smart_light/assets/images/large.png"
       },
-      "pair": [
+      "settings": [
         {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
-        },
-        {
-          "id": "add_devices",
-          "template": "add_devices"
+          "id": "transition_time",
+          "type": "number",
+          "label": "Transition Time (seconds)",
+          "value": 1
         }
-      ],
-      "id": "smart_light"
+      ]
     },
     {
+      "id": "smart_plug",
       "name": {
-        "en": "Smart Plug",
-        "fr": "plug smarte",
-        "nl": "Slimme Stekker",
-        "de": "smarte Steckdose"
+        "en": "Smart Plug"
       },
       "class": "socket",
       "capabilities": [
-        "onoff",
-        "measure_power",
-        "meter_power"
+        "onoff"
       ],
-      "capabilitiesOptions": {
-        "onoff": {
-          "title": {
-            "en": "Power",
-            "fr": "Alimentation",
-            "nl": "Stroom",
-            "de": "Strom"
-          }
-        },
-        "measure_power": {
-          "title": {
-            "en": "Power",
-            "fr": "Puissance",
-            "nl": "Vermogen",
-            "de": "Leistung"
-          },
-          "units": "W"
-        }
-      },
       "zigbee": {
         "manufacturerName": [
-          "TYZB01_iuepbmpv",
-          "TZ3000_00mk2xzy",
-          "TZ3000_1obwwnmq",
-          "TZ3000_3ooaz3ng",
-          "TZ3000_8nkb7mof",
-          "TZ3000_cphmq0q7",
-          "TZ3000_ew3ldmgx",
-          "TZ3000_g5xawfcq",
-          "TZ3000_kky16aay",
-          "TZ3000_mraovvmm",
-          "TZ3000_okaz9tjs",
-          "TZ3000_pdevkigv",
-          "TZ3000_rdtixbnu",
-          "TZ3000_rdtmvrpu",
-          "TZ3000_typdpbpg",
-          "TZ3000_upjrsxh1",
-          "TZ3000_vtscrpmw",
-          "TZ3000_vtscrxmr",
-          "TZ3000_w0qqde0g",
-          "TZ3000_zmy1waw6",
-          "TZ3210_r5afgmkl"
+          "_TZ3000_",
+          "_TZE200_",
+          "_TYZB01_",
+          "TUYA",
+          "Smart Home"
         ],
         "productId": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS004F",
           "TS011F",
-          "TS0121"
+          "TS0121",
+          "TS013F"
         ],
         "endpoints": {
           "1": {
             "clusters": [
-              0,
-              6,
-              1794,
-              2820
-            ],
-            "bindings": [
-              6,
-              1794,
-              2820
+              "basic",
+              "identify",
+              "onOff"
             ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/smart_plug/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Smart Plug for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
@@ -1458,28 +1121,19 @@
         "small": "/drivers/smart_plug/assets/images/small.png",
         "large": "/drivers/smart_plug/assets/images/large.png"
       },
-      "pair": [
+      "settings": [
         {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
-        },
-        {
-          "id": "add_devices",
-          "template": "add_devices"
+          "id": "power_on_behavior",
+          "type": "dropdown",
+          "label": "Power-On Behavior",
+          "value": "remember"
         }
-      ],
-      "id": "smart_plug"
+      ]
     },
     {
       "id": "smoke_detector",
       "name": {
-        "en": "Smoke Detector",
-        "fr": "detector de smoke",
-        "nl": "Rookmelder",
-        "de": "Rauchmelder"
+        "en": "Smoke Detector"
       },
       "class": "sensor",
       "capabilities": [
@@ -1488,38 +1142,35 @@
       ],
       "zigbee": {
         "manufacturerName": [
-          "TYZB01_dsjszp0x",
-          "TZ3000_26fmupbb",
-          "TZ3000_7d5n7paq",
-          "TZ3000_7d5p8p8l",
-          "TZ3000_9yh2faoc",
-          "TZ3000_a6iuj7pc",
-          "TZ3000_b4v2k9ja",
-          "TZ3000_f9ckckaq",
-          "TZ3000_kdrbjd3k",
-          "TZ3000_s6vv6kpn",
-          "TZ3000_t6vqnlgn",
-          "TZ3000_tkfpyqhj",
-          "TZ3210_ckn75kwm",
-          "TZ3210_up3pngle",
-          "TZE200_m9skfctm",
-          "TZE200_ntcy3xu1"
+          "_TZ3000_",
+          "_TZE200_",
+          "_TYZB01_",
+          "TUYA",
+          "Smart Home"
         ],
         "productId": [
-          "TS0205",
-          "TS0601"
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS013F"
         ],
         "endpoints": {
           "1": {
             "clusters": [
-              0,
-              1,
-              1280
-            ],
-            "bindings": [
-              1,
-              1280
+              "basic",
+              "powerConfiguration",
+              "identify",
+              "iasZone"
             ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/smoke_detector/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Smoke Detector for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
@@ -1527,18 +1178,19 @@
         "small": "/drivers/smoke_detector/assets/images/small.png",
         "large": "/drivers/smoke_detector/assets/images/large.png"
       },
-      "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
-      }
+      "settings": [
+        {
+          "id": "smoke_sensitivity",
+          "type": "dropdown",
+          "label": "Smoke Sensitivity",
+          "value": "medium"
+        }
+      ]
     },
     {
+      "id": "temperature_humidity_sensor",
       "name": {
-        "en": "Temperature & Humidity Sensor",
-        "fr": "sensor temperature et humidity",
-        "nl": "Temperatuur & Vochtigheid Sensor",
-        "de": "Temperatur & Feuchtigkeitssensor"
+        "en": "Temperature & Humidity Sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -1546,70 +1198,38 @@
         "measure_humidity",
         "measure_battery"
       ],
-      "capabilitiesOptions": {
-        "measure_temperature": {
-          "title": {
-            "en": "Temperature",
-            "fr": "temperature",
-            "nl": "Temperatuur",
-            "de": "Temperatur"
-          },
-          "units": "°C"
-        },
-        "measure_humidity": {
-          "title": {
-            "en": "Humidity",
-            "fr": "humidity",
-            "nl": "Vochtigheid",
-            "de": "Feuchtigkeit"
-          },
-          "units": "%"
-        }
-      },
       "zigbee": {
         "manufacturerName": [
-          "TZ3000_02iqnz2p",
-          "TZ3000_5e3v2inz",
-          "TZ3000_7d8yme6f",
-          "TZ3000_8ybe88nf",
-          "TZ3000_b28wrpvx",
-          "TZ3000_bguser20",
-          "TZ3000_bsvqrxru",
-          "TZ3000_dowj6gyi",
-          "TZ3000_fie1dpkm",
-          "TZ3000_fllyghyj",
-          "TZ3000_i8jfiezr",
-          "TZ3000_itnrsufe",
-          "TZ3000_lfa05ajd",
-          "TZ3000_nlsszmzl",
-          "TZ3000_qb3zqzdy",
-          "TZ3000_qemkpaa4",
-          "TZ3000_rktykq36",
-          "TZ3000_wyhuocal",
-          "TZE200_8ygsuhe1",
-          "TZE200_9yapgbuv",
-          "TZE200_bjawzodf",
-          "TZE200_locansqn",
-          "TZE200_yvx5lh6k",
-          "TZE200_zl1kmjqx"
+          "_TZ3000_",
+          "_TZE200_",
+          "_TYZB01_",
+          "TUYA",
+          "Smart Home"
         ],
         "productId": [
-          "TS0201",
-          "TS0601"
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS013F"
         ],
         "endpoints": {
           "1": {
             "clusters": [
-              0,
-              1,
-              1026,
-              1029
-            ],
-            "bindings": [
-              1,
-              1026,
-              1029
+              "basic",
+              "powerConfiguration",
+              "identify",
+              "temperatureMeasurement",
+              "relativeHumidity"
             ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/temperature_humidity_sensor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Temperature & Humidity Sensor for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
@@ -1617,33 +1237,31 @@
         "small": "/drivers/temperature_humidity_sensor/assets/images/small.png",
         "large": "/drivers/temperature_humidity_sensor/assets/images/large.png"
       },
-      "pair": [
+      "settings": [
         {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
+          "id": "temp_offset",
+          "type": "number",
+          "label": "Temperature Offset (°C)",
+          "value": 0
         },
         {
-          "id": "add_devices",
-          "template": "add_devices"
+          "id": "humidity_offset",
+          "type": "number",
+          "label": "Humidity Offset (%)",
+          "value": 0
+        },
+        {
+          "id": "reporting_interval",
+          "type": "number",
+          "label": "Reporting Interval (minutes)",
+          "value": 5
         }
-      ],
-      "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
-      },
-      "id": "temperature_humidity_sensor"
+      ]
     },
     {
       "id": "thermostat",
       "name": {
-        "en": "Smart thermostat",
-        "fr": "thermostat smart",
-        "nl": "Slimme Thermostaat",
-        "de": "smarter thermostat"
+        "en": "Smart Thermostat"
       },
       "class": "thermostat",
       "capabilities": [
@@ -1652,41 +1270,38 @@
         "measure_humidity",
         "thermostat_mode"
       ],
-      "capabilitiesOptions": {
-        "target_temperature": {
-          "min": 5,
-          "max": 35,
-          "step": 0.5
-        }
-      },
       "zigbee": {
         "manufacturerName": [
-          "TZE200_7yoranx2",
-          "TZE200_8whxpsiw",
-          "TZE200_aoclfnxz",
-          "TZE200_b6wax7g0",
-          "TZE200_c88teujp",
-          "TZE200_cpmgn2cf",
-          "TZE200_rtrmfadk",
-          "TZE200_u9bfwha0",
-          "TZE200_ye5jkfsb",
-          "TZE200_zr9c0day",
-          "TZE200_ztvwu4nk"
+          "_TZ3000_",
+          "_TZE200_",
+          "_TYZB01_",
+          "TUYA",
+          "Smart Home"
         ],
         "productId": [
-          "TS0601"
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS013F"
         ],
         "endpoints": {
           "1": {
             "clusters": [
-              0,
-              4,
-              5,
-              61184
-            ],
-            "bindings": [
-              0
+              "basic",
+              "identify",
+              "thermostat",
+              "temperatureMeasurement",
+              "relativeHumidity"
             ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/thermostat/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Smart Thermostat for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
@@ -1694,27 +1309,25 @@
         "small": "/drivers/thermostat/assets/images/small.png",
         "large": "/drivers/thermostat/assets/images/large.png"
       },
-      "pair": [
+      "settings": [
         {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
+          "id": "heating_system",
+          "type": "dropdown",
+          "label": "Heating System",
+          "value": "gas"
         },
         {
-          "id": "add_devices",
-          "template": "add_devices"
+          "id": "eco_mode",
+          "type": "checkbox",
+          "label": "Eco Mode",
+          "value": true
         }
       ]
     },
     {
       "id": "water_leak_detector",
       "name": {
-        "en": "Water Leak Sensor",
-        "fr": "sensor de leak d'water",
-        "nl": "Waterlek Sensor",
-        "de": "Wasserleck Sensor"
+        "en": "Water Leak Detector"
       },
       "class": "sensor",
       "capabilities": [
@@ -1723,55 +1336,35 @@
       ],
       "zigbee": {
         "manufacturerName": [
-          "TUYATEC-3tipnsrx",
-          "TYST11_qq9mpfhw",
-          "TYZB01_sqmd19i1",
-          "TZ3000_0s9gukzt",
-          "TZ3000_3dfewsk1",
-          "TZ3000_4fhqe0k7",
-          "TZ3000_4uvovz4r",
-          "TZ3000_6oabgtzv",
-          "TZ3000_7t5fhulv",
-          "TZ3000_85czd6fy",
-          "TZ3000_8kkfz6zj",
-          "TZ3000_aorngzbe",
-          "TZ3000_awvmkayh",
-          "TZ3000_eit7p838",
-          "TZ3000_fxvjhdyl",
-          "TZ3000_jqliswuk",
-          "TZ3000_k4ej3ww2",
-          "TZ3000_kmyg4l5w",
-          "TZ3000_kstbkt6a",
-          "TZ3000_kyb656no",
-          "TZ3000_mugyhz0q",
-          "TZ3000_ocjlo4ea",
-          "TZ3000_rg8fd6c8",
-          "TZ3000_t6jriawg",
-          "TZ3000_ukr7rrp0",
-          "TZ3000_upgcbody",
-          "TZ3000_wuep9zng",
-          "TZ3000_ww9i3e0y",
-          "TZ3000_yoqmkwpd",
-          "TZE200_jthf7vb6",
-          "TZE200_qq9mpfhw"
+          "_TZ3000_",
+          "_TZE200_",
+          "_TYZB01_",
+          "TUYA",
+          "Smart Home"
         ],
         "productId": [
-          "RH3001",
-          "TS0207",
-          "TS0601",
-          "q9mpfhw"
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS013F"
         ],
         "endpoints": {
           "1": {
             "clusters": [
-              0,
-              1,
-              1280
-            ],
-            "bindings": [
-              1,
-              1280
+              "basic",
+              "powerConfiguration",
+              "identify",
+              "iasZone"
             ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/water_leak_detector/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Water Leak Detector for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
@@ -1779,11 +1372,14 @@
         "small": "/drivers/water_leak_detector/assets/images/small.png",
         "large": "/drivers/water_leak_detector/assets/images/large.png"
       },
-      "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
-      }
+      "settings": [
+        {
+          "id": "detection_sensitivity",
+          "type": "dropdown",
+          "label": "Water Detection Sensitivity",
+          "value": "high"
+        }
+      ]
     }
   ]
 }

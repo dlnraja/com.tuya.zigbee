@@ -1,0 +1,1664 @@
+{
+  "device_databases": {
+    "total_devices": 67,
+    "manufacturers": 50,
+    "manufacturer_coverage": {
+      "Aqara": [
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown"
+      ],
+      "LUMI": [
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown"
+      ],
+      "Bosch": [
+        "Unknown",
+        "Unknown"
+      ],
+      "Tuya": [
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "TS0121",
+        "TS0201",
+        "TS0215A",
+        "TS0012",
+        "TS0501B",
+        "TS004F",
+        "TS011F",
+        "TS0219",
+        "TS0601",
+        "TS0222",
+        "TS0202",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "TS0121",
+        "TS0201",
+        "TS0215A",
+        "TS0012",
+        "TS0501B",
+        "TS004F",
+        "TS011F",
+        "TS0219",
+        "TS0601",
+        "TS0222",
+        "TS0202"
+      ],
+      "IKEA": [
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown"
+      ],
+      "TZ3000_*": [
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown"
+      ],
+      "TZ3210_*": [
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown"
+      ],
+      "TYZB01_*": [
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown"
+      ],
+      "TZ3300_*": [
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown"
+      ],
+      "TZE200_7tdtqgwv": [
+        "Unknown",
+        "Unknown"
+      ],
+      "TZE200_amp6tsvy": [
+        "Unknown",
+        "Unknown"
+      ],
+      "TZE200_7yodxhya": [
+        "Unknown",
+        "Unknown"
+      ],
+      "TZE200_locansqn": [
+        "Unknown",
+        "Unknown"
+      ],
+      "TZE200_3i3exu4n": [
+        "Unknown",
+        "Unknown"
+      ],
+      "TZE200_7hfcudw5": [
+        "Unknown",
+        "Unknown"
+      ],
+      "TZE200_3towulqd": [
+        "Unknown",
+        "Unknown"
+      ],
+      "TZE200_whpb9y8z": [
+        "Unknown",
+        "Unknown"
+      ],
+      "TZE200_7yuohek9": [
+        "Unknown",
+        "Unknown"
+      ],
+      "TZE200_3towolqd": [
+        "Unknown",
+        "Unknown"
+      ],
+      "TYZB02_*": [
+        "Unknown"
+      ],
+      "TZ3400_*": [
+        "Unknown"
+      ],
+      "Tuya-ts0011": [
+        "Unknown",
+        "Unknown"
+      ],
+      "Tuya-ts011f": [
+        "Unknown",
+        "Unknown"
+      ],
+      "Various": [
+        "Unknown",
+        "Unknown"
+      ],
+      "Unknown": [
+        "TZE200",
+        "RH3052",
+        "TS130F",
+        "TZE200",
+        "RH3052",
+        "TS130F",
+        "TS0011",
+        "TS0012",
+        "TS0011",
+        "TS0012",
+        "TS004F",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "TS0011",
+        "TS0012",
+        "TS0011",
+        "TS0012",
+        "TS004F",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown"
+      ],
+      "_TZE200_ztc6ggyl": [
+        "TS0601",
+        "TS0601"
+      ],
+      "_TZE200_myd45weu": [
+        "TS0601",
+        "TS0601"
+      ],
+      "_TZE200_yvx5lh6k": [
+        "TS0601",
+        "TS0601"
+      ],
+      "_TZ3000_i8jfiezr": [
+        "TS0201",
+        "TS0201"
+      ],
+      "_TYZB01_jytabjkb": [
+        "TS0202",
+        "TS0202"
+      ],
+      "_TZ3000_ebar6ljy": [
+        "TS0203",
+        "TS0203"
+      ],
+      "_TYZB01_sqmd19i1": [
+        "TS0207",
+        "TS0207"
+      ],
+      "_TZ3000_kdi2o9m6": [
+        "TS011F",
+        "TS011F"
+      ],
+      "_TZ3000_odygigth": [
+        "TS0505A",
+        "TS0505A"
+      ],
+      "_TZ3000_*": [
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown"
+      ],
+      "_TZ3210_*": [
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown"
+      ],
+      "_TYZB01_*": [
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown"
+      ],
+      "_TZ3300_*": [
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown",
+        "Unknown"
+      ],
+      "_TZE200_7tdtqgwv": [
+        "Unknown",
+        "Unknown"
+      ],
+      "_TZE200_amp6tsvy": [
+        "Unknown",
+        "Unknown"
+      ],
+      "_TZE200_7yodxhya": [
+        "Unknown",
+        "Unknown"
+      ],
+      "_TZE200_locansqn": [
+        "Unknown",
+        "Unknown"
+      ],
+      "_TZE200_3i3exu4n": [
+        "Unknown",
+        "Unknown"
+      ],
+      "_TZE200_7hfcudw5": [
+        "Unknown",
+        "Unknown"
+      ],
+      "_TZE200_3towulqd": [
+        "Unknown",
+        "Unknown"
+      ],
+      "_TZE200_whpb9y8z": [
+        "Unknown",
+        "Unknown"
+      ],
+      "_TZE200_7yuohek9": [
+        "Unknown",
+        "Unknown"
+      ],
+      "_TZE200_3towolqd": [
+        "Unknown",
+        "Unknown"
+      ],
+      "_TYZB02_*": [
+        "Unknown"
+      ],
+      "_TZ3400_*": [
+        "Unknown"
+      ]
+    },
+    "devices": {
+      "Aqara_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "Aqara",
+        "type": "sensors",
+        "capabilities": [
+          "alarm_motion",
+          "measure_battery"
+        ],
+        "clusters": [
+          0,
+          1,
+          1280
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "LUMI_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "LUMI",
+        "type": "sensors",
+        "capabilities": [
+          "alarm_motion",
+          "measure_battery"
+        ],
+        "clusters": [
+          0,
+          1,
+          1280
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "Bosch_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "Bosch",
+        "type": "climate",
+        "capabilities": [
+          "measure_temperature",
+          "target_temperature",
+          "measure_battery"
+        ],
+        "clusters": [
+          0,
+          1,
+          1026,
+          513
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "Tuya_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "Tuya",
+        "type": "community_reported",
+        "capabilities": {
+          "alarm_motion": {
+            "type": "boolean",
+            "description": "Motion detected"
+          },
+          "measure_luminance": {
+            "type": "number",
+            "unit": "lux",
+            "description": "Current light level in lux"
+          },
+          "measure_battery": {
+            "type": "number",
+            "unit": "percentage",
+            "description": "Remaining battery percentage"
+          },
+          "alarm_battery": {
+            "type": "boolean",
+            "description": "Indicates low battery status"
+          }
+        },
+        "clusters": [],
+        "source": "enhanced-device-database.json"
+      },
+      "IKEA_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "IKEA",
+        "type": "lights",
+        "capabilities": [
+          "onoff",
+          "dim",
+          "light_temperature"
+        ],
+        "clusters": [
+          0,
+          6,
+          8,
+          768
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "TZ3000_*_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "TZ3000_*",
+        "type": "lights",
+        "capabilities": [
+          "onoff"
+        ],
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "TZ3210_*_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "TZ3210_*",
+        "type": "lights",
+        "capabilities": [
+          "onoff"
+        ],
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "TYZB01_*_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "TYZB01_*",
+        "type": "lights",
+        "capabilities": [
+          "onoff"
+        ],
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "TZ3300_*_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "TZ3300_*",
+        "type": "lights",
+        "capabilities": [
+          "onoff"
+        ],
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "TZE200_7tdtqgwv_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "TZE200_7tdtqgwv",
+        "type": "lights",
+        "capabilities": [
+          "alarm_motion",
+          "measure_temperature",
+          "measure_battery",
+          "alarm_battery",
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "fan_speed",
+          "dim",
+          "target_temperature",
+          "windowcoverings_state",
+          "lock_state"
+        ],
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          1280
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "TZE200_amp6tsvy_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "TZE200_amp6tsvy",
+        "type": "lights",
+        "capabilities": [
+          "alarm_motion",
+          "measure_temperature",
+          "measure_battery",
+          "alarm_battery",
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "fan_speed",
+          "dim",
+          "target_temperature",
+          "windowcoverings_state",
+          "lock_state"
+        ],
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          1280
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "TZE200_7yodxhya_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "TZE200_7yodxhya",
+        "type": "lights",
+        "capabilities": [
+          "alarm_motion",
+          "measure_temperature",
+          "measure_battery",
+          "alarm_battery",
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "fan_speed",
+          "dim",
+          "target_temperature",
+          "windowcoverings_state",
+          "lock_state"
+        ],
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          1280
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "TZE200_locansqn_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "TZE200_locansqn",
+        "type": "lights",
+        "capabilities": [
+          "alarm_motion",
+          "measure_temperature",
+          "measure_battery",
+          "alarm_battery",
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "fan_speed",
+          "dim",
+          "target_temperature",
+          "windowcoverings_state",
+          "lock_state"
+        ],
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          1280
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "TZE200_3i3exu4n_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "TZE200_3i3exu4n",
+        "type": "lights",
+        "capabilities": [
+          "alarm_motion",
+          "measure_temperature",
+          "measure_battery",
+          "alarm_battery",
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "fan_speed",
+          "dim",
+          "target_temperature",
+          "windowcoverings_state",
+          "lock_state"
+        ],
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          1280
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "TZE200_7hfcudw5_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "TZE200_7hfcudw5",
+        "type": "lights",
+        "capabilities": [
+          "alarm_motion",
+          "measure_temperature",
+          "measure_battery",
+          "alarm_battery",
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "fan_speed",
+          "dim",
+          "target_temperature",
+          "windowcoverings_state",
+          "lock_state"
+        ],
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          1280
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "TZE200_3towulqd_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "TZE200_3towulqd",
+        "type": "lights",
+        "capabilities": [
+          "alarm_motion",
+          "measure_temperature",
+          "measure_battery",
+          "alarm_battery",
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "fan_speed",
+          "dim",
+          "target_temperature",
+          "windowcoverings_state",
+          "lock_state"
+        ],
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          1280
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "TZE200_whpb9y8z_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "TZE200_whpb9y8z",
+        "type": "lights",
+        "capabilities": [
+          "alarm_motion",
+          "measure_temperature",
+          "measure_battery",
+          "alarm_battery",
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "fan_speed",
+          "dim",
+          "target_temperature",
+          "windowcoverings_state",
+          "lock_state"
+        ],
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          1280
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "TZE200_7yuohek9_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "TZE200_7yuohek9",
+        "type": "lights",
+        "capabilities": [
+          "alarm_motion",
+          "measure_temperature",
+          "measure_battery",
+          "alarm_battery",
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "fan_speed",
+          "dim",
+          "target_temperature",
+          "windowcoverings_state",
+          "lock_state"
+        ],
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          1280
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "TZE200_3towolqd_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "TZE200_3towolqd",
+        "type": "lights",
+        "capabilities": [
+          "alarm_motion",
+          "measure_temperature",
+          "measure_battery",
+          "alarm_battery",
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "fan_speed",
+          "dim",
+          "target_temperature",
+          "windowcoverings_state",
+          "lock_state"
+        ],
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          1280
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "TYZB02_*_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "TYZB02_*",
+        "type": "other",
+        "capabilities": [
+          "dynamic"
+        ],
+        "clusters": [
+          "dynamic"
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "TZ3400_*_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "TZ3400_*",
+        "type": "other",
+        "capabilities": [
+          "dynamic"
+        ],
+        "clusters": [
+          "dynamic"
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "Tuya-ts0011_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "Tuya-ts0011",
+        "type": "switches",
+        "capabilities": [
+          "onoff",
+          "measure_battery"
+        ],
+        "clusters": [
+          0,
+          4,
+          5,
+          6,
+          4096,
+          61184
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "Tuya-ts011f_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "Tuya-ts011f",
+        "type": "switches",
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "meter_power"
+        ],
+        "clusters": [
+          0,
+          4,
+          5,
+          6,
+          1794,
+          2820
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "Various_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "Various",
+        "type": "other",
+        "capabilities": [],
+        "clusters": [
+          "genBasic"
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "Unknown_TZE200": {
+        "model": "TZE200",
+        "manufacturer": "Unknown",
+        "type": "sensor",
+        "capabilities": [],
+        "clusters": [],
+        "source": "device-database.json"
+      },
+      "Unknown_RH3052": {
+        "model": "RH3052",
+        "manufacturer": "Unknown",
+        "type": "sensor",
+        "capabilities": [],
+        "clusters": [],
+        "source": "device-database.json"
+      },
+      "Unknown_TS130F": {
+        "model": "TS130F",
+        "manufacturer": "Unknown",
+        "type": "sensor",
+        "capabilities": [],
+        "clusters": [],
+        "source": "device-database.json"
+      },
+      "_TZE200_ztc6ggyl_TS0601": {
+        "model": "TS0601",
+        "manufacturer": "_TZE200_ztc6ggyl",
+        "type": "Motion Sensor",
+        "capabilities": [],
+        "clusters": [],
+        "source": "enhanced-device-database.json"
+      },
+      "_TZE200_myd45weu_TS0601": {
+        "model": "TS0601",
+        "manufacturer": "_TZE200_myd45weu",
+        "type": "Soil Sensor",
+        "capabilities": [],
+        "clusters": [],
+        "source": "enhanced-device-database.json"
+      },
+      "_TZE200_yvx5lh6k_TS0601": {
+        "model": "TS0601",
+        "manufacturer": "_TZE200_yvx5lh6k",
+        "type": "Air Quality Monitor",
+        "capabilities": [],
+        "clusters": [],
+        "source": "enhanced-device-database.json"
+      },
+      "_TZ3000_i8jfiezr_TS0201": {
+        "model": "TS0201",
+        "manufacturer": "_TZ3000_i8jfiezr",
+        "type": "Temperature/Humidity Sensor",
+        "capabilities": [],
+        "clusters": [],
+        "source": "enhanced-device-database.json"
+      },
+      "_TYZB01_jytabjkb_TS0202": {
+        "model": "TS0202",
+        "manufacturer": "_TYZB01_jytabjkb",
+        "type": "Motion Sensor",
+        "capabilities": [],
+        "clusters": [],
+        "source": "enhanced-device-database.json"
+      },
+      "_TZ3000_ebar6ljy_TS0203": {
+        "model": "TS0203",
+        "manufacturer": "_TZ3000_ebar6ljy",
+        "type": "Door/Window Sensor",
+        "capabilities": [],
+        "clusters": [],
+        "source": "enhanced-device-database.json"
+      },
+      "_TYZB01_sqmd19i1_TS0207": {
+        "model": "TS0207",
+        "manufacturer": "_TYZB01_sqmd19i1",
+        "type": "Water Sensor",
+        "capabilities": [],
+        "clusters": [],
+        "source": "enhanced-device-database.json"
+      },
+      "_TZ3000_kdi2o9m6_TS011F": {
+        "model": "TS011F",
+        "manufacturer": "_TZ3000_kdi2o9m6",
+        "type": "Smart Plug",
+        "capabilities": [],
+        "clusters": [],
+        "source": "enhanced-device-database.json"
+      },
+      "_TZ3000_odygigth_TS0505A": {
+        "model": "TS0505A",
+        "manufacturer": "_TZ3000_odygigth",
+        "type": "RGB Light",
+        "capabilities": [],
+        "clusters": [],
+        "source": "enhanced-device-database.json"
+      },
+      "Tuya_TS0121": {
+        "model": "TS0121",
+        "manufacturer": "Tuya",
+        "type": "On/Off Plug",
+        "capabilities": {
+          "onoff": {
+            "type": "boolean",
+            "gettable": true,
+            "settable": true,
+            "description": "Turn the device on or off"
+          },
+          "measure_power": {
+            "type": "number",
+            "unit": "W",
+            "description": "Current power consumption in watts"
+          },
+          "meter_power": {
+            "type": "number",
+            "unit": "kWh",
+            "description": "Total energy consumption in kilowatt-hours"
+          }
+        },
+        "clusters": [],
+        "source": "enhanced-device-database.json"
+      },
+      "Tuya_TS0201": {
+        "model": "TS0201",
+        "manufacturer": "Tuya",
+        "type": "Sensor",
+        "capabilities": {
+          "measure_temperature": {
+            "type": "number",
+            "unit": "celsius",
+            "description": "Current temperature in Celsius"
+          },
+          "measure_humidity": {
+            "type": "number",
+            "unit": "percentage",
+            "description": "Current relative humidity percentage"
+          },
+          "measure_battery": {
+            "type": "number",
+            "unit": "percentage",
+            "description": "Remaining battery percentage"
+          },
+          "alarm_battery": {
+            "type": "boolean",
+            "description": "Indicates low battery status"
+          }
+        },
+        "clusters": [],
+        "source": "enhanced-device-database.json"
+      },
+      "Tuya_TS0215A": {
+        "model": "TS0215A",
+        "manufacturer": "Tuya",
+        "type": "Remote",
+        "capabilities": [],
+        "clusters": [],
+        "source": "enhanced-device-database.json"
+      },
+      "Tuya_TS0012": {
+        "model": "TS0012",
+        "manufacturer": "Tuya",
+        "type": "Switch",
+        "capabilities": [],
+        "clusters": [],
+        "source": "enhanced-device-database.json"
+      },
+      "Tuya_TS0501B": {
+        "model": "TS0501B",
+        "manufacturer": "Tuya",
+        "type": "Light",
+        "capabilities": {
+          "onoff": {
+            "type": "boolean",
+            "gettable": true,
+            "settable": true,
+            "description": "Turn the light on or off"
+          },
+          "dim": {
+            "type": "number",
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "description": "Brightness level from 0 to 1"
+          },
+          "light_hue": {
+            "type": "number",
+            "min": 0,
+            "max": 1,
+            "description": "Hue value from 0 to 1"
+          },
+          "light_saturation": {
+            "type": "number",
+            "min": 0,
+            "max": 1,
+            "description": "Saturation value from 0 to 1"
+          }
+        },
+        "clusters": [],
+        "source": "enhanced-device-database.json"
+      },
+      "Tuya_TS004F": {
+        "model": "TS004F",
+        "manufacturer": "Tuya",
+        "type": "Remote",
+        "capabilities": {
+          "button": {
+            "type": "enum",
+            "values": [
+              "single",
+              "double",
+              "hold",
+              "release"
+            ],
+            "description": "Button press type"
+          },
+          "measure_battery": {
+            "type": "number",
+            "unit": "percentage",
+            "description": "Remaining battery percentage"
+          },
+          "alarm_battery": {
+            "type": "boolean",
+            "description": "Indicates low battery status"
+          }
+        },
+        "clusters": [],
+        "source": "enhanced-device-database.json"
+      },
+      "Tuya_TS011F": {
+        "model": "TS011F",
+        "manufacturer": "Tuya",
+        "type": "On/Off Plug",
+        "capabilities": {
+          "onoff": {
+            "type": "boolean",
+            "gettable": true,
+            "settable": true,
+            "description": "Turn the device on or off"
+          },
+          "usb_onoff": {
+            "type": "boolean",
+            "gettable": true,
+            "settable": true,
+            "description": "Control the USB port on/off state"
+          },
+          "measure_power": {
+            "type": "number",
+            "unit": "W",
+            "description": "Current power consumption in watts"
+          },
+          "meter_power": {
+            "type": "number",
+            "unit": "kWh",
+            "description": "Total energy consumption in kilowatt-hours"
+          },
+          "measure_voltage": {
+            "type": "number",
+            "unit": "V",
+            "description": "Current voltage"
+          },
+          "measure_current": {
+            "type": "number",
+            "unit": "A",
+            "description": "Current amperage"
+          }
+        },
+        "clusters": [],
+        "source": "enhanced-device-database.json"
+      },
+      "Tuya_TS0219": {
+        "model": "TS0219",
+        "manufacturer": "Tuya",
+        "type": "Sensor",
+        "capabilities": [],
+        "clusters": [],
+        "source": "enhanced-device-database.json"
+      },
+      "Tuya_TS0601": {
+        "model": "TS0601",
+        "manufacturer": "Tuya",
+        "type": "Thermostat",
+        "capabilities": [],
+        "clusters": [],
+        "source": "enhanced-device-database.json"
+      },
+      "Tuya_TS0222": {
+        "model": "TS0222",
+        "manufacturer": "Tuya",
+        "type": "Sensor",
+        "capabilities": [],
+        "clusters": [],
+        "source": "enhanced-device-database.json"
+      },
+      "Tuya_TS0202": {
+        "model": "TS0202",
+        "manufacturer": "Tuya",
+        "type": "Sensor",
+        "capabilities": {
+          "alarm_motion": {
+            "type": "boolean",
+            "description": "Motion detected"
+          },
+          "measure_luminance": {
+            "type": "number",
+            "unit": "lux",
+            "description": "Current light level in lux"
+          },
+          "measure_battery": {
+            "type": "number",
+            "unit": "percentage",
+            "description": "Remaining battery percentage"
+          },
+          "alarm_battery": {
+            "type": "boolean",
+            "description": "Indicates low battery status"
+          }
+        },
+        "clusters": [],
+        "source": "enhanced-device-database.json"
+      },
+      "_TZ3000_*_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "_TZ3000_*",
+        "type": "lights",
+        "capabilities": [
+          "onoff"
+        ],
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "_TZ3210_*_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "_TZ3210_*",
+        "type": "lights",
+        "capabilities": [
+          "onoff"
+        ],
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "_TYZB01_*_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "_TYZB01_*",
+        "type": "lights",
+        "capabilities": [
+          "onoff"
+        ],
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "_TZ3300_*_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "_TZ3300_*",
+        "type": "lights",
+        "capabilities": [
+          "onoff"
+        ],
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "_TZE200_7tdtqgwv_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "_TZE200_7tdtqgwv",
+        "type": "lights",
+        "capabilities": [
+          "alarm_motion",
+          "measure_temperature",
+          "measure_battery",
+          "alarm_battery",
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "fan_speed",
+          "dim",
+          "target_temperature",
+          "windowcoverings_state",
+          "lock_state"
+        ],
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          1280
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "_TZE200_amp6tsvy_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "_TZE200_amp6tsvy",
+        "type": "lights",
+        "capabilities": [
+          "alarm_motion",
+          "measure_temperature",
+          "measure_battery",
+          "alarm_battery",
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "fan_speed",
+          "dim",
+          "target_temperature",
+          "windowcoverings_state",
+          "lock_state"
+        ],
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          1280
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "_TZE200_7yodxhya_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "_TZE200_7yodxhya",
+        "type": "lights",
+        "capabilities": [
+          "alarm_motion",
+          "measure_temperature",
+          "measure_battery",
+          "alarm_battery",
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "fan_speed",
+          "dim",
+          "target_temperature",
+          "windowcoverings_state",
+          "lock_state"
+        ],
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          1280
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "_TZE200_locansqn_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "_TZE200_locansqn",
+        "type": "lights",
+        "capabilities": [
+          "alarm_motion",
+          "measure_temperature",
+          "measure_battery",
+          "alarm_battery",
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "fan_speed",
+          "dim",
+          "target_temperature",
+          "windowcoverings_state",
+          "lock_state"
+        ],
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          1280
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "_TZE200_3i3exu4n_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "_TZE200_3i3exu4n",
+        "type": "lights",
+        "capabilities": [
+          "alarm_motion",
+          "measure_temperature",
+          "measure_battery",
+          "alarm_battery",
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "fan_speed",
+          "dim",
+          "target_temperature",
+          "windowcoverings_state",
+          "lock_state"
+        ],
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          1280
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "_TZE200_7hfcudw5_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "_TZE200_7hfcudw5",
+        "type": "lights",
+        "capabilities": [
+          "alarm_motion",
+          "measure_temperature",
+          "measure_battery",
+          "alarm_battery",
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "fan_speed",
+          "dim",
+          "target_temperature",
+          "windowcoverings_state",
+          "lock_state"
+        ],
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          1280
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "_TZE200_3towulqd_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "_TZE200_3towulqd",
+        "type": "lights",
+        "capabilities": [
+          "alarm_motion",
+          "measure_temperature",
+          "measure_battery",
+          "alarm_battery",
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "fan_speed",
+          "dim",
+          "target_temperature",
+          "windowcoverings_state",
+          "lock_state"
+        ],
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          1280
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "_TZE200_whpb9y8z_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "_TZE200_whpb9y8z",
+        "type": "lights",
+        "capabilities": [
+          "alarm_motion",
+          "measure_temperature",
+          "measure_battery",
+          "alarm_battery",
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "fan_speed",
+          "dim",
+          "target_temperature",
+          "windowcoverings_state",
+          "lock_state"
+        ],
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          1280
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "_TZE200_7yuohek9_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "_TZE200_7yuohek9",
+        "type": "lights",
+        "capabilities": [
+          "alarm_motion",
+          "measure_temperature",
+          "measure_battery",
+          "alarm_battery",
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "fan_speed",
+          "dim",
+          "target_temperature",
+          "windowcoverings_state",
+          "lock_state"
+        ],
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          1280
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "_TZE200_3towolqd_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "_TZE200_3towolqd",
+        "type": "lights",
+        "capabilities": [
+          "alarm_motion",
+          "measure_temperature",
+          "measure_battery",
+          "alarm_battery",
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "fan_speed",
+          "dim",
+          "target_temperature",
+          "windowcoverings_state",
+          "lock_state"
+        ],
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          1280
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "_TYZB02_*_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "_TYZB02_*",
+        "type": "other",
+        "capabilities": [
+          "dynamic"
+        ],
+        "clusters": [
+          "dynamic"
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "_TZ3400_*_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "_TZ3400_*",
+        "type": "other",
+        "capabilities": [
+          "dynamic"
+        ],
+        "clusters": [
+          "dynamic"
+        ],
+        "source": "enhanced-device-database.json"
+      },
+      "Unknown_TS0011": {
+        "model": "TS0011",
+        "manufacturer": "Unknown",
+        "type": "sensor",
+        "capabilities": [],
+        "clusters": [],
+        "source": "zigbee2mqtt-devices.json"
+      },
+      "Unknown_TS0012": {
+        "model": "TS0012",
+        "manufacturer": "Unknown",
+        "type": "sensor",
+        "capabilities": [],
+        "clusters": [],
+        "source": "zigbee2mqtt-devices.json"
+      },
+      "Unknown_TS004F": {
+        "model": "TS004F",
+        "manufacturer": "Unknown",
+        "type": "sensor",
+        "capabilities": [],
+        "clusters": [],
+        "source": "zigbee2mqtt-devices.json"
+      },
+      "Unknown_Unknown": {
+        "model": "Unknown",
+        "manufacturer": "Unknown",
+        "type": "wall_switch",
+        "capabilities": [],
+        "clusters": [],
+        "source": "johan-benz-devices.json"
+      }
+    }
+  },
+  "github_analysis": {
+    "total_issues": 88,
+    "total_prs": 0,
+    "feature_requests": [],
+    "device_requests": []
+  },
+  "forum_discussions": {
+    "total_discussions": 0,
+    "feature_suggestions": [],
+    "compatibility_issues": []
+  },
+  "missing_features": [
+    {
+      "name": "Battery reporting optimization",
+      "priority": "high",
+      "category": "performance"
+    },
+    {
+      "name": "Custom device pairing instructions",
+      "priority": "medium",
+      "category": "usability"
+    },
+    {
+      "name": "Advanced scene support",
+      "priority": "medium",
+      "category": "functionality"
+    },
+    {
+      "name": "Device health monitoring",
+      "priority": "medium",
+      "category": "diagnostics"
+    },
+    {
+      "name": "Firmware update notifications",
+      "priority": "low",
+      "category": "maintenance"
+    },
+    {
+      "name": "Energy consumption analytics",
+      "priority": "medium",
+      "category": "analytics"
+    },
+    {
+      "name": "Automated device discovery",
+      "priority": "high",
+      "category": "usability"
+    },
+    {
+      "name": "Multi-language flow cards",
+      "priority": "medium",
+      "category": "localization"
+    },
+    {
+      "name": "Device group management",
+      "priority": "medium",
+      "category": "organization"
+    },
+    {
+      "name": "Advanced automation triggers",
+      "priority": "high",
+      "category": "functionality"
+    }
+  ],
+  "enhancement_opportunities": [
+    {
+      "type": "device_coverage",
+      "priority": "high",
+      "title": "Expand device database",
+      "description": "Current coverage: 67 devices from 50 manufacturers. Target: 1500+ devices.",
+      "action": "Add more manufacturer IDs and device definitions"
+    },
+    {
+      "type": "performance",
+      "priority": "medium",
+      "title": "Optimize battery device reporting",
+      "description": "Implement intelligent reporting intervals for battery devices",
+      "action": "Add configurable reporting intervals and battery optimization"
+    },
+    {
+      "type": "user_experience",
+      "priority": "medium",
+      "title": "Enhanced pairing experience",
+      "description": "Improve device discovery and pairing flow",
+      "action": "Add visual pairing guides and auto-detection"
+    },
+    {
+      "type": "robustness",
+      "priority": "high",
+      "title": "Error handling and recovery",
+      "description": "Implement comprehensive error handling and device recovery",
+      "action": "Add retry mechanisms and offline device handling"
+    }
+  ],
+  "device_coverage_gaps": [],
+  "recommended_additions": []
+}
