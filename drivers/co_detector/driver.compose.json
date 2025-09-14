@@ -6,24 +6,16 @@
   "class": "sensor",
   "capabilities": [
     "alarm_co",
-    "measure_battery"
+    "measure_battery",
+    "alarm_smoke"
   ],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_",
-      "_TZE200_",
-      "_TYZB01_",
-      "TUYA",
-      "Smart Home"
+      "_TZE284_",
+      "ONENUO"
     ],
     "productId": [
-      "TS0001",
-      "TS0011",
-      "TS0012",
-      "TS004F",
-      "TS011F",
-      "TS0121",
-      "TS013F"
+      "TZE284_n4ttsck2"
     ],
     "endpoints": {
       "1": {

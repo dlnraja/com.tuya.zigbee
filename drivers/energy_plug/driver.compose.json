@@ -9,24 +9,20 @@
     "measure_power",
     "measure_voltage",
     "measure_current",
-    "meter_power"
+    "meter_power",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
   ],
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_",
       "_TZE200_",
-      "_TYZB01_",
-      "TUYA",
-      "Smart Home"
+      "_TZE284_",
+      "TUYA"
     ],
     "productId": [
-      "TS0001",
-      "TS0011",
-      "TS0012",
-      "TS004F",
-      "TS011F",
-      "TS0121",
-      "TS013F"
+      "CK-TLSR8656-SS5-01(7014)"
     ],
     "endpoints": {
       "1": {

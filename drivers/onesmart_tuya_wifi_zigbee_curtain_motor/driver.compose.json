@@ -1,0 +1,38 @@
+{
+  "id": "onesmart_tuya_wifi_zigbee_curtain_motor",
+  "name": {
+    "en": "Onesmart Tuya Wifi Zigbee Curtain Motor"
+  },
+  "class": "sensor",
+  "capabilities": [],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE204_1fuxihti",
+      "_TZ3000_",
+      "TUYA"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/onesmart_tuya_wifi_zigbee_curtain_motor/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your Onesmart Tuya Wifi Zigbee Curtain Motor for 3 seconds until the LED starts blinking rapidly."
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/onesmart_tuya_wifi_zigbee_curtain_motor/assets/images/small.png",
+    "large": "/drivers/onesmart_tuya_wifi_zigbee_curtain_motor/assets/images/large.png"
+  },
+  "settings": []
+}

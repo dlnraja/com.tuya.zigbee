@@ -1,0 +1,72 @@
+{
+  "id": "tuya_zigbee_soil_moisture_sensor",
+  "name": {
+    "en": "Tuya Zigbee Soil Moisture Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_wqashyqo",
+      "_TZ3000_",
+      "TUYA"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          1026,
+          1029
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/tuya_zigbee_soil_moisture_sensor/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your Tuya Zigbee Soil Moisture Sensor for 3 seconds until the LED starts blinking rapidly."
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/tuya_zigbee_soil_moisture_sensor/assets/images/small.png",
+    "large": "/drivers/tuya_zigbee_soil_moisture_sensor/assets/images/large.png"
+  },
+  "settings": [
+    {
+      "id": "temperature_offset",
+      "type": "number",
+      "label": {
+        "en": "Temperature Offset (°C)"
+      },
+      "value": 0,
+      "min": -10,
+      "max": 10,
+      "step": 0.1
+    },
+    {
+      "id": "battery_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold (%)"
+      },
+      "value": 20,
+      "min": 5,
+      "max": 50
+    }
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AA"
+    ]
+  }
+}

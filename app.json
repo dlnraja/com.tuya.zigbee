@@ -139,6 +139,245 @@
   },
   "drivers": [
     {
+      "id": "18w_15w_tuya_zigbee_smart_home_led_lamp",
+      "name": {
+        "en": "18W 15W Tuya zigbee Smart Home Led Lamp"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3210_r5afgmkl",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0505B"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/18w_15w_tuya_zigbee_smart_home_led_lamp/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your 18W 15W Tuya zigbee Smart Home Led Lamp for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/18w_15w_tuya_zigbee_smart_home_led_lamp/assets/images/small.png",
+        "large": "/drivers/18w_15w_tuya_zigbee_smart_home_led_lamp/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "2_gang_zigbee_dimmer",
+      "name": {
+        "en": "2 Gang Zigbee Dimmer"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_7ysdnebc",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS1101"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6,
+              8
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/2_gang_zigbee_dimmer/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your 2 Gang Zigbee Dimmer for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/2_gang_zigbee_dimmer/assets/images/small.png",
+        "large": "/drivers/2_gang_zigbee_dimmer/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "2_gang_zigbee_switches",
+      "name": {
+        "en": "2 Gang Zigbee Switches"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "BSEED"
+        ],
+        "productId": [
+          "TS0012"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/2_gang_zigbee_switches/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your 2 Gang Zigbee Switches for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/2_gang_zigbee_switches/assets/images/small.png",
+        "large": "/drivers/2_gang_zigbee_switches/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "3_gang_wall_switch",
+      "name": {
+        "en": "3 Gang Wall Switch"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_aezbqpcu",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0013"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/3_gang_wall_switch/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your 3 Gang Wall Switch for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/3_gang_wall_switch/assets/images/small.png",
+        "large": "/drivers/3_gang_wall_switch/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "4_gang_wall_remote",
+      "name": {
+        "en": "4 Gang Wall Remote"
+      },
+      "class": "button",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_5tqxpine",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0044"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/4_gang_wall_remote/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your 4 Gang Wall Remote for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/4_gang_wall_remote/assets/images/small.png",
+        "large": "/drivers/4_gang_wall_remote/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "_tze200_vvmbj46n",
+      "name": {
+        "en": "_TZE200_vvmbj46n"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE284_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/_tze200_vvmbj46n/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your _TZE200_vvmbj46n for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/_tze200_vvmbj46n/assets/images/small.png",
+        "large": "/drivers/_tze200_vvmbj46n/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
       "id": "air_quality_sensor",
       "name": {
         "en": "Air Quality Sensor"
@@ -146,24 +385,19 @@
       "class": "sensor",
       "capabilities": [
         "measure_pm25",
-        "measure_battery"
+        "measure_battery",
+        "measure_temperature",
+        "measure_humidity"
       ],
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_",
           "_TZE200_",
-          "_TYZB01_",
-          "TUYA",
-          "Smart Home"
+          "_TZE284_",
+          "TUYA"
         ],
         "productId": [
-          "TS0001",
-          "TS0011",
-          "TS0012",
-          "TS004F",
-          "TS011F",
-          "TS0121",
-          "TS013F"
+          "CK-TLSR8656-SS5-01(7014)"
         ],
         "endpoints": {
           "1": {
@@ -203,6 +437,116 @@
       }
     },
     {
+      "id": "avatto_tuya_zigbee_e_ink_screen_temperature_and_hu",
+      "name": {
+        "en": "AVATTO Tuya ZigBee E-ink Screen Temperature And Humidity Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE204_s139roas",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1026,
+              1029
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/avatto_tuya_zigbee_e_ink_screen_temperature_and_hu/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your AVATTO Tuya ZigBee E-ink Screen Temperature And Humidity Sensor for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/avatto_tuya_zigbee_e_ink_screen_temperature_and_hu/assets/images/small.png",
+        "large": "/drivers/avatto_tuya_zigbee_e_ink_screen_temperature_and_hu/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset (°C)"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "bseed_wall_socket_with_metering_and_2x_usb",
+      "name": {
+        "en": "BSEED Wall Socket with metering and 2x usb"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "TS011F",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "_TZ3000_5ct6e7ye"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/bseed_wall_socket_with_metering_and_2x_usb/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your BSEED Wall Socket with metering and 2x usb for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/bseed_wall_socket_with_metering_and_2x_usb/assets/images/small.png",
+        "large": "/drivers/bseed_wall_socket_with_metering_and_2x_usb/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
       "id": "co_detector",
       "name": {
         "en": "Carbon Monoxide Detector"
@@ -210,24 +554,16 @@
       "class": "sensor",
       "capabilities": [
         "alarm_co",
-        "measure_battery"
+        "measure_battery",
+        "alarm_smoke"
       ],
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_",
-          "_TZE200_",
-          "_TYZB01_",
-          "TUYA",
-          "Smart Home"
+          "_TZE284_",
+          "ONENUO"
         ],
         "productId": [
-          "TS0001",
-          "TS0011",
-          "TS0012",
-          "TS004F",
-          "TS011F",
-          "TS0121",
-          "TS013F"
+          "TZE284_n4ttsck2"
         ],
         "endpoints": {
           "1": {
@@ -295,24 +631,18 @@
       "capabilities": [
         "alarm_contact",
         "measure_battery",
-        "measure_temperature"
+        "measure_temperature",
+        "measure_humidity"
       ],
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_",
           "_TZE200_",
-          "_TYZB01_",
-          "TUYA",
-          "Smart Home"
+          "_TZE284_",
+          "TUYA"
         ],
         "productId": [
-          "TS0001",
-          "TS0011",
-          "TS0012",
-          "TS004F",
-          "TS011F",
-          "TS0121",
-          "TS013F"
+          "CK-TLSR8656-SS5-01(7014)"
         ],
         "endpoints": {
           "1": {
@@ -358,6 +688,44 @@
       }
     },
     {
+      "id": "cr_rnz1",
+      "name": {
+        "en": "[CR-RNZ1]"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_x3ewpzyr",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0001"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/cr_rnz1/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your [CR-RNZ1] for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/cr_rnz1/assets/images/small.png",
+        "large": "/drivers/cr_rnz1/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
       "id": "curtain_motor",
       "name": {
         "en": "Curtain Motor"
@@ -365,24 +733,16 @@
       "class": "windowcoverings",
       "capabilities": [
         "windowcoverings_set",
-        "windowcoverings_tilt_set"
+        "windowcoverings_tilt_set",
+        "onoff"
       ],
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_",
-          "_TZE200_",
-          "_TYZB01_",
-          "TUYA",
-          "Smart Home"
+          "MOES"
         ],
         "productId": [
-          "TS0001",
-          "TS0011",
-          "TS0012",
-          "TS004F",
-          "TS011F",
-          "TS0121",
-          "TS013F"
+          "TS130F, _TZ3210_zana8d08"
         ],
         "endpoints": {
           "1": {
@@ -440,6 +800,161 @@
       ]
     },
     {
+      "id": "device_name",
+      "name": {
+        "en": "Device name"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "manufacturerName",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "modelId"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/device_name/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Device name for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/device_name/assets/images/small.png",
+        "large": "/drivers/device_name/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "device_request_3_button_switch",
+      "name": {
+        "en": "Device Request -3 button switch"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_bczr4e10",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "[TS0043]"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/device_request_3_button_switch/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Device Request -3 button switch for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/device_request_3_button_switch/assets/images/small.png",
+        "large": "/drivers/device_request_3_button_switch/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "device_request_already_fixed_girier_tuya_smart_zig",
+      "name": {
+        "en": "Device Request / already fixed- GIRIER Tuya Smart ZigBee"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "GIRIER",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "_TZ3000_ltt60asa TS0004"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/device_request_already_fixed_girier_tuya_smart_zig/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Device Request / already fixed- GIRIER Tuya Smart ZigBee for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/device_request_already_fixed_girier_tuya_smart_zig/assets/images/small.png",
+        "large": "/drivers/device_request_already_fixed_girier_tuya_smart_zig/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "device_request_ceilling_human_presence_sensor",
+      "name": {
+        "en": "Device Request -Ceilling Human Presence Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "Wenzhi",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "WZ-M100-C"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/device_request_ceilling_human_presence_sensor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Device Request -Ceilling Human Presence Sensor for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/device_request_ceilling_human_presence_sensor/assets/images/small.png",
+        "large": "/drivers/device_request_ceilling_human_presence_sensor/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
       "id": "dimmer_switch",
       "name": {
         "en": "Dimmer Switch"
@@ -453,18 +968,11 @@
         "manufacturerName": [
           "_TZ3000_",
           "_TZE200_",
-          "_TYZB01_",
-          "TUYA",
-          "Smart Home"
+          "_TZE284_",
+          "TUYA"
         ],
         "productId": [
-          "TS0001",
-          "TS0011",
-          "TS0012",
-          "TS004F",
-          "TS011F",
-          "TS0121",
-          "TS013F"
+          "TS0012 (This one is already supported in v0.2.73!) - Issue can be removed"
         ],
         "endpoints": {
           "1": {
@@ -503,6 +1011,268 @@
       ]
     },
     {
+      "id": "door_window_sensor",
+      "name": {
+        "en": "Door / Window sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_contact",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE284_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0203 _TZ3000_au2o5e6q"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1280
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/door_window_sensor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Door / Window sensor for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/door_window_sensor/assets/images/small.png",
+        "large": "/drivers/door_window_sensor/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "sensitivity",
+          "type": "dropdown",
+          "label": {
+            "en": "Sensitivity"
+          },
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High"
+              }
+            }
+          ]
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "door_windows_sensor",
+      "name": {
+        "en": "Door-Windows sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_contact",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "eWeLink",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "SNZB-04"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1280
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/door_windows_sensor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Door-Windows sensor for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/door_windows_sensor/assets/images/small.png",
+        "large": "/drivers/door_windows_sensor/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "sensitivity",
+          "type": "dropdown",
+          "label": {
+            "en": "Sensitivity"
+          },
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High"
+              }
+            }
+          ]
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "door_windows_sensor_zd08",
+      "name": {
+        "en": "Door & Windows Sensor ZD08"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_contact",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_1bwpjvlz",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0203"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1280
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/door_windows_sensor_zd08/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Door & Windows Sensor ZD08 for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/door_windows_sensor_zd08/assets/images/small.png",
+        "large": "/drivers/door_windows_sensor_zd08/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "sensitivity",
+          "type": "dropdown",
+          "label": {
+            "en": "Sensitivity"
+          },
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High"
+              }
+            }
+          ]
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
       "id": "energy_plug",
       "name": {
         "en": "Energy Monitoring Smart Plug"
@@ -513,24 +1283,20 @@
         "measure_power",
         "measure_voltage",
         "measure_current",
-        "meter_power"
+        "meter_power",
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
       ],
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_",
           "_TZE200_",
-          "_TYZB01_",
-          "TUYA",
-          "Smart Home"
+          "_TZE284_",
+          "TUYA"
         ],
         "productId": [
-          "TS0001",
-          "TS0011",
-          "TS0012",
-          "TS004F",
-          "TS011F",
-          "TS0121",
-          "TS013F"
+          "CK-TLSR8656-SS5-01(7014)"
         ],
         "endpoints": {
           "1": {
@@ -591,16 +1357,11 @@
       ],
       "zigbee": {
         "manufacturerName": [
-          "_TZE284_n4ttsck2",
-          "_TZE200_n4ttsck2",
-          "_TZ3000_n4ttsck2",
-          "ONENUO",
-          "TUYA",
-          "Smart Home"
+          "_TZE284_",
+          "ONENUO"
         ],
         "productId": [
-          "TS0601",
-          "TS0205"
+          "TZE284_n4ttsck2"
         ],
         "endpoints": {
           "1": {
@@ -684,6 +1445,316 @@
       }
     },
     {
+      "id": "ewelink_gu10_zigbee_led_lampen",
+      "name": {
+        "en": "Ewelink GU10 Zigbee LED-lampen"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "eWeLink",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "CK-BL702-AL-01(7009_Z102LG03-1)"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/ewelink_gu10_zigbee_led_lampen/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Ewelink GU10 Zigbee LED-lampen for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/ewelink_gu10_zigbee_led_lampen/assets/images/small.png",
+        "large": "/drivers/ewelink_gu10_zigbee_led_lampen/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "gu10_zigbee_rgbcct_5w_bulb",
+      "name": {
+        "en": "GU10 Zigbee RGBCCT 5W bulb"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "MOES"
+        ],
+        "productId": [
+          "TS0505B _TZ3210_rcggc0ys"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/gu10_zigbee_rgbcct_5w_bulb/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your GU10 Zigbee RGBCCT 5W bulb for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/gu10_zigbee_rgbcct_5w_bulb/assets/images/small.png",
+        "large": "/drivers/gu10_zigbee_rgbcct_5w_bulb/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "human_presence_detector",
+      "name": {
+        "en": "Human Presence Detector"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya - _TZ3000_5k5vh43t",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0207"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/human_presence_detector/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Human Presence Detector for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/human_presence_detector/assets/images/small.png",
+        "large": "/drivers/human_presence_detector/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "human_presence_sensor",
+      "name": {
+        "en": "Human Presence Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "Wenzhou Wenzhi Automation  [ _TZ321C_fkzihax8 ]",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "Zigbee 5.8G Radar [ TS0225 ]"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/human_presence_sensor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Human Presence Sensor for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/human_presence_sensor/assets/images/small.png",
+        "large": "/drivers/human_presence_sensor/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "insoma_water_timer",
+      "name": {
+        "en": "Insoma Water Timer"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_water",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE284_fhvpaltk",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1280
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/insoma_water_timer/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Insoma Water Timer for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/insoma_water_timer/assets/images/small.png",
+        "large": "/drivers/insoma_water_timer/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "sensitivity",
+          "type": "dropdown",
+          "label": {
+            "en": "Sensitivity"
+          },
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High"
+              }
+            }
+          ]
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "lcd_temperature_humidity_sensor",
+      "name": {
+        "en": "LCD temperature & humidity sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3210_ncw88jfq",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0201"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1026,
+              1029
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/lcd_temperature_humidity_sensor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your LCD temperature & humidity sensor for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/lcd_temperature_humidity_sensor/assets/images/small.png",
+        "large": "/drivers/lcd_temperature_humidity_sensor/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset (°C)"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
       "id": "light_switch",
       "name": {
         "en": "Light Switch"
@@ -697,18 +1768,11 @@
         "manufacturerName": [
           "_TZ3000_",
           "_TZE200_",
-          "_TYZB01_",
-          "TUYA",
-          "Smart Home"
+          "_TZE284_",
+          "TUYA"
         ],
         "productId": [
-          "TS0001",
-          "TS0011",
-          "TS0012",
-          "TS004F",
-          "TS011F",
-          "TS0121",
-          "TS013F"
+          "TS0012 (This one is already supported in v0.2.73!) - Issue can be removed"
         ],
         "endpoints": {
           "1": {
@@ -743,9 +1807,9 @@
       ]
     },
     {
-      "id": "moes_dimmer",
+      "id": "mi_light",
       "name": {
-        "en": "MOES Smart Dimmer Switch"
+        "en": "Mi-Light"
       },
       "class": "light",
       "capabilities": [
@@ -756,14 +1820,136 @@
         "manufacturerName": [
           "_TZ3000_",
           "_TZE200_",
-          "MOES",
-          "TUYA",
-          "Smart Home"
+          "_TZE284_",
+          "TUYA"
         ],
         "productId": [
-          "ZM-105-M",
-          "TS0601",
-          "TS011F"
+          "T0202 TZ0304"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6,
+              8
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/mi_light/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Mi-Light for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/mi_light/assets/images/small.png",
+        "large": "/drivers/mi_light/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "mini_curtain_switch_module",
+      "name": {
+        "en": "Mini Curtain Switch Module"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "MOES"
+        ],
+        "productId": [
+          "TS130F, _TZ3210_zana8d08"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/mini_curtain_switch_module/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Mini Curtain Switch Module for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/mini_curtain_switch_module/assets/images/small.png",
+        "large": "/drivers/mini_curtain_switch_module/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "moes_bliend_motor",
+      "name": {
+        "en": "MOES Bliend Motor"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "[MOES]",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "[TS0601]"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/moes_bliend_motor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your MOES Bliend Motor for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/moes_bliend_motor/assets/images/small.png",
+        "large": "/drivers/moes_bliend_motor/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "moes_dimmer",
+      "name": {
+        "en": "MOES Smart Dimmer Switch"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE284_",
+          "TUYA"
+        ],
+        "productId": [
+          "CK-TLSR8656-SS5-01(7014)"
         ],
         "endpoints": {
           "1": {
@@ -822,7 +2008,197 @@
           "min": 1,
           "max": 50
         }
-      ]
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "moes_smart_scene_switch_4button_wireless",
+      "name": {
+        "en": "MOES Smart Scene Switch 4Button Wireless"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_kfu8zapd",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0044"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/moes_smart_scene_switch_4button_wireless/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your MOES Smart Scene Switch 4Button Wireless for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/moes_smart_scene_switch_4button_wireless/assets/images/small.png",
+        "large": "/drivers/moes_smart_scene_switch_4button_wireless/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "moes_smart_thermostatic_radiator_valve",
+      "name": {
+        "en": "MOES Smart Thermostatic Radiator Valve"
+      },
+      "class": "thermostat",
+      "capabilities": [
+        "measure_temperature",
+        "target_temperature",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_ckud7u2l",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              513,
+              1026
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/moes_smart_thermostatic_radiator_valve/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your MOES Smart Thermostatic Radiator Valve for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/moes_smart_thermostatic_radiator_valve/assets/images/small.png",
+        "large": "/drivers/moes_smart_thermostatic_radiator_valve/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset (°C)"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "moes_star_ring_smart_knob_thermostat",
+      "name": {
+        "en": "Moes Star Ring Smart Knob Thermostat"
+      },
+      "class": "thermostat",
+      "capabilities": [
+        "measure_temperature",
+        "target_temperature",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "MOES"
+        ],
+        "productId": [
+          "_TZE204_lpedvtvr / TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              513,
+              1026
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/moes_star_ring_smart_knob_thermostat/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Moes Star Ring Smart Knob Thermostat for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/moes_star_ring_smart_knob_thermostat/assets/images/small.png",
+        "large": "/drivers/moes_star_ring_smart_knob_thermostat/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset (°C)"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
     },
     {
       "id": "motion_sensor",
@@ -833,24 +2209,19 @@
       "capabilities": [
         "alarm_motion",
         "measure_battery",
-        "measure_luminance"
+        "measure_luminance",
+        "measure_temperature",
+        "measure_humidity"
       ],
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_",
           "_TZE200_",
-          "_TYZB01_",
-          "TUYA",
-          "Smart Home"
+          "_TZE284_",
+          "TUYA"
         ],
         "productId": [
-          "TS0001",
-          "TS0011",
-          "TS0012",
-          "TS004F",
-          "TS011F",
-          "TS0121",
-          "TS013F"
+          "CK-TLSR8656-SS5-01(7014)"
         ],
         "endpoints": {
           "1": {
@@ -913,6 +2284,194 @@
           "type": "number",
           "label": "Illuminance Threshold (lux)",
           "value": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "motion_sensor_with_lux",
+      "name": {
+        "en": "Motion sensor with Lux"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "AliExpress",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1030
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/motion_sensor_with_lux/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Motion sensor with Lux for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/motion_sensor_with_lux/assets/images/small.png",
+        "large": "/drivers/motion_sensor_with_lux/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "sensitivity",
+          "type": "dropdown",
+          "label": {
+            "en": "Sensitivity"
+          },
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High"
+              }
+            }
+          ]
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "motion_sensor_with_temperature_humidity",
+      "name": {
+        "en": "Motion sensor with Temperature & Humidity"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_motion",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "HOBEIAN"
+        ],
+        "productId": [
+          "ZG-204ZV"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1026,
+              1029,
+              1030
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/motion_sensor_with_temperature_humidity/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Motion sensor with Temperature & Humidity for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/motion_sensor_with_temperature_humidity/assets/images/small.png",
+        "large": "/drivers/motion_sensor_with_temperature_humidity/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset (°C)"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1
+        },
+        {
+          "id": "sensitivity",
+          "type": "dropdown",
+          "label": {
+            "en": "Sensitivity"
+          },
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High"
+              }
+            }
+          ]
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
         }
       ],
       "energy": {
@@ -1024,6 +2583,379 @@
       }
     },
     {
+      "id": "nodon",
+      "name": {
+        "en": "NODON"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "NODON Fil pilote",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "SIN-4-FP-21"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/nodon/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your NODON for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/nodon/assets/images/small.png",
+        "large": "/drivers/nodon/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "one_gang_switch_module",
+      "name": {
+        "en": "One gang switch module"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_prits6g4",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0001"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/one_gang_switch_module/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your One gang switch module for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/one_gang_switch_module/assets/images/small.png",
+        "large": "/drivers/one_gang_switch_module/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "one_gang_switch_moes",
+      "name": {
+        "en": "One Gang Switch- MOES"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE284_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0011 _TZ3000_hhiodade"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/one_gang_switch_moes/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your One Gang Switch- MOES for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/one_gang_switch_moes/assets/images/small.png",
+        "large": "/drivers/one_gang_switch_moes/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "onesmart_tuya_wifi_zigbee_curtain_motor",
+      "name": {
+        "en": "Onesmart Tuya Wifi Zigbee Curtain Motor"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE204_1fuxihti",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/onesmart_tuya_wifi_zigbee_curtain_motor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Onesmart Tuya Wifi Zigbee Curtain Motor for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/onesmart_tuya_wifi_zigbee_curtain_motor/assets/images/small.png",
+        "large": "/drivers/onesmart_tuya_wifi_zigbee_curtain_motor/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "outdoor_power_plug",
+      "name": {
+        "en": "Outdoor power plug"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "onoff",
+        "alarm_contact",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "Nedis ZBP0130FWT",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6,
+              1280
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/outdoor_power_plug/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Outdoor power plug for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/outdoor_power_plug/assets/images/small.png",
+        "large": "/drivers/outdoor_power_plug/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "sensitivity",
+          "type": "dropdown",
+          "label": {
+            "en": "Sensitivity"
+          },
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High"
+              }
+            }
+          ]
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "pir_motion_sensor",
+      "name": {
+        "en": "PIR Motion Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "Aubess",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0202 / ZMS-102"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1030
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/pir_motion_sensor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your PIR Motion Sensor for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/pir_motion_sensor/assets/images/small.png",
+        "large": "/drivers/pir_motion_sensor/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "sensitivity",
+          "type": "dropdown",
+          "label": {
+            "en": "Sensitivity"
+          },
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High"
+              }
+            }
+          ]
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "pir_sensor_pir1_zb",
+      "name": {
+        "en": "PIR Sensor PIR1-ZB"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "MiBoxer, Mi-Light, LIGHTEU",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0202"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/pir_sensor_pir1_zb/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your PIR Sensor PIR1-ZB for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/pir_sensor_pir1_zb/assets/images/small.png",
+        "large": "/drivers/pir_sensor_pir1_zb/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
       "id": "presence_sensor",
       "name": {
         "en": "Presence Sensor"
@@ -1032,24 +2964,19 @@
       "capabilities": [
         "alarm_motion",
         "measure_battery",
-        "measure_luminance"
+        "measure_luminance",
+        "measure_temperature",
+        "measure_humidity"
       ],
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_",
           "_TZE200_",
-          "_TYZB01_",
-          "TUYA",
-          "Smart Home"
+          "_TZE284_",
+          "TUYA"
         ],
         "productId": [
-          "TS0001",
-          "TS0011",
-          "TS0012",
-          "TS004F",
-          "TS011F",
-          "TS0121",
-          "TS013F"
+          "CK-TLSR8656-SS5-01(7014)"
         ],
         "endpoints": {
           "1": {
@@ -1097,56 +3024,32 @@
     {
       "id": "radar_sensor",
       "name": {
-        "en": "Radar Motion Sensor"
+        "en": "Radar Sensor"
       },
       "class": "sensor",
-      "capabilities": [
-        "alarm_motion",
-        "measure_luminance",
-        "alarm_battery",
-        "measure_battery"
-      ],
+      "capabilities": [],
       "zigbee": {
         "manufacturerName": [
-          "_TZE200_",
-          "_TZE204_",
+          "_TZE200_ya4ft0w4",
           "_TZ3000_",
-          "_TYZB01_",
-          "TUYA",
-          "Smart Home",
-          "_TZE200_ztc6ggyl",
-          "_TZE200_ar0slwnd",
-          "_TZE200_sfiy5tcs",
-          "_TZE200_holel4dk",
-          "_TZE200_wukb7rhc",
-          "_TZE200_jva8ink8",
-          "_TZE200_mrf6vtua"
+          "TUYA"
         ],
         "productId": [
-          "TS0601",
-          "TS0225",
-          "TS0226",
-          "TS004F",
-          "TS011F",
-          "TS0202"
+          "TS0601"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
               1,
-              3,
-              6,
-              1030,
-              1024,
-              57344
+              3
             ]
           }
         },
         "learnmode": {
           "image": "/drivers/radar_sensor/assets/learn.svg",
           "instruction": {
-            "en": "Press and hold the button on your Radar Motion Sensor for 3 seconds until the LED starts blinking rapidly."
+            "en": "Press and hold the button on your Radar Sensor for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
@@ -1154,62 +3057,7 @@
         "small": "/drivers/radar_sensor/assets/images/small.png",
         "large": "/drivers/radar_sensor/assets/images/large.png"
       },
-      "settings": [
-        {
-          "id": "radar_sensitivity",
-          "type": "dropdown",
-          "label": {
-            "en": "Radar Sensitivity"
-          },
-          "value": "medium",
-          "values": [
-            {
-              "id": "low",
-              "label": {
-                "en": "Low"
-              }
-            },
-            {
-              "id": "medium",
-              "label": {
-                "en": "Medium"
-              }
-            },
-            {
-              "id": "high",
-              "label": {
-                "en": "High"
-              }
-            }
-          ]
-        },
-        {
-          "id": "detection_distance",
-          "type": "number",
-          "label": {
-            "en": "Detection Distance (m)"
-          },
-          "value": 5,
-          "min": 1,
-          "max": 10
-        },
-        {
-          "id": "hold_time",
-          "type": "number",
-          "label": {
-            "en": "Motion Hold Time (s)"
-          },
-          "value": 30,
-          "min": 5,
-          "max": 300
-        }
-      ],
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      }
+      "settings": []
     },
     {
       "id": "rgb_light",
@@ -1227,19 +3075,10 @@
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_",
-          "_TZE200_",
-          "_TYZB01_",
-          "TUYA",
-          "Smart Home"
+          "HOBEIAN"
         ],
         "productId": [
-          "TS0001",
-          "TS0011",
-          "TS0012",
-          "TS004F",
-          "TS011F",
-          "TS0121",
-          "TS013F"
+          "ZG-223Z"
         ],
         "endpoints": {
           "1": {
@@ -1289,20 +3128,12 @@
       "capabilities": [],
       "zigbee": {
         "manufacturerName": [
+          "_TZ3000_5tqxpine",
           "_TZ3000_",
-          "_TZE200_",
-          "_TYZB01_",
-          "TUYA",
-          "Smart Home"
+          "TUYA"
         ],
         "productId": [
-          "TS0001",
-          "TS0011",
-          "TS0012",
-          "TS004F",
-          "TS011F",
-          "TS0121",
-          "TS013F"
+          "TS0044"
         ],
         "endpoints": {
           "1": {
@@ -1363,20 +3194,12 @@
       "capabilities": [],
       "zigbee": {
         "manufacturerName": [
+          "_TZ3000_5tqxpine",
           "_TZ3000_",
-          "_TZE200_",
-          "_TYZB01_",
-          "TUYA",
-          "Smart Home"
+          "TUYA"
         ],
         "productId": [
-          "TS0001",
-          "TS0011",
-          "TS0012",
-          "TS004F",
-          "TS011F",
-          "TS0121",
-          "TS013F"
+          "TS0044"
         ],
         "endpoints": {
           "1": {
@@ -1441,18 +3264,11 @@
         "manufacturerName": [
           "_TZ3000_",
           "_TZE200_",
-          "_TYZB01_",
-          "TUYA",
-          "Smart Home"
+          "_TZE284_",
+          "TUYA"
         ],
         "productId": [
-          "TS0001",
-          "TS0011",
-          "TS0012",
-          "TS004F",
-          "TS011F",
-          "TS0121",
-          "TS013F"
+          "TS0012 (This one is already supported in v0.2.73!) - Issue can be removed"
         ],
         "endpoints": {
           "1": {
@@ -1485,6 +3301,276 @@
       ]
     },
     {
+      "id": "smart_button",
+      "name": {
+        "en": "Smart Button"
+      },
+      "class": "button",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_ja5osu5g",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS004F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/smart_button/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Smart Button for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/smart_button/assets/images/small.png",
+        "large": "/drivers/smart_button/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "smart_curtain_robot",
+      "name": {
+        "en": "smart curtain robot"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_cpbo62rn",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/smart_curtain_robot/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your smart curtain robot for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/smart_curtain_robot/assets/images/small.png",
+        "large": "/drivers/smart_curtain_robot/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "smart_home_1_gang_zigbee",
+      "name": {
+        "en": "Smart Home 1 gang Zigbee"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_ysdv91bk",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0001"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/smart_home_1_gang_zigbee/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Smart Home 1 gang Zigbee for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/smart_home_1_gang_zigbee/assets/images/small.png",
+        "large": "/drivers/smart_home_1_gang_zigbee/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "smart_home_2_gang_zigbee",
+      "name": {
+        "en": "Smart Home 2 gang Zigbee"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_mklgayek",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0002"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/smart_home_2_gang_zigbee/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Smart Home 2 gang Zigbee for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/smart_home_2_gang_zigbee/assets/images/small.png",
+        "large": "/drivers/smart_home_2_gang_zigbee/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "smart_home_3_gang_zigbee",
+      "name": {
+        "en": "Smart Home 3 gang Zigbee"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_w05exif3",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0003"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/smart_home_3_gang_zigbee/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Smart Home 3 gang Zigbee for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/smart_home_3_gang_zigbee/assets/images/small.png",
+        "large": "/drivers/smart_home_3_gang_zigbee/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "smart_knob",
+      "name": {
+        "en": "Smart Knob"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_gwkzibhs",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS004F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/smart_knob/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Smart Knob for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/smart_knob/assets/images/small.png",
+        "large": "/drivers/smart_knob/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "smart_knob_switch_ts004f",
+      "name": {
+        "en": "Smart Knob Switch TS004F"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE284_",
+          "TUYA"
+        ],
+        "productId": [
+          "_TZ3000_abrsvsou"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/smart_knob_switch_ts004f/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Smart Knob Switch TS004F for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/smart_knob_switch_ts004f/assets/images/small.png",
+        "large": "/drivers/smart_knob_switch_ts004f/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
       "id": "smart_light",
       "name": {
         "en": "Smart Light"
@@ -1492,24 +3578,20 @@
       "class": "light",
       "capabilities": [
         "onoff",
-        "dim"
+        "dim",
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
       ],
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_",
           "_TZE200_",
-          "_TYZB01_",
-          "TUYA",
-          "Smart Home"
+          "_TZE284_",
+          "TUYA"
         ],
         "productId": [
-          "TS0001",
-          "TS0011",
-          "TS0012",
-          "TS004F",
-          "TS011F",
-          "TS0121",
-          "TS013F"
+          "CK-TLSR8656-SS5-01(7014)"
         ],
         "endpoints": {
           "1": {
@@ -1541,7 +3623,13 @@
           "label": "Transition Time (seconds)",
           "value": 1
         }
-      ]
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
     },
     {
       "id": "smart_plug",
@@ -1554,25 +3642,18 @@
       ],
       "zigbee": {
         "manufacturerName": [
+          "_TZ3000_iiacqpdz",
           "_TZ3000_",
-          "_TZE200_",
-          "_TYZB01_",
-          "TUYA",
-          "Smart Home"
+          "TUYA"
         ],
         "productId": [
-          "TS0001",
-          "TS0011",
-          "TS0012",
-          "TS004F",
-          "TS011F",
-          "TS0121",
-          "TS013F"
+          "TS011F"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
+              1,
               3,
               6
             ]
@@ -1589,39 +3670,174 @@
         "small": "/drivers/smart_plug/assets/images/small.png",
         "large": "/drivers/smart_plug/assets/images/large.png"
       },
-      "settings": [
-        {
-          "id": "power_on_behavior",
-          "type": "dropdown",
-          "label": "Power-On Behavior",
-          "value": "option1",
-          "values": [
-            {
-              "id": "option1",
-              "label": {
-                "en": "Option 1"
-              }
-            },
-            {
-              "id": "option2",
-              "label": {
-                "en": "Option 2"
-              }
-            },
-            {
-              "id": "option3",
-              "label": {
-                "en": "Option 3"
-              }
-            }
-          ]
+      "settings": []
+    },
+    {
+      "id": "smart_rotary_dimmer",
+      "name": {
+        "en": "Smart Rotary Dimmer"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "MOES"
+        ],
+        "productId": [
+          "modelId"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6,
+              8
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/smart_rotary_dimmer/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Smart Rotary Dimmer for 3 seconds until the LED starts blinking rapidly."
+          }
         }
-      ]
+      },
+      "images": {
+        "small": "/drivers/smart_rotary_dimmer/assets/images/small.png",
+        "large": "/drivers/smart_rotary_dimmer/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "smart_socket_ip_3010s",
+      "name": {
+        "en": "Smart Socket IP-3010S"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "EMOS",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "IP-3010S"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/smart_socket_ip_3010s/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Smart Socket IP-3010S for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/smart_socket_ip_3010s/assets/images/small.png",
+        "large": "/drivers/smart_socket_ip_3010s/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "smart_switch",
+      "name": {
+        "en": "Smart Switch"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_3u4hripk",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0011"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/smart_switch/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Smart Switch for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/smart_switch/assets/images/small.png",
+        "large": "/drivers/smart_switch/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "smart_switch_with_power_monitor",
+      "name": {
+        "en": "[Smart Switch with Power Monitor]"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "[TS0207",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "_TZ3000_nkkl7uzv]"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/smart_switch_with_power_monitor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your [Smart Switch with Power Monitor] for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/smart_switch_with_power_monitor/assets/images/small.png",
+        "large": "/drivers/smart_switch_with_power_monitor/assets/images/large.png"
+      },
+      "settings": []
     },
     {
       "id": "smoke_detector",
       "name": {
-        "en": "Smoke Detector"
+        "en": "smoke detector"
       },
       "class": "sensor",
       "capabilities": [
@@ -1630,20 +3846,11 @@
       ],
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_",
-          "_TZE200_",
-          "_TYZB01_",
-          "TUYA",
-          "Smart Home"
+          "_TZE284_",
+          "ONENUO"
         ],
         "productId": [
-          "TS0001",
-          "TS0011",
-          "TS0012",
-          "TS004F",
-          "TS011F",
-          "TS0121",
-          "TS013F"
+          "TZE284_n4ttsck2"
         ],
         "endpoints": {
           "1": {
@@ -1658,7 +3865,7 @@
         "learnmode": {
           "image": "/drivers/smoke_detector/assets/learn.svg",
           "instruction": {
-            "en": "Press and hold the button on your Smoke Detector for 3 seconds until the LED starts blinking rapidly."
+            "en": "Press and hold the button on your smoke detector for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
@@ -1668,9 +3875,11 @@
       },
       "settings": [
         {
-          "id": "smoke_sensitivity",
+          "id": "sensitivity",
           "type": "dropdown",
-          "label": "Smoke Sensitivity",
+          "label": {
+            "en": "Sensitivity"
+          },
           "value": "medium",
           "values": [
             {
@@ -1692,6 +3901,16 @@
               }
             }
           ]
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
         }
       ],
       "energy": {
@@ -1704,26 +3923,22 @@
     {
       "id": "soil_sensor",
       "name": {
-        "en": "Soil Temperature & Humidity Sensor"
+        "en": "Soil sensor"
       },
       "class": "sensor",
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "zigbee": {
         "manufacturerName": [
-          "_TZE284_myd45weu",
-          "_TZE200_myd45weu",
-          "_TZ3000_myd45weu",
-          "TUYA",
-          "Smart Home"
+          "_TZE284_nhgdf6qr",
+          "_TZ3000_",
+          "TUYA"
         ],
         "productId": [
-          "TS0601",
-          "TS0201"
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -1731,17 +3946,15 @@
               0,
               1,
               3,
-              1024,
               1026,
-              1029,
-              57344
+              1029
             ]
           }
         },
         "learnmode": {
           "image": "/drivers/soil_sensor/assets/learn.svg",
           "instruction": {
-            "en": "Press and hold the button on your Soil Sensor for 3 seconds until the LED starts blinking rapidly."
+            "en": "Press and hold the button on your Soil sensor for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
@@ -1750,16 +3963,6 @@
         "large": "/drivers/soil_sensor/assets/images/large.png"
       },
       "settings": [
-        {
-          "id": "measurement_interval",
-          "type": "number",
-          "label": {
-            "en": "Measurement Interval (minutes)"
-          },
-          "value": 10,
-          "min": 1,
-          "max": 60
-        },
         {
           "id": "temperature_offset",
           "type": "number",
@@ -1770,6 +3973,88 @@
           "min": -10,
           "max": 10,
           "step": 0.1
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "soil_temperature_moisture_plant_sensor",
+      "name": {
+        "en": "[Soil Temperature Moisture Plant Sensor]"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_npj9bug3",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1026,
+              1029
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/soil_temperature_moisture_plant_sensor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your [Soil Temperature Moisture Plant Sensor] for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/soil_temperature_moisture_plant_sensor/assets/images/small.png",
+        "large": "/drivers/soil_temperature_moisture_plant_sensor/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset (°C)"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
         }
       ],
       "energy": {
@@ -1794,23 +4079,11 @@
         "manufacturerName": [
           "_TZ3000_",
           "_TZE200_",
-          "_TYZB01_",
-          "TUYA",
-          "Smart Home",
-          "_TZ3000_p6ju8myv",
-          "_TZ3000_fsiepnrh",
-          "_TZ3000_wr2ucaj9",
-          "_TZ3000_4fjiwweb",
-          "_TZ3000_ml6ljhsl"
+          "_TZE284_",
+          "TUYA"
         ],
         "productId": [
-          "TS004F",
-          "TS0041",
-          "TS0042",
-          "TS0043",
-          "TS0044",
-          "TS0215A",
-          "TS0211"
+          "LQ-01"
         ],
         "endpoints": {
           "1": {
@@ -1880,9 +4153,47 @@
       }
     },
     {
-      "id": "temperature_humidity_sensor",
+      "id": "temp_and_hum_sensor",
       "name": {
-        "en": "Temperature & Humidity Sensor"
+        "en": "Temp and Hum Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_a8sdabtg",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/temp_and_hum_sensor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Temp and Hum Sensor for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/temp_and_hum_sensor/assets/images/small.png",
+        "large": "/drivers/temp_and_hum_sensor/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "temperature_and_humidity_sensor",
+      "name": {
+        "en": "Temperature and humidity sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -1892,20 +4203,84 @@
       ],
       "zigbee": {
         "manufacturerName": [
+          "[manufacturerName]",
           "_TZ3000_",
-          "_TZE200_",
-          "_TYZB01_",
-          "TUYA",
-          "Smart Home"
+          "TUYA"
         ],
         "productId": [
-          "TS0001",
-          "TS0011",
-          "TS0012",
-          "TS004F",
-          "TS011F",
-          "TS0121",
-          "TS013F"
+          "TS0201"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1026,
+              1029
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/temperature_and_humidity_sensor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Temperature and humidity sensor for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/temperature_and_humidity_sensor/assets/images/small.png",
+        "large": "/drivers/temperature_and_humidity_sensor/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset (°C)"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "temperature_humidity_sensor",
+      "name": {
+        "en": "Temperature & Humidity sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "Shenzhen Haihao Electronics",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -1921,7 +4296,7 @@
         "learnmode": {
           "image": "/drivers/temperature_humidity_sensor/assets/learn.svg",
           "instruction": {
-            "en": "Press and hold the button on your Temperature & Humidity Sensor for 3 seconds until the LED starts blinking rapidly."
+            "en": "Press and hold the button on your Temperature & Humidity sensor for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
@@ -1931,22 +4306,25 @@
       },
       "settings": [
         {
-          "id": "temp_offset",
+          "id": "temperature_offset",
           "type": "number",
-          "label": "Temperature Offset (°C)",
-          "value": 0
+          "label": {
+            "en": "Temperature Offset (°C)"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1
         },
         {
-          "id": "humidity_offset",
+          "id": "battery_threshold",
           "type": "number",
-          "label": "Humidity Offset (%)",
-          "value": 0
-        },
-        {
-          "id": "reporting_interval",
-          "type": "number",
-          "label": "Reporting Interval (minutes)",
-          "value": 5
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
         }
       ],
       "energy": {
@@ -1955,6 +4333,187 @@
           "AA"
         ]
       }
+    },
+    {
+      "id": "temperature_humidity_tz3000_akqdg6g7",
+      "name": {
+        "en": "Temperature-Humidity- TZ3000_akqdg6g7"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE284_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0201"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1026,
+              1029
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/temperature_humidity_tz3000_akqdg6g7/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Temperature-Humidity- TZ3000_akqdg6g7 for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/temperature_humidity_tz3000_akqdg6g7/assets/images/small.png",
+        "large": "/drivers/temperature_humidity_tz3000_akqdg6g7/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset (°C)"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "temperaturemoisture_meter",
+      "name": {
+        "en": "Temperature/Moisture meter"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "TZ3000_tsgqxdb4",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0201"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1026
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/temperaturemoisture_meter/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Temperature/Moisture meter for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/temperaturemoisture_meter/assets/images/small.png",
+        "large": "/drivers/temperaturemoisture_meter/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset (°C)"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "thermo_hygrometer",
+      "name": {
+        "en": "Thermo-Hygrometer"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "Shenzhen Huayuan",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TH02"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/thermo_hygrometer/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Thermo-Hygrometer for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/thermo_hygrometer/assets/images/small.png",
+        "large": "/drivers/thermo_hygrometer/assets/images/large.png"
+      },
+      "settings": []
     },
     {
       "id": "thermostat",
@@ -1966,24 +4525,18 @@
         "target_temperature",
         "measure_temperature",
         "measure_humidity",
-        "thermostat_mode"
+        "thermostat_mode",
+        "measure_battery"
       ],
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_",
           "_TZE200_",
-          "_TYZB01_",
-          "TUYA",
-          "Smart Home"
+          "_TZE284_",
+          "TUYA"
         ],
         "productId": [
-          "TS0001",
-          "TS0011",
-          "TS0012",
-          "TS004F",
-          "TS011F",
-          "TS0121",
-          "TS013F"
+          "CK-TLSR8656-SS5-01(7014)"
         ],
         "endpoints": {
           "1": {
@@ -2040,12 +4593,1085 @@
           "label": "Eco Mode",
           "value": true
         }
-      ]
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "tomzn_zigbee_rail_relais_63a_1p_n",
+      "name": {
+        "en": "TOMZN Zigbee Rail relais 63A 1P + N"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "TOMZ smartlife",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TOB9Z-M"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/tomzn_zigbee_rail_relais_63a_1p_n/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your TOMZN Zigbee Rail relais 63A 1P + N for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tomzn_zigbee_rail_relais_63a_1p_n/assets/images/small.png",
+        "large": "/drivers/tomzn_zigbee_rail_relais_63a_1p_n/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "tuya",
+      "name": {
+        "en": "Tuya"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "Tuya Zigbee 3.0 Temperature and Humidity Smart Home Thermometer Hygrometer",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "ZY-ZTH02"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/tuya/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Tuya for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya/assets/images/small.png",
+        "large": "/drivers/tuya/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "tuya_2_in_1_zigbee_mini_pir_motion_detector_bright",
+      "name": {
+        "en": "Tuya 2 in 1 Zigbee Mini PIR Motion Detector +Bright Lux"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_3towulqd",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1030
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/tuya_2_in_1_zigbee_mini_pir_motion_detector_bright/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Tuya 2 in 1 Zigbee Mini PIR Motion Detector +Bright Lux for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya_2_in_1_zigbee_mini_pir_motion_detector_bright/assets/images/small.png",
+        "large": "/drivers/tuya_2_in_1_zigbee_mini_pir_motion_detector_bright/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "sensitivity",
+          "type": "dropdown",
+          "label": {
+            "en": "Sensitivity"
+          },
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High"
+              }
+            }
+          ]
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "tuya_smart_temperature_and_humidity_sensor_tuya",
+      "name": {
+        "en": "Tuya Smart Temperature And Humidity Sensor- Tuya"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE284_",
+          "TUYA"
+        ],
+        "productId": [
+          "CK-TLSR8656-SS5-01(7014)"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1026,
+              1029
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/tuya_smart_temperature_and_humidity_sensor_tuya/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Tuya Smart Temperature And Humidity Sensor- Tuya for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya_smart_temperature_and_humidity_sensor_tuya/assets/images/small.png",
+        "large": "/drivers/tuya_smart_temperature_and_humidity_sensor_tuya/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset (°C)"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "tuya_smart_thermostatic_radiator_valve",
+      "name": {
+        "en": "Tuya Smart Thermostatic Radiator Valve"
+      },
+      "class": "thermostat",
+      "capabilities": [
+        "measure_temperature",
+        "target_temperature",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "manufacturerName",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TRV602-Zigbee"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              513,
+              1026
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/tuya_smart_thermostatic_radiator_valve/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Tuya Smart Thermostatic Radiator Valve for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya_smart_thermostatic_radiator_valve/assets/images/small.png",
+        "large": "/drivers/tuya_smart_thermostatic_radiator_valve/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset (°C)"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "tuya_smart_zigbee_smoke_detector",
+      "name": {
+        "en": "Tuya Smart Zigbee Smoke Detector"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_smoke",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_rccxox8p",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1280
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/tuya_smart_zigbee_smoke_detector/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Tuya Smart Zigbee Smoke Detector for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya_smart_zigbee_smoke_detector/assets/images/small.png",
+        "large": "/drivers/tuya_smart_zigbee_smoke_detector/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "sensitivity",
+          "type": "dropdown",
+          "label": {
+            "en": "Sensitivity"
+          },
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High"
+              }
+            }
+          ]
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "tuya_smart_zigbee_soil_tester_temperature_and_humi",
+      "name": {
+        "en": "[Tuya Smart Zigbee Soil Tester Temperature and Humidity Meter]"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "[TS0601",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "_TZE284_myd45weu]"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1026,
+              1029
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/tuya_smart_zigbee_soil_tester_temperature_and_humi/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your [Tuya Smart Zigbee Soil Tester Temperature and Humidity Meter] for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya_smart_zigbee_soil_tester_temperature_and_humi/assets/images/small.png",
+        "large": "/drivers/tuya_smart_zigbee_soil_tester_temperature_and_humi/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset (°C)"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "tuya_zigbee_2_gang_switch",
+      "name": {
+        "en": "Tuya Zigbee 2 gang switch"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE284_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0012 (This one is already supported in v0.2.73!) - Issue can be removed"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/tuya_zigbee_2_gang_switch/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Tuya Zigbee 2 gang switch for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya_zigbee_2_gang_switch/assets/images/small.png",
+        "large": "/drivers/tuya_zigbee_2_gang_switch/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "tuya_zigbee_doorwindow_sensor_aliexpress",
+      "name": {
+        "en": "Tuya Zigbee Door/Window Sensor - AliExpress"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_contact",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_n2egfsli",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "SNZB-04"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1280
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/tuya_zigbee_doorwindow_sensor_aliexpress/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Tuya Zigbee Door/Window Sensor - AliExpress for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya_zigbee_doorwindow_sensor_aliexpress/assets/images/small.png",
+        "large": "/drivers/tuya_zigbee_doorwindow_sensor_aliexpress/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "sensitivity",
+          "type": "dropdown",
+          "label": {
+            "en": "Sensitivity"
+          },
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High"
+              }
+            }
+          ]
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "tuya_zigbee_smart_curtain_motor",
+      "name": {
+        "en": "Tuya zigbee smart curtain motor"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "Leisguar",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "LS82-Tuya-zigbee smart curtain motor"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/tuya_zigbee_smart_curtain_motor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Tuya zigbee smart curtain motor for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya_zigbee_smart_curtain_motor/assets/images/small.png",
+        "large": "/drivers/tuya_zigbee_smart_curtain_motor/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "tuya_zigbee_smart_ir_remote",
+      "name": {
+        "en": "tuya zigbee smart IR-remote"
+      },
+      "class": "button",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE284_",
+          "TUYA"
+        ],
+        "productId": [
+          "CB3S or ih-f8260"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/tuya_zigbee_smart_ir_remote/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your tuya zigbee smart IR-remote for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya_zigbee_smart_ir_remote/assets/images/small.png",
+        "large": "/drivers/tuya_zigbee_smart_ir_remote/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "tuya_zigbee_soil_moisture_sensor",
+      "name": {
+        "en": "Tuya Zigbee Soil Moisture Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_wqashyqo",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1026,
+              1029
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/tuya_zigbee_soil_moisture_sensor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Tuya Zigbee Soil Moisture Sensor for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya_zigbee_soil_moisture_sensor/assets/images/small.png",
+        "large": "/drivers/tuya_zigbee_soil_moisture_sensor/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset (°C)"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "tuya_zigbee_temperature_sensor",
+      "name": {
+        "en": "Tuya Zigbee Temperature Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_1o6x1bl0",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0201"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1026
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/tuya_zigbee_temperature_sensor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Tuya Zigbee Temperature Sensor for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya_zigbee_temperature_sensor/assets/images/small.png",
+        "large": "/drivers/tuya_zigbee_temperature_sensor/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset (°C)"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "two_gang_switch",
+      "name": {
+        "en": "Two Gang Switch"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "MOES"
+        ],
+        "productId": [
+          "TS0012 _TZ3000_18ejxno0"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/two_gang_switch/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Two Gang Switch for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/two_gang_switch/assets/images/small.png",
+        "large": "/drivers/two_gang_switch/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "usb_micro_switch_single",
+      "name": {
+        "en": "usb micro switch (single)"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE284_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0001"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/usb_micro_switch_single/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your usb micro switch (single) for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/usb_micro_switch_single/assets/images/small.png",
+        "large": "/drivers/usb_micro_switch_single/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "valve_controller_white",
+      "name": {
+        "en": "Valve Controller White"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "target_temperature",
+        "alarm_co",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE284_d0ypnbvn",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0601 (working code is attached)"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              513,
+              1280
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/valve_controller_white/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Valve Controller White for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/valve_controller_white/assets/images/small.png",
+        "large": "/drivers/valve_controller_white/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "sensitivity",
+          "type": "dropdown",
+          "label": {
+            "en": "Sensitivity"
+          },
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High"
+              }
+            }
+          ]
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "wall_switch_1_gang",
+      "name": {
+        "en": "Wall Switch 1 Gang"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "MOES"
+        ],
+        "productId": [
+          "_TZ3000_bzzgvet0"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/wall_switch_1_gang/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Wall Switch 1 Gang for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/wall_switch_1_gang/assets/images/small.png",
+        "large": "/drivers/wall_switch_1_gang/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "wall_switch_with_blug_and_usb",
+      "name": {
+        "en": "Wall switch with blug and USB"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_lqb7lcq9",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/wall_switch_with_blug_and_usb/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Wall switch with blug and USB for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/wall_switch_with_blug_and_usb/assets/images/small.png",
+        "large": "/drivers/wall_switch_with_blug_and_usb/assets/images/large.png"
+      },
+      "settings": []
     },
     {
       "id": "water_leak_detector",
       "name": {
-        "en": "Water Leak Detector"
+        "en": "Water Leak detector"
       },
       "class": "sensor",
       "capabilities": [
@@ -2054,20 +5680,12 @@
       ],
       "zigbee": {
         "manufacturerName": [
+          "_TZ3000_upgcbody",
           "_TZ3000_",
-          "_TZE200_",
-          "_TYZB01_",
-          "TUYA",
-          "Smart Home"
+          "TUYA"
         ],
         "productId": [
-          "TS0001",
-          "TS0011",
-          "TS0012",
-          "TS004F",
-          "TS011F",
-          "TS0121",
-          "TS013F"
+          "SNZB-05"
         ],
         "endpoints": {
           "1": {
@@ -2082,7 +5700,7 @@
         "learnmode": {
           "image": "/drivers/water_leak_detector/assets/learn.svg",
           "instruction": {
-            "en": "Press and hold the button on your Water Leak Detector for 3 seconds until the LED starts blinking rapidly."
+            "en": "Press and hold the button on your Water Leak detector for 3 seconds until the LED starts blinking rapidly."
           }
         }
       },
@@ -2092,30 +5710,42 @@
       },
       "settings": [
         {
-          "id": "detection_sensitivity",
+          "id": "sensitivity",
           "type": "dropdown",
-          "label": "Water Detection Sensitivity",
-          "value": "option1",
+          "label": {
+            "en": "Sensitivity"
+          },
+          "value": "medium",
           "values": [
             {
-              "id": "option1",
+              "id": "low",
               "label": {
-                "en": "Option 1"
+                "en": "Low"
               }
             },
             {
-              "id": "option2",
+              "id": "medium",
               "label": {
-                "en": "Option 2"
+                "en": "Medium"
               }
             },
             {
-              "id": "option3",
+              "id": "high",
               "label": {
-                "en": "Option 3"
+                "en": "High"
               }
             }
           ]
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
         }
       ],
       "energy": {
@@ -2124,6 +5754,651 @@
           "AA"
         ]
       }
+    },
+    {
+      "id": "water_leak_sensor",
+      "name": {
+        "en": "Water Leak Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_water",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_wuep9zng",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0207"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1280
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/water_leak_sensor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Water Leak Sensor for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/water_leak_sensor/assets/images/small.png",
+        "large": "/drivers/water_leak_sensor/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "sensitivity",
+          "type": "dropdown",
+          "label": {
+            "en": "Sensitivity"
+          },
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High"
+              }
+            }
+          ]
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "woodupp_create_led",
+      "name": {
+        "en": "WoodUpp CREATE LED"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "WoodUpp",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "CREATE LED"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/woodupp_create_led/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your WoodUpp CREATE LED for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/woodupp_create_led/assets/images/small.png",
+        "large": "/drivers/woodupp_create_led/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "zigbee_1_gang_dimmer",
+      "name": {
+        "en": "Zigbee 1 gang dimmer"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE204_nqqylykc",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6,
+              8
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/zigbee_1_gang_dimmer/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Zigbee 1 gang dimmer for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/zigbee_1_gang_dimmer/assets/images/small.png",
+        "large": "/drivers/zigbee_1_gang_dimmer/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "zigbee_1ch_th_smart_switch",
+      "name": {
+        "en": "Zigbee 1CH TH Smart Switch"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3218_7fiyo3kv",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS000F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/zigbee_1ch_th_smart_switch/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Zigbee 1CH TH Smart Switch for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/zigbee_1ch_th_smart_switch/assets/images/small.png",
+        "large": "/drivers/zigbee_1ch_th_smart_switch/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "zigbee_intelligent_curtain_motor",
+      "name": {
+        "en": "ZigBee Intelligent curtain motor"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "Autorail \"_TZE204_bjzrowv2\"",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "\"TS0601\""
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/zigbee_intelligent_curtain_motor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your ZigBee Intelligent curtain motor for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/zigbee_intelligent_curtain_motor/assets/images/small.png",
+        "large": "/drivers/zigbee_intelligent_curtain_motor/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "zigbee_light_switch_push_button",
+      "name": {
+        "en": "Zigbee Light Switch Push Button"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_zxrfobzw",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0002"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6,
+              8
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/zigbee_light_switch_push_button/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Zigbee Light Switch Push Button for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/zigbee_light_switch_push_button/assets/images/small.png",
+        "large": "/drivers/zigbee_light_switch_push_button/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "zigbee_pir_sensor_with_lux",
+      "name": {
+        "en": "Zigbee PIR Sensor with lux"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "HOBEIAN"
+        ],
+        "productId": [
+          "ZG-204ZL"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/zigbee_pir_sensor_with_lux/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Zigbee PIR Sensor with lux for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/zigbee_pir_sensor_with_lux/assets/images/small.png",
+        "large": "/drivers/zigbee_pir_sensor_with_lux/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "zigbee_rain_brightness_light_sensor",
+      "name": {
+        "en": "Zigbee Rain & Brightness Light Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "HOBEIAN"
+        ],
+        "productId": [
+          "ZG-223Z"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6,
+              8
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/zigbee_rain_brightness_light_sensor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Zigbee Rain & Brightness Light Sensor for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/zigbee_rain_brightness_light_sensor/assets/images/small.png",
+        "large": "/drivers/zigbee_rain_brightness_light_sensor/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "zigbee_smart_button",
+      "name": {
+        "en": "Zigbee Smart Button"
+      },
+      "class": "button",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_5bpeda8u",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0041"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/zigbee_smart_button/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Zigbee Smart Button for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/zigbee_smart_button/assets/images/small.png",
+        "large": "/drivers/zigbee_smart_button/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "zigbee_smart_dimmer_module",
+      "name": {
+        "en": "Zigbee Smart Dimmer Module"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "Avatto",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "DMS16/ZDMS16"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6,
+              8
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/zigbee_smart_dimmer_module/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Zigbee Smart Dimmer Module for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/zigbee_smart_dimmer_module/assets/images/small.png",
+        "large": "/drivers/zigbee_smart_dimmer_module/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "zigbee_smart_dimmer_switch_module_timer",
+      "name": {
+        "en": "Zigbee Smart Dimmer Switch Module Timer"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "MOES"
+        ],
+        "productId": [
+          "ZM-105-M"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6,
+              8
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/zigbee_smart_dimmer_switch_module_timer/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Zigbee Smart Dimmer Switch Module Timer for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/zigbee_smart_dimmer_switch_module_timer/assets/images/small.png",
+        "large": "/drivers/zigbee_smart_dimmer_switch_module_timer/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "zigbee_smart_plug",
+      "name": {
+        "en": "Zigbee Smart Plug"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE284_",
+          "TUYA"
+        ],
+        "productId": [
+          "XH-TZ3PJ"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/zigbee_smart_plug/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Zigbee Smart Plug for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/zigbee_smart_plug/assets/images/small.png",
+        "large": "/drivers/zigbee_smart_plug/assets/images/large.png"
+      },
+      "settings": []
+    },
+    {
+      "id": "zigbee_temperature_and_humidity_sensor",
+      "name": {
+        "en": "Zigbee Temperature and Humidity sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_vvmbj46n",
+          "_TZ3000_",
+          "TUYA"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1026,
+              1029
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/zigbee_temperature_and_humidity_sensor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Zigbee Temperature and Humidity sensor for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/zigbee_temperature_and_humidity_sensor/assets/images/small.png",
+        "large": "/drivers/zigbee_temperature_and_humidity_sensor/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset (°C)"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1
+        },
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      }
+    },
+    {
+      "id": "zigbee_wireless_button",
+      "name": {
+        "en": "Zigbee Wireless Button"
+      },
+      "class": "button",
+      "capabilities": [],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE284_",
+          "TUYA"
+        ],
+        "productId": [
+          "LQ-01"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/zigbee_wireless_button/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Zigbee Wireless Button for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/zigbee_wireless_button/assets/images/small.png",
+        "large": "/drivers/zigbee_wireless_button/assets/images/large.png"
+      },
+      "settings": []
     }
   ]
 }

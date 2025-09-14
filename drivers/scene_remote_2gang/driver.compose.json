@@ -7,20 +7,12 @@
   "capabilities": [],
   "zigbee": {
     "manufacturerName": [
+      "_TZ3000_5tqxpine",
       "_TZ3000_",
-      "_TZE200_",
-      "_TYZB01_",
-      "TUYA",
-      "Smart Home"
+      "TUYA"
     ],
     "productId": [
-      "TS0001",
-      "TS0011",
-      "TS0012",
-      "TS004F",
-      "TS011F",
-      "TS0121",
-      "TS013F"
+      "TS0044"
     ],
     "endpoints": {
       "1": {
