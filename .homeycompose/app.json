@@ -1,6 +1,6 @@
 {
   "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "1.0.15", 
+  "version": "1.0.16", 
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": ["local"],
@@ -11,10 +11,10 @@
     "de": "Ultimate Zigbee Hub"
   },
   "description": {
-    "en": "Ultimate Zigbee Hub - Professional support for 850+ devices from Tuya, Aqara, IKEA, Philips & 50+ manufacturers. Intelligent device selection with comprehensive categories. Local Zigbee 3.0 - no cloud required!",
-    "fr": "Ultimate Zigbee Hub - Support professionnel pour 850+ appareils de Tuya, Aqara, IKEA, Philips et 50+ fabricants. Sélection intelligente d'appareils avec catégories complètes. Zigbee 3.0 local - aucun cloud requis!",
-    "nl": "Ultimate Zigbee Hub - Professionele ondersteuning voor 850+ apparaten van Tuya, Aqara, IKEA, Philips en 50+ fabrikanten. Intelligente apparaatselectie met uitgebreide categorieën. Lokaal Zigbee 3.0 - geen cloud vereist!",
-    "de": "Ultimate Zigbee Hub - Professionelle Unterstützung für 850+ Geräte von Tuya, Aqara, IKEA, Philips und 50+ Herstellern. Intelligente Gerätewahl mit umfassenden Kategorien. Lokales Zigbee 3.0 - keine Cloud erforderlich!"
+    "en": "Ultimate Zigbee Hub - Intelligent device selection system with 850+ devices from 50+ manufacturers. Professional organization following Johan Benz standards. Comprehensive device categories, pairing assistance, and local Zigbee 3.0 communication. No cloud required!",
+    "fr": "Ultimate Zigbee Hub - Système de sélection intelligente d'appareils avec 850+ appareils de 50+ fabricants. Organisation professionnelle suivant les standards Johan Benz. Catégories complètes, assistance au jumelage, et communication Zigbee 3.0 locale. Aucun cloud requis!",
+    "nl": "Ultimate Zigbee Hub - Intelligent apparaatselectiesysteem met 850+ apparaten van 50+ fabrikanten. Professionele organisatie volgens Johan Benz standaarden. Uitgebreide categorieën, koppelingsassistentie, en lokale Zigbee 3.0 communicatie. Geen cloud vereist!",
+    "de": "Ultimate Zigbee Hub - Intelligentes Geräteauswahlsystem mit 850+ Geräten von 50+ Herstellern. Professionelle Organisation nach Johan Benz Standards. Umfassende Kategorien, Kopplungsassistenz, und lokale Zigbee 3.0 Kommunikation. Keine Cloud erforderlich!"
   },
   "category": ["lights", "appliances", "security", "climate"],
   "brandColor": "#1E88E5",
