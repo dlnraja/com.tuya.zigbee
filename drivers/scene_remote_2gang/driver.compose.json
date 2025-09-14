@@ -48,7 +48,27 @@
       "id": "button_mode",
       "type": "dropdown",
       "label": "Button Mode",
-      "value": "single"
+      "value": "scene",
+      "values": [
+        {
+          "id": "scene",
+          "label": {
+            "en": "Scene"
+          }
+        },
+        {
+          "id": "dimmer",
+          "label": {
+            "en": "Dimmer"
+          }
+        },
+        {
+          "id": "switch",
+          "label": {
+            "en": "Switch"
+          }
+        }
+      ]
     }
   ]
 }
