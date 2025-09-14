@@ -1,0 +1,78 @@
+{
+  "id": "soil_sensor",
+  "name": {
+    "en": "Soil Temperature & Humidity Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE284_myd45weu",
+      "_TZE200_myd45weu",
+      "_TZ3000_myd45weu",
+      "TUYA",
+      "Smart Home"
+    ],
+    "productId": [
+      "TS0601",
+      "TS0201"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          1024,
+          1026,
+          1029,
+          57344
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/soil_sensor/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your Soil Sensor for 3 seconds until the LED starts blinking rapidly."
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/soil_sensor/assets/images/small.png",
+    "large": "/drivers/soil_sensor/assets/images/large.png"
+  },
+  "settings": [
+    {
+      "id": "measurement_interval",
+      "type": "number",
+      "label": {
+        "en": "Measurement Interval (minutes)"
+      },
+      "value": 10,
+      "min": 1,
+      "max": 60
+    },
+    {
+      "id": "temperature_offset",
+      "type": "number",
+      "label": {
+        "en": "Temperature Offset (°C)"
+      },
+      "value": 0,
+      "min": -10,
+      "max": 10,
+      "step": 0.1
+    }
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AA"
+    ]
+  }
+}

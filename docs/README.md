@@ -1,8 +1,16 @@
 # 📚 Documentation Index
 
-## 🚀 Tuya Zigbee Universal Documentation
+## Ultimate Zigbee Hub Documentation
 
-Welcome to the complete documentation for Tuya Zigbee Universal. This documentation is available in multiple languages and covers all aspects of the application.
+This directory contains comprehensive documentation for the Ultimate Zigbee Hub project.
+
+**Built on Johan Bendz's Foundation**: This project extends and enhances the original [Tuya Zigbee App](https://github.com/JohanBendz/com.tuya.zigbee) with full SDK3 support and community-driven improvements.
+
+## Community Links
+- **Original App**: [Johan Bendz Tuya Zigbee App](https://community.homey.app/t/app-pro-tuya-zigbee-app/26439)
+- **Enhanced Version**: [Ultimate Zigbee Hub](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352)
+- **GitHub Repository**: [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee)
+- **GitHub Actions**: [Workflow Status](https://github.com/dlnraja/com.tuya.zigbee/actions)
 
 ## 📖 User Documentation
 

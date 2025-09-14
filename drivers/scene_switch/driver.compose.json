@@ -3,7 +3,7 @@
   "name": {
     "en": "Scene Switch"
   },
-  "class": "switch",
+  "class": "button",
   "capabilities": [
     "onoff"
   ],
@@ -27,10 +27,10 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "identify",
-          "onOff",
-          "scenes"
+          0,
+          3,
+          6,
+          5
         ]
       }
     },

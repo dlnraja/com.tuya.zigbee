@@ -3,7 +3,7 @@
   "name": {
     "en": "Dimmer Switch"
   },
-  "class": "switch",
+  "class": "light",
   "capabilities": [
     "onoff",
     "dim"
@@ -28,10 +28,10 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "identify",
-          "onOff",
-          "levelControl"
+          0,
+          3,
+          6,
+          8
         ]
       }
     },

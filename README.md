@@ -1,10 +1,12 @@
 # 🏠 Ultimate Zigbee Hub
 
-**Professional Tuya Zigbee Device Integration for Homey Pro**
+Ultimate Zigbee Hub for Homey - Professional SDK3 ecosystem with comprehensive device support.
+
+**Built on the excellent foundation by [Johan Bendz](https://github.com/JohanBendz) and his original [Tuya Zigbee App](https://community.homey.app/t/app-pro-tuya-zigbee-app/26439).**
 
 [![Homey App Store](https://img.shields.io/badge/Homey-App%20Store-blue)](https://homey.app/a/com.dlnraja.ultimate.zigbee.hub)
 [![SDK Version](https://img.shields.io/badge/SDK-v3-green)](https://developer.homey.app)
-[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)** - Maximum coverage for 850+ devices across 50+ manufacturers including Tuya, Aqara, IKEA, Philips, and more. Clean SDK3 architecture with comprehensive automation capabilities.
+[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE) - Maximum coverage for 850+ devices across 50+ manufacturers including Tuya, Aqara, IKEA, Philips, and more. Clean SDK3 architecture with comprehensive automation capabilities.
 
 ## 🚀 Key Features
 

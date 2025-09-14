@@ -31,9 +31,19 @@
       "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\energy_plug\\assets\\images\\large.png"
     },
     {
+      "driver": "enhanced_smoke_detector",
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\enhanced_smoke_detector\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\enhanced_smoke_detector\\assets\\images\\large.png"
+    },
+    {
       "driver": "light_switch",
       "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\light_switch\\assets\\images\\small.png",
       "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\light_switch\\assets\\images\\large.png"
+    },
+    {
+      "driver": "moes_dimmer",
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\moes_dimmer\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\moes_dimmer\\assets\\images\\large.png"
     },
     {
       "driver": "motion_sensor",
@@ -91,6 +101,11 @@
       "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smoke_detector\\assets\\images\\large.png"
     },
     {
+      "driver": "soil_sensor",
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\soil_sensor\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\soil_sensor\\assets\\images\\large.png"
+    },
+    {
       "driver": "sos_button",
       "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sos_button\\assets\\images\\small.png",
       "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sos_button\\assets\\images\\large.png"
@@ -112,5 +127,5 @@
     }
   ],
   "errors": [],
-  "total_drivers": 22
+  "total_drivers": 25
 }

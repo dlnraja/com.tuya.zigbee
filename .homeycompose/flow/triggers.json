@@ -468,5 +468,135 @@
         }
       }
     ]
+  },
+  {
+    "id": "smoke_alarm_triggered",
+    "title": {
+      "en": "Smoke alarm triggered",
+      "fr": "Alarme fumée déclenchée",
+      "nl": "Rook alarm geactiveerd",
+      "de": "Rauchmelder ausgelöst"
+    },
+    "titleFormatted": {
+      "en": "Smoke alarm triggered on {{device}}",
+      "fr": "Alarme fumée déclenchée sur {{device}}",
+      "nl": "Rook alarm geactiveerd op {{device}}",
+      "de": "Rauchmelder ausgelöst auf {{device}}"
+    },
+    "hint": {
+      "en": "This card will trigger when smoke is detected by the enhanced smoke detector.",
+      "fr": "Cette carte se déclenchera lorsque de la fumée est détectée par le détecteur de fumée amélioré.",
+      "nl": "Deze kaart wordt geactiveerd wanneer rook wordt gedetecteerd door de verbeterde rookmelder.",
+      "de": "Diese Karte wird ausgelöst, wenn Rauch vom erweiterten Rauchmelder erkannt wird."
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=enhanced_smoke_detector"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "smoke_detected",
+        "type": "boolean",
+        "title": {
+          "en": "Smoke detected",
+          "fr": "Fumée détectée",
+          "nl": "Rook gedetecteerd",
+          "de": "Rauch erkannt"
+        }
+      }
+    ]
+  },
+  {
+    "id": "smoke_alarm_cleared",
+    "title": {
+      "en": "Smoke alarm cleared",
+      "fr": "Alarme fumée désactivée",
+      "nl": "Rook alarm uitgeschakeld",
+      "de": "Rauchmelder zurückgesetzt"
+    },
+    "titleFormatted": {
+      "en": "Smoke alarm cleared on {{device}}",
+      "fr": "Alarme fumée désactivée sur {{device}}",
+      "nl": "Rook alarm uitgeschakeld op {{device}}",
+      "de": "Rauchmelder zurückgesetzt auf {{device}}"
+    },
+    "hint": {
+      "en": "This card will trigger when smoke alarm is cleared by the enhanced smoke detector.",
+      "fr": "Cette carte se déclenchera lorsque l'alarme fumée est désactivée par le détecteur de fumée amélioré.",
+      "nl": "Deze kaart wordt geactiveerd wanneer het rookalarm wordt uitgeschakeld door de verbeterde rookmelder.",
+      "de": "Diese Karte wird ausgelöst, wenn der Rauchalarm vom erweiterten Rauchmelder zurückgesetzt wird."
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=enhanced_smoke_detector"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "smoke_detected",
+        "type": "boolean",
+        "title": {
+          "en": "Smoke detected",
+          "fr": "Fumée détectée",
+          "nl": "Rook gedetecteerd",
+          "de": "Rauch erkannt"
+        }
+      }
+    ]
+  },
+  {
+    "id": "soil_sensor_measurement",
+    "title": {
+      "en": "Soil sensor measurement updated",
+      "fr": "Mesure capteur sol mise à jour",
+      "nl": "Grond sensor meting bijgewerkt",
+      "de": "Bodensensor Messung aktualisiert"
+    },
+    "titleFormatted": {
+      "en": "Soil sensor measurement updated on {{device}}",
+      "fr": "Mesure capteur sol mise à jour sur {{device}}",
+      "nl": "Grond sensor meting bijgewerkt op {{device}}",
+      "de": "Bodensensor Messung aktualisiert auf {{device}}"
+    },
+    "hint": {
+      "en": "This card will trigger when soil temperature or humidity measurements are updated.",
+      "fr": "Cette carte se déclenchera lorsque les mesures de température ou d'humidité du sol sont mises à jour.",
+      "nl": "Deze kaart wordt geactiveerd wanneer grondtemperatuur of vochtigheidmetingen worden bijgewerkt.",
+      "de": "Diese Karte wird ausgelöst, wenn Bodentemperatur- oder Feuchtigkeitsmessungen aktualisiert werden."
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=soil_sensor"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "temperature",
+        "type": "number",
+        "title": {
+          "en": "Temperature (°C)",
+          "fr": "Température (°C)",
+          "nl": "Temperatuur (°C)",
+          "de": "Temperatur (°C)"
+        }
+      },
+      {
+        "name": "humidity",
+        "type": "number",
+        "title": {
+          "en": "Humidity (%)",
+          "fr": "Humidité (%)",
+          "nl": "Vochtigheid (%)",
+          "de": "Feuchtigkeit (%)"
+        }
+      }
+    ]
   }
 ]
