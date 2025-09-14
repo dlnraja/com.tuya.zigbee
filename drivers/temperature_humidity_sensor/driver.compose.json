@@ -1,7 +1,7 @@
 {
   "id": "temperature_humidity_sensor",
   "name": {
-    "en": "Temperature & Humidity Sensor"
+    "en": "Temperature & Humidity sensor"
   },
   "class": "sensor",
   "capabilities": [
@@ -11,20 +11,12 @@
   ],
   "zigbee": {
     "manufacturerName": [
+      "Shenzhen Haihao Electronics",
       "_TZ3000_",
-      "_TZE200_",
-      "_TYZB01_",
-      "TUYA",
-      "Smart Home"
+      "TUYA"
     ],
     "productId": [
-      "TS0001",
-      "TS0011",
-      "TS0012",
-      "TS004F",
-      "TS011F",
-      "TS0121",
-      "TS013F"
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -40,7 +32,7 @@
     "learnmode": {
       "image": "/drivers/temperature_humidity_sensor/assets/learn.svg",
       "instruction": {
-        "en": "Press and hold the button on your Temperature & Humidity Sensor for 3 seconds until the LED starts blinking rapidly."
+        "en": "Press and hold the button on your Temperature & Humidity sensor for 3 seconds until the LED starts blinking rapidly."
       }
     }
   },
@@ -50,22 +42,25 @@
   },
   "settings": [
     {
-      "id": "temp_offset",
+      "id": "temperature_offset",
       "type": "number",
-      "label": "Temperature Offset (°C)",
-      "value": 0
+      "label": {
+        "en": "Temperature Offset (°C)"
+      },
+      "value": 0,
+      "min": -10,
+      "max": 10,
+      "step": 0.1
     },
     {
-      "id": "humidity_offset",
+      "id": "battery_threshold",
       "type": "number",
-      "label": "Humidity Offset (%)",
-      "value": 0
-    },
-    {
-      "id": "reporting_interval",
-      "type": "number",
-      "label": "Reporting Interval (minutes)",
-      "value": 5
+      "label": {
+        "en": "Low Battery Threshold (%)"
+      },
+      "value": 20,
+      "min": 5,
+      "max": 50
     }
   ],
   "energy": {

@@ -13,60 +13,50 @@ class SoilSensorDevice extends ZigBeeDevice {
         // Register capabilities with proper cluster mappings
         await this.registerCapabilitiesAndReporting();
         
-        this.log('Soil Temperature & Humidity Sensor has been initialized');
+        // Set up flow triggers if applicable
+        this.setupFlowTriggers();
+        
+        this.log('Soil sensor has been initialized');
     }
     
     async registerCapabilitiesAndReporting() {
         try {
-            // Temperature measurement capability
+            // Measure Temperature capability
             if (this.hasCapability('measure_temperature')) {
                 await this.registerCapability('measure_temperature', 1026, {
                     reportOpts: {
-                        configureAttributeReporting: {
-                            minInterval: 60,
-                            maxInterval: 3600,
-                            minChange: 100
+                            configureAttributeReporting: {
+                                minInterval: 60,
+                                maxInterval: 3600,
+                                minChange: 100
+                            }
                         }
-                    }
                 });
             }
-            
-            // Humidity measurement capability
+
+            // Measure Humidity capability
             if (this.hasCapability('measure_humidity')) {
                 await this.registerCapability('measure_humidity', 1029, {
                     reportOpts: {
-                        configureAttributeReporting: {
-                            minInterval: 60,
-                            maxInterval: 3600,
-                            minChange: 100
+                            configureAttributeReporting: {
+                                minInterval: 60,
+                                maxInterval: 3600,
+                                minChange: 100
+                            }
                         }
-                    }
                 });
             }
-            
-            // Battery measurement capability
+
+            // Measure Battery capability
             if (this.hasCapability('measure_battery')) {
                 await this.registerCapability('measure_battery', 1, {
                     reportOpts: {
-                        configureAttributeReporting: {
-                            minInterval: 0,
-                            maxInterval: 43200,
-                            minChange: 1
+                            configureAttributeReporting: {
+                                minInterval: 0,
+                                maxInterval: 43200,
+                                minChange: 1
+                            }
                         }
-                    }
-                });
-            }
-            
-            // Battery alarm capability
-            if (this.hasCapability('alarm_battery')) {
-                await this.registerCapability('alarm_battery', 1, {
-                    reportOpts: {
-                        configureAttributeReporting: {
-                            minInterval: 0,
-                            maxInterval: 43200,
-                            minChange: 1
-                        }
-                    }
                 });
             }
             
@@ -74,6 +64,10 @@ class SoilSensorDevice extends ZigBeeDevice {
         } catch (error) {
             this.error('Failed to register capabilities:', error);
         }
+    }
+    
+    setupFlowTriggers() {
+        // No specific flow triggers for this device type
     }
     
     onSettings({ oldSettings, newSettings, changedKeys }) {
@@ -88,20 +82,12 @@ class SoilSensorDevice extends ZigBeeDevice {
     }
     
     handleSettingChange(key, value) {
-        switch(key) {
-            case 'measurement_interval':
-                this.log(`Measurement interval changed to ${value} minutes`);
-                break;
-            case 'temperature_offset':
-                this.log(`Temperature offset changed to ${value}°C`);
-                break;
-            default:
-                this.log(`Unhandled setting change: ${key} = ${value}`);
-        }
+        // Handle setting changes based on device type
+        this.log(`Setting change: ${key} = ${value}`);
     }
     
     onDeleted() {
-        this.log('Soil Temperature & Humidity Sensor has been deleted');
+        this.log('Soil sensor has been deleted');
     }
 }
 

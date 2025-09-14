@@ -1,7 +1,7 @@
 {
   "id": "water_leak_detector",
   "name": {
-    "en": "Water Leak Detector"
+    "en": "Water Leak detector"
   },
   "class": "sensor",
   "capabilities": [
@@ -10,20 +10,12 @@
   ],
   "zigbee": {
     "manufacturerName": [
+      "_TZ3000_upgcbody",
       "_TZ3000_",
-      "_TZE200_",
-      "_TYZB01_",
-      "TUYA",
-      "Smart Home"
+      "TUYA"
     ],
     "productId": [
-      "TS0001",
-      "TS0011",
-      "TS0012",
-      "TS004F",
-      "TS011F",
-      "TS0121",
-      "TS013F"
+      "SNZB-05"
     ],
     "endpoints": {
       "1": {
@@ -38,7 +30,7 @@
     "learnmode": {
       "image": "/drivers/water_leak_detector/assets/learn.svg",
       "instruction": {
-        "en": "Press and hold the button on your Water Leak Detector for 3 seconds until the LED starts blinking rapidly."
+        "en": "Press and hold the button on your Water Leak detector for 3 seconds until the LED starts blinking rapidly."
       }
     }
   },
@@ -48,30 +40,42 @@
   },
   "settings": [
     {
-      "id": "detection_sensitivity",
+      "id": "sensitivity",
       "type": "dropdown",
-      "label": "Water Detection Sensitivity",
-      "value": "option1",
+      "label": {
+        "en": "Sensitivity"
+      },
+      "value": "medium",
       "values": [
         {
-          "id": "option1",
+          "id": "low",
           "label": {
-            "en": "Option 1"
+            "en": "Low"
           }
         },
         {
-          "id": "option2",
+          "id": "medium",
           "label": {
-            "en": "Option 2"
+            "en": "Medium"
           }
         },
         {
-          "id": "option3",
+          "id": "high",
           "label": {
-            "en": "Option 3"
+            "en": "High"
           }
         }
       ]
+    },
+    {
+      "id": "battery_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold (%)"
+      },
+      "value": 20,
+      "min": 5,
+      "max": 50
     }
   ],
   "energy": {

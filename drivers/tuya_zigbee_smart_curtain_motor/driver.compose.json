@@ -1,0 +1,38 @@
+{
+  "id": "tuya_zigbee_smart_curtain_motor",
+  "name": {
+    "en": "Tuya zigbee smart curtain motor"
+  },
+  "class": "sensor",
+  "capabilities": [],
+  "zigbee": {
+    "manufacturerName": [
+      "Leisguar",
+      "_TZ3000_",
+      "TUYA"
+    ],
+    "productId": [
+      "LS82-Tuya-zigbee smart curtain motor"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/tuya_zigbee_smart_curtain_motor/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your Tuya zigbee smart curtain motor for 3 seconds until the LED starts blinking rapidly."
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/tuya_zigbee_smart_curtain_motor/assets/images/small.png",
+    "large": "/drivers/tuya_zigbee_smart_curtain_motor/assets/images/large.png"
+  },
+  "settings": []
+}

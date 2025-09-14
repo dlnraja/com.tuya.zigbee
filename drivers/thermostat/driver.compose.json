@@ -8,24 +8,18 @@
     "target_temperature",
     "measure_temperature",
     "measure_humidity",
-    "thermostat_mode"
+    "thermostat_mode",
+    "measure_battery"
   ],
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_",
       "_TZE200_",
-      "_TYZB01_",
-      "TUYA",
-      "Smart Home"
+      "_TZE284_",
+      "TUYA"
     ],
     "productId": [
-      "TS0001",
-      "TS0011",
-      "TS0012",
-      "TS004F",
-      "TS011F",
-      "TS0121",
-      "TS013F"
+      "CK-TLSR8656-SS5-01(7014)"
     ],
     "endpoints": {
       "1": {
@@ -82,5 +76,11 @@
       "label": "Eco Mode",
       "value": true
     }
-  ]
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AA"
+    ]
+  }
 }

@@ -10,94 +10,69 @@ class TemperatureHumiditySensorDevice extends ZigBeeDevice {
         // Print node info
         this.printNode();
         
-        // Register capabilities
-        await this.registerCapabilities();
+        // Register capabilities with proper cluster mappings
+        await this.registerCapabilitiesAndReporting();
         
-        // Configure reporting
-        await this.configureReporting();
-        
-        // Set up flow triggers
+        // Set up flow triggers if applicable
         this.setupFlowTriggers();
         
-        this.log('Temperature & Humidity Sensor has been initialized');
+        this.log('Temperature & Humidity sensor has been initialized');
     }
     
-    async registerCapabilities() {
-        const capabilities = [
-        "measure_temperature",
-        "measure_humidity",
-        "measure_battery"
-];
-        
-        for (const capability of capabilities) {
-            if (this.hasCapability(capability)) {
-                this.log(`Capability ${capability} already registered`);
-                continue;
-            }
-            
-            try {
-                await this.addCapability(capability);
-                this.log(`Added capability: ${capability}`);
-            } catch (error) {
-                this.error(`Failed to add capability ${capability}:`, error);
-            }
-        }
-    }
-    
-    async configureReporting() {
+    async registerCapabilitiesAndReporting() {
         try {
-            // Configure cluster reporting based on device type
-            
-            // Configure sensor reporting
-            if (this.zclNode.endpoints[1].clusters.occupancySensing) {
-                await this.zclNode.endpoints[1].clusters.occupancySensing.configureReporting('occupancy', {
-                    minInterval: 0,
-                    maxInterval: 600,
-                    minChange: null
+            // Measure Temperature capability
+            if (this.hasCapability('measure_temperature')) {
+                await this.registerCapability('measure_temperature', 1026, {
+                    reportOpts: {
+                            configureAttributeReporting: {
+                                minInterval: 60,
+                                maxInterval: 3600,
+                                minChange: 100
+                            }
+                        }
+                });
+            }
+
+            // Measure Humidity capability
+            if (this.hasCapability('measure_humidity')) {
+                await this.registerCapability('measure_humidity', 1029, {
+                    reportOpts: {
+                            configureAttributeReporting: {
+                                minInterval: 60,
+                                maxInterval: 3600,
+                                minChange: 100
+                            }
+                        }
+                });
+            }
+
+            // Measure Battery capability
+            if (this.hasCapability('measure_battery')) {
+                await this.registerCapability('measure_battery', 1, {
+                    reportOpts: {
+                            configureAttributeReporting: {
+                                minInterval: 0,
+                                maxInterval: 43200,
+                                minChange: 1
+                            }
+                        }
                 });
             }
             
-            if (this.zclNode.endpoints[1].clusters.temperatureMeasurement) {
-                await this.zclNode.endpoints[1].clusters.temperatureMeasurement.configureReporting('measuredValue', {
-                    minInterval: 60,
-                    maxInterval: 3600,
-                    minChange: 100
-                });
-            }
-            
-            if (this.zclNode.endpoints[1].clusters.relativeHumidity) {
-                await this.zclNode.endpoints[1].clusters.relativeHumidity.configureReporting('measuredValue', {
-                    minInterval: 60,
-                    maxInterval: 3600,
-                    minChange: 500
-                });
-            }
+            this.log('All capabilities registered successfully with cluster mappings');
         } catch (error) {
-            this.error('Failed to configure reporting:', error);
+            this.error('Failed to register capabilities:', error);
         }
     }
     
     setupFlowTriggers() {
-        // Register flow card triggers
-        
-        // Motion/presence detection triggers
-        this.registerCapabilityListener('alarm_motion', (value) => {
-            this.homey.flow.getDeviceTriggerCard('motion_detected')
-                .trigger(this, {}, { motion: value })
-                .catch(this.error);
-        });
-        
-        this.registerCapabilityListener('alarm_contact', (value) => {
-            this.homey.flow.getDeviceTriggerCard('contact_changed')
-                .trigger(this, {}, { contact: value })
-                .catch(this.error);
-        });
+        // No specific flow triggers for this device type
     }
     
     onSettings({ oldSettings, newSettings, changedKeys }) {
         this.log('Settings changed:', changedKeys);
         
-        // Handle settings changes
         changedKeys.forEach(key => {
             this.log(`Setting ${key} changed from ${oldSettings[key]} to ${newSettings[key]}`);
             this.handleSettingChange(key, newSettings[key]);
@@ -107,28 +82,12 @@ class TemperatureHumiditySensorDevice extends ZigBeeDevice {
     }
     
     handleSettingChange(key, value) {
-        // Handle individual setting changes
-        switch(key) {
-            
-            case 'temp_offset':
-                this.log(`temp_offset changed to ${value}`);
-                // Handle temp_offset change
-                break;
-            case 'humidity_offset':
-                this.log(`humidity_offset changed to ${value}`);
-                // Handle humidity_offset change
-                break;
-            case 'reporting_interval':
-                this.log(`reporting_interval changed to ${value}`);
-                // Handle reporting_interval change
-                break;
-            default:
-                this.log(`Unhandled setting change: ${key} = ${value}`);
-        }
+        // Handle setting changes based on device type
+        this.log(`Setting change: ${key} = ${value}`);
     }
     
     onDeleted() {
-        this.log('Temperature & Humidity Sensor has been deleted');
+        this.log('Temperature & Humidity sensor has been deleted');
     }
 }
 
