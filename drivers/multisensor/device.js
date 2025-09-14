@@ -10,11 +10,8 @@ class MultisensorDevice extends ZigBeeDevice {
         // Print node info
         this.printNode();
         
-        // Register capabilities
-        await this.registerCapabilities();
-        
-        // Configure reporting
-        await this.configureReporting();
+        // Register capabilities with proper cluster mappings
+        await this.registerCapabilitiesAndReporting();
         
         // Set up flow triggers
         this.setupFlowTriggers();
@@ -22,60 +19,76 @@ class MultisensorDevice extends ZigBeeDevice {
         this.log('Multi-Sensor has been initialized');
     }
     
-    async registerCapabilities() {
-        const capabilities = [
-        "alarm_motion",
-        "measure_temperature",
-        "measure_humidity",
-        "measure_luminance",
-        "measure_battery"
-];
-        
-        for (const capability of capabilities) {
-            if (this.hasCapability(capability)) {
-                this.log(`Capability ${capability} already registered`);
-                continue;
-            }
-            
-            try {
-                await this.addCapability(capability);
-                this.log(`Added capability: ${capability}`);
-            } catch (error) {
-                this.error(`Failed to add capability ${capability}:`, error);
-            }
-        }
-    }
-    
-    async configureReporting() {
+    async registerCapabilitiesAndReporting() {
         try {
-            // Configure cluster reporting based on device type
-            
-            // Configure sensor reporting
-            if (this.zclNode.endpoints[1].clusters.occupancySensing) {
-                await this.zclNode.endpoints[1].clusters.occupancySensing.configureReporting('occupancy', {
-                    minInterval: 0,
-                    maxInterval: 600,
-                    minChange: null
+            // Motion detection capability with occupancy sensing cluster
+            if (this.hasCapability('alarm_motion')) {
+                await this.registerCapability('alarm_motion', 1030, {
+                    reportOpts: {
+                        configureAttributeReporting: {
+                            minInterval: 0,
+                            maxInterval: 600,
+                            minChange: null
+                        }
+                    }
                 });
             }
             
-            if (this.zclNode.endpoints[1].clusters.temperatureMeasurement) {
-                await this.zclNode.endpoints[1].clusters.temperatureMeasurement.configureReporting('measuredValue', {
-                    minInterval: 60,
-                    maxInterval: 3600,
-                    minChange: 100
+            // Temperature measurement capability
+            if (this.hasCapability('measure_temperature')) {
+                await this.registerCapability('measure_temperature', 1026, {
+                    reportOpts: {
+                        configureAttributeReporting: {
+                            minInterval: 60,
+                            maxInterval: 3600,
+                            minChange: 100
+                        }
+                    }
                 });
             }
             
-            if (this.zclNode.endpoints[1].clusters.relativeHumidity) {
-                await this.zclNode.endpoints[1].clusters.relativeHumidity.configureReporting('measuredValue', {
-                    minInterval: 60,
-                    maxInterval: 3600,
-                    minChange: 500
+            // Humidity measurement capability
+            if (this.hasCapability('measure_humidity')) {
+                await this.registerCapability('measure_humidity', 1029, {
+                    reportOpts: {
+                        configureAttributeReporting: {
+                            minInterval: 60,
+                            maxInterval: 3600,
+                            minChange: 500
+                        }
+                    }
                 });
             }
+            
+            // Luminance measurement capability
+            if (this.hasCapability('measure_luminance')) {
+                await this.registerCapability('measure_luminance', 1024, {
+                    reportOpts: {
+                        configureAttributeReporting: {
+                            minInterval: 60,
+                            maxInterval: 3600,
+                            minChange: 100
+                        }
+                    }
+                });
+            }
+            
+            // Battery measurement capability
+            if (this.hasCapability('measure_battery')) {
+                await this.registerCapability('measure_battery', 1, {
+                    reportOpts: {
+                        configureAttributeReporting: {
+                            minInterval: 0,
+                            maxInterval: 43200,
+                            minChange: 1
+                        }
+                    }
+                });
+            }
+            
+            this.log('All capabilities registered successfully with cluster mappings');
         } catch (error) {
-            this.error('Failed to configure reporting:', error);
+            this.error('Failed to register capabilities:', error);
         }
     }
     
