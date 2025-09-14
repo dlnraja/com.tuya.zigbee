@@ -1,6 +1,6 @@
 {
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "1.0.13", 
+  "version": "1.0.14", 
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": ["local"],
@@ -784,7 +784,9 @@
       "capabilities": ["onoff", "dim"],
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_qzjcsmar", "_TZ3000_ktuoyvt9", "_TZ3210_k1msuvg6", "_TZ3210_ngqk6jia"
+          "_TZ3000_qzjcsmar", "_TZ3000_ktuoyvt9", "_TZ3210_k1msuvg6", "_TZ3210_ngqk6jia",
+          "_TZ3000_zw7uf6jj", "_TZ3000_5ajpkyq6", "_TZ3000_9hpxg80k", "_TZ3000_dyi8uktd",
+          "_TZ3000_4rbqgcuv", "_TZ3000_hkgjjb2y", "_TZ3000_txpirhfq", "_TZ3000_qomfnpg3"
         ],
         "productId": ["TS110F", "TS1111"],
         "endpoints": {
@@ -822,7 +824,10 @@
       "capabilities": ["onoff", "measure_power", "measure_current", "measure_voltage", "meter_power"],
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_g5xawfcq", "_TZ3000_vzopcetz", "_TZ3000_1obwwnmq", "_TZ3000_cphmq0q7"
+          "_TZ3000_g5xawfcq", "_TZ3000_vzopcetz", "_TZ3000_1obwwnmq", "_TZ3000_cphmq0q7",
+          "_TZ3000_8ygsuhe1", "_TZ3000_mja3fuja", "_TZ3000_yvx5lh6k", "_TZ3000_4rbqgcuv",
+          "_TZ3000_w0uyzbqe", "_TZ3000_2putqrmw", "_TZ3000_rdtixbnu", "_TZ3000_nrghaxx0",
+          "_TZ3000_vhyhv8rb", "_TZ3000_dpo1ysak", "_TZ3000_hktqahrq", "_TZ3000_4ugnzsli"
         ],
         "productId": ["TS011F", "TS0115"],
         "endpoints": {
@@ -860,7 +865,9 @@
       "capabilities": ["button"],
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_xabckq1v", "_TZ3000_abrsvsou", "_TZ3000_adkvzooy", "_TZ3000_bi6lpsew"
+          "_TZ3000_xabckq1v", "_TZ3000_abrsvsou", "_TZ3000_adkvzooy", "_TZ3000_bi6lpsew",
+          "_TZ3000_a7ouggvs", "_TZ3000_vp6clf9d", "_TZ3000_dfgbtub0", "_TZ3000_czuyt8lz",
+          "_TZ3000_fvh3pjaz", "_TZ3000_mx3vgyea", "_TZ3000_k6jhsr0q", "_TZ3000_wkai4ga5"
         ],
         "productId": ["TS004F", "TS0041", "TS0042", "TS0043", "TS0044"],
         "endpoints": {
