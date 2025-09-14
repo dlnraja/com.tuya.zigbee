@@ -1,4 +1,10 @@
 {
+  "1.0.15": {
+    "en": "CRITICAL UPDATE: App ID consolidated to com.dlnraja.ultimate.zigbee.hub (from com.dlnraja.tuya.zigbee). Fixed broken device icons, enhanced intelligent device selection with Johan Benz organization standards. Complete source integration from Zigbee2MQTT, Blakadder databases. Professional 850+ device coverage.",
+    "fr": "MISE À JOUR CRITIQUE : ID d'application consolidé vers com.dlnraja.ultimate.zigbee.hub (depuis com.dlnraja.tuya.zigbee). Icônes d'appareils cassées corrigées, sélection intelligente d'appareils améliorée avec les standards d'organisation Johan Benz. Intégration complète des sources Zigbee2MQTT, bases de données Blakadder. Couverture professionnelle de 850+ appareils.",
+    "nl": "KRITIEKE UPDATE: App ID geconsolideerd naar com.dlnraja.ultimate.zigbee.hub (van com.dlnraja.tuya.zigbee). Gebroken apparaatpictogrammen gerepareerd, intelligente apparaatselectie verbeterd met Johan Benz organisatiestandaarden. Volledige bronintegratie van Zigbee2MQTT, Blakadder databases. Professionele 850+ apparaatdekking.",
+    "de": "KRITISCHES UPDATE: App-ID zu com.dlnraja.ultimate.zigbee.hub konsolidiert (von com.dlnraja.tuya.zigbee). Defekte Gerätesymbole repariert, intelligente Geräteauswahl mit Johan Benz Organisationsstandards verbessert. Vollständige Quellenintegration von Zigbee2MQTT, Blakadder Datenbanken. Professionelle 850+ Geräteabdeckung."
+  },
   "1.0.14": {
     "en": "Comprehensive enhancement: Maximum device coverage (850+ devices), optimized JavaScript algorithms, expanded manufacturer IDs from all major sources (Zigbee2MQTT, Blakadder, Johan Benz). Professional English-first implementation with enhanced source references and comprehensive documentation.",
     "fr": "Amélioration complète : Couverture maximale des appareils (850+ appareils), algorithmes JavaScript optimisés, IDs de fabricants étendus de toutes les sources principales (Zigbee2MQTT, Blakadder, Johan Benz). Implémentation professionnelle anglais-premier avec références sources améliorées et documentation complète.",
