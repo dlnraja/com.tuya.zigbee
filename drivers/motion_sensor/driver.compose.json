@@ -54,7 +54,27 @@
       "id": "motion_sensitivity",
       "type": "dropdown",
       "label": "Motion Sensitivity",
-      "value": "medium"
+      "value": "medium",
+      "values": [
+        {
+          "id": "low",
+          "label": {
+            "en": "Low"
+          }
+        },
+        {
+          "id": "medium",
+          "label": {
+            "en": "Medium"
+          }
+        },
+        {
+          "id": "high",
+          "label": {
+            "en": "High"
+          }
+        }
+      ]
     },
     {
       "id": "occupancy_timeout",

@@ -51,7 +51,27 @@
       "id": "smoke_sensitivity",
       "type": "dropdown",
       "label": "Smoke Sensitivity",
-      "value": "medium"
+      "value": "medium",
+      "values": [
+        {
+          "id": "low",
+          "label": {
+            "en": "Low"
+          }
+        },
+        {
+          "id": "medium",
+          "label": {
+            "en": "Medium"
+          }
+        },
+        {
+          "id": "high",
+          "label": {
+            "en": "High"
+          }
+        }
+      ]
     }
   ]
 }

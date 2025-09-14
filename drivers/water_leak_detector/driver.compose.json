@@ -51,7 +51,27 @@
       "id": "detection_sensitivity",
       "type": "dropdown",
       "label": "Water Detection Sensitivity",
-      "value": "high"
+      "value": "option1",
+      "values": [
+        {
+          "id": "option1",
+          "label": {
+            "en": "Option 1"
+          }
+        },
+        {
+          "id": "option2",
+          "label": {
+            "en": "Option 2"
+          }
+        },
+        {
+          "id": "option3",
+          "label": {
+            "en": "Option 3"
+          }
+        }
+      ]
     }
   ]
 }
