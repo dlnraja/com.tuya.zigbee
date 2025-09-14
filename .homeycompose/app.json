@@ -1,6 +1,6 @@
 {
   "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "1.0.31",
+  "version": "1.0.32",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -10,7 +10,7 @@
     "en": "Ultimate Zigbee Hub"
   },
   "description": {
-    "en": "Ultimate Zigbee Hub v1.0.31 - Enhanced compatibility with 1000+ devices from 60+ manufacturers. Professional SDK3 architecture with comprehensive Johan Bendz compatibility. Features motion sensors, contact sensors, smart lights, plugs, switches, climate controls, scene remotes, and SOS emergency buttons. Fixed HOBEIAN multisensor issues and added proper SOS button recognition. Local Zigbee 3.0 operation with no cloud dependencies.",
+    "en": "Ultimate Zigbee Hub v1.0.32 - Enhanced compatibility with 1000+ devices from 60+ manufacturers. Professional SDK3 architecture with comprehensive Johan Bendz compatibility. Features motion sensors, contact sensors, smart lights, plugs, switches, climate controls, scene remotes, SOS emergency buttons, and radar motion sensors. Fixed HOBEIAN multisensor issues, added proper SOS button recognition, and created dedicated radar sensor driver for Rudy's device. Local Zigbee 3.0 operation with no cloud dependencies.",
     "fr": "Ultimate Zigbee Hub - Ecosysteme complet avec 850+ appareils de 50+ fabricants. Categorisation professionnelle par types d'appareils.",
     "nl": "Ultimate Zigbee Hub - Compleet ecosysteem met 850+ apparaten van 50+ fabrikanten. Professionele categorisering per apparaattype."
   },
