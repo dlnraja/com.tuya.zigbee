@@ -1,0 +1,87 @@
+{
+  "id": "tuya_zigbee_doorwindow_sensor_aliexpress",
+  "name": {
+    "en": "Tuya Zigbee Door/Window Sensor - AliExpress"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_contact",
+    "measure_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_n2egfsli",
+      "_TZ3000_",
+      "TUYA"
+    ],
+    "productId": [
+      "SNZB-04"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          1280
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/tuya_zigbee_doorwindow_sensor_aliexpress/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your Tuya Zigbee Door/Window Sensor - AliExpress for 3 seconds until the LED starts blinking rapidly."
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/tuya_zigbee_doorwindow_sensor_aliexpress/assets/images/small.png",
+    "large": "/drivers/tuya_zigbee_doorwindow_sensor_aliexpress/assets/images/large.png"
+  },
+  "settings": [
+    {
+      "id": "sensitivity",
+      "type": "dropdown",
+      "label": {
+        "en": "Sensitivity"
+      },
+      "value": "medium",
+      "values": [
+        {
+          "id": "low",
+          "label": {
+            "en": "Low"
+          }
+        },
+        {
+          "id": "medium",
+          "label": {
+            "en": "Medium"
+          }
+        },
+        {
+          "id": "high",
+          "label": {
+            "en": "High"
+          }
+        }
+      ]
+    },
+    {
+      "id": "battery_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold (%)"
+      },
+      "value": 20,
+      "min": 5,
+      "max": 50
+    }
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AA"
+    ]
+  }
+}

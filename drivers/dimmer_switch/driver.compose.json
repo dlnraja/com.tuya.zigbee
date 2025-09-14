@@ -12,18 +12,11 @@
     "manufacturerName": [
       "_TZ3000_",
       "_TZE200_",
-      "_TYZB01_",
-      "TUYA",
-      "Smart Home"
+      "_TZE284_",
+      "TUYA"
     ],
     "productId": [
-      "TS0001",
-      "TS0011",
-      "TS0012",
-      "TS004F",
-      "TS011F",
-      "TS0121",
-      "TS013F"
+      "TS0012 (This one is already supported in v0.2.73!) - Issue can be removed"
     ],
     "endpoints": {
       "1": {

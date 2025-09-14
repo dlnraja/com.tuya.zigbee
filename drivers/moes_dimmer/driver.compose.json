@@ -6,20 +6,20 @@
   "class": "light",
   "capabilities": [
     "onoff",
-    "dim"
+    "dim",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
   ],
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_",
       "_TZE200_",
-      "MOES",
-      "TUYA",
-      "Smart Home"
+      "_TZE284_",
+      "TUYA"
     ],
     "productId": [
-      "ZM-105-M",
-      "TS0601",
-      "TS011F"
+      "CK-TLSR8656-SS5-01(7014)"
     ],
     "endpoints": {
       "1": {
@@ -78,5 +78,11 @@
       "min": 1,
       "max": 50
     }
-  ]
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AA"
+    ]
+  }
 }

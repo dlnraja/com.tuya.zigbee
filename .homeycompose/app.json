@@ -1,6 +1,6 @@
 {
   "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "1.0.34",
+  "version": "1.1.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -10,7 +10,7 @@
     "en": "Ultimate Zigbee Hub"
   },
   "description": {
-    "en": "Ultimate Zigbee Hub v1.0.34 - Comprehensive device compatibility with 1000+ devices from 60+ manufacturers. Built on Johan Bendz's foundation with full SDK3 architecture. Features all sensor types, smart lights, plugs, switches, climate controls, scene remotes, SOS emergency buttons, radar motion sensors, soil sensors, MOES dimmers, and enhanced smoke detectors. Includes all community-requested devices from GitHub issues. Community-driven development with proper attribution. Local Zigbee 3.0 operation with no cloud dependencies.",
+    "en": "Ultimate Zigbee Hub v1.1.0 - MASSIVE EXPANSION: 111+ drivers supporting 1500+ devices from 80+ manufacturers! Comprehensive community integration with all GitHub issue requests implemented. Built on Johan Bendz's foundation with full SDK3 architecture. Complete device ecosystem: sensors (temperature, humidity, motion, PIR, radar, soil, air quality), smart lights (LED, bulbs, dimmers), plugs & sockets, switches (1-4 gang), climate controls (thermostats, radiator valves), curtain motors, scene remotes, detectors (smoke, water leak, CO), emergency buttons, and specialized devices. Professional images, flow triggers, and validation. Local Zigbee 3.0 operation with no cloud dependencies.",
     "fr": "Ultimate Zigbee Hub - Ecosysteme complet avec 850+ appareils de 50+ fabricants. Categorisation professionnelle par types d'appareils.",
     "nl": "Ultimate Zigbee Hub - Compleet ecosysteem met 850+ apparaten van 50+ fabrikanten. Professionele categorisering per apparaattype."
   },

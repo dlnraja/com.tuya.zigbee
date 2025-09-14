@@ -1,7 +1,7 @@
 {
   "id": "smoke_detector",
   "name": {
-    "en": "Smoke Detector"
+    "en": "smoke detector"
   },
   "class": "sensor",
   "capabilities": [
@@ -10,20 +10,11 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_",
-      "_TZE200_",
-      "_TYZB01_",
-      "TUYA",
-      "Smart Home"
+      "_TZE284_",
+      "ONENUO"
     ],
     "productId": [
-      "TS0001",
-      "TS0011",
-      "TS0012",
-      "TS004F",
-      "TS011F",
-      "TS0121",
-      "TS013F"
+      "TZE284_n4ttsck2"
     ],
     "endpoints": {
       "1": {
@@ -38,7 +29,7 @@
     "learnmode": {
       "image": "/drivers/smoke_detector/assets/learn.svg",
       "instruction": {
-        "en": "Press and hold the button on your Smoke Detector for 3 seconds until the LED starts blinking rapidly."
+        "en": "Press and hold the button on your smoke detector for 3 seconds until the LED starts blinking rapidly."
       }
     }
   },
@@ -48,9 +39,11 @@
   },
   "settings": [
     {
-      "id": "smoke_sensitivity",
+      "id": "sensitivity",
       "type": "dropdown",
-      "label": "Smoke Sensitivity",
+      "label": {
+        "en": "Sensitivity"
+      },
       "value": "medium",
       "values": [
         {
@@ -72,6 +65,16 @@
           }
         }
       ]
+    },
+    {
+      "id": "battery_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold (%)"
+      },
+      "value": 20,
+      "min": 5,
+      "max": 50
     }
   ],
   "energy": {

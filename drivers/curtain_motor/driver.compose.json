@@ -6,24 +6,16 @@
   "class": "windowcoverings",
   "capabilities": [
     "windowcoverings_set",
-    "windowcoverings_tilt_set"
+    "windowcoverings_tilt_set",
+    "onoff"
   ],
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_",
-      "_TZE200_",
-      "_TYZB01_",
-      "TUYA",
-      "Smart Home"
+      "MOES"
     ],
     "productId": [
-      "TS0001",
-      "TS0011",
-      "TS0012",
-      "TS004F",
-      "TS011F",
-      "TS0121",
-      "TS013F"
+      "TS130F, _TZ3210_zana8d08"
     ],
     "endpoints": {
       "1": {

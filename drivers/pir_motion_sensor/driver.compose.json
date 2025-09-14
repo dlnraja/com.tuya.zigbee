@@ -1,0 +1,87 @@
+{
+  "id": "pir_motion_sensor",
+  "name": {
+    "en": "PIR Motion Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "Aubess",
+      "_TZ3000_",
+      "TUYA"
+    ],
+    "productId": [
+      "TS0202 / ZMS-102"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          1030
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/pir_motion_sensor/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your PIR Motion Sensor for 3 seconds until the LED starts blinking rapidly."
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/pir_motion_sensor/assets/images/small.png",
+    "large": "/drivers/pir_motion_sensor/assets/images/large.png"
+  },
+  "settings": [
+    {
+      "id": "sensitivity",
+      "type": "dropdown",
+      "label": {
+        "en": "Sensitivity"
+      },
+      "value": "medium",
+      "values": [
+        {
+          "id": "low",
+          "label": {
+            "en": "Low"
+          }
+        },
+        {
+          "id": "medium",
+          "label": {
+            "en": "Medium"
+          }
+        },
+        {
+          "id": "high",
+          "label": {
+            "en": "High"
+          }
+        }
+      ]
+    },
+    {
+      "id": "battery_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold (%)"
+      },
+      "value": 20,
+      "min": 5,
+      "max": 50
+    }
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AA"
+    ]
+  }
+}

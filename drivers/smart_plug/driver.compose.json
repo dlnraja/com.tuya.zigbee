@@ -9,25 +9,18 @@
   ],
   "zigbee": {
     "manufacturerName": [
+      "_TZ3000_iiacqpdz",
       "_TZ3000_",
-      "_TZE200_",
-      "_TYZB01_",
-      "TUYA",
-      "Smart Home"
+      "TUYA"
     ],
     "productId": [
-      "TS0001",
-      "TS0011",
-      "TS0012",
-      "TS004F",
-      "TS011F",
-      "TS0121",
-      "TS013F"
+      "TS011F"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
+          1,
           3,
           6
         ]
@@ -44,32 +37,5 @@
     "small": "/drivers/smart_plug/assets/images/small.png",
     "large": "/drivers/smart_plug/assets/images/large.png"
   },
-  "settings": [
-    {
-      "id": "power_on_behavior",
-      "type": "dropdown",
-      "label": "Power-On Behavior",
-      "value": "option1",
-      "values": [
-        {
-          "id": "option1",
-          "label": {
-            "en": "Option 1"
-          }
-        },
-        {
-          "id": "option2",
-          "label": {
-            "en": "Option 2"
-          }
-        },
-        {
-          "id": "option3",
-          "label": {
-            "en": "Option 3"
-          }
-        }
-      ]
-    }
-  ]
+  "settings": []
 }

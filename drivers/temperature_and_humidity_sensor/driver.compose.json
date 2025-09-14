@@ -1,0 +1,72 @@
+{
+  "id": "temperature_and_humidity_sensor",
+  "name": {
+    "en": "Temperature and humidity sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "[manufacturerName]",
+      "_TZ3000_",
+      "TUYA"
+    ],
+    "productId": [
+      "TS0201"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          1026,
+          1029
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/temperature_and_humidity_sensor/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your Temperature and humidity sensor for 3 seconds until the LED starts blinking rapidly."
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/temperature_and_humidity_sensor/assets/images/small.png",
+    "large": "/drivers/temperature_and_humidity_sensor/assets/images/large.png"
+  },
+  "settings": [
+    {
+      "id": "temperature_offset",
+      "type": "number",
+      "label": {
+        "en": "Temperature Offset (°C)"
+      },
+      "value": 0,
+      "min": -10,
+      "max": 10,
+      "step": 0.1
+    },
+    {
+      "id": "battery_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold (%)"
+      },
+      "value": 20,
+      "min": 5,
+      "max": 50
+    }
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AA"
+    ]
+  }
+}

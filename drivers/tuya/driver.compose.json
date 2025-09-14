@@ -1,0 +1,38 @@
+{
+  "id": "tuya",
+  "name": {
+    "en": "Tuya"
+  },
+  "class": "sensor",
+  "capabilities": [],
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya Zigbee 3.0 Temperature and Humidity Smart Home Thermometer Hygrometer",
+      "_TZ3000_",
+      "TUYA"
+    ],
+    "productId": [
+      "ZY-ZTH02"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/tuya/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your Tuya for 3 seconds until the LED starts blinking rapidly."
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/tuya/assets/images/small.png",
+    "large": "/drivers/tuya/assets/images/large.png"
+  },
+  "settings": []
+}

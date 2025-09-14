@@ -1,56 +1,32 @@
 {
   "id": "radar_sensor",
   "name": {
-    "en": "Radar Motion Sensor"
+    "en": "Radar Sensor"
   },
   "class": "sensor",
-  "capabilities": [
-    "alarm_motion",
-    "measure_luminance",
-    "alarm_battery",
-    "measure_battery"
-  ],
+  "capabilities": [],
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_",
-      "_TZE204_",
+      "_TZE200_ya4ft0w4",
       "_TZ3000_",
-      "_TYZB01_",
-      "TUYA",
-      "Smart Home",
-      "_TZE200_ztc6ggyl",
-      "_TZE200_ar0slwnd",
-      "_TZE200_sfiy5tcs",
-      "_TZE200_holel4dk",
-      "_TZE200_wukb7rhc",
-      "_TZE200_jva8ink8",
-      "_TZE200_mrf6vtua"
+      "TUYA"
     ],
     "productId": [
-      "TS0601",
-      "TS0225",
-      "TS0226",
-      "TS004F",
-      "TS011F",
-      "TS0202"
+      "TS0601"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
           1,
-          3,
-          6,
-          1030,
-          1024,
-          57344
+          3
         ]
       }
     },
     "learnmode": {
       "image": "/drivers/radar_sensor/assets/learn.svg",
       "instruction": {
-        "en": "Press and hold the button on your Radar Motion Sensor for 3 seconds until the LED starts blinking rapidly."
+        "en": "Press and hold the button on your Radar Sensor for 3 seconds until the LED starts blinking rapidly."
       }
     }
   },
@@ -58,60 +34,5 @@
     "small": "/drivers/radar_sensor/assets/images/small.png",
     "large": "/drivers/radar_sensor/assets/images/large.png"
   },
-  "settings": [
-    {
-      "id": "radar_sensitivity",
-      "type": "dropdown",
-      "label": {
-        "en": "Radar Sensitivity"
-      },
-      "value": "medium",
-      "values": [
-        {
-          "id": "low",
-          "label": {
-            "en": "Low"
-          }
-        },
-        {
-          "id": "medium",
-          "label": {
-            "en": "Medium"
-          }
-        },
-        {
-          "id": "high",
-          "label": {
-            "en": "High"
-          }
-        }
-      ]
-    },
-    {
-      "id": "detection_distance",
-      "type": "number",
-      "label": {
-        "en": "Detection Distance (m)"
-      },
-      "value": 5,
-      "min": 1,
-      "max": 10
-    },
-    {
-      "id": "hold_time",
-      "type": "number",
-      "label": {
-        "en": "Motion Hold Time (s)"
-      },
-      "value": 30,
-      "min": 5,
-      "max": 300
-    }
-  ],
-  "energy": {
-    "batteries": [
-      "CR2032",
-      "AA"
-    ]
-  }
+  "settings": []
 }
