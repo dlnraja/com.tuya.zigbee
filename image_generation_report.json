@@ -2,105 +2,110 @@
   "generated": [
     {
       "driver": "air_quality_sensor",
-      "small_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\air_quality_sensor\\assets\\images\\small.png",
-      "large_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\air_quality_sensor\\assets\\images\\large.png"
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\air_quality_sensor\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\air_quality_sensor\\assets\\images\\large.png"
     },
     {
       "driver": "contact_sensor",
-      "small_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\contact_sensor\\assets\\images\\small.png",
-      "large_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\contact_sensor\\assets\\images\\large.png"
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\contact_sensor\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\contact_sensor\\assets\\images\\large.png"
     },
     {
       "driver": "co_detector",
-      "small_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\co_detector\\assets\\images\\small.png",
-      "large_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\co_detector\\assets\\images\\large.png"
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\co_detector\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\co_detector\\assets\\images\\large.png"
     },
     {
       "driver": "curtain_motor",
-      "small_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\curtain_motor\\assets\\images\\small.png",
-      "large_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\curtain_motor\\assets\\images\\large.png"
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\curtain_motor\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\curtain_motor\\assets\\images\\large.png"
     },
     {
       "driver": "dimmer_switch",
-      "small_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\dimmer_switch\\assets\\images\\small.png",
-      "large_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\dimmer_switch\\assets\\images\\large.png"
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\dimmer_switch\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\dimmer_switch\\assets\\images\\large.png"
     },
     {
       "driver": "energy_plug",
-      "small_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\energy_plug\\assets\\images\\small.png",
-      "large_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\energy_plug\\assets\\images\\large.png"
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\energy_plug\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\energy_plug\\assets\\images\\large.png"
     },
     {
       "driver": "light_switch",
-      "small_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\light_switch\\assets\\images\\small.png",
-      "large_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\light_switch\\assets\\images\\large.png"
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\light_switch\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\light_switch\\assets\\images\\large.png"
     },
     {
       "driver": "motion_sensor",
-      "small_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\motion_sensor\\assets\\images\\small.png",
-      "large_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\motion_sensor\\assets\\images\\large.png"
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\motion_sensor\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\motion_sensor\\assets\\images\\large.png"
     },
     {
       "driver": "multisensor",
-      "small_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\multisensor\\assets\\images\\small.png",
-      "large_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\multisensor\\assets\\images\\large.png"
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\multisensor\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\multisensor\\assets\\images\\large.png"
     },
     {
       "driver": "presence_sensor",
-      "small_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\presence_sensor\\assets\\images\\small.png",
-      "large_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\presence_sensor\\assets\\images\\large.png"
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\presence_sensor\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\presence_sensor\\assets\\images\\large.png"
     },
     {
       "driver": "rgb_light",
-      "small_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\rgb_light\\assets\\images\\small.png",
-      "large_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\rgb_light\\assets\\images\\large.png"
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\rgb_light\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\rgb_light\\assets\\images\\large.png"
     },
     {
       "driver": "scene_remote_2gang",
-      "small_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\scene_remote_2gang\\assets\\images\\small.png",
-      "large_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\scene_remote_2gang\\assets\\images\\large.png"
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\scene_remote_2gang\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\scene_remote_2gang\\assets\\images\\large.png"
     },
     {
       "driver": "scene_remote_4gang",
-      "small_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\scene_remote_4gang\\assets\\images\\small.png",
-      "large_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\scene_remote_4gang\\assets\\images\\large.png"
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\scene_remote_4gang\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\scene_remote_4gang\\assets\\images\\large.png"
     },
     {
       "driver": "scene_switch",
-      "small_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\scene_switch\\assets\\images\\small.png",
-      "large_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\scene_switch\\assets\\images\\large.png"
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\scene_switch\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\scene_switch\\assets\\images\\large.png"
     },
     {
       "driver": "smart_light",
-      "small_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\smart_light\\assets\\images\\small.png",
-      "large_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\smart_light\\assets\\images\\large.png"
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_light\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_light\\assets\\images\\large.png"
     },
     {
       "driver": "smart_plug",
-      "small_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\smart_plug\\assets\\images\\small.png",
-      "large_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\smart_plug\\assets\\images\\large.png"
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_plug\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_plug\\assets\\images\\large.png"
     },
     {
       "driver": "smoke_detector",
-      "small_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\smoke_detector\\assets\\images\\small.png",
-      "large_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\smoke_detector\\assets\\images\\large.png"
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smoke_detector\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smoke_detector\\assets\\images\\large.png"
+    },
+    {
+      "driver": "sos_button",
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sos_button\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sos_button\\assets\\images\\large.png"
     },
     {
       "driver": "temperature_humidity_sensor",
-      "small_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\temperature_humidity_sensor\\assets\\images\\small.png",
-      "large_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\temperature_humidity_sensor\\assets\\images\\large.png"
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\temperature_humidity_sensor\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\temperature_humidity_sensor\\assets\\images\\large.png"
     },
     {
       "driver": "thermostat",
-      "small_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\thermostat\\assets\\images\\small.png",
-      "large_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\thermostat\\assets\\images\\large.png"
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\thermostat\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\thermostat\\assets\\images\\large.png"
     },
     {
       "driver": "water_leak_detector",
-      "small_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\water_leak_detector\\assets\\images\\small.png",
-      "large_image": "c:\\Users\\HP\\Desktop\\repair\\drivers\\water_leak_detector\\assets\\images\\large.png"
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\water_leak_detector\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\water_leak_detector\\assets\\images\\large.png"
     }
   ],
   "errors": [],
-  "total_drivers": 20
+  "total_drivers": 21
 }

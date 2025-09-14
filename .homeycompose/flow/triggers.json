@@ -316,7 +316,7 @@
     "id": "device_online",
     "title": {
       "en": "Device came online",
-      "fr": "Appareil en ligne",
+      "fr": "Appareil en ligne", 
       "nl": "Apparaat online gekomen",
       "de": "Gerät online gekommen"
     },
@@ -330,6 +330,74 @@
       {
         "name": "device",
         "type": "device"
+      }
+    ]
+  },
+  {
+    "id": "sos_button_pressed",
+    "title": {
+      "en": "SOS Emergency button pressed",
+      "fr": "Bouton d'urgence SOS pressé",
+      "nl": "SOS Noodknop ingedrukt",
+      "de": "SOS Notknopf gedrückt"
+    },
+    "titleFormatted": {
+      "en": "SOS Emergency button [[device]] was pressed",
+      "fr": "Bouton d'urgence SOS [[device]] a été pressé",
+      "nl": "SOS Noodknop [[device]] werd ingedrukt", 
+      "de": "SOS Notknopf [[device]] wurde gedrückt"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=sos_button"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "emergency",
+        "type": "boolean",
+        "title": {
+          "en": "Emergency state",
+          "fr": "État d'urgence",
+          "nl": "Noodtoestand",
+          "de": "Notzustand"
+        }
+      }
+    ]
+  },
+  {
+    "id": "battery_alarm",
+    "title": {
+      "en": "Battery alarm triggered",
+      "fr": "Alarme batterie déclenchée",
+      "nl": "Batterij alarm geactiveerd",
+      "de": "Batterie-Alarm ausgelöst"
+    },
+    "titleFormatted": {
+      "en": "Battery alarm from [[device]] was triggered",
+      "fr": "Alarme batterie de [[device]] a été déclenchée",
+      "nl": "Batterij alarm van [[device]] werd geactiveerd",
+      "de": "Batterie-Alarm von [[device]] wurde ausgelöst"
+    },
+    "args": [
+      {
+        "name": "device", 
+        "type": "device",
+        "filter": "capability_id=alarm_battery"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "low_battery",
+        "type": "boolean",
+        "title": {
+          "en": "Low battery state",
+          "fr": "État batterie faible",
+          "nl": "Lage batterij status",
+          "de": "Schwache Batterie Zustand"
+        }
       }
     ]
   }
