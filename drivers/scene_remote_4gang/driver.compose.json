@@ -1,0 +1,89 @@
+{
+  "id": "scene_remote_4gang",
+  "name": {
+    "en": "4 Gang Scene Remote",
+    "fr": "Télécommande Scène 4 Boutons",
+    "nl": "4 Gang Scene Afstandsbediening",
+    "de": "4 Gang Szenen Fernbedienung"
+  },
+  "class": "button",
+  "capabilities": [
+    "button.1",
+    "button.2",
+    "button.3",
+    "button.4"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_wkai4ga5",
+      "_TZ3000_ee8s8jj2",
+      "_TZ3000_czuyt8lz"
+    ],
+    "productId": [
+      "TS0044"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "2": {
+        "clusters": [
+          0,
+          1,
+          3,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "3": {
+        "clusters": [
+          0,
+          1,
+          3,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "4": {
+        "clusters": [
+          0,
+          1,
+          3,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/scene_remote_4gang/assets/images/small.png",
+    "large": "/drivers/scene_remote_4gang/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}
