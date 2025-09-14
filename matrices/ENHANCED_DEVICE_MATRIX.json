@@ -1,0 +1,373 @@
+{
+  "metadata": {
+    "last_updated": "2025-09-14",
+    "total_devices": 67,
+    "total_manufacturers": 50,
+    "coverage_score": 27.23
+  },
+  "manufacturers": {
+    "Aqara": [
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown"
+    ],
+    "LUMI": [
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown"
+    ],
+    "Bosch": [
+      "Unknown",
+      "Unknown"
+    ],
+    "Tuya": [
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "TS0121",
+      "TS0201",
+      "TS0215A",
+      "TS0012",
+      "TS0501B",
+      "TS004F",
+      "TS011F",
+      "TS0219",
+      "TS0601",
+      "TS0222",
+      "TS0202",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "TS0121",
+      "TS0201",
+      "TS0215A",
+      "TS0012",
+      "TS0501B",
+      "TS004F",
+      "TS011F",
+      "TS0219",
+      "TS0601",
+      "TS0222",
+      "TS0202"
+    ],
+    "IKEA": [
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown"
+    ],
+    "TZ3000_*": [
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown"
+    ],
+    "TZ3210_*": [
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown"
+    ],
+    "TYZB01_*": [
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown"
+    ],
+    "TZ3300_*": [
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown"
+    ],
+    "TZE200_7tdtqgwv": [
+      "Unknown",
+      "Unknown"
+    ],
+    "TZE200_amp6tsvy": [
+      "Unknown",
+      "Unknown"
+    ],
+    "TZE200_7yodxhya": [
+      "Unknown",
+      "Unknown"
+    ],
+    "TZE200_locansqn": [
+      "Unknown",
+      "Unknown"
+    ],
+    "TZE200_3i3exu4n": [
+      "Unknown",
+      "Unknown"
+    ],
+    "TZE200_7hfcudw5": [
+      "Unknown",
+      "Unknown"
+    ],
+    "TZE200_3towulqd": [
+      "Unknown",
+      "Unknown"
+    ],
+    "TZE200_whpb9y8z": [
+      "Unknown",
+      "Unknown"
+    ],
+    "TZE200_7yuohek9": [
+      "Unknown",
+      "Unknown"
+    ],
+    "TZE200_3towolqd": [
+      "Unknown",
+      "Unknown"
+    ],
+    "TYZB02_*": [
+      "Unknown"
+    ],
+    "TZ3400_*": [
+      "Unknown"
+    ],
+    "Tuya-ts0011": [
+      "Unknown",
+      "Unknown"
+    ],
+    "Tuya-ts011f": [
+      "Unknown",
+      "Unknown"
+    ],
+    "Various": [
+      "Unknown",
+      "Unknown"
+    ],
+    "Unknown": [
+      "TZE200",
+      "RH3052",
+      "TS130F",
+      "TZE200",
+      "RH3052",
+      "TS130F",
+      "TS0011",
+      "TS0012",
+      "TS0011",
+      "TS0012",
+      "TS004F",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "TS0011",
+      "TS0012",
+      "TS0011",
+      "TS0012",
+      "TS004F",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown"
+    ],
+    "_TZE200_ztc6ggyl": [
+      "TS0601",
+      "TS0601"
+    ],
+    "_TZE200_myd45weu": [
+      "TS0601",
+      "TS0601"
+    ],
+    "_TZE200_yvx5lh6k": [
+      "TS0601",
+      "TS0601"
+    ],
+    "_TZ3000_i8jfiezr": [
+      "TS0201",
+      "TS0201"
+    ],
+    "_TYZB01_jytabjkb": [
+      "TS0202",
+      "TS0202"
+    ],
+    "_TZ3000_ebar6ljy": [
+      "TS0203",
+      "TS0203"
+    ],
+    "_TYZB01_sqmd19i1": [
+      "TS0207",
+      "TS0207"
+    ],
+    "_TZ3000_kdi2o9m6": [
+      "TS011F",
+      "TS011F"
+    ],
+    "_TZ3000_odygigth": [
+      "TS0505A",
+      "TS0505A"
+    ],
+    "_TZ3000_*": [
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown"
+    ],
+    "_TZ3210_*": [
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown"
+    ],
+    "_TYZB01_*": [
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown"
+    ],
+    "_TZ3300_*": [
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown"
+    ],
+    "_TZE200_7tdtqgwv": [
+      "Unknown",
+      "Unknown"
+    ],
+    "_TZE200_amp6tsvy": [
+      "Unknown",
+      "Unknown"
+    ],
+    "_TZE200_7yodxhya": [
+      "Unknown",
+      "Unknown"
+    ],
+    "_TZE200_locansqn": [
+      "Unknown",
+      "Unknown"
+    ],
+    "_TZE200_3i3exu4n": [
+      "Unknown",
+      "Unknown"
+    ],
+    "_TZE200_7hfcudw5": [
+      "Unknown",
+      "Unknown"
+    ],
+    "_TZE200_3towulqd": [
+      "Unknown",
+      "Unknown"
+    ],
+    "_TZE200_whpb9y8z": [
+      "Unknown",
+      "Unknown"
+    ],
+    "_TZE200_7yuohek9": [
+      "Unknown",
+      "Unknown"
+    ],
+    "_TZE200_3towolqd": [
+      "Unknown",
+      "Unknown"
+    ],
+    "_TYZB02_*": [
+      "Unknown"
+    ],
+    "_TZ3400_*": [
+      "Unknown"
+    ]
+  },
+  "device_types": {
+    "sensors": 2,
+    "climate": 1,
+    "community_reported": 1,
+    "lights": 29,
+    "other": 5,
+    "switches": 2,
+    "sensor": 6,
+    "Motion Sensor": 2,
+    "Soil Sensor": 1,
+    "Air Quality Monitor": 1,
+    "Temperature/Humidity Sensor": 1,
+    "Door/Window Sensor": 1,
+    "Water Sensor": 1,
+    "Smart Plug": 1,
+    "RGB Light": 1,
+    "On/Off Plug": 2,
+    "Sensor": 4,
+    "Remote": 2,
+    "Switch": 1,
+    "Light": 1,
+    "Thermostat": 1,
+    "wall_switch": 1
+  },
+  "compatibility_matrix": {}
+}
