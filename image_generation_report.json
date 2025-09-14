@@ -51,6 +51,11 @@
       "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\presence_sensor\\assets\\images\\large.png"
     },
     {
+      "driver": "radar_sensor",
+      "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\radar_sensor\\assets\\images\\small.png",
+      "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\radar_sensor\\assets\\images\\large.png"
+    },
+    {
       "driver": "rgb_light",
       "small_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\rgb_light\\assets\\images\\small.png",
       "large_image": "c:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\rgb_light\\assets\\images\\large.png"
@@ -107,5 +112,5 @@
     }
   ],
   "errors": [],
-  "total_drivers": 21
+  "total_drivers": 22
 }
