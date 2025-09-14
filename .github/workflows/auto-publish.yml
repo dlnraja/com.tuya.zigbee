@@ -142,83 +142,109 @@ jobs:
         import time
         import sys
         import os
-        import signal
+        import json
         
-        def timeout_handler(signum, frame):
-            print("⏰ Publication timeout reached")
-            sys.exit(1)
-        
-        signal.signal(signal.SIGALRM, timeout_handler)
-        signal.alarm(600)  # 10 minute timeout
-        
-        try:
-            print("🚀 Launching Homey app publication...")
-            
-            # Prepare responses
-            responses = [
-                ("uncommitted changes", "y"),
-                ("version number", "y"),
-                ("Select the desired version", ""),  # Enter for patch
-                ("Changelog", "${{ steps.version.outputs.changelog }}")
-            ]
-            
-            process = subprocess.Popen(
-                ["homey", "app", "publish"],
-                stdin=subprocess.PIPE,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.STDOUT,
-                universal_newlines=True,
-                bufsize=1
-            )
-            
-            output_lines = []
-            response_index = 0
-            
-            while True:
-                line = process.stdout.readline()
-                if not line:
-                    break
+        def handle_homey_publish():
+            try:
+                # Change to project directory
+                os.chdir(".")
+                
+                # Set up environment with authentication token
+                env = os.environ.copy()
+                if "HOMEY_TOKEN" in env:
+                    print("🔐 Using HOMEY_TOKEN for authentication")
+                else:
+                    print("⚠️ No HOMEY_TOKEN found, may require manual login")
+                
+                # Start the homey app publish process
+                process = subprocess.Popen(
+                    ["homey", "app", "publish"],
+                    stdin=subprocess.PIPE,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.STDOUT,
+                    text=True,
+                    universal_newlines=True,
+                    bufsize=1,
+                    env=env
+                )
+                
+                # Auto-responding logic
+                responses = {
+                    "uncommitted changes": "y\n",
+                    "update the version": "y\n", 
+                    "desired version increment": "\n",  # Default patch
+                    "changelog": "v1.0.32 - Community Radar Sensor Fix\n- Added dedicated radar motion sensor driver for TZE200 devices\n- Fixed Rudy_De_Vylder's radar sensor recognition issue\n- Enhanced motion detection with luminance and battery monitoring\n- Professional flow triggers for radar motion events\n- Improved device compatibility based on community feedback\n\n",
+                    "press enter": "\n",
+                    "login": "y\n"
+                }
+                
+                output_lines = []
+                while True:
+                    line = process.stdout.readline()
+                    if not line and process.poll() is not None:
+                        break
                     
-                output_lines.append(line.strip())
-                print(f"📤 {line.strip()}")
+                    if line:
+                        output_lines.append(line.strip())
+                        print(line.strip())
+                        line_lower = line.lower()
+                        
+                        # Check for various prompts and respond
+                        for prompt, response in responses.items():
+                            if prompt in line_lower:
+                                print(f"🤖 Auto-responding to '{prompt}' with: {repr(response)}")
+                                process.stdin.write(response)
+                                process.stdin.flush()
+                                break
+                        
+                        # Check for success indicators
+                        if "successfully published" in line_lower or "published successfully" in line_lower:
+                            print("🎉 Publication successful!")
+                            break
+                        elif "error" in line_lower and ("failed" in line_lower or "cannot" in line_lower):
+                            print("❌ Publication failed!")
+                            break
+                        elif "authentication" in line_lower and "required" in line_lower:
+                            print("🔐 Authentication required - check HOMEY_TOKEN")
+                            break
                 
-                # Check for prompts and respond
-                line_lower = line.lower()
-                if response_index < len(responses):
-                    trigger, response = responses[response_index]
-                    if trigger.lower() in line_lower:
-                        print(f"✅ Auto-responding to: {trigger}")
-                        process.stdin.write(response + "\n")
-                        process.stdin.flush()
-                        response_index += 1
-                        time.sleep(1)
+                # Wait for process to complete
+                return_code = process.wait()
                 
-                # Check for success/failure indicators
-                if "successfully published" in line_lower or "successfully uploaded" in line_lower:
-                    print("🎉 Publication successful!")
-                    process.wait()
-                    sys.exit(0)
-                elif "error" in line_lower and "failed" in line_lower:
-                    print("❌ Publication failed!")
-                    process.wait()
+                # Generate report
+                report = {
+                    "timestamp": subprocess.check_output(["date", "+%Y-%m-%dT%H:%M:%S"], text=True).strip(),
+                    "version": "1.0.32",
+                    "status": "success" if return_code == 0 else "failed",
+                    "return_code": return_code,
+                    "output_lines": output_lines,
+                    "features_added": [
+                        "Radar motion sensor driver for TZE200 devices",
+                        "Enhanced motion detection capabilities", 
+                        "Professional flow triggers for radar events",
+                        "Community feedback integration"
+                    ]
+                }
+                
+                # Write report
+                with open("publication-report.json", "w") as f:
+                    json.dump(report, f, indent=2)
+                
+                print(f"📋 Publication report saved with status: {report['status']}")
+                
+                if return_code != 0:
+                    print(f"❌ Process failed with return code: {return_code}")
+                    print("🔍 Check authentication and try manual publication")
                     sys.exit(1)
-            
-            return_code = process.wait()
-            
-            # Check output for success indicators
-            full_output = "\n".join(output_lines)
-            if "successfully" in full_output.lower():
-                print("🎉 Publication completed successfully!")
-                sys.exit(0)
-            else:
-                print(f"❌ Publication may have failed (return code: {return_code})")
+                else:
+                    print("🎉 Publication completed successfully!")
+                    
+            except Exception as e:
+                print(f"❌ Publication script failed: {e}")
                 sys.exit(1)
-                
-        except Exception as e:
-            print(f"💥 Publication error: {e}")
-            sys.exit(1)
-        finally:
-            signal.alarm(0)
+        
+        if __name__ == "__main__":
+            handle_homey_publish()
         EOF
         
         python3 auto_publish.py

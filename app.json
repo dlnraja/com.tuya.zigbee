@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "1.0.30",
+  "version": "1.0.31",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -11,7 +11,7 @@
     "en": "Ultimate Zigbee Hub"
   },
   "description": {
-    "en": "Ultimate Zigbee Hub v1.0.29 - Enhanced compatibility with 1000+ devices from 60+ manufacturers. Professional SDK3 architecture with comprehensive Johan Bendz compatibility. Features motion sensors, contact sensors, smart lights, plugs, switches, climate controls, and scene remotes. Local Zigbee 3.0 operation with no cloud dependencies.",
+    "en": "Ultimate Zigbee Hub v1.0.31 - Enhanced compatibility with 1000+ devices from 60+ manufacturers. Professional SDK3 architecture with comprehensive Johan Bendz compatibility. Features motion sensors, contact sensors, smart lights, plugs, switches, climate controls, scene remotes, and SOS emergency buttons. Fixed HOBEIAN multisensor issues and added proper SOS button recognition. Local Zigbee 3.0 operation with no cloud dependencies.",
     "fr": "Ultimate Zigbee Hub - Ecosysteme complet avec 850+ appareils de 50+ fabricants. Categorisation professionnelle par types d'appareils.",
     "nl": "Ultimate Zigbee Hub - Compleet ecosysteem met 850+ apparaten van 50+ fabrikanten. Professionele categorisering per apparaattype."
   },
@@ -1184,6 +1184,100 @@
           "type": "dropdown",
           "label": "Smoke Sensitivity",
           "value": "medium"
+        }
+      ]
+    },
+    {
+      "id": "sos_button",
+      "name": {
+        "en": "SOS Emergency Button"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_generic",
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TYZB01_",
+          "TUYA",
+          "Smart Home",
+          "_TZ3000_p6ju8myv",
+          "_TZ3000_fsiepnrh",
+          "_TZ3000_wr2ucaj9",
+          "_TZ3000_4fjiwweb",
+          "_TZ3000_ml6ljhsl"
+        ],
+        "productId": [
+          "TS004F",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS0215A",
+          "TS0211"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6,
+              64704
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/sos_button/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the SOS button for 3 seconds until the LED flashes rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/sos_button/assets/images/small.png",
+        "large": "/drivers/sos_button/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "sensitivity",
+          "type": "dropdown",
+          "label": {
+            "en": "Button Sensitivity"
+          },
+          "value": "normal",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low"
+              }
+            },
+            {
+              "id": "normal",
+              "label": {
+                "en": "Normal"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High"
+              }
+            }
+          ]
+        },
+        {
+          "id": "emergency_mode",
+          "type": "checkbox",
+          "label": {
+            "en": "Emergency Mode"
+          },
+          "value": true
         }
       ]
     },
