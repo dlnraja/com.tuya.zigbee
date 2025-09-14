@@ -3,7 +3,12 @@
     "name": "Tuya Zigbee for Homey",
     "repository": "dlnraja/com.tuya.zigbee",
     "liteVersion": "tuya-light",
-    "languages": ["en", "fr", "nl", "ta"],
+    "languages": [
+      "en",
+      "fr",
+      "nl",
+      "ta"
+    ],
     "mainBranch": "master"
   },
   "automation": {
@@ -27,8 +32,13 @@
   },
   "testing": {
     "minCoverage": 80,
-    "browserSupport": ["last 2 versions"],
-    "testEnvironments": ["node", "browser"]
+    "browserSupport": [
+      "last 2 versions"
+    ],
+    "testEnvironments": [
+      "node",
+      "browser"
+    ]
   },
   "documentation": {
     "languages": {
@@ -67,9 +77,24 @@
     "release": ".github/workflows/release.yml"
   },
   "contributing": {
-    "prTitle": "[type](scope): short description\n\nDescription en français si nécessaire",
-    "commitTypes": ["feat", "fix", "docs", "style", "refactor", "test", "chore"],
-    "scopes": ["drivers", "core", "docs", "ci", "tests", "deps"]
+    "prTitle": "[type](scope): short description Description en français si nécessaire",
+    "commitTypes": [
+      "feat",
+      "fix",
+      "docs",
+      "style",
+      "refactor",
+      "test",
+      "chore"
+    ],
+    "scopes": [
+      "drivers",
+      "core",
+      "docs",
+      "ci",
+      "tests",
+      "deps"
+    ]
   },
   "aiPrompts": {
     "driverGeneration": {
@@ -88,6 +113,11 @@
   "versioning": {
     "type": "semver",
     "changelog": "CHANGELOG.md",
-    "bumpTypes": ["major", "minor", "patch", "prerelease"]
+    "bumpTypes": [
+      "major",
+      "minor",
+      "patch",
+      "prerelease"
+    ]
   }
 }

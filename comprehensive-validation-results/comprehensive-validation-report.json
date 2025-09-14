@@ -26,9 +26,9 @@
       "description": "Basic validation",
       "critical": true,
       "success": false,
-      "stdout": "\u001b[32m✓ Pre-processing app...\u001b[39m\n\u001b[90mAdded Driver `TS0601_climate`\u001b[39m\n\u001b[90mAdded Driver `TS0601_cover`\u001b[39m\n\u001b[90mAdded Driver `TS0601_irrigation`\u001b[39m\n\u001b[90mAdded Driver `TS0601_lock`\u001b[39m\n\u001b[90mAdded Driver `TS0601_siren`\u001b[39m\n\u001b[90mAdded Driver `_base`\u001b[39m\n\u001b[90mAdded Driver `_template`\u001b[39m\n\u001b[90mAdded Driver `_templates`\u001b[39m\n\u001b[90mAdded Driver `aqara_motion_sensor`\u001b[39m\n\u001b[90mAdded Driver `bosch_thermostat_valve`\u001b[39m\n\u001b[90mAdded Driver `climate`\u001b[39m\n\u001b[90mAdded Driver `common`\u001b[39m\n\u001b[90mAdded Driver `covers`\u001b[39m\n\u001b[90mAdded Driver `ikea_tradfri_bulb`\u001b[39m\n\u001b[90mAdded Driver `lights`\u001b[39m\n\u001b[90mAdded Driver `manufacturers`\u001b[39m\n\u001b[90mAdded Driver `protocols`\u001b[39m\n\u001b[90mAdded Driver `security`\u001b[39m\n\u001b[90mAdded Driver `sensors`\u001b[39m\n\u001b[90mAdded Driver `sensors-TS0601_motion`\u001b[39m\n\u001b[90mAdded Driver `switches`\u001b[39m\n\u001b[90mAdded Driver `templates`\u001b[39m\n\u001b[90mAdded Driver `tuya`\u001b[39m\n\u001b[90mAdded Driver `tuya-ts0011`\u001b[39m\n\u001b[90mAdded Driver `tuya-ts011f`\u001b[39m\n\u001b[90mAdded Driver `tuya_future_ai_device`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_light`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_plug`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_sensor`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_switch`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0501a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0502a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0502b`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0505a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0505b`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_universal`\u001b[39m\n\u001b[90mAdded Driver `tuya_thermostat`\u001b[39m\n\u001b[90mAdded Driver `tuya_universal_adapter`\u001b[39m\n\u001b[90mAdded Driver `tuya_water_sensor`\u001b[39m\n\u001b[90mAdded Driver `types`\u001b[39m\n\u001b[90mAdded Driver `zigbee`\u001b[39m\n\u001b[90mAdded Driver `zigbee-tuya-universal`\u001b[39m\n\u001b[31m× ENOTEMPTY: directory not empty, rmdir 'C:\\Users\\HP\\Desktop\\tuya_repair\\.homeybuild\\catalog\\switch\\tuya'\u001b[39m\n",
+      "stdout": "\u001b[32m✓ Pre-processing app...\u001b[39m \u001b[90mAdded Driver `TS0601_climate`\u001b[39m \u001b[90mAdded Driver `TS0601_cover`\u001b[39m \u001b[90mAdded Driver `TS0601_irrigation`\u001b[39m \u001b[90mAdded Driver `TS0601_lock`\u001b[39m \u001b[90mAdded Driver `TS0601_siren`\u001b[39m \u001b[90mAdded Driver `_base`\u001b[39m \u001b[90mAdded Driver `_template`\u001b[39m \u001b[90mAdded Driver `_templates`\u001b[39m \u001b[90mAdded Driver `aqara_motion_sensor`\u001b[39m \u001b[90mAdded Driver `bosch_thermostat_valve`\u001b[39m \u001b[90mAdded Driver `climate`\u001b[39m \u001b[90mAdded Driver `common`\u001b[39m \u001b[90mAdded Driver `covers`\u001b[39m \u001b[90mAdded Driver `ikea_tradfri_bulb`\u001b[39m \u001b[90mAdded Driver `lights`\u001b[39m \u001b[90mAdded Driver `manufacturers`\u001b[39m \u001b[90mAdded Driver `protocols`\u001b[39m \u001b[90mAdded Driver `security`\u001b[39m \u001b[90mAdded Driver `sensors`\u001b[39m \u001b[90mAdded Driver `sensors-TS0601_motion`\u001b[39m \u001b[90mAdded Driver `switches`\u001b[39m \u001b[90mAdded Driver `templates`\u001b[39m \u001b[90mAdded Driver `tuya`\u001b[39m \u001b[90mAdded Driver `tuya-ts0011`\u001b[39m \u001b[90mAdded Driver `tuya-ts011f`\u001b[39m \u001b[90mAdded Driver `future_ai_device`\u001b[39m \u001b[90mAdded Driver `generic_light`\u001b[39m \u001b[90mAdded Driver `generic_plug`\u001b[39m \u001b[90mAdded Driver `generic_sensor`\u001b[39m \u001b[90mAdded Driver `generic_switch`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light_universal`\u001b[39m \u001b[90mAdded Driver `thermostat`\u001b[39m \u001b[90mAdded Driver `universal_adapter`\u001b[39m \u001b[90mAdded Driver `water_sensor`\u001b[39m \u001b[90mAdded Driver `types`\u001b[39m \u001b[90mAdded Driver `zigbee`\u001b[39m \u001b[90mAdded Driver `zigbee-tuya-universal`\u001b[39m \u001b[31m× ENOTEMPTY: directory not empty, rmdir 'C:\\Users\\HP\\Desktop\\repair\\.homeybuild\\catalog\\switch\\tuya'\u001b[39m",
       "stderr": "",
-      "error": "Command failed: homey app validate\n",
+      "error": "Command failed: homey app validate",
       "attempt": 2,
       "command": "homey app validate",
       "duration": "91.11s",
@@ -61,20 +61,20 @@
         "Added Driver `tuya`\u001b[39m",
         "Added Driver `tuya-ts0011`\u001b[39m",
         "Added Driver `tuya-ts011f`\u001b[39m",
-        "Added Driver `tuya_future_ai_device`\u001b[39m",
-        "Added Driver `tuya_generic_light`\u001b[39m",
-        "Added Driver `tuya_generic_plug`\u001b[39m",
-        "Added Driver `tuya_generic_sensor`\u001b[39m",
-        "Added Driver `tuya_generic_switch`\u001b[39m",
-        "Added Driver `tuya_light_ts0501a`\u001b[39m",
-        "Added Driver `tuya_light_ts0502a`\u001b[39m",
-        "Added Driver `tuya_light_ts0502b`\u001b[39m",
-        "Added Driver `tuya_light_ts0505a`\u001b[39m",
-        "Added Driver `tuya_light_ts0505b`\u001b[39m",
-        "Added Driver `tuya_light_universal`\u001b[39m",
-        "Added Driver `tuya_thermostat`\u001b[39m",
-        "Added Driver `tuya_universal_adapter`\u001b[39m",
-        "Added Driver `tuya_water_sensor`\u001b[39m",
+        "Added Driver `future_ai_device`\u001b[39m",
+        "Added Driver `generic_light`\u001b[39m",
+        "Added Driver `generic_plug`\u001b[39m",
+        "Added Driver `generic_sensor`\u001b[39m",
+        "Added Driver `generic_switch`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light_universal`\u001b[39m",
+        "Added Driver `thermostat`\u001b[39m",
+        "Added Driver `universal_adapter`\u001b[39m",
+        "Added Driver `water_sensor`\u001b[39m",
         "Added Driver `types`\u001b[39m",
         "Added Driver `zigbee`\u001b[39m",
         "Added Driver `zigbee-tuya-universal`\u001b[39m",
@@ -86,9 +86,9 @@
       "description": "Error-only validation",
       "critical": true,
       "success": false,
-      "stdout": "\u001b[32m✓ Pre-processing app...\u001b[39m\n\u001b[90mAdded Driver `TS0601_climate`\u001b[39m\n\u001b[90mAdded Driver `TS0601_cover`\u001b[39m\n\u001b[90mAdded Driver `TS0601_irrigation`\u001b[39m\n\u001b[90mAdded Driver `TS0601_lock`\u001b[39m\n\u001b[90mAdded Driver `TS0601_siren`\u001b[39m\n\u001b[90mAdded Driver `_base`\u001b[39m\n\u001b[90mAdded Driver `_template`\u001b[39m\n\u001b[90mAdded Driver `_templates`\u001b[39m\n\u001b[90mAdded Driver `aqara_motion_sensor`\u001b[39m\n\u001b[90mAdded Driver `bosch_thermostat_valve`\u001b[39m\n\u001b[90mAdded Driver `climate`\u001b[39m\n\u001b[90mAdded Driver `common`\u001b[39m\n\u001b[90mAdded Driver `covers`\u001b[39m\n\u001b[90mAdded Driver `ikea_tradfri_bulb`\u001b[39m\n\u001b[90mAdded Driver `lights`\u001b[39m\n\u001b[90mAdded Driver `manufacturers`\u001b[39m\n\u001b[90mAdded Driver `protocols`\u001b[39m\n\u001b[90mAdded Driver `security`\u001b[39m\n\u001b[90mAdded Driver `sensors`\u001b[39m\n\u001b[90mAdded Driver `sensors-TS0601_motion`\u001b[39m\n\u001b[90mAdded Driver `switches`\u001b[39m\n\u001b[90mAdded Driver `templates`\u001b[39m\n\u001b[90mAdded Driver `tuya`\u001b[39m\n\u001b[90mAdded Driver `tuya-ts0011`\u001b[39m\n\u001b[90mAdded Driver `tuya-ts011f`\u001b[39m\n\u001b[90mAdded Driver `tuya_future_ai_device`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_light`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_plug`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_sensor`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_switch`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0501a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0502a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0502b`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0505a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0505b`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_universal`\u001b[39m\n\u001b[90mAdded Driver `tuya_thermostat`\u001b[39m\n\u001b[90mAdded Driver `tuya_universal_adapter`\u001b[39m\n\u001b[90mAdded Driver `tuya_water_sensor`\u001b[39m\n\u001b[90mAdded Driver `types`\u001b[39m\n\u001b[90mAdded Driver `zigbee`\u001b[39m\n\u001b[90mAdded Driver `zigbee-tuya-universal`\u001b[39m\n\u001b[31m× ENOTEMPTY: directory not empty, rmdir 'C:\\Users\\HP\\Desktop\\tuya_repair\\.homeybuild\\drivers'\u001b[39m\n",
+      "stdout": "\u001b[32m✓ Pre-processing app...\u001b[39m \u001b[90mAdded Driver `TS0601_climate`\u001b[39m \u001b[90mAdded Driver `TS0601_cover`\u001b[39m \u001b[90mAdded Driver `TS0601_irrigation`\u001b[39m \u001b[90mAdded Driver `TS0601_lock`\u001b[39m \u001b[90mAdded Driver `TS0601_siren`\u001b[39m \u001b[90mAdded Driver `_base`\u001b[39m \u001b[90mAdded Driver `_template`\u001b[39m \u001b[90mAdded Driver `_templates`\u001b[39m \u001b[90mAdded Driver `aqara_motion_sensor`\u001b[39m \u001b[90mAdded Driver `bosch_thermostat_valve`\u001b[39m \u001b[90mAdded Driver `climate`\u001b[39m \u001b[90mAdded Driver `common`\u001b[39m \u001b[90mAdded Driver `covers`\u001b[39m \u001b[90mAdded Driver `ikea_tradfri_bulb`\u001b[39m \u001b[90mAdded Driver `lights`\u001b[39m \u001b[90mAdded Driver `manufacturers`\u001b[39m \u001b[90mAdded Driver `protocols`\u001b[39m \u001b[90mAdded Driver `security`\u001b[39m \u001b[90mAdded Driver `sensors`\u001b[39m \u001b[90mAdded Driver `sensors-TS0601_motion`\u001b[39m \u001b[90mAdded Driver `switches`\u001b[39m \u001b[90mAdded Driver `templates`\u001b[39m \u001b[90mAdded Driver `tuya`\u001b[39m \u001b[90mAdded Driver `tuya-ts0011`\u001b[39m \u001b[90mAdded Driver `tuya-ts011f`\u001b[39m \u001b[90mAdded Driver `future_ai_device`\u001b[39m \u001b[90mAdded Driver `generic_light`\u001b[39m \u001b[90mAdded Driver `generic_plug`\u001b[39m \u001b[90mAdded Driver `generic_sensor`\u001b[39m \u001b[90mAdded Driver `generic_switch`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light_universal`\u001b[39m \u001b[90mAdded Driver `thermostat`\u001b[39m \u001b[90mAdded Driver `universal_adapter`\u001b[39m \u001b[90mAdded Driver `water_sensor`\u001b[39m \u001b[90mAdded Driver `types`\u001b[39m \u001b[90mAdded Driver `zigbee`\u001b[39m \u001b[90mAdded Driver `zigbee-tuya-universal`\u001b[39m \u001b[31m× ENOTEMPTY: directory not empty, rmdir 'C:\\Users\\HP\\Desktop\\repair\\.homeybuild\\drivers'\u001b[39m",
       "stderr": "",
-      "error": "Command failed: homey app validate --level error\n",
+      "error": "Command failed: homey app validate --level error",
       "attempt": 2,
       "command": "homey app validate --level error",
       "duration": "45.09s",
@@ -121,20 +121,20 @@
         "Added Driver `tuya`\u001b[39m",
         "Added Driver `tuya-ts0011`\u001b[39m",
         "Added Driver `tuya-ts011f`\u001b[39m",
-        "Added Driver `tuya_future_ai_device`\u001b[39m",
-        "Added Driver `tuya_generic_light`\u001b[39m",
-        "Added Driver `tuya_generic_plug`\u001b[39m",
-        "Added Driver `tuya_generic_sensor`\u001b[39m",
-        "Added Driver `tuya_generic_switch`\u001b[39m",
-        "Added Driver `tuya_light_ts0501a`\u001b[39m",
-        "Added Driver `tuya_light_ts0502a`\u001b[39m",
-        "Added Driver `tuya_light_ts0502b`\u001b[39m",
-        "Added Driver `tuya_light_ts0505a`\u001b[39m",
-        "Added Driver `tuya_light_ts0505b`\u001b[39m",
-        "Added Driver `tuya_light_universal`\u001b[39m",
-        "Added Driver `tuya_thermostat`\u001b[39m",
-        "Added Driver `tuya_universal_adapter`\u001b[39m",
-        "Added Driver `tuya_water_sensor`\u001b[39m",
+        "Added Driver `future_ai_device`\u001b[39m",
+        "Added Driver `generic_light`\u001b[39m",
+        "Added Driver `generic_plug`\u001b[39m",
+        "Added Driver `generic_sensor`\u001b[39m",
+        "Added Driver `generic_switch`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light_universal`\u001b[39m",
+        "Added Driver `thermostat`\u001b[39m",
+        "Added Driver `universal_adapter`\u001b[39m",
+        "Added Driver `water_sensor`\u001b[39m",
         "Added Driver `types`\u001b[39m",
         "Added Driver `zigbee`\u001b[39m",
         "Added Driver `zigbee-tuya-universal`\u001b[39m",
@@ -146,9 +146,9 @@
       "description": "Warning-level validation",
       "critical": false,
       "success": false,
-      "stdout": "\u001b[32m✓ Pre-processing app...\u001b[39m\n\u001b[90mAdded Driver `TS0601_climate`\u001b[39m\n\u001b[90mAdded Driver `TS0601_cover`\u001b[39m\n\u001b[90mAdded Driver `TS0601_irrigation`\u001b[39m\n\u001b[90mAdded Driver `TS0601_lock`\u001b[39m\n\u001b[90mAdded Driver `TS0601_siren`\u001b[39m\n\u001b[90mAdded Driver `_base`\u001b[39m\n\u001b[90mAdded Driver `_template`\u001b[39m\n\u001b[90mAdded Driver `_templates`\u001b[39m\n\u001b[90mAdded Driver `aqara_motion_sensor`\u001b[39m\n\u001b[90mAdded Driver `bosch_thermostat_valve`\u001b[39m\n\u001b[90mAdded Driver `climate`\u001b[39m\n\u001b[90mAdded Driver `common`\u001b[39m\n\u001b[90mAdded Driver `covers`\u001b[39m\n\u001b[90mAdded Driver `ikea_tradfri_bulb`\u001b[39m\n\u001b[90mAdded Driver `lights`\u001b[39m\n\u001b[90mAdded Driver `manufacturers`\u001b[39m\n\u001b[90mAdded Driver `protocols`\u001b[39m\n\u001b[90mAdded Driver `security`\u001b[39m\n\u001b[90mAdded Driver `sensors`\u001b[39m\n\u001b[90mAdded Driver `sensors-TS0601_motion`\u001b[39m\n\u001b[90mAdded Driver `switches`\u001b[39m\n\u001b[90mAdded Driver `templates`\u001b[39m\n\u001b[90mAdded Driver `tuya`\u001b[39m\n\u001b[90mAdded Driver `tuya-ts0011`\u001b[39m\n\u001b[90mAdded Driver `tuya-ts011f`\u001b[39m\n\u001b[90mAdded Driver `tuya_future_ai_device`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_light`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_plug`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_sensor`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_switch`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0501a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0502a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0502b`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0505a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0505b`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_universal`\u001b[39m\n\u001b[90mAdded Driver `tuya_thermostat`\u001b[39m\n\u001b[90mAdded Driver `tuya_universal_adapter`\u001b[39m\n\u001b[90mAdded Driver `tuya_water_sensor`\u001b[39m\n\u001b[90mAdded Driver `types`\u001b[39m\n\u001b[90mAdded Driver `zigbee`\u001b[39m\n\u001b[90mAdded Driver `zigbee-tuya-universal`\u001b[39m\n\u001b[31m× ENOTEMPTY: directory not empty, rmdir 'C:\\Users\\HP\\Desktop\\tuya_repair\\.homeybuild\\final-release\\drivers\\tuya\\sensors\\motion'\u001b[39m\n",
+      "stdout": "\u001b[32m✓ Pre-processing app...\u001b[39m \u001b[90mAdded Driver `TS0601_climate`\u001b[39m \u001b[90mAdded Driver `TS0601_cover`\u001b[39m \u001b[90mAdded Driver `TS0601_irrigation`\u001b[39m \u001b[90mAdded Driver `TS0601_lock`\u001b[39m \u001b[90mAdded Driver `TS0601_siren`\u001b[39m \u001b[90mAdded Driver `_base`\u001b[39m \u001b[90mAdded Driver `_template`\u001b[39m \u001b[90mAdded Driver `_templates`\u001b[39m \u001b[90mAdded Driver `aqara_motion_sensor`\u001b[39m \u001b[90mAdded Driver `bosch_thermostat_valve`\u001b[39m \u001b[90mAdded Driver `climate`\u001b[39m \u001b[90mAdded Driver `common`\u001b[39m \u001b[90mAdded Driver `covers`\u001b[39m \u001b[90mAdded Driver `ikea_tradfri_bulb`\u001b[39m \u001b[90mAdded Driver `lights`\u001b[39m \u001b[90mAdded Driver `manufacturers`\u001b[39m \u001b[90mAdded Driver `protocols`\u001b[39m \u001b[90mAdded Driver `security`\u001b[39m \u001b[90mAdded Driver `sensors`\u001b[39m \u001b[90mAdded Driver `sensors-TS0601_motion`\u001b[39m \u001b[90mAdded Driver `switches`\u001b[39m \u001b[90mAdded Driver `templates`\u001b[39m \u001b[90mAdded Driver `tuya`\u001b[39m \u001b[90mAdded Driver `tuya-ts0011`\u001b[39m \u001b[90mAdded Driver `tuya-ts011f`\u001b[39m \u001b[90mAdded Driver `future_ai_device`\u001b[39m \u001b[90mAdded Driver `generic_light`\u001b[39m \u001b[90mAdded Driver `generic_plug`\u001b[39m \u001b[90mAdded Driver `generic_sensor`\u001b[39m \u001b[90mAdded Driver `generic_switch`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light_universal`\u001b[39m \u001b[90mAdded Driver `thermostat`\u001b[39m \u001b[90mAdded Driver `universal_adapter`\u001b[39m \u001b[90mAdded Driver `water_sensor`\u001b[39m \u001b[90mAdded Driver `types`\u001b[39m \u001b[90mAdded Driver `zigbee`\u001b[39m \u001b[90mAdded Driver `zigbee-tuya-universal`\u001b[39m \u001b[31m× ENOTEMPTY: directory not empty, rmdir 'C:\\Users\\HP\\Desktop\\repair\\.homeybuild\\final-release\\drivers\\tuya\\sensors\\motion'\u001b[39m",
       "stderr": "",
-      "error": "Command failed: homey app validate --level warn\n",
+      "error": "Command failed: homey app validate --level warn",
       "attempt": 2,
       "command": "homey app validate --level warn",
       "duration": "51.77s",
@@ -181,20 +181,20 @@
         "Added Driver `tuya`\u001b[39m",
         "Added Driver `tuya-ts0011`\u001b[39m",
         "Added Driver `tuya-ts011f`\u001b[39m",
-        "Added Driver `tuya_future_ai_device`\u001b[39m",
-        "Added Driver `tuya_generic_light`\u001b[39m",
-        "Added Driver `tuya_generic_plug`\u001b[39m",
-        "Added Driver `tuya_generic_sensor`\u001b[39m",
-        "Added Driver `tuya_generic_switch`\u001b[39m",
-        "Added Driver `tuya_light_ts0501a`\u001b[39m",
-        "Added Driver `tuya_light_ts0502a`\u001b[39m",
-        "Added Driver `tuya_light_ts0502b`\u001b[39m",
-        "Added Driver `tuya_light_ts0505a`\u001b[39m",
-        "Added Driver `tuya_light_ts0505b`\u001b[39m",
-        "Added Driver `tuya_light_universal`\u001b[39m",
-        "Added Driver `tuya_thermostat`\u001b[39m",
-        "Added Driver `tuya_universal_adapter`\u001b[39m",
-        "Added Driver `tuya_water_sensor`\u001b[39m",
+        "Added Driver `future_ai_device`\u001b[39m",
+        "Added Driver `generic_light`\u001b[39m",
+        "Added Driver `generic_plug`\u001b[39m",
+        "Added Driver `generic_sensor`\u001b[39m",
+        "Added Driver `generic_switch`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light_universal`\u001b[39m",
+        "Added Driver `thermostat`\u001b[39m",
+        "Added Driver `universal_adapter`\u001b[39m",
+        "Added Driver `water_sensor`\u001b[39m",
         "Added Driver `types`\u001b[39m",
         "Added Driver `zigbee`\u001b[39m",
         "Added Driver `zigbee-tuya-universal`\u001b[39m",
@@ -206,9 +206,9 @@
       "description": "Info-level validation",
       "critical": false,
       "success": false,
-      "stdout": "\u001b[32m✓ Pre-processing app...\u001b[39m\n\u001b[90mAdded Driver `TS0601_climate`\u001b[39m\n\u001b[90mAdded Driver `TS0601_cover`\u001b[39m\n\u001b[90mAdded Driver `TS0601_irrigation`\u001b[39m\n\u001b[90mAdded Driver `TS0601_lock`\u001b[39m\n\u001b[90mAdded Driver `TS0601_siren`\u001b[39m\n\u001b[90mAdded Driver `_base`\u001b[39m\n\u001b[90mAdded Driver `_template`\u001b[39m\n\u001b[90mAdded Driver `_templates`\u001b[39m\n\u001b[90mAdded Driver `aqara_motion_sensor`\u001b[39m\n\u001b[90mAdded Driver `bosch_thermostat_valve`\u001b[39m\n\u001b[90mAdded Driver `climate`\u001b[39m\n\u001b[90mAdded Driver `common`\u001b[39m\n\u001b[90mAdded Driver `covers`\u001b[39m\n\u001b[90mAdded Driver `ikea_tradfri_bulb`\u001b[39m\n\u001b[90mAdded Driver `lights`\u001b[39m\n\u001b[90mAdded Driver `manufacturers`\u001b[39m\n\u001b[90mAdded Driver `protocols`\u001b[39m\n\u001b[90mAdded Driver `security`\u001b[39m\n\u001b[90mAdded Driver `sensors`\u001b[39m\n\u001b[90mAdded Driver `sensors-TS0601_motion`\u001b[39m\n\u001b[90mAdded Driver `switches`\u001b[39m\n\u001b[90mAdded Driver `templates`\u001b[39m\n\u001b[90mAdded Driver `tuya`\u001b[39m\n\u001b[90mAdded Driver `tuya-ts0011`\u001b[39m\n\u001b[90mAdded Driver `tuya-ts011f`\u001b[39m\n\u001b[90mAdded Driver `tuya_future_ai_device`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_light`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_plug`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_sensor`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_switch`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0501a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0502a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0502b`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0505a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0505b`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_universal`\u001b[39m\n\u001b[90mAdded Driver `tuya_thermostat`\u001b[39m\n\u001b[90mAdded Driver `tuya_universal_adapter`\u001b[39m\n\u001b[90mAdded Driver `tuya_water_sensor`\u001b[39m\n\u001b[90mAdded Driver `types`\u001b[39m\n\u001b[90mAdded Driver `zigbee`\u001b[39m\n\u001b[90mAdded Driver `zigbee-tuya-universal`\u001b[39m\n\u001b[31m× ENOTEMPTY: directory not empty, rmdir 'C:\\Users\\HP\\Desktop\\tuya_repair\\.homeybuild\\final-release\\drivers\\tuya\\unknown\\lights\\lights'\u001b[39m\n",
+      "stdout": "\u001b[32m✓ Pre-processing app...\u001b[39m \u001b[90mAdded Driver `TS0601_climate`\u001b[39m \u001b[90mAdded Driver `TS0601_cover`\u001b[39m \u001b[90mAdded Driver `TS0601_irrigation`\u001b[39m \u001b[90mAdded Driver `TS0601_lock`\u001b[39m \u001b[90mAdded Driver `TS0601_siren`\u001b[39m \u001b[90mAdded Driver `_base`\u001b[39m \u001b[90mAdded Driver `_template`\u001b[39m \u001b[90mAdded Driver `_templates`\u001b[39m \u001b[90mAdded Driver `aqara_motion_sensor`\u001b[39m \u001b[90mAdded Driver `bosch_thermostat_valve`\u001b[39m \u001b[90mAdded Driver `climate`\u001b[39m \u001b[90mAdded Driver `common`\u001b[39m \u001b[90mAdded Driver `covers`\u001b[39m \u001b[90mAdded Driver `ikea_tradfri_bulb`\u001b[39m \u001b[90mAdded Driver `lights`\u001b[39m \u001b[90mAdded Driver `manufacturers`\u001b[39m \u001b[90mAdded Driver `protocols`\u001b[39m \u001b[90mAdded Driver `security`\u001b[39m \u001b[90mAdded Driver `sensors`\u001b[39m \u001b[90mAdded Driver `sensors-TS0601_motion`\u001b[39m \u001b[90mAdded Driver `switches`\u001b[39m \u001b[90mAdded Driver `templates`\u001b[39m \u001b[90mAdded Driver `tuya`\u001b[39m \u001b[90mAdded Driver `tuya-ts0011`\u001b[39m \u001b[90mAdded Driver `tuya-ts011f`\u001b[39m \u001b[90mAdded Driver `future_ai_device`\u001b[39m \u001b[90mAdded Driver `generic_light`\u001b[39m \u001b[90mAdded Driver `generic_plug`\u001b[39m \u001b[90mAdded Driver `generic_sensor`\u001b[39m \u001b[90mAdded Driver `generic_switch`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light_universal`\u001b[39m \u001b[90mAdded Driver `thermostat`\u001b[39m \u001b[90mAdded Driver `universal_adapter`\u001b[39m \u001b[90mAdded Driver `water_sensor`\u001b[39m \u001b[90mAdded Driver `types`\u001b[39m \u001b[90mAdded Driver `zigbee`\u001b[39m \u001b[90mAdded Driver `zigbee-tuya-universal`\u001b[39m \u001b[31m× ENOTEMPTY: directory not empty, rmdir 'C:\\Users\\HP\\Desktop\\repair\\.homeybuild\\final-release\\drivers\\tuya\\unknown\\lights\\lights'\u001b[39m",
       "stderr": "",
-      "error": "Command failed: homey app validate --level info\n",
+      "error": "Command failed: homey app validate --level info",
       "attempt": 2,
       "command": "homey app validate --level info",
       "duration": "52.07s",
@@ -241,20 +241,20 @@
         "Added Driver `tuya`\u001b[39m",
         "Added Driver `tuya-ts0011`\u001b[39m",
         "Added Driver `tuya-ts011f`\u001b[39m",
-        "Added Driver `tuya_future_ai_device`\u001b[39m",
-        "Added Driver `tuya_generic_light`\u001b[39m",
-        "Added Driver `tuya_generic_plug`\u001b[39m",
-        "Added Driver `tuya_generic_sensor`\u001b[39m",
-        "Added Driver `tuya_generic_switch`\u001b[39m",
-        "Added Driver `tuya_light_ts0501a`\u001b[39m",
-        "Added Driver `tuya_light_ts0502a`\u001b[39m",
-        "Added Driver `tuya_light_ts0502b`\u001b[39m",
-        "Added Driver `tuya_light_ts0505a`\u001b[39m",
-        "Added Driver `tuya_light_ts0505b`\u001b[39m",
-        "Added Driver `tuya_light_universal`\u001b[39m",
-        "Added Driver `tuya_thermostat`\u001b[39m",
-        "Added Driver `tuya_universal_adapter`\u001b[39m",
-        "Added Driver `tuya_water_sensor`\u001b[39m",
+        "Added Driver `future_ai_device`\u001b[39m",
+        "Added Driver `generic_light`\u001b[39m",
+        "Added Driver `generic_plug`\u001b[39m",
+        "Added Driver `generic_sensor`\u001b[39m",
+        "Added Driver `generic_switch`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light_universal`\u001b[39m",
+        "Added Driver `thermostat`\u001b[39m",
+        "Added Driver `universal_adapter`\u001b[39m",
+        "Added Driver `water_sensor`\u001b[39m",
         "Added Driver `types`\u001b[39m",
         "Added Driver `zigbee`\u001b[39m",
         "Added Driver `zigbee-tuya-universal`\u001b[39m",
@@ -266,9 +266,9 @@
       "description": "Debug-level validation",
       "critical": false,
       "success": false,
-      "stdout": "\u001b[32m✓ Pre-processing app...\u001b[39m\n\u001b[90mAdded Driver `TS0601_climate`\u001b[39m\n\u001b[90mAdded Driver `TS0601_cover`\u001b[39m\n\u001b[90mAdded Driver `TS0601_irrigation`\u001b[39m\n\u001b[90mAdded Driver `TS0601_lock`\u001b[39m\n\u001b[90mAdded Driver `TS0601_siren`\u001b[39m\n\u001b[90mAdded Driver `_base`\u001b[39m\n\u001b[90mAdded Driver `_template`\u001b[39m\n\u001b[90mAdded Driver `_templates`\u001b[39m\n\u001b[90mAdded Driver `aqara_motion_sensor`\u001b[39m\n\u001b[90mAdded Driver `bosch_thermostat_valve`\u001b[39m\n\u001b[90mAdded Driver `climate`\u001b[39m\n\u001b[90mAdded Driver `common`\u001b[39m\n\u001b[90mAdded Driver `covers`\u001b[39m\n\u001b[90mAdded Driver `ikea_tradfri_bulb`\u001b[39m\n\u001b[90mAdded Driver `lights`\u001b[39m\n\u001b[90mAdded Driver `manufacturers`\u001b[39m\n\u001b[90mAdded Driver `protocols`\u001b[39m\n\u001b[90mAdded Driver `security`\u001b[39m\n\u001b[90mAdded Driver `sensors`\u001b[39m\n\u001b[90mAdded Driver `sensors-TS0601_motion`\u001b[39m\n\u001b[90mAdded Driver `switches`\u001b[39m\n\u001b[90mAdded Driver `templates`\u001b[39m\n\u001b[90mAdded Driver `tuya`\u001b[39m\n\u001b[90mAdded Driver `tuya-ts0011`\u001b[39m\n\u001b[90mAdded Driver `tuya-ts011f`\u001b[39m\n\u001b[90mAdded Driver `tuya_future_ai_device`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_light`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_plug`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_sensor`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_switch`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0501a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0502a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0502b`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0505a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0505b`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_universal`\u001b[39m\n\u001b[90mAdded Driver `tuya_thermostat`\u001b[39m\n\u001b[90mAdded Driver `tuya_universal_adapter`\u001b[39m\n\u001b[90mAdded Driver `tuya_water_sensor`\u001b[39m\n\u001b[90mAdded Driver `types`\u001b[39m\n\u001b[90mAdded Driver `zigbee`\u001b[39m\n\u001b[90mAdded Driver `zigbee-tuya-universal`\u001b[39m\n\u001b[31m× ENOTEMPTY: directory not empty, rmdir 'C:\\Users\\HP\\Desktop\\tuya_repair\\.homeybuild\\final-release\\scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\drivers\\tuya\\sensors\\tuya'\u001b[39m\n",
+      "stdout": "\u001b[32m✓ Pre-processing app...\u001b[39m \u001b[90mAdded Driver `TS0601_climate`\u001b[39m \u001b[90mAdded Driver `TS0601_cover`\u001b[39m \u001b[90mAdded Driver `TS0601_irrigation`\u001b[39m \u001b[90mAdded Driver `TS0601_lock`\u001b[39m \u001b[90mAdded Driver `TS0601_siren`\u001b[39m \u001b[90mAdded Driver `_base`\u001b[39m \u001b[90mAdded Driver `_template`\u001b[39m \u001b[90mAdded Driver `_templates`\u001b[39m \u001b[90mAdded Driver `aqara_motion_sensor`\u001b[39m \u001b[90mAdded Driver `bosch_thermostat_valve`\u001b[39m \u001b[90mAdded Driver `climate`\u001b[39m \u001b[90mAdded Driver `common`\u001b[39m \u001b[90mAdded Driver `covers`\u001b[39m \u001b[90mAdded Driver `ikea_tradfri_bulb`\u001b[39m \u001b[90mAdded Driver `lights`\u001b[39m \u001b[90mAdded Driver `manufacturers`\u001b[39m \u001b[90mAdded Driver `protocols`\u001b[39m \u001b[90mAdded Driver `security`\u001b[39m \u001b[90mAdded Driver `sensors`\u001b[39m \u001b[90mAdded Driver `sensors-TS0601_motion`\u001b[39m \u001b[90mAdded Driver `switches`\u001b[39m \u001b[90mAdded Driver `templates`\u001b[39m \u001b[90mAdded Driver `tuya`\u001b[39m \u001b[90mAdded Driver `tuya-ts0011`\u001b[39m \u001b[90mAdded Driver `tuya-ts011f`\u001b[39m \u001b[90mAdded Driver `future_ai_device`\u001b[39m \u001b[90mAdded Driver `generic_light`\u001b[39m \u001b[90mAdded Driver `generic_plug`\u001b[39m \u001b[90mAdded Driver `generic_sensor`\u001b[39m \u001b[90mAdded Driver `generic_switch`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light_universal`\u001b[39m \u001b[90mAdded Driver `thermostat`\u001b[39m \u001b[90mAdded Driver `universal_adapter`\u001b[39m \u001b[90mAdded Driver `water_sensor`\u001b[39m \u001b[90mAdded Driver `types`\u001b[39m \u001b[90mAdded Driver `zigbee`\u001b[39m \u001b[90mAdded Driver `zigbee-tuya-universal`\u001b[39m \u001b[31m× ENOTEMPTY: directory not empty, rmdir 'C:\\Users\\HP\\Desktop\\repair\\.homeybuild\\final-release\\scripts\\core\\temp_extraction\\com.tuya.zigbee-master\\drivers\\tuya\\sensors\\tuya'\u001b[39m",
       "stderr": "",
-      "error": "Command failed: homey app validate --level debug\n",
+      "error": "Command failed: homey app validate --level debug",
       "attempt": 2,
       "command": "homey app validate --level debug",
       "duration": "49.68s",
@@ -301,20 +301,20 @@
         "Added Driver `tuya`\u001b[39m",
         "Added Driver `tuya-ts0011`\u001b[39m",
         "Added Driver `tuya-ts011f`\u001b[39m",
-        "Added Driver `tuya_future_ai_device`\u001b[39m",
-        "Added Driver `tuya_generic_light`\u001b[39m",
-        "Added Driver `tuya_generic_plug`\u001b[39m",
-        "Added Driver `tuya_generic_sensor`\u001b[39m",
-        "Added Driver `tuya_generic_switch`\u001b[39m",
-        "Added Driver `tuya_light_ts0501a`\u001b[39m",
-        "Added Driver `tuya_light_ts0502a`\u001b[39m",
-        "Added Driver `tuya_light_ts0502b`\u001b[39m",
-        "Added Driver `tuya_light_ts0505a`\u001b[39m",
-        "Added Driver `tuya_light_ts0505b`\u001b[39m",
-        "Added Driver `tuya_light_universal`\u001b[39m",
-        "Added Driver `tuya_thermostat`\u001b[39m",
-        "Added Driver `tuya_universal_adapter`\u001b[39m",
-        "Added Driver `tuya_water_sensor`\u001b[39m",
+        "Added Driver `future_ai_device`\u001b[39m",
+        "Added Driver `generic_light`\u001b[39m",
+        "Added Driver `generic_plug`\u001b[39m",
+        "Added Driver `generic_sensor`\u001b[39m",
+        "Added Driver `generic_switch`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light_universal`\u001b[39m",
+        "Added Driver `thermostat`\u001b[39m",
+        "Added Driver `universal_adapter`\u001b[39m",
+        "Added Driver `water_sensor`\u001b[39m",
         "Added Driver `types`\u001b[39m",
         "Added Driver `zigbee`\u001b[39m",
         "Added Driver `zigbee-tuya-universal`\u001b[39m",
@@ -327,8 +327,8 @@
       "critical": false,
       "success": false,
       "stdout": "",
-      "stderr": "homey.js app validate\n\nValidate a Homey App\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n  -l, --level    Validation level. Can be: debug, publish, verified.\n                                                   [string] [default: \"publish\"]\n\nUnknown argument: verbose\n",
-      "error": "Command failed: homey app validate --verbose\nhomey.js app validate\n\nValidate a Homey App\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n  -l, --level    Validation level. Can be: debug, publish, verified.\n                                                   [string] [default: \"publish\"]\n\nUnknown argument: verbose\n",
+      "stderr": "homey.js app validate Validate a Homey App Options: --version Show version number [boolean] -p, --path Path to a Homey App directory [string] [default: \"C:\\Users\\HP\\Desktop\\repair\"] --help Show help [boolean] -l, --level Validation level. Can be: debug, publish, verified. [string] [default: \"publish\"] Unknown argument: verbose",
+      "error": "Command failed: homey app validate --verbose homey.js app validate Validate a Homey App Options: --version Show version number [boolean] -p, --path Path to a Homey App directory [string] [default: \"C:\\Users\\HP\\Desktop\\repair\"] --help Show help [boolean] -l, --level Validation level. Can be: debug, publish, verified. [string] [default: \"publish\"] Unknown argument: verbose",
       "attempt": 2,
       "command": "homey app validate --verbose",
       "duration": "27.94s",
@@ -343,8 +343,8 @@
       "critical": true,
       "success": false,
       "stdout": "",
-      "stderr": "homey.js app validate\n\nValidate a Homey App\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n  -l, --level    Validation level. Can be: debug, publish, verified.\n                                                   [string] [default: \"publish\"]\n\nUnknown argument: strict\n",
-      "error": "Command failed: homey app validate --strict\nhomey.js app validate\n\nValidate a Homey App\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n  -l, --level    Validation level. Can be: debug, publish, verified.\n                                                   [string] [default: \"publish\"]\n\nUnknown argument: strict\n",
+      "stderr": "homey.js app validate Validate a Homey App Options: --version Show version number [boolean] -p, --path Path to a Homey App directory [string] [default: \"C:\\Users\\HP\\Desktop\\repair\"] --help Show help [boolean] -l, --level Validation level. Can be: debug, publish, verified. [string] [default: \"publish\"] Unknown argument: strict",
+      "error": "Command failed: homey app validate --strict homey.js app validate Validate a Homey App Options: --version Show version number [boolean] -p, --path Path to a Homey App directory [string] [default: \"C:\\Users\\HP\\Desktop\\repair\"] --help Show help [boolean] -l, --level Validation level. Can be: debug, publish, verified. [string] [default: \"publish\"] Unknown argument: strict",
       "attempt": 2,
       "command": "homey app validate --strict",
       "duration": "25.12s",
@@ -358,9 +358,9 @@
       "description": "Standard build test",
       "critical": true,
       "success": false,
-      "stdout": "\u001b[32m✓ Building app...\u001b[39m\n\u001b[32m✓ Pre-processing app...\u001b[39m\n\u001b[90mAdded Driver `TS0601_climate`\u001b[39m\n\u001b[90mAdded Driver `TS0601_cover`\u001b[39m\n\u001b[90mAdded Driver `TS0601_irrigation`\u001b[39m\n\u001b[90mAdded Driver `TS0601_lock`\u001b[39m\n\u001b[90mAdded Driver `TS0601_siren`\u001b[39m\n\u001b[90mAdded Driver `_base`\u001b[39m\n\u001b[90mAdded Driver `_template`\u001b[39m\n\u001b[90mAdded Driver `_templates`\u001b[39m\n\u001b[90mAdded Driver `aqara_motion_sensor`\u001b[39m\n\u001b[90mAdded Driver `bosch_thermostat_valve`\u001b[39m\n\u001b[90mAdded Driver `climate`\u001b[39m\n\u001b[90mAdded Driver `common`\u001b[39m\n\u001b[90mAdded Driver `covers`\u001b[39m\n\u001b[90mAdded Driver `ikea_tradfri_bulb`\u001b[39m\n\u001b[90mAdded Driver `lights`\u001b[39m\n\u001b[90mAdded Driver `manufacturers`\u001b[39m\n\u001b[90mAdded Driver `protocols`\u001b[39m\n\u001b[90mAdded Driver `security`\u001b[39m\n\u001b[90mAdded Driver `sensors`\u001b[39m\n\u001b[90mAdded Driver `sensors-TS0601_motion`\u001b[39m\n\u001b[90mAdded Driver `switches`\u001b[39m\n\u001b[90mAdded Driver `templates`\u001b[39m\n\u001b[90mAdded Driver `tuya`\u001b[39m\n\u001b[90mAdded Driver `tuya-ts0011`\u001b[39m\n\u001b[90mAdded Driver `tuya-ts011f`\u001b[39m\n\u001b[90mAdded Driver `tuya_future_ai_device`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_light`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_plug`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_sensor`\u001b[39m\n\u001b[90mAdded Driver `tuya_generic_switch`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0501a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0502a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0502b`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0505a`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_ts0505b`\u001b[39m\n\u001b[90mAdded Driver `tuya_light_universal`\u001b[39m\n\u001b[90mAdded Driver `tuya_thermostat`\u001b[39m\n\u001b[90mAdded Driver `tuya_universal_adapter`\u001b[39m\n\u001b[90mAdded Driver `tuya_water_sensor`\u001b[39m\n\u001b[90mAdded Driver `types`\u001b[39m\n\u001b[90mAdded Driver `zigbee`\u001b[39m\n\u001b[90mAdded Driver `zigbee-tuya-universal`\u001b[39m\n\u001b[31m× ENOTEMPTY: directory not empty, rmdir 'C:\\Users\\HP\\Desktop\\tuya_repair\\.homeybuild\\release\\drivers\\zigbee\\thermostats'\u001b[39m\n",
+      "stdout": "\u001b[32m✓ Building app...\u001b[39m \u001b[32m✓ Pre-processing app...\u001b[39m \u001b[90mAdded Driver `TS0601_climate`\u001b[39m \u001b[90mAdded Driver `TS0601_cover`\u001b[39m \u001b[90mAdded Driver `TS0601_irrigation`\u001b[39m \u001b[90mAdded Driver `TS0601_lock`\u001b[39m \u001b[90mAdded Driver `TS0601_siren`\u001b[39m \u001b[90mAdded Driver `_base`\u001b[39m \u001b[90mAdded Driver `_template`\u001b[39m \u001b[90mAdded Driver `_templates`\u001b[39m \u001b[90mAdded Driver `aqara_motion_sensor`\u001b[39m \u001b[90mAdded Driver `bosch_thermostat_valve`\u001b[39m \u001b[90mAdded Driver `climate`\u001b[39m \u001b[90mAdded Driver `common`\u001b[39m \u001b[90mAdded Driver `covers`\u001b[39m \u001b[90mAdded Driver `ikea_tradfri_bulb`\u001b[39m \u001b[90mAdded Driver `lights`\u001b[39m \u001b[90mAdded Driver `manufacturers`\u001b[39m \u001b[90mAdded Driver `protocols`\u001b[39m \u001b[90mAdded Driver `security`\u001b[39m \u001b[90mAdded Driver `sensors`\u001b[39m \u001b[90mAdded Driver `sensors-TS0601_motion`\u001b[39m \u001b[90mAdded Driver `switches`\u001b[39m \u001b[90mAdded Driver `templates`\u001b[39m \u001b[90mAdded Driver `tuya`\u001b[39m \u001b[90mAdded Driver `tuya-ts0011`\u001b[39m \u001b[90mAdded Driver `tuya-ts011f`\u001b[39m \u001b[90mAdded Driver `future_ai_device`\u001b[39m \u001b[90mAdded Driver `generic_light`\u001b[39m \u001b[90mAdded Driver `generic_plug`\u001b[39m \u001b[90mAdded Driver `generic_sensor`\u001b[39m \u001b[90mAdded Driver `generic_switch`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light`\u001b[39m \u001b[90mAdded Driver `light_universal`\u001b[39m \u001b[90mAdded Driver `thermostat`\u001b[39m \u001b[90mAdded Driver `universal_adapter`\u001b[39m \u001b[90mAdded Driver `water_sensor`\u001b[39m \u001b[90mAdded Driver `types`\u001b[39m \u001b[90mAdded Driver `zigbee`\u001b[39m \u001b[90mAdded Driver `zigbee-tuya-universal`\u001b[39m \u001b[31m× ENOTEMPTY: directory not empty, rmdir 'C:\\Users\\HP\\Desktop\\repair\\.homeybuild\\release\\drivers\\zigbee\\thermostats'\u001b[39m",
       "stderr": "",
-      "error": "Command failed: homey app build\n",
+      "error": "Command failed: homey app build",
       "attempt": 2,
       "command": "homey app build",
       "duration": "77.94s",
@@ -393,20 +393,20 @@
         "Added Driver `tuya`\u001b[39m",
         "Added Driver `tuya-ts0011`\u001b[39m",
         "Added Driver `tuya-ts011f`\u001b[39m",
-        "Added Driver `tuya_future_ai_device`\u001b[39m",
-        "Added Driver `tuya_generic_light`\u001b[39m",
-        "Added Driver `tuya_generic_plug`\u001b[39m",
-        "Added Driver `tuya_generic_sensor`\u001b[39m",
-        "Added Driver `tuya_generic_switch`\u001b[39m",
-        "Added Driver `tuya_light_ts0501a`\u001b[39m",
-        "Added Driver `tuya_light_ts0502a`\u001b[39m",
-        "Added Driver `tuya_light_ts0502b`\u001b[39m",
-        "Added Driver `tuya_light_ts0505a`\u001b[39m",
-        "Added Driver `tuya_light_ts0505b`\u001b[39m",
-        "Added Driver `tuya_light_universal`\u001b[39m",
-        "Added Driver `tuya_thermostat`\u001b[39m",
-        "Added Driver `tuya_universal_adapter`\u001b[39m",
-        "Added Driver `tuya_water_sensor`\u001b[39m",
+        "Added Driver `future_ai_device`\u001b[39m",
+        "Added Driver `generic_light`\u001b[39m",
+        "Added Driver `generic_plug`\u001b[39m",
+        "Added Driver `generic_sensor`\u001b[39m",
+        "Added Driver `generic_switch`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light`\u001b[39m",
+        "Added Driver `light_universal`\u001b[39m",
+        "Added Driver `thermostat`\u001b[39m",
+        "Added Driver `universal_adapter`\u001b[39m",
+        "Added Driver `water_sensor`\u001b[39m",
         "Added Driver `types`\u001b[39m",
         "Added Driver `zigbee`\u001b[39m",
         "Added Driver `zigbee-tuya-universal`\u001b[39m",
@@ -420,8 +420,8 @@
       "critical": true,
       "success": false,
       "stdout": "",
-      "stderr": "homey.js app build\n\nBuild a Homey App for publishing\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n\nUnknown argument: clean\n",
-      "error": "Command failed: homey app build --clean\nhomey.js app build\n\nBuild a Homey App for publishing\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n\nUnknown argument: clean\n",
+      "stderr": "homey.js app build Build a Homey App for publishing Options: --version Show version number [boolean] -p, --path Path to a Homey App directory [string] [default: \"C:\\Users\\HP\\Desktop\\repair\"] --help Show help [boolean] Unknown argument: clean",
+      "error": "Command failed: homey app build --clean homey.js app build Build a Homey App for publishing Options: --version Show version number [boolean] -p, --path Path to a Homey App directory [string] [default: \"C:\\Users\\HP\\Desktop\\repair\"] --help Show help [boolean] Unknown argument: clean",
       "attempt": 2,
       "command": "homey app build --clean",
       "duration": "33.00s",
@@ -436,8 +436,8 @@
       "critical": false,
       "success": false,
       "stdout": "",
-      "stderr": "homey.js app build\n\nBuild a Homey App for publishing\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n\nUnknown argument: verbose\n",
-      "error": "Command failed: homey app build --verbose\nhomey.js app build\n\nBuild a Homey App for publishing\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n\nUnknown argument: verbose\n",
+      "stderr": "homey.js app build Build a Homey App for publishing Options: --version Show version number [boolean] -p, --path Path to a Homey App directory [string] [default: \"C:\\Users\\HP\\Desktop\\repair\"] --help Show help [boolean] Unknown argument: verbose",
+      "error": "Command failed: homey app build --verbose homey.js app build Build a Homey App for publishing Options: --version Show version number [boolean] -p, --path Path to a Homey App directory [string] [default: \"C:\\Users\\HP\\Desktop\\repair\"] --help Show help [boolean] Unknown argument: verbose",
       "attempt": 2,
       "command": "homey app build --verbose",
       "duration": "18.44s",
@@ -452,8 +452,8 @@
       "critical": false,
       "success": false,
       "stdout": "",
-      "stderr": "homey.js app\n\nApp related commands\n\nCommands:\n  homey.js app add-github-workflows  Add GitHub Workflows (validate, update\n                                     version, publish)\n  homey.js app add-types             Install the Apps SDK TypeScript\n                                     declarations\n  homey.js app build                 Build a Homey App for publishing\n  homey.js app compose               Migrate app to Homey compose\n  homey.js app create                Create a new Homey App\n  homey.js app discovery             Discovery related commands\n  homey.js app driver                Driver related commands\n  homey.js app flow                  Flow related commands\n  homey.js app install               Install a Homey App\n  homey.js app manage                View your app in the Homey Developer Tools\n  homey.js app publish               Publish a Homey App to the Homey Apps Store\n  homey.js app run                   Run a Homey App in development mode\n  homey.js app translate             Translate a Homey App with OpenAI\n  homey.js app validate              Validate a Homey App\n  homey.js app version <next>        Update a Homey App's version\n  homey.js app view                  View your app in the Homey App Store\n  homey.js app widget                Widget related commands\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n\nUnknown argument: info\n",
-      "error": "Command failed: homey app info\nhomey.js app\n\nApp related commands\n\nCommands:\n  homey.js app add-github-workflows  Add GitHub Workflows (validate, update\n                                     version, publish)\n  homey.js app add-types             Install the Apps SDK TypeScript\n                                     declarations\n  homey.js app build                 Build a Homey App for publishing\n  homey.js app compose               Migrate app to Homey compose\n  homey.js app create                Create a new Homey App\n  homey.js app discovery             Discovery related commands\n  homey.js app driver                Driver related commands\n  homey.js app flow                  Flow related commands\n  homey.js app install               Install a Homey App\n  homey.js app manage                View your app in the Homey Developer Tools\n  homey.js app publish               Publish a Homey App to the Homey Apps Store\n  homey.js app run                   Run a Homey App in development mode\n  homey.js app translate             Translate a Homey App with OpenAI\n  homey.js app validate              Validate a Homey App\n  homey.js app version <next>        Update a Homey App's version\n  homey.js app view                  View your app in the Homey App Store\n  homey.js app widget                Widget related commands\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n\nUnknown argument: info\n",
+      "stderr": "homey.js app App related commands Commands: homey.js app add-github-workflows Add GitHub Workflows (validate, update version, publish) homey.js app add-types Install the Apps SDK TypeScript declarations homey.js app build Build a Homey App for publishing homey.js app compose Migrate app to Homey compose homey.js app create Create a new Homey App homey.js app discovery Discovery related commands homey.js app driver Driver related commands homey.js app flow Flow related commands homey.js app install Install a Homey App homey.js app manage View your app in the Homey Developer Tools homey.js app publish Publish a Homey App to the Homey Apps Store homey.js app run Run a Homey App in development mode homey.js app translate Translate a Homey App with OpenAI homey.js app validate Validate a Homey App homey.js app version <next> Update a Homey App's version homey.js app view View your app in the Homey App Store homey.js app widget Widget related commands Options: --version Show version number [boolean] -p, --path Path to a Homey App directory [string] [default: \"C:\\Users\\HP\\Desktop\\repair\"] --help Show help [boolean] Unknown argument: info",
+      "error": "Command failed: homey app info homey.js app App related commands Commands: homey.js app add-github-workflows Add GitHub Workflows (validate, update version, publish) homey.js app add-types Install the Apps SDK TypeScript declarations homey.js app build Build a Homey App for publishing homey.js app compose Migrate app to Homey compose homey.js app create Create a new Homey App homey.js app discovery Discovery related commands homey.js app driver Driver related commands homey.js app flow Flow related commands homey.js app install Install a Homey App homey.js app manage View your app in the Homey Developer Tools homey.js app publish Publish a Homey App to the Homey Apps Store homey.js app run Run a Homey App in development mode homey.js app translate Translate a Homey App with OpenAI homey.js app validate Validate a Homey App homey.js app version <next> Update a Homey App's version homey.js app view View your app in the Homey App Store homey.js app widget Widget related commands Options: --version Show version number [boolean] -p, --path Path to a Homey App directory [string] [default: \"C:\\Users\\HP\\Desktop\\repair\"] --help Show help [boolean] Unknown argument: info",
       "attempt": 2,
       "command": "homey app info",
       "duration": "15.51s",
@@ -468,8 +468,8 @@
       "critical": false,
       "success": false,
       "stdout": "",
-      "stderr": "homey.js app\n\nApp related commands\n\nCommands:\n  homey.js app add-github-workflows  Add GitHub Workflows (validate, update\n                                     version, publish)\n  homey.js app add-types             Install the Apps SDK TypeScript\n                                     declarations\n  homey.js app build                 Build a Homey App for publishing\n  homey.js app compose               Migrate app to Homey compose\n  homey.js app create                Create a new Homey App\n  homey.js app discovery             Discovery related commands\n  homey.js app driver                Driver related commands\n  homey.js app flow                  Flow related commands\n  homey.js app install               Install a Homey App\n  homey.js app manage                View your app in the Homey Developer Tools\n  homey.js app publish               Publish a Homey App to the Homey Apps Store\n  homey.js app run                   Run a Homey App in development mode\n  homey.js app translate             Translate a Homey App with OpenAI\n  homey.js app validate              Validate a Homey App\n  homey.js app version <next>        Update a Homey App's version\n  homey.js app view                  View your app in the Homey App Store\n  homey.js app widget                Widget related commands\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n\nUnknown argument: drivers\n",
-      "error": "Command failed: homey app drivers\nhomey.js app\n\nApp related commands\n\nCommands:\n  homey.js app add-github-workflows  Add GitHub Workflows (validate, update\n                                     version, publish)\n  homey.js app add-types             Install the Apps SDK TypeScript\n                                     declarations\n  homey.js app build                 Build a Homey App for publishing\n  homey.js app compose               Migrate app to Homey compose\n  homey.js app create                Create a new Homey App\n  homey.js app discovery             Discovery related commands\n  homey.js app driver                Driver related commands\n  homey.js app flow                  Flow related commands\n  homey.js app install               Install a Homey App\n  homey.js app manage                View your app in the Homey Developer Tools\n  homey.js app publish               Publish a Homey App to the Homey Apps Store\n  homey.js app run                   Run a Homey App in development mode\n  homey.js app translate             Translate a Homey App with OpenAI\n  homey.js app validate              Validate a Homey App\n  homey.js app version <next>        Update a Homey App's version\n  homey.js app view                  View your app in the Homey App Store\n  homey.js app widget                Widget related commands\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n\nUnknown argument: drivers\n",
+      "stderr": "homey.js app App related commands Commands: homey.js app add-github-workflows Add GitHub Workflows (validate, update version, publish) homey.js app add-types Install the Apps SDK TypeScript declarations homey.js app build Build a Homey App for publishing homey.js app compose Migrate app to Homey compose homey.js app create Create a new Homey App homey.js app discovery Discovery related commands homey.js app driver Driver related commands homey.js app flow Flow related commands homey.js app install Install a Homey App homey.js app manage View your app in the Homey Developer Tools homey.js app publish Publish a Homey App to the Homey Apps Store homey.js app run Run a Homey App in development mode homey.js app translate Translate a Homey App with OpenAI homey.js app validate Validate a Homey App homey.js app version <next> Update a Homey App's version homey.js app view View your app in the Homey App Store homey.js app widget Widget related commands Options: --version Show version number [boolean] -p, --path Path to a Homey App directory [string] [default: \"C:\\Users\\HP\\Desktop\\repair\"] --help Show help [boolean] Unknown argument: drivers",
+      "error": "Command failed: homey app drivers homey.js app App related commands Commands: homey.js app add-github-workflows Add GitHub Workflows (validate, update version, publish) homey.js app add-types Install the Apps SDK TypeScript declarations homey.js app build Build a Homey App for publishing homey.js app compose Migrate app to Homey compose homey.js app create Create a new Homey App homey.js app discovery Discovery related commands homey.js app driver Driver related commands homey.js app flow Flow related commands homey.js app install Install a Homey App homey.js app manage View your app in the Homey Developer Tools homey.js app publish Publish a Homey App to the Homey Apps Store homey.js app run Run a Homey App in development mode homey.js app translate Translate a Homey App with OpenAI homey.js app validate Validate a Homey App homey.js app version <next> Update a Homey App's version homey.js app view View your app in the Homey App Store homey.js app widget Widget related commands Options: --version Show version number [boolean] -p, --path Path to a Homey App directory [string] [default: \"C:\\Users\\HP\\Desktop\\repair\"] --help Show help [boolean] Unknown argument: drivers",
       "attempt": 2,
       "command": "homey app drivers",
       "duration": "14.25s",
@@ -499,7 +499,7 @@
       "description": "Node.js runtime test",
       "critical": true,
       "success": true,
-      "stdout": "Node.js runtime test\n",
+      "stdout": "Node.js runtime test",
       "stderr": "",
       "error": null,
       "attempt": 1,
@@ -516,8 +516,8 @@
       "critical": false,
       "success": false,
       "stdout": "",
-      "stderr": "npm error code ENOLOCK\nnpm error audit This command requires an existing lockfile.\nnpm error audit Try creating one first with: npm i --package-lock-only\nnpm error audit Original error: loadVirtual requires existing shrinkwrap file\nnpm error A complete log of this run can be found in: C:\\Users\\HP\\AppData\\Local\\npm-cache\\_logs\\2025-09-10T12_43_40_396Z-debug-0.log\n",
-      "error": "Command failed: npm audit --audit-level moderate\nnpm error code ENOLOCK\nnpm error audit This command requires an existing lockfile.\nnpm error audit Try creating one first with: npm i --package-lock-only\nnpm error audit Original error: loadVirtual requires existing shrinkwrap file\nnpm error A complete log of this run can be found in: C:\\Users\\HP\\AppData\\Local\\npm-cache\\_logs\\2025-09-10T12_43_40_396Z-debug-0.log\n",
+      "stderr": "npm error code ENOLOCK npm error audit This command requires an existing lockfile. npm error audit Try creating one first with: npm i --package-lock-only npm error audit Original error: loadVirtual requires existing shrinkwrap file npm error A complete log of this run can be found in: C:\\Users\\HP\\AppData\\Local\\npm-cache\\_logs\\2025-09-10T12_43_40_396Z-debug-0.log",
+      "error": "Command failed: npm audit --audit-level moderate npm error code ENOLOCK npm error audit This command requires an existing lockfile. npm error audit Try creating one first with: npm i --package-lock-only npm error audit Original error: loadVirtual requires existing shrinkwrap file npm error A complete log of this run can be found in: C:\\Users\\HP\\AppData\\Local\\npm-cache\\_logs\\2025-09-10T12_43_40_396Z-debug-0.log",
       "attempt": 2,
       "command": "npm audit --audit-level moderate",
       "duration": "11.59s",
@@ -531,9 +531,9 @@
       "description": "NPM test suite",
       "critical": false,
       "success": false,
-      "stdout": "\n> com.tuya.zigbee@2.1.0 test\n> mocha\n\n",
-      "stderr": "'mocha' n'est pas reconnu en tant que commande interne\r\nou externe, un programme ex�cutable ou un fichier de commandes.\r\n",
-      "error": "Command failed: npm test\n'mocha' n'est pas reconnu en tant que commande interne\r\nou externe, un programme ex�cutable ou un fichier de commandes.\r\n",
+      "stdout": "> com.tuya.zigbee@2.1.0 test > mocha",
+      "stderr": "'mocha' n'est pas reconnu en tant que commande interne ou externe, un programme ex�cutable ou un fichier de commandes.",
+      "error": "Command failed: npm test 'mocha' n'est pas reconnu en tant que commande interne ou externe, un programme ex�cutable ou un fichier de commandes.",
       "attempt": 2,
       "command": "npm test",
       "duration": "8.10s",
@@ -547,15 +547,15 @@
       "description": "Custom validation script",
       "critical": false,
       "success": false,
-      "stdout": "\n> com.tuya.zigbee@2.1.0 validate\n> node scripts/enhanced-validate.js\n\n",
-      "stderr": "node:internal/modules/cjs/loader:1386\r\n  throw err;\r\n  ^\r\n\r\nError: Cannot find module 'C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\enhanced-validate.js'\r\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)\r\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)\r\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)\r\n    at Function._load (node:internal/modules/cjs/loader:1192:37)\r\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)\r\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\r\n    at node:internal/main/run_main_module:36:49 {\r\n  code: 'MODULE_NOT_FOUND',\r\n  requireStack: []\r\n}\r\n\r\nNode.js v22.19.0\r\n",
-      "error": "Command failed: npm run validate\nnode:internal/modules/cjs/loader:1386\r\n  throw err;\r\n  ^\r\n\r\nError: Cannot find module 'C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\enhanced-validate.js'\r\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)\r\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)\r\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)\r\n    at Function._load (node:internal/modules/cjs/loader:1192:37)\r\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)\r\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\r\n    at node:internal/main/run_main_module:36:49 {\r\n  code: 'MODULE_NOT_FOUND',\r\n  requireStack: []\r\n}\r\n\r\nNode.js v22.19.0\r\n",
+      "stdout": "> com.tuya.zigbee@2.1.0 validate > node scripts/enhanced-validate.js",
+      "stderr": "node:internal/modules/cjs/loader:1386 throw err; ^ Error: Cannot find module 'C:\\Users\\HP\\Desktop\\repair\\scripts\\enhanced-validate.js' at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15) at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19) at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22) at Function._load (node:internal/modules/cjs/loader:1192:37) at TracingChannel.traceSync (node:diagnostics_channel:322:14) at wrapModuleLoad (node:internal/modules/cjs/loader:237:24) at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5) at node:internal/main/run_main_module:36:49 { code: 'MODULE_NOT_FOUND', requireStack: [] } Node.js v22.19.0",
+      "error": "Command failed: npm run validate node:internal/modules/cjs/loader:1386 throw err; ^ Error: Cannot find module 'C:\\Users\\HP\\Desktop\\repair\\scripts\\enhanced-validate.js' at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15) at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19) at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22) at Function._load (node:internal/modules/cjs/loader:1192:37) at TracingChannel.traceSync (node:diagnostics_channel:322:14) at wrapModuleLoad (node:internal/modules/cjs/loader:237:24) at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5) at node:internal/main/run_main_module:36:49 { code: 'MODULE_NOT_FOUND', requireStack: [] } Node.js v22.19.0",
       "attempt": 2,
       "command": "npm run validate",
       "duration": "7.53s",
       "timestamp": "2025-09-10T12:44:01.913Z",
       "errors": [
-        "Error: Cannot find module 'C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\enhanced-validate.js'"
+        "Error: Cannot find module 'C:\\Users\\HP\\Desktop\\repair\\scripts\\enhanced-validate.js'"
       ],
       "warnings": [],
       "infos": []
@@ -674,7 +674,7 @@
       "success": true,
       "details": "All required fields present",
       "appJson": {
-        "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+        "comment": "This file is generated. Please edit .homeycompose/app.json instead.",
         "main": "app.js",
         "id": "com.dlnraja.ultimate.zigbee.hub",
         "version": "4.0.0",
@@ -700,7 +700,7 @@
         },
         "contributors": {},
         "support": "mailto:dylan.rajasekaram@gmail.com",
-        "homepage": "https://github.com/dlnraja/tuya_repair",
+        "homepage": "https://github.com/dlnraja/repair",
         "license": "MIT",
         "platforms": [
           "local"
@@ -720,9 +720,9 @@
           {
             "id": "TS0601_climate",
             "name": {
-              "en": "Tuya Smart Thermostat/Climate Controller",
-              "fr": "Tuya Smart Thermostat/Climate Controller",
-              "nl": "Tuya Smart Thermostat/Climate Controller"
+              "en": "Tuya Smart thermostat/Climate Controller",
+              "fr": "Tuya Smart thermostat/Climate Controller",
+              "nl": "Tuya Smart thermostat/Climate Controller"
             },
             "class": "thermostat",
             "capabilities": [
@@ -743,11 +743,11 @@
             },
             "zigbee": {
               "manufacturerName": [
-                "_TZ3000_*",
-                "_TZ3210_*",
-                "_TYZB01_*",
-                "_TYZB02_*",
-                "_TZ3400_*"
+                "TZ3000_*",
+                "TZ3210_*",
+                "TYZB01_*",
+                "TYZB02_*",
+                "TZ3400_*"
               ],
               "productId": [
                 "TS0601"
@@ -765,12 +765,12 @@
               "endpoints": {
                 "1": {
                   "clusters": [
-                    "hvacThermostat",
+                    "hvacthermostat",
                     "hvacFanCtrl",
                     "msTemperatureMeasurement"
                   ],
                   "bindings": [
-                    "hvacThermostat",
+                    "hvacthermostat",
                     "hvacFanCtrl",
                     "msTemperatureMeasurement"
                   ]
@@ -803,11 +803,11 @@
             },
             "zigbee": {
               "manufacturerName": [
-                "_TZ3000_*",
-                "_TZ3210_*",
-                "_TYZB01_*",
-                "_TYZB02_*",
-                "_TZ3400_*"
+                "TZ3000_*",
+                "TZ3210_*",
+                "TYZB01_*",
+                "TYZB02_*",
+                "TZ3400_*"
               ],
               "productId": [
                 "TS0601"
@@ -859,11 +859,11 @@
             },
             "zigbee": {
               "manufacturerName": [
-                "_TZ3000_*",
-                "_TZ3210_*",
-                "_TYZB01_*",
-                "_TYZB02_*",
-                "_TZ3400_*"
+                "TZ3000_*",
+                "TZ3210_*",
+                "TYZB01_*",
+                "TYZB02_*",
+                "TZ3400_*"
               ],
               "productId": [
                 "TS0601"
@@ -917,11 +917,11 @@
             },
             "zigbee": {
               "manufacturerName": [
-                "_TZ3000_*",
-                "_TZ3210_*",
-                "_TYZB01_*",
-                "_TYZB02_*",
-                "_TZ3400_*"
+                "TZ3000_*",
+                "TZ3210_*",
+                "TYZB01_*",
+                "TYZB02_*",
+                "TZ3400_*"
               ],
               "productId": [
                 "TS0601"
@@ -975,11 +975,11 @@
             },
             "zigbee": {
               "manufacturerName": [
-                "_TZ3000_*",
-                "_TZ3210_*",
-                "_TYZB01_*",
-                "_TYZB02_*",
-                "_TZ3400_*"
+                "TZ3000_*",
+                "TZ3210_*",
+                "TYZB01_*",
+                "TYZB02_*",
+                "TZ3400_*"
               ],
               "productId": [
                 "TS0601"
@@ -1009,7 +1009,7 @@
             }
           },
           {
-            "id": "_base",
+            "id": "base",
             "name": {
               "en": "Base Driver"
             },
@@ -1019,7 +1019,7 @@
                 "Tuya"
               ],
               "productId": [
-                "_base"
+                "base"
               ],
               "endpoints": {
                 "1": {
@@ -1038,7 +1038,7 @@
             ]
           },
           {
-            "id": "_template",
+            "id": "template",
             "name": {
               "en": "Template Device",
               "fr": "Modèle d'appareil"
@@ -1094,7 +1094,7 @@
             }
           },
           {
-            "id": "_templates",
+            "id": "templates",
             "name": {
               "en": "Tuya Device Template"
             },
@@ -1153,7 +1153,7 @@
             "id": "aqara_motion_sensor",
             "name": {
               "en": "Aqara Motion Sensor",
-              "fr": "Capteur de Mouvement Aqara"
+              "fr": "sensor de motion Aqara"
             },
             "class": "sensor",
             "capabilities": [
@@ -1201,8 +1201,8 @@
           {
             "id": "bosch_thermostat_valve",
             "name": {
-              "en": "Bosch Thermostat Valve",
-              "fr": "Tête Thermostatique Bosch"
+              "en": "Bosch thermostat Valve",
+              "fr": "Tête thermostatique Bosch"
             },
             "class": "thermostat",
             "capabilities": [
@@ -1521,7 +1521,7 @@
             "id": "sensors-TS0601_motion",
             "title": {
               "en": "Tuya TS0601 Motion Sensor",
-              "fr": "Détecteur de mouvement Tuya TS0601",
+              "fr": "detector de motion Tuya TS0601",
               "nl": "Tuya TS0601 Bewegingssensor",
               "ta": "Tuya TS0601 இயக்க உணரி"
             },
@@ -1544,7 +1544,7 @@
               "alarm_motion": {
                 "title": {
                   "en": "Motion",
-                  "fr": "Mouvement",
+                  "fr": "motion",
                   "nl": "Beweging",
                   "ta": "இயக்கம்"
                 }
@@ -1552,7 +1552,7 @@
               "measure_temperature": {
                 "title": {
                   "en": "Temperature",
-                  "fr": "Température",
+                  "fr": "temperature",
                   "nl": "Temperatuur",
                   "ta": "வெப்பநிலை"
                 },
@@ -1582,7 +1582,7 @@
             },
             "name": {
               "en": "Tuya TS0601 Motion Sensor",
-              "fr": "Détecteur de mouvement Tuya TS0601",
+              "fr": "detector de motion Tuya TS0601",
               "nl": "Tuya TS0601 Bewegingssensor",
               "ta": "Tuya TS0601 இயக்க உணரி"
             },
@@ -1593,13 +1593,13 @@
                 "value": 60,
                 "label": {
                   "en": "Motion Reset Time (seconds)",
-                  "fr": "Temps de réinitialisation du détecteur (secondes)",
+                  "fr": "Temps de réinitialisation du detector (secondes)",
                   "nl": "Bewegingshersteltijd (seconden)",
                   "ta": "இயக்க மீட்டமைப்பு நேரம் (விநாடிகள்)"
                 },
                 "hint": {
                   "en": "Time after which motion alarm is reset (default: 60s)",
-                  "fr": "Temps après lequel l'alarme de mouvement est réinitialisée (par défaut : 60s)",
+                  "fr": "Temps après lequel l'alarme de motion est réinitialisée (par défaut : 60s)",
                   "nl": "Tijd waarna het bewegingsalarm wordt gereset (standaard: 60s)",
                   "ta": "இயக்க எச்சரிக்கை மீட்டமைக்கப்படும் நேரம் (இயல்புநிலை: 60 வினாடிகள்)"
                 },
@@ -1614,13 +1614,13 @@
                 "value": 0,
                 "label": {
                   "en": "Temperature Offset",
-                  "fr": "Décalage de température",
+                  "fr": "Décalage de temperature",
                   "nl": "Temperatuur correctie",
                   "ta": "வெப்பநிலை ஈடுசெய்தல்"
                 },
                 "hint": {
                   "en": "Adjust the temperature reading by this value",
-                  "fr": "Ajuster la lecture de température de cette valeur",
+                  "fr": "Ajuster la lecture de temperature de cette valeur",
                   "nl": "Pas de temperatuuraflezing aan met deze waarde",
                   "ta": "வெப்பநிலை வாசிப்பை இந்த மதிப்பால் சரிசெய்யவும்"
                 },
@@ -1633,16 +1633,16 @@
             ],
             "zigbee": {
               "manufacturerName": [
-                "_TZE200_7tdtqgwv",
-                "_TZE200_amp6tsvy",
-                "_TZE200_7yodxhya",
-                "_TZE200_locansqn",
-                "_TZE200_3i3exu4n",
-                "_TZE200_7hfcudw5",
-                "_TZE200_3towulqd",
-                "_TZE200_whpb9y8z",
-                "_TZE200_7yuohek9",
-                "_TZE200_3towolqd"
+                "TZE200_7tdtqgwv",
+                "TZE200_amp6tsvy",
+                "TZE200_7yodxhya",
+                "TZE200_locansqn",
+                "TZE200_3i3exu4n",
+                "TZE200_7hfcudw5",
+                "TZE200_3towulqd",
+                "TZE200_whpb9y8z",
+                "TZE200_7yuohek9",
+                "TZE200_3towolqd"
               ],
               "productId": [
                 "TS0601"
@@ -1860,7 +1860,7 @@
           {
             "name": {
               "en": "Tuya Smart Plug (TS011F)",
-              "fr": "Prise intelligente Tuya (TS011F)",
+              "fr": "plug smarte Tuya (TS011F)",
               "nl": "Tuya Slimme stekker (TS011F)"
             },
             "images": {
@@ -1892,7 +1892,7 @@
               "meter_power": {
                 "title": {
                   "en": "Energy Consumption",
-                  "fr": "Consommation d'énergie",
+                  "fr": "Consommation d'energy",
                   "nl": "Energieverbruik"
                 },
                 "units": "kWh"
@@ -2003,7 +2003,7 @@
             "icon": "/drivers/manufacturers/tuya-ts011f/tuya-ts011f/assets/icon.svg"
           },
           {
-            "id": "tuya_future_ai_device",
+            "id": "future_ai_device",
             "name": {
               "en": "Future Tuya AI-Enhanced Device",
               "fr": "Future Tuya AI-Enhanced Device",
@@ -2028,11 +2028,11 @@
             },
             "zigbee": {
               "manufacturerName": [
-                "_TZ3000_*",
-                "_TZ3210_*",
-                "_TYZB01_*",
-                "_TYZB02_*",
-                "_TZ3400_*"
+                "TZ3000_*",
+                "TZ3210_*",
+                "TYZB01_*",
+                "TYZB02_*",
+                "TZ3400_*"
               ],
               "productId": [
                 "TS0601"
@@ -2065,7 +2065,7 @@
             }
           },
           {
-            "id": "tuya_generic_light",
+            "id": "generic_light",
             "name": {
               "en": "Generic Tuya Light Controller",
               "fr": "Generic Tuya Light Controller",
@@ -2092,11 +2092,11 @@
             },
             "zigbee": {
               "manufacturerName": [
-                "_TZ3000_*",
-                "_TZ3210_*",
-                "_TYZB01_*",
-                "_TYZB02_*",
-                "_TZ3400_*"
+                "TZ3000_*",
+                "TZ3210_*",
+                "TYZB01_*",
+                "TYZB02_*",
+                "TZ3400_*"
               ],
               "productId": [
                 "TS0601"
@@ -2129,7 +2129,7 @@
             }
           },
           {
-            "id": "tuya_generic_plug",
+            "id": "generic_plug",
             "name": {
               "en": "Generic Tuya Smart Plug",
               "fr": "Generic Tuya Smart Plug",
@@ -2154,11 +2154,11 @@
             },
             "zigbee": {
               "manufacturerName": [
-                "_TZ3000_*",
-                "_TZ3210_*",
-                "_TYZB01_*",
-                "_TYZB02_*",
-                "_TZ3400_*"
+                "TZ3000_*",
+                "TZ3210_*",
+                "TYZB01_*",
+                "TYZB02_*",
+                "TZ3400_*"
               ],
               "productId": [
                 "TS0601"
@@ -2191,11 +2191,11 @@
             }
           },
           {
-            "id": "tuya_generic_sensor",
+            "id": "generic_sensor",
             "name": {
-              "en": "Generic Tuya Multi-Sensor",
-              "fr": "Generic Tuya Multi-Sensor",
-              "nl": "Generic Tuya Multi-Sensor"
+              "en": "Generic Tuya multi-Sensor",
+              "fr": "Generic Tuya multi-Sensor",
+              "nl": "Generic Tuya multi-Sensor"
             },
             "class": "other",
             "capabilities": [
@@ -2217,11 +2217,11 @@
             },
             "zigbee": {
               "manufacturerName": [
-                "_TZ3000_*",
-                "_TZ3210_*",
-                "_TYZB01_*",
-                "_TYZB02_*",
-                "_TZ3400_*"
+                "TZ3000_*",
+                "TZ3210_*",
+                "TYZB01_*",
+                "TYZB02_*",
+                "TZ3400_*"
               ],
               "productId": [
                 "TS0601"
@@ -2253,7 +2253,7 @@
             }
           },
           {
-            "id": "tuya_generic_switch",
+            "id": "generic_switch",
             "name": {
               "en": "Generic Tuya Switch (1-6 gangs)",
               "fr": "Generic Tuya Switch (1-6 gangs)",
@@ -2276,11 +2276,11 @@
             },
             "zigbee": {
               "manufacturerName": [
-                "_TZ3000_*",
-                "_TZ3210_*",
-                "_TYZB01_*",
-                "_TYZB02_*",
-                "_TZ3400_*"
+                "TZ3000_*",
+                "TZ3210_*",
+                "TYZB01_*",
+                "TYZB02_*",
+                "TZ3400_*"
               ],
               "productId": [
                 "TS0601"
@@ -2371,14 +2371,14 @@
               }
             },
             "images": {
-              "large": "/drivers/tuya_light_ts0501a/assets/images/large.png",
-              "small": "/drivers/tuya_light_ts0501a/assets/images/small.png"
+              "large": "/drivers/light/assets/images/large.png",
+              "small": "/drivers/light/assets/images/small.png"
             },
             "zigbee": {
               "manufacturerName": [
-                "_TZ3000_*",
-                "_TZ3210_*",
-                "_TYZB01_*"
+                "TZ3000_*",
+                "TZ3210_*",
+                "TYZB01_*"
               ],
               "productId": [
                 "TS0501A"
@@ -2400,7 +2400,7 @@
                 }
               },
               "learnmode": {
-                "image": "/drivers/tuya_light_ts0501a/assets/images/large.png",
+                "image": "/drivers/light/assets/images/large.png",
                 "instruction": {
                   "en": "Toggle the power button on the device to start pairing.",
                   "fr": "Appuyez sur le bouton d'alimentation de l'appareil pour commencer l'appairage.",
@@ -2409,7 +2409,7 @@
                 }
               }
             },
-            "id": "tuya_light_ts0501a"
+            "id": "light"
           },
           {
             "name": {
@@ -2430,14 +2430,14 @@
               }
             },
             "images": {
-              "large": "/drivers/tuya_light_ts0502a/assets/images/large.png",
-              "small": "/drivers/tuya_light_ts0502a/assets/images/small.png"
+              "large": "/drivers/light/assets/images/large.png",
+              "small": "/drivers/light/assets/images/small.png"
             },
             "zigbee": {
               "manufacturerName": [
-                "_TZ3000_*",
-                "_TZ3210_*",
-                "_TYZB01_*"
+                "TZ3000_*",
+                "TZ3210_*",
+                "TYZB01_*"
               ],
               "productId": [
                 "TS0502A"
@@ -2461,7 +2461,7 @@
                 }
               },
               "learnmode": {
-                "image": "/drivers/tuya_light_ts0502a/assets/images/large.png",
+                "image": "/drivers/light/assets/images/large.png",
                 "instruction": {
                   "en": "Toggle the power button on the device to start pairing.",
                   "fr": "Appuyez sur le bouton d'alimentation de l'appareil pour commencer l'appairage.",
@@ -2470,7 +2470,7 @@
                 }
               }
             },
-            "id": "tuya_light_ts0502a"
+            "id": "light"
           },
           {
             "name": {
@@ -2491,14 +2491,14 @@
               }
             },
             "images": {
-              "large": "/drivers/tuya_light_ts0502b/assets/images/large.png",
-              "small": "/drivers/tuya_light_ts0502b/assets/images/small.png"
+              "large": "/drivers/light/assets/images/large.png",
+              "small": "/drivers/light/assets/images/small.png"
             },
             "zigbee": {
               "manufacturerName": [
-                "_TZ3000_*",
-                "_TZ3210_*",
-                "_TYZB01_*"
+                "TZ3000_*",
+                "TZ3210_*",
+                "TYZB01_*"
               ],
               "productId": [
                 "TS0502B"
@@ -2522,7 +2522,7 @@
                 }
               },
               "learnmode": {
-                "image": "/drivers/tuya_light_ts0502b/assets/images/large.png",
+                "image": "/drivers/light/assets/images/large.png",
                 "instruction": {
                   "en": "Toggle the power button on the device to start pairing.",
                   "fr": "Appuyez sur le bouton d'alimentation de l'appareil pour commencer l'appairage.",
@@ -2531,14 +2531,14 @@
                 }
               }
             },
-            "id": "tuya_light_ts0502b"
+            "id": "light"
           },
           {
             "name": {
-              "en": "Tuya RGB+CCT Bulb Alt",
-              "fr": "Tuya RGB+CCT Bulb Alt",
-              "nl": "Tuya RGB+CCT Bulb Alt",
-              "de": "Tuya RGB+CCT Bulb Alt"
+              "en": "Tuya rgb+CCT Bulb Alt",
+              "fr": "Tuya rgb+CCT Bulb Alt",
+              "nl": "Tuya rgb+CCT Bulb Alt",
+              "de": "Tuya rgb+CCT Bulb Alt"
             },
             "class": "light",
             "capabilities": [
@@ -2554,14 +2554,14 @@
               }
             },
             "images": {
-              "large": "/drivers/tuya_light_ts0505a/assets/images/large.png",
-              "small": "/drivers/tuya_light_ts0505a/assets/images/small.png"
+              "large": "/drivers/light/assets/images/large.png",
+              "small": "/drivers/light/assets/images/small.png"
             },
             "zigbee": {
               "manufacturerName": [
-                "_TZ3000_*",
-                "_TZ3210_*",
-                "_TYZB01_*"
+                "TZ3000_*",
+                "TZ3210_*",
+                "TYZB01_*"
               ],
               "productId": [
                 "TS0505A"
@@ -2585,7 +2585,7 @@
                 }
               },
               "learnmode": {
-                "image": "/drivers/tuya_light_ts0505a/assets/images/large.png",
+                "image": "/drivers/light/assets/images/large.png",
                 "instruction": {
                   "en": "Toggle the power button on the device to start pairing.",
                   "fr": "Appuyez sur le bouton d'alimentation de l'appareil pour commencer l'appairage.",
@@ -2594,14 +2594,14 @@
                 }
               }
             },
-            "id": "tuya_light_ts0505a"
+            "id": "light"
           },
           {
             "name": {
-              "en": "Tuya RGB+CCT Bulb",
-              "fr": "Tuya RGB+CCT Bulb",
-              "nl": "Tuya RGB+CCT Bulb",
-              "de": "Tuya RGB+CCT Bulb"
+              "en": "Tuya rgb+CCT Bulb",
+              "fr": "Tuya rgb+CCT Bulb",
+              "nl": "Tuya rgb+CCT Bulb",
+              "de": "Tuya rgb+CCT Bulb"
             },
             "class": "light",
             "capabilities": [
@@ -2617,14 +2617,14 @@
               }
             },
             "images": {
-              "large": "/drivers/tuya_light_ts0505b/assets/images/large.png",
-              "small": "/drivers/tuya_light_ts0505b/assets/images/small.png"
+              "large": "/drivers/light/assets/images/large.png",
+              "small": "/drivers/light/assets/images/small.png"
             },
             "zigbee": {
               "manufacturerName": [
-                "_TZ3000_*",
-                "_TZ3210_*",
-                "_TYZB01_*"
+                "TZ3000_*",
+                "TZ3210_*",
+                "TYZB01_*"
               ],
               "productId": [
                 "TS0505B"
@@ -2648,7 +2648,7 @@
                 }
               },
               "learnmode": {
-                "image": "/drivers/tuya_light_ts0505b/assets/images/large.png",
+                "image": "/drivers/light/assets/images/large.png",
                 "instruction": {
                   "en": "Toggle the power button on the device to start pairing.",
                   "fr": "Appuyez sur le bouton d'alimentation de l'appareil pour commencer l'appairage.",
@@ -2657,7 +2657,7 @@
                 }
               }
             },
-            "id": "tuya_light_ts0505b"
+            "id": "light"
           },
           {
             "name": {
@@ -2683,15 +2683,15 @@
               }
             },
             "images": {
-              "large": "/drivers/tuya_light_universal/assets/images/large.png",
-              "small": "/drivers/tuya_light_universal/assets/images/small.png"
+              "large": "/drivers/light_universal/assets/images/large.png",
+              "small": "/drivers/light_universal/assets/images/small.png"
             },
             "zigbee": {
               "manufacturerName": [
-                "_TZ3000_*",
-                "_TZ3210_*",
-                "_TYZB01_*",
-                "_TZ3300_*"
+                "TZ3000_*",
+                "TZ3210_*",
+                "TYZB01_*",
+                "TZ3300_*"
               ],
               "productId": [
                 "TS0505B",
@@ -2719,7 +2719,7 @@
                 }
               },
               "learnmode": {
-                "image": "/drivers/tuya_light_universal/assets/images/large.png",
+                "image": "/drivers/light_universal/assets/images/large.png",
                 "instruction": {
                   "en": "Toggle the power button on the device to start pairing.",
                   "fr": "Appuyez sur le bouton d'alimentation de l'appareil pour commencer l'appairage.",
@@ -2728,18 +2728,18 @@
                 }
               }
             },
-            "id": "tuya_light_universal"
+            "id": "light_universal"
           },
           {
-            "id": "tuya_thermostat",
-            "name": "Tuya Thermostat",
+            "id": "thermostat",
+            "name": "Tuya thermostat",
             "class": "thermostat",
             "zigbee": {
               "manufacturerName": [
                 "Tuya"
               ],
               "productId": [
-                "tuya_thermostat"
+                "thermostat"
               ],
               "endpoints": {
                 "1": {
@@ -2756,7 +2756,7 @@
             "capabilities": []
           },
           {
-            "id": "tuya_universal_adapter",
+            "id": "universal_adapter",
             "name": {
               "en": "Universal Tuya Device Adapter",
               "fr": "Universal Tuya Device Adapter",
@@ -2779,11 +2779,11 @@
             },
             "zigbee": {
               "manufacturerName": [
-                "_TZ3000_*",
-                "_TZ3210_*",
-                "_TYZB01_*",
-                "_TYZB02_*",
-                "_TZ3400_*"
+                "TZ3000_*",
+                "TZ3210_*",
+                "TYZB01_*",
+                "TYZB02_*",
+                "TZ3400_*"
               ],
               "productId": [
                 "TS0601"
@@ -2811,7 +2811,7 @@
             }
           },
           {
-            "id": "tuya_water_sensor",
+            "id": "water_sensor",
             "name": "Tuya Water Sensor",
             "class": "sensor",
             "zigbee": {
@@ -2819,7 +2819,7 @@
                 "Tuya"
               ],
               "productId": [
-                "tuya_water_sensor"
+                "water_sensor"
               ],
               "endpoints": {
                 "1": {

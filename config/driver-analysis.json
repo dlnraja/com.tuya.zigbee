@@ -1,7 +1,7 @@
 [
   {
     "id": "base",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\base",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\base",
     "files": [
       "device.js",
       "driver.compose.json",
@@ -16,7 +16,7 @@
   },
   {
     "id": "climate",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\climate",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\climate",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup"
@@ -29,7 +29,7 @@
   },
   {
     "id": "climates-TS0601_ac",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\climates-TS0601_ac",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\climates-TS0601_ac",
     "files": [
       "device.js",
       "driver.compose.json",
@@ -45,7 +45,7 @@
   },
   {
     "id": "cover",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\cover",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\cover",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup"
@@ -58,7 +58,7 @@
   },
   {
     "id": "covers-TS0602_cover",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\covers-TS0602_cover",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\covers-TS0602_cover",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -73,7 +73,7 @@
   },
   {
     "id": "fan",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\fan",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\fan",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup"
@@ -86,7 +86,7 @@
   },
   {
     "id": "fan-tuya-universal",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\fan-tuya-universal",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\fan-tuya-universal",
     "files": [
       "device.js",
       "driver.compose.json",
@@ -103,7 +103,7 @@
   },
   {
     "id": "fans-TS0601_fan",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\fans-TS0601_fan",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\fans-TS0601_fan",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -118,7 +118,7 @@
   },
   {
     "id": "fans-TS0602_fan",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\fans-TS0602_fan",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\fans-TS0602_fan",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -133,7 +133,7 @@
   },
   {
     "id": "generic",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\generic",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\generic",
     "files": [
       "device.js",
       "driver.compose.json",
@@ -148,7 +148,7 @@
   },
   {
     "id": "light",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\light",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\light",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup"
@@ -161,7 +161,7 @@
   },
   {
     "id": "lights-TS0501B",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights-TS0501B",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\lights-TS0501B",
     "files": [
       "device.js",
       "driver.compose.json",
@@ -177,7 +177,7 @@
   },
   {
     "id": "lights-TS0601_dimmer",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights-TS0601_dimmer",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\lights-TS0601_dimmer",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -192,7 +192,7 @@
   },
   {
     "id": "lights-TS0601_rgb",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights-TS0601_rgb",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\lights-TS0601_rgb",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -207,7 +207,7 @@
   },
   {
     "id": "lights-TS0601_switch",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights-TS0601_switch",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\lights-TS0601_switch",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -222,7 +222,7 @@
   },
   {
     "id": "lock",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lock",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\lock",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup"
@@ -235,7 +235,7 @@
   },
   {
     "id": "lock-tuya-universal",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lock-tuya-universal",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\lock-tuya-universal",
     "files": [
       "device.js",
       "driver.compose.json",
@@ -252,7 +252,7 @@
   },
   {
     "id": "locks-TS0601_lock",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\locks-TS0601_lock",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\locks-TS0601_lock",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -267,7 +267,7 @@
   },
   {
     "id": "plug",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plug",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\plug",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup"
@@ -280,7 +280,7 @@
   },
   {
     "id": "plugs-TS011F",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs-TS011F",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\plugs-TS011F",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -295,7 +295,7 @@
   },
   {
     "id": "plugs-TS011G",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs-TS011G",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\plugs-TS011G",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -310,7 +310,7 @@
   },
   {
     "id": "plugs-TS011H",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs-TS011H",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\plugs-TS011H",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -325,7 +325,7 @@
   },
   {
     "id": "plugs-TS011I",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs-TS011I",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\plugs-TS011I",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -340,7 +340,7 @@
   },
   {
     "id": "plugs-TS011J",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs-TS011J",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\plugs-TS011J",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -355,7 +355,7 @@
   },
   {
     "id": "plugs-TS0121",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs-TS0121",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\plugs-TS0121",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -370,7 +370,7 @@
   },
   {
     "id": "plugs-TS0122",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs-TS0122",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\plugs-TS0122",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -385,7 +385,7 @@
   },
   {
     "id": "plugs-TS0123",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs-TS0123",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\plugs-TS0123",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -400,7 +400,7 @@
   },
   {
     "id": "plugs-TS0124",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs-TS0124",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\plugs-TS0124",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -415,7 +415,7 @@
   },
   {
     "id": "plugs-TS0125",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs-TS0125",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\plugs-TS0125",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -430,7 +430,7 @@
   },
   {
     "id": "remotes-TS0601_remote",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\remotes-TS0601_remote",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\remotes-TS0601_remote",
     "files": [
       "device.js",
       "driver.compose.json",
@@ -446,7 +446,7 @@
   },
   {
     "id": "sensor",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensor",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\sensor",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup"
@@ -459,7 +459,7 @@
   },
   {
     "id": "sensors-TS0201",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors-TS0201",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\sensors-TS0201",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -474,7 +474,7 @@
   },
   {
     "id": "sensors-TS0601_contact",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors-TS0601_contact",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\sensors-TS0601_contact",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -489,7 +489,7 @@
   },
   {
     "id": "sensors-TS0601_gas",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors-TS0601_gas",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\sensors-TS0601_gas",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -504,7 +504,7 @@
   },
   {
     "id": "sensors-TS0601_motion",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors-TS0601_motion",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\sensors-TS0601_motion",
     "files": [
       "device.js",
       "driver.compose.json",
@@ -520,7 +520,7 @@
   },
   {
     "id": "sensors-TS0601_sensor",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors-TS0601_sensor",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\sensors-TS0601_sensor",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -535,7 +535,7 @@
   },
   {
     "id": "sensors-TS0601_smoke",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors-TS0601_smoke",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\sensors-TS0601_smoke",
     "files": [
       "device.js",
       "driver.compose.json",
@@ -551,7 +551,7 @@
   },
   {
     "id": "sensors-TS0601_vibration",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors-TS0601_vibration",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\sensors-TS0601_vibration",
     "files": [
       "device.js",
       "driver.compose.json",
@@ -567,7 +567,7 @@
   },
   {
     "id": "sensors-TS0601_water",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors-TS0601_water",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\sensors-TS0601_water",
     "files": [
       "device.js",
       "driver.compose.json",
@@ -583,7 +583,7 @@
   },
   {
     "id": "switch",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switch",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\switch",
     "files": [
       "device.js",
       "driver.compose.json",
@@ -600,7 +600,7 @@
   },
   {
     "id": "switches-TS0001",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches-TS0001",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\switches-TS0001",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -615,7 +615,7 @@
   },
   {
     "id": "switches-TS0002",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches-TS0002",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\switches-TS0002",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -630,7 +630,7 @@
   },
   {
     "id": "switches-TS0003",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches-TS0003",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\switches-TS0003",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -645,7 +645,7 @@
   },
   {
     "id": "switches-TS0004",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches-TS0004",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\switches-TS0004",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -660,7 +660,7 @@
   },
   {
     "id": "switches-TS0005",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches-TS0005",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\switches-TS0005",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -675,7 +675,7 @@
   },
   {
     "id": "switches-TS0006",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches-TS0006",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\switches-TS0006",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -690,7 +690,7 @@
   },
   {
     "id": "switches-TS0007",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches-TS0007",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\switches-TS0007",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -705,7 +705,7 @@
   },
   {
     "id": "switches-TS0008",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches-TS0008",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\switches-TS0008",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -720,7 +720,7 @@
   },
   {
     "id": "thermostats-TS0601_thermostat",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\thermostats-TS0601_thermostat",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\thermostats-TS0601_thermostat",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -735,7 +735,7 @@
   },
   {
     "id": "thermostats-TS0603_thermostat",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\thermostats-TS0603_thermostat",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\thermostats-TS0603_thermostat",
     "files": [
       "driver.compose.json",
       "driver.compose.json.backup",
@@ -750,7 +750,7 @@
   },
   {
     "id": "tuya",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\tuya",
     "files": [],
     "hasDeviceJs": false,
     "hasDriverJs": false,
@@ -760,7 +760,7 @@
   },
   {
     "id": "tuya-climate-universal",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya-climate-universal",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\tuya-climate-universal",
     "files": [
       "device.js",
       "driver.compose.json",
@@ -777,7 +777,7 @@
   },
   {
     "id": "tuya-cover-universal",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya-cover-universal",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\tuya-cover-universal",
     "files": [
       "device.js",
       "driver.compose.json",
@@ -794,7 +794,7 @@
   },
   {
     "id": "tuya-light-universal",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya-light-universal",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\tuya-light-universal",
     "files": [
       "device.js",
       "driver.compose.json",
@@ -811,7 +811,7 @@
   },
   {
     "id": "tuya-plug-universal",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya-plug-universal",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\tuya-plug-universal",
     "files": [
       "device.js",
       "driver.compose.json",
@@ -828,7 +828,7 @@
   },
   {
     "id": "tuya-remote-universal",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya-remote-universal",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\tuya-remote-universal",
     "files": [
       "device.js",
       "driver.compose.json",
@@ -845,7 +845,7 @@
   },
   {
     "id": "tuya-sensor-universal",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya-sensor-universal",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\tuya-sensor-universal",
     "files": [
       "device.js",
       "driver.compose.json",
@@ -862,7 +862,7 @@
   },
   {
     "id": "tuya-ts0011",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya-ts0011",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\tuya-ts0011",
     "files": [
       "device.js",
       "driver.compose.json",
@@ -876,7 +876,7 @@
   },
   {
     "id": "tuya-ts011f",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya-ts011f",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\tuya-ts011f",
     "files": [
       "device.js",
       "driver.compose.json",
@@ -889,8 +889,8 @@
     "hasAssets": true
   },
   {
-    "id": "tuya_zigbee",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya_zigbee",
+    "id": "zigbee",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\tuya_zigbee",
     "files": [
       "device.js",
       "driver.compose.json",
@@ -904,8 +904,8 @@
     "hasAssets": true
   },
   {
-    "id": "tuya_zigbee_switch",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya_zigbee_switch",
+    "id": "zigbee_switch",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\tuya_zigbee_switch",
     "files": [
       "device.js",
       "driver.compose.json"
@@ -918,7 +918,7 @@
   },
   {
     "id": "zigbee-tuya-universal",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\zigbee-tuya-universal",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\zigbee-tuya-universal",
     "files": [
       "device.js",
       "driver.compose.json",
@@ -934,8 +934,8 @@
     "hasAssets": true
   },
   {
-    "id": "_common",
-    "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\_common",
+    "id": "common",
+    "path": "C:\\Users\\HP\\Desktop\\repair\\drivers\\_common",
     "files": [
       "device.js",
       "driver.compose.json",

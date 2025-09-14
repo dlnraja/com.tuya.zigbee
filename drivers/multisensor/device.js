@@ -1,168 +1,137 @@
-'use strict';
-
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class HobeianMultiSensor extends ZigBeeDevice {
-
-  async onNodeInit({ zclNode }) {
+class MultisensorDevice extends ZigBeeDevice {
     
-    // Register motion detection capability
-    this.registerCapability('alarm_motion', 'iasZone', {
-      reportOpts: {
-        configureAttributeReporting: {
-          minInterval: 0,
-          maxInterval: 43200,
-          minChange: 0,
-        },
-      },
-    });
-
-    // Register temperature capability
-    this.registerCapability('measure_temperature', 'temperatureMeasurement', {
-      reportOpts: {
-        configureAttributeReporting: {
-          minInterval: 60,
-          maxInterval: 3600,
-          minChange: 50, // 0.5°C
-        },
-      },
-    });
-
-    // Register humidity capability  
-    this.registerCapability('measure_humidity', 'relativeHumidity', {
-      reportOpts: {
-        configureAttributeReporting: {
-          minInterval: 60,
-          maxInterval: 3600,
-          minChange: 100, // 1%
-        },
-      },
-    });
-
-    // Register illuminance capability
-    this.registerCapability('measure_luminance', 'illuminanceMeasurement', {
-      reportOpts: {
-        configureAttributeReporting: {
-          minInterval: 60,
-          maxInterval: 3600,
-          minChange: 10,
-        },
-      },
-    });
-
-    // Register battery capability
-    this.registerCapability('measure_battery', 'powerConfiguration', {
-      reportOpts: {
-        configureAttributeReporting: {
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 1,
-        },
-      },
-    });
-
-    // Handle IAS Zone notifications for motion
-    zclNode.endpoints[1].clusters.iasZone.on('zoneStatusChangeNotification', (payload) => {
-      this.log('IAS Zone status change:', payload);
-      
-      if (payload && payload.zoneStatus) {
-        const motionDetected = !!(payload.zoneStatus.alarm1 || payload.zoneStatus.alarm2);
-        this.setCapabilityValue('alarm_motion', motionDetected).catch(this.error);
-      }
-    });
-
-    // Handle temperature measurements
-    zclNode.endpoints[1].clusters.temperatureMeasurement.on('attr.measuredValue', (value) => {
-      this.log('Temperature measurement:', value);
-      
-      if (typeof value === 'number' && value !== 0x8000) {
-        const temperature = value / 100; // Convert to °C
-        const offset = this.getSetting('temp_offset') || 0;
-        this.setCapabilityValue('measure_temperature', Math.round((temperature + offset) * 10) / 10).catch(this.error);
-      }
-    });
-
-    // Handle humidity measurements
-    zclNode.endpoints[1].clusters.relativeHumidity.on('attr.measuredValue', (value) => {
-      this.log('Humidity measurement:', value);
-      
-      if (typeof value === 'number' && value !== 0xFFFF) {
-        const humidity = value / 100; // Convert to %
-        const offset = this.getSetting('humidity_offset') || 0;
-        this.setCapabilityValue('measure_humidity', Math.max(0, Math.min(100, Math.round(humidity + offset)))).catch(this.error);
-      }
-    });
-
-    // Handle illuminance measurements
-    zclNode.endpoints[1].clusters.illuminanceMeasurement.on('attr.measuredValue', (value) => {
-      this.log('Illuminance measurement:', value);
-      
-      if (typeof value === 'number' && value !== 0xFFFF) {
-        // Convert from raw value to lux
-        const lux = Math.pow(10, (value - 1) / 10000);
-        this.setCapabilityValue('measure_luminance', Math.round(lux)).catch(this.error);
-      }
-    });
-
-    // Handle battery reporting
-    zclNode.endpoints[1].clusters.powerConfiguration.on('attr.batteryPercentageRemaining', (value) => {
-      this.log('Battery percentage:', value);
-      
-      if (typeof value === 'number') {
-        const batteryPercentage = Math.round(value / 2);
-        this.setCapabilityValue('measure_battery', Math.max(0, Math.min(100, batteryPercentage))).catch(this.error);
-      }
-    });
-
-    // Handle battery voltage reporting
-    zclNode.endpoints[1].clusters.powerConfiguration.on('attr.batteryVoltage', (value) => {
-      this.log('Battery voltage:', value);
-      
-      if (typeof value === 'number') {
-        // Convert voltage to percentage (2.0V = 0%, 3.0V = 100%)
-        const voltage = value / 10; // Convert to actual voltage
-        const percentage = Math.max(0, Math.min(100, Math.round((voltage - 2.0) * 100)));
-        this.setCapabilityValue('measure_battery', percentage).catch(this.error);
-      }
-    });
-
-    this.log('HobeianMultiSensor has been initialized');
-  }
-
-  async onSettings({ oldSettings, newSettings, changedKeys }) {
-    this.log('Settings changed:', { oldSettings, newSettings, changedKeys });
-
-    if (changedKeys.includes('motion_sensitivity')) {
-      await this._updateMotionSensitivity(newSettings.motion_sensitivity);
+    async onNodeInit({ zclNode }) {
+        
+        // Enable debug logging
+        this.enableDebug();
+        
+        // Print node info
+        this.printNode();
+        
+        // Register capabilities
+        await this.registerCapabilities();
+        
+        // Configure reporting
+        await this.configureReporting();
+        
+        // Set up flow triggers
+        this.setupFlowTriggers();
+        
+        this.log('Multi-Sensor has been initialized');
     }
-
-    // Temperature and humidity offsets are applied in real-time during measurement processing
-    if (changedKeys.includes('temp_offset') || changedKeys.includes('humidity_offset')) {
-      this.log('Sensor offset updated, will apply to next measurements');
+    
+    async registerCapabilities() {
+        const capabilities = [
+        "alarm_motion",
+        "measure_temperature",
+        "measure_humidity",
+        "measure_luminance",
+        "measure_battery"
+];
+        
+        for (const capability of capabilities) {
+            if (this.hasCapability(capability)) {
+                this.log(`Capability ${capability} already registered`);
+                continue;
+            }
+            
+            try {
+                await this.addCapability(capability);
+                this.log(`Added capability: ${capability}`);
+            } catch (error) {
+                this.error(`Failed to add capability ${capability}:`, error);
+            }
+        }
     }
-  }
-
-  async _updateMotionSensitivity(sensitivity) {
-    try {
-      // For standard IAS Zone devices, we can try to configure the sensitivity
-      // This may not work for all devices but won't cause errors
-      let sensitivityValue = 2; // medium
-      switch (sensitivity) {
-        case 'low': sensitivityValue = 1; break;
-        case 'high': sensitivityValue = 3; break;
-        default: sensitivityValue = 2; break;
-      }
-
-      this.log('Motion sensitivity set to:', sensitivity);
-      
-      // Store setting for reference
-      this.setSettings({ motion_sensitivity: sensitivity });
-      
-    } catch (error) {
-      this.error('Failed to update motion sensitivity:', error);
+    
+    async configureReporting() {
+        try {
+            // Configure cluster reporting based on device type
+            
+            // Configure sensor reporting
+            if (this.zclNode.endpoints[1].clusters.occupancySensing) {
+                await this.zclNode.endpoints[1].clusters.occupancySensing.configureReporting('occupancy', {
+                    minInterval: 0,
+                    maxInterval: 600,
+                    minChange: null
+                });
+            }
+            
+            if (this.zclNode.endpoints[1].clusters.temperatureMeasurement) {
+                await this.zclNode.endpoints[1].clusters.temperatureMeasurement.configureReporting('measuredValue', {
+                    minInterval: 60,
+                    maxInterval: 3600,
+                    minChange: 100
+                });
+            }
+            
+            if (this.zclNode.endpoints[1].clusters.relativeHumidity) {
+                await this.zclNode.endpoints[1].clusters.relativeHumidity.configureReporting('measuredValue', {
+                    minInterval: 60,
+                    maxInterval: 3600,
+                    minChange: 500
+                });
+            }
+        } catch (error) {
+            this.error('Failed to configure reporting:', error);
+        }
     }
-  }
-
+    
+    setupFlowTriggers() {
+        // Register flow card triggers
+        
+        // Motion/presence detection triggers
+        this.registerCapabilityListener('alarm_motion', (value) => {
+            this.homey.flow.getDeviceTriggerCard('motion_detected')
+                .trigger(this, {}, { motion: value })
+                .catch(this.error);
+        });
+        
+        this.registerCapabilityListener('alarm_contact', (value) => {
+            this.homey.flow.getDeviceTriggerCard('contact_changed')
+                .trigger(this, {}, { contact: value })
+                .catch(this.error);
+        });
+    }
+    
+    onSettings({ oldSettings, newSettings, changedKeys }) {
+        this.log('Settings changed:', changedKeys);
+        
+        // Handle settings changes
+        changedKeys.forEach(key => {
+            this.log(`Setting ${key} changed from ${oldSettings[key]} to ${newSettings[key]}`);
+            this.handleSettingChange(key, newSettings[key]);
+        });
+        
+        return Promise.resolve(true);
+    }
+    
+    handleSettingChange(key, value) {
+        // Handle individual setting changes
+        switch(key) {
+            
+            case 'motion_sensitivity':
+                this.log(`motion_sensitivity changed to ${value}`);
+                // Handle motion_sensitivity change
+                break;
+            case 'temp_offset':
+                this.log(`temp_offset changed to ${value}`);
+                // Handle temp_offset change
+                break;
+            case 'humidity_offset':
+                this.log(`humidity_offset changed to ${value}`);
+                // Handle humidity_offset change
+                break;
+            default:
+                this.log(`Unhandled setting change: ${key} = ${value}`);
+        }
+    }
+    
+    onDeleted() {
+        this.log('Multi-Sensor has been deleted');
+    }
 }
 
-module.exports = HobeianMultiSensor;
+module.exports = MultisensorDevice;

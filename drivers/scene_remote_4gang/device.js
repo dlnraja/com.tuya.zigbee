@@ -1,39 +1,87 @@
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class SceneRemoteDevice extends ZigBeeDevice {
-  
-  async onNodeInit() {
-    await super.onNodeInit();
+class SceneRemote4GangDevice extends ZigBeeDevice {
     
-    this.printNode();
+    async onNodeInit({ zclNode }) {
+        
+        // Enable debug logging
+        this.enableDebug();
+        
+        // Print node info
+        this.printNode();
+        
+        // Register capabilities
+        await this.registerCapabilities();
+        
+        // Configure reporting
+        await this.configureReporting();
+        
+        // Set up flow triggers
+        this.setupFlowTriggers();
+        
+        this.log('4-Gang Scene Remote has been initialized');
+    }
     
-    // Enable debugging
-    this.enableDebug();
+    async registerCapabilities() {
+        const capabilities = [];
+        
+        for (const capability of capabilities) {
+            if (this.hasCapability(capability)) {
+                this.log(`Capability ${capability} already registered`);
+                continue;
+            }
+            
+            try {
+                await this.addCapability(capability);
+                this.log(`Added capability: ${capability}`);
+            } catch (error) {
+                this.error(`Failed to add capability ${capability}:`, error);
+            }
+        }
+    }
     
-    // Register button capabilities
+    async configureReporting() {
+        try {
+            // Configure cluster reporting based on device type
+            // No specific reporting configuration needed
+        } catch (error) {
+            this.error('Failed to configure reporting:', error);
+        }
+    }
     
-    if (this.hasCapability('button.1')) {
-      this.registerCapability('button.1', 'genOnOff', {
-        endpoint: 1
-      });
+    setupFlowTriggers() {
+        // Register flow card triggers
+        // No specific flow triggers needed
     }
-    if (this.hasCapability('button.2')) {
-      this.registerCapability('button.2', 'genOnOff', {
-        endpoint: 2
-      });
+    
+    onSettings({ oldSettings, newSettings, changedKeys }) {
+        this.log('Settings changed:', changedKeys);
+        
+        // Handle settings changes
+        changedKeys.forEach(key => {
+            this.log(`Setting ${key} changed from ${oldSettings[key]} to ${newSettings[key]}`);
+            this.handleSettingChange(key, newSettings[key]);
+        });
+        
+        return Promise.resolve(true);
     }
-    if (this.hasCapability('button.3')) {
-      this.registerCapability('button.3', 'genOnOff', {
-        endpoint: 3
-      });
+    
+    handleSettingChange(key, value) {
+        // Handle individual setting changes
+        switch(key) {
+            
+            case 'button_layout':
+                this.log(`button_layout changed to ${value}`);
+                // Handle button_layout change
+                break;
+            default:
+                this.log(`Unhandled setting change: ${key} = ${value}`);
+        }
     }
-    if (this.hasCapability('button.4')) {
-      this.registerCapability('button.4', 'genOnOff', {
-        endpoint: 4
-      });
+    
+    onDeleted() {
+        this.log('4-Gang Scene Remote has been deleted');
     }
-  }
-  
 }
 
-module.exports = SceneRemoteDevice;
+module.exports = SceneRemote4GangDevice;

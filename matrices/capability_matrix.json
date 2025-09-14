@@ -1183,8 +1183,8 @@
         "meter_power": true
       }
     },
-    "tuya_zigbee": {
-      "name": "tuya_zigbee",
+    "zigbee": {
+      "name": "zigbee",
       "type": "unknown",
       "manufacturer": "unknown",
       "model": "unknown",
@@ -1203,8 +1203,8 @@
         "meter_power": false
       }
     },
-    "tuya_zigbee_switch": {
-      "name": "tuya_zigbee_switch",
+    "zigbee_switch": {
+      "name": "zigbee_switch",
       "type": "unknown",
       "manufacturer": "unknown",
       "model": "unknown",
@@ -1243,8 +1243,8 @@
         "meter_power": false
       }
     },
-    "_common": {
-      "name": "_common",
+    "common": {
+      "name": "common",
       "type": "unknown",
       "manufacturer": "unknown",
       "model": "unknown",
@@ -1263,8 +1263,8 @@
         "meter_power": false
       }
     },
-    "_template": {
-      "name": "_template",
+    "template": {
+      "name": "template",
       "type": "unknown",
       "manufacturer": "unknown",
       "model": "unknown",

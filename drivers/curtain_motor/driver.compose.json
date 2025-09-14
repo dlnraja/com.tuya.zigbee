@@ -1,58 +1,62 @@
 {
   "id": "curtain_motor",
   "name": {
-    "en": "Curtain Motor",
-    "fr": "Moteur de Rideau",
-    "nl": "Gordijnmotor",
-    "de": "Vorhangmotor"
+    "en": "Curtain Motor"
   },
   "class": "windowcoverings",
   "capabilities": [
-    "windowcoverings_state",
-    "dim"
+    "windowcoverings_set",
+    "windowcoverings_tilt_set"
   ],
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_1n2kyphz",
-      "_TZE200_3ptz6gyb",
-      "_TZE200_5zbp6j0u",
-      "_TZE200_7eue9vhc",
-      "_TZE200_cowvfni3",
-      "_TZE200_cpbo62af",
-      "_TZE200_fdtjuw7u",
-      "_TZE200_hsz7q4dj",
-      "_TZE200_nkoabg8w",
-      "_TZE200_nogaemzt",
-      "_TZE200_pk0sfzvr",
-      "_TZE200_rddyvrci",
-      "_TZE200_wmcdj3aq",
-      "_TZE200_xuzcvlku",
-      "_TZE200_yenbr4om",
-      "_TZE200_zpzndjez",
-      "_TZE200_zuz7f94z"
+      "_TZ3000_",
+      "_TZE200_",
+      "_TYZB01_",
+      "TUYA",
+      "Smart Home"
     ],
     "productId": [
-      "TS0601",
-      "TS130F"
+      "TS0001",
+      "TS0011",
+      "TS0012",
+      "TS004F",
+      "TS011F",
+      "TS0121",
+      "TS013F"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          6,
-          8,
-          258
-        ],
-        "bindings": [
-          6,
-          8,
-          258
+          "basic",
+          "identify",
+          "windowCovering"
         ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/curtain_motor/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your Curtain Motor for 3 seconds until the LED starts blinking rapidly."
       }
     }
   },
   "images": {
     "small": "/drivers/curtain_motor/assets/images/small.png",
     "large": "/drivers/curtain_motor/assets/images/large.png"
-  }
+  },
+  "settings": [
+    {
+      "id": "motor_speed",
+      "type": "dropdown",
+      "label": "Motor Speed",
+      "value": "medium"
+    },
+    {
+      "id": "calibration_mode",
+      "type": "checkbox",
+      "label": "Calibration Mode",
+      "value": false
+    }
+  ]
 }

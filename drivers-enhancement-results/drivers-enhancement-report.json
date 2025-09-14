@@ -195,96 +195,64 @@
       "warnings": [],
       "success": true
     },
-    "tuya_future_ai_device": {
-      "name": "tuya_future_ai_device",
+    "future_ai_device": {
+      "name": "future_ai_device",
       "enhancements": [
         "Applied Johan Benz style architecture"
       ],
       "warnings": [],
       "success": true
     },
-    "tuya_generic_light": {
-      "name": "tuya_generic_light",
+    "generic_light": {
+      "name": "generic_light",
       "enhancements": [
         "Applied Johan Benz style architecture"
       ],
       "warnings": [],
       "success": true
     },
-    "tuya_generic_plug": {
-      "name": "tuya_generic_plug",
+    "generic_plug": {
+      "name": "generic_plug",
       "enhancements": [
         "Applied Johan Benz style architecture"
       ],
       "warnings": [],
       "success": true
     },
-    "tuya_generic_sensor": {
-      "name": "tuya_generic_sensor",
+    "generic_sensor": {
+      "name": "generic_sensor",
       "enhancements": [
         "Applied Johan Benz style architecture"
       ],
       "warnings": [],
       "success": true
     },
-    "tuya_generic_switch": {
-      "name": "tuya_generic_switch",
+    "generic_switch": {
+      "name": "generic_switch",
       "enhancements": [
         "Applied Johan Benz style architecture"
       ],
       "warnings": [],
       "success": true
     },
-    "tuya_light_ts0501a": {
-      "name": "tuya_light_ts0501a",
+    "light": {
+      "name": "light",
       "enhancements": [
         "Applied Johan Benz style architecture"
       ],
       "warnings": [],
       "success": true
     },
-    "tuya_light_ts0502a": {
-      "name": "tuya_light_ts0502a",
+    "light_universal": {
+      "name": "light_universal",
       "enhancements": [
         "Applied Johan Benz style architecture"
       ],
       "warnings": [],
       "success": true
     },
-    "tuya_light_ts0502b": {
-      "name": "tuya_light_ts0502b",
-      "enhancements": [
-        "Applied Johan Benz style architecture"
-      ],
-      "warnings": [],
-      "success": true
-    },
-    "tuya_light_ts0505a": {
-      "name": "tuya_light_ts0505a",
-      "enhancements": [
-        "Applied Johan Benz style architecture"
-      ],
-      "warnings": [],
-      "success": true
-    },
-    "tuya_light_ts0505b": {
-      "name": "tuya_light_ts0505b",
-      "enhancements": [
-        "Applied Johan Benz style architecture"
-      ],
-      "warnings": [],
-      "success": true
-    },
-    "tuya_light_universal": {
-      "name": "tuya_light_universal",
-      "enhancements": [
-        "Applied Johan Benz style architecture"
-      ],
-      "warnings": [],
-      "success": true
-    },
-    "tuya_thermostat": {
-      "name": "tuya_thermostat",
+    "thermostat": {
+      "name": "thermostat",
       "enhancements": [
         "Found 1 historical references",
         "Applied Johan Benz style architecture"
@@ -292,16 +260,16 @@
       "warnings": [],
       "success": true
     },
-    "tuya_universal_adapter": {
-      "name": "tuya_universal_adapter",
+    "universal_adapter": {
+      "name": "universal_adapter",
       "enhancements": [
         "Applied Johan Benz style architecture"
       ],
       "warnings": [],
       "success": true
     },
-    "tuya_water_sensor": {
-      "name": "tuya_water_sensor",
+    "water_sensor": {
+      "name": "water_sensor",
       "enhancements": [
         "Found 1 historical references",
         "Applied Johan Benz style architecture"

@@ -7,7 +7,11 @@
         "nl": "Tuya",
         "ta": "துயா"
       },
-      "aliases": ["tuya", "tuya_inc", "tuya_technology"],
+      "aliases": [
+        "tuya",
+        "inc",
+        "technology"
+      ],
       "white_labels": [
         "nous",
         "moes",
@@ -30,8 +34,20 @@
         "wemo",
         "wyze"
       ],
-      "manufacturer_codes": ["0xE001", "0xE001"],
-      "zigbee_models": ["TS0001", "TS0002", "TS0003", "TS011F", "TS0201", "TS0501", "TS0601", "TS0602"],
+      "manufacturer_codes": [
+        "0xE001",
+        "0xE001"
+      ],
+      "zigbee_models": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS011F",
+        "TS0201",
+        "TS0501",
+        "TS0601",
+        "TS0602"
+      ],
       "confidence": "high"
     },
     "zemismart": {
@@ -41,10 +57,21 @@
         "nl": "Zemismart",
         "ta": "ஜெமிஸ்மார்ட்"
       },
-      "aliases": ["zemismart", "zemi_smart", "zemi"],
-      "white_labels": ["tuya"],
-      "manufacturer_codes": ["0xE001"],
-      "zigbee_models": ["TS0601", "TS0602"],
+      "aliases": [
+        "zemismart",
+        "zemi_smart",
+        "zemi"
+      ],
+      "white_labels": [
+        "tuya"
+      ],
+      "manufacturer_codes": [
+        "0xE001"
+      ],
+      "zigbee_models": [
+        "TS0601",
+        "TS0602"
+      ],
       "confidence": "high"
     },
     "moes": {
@@ -54,10 +81,21 @@
         "nl": "Moes",
         "ta": "மோஸ்"
       },
-      "aliases": ["moes", "moes_go", "moes_smart"],
-      "white_labels": ["tuya"],
-      "manufacturer_codes": ["0xE001"],
-      "zigbee_models": ["TS0601", "TS0602"],
+      "aliases": [
+        "moes",
+        "moes_go",
+        "moes_smart"
+      ],
+      "white_labels": [
+        "tuya"
+      ],
+      "manufacturer_codes": [
+        "0xE001"
+      ],
+      "zigbee_models": [
+        "TS0601",
+        "TS0602"
+      ],
       "confidence": "high"
     },
     "nous": {
@@ -67,10 +105,19 @@
         "nl": "Nous",
         "ta": "நாம்"
       },
-      "aliases": ["nous", "nous_smart"],
-      "white_labels": ["tuya"],
-      "manufacturer_codes": ["0xE001"],
-      "zigbee_models": ["TS0601"],
+      "aliases": [
+        "nous",
+        "nous_smart"
+      ],
+      "white_labels": [
+        "tuya"
+      ],
+      "manufacturer_codes": [
+        "0xE001"
+      ],
+      "zigbee_models": [
+        "TS0601"
+      ],
       "confidence": "high"
     },
     "lidl_silvercrest": {
@@ -80,10 +127,20 @@
         "nl": "Lidl Silvercrest",
         "ta": "லிடில் சில்வர்க்ரெஸ்ட்"
       },
-      "aliases": ["lidl", "silvercrest", "lidl_silvercrest"],
-      "white_labels": ["tuya"],
-      "manufacturer_codes": ["0xE001"],
-      "zigbee_models": ["TS0601"],
+      "aliases": [
+        "lidl",
+        "silvercrest",
+        "lidl_silvercrest"
+      ],
+      "white_labels": [
+        "tuya"
+      ],
+      "manufacturer_codes": [
+        "0xE001"
+      ],
+      "zigbee_models": [
+        "TS0601"
+      ],
       "confidence": "high"
     },
     "blitzwolf": {
@@ -93,10 +150,21 @@
         "nl": "BlitzWolf",
         "ta": "பிளிட்ஸ்வுல்ஃப்"
       },
-      "aliases": ["blitzwolf", "blitz_wolf", "bw"],
-      "white_labels": ["tuya"],
-      "manufacturer_codes": ["0xE001"],
-      "zigbee_models": ["TS011F", "TS0201"],
+      "aliases": [
+        "blitzwolf",
+        "blitz_wolf",
+        "bw"
+      ],
+      "white_labels": [
+        "tuya"
+      ],
+      "manufacturer_codes": [
+        "0xE001"
+      ],
+      "zigbee_models": [
+        "TS011F",
+        "TS0201"
+      ],
       "confidence": "high"
     },
     "gosund": {
@@ -106,10 +174,19 @@
         "nl": "Gosund",
         "ta": "கோசண்ட்"
       },
-      "aliases": ["gosund", "go_sund"],
-      "white_labels": ["tuya"],
-      "manufacturer_codes": ["0xE001"],
-      "zigbee_models": ["TS011F"],
+      "aliases": [
+        "gosund",
+        "go_sund"
+      ],
+      "white_labels": [
+        "tuya"
+      ],
+      "manufacturer_codes": [
+        "0xE001"
+      ],
+      "zigbee_models": [
+        "TS011F"
+      ],
       "confidence": "high"
     },
     "teckin": {
@@ -119,10 +196,19 @@
         "nl": "Teckin",
         "ta": "டெக்கின்"
       },
-      "aliases": ["teckin", "teckin_smart"],
-      "white_labels": ["tuya"],
-      "manufacturer_codes": ["0xE001"],
-      "zigbee_models": ["TS011F"],
+      "aliases": [
+        "teckin",
+        "teckin_smart"
+      ],
+      "white_labels": [
+        "tuya"
+      ],
+      "manufacturer_codes": [
+        "0xE001"
+      ],
+      "zigbee_models": [
+        "TS011F"
+      ],
       "confidence": "high"
     },
     "smartlife": {
@@ -132,10 +218,22 @@
         "nl": "Smart Life",
         "ta": "ஸ்மார்ட் லைஃப்"
       },
-      "aliases": ["smartlife", "smart_life", "tuya_smart"],
-      "white_labels": ["tuya"],
-      "manufacturer_codes": ["0xE001"],
-      "zigbee_models": ["TS0001", "TS011F", "TS0201"],
+      "aliases": [
+        "smartlife",
+        "smart_life",
+        "smart"
+      ],
+      "white_labels": [
+        "tuya"
+      ],
+      "manufacturer_codes": [
+        "0xE001"
+      ],
+      "zigbee_models": [
+        "TS0001",
+        "TS011F",
+        "TS0201"
+      ],
       "confidence": "high"
     },
     "jinvoo": {
@@ -145,10 +243,19 @@
         "nl": "Jinvoo",
         "ta": "ஜின்வூ"
       },
-      "aliases": ["jinvoo", "jin_woo"],
-      "white_labels": ["tuya"],
-      "manufacturer_codes": ["0xE001"],
-      "zigbee_models": ["TS0601"],
+      "aliases": [
+        "jinvoo",
+        "jin_woo"
+      ],
+      "white_labels": [
+        "tuya"
+      ],
+      "manufacturer_codes": [
+        "0xE001"
+      ],
+      "zigbee_models": [
+        "TS0601"
+      ],
       "confidence": "medium"
     },
     "meross": {
@@ -158,10 +265,19 @@
         "nl": "Meross",
         "ta": "மெரோஸ்"
       },
-      "aliases": ["meross", "meross_smart"],
-      "white_labels": ["tuya"],
-      "manufacturer_codes": ["0xE001"],
-      "zigbee_models": ["TS0601"],
+      "aliases": [
+        "meross",
+        "meross_smart"
+      ],
+      "white_labels": [
+        "tuya"
+      ],
+      "manufacturer_codes": [
+        "0xE001"
+      ],
+      "zigbee_models": [
+        "TS0601"
+      ],
       "confidence": "medium"
     },
     "eachen": {
@@ -171,10 +287,19 @@
         "nl": "Eachen",
         "ta": "ஈச்சன்"
       },
-      "aliases": ["eachen", "eachen_smart"],
-      "white_labels": ["tuya"],
-      "manufacturer_codes": ["0xE001"],
-      "zigbee_models": ["TS0601"],
+      "aliases": [
+        "eachen",
+        "eachen_smart"
+      ],
+      "white_labels": [
+        "tuya"
+      ],
+      "manufacturer_codes": [
+        "0xE001"
+      ],
+      "zigbee_models": [
+        "TS0601"
+      ],
       "confidence": "medium"
     },
     "feit_electric": {
@@ -184,10 +309,20 @@
         "nl": "Feit Electric",
         "ta": "ஃபெயிட் எலக்ட்ரிக்"
       },
-      "aliases": ["feit", "feit_electric", "feit_elec"],
-      "white_labels": ["tuya"],
-      "manufacturer_codes": ["0xE001"],
-      "zigbee_models": ["TS0601"],
+      "aliases": [
+        "feit",
+        "feit_electric",
+        "feit_elec"
+      ],
+      "white_labels": [
+        "tuya"
+      ],
+      "manufacturer_codes": [
+        "0xE001"
+      ],
+      "zigbee_models": [
+        "TS0601"
+      ],
       "confidence": "medium"
     },
     "geeni": {
@@ -197,10 +332,19 @@
         "nl": "Geeni",
         "ta": "கீனி"
       },
-      "aliases": ["geeni", "geeni_smart"],
-      "white_labels": ["tuya"],
-      "manufacturer_codes": ["0xE001"],
-      "zigbee_models": ["TS0601"],
+      "aliases": [
+        "geeni",
+        "geeni_smart"
+      ],
+      "white_labels": [
+        "tuya"
+      ],
+      "manufacturer_codes": [
+        "0xE001"
+      ],
+      "zigbee_models": [
+        "TS0601"
+      ],
       "confidence": "medium"
     },
     "innr": {
@@ -210,10 +354,19 @@
         "nl": "Innr",
         "ta": "இன்னர்"
       },
-      "aliases": ["innr", "innr_lighting"],
+      "aliases": [
+        "innr",
+        "innr_lighting"
+      ],
       "white_labels": [],
-      "manufacturer_codes": ["0x031E"],
-      "zigbee_models": ["RB", "RS", "ST"],
+      "manufacturer_codes": [
+        "0x031E"
+      ],
+      "zigbee_models": [
+        "RB",
+        "RS",
+        "ST"
+      ],
       "confidence": "high"
     },
     "ledvance": {
@@ -223,10 +376,20 @@
         "nl": "Ledvance",
         "ta": "லெட்வான்ஸ்"
       },
-      "aliases": ["ledvance", "osram", "sylvania"],
+      "aliases": [
+        "ledvance",
+        "osram",
+        "sylvania"
+      ],
       "white_labels": [],
-      "manufacturer_codes": ["0x031E"],
-      "zigbee_models": ["A60", "GU10", "PAR16"],
+      "manufacturer_codes": [
+        "0x031E"
+      ],
+      "zigbee_models": [
+        "A60",
+        "GU10",
+        "PAR16"
+      ],
       "confidence": "high"
     },
     "philips": {
@@ -236,10 +399,20 @@
         "nl": "Philips",
         "ta": "ஃபிலிப்ஸ்"
       },
-      "aliases": ["philips", "philips_hue", "hue"],
+      "aliases": [
+        "philips",
+        "philips_hue",
+        "hue"
+      ],
       "white_labels": [],
-      "manufacturer_codes": ["0x0171"],
-      "zigbee_models": ["LCT", "LST", "LLC"],
+      "manufacturer_codes": [
+        "0x0171"
+      ],
+      "zigbee_models": [
+        "LCT",
+        "LST",
+        "LLC"
+      ],
       "confidence": "high"
     },
     "sengled": {
@@ -249,10 +422,19 @@
         "nl": "Sengled",
         "ta": "செங்கிளெட்"
       },
-      "aliases": ["sengled", "sengled_element"],
+      "aliases": [
+        "sengled",
+        "sengled_element"
+      ],
       "white_labels": [],
-      "manufacturer_codes": ["0x0221"],
-      "zigbee_models": ["E1", "E11", "E12"],
+      "manufacturer_codes": [
+        "0x0221"
+      ],
+      "zigbee_models": [
+        "E1",
+        "E11",
+        "E12"
+      ],
       "confidence": "high"
     },
     "tapo": {
@@ -262,10 +444,20 @@
         "nl": "Tapo",
         "ta": "டாபோ"
       },
-      "aliases": ["tapo", "tp_link", "tplink"],
-      "white_labels": ["tuya"],
-      "manufacturer_codes": ["0xE001"],
-      "zigbee_models": ["TS0601"],
+      "aliases": [
+        "tapo",
+        "tp_link",
+        "tplink"
+      ],
+      "white_labels": [
+        "tuya"
+      ],
+      "manufacturer_codes": [
+        "0xE001"
+      ],
+      "zigbee_models": [
+        "TS0601"
+      ],
       "confidence": "medium"
     },
     "wemo": {
@@ -275,10 +467,19 @@
         "nl": "WeMo",
         "ta": "வெமோ"
       },
-      "aliases": ["wemo", "belkin", "belkin_wemo"],
+      "aliases": [
+        "wemo",
+        "belkin",
+        "belkin_wemo"
+      ],
       "white_labels": [],
-      "manufacturer_codes": ["0x001D"],
-      "zigbee_models": ["WSP", "WSP080"],
+      "manufacturer_codes": [
+        "0x001D"
+      ],
+      "zigbee_models": [
+        "WSP",
+        "WSP080"
+      ],
       "confidence": "high"
     },
     "wyze": {
@@ -288,10 +489,19 @@
         "nl": "Wyze",
         "ta": "வைஸ்"
       },
-      "aliases": ["wyze", "wyze_labs"],
-      "white_labels": ["tuya"],
-      "manufacturer_codes": ["0xE001"],
-      "zigbee_models": ["TS0601"],
+      "aliases": [
+        "wyze",
+        "wyze_labs"
+      ],
+      "white_labels": [
+        "tuya"
+      ],
+      "manufacturer_codes": [
+        "0xE001"
+      ],
+      "zigbee_models": [
+        "TS0601"
+      ],
       "confidence": "medium"
     }
   },

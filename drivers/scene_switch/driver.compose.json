@@ -1,55 +1,43 @@
 {
+  "id": "scene_switch",
   "name": {
-    "en": "Scene Switch",
-    "fr": "Interrupteur Scène",
-    "nl": "Scène Schakelaar",
-    "de": "Szenen Schalter"
+    "en": "Scene Switch"
   },
-  "class": "button",
+  "class": "switch",
   "capabilities": [
-    "button"
+    "onoff"
   ],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_5f43h46b",
-      "_TZ3000_8oqcuhlp",
-      "_TZ3000_a7ouggvs",
-      "_TZ3000_abrsvsou",
-      "_TZ3000_adkvzooy",
-      "_TZ3000_bi6lpsew",
-      "_TZ3000_czuyt8lz",
-      "_TZ3000_dfgbtub0",
-      "_TZ3000_ee8s8jj2",
-      "_TZ3000_kjfzuycl",
-      "_TZ3000_mrpevh8p",
-      "_TZ3000_oj7gjqme",
-      "_TZ3000_rtlqgqxm",
-      "_TZ3000_tk3s5tyg",
-      "_TZ3000_wkai4ga5",
-      "_TZ3000_wyhuocal",
-      "_TZ3000_xabckq1v",
-      "_TZ3000_xd4egd1q",
-      "_TZ3000_xkap8wtb"
+      "_TZ3000_",
+      "_TZE200_",
+      "_TYZB01_",
+      "TUYA",
+      "Smart Home"
     ],
     "productId": [
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044",
-      "TS004F"
+      "TS0001",
+      "TS0011",
+      "TS0012",
+      "TS004F",
+      "TS011F",
+      "TS0121",
+      "TS013F"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          3,
-          4096
-        ],
-        "bindings": [
-          1,
-          4096
+          "basic",
+          "identify",
+          "onOff",
+          "scenes"
         ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/scene_switch/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your Scene Switch for 3 seconds until the LED starts blinking rapidly."
       }
     }
   },
@@ -57,23 +45,12 @@
     "small": "/drivers/scene_switch/assets/images/small.png",
     "large": "/drivers/scene_switch/assets/images/large.png"
   },
-  "pair": [
+  "settings": [
     {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-        "next": "add_devices"
-      }
-    },
-    {
-      "id": "add_devices",
-      "template": "add_devices"
+      "id": "scene_count",
+      "type": "number",
+      "label": "Scene Count",
+      "value": 4
     }
-  ],
-  "energy": {
-    "batteries": [
-      "CR2032"
-    ]
-  },
-  "id": "scene_switch"
+  ]
 }

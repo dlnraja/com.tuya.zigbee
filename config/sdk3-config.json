@@ -35,11 +35,11 @@
         "alarm_contact",
         "measure_presence"
       ],
-      "tuya_specific": [
-        "tuya_mode",
-        "tuya_scene",
-        "tuya_timer",
-        "tuya_schedule"
+      "specific": [
+        "mode",
+        "scene",
+        "timer",
+        "schedule"
       ]
     },
     "zigbee_clusters": {

@@ -1,55 +1,126 @@
-'use strict';
-
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class TuyaCoDetectorDevice extends ZigBeeDevice {
-
-  async onNodeInit({ zclNode }) {
-    this.enableDebug();
-    this.printNode();
-
-    // Register CO alarm capability
-    if (this.hasCapability('alarm_co')) {
-      this.registerCapability('alarm_co', 'ssIasZone', {
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 1,
-            maxInterval: 300,
-            minChange: 1,
-          },
-        },
-      });
+class CoDetectorDevice extends ZigBeeDevice {
+    
+    async onNodeInit({ zclNode }) {
+        
+        // Enable debug logging
+        this.enableDebug();
+        
+        // Print node info
+        this.printNode();
+        
+        // Register capabilities
+        await this.registerCapabilities();
+        
+        // Configure reporting
+        await this.configureReporting();
+        
+        // Set up flow triggers
+        this.setupFlowTriggers();
+        
+        this.log('Carbon Monoxide Detector has been initialized');
     }
-
-    // Register battery capability
-    if (this.hasCapability('measure_battery')) {
-      this.registerCapability('measure_battery', 'genPowerCfg', {
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 300,
-            maxInterval: 3600,
-            minChange: 5,
-          },
-        },
-      });
+    
+    async registerCapabilities() {
+        const capabilities = [
+        "alarm_co",
+        "measure_battery"
+];
+        
+        for (const capability of capabilities) {
+            if (this.hasCapability(capability)) {
+                this.log(`Capability ${capability} already registered`);
+                continue;
+            }
+            
+            try {
+                await this.addCapability(capability);
+                this.log(`Added capability: ${capability}`);
+            } catch (error) {
+                this.error(`Failed to add capability ${capability}:`, error);
+            }
+        }
     }
-
-    // Register tamper alarm capability
-    if (this.hasCapability('alarm_tamper')) {
-      this.registerCapability('alarm_tamper', 'ssIasZone', {
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 1,
-            maxInterval: 300,
-            minChange: 1,
-          },
-        },
-      });
+    
+    async configureReporting() {
+        try {
+            // Configure cluster reporting based on device type
+            
+            // Configure sensor reporting
+            if (this.zclNode.endpoints[1].clusters.occupancySensing) {
+                await this.zclNode.endpoints[1].clusters.occupancySensing.configureReporting('occupancy', {
+                    minInterval: 0,
+                    maxInterval: 600,
+                    minChange: null
+                });
+            }
+            
+            if (this.zclNode.endpoints[1].clusters.temperatureMeasurement) {
+                await this.zclNode.endpoints[1].clusters.temperatureMeasurement.configureReporting('measuredValue', {
+                    minInterval: 60,
+                    maxInterval: 3600,
+                    minChange: 100
+                });
+            }
+            
+            if (this.zclNode.endpoints[1].clusters.relativeHumidity) {
+                await this.zclNode.endpoints[1].clusters.relativeHumidity.configureReporting('measuredValue', {
+                    minInterval: 60,
+                    maxInterval: 3600,
+                    minChange: 500
+                });
+            }
+        } catch (error) {
+            this.error('Failed to configure reporting:', error);
+        }
     }
-
-    this.log('Tuya CO Detector initialized');
-  }
-
+    
+    setupFlowTriggers() {
+        // Register flow card triggers
+        
+        // Motion/presence detection triggers
+        this.registerCapabilityListener('alarm_motion', (value) => {
+            this.homey.flow.getDeviceTriggerCard('motion_detected')
+                .trigger(this, {}, { motion: value })
+                .catch(this.error);
+        });
+        
+        this.registerCapabilityListener('alarm_contact', (value) => {
+            this.homey.flow.getDeviceTriggerCard('contact_changed')
+                .trigger(this, {}, { contact: value })
+                .catch(this.error);
+        });
+    }
+    
+    onSettings({ oldSettings, newSettings, changedKeys }) {
+        this.log('Settings changed:', changedKeys);
+        
+        // Handle settings changes
+        changedKeys.forEach(key => {
+            this.log(`Setting ${key} changed from ${oldSettings[key]} to ${newSettings[key]}`);
+            this.handleSettingChange(key, newSettings[key]);
+        });
+        
+        return Promise.resolve(true);
+    }
+    
+    handleSettingChange(key, value) {
+        // Handle individual setting changes
+        switch(key) {
+            
+            case 'co_sensitivity':
+                this.log(`co_sensitivity changed to ${value}`);
+                // Handle co_sensitivity change
+                break;
+            default:
+                this.log(`Unhandled setting change: ${key} = ${value}`);
+        }
+    }
+    
+    onDeleted() {
+        this.log('Carbon Monoxide Detector has been deleted');
+    }
 }
 
-module.exports = TuyaCoDetectorDevice;
+module.exports = CoDetectorDevice;

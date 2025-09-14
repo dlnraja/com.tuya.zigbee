@@ -1,53 +1,41 @@
 {
   "id": "scene_remote_2gang",
   "name": {
-    "en": "2 Gang Scene Remote",
-    "fr": "Télécommande Scène 2 Boutons",
-    "nl": "2 Gang Scene Afstandsbediening",
-    "de": "2 Gang Szenen Fernbedienung"
+    "en": "2-Gang Scene Remote"
   },
-  "class": "button",
-  "capabilities": [
-    "button.1",
-    "button.2"
-  ],
+  "class": "remote",
+  "capabilities": [],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_5f43h46b",
-      "_TZ3000_a7ouggvs",
-      "_TZ3000_czuyt8lz",
-      "_TZ3000_dfgbtub0",
-      "_TZ3000_ee8s8jj2",
-      "_TZ3000_mrpevh8p",
-      "_TZ3000_oj7gjqme",
-      "_TZ3000_wyhuocal",
-      "_TZ3000_xkap8wtb"
+      "_TZ3000_",
+      "_TZE200_",
+      "_TYZB01_",
+      "TUYA",
+      "Smart Home"
     ],
     "productId": [
-      "TS0042"
+      "TS0001",
+      "TS0011",
+      "TS0012",
+      "TS004F",
+      "TS011F",
+      "TS0121",
+      "TS013F"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          3,
-          6
-        ],
-        "bindings": [
-          6
+          "basic",
+          "identify",
+          "onOff",
+          "scenes"
         ]
-      },
-      "2": {
-        "clusters": [
-          0,
-          1,
-          3,
-          6
-        ],
-        "bindings": [
-          6
-        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/scene_remote_2gang/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your 2-Gang Scene Remote for 3 seconds until the LED starts blinking rapidly."
       }
     }
   },
@@ -55,17 +43,12 @@
     "small": "/drivers/scene_remote_2gang/assets/images/small.png",
     "large": "/drivers/scene_remote_2gang/assets/images/large.png"
   },
-  "pair": [
+  "settings": [
     {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-        "next": "add_devices"
-      }
-    },
-    {
-      "id": "add_devices",
-      "template": "add_devices"
+      "id": "button_mode",
+      "type": "dropdown",
+      "label": "Button Mode",
+      "value": "single"
     }
   ]
 }
