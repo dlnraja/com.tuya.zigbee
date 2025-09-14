@@ -1,23 +1,17 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "1.0.16",
+  "version": "1.0.18",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
     "local"
   ],
   "name": {
-    "en": "Ultimate Zigbee Hub",
-    "fr": "Ultimate Zigbee Hub",
-    "nl": "Ultimate Zigbee Hub",
-    "de": "Ultimate Zigbee Hub"
+    "en": "Ultimate Zigbee Hub"
   },
   "description": {
-    "en": "Ultimate Zigbee Hub - Intelligent device selection system with 850+ devices from 50+ manufacturers. Professional organization following Johan Benz standards. Comprehensive device categories, pairing assistance, and local Zigbee 3.0 communication. No cloud required!",
-    "fr": "Ultimate Zigbee Hub - Système de sélection intelligente d'appareils avec 850+ appareils de 50+ fabricants. Organisation professionnelle suivant les standards Johan Benz. Catégories complètes, assistance au jumelage, et communication Zigbee 3.0 locale. Aucun cloud requis!",
-    "nl": "Ultimate Zigbee Hub - Intelligent apparaatselectiesysteem met 850+ apparaten van 50+ fabrikanten. Professionele organisatie volgens Johan Benz standaarden. Uitgebreide categorieën, koppelingsassistentie, en lokale Zigbee 3.0 communicatie. Geen cloud vereist!",
-    "de": "Ultimate Zigbee Hub - Intelligentes Geräteauswahlsystem mit 850+ Geräten von 50+ Herstellern. Professionelle Organisation nach Johan Benz Standards. Umfassende Kategorien, Kopplungsassistenz, und lokale Zigbee 3.0 Kommunikation. Keine Cloud erforderlich!"
+    "en": "Ultimate Zigbee Hub - Intelligent device selection system with 850+ devices from 50+ manufacturers. Professional organization following Johan Benz standards. Comprehensive device categories, pairing assistance, and local Zigbee 3.0 communication. No cloud required!"
   },
   "category": [
     "lights",
@@ -44,6 +38,156 @@
   "source": "https://github.com/dlnraja/com.ultimate.zigbee.hub",
   "homeyCommunityTopicId": 140352,
   "drivers": [
+    {
+      "id": "hobeian_multisensor",
+      "name": {
+        "en": "HOBEIAN Multi-Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_temperature",
+        "measure_humidity",
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Motion"
+          }
+        },
+        "measure_temperature": {
+          "title": {
+            "en": "Temperature"
+          },
+          "units": "°C"
+        },
+        "measure_humidity": {
+          "title": {
+            "en": "Humidity"
+          },
+          "units": "%"
+        },
+        "measure_luminance": {
+          "title": {
+            "en": "Illuminance"
+          },
+          "units": "lx"
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "HOBEIAN"
+        ],
+        "productId": [
+          "ZG-204ZV"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              1280,
+              61184,
+              1026,
+              1029,
+              1,
+              1024
+            ],
+            "bindings": [
+              1,
+              1280,
+              1026,
+              1029,
+              1024
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/hobeian_multisensor/assets/images/small.png",
+        "large": "/drivers/hobeian_multisensor/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device Settings"
+          },
+          "children": [
+            {
+              "id": "motion_sensitivity",
+              "type": "dropdown",
+              "label": {
+                "en": "Motion Sensitivity"
+              },
+              "value": "medium",
+              "values": [
+                {
+                  "id": "low",
+                  "label": {
+                    "en": "Low"
+                  }
+                },
+                {
+                  "id": "medium",
+                  "label": {
+                    "en": "Medium"
+                  }
+                },
+                {
+                  "id": "high",
+                  "label": {
+                    "en": "High"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "temp_offset",
+              "type": "number",
+              "label": {
+                "en": "Temperature Offset (°C)"
+              },
+              "value": 0,
+              "min": -10,
+              "max": 10,
+              "step": 0.1
+            },
+            {
+              "id": "humidity_offset",
+              "type": "number",
+              "label": {
+                "en": "Humidity Offset (%)"
+              },
+              "value": 0,
+              "min": -20,
+              "max": 20,
+              "step": 1
+            }
+          ]
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
+    },
     {
       "id": "tuya_air_quality_sensor",
       "name": {
@@ -533,6 +677,128 @@
         ]
       },
       "id": "tuya_motion_sensor"
+    },
+    {
+      "id": "tuya_presence_illuminance_sensor",
+      "name": {
+        "en": "Presence & Illuminance Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Presence"
+          }
+        },
+        "measure_luminance": {
+          "title": {
+            "en": "Illuminance"
+          },
+          "units": "lx"
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_kb5noeto",
+          "_TZE200_3towulqd",
+          "_TZE200_bh3n6gk8",
+          "_TZE200_1ibpyhdc"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              1280,
+              1,
+              1024
+            ],
+            "bindings": [
+              1,
+              1280,
+              1024
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tuya_presence_illuminance_sensor/assets/images/small.png",
+        "large": "/drivers/tuya_presence_illuminance_sensor/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device Settings"
+          },
+          "children": [
+            {
+              "id": "sensitivity",
+              "type": "dropdown",
+              "label": {
+                "en": "Motion Sensitivity"
+              },
+              "value": "medium",
+              "values": [
+                {
+                  "id": "low",
+                  "label": {
+                    "en": "Low"
+                  }
+                },
+                {
+                  "id": "medium",
+                  "label": {
+                    "en": "Medium"
+                  }
+                },
+                {
+                  "id": "high",
+                  "label": {
+                    "en": "High"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "illuminance_reporting",
+              "type": "number",
+              "label": {
+                "en": "Illuminance Reporting Interval (seconds)"
+              },
+              "value": 300,
+              "min": 60,
+              "max": 3600
+            }
+          ]
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "id": "tuya_radar_sensor",

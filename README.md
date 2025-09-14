@@ -1,6 +1,10 @@
-# Ultimate Zigbee Hub
+# 🏠 Ultimate Zigbee Hub
 
-**Professional Zigbee device support for Homey Pro** - Maximum coverage for 850+ devices across 50+ manufacturers including Tuya, Aqara, IKEA, Philips, and more. Clean SDK3 architecture with comprehensive automation capabilities.
+**Professional Tuya Zigbee Device Integration for Homey Pro**
+
+[![Homey App Store](https://img.shields.io/badge/Homey-App%20Store-blue)](https://homey.app/a/com.dlnraja.ultimate.zigbee.hub)
+[![SDK Version](https://img.shields.io/badge/SDK-v3-green)](https://developer.homey.app)
+[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)** - Maximum coverage for 850+ devices across 50+ manufacturers including Tuya, Aqara, IKEA, Philips, and more. Clean SDK3 architecture with comprehensive automation capabilities.
 
 ## 🚀 Key Features
 

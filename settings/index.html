@@ -153,16 +153,64 @@
     </div>
 
     <script>
-        // Settings persistence would be handled by Homey's settings API
-        console.log('Homey Ultimate Zigbee Hub Settings loaded');
-        
-        // Save settings on change
-        document.querySelectorAll('input, select').forEach(element => {
-            element.addEventListener('change', function() {
-                console.log('Setting changed:', this.id, this.value || this.checked);
-                // Homey.set(this.id, this.value || this.checked);
+        function onHomeyReady(Homey) {
+            console.log('Homey Ultimate Zigbee Hub Settings loaded');
+            
+            // Load existing settings
+            Homey.get('debug_logging', function(err, value) {
+                if (!err && value !== undefined) {
+                    document.getElementById('debug_logging').checked = value;
+                }
             });
-        });
+            
+            Homey.get('auto_discovery', function(err, value) {
+                if (!err && value !== undefined) {
+                    document.getElementById('auto_discovery').checked = value;
+                }
+            });
+            
+            Homey.get('polling_interval', function(err, value) {
+                if (!err && value !== undefined) {
+                    document.getElementById('polling_interval').value = value;
+                }
+            });
+            
+            Homey.get('batch_updates', function(err, value) {
+                if (!err && value !== undefined) {
+                    document.getElementById('batch_updates').checked = value;
+                }
+            });
+            
+            Homey.get('zigbee_channel', function(err, value) {
+                if (!err && value !== undefined) {
+                    document.getElementById('zigbee_channel').value = value;
+                }
+            });
+            
+            Homey.get('experimental_features', function(err, value) {
+                if (!err && value !== undefined) {
+                    document.getElementById('experimental_features').checked = value;
+                }
+            });
+            
+            // Save settings on change
+            document.querySelectorAll('input, select').forEach(element => {
+                element.addEventListener('change', function() {
+                    const value = this.type === 'checkbox' ? this.checked : this.value;
+                    console.log('Setting changed:', this.id, value);
+                    
+                    Homey.set(this.id, value, function(err) {
+                        if (err) {
+                            console.error('Failed to save setting:', this.id, err);
+                        } else {
+                            console.log('Setting saved:', this.id, value);
+                        }
+                    });
+                });
+            });
+            
+            Homey.ready();
+        }
     </script>
 </body>
 </html>
