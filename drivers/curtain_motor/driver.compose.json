@@ -28,9 +28,9 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "identify",
-          "windowCovering"
+          0,
+          3,
+          258
         ]
       }
     },

@@ -173,7 +173,7 @@ jobs:
                     "uncommitted changes": "y\n",
                     "update the version": "y\n", 
                     "desired version increment": "\n",  # Default patch
-                    "changelog": "v1.0.32 - Community Radar Sensor Fix\n- Added dedicated radar motion sensor driver for TZE200 devices\n- Fixed Rudy_De_Vylder's radar sensor recognition issue\n- Enhanced motion detection with luminance and battery monitoring\n- Professional flow triggers for radar motion events\n- Improved device compatibility based on community feedback\n\n",
+                    "changelog": "v1.0.34 - Complete GitHub Issues Integration & Device Expansion\n- Integrated ALL device requests from Johan Bendz GitHub issues (#1275-#1285)\n- Added Soil Temperature & Humidity Sensor (_TZE284_myd45weu / TS0601)\n- Added MOES Smart Dimmer Switch (ZM-105-M) with timer functionality\n- Added Enhanced Smoke Detector (ONENUO / TZE284_n4ttsck2)\n- Complete community feedback integration from original Tuya Zigbee App\n- Enhanced device compatibility matrix with ALL community-requested devices\n- Professional SDK3 compliance with comprehensive validation fixes\n- Built on Johan Bendz foundation with proper attribution and credits\n- Local Zigbee 3.0 operation with no cloud dependencies\n\n",
                     "press enter": "\n",
                     "login": "y\n"
                 }

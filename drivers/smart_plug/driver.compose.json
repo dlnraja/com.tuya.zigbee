@@ -27,9 +27,9 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "identify",
-          "onOff"
+          0,
+          3,
+          6
         ]
       }
     },

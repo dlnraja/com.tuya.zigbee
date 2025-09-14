@@ -1,0 +1,82 @@
+{
+  "id": "moes_dimmer",
+  "name": {
+    "en": "MOES Smart Dimmer Switch"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_",
+      "_TZE200_",
+      "MOES",
+      "TUYA",
+      "Smart Home"
+    ],
+    "productId": [
+      "ZM-105-M",
+      "TS0601",
+      "TS011F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          57344
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/moes_dimmer/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your MOES Dimmer Switch for 3 seconds until the LED starts blinking rapidly."
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/moes_dimmer/assets/images/small.png",
+    "large": "/drivers/moes_dimmer/assets/images/large.png"
+  },
+  "settings": [
+    {
+      "id": "dimmer_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Dimmer Mode"
+      },
+      "value": "leading_edge",
+      "values": [
+        {
+          "id": "leading_edge",
+          "label": {
+            "en": "Leading Edge"
+          }
+        },
+        {
+          "id": "trailing_edge",
+          "label": {
+            "en": "Trailing Edge"
+          }
+        }
+      ]
+    },
+    {
+      "id": "minimum_brightness",
+      "type": "number",
+      "label": {
+        "en": "Minimum Brightness (%)"
+      },
+      "value": 1,
+      "min": 1,
+      "max": 50
+    }
+  ]
+}
