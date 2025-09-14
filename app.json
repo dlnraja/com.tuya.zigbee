@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
-  "id": "com.dlnraja.tuya.zigbee",
-  "version": "1.0.14",
+  "id": "com.dlnraja.ultimate.zigbee.hub",
+  "version": "1.0.15",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -14,16 +14,18 @@
     "de": "Ultimate Zigbee Hub"
   },
   "description": {
-    "en": "Professional Zigbee support for 800+ Tuya devices. Clean SDK3 architecture with comprehensive device categories. Local communication only - no cloud dependencies!",
-    "fr": "Support Zigbee professionnel pour 800+ appareils Tuya. Architecture SDK3 propre avec catégories complètes. Communication locale uniquement - aucune dépendance cloud!",
-    "nl": "Professionele Zigbee ondersteuning voor 800+ Tuya apparaten. Schone SDK3 architectuur met uitgebreide apparaatcategorieën. Alleen lokale communicatie - geen cloud afhankelijkheden!",
-    "de": "Professionelle Zigbee Unterstützung für 800+ Tuya Geräte. Saubere SDK3 Architektur mit umfassenden Gerätekategorien. Nur lokale Kommunikation - keine Cloud Abhängigkeiten!"
+    "en": "Ultimate Zigbee Hub - Professional support for 850+ devices from Tuya, Aqara, IKEA, Philips & 50+ manufacturers. Intelligent device selection with comprehensive categories. Local Zigbee 3.0 - no cloud required!",
+    "fr": "Ultimate Zigbee Hub - Support professionnel pour 850+ appareils de Tuya, Aqara, IKEA, Philips et 50+ fabricants. Sélection intelligente d'appareils avec catégories complètes. Zigbee 3.0 local - aucun cloud requis!",
+    "nl": "Ultimate Zigbee Hub - Professionele ondersteuning voor 850+ apparaten van Tuya, Aqara, IKEA, Philips en 50+ fabrikanten. Intelligente apparaatselectie met uitgebreide categorieën. Lokaal Zigbee 3.0 - geen cloud vereist!",
+    "de": "Ultimate Zigbee Hub - Professionelle Unterstützung für 850+ Geräte von Tuya, Aqara, IKEA, Philips und 50+ Herstellern. Intelligente Gerätewahl mit umfassenden Kategorien. Lokales Zigbee 3.0 - keine Cloud erforderlich!"
   },
   "category": [
     "lights",
-    "appliances"
+    "appliances",
+    "security",
+    "climate"
   ],
-  "brandColor": "#FF6900",
+  "brandColor": "#1E88E5",
   "permissions": [],
   "images": {
     "small": "/assets/images/small.png",
@@ -32,12 +34,14 @@
   },
   "author": {
     "name": "dlnraja",
-    "email": "support@community.tuya.zigbee"
+    "email": "support@ultimate.zigbee.hub"
   },
   "bugs": {
-    "url": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352"
+    "url": "https://github.com/dlnraja/com.ultimate.zigbee.hub/issues"
   },
+  "homepage": "https://github.com/dlnraja/com.ultimate.zigbee.hub",
   "support": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352",
+  "source": "https://github.com/dlnraja/com.ultimate.zigbee.hub",
   "homeyCommunityTopicId": 140352,
   "drivers": [
     {
