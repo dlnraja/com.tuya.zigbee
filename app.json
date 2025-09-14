@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "1.0.31",
+  "version": "1.0.32",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -11,7 +11,7 @@
     "en": "Ultimate Zigbee Hub"
   },
   "description": {
-    "en": "Ultimate Zigbee Hub v1.0.31 - Enhanced compatibility with 1000+ devices from 60+ manufacturers. Professional SDK3 architecture with comprehensive Johan Bendz compatibility. Features motion sensors, contact sensors, smart lights, plugs, switches, climate controls, scene remotes, and SOS emergency buttons. Fixed HOBEIAN multisensor issues and added proper SOS button recognition. Local Zigbee 3.0 operation with no cloud dependencies.",
+    "en": "Ultimate Zigbee Hub v1.0.32 - Enhanced compatibility with 1000+ devices from 60+ manufacturers. Professional SDK3 architecture with comprehensive Johan Bendz compatibility. Features motion sensors, contact sensors, smart lights, plugs, switches, climate controls, scene remotes, SOS emergency buttons, and radar motion sensors. Fixed HOBEIAN multisensor issues, added proper SOS button recognition, and created dedicated radar sensor driver for Rudy's device. Local Zigbee 3.0 operation with no cloud dependencies.",
     "fr": "Ultimate Zigbee Hub - Ecosysteme complet avec 850+ appareils de 50+ fabricants. Categorisation professionnelle par types d'appareils.",
     "nl": "Ultimate Zigbee Hub - Compleet ecosysteem met 850+ apparaten van 50+ fabrikanten. Professionele categorisering per apparaattype."
   },
@@ -242,7 +242,27 @@
           "id": "co_sensitivity",
           "type": "dropdown",
           "label": "CO Sensitivity",
-          "value": "high"
+          "value": "high",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High"
+              }
+            }
+          ]
         }
       ]
     },
@@ -363,7 +383,27 @@
           "id": "motor_speed",
           "type": "dropdown",
           "label": "Motor Speed",
-          "value": "medium"
+          "value": "option1",
+          "values": [
+            {
+              "id": "option1",
+              "label": {
+                "en": "Option 1"
+              }
+            },
+            {
+              "id": "option2",
+              "label": {
+                "en": "Option 2"
+              }
+            },
+            {
+              "id": "option3",
+              "label": {
+                "en": "Option 3"
+              }
+            }
+          ]
         },
         {
           "id": "calibration_mode",
@@ -627,7 +667,27 @@
           "id": "motion_sensitivity",
           "type": "dropdown",
           "label": "Motion Sensitivity",
-          "value": "medium"
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High"
+              }
+            }
+          ]
         },
         {
           "id": "occupancy_timeout",
@@ -702,7 +762,27 @@
           "id": "motion_sensitivity",
           "type": "dropdown",
           "label": "Motion Sensitivity",
-          "value": "medium"
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High"
+              }
+            }
+          ]
         },
         {
           "id": "temp_offset",
@@ -780,6 +860,117 @@
           "type": "number",
           "label": "Presence Timeout (minutes)",
           "value": 2
+        }
+      ]
+    },
+    {
+      "id": "radar_sensor",
+      "name": {
+        "en": "Radar Motion Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance",
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_",
+          "_TZE204_",
+          "_TZ3000_",
+          "_TYZB01_",
+          "TUYA",
+          "Smart Home",
+          "_TZE200_ztc6ggyl",
+          "_TZE200_ar0slwnd",
+          "_TZE200_sfiy5tcs",
+          "_TZE200_holel4dk",
+          "_TZE200_wukb7rhc",
+          "_TZE200_jva8ink8",
+          "_TZE200_mrf6vtua"
+        ],
+        "productId": [
+          "TS0601",
+          "TS0225",
+          "TS0226",
+          "TS004F",
+          "TS011F",
+          "TS0202"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6,
+              1030,
+              1024,
+              57344
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/radar_sensor/assets/learn.svg",
+          "instruction": {
+            "en": "Press and hold the button on your Radar Motion Sensor for 3 seconds until the LED starts blinking rapidly."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/radar_sensor/assets/images/small.png",
+        "large": "/drivers/radar_sensor/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "id": "radar_sensitivity",
+          "type": "dropdown",
+          "label": {
+            "en": "Radar Sensitivity"
+          },
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High"
+              }
+            }
+          ]
+        },
+        {
+          "id": "detection_distance",
+          "type": "number",
+          "label": {
+            "en": "Detection Distance (m)"
+          },
+          "value": 5,
+          "min": 1,
+          "max": 10
+        },
+        {
+          "id": "hold_time",
+          "type": "number",
+          "label": {
+            "en": "Motion Hold Time (s)"
+          },
+          "value": 30,
+          "min": 5,
+          "max": 300
         }
       ]
     },
@@ -902,7 +1093,27 @@
           "id": "button_mode",
           "type": "dropdown",
           "label": "Button Mode",
-          "value": "single"
+          "value": "scene",
+          "values": [
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer"
+              }
+            },
+            {
+              "id": "switch",
+              "label": {
+                "en": "Switch"
+              }
+            }
+          ]
         }
       ]
     },
@@ -956,7 +1167,27 @@
           "id": "button_layout",
           "type": "dropdown",
           "label": "Button Layout",
-          "value": "2x2"
+          "value": "option1",
+          "values": [
+            {
+              "id": "option1",
+              "label": {
+                "en": "Option 1"
+              }
+            },
+            {
+              "id": "option2",
+              "label": {
+                "en": "Option 2"
+              }
+            },
+            {
+              "id": "option3",
+              "label": {
+                "en": "Option 3"
+              }
+            }
+          ]
         }
       ]
     },
@@ -1126,7 +1357,27 @@
           "id": "power_on_behavior",
           "type": "dropdown",
           "label": "Power-On Behavior",
-          "value": "remember"
+          "value": "option1",
+          "values": [
+            {
+              "id": "option1",
+              "label": {
+                "en": "Option 1"
+              }
+            },
+            {
+              "id": "option2",
+              "label": {
+                "en": "Option 2"
+              }
+            },
+            {
+              "id": "option3",
+              "label": {
+                "en": "Option 3"
+              }
+            }
+          ]
         }
       ]
     },
@@ -1183,7 +1434,27 @@
           "id": "smoke_sensitivity",
           "type": "dropdown",
           "label": "Smoke Sensitivity",
-          "value": "medium"
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High"
+              }
+            }
+          ]
         }
       ]
     },
@@ -1408,7 +1679,27 @@
           "id": "heating_system",
           "type": "dropdown",
           "label": "Heating System",
-          "value": "gas"
+          "value": "option1",
+          "values": [
+            {
+              "id": "option1",
+              "label": {
+                "en": "Option 1"
+              }
+            },
+            {
+              "id": "option2",
+              "label": {
+                "en": "Option 2"
+              }
+            },
+            {
+              "id": "option3",
+              "label": {
+                "en": "Option 3"
+              }
+            }
+          ]
         },
         {
           "id": "eco_mode",
@@ -1471,7 +1762,27 @@
           "id": "detection_sensitivity",
           "type": "dropdown",
           "label": "Water Detection Sensitivity",
-          "value": "high"
+          "value": "option1",
+          "values": [
+            {
+              "id": "option1",
+              "label": {
+                "en": "Option 1"
+              }
+            },
+            {
+              "id": "option2",
+              "label": {
+                "en": "Option 2"
+              }
+            },
+            {
+              "id": "option3",
+              "label": {
+                "en": "Option 3"
+              }
+            }
+          ]
         }
       ]
     }

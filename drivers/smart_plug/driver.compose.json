@@ -49,7 +49,27 @@
       "id": "power_on_behavior",
       "type": "dropdown",
       "label": "Power-On Behavior",
-      "value": "remember"
+      "value": "option1",
+      "values": [
+        {
+          "id": "option1",
+          "label": {
+            "en": "Option 1"
+          }
+        },
+        {
+          "id": "option2",
+          "label": {
+            "en": "Option 2"
+          }
+        },
+        {
+          "id": "option3",
+          "label": {
+            "en": "Option 3"
+          }
+        }
+      ]
     }
   ]
 }

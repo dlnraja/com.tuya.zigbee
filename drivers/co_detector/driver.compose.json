@@ -52,7 +52,27 @@
       "id": "co_sensitivity",
       "type": "dropdown",
       "label": "CO Sensitivity",
-      "value": "high"
+      "value": "high",
+      "values": [
+        {
+          "id": "low",
+          "label": {
+            "en": "Low"
+          }
+        },
+        {
+          "id": "medium",
+          "label": {
+            "en": "Medium"
+          }
+        },
+        {
+          "id": "high",
+          "label": {
+            "en": "High"
+          }
+        }
+      ]
     }
   ]
 }
