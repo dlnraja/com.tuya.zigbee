@@ -1,0 +1,51 @@
+{
+  "id": "light_switch",
+  "name": {
+    "en": "Light Switch",
+    "fr": "Interrupteur Lumière",
+    "nl": "Lichtschakelaar",
+    "de": "Lichtschalter"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_ji4araar",
+      "_TZ3000_9cpuaca6",
+      "_TZ3000_oborybow",
+      "_TZ3000_49qchf10",
+      "_TZ3000_qzjcsmar",
+      "_TZ3000_vzopcetz",
+      "_TZ3000_8nkb7mof",
+      "_TZ3000_mraovvmm",
+      "_TZ3000_cphmq0q7",
+      "_TZ3000_ew3ldmgx",
+      "_TZ3000_w0qqde0g"
+    ],
+    "productId": [
+      "TS0001",
+      "TS0011",
+      "TS0002",
+      "TS0003",
+      "TS110F",
+      "TS1111"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/light_switch/assets/images/small.png",
+    "large": "/drivers/light_switch/assets/images/large.png"
+  }
+}

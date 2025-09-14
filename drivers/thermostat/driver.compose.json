@@ -1,0 +1,63 @@
+{
+  "id": "thermostat",
+  "name": {
+    "en": "Smart Thermostat",
+    "fr": "Thermostat Intelligent",
+    "nl": "Slimme Thermostaat",
+    "de": "Intelligenter Thermostat"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature",
+    "measure_humidity",
+    "thermostat_mode"
+  ],
+  "capabilitiesOptions": {
+    "target_temperature": {
+      "min": 5,
+      "max": 35,
+      "step": 0.5
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_aoclfnxz",
+      "_TZE200_u9bfwha0",
+      "_TZE200_ztvwu4nk"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          61184
+        ],
+        "bindings": [
+          0
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/thermostat/assets/images/small.png",
+    "large": "/drivers/thermostat/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

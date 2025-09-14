@@ -1,0 +1,76 @@
+{
+  "name": {
+    "en": "Door & Window Sensor",
+    "fr": "Capteur Porte et Fenêtre",
+    "nl": "Deur & Raam Sensor",
+    "de": "Tür & Fenster Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_contact",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "alarm_contact": {
+      "title": {
+        "en": "Contact",
+        "fr": "Contact",
+        "nl": "Contact",
+        "de": "Kontakt"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_pay2byax",
+      "_TZE200_cirvgep4",
+      "_TZE200_kfvq6avy",
+      "_TZE200_ztc6ggyl",
+      "_TZE200_7hfcudw5",
+      "_TZE200_locansqn",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_2mbfxlzr",
+      "_TZ3000_26fmupbb"
+    ],
+    "productId": [
+      "TS0203",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1280
+        ],
+        "bindings": [
+          1,
+          1280
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/contact_sensor/assets/images/small.png",
+    "large": "/drivers/contact_sensor/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  },
+  "id": "contact_sensor"
+}
