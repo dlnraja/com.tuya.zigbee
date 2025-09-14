@@ -2,43 +2,73 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
+/**
+ * Tuya Motion Sensor Device
+ * Supports PIR motion detection with battery monitoring
+ * Compatible with TS0202, _TZ3000_mmtwjmaq, and similar devices
+ */
 class TuyaMotionSensorDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
-    
-    // enable debugging
-    this.enableDebug();
+    try {
+      // Enable debugging for development
+      this.enableDebug();
+      this.printNode();
+      
+      this.log('Initializing Tuya Motion Sensor...');
 
-    // print the node's info to the console
-    this.printNode();
-
-    // Register motion alarm capability
-    if (this.hasCapability('alarm_motion')) {
-      this.registerCapability('alarm_motion', 'msOccupancySensing', {
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 1, // 1 second
-            maxInterval: 30, // 30 seconds
-            minChange: 1,
+      // Register motion alarm capability with optimized reporting
+      if (this.hasCapability('alarm_motion')) {
+        await this.registerCapability('alarm_motion', 'msOccupancySensing', {
+          reportOpts: {
+            configureAttributeReporting: {
+              minInterval: 1,     // Immediate reporting
+              maxInterval: 300,   // 5 minutes max
+              minChange: 1,       // Any state change
+            },
           },
-        },
-      });
-    }
+        });
+        this.log('Motion detection capability registered');
+      }
 
-    // Register battery capability
-    if (this.hasCapability('measure_battery')) {
-      this.registerCapability('measure_battery', 'genPowerCfg', {
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 300, // 5 minutes
-            maxInterval: 3600, // 1 hour
-            minChange: 5, // 5%
+      // Register battery capability with efficient reporting
+      if (this.hasCapability('measure_battery')) {
+        await this.registerCapability('measure_battery', 'genPowerCfg', {
+          reportOpts: {
+            configureAttributeReporting: {
+              minInterval: 3600,  // 1 hour minimum
+              maxInterval: 43200, // 12 hours maximum  
+              minChange: 5,       // 5% battery change
+            },
           },
-        },
-      });
-    }
+        });
+        this.log('Battery monitoring capability registered');
+      }
 
-    this.log('Tuya Motion Sensor initialized');
+      // Add motion event listener for flow triggers
+      this.registerCapabilityListener('alarm_motion', (value) => {
+        this.log('Motion detected:', value);
+        if (value) {
+          this.homey.flow.getDeviceTriggerCard('motion_alarm').trigger(this);
+        }
+      });
+
+      this.log('Tuya Motion Sensor successfully initialized');
+    } catch (error) {
+      this.error('Failed to initialize Tuya Motion Sensor:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Handle device removal cleanup
+   */
+  async onDeleted() {
+    try {
+      this.log('Tuya Motion Sensor removed from Homey');
+    } catch (error) {
+      this.error('Error during device removal:', error);
+    }
   }
 
 }
