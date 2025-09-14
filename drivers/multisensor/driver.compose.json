@@ -1,7 +1,7 @@
 {
   "id": "multisensor",
   "name": {
-    "en": "HOBEIAN Multi-Sensor"
+    "en": "Multi-Sensor"
   },
   "class": "sensor",
   "capabilities": [
@@ -11,67 +11,40 @@
     "measure_luminance",
     "measure_battery"
   ],
-  "capabilitiesOptions": {
-    "alarm_motion": {
-      "title": {
-        "en": "Motion"
-      }
-    },
-    "measure_temperature": {
-      "title": {
-        "en": "Temperature"
-      },
-      "units": "°C"
-    },
-    "measure_humidity": {
-      "title": {
-        "en": "Humidity"
-      },
-      "units": "%"
-    },
-    "measure_luminance": {
-      "title": {
-        "en": "Illuminance"
-      },
-      "units": "lx"
-    }
-  },
   "zigbee": {
     "manufacturerName": [
-      "HOBEIAN",
-      "_TZ3000_1m4ynhsm",
-      "_TZ3000_2mbfxlzr",
-      "_TZ3000_3mzs1mmf",
-      "_TZ3000_4c9fwqyz",
-      "_TZ3000_7s7mqbxy",
-      "_TZ3000_gmhrtaac",
-      "_TZ3000_plv4vtwk",
-      "_TZ3000_pxzycdrq",
-      "_TZ3000_qr3qjdnm"
+      "_TZ3000_",
+      "_TZE200_",
+      "_TYZB01_",
+      "TUYA",
+      "Smart Home"
     ],
     "productId": [
-      "TS0601",
-      "ZG-204ZV"
+      "TS0001",
+      "TS0011",
+      "TS0012",
+      "TS004F",
+      "TS011F",
+      "TS0121",
+      "TS013F"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          3,
-          1280,
-          61184,
-          1026,
-          1029,
-          1,
-          1024
-        ],
-        "bindings": [
-          1,
-          1280,
-          1026,
-          1029,
-          1024
+          "basic",
+          "powerConfiguration",
+          "identify",
+          "occupancySensing",
+          "illuminanceMeasurement",
+          "temperatureMeasurement",
+          "relativeHumidity"
         ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/multisensor/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your Multi-Sensor for 3 seconds until the LED starts blinking rapidly."
       }
     }
   },
@@ -79,82 +52,24 @@
     "small": "/drivers/multisensor/assets/images/small.png",
     "large": "/drivers/multisensor/assets/images/large.png"
   },
-  "pair": [
-    {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-        "next": "add_devices"
-      }
-    },
-    {
-      "id": "add_devices",
-      "template": "add_devices"
-    }
-  ],
   "settings": [
     {
-      "type": "group",
-      "label": {
-        "en": "Device Settings"
-      },
-      "children": [
-        {
-          "id": "motion_sensitivity",
-          "type": "dropdown",
-          "label": {
-            "en": "Motion Sensitivity"
-          },
-          "value": "medium",
-          "values": [
-            {
-              "id": "low",
-              "label": {
-                "en": "Low"
-              }
-            },
-            {
-              "id": "medium",
-              "label": {
-                "en": "Medium"
-              }
-            },
-            {
-              "id": "high",
-              "label": {
-                "en": "High"
-              }
-            }
-          ]
-        },
-        {
-          "id": "temp_offset",
-          "type": "number",
-          "label": {
-            "en": "Temperature Offset (°C)"
-          },
-          "value": 0,
-          "min": -10,
-          "max": 10,
-          "step": 0.1
-        },
-        {
-          "id": "humidity_offset",
-          "type": "number",
-          "label": {
-            "en": "Humidity Offset (%)"
-          },
-          "value": 0,
-          "min": -20,
-          "max": 20,
-          "step": 1
-        }
-      ]
+      "id": "motion_sensitivity",
+      "type": "dropdown",
+      "label": "Motion Sensitivity",
+      "value": "medium"
+    },
+    {
+      "id": "temp_offset",
+      "type": "number",
+      "label": "Temperature Offset (°C)",
+      "value": 0
+    },
+    {
+      "id": "humidity_offset",
+      "type": "number",
+      "label": "Humidity Offset (%)",
+      "value": 0
     }
-  ],
-  "energy": {
-    "batteries": [
-      "INTERNAL"
-    ]
-  }
+  ]
 }

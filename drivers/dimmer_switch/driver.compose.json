@@ -1,53 +1,44 @@
 {
+  "id": "dimmer_switch",
   "name": {
-    "en": "Dimmer Switch",
-    "fr": "Variateur",
-    "nl": "Dimmer Schakelaar",
-    "de": "Dimmer Schalter"
+    "en": "Dimmer Switch"
   },
-  "class": "light",
+  "class": "switch",
   "capabilities": [
     "onoff",
     "dim"
   ],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_3dfz1q1v",
-      "_TZ3000_7ed9cqgi",
-      "_TZ3000_92qd4sqa",
-      "_TZ3000_cvm9xckl",
-      "_TZ3000_dlhhrhs8",
-      "_TZ3000_gjnozsaz",
-      "_TZ3000_hdkb2lbn",
-      "_TZ3000_kpatq5pq",
-      "_TZ3000_ktuoyvt9",
-      "_TZ3000_mprjjdkm",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_skueekg3",
-      "_TZ3000_va5zsij1",
-      "_TZ3000_w8jwkczz",
-      "_TZ3210_k1msuvg6",
-      "_TZ3210_ngqk6jia"
+      "_TZ3000_",
+      "_TZE200_",
+      "_TYZB01_",
+      "TUYA",
+      "Smart Home"
     ],
     "productId": [
-      "TS1101",
-      "TS110F",
-      "TS1111"
+      "TS0001",
+      "TS0011",
+      "TS0012",
+      "TS004F",
+      "TS011F",
+      "TS0121",
+      "TS013F"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          8
-        ],
-        "bindings": [
-          6,
-          8
+          "basic",
+          "identify",
+          "onOff",
+          "levelControl"
         ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/dimmer_switch/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your Dimmer Switch for 3 seconds until the LED starts blinking rapidly."
       }
     }
   },
@@ -55,18 +46,18 @@
     "small": "/drivers/dimmer_switch/assets/images/small.png",
     "large": "/drivers/dimmer_switch/assets/images/large.png"
   },
-  "pair": [
+  "settings": [
     {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-        "next": "add_devices"
-      }
+      "id": "min_brightness",
+      "type": "number",
+      "label": "Minimum Brightness (%)",
+      "value": 1
     },
     {
-      "id": "add_devices",
-      "template": "add_devices"
+      "id": "fade_duration",
+      "type": "number",
+      "label": "Fade Duration (seconds)",
+      "value": 2
     }
-  ],
-  "id": "dimmer_switch"
+  ]
 }

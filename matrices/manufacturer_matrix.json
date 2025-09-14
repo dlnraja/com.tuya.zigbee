@@ -2,10 +2,10 @@
   "tuya": {
     "name": "Tuya Smart",
     "manufacturerIds": [
-      "_TZ3000_*",
-      "_TZ3210_*",
-      "_TYZB01_*",
-      "_TZE200_*",
+      "TZ3000_*",
+      "TZ3210_*",
+      "TYZB01_*",
+      "TZE200_*",
       "Tuya"
     ],
     "deviceCount": 300,

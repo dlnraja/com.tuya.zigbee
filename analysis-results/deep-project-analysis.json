@@ -368,16 +368,16 @@
       ],
       "zigbeeConfig": {
         "manufacturerName": [
-          "_TZE200_7tdtqgwv",
-          "_TZE200_amp6tsvy",
-          "_TZE200_7yodxhya",
-          "_TZE200_locansqn",
-          "_TZE200_3i3exu4n",
-          "_TZE200_7hfcudw5",
-          "_TZE200_3towulqd",
-          "_TZE200_whpb9y8z",
-          "_TZE200_7yuohek9",
-          "_TZE200_3towolqd"
+          "TZE200_7tdtqgwv",
+          "TZE200_amp6tsvy",
+          "TZE200_7yodxhya",
+          "TZE200_locansqn",
+          "TZE200_3i3exu4n",
+          "TZE200_7hfcudw5",
+          "TZE200_3towulqd",
+          "TZE200_whpb9y8z",
+          "TZE200_7yuohek9",
+          "TZE200_3towolqd"
         ],
         "productId": [
           "TS0601"
@@ -458,27 +458,34 @@
       "name": "templates",
       "hasDriverJs": true,
       "hasComposeJson": true,
-      "hasImages": true,
-      "hasDevice": false,
-      "imageCount": 2,
+      "hasImages": false,
+      "hasDevice": true,
+      "imageCount": 0,
       "capabilities": [
-        "zigbee",
         "onoff"
       ],
       "zigbeeConfig": {
-        "manufacturerName": "Manufacturer",
-        "modelId": [
-          "Model"
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "productId": [
+          "template_driver"
         ],
         "endpoints": {
           "1": {
             "clusters": [
-              "genBasic"
+              0,
+              1
+            ],
+            "bindings": [
+              1
             ]
           }
         }
       },
-      "issues": []
+      "issues": [
+        "Missing images"
+      ]
     },
     "tuya": {
       "name": "tuya",
@@ -585,8 +592,8 @@
       },
       "issues": []
     },
-    "tuya_thermostat": {
-      "name": "tuya_thermostat",
+    "thermostat": {
+      "name": "thermostat",
       "hasDriverJs": true,
       "hasComposeJson": true,
       "hasImages": true,
@@ -598,7 +605,7 @@
           "Tuya"
         ],
         "productId": [
-          "tuya_thermostat"
+          "thermostat"
         ],
         "endpoints": {
           "1": {
@@ -614,8 +621,8 @@
       },
       "issues": []
     },
-    "tuya_water_sensor": {
-      "name": "tuya_water_sensor",
+    "water_sensor": {
+      "name": "water_sensor",
       "hasDriverJs": true,
       "hasComposeJson": true,
       "hasImages": true,
@@ -629,7 +636,7 @@
           "Tuya"
         ],
         "productId": [
-          "tuya_water_sensor"
+          "water_sensor"
         ],
         "endpoints": {
           "1": {
@@ -725,8 +732,8 @@
       },
       "issues": []
     },
-    "_base": {
-      "name": "_base",
+    "base": {
+      "name": "base",
       "hasDriverJs": true,
       "hasComposeJson": true,
       "hasImages": false,
@@ -740,7 +747,7 @@
           "Tuya"
         ],
         "productId": [
-          "_base"
+          "base"
         ],
         "endpoints": {
           "1": {
@@ -758,8 +765,8 @@
         "Missing images"
       ]
     },
-    "_template": {
-      "name": "_template",
+    "template": {
+      "name": "template",
       "hasDriverJs": true,
       "hasComposeJson": true,
       "hasImages": true,
@@ -788,39 +795,6 @@
         }
       },
       "issues": []
-    },
-    "_templates": {
-      "name": "_templates",
-      "hasDriverJs": true,
-      "hasComposeJson": true,
-      "hasImages": false,
-      "hasDevice": true,
-      "imageCount": 0,
-      "capabilities": [
-        "onoff"
-      ],
-      "zigbeeConfig": {
-        "manufacturerName": [
-          "Tuya"
-        ],
-        "productId": [
-          "template_driver"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              1
-            ],
-            "bindings": [
-              1
-            ]
-          }
-        }
-      },
-      "issues": [
-        "Missing images"
-      ]
     }
   },
   "scripts": {
@@ -1707,15 +1681,15 @@
       "hasRequiredDeps": false,
       "issues": []
     },
-    "final-push-intelligent-complete.js": {
-      "name": "final-push-intelligent-complete.js",
+    "final-push-smart-complete.js": {
+      "name": "final-push-smart-complete.js",
       "size": 5324,
       "lastModified": "2025-08-23T21:35:32.172Z",
       "hasRequiredDeps": false,
       "issues": []
     },
-    "final-push-intelligent.js": {
-      "name": "final-push-intelligent.js",
+    "final-push-smart.js": {
+      "name": "final-push-smart.js",
       "size": 3834,
       "lastModified": "2025-08-23T21:35:32.176Z",
       "hasRequiredDeps": false,
@@ -2311,29 +2285,29 @@
       "hasRequiredDeps": false,
       "issues": []
     },
-    "intelligent-device-analyzer.js": {
-      "name": "intelligent-device-analyzer.js",
-      "size": 3239,
-      "lastModified": "2025-09-03T21:18:52.180Z",
+    "smart-device-analyzer.js": {
+      "name": "smart-device-analyzer.js",
+      "size": 1810,
+      "lastModified": "2025-09-03T21:18:53.061Z",
       "hasRequiredDeps": false,
       "issues": []
     },
-    "intelligent-error-handler.js": {
-      "name": "intelligent-error-handler.js",
+    "smart-error-handler.js": {
+      "name": "smart-error-handler.js",
       "size": 3219,
       "lastModified": "2025-09-03T21:18:52.183Z",
       "hasRequiredDeps": false,
       "issues": []
     },
-    "intelligent-structure-optimizer.js": {
-      "name": "intelligent-structure-optimizer.js",
+    "smart-structure-optimizer.js": {
+      "name": "smart-structure-optimizer.js",
       "size": 3261,
       "lastModified": "2025-09-03T21:18:52.186Z",
       "hasRequiredDeps": false,
       "issues": []
     },
-    "intelligent-tuya-fusion.js": {
-      "name": "intelligent-tuya-fusion.js",
+    "smart-tuya-fusion.js": {
+      "name": "smart-tuya-fusion.js",
       "size": 16553,
       "lastModified": "2025-08-23T21:35:32.459Z",
       "hasRequiredDeps": false,
@@ -3363,13 +3337,6 @@
       "name": "smart-community-manager.js",
       "size": 3213,
       "lastModified": "2025-09-03T21:18:53.056Z",
-      "hasRequiredDeps": false,
-      "issues": []
-    },
-    "smart-device-analyzer.js": {
-      "name": "smart-device-analyzer.js",
-      "size": 1810,
-      "lastModified": "2025-09-03T21:18:53.061Z",
       "hasRequiredDeps": false,
       "issues": []
     },

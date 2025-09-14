@@ -1,76 +1,135 @@
-'use strict';
-
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-/**
- * Tuya Motion Sensor Device
- * Supports PIR motion detection with battery monitoring
- * Compatible with TS0202, _TZ3000_mmtwjmaq, and similar devices
- */
-class TuyaMotionSensorDevice extends ZigBeeDevice {
-
-  async onNodeInit({ zclNode }) {
-    try {
-      // Enable debugging for development
-      this.enableDebug();
-      this.printNode();
-      
-      this.log('Initializing Tuya Motion Sensor...');
-
-      // Register motion alarm capability with optimized reporting
-      if (this.hasCapability('alarm_motion')) {
-        await this.registerCapability('alarm_motion', 'msOccupancySensing', {
-          reportOpts: {
-            configureAttributeReporting: {
-              minInterval: 1,     // Immediate reporting
-              maxInterval: 300,   // 5 minutes max
-              minChange: 1,       // Any state change
-            },
-          },
-        });
-        this.log('Motion detection capability registered');
-      }
-
-      // Register battery capability with efficient reporting
-      if (this.hasCapability('measure_battery')) {
-        await this.registerCapability('measure_battery', 'genPowerCfg', {
-          reportOpts: {
-            configureAttributeReporting: {
-              minInterval: 3600,  // 1 hour minimum
-              maxInterval: 43200, // 12 hours maximum  
-              minChange: 5,       // 5% battery change
-            },
-          },
-        });
-        this.log('Battery monitoring capability registered');
-      }
-
-      // Add motion event listener for flow triggers
-      this.registerCapabilityListener('alarm_motion', (value) => {
-        this.log('Motion detected:', value);
-        if (value) {
-          this.homey.flow.getDeviceTriggerCard('motion_alarm').trigger(this);
+class MotionSensorDevice extends ZigBeeDevice {
+    
+    async onNodeInit({ zclNode }) {
+        
+        // Enable debug logging
+        this.enableDebug();
+        
+        // Print node info
+        this.printNode();
+        
+        // Register capabilities
+        await this.registerCapabilities();
+        
+        // Configure reporting
+        await this.configureReporting();
+        
+        // Set up flow triggers
+        this.setupFlowTriggers();
+        
+        this.log('Motion Sensor has been initialized');
+    }
+    
+    async registerCapabilities() {
+        const capabilities = [
+        "alarm_motion",
+        "measure_battery",
+        "measure_luminance"
+];
+        
+        for (const capability of capabilities) {
+            if (this.hasCapability(capability)) {
+                this.log(`Capability ${capability} already registered`);
+                continue;
+            }
+            
+            try {
+                await this.addCapability(capability);
+                this.log(`Added capability: ${capability}`);
+            } catch (error) {
+                this.error(`Failed to add capability ${capability}:`, error);
+            }
         }
-      });
-
-      this.log('Tuya Motion Sensor successfully initialized');
-    } catch (error) {
-      this.error('Failed to initialize Tuya Motion Sensor:', error);
-      throw error;
     }
-  }
-
-  /**
-   * Handle device removal cleanup
-   */
-  async onDeleted() {
-    try {
-      this.log('Tuya Motion Sensor removed from Homey');
-    } catch (error) {
-      this.error('Error during device removal:', error);
+    
+    async configureReporting() {
+        try {
+            // Configure cluster reporting based on device type
+            
+            // Configure sensor reporting
+            if (this.zclNode.endpoints[1].clusters.occupancySensing) {
+                await this.zclNode.endpoints[1].clusters.occupancySensing.configureReporting('occupancy', {
+                    minInterval: 0,
+                    maxInterval: 600,
+                    minChange: null
+                });
+            }
+            
+            if (this.zclNode.endpoints[1].clusters.temperatureMeasurement) {
+                await this.zclNode.endpoints[1].clusters.temperatureMeasurement.configureReporting('measuredValue', {
+                    minInterval: 60,
+                    maxInterval: 3600,
+                    minChange: 100
+                });
+            }
+            
+            if (this.zclNode.endpoints[1].clusters.relativeHumidity) {
+                await this.zclNode.endpoints[1].clusters.relativeHumidity.configureReporting('measuredValue', {
+                    minInterval: 60,
+                    maxInterval: 3600,
+                    minChange: 500
+                });
+            }
+        } catch (error) {
+            this.error('Failed to configure reporting:', error);
+        }
     }
-  }
-
+    
+    setupFlowTriggers() {
+        // Register flow card triggers
+        
+        // Motion/presence detection triggers
+        this.registerCapabilityListener('alarm_motion', (value) => {
+            this.homey.flow.getDeviceTriggerCard('motion_detected')
+                .trigger(this, {}, { motion: value })
+                .catch(this.error);
+        });
+        
+        this.registerCapabilityListener('alarm_contact', (value) => {
+            this.homey.flow.getDeviceTriggerCard('contact_changed')
+                .trigger(this, {}, { contact: value })
+                .catch(this.error);
+        });
+    }
+    
+    onSettings({ oldSettings, newSettings, changedKeys }) {
+        this.log('Settings changed:', changedKeys);
+        
+        // Handle settings changes
+        changedKeys.forEach(key => {
+            this.log(`Setting ${key} changed from ${oldSettings[key]} to ${newSettings[key]}`);
+            this.handleSettingChange(key, newSettings[key]);
+        });
+        
+        return Promise.resolve(true);
+    }
+    
+    handleSettingChange(key, value) {
+        // Handle individual setting changes
+        switch(key) {
+            
+            case 'motion_sensitivity':
+                this.log(`motion_sensitivity changed to ${value}`);
+                // Handle motion_sensitivity change
+                break;
+            case 'occupancy_timeout':
+                this.log(`occupancy_timeout changed to ${value}`);
+                // Handle occupancy_timeout change
+                break;
+            case 'illuminance_threshold':
+                this.log(`illuminance_threshold changed to ${value}`);
+                // Handle illuminance_threshold change
+                break;
+            default:
+                this.log(`Unhandled setting change: ${key} = ${value}`);
+        }
+    }
+    
+    onDeleted() {
+        this.log('Motion Sensor has been deleted');
+    }
 }
 
-module.exports = TuyaMotionSensorDevice;
+module.exports = MotionSensorDevice;

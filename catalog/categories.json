@@ -3,13 +3,25 @@
     "plug": {
       "name": {
         "en": "Smart Plug",
-        "fr": "Prise Intelligente",
+        "fr": "plug smarte",
         "nl": "Slimme Stekker",
         "ta": "ஸ்மார்ட் பிளக்"
       },
-      "aliases": ["socket", "outlet", "power_outlet"],
-      "capabilities": ["onoff", "measure_power", "meter_power"],
-      "clusters": ["genOnOff", "haElectricalMeasurement", "seMetering"],
+      "aliases": [
+        "socket",
+        "outlet",
+        "power_outlet"
+      ],
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power"
+      ],
+      "clusters": [
+        "genOnOff",
+        "haElectricalMeasurement",
+        "seMetering"
+      ],
       "icon": "plug"
     },
     "switch": {
@@ -19,21 +31,44 @@
         "nl": "Wandschakelaar",
         "ta": "சுவர் சுவிட்ச்"
       },
-      "aliases": ["wall_switch", "light_switch", "gang_switch"],
-      "capabilities": ["onoff"],
-      "clusters": ["genOnOff"],
+      "aliases": [
+        "wall_switch",
+        "light_switch",
+        "gang_switch"
+      ],
+      "capabilities": [
+        "onoff"
+      ],
+      "clusters": [
+        "genOnOff"
+      ],
       "icon": "switch"
     },
     "light": {
       "name": {
         "en": "Smart Light",
-        "fr": "Ampoule Intelligente",
+        "fr": "Ampoule smarte",
         "nl": "Slimme Lamp",
         "ta": "ஸ்மார்ட் விளக்கு"
       },
-      "aliases": ["bulb", "lamp", "led", "strip"],
-      "capabilities": ["onoff", "dim", "light_hue", "light_saturation", "light_temperature"],
-      "clusters": ["genOnOff", "genLevelCtrl", "lightingColorCtrl"],
+      "aliases": [
+        "bulb",
+        "lamp",
+        "led",
+        "strip"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature"
+      ],
+      "clusters": [
+        "genOnOff",
+        "genLevelCtrl",
+        "lightingColorCtrl"
+      ],
       "icon": "light"
     },
     "cover": {
@@ -43,81 +78,146 @@
         "nl": "Rolgordijn",
         "ta": "ஜன்னல் அடைப்பு"
       },
-      "aliases": ["curtain", "blind", "shade", "roller"],
-      "capabilities": ["windowcoverings_state", "windowcoverings_set"],
-      "clusters": ["closuresWindowCovering"],
+      "aliases": [
+        "curtain",
+        "blind",
+        "shade",
+        "roller"
+      ],
+      "capabilities": [
+        "windowcoverings_state",
+        "windowcoverings_set"
+      ],
+      "clusters": [
+        "closuresWindowCovering"
+      ],
       "icon": "cover"
     },
     "sensor_temp_hum": {
       "name": {
         "en": "Temperature & Humidity Sensor",
-        "fr": "Capteur Température & Humidité",
+        "fr": "sensor temperature & humidity",
         "nl": "Temperatuur & Vochtigheid Sensor",
         "ta": "வெப்பநிலை & ஈரப்பதம் சென்சார்"
       },
-      "aliases": ["temp_hum", "climate_sensor", "weather_sensor"],
-      "capabilities": ["measure_temperature", "measure_humidity"],
-      "clusters": ["msTemperatureMeasurement", "msRelativeHumidity"],
+      "aliases": [
+        "temp_hum",
+        "climate_sensor",
+        "weather_sensor"
+      ],
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity"
+      ],
+      "clusters": [
+        "msTemperatureMeasurement",
+        "msRelativeHumidity"
+      ],
       "icon": "sensor"
     },
     "sensor_motion": {
       "name": {
         "en": "Motion Sensor",
-        "fr": "Détecteur de Mouvement",
+        "fr": "detector de motion",
         "nl": "Bewegingssensor",
         "ta": "இயக்கம் சென்சார்"
       },
-      "aliases": ["motion", "pir", "presence"],
-      "capabilities": ["alarm_motion"],
-      "clusters": ["ssIasZone"],
+      "aliases": [
+        "motion",
+        "pir",
+        "presence"
+      ],
+      "capabilities": [
+        "alarm_motion"
+      ],
+      "clusters": [
+        "ssIasZone"
+      ],
       "icon": "motion"
     },
     "sensor_contact": {
       "name": {
-        "en": "Contact Sensor",
-        "fr": "Capteur de Contact",
-        "nl": "Contact Sensor",
+        "en": "contact Sensor",
+        "fr": "sensor de contact",
+        "nl": "contact Sensor",
         "ta": "தொடர்பு சென்சார்"
       },
-      "aliases": ["contact", "door_window", "magnetic"],
-      "capabilities": ["alarm_contact"],
-      "clusters": ["ssIasZone"],
+      "aliases": [
+        "contact",
+        "door_window",
+        "magnetic"
+      ],
+      "capabilities": [
+        "alarm_contact"
+      ],
+      "clusters": [
+        "ssIasZone"
+      ],
       "icon": "contact"
     },
     "power_meter": {
       "name": {
         "en": "Power Meter",
-        "fr": "Compteur d'Énergie",
+        "fr": "Compteur d'energy",
         "nl": "Energiemeter",
         "ta": "மின் மீட்டர்"
       },
-      "aliases": ["energy_meter", "watt_meter", "kwh_meter"],
-      "capabilities": ["measure_power", "meter_power", "measure_voltage", "measure_current"],
-      "clusters": ["haElectricalMeasurement", "seMetering"],
+      "aliases": [
+        "energy_meter",
+        "watt_meter",
+        "kwh_meter"
+      ],
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "clusters": [
+        "haElectricalMeasurement",
+        "seMetering"
+      ],
       "icon": "meter"
     },
     "thermostat": {
       "name": {
-        "en": "Thermostat",
-        "fr": "Thermostat",
+        "en": "thermostat",
+        "fr": "thermostat",
         "nl": "Thermostaat",
         "ta": "வெப்பநிலை கட்டுப்படுத்தி"
       },
-      "aliases": ["temp_control", "climate_control"],
-      "capabilities": ["target_temperature", "measure_temperature_thermostat"],
-      "clusters": ["hvacThermostat"],
+      "aliases": [
+        "temp_control",
+        "climate_control"
+      ],
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature_thermostat"
+      ],
+      "clusters": [
+        "hvacthermostat"
+      ],
       "icon": "thermostat"
     },
     "scene_controller": {
       "name": {
         "en": "Scene Controller",
-        "fr": "Contrôleur de Scène",
-        "nl": "Scène Controller",
+        "fr": "Contrôleur de scene",
+        "nl": "scene Controller",
         "ta": "காட்சி கட்டுப்படுத்தி"
       },
-      "aliases": ["remote", "button", "switch_remote"],
-      "capabilities": ["button"],
-      "clusters": ["genOnOff", "genLevelCtrl"],
+      "aliases": [
+        "remote",
+        "button",
+        "switch_remote"
+      ],
+      "capabilities": [
+        "button"
+      ],
+      "clusters": [
+        "genOnOff",
+        "genLevelCtrl"
+      ],
       "icon": "remote"
     },
     "other": {
@@ -127,9 +227,15 @@
         "nl": "Ander Apparaat",
         "ta": "மற்ற சாதனம்"
       },
-      "aliases": ["misc", "unknown", "generic"],
+      "aliases": [
+        "misc",
+        "unknown",
+        "generic"
+      ],
       "capabilities": [],
-      "clusters": ["genBasic"],
+      "clusters": [
+        "genBasic"
+      ],
       "icon": "generic"
     }
   },

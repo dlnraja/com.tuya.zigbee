@@ -67,7 +67,7 @@
       {
         "id": "contact_changed",
         "title": {
-          "en": "Contact sensor changed"
+          "en": "contact sensor changed"
         },
         "args": [
           {
@@ -143,25 +143,25 @@
       "zigbee": {
         "manufacturerName": [
           "TUYATEC-zw6hxafz",
-          "_TZ3000_mmtwjmaq",
-          "_TZ3000_kmh5qpmb",
-          "_TZ3000_msl6wxk9",
-          "_TZ3000_mcxw5ehu",
-          "_TZ3000_otvn3lne",
-          "_TZ3000_6ygjfyll",
-          "_TZ3000_nss8amz9",
-          "_TZ3000_lf56vpxj",
-          "_TZ1800_fcdjzz3s",
-          "_TYZB01_jytabjkb",
-          "_TYZB01_dl7cejts",
-          "_TZE200_3towulqd",
-          "_TZE200_bh3n6gk8",
-          "_TZE200_1ibpyhdc",
-          "_TZE200_ttcovulf",
-          "_TZE200_hsmsj6zh",
-          "_TZE200_tv3wxhcz",
-          "_TZE200_whpb9y8z",
-          "_TZE200_7yuohek9"
+          "TZ3000_mmtwjmaq",
+          "TZ3000_kmh5qpmb",
+          "TZ3000_msl6wxk9",
+          "TZ3000_mcxw5ehu",
+          "TZ3000_otvn3lne",
+          "TZ3000_6ygjfyll",
+          "TZ3000_nss8amz9",
+          "TZ3000_lf56vpxj",
+          "TZ1800_fcdjzz3s",
+          "TYZB01_jytabjkb",
+          "TYZB01_dl7cejts",
+          "TZE200_3towulqd",
+          "TZE200_bh3n6gk8",
+          "TZE200_1ibpyhdc",
+          "TZE200_ttcovulf",
+          "TZE200_hsmsj6zh",
+          "TZE200_tv3wxhcz",
+          "TZE200_whpb9y8z",
+          "TZE200_7yuohek9"
         ],
         "productId": [
           "TS0202",
@@ -209,7 +209,7 @@
     {
       "id": "contact_sensor",
       "name": {
-        "en": "Contact Sensor"
+        "en": "contact Sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -219,7 +219,7 @@
       "capabilitiesOptions": {
         "alarm_contact": {
           "title": {
-            "en": "Contact"
+            "en": "contact"
           }
         }
       },
@@ -229,18 +229,18 @@
           "TUYATEC-Bfq2i2Sy",
           "TUYATEC-abkehqus",
           "TUYATEC-sb6t7ett",
-          "_TZ3000_ebar6ljy",
-          "_TZ3000_2mbfxlzr",
-          "_TZ3000_402jjyro",
-          "_TZ3000_6jeesvrt",
-          "_TZ3000_26fmupbb",
-          "_TZ3000_bmg14ax2",
-          "_TZ3000_oxslv1c9",
-          "_TZ3000_bzxlofth",
-          "_TZ3000_7tbsruql",
-          "_TZ3000_osu834un",
-          "_TZ3000_n2egfsli",
-          "_TZ3000_7d8yme6f"
+          "TZ3000_ebar6ljy",
+          "TZ3000_2mbfxlzr",
+          "TZ3000_402jjyro",
+          "TZ3000_6jeesvrt",
+          "TZ3000_26fmupbb",
+          "TZ3000_bmg14ax2",
+          "TZ3000_oxslv1c9",
+          "TZ3000_bzxlofth",
+          "TZ3000_7tbsruql",
+          "TZ3000_osu834un",
+          "TZ3000_n2egfsli",
+          "TZ3000_7d8yme6f"
         ],
         "productId": [
           "TS0203",
@@ -312,14 +312,14 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TYZB01_iuepbmpv",
-          "_TZ3000_fllyghyj",
-          "_TZ3000_dowj6gyi",
-          "_TZ3000_8ybe88nf",
-          "_TZ3000_zl1kmjqx",
-          "_TZ3000_bjawzodf",
-          "_TZ3000_saiqcn0y",
-          "_TZ3000_xr3htd96"
+          "TYZB01_iuepbmpv",
+          "TZ3000_fllyghyj",
+          "TZ3000_dowj6gyi",
+          "TZ3000_8ybe88nf",
+          "TZ3000_zl1kmjqx",
+          "TZ3000_bjawzodf",
+          "TZ3000_saiqcn0y",
+          "TZ3000_xr3htd96"
         ],
         "productId": [
           "TS0201",
@@ -392,14 +392,14 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_riwp3k79",
-          "_TZ3000_9cpuaca6",
-          "_TZ3000_oborybow",
-          "_TZ3000_49qchf10",
-          "_TZ3210_raqoarrb",
-          "_TZ3210_sroezl0s",
-          "_TZ3000_qzjcsmar",
-          "_TZ3000_ktuoyvt9"
+          "TZ3000_riwp3k79",
+          "TZ3000_9cpuaca6",
+          "TZ3000_oborybow",
+          "TZ3000_49qchf10",
+          "TZ3210_raqoarrb",
+          "TZ3210_sroezl0s",
+          "TZ3000_qzjcsmar",
+          "TZ3000_ktuoyvt9"
         ],
         "productId": [
           "TS0505A",
@@ -467,14 +467,14 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_3ooaz3ng",
-          "_TZ3000_g5xawfcq",
-          "_TZ3000_vtscrpmw",
-          "_TZ3000_rdtixbnu",
-          "_TZ3000_8nkb7mof",
-          "_TZ3000_mraovvmm",
-          "_TZ3000_cphmq0q7",
-          "_TZ3000_ew3ldmgx"
+          "TZ3000_3ooaz3ng",
+          "TZ3000_g5xawfcq",
+          "TZ3000_vtscrpmw",
+          "TZ3000_rdtixbnu",
+          "TZ3000_8nkb7mof",
+          "TZ3000_mraovvmm",
+          "TZ3000_cphmq0q7",
+          "TZ3000_ew3ldmgx"
         ],
         "productId": [
           "TS0121",
@@ -533,14 +533,14 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_ji4araar",
-          "_TZ3000_9cpuaca6",
-          "_TZ3000_oborybow",
-          "_TZ3000_49qchf10",
-          "_TZ3000_qzjcsmar",
-          "_TZ3000_vzopcetz",
-          "_TZ3000_8nkb7mof",
-          "_TZ3000_mraovvmm"
+          "TZ3000_ji4araar",
+          "TZ3000_9cpuaca6",
+          "TZ3000_oborybow",
+          "TZ3000_49qchf10",
+          "TZ3000_qzjcsmar",
+          "TZ3000_vzopcetz",
+          "TZ3000_8nkb7mof",
+          "TZ3000_mraovvmm"
         ],
         "productId": [
           "TS0001",
@@ -606,10 +606,10 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZE200_ztc6ggyl",
-          "_TZE204_qasjif9e",
-          "_TZE204_ijxvkhd0",
-          "_TZE200_wukb7rhc"
+          "TZE200_ztc6ggyl",
+          "TZE204_qasjif9e",
+          "TZE204_ijxvkhd0",
+          "TZE200_wukb7rhc"
         ],
         "productId": [
           "TS0601"
@@ -654,7 +654,7 @@
     {
       "id": "multisensor",
       "name": {
-        "en": "Multi-Sensor"
+        "en": "multi-Sensor"
       },
       "class": "sensor",
       "capabilities": [

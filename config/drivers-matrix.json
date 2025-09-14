@@ -12,7 +12,7 @@
     {
       "type": "cover",
       "name": "assets",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_assets\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_assets\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -24,13 +24,13 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": "_TZE200_ASSETS",
+      "manufacturer": "TZE200_ASSETS",
       "model": "assets"
     },
     {
       "type": "cover",
       "name": "blinds",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_blinds\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_blinds\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -42,13 +42,13 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": "_TZE200_BLINDS",
+      "manufacturer": "TZE200_BLINDS",
       "model": "blinds"
     },
     {
       "type": "cover",
-      "name": "covers_tuya_tuya",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_covers_tuya_tuya\\driver.compose.json",
+      "name": "covers_tuya",
+      "path": "drivers\\tuya\\sensors\\sensors_covers_tuya_tuya\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -63,13 +63,13 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": "_TZE200_ASSETS",
+      "manufacturer": "TZE200_ASSETS",
       "model": "assets"
     },
     {
       "type": "cover",
       "name": "curtains",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_curtains\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_curtains\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -81,13 +81,13 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": "_TZE200_CURTAINS",
+      "manufacturer": "TZE200_CURTAINS",
       "model": "curtains"
     },
     {
       "type": "cover",
       "name": "shutters",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_shutters\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_shutters\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -99,7 +99,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": "_TZE200_SHUTTERS",
+      "manufacturer": "TZE200_SHUTTERS",
       "model": "shutters"
     },
     {
@@ -117,13 +117,13 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": "_TZE200_TUYA",
+      "manufacturer": "TZE200_TUYA",
       "model": "tuya"
     },
     {
       "type": "light",
-      "name": "__config_flags",
-      "path": "drivers\\tuya\\unknown\\lights\\lights\\__config_flags\\driver.compose.json",
+      "name": "config_flags",
+      "path": "drivers\\tuya\\unknown\\lights\\lights\\_config_flags\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -136,11 +136,11 @@
         "genOnOff"
       ],
       "manufacturer": "Tuya",
-      "model": "__config_flags"
+      "model": "config_flags"
     },
     {
       "type": "light",
-      "name": "_bit",
+      "name": "bit",
       "path": "drivers\\tuya\\unknown\\lights\\lights\\_bit\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
@@ -154,11 +154,11 @@
         "genOnOff"
       ],
       "manufacturer": "Tuya",
-      "model": "_bit"
+      "model": "bit"
     },
     {
       "type": "light",
-      "name": "_cache",
+      "name": "cache",
       "path": "drivers\\tuya\\unknown\\lights\\lights\\_cache\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
@@ -172,11 +172,11 @@
         "genOnOff"
       ],
       "manufacturer": "Tuya",
-      "model": "_cache"
+      "model": "cache"
     },
     {
       "type": "light",
-      "name": "_distributionfinder",
+      "name": "distributionfinder",
       "path": "drivers\\tuya\\unknown\\lights\\lights\\_distributionfinder\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
@@ -190,11 +190,11 @@
         "genOnOff"
       ],
       "manufacturer": "Tuya",
-      "model": "_distributionfinder"
+      "model": "distributionfinder"
     },
     {
       "type": "light",
-      "name": "_distwithlatestinfo",
+      "name": "distwithlatestinfo",
       "path": "drivers\\tuya\\unknown\\lights\\lights\\_distwithlatestinfo\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
@@ -208,11 +208,11 @@
         "genOnOff"
       ],
       "manufacturer": "Tuya",
-      "model": "_distwithlatestinfo"
+      "model": "distwithlatestinfo"
     },
     {
       "type": "light",
-      "name": "_editableinfo",
+      "name": "editableinfo",
       "path": "drivers\\tuya\\unknown\\lights\\lights\\_editableinfo\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
@@ -226,11 +226,11 @@
         "genOnOff"
       ],
       "manufacturer": "Tuya",
-      "model": "_editableinfo"
+      "model": "editableinfo"
     },
     {
       "type": "light",
-      "name": "_elffileheader",
+      "name": "elffileheader",
       "path": "drivers\\tuya\\unknown\\lights\\lights\\_elffileheader\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
@@ -244,11 +244,11 @@
         "genOnOff"
       ],
       "manufacturer": "Tuya",
-      "model": "_elffileheader"
+      "model": "elffileheader"
     },
     {
       "type": "light",
-      "name": "_installrequirementbackedcandidate",
+      "name": "installrequirementbackedcandidate",
       "path": "drivers\\tuya\\unknown\\lights\\lights\\_installrequirementbackedcandidate\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
@@ -262,11 +262,11 @@
         "genOnOff"
       ],
       "manufacturer": "Tuya",
-      "model": "_installrequirementbackedcandidate"
+      "model": "installrequirementbackedcandidate"
     },
     {
       "type": "light",
-      "name": "_lazyclassproperty",
+      "name": "lazyclassproperty",
       "path": "drivers\\tuya\\unknown\\lights\\lights\\_lazyclassproperty\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
@@ -280,11 +280,11 @@
         "genOnOff"
       ],
       "manufacturer": "Tuya",
-      "model": "_lazyclassproperty"
+      "model": "lazyclassproperty"
     },
     {
       "type": "light",
-      "name": "_notapicontent",
+      "name": "notapicontent",
       "path": "drivers\\tuya\\unknown\\lights\\lights\\_notapicontent\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
@@ -298,11 +298,11 @@
         "genOnOff"
       ],
       "manufacturer": "Tuya",
-      "model": "_notapicontent"
+      "model": "notapicontent"
     },
     {
       "type": "light",
-      "name": "_parseresultswithoffset",
+      "name": "parseresultswithoffset",
       "path": "drivers\\tuya\\unknown\\lights\\lights\\_parseresultswithoffset\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
@@ -316,11 +316,11 @@
         "genOnOff"
       ],
       "manufacturer": "Tuya",
-      "model": "_parseresultswithoffset"
+      "model": "parseresultswithoffset"
     },
     {
       "type": "light",
-      "name": "_prefix",
+      "name": "prefix",
       "path": "drivers\\tuya\\unknown\\lights\\lights\\_prefix\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
@@ -334,11 +334,11 @@
         "genOnOff"
       ],
       "manufacturer": "Tuya",
-      "model": "_prefix"
+      "model": "prefix"
     },
     {
       "type": "light",
-      "name": "_tokentype",
+      "name": "tokentype",
       "path": "drivers\\tuya\\unknown\\lights\\lights\\_tokentype\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
@@ -352,11 +352,11 @@
         "genOnOff"
       ],
       "manufacturer": "Tuya",
-      "model": "_tokentype"
+      "model": "tokentype"
     },
     {
       "type": "light",
-      "name": "_trackthread",
+      "name": "trackthread",
       "path": "drivers\\tuya\\unknown\\lights\\lights\\_trackthread\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
@@ -370,11 +370,11 @@
         "genOnOff"
       ],
       "manufacturer": "Tuya",
-      "model": "_trackthread"
+      "model": "trackthread"
     },
     {
       "type": "light",
-      "name": "_trivialre",
+      "name": "trivialre",
       "path": "drivers\\tuya\\unknown\\lights\\lights\\_trivialre\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
@@ -388,11 +388,11 @@
         "genOnOff"
       ],
       "manufacturer": "Tuya",
-      "model": "_trivialre"
+      "model": "trivialre"
     },
     {
       "type": "light",
-      "name": "_typeof",
+      "name": "typeof",
       "path": "drivers\\tuya\\unknown\\lights\\lights\\_typeof\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
@@ -406,7 +406,7 @@
         "genOnOff"
       ],
       "manufacturer": "Tuya",
-      "model": "_typeof"
+      "model": "typeof"
     },
     {
       "type": "light",
@@ -1359,7 +1359,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "christmas_lights"
     },
     {
@@ -2187,7 +2187,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ": ",
+      "manufacturer": ":",
       "model": "dimmable_led_strip"
     },
     {
@@ -2241,7 +2241,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", \n ",
+      "manufacturer": ",",
       "model": "dimmer_1_gang_2"
     },
     {
@@ -3159,7 +3159,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ": ",
+      "manufacturer": ":",
       "model": "handheld_remote_4_buttons"
     },
     {
@@ -4369,7 +4369,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ": [\n ",
+      "manufacturer": ": [",
       "model": "TS0601"
     },
     {
@@ -4392,8 +4392,8 @@
     },
     {
       "type": "light",
-      "name": "lights_tuya_ts0501",
-      "path": "drivers\\tuya\\unknown\\lights\\lights_tuya_ts0501\\driver.compose.json",
+      "name": "lights",
+      "path": "drivers\\tuya\\unknown\\lights\\lights\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -5054,7 +5054,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "outdoor2socket_1"
     },
     {
@@ -5072,7 +5072,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "outdoor2socket_2"
     },
     {
@@ -6188,7 +6188,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ": ",
+      "manufacturer": ":",
       "model": "rgb_led_strip"
     },
     {
@@ -6569,7 +6569,7 @@
         "genBasic",
         "genIdentify"
       ],
-      "manufacturer": "_TZ3000",
+      "manufacturer": "TZ3000",
       "model": "TS0601"
     },
     {
@@ -6875,7 +6875,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ": ",
+      "manufacturer": ":",
       "model": "smart_remote_4b"
     },
     {
@@ -7721,7 +7721,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "tuyazigbeelightdevice"
     },
     {
@@ -7973,7 +7973,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "valvecontroller"
     },
     {
@@ -8171,7 +8171,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "wall_switch_3_gang"
     },
     {
@@ -8189,7 +8189,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "wall_switch_4_gang"
     },
     {
@@ -8513,7 +8513,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ": ",
+      "manufacturer": ":",
       "model": "zigbeerepeater"
     },
     {
@@ -8531,7 +8531,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": "_TZE200_FEIT",
+      "manufacturer": "TZE200_FEIT",
       "model": "feit"
     },
     {
@@ -8549,7 +8549,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": "_TZE200_GOSUND",
+      "manufacturer": "TZE200_GOSUND",
       "model": "gosund"
     },
     {
@@ -8567,7 +8567,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": "_TZE200_KEYPADS",
+      "manufacturer": "TZE200_KEYPADS",
       "model": "keypads"
     },
     {
@@ -8585,7 +8585,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ": [\n ",
+      "manufacturer": ": [",
       "model": "TS0601"
     },
     {
@@ -8603,13 +8603,13 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ": [\n ",
+      "manufacturer": ": [",
       "model": "TS0601"
     },
     {
       "type": "lock",
-      "name": "locks_tuya_smart-lock",
-      "path": "drivers\\tuya\\thermostats\\locks\\locks_tuya_smart-lock\\driver.compose.json",
+      "name": "locks_smart-lock",
+      "path": "drivers\\tuya\\thermostats\\locks\\locks_smart-lock\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -8621,13 +8621,13 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": "_TZE200_SMART-LOCK",
+      "manufacturer": "TZE200_SMART-LOCK",
       "model": "smart-lock"
     },
     {
       "type": "lock",
-      "name": "locks_tuya_tuya",
-      "path": "drivers\\tuya\\thermostats\\locks\\locks_tuya_tuya\\driver.compose.json",
+      "name": "locks_tuya",
+      "path": "drivers\\tuya\\thermostats\\locks\\locks_tuya\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -8639,7 +8639,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": "_TZE200_FEIT",
+      "manufacturer": "TZE200_FEIT",
       "model": "feit"
     },
     {
@@ -8657,7 +8657,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": "_TZE200_SMART_LOCKS",
+      "manufacturer": "TZE200_SMART_LOCKS",
       "model": "smart_locks"
     },
     {
@@ -8675,7 +8675,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": "_TZE200_SMART-LOCK",
+      "manufacturer": "TZE200_SMART-LOCK",
       "model": "smart-lock"
     },
     {
@@ -8693,7 +8693,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": "_TZE200_SMARTLIFE",
+      "manufacturer": "TZE200_SMARTLIFE",
       "model": "smartlife"
     },
     {
@@ -8711,13 +8711,13 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": "_TZE200_TUYA",
+      "manufacturer": "TZE200_TUYA",
       "model": "tuya"
     },
     {
       "type": "plug",
-      "name": "_configexpander",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\_configexpander\\driver.compose.json",
+      "name": "configexpander",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\_configexpander\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -8730,12 +8730,12 @@
         "genOnOff"
       ],
       "manufacturer": "Tuya",
-      "model": "_configexpander"
+      "model": "configexpander"
     },
     {
       "type": "plug",
-      "name": "_editablemode",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\_editablemode\\driver.compose.json",
+      "name": "editablemode",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\_editablemode\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -8748,12 +8748,12 @@
         "genOnOff"
       ],
       "manufacturer": "Tuya",
-      "model": "_editablemode"
+      "model": "editablemode"
     },
     {
       "type": "plug",
       "name": "3",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\3\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\3\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -8771,7 +8771,7 @@
     {
       "type": "plug",
       "name": "also",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\also\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\also\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -8789,7 +8789,7 @@
     {
       "type": "plug",
       "name": "azpcaudiodeviceex",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\azpcaudiodeviceex\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\azpcaudiodeviceex\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -8807,7 +8807,7 @@
     {
       "type": "plug",
       "name": "build_py",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\build_py\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\build_py\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -8825,7 +8825,7 @@
     {
       "type": "plug",
       "name": "by",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\by\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\by\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -8843,7 +8843,7 @@
     {
       "type": "plug",
       "name": "call",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\call\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\call\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -8861,7 +8861,7 @@
     {
       "type": "plug",
       "name": "comment",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\comment\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\comment\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -8879,7 +8879,7 @@
     {
       "type": "plug",
       "name": "declared",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\declared\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\declared\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -8897,7 +8897,7 @@
     {
       "type": "plug",
       "name": "descriptor",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\descriptor\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\descriptor\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -8915,7 +8915,7 @@
     {
       "type": "plug",
       "name": "distribution",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\distribution\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\distribution\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -8933,7 +8933,7 @@
     {
       "type": "plug",
       "name": "for",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\for\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\for\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -8951,7 +8951,7 @@
     {
       "type": "plug",
       "name": "from",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\from\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\from\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -8969,7 +8969,7 @@
     {
       "type": "plug",
       "name": "metasploit3",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\metasploit3\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\metasploit3\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -8987,7 +8987,7 @@
     {
       "type": "plug",
       "name": "name",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\name\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\name\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9005,7 +9005,7 @@
     {
       "type": "plug",
       "name": "named",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\named\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\named\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9023,7 +9023,7 @@
     {
       "type": "plug",
       "name": "namez",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\namez\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\namez\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9041,7 +9041,7 @@
     {
       "type": "plug",
       "name": "nssidebar",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\nssidebar\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\nssidebar\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9059,7 +9059,7 @@
     {
       "type": "plug",
       "name": "outdoorplug",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\outdoorplug\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\outdoorplug\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9071,13 +9071,13 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "outdoorplug"
     },
     {
       "type": "plug",
       "name": "pep440warning",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\pep440warning\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\pep440warning\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9095,7 +9095,7 @@
     {
       "type": "plug",
       "name": "plug",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\plug\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\plug\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9107,13 +9107,13 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "plug"
     },
     {
       "type": "plug",
       "name": "pluginbindings",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\pluginbindings\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\pluginbindings\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9130,8 +9130,8 @@
     },
     {
       "type": "plug",
-      "name": "plugs_tuya_plugs",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\driver.compose.json",
+      "name": "plugs_plugs",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": true,
@@ -9149,7 +9149,7 @@
     {
       "type": "plug",
       "name": "returned",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\returned\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\returned\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9167,7 +9167,7 @@
     {
       "type": "plug",
       "name": "should",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\should\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\should\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9185,7 +9185,7 @@
     {
       "type": "plug",
       "name": "smartplug",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\smartplug\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\smartplug\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9197,13 +9197,13 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "smartplug"
     },
     {
       "type": "plug",
       "name": "smartplug_2_socket",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\smartplug_2_socket\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\smartplug_2_socket\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9215,13 +9215,13 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "smartplug_2_socket"
     },
     {
       "type": "plug",
       "name": "smartplug_2_socket_driver",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\smartplug_2_socket_driver\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\smartplug_2_socket_driver\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9239,7 +9239,7 @@
     {
       "type": "plug",
       "name": "the",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\the\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\the\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9257,7 +9257,7 @@
     {
       "type": "plug",
       "name": "to",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\to\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\to\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9275,7 +9275,7 @@
     {
       "type": "plug",
       "name": "unpickleableexception",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\unpickleableexception\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\unpickleableexception\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9293,7 +9293,7 @@
     {
       "type": "plug",
       "name": "wdf_class_bind_info",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\wdf_class_bind_info\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\wdf_class_bind_info\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9311,7 +9311,7 @@
     {
       "type": "plug",
       "name": "will",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_plugs\\will\\driver.compose.json",
+      "path": "drivers\\tuya\\plugs\\plugs_plugs\\will\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9329,7 +9329,7 @@
     {
       "type": "sensor",
       "name": "analoginputcluster",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\analoginputcluster\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\analoginputcluster\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9347,7 +9347,7 @@
     {
       "type": "sensor",
       "name": "binaryinputcluster",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\binaryinputcluster\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\binaryinputcluster\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9365,7 +9365,7 @@
     {
       "type": "sensor",
       "name": "doorwindowsensor",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\doorwindowsensor\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\doorwindowsensor\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9383,7 +9383,7 @@
     {
       "type": "sensor",
       "name": "doorwindowsensor_3",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\doorwindowsensor_3\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\doorwindowsensor_3\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9401,7 +9401,7 @@
     {
       "type": "sensor",
       "name": "doorwindowsensor_4",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\doorwindowsensor_4\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\doorwindowsensor_4\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9413,13 +9413,13 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ": ",
+      "manufacturer": ":",
       "model": "doorwindowsensor_4"
     },
     {
       "type": "sensor",
       "name": "doorwindowsensor2",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\doorwindowsensor2\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\doorwindowsensor2\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9437,7 +9437,7 @@
     {
       "type": "sensor",
       "name": "floodsensor",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\floodsensor\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\floodsensor\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9455,7 +9455,7 @@
     {
       "type": "sensor",
       "name": "lcdtemphumidluxsensor",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\lcdtemphumidluxsensor\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\lcdtemphumidluxsensor\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9467,13 +9467,13 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ": ",
+      "manufacturer": ":",
       "model": "lcdtemphumidluxsensor"
     },
     {
       "type": "sensor",
       "name": "lcdtemphumidsensor",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\lcdtemphumidsensor\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\lcdtemphumidsensor\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9491,7 +9491,7 @@
     {
       "type": "sensor",
       "name": "lcdtemphumidsensor2",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\lcdtemphumidsensor2\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\lcdtemphumidsensor2\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9503,13 +9503,13 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ": ",
+      "manufacturer": ":",
       "model": "lcdtemphumidsensor2"
     },
     {
       "type": "sensor",
       "name": "motion_sensor",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\motion_sensor\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\motion_sensor\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9521,13 +9521,13 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ": ",
+      "manufacturer": ":",
       "model": "motion_sensor"
     },
     {
       "type": "sensor",
       "name": "multistateinputcluster",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\multistateinputcluster\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\multistateinputcluster\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9545,7 +9545,7 @@
     {
       "type": "sensor",
       "name": "multistatevaluecluster",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\multistatevaluecluster\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\multistatevaluecluster\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9563,7 +9563,7 @@
     {
       "type": "sensor",
       "name": "occupancysensing",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\occupancysensing\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\occupancysensing\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9581,7 +9581,7 @@
     {
       "type": "sensor",
       "name": "pir_sensor_2",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\pir_sensor_2\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\pir_sensor_2\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9599,7 +9599,7 @@
     {
       "type": "sensor",
       "name": "pirsensor",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\pirsensor\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\pirsensor\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9617,7 +9617,7 @@
     {
       "type": "sensor",
       "name": "said",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\said\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\said\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9647,13 +9647,13 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ": [\n ",
+      "manufacturer": ": [",
       "model": "TS0601"
     },
     {
       "type": "sensor",
-      "name": "sensors_tuya_sensors",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\driver.compose.json",
+      "name": "sensors_sensors",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9665,13 +9665,13 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ": [\n ",
+      "manufacturer": ": [",
       "model": "TS0601"
     },
     {
       "type": "sensor",
-      "name": "sensors_tuya_tuya",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_tuya\\driver.compose.json",
+      "name": "sensors_tuya",
+      "path": "drivers\\tuya\\sensors\\sensors_tuya\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9685,7 +9685,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ": ",
+      "manufacturer": ":",
       "model": "motion_sensor_2"
     },
     {
@@ -9728,7 +9728,7 @@
     {
       "type": "sensor",
       "name": "slimmotionsensor",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\slimmotionsensor\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\slimmotionsensor\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9746,7 +9746,7 @@
     {
       "type": "sensor",
       "name": "smart_motion_sensor",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\smart_motion_sensor\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\smart_motion_sensor\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9758,13 +9758,13 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ": ",
+      "manufacturer": ":",
       "model": "smart_motion_sensor"
     },
     {
       "type": "sensor",
       "name": "smoke_sensor",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\smoke_sensor\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\smoke_sensor\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9776,13 +9776,13 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "smoke_sensor"
     },
     {
       "type": "sensor",
       "name": "temphumidsensor",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\temphumidsensor\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\temphumidsensor\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9800,7 +9800,7 @@
     {
       "type": "sensor",
       "name": "temphumidsensor2",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\temphumidsensor2\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\temphumidsensor2\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9818,7 +9818,7 @@
     {
       "type": "sensor",
       "name": "temphumidsensor3",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\temphumidsensor3\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\temphumidsensor3\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9836,7 +9836,7 @@
     {
       "type": "sensor",
       "name": "tuyawaterleaksensor",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\tuyawaterleaksensor\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\tuyawaterleaksensor\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9848,13 +9848,13 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "tuyawaterleaksensor"
     },
     {
       "type": "sensor",
       "name": "waterdetector",
-      "path": "drivers\\tuya\\sensors\\sensors_tuya_sensors\\waterdetector\\driver.compose.json",
+      "path": "drivers\\tuya\\sensors\\sensors_sensors\\waterdetector\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -9866,13 +9866,13 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ": ",
+      "manufacturer": ":",
       "model": "waterdetector"
     },
     {
       "type": "socket",
-      "name": "plugs_tuya_ts011f",
-      "path": "drivers\\tuya\\plugs\\plugs_tuya_ts011f\\driver.compose.json",
+      "name": "plugs",
+      "path": "drivers\\tuya\\plugs\\plugs\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": true,
@@ -10155,7 +10155,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "dimmer_1_gang_tuya"
     },
     {
@@ -10173,7 +10173,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "dimmer_2_gang_tuya"
     },
     {
@@ -10245,7 +10245,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "fingerbottuya"
     },
     {
@@ -10803,7 +10803,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "radarsensor2"
     },
     {
@@ -10839,7 +10839,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "relay_board_1_channel"
     },
     {
@@ -10857,7 +10857,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "relay_board_2_channel"
     },
     {
@@ -10875,7 +10875,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "relay_board_4_channel"
     },
     {
@@ -11001,7 +11001,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ": ",
+      "manufacturer": ":",
       "model": "smart_door_window_sensor"
     },
     {
@@ -11037,7 +11037,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "smart_switch"
     },
     {
@@ -11055,7 +11055,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "soilsensor2"
     },
     {
@@ -11127,7 +11127,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "switch_1_gang"
     },
     {
@@ -11235,7 +11235,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ": [\n ",
+      "manufacturer": ": [",
       "model": "TS0601"
     },
     {
@@ -11258,8 +11258,8 @@
     },
     {
       "type": "switch",
-      "name": "switches_tuya_ts0044",
-      "path": "drivers\\tuya\\switches\\switches_tuya_ts0044\\driver.compose.json",
+      "name": "switches",
+      "path": "drivers\\tuya\\switches\\switches\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -11291,7 +11291,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "temphumidsensor4"
     },
     {
@@ -11435,7 +11435,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "wall_dimmer_tuya"
     },
     {
@@ -11471,7 +11471,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ": ",
+      "manufacturer": ":",
       "model": "wall_remote_4_gang_3"
     },
     {
@@ -11507,7 +11507,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ", ",
+      "manufacturer": ",",
       "model": "wall_switch_1_gang_tuya"
     },
     {
@@ -11651,7 +11651,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ": ",
+      "manufacturer": ":",
       "model": "wallthermostatdevice"
     },
     {
@@ -11759,7 +11759,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": ": [\n ",
+      "manufacturer": ": [",
       "model": "TS0601"
     },
     {
@@ -11782,8 +11782,8 @@
     },
     {
       "type": "thermostat",
-      "name": "thermostats_tuya_tuya",
-      "path": "drivers\\tuya\\thermostats\\thermostats_tuya_tuya\\driver.compose.json",
+      "name": "thermostats_tuya",
+      "path": "drivers\\tuya\\thermostats\\thermostats_tuya\\driver.compose.json",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -11795,7 +11795,7 @@
         "genBasic",
         "genOnOff"
       ],
-      "manufacturer": "_TZE200_FEIT",
+      "manufacturer": "TZE200_FEIT",
       "model": "feit"
     }
   ]

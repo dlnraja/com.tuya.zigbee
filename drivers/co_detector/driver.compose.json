@@ -1,45 +1,45 @@
 {
+  "id": "co_detector",
   "name": {
-    "en": "CO Detector",
-    "fr": "Détecteur CO",
-    "nl": "CO Detector",
-    "de": "CO Melder"
+    "en": "Carbon Monoxide Detector"
   },
   "class": "sensor",
   "capabilities": [
     "alarm_co",
-    "measure_battery",
-    "alarm_tamper"
+    "measure_battery"
   ],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_26fmupbb",
-      "_TZ3000_2od9rsmr",
-      "_TZ3000_4ejm8dfy",
-      "_TZ3000_5cj3tgmb",
-      "_TZ3000_7d9ghfkl",
-      "_TZ3000_a6iuj7pc",
-      "_TZ3000_b27vqtv5",
-      "_TZ3000_eorqjfqo",
-      "_TZ3000_tkfpyqhj",
-      "_TZE200_3iu2bjlp",
-      "_TZE200_rccxox8p"
+      "_TZ3000_",
+      "_TZE200_",
+      "_TYZB01_",
+      "TUYA",
+      "Smart Home"
     ],
     "productId": [
-      "TS0205",
-      "TS0601"
+      "TS0001",
+      "TS0011",
+      "TS0012",
+      "TS004F",
+      "TS011F",
+      "TS0121",
+      "TS013F"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          1280
-        ],
-        "bindings": [
-          1,
-          1280
+          "basic",
+          "powerConfiguration",
+          "identify",
+          "iasZone",
+          "carbonMonoxideMeasurement"
         ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/co_detector/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your Carbon Monoxide Detector for 3 seconds until the LED starts blinking rapidly."
       }
     }
   },
@@ -47,23 +47,12 @@
     "small": "/drivers/co_detector/assets/images/small.png",
     "large": "/drivers/co_detector/assets/images/large.png"
   },
-  "pair": [
+  "settings": [
     {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-        "next": "add_devices"
-      }
-    },
-    {
-      "id": "add_devices",
-      "template": "add_devices"
+      "id": "co_sensitivity",
+      "type": "dropdown",
+      "label": "CO Sensitivity",
+      "value": "high"
     }
-  ],
-  "energy": {
-    "batteries": [
-      "INTERNAL"
-    ]
-  },
-  "id": "co_detector"
+  ]
 }

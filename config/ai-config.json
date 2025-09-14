@@ -54,7 +54,12 @@
     "optimization": "Analyse ce code pour identifier les opportunités d'optimisation de performance et de consommation mémoire. Propose des améliorations concrètes."
   },
   "validation": {
-    "required_fields": ["id", "class", "name", "capabilities"],
+    "required_fields": [
+      "id",
+      "class",
+      "name",
+      "capabilities"
+    ],
     "forbidden_patterns": [
       "eval\\(",
       "Function\\(",

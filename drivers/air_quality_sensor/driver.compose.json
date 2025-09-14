@@ -1,47 +1,46 @@
 {
   "id": "air_quality_sensor",
   "name": {
-    "en": "Air Quality Monitor",
-    "fr": "Moniteur Qualité Air",
-    "nl": "Luchtkwaliteit Monitor",
-    "de": "Luftqualität Monitor"
+    "en": "Air Quality Sensor"
   },
   "class": "sensor",
   "capabilities": [
-    "measure_co2",
     "measure_pm25",
-    "measure_temperature",
-    "measure_humidity"
+    "measure_formaldehyde",
+    "measure_battery"
   ],
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_3ejwq3mg",
-      "_TZE200_8ygsuhe1",
-      "_TZE200_9cxuhakf",
-      "_TZE200_amydvlhx",
-      "_TZE200_cf1sl3tj",
-      "_TZE200_dwcarsat",
-      "_TZE200_kz7frocf",
-      "_TZE200_lsanae15",
-      "_TZE200_mja3fuja",
-      "_TZE200_ogkdpgy2",
-      "_TZE200_ryfmq5rl",
-      "_TZE200_yvx5lh6k"
+      "_TZ3000_",
+      "_TZE200_",
+      "_TYZB01_",
+      "TUYA",
+      "Smart Home"
     ],
     "productId": [
-      "TS0601"
+      "TS0001",
+      "TS0011",
+      "TS0012",
+      "TS004F",
+      "TS011F",
+      "TS0121",
+      "TS013F"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          4,
-          5,
-          61184
-        ],
-        "bindings": [
-          0
+          "basic",
+          "powerConfiguration",
+          "identify",
+          "pm25Measurement",
+          "formaldehydeMeasurement"
         ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/air_quality_sensor/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your Air Quality Sensor for 3 seconds until the LED starts blinking rapidly."
       }
     }
   },
@@ -49,17 +48,12 @@
     "small": "/drivers/air_quality_sensor/assets/images/small.png",
     "large": "/drivers/air_quality_sensor/assets/images/large.png"
   },
-  "pair": [
+  "settings": [
     {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-        "next": "add_devices"
-      }
-    },
-    {
-      "id": "add_devices",
-      "template": "add_devices"
+      "id": "air_quality_threshold",
+      "type": "number",
+      "label": "Air Quality Alert Threshold",
+      "value": 35
     }
   ]
 }

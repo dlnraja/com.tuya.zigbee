@@ -1,64 +1,46 @@
 {
+  "id": "contact_sensor",
   "name": {
-    "en": "Door & Window Sensor",
-    "fr": "Capteur Porte et Fenêtre",
-    "nl": "Deur & Raam Sensor",
-    "de": "Tür & Fenster Sensor"
+    "en": "Contact Sensor"
   },
   "class": "sensor",
   "capabilities": [
     "alarm_contact",
-    "measure_battery"
+    "measure_battery",
+    "measure_temperature"
   ],
-  "capabilitiesOptions": {
-    "alarm_contact": {
-      "title": {
-        "en": "Contact",
-        "fr": "Contact",
-        "nl": "Contact",
-        "de": "Kontakt"
-      }
-    }
-  },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_26fmupbb",
-      "_TZ3000_2mbfxlzr",
-      "_TZ3000_3mfplgv6",
-      "_TZ3000_4uuaja4a",
-      "_TZ3000_gdvxyasq",
-      "_TZ3000_gmhrtaac",
-      "_TZ3000_jqliswuk",
-      "_TZ3000_kmhipd6k",
-      "_TZ3000_kmyg4l5w",
-      "_TZ3000_n2egfsli",
-      "_TZ3000_ox0xvqqr",
-      "_TZ3000_plv4vtwk",
-      "_TZ3000_xrgxkyvz",
-      "_TZ3000_yoqmkwpd",
-      "_TZ3000_zlrrr7z3",
-      "_TZE200_7hfcudw5",
-      "_TZE200_cirvgep4",
-      "_TZE200_kfvq6avy",
-      "_TZE200_locansqn",
-      "_TZE200_pay2byax",
-      "_TZE200_ztc6ggyl"
+      "_TZ3000_",
+      "_TZE200_",
+      "_TYZB01_",
+      "TUYA",
+      "Smart Home"
     ],
     "productId": [
-      "TS0203",
-      "TS0601"
+      "TS0001",
+      "TS0011",
+      "TS0012",
+      "TS004F",
+      "TS011F",
+      "TS0121",
+      "TS013F"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          1280
-        ],
-        "bindings": [
-          1,
-          1280
+          "basic",
+          "powerConfiguration",
+          "identify",
+          "iasZone",
+          "temperatureMeasurement"
         ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/contact_sensor/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your Contact Sensor for 3 seconds until the LED starts blinking rapidly."
       }
     }
   },
@@ -66,23 +48,18 @@
     "small": "/drivers/contact_sensor/assets/images/small.png",
     "large": "/drivers/contact_sensor/assets/images/large.png"
   },
-  "pair": [
+  "settings": [
     {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-        "next": "add_devices"
-      }
+      "id": "invert_contact",
+      "type": "checkbox",
+      "label": "Invert Contact State",
+      "value": false
     },
     {
-      "id": "add_devices",
-      "template": "add_devices"
+      "id": "tamper_detection",
+      "type": "checkbox",
+      "label": "Enable Tamper Detection",
+      "value": true
     }
-  ],
-  "energy": {
-    "batteries": [
-      "INTERNAL"
-    ]
-  },
-  "id": "contact_sensor"
+  ]
 }

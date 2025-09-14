@@ -35,7 +35,7 @@
         "details": "Version: 3.9.4",
         "output": {
           "success": true,
-          "stdout": "3.9.4\n",
+          "stdout": "3.9.4",
           "stderr": "",
           "error": null,
           "code": 0,
@@ -49,7 +49,7 @@
         "details": "Help accessible",
         "output": {
           "success": true,
-          "stdout": "homey.js <command>\n\nCommands:\n  homey.js app       App related commands\n  homey.js docs      Open Homey Developer Documentation\n  homey.js list      List all Homeys\n  homey.js login     Log in with an Athom account\n  homey.js logout    Log out the current user\n  homey.js select    Select a Homey as active\n  homey.js tools     Open Homey Developer Tools\n  homey.js unselect  Unselect the active Homey\n  homey.js whoami    Show the current logged in user\n\nOptions:\n  --version  Show version number                                       [boolean]\n  --help     Show help                                                 [boolean]\n",
+          "stdout": "homey.js <command> Commands: homey.js app App related commands homey.js docs Open Homey Developer Documentation homey.js list List all Homeys homey.js login Log in with an Athom account homey.js logout Log out the current user homey.js select Select a Homey as active homey.js tools Open Homey Developer Tools homey.js unselect Unselect the active Homey homey.js whoami Show the current logged in user Options: --version Show version number [boolean] --help Show help [boolean]",
           "stderr": "",
           "error": null,
           "code": 0,
@@ -63,7 +63,7 @@
         "details": "App commands available",
         "output": {
           "success": true,
-          "stdout": "homey.js app\n\nApp related commands\n\nCommands:\n  homey.js app add-github-workflows  Add GitHub Workflows (validate, update\n                                     version, publish)\n  homey.js app add-types             Install the Apps SDK TypeScript\n                                     declarations\n  homey.js app build                 Build a Homey App for publishing\n  homey.js app compose               Migrate app to Homey compose\n  homey.js app create                Create a new Homey App\n  homey.js app discovery             Discovery related commands\n  homey.js app driver                Driver related commands\n  homey.js app flow                  Flow related commands\n  homey.js app install               Install a Homey App\n  homey.js app manage                View your app in the Homey Developer Tools\n  homey.js app publish               Publish a Homey App to the Homey Apps Store\n  homey.js app run                   Run a Homey App in development mode\n  homey.js app translate             Translate a Homey App with OpenAI\n  homey.js app validate              Validate a Homey App\n  homey.js app version <next>        Update a Homey App's version\n  homey.js app view                  View your app in the Homey App Store\n  homey.js app widget                Widget related commands\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n",
+          "stdout": "homey.js app App related commands Commands: homey.js app add-github-workflows Add GitHub Workflows (validate, update version, publish) homey.js app add-types Install the Apps SDK TypeScript declarations homey.js app build Build a Homey App for publishing homey.js app compose Migrate app to Homey compose homey.js app create Create a new Homey App homey.js app discovery Discovery related commands homey.js app driver Driver related commands homey.js app flow Flow related commands homey.js app install Install a Homey App homey.js app manage View your app in the Homey Developer Tools homey.js app publish Publish a Homey App to the Homey Apps Store homey.js app run Run a Homey App in development mode homey.js app translate Translate a Homey App with OpenAI homey.js app validate Validate a Homey App homey.js app version <next> Update a Homey App's version homey.js app view View your app in the Homey App Store homey.js app widget Widget related commands Options: --version Show version number [boolean] -p, --path Path to a Homey App directory [string] [default: \"C:\\Users\\HP\\Desktop\\repair\"] --help Show help [boolean]",
           "stderr": "",
           "error": null,
           "code": 0,
@@ -77,7 +77,7 @@
         "details": "Logged in as: Dylan Rajasekaram <senetmarne@gmail.com>",
         "output": {
           "success": true,
-          "stdout": "Dylan Rajasekaram <senetmarne@gmail.com>\n",
+          "stdout": "Dylan Rajasekaram <senetmarne@gmail.com>",
           "stderr": "",
           "error": null,
           "code": 0,
@@ -107,7 +107,7 @@
           "compatibility": ">=8.0.0",
           "driversCount": 42
         },
-        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\app.json"
+        "path": "C:\\Users\\HP\\Desktop\\repair\\app.json"
       },
       {
         "test": "Node.js package manifest (package.json)",
@@ -119,7 +119,7 @@
           "version": "2.1.0",
           "hasHomeyDep": true
         },
-        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\package.json"
+        "path": "C:\\Users\\HP\\Desktop\\repair\\package.json"
       },
       {
         "test": "Main app entry point (app.js)",
@@ -127,7 +127,7 @@
         "critical": true,
         "details": "File exists",
         "additionalInfo": null,
-        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\app.js"
+        "path": "C:\\Users\\HP\\Desktop\\repair\\app.js"
       },
       {
         "test": "Homey compose manifest (.homeycompose/app.json)",
@@ -135,7 +135,7 @@
         "critical": false,
         "details": "File exists",
         "additionalInfo": null,
-        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\.homeycompose\\app.json"
+        "path": "C:\\Users\\HP\\Desktop\\repair\\.homeycompose\\app.json"
       },
       {
         "test": "Drivers directory (drivers)",
@@ -143,7 +143,7 @@
         "critical": false,
         "details": "File exists",
         "additionalInfo": null,
-        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers"
+        "path": "C:\\Users\\HP\\Desktop\\repair\\drivers"
       },
       {
         "test": "Assets directory (assets)",
@@ -151,7 +151,7 @@
         "critical": false,
         "details": "File exists",
         "additionalInfo": null,
-        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\assets"
+        "path": "C:\\Users\\HP\\Desktop\\repair\\assets"
       },
       {
         "test": "File Permissions",
@@ -167,7 +167,7 @@
         "details": "Internet accessible",
         "output": {
           "success": true,
-          "stdout": "\r\nEnvoi d'une requ�te 'ping' sur google.com [2a00:1450:4007:80d::200e] avec 32 octets de donn�es�:\r\nR�ponse de 2a00:1450:4007:80d::200e�: temps=8 ms \r\n\r\nStatistiques Ping pour 2a00:1450:4007:80d::200e:\r\n    Paquets�: envoy�s = 1, re�us = 1, perdus = 0 (perte 0%),\r\nDur�e approximative des boucles en millisecondes :\r\n    Minimum = 8ms, Maximum = 8ms, Moyenne = 8ms\r\n",
+          "stdout": "Envoi d'une requ�te 'ping' sur google.com [2a00:1450:4007:80d::200e] avec 32 octets de donn�es�: R�ponse de 2a00:1450:4007:80d::200e�: temps=8 ms Statistiques Ping pour 2a00:1450:4007:80d::200e: Paquets�: envoy�s = 1, re�us = 1, perdus = 0 (perte 0%), Dur�e approximative des boucles en millisecondes : Minimum = 8ms, Maximum = 8ms, Moyenne = 8ms",
           "stderr": "",
           "error": null,
           "code": 0,
@@ -181,9 +181,9 @@
         "details": "Cannot reach Homey Cloud",
         "output": {
           "success": false,
-          "stdout": "La requ�te Ping n'a pas pu trouver l'h�te cloud.athom.com. V�rifiez le nom et essayez � nouveau.\r\n",
+          "stdout": "La requ�te Ping n'a pas pu trouver l'h�te cloud.athom.com. V�rifiez le nom et essayez � nouvwater.",
           "stderr": "",
-          "error": "Command failed: ping -n 1 cloud.athom.com\n",
+          "error": "Command failed: ping -n 1 cloud.athom.com",
           "code": 1,
           "signal": null,
           "command": "ping -n 1 cloud.athom.com"
@@ -195,8 +195,8 @@
         "details": "DNS working",
         "output": {
           "success": true,
-          "stdout": "Serveur :   dns3.proxad.net\r\nAddress:  2a01:e00::2\r\n\r\nNom :    athom.com\r\nAddresses:  52.31.167.191\r\n\t  52.48.120.199\r\n\r\n",
-          "stderr": "R�ponse ne faisant pas autorit� :\r\r\n",
+          "stdout": "Serveur : dns3.proxad.net Address: 2a01:e00::2 Nom : athom.com Addresses: 52.31.167.191 52.48.120.199",
+          "stderr": "R�ponse ne faisant pas autorit� :",
           "error": null,
           "code": 0,
           "signal": null,
@@ -211,12 +211,12 @@
       "test": "App info test",
       "command": "homey app info",
       "success": false,
-      "details": "Command failed: homey app info\nhomey.js app\n\nApp related commands\n\nCommands:\n  homey.js app add-github-workflows  Add GitHub Workflows (validate, update\n                                     version, publish)\n  homey.js app add-types             Install the Apps SDK TypeScript\n                                     declarations\n  homey.js app build                 Build a Homey App for publishing\n  homey.js app compose               Migrate app to Homey compose\n  homey.js app create                Create a new Homey App\n  homey.js app discovery             Discovery related commands\n  homey.js app driver                Driver related commands\n  homey.js app flow                  Flow related commands\n  homey.js app install               Install a Homey App\n  homey.js app manage                View your app in the Homey Developer Tools\n  homey.js app publish               Publish a Homey App to the Homey Apps Store\n  homey.js app run                   Run a Homey App in development mode\n  homey.js app translate             Translate a Homey App with OpenAI\n  homey.js app validate              Validate a Homey App\n  homey.js app version <next>        Update a Homey App's version\n  homey.js app view                  View your app in the Homey App Store\n  homey.js app widget                Widget related commands\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n\nUnknown argument: info\n",
+      "details": "Command failed: homey app info homey.js app App related commands Commands: homey.js app add-github-workflows Add GitHub Workflows (validate, update version, publish) homey.js app add-types Install the Apps SDK TypeScript declarations homey.js app build Build a Homey App for publishing homey.js app compose Migrate app to Homey compose homey.js app create Create a new Homey App homey.js app discovery Discovery related commands homey.js app driver Driver related commands homey.js app flow Flow related commands homey.js app install Install a Homey App homey.js app manage View your app in the Homey Developer Tools homey.js app publish Publish a Homey App to the Homey Apps Store homey.js app run Run a Homey App in development mode homey.js app translate Translate a Homey App with OpenAI homey.js app validate Validate a Homey App homey.js app version <next> Update a Homey App's version homey.js app view View your app in the Homey App Store homey.js app widget Widget related commands Options: --version Show version number [boolean] -p, --path Path to a Homey App directory [string] [default: \"C:\\Users\\HP\\Desktop\\repair\"] --help Show help [boolean] Unknown argument: info",
       "output": {
         "success": false,
         "stdout": "",
-        "stderr": "homey.js app\n\nApp related commands\n\nCommands:\n  homey.js app add-github-workflows  Add GitHub Workflows (validate, update\n                                     version, publish)\n  homey.js app add-types             Install the Apps SDK TypeScript\n                                     declarations\n  homey.js app build                 Build a Homey App for publishing\n  homey.js app compose               Migrate app to Homey compose\n  homey.js app create                Create a new Homey App\n  homey.js app discovery             Discovery related commands\n  homey.js app driver                Driver related commands\n  homey.js app flow                  Flow related commands\n  homey.js app install               Install a Homey App\n  homey.js app manage                View your app in the Homey Developer Tools\n  homey.js app publish               Publish a Homey App to the Homey Apps Store\n  homey.js app run                   Run a Homey App in development mode\n  homey.js app translate             Translate a Homey App with OpenAI\n  homey.js app validate              Validate a Homey App\n  homey.js app version <next>        Update a Homey App's version\n  homey.js app view                  View your app in the Homey App Store\n  homey.js app widget                Widget related commands\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n\nUnknown argument: info\n",
-        "error": "Command failed: homey app info\nhomey.js app\n\nApp related commands\n\nCommands:\n  homey.js app add-github-workflows  Add GitHub Workflows (validate, update\n                                     version, publish)\n  homey.js app add-types             Install the Apps SDK TypeScript\n                                     declarations\n  homey.js app build                 Build a Homey App for publishing\n  homey.js app compose               Migrate app to Homey compose\n  homey.js app create                Create a new Homey App\n  homey.js app discovery             Discovery related commands\n  homey.js app driver                Driver related commands\n  homey.js app flow                  Flow related commands\n  homey.js app install               Install a Homey App\n  homey.js app manage                View your app in the Homey Developer Tools\n  homey.js app publish               Publish a Homey App to the Homey Apps Store\n  homey.js app run                   Run a Homey App in development mode\n  homey.js app translate             Translate a Homey App with OpenAI\n  homey.js app validate              Validate a Homey App\n  homey.js app version <next>        Update a Homey App's version\n  homey.js app view                  View your app in the Homey App Store\n  homey.js app widget                Widget related commands\n\nOptions:\n      --version  Show version number                                   [boolean]\n  -p, --path     Path to a Homey App directory\n                           [string] [default: \"C:\\Users\\HP\\Desktop\\tuya_repair\"]\n      --help     Show help                                             [boolean]\n\nUnknown argument: info\n",
+        "stderr": "homey.js app App related commands Commands: homey.js app add-github-workflows Add GitHub Workflows (validate, update version, publish) homey.js app add-types Install the Apps SDK TypeScript declarations homey.js app build Build a Homey App for publishing homey.js app compose Migrate app to Homey compose homey.js app create Create a new Homey App homey.js app discovery Discovery related commands homey.js app driver Driver related commands homey.js app flow Flow related commands homey.js app install Install a Homey App homey.js app manage View your app in the Homey Developer Tools homey.js app publish Publish a Homey App to the Homey Apps Store homey.js app run Run a Homey App in development mode homey.js app translate Translate a Homey App with OpenAI homey.js app validate Validate a Homey App homey.js app version <next> Update a Homey App's version homey.js app view View your app in the Homey App Store homey.js app widget Widget related commands Options: --version Show version number [boolean] -p, --path Path to a Homey App directory [string] [default: \"C:\\Users\\HP\\Desktop\\repair\"] --help Show help [boolean] Unknown argument: info",
+        "error": "Command failed: homey app info homey.js app App related commands Commands: homey.js app add-github-workflows Add GitHub Workflows (validate, update version, publish) homey.js app add-types Install the Apps SDK TypeScript declarations homey.js app build Build a Homey App for publishing homey.js app compose Migrate app to Homey compose homey.js app create Create a new Homey App homey.js app discovery Discovery related commands homey.js app driver Driver related commands homey.js app flow Flow related commands homey.js app install Install a Homey App homey.js app manage View your app in the Homey Developer Tools homey.js app publish Publish a Homey App to the Homey Apps Store homey.js app run Run a Homey App in development mode homey.js app translate Translate a Homey App with OpenAI homey.js app validate Validate a Homey App homey.js app version <next> Update a Homey App's version homey.js app view View your app in the Homey App Store homey.js app widget Widget related commands Options: --version Show version number [boolean] -p, --path Path to a Homey App directory [string] [default: \"C:\\Users\\HP\\Desktop\\repair\"] --help Show help [boolean] Unknown argument: info",
         "code": 1,
         "signal": null,
         "command": "homey app info"

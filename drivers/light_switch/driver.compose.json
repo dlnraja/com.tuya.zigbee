@@ -1,68 +1,59 @@
 {
   "id": "light_switch",
   "name": {
-    "en": "Light Switch",
-    "fr": "Interrupteur Lumière",
-    "nl": "Lichtschakelaar",
-    "de": "Lichtschalter"
+    "en": "Light Switch"
   },
   "class": "light",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "dim"
   ],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_49qchf10",
-      "_TZ3000_4whigl8y",
-      "_TZ3000_8nkb7mof",
-      "_TZ3000_9cpuaca6",
-      "_TZ3000_cfnprab5",
-      "_TZ3000_cphmq0q7",
-      "_TZ3000_ew3ldmgx",
-      "_TZ3000_ji4araar",
-      "_TZ3000_lupfd8hb",
-      "_TZ3000_mraovvmm",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_nkkl7uzv",
-      "_TZ3000_nnwehhst",
-      "_TZ3000_oborybow",
-      "_TZ3000_odzoiova",
-      "_TZ3000_pmvbt5hh",
-      "_TZ3000_qeuvnohg",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_ss98ec5d",
-      "_TZ3000_vjhcenzo",
-      "_TZ3000_vjukn4mv",
-      "_TZ3000_vp6clf9d",
-      "_TZ3000_vzopcetz",
-      "_TZ3000_w0qqde0g",
-      "_TZ3000_xabckq1v",
-      "_TZ3000_ypgri8yz"
+      "_TZ3000_",
+      "_TZE200_",
+      "_TYZB01_",
+      "TUYA",
+      "Smart Home"
     ],
     "productId": [
       "TS0001",
-      "TS0002",
-      "TS0003",
       "TS0011",
       "TS0012",
-      "TS0013",
-      "TS110F",
-      "TS1111"
+      "TS004F",
+      "TS011F",
+      "TS0121",
+      "TS013F"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          6
-        ],
-        "bindings": [
-          6
+          "basic",
+          "identify",
+          "groups",
+          "scenes",
+          "onOff",
+          "levelControl"
         ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/light_switch/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your Light Switch for 3 seconds until the LED starts blinking rapidly."
       }
     }
   },
   "images": {
     "small": "/drivers/light_switch/assets/images/small.png",
     "large": "/drivers/light_switch/assets/images/large.png"
-  }
+  },
+  "settings": [
+    {
+      "id": "transition_time",
+      "type": "number",
+      "label": "Transition Time (seconds)",
+      "value": 1
+    }
+  ]
 }

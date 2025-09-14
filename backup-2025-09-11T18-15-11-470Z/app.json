@@ -1,5 +1,5 @@
 {
-  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "main": "app.js",
   "id": "com.dlnraja.ultimate.zigbee.hub",
   "version": "4.0.1",
@@ -25,7 +25,7 @@
   },
   "contributors": {},
   "support": "mailto:dylan.rajasekaram@gmail.com",
-  "homepage": "https://github.com/dlnraja/tuya_repair",
+  "homepage": "https://github.com/dlnraja/repair",
   "license": "MIT",
   "platforms": [
     "local"

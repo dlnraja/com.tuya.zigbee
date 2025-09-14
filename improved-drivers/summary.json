@@ -4,7 +4,7 @@
   "drivers": [
     {
       "model": "TS0121",
-      "driver": "tuya_ts0121",
+      "driver": "ts0121",
       "capabilities": [
         "onoff",
         "measure_power",
@@ -13,7 +13,7 @@
     },
     {
       "model": "TS0201",
-      "driver": "tuya_ts0201",
+      "driver": "ts0201",
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
@@ -23,17 +23,17 @@
     },
     {
       "model": "TS0215A",
-      "driver": "tuya_ts0215a",
+      "driver": "ts0215a",
       "capabilities": []
     },
     {
       "model": "TS0012",
-      "driver": "tuya_ts0012",
+      "driver": "ts0012",
       "capabilities": []
     },
     {
       "model": "TS0501B",
-      "driver": "tuya_ts0501b",
+      "driver": "ts0501b",
       "capabilities": [
         "onoff",
         "dim",
@@ -43,7 +43,7 @@
     },
     {
       "model": "TS004F",
-      "driver": "tuya_ts004f",
+      "driver": "ts004f",
       "capabilities": [
         "button",
         "measure_battery",
@@ -52,7 +52,7 @@
     },
     {
       "model": "TS011F",
-      "driver": "tuya_ts011f",
+      "driver": "ts011f",
       "capabilities": [
         "onoff",
         "usb_onoff",
@@ -64,22 +64,22 @@
     },
     {
       "model": "TS0219",
-      "driver": "tuya_ts0219",
+      "driver": "ts0219",
       "capabilities": []
     },
     {
       "model": "TS0601",
-      "driver": "tuya_ts0601",
+      "driver": "ts0601",
       "capabilities": []
     },
     {
       "model": "TS0222",
-      "driver": "tuya_ts0222",
+      "driver": "ts0222",
       "capabilities": []
     },
     {
       "model": "TS0202",
-      "driver": "tuya_ts0202",
+      "driver": "ts0202",
       "capabilities": [
         "alarm_motion",
         "measure_luminance",

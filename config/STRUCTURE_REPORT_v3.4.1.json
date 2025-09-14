@@ -178,13 +178,13 @@
         "tuya-wall-287_device_standard_default",
         "tuya-water-264_plug_standard_default",
         "tuya-water-581_plug_standard_default",
-        "tuya_ac_Ac_Plug",
-        "tuya_ac_Ac_Plug_Standard_Default",
-        "tuya_ac_Aqara_Ac_Plug",
-        "tuya_ac_Aqara_Ac_Plug_Standard_Default",
-        "tuya_ac_Ikea_Ac_Plug",
-        "tuya_ac_Ikea_Ac_Plug_Standard_Default",
-        "tuya_switch_ts0001"
+        "ac_Ac_Plug",
+        "ac_Ac_Plug_Standard_Default",
+        "ac_Aqara_Ac_Plug",
+        "ac_Aqara_Ac_Plug_Standard_Default",
+        "ac_Ikea_Ac_Plug",
+        "ac_Ikea_Ac_Plug_Standard_Default",
+        "switch"
       ]
     },
     "sensor-motion": {
@@ -214,7 +214,7 @@
         "ikea-temperature-892_device_standard_default",
         "ikea-thermostat-128_device_standard_default",
         "ikea-thermostat-39_device_standard_default",
-        "template_tuya_dp_thermostat",
+        "template_dp_thermostat",
         "ts0201_device_standard_default",
         "ts0201_sensor_battery_default",
         "ts0201_standard_standard_default",
@@ -232,7 +232,7 @@
         "tuya-temperature-779_device_standard_default",
         "tuya-thermostat-435_device_standard_default",
         "tuya-thermostat-825_device_standard_default",
-        "tuya_sensor_temp_hum_ts0201"
+        "sensor_temp_hum"
       ]
     },
     "sensor-humidity": {
@@ -465,8 +465,8 @@
         "ikea_standard_standard_default",
         "radar-24g_switch_standard_default",
         "template_device_template_device",
-        "template_tuya_dp_sensor",
-        "template_tuya_dp_switch",
+        "template_dp_sensor",
+        "template_dp_switch",
         "ts004f_device_standard_default",
         "ts004f_standard_standard_default",
         "ts0121_device_standard_default",
@@ -487,10 +487,10 @@
         "ts110f_standard_standard_default",
         "tuya-switch-225_device_standard_default",
         "tuya-switch-549_device_standard_default",
-        "tuya_cover_ts0601",
-        "tuya_device_standard_default",
-        "tuya_generic_standard_default",
-        "tuya_standard_standard_default"
+        "cover",
+        "device_standard_default",
+        "generic_standard_default",
+        "standard_standard_default"
       ]
     }
   },
