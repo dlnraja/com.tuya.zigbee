@@ -122,12 +122,16 @@ jobs:
         CUSTOM_CHANGELOG="${{ github.event.inputs.custom_changelog }}"
         
         if [ -n "$CUSTOM_CHANGELOG" ]; then
-          CHANGELOG="$CUSTOM_CHANGELOG"
+          # Use heredoc format for multiline output
+          {
+            echo 'changelog<<EOF'
+            echo "$CUSTOM_CHANGELOG"
+            echo 'EOF'
+          } >> $GITHUB_OUTPUT
         else
-          CHANGELOG="v1.0.32 - Ultimate Professional Release - Maximum device compatibility with 1500+ devices from 100+ manufacturers. Complete SDK3 compliance with professional Johan Bendz design standards. Enhanced with comprehensive Zigbee clusters, advanced capabilities, intelligent image generation, and performance optimization. Full English localization and robust error handling."
+          echo "changelog=v1.0.32 - Ultimate Professional Release - Maximum device compatibility with 1500+ devices from 100+ manufacturers. Complete SDK3 compliance with professional Johan Bendz design standards. Enhanced with comprehensive Zigbee clusters, advanced capabilities, intelligent image generation, and performance optimization. Full English localization and robust error handling." >> $GITHUB_OUTPUT
         fi
         
-        echo "changelog=$CHANGELOG" >> $GITHUB_OUTPUT
         echo "version_type=$VERSION_TYPE" >> $GITHUB_OUTPUT
         
     - name: 🚀 Automated Publication with Advanced Handling
