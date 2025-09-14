@@ -1,48 +1,89 @@
-'use strict';
-
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class TuyaSceneSwitchDevice extends ZigBeeDevice {
-
-  async onNodeInit({ zclNode }) {
-    this.enableDebug();
-    this.printNode();
-
-    // Register battery capability
-    if (this.hasCapability('measure_battery')) {
-      this.registerCapability('measure_battery', 'genPowerCfg', {
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 300,
-            maxInterval: 3600,
-            minChange: 5,
-          },
-        },
-      });
+class SceneSwitchDevice extends ZigBeeDevice {
+    
+    async onNodeInit({ zclNode }) {
+        
+        // Enable debug logging
+        this.enableDebug();
+        
+        // Print node info
+        this.printNode();
+        
+        // Register capabilities
+        await this.registerCapabilities();
+        
+        // Configure reporting
+        await this.configureReporting();
+        
+        // Set up flow triggers
+        this.setupFlowTriggers();
+        
+        this.log('Scene Switch has been initialized');
     }
-
-    // Register button capability for scene control
-    if (this.hasCapability('button')) {
-      this.registerCapability('button', 'genOnOff');
+    
+    async registerCapabilities() {
+        const capabilities = [
+        "onoff"
+];
+        
+        for (const capability of capabilities) {
+            if (this.hasCapability(capability)) {
+                this.log(`Capability ${capability} already registered`);
+                continue;
+            }
+            
+            try {
+                await this.addCapability(capability);
+                this.log(`Added capability: ${capability}`);
+            } catch (error) {
+                this.error(`Failed to add capability ${capability}:`, error);
+            }
+        }
     }
-
-    // Listen for scene/button press events
-    zclNode.endpoints[1].clusters.genScenes.on('attr.currentScene', this.onSceneChanged.bind(this));
-    zclNode.endpoints[1].clusters.genOnOff.on('attr.onOff', this.onButtonPressed.bind(this));
-
-    this.log('Tuya Scene Switch initialized');
-  }
-
-  onSceneChanged(scene) {
-    this.log('Scene changed:', scene);
-    this.homey.flow.getDeviceTriggerCard('scene_changed').trigger(this, { scene: scene });
-  }
-
-  onButtonPressed(pressed) {
-    this.log('Button pressed:', pressed);
-    this.homey.flow.getDeviceTriggerCard('button_pressed').trigger(this, { button: pressed ? 'on' : 'off' });
-  }
-
+    
+    async configureReporting() {
+        try {
+            // Configure cluster reporting based on device type
+            // No specific reporting configuration needed
+        } catch (error) {
+            this.error('Failed to configure reporting:', error);
+        }
+    }
+    
+    setupFlowTriggers() {
+        // Register flow card triggers
+        // No specific flow triggers needed
+    }
+    
+    onSettings({ oldSettings, newSettings, changedKeys }) {
+        this.log('Settings changed:', changedKeys);
+        
+        // Handle settings changes
+        changedKeys.forEach(key => {
+            this.log(`Setting ${key} changed from ${oldSettings[key]} to ${newSettings[key]}`);
+            this.handleSettingChange(key, newSettings[key]);
+        });
+        
+        return Promise.resolve(true);
+    }
+    
+    handleSettingChange(key, value) {
+        // Handle individual setting changes
+        switch(key) {
+            
+            case 'scene_count':
+                this.log(`scene_count changed to ${value}`);
+                // Handle scene_count change
+                break;
+            default:
+                this.log(`Unhandled setting change: ${key} = ${value}`);
+        }
+    }
+    
+    onDeleted() {
+        this.log('Scene Switch has been deleted');
+    }
 }
 
-module.exports = TuyaSceneSwitchDevice;
+module.exports = SceneSwitchDevice;

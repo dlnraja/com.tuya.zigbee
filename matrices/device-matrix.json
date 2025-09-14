@@ -35,7 +35,7 @@
   {
     "model": "TS0011",
     "vendor": "Tuya",
-    "description": "1 Gang Switch",
+    "description": "1 gang Switch",
     "capabilities": "on/off",
     "clusters": "0x0006,0x0000",
     "source": "blakadder",
@@ -46,7 +46,7 @@
   {
     "model": "TS0012",
     "vendor": "Tuya",
-    "description": "2 Gang Switch",
+    "description": "2 gang Switch",
     "capabilities": "on/off",
     "clusters": "0x0006,0x0000",
     "source": "blakadder",

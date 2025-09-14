@@ -1,9 +1,7 @@
 {
+  "id": "temperature_humidity_sensor",
   "name": {
-    "en": "Temperature & Humidity Sensor",
-    "fr": "Capteur Température et Humidité",
-    "nl": "Temperatuur & Vochtigheid Sensor",
-    "de": "Temperatur & Feuchtigkeitssensor"
+    "en": "Temperature & Humidity Sensor"
   },
   "class": "sensor",
   "capabilities": [
@@ -11,70 +9,38 @@
     "measure_humidity",
     "measure_battery"
   ],
-  "capabilitiesOptions": {
-    "measure_temperature": {
-      "title": {
-        "en": "Temperature",
-        "fr": "Température",
-        "nl": "Temperatuur",
-        "de": "Temperatur"
-      },
-      "units": "°C"
-    },
-    "measure_humidity": {
-      "title": {
-        "en": "Humidity",
-        "fr": "Humidité",
-        "nl": "Vochtigheid",
-        "de": "Feuchtigkeit"
-      },
-      "units": "%"
-    }
-  },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_02iqnz2p",
-      "_TZ3000_5e3v2inz",
-      "_TZ3000_7d8yme6f",
-      "_TZ3000_8ybe88nf",
-      "_TZ3000_b28wrpvx",
-      "_TZ3000_bguser20",
-      "_TZ3000_bsvqrxru",
-      "_TZ3000_dowj6gyi",
-      "_TZ3000_fie1dpkm",
-      "_TZ3000_fllyghyj",
-      "_TZ3000_i8jfiezr",
-      "_TZ3000_itnrsufe",
-      "_TZ3000_lfa05ajd",
-      "_TZ3000_nlsszmzl",
-      "_TZ3000_qb3zqzdy",
-      "_TZ3000_qemkpaa4",
-      "_TZ3000_rktykq36",
-      "_TZ3000_wyhuocal",
-      "_TZE200_8ygsuhe1",
-      "_TZE200_9yapgbuv",
-      "_TZE200_bjawzodf",
-      "_TZE200_locansqn",
-      "_TZE200_yvx5lh6k",
-      "_TZE200_zl1kmjqx"
+      "_TZ3000_",
+      "_TZE200_",
+      "_TYZB01_",
+      "TUYA",
+      "Smart Home"
     ],
     "productId": [
-      "TS0201",
-      "TS0601"
+      "TS0001",
+      "TS0011",
+      "TS0012",
+      "TS004F",
+      "TS011F",
+      "TS0121",
+      "TS013F"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          1026,
-          1029
-        ],
-        "bindings": [
-          1,
-          1026,
-          1029
+          "basic",
+          "powerConfiguration",
+          "identify",
+          "temperatureMeasurement",
+          "relativeHumidity"
         ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/temperature_humidity_sensor/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your Temperature & Humidity Sensor for 3 seconds until the LED starts blinking rapidly."
       }
     }
   },
@@ -82,23 +48,24 @@
     "small": "/drivers/temperature_humidity_sensor/assets/images/small.png",
     "large": "/drivers/temperature_humidity_sensor/assets/images/large.png"
   },
-  "pair": [
+  "settings": [
     {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-        "next": "add_devices"
-      }
+      "id": "temp_offset",
+      "type": "number",
+      "label": "Temperature Offset (°C)",
+      "value": 0
     },
     {
-      "id": "add_devices",
-      "template": "add_devices"
+      "id": "humidity_offset",
+      "type": "number",
+      "label": "Humidity Offset (%)",
+      "value": 0
+    },
+    {
+      "id": "reporting_interval",
+      "type": "number",
+      "label": "Reporting Interval (minutes)",
+      "value": 5
     }
-  ],
-  "energy": {
-    "batteries": [
-      "INTERNAL"
-    ]
-  },
-  "id": "temperature_humidity_sensor"
+  ]
 }

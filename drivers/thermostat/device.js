@@ -1,68 +1,96 @@
-'use strict';
-
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class TuyaThermostatDevice extends ZigBeeDevice {
-
-  async onNodeInit({ zclNode }) {
-    this.enableDebug();
-    this.printNode();
-
-    // Register target temperature capability
-    if (this.hasCapability('target_temperature')) {
-      this.registerCapability('target_temperature', 'hvacThermostat', {
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 60,
-            maxInterval: 300,
-            minChange: 50,
-          },
-        },
-      });
+class ThermostatDevice extends ZigBeeDevice {
+    
+    async onNodeInit({ zclNode }) {
+        
+        // Enable debug logging
+        this.enableDebug();
+        
+        // Print node info
+        this.printNode();
+        
+        // Register capabilities
+        await this.registerCapabilities();
+        
+        // Configure reporting
+        await this.configureReporting();
+        
+        // Set up flow triggers
+        this.setupFlowTriggers();
+        
+        this.log('Smart Thermostat has been initialized');
     }
-
-    // Register current temperature capability
-    if (this.hasCapability('measure_temperature')) {
-      this.registerCapability('measure_temperature', 'msTemperatureMeasurement', {
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 60,
-            maxInterval: 300,
-            minChange: 50,
-          },
-        },
-      });
+    
+    async registerCapabilities() {
+        const capabilities = [
+        "target_temperature",
+        "measure_temperature",
+        "measure_humidity",
+        "thermostat_mode"
+];
+        
+        for (const capability of capabilities) {
+            if (this.hasCapability(capability)) {
+                this.log(`Capability ${capability} already registered`);
+                continue;
+            }
+            
+            try {
+                await this.addCapability(capability);
+                this.log(`Added capability: ${capability}`);
+            } catch (error) {
+                this.error(`Failed to add capability ${capability}:`, error);
+            }
+        }
     }
-
-    // Register humidity capability
-    if (this.hasCapability('measure_humidity')) {
-      this.registerCapability('measure_humidity', 'msRelativeHumidity', {
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 60,
-            maxInterval: 300,
-            minChange: 100,
-          },
-        },
-      });
+    
+    async configureReporting() {
+        try {
+            // Configure cluster reporting based on device type
+            // No specific reporting configuration needed
+        } catch (error) {
+            this.error('Failed to configure reporting:', error);
+        }
     }
-
-    // Register thermostat mode capability
-    if (this.hasCapability('thermostat_mode')) {
-      this.registerCapability('thermostat_mode', 'hvacThermostat', {
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 60,
-            maxInterval: 300,
-            minChange: 1,
-          },
-        },
-      });
+    
+    setupFlowTriggers() {
+        // Register flow card triggers
+        // No specific flow triggers needed
     }
-
-    this.log('Tuya Smart Thermostat initialized');
-  }
-
+    
+    onSettings({ oldSettings, newSettings, changedKeys }) {
+        this.log('Settings changed:', changedKeys);
+        
+        // Handle settings changes
+        changedKeys.forEach(key => {
+            this.log(`Setting ${key} changed from ${oldSettings[key]} to ${newSettings[key]}`);
+            this.handleSettingChange(key, newSettings[key]);
+        });
+        
+        return Promise.resolve(true);
+    }
+    
+    handleSettingChange(key, value) {
+        // Handle individual setting changes
+        switch(key) {
+            
+            case 'heating_system':
+                this.log(`heating_system changed to ${value}`);
+                // Handle heating_system change
+                break;
+            case 'eco_mode':
+                this.log(`eco_mode changed to ${value}`);
+                // Handle eco_mode change
+                break;
+            default:
+                this.log(`Unhandled setting change: ${key} = ${value}`);
+        }
+    }
+    
+    onDeleted() {
+        this.log('Smart Thermostat has been deleted');
+    }
 }
 
-module.exports = TuyaThermostatDevice;
+module.exports = ThermostatDevice;

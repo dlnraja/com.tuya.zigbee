@@ -1,84 +1,109 @@
-'use strict';
-
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class TuyaSmartLightDevice extends ZigBeeDevice {
-
-  async onNodeInit({ zclNode }) {
+class SmartLightDevice extends ZigBeeDevice {
     
-    // enable debugging
-    this.enableDebug();
-
-    // print the node's info to the console
-    this.printNode();
-
-    // Register onoff capability
-    if (this.hasCapability('onoff')) {
-      this.registerCapability('onoff', 'genOnOff');
+    async onNodeInit({ zclNode }) {
+        
+        // Enable debug logging
+        this.enableDebug();
+        
+        // Print node info
+        this.printNode();
+        
+        // Register capabilities
+        await this.registerCapabilities();
+        
+        // Configure reporting
+        await this.configureReporting();
+        
+        // Set up flow triggers
+        this.setupFlowTriggers();
+        
+        this.log('Smart Light has been initialized');
     }
-
-    // Register dim capability
-    if (this.hasCapability('dim')) {
-      this.registerCapability('dim', 'genLevelCtrl');
+    
+    async registerCapabilities() {
+        const capabilities = [
+        "onoff",
+        "dim"
+];
+        
+        for (const capability of capabilities) {
+            if (this.hasCapability(capability)) {
+                this.log(`Capability ${capability} already registered`);
+                continue;
+            }
+            
+            try {
+                await this.addCapability(capability);
+                this.log(`Added capability: ${capability}`);
+            } catch (error) {
+                this.error(`Failed to add capability ${capability}:`, error);
+            }
+        }
     }
-
-    // Register color temperature capability
-    if (this.hasCapability('light_temperature')) {
-      this.registerCapability('light_temperature', 'lightingColorCtrl', {
-        get: 'colorTempMireds',
-        getOpts: {
-          getOnStart: true,
-        },
-        set: 'colorTempMireds',
-        setParser: value => {
-          const mireds = Math.round(1000000 / (value * 347 + 153));
-          return mireds;
-        },
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 1,
-            maxInterval: 300,
-            minChange: 1,
-          },
-        },
-      });
+    
+    async configureReporting() {
+        try {
+            // Configure cluster reporting based on device type
+            
+            // Configure light reporting
+            await this.zclNode.endpoints[1].clusters.onOff.configureReporting('onOff', {
+                minInterval: 0,
+                maxInterval: 600
+            });
+            
+            if (this.zclNode.endpoints[1].clusters.levelControl) {
+                await this.zclNode.endpoints[1].clusters.levelControl.configureReporting('currentLevel', {
+                    minInterval: 1,
+                    maxInterval: 3600,
+                    minChange: 1
+                });
+            }
+        } catch (error) {
+            this.error('Failed to configure reporting:', error);
+        }
     }
-
-    // Register hue capability
-    if (this.hasCapability('light_hue')) {
-      this.registerCapability('light_hue', 'lightingColorCtrl', {
-        get: 'currentHue',
-        set: 'currentHue',
-        setParser: value => Math.round(value * 254),
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 1,
-            maxInterval: 300,
-            minChange: 1,
-          },
-        },
-      });
+    
+    setupFlowTriggers() {
+        // Register flow card triggers
+        
+        // Light state change triggers
+        this.registerCapabilityListener('onoff', (value) => {
+            this.homey.flow.getDeviceTriggerCard('light_turned_on_off')
+                .trigger(this, {}, { power: value })
+                .catch(this.error);
+        });
     }
-
-    // Register saturation capability
-    if (this.hasCapability('light_saturation')) {
-      this.registerCapability('light_saturation', 'lightingColorCtrl', {
-        get: 'currentSaturation',
-        set: 'currentSaturation',
-        setParser: value => Math.round(value * 254),
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 1,
-            maxInterval: 300,
-            minChange: 1,
-          },
-        },
-      });
+    
+    onSettings({ oldSettings, newSettings, changedKeys }) {
+        this.log('Settings changed:', changedKeys);
+        
+        // Handle settings changes
+        changedKeys.forEach(key => {
+            this.log(`Setting ${key} changed from ${oldSettings[key]} to ${newSettings[key]}`);
+            this.handleSettingChange(key, newSettings[key]);
+        });
+        
+        return Promise.resolve(true);
     }
-
-    this.log('Tuya Smart Light initialized');
-  }
-
+    
+    handleSettingChange(key, value) {
+        // Handle individual setting changes
+        switch(key) {
+            
+            case 'transition_time':
+                this.log(`transition_time changed to ${value}`);
+                // Handle transition_time change
+                break;
+            default:
+                this.log(`Unhandled setting change: ${key} = ${value}`);
+        }
+    }
+    
+    onDeleted() {
+        this.log('Smart Light has been deleted');
+    }
 }
 
-module.exports = TuyaSmartLightDevice;
+module.exports = SmartLightDevice;

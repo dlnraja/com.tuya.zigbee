@@ -644,17 +644,17 @@
         },
         {
           "level": "ERROR",
-          "message": ".tmp_download_analysis\\com.tuya.zigbee-master\\com.tuya.zigbee-master\\drivers\\tuya_zigbee\\models\\ts130f_light_standard_default\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": ".tmp_download_analysis\\com.tuya.zigbee-master\\com.tuya.zigbee-master\\drivers\\zigbee\\models\\ts130f_light_standard_default\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:14.069Z"
         },
         {
           "level": "ERROR",
-          "message": ".tmp_download_analysis\\com.tuya.zigbee-master\\com.tuya.zigbee-master\\drivers\\tuya_zigbee\\models\\tuya_sensor_temp_hum_ts0201\\metadata.json: Expected ',' or '}' after property value in JSON at position 410 (line 15 column 18)",
+          "message": ".tmp_download_analysis\\com.tuya.zigbee-master\\com.tuya.zigbee-master\\drivers\\zigbee\\models\\tuya_sensor_temp_hum\\metadata.json: Expected ',' or '}' after property value in JSON at position 410 (line 15 column 18)",
           "timestamp": "2025-08-15T23:58:14.546Z"
         },
         {
           "level": "ERROR",
-          "message": ".tmp_download_analysis\\com.tuya.zigbee-master\\com.tuya.zigbee-master\\drivers\\tuya_zigbee\\models\\tuya_switch_ts0001\\metadata.json: Expected ',' or '}' after property value in JSON at position 368 (line 15 column 18)",
+          "message": ".tmp_download_analysis\\com.tuya.zigbee-master\\com.tuya.zigbee-master\\drivers\\zigbee\\models\\tuya_switch\\metadata.json: Expected ',' or '}' after property value in JSON at position 368 (line 15 column 18)",
           "timestamp": "2025-08-15T23:58:14.547Z"
         },
         {
@@ -999,27 +999,27 @@
         },
         {
           "level": "ERROR",
-          "message": ".tmp_download_analysis\\com.tuya.zigbee-master (1)\\com.tuya.zigbee-master\\catalog\\other\\tuya\\tuya\\other\\tuya\\tuya_zigbee\\models\\ts130f_light_standard_default\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": ".tmp_download_analysis\\com.tuya.zigbee-master (1)\\com.tuya.zigbee-master\\catalog\\other\\tuya\\tuya\\other\\tuya\\zigbee\\models\\ts130f_light_standard_default\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:16.640Z"
         },
         {
           "level": "ERROR",
-          "message": ".tmp_download_analysis\\com.tuya.zigbee-master (1)\\com.tuya.zigbee-master\\catalog\\other\\tuya\\tuya\\other\\tuya\\tuya_zigbee\\models\\tuya_sensor_temp_hum_ts0201\\metadata.json: Expected ',' or '}' after property value in JSON at position 410 (line 15 column 18)",
+          "message": ".tmp_download_analysis\\com.tuya.zigbee-master (1)\\com.tuya.zigbee-master\\catalog\\other\\tuya\\tuya\\other\\tuya\\zigbee\\models\\tuya_sensor_temp_hum\\metadata.json: Expected ',' or '}' after property value in JSON at position 410 (line 15 column 18)",
           "timestamp": "2025-08-15T23:58:16.828Z"
         },
         {
           "level": "ERROR",
-          "message": ".tmp_download_analysis\\com.tuya.zigbee-master (1)\\com.tuya.zigbee-master\\catalog\\other\\tuya\\tuya\\other\\tuya\\tuya_zigbee\\models\\tuya_switch_ts0001\\metadata.json: Expected ',' or '}' after property value in JSON at position 368 (line 15 column 18)",
+          "message": ".tmp_download_analysis\\com.tuya.zigbee-master (1)\\com.tuya.zigbee-master\\catalog\\other\\tuya\\tuya\\other\\tuya\\zigbee\\models\\tuya_switch\\metadata.json: Expected ',' or '}' after property value in JSON at position 368 (line 15 column 18)",
           "timestamp": "2025-08-15T23:58:16.830Z"
         },
         {
           "level": "ERROR",
-          "message": ".tmp_download_analysis\\com.tuya.zigbee-master (1)\\com.tuya.zigbee-master\\drivers\\tuya_zigbee\\sensor-temp\\tuya_sensor_temp_hum_ts0201\\metadata.json: Expected ',' or '}' after property value in JSON at position 410 (line 15 column 18)",
+          "message": ".tmp_download_analysis\\com.tuya.zigbee-master (1)\\com.tuya.zigbee-master\\drivers\\zigbee\\sensor-temp\\tuya_sensor_temp_hum\\metadata.json: Expected ',' or '}' after property value in JSON at position 410 (line 15 column 18)",
           "timestamp": "2025-08-15T23:58:17.364Z"
         },
         {
           "level": "ERROR",
-          "message": ".tmp_download_analysis\\com.tuya.zigbee-master (1)\\com.tuya.zigbee-master\\drivers\\tuya_zigbee\\switch\\tuya_switch_ts0001\\metadata.json: Expected ',' or '}' after property value in JSON at position 368 (line 15 column 18)",
+          "message": ".tmp_download_analysis\\com.tuya.zigbee-master (1)\\com.tuya.zigbee-master\\drivers\\zigbee\\switch\\tuya_switch\\metadata.json: Expected ',' or '}' after property value in JSON at position 368 (line 15 column 18)",
           "timestamp": "2025-08-15T23:58:17.488Z"
         },
         {
@@ -1364,27 +1364,27 @@
         },
         {
           "level": "ERROR",
-          "message": ".tmp_download_analysis\\com.tuya.zigbee-master (2)\\com.tuya.zigbee-master\\catalog\\other\\tuya\\tuya\\other\\tuya\\tuya_zigbee\\models\\ts130f_light_standard_default\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": ".tmp_download_analysis\\com.tuya.zigbee-master (2)\\com.tuya.zigbee-master\\catalog\\other\\tuya\\tuya\\other\\tuya\\zigbee\\models\\ts130f_light_standard_default\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:18.814Z"
         },
         {
           "level": "ERROR",
-          "message": ".tmp_download_analysis\\com.tuya.zigbee-master (2)\\com.tuya.zigbee-master\\catalog\\other\\tuya\\tuya\\other\\tuya\\tuya_zigbee\\models\\tuya_sensor_temp_hum_ts0201\\metadata.json: Expected ',' or '}' after property value in JSON at position 410 (line 15 column 18)",
+          "message": ".tmp_download_analysis\\com.tuya.zigbee-master (2)\\com.tuya.zigbee-master\\catalog\\other\\tuya\\tuya\\other\\tuya\\zigbee\\models\\tuya_sensor_temp_hum\\metadata.json: Expected ',' or '}' after property value in JSON at position 410 (line 15 column 18)",
           "timestamp": "2025-08-15T23:58:18.966Z"
         },
         {
           "level": "ERROR",
-          "message": ".tmp_download_analysis\\com.tuya.zigbee-master (2)\\com.tuya.zigbee-master\\catalog\\other\\tuya\\tuya\\other\\tuya\\tuya_zigbee\\models\\tuya_switch_ts0001\\metadata.json: Expected ',' or '}' after property value in JSON at position 368 (line 15 column 18)",
+          "message": ".tmp_download_analysis\\com.tuya.zigbee-master (2)\\com.tuya.zigbee-master\\catalog\\other\\tuya\\tuya\\other\\tuya\\zigbee\\models\\tuya_switch\\metadata.json: Expected ',' or '}' after property value in JSON at position 368 (line 15 column 18)",
           "timestamp": "2025-08-15T23:58:18.968Z"
         },
         {
           "level": "ERROR",
-          "message": ".tmp_download_analysis\\com.tuya.zigbee-master (2)\\com.tuya.zigbee-master\\drivers\\tuya_zigbee\\sensor-temp\\tuya_sensor_temp_hum_ts0201\\metadata.json: Expected ',' or '}' after property value in JSON at position 410 (line 15 column 18)",
+          "message": ".tmp_download_analysis\\com.tuya.zigbee-master (2)\\com.tuya.zigbee-master\\drivers\\zigbee\\sensor-temp\\tuya_sensor_temp_hum\\metadata.json: Expected ',' or '}' after property value in JSON at position 410 (line 15 column 18)",
           "timestamp": "2025-08-15T23:58:19.350Z"
         },
         {
           "level": "ERROR",
-          "message": ".tmp_download_analysis\\com.tuya.zigbee-master (2)\\com.tuya.zigbee-master\\drivers\\tuya_zigbee\\switch\\tuya_switch_ts0001\\metadata.json: Expected ',' or '}' after property value in JSON at position 368 (line 15 column 18)",
+          "message": ".tmp_download_analysis\\com.tuya.zigbee-master (2)\\com.tuya.zigbee-master\\drivers\\zigbee\\switch\\tuya_switch\\metadata.json: Expected ',' or '}' after property value in JSON at position 368 (line 15 column 18)",
           "timestamp": "2025-08-15T23:58:19.477Z"
         },
         {
@@ -1724,7 +1724,7 @@
         },
         {
           "level": "ERROR",
-          "message": "backups\\.backup\\cleanup-ultimate\\cleanup-backup-2025-08-13T14-53-12-659Z\\tuya_zigbee\\models\\drivers-backup-2025-08-13T12-14-20-255Z_ts130f_light_standard\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.backup\\cleanup-ultimate\\cleanup-backup-2025-08-13T14-53-12-659Z\\zigbee\\models\\drivers-backup-2025-08-13T12-14-20-255Z_light_standard\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:21.752Z"
         },
         {
@@ -1739,22 +1739,22 @@
         },
         {
           "level": "ERROR",
-          "message": "backups\\.backup\\migration-3.2-to-3.3\\drivers-backup-2025-08-13T12-14-20-255Z\\tuya_zigbee\\models\\ts130f_light_standard\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.backup\\migration-3.2-to-3.3\\drivers-backup-2025-08-13T12-14-20-255Z\\zigbee\\models\\ts130f_light_standard\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:22.513Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.backup\\migration-3.2-to-3.3-complete\\drivers-backup-2025-08-13T13-10-18-605Z\\tuya_zigbee\\models\\drivers-backup-2025-08-13T12-14-20-255Z_ts130f_light_standard\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.backup\\migration-3.2-to-3.3-complete\\drivers-backup-2025-08-13T13-10-18-605Z\\zigbee\\models\\drivers-backup-2025-08-13T12-14-20-255Z_light_standard\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:23.067Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.backup\\migration-3.2-to-3.3-complete\\drivers-backup-2025-08-13T13-13-44-913Z\\tuya_zigbee\\models\\drivers-backup-2025-08-13T12-14-20-255Z_ts130f_light_standard\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.backup\\migration-3.2-to-3.3-complete\\drivers-backup-2025-08-13T13-13-44-913Z\\zigbee\\models\\drivers-backup-2025-08-13T12-14-20-255Z_light_standard\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:23.816Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.backup\\naming-correction-sdk3\\naming-backup-2025-08-13T14-00-22-739Z\\tuya_zigbee\\models\\drivers-backup-2025-08-13T12-14-20-255Z_ts130f_light_standard\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.backup\\naming-correction-sdk3\\naming-backup-2025-08-13T14-00-22-739Z\\zigbee\\models\\drivers-backup-2025-08-13T12-14-20-255Z_light_standard\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:24.701Z"
         },
         {
@@ -1879,522 +1879,522 @@
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\com.tuya.zigbee.backup.full\\drivers\\TS0001\\driver.compose.json: Unexpected token '/', \"// driver.\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\com.tuya.zigbee.backup.full\\drivers\\TS0001\\driver.compose.json: Unexpected token '/', \"// driver.\"... is not valid JSON",
           "timestamp": "2025-08-15T23:58:25.842Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\com.tuya.zigbee.backup.full\\package.json: Unexpected token '/', \"// package\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\com.tuya.zigbee.backup.full\\package.json: Unexpected token '/', \"// package\"... is not valid JSON",
           "timestamp": "2025-08-15T23:58:25.842Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\com.tuya.zigbee.full.ready\\drivers\\TS0001\\driver.compose.json: Unexpected token '/', \"// drivers\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\com.tuya.zigbee.full.ready\\drivers\\TS0001\\driver.compose.json: Unexpected token '/', \"// drivers\"... is not valid JSON",
           "timestamp": "2025-08-15T23:58:25.844Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\com.tuya.zigbee.full.ready\\package.json: Unexpected token '/', \"// package\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\com.tuya.zigbee.full.ready\\package.json: Unexpected token '/', \"// package\"... is not valid JSON",
           "timestamp": "2025-08-15T23:58:25.844Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\com.tuya.zigbee.rebuild.kimi\\drivers\\TS0001\\driver.compose.json: Unexpected token '/', \"// driver.\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\com.tuya.zigbee.rebuild.kimi\\drivers\\TS0001\\driver.compose.json: Unexpected token '/', \"// driver.\"... is not valid JSON",
           "timestamp": "2025-08-15T23:58:25.844Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\com.tuya.zigbee.rebuild.kimi\\package.json: Unexpected token '/', \"// package\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\com.tuya.zigbee.rebuild.kimi\\package.json: Unexpected token '/', \"// package\"... is not valid JSON",
           "timestamp": "2025-08-15T23:58:25.845Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\repo\\com.tuya.zigbee-master\\app.json: Unexpected token '#', \"# Tuya Zig\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\repo\\com.tuya.zigbee-master\\app.json: Unexpected token '#', \"# Tuya Zig\"... is not valid JSON",
           "timestamp": "2025-08-15T23:58:25.845Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\repo\\com.tuya.zigbee-master\\drivers\\light_rgb_TZ3000_dbou1ap4\\driver.compose.json: Expected property name or '}' in JSON at position 4 (line 2 column 3)",
+          "message": "backups\\.tmp_zip_work\\repo\\com.tuya.zigbee-master\\drivers\\light_rgb_TZ3000_dbou1ap4\\driver.compose.json: Expected property name or '}' in JSON at position 4 (line 2 column 3)",
           "timestamp": "2025-08-15T23:58:25.863Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\repo\\com.tuya.zigbee-master\\drivers\\plug_blitzwolf_TZ3000_mraovvmm\\driver.compose.json: Expected property name or '}' in JSON at position 4 (line 2 column 3)",
+          "message": "backups\\.tmp_zip_work\\repo\\com.tuya.zigbee-master\\drivers\\plug_blitzwolf_TZ3000_mraovvmm\\driver.compose.json: Expected property name or '}' in JSON at position 4 (line 2 column 3)",
           "timestamp": "2025-08-15T23:58:25.867Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\repo\\com.tuya.zigbee-master\\drivers\\sensor_temp_TUYATEC-g3gl6cgy\\driver.compose.json: Expected property name or '}' in JSON at position 4 (line 2 column 3)",
+          "message": "backups\\.tmp_zip_work\\repo\\com.tuya.zigbee-master\\drivers\\sensor_temp_TUYATEC-g3gl6cgy\\driver.compose.json: Expected property name or '}' in JSON at position 4 (line 2 column 3)",
           "timestamp": "2025-08-15T23:58:25.880Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\repo\\com.tuya.zigbee-master\\package-lock.json: Expected double-quoted property name in JSON at position 31 (line 3 column 1)",
+          "message": "backups\\.tmp_zip_work\\repo\\com.tuya.zigbee-master\\package-lock.json: Expected double-quoted property name in JSON at position 31 (line 3 column 1)",
           "timestamp": "2025-08-15T23:58:26.076Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\repo\\com.tuya.zigbee-master\\package.json: Unexpected token '<', \"<<<<<<< HE\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\repo\\com.tuya.zigbee-master\\package.json: Unexpected token '<', \"<<<<<<< HE\"... is not valid JSON",
           "timestamp": "2025-08-15T23:58:26.077Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\repo-extracted\\com.tuya.zigbee-master\\app.json: Unexpected token '#', \"# Tuya Zig\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\repo-extracted\\com.tuya.zigbee-master\\app.json: Unexpected token '#', \"# Tuya Zig\"... is not valid JSON",
           "timestamp": "2025-08-15T23:58:26.083Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\repo-extracted\\com.tuya.zigbee-master\\drivers\\light_rgb_TZ3000_dbou1ap4\\driver.compose.json: Expected property name or '}' in JSON at position 4 (line 2 column 3)",
+          "message": "backups\\.tmp_zip_work\\repo-extracted\\com.tuya.zigbee-master\\drivers\\light_rgb_TZ3000_dbou1ap4\\driver.compose.json: Expected property name or '}' in JSON at position 4 (line 2 column 3)",
           "timestamp": "2025-08-15T23:58:26.097Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\repo-extracted\\com.tuya.zigbee-master\\drivers\\plug_blitzwolf_TZ3000_mraovvmm\\driver.compose.json: Expected property name or '}' in JSON at position 4 (line 2 column 3)",
+          "message": "backups\\.tmp_zip_work\\repo-extracted\\com.tuya.zigbee-master\\drivers\\plug_blitzwolf_TZ3000_mraovvmm\\driver.compose.json: Expected property name or '}' in JSON at position 4 (line 2 column 3)",
           "timestamp": "2025-08-15T23:58:26.101Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\repo-extracted\\com.tuya.zigbee-master\\drivers\\sensor_temp_TUYATEC-g3gl6cgy\\driver.compose.json: Expected property name or '}' in JSON at position 4 (line 2 column 3)",
+          "message": "backups\\.tmp_zip_work\\repo-extracted\\com.tuya.zigbee-master\\drivers\\sensor_temp_TUYATEC-g3gl6cgy\\driver.compose.json: Expected property name or '}' in JSON at position 4 (line 2 column 3)",
           "timestamp": "2025-08-15T23:58:26.112Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\repo-extracted\\com.tuya.zigbee-master\\package-lock.json: Expected double-quoted property name in JSON at position 31 (line 3 column 1)",
+          "message": "backups\\.tmp_zip_work\\repo-extracted\\com.tuya.zigbee-master\\package-lock.json: Expected double-quoted property name in JSON at position 31 (line 3 column 1)",
           "timestamp": "2025-08-15T23:58:26.331Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\repo-extracted\\com.tuya.zigbee-master\\package.json: Unexpected token '<', \"<<<<<<< HE\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\repo-extracted\\com.tuya.zigbee-master\\package.json: Unexpected token '<', \"<<<<<<< HE\"... is not valid JSON",
           "timestamp": "2025-08-15T23:58:26.332Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\repo_backup\\repo\\app.json: Unexpected token '#', \"# Tuya Zig\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\repo_backup\\repo\\app.json: Unexpected token '#', \"# Tuya Zig\"... is not valid JSON",
           "timestamp": "2025-08-15T23:58:26.341Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\repo_backup\\repo\\drivers\\light_rgb_TZ3000_dbou1ap4\\driver.compose.json: Expected property name or '}' in JSON at position 5 (line 2 column 3)",
+          "message": "backups\\.tmp_zip_work\\repo_backup\\repo\\drivers\\light_rgb_TZ3000_dbou1ap4\\driver.compose.json: Expected property name or '}' in JSON at position 5 (line 2 column 3)",
           "timestamp": "2025-08-15T23:58:26.350Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\repo_backup\\repo\\drivers\\plug_blitzwolf_TZ3000_mraovvmm\\driver.compose.json: Expected property name or '}' in JSON at position 5 (line 2 column 3)",
+          "message": "backups\\.tmp_zip_work\\repo_backup\\repo\\drivers\\plug_blitzwolf_TZ3000_mraovvmm\\driver.compose.json: Expected property name or '}' in JSON at position 5 (line 2 column 3)",
           "timestamp": "2025-08-15T23:58:26.356Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\repo_backup\\repo\\drivers\\sensor_temp_TUYATEC-g3gl6cgy\\driver.compose.json: Expected property name or '}' in JSON at position 5 (line 2 column 3)",
+          "message": "backups\\.tmp_zip_work\\repo_backup\\repo\\drivers\\sensor_temp_TUYATEC-g3gl6cgy\\driver.compose.json: Expected property name or '}' in JSON at position 5 (line 2 column 3)",
           "timestamp": "2025-08-15T23:58:26.363Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\repo_backup\\repo\\openai\\com.tuya.zigbee.backup.full\\drivers\\TS0001\\driver.compose.json: Unexpected token '/', \"// driver.\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\repo_backup\\repo\\openai\\com.tuya.zigbee.backup.full\\drivers\\TS0001\\driver.compose.json: Unexpected token '/', \"// driver.\"... is not valid JSON",
           "timestamp": "2025-08-15T23:58:26.615Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\repo_backup\\repo\\openai\\com.tuya.zigbee.backup.full\\package.json: Unexpected token '/', \"// package\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\repo_backup\\repo\\openai\\com.tuya.zigbee.backup.full\\package.json: Unexpected token '/', \"// package\"... is not valid JSON",
           "timestamp": "2025-08-15T23:58:26.615Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\repo_backup\\repo\\openai\\com.tuya.zigbee.rebuild.kimi\\drivers\\TS0001\\driver.compose.json: Unexpected token '/', \"// driver.\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\repo_backup\\repo\\openai\\com.tuya.zigbee.rebuild.kimi\\drivers\\TS0001\\driver.compose.json: Unexpected token '/', \"// driver.\"... is not valid JSON",
           "timestamp": "2025-08-15T23:58:26.616Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\repo_backup\\repo\\openai\\com.tuya.zigbee.rebuild.kimi\\package.json: Unexpected token '/', \"// package\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\repo_backup\\repo\\openai\\com.tuya.zigbee.rebuild.kimi\\package.json: Unexpected token '/', \"// package\"... is not valid JSON",
           "timestamp": "2025-08-15T23:58:26.616Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\repo_backup\\repo\\package-lock.json: Expected double-quoted property name in JSON at position 33 (line 3 column 1)",
+          "message": "backups\\.tmp_zip_work\\repo_backup\\repo\\package-lock.json: Expected double-quoted property name in JSON at position 33 (line 3 column 1)",
           "timestamp": "2025-08-15T23:58:26.616Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\repo_backup\\repo\\package.json: Unexpected token '<', \"<<<<<<< HE\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\repo_backup\\repo\\package.json: Unexpected token '<', \"<<<<<<< HE\"... is not valid JSON",
           "timestamp": "2025-08-15T23:58:26.617Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\automation\\smart_remote_1_button\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\automation\\smart_remote_1_button\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.787Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\automation\\smart_remote_1_button_2\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\automation\\smart_remote_1_button_2\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.790Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\automation\\smart_remote_4_buttons\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\automation\\smart_remote_4_buttons\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.791Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\automation\\wall_remote_1_gang\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\automation\\wall_remote_1_gang\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.792Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\automation\\wall_remote_2_gang\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\automation\\wall_remote_2_gang\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.793Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\automation\\wall_remote_3_gang\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\automation\\wall_remote_3_gang\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.794Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\automation\\wall_remote_4_gang\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\automation\\wall_remote_4_gang\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.794Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\automation\\wall_remote_4_gang_2\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\automation\\wall_remote_4_gang_2\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.795Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\automation\\wall_remote_4_gang_3\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\automation\\wall_remote_4_gang_3\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.796Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\automation\\wall_remote_6_gang\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\automation\\wall_remote_6_gang\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.797Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\dimmer_1_gang_2\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\dimmer_1_gang_2\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.804Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\dimmer_1_gang_tuya\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\dimmer_1_gang_tuya\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.806Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\dimmer_2_gang\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\dimmer_2_gang\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.807Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\dimmer_2_gang_tuya\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\dimmer_2_gang_tuya\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.808Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\rgb_bulb_E14\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\rgb_bulb_E14\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.809Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\rgb_bulb_E27\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\rgb_bulb_E27\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.810Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\rgb_ceiling_led_light\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\rgb_ceiling_led_light\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.811Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\rgb_floor_led_light\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\rgb_floor_led_light\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.812Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\rgb_led_light_bar\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\rgb_led_light_bar\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.812Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\rgb_led_strip\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\rgb_led_strip\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.813Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\rgb_led_strip_controller\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\rgb_led_strip_controller\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.813Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\rgb_mood_light\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\rgb_mood_light\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.814Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\rgb_spot_GardenLight\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\rgb_spot_GardenLight\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.814Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\rgb_spot_GU10\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\rgb_spot_GU10\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.815Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\rgb_wall_led_light\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\rgb_wall_led_light\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.816Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\tunable_bulb_E14\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\tunable_bulb_E14\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.816Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\tunable_bulb_E27\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\tunable_bulb_E27\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.818Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\tunable_spot_GU10\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\tunable_spot_GU10\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.820Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\wall_dimmer_tuya\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\lights\\wall_dimmer_tuya\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.821Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\onoff\\dimmable_led_strip\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\onoff\\dimmable_led_strip\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.824Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\onoff\\dimmable_recessed_led\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\onoff\\dimmable_recessed_led\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.824Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\onoff\\double_power_point_2\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\onoff\\double_power_point_2\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.826Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\onoff\\relay_board_1_channel\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\onoff\\relay_board_1_channel\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.827Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\onoff\\relay_board_2_channel\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\onoff\\relay_board_2_channel\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.828Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\onoff\\relay_board_4_channel\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\onoff\\relay_board_4_channel\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.829Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\onoff\\smart_air_detection_box\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\onoff\\smart_air_detection_box\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.830Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\onoff\\water_detector\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\onoff\\water_detector\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.833Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\onoff\\zigbee_repeater\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\onoff\\zigbee_repeater\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.834Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\plugs\\outdoor_plug\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\plugs\\outdoor_plug\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.837Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\plugs\\plug\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\plugs\\plug\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.839Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\plugs\\socket_power_strip\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\plugs\\socket_power_strip\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.842Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\plugs\\socket_power_strip_four\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\plugs\\socket_power_strip_four\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.843Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\plugs\\socket_power_strip_four_three\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\plugs\\socket_power_strip_four_three\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.844Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\plugs\\socket_power_strip_four_two\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\plugs\\socket_power_strip_four_two\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.844Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\sensors\\doorwindowsensor\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\sensors\\doorwindowsensor\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.847Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\sensors\\doorwindowsensor_2\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\sensors\\doorwindowsensor_2\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.847Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\sensors\\doorwindowsensor_3\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\sensors\\doorwindowsensor_3\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.848Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\sensors\\doorwindowsensor_4\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\sensors\\doorwindowsensor_4\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.848Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\sensors\\flood_sensor\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\sensors\\flood_sensor\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.849Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\sensors\\pirsensor\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\sensors\\pirsensor\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.858Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\sensors\\pir_sensor_2\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\sensors\\pir_sensor_2\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.859Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\sensors\\slim_motion_sensor\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\sensors\\slim_motion_sensor\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.863Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\sensors\\smoke_sensor2\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\sensors\\smoke_sensor2\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.865Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\sensors\\soilsensor\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\sensors\\soilsensor\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.866Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\sensors\\soilsensor_2\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\sensors\\soilsensor_2\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.866Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\sensors\\water_leak_sensor_tuya\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\sensors\\water_leak_sensor_tuya\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.874Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\switches\\smart_button_switch\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\switches\\smart_button_switch\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.876Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\switches\\smart_knob_switch\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\switches\\smart_knob_switch\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.877Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\switches\\smart_switch\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\switches\\smart_switch\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.877Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\switches\\switch_1_gang\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\switches\\switch_1_gang\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.878Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\switches\\switch_2_gang\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\switches\\switch_2_gang\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.879Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\switches\\switch_3_gang\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\switches\\switch_3_gang\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.880Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\switches\\wall_switch_1_gang_tuya\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\switches\\wall_switch_1_gang_tuya\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.885Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\switches\\wall_switch_4_gang_tuya\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\switches\\wall_switch_4_gang_tuya\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.890Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\switches\\wall_switch_5_gang_tuya\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\switches\\wall_switch_5_gang_tuya\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.891Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\switches\\wall_switch_6_gang_tuya\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\switches\\wall_switch_6_gang_tuya\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.892Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\thermostats\\wall_thermostat\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "backups\\.tmp_zip_work\\tuya-zigbee-universal-3.0.0-local-bundle\\drivers\\zigbee\\thermostats\\wall_thermostat\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:26.894Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya_zigbee_final\\app.json: Unexpected token '#', \"# Tuya Zig\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\tuya_zigbee_final\\app.json: Unexpected token '#', \"# Tuya Zig\"... is not valid JSON",
           "timestamp": "2025-08-15T23:58:26.926Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya_zigbee_final\\drivers\\light_rgb_TZ3000_dbou1ap4\\driver.compose.json: Expected property name or '}' in JSON at position 5 (line 2 column 3)",
+          "message": "backups\\.tmp_zip_work\\tuya_zigbee_final\\drivers\\light_rgb_TZ3000_dbou1ap4\\driver.compose.json: Expected property name or '}' in JSON at position 5 (line 2 column 3)",
           "timestamp": "2025-08-15T23:58:26.941Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya_zigbee_final\\drivers\\plug_blitzwolf_TZ3000_mraovvmm\\driver.compose.json: Expected property name or '}' in JSON at position 5 (line 2 column 3)",
+          "message": "backups\\.tmp_zip_work\\tuya_zigbee_final\\drivers\\plug_blitzwolf_TZ3000_mraovvmm\\driver.compose.json: Expected property name or '}' in JSON at position 5 (line 2 column 3)",
           "timestamp": "2025-08-15T23:58:26.944Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya_zigbee_final\\drivers\\sensor_temp_TUYATEC-g3gl6cgy\\driver.compose.json: Expected property name or '}' in JSON at position 5 (line 2 column 3)",
+          "message": "backups\\.tmp_zip_work\\tuya_zigbee_final\\drivers\\sensor_temp_TUYATEC-g3gl6cgy\\driver.compose.json: Expected property name or '}' in JSON at position 5 (line 2 column 3)",
           "timestamp": "2025-08-15T23:58:26.960Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya_zigbee_final\\openai\\com.tuya.zigbee.backup.full\\drivers\\TS0001\\driver.compose.json: Unexpected token '/', \"// driver.\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\tuya_zigbee_final\\openai\\com.tuya.zigbee.backup.full\\drivers\\TS0001\\driver.compose.json: Unexpected token '/', \"// driver.\"... is not valid JSON",
           "timestamp": "2025-08-15T23:58:27.198Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya_zigbee_final\\openai\\com.tuya.zigbee.backup.full\\package.json: Unexpected token '/', \"// package\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\tuya_zigbee_final\\openai\\com.tuya.zigbee.backup.full\\package.json: Unexpected token '/', \"// package\"... is not valid JSON",
           "timestamp": "2025-08-15T23:58:27.199Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya_zigbee_final\\openai\\com.tuya.zigbee.rebuild.kimi\\drivers\\TS0001\\driver.compose.json: Unexpected token '/', \"// driver.\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\tuya_zigbee_final\\openai\\com.tuya.zigbee.rebuild.kimi\\drivers\\TS0001\\driver.compose.json: Unexpected token '/', \"// driver.\"... is not valid JSON",
           "timestamp": "2025-08-15T23:58:27.199Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya_zigbee_final\\openai\\com.tuya.zigbee.rebuild.kimi\\package.json: Unexpected token '/', \"// package\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\tuya_zigbee_final\\openai\\com.tuya.zigbee.rebuild.kimi\\package.json: Unexpected token '/', \"// package\"... is not valid JSON",
           "timestamp": "2025-08-15T23:58:27.200Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_tuya_zip_work\\tuya_zigbee_final\\package.json: Expected property name or '}' in JSON at position 5 (line 2 column 3)",
+          "message": "backups\\.tmp_zip_work\\tuya_zigbee_final\\package.json: Expected property name or '}' in JSON at position 5 (line 2 column 3)",
           "timestamp": "2025-08-15T23:58:27.202Z"
         },
         {
@@ -2429,17 +2429,17 @@
         },
         {
           "level": "ERROR",
-          "message": "catalog\\other\\tuya\\tuya\\other\\tuya\\tuya_zigbee\\models\\ts130f_light_standard_default\\driver.settings.compose.json: Unexpected end of JSON input",
+          "message": "catalog\\other\\tuya\\tuya\\other\\tuya\\zigbee\\models\\ts130f_light_standard_default\\driver.settings.compose.json: Unexpected end of JSON input",
           "timestamp": "2025-08-15T23:58:30.316Z"
         },
         {
           "level": "ERROR",
-          "message": "catalog\\other\\tuya\\tuya\\other\\tuya\\tuya_zigbee\\models\\tuya_sensor_temp_hum_ts0201\\metadata.json: Expected ',' or '}' after property value in JSON at position 410 (line 15 column 18)",
+          "message": "catalog\\other\\tuya\\tuya\\other\\tuya\\zigbee\\models\\tuya_sensor_temp_hum\\metadata.json: Expected ',' or '}' after property value in JSON at position 410 (line 15 column 18)",
           "timestamp": "2025-08-15T23:58:30.698Z"
         },
         {
           "level": "ERROR",
-          "message": "catalog\\other\\tuya\\tuya\\other\\tuya\\tuya_zigbee\\models\\tuya_switch_ts0001\\metadata.json: Expected ',' or '}' after property value in JSON at position 368 (line 15 column 18)",
+          "message": "catalog\\other\\tuya\\tuya\\other\\tuya\\zigbee\\models\\tuya_switch\\metadata.json: Expected ',' or '}' after property value in JSON at position 368 (line 15 column 18)",
           "timestamp": "2025-08-15T23:58:30.699Z"
         },
         {
@@ -2787,1052 +2787,1052 @@
       "issues": [
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\ac sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\ac sans traductions complètes",
           "timestamp": "2025-08-15T23:58:35.608Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\ac\\aqara_ac-294 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\ac\\aqara_ac-294 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:35.609Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\ac\\ikea_ac-165 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\ac\\ikea_ac-165 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:35.618Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\ac\\tuya_ac-322 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\ac\\tuya_ac-322 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:35.626Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\ac\\tuya_ac_Ac_Device_Standard_Default sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\ac\\tuya_ac_Ac_Device_Standard_Default sans traductions complètes",
           "timestamp": "2025-08-15T23:58:35.631Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\ac\\tuya_ac_Aqara_Ac_Device_Standard_Default sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\ac\\tuya_ac_Aqara_Ac_Device_Standard_Default sans traductions complètes",
           "timestamp": "2025-08-15T23:58:35.634Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\ac\\tuya_ac_Ikea_Ac_Device_Standard_Default sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\ac\\tuya_ac_Ikea_Ac_Device_Standard_Default sans traductions complètes",
           "timestamp": "2025-08-15T23:58:35.642Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\assets sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\assets sans traductions complètes",
           "timestamp": "2025-08-15T23:58:35.652Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\cover sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\cover sans traductions complètes",
           "timestamp": "2025-08-15T23:58:35.661Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\fan sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\fan sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.184Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\fan\\aqara_fan-281 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\fan\\aqara_fan-281 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.186Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\fan\\aqara_fan-459 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\fan\\aqara_fan-459 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.194Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\fan\\ikea_fan-18 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\fan\\ikea_fan-18 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.204Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\fan\\ikea_fan-208 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\fan\\ikea_fan-208 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.217Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\fan\\tuya_fan-200 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\fan\\tuya_fan-200 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.227Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\fan\\tuya_fan-730 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\fan\\tuya_fan-730 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.232Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\heater sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\heater sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.235Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\heater\\aqara_heater-833 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\heater\\aqara_heater-833 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.236Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\heater\\aqara_heater-898 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\heater\\aqara_heater-898 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.242Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\heater\\ikea_heater-399 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\heater\\ikea_heater-399 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.250Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\heater\\ikea_heater-896 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\heater\\ikea_heater-896 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.264Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\heater\\tuya_heater-0 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\heater\\tuya_heater-0 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.273Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\heater\\tuya_heater-387 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\heater\\tuya_heater-387 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.284Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\light sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\light sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.288Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.813Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\aqara_deadbolt-22 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\aqara_deadbolt-22 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.814Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\aqara_deadbolt-22_lock sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\aqara_deadbolt-22_lock sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.880Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\aqara_deadbolt-642 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\aqara_deadbolt-642 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.889Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\aqara_deadbolt-642_lock sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\aqara_deadbolt-642_lock sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.894Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\aqara_door-305 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\aqara_door-305 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.898Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\aqara_door-305_lock sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\aqara_door-305_lock sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.901Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\aqara_door-338 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\aqara_door-338 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.905Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\aqara_door-338_lock sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\aqara_door-338_lock sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.910Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\aqara_padlock-382 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\aqara_padlock-382 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.914Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\aqara_padlock-382_lock sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\aqara_padlock-382_lock sans traductions complètes",
           "timestamp": "2025-08-15T23:58:36.916Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\aqara_padlock-460 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\aqara_padlock-460 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.000Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\aqara_padlock-460_lock sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\aqara_padlock-460_lock sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.006Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\ikea_deadbolt-274 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\ikea_deadbolt-274 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.014Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\ikea_deadbolt-274_lock sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\ikea_deadbolt-274_lock sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.016Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\ikea_deadbolt-42 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\ikea_deadbolt-42 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.020Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\ikea_deadbolt-42_lock sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\ikea_deadbolt-42_lock sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.023Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\ikea_door-491 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\ikea_door-491 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.028Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\ikea_door-491_lock sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\ikea_door-491_lock sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.031Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\ikea_door-555 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\ikea_door-555 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.086Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\ikea_door-555_lock sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\ikea_door-555_lock sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.089Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\ikea_padlock-134 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\ikea_padlock-134 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.092Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\ikea_padlock-134_lock sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\ikea_padlock-134_lock sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.095Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\ikea_padlock-984 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\ikea_padlock-984 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.098Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\ikea_padlock-984_lock sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\ikea_padlock-984_lock sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.101Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\tuya_deadbolt-261 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\tuya_deadbolt-261 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.105Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\tuya_deadbolt-261_lock sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\tuya_deadbolt-261_lock sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.108Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\tuya_deadbolt-850 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\tuya_deadbolt-850 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.112Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\tuya_deadbolt-850_lock sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\tuya_deadbolt-850_lock sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.115Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\tuya_door-450 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\tuya_door-450 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.131Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\tuya_door-450_lock sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\tuya_door-450_lock sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.134Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\tuya_door-537 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\tuya_door-537 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.145Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\tuya_door-537_lock sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\tuya_door-537_lock sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.149Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\tuya_padlock-538 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\tuya_padlock-538 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.154Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\tuya_padlock-538_lock sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\tuya_padlock-538_lock sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.159Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\tuya_padlock-551 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\tuya_padlock-551 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.165Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\lock\\tuya_padlock-551_lock sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\lock\\tuya_padlock-551_lock sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.169Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.192Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\aqara sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\aqara sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.194Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\aqara_alarm-418 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\aqara_alarm-418 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.201Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\aqara_alarm-418_siren sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\aqara_alarm-418_siren sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.213Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\aqara_alarm-922 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\aqara_alarm-922 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.227Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\aqara_alarm-922_siren sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\aqara_alarm-922_siren sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.232Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\aqara_buzzer-110 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\aqara_buzzer-110 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.239Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\aqara_buzzer-110_siren sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\aqara_buzzer-110_siren sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.247Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\aqara_buzzer-259 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\aqara_buzzer-259 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.252Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\aqara_buzzer-259_siren sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\aqara_buzzer-259_siren sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.260Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\aqara_chime-818 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\aqara_chime-818 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.266Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\aqara_chime-818_siren sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\aqara_chime-818_siren sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.270Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\aqara_chime-885 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\aqara_chime-885 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.277Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\aqara_chime-885_siren sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\aqara_chime-885_siren sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.282Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\aqara_generic sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\aqara_generic sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.302Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\aqara_standard sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\aqara_standard sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.349Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\aqara_switch-457 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\aqara_switch-457 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.369Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\aqara_switch-883 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\aqara_switch-883 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.378Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\generic_device_generic_device sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\generic_device_generic_device sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.386Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\generic_zigbee_light sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\generic_zigbee_light sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.393Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\generic_zigbee_sensor sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\generic_zigbee_sensor sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.398Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\generic_zigbee_switch sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\generic_zigbee_switch sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.405Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ikea sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ikea sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.414Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ikea_alarm-641 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ikea_alarm-641 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.417Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ikea_alarm-641_siren sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ikea_alarm-641_siren sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.424Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ikea_alarm-707 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ikea_alarm-707 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.431Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ikea_alarm-707_siren sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ikea_alarm-707_siren sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.434Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ikea_buzzer-232 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ikea_buzzer-232 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.444Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ikea_buzzer-232_siren sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ikea_buzzer-232_siren sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.450Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ikea_buzzer-255 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ikea_buzzer-255 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.460Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ikea_buzzer-255_siren sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ikea_buzzer-255_siren sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.464Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ikea_chime-608 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ikea_chime-608 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.490Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ikea_chime-608_siren sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ikea_chime-608_siren sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.498Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ikea_chime-70 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ikea_chime-70 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.505Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ikea_chime-70_siren sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ikea_chime-70_siren sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.511Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ikea_generic sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ikea_generic sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.515Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ikea_standard sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ikea_standard sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.549Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ikea_switch-612 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ikea_switch-612 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.552Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ikea_switch-783 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ikea_switch-783 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.557Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\radar-24g_switch sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\radar-24g_switch sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.563Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\template_device_template_device sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\template_device_template_device sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.567Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\template_tuya_dp_sensor sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\template_tuya_dp_sensor sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.569Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\template_tuya_dp_switch sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\template_tuya_dp_switch sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.574Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ts004f sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ts004f sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.579Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ts004f_standard sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ts004f_standard sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.582Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ts0121 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ts0121 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.586Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ts0121_standard sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ts0121_standard sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.593Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ts0204 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ts0204 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.597Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ts0204_standard sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ts0204_standard sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.600Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ts0207 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ts0207 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.604Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ts0207_standard sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ts0207_standard sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.612Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ts0502a sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ts0502a sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.616Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ts0502a_standard sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ts0502a_standard sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.619Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ts0601 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ts0601 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.623Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ts0601_sensor_battery sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ts0601_sensor_battery sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.627Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ts0601_standard sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ts0601_standard sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.631Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ts0601_switch sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ts0601_switch sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.635Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ts1001 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ts1001 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.638Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ts1001_standard sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ts1001_standard sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.644Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ts110f sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ts110f sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.648Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\ts110f_standard sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\ts110f_standard sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.651Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\tuya sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\tuya sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.655Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\tuya_cover_ts0601 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\tuya_cover sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.661Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\tuya_generic sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\tuya_generic sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.664Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\tuya_standard sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\tuya_standard sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.666Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\tuya_switch-225 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\tuya_switch-225 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.672Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\other\\tuya_switch-549 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\other\\tuya_switch-549 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.677Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\plug sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\plug sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.680Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-contact sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-contact sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.683Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-contact\\aqara_contact-543 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-contact\\aqara_contact-543 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.684Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-contact\\aqara_contact-799 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-contact\\aqara_contact-799 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.687Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-contact\\ikea_contact-348 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-contact\\ikea_contact-348 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.695Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-contact\\ikea_contact-739 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-contact\\ikea_contact-739 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.699Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-contact\\tuya_contact-202 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-contact\\tuya_contact-202 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.702Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-contact\\tuya_contact-219 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-contact\\tuya_contact-219 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.706Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-gas sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-gas sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.711Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-gas\\aqara_gas-474 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-gas\\aqara_gas-474 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.713Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-gas\\aqara_gas-84 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-gas\\aqara_gas-84 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.716Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-gas\\ikea_gas-317 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-gas\\ikea_gas-317 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.725Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-gas\\ikea_gas-418 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-gas\\ikea_gas-418 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.733Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-gas\\tuya_gas-320 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-gas\\tuya_gas-320 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.736Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-gas\\tuya_gas-695 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-gas\\tuya_gas-695 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.740Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-humidity sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-humidity sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.744Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-humidity\\aqara_humidity-617 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-humidity\\aqara_humidity-617 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.746Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-humidity\\aqara_humidity-794 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-humidity\\aqara_humidity-794 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.748Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-humidity\\generic_device_sensor_humidity sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-humidity\\generic_device_sensor_humidity sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.754Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-humidity\\generic_sensor_humidity sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-humidity\\generic_sensor_humidity sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.760Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-humidity\\ikea_humidity-288 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-humidity\\ikea_humidity-288 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.763Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-humidity\\ikea_humidity-712 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-humidity\\ikea_humidity-712 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.766Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-humidity\\tuya_humidity-498 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-humidity\\tuya_humidity-498 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.769Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-humidity\\tuya_humidity-86 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-humidity\\tuya_humidity-86 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.773Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-motion sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-motion sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.777Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-motion\\aqara_motion-364 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-motion\\aqara_motion-364 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.779Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-motion\\aqara_motion-800 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-motion\\aqara_motion-800 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.782Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-motion\\generic_device_sensor_motion sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-motion\\generic_device_sensor_motion sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.788Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-motion\\generic_sensor_motion sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-motion\\generic_sensor_motion sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.793Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-motion\\ikea_motion-927 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-motion\\ikea_motion-927 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.798Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-motion\\ikea_motion-981 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-motion\\ikea_motion-981 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.800Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-motion\\radar-24g_sensor_battery_presence sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-motion\\radar-24g_sensor_battery_presence sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.804Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-motion\\tuya_motion-299 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-motion\\tuya_motion-299 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.812Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-motion\\tuya_motion-362 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-motion\\tuya_motion-362 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.815Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-smoke sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-smoke sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.818Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-smoke\\aqara_smoke-458 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-smoke\\aqara_smoke-458 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.819Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-smoke\\aqara_smoke-61 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-smoke\\aqara_smoke-61 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.826Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-smoke\\ikea_smoke-360 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-smoke\\ikea_smoke-360 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.834Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-smoke\\ikea_smoke-94 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-smoke\\ikea_smoke-94 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.837Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-smoke\\tuya_smoke-109 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-smoke\\tuya_smoke-109 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.840Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-smoke\\tuya_smoke-927 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-smoke\\tuya_smoke-927 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.844Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.848Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\aqara_temperature-561 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\aqara_temperature-561 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.849Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\aqara_temperature-666 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\aqara_temperature-666 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.852Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\aqara_thermostat-115 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\aqara_thermostat-115 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.856Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\aqara_thermostat-831 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\aqara_thermostat-831 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.861Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\generic_device_sensor_temperature sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\generic_device_sensor_temperature sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.867Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\generic_sensor_temperature sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\generic_sensor_temperature sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.869Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\ikea_temperature-466 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\ikea_temperature-466 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.873Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\ikea_temperature-892 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\ikea_temperature-892 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.878Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\ikea_thermostat-128 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\ikea_thermostat-128 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.881Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\ikea_thermostat-39 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\ikea_thermostat-39 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.884Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\template_tuya_dp_thermostat sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\template_tuya_dp_thermostat sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.887Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\ts0201 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\ts0201 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.892Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\ts0201_sensor_battery sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\ts0201_sensor_battery sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.894Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\ts0201_standard sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\ts0201_standard sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.898Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\ts0202 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\ts0202 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.901Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\ts0202_sensor_battery sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\ts0202_sensor_battery sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.903Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\ts0202_standard sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\ts0202_standard sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.908Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\ts0203 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\ts0203 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.914Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\ts0203_sensor_battery sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\ts0203_sensor_battery sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.916Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\ts0203_standard sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\ts0203_standard sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.918Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\ts0205 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\ts0205 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.921Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\ts0205_sensor_battery sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\ts0205_sensor_battery sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.926Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\ts0205_standard sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\ts0205_standard sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.930Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\ts0601_climate-thermostat sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\ts0601_climate-thermostat sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.933Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\tuya_sensor_temp_hum_ts0201 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\tuya_sensor_temp_hum sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.938Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\tuya_temperature-622 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\tuya_temperature-622 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.943Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\tuya_temperature-779 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\tuya_temperature-779 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.947Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\tuya_thermostat-435 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\tuya_thermostat-435 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.949Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-temp\\tuya_thermostat-825 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-temp\\tuya_thermostat-825 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.952Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-vibration sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-vibration sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.957Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-water sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-water sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.961Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-water\\aqara_water-220 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-water\\aqara_water-220 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.963Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-water\\aqara_water-237 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-water\\aqara_water-237 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.966Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-water\\ikea_water-362 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-water\\ikea_water-362 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.972Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-water\\ikea_water-667 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-water\\ikea_water-667 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.977Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-water\\tuya_water-264 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-water\\tuya_water-264 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.980Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\sensor-water\\tuya_water-581 sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\sensor-water\\tuya_water-581 sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.983Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\siren sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\siren sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.987Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\switch sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\switch sans traductions complètes",
           "timestamp": "2025-08-15T23:58:37.991Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\tuya_zigbee\\thermostat sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\thermostat sans traductions complètes",
           "timestamp": "2025-08-15T23:58:38.516Z"
         },
         {
@@ -3922,62 +3922,62 @@
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\zigbee\\__generic__ sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\_generic_ sans traductions complètes",
           "timestamp": "2025-08-15T23:58:38.569Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\zigbee\\__generic__\\generic_cover sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\_generic_\\generic_cover sans traductions complètes",
           "timestamp": "2025-08-15T23:58:38.571Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\zigbee\\__generic__\\generic_fan sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\_generic_\\generic_fan sans traductions complètes",
           "timestamp": "2025-08-15T23:58:38.574Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\zigbee\\__generic__\\generic_heater sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\_generic_\\generic_heater sans traductions complètes",
           "timestamp": "2025-08-15T23:58:38.580Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\zigbee\\__generic__\\generic_light sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\_generic_\\generic_light sans traductions complètes",
           "timestamp": "2025-08-15T23:58:38.581Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\zigbee\\__generic__\\generic_lock sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\_generic_\\generic_lock sans traductions complètes",
           "timestamp": "2025-08-15T23:58:38.582Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\zigbee\\__generic__\\generic_plug sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\_generic_\\generic_plug sans traductions complètes",
           "timestamp": "2025-08-15T23:58:38.584Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\zigbee\\__generic__\\generic_sensor sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\_generic_\\generic_sensor sans traductions complètes",
           "timestamp": "2025-08-15T23:58:38.585Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\zigbee\\__generic__\\generic_siren sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\_generic_\\generic_siren sans traductions complètes",
           "timestamp": "2025-08-15T23:58:38.589Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\zigbee\\__generic__\\generic_switch sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\_generic_\\generic_switch sans traductions complètes",
           "timestamp": "2025-08-15T23:58:38.593Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\zigbee\\__generic__\\generic_thermostat sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\_generic_\\generic_thermostat sans traductions complètes",
           "timestamp": "2025-08-15T23:58:38.594Z"
         },
         {
           "level": "WARNING",
-          "message": "Driver drivers\\zigbee\\__templates__ sans traductions complètes",
+          "message": "Driver drivers\\zigbee\\_templates_ sans traductions complètes",
           "timestamp": "2025-08-15T23:58:38.599Z"
         },
         {

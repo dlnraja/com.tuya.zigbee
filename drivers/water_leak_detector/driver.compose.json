@@ -1,10 +1,7 @@
 {
   "id": "water_leak_detector",
   "name": {
-    "en": "Water Leak Sensor",
-    "fr": "Capteur de Fuite d'Eau",
-    "nl": "Waterlek Sensor",
-    "de": "Wasserleck Sensor"
+    "en": "Water Leak Detector"
   },
   "class": "sensor",
   "capabilities": [
@@ -13,55 +10,35 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "TUYATEC-3tipnsrx",
-      "_TYST11_qq9mpfhw",
-      "_TYZB01_sqmd19i1",
-      "_TZ3000_0s9gukzt",
-      "_TZ3000_3dfewsk1",
-      "_TZ3000_4fhqe0k7",
-      "_TZ3000_4uvovz4r",
-      "_TZ3000_6oabgtzv",
-      "_TZ3000_7t5fhulv",
-      "_TZ3000_85czd6fy",
-      "_TZ3000_8kkfz6zj",
-      "_TZ3000_aorngzbe",
-      "_TZ3000_awvmkayh",
-      "_TZ3000_eit7p838",
-      "_TZ3000_fxvjhdyl",
-      "_TZ3000_jqliswuk",
-      "_TZ3000_k4ej3ww2",
-      "_TZ3000_kmyg4l5w",
-      "_TZ3000_kstbkt6a",
-      "_TZ3000_kyb656no",
-      "_TZ3000_mugyhz0q",
-      "_TZ3000_ocjlo4ea",
-      "_TZ3000_rg8fd6c8",
-      "_TZ3000_t6jriawg",
-      "_TZ3000_ukr7rrp0",
-      "_TZ3000_upgcbody",
-      "_TZ3000_wuep9zng",
-      "_TZ3000_ww9i3e0y",
-      "_TZ3000_yoqmkwpd",
-      "_TZE200_jthf7vb6",
-      "_TZE200_qq9mpfhw"
+      "_TZ3000_",
+      "_TZE200_",
+      "_TYZB01_",
+      "TUYA",
+      "Smart Home"
     ],
     "productId": [
-      "RH3001",
-      "TS0207",
-      "TS0601",
-      "q9mpfhw"
+      "TS0001",
+      "TS0011",
+      "TS0012",
+      "TS004F",
+      "TS011F",
+      "TS0121",
+      "TS013F"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          1280
-        ],
-        "bindings": [
-          1,
-          1280
+          "basic",
+          "powerConfiguration",
+          "identify",
+          "iasZone"
         ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/water_leak_detector/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your Water Leak Detector for 3 seconds until the LED starts blinking rapidly."
       }
     }
   },
@@ -69,9 +46,12 @@
     "small": "/drivers/water_leak_detector/assets/images/small.png",
     "large": "/drivers/water_leak_detector/assets/images/large.png"
   },
-  "energy": {
-    "batteries": [
-      "INTERNAL"
-    ]
-  }
+  "settings": [
+    {
+      "id": "detection_sensitivity",
+      "type": "dropdown",
+      "label": "Water Detection Sensitivity",
+      "value": "high"
+    }
+  ]
 }

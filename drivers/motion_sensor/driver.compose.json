@@ -1,65 +1,47 @@
 {
+  "id": "motion_sensor",
   "name": {
-    "en": "Motion Sensor",
-    "fr": "Détecteur de Mouvement",
-    "nl": "Bewegingssensor",
-    "de": "Bewegungsmelder"
+    "en": "Motion Sensor"
   },
   "class": "sensor",
   "capabilities": [
     "alarm_motion",
-    "measure_battery"
+    "measure_battery",
+    "measure_luminance"
   ],
-  "capabilitiesOptions": {
-    "alarm_motion": {
-      "title": {
-        "en": "Motion",
-        "fr": "Mouvement",
-        "nl": "Beweging",
-        "de": "Bewegung"
-      }
-    }
-  },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_4uf3d0ax",
-      "_TZ3000_6flvjxz8",
-      "_TZ3000_6ygjfyll",
-      "_TZ3000_h4yuteqy",
-      "_TZ3000_jmmz3l9t",
-      "_TZ3000_jmrgyl7o",
-      "_TZ3000_kstbkt6a",
-      "_TZ3000_lf56vpxj",
-      "_TZ3000_lqrfnfkq",
-      "_TZ3000_mmtwjmaq",
-      "_TZ3000_nss8amz9",
-      "_TZ3000_otvn3lne",
-      "_TZ3000_uuyu8uy2",
-      "_TZ3000_yqz6w2ac",
-      "_TZ3040_bb6xaihh",
-      "_TZE200_3towulqd",
-      "_TZE200_7yuohek9",
-      "_TZE200_bq5c8xfe",
-      "_TZE200_hsmsj6zh",
-      "_TZE200_tv3wxhcz",
-      "_TZE200_whpb9y8z"
+      "_TZ3000_",
+      "_TZE200_",
+      "_TYZB01_",
+      "TUYA",
+      "Smart Home"
     ],
     "productId": [
-      "TS0202",
-      "TS0206",
-      "TS0601"
+      "TS0001",
+      "TS0011",
+      "TS0012",
+      "TS004F",
+      "TS011F",
+      "TS0121",
+      "TS013F"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          1280
-        ],
-        "bindings": [
-          1,
-          1280
+          "basic",
+          "powerConfiguration",
+          "identify",
+          "iasZone",
+          "illuminanceMeasurement",
+          "occupancySensing"
         ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/motion_sensor/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your Motion Sensor for 3 seconds until the LED starts blinking rapidly."
       }
     }
   },
@@ -67,23 +49,24 @@
     "small": "/drivers/motion_sensor/assets/images/small.png",
     "large": "/drivers/motion_sensor/assets/images/large.png"
   },
-  "pair": [
+  "settings": [
     {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-        "next": "add_devices"
-      }
+      "id": "motion_sensitivity",
+      "type": "dropdown",
+      "label": "Motion Sensitivity",
+      "value": "medium"
     },
     {
-      "id": "add_devices",
-      "template": "add_devices"
+      "id": "occupancy_timeout",
+      "type": "number",
+      "label": "Occupancy Timeout (seconds)",
+      "value": 60
+    },
+    {
+      "id": "illuminance_threshold",
+      "type": "number",
+      "label": "Illuminance Threshold (lux)",
+      "value": 50
     }
-  ],
-  "energy": {
-    "batteries": [
-      "INTERNAL"
-    ]
-  },
-  "id": "motion_sensor"
+  ]
 }

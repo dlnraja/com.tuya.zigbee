@@ -33,7 +33,7 @@
     },
     {
       "id": "IMP-5",
-      "description": "Ajouter un système de cache intelligent pour les métadonnées",
+      "description": "Ajouter un système de cache smart pour les métadonnées",
       "priority": "LOW",
       "category": "General"
     },
@@ -367,7 +367,7 @@
     },
     {
       "id": "FEAT-9",
-      "description": "Système de cache intelligent",
+      "description": "Système de cache smart",
       "priority": "LOW",
       "category": "Core Functionality",
       "complexity": "HIGH"
@@ -430,7 +430,7 @@
     },
     {
       "id": "FEAT-18",
-      "description": "Dashboard de qualité du code",
+      "description": "Dashboard de quality du code",
       "priority": "LOW",
       "category": "User Interface",
       "complexity": "MEDIUM"
@@ -451,14 +451,14 @@
     },
     {
       "id": "FEAT-21",
-      "description": "Analyseur de qualité du code",
+      "description": "Analyseur de quality du code",
       "priority": "LOW",
       "category": "Core Functionality",
       "complexity": "LOW"
     },
     {
       "id": "FEAT-22",
-      "description": "Générateur de rapports de qualité",
+      "description": "Générateur de rapports de quality",
       "priority": "LOW",
       "category": "Core Functionality",
       "complexity": "LOW"
@@ -507,7 +507,7 @@
     },
     {
       "id": "FEAT-29",
-      "description": "Système de notifications intelligentes",
+      "description": "Système de notifications smartes",
       "priority": "LOW",
       "category": "Core Functionality",
       "complexity": "HIGH"
@@ -521,7 +521,7 @@
     },
     {
       "id": "FEAT-31",
-      "description": "Pipeline CI/CD intelligent",
+      "description": "Pipeline CI/CD smart",
       "priority": "LOW",
       "category": "Core Functionality",
       "complexity": "LOW"
@@ -754,7 +754,7 @@
     },
     {
       "id": "CORR-15",
-      "description": "Sécuriser les communications réseau",
+      "description": "Sécuriser les communications réswater",
       "priority": "LOW",
       "category": "General",
       "urgency": "MEDIUM"

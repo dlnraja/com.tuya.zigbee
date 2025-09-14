@@ -51,8 +51,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_zigbee",
-      "path": "drivers\\tuya_zigbee",
+      "id": "zigbee",
+      "path": "drivers\\zigbee",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -91,7 +91,7 @@
     },
     {
       "id": "ac",
-      "path": "drivers\\tuya_zigbee\\ac",
+      "path": "drivers\\zigbee\\ac",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -130,7 +130,7 @@
     },
     {
       "id": "aqara_ac-294",
-      "path": "drivers\\tuya_zigbee\\ac\\aqara_ac-294",
+      "path": "drivers\\zigbee\\ac\\aqara_ac-294",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -169,7 +169,7 @@
     },
     {
       "id": "assets",
-      "path": "drivers\\tuya_zigbee\\ac\\assets",
+      "path": "drivers\\zigbee\\ac\\assets",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -208,7 +208,7 @@
     },
     {
       "id": "ikea_ac-165",
-      "path": "drivers\\tuya_zigbee\\ac\\ikea_ac-165",
+      "path": "drivers\\zigbee\\ac\\ikea_ac-165",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -246,8 +246,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_ac-322",
-      "path": "drivers\\tuya_zigbee\\ac\\tuya_ac-322",
+      "id": "ac-322",
+      "path": "drivers\\zigbee\\ac\\tuya_ac-322",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -285,8 +285,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_ac_Ac_Device_Standard_Default",
-      "path": "drivers\\tuya_zigbee\\ac\\tuya_ac_Ac_Device_Standard_Default",
+      "id": "ac_Ac_Device_Standard_Default",
+      "path": "drivers\\zigbee\\ac\\tuya_ac_Ac_Device_Standard_Default",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -324,8 +324,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_ac_Aqara_Ac_Device_Standard_Default",
-      "path": "drivers\\tuya_zigbee\\ac\\tuya_ac_Aqara_Ac_Device_Standard_Default",
+      "id": "ac_Aqara_Ac_Device_Standard_Default",
+      "path": "drivers\\zigbee\\ac\\tuya_ac_Aqara_Ac_Device_Standard_Default",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -363,8 +363,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_ac_Ikea_Ac_Device_Standard_Default",
-      "path": "drivers\\tuya_zigbee\\ac\\tuya_ac_Ikea_Ac_Device_Standard_Default",
+      "id": "ac_Ikea_Ac_Device_Standard_Default",
+      "path": "drivers\\zigbee\\ac\\tuya_ac_Ikea_Ac_Device_Standard_Default",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -403,7 +403,7 @@
     },
     {
       "id": "assets",
-      "path": "drivers\\tuya_zigbee\\assets",
+      "path": "drivers\\zigbee\\assets",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -442,7 +442,7 @@
     },
     {
       "id": "images",
-      "path": "drivers\\tuya_zigbee\\assets\\images",
+      "path": "drivers\\zigbee\\assets\\images",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -481,7 +481,7 @@
     },
     {
       "id": "cover",
-      "path": "drivers\\tuya_zigbee\\cover",
+      "path": "drivers\\zigbee\\cover",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -520,7 +520,7 @@
     },
     {
       "id": "fan",
-      "path": "drivers\\tuya_zigbee\\fan",
+      "path": "drivers\\zigbee\\fan",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -559,7 +559,7 @@
     },
     {
       "id": "aqara_fan-281",
-      "path": "drivers\\tuya_zigbee\\fan\\aqara_fan-281",
+      "path": "drivers\\zigbee\\fan\\aqara_fan-281",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -598,7 +598,7 @@
     },
     {
       "id": "aqara_fan-459",
-      "path": "drivers\\tuya_zigbee\\fan\\aqara_fan-459",
+      "path": "drivers\\zigbee\\fan\\aqara_fan-459",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -637,7 +637,7 @@
     },
     {
       "id": "assets",
-      "path": "drivers\\tuya_zigbee\\fan\\assets",
+      "path": "drivers\\zigbee\\fan\\assets",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -676,7 +676,7 @@
     },
     {
       "id": "ikea_fan-18",
-      "path": "drivers\\tuya_zigbee\\fan\\ikea_fan-18",
+      "path": "drivers\\zigbee\\fan\\ikea_fan-18",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -715,7 +715,7 @@
     },
     {
       "id": "ikea_fan-208",
-      "path": "drivers\\tuya_zigbee\\fan\\ikea_fan-208",
+      "path": "drivers\\zigbee\\fan\\ikea_fan-208",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -753,8 +753,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_fan-200",
-      "path": "drivers\\tuya_zigbee\\fan\\tuya_fan-200",
+      "id": "fan-200",
+      "path": "drivers\\zigbee\\fan\\tuya_fan-200",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -792,8 +792,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_fan-730",
-      "path": "drivers\\tuya_zigbee\\fan\\tuya_fan-730",
+      "id": "fan-730",
+      "path": "drivers\\zigbee\\fan\\tuya_fan-730",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -832,7 +832,7 @@
     },
     {
       "id": "heater",
-      "path": "drivers\\tuya_zigbee\\heater",
+      "path": "drivers\\zigbee\\heater",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -871,7 +871,7 @@
     },
     {
       "id": "aqara_heater-833",
-      "path": "drivers\\tuya_zigbee\\heater\\aqara_heater-833",
+      "path": "drivers\\zigbee\\heater\\aqara_heater-833",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -910,7 +910,7 @@
     },
     {
       "id": "aqara_heater-898",
-      "path": "drivers\\tuya_zigbee\\heater\\aqara_heater-898",
+      "path": "drivers\\zigbee\\heater\\aqara_heater-898",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -949,7 +949,7 @@
     },
     {
       "id": "assets",
-      "path": "drivers\\tuya_zigbee\\heater\\assets",
+      "path": "drivers\\zigbee\\heater\\assets",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -988,7 +988,7 @@
     },
     {
       "id": "ikea_heater-399",
-      "path": "drivers\\tuya_zigbee\\heater\\ikea_heater-399",
+      "path": "drivers\\zigbee\\heater\\ikea_heater-399",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1027,7 +1027,7 @@
     },
     {
       "id": "ikea_heater-896",
-      "path": "drivers\\tuya_zigbee\\heater\\ikea_heater-896",
+      "path": "drivers\\zigbee\\heater\\ikea_heater-896",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1065,8 +1065,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_heater-0",
-      "path": "drivers\\tuya_zigbee\\heater\\tuya_heater-0",
+      "id": "heater-0",
+      "path": "drivers\\zigbee\\heater\\tuya_heater-0",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1104,8 +1104,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_heater-387",
-      "path": "drivers\\tuya_zigbee\\heater\\tuya_heater-387",
+      "id": "heater-387",
+      "path": "drivers\\zigbee\\heater\\tuya_heater-387",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1144,7 +1144,7 @@
     },
     {
       "id": "light",
-      "path": "drivers\\tuya_zigbee\\light",
+      "path": "drivers\\zigbee\\light",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1183,7 +1183,7 @@
     },
     {
       "id": "lock",
-      "path": "drivers\\tuya_zigbee\\lock",
+      "path": "drivers\\zigbee\\lock",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1222,7 +1222,7 @@
     },
     {
       "id": "aqara_deadbolt-22",
-      "path": "drivers\\tuya_zigbee\\lock\\aqara_deadbolt-22",
+      "path": "drivers\\zigbee\\lock\\aqara_deadbolt-22",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1261,7 +1261,7 @@
     },
     {
       "id": "aqara_deadbolt-22_lock",
-      "path": "drivers\\tuya_zigbee\\lock\\aqara_deadbolt-22_lock",
+      "path": "drivers\\zigbee\\lock\\aqara_deadbolt-22_lock",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1300,7 +1300,7 @@
     },
     {
       "id": "aqara_deadbolt-642",
-      "path": "drivers\\tuya_zigbee\\lock\\aqara_deadbolt-642",
+      "path": "drivers\\zigbee\\lock\\aqara_deadbolt-642",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1339,7 +1339,7 @@
     },
     {
       "id": "aqara_deadbolt-642_lock",
-      "path": "drivers\\tuya_zigbee\\lock\\aqara_deadbolt-642_lock",
+      "path": "drivers\\zigbee\\lock\\aqara_deadbolt-642_lock",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1378,7 +1378,7 @@
     },
     {
       "id": "aqara_door-305",
-      "path": "drivers\\tuya_zigbee\\lock\\aqara_door-305",
+      "path": "drivers\\zigbee\\lock\\aqara_door-305",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1417,7 +1417,7 @@
     },
     {
       "id": "aqara_door-305_lock",
-      "path": "drivers\\tuya_zigbee\\lock\\aqara_door-305_lock",
+      "path": "drivers\\zigbee\\lock\\aqara_door-305_lock",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1456,7 +1456,7 @@
     },
     {
       "id": "aqara_door-338",
-      "path": "drivers\\tuya_zigbee\\lock\\aqara_door-338",
+      "path": "drivers\\zigbee\\lock\\aqara_door-338",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1495,7 +1495,7 @@
     },
     {
       "id": "aqara_door-338_lock",
-      "path": "drivers\\tuya_zigbee\\lock\\aqara_door-338_lock",
+      "path": "drivers\\zigbee\\lock\\aqara_door-338_lock",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1534,7 +1534,7 @@
     },
     {
       "id": "aqara_padlock-382",
-      "path": "drivers\\tuya_zigbee\\lock\\aqara_padlock-382",
+      "path": "drivers\\zigbee\\lock\\aqara_padlock-382",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1573,7 +1573,7 @@
     },
     {
       "id": "aqara_padlock-382_lock",
-      "path": "drivers\\tuya_zigbee\\lock\\aqara_padlock-382_lock",
+      "path": "drivers\\zigbee\\lock\\aqara_padlock-382_lock",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1612,7 +1612,7 @@
     },
     {
       "id": "aqara_padlock-460",
-      "path": "drivers\\tuya_zigbee\\lock\\aqara_padlock-460",
+      "path": "drivers\\zigbee\\lock\\aqara_padlock-460",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1651,7 +1651,7 @@
     },
     {
       "id": "aqara_padlock-460_lock",
-      "path": "drivers\\tuya_zigbee\\lock\\aqara_padlock-460_lock",
+      "path": "drivers\\zigbee\\lock\\aqara_padlock-460_lock",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1690,7 +1690,7 @@
     },
     {
       "id": "ikea_deadbolt-274",
-      "path": "drivers\\tuya_zigbee\\lock\\ikea_deadbolt-274",
+      "path": "drivers\\zigbee\\lock\\ikea_deadbolt-274",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1729,7 +1729,7 @@
     },
     {
       "id": "ikea_deadbolt-274_lock",
-      "path": "drivers\\tuya_zigbee\\lock\\ikea_deadbolt-274_lock",
+      "path": "drivers\\zigbee\\lock\\ikea_deadbolt-274_lock",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1768,7 +1768,7 @@
     },
     {
       "id": "ikea_deadbolt-42",
-      "path": "drivers\\tuya_zigbee\\lock\\ikea_deadbolt-42",
+      "path": "drivers\\zigbee\\lock\\ikea_deadbolt-42",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1807,7 +1807,7 @@
     },
     {
       "id": "ikea_deadbolt-42_lock",
-      "path": "drivers\\tuya_zigbee\\lock\\ikea_deadbolt-42_lock",
+      "path": "drivers\\zigbee\\lock\\ikea_deadbolt-42_lock",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1846,7 +1846,7 @@
     },
     {
       "id": "ikea_door-491",
-      "path": "drivers\\tuya_zigbee\\lock\\ikea_door-491",
+      "path": "drivers\\zigbee\\lock\\ikea_door-491",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1885,7 +1885,7 @@
     },
     {
       "id": "ikea_door-491_lock",
-      "path": "drivers\\tuya_zigbee\\lock\\ikea_door-491_lock",
+      "path": "drivers\\zigbee\\lock\\ikea_door-491_lock",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1924,7 +1924,7 @@
     },
     {
       "id": "ikea_door-555",
-      "path": "drivers\\tuya_zigbee\\lock\\ikea_door-555",
+      "path": "drivers\\zigbee\\lock\\ikea_door-555",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -1963,7 +1963,7 @@
     },
     {
       "id": "ikea_door-555_lock",
-      "path": "drivers\\tuya_zigbee\\lock\\ikea_door-555_lock",
+      "path": "drivers\\zigbee\\lock\\ikea_door-555_lock",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2002,7 +2002,7 @@
     },
     {
       "id": "ikea_padlock-134",
-      "path": "drivers\\tuya_zigbee\\lock\\ikea_padlock-134",
+      "path": "drivers\\zigbee\\lock\\ikea_padlock-134",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2041,7 +2041,7 @@
     },
     {
       "id": "ikea_padlock-134_lock",
-      "path": "drivers\\tuya_zigbee\\lock\\ikea_padlock-134_lock",
+      "path": "drivers\\zigbee\\lock\\ikea_padlock-134_lock",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2080,7 +2080,7 @@
     },
     {
       "id": "ikea_padlock-984",
-      "path": "drivers\\tuya_zigbee\\lock\\ikea_padlock-984",
+      "path": "drivers\\zigbee\\lock\\ikea_padlock-984",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2119,7 +2119,7 @@
     },
     {
       "id": "ikea_padlock-984_lock",
-      "path": "drivers\\tuya_zigbee\\lock\\ikea_padlock-984_lock",
+      "path": "drivers\\zigbee\\lock\\ikea_padlock-984_lock",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2157,8 +2157,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_deadbolt-261",
-      "path": "drivers\\tuya_zigbee\\lock\\tuya_deadbolt-261",
+      "id": "deadbolt-261",
+      "path": "drivers\\zigbee\\lock\\tuya_deadbolt-261",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2196,8 +2196,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_deadbolt-261_lock",
-      "path": "drivers\\tuya_zigbee\\lock\\tuya_deadbolt-261_lock",
+      "id": "deadbolt-261_lock",
+      "path": "drivers\\zigbee\\lock\\tuya_deadbolt-261_lock",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2235,8 +2235,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_deadbolt-850",
-      "path": "drivers\\tuya_zigbee\\lock\\tuya_deadbolt-850",
+      "id": "deadbolt-850",
+      "path": "drivers\\zigbee\\lock\\tuya_deadbolt-850",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2274,8 +2274,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_deadbolt-850_lock",
-      "path": "drivers\\tuya_zigbee\\lock\\tuya_deadbolt-850_lock",
+      "id": "deadbolt-850_lock",
+      "path": "drivers\\zigbee\\lock\\tuya_deadbolt-850_lock",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2313,8 +2313,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_door-450",
-      "path": "drivers\\tuya_zigbee\\lock\\tuya_door-450",
+      "id": "door-450",
+      "path": "drivers\\zigbee\\lock\\tuya_door-450",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2352,8 +2352,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_door-450_lock",
-      "path": "drivers\\tuya_zigbee\\lock\\tuya_door-450_lock",
+      "id": "door-450_lock",
+      "path": "drivers\\zigbee\\lock\\tuya_door-450_lock",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2391,8 +2391,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_door-537",
-      "path": "drivers\\tuya_zigbee\\lock\\tuya_door-537",
+      "id": "door-537",
+      "path": "drivers\\zigbee\\lock\\tuya_door-537",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2430,8 +2430,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_door-537_lock",
-      "path": "drivers\\tuya_zigbee\\lock\\tuya_door-537_lock",
+      "id": "door-537_lock",
+      "path": "drivers\\zigbee\\lock\\tuya_door-537_lock",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2469,8 +2469,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_padlock-538",
-      "path": "drivers\\tuya_zigbee\\lock\\tuya_padlock-538",
+      "id": "padlock-538",
+      "path": "drivers\\zigbee\\lock\\tuya_padlock-538",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2508,8 +2508,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_padlock-538_lock",
-      "path": "drivers\\tuya_zigbee\\lock\\tuya_padlock-538_lock",
+      "id": "padlock-538_lock",
+      "path": "drivers\\zigbee\\lock\\tuya_padlock-538_lock",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2547,8 +2547,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_padlock-551",
-      "path": "drivers\\tuya_zigbee\\lock\\tuya_padlock-551",
+      "id": "padlock-551",
+      "path": "drivers\\zigbee\\lock\\tuya_padlock-551",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2586,8 +2586,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_padlock-551_lock",
-      "path": "drivers\\tuya_zigbee\\lock\\tuya_padlock-551_lock",
+      "id": "padlock-551_lock",
+      "path": "drivers\\zigbee\\lock\\tuya_padlock-551_lock",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2626,7 +2626,7 @@
     },
     {
       "id": "other",
-      "path": "drivers\\tuya_zigbee\\other",
+      "path": "drivers\\zigbee\\other",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2665,7 +2665,7 @@
     },
     {
       "id": "aqara",
-      "path": "drivers\\tuya_zigbee\\other\\aqara",
+      "path": "drivers\\zigbee\\other\\aqara",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2704,7 +2704,7 @@
     },
     {
       "id": "aqara_alarm-418",
-      "path": "drivers\\tuya_zigbee\\other\\aqara_alarm-418",
+      "path": "drivers\\zigbee\\other\\aqara_alarm-418",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2743,7 +2743,7 @@
     },
     {
       "id": "aqara_alarm-418_siren",
-      "path": "drivers\\tuya_zigbee\\other\\aqara_alarm-418_siren",
+      "path": "drivers\\zigbee\\other\\aqara_alarm-418_siren",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2782,7 +2782,7 @@
     },
     {
       "id": "aqara_alarm-922",
-      "path": "drivers\\tuya_zigbee\\other\\aqara_alarm-922",
+      "path": "drivers\\zigbee\\other\\aqara_alarm-922",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2821,7 +2821,7 @@
     },
     {
       "id": "aqara_alarm-922_siren",
-      "path": "drivers\\tuya_zigbee\\other\\aqara_alarm-922_siren",
+      "path": "drivers\\zigbee\\other\\aqara_alarm-922_siren",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2860,7 +2860,7 @@
     },
     {
       "id": "aqara_buzzer-110",
-      "path": "drivers\\tuya_zigbee\\other\\aqara_buzzer-110",
+      "path": "drivers\\zigbee\\other\\aqara_buzzer-110",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2899,7 +2899,7 @@
     },
     {
       "id": "aqara_buzzer-110_siren",
-      "path": "drivers\\tuya_zigbee\\other\\aqara_buzzer-110_siren",
+      "path": "drivers\\zigbee\\other\\aqara_buzzer-110_siren",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2938,7 +2938,7 @@
     },
     {
       "id": "aqara_buzzer-259",
-      "path": "drivers\\tuya_zigbee\\other\\aqara_buzzer-259",
+      "path": "drivers\\zigbee\\other\\aqara_buzzer-259",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -2977,7 +2977,7 @@
     },
     {
       "id": "aqara_buzzer-259_siren",
-      "path": "drivers\\tuya_zigbee\\other\\aqara_buzzer-259_siren",
+      "path": "drivers\\zigbee\\other\\aqara_buzzer-259_siren",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -3016,7 +3016,7 @@
     },
     {
       "id": "aqara_chime-818",
-      "path": "drivers\\tuya_zigbee\\other\\aqara_chime-818",
+      "path": "drivers\\zigbee\\other\\aqara_chime-818",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -3055,7 +3055,7 @@
     },
     {
       "id": "aqara_chime-818_siren",
-      "path": "drivers\\tuya_zigbee\\other\\aqara_chime-818_siren",
+      "path": "drivers\\zigbee\\other\\aqara_chime-818_siren",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -3094,7 +3094,7 @@
     },
     {
       "id": "aqara_chime-885",
-      "path": "drivers\\tuya_zigbee\\other\\aqara_chime-885",
+      "path": "drivers\\zigbee\\other\\aqara_chime-885",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -3133,7 +3133,7 @@
     },
     {
       "id": "aqara_chime-885_siren",
-      "path": "drivers\\tuya_zigbee\\other\\aqara_chime-885_siren",
+      "path": "drivers\\zigbee\\other\\aqara_chime-885_siren",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -3172,7 +3172,7 @@
     },
     {
       "id": "aqara_generic",
-      "path": "drivers\\tuya_zigbee\\other\\aqara_generic",
+      "path": "drivers\\zigbee\\other\\aqara_generic",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -3211,7 +3211,7 @@
     },
     {
       "id": "aqara-blind-772",
-      "path": "drivers\\tuya_zigbee\\other\\aqara_generic\\aqara-blind-772",
+      "path": "drivers\\zigbee\\other\\aqara_generic\\aqara-blind-772",
       "valid": false,
       "errors": [
         "Champ \"class\" manquant"
@@ -3254,7 +3254,7 @@
     },
     {
       "id": "aqara-blind-824",
-      "path": "drivers\\tuya_zigbee\\other\\aqara_generic\\aqara-blind-824",
+      "path": "drivers\\zigbee\\other\\aqara_generic\\aqara-blind-824",
       "valid": false,
       "errors": [
         "Champ \"class\" manquant"
@@ -3297,7 +3297,7 @@
     },
     {
       "id": "aqara-curtain-550",
-      "path": "drivers\\tuya_zigbee\\other\\aqara_generic\\aqara-curtain-550",
+      "path": "drivers\\zigbee\\other\\aqara_generic\\aqara-curtain-550",
       "valid": false,
       "errors": [
         "Champ \"class\" manquant"
@@ -3340,7 +3340,7 @@
     },
     {
       "id": "aqara-curtain-838",
-      "path": "drivers\\tuya_zigbee\\other\\aqara_generic\\aqara-curtain-838",
+      "path": "drivers\\zigbee\\other\\aqara_generic\\aqara-curtain-838",
       "valid": false,
       "errors": [
         "Champ \"class\" manquant"
@@ -3383,7 +3383,7 @@
     },
     {
       "id": "aqara-garage-374",
-      "path": "drivers\\tuya_zigbee\\other\\aqara_generic\\aqara-garage-374",
+      "path": "drivers\\zigbee\\other\\aqara_generic\\aqara-garage-374",
       "valid": false,
       "errors": [
         "Champ \"class\" manquant"
@@ -3426,7 +3426,7 @@
     },
     {
       "id": "aqara-garage-478",
-      "path": "drivers\\tuya_zigbee\\other\\aqara_generic\\aqara-garage-478",
+      "path": "drivers\\zigbee\\other\\aqara_generic\\aqara-garage-478",
       "valid": false,
       "errors": [
         "Champ \"class\" manquant"
@@ -3469,7 +3469,7 @@
     },
     {
       "id": "aqara-shade-24",
-      "path": "drivers\\tuya_zigbee\\other\\aqara_generic\\aqara-shade-24",
+      "path": "drivers\\zigbee\\other\\aqara_generic\\aqara-shade-24",
       "valid": false,
       "errors": [
         "Champ \"class\" manquant"
@@ -3512,7 +3512,7 @@
     },
     {
       "id": "aqara-shade-549",
-      "path": "drivers\\tuya_zigbee\\other\\aqara_generic\\aqara-shade-549",
+      "path": "drivers\\zigbee\\other\\aqara_generic\\aqara-shade-549",
       "valid": false,
       "errors": [
         "Champ \"class\" manquant"
@@ -3555,7 +3555,7 @@
     },
     {
       "id": "aqara_standard",
-      "path": "drivers\\tuya_zigbee\\other\\aqara_standard",
+      "path": "drivers\\zigbee\\other\\aqara_standard",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -3594,7 +3594,7 @@
     },
     {
       "id": "aqara_switch-457",
-      "path": "drivers\\tuya_zigbee\\other\\aqara_switch-457",
+      "path": "drivers\\zigbee\\other\\aqara_switch-457",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -3633,7 +3633,7 @@
     },
     {
       "id": "aqara_switch-883",
-      "path": "drivers\\tuya_zigbee\\other\\aqara_switch-883",
+      "path": "drivers\\zigbee\\other\\aqara_switch-883",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -3672,7 +3672,7 @@
     },
     {
       "id": "assets",
-      "path": "drivers\\tuya_zigbee\\other\\assets",
+      "path": "drivers\\zigbee\\other\\assets",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -3711,7 +3711,7 @@
     },
     {
       "id": "generic_device_generic_device",
-      "path": "drivers\\tuya_zigbee\\other\\generic_device_generic_device",
+      "path": "drivers\\zigbee\\other\\generic_device_generic_device",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -3750,7 +3750,7 @@
     },
     {
       "id": "generic_zigbee_light",
-      "path": "drivers\\tuya_zigbee\\other\\generic_zigbee_light",
+      "path": "drivers\\zigbee\\other\\generic_zigbee_light",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -3789,7 +3789,7 @@
     },
     {
       "id": "generic_zigbee_sensor",
-      "path": "drivers\\tuya_zigbee\\other\\generic_zigbee_sensor",
+      "path": "drivers\\zigbee\\other\\generic_zigbee_sensor",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -3828,7 +3828,7 @@
     },
     {
       "id": "generic_zigbee_switch",
-      "path": "drivers\\tuya_zigbee\\other\\generic_zigbee_switch",
+      "path": "drivers\\zigbee\\other\\generic_zigbee_switch",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -3867,7 +3867,7 @@
     },
     {
       "id": "ikea",
-      "path": "drivers\\tuya_zigbee\\other\\ikea",
+      "path": "drivers\\zigbee\\other\\ikea",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -3906,7 +3906,7 @@
     },
     {
       "id": "ikea_alarm-641",
-      "path": "drivers\\tuya_zigbee\\other\\ikea_alarm-641",
+      "path": "drivers\\zigbee\\other\\ikea_alarm-641",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -3945,7 +3945,7 @@
     },
     {
       "id": "ikea_alarm-641_siren",
-      "path": "drivers\\tuya_zigbee\\other\\ikea_alarm-641_siren",
+      "path": "drivers\\zigbee\\other\\ikea_alarm-641_siren",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -3984,7 +3984,7 @@
     },
     {
       "id": "ikea_alarm-707",
-      "path": "drivers\\tuya_zigbee\\other\\ikea_alarm-707",
+      "path": "drivers\\zigbee\\other\\ikea_alarm-707",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -4023,7 +4023,7 @@
     },
     {
       "id": "ikea_alarm-707_siren",
-      "path": "drivers\\tuya_zigbee\\other\\ikea_alarm-707_siren",
+      "path": "drivers\\zigbee\\other\\ikea_alarm-707_siren",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -4062,7 +4062,7 @@
     },
     {
       "id": "ikea_buzzer-232",
-      "path": "drivers\\tuya_zigbee\\other\\ikea_buzzer-232",
+      "path": "drivers\\zigbee\\other\\ikea_buzzer-232",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -4101,7 +4101,7 @@
     },
     {
       "id": "ikea_buzzer-232_siren",
-      "path": "drivers\\tuya_zigbee\\other\\ikea_buzzer-232_siren",
+      "path": "drivers\\zigbee\\other\\ikea_buzzer-232_siren",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -4140,7 +4140,7 @@
     },
     {
       "id": "ikea_buzzer-255",
-      "path": "drivers\\tuya_zigbee\\other\\ikea_buzzer-255",
+      "path": "drivers\\zigbee\\other\\ikea_buzzer-255",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -4179,7 +4179,7 @@
     },
     {
       "id": "ikea_buzzer-255_siren",
-      "path": "drivers\\tuya_zigbee\\other\\ikea_buzzer-255_siren",
+      "path": "drivers\\zigbee\\other\\ikea_buzzer-255_siren",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -4218,7 +4218,7 @@
     },
     {
       "id": "ikea_chime-608",
-      "path": "drivers\\tuya_zigbee\\other\\ikea_chime-608",
+      "path": "drivers\\zigbee\\other\\ikea_chime-608",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -4257,7 +4257,7 @@
     },
     {
       "id": "ikea_chime-608_siren",
-      "path": "drivers\\tuya_zigbee\\other\\ikea_chime-608_siren",
+      "path": "drivers\\zigbee\\other\\ikea_chime-608_siren",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -4296,7 +4296,7 @@
     },
     {
       "id": "ikea_chime-70",
-      "path": "drivers\\tuya_zigbee\\other\\ikea_chime-70",
+      "path": "drivers\\zigbee\\other\\ikea_chime-70",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -4335,7 +4335,7 @@
     },
     {
       "id": "ikea_chime-70_siren",
-      "path": "drivers\\tuya_zigbee\\other\\ikea_chime-70_siren",
+      "path": "drivers\\zigbee\\other\\ikea_chime-70_siren",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -4374,7 +4374,7 @@
     },
     {
       "id": "ikea_generic",
-      "path": "drivers\\tuya_zigbee\\other\\ikea_generic",
+      "path": "drivers\\zigbee\\other\\ikea_generic",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -4413,7 +4413,7 @@
     },
     {
       "id": "ikea-blind-14",
-      "path": "drivers\\tuya_zigbee\\other\\ikea_generic\\ikea-blind-14",
+      "path": "drivers\\zigbee\\other\\ikea_generic\\ikea-blind-14",
       "valid": false,
       "errors": [
         "Champ \"class\" manquant"
@@ -4456,7 +4456,7 @@
     },
     {
       "id": "ikea-blind-515",
-      "path": "drivers\\tuya_zigbee\\other\\ikea_generic\\ikea-blind-515",
+      "path": "drivers\\zigbee\\other\\ikea_generic\\ikea-blind-515",
       "valid": false,
       "errors": [
         "Champ \"class\" manquant"
@@ -4499,7 +4499,7 @@
     },
     {
       "id": "ikea-curtain-339",
-      "path": "drivers\\tuya_zigbee\\other\\ikea_generic\\ikea-curtain-339",
+      "path": "drivers\\zigbee\\other\\ikea_generic\\ikea-curtain-339",
       "valid": false,
       "errors": [
         "Champ \"class\" manquant"
@@ -4542,7 +4542,7 @@
     },
     {
       "id": "ikea-curtain-431",
-      "path": "drivers\\tuya_zigbee\\other\\ikea_generic\\ikea-curtain-431",
+      "path": "drivers\\zigbee\\other\\ikea_generic\\ikea-curtain-431",
       "valid": false,
       "errors": [
         "Champ \"class\" manquant"
@@ -4585,7 +4585,7 @@
     },
     {
       "id": "ikea-garage-4",
-      "path": "drivers\\tuya_zigbee\\other\\ikea_generic\\ikea-garage-4",
+      "path": "drivers\\zigbee\\other\\ikea_generic\\ikea-garage-4",
       "valid": false,
       "errors": [
         "Champ \"class\" manquant"
@@ -4628,7 +4628,7 @@
     },
     {
       "id": "ikea-garage-65",
-      "path": "drivers\\tuya_zigbee\\other\\ikea_generic\\ikea-garage-65",
+      "path": "drivers\\zigbee\\other\\ikea_generic\\ikea-garage-65",
       "valid": false,
       "errors": [
         "Champ \"class\" manquant"
@@ -4671,7 +4671,7 @@
     },
     {
       "id": "ikea-shade-756",
-      "path": "drivers\\tuya_zigbee\\other\\ikea_generic\\ikea-shade-756",
+      "path": "drivers\\zigbee\\other\\ikea_generic\\ikea-shade-756",
       "valid": false,
       "errors": [
         "Champ \"class\" manquant"
@@ -4714,7 +4714,7 @@
     },
     {
       "id": "ikea-shade-837",
-      "path": "drivers\\tuya_zigbee\\other\\ikea_generic\\ikea-shade-837",
+      "path": "drivers\\zigbee\\other\\ikea_generic\\ikea-shade-837",
       "valid": false,
       "errors": [
         "Champ \"class\" manquant"
@@ -4757,7 +4757,7 @@
     },
     {
       "id": "ikea_standard",
-      "path": "drivers\\tuya_zigbee\\other\\ikea_standard",
+      "path": "drivers\\zigbee\\other\\ikea_standard",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -4796,7 +4796,7 @@
     },
     {
       "id": "ikea_switch-612",
-      "path": "drivers\\tuya_zigbee\\other\\ikea_switch-612",
+      "path": "drivers\\zigbee\\other\\ikea_switch-612",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -4835,7 +4835,7 @@
     },
     {
       "id": "ikea_switch-783",
-      "path": "drivers\\tuya_zigbee\\other\\ikea_switch-783",
+      "path": "drivers\\zigbee\\other\\ikea_switch-783",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -4874,7 +4874,7 @@
     },
     {
       "id": "radar-24g_switch",
-      "path": "drivers\\tuya_zigbee\\other\\radar-24g_switch",
+      "path": "drivers\\zigbee\\other\\radar-24g_switch",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -4913,7 +4913,7 @@
     },
     {
       "id": "template_device_template_device",
-      "path": "drivers\\tuya_zigbee\\other\\template_device_template_device",
+      "path": "drivers\\zigbee\\other\\template_device_template_device",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -4951,8 +4951,8 @@
       "enrichment": {}
     },
     {
-      "id": "template_tuya_dp_sensor",
-      "path": "drivers\\tuya_zigbee\\other\\template_tuya_dp_sensor",
+      "id": "template_dp_sensor",
+      "path": "drivers\\zigbee\\other\\template_tuya_dp_sensor",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -4990,8 +4990,8 @@
       "enrichment": {}
     },
     {
-      "id": "template_tuya_dp_switch",
-      "path": "drivers\\tuya_zigbee\\other\\template_tuya_dp_switch",
+      "id": "template_dp_switch",
+      "path": "drivers\\zigbee\\other\\template_tuya_dp_switch",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5030,7 +5030,7 @@
     },
     {
       "id": "ts004f",
-      "path": "drivers\\tuya_zigbee\\other\\ts004f",
+      "path": "drivers\\zigbee\\other\\ts004f",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5069,7 +5069,7 @@
     },
     {
       "id": "ts004f_standard",
-      "path": "drivers\\tuya_zigbee\\other\\ts004f_standard",
+      "path": "drivers\\zigbee\\other\\ts004f_standard",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5108,7 +5108,7 @@
     },
     {
       "id": "ts0121",
-      "path": "drivers\\tuya_zigbee\\other\\ts0121",
+      "path": "drivers\\zigbee\\other\\ts0121",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5147,7 +5147,7 @@
     },
     {
       "id": "ts0121_standard",
-      "path": "drivers\\tuya_zigbee\\other\\ts0121_standard",
+      "path": "drivers\\zigbee\\other\\ts0121_standard",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5186,7 +5186,7 @@
     },
     {
       "id": "ts0204",
-      "path": "drivers\\tuya_zigbee\\other\\ts0204",
+      "path": "drivers\\zigbee\\other\\ts0204",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5225,7 +5225,7 @@
     },
     {
       "id": "ts0204_standard",
-      "path": "drivers\\tuya_zigbee\\other\\ts0204_standard",
+      "path": "drivers\\zigbee\\other\\ts0204_standard",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5264,7 +5264,7 @@
     },
     {
       "id": "ts0207",
-      "path": "drivers\\tuya_zigbee\\other\\ts0207",
+      "path": "drivers\\zigbee\\other\\ts0207",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5303,7 +5303,7 @@
     },
     {
       "id": "ts0207_standard",
-      "path": "drivers\\tuya_zigbee\\other\\ts0207_standard",
+      "path": "drivers\\zigbee\\other\\ts0207_standard",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5342,7 +5342,7 @@
     },
     {
       "id": "ts0502a",
-      "path": "drivers\\tuya_zigbee\\other\\ts0502a",
+      "path": "drivers\\zigbee\\other\\ts0502a",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5381,7 +5381,7 @@
     },
     {
       "id": "ts0502a_standard",
-      "path": "drivers\\tuya_zigbee\\other\\ts0502a_standard",
+      "path": "drivers\\zigbee\\other\\ts0502a_standard",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5420,7 +5420,7 @@
     },
     {
       "id": "ts0601",
-      "path": "drivers\\tuya_zigbee\\other\\ts0601",
+      "path": "drivers\\zigbee\\other\\ts0601",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5459,7 +5459,7 @@
     },
     {
       "id": "ts0601_sensor_battery",
-      "path": "drivers\\tuya_zigbee\\other\\ts0601_sensor_battery",
+      "path": "drivers\\zigbee\\other\\ts0601_sensor_battery",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5498,7 +5498,7 @@
     },
     {
       "id": "ts0601_standard",
-      "path": "drivers\\tuya_zigbee\\other\\ts0601_standard",
+      "path": "drivers\\zigbee\\other\\ts0601_standard",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5537,7 +5537,7 @@
     },
     {
       "id": "ts0601_switch",
-      "path": "drivers\\tuya_zigbee\\other\\ts0601_switch",
+      "path": "drivers\\zigbee\\other\\ts0601_switch",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5576,7 +5576,7 @@
     },
     {
       "id": "ts1001",
-      "path": "drivers\\tuya_zigbee\\other\\ts1001",
+      "path": "drivers\\zigbee\\other\\ts1001",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5615,7 +5615,7 @@
     },
     {
       "id": "ts1001_standard",
-      "path": "drivers\\tuya_zigbee\\other\\ts1001_standard",
+      "path": "drivers\\zigbee\\other\\ts1001_standard",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5654,7 +5654,7 @@
     },
     {
       "id": "ts110f",
-      "path": "drivers\\tuya_zigbee\\other\\ts110f",
+      "path": "drivers\\zigbee\\other\\ts110f",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5693,7 +5693,7 @@
     },
     {
       "id": "ts110f_standard",
-      "path": "drivers\\tuya_zigbee\\other\\ts110f_standard",
+      "path": "drivers\\zigbee\\other\\ts110f_standard",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5732,7 +5732,7 @@
     },
     {
       "id": "tuya",
-      "path": "drivers\\tuya_zigbee\\other\\tuya",
+      "path": "drivers\\zigbee\\other\\tuya",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5770,8 +5770,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_cover_ts0601",
-      "path": "drivers\\tuya_zigbee\\other\\tuya_cover_ts0601",
+      "id": "cover",
+      "path": "drivers\\zigbee\\other\\tuya_cover",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5809,8 +5809,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_generic",
-      "path": "drivers\\tuya_zigbee\\other\\tuya_generic",
+      "id": "generic",
+      "path": "drivers\\zigbee\\other\\tuya_generic",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5848,8 +5848,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_standard",
-      "path": "drivers\\tuya_zigbee\\other\\tuya_standard",
+      "id": "standard",
+      "path": "drivers\\zigbee\\other\\tuya_standard",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5887,8 +5887,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_switch-225",
-      "path": "drivers\\tuya_zigbee\\other\\tuya_switch-225",
+      "id": "switch-225",
+      "path": "drivers\\zigbee\\other\\tuya_switch-225",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5926,8 +5926,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_switch-549",
-      "path": "drivers\\tuya_zigbee\\other\\tuya_switch-549",
+      "id": "switch-549",
+      "path": "drivers\\zigbee\\other\\tuya_switch-549",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -5966,7 +5966,7 @@
     },
     {
       "id": "plug",
-      "path": "drivers\\tuya_zigbee\\plug",
+      "path": "drivers\\zigbee\\plug",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6005,7 +6005,7 @@
     },
     {
       "id": "sensor-contact",
-      "path": "drivers\\tuya_zigbee\\sensor-contact",
+      "path": "drivers\\zigbee\\sensor-contact",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6044,7 +6044,7 @@
     },
     {
       "id": "aqara_contact-543",
-      "path": "drivers\\tuya_zigbee\\sensor-contact\\aqara_contact-543",
+      "path": "drivers\\zigbee\\sensor-contact\\aqara_contact-543",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6083,7 +6083,7 @@
     },
     {
       "id": "aqara_contact-799",
-      "path": "drivers\\tuya_zigbee\\sensor-contact\\aqara_contact-799",
+      "path": "drivers\\zigbee\\sensor-contact\\aqara_contact-799",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6122,7 +6122,7 @@
     },
     {
       "id": "assets",
-      "path": "drivers\\tuya_zigbee\\sensor-contact\\assets",
+      "path": "drivers\\zigbee\\sensor-contact\\assets",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6161,7 +6161,7 @@
     },
     {
       "id": "ikea_contact-348",
-      "path": "drivers\\tuya_zigbee\\sensor-contact\\ikea_contact-348",
+      "path": "drivers\\zigbee\\sensor-contact\\ikea_contact-348",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6200,7 +6200,7 @@
     },
     {
       "id": "ikea_contact-739",
-      "path": "drivers\\tuya_zigbee\\sensor-contact\\ikea_contact-739",
+      "path": "drivers\\zigbee\\sensor-contact\\ikea_contact-739",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6238,8 +6238,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_contact-202",
-      "path": "drivers\\tuya_zigbee\\sensor-contact\\tuya_contact-202",
+      "id": "contact-202",
+      "path": "drivers\\zigbee\\sensor-contact\\tuya_contact-202",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6277,8 +6277,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_contact-219",
-      "path": "drivers\\tuya_zigbee\\sensor-contact\\tuya_contact-219",
+      "id": "contact-219",
+      "path": "drivers\\zigbee\\sensor-contact\\tuya_contact-219",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6317,7 +6317,7 @@
     },
     {
       "id": "sensor-gas",
-      "path": "drivers\\tuya_zigbee\\sensor-gas",
+      "path": "drivers\\zigbee\\sensor-gas",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6356,7 +6356,7 @@
     },
     {
       "id": "aqara_gas-474",
-      "path": "drivers\\tuya_zigbee\\sensor-gas\\aqara_gas-474",
+      "path": "drivers\\zigbee\\sensor-gas\\aqara_gas-474",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6395,7 +6395,7 @@
     },
     {
       "id": "aqara_gas-84",
-      "path": "drivers\\tuya_zigbee\\sensor-gas\\aqara_gas-84",
+      "path": "drivers\\zigbee\\sensor-gas\\aqara_gas-84",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6434,7 +6434,7 @@
     },
     {
       "id": "assets",
-      "path": "drivers\\tuya_zigbee\\sensor-gas\\assets",
+      "path": "drivers\\zigbee\\sensor-gas\\assets",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6473,7 +6473,7 @@
     },
     {
       "id": "ikea_gas-317",
-      "path": "drivers\\tuya_zigbee\\sensor-gas\\ikea_gas-317",
+      "path": "drivers\\zigbee\\sensor-gas\\ikea_gas-317",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6512,7 +6512,7 @@
     },
     {
       "id": "ikea_gas-418",
-      "path": "drivers\\tuya_zigbee\\sensor-gas\\ikea_gas-418",
+      "path": "drivers\\zigbee\\sensor-gas\\ikea_gas-418",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6550,8 +6550,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_gas-320",
-      "path": "drivers\\tuya_zigbee\\sensor-gas\\tuya_gas-320",
+      "id": "gas-320",
+      "path": "drivers\\zigbee\\sensor-gas\\tuya_gas-320",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6589,8 +6589,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_gas-695",
-      "path": "drivers\\tuya_zigbee\\sensor-gas\\tuya_gas-695",
+      "id": "gas-695",
+      "path": "drivers\\zigbee\\sensor-gas\\tuya_gas-695",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6629,7 +6629,7 @@
     },
     {
       "id": "sensor-humidity",
-      "path": "drivers\\tuya_zigbee\\sensor-humidity",
+      "path": "drivers\\zigbee\\sensor-humidity",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6668,7 +6668,7 @@
     },
     {
       "id": "aqara_humidity-617",
-      "path": "drivers\\tuya_zigbee\\sensor-humidity\\aqara_humidity-617",
+      "path": "drivers\\zigbee\\sensor-humidity\\aqara_humidity-617",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6707,7 +6707,7 @@
     },
     {
       "id": "aqara_humidity-794",
-      "path": "drivers\\tuya_zigbee\\sensor-humidity\\aqara_humidity-794",
+      "path": "drivers\\zigbee\\sensor-humidity\\aqara_humidity-794",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6746,7 +6746,7 @@
     },
     {
       "id": "assets",
-      "path": "drivers\\tuya_zigbee\\sensor-humidity\\assets",
+      "path": "drivers\\zigbee\\sensor-humidity\\assets",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6785,7 +6785,7 @@
     },
     {
       "id": "generic_device_sensor_humidity",
-      "path": "drivers\\tuya_zigbee\\sensor-humidity\\generic_device_sensor_humidity",
+      "path": "drivers\\zigbee\\sensor-humidity\\generic_device_sensor_humidity",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6824,7 +6824,7 @@
     },
     {
       "id": "generic_sensor_humidity",
-      "path": "drivers\\tuya_zigbee\\sensor-humidity\\generic_sensor_humidity",
+      "path": "drivers\\zigbee\\sensor-humidity\\generic_sensor_humidity",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6863,7 +6863,7 @@
     },
     {
       "id": "ikea_humidity-288",
-      "path": "drivers\\tuya_zigbee\\sensor-humidity\\ikea_humidity-288",
+      "path": "drivers\\zigbee\\sensor-humidity\\ikea_humidity-288",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6902,7 +6902,7 @@
     },
     {
       "id": "ikea_humidity-712",
-      "path": "drivers\\tuya_zigbee\\sensor-humidity\\ikea_humidity-712",
+      "path": "drivers\\zigbee\\sensor-humidity\\ikea_humidity-712",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6940,8 +6940,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_humidity-498",
-      "path": "drivers\\tuya_zigbee\\sensor-humidity\\tuya_humidity-498",
+      "id": "humidity-498",
+      "path": "drivers\\zigbee\\sensor-humidity\\tuya_humidity-498",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -6979,8 +6979,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_humidity-86",
-      "path": "drivers\\tuya_zigbee\\sensor-humidity\\tuya_humidity-86",
+      "id": "humidity-86",
+      "path": "drivers\\zigbee\\sensor-humidity\\tuya_humidity-86",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7019,7 +7019,7 @@
     },
     {
       "id": "sensor-motion",
-      "path": "drivers\\tuya_zigbee\\sensor-motion",
+      "path": "drivers\\zigbee\\sensor-motion",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7058,7 +7058,7 @@
     },
     {
       "id": "aqara_motion-364",
-      "path": "drivers\\tuya_zigbee\\sensor-motion\\aqara_motion-364",
+      "path": "drivers\\zigbee\\sensor-motion\\aqara_motion-364",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7097,7 +7097,7 @@
     },
     {
       "id": "aqara_motion-800",
-      "path": "drivers\\tuya_zigbee\\sensor-motion\\aqara_motion-800",
+      "path": "drivers\\zigbee\\sensor-motion\\aqara_motion-800",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7136,7 +7136,7 @@
     },
     {
       "id": "assets",
-      "path": "drivers\\tuya_zigbee\\sensor-motion\\assets",
+      "path": "drivers\\zigbee\\sensor-motion\\assets",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7175,7 +7175,7 @@
     },
     {
       "id": "generic_device_sensor_motion",
-      "path": "drivers\\tuya_zigbee\\sensor-motion\\generic_device_sensor_motion",
+      "path": "drivers\\zigbee\\sensor-motion\\generic_device_sensor_motion",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7214,7 +7214,7 @@
     },
     {
       "id": "generic_sensor_motion",
-      "path": "drivers\\tuya_zigbee\\sensor-motion\\generic_sensor_motion",
+      "path": "drivers\\zigbee\\sensor-motion\\generic_sensor_motion",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7253,7 +7253,7 @@
     },
     {
       "id": "ikea_motion-927",
-      "path": "drivers\\tuya_zigbee\\sensor-motion\\ikea_motion-927",
+      "path": "drivers\\zigbee\\sensor-motion\\ikea_motion-927",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7292,7 +7292,7 @@
     },
     {
       "id": "ikea_motion-981",
-      "path": "drivers\\tuya_zigbee\\sensor-motion\\ikea_motion-981",
+      "path": "drivers\\zigbee\\sensor-motion\\ikea_motion-981",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7331,7 +7331,7 @@
     },
     {
       "id": "radar-24g_sensor_battery_presence",
-      "path": "drivers\\tuya_zigbee\\sensor-motion\\radar-24g_sensor_battery_presence",
+      "path": "drivers\\zigbee\\sensor-motion\\radar-24g_sensor_battery_presence",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7369,8 +7369,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_motion-299",
-      "path": "drivers\\tuya_zigbee\\sensor-motion\\tuya_motion-299",
+      "id": "motion-299",
+      "path": "drivers\\zigbee\\sensor-motion\\tuya_motion-299",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7408,8 +7408,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_motion-362",
-      "path": "drivers\\tuya_zigbee\\sensor-motion\\tuya_motion-362",
+      "id": "motion-362",
+      "path": "drivers\\zigbee\\sensor-motion\\tuya_motion-362",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7448,7 +7448,7 @@
     },
     {
       "id": "sensor-smoke",
-      "path": "drivers\\tuya_zigbee\\sensor-smoke",
+      "path": "drivers\\zigbee\\sensor-smoke",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7487,7 +7487,7 @@
     },
     {
       "id": "aqara_smoke-458",
-      "path": "drivers\\tuya_zigbee\\sensor-smoke\\aqara_smoke-458",
+      "path": "drivers\\zigbee\\sensor-smoke\\aqara_smoke-458",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7526,7 +7526,7 @@
     },
     {
       "id": "aqara_smoke-61",
-      "path": "drivers\\tuya_zigbee\\sensor-smoke\\aqara_smoke-61",
+      "path": "drivers\\zigbee\\sensor-smoke\\aqara_smoke-61",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7565,7 +7565,7 @@
     },
     {
       "id": "assets",
-      "path": "drivers\\tuya_zigbee\\sensor-smoke\\assets",
+      "path": "drivers\\zigbee\\sensor-smoke\\assets",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7604,7 +7604,7 @@
     },
     {
       "id": "ikea_smoke-360",
-      "path": "drivers\\tuya_zigbee\\sensor-smoke\\ikea_smoke-360",
+      "path": "drivers\\zigbee\\sensor-smoke\\ikea_smoke-360",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7643,7 +7643,7 @@
     },
     {
       "id": "ikea_smoke-94",
-      "path": "drivers\\tuya_zigbee\\sensor-smoke\\ikea_smoke-94",
+      "path": "drivers\\zigbee\\sensor-smoke\\ikea_smoke-94",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7681,8 +7681,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_smoke-109",
-      "path": "drivers\\tuya_zigbee\\sensor-smoke\\tuya_smoke-109",
+      "id": "smoke-109",
+      "path": "drivers\\zigbee\\sensor-smoke\\tuya_smoke-109",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7720,8 +7720,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_smoke-927",
-      "path": "drivers\\tuya_zigbee\\sensor-smoke\\tuya_smoke-927",
+      "id": "smoke-927",
+      "path": "drivers\\zigbee\\sensor-smoke\\tuya_smoke-927",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7760,7 +7760,7 @@
     },
     {
       "id": "sensor-temp",
-      "path": "drivers\\tuya_zigbee\\sensor-temp",
+      "path": "drivers\\zigbee\\sensor-temp",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7799,7 +7799,7 @@
     },
     {
       "id": "aqara_temperature-561",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\aqara_temperature-561",
+      "path": "drivers\\zigbee\\sensor-temp\\aqara_temperature-561",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7838,7 +7838,7 @@
     },
     {
       "id": "aqara_temperature-666",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\aqara_temperature-666",
+      "path": "drivers\\zigbee\\sensor-temp\\aqara_temperature-666",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7877,7 +7877,7 @@
     },
     {
       "id": "aqara_thermostat-115",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\aqara_thermostat-115",
+      "path": "drivers\\zigbee\\sensor-temp\\aqara_thermostat-115",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7916,7 +7916,7 @@
     },
     {
       "id": "aqara_thermostat-831",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\aqara_thermostat-831",
+      "path": "drivers\\zigbee\\sensor-temp\\aqara_thermostat-831",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7955,7 +7955,7 @@
     },
     {
       "id": "assets",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\assets",
+      "path": "drivers\\zigbee\\sensor-temp\\assets",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -7994,7 +7994,7 @@
     },
     {
       "id": "generic_device_sensor_temperature",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\generic_device_sensor_temperature",
+      "path": "drivers\\zigbee\\sensor-temp\\generic_device_sensor_temperature",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8033,7 +8033,7 @@
     },
     {
       "id": "generic_sensor_temperature",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\generic_sensor_temperature",
+      "path": "drivers\\zigbee\\sensor-temp\\generic_sensor_temperature",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8072,7 +8072,7 @@
     },
     {
       "id": "ikea_temperature-466",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\ikea_temperature-466",
+      "path": "drivers\\zigbee\\sensor-temp\\ikea_temperature-466",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8111,7 +8111,7 @@
     },
     {
       "id": "ikea_temperature-892",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\ikea_temperature-892",
+      "path": "drivers\\zigbee\\sensor-temp\\ikea_temperature-892",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8150,7 +8150,7 @@
     },
     {
       "id": "ikea_thermostat-128",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\ikea_thermostat-128",
+      "path": "drivers\\zigbee\\sensor-temp\\ikea_thermostat-128",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8189,7 +8189,7 @@
     },
     {
       "id": "ikea_thermostat-39",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\ikea_thermostat-39",
+      "path": "drivers\\zigbee\\sensor-temp\\ikea_thermostat-39",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8227,8 +8227,8 @@
       "enrichment": {}
     },
     {
-      "id": "template_tuya_dp_thermostat",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\template_tuya_dp_thermostat",
+      "id": "template_dp_thermostat",
+      "path": "drivers\\zigbee\\sensor-temp\\template_tuya_dp_thermostat",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8267,7 +8267,7 @@
     },
     {
       "id": "ts0201",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\ts0201",
+      "path": "drivers\\zigbee\\sensor-temp\\ts0201",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8306,7 +8306,7 @@
     },
     {
       "id": "ts0201_sensor_battery",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\ts0201_sensor_battery",
+      "path": "drivers\\zigbee\\sensor-temp\\ts0201_sensor_battery",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8345,7 +8345,7 @@
     },
     {
       "id": "ts0201_standard",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\ts0201_standard",
+      "path": "drivers\\zigbee\\sensor-temp\\ts0201_standard",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8384,7 +8384,7 @@
     },
     {
       "id": "ts0202",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\ts0202",
+      "path": "drivers\\zigbee\\sensor-temp\\ts0202",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8423,7 +8423,7 @@
     },
     {
       "id": "ts0202_sensor_battery",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\ts0202_sensor_battery",
+      "path": "drivers\\zigbee\\sensor-temp\\ts0202_sensor_battery",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8462,7 +8462,7 @@
     },
     {
       "id": "ts0202_standard",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\ts0202_standard",
+      "path": "drivers\\zigbee\\sensor-temp\\ts0202_standard",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8501,7 +8501,7 @@
     },
     {
       "id": "ts0203",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\ts0203",
+      "path": "drivers\\zigbee\\sensor-temp\\ts0203",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8540,7 +8540,7 @@
     },
     {
       "id": "ts0203_sensor_battery",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\ts0203_sensor_battery",
+      "path": "drivers\\zigbee\\sensor-temp\\ts0203_sensor_battery",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8579,7 +8579,7 @@
     },
     {
       "id": "ts0203_standard",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\ts0203_standard",
+      "path": "drivers\\zigbee\\sensor-temp\\ts0203_standard",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8618,7 +8618,7 @@
     },
     {
       "id": "ts0205",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\ts0205",
+      "path": "drivers\\zigbee\\sensor-temp\\ts0205",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8657,7 +8657,7 @@
     },
     {
       "id": "ts0205_sensor_battery",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\ts0205_sensor_battery",
+      "path": "drivers\\zigbee\\sensor-temp\\ts0205_sensor_battery",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8696,7 +8696,7 @@
     },
     {
       "id": "ts0205_standard",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\ts0205_standard",
+      "path": "drivers\\zigbee\\sensor-temp\\ts0205_standard",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8735,7 +8735,7 @@
     },
     {
       "id": "ts0601_climate-thermostat",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\ts0601_climate-thermostat",
+      "path": "drivers\\zigbee\\sensor-temp\\ts0601_climate-thermostat",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8773,8 +8773,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_sensor_temp_hum_ts0201",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\tuya_sensor_temp_hum_ts0201",
+      "id": "sensor_temp_hum",
+      "path": "drivers\\zigbee\\sensor-temp\\tuya_sensor_temp_hum",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8812,8 +8812,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_temperature-622",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\tuya_temperature-622",
+      "id": "temperature-622",
+      "path": "drivers\\zigbee\\sensor-temp\\tuya_temperature-622",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8851,8 +8851,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_temperature-779",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\tuya_temperature-779",
+      "id": "temperature-779",
+      "path": "drivers\\zigbee\\sensor-temp\\tuya_temperature-779",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8890,8 +8890,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_thermostat-435",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\tuya_thermostat-435",
+      "id": "thermostat-435",
+      "path": "drivers\\zigbee\\sensor-temp\\tuya_thermostat-435",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8929,8 +8929,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_thermostat-825",
-      "path": "drivers\\tuya_zigbee\\sensor-temp\\tuya_thermostat-825",
+      "id": "thermostat-825",
+      "path": "drivers\\zigbee\\sensor-temp\\tuya_thermostat-825",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -8969,7 +8969,7 @@
     },
     {
       "id": "sensor-vibration",
-      "path": "drivers\\tuya_zigbee\\sensor-vibration",
+      "path": "drivers\\zigbee\\sensor-vibration",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -9008,7 +9008,7 @@
     },
     {
       "id": "assets",
-      "path": "drivers\\tuya_zigbee\\sensor-vibration\\assets",
+      "path": "drivers\\zigbee\\sensor-vibration\\assets",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -9047,7 +9047,7 @@
     },
     {
       "id": "sensor-water",
-      "path": "drivers\\tuya_zigbee\\sensor-water",
+      "path": "drivers\\zigbee\\sensor-water",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -9086,7 +9086,7 @@
     },
     {
       "id": "aqara_water-220",
-      "path": "drivers\\tuya_zigbee\\sensor-water\\aqara_water-220",
+      "path": "drivers\\zigbee\\sensor-water\\aqara_water-220",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -9125,7 +9125,7 @@
     },
     {
       "id": "aqara_water-237",
-      "path": "drivers\\tuya_zigbee\\sensor-water\\aqara_water-237",
+      "path": "drivers\\zigbee\\sensor-water\\aqara_water-237",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -9164,7 +9164,7 @@
     },
     {
       "id": "assets",
-      "path": "drivers\\tuya_zigbee\\sensor-water\\assets",
+      "path": "drivers\\zigbee\\sensor-water\\assets",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -9203,7 +9203,7 @@
     },
     {
       "id": "ikea_water-362",
-      "path": "drivers\\tuya_zigbee\\sensor-water\\ikea_water-362",
+      "path": "drivers\\zigbee\\sensor-water\\ikea_water-362",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -9242,7 +9242,7 @@
     },
     {
       "id": "ikea_water-667",
-      "path": "drivers\\tuya_zigbee\\sensor-water\\ikea_water-667",
+      "path": "drivers\\zigbee\\sensor-water\\ikea_water-667",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -9280,8 +9280,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_water-264",
-      "path": "drivers\\tuya_zigbee\\sensor-water\\tuya_water-264",
+      "id": "water-264",
+      "path": "drivers\\zigbee\\sensor-water\\tuya_water-264",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -9319,8 +9319,8 @@
       "enrichment": {}
     },
     {
-      "id": "tuya_water-581",
-      "path": "drivers\\tuya_zigbee\\sensor-water\\tuya_water-581",
+      "id": "water-581",
+      "path": "drivers\\zigbee\\sensor-water\\tuya_water-581",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -9359,7 +9359,7 @@
     },
     {
       "id": "siren",
-      "path": "drivers\\tuya_zigbee\\siren",
+      "path": "drivers\\zigbee\\siren",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -9398,7 +9398,7 @@
     },
     {
       "id": "switch",
-      "path": "drivers\\tuya_zigbee\\switch",
+      "path": "drivers\\zigbee\\switch",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -9437,7 +9437,7 @@
     },
     {
       "id": "thermostat",
-      "path": "drivers\\tuya_zigbee\\thermostat",
+      "path": "drivers\\zigbee\\thermostat",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -9476,7 +9476,7 @@
     },
     {
       "id": "assets",
-      "path": "drivers\\tuya_zigbee\\thermostat\\assets",
+      "path": "drivers\\zigbee\\thermostat\\assets",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -10249,8 +10249,8 @@
       "enrichment": {}
     },
     {
-      "id": "__generic__",
-      "path": "drivers\\zigbee\\__generic__",
+      "id": "generic",
+      "path": "drivers\\zigbee\\_generic",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -10289,7 +10289,7 @@
     },
     {
       "id": "generic_cover",
-      "path": "drivers\\zigbee\\__generic__\\generic_cover",
+      "path": "drivers\\zigbee\\_generic_\\generic_cover",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -10328,7 +10328,7 @@
     },
     {
       "id": "generic_fan",
-      "path": "drivers\\zigbee\\__generic__\\generic_fan",
+      "path": "drivers\\zigbee\\_generic_\\generic_fan",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -10367,7 +10367,7 @@
     },
     {
       "id": "generic_generic",
-      "path": "drivers\\zigbee\\__generic__\\generic_generic",
+      "path": "drivers\\zigbee\\_generic_\\generic_generic",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -10406,7 +10406,7 @@
     },
     {
       "id": "generic_heater",
-      "path": "drivers\\zigbee\\__generic__\\generic_heater",
+      "path": "drivers\\zigbee\\_generic_\\generic_heater",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -10445,7 +10445,7 @@
     },
     {
       "id": "generic_light",
-      "path": "drivers\\zigbee\\__generic__\\generic_light",
+      "path": "drivers\\zigbee\\_generic_\\generic_light",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -10484,7 +10484,7 @@
     },
     {
       "id": "generic_lock",
-      "path": "drivers\\zigbee\\__generic__\\generic_lock",
+      "path": "drivers\\zigbee\\_generic_\\generic_lock",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -10523,7 +10523,7 @@
     },
     {
       "id": "generic_plug",
-      "path": "drivers\\zigbee\\__generic__\\generic_plug",
+      "path": "drivers\\zigbee\\_generic_\\generic_plug",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -10562,7 +10562,7 @@
     },
     {
       "id": "generic_sensor",
-      "path": "drivers\\zigbee\\__generic__\\generic_sensor",
+      "path": "drivers\\zigbee\\_generic_\\generic_sensor",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -10601,7 +10601,7 @@
     },
     {
       "id": "generic_siren",
-      "path": "drivers\\zigbee\\__generic__\\generic_siren",
+      "path": "drivers\\zigbee\\_generic_\\generic_siren",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -10640,7 +10640,7 @@
     },
     {
       "id": "generic_switch",
-      "path": "drivers\\zigbee\\__generic__\\generic_switch",
+      "path": "drivers\\zigbee\\_generic_\\generic_switch",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -10679,7 +10679,7 @@
     },
     {
       "id": "generic_thermostat",
-      "path": "drivers\\zigbee\\__generic__\\generic_thermostat",
+      "path": "drivers\\zigbee\\_generic_\\generic_thermostat",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -10718,7 +10718,7 @@
     },
     {
       "id": "generic_zigbee_switch",
-      "path": "drivers\\zigbee\\__generic__\\generic_zigbee_switch",
+      "path": "drivers\\zigbee\\_generic_\\generic_zigbee_switch",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -10756,8 +10756,8 @@
       "enrichment": {}
     },
     {
-      "id": "__templates__",
-      "path": "drivers\\zigbee\\__templates__",
+      "id": "templates",
+      "path": "drivers\\zigbee\\_templates",
       "valid": false,
       "errors": [
         "Erreur de parsing JSON: Cannot read properties of undefined (reading 'push')"
@@ -10795,7 +10795,7 @@
       "enrichment": {}
     },
     {
-      "id": "_common",
+      "id": "common",
       "path": "drivers\\_common",
       "valid": false,
       "errors": [

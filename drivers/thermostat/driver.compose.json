@@ -1,10 +1,7 @@
 {
   "id": "thermostat",
   "name": {
-    "en": "Smart Thermostat",
-    "fr": "Thermostat Intelligent",
-    "nl": "Slimme Thermostaat",
-    "de": "Intelligenter Thermostat"
+    "en": "Smart Thermostat"
   },
   "class": "thermostat",
   "capabilities": [
@@ -13,41 +10,38 @@
     "measure_humidity",
     "thermostat_mode"
   ],
-  "capabilitiesOptions": {
-    "target_temperature": {
-      "min": 5,
-      "max": 35,
-      "step": 0.5
-    }
-  },
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_7yoranx2",
-      "_TZE200_8whxpsiw",
-      "_TZE200_aoclfnxz",
-      "_TZE200_b6wax7g0",
-      "_TZE200_c88teujp",
-      "_TZE200_cpmgn2cf",
-      "_TZE200_rtrmfadk",
-      "_TZE200_u9bfwha0",
-      "_TZE200_ye5jkfsb",
-      "_TZE200_zr9c0day",
-      "_TZE200_ztvwu4nk"
+      "_TZ3000_",
+      "_TZE200_",
+      "_TYZB01_",
+      "TUYA",
+      "Smart Home"
     ],
     "productId": [
-      "TS0601"
+      "TS0001",
+      "TS0011",
+      "TS0012",
+      "TS004F",
+      "TS011F",
+      "TS0121",
+      "TS013F"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          4,
-          5,
-          61184
-        ],
-        "bindings": [
-          0
+          "basic",
+          "identify",
+          "thermostat",
+          "temperatureMeasurement",
+          "relativeHumidity"
         ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/thermostat/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your Smart Thermostat for 3 seconds until the LED starts blinking rapidly."
       }
     }
   },
@@ -55,17 +49,18 @@
     "small": "/drivers/thermostat/assets/images/small.png",
     "large": "/drivers/thermostat/assets/images/large.png"
   },
-  "pair": [
+  "settings": [
     {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-        "next": "add_devices"
-      }
+      "id": "heating_system",
+      "type": "dropdown",
+      "label": "Heating System",
+      "value": "gas"
     },
     {
-      "id": "add_devices",
-      "template": "add_devices"
+      "id": "eco_mode",
+      "type": "checkbox",
+      "label": "Eco Mode",
+      "value": true
     }
   ]
 }

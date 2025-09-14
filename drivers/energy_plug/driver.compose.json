@@ -1,59 +1,48 @@
 {
+  "id": "energy_plug",
   "name": {
-    "en": "Smart Plug with Energy Meter",
-    "fr": "Prise Intelligente avec Compteur",
-    "nl": "Slimme Stekker met Energiemeter",
-    "de": "Intelligente Steckdose mit Energiezähler"
+    "en": "Energy Monitoring Smart Plug"
   },
   "class": "socket",
   "capabilities": [
     "onoff",
     "measure_power",
-    "measure_current",
     "measure_voltage",
+    "measure_current",
     "meter_power"
   ],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_00mk2xzy",
-      "_TZ3000_1obwwnmq",
-      "_TZ3000_8fdayfch",
-      "_TZ3000_air9m6af",
-      "_TZ3000_cphmq0q7",
-      "_TZ3000_g5xawfcq",
-      "_TZ3000_gjg3iav8",
-      "_TZ3000_kky16aay",
-      "_TZ3000_okaz9tjs",
-      "_TZ3000_pdevkigv",
-      "_TZ3000_rdtmvrpu",
-      "_TZ3000_typdpbpg",
-      "_TZ3000_upjrsxh1",
-      "_TZ3000_vtscrxmr",
-      "_TZ3000_vzopcetz",
-      "_TZ3000_w0qqde0g",
-      "_TZ3210_r5afgmkl"
+      "_TZ3000_",
+      "_TZE200_",
+      "_TYZB01_",
+      "TUYA",
+      "Smart Home"
     ],
     "productId": [
-      "TS0115",
+      "TS0001",
+      "TS0011",
+      "TS0012",
+      "TS004F",
       "TS011F",
-      "TS0121"
+      "TS0121",
+      "TS013F"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          1794,
-          2820
-        ],
-        "bindings": [
-          6,
-          1794,
-          2820
+          "basic",
+          "identify",
+          "onOff",
+          "electricalMeasurement",
+          "meteringCluster"
         ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/energy_plug/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your Energy Monitoring Smart Plug for 3 seconds until the LED starts blinking rapidly."
       }
     }
   },
@@ -61,18 +50,27 @@
     "small": "/drivers/energy_plug/assets/images/small.png",
     "large": "/drivers/energy_plug/assets/images/large.png"
   },
-  "pair": [
+  "settings": [
     {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-        "next": "add_devices"
-      }
+      "id": "energy_reporting",
+      "type": "number",
+      "label": "Energy Reporting (minutes)",
+      "value": 1
     },
     {
-      "id": "add_devices",
-      "template": "add_devices"
+      "id": "overload_protection",
+      "type": "number",
+      "label": "Overload Threshold (W)",
+      "value": 2300
     }
   ],
-  "id": "energy_plug"
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AA"
+    ],
+    "approximation": {
+      "usageConstant": 5
+    }
+  }
 }

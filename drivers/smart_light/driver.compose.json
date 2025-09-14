@@ -1,78 +1,46 @@
 {
+  "id": "smart_light",
   "name": {
-    "en": "Smart Light",
-    "fr": "Éclairage Intelligent",
-    "nl": "Slimme Verlichting",
-    "de": "Intelligente Beleuchtung"
+    "en": "Smart Light"
   },
   "class": "light",
   "capabilities": [
     "onoff",
-    "dim",
-    "light_hue",
-    "light_saturation",
-    "light_temperature"
+    "dim"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "title": {
-        "en": "Power",
-        "fr": "Alimentation",
-        "nl": "Stroom",
-        "de": "Strom"
-      }
-    },
-    "dim": {
-      "title": {
-        "en": "Brightness",
-        "fr": "Luminosité",
-        "nl": "Helderheid",
-        "de": "Helligkeit"
-      }
-    }
-  },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_49qchf10",
-      "_TZ3000_9cpuaca6",
-      "_TZ3000_9yh2faoc",
-      "_TZ3000_cjg9gpiq",
-      "_TZ3000_d0rx5wf7",
-      "_TZ3000_d8qmzq9h",
-      "_TZ3000_dbou1ap4",
-      "_TZ3000_evag0pvn",
-      "_TZ3000_gek6snaj",
-      "_TZ3000_h5gkvwn0",
-      "_TZ3000_j5m5jgaj",
-      "_TZ3000_keabpigv",
-      "_TZ3000_lumyztas",
-      "_TZ3000_oborybow",
-      "_TZ3000_riwp3k79",
-      "_TZ3000_wamqdr3f",
-      "_TZ3000_ygaeb6gb",
-      "_TZ3210_raqoarrb",
-      "_TZ3210_sroezl0s"
+      "_TZ3000_",
+      "_TZE200_",
+      "_TYZB01_",
+      "TUYA",
+      "Smart Home"
     ],
     "productId": [
-      "TS0501A",
-      "TS0502A",
-      "TS0505A",
-      "TS0505B",
-      "TS110F"
+      "TS0001",
+      "TS0011",
+      "TS0012",
+      "TS004F",
+      "TS011F",
+      "TS0121",
+      "TS013F"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          6,
-          8,
-          768
-        ],
-        "bindings": [
-          6,
-          8,
-          768
+          "basic",
+          "identify",
+          "groups",
+          "scenes",
+          "onOff",
+          "levelControl"
         ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/smart_light/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your Smart Light for 3 seconds until the LED starts blinking rapidly."
       }
     }
   },
@@ -80,18 +48,12 @@
     "small": "/drivers/smart_light/assets/images/small.png",
     "large": "/drivers/smart_light/assets/images/large.png"
   },
-  "pair": [
+  "settings": [
     {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-        "next": "add_devices"
-      }
-    },
-    {
-      "id": "add_devices",
-      "template": "add_devices"
+      "id": "transition_time",
+      "type": "number",
+      "label": "Transition Time (seconds)",
+      "value": 1
     }
-  ],
-  "id": "smart_light"
+  ]
 }

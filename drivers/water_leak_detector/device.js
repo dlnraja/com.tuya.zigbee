@@ -1,46 +1,126 @@
-'use strict';
-
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class TuyaWaterLeakSensorDevice extends ZigBeeDevice {
-
-  async onNodeInit({ zclNode }) {
+class WaterLeakDetectorDevice extends ZigBeeDevice {
     
-    // enable debugging
-    this.enableDebug();
-
-    // print the node's info to the console
-    this.printNode();
-
-    // Register water alarm capability
-    if (this.hasCapability('alarm_water')) {
-      this.registerCapability('alarm_water', 'msOccupancySensing', {
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 1, // 1 second
-            maxInterval: 300, // 5 minutes
-            minChange: 1,
-          },
-        },
-      });
+    async onNodeInit({ zclNode }) {
+        
+        // Enable debug logging
+        this.enableDebug();
+        
+        // Print node info
+        this.printNode();
+        
+        // Register capabilities
+        await this.registerCapabilities();
+        
+        // Configure reporting
+        await this.configureReporting();
+        
+        // Set up flow triggers
+        this.setupFlowTriggers();
+        
+        this.log('Water Leak Detector has been initialized');
     }
-
-    // Register battery capability
-    if (this.hasCapability('measure_battery')) {
-      this.registerCapability('measure_battery', 'genPowerCfg', {
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 300, // 5 minutes
-            maxInterval: 3600, // 1 hour
-            minChange: 5, // 5%
-          },
-        },
-      });
+    
+    async registerCapabilities() {
+        const capabilities = [
+        "alarm_water",
+        "measure_battery"
+];
+        
+        for (const capability of capabilities) {
+            if (this.hasCapability(capability)) {
+                this.log(`Capability ${capability} already registered`);
+                continue;
+            }
+            
+            try {
+                await this.addCapability(capability);
+                this.log(`Added capability: ${capability}`);
+            } catch (error) {
+                this.error(`Failed to add capability ${capability}:`, error);
+            }
+        }
     }
-
-    this.log('Tuya Water Leak Sensor initialized');
-  }
-
+    
+    async configureReporting() {
+        try {
+            // Configure cluster reporting based on device type
+            
+            // Configure sensor reporting
+            if (this.zclNode.endpoints[1].clusters.occupancySensing) {
+                await this.zclNode.endpoints[1].clusters.occupancySensing.configureReporting('occupancy', {
+                    minInterval: 0,
+                    maxInterval: 600,
+                    minChange: null
+                });
+            }
+            
+            if (this.zclNode.endpoints[1].clusters.temperatureMeasurement) {
+                await this.zclNode.endpoints[1].clusters.temperatureMeasurement.configureReporting('measuredValue', {
+                    minInterval: 60,
+                    maxInterval: 3600,
+                    minChange: 100
+                });
+            }
+            
+            if (this.zclNode.endpoints[1].clusters.relativeHumidity) {
+                await this.zclNode.endpoints[1].clusters.relativeHumidity.configureReporting('measuredValue', {
+                    minInterval: 60,
+                    maxInterval: 3600,
+                    minChange: 500
+                });
+            }
+        } catch (error) {
+            this.error('Failed to configure reporting:', error);
+        }
+    }
+    
+    setupFlowTriggers() {
+        // Register flow card triggers
+        
+        // Motion/presence detection triggers
+        this.registerCapabilityListener('alarm_motion', (value) => {
+            this.homey.flow.getDeviceTriggerCard('motion_detected')
+                .trigger(this, {}, { motion: value })
+                .catch(this.error);
+        });
+        
+        this.registerCapabilityListener('alarm_contact', (value) => {
+            this.homey.flow.getDeviceTriggerCard('contact_changed')
+                .trigger(this, {}, { contact: value })
+                .catch(this.error);
+        });
+    }
+    
+    onSettings({ oldSettings, newSettings, changedKeys }) {
+        this.log('Settings changed:', changedKeys);
+        
+        // Handle settings changes
+        changedKeys.forEach(key => {
+            this.log(`Setting ${key} changed from ${oldSettings[key]} to ${newSettings[key]}`);
+            this.handleSettingChange(key, newSettings[key]);
+        });
+        
+        return Promise.resolve(true);
+    }
+    
+    handleSettingChange(key, value) {
+        // Handle individual setting changes
+        switch(key) {
+            
+            case 'detection_sensitivity':
+                this.log(`detection_sensitivity changed to ${value}`);
+                // Handle detection_sensitivity change
+                break;
+            default:
+                this.log(`Unhandled setting change: ${key} = ${value}`);
+        }
+    }
+    
+    onDeleted() {
+        this.log('Water Leak Detector has been deleted');
+    }
 }
 
-module.exports = TuyaWaterLeakSensorDevice;
+module.exports = WaterLeakDetectorDevice;

@@ -1,92 +1,102 @@
-'use strict';
-
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-/**
- * Tuya Smart Plug Device
- * Supports on/off control with power monitoring capabilities
- * Compatible with TS011F, TS0115, and energy monitoring plugs
- */
-class TuyaSmartPlugDevice extends ZigBeeDevice {
-
-  async onNodeInit({ zclNode }) {
-    try {
-      // Enable debugging for development
-      this.enableDebug();
-      this.printNode();
-      
-      this.log('Initializing Tuya Smart Plug...');
-
-      // Register on/off capability with optimized reporting
-      if (this.hasCapability('onoff')) {
-        await this.registerCapability('onoff', 'genOnOff', {
-          reportOpts: {
-            configureAttributeReporting: {
-              minInterval: 1,     // Immediate reporting
-              maxInterval: 300,   // 5 minutes max
-              minChange: 1,       // Any state change
-            },
-          },
-        });
-        this.log('On/Off capability registered');
-      }
-
-      // Register power measurement capability
-      if (this.hasCapability('measure_power')) {
-        await this.registerCapability('measure_power', 'haElectricalMeasurement', {
-          reportOpts: {
-            configureAttributeReporting: {
-              minInterval: 10,    // 10 seconds minimum
-              maxInterval: 300,   // 5 minutes maximum
-              minChange: 1,       // 1W change threshold
-            },
-          },
-        });
-        this.log('Power measurement capability registered');
-      }
-
-      // Register energy meter capability
-      if (this.hasCapability('meter_power')) {
-        await this.registerCapability('meter_power', 'seMetering', {
-          reportOpts: {
-            configureAttributeReporting: {
-              minInterval: 300,   // 5 minutes minimum
-              maxInterval: 3600,  // 1 hour maximum
-              minChange: 10,      // 0.01 kWh change
-            },
-          },
-        });
-        this.log('Energy meter capability registered');
-      }
-
-      // Add power change listener for flow triggers
-      this.registerCapabilityListener('onoff', async (value) => {
-        this.log('Plug state changed:', value ? 'ON' : 'OFF');
-        if (value) {
-          this.homey.flow.getDeviceTriggerCard('turned_on').trigger(this);
-        } else {
-          this.homey.flow.getDeviceTriggerCard('turned_off').trigger(this);
+class SmartPlugDevice extends ZigBeeDevice {
+    
+    async onNodeInit({ zclNode }) {
+        
+        // Enable debug logging
+        this.enableDebug();
+        
+        // Print node info
+        this.printNode();
+        
+        // Register capabilities
+        await this.registerCapabilities();
+        
+        // Configure reporting
+        await this.configureReporting();
+        
+        // Set up flow triggers
+        this.setupFlowTriggers();
+        
+        this.log('Smart Plug has been initialized');
+    }
+    
+    async registerCapabilities() {
+        const capabilities = [
+        "onoff"
+];
+        
+        for (const capability of capabilities) {
+            if (this.hasCapability(capability)) {
+                this.log(`Capability ${capability} already registered`);
+                continue;
+            }
+            
+            try {
+                await this.addCapability(capability);
+                this.log(`Added capability: ${capability}`);
+            } catch (error) {
+                this.error(`Failed to add capability ${capability}:`, error);
+            }
         }
-      });
-
-      this.log('Tuya Smart Plug successfully initialized');
-    } catch (error) {
-      this.error('Failed to initialize Tuya Smart Plug:', error);
-      throw error;
     }
-  }
-
-  /**
-   * Handle device removal cleanup
-   */
-  async onDeleted() {
-    try {
-      this.log('Tuya Smart Plug removed from Homey');
-    } catch (error) {
-      this.error('Error during device removal:', error);
+    
+    async configureReporting() {
+        try {
+            // Configure cluster reporting based on device type
+            
+            // Configure plug reporting
+            await this.zclNode.endpoints[1].clusters.onOff.configureReporting('onOff', {
+                minInterval: 0,
+                maxInterval: 600
+            });
+            
+            if (this.zclNode.endpoints[1].clusters.electricalMeasurement) {
+                await this.zclNode.endpoints[1].clusters.electricalMeasurement.configureReporting('activePower', {
+                    minInterval: 5,
+                    maxInterval: 600,
+                    minChange: 1
+                });
+            }
+        } catch (error) {
+            this.error('Failed to configure reporting:', error);
+        }
     }
-  }
-
+    
+    setupFlowTriggers() {
+        // Register flow card triggers
+        // No specific flow triggers needed
+    }
+    
+    onSettings({ oldSettings, newSettings, changedKeys }) {
+        this.log('Settings changed:', changedKeys);
+        
+        // Handle settings changes
+        changedKeys.forEach(key => {
+            this.log(`Setting ${key} changed from ${oldSettings[key]} to ${newSettings[key]}`);
+            this.handleSettingChange(key, newSettings[key]);
+        });
+        
+        return Promise.resolve(true);
+    }
+    
+    handleSettingChange(key, value) {
+        // Handle individual setting changes
+        switch(key) {
+            
+            case 'power_on_behavior':
+                this.log(`power_on_behavior changed to ${value}`);
+                // Handle power_on_behavior change
+                break;
+            default:
+                this.log(`Unhandled setting change: ${key} = ${value}`);
+        }
+    }
+    
+    onDeleted() {
+        this.log('Smart Plug has been deleted');
+    }
 }
 
-module.exports = TuyaSmartPlugDevice;
+module.exports = SmartPlugDevice;

@@ -240,11 +240,11 @@
       "reason": "No updates needed"
     },
     {
-      "driver": "tuya_zigbee",
+      "driver": "zigbee",
       "reason": "No modelId found in driver.compose.json"
     },
     {
-      "driver": "tuya_zigbee_switch",
+      "driver": "zigbee_switch",
       "reason": "No modelId found in driver.compose.json"
     },
     {
@@ -252,7 +252,7 @@
       "reason": "No modelId found in driver.compose.json"
     },
     {
-      "driver": "_common",
+      "driver": "common",
       "reason": "No modelId found in driver.compose.json"
     }
   ],

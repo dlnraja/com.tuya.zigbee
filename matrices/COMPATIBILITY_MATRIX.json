@@ -13,8 +13,8 @@
       "drivers": [
         "aqara_motion_sensor",
         "sensors",
-        "tuya_generic_sensor",
-        "tuya_water_sensor"
+        "generic_sensor",
+        "water_sensor"
       ],
       "deviceCount": 20,
       "compatibility": {
@@ -48,8 +48,8 @@
         "security",
         "templates",
         "TS0601_lock",
-        "tuya_thermostat",
-        "tuya_universal_adapter",
+        "thermostat",
+        "universal_adapter",
         "types",
         "zigbee"
       ],
@@ -81,13 +81,13 @@
         "lights",
         "sensors-TS0601_motion",
         "TS0601_cover",
-        "tuya_generic_light",
-        "tuya_light_ts0501a",
-        "tuya_light_ts0502a",
-        "tuya_light_ts0502b",
-        "tuya_light_ts0505a",
-        "tuya_light_ts0505b",
-        "tuya_light_universal"
+        "generic_light",
+        "light",
+        "light",
+        "light",
+        "light",
+        "light",
+        "light_universal"
       ],
       "deviceCount": 61,
       "compatibility": {
@@ -106,9 +106,9 @@
         "tuya",
         "tuya-ts0011",
         "tuya-ts011f",
-        "tuya_future_ai_device",
-        "tuya_generic_plug",
-        "tuya_generic_switch",
+        "future_ai_device",
+        "generic_plug",
+        "generic_switch",
         "zigbee-tuya-universal"
       ],
       "deviceCount": 30,

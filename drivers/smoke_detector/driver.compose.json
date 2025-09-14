@@ -1,10 +1,7 @@
 {
   "id": "smoke_detector",
   "name": {
-    "en": "Smoke Detector",
-    "fr": "Détecteur de Fumée",
-    "nl": "Rookmelder",
-    "de": "Rauchmelder"
+    "en": "Smoke Detector"
   },
   "class": "sensor",
   "capabilities": [
@@ -13,38 +10,35 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "_TYZB01_dsjszp0x",
-      "_TZ3000_26fmupbb",
-      "_TZ3000_7d5n7paq",
-      "_TZ3000_7d5p8p8l",
-      "_TZ3000_9yh2faoc",
-      "_TZ3000_a6iuj7pc",
-      "_TZ3000_b4v2k9ja",
-      "_TZ3000_f9ckckaq",
-      "_TZ3000_kdrbjd3k",
-      "_TZ3000_s6vv6kpn",
-      "_TZ3000_t6vqnlgn",
-      "_TZ3000_tkfpyqhj",
-      "_TZ3210_ckn75kwm",
-      "_TZ3210_up3pngle",
-      "_TZE200_m9skfctm",
-      "_TZE200_ntcy3xu1"
+      "_TZ3000_",
+      "_TZE200_",
+      "_TYZB01_",
+      "TUYA",
+      "Smart Home"
     ],
     "productId": [
-      "TS0205",
-      "TS0601"
+      "TS0001",
+      "TS0011",
+      "TS0012",
+      "TS004F",
+      "TS011F",
+      "TS0121",
+      "TS013F"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          1280
-        ],
-        "bindings": [
-          1,
-          1280
+          "basic",
+          "powerConfiguration",
+          "identify",
+          "iasZone"
         ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/smoke_detector/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on your Smoke Detector for 3 seconds until the LED starts blinking rapidly."
       }
     }
   },
@@ -52,9 +46,12 @@
     "small": "/drivers/smoke_detector/assets/images/small.png",
     "large": "/drivers/smoke_detector/assets/images/large.png"
   },
-  "energy": {
-    "batteries": [
-      "INTERNAL"
-    ]
-  }
+  "settings": [
+    {
+      "id": "smoke_sensitivity",
+      "type": "dropdown",
+      "label": "Smoke Sensitivity",
+      "value": "medium"
+    }
+  ]
 }

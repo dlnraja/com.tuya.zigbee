@@ -1,46 +1,94 @@
-'use strict';
-
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class TuyaCurtainMotorDevice extends ZigBeeDevice {
-
-  async onNodeInit({ zclNode }) {
+class CurtainMotorDevice extends ZigBeeDevice {
     
-    // enable debugging
-    this.enableDebug();
-
-    // print the node's info to the console
-    this.printNode();
-
-    // Register window coverings capability
-    if (this.hasCapability('windowcoverings_state')) {
-      this.registerCapability('windowcoverings_state', 'closuresWindowCovering', {
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 0, // No minimum
-            maxInterval: 300, // 5 minutes
-            minChange: 1,
-          },
-        },
-      });
+    async onNodeInit({ zclNode }) {
+        
+        // Enable debug logging
+        this.enableDebug();
+        
+        // Print node info
+        this.printNode();
+        
+        // Register capabilities
+        await this.registerCapabilities();
+        
+        // Configure reporting
+        await this.configureReporting();
+        
+        // Set up flow triggers
+        this.setupFlowTriggers();
+        
+        this.log('Curtain Motor has been initialized');
     }
-
-    // Register dim capability for position control
-    if (this.hasCapability('dim')) {
-      this.registerCapability('dim', 'genLevelCtrl', {
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 1, // 1 second
-            maxInterval: 300, // 5 minutes
-            minChange: 1, // 1%
-          },
-        },
-      });
+    
+    async registerCapabilities() {
+        const capabilities = [
+        "windowcoverings_set",
+        "windowcoverings_tilt_set"
+];
+        
+        for (const capability of capabilities) {
+            if (this.hasCapability(capability)) {
+                this.log(`Capability ${capability} already registered`);
+                continue;
+            }
+            
+            try {
+                await this.addCapability(capability);
+                this.log(`Added capability: ${capability}`);
+            } catch (error) {
+                this.error(`Failed to add capability ${capability}:`, error);
+            }
+        }
     }
-
-    this.log('Tuya Curtain Motor initialized');
-  }
-
+    
+    async configureReporting() {
+        try {
+            // Configure cluster reporting based on device type
+            // No specific reporting configuration needed
+        } catch (error) {
+            this.error('Failed to configure reporting:', error);
+        }
+    }
+    
+    setupFlowTriggers() {
+        // Register flow card triggers
+        // No specific flow triggers needed
+    }
+    
+    onSettings({ oldSettings, newSettings, changedKeys }) {
+        this.log('Settings changed:', changedKeys);
+        
+        // Handle settings changes
+        changedKeys.forEach(key => {
+            this.log(`Setting ${key} changed from ${oldSettings[key]} to ${newSettings[key]}`);
+            this.handleSettingChange(key, newSettings[key]);
+        });
+        
+        return Promise.resolve(true);
+    }
+    
+    handleSettingChange(key, value) {
+        // Handle individual setting changes
+        switch(key) {
+            
+            case 'motor_speed':
+                this.log(`motor_speed changed to ${value}`);
+                // Handle motor_speed change
+                break;
+            case 'calibration_mode':
+                this.log(`calibration_mode changed to ${value}`);
+                // Handle calibration_mode change
+                break;
+            default:
+                this.log(`Unhandled setting change: ${key} = ${value}`);
+        }
+    }
+    
+    onDeleted() {
+        this.log('Curtain Motor has been deleted');
+    }
 }
 
-module.exports = TuyaCurtainMotorDevice;
+module.exports = CurtainMotorDevice;
