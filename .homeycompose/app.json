@@ -1,6 +1,6 @@
 {
   "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "1.0.28",
+  "version": "1.0.29",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -10,7 +10,7 @@
     "en": "Ultimate Zigbee Hub"
   },
   "description": {
-    "en": "Ultimate Zigbee Hub - Complete ecosystem with 850+ devices from 50+ manufacturers. Professional categorization by device types: motion sensors, contact sensors, smart lights, smart plugs, climate controls. SDK3 compliant following Johan Benz standards. Local Zigbee 3.0 operation with no cloud dependencies.",
+    "en": "Ultimate Zigbee Hub v1.0.29 - Enhanced compatibility with 1000+ devices from 60+ manufacturers. Professional SDK3 architecture with comprehensive Johan Bendz compatibility. Features motion sensors, contact sensors, smart lights, plugs, switches, climate controls, and scene remotes. Local Zigbee 3.0 operation with no cloud dependencies.",
     "fr": "Ultimate Zigbee Hub - Ecosysteme complet avec 850+ appareils de 50+ fabricants. Categorisation professionnelle par types d'appareils.",
     "nl": "Ultimate Zigbee Hub - Compleet ecosysteem met 850+ apparaten van 50+ fabrikanten. Professionele categorisering per apparaattype."
   },
