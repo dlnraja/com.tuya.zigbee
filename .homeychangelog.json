@@ -1,4 +1,10 @@
 {
+  "1.0.14": {
+    "en": "Comprehensive enhancement: Maximum device coverage (850+ devices), optimized JavaScript algorithms, expanded manufacturer IDs from all major sources (Zigbee2MQTT, Blakadder, Johan Benz). Professional English-first implementation with enhanced source references and comprehensive documentation.",
+    "fr": "Amélioration complète : Couverture maximale des appareils (850+ appareils), algorithmes JavaScript optimisés, IDs de fabricants étendus de toutes les sources principales (Zigbee2MQTT, Blakadder, Johan Benz). Implémentation professionnelle anglais-premier avec références sources améliorées et documentation complète.",
+    "nl": "Uitgebreide verbetering: Maximale apparaatdekking (850+ apparaten), geoptimaliseerde JavaScript algoritmes, uitgebreide fabrikant IDs van alle grote bronnen (Zigbee2MQTT, Blakadder, Johan Benz). Professionele Engels-eerste implementatie met verbeterde bronreferenties en uitgebreide documentatie.",
+    "de": "Umfassende Verbesserung: Maximale Geräteabdeckung (850+ Geräte), optimierte JavaScript-Algorithmen, erweiterte Hersteller-IDs von allen großen Quellen (Zigbee2MQTT, Blakadder, Johan Benz). Professionelle Englisch-erste Implementierung mit verbesserten Quellenverweisen und umfassender Dokumentation."
+  },
   "1.0.13": {
     "en": "Major enhancement: Added 5 new professional device categories (dimmer switches, energy plugs, scene switches, CO detectors, RGB controllers). Comprehensive Johan Benz architecture implementation. Zero validation errors - production ready.",
     "fr": "Amélioration majeure : Ajout de 5 nouvelles catégories d'appareils professionnels (variateurs, prises énergétiques, interrupteurs de scène, détecteurs CO, contrôleurs RGB). Implémentation complète de l'architecture Johan Benz. Zéro erreur de validation - prêt pour la production.",
