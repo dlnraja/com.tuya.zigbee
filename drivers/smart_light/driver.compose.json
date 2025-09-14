@@ -1,0 +1,82 @@
+{
+  "name": {
+    "en": "Smart Light",
+    "fr": "Éclairage Intelligent",
+    "nl": "Slimme Verlichting",
+    "de": "Intelligente Beleuchtung"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Power",
+        "fr": "Alimentation",
+        "nl": "Stroom",
+        "de": "Strom"
+      }
+    },
+    "dim": {
+      "title": {
+        "en": "Brightness",
+        "fr": "Luminosité",
+        "nl": "Helderheid",
+        "de": "Helligkeit"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_riwp3k79",
+      "_TZ3000_9cpuaca6",
+      "_TZ3000_oborybow",
+      "_TZ3000_49qchf10",
+      "_TZ3210_raqoarrb",
+      "_TZ3210_sroezl0s"
+    ],
+    "productId": [
+      "TS0505A",
+      "TS0501A",
+      "TS0502A"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6,
+          8,
+          768
+        ],
+        "bindings": [
+          6,
+          8,
+          768
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/smart_light/assets/images/small.png",
+    "large": "/drivers/smart_light/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "id": "smart_light"
+}

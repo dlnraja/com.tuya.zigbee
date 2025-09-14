@@ -1,0 +1,64 @@
+{
+  "name": {
+    "en": "Smart Plug with Energy Meter",
+    "fr": "Prise Intelligente avec Compteur",
+    "nl": "Slimme Stekker met Energiemeter",
+    "de": "Intelligente Steckdose mit Energiezähler"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "measure_current",
+    "measure_voltage",
+    "meter_power"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_g5xawfcq",
+      "_TZ3000_vzopcetz",
+      "_TZ3000_1obwwnmq",
+      "_TZ3000_cphmq0q7"
+    ],
+    "productId": [
+      "TS011F",
+      "TS0115"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          1794,
+          2820
+        ],
+        "bindings": [
+          6,
+          1794,
+          2820
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/energy_plug/assets/images/small.png",
+    "large": "/drivers/energy_plug/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "id": "energy_plug"
+}

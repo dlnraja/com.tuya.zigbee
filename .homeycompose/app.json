@@ -1,16 +1,25 @@
 {
   "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "1.0.19",
+  "version": "1.0.28",
   "compatibility": ">=5.0.0",
   "sdk": 3,
-  "platforms": ["local"],
+  "platforms": [
+    "local"
+  ],
   "name": {
     "en": "Ultimate Zigbee Hub"
   },
   "description": {
-    "en": "Ultimate Zigbee Hub - Professional device organization with 850+ devices from 50+ manufacturers. SDK3 compliant following Johan Benz standards. Categorized by device types: sensors, lights, switches, plugs, climate controls. Local Zigbee 3.0 only - no cloud required!"
+    "en": "Ultimate Zigbee Hub - Complete ecosystem with 850+ devices from 50+ manufacturers. Professional categorization by device types: motion sensors, contact sensors, smart lights, smart plugs, climate controls. SDK3 compliant following Johan Benz standards. Local Zigbee 3.0 operation with no cloud dependencies.",
+    "fr": "Ultimate Zigbee Hub - Ecosysteme complet avec 850+ appareils de 50+ fabricants. Categorisation professionnelle par types d'appareils.",
+    "nl": "Ultimate Zigbee Hub - Compleet ecosysteem met 850+ apparaten van 50+ fabrikanten. Professionele categorisering per apparaattype."
   },
-  "category": ["lights", "appliances", "security", "climate"],
+  "category": [
+    "lights",
+    "appliances",
+    "security",
+    "climate"
+  ],
   "brandColor": "#1E88E5",
   "permissions": [],
   "images": {
@@ -27,321 +36,95 @@
   },
   "homepage": "https://github.com/dlnraja/com.ultimate.zigbee.hub",
   "support": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352",
-  "source": "https://github.com/dlnraja/com.ultimate.zigbee.hub",
+  "source": "https://github.com/dlnraja/ultimate-zigbee-hub",
   "homeyCommunityTopicId": 140352,
-  "flow": {
-    "triggers": [
-      {
-        "id": "motion_detected",
-        "title": {"en": "Motion detected"},
-        "args": [{
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=motion_sensor|presence_sensor|multisensor"
-        }]
-      },
-      {
-        "id": "presence_detected", 
-        "title": {"en": "Presence detected"},
-        "args": [{
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=presence_sensor"
-        }]
-      },
-      {
-        "id": "contact_changed",
-        "title": {"en": "Contact sensor changed"},
-        "args": [{
-          "name": "device",
-          "type": "device", 
-          "filter": "driver_id=contact_sensor"
-        }]
-      },
-      {
-        "id": "temperature_changed",
-        "title": {"en": "Temperature changed"},
-        "args": [{
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=temperature_humidity_sensor|multisensor|air_quality_monitor|thermostat"
-        }]
-      }
+  "tags": {
+    "en": [
+      "zigbee",
+      "sensors",
+      "lights",
+      "plugs",
+      "switches",
+      "motion",
+      "contact",
+      "temperature",
+      "humidity",
+      "presence",
+      "air quality",
+      "smoke",
+      "water leak",
+      "smart home",
+      "automation",
+      "energy",
+      "climate",
+      "security",
+      "tuya",
+      "aqara",
+      "ikea",
+      "philips",
+      "xiaomi",
+      "sonoff",
+      "local",
+      "no cloud",
+      "sdk3"
     ],
-    "conditions": [
-      {
-        "id": "is_motion_detected",
-        "title": {"en": "Motion is detected"},
-        "args": [{
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=motion_sensor|presence_sensor|multisensor"
-        }]
-      }
+    "fr": [
+      "zigbee",
+      "sensors",
+      "lights",
+      "plugs",
+      "switches",
+      "motion",
+      "contact",
+      "temperature",
+      "humidity",
+      "presence",
+      "air quality",
+      "smoke",
+      "water leak",
+      "smart home",
+      "automation",
+      "energy",
+      "climate",
+      "security",
+      "tuya",
+      "aqara",
+      "ikea",
+      "philips",
+      "xiaomi",
+      "sonoff",
+      "local",
+      "no cloud",
+      "sdk3"
     ],
-    "actions": [
-      {
-        "id": "turn_on_light",
-        "title": {"en": "Turn on"},
-        "args": [{
-          "name": "device", 
-          "type": "device",
-          "filter": "driver_id=smart_light|light_switch"
-        }]
-      }
+    "nl": [
+      "zigbee",
+      "sensors",
+      "lights",
+      "plugs",
+      "switches",
+      "motion",
+      "contact",
+      "temperature",
+      "humidity",
+      "presence",
+      "air quality",
+      "smoke",
+      "water leak",
+      "smart home",
+      "automation",
+      "energy",
+      "climate",
+      "security",
+      "tuya",
+      "aqara",
+      "ikea",
+      "philips",
+      "xiaomi",
+      "sonoff",
+      "local",
+      "no cloud",
+      "sdk3"
     ]
-  },
-  "drivers": [
-    {
-      "id": "motion_sensor",
-      "name": {"en": "Motion Sensor"},
-      "class": "sensor",
-      "capabilities": ["alarm_motion", "measure_battery"],
-      "capabilitiesOptions": {
-        "alarm_motion": {"title": {"en": "Motion"}}
-      },
-      "zigbee": {
-        "manufacturerName": [
-          "TUYATEC-zw6hxafz", "_TZ3000_mmtwjmaq", "_TZ3000_kmh5qpmb", "_TZ3000_msl6wxk9",
-          "_TZ3000_mcxw5ehu", "_TZ3000_otvn3lne", "_TZ3000_6ygjfyll", "_TZ3000_nss8amz9",
-          "_TZ3000_lf56vpxj", "_TZ1800_fcdjzz3s", "_TYZB01_jytabjkb", "_TYZB01_dl7cejts",
-          "_TZE200_3towulqd", "_TZE200_bh3n6gk8", "_TZE200_1ibpyhdc", "_TZE200_ttcovulf",
-          "_TZE200_hsmsj6zh", "_TZE200_tv3wxhcz", "_TZE200_whpb9y8z", "_TZE200_7yuohek9"
-        ],
-        "productId": ["TS0202", "TS0601", "RH3040", "TY0202"],
-        "endpoints": {
-          "1": {
-            "clusters": [0, 1, 1280],
-            "bindings": [1, 1280]
-          }
-        }
-      },
-      "images": {
-        "small": "/drivers/motion_sensor/assets/images/small.png",
-        "large": "/drivers/motion_sensor/assets/images/large.png"
-      },
-      "pair": [
-        {"id": "list_devices", "template": "list_devices", "navigation": {"next": "add_devices"}},
-        {"id": "add_devices", "template": "add_devices"}
-      ],
-      "energy": {"batteries": ["INTERNAL"]}
-    },
-    {
-      "id": "contact_sensor", 
-      "name": {"en": "Contact Sensor"},
-      "class": "sensor",
-      "capabilities": ["alarm_contact", "measure_battery"],
-      "capabilitiesOptions": {
-        "alarm_contact": {"title": {"en": "Contact"}}
-      },
-      "zigbee": {
-        "manufacturerName": [
-          "TUYATEC-g3gl6cgy", "TUYATEC-Bfq2i2Sy", "TUYATEC-abkehqus", "TUYATEC-sb6t7ett",
-          "_TZ3000_ebar6ljy", "_TZ3000_2mbfxlzr", "_TZ3000_402jjyro", "_TZ3000_6jeesvrt",
-          "_TZ3000_26fmupbb", "_TZ3000_bmg14ax2", "_TZ3000_oxslv1c9", "_TZ3000_bzxlofth",
-          "_TZ3000_7tbsruql", "_TZ3000_osu834un", "_TZ3000_n2egfsli", "_TZ3000_7d8yme6f"
-        ],
-        "productId": ["TS0203", "TS0601", "RH3001", "TY0203"],
-        "endpoints": {
-          "1": {
-            "clusters": [0, 1, 1280],
-            "bindings": [1, 1280]
-          }
-        }
-      },
-      "images": {
-        "small": "/drivers/contact_sensor/assets/images/small.png",
-        "large": "/drivers/contact_sensor/assets/images/large.png"
-      },
-      "pair": [
-        {"id": "list_devices", "template": "list_devices", "navigation": {"next": "add_devices"}},
-        {"id": "add_devices", "template": "add_devices"}
-      ],
-      "energy": {"batteries": ["INTERNAL"]}
-    },
-    {
-      "id": "temperature_humidity_sensor",
-      "name": {"en": "Temperature & Humidity Sensor"}, 
-      "class": "sensor",
-      "capabilities": ["measure_temperature", "measure_humidity", "measure_battery"],
-      "capabilitiesOptions": {
-        "measure_temperature": {"title": {"en": "Temperature"}, "units": "°C"},
-        "measure_humidity": {"title": {"en": "Humidity"}, "units": "%"}
-      },
-      "zigbee": {
-        "manufacturerName": [
-          "_TYZB01_iuepbmpv", "_TZ3000_fllyghyj", "_TZ3000_dowj6gyi", "_TZ3000_8ybe88nf",
-          "_TZ3000_zl1kmjqx", "_TZ3000_bjawzodf", "_TZ3000_saiqcn0y", "_TZ3000_xr3htd96"
-        ],
-        "productId": ["TS0201", "TS0601", "RH3052"],
-        "endpoints": {
-          "1": {
-            "clusters": [0, 1, 1026, 1029],
-            "bindings": [1, 1026, 1029]
-          }
-        }
-      },
-      "images": {
-        "small": "/drivers/temperature_humidity_sensor/assets/images/small.png",
-        "large": "/drivers/temperature_humidity_sensor/assets/images/large.png"
-      },
-      "pair": [
-        {"id": "list_devices", "template": "list_devices", "navigation": {"next": "add_devices"}},
-        {"id": "add_devices", "template": "add_devices"}
-      ],
-      "energy": {"batteries": ["INTERNAL"]}
-    },
-    {
-      "id": "smart_light",
-      "name": {"en": "Smart Light"},
-      "class": "light", 
-      "capabilities": ["onoff", "dim", "light_hue", "light_saturation", "light_temperature"],
-      "capabilitiesOptions": {
-        "onoff": {"title": {"en": "Power"}},
-        "dim": {"title": {"en": "Brightness"}}
-      },
-      "zigbee": {
-        "manufacturerName": [
-          "_TZ3000_riwp3k79", "_TZ3000_9cpuaca6", "_TZ3000_oborybow", "_TZ3000_49qchf10",
-          "_TZ3210_raqoarrb", "_TZ3210_sroezl0s", "_TZ3000_qzjcsmar", "_TZ3000_ktuoyvt9"
-        ],
-        "productId": ["TS0505A", "TS0501A", "TS0502A", "TS110F", "TS1111"],
-        "endpoints": {
-          "1": {
-            "clusters": [0, 6, 8, 768],
-            "bindings": [6, 8, 768]
-          }
-        }
-      },
-      "images": {
-        "small": "/drivers/smart_light/assets/images/small.png",
-        "large": "/drivers/smart_light/assets/images/large.png"
-      },
-      "pair": [
-        {"id": "list_devices", "template": "list_devices", "navigation": {"next": "add_devices"}},
-        {"id": "add_devices", "template": "add_devices"}
-      ]
-    },
-    {
-      "id": "smart_plug",
-      "name": {"en": "Smart Plug"},
-      "class": "socket",
-      "capabilities": ["onoff", "measure_power"],
-      "capabilitiesOptions": {
-        "onoff": {"title": {"en": "Power"}},
-        "measure_power": {"title": {"en": "Power"}, "units": "W"}
-      },
-      "zigbee": {
-        "manufacturerName": [
-          "_TZ3000_3ooaz3ng", "_TZ3000_g5xawfcq", "_TZ3000_vtscrpmw", "_TZ3000_rdtixbnu",
-          "_TZ3000_8nkb7mof", "_TZ3000_mraovvmm", "_TZ3000_cphmq0q7", "_TZ3000_ew3ldmgx"
-        ],
-        "productId": ["TS0121", "TS011F", "TS0115"],
-        "endpoints": {
-          "1": {
-            "clusters": [0, 6, 1794, 2820],
-            "bindings": [6, 1794, 2820]
-          }
-        }
-      },
-      "images": {
-        "small": "/drivers/smart_plug/assets/images/small.png",
-        "large": "/drivers/smart_plug/assets/images/large.png"
-      },
-      "pair": [
-        {"id": "list_devices", "template": "list_devices", "navigation": {"next": "add_devices"}},
-        {"id": "add_devices", "template": "add_devices"}
-      ]
-    },
-    {
-      "id": "light_switch",
-      "name": {"en": "Light Switch"},
-      "class": "light",
-      "capabilities": ["onoff"],
-      "capabilitiesOptions": {
-        "onoff": {"title": {"en": "Power"}}
-      },
-      "zigbee": {
-        "manufacturerName": [
-          "_TZ3000_ji4araar", "_TZ3000_9cpuaca6", "_TZ3000_oborybow", "_TZ3000_49qchf10",
-          "_TZ3000_qzjcsmar", "_TZ3000_vzopcetz", "_TZ3000_8nkb7mof", "_TZ3000_mraovvmm"
-        ],
-        "productId": ["TS0001", "TS0011", "TS0002", "TS0003", "TS110F", "TS1111"],
-        "endpoints": {
-          "1": {
-            "clusters": [0, 6],
-            "bindings": [6]
-          }
-        }
-      },
-      "images": {
-        "small": "/drivers/light_switch/assets/images/small.png",
-        "large": "/drivers/light_switch/assets/images/large.png"
-      },
-      "pair": [
-        {"id": "list_devices", "template": "list_devices", "navigation": {"next": "add_devices"}},
-        {"id": "add_devices", "template": "add_devices"}
-      ]
-    },
-    {
-      "id": "presence_sensor",
-      "name": {"en": "Presence Sensor"},
-      "class": "sensor",
-      "capabilities": ["alarm_motion", "measure_luminance", "measure_battery"],
-      "capabilitiesOptions": {
-        "alarm_motion": {"title": {"en": "Motion"}},
-        "measure_luminance": {"title": {"en": "Illuminance"}, "units": "lx"}
-      },
-      "zigbee": {
-        "manufacturerName": ["_TZE200_ztc6ggyl", "_TZE204_qasjif9e", "_TZE204_ijxvkhd0", "_TZE200_wukb7rhc"],
-        "productId": ["TS0601"],
-        "endpoints": {
-          "1": {
-            "clusters": [0, 4, 5, 61184],
-            "bindings": [0]
-          }
-        }
-      },
-      "images": {
-        "small": "/drivers/presence_sensor/assets/images/small.png",
-        "large": "/drivers/presence_sensor/assets/images/large.png"
-      },
-      "pair": [
-        {"id": "list_devices", "template": "list_devices", "navigation": {"next": "add_devices"}},
-        {"id": "add_devices", "template": "add_devices"}
-      ],
-      "energy": {"batteries": ["INTERNAL"]}
-    },
-    {
-      "id": "multisensor",
-      "name": {"en": "Multi-Sensor"},
-      "class": "sensor",
-      "capabilities": ["alarm_motion", "measure_temperature", "measure_humidity", "measure_luminance", "measure_battery"],
-      "capabilitiesOptions": {
-        "alarm_motion": {"title": {"en": "Motion"}},
-        "measure_temperature": {"title": {"en": "Temperature"}, "units": "°C"},
-        "measure_humidity": {"title": {"en": "Humidity"}, "units": "%"},
-        "measure_luminance": {"title": {"en": "Illuminance"}, "units": "lx"}
-      },
-      "zigbee": {
-        "manufacturerName": ["HOBEIAN"],
-        "productId": ["ZG-204ZV"],
-        "endpoints": {
-          "1": {
-            "clusters": [0, 1, 1026, 1029, 1024, 1280],
-            "bindings": [1, 1026, 1029, 1024, 1280]
-          }
-        }
-      },
-      "images": {
-        "small": "/drivers/multisensor/assets/images/small.png",
-        "large": "/drivers/multisensor/assets/images/large.png"
-      },
-      "pair": [
-        {"id": "list_devices", "template": "list_devices", "navigation": {"next": "add_devices"}},
-        {"id": "add_devices", "template": "add_devices"}
-      ],
-      "energy": {"batteries": ["INTERNAL"]}
-    }
-  ]
+  }
 }

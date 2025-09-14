@@ -1,0 +1,92 @@
+{
+  "name": {
+    "en": "Temperature & Humidity Sensor",
+    "fr": "Capteur Température et Humidité",
+    "nl": "Temperatuur & Vochtigheid Sensor",
+    "de": "Temperatur & Feuchtigkeitssensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature",
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "de": "Temperatur"
+      },
+      "units": "°C"
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Humidity",
+        "fr": "Humidité",
+        "nl": "Vochtigheid",
+        "de": "Feuchtigkeit"
+      },
+      "units": "%"
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_locansqn",
+      "_TZE200_bjawzodf",
+      "_TZE200_zl1kmjqx",
+      "_TZE200_8ygsuhe1",
+      "_TZE200_yvx5lh6k",
+      "_TZE200_9yapgbuv",
+      "_TZ3000_i8jfiezr",
+      "_TZ3000_bguser20",
+      "_TZ3000_dowj6gyi",
+      "_TZ3000_fllyghyj",
+      "_TZ3000_8ybe88nf",
+      "_TZ3000_fie1dpkm"
+    ],
+    "productId": [
+      "TS0201",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1026,
+          1029
+        ],
+        "bindings": [
+          1,
+          1026,
+          1029
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/temperature_humidity_sensor/assets/images/small.png",
+    "large": "/drivers/temperature_humidity_sensor/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  },
+  "id": "temperature_humidity_sensor"
+}

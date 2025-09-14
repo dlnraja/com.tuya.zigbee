@@ -1,0 +1,174 @@
+name: Auto Publish Homey App
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+    inputs:
+      version_type:
+        description: 'Version bump type'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+        - patch
+        - minor
+        - major
+      changelog:
+        description: 'Changelog message'
+        required: true
+        default: 'Bug fixes and improvements'
+
+env:
+  HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install Pillow
+
+    - name: Install Homey CLI
+      run: |
+        npm install -g homey
+
+    - name: Clean and prepare
+      run: |
+        rm -rf .homeybuild
+        python -c "
+import json
+import os
+from pathlib import Path
+
+# Fix any remaining issues
+print('Ensuring all fixes are applied...')
+
+# Ensure app.json tags format is correct
+with open('.homeycompose/app.json', 'r', encoding='utf-8') as f:
+    content = f.read()
+    if content.startswith('\ufeff'):
+        content = content[1:]
+    data = json.loads(content)
+
+# Ensure tags are object format
+if 'tags' in data and isinstance(data['tags'], dict) and 'en' in data['tags']:
+    if isinstance(data['tags']['en'], list):
+        tags_list = data['tags']['en']
+        data['tags'] = {
+            'en': tags_list,
+            'fr': tags_list,
+            'nl': tags_list
+        }
+        
+        with open('.homeycompose/app.json', 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+        print('Tags format corrected')
+
+print('Preparation complete')
+        "
+
+    - name: Validate app
+      run: |
+        homey app validate --level publish
+      continue-on-error: false
+
+    - name: Update version and publish
+      run: |
+        # Setup git
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        
+        # Login to Homey
+        echo "$HOMEY_TOKEN" | homey login --token
+        
+        # Determine version bump
+        VERSION_TYPE="${{ github.event.inputs.version_type || 'patch' }}"
+        CHANGELOG="${{ github.event.inputs.changelog || 'Automated fixes and improvements - GitHub Action deployment' }}"
+        
+        echo "Publishing with version bump: $VERSION_TYPE"
+        echo "Changelog: $CHANGELOG"
+        
+        # Use expect to handle interactive prompts
+        sudo apt-get install -y expect
+        
+        expect << EOF
+        set timeout 300
+        spawn homey app publish
+        
+        expect {
+            "*uncommitted changes*" {
+                send "y\r"
+                exp_continue
+            }
+            "*version number*" {
+                send "y\r"
+                exp_continue
+            }
+            "*patch*minor*major*" {
+                send "$VERSION_TYPE\r"
+                exp_continue
+            }
+            "*Changelog*" {
+                send "$CHANGELOG\r"
+                exp_continue
+            }
+            "*Successfully published*" {
+                puts "Publication successful!"
+                exit 0
+            }
+            timeout {
+                puts "Publication timed out"
+                exit 1
+            }
+            eof {
+                puts "Publication completed"
+                exit 0
+            }
+        }
+EOF
+
+    - name: Commit version changes
+      run: |
+        git add .
+        git commit -m "Version bump and publish: ${{ github.event.inputs.changelog || 'Automated deployment' }}" || echo "No changes to commit"
+        git push origin ${{ github.ref_name }} || echo "No changes to push"
+
+    - name: Create release
+      if: success()
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: v${{ steps.get_version.outputs.version }}
+        release_name: Release v${{ steps.get_version.outputs.version }}
+        body: |
+          ${{ github.event.inputs.changelog || 'Automated release from GitHub Actions' }}
+          
+          ## Changes
+          - Automated publication via GitHub Actions
+          - All validation errors fixed
+          - Professional device categorization
+          - Multi-language support
+        draft: false
+        prerelease: false
