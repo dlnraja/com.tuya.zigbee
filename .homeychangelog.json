@@ -1,50 +1,29 @@
 {
+  "1.0.17": {
+    "en": "PROFESSIONAL DEVICE IMAGES: Fixed all broken device icons with category-specific professional images. Removed all non-English content (English-first implementation). Enhanced device visualization with gradient backgrounds, professional typography, and category-specific colors. All 17 drivers now have unique, professional icons optimized for Homey app store display."
+  },
   "1.0.16": {
-    "en": "INTELLIGENT UPGRADE: Added comprehensive device selection system following Johan Benz standards. Intelligent pairing assistance, professional device categorization, manufacturer database, and enhanced user guidance. Comprehensive device matrix with 850+ devices from 50+ manufacturers.",
-    "fr": "MISE À NIVEAU INTELLIGENTE : Ajout d'un système de sélection d'appareils complet suivant les standards Johan Benz. Assistance au jumelage intelligente, catégorisation professionnelle des appareils, base de données des fabricants, et orientation utilisateur améliorée. Matrice d'appareils complète avec 850+ appareils de 50+ fabricants.",
-    "nl": "INTELLIGENTE UPGRADE: Uitgebreid apparaatselectiesysteem toegevoegd volgens Johan Benz standaarden. Intelligente koppelingsassistentie, professionele apparaatcategorisering, fabrikantendatabase, en verbeterde gebruikersbegeleiding. Uitgebreide apparaatmatrix met 850+ apparaten van 50+ fabrikanten.",
-    "de": "INTELLIGENTES UPGRADE: Umfassendes Geräteauswahlsystem nach Johan Benz Standards hinzugefügt. Intelligente Kopplungsassistenz, professionelle Gerätekategorisierung, Herstellerdatenbank, und verbesserte Benutzerführung. Umfassende Gerätematrix mit 850+ Geräten von 50+ Herstellern."
+    "en": "INTELLIGENT UPGRADE: Added comprehensive device selection system following Johan Benz standards. Intelligent pairing assistance, professional device categorization, manufacturer database, and enhanced user guidance. Comprehensive device matrix with 850+ devices from 50+ manufacturers."
   },
   "1.0.15": {
-    "en": "CRITICAL UPDATE: App ID consolidated to com.dlnraja.ultimate.zigbee.hub (from com.dlnraja.tuya.zigbee). Fixed broken device icons, enhanced intelligent device selection with Johan Benz organization standards. Complete source integration from Zigbee2MQTT, Blakadder databases. Professional 850+ device coverage.",
-    "fr": "MISE À JOUR CRITIQUE : ID d'application consolidé vers com.dlnraja.ultimate.zigbee.hub (depuis com.dlnraja.tuya.zigbee). Icônes d'appareils cassées corrigées, sélection intelligente d'appareils améliorée avec les standards d'organisation Johan Benz. Intégration complète des sources Zigbee2MQTT, bases de données Blakadder. Couverture professionnelle de 850+ appareils.",
-    "nl": "KRITIEKE UPDATE: App ID geconsolideerd naar com.dlnraja.ultimate.zigbee.hub (van com.dlnraja.tuya.zigbee). Gebroken apparaatpictogrammen gerepareerd, intelligente apparaatselectie verbeterd met Johan Benz organisatiestandaarden. Volledige bronintegratie van Zigbee2MQTT, Blakadder databases. Professionele 850+ apparaatdekking.",
-    "de": "KRITISCHES UPDATE: App-ID zu com.dlnraja.ultimate.zigbee.hub konsolidiert (von com.dlnraja.tuya.zigbee). Defekte Gerätesymbole repariert, intelligente Geräteauswahl mit Johan Benz Organisationsstandards verbessert. Vollständige Quellenintegration von Zigbee2MQTT, Blakadder Datenbanken. Professionelle 850+ Geräteabdeckung."
+    "en": "CRITICAL UPDATE: App ID consolidated to com.dlnraja.ultimate.zigbee.hub (from com.dlnraja.tuya.zigbee). Fixed broken device icons, enhanced intelligent device selection with Johan Benz organization standards. Complete source integration from Zigbee2MQTT, Blakadder databases. Professional 850+ device coverage."
   },
   "1.0.14": {
-    "en": "Comprehensive enhancement: Maximum device coverage (850+ devices), optimized JavaScript algorithms, expanded manufacturer IDs from all major sources (Zigbee2MQTT, Blakadder, Johan Benz). Professional English-first implementation with enhanced source references and comprehensive documentation.",
-    "fr": "Amélioration complète : Couverture maximale des appareils (850+ appareils), algorithmes JavaScript optimisés, IDs de fabricants étendus de toutes les sources principales (Zigbee2MQTT, Blakadder, Johan Benz). Implémentation professionnelle anglais-premier avec références sources améliorées et documentation complète.",
-    "nl": "Uitgebreide verbetering: Maximale apparaatdekking (850+ apparaten), geoptimaliseerde JavaScript algoritmes, uitgebreide fabrikant IDs van alle grote bronnen (Zigbee2MQTT, Blakadder, Johan Benz). Professionele Engels-eerste implementatie met verbeterde bronreferenties en uitgebreide documentatie.",
-    "de": "Umfassende Verbesserung: Maximale Geräteabdeckung (850+ Geräte), optimierte JavaScript-Algorithmen, erweiterte Hersteller-IDs von allen großen Quellen (Zigbee2MQTT, Blakadder, Johan Benz). Professionelle Englisch-erste Implementierung mit verbesserten Quellenverweisen und umfassender Dokumentation."
+    "en": "Comprehensive enhancement: Maximum device coverage (850+ devices), optimized JavaScript algorithms, expanded manufacturer IDs from all major sources (Zigbee2MQTT, Blakadder, Johan Benz). Professional English-first implementation with enhanced source references and comprehensive documentation."
   },
   "1.0.13": {
-    "en": "Major enhancement: Added 5 new professional device categories (dimmer switches, energy plugs, scene switches, CO detectors, RGB controllers). Comprehensive Johan Benz architecture implementation. Zero validation errors - production ready.",
-    "fr": "Amélioration majeure : Ajout de 5 nouvelles catégories d'appareils professionnels (variateurs, prises énergétiques, interrupteurs de scène, détecteurs CO, contrôleurs RGB). Implémentation complète de l'architecture Johan Benz. Zéro erreur de validation - prêt pour la production.",
-    "nl": "Grote verbetering: 5 nieuwe professionele apparaatcategorieën toegevoegd (dimmers, energie stekkers, scène schakelaars, CO detectoren, RGB controllers). Uitgebreide Johan Benz architectuur implementatie. Nul validatiefouten - productie gereed.",
-    "de": "Große Verbesserung: 5 neue professionelle Gerätekategorien hinzugefügt (Dimmer, Energie-Stecker, Szenen-Schalter, CO-Detektoren, RGB-Controller). Umfassende Johan Benz Architektur Implementierung. Null Validierungsfehler - produktionsbereit."
+    "en": "Major enhancement: Added 5 new professional device categories (dimmer switches, energy plugs, scene switches, CO detectors, RGB controllers). Comprehensive Johan Benz architecture implementation. Zero validation errors - production ready."
   },
   "1.0.12": {
-    "en": "Maximum Zigbee device coverage with 800+ devices across all major categories. Enhanced flow cards for professional automation. Improved device organization following Johan Benz standards.",
-    "fr": "Couverture maximale des appareils Zigbee avec 800+ appareils dans toutes les catégories principales. Cartes de flux améliorées pour l'automatisation professionnelle. Organisation d'appareils améliorée suivant les standards Johan Benz.",
-    "nl": "Maximale Zigbee apparaat dekking met 800+ apparaten in alle belangrijke categorieën. Verbeterde flow kaarten voor professionele automatisering. Verbeterde apparaat organisatie volgens Johan Benz standaarden.",
-    "de": "Maximale Zigbee Geräteabdeckung mit 800+ Geräten in allen wichtigen Kategorien. Verbesserte Flow-Karten für professionelle Automatisierung. Verbesserte Geräteorganisation nach Johan Benz Standards."
+    "en": "Maximum Zigbee device coverage with 800+ devices across all major categories. Enhanced flow cards for professional automation. Improved device organization following Johan Benz standards."
   },
   "1.0.11": {
-    "en": "Fixed publication automation, corrected broken images, enhanced device compatibility with automated changelog handling",
-    "fr": "Automatisation de publication corrigée, images cassées réparées, compatibilité des appareils améliorée avec gestion automatique du changelog",
-    "nl": "Publicatie-automatisering gerepareerd, gebroken afbeeldingen gecorrigeerd, apparaatcompatibiliteit verbeterd met geautomatiseerde changelog-behandeling",
-    "de": "Veröffentlichungsautomatisierung repariert, defekte Bilder korrigiert, Gerätekompatibilität mit automatisierter Changelog-Behandlung verbessert"
+    "en": "Fixed publication automation, corrected broken images, enhanced device compatibility with automated changelog handling"
   },
   "1.0.10": {
-    "en": "Professional driver organization, simplified app logic, fixed publication issues, enhanced visibility following Johan Benz standards",
-    "fr": "Organisation professionnelle des pilotes, logique d'application simplifiée, problèmes de publication corrigés, visibilité améliorée selon les standards Johan Benz",
-    "nl": "Professionele driver organisatie, vereenvoudigde app logica, publicatieproblemen opgelost, verbeterde zichtbaarheid volgens Johan Benz standaarden",
-    "de": "Professionelle Treiberorganisation, vereinfachte App-Logik, Veröffentlichungsprobleme behoben, verbesserte Sichtbarkeit nach Johan Benz Standards"
+    "en": "Professional driver organization, simplified app logic, fixed publication issues, enhanced visibility following Johan Benz standards"
   },
   "1.0.9": {
-    "en": "Enhanced sensor support: radar motion, soil moisture, air quality. 650+ devices from 50+ manufacturers. Pure local Zigbee 3.0 communication.",
-    "fr": "Support de capteurs amélioré : mouvement radar, humidité du sol, qualité de l'air. 650+ appareils de 50+ fabricants. Communication Zigbee 3.0 locale pure.",
-    "nl": "Verbeterde sensorondersteuning: radar beweging, bodemvochtigheid, luchtkwaliteit. 650+ apparaten van 50+ fabrikanten. Pure lokale Zigbee 3.0 communicatie.",
-    "de": "Erweiterte Sensorunterstützung: Radar-Bewegung, Bodenfeuchtigkeit, Luftqualität. 650+ Geräte von 50+ Herstellern. Reine lokale Zigbee 3.0-Kommunikation."
+    "en": "Enhanced sensor support: radar motion, soil moisture, air quality. 650+ devices from 50+ manufacturers. Pure local Zigbee 3.0 communication."
   }
 }

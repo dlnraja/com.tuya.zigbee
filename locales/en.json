@@ -1,0 +1,74 @@
+{
+  "settings": {
+    "debug_logging": "Enable Debug Logging",
+    "debug_logging_description": "Enable detailed logging for troubleshooting device issues",
+    "auto_discovery": "Auto Device Discovery",
+    "auto_discovery_description": "Automatically discover and suggest drivers for new Tuya devices",
+    "polling_interval": "Polling Interval (seconds)",
+    "polling_interval_description": "How often to poll devices for status updates",
+    "batch_updates": "Batch Updates",
+    "batch_updates_description": "Group multiple device updates to improve performance",
+    "zigbee_channel": "Preferred Zigbee Channel",
+    "zigbee_channel_description": "Set preferred Zigbee channel for new device pairing",
+    "experimental_features": "Enable Experimental Features",
+    "experimental_features_description": "Enable beta features and experimental device support"
+  },
+  "drivers": {
+    "tuya_presence_illuminance_sensor": {
+      "name": "Presence & Illuminance Sensor",
+      "settings": {
+        "sensitivity": "Motion Sensitivity",
+        "illuminance_reporting": "Illuminance Reporting Interval (seconds)"
+      }
+    },
+    "hobeian_multisensor": {
+      "name": "HOBEIAN Multi-Sensor",
+      "settings": {
+        "motion_sensitivity": "Motion Sensitivity",
+        "temp_offset": "Temperature Offset (°C)",
+        "humidity_offset": "Humidity Offset (%)"
+      }
+    }
+  },
+  "flow": {
+    "triggers": {
+      "motion_detected": "Motion detected",
+      "presence_detected": "Presence detected",
+      "illuminance_changed": "Illuminance changed",
+      "contact_opened": "Contact opened",
+      "water_leak_detected": "Water leak detected"
+    },
+    "conditions": {
+      "is_motion_active": "Motion is active",
+      "is_presence_active": "Presence is active",
+      "illuminance_above": "Illuminance is above",
+      "illuminance_below": "Illuminance is below"
+    },
+    "actions": {
+      "turn_on_light": "Turn light on",
+      "turn_off_light": "Turn light off", 
+      "set_sensitivity": "Set motion sensitivity",
+      "adjust_brightness": "Adjust brightness"
+    }
+  },
+  "capabilities": {
+    "alarm_motion": "Motion",
+    "alarm_contact": "Contact",
+    "alarm_water": "Water Leak",
+    "alarm_smoke": "Smoke",
+    "alarm_co": "Carbon Monoxide",
+    "measure_temperature": "Temperature",
+    "measure_humidity": "Humidity",
+    "measure_luminance": "Illuminance",
+    "measure_battery": "Battery",
+    "measure_power": "Power",
+    "measure_current": "Current",
+    "measure_voltage": "Voltage",
+    "meter_power": "Energy",
+    "onoff": "Power",
+    "dim": "Brightness",
+    "light_hue": "Hue",
+    "light_saturation": "Saturation",
+    "light_temperature": "Color Temperature"
+  }
+}
