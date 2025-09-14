@@ -30,11 +30,11 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "identify",
-          "thermostat",
-          "temperatureMeasurement",
-          "relativeHumidity"
+          0,
+          3,
+          513,
+          1026,
+          1029
         ]
       }
     },

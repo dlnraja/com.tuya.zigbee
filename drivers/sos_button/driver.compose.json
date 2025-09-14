@@ -90,5 +90,11 @@
       },
       "value": true
     }
-  ]
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AA"
+    ]
+  }
 }

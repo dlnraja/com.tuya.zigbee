@@ -31,11 +31,11 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "identify",
-          "onOff",
-          "electricalMeasurement",
-          "meteringCluster"
+          0,
+          3,
+          6,
+          2820,
+          1794
         ]
       }
     },
@@ -52,7 +52,7 @@
   },
   "settings": [
     {
-      "id": "energy_reporting",
+      "id": "reporting_interval",
       "type": "number",
       "label": "Energy Reporting (minutes)",
       "value": 1
