@@ -1,4 +1,10 @@
 {
+  "1.0.16": {
+    "en": "INTELLIGENT UPGRADE: Added comprehensive device selection system following Johan Benz standards. Intelligent pairing assistance, professional device categorization, manufacturer database, and enhanced user guidance. Comprehensive device matrix with 850+ devices from 50+ manufacturers.",
+    "fr": "MISE À NIVEAU INTELLIGENTE : Ajout d'un système de sélection d'appareils complet suivant les standards Johan Benz. Assistance au jumelage intelligente, catégorisation professionnelle des appareils, base de données des fabricants, et orientation utilisateur améliorée. Matrice d'appareils complète avec 850+ appareils de 50+ fabricants.",
+    "nl": "INTELLIGENTE UPGRADE: Uitgebreid apparaatselectiesysteem toegevoegd volgens Johan Benz standaarden. Intelligente koppelingsassistentie, professionele apparaatcategorisering, fabrikantendatabase, en verbeterde gebruikersbegeleiding. Uitgebreide apparaatmatrix met 850+ apparaten van 50+ fabrikanten.",
+    "de": "INTELLIGENTES UPGRADE: Umfassendes Geräteauswahlsystem nach Johan Benz Standards hinzugefügt. Intelligente Kopplungsassistenz, professionelle Gerätekategorisierung, Herstellerdatenbank, und verbesserte Benutzerführung. Umfassende Gerätematrix mit 850+ Geräten von 50+ Herstellern."
+  },
   "1.0.15": {
     "en": "CRITICAL UPDATE: App ID consolidated to com.dlnraja.ultimate.zigbee.hub (from com.dlnraja.tuya.zigbee). Fixed broken device icons, enhanced intelligent device selection with Johan Benz organization standards. Complete source integration from Zigbee2MQTT, Blakadder databases. Professional 850+ device coverage.",
     "fr": "MISE À JOUR CRITIQUE : ID d'application consolidé vers com.dlnraja.ultimate.zigbee.hub (depuis com.dlnraja.tuya.zigbee). Icônes d'appareils cassées corrigées, sélection intelligente d'appareils améliorée avec les standards d'organisation Johan Benz. Intégration complète des sources Zigbee2MQTT, bases de données Blakadder. Couverture professionnelle de 850+ appareils.",
