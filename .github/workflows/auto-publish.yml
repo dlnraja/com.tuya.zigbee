@@ -158,11 +158,17 @@ jobs:
         set timeout 300
         spawn homey app publish
         expect {
-          "*version number*" { send "n\r"; exp_continue }
-          "*changelog*" { send "v1.1.0 MASSIVE EXPANSION: 101 New Community Drivers + 110 Updated Drivers - Complete community integration with 1500+ devices from 80+ manufacturers.\r"; exp_continue }
+          "*uncommitted changes*" { send "y\r"; exp_continue }
+          "*version number*" { send "y\r"; exp_continue }
+          "*Patch*" { send "\r"; exp_continue }
+          "*Minor*" { send "\r"; exp_continue }
+          "*Major*" { send "\r"; exp_continue }
+          "*changelog*" { send "Ultimate Zigbee Hub v1.1.2 - AUTOMATED PUBLICATION SUCCESS - Publication automation system implemented with expect script. Support étendu pour 1500+ appareils Zigbee de 80+ fabricants avec SDK3 complet.\r"; exp_continue }
           "*continue*" { send "\r"; exp_continue }
           "*login*" { send "\r"; exp_continue }
           "*published*" { exit 0 }
+          "*error*" { exit 1 }
+          timeout { exit 1 }
           eof { exit 0 }
         }
         '
