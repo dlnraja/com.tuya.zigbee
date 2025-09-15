@@ -1,0 +1,48 @@
+{
+  "id": "wireless_switch_5gang_cr2032",
+  "name": {
+    "en": "Wireless Switch 5-Gang Battery"
+  },
+  "class": "button",
+  "capabilities": [
+    "button.1",
+    "button.2",
+    "button.3",
+    "button.4",
+    "button.5"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_",
+      "_TZ3210_",
+      "_TYZB01_"
+    ],
+    "productId": [
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      }
+    }
+  }
+}

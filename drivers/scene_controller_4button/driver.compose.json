@@ -1,0 +1,61 @@
+{
+  "id": "scene_controller_4button",
+  "class": "button",
+  "capabilities": [
+    "onoff",
+    "button.2",
+    "button.3",
+    "button.4",
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "zigbee": {
+    "manufacturerId": [],
+    "productId": [],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          1,
+          6
+        ],
+        "bindings": [
+          1,
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/scene_controller_4button/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button for 5 seconds until LED flashes",
+        "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote",
+        "nl": "Houd de knop 5 seconden ingedrukt totdat de LED knippert",
+        "de": "Halten Sie die Taste 5 Sekunden lang gedrückt, bis die LED blinkt"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/scene_controller_4button/assets/small.png",
+    "large": "/drivers/scene_controller_4button/assets/large.png"
+  },
+  "settings": [
+    {
+      "id": "battery_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold (%)",
+        "fr": "Seuil de batterie faible (%)"
+      },
+      "value": 20,
+      "min": 5,
+      "max": 50
+    }
+  ]
+}

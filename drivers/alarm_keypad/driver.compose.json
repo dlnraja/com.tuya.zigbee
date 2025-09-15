@@ -1,0 +1,34 @@
+{
+  "id": "alarm_keypad",
+  "class": "lock",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerId": [],
+    "productId": [],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          257
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/alarm_keypad/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button until the LED flashes",
+        "fr": "Appuyez et maintenez le bouton jusqu'à ce que la LED clignote",
+        "nl": "Houd de knop ingedrukt totdat de LED knippert",
+        "de": "Halten Sie die Taste gedrückt, bis die LED blinkt"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/alarm_keypad/assets/small.png",
+    "large": "/drivers/alarm_keypad/assets/large.png"
+  }
+}

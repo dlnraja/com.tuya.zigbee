@@ -1,0 +1,127 @@
+{
+  "timestamp": "2025-09-15T22:45:29.817Z",
+  "existingDriversCount": 74,
+  "missingDriversCount": 23,
+  "categories": {
+    "sensors": [
+      "aqara_motion_sensor",
+      "aqara_temperature_sensor",
+      "contact_sensor",
+      "co_detector",
+      "door_window_sensor",
+      "formaldehyde_sensor",
+      "gas_detector",
+      "hue_motion_sensor",
+      "lux_sensor",
+      "motion_sensor",
+      "multisensor",
+      "noise_sensor",
+      "pir_sensor",
+      "presence_sensor",
+      "pressure_sensor",
+      "radar_sensor",
+      "smoke_detector",
+      "soil_moisture_sensor",
+      "temperature_humidity_sensor",
+      "vibration_sensor",
+      "water_leak_sensor"
+    ],
+    "switches": [
+      "aqara_button",
+      "dimmer_switch",
+      "emergency_button",
+      "panic_button",
+      "scene_switch",
+      "sos_button",
+      "touch_switch",
+      "wall_switch_1gang",
+      "wall_switch_2gang",
+      "wall_switch_3gang",
+      "wall_switch_4gang",
+      "wireless_button"
+    ],
+    "lights": [
+      "candle_bulb",
+      "filament_bulb",
+      "hue_bulb",
+      "ikea_tradfri_bulb",
+      "led_controller",
+      "led_strip",
+      "rgb_bulb",
+      "smart_bulb",
+      "tunable_white_bulb"
+    ],
+    "plugs": [
+      "energy_plug",
+      "extension_plug",
+      "smart_outlet",
+      "smart_plug",
+      "usb_outlet",
+      "wall_outlet"
+    ],
+    "climate": [
+      "hvac_controller",
+      "radiator_valve",
+      "thermostat"
+    ],
+    "covers": [
+      "blind_controller",
+      "curtain_motor",
+      "roller_blind",
+      "shade_controller"
+    ],
+    "security": [
+      "door_lock",
+      "fingerprint_lock",
+      "keypad_lock",
+      "smart_lock"
+    ],
+    "specialized": [
+      "air_quality_monitor",
+      "aqara_cube",
+      "door_controller",
+      "fan_controller",
+      "garage_door",
+      "gu10_spot",
+      "hue_dimmer",
+      "ikea_styrbar_remote",
+      "ikea_symfonisk_remote",
+      "rotary_dimmer",
+      "sonoff_basic",
+      "sonoff_mini",
+      "sonoff_zbbridge",
+      "temperature_controller",
+      "window_motor"
+    ]
+  },
+  "missingDrivers": [
+    "wireless_switch_1gang_battery",
+    "wireless_switch_2gang_battery",
+    "wireless_switch_3gang_battery",
+    "wireless_switch_4gang_battery",
+    "wall_switch_5gang",
+    "wall_switch_6gang",
+    "soil_temperature_humidity_sensor",
+    "mmwave_radar_sensor",
+    "co2_sensor",
+    "tvoc_sensor",
+    "pm25_sensor",
+    "fan_speed_controller",
+    "air_conditioner_controller",
+    "dehumidifier_controller",
+    "ceiling_light_controller",
+    "strip_light_controller",
+    "outdoor_light_controller",
+    "smart_doorbell",
+    "access_controller",
+    "alarm_keypad",
+    "awning_controller",
+    "projector_screen_controller",
+    "venetian_blind_controller"
+  ],
+  "recommendations": {
+    "priority": "Create unbranded device categories with intelligent naming",
+    "focus": "Battery vs AC-powered device separation",
+    "imageGeneration": "Regenerate coherent images matching device types"
+  }
+}

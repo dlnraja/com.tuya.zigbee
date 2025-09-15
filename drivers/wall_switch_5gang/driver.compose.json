@@ -1,0 +1,38 @@
+{
+  "id": "wall_switch_5gang",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerId": [],
+    "productId": [],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          6,
+          8
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/wall_switch_5gang/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button until the LED flashes",
+        "fr": "Appuyez et maintenez le bouton jusqu'à ce que la LED clignote",
+        "nl": "Houd de knop ingedrukt totdat de LED knippert",
+        "de": "Halten Sie die Taste gedrückt, bis die LED blinkt"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/wall_switch_5gang/assets/small.png",
+    "large": "/drivers/wall_switch_5gang/assets/large.png"
+  }
+}

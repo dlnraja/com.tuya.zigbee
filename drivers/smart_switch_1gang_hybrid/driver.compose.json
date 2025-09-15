@@ -1,0 +1,39 @@
+{
+  "id": "smart_switch_1gang_hybrid",
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerId": [],
+    "productId": [],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          6,
+          8
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/smart_switch_1gang_hybrid/assets/learn.svg",
+      "instruction": {
+        "en": "Turn the switch on/off 3 times quickly",
+        "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
+        "nl": "Schakel de schakelaar 3 keer snel aan/uit",
+        "de": "Schalten Sie den Schalter 3 Mal schnell ein/aus"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/smart_switch_1gang_hybrid/assets/small.png",
+    "large": "/drivers/smart_switch_1gang_hybrid/assets/large.png"
+  },
+  "settings": []
+}
