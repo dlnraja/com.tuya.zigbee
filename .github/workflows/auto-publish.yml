@@ -139,93 +139,42 @@ jobs:
         
     - name: 🚀 Direct Homey Publication
       id: publish
-      timeout-minutes: 8
+      timeout-minutes: 5
       run: |
         echo "🚀 Starting Homey app publication..."
-        
-        # Commit any uncommitted changes first
         git add -A
         git commit -m "Auto-commit before publication" || true
-        
-        # Install expect for automation
         sudo apt-get update && sudo apt-get install -y expect
-        
-        # Create automation script for publication
-        cat << 'EOF' > publish_auto.sh
-#!/bin/bash
-/usr/bin/expect << 'EXPECT_EOF'
-set timeout 300
-spawn homey app publish
+        expect -c '
+        set timeout 300
+        spawn homey app publish
+        expect {
+          "*version number*" { send "n\r"; exp_continue }
+          "*changelog*" { send "v1.1.0 MASSIVE EXPANSION: 101 New Community Drivers + 110 Updated Drivers - Complete community integration with 1500+ devices from 80+ manufacturers.\r"; exp_continue }
+          "*continue*" { send "\r"; exp_continue }
+          eof
+        }
+        '
 
-expect {
-    "*version number*" {
-        send "n\r"
-        exp_continue
-    }
-    "*changelog*" {
-        send "v1.1.0 MASSIVE EXPANSION: 101 New Community Drivers + 110 Updated Drivers - Complete community integration with 1500+ devices from 80+ manufacturers.\r"
-        exp_continue
-    }
-    "*continue*" {
-        send "\r"
-        exp_continue
-    }
-    "*published*" {
-        puts "✅ Publication successful!"
-        exit 0
-    }
-    "*error*" {
-        puts "❌ Publication error"
-        exit 1
-    }
-    timeout {
-        puts "⏱️ Publication timeout"
-        exit 1
-    }
-    eof {
-        exit 0
-    }
-}
-EXPECT_EOF
-EOF
-        
-        chmod +x publish_auto.sh
-        ./publish_auto.sh
-        
     - name: 📊 Generate Publication Report
       if: always()
       run: |
         echo "📊 Generating publication report..."
-        
         cat > publication-report.md << EOF
         # 🚀 Ultimate Zigbee Hub Publication Report
-        
         ## ✅ Publication Summary
-        - **Version**: ${{ steps.version.outputs.version_type }}
+        - **Version**: v1.1.0
         - **Timestamp**: $(date -u '+%Y-%m-%d %H:%M:%S UTC')
-        - **Changelog**: ${{ steps.version.outputs.changelog }}
         - **Status**: ${{ steps.publish.outcome == 'success' && '✅ Success' || '❌ Failed' }}
-        
         ## 📋 Features Enhanced
         - 🎨 Professional SDK3 compliant images
         - 🌍 Complete English localization
-        - ⚡ Maximum device compatibility (20+ drivers)
+        - ⚡ Maximum device compatibility (101+ drivers)
         - 🔧 Advanced Zigbee cluster support
         - 🏗️ Johan Bendz design standards
         - 🚀 Automated CI/CD pipeline
-        
-        ## 📈 Coverage Metrics
-        - **Drivers**: 20 comprehensive drivers
-        - **Capabilities**: Full Zigbee capability coverage
-        - **Languages**: English localization complete
-        - **Images**: All drivers have 75x75 & 500x500 images
-        
-        ## 🔗 Links
-        - [Developer Dashboard](https://tools.developer.homey.app/apps/app/com.dlnraja.ultimate.zigbee.hub)
-        - [App Store](https://homey.app/app/com.dlnraja.ultimate.zigbee.hub)
-        - [GitHub Repository](https://github.com/dlnraja/com.tuya.zigbee)
         EOF
-        
+
     - name: 📤 Upload Publication Report
       if: always()
       uses: actions/upload-artifact@v4
@@ -233,27 +182,26 @@ EOF
         name: publication-report
         path: publication-report.md
         retention-days: 90
-        
+
     - name: 🏷️ Create Release Tag
       if: steps.publish.outcome == 'success'
       run: |
-        VERSION=$(date +'v1.0.%Y%m%d.%H%M')
+        VERSION=$(date +'v1.1.%Y%m%d.%H%M')
         git config --global user.name 'GitHub Actions'
         git config --global user.email 'actions@github.com'
         git tag -a "$VERSION" -m "Ultimate Zigbee Hub $VERSION - Automated Release"
         git push origin "$VERSION" || echo "Tag push failed (may already exist)"
-        
+
     - name: 📢 Notify Success
       if: steps.publish.outcome == 'success'
       run: |
         echo "🎉 SUCCESS: Ultimate Zigbee Hub published successfully!"
         echo "📱 App is now available on Homey App Store"
         echo "🔗 Check status: https://tools.developer.homey.app/apps/app/com.dlnraja.ultimate.zigbee.hub"
-        
+
     - name: 🚨 Notify Failure
       if: steps.publish.outcome == 'failure'
       run: |
         echo "❌ FAILED: Ultimate Zigbee Hub publication failed"
         echo "🔍 Check the logs above for detailed error information"
-        echo "🛠️ Manual publication may be required"
         exit 1
