@@ -4,7 +4,11 @@
   },
   "class": "sensor",
   "capabilities": [
-    "measure_battery"
+    "measure_battery",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_motion",
+    "alarm_contact"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -15,7 +19,12 @@
       "_TZE200_universal",
       "TZ3000_sensor",
       "_TZE200_sensor",
-      "_TZE284_sensor"
+      "_TZE284_sensor",
+      "_TZ3000_*",
+      "_TZ3210_*",
+      "_TYZB01_*",
+      "_TYZB02_*",
+      "_TZ3400_*"
     ],
     "productId": [
       "TS0001",

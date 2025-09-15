@@ -5,7 +5,8 @@
   "class": "sensor",
   "capabilities": [
     "alarm_motion",
-    "measure_battery"
+    "measure_battery",
+    "measure_luminance"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -26,14 +27,18 @@
       "_TZE200_tv3wxhcz",
       "_TZE204_qasjif9e",
       "_TZE204_ijxvkhd0",
-      "_TZE284_cjlm9ra6"
+      "_TZE284_cjlm9ra6",
+      "Aqara",
+      "LUMI"
     ],
     "productId": [
       "TS0202",
       "PIR-M",
       "MS100",
       "PIR01",
-      "MOTION1"
+      "MOTION1",
+      "RTCGQ11LM",
+      "lumi.sensor_motion"
     ],
     "endpoints": {
       "1": {

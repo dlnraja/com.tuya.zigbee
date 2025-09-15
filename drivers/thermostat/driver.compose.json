@@ -3,13 +3,23 @@
     "en": "Thermostat"
   },
   "class": "sensor",
-  "capabilities": [],
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature",
+    "thermostat_mode",
+    "measure_battery"
+  ],
   "zigbee": {
     "manufacturerName": [
       "TZ3000_generic",
       "TZ3000_generic",
       "TZ3000_common",
-      "_TZE200_universal"
+      "_TZE200_universal",
+      "_TZ3000_*",
+      "_TZ3210_*",
+      "_TYZB01_*",
+      "_TYZB02_*",
+      "_TZ3400_*"
     ],
     "productId": [
       "TS0001",
