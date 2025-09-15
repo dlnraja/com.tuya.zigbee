@@ -5,7 +5,10 @@
   "class": "light",
   "capabilities": [
     "onoff",
-    "dim"
+    "dim",
+    "light_temperature",
+    "light_hue",
+    "light_saturation"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -19,14 +22,23 @@
       "_TZE200_s8gkrkxk",
       "_TZ3000_g5z28dny",
       "_TZ3000_qd7hej8u",
-      "_TZ3000_wr2ucaj9"
+      "_TZ3000_wr2ucaj9",
+      "IKEA",
+      "_TZ3000_*",
+      "_TZ3210_*",
+      "_TYZB01_*",
+      "_TYZB02_*",
+      "_TZ3400_*"
     ],
     "productId": [
       "TS0505B",
       "TS0502B",
       "TS0504B",
       "RGB1",
-      "BULB1"
+      "BULB1",
+      "LED1650R5",
+      "TRADFRI bulb E27 WS opal 980lm",
+      "TS0601"
     ],
     "endpoints": {
       "1": {

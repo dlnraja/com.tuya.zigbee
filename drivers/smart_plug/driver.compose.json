@@ -5,7 +5,8 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "measure_power"
+    "measure_power",
+    "meter_power"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -20,13 +21,19 @@
       "_TZE200_amp6tsvy",
       "_TZE200_oisqyl4o",
       "_TZE200_dwcarsat",
-      "_TZE200_whpb9yts"
+      "_TZE200_whpb9yts",
+      "_TZ3000_*",
+      "_TZ3210_*",
+      "_TYZB01_*",
+      "_TYZB02_*",
+      "_TZ3400_*"
     ],
     "productId": [
       "TS0121",
       "SP600",
       "PLUG1",
-      "OUTLET1"
+      "OUTLET1",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
