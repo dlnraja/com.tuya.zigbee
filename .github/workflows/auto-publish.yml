@@ -155,11 +155,15 @@ jobs:
                 send "y\r"
                 exp_continue
             }
-            "*update the version*" {
+            "*update*version*" {
                 send "y\r" 
                 exp_continue
             }
-            "*desired version increment*" {
+            "*Select the desired version*" {
+                send "\r"
+                exp_continue
+            }
+            "*version increment*" {
                 send "\r"
                 exp_continue
             }
@@ -175,11 +179,11 @@ jobs:
                 send "y\r"
                 exp_continue
             }
-            "*successfully published*" {
+            "*successfully*" {
                 puts "✅ Publication successful!"
                 exit 0
             }
-            "*published successfully*" {
+            "*published*" {
                 puts "✅ Publication successful!"
                 exit 0
             }
