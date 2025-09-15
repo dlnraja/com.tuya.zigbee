@@ -72,7 +72,7 @@
     {
       "id": "18w_15w_tuya_zigbee_smart_home_led_lamp",
       "name": {
-        "en": "18W 15W Tuya zigbee Smart Home Led Lamp"
+        "en": "18W 15W Tuya Led Lamp"
       },
       "class": "sensor",
       "capabilities": [],
@@ -110,7 +110,7 @@
     {
       "id": "2_gang_zigbee_dimmer",
       "name": {
-        "en": "2 Gang Zigbee Dimmer"
+        "en": "2 Gang Dimmer"
       },
       "class": "light",
       "capabilities": [
@@ -153,7 +153,7 @@
     {
       "id": "2_gang_zigbee_switches",
       "name": {
-        "en": "2 Gang Zigbee Switches"
+        "en": "2 Gang Switches"
       },
       "class": "light",
       "capabilities": [
@@ -281,10 +281,21 @@
           "_TZ3000_",
           "_TZE200_",
           "_TZE284_",
-          "TUYA"
+          "TUYA",
+          "_TZ3000_ji4araar",
+          "_TZ3000_vzopcetz",
+          "_TZ3000_h3noz0a5",
+          "_TZ3000_cfnprab5",
+          "_TZ3000_mx3vgyea",
+          "_TZ3000_qeuvnohg"
         ],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "TS0001",
+          "TS0011",
+          "TS0002",
+          "TS0003",
+          "TS0012"
         ],
         "endpoints": {
           "1": {
@@ -370,7 +381,7 @@
     {
       "id": "avatto_tuya_zigbee_e_ink_screen_temperature_and_hu",
       "name": {
-        "en": "AVATTO Tuya ZigBee E-ink Screen Temperature And Humidity Sensor"
+        "en": "AVATTO Tuya E-ink Screen Temperature And Humidity Sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -491,10 +502,43 @@
       "zigbee": {
         "manufacturerName": [
           "_TZE284_",
-          "ONENUO"
+          "ONENUO",
+          "TUYATEC-g3gl6cgy",
+          "TUYATEC-Bfq2i2Sy",
+          "TUYATEC-abkehqus",
+          "TUYATEC-sb6t7ett",
+          "_TZ3000_ebar6ljy",
+          "_TZ3000_2mbfxlzr",
+          "_TZ3000_402jjyro",
+          "_TZ3000_6jeesvrt",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_bmg14ax2",
+          "_TZ3000_oxslv1c9",
+          "_TZ3000_bzxlofth",
+          "_TZ3000_7tbsruql",
+          "_TZ3000_osu834un",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_7d8yme6f",
+          "_TZ3000_rgchmad8",
+          "_TZ3000_au1rjicn",
+          "_TZ3000_4ugnzsli",
+          "_TZ3000_zgrffiwg",
+          "_TZ3000_decxrtwa",
+          "_TZ3000_hkcpblrs",
+          "_TZ3000_yxqnffam",
+          "_TZ3000_9eeavbk5",
+          "_TZ3000_bpkijo14",
+          "_TZ3000_a33rw7ou",
+          "_TZ3000_6zvw8ham",
+          "_TZ3000_fa9mlvja",
+          "_TZ3000_rcuyhwe3"
         ],
         "productId": [
-          "TZE284_n4ttsck2"
+          "TZE284_n4ttsck2",
+          "TS0203",
+          "TS0601",
+          "RH3001",
+          "TY0203"
         ],
         "endpoints": {
           "1": {
@@ -570,10 +614,43 @@
           "_TZ3000_",
           "_TZE200_",
           "_TZE284_",
-          "TUYA"
+          "TUYA",
+          "TUYATEC-g3gl6cgy",
+          "TUYATEC-Bfq2i2Sy",
+          "TUYATEC-abkehqus",
+          "TUYATEC-sb6t7ett",
+          "_TZ3000_ebar6ljy",
+          "_TZ3000_2mbfxlzr",
+          "_TZ3000_402jjyro",
+          "_TZ3000_6jeesvrt",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_bmg14ax2",
+          "_TZ3000_oxslv1c9",
+          "_TZ3000_bzxlofth",
+          "_TZ3000_7tbsruql",
+          "_TZ3000_osu834un",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_7d8yme6f",
+          "_TZ3000_rgchmad8",
+          "_TZ3000_au1rjicn",
+          "_TZ3000_4ugnzsli",
+          "_TZ3000_zgrffiwg",
+          "_TZ3000_decxrtwa",
+          "_TZ3000_hkcpblrs",
+          "_TZ3000_yxqnffam",
+          "_TZ3000_9eeavbk5",
+          "_TZ3000_bpkijo14",
+          "_TZ3000_a33rw7ou",
+          "_TZ3000_6zvw8ham",
+          "_TZ3000_fa9mlvja",
+          "_TZ3000_rcuyhwe3"
         ],
         "productId": [
-          "CK-TLSR8656-SS5-01(7014)"
+          "CK-TLSR8656-SS5-01(7014)",
+          "TS0203",
+          "TS0601",
+          "RH3001",
+          "TY0203"
         ],
         "endpoints": {
           "1": {
@@ -812,7 +889,7 @@
     {
       "id": "device_request_already_fixed_girier_tuya_smart_zig",
       "name": {
-        "en": "Device Request / already fixed- GIRIER Tuya Smart ZigBee"
+        "en": "Device Request / already fixed- GIRIER Tuya Smart"
       },
       "class": "sensor",
       "capabilities": [],
@@ -1378,7 +1455,7 @@
     {
       "id": "ewelink_gu10_zigbee_led_lampen",
       "name": {
-        "en": "Ewelink GU10 Zigbee LED-lampen"
+        "en": "Ewelink GU10 LED-lampen"
       },
       "class": "sensor",
       "capabilities": [],
@@ -1416,7 +1493,7 @@
     {
       "id": "gu10_zigbee_rgbcct_5w_bulb",
       "name": {
-        "en": "GU10 Zigbee RGBCCT 5W bulb"
+        "en": "GU10 RGBCCT 5W bulb"
       },
       "class": "sensor",
       "capabilities": [],
@@ -1628,10 +1705,43 @@
         "manufacturerName": [
           "_TZ3210_ncw88jfq",
           "_TZ3000_",
-          "TUYA"
+          "TUYA",
+          "_TYZB01_iuepbmpv",
+          "_TZ3000_fllyghyj",
+          "_TZ3000_dowj6gyi",
+          "_TZ3000_8ybe88nf",
+          "_TZ3000_zl1kmjqx",
+          "_TZ3000_bjawzodf",
+          "_TZ3000_saiqcn0y",
+          "_TZ3000_xr3htd96",
+          "_TZ2000_a476raq2",
+          "_TZ2000_xogb73am",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TYZB01_a476raq2",
+          "_TYZB01_hjsgdkfl",
+          "_TYZB01_cbiezpds",
+          "_TZE200_bjawzodf",
+          "_TZE200_zl1kmjqx",
+          "_TZE200_locansqn",
+          "_TZE204_yjjdcqsq",
+          "_TZ3000_yd2e749y",
+          "_TZ3000_ywagc4rj",
+          "_TZ3000_itnrsufe",
+          "_TZE200_vvmbj46n",
+          "_TZE284_vvmbj46n",
+          "_TZE284_gyzlwu5q",
+          "_TZE204_upagmta9",
+          "TUYATEC-g3gl6cgy",
+          "TUYATEC-Bfq2i2Sy",
+          "TUYATEC-abkehqus"
         ],
         "productId": [
-          "TS0201"
+          "TS0201",
+          "TS0601",
+          "RH3052",
+          "SM0201",
+          "TY0201"
         ],
         "endpoints": {
           "1": {
@@ -1700,10 +1810,28 @@
           "_TZ3000_",
           "_TZE200_",
           "_TZE284_",
-          "TUYA"
+          "TUYA",
+          "_TZ3000_riwp3k79",
+          "_TZ3000_9cpuaca6",
+          "_TZ3000_oborybow",
+          "_TZ3000_49qchf10",
+          "_TZ3210_raqoarrb",
+          "_TZ3210_sroezl0s",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_ktuoyvt9",
+          "_TZ3000_kfu8zapd",
+          "_TZ3000_7hcgjxpc",
+          "_TZ3000_keabpigv",
+          "_TZ3000_qzjcsmar"
         ],
         "productId": [
-          "TS0012 (This one is already supported in v0.2.73!) - Issue can be removed"
+          "TS0012 (This one is already supported in v0.2.73!) - Issue can be removed",
+          "TS0505A",
+          "TS0501A",
+          "TS0502A",
+          "TS110F",
+          "TS1111",
+          "TS0505B"
         ],
         "endpoints": {
           "1": {
@@ -1752,10 +1880,45 @@
           "_TZ3000_",
           "_TZE200_",
           "_TZE284_",
-          "TUYA"
+          "TUYA",
+          "_TYZB01_iuepbmpv",
+          "_TZ3000_fllyghyj",
+          "_TZ3000_dowj6gyi",
+          "_TZ3000_8ybe88nf",
+          "_TZ3000_zl1kmjqx",
+          "_TZ3000_bjawzodf",
+          "_TZ3000_saiqcn0y",
+          "_TZ3000_xr3htd96",
+          "_TZ2000_a476raq2",
+          "_TZ2000_xogb73am",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TYZB01_a476raq2",
+          "_TYZB01_hjsgdkfl",
+          "_TYZB01_cbiezpds",
+          "_TZE200_bjawzodf",
+          "_TZE200_zl1kmjqx",
+          "_TZE200_locansqn",
+          "_TZE204_yjjdcqsq",
+          "_TZ3000_yd2e749y",
+          "_TZ3000_ywagc4rj",
+          "_TZ3000_itnrsufe",
+          "_TZ3210_ncw88jfq",
+          "_TZE200_vvmbj46n",
+          "_TZE284_vvmbj46n",
+          "_TZE284_gyzlwu5q",
+          "_TZE204_upagmta9",
+          "TUYATEC-g3gl6cgy",
+          "TUYATEC-Bfq2i2Sy",
+          "TUYATEC-abkehqus"
         ],
         "productId": [
-          "T0202 TZ0304"
+          "T0202 TZ0304",
+          "TS0201",
+          "TS0601",
+          "RH3052",
+          "SM0201",
+          "TY0201"
         ],
         "endpoints": {
           "1": {
@@ -1824,7 +1987,7 @@
     {
       "id": "moes_bliend_motor",
       "name": {
-        "en": "MOES Bliend Motor"
+        "en": "Bliend Motor"
       },
       "class": "sensor",
       "capabilities": [],
@@ -1862,7 +2025,7 @@
     {
       "id": "moes_dimmer",
       "name": {
-        "en": "MOES Smart Dimmer Switch"
+        "en": "Smart Dimmer Switch"
       },
       "class": "light",
       "capabilities": [
@@ -1950,7 +2113,7 @@
     {
       "id": "moes_smart_scene_switch_4button_wireless",
       "name": {
-        "en": "MOES Smart Scene Switch 4Button Wireless"
+        "en": "Smart Scene Switch 4Button Wireless"
       },
       "class": "light",
       "capabilities": [
@@ -1991,7 +2154,7 @@
     {
       "id": "moes_smart_thermostatic_radiator_valve",
       "name": {
-        "en": "MOES Smart Thermostatic Radiator Valve"
+        "en": "Smart Thermostatic Radiator Valve"
       },
       "class": "thermostat",
       "capabilities": [
@@ -2063,7 +2226,7 @@
     {
       "id": "moes_star_ring_smart_knob_thermostat",
       "name": {
-        "en": "Moes Star Ring Smart Knob Thermostat"
+        "en": "Star Ring Smart Knob Thermostat"
       },
       "class": "thermostat",
       "capabilities": [
@@ -2149,10 +2312,41 @@
           "_TZ3000_",
           "_TZE200_",
           "_TZE284_",
-          "TUYA"
+          "TUYA",
+          "_TZ3000_mmtwjmaq",
+          "_TZ3000_kmh5qpmb",
+          "_TZ3000_msl6wxk9",
+          "_TZ3000_mcxw5ehu",
+          "_TZ3000_otvn3lne",
+          "_TZ3000_6ygjfyll",
+          "_TZ3000_nss8amz9",
+          "_TZ3000_lf56vpxj",
+          "_TZ1800_fcdjzz3s",
+          "_TYZB01_jytabjkb",
+          "_TYZB01_dl7cejts",
+          "_TZE200_3towulqd",
+          "_TZE200_bh3n6gk8",
+          "_TZE200_1ibpyhdc",
+          "_TZE200_ttcovulf",
+          "_TZE200_hsmsj6zh",
+          "_TZE200_tv3wxhcz",
+          "_TZE200_whpb9y8z",
+          "_TZE200_7yuohek9",
+          "_TZ3000_c8ozah8n",
+          "_TZE200_kb5noeto",
+          "TUYATEC-zw6hxafz",
+          "TUYATEC-bd5faf9p",
+          "TUYATEC-lha8pbwd",
+          "TUYATEC-zn9wyqtr",
+          "TUYATEC-53o41joc",
+          "TUYATEC-deetibst"
         ],
         "productId": [
-          "CK-TLSR8656-SS5-01(7014)"
+          "CK-TLSR8656-SS5-01(7014)",
+          "TS0202",
+          "TS0601",
+          "RH3040",
+          "TY0202"
         ],
         "endpoints": {
           "1": {
@@ -2238,10 +2432,40 @@
         "manufacturerName": [
           "AliExpress",
           "_TZ3000_",
-          "TUYA"
+          "TUYA",
+          "_TZ3000_mmtwjmaq",
+          "_TZ3000_kmh5qpmb",
+          "_TZ3000_msl6wxk9",
+          "_TZ3000_mcxw5ehu",
+          "_TZ3000_otvn3lne",
+          "_TZ3000_6ygjfyll",
+          "_TZ3000_nss8amz9",
+          "_TZ3000_lf56vpxj",
+          "_TZ1800_fcdjzz3s",
+          "_TYZB01_jytabjkb",
+          "_TYZB01_dl7cejts",
+          "_TZE200_3towulqd",
+          "_TZE200_bh3n6gk8",
+          "_TZE200_1ibpyhdc",
+          "_TZE200_ttcovulf",
+          "_TZE200_hsmsj6zh",
+          "_TZE200_tv3wxhcz",
+          "_TZE200_whpb9y8z",
+          "_TZE200_7yuohek9",
+          "_TZ3000_c8ozah8n",
+          "_TZE200_kb5noeto",
+          "TUYATEC-zw6hxafz",
+          "TUYATEC-bd5faf9p",
+          "TUYATEC-lha8pbwd",
+          "TUYATEC-zn9wyqtr",
+          "TUYATEC-53o41joc",
+          "TUYATEC-deetibst"
         ],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "TS0202",
+          "RH3040",
+          "TY0202"
         ],
         "endpoints": {
           "1": {
@@ -2326,10 +2550,41 @@
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_",
-          "HOBEIAN"
+          "HOBEIAN",
+          "_TZ3000_mmtwjmaq",
+          "_TZ3000_kmh5qpmb",
+          "_TZ3000_msl6wxk9",
+          "_TZ3000_mcxw5ehu",
+          "_TZ3000_otvn3lne",
+          "_TZ3000_6ygjfyll",
+          "_TZ3000_nss8amz9",
+          "_TZ3000_lf56vpxj",
+          "_TZ1800_fcdjzz3s",
+          "_TYZB01_jytabjkb",
+          "_TYZB01_dl7cejts",
+          "_TZE200_3towulqd",
+          "_TZE200_bh3n6gk8",
+          "_TZE200_1ibpyhdc",
+          "_TZE200_ttcovulf",
+          "_TZE200_hsmsj6zh",
+          "_TZE200_tv3wxhcz",
+          "_TZE200_whpb9y8z",
+          "_TZE200_7yuohek9",
+          "_TZ3000_c8ozah8n",
+          "_TZE200_kb5noeto",
+          "TUYATEC-zw6hxafz",
+          "TUYATEC-bd5faf9p",
+          "TUYATEC-lha8pbwd",
+          "TUYATEC-zn9wyqtr",
+          "TUYATEC-53o41joc",
+          "TUYATEC-deetibst"
         ],
         "productId": [
-          "ZG-204ZV"
+          "ZG-204ZV",
+          "TS0202",
+          "TS0601",
+          "RH3040",
+          "TY0202"
         ],
         "endpoints": {
           "1": {
@@ -2595,7 +2850,7 @@
     {
       "id": "one_gang_switch_moes",
       "name": {
-        "en": "One Gang Switch- MOES"
+        "en": "One Gang Switch-"
       },
       "class": "light",
       "capabilities": [
@@ -2637,7 +2892,7 @@
     {
       "id": "onesmart_tuya_wifi_zigbee_curtain_motor",
       "name": {
-        "en": "Onesmart Tuya Wifi Zigbee Curtain Motor"
+        "en": "Onesmart Tuya Wifi Curtain Motor"
       },
       "class": "sensor",
       "capabilities": [],
@@ -2775,10 +3030,41 @@
         "manufacturerName": [
           "Aubess",
           "_TZ3000_",
-          "TUYA"
+          "TUYA",
+          "_TZ3000_mmtwjmaq",
+          "_TZ3000_kmh5qpmb",
+          "_TZ3000_msl6wxk9",
+          "_TZ3000_mcxw5ehu",
+          "_TZ3000_otvn3lne",
+          "_TZ3000_6ygjfyll",
+          "_TZ3000_nss8amz9",
+          "_TZ3000_lf56vpxj",
+          "_TZ1800_fcdjzz3s",
+          "_TYZB01_jytabjkb",
+          "_TYZB01_dl7cejts",
+          "_TZE200_3towulqd",
+          "_TZE200_bh3n6gk8",
+          "_TZE200_1ibpyhdc",
+          "_TZE200_ttcovulf",
+          "_TZE200_hsmsj6zh",
+          "_TZE200_tv3wxhcz",
+          "_TZE200_whpb9y8z",
+          "_TZE200_7yuohek9",
+          "_TZ3000_c8ozah8n",
+          "_TZE200_kb5noeto",
+          "TUYATEC-zw6hxafz",
+          "TUYATEC-bd5faf9p",
+          "TUYATEC-lha8pbwd",
+          "TUYATEC-zn9wyqtr",
+          "TUYATEC-53o41joc",
+          "TUYATEC-deetibst"
         ],
         "productId": [
-          "TS0202 / ZMS-102"
+          "TS0202 / ZMS-102",
+          "TS0202",
+          "TS0601",
+          "RH3040",
+          "TY0202"
         ],
         "endpoints": {
           "1": {
@@ -3242,10 +3528,21 @@
         "manufacturerName": [
           "_TZ3000_ja5osu5g",
           "_TZ3000_",
-          "TUYA"
+          "TUYA",
+          "_TZ3000_ji4araar",
+          "_TZ3000_vzopcetz",
+          "_TZ3000_h3noz0a5",
+          "_TZ3000_cfnprab5",
+          "_TZ3000_mx3vgyea",
+          "_TZ3000_qeuvnohg"
         ],
         "productId": [
-          "TS004F"
+          "TS004F",
+          "TS0001",
+          "TS0011",
+          "TS0002",
+          "TS0003",
+          "TS0012"
         ],
         "endpoints": {
           "1": {
@@ -3272,7 +3569,7 @@
     {
       "id": "smart_curtain_robot",
       "name": {
-        "en": "smart curtain robot"
+        "en": "Smart curtain robot"
       },
       "class": "sensor",
       "capabilities": [],
@@ -3280,10 +3577,21 @@
         "manufacturerName": [
           "_TZE200_cpbo62rn",
           "_TZ3000_",
-          "TUYA"
+          "TUYA",
+          "_TZ3000_ji4araar",
+          "_TZ3000_vzopcetz",
+          "_TZ3000_h3noz0a5",
+          "_TZ3000_cfnprab5",
+          "_TZ3000_mx3vgyea",
+          "_TZ3000_qeuvnohg"
         ],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "TS0001",
+          "TS0011",
+          "TS0002",
+          "TS0003",
+          "TS0012"
         ],
         "endpoints": {
           "1": {
@@ -3310,7 +3618,7 @@
     {
       "id": "smart_home_1_gang_zigbee",
       "name": {
-        "en": "Smart Home 1 gang Zigbee"
+        "en": "1 gang"
       },
       "class": "sensor",
       "capabilities": [],
@@ -3318,10 +3626,20 @@
         "manufacturerName": [
           "_TZ3000_ysdv91bk",
           "_TZ3000_",
-          "TUYA"
+          "TUYA",
+          "_TZ3000_ji4araar",
+          "_TZ3000_vzopcetz",
+          "_TZ3000_h3noz0a5",
+          "_TZ3000_cfnprab5",
+          "_TZ3000_mx3vgyea",
+          "_TZ3000_qeuvnohg"
         ],
         "productId": [
-          "TS0001"
+          "TS0001",
+          "TS0011",
+          "TS0002",
+          "TS0003",
+          "TS0012"
         ],
         "endpoints": {
           "1": {
@@ -3348,7 +3666,7 @@
     {
       "id": "smart_home_2_gang_zigbee",
       "name": {
-        "en": "Smart Home 2 gang Zigbee"
+        "en": "2 gang"
       },
       "class": "sensor",
       "capabilities": [],
@@ -3356,10 +3674,20 @@
         "manufacturerName": [
           "_TZ3000_mklgayek",
           "_TZ3000_",
-          "TUYA"
+          "TUYA",
+          "_TZ3000_ji4araar",
+          "_TZ3000_vzopcetz",
+          "_TZ3000_h3noz0a5",
+          "_TZ3000_cfnprab5",
+          "_TZ3000_mx3vgyea",
+          "_TZ3000_qeuvnohg"
         ],
         "productId": [
-          "TS0002"
+          "TS0002",
+          "TS0001",
+          "TS0011",
+          "TS0003",
+          "TS0012"
         ],
         "endpoints": {
           "1": {
@@ -3386,7 +3714,7 @@
     {
       "id": "smart_home_3_gang_zigbee",
       "name": {
-        "en": "Smart Home 3 gang Zigbee"
+        "en": "3 gang"
       },
       "class": "sensor",
       "capabilities": [],
@@ -3394,10 +3722,20 @@
         "manufacturerName": [
           "_TZ3000_w05exif3",
           "_TZ3000_",
-          "TUYA"
+          "TUYA",
+          "_TZ3000_ji4araar",
+          "_TZ3000_vzopcetz",
+          "_TZ3000_h3noz0a5",
+          "_TZ3000_cfnprab5",
+          "_TZ3000_mx3vgyea",
+          "_TZ3000_qeuvnohg"
         ],
         "productId": [
-          "TS0003"
+          "TS0003",
+          "TS0001",
+          "TS0011",
+          "TS0002",
+          "TS0012"
         ],
         "endpoints": {
           "1": {
@@ -3432,10 +3770,21 @@
         "manufacturerName": [
           "_TZ3000_gwkzibhs",
           "_TZ3000_",
-          "TUYA"
+          "TUYA",
+          "_TZ3000_ji4araar",
+          "_TZ3000_vzopcetz",
+          "_TZ3000_h3noz0a5",
+          "_TZ3000_cfnprab5",
+          "_TZ3000_mx3vgyea",
+          "_TZ3000_qeuvnohg"
         ],
         "productId": [
-          "TS004F"
+          "TS004F",
+          "TS0001",
+          "TS0011",
+          "TS0002",
+          "TS0003",
+          "TS0012"
         ],
         "endpoints": {
           "1": {
@@ -3473,10 +3822,21 @@
           "_TZ3000_",
           "_TZE200_",
           "_TZE284_",
-          "TUYA"
+          "TUYA",
+          "_TZ3000_ji4araar",
+          "_TZ3000_vzopcetz",
+          "_TZ3000_h3noz0a5",
+          "_TZ3000_cfnprab5",
+          "_TZ3000_mx3vgyea",
+          "_TZ3000_qeuvnohg"
         ],
         "productId": [
-          "_TZ3000_abrsvsou"
+          "_TZ3000_abrsvsou",
+          "TS0001",
+          "TS0011",
+          "TS0002",
+          "TS0003",
+          "TS0012"
         ],
         "endpoints": {
           "1": {
@@ -3519,10 +3879,21 @@
           "_TZ3000_",
           "_TZE200_",
           "_TZE284_",
-          "TUYA"
+          "TUYA",
+          "_TZ3000_ji4araar",
+          "_TZ3000_vzopcetz",
+          "_TZ3000_h3noz0a5",
+          "_TZ3000_cfnprab5",
+          "_TZ3000_mx3vgyea",
+          "_TZ3000_qeuvnohg"
         ],
         "productId": [
-          "CK-TLSR8656-SS5-01(7014)"
+          "CK-TLSR8656-SS5-01(7014)",
+          "TS0001",
+          "TS0011",
+          "TS0002",
+          "TS0003",
+          "TS0012"
         ],
         "endpoints": {
           "1": {
@@ -3575,10 +3946,21 @@
         "manufacturerName": [
           "_TZ3000_iiacqpdz",
           "_TZ3000_",
-          "TUYA"
+          "TUYA",
+          "_TZ3000_ji4araar",
+          "_TZ3000_vzopcetz",
+          "_TZ3000_h3noz0a5",
+          "_TZ3000_cfnprab5",
+          "_TZ3000_mx3vgyea",
+          "_TZ3000_qeuvnohg"
         ],
         "productId": [
-          "TS011F"
+          "TS011F",
+          "TS0001",
+          "TS0011",
+          "TS0002",
+          "TS0003",
+          "TS0012"
         ],
         "endpoints": {
           "1": {
@@ -3616,10 +3998,21 @@
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_",
-          "MOES"
+          "MOES",
+          "_TZ3000_ji4araar",
+          "_TZ3000_vzopcetz",
+          "_TZ3000_h3noz0a5",
+          "_TZ3000_cfnprab5",
+          "_TZ3000_mx3vgyea",
+          "_TZ3000_qeuvnohg"
         ],
         "productId": [
-          "modelId"
+          "modelId",
+          "TS0001",
+          "TS0011",
+          "TS0002",
+          "TS0003",
+          "TS0012"
         ],
         "endpoints": {
           "1": {
@@ -3656,10 +4049,21 @@
         "manufacturerName": [
           "EMOS",
           "_TZ3000_",
-          "TUYA"
+          "TUYA",
+          "_TZ3000_ji4araar",
+          "_TZ3000_vzopcetz",
+          "_TZ3000_h3noz0a5",
+          "_TZ3000_cfnprab5",
+          "_TZ3000_mx3vgyea",
+          "_TZ3000_qeuvnohg"
         ],
         "productId": [
-          "IP-3010S"
+          "IP-3010S",
+          "TS0001",
+          "TS0011",
+          "TS0002",
+          "TS0003",
+          "TS0012"
         ],
         "endpoints": {
           "1": {
@@ -3696,10 +4100,20 @@
         "manufacturerName": [
           "_TZ3000_3u4hripk",
           "_TZ3000_",
-          "TUYA"
+          "TUYA",
+          "_TZ3000_ji4araar",
+          "_TZ3000_vzopcetz",
+          "_TZ3000_h3noz0a5",
+          "_TZ3000_cfnprab5",
+          "_TZ3000_mx3vgyea",
+          "_TZ3000_qeuvnohg"
         ],
         "productId": [
-          "TS0011"
+          "TS0011",
+          "TS0001",
+          "TS0002",
+          "TS0003",
+          "TS0012"
         ],
         "endpoints": {
           "1": {
@@ -3737,10 +4151,21 @@
         "manufacturerName": [
           "[TS0207",
           "_TZ3000_",
-          "TUYA"
+          "TUYA",
+          "_TZ3000_ji4araar",
+          "_TZ3000_vzopcetz",
+          "_TZ3000_h3noz0a5",
+          "_TZ3000_cfnprab5",
+          "_TZ3000_mx3vgyea",
+          "_TZ3000_qeuvnohg"
         ],
         "productId": [
-          "_TZ3000_nkkl7uzv]"
+          "_TZ3000_nkkl7uzv]",
+          "TS0001",
+          "TS0011",
+          "TS0002",
+          "TS0003",
+          "TS0012"
         ],
         "endpoints": {
           "1": {
@@ -3768,7 +4193,7 @@
     {
       "id": "smoke_detector",
       "name": {
-        "en": "smoke detector"
+        "en": "Smoke detector"
       },
       "class": "sensor",
       "capabilities": [
@@ -4094,10 +4519,44 @@
         "manufacturerName": [
           "_TZE200_a8sdabtg",
           "_TZ3000_",
-          "TUYA"
+          "TUYA",
+          "_TYZB01_iuepbmpv",
+          "_TZ3000_fllyghyj",
+          "_TZ3000_dowj6gyi",
+          "_TZ3000_8ybe88nf",
+          "_TZ3000_zl1kmjqx",
+          "_TZ3000_bjawzodf",
+          "_TZ3000_saiqcn0y",
+          "_TZ3000_xr3htd96",
+          "_TZ2000_a476raq2",
+          "_TZ2000_xogb73am",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TYZB01_a476raq2",
+          "_TYZB01_hjsgdkfl",
+          "_TYZB01_cbiezpds",
+          "_TZE200_bjawzodf",
+          "_TZE200_zl1kmjqx",
+          "_TZE200_locansqn",
+          "_TZE204_yjjdcqsq",
+          "_TZ3000_yd2e749y",
+          "_TZ3000_ywagc4rj",
+          "_TZ3000_itnrsufe",
+          "_TZ3210_ncw88jfq",
+          "_TZE200_vvmbj46n",
+          "_TZE284_vvmbj46n",
+          "_TZE284_gyzlwu5q",
+          "_TZE204_upagmta9",
+          "TUYATEC-g3gl6cgy",
+          "TUYATEC-Bfq2i2Sy",
+          "TUYATEC-abkehqus"
         ],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "TS0201",
+          "RH3052",
+          "SM0201",
+          "TY0201"
         ],
         "endpoints": {
           "1": {
@@ -4136,10 +4595,44 @@
         "manufacturerName": [
           "[manufacturerName]",
           "_TZ3000_",
-          "TUYA"
+          "TUYA",
+          "_TYZB01_iuepbmpv",
+          "_TZ3000_fllyghyj",
+          "_TZ3000_dowj6gyi",
+          "_TZ3000_8ybe88nf",
+          "_TZ3000_zl1kmjqx",
+          "_TZ3000_bjawzodf",
+          "_TZ3000_saiqcn0y",
+          "_TZ3000_xr3htd96",
+          "_TZ2000_a476raq2",
+          "_TZ2000_xogb73am",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TYZB01_a476raq2",
+          "_TYZB01_hjsgdkfl",
+          "_TYZB01_cbiezpds",
+          "_TZE200_bjawzodf",
+          "_TZE200_zl1kmjqx",
+          "_TZE200_locansqn",
+          "_TZE204_yjjdcqsq",
+          "_TZ3000_yd2e749y",
+          "_TZ3000_ywagc4rj",
+          "_TZ3000_itnrsufe",
+          "_TZ3210_ncw88jfq",
+          "_TZE200_vvmbj46n",
+          "_TZE284_vvmbj46n",
+          "_TZE284_gyzlwu5q",
+          "_TZE204_upagmta9",
+          "TUYATEC-g3gl6cgy",
+          "TUYATEC-Bfq2i2Sy",
+          "TUYATEC-abkehqus"
         ],
         "productId": [
-          "TS0201"
+          "TS0201",
+          "TS0601",
+          "RH3052",
+          "SM0201",
+          "TY0201"
         ],
         "endpoints": {
           "1": {
@@ -4208,10 +4701,44 @@
         "manufacturerName": [
           "Shenzhen Haihao Electronics",
           "_TZ3000_",
-          "TUYA"
+          "TUYA",
+          "_TYZB01_iuepbmpv",
+          "_TZ3000_fllyghyj",
+          "_TZ3000_dowj6gyi",
+          "_TZ3000_8ybe88nf",
+          "_TZ3000_zl1kmjqx",
+          "_TZ3000_bjawzodf",
+          "_TZ3000_saiqcn0y",
+          "_TZ3000_xr3htd96",
+          "_TZ2000_a476raq2",
+          "_TZ2000_xogb73am",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TYZB01_a476raq2",
+          "_TYZB01_hjsgdkfl",
+          "_TYZB01_cbiezpds",
+          "_TZE200_bjawzodf",
+          "_TZE200_zl1kmjqx",
+          "_TZE200_locansqn",
+          "_TZE204_yjjdcqsq",
+          "_TZ3000_yd2e749y",
+          "_TZ3000_ywagc4rj",
+          "_TZ3000_itnrsufe",
+          "_TZ3210_ncw88jfq",
+          "_TZE200_vvmbj46n",
+          "_TZE284_vvmbj46n",
+          "_TZE284_gyzlwu5q",
+          "_TZE204_upagmta9",
+          "TUYATEC-g3gl6cgy",
+          "TUYATEC-Bfq2i2Sy",
+          "TUYATEC-abkehqus"
         ],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "TS0201",
+          "RH3052",
+          "SM0201",
+          "TY0201"
         ],
         "endpoints": {
           "1": {
@@ -4281,10 +4808,44 @@
           "_TZ3000_",
           "_TZE200_",
           "_TZE284_",
-          "TUYA"
+          "TUYA",
+          "_TYZB01_iuepbmpv",
+          "_TZ3000_fllyghyj",
+          "_TZ3000_dowj6gyi",
+          "_TZ3000_8ybe88nf",
+          "_TZ3000_zl1kmjqx",
+          "_TZ3000_bjawzodf",
+          "_TZ3000_saiqcn0y",
+          "_TZ3000_xr3htd96",
+          "_TZ2000_a476raq2",
+          "_TZ2000_xogb73am",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TYZB01_a476raq2",
+          "_TYZB01_hjsgdkfl",
+          "_TYZB01_cbiezpds",
+          "_TZE200_bjawzodf",
+          "_TZE200_zl1kmjqx",
+          "_TZE200_locansqn",
+          "_TZE204_yjjdcqsq",
+          "_TZ3000_yd2e749y",
+          "_TZ3000_ywagc4rj",
+          "_TZ3000_itnrsufe",
+          "_TZ3210_ncw88jfq",
+          "_TZE200_vvmbj46n",
+          "_TZE284_vvmbj46n",
+          "_TZE284_gyzlwu5q",
+          "_TZE204_upagmta9",
+          "TUYATEC-g3gl6cgy",
+          "TUYATEC-Bfq2i2Sy",
+          "TUYATEC-abkehqus"
         ],
         "productId": [
-          "TS0201"
+          "TS0201",
+          "TS0601",
+          "RH3052",
+          "SM0201",
+          "TY0201"
         ],
         "endpoints": {
           "1": {
@@ -4535,7 +5096,7 @@
     {
       "id": "tomzn_zigbee_rail_relais_63a_1p_n",
       "name": {
-        "en": "TOMZN Zigbee Rail relais 63A 1P + N"
+        "en": "TOMZN Rail relais 63A 1P + N"
       },
       "class": "sensor",
       "capabilities": [],
@@ -4573,7 +5134,7 @@
     {
       "id": "tuya",
       "name": {
-        "en": "Tuya"
+        "en": ""
       },
       "class": "sensor",
       "capabilities": [],
@@ -4611,7 +5172,7 @@
     {
       "id": "tuya_2_in_1_zigbee_mini_pir_motion_detector_bright",
       "name": {
-        "en": "Tuya 2 in 1 Zigbee Mini PIR Motion Detector +Bright Lux"
+        "en": "2 in 1 Mini PIR Motion Detector +Bright Lux"
       },
       "class": "sensor",
       "capabilities": [
@@ -4698,7 +5259,7 @@
     {
       "id": "tuya_smart_temperature_and_humidity_sensor_tuya",
       "name": {
-        "en": "Tuya Smart Temperature And Humidity Sensor- Tuya"
+        "en": "Smart Temperature And Humidity Sensor-"
       },
       "class": "sensor",
       "capabilities": [
@@ -4771,7 +5332,7 @@
     {
       "id": "tuya_smart_thermostatic_radiator_valve",
       "name": {
-        "en": "Tuya Smart Thermostatic Radiator Valve"
+        "en": "Smart Thermostatic Radiator Valve"
       },
       "class": "thermostat",
       "capabilities": [
@@ -4843,7 +5404,7 @@
     {
       "id": "tuya_smart_zigbee_smoke_detector",
       "name": {
-        "en": "Tuya Smart Zigbee Smoke Detector"
+        "en": "Smart Smoke Detector"
       },
       "class": "sensor",
       "capabilities": [
@@ -4930,7 +5491,7 @@
     {
       "id": "tuya_smart_zigbee_soil_tester_temperature_and_humi",
       "name": {
-        "en": "[Tuya Smart Zigbee Soil Tester Temperature and Humidity Meter]"
+        "en": "[Tuya Smart Soil Tester Temperature and Humidity Meter]"
       },
       "class": "sensor",
       "capabilities": [
@@ -5002,7 +5563,7 @@
     {
       "id": "tuya_zigbee_2_gang_switch",
       "name": {
-        "en": "Tuya Zigbee 2 gang switch"
+        "en": "2 gang switch"
       },
       "class": "light",
       "capabilities": [
@@ -5044,7 +5605,7 @@
     {
       "id": "tuya_zigbee_doorwindow_sensor_aliexpress",
       "name": {
-        "en": "Tuya Zigbee Door/Window Sensor - AliExpress"
+        "en": "Door/Window Sensor - AliExpress"
       },
       "class": "sensor",
       "capabilities": [
@@ -5131,7 +5692,7 @@
     {
       "id": "tuya_zigbee_smart_curtain_motor",
       "name": {
-        "en": "Tuya zigbee smart curtain motor"
+        "en": "Smart curtain motor"
       },
       "class": "sensor",
       "capabilities": [],
@@ -5169,7 +5730,7 @@
     {
       "id": "tuya_zigbee_smart_ir_remote",
       "name": {
-        "en": "tuya zigbee smart IR-remote"
+        "en": "Smart IR-remote"
       },
       "class": "button",
       "capabilities": [],
@@ -5208,7 +5769,7 @@
     {
       "id": "tuya_zigbee_soil_moisture_sensor",
       "name": {
-        "en": "Tuya Zigbee Soil Moisture Sensor"
+        "en": "Soil Moisture Sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -5280,7 +5841,7 @@
     {
       "id": "tuya_zigbee_temperature_sensor",
       "name": {
-        "en": "Tuya Zigbee Temperature Sensor"
+        "en": "Temperature Sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -5390,7 +5951,7 @@
     {
       "id": "usb_micro_switch_single",
       "name": {
-        "en": "usb micro switch (single)"
+        "en": "Usb micro switch (single)"
       },
       "class": "light",
       "capabilities": [
@@ -5613,10 +6174,18 @@
         "manufacturerName": [
           "_TZ3000_upgcbody",
           "_TZ3000_",
-          "TUYA"
+          "TUYA",
+          "_TYZB01_sqmd19i1",
+          "_TYST11_qq9mpfhw",
+          "_TZ3000_fxvjhdyl",
+          "_TZ3000_kyb656no",
+          "_TZ3000_ocjlo4ea"
         ],
         "productId": [
-          "SNZB-05"
+          "SNZB-05",
+          "TS0207",
+          "q9mpfhw",
+          "SQ510A"
         ],
         "endpoints": {
           "1": {
@@ -5700,10 +6269,18 @@
         "manufacturerName": [
           "_TZ3000_wuep9zng",
           "_TZ3000_",
-          "TUYA"
+          "TUYA",
+          "_TYZB01_sqmd19i1",
+          "_TYST11_qq9mpfhw",
+          "_TZ3000_fxvjhdyl",
+          "_TZ3000_upgcbody",
+          "_TZ3000_kyb656no",
+          "_TZ3000_ocjlo4ea"
         ],
         "productId": [
-          "TS0207"
+          "TS0207",
+          "q9mpfhw",
+          "SQ510A"
         ],
         "endpoints": {
           "1": {
@@ -5814,7 +6391,7 @@
     {
       "id": "zigbee_1_gang_dimmer",
       "name": {
-        "en": "Zigbee 1 gang dimmer"
+        "en": "1 gang dimmer"
       },
       "class": "light",
       "capabilities": [
@@ -5857,7 +6434,7 @@
     {
       "id": "zigbee_1ch_th_smart_switch",
       "name": {
-        "en": "Zigbee 1CH TH Smart Switch"
+        "en": "1CH TH Smart Switch"
       },
       "class": "light",
       "capabilities": [
@@ -5867,10 +6444,21 @@
         "manufacturerName": [
           "_TZ3218_7fiyo3kv",
           "_TZ3000_",
-          "TUYA"
+          "TUYA",
+          "_TZ3000_ji4araar",
+          "_TZ3000_vzopcetz",
+          "_TZ3000_h3noz0a5",
+          "_TZ3000_cfnprab5",
+          "_TZ3000_mx3vgyea",
+          "_TZ3000_qeuvnohg"
         ],
         "productId": [
-          "TS000F"
+          "TS000F",
+          "TS0001",
+          "TS0011",
+          "TS0002",
+          "TS0003",
+          "TS0012"
         ],
         "endpoints": {
           "1": {
@@ -5898,7 +6486,7 @@
     {
       "id": "zigbee_intelligent_curtain_motor",
       "name": {
-        "en": "ZigBee Intelligent curtain motor"
+        "en": "Intelligent curtain motor"
       },
       "class": "sensor",
       "capabilities": [],
@@ -5936,7 +6524,7 @@
     {
       "id": "zigbee_light_switch_push_button",
       "name": {
-        "en": "Zigbee Light Switch Push Button"
+        "en": "Light Switch Push Button"
       },
       "class": "light",
       "capabilities": [
@@ -5979,7 +6567,7 @@
     {
       "id": "zigbee_pir_sensor_with_lux",
       "name": {
-        "en": "Zigbee PIR Sensor with lux"
+        "en": "PIR Sensor with lux"
       },
       "class": "sensor",
       "capabilities": [],
@@ -6016,7 +6604,7 @@
     {
       "id": "zigbee_rain_brightness_light_sensor",
       "name": {
-        "en": "Zigbee Rain & Brightness Light Sensor"
+        "en": "Rain & Brightness Light Sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -6058,7 +6646,7 @@
     {
       "id": "zigbee_smart_button",
       "name": {
-        "en": "Zigbee Smart Button"
+        "en": "Smart Button"
       },
       "class": "button",
       "capabilities": [],
@@ -6096,7 +6684,7 @@
     {
       "id": "zigbee_smart_dimmer_module",
       "name": {
-        "en": "Zigbee Smart Dimmer Module"
+        "en": "Smart Dimmer Module"
       },
       "class": "light",
       "capabilities": [
@@ -6139,7 +6727,7 @@
     {
       "id": "zigbee_smart_dimmer_switch_module_timer",
       "name": {
-        "en": "Zigbee Smart Dimmer Switch Module Timer"
+        "en": "Smart Dimmer Switch Module Timer"
       },
       "class": "light",
       "capabilities": [
@@ -6181,7 +6769,7 @@
     {
       "id": "zigbee_smart_plug",
       "name": {
-        "en": "Zigbee Smart Plug"
+        "en": "Smart Plug"
       },
       "class": "socket",
       "capabilities": [
@@ -6192,10 +6780,26 @@
           "_TZ3000_",
           "_TZE200_",
           "_TZE284_",
-          "TUYA"
+          "TUYA",
+          "_TZ3000_3ooaz3ng",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_vtscrpmw",
+          "_TZ3000_rdtixbnu",
+          "_TZ3000_8nkb7mof",
+          "_TZ3000_mraovvmm",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_ew3ldmgx",
+          "_TZ3000_2putqrmw",
+          "_TZ3000_yujkchbz",
+          "_TZ3000_typdpbpg",
+          "_TZ3000_w0qqde0g"
         ],
         "productId": [
-          "XH-TZ3PJ"
+          "XH-TZ3PJ",
+          "TS0121",
+          "TS011F",
+          "TS0115",
+          "TS0001"
         ],
         "endpoints": {
           "1": {
@@ -6223,7 +6827,7 @@
     {
       "id": "zigbee_temperature_and_humidity_sensor",
       "name": {
-        "en": "Zigbee Temperature and Humidity sensor"
+        "en": "Temperature and Humidity sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -6295,7 +6899,7 @@
     {
       "id": "zigbee_wireless_button",
       "name": {
-        "en": "Zigbee Wireless Button"
+        "en": "Wireless Button"
       },
       "class": "button",
       "capabilities": [],
