@@ -3,19 +3,25 @@
     "en": "Radiator Valve"
   },
   "class": "sensor",
-  "capabilities": [],
+  "capabilities": [
+    "measure_temperature",
+    "target_temperature",
+    "measure_battery"
+  ],
   "zigbee": {
     "manufacturerName": [
       "TZ3000_generic",
       "TZ3000_generic",
       "TZ3000_common",
-      "_TZE200_universal"
+      "_TZE200_universal",
+      "Bosch"
     ],
     "productId": [
       "TS0001",
       "TS0001",
       "TS0601",
-      "GENERIC"
+      "GENERIC",
+      "TRV"
     ],
     "endpoints": {
       "1": {
