@@ -1,86 +1,43 @@
 {
-  "id": "thermostat",
   "name": {
-    "en": "Smart Thermostat"
+    "en": "Thermostat"
   },
-  "class": "thermostat",
-  "capabilities": [
-    "target_temperature",
-    "measure_temperature",
-    "measure_humidity",
-    "thermostat_mode",
-    "measure_battery"
-  ],
+  "class": "sensor",
+  "capabilities": [],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_",
-      "_TZE200_",
-      "_TZE284_",
-      "TUYA"
+      "TZ3000_generic",
+      "TZ3000_generic",
+      "TZ3000_common",
+      "_TZE200_universal"
     ],
     "productId": [
-      "CK-TLSR8656-SS5-01(7014)"
+      "TS0001",
+      "TS0001",
+      "TS0601",
+      "GENERIC"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          3,
-          513,
-          1026,
-          1029
+          3
         ]
-      }
-    },
-    "learnmode": {
-      "image": "/drivers/thermostat/assets/learn.svg",
-      "instruction": {
-        "en": "Press and hold the button on your Smart Thermostat for 3 seconds until the LED starts blinking rapidly."
       }
     }
   },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
+    "small": "/drivers/thermostat/assets/small.png",
+    "large": "/drivers/thermostat/assets/large.png",
+    "xlarge": "/drivers/thermostat/assets/xlarge.png"
   },
-  "settings": [
-    {
-      "id": "heating_system",
-      "type": "dropdown",
-      "label": "Heating System",
-      "value": "option1",
-      "values": [
-        {
-          "id": "option1",
-          "label": {
-            "en": "Option 1"
-          }
-        },
-        {
-          "id": "option2",
-          "label": {
-            "en": "Option 2"
-          }
-        },
-        {
-          "id": "option3",
-          "label": {
-            "en": "Option 3"
-          }
-        }
-      ]
-    },
-    {
-      "id": "eco_mode",
-      "type": "checkbox",
-      "label": "Eco Mode",
-      "value": true
-    }
-  ],
-  "energy": {
-    "batteries": [
-      "CR2032",
-      "AA"
-    ]
+  "community": {
+    "sources": [
+      "Generic compatibility database",
+      "Pattern-based enrichment"
+    ],
+    "enriched": true,
+    "type": "generic",
+    "last_updated": "2025-09-15T19:34:02.887Z"
   }
 }

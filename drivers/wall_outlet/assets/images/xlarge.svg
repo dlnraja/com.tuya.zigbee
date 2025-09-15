@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="deviceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9C27B0;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#7B1FA2;stop-opacity:0.05" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="white" rx="50"/>
+  <circle cx="500" cy="500" r="400" fill="url(#deviceGradient)" opacity="0.3"/>
+  <circle cx="500" cy="500" r="285.7142857142857" fill="#9C27B0" opacity="0.15"/>
+  <rect x="2" y="2" width="996" height="996" fill="none" stroke="#9C27B0" stroke-width="1" opacity="0.1" rx="50"/>
+</svg>

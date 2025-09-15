@@ -1,0 +1,49 @@
+{
+  "name": {
+    "en": "Co Detector"
+  },
+  "class": "sensor",
+  "capabilities": [],
+  "zigbee": {
+    "manufacturerName": [
+      "TZ3000_generic",
+      "TZ3000_generic",
+      "TZ3000_common",
+      "_TZE200_universal"
+    ],
+    "productId": [
+      "TS0001",
+      "TS0001",
+      "TS0601",
+      "GENERIC"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/safety/co_detector/assets/small.png",
+    "large": "/drivers/safety/co_detector/assets/large.png",
+    "xlarge": "/drivers/safety/co_detector/assets/xlarge.png"
+  },
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AA"
+    ]
+  },
+  "community": {
+    "sources": [
+      "Generic compatibility database",
+      "Pattern-based enrichment"
+    ],
+    "enriched": true,
+    "type": "generic",
+    "last_updated": "2025-09-15T19:34:02.996Z"
+  }
+}

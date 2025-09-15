@@ -1,28 +1,32 @@
 {
-  "id": "energy_plug",
   "name": {
-    "en": "Energy Monitoring Smart Plug"
+    "en": "Energy Plug"
   },
   "class": "socket",
   "capabilities": [
     "onoff",
-    "measure_power",
-    "measure_voltage",
-    "measure_current",
-    "meter_power",
-    "measure_temperature",
-    "measure_humidity",
-    "measure_battery"
+    "measure_power"
   ],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_",
-      "_TZE200_",
-      "_TZE284_",
-      "TUYA"
+      "TZ3000_plug",
+      "TZ3000_outlet",
+      "TZ3000_generic",
+      "TZ3000_common",
+      "_TZE200_universal",
+      "TZ3000_plug",
+      "_TZE200_plug",
+      "_TZE284_plug"
     ],
     "productId": [
-      "CK-TLSR8656-SS5-01(7014)"
+      "TS0121",
+      "PLUG",
+      "TS0001",
+      "TS0601",
+      "GENERIC",
+      "TS0121",
+      "SP600",
+      "PLUG1"
     ],
     "endpoints": {
       "1": {
@@ -30,43 +34,23 @@
           0,
           3,
           6,
-          2820,
-          1794
+          2820
         ]
-      }
-    },
-    "learnmode": {
-      "image": "/drivers/energy_plug/assets/learn.svg",
-      "instruction": {
-        "en": "Press and hold the button on your Energy Monitoring Smart Plug for 3 seconds until the LED starts blinking rapidly."
       }
     }
   },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
+    "small": "/drivers/energy_plug/assets/small.png",
+    "large": "/drivers/energy_plug/assets/large.png",
+    "xlarge": "/drivers/energy_plug/assets/xlarge.png"
   },
-  "settings": [
-    {
-      "id": "reporting_interval",
-      "type": "number",
-      "label": "Energy Reporting (minutes)",
-      "value": 1
-    },
-    {
-      "id": "overload_protection",
-      "type": "number",
-      "label": "Overload Threshold (W)",
-      "value": 2300
-    }
-  ],
-  "energy": {
-    "batteries": [
-      "CR2032",
-      "AA"
+  "community": {
+    "sources": [
+      "Generic compatibility database",
+      "Pattern-based enrichment"
     ],
-    "approximation": {
-      "usageConstant": 5
-    }
+    "enriched": true,
+    "type": "generic",
+    "last_updated": "2025-09-15T19:34:02.971Z"
   }
 }

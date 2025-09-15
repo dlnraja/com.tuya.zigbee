@@ -28,6 +28,7 @@
     /* Emit */
     "sourceMap": true,
     "outDir": "dist",
+    "noEmit": true,
     "declaration": true,
     "declarationMap": true,
     "incremental": true,
@@ -48,8 +49,8 @@
     /* Type Resolution */
     "skipLibCheck": true,
     "allowJs": true,
-    "checkJs": true,
-    "rootDir": "src",
+    "checkJs": false,
+    "rootDir": ".",
     "typeRoots": [
       "./node_modules/@types",
       "./types"
@@ -57,15 +58,7 @@
     "types": ["node"]
   },
   "include": [
-    "app.js",
-    "app.json",
-    "drivers/**/*.js",
-    "drivers/**/*.ts",
-    "lib/**/*.js",
-    "lib/**/*.ts",
-    "test/**/*.js",
-    "test/**/*.ts",
-    ".homeycompose/**/*.json"
+    "src/**/*"
   ],
   "exclude": [
     "node_modules",
@@ -74,6 +67,7 @@
     "**/*.spec.ts",
     "**/*.test.ts",
     "**/*.d.ts",
-    "**/node_modules/**"
+    "**/node_modules/**",
+    "drivers/**/*.js"
   ]
 }

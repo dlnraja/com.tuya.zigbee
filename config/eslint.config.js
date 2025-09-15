@@ -1,61 +1,40 @@
-#!/usr/bin/env node
-'use strict';
+import js from '@eslint/js';
+import globals from 'globals';
 
-module.exports = {
-  root: true,
-  env: {
-    node: true,
-    es2022: true,
-    jest: true,
-  },
-  extends: [
-    'eslint:recommended',
-    'plugin:prettier/recommended',
-  ],
-  parserOptions: {
-    ecmaVersion: 2022,
-    sourceType: 'module',
-  },
-  plugins: ['prettier'],
-  rules: {
-    // Basic rules
-    'indent': ['error', 2],
-    'linebreak-style': ['error', 'unix'],
-    'quotes': ['error', 'single', { avoidEscape: true }],
-    'semi': ['error', 'always'],
-    'no-console': 'warn',
-    
-    // Best practices
-    'eqeqeq': ['error', 'always'],
-    'no-multi-spaces': 'error',
-    'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
-    'no-var': 'error',
-    'prefer-const': 'error',
-    'prefer-template': 'error',
-    
-    // Code style
-    'camelcase': ['error', { properties: 'always' }],
-    'comma-dangle': ['error', 'only-multiline'],
-    'eol-last': ['error', 'always'],
-    'no-tabs': 'error',
-    'no-trailing-spaces': 'error',
-    'object-curly-spacing': ['error', 'always'],
-    'prefer-arrow-callback': 'error',
-    'quote-props': ['error', 'as-needed'],
-    'space-before-function-paren': [
-      'error',
-      { anonymous: 'always', named: 'never', asyncArrow: 'always' },
-    ],
-  },
-  overrides: [
-    {
-      files: ['**/*.test.js'],
-      env: {
-        jest: true,
-      },
-      rules: {
-        'no-unused-expressions': 'off',
+export default [
+  js.configs.recommended,
+  {
+    files: ['**/*.js'],
+    languageOptions: {
+      ecmaVersion: 2021,
+      sourceType: 'module',
+      globals: {
+        ...globals.node,
+        Homey: 'readonly'
       },
     },
-  ],
-};
+    rules: {
+      'no-unused-vars': 'warn',
+      'no-console': 'off',
+    },
+  },
+  {
+    files: ['**/*.ts'],
+    languageOptions: {
+      parser: require('@typescript-eslint/parser'),
+      ecmaVersion: 2021,
+      sourceType: 'module',
+      globals: {
+        ...globals.node,
+        Homey: 'readonly'
+      },
+    },
+    plugins: {
+      '@typescript-eslint': require('@typescript-eslint/eslint-plugin')
+    },
+    rules: {
+      '@typescript-eslint/no-unused-vars': 'warn',
+      'no-console': 'off',
+    },
+  }
+];

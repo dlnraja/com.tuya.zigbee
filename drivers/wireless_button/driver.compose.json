@@ -1,0 +1,64 @@
+{
+  "name": {
+    "en": "Wireless Button"
+  },
+  "class": "button",
+  "capabilities": [
+    "onoff",
+    "measure_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "TZ3000_switch",
+      "TZ3000_button",
+      "TZ3000_generic",
+      "TZ3000_common",
+      "_TZE200_universal",
+      "TZ3000_switch",
+      "_TZE200_switch",
+      "_TZE284_switch",
+      "_TZ3000_qorxjsci"
+    ],
+    "productId": [
+      "TS0043",
+      "SWITCH",
+      "TS0001",
+      "TS0601",
+      "GENERIC",
+      "TS0043",
+      "TS0012",
+      "TS0011",
+      "SWITCH1",
+      "TS0042"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/wireless_button/assets/small.png",
+    "large": "/drivers/wireless_button/assets/large.png",
+    "xlarge": "/drivers/wireless_button/assets/xlarge.png"
+  },
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AA"
+    ]
+  },
+  "community": {
+    "sources": [
+      "Generic compatibility database",
+      "Pattern-based enrichment"
+    ],
+    "enriched": true,
+    "type": "generic",
+    "last_updated": "2025-09-15T19:34:03.158Z"
+  }
+}
