@@ -35,8 +35,8 @@
     }
   },
   "images": {
-    "small": "/drivers/zigbee_rain_brightness_light_sensor/assets/images/small.png",
-    "large": "/drivers/zigbee_rain_brightness_light_sensor/assets/images/large.png"
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
   },
   "settings": []
 }

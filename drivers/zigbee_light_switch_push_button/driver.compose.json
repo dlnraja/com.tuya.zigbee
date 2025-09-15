@@ -36,8 +36,8 @@
     }
   },
   "images": {
-    "small": "/drivers/zigbee_light_switch_push_button/assets/images/small.png",
-    "large": "/drivers/zigbee_light_switch_push_button/assets/images/large.png"
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
   },
   "settings": []
 }

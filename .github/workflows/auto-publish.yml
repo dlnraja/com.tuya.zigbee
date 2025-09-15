@@ -143,35 +143,72 @@ jobs:
       env:
         HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
       run: |
-        echo "🚀 Starting Homey app publication..."
-        git config --global user.email "actions@github.com"
-        git config --global user.name "GitHub Actions"
-        git add -A
+        set -e
+        echo "Starting publication process..."
         
-        sudo apt-get update && sudo apt-get install -y expect
+        # Create responses file for automated input
+        cat > responses.txt << 'EOF'
+        y
+        y
         
-        # Set Homey token for authentication
-        mkdir -p ~/.homey
-        echo "{\"token\":\"$HOMEY_TOKEN\"}" > ~/.homey/config.json
+        Ultimate Zigbee Hub v${{ steps.version.outputs.version }} - Automated release with 1500+ Zigbee devices from 80+ manufacturers. Full SDK3 compliance.
+        EOF
         
-        expect -c '
-        set timeout 300
+        # Try multiple publication methods
+        echo "Method 1: Using expect script..."
+        cat > publish.exp << 'EOF'
+        #!/usr/bin/expect -f
+        set timeout 180
+        
         spawn homey app publish
+        
+        # Handle all prompts in sequence
         expect {
-          "*uncommitted changes*" { send "y\r"; exp_continue }
-          "*version number*" { send "y\r"; exp_continue }
-          "*Patch*" { send "\r"; exp_continue }
-          "*Minor*" { send "\r"; exp_continue }
-          "*Major*" { send "\r"; exp_continue }
-          "*changelog*" { send "Ultimate Zigbee Hub v1.1.2 - AUTOMATED PUBLICATION SUCCESS - Publication automation system implemented with expect script. Support étendu pour 1500+ appareils Zigbee de 80+ fabricants avec SDK3 complet.\r"; exp_continue }
-          "*continue*" { send "\r"; exp_continue }
-          "*login*" { send "\r"; exp_continue }
-          "*published*" { exit 0 }
-          "*error*" { exit 1 }
-          timeout { exit 1 }
-          eof { exit 0 }
+          -re "uncommitted changes.*continue.*" {
+            send "y\r"
+            exp_continue
+          }
+          -re "update.*version number.*" {
+            send "y\r"
+            exp_continue
+          }
+          -re "Patch.*Minor.*Major" {
+            send "\r"
+            exp_continue
+          }
+          -re "changelog|What's new" {
+            send "Ultimate Zigbee Hub - Automated release with 1500+ devices, 80+ manufacturers, SDK3\r"
+            exp_continue
+          }
+          "published" {
+            exit 0
+          }
+          timeout {
+            exit 1
+          }
         }
-        '
+        EOF
+        
+        chmod +x publish.exp
+        if ./publish.exp; then
+          echo "✅ Published successfully via expect!"
+          exit 0
+        fi
+        
+        echo "Method 2: Using input redirection..."
+        if cat responses.txt | homey app publish; then
+          echo "✅ Published successfully via input redirection!"
+          exit 0
+        fi
+        
+        echo "Method 3: Using yes command..."
+        if yes | homey app publish; then
+          echo "✅ Published successfully via yes!"
+          exit 0
+        fi
+        
+        echo "❌ All publication methods failed"
+        exit 1
 
     - name: 📊 Generate Publication Report
       if: always()

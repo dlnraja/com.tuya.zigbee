@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "1.1.1",
+  "version": "1.0.6",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -11,9 +11,7 @@
     "en": "Ultimate Zigbee Hub"
   },
   "description": {
-    "en": "Ultimate Zigbee Hub v1.1.0 - MASSIVE EXPANSION: 111+ drivers supporting 1500+ devices from 80+ manufacturers! Comprehensive community integration with all GitHub issue requests implemented. Built on Johan Bendz's foundation with full SDK3 architecture. Complete device ecosystem: sensors (temperature, humidity, motion, PIR, radar, soil, air quality), smart lights (LED, bulbs, dimmers), plugs & sockets, switches (1-4 gang), climate controls (thermostats, radiator valves), curtain motors, scene remotes, detectors (smoke, water leak, CO), emergency buttons, and specialized devices. Professional images, flow triggers, and validation. Local Zigbee 3.0 operation with no cloud dependencies.",
-    "fr": "Ultimate Zigbee Hub - Ecosysteme complet avec 850+ appareils de 50+ fabricants. Categorisation professionnelle par types d'appareils.",
-    "nl": "Ultimate Zigbee Hub - Compleet ecosysteem met 850+ apparaten van 50+ fabrikanten. Professionele categorisering per apparaattype."
+    "en": "Ultimate Zigbee Hub - Complete ecosystem with 850+ devices from 50+ manufacturers. Professional categorization by device types: motion sensors, contact sensors, smart lights, smart plugs, climate controls. SDK3 compliant following Johan Benz standards. Local Zigbee 3.0 operation with no cloud dependencies."
   },
   "category": [
     "lights",
@@ -29,113 +27,57 @@
     "xlarge": "/assets/images/xlarge.png"
   },
   "author": {
-    "name": "Dylan RAJA",
-    "email": "dylraja@outlook.com"
+    "name": "dlnraja",
+    "email": "support@ultimate.zigbee.hub"
   },
   "bugs": {
     "url": "https://github.com/dlnraja/com.ultimate.zigbee.hub/issues"
   },
   "homepage": "https://github.com/dlnraja/com.ultimate.zigbee.hub",
-  "support": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352",
+  "support": "https://community.homey.app/t/app-ultimate-zigbee-hub-dlnraja-500-devices-supported/140352",
   "source": "https://github.com/dlnraja/ultimate-zigbee-hub",
-  "homeyCommunityTopicId": 140352,
-  "tags": {
-    "en": [
-      "zigbee",
-      "sensors",
-      "lights",
-      "plugs",
-      "switches",
-      "motion",
-      "contact",
-      "temperature",
-      "humidity",
-      "presence",
-      "air quality",
-      "smoke",
-      "water leak",
-      "smart home",
-      "automation",
-      "energy",
-      "climate",
-      "security",
-      "tuya",
-      "aqara",
-      "ikea",
-      "philips",
-      "xiaomi",
-      "sonoff",
-      "local",
-      "no cloud",
-      "sdk3"
-    ],
-    "fr": [
-      "zigbee",
-      "sensors",
-      "lights",
-      "plugs",
-      "switches",
-      "motion",
-      "contact",
-      "temperature",
-      "humidity",
-      "presence",
-      "air quality",
-      "smoke",
-      "water leak",
-      "smart home",
-      "automation",
-      "energy",
-      "climate",
-      "security",
-      "tuya",
-      "aqara",
-      "ikea",
-      "philips",
-      "xiaomi",
-      "sonoff",
-      "local",
-      "no cloud",
-      "sdk3"
-    ],
-    "nl": [
-      "zigbee",
-      "sensors",
-      "lights",
-      "plugs",
-      "switches",
-      "motion",
-      "contact",
-      "temperature",
-      "humidity",
-      "presence",
-      "air quality",
-      "smoke",
-      "water leak",
-      "smart home",
-      "automation",
-      "energy",
-      "climate",
-      "security",
-      "tuya",
-      "aqara",
-      "ikea",
-      "philips",
-      "xiaomi",
-      "sonoff",
-      "local",
-      "no cloud",
-      "sdk3"
-    ]
-  },
+  "homeyCommunityTopicId": 12345,
+  "tags": [
+    "zigbee",
+    "sensors",
+    "lights",
+    "plugs",
+    "switches",
+    "motion",
+    "contact",
+    "temperature",
+    "humidity",
+    "presence",
+    "smart home",
+    "automation",
+    "energy",
+    "climate",
+    "security",
+    "tuya",
+    "aqara",
+    "ikea",
+    "philips",
+    "xiaomi",
+    "sonoff",
+    "local",
+    "no cloud",
+    "sdk3"
+  ],
   "contributors": {
     "developers": [
-      {
-        "name": "Johan Bendz",
-        "email": "johan.bendz@gmail.com"
-      }
+      "dlnraja"
     ],
-    "translators": []
+    "translators": {
+      "en": [
+        "dlnraja"
+      ],
+      "fr": [
+        "dlnraja"
+      ],
+      "nl": [
+        "dlnraja"
+      ]
+    }
   },
   "drivers": [
     {
@@ -171,8 +113,8 @@
         }
       },
       "images": {
-        "small": "/drivers/18w_15w_tuya_zigbee_smart_home_led_lamp/assets/images/small.png",
-        "large": "/drivers/18w_15w_tuya_zigbee_smart_home_led_lamp/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -214,8 +156,8 @@
         }
       },
       "images": {
-        "small": "/drivers/2_gang_zigbee_dimmer/assets/images/small.png",
-        "large": "/drivers/2_gang_zigbee_dimmer/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -254,8 +196,8 @@
         }
       },
       "images": {
-        "small": "/drivers/2_gang_zigbee_switches/assets/images/small.png",
-        "large": "/drivers/2_gang_zigbee_switches/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -295,8 +237,8 @@
         }
       },
       "images": {
-        "small": "/drivers/3_gang_wall_switch/assets/images/small.png",
-        "large": "/drivers/3_gang_wall_switch/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -333,8 +275,8 @@
         }
       },
       "images": {
-        "small": "/drivers/4_gang_wall_remote/assets/images/small.png",
-        "large": "/drivers/4_gang_wall_remote/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -372,8 +314,8 @@
         }
       },
       "images": {
-        "small": "/drivers/_tze200_vvmbj46n/assets/images/small.png",
-        "large": "/drivers/_tze200_vvmbj46n/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -418,8 +360,8 @@
         }
       },
       "images": {
-        "small": "/drivers/air_quality_sensor/assets/images/small.png",
-        "large": "/drivers/air_quality_sensor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -475,8 +417,8 @@
         }
       },
       "images": {
-        "small": "/drivers/avatto_tuya_zigbee_e_ink_screen_temperature_and_hu/assets/images/small.png",
-        "large": "/drivers/avatto_tuya_zigbee_e_ink_screen_temperature_and_hu/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -541,8 +483,8 @@
         }
       },
       "images": {
-        "small": "/drivers/bseed_wall_socket_with_metering_and_2x_usb/assets/images/small.png",
-        "large": "/drivers/bseed_wall_socket_with_metering_and_2x_usb/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -584,8 +526,8 @@
         }
       },
       "images": {
-        "small": "/drivers/co_detector/assets/images/small.png",
-        "large": "/drivers/co_detector/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -663,8 +605,8 @@
         }
       },
       "images": {
-        "small": "/drivers/contact_sensor/assets/images/small.png",
-        "large": "/drivers/contact_sensor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -720,8 +662,8 @@
         }
       },
       "images": {
-        "small": "/drivers/cr_rnz1/assets/images/small.png",
-        "large": "/drivers/cr_rnz1/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -761,8 +703,8 @@
         }
       },
       "images": {
-        "small": "/drivers/curtain_motor/assets/images/small.png",
-        "large": "/drivers/curtain_motor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -832,8 +774,8 @@
         }
       },
       "images": {
-        "small": "/drivers/device_name/assets/images/small.png",
-        "large": "/drivers/device_name/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -873,8 +815,8 @@
         }
       },
       "images": {
-        "small": "/drivers/device_request_3_button_switch/assets/images/small.png",
-        "large": "/drivers/device_request_3_button_switch/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -911,8 +853,8 @@
         }
       },
       "images": {
-        "small": "/drivers/device_request_already_fixed_girier_tuya_smart_zig/assets/images/small.png",
-        "large": "/drivers/device_request_already_fixed_girier_tuya_smart_zig/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -949,8 +891,8 @@
         }
       },
       "images": {
-        "small": "/drivers/device_request_ceilling_human_presence_sensor/assets/images/small.png",
-        "large": "/drivers/device_request_ceilling_human_presence_sensor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -992,8 +934,8 @@
         }
       },
       "images": {
-        "small": "/drivers/dimmer_switch/assets/images/small.png",
-        "large": "/drivers/dimmer_switch/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -1048,8 +990,8 @@
         }
       },
       "images": {
-        "small": "/drivers/door_window_sensor/assets/images/small.png",
-        "large": "/drivers/door_window_sensor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -1135,8 +1077,8 @@
         }
       },
       "images": {
-        "small": "/drivers/door_windows_sensor/assets/images/small.png",
-        "large": "/drivers/door_windows_sensor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -1222,8 +1164,8 @@
         }
       },
       "images": {
-        "small": "/drivers/door_windows_sensor_zd08/assets/images/small.png",
-        "large": "/drivers/door_windows_sensor_zd08/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -1317,8 +1259,8 @@
         }
       },
       "images": {
-        "small": "/drivers/energy_plug/assets/images/small.png",
-        "large": "/drivers/energy_plug/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -1382,8 +1324,8 @@
         }
       },
       "images": {
-        "small": "/drivers/enhanced_smoke_detector/assets/images/small.png",
-        "large": "/drivers/enhanced_smoke_detector/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -1477,8 +1419,8 @@
         }
       },
       "images": {
-        "small": "/drivers/ewelink_gu10_zigbee_led_lampen/assets/images/small.png",
-        "large": "/drivers/ewelink_gu10_zigbee_led_lampen/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -1514,8 +1456,8 @@
         }
       },
       "images": {
-        "small": "/drivers/gu10_zigbee_rgbcct_5w_bulb/assets/images/small.png",
-        "large": "/drivers/gu10_zigbee_rgbcct_5w_bulb/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -1552,8 +1494,8 @@
         }
       },
       "images": {
-        "small": "/drivers/human_presence_detector/assets/images/small.png",
-        "large": "/drivers/human_presence_detector/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -1590,8 +1532,8 @@
         }
       },
       "images": {
-        "small": "/drivers/human_presence_sensor/assets/images/small.png",
-        "large": "/drivers/human_presence_sensor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -1632,8 +1574,8 @@
         }
       },
       "images": {
-        "small": "/drivers/insoma_water_timer/assets/images/small.png",
-        "large": "/drivers/insoma_water_timer/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -1721,8 +1663,8 @@
         }
       },
       "images": {
-        "small": "/drivers/lcd_temperature_humidity_sensor/assets/images/small.png",
-        "large": "/drivers/lcd_temperature_humidity_sensor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -1794,8 +1736,8 @@
         }
       },
       "images": {
-        "small": "/drivers/light_switch/assets/images/small.png",
-        "large": "/drivers/light_switch/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -1845,8 +1787,8 @@
         }
       },
       "images": {
-        "small": "/drivers/mi_light/assets/images/small.png",
-        "large": "/drivers/mi_light/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -1885,8 +1827,8 @@
         }
       },
       "images": {
-        "small": "/drivers/mini_curtain_switch_module/assets/images/small.png",
-        "large": "/drivers/mini_curtain_switch_module/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -1923,8 +1865,8 @@
         }
       },
       "images": {
-        "small": "/drivers/moes_bliend_motor/assets/images/small.png",
-        "large": "/drivers/moes_bliend_motor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -1972,8 +1914,8 @@
         }
       },
       "images": {
-        "small": "/drivers/moes_dimmer/assets/images/small.png",
-        "large": "/drivers/moes_dimmer/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -2052,8 +1994,8 @@
         }
       },
       "images": {
-        "small": "/drivers/moes_smart_scene_switch_4button_wireless/assets/images/small.png",
-        "large": "/drivers/moes_smart_scene_switch_4button_wireless/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -2096,8 +2038,8 @@
         }
       },
       "images": {
-        "small": "/drivers/moes_smart_thermostatic_radiator_valve/assets/images/small.png",
-        "large": "/drivers/moes_smart_thermostatic_radiator_valve/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -2167,8 +2109,8 @@
         }
       },
       "images": {
-        "small": "/drivers/moes_star_ring_smart_knob_thermostat/assets/images/small.png",
-        "large": "/drivers/moes_star_ring_smart_knob_thermostat/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -2243,8 +2185,8 @@
         }
       },
       "images": {
-        "small": "/drivers/motion_sensor/assets/images/small.png",
-        "large": "/drivers/motion_sensor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -2330,8 +2272,8 @@
         }
       },
       "images": {
-        "small": "/drivers/motion_sensor_with_lux/assets/images/small.png",
-        "large": "/drivers/motion_sensor_with_lux/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -2420,8 +2362,8 @@
         }
       },
       "images": {
-        "small": "/drivers/motion_sensor_with_temperature_humidity/assets/images/small.png",
-        "large": "/drivers/motion_sensor_with_temperature_humidity/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -2532,8 +2474,8 @@
         }
       },
       "images": {
-        "small": "/drivers/multisensor/assets/images/small.png",
-        "large": "/drivers/multisensor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -2615,8 +2557,8 @@
         }
       },
       "images": {
-        "small": "/drivers/nodon/assets/images/small.png",
-        "large": "/drivers/nodon/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -2656,8 +2598,8 @@
         }
       },
       "images": {
-        "small": "/drivers/one_gang_switch_module/assets/images/small.png",
-        "large": "/drivers/one_gang_switch_module/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -2698,8 +2640,8 @@
         }
       },
       "images": {
-        "small": "/drivers/one_gang_switch_moes/assets/images/small.png",
-        "large": "/drivers/one_gang_switch_moes/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -2736,8 +2678,8 @@
         }
       },
       "images": {
-        "small": "/drivers/onesmart_tuya_wifi_zigbee_curtain_motor/assets/images/small.png",
-        "large": "/drivers/onesmart_tuya_wifi_zigbee_curtain_motor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -2780,8 +2722,8 @@
         }
       },
       "images": {
-        "small": "/drivers/outdoor_power_plug/assets/images/small.png",
-        "large": "/drivers/outdoor_power_plug/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -2867,8 +2809,8 @@
         }
       },
       "images": {
-        "small": "/drivers/pir_motion_sensor/assets/images/small.png",
-        "large": "/drivers/pir_motion_sensor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -2950,8 +2892,8 @@
         }
       },
       "images": {
-        "small": "/drivers/pir_sensor_pir1_zb/assets/images/small.png",
-        "large": "/drivers/pir_sensor_pir1_zb/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -2997,8 +2939,8 @@
         }
       },
       "images": {
-        "small": "/drivers/presence_sensor/assets/images/small.png",
-        "large": "/drivers/presence_sensor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -3054,8 +2996,8 @@
         }
       },
       "images": {
-        "small": "/drivers/radar_sensor/assets/images/small.png",
-        "large": "/drivers/radar_sensor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -3101,8 +3043,8 @@
         }
       },
       "images": {
-        "small": "/drivers/rgb_light/assets/images/small.png",
-        "large": "/drivers/rgb_light/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -3153,8 +3095,8 @@
         }
       },
       "images": {
-        "small": "/drivers/scene_remote_2gang/assets/images/small.png",
-        "large": "/drivers/scene_remote_2gang/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -3219,8 +3161,8 @@
         }
       },
       "images": {
-        "small": "/drivers/scene_remote_4gang/assets/images/small.png",
-        "large": "/drivers/scene_remote_4gang/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -3288,8 +3230,8 @@
         }
       },
       "images": {
-        "small": "/drivers/scene_switch/assets/images/small.png",
-        "large": "/drivers/scene_switch/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -3333,8 +3275,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_button/assets/images/small.png",
-        "large": "/drivers/smart_button/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -3371,8 +3313,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_curtain_robot/assets/images/small.png",
-        "large": "/drivers/smart_curtain_robot/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -3409,8 +3351,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_home_1_gang_zigbee/assets/images/small.png",
-        "large": "/drivers/smart_home_1_gang_zigbee/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -3447,8 +3389,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_home_2_gang_zigbee/assets/images/small.png",
-        "large": "/drivers/smart_home_2_gang_zigbee/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -3485,8 +3427,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_home_3_gang_zigbee/assets/images/small.png",
-        "large": "/drivers/smart_home_3_gang_zigbee/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -3523,8 +3465,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_knob/assets/images/small.png",
-        "large": "/drivers/smart_knob/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -3565,8 +3507,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_knob_switch_ts004f/assets/images/small.png",
-        "large": "/drivers/smart_knob_switch_ts004f/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -3613,8 +3555,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_light/assets/images/small.png",
-        "large": "/drivers/smart_light/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -3667,8 +3609,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_plug/assets/images/small.png",
-        "large": "/drivers/smart_plug/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -3709,8 +3651,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_rotary_dimmer/assets/images/small.png",
-        "large": "/drivers/smart_rotary_dimmer/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -3747,8 +3689,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_socket_ip_3010s/assets/images/small.png",
-        "large": "/drivers/smart_socket_ip_3010s/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -3788,8 +3730,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_switch/assets/images/small.png",
-        "large": "/drivers/smart_switch/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -3829,8 +3771,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_switch_with_power_monitor/assets/images/small.png",
-        "large": "/drivers/smart_switch_with_power_monitor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -3870,8 +3812,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smoke_detector/assets/images/small.png",
-        "large": "/drivers/smoke_detector/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -3959,8 +3901,8 @@
         }
       },
       "images": {
-        "small": "/drivers/soil_sensor/assets/images/small.png",
-        "large": "/drivers/soil_sensor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -4031,8 +3973,8 @@
         }
       },
       "images": {
-        "small": "/drivers/soil_temperature_moisture_plant_sensor/assets/images/small.png",
-        "large": "/drivers/soil_temperature_moisture_plant_sensor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -4104,8 +4046,8 @@
         }
       },
       "images": {
-        "small": "/drivers/sos_button/assets/images/small.png",
-        "large": "/drivers/sos_button/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -4185,8 +4127,8 @@
         }
       },
       "images": {
-        "small": "/drivers/temp_and_hum_sensor/assets/images/small.png",
-        "large": "/drivers/temp_and_hum_sensor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -4229,8 +4171,8 @@
         }
       },
       "images": {
-        "small": "/drivers/temperature_and_humidity_sensor/assets/images/small.png",
-        "large": "/drivers/temperature_and_humidity_sensor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -4301,8 +4243,8 @@
         }
       },
       "images": {
-        "small": "/drivers/temperature_humidity_sensor/assets/images/small.png",
-        "large": "/drivers/temperature_humidity_sensor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -4374,8 +4316,8 @@
         }
       },
       "images": {
-        "small": "/drivers/temperature_humidity_tz3000_akqdg6g7/assets/images/small.png",
-        "large": "/drivers/temperature_humidity_tz3000_akqdg6g7/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -4444,8 +4386,8 @@
         }
       },
       "images": {
-        "small": "/drivers/temperaturemoisture_meter/assets/images/small.png",
-        "large": "/drivers/temperaturemoisture_meter/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -4510,8 +4452,8 @@
         }
       },
       "images": {
-        "small": "/drivers/thermo_hygrometer/assets/images/small.png",
-        "large": "/drivers/thermo_hygrometer/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -4557,8 +4499,8 @@
         }
       },
       "images": {
-        "small": "/drivers/thermostat/assets/images/small.png",
-        "large": "/drivers/thermostat/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -4634,8 +4576,8 @@
         }
       },
       "images": {
-        "small": "/drivers/tomzn_zigbee_rail_relais_63a_1p_n/assets/images/small.png",
-        "large": "/drivers/tomzn_zigbee_rail_relais_63a_1p_n/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -4672,8 +4614,8 @@
         }
       },
       "images": {
-        "small": "/drivers/tuya/assets/images/small.png",
-        "large": "/drivers/tuya/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -4714,8 +4656,8 @@
         }
       },
       "images": {
-        "small": "/drivers/tuya_2_in_1_zigbee_mini_pir_motion_detector_bright/assets/images/small.png",
-        "large": "/drivers/tuya_2_in_1_zigbee_mini_pir_motion_detector_bright/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -4804,8 +4746,8 @@
         }
       },
       "images": {
-        "small": "/drivers/tuya_smart_temperature_and_humidity_sensor_tuya/assets/images/small.png",
-        "large": "/drivers/tuya_smart_temperature_and_humidity_sensor_tuya/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -4876,8 +4818,8 @@
         }
       },
       "images": {
-        "small": "/drivers/tuya_smart_thermostatic_radiator_valve/assets/images/small.png",
-        "large": "/drivers/tuya_smart_thermostatic_radiator_valve/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -4946,8 +4888,8 @@
         }
       },
       "images": {
-        "small": "/drivers/tuya_smart_zigbee_smoke_detector/assets/images/small.png",
-        "large": "/drivers/tuya_smart_zigbee_smoke_detector/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -5035,8 +4977,8 @@
         }
       },
       "images": {
-        "small": "/drivers/tuya_smart_zigbee_soil_tester_temperature_and_humi/assets/images/small.png",
-        "large": "/drivers/tuya_smart_zigbee_soil_tester_temperature_and_humi/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -5105,8 +5047,8 @@
         }
       },
       "images": {
-        "small": "/drivers/tuya_zigbee_2_gang_switch/assets/images/small.png",
-        "large": "/drivers/tuya_zigbee_2_gang_switch/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -5147,8 +5089,8 @@
         }
       },
       "images": {
-        "small": "/drivers/tuya_zigbee_doorwindow_sensor_aliexpress/assets/images/small.png",
-        "large": "/drivers/tuya_zigbee_doorwindow_sensor_aliexpress/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -5230,8 +5172,8 @@
         }
       },
       "images": {
-        "small": "/drivers/tuya_zigbee_smart_curtain_motor/assets/images/small.png",
-        "large": "/drivers/tuya_zigbee_smart_curtain_motor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -5269,8 +5211,8 @@
         }
       },
       "images": {
-        "small": "/drivers/tuya_zigbee_smart_ir_remote/assets/images/small.png",
-        "large": "/drivers/tuya_zigbee_smart_ir_remote/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -5313,8 +5255,8 @@
         }
       },
       "images": {
-        "small": "/drivers/tuya_zigbee_soil_moisture_sensor/assets/images/small.png",
-        "large": "/drivers/tuya_zigbee_soil_moisture_sensor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -5383,8 +5325,8 @@
         }
       },
       "images": {
-        "small": "/drivers/tuya_zigbee_temperature_sensor/assets/images/small.png",
-        "large": "/drivers/tuya_zigbee_temperature_sensor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -5451,8 +5393,8 @@
         }
       },
       "images": {
-        "small": "/drivers/two_gang_switch/assets/images/small.png",
-        "large": "/drivers/two_gang_switch/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -5493,8 +5435,8 @@
         }
       },
       "images": {
-        "small": "/drivers/usb_micro_switch_single/assets/images/small.png",
-        "large": "/drivers/usb_micro_switch_single/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -5537,8 +5479,8 @@
         }
       },
       "images": {
-        "small": "/drivers/valve_controller_white/assets/images/small.png",
-        "large": "/drivers/valve_controller_white/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -5622,8 +5564,8 @@
         }
       },
       "images": {
-        "small": "/drivers/wall_switch_1_gang/assets/images/small.png",
-        "large": "/drivers/wall_switch_1_gang/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -5663,8 +5605,8 @@
         }
       },
       "images": {
-        "small": "/drivers/wall_switch_with_blug_and_usb/assets/images/small.png",
-        "large": "/drivers/wall_switch_with_blug_and_usb/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -5705,8 +5647,8 @@
         }
       },
       "images": {
-        "small": "/drivers/water_leak_detector/assets/images/small.png",
-        "large": "/drivers/water_leak_detector/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -5792,8 +5734,8 @@
         }
       },
       "images": {
-        "small": "/drivers/water_leak_sensor/assets/images/small.png",
-        "large": "/drivers/water_leak_sensor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -5875,8 +5817,8 @@
         }
       },
       "images": {
-        "small": "/drivers/woodupp_create_led/assets/images/small.png",
-        "large": "/drivers/woodupp_create_led/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -5918,8 +5860,8 @@
         }
       },
       "images": {
-        "small": "/drivers/zigbee_1_gang_dimmer/assets/images/small.png",
-        "large": "/drivers/zigbee_1_gang_dimmer/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -5959,8 +5901,8 @@
         }
       },
       "images": {
-        "small": "/drivers/zigbee_1ch_th_smart_switch/assets/images/small.png",
-        "large": "/drivers/zigbee_1ch_th_smart_switch/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -5997,8 +5939,8 @@
         }
       },
       "images": {
-        "small": "/drivers/zigbee_intelligent_curtain_motor/assets/images/small.png",
-        "large": "/drivers/zigbee_intelligent_curtain_motor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -6040,8 +5982,8 @@
         }
       },
       "images": {
-        "small": "/drivers/zigbee_light_switch_push_button/assets/images/small.png",
-        "large": "/drivers/zigbee_light_switch_push_button/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -6077,8 +6019,8 @@
         }
       },
       "images": {
-        "small": "/drivers/zigbee_pir_sensor_with_lux/assets/images/small.png",
-        "large": "/drivers/zigbee_pir_sensor_with_lux/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -6119,8 +6061,8 @@
         }
       },
       "images": {
-        "small": "/drivers/zigbee_rain_brightness_light_sensor/assets/images/small.png",
-        "large": "/drivers/zigbee_rain_brightness_light_sensor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -6157,8 +6099,8 @@
         }
       },
       "images": {
-        "small": "/drivers/zigbee_smart_button/assets/images/small.png",
-        "large": "/drivers/zigbee_smart_button/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -6200,8 +6142,8 @@
         }
       },
       "images": {
-        "small": "/drivers/zigbee_smart_dimmer_module/assets/images/small.png",
-        "large": "/drivers/zigbee_smart_dimmer_module/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -6242,8 +6184,8 @@
         }
       },
       "images": {
-        "small": "/drivers/zigbee_smart_dimmer_switch_module_timer/assets/images/small.png",
-        "large": "/drivers/zigbee_smart_dimmer_switch_module_timer/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -6284,8 +6226,8 @@
         }
       },
       "images": {
-        "small": "/drivers/zigbee_smart_plug/assets/images/small.png",
-        "large": "/drivers/zigbee_smart_plug/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     },
@@ -6328,8 +6270,8 @@
         }
       },
       "images": {
-        "small": "/drivers/zigbee_temperature_and_humidity_sensor/assets/images/small.png",
-        "large": "/drivers/zigbee_temperature_and_humidity_sensor/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": [
         {
@@ -6395,8 +6337,8 @@
         }
       },
       "images": {
-        "small": "/drivers/zigbee_wireless_button/assets/images/small.png",
-        "large": "/drivers/zigbee_wireless_button/assets/images/large.png"
+        "small": "assets/images/small.png",
+        "large": "assets/images/large.png"
       },
       "settings": []
     }

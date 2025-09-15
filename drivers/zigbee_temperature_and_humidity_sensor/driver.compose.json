@@ -37,8 +37,8 @@
     }
   },
   "images": {
-    "small": "/drivers/zigbee_temperature_and_humidity_sensor/assets/images/small.png",
-    "large": "/drivers/zigbee_temperature_and_humidity_sensor/assets/images/large.png"
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
   },
   "settings": [
     {

@@ -1,17 +1,23 @@
 [
   {
-    "id": "device_turn_on",
+    "id": "turn_on_device",
     "title": {
-      "en": "Turn on",
-      "fr": "Allumer",
-      "nl": "Inschakelen",
-      "de": "Einschalten"
+      "en": "Turn device on",
+      "fr": "Allumer l'appareil",
+      "nl": "Apparaat inschakelen",
+      "de": "Gerät einschalten"
     },
     "titleFormatted": {
       "en": "Turn on [[device]]",
       "fr": "Allumer [[device]]",
-      "nl": "[[device]] inschakelen",
-      "de": "[[device]] einschalten"
+      "nl": "Schakel [[device]] in",
+      "de": "Schalte [[device]] ein"
+    },
+    "hint": {
+      "en": "Turn on any compatible Zigbee device",
+      "fr": "Allumer n'importe quel appareil Zigbee compatible",
+      "nl": "Schakel elk compatibel Zigbee-apparaat in",
+      "de": "Schalte jedes kompatible Zigbee-Gerät ein"
     },
     "args": [
       {
@@ -24,16 +30,16 @@
   {
     "id": "turn_off_device",
     "title": {
-      "en": "Turn off device",
-      "fr": "Éteindre l'appareil", 
+      "en": "Turn device off",
+      "fr": "Éteindre l'appareil",
       "nl": "Apparaat uitschakelen",
       "de": "Gerät ausschalten"
     },
     "titleFormatted": {
       "en": "Turn off [[device]]",
       "fr": "Éteindre [[device]]",
-      "nl": "[[device]] uitschakelen",
-      "de": "[[device]] ausschalten"
+      "nl": "Schakel [[device]] uit",
+      "de": "Schalte [[device]] aus"
     },
     "args": [
       {
@@ -44,113 +50,15 @@
     ]
   },
   {
-    "id": "dim_device",
-    "title": {
-      "en": "Dim device",
-      "fr": "Régler luminosité",
-      "nl": "Apparaat dimmen",
-      "de": "Gerät dimmen"
-    },
-    "titleFormatted": {
-      "en": "Set [[device]] brightness to [[brightness]]%",
-      "fr": "Régler luminosité de [[device]] à [[brightness]]%",
-      "nl": "Stel helderheid van [[device]] in op [[brightness]]%",
-      "de": "Helligkeit von [[device]] auf [[brightness]]% einstellen"
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": "capability_id=dim"
-      },
-      {
-        "name": "brightness",
-        "type": "range",
-        "min": 0,
-        "max": 1,
-        "step": 0.01,
-        "label": {
-          "en": "Brightness",
-          "fr": "Luminosité",
-          "nl": "Helderheid",
-          "de": "Helligkeit"
-        },
-        "labelMultiplier": 100,
-        "labelDecimals": 0
-      }
-    ]
-  },
-  {
-    "id": "set_light_temperature",
-    "title": {
-      "en": "Set light temperature",
-      "fr": "Régler température couleur",
-      "nl": "Lichttemperatuur instellen",
-      "de": "Lichttemperatur einstellen"
-    },
-    "titleFormatted": {
-      "en": "Set [[device]] temperature to [[temperature]]K",
-      "fr": "Régler température de [[device]] à [[temperature]]K",
-      "nl": "Stel temperatuur van [[device]] in op [[temperature]]K",
-      "de": "Temperatur von [[device]] auf [[temperature]]K einstellen"
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": "capability_id=light_temperature"
-      },
-      {
-        "name": "temperature",
-        "type": "range",
-        "min": 0,
-        "max": 1,
-        "step": 0.01,
-        "label": {
-          "en": "Temperature",
-          "fr": "Température",
-          "nl": "Temperatuur",
-          "de": "Temperatur"
-        }
-      }
-    ]
-  },
-  {
-    "id": "set_light_color",
-    "title": {
-      "en": "Set light color",
-      "fr": "Régler couleur",
-      "nl": "Lichtkleur instellen",
-      "de": "Lichtfarbe einstellen"
-    },
-    "titleFormatted": {
-      "en": "Set [[device]] color",
-      "fr": "Régler couleur de [[device]]",
-      "nl": "Stel kleur van [[device]] in",
-      "de": "Farbe von [[device]] einstellen"
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": "capability_id=light_hue"
-      },
-      {
-        "name": "color",
-        "type": "color"
-      }
-    ]
-  },
-  {
-    "id": "device_set_brightness",
+    "id": "set_brightness",
     "title": {
       "en": "Set brightness",
-      "fr": "Régler luminosité",
+      "fr": "Définir la luminosité",
       "nl": "Helderheid instellen",
       "de": "Helligkeit einstellen"
     },
     "titleFormatted": {
-      "en": "Set [[device]] brightness to [[brightness]]%",
+      "en": "Set brightness of [[device]] to [[brightness]]%",
       "fr": "Régler la luminosité de [[device]] à [[brightness]]%",
       "nl": "Stel helderheid van [[device]] in op [[brightness]]%",
       "de": "Setze Helligkeit von [[device]] auf [[brightness]]%"
@@ -168,15 +76,42 @@
         "max": 1,
         "step": 0.01,
         "label": "%",
-        "labelMultiplier": 100
+        "labelMultiplier": 100,
+        "labelDecimals": 0
       }
     ]
   },
   {
-    "id": "device_set_temperature",
+    "id": "set_color",
+    "title": {
+      "en": "Set color",
+      "fr": "Définir la couleur",
+      "nl": "Kleur instellen",
+      "de": "Farbe einstellen"
+    },
+    "titleFormatted": {
+      "en": "Set color of [[device]] to [[color]]",
+      "fr": "Définir la couleur de [[device]] sur [[color]]",
+      "nl": "Stel kleur van [[device]] in op [[color]]",
+      "de": "Setze Farbe von [[device]] auf [[color]]"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "capability_id=light_hue"
+      },
+      {
+        "name": "color",
+        "type": "color"
+      }
+    ]
+  },
+  {
+    "id": "set_thermostat",
     "title": {
       "en": "Set temperature",
-      "fr": "Régler température",
+      "fr": "Définir la température",
       "nl": "Temperatuur instellen",
       "de": "Temperatur einstellen"
     },
@@ -199,126 +134,6 @@
         "max": 35,
         "step": 0.5,
         "label": "°C"
-      }
-    ]
-  },
-  {
-    "id": "set_curtain_position",
-    "title": {
-      "en": "Set curtain position",
-      "fr": "Régler position rideau",
-      "nl": "Gordijnpositie instellen",
-      "de": "Vorhangposition einstellen"
-    },
-    "titleFormatted": {
-      "en": "Set [[device]] position to [[position]]%",
-      "fr": "Régler position de [[device]] à [[position]]%",
-      "nl": "Stel positie van [[device]] in op [[position]]%",
-      "de": "Setze Position von [[device]] auf [[position]]%"
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": "driver_id=tuya_curtain_motor"
-      },
-      {
-        "name": "position",
-        "type": "range",
-        "min": 0,
-        "max": 1,
-        "step": 0.01,
-        "label": "%",
-        "labelMultiplier": 100
-      }
-    ]
-  },
-  {
-    "id": "toggle_device",
-    "title": {
-      "en": "Toggle device",
-      "fr": "Basculer appareil",
-      "nl": "Apparaat omschakelen",
-      "de": "Gerät umschalten"
-    },
-    "titleFormatted": {
-      "en": "Toggle [[device]] on/off",
-      "fr": "Basculer [[device]] marche/arrêt",
-      "nl": "Schakel [[device]] aan/uit",
-      "de": "Schalte [[device]] ein/aus"
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": "capability_id=onoff"
-      }
-    ]
-  },
-  {
-    "id": "start_pairing_mode",
-    "title": {
-      "en": "Start pairing mode",
-      "fr": "Démarrer mode appairage",
-      "nl": "Start koppelingsmodus",
-      "de": "Kopplungsmodus starten"
-    },
-    "titleFormatted": {
-      "en": "Start pairing mode for [[duration]] seconds",
-      "fr": "Démarrer mode appairage pendant [[duration]] secondes",
-      "nl": "Start koppelingsmodus voor [[duration]] seconden",
-      "de": "Starte Kopplungsmodus für [[duration]] Sekunden"
-    },
-    "args": [
-      {
-        "name": "duration",
-        "type": "range",
-        "min": 30,
-        "max": 300,
-        "step": 30,
-        "label": "s"
-      }
-    ]
-  },
-  {
-    "id": "reset_device",
-    "title": {
-      "en": "Reset device",
-      "fr": "Réinitialiser appareil",
-      "nl": "Apparaat resetten",
-      "de": "Gerät zurücksetzen"
-    },
-    "titleFormatted": {
-      "en": "Reset [[device]] to factory settings",
-      "fr": "Réinitialiser [[device]] aux paramètres d'usine",
-      "nl": "Reset [[device]] naar fabrieksinstellingen",
-      "de": "Setze [[device]] auf Werkseinstellungen zurück"
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device"
-      }
-    ]
-  },
-  {
-    "id": "identify_device",
-    "title": {
-      "en": "Identify device",
-      "fr": "Identifier appareil",
-      "nl": "Apparaat identificeren",
-      "de": "Gerät identifizieren"
-    },
-    "titleFormatted": {
-      "en": "Make [[device]] identify itself (blink/beep)",
-      "fr": "Faire que [[device]] s'identifie (clignoter/biper)",
-      "nl": "Laat [[device]] zichzelf identificeren (knipperen/piepen)",
-      "de": "Lasse [[device]] sich identifizieren (blinken/piepen)"
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device"
       }
     ]
   }

@@ -1,32 +1,8 @@
 {
-  "1.0.17": {
-    "en": "PROFESSIONAL DEVICE IMAGES: Fixed all broken device icons with category-specific professional images. Removed all non-English content (English-first implementation). Enhanced device visualization with gradient backgrounds, professional typography, and category-specific colors. All 17 drivers now have unique, professional icons optimized for Homey app store display."
-  },
-  "1.0.16": {
-    "en": "INTELLIGENT UPGRADE: Added comprehensive device selection system following Johan Benz standards. Intelligent pairing assistance, professional device categorization, manufacturer database, and enhanced user guidance. Comprehensive device matrix with 850+ devices from 50+ manufacturers."
-  },
-  "1.0.15": {
-    "en": "CRITICAL UPDATE: App ID consolidated to com.dlnraja.ultimate.zigbee.hub (from com.dlnraja.tuya.zigbee). Fixed broken device icons, enhanced intelligent device selection with Johan Benz organization standards. Complete source integration from Zigbee2MQTT, Blakadder databases. Professional 850+ device coverage."
-  },
-  "1.0.14": {
-    "en": "Comprehensive enhancement: Maximum device coverage (850+ devices), optimized JavaScript algorithms, expanded manufacturer IDs from all major sources (Zigbee2MQTT, Blakadder, Johan Benz). Professional English-first implementation with enhanced source references and comprehensive documentation."
-  },
-  "1.0.13": {
-    "en": "Major enhancement: Added 5 new professional device categories (dimmer switches, energy plugs, scene switches, CO detectors, RGB controllers). Comprehensive Johan Benz architecture implementation. Zero validation errors - production ready."
-  },
-  "1.0.12": {
-    "en": "Maximum Zigbee device coverage with 800+ devices across all major categories. Enhanced flow cards for professional automation. Improved device organization following Johan Benz standards."
-  },
-  "1.0.11": {
-    "en": "Fixed publication automation, corrected broken images, enhanced device compatibility with automated changelog handling"
-  },
-  "1.0.10": {
-    "en": "Professional driver organization, simplified app logic, fixed publication issues, enhanced visibility following Johan Benz standards"
-  },
-  "1.0.9": {
-    "en": "Enhanced sensor support: radar motion, soil moisture, air quality. 650+ devices from 50+ manufacturers. Pure local Zigbee 3.0 communication."
-  },
-  "1.0.30": {
-    "en": "yyyyv1.0.30 - Maximum Device Compatibility Update - Enhanced with 1000+ devices from 60+ manufacturers including complete Johan Bendz compatibility. Added comprehensive manufacturer ID coverage for all device categories. Professional SDK3 architecture with local Zigbee operation. Fixed all validation errors."
+  "1.0.6": {
+    "en": "🎉 Ultimate Professional Release! Fixed all app page issues including empty flow cards, wrong support links, and missing images. Added 600+ device support with professional automation. Complete Johan Benz standards implementation!",
+    "fr": "🎉 Version Professionnelle Ultime! Correction de tous les problèmes de page d'app y compris cartes de flux vides, liens de support incorrects, et images manquantes. Ajout de 600+ appareils supportés!",
+    "nl": "🎉 Ultieme Professionele Release! Alle app-pagina problemen opgelost inclusief lege flow-kaarten, verkeerde support links, en ontbrekende afbeeldingen. 600+ apparaten ondersteuning!",
+    "de": "🎉 Ultimative Professionelle Version! Alle App-Seitenprobleme behoben einschließlich leerer Flow-Karten, falscher Support-Links und fehlender Bilder. 600+ Geräteunterstützung!"
   }
 }
