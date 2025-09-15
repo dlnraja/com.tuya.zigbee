@@ -31,8 +31,8 @@
     }
   },
   "images": {
-    "small": "/drivers/radar_sensor/assets/images/small.png",
-    "large": "/drivers/radar_sensor/assets/images/large.png"
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
   },
   "settings": []
 }

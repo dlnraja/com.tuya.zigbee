@@ -31,8 +31,8 @@
     }
   },
   "images": {
-    "small": "/drivers/thermo_hygrometer/assets/images/small.png",
-    "large": "/drivers/thermo_hygrometer/assets/images/large.png"
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
   },
   "settings": []
 }

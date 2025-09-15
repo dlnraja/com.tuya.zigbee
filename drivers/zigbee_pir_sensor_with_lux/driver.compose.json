@@ -30,8 +30,8 @@
     }
   },
   "images": {
-    "small": "/drivers/zigbee_pir_sensor_with_lux/assets/images/small.png",
-    "large": "/drivers/zigbee_pir_sensor_with_lux/assets/images/large.png"
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
   },
   "settings": []
 }
