@@ -46,6 +46,7 @@ jobs:
       run: |
         npm install -g homey@latest
         npm install --production
+        npm install fs-extra@^11.3.1 homey-zigbeedriver@^1.5.0 zigbee-clusters@^1.0.0
         
     - name: 🔍 Validate App Structure
       run: |
@@ -97,9 +98,11 @@ jobs:
       with:
         node-version: ${{ env.NODE_VERSION }}
         
-    - name: 🏗️ Install Homey CLI
+    - name: 🏗️ Install Homey CLI & Dependencies
       run: |
         npm install -g homey@latest
+        npm install --production
+        npm install fs-extra@^11.3.1 homey-zigbeedriver@^1.5.0 zigbee-clusters@^1.0.0
         echo "📦 Homey CLI installed: $(homey --version)"
         
     - name: 🔐 Verify Homey Token
