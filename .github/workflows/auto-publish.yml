@@ -137,75 +137,24 @@ jobs:
         
         echo "version_type=$VERSION_TYPE" >> $GITHUB_OUTPUT
         
-    - name: 🚀 Direct Publication with Expect
+    - name: 🚀 Direct Homey Publication
       id: publish
-      timeout-minutes: 8
+      timeout-minutes: 5
       run: |
-        echo "🚀 Starting direct publication with expect..."
+        echo "🚀 Starting Homey app publication..."
         
-        # Install expect
-        sudo apt-get update && sudo apt-get install -y expect
+        # Commit any uncommitted changes first
+        git add -A
+        git commit -m "Auto-commit before publication" || true
         
-        # Create expect script
-        cat > publish.exp << 'EOF'
-        #!/usr/bin/expect -f
-        set timeout 300
-        
-        spawn homey app publish
-        
-        expect {
-            "*uncommitted changes*" {
-                send "y\r"
-                exp_continue
-            }
-            "*update*version*" {
-                send "y\r" 
-                exp_continue
-            }
-            "*Select the desired version*" {
-                send "\r"
-                exp_continue
-            }
-            "*version increment*" {
-                send "\r"
-                exp_continue
-            }
-            "*changelog*" {
-                send "v1.1.0 MASSIVE EXPANSION: 101 New Community Drivers + 110 Updated Drivers - Complete community integration with 1500+ devices from 80+ manufacturers.\r"
-                exp_continue
-            }
-            "*press enter*" {
-                send "\r"
-                exp_continue
-            }
-            "*login*" {
-                send "y\r"
-                exp_continue
-            }
-            "*successfully*" {
-                puts "✅ Publication successful!"
-                exit 0
-            }
-            "*published*" {
-                puts "✅ Publication successful!"
-                exit 0
-            }
-            "*error*" {
-                puts "❌ Publication error"
-                exit 1
-            }
-            timeout {
-                puts "⏱️ Publication timeout"
-                exit 1
-            }
-            eof {
-                exit 0
-            }
-        }
-        EOF
-        
-        chmod +x publish.exp
-        ./publish.exp
+        # Use heredoc to provide all inputs at once
+        homey app publish << 'INPUTS'
+y
+y
+
+v1.1.0 MASSIVE EXPANSION: 101 New Community Drivers + 110 Updated Drivers - Complete community integration with 1500+ devices from 80+ manufacturers.
+
+INPUTS
         
     - name: 📊 Generate Publication Report
       if: always()
