@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "1.0.6",
+  "version": "1.0.30",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -11,7 +11,7 @@
     "en": "Ultimate Zigbee Hub"
   },
   "description": {
-    "en": "Ultimate Zigbee Hub - Complete ecosystem with 850+ devices from 50+ manufacturers. Professional categorization by device types: motion sensors, contact sensors, smart lights, smart plugs, climate controls. SDK3 compliant following Johan Benz standards. Local Zigbee 3.0 operation with no cloud dependencies."
+    "en": "Ultimate Zigbee Hub - Professional device categorization system with 1500+ compatible devices. Organized by device function: Motion Detection, Contact Security, Smart Lighting, Power Control, Climate Monitoring, Safety Detection, and Automation Control. Users select devices by what they DO, not by brand. Universal compatibility across all manufacturers. SDK3 compliant with local Zigbee 3.0 operation and no cloud dependencies."
   },
   "category": [
     "lights",
@@ -34,50 +34,39 @@
     "url": "https://github.com/dlnraja/com.ultimate.zigbee.hub/issues"
   },
   "homepage": "https://github.com/dlnraja/com.ultimate.zigbee.hub",
-  "support": "https://community.homey.app/t/app-ultimate-zigbee-hub-dlnraja-500-devices-supported/140352",
+  "support": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352/136?u=dlnraja",
   "source": "https://github.com/dlnraja/ultimate-zigbee-hub",
   "homeyCommunityTopicId": 12345,
-  "tags": [
-    "zigbee",
-    "sensors",
-    "lights",
-    "plugs",
-    "switches",
-    "motion",
-    "contact",
-    "temperature",
-    "humidity",
-    "presence",
-    "smart home",
-    "automation",
-    "energy",
-    "climate",
-    "security",
-    "tuya",
-    "aqara",
-    "ikea",
-    "philips",
-    "xiaomi",
-    "sonoff",
-    "local",
-    "no cloud",
-    "sdk3"
-  ],
+  "tags": {
+    "en": [
+      "zigbee",
+      "motion detection",
+      "contact sensors",
+      "smart lighting",
+      "power control",
+      "climate monitoring",
+      "safety detection",
+      "automation control",
+      "temperature",
+      "humidity",
+      "presence",
+      "security",
+      "energy",
+      "universal compatibility",
+      "unbranded",
+      "device categories",
+      "local control",
+      "no cloud",
+      "sdk3"
+    ]
+  },
   "contributors": {
     "developers": [
       "dlnraja"
     ],
-    "translators": {
-      "en": [
-        "dlnraja"
-      ],
-      "fr": [
-        "dlnraja"
-      ],
-      "nl": [
-        "dlnraja"
-      ]
-    }
+    "translators": [
+      "dlnraja"
+    ]
   },
   "drivers": [
     {
