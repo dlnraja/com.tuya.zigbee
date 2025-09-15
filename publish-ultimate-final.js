@@ -3,7 +3,7 @@
 const { spawn } = require('child_process');
 const fs = require('fs');
 
-console.log('🚀 PUBLICATION ULTIMATE ZIGBEE HUB v1.1.9 - MÉTHODE GARANTIE');
+console.log('🚀 PUBLICATION ULTIMATE ZIGBEE HUB v1.0.30 - MÉTHODE GARANTIE');
 
 // Vérifier app.json
 try {
@@ -14,7 +14,7 @@ try {
     process.exit(1);
 }
 
-const CHANGELOG = 'Ultimate Zigbee Hub v1.1.9 - Complete automation. 1500+ Zigbee devices from 80+ manufacturers. Full SDK3 compliance achieved.';
+const CHANGELOG = 'Ultimate Zigbee Hub v1.0.30 - Enhanced automation with improved version control, 1500+ devices, 80+ manufacturers, SDK3 compliant';
 
 function publishApp() {
     return new Promise((resolve, reject) => {
@@ -26,11 +26,7 @@ function publishApp() {
         });
         
         let buffer = '';
-        let prompts = {
-            uncommitted: false,
-            version: false,
-            changelog: false
-        };
+        const prompts = { uncommitted: false, version: false, selection: false, changelog: false };
         
         // Gérer stdout
         proc.stdout.on('data', (chunk) => {
@@ -46,11 +42,16 @@ function publishApp() {
                     prompts.uncommitted = true;
                 }
                 else if (prompts.uncommitted && !prompts.version && buffer.includes('version number') && buffer.includes('(Y/n)')) {
-                    console.log('\n💬 → Envoi: n (pas de mise à jour de version)');
-                    proc.stdin.write('n\n');
+                    console.log('\n💬 → Envoi: y (mise à jour de version)');
+                    proc.stdin.write('y\n');
                     prompts.version = true;
                 }
-                else if (prompts.version && !prompts.changelog && (buffer.includes('changelog') || buffer.includes("What's new"))) {
+                else if (prompts.version && !prompts.selection && (buffer.includes('Patch') || buffer.includes('Minor') || buffer.includes('Major'))) {
+                    console.log('\n💬 → Envoi: 3 (sélection Major)');
+                    proc.stdin.write('3\n');
+                    prompts.selection = true;
+                }
+                else if (prompts.selection && !prompts.changelog && (buffer.includes('changelog') || buffer.includes("What's new"))) {
                     console.log('\n💬 → Envoi du changelog');
                     proc.stdin.write(CHANGELOG + '\n');
                     prompts.changelog = true;
