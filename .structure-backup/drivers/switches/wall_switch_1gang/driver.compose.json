@@ -1,0 +1,50 @@
+{
+  "name": {
+    "en": "Wall Switch 1gang"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "TZ3000_ji4araar",
+      "TZ3000_bvrlqyj7",
+      "TZ3000_dfgbtub0",
+      "TZ3000_a7jjxglq",
+      "_TZE200_amp6tsvy",
+      "_TZE200_g92baels",
+      "_TZE200_9cxuhakf",
+      "_TZE204_mhxn2jso"
+    ],
+    "productId": [
+      "TS0601",
+      "TS0011",
+      "SWITCH1",
+      "WALL1"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          6,
+          61184
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/switches/wall_switch_1gang/assets/small.png",
+    "large": "/drivers/switches/wall_switch_1gang/assets/large.png",
+    "xlarge": "/drivers/switches/wall_switch_1gang/assets/xlarge.png"
+  },
+  "community": {
+    "sources": [
+      "Wall switch compatibility",
+      "Single gang switch requests"
+    ],
+    "enriched": true,
+    "last_updated": "2025-09-15T19:34:03.136Z"
+  }
+}

@@ -1,67 +1,28 @@
+'use strict';
+
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 class SmartPlugDevice extends ZigBeeDevice {
-    
+
     async onNodeInit({ zclNode }) {
-        
-        // Enable debug logging
-        this.enableDebug();
-        
-        // Print node info
         this.printNode();
-        
-        // Register capabilities with proper cluster mappings
-        await this.registerCapabilitiesAndReporting();
-        
-        // Set up flow triggers if applicable
-        this.setupFlowTriggers();
-        
-        this.log('Smart Plug has been initialized');
+
+                this.registerCapability('onoff', 6);
+        this.registerCapability('measure_power', 2820);
+
+        this.log('smart_plug device initialized');
     }
+
     
-    async registerCapabilitiesAndReporting() {
-        try {
-            // Onoff capability
-            if (this.hasCapability('onoff')) {
-                await this.registerCapability('onoff', 6, {
-                    reportOpts: {
-                        configureAttributeReporting: {
-                            minInterval: 0,
-                            maxInterval: 600,
-                            minChange: null
-                        }
-                    }
-                });
-            }
-            
-            this.log('All capabilities registered successfully with cluster mappings');
-        } catch (error) {
-            this.error('Failed to register capabilities:', error);
-        }
+    onCapabilityOnOff(value) {
+        return this.zclNode.endpoints[1].clusters.onOff.setOn(value);
     }
-    
-    setupFlowTriggers() {
-        // No specific flow triggers for this device type
-    }
-    
-    onSettings({ oldSettings, newSettings, changedKeys }) {
-        this.log('Settings changed:', changedKeys);
-        
-        changedKeys.forEach(key => {
-            this.log(`Setting ${key} changed from ${oldSettings[key]} to ${newSettings[key]}`);
-            this.handleSettingChange(key, newSettings[key]);
+
+    onCapabilityDim(value) {
+        return this.zclNode.endpoints[1].clusters.levelControl.moveToLevel({
+            level: Math.round(value * 254),
+            transitionTime: 1
         });
-        
-        return Promise.resolve(true);
-    }
-    
-    handleSettingChange(key, value) {
-        // Handle setting changes based on device type
-        this.log(`Setting change: ${key} = ${value}`);
-    }
-    
-    onDeleted() {
-        this.log('Smart Plug has been deleted');
     }
 }
 

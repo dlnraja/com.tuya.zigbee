@@ -1,56 +1,27 @@
+'use strict';
+
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 class RadarSensorDevice extends ZigBeeDevice {
-    
-    async onNodeInit({ zclNode }) {
-        
-        // Enable debug logging
-        this.enableDebug();
-        
-        // Print node info
-        this.printNode();
-        
-        // Register capabilities with proper cluster mappings
-        await this.registerCapabilitiesAndReporting();
-        
-        // Set up flow triggers if applicable
-        this.setupFlowTriggers();
-        
-        this.log('Radar Sensor has been initialized');
-    }
-    
-    async registerCapabilitiesAndReporting() {
-        try {
 
-            
-            this.log('All capabilities registered successfully with cluster mappings');
-        } catch (error) {
-            this.error('Failed to register capabilities:', error);
-        }
+    async onNodeInit({ zclNode }) {
+        this.printNode();
+
+                this.registerCapability('measure_battery', 1);
+
+        this.log('radar_sensor device initialized');
     }
+
     
-    setupFlowTriggers() {
-        // No specific flow triggers for this device type
+    onCapabilityOnOff(value) {
+        return this.zclNode.endpoints[1].clusters.onOff.setOn(value);
     }
-    
-    onSettings({ oldSettings, newSettings, changedKeys }) {
-        this.log('Settings changed:', changedKeys);
-        
-        changedKeys.forEach(key => {
-            this.log(`Setting ${key} changed from ${oldSettings[key]} to ${newSettings[key]}`);
-            this.handleSettingChange(key, newSettings[key]);
+
+    onCapabilityDim(value) {
+        return this.zclNode.endpoints[1].clusters.levelControl.moveToLevel({
+            level: Math.round(value * 254),
+            transitionTime: 1
         });
-        
-        return Promise.resolve(true);
-    }
-    
-    handleSettingChange(key, value) {
-        // Handle setting changes based on device type
-        this.log(`Setting change: ${key} = ${value}`);
-    }
-    
-    onDeleted() {
-        this.log('Radar Sensor has been deleted');
     }
 }
 

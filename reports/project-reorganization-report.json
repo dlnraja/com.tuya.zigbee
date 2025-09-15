@@ -1,0 +1,108 @@
+{
+  "timestamp": "2025-09-15T19:27:36.728Z",
+  "reorganized_files": 57,
+  "device_categories": 8,
+  "total_drivers": 57,
+  "categories": {
+    "sensors": {
+      "description": "Motion, Contact, Temperature, Presence, Air Quality",
+      "drivers": [
+        "motion_sensor",
+        "contact_sensor",
+        "door_window_sensor",
+        "temperature_humidity_sensor",
+        "presence_sensor",
+        "radar_sensor",
+        "pir_sensor",
+        "air_quality_monitor",
+        "soil_moisture_sensor",
+        "vibration_sensor",
+        "multisensor"
+      ]
+    },
+    "lights": {
+      "description": "Bulbs, LED Strips, Controllers, Dimmers",
+      "drivers": [
+        "smart_bulb",
+        "rgb_bulb",
+        "tunable_white_bulb",
+        "led_strip",
+        "led_controller",
+        "gu10_spot",
+        "candle_bulb",
+        "filament_bulb"
+      ]
+    },
+    "switches": {
+      "description": "Wall Switches, Scene Controllers, Wireless Buttons",
+      "drivers": [
+        "wall_switch_1gang",
+        "wall_switch_2gang",
+        "wall_switch_3gang",
+        "wall_switch_4gang",
+        "dimmer_switch",
+        "scene_switch",
+        "wireless_button",
+        "rotary_dimmer",
+        "touch_switch"
+      ]
+    },
+    "plugs": {
+      "description": "Smart Plugs, Outlets, Energy Monitoring",
+      "drivers": [
+        "smart_plug",
+        "smart_outlet",
+        "energy_plug",
+        "wall_outlet",
+        "extension_plug",
+        "usb_outlet"
+      ]
+    },
+    "safety": {
+      "description": "Smoke, Water Leak, CO Detectors, Emergency",
+      "drivers": [
+        "smoke_detector",
+        "water_leak_sensor",
+        "co_detector",
+        "gas_detector",
+        "emergency_button",
+        "sos_button",
+        "panic_button"
+      ]
+    },
+    "climate": {
+      "description": "Thermostats, Radiator Valves, HVAC Control",
+      "drivers": [
+        "thermostat",
+        "radiator_valve",
+        "temperature_controller",
+        "hvac_controller",
+        "fan_controller"
+      ]
+    },
+    "covers": {
+      "description": "Curtains, Blinds, Garage Doors, Window Motors",
+      "drivers": [
+        "curtain_motor",
+        "blind_controller",
+        "garage_door",
+        "window_motor",
+        "shade_controller",
+        "roller_blind"
+      ]
+    },
+    "access": {
+      "description": "Smart Locks, Door Controllers, Entry Systems",
+      "drivers": [
+        "smart_lock",
+        "door_lock",
+        "keypad_lock",
+        "fingerprint_lock",
+        "door_controller"
+      ]
+    }
+  },
+  "sdk3_compliant": true,
+  "johan_benz_standards": true,
+  "unbranded_approach": true
+}

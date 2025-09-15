@@ -1,49 +1,55 @@
 {
-  "id": "scene_switch",
   "name": {
     "en": "Scene Switch"
   },
-  "class": "button",
+  "class": "sensor",
   "capabilities": [
     "onoff"
   ],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_",
-      "_TZE200_",
-      "_TZE284_",
-      "TUYA"
+      "TZ3000_switch",
+      "TZ3000_button",
+      "TZ3000_generic",
+      "TZ3000_common",
+      "_TZE200_universal",
+      "TZ3000_switch",
+      "_TZE200_switch",
+      "_TZE284_switch"
     ],
     "productId": [
-      "TS0012 (This one is already supported in v0.2.73!) - Issue can be removed"
+      "TS0043",
+      "SWITCH",
+      "TS0001",
+      "TS0601",
+      "GENERIC",
+      "TS0043",
+      "TS0012",
+      "TS0011",
+      "SWITCH1"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
           3,
-          6,
-          5
+          6
         ]
-      }
-    },
-    "learnmode": {
-      "image": "/drivers/scene_switch/assets/learn.svg",
-      "instruction": {
-        "en": "Press and hold the button on your Scene Switch for 3 seconds until the LED starts blinking rapidly."
       }
     }
   },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
+    "small": "/drivers/scene_switch/assets/small.png",
+    "large": "/drivers/scene_switch/assets/large.png",
+    "xlarge": "/drivers/scene_switch/assets/xlarge.png"
   },
-  "settings": [
-    {
-      "id": "scene_count",
-      "type": "number",
-      "label": "Scene Count",
-      "value": 4
-    }
-  ]
+  "community": {
+    "sources": [
+      "Generic compatibility database",
+      "Pattern-based enrichment"
+    ],
+    "enriched": true,
+    "type": "generic",
+    "last_updated": "2025-09-15T19:34:03.118Z"
+  }
 }
