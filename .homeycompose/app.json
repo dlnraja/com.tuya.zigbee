@@ -1,6 +1,7 @@
 {
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "2.1.1",
+  "version": "2.1.4",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -10,7 +11,7 @@
     "en": "Ultimate Zigbee Hub"
   },
   "description": {
-    "en": "Ultimate Zigbee Hub v2.1 - Complete unbranded Zigbee ecosystem with 57 professional drivers organized by function. Supports Motion Detection, Climate Control, Smart Lighting, Safety Systems, Covers, Access Control, and Energy Management. Local Zigbee 3.0 operation with 400+ manufacturer IDs, Johan Benz design standards, and SDK3 compliance. No cloud dependencies."
+    "en": "Ultimate Zigbee Hub v2.1.2 - Complete unbranded Zigbee ecosystem with enhanced Johan Bendz compatibility. Professional driver collection for 1500+ devices from 80+ manufacturers including IKEA, Aqara, Philips Hue, and Sonoff. Local Zigbee 3.0 operation with no cloud dependencies."
   },
   "category": [
     "lights",
@@ -36,3593 +37,6 @@
   "support": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352/136?u=dlnraja",
   "source": "https://github.com/dlnraja/ultimate-zigbee-hub",
   "homeyCommunityTopicId": 12345,
-  "flow": {
-    "triggers": [
-      {
-        "id": "motion_detected",
-        "title": {
-          "en": "Motion detected",
-          "fr": "Mouvement détecté",
-          "nl": "Beweging gedetecteerd",
-          "de": "Bewegung erkannt"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=motion_sensor|pir_sensor|radar_sensor|presence_sensor|multisensor"
-          }
-        ]
-      },
-      {
-        "id": "presence_detected",
-        "title": {
-          "en": "Presence detected",
-          "fr": "Présence détectée",
-          "nl": "Aanwezigheid gedetecteerd",
-          "de": "Anwesenheit erkannt"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=presence_sensor|radar_sensor"
-          }
-        ]
-      },
-      {
-        "id": "contact_changed",
-        "title": {
-          "en": "Contact sensor changed",
-          "fr": "Capteur de contact changé",
-          "nl": "Contactsensor veranderd",
-          "de": "Kontaktsensor geändert"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=contact_sensor|door_window_sensor"
-          }
-        ]
-      },
-      {
-        "id": "temperature_changed",
-        "title": {
-          "en": "Temperature changed",
-          "fr": "Température changée",
-          "nl": "Temperatuur veranderd",
-          "de": "Temperatur geändert"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=temperature_humidity_sensor|multisensor|thermostat|temperature_controller"
-          }
-        ]
-      },
-      {
-        "id": "smoke_alarm",
-        "title": {
-          "en": "Smoke detected",
-          "fr": "Fumée détectée",
-          "nl": "Rook gedetecteerd",
-          "de": "Rauch erkannt"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=smoke_detector"
-          }
-        ]
-      },
-      {
-        "id": "water_leak_alarm",
-        "title": {
-          "en": "Water leak detected",
-          "fr": "Fuite d'eau détectée",
-          "nl": "Waterlek gedetecteerd",
-          "de": "Wasserleck erkannt"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=water_leak_sensor"
-          }
-        ]
-      },
-      {
-        "id": "emergency_button_pressed",
-        "title": {
-          "en": "Emergency button pressed",
-          "fr": "Bouton d'urgence pressé",
-          "nl": "Noodknop ingedrukt",
-          "de": "Notfallknopf gedrückt"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=emergency_button|sos_button|panic_button"
-          }
-        ]
-      }
-    ],
-    "conditions": [
-      {
-        "id": "is_motion_detected",
-        "title": {
-          "en": "Motion is detected",
-          "fr": "Mouvement détecté",
-          "nl": "Beweging wordt gedetecteerd",
-          "de": "Bewegung wird erkannt"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=motion_sensor|pir_sensor|radar_sensor|presence_sensor|multisensor"
-          }
-        ]
-      },
-      {
-        "id": "is_contact_open",
-        "title": {
-          "en": "Contact is open",
-          "fr": "Contact ouvert",
-          "nl": "Contact is open",
-          "de": "Kontakt ist offen"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=contact_sensor|door_window_sensor"
-          }
-        ]
-      },
-      {
-        "id": "is_locked",
-        "title": {
-          "en": "Lock is locked",
-          "fr": "Verrou verrouillé",
-          "nl": "Slot is vergrendeld",
-          "de": "Schloss ist verriegelt"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=smart_lock|door_lock|keypad_lock|fingerprint_lock"
-          }
-        ]
-      }
-    ],
-    "actions": [
-      {
-        "id": "turn_on_light",
-        "title": {
-          "en": "Turn on",
-          "fr": "Allumer",
-          "nl": "Aanzetten",
-          "de": "Einschalten"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=smart_bulb|rgb_bulb|tunable_white_bulb|led_strip|gu10_spot|candle_bulb|filament_bulb"
-          }
-        ]
-      },
-      {
-        "id": "turn_off_light",
-        "title": {
-          "en": "Turn off",
-          "fr": "Éteindre",
-          "nl": "Uitzetten",
-          "de": "Ausschalten"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=smart_bulb|rgb_bulb|tunable_white_bulb|led_strip|gu10_spot|candle_bulb|filament_bulb"
-          }
-        ]
-      },
-      {
-        "id": "set_curtain_position",
-        "title": {
-          "en": "Set curtain position",
-          "fr": "Définir position rideau",
-          "nl": "Gordijn positie instellen",
-          "de": "Vorhang Position einstellen"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=curtain_motor|blind_controller|window_motor|shade_controller|roller_blind"
-          },
-          {
-            "name": "position",
-            "type": "range",
-            "min": 0,
-            "max": 1,
-            "step": 0.01,
-            "label": {
-              "en": "Position",
-              "fr": "Position",
-              "nl": "Positie",
-              "de": "Position"
-            }
-          }
-        ]
-      },
-      {
-        "id": "lock_device",
-        "title": {
-          "en": "Lock",
-          "fr": "Verrouiller",
-          "nl": "Vergrendelen",
-          "de": "Verriegeln"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=smart_lock|door_lock|keypad_lock|fingerprint_lock"
-          }
-        ]
-      },
-      {
-        "id": "unlock_device",
-        "title": {
-          "en": "Unlock",
-          "fr": "Déverrouiller",
-          "nl": "Ontgrendelen",
-          "de": "Entriegeln"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=smart_lock|door_lock|keypad_lock|fingerprint_lock"
-          }
-        ]
-      }
-    ]
-  },
-  "drivers": [
-    {
-      "id": "door_controller",
-      "name": {
-        "en": "Door Controller"
-      },
-      "class": "sensor",
-      "capabilities": [],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal"
-        ],
-        "productId": [
-          "TS0001",
-          "TS0001",
-          "TS0601",
-          "GENERIC"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/door_controller/assets/small.png",
-        "large": "./drivers/door_controller/assets/large.png",
-        "xlarge": "./drivers/door_controller/assets/xlarge.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      }
-    },
-    {
-      "id": "door_lock",
-      "name": {
-        "en": "Door Lock"
-      },
-      "class": "sensor",
-      "capabilities": [],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal"
-        ],
-        "productId": [
-          "TS0001",
-          "TS0001",
-          "TS0601",
-          "GENERIC"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/door_lock/assets/small.png",
-        "large": "./drivers/door_lock/assets/large.png",
-        "xlarge": "./drivers/door_lock/assets/xlarge.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      }
-    },
-    {
-      "id": "fingerprint_lock",
-      "name": {
-        "en": "Fingerprint Lock"
-      },
-      "class": "sensor",
-      "capabilities": [],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal"
-        ],
-        "productId": [
-          "TS0001",
-          "TS0001",
-          "TS0601",
-          "GENERIC"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/fingerprint_lock/assets/small.png",
-        "large": "./drivers/fingerprint_lock/assets/large.png",
-        "xlarge": "./drivers/fingerprint_lock/assets/xlarge.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      }
-    },
-    {
-      "id": "keypad_lock",
-      "name": {
-        "en": "Keypad Lock"
-      },
-      "class": "sensor",
-      "capabilities": [],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal"
-        ],
-        "productId": [
-          "TS0001",
-          "TS0001",
-          "TS0601",
-          "GENERIC"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/keypad_lock/assets/small.png",
-        "large": "./drivers/keypad_lock/assets/large.png",
-        "xlarge": "./drivers/keypad_lock/assets/xlarge.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      }
-    },
-    {
-      "id": "smart_lock",
-      "name": {
-        "en": "Smart Lock"
-      },
-      "class": "sensor",
-      "capabilities": [],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal"
-        ],
-        "productId": [
-          "TS0001",
-          "TS0001",
-          "TS0601",
-          "GENERIC"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/smart_lock/assets/small.png",
-        "large": "./drivers/smart_lock/assets/large.png",
-        "xlarge": "./drivers/smart_lock/assets/xlarge.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      }
-    },
-    {
-      "id": "fan_controller",
-      "name": {
-        "en": "Fan Controller"
-      },
-      "class": "sensor",
-      "capabilities": [],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal"
-        ],
-        "productId": [
-          "TS0001",
-          "TS0001",
-          "TS0601",
-          "GENERIC"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/fan_controller/assets/small.png",
-        "large": "./drivers/fan_controller/assets/large.png",
-        "xlarge": "./drivers/fan_controller/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "hvac_controller",
-      "name": {
-        "en": "Hvac Controller"
-      },
-      "class": "sensor",
-      "capabilities": [],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal"
-        ],
-        "productId": [
-          "TS0001",
-          "TS0001",
-          "TS0601",
-          "GENERIC"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/hvac_controller/assets/small.png",
-        "large": "./drivers/hvac_controller/assets/large.png",
-        "xlarge": "./drivers/hvac_controller/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "radiator_valve",
-      "name": {
-        "en": "Radiator Valve"
-      },
-      "class": "sensor",
-      "capabilities": [],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal"
-        ],
-        "productId": [
-          "TS0001",
-          "TS0001",
-          "TS0601",
-          "GENERIC"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/radiator_valve/assets/small.png",
-        "large": "./drivers/radiator_valve/assets/large.png",
-        "xlarge": "./drivers/radiator_valve/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "temperature_controller",
-      "name": {
-        "en": "Temperature Controller"
-      },
-      "class": "sensor",
-      "capabilities": [],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal"
-        ],
-        "productId": [
-          "TS0001",
-          "TS0001",
-          "TS0601",
-          "GENERIC"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/temperature_controller/assets/small.png",
-        "large": "./drivers/temperature_controller/assets/large.png",
-        "xlarge": "./drivers/temperature_controller/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "thermostat",
-      "name": {
-        "en": "Thermostat"
-      },
-      "class": "sensor",
-      "capabilities": [],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal"
-        ],
-        "productId": [
-          "TS0001",
-          "TS0001",
-          "TS0601",
-          "GENERIC"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/thermostat/assets/small.png",
-        "large": "./drivers/thermostat/assets/large.png",
-        "xlarge": "./drivers/thermostat/assets/xlarge.png"
-      },
-      "settings": [
-        {
-          "id": "temperature_offset",
-          "type": "number",
-          "label": {
-            "en": "Temperature offset (°C)",
-            "fr": "Décalage température (°C)",
-            "nl": "Temperatuur offset (°C)",
-            "de": "Temperatur Offset (°C)"
-          },
-          "value": 0,
-          "min": -5,
-          "max": 5,
-          "step": 0.1
-        }
-      ]
-    },
-    {
-      "id": "blind_controller",
-      "name": {
-        "en": "Blind Controller"
-      },
-      "class": "sensor",
-      "capabilities": [],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal"
-        ],
-        "productId": [
-          "TS0001",
-          "TS0001",
-          "TS0601",
-          "GENERIC"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/blind_controller/assets/small.png",
-        "large": "./drivers/blind_controller/assets/large.png",
-        "xlarge": "./drivers/blind_controller/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "curtain_motor",
-      "name": {
-        "en": "Curtain Motor"
-      },
-      "class": "sensor",
-      "capabilities": [],
-      "zigbee": {
-        "manufacturerName": [
-          "_TZE200_wmcdj3aq",
-          "_TZE200_cowvfni3",
-          "_TZE200_rddyvrci",
-          "_TZE200_nkoabg8w",
-          "_TZE284_1xlm8yks",
-          "_TZE200_gubdgai2",
-          "TZ3000_lx4vtxfb"
-        ],
-        "productId": [
-          "TS0601",
-          "CURTAIN1",
-          "MOTOR1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              6,
-              258,
-              61184
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/curtain_motor/assets/small.png",
-        "large": "./drivers/curtain_motor/assets/large.png",
-        "xlarge": "./drivers/curtain_motor/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "garage_door",
-      "name": {
-        "en": "Garage Door"
-      },
-      "class": "sensor",
-      "capabilities": [],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal"
-        ],
-        "productId": [
-          "TS0001",
-          "TS0001",
-          "TS0601",
-          "GENERIC"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/garage_door/assets/small.png",
-        "large": "./drivers/garage_door/assets/large.png",
-        "xlarge": "./drivers/garage_door/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "roller_blind",
-      "name": {
-        "en": "Roller Blind"
-      },
-      "class": "sensor",
-      "capabilities": [],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal"
-        ],
-        "productId": [
-          "TS0001",
-          "TS0001",
-          "TS0601",
-          "GENERIC"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/roller_blind/assets/small.png",
-        "large": "./drivers/roller_blind/assets/large.png",
-        "xlarge": "./drivers/roller_blind/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "shade_controller",
-      "name": {
-        "en": "Shade Controller"
-      },
-      "class": "sensor",
-      "capabilities": [],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal"
-        ],
-        "productId": [
-          "TS0001",
-          "TS0001",
-          "TS0601",
-          "GENERIC"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/shade_controller/assets/small.png",
-        "large": "./drivers/shade_controller/assets/large.png",
-        "xlarge": "./drivers/shade_controller/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "window_motor",
-      "name": {
-        "en": "Window Motor"
-      },
-      "class": "sensor",
-      "capabilities": [],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal"
-        ],
-        "productId": [
-          "TS0001",
-          "TS0001",
-          "TS0601",
-          "GENERIC"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/window_motor/assets/small.png",
-        "large": "./drivers/window_motor/assets/large.png",
-        "xlarge": "./drivers/window_motor/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "candle_bulb",
-      "name": {
-        "en": "Candle Bulb"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_light",
-          "TZ3000_bulb",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_light",
-          "_TZE200_light",
-          "_TZ3000_bulb"
-        ],
-        "productId": [
-          "TS0505",
-          "LIGHT",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0505B",
-          "TS0502B",
-          "TS0504B",
-          "LIGHT1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              6,
-              8,
-              768
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/candle_bulb/assets/small.png",
-        "large": "./drivers/candle_bulb/assets/large.png",
-        "xlarge": "./drivers/candle_bulb/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "filament_bulb",
-      "name": {
-        "en": "Filament Bulb"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_light",
-          "TZ3000_bulb",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_light",
-          "_TZE200_light",
-          "_TZ3000_bulb"
-        ],
-        "productId": [
-          "TS0505",
-          "LIGHT",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0505B",
-          "TS0502B",
-          "TS0504B",
-          "LIGHT1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              6,
-              8,
-              768
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/filament_bulb/assets/small.png",
-        "large": "./drivers/filament_bulb/assets/large.png",
-        "xlarge": "./drivers/filament_bulb/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "gu10_spot",
-      "name": {
-        "en": "Gu10 Spot"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_light",
-          "TZ3000_bulb",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_light",
-          "_TZE200_light",
-          "_TZ3000_bulb"
-        ],
-        "productId": [
-          "TS0505",
-          "LIGHT",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0505B",
-          "TS0502B",
-          "TS0504B",
-          "LIGHT1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              6,
-              8,
-              768
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/gu10_spot/assets/small.png",
-        "large": "./drivers/gu10_spot/assets/large.png",
-        "xlarge": "./drivers/gu10_spot/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "led_controller",
-      "name": {
-        "en": "Led Controller"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_light",
-          "TZ3000_bulb",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_light",
-          "_TZE200_light",
-          "_TZ3000_bulb"
-        ],
-        "productId": [
-          "TS0505",
-          "LIGHT",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0505B",
-          "TS0502B",
-          "TS0504B",
-          "LIGHT1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              6,
-              8,
-              768
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/led_controller/assets/small.png",
-        "large": "./drivers/led_controller/assets/large.png",
-        "xlarge": "./drivers/led_controller/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "led_strip",
-      "name": {
-        "en": "Led Strip"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_light",
-          "TZ3000_bulb",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_light",
-          "_TZE200_light",
-          "_TZ3000_bulb"
-        ],
-        "productId": [
-          "TS0505",
-          "LIGHT",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0505B",
-          "TS0502B",
-          "TS0504B",
-          "LIGHT1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              6,
-              8,
-              768
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/led_strip/assets/small.png",
-        "large": "./drivers/led_strip/assets/large.png",
-        "xlarge": "./drivers/led_strip/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "rgb_bulb",
-      "name": {
-        "en": "Rgb Bulb"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim",
-        "light_hue",
-        "light_saturation"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_light",
-          "TZ3000_bulb",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_light",
-          "_TZE200_light",
-          "_TZ3000_bulb"
-        ],
-        "productId": [
-          "TS0505",
-          "LIGHT",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0505B",
-          "TS0502B",
-          "TS0504B",
-          "LIGHT1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              6,
-              8,
-              768
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/rgb_bulb/assets/small.png",
-        "large": "./drivers/rgb_bulb/assets/large.png",
-        "xlarge": "./drivers/rgb_bulb/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "smart_bulb",
-      "name": {
-        "en": "Smart Bulb"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_dbou1ap4",
-          "TZ3000_49qchf10",
-          "TZ3000_g1glzzfk",
-          "TZ3000_odygigth",
-          "TZ3000_kdpxju99",
-          "TZ3000_vsasbzkf",
-          "TZ3000_oborybow",
-          "_TZE200_s8gkrkxk",
-          "_TZ3000_g5z28dny",
-          "_TZ3000_qd7hej8u",
-          "_TZ3000_wr2ucaj9"
-        ],
-        "productId": [
-          "TS0505B",
-          "TS0502B",
-          "TS0504B",
-          "RGB1",
-          "BULB1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              6,
-              8,
-              768,
-              4096
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/smart_bulb/assets/small.png",
-        "large": "./drivers/smart_bulb/assets/large.png",
-        "xlarge": "./drivers/smart_bulb/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "tunable_white_bulb",
-      "name": {
-        "en": "Tunable White Bulb"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_light",
-          "TZ3000_bulb",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_light",
-          "_TZE200_light",
-          "_TZ3000_bulb"
-        ],
-        "productId": [
-          "TS0505",
-          "LIGHT",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0505B",
-          "TS0502B",
-          "TS0504B",
-          "LIGHT1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              6,
-              8,
-              768
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/tunable_white_bulb/assets/small.png",
-        "large": "./drivers/tunable_white_bulb/assets/large.png",
-        "xlarge": "./drivers/tunable_white_bulb/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "energy_plug",
-      "name": {
-        "en": "Energy Plug"
-      },
-      "class": "socket",
-      "capabilities": [
-        "onoff",
-        "measure_power"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_plug",
-          "TZ3000_outlet",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_plug",
-          "_TZE200_plug",
-          "_TZE284_plug"
-        ],
-        "productId": [
-          "TS0121",
-          "PLUG",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0121",
-          "SP600",
-          "PLUG1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              6,
-              2820
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/energy_plug/assets/small.png",
-        "large": "./drivers/energy_plug/assets/large.png",
-        "xlarge": "./drivers/energy_plug/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "extension_plug",
-      "name": {
-        "en": "Extension Plug"
-      },
-      "class": "socket",
-      "capabilities": [
-        "onoff",
-        "measure_power"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_plug",
-          "TZ3000_outlet",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_plug",
-          "_TZE200_plug",
-          "_TZE284_plug"
-        ],
-        "productId": [
-          "TS0121",
-          "PLUG",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0121",
-          "SP600",
-          "PLUG1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              6,
-              2820
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/extension_plug/assets/small.png",
-        "large": "./drivers/extension_plug/assets/large.png",
-        "xlarge": "./drivers/extension_plug/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "smart_outlet",
-      "name": {
-        "en": "Smart Outlet"
-      },
-      "class": "socket",
-      "capabilities": [
-        "onoff",
-        "measure_power"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_plug",
-          "TZ3000_outlet",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_plug",
-          "_TZE200_plug",
-          "_TZE284_plug"
-        ],
-        "productId": [
-          "TS0121",
-          "PLUG",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0121",
-          "SP600",
-          "PLUG1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              6,
-              2820
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/smart_outlet/assets/small.png",
-        "large": "./drivers/smart_outlet/assets/large.png",
-        "xlarge": "./drivers/smart_outlet/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "smart_plug",
-      "name": {
-        "en": "Smart Plug"
-      },
-      "class": "socket",
-      "capabilities": [
-        "onoff",
-        "measure_power"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_3ooaz3ng",
-          "TZ3000_g5xawfcq",
-          "TZ3000_typdpbpg",
-          "TZ3000_hyfvrar3",
-          "TZ3000_9djocypn",
-          "TZ3000_w0qqde0g",
-          "TZ3000_okaz9tjs",
-          "TZ3000_ksw8qtmt",
-          "_TZE200_amp6tsvy",
-          "_TZE200_oisqyl4o",
-          "_TZE200_dwcarsat",
-          "_TZE200_whpb9yts"
-        ],
-        "productId": [
-          "TS0121",
-          "SP600",
-          "PLUG1",
-          "OUTLET1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              6,
-              2820,
-              1794
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/smart_plug/assets/small.png",
-        "large": "./drivers/smart_plug/assets/large.png",
-        "xlarge": "./drivers/smart_plug/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "usb_outlet",
-      "name": {
-        "en": "Usb Outlet"
-      },
-      "class": "socket",
-      "capabilities": [
-        "onoff",
-        "measure_power"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_plug",
-          "TZ3000_outlet",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_plug",
-          "_TZE200_plug",
-          "_TZE284_plug"
-        ],
-        "productId": [
-          "TS0121",
-          "PLUG",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0121",
-          "SP600",
-          "PLUG1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              6,
-              2820
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/usb_outlet/assets/small.png",
-        "large": "./drivers/usb_outlet/assets/large.png",
-        "xlarge": "./drivers/usb_outlet/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "wall_outlet",
-      "name": {
-        "en": "Wall Outlet"
-      },
-      "class": "socket",
-      "capabilities": [
-        "onoff",
-        "measure_power"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_plug",
-          "TZ3000_outlet",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_plug",
-          "_TZE200_plug",
-          "_TZE284_plug"
-        ],
-        "productId": [
-          "TS0121",
-          "PLUG",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0121",
-          "SP600",
-          "PLUG1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              6,
-              2820
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/wall_outlet/assets/small.png",
-        "large": "./drivers/wall_outlet/assets/large.png",
-        "xlarge": "./drivers/wall_outlet/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "co_detector",
-      "name": {
-        "en": "Co Detector"
-      },
-      "class": "sensor",
-      "capabilities": [],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal"
-        ],
-        "productId": [
-          "TS0001",
-          "TS0001",
-          "TS0601",
-          "GENERIC"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/co_detector/assets/small.png",
-        "large": "./drivers/co_detector/assets/large.png",
-        "xlarge": "./drivers/co_detector/assets/xlarge.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      },
-      "settings": [
-        {
-          "id": "test_mode",
-          "type": "checkbox",
-          "label": {
-            "en": "Test mode",
-            "fr": "Mode test",
-            "nl": "Test modus",
-            "de": "Test Modus"
-          },
-          "value": false
-        }
-      ]
-    },
-    {
-      "id": "emergency_button",
-      "name": {
-        "en": "Emergency Button"
-      },
-      "class": "sensor",
-      "capabilities": [],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal"
-        ],
-        "productId": [
-          "TS0001",
-          "TS0001",
-          "TS0601",
-          "GENERIC"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/emergency_button/assets/small.png",
-        "large": "./drivers/emergency_button/assets/large.png",
-        "xlarge": "./drivers/emergency_button/assets/xlarge.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      },
-      "settings": [
-        {
-          "id": "test_mode",
-          "type": "checkbox",
-          "label": {
-            "en": "Test mode",
-            "fr": "Mode test",
-            "nl": "Test modus",
-            "de": "Test Modus"
-          },
-          "value": false
-        }
-      ]
-    },
-    {
-      "id": "gas_detector",
-      "name": {
-        "en": "Gas Detector"
-      },
-      "class": "sensor",
-      "capabilities": [],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal"
-        ],
-        "productId": [
-          "TS0001",
-          "TS0001",
-          "TS0601",
-          "GENERIC"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/gas_detector/assets/small.png",
-        "large": "./drivers/gas_detector/assets/large.png",
-        "xlarge": "./drivers/gas_detector/assets/xlarge.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      },
-      "settings": [
-        {
-          "id": "test_mode",
-          "type": "checkbox",
-          "label": {
-            "en": "Test mode",
-            "fr": "Mode test",
-            "nl": "Test modus",
-            "de": "Test Modus"
-          },
-          "value": false
-        }
-      ]
-    },
-    {
-      "id": "panic_button",
-      "name": {
-        "en": "Panic Button"
-      },
-      "class": "sensor",
-      "capabilities": [],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal"
-        ],
-        "productId": [
-          "TS0001",
-          "TS0001",
-          "TS0601",
-          "GENERIC"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/panic_button/assets/small.png",
-        "large": "./drivers/panic_button/assets/large.png",
-        "xlarge": "./drivers/panic_button/assets/xlarge.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      },
-      "settings": [
-        {
-          "id": "test_mode",
-          "type": "checkbox",
-          "label": {
-            "en": "Test mode",
-            "fr": "Mode test",
-            "nl": "Test modus",
-            "de": "Test Modus"
-          },
-          "value": false
-        }
-      ]
-    },
-    {
-      "id": "smoke_detector",
-      "name": {
-        "en": "Smoke Detector"
-      },
-      "class": "sensor",
-      "capabilities": [],
-      "zigbee": {
-        "manufacturerName": [
-          "_TZE200_ntcy3xu1",
-          "_TZE284_n4ttsck2",
-          "_TZE200_m9skfctm",
-          "_TZE200_rccxox8p",
-          "_TZE284_0zaf1cr8",
-          "_TZE200_dnz21gts",
-          "ONENUO",
-          "MOES"
-        ],
-        "productId": [
-          "TS0601",
-          "SMOKE1",
-          "FIRE1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              1,
-              3,
-              1280,
-              61184
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/smoke_detector/assets/small.png",
-        "large": "./drivers/smoke_detector/assets/large.png",
-        "xlarge": "./drivers/smoke_detector/assets/xlarge.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      },
-      "settings": [
-        {
-          "id": "test_mode",
-          "type": "checkbox",
-          "label": {
-            "en": "Test mode",
-            "fr": "Mode test",
-            "nl": "Test modus",
-            "de": "Test Modus"
-          },
-          "value": false
-        }
-      ]
-    },
-    {
-      "id": "sos_button",
-      "name": {
-        "en": "Sos Button"
-      },
-      "class": "sensor",
-      "capabilities": [],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal"
-        ],
-        "productId": [
-          "TS0001",
-          "TS0001",
-          "TS0601",
-          "GENERIC"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/sos_button/assets/small.png",
-        "large": "./drivers/sos_button/assets/large.png",
-        "xlarge": "./drivers/sos_button/assets/xlarge.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      },
-      "settings": [
-        {
-          "id": "test_mode",
-          "type": "checkbox",
-          "label": {
-            "en": "Test mode",
-            "fr": "Mode test",
-            "nl": "Test modus",
-            "de": "Test Modus"
-          },
-          "value": false
-        }
-      ]
-    },
-    {
-      "id": "water_leak_sensor",
-      "name": {
-        "en": "Water Leak Sensor"
-      },
-      "class": "sensor",
-      "capabilities": [],
-      "zigbee": {
-        "manufacturerName": [
-          "_TZE200_qq9mpfhw",
-          "_TZE284_qq9mpfhw",
-          "_TZE200_jthf7vb6",
-          "_TZE284_8agm1gi2",
-          "_TZE200_6l9xdkcx",
-          "TZ3000_lje0x0b5",
-          "TZ3000_k6fyjgv6"
-        ],
-        "productId": [
-          "TS0601",
-          "TS0202",
-          "WATER1",
-          "LEAK1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              1,
-              3,
-              1280
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/water_leak_sensor/assets/small.png",
-        "large": "./drivers/water_leak_sensor/assets/large.png",
-        "xlarge": "./drivers/water_leak_sensor/assets/xlarge.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      },
-      "settings": [
-        {
-          "id": "test_mode",
-          "type": "checkbox",
-          "label": {
-            "en": "Test mode",
-            "fr": "Mode test",
-            "nl": "Test modus",
-            "de": "Test Modus"
-          },
-          "value": false
-        }
-      ]
-    },
-    {
-      "id": "air_quality_monitor",
-      "name": {
-        "en": "Air Quality Monitor"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "measure_battery"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_sensor",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_sensor",
-          "_TZE200_sensor",
-          "_TZE284_sensor"
-        ],
-        "productId": [
-          "TS0001",
-          "SENSOR",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0202",
-          "TS0203",
-          "TS0201",
-          "SENSOR1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              1,
-              1280
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/air_quality_monitor/assets/small.png",
-        "large": "./drivers/air_quality_monitor/assets/large.png",
-        "xlarge": "./drivers/air_quality_monitor/assets/xlarge.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      },
-      "settings": [
-        {
-          "id": "sensitivity",
-          "type": "dropdown",
-          "label": {
-            "en": "Sensitivity",
-            "fr": "Sensibilité",
-            "nl": "Gevoeligheid",
-            "de": "Empfindlichkeit"
-          },
-          "value": "medium",
-          "values": [
-            {
-              "id": "low",
-              "label": {
-                "en": "Low",
-                "fr": "Faible",
-                "nl": "Laag",
-                "de": "Niedrig"
-              }
-            },
-            {
-              "id": "medium",
-              "label": {
-                "en": "Medium",
-                "fr": "Moyen",
-                "nl": "Gemiddeld",
-                "de": "Mittel"
-              }
-            },
-            {
-              "id": "high",
-              "label": {
-                "en": "High",
-                "fr": "Élevé",
-                "nl": "Hoog",
-                "de": "Hoch"
-              }
-            }
-          ]
-        },
-        {
-          "id": "reporting_interval",
-          "type": "number",
-          "label": {
-            "en": "Reporting interval (minutes)",
-            "fr": "Intervalle de rapport (minutes)",
-            "nl": "Rapportage interval (minuten)",
-            "de": "Berichtsintervall (Minuten)"
-          },
-          "value": 5,
-          "min": 1,
-          "max": 60
-        }
-      ]
-    },
-    {
-      "id": "contact_sensor",
-      "name": {
-        "en": "Contact Sensor"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "alarm_contact",
-        "measure_battery"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_ebar6ljy",
-          "TZ3000_2mbfxlzr",
-          "TZ3000_4uf3d0ax",
-          "TZ3000_oxslv1c9",
-          "TZ3000_26fmupbb",
-          "TZ3000_402jjyro",
-          "TZ3000_zka5kiyi",
-          "TZ3000_7d8yme6f",
-          "TZ3000_n2egfsli",
-          "TZ3000_qrldbmzn",
-          "_TZE200_pay2byax",
-          "_TZE200_fosmbfn0"
-        ],
-        "productId": [
-          "TS0203",
-          "MC500A",
-          "DOOR1",
-          "CONTACT1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              1,
-              3,
-              1280
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/contact_sensor/assets/small.png",
-        "large": "./drivers/contact_sensor/assets/large.png",
-        "xlarge": "./drivers/contact_sensor/assets/xlarge.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      },
-      "settings": [
-        {
-          "id": "sensitivity",
-          "type": "dropdown",
-          "label": {
-            "en": "Sensitivity",
-            "fr": "Sensibilité",
-            "nl": "Gevoeligheid",
-            "de": "Empfindlichkeit"
-          },
-          "value": "medium",
-          "values": [
-            {
-              "id": "low",
-              "label": {
-                "en": "Low",
-                "fr": "Faible",
-                "nl": "Laag",
-                "de": "Niedrig"
-              }
-            },
-            {
-              "id": "medium",
-              "label": {
-                "en": "Medium",
-                "fr": "Moyen",
-                "nl": "Gemiddeld",
-                "de": "Mittel"
-              }
-            },
-            {
-              "id": "high",
-              "label": {
-                "en": "High",
-                "fr": "Élevé",
-                "nl": "Hoog",
-                "de": "Hoch"
-              }
-            }
-          ]
-        },
-        {
-          "id": "reporting_interval",
-          "type": "number",
-          "label": {
-            "en": "Reporting interval (minutes)",
-            "fr": "Intervalle de rapport (minutes)",
-            "nl": "Rapportage interval (minuten)",
-            "de": "Berichtsintervall (Minuten)"
-          },
-          "value": 5,
-          "min": 1,
-          "max": 60
-        }
-      ]
-    },
-    {
-      "id": "door_window_sensor",
-      "name": {
-        "en": "Door Window Sensor"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "alarm_contact",
-        "measure_battery"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_sensor",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_sensor",
-          "_TZE200_sensor",
-          "_TZE284_sensor"
-        ],
-        "productId": [
-          "TS0001",
-          "SENSOR",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0202",
-          "TS0203",
-          "TS0201",
-          "SENSOR1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              1,
-              1280
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/door_window_sensor/assets/small.png",
-        "large": "./drivers/door_window_sensor/assets/large.png",
-        "xlarge": "./drivers/door_window_sensor/assets/xlarge.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      },
-      "settings": [
-        {
-          "id": "sensitivity",
-          "type": "dropdown",
-          "label": {
-            "en": "Sensitivity",
-            "fr": "Sensibilité",
-            "nl": "Gevoeligheid",
-            "de": "Empfindlichkeit"
-          },
-          "value": "medium",
-          "values": [
-            {
-              "id": "low",
-              "label": {
-                "en": "Low",
-                "fr": "Faible",
-                "nl": "Laag",
-                "de": "Niedrig"
-              }
-            },
-            {
-              "id": "medium",
-              "label": {
-                "en": "Medium",
-                "fr": "Moyen",
-                "nl": "Gemiddeld",
-                "de": "Mittel"
-              }
-            },
-            {
-              "id": "high",
-              "label": {
-                "en": "High",
-                "fr": "Élevé",
-                "nl": "Hoog",
-                "de": "Hoch"
-              }
-            }
-          ]
-        },
-        {
-          "id": "reporting_interval",
-          "type": "number",
-          "label": {
-            "en": "Reporting interval (minutes)",
-            "fr": "Intervalle de rapport (minutes)",
-            "nl": "Rapportage interval (minuten)",
-            "de": "Berichtsintervall (Minuten)"
-          },
-          "value": 5,
-          "min": 1,
-          "max": 60
-        }
-      ]
-    },
-    {
-      "id": "motion_sensor",
-      "name": {
-        "en": "Motion Sensor"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "alarm_motion",
-        "measure_battery"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_mmtwjmaq",
-          "TZ3000_kmh5qpmb",
-          "TZ3000_6ygjfyll",
-          "TZ3000_bsvqrxru",
-          "TZ3000_4ggd8ezp",
-          "TZ3000_lf56vpxj",
-          "TZ3000_h4wnrtck",
-          "TZ3000_jmrgyl7o",
-          "TZ3000_mcxw5ehu",
-          "TZ3000_sn60p5h8",
-          "TZ3000_rxtv1mfk",
-          "_TZE200_3towulqd",
-          "_TZE200_bq7mlkgv",
-          "_TZE200_w5auu1jt",
-          "_TZE200_tv3wxhcz",
-          "_TZE204_qasjif9e",
-          "_TZE204_ijxvkhd0",
-          "_TZE284_cjlm9ra6"
-        ],
-        "productId": [
-          "TS0202",
-          "PIR-M",
-          "MS100",
-          "PIR01",
-          "MOTION1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              1,
-              3,
-              1280,
-              1030
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/motion_sensor/assets/small.png",
-        "large": "./drivers/motion_sensor/assets/large.png",
-        "xlarge": "./drivers/motion_sensor/assets/xlarge.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      },
-      "settings": [
-        {
-          "id": "sensitivity",
-          "type": "dropdown",
-          "label": {
-            "en": "Sensitivity",
-            "fr": "Sensibilité",
-            "nl": "Gevoeligheid",
-            "de": "Empfindlichkeit"
-          },
-          "value": "medium",
-          "values": [
-            {
-              "id": "low",
-              "label": {
-                "en": "Low",
-                "fr": "Faible",
-                "nl": "Laag",
-                "de": "Niedrig"
-              }
-            },
-            {
-              "id": "medium",
-              "label": {
-                "en": "Medium",
-                "fr": "Moyen",
-                "nl": "Gemiddeld",
-                "de": "Mittel"
-              }
-            },
-            {
-              "id": "high",
-              "label": {
-                "en": "High",
-                "fr": "Élevé",
-                "nl": "Hoog",
-                "de": "Hoch"
-              }
-            }
-          ]
-        },
-        {
-          "id": "reporting_interval",
-          "type": "number",
-          "label": {
-            "en": "Reporting interval (minutes)",
-            "fr": "Intervalle de rapport (minutes)",
-            "nl": "Rapportage interval (minuten)",
-            "de": "Berichtsintervall (Minuten)"
-          },
-          "value": 5,
-          "min": 1,
-          "max": 60
-        }
-      ]
-    },
-    {
-      "id": "multisensor",
-      "name": {
-        "en": "Multisensor"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "measure_battery"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_sensor",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_sensor",
-          "_TZE200_sensor",
-          "_TZE284_sensor"
-        ],
-        "productId": [
-          "TS0001",
-          "SENSOR",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0202",
-          "TS0203",
-          "TS0201",
-          "SENSOR1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              1,
-              1280
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/multisensor/assets/small.png",
-        "large": "./drivers/multisensor/assets/large.png",
-        "xlarge": "./drivers/multisensor/assets/xlarge.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      },
-      "settings": [
-        {
-          "id": "sensitivity",
-          "type": "dropdown",
-          "label": {
-            "en": "Sensitivity",
-            "fr": "Sensibilité",
-            "nl": "Gevoeligheid",
-            "de": "Empfindlichkeit"
-          },
-          "value": "medium",
-          "values": [
-            {
-              "id": "low",
-              "label": {
-                "en": "Low",
-                "fr": "Faible",
-                "nl": "Laag",
-                "de": "Niedrig"
-              }
-            },
-            {
-              "id": "medium",
-              "label": {
-                "en": "Medium",
-                "fr": "Moyen",
-                "nl": "Gemiddeld",
-                "de": "Mittel"
-              }
-            },
-            {
-              "id": "high",
-              "label": {
-                "en": "High",
-                "fr": "Élevé",
-                "nl": "Hoog",
-                "de": "Hoch"
-              }
-            }
-          ]
-        },
-        {
-          "id": "reporting_interval",
-          "type": "number",
-          "label": {
-            "en": "Reporting interval (minutes)",
-            "fr": "Intervalle de rapport (minutes)",
-            "nl": "Rapportage interval (minuten)",
-            "de": "Berichtsintervall (Minuten)"
-          },
-          "value": 5,
-          "min": 1,
-          "max": 60
-        }
-      ]
-    },
-    {
-      "id": "pir_sensor",
-      "name": {
-        "en": "Pir Sensor"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "alarm_motion",
-        "measure_battery"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_sensor",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_sensor",
-          "_TZE200_sensor",
-          "_TZE284_sensor"
-        ],
-        "productId": [
-          "TS0001",
-          "SENSOR",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0202",
-          "TS0203",
-          "TS0201",
-          "SENSOR1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              1,
-              1280
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/pir_sensor/assets/small.png",
-        "large": "./drivers/pir_sensor/assets/large.png",
-        "xlarge": "./drivers/pir_sensor/assets/xlarge.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      },
-      "settings": [
-        {
-          "id": "sensitivity",
-          "type": "dropdown",
-          "label": {
-            "en": "Sensitivity",
-            "fr": "Sensibilité",
-            "nl": "Gevoeligheid",
-            "de": "Empfindlichkeit"
-          },
-          "value": "medium",
-          "values": [
-            {
-              "id": "low",
-              "label": {
-                "en": "Low",
-                "fr": "Faible",
-                "nl": "Laag",
-                "de": "Niedrig"
-              }
-            },
-            {
-              "id": "medium",
-              "label": {
-                "en": "Medium",
-                "fr": "Moyen",
-                "nl": "Gemiddeld",
-                "de": "Mittel"
-              }
-            },
-            {
-              "id": "high",
-              "label": {
-                "en": "High",
-                "fr": "Élevé",
-                "nl": "Hoog",
-                "de": "Hoch"
-              }
-            }
-          ]
-        },
-        {
-          "id": "reporting_interval",
-          "type": "number",
-          "label": {
-            "en": "Reporting interval (minutes)",
-            "fr": "Intervalle de rapport (minutes)",
-            "nl": "Rapportage interval (minuten)",
-            "de": "Berichtsintervall (Minuten)"
-          },
-          "value": 5,
-          "min": 1,
-          "max": 60
-        }
-      ]
-    },
-    {
-      "id": "presence_sensor",
-      "name": {
-        "en": "Presence Sensor"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "measure_battery"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_sensor",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_sensor",
-          "_TZE200_sensor",
-          "_TZE284_sensor"
-        ],
-        "productId": [
-          "TS0001",
-          "SENSOR",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0202",
-          "TS0203",
-          "TS0201",
-          "SENSOR1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              1,
-              1280
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/presence_sensor/assets/small.png",
-        "large": "./drivers/presence_sensor/assets/large.png",
-        "xlarge": "./drivers/presence_sensor/assets/xlarge.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      },
-      "settings": [
-        {
-          "id": "sensitivity",
-          "type": "dropdown",
-          "label": {
-            "en": "Sensitivity",
-            "fr": "Sensibilité",
-            "nl": "Gevoeligheid",
-            "de": "Empfindlichkeit"
-          },
-          "value": "medium",
-          "values": [
-            {
-              "id": "low",
-              "label": {
-                "en": "Low",
-                "fr": "Faible",
-                "nl": "Laag",
-                "de": "Niedrig"
-              }
-            },
-            {
-              "id": "medium",
-              "label": {
-                "en": "Medium",
-                "fr": "Moyen",
-                "nl": "Gemiddeld",
-                "de": "Mittel"
-              }
-            },
-            {
-              "id": "high",
-              "label": {
-                "en": "High",
-                "fr": "Élevé",
-                "nl": "Hoog",
-                "de": "Hoch"
-              }
-            }
-          ]
-        },
-        {
-          "id": "reporting_interval",
-          "type": "number",
-          "label": {
-            "en": "Reporting interval (minutes)",
-            "fr": "Intervalle de rapport (minutes)",
-            "nl": "Rapportage interval (minuten)",
-            "de": "Berichtsintervall (Minuten)"
-          },
-          "value": 5,
-          "min": 1,
-          "max": 60
-        }
-      ]
-    },
-    {
-      "id": "radar_sensor",
-      "name": {
-        "en": "Radar Sensor"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "alarm_motion",
-        "measure_luminance",
-        "measure_battery"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "_TZE200_ztc6ggyl",
-          "_TZE204_qasjif9e",
-          "_TZE204_ijxvkhd0",
-          "_TZE200_wukb7rhc",
-          "_TZE200_ar0slwnd",
-          "_TZE200_sfiy5tcs",
-          "_TZE200_holel4dk",
-          "_TZE284_cjlm9ra6",
-          "_TZE204_sooucan5",
-          "_TZE284_sxm7l9xa",
-          "_TZE200_auin8mzr",
-          "_TZE200_lyetpprm"
-        ],
-        "productId": [
-          "TS0601",
-          "RADAR1",
-          "MMWAVE1",
-          "RS0201"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              1,
-              3,
-              61184
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/radar_sensor/assets/small.png",
-        "large": "./drivers/radar_sensor/assets/large.png",
-        "xlarge": "./drivers/radar_sensor/assets/xlarge.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      },
-      "settings": [
-        {
-          "id": "sensitivity",
-          "type": "dropdown",
-          "label": {
-            "en": "Sensitivity",
-            "fr": "Sensibilité",
-            "nl": "Gevoeligheid",
-            "de": "Empfindlichkeit"
-          },
-          "value": "medium",
-          "values": [
-            {
-              "id": "low",
-              "label": {
-                "en": "Low",
-                "fr": "Faible",
-                "nl": "Laag",
-                "de": "Niedrig"
-              }
-            },
-            {
-              "id": "medium",
-              "label": {
-                "en": "Medium",
-                "fr": "Moyen",
-                "nl": "Gemiddeld",
-                "de": "Mittel"
-              }
-            },
-            {
-              "id": "high",
-              "label": {
-                "en": "High",
-                "fr": "Élevé",
-                "nl": "Hoog",
-                "de": "Hoch"
-              }
-            }
-          ]
-        },
-        {
-          "id": "reporting_interval",
-          "type": "number",
-          "label": {
-            "en": "Reporting interval (minutes)",
-            "fr": "Intervalle de rapport (minutes)",
-            "nl": "Rapportage interval (minuten)",
-            "de": "Berichtsintervall (Minuten)"
-          },
-          "value": 5,
-          "min": 1,
-          "max": 60
-        }
-      ]
-    },
-    {
-      "id": "soil_moisture_sensor",
-      "name": {
-        "en": "Soil Moisture Sensor"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "measure_temperature",
-        "measure_humidity",
-        "measure_battery"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "_TZE200_myd45weu",
-          "_TZE284_myd45weu",
-          "_TZE200_ga1maeof",
-          "_TZE284_aao3yzhs",
-          "_TZE200_3towulqd",
-          "_TZE284_sgabhwa6",
-          "_TZ3000_4fjiwweb",
-          "QT-07S"
-        ],
-        "productId": [
-          "TS0601",
-          "SOIL1",
-          "MOISTURE1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              1,
-              3,
-              61184
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/soil_moisture_sensor/assets/small.png",
-        "large": "./drivers/soil_moisture_sensor/assets/large.png",
-        "xlarge": "./drivers/soil_moisture_sensor/assets/xlarge.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      },
-      "settings": [
-        {
-          "id": "sensitivity",
-          "type": "dropdown",
-          "label": {
-            "en": "Sensitivity",
-            "fr": "Sensibilité",
-            "nl": "Gevoeligheid",
-            "de": "Empfindlichkeit"
-          },
-          "value": "medium",
-          "values": [
-            {
-              "id": "low",
-              "label": {
-                "en": "Low",
-                "fr": "Faible",
-                "nl": "Laag",
-                "de": "Niedrig"
-              }
-            },
-            {
-              "id": "medium",
-              "label": {
-                "en": "Medium",
-                "fr": "Moyen",
-                "nl": "Gemiddeld",
-                "de": "Mittel"
-              }
-            },
-            {
-              "id": "high",
-              "label": {
-                "en": "High",
-                "fr": "Élevé",
-                "nl": "Hoog",
-                "de": "Hoch"
-              }
-            }
-          ]
-        },
-        {
-          "id": "reporting_interval",
-          "type": "number",
-          "label": {
-            "en": "Reporting interval (minutes)",
-            "fr": "Intervalle de rapport (minutes)",
-            "nl": "Rapportage interval (minuten)",
-            "de": "Berichtsintervall (Minuten)"
-          },
-          "value": 5,
-          "min": 1,
-          "max": 60
-        }
-      ]
-    },
-    {
-      "id": "temperature_humidity_sensor",
-      "name": {
-        "en": "Temperature Humidity Sensor"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "measure_temperature",
-        "measure_humidity",
-        "measure_battery"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_fllyghyj",
-          "TZ3000_dowj6gyi",
-          "TZ3000_xr3htd96",
-          "TZ3000_8ybe88nf",
-          "TZ3000_bjawzodf",
-          "TZ3000_saiqcn0y",
-          "TZ3000_zl1kmjqx",
-          "_TZE200_locansqn",
-          "_TZE200_bq5c8xfe",
-          "_TZE200_8ygsuhe1",
-          "_TZE284_sgabhwa6"
-        ],
-        "productId": [
-          "TS0201",
-          "TH02",
-          "TEMP1",
-          "THSensor"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              1,
-              3,
-              1026,
-              1029
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/temperature_humidity_sensor/assets/small.png",
-        "large": "./drivers/temperature_humidity_sensor/assets/large.png",
-        "xlarge": "./drivers/temperature_humidity_sensor/assets/xlarge.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      },
-      "settings": [
-        {
-          "id": "sensitivity",
-          "type": "dropdown",
-          "label": {
-            "en": "Sensitivity",
-            "fr": "Sensibilité",
-            "nl": "Gevoeligheid",
-            "de": "Empfindlichkeit"
-          },
-          "value": "medium",
-          "values": [
-            {
-              "id": "low",
-              "label": {
-                "en": "Low",
-                "fr": "Faible",
-                "nl": "Laag",
-                "de": "Niedrig"
-              }
-            },
-            {
-              "id": "medium",
-              "label": {
-                "en": "Medium",
-                "fr": "Moyen",
-                "nl": "Gemiddeld",
-                "de": "Mittel"
-              }
-            },
-            {
-              "id": "high",
-              "label": {
-                "en": "High",
-                "fr": "Élevé",
-                "nl": "Hoog",
-                "de": "Hoch"
-              }
-            }
-          ]
-        },
-        {
-          "id": "reporting_interval",
-          "type": "number",
-          "label": {
-            "en": "Reporting interval (minutes)",
-            "fr": "Intervalle de rapport (minutes)",
-            "nl": "Rapportage interval (minuten)",
-            "de": "Berichtsintervall (Minuten)"
-          },
-          "value": 5,
-          "min": 1,
-          "max": 60
-        }
-      ]
-    },
-    {
-      "id": "vibration_sensor",
-      "name": {
-        "en": "Vibration Sensor"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "measure_battery"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_generic",
-          "TZ3000_sensor",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_sensor",
-          "_TZE200_sensor",
-          "_TZE284_sensor"
-        ],
-        "productId": [
-          "TS0001",
-          "SENSOR",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0202",
-          "TS0203",
-          "TS0201",
-          "SENSOR1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              1,
-              1280
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/vibration_sensor/assets/small.png",
-        "large": "./drivers/vibration_sensor/assets/large.png",
-        "xlarge": "./drivers/vibration_sensor/assets/xlarge.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      },
-      "settings": [
-        {
-          "id": "sensitivity",
-          "type": "dropdown",
-          "label": {
-            "en": "Sensitivity",
-            "fr": "Sensibilité",
-            "nl": "Gevoeligheid",
-            "de": "Empfindlichkeit"
-          },
-          "value": "medium",
-          "values": [
-            {
-              "id": "low",
-              "label": {
-                "en": "Low",
-                "fr": "Faible",
-                "nl": "Laag",
-                "de": "Niedrig"
-              }
-            },
-            {
-              "id": "medium",
-              "label": {
-                "en": "Medium",
-                "fr": "Moyen",
-                "nl": "Gemiddeld",
-                "de": "Mittel"
-              }
-            },
-            {
-              "id": "high",
-              "label": {
-                "en": "High",
-                "fr": "Élevé",
-                "nl": "Hoog",
-                "de": "Hoch"
-              }
-            }
-          ]
-        },
-        {
-          "id": "reporting_interval",
-          "type": "number",
-          "label": {
-            "en": "Reporting interval (minutes)",
-            "fr": "Intervalle de rapport (minutes)",
-            "nl": "Rapportage interval (minuten)",
-            "de": "Berichtsintervall (Minuten)"
-          },
-          "value": 5,
-          "min": 1,
-          "max": 60
-        }
-      ]
-    },
-    {
-      "id": "dimmer_switch",
-      "name": {
-        "en": "Dimmer Switch"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "onoff"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_switch",
-          "TZ3000_button",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_switch",
-          "_TZE200_switch",
-          "_TZE284_switch"
-        ],
-        "productId": [
-          "TS0043",
-          "SWITCH",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0043",
-          "TS0012",
-          "TS0011",
-          "SWITCH1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              6
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/dimmer_switch/assets/small.png",
-        "large": "./drivers/dimmer_switch/assets/large.png",
-        "xlarge": "./drivers/dimmer_switch/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "rotary_dimmer",
-      "name": {
-        "en": "Rotary Dimmer"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "onoff"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_switch",
-          "TZ3000_button",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_switch",
-          "_TZE200_switch",
-          "_TZE284_switch"
-        ],
-        "productId": [
-          "TS0043",
-          "SWITCH",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0043",
-          "TS0012",
-          "TS0011",
-          "SWITCH1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              6
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/rotary_dimmer/assets/small.png",
-        "large": "./drivers/rotary_dimmer/assets/large.png",
-        "xlarge": "./drivers/rotary_dimmer/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "scene_switch",
-      "name": {
-        "en": "Scene Switch"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "onoff"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_switch",
-          "TZ3000_button",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_switch",
-          "_TZE200_switch",
-          "_TZE284_switch"
-        ],
-        "productId": [
-          "TS0043",
-          "SWITCH",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0043",
-          "TS0012",
-          "TS0011",
-          "SWITCH1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              6
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/scene_switch/assets/small.png",
-        "large": "./drivers/scene_switch/assets/large.png",
-        "xlarge": "./drivers/scene_switch/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "touch_switch",
-      "name": {
-        "en": "Touch Switch"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "onoff"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_switch",
-          "TZ3000_button",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_switch",
-          "_TZE200_switch",
-          "_TZE284_switch"
-        ],
-        "productId": [
-          "TS0043",
-          "SWITCH",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0043",
-          "TS0012",
-          "TS0011",
-          "SWITCH1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              6
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/touch_switch/assets/small.png",
-        "large": "./drivers/touch_switch/assets/large.png",
-        "xlarge": "./drivers/touch_switch/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "wall_switch_1gang",
-      "name": {
-        "en": "Wall Switch 1gang"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "onoff"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_ji4araar",
-          "TZ3000_bvrlqyj7",
-          "TZ3000_dfgbtub0",
-          "TZ3000_a7jjxglq",
-          "_TZE200_amp6tsvy",
-          "_TZE200_g92baels",
-          "_TZE200_9cxuhakf",
-          "_TZE204_mhxn2jso"
-        ],
-        "productId": [
-          "TS0601",
-          "TS0011",
-          "SWITCH1",
-          "WALL1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              6,
-              61184
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/wall_switch_1gang/assets/small.png",
-        "large": "./drivers/wall_switch_1gang/assets/large.png",
-        "xlarge": "./drivers/wall_switch_1gang/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "wall_switch_2gang",
-      "name": {
-        "en": "Wall Switch 2gang"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "onoff"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_switch",
-          "TZ3000_button",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_switch",
-          "_TZE200_switch",
-          "_TZE284_switch"
-        ],
-        "productId": [
-          "TS0043",
-          "SWITCH",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0043",
-          "TS0012",
-          "TS0011",
-          "SWITCH1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              6
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/wall_switch_2gang/assets/small.png",
-        "large": "./drivers/wall_switch_2gang/assets/large.png",
-        "xlarge": "./drivers/wall_switch_2gang/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "wall_switch_3gang",
-      "name": {
-        "en": "Wall Switch 3gang"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "onoff"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_switch",
-          "TZ3000_button",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_switch",
-          "_TZE200_switch",
-          "_TZE284_switch"
-        ],
-        "productId": [
-          "TS0043",
-          "SWITCH",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0043",
-          "TS0012",
-          "TS0011",
-          "SWITCH1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              6
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/wall_switch_3gang/assets/small.png",
-        "large": "./drivers/wall_switch_3gang/assets/large.png",
-        "xlarge": "./drivers/wall_switch_3gang/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "wall_switch_4gang",
-      "name": {
-        "en": "Wall Switch 4gang"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "onoff"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_switch",
-          "TZ3000_button",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_switch",
-          "_TZE200_switch",
-          "_TZE284_switch"
-        ],
-        "productId": [
-          "TS0043",
-          "SWITCH",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0043",
-          "TS0012",
-          "TS0011",
-          "SWITCH1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              6
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/wall_switch_4gang/assets/small.png",
-        "large": "./drivers/wall_switch_4gang/assets/large.png",
-        "xlarge": "./drivers/wall_switch_4gang/assets/xlarge.png"
-      }
-    },
-    {
-      "id": "wireless_button",
-      "name": {
-        "en": "Wireless Button"
-      },
-      "class": "button",
-      "capabilities": [
-        "onoff",
-        "measure_battery"
-      ],
-      "zigbee": {
-        "manufacturerName": [
-          "TZ3000_switch",
-          "TZ3000_button",
-          "TZ3000_generic",
-          "TZ3000_common",
-          "_TZE200_universal",
-          "TZ3000_switch",
-          "_TZE200_switch",
-          "_TZE284_switch"
-        ],
-        "productId": [
-          "TS0043",
-          "SWITCH",
-          "TS0001",
-          "TS0601",
-          "GENERIC",
-          "TS0043",
-          "TS0012",
-          "TS0011",
-          "SWITCH1"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              6
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "./drivers/wireless_button/assets/small.png",
-        "large": "./drivers/wireless_button/assets/large.png",
-        "xlarge": "./drivers/wireless_button/assets/xlarge.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      }
-    }
-  ],
   "tags": {
     "en": [
       "zigbee",
@@ -3653,5 +67,1137 @@
     "translators": [
       "dlnraja"
     ]
-  }
+  },
+  "drivers": [
+    {
+      "id": "access_controller",
+      "name": {
+        "en": "ACcess Controller"
+      },
+      "images": {
+        "large": "./drivers/access_controller/assets/images/large.png",
+        "small": "./drivers/access_controller/assets/images/small.png"
+      }
+    },
+    {
+      "id": "air_conditioner_controller",
+      "name": {
+        "en": "Air Conditioner Controller"
+      },
+      "images": {
+        "large": "./drivers/air_conditioner_controller/assets/images/large.png",
+        "small": "./drivers/air_conditioner_controller/assets/images/small.png"
+      }
+    },
+    {
+      "id": "air_quality_sensor",
+      "name": {
+        "en": "Air Quality Sensor"
+      },
+      "images": {
+        "large": "./drivers/air_quality_sensor/assets/images/large.png",
+        "small": "./drivers/air_quality_sensor/assets/images/small.png"
+      }
+    },
+    {
+      "id": "alarm_keypad",
+      "name": {
+        "en": "Alarm Keypad"
+      },
+      "images": {
+        "large": "./drivers/alarm_keypad/assets/images/large.png",
+        "small": "./drivers/alarm_keypad/assets/images/small.png"
+      }
+    },
+    {
+      "id": "aqara_motion_sensor",
+      "name": {
+        "en": "Aqara Motion Sensor"
+      },
+      "images": {
+        "large": "./drivers/aqara_motion_sensor/assets/images/large.png",
+        "small": "./drivers/aqara_motion_sensor/assets/images/small.png"
+      }
+    },
+    {
+      "id": "awning_controller",
+      "name": {
+        "en": "Awning Controller"
+      },
+      "images": {
+        "large": "./drivers/awning_controller/assets/images/large.png",
+        "small": "./drivers/awning_controller/assets/images/small.png"
+      }
+    },
+    {
+      "id": "blind_controller",
+      "name": {
+        "en": "Blind Controller"
+      },
+      "images": {
+        "large": "./drivers/blind_controller/assets/images/large.png",
+        "small": "./drivers/blind_controller/assets/images/small.png"
+      }
+    },
+    {
+      "id": "ceiling_light_controller",
+      "name": {
+        "en": "Ceiling Light Controller"
+      },
+      "images": {
+        "large": "./drivers/ceiling_light_controller/assets/images/large.png",
+        "small": "./drivers/ceiling_light_controller/assets/images/small.png"
+      }
+    },
+    {
+      "id": "co2_sensor",
+      "name": {
+        "en": "Co2 Sensor"
+      },
+      "images": {
+        "large": "./drivers/co2_sensor/assets/images/large.png",
+        "small": "./drivers/co2_sensor/assets/images/small.png"
+      }
+    },
+    {
+      "id": "co_detector",
+      "name": {
+        "en": "Co Detector"
+      },
+      "images": {
+        "large": "./drivers/co_detector/assets/images/large.png",
+        "small": "./drivers/co_detector/assets/images/small.png"
+      }
+    },
+    {
+      "id": "cube_controller",
+      "name": {
+        "en": "Cube Controller"
+      },
+      "images": {
+        "large": "./drivers/cube_controller/assets/images/large.png",
+        "small": "./drivers/cube_controller/assets/images/small.png"
+      }
+    },
+    {
+      "id": "curtain_motor",
+      "name": {
+        "en": "Curtain Motor"
+      },
+      "images": {
+        "large": "./drivers/curtain_motor/assets/images/large.png",
+        "small": "./drivers/curtain_motor/assets/images/small.png"
+      }
+    },
+    {
+      "id": "dehumidifier_controller",
+      "name": {
+        "en": "Dehumidifier Controller"
+      },
+      "images": {
+        "large": "./drivers/dehumidifier_controller/assets/images/large.png",
+        "small": "./drivers/dehumidifier_controller/assets/images/small.png"
+      }
+    },
+    {
+      "id": "door_controller",
+      "name": {
+        "en": "Door Controller"
+      },
+      "images": {
+        "large": "./drivers/door_controller/assets/images/large.png",
+        "small": "./drivers/door_controller/assets/images/small.png"
+      }
+    },
+    {
+      "id": "door_lock",
+      "name": {
+        "en": "Door Lock"
+      },
+      "images": {
+        "large": "./drivers/door_lock/assets/images/large.png",
+        "small": "./drivers/door_lock/assets/images/small.png"
+      }
+    },
+    {
+      "id": "emergency_button",
+      "name": {
+        "en": "Emergency Button"
+      },
+      "images": {
+        "large": "./drivers/emergency_button/assets/images/large.png",
+        "small": "./drivers/emergency_button/assets/images/small.png"
+      }
+    },
+    {
+      "id": "energy_monitoring_plug",
+      "name": {
+        "en": "Energy Monitoring Plug"
+      },
+      "images": {
+        "large": "./drivers/energy_monitoring_plug/assets/images/large.png",
+        "small": "./drivers/energy_monitoring_plug/assets/images/small.png"
+      }
+    },
+    {
+      "id": "extension_plug",
+      "name": {
+        "en": "Extension Plug"
+      },
+      "images": {
+        "large": "./drivers/extension_plug/assets/images/large.png",
+        "small": "./drivers/extension_plug/assets/images/small.png"
+      }
+    },
+    {
+      "id": "fan_controller",
+      "name": {
+        "en": "Fan Controller"
+      },
+      "images": {
+        "large": "./drivers/fan_controller/assets/images/large.png",
+        "small": "./drivers/fan_controller/assets/images/small.png"
+      }
+    },
+    {
+      "id": "fan_speed_controller",
+      "name": {
+        "en": "Fan Speed Controller"
+      },
+      "images": {
+        "large": "./drivers/fan_speed_controller/assets/images/large.png",
+        "small": "./drivers/fan_speed_controller/assets/images/small.png"
+      }
+    },
+    {
+      "id": "fingerprint_lock",
+      "name": {
+        "en": "Fingerprint Lock"
+      },
+      "images": {
+        "large": "./drivers/fingerprint_lock/assets/images/large.png",
+        "small": "./drivers/fingerprint_lock/assets/images/small.png"
+      }
+    },
+    {
+      "id": "formaldehyde_sensor",
+      "name": {
+        "en": "Formaldehyde Sensor"
+      },
+      "images": {
+        "large": "./drivers/formaldehyde_sensor/assets/images/large.png",
+        "small": "./drivers/formaldehyde_sensor/assets/images/small.png"
+      }
+    },
+    {
+      "id": "garage_door_controller",
+      "name": {
+        "en": "Garage Door Controller"
+      },
+      "images": {
+        "large": "./drivers/garage_door_controller/assets/images/large.png",
+        "small": "./drivers/garage_door_controller/assets/images/small.png"
+      }
+    },
+    {
+      "id": "gas_detector",
+      "name": {
+        "en": "Gas Detector"
+      },
+      "images": {
+        "large": "./drivers/gas_detector/assets/images/large.png",
+        "small": "./drivers/gas_detector/assets/images/small.png"
+      }
+    },
+    {
+      "id": "hue_bulb",
+      "name": {
+        "en": "Hue Bulb"
+      },
+      "images": {
+        "large": "./drivers/hue_bulb/assets/images/large.png",
+        "small": "./drivers/hue_bulb/assets/images/small.png"
+      }
+    },
+    {
+      "id": "hue_dimmer",
+      "name": {
+        "en": "Hue Dimmer"
+      },
+      "images": {
+        "large": "./drivers/hue_dimmer/assets/images/large.png",
+        "small": "./drivers/hue_dimmer/assets/images/small.png"
+      }
+    },
+    {
+      "id": "hue_motion_sensor",
+      "name": {
+        "en": "Hue Motion Sensor"
+      },
+      "images": {
+        "large": "./drivers/hue_motion_sensor/assets/images/large.png",
+        "small": "./drivers/hue_motion_sensor/assets/images/small.png"
+      }
+    },
+    {
+      "id": "hvac_controller",
+      "name": {
+        "en": "HvAC Controller"
+      },
+      "images": {
+        "large": "./drivers/hvac_controller/assets/images/large.png",
+        "small": "./drivers/hvac_controller/assets/images/small.png"
+      }
+    },
+    {
+      "id": "ikea_styrbar_remote",
+      "name": {
+        "en": "Ikea Styrbar Remote"
+      },
+      "images": {
+        "large": "./drivers/ikea_styrbar_remote/assets/images/large.png",
+        "small": "./drivers/ikea_styrbar_remote/assets/images/small.png"
+      }
+    },
+    {
+      "id": "ikea_symfonisk_remote",
+      "name": {
+        "en": "Ikea Symfonisk Remote"
+      },
+      "images": {
+        "large": "./drivers/ikea_symfonisk_remote/assets/images/large.png",
+        "small": "./drivers/ikea_symfonisk_remote/assets/images/small.png"
+      }
+    },
+    {
+      "id": "ikea_tradfri_bulb",
+      "name": {
+        "en": "Ikea Tradfri Bulb"
+      },
+      "images": {
+        "large": "./drivers/ikea_tradfri_bulb/assets/images/large.png",
+        "small": "./drivers/ikea_tradfri_bulb/assets/images/small.png"
+      }
+    },
+    {
+      "id": "keypad_lock",
+      "name": {
+        "en": "Keypad Lock"
+      },
+      "images": {
+        "large": "./drivers/keypad_lock/assets/images/large.png",
+        "small": "./drivers/keypad_lock/assets/images/small.png"
+      }
+    },
+    {
+      "id": "led_strip_controller",
+      "name": {
+        "en": "Led Strip Controller"
+      },
+      "images": {
+        "large": "./drivers/led_strip_controller/assets/images/large.png",
+        "small": "./drivers/led_strip_controller/assets/images/small.png"
+      }
+    },
+    {
+      "id": "lux_sensor",
+      "name": {
+        "en": "Lux Sensor"
+      },
+      "images": {
+        "large": "./drivers/lux_sensor/assets/images/large.png",
+        "small": "./drivers/lux_sensor/assets/images/small.png"
+      }
+    },
+    {
+      "id": "motion_sensor_mmwave",
+      "name": {
+        "en": "Motion Sensor Mmwave"
+      },
+      "images": {
+        "large": "./drivers/motion_sensor_mmwave/assets/images/large.png",
+        "small": "./drivers/motion_sensor_mmwave/assets/images/small.png"
+      }
+    },
+    {
+      "id": "motion_sensor_mmwave_battery",
+      "name": {
+        "en": "Motion Sensor Mmwave Battery"
+      },
+      "images": {
+        "large": "./drivers/motion_sensor_mmwave_battery/assets/images/large.png",
+        "small": "./drivers/motion_sensor_mmwave_battery/assets/images/small.png"
+      }
+    },
+    {
+      "id": "motion_sensor_pir",
+      "name": {
+        "en": "Motion Sensor Pir"
+      },
+      "images": {
+        "large": "./drivers/motion_sensor_pir/assets/images/large.png",
+        "small": "./drivers/motion_sensor_pir/assets/images/small.png"
+      }
+    },
+    {
+      "id": "motion_sensor_pir_ac",
+      "name": {
+        "en": "Motion Sensor Pir AC"
+      },
+      "images": {
+        "large": "./drivers/motion_sensor_pir_ac/assets/images/large.png",
+        "small": "./drivers/motion_sensor_pir_ac/assets/images/small.png"
+      }
+    },
+    {
+      "id": "motion_sensor_pir_battery",
+      "name": {
+        "en": "Motion Sensor Pir Battery"
+      },
+      "images": {
+        "large": "./drivers/motion_sensor_pir_battery/assets/images/large.png",
+        "small": "./drivers/motion_sensor_pir_battery/assets/images/small.png"
+      }
+    },
+    {
+      "id": "motion_sensor_radar",
+      "name": {
+        "en": "Motion Sensor Radar"
+      },
+      "images": {
+        "large": "./drivers/motion_sensor_radar/assets/images/large.png",
+        "small": "./drivers/motion_sensor_radar/assets/images/small.png"
+      }
+    },
+    {
+      "id": "motion_sensor_radar_ac",
+      "name": {
+        "en": "Motion Sensor Radar AC"
+      },
+      "images": {
+        "large": "./drivers/motion_sensor_radar_ac/assets/images/large.png",
+        "small": "./drivers/motion_sensor_radar_ac/assets/images/small.png"
+      }
+    },
+    {
+      "id": "motion_sensor_radar_battery",
+      "name": {
+        "en": "Motion Sensor Radar Battery"
+      },
+      "images": {
+        "large": "./drivers/motion_sensor_radar_battery/assets/images/large.png",
+        "small": "./drivers/motion_sensor_radar_battery/assets/images/small.png"
+      }
+    },
+    {
+      "id": "motion_sensor_radar_hybrid",
+      "name": {
+        "en": "Motion Sensor Radar Hybrid"
+      },
+      "images": {
+        "large": "./drivers/motion_sensor_radar_hybrid/assets/images/large.png",
+        "small": "./drivers/motion_sensor_radar_hybrid/assets/images/small.png"
+      }
+    },
+    {
+      "id": "multisensor",
+      "name": {
+        "en": "Multisensor"
+      },
+      "images": {
+        "large": "./drivers/multisensor/assets/images/large.png",
+        "small": "./drivers/multisensor/assets/images/small.png"
+      }
+    },
+    {
+      "id": "noise_level_sensor",
+      "name": {
+        "en": "Noise Level Sensor"
+      },
+      "images": {
+        "large": "./drivers/noise_level_sensor/assets/images/large.png",
+        "small": "./drivers/noise_level_sensor/assets/images/small.png"
+      }
+    },
+    {
+      "id": "outdoor_light_controller",
+      "name": {
+        "en": "Outdoor Light Controller"
+      },
+      "images": {
+        "large": "./drivers/outdoor_light_controller/assets/images/large.png",
+        "small": "./drivers/outdoor_light_controller/assets/images/small.png"
+      }
+    },
+    {
+      "id": "panic_button",
+      "name": {
+        "en": "Panic Button"
+      },
+      "images": {
+        "large": "./drivers/panic_button/assets/images/large.png",
+        "small": "./drivers/panic_button/assets/images/small.png"
+      }
+    },
+    {
+      "id": "pm25_sensor",
+      "name": {
+        "en": "Pm25 Sensor"
+      },
+      "images": {
+        "large": "./drivers/pm25_sensor/assets/images/large.png",
+        "small": "./drivers/pm25_sensor/assets/images/small.png"
+      }
+    },
+    {
+      "id": "presence_sensor_radar",
+      "name": {
+        "en": "Presence Sensor Radar"
+      },
+      "images": {
+        "large": "./drivers/presence_sensor_radar/assets/images/large.png",
+        "small": "./drivers/presence_sensor_radar/assets/images/small.png"
+      }
+    },
+    {
+      "id": "pressure_sensor",
+      "name": {
+        "en": "Pressure Sensor"
+      },
+      "images": {
+        "large": "./drivers/pressure_sensor/assets/images/large.png",
+        "small": "./drivers/pressure_sensor/assets/images/small.png"
+      }
+    },
+    {
+      "id": "projector_screen_controller",
+      "name": {
+        "en": "Projector Screen Controller"
+      },
+      "images": {
+        "large": "./drivers/projector_screen_controller/assets/images/large.png",
+        "small": "./drivers/projector_screen_controller/assets/images/small.png"
+      }
+    },
+    {
+      "id": "radiator_valve",
+      "name": {
+        "en": "Radiator Valve"
+      },
+      "images": {
+        "large": "./drivers/radiator_valve/assets/images/large.png",
+        "small": "./drivers/radiator_valve/assets/images/small.png"
+      }
+    },
+    {
+      "id": "roller_blind_controller",
+      "name": {
+        "en": "Roller Blind Controller"
+      },
+      "images": {
+        "large": "./drivers/roller_blind_controller/assets/images/large.png",
+        "small": "./drivers/roller_blind_controller/assets/images/small.png"
+      }
+    },
+    {
+      "id": "scene_controller_2button",
+      "name": {
+        "en": "Scene Controller 2button"
+      },
+      "images": {
+        "large": "./drivers/scene_controller_2button/assets/images/large.png",
+        "small": "./drivers/scene_controller_2button/assets/images/small.png"
+      }
+    },
+    {
+      "id": "scene_controller_4button",
+      "name": {
+        "en": "Scene Controller 4button"
+      },
+      "images": {
+        "large": "./drivers/scene_controller_4button/assets/images/large.png",
+        "small": "./drivers/scene_controller_4button/assets/images/small.png"
+      }
+    },
+    {
+      "id": "scene_controller_6button",
+      "name": {
+        "en": "Scene Controller 6button"
+      },
+      "images": {
+        "large": "./drivers/scene_controller_6button/assets/images/large.png",
+        "small": "./drivers/scene_controller_6button/assets/images/small.png"
+      }
+    },
+    {
+      "id": "scene_controller_8button",
+      "name": {
+        "en": "Scene Controller 8button"
+      },
+      "images": {
+        "large": "./drivers/scene_controller_8button/assets/images/large.png",
+        "small": "./drivers/scene_controller_8button/assets/images/small.png"
+      }
+    },
+    {
+      "id": "scene_controller_battery",
+      "name": {
+        "en": "Scene Controller Battery"
+      },
+      "images": {
+        "large": "./drivers/scene_controller_battery/assets/images/large.png",
+        "small": "./drivers/scene_controller_battery/assets/images/small.png"
+      }
+    },
+    {
+      "id": "shade_controller",
+      "name": {
+        "en": "Shade Controller"
+      },
+      "images": {
+        "large": "./drivers/shade_controller/assets/images/large.png",
+        "small": "./drivers/shade_controller/assets/images/small.png"
+      }
+    },
+    {
+      "id": "smart_bulb_rgb",
+      "name": {
+        "en": "Smart Bulb Rgb"
+      },
+      "images": {
+        "large": "./drivers/smart_bulb_rgb/assets/images/large.png",
+        "small": "./drivers/smart_bulb_rgb/assets/images/small.png"
+      }
+    },
+    {
+      "id": "smart_bulb_tunable",
+      "name": {
+        "en": "Smart Bulb Tunable"
+      },
+      "images": {
+        "large": "./drivers/smart_bulb_tunable/assets/images/large.png",
+        "small": "./drivers/smart_bulb_tunable/assets/images/small.png"
+      }
+    },
+    {
+      "id": "smart_bulb_white",
+      "name": {
+        "en": "Smart Bulb White"
+      },
+      "images": {
+        "large": "./drivers/smart_bulb_white/assets/images/large.png",
+        "small": "./drivers/smart_bulb_white/assets/images/small.png"
+      }
+    },
+    {
+      "id": "smart_doorbell",
+      "name": {
+        "en": "Smart Doorbell"
+      },
+      "images": {
+        "large": "./drivers/smart_doorbell/assets/images/large.png",
+        "small": "./drivers/smart_doorbell/assets/images/small.png"
+      }
+    },
+    {
+      "id": "smart_lock",
+      "name": {
+        "en": "Smart Lock"
+      },
+      "images": {
+        "large": "./drivers/smart_lock/assets/images/large.png",
+        "small": "./drivers/smart_lock/assets/images/small.png"
+      }
+    },
+    {
+      "id": "smart_plug",
+      "name": {
+        "en": "Smart Plug"
+      },
+      "images": {
+        "large": "./drivers/smart_plug/assets/images/large.png",
+        "small": "./drivers/smart_plug/assets/images/small.png"
+      }
+    },
+    {
+      "id": "smart_spot",
+      "name": {
+        "en": "Smart Spot"
+      },
+      "images": {
+        "large": "./drivers/smart_spot/assets/images/large.png",
+        "small": "./drivers/smart_spot/assets/images/small.png"
+      }
+    },
+    {
+      "id": "smart_switch_1gang_hybrid",
+      "name": {
+        "en": "Smart Switch 1-Gang Hybrid"
+      },
+      "images": {
+        "large": "./drivers/smart_switch_1gang_hybrid/assets/images/large.png",
+        "small": "./drivers/smart_switch_1gang_hybrid/assets/images/small.png"
+      }
+    },
+    {
+      "id": "smart_switch_2gang_hybrid",
+      "name": {
+        "en": "Smart Switch 2-Gang Hybrid"
+      },
+      "images": {
+        "large": "./drivers/smart_switch_2gang_hybrid/assets/images/large.png",
+        "small": "./drivers/smart_switch_2gang_hybrid/assets/images/small.png"
+      }
+    },
+    {
+      "id": "smart_switch_3gang_hybrid",
+      "name": {
+        "en": "Smart Switch 3-Gang Hybrid"
+      },
+      "images": {
+        "large": "./drivers/smart_switch_3gang_hybrid/assets/images/large.png",
+        "small": "./drivers/smart_switch_3gang_hybrid/assets/images/small.png"
+      }
+    },
+    {
+      "id": "smart_switch_4gang_hybrid",
+      "name": {
+        "en": "Smart Switch 4-Gang Hybrid"
+      },
+      "images": {
+        "large": "./drivers/smart_switch_4gang_hybrid/assets/images/large.png",
+        "small": "./drivers/smart_switch_4gang_hybrid/assets/images/small.png"
+      }
+    },
+    {
+      "id": "smoke_detector",
+      "name": {
+        "en": "Smoke Detector"
+      },
+      "images": {
+        "large": "./drivers/smoke_detector/assets/images/large.png",
+        "small": "./drivers/smoke_detector/assets/images/small.png"
+      }
+    },
+    {
+      "id": "soil_moisture_sensor",
+      "name": {
+        "en": "Soil Moisture Sensor"
+      },
+      "images": {
+        "large": "./drivers/soil_moisture_sensor/assets/images/large.png",
+        "small": "./drivers/soil_moisture_sensor/assets/images/small.png"
+      }
+    },
+    {
+      "id": "sonoff_basic",
+      "name": {
+        "en": "Sonoff Basic"
+      },
+      "images": {
+        "large": "./drivers/sonoff_basic/assets/images/large.png",
+        "small": "./drivers/sonoff_basic/assets/images/small.png"
+      }
+    },
+    {
+      "id": "sonoff_mini",
+      "name": {
+        "en": "Sonoff Mini"
+      },
+      "images": {
+        "large": "./drivers/sonoff_mini/assets/images/large.png",
+        "small": "./drivers/sonoff_mini/assets/images/small.png"
+      }
+    },
+    {
+      "id": "sonoff_zbbridge",
+      "name": {
+        "en": "Sonoff Zbbridge"
+      },
+      "images": {
+        "large": "./drivers/sonoff_zbbridge/assets/images/large.png",
+        "small": "./drivers/sonoff_zbbridge/assets/images/small.png"
+      }
+    },
+    {
+      "id": "sos_button",
+      "name": {
+        "en": "Sos Button"
+      },
+      "images": {
+        "large": "./drivers/sos_button/assets/images/large.png",
+        "small": "./drivers/sos_button/assets/images/small.png"
+      }
+    },
+    {
+      "id": "strip_light_controller",
+      "name": {
+        "en": "Strip Light Controller"
+      },
+      "images": {
+        "large": "./drivers/strip_light_controller/assets/images/large.png",
+        "small": "./drivers/strip_light_controller/assets/images/small.png"
+      }
+    },
+    {
+      "id": "temperature_controller",
+      "name": {
+        "en": "Temperature Controller"
+      },
+      "images": {
+        "large": "./drivers/temperature_controller/assets/images/large.png",
+        "small": "./drivers/temperature_controller/assets/images/small.png"
+      }
+    },
+    {
+      "id": "temperature_humidity_sensor",
+      "name": {
+        "en": "Temperature Humidity Sensor"
+      },
+      "images": {
+        "large": "./drivers/temperature_humidity_sensor/assets/images/large.png",
+        "small": "./drivers/temperature_humidity_sensor/assets/images/small.png"
+      }
+    },
+    {
+      "id": "thermostat",
+      "name": {
+        "en": "Thermostat"
+      },
+      "images": {
+        "large": "./drivers/thermostat/assets/images/large.png",
+        "small": "./drivers/thermostat/assets/images/small.png"
+      }
+    },
+    {
+      "id": "touch_dimmer",
+      "name": {
+        "en": "Touch Dimmer"
+      },
+      "images": {
+        "large": "./drivers/touch_dimmer/assets/images/large.png",
+        "small": "./drivers/touch_dimmer/assets/images/small.png"
+      }
+    },
+    {
+      "id": "touch_switch_1gang",
+      "name": {
+        "en": "Touch Switch 1-Gang"
+      },
+      "images": {
+        "large": "./drivers/touch_switch_1gang/assets/images/large.png",
+        "small": "./drivers/touch_switch_1gang/assets/images/small.png"
+      }
+    },
+    {
+      "id": "touch_switch_2gang",
+      "name": {
+        "en": "Touch Switch 2-Gang"
+      },
+      "images": {
+        "large": "./drivers/touch_switch_2gang/assets/images/large.png",
+        "small": "./drivers/touch_switch_2gang/assets/images/small.png"
+      }
+    },
+    {
+      "id": "touch_switch_3gang",
+      "name": {
+        "en": "Touch Switch 3-Gang"
+      },
+      "images": {
+        "large": "./drivers/touch_switch_3gang/assets/images/large.png",
+        "small": "./drivers/touch_switch_3gang/assets/images/small.png"
+      }
+    },
+    {
+      "id": "touch_switch_4gang",
+      "name": {
+        "en": "Touch Switch 4-Gang"
+      },
+      "images": {
+        "large": "./drivers/touch_switch_4gang/assets/images/large.png",
+        "small": "./drivers/touch_switch_4gang/assets/images/small.png"
+      }
+    },
+    {
+      "id": "tvoc_sensor",
+      "name": {
+        "en": "Tvoc Sensor"
+      },
+      "images": {
+        "large": "./drivers/tvoc_sensor/assets/images/large.png",
+        "small": "./drivers/tvoc_sensor/assets/images/small.png"
+      }
+    },
+    {
+      "id": "usb_outlet",
+      "name": {
+        "en": "Usb Outlet"
+      },
+      "images": {
+        "large": "./drivers/usb_outlet/assets/images/large.png",
+        "small": "./drivers/usb_outlet/assets/images/small.png"
+      }
+    },
+    {
+      "id": "venetian_blind_controller",
+      "name": {
+        "en": "Venetian Blind Controller"
+      },
+      "images": {
+        "large": "./drivers/venetian_blind_controller/assets/images/large.png",
+        "small": "./drivers/venetian_blind_controller/assets/images/small.png"
+      }
+    },
+    {
+      "id": "vibration_sensor",
+      "name": {
+        "en": "Vibration Sensor"
+      },
+      "images": {
+        "large": "./drivers/vibration_sensor/assets/images/large.png",
+        "small": "./drivers/vibration_sensor/assets/images/small.png"
+      }
+    },
+    {
+      "id": "wall_switch_1gang",
+      "name": {
+        "en": "Wall Switch 1-Gang"
+      },
+      "images": {
+        "large": "./drivers/wall_switch_1gang/assets/images/large.png",
+        "small": "./drivers/wall_switch_1gang/assets/images/small.png"
+      }
+    },
+    {
+      "id": "wall_switch_1gang_ac",
+      "name": {
+        "en": "Wall Switch 1-Gang AC"
+      },
+      "images": {
+        "large": "./drivers/wall_switch_1gang_ac/assets/images/large.png",
+        "small": "./drivers/wall_switch_1gang_ac/assets/images/small.png"
+      }
+    },
+    {
+      "id": "wall_switch_1gang_dc",
+      "name": {
+        "en": "Wall Switch 1-Gang DC"
+      },
+      "images": {
+        "large": "./drivers/wall_switch_1gang_dc/assets/images/large.png",
+        "small": "./drivers/wall_switch_1gang_dc/assets/images/small.png"
+      }
+    },
+    {
+      "id": "wall_switch_2gang",
+      "name": {
+        "en": "Wall Switch 2-Gang"
+      },
+      "images": {
+        "large": "./drivers/wall_switch_2gang/assets/images/large.png",
+        "small": "./drivers/wall_switch_2gang/assets/images/small.png"
+      }
+    },
+    {
+      "id": "wall_switch_2gang_ac",
+      "name": {
+        "en": "Wall Switch 2-Gang AC"
+      },
+      "images": {
+        "large": "./drivers/wall_switch_2gang_ac/assets/images/large.png",
+        "small": "./drivers/wall_switch_2gang_ac/assets/images/small.png"
+      }
+    },
+    {
+      "id": "wall_switch_2gang_dc",
+      "name": {
+        "en": "Wall Switch 2-Gang DC"
+      },
+      "images": {
+        "large": "./drivers/wall_switch_2gang_dc/assets/images/large.png",
+        "small": "./drivers/wall_switch_2gang_dc/assets/images/small.png"
+      }
+    },
+    {
+      "id": "wall_switch_3gang",
+      "name": {
+        "en": "Wall Switch 3-Gang"
+      },
+      "images": {
+        "large": "./drivers/wall_switch_3gang/assets/images/large.png",
+        "small": "./drivers/wall_switch_3gang/assets/images/small.png"
+      }
+    },
+    {
+      "id": "wall_switch_3gang_ac",
+      "name": {
+        "en": "Wall Switch 3-Gang AC"
+      },
+      "images": {
+        "large": "./drivers/wall_switch_3gang_ac/assets/images/large.png",
+        "small": "./drivers/wall_switch_3gang_ac/assets/images/small.png"
+      }
+    },
+    {
+      "id": "wall_switch_3gang_dc",
+      "name": {
+        "en": "Wall Switch 3-Gang DC"
+      },
+      "images": {
+        "large": "./drivers/wall_switch_3gang_dc/assets/images/large.png",
+        "small": "./drivers/wall_switch_3gang_dc/assets/images/small.png"
+      }
+    },
+    {
+      "id": "wall_switch_4gang",
+      "name": {
+        "en": "Wall Switch 4-Gang"
+      },
+      "images": {
+        "large": "./drivers/wall_switch_4gang/assets/images/large.png",
+        "small": "./drivers/wall_switch_4gang/assets/images/small.png"
+      }
+    },
+    {
+      "id": "wall_switch_4gang_ac",
+      "name": {
+        "en": "Wall Switch 4-Gang AC"
+      },
+      "images": {
+        "large": "./drivers/wall_switch_4gang_ac/assets/images/large.png",
+        "small": "./drivers/wall_switch_4gang_ac/assets/images/small.png"
+      }
+    },
+    {
+      "id": "wall_switch_4gang_dc",
+      "name": {
+        "en": "Wall Switch 4-Gang DC"
+      },
+      "images": {
+        "large": "./drivers/wall_switch_4gang_dc/assets/images/large.png",
+        "small": "./drivers/wall_switch_4gang_dc/assets/images/small.png"
+      }
+    },
+    {
+      "id": "wall_switch_5gang",
+      "name": {
+        "en": "Wall Switch 5-Gang"
+      },
+      "images": {
+        "large": "./drivers/wall_switch_5gang/assets/images/large.png",
+        "small": "./drivers/wall_switch_5gang/assets/images/small.png"
+      }
+    },
+    {
+      "id": "wall_switch_5gang_ac",
+      "name": {
+        "en": "Wall Switch 5-Gang AC"
+      },
+      "images": {
+        "large": "./drivers/wall_switch_5gang_ac/assets/images/large.png",
+        "small": "./drivers/wall_switch_5gang_ac/assets/images/small.png"
+      }
+    },
+    {
+      "id": "wall_switch_6gang",
+      "name": {
+        "en": "Wall Switch 6-Gang"
+      },
+      "images": {
+        "large": "./drivers/wall_switch_6gang/assets/images/large.png",
+        "small": "./drivers/wall_switch_6gang/assets/images/small.png"
+      }
+    },
+    {
+      "id": "wall_switch_6gang_ac",
+      "name": {
+        "en": "Wall Switch 6-Gang AC"
+      },
+      "images": {
+        "large": "./drivers/wall_switch_6gang_ac/assets/images/large.png",
+        "small": "./drivers/wall_switch_6gang_ac/assets/images/small.png"
+      }
+    },
+    {
+      "id": "water_leak_sensor",
+      "name": {
+        "en": "Water Leak Sensor"
+      },
+      "images": {
+        "large": "./drivers/water_leak_sensor/assets/images/large.png",
+        "small": "./drivers/water_leak_sensor/assets/images/small.png"
+      }
+    },
+    {
+      "id": "window_motor",
+      "name": {
+        "en": "Window Motor"
+      },
+      "images": {
+        "large": "./drivers/window_motor/assets/images/large.png",
+        "small": "./drivers/window_motor/assets/images/small.png"
+      }
+    },
+    {
+      "id": "wireless_switch_1gang_cr2032",
+      "name": {
+        "en": "Wireless Switch 1-Gang Battery"
+      },
+      "images": {
+        "large": "./drivers/wireless_switch_1gang_cr2032/assets/images/large.png",
+        "small": "./drivers/wireless_switch_1gang_cr2032/assets/images/small.png"
+      }
+    },
+    {
+      "id": "wireless_switch_2gang_cr2032",
+      "name": {
+        "en": "Wireless Switch 2-Gang Battery"
+      },
+      "images": {
+        "large": "./drivers/wireless_switch_2gang_cr2032/assets/images/large.png",
+        "small": "./drivers/wireless_switch_2gang_cr2032/assets/images/small.png"
+      }
+    },
+    {
+      "id": "wireless_switch_3gang_cr2032",
+      "name": {
+        "en": "Wireless Switch 3-Gang Battery"
+      },
+      "images": {
+        "large": "./drivers/wireless_switch_3gang_cr2032/assets/images/large.png",
+        "small": "./drivers/wireless_switch_3gang_cr2032/assets/images/small.png"
+      }
+    },
+    {
+      "id": "wireless_switch_4gang_cr2032",
+      "name": {
+        "en": "Wireless Switch 4-Gang Battery"
+      },
+      "images": {
+        "large": "./drivers/wireless_switch_4gang_cr2032/assets/images/large.png",
+        "small": "./drivers/wireless_switch_4gang_cr2032/assets/images/small.png"
+      }
+    },
+    {
+      "id": "wireless_switch_5gang_cr2032",
+      "name": {
+        "en": "Wireless Switch 5-Gang Battery"
+      },
+      "images": {
+        "large": "./drivers/wireless_switch_5gang_cr2032/assets/images/large.png",
+        "small": "./drivers/wireless_switch_5gang_cr2032/assets/images/small.png"
+      }
+    },
+    {
+      "id": "wireless_switch_6gang_cr2032",
+      "name": {
+        "en": "Wireless Switch 6-Gang Battery"
+      },
+      "images": {
+        "large": "./drivers/wireless_switch_6gang_cr2032/assets/images/large.png",
+        "small": "./drivers/wireless_switch_6gang_cr2032/assets/images/small.png"
+      }
+    }
+  ]
 }

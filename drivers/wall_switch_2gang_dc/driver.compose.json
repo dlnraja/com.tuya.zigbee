@@ -1,0 +1,40 @@
+{
+  "id": "wall_switch_2gang_dc",
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "button.2"
+  ],
+  "zigbee": {
+    "manufacturerId": [],
+    "productId": [],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          6,
+          8
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/wall_switch_2gang_dc/assets/learn.svg",
+      "instruction": {
+        "en": "Turn the switch on/off 3 times quickly",
+        "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
+        "nl": "Schakel de schakelaar 3 keer snel aan/uit",
+        "de": "Schalten Sie den Schalter 3 Mal schnell ein/aus"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/wall_switch_2gang_dc/assets/small.png",
+    "large": "/drivers/wall_switch_2gang_dc/assets/large.png"
+  },
+  "settings": []
+}

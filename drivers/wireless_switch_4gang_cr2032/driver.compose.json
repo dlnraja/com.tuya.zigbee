@@ -1,0 +1,47 @@
+{
+  "id": "wireless_switch_4gang_battery",
+  "class": "button",
+  "capabilities": [
+    "onoff",
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AA"
+    ]
+  },
+  "zigbee": {
+    "manufacturerId": [],
+    "productId": [],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          6
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/wireless_switch_4gang_battery/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button until the LED flashes",
+        "fr": "Appuyez et maintenez le bouton jusqu'à ce que la LED clignote",
+        "nl": "Houd de knop ingedrukt totdat de LED knippert",
+        "de": "Halten Sie die Taste gedrückt, bis die LED blinkt"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/wireless_switch_4gang_battery/assets/small.png",
+    "large": "/drivers/wireless_switch_4gang_battery/assets/large.png"
+  }
+}
