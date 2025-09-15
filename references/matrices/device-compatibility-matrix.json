@@ -1,0 +1,132 @@
+{
+  "lastUpdated": "2025-09-15T21:31:26.624Z",
+  "totalDrivers": 57,
+  "categories": {
+    "automation_control": [
+      "air_quality_monitor",
+      "co_detector",
+      "dimmer_switch",
+      "emergency_button",
+      "fan_controller",
+      "gu10_spot",
+      "hvac_controller",
+      "multisensor",
+      "panic_button",
+      "radar_sensor",
+      "radiator_valve",
+      "rotary_dimmer",
+      "scene_switch",
+      "shade_controller",
+      "soil_moisture_sensor",
+      "sos_button",
+      "touch_switch",
+      "vibration_sensor",
+      "wall_switch_1gang",
+      "wall_switch_2gang",
+      "wall_switch_3gang",
+      "wall_switch_4gang",
+      "wireless_button"
+    ],
+    "access_control": [
+      "blind_controller",
+      "curtain_motor",
+      "fingerprint_lock",
+      "keypad_lock",
+      "roller_blind",
+      "smart_lock"
+    ],
+    "smart_lighting": [
+      "candle_bulb",
+      "filament_bulb",
+      "led_controller",
+      "led_strip",
+      "rgb_bulb",
+      "smart_bulb",
+      "tunable_white_bulb"
+    ],
+    "contact_security": [
+      "contact_sensor",
+      "door_controller",
+      "door_lock",
+      "door_window_sensor",
+      "garage_door",
+      "window_motor"
+    ],
+    "power_energy": [
+      "energy_plug",
+      "extension_plug",
+      "smart_outlet",
+      "smart_plug",
+      "usb_outlet",
+      "wall_outlet"
+    ],
+    "safety_detection": [
+      "gas_detector",
+      "smoke_detector",
+      "water_leak_sensor"
+    ],
+    "motion_detection": [
+      "motion_sensor",
+      "pir_sensor",
+      "presence_sensor"
+    ],
+    "temperature_climate": [
+      "temperature_controller",
+      "temperature_humidity_sensor",
+      "thermostat"
+    ]
+  },
+  "manufacturerIds": [
+    4417,
+    4098,
+    4619,
+    4742,
+    4648,
+    4644,
+    4455,
+    4659,
+    4660,
+    "1005007769107379"
+  ],
+  "productIds": [
+    1037,
+    1038,
+    1039,
+    1025,
+    1029,
+    1030,
+    1043,
+    1044,
+    1045,
+    1040,
+    1041,
+    1042,
+    1034,
+    1035,
+    1036,
+    1026,
+    1027,
+    1028,
+    1031,
+    1032,
+    1033
+  ],
+  "forumIssues": [
+    {
+      "post": 141,
+      "user": "W_vd_P",
+      "device": "Tuya button",
+      "aliexpress": "1005007769107379",
+      "issue": "Device pairs but immediately disconnects, blue LED keeps blinking",
+      "priority": "critical",
+      "category": "connectivity",
+      "solution": "Improve Zigbee pairing stability for buttons"
+    },
+    {
+      "post": 139,
+      "user": "SunBeech",
+      "suggestion": "Use \"Preformatted text\" option for JSON code formatting",
+      "impact": "Better readability of diagnostic outputs"
+    }
+  ]
+}
