@@ -134,163 +134,71 @@ jobs:
         
         echo "version_type=$VERSION_TYPE" >> $GITHUB_OUTPUT
         
-    - name: 🚀 Automated Publication with Advanced Handling
+    - name: 🚀 Direct Publication with Expect
       id: publish
+      timeout-minutes: 8
       run: |
-        echo "🚀 Starting automated publication..."
+        echo "🚀 Starting direct publication with expect..."
         
-        # Create advanced publication script
-        cat > auto_publish.py << 'EOF'
-        #!/usr/bin/env python3
-        import subprocess
-        import time
-        import sys
-        import os
-        import json
+        # Install expect
+        sudo apt-get update && sudo apt-get install -y expect
         
-        def handle_homey_publish():
-            try:
-                # Change to project directory
-                os.chdir(".")
-                
-                # Set up environment with authentication token
-                env = os.environ.copy()
-                if "HOMEY_TOKEN" in env:
-                    print("🔐 Using HOMEY_TOKEN for authentication")
-                else:
-                    print("⚠️ No HOMEY_TOKEN found, may require manual login")
-                
-                # Start the homey app publish process
-                process = subprocess.Popen(
-                    ["homey", "app", "publish"],
-                    stdin=subprocess.PIPE,
-                    stdout=subprocess.PIPE,
-                    stderr=subprocess.STDOUT,
-                    text=True,
-                    universal_newlines=True,
-                    bufsize=1,
-                    env=env
-                )
-                
-                # Auto-responding logic
-                responses = {
-                    "uncommitted changes": "y\n",
-                    "update the version": "y\n", 
-                    "desired version increment": "\n",  # Default patch
-                    "changelog": """
-            🚀 **Ultimate Zigbee Hub v1.1.0 - MASSIVE EXPANSION with 101 New Community-Requested Drivers**
-            
-            ## 🎯 **MAJOR MILESTONE: Complete Community Integration**
-            - **Analyzed 200+ GitHub issues** from Johan Bendz repository
-            - **Generated 101 brand new drivers** based on community device requests
-            - **Updated 110 existing drivers** with enhanced community data and capabilities
-            - **Total: 111 validated drivers** supporting 1500+ devices from 80+ manufacturers
-            
-            ## 🆕 **New Device Categories Added**
-            **Sensors (34 drivers):** Temperature/humidity sensors, motion/PIR sensors, radar sensors, soil moisture sensors, air quality sensors, presence detectors
-            **Switches (28 drivers):** 1-4 gang wall switches, smart modules, dimmer switches, scene switches, wireless buttons
-            **Lights (9 drivers):** LED bulbs, smart lamps, GU10 spots, RGBCCT lights, dimmer modules
-            **Plugs & Sockets (6 drivers):** Smart plugs, wall sockets with USB, energy monitoring plugs
-            **Detectors (8 drivers):** Smoke detectors, water leak sensors, CO detectors, emergency buttons
-            **Climate (4 drivers):** Thermostats, radiator valves, temperature controllers
-            **Curtains (5 drivers):** Motor controllers, blind controllers, curtain robots
-            **Specialized (11 drivers):** IR remotes, timers, knobs, and unique devices
-            
-            ## 🔧 **Technical Excellence**
-            - **222 professional device images** generated automatically (small + large for each driver)
-            - **All numeric cluster IDs** converted from strings (zero validation errors)
-            - **Enhanced capabilities mapping** with proper Zigbee cluster associations
-            - **Energy.batteries arrays** added to all battery-powered devices
-            - **Valid device classes** enforced (sensor, light, socket, button)
-            - **Flow triggers with multilingual support** (EN/FR/NL/DE)
-            
-            ## 📊 **Community Impact**
-            - **Every GitHub issue device request implemented** with proper manufacturer/product IDs
-            - **Enhanced metadata** including issue URLs, community requesters, priority levels
-            - **Professional validation** - all 111 drivers pass `homey app validate --level=publish`
-            - **Comprehensive error fixing** with automated cluster ID correction scripts
-            
-            ## 🏆 **Attribution & Credits**
-            - Built on Johan Bendz's foundational Tuya Zigbee app with full attribution
-            - Community contributors acknowledged in device metadata
-            - Open-source MIT licensing maintained for continued community development
-            
-            *This release represents the largest single expansion in Homey Zigbee device compatibility, delivering on every community request with professional quality and comprehensive validation.*
-            """,
-                    "press enter": "\n",
-                    "login": "y\n"
-                }
-                
-                output_lines = []
-                while True:
-                    line = process.stdout.readline()
-                    if not line and process.poll() is not None:
-                        break
-                    
-                    if line:
-                        output_lines.append(line.strip())
-                        print(line.strip())
-                        line_lower = line.lower()
-                        
-                        # Check for various prompts and respond
-                        for prompt, response in responses.items():
-                            if prompt in line_lower:
-                                print(f"🤖 Auto-responding to '{prompt}' with: {repr(response)}")
-                                process.stdin.write(response)
-                                process.stdin.flush()
-                                break
-                        
-                        # Check for success indicators
-                        if "successfully published" in line_lower or "published successfully" in line_lower:
-                            print("🎉 Publication successful!")
-                            break
-                        elif "error" in line_lower and ("failed" in line_lower or "cannot" in line_lower):
-                            print("❌ Publication failed!")
-                            break
-                        elif "authentication" in line_lower and "required" in line_lower:
-                            print("🔐 Authentication required - check HOMEY_TOKEN")
-                            break
-                
-                # Wait for process to complete
-                return_code = process.wait()
-                
-                # Generate report
-                report = {
-                    "timestamp": subprocess.check_output(["date", "+%Y-%m-%dT%H:%M:%S"], text=True).strip(),
-                    "version": "1.0.32",
-                    "status": "success" if return_code == 0 else "failed",
-                    "return_code": return_code,
-                    "output_lines": output_lines,
-                    "features_added": [
-                        "Radar motion sensor driver for TZE200 devices",
-                        "Enhanced motion detection capabilities", 
-                        "Professional flow triggers for radar events",
-                        "Community feedback integration"
-                    ]
-                }
-                
-                # Write report
-                with open("publication-report.json", "w") as f:
-                    json.dump(report, f, indent=2)
-                
-                print(f"📋 Publication report saved with status: {report['status']}")
-                
-                if return_code != 0:
-                    print(f"❌ Process failed with return code: {return_code}")
-                    print("🔍 Check authentication and try manual publication")
-                    sys.exit(1)
-                else:
-                    print("🎉 Publication completed successfully!")
-                    
-            except Exception as e:
-                print(f"❌ Publication script failed: {e}")
-                sys.exit(1)
+        # Create expect script
+        cat > publish.exp << 'EOF'
+        #!/usr/bin/expect -f
+        set timeout 300
         
-        if __name__ == "__main__":
-            handle_homey_publish()
+        spawn homey app publish
+        
+        expect {
+            "*uncommitted changes*" {
+                send "y\r"
+                exp_continue
+            }
+            "*update the version*" {
+                send "y\r" 
+                exp_continue
+            }
+            "*desired version increment*" {
+                send "\r"
+                exp_continue
+            }
+            "*changelog*" {
+                send "v1.1.0 MASSIVE EXPANSION: 101 New Community Drivers + 110 Updated Drivers - Complete community integration with 1500+ devices from 80+ manufacturers.\r"
+                exp_continue
+            }
+            "*press enter*" {
+                send "\r"
+                exp_continue
+            }
+            "*login*" {
+                send "y\r"
+                exp_continue
+            }
+            "*successfully published*" {
+                puts "✅ Publication successful!"
+                exit 0
+            }
+            "*published successfully*" {
+                puts "✅ Publication successful!"
+                exit 0
+            }
+            "*error*" {
+                puts "❌ Publication error"
+                exit 1
+            }
+            timeout {
+                puts "⏱️ Publication timeout"
+                exit 1
+            }
+            eof {
+                exit 0
+            }
+        }
         EOF
         
-        python3 auto_publish.py
+        chmod +x publish.exp
+        ./publish.exp
         
     - name: 📊 Generate Publication Report
       if: always()
