@@ -1,0 +1,55 @@
+{
+  "name": {
+    "en": "Sonoff Basic",
+    "fr": "Sonoff Basic",
+    "de": "Sonoff Basic",
+    "nl": "Sonoff Basic"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power"
+  ],
+  "energy": {
+    "approximation": {
+      "usageConstant": 5
+    }
+  },
+  "images": {
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "SONOFF"
+    ],
+    "productId": [
+      "BASICZBR3",
+      "ZBMINI"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          6,
+          1794,
+          2820
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "./assets/images/large.png",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
+        "fr": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
+        "de": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
+        "nl": "Press and hold the pairing button for 5 seconds until LED blinks rapidly."
+      }
+    }
+  }
+}

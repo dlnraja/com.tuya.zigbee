@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-09-15T22:57:50.887Z",
+  "scraping_summary": {
+    "repositories_scraped": 6,
+    "total_issues": 0,
+    "total_pull_requests": 0,
+    "device_configs_found": 0,
+    "manufacturer_ids_discovered": 0,
+    "product_ids_discovered": 0
+  },
+  "extracted_devices": [],
+  "compatibility_analysis": {
+    "common_devices": {},
+    "unique_to_johan_bendz": [],
+    "unique_to_zigbee2mqtt": [],
+    "coverage_gaps": []
+  },
+  "enhanced_drivers": [],
+  "manufacturer_ids": [],
+  "product_ids": []
+}

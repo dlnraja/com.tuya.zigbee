@@ -1,0 +1,400 @@
+{
+  "timestamp": "2025-09-16T00:50:00Z",
+  "total_processed": 24,
+  "successful": 24,
+  "failed": 0,
+  "success_rate": 100.0,
+  "categories_processed": {
+    "hybrid_switches": 3,
+    "touch_switches": 3,
+    "battery_switches": 10,
+    "ac_wall_switches": 5,
+    "dc_switches": 3
+  },
+  "results": [
+    {
+      "driver": "smart_switch_2gang_hybrid",
+      "status": "success",
+      "paths": {
+        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_switch_2gang_hybrid\\assets\\small.png",
+        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_switch_2gang_hybrid\\assets\\large.png"
+      },
+      "context": {
+        "category": "hybrid_switches",
+        "button_count": 2,
+        "power_type": "hybrid",
+        "device_type": "switch",
+        "gang_count": 2,
+        "interface_type": "physical"
+      }
+    },
+    {
+      "driver": "smart_switch_3gang_hybrid",
+      "status": "success",
+      "paths": {
+        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_switch_3gang_hybrid\\assets\\small.png",
+        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_switch_3gang_hybrid\\assets\\large.png"
+      },
+      "context": {
+        "category": "hybrid_switches",
+        "button_count": 3,
+        "power_type": "hybrid",
+        "device_type": "switch",
+        "gang_count": 3,
+        "interface_type": "physical"
+      }
+    },
+    {
+      "driver": "smart_switch_4gang_hybrid",
+      "status": "success",
+      "paths": {
+        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_switch_4gang_hybrid\\assets\\small.png",
+        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_switch_4gang_hybrid\\assets\\large.png"
+      },
+      "context": {
+        "category": "hybrid_switches",
+        "button_count": 4,
+        "power_type": "hybrid",
+        "device_type": "switch",
+        "gang_count": 4,
+        "interface_type": "physical"
+      }
+    },
+    {
+      "driver": "touch_switch_2gang",
+      "status": "success",
+      "paths": {
+        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_switch_2gang\\assets\\small.png",
+        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_switch_2gang\\assets\\large.png"
+      },
+      "context": {
+        "category": "touch_switches",
+        "button_count": 2,
+        "power_type": "unknown",
+        "device_type": "switch",
+        "gang_count": 2,
+        "interface_type": "touch"
+      }
+    },
+    {
+      "driver": "touch_switch_3gang",
+      "status": "success",
+      "paths": {
+        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_switch_3gang\\assets\\small.png",
+        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_switch_3gang\\assets\\large.png"
+      },
+      "context": {
+        "category": "touch_switches",
+        "button_count": 3,
+        "power_type": "unknown",
+        "device_type": "switch",
+        "gang_count": 3,
+        "interface_type": "touch"
+      }
+    },
+    {
+      "driver": "touch_switch_4gang",
+      "status": "success",
+      "paths": {
+        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_switch_4gang\\assets\\small.png",
+        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_switch_4gang\\assets\\large.png"
+      },
+      "context": {
+        "category": "touch_switches",
+        "button_count": 4,
+        "power_type": "unknown",
+        "device_type": "switch",
+        "gang_count": 4,
+        "interface_type": "touch"
+      }
+    },
+    {
+      "driver": "wall_switch_2gang",
+      "status": "success",
+      "paths": {
+        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_2gang\\assets\\small.png",
+        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_2gang\\assets\\large.png"
+      },
+      "context": {
+        "category": "battery_switches",
+        "button_count": 2,
+        "power_type": "unknown",
+        "device_type": "switch",
+        "gang_count": 2,
+        "interface_type": "physical"
+      }
+    },
+    {
+      "driver": "wall_switch_2gang_ac",
+      "status": "success",
+      "paths": {
+        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_2gang_ac\\assets\\small.png",
+        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_2gang_ac\\assets\\large.png"
+      },
+      "context": {
+        "category": "ac_wall_switches",
+        "button_count": 2,
+        "power_type": "ac",
+        "device_type": "switch",
+        "gang_count": 2,
+        "interface_type": "physical"
+      }
+    },
+    {
+      "driver": "wall_switch_2gang_dc",
+      "status": "success",
+      "paths": {
+        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_2gang_dc\\assets\\small.png",
+        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_2gang_dc\\assets\\large.png"
+      },
+      "context": {
+        "category": "dc_switches",
+        "button_count": 2,
+        "power_type": "dc",
+        "device_type": "switch",
+        "gang_count": 2,
+        "interface_type": "physical"
+      }
+    },
+    {
+      "driver": "wall_switch_3gang",
+      "status": "success",
+      "paths": {
+        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_3gang\\assets\\small.png",
+        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_3gang\\assets\\large.png"
+      },
+      "context": {
+        "category": "battery_switches",
+        "button_count": 3,
+        "power_type": "unknown",
+        "device_type": "switch",
+        "gang_count": 3,
+        "interface_type": "physical"
+      }
+    },
+    {
+      "driver": "wall_switch_3gang_ac",
+      "status": "success",
+      "paths": {
+        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_3gang_ac\\assets\\small.png",
+        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_3gang_ac\\assets\\large.png"
+      },
+      "context": {
+        "category": "ac_wall_switches",
+        "button_count": 3,
+        "power_type": "ac",
+        "device_type": "switch",
+        "gang_count": 3,
+        "interface_type": "physical"
+      }
+    },
+    {
+      "driver": "wall_switch_3gang_dc",
+      "status": "success",
+      "paths": {
+        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_3gang_dc\\assets\\small.png",
+        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_3gang_dc\\assets\\large.png"
+      },
+      "context": {
+        "category": "dc_switches",
+        "button_count": 3,
+        "power_type": "dc",
+        "device_type": "switch",
+        "gang_count": 3,
+        "interface_type": "physical"
+      }
+    },
+    {
+      "driver": "wall_switch_4gang",
+      "status": "success",
+      "paths": {
+        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_4gang\\assets\\small.png",
+        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_4gang\\assets\\large.png"
+      },
+      "context": {
+        "category": "battery_switches",
+        "button_count": 4,
+        "power_type": "unknown",
+        "device_type": "switch",
+        "gang_count": 4,
+        "interface_type": "physical"
+      }
+    },
+    {
+      "driver": "wall_switch_4gang_ac",
+      "status": "success",
+      "paths": {
+        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_4gang_ac\\assets\\small.png",
+        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_4gang_ac\\assets\\large.png"
+      },
+      "context": {
+        "category": "ac_wall_switches",
+        "button_count": 4,
+        "power_type": "ac",
+        "device_type": "switch",
+        "gang_count": 4,
+        "interface_type": "physical"
+      }
+    },
+    {
+      "driver": "wall_switch_4gang_dc",
+      "status": "success",
+      "paths": {
+        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_4gang_dc\\assets\\small.png",
+        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_4gang_dc\\assets\\large.png"
+      },
+      "context": {
+        "category": "dc_switches",
+        "button_count": 4,
+        "power_type": "dc",
+        "device_type": "switch",
+        "gang_count": 4,
+        "interface_type": "physical"
+      }
+    },
+    {
+      "driver": "wall_switch_5gang",
+      "status": "success",
+      "paths": {
+        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_5gang\\assets\\small.png",
+        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_5gang\\assets\\large.png"
+      },
+      "context": {
+        "category": "battery_switches",
+        "button_count": 5,
+        "power_type": "unknown",
+        "device_type": "switch",
+        "gang_count": 5,
+        "interface_type": "physical"
+      }
+    },
+    {
+      "driver": "wall_switch_5gang_ac",
+      "status": "success",
+      "paths": {
+        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_5gang_ac\\assets\\small.png",
+        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_5gang_ac\\assets\\large.png"
+      },
+      "context": {
+        "category": "ac_wall_switches",
+        "button_count": 5,
+        "power_type": "ac",
+        "device_type": "switch",
+        "gang_count": 5,
+        "interface_type": "physical"
+      }
+    },
+    {
+      "driver": "wall_switch_6gang",
+      "status": "success",
+      "paths": {
+        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_6gang\\assets\\small.png",
+        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_6gang\\assets\\large.png"
+      },
+      "context": {
+        "category": "battery_switches",
+        "button_count": 6,
+        "power_type": "unknown",
+        "device_type": "switch",
+        "gang_count": 6,
+        "interface_type": "physical"
+      }
+    },
+    {
+      "driver": "wall_switch_6gang_ac",
+      "status": "success",
+      "paths": {
+        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_6gang_ac\\assets\\small.png",
+        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_6gang_ac\\assets\\large.png"
+      },
+      "context": {
+        "category": "ac_wall_switches",
+        "button_count": 6,
+        "power_type": "ac",
+        "device_type": "switch",
+        "gang_count": 6,
+        "interface_type": "physical"
+      }
+    },
+    {
+      "driver": "wireless_switch_2gang_cr2032",
+      "status": "success",
+      "paths": {
+        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_2gang_cr2032\\assets\\small.png",
+        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_2gang_cr2032\\assets\\large.png"
+      },
+      "context": {
+        "category": "battery_switches",
+        "button_count": 2,
+        "power_type": "unknown",
+        "device_type": "switch",
+        "gang_count": 2,
+        "interface_type": "wireless"
+      }
+    },
+    {
+      "driver": "wireless_switch_3gang_cr2032",
+      "status": "success",
+      "paths": {
+        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_3gang_cr2032\\assets\\small.png",
+        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_3gang_cr2032\\assets\\large.png"
+      },
+      "context": {
+        "category": "battery_switches",
+        "button_count": 3,
+        "power_type": "unknown",
+        "device_type": "switch",
+        "gang_count": 3,
+        "interface_type": "wireless"
+      }
+    },
+    {
+      "driver": "wireless_switch_4gang_cr2032",
+      "status": "success",
+      "paths": {
+        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_4gang_cr2032\\assets\\small.png",
+        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_4gang_cr2032\\assets\\large.png"
+      },
+      "context": {
+        "category": "battery_switches",
+        "button_count": 4,
+        "power_type": "unknown",
+        "device_type": "switch",
+        "gang_count": 4,
+        "interface_type": "wireless"
+      }
+    },
+    {
+      "driver": "wireless_switch_5gang_cr2032",
+      "status": "success",
+      "paths": {
+        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_5gang_cr2032\\assets\\small.png",
+        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_5gang_cr2032\\assets\\large.png"
+      },
+      "context": {
+        "category": "battery_switches",
+        "button_count": 5,
+        "power_type": "unknown",
+        "device_type": "switch",
+        "gang_count": 5,
+        "interface_type": "wireless"
+      }
+    },
+    {
+      "driver": "wireless_switch_6gang_cr2032",
+      "status": "success",
+      "paths": {
+        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_6gang_cr2032\\assets\\small.png",
+        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_6gang_cr2032\\assets\\large.png"
+      },
+      "context": {
+        "category": "battery_switches",
+        "button_count": 6,
+        "power_type": "unknown",
+        "device_type": "switch",
+        "gang_count": 6,
+        "interface_type": "wireless"
+      }
+    }
+  ]
+}

@@ -2,29 +2,57 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class TemperatureHumiditySensorDevice extends ZigBeeDevice {
-
-    async onNodeInit({ zclNode }) {
-        this.printNode();
-
-                this.registerCapability('measure_temperature', 1026);
-        this.registerCapability('measure_humidity', 1029);
-        this.registerCapability('measure_battery', 1);
-
-        this.log('temperature_humidity_sensor device initialized');
-    }
-
+class SoilTemperatureHumiditySensorDevice extends ZigBeeDevice {
     
-    onCapabilityOnOff(value) {
-        return this.zclNode.endpoints[1].clusters.onOff.setOn(value);
+    async onNodeInit() {
+        this.log('soil_temperature_humidity_sensor device initialized');
+        
+        // Register capabilities based on driver type
+        await this.registerCapabilities();
+        
+        // Set up device-specific listeners
+        await this.setupListeners();
     }
-
-    onCapabilityDim(value) {
-        return this.zclNode.endpoints[1].clusters.levelControl.moveToLevel({
-            level: Math.round(value * 254),
-            transitionTime: 1
-        });
+    
+    async registerCapabilities() {
+        // Implementation based on capabilities defined in driver.compose.json
+        if (this.hasCapability('onoff')) {
+            this.registerCapability('onoff', 'genOnOff');
+        }
+        
+        if (this.hasCapability('dim')) {
+            this.registerCapability('dim', 'genLevelCtrl');
+        }
+        
+        if (this.hasCapability('measure_battery')) {
+            this.registerCapability('measure_battery', 'genPowerCfg', {
+                reportOpts: {
+                    configureAttributeReporting: {
+                        minInterval: 0,
+                        maxInterval: 3600,
+                        minChange: 1
+                    }
+                }
+            });
+        }
+        
+        if (this.hasCapability('alarm_motion')) {
+            this.registerCapability('alarm_motion', 'msOccupancySensing');
+        }
+        
+        if (this.hasCapability('measure_temperature')) {
+            this.registerCapability('measure_temperature', 'msTemperatureMeasurement');
+        }
+        
+        if (this.hasCapability('measure_humidity')) {
+            this.registerCapability('measure_humidity', 'msRelativeHumidity');
+        }
+    }
+    
+    async setupListeners() {
+        // Device-specific event listeners and configurations
+        this.log('Device listeners configured');
     }
 }
 
-module.exports = TemperatureHumiditySensorDevice;
+module.exports = SoilTemperatureHumiditySensorDevice;

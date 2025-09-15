@@ -1,0 +1,68 @@
+{
+  "id": "motion_sensor_radar_ac",
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion"
+  ],
+  "zigbee": {
+    "manufacturerId": [],
+    "productId": [],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          1030
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/motion_sensor_radar_ac/assets/learn.svg",
+      "instruction": {
+        "en": "Turn the switch on/off 3 times quickly",
+        "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
+        "nl": "Schakel de schakelaar 3 keer snel aan/uit",
+        "de": "Schalten Sie den Schalter 3 Mal schnell ein/aus"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/motion_sensor_radar_ac/assets/small.png",
+    "large": "/drivers/motion_sensor_radar_ac/assets/large.png"
+  },
+  "settings": [
+    {
+      "id": "motion_sensitivity",
+      "type": "dropdown",
+      "label": {
+        "en": "Motion Sensitivity",
+        "fr": "Sensibilité de mouvement"
+      },
+      "value": "medium",
+      "values": [
+        {
+          "id": "low",
+          "label": {
+            "en": "Low",
+            "fr": "Faible"
+          }
+        },
+        {
+          "id": "medium",
+          "label": {
+            "en": "Medium",
+            "fr": "Moyen"
+          }
+        },
+        {
+          "id": "high",
+          "label": {
+            "en": "High",
+            "fr": "Élevé"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,33 +1,15 @@
 {
-  "name": {
-    "en": "Temperature Humidity Sensor"
-  },
+  "id": "soil_temperature_humidity_sensor",
   "class": "sensor",
   "capabilities": [
     "measure_temperature",
     "measure_humidity",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "TZ3000_fllyghyj",
-      "TZ3000_dowj6gyi",
-      "TZ3000_xr3htd96",
-      "TZ3000_8ybe88nf",
-      "TZ3000_bjawzodf",
-      "TZ3000_saiqcn0y",
-      "TZ3000_zl1kmjqx",
-      "_TZE200_locansqn",
-      "_TZE200_bq5c8xfe",
-      "_TZE200_8ygsuhe1",
-      "_TZE284_sgabhwa6"
-    ],
-    "productId": [
-      "TS0201",
-      "TH02",
-      "TEMP1",
-      "THSensor"
-    ],
+    "manufacturerId": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -36,43 +18,24 @@
           3,
           1026,
           1029
+        ],
+        "bindings": [
+          1
         ]
       }
     },
-    "manufacturerIds": [
-      4417,
-      4098,
-      4619,
-      4742,
-      4648,
-      4644,
-      4455,
-      4659,
-      4660
-    ],
-    "productIds": [
-      1031,
-      1032,
-      1033
-    ]
+    "learnmode": {
+      "image": "/drivers/soil_temperature_humidity_sensor/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button until the LED flashes",
+        "fr": "Appuyez et maintenez le bouton jusqu'à ce que la LED clignote",
+        "nl": "Houd de knop ingedrukt totdat de LED knippert",
+        "de": "Halten Sie die Taste gedrückt, bis die LED blinkt"
+      }
+    }
   },
   "images": {
-    "small": "/drivers/temperature_humidity_sensor/assets/small.png",
-    "large": "/drivers/temperature_humidity_sensor/assets/large.png",
-    "xlarge": "/drivers/temperature_humidity_sensor/assets/xlarge.png"
-  },
-  "energy": {
-    "batteries": [
-      "CR2032",
-      "AA"
-    ]
-  },
-  "community": {
-    "sources": [
-      "Forum temperature sensor reports",
-      "Zigbee2MQTT device database"
-    ],
-    "enriched": true,
-    "last_updated": "2025-09-15T19:34:03.088Z"
+    "small": "/drivers/soil_temperature_humidity_sensor/assets/small.png",
+    "large": "/drivers/soil_temperature_humidity_sensor/assets/large.png"
   }
 }

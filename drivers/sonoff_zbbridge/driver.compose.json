@@ -1,0 +1,47 @@
+{
+  "name": {
+    "en": "Sonoff Zbbridge",
+    "fr": "Sonoff Zbbridge",
+    "de": "Sonoff Zbbridge",
+    "nl": "Sonoff Zbbridge"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff"
+  ],
+  "energy": {},
+  "images": {
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "SONOFF"
+    ],
+    "productId": [
+      "BASICZBR3",
+      "ZBMINI"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          6
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "./assets/images/large.png",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
+        "fr": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
+        "de": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
+        "nl": "Press and hold the pairing button for 5 seconds until LED blinks rapidly."
+      }
+    }
+  }
+}
