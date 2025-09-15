@@ -1,7 +1,7 @@
 {
   "id": "zigbee_smart_plug",
   "name": {
-    "en": "Zigbee Smart Plug"
+    "en": "Smart Plug"
   },
   "class": "socket",
   "capabilities": [
@@ -12,10 +12,26 @@
       "_TZ3000_",
       "_TZE200_",
       "_TZE284_",
-      "TUYA"
+      "TUYA",
+      "_TZ3000_3ooaz3ng",
+      "_TZ3000_g5xawfcq",
+      "_TZ3000_vtscrpmw",
+      "_TZ3000_rdtixbnu",
+      "_TZ3000_8nkb7mof",
+      "_TZ3000_mraovvmm",
+      "_TZ3000_cphmq0q7",
+      "_TZ3000_ew3ldmgx",
+      "_TZ3000_2putqrmw",
+      "_TZ3000_yujkchbz",
+      "_TZ3000_typdpbpg",
+      "_TZ3000_w0qqde0g"
     ],
     "productId": [
-      "XH-TZ3PJ"
+      "XH-TZ3PJ",
+      "TS0121",
+      "TS011F",
+      "TS0115",
+      "TS0001"
     ],
     "endpoints": {
       "1": {

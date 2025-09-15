@@ -158,7 +158,7 @@ jobs:
         echo "Method 1: Using expect script..."
         cat > publish.exp << 'EOF'
         #!/usr/bin/expect -f
-        set timeout 180
+        set timeout 300
         
         spawn homey app publish
         
@@ -173,11 +173,11 @@ jobs:
             exp_continue
           }
           -re "Patch.*Minor.*Major" {
-            send "\r"
+            send "3\r"
             exp_continue
           }
           -re "changelog|What's new" {
-            send "Ultimate Zigbee Hub - Automated release with 1500+ devices, 80+ manufacturers, SDK3\r"
+            send "Ultimate Zigbee Hub v1.0.30 - Enhanced automation with improved version control, 1500+ devices, 80+ manufacturers, SDK3 compliant\r"
             exp_continue
           }
           "published" {

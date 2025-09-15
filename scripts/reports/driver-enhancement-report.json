@@ -1,0 +1,25 @@
+{
+  "timestamp": "2025-09-15T14:23:23.927Z",
+  "enhanced": 31,
+  "total": 111,
+  "categories": [
+    "Motion & Presence",
+    "Contact & Security",
+    "Temperature & Climate",
+    "Smart Lighting",
+    "Power & Energy",
+    "Safety & Detection",
+    "Automation Control"
+  ],
+  "source": "Johan Bendz community repository",
+  "deviceTypes": [
+    "motion_sensor",
+    "contact_sensor",
+    "temperature_humidity_sensor",
+    "smart_light",
+    "smart_plug",
+    "water_leak_detector",
+    "smart_switch"
+  ],
+  "success": true
+}

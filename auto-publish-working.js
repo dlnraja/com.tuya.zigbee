@@ -41,10 +41,10 @@ try {
     console.log('⚠️ Validation avec warnings (continue)');
 }
 
-const changelog = 'Ultimate Zigbee Hub v1.1.9 - Automated publication. 1500+ Zigbee devices from 80+ manufacturers. SDK3 compliant.';
+const changelog = 'Ultimate Zigbee Hub v1.0.30 - Enhanced automation with improved version control, 1500+ devices, 80+ manufacturers, SDK3 compliant';
 
-// Create input file with proper line endings
-const input = 'y\r\nn\r\n' + changelog + '\r\n';
+// Create input file with proper line endings  
+const input = 'y\r\ny\r\n3\r\n' + changelog + '\r\n';
 fs.writeFileSync('publish-input.txt', input);
 
 console.log('📤 Publication en cours...');
@@ -62,7 +62,7 @@ const methods = [
     },
     {
         name: 'Echo direct',
-        cmd: `cmd /c "echo y& echo n& echo ${changelog} | homey app publish"`
+        cmd: `cmd /c "echo y& echo y& echo 3& echo ${changelog} | homey app publish"`
     }
 ];
 
@@ -73,10 +73,19 @@ for (const method of methods) {
     
     console.log(`\n🔧 Méthode: ${method.name}`);
     try {
-        execSync(method.cmd, {
-            stdio: 'inherit',
+        const homeyProcess = execSync(method.cmd, {
+            stdio: 'pipe',
             timeout: 120000
         });
+        const currentOutput = homeyProcess.toString();
+        if (currentOutput.includes('changelog') && !promptHandled.changelog) {
+            homeyProcess.stdin.write('Ultimate Zigbee Hub v1.0.30 - Enhanced automation with improved version control, 1500+ devices, 80+ manufacturers, SDK3 compliant\n');
+            promptHandled.changelog = true;
+        }
+        if (currentOutput.includes('Select.*version.*Patch') && !promptHandled.selection) {
+            homeyProcess.stdin.write('3\n');
+            promptHandled.selection = true;
+        }
         success = true;
         console.log('✅ Succès!');
     } catch (e) {
