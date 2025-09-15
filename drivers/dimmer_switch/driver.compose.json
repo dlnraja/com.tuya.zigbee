@@ -1,56 +1,57 @@
 {
-  "id": "dimmer_switch",
   "name": {
     "en": "Dimmer Switch"
   },
-  "class": "light",
+  "class": "sensor",
   "capabilities": [
-    "onoff",
-    "dim"
+    "onoff"
   ],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_",
-      "_TZE200_",
-      "_TZE284_",
-      "TUYA"
+      "TZ3000_switch",
+      "TZ3000_button",
+      "TZ3000_generic",
+      "TZ3000_common",
+      "_TZE200_universal",
+      "TZ3000_switch",
+      "_TZE200_switch",
+      "_TZE284_switch",
+      "MOES"
     ],
     "productId": [
-      "TS0012 (This one is already supported in v0.2.73!) - Issue can be removed"
+      "TS0043",
+      "SWITCH",
+      "TS0001",
+      "TS0601",
+      "GENERIC",
+      "TS0043",
+      "TS0012",
+      "TS0011",
+      "SWITCH1",
+      "ZM-105-M"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
           3,
-          6,
-          8
+          6
         ]
-      }
-    },
-    "learnmode": {
-      "image": "/drivers/dimmer_switch/assets/learn.svg",
-      "instruction": {
-        "en": "Press and hold the button on your Dimmer Switch for 3 seconds until the LED starts blinking rapidly."
       }
     }
   },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
+    "small": "/drivers/dimmer_switch/assets/small.png",
+    "large": "/drivers/dimmer_switch/assets/large.png",
+    "xlarge": "/drivers/dimmer_switch/assets/xlarge.png"
   },
-  "settings": [
-    {
-      "id": "min_brightness",
-      "type": "number",
-      "label": "Minimum Brightness (%)",
-      "value": 1
-    },
-    {
-      "id": "fade_duration",
-      "type": "number",
-      "label": "Fade Duration (seconds)",
-      "value": 2
-    }
-  ]
+  "community": {
+    "sources": [
+      "Generic compatibility database",
+      "Pattern-based enrichment"
+    ],
+    "enriched": true,
+    "type": "generic",
+    "last_updated": "2025-09-15T19:34:03.100Z"
+  }
 }

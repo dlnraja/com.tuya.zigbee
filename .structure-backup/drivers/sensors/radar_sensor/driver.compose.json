@@ -1,0 +1,62 @@
+{
+  "name": {
+    "en": "Radar Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_luminance",
+    "measure_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_ztc6ggyl",
+      "_TZE204_qasjif9e",
+      "_TZE204_ijxvkhd0",
+      "_TZE200_wukb7rhc",
+      "_TZE200_ar0slwnd",
+      "_TZE200_sfiy5tcs",
+      "_TZE200_holel4dk",
+      "_TZE284_cjlm9ra6",
+      "_TZE204_sooucan5",
+      "_TZE284_sxm7l9xa",
+      "_TZE200_auin8mzr",
+      "_TZE200_lyetpprm"
+    ],
+    "productId": [
+      "TS0601",
+      "RADAR1",
+      "MMWAVE1",
+      "RS0201"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          61184
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/sensors/radar_sensor/assets/small.png",
+    "large": "/drivers/sensors/radar_sensor/assets/large.png",
+    "xlarge": "/drivers/sensors/radar_sensor/assets/xlarge.png"
+  },
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AA"
+    ]
+  },
+  "community": {
+    "sources": [
+      "Community request from Rudy_De_Vylder",
+      "GitHub Issues: Radar sensor support requests"
+    ],
+    "enriched": true,
+    "last_updated": "2025-09-15T19:34:03.072Z"
+  }
+}

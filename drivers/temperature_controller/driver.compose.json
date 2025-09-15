@@ -1,0 +1,43 @@
+{
+  "name": {
+    "en": "Temperature Controller"
+  },
+  "class": "sensor",
+  "capabilities": [],
+  "zigbee": {
+    "manufacturerName": [
+      "TZ3000_generic",
+      "TZ3000_generic",
+      "TZ3000_common",
+      "_TZE200_universal"
+    ],
+    "productId": [
+      "TS0001",
+      "TS0001",
+      "TS0601",
+      "GENERIC"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/temperature_controller/assets/small.png",
+    "large": "/drivers/temperature_controller/assets/large.png",
+    "xlarge": "/drivers/temperature_controller/assets/xlarge.png"
+  },
+  "community": {
+    "sources": [
+      "Generic compatibility database",
+      "Pattern-based enrichment"
+    ],
+    "enriched": true,
+    "type": "generic",
+    "last_updated": "2025-09-15T19:34:02.883Z"
+  }
+}

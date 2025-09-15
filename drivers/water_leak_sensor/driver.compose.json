@@ -1,29 +1,24 @@
 {
-  "id": "water_leak_sensor",
   "name": {
     "en": "Water Leak Sensor"
   },
   "class": "sensor",
-  "capabilities": [
-    "alarm_water",
-    "measure_battery"
-  ],
+  "capabilities": [],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_wuep9zng",
-      "_TZ3000_",
-      "TUYA",
-      "_TYZB01_sqmd19i1",
-      "_TYST11_qq9mpfhw",
-      "_TZ3000_fxvjhdyl",
-      "_TZ3000_upgcbody",
-      "_TZ3000_kyb656no",
-      "_TZ3000_ocjlo4ea"
+      "_TZE200_qq9mpfhw",
+      "_TZE284_qq9mpfhw",
+      "_TZE200_jthf7vb6",
+      "_TZE284_8agm1gi2",
+      "_TZE200_6l9xdkcx",
+      "TZ3000_lje0x0b5",
+      "TZ3000_k6fyjgv6"
     ],
     "productId": [
-      "TS0207",
-      "q9mpfhw",
-      "SQ510A"
+      "TS0601",
+      "TS0202",
+      "WATER1",
+      "LEAK1"
     ],
     "endpoints": {
       "1": {
@@ -34,62 +29,25 @@
           1280
         ]
       }
-    },
-    "learnmode": {
-      "image": "/drivers/water_leak_sensor/assets/learn.svg",
-      "instruction": {
-        "en": "Press and hold the button on your Water Leak Sensor for 3 seconds until the LED starts blinking rapidly."
-      }
     }
   },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
+    "small": "/drivers/water_leak_sensor/assets/small.png",
+    "large": "/drivers/water_leak_sensor/assets/large.png",
+    "xlarge": "/drivers/water_leak_sensor/assets/xlarge.png"
   },
-  "settings": [
-    {
-      "id": "sensitivity",
-      "type": "dropdown",
-      "label": {
-        "en": "Sensitivity"
-      },
-      "value": "medium",
-      "values": [
-        {
-          "id": "low",
-          "label": {
-            "en": "Low"
-          }
-        },
-        {
-          "id": "medium",
-          "label": {
-            "en": "Medium"
-          }
-        },
-        {
-          "id": "high",
-          "label": {
-            "en": "High"
-          }
-        }
-      ]
-    },
-    {
-      "id": "battery_threshold",
-      "type": "number",
-      "label": {
-        "en": "Low Battery Threshold (%)"
-      },
-      "value": 20,
-      "min": 5,
-      "max": 50
-    }
-  ],
   "energy": {
     "batteries": [
       "CR2032",
       "AA"
     ]
+  },
+  "community": {
+    "sources": [
+      "Water damage prevention requests",
+      "Leak detection systems"
+    ],
+    "enriched": true,
+    "last_updated": "2025-09-15T19:34:03.031Z"
   }
 }

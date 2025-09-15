@@ -1,0 +1,63 @@
+{
+  "name": {
+    "en": "Pir Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "TZ3000_generic",
+      "TZ3000_sensor",
+      "TZ3000_generic",
+      "TZ3000_common",
+      "_TZE200_universal",
+      "TZ3000_sensor",
+      "_TZE200_sensor",
+      "_TZE284_sensor"
+    ],
+    "productId": [
+      "TS0001",
+      "SENSOR",
+      "TS0001",
+      "TS0601",
+      "GENERIC",
+      "TS0202",
+      "TS0203",
+      "TS0201",
+      "SENSOR1"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          1,
+          1280
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/pir_sensor/assets/small.png",
+    "large": "/drivers/pir_sensor/assets/large.png",
+    "xlarge": "/drivers/pir_sensor/assets/xlarge.png"
+  },
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AA"
+    ]
+  },
+  "community": {
+    "sources": [
+      "Generic compatibility database",
+      "Pattern-based enrichment"
+    ],
+    "enriched": true,
+    "type": "generic",
+    "last_updated": "2025-09-15T19:34:03.064Z"
+  }
+}

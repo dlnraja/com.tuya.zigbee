@@ -1,88 +1,49 @@
 {
-  "id": "sos_button",
   "name": {
-    "en": "SOS Emergency Button"
+    "en": "Sos Button"
   },
   "class": "sensor",
-  "capabilities": [
-    "alarm_generic",
-    "alarm_battery",
-    "measure_battery"
-  ],
+  "capabilities": [],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_",
-      "_TZE200_",
-      "_TZE284_",
-      "TUYA"
+      "TZ3000_generic",
+      "TZ3000_generic",
+      "TZ3000_common",
+      "_TZE200_universal"
     ],
     "productId": [
-      "LQ-01"
+      "TS0001",
+      "TS0001",
+      "TS0601",
+      "GENERIC"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          1,
-          3,
-          6,
-          64704
+          3
         ]
-      }
-    },
-    "learnmode": {
-      "image": "/drivers/sos_button/assets/learn.svg",
-      "instruction": {
-        "en": "Press and hold the SOS button for 3 seconds until the LED flashes rapidly."
       }
     }
   },
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
+    "small": "/drivers/sos_button/assets/small.png",
+    "large": "/drivers/sos_button/assets/large.png",
+    "xlarge": "/drivers/sos_button/assets/xlarge.png"
   },
-  "settings": [
-    {
-      "id": "sensitivity",
-      "type": "dropdown",
-      "label": {
-        "en": "Button Sensitivity"
-      },
-      "value": "normal",
-      "values": [
-        {
-          "id": "low",
-          "label": {
-            "en": "Low"
-          }
-        },
-        {
-          "id": "normal",
-          "label": {
-            "en": "Normal"
-          }
-        },
-        {
-          "id": "high",
-          "label": {
-            "en": "High"
-          }
-        }
-      ]
-    },
-    {
-      "id": "emergency_mode",
-      "type": "checkbox",
-      "label": {
-        "en": "Emergency Mode"
-      },
-      "value": true
-    }
-  ],
   "energy": {
     "batteries": [
       "CR2032",
       "AA"
     ]
+  },
+  "community": {
+    "sources": [
+      "Generic compatibility database",
+      "Pattern-based enrichment"
+    ],
+    "enriched": true,
+    "type": "generic",
+    "last_updated": "2025-09-15T19:34:03.027Z"
   }
 }
