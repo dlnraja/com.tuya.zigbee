@@ -147,14 +147,8 @@ jobs:
         git add -A
         git commit -m "Auto-commit before publication" || true
         
-        # Use heredoc to provide all inputs at once
-        homey app publish << 'INPUTS'
-y
-y
-
-v1.1.0 MASSIVE EXPANSION: 101 New Community Drivers + 110 Updated Drivers - Complete community integration with 1500+ devices from 80+ manufacturers.
-
-INPUTS
+        # Use printf to pipe inputs to homey app publish
+        printf "y\ny\n\nv1.1.0 MASSIVE EXPANSION: 101 New Community Drivers + 110 Updated Drivers - Complete community integration with 1500+ devices from 80+ manufacturers.\n\n" | homey app publish
         
     - name: 📊 Generate Publication Report
       if: always()
