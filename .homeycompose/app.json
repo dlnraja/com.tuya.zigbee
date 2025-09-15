@@ -1,6 +1,6 @@
 {
   "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -31,13 +31,6 @@
     "name": "Dylan RAJA",
     "email": "dylraja@outlook.com"
   },
-  "contributors": [
-    {
-      "name": "Johan Bendz",
-      "email": "johan.bendz@gmail.com",
-      "url": "https://github.com/JohanBendz"
-    }
-  ],
   "bugs": {
     "url": "https://github.com/dlnraja/com.ultimate.zigbee.hub/issues"
   },
