@@ -40,8 +40,8 @@
     }
   },
   "images": {
-    "small": "/drivers/rgb_light/assets/images/small.png",
-    "large": "/drivers/rgb_light/assets/images/large.png"
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
   },
   "settings": [
     {

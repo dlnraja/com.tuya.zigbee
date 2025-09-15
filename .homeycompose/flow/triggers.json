@@ -1,6 +1,6 @@
 [
   {
-    "id": "motion_alarm_true",
+    "id": "device_motion_detected",
     "title": {
       "en": "Motion detected",
       "fr": "Mouvement détecté",
@@ -8,16 +8,22 @@
       "de": "Bewegung erkannt"
     },
     "titleFormatted": {
-      "en": "Motion was detected by [[device]]",
+      "en": "Motion detected by [[device]]",
       "fr": "Mouvement détecté par [[device]]",
       "nl": "Beweging gedetecteerd door [[device]]",
       "de": "Bewegung erkannt von [[device]]"
+    },
+    "hint": {
+      "en": "Triggered when motion is detected by any connected sensor",
+      "fr": "Déclenché lorsqu'un mouvement est détecté par un capteur connecté",
+      "nl": "Geactiveerd wanneer beweging wordt gedetecteerd door een aangesloten sensor",
+      "de": "Ausgelöst, wenn Bewegung von einem angeschlossenen Sensor erkannt wird"
     },
     "args": [
       {
         "name": "device",
         "type": "device",
-        "filter": "driver_id=tuya_motion_sensor"
+        "filter": "driver_id=aqara_motion_sensor|tuya_radar_sensor|tuya_generic_sensor|sensors"
       }
     ]
   },
@@ -30,16 +36,16 @@
       "de": "Temperatur geändert"
     },
     "titleFormatted": {
-      "en": "Temperature of [[device]] changed",
-      "fr": "Température de [[device]] a changé",
-      "nl": "Temperatuur van [[device]] is veranderd",
-      "de": "Temperatur von [[device]] hat sich geändert"
+      "en": "Temperature of [[device]] changed to [[temperature]]°C",
+      "fr": "Température de [[device]] changée à [[temperature]]°C",
+      "nl": "Temperatuur van [[device]] veranderd naar [[temperature]]°C",
+      "de": "Temperatur von [[device]] geändert auf [[temperature]]°C"
     },
     "args": [
       {
         "name": "device",
         "type": "device",
-        "filter": "capability_id=measure_temperature"
+        "filter": "driver_id=TS0601_climate|bosch_thermostat_valve|climate|sensors"
       }
     ],
     "tokens": [
@@ -51,29 +57,40 @@
           "fr": "Température (°C)",
           "nl": "Temperatuur (°C)",
           "de": "Temperatur (°C)"
-        }
+        },
+        "example": 21.5
       }
     ]
   },
   {
-    "id": "device_turned_on",
+    "id": "device_door_opened",
     "title": {
-      "en": "Device turned on",
-      "fr": "Appareil allumé",
-      "nl": "Apparaat ingeschakeld",
-      "de": "Gerät eingeschaltet"
-    },
-    "titleFormatted": {
-      "en": "[[device]] was turned on",
-      "fr": "[[device]] a été allumé",
-      "nl": "[[device]] werd ingeschakeld",
-      "de": "[[device]] wurde eingeschaltet"
+      "en": "Door/window opened",
+      "fr": "Porte/fenêtre ouverte",
+      "nl": "Deur/raam geopend",
+      "de": "Tür/Fenster geöffnet"
     },
     "args": [
       {
         "name": "device",
         "type": "device",
-        "filter": "capability_id=onoff"
+        "filter": "driver_id=sensors|tuya_generic_sensor"
+      }
+    ]
+  },
+  {
+    "id": "device_water_leak",
+    "title": {
+      "en": "Water leak detected",
+      "fr": "Fuite d'eau détectée",
+      "nl": "Waterlek gedetecteerd",
+      "de": "Wasserleck erkannt"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=tuya_water_sensor|sensors"
       }
     ]
   },
@@ -86,10 +103,10 @@
       "de": "Batterie schwach"
     },
     "titleFormatted": {
-      "en": "Battery of [[device]] is low",
-      "fr": "Batterie de [[device]] est faible",
-      "nl": "Batterij van [[device]] is laag",
-      "de": "Batterie von [[device]] ist schwach"
+      "en": "Battery of [[device]] is low ([[battery]]%)",
+      "fr": "Batterie de [[device]] est faible ([[battery]]%)",
+      "nl": "Batterij van [[device]] is laag ([[battery]]%)",
+      "de": "Batterie von [[device]] ist schwach ([[battery]]%)"
     },
     "args": [
       {
@@ -107,494 +124,6 @@
           "fr": "Niveau batterie (%)",
           "nl": "Batterijniveau (%)",
           "de": "Batteriestand (%)"
-        }
-      }
-    ]
-  },
-  {
-    "id": "water_leak_detected",
-    "title": {
-      "en": "Water leak detected",
-      "fr": "Fuite d'eau détectée",
-      "nl": "Waterlek gedetecteerd",
-      "de": "Wasserleck erkannt"
-    },
-    "titleFormatted": {
-      "en": "Water leak detected by [[device]]",
-      "fr": "Fuite d'eau détectée par [[device]]",
-      "nl": "Waterlek gedetecteerd door [[device]]",
-      "de": "Wasserleck erkannt von [[device]]"
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": "driver_id=tuya_water_leak_sensor"
-      }
-    ]
-  },
-  {
-    "id": "smoke_detected",
-    "title": {
-      "en": "Smoke detected",
-      "fr": "Fumée détectée",
-      "nl": "Rook gedetecteerd", 
-      "de": "Rauch erkannt"
-    },
-    "titleFormatted": {
-      "en": "Smoke detected by [[device]]",
-      "fr": "Fumée détectée par [[device]]",
-      "nl": "Rook gedetecteerd door [[device]]",
-      "de": "Rauch erkannt von [[device]]"
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": "driver_id=tuya_smoke_sensor"
-      }
-    ]
-  },
-  {
-    "id": "contact_alarm_changed",
-    "title": {
-      "en": "Door/Window opened or closed",
-      "fr": "Porte/Fenêtre ouverte ou fermée",
-      "nl": "Deur/Raam geopend of gesloten",
-      "de": "Tür/Fenster geöffnet oder geschlossen"
-    },
-    "titleFormatted": {
-      "en": "[[device]] was [[state]]",
-      "fr": "[[device]] a été [[state]]",
-      "nl": "[[device]] werd [[state]]", 
-      "de": "[[device]] wurde [[state]]"
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": "driver_id=tuya_door_window_sensor"
-      }
-    ],
-    "tokens": [
-      {
-        "name": "state",
-        "type": "string",
-        "title": {
-          "en": "State",
-          "fr": "État",
-          "nl": "Status",
-          "de": "Zustand"
-        }
-      }
-    ]
-  },
-  {
-    "id": "humidity_changed",
-    "title": {
-      "en": "Humidity changed",
-      "fr": "Humidité changée",
-      "nl": "Luchtvochtigheid veranderd",
-      "de": "Luftfeuchtigkeit geändert"
-    },
-    "titleFormatted": {
-      "en": "Humidity of [[device]] changed to [[humidity]]%",
-      "fr": "Humidité de [[device]] changée à [[humidity]]%",
-      "nl": "Luchtvochtigheid van [[device]] veranderd naar [[humidity]]%",
-      "de": "Luftfeuchtigkeit von [[device]] geändert zu [[humidity]]%"
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": "capability_id=measure_humidity"
-      }
-    ],
-    "tokens": [
-      {
-        "name": "humidity",
-        "type": "number",
-        "title": {
-          "en": "Humidity (%)",
-          "fr": "Humidité (%)",
-          "nl": "Luchtvochtigheid (%)",
-          "de": "Luftfeuchtigkeit (%)"
-        }
-      }
-    ]
-  },
-  {
-    "id": "curtain_position_changed",
-    "title": {
-      "en": "Curtain position changed",
-      "fr": "Position rideau changée",
-      "nl": "Gordijnpositie veranderd",
-      "de": "Vorhangposition geändert"
-    },
-    "titleFormatted": {
-      "en": "[[device]] position changed to [[position]]%",
-      "fr": "Position de [[device]] changée à [[position]]%",
-      "nl": "Positie van [[device]] veranderd naar [[position]]%",
-      "de": "Position von [[device]] geändert zu [[position]]%"
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": "driver_id=tuya_curtain_motor"
-      }
-    ],
-    "tokens": [
-      {
-        "name": "position",
-        "type": "number",
-        "title": {
-          "en": "Position (%)",
-          "fr": "Position (%)",
-          "nl": "Positie (%)",
-          "de": "Position (%)"
-        }
-      }
-    ]
-  },
-  {
-    "id": "power_consumption_changed",
-    "title": {
-      "en": "Power consumption changed",
-      "fr": "Consommation énergétique changée",
-      "nl": "Stroomverbruik veranderd",
-      "de": "Stromverbrauch geändert"
-    },
-    "titleFormatted": {
-      "en": "Power consumption of [[device]] changed to [[power]]W",
-      "fr": "Consommation de [[device]] changée à [[power]]W",
-      "nl": "Stroomverbruik van [[device]] veranderd naar [[power]]W",
-      "de": "Stromverbrauch von [[device]] geändert zu [[power]]W"
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": "capability_id=measure_power"
-      }
-    ],
-    "tokens": [
-      {
-        "name": "power",
-        "type": "number",
-        "title": {
-          "en": "Power (W)",
-          "fr": "Puissance (W)",
-          "nl": "Vermogen (W)",
-          "de": "Leistung (W)"
-        }
-      }
-    ]
-  },
-  {
-    "id": "device_offline",
-    "title": {
-      "en": "Device went offline",
-      "fr": "Appareil hors ligne",
-      "nl": "Apparaat offline gegaan",
-      "de": "Gerät offline gegangen"
-    },
-    "titleFormatted": {
-      "en": "[[device]] went offline",
-      "fr": "[[device]] est passé hors ligne",
-      "nl": "[[device]] is offline gegaan",
-      "de": "[[device]] ist offline gegangen"
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device"
-      }
-    ]
-  },
-  {
-    "id": "device_online",
-    "title": {
-      "en": "Device came online",
-      "fr": "Appareil en ligne", 
-      "nl": "Apparaat online gekomen",
-      "de": "Gerät online gekommen"
-    },
-    "titleFormatted": {
-      "en": "[[device]] came online",
-      "fr": "[[device]] est passé en ligne",
-      "nl": "[[device]] is online gekomen",
-      "de": "[[device]] ist online gekommen"
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device"
-      }
-    ]
-  },
-  {
-    "id": "sos_button_pressed",
-    "title": {
-      "en": "SOS Emergency button pressed",
-      "fr": "Bouton d'urgence SOS pressé",
-      "nl": "SOS Noodknop ingedrukt",
-      "de": "SOS Notknopf gedrückt"
-    },
-    "titleFormatted": {
-      "en": "SOS Emergency button [[device]] was pressed",
-      "fr": "Bouton d'urgence SOS [[device]] a été pressé",
-      "nl": "SOS Noodknop [[device]] werd ingedrukt", 
-      "de": "SOS Notknopf [[device]] wurde gedrückt"
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": "driver_id=sos_button"
-      }
-    ],
-    "tokens": [
-      {
-        "name": "emergency",
-        "type": "boolean",
-        "title": {
-          "en": "Emergency state",
-          "fr": "État d'urgence",
-          "nl": "Noodtoestand",
-          "de": "Notzustand"
-        }
-      }
-    ]
-  },
-  {
-    "id": "battery_alarm",
-    "title": {
-      "en": "Battery alarm triggered",
-      "fr": "Alarme batterie déclenchée",
-      "nl": "Batterij alarm geactiveerd",
-      "de": "Batterie-Alarm ausgelöst"
-    },
-    "titleFormatted": {
-      "en": "Battery alarm from [[device]] was triggered",
-      "fr": "Alarme batterie de [[device]] a été déclenchée",
-      "nl": "Batterij alarm van [[device]] werd geactiveerd",
-      "de": "Batterie-Alarm von [[device]] wurde ausgelöst"
-    },
-    "args": [
-      {
-        "name": "device", 
-        "type": "device",
-        "filter": "capability_id=alarm_battery"
-      }
-    ],
-    "tokens": [
-      {
-        "name": "low_battery",
-        "type": "boolean",
-        "title": {
-          "en": "Low battery state",
-          "fr": "État batterie faible",
-          "nl": "Lage batterij status",
-          "de": "Schwache Batterie Zustand"
-        }
-      }
-    ]
-  },
-  {
-    "id": "radar_motion_detected",
-    "title": {
-      "en": "Radar motion detected",
-      "fr": "Mouvement radar détecté",
-      "nl": "Radar beweging gedetecteerd",
-      "de": "Radar-Bewegung erkannt"
-    },
-    "titleFormatted": {
-      "en": "Radar motion detected by [[device]]",
-      "fr": "Mouvement radar détecté par [[device]]",
-      "nl": "Radar beweging gedetecteerd door [[device]]",
-      "de": "Radar-Bewegung erkannt von [[device]]"
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": "driver_id=radar_sensor"
-      }
-    ],
-    "tokens": [
-      {
-        "name": "motion",
-        "type": "boolean",
-        "title": {
-          "en": "Motion detected",
-          "fr": "Mouvement détecté",
-          "nl": "Beweging gedetecteerd",
-          "de": "Bewegung erkannt"
-        }
-      }
-    ]
-  },
-  {
-    "id": "radar_motion_cleared",
-    "title": {
-      "en": "Radar motion cleared",
-      "fr": "Mouvement radar terminé",
-      "nl": "Radar beweging beëindigd",
-      "de": "Radar-Bewegung beendet"
-    },
-    "titleFormatted": {
-      "en": "Radar motion cleared by [[device]]",
-      "fr": "Mouvement radar terminé par [[device]]",
-      "nl": "Radar beweging beëindigd door [[device]]",
-      "de": "Radar-Bewegung beendet von [[device]]"
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": "driver_id=radar_sensor"
-      }
-    ],
-    "tokens": [
-      {
-        "name": "motion",
-        "type": "boolean",
-        "title": {
-          "en": "Motion state",
-          "fr": "État mouvement",
-          "nl": "Beweging status",
-          "de": "Bewegung Zustand"
-        }
-      }
-    ]
-  },
-  {
-    "id": "smoke_alarm_triggered",
-    "title": {
-      "en": "Smoke alarm triggered",
-      "fr": "Alarme fumée déclenchée",
-      "nl": "Rook alarm geactiveerd",
-      "de": "Rauchmelder ausgelöst"
-    },
-    "titleFormatted": {
-      "en": "Smoke alarm triggered on {{device}}",
-      "fr": "Alarme fumée déclenchée sur {{device}}",
-      "nl": "Rook alarm geactiveerd op {{device}}",
-      "de": "Rauchmelder ausgelöst auf {{device}}"
-    },
-    "hint": {
-      "en": "This card will trigger when smoke is detected by the enhanced smoke detector.",
-      "fr": "Cette carte se déclenchera lorsque de la fumée est détectée par le détecteur de fumée amélioré.",
-      "nl": "Deze kaart wordt geactiveerd wanneer rook wordt gedetecteerd door de verbeterde rookmelder.",
-      "de": "Diese Karte wird ausgelöst, wenn Rauch vom erweiterten Rauchmelder erkannt wird."
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": "driver_id=enhanced_smoke_detector"
-      }
-    ],
-    "tokens": [
-      {
-        "name": "smoke_detected",
-        "type": "boolean",
-        "title": {
-          "en": "Smoke detected",
-          "fr": "Fumée détectée",
-          "nl": "Rook gedetecteerd",
-          "de": "Rauch erkannt"
-        }
-      }
-    ]
-  },
-  {
-    "id": "smoke_alarm_cleared",
-    "title": {
-      "en": "Smoke alarm cleared",
-      "fr": "Alarme fumée désactivée",
-      "nl": "Rook alarm uitgeschakeld",
-      "de": "Rauchmelder zurückgesetzt"
-    },
-    "titleFormatted": {
-      "en": "Smoke alarm cleared on {{device}}",
-      "fr": "Alarme fumée désactivée sur {{device}}",
-      "nl": "Rook alarm uitgeschakeld op {{device}}",
-      "de": "Rauchmelder zurückgesetzt auf {{device}}"
-    },
-    "hint": {
-      "en": "This card will trigger when smoke alarm is cleared by the enhanced smoke detector.",
-      "fr": "Cette carte se déclenchera lorsque l'alarme fumée est désactivée par le détecteur de fumée amélioré.",
-      "nl": "Deze kaart wordt geactiveerd wanneer het rookalarm wordt uitgeschakeld door de verbeterde rookmelder.",
-      "de": "Diese Karte wird ausgelöst, wenn der Rauchalarm vom erweiterten Rauchmelder zurückgesetzt wird."
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": "driver_id=enhanced_smoke_detector"
-      }
-    ],
-    "tokens": [
-      {
-        "name": "smoke_detected",
-        "type": "boolean",
-        "title": {
-          "en": "Smoke detected",
-          "fr": "Fumée détectée",
-          "nl": "Rook gedetecteerd",
-          "de": "Rauch erkannt"
-        }
-      }
-    ]
-  },
-  {
-    "id": "soil_sensor_measurement",
-    "title": {
-      "en": "Soil sensor measurement updated",
-      "fr": "Mesure capteur sol mise à jour",
-      "nl": "Grond sensor meting bijgewerkt",
-      "de": "Bodensensor Messung aktualisiert"
-    },
-    "titleFormatted": {
-      "en": "Soil sensor measurement updated on {{device}}",
-      "fr": "Mesure capteur sol mise à jour sur {{device}}",
-      "nl": "Grond sensor meting bijgewerkt op {{device}}",
-      "de": "Bodensensor Messung aktualisiert auf {{device}}"
-    },
-    "hint": {
-      "en": "This card will trigger when soil temperature or humidity measurements are updated.",
-      "fr": "Cette carte se déclenchera lorsque les mesures de température ou d'humidité du sol sont mises à jour.",
-      "nl": "Deze kaart wordt geactiveerd wanneer grondtemperatuur of vochtigheidmetingen worden bijgewerkt.",
-      "de": "Diese Karte wird ausgelöst, wenn Bodentemperatur- oder Feuchtigkeitsmessungen aktualisiert werden."
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": "driver_id=soil_sensor"
-      }
-    ],
-    "tokens": [
-      {
-        "name": "temperature",
-        "type": "number",
-        "title": {
-          "en": "Temperature (°C)",
-          "fr": "Température (°C)",
-          "nl": "Temperatuur (°C)",
-          "de": "Temperatur (°C)"
-        }
-      },
-      {
-        "name": "humidity",
-        "type": "number",
-        "title": {
-          "en": "Humidity (%)",
-          "fr": "Humidité (%)",
-          "nl": "Vochtigheid (%)",
-          "de": "Feuchtigkeit (%)"
         }
       }
     ]

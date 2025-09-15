@@ -32,8 +32,8 @@
     }
   },
   "images": {
-    "small": "/drivers/zigbee_wireless_button/assets/images/small.png",
-    "large": "/drivers/zigbee_wireless_button/assets/images/large.png"
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
   },
   "settings": []
 }
