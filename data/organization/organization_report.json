@@ -1,0 +1,213 @@
+{
+  "timestamp": "2025-09-14T21:22:09+02:00",
+  "organization_analysis": {
+    "sensors": {
+      "keywords": [
+        "sensor",
+        "temperature",
+        "humidity",
+        "motion",
+        "pir",
+        "radar",
+        "presence",
+        "air_quality",
+        "soil"
+      ],
+      "drivers": [
+        "air_quality_sensor",
+        "avatto_tuya_zigbee_e_ink_screen_temperature_and_hu",
+        "contact_sensor",
+        "device_request_ceilling_human_presence_sensor",
+        "door_windows_sensor",
+        "door_windows_sensor_zd08",
+        "door_window_sensor",
+        "human_presence_detector",
+        "human_presence_sensor",
+        "lcd_temperature_humidity_sensor",
+        "motion_sensor",
+        "motion_sensor_with_lux",
+        "motion_sensor_with_temperature_humidity",
+        "multisensor",
+        "pir_motion_sensor",
+        "pir_sensor_pir1_zb",
+        "presence_sensor",
+        "radar_sensor",
+        "soil_sensor",
+        "soil_temperature_moisture_plant_sensor",
+        "temperaturemoisture_meter",
+        "temperature_and_humidity_sensor",
+        "temperature_humidity_sensor",
+        "temperature_humidity_tz3000_akqdg6g7",
+        "temp_and_hum_sensor",
+        "tuya_2_in_1_zigbee_mini_pir_motion_detector_bright",
+        "tuya_smart_temperature_and_humidity_sensor_tuya",
+        "tuya_smart_zigbee_soil_tester_temperature_and_humi",
+        "tuya_zigbee_doorwindow_sensor_aliexpress",
+        "tuya_zigbee_soil_moisture_sensor",
+        "tuya_zigbee_temperature_sensor",
+        "water_leak_sensor",
+        "zigbee_pir_sensor_with_lux",
+        "zigbee_rain_brightness_light_sensor",
+        "zigbee_temperature_and_humidity_sensor"
+      ]
+    },
+    "switches": {
+      "keywords": [
+        "switch",
+        "gang",
+        "button",
+        "knob",
+        "dimmer"
+      ],
+      "drivers": [
+        "2_gang_zigbee_dimmer",
+        "2_gang_zigbee_switches",
+        "3_gang_wall_switch",
+        "4_gang_wall_remote",
+        "device_request_3_button_switch",
+        "dimmer_switch",
+        "light_switch",
+        "mini_curtain_switch_module",
+        "moes_dimmer",
+        "moes_smart_scene_switch_4button_wireless",
+        "moes_star_ring_smart_knob_thermostat",
+        "one_gang_switch_module",
+        "one_gang_switch_moes",
+        "scene_remote_2gang",
+        "scene_remote_4gang",
+        "scene_switch",
+        "smart_button",
+        "smart_home_1_gang_zigbee",
+        "smart_home_2_gang_zigbee",
+        "smart_home_3_gang_zigbee",
+        "smart_knob",
+        "smart_knob_switch_ts004f",
+        "smart_rotary_dimmer",
+        "smart_switch",
+        "smart_switch_with_power_monitor",
+        "sos_button",
+        "tuya_zigbee_2_gang_switch",
+        "two_gang_switch",
+        "usb_micro_switch_single",
+        "wall_switch_1_gang",
+        "wall_switch_with_blug_and_usb",
+        "zigbee_1ch_th_smart_switch",
+        "zigbee_1_gang_dimmer",
+        "zigbee_light_switch_push_button",
+        "zigbee_smart_button",
+        "zigbee_smart_dimmer_module",
+        "zigbee_smart_dimmer_switch_module_timer",
+        "zigbee_wireless_button"
+      ]
+    },
+    "lights": {
+      "keywords": [
+        "light",
+        "led",
+        "bulb",
+        "lamp",
+        "gu10"
+      ],
+      "drivers": [
+        "18w_15w_tuya_zigbee_smart_home_led_lamp",
+        "ewelink_gu10_zigbee_led_lampen",
+        "gu10_zigbee_rgbcct_5w_bulb",
+        "mi_light",
+        "rgb_light",
+        "smart_light",
+        "woodupp_create_led"
+      ]
+    },
+    "plugs_sockets": {
+      "keywords": [
+        "plug",
+        "socket",
+        "energy"
+      ],
+      "drivers": [
+        "bseed_wall_socket_with_metering_and_2x_usb",
+        "energy_plug",
+        "outdoor_power_plug",
+        "smart_plug",
+        "smart_socket_ip_3010s",
+        "zigbee_smart_plug"
+      ]
+    },
+    "detectors": {
+      "keywords": [
+        "detector",
+        "smoke",
+        "water",
+        "leak",
+        "co",
+        "sos"
+      ],
+      "drivers": [
+        "co_detector",
+        "enhanced_smoke_detector",
+        "insoma_water_timer",
+        "smoke_detector",
+        "tuya_smart_zigbee_smoke_detector",
+        "valve_controller_white",
+        "water_leak_detector"
+      ]
+    },
+    "climate": {
+      "keywords": [
+        "thermostat",
+        "valve",
+        "radiator",
+        "climate"
+      ],
+      "drivers": [
+        "moes_smart_thermostatic_radiator_valve",
+        "thermostat",
+        "tuya_smart_thermostatic_radiator_valve"
+      ]
+    },
+    "curtains_covers": {
+      "keywords": [
+        "curtain",
+        "blind",
+        "cover",
+        "motor"
+      ],
+      "drivers": [
+        "curtain_motor",
+        "moes_bliend_motor",
+        "onesmart_tuya_wifi_zigbee_curtain_motor",
+        "smart_curtain_robot",
+        "tuya_zigbee_smart_curtain_motor",
+        "zigbee_intelligent_curtain_motor"
+      ]
+    },
+    "specialized": {
+      "keywords": [
+        "remote",
+        "timer",
+        "ir",
+        "scene"
+      ],
+      "drivers": [
+        "cr_rnz1",
+        "device_name",
+        "device_request_already_fixed_girier_tuya_smart_zig",
+        "nodon",
+        "thermo_hygrometer",
+        "tomzn_zigbee_rail_relais_63a_1p_n",
+        "tuya",
+        "tuya_zigbee_smart_ir_remote",
+        "_tze200_vvmbj46n"
+      ]
+    }
+  },
+  "recommendations": [
+    "With 111+ drivers, categorization is highly recommended for maintainability",
+    "Consider sub-categorizing 35 sensors by type (temperature, motion, etc.)",
+    "Consider organizing 38 switches by gang count (1-gang, 2-gang, etc.)",
+    "Organized structure improves developer experience and maintenance",
+    "Categories align with Homey device classes for better UX"
+  ],
+  "current_structure": "flat",
+  "proposed_structure": "categorized"
+}
