@@ -6,12 +6,20 @@ console.log('🖼️  CORRECTION AUTOMATIQUE DE TOUTES LES IMAGES');
 
 // Définir les dimensions requises pour chaque type d'image
 const IMAGE_REQUIREMENTS = {
-    'small.png': { width: 250, height: 175 },
-    'large.png': { width: 500, height: 350 },
-    'xlarge.png': { width: 1000, height: 700 },
-    'icon.svg': null, // SVG pas de redimensionnement
+    // Images principales de l'app
+    'app_small.png': { width: 250, height: 175 },
+    'app_large.png': { width: 500, height: 350 },
+    'app_xlarge.png': { width: 1000, height: 700 },
     'app.png': { width: 500, height: 500 },
+    'icon.svg': null, // SVG pas de redimensionnement  
     'app.svg': null // SVG pas de redimensionnement
+};
+
+// Dimensions pour les pilotes (différentes des images de l'app)
+const DRIVER_IMAGE_REQUIREMENTS = {
+    'small.png': { width: 75, height: 75 },
+    'large.png': { width: 500, height: 350 },
+    'xlarge.png': { width: 1000, height: 700 }
 };
 
 // Fonction pour créer une image de la bonne taille avec ImageMagick
@@ -195,7 +203,7 @@ function fixAllImages() {
             const requiredDriverImages = ['small.png', 'large.png', 'xlarge.png'];
             requiredDriverImages.forEach(imageName => {
                 const imagePath = path.join(driverImagesPath, imageName);
-                const dimensions = IMAGE_REQUIREMENTS[imageName];
+                const dimensions = DRIVER_IMAGE_REQUIREMENTS[imageName];
                 if (dimensions && resizeImage(imagePath, dimensions.width, dimensions.height)) {
                     fixedCount++;
                 }
