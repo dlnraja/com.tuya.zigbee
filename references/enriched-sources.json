@@ -16,7 +16,7 @@
       {
         "name": "home-assistant/core",
         "description": ":house_with_garden: Open source home automation that puts local control and privacy first.",
-        "stars": 81326,
+        "stars": 81328,
         "language": "Python",
         "topics": [
           "asyncio",
@@ -28,7 +28,7 @@
           "python",
           "raspberry-pi"
         ],
-        "updated": "2025-09-15T10:25:25Z"
+        "updated": "2025-09-15T11:28:51Z"
       },
       {
         "name": "blakadder/zigbee",
@@ -75,6 +75,17 @@
     "issues": [
       {
         "repo": "Koenkk/zigbee2mqtt",
+        "title": "So much things going wrong - multiple errors and unavailable devices / unresponsive UI",
+        "body": "### What happened?\n\nSuddenly my Zigbee2MQTT instance is starting to trow errors and certain devices do no longer turn online. I experience when I press the join button, nothing happens (but I do see in the logs the joining has started). Basically parts of the devices are not available, while the UI isn't working as expected too. \n\n`z2m: Failed to read state of 'Achtertuin Airco Plug Tuya' after reconnect (ZCL command 0x70ac08fffe529e7e/1 genOnOff.read([\"onOff\"], {\"timeout\":10000,\"disableResponse\":false,\"disableRecovery\":false,\"disableDefaultResponse\":true,\"direction\":0,\"reservedBits\":0,\"writeUndiv\":false}) failed (SRSP - UTIL - assocGetWithAddress after 6000ms))`\n\n`z2m: Failed to ping 'Keuken Keukenspot Koffiemachine Hue' (attempt 1/1, ZCL command 0x00178801096c810c/11 genBasic.read([\"zclVersion\"], {\"timeout\":10000,\"disableResponse\":false,\"disableRecovery\":true,\"disableDefaultResponse\":true,\"direction\":0,\"reservedBits\":0,\"writeUndiv\":false}) failed (SRSP - AF - dataRequest after 6000ms))`\n\n`z2m: Failed to read state of 'Achtertuin Navimow Plug' after reconnect (ZCL command 0xf0d1b8be240b4990/1 genOnOff.read([\"onOff\"], {\"timeout\":10000,\"disableResponse\":false,\"disableRecovery\":false,\"disableDefaultResponse\":true,\"direction\":0,\"reservedBits\":0,\"writeUndiv\":false}) failed (Timeout - 17494 - 1 - 98 - 6 - 1 after 10000ms))`\n\n`z2m: Failed to read state of 'Slaapkamer Spot 2 Hue' after reconnect (ZCL command 0x0017880108cc9840/11 genOnOff.read([\"onOff\"], {\"timeout\":10000,\"disableResponse\":false,\"disableRecovery\":false,\"disableDefaultResponse\":true,\"direction\":0,\"reservedBits\":0,\"writeUndiv\":false}) failed (Data request failed with error: 'MAC channel access failure' (225)))\n`\nSome devices which are causing errors (they are always the same) I force remove them from the UI. One device I am unable to re-join and get interview challenges. \n\n`zh:controller: Interview failed for '0xa4c138b115eb3649 with error 'Error: Interview failed because can not get active endpoints ('0xa4c138b115eb3649')'`\n\nAlso I get a complete error when trying to start the joining process again\n\n`z2m: Request 'zigbee2mqtt/bridge/request/permit_join' failed with error: '--> 'SREQ: ZDO - PERMIT_JOINING_REQUEST - 0ffcfffe01' failed with status '(0x11: BUFFER_FULL)''`\n\nThe buffer full seems to occurring when the instance is running for a longer time\n\nI have two Sonoff ZBDongle-P - I have reflashed them with the latest coordinator firmwares. Using https://dongle.sonoff.tech/sonoff-dongle-flasher/ and the CC1352P2_CC2652P_launchpad_coordinator_20250321.hex. I have cloned the IEEE with the second Sonoff ZBDongle-P with ZigStar. I do assume I have ruled out an issue with the HW (in this case).\n\nI tried 'latest', 'latest-dev', '2.6.1' and '2.6.0'. They all give the same issues as recorded above. I also removed and rebuild the docker images. \n\n### What did you expect to happen?\n\nI am actually getting lost in the amount of errors and I can't find the 'root cause' issues. My expectations is that all devices are reporting back online and are responsive. \n\n### How to reproduce it (minimal and precise)\n\nI have no clue what is going wrong. Hope somebody can help / provide guidance.\n\n### Zigbee2MQTT version\n\nlatest-dev, latest, 2.6.1, 2.6.0\n\n### Adapter firmware version\n\n20240710\n\n### Adapter\n\nSonoff Dongle P (ZStack3x0)\n\n### Setup\n\nI run Zigbee2MQTT in docker, on a synology DS720+. It worked for years, no significant updates performed in the last couple of days. Errors came out of nowhere\n\n### Device `database.db` entry\n\n_No response_\n\n### Debug log\n\n[log.log](https://github.com/user-attachments/files/22335345/log.log)",
+        "labels": [
+          "problem"
+        ],
+        "state": "open",
+        "created": "2025-09-15T10:52:39Z",
+        "url": "https://github.com/Koenkk/zigbee2mqtt/issues/28635"
+      },
+      {
+        "repo": "Koenkk/zigbee2mqtt",
         "title": "Active Zigbee Devices appear as offline in HA after HA restart, even though online in Zigbee2MQTT",
         "body": "### What happened?\n\nWhen restarting HA(version 2025.9.3) all active devices (lights and plugs) appear as offline/unavailable even though they are online and can be controlled via zigbee2mqtt. They can be made functional in HA again by chaning the name, then they appear online and can be controlled through HA.\nFixes I tried: changing the availibitly to false, will only make devices online until next HA restart.\n\nMaybe this issue has to do with HA and not zigbee2mqtt?\n\n### What did you expect to happen?\n\nThe active devices shouldn't appear as offline/unavailable.\n\n### How to reproduce it (minimal and precise)\n\nDevices are online, then restart HA, all passive devices will come back but active zigbee devices will stay unavailable\n\n### Zigbee2MQTT version\n\n2.6.1\n\n### Adapter firmware version\n\n20240710\n\n### Adapter\n\nUZG01\n\n### Setup\n\nZigbee2MQTT are running in Podman containers. Also the issue occurs for all of our zigbee2mqtt instances (7 in Total)\n\n### Device `database.db` entry\n\n_No response_\n\n### Debug log\n\n_No response_",
         "labels": [
@@ -87,7 +98,7 @@
       {
         "repo": "Koenkk/zigbee2mqtt",
         "title": "[New device support]: TS0601 by _TZE200_eqpaxqdv KnockautX cover controller",
-        "body": " _Originally posted by @github-actions in [#25118](https://github.com/Koenkk/zigbee2mqtt/issues/25118#issuecomment-2727068830)_\n\n**Using a Tuya gateway, I was able to obtain the Tuya Data Points:**\n`\n<html xmlns:v=\"urn:schemas-microsoft-com:vml\"\nxmlns:o=\"urn:schemas-microsoft-com:office:office\"\nxmlns:x=\"urn:schemas-microsoft-com:office:excel\"\nxmlns=\"http://www.w3.org/TR/REC-html40\">\n\n<head>\n\n<meta name=ProgId content=Excel.Sheet>\n<meta name=Generator content=\"Microsoft Excel 15\">\n<link id=Main-File rel=Main-File\nhref=\"file:///C:/Users/phili/AppData/Local/Temp/msohtmlclip1/01/clip.htm\">\n<link rel=File-List\nhref=\"file:///C:/Users/phili/AppData/Local/Temp/msohtmlclip1/01/clip_filelist.xml\">\n<style>\n<!--table\n\t{mso-displayed-decimal-separator:\"\\.\";\n\tmso-displayed-thousand-separator:\" \";}\n@page\n\t{margin:.27in .43in .33in .48in;\n\tmso-header-margin:.13in;\n\tmso-footer-margin:.13in;\n\tmso-page-orientation:landscape;\n\tmso-horizontal-page-align:center;\n\tmso-vertical-page-align:center;}\n.font5\n\t{color:#47D359;\n\tfont-size:28.0pt;\n\tfont-weight:400;\n\tfont-style:normal;\n\ttext-decoration:none;\n\tfont-family:Wingdings;\n\tmso-generic-font-family:auto;\n\tmso-font-charset:2;}\n.font6\n\t{color:red;\n\tfont-size:28.0pt;\n\tfont-weight:400;\n\tfont-style:normal;\n\ttext-decoration:none;\n\tfont-family:Wingdings;\n\tmso-generic-font-family:auto;\n\tmso-font-charset:2;}\n.font7\n\t{color:#47D359;\n\tfont-size:28.0pt;\n\tfont-weight:400;\n\tfont-style:normal;\n\ttext-decoration:none;\n\tfont-family:\"Aptos Narrow\", sans-serif;\n\tmso-font-charset:0;}\n.font8\n\t{color:red;\n\tfont-size:28.0pt;\n\tfont-weight:400;\n\tfont-style:normal;\n\ttext-decoration:none;\n\tfont-family:\"Aptos Narrow\", sans-serif;\n\tmso-font-charset:0;}\ntr\n\t{mso-height-source:auto;}\ncol\n\t{mso-width-source:auto;}\nbr\n\t{mso-data-placement:same-cell;}\ntd\n\t{padding-top:1px;\n\tpadding-right:1px;\n\tpadding-left:1px;\n\tmso-ignore:padding;\n\tcolor:black;\n\tfont-size:11.0pt;\n\tfont-weight:400;\n\tfont-style:normal;\n\ttext-decoration:none;\n\tfont-family:\"Aptos Narrow\", sans-serif;\n\tmso-font-charset:0;\n\tmso-number-format:General;\n\ttext-align:general;\n\tvertical-align:bottom;\n\tborder:none;\n\tmso-background-source:auto;\n\tmso-pattern:auto;\n\tmso-protection:locked visible;\n\twhite-space:nowrap;\n\tmso-rotate:0;}\n.xl63\n\t{font-size:14.0pt;\n\tborder-top:.5pt solid #8ED973;\n\tborder-right:none;\n\tborder-bottom:.5pt solid #8ED973;\n\tborder-left:none;\n\tbackground:#DAF2D0;\n\tmso-pattern:#DAF2D0 none;}\n.xl64\n\t{font-size:14.0pt;}\n.xl65\n\t{font-size:14.0pt;\n\tborder-top:.5pt solid #8ED973;\n\tborder-right:none;\n\tborder-bottom:.5pt solid #8ED973;\n\tborder-left:none;}\n.xl66\n\t{font-size:14.0pt;\n\tbackground:#DAF2D0;\n\tmso-pattern:#DAF2D0 none;}\n.xl67\n\t{color:red;\n\tfont-size:28.0pt;\n\tfont-family:Wingdings;\n\tmso-generic-font-family:auto;\n\tmso-font-charset:2;}\n.xl68\n\t{color:#47D359;\n\tfont-size:28.0pt;\n\tfont-family:Wingdings;\n\tmso-generic-font-family:auto;\n\tmso-font-charset:2;}\n.xl69\n\t{font-size:28.0pt;}\n-->\n</style>\n</head>\n\n<body link=\"#467886\" vlink=\"#96607D\">\n\n\nTuyaDatapoints | Type | Tuya Value | Z2mqtt Converter | Ok/Ko\n-- | -- | -- | -- | --\n1:\"Control\" | Enum | open/stop/close | state | ok\n2:\"Curtain   position setting\" | Integer | 0…100 scale 0 step 1 | position | ok\n3:\"Current   curtain position\" | Integer | 0…100 scale 0 step 1 | position | ok\n4:\"Mode\" | Enum | ? Markiesen Funktion | opening_mode | ?\n5:\"Motor  running direction\" | Enum | Forward running / Inverted running | motor_direction | ok\n6:\"Add   wireless remote\" | ?Enum | OFF/ON |   |  \n7:\"Work   State\" | Enum | opening/closing | work_state | ?\n10:\"Total   Time\" | Integer | 0... 600 s (17 s) unit \"s\" | calibration_time | ok\n11:\"Situation_set\" | Enum | fully open/fully closed |   |  \n12:\"Fault\" | Bitmap |   | motor_fault | ?\n16:\"Lower   limit setting\" (chinois) |   |   | set_bottom_limit | ?\n19:\"Best   Position\" | Integer | 1…100 | favorite_position | ok\n21:\"Angle   Control\" | Integer | 0/25/50/75/100° |   | state ok, set ko\n101:\"travel   calibration\" |   | Start | calibration | ok\n102:\"Quick   Calibration 1\" |   | Start |   | ok\n103:\"Best   position\" | Integer | OFF/ON | goto_position | ko\n104:\"Reset\" | ?Enum |   | factory_reset | ?\n\n\n\n</body>\n\n</html>\n`\n**Based on the messages above, I created an external converter:**\n\n<p dir=\"auto\">`const {} = require('zigbee-herdsman-converters/lib/modernExtend');<br>\n// Add the lines below<br>\nconst fz = require('zigbee-herdsman-converters/converters/fromZigbee');<br>\nconst tz = require('zigbee-herdsman-converters/converters/toZigbee');<br>\nconst exposes = require('zigbee-herdsman-converters/lib/exposes');<br>\nconst reporting = require('zigbee-herdsman-converters/lib/reporting');<br>\nconst ota = require('zigbee-herdsman-converters/lib/ota');<br>\nconst tuya = require('zigbee-herdsman-converters/lib/tuya');<br>\nconst {} = require('zigbee-herdsman-converters/lib/tuya');<br>\nconst utils = require('zigbee-herdsman-converters/lib/utils');<br>\nconst globalStore = require('zigbee-herdsman-converters/lib/store');<br>\nconst modernExtend = require('zigbee-herdsman-converters/lib/modernExtend');<br>\nconst e = exposes.presets;<br>\nconst ea = exposes.access;</p>\n<p dir=\"auto\">const definition = {<br>\nfingerprint: [{ modelID: 'TS0601', manufacturerName: '_TZE200_eqpaxqdv' },],<br>\nzigbeeModel: ['TS0601'],<br>\nmodel: 'TS0601',<br>\nvendor: '_TZE200_eqpaxqdv',<br>\ndescription: 'KnockautX Multi STAK 3 / STAS 3',<br>\nfromZigbee: [tuya.fz.datapoints],<br>\ntoZigbee: [tuya.tz.datapoints],<br>\nexposes: [<br>\ne.cover_position().setAccess('position', ea.STATE_SET),<br>\ne.enum('opening_mode', ea.STATE_SET, ['tilt', 'lift']).withDescription('Switch opening mode').withCategory('config'),<br>\ne.enum('motor_direction', ea.STATE_SET, ['normal', 'reversed']).withDescription('Set the motor running direction'),<br>\ne.enum('add_wireless_remote', ea.STATE_SET, ['START', 'END']).withDescription('Add a wireless remote'),<br>\ne.text('work_state', ea.STATE, ['opening', 'closing']),<br>\ne.numeric('calibration_time', ea.ALL).withValueMin(0).withValueMax(600).withUnit('s'),<br>\ne.text('situation_set', ea.STATE, ['fully_open', 'fully_close']),<br>\ne.binary('motor_fault', ea.STATE, true, false).withDescription('Motor Fault'),<br>\ne.enum('set_bottom_limit', ea.STATE_SET, ['START', \n'END']).withDescription('Set the bottom limit, to reset limits use \nfactory_reset'),<br>\ne.binary('goto_positon', ea.SET, true, false),<br>\ne.enum('angle_control', ea.STATE_SET, ['0', '25', '50', '75', '100']),<br>\ne.enum('calibration', ea.STATE_SET, ['START', 'END']).withDescription('Travel Calibration'),<br>\n//e.enum('calibration1', ea.STATE_SET, ['START', 'END']).withDescription('Quick Calibration'),<br>\ne.numeric('favorite_position', \nea.STATE_SET).withValueMin(1).withValueMax(100).withDescription('Favorite\n position of this cover'),//error with ValueMin(0)<br>\ne.binary('factory_reset', ea.SET, true, false).withDescription('Factory reset the device'),<br>\n],<br>\nwhiteLabel: [<br>\ntuya.whitelabel('KnockautX', 'PIMS3028', 'Cover', ['_TZE200_eqpaxqdv'])<br>\n],<br>\nconfigure: tuya.configureMagicPacket,<br>\nmeta: {<br>\ntuyaDatapoints: [<br>\n[1, 'state', tuya.valueConverterBasic.lookup({OPEN: tuya.enum(0), STOP: tuya.enum(1), CLOSE: tuya.enum(2)})],<br>\n[2, 'position', tuya.valueConverter.coverPosition],//Curtain position setting<br>\n[3, 'position', tuya.valueConverter.coverPositionInverted],//Current curtain position<br>\n[4, 'opening_mode', tuya.valueConverterBasic.lookup({tilt: tuya.enum(0), lift: tuya.enum(1)})], // no effect<br>\n[5, 'motor_direction', tuya.valueConverter.tubularMotorDirection],<br>\n[6, 'add_wireless_remote', tuya.valueConverterBasic.lookup({START: tuya.enum(0), END: tuya.enum(1)})],<br>\n[7, 'work_state', tuya.valueConverterBasic.lookup({opening: tuya.enum(0), closing: tuya.enum(1)})], // don't work<br>\n[10, 'calibration_time', tuya.valueConverter.raw],//17s for my cover, default 600s<br>\n[11, 'situation_set', tuya.valueConverterBasic.lookup({fully_open: tuya.enum(0), fully_close: tuya.enum(1)})],//don't work<br>\n[16, 'set_bottom_limit', tuya.valueConverterBasic.lookup({START: tuya.enum(1), END: tuya.enum(0)})],//don't work, error<br>\n[19, 'favorite_position', tuya.valueConverter.setLimit],<br>\n[21, 'angle_control', tuya.valueConverterBasic.lookup({ 0: tuya.enum(0),\n 25: tuya.enum(25), 50: tuya.enum(50), 75: tuya.enum(75), \n100:tuya.enum(100)})],//State work, Set don't work<br>\n[101, 'calibration', tuya.valueConverterBasic.lookup({START: tuya.enum(0), END: tuya.enum(1)})], // travel calibration<br>\n//[102, 'calibration1', tuya.valueConverterBasic.lookup({START: tuya.enum(0), END: tuya.enum(1)})], // Quick Calibration 1<br>\n[103, 'goto_position', tuya.valueConverter.raw],//don't work<br>\n[104, 'factory_reset', tuya.valueConverter.raw],//no effect ?<br>\n],<br>\n},<br>\n};</p>\n<p dir=\"auto\">module.exports = definition;`</p>\n<p dir=\"auto\">You can see in the comments what works and what doesn't.<br>\nAttached is another picture of the device</p>\n<a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://private-user-images.githubusercontent.com/166981887/489461419-8df5546b-22ac-4caa-a6a0-6c36e0fba496.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTc5MzEyMzQsIm5iZiI6MTc1NzkzMDkzNCwicGF0aCI6Ii8xNjY5ODE4ODcvNDg5NDYxNDE5LThkZjU1NDZiLTIyYWMtNGNhYS1hNmEwLTZjMzZlMGZiYTQ5Ni5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwOTE1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDkxNVQxMDA4NTRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xZTkyYzA2ZGZkNmQyMWFmOWMzODhmNGY5YTQ5M2UzY2FjZjM1ZjQyMTYwODYwOTY3Y2MzYTQ4OTkxODIyZTkzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.H69PnS6hh_fm-Shr0pi6vcdI2OT3LW3-xzLxdOUUlXc\"><img width=\"512\" height=\"512\" alt=\"Image\" src=\"https://private-user-images.githubusercontent.com/166981887/489461419-8df5546b-22ac-4caa-a6a0-6c36e0fba496.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTc5MzEyMzQsIm5iZiI6MTc1NzkzMDkzNCwicGF0aCI6Ii8xNjY5ODE4ODcvNDg5NDYxNDE5LThkZjU1NDZiLTIyYWMtNGNhYS1hNmEwLTZjMzZlMGZiYTQ5Ni5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwOTE1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDkxNVQxMDA4NTRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xZTkyYzA2ZGZkNmQyMWFmOWMzODhmNGY5YTQ5M2UzY2FjZjM1ZjQyMTYwODYwOTY3Y2MzYTQ4OTkxODIyZTkzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.H69PnS6hh_fm-Shr0pi6vcdI2OT3LW3-xzLxdOUUlXc\" style=\"max-width: 100%; height: auto; max-height: 512px;\"></a></div></div><!--EndFragment-->\n</body>\n</html>\n",
+        "body": " _Originally posted by @github-actions in [#25118](https://github.com/Koenkk/zigbee2mqtt/issues/25118#issuecomment-2727068830)_\n\n**Using a Tuya gateway, I was able to obtain the Tuya Data Points:**\n`\n<html xmlns:v=\"urn:schemas-microsoft-com:vml\"\nxmlns:o=\"urn:schemas-microsoft-com:office:office\"\nxmlns:x=\"urn:schemas-microsoft-com:office:excel\"\nxmlns=\"http://www.w3.org/TR/REC-html40\">\n\n<head>\n\n<meta name=ProgId content=Excel.Sheet>\n<meta name=Generator content=\"Microsoft Excel 15\">\n<link id=Main-File rel=Main-File\nhref=\"file:///C:/Users/phili/AppData/Local/Temp/msohtmlclip1/01/clip.htm\">\n<link rel=File-List\nhref=\"file:///C:/Users/phili/AppData/Local/Temp/msohtmlclip1/01/clip_filelist.xml\">\n<style>\n<!--table\n\t{mso-displayed-decimal-separator:\"\\.\";\n\tmso-displayed-thousand-separator:\" \";}\n@page\n\t{margin:.27in .43in .33in .48in;\n\tmso-header-margin:.13in;\n\tmso-footer-margin:.13in;\n\tmso-page-orientation:landscape;\n\tmso-horizontal-page-align:center;\n\tmso-vertical-page-align:center;}\n.font5\n\t{color:#47D359;\n\tfont-size:28.0pt;\n\tfont-weight:400;\n\tfont-style:normal;\n\ttext-decoration:none;\n\tfont-family:Wingdings;\n\tmso-generic-font-family:auto;\n\tmso-font-charset:2;}\n.font6\n\t{color:red;\n\tfont-size:28.0pt;\n\tfont-weight:400;\n\tfont-style:normal;\n\ttext-decoration:none;\n\tfont-family:Wingdings;\n\tmso-generic-font-family:auto;\n\tmso-font-charset:2;}\n.font7\n\t{color:#47D359;\n\tfont-size:28.0pt;\n\tfont-weight:400;\n\tfont-style:normal;\n\ttext-decoration:none;\n\tfont-family:\"Aptos Narrow\", sans-serif;\n\tmso-font-charset:0;}\n.font8\n\t{color:red;\n\tfont-size:28.0pt;\n\tfont-weight:400;\n\tfont-style:normal;\n\ttext-decoration:none;\n\tfont-family:\"Aptos Narrow\", sans-serif;\n\tmso-font-charset:0;}\ntr\n\t{mso-height-source:auto;}\ncol\n\t{mso-width-source:auto;}\nbr\n\t{mso-data-placement:same-cell;}\ntd\n\t{padding-top:1px;\n\tpadding-right:1px;\n\tpadding-left:1px;\n\tmso-ignore:padding;\n\tcolor:black;\n\tfont-size:11.0pt;\n\tfont-weight:400;\n\tfont-style:normal;\n\ttext-decoration:none;\n\tfont-family:\"Aptos Narrow\", sans-serif;\n\tmso-font-charset:0;\n\tmso-number-format:General;\n\ttext-align:general;\n\tvertical-align:bottom;\n\tborder:none;\n\tmso-background-source:auto;\n\tmso-pattern:auto;\n\tmso-protection:locked visible;\n\twhite-space:nowrap;\n\tmso-rotate:0;}\n.xl63\n\t{font-size:14.0pt;\n\tborder-top:.5pt solid #8ED973;\n\tborder-right:none;\n\tborder-bottom:.5pt solid #8ED973;\n\tborder-left:none;\n\tbackground:#DAF2D0;\n\tmso-pattern:#DAF2D0 none;}\n.xl64\n\t{font-size:14.0pt;}\n.xl65\n\t{font-size:14.0pt;\n\tborder-top:.5pt solid #8ED973;\n\tborder-right:none;\n\tborder-bottom:.5pt solid #8ED973;\n\tborder-left:none;}\n.xl66\n\t{font-size:14.0pt;\n\tbackground:#DAF2D0;\n\tmso-pattern:#DAF2D0 none;}\n.xl67\n\t{color:red;\n\tfont-size:28.0pt;\n\tfont-family:Wingdings;\n\tmso-generic-font-family:auto;\n\tmso-font-charset:2;}\n.xl68\n\t{color:#47D359;\n\tfont-size:28.0pt;\n\tfont-family:Wingdings;\n\tmso-generic-font-family:auto;\n\tmso-font-charset:2;}\n.xl69\n\t{font-size:28.0pt;}\n-->\n</style>\n</head>\n\n<body link=\"#467886\" vlink=\"#96607D\">\n\n\nTuyaDatapoints | Type | Tuya Value | Z2mqtt Converter | Ok/Ko\n-- | -- | -- | -- | --\n1:\"Control\" | Enum | open/stop/close | state | ok\n2:\"Curtain   position setting\" | Integer | 0…100 scale 0 step 1 | position | ok\n3:\"Current   curtain position\" | Integer | 0…100 scale 0 step 1 | position | ok\n4:\"Mode\" | Enum | ? Markiesen Funktion | opening_mode | ?\n5:\"Motor  running direction\" | Enum | Forward running / Inverted running | motor_direction | ok\n6:\"Add   wireless remote\" | ?Enum | OFF/ON |   |  \n7:\"Work   State\" | Enum | opening/closing | work_state | ?\n10:\"Total   Time\" | Integer | 0... 600 s (17 s) unit \"s\" | calibration_time | ok\n11:\"Situation_set\" | Enum | fully open/fully closed |   |  \n12:\"Fault\" | Bitmap |   | motor_fault | ?\n16:\"Lower   limit setting\" (chinois) |   |   | set_bottom_limit | ?\n19:\"Best   Position\" | Integer | 1…100 | favorite_position | ok\n21:\"Angle   Control\" | Integer | 0/25/50/75/100° |   | state ok, set ko\n101:\"travel   calibration\" |   | Start | calibration | ok\n102:\"Quick   Calibration 1\" |   | Start |   | ok\n103:\"Best   position\" | Integer | OFF/ON | goto_position | ko\n104:\"Reset\" | ?Enum |   | factory_reset | ?\n\n\n\n</body>\n\n</html>\n`\n**Based on the messages above, I created an external converter:**\n\n`const {} = require('zigbee-herdsman-converters/lib/modernExtend');\n// Add the lines below\nconst fz = require('zigbee-herdsman-converters/converters/fromZigbee');\nconst tz = require('zigbee-herdsman-converters/converters/toZigbee');\nconst exposes = require('zigbee-herdsman-converters/lib/exposes');\nconst reporting = require('zigbee-herdsman-converters/lib/reporting');\nconst ota = require('zigbee-herdsman-converters/lib/ota');\nconst tuya = require('zigbee-herdsman-converters/lib/tuya');\nconst {} = require('zigbee-herdsman-converters/lib/tuya');\nconst utils = require('zigbee-herdsman-converters/lib/utils');\nconst globalStore = require('zigbee-herdsman-converters/lib/store');\nconst modernExtend = require('zigbee-herdsman-converters/lib/modernExtend');\nconst e = exposes.presets;\nconst ea = exposes.access;\n\nconst definition = {\n    fingerprint: [{ modelID: 'TS0601', manufacturerName: '_TZE200_eqpaxqdv' },],\n    zigbeeModel: ['TS0601'],\n    model: 'TS0601',\n    vendor: '_TZE200_eqpaxqdv',\n    description: 'KnockautX Multi STAK 3 / STAS 3',\n    fromZigbee: [tuya.fz.datapoints],\n    toZigbee: [tuya.tz.datapoints],\n    exposes: [\n        e.cover_position().setAccess('position', ea.STATE_SET),\n        e.enum('opening_mode', ea.STATE_SET, ['tilt', 'lift']).withDescription('Switch opening mode').withCategory('config'),\n        e.enum('motor_direction', ea.STATE_SET, ['normal', 'reversed']).withDescription('Set the motor running direction'),\n        e.enum('add_wireless_remote', ea.STATE_SET, ['START', 'END']).withDescription('Add a wireless remote'),\n        e.text('work_state', ea.STATE, ['opening', 'closing']),\n        e.numeric('calibration_time', ea.ALL).withValueMin(0).withValueMax(600).withUnit('s'),\n        e.text('situation_set', ea.STATE, ['fully_open', 'fully_close']),\n        e.binary('motor_fault', ea.STATE, true, false).withDescription('Motor Fault'),\n        e.enum('set_bottom_limit', ea.STATE_SET, ['START', 'END']).withDescription('Set the bottom limit, to reset limits use factory_reset'),\n        e.binary('goto_positon', ea.SET, true, false),\n        e.enum('angle_control', ea.STATE_SET, ['0', '25', '50', '75', '100']),\n        e.enum('calibration', ea.STATE_SET, ['START', 'END']).withDescription('Travel Calibration'),\n        //e.enum('calibration1', ea.STATE_SET, ['START', 'END']).withDescription('Quick Calibration'), \n        e.numeric('favorite_position', ea.STATE_SET).withValueMin(1).withValueMax(100).withDescription('Favorite position of this cover'),//error with ValueMin(0)\n        e.binary('factory_reset', ea.SET, true, false).withDescription('Factory reset the device'),\n    ],\n    whiteLabel: [\n        tuya.whitelabel('KnockautX', 'PIMS3028', 'Cover', ['_TZE200_eqpaxqdv'])\n    ],\n    configure: tuya.configureMagicPacket,\n    meta: {\n        tuyaDatapoints: [\n            [1, 'state', tuya.valueConverterBasic.lookup({OPEN: tuya.enum(0), STOP: tuya.enum(1), CLOSE: tuya.enum(2)})],\n            [2, 'position', tuya.valueConverter.coverPosition],//Curtain position setting\n            [3, 'position', tuya.valueConverter.coverPositionInverted],//Current curtain position\n            [4, 'opening_mode', tuya.valueConverterBasic.lookup({tilt: tuya.enum(0), lift: tuya.enum(1)})], // no effect\n            [5, 'motor_direction', tuya.valueConverter.tubularMotorDirection],\n            [6, 'add_wireless_remote', tuya.valueConverterBasic.lookup({START: tuya.enum(0), END: tuya.enum(1)})],\n            [7, 'work_state', tuya.valueConverterBasic.lookup({opening: tuya.enum(0), closing: tuya.enum(1)})], // don't work\n            [10, 'calibration_time', tuya.valueConverter.raw],//17s for my cover, default 600s\n            [11, 'situation_set', tuya.valueConverterBasic.lookup({fully_open: tuya.enum(0), fully_close: tuya.enum(1)})],//don't work\n            [16, 'set_bottom_limit', tuya.valueConverterBasic.lookup({START: tuya.enum(1), END: tuya.enum(0)})],//don't work, error\n            [19, 'favorite_position', tuya.valueConverter.setLimit],\n            [21, 'angle_control', tuya.valueConverterBasic.lookup({ 0: tuya.enum(0), 25: tuya.enum(25), 50: tuya.enum(50), 75: tuya.enum(75), 100:tuya.enum(100)})],//State work, Set don't work\n            [101, 'calibration', tuya.valueConverterBasic.lookup({START: tuya.enum(0), END: tuya.enum(1)})], // travel calibration\n            //[102, 'calibration1', tuya.valueConverterBasic.lookup({START: tuya.enum(0), END: tuya.enum(1)})], // Quick Calibration 1\n            [103, 'goto_position', tuya.valueConverter.raw],//don't work\n            [104, 'factory_reset', tuya.valueConverter.raw],//no effect ?\n        ],\n    },\n};\n\nmodule.exports = definition;`\n\n**You can see in the comments what works and what doesn't.**\n\n**Attached is another picture of the device**\n\n<img width=\"512\" height=\"512\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/d9a9bf27-011a-4201-b81b-c1c9ddac3143\" />\n\n",
         "labels": [],
         "state": "open",
         "created": "2025-09-15T10:10:18Z",
@@ -1101,17 +1112,6 @@
         "state": "open",
         "created": "2025-09-05T14:59:01Z",
         "url": "https://github.com/Koenkk/zigbee2mqtt/issues/28506"
-      },
-      {
-        "repo": "Koenkk/zigbee2mqtt",
-        "title": "[New device support]: Tongou TOQCB2-80 _TZE284_9xstqowh",
-        "body": "### Link\n\nhttps://www.zigbee2mqtt.io/devices/TOQCB2-80.html\n\n### Database entry\n\n{\"id\":10,\"type\":\"Router\",\"ieeeAddr\":\"0x142d41fffe99a91f\",\"nwkAddr\":60190,\"manufId\":4098,\"manufName\":\"_TZE284_9xstqowh\",\"powerSource\":\"Mains (single phase)\",\"modelId\":\"TS0601\",\"epList\":[1],\"endpoints\":{\"1\":{\"profId\":260,\"epId\":1,\"devId\":81,\"inClusterList\":[0,4,5,61184,0,60672],\"outClusterList\":[25,10],\"clusters\":{\"genBasic\":{\"attributes\":{\"65506\":31,\"65508\":0,\"modelId\":\"TS0601\",\"manufacturerName\":\"_TZE284_9xstqowh\",\"powerSource\":1,\"zclVersion\":3,\"appVersion\":74,\"stackVersion\":0,\"hwVersion\":1,\"dateCode\":\"\"}}},\"binds\":[],\"configuredReportings\":[],\"meta\":{}}},\"appVersion\":74,\"stackVersion\":0,\"hwVersion\":1,\"dateCode\":\"\",\"zclVersion\":3,\"interviewCompleted\":true,\"interviewState\":\"SUCCESSFUL\",\"meta\":{},\"lastSeen\":1755857493769}\n\n### Zigbee2MQTT version\n\n2.6.1\n\n### Comments\n\nThis product works great but I have a different manufacturer\nZigBee variant\n\n\n\n### External definition\n\n```shell\nexport default {\n    zigbeeModel: ['TS0601'],\n    model: 'TS0601',\n    vendor: '_TZE284_9xstqowh',\n    description: 'Automatically generated definition',\n    extend: [],\n    meta: {},\n};\n```\n\n### What does/doesn't work with the external definition?\n\nnot supported since the only data pulling from the breaker is the link quality",
-        "labels": [
-          "new device support"
-        ],
-        "state": "open",
-        "created": "2025-09-05T14:49:53Z",
-        "url": "https://github.com/Koenkk/zigbee2mqtt/issues/28505"
       },
       {
         "repo": "home-assistant/core",
@@ -8336,565 +8336,565 @@
         "url": "https://apps.developer.homey.app/",
         "title": "Documentation",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "https://apps-sdk-v3.developer.homey.app/",
         "title": "Reference",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "https://api.developer.homey.app/",
         "title": "Documentation",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "https://athombv.github.io/node-homey-api/",
         "title": "Reference",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "https://tools.developer.homey.app/",
         "title": "Developer\n                  Tools",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "https://athombv.github.io/node-homey-zigbeedriver/",
         "title": "Homey\n                  ZigbeeDriver",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "https://athombv.github.io/node-homey-zwavedriver/",
         "title": "Homey\n                  ZWaveDriver",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "https://athombv.github.io/node-homey-rfdriver/",
         "title": "Homey\n                  RFDriver",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "https://athombv.github.io/node-homey-log/",
         "title": "Homey\n                  Log",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "https://athombv.github.io/node-zigbee-clusters/",
         "title": "Zigbee\n                  Clusters",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "https://athombv.github.io/node-homey-oauth2app/",
         "title": "Homey\n                  OAuth2",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "index.html",
         "title": "Homey Apps SDK v3",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "tutorial-device-capabilities.html",
         "title": "Device Capabilities",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "tutorial-device-classes.html",
         "title": "Device Classes",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "ManagerApi.html",
         "title": "ManagerApi",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "ManagerApps.html",
         "title": "ManagerApps",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "ManagerArp.html",
         "title": "ManagerArp",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "ManagerAudio.html",
         "title": "ManagerAudio",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "ManagerBLE.html",
         "title": "ManagerBLE",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "ManagerClock.html",
         "title": "ManagerClock",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "ManagerCloud.html",
         "title": "ManagerCloud",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "ManagerDiscovery.html",
         "title": "ManagerDiscovery",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "ManagerDrivers.html",
         "title": "ManagerDrivers",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "ManagerFlow.html",
         "title": "ManagerFlow",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "ManagerGeolocation.html",
         "title": "ManagerGeolocation",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "ManagerI18n.html",
         "title": "ManagerI18n",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "ManagerImages.html",
         "title": "ManagerImages",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "ManagerInsights.html",
         "title": "ManagerInsights",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "ManagerLedring.html",
         "title": "ManagerLedring",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "ManagerNFC.html",
         "title": "ManagerNFC",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "ManagerNotifications.html",
         "title": "ManagerNotifications",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "ManagerRF.html",
         "title": "ManagerRF",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "ManagerSettings.html",
         "title": "ManagerSettings",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "ManagerSpeechOutput.html",
         "title": "ManagerSpeechOutput",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "ManagerVideos.html",
         "title": "ManagerVideos",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "ManagerZigBee.html",
         "title": "ManagerZigBee",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "ManagerZwave.html",
         "title": "ManagerZwave",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "Api.html",
         "title": "Api",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "ApiApp.html",
         "title": "ApiApp",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "App.html",
         "title": "App",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "BleAdvertisement.html",
         "title": "BleAdvertisement",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "BleCharacteristic.html",
         "title": "BleCharacteristic",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "BleDescriptor.html",
         "title": "BleDescriptor",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "BlePeripheral.html",
         "title": "BlePeripheral",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.130Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "BleService.html",
         "title": "BleService",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "CloudOAuth2Callback.html",
         "title": "CloudOAuth2Callback",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "CloudWebhook.html",
         "title": "CloudWebhook",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "Device.html",
         "title": "Device",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "DiscoveryResult.html",
         "title": "DiscoveryResult",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "DiscoveryResultMAC.html",
         "title": "DiscoveryResultMAC",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "DiscoveryResultMDNSSD.html",
         "title": "DiscoveryResultMDNSSD",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "DiscoveryResultSSDP.html",
         "title": "DiscoveryResultSSDP",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.497Z"
       },
       {
         "url": "DiscoveryStrategy.html",
         "title": "DiscoveryStrategy",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "Driver.html",
         "title": "Driver",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "FlowArgument.html",
         "title": "FlowArgument",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "FlowCard.html",
         "title": "FlowCard",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "FlowCardAction.html",
         "title": "FlowCardAction",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "FlowCardCondition.html",
         "title": "FlowCardCondition",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "FlowCardTrigger.html",
         "title": "FlowCardTrigger",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "FlowCardTriggerDevice.html",
         "title": "FlowCardTriggerDevice",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "FlowToken.html",
         "title": "FlowToken",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "Homey.html",
         "title": "Homey",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "Image.html",
         "title": "Image",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "InsightsLog.html",
         "title": "InsightsLog",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "LedringAnimation.html",
         "title": "LedringAnimation",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "LedringAnimationSystem.html",
         "title": "LedringAnimationSystem",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "LedringAnimationSystemProgress.html",
         "title": "LedringAnimationSystemProgress",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "PairSession.html",
         "title": "PairSession",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "Signal.html",
         "title": "Signal",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "Signal433.html",
         "title": "Signal433",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "Signal868.html",
         "title": "Signal868",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "SignalInfrared.html",
         "title": "SignalInfrared",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "SimpleClass.html",
         "title": "SimpleClass",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "Video.html",
         "title": "Video",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "VideoDASH.html",
         "title": "VideoDASH",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "VideoHLS.html",
         "title": "VideoHLS",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "VideoOther.html",
         "title": "VideoOther",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "VideoRTMP.html",
         "title": "VideoRTMP",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "VideoRTSP.html",
         "title": "VideoRTSP",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "VideoWebRTC.html",
         "title": "VideoWebRTC",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "VideoWithURL.html",
         "title": "VideoWithURL",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "ZigBeeNode.html",
         "title": "ZigBeeNode",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "ZwaveCommandClass.html",
         "title": "ZwaveCommandClass",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "ZwaveNode.html",
         "title": "ZwaveNode",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "https://apps.developer.homey.app/",
         "title": "Homey Apps SDK",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "ManagerDrivers.html",
         "title": "ManagerDrivers",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "Homey.html",
         "title": "Homey",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "ManagerFlow.html",
         "title": "ManagerFlow",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "https://github.com/athombv/homey-apps-sdk-issues/issues",
         "title": "Apps SDK Issue Tracker",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "https://athombv.github.io/node-homey-zwavedriver/",
         "title": "Homey Z-Wave Driver",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "https://athombv.github.io/node-homey-zigbeedriver/",
         "title": "Homey Zigbee Driver",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "https://github.com/athombv/node-homey-rfdriver/",
         "title": "Homey RF Driver",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "https://github.com/athombv/node-homey-oauth2app/",
         "title": "Homey OAuth2 App",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
         "url": "https://github.com/athombv/node-homey-log",
         "title": "Homey Log",
         "source": "homey",
-        "extracted": "2025-09-15T10:38:22.131Z"
+        "extracted": "2025-09-15T11:32:55.498Z"
       }
     ],
     "zigbee": [
@@ -8902,325 +8902,325 @@
         "url": "search.html",
         "title": "Search...",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "zha.html",
         "title": "Zigbee Home Automation",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "zigbee2tasmota.html",
         "title": "Tasmota",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "zigbee2mqtt.html",
         "title": "Zigbee2MQTT",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "deconz.html",
         "title": "deCONZ",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "z4d.html",
         "title": "Zigbee for Domoticz",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "iobroker.html",
         "title": "ioBroker.zigbee",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/bulbs.html",
         "title": "Bulbs",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/coordinators.html",
         "title": "Coordinators",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/covers.html",
         "title": "Covers",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/dimmers.html",
         "title": "Dimmers",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/hvac.html",
         "title": "HVAC",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/lights.html",
         "title": "Lights",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/locks.html",
         "title": "Locks",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/plugs.html",
         "title": "Plugs",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/misc.html",
         "title": "Miscellaneous",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/remotes.html",
         "title": "Remote Switches",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/routers.html",
         "title": "Routers",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/sensors.html",
         "title": "Sensors",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/switches.html",
         "title": "Switches",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/vendors.html",
         "title": "Manufacturer Sorted",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/all.html",
         "title": "All Devices",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "new.html",
         "title": "Add new device",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "last_added.html",
         "title": "Recently added:",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/Sonoff_ZBMicro.html",
         "title": "Sonoff Micro USB Plug and Repeater",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/Sonoff_ZBM5-3C-80-86.html",
         "title": "Sonoff SwitchMan 3 Gang 80/86 Type Wall Switch",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/Sonoff_ZBM5-3C-120.html",
         "title": "Sonoff SwitchMan 3 Gang 120 Type Wall Switch",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/Sonoff_ZBM5-2C-80-86.html",
         "title": "Sonoff SwitchMan 2 Gang 80/86 Type Wall Switch",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/Sonoff_ZBM5-2C-120.html",
         "title": "Sonoff SwitchMan 2 Gang 120 Type Wall Switch",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/Sonoff_ZBM5-1C-80-86.html",
         "title": "Sonoff SwitchMan 1 Gang 80/86 Type Wall Switch",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/Sonoff_ZBM5-1C-120.html",
         "title": "Sonoff SwitchMan 1 Gang 120 Type Wall Switch",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/Sonoff_SWV.html",
         "title": "Sonoff Smart Water Valve",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/Sonoff_SNZB-05P.html",
         "title": "Sonoff Water Leak Sensor",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/Sonoff_SNZB-04P.html",
         "title": "Sonoff Wireless Door/Window Sensor",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/Sonoff_SNZB-02WD.html",
         "title": "Sonoff LCD Temperature Humidity Sensor",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/Sonoff_SNZB-02LD.html",
         "title": "Sonoff LCD Temperature Humidity Sensor (Probe Version)",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/NodOn_STPH-4-1-00.html",
         "title": "NodOn Temperature & Humidity Sensor",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/NodOn_TRV-4-1-00.html",
         "title": "NodOn Thermostatic Radiator Valve",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/SMLIGHT_SLZB-07p7.html",
         "title": "SMLIGHT USB Adapter CC2652P7",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/SMLIGHT_SLZB-07p10.html",
         "title": "SMLIGHT USB Adapter CC2674P10",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/SMLIGHT_SLZB-07MG24.html",
         "title": "SMLIGHT USB Adapter EFR32MG24",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/SMLIGHT_SLZB-07.html",
         "title": "SMLIGHT USB Adapter EFR32MG21",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/SMLIGHT_SLZB-06p7.html",
         "title": "SMLIGHT POE Ethernet USB Adapter CC2652P",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/SMLIGHT_SLZB-06p10.html",
         "title": "SMLIGHT POE Ethernet USB Adapter CC2652P10",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/SMLIGHT_SLZB-06noPOE.html",
         "title": "SMLIGHT Ethernet USB Adapter CC2652P",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/SMLIGHT_SLZB-06M.html",
         "title": "SMLIGHT POE Ethernet USB Adapter EFR32MG21",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/SMLIGHT_SLZB-06.html",
         "title": "SMLIGHT POE Ethernet USB Adapter CC2652P",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/Sonoff_ZBMINIR2.html",
         "title": "Sonoff Mini Relay Extreme",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/Bosch_BTH-RM230Z.html",
         "title": "Bosch Room thermostat II 230V",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/codm_90810.html",
         "title": "cod.m Zigbee Coordinator CC2652P7 (CZC-1.0)",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/Z-Wave.Me_ZME_mPCIe_ZW_ZB.html",
         "title": "Z-Wave.Me Dual Protocol Z-Wave & Zigbee Mini PCI-Express Extension Board",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/Z-Wave.Me_ZME_ZSTATION_ZW_ZB.html",
         "title": "Z-Wave.Me Dual Protocol Z-Wave & Zigbee USB Adapter",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/Z-Wave.Me_ZMEEWB7-ZW-ZB.html",
         "title": "Z-Wave.Me Multi-Protocol Controller",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       },
       {
         "url": "/BTicino_F20T60A.html",
         "title": "BTicino DIN Power Consumption Module 100-240V 60A",
         "source": "zigbee",
-        "extracted": "2025-09-15T10:38:22.341Z"
+        "extracted": "2025-09-15T11:32:55.684Z"
       }
     ],
     "tuya": []
@@ -9230,6 +9230,6 @@
     "zigbee2mqtt": [],
     "homeassistant": []
   },
-  "lastUpdate": "2025-09-15T10:38:23.390Z",
+  "lastUpdate": "2025-09-15T11:32:56.793Z",
   "totalSources": 4
 }
