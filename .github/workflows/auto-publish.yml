@@ -139,7 +139,7 @@ jobs:
         
     - name: 🚀 Direct Homey Publication
       id: publish
-      timeout-minutes: 5
+      timeout-minutes: 8
       run: |
         echo "🚀 Starting Homey app publication..."
         
@@ -147,8 +147,50 @@ jobs:
         git add -A
         git commit -m "Auto-commit before publication" || true
         
-        # Use printf to pipe inputs to homey app publish
-        printf "y\ny\n\nv1.1.0 MASSIVE EXPANSION: 101 New Community Drivers + 110 Updated Drivers - Complete community integration with 1500+ devices from 80+ manufacturers.\n\n" | homey app publish
+        # Install expect for automation
+        sudo apt-get update && sudo apt-get install -y expect
+        
+        # Create automation script for publication
+        cat << 'EOF' > publish_auto.sh
+#!/bin/bash
+/usr/bin/expect << 'EXPECT_EOF'
+set timeout 300
+spawn homey app publish
+
+expect {
+    "*version number*" {
+        send "n\r"
+        exp_continue
+    }
+    "*changelog*" {
+        send "v1.1.0 MASSIVE EXPANSION: 101 New Community Drivers + 110 Updated Drivers - Complete community integration with 1500+ devices from 80+ manufacturers.\r"
+        exp_continue
+    }
+    "*continue*" {
+        send "\r"
+        exp_continue
+    }
+    "*published*" {
+        puts "✅ Publication successful!"
+        exit 0
+    }
+    "*error*" {
+        puts "❌ Publication error"
+        exit 1
+    }
+    timeout {
+        puts "⏱️ Publication timeout"
+        exit 1
+    }
+    eof {
+        exit 0
+    }
+}
+EXPECT_EOF
+EOF
+        
+        chmod +x publish_auto.sh
+        ./publish_auto.sh
         
     - name: 📊 Generate Publication Report
       if: always()
