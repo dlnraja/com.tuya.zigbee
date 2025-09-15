@@ -147,11 +147,12 @@ jobs:
         git config --global user.email "actions@github.com"
         git config --global user.name "GitHub Actions"
         git add -A
-        git commit -m "Auto-commit before publication" || true
+        
         sudo apt-get update && sudo apt-get install -y expect
         
         # Set Homey token for authentication
-        homey login --token=$HOMEY_TOKEN
+        mkdir -p ~/.homey
+        echo "{\"token\":\"$HOMEY_TOKEN\"}" > ~/.homey/config.json
         
         expect -c '
         set timeout 300
@@ -160,7 +161,7 @@ jobs:
           "*version number*" { send "n\r"; exp_continue }
           "*changelog*" { send "v1.1.0 MASSIVE EXPANSION: 101 New Community Drivers + 110 Updated Drivers - Complete community integration with 1500+ devices from 80+ manufacturers.\r"; exp_continue }
           "*continue*" { send "\r"; exp_continue }
-          "*already logged in*" { exp_continue }
+          "*login*" { send "\r"; exp_continue }
           "*published*" { exit 0 }
           eof { exit 0 }
         }
