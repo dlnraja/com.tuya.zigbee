@@ -1,32 +1,39 @@
 {
   "name": {
-    "en": "Energy Plug"
+    "en": "Smart Plug"
   },
   "class": "socket",
   "capabilities": [
     "onoff",
-    "measure_power"
+    "measure_power",
+    "meter_power"
   ],
   "zigbee": {
     "manufacturerName": [
-      "TZ3000_plug",
-      "TZ3000_outlet",
-      "TZ3000_generic",
-      "TZ3000_common",
-      "_TZE200_universal",
-      "TZ3000_plug",
-      "_TZE200_plug",
-      "_TZE284_plug"
+      "TZ3000_3ooaz3ng",
+      "TZ3000_g5xawfcq",
+      "TZ3000_typdpbpg",
+      "TZ3000_hyfvrar3",
+      "TZ3000_9djocypn",
+      "TZ3000_w0qqde0g",
+      "TZ3000_okaz9tjs",
+      "TZ3000_ksw8qtmt",
+      "_TZE200_amp6tsvy",
+      "_TZE200_oisqyl4o",
+      "_TZE200_dwcarsat",
+      "_TZE200_whpb9yts",
+      "_TZ3000_*",
+      "_TZ3210_*",
+      "_TYZB01_*",
+      "_TYZB02_*",
+      "_TZ3400_*"
     ],
     "productId": [
       "TS0121",
-      "PLUG",
-      "TS0001",
-      "TS0601",
-      "GENERIC",
-      "TS0121",
       "SP600",
-      "PLUG1"
+      "PLUG1",
+      "OUTLET1",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -34,7 +41,8 @@
           0,
           3,
           6,
-          2820
+          2820,
+          1794
         ]
       }
     },
@@ -56,18 +64,16 @@
     ]
   },
   "images": {
-    "small": "/drivers/energy_plug/assets/small.png",
-    "large": "/drivers/energy_plug/assets/large.png",
-    "xlarge": "/drivers/energy_plug/assets/xlarge.png"
+    "small": "/drivers/smart_plug/assets/small.png",
+    "large": "/drivers/smart_plug/assets/large.png",
+    "xlarge": "/drivers/smart_plug/assets/xlarge.png"
   },
   "community": {
     "sources": [
-      "Generic compatibility database",
-      "Pattern-based enrichment"
+      "Smart plug compatibility reports",
+      "Energy monitoring requests"
     ],
     "enriched": true,
-    "type": "generic",
-    "last_updated": "2025-09-15T19:34:02.971Z"
-  },
-  "id": "energy_monitoring_plug"
+    "last_updated": "2025-09-15T19:34:02.983Z"
+  }
 }

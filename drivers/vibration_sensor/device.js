@@ -4,25 +4,24 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 class VibrationSensorDevice extends ZigBeeDevice {
 
-    async onNodeInit({ zclNode }) {
-        this.printNode();
-
-                this.registerCapability('measure_battery', 1);
-
+    async onNodeInit() {
         this.log('vibration_sensor device initialized');
+
+        // Register capabilities
+                // Register temperature measurement
+
+        // Register motion alarm
+
+        // Mark device as available
+        await this.setAvailable();
     }
 
     
-    onCapabilityOnOff(value) {
-        return this.zclNode.endpoints[1].clusters.onOff.setOn(value);
+
+    async onDeleted() {
+        this.log('vibration_sensor device deleted');
     }
 
-    onCapabilityDim(value) {
-        return this.zclNode.endpoints[1].clusters.levelControl.moveToLevel({
-            level: Math.round(value * 254),
-            transitionTime: 1
-        });
-    }
 }
 
 module.exports = VibrationSensorDevice;

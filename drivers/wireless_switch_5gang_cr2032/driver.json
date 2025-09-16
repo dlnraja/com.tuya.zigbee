@@ -1,15 +1,16 @@
 {
   "id": "wireless_switch_5gang_cr2032",
   "name": {
-    "en": "Wireless Switch 5-Gang Battery"
+    "en": "Wireless Switch 5gang Cr2032"
   },
-  "class": "button",
+  "class": "socket",
   "capabilities": [
     "button.1",
     "button.2",
     "button.3",
     "button.4",
-    "button.5"
+    "button.5",
+    "onoff"
   ],
   "energy": {
     "batteries": [
@@ -44,5 +45,18 @@
         ]
       }
     }
-  }
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
 }

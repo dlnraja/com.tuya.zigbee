@@ -2,27 +2,40 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class RollerBlindDevice extends ZigBeeDevice {
+class RollerBlindControllerDevice extends ZigBeeDevice {
 
-    async onNodeInit({ zclNode }) {
-        this.printNode();
+    async onNodeInit() {
+        this.log('roller_blind_controller device initialized');
 
+        // Register capabilities
+                // Register on/off capability
+        this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
+
+        // Mark device as available
+        await this.setAvailable();
+    }
+
+        async onCapabilityOnoff(value, opts) {
+        this.log('onCapabilityOnoff:', value);
         
-
-        this.log('roller_blind device initialized');
+        try {
+            if (value) {
+                await this.zclNode.endpoints[1].clusters.onOff.setOn();
+            } else {
+                await this.zclNode.endpoints[1].clusters.onOff.setOff();
+            }
+            
+            return Promise.resolve();
+        } catch (error) {
+            this.error('Error setting onoff:', error);
+            return Promise.reject(error);
+        }
     }
 
-    
-    onCapabilityOnOff(value) {
-        return this.zclNode.endpoints[1].clusters.onOff.setOn(value);
+    async onDeleted() {
+        this.log('roller_blind_controller device deleted');
     }
 
-    onCapabilityDim(value) {
-        return this.zclNode.endpoints[1].clusters.levelControl.moveToLevel({
-            level: Math.round(value * 254),
-            transitionTime: 1
-        });
-    }
 }
 
-module.exports = RollerBlindDevice;
+module.exports = RollerBlindControllerDevice;

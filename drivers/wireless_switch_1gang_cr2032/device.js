@@ -2,21 +2,40 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class AqaraButton extends ZigBeeDevice {
-  
-  async onNodeInit({ zclNode }) {
-    // Initialize device
-    this.log('Aqara Button initialized');
-    
-        // Register button events
-    if (zclNode.endpoints[1]?.clusters?.genOnOff) {
-      zclNode.endpoints[1].clusters.genOnOff.on('attr.onOff', () => {
-        this.homey.flow.getDeviceTriggerCard('button_pressed').trigger(this).catch(this.error);
-      });
+class WirelessSwitch1gangCr2032Device extends ZigBeeDevice {
+
+    async onNodeInit() {
+        this.log('wireless_switch_1gang_cr2032 device initialized');
+
+        // Register capabilities
+                // Register on/off capability
+        this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
+
+        // Mark device as available
+        await this.setAvailable();
     }
-  }
-  
-  
+
+        async onCapabilityOnoff(value, opts) {
+        this.log('onCapabilityOnoff:', value);
+        
+        try {
+            if (value) {
+                await this.zclNode.endpoints[1].clusters.onOff.setOn();
+            } else {
+                await this.zclNode.endpoints[1].clusters.onOff.setOff();
+            }
+            
+            return Promise.resolve();
+        } catch (error) {
+            this.error('Error setting onoff:', error);
+            return Promise.reject(error);
+        }
+    }
+
+    async onDeleted() {
+        this.log('wireless_switch_1gang_cr2032 device deleted');
+    }
+
 }
 
-module.exports = AqaraButton;
+module.exports = WirelessSwitch1gangCr2032Device;

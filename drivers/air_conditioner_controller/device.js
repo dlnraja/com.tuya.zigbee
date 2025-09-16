@@ -3,56 +3,39 @@
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 class AirConditionerControllerDevice extends ZigBeeDevice {
-    
+
     async onNodeInit() {
         this.log('air_conditioner_controller device initialized');
-        
-        // Register capabilities based on driver type
-        await this.registerCapabilities();
-        
-        // Set up device-specific listeners
-        await this.setupListeners();
+
+        // Register capabilities
+                // Register on/off capability
+        this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
+
+        // Mark device as available
+        await this.setAvailable();
     }
-    
-    async registerCapabilities() {
-        // Implementation based on capabilities defined in driver.compose.json
-        if (this.hasCapability('onoff')) {
-            this.registerCapability('onoff', 'genOnOff');
-        }
+
+        async onCapabilityOnoff(value, opts) {
+        this.log('onCapabilityOnoff:', value);
         
-        if (this.hasCapability('dim')) {
-            this.registerCapability('dim', 'genLevelCtrl');
-        }
-        
-        if (this.hasCapability('measure_battery')) {
-            this.registerCapability('measure_battery', 'genPowerCfg', {
-                reportOpts: {
-                    configureAttributeReporting: {
-                        minInterval: 0,
-                        maxInterval: 3600,
-                        minChange: 1
-                    }
-                }
-            });
-        }
-        
-        if (this.hasCapability('alarm_motion')) {
-            this.registerCapability('alarm_motion', 'msOccupancySensing');
-        }
-        
-        if (this.hasCapability('measure_temperature')) {
-            this.registerCapability('measure_temperature', 'msTemperatureMeasurement');
-        }
-        
-        if (this.hasCapability('measure_humidity')) {
-            this.registerCapability('measure_humidity', 'msRelativeHumidity');
+        try {
+            if (value) {
+                await this.zclNode.endpoints[1].clusters.onOff.setOn();
+            } else {
+                await this.zclNode.endpoints[1].clusters.onOff.setOff();
+            }
+            
+            return Promise.resolve();
+        } catch (error) {
+            this.error('Error setting onoff:', error);
+            return Promise.reject(error);
         }
     }
-    
-    async setupListeners() {
-        // Device-specific event listeners and configurations
-        this.log('Device listeners configured');
+
+    async onDeleted() {
+        this.log('air_conditioner_controller device deleted');
     }
+
 }
 
 module.exports = AirConditionerControllerDevice;

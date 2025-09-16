@@ -4,26 +4,40 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 class SmartPlugDevice extends ZigBeeDevice {
 
-    async onNodeInit({ zclNode }) {
-        this.printNode();
-
-                this.registerCapability('onoff', 6);
-        this.registerCapability('measure_power', 2820);
-
+    async onNodeInit() {
         this.log('smart_plug device initialized');
+
+        // Register capabilities
+                // Register on/off capability
+        this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
+
+        // Register power measurement
+
+        // Mark device as available
+        await this.setAvailable();
     }
 
-    
-    onCapabilityOnOff(value) {
-        return this.zclNode.endpoints[1].clusters.onOff.setOn(value);
+        async onCapabilityOnoff(value, opts) {
+        this.log('onCapabilityOnoff:', value);
+        
+        try {
+            if (value) {
+                await this.zclNode.endpoints[1].clusters.onOff.setOn();
+            } else {
+                await this.zclNode.endpoints[1].clusters.onOff.setOff();
+            }
+            
+            return Promise.resolve();
+        } catch (error) {
+            this.error('Error setting onoff:', error);
+            return Promise.reject(error);
+        }
     }
 
-    onCapabilityDim(value) {
-        return this.zclNode.endpoints[1].clusters.levelControl.moveToLevel({
-            level: Math.round(value * 254),
-            transitionTime: 1
-        });
+    async onDeleted() {
+        this.log('smart_plug device deleted');
     }
+
 }
 
 module.exports = SmartPlugDevice;

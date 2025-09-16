@@ -1,27 +1,40 @@
 {
   "name": {
-    "en": "Blind Controller"
+    "en": "Curtain Motor"
   },
   "class": "sensor",
-  "capabilities": [],
+  "capabilities": [
+    "windowcoverings_state",
+    "dim"
+  ],
   "zigbee": {
     "manufacturerName": [
-      "TZ3000_generic",
-      "TZ3000_generic",
-      "TZ3000_common",
-      "_TZE200_universal"
+      "_TZE200_wmcdj3aq",
+      "_TZE200_cowvfni3",
+      "_TZE200_rddyvrci",
+      "_TZE200_nkoabg8w",
+      "_TZE284_1xlm8yks",
+      "_TZE200_gubdgai2",
+      "TZ3000_lx4vtxfb",
+      "_TZ3000_*",
+      "_TZ3210_*",
+      "_TYZB01_*",
+      "_TYZB02_*",
+      "_TZ3400_*"
     ],
     "productId": [
-      "TS0001",
-      "TS0001",
       "TS0601",
-      "GENERIC"
+      "CURTAIN1",
+      "MOTOR1"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          3
+          3,
+          6,
+          258,
+          61184
         ]
       }
     },
@@ -39,17 +52,16 @@
     "productIds": []
   },
   "images": {
-    "small": "/drivers/blind_controller/assets/small.png",
-    "large": "/drivers/blind_controller/assets/large.png",
-    "xlarge": "/drivers/blind_controller/assets/xlarge.png"
+    "small": "/drivers/curtain_motor/assets/small.png",
+    "large": "/drivers/curtain_motor/assets/large.png",
+    "xlarge": "/drivers/curtain_motor/assets/xlarge.png"
   },
   "community": {
     "sources": [
-      "Generic compatibility database",
-      "Pattern-based enrichment"
+      "Curtain automation requests",
+      "Window covering systems"
     ],
     "enriched": true,
-    "type": "generic",
-    "last_updated": "2025-09-15T19:34:02.892Z"
+    "last_updated": "2025-09-15T19:34:02.896Z"
   }
 }

@@ -1,35 +1,44 @@
 {
   "name": {
-    "en": "Rgb Bulb"
+    "en": "Smart Bulb"
   },
   "class": "light",
   "capabilities": [
     "onoff",
     "dim",
+    "light_temperature",
     "light_hue",
     "light_saturation"
   ],
   "zigbee": {
     "manufacturerName": [
-      "TZ3000_light",
-      "TZ3000_bulb",
-      "TZ3000_generic",
-      "TZ3000_common",
-      "_TZE200_universal",
-      "TZ3000_light",
-      "_TZE200_light",
-      "_TZ3000_bulb"
+      "TZ3000_dbou1ap4",
+      "TZ3000_49qchf10",
+      "TZ3000_g1glzzfk",
+      "TZ3000_odygigth",
+      "TZ3000_kdpxju99",
+      "TZ3000_vsasbzkf",
+      "TZ3000_oborybow",
+      "_TZE200_s8gkrkxk",
+      "_TZ3000_g5z28dny",
+      "_TZ3000_qd7hej8u",
+      "_TZ3000_wr2ucaj9",
+      "IKEA",
+      "_TZ3000_*",
+      "_TZ3210_*",
+      "_TYZB01_*",
+      "_TYZB02_*",
+      "_TZ3400_*"
     ],
     "productId": [
-      "TS0505",
-      "LIGHT",
-      "TS0001",
-      "TS0601",
-      "GENERIC",
       "TS0505B",
       "TS0502B",
       "TS0504B",
-      "LIGHT1"
+      "RGB1",
+      "BULB1",
+      "LED1650R5",
+      "TRADFRI bulb E27 WS opal 980lm",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -38,7 +47,8 @@
           3,
           6,
           8,
-          768
+          768,
+          4096
         ]
       }
     },
@@ -60,18 +70,19 @@
     ]
   },
   "images": {
-    "small": "/drivers/rgb_bulb/assets/small.png",
-    "large": "/drivers/rgb_bulb/assets/large.png",
-    "xlarge": "/drivers/rgb_bulb/assets/xlarge.png"
+    "small": "/drivers/smart_bulb/assets/small.png",
+    "large": "/drivers/smart_bulb/assets/large.png",
+    "xlarge": "/drivers/smart_bulb/assets/xlarge.png"
   },
   "community": {
     "sources": [
-      "Generic compatibility database",
-      "Pattern-based enrichment"
+      "Smart lighting requests",
+      "RGB bulb compatibility"
     ],
     "enriched": true,
-    "type": "generic",
-    "last_updated": "2025-09-15T19:34:02.946Z"
+    "last_updated": "2025-09-15T19:34:02.950Z"
   },
-  "id": "smart_bulb_rgb"
+  "id": "smart_bulb_white",
+  "manufacturerId": [],
+  "productId": []
 }

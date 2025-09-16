@@ -2,21 +2,26 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class NoiseSensor extends ZigBeeDevice {
-  
-  async onNodeInit({ zclNode }) {
-    // Initialize device
-    this.log('Noise Sensor initialized');
-    
-        // Register attribute reporting
-    if (zclNode.endpoints[1]?.clusters?.msTemperatureMeasurement) {
-      zclNode.endpoints[1].clusters.msTemperatureMeasurement.on('attr.measuredValue', (value) => {
-        this.setCapabilityValue('measure_temperature', value / 100).catch(this.error);
-      });
+class NoiseLevelSensorDevice extends ZigBeeDevice {
+
+    async onNodeInit() {
+        this.log('noise_level_sensor device initialized');
+
+        // Register capabilities
+                // Register temperature measurement
+
+        // Register motion alarm
+
+        // Mark device as available
+        await this.setAvailable();
     }
-  }
-  
-  
+
+    
+
+    async onDeleted() {
+        this.log('noise_level_sensor device deleted');
+    }
+
 }
 
-module.exports = NoiseSensor;
+module.exports = NoiseLevelSensorDevice;
