@@ -1,5 +1,5 @@
 {
-  "id": "motion_sensor_pir_ac",
+  "id": "motion_sensor_radar_ac",
   "class": "sensor",
   "capabilities": [
     "alarm_motion"
@@ -18,7 +18,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/motion_sensor_pir_ac/assets/learn.svg",
+      "image": "/drivers/motion_sensor_radar_ac/assets/learn.svg",
       "instruction": {
         "en": "Turn the switch on/off 3 times quickly",
         "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -28,8 +28,8 @@
     }
   },
   "images": {
-    "small": "/drivers/motion_sensor_pir_ac/assets/small.png",
-    "large": "/drivers/motion_sensor_pir_ac/assets/large.png"
+    "small": "/drivers/motion_sensor_radar_ac/assets/small.png",
+    "large": "/drivers/motion_sensor_radar_ac/assets/large.png"
   },
   "settings": [
     {

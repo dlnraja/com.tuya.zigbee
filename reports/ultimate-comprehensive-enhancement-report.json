@@ -1,0 +1,231 @@
+{
+  "timestamp": "2025-09-15T23:11:02.196Z",
+  "phases": {
+    "historicalScan": [
+      {
+        "repo": "com.tuya.zigbee",
+        "branch": "main",
+        "driversFound": 2,
+        "drivers": [
+          {
+            "name": "tuya_switch",
+            "category": "switch",
+            "power": "ac"
+          },
+          {
+            "name": "tuya_sensor",
+            "category": "sensor",
+            "power": "battery"
+          }
+        ]
+      },
+      {
+        "repo": "com.tuya.zigbee",
+        "branch": "master",
+        "driversFound": 2,
+        "drivers": [
+          {
+            "name": "tuya_switch",
+            "category": "switch",
+            "power": "ac"
+          },
+          {
+            "name": "tuya_sensor",
+            "category": "sensor",
+            "power": "battery"
+          }
+        ]
+      },
+      {
+        "repo": "com.tuya.zigbee",
+        "branch": "development",
+        "driversFound": 2,
+        "drivers": [
+          {
+            "name": "tuya_switch",
+            "category": "switch",
+            "power": "ac"
+          },
+          {
+            "name": "tuya_sensor",
+            "category": "sensor",
+            "power": "battery"
+          }
+        ]
+      },
+      {
+        "repo": "com.tuya.zigbee",
+        "branch": "beta",
+        "driversFound": 2,
+        "drivers": [
+          {
+            "name": "tuya_switch",
+            "category": "switch",
+            "power": "ac"
+          },
+          {
+            "name": "tuya_sensor",
+            "category": "sensor",
+            "power": "battery"
+          }
+        ]
+      },
+      {
+        "repo": "com.tuya.zigbee",
+        "branch": "stable",
+        "driversFound": 2,
+        "drivers": [
+          {
+            "name": "tuya_switch",
+            "category": "switch",
+            "power": "ac"
+          },
+          {
+            "name": "tuya_sensor",
+            "category": "sensor",
+            "power": "battery"
+          }
+        ]
+      },
+      {
+        "repo": "com.tuya.zigbee",
+        "branch": "main",
+        "driversFound": 2,
+        "drivers": [
+          {
+            "name": "tuya_switch",
+            "category": "switch",
+            "power": "ac"
+          },
+          {
+            "name": "tuya_sensor",
+            "category": "sensor",
+            "power": "battery"
+          }
+        ]
+      },
+      {
+        "repo": "com.tuya.zigbee",
+        "branch": "master",
+        "driversFound": 2,
+        "drivers": [
+          {
+            "name": "tuya_switch",
+            "category": "switch",
+            "power": "ac"
+          },
+          {
+            "name": "tuya_sensor",
+            "category": "sensor",
+            "power": "battery"
+          }
+        ]
+      },
+      {
+        "repo": "com.tuya.zigbee",
+        "branch": "development",
+        "driversFound": 2,
+        "drivers": [
+          {
+            "name": "tuya_switch",
+            "category": "switch",
+            "power": "ac"
+          },
+          {
+            "name": "tuya_sensor",
+            "category": "sensor",
+            "power": "battery"
+          }
+        ]
+      },
+      {
+        "repo": "com.tuya.zigbee",
+        "branch": "beta",
+        "driversFound": 2,
+        "drivers": [
+          {
+            "name": "tuya_switch",
+            "category": "switch",
+            "power": "ac"
+          },
+          {
+            "name": "tuya_sensor",
+            "category": "sensor",
+            "power": "battery"
+          }
+        ]
+      },
+      {
+        "repo": "com.tuya.zigbee",
+        "branch": "stable",
+        "driversFound": 2,
+        "drivers": [
+          {
+            "name": "tuya_switch",
+            "category": "switch",
+            "power": "ac"
+          },
+          {
+            "name": "tuya_sensor",
+            "category": "sensor",
+            "power": "battery"
+          }
+        ]
+      }
+    ],
+    "externalSources": [],
+    "reorganization": {
+      "aqara_motion_sensor": "motion_sensor_pir_ac",
+      "ceiling_light_controller": "smart_bulb_white",
+      "hue_bulb": "smart_bulb_white",
+      "hue_motion_sensor": "motion_sensor_pir_ac",
+      "ikea_tradfri_bulb": "smart_bulb_white",
+      "motion_sensor_mmwave": "motion_sensor_pir_ac",
+      "motion_sensor_mmwave_battery": "motion_sensor_pir_battery",
+      "motion_sensor_pir": "motion_sensor_pir_ac",
+      "motion_sensor_radar": "motion_sensor_pir_ac",
+      "motion_sensor_radar_ac": "motion_sensor_pir_ac",
+      "motion_sensor_radar_battery": "motion_sensor_pir_battery",
+      "outdoor_light_controller": "smart_bulb_white",
+      "smart_bulb_white": "smart_bulb_tunable",
+      "soil_temperature_humidity_sensor": "temperature_humidity_sensor",
+      "strip_light_controller": "smart_bulb_white",
+      "wireless_switch_1gang_battery": "wireless_switch_1gang_cr2032",
+      "wireless_switch_2gang_battery": "wireless_switch_2gang_cr2032",
+      "wireless_switch_3gang_battery": "wireless_switch_3gang_cr2032",
+      "wireless_switch_4gang_battery": "wireless_switch_4gang_cr2032",
+      "wireless_switch_5gang_battery": "wireless_switch_5gang_cr2032",
+      "wireless_switch_6gang_battery": "wireless_switch_6gang_cr2032"
+    },
+    "imageGeneration": [],
+    "driverCreation": [
+      {
+        "name": "wireless_switch_5gang_cr2032",
+        "category": "switch",
+        "power": "battery",
+        "capabilities": [
+          "button.1",
+          "button.2",
+          "button.3",
+          "button.4",
+          "button.5"
+        ]
+      },
+      {
+        "name": "motion_sensor_radar_hybrid",
+        "category": "sensor",
+        "power": "hybrid",
+        "capabilities": [
+          "alarm_motion",
+          "measure_battery"
+        ]
+      }
+    ]
+  },
+  "summary": {
+    "totalDriversAnalyzed": 20,
+    "totalDriversReorganized": 21,
+    "totalDriversCreated": 2,
+    "finalDriverCount": 113
+  }
+}

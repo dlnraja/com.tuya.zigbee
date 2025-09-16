@@ -2,17 +2,26 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class MotionSensorRadarHybrid extends ZigBeeDevice {
-    
-    async onNodeInit({ zclNode }) {
-        await super.onNodeInit({ zclNode });
-        
-        this.printNode();
-        
+class MotionSensorRadarHybridDevice extends ZigBeeDevice {
+
+    async onNodeInit() {
+        this.log('motion_sensor_radar_hybrid device initialized');
+
         // Register capabilities
-        this.registerCapability('alarm_motion', CLUSTER.IAS_ZONE);
-        this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION);
+                // Register temperature measurement
+
+        // Register motion alarm
+
+        // Mark device as available
+        await this.setAvailable();
     }
+
+    
+
+    async onDeleted() {
+        this.log('motion_sensor_radar_hybrid device deleted');
+    }
+
 }
 
-module.exports = MotionSensorRadarHybrid;
+module.exports = MotionSensorRadarHybridDevice;

@@ -1,0 +1,57 @@
+{
+  "id": "wall_switch_3gang",
+  "name": {
+    "en": "Wall Switch 3gang"
+  },
+  "class": "socket",
+  "capabilities": [
+    "button.1",
+    "button.2",
+    "button.3",
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_",
+      "_TZ3210_",
+      "_TYZB01_"
+    ],
+    "productId": [
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "large": "./assets/large.png",
+    "small": "./assets/small.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

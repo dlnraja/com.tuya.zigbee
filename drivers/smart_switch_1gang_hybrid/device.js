@@ -2,49 +2,40 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class SmartSwitch_1gangHybridDevice extends ZigBeeDevice {
-    
+class SmartSwitch1gangHybridDevice extends ZigBeeDevice {
+
     async onNodeInit() {
-        this.log('smart_switch_1gang_hybrid device initialized - 1 button(s), hybrid powered');
-        
-        await this.registerEnhancedCapabilities();
-        await this.setupEnhancedListeners();
-        
-        // Device specifications
-        this.specs = {
-        "buttons": 1,
-        "power": "hybrid",
-        "voltage": "AC/DC/Battery"
-};
+        this.log('smart_switch_1gang_hybrid device initialized');
+
+        // Register capabilities
+                // Register on/off capability
+        this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
+
+        // Mark device as available
+        await this.setAvailable();
     }
-    
-    async registerEnhancedCapabilities() {
-        // OnOff capability for main button
-        if (this.hasCapability('onoff')) {
-            this.registerCapability('onoff', 'genOnOff');
+
+        async onCapabilityOnoff(value, opts) {
+        this.log('onCapabilityOnoff:', value);
+        
+        try {
+            if (value) {
+                await this.zclNode.endpoints[1].clusters.onOff.setOn();
+            } else {
+                await this.zclNode.endpoints[1].clusters.onOff.setOff();
+            }
+            
+            return Promise.resolve();
+        } catch (error) {
+            this.error('Error setting onoff:', error);
+            return Promise.reject(error);
         }
-        
-        // Additional buttons for multi-gang switches
-        
-        
-        // Battery capabilities for battery-powered devices
-        
-        
-        // Motion sensing capabilities
-        
     }
-    
-    async setupEnhancedListeners() {
-        // Battery level monitoring
-        
-        
-        // Motion detection
-        
+
+    async onDeleted() {
+        this.log('smart_switch_1gang_hybrid device deleted');
     }
-    
-    
-    
-    
+
 }
 
-module.exports = SmartSwitch_1gangHybridDevice;
+module.exports = SmartSwitch1gangHybridDevice;

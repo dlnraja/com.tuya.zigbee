@@ -1,15 +1,23 @@
 {
   "name": {
-    "en": "Door Lock"
+    "en": "Smart Lock"
   },
   "class": "sensor",
-  "capabilities": [],
+  "capabilities": [
+    "locked",
+    "alarm_generic"
+  ],
   "zigbee": {
     "manufacturerName": [
       "TZ3000_generic",
       "TZ3000_generic",
       "TZ3000_common",
-      "_TZE200_universal"
+      "_TZE200_universal",
+      "_TZ3000_*",
+      "_TZ3210_*",
+      "_TYZB01_*",
+      "_TYZB02_*",
+      "_TZ3400_*"
     ],
     "productId": [
       "TS0001",
@@ -36,16 +44,12 @@
       4659,
       4660
     ],
-    "productIds": [
-      1025,
-      1029,
-      1030
-    ]
+    "productIds": []
   },
   "images": {
-    "small": "/drivers/door_lock/assets/small.png",
-    "large": "/drivers/door_lock/assets/large.png",
-    "xlarge": "/drivers/door_lock/assets/xlarge.png"
+    "small": "/drivers/smart_lock/assets/small.png",
+    "large": "/drivers/smart_lock/assets/large.png",
+    "xlarge": "/drivers/smart_lock/assets/xlarge.png"
   },
   "energy": {
     "batteries": [
@@ -60,6 +64,6 @@
     ],
     "enriched": true,
     "type": "generic",
-    "last_updated": "2025-09-15T19:34:02.849Z"
+    "last_updated": "2025-09-15T19:34:02.864Z"
   }
 }

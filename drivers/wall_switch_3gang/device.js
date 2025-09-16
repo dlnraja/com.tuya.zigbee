@@ -4,25 +4,38 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 class WallSwitch3gangDevice extends ZigBeeDevice {
 
-    async onNodeInit({ zclNode }) {
-        this.printNode();
-
-                this.registerCapability('onoff', 6);
-
+    async onNodeInit() {
         this.log('wall_switch_3gang device initialized');
+
+        // Register capabilities
+                // Register on/off capability
+        this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
+
+        // Mark device as available
+        await this.setAvailable();
     }
 
-    
-    onCapabilityOnOff(value) {
-        return this.zclNode.endpoints[1].clusters.onOff.setOn(value);
+        async onCapabilityOnoff(value, opts) {
+        this.log('onCapabilityOnoff:', value);
+        
+        try {
+            if (value) {
+                await this.zclNode.endpoints[1].clusters.onOff.setOn();
+            } else {
+                await this.zclNode.endpoints[1].clusters.onOff.setOff();
+            }
+            
+            return Promise.resolve();
+        } catch (error) {
+            this.error('Error setting onoff:', error);
+            return Promise.reject(error);
+        }
     }
 
-    onCapabilityDim(value) {
-        return this.zclNode.endpoints[1].clusters.levelControl.moveToLevel({
-            level: Math.round(value * 254),
-            transitionTime: 1
-        });
+    async onDeleted() {
+        this.log('wall_switch_3gang device deleted');
     }
+
 }
 
 module.exports = WallSwitch3gangDevice;

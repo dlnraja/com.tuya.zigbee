@@ -2,56 +2,40 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class TouchSwitch_3gangDevice extends ZigBeeDevice {
-    
+class TouchSwitch3gangDevice extends ZigBeeDevice {
+
     async onNodeInit() {
-        this.log('touch_switch_3gang device initialized - 3 button(s), ac powered');
-        
-        await this.registerEnhancedCapabilities();
-        await this.setupEnhancedListeners();
-        
-        // Device specifications
-        this.specs = {
-        "buttons": 3,
-        "power": "ac",
-        "interface": "capacitive"
-};
+        this.log('touch_switch_3gang device initialized');
+
+        // Register capabilities
+                // Register on/off capability
+        this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
+
+        // Mark device as available
+        await this.setAvailable();
     }
-    
-    async registerEnhancedCapabilities() {
-        // OnOff capability for main button
-        if (this.hasCapability('onoff')) {
-            this.registerCapability('onoff', 'genOnOff');
-        }
+
+        async onCapabilityOnoff(value, opts) {
+        this.log('onCapabilityOnoff:', value);
         
-        // Additional buttons for multi-gang switches
-        
-        for (let i = 2; i <= 3; i++) {
-            if (this.hasCapability(`button.${i}`)) {
-                this.registerCapability(`button.${i}`, 'genOnOff', {
-                    endpoint: i
-                });
+        try {
+            if (value) {
+                await this.zclNode.endpoints[1].clusters.onOff.setOn();
+            } else {
+                await this.zclNode.endpoints[1].clusters.onOff.setOff();
             }
+            
+            return Promise.resolve();
+        } catch (error) {
+            this.error('Error setting onoff:', error);
+            return Promise.reject(error);
         }
-        
-        // Battery capabilities for battery-powered devices
-        
-        
-        // Motion sensing capabilities
-        
     }
-    
-    async setupEnhancedListeners() {
-        // Battery level monitoring
-        
-        
-        // Motion detection
-        
+
+    async onDeleted() {
+        this.log('touch_switch_3gang device deleted');
     }
-    
-    
-    
-    
+
 }
 
-module.exports = TouchSwitch_3gangDevice;
+module.exports = TouchSwitch3gangDevice;

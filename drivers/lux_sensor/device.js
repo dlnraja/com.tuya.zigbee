@@ -2,21 +2,26 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class LuxSensor extends ZigBeeDevice {
-  
-  async onNodeInit({ zclNode }) {
-    // Initialize device
-    this.log('Lux Sensor initialized');
-    
-        // Register attribute reporting
-    if (zclNode.endpoints[1]?.clusters?.msTemperatureMeasurement) {
-      zclNode.endpoints[1].clusters.msTemperatureMeasurement.on('attr.measuredValue', (value) => {
-        this.setCapabilityValue('measure_temperature', value / 100).catch(this.error);
-      });
+class LuxSensorDevice extends ZigBeeDevice {
+
+    async onNodeInit() {
+        this.log('lux_sensor device initialized');
+
+        // Register capabilities
+                // Register temperature measurement
+
+        // Register motion alarm
+
+        // Mark device as available
+        await this.setAvailable();
     }
-  }
-  
-  
+
+    
+
+    async onDeleted() {
+        this.log('lux_sensor device deleted');
+    }
+
 }
 
-module.exports = LuxSensor;
+module.exports = LuxSensorDevice;

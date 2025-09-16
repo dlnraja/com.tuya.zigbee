@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -70,23 +70,13 @@
   },
   "drivers": [
     {
-      "id": "access_controller",
-      "name": {
-        "en": "ACcess Controller"
-      },
-      "images": {
-        "large": "./drivers/access_controller/assets/images/large.png",
-        "small": "./drivers/access_controller/assets/images/small.png"
-      }
-    },
-    {
       "id": "air_conditioner_controller",
       "name": {
         "en": "Air Conditioner Controller"
       },
       "images": {
-        "large": "./drivers/air_conditioner_controller/assets/images/large.png",
-        "small": "./drivers/air_conditioner_controller/assets/images/small.png"
+        "large": "./drivers/air_conditioner_controller/assets/large.png",
+        "small": "./drivers/air_conditioner_controller/assets/small.png"
       }
     },
     {
@@ -95,38 +85,8 @@
         "en": "Air Quality Sensor"
       },
       "images": {
-        "large": "./drivers/air_quality_sensor/assets/images/large.png",
-        "small": "./drivers/air_quality_sensor/assets/images/small.png"
-      }
-    },
-    {
-      "id": "alarm_keypad",
-      "name": {
-        "en": "Alarm Keypad"
-      },
-      "images": {
-        "large": "./drivers/alarm_keypad/assets/images/large.png",
-        "small": "./drivers/alarm_keypad/assets/images/small.png"
-      }
-    },
-    {
-      "id": "aqara_motion_sensor",
-      "name": {
-        "en": "Aqara Motion Sensor"
-      },
-      "images": {
-        "large": "./drivers/aqara_motion_sensor/assets/images/large.png",
-        "small": "./drivers/aqara_motion_sensor/assets/images/small.png"
-      }
-    },
-    {
-      "id": "awning_controller",
-      "name": {
-        "en": "Awning Controller"
-      },
-      "images": {
-        "large": "./drivers/awning_controller/assets/images/large.png",
-        "small": "./drivers/awning_controller/assets/images/small.png"
+        "large": "./drivers/air_quality_sensor/assets/large.png",
+        "small": "./drivers/air_quality_sensor/assets/small.png"
       }
     },
     {
@@ -135,8 +95,8 @@
         "en": "Blind Controller"
       },
       "images": {
-        "large": "./drivers/blind_controller/assets/images/large.png",
-        "small": "./drivers/blind_controller/assets/images/small.png"
+        "large": "./drivers/blind_controller/assets/large.png",
+        "small": "./drivers/blind_controller/assets/small.png"
       }
     },
     {
@@ -145,8 +105,8 @@
         "en": "Ceiling Light Controller"
       },
       "images": {
-        "large": "./drivers/ceiling_light_controller/assets/images/large.png",
-        "small": "./drivers/ceiling_light_controller/assets/images/small.png"
+        "large": "./drivers/ceiling_light_controller/assets/large.png",
+        "small": "./drivers/ceiling_light_controller/assets/small.png"
       }
     },
     {
@@ -155,8 +115,8 @@
         "en": "Co2 Sensor"
       },
       "images": {
-        "large": "./drivers/co2_sensor/assets/images/large.png",
-        "small": "./drivers/co2_sensor/assets/images/small.png"
+        "large": "./drivers/co2_sensor/assets/large.png",
+        "small": "./drivers/co2_sensor/assets/small.png"
       }
     },
     {
@@ -165,18 +125,8 @@
         "en": "Co Detector"
       },
       "images": {
-        "large": "./drivers/co_detector/assets/images/large.png",
-        "small": "./drivers/co_detector/assets/images/small.png"
-      }
-    },
-    {
-      "id": "cube_controller",
-      "name": {
-        "en": "Cube Controller"
-      },
-      "images": {
-        "large": "./drivers/cube_controller/assets/images/large.png",
-        "small": "./drivers/cube_controller/assets/images/small.png"
+        "large": "./drivers/co_detector/assets/large.png",
+        "small": "./drivers/co_detector/assets/small.png"
       }
     },
     {
@@ -185,18 +135,18 @@
         "en": "Curtain Motor"
       },
       "images": {
-        "large": "./drivers/curtain_motor/assets/images/large.png",
-        "small": "./drivers/curtain_motor/assets/images/small.png"
+        "large": "./drivers/curtain_motor/assets/large.png",
+        "small": "./drivers/curtain_motor/assets/small.png"
       }
     },
     {
-      "id": "dehumidifier_controller",
+      "id": "dimmer",
       "name": {
-        "en": "Dehumidifier Controller"
+        "en": "Dimmer"
       },
       "images": {
-        "large": "./drivers/dehumidifier_controller/assets/images/large.png",
-        "small": "./drivers/dehumidifier_controller/assets/images/small.png"
+        "large": "./drivers/dimmer/assets/large.png",
+        "small": "./drivers/dimmer/assets/small.png"
       }
     },
     {
@@ -205,8 +155,8 @@
         "en": "Door Controller"
       },
       "images": {
-        "large": "./drivers/door_controller/assets/images/large.png",
-        "small": "./drivers/door_controller/assets/images/small.png"
+        "large": "./drivers/door_controller/assets/large.png",
+        "small": "./drivers/door_controller/assets/small.png"
       }
     },
     {
@@ -215,18 +165,18 @@
         "en": "Door Lock"
       },
       "images": {
-        "large": "./drivers/door_lock/assets/images/large.png",
-        "small": "./drivers/door_lock/assets/images/small.png"
+        "large": "./drivers/door_lock/assets/large.png",
+        "small": "./drivers/door_lock/assets/small.png"
       }
     },
     {
-      "id": "emergency_button",
+      "id": "door_window_sensor",
       "name": {
-        "en": "Emergency Button"
+        "en": "Door Window Sensor"
       },
       "images": {
-        "large": "./drivers/emergency_button/assets/images/large.png",
-        "small": "./drivers/emergency_button/assets/images/small.png"
+        "large": "./drivers/door_window_sensor/assets/large.png",
+        "small": "./drivers/door_window_sensor/assets/small.png"
       }
     },
     {
@@ -235,8 +185,8 @@
         "en": "Energy Monitoring Plug"
       },
       "images": {
-        "large": "./drivers/energy_monitoring_plug/assets/images/large.png",
-        "small": "./drivers/energy_monitoring_plug/assets/images/small.png"
+        "large": "./drivers/energy_monitoring_plug/assets/large.png",
+        "small": "./drivers/energy_monitoring_plug/assets/small.png"
       }
     },
     {
@@ -245,8 +195,8 @@
         "en": "Extension Plug"
       },
       "images": {
-        "large": "./drivers/extension_plug/assets/images/large.png",
-        "small": "./drivers/extension_plug/assets/images/small.png"
+        "large": "./drivers/extension_plug/assets/large.png",
+        "small": "./drivers/extension_plug/assets/small.png"
       }
     },
     {
@@ -255,18 +205,8 @@
         "en": "Fan Controller"
       },
       "images": {
-        "large": "./drivers/fan_controller/assets/images/large.png",
-        "small": "./drivers/fan_controller/assets/images/small.png"
-      }
-    },
-    {
-      "id": "fan_speed_controller",
-      "name": {
-        "en": "Fan Speed Controller"
-      },
-      "images": {
-        "large": "./drivers/fan_speed_controller/assets/images/large.png",
-        "small": "./drivers/fan_speed_controller/assets/images/small.png"
+        "large": "./drivers/fan_controller/assets/large.png",
+        "small": "./drivers/fan_controller/assets/small.png"
       }
     },
     {
@@ -275,8 +215,8 @@
         "en": "Fingerprint Lock"
       },
       "images": {
-        "large": "./drivers/fingerprint_lock/assets/images/large.png",
-        "small": "./drivers/fingerprint_lock/assets/images/small.png"
+        "large": "./drivers/fingerprint_lock/assets/large.png",
+        "small": "./drivers/fingerprint_lock/assets/small.png"
       }
     },
     {
@@ -285,8 +225,8 @@
         "en": "Formaldehyde Sensor"
       },
       "images": {
-        "large": "./drivers/formaldehyde_sensor/assets/images/large.png",
-        "small": "./drivers/formaldehyde_sensor/assets/images/small.png"
+        "large": "./drivers/formaldehyde_sensor/assets/large.png",
+        "small": "./drivers/formaldehyde_sensor/assets/small.png"
       }
     },
     {
@@ -295,8 +235,8 @@
         "en": "Garage Door Controller"
       },
       "images": {
-        "large": "./drivers/garage_door_controller/assets/images/large.png",
-        "small": "./drivers/garage_door_controller/assets/images/small.png"
+        "large": "./drivers/garage_door_controller/assets/large.png",
+        "small": "./drivers/garage_door_controller/assets/small.png"
       }
     },
     {
@@ -305,38 +245,8 @@
         "en": "Gas Detector"
       },
       "images": {
-        "large": "./drivers/gas_detector/assets/images/large.png",
-        "small": "./drivers/gas_detector/assets/images/small.png"
-      }
-    },
-    {
-      "id": "hue_bulb",
-      "name": {
-        "en": "Hue Bulb"
-      },
-      "images": {
-        "large": "./drivers/hue_bulb/assets/images/large.png",
-        "small": "./drivers/hue_bulb/assets/images/small.png"
-      }
-    },
-    {
-      "id": "hue_dimmer",
-      "name": {
-        "en": "Hue Dimmer"
-      },
-      "images": {
-        "large": "./drivers/hue_dimmer/assets/images/large.png",
-        "small": "./drivers/hue_dimmer/assets/images/small.png"
-      }
-    },
-    {
-      "id": "hue_motion_sensor",
-      "name": {
-        "en": "Hue Motion Sensor"
-      },
-      "images": {
-        "large": "./drivers/hue_motion_sensor/assets/images/large.png",
-        "small": "./drivers/hue_motion_sensor/assets/images/small.png"
+        "large": "./drivers/gas_detector/assets/large.png",
+        "small": "./drivers/gas_detector/assets/small.png"
       }
     },
     {
@@ -345,38 +255,8 @@
         "en": "HvAC Controller"
       },
       "images": {
-        "large": "./drivers/hvac_controller/assets/images/large.png",
-        "small": "./drivers/hvac_controller/assets/images/small.png"
-      }
-    },
-    {
-      "id": "ikea_styrbar_remote",
-      "name": {
-        "en": "Ikea Styrbar Remote"
-      },
-      "images": {
-        "large": "./drivers/ikea_styrbar_remote/assets/images/large.png",
-        "small": "./drivers/ikea_styrbar_remote/assets/images/small.png"
-      }
-    },
-    {
-      "id": "ikea_symfonisk_remote",
-      "name": {
-        "en": "Ikea Symfonisk Remote"
-      },
-      "images": {
-        "large": "./drivers/ikea_symfonisk_remote/assets/images/large.png",
-        "small": "./drivers/ikea_symfonisk_remote/assets/images/small.png"
-      }
-    },
-    {
-      "id": "ikea_tradfri_bulb",
-      "name": {
-        "en": "Ikea Tradfri Bulb"
-      },
-      "images": {
-        "large": "./drivers/ikea_tradfri_bulb/assets/images/large.png",
-        "small": "./drivers/ikea_tradfri_bulb/assets/images/small.png"
+        "large": "./drivers/hvac_controller/assets/large.png",
+        "small": "./drivers/hvac_controller/assets/small.png"
       }
     },
     {
@@ -385,8 +265,8 @@
         "en": "Keypad Lock"
       },
       "images": {
-        "large": "./drivers/keypad_lock/assets/images/large.png",
-        "small": "./drivers/keypad_lock/assets/images/small.png"
+        "large": "./drivers/keypad_lock/assets/large.png",
+        "small": "./drivers/keypad_lock/assets/small.png"
       }
     },
     {
@@ -395,8 +275,8 @@
         "en": "Led Strip Controller"
       },
       "images": {
-        "large": "./drivers/led_strip_controller/assets/images/large.png",
-        "small": "./drivers/led_strip_controller/assets/images/small.png"
+        "large": "./drivers/led_strip_controller/assets/large.png",
+        "small": "./drivers/led_strip_controller/assets/small.png"
       }
     },
     {
@@ -405,18 +285,38 @@
         "en": "Lux Sensor"
       },
       "images": {
-        "large": "./drivers/lux_sensor/assets/images/large.png",
-        "small": "./drivers/lux_sensor/assets/images/small.png"
+        "large": "./drivers/lux_sensor/assets/large.png",
+        "small": "./drivers/lux_sensor/assets/small.png"
       }
     },
     {
-      "id": "motion_sensor_mmwave",
+      "id": "mini",
       "name": {
-        "en": "Motion Sensor Mmwave"
+        "en": "Mini"
       },
       "images": {
-        "large": "./drivers/motion_sensor_mmwave/assets/images/large.png",
-        "small": "./drivers/motion_sensor_mmwave/assets/images/small.png"
+        "large": "./drivers/mini/assets/large.png",
+        "small": "./drivers/mini/assets/small.png"
+      }
+    },
+    {
+      "id": "motion_sensor",
+      "name": {
+        "en": "Motion Sensor"
+      },
+      "images": {
+        "large": "./drivers/motion_sensor/assets/large.png",
+        "small": "./drivers/motion_sensor/assets/small.png"
+      }
+    },
+    {
+      "id": "motion_sensor_mmwave_ac",
+      "name": {
+        "en": "Motion Sensor Mmwave AC"
+      },
+      "images": {
+        "large": "./drivers/motion_sensor_mmwave_ac/assets/large.png",
+        "small": "./drivers/motion_sensor_mmwave_ac/assets/small.png"
       }
     },
     {
@@ -425,18 +325,8 @@
         "en": "Motion Sensor Mmwave Battery"
       },
       "images": {
-        "large": "./drivers/motion_sensor_mmwave_battery/assets/images/large.png",
-        "small": "./drivers/motion_sensor_mmwave_battery/assets/images/small.png"
-      }
-    },
-    {
-      "id": "motion_sensor_pir",
-      "name": {
-        "en": "Motion Sensor Pir"
-      },
-      "images": {
-        "large": "./drivers/motion_sensor_pir/assets/images/large.png",
-        "small": "./drivers/motion_sensor_pir/assets/images/small.png"
+        "large": "./drivers/motion_sensor_mmwave_battery/assets/large.png",
+        "small": "./drivers/motion_sensor_mmwave_battery/assets/small.png"
       }
     },
     {
@@ -445,8 +335,8 @@
         "en": "Motion Sensor Pir AC"
       },
       "images": {
-        "large": "./drivers/motion_sensor_pir_ac/assets/images/large.png",
-        "small": "./drivers/motion_sensor_pir_ac/assets/images/small.png"
+        "large": "./drivers/motion_sensor_pir_ac/assets/large.png",
+        "small": "./drivers/motion_sensor_pir_ac/assets/small.png"
       }
     },
     {
@@ -455,18 +345,8 @@
         "en": "Motion Sensor Pir Battery"
       },
       "images": {
-        "large": "./drivers/motion_sensor_pir_battery/assets/images/large.png",
-        "small": "./drivers/motion_sensor_pir_battery/assets/images/small.png"
-      }
-    },
-    {
-      "id": "motion_sensor_radar",
-      "name": {
-        "en": "Motion Sensor Radar"
-      },
-      "images": {
-        "large": "./drivers/motion_sensor_radar/assets/images/large.png",
-        "small": "./drivers/motion_sensor_radar/assets/images/small.png"
+        "large": "./drivers/motion_sensor_pir_battery/assets/large.png",
+        "small": "./drivers/motion_sensor_pir_battery/assets/small.png"
       }
     },
     {
@@ -475,8 +355,8 @@
         "en": "Motion Sensor Radar AC"
       },
       "images": {
-        "large": "./drivers/motion_sensor_radar_ac/assets/images/large.png",
-        "small": "./drivers/motion_sensor_radar_ac/assets/images/small.png"
+        "large": "./drivers/motion_sensor_radar_ac/assets/large.png",
+        "small": "./drivers/motion_sensor_radar_ac/assets/small.png"
       }
     },
     {
@@ -485,8 +365,8 @@
         "en": "Motion Sensor Radar Battery"
       },
       "images": {
-        "large": "./drivers/motion_sensor_radar_battery/assets/images/large.png",
-        "small": "./drivers/motion_sensor_radar_battery/assets/images/small.png"
+        "large": "./drivers/motion_sensor_radar_battery/assets/large.png",
+        "small": "./drivers/motion_sensor_radar_battery/assets/small.png"
       }
     },
     {
@@ -495,8 +375,8 @@
         "en": "Motion Sensor Radar Hybrid"
       },
       "images": {
-        "large": "./drivers/motion_sensor_radar_hybrid/assets/images/large.png",
-        "small": "./drivers/motion_sensor_radar_hybrid/assets/images/small.png"
+        "large": "./drivers/motion_sensor_radar_hybrid/assets/large.png",
+        "small": "./drivers/motion_sensor_radar_hybrid/assets/small.png"
       }
     },
     {
@@ -505,8 +385,8 @@
         "en": "Multisensor"
       },
       "images": {
-        "large": "./drivers/multisensor/assets/images/large.png",
-        "small": "./drivers/multisensor/assets/images/small.png"
+        "large": "./drivers/multisensor/assets/large.png",
+        "small": "./drivers/multisensor/assets/small.png"
       }
     },
     {
@@ -515,8 +395,8 @@
         "en": "Noise Level Sensor"
       },
       "images": {
-        "large": "./drivers/noise_level_sensor/assets/images/large.png",
-        "small": "./drivers/noise_level_sensor/assets/images/small.png"
+        "large": "./drivers/noise_level_sensor/assets/large.png",
+        "small": "./drivers/noise_level_sensor/assets/small.png"
       }
     },
     {
@@ -525,18 +405,8 @@
         "en": "Outdoor Light Controller"
       },
       "images": {
-        "large": "./drivers/outdoor_light_controller/assets/images/large.png",
-        "small": "./drivers/outdoor_light_controller/assets/images/small.png"
-      }
-    },
-    {
-      "id": "panic_button",
-      "name": {
-        "en": "Panic Button"
-      },
-      "images": {
-        "large": "./drivers/panic_button/assets/images/large.png",
-        "small": "./drivers/panic_button/assets/images/small.png"
+        "large": "./drivers/outdoor_light_controller/assets/large.png",
+        "small": "./drivers/outdoor_light_controller/assets/small.png"
       }
     },
     {
@@ -545,8 +415,8 @@
         "en": "Pm25 Sensor"
       },
       "images": {
-        "large": "./drivers/pm25_sensor/assets/images/large.png",
-        "small": "./drivers/pm25_sensor/assets/images/small.png"
+        "large": "./drivers/pm25_sensor/assets/large.png",
+        "small": "./drivers/pm25_sensor/assets/small.png"
       }
     },
     {
@@ -555,8 +425,8 @@
         "en": "Presence Sensor Radar"
       },
       "images": {
-        "large": "./drivers/presence_sensor_radar/assets/images/large.png",
-        "small": "./drivers/presence_sensor_radar/assets/images/small.png"
+        "large": "./drivers/presence_sensor_radar/assets/large.png",
+        "small": "./drivers/presence_sensor_radar/assets/small.png"
       }
     },
     {
@@ -565,8 +435,8 @@
         "en": "Pressure Sensor"
       },
       "images": {
-        "large": "./drivers/pressure_sensor/assets/images/large.png",
-        "small": "./drivers/pressure_sensor/assets/images/small.png"
+        "large": "./drivers/pressure_sensor/assets/large.png",
+        "small": "./drivers/pressure_sensor/assets/small.png"
       }
     },
     {
@@ -575,8 +445,8 @@
         "en": "Projector Screen Controller"
       },
       "images": {
-        "large": "./drivers/projector_screen_controller/assets/images/large.png",
-        "small": "./drivers/projector_screen_controller/assets/images/small.png"
+        "large": "./drivers/projector_screen_controller/assets/large.png",
+        "small": "./drivers/projector_screen_controller/assets/small.png"
       }
     },
     {
@@ -585,8 +455,18 @@
         "en": "Radiator Valve"
       },
       "images": {
-        "large": "./drivers/radiator_valve/assets/images/large.png",
-        "small": "./drivers/radiator_valve/assets/images/small.png"
+        "large": "./drivers/radiator_valve/assets/large.png",
+        "small": "./drivers/radiator_valve/assets/small.png"
+      }
+    },
+    {
+      "id": "relay_switch_1gang",
+      "name": {
+        "en": "Relay Switch 1-Gang"
+      },
+      "images": {
+        "large": "./drivers/relay_switch_1gang/assets/large.png",
+        "small": "./drivers/relay_switch_1gang/assets/small.png"
       }
     },
     {
@@ -595,8 +475,8 @@
         "en": "Roller Blind Controller"
       },
       "images": {
-        "large": "./drivers/roller_blind_controller/assets/images/large.png",
-        "small": "./drivers/roller_blind_controller/assets/images/small.png"
+        "large": "./drivers/roller_blind_controller/assets/large.png",
+        "small": "./drivers/roller_blind_controller/assets/small.png"
       }
     },
     {
@@ -605,8 +485,8 @@
         "en": "Scene Controller 2button"
       },
       "images": {
-        "large": "./drivers/scene_controller_2button/assets/images/large.png",
-        "small": "./drivers/scene_controller_2button/assets/images/small.png"
+        "large": "./drivers/scene_controller_2button/assets/large.png",
+        "small": "./drivers/scene_controller_2button/assets/small.png"
       }
     },
     {
@@ -615,8 +495,8 @@
         "en": "Scene Controller 4button"
       },
       "images": {
-        "large": "./drivers/scene_controller_4button/assets/images/large.png",
-        "small": "./drivers/scene_controller_4button/assets/images/small.png"
+        "large": "./drivers/scene_controller_4button/assets/large.png",
+        "small": "./drivers/scene_controller_4button/assets/small.png"
       }
     },
     {
@@ -625,8 +505,8 @@
         "en": "Scene Controller 6button"
       },
       "images": {
-        "large": "./drivers/scene_controller_6button/assets/images/large.png",
-        "small": "./drivers/scene_controller_6button/assets/images/small.png"
+        "large": "./drivers/scene_controller_6button/assets/large.png",
+        "small": "./drivers/scene_controller_6button/assets/small.png"
       }
     },
     {
@@ -635,8 +515,8 @@
         "en": "Scene Controller 8button"
       },
       "images": {
-        "large": "./drivers/scene_controller_8button/assets/images/large.png",
-        "small": "./drivers/scene_controller_8button/assets/images/small.png"
+        "large": "./drivers/scene_controller_8button/assets/large.png",
+        "small": "./drivers/scene_controller_8button/assets/small.png"
       }
     },
     {
@@ -645,8 +525,8 @@
         "en": "Scene Controller Battery"
       },
       "images": {
-        "large": "./drivers/scene_controller_battery/assets/images/large.png",
-        "small": "./drivers/scene_controller_battery/assets/images/small.png"
+        "large": "./drivers/scene_controller_battery/assets/large.png",
+        "small": "./drivers/scene_controller_battery/assets/small.png"
       }
     },
     {
@@ -655,8 +535,8 @@
         "en": "Shade Controller"
       },
       "images": {
-        "large": "./drivers/shade_controller/assets/images/large.png",
-        "small": "./drivers/shade_controller/assets/images/small.png"
+        "large": "./drivers/shade_controller/assets/large.png",
+        "small": "./drivers/shade_controller/assets/small.png"
       }
     },
     {
@@ -665,8 +545,8 @@
         "en": "Smart Bulb Rgb"
       },
       "images": {
-        "large": "./drivers/smart_bulb_rgb/assets/images/large.png",
-        "small": "./drivers/smart_bulb_rgb/assets/images/small.png"
+        "large": "./drivers/smart_bulb_rgb/assets/large.png",
+        "small": "./drivers/smart_bulb_rgb/assets/small.png"
       }
     },
     {
@@ -675,8 +555,8 @@
         "en": "Smart Bulb Tunable"
       },
       "images": {
-        "large": "./drivers/smart_bulb_tunable/assets/images/large.png",
-        "small": "./drivers/smart_bulb_tunable/assets/images/small.png"
+        "large": "./drivers/smart_bulb_tunable/assets/large.png",
+        "small": "./drivers/smart_bulb_tunable/assets/small.png"
       }
     },
     {
@@ -685,18 +565,8 @@
         "en": "Smart Bulb White"
       },
       "images": {
-        "large": "./drivers/smart_bulb_white/assets/images/large.png",
-        "small": "./drivers/smart_bulb_white/assets/images/small.png"
-      }
-    },
-    {
-      "id": "smart_doorbell",
-      "name": {
-        "en": "Smart Doorbell"
-      },
-      "images": {
-        "large": "./drivers/smart_doorbell/assets/images/large.png",
-        "small": "./drivers/smart_doorbell/assets/images/small.png"
+        "large": "./drivers/smart_bulb_white/assets/large.png",
+        "small": "./drivers/smart_bulb_white/assets/small.png"
       }
     },
     {
@@ -705,8 +575,8 @@
         "en": "Smart Lock"
       },
       "images": {
-        "large": "./drivers/smart_lock/assets/images/large.png",
-        "small": "./drivers/smart_lock/assets/images/small.png"
+        "large": "./drivers/smart_lock/assets/large.png",
+        "small": "./drivers/smart_lock/assets/small.png"
       }
     },
     {
@@ -715,8 +585,8 @@
         "en": "Smart Plug"
       },
       "images": {
-        "large": "./drivers/smart_plug/assets/images/large.png",
-        "small": "./drivers/smart_plug/assets/images/small.png"
+        "large": "./drivers/smart_plug/assets/large.png",
+        "small": "./drivers/smart_plug/assets/small.png"
       }
     },
     {
@@ -725,8 +595,8 @@
         "en": "Smart Spot"
       },
       "images": {
-        "large": "./drivers/smart_spot/assets/images/large.png",
-        "small": "./drivers/smart_spot/assets/images/small.png"
+        "large": "./drivers/smart_spot/assets/large.png",
+        "small": "./drivers/smart_spot/assets/small.png"
       }
     },
     {
@@ -735,8 +605,8 @@
         "en": "Smart Switch 1-Gang Hybrid"
       },
       "images": {
-        "large": "./drivers/smart_switch_1gang_hybrid/assets/images/large.png",
-        "small": "./drivers/smart_switch_1gang_hybrid/assets/images/small.png"
+        "large": "./drivers/smart_switch_1gang_hybrid/assets/large.png",
+        "small": "./drivers/smart_switch_1gang_hybrid/assets/small.png"
       }
     },
     {
@@ -745,8 +615,8 @@
         "en": "Smart Switch 2-Gang Hybrid"
       },
       "images": {
-        "large": "./drivers/smart_switch_2gang_hybrid/assets/images/large.png",
-        "small": "./drivers/smart_switch_2gang_hybrid/assets/images/small.png"
+        "large": "./drivers/smart_switch_2gang_hybrid/assets/large.png",
+        "small": "./drivers/smart_switch_2gang_hybrid/assets/small.png"
       }
     },
     {
@@ -755,8 +625,8 @@
         "en": "Smart Switch 3-Gang Hybrid"
       },
       "images": {
-        "large": "./drivers/smart_switch_3gang_hybrid/assets/images/large.png",
-        "small": "./drivers/smart_switch_3gang_hybrid/assets/images/small.png"
+        "large": "./drivers/smart_switch_3gang_hybrid/assets/large.png",
+        "small": "./drivers/smart_switch_3gang_hybrid/assets/small.png"
       }
     },
     {
@@ -765,8 +635,8 @@
         "en": "Smart Switch 4-Gang Hybrid"
       },
       "images": {
-        "large": "./drivers/smart_switch_4gang_hybrid/assets/images/large.png",
-        "small": "./drivers/smart_switch_4gang_hybrid/assets/images/small.png"
+        "large": "./drivers/smart_switch_4gang_hybrid/assets/large.png",
+        "small": "./drivers/smart_switch_4gang_hybrid/assets/small.png"
       }
     },
     {
@@ -775,8 +645,8 @@
         "en": "Smoke Detector"
       },
       "images": {
-        "large": "./drivers/smoke_detector/assets/images/large.png",
-        "small": "./drivers/smoke_detector/assets/images/small.png"
+        "large": "./drivers/smoke_detector/assets/large.png",
+        "small": "./drivers/smoke_detector/assets/small.png"
       }
     },
     {
@@ -785,48 +655,8 @@
         "en": "Soil Moisture Sensor"
       },
       "images": {
-        "large": "./drivers/soil_moisture_sensor/assets/images/large.png",
-        "small": "./drivers/soil_moisture_sensor/assets/images/small.png"
-      }
-    },
-    {
-      "id": "sonoff_basic",
-      "name": {
-        "en": "Sonoff Basic"
-      },
-      "images": {
-        "large": "./drivers/sonoff_basic/assets/images/large.png",
-        "small": "./drivers/sonoff_basic/assets/images/small.png"
-      }
-    },
-    {
-      "id": "sonoff_mini",
-      "name": {
-        "en": "Sonoff Mini"
-      },
-      "images": {
-        "large": "./drivers/sonoff_mini/assets/images/large.png",
-        "small": "./drivers/sonoff_mini/assets/images/small.png"
-      }
-    },
-    {
-      "id": "sonoff_zbbridge",
-      "name": {
-        "en": "Sonoff Zbbridge"
-      },
-      "images": {
-        "large": "./drivers/sonoff_zbbridge/assets/images/large.png",
-        "small": "./drivers/sonoff_zbbridge/assets/images/small.png"
-      }
-    },
-    {
-      "id": "sos_button",
-      "name": {
-        "en": "Sos Button"
-      },
-      "images": {
-        "large": "./drivers/sos_button/assets/images/large.png",
-        "small": "./drivers/sos_button/assets/images/small.png"
+        "large": "./drivers/soil_moisture_sensor/assets/large.png",
+        "small": "./drivers/soil_moisture_sensor/assets/small.png"
       }
     },
     {
@@ -835,8 +665,28 @@
         "en": "Strip Light Controller"
       },
       "images": {
-        "large": "./drivers/strip_light_controller/assets/images/large.png",
-        "small": "./drivers/strip_light_controller/assets/images/small.png"
+        "large": "./drivers/strip_light_controller/assets/large.png",
+        "small": "./drivers/strip_light_controller/assets/small.png"
+      }
+    },
+    {
+      "id": "styrbar_remote",
+      "name": {
+        "en": "Styrbar Remote"
+      },
+      "images": {
+        "large": "./drivers/styrbar_remote/assets/large.png",
+        "small": "./drivers/styrbar_remote/assets/small.png"
+      }
+    },
+    {
+      "id": "symfonisk_remote",
+      "name": {
+        "en": "Symfonisk Remote"
+      },
+      "images": {
+        "large": "./drivers/symfonisk_remote/assets/large.png",
+        "small": "./drivers/symfonisk_remote/assets/small.png"
       }
     },
     {
@@ -845,8 +695,8 @@
         "en": "Temperature Controller"
       },
       "images": {
-        "large": "./drivers/temperature_controller/assets/images/large.png",
-        "small": "./drivers/temperature_controller/assets/images/small.png"
+        "large": "./drivers/temperature_controller/assets/large.png",
+        "small": "./drivers/temperature_controller/assets/small.png"
       }
     },
     {
@@ -855,8 +705,8 @@
         "en": "Temperature Humidity Sensor"
       },
       "images": {
-        "large": "./drivers/temperature_humidity_sensor/assets/images/large.png",
-        "small": "./drivers/temperature_humidity_sensor/assets/images/small.png"
+        "large": "./drivers/temperature_humidity_sensor/assets/large.png",
+        "small": "./drivers/temperature_humidity_sensor/assets/small.png"
       }
     },
     {
@@ -865,8 +715,8 @@
         "en": "Thermostat"
       },
       "images": {
-        "large": "./drivers/thermostat/assets/images/large.png",
-        "small": "./drivers/thermostat/assets/images/small.png"
+        "large": "./drivers/thermostat/assets/large.png",
+        "small": "./drivers/thermostat/assets/small.png"
       }
     },
     {
@@ -875,8 +725,8 @@
         "en": "Touch Dimmer"
       },
       "images": {
-        "large": "./drivers/touch_dimmer/assets/images/large.png",
-        "small": "./drivers/touch_dimmer/assets/images/small.png"
+        "large": "./drivers/touch_dimmer/assets/large.png",
+        "small": "./drivers/touch_dimmer/assets/small.png"
       }
     },
     {
@@ -885,8 +735,8 @@
         "en": "Touch Switch 1-Gang"
       },
       "images": {
-        "large": "./drivers/touch_switch_1gang/assets/images/large.png",
-        "small": "./drivers/touch_switch_1gang/assets/images/small.png"
+        "large": "./drivers/touch_switch_1gang/assets/large.png",
+        "small": "./drivers/touch_switch_1gang/assets/small.png"
       }
     },
     {
@@ -895,8 +745,8 @@
         "en": "Touch Switch 2-Gang"
       },
       "images": {
-        "large": "./drivers/touch_switch_2gang/assets/images/large.png",
-        "small": "./drivers/touch_switch_2gang/assets/images/small.png"
+        "large": "./drivers/touch_switch_2gang/assets/large.png",
+        "small": "./drivers/touch_switch_2gang/assets/small.png"
       }
     },
     {
@@ -905,8 +755,8 @@
         "en": "Touch Switch 3-Gang"
       },
       "images": {
-        "large": "./drivers/touch_switch_3gang/assets/images/large.png",
-        "small": "./drivers/touch_switch_3gang/assets/images/small.png"
+        "large": "./drivers/touch_switch_3gang/assets/large.png",
+        "small": "./drivers/touch_switch_3gang/assets/small.png"
       }
     },
     {
@@ -915,8 +765,8 @@
         "en": "Touch Switch 4-Gang"
       },
       "images": {
-        "large": "./drivers/touch_switch_4gang/assets/images/large.png",
-        "small": "./drivers/touch_switch_4gang/assets/images/small.png"
+        "large": "./drivers/touch_switch_4gang/assets/large.png",
+        "small": "./drivers/touch_switch_4gang/assets/small.png"
       }
     },
     {
@@ -925,8 +775,8 @@
         "en": "Tvoc Sensor"
       },
       "images": {
-        "large": "./drivers/tvoc_sensor/assets/images/large.png",
-        "small": "./drivers/tvoc_sensor/assets/images/small.png"
+        "large": "./drivers/tvoc_sensor/assets/large.png",
+        "small": "./drivers/tvoc_sensor/assets/small.png"
       }
     },
     {
@@ -935,8 +785,8 @@
         "en": "Usb Outlet"
       },
       "images": {
-        "large": "./drivers/usb_outlet/assets/images/large.png",
-        "small": "./drivers/usb_outlet/assets/images/small.png"
+        "large": "./drivers/usb_outlet/assets/large.png",
+        "small": "./drivers/usb_outlet/assets/small.png"
       }
     },
     {
@@ -945,8 +795,8 @@
         "en": "Venetian Blind Controller"
       },
       "images": {
-        "large": "./drivers/venetian_blind_controller/assets/images/large.png",
-        "small": "./drivers/venetian_blind_controller/assets/images/small.png"
+        "large": "./drivers/venetian_blind_controller/assets/large.png",
+        "small": "./drivers/venetian_blind_controller/assets/small.png"
       }
     },
     {
@@ -955,8 +805,8 @@
         "en": "Vibration Sensor"
       },
       "images": {
-        "large": "./drivers/vibration_sensor/assets/images/large.png",
-        "small": "./drivers/vibration_sensor/assets/images/small.png"
+        "large": "./drivers/vibration_sensor/assets/large.png",
+        "small": "./drivers/vibration_sensor/assets/small.png"
       }
     },
     {
@@ -965,8 +815,8 @@
         "en": "Wall Switch 1-Gang"
       },
       "images": {
-        "large": "./drivers/wall_switch_1gang/assets/images/large.png",
-        "small": "./drivers/wall_switch_1gang/assets/images/small.png"
+        "large": "./drivers/wall_switch_1gang/assets/large.png",
+        "small": "./drivers/wall_switch_1gang/assets/small.png"
       }
     },
     {
@@ -975,8 +825,8 @@
         "en": "Wall Switch 1-Gang AC"
       },
       "images": {
-        "large": "./drivers/wall_switch_1gang_ac/assets/images/large.png",
-        "small": "./drivers/wall_switch_1gang_ac/assets/images/small.png"
+        "large": "./drivers/wall_switch_1gang_ac/assets/large.png",
+        "small": "./drivers/wall_switch_1gang_ac/assets/small.png"
       }
     },
     {
@@ -985,8 +835,8 @@
         "en": "Wall Switch 1-Gang DC"
       },
       "images": {
-        "large": "./drivers/wall_switch_1gang_dc/assets/images/large.png",
-        "small": "./drivers/wall_switch_1gang_dc/assets/images/small.png"
+        "large": "./drivers/wall_switch_1gang_dc/assets/large.png",
+        "small": "./drivers/wall_switch_1gang_dc/assets/small.png"
       }
     },
     {
@@ -995,8 +845,8 @@
         "en": "Wall Switch 2-Gang"
       },
       "images": {
-        "large": "./drivers/wall_switch_2gang/assets/images/large.png",
-        "small": "./drivers/wall_switch_2gang/assets/images/small.png"
+        "large": "./drivers/wall_switch_2gang/assets/large.png",
+        "small": "./drivers/wall_switch_2gang/assets/small.png"
       }
     },
     {
@@ -1005,8 +855,8 @@
         "en": "Wall Switch 2-Gang AC"
       },
       "images": {
-        "large": "./drivers/wall_switch_2gang_ac/assets/images/large.png",
-        "small": "./drivers/wall_switch_2gang_ac/assets/images/small.png"
+        "large": "./drivers/wall_switch_2gang_ac/assets/large.png",
+        "small": "./drivers/wall_switch_2gang_ac/assets/small.png"
       }
     },
     {
@@ -1015,8 +865,8 @@
         "en": "Wall Switch 2-Gang DC"
       },
       "images": {
-        "large": "./drivers/wall_switch_2gang_dc/assets/images/large.png",
-        "small": "./drivers/wall_switch_2gang_dc/assets/images/small.png"
+        "large": "./drivers/wall_switch_2gang_dc/assets/large.png",
+        "small": "./drivers/wall_switch_2gang_dc/assets/small.png"
       }
     },
     {
@@ -1025,8 +875,8 @@
         "en": "Wall Switch 3-Gang"
       },
       "images": {
-        "large": "./drivers/wall_switch_3gang/assets/images/large.png",
-        "small": "./drivers/wall_switch_3gang/assets/images/small.png"
+        "large": "./drivers/wall_switch_3gang/assets/large.png",
+        "small": "./drivers/wall_switch_3gang/assets/small.png"
       }
     },
     {
@@ -1035,8 +885,8 @@
         "en": "Wall Switch 3-Gang AC"
       },
       "images": {
-        "large": "./drivers/wall_switch_3gang_ac/assets/images/large.png",
-        "small": "./drivers/wall_switch_3gang_ac/assets/images/small.png"
+        "large": "./drivers/wall_switch_3gang_ac/assets/large.png",
+        "small": "./drivers/wall_switch_3gang_ac/assets/small.png"
       }
     },
     {
@@ -1045,8 +895,8 @@
         "en": "Wall Switch 3-Gang DC"
       },
       "images": {
-        "large": "./drivers/wall_switch_3gang_dc/assets/images/large.png",
-        "small": "./drivers/wall_switch_3gang_dc/assets/images/small.png"
+        "large": "./drivers/wall_switch_3gang_dc/assets/large.png",
+        "small": "./drivers/wall_switch_3gang_dc/assets/small.png"
       }
     },
     {
@@ -1055,8 +905,8 @@
         "en": "Wall Switch 4-Gang"
       },
       "images": {
-        "large": "./drivers/wall_switch_4gang/assets/images/large.png",
-        "small": "./drivers/wall_switch_4gang/assets/images/small.png"
+        "large": "./drivers/wall_switch_4gang/assets/large.png",
+        "small": "./drivers/wall_switch_4gang/assets/small.png"
       }
     },
     {
@@ -1065,8 +915,8 @@
         "en": "Wall Switch 4-Gang AC"
       },
       "images": {
-        "large": "./drivers/wall_switch_4gang_ac/assets/images/large.png",
-        "small": "./drivers/wall_switch_4gang_ac/assets/images/small.png"
+        "large": "./drivers/wall_switch_4gang_ac/assets/large.png",
+        "small": "./drivers/wall_switch_4gang_ac/assets/small.png"
       }
     },
     {
@@ -1075,8 +925,8 @@
         "en": "Wall Switch 4-Gang DC"
       },
       "images": {
-        "large": "./drivers/wall_switch_4gang_dc/assets/images/large.png",
-        "small": "./drivers/wall_switch_4gang_dc/assets/images/small.png"
+        "large": "./drivers/wall_switch_4gang_dc/assets/large.png",
+        "small": "./drivers/wall_switch_4gang_dc/assets/small.png"
       }
     },
     {
@@ -1085,8 +935,8 @@
         "en": "Wall Switch 5-Gang"
       },
       "images": {
-        "large": "./drivers/wall_switch_5gang/assets/images/large.png",
-        "small": "./drivers/wall_switch_5gang/assets/images/small.png"
+        "large": "./drivers/wall_switch_5gang/assets/large.png",
+        "small": "./drivers/wall_switch_5gang/assets/small.png"
       }
     },
     {
@@ -1095,8 +945,8 @@
         "en": "Wall Switch 5-Gang AC"
       },
       "images": {
-        "large": "./drivers/wall_switch_5gang_ac/assets/images/large.png",
-        "small": "./drivers/wall_switch_5gang_ac/assets/images/small.png"
+        "large": "./drivers/wall_switch_5gang_ac/assets/large.png",
+        "small": "./drivers/wall_switch_5gang_ac/assets/small.png"
       }
     },
     {
@@ -1105,8 +955,8 @@
         "en": "Wall Switch 6-Gang"
       },
       "images": {
-        "large": "./drivers/wall_switch_6gang/assets/images/large.png",
-        "small": "./drivers/wall_switch_6gang/assets/images/small.png"
+        "large": "./drivers/wall_switch_6gang/assets/large.png",
+        "small": "./drivers/wall_switch_6gang/assets/small.png"
       }
     },
     {
@@ -1115,8 +965,8 @@
         "en": "Wall Switch 6-Gang AC"
       },
       "images": {
-        "large": "./drivers/wall_switch_6gang_ac/assets/images/large.png",
-        "small": "./drivers/wall_switch_6gang_ac/assets/images/small.png"
+        "large": "./drivers/wall_switch_6gang_ac/assets/large.png",
+        "small": "./drivers/wall_switch_6gang_ac/assets/small.png"
       }
     },
     {
@@ -1125,18 +975,8 @@
         "en": "Water Leak Sensor"
       },
       "images": {
-        "large": "./drivers/water_leak_sensor/assets/images/large.png",
-        "small": "./drivers/water_leak_sensor/assets/images/small.png"
-      }
-    },
-    {
-      "id": "window_motor",
-      "name": {
-        "en": "Window Motor"
-      },
-      "images": {
-        "large": "./drivers/window_motor/assets/images/large.png",
-        "small": "./drivers/window_motor/assets/images/small.png"
+        "large": "./drivers/water_leak_sensor/assets/large.png",
+        "small": "./drivers/water_leak_sensor/assets/small.png"
       }
     },
     {
@@ -1145,8 +985,8 @@
         "en": "Wireless Switch 1-Gang Battery"
       },
       "images": {
-        "large": "./drivers/wireless_switch_1gang_cr2032/assets/images/large.png",
-        "small": "./drivers/wireless_switch_1gang_cr2032/assets/images/small.png"
+        "large": "./drivers/wireless_switch_1gang_cr2032/assets/large.png",
+        "small": "./drivers/wireless_switch_1gang_cr2032/assets/small.png"
       }
     },
     {
@@ -1155,8 +995,8 @@
         "en": "Wireless Switch 2-Gang Battery"
       },
       "images": {
-        "large": "./drivers/wireless_switch_2gang_cr2032/assets/images/large.png",
-        "small": "./drivers/wireless_switch_2gang_cr2032/assets/images/small.png"
+        "large": "./drivers/wireless_switch_2gang_cr2032/assets/large.png",
+        "small": "./drivers/wireless_switch_2gang_cr2032/assets/small.png"
       }
     },
     {
@@ -1165,8 +1005,8 @@
         "en": "Wireless Switch 3-Gang Battery"
       },
       "images": {
-        "large": "./drivers/wireless_switch_3gang_cr2032/assets/images/large.png",
-        "small": "./drivers/wireless_switch_3gang_cr2032/assets/images/small.png"
+        "large": "./drivers/wireless_switch_3gang_cr2032/assets/large.png",
+        "small": "./drivers/wireless_switch_3gang_cr2032/assets/small.png"
       }
     },
     {
@@ -1175,8 +1015,8 @@
         "en": "Wireless Switch 4-Gang Battery"
       },
       "images": {
-        "large": "./drivers/wireless_switch_4gang_cr2032/assets/images/large.png",
-        "small": "./drivers/wireless_switch_4gang_cr2032/assets/images/small.png"
+        "large": "./drivers/wireless_switch_4gang_cr2032/assets/large.png",
+        "small": "./drivers/wireless_switch_4gang_cr2032/assets/small.png"
       }
     },
     {
@@ -1185,8 +1025,8 @@
         "en": "Wireless Switch 5-Gang Battery"
       },
       "images": {
-        "large": "./drivers/wireless_switch_5gang_cr2032/assets/images/large.png",
-        "small": "./drivers/wireless_switch_5gang_cr2032/assets/images/small.png"
+        "large": "./drivers/wireless_switch_5gang_cr2032/assets/large.png",
+        "small": "./drivers/wireless_switch_5gang_cr2032/assets/small.png"
       }
     },
     {
@@ -1195,8 +1035,18 @@
         "en": "Wireless Switch 6-Gang Battery"
       },
       "images": {
-        "large": "./drivers/wireless_switch_6gang_cr2032/assets/images/large.png",
-        "small": "./drivers/wireless_switch_6gang_cr2032/assets/images/small.png"
+        "large": "./drivers/wireless_switch_6gang_cr2032/assets/large.png",
+        "small": "./drivers/wireless_switch_6gang_cr2032/assets/small.png"
+      }
+    },
+    {
+      "id": "zbbridge",
+      "name": {
+        "en": "Zbbridge"
+      },
+      "images": {
+        "large": "./drivers/zbbridge/assets/large.png",
+        "small": "./drivers/zbbridge/assets/small.png"
       }
     }
   ]

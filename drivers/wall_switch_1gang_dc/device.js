@@ -2,49 +2,40 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class WallSwitch_1gangDcDevice extends ZigBeeDevice {
-    
+class WallSwitch1gangDcDevice extends ZigBeeDevice {
+
     async onNodeInit() {
-        this.log('wall_switch_1gang_dc device initialized - 1 button(s), dc powered');
-        
-        await this.registerEnhancedCapabilities();
-        await this.setupEnhancedListeners();
-        
-        // Device specifications
-        this.specs = {
-        "buttons": 1,
-        "power": "dc",
-        "voltage": "12-24V"
-};
+        this.log('wall_switch_1gang_dc device initialized');
+
+        // Register capabilities
+                // Register on/off capability
+        this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
+
+        // Mark device as available
+        await this.setAvailable();
     }
-    
-    async registerEnhancedCapabilities() {
-        // OnOff capability for main button
-        if (this.hasCapability('onoff')) {
-            this.registerCapability('onoff', 'genOnOff');
+
+        async onCapabilityOnoff(value, opts) {
+        this.log('onCapabilityOnoff:', value);
+        
+        try {
+            if (value) {
+                await this.zclNode.endpoints[1].clusters.onOff.setOn();
+            } else {
+                await this.zclNode.endpoints[1].clusters.onOff.setOff();
+            }
+            
+            return Promise.resolve();
+        } catch (error) {
+            this.error('Error setting onoff:', error);
+            return Promise.reject(error);
         }
-        
-        // Additional buttons for multi-gang switches
-        
-        
-        // Battery capabilities for battery-powered devices
-        
-        
-        // Motion sensing capabilities
-        
     }
-    
-    async setupEnhancedListeners() {
-        // Battery level monitoring
-        
-        
-        // Motion detection
-        
+
+    async onDeleted() {
+        this.log('wall_switch_1gang_dc device deleted');
     }
-    
-    
-    
-    
+
 }
 
-module.exports = WallSwitch_1gangDcDevice;
+module.exports = WallSwitch1gangDcDevice;
