@@ -2,82 +2,40 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class SceneController_6buttonDevice extends ZigBeeDevice {
-    
+class SceneController6buttonDevice extends ZigBeeDevice {
+
     async onNodeInit() {
-        this.log('scene_controller_6button device initialized - 6 button(s), battery powered');
-        
-        await this.registerEnhancedCapabilities();
-        await this.setupEnhancedListeners();
-        
-        // Device specifications
-        this.specs = {
-        "buttons": 6,
-        "power": "battery",
-        "type": "CR2032"
-};
+        this.log('scene_controller_6button device initialized');
+
+        // Register capabilities
+                // Register on/off capability
+        this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
+
+        // Mark device as available
+        await this.setAvailable();
     }
-    
-    async registerEnhancedCapabilities() {
-        // OnOff capability for main button
-        if (this.hasCapability('onoff')) {
-            this.registerCapability('onoff', 'genOnOff');
-        }
+
+        async onCapabilityOnoff(value, opts) {
+        this.log('onCapabilityOnoff:', value);
         
-        // Additional buttons for multi-gang switches
-        
-        for (let i = 2; i <= 6; i++) {
-            if (this.hasCapability(`button.${i}`)) {
-                this.registerCapability(`button.${i}`, 'genOnOff', {
-                    endpoint: i
-                });
+        try {
+            if (value) {
+                await this.zclNode.endpoints[1].clusters.onOff.setOn();
+            } else {
+                await this.zclNode.endpoints[1].clusters.onOff.setOff();
             }
+            
+            return Promise.resolve();
+        } catch (error) {
+            this.error('Error setting onoff:', error);
+            return Promise.reject(error);
         }
-        
-        // Battery capabilities for battery-powered devices
-        
-        if (this.hasCapability('measure_battery')) {
-            this.registerCapability('measure_battery', 'genPowerCfg', {
-                reportOpts: {
-                    configureAttributeReporting: {
-                        minInterval: 0,
-                        maxInterval: 3600,
-                        minChange: 1
-                    }
-                }
-            });
-        }
-        
-        if (this.hasCapability('alarm_battery')) {
-            this.registerCapability('alarm_battery', 'genPowerCfg');
-        }
-        
-        // Motion sensing capabilities
-        
     }
-    
-    async setupEnhancedListeners() {
-        // Battery level monitoring
-        
-        this.registerAttrReportListener('genPowerCfg', 'batteryPercentageRemaining', 
-            this.onBatteryPercentageRemainingAttributeReport.bind(this), 1);
-        
-        // Motion detection
-        
+
+    async onDeleted() {
+        this.log('scene_controller_6button device deleted');
     }
-    
-    
-    onBatteryPercentageRemainingAttributeReport(value) {
-        const batteryThreshold = this.getSetting('battery_threshold') || 20;
-        const batteryPercentage = Math.max(0, Math.min(100, Math.round(value / 2)));
-        
-        this.setCapabilityValue('measure_battery', batteryPercentage);
-        this.setCapabilityValue('alarm_battery', batteryPercentage <= batteryThreshold);
-        
-        this.log('Battery level:', batteryPercentage + '%');
-    }
-    
-    
+
 }
 
-module.exports = SceneController_6buttonDevice;
+module.exports = SceneController6buttonDevice;

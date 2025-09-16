@@ -2,28 +2,60 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class Gu10SpotDevice extends ZigBeeDevice {
+class SmartSpotDevice extends ZigBeeDevice {
 
-    async onNodeInit({ zclNode }) {
-        this.printNode();
+    async onNodeInit() {
+        this.log('smart_spot device initialized');
 
-                this.registerCapability('onoff', 6);
-        this.registerCapability('dim', 8);
+        // Register capabilities
+                // Register on/off capability
+        this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
 
-        this.log('gu10_spot device initialized');
+        // Register dim capability
+        this.registerCapabilityListener('dim', this.onCapabilityDim.bind(this));
+
+        // Mark device as available
+        await this.setAvailable();
     }
 
-    
-    onCapabilityOnOff(value) {
-        return this.zclNode.endpoints[1].clusters.onOff.setOn(value);
+        async onCapabilityOnoff(value, opts) {
+        this.log('onCapabilityOnoff:', value);
+        
+        try {
+            if (value) {
+                await this.zclNode.endpoints[1].clusters.onOff.setOn();
+            } else {
+                await this.zclNode.endpoints[1].clusters.onOff.setOff();
+            }
+            
+            return Promise.resolve();
+        } catch (error) {
+            this.error('Error setting onoff:', error);
+            return Promise.reject(error);
+        }
     }
 
-    onCapabilityDim(value) {
-        return this.zclNode.endpoints[1].clusters.levelControl.moveToLevel({
-            level: Math.round(value * 254),
-            transitionTime: 1
-        });
+    async onCapabilityDim(value, opts) {
+        this.log('onCapabilityDim:', value);
+        
+        try {
+            const level = Math.round(value * 254);
+            await this.zclNode.endpoints[1].clusters.levelControl.moveToLevel({
+                level: level,
+                transitionTime: 1
+            });
+            
+            return Promise.resolve();
+        } catch (error) {
+            this.error('Error setting dim:', error);
+            return Promise.reject(error);
+        }
     }
+
+    async onDeleted() {
+        this.log('smart_spot device deleted');
+    }
+
 }
 
-module.exports = Gu10SpotDevice;
+module.exports = SmartSpotDevice;

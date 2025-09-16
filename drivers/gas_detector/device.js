@@ -4,25 +4,24 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 class GasDetectorDevice extends ZigBeeDevice {
 
-    async onNodeInit({ zclNode }) {
-        this.printNode();
-
-        
-
+    async onNodeInit() {
         this.log('gas_detector device initialized');
+
+        // Register capabilities
+                // Register temperature measurement
+
+        // Register motion alarm
+
+        // Mark device as available
+        await this.setAvailable();
     }
 
     
-    onCapabilityOnOff(value) {
-        return this.zclNode.endpoints[1].clusters.onOff.setOn(value);
+
+    async onDeleted() {
+        this.log('gas_detector device deleted');
     }
 
-    onCapabilityDim(value) {
-        return this.zclNode.endpoints[1].clusters.levelControl.moveToLevel({
-            level: Math.round(value * 254),
-            transitionTime: 1
-        });
-    }
 }
 
 module.exports = GasDetectorDevice;

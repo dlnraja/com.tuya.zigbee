@@ -4,25 +4,40 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 class SmartLockDevice extends ZigBeeDevice {
 
-    async onNodeInit({ zclNode }) {
-        this.printNode();
-
-        
-
+    async onNodeInit() {
         this.log('smart_lock device initialized');
+
+        // Register capabilities
+                // Register lock capability
+        this.registerCapabilityListener('locked', this.onCapabilityLocked.bind(this));
+
+        // Register alarm_generic capability
+
+        // Mark device as available
+        await this.setAvailable();
     }
 
-    
-    onCapabilityOnOff(value) {
-        return this.zclNode.endpoints[1].clusters.onOff.setOn(value);
+        async onCapabilityLocked(value, opts) {
+        this.log('onCapabilityLocked:', value);
+        
+        try {
+            if (value) {
+                await this.zclNode.endpoints[1].clusters.doorLock.lockDoor();
+            } else {
+                await this.zclNode.endpoints[1].clusters.doorLock.unlockDoor();
+            }
+            
+            return Promise.resolve();
+        } catch (error) {
+            this.error('Error setting locked:', error);
+            return Promise.reject(error);
+        }
     }
 
-    onCapabilityDim(value) {
-        return this.zclNode.endpoints[1].clusters.levelControl.moveToLevel({
-            level: Math.round(value * 254),
-            transitionTime: 1
-        });
+    async onDeleted() {
+        this.log('smart_lock device deleted');
     }
+
 }
 
 module.exports = SmartLockDevice;

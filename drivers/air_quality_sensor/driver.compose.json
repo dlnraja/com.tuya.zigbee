@@ -1,40 +1,53 @@
 {
   "name": {
-    "en": "Air Quality Monitor"
+    "en": "Motion Sensor"
   },
   "class": "sensor",
   "capabilities": [
-    "measure_battery"
+    "alarm_motion",
+    "measure_battery",
+    "measure_luminance"
   ],
   "zigbee": {
     "manufacturerName": [
-      "TZ3000_generic",
-      "TZ3000_sensor",
-      "TZ3000_generic",
-      "TZ3000_common",
-      "_TZE200_universal",
-      "TZ3000_sensor",
-      "_TZE200_sensor",
-      "_TZE284_sensor"
+      "TZ3000_mmtwjmaq",
+      "TZ3000_kmh5qpmb",
+      "TZ3000_6ygjfyll",
+      "TZ3000_bsvqrxru",
+      "TZ3000_4ggd8ezp",
+      "TZ3000_lf56vpxj",
+      "TZ3000_h4wnrtck",
+      "TZ3000_jmrgyl7o",
+      "TZ3000_mcxw5ehu",
+      "TZ3000_sn60p5h8",
+      "TZ3000_rxtv1mfk",
+      "_TZE200_3towulqd",
+      "_TZE200_bq7mlkgv",
+      "_TZE200_w5auu1jt",
+      "_TZE200_tv3wxhcz",
+      "_TZE204_qasjif9e",
+      "_TZE204_ijxvkhd0",
+      "_TZE284_cjlm9ra6",
+      "Aqara",
+      "LUMI"
     ],
     "productId": [
-      "TS0001",
-      "SENSOR",
-      "TS0001",
-      "TS0601",
-      "GENERIC",
       "TS0202",
-      "TS0203",
-      "TS0201",
-      "SENSOR1"
+      "PIR-M",
+      "MS100",
+      "PIR01",
+      "MOTION1",
+      "RTCGQ11LM",
+      "lumi.sensor_motion"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          3,
           1,
-          1280
+          3,
+          1280,
+          1030
         ]
       }
     },
@@ -49,12 +62,16 @@
       4659,
       4660
     ],
-    "productIds": []
+    "productIds": [
+      1026,
+      1027,
+      1028
+    ]
   },
   "images": {
-    "small": "/drivers/air_quality_monitor/assets/small.png",
-    "large": "/drivers/air_quality_monitor/assets/large.png",
-    "xlarge": "/drivers/air_quality_monitor/assets/xlarge.png"
+    "small": "/drivers/motion_sensor/assets/small.png",
+    "large": "/drivers/motion_sensor/assets/large.png",
+    "xlarge": "/drivers/motion_sensor/assets/xlarge.png"
   },
   "energy": {
     "batteries": [
@@ -64,12 +81,14 @@
   },
   "community": {
     "sources": [
-      "Generic compatibility database",
-      "Pattern-based enrichment"
+      "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352/141",
+      "Johan Benz GitHub Issues: Motion sensor requests",
+      "Blakadder device database: Tuya PIR sensors"
     ],
     "enriched": true,
-    "type": "generic",
-    "last_updated": "2025-09-15T19:34:03.040Z"
+    "last_updated": "2025-09-15T19:34:03.053Z"
   },
-  "id": "air_quality_sensor"
+  "id": "motion_sensor_pir",
+  "manufacturerId": [],
+  "productId": []
 }

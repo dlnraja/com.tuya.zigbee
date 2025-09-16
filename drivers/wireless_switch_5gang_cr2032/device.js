@@ -2,20 +2,40 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class WirelessSwitch5gangCr2032 extends ZigBeeDevice {
-    
-    async onNodeInit({ zclNode }) {
-        await super.onNodeInit({ zclNode });
-        
-        this.printNode();
-        
+class WirelessSwitch5gangCr2032Device extends ZigBeeDevice {
+
+    async onNodeInit() {
+        this.log('wireless_switch_5gang_cr2032 device initialized');
+
         // Register capabilities
-        this.registerCapability('button.1', CLUSTER.ON_OFF);
-        this.registerCapability('button.2', CLUSTER.ON_OFF);
-        this.registerCapability('button.3', CLUSTER.ON_OFF);
-        this.registerCapability('button.4', CLUSTER.ON_OFF);
-        this.registerCapability('button.5', CLUSTER.ON_OFF);
+                // Register on/off capability
+        this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
+
+        // Mark device as available
+        await this.setAvailable();
     }
+
+        async onCapabilityOnoff(value, opts) {
+        this.log('onCapabilityOnoff:', value);
+        
+        try {
+            if (value) {
+                await this.zclNode.endpoints[1].clusters.onOff.setOn();
+            } else {
+                await this.zclNode.endpoints[1].clusters.onOff.setOff();
+            }
+            
+            return Promise.resolve();
+        } catch (error) {
+            this.error('Error setting onoff:', error);
+            return Promise.reject(error);
+        }
+    }
+
+    async onDeleted() {
+        this.log('wireless_switch_5gang_cr2032 device deleted');
+    }
+
 }
 
-module.exports = WirelessSwitch5gangCr2032;
+module.exports = WirelessSwitch5gangCr2032Device;

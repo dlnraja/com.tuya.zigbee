@@ -2,27 +2,26 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class AirQualityMonitorDevice extends ZigBeeDevice {
+class AirQualitySensorDevice extends ZigBeeDevice {
 
-    async onNodeInit({ zclNode }) {
-        this.printNode();
+    async onNodeInit() {
+        this.log('air_quality_sensor device initialized');
 
-                this.registerCapability('measure_battery', 1);
+        // Register capabilities
+                // Register temperature measurement
 
-        this.log('air_quality_monitor device initialized');
+        // Register motion alarm
+
+        // Mark device as available
+        await this.setAvailable();
     }
 
     
-    onCapabilityOnOff(value) {
-        return this.zclNode.endpoints[1].clusters.onOff.setOn(value);
+
+    async onDeleted() {
+        this.log('air_quality_sensor device deleted');
     }
 
-    onCapabilityDim(value) {
-        return this.zclNode.endpoints[1].clusters.levelControl.moveToLevel({
-            level: Math.round(value * 254),
-            transitionTime: 1
-        });
-    }
 }
 
-module.exports = AirQualityMonitorDevice;
+module.exports = AirQualitySensorDevice;

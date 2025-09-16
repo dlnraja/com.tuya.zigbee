@@ -1,27 +1,42 @@
 {
   "name": {
-    "en": "Door Controller"
+    "en": "Led Strip"
   },
-  "class": "sensor",
-  "capabilities": [],
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
   "zigbee": {
     "manufacturerName": [
-      "TZ3000_generic",
+      "TZ3000_light",
+      "TZ3000_bulb",
       "TZ3000_generic",
       "TZ3000_common",
-      "_TZE200_universal"
+      "_TZE200_universal",
+      "TZ3000_light",
+      "_TZE200_light",
+      "_TZ3000_bulb"
     ],
     "productId": [
-      "TS0001",
+      "TS0505",
+      "LIGHT",
       "TS0001",
       "TS0601",
-      "GENERIC"
+      "GENERIC",
+      "TS0505B",
+      "TS0502B",
+      "TS0504B",
+      "LIGHT1"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          3
+          3,
+          6,
+          8,
+          768
         ]
       }
     },
@@ -36,22 +51,12 @@
       4659,
       4660
     ],
-    "productIds": [
-      1025,
-      1029,
-      1030
-    ]
+    "productIds": []
   },
   "images": {
-    "small": "/drivers/door_controller/assets/small.png",
-    "large": "/drivers/door_controller/assets/large.png",
-    "xlarge": "/drivers/door_controller/assets/xlarge.png"
-  },
-  "energy": {
-    "batteries": [
-      "CR2032",
-      "AA"
-    ]
+    "small": "/drivers/led_strip/assets/small.png",
+    "large": "/drivers/led_strip/assets/large.png",
+    "xlarge": "/drivers/led_strip/assets/xlarge.png"
   },
   "community": {
     "sources": [
@@ -60,6 +65,9 @@
     ],
     "enriched": true,
     "type": "generic",
-    "last_updated": "2025-09-15T19:34:02.842Z"
-  }
+    "last_updated": "2025-09-15T19:34:02.943Z"
+  },
+  "id": "led_strip_controller",
+  "manufacturerId": [],
+  "productId": []
 }

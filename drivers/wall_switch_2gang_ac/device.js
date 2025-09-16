@@ -2,56 +2,40 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class WallSwitch_2gangAcDevice extends ZigBeeDevice {
-    
+class WallSwitch2gangAcDevice extends ZigBeeDevice {
+
     async onNodeInit() {
-        this.log('wall_switch_2gang_ac device initialized - 2 button(s), ac powered');
-        
-        await this.registerEnhancedCapabilities();
-        await this.setupEnhancedListeners();
-        
-        // Device specifications
-        this.specs = {
-        "buttons": 2,
-        "power": "ac",
-        "voltage": "110-240V"
-};
+        this.log('wall_switch_2gang_ac device initialized');
+
+        // Register capabilities
+                // Register on/off capability
+        this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
+
+        // Mark device as available
+        await this.setAvailable();
     }
-    
-    async registerEnhancedCapabilities() {
-        // OnOff capability for main button
-        if (this.hasCapability('onoff')) {
-            this.registerCapability('onoff', 'genOnOff');
-        }
+
+        async onCapabilityOnoff(value, opts) {
+        this.log('onCapabilityOnoff:', value);
         
-        // Additional buttons for multi-gang switches
-        
-        for (let i = 2; i <= 2; i++) {
-            if (this.hasCapability(`button.${i}`)) {
-                this.registerCapability(`button.${i}`, 'genOnOff', {
-                    endpoint: i
-                });
+        try {
+            if (value) {
+                await this.zclNode.endpoints[1].clusters.onOff.setOn();
+            } else {
+                await this.zclNode.endpoints[1].clusters.onOff.setOff();
             }
+            
+            return Promise.resolve();
+        } catch (error) {
+            this.error('Error setting onoff:', error);
+            return Promise.reject(error);
         }
-        
-        // Battery capabilities for battery-powered devices
-        
-        
-        // Motion sensing capabilities
-        
     }
-    
-    async setupEnhancedListeners() {
-        // Battery level monitoring
-        
-        
-        // Motion detection
-        
+
+    async onDeleted() {
+        this.log('wall_switch_2gang_ac device deleted');
     }
-    
-    
-    
-    
+
 }
 
-module.exports = WallSwitch_2gangAcDevice;
+module.exports = WallSwitch2gangAcDevice;
