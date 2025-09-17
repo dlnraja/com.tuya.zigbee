@@ -1,0 +1,62 @@
+{
+  "name": {
+    "en": "LED Strip WoodUpp CREATE",
+    "fr": "Bande LED WoodUpp CREATE"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "opts": {
+        "duration": true
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "WoodUpp",
+      "_TZ3000_woodupp",
+      "_TZE200_woodupp"
+    ],
+    "productId": [
+      "CREATE LED",
+      "TS0505A",
+      "TS0505B"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768
+        ],
+        "bindings": [
+          6,
+          8,
+          768
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/led_strip_woodupp/assets/images/large.png",
+      "instruction": {
+        "en": "Press and hold power button for 3 seconds until LED blinks",
+        "fr": "Appuyez et maintenez le bouton d'alimentation pendant 3 secondes jusqu'à ce que la LED clignote"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/led_strip_woodupp/assets/images/small.png",
+    "large": "/drivers/led_strip_woodupp/assets/images/large.png"
+  }
+}

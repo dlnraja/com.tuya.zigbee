@@ -1,9 +1,0 @@
-{
-  "name": "Aqara_Bulb_Device_Standard_Default",
-  "type": "tuya_zigbee",
-  "category": "light",
-  "source": "drivers\\tuya_zigbee\\models\\aqara-bulb-423_device_standard_default",
-  "created": "2025-08-14T15:21:13.624Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

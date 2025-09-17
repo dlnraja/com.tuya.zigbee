@@ -1,0 +1,74 @@
+{
+  "name": {
+    "en": "Curtain Motor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "windowcoverings_state",
+    "dim"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_wmcdj3aq",
+      "_TZE200_cowvfni3",
+      "_TZE200_rddyvrci",
+      "_TZE200_nkoabg8w",
+      "_TZE284_1xlm8yks",
+      "_TZE200_gubdgai2",
+      "TZ3000_lx4vtxfb",
+      "_TZ3000_*",
+      "_TZ3210_*",
+      "_TYZB01_*",
+      "_TYZB02_*",
+      "_TZ3400_*"
+    ],
+    "productId": [
+      "TS0601",
+      "CURTAIN1",
+      "MOTOR1"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          6,
+          258,
+          61184
+        ]
+      }
+    },
+    "manufacturerIds": [
+      4417,
+      4098,
+      4619,
+      4742,
+      4648,
+      4644,
+      4455,
+      4659,
+      4660
+    ],
+    "productIds": []
+  },
+  "images": {
+    "small": "./assets/small.png",
+    "large": "./assets/large.png",
+    "xlarge": "/drivers/curtain_motor/assets/xlarge.png"
+  },
+  "community": {
+    "sources": [
+      "Curtain automation requests",
+      "Window covering systems"
+    ],
+    "enriched": true,
+    "last_updated": "2025-09-15T19:34:02.896Z"
+  },
+  "id": "roller_blind_controller",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}

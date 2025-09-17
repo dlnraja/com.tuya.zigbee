@@ -1,9 +1,0 @@
-{
-  "name": "Ikea_Humidity_Plug_Standard_Default",
-  "type": "tuya_zigbee",
-  "category": "sensor-humidity",
-  "source": "drivers\\tuya_zigbee\\models\\ikea-humidity-712_plug_standard_default",
-  "created": "2025-08-14T15:23:55.670Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

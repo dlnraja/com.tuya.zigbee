@@ -1,9 +1,0 @@
-{
-  "name": "Ikea_Gas_Device_Standard_Default",
-  "type": "tuya_zigbee",
-  "category": "sensor-gas",
-  "source": "drivers\\tuya_zigbee\\models\\ikea-gas-418_device_standard_default",
-  "created": "2025-08-14T15:23:51.776Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

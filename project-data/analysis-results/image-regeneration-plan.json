@@ -1,1439 +1,7 @@
 {
-  "timestamp": "2025-09-15T23:32:45.195Z",
-  "totalDriversNeedingRegeneration": 87,
-  "highPriorityDrivers": [
-    {
-      "driverName": "air_conditioner_controller",
-      "category": "automation",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#607D8B",
-          "#455A64"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "ceiling_light_controller",
-      "category": "lighting",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#FFD700",
-          "#FFA500"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "co2_sensor",
-      "category": "sensors",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#2196F3",
-          "#03A9F4"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "curtain_motor",
-      "category": "other",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "door_window_sensor",
-      "category": "sensors",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#2196F3",
-          "#03A9F4"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "extension_plug",
-      "category": "energy",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#9C27B0",
-          "#673AB7"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "fan_controller",
-      "category": "climate",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#FF9800",
-          "#FF5722"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "fingerprint_lock",
-      "category": "security",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#F44336",
-          "#E91E63"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "formaldehyde_sensor",
-      "category": "sensors",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#2196F3",
-          "#03A9F4"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "garage_door_controller",
-      "category": "automation",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#607D8B",
-          "#455A64"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "gas_detector",
-      "category": "security",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#F44336",
-          "#E91E63"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "keypad_lock",
-      "category": "security",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#F44336",
-          "#E91E63"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "led_strip_controller",
-      "category": "automation",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#607D8B",
-          "#455A64"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "lux_sensor",
-      "category": "sensors",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#2196F3",
-          "#03A9F4"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "motion_sensor_mmwave_ac",
-      "category": "sensors",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "ac",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#2196F3",
-          "#03A9F4"
-        ],
-        "expectedElements": [
-          "motion detection icon"
-        ]
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "motion_sensor_pir_battery",
-      "category": "sensors",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "battery",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#2196F3",
-          "#03A9F4"
-        ],
-        "expectedElements": [
-          "motion detection icon"
-        ]
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "motion_sensor_radar_ac",
-      "category": "sensors",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "ac",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#2196F3",
-          "#03A9F4"
-        ],
-        "expectedElements": [
-          "motion detection icon"
-        ]
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "motion_sensor_radar_battery",
-      "category": "sensors",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "battery",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#2196F3",
-          "#03A9F4"
-        ],
-        "expectedElements": [
-          "motion detection icon"
-        ]
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "motion_sensor_radar_hybrid",
-      "category": "sensors",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#2196F3",
-          "#03A9F4"
-        ],
-        "expectedElements": [
-          "motion detection icon"
-        ]
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "multisensor",
-      "category": "sensors",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#2196F3",
-          "#03A9F4"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "noise_level_sensor",
-      "category": "sensors",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#2196F3",
-          "#03A9F4"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "outdoor_light_controller",
-      "category": "lighting",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#FFD700",
-          "#FFA500"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "pm25_sensor",
-      "category": "sensors",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#2196F3",
-          "#03A9F4"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "presence_sensor_radar",
-      "category": "sensors",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#2196F3",
-          "#03A9F4"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "pressure_sensor",
-      "category": "sensors",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#2196F3",
-          "#03A9F4"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "projector_screen_controller",
-      "category": "automation",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#607D8B",
-          "#455A64"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "radiator_valve",
-      "category": "other",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "roller_blind_controller",
-      "category": "automation",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#607D8B",
-          "#455A64"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "shade_controller",
-      "category": "automation",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#607D8B",
-          "#455A64"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "smart_bulb_tunable",
-      "category": "lighting",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#FFD700",
-          "#FFA500"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "smart_bulb_white",
-      "category": "lighting",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#FFD700",
-          "#FFA500"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "smart_lock",
-      "category": "security",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#F44336",
-          "#E91E63"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "smart_plug",
-      "category": "energy",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#9C27B0",
-          "#673AB7"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "smart_spot",
-      "category": "other",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "smoke_detector",
-      "category": "security",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#F44336",
-          "#E91E63"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "soil_moisture_sensor",
-      "category": "sensors",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#2196F3",
-          "#03A9F4"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "strip_light_controller",
-      "category": "lighting",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#FFD700",
-          "#FFA500"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "temperature_controller",
-      "category": "automation",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#607D8B",
-          "#455A64"
-        ],
-        "expectedElements": [
-          "temperature indicator"
-        ]
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "temperature_humidity_sensor",
-      "category": "sensors",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#2196F3",
-          "#03A9F4"
-        ],
-        "expectedElements": [
-          "temperature indicator"
-        ]
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "touch_dimmer",
-      "category": "other",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "touch_switch_1gang",
-      "category": "switches",
-      "expectedFeatures": {
-        "buttonCount": 1,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#4CAF50",
-          "#8BC34A"
-        ],
-        "expectedElements": [
-          "1 visible buttons"
-        ]
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "touch_switch_2gang",
-      "category": "switches",
-      "expectedFeatures": {
-        "buttonCount": 2,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#4CAF50",
-          "#8BC34A"
-        ],
-        "expectedElements": [
-          "2 visible buttons"
-        ]
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "touch_switch_3gang",
-      "category": "switches",
-      "expectedFeatures": {
-        "buttonCount": 3,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#4CAF50",
-          "#8BC34A"
-        ],
-        "expectedElements": [
-          "3 visible buttons"
-        ]
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "touch_switch_4gang",
-      "category": "switches",
-      "expectedFeatures": {
-        "buttonCount": 4,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#4CAF50",
-          "#8BC34A"
-        ],
-        "expectedElements": [
-          "4 visible buttons"
-        ]
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "tvoc_sensor",
-      "category": "sensors",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#2196F3",
-          "#03A9F4"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "usb_outlet",
-      "category": "energy",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#9C27B0",
-          "#673AB7"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "venetian_blind_controller",
-      "category": "automation",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#607D8B",
-          "#455A64"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "vibration_sensor",
-      "category": "sensors",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#2196F3",
-          "#03A9F4"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    },
-    {
-      "driverName": "water_leak_sensor",
-      "category": "sensors",
-      "expectedFeatures": {
-        "buttonCount": 0,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#2196F3",
-          "#03A9F4"
-        ],
-        "expectedElements": []
-      },
-      "issues": [
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing small.png",
-          "file": "small.png"
-        },
-        {
-          "type": "missing_file",
-          "severity": "high",
-          "message": "Missing large.png",
-          "file": "large.png"
-        }
-      ],
-      "coherenceScore": 60
-    }
-  ],
+  "timestamp": "2025-09-16T04:51:10.366Z",
+  "totalDriversNeedingRegeneration": 50,
+  "highPriorityDrivers": [],
   "mediumPriorityDrivers": [
     {
       "driverName": "scene_controller_2button",
@@ -1459,16 +27,6 @@
           "expectedButtons": 2
         },
         {
-          "type": "color_incoherence",
-          "severity": "low",
-          "message": "small.png: Colors may not match category standards",
-          "file": "small.png",
-          "expectedColors": [
-            "#4CAF50",
-            "#8BC34A"
-          ]
-        },
-        {
           "type": "button_count_mismatch",
           "severity": "medium",
           "message": "large.png: Should visually represent 2 buttons for scene_controller_2button",
@@ -1476,7 +34,7 @@
           "expectedButtons": 2
         }
       ],
-      "coherenceScore": 75
+      "coherenceScore": 80
     },
     {
       "driverName": "scene_controller_4button",
@@ -1507,19 +65,9 @@
           "message": "large.png: Should visually represent 4 buttons for scene_controller_4button",
           "file": "large.png",
           "expectedButtons": 4
-        },
-        {
-          "type": "color_incoherence",
-          "severity": "low",
-          "message": "large.png: Colors may not match category standards",
-          "file": "large.png",
-          "expectedColors": [
-            "#4CAF50",
-            "#8BC34A"
-          ]
         }
       ],
-      "coherenceScore": 75
+      "coherenceScore": 80
     },
     {
       "driverName": "scene_controller_6button",
@@ -1588,27 +136,27 @@
           "expectedButtons": 8
         },
         {
-          "type": "color_incoherence",
-          "severity": "low",
-          "message": "small.png: Colors may not match category standards",
-          "file": "small.png",
-          "expectedColors": [
-            "#4CAF50",
-            "#8BC34A"
-          ]
-        },
-        {
           "type": "button_count_mismatch",
           "severity": "medium",
           "message": "large.png: Should visually represent 8 buttons for scene_controller_8button",
           "file": "large.png",
           "expectedButtons": 8
+        },
+        {
+          "type": "color_incoherence",
+          "severity": "low",
+          "message": "large.png: Colors may not match category standards",
+          "file": "large.png",
+          "expectedColors": [
+            "#4CAF50",
+            "#8BC34A"
+          ]
         }
       ],
       "coherenceScore": 75
     },
     {
-      "driverName": "wall_switch_2gang",
+      "driverName": "touch_switch_2gang",
       "category": "switches",
       "expectedFeatures": {
         "buttonCount": 2,
@@ -1626,19 +174,115 @@
         {
           "type": "button_count_mismatch",
           "severity": "medium",
-          "message": "small.png: Should visually represent 2 buttons for wall_switch_2gang",
+          "message": "small.png: Should visually represent 2 buttons for touch_switch_2gang",
           "file": "small.png",
           "expectedButtons": 2
         },
         {
           "type": "button_count_mismatch",
           "severity": "medium",
-          "message": "large.png: Should visually represent 2 buttons for wall_switch_2gang",
+          "message": "large.png: Should visually represent 2 buttons for touch_switch_2gang",
           "file": "large.png",
           "expectedButtons": 2
         }
       ],
       "coherenceScore": 80
+    },
+    {
+      "driverName": "touch_switch_3gang",
+      "category": "switches",
+      "expectedFeatures": {
+        "buttonCount": 3,
+        "powerType": "unknown",
+        "deviceType": "unknown",
+        "expectedColors": [
+          "#4CAF50",
+          "#8BC34A"
+        ],
+        "expectedElements": [
+          "3 visible buttons"
+        ]
+      },
+      "issues": [
+        {
+          "type": "button_count_mismatch",
+          "severity": "medium",
+          "message": "small.png: Should visually represent 3 buttons for touch_switch_3gang",
+          "file": "small.png",
+          "expectedButtons": 3
+        },
+        {
+          "type": "button_count_mismatch",
+          "severity": "medium",
+          "message": "large.png: Should visually represent 3 buttons for touch_switch_3gang",
+          "file": "large.png",
+          "expectedButtons": 3
+        },
+        {
+          "type": "color_incoherence",
+          "severity": "low",
+          "message": "large.png: Colors may not match category standards",
+          "file": "large.png",
+          "expectedColors": [
+            "#4CAF50",
+            "#8BC34A"
+          ]
+        }
+      ],
+      "coherenceScore": 75
+    },
+    {
+      "driverName": "touch_switch_4gang",
+      "category": "switches",
+      "expectedFeatures": {
+        "buttonCount": 4,
+        "powerType": "unknown",
+        "deviceType": "unknown",
+        "expectedColors": [
+          "#4CAF50",
+          "#8BC34A"
+        ],
+        "expectedElements": [
+          "4 visible buttons"
+        ]
+      },
+      "issues": [
+        {
+          "type": "button_count_mismatch",
+          "severity": "medium",
+          "message": "small.png: Should visually represent 4 buttons for touch_switch_4gang",
+          "file": "small.png",
+          "expectedButtons": 4
+        },
+        {
+          "type": "color_incoherence",
+          "severity": "low",
+          "message": "small.png: Colors may not match category standards",
+          "file": "small.png",
+          "expectedColors": [
+            "#4CAF50",
+            "#8BC34A"
+          ]
+        },
+        {
+          "type": "button_count_mismatch",
+          "severity": "medium",
+          "message": "large.png: Should visually represent 4 buttons for touch_switch_4gang",
+          "file": "large.png",
+          "expectedButtons": 4
+        },
+        {
+          "type": "color_incoherence",
+          "severity": "low",
+          "message": "large.png: Colors may not match category standards",
+          "file": "large.png",
+          "expectedColors": [
+            "#4CAF50",
+            "#8BC34A"
+          ]
+        }
+      ],
+      "coherenceScore": 70
     },
     {
       "driverName": "wall_switch_2gang_ac",
@@ -1669,9 +313,19 @@
           "message": "large.png: Should visually represent 2 buttons for wall_switch_2gang_ac",
           "file": "large.png",
           "expectedButtons": 2
+        },
+        {
+          "type": "color_incoherence",
+          "severity": "low",
+          "message": "large.png: Colors may not match category standards",
+          "file": "large.png",
+          "expectedColors": [
+            "#4CAF50",
+            "#8BC34A"
+          ]
         }
       ],
-      "coherenceScore": 80
+      "coherenceScore": 75
     },
     {
       "driverName": "wall_switch_2gang_dc",
@@ -1702,39 +356,6 @@
           "message": "large.png: Should visually represent 2 buttons for wall_switch_2gang_dc",
           "file": "large.png",
           "expectedButtons": 2
-        }
-      ],
-      "coherenceScore": 80
-    },
-    {
-      "driverName": "wall_switch_3gang",
-      "category": "switches",
-      "expectedFeatures": {
-        "buttonCount": 3,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#4CAF50",
-          "#8BC34A"
-        ],
-        "expectedElements": [
-          "3 visible buttons"
-        ]
-      },
-      "issues": [
-        {
-          "type": "button_count_mismatch",
-          "severity": "medium",
-          "message": "small.png: Should visually represent 3 buttons for wall_switch_3gang",
-          "file": "small.png",
-          "expectedButtons": 3
-        },
-        {
-          "type": "button_count_mismatch",
-          "severity": "medium",
-          "message": "large.png: Should visually represent 3 buttons for wall_switch_3gang",
-          "file": "large.png",
-          "expectedButtons": 3
         }
       ],
       "coherenceScore": 80
@@ -1801,49 +422,6 @@
           "message": "large.png: Should visually represent 3 buttons for wall_switch_3gang_dc",
           "file": "large.png",
           "expectedButtons": 3
-        },
-        {
-          "type": "color_incoherence",
-          "severity": "low",
-          "message": "large.png: Colors may not match category standards",
-          "file": "large.png",
-          "expectedColors": [
-            "#4CAF50",
-            "#8BC34A"
-          ]
-        }
-      ],
-      "coherenceScore": 75
-    },
-    {
-      "driverName": "wall_switch_4gang",
-      "category": "switches",
-      "expectedFeatures": {
-        "buttonCount": 4,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#4CAF50",
-          "#8BC34A"
-        ],
-        "expectedElements": [
-          "4 visible buttons"
-        ]
-      },
-      "issues": [
-        {
-          "type": "button_count_mismatch",
-          "severity": "medium",
-          "message": "small.png: Should visually represent 4 buttons for wall_switch_4gang",
-          "file": "small.png",
-          "expectedButtons": 4
-        },
-        {
-          "type": "button_count_mismatch",
-          "severity": "medium",
-          "message": "large.png: Should visually represent 4 buttons for wall_switch_4gang",
-          "file": "large.png",
-          "expectedButtons": 4
         }
       ],
       "coherenceScore": 80
@@ -1887,19 +465,9 @@
           "message": "large.png: Should visually represent 4 buttons for wall_switch_4gang_ac",
           "file": "large.png",
           "expectedButtons": 4
-        },
-        {
-          "type": "color_incoherence",
-          "severity": "low",
-          "message": "large.png: Colors may not match category standards",
-          "file": "large.png",
-          "expectedColors": [
-            "#4CAF50",
-            "#8BC34A"
-          ]
         }
       ],
-      "coherenceScore": 70
+      "coherenceScore": 75
     },
     {
       "driverName": "wall_switch_4gang_dc",
@@ -1925,54 +493,11 @@
           "expectedButtons": 4
         },
         {
-          "type": "color_incoherence",
-          "severity": "low",
-          "message": "small.png: Colors may not match category standards",
-          "file": "small.png",
-          "expectedColors": [
-            "#4CAF50",
-            "#8BC34A"
-          ]
-        },
-        {
           "type": "button_count_mismatch",
           "severity": "medium",
           "message": "large.png: Should visually represent 4 buttons for wall_switch_4gang_dc",
           "file": "large.png",
           "expectedButtons": 4
-        }
-      ],
-      "coherenceScore": 75
-    },
-    {
-      "driverName": "wall_switch_5gang",
-      "category": "switches",
-      "expectedFeatures": {
-        "buttonCount": 5,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#4CAF50",
-          "#8BC34A"
-        ],
-        "expectedElements": [
-          "5 visible buttons"
-        ]
-      },
-      "issues": [
-        {
-          "type": "button_count_mismatch",
-          "severity": "medium",
-          "message": "small.png: Should visually represent 5 buttons for wall_switch_5gang",
-          "file": "small.png",
-          "expectedButtons": 5
-        },
-        {
-          "type": "button_count_mismatch",
-          "severity": "medium",
-          "message": "large.png: Should visually represent 5 buttons for wall_switch_5gang",
-          "file": "large.png",
-          "expectedButtons": 5
         },
         {
           "type": "color_incoherence",
@@ -2021,49 +546,6 @@
       "coherenceScore": 80
     },
     {
-      "driverName": "wall_switch_6gang",
-      "category": "switches",
-      "expectedFeatures": {
-        "buttonCount": 6,
-        "powerType": "unknown",
-        "deviceType": "unknown",
-        "expectedColors": [
-          "#4CAF50",
-          "#8BC34A"
-        ],
-        "expectedElements": [
-          "6 visible buttons"
-        ]
-      },
-      "issues": [
-        {
-          "type": "button_count_mismatch",
-          "severity": "medium",
-          "message": "small.png: Should visually represent 6 buttons for wall_switch_6gang",
-          "file": "small.png",
-          "expectedButtons": 6
-        },
-        {
-          "type": "button_count_mismatch",
-          "severity": "medium",
-          "message": "large.png: Should visually represent 6 buttons for wall_switch_6gang",
-          "file": "large.png",
-          "expectedButtons": 6
-        },
-        {
-          "type": "color_incoherence",
-          "severity": "low",
-          "message": "large.png: Colors may not match category standards",
-          "file": "large.png",
-          "expectedColors": [
-            "#4CAF50",
-            "#8BC34A"
-          ]
-        }
-      ],
-      "coherenceScore": 75
-    },
-    {
       "driverName": "wall_switch_6gang_ac",
       "category": "switches",
       "expectedFeatures": {
@@ -2087,34 +569,14 @@
           "expectedButtons": 6
         },
         {
-          "type": "color_incoherence",
-          "severity": "low",
-          "message": "small.png: Colors may not match category standards",
-          "file": "small.png",
-          "expectedColors": [
-            "#4CAF50",
-            "#8BC34A"
-          ]
-        },
-        {
           "type": "button_count_mismatch",
           "severity": "medium",
           "message": "large.png: Should visually represent 6 buttons for wall_switch_6gang_ac",
           "file": "large.png",
           "expectedButtons": 6
-        },
-        {
-          "type": "color_incoherence",
-          "severity": "low",
-          "message": "large.png: Colors may not match category standards",
-          "file": "large.png",
-          "expectedColors": [
-            "#4CAF50",
-            "#8BC34A"
-          ]
         }
       ],
-      "coherenceScore": 70
+      "coherenceScore": 80
     },
     {
       "driverName": "wireless_switch_2gang_cr2032",
@@ -2203,6 +665,16 @@
           "expectedButtons": 3
         },
         {
+          "type": "color_incoherence",
+          "severity": "low",
+          "message": "large.png: Colors may not match category standards",
+          "file": "large.png",
+          "expectedColors": [
+            "#4CAF50",
+            "#8BC34A"
+          ]
+        },
+        {
           "type": "content_validation",
           "severity": "low",
           "message": "large.png: Should subtly indicate battery operation",
@@ -2210,7 +682,7 @@
           "suggestion": "Add small battery indicator or wireless symbol"
         }
       ],
-      "coherenceScore": 70
+      "coherenceScore": 65
     },
     {
       "driverName": "wireless_switch_4gang_cr2032",
@@ -2235,16 +707,6 @@
           "message": "small.png: Should visually represent 4 buttons for wireless_switch_4gang_cr2032",
           "file": "small.png",
           "expectedButtons": 4
-        },
-        {
-          "type": "color_incoherence",
-          "severity": "low",
-          "message": "small.png: Colors may not match category standards",
-          "file": "small.png",
-          "expectedColors": [
-            "#4CAF50",
-            "#8BC34A"
-          ]
         },
         {
           "type": "content_validation",
@@ -2278,7 +740,7 @@
           "suggestion": "Add small battery indicator or wireless symbol"
         }
       ],
-      "coherenceScore": 60
+      "coherenceScore": 65
     },
     {
       "driverName": "wireless_switch_5gang_cr2032",
@@ -2379,7 +841,88 @@
   ],
   "lowPriorityDrivers": [
     {
-      "driverName": "co_detector",
+      "driverName": "ceiling_light_controller",
+      "category": "lighting",
+      "expectedFeatures": {
+        "buttonCount": 0,
+        "powerType": "unknown",
+        "deviceType": "unknown",
+        "expectedColors": [
+          "#FFD700",
+          "#FFA500"
+        ],
+        "expectedElements": []
+      },
+      "issues": [
+        {
+          "type": "color_incoherence",
+          "severity": "low",
+          "message": "large.png: Colors may not match category standards",
+          "file": "large.png",
+          "expectedColors": [
+            "#FFD700",
+            "#FFA500"
+          ]
+        }
+      ],
+      "coherenceScore": 95
+    },
+    {
+      "driverName": "door_window_sensor",
+      "category": "sensors",
+      "expectedFeatures": {
+        "buttonCount": 0,
+        "powerType": "unknown",
+        "deviceType": "unknown",
+        "expectedColors": [
+          "#2196F3",
+          "#03A9F4"
+        ],
+        "expectedElements": []
+      },
+      "issues": [
+        {
+          "type": "color_incoherence",
+          "severity": "low",
+          "message": "small.png: Colors may not match category standards",
+          "file": "small.png",
+          "expectedColors": [
+            "#2196F3",
+            "#03A9F4"
+          ]
+        }
+      ],
+      "coherenceScore": 95
+    },
+    {
+      "driverName": "fan_controller",
+      "category": "climate",
+      "expectedFeatures": {
+        "buttonCount": 0,
+        "powerType": "unknown",
+        "deviceType": "unknown",
+        "expectedColors": [
+          "#FF9800",
+          "#FF5722"
+        ],
+        "expectedElements": []
+      },
+      "issues": [
+        {
+          "type": "color_incoherence",
+          "severity": "low",
+          "message": "small.png: Colors may not match category standards",
+          "file": "small.png",
+          "expectedColors": [
+            "#FF9800",
+            "#FF5722"
+          ]
+        }
+      ],
+      "coherenceScore": 95
+    },
+    {
+      "driverName": "fingerprint_lock",
       "category": "security",
       "expectedFeatures": {
         "buttonCount": 0,
@@ -2406,7 +949,7 @@
       "coherenceScore": 95
     },
     {
-      "driverName": "door_controller",
+      "driverName": "led_strip_controller",
       "category": "automation",
       "expectedFeatures": {
         "buttonCount": 0,
@@ -2428,20 +971,30 @@
             "#607D8B",
             "#455A64"
           ]
+        },
+        {
+          "type": "color_incoherence",
+          "severity": "low",
+          "message": "large.png: Colors may not match category standards",
+          "file": "large.png",
+          "expectedColors": [
+            "#607D8B",
+            "#455A64"
+          ]
         }
       ],
-      "coherenceScore": 95
+      "coherenceScore": 90
     },
     {
-      "driverName": "door_lock",
-      "category": "security",
+      "driverName": "lux_sensor",
+      "category": "sensors",
       "expectedFeatures": {
         "buttonCount": 0,
         "powerType": "unknown",
         "deviceType": "unknown",
         "expectedColors": [
-          "#F44336",
-          "#E91E63"
+          "#2196F3",
+          "#03A9F4"
         ],
         "expectedElements": []
       },
@@ -2452,19 +1005,19 @@
           "message": "large.png: Colors may not match category standards",
           "file": "large.png",
           "expectedColors": [
-            "#F44336",
-            "#E91E63"
+            "#2196F3",
+            "#03A9F4"
           ]
         }
       ],
       "coherenceScore": 95
     },
     {
-      "driverName": "motion_sensor",
+      "driverName": "motion_sensor_pir_ac",
       "category": "sensors",
       "expectedFeatures": {
         "buttonCount": 0,
-        "powerType": "unknown",
+        "powerType": "ac",
         "deviceType": "unknown",
         "expectedColors": [
           "#2196F3",
@@ -2476,21 +1029,21 @@
       },
       "issues": [
         {
+          "type": "color_incoherence",
+          "severity": "low",
+          "message": "small.png: Colors may not match category standards",
+          "file": "small.png",
+          "expectedColors": [
+            "#2196F3",
+            "#03A9F4"
+          ]
+        },
+        {
           "type": "content_validation",
           "severity": "low",
           "message": "small.png: Should include motion detection visual indicator",
           "file": "small.png",
           "suggestion": "Add motion waves or PIR sensor representation"
-        },
-        {
-          "type": "color_incoherence",
-          "severity": "low",
-          "message": "large.png: Colors may not match category standards",
-          "file": "large.png",
-          "expectedColors": [
-            "#2196F3",
-            "#03A9F4"
-          ]
         },
         {
           "type": "content_validation",
@@ -2503,7 +1056,7 @@
       "coherenceScore": 85
     },
     {
-      "driverName": "motion_sensor_mmwave_battery",
+      "driverName": "motion_sensor_pir_battery",
       "category": "sensors",
       "expectedFeatures": {
         "buttonCount": 0,
@@ -2550,19 +1103,44 @@
       "coherenceScore": 80
     },
     {
-      "driverName": "motion_sensor_pir_ac",
+      "driverName": "outdoor_light_controller",
+      "category": "lighting",
+      "expectedFeatures": {
+        "buttonCount": 0,
+        "powerType": "unknown",
+        "deviceType": "unknown",
+        "expectedColors": [
+          "#FFD700",
+          "#FFA500"
+        ],
+        "expectedElements": []
+      },
+      "issues": [
+        {
+          "type": "color_incoherence",
+          "severity": "low",
+          "message": "small.png: Colors may not match category standards",
+          "file": "small.png",
+          "expectedColors": [
+            "#FFD700",
+            "#FFA500"
+          ]
+        }
+      ],
+      "coherenceScore": 95
+    },
+    {
+      "driverName": "presence_sensor_radar",
       "category": "sensors",
       "expectedFeatures": {
         "buttonCount": 0,
-        "powerType": "ac",
+        "powerType": "unknown",
         "deviceType": "unknown",
         "expectedColors": [
           "#2196F3",
           "#03A9F4"
         ],
-        "expectedElements": [
-          "motion detection icon"
-        ]
+        "expectedElements": []
       },
       "issues": [
         {
@@ -2574,23 +1152,63 @@
             "#2196F3",
             "#03A9F4"
           ]
-        },
-        {
-          "type": "content_validation",
-          "severity": "low",
-          "message": "small.png: Should include motion detection visual indicator",
-          "file": "small.png",
-          "suggestion": "Add motion waves or PIR sensor representation"
-        },
-        {
-          "type": "content_validation",
-          "severity": "low",
-          "message": "large.png: Should include motion detection visual indicator",
-          "file": "large.png",
-          "suggestion": "Add motion waves or PIR sensor representation"
         }
       ],
-      "coherenceScore": 85
+      "coherenceScore": 95
+    },
+    {
+      "driverName": "pressure_sensor",
+      "category": "sensors",
+      "expectedFeatures": {
+        "buttonCount": 0,
+        "powerType": "unknown",
+        "deviceType": "unknown",
+        "expectedColors": [
+          "#2196F3",
+          "#03A9F4"
+        ],
+        "expectedElements": []
+      },
+      "issues": [
+        {
+          "type": "color_incoherence",
+          "severity": "low",
+          "message": "small.png: Colors may not match category standards",
+          "file": "small.png",
+          "expectedColors": [
+            "#2196F3",
+            "#03A9F4"
+          ]
+        }
+      ],
+      "coherenceScore": 95
+    },
+    {
+      "driverName": "projector_screen_controller",
+      "category": "automation",
+      "expectedFeatures": {
+        "buttonCount": 0,
+        "powerType": "unknown",
+        "deviceType": "unknown",
+        "expectedColors": [
+          "#607D8B",
+          "#455A64"
+        ],
+        "expectedElements": []
+      },
+      "issues": [
+        {
+          "type": "color_incoherence",
+          "severity": "low",
+          "message": "small.png: Colors may not match category standards",
+          "file": "small.png",
+          "expectedColors": [
+            "#607D8B",
+            "#455A64"
+          ]
+        }
+      ],
+      "coherenceScore": 95
     },
     {
       "driverName": "relay_switch_1gang",
@@ -2617,6 +1235,33 @@
             "#4CAF50",
             "#8BC34A"
           ]
+        }
+      ],
+      "coherenceScore": 95
+    },
+    {
+      "driverName": "roller_blind_controller",
+      "category": "automation",
+      "expectedFeatures": {
+        "buttonCount": 0,
+        "powerType": "unknown",
+        "deviceType": "unknown",
+        "expectedColors": [
+          "#607D8B",
+          "#455A64"
+        ],
+        "expectedElements": []
+      },
+      "issues": [
+        {
+          "type": "color_incoherence",
+          "severity": "low",
+          "message": "small.png: Colors may not match category standards",
+          "file": "small.png",
+          "expectedColors": [
+            "#607D8B",
+            "#455A64"
+          ]
         },
         {
           "type": "color_incoherence",
@@ -2624,8 +1269,8 @@
           "message": "large.png: Colors may not match category standards",
           "file": "large.png",
           "expectedColors": [
-            "#4CAF50",
-            "#8BC34A"
+            "#607D8B",
+            "#455A64"
           ]
         }
       ],
@@ -2694,10 +1339,64 @@
       "coherenceScore": 90
     },
     {
-      "driverName": "smart_switch_1gang_hybrid",
+      "driverName": "smart_bulb_tunable",
+      "category": "lighting",
+      "expectedFeatures": {
+        "buttonCount": 0,
+        "powerType": "unknown",
+        "deviceType": "unknown",
+        "expectedColors": [
+          "#FFD700",
+          "#FFA500"
+        ],
+        "expectedElements": []
+      },
+      "issues": [
+        {
+          "type": "color_incoherence",
+          "severity": "low",
+          "message": "small.png: Colors may not match category standards",
+          "file": "small.png",
+          "expectedColors": [
+            "#FFD700",
+            "#FFA500"
+          ]
+        }
+      ],
+      "coherenceScore": 95
+    },
+    {
+      "driverName": "smart_plug",
+      "category": "energy",
+      "expectedFeatures": {
+        "buttonCount": 0,
+        "powerType": "unknown",
+        "deviceType": "unknown",
+        "expectedColors": [
+          "#9C27B0",
+          "#673AB7"
+        ],
+        "expectedElements": []
+      },
+      "issues": [
+        {
+          "type": "color_incoherence",
+          "severity": "low",
+          "message": "small.png: Colors may not match category standards",
+          "file": "small.png",
+          "expectedColors": [
+            "#9C27B0",
+            "#673AB7"
+          ]
+        }
+      ],
+      "coherenceScore": 95
+    },
+    {
+      "driverName": "smart_switch_2gang_hybrid",
       "category": "switches",
       "expectedFeatures": {
-        "buttonCount": 1,
+        "buttonCount": 2,
         "powerType": "unknown",
         "deviceType": "unknown",
         "expectedColors": [
@@ -2705,15 +1404,15 @@
           "#8BC34A"
         ],
         "expectedElements": [
-          "1 visible buttons"
+          "2 visible buttons"
         ]
       },
       "issues": [
         {
           "type": "color_incoherence",
           "severity": "low",
-          "message": "large.png: Colors may not match category standards",
-          "file": "large.png",
+          "message": "small.png: Colors may not match category standards",
+          "file": "small.png",
           "expectedColors": [
             "#4CAF50",
             "#8BC34A"
@@ -2741,8 +1440,8 @@
         {
           "type": "color_incoherence",
           "severity": "low",
-          "message": "large.png: Colors may not match category standards",
-          "file": "large.png",
+          "message": "small.png: Colors may not match category standards",
+          "file": "small.png",
           "expectedColors": [
             "#4CAF50",
             "#8BC34A"
@@ -2752,19 +1451,17 @@
       "coherenceScore": 95
     },
     {
-      "driverName": "smart_switch_4gang_hybrid",
-      "category": "switches",
+      "driverName": "smoke_detector",
+      "category": "security",
       "expectedFeatures": {
-        "buttonCount": 4,
+        "buttonCount": 0,
         "powerType": "unknown",
         "deviceType": "unknown",
         "expectedColors": [
-          "#4CAF50",
-          "#8BC34A"
+          "#F44336",
+          "#E91E63"
         ],
-        "expectedElements": [
-          "4 visible buttons"
-        ]
+        "expectedElements": []
       },
       "issues": [
         {
@@ -2773,8 +1470,35 @@
           "message": "large.png: Colors may not match category standards",
           "file": "large.png",
           "expectedColors": [
-            "#4CAF50",
-            "#8BC34A"
+            "#F44336",
+            "#E91E63"
+          ]
+        }
+      ],
+      "coherenceScore": 95
+    },
+    {
+      "driverName": "soil_moisture_sensor",
+      "category": "sensors",
+      "expectedFeatures": {
+        "buttonCount": 0,
+        "powerType": "unknown",
+        "deviceType": "unknown",
+        "expectedColors": [
+          "#2196F3",
+          "#03A9F4"
+        ],
+        "expectedElements": []
+      },
+      "issues": [
+        {
+          "type": "color_incoherence",
+          "severity": "low",
+          "message": "small.png: Colors may not match category standards",
+          "file": "small.png",
+          "expectedColors": [
+            "#2196F3",
+            "#03A9F4"
           ]
         }
       ],
@@ -2803,12 +1527,125 @@
             "#607D8B",
             "#455A64"
           ]
+        },
+        {
+          "type": "color_incoherence",
+          "severity": "low",
+          "message": "large.png: Colors may not match category standards",
+          "file": "large.png",
+          "expectedColors": [
+            "#607D8B",
+            "#455A64"
+          ]
+        }
+      ],
+      "coherenceScore": 90
+    },
+    {
+      "driverName": "temperature_controller",
+      "category": "automation",
+      "expectedFeatures": {
+        "buttonCount": 0,
+        "powerType": "unknown",
+        "deviceType": "unknown",
+        "expectedColors": [
+          "#607D8B",
+          "#455A64"
+        ],
+        "expectedElements": [
+          "temperature indicator"
+        ]
+      },
+      "issues": [
+        {
+          "type": "content_validation",
+          "severity": "low",
+          "message": "small.png: Should include temperature indicator",
+          "file": "small.png",
+          "suggestion": "Add thermometer icon or temperature symbol"
+        },
+        {
+          "type": "content_validation",
+          "severity": "low",
+          "message": "large.png: Should include temperature indicator",
+          "file": "large.png",
+          "suggestion": "Add thermometer icon or temperature symbol"
+        }
+      ],
+      "coherenceScore": 90
+    },
+    {
+      "driverName": "temperature_humidity_sensor",
+      "category": "sensors",
+      "expectedFeatures": {
+        "buttonCount": 0,
+        "powerType": "unknown",
+        "deviceType": "unknown",
+        "expectedColors": [
+          "#2196F3",
+          "#03A9F4"
+        ],
+        "expectedElements": [
+          "temperature indicator"
+        ]
+      },
+      "issues": [
+        {
+          "type": "color_incoherence",
+          "severity": "low",
+          "message": "small.png: Colors may not match category standards",
+          "file": "small.png",
+          "expectedColors": [
+            "#2196F3",
+            "#03A9F4"
+          ]
+        },
+        {
+          "type": "content_validation",
+          "severity": "low",
+          "message": "small.png: Should include temperature indicator",
+          "file": "small.png",
+          "suggestion": "Add thermometer icon or temperature symbol"
+        },
+        {
+          "type": "content_validation",
+          "severity": "low",
+          "message": "large.png: Should include temperature indicator",
+          "file": "large.png",
+          "suggestion": "Add thermometer icon or temperature symbol"
+        }
+      ],
+      "coherenceScore": 85
+    },
+    {
+      "driverName": "thermostat",
+      "category": "climate",
+      "expectedFeatures": {
+        "buttonCount": 0,
+        "powerType": "unknown",
+        "deviceType": "unknown",
+        "expectedColors": [
+          "#FF9800",
+          "#FF5722"
+        ],
+        "expectedElements": []
+      },
+      "issues": [
+        {
+          "type": "color_incoherence",
+          "severity": "low",
+          "message": "small.png: Colors may not match category standards",
+          "file": "small.png",
+          "expectedColors": [
+            "#FF9800",
+            "#FF5722"
+          ]
         }
       ],
       "coherenceScore": 95
     },
     {
-      "driverName": "wall_switch_1gang",
+      "driverName": "touch_switch_1gang",
       "category": "switches",
       "expectedFeatures": {
         "buttonCount": 1,
@@ -2826,8 +1663,8 @@
         {
           "type": "color_incoherence",
           "severity": "low",
-          "message": "large.png: Colors may not match category standards",
-          "file": "large.png",
+          "message": "small.png: Colors may not match category standards",
+          "file": "small.png",
           "expectedColors": [
             "#4CAF50",
             "#8BC34A"
@@ -2837,11 +1674,38 @@
       "coherenceScore": 95
     },
     {
-      "driverName": "wall_switch_1gang_ac",
+      "driverName": "vibration_sensor",
+      "category": "sensors",
+      "expectedFeatures": {
+        "buttonCount": 0,
+        "powerType": "unknown",
+        "deviceType": "unknown",
+        "expectedColors": [
+          "#2196F3",
+          "#03A9F4"
+        ],
+        "expectedElements": []
+      },
+      "issues": [
+        {
+          "type": "color_incoherence",
+          "severity": "low",
+          "message": "small.png: Colors may not match category standards",
+          "file": "small.png",
+          "expectedColors": [
+            "#2196F3",
+            "#03A9F4"
+          ]
+        }
+      ],
+      "coherenceScore": 95
+    },
+    {
+      "driverName": "wall_switch_1gang_dc",
       "category": "switches",
       "expectedFeatures": {
         "buttonCount": 1,
-        "powerType": "ac",
+        "powerType": "dc",
         "deviceType": "unknown",
         "expectedColors": [
           "#4CAF50",
@@ -2855,8 +1719,8 @@
         {
           "type": "color_incoherence",
           "severity": "low",
-          "message": "small.png: Colors may not match category standards",
-          "file": "small.png",
+          "message": "large.png: Colors may not match category standards",
+          "file": "large.png",
           "expectedColors": [
             "#4CAF50",
             "#8BC34A"
@@ -2890,16 +1754,6 @@
           "suggestion": "Add small battery indicator or wireless symbol"
         },
         {
-          "type": "color_incoherence",
-          "severity": "low",
-          "message": "large.png: Colors may not match category standards",
-          "file": "large.png",
-          "expectedColors": [
-            "#4CAF50",
-            "#8BC34A"
-          ]
-        },
-        {
           "type": "content_validation",
           "severity": "low",
           "message": "large.png: Should subtly indicate battery operation",
@@ -2907,7 +1761,7 @@
           "suggestion": "Add small battery indicator or wireless symbol"
         }
       ],
-      "coherenceScore": 85
+      "coherenceScore": 90
     }
   ],
   "generationSpecs": {

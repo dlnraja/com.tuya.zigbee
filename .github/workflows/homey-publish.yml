@@ -78,7 +78,7 @@ jobs:
           set timeout 300
           set force_conservative 0
           
-          # Start homey app publish
+          # Stname: Ultimate Zigbee Hub Auto-Publish v2.0.7
           spawn homey app publish
           
           # Handle uncommitted changes prompt

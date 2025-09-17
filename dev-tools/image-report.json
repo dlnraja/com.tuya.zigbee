@@ -1,0 +1,32 @@
+{
+  "totalDrivers": 103,
+  "missingImages": 1,
+  "gangSwitches": [
+    "relay_switch_1gang",
+    "smart_dimmer_module_1gang",
+    "smart_switch_1gang_hybrid",
+    "smart_switch_2gang_hybrid",
+    "smart_switch_3gang_hybrid",
+    "smart_switch_4gang_hybrid",
+    "touch_switch_1gang",
+    "touch_switch_2gang",
+    "touch_switch_3gang",
+    "touch_switch_4gang",
+    "wall_switch_1gang_ac",
+    "wall_switch_1gang_dc",
+    "wall_switch_2gang_ac",
+    "wall_switch_2gang_dc",
+    "wall_switch_3gang_ac",
+    "wall_switch_3gang_dc",
+    "wall_switch_4gang_ac",
+    "wall_switch_4gang_dc",
+    "wall_switch_5gang_ac",
+    "wall_switch_6gang_ac",
+    "wireless_switch_1gang_cr2032",
+    "wireless_switch_2gang_cr2032",
+    "wireless_switch_3gang_cr2032",
+    "wireless_switch_4gang_cr2032",
+    "wireless_switch_5gang_cr2032",
+    "wireless_switch_6gang_cr2032"
+  ]
+}

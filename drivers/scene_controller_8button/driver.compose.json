@@ -19,8 +19,11 @@
     ]
   },
   "zigbee": {
-    "manufacturerId": [],
-    "productId": [],
+    "productId": [
+      "TS0601",
+      "TS011F",
+      "TS0121"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -43,7 +46,29 @@
         "nl": "Houd de knop 5 seconden ingedrukt totdat de LED knippert",
         "de": "Halten Sie die Taste 5 Sekunden lang gedrückt, bis die LED blinkt"
       }
-    }
+    },
+    "manufacturerName": [
+      "_TZ3000_",
+      "_TZE200_",
+      "_TZE204_"
+    ],
+    "manufacturerIds": [
+      "1005007769107379",
+      4417,
+      4098,
+      4619,
+      4742,
+      4648,
+      4644,
+      4455,
+      4659,
+      4660
+    ],
+    "productIds": [
+      1043,
+      1044,
+      1045
+    ]
   },
   "images": {
     "small": "/drivers/scene_controller_8button/assets/small.png",
@@ -61,5 +86,14 @@
       "min": 5,
       "max": 50
     }
+  ],
+  "name": {
+    "en": "Scene Controller 8button"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
   ]
 }

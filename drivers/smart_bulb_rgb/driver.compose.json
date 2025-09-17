@@ -70,8 +70,8 @@
     ]
   },
   "images": {
-    "small": "/drivers/smart_bulb/assets/small.png",
-    "large": "/drivers/smart_bulb/assets/large.png",
+    "small": "./assets/small.png",
+    "large": "./assets/large.png",
     "xlarge": "/drivers/smart_bulb/assets/xlarge.png"
   },
   "community": {
@@ -82,7 +82,13 @@
     "enriched": true,
     "last_updated": "2025-09-15T19:34:02.950Z"
   },
-  "id": "smart_bulb_white",
+  "id": "smart_bulb_rgb",
   "manufacturerId": [],
-  "productId": []
+  "productId": [],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }

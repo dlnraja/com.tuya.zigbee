@@ -1,9 +1,0 @@
-{
-  "name": "Radarg_Sensor_Battery_Presence",
-  "type": "tuya_zigbee",
-  "category": "sensor-motion",
-  "source": "drivers\\tuya_zigbee\\models\\radar-24g_sensor_battery_presence",
-  "created": "2025-08-14T15:24:24.667Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

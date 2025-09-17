@@ -1,0 +1,51 @@
+{
+  "id": "outdoor_siren",
+  "name": {
+    "en": "Outdoor Siren"
+  },
+  "class": "lock",
+  "capabilities": [
+    "locked",
+    "alarm_battery"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": "_TZ3000_",
+    "productId": "_TZ3000_2XS3E811",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          257
+        ],
+        "bindings": [
+          257
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "./assets/large.png",
+      "instruction": {
+        "en": "Follow the pairing instructions for your Outdoor Siren."
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "AA",
+      "CR2032"
+    ]
+  },
+  "settings": []
+}

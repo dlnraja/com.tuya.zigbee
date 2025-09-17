@@ -7,7 +7,8 @@
   "capabilities": [
     "measure_co2",
     "measure_temperature",
-    "alarm_motion"
+    "alarm_motion",
+    "measure_battery"
   ],
   "zigbee": {
     "manufacturerName": [

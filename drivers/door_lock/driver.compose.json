@@ -1,36 +1,43 @@
 {
+  "id": "door_lock",
   "name": {
-    "en": "Smart Lock"
+    "en": "Door Lock"
   },
-  "class": "sensor",
+  "class": "lock",
   "capabilities": [
     "locked",
-    "alarm_generic"
+    "alarm_tamper"
   ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
+  },
   "zigbee": {
-    "manufacturerName": [
-      "TZ3000_generic",
-      "TZ3000_generic",
-      "TZ3000_common",
-      "_TZE200_universal",
-      "_TZ3000_*",
-      "_TZ3210_*",
-      "_TYZB01_*",
-      "_TYZB02_*",
-      "_TZ3400_*"
-    ],
-    "productId": [
-      "TS0001",
-      "TS0001",
-      "TS0601",
-      "GENERIC"
-    ],
+    "manufacturerName": "Various",
+    "productId": "Various",
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          3
+          1,
+          3,
+          257
+        ],
+        "bindings": [
+          257
         ]
+      }
+    },
+    "learnmode": {
+      "image": "./assets/large.png",
+      "instruction": {
+        "en": "Follow the pairing instructions for your Door Lock."
       }
     },
     "manufacturerIds": [
@@ -44,26 +51,17 @@
       4659,
       4660
     ],
-    "productIds": []
-  },
-  "images": {
-    "small": "/drivers/smart_lock/assets/small.png",
-    "large": "/drivers/smart_lock/assets/large.png",
-    "xlarge": "/drivers/smart_lock/assets/xlarge.png"
+    "productIds": [
+      1025,
+      1029,
+      1030
+    ]
   },
   "energy": {
     "batteries": [
-      "CR2032",
-      "AA"
+      "AA",
+      "CR2032"
     ]
   },
-  "community": {
-    "sources": [
-      "Generic compatibility database",
-      "Pattern-based enrichment"
-    ],
-    "enriched": true,
-    "type": "generic",
-    "last_updated": "2025-09-15T19:34:02.864Z"
-  }
+  "settings": []
 }

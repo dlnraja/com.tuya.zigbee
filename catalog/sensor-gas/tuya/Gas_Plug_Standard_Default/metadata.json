@@ -1,9 +1,0 @@
-{
-  "name": "Gas_Plug_Standard_Default",
-  "type": "tuya_zigbee",
-  "category": "sensor-gas",
-  "source": "drivers\\tuya_zigbee\\models\\tuya-gas-695_plug_standard_default",
-  "created": "2025-08-14T15:25:34.471Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

@@ -1,0 +1,100 @@
+{
+  "name": {
+    "en": "Motion Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_battery",
+    "measure_luminance"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "TZ3000_mmtwjmaq",
+      "TZ3000_kmh5qpmb",
+      "TZ3000_6ygjfyll",
+      "TZ3000_bsvqrxru",
+      "TZ3000_4ggd8ezp",
+      "TZ3000_lf56vpxj",
+      "TZ3000_h4wnrtck",
+      "TZ3000_jmrgyl7o",
+      "TZ3000_mcxw5ehu",
+      "TZ3000_sn60p5h8",
+      "TZ3000_rxtv1mfk",
+      "_TZE200_3towulqd",
+      "_TZE200_bq7mlkgv",
+      "_TZE200_w5auu1jt",
+      "_TZE200_tv3wxhcz",
+      "_TZE204_qasjif9e",
+      "_TZE204_ijxvkhd0",
+      "_TZE284_cjlm9ra6",
+      "Aqara",
+      "LUMI"
+    ],
+    "productId": [
+      "TS0202",
+      "PIR-M",
+      "MS100",
+      "PIR01",
+      "MOTION1",
+      "RTCGQ11LM",
+      "lumi.sensor_motion"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          1280,
+          1030
+        ]
+      }
+    },
+    "manufacturerIds": [
+      4417,
+      4098,
+      4619,
+      4742,
+      4648,
+      4644,
+      4455,
+      4659,
+      4660
+    ],
+    "productIds": [
+      1026,
+      1027,
+      1028
+    ]
+  },
+  "images": {
+    "small": "./assets/small.png",
+    "large": "./assets/large.png",
+    "xlarge": "/drivers/motion_sensor/assets/xlarge.png"
+  },
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AA"
+    ]
+  },
+  "community": {
+    "sources": [
+      "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352/141",
+      "Johan Benz GitHub Issues: Motion sensor requests",
+      "Blakadder device database: Tuya PIR sensors"
+    ],
+    "enriched": true,
+    "last_updated": "2025-09-15T19:34:03.053Z"
+  },
+  "id": "co2_sensor",
+  "manufacturerId": [],
+  "productId": [],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}

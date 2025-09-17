@@ -51,5 +51,12 @@
     "enriched": true,
     "type": "generic",
     "last_updated": "2025-09-15T19:34:02.875Z"
-  }
+  },
+  "id": "hvac_controller",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }

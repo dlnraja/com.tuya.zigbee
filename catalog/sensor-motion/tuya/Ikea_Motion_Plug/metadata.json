@@ -1,9 +1,0 @@
-{
-  "name": "Ikea_Motion_Plug",
-  "type": "tuya_zigbee",
-  "category": "sensor-motion",
-  "source": "drivers\\tuya_zigbee\\models\\ikea-motion-981_plug_standard_default_1",
-  "created": "2025-08-14T15:24:00.465Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

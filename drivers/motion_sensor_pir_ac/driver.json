@@ -6,7 +6,8 @@
   "class": "sensor",
   "capabilities": [
     "alarm_motion",
-    "measure_temperature"
+    "measure_temperature",
+    "measure_battery"
   ],
   "zigbee": {
     "manufacturerName": [

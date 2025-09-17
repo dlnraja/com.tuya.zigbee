@@ -1,9 +1,0 @@
-{
-  "name": "_Sensor_Battery_Default",
-  "type": "tuya_zigbee",
-  "category": "sensor-temp",
-  "source": "drivers\\tuya_zigbee\\models\\ts0205_sensor_battery_default_3",
-  "created": "2025-08-14T15:24:44.336Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}
