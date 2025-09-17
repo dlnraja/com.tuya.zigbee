@@ -1,5 +1,5 @@
 {
-  "id": "wireless_switch_4gang_battery",
+  "id": "wireless_switch_4gang_cr2032",
   "class": "button",
   "capabilities": [
     "onoff",
@@ -14,8 +14,11 @@
     ]
   },
   "zigbee": {
-    "manufacturerId": [],
-    "productId": [],
+    "productId": [
+      "TS0601",
+      "TS011F",
+      "TS0121"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -31,17 +34,48 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/wireless_switch_4gang_battery/assets/learn.svg",
+      "image": "./assets/large.png",
       "instruction": {
         "en": "Press and hold the button until the LED flashes",
         "fr": "Appuyez et maintenez le bouton jusqu'à ce que la LED clignote",
         "nl": "Houd de knop ingedrukt totdat de LED knippert",
         "de": "Halten Sie die Taste gedrückt, bis die LED blinkt"
       }
-    }
+    },
+    "manufacturerName": [
+      "_TZ3000_",
+      "_TZE200_",
+      "_TZE204_"
+    ],
+    "manufacturerIds": [
+      "1005007769107379",
+      4417,
+      4098,
+      4619,
+      4742,
+      4648,
+      4644,
+      4455,
+      4659,
+      4660
+    ],
+    "productIds": [
+      1043,
+      1044,
+      1045
+    ]
   },
   "images": {
-    "small": "/drivers/wireless_switch_4gang_battery/assets/small.png",
-    "large": "/drivers/wireless_switch_4gang_battery/assets/large.png"
-  }
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
+  },
+  "name": {
+    "en": "Wireless Switch 4gang CR2032"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }

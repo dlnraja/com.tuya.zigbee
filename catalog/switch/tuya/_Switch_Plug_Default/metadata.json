@@ -1,9 +1,0 @@
-{
-  "name": "_Switch_Plug_Default",
-  "type": "tuya_zigbee",
-  "category": "switch",
-  "source": "drivers\\tuya_zigbee\\models\\ts0601_switch_plug_default",
-  "created": "2025-08-14T15:24:54.945Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

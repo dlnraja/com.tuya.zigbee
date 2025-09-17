@@ -55,8 +55,8 @@
     ]
   },
   "images": {
-    "small": "/drivers/scene_switch/assets/small.png",
-    "large": "/drivers/scene_switch/assets/large.png",
+    "small": "./assets/small.png",
+    "large": "./assets/large.png",
     "xlarge": "/drivers/scene_switch/assets/xlarge.png"
   },
   "community": {
@@ -68,5 +68,11 @@
     "type": "generic",
     "last_updated": "2025-09-15T19:34:03.118Z"
   },
-  "id": "scene_controller_battery"
+  "id": "scene_controller_battery",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }

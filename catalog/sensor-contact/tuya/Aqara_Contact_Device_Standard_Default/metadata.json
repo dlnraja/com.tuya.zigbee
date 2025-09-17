@@ -1,9 +1,0 @@
-{
-  "name": "Aqara_Contact_Device_Standard_Default",
-  "type": "tuya_zigbee",
-  "category": "sensor-contact",
-  "source": "drivers\\tuya_zigbee\\models\\aqara-contact-799_device_standard_default",
-  "created": "2025-08-14T15:21:19.079Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

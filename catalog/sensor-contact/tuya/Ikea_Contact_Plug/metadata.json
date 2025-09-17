@@ -1,9 +1,0 @@
-{
-  "name": "Ikea_Contact_Plug",
-  "type": "tuya_zigbee",
-  "category": "sensor-contact",
-  "source": "drivers\\tuya_zigbee\\models\\ikea-contact-739_plug_standard_default_1",
-  "created": "2025-08-14T15:23:21.221Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

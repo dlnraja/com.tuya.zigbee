@@ -48,9 +48,32 @@
         "de": "Press and hold the reset button for 3 seconds until the LED starts blinking.",
         "nl": "Press and hold the reset button for 3 seconds until the LED starts blinking."
       }
-    }
+    },
+    "manufacturerIds": [
+      "1005007769107379",
+      4417,
+      4098,
+      4619,
+      4742,
+      4648,
+      4644,
+      4455,
+      4659,
+      4660
+    ],
+    "productIds": [
+      1043,
+      1044,
+      1045
+    ]
   },
-  "id": "wireless_switch_1gang_battery",
+  "id": "wireless_switch_1gang_cr2032",
   "manufacturerId": [],
-  "productId": []
+  "productId": [],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }

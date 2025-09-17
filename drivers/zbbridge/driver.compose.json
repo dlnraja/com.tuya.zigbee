@@ -42,6 +42,25 @@
         "de": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
         "nl": "Press and hold the pairing button for 5 seconds until LED blinks rapidly."
       }
-    }
-  }
+    },
+    "manufacturerIds": [
+      4417,
+      4098,
+      4619,
+      4742,
+      4648,
+      4644,
+      4455,
+      4659,
+      4660
+    ],
+    "productIds": []
+  },
+  "id": "zbbridge",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }

@@ -1,9 +1,0 @@
-{
-  "name": "Aqara_Blind_Cover",
-  "type": "tuya_zigbee",
-  "category": "cover",
-  "source": "drivers\\tuya_zigbee\\models\\aqara-blind-824_cover_standard_default_1",
-  "created": "2025-08-14T15:21:12.524Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

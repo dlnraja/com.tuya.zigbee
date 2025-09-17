@@ -1,9 +1,0 @@
-{
-  "name": "Ikea_Smoke_Plug_Standard_Default",
-  "type": "tuya_zigbee",
-  "category": "sensor-smoke",
-  "source": "drivers\\tuya_zigbee\\models\\ikea-smoke-94_plug_standard_default",
-  "created": "2025-08-14T15:24:13.216Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

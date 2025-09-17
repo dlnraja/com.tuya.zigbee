@@ -61,5 +61,18 @@
     "enriched": true,
     "type": "generic",
     "last_updated": "2025-09-15T19:34:02.887Z"
+  },
+  "id": "thermostat",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AA"
+    ]
   }
 }

@@ -1,9 +1,0 @@
-{
-  "name": "Ikea_Fan_Device_Standard_Default",
-  "type": "tuya_zigbee",
-  "category": "fan",
-  "source": "drivers\\tuya_zigbee\\models\\ikea-fan-208_device_standard_default",
-  "created": "2025-08-14T15:23:40.664Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

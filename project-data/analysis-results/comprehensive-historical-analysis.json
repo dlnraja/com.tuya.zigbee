@@ -1,0 +1,3613 @@
+{
+  "timestamp": "2025-09-16T20:25:35.458Z",
+  "summary": {
+    "currentDrivers": 105,
+    "missingDrivers": 14,
+    "brandedFolders": 0,
+    "categories": 9,
+    "unifiedCategories": 69
+  },
+  "analysis": {
+    "historicalDrivers": [
+      [
+        "air_conditioner_controller",
+        {
+          "name": "air_conditioner_controller",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "other",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "air_quality_monitor",
+        {
+          "name": "air_quality_monitor",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "other",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            "_TZ3000_",
+            "_TZ3000_YVJF5LZT"
+          ],
+          "features": [
+            "measure_temperature",
+            "measure_humidity",
+            "alarm_battery"
+          ]
+        }
+      ],
+      [
+        "ceiling_light_controller",
+        {
+          "name": "ceiling_light_controller",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "lighting",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff",
+            "dim"
+          ]
+        }
+      ],
+      [
+        "co2_sensor",
+        {
+          "name": "co2_sensor",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "sensors",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "measure_co2",
+            "measure_temperature",
+            "alarm_motion",
+            "measure_battery"
+          ]
+        }
+      ],
+      [
+        "co_detector",
+        {
+          "name": "co_detector",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "sensors",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "alarm_smoke",
+            "alarm_co",
+            "alarm_fire",
+            "measure_battery",
+            "measure_temperature",
+            "alarm_motion"
+          ]
+        }
+      ],
+      [
+        "curtain_motor",
+        {
+          "name": "curtain_motor",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "covers",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "dimmer",
+        {
+          "name": "dimmer",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "other",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "door_controller",
+        {
+          "name": "door_controller",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "security",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "door_lock",
+        {
+          "name": "door_lock",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "security",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            "Various",
+            "Various"
+          ],
+          "features": [
+            "locked",
+            "alarm_tamper"
+          ]
+        }
+      ],
+      [
+        "door_window_sensor",
+        {
+          "name": "door_window_sensor",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "sensors",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff",
+            "measure_battery",
+            "measure_temperature",
+            "alarm_motion"
+          ]
+        }
+      ],
+      [
+        "doorbell",
+        {
+          "name": "doorbell",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "security",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            "_TZ3000_",
+            "_TZ3000_80RFF55D"
+          ],
+          "features": [
+            "locked",
+            "alarm_battery"
+          ]
+        }
+      ],
+      [
+        "energy_monitoring_plug",
+        {
+          "name": "energy_monitoring_plug",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "power",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff",
+            "measure_power",
+            "meter_power"
+          ]
+        }
+      ],
+      [
+        "extension_plug",
+        {
+          "name": "extension_plug",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "power",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff",
+            "measure_power"
+          ]
+        }
+      ],
+      [
+        "fan_controller",
+        {
+          "name": "fan_controller",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "other",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff",
+            "fan_speed"
+          ]
+        }
+      ],
+      [
+        "fingerprint_lock",
+        {
+          "name": "fingerprint_lock",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "security",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "locked",
+            "measure_battery",
+            "alarm_generic"
+          ]
+        }
+      ],
+      [
+        "for_pirillumination_sensor_tze2003towulqd_resolves_780_1010",
+        {
+          "name": "for_pirillumination_sensor_tze2003towulqd_resolves_780_1010",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "sensors",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            "_TZ3000_",
+            "_TZ3000_NHM6XMHU"
+          ],
+          "features": [
+            "measure_temperature",
+            "measure_humidity",
+            "alarm_battery"
+          ]
+        }
+      ],
+      [
+        "for_tank_level_monitor_device",
+        {
+          "name": "for_tank_level_monitor_device",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "other",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            "_TZ3000_",
+            "_TZ3000_GRKQE8MB"
+          ],
+          "features": [
+            "measure_temperature",
+            "measure_humidity",
+            "alarm_battery"
+          ]
+        }
+      ],
+      [
+        "for_tz3000fa9mlvja_and_tz3000rcuyhwe3",
+        {
+          "name": "for_tz3000fa9mlvja_and_tz3000rcuyhwe3",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "other",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            "_TZ3000_",
+            "_TZ3000_IJ3R74R8"
+          ],
+          "features": [
+            "measure_temperature",
+            "measure_humidity",
+            "alarm_battery"
+          ]
+        }
+      ],
+      [
+        "for_tze200kb5noeto_human_presence_detector_with_pir_24g_radar_httpswww",
+        {
+          "name": "for_tze200kb5noeto_human_presence_detector_with_pir_24g_radar_httpswww",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "sensors",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            "_TZ3000_",
+            "_TZ3000_GXW67MAR"
+          ],
+          "features": [
+            "measure_temperature",
+            "measure_humidity",
+            "alarm_battery"
+          ]
+        }
+      ],
+      [
+        "formaldehyde_sensor",
+        {
+          "name": "formaldehyde_sensor",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "sensors",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "measure_temperature",
+            "alarm_motion"
+          ]
+        }
+      ],
+      [
+        "garage_door_opener",
+        {
+          "name": "garage_door_opener",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "security",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            "_TZ3000_",
+            "_TZ3000_0HGATUN8"
+          ],
+          "features": [
+            "locked",
+            "alarm_battery"
+          ]
+        }
+      ],
+      [
+        "gas_detector",
+        {
+          "name": "gas_detector",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "sensors",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff",
+            "measure_temperature",
+            "alarm_motion"
+          ]
+        }
+      ],
+      [
+        "hvac_controller",
+        {
+          "name": "hvac_controller",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "climate",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "keypad_lock",
+        {
+          "name": "keypad_lock",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "security",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "locked",
+            "measure_battery",
+            "alarm_generic"
+          ]
+        }
+      ],
+      [
+        "led_strip_controller",
+        {
+          "name": "led_strip_controller",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "lighting",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff",
+            "dim"
+          ]
+        }
+      ],
+      [
+        "lux_sensor",
+        {
+          "name": "lux_sensor",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "sensors",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "measure_temperature",
+            "alarm_motion"
+          ]
+        }
+      ],
+      [
+        "mini",
+        {
+          "name": "mini",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "other",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "mini_switch",
+        {
+          "name": "mini_switch",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            "Various",
+            "Various"
+          ],
+          "features": [
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "moes_006_series_thermostat_adds_support_for_the_006_series_thermostathttpsmoeshouse",
+        {
+          "name": "moes_006_series_thermostat_adds_support_for_the_006_series_thermostathttpsmoeshouse",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "climate",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            "_TZ3000_",
+            "_TZ3000_7N3VYO5V"
+          ],
+          "features": [
+            "target_temperature",
+            "measure_temperature"
+          ]
+        }
+      ],
+      [
+        "motion_sensor_mmwave",
+        {
+          "name": "motion_sensor_mmwave",
+          "hasDriverJson": false,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "sensors",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [],
+          "features": []
+        }
+      ],
+      [
+        "motion_sensor_pir_ac",
+        {
+          "name": "motion_sensor_pir_ac",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "sensors",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "alarm_motion",
+            "measure_temperature",
+            "measure_battery"
+          ]
+        }
+      ],
+      [
+        "motion_sensor_pir_battery",
+        {
+          "name": "motion_sensor_pir_battery",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "sensors",
+          "buttonCount": "1",
+          "powerType": "battery",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "alarm_motion",
+            "measure_battery",
+            "measure_temperature"
+          ]
+        }
+      ],
+      [
+        "multisensor",
+        {
+          "name": "multisensor",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "sensors",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff",
+            "measure_battery",
+            "measure_temperature",
+            "alarm_motion"
+          ]
+        }
+      ],
+      [
+        "noise_level_sensor",
+        {
+          "name": "noise_level_sensor",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "sensors",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "measure_temperature",
+            "alarm_motion"
+          ]
+        }
+      ],
+      [
+        "outdoor_light_controller",
+        {
+          "name": "outdoor_light_controller",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "lighting",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff",
+            "dim"
+          ]
+        }
+      ],
+      [
+        "outdoor_siren",
+        {
+          "name": "outdoor_siren",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "security",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            "_TZ3000_",
+            "_TZ3000_2XS3E811"
+          ],
+          "features": [
+            "locked",
+            "alarm_battery"
+          ]
+        }
+      ],
+      [
+        "pet_feeder",
+        {
+          "name": "pet_feeder",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "other",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            "_TZ3000_",
+            "_TZ3000_NDQBF7NK"
+          ],
+          "features": [
+            "measure_temperature",
+            "measure_humidity",
+            "alarm_battery"
+          ]
+        }
+      ],
+      [
+        "pm25_sensor",
+        {
+          "name": "pm25_sensor",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "sensors",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "measure_temperature",
+            "alarm_motion"
+          ]
+        }
+      ],
+      [
+        "presence_sensor_radar",
+        {
+          "name": "presence_sensor_radar",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "sensors",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff",
+            "measure_temperature",
+            "alarm_motion"
+          ]
+        }
+      ],
+      [
+        "pressure_sensor",
+        {
+          "name": "pressure_sensor",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "sensors",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "measure_battery",
+            "measure_temperature",
+            "alarm_motion"
+          ]
+        }
+      ],
+      [
+        "projector_screen_controller",
+        {
+          "name": "projector_screen_controller",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "other",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "radiator_valve",
+        {
+          "name": "radiator_valve",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "climate",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "measure_battery",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "relay_switch_1gang",
+        {
+          "name": "relay_switch_1gang",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "remote_switch",
+        {
+          "name": "remote_switch",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "1",
+          "powerType": "battery",
+          "manufacturerIds": [
+            "_TZ3000_",
+            "_TZ3000_Q7QHKNXG"
+          ],
+          "features": [
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "request_944",
+        {
+          "name": "request_944",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "other",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            "_TZ3000_",
+            "_TZ3000_EI6R8MIR"
+          ],
+          "features": [
+            "measure_temperature",
+            "measure_humidity",
+            "alarm_battery"
+          ]
+        }
+      ],
+      [
+        "roller_blind_controller",
+        {
+          "name": "roller_blind_controller",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "covers",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff",
+            "windowcoverings_state",
+            "windowcoverings_set"
+          ]
+        }
+      ],
+      [
+        "scene_controller_2button",
+        {
+          "name": "scene_controller_2button",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "remotes",
+          "buttonCount": "2",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "scene_controller_4button",
+        {
+          "name": "scene_controller_4button",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "remotes",
+          "buttonCount": "4",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "scene_controller_6button",
+        {
+          "name": "scene_controller_6button",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "remotes",
+          "buttonCount": "6",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "scene_controller_8button",
+        {
+          "name": "scene_controller_8button",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "remotes",
+          "buttonCount": "8",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "scene_controller_battery",
+        {
+          "name": "scene_controller_battery",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "remotes",
+          "buttonCount": "1",
+          "powerType": "battery",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "shade_controller",
+        {
+          "name": "shade_controller",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "covers",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "smart_bulb_rgb",
+        {
+          "name": "smart_bulb_rgb",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "lighting",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff",
+            "dim",
+            "light_hue",
+            "light_saturation"
+          ]
+        }
+      ],
+      [
+        "smart_bulb_tunable",
+        {
+          "name": "smart_bulb_tunable",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "lighting",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff",
+            "dim",
+            "light_temperature"
+          ]
+        }
+      ],
+      [
+        "smart_bulb_white",
+        {
+          "name": "smart_bulb_white",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "lighting",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff",
+            "dim"
+          ]
+        }
+      ],
+      [
+        "smart_curtain_motor",
+        {
+          "name": "smart_curtain_motor",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "covers",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            "_TZ3000_",
+            "_TZ3000_IYME7MIJ"
+          ],
+          "features": [
+            "windowcoverings_state",
+            "windowcoverings_set"
+          ]
+        }
+      ],
+      [
+        "smart_doorbell",
+        {
+          "name": "smart_doorbell",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "security",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            "_TZ3000_",
+            "_TZ3000_I797NU7Y"
+          ],
+          "features": [
+            "locked",
+            "alarm_battery"
+          ]
+        }
+      ],
+      [
+        "smart_garden_sprinkler",
+        {
+          "name": "smart_garden_sprinkler",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "other",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            "_TZ3000_",
+            "_TZ3000_FDPDANZ2"
+          ],
+          "features": [
+            "measure_temperature",
+            "measure_humidity",
+            "alarm_battery"
+          ]
+        }
+      ],
+      [
+        "smart_lock",
+        {
+          "name": "smart_lock",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "security",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "locked",
+            "measure_battery",
+            "alarm_generic"
+          ]
+        }
+      ],
+      [
+        "smart_plug",
+        {
+          "name": "smart_plug",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "power",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff",
+            "measure_power"
+          ]
+        }
+      ],
+      [
+        "smart_radiator_valve",
+        {
+          "name": "smart_radiator_valve",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "climate",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            "_TZ3000_",
+            "_TZ3000_TK4SQT1X"
+          ],
+          "features": [
+            "target_temperature",
+            "measure_temperature"
+          ]
+        }
+      ],
+      [
+        "smart_spot",
+        {
+          "name": "smart_spot",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "other",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff",
+            "dim"
+          ]
+        }
+      ],
+      [
+        "smart_switch_1gang_hybrid",
+        {
+          "name": "smart_switch_1gang_hybrid",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "1",
+          "powerType": "hybrid",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "smart_switch_2gang_hybrid",
+        {
+          "name": "smart_switch_2gang_hybrid",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "2",
+          "powerType": "hybrid",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "button.2",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "smart_switch_3gang_hybrid",
+        {
+          "name": "smart_switch_3gang_hybrid",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "3",
+          "powerType": "hybrid",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "button.2",
+            "button.3",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "smart_switch_4gang_hybrid",
+        {
+          "name": "smart_switch_4gang_hybrid",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "4",
+          "powerType": "hybrid",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "button.2",
+            "button.3",
+            "button.4",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "smart_water_valve",
+        {
+          "name": "smart_water_valve",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "climate",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            "_TZ3000_",
+            "_TZ3000_FGUMDNKX"
+          ],
+          "features": [
+            "target_temperature",
+            "measure_temperature"
+          ]
+        }
+      ],
+      [
+        "smoke_detector",
+        {
+          "name": "smoke_detector",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "sensors",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff",
+            "measure_battery",
+            "measure_temperature",
+            "alarm_motion"
+          ]
+        }
+      ],
+      [
+        "snzb-01_switch",
+        {
+          "name": "snzb-01_switch",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            "Various",
+            "Various"
+          ],
+          "features": [
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "soil_moisture_sensor",
+        {
+          "name": "soil_moisture_sensor",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "sensors",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff",
+            "measure_battery",
+            "measure_temperature",
+            "alarm_motion"
+          ]
+        }
+      ],
+      [
+        "styrbar_remote",
+        {
+          "name": "styrbar_remote",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "remotes",
+          "buttonCount": "1",
+          "powerType": "battery",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "symfonisk_remote",
+        {
+          "name": "symfonisk_remote",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "remotes",
+          "buttonCount": "1",
+          "powerType": "battery",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "temperature_controller",
+        {
+          "name": "temperature_controller",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "other",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "target_temperature",
+            "measure_temperature"
+          ]
+        }
+      ],
+      [
+        "temperature_humidity_sensor",
+        {
+          "name": "temperature_humidity_sensor",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "sensors",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "measure_temperature",
+            "measure_humidity",
+            "measure_battery",
+            "alarm_motion"
+          ]
+        }
+      ],
+      [
+        "temperature_sensor",
+        {
+          "name": "temperature_sensor",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "sensors",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            "_TZ3000_",
+            "_TZ3000_5DH2707J"
+          ],
+          "features": [
+            "measure_temperature",
+            "measure_humidity",
+            "alarm_battery"
+          ]
+        }
+      ],
+      [
+        "thermostat",
+        {
+          "name": "thermostat",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "climate",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "target_temperature",
+            "measure_temperature"
+          ]
+        }
+      ],
+      [
+        "touch_dimmer",
+        {
+          "name": "touch_dimmer",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "other",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "touch_switch_1gang",
+        {
+          "name": "touch_switch_1gang",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "touch_switch_2gang",
+        {
+          "name": "touch_switch_2gang",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "2",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0002",
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "button.2",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "touch_switch_3gang",
+        {
+          "name": "touch_switch_3gang",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "3",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0003",
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "button.2",
+            "button.3",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "touch_switch_4gang",
+        {
+          "name": "touch_switch_4gang",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "4",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0004",
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "button.2",
+            "button.3",
+            "button.4",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "tvoc_sensor",
+        {
+          "name": "tvoc_sensor",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "sensors",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "measure_temperature",
+            "alarm_motion"
+          ]
+        }
+      ],
+      [
+        "tz3000fa9mlvja_and_tz3000rcuyhwe3",
+        {
+          "name": "tz3000fa9mlvja_and_tz3000rcuyhwe3",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "other",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            "_TZ3000_",
+            "_TZ3000_F6HH62LK"
+          ],
+          "features": [
+            "measure_temperature",
+            "measure_humidity",
+            "alarm_battery"
+          ]
+        }
+      ],
+      [
+        "usb_outlet",
+        {
+          "name": "usb_outlet",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "power",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff",
+            "measure_power"
+          ]
+        }
+      ],
+      [
+        "vibration_sensor",
+        {
+          "name": "vibration_sensor",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "sensors",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff",
+            "measure_battery",
+            "measure_temperature",
+            "alarm_motion"
+          ]
+        }
+      ],
+      [
+        "wall_switch_1gang_ac",
+        {
+          "name": "wall_switch_1gang_ac",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "wall_switch_1gang_dc",
+        {
+          "name": "wall_switch_1gang_dc",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "1",
+          "powerType": "dc",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "wall_switch_2gang_ac",
+        {
+          "name": "wall_switch_2gang_ac",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "2",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "button.2",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "wall_switch_2gang_dc",
+        {
+          "name": "wall_switch_2gang_dc",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "2",
+          "powerType": "dc",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "button.2",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "wall_switch_3gang_ac",
+        {
+          "name": "wall_switch_3gang_ac",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "3",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "button.2",
+            "button.3",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "wall_switch_3gang_dc",
+        {
+          "name": "wall_switch_3gang_dc",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "3",
+          "powerType": "dc",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "button.2",
+            "button.3",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "wall_switch_4gang_ac",
+        {
+          "name": "wall_switch_4gang_ac",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "4",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "button.2",
+            "button.3",
+            "button.4",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "wall_switch_4gang_dc",
+        {
+          "name": "wall_switch_4gang_dc",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "4",
+          "powerType": "dc",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "button.2",
+            "button.3",
+            "button.4",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "wall_switch_5gang_ac",
+        {
+          "name": "wall_switch_5gang_ac",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "5",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "button.2",
+            "button.3",
+            "button.4",
+            "button.5",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "wall_switch_6gang_ac",
+        {
+          "name": "wall_switch_6gang_ac",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "6",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "button.2",
+            "button.3",
+            "button.4",
+            "button.5",
+            "button.6",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "water_leak_sensor",
+        {
+          "name": "water_leak_sensor",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "sensors",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff",
+            "measure_battery",
+            "measure_temperature",
+            "alarm_motion"
+          ]
+        }
+      ],
+      [
+        "water_valve",
+        {
+          "name": "water_valve",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "climate",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            "_TZ3000_",
+            "_TZ3000_3ENCVUNU"
+          ],
+          "features": [
+            "target_temperature",
+            "measure_temperature"
+          ]
+        }
+      ],
+      [
+        "wireless_switch",
+        {
+          "name": "wireless_switch",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "1",
+          "powerType": "battery",
+          "manufacturerIds": [
+            "_TZ3000_",
+            "_TZ3000_3VJSNLPG"
+          ],
+          "features": [
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "wireless_switch_1gang_cr2032",
+        {
+          "name": "wireless_switch_1gang_cr2032",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "1",
+          "powerType": "battery",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "measure_battery",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "wireless_switch_2gang_cr2032",
+        {
+          "name": "wireless_switch_2gang_cr2032",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "2",
+          "powerType": "battery",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "button.2",
+            "measure_battery",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "wireless_switch_3gang_cr2032",
+        {
+          "name": "wireless_switch_3gang_cr2032",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "3",
+          "powerType": "battery",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "button.2",
+            "button.3",
+            "measure_battery",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "wireless_switch_4gang_cr2032",
+        {
+          "name": "wireless_switch_4gang_cr2032",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "4",
+          "powerType": "battery",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "button.2",
+            "button.3",
+            "button.4",
+            "measure_battery",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "wireless_switch_5gang_cr2032",
+        {
+          "name": "wireless_switch_5gang_cr2032",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "5",
+          "powerType": "battery",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "button.2",
+            "button.3",
+            "button.4",
+            "button.5",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "wireless_switch_6gang_cr2032",
+        {
+          "name": "wireless_switch_6gang_cr2032",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "switches",
+          "buttonCount": "6",
+          "powerType": "battery",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "button.1",
+            "button.2",
+            "button.3",
+            "button.4",
+            "button.5",
+            "button.6",
+            "measure_battery",
+            "onoff"
+          ]
+        }
+      ],
+      [
+        "zbbridge",
+        {
+          "name": "zbbridge",
+          "hasDriverJson": true,
+          "hasDeviceJs": true,
+          "hasImages": true,
+          "category": "other",
+          "buttonCount": "1",
+          "powerType": "ac",
+          "manufacturerIds": [
+            [
+              "_TZ3000_",
+              "_TZ3210_",
+              "_TYZB01_"
+            ],
+            [
+              "TS0001",
+              "TS0002",
+              "TS0003",
+              "TS0004"
+            ]
+          ],
+          "features": [
+            "onoff"
+          ]
+        }
+      ]
+    ],
+    "missingDrivers": [
+      {
+        "name": "aqara_wireless_remote_switch",
+        "source": "remote:johan",
+        "category": "switches",
+        "suggested": "wireless_switch",
+        "priority": "high"
+      },
+      {
+        "name": "aqara_wireless_mini_switch",
+        "source": "remote:johan",
+        "category": "switches",
+        "suggested": "wireless_switch",
+        "priority": "high"
+      },
+      {
+        "name": "sonoff_temperature_humidity_sensor",
+        "source": "remote:johan",
+        "category": "sensors",
+        "suggested": "temperature_humidity_sensor",
+        "priority": "high"
+      },
+      {
+        "name": "sonoff_wireless_switch",
+        "source": "remote:johan",
+        "category": "switches",
+        "suggested": "wireless_switch",
+        "priority": "high"
+      },
+      {
+        "name": "tuya_smart_radiator_valve",
+        "source": "remote:johan",
+        "category": "climate",
+        "suggested": "smart_radiator_valve",
+        "priority": "high"
+      },
+      {
+        "name": "tuya_outdoor_siren",
+        "source": "remote:johan",
+        "category": "security",
+        "suggested": "outdoor_siren",
+        "priority": "high"
+      },
+      {
+        "name": "tuya_smart_doorbell",
+        "source": "remote:johan",
+        "category": "security",
+        "suggested": "smart_doorbell",
+        "priority": "high"
+      },
+      {
+        "name": "tuya_garage_door_opener",
+        "source": "remote:johan",
+        "category": "security",
+        "suggested": "garage_door_opener",
+        "priority": "high"
+      },
+      {
+        "name": "tuya_smart_curtain_motor",
+        "source": "remote:johan",
+        "category": "covers",
+        "suggested": "smart_curtain_motor",
+        "priority": "high"
+      },
+      {
+        "name": "tuya_air_quality_monitor",
+        "source": "remote:johan",
+        "category": "other",
+        "suggested": "air_quality_monitor",
+        "priority": "high"
+      },
+      {
+        "name": "tuya_co2_sensor",
+        "source": "remote:johan",
+        "category": "sensors",
+        "suggested": "co2_sensor",
+        "priority": "high"
+      },
+      {
+        "name": "tuya_smart_water_valve",
+        "source": "remote:johan",
+        "category": "climate",
+        "suggested": "smart_water_valve",
+        "priority": "high"
+      },
+      {
+        "name": "tuya_pet_feeder",
+        "source": "remote:johan",
+        "category": "other",
+        "suggested": "pet_feeder",
+        "priority": "high"
+      },
+      {
+        "name": "tuya_smart_garden_sprinkler",
+        "source": "remote:johan",
+        "category": "other",
+        "suggested": "smart_garden_sprinkler",
+        "priority": "high"
+      }
+    ],
+    "brandedFolders": [],
+    "categorySuggestions": [
+      {
+        "category": "other",
+        "count": 19,
+        "drivers": [
+          "air_conditioner_controller",
+          "air_quality_monitor",
+          "dimmer",
+          "fan_controller",
+          "for_tank_level_monitor_device"
+        ],
+        "subcategories": [
+          {
+            "name": "1gang_ac",
+            "count": 19,
+            "examples": [
+              "air_conditioner_controller",
+              "air_quality_monitor",
+              "dimmer"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "lighting",
+        "count": 6,
+        "drivers": [
+          "ceiling_light_controller",
+          "led_strip_controller",
+          "outdoor_light_controller",
+          "smart_bulb_rgb",
+          "smart_bulb_tunable"
+        ],
+        "subcategories": [
+          {
+            "name": "1gang_ac",
+            "count": 6,
+            "examples": [
+              "ceiling_light_controller",
+              "led_strip_controller",
+              "outdoor_light_controller"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "sensors",
+        "count": 25,
+        "drivers": [
+          "co2_sensor",
+          "co_detector",
+          "door_window_sensor",
+          "for_pirillumination_sensor_tze2003towulqd_resolves_780_1010",
+          "for_tze200kb5noeto_human_presence_detector_with_pir_24g_radar_httpswww"
+        ],
+        "subcategories": [
+          {
+            "name": "1gang_ac",
+            "count": 24,
+            "examples": [
+              "co2_sensor",
+              "co_detector",
+              "door_window_sensor"
+            ]
+          },
+          {
+            "name": "1gang_battery",
+            "count": 1,
+            "examples": [
+              "motion_sensor_pir_battery"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "covers",
+        "count": 5,
+        "drivers": [
+          "curtain_motor",
+          "roller_blind_controller",
+          "shade_controller",
+          "smart_curtain_motor",
+          "tuya_smart_curtain_motor"
+        ],
+        "subcategories": [
+          {
+            "name": "1gang_ac",
+            "count": 5,
+            "examples": [
+              "curtain_motor",
+              "roller_blind_controller",
+              "shade_controller"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "security",
+        "count": 12,
+        "drivers": [
+          "door_controller",
+          "door_lock",
+          "doorbell",
+          "fingerprint_lock",
+          "garage_door_opener"
+        ],
+        "subcategories": [
+          {
+            "name": "1gang_ac",
+            "count": 12,
+            "examples": [
+              "door_controller",
+              "door_lock",
+              "doorbell"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "power",
+        "count": 4,
+        "drivers": [
+          "energy_monitoring_plug",
+          "extension_plug",
+          "smart_plug",
+          "usb_outlet"
+        ],
+        "subcategories": [
+          {
+            "name": "1gang_ac",
+            "count": 4,
+            "examples": [
+              "energy_monitoring_plug",
+              "extension_plug",
+              "smart_plug"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "climate",
+        "count": 9,
+        "drivers": [
+          "hvac_controller",
+          "moes_006_series_thermostat_adds_support_for_the_006_series_thermostathttpsmoeshouse",
+          "radiator_valve",
+          "smart_radiator_valve",
+          "smart_water_valve"
+        ],
+        "subcategories": [
+          {
+            "name": "1gang_ac",
+            "count": 9,
+            "examples": [
+              "hvac_controller",
+              "moes_006_series_thermostat_adds_support_for_the_006_series_thermostathttpsmoeshouse",
+              "radiator_valve"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "switches",
+        "count": 32,
+        "drivers": [
+          "mini_switch",
+          "relay_switch_1gang",
+          "remote_switch",
+          "smart_switch_1gang_hybrid",
+          "smart_switch_2gang_hybrid"
+        ],
+        "subcategories": [
+          {
+            "name": "1gang_ac",
+            "count": 5,
+            "examples": [
+              "mini_switch",
+              "relay_switch_1gang",
+              "snzb-01_switch"
+            ]
+          },
+          {
+            "name": "1gang_battery",
+            "count": 6,
+            "examples": [
+              "remote_switch",
+              "wireless_switch",
+              "wireless_switch_1gang_cr2032"
+            ]
+          },
+          {
+            "name": "1gang_hybrid",
+            "count": 1,
+            "examples": [
+              "smart_switch_1gang_hybrid"
+            ]
+          },
+          {
+            "name": "2gang_hybrid",
+            "count": 1,
+            "examples": [
+              "smart_switch_2gang_hybrid"
+            ]
+          },
+          {
+            "name": "3gang_hybrid",
+            "count": 1,
+            "examples": [
+              "smart_switch_3gang_hybrid"
+            ]
+          },
+          {
+            "name": "4gang_hybrid",
+            "count": 1,
+            "examples": [
+              "smart_switch_4gang_hybrid"
+            ]
+          },
+          {
+            "name": "2gang_ac",
+            "count": 2,
+            "examples": [
+              "touch_switch_2gang",
+              "wall_switch_2gang_ac"
+            ]
+          },
+          {
+            "name": "3gang_ac",
+            "count": 2,
+            "examples": [
+              "touch_switch_3gang",
+              "wall_switch_3gang_ac"
+            ]
+          },
+          {
+            "name": "4gang_ac",
+            "count": 2,
+            "examples": [
+              "touch_switch_4gang",
+              "wall_switch_4gang_ac"
+            ]
+          },
+          {
+            "name": "1gang_dc",
+            "count": 1,
+            "examples": [
+              "wall_switch_1gang_dc"
+            ]
+          },
+          {
+            "name": "2gang_dc",
+            "count": 1,
+            "examples": [
+              "wall_switch_2gang_dc"
+            ]
+          },
+          {
+            "name": "3gang_dc",
+            "count": 1,
+            "examples": [
+              "wall_switch_3gang_dc"
+            ]
+          },
+          {
+            "name": "4gang_dc",
+            "count": 1,
+            "examples": [
+              "wall_switch_4gang_dc"
+            ]
+          },
+          {
+            "name": "5gang_ac",
+            "count": 1,
+            "examples": [
+              "wall_switch_5gang_ac"
+            ]
+          },
+          {
+            "name": "6gang_ac",
+            "count": 1,
+            "examples": [
+              "wall_switch_6gang_ac"
+            ]
+          },
+          {
+            "name": "2gang_battery",
+            "count": 1,
+            "examples": [
+              "wireless_switch_2gang_cr2032"
+            ]
+          },
+          {
+            "name": "3gang_battery",
+            "count": 1,
+            "examples": [
+              "wireless_switch_3gang_cr2032"
+            ]
+          },
+          {
+            "name": "4gang_battery",
+            "count": 1,
+            "examples": [
+              "wireless_switch_4gang_cr2032"
+            ]
+          },
+          {
+            "name": "5gang_battery",
+            "count": 1,
+            "examples": [
+              "wireless_switch_5gang_cr2032"
+            ]
+          },
+          {
+            "name": "6gang_battery",
+            "count": 1,
+            "examples": [
+              "wireless_switch_6gang_cr2032"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "remotes",
+        "count": 7,
+        "drivers": [
+          "scene_controller_2button",
+          "scene_controller_4button",
+          "scene_controller_6button",
+          "scene_controller_8button",
+          "scene_controller_battery"
+        ],
+        "subcategories": [
+          {
+            "name": "2gang_ac",
+            "count": 1,
+            "examples": [
+              "scene_controller_2button"
+            ]
+          },
+          {
+            "name": "4gang_ac",
+            "count": 1,
+            "examples": [
+              "scene_controller_4button"
+            ]
+          },
+          {
+            "name": "6gang_ac",
+            "count": 1,
+            "examples": [
+              "scene_controller_6button"
+            ]
+          },
+          {
+            "name": "8gang_ac",
+            "count": 1,
+            "examples": [
+              "scene_controller_8button"
+            ]
+          },
+          {
+            "name": "1gang_battery",
+            "count": 3,
+            "examples": [
+              "scene_controller_battery",
+              "styrbar_remote",
+              "symfonisk_remote"
+            ]
+          }
+        ]
+      }
+    ],
+    "unifiedCategories": {
+      "wall_switch_1gang_ac": [
+        "wall_switch_1gang_ac"
+      ],
+      "wall_switch_2gang_ac": [
+        "wall_switch_2gang_ac"
+      ],
+      "wall_switch_3gang_ac": [
+        "wall_switch_3gang_ac"
+      ],
+      "wall_switch_4gang_ac": [
+        "wall_switch_4gang_ac"
+      ],
+      "wall_switch_5gang_ac": [
+        "wall_switch_5gang_ac"
+      ],
+      "wall_switch_6gang_ac": [
+        "wall_switch_6gang_ac"
+      ],
+      "wall_switch_1gang_dc": [
+        "wall_switch_1gang_dc"
+      ],
+      "wall_switch_2gang_dc": [
+        "wall_switch_2gang_dc"
+      ],
+      "wall_switch_3gang_dc": [
+        "wall_switch_3gang_dc"
+      ],
+      "wireless_switch_1gang_cr2032": [
+        "wireless_switch",
+        "wireless_switch_1gang_cr2032",
+        "aqara_wireless_remote_switch",
+        "aqara_wireless_mini_switch",
+        "sonoff_wireless_switch"
+      ],
+      "wireless_switch_2gang_cr2032": [
+        "wireless_switch_2gang_cr2032"
+      ],
+      "wireless_switch_3gang_cr2032": [
+        "wireless_switch_3gang_cr2032"
+      ],
+      "wireless_switch_4gang_cr2032": [
+        "wireless_switch_4gang_cr2032"
+      ],
+      "wireless_switch_5gang_cr2032": [
+        "wireless_switch_5gang_cr2032"
+      ],
+      "wireless_switch_6gang_cr2032": [
+        "wireless_switch_6gang_cr2032"
+      ],
+      "touch_switch_1gang": [
+        "touch_switch_1gang"
+      ],
+      "touch_switch_2gang": [
+        "touch_switch_2gang"
+      ],
+      "touch_switch_3gang": [
+        "touch_switch_3gang"
+      ],
+      "touch_switch_4gang": [
+        "touch_switch_4gang"
+      ],
+      "smart_switch_1gang_hybrid": [
+        "smart_switch_1gang_hybrid"
+      ],
+      "smart_switch_2gang_hybrid": [
+        "smart_switch_2gang_hybrid"
+      ],
+      "smart_switch_3gang_hybrid": [
+        "smart_switch_3gang_hybrid"
+      ],
+      "smart_switch_4gang_hybrid": [
+        "smart_switch_4gang_hybrid"
+      ],
+      "motion_sensor_pir_battery": [
+        "motion_sensor_pir_battery"
+      ],
+      "motion_sensor_pir_ac": [
+        "motion_sensor_pir_ac"
+      ],
+      "motion_sensor_radar_battery": [],
+      "motion_sensor_radar_ac": [],
+      "motion_sensor_mmwave_battery": [],
+      "motion_sensor_mmwave_ac": [
+        "motion_sensor_mmwave"
+      ],
+      "temperature_humidity_sensor": [
+        "temperature_controller",
+        "temperature_humidity_sensor",
+        "temperature_sensor",
+        "sonoff_temperature_humidity_sensor"
+      ],
+      "door_window_sensor": [
+        "door_controller",
+        "door_lock",
+        "door_window_sensor",
+        "doorbell",
+        "garage_door_opener",
+        "outdoor_light_controller",
+        "outdoor_siren",
+        "smart_doorbell",
+        "tuya_outdoor_siren",
+        "tuya_smart_doorbell",
+        "tuya_garage_door_opener"
+      ],
+      "water_leak_sensor": [
+        "smart_water_valve",
+        "water_leak_sensor",
+        "water_valve",
+        "tuya_smart_water_valve"
+      ],
+      "smoke_detector": [
+        "smoke_detector"
+      ],
+      "gas_detector": [
+        "gas_detector"
+      ],
+      "co2_sensor": [
+        "co2_sensor",
+        "tuya_co2_sensor"
+      ],
+      "air_quality_sensor": [
+        "air_quality_monitor",
+        "tuya_air_quality_monitor"
+      ],
+      "presence_sensor_radar": [
+        "for_tze200kb5noeto_human_presence_detector_with_pir_24g_radar_httpswww",
+        "presence_sensor_radar"
+      ],
+      "smart_bulb_white": [
+        "smart_bulb_white"
+      ],
+      "smart_bulb_tunable": [
+        "smart_bulb_tunable"
+      ],
+      "smart_bulb_rgb": [
+        "smart_bulb_rgb"
+      ],
+      "led_strip_controller": [
+        "led_strip_controller"
+      ],
+      "ceiling_light_controller": [
+        "ceiling_light_controller"
+      ],
+      "outdoor_light_controller": [],
+      "smart_spot": [
+        "smart_spot"
+      ],
+      "thermostat": [
+        "moes_006_series_thermostat_adds_support_for_the_006_series_thermostathttpsmoeshouse",
+        "thermostat"
+      ],
+      "radiator_valve": [
+        "radiator_valve",
+        "smart_radiator_valve",
+        "tuya_smart_radiator_valve"
+      ],
+      "temperature_controller": [],
+      "hvac_controller": [
+        "hvac_controller"
+      ],
+      "fan_controller": [
+        "fan_controller"
+      ],
+      "smart_lock": [
+        "smart_lock"
+      ],
+      "keypad_lock": [
+        "keypad_lock"
+      ],
+      "fingerprint_lock": [
+        "fingerprint_lock"
+      ],
+      "door_controller": [],
+      "garage_door_controller": [],
+      "smart_plug": [
+        "smart_plug"
+      ],
+      "extension_plug": [
+        "extension_plug"
+      ],
+      "energy_monitoring_plug": [
+        "energy_monitoring_plug"
+      ],
+      "usb_outlet": [
+        "usb_outlet"
+      ],
+      "relay_switch_1gang": [
+        "relay_switch_1gang"
+      ],
+      "roller_blind_controller": [
+        "roller_blind_controller"
+      ],
+      "venetian_blind_controller": [],
+      "curtain_motor": [
+        "curtain_motor",
+        "smart_curtain_motor",
+        "tuya_smart_curtain_motor"
+      ],
+      "shade_controller": [
+        "shade_controller"
+      ],
+      "projector_screen_controller": [
+        "projector_screen_controller"
+      ],
+      "scene_controller_2button": [
+        "scene_controller_2button"
+      ],
+      "scene_controller_4button": [
+        "scene_controller_4button"
+      ],
+      "scene_controller_6button": [
+        "scene_controller_6button"
+      ],
+      "scene_controller_8button": [
+        "scene_controller_8button"
+      ],
+      "scene_controller_battery": []
+    }
+  },
+  "recommendations": [
+    {
+      "type": "driver_completion",
+      "priority": "high",
+      "description": "Add 14 missing drivers from historical analysis",
+      "action": "Create missing driver folders with proper structure"
+    },
+    {
+      "type": "category_organization",
+      "priority": "medium",
+      "description": "Implement unified category system with button count and power type separation",
+      "action": "Reorganize drivers according to unified category structure"
+    }
+  ]
+}

@@ -1,9 +1,0 @@
-{
-  "name": "Aqara_Door_Lock_Standard_Default",
-  "type": "tuya_zigbee",
-  "category": "lock",
-  "source": "drivers\\tuya_zigbee\\models\\aqara-door-338_lock_standard_default",
-  "created": "2025-08-14T15:21:23.481Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

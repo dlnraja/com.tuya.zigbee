@@ -1,9 +1,0 @@
-{
-  "name": "Template_Tuya_Dp_Thermostat",
-  "type": "tuya_zigbee",
-  "category": "sensor-temp",
-  "source": "drivers\\tuya_zigbee\\models\\template_tuya_dp_thermostat_1",
-  "created": "2025-08-14T15:24:28.370Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

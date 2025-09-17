@@ -137,77 +137,112 @@ jobs:
         
         echo "version_type=$VERSION_TYPE" >> $GITHUB_OUTPUT
         
-    - name: 🚀 Direct Homey Publication
+    - name: 🚀 Enhanced Automated Publication
       id: publish
-      timeout-minutes: 5
+      timeout-minutes: 10
       env:
         HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
       run: |
         set -e
-        echo "Starting publication process..."
+        echo "🚀 Starting enhanced publication with stdio automation..."
         
-        # Create responses file for automated input
-        cat > responses.txt << 'EOF'
-        y
-        y
+        # Install expect for advanced prompt handling
+        sudo apt-get update && sudo apt-get install -y expect
         
-        Ultimate Zigbee Hub v${{ steps.version.outputs.version }} - Automated release with 1500+ Zigbee devices from 80+ manufacturers. Full SDK3 compliance.
-        EOF
+        # Method 1: Use our Node.js automation script
+        echo "Method 1: Using Node.js stdio automation..."
+        if node scripts/automation/ultimate-publish-nodejs.js auto "${{ steps.version.outputs.changelog }}"; then
+          echo "✅ Published successfully via Node.js automation!"
+          exit 0
+        fi
         
-        # Try multiple publication methods
-        echo "Method 1: Using expect script..."
-        cat > publish.exp << 'EOF'
+        # Method 2: Enhanced expect script with better prompt detection
+        echo "Method 2: Using enhanced expect script..."
+        cat > enhanced-publish.exp << 'EOF'
         #!/usr/bin/expect -f
-        set timeout 300
+        set timeout 600
+        set changelog {${{ steps.version.outputs.changelog }}}
         
+        log_user 1
         spawn homey app publish
         
-        # Handle all prompts in sequence
         expect {
-          -re "uncommitted changes.*continue.*" {
+          -re "There are uncommitted changes.*Continue.*" {
             send "y\r"
             exp_continue
           }
-          -re "update.*version number.*" {
+          -re "Do you want to update your app version.*" {
             send "y\r"
             exp_continue
           }
-          -re "Patch.*Minor.*Major" {
-            send "3\r"
+          -re "What kind of update is this.*" {
+            send "patch\r"
             exp_continue
           }
-          -re "changelog|What's new" {
-            send "Ultimate Zigbee Hub v1.0.30 - Enhanced automation with improved version control, 1500+ devices, 80+ manufacturers, SDK3 compliant\r"
+          -re "Please enter a changelog.*" {
+            send "$changelog\r"
             exp_continue
           }
-          "published" {
+          -re "Are you sure you want to publish.*" {
+            send "y\r"
+            exp_continue
+          }
+          -re "published successfully|Published!|✓.*published" {
+            puts "✅ Publication completed successfully!"
             exit 0
           }
-          timeout {
+          -re "error|Error|ERROR|failed|Failed|FAILED" {
+            puts "❌ Publication error detected"
             exit 1
+          }
+          timeout {
+            puts "⏰ Publication timeout"
+            exit 1
+          }
+          eof {
+            puts "📋 Process ended"
+            exit 0
           }
         }
         EOF
         
-        chmod +x publish.exp
-        if ./publish.exp; then
-          echo "✅ Published successfully via expect!"
+        chmod +x enhanced-publish.exp
+        if ./enhanced-publish.exp; then
+          echo "✅ Published successfully via enhanced expect!"
           exit 0
         fi
         
-        echo "Method 2: Using input redirection..."
-        if cat responses.txt | homey app publish; then
-          echo "✅ Published successfully via input redirection!"
+        # Method 3: Direct stdio with heredoc
+        echo "Method 3: Using direct stdio automation..."
+        cat > publish-stdio.sh << 'EOF'
+        #!/bin/bash
+        {
+          echo "y"                    # Uncommitted changes
+          echo "y"                    # Update version
+          echo "patch"                # Version type
+          echo "${{ steps.version.outputs.changelog }}"  # Changelog
+          echo "y"                    # Confirm publish
+        } | homey app publish
+        EOF
+        
+        chmod +x publish-stdio.sh
+        if ./publish-stdio.sh; then
+          echo "✅ Published successfully via stdio!"
           exit 0
         fi
         
-        echo "Method 3: Using yes command..."
-        if yes | homey app publish; then
-          echo "✅ Published successfully via yes!"
-          exit 0
+        # Method 4: PowerShell automation (fallback)
+        echo "Method 4: Attempting PowerShell automation fallback..."
+        if command -v pwsh >/dev/null 2>&1; then
+          pwsh -File scripts/automation/ultimate-publish-automation.ps1 -Version auto -ChangelogMessage "${{ steps.version.outputs.changelog }}" -Force
+          if [ $? -eq 0 ]; then
+            echo "✅ Published successfully via PowerShell!"
+            exit 0
+          fi
         fi
         
-        echo "❌ All publication methods failed"
+        echo "❌ All publication methods failed - manual intervention required"
+        echo "🔍 Please check Homey token validity and app status"
         exit 1
 
     - name: 📊 Generate Publication Report

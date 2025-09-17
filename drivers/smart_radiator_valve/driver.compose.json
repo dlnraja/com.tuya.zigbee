@@ -1,0 +1,58 @@
+{
+  "id": "smart_radiator_valve",
+  "name": {
+    "en": "Smart Radiator Valve"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": "_TZ3000_",
+    "productId": "_TZ3000_TK4SQT1X",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          513,
+          1026
+        ],
+        "bindings": [
+          513,
+          1026
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "./assets/large.png",
+      "instruction": {
+        "en": "Follow the pairing instructions for your Smart Radiator Valve."
+      }
+    },
+    "manufacturerIds": [
+      4417,
+      4098,
+      4619,
+      4742,
+      4648,
+      4644,
+      4455,
+      4659,
+      4660
+    ],
+    "productIds": []
+  },
+  "settings": []
+}

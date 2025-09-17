@@ -1,9 +1,0 @@
-{
-  "name": "Aqara_Fan_Plug",
-  "type": "tuya_zigbee",
-  "category": "fan",
-  "source": "drivers\\tuya_zigbee\\models\\aqara-fan-459_plug_standard_default_1",
-  "created": "2025-08-14T15:21:24.373Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

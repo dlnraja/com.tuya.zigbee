@@ -1,0 +1,69 @@
+{
+  "id": "wireless_switch",
+  "name": {
+    "en": "Wireless Switch"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": "_TZ3000_",
+    "productId": "_TZ3000_3VJSNLPG",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          1794,
+          57344
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "./assets/large.png",
+      "instruction": {
+        "en": "Follow the pairing instructions for your Wireless Switch."
+      }
+    },
+    "manufacturerIds": [
+      "1005007769107379",
+      4417,
+      4098,
+      4619,
+      4742,
+      4648,
+      4644,
+      4455,
+      4659,
+      4660
+    ],
+    "productIds": [
+      1043,
+      1044,
+      1045
+    ]
+  },
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "settings": []
+}

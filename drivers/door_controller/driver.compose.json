@@ -51,11 +51,15 @@
       4659,
       4660
     ],
-    "productIds": []
+    "productIds": [
+      1025,
+      1029,
+      1030
+    ]
   },
   "images": {
-    "small": "/drivers/led_strip/assets/small.png",
-    "large": "/drivers/led_strip/assets/large.png",
+    "small": "./assets/small.png",
+    "large": "./assets/large.png",
     "xlarge": "/drivers/led_strip/assets/xlarge.png"
   },
   "community": {
@@ -67,7 +71,13 @@
     "type": "generic",
     "last_updated": "2025-09-15T19:34:02.943Z"
   },
-  "id": "led_strip_controller",
+  "id": "door_controller",
   "manufacturerId": [],
-  "productId": []
+  "productId": [],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }
