@@ -19,30 +19,12 @@ on:
       custom_changelog:
         description: 'Custom changelog message'
         required: false
-        type: string
 
 env:
   NODE_VERSION: '18'
   HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
 
 jobs:
-  validate:
-    name: 🔍 Validation & Testing
-    runs-on: ubuntu-latest
-    
-    steps:
-    - name: 📥 Checkout Repository
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-        
-    - name: 🔧 Setup Node.js ${{ env.NODE_VERSION }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-        cache: 'npm'
-        
-    - name: 🏗️ Install Dependencies
       run: |
         npm install -g homey@latest
         npm install --production
