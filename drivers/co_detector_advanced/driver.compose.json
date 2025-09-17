@@ -1,0 +1,48 @@
+{
+  "name": {
+    "en": "Carbon Monoxide Detector Advanced",
+    "fr": "Détecteur de Monoxyde de Carbone Avancé"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_co",
+    "measure_co",
+    "alarm_battery",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "measure_co": {
+      "title": {
+        "en": "CO Level",
+        "fr": "Niveau CO"
+      },
+      "units": {
+        "en": "ppm"
+      }
+    }
+  },
+  "energy": {
+    "batteries": ["CR123A", "9V"]
+  },
+  "zigbee": {
+    "manufacturerName": ["_TZE200_yojqa8xn", "_TZE204_ntcy3xu1"],
+    "productId": ["TS0601"],
+    "endpoints": {
+      "1": {
+        "clusters": [0, 1, 1280, 61184],
+        "bindings": [25]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/co_detector_advanced/assets/icon.svg",
+      "instruction": {
+        "en": "Press the test button for 3 seconds until LED blinks",
+        "fr": "Appuyez sur le bouton test pendant 3 secondes jusqu'à ce que la LED clignote"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/co_detector_advanced/assets/images/small.png",
+    "large": "/drivers/co_detector_advanced/assets/images/large.png"
+  }
+}

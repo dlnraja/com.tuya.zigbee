@@ -6,8 +6,11 @@
     "button.2"
   ],
   "zigbee": {
-    "manufacturerId": [],
-    "productId": [],
+    "productId": [
+      "TS0601",
+      "TS011F",
+      "TS0121"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -30,11 +33,41 @@
         "nl": "Schakel de schakelaar 3 keer snel aan/uit",
         "de": "Schalten Sie den Schalter 3 Mal schnell ein/aus"
       }
-    }
+    },
+    "manufacturerName": [
+      "_TZ3000_",
+      "_TZE200_",
+      "_TZE204_"
+    ],
+    "manufacturerIds": [
+      4417,
+      4098,
+      4619,
+      4742,
+      4648,
+      4644,
+      4455,
+      4659,
+      4660
+    ],
+    "productIds": [
+      1043,
+      1044,
+      1045
+    ]
   },
   "images": {
     "small": "/drivers/wall_switch_2gang_dc/assets/small.png",
     "large": "/drivers/wall_switch_2gang_dc/assets/large.png"
   },
-  "settings": []
+  "settings": [],
+  "name": {
+    "en": "Wall Switch 2gang DC"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }

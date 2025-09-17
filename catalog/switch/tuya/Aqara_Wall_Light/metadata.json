@@ -1,9 +1,0 @@
-{
-  "name": "Aqara_Wall_Light",
-  "type": "tuya_zigbee",
-  "category": "switch",
-  "source": "drivers\\tuya_zigbee\\models\\aqara-wall-455_light_standard_default_1",
-  "created": "2025-08-14T15:22:07.530Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

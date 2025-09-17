@@ -1,9 +1,0 @@
-{
-  "name": "Ikea_Wall_Light",
-  "type": "tuya_zigbee",
-  "category": "switch",
-  "source": "drivers\\tuya_zigbee\\models\\ikea-wall-993_light_standard_default_1",
-  "created": "2025-08-14T15:24:22.461Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

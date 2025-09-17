@@ -1,9 +1,0 @@
-{
-  "name": "Ikea_Motion_Device_Standard_Default",
-  "type": "tuya_zigbee",
-  "category": "sensor-motion",
-  "source": "drivers\\tuya_zigbee\\models\\ikea-motion-981_device_standard_default",
-  "created": "2025-08-14T15:23:56.991Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

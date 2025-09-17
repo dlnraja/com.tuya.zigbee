@@ -5,7 +5,9 @@
   },
   "class": "other",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "windowcoverings_state",
+    "windowcoverings_set"
   ],
   "zigbee": {
     "manufacturerName": [

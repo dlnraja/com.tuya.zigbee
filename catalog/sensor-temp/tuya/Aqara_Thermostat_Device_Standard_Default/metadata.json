@@ -1,9 +1,0 @@
-{
-  "name": "Aqara_Thermostat_Device_Standard_Default",
-  "type": "tuya_zigbee",
-  "category": "sensor-temp",
-  "source": "drivers\\tuya_zigbee\\models\\aqara-thermostat-831_device_standard_default",
-  "created": "2025-08-14T15:21:56.322Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

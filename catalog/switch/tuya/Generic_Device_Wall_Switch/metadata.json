@@ -1,9 +1,0 @@
-{
-  "name": "Generic_Device_Wall_Switch",
-  "type": "tuya_zigbee",
-  "category": "switch",
-  "source": "drivers\\tuya_zigbee\\models\\generic_device_wall_switch_8",
-  "created": "2025-08-14T15:22:43.584Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}

@@ -49,8 +49,8 @@
     ]
   },
   "images": {
-    "small": "/drivers/smoke_detector/assets/small.png",
-    "large": "/drivers/smoke_detector/assets/large.png",
+    "small": "./assets/small.png",
+    "large": "./assets/large.png",
     "xlarge": "/drivers/smoke_detector/assets/xlarge.png"
   },
   "energy": {
@@ -66,5 +66,12 @@
     ],
     "enriched": true,
     "last_updated": "2025-09-15T19:34:03.023Z"
-  }
+  },
+  "id": "co_detector",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }

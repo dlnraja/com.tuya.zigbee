@@ -1,0 +1,60 @@
+{
+  "name": {
+    "en": "Air Quality Monitor Advanced",
+    "fr": "Moniteur de Qualité d'Air Avancé"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity", 
+    "measure_co2",
+    "measure_pm25",
+    "alarm_co2",
+    "alarm_battery",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "measure_co2": {
+      "title": {
+        "en": "CO2 Level",
+        "fr": "Niveau CO2"
+      },
+      "units": {
+        "en": "ppm"
+      }
+    },
+    "measure_pm25": {
+      "title": {
+        "en": "PM2.5",
+        "fr": "PM2.5"
+      },
+      "units": {
+        "en": "μg/m³"
+      }
+    }
+  },
+  "energy": {
+    "batteries": ["CR2032", "AA"]
+  },
+  "zigbee": {
+    "manufacturerName": ["_TZE200_dwcarsat", "_TZE204_mhxn2jso"],
+    "productId": ["TS0601"],
+    "endpoints": {
+      "1": {
+        "clusters": [0, 4, 5, 61184],
+        "bindings": [25]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/air_quality_monitor_advanced/assets/icon.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button until the LED blinks",
+        "fr": "Appuyez et maintenez le bouton d'appairage jusqu'à ce que la LED clignote"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/air_quality_monitor_advanced/assets/images/small.png",
+    "large": "/drivers/air_quality_monitor_advanced/assets/images/large.png"
+  }
+}

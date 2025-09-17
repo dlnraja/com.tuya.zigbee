@@ -1,400 +1,2519 @@
 {
-  "timestamp": "2025-09-16T00:50:00Z",
-  "total_processed": 24,
-  "successful": 24,
-  "failed": 0,
-  "success_rate": 100.0,
-  "categories_processed": {
-    "hybrid_switches": 3,
-    "touch_switches": 3,
-    "battery_switches": 10,
-    "ac_wall_switches": 5,
-    "dc_switches": 3
+  "timestamp": "2025-09-16T19:49:13.033Z",
+  "summary": {
+    "analyzed": 105,
+    "generated": 105,
+    "errors": 0
   },
-  "results": [
+  "contexts": [
     {
-      "driver": "smart_switch_2gang_hybrid",
-      "status": "success",
-      "paths": {
-        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_switch_2gang_hybrid\\assets\\small.png",
-        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_switch_2gang_hybrid\\assets\\large.png"
+      "name": "air_conditioner_controller",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\air_conditioner_controller",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
       },
-      "context": {
-        "category": "hybrid_switches",
-        "button_count": 2,
-        "power_type": "hybrid",
-        "device_type": "switch",
-        "gang_count": 2,
-        "interface_type": "physical"
-      }
+      "iconType": "generic",
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "other",
+      "displayName": "Air Conditioner Controller"
     },
     {
-      "driver": "smart_switch_3gang_hybrid",
-      "status": "success",
-      "paths": {
-        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_switch_3gang_hybrid\\assets\\small.png",
-        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_switch_3gang_hybrid\\assets\\large.png"
+      "name": "air_quality_monitor",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\air_quality_monitor",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
       },
-      "context": {
-        "category": "hybrid_switches",
-        "button_count": 3,
-        "power_type": "hybrid",
-        "device_type": "switch",
-        "gang_count": 3,
-        "interface_type": "physical"
-      }
+      "iconType": "generic",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_battery"
+      ],
+      "class": "sensor",
+      "displayName": "Air Quality Monitor"
     },
     {
-      "driver": "smart_switch_4gang_hybrid",
-      "status": "success",
-      "paths": {
-        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_switch_4gang_hybrid\\assets\\small.png",
-        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_switch_4gang_hybrid\\assets\\large.png"
+      "name": "ceiling_light_controller",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\ceiling_light_controller",
+      "category": "lighting",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
       },
-      "context": {
-        "category": "hybrid_switches",
-        "button_count": 4,
-        "power_type": "hybrid",
-        "device_type": "switch",
-        "gang_count": 4,
-        "interface_type": "physical"
-      }
+      "iconType": "generic",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "class": "light",
+      "displayName": "Ceiling Light Controller"
     },
     {
-      "driver": "touch_switch_2gang",
-      "status": "success",
-      "paths": {
-        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_switch_2gang\\assets\\small.png",
-        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_switch_2gang\\assets\\large.png"
+      "name": "co2_sensor",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\co2_sensor",
+      "category": "sensors",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
       },
-      "context": {
-        "category": "touch_switches",
-        "button_count": 2,
-        "power_type": "unknown",
-        "device_type": "switch",
-        "gang_count": 2,
-        "interface_type": "touch"
-      }
+      "iconType": "generic",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery",
+        "measure_luminance"
+      ],
+      "class": "sensor",
+      "displayName": "Motion Sensor"
     },
     {
-      "driver": "touch_switch_3gang",
-      "status": "success",
-      "paths": {
-        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_switch_3gang\\assets\\small.png",
-        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_switch_3gang\\assets\\large.png"
+      "name": "co_detector",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\co_detector",
+      "category": "sensors",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
       },
-      "context": {
-        "category": "touch_switches",
-        "button_count": 3,
-        "power_type": "unknown",
-        "device_type": "switch",
-        "gang_count": 3,
-        "interface_type": "touch"
-      }
+      "iconType": "generic",
+      "capabilities": [],
+      "class": "sensor",
+      "displayName": "Smoke Detector"
     },
     {
-      "driver": "touch_switch_4gang",
-      "status": "success",
-      "paths": {
-        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_switch_4gang\\assets\\small.png",
-        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_switch_4gang\\assets\\large.png"
+      "name": "curtain_motor",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\curtain_motor",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
       },
-      "context": {
-        "category": "touch_switches",
-        "button_count": 4,
-        "power_type": "unknown",
-        "device_type": "switch",
-        "gang_count": 4,
-        "interface_type": "touch"
-      }
+      "iconType": "generic",
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "other",
+      "displayName": "Curtain Motor"
     },
     {
-      "driver": "wall_switch_2gang",
-      "status": "success",
-      "paths": {
-        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_2gang\\assets\\small.png",
-        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_2gang\\assets\\large.png"
+      "name": "dimmer",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\dimmer",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [
+        "dimmer"
+      ],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
       },
-      "context": {
-        "category": "battery_switches",
-        "button_count": 2,
-        "power_type": "unknown",
-        "device_type": "switch",
-        "gang_count": 2,
-        "interface_type": "physical"
-      }
+      "iconType": "generic",
+      "capabilities": [
+        "alarm_battery",
+        "light_hue",
+        "light_saturation"
+      ],
+      "class": "button",
+      "displayName": "Philips Hue Dimmer"
     },
     {
-      "driver": "wall_switch_2gang_ac",
-      "status": "success",
-      "paths": {
-        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_2gang_ac\\assets\\small.png",
-        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_2gang_ac\\assets\\large.png"
+      "name": "door_controller",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\door_controller",
+      "category": "security",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
       },
-      "context": {
-        "category": "ac_wall_switches",
-        "button_count": 2,
-        "power_type": "ac",
-        "device_type": "switch",
-        "gang_count": 2,
-        "interface_type": "physical"
-      }
+      "iconType": "contact",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "class": "light",
+      "displayName": "Led Strip"
     },
     {
-      "driver": "wall_switch_2gang_dc",
-      "status": "success",
-      "paths": {
-        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_2gang_dc\\assets\\small.png",
-        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_2gang_dc\\assets\\large.png"
+      "name": "door_lock",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\door_lock",
+      "category": "security",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
       },
-      "context": {
-        "category": "dc_switches",
-        "button_count": 2,
-        "power_type": "dc",
-        "device_type": "switch",
-        "gang_count": 2,
-        "interface_type": "physical"
-      }
+      "iconType": "contact",
+      "capabilities": [
+        "locked",
+        "alarm_tamper"
+      ],
+      "class": "lock",
+      "displayName": "Door Lock"
     },
     {
-      "driver": "wall_switch_3gang",
-      "status": "success",
-      "paths": {
-        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_3gang\\assets\\small.png",
-        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_3gang\\assets\\large.png"
+      "name": "door_window_sensor",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\door_window_sensor",
+      "category": "sensors",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
       },
-      "context": {
-        "category": "battery_switches",
-        "button_count": 3,
-        "power_type": "unknown",
-        "device_type": "switch",
-        "gang_count": 3,
-        "interface_type": "physical"
-      }
+      "iconType": "contact",
+      "capabilities": [
+        "onoff",
+        "measure_battery",
+        "measure_temperature",
+        "alarm_motion"
+      ],
+      "class": "sensor",
+      "displayName": "Door Window Sensor"
     },
     {
-      "driver": "wall_switch_3gang_ac",
-      "status": "success",
-      "paths": {
-        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_3gang_ac\\assets\\small.png",
-        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_3gang_ac\\assets\\large.png"
+      "name": "doorbell",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\doorbell",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
       },
-      "context": {
-        "category": "ac_wall_switches",
-        "button_count": 3,
-        "power_type": "ac",
-        "device_type": "switch",
-        "gang_count": 3,
-        "interface_type": "physical"
-      }
+      "iconType": "contact",
+      "capabilities": [
+        "locked",
+        "alarm_battery"
+      ],
+      "class": "lock",
+      "displayName": "Doorbell"
     },
     {
-      "driver": "wall_switch_3gang_dc",
-      "status": "success",
-      "paths": {
-        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_3gang_dc\\assets\\small.png",
-        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_3gang_dc\\assets\\large.png"
+      "name": "energy_monitoring_plug",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\energy_monitoring_plug",
+      "category": "power",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [
+        "energy_monitoring"
+      ],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
       },
-      "context": {
-        "category": "dc_switches",
-        "button_count": 3,
-        "power_type": "dc",
-        "device_type": "switch",
-        "gang_count": 3,
-        "interface_type": "physical"
-      }
+      "iconType": "generic",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power"
+      ],
+      "class": "socket",
+      "displayName": "Smart Plug"
     },
     {
-      "driver": "wall_switch_4gang",
-      "status": "success",
-      "paths": {
-        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_4gang\\assets\\small.png",
-        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_4gang\\assets\\large.png"
+      "name": "extension_plug",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\extension_plug",
+      "category": "power",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
       },
-      "context": {
-        "category": "battery_switches",
-        "button_count": 4,
-        "power_type": "unknown",
-        "device_type": "switch",
-        "gang_count": 4,
-        "interface_type": "physical"
-      }
+      "iconType": "generic",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "class": "socket",
+      "displayName": "Extension Plug"
     },
     {
-      "driver": "wall_switch_4gang_ac",
-      "status": "success",
-      "paths": {
-        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_4gang_ac\\assets\\small.png",
-        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_4gang_ac\\assets\\large.png"
+      "name": "fan_controller",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\fan_controller",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
       },
-      "context": {
-        "category": "ac_wall_switches",
-        "button_count": 4,
-        "power_type": "ac",
-        "device_type": "switch",
-        "gang_count": 4,
-        "interface_type": "physical"
-      }
+      "iconType": "generic",
+      "capabilities": [
+        "onoff",
+        "fan_speed"
+      ],
+      "class": "other",
+      "displayName": "Fan Controller"
     },
     {
-      "driver": "wall_switch_4gang_dc",
-      "status": "success",
-      "paths": {
-        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_4gang_dc\\assets\\small.png",
-        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_4gang_dc\\assets\\large.png"
+      "name": "fingerprint_lock",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\fingerprint_lock",
+      "category": "security",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
       },
-      "context": {
-        "category": "dc_switches",
-        "button_count": 4,
-        "power_type": "dc",
-        "device_type": "switch",
-        "gang_count": 4,
-        "interface_type": "physical"
-      }
+      "iconType": "lock",
+      "capabilities": [
+        "locked",
+        "measure_battery",
+        "alarm_generic"
+      ],
+      "class": "lock",
+      "displayName": "Fingerprint Lock"
     },
     {
-      "driver": "wall_switch_5gang",
-      "status": "success",
-      "paths": {
-        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_5gang\\assets\\small.png",
-        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_5gang\\assets\\large.png"
+      "name": "for_pirillumination_sensor_tze2003towulqd_resolves_780_1010",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\for_pirillumination_sensor_tze2003towulqd_resolves_780_1010",
+      "category": "sensors",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
       },
-      "context": {
-        "category": "battery_switches",
-        "button_count": 5,
-        "power_type": "unknown",
-        "device_type": "switch",
-        "gang_count": 5,
-        "interface_type": "physical"
-      }
+      "iconType": "generic",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_battery"
+      ],
+      "class": "sensor",
+      "displayName": "For Pirillumination Sensor Tze2003towulqd Resolves 780 1010"
     },
     {
-      "driver": "wall_switch_5gang_ac",
-      "status": "success",
-      "paths": {
-        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_5gang_ac\\assets\\small.png",
-        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_5gang_ac\\assets\\large.png"
+      "name": "for_tank_level_monitor_device",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\for_tank_level_monitor_device",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
       },
-      "context": {
-        "category": "ac_wall_switches",
-        "button_count": 5,
-        "power_type": "ac",
-        "device_type": "switch",
-        "gang_count": 5,
-        "interface_type": "physical"
-      }
+      "iconType": "generic",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_battery"
+      ],
+      "class": "sensor",
+      "displayName": "For Tank Level Monitor Device"
     },
     {
-      "driver": "wall_switch_6gang",
-      "status": "success",
-      "paths": {
-        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_6gang\\assets\\small.png",
-        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_6gang\\assets\\large.png"
+      "name": "for_tz3000fa9mlvja_and_tz3000rcuyhwe3",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\for_tz3000fa9mlvja_and_tz3000rcuyhwe3",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
       },
-      "context": {
-        "category": "battery_switches",
-        "button_count": 6,
-        "power_type": "unknown",
-        "device_type": "switch",
-        "gang_count": 6,
-        "interface_type": "physical"
-      }
+      "iconType": "generic",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_battery"
+      ],
+      "class": "sensor",
+      "displayName": "For Tz3000fa9mlvja And Tz3000rcuyhwe3"
     },
     {
-      "driver": "wall_switch_6gang_ac",
-      "status": "success",
-      "paths": {
-        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_6gang_ac\\assets\\small.png",
-        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_6gang_ac\\assets\\large.png"
+      "name": "for_tze200kb5noeto_human_presence_detector_with_pir_24g_radar_httpswww",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\for_tze200kb5noeto_human_presence_detector_with_pir_24g_radar_httpswww",
+      "category": "sensors",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [
+        "radar"
+      ],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
       },
-      "context": {
-        "category": "ac_wall_switches",
-        "button_count": 6,
-        "power_type": "ac",
-        "device_type": "switch",
-        "gang_count": 6,
-        "interface_type": "physical"
-      }
+      "iconType": "motion",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_battery"
+      ],
+      "class": "sensor",
+      "displayName": "For Tze200kb5noeto Human Presence Detector With Pir 24g Radar Httpswww"
     },
     {
-      "driver": "wireless_switch_2gang_cr2032",
-      "status": "success",
-      "paths": {
-        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_2gang_cr2032\\assets\\small.png",
-        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_2gang_cr2032\\assets\\large.png"
+      "name": "formaldehyde_sensor",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\formaldehyde_sensor",
+      "category": "sensors",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
       },
-      "context": {
-        "category": "battery_switches",
-        "button_count": 2,
-        "power_type": "unknown",
-        "device_type": "switch",
-        "gang_count": 2,
-        "interface_type": "wireless"
-      }
+      "iconType": "generic",
+      "capabilities": [
+        "measure_temperature",
+        "alarm_motion"
+      ],
+      "class": "sensor",
+      "displayName": "Formaldehyde Sensor"
     },
     {
-      "driver": "wireless_switch_3gang_cr2032",
-      "status": "success",
-      "paths": {
-        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_3gang_cr2032\\assets\\small.png",
-        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_3gang_cr2032\\assets\\large.png"
+      "name": "garage_door_opener",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\garage_door_opener",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
       },
-      "context": {
-        "category": "battery_switches",
-        "button_count": 3,
-        "power_type": "unknown",
-        "device_type": "switch",
-        "gang_count": 3,
-        "interface_type": "wireless"
-      }
+      "iconType": "contact",
+      "capabilities": [
+        "locked",
+        "alarm_battery"
+      ],
+      "class": "lock",
+      "displayName": "Garage Door Opener"
     },
     {
-      "driver": "wireless_switch_4gang_cr2032",
-      "status": "success",
-      "paths": {
-        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_4gang_cr2032\\assets\\small.png",
-        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_4gang_cr2032\\assets\\large.png"
+      "name": "gas_detector",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\gas_detector",
+      "category": "sensors",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
       },
-      "context": {
-        "category": "battery_switches",
-        "button_count": 4,
-        "power_type": "unknown",
-        "device_type": "switch",
-        "gang_count": 4,
-        "interface_type": "wireless"
-      }
+      "iconType": "generic",
+      "capabilities": [
+        "onoff",
+        "measure_temperature",
+        "alarm_motion"
+      ],
+      "class": "sensor",
+      "displayName": "Gas Detector"
     },
     {
-      "driver": "wireless_switch_5gang_cr2032",
-      "status": "success",
-      "paths": {
-        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_5gang_cr2032\\assets\\small.png",
-        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_5gang_cr2032\\assets\\large.png"
+      "name": "hvac_controller",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\hvac_controller",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
       },
-      "context": {
-        "category": "battery_switches",
-        "button_count": 5,
-        "power_type": "unknown",
-        "device_type": "switch",
-        "gang_count": 5,
-        "interface_type": "wireless"
-      }
+      "iconType": "generic",
+      "capabilities": [],
+      "class": "sensor",
+      "displayName": "Hvac Controller"
     },
     {
-      "driver": "wireless_switch_6gang_cr2032",
-      "status": "success",
-      "paths": {
-        "small": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_6gang_cr2032\\assets\\small.png",
-        "large": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_6gang_cr2032\\assets\\large.png"
+      "name": "keypad_lock",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\keypad_lock",
+      "category": "security",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
       },
-      "context": {
-        "category": "battery_switches",
-        "button_count": 6,
-        "power_type": "unknown",
-        "device_type": "switch",
-        "gang_count": 6,
-        "interface_type": "wireless"
-      }
+      "iconType": "lock",
+      "capabilities": [
+        "locked",
+        "measure_battery",
+        "alarm_generic"
+      ],
+      "class": "lock",
+      "displayName": "Keypad Lock"
+    },
+    {
+      "name": "led_strip_controller",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\led_strip_controller",
+      "category": "lighting",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "class": "light",
+      "displayName": "LED Strip Controller"
+    },
+    {
+      "name": "lux_sensor",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lux_sensor",
+      "category": "sensors",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "measure_temperature",
+        "alarm_motion"
+      ],
+      "class": "sensor",
+      "displayName": "Lux Sensor"
+    },
+    {
+      "name": "mini",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\mini",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "class": "light",
+      "displayName": "Sonoff Mini"
+    },
+    {
+      "name": "mini_switch",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\mini_switch",
+      "category": "switches",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "sensor",
+      "displayName": "Mini Switch"
+    },
+    {
+      "name": "moes_006_series_thermostat_adds_support_for_the_006_series_thermostathttpsmoeshouse",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\moes_006_series_thermostat_adds_support_for_the_006_series_thermostathttpsmoeshouse",
+      "category": "climate",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature"
+      ],
+      "class": "thermostat",
+      "displayName": "Moes 006 Series Thermostat Adds Support For The 006 Series Thermostathttpsmoeshouse"
+    },
+    {
+      "name": "motion_sensor_mmwave",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\motion_sensor_mmwave",
+      "category": "sensors",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "motion_sensor",
+      "features": [
+        "mmwave"
+      ],
+      "colorScheme": {
+        "primary": "#2196F3",
+        "secondary": "#54c9ff",
+        "accent": "#0063c0"
+      },
+      "iconType": "motion",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery"
+      ],
+      "class": "sensor",
+      "displayName": "Motion Sensor Mmwave"
+    },
+    {
+      "name": "motion_sensor_pir_ac",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\motion_sensor_pir_ac",
+      "category": "sensors",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "motion_sensor",
+      "features": [],
+      "colorScheme": {
+        "primary": "#2196F3",
+        "secondary": "#54c9ff",
+        "accent": "#0063c0"
+      },
+      "iconType": "motion",
+      "capabilities": [
+        "alarm_motion"
+      ],
+      "class": "sensor",
+      "displayName": "Motion Sensor PIR AC"
+    },
+    {
+      "name": "motion_sensor_pir_battery",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\motion_sensor_pir_battery",
+      "category": "sensors",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "battery",
+      "deviceType": "motion_sensor",
+      "features": [],
+      "colorScheme": {
+        "primary": "#2196F3",
+        "secondary": "#54c9ff",
+        "accent": "#0063c0"
+      },
+      "iconType": "motion",
+      "capabilities": [
+        "measure_battery",
+        "alarm_battery",
+        "alarm_motion"
+      ],
+      "class": "sensor",
+      "displayName": "Motion Sensor PIR Battery"
+    },
+    {
+      "name": "multisensor",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\multisensor",
+      "category": "sensors",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "onoff",
+        "measure_battery",
+        "measure_temperature",
+        "alarm_motion"
+      ],
+      "class": "sensor",
+      "displayName": "Multisensor"
+    },
+    {
+      "name": "noise_level_sensor",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\noise_level_sensor",
+      "category": "sensors",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "measure_temperature",
+        "alarm_motion"
+      ],
+      "class": "sensor",
+      "displayName": "Noise Level Sensor"
+    },
+    {
+      "name": "outdoor_light_controller",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\outdoor_light_controller",
+      "category": "lighting",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "contact",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "class": "light",
+      "displayName": "Outdoor Light Controller"
+    },
+    {
+      "name": "outdoor_siren",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\outdoor_siren",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "contact",
+      "capabilities": [
+        "locked",
+        "alarm_battery"
+      ],
+      "class": "lock",
+      "displayName": "Outdoor Siren"
+    },
+    {
+      "name": "pet_feeder",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\pet_feeder",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_battery"
+      ],
+      "class": "sensor",
+      "displayName": "Pet Feeder"
+    },
+    {
+      "name": "pm25_sensor",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\pm25_sensor",
+      "category": "sensors",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "measure_temperature",
+        "alarm_motion"
+      ],
+      "class": "sensor",
+      "displayName": "Pm25 Sensor"
+    },
+    {
+      "name": "presence_sensor_radar",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\presence_sensor_radar",
+      "category": "sensors",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "presence_sensor",
+      "features": [
+        "radar"
+      ],
+      "colorScheme": {
+        "primary": "#03A9F4",
+        "secondary": "#36dcff",
+        "accent": "#0076c1"
+      },
+      "iconType": "motion",
+      "capabilities": [
+        "onoff",
+        "measure_temperature",
+        "alarm_motion"
+      ],
+      "class": "sensor",
+      "displayName": "Presence Sensor Radar"
+    },
+    {
+      "name": "pressure_sensor",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\pressure_sensor",
+      "category": "sensors",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "measure_battery",
+        "measure_temperature",
+        "alarm_motion"
+      ],
+      "class": "sensor",
+      "displayName": "Pressure Sensor"
+    },
+    {
+      "name": "projector_screen_controller",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\projector_screen_controller",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "other",
+      "displayName": "Projector Screen Controller"
+    },
+    {
+      "name": "radiator_valve",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\radiator_valve",
+      "category": "climate",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "measure_battery",
+        "onoff"
+      ],
+      "class": "other",
+      "displayName": "Radiator Valve"
+    },
+    {
+      "name": "relay_switch_1gang",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\relay_switch_1gang",
+      "category": "switches",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "class": "socket",
+      "displayName": "Sonoff Basic"
+    },
+    {
+      "name": "remote_switch",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\remote_switch",
+      "category": "switches",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "socket",
+      "displayName": "Remote Switch"
+    },
+    {
+      "name": "request_944",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\request_944",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_battery"
+      ],
+      "class": "sensor",
+      "displayName": "Request 944"
+    },
+    {
+      "name": "roller_blind_controller",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\roller_blind_controller",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "windowcoverings_state",
+        "dim"
+      ],
+      "class": "sensor",
+      "displayName": "Curtain Motor"
+    },
+    {
+      "name": "scene_controller_2button",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\scene_controller_2button",
+      "category": "other",
+      "buttonCount": 2,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "onoff",
+        "button.2",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "class": "button",
+      "displayName": "Scene Controller 2button"
+    },
+    {
+      "name": "scene_controller_4button",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\scene_controller_4button",
+      "category": "other",
+      "buttonCount": 4,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "onoff",
+        "button.2",
+        "button.3",
+        "button.4",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "class": "button",
+      "displayName": "Scene Controller 4button"
+    },
+    {
+      "name": "scene_controller_6button",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\scene_controller_6button",
+      "category": "other",
+      "buttonCount": 6,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "onoff",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5",
+        "button.6",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "class": "button",
+      "displayName": "Scene Controller 6button"
+    },
+    {
+      "name": "scene_controller_8button",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\scene_controller_8button",
+      "category": "other",
+      "buttonCount": 8,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "onoff",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5",
+        "button.6",
+        "button.7",
+        "button.8",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "class": "button",
+      "displayName": "Scene Controller 8button"
+    },
+    {
+      "name": "scene_controller_battery",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\scene_controller_battery",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "battery",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "sensor",
+      "displayName": "Scene Switch"
+    },
+    {
+      "name": "shade_controller",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\shade_controller",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "other",
+      "displayName": "Shade Controller"
+    },
+    {
+      "name": "smart_bulb_rgb",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_bulb_rgb",
+      "category": "lighting",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [
+        "rgb"
+      ],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "bulb",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature",
+        "light_hue",
+        "light_saturation"
+      ],
+      "class": "light",
+      "displayName": "Smart Bulb"
+    },
+    {
+      "name": "smart_bulb_tunable",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_bulb_tunable",
+      "category": "lighting",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "bulb",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature"
+      ],
+      "class": "light",
+      "displayName": "Smart Bulb Tunable"
+    },
+    {
+      "name": "smart_bulb_white",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_bulb_white",
+      "category": "lighting",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "bulb",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "class": "light",
+      "displayName": "Smart Bulb White"
+    },
+    {
+      "name": "smart_curtain_motor",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_curtain_motor",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "windowcoverings_state",
+        "windowcoverings_set"
+      ],
+      "class": "windowcoverings",
+      "displayName": "Smart Curtain Motor"
+    },
+    {
+      "name": "smart_doorbell",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_doorbell",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "contact",
+      "capabilities": [
+        "locked",
+        "alarm_battery"
+      ],
+      "class": "lock",
+      "displayName": "Smart Doorbell"
+    },
+    {
+      "name": "smart_garden_sprinkler",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_garden_sprinkler",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_battery"
+      ],
+      "class": "sensor",
+      "displayName": "Smart Garden Sprinkler"
+    },
+    {
+      "name": "smart_lock",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_lock",
+      "category": "security",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "lock",
+      "capabilities": [
+        "locked",
+        "alarm_generic"
+      ],
+      "class": "sensor",
+      "displayName": "Smart Lock"
+    },
+    {
+      "name": "smart_plug",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_plug",
+      "category": "power",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "class": "socket",
+      "displayName": "Smart Plug"
+    },
+    {
+      "name": "smart_radiator_valve",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_radiator_valve",
+      "category": "climate",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature"
+      ],
+      "class": "thermostat",
+      "displayName": "Smart Radiator Valve"
+    },
+    {
+      "name": "smart_spot",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_spot",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "class": "light",
+      "displayName": "Smart Spot"
+    },
+    {
+      "name": "smart_switch_1gang_hybrid",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_switch_1gang_hybrid",
+      "category": "switches",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light",
+      "displayName": "Smart Switch 1gang Hybrid"
+    },
+    {
+      "name": "smart_switch_2gang_hybrid",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_switch_2gang_hybrid",
+      "category": "switches",
+      "buttonCount": 2,
+      "gangCount": 2,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "onoff",
+        "button.2"
+      ],
+      "class": "light",
+      "displayName": "Smart Switch 2gang Hybrid"
+    },
+    {
+      "name": "smart_switch_3gang_hybrid",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_switch_3gang_hybrid",
+      "category": "switches",
+      "buttonCount": 3,
+      "gangCount": 3,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "onoff",
+        "button.2",
+        "button.3"
+      ],
+      "class": "light",
+      "displayName": "Smart Switch 3gang Hybrid"
+    },
+    {
+      "name": "smart_switch_4gang_hybrid",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_switch_4gang_hybrid",
+      "category": "switches",
+      "buttonCount": 4,
+      "gangCount": 4,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "onoff",
+        "button.2",
+        "button.3",
+        "button.4"
+      ],
+      "class": "light",
+      "displayName": "Smart Switch 4gang Hybrid"
+    },
+    {
+      "name": "smart_water_valve",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_water_valve",
+      "category": "climate",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature"
+      ],
+      "class": "thermostat",
+      "displayName": "Smart Water Valve"
+    },
+    {
+      "name": "smoke_detector",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smoke_detector",
+      "category": "sensors",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "onoff",
+        "measure_battery",
+        "measure_temperature",
+        "alarm_motion"
+      ],
+      "class": "sensor",
+      "displayName": "Smoke Detector"
+    },
+    {
+      "name": "snzb-01_switch",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\snzb-01_switch",
+      "category": "switches",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "sensor",
+      "displayName": "Snzb-01 Switch"
+    },
+    {
+      "name": "soil_moisture_sensor",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\soil_moisture_sensor",
+      "category": "sensors",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "onoff",
+        "measure_battery",
+        "measure_temperature",
+        "alarm_motion"
+      ],
+      "class": "sensor",
+      "displayName": "Soil Moisture Sensor"
+    },
+    {
+      "name": "styrbar_remote",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\styrbar_remote",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "alarm_battery"
+      ],
+      "class": "button",
+      "displayName": "IKEA Styrbar Remote"
+    },
+    {
+      "name": "symfonisk_remote",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\symfonisk_remote",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "alarm_battery"
+      ],
+      "class": "button",
+      "displayName": "IKEA Symfonisk Remote"
+    },
+    {
+      "name": "temperature_controller",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\temperature_controller",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "temperature_sensor",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "temperature",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature"
+      ],
+      "class": "thermostat",
+      "displayName": "Temperature Controller"
+    },
+    {
+      "name": "temperature_humidity_sensor",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\temperature_humidity_sensor",
+      "category": "sensors",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "temperature_sensor",
+      "features": [],
+      "colorScheme": {
+        "primary": "#00BCD4",
+        "secondary": "#33efff",
+        "accent": "#0089a1"
+      },
+      "iconType": "temperature",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery",
+        "alarm_motion"
+      ],
+      "class": "sensor",
+      "displayName": "Temperature Humidity Sensor"
+    },
+    {
+      "name": "temperature_sensor",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\temperature_sensor",
+      "category": "sensors",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "temperature_sensor",
+      "features": [],
+      "colorScheme": {
+        "primary": "#00BCD4",
+        "secondary": "#33efff",
+        "accent": "#0089a1"
+      },
+      "iconType": "temperature",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_battery"
+      ],
+      "class": "sensor",
+      "displayName": "Temperature Sensor"
+    },
+    {
+      "name": "thermostat",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\thermostat",
+      "category": "climate",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "thermostat_mode",
+        "measure_battery"
+      ],
+      "class": "sensor",
+      "displayName": "Thermostat"
+    },
+    {
+      "name": "touch_dimmer",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_dimmer",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [
+        "dimmer"
+      ],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "other",
+      "displayName": "Touch Dimmer"
+    },
+    {
+      "name": "touch_switch_1gang",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_switch_1gang",
+      "category": "switches",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "touch_switch",
+      "features": [],
+      "colorScheme": {
+        "primary": "#2E7D32",
+        "secondary": "#61b065",
+        "accent": "#004a00"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "button.1",
+        "onoff"
+      ],
+      "class": "socket",
+      "displayName": "Touch Switch 1gang"
+    },
+    {
+      "name": "touch_switch_2gang",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_switch_2gang",
+      "category": "switches",
+      "buttonCount": 2,
+      "gangCount": 2,
+      "powerType": "ac",
+      "deviceType": "touch_switch",
+      "features": [],
+      "colorScheme": {
+        "primary": "#2E7D32",
+        "secondary": "#61b065",
+        "accent": "#004a00"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "button.1",
+        "button.2",
+        "onoff"
+      ],
+      "class": "socket",
+      "displayName": "Touch Switch 2gang"
+    },
+    {
+      "name": "touch_switch_3gang",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_switch_3gang",
+      "category": "switches",
+      "buttonCount": 3,
+      "gangCount": 3,
+      "powerType": "ac",
+      "deviceType": "touch_switch",
+      "features": [],
+      "colorScheme": {
+        "primary": "#2E7D32",
+        "secondary": "#61b065",
+        "accent": "#004a00"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "onoff"
+      ],
+      "class": "socket",
+      "displayName": "Touch Switch 3gang"
+    },
+    {
+      "name": "touch_switch_4gang",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_switch_4gang",
+      "category": "switches",
+      "buttonCount": 4,
+      "gangCount": 4,
+      "powerType": "ac",
+      "deviceType": "touch_switch",
+      "features": [],
+      "colorScheme": {
+        "primary": "#2E7D32",
+        "secondary": "#61b065",
+        "accent": "#004a00"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4",
+        "onoff"
+      ],
+      "class": "socket",
+      "displayName": "Touch Switch 4gang"
+    },
+    {
+      "name": "tvoc_sensor",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tvoc_sensor",
+      "category": "sensors",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "measure_temperature",
+        "alarm_motion"
+      ],
+      "class": "sensor",
+      "displayName": "Tvoc Sensor"
+    },
+    {
+      "name": "tz3000fa9mlvja_and_tz3000rcuyhwe3",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tz3000fa9mlvja_and_tz3000rcuyhwe3",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_battery"
+      ],
+      "class": "sensor",
+      "displayName": "Tz3000fa9mlvja And Tz3000rcuyhwe3"
+    },
+    {
+      "name": "usb_outlet",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\usb_outlet",
+      "category": "power",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "class": "socket",
+      "displayName": "USB Outlet"
+    },
+    {
+      "name": "vibration_sensor",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\vibration_sensor",
+      "category": "sensors",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "onoff",
+        "measure_battery",
+        "measure_temperature",
+        "alarm_motion"
+      ],
+      "class": "sensor",
+      "displayName": "Vibration Sensor"
+    },
+    {
+      "name": "wall_switch_1gang_ac",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_1gang_ac",
+      "category": "switches",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "wall_switch",
+      "features": [],
+      "colorScheme": {
+        "primary": "#4CAF50",
+        "secondary": "#7fe283",
+        "accent": "#197c1d"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light",
+      "displayName": "Wall Switch 1gang AC"
+    },
+    {
+      "name": "wall_switch_1gang_dc",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_1gang_dc",
+      "category": "switches",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "wall_switch",
+      "features": [],
+      "colorScheme": {
+        "primary": "#4CAF50",
+        "secondary": "#7fe283",
+        "accent": "#197c1d"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "light",
+      "displayName": "Wall Switch 1gang DC"
+    },
+    {
+      "name": "wall_switch_2gang_ac",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_2gang_ac",
+      "category": "switches",
+      "buttonCount": 2,
+      "gangCount": 2,
+      "powerType": "ac",
+      "deviceType": "wall_switch",
+      "features": [],
+      "colorScheme": {
+        "primary": "#4CAF50",
+        "secondary": "#7fe283",
+        "accent": "#197c1d"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "onoff",
+        "button.2"
+      ],
+      "class": "light",
+      "displayName": "Wall Switch 2gang AC"
+    },
+    {
+      "name": "wall_switch_2gang_dc",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_2gang_dc",
+      "category": "switches",
+      "buttonCount": 2,
+      "gangCount": 2,
+      "powerType": "ac",
+      "deviceType": "wall_switch",
+      "features": [],
+      "colorScheme": {
+        "primary": "#4CAF50",
+        "secondary": "#7fe283",
+        "accent": "#197c1d"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "onoff",
+        "button.2"
+      ],
+      "class": "light",
+      "displayName": "Wall Switch 2gang DC"
+    },
+    {
+      "name": "wall_switch_3gang_ac",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_3gang_ac",
+      "category": "switches",
+      "buttonCount": 3,
+      "gangCount": 3,
+      "powerType": "ac",
+      "deviceType": "wall_switch",
+      "features": [],
+      "colorScheme": {
+        "primary": "#4CAF50",
+        "secondary": "#7fe283",
+        "accent": "#197c1d"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "onoff",
+        "button.2",
+        "button.3"
+      ],
+      "class": "light",
+      "displayName": "Wall Switch 3gang AC"
+    },
+    {
+      "name": "wall_switch_3gang_dc",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_3gang_dc",
+      "category": "switches",
+      "buttonCount": 3,
+      "gangCount": 3,
+      "powerType": "ac",
+      "deviceType": "wall_switch",
+      "features": [],
+      "colorScheme": {
+        "primary": "#4CAF50",
+        "secondary": "#7fe283",
+        "accent": "#197c1d"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "onoff",
+        "button.2",
+        "button.3"
+      ],
+      "class": "light",
+      "displayName": "Wall Switch 3gang DC"
+    },
+    {
+      "name": "wall_switch_4gang_ac",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_4gang_ac",
+      "category": "switches",
+      "buttonCount": 4,
+      "gangCount": 4,
+      "powerType": "ac",
+      "deviceType": "wall_switch",
+      "features": [],
+      "colorScheme": {
+        "primary": "#4CAF50",
+        "secondary": "#7fe283",
+        "accent": "#197c1d"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "onoff",
+        "button.2",
+        "button.3",
+        "button.4"
+      ],
+      "class": "light",
+      "displayName": "Wall Switch 4gang AC"
+    },
+    {
+      "name": "wall_switch_4gang_dc",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_4gang_dc",
+      "category": "switches",
+      "buttonCount": 4,
+      "gangCount": 4,
+      "powerType": "ac",
+      "deviceType": "wall_switch",
+      "features": [],
+      "colorScheme": {
+        "primary": "#4CAF50",
+        "secondary": "#7fe283",
+        "accent": "#197c1d"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "onoff",
+        "button.2",
+        "button.3",
+        "button.4"
+      ],
+      "class": "light",
+      "displayName": "Wall Switch 4gang DC"
+    },
+    {
+      "name": "wall_switch_5gang_ac",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_5gang_ac",
+      "category": "switches",
+      "buttonCount": 5,
+      "gangCount": 5,
+      "powerType": "ac",
+      "deviceType": "wall_switch",
+      "features": [],
+      "colorScheme": {
+        "primary": "#4CAF50",
+        "secondary": "#7fe283",
+        "accent": "#197c1d"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "onoff",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5"
+      ],
+      "class": "light",
+      "displayName": "Wall Switch 5gang AC"
+    },
+    {
+      "name": "wall_switch_6gang_ac",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_6gang_ac",
+      "category": "switches",
+      "buttonCount": 6,
+      "gangCount": 6,
+      "powerType": "ac",
+      "deviceType": "wall_switch",
+      "features": [],
+      "colorScheme": {
+        "primary": "#4CAF50",
+        "secondary": "#7fe283",
+        "accent": "#197c1d"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "onoff",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5",
+        "button.6"
+      ],
+      "class": "light",
+      "displayName": "Wall Switch 6gang AC"
+    },
+    {
+      "name": "water_leak_sensor",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\water_leak_sensor",
+      "category": "sensors",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "onoff",
+        "measure_battery",
+        "measure_temperature",
+        "alarm_motion"
+      ],
+      "class": "sensor",
+      "displayName": "Water Leak Sensor"
+    },
+    {
+      "name": "water_valve",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\water_valve",
+      "category": "climate",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature"
+      ],
+      "class": "thermostat",
+      "displayName": "Water Valve"
+    },
+    {
+      "name": "wireless_switch",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch",
+      "category": "switches",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "battery",
+      "deviceType": "wireless_switch",
+      "features": [],
+      "colorScheme": {
+        "primary": "#8BC34A",
+        "secondary": "#bef67d",
+        "accent": "#589017"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "socket",
+      "displayName": "Wireless Switch"
+    },
+    {
+      "name": "wireless_switch_1gang_cr2032",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_1gang_cr2032",
+      "category": "switches",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "battery",
+      "deviceType": "wireless_switch",
+      "features": [],
+      "colorScheme": {
+        "primary": "#8BC34A",
+        "secondary": "#bef67d",
+        "accent": "#589017"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "alarm_battery"
+      ],
+      "class": "button",
+      "displayName": "Aqara Button"
+    },
+    {
+      "name": "wireless_switch_2gang_cr2032",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_2gang_cr2032",
+      "category": "switches",
+      "buttonCount": 2,
+      "gangCount": 2,
+      "powerType": "battery",
+      "deviceType": "wireless_switch",
+      "features": [],
+      "colorScheme": {
+        "primary": "#8BC34A",
+        "secondary": "#bef67d",
+        "accent": "#589017"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "onoff",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "class": "button",
+      "displayName": "Wireless Switch 2gang CR2032"
+    },
+    {
+      "name": "wireless_switch_3gang_cr2032",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_3gang_cr2032",
+      "category": "switches",
+      "buttonCount": 3,
+      "gangCount": 3,
+      "powerType": "battery",
+      "deviceType": "wireless_switch",
+      "features": [],
+      "colorScheme": {
+        "primary": "#8BC34A",
+        "secondary": "#bef67d",
+        "accent": "#589017"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "onoff",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "class": "button",
+      "displayName": "Wireless Switch 3gang CR2032"
+    },
+    {
+      "name": "wireless_switch_4gang_cr2032",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_4gang_cr2032",
+      "category": "switches",
+      "buttonCount": 4,
+      "gangCount": 4,
+      "powerType": "battery",
+      "deviceType": "wireless_switch",
+      "features": [],
+      "colorScheme": {
+        "primary": "#8BC34A",
+        "secondary": "#bef67d",
+        "accent": "#589017"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "onoff",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "class": "button",
+      "displayName": "Wireless Switch 4gang CR2032"
+    },
+    {
+      "name": "wireless_switch_5gang_cr2032",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_5gang_cr2032",
+      "category": "switches",
+      "buttonCount": 5,
+      "gangCount": 5,
+      "powerType": "battery",
+      "deviceType": "wireless_switch",
+      "features": [],
+      "colorScheme": {
+        "primary": "#8BC34A",
+        "secondary": "#bef67d",
+        "accent": "#589017"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "onoff",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "class": "button",
+      "displayName": "Wireless Switch 5gang CR2032"
+    },
+    {
+      "name": "wireless_switch_6gang_cr2032",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_6gang_cr2032",
+      "category": "switches",
+      "buttonCount": 6,
+      "gangCount": 6,
+      "powerType": "battery",
+      "deviceType": "wireless_switch",
+      "features": [],
+      "colorScheme": {
+        "primary": "#8BC34A",
+        "secondary": "#bef67d",
+        "accent": "#589017"
+      },
+      "iconType": "switch",
+      "capabilities": [
+        "onoff",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5",
+        "button.6",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "class": "button",
+      "displayName": "Wireless Switch 6gang CR2032"
+    },
+    {
+      "name": "zbbridge",
+      "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\zbbridge",
+      "category": "other",
+      "buttonCount": 1,
+      "gangCount": 1,
+      "powerType": "ac",
+      "deviceType": "generic",
+      "features": [],
+      "colorScheme": {
+        "primary": "#607D8B",
+        "secondary": "#93b0be",
+        "accent": "#2d4a58"
+      },
+      "iconType": "generic",
+      "capabilities": [
+        "onoff"
+      ],
+      "class": "other",
+      "displayName": "Sonoff Zbbridge"
     }
-  ]
+  ],
+  "generated": [
+    "air_conditioner_controller",
+    "air_quality_monitor",
+    "ceiling_light_controller",
+    "co2_sensor",
+    "co_detector",
+    "curtain_motor",
+    "dimmer",
+    "door_controller",
+    "door_lock",
+    "door_window_sensor",
+    "doorbell",
+    "energy_monitoring_plug",
+    "extension_plug",
+    "fan_controller",
+    "fingerprint_lock",
+    "for_pirillumination_sensor_tze2003towulqd_resolves_780_1010",
+    "for_tank_level_monitor_device",
+    "for_tz3000fa9mlvja_and_tz3000rcuyhwe3",
+    "for_tze200kb5noeto_human_presence_detector_with_pir_24g_radar_httpswww",
+    "formaldehyde_sensor",
+    "garage_door_opener",
+    "gas_detector",
+    "hvac_controller",
+    "keypad_lock",
+    "led_strip_controller",
+    "lux_sensor",
+    "mini",
+    "mini_switch",
+    "moes_006_series_thermostat_adds_support_for_the_006_series_thermostathttpsmoeshouse",
+    "motion_sensor_mmwave",
+    "motion_sensor_pir_ac",
+    "motion_sensor_pir_battery",
+    "multisensor",
+    "noise_level_sensor",
+    "outdoor_light_controller",
+    "outdoor_siren",
+    "pet_feeder",
+    "pm25_sensor",
+    "presence_sensor_radar",
+    "pressure_sensor",
+    "projector_screen_controller",
+    "radiator_valve",
+    "relay_switch_1gang",
+    "remote_switch",
+    "request_944",
+    "roller_blind_controller",
+    "scene_controller_2button",
+    "scene_controller_4button",
+    "scene_controller_6button",
+    "scene_controller_8button",
+    "scene_controller_battery",
+    "shade_controller",
+    "smart_bulb_rgb",
+    "smart_bulb_tunable",
+    "smart_bulb_white",
+    "smart_curtain_motor",
+    "smart_doorbell",
+    "smart_garden_sprinkler",
+    "smart_lock",
+    "smart_plug",
+    "smart_radiator_valve",
+    "smart_spot",
+    "smart_switch_1gang_hybrid",
+    "smart_switch_2gang_hybrid",
+    "smart_switch_3gang_hybrid",
+    "smart_switch_4gang_hybrid",
+    "smart_water_valve",
+    "smoke_detector",
+    "snzb-01_switch",
+    "soil_moisture_sensor",
+    "styrbar_remote",
+    "symfonisk_remote",
+    "temperature_controller",
+    "temperature_humidity_sensor",
+    "temperature_sensor",
+    "thermostat",
+    "touch_dimmer",
+    "touch_switch_1gang",
+    "touch_switch_2gang",
+    "touch_switch_3gang",
+    "touch_switch_4gang",
+    "tvoc_sensor",
+    "tz3000fa9mlvja_and_tz3000rcuyhwe3",
+    "usb_outlet",
+    "vibration_sensor",
+    "wall_switch_1gang_ac",
+    "wall_switch_1gang_dc",
+    "wall_switch_2gang_ac",
+    "wall_switch_2gang_dc",
+    "wall_switch_3gang_ac",
+    "wall_switch_3gang_dc",
+    "wall_switch_4gang_ac",
+    "wall_switch_4gang_dc",
+    "wall_switch_5gang_ac",
+    "wall_switch_6gang_ac",
+    "water_leak_sensor",
+    "water_valve",
+    "wireless_switch",
+    "wireless_switch_1gang_cr2032",
+    "wireless_switch_2gang_cr2032",
+    "wireless_switch_3gang_cr2032",
+    "wireless_switch_4gang_cr2032",
+    "wireless_switch_5gang_cr2032",
+    "wireless_switch_6gang_cr2032",
+    "zbbridge"
+  ],
+  "errors": [],
+  "guidelines": {
+    "sdk3_compliance": "All images follow Homey SDK3 dimensions (75x75, 500x500)",
+    "johan_benz_standards": "Colors and design follow Johan Benz professional standards",
+    "contextual_accuracy": "Images generated based on driver context analysis",
+    "gang_representation": "Multi-gang switches show correct number of buttons"
+  }
 }

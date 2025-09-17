@@ -50,6 +50,25 @@
         "de": "Use the Philips Hue Bridge or hold the setup button for 3 seconds.",
         "nl": "Use the Philips Hue Bridge or hold the setup button for 3 seconds."
       }
-    }
-  }
+    },
+    "manufacturerIds": [
+      4417,
+      4098,
+      4619,
+      4742,
+      4648,
+      4644,
+      4455,
+      4659,
+      4660
+    ],
+    "productIds": []
+  },
+  "id": "dimmer",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }

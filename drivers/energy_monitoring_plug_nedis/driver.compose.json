@@ -1,0 +1,69 @@
+{
+  "name": {
+    "en": "Energy Monitoring Plug (Nedis)",
+    "fr": "Prise Moniteur d'Énergie (Nedis)"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power",
+    "measure_voltage",
+    "measure_current"
+  ],
+  "capabilitiesOptions": {
+    "measure_power": {
+      "title": {
+        "en": "Power",
+        "fr": "Puissance"
+      },
+      "units": {
+        "en": "W"
+      }
+    }
+  },
+  "energy": {
+    "cumulative": true
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_typdpbpg",
+      "_TZ3000_g5xawfcq", 
+      "_TZ3000_hyfvrar3",
+      "Nedis"
+    ],
+    "productId": [
+      "TS011F",
+      "ZBSP10WT"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          1794,
+          2820
+        ],
+        "bindings": [
+          6,
+          1794,
+          2820
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/energy_monitoring_plug_nedis/assets/images/large.png",
+      "instruction": {
+        "en": "Press and hold the button for 3 seconds until LED blinks",
+        "fr": "Appuyez et maintenez le bouton pendant 3 secondes jusqu'à ce que la LED clignote"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/energy_monitoring_plug_nedis/assets/images/small.png",
+    "large": "/drivers/energy_monitoring_plug_nedis/assets/images/large.png"
+  }
+}

@@ -95,6 +95,22 @@ function Update-AppVersion {
                 # Fix encoding again after modification
                 & node -e "const fs = require('fs'); const content = fs.readFileSync('app.json', 'utf8').replace(/^\uFEFF/, ''); fs.writeFileSync('app.json', content, 'utf8');"
                 
+                # Also update .homeycompose/app.json to keep sources in sync
+                $composeJsonPath = Join-Path $AppPath ".homeycompose/app.json"
+                if (Test-Path $composeJsonPath) {
+                    try {
+                        $composeJson = Get-Content $composeJsonPath -Raw | ConvertFrom-Json
+                        $composeJson.version = $newVersion
+                        $composeJson | ConvertTo-Json -Depth 10 | Set-Content $composeJsonPath -Encoding UTF8
+                        & node -e "const fs = require('fs'); const content = fs.readFileSync('.homeycompose/app.json', 'utf8').replace(/^\uFEFF/, ''); fs.writeFileSync('.homeycompose/app.json', content, 'utf8');"
+                        Write-Log "Updated .homeycompose/app.json version to $newVersion"
+                    } catch {
+                        Write-Log "Failed to update .homeycompose/app.json: $($_.Exception.Message)" -Level "ERROR"
+                    }
+                } else {
+                    Write-Log ".homeycompose/app.json not found; skipping compose source update" -Level "ERROR"
+                }
+                
                 Write-Log "Version updated from $currentVersion to $newVersion"
                 return $newVersion
             }

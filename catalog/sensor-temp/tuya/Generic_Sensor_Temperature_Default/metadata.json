@@ -1,9 +1,0 @@
-{
-  "name": "Generic_Sensor_Temperature_Default",
-  "type": "tuya_zigbee",
-  "category": "sensor-temp",
-  "source": "drivers\\tuya_zigbee\\models\\generic_sensor_temperature_default_1",
-  "created": "2025-08-14T15:22:45.308Z",
-  "version": "3.4.1",
-  "sdk": "3.4.1"
-}
