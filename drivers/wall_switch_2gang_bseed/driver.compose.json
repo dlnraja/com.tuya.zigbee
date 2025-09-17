@@ -1,0 +1,69 @@
+{
+  "name": {
+    "en": "Wall Switch 2-Gang BSEED",
+    "fr": "Interrupteur Mur 2-Gang BSEED"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "button.2"
+  ],
+  "capabilitiesOptions": {
+    "button.2": {
+      "title": {
+        "en": "Switch 2",
+        "fr": "Interrupteur 2"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "BSEED",
+      "_TZ3000_bseed",
+      "_TZE200_bseed",
+      "_TZE204_bseed"
+    ],
+    "productId": [
+      "TS0012",
+      "TS0002",
+      "TS011F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      },
+      "2": {
+        "clusters": [
+          6,
+          8
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/wall_switch_2gang_bseed/assets/images/large.png",
+      "instruction": {
+        "en": "Press both switches simultaneously for 3 seconds",
+        "fr": "Appuyez sur les deux interrupteurs simultanément pendant 3 secondes"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/wall_switch_2gang_bseed/assets/images/small.png",
+    "large": "/drivers/wall_switch_2gang_bseed/assets/images/large.png"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "2.0.0",
+  "version": "2.0.9",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -1142,6 +1142,76 @@
       ]
     },
     {
+      "name": {
+        "en": "Energy Monitoring Plug (Nedis)",
+        "fr": "Prise Moniteur d'Énergie (Nedis)"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "capabilitiesOptions": {
+        "measure_power": {
+          "title": {
+            "en": "Power",
+            "fr": "Puissance"
+          },
+          "units": {
+            "en": "W"
+          }
+        }
+      },
+      "energy": {
+        "cumulative": true
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_typdpbpg",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_hyfvrar3",
+          "Nedis"
+        ],
+        "productId": [
+          "TS011F",
+          "ZBSP10WT"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              6,
+              1794,
+              2820
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/energy_monitoring_plug_nedis/assets/images/large.png",
+          "instruction": {
+            "en": "Press and hold the button for 3 seconds until LED blinks",
+            "fr": "Appuyez et maintenez le bouton pendant 3 secondes jusqu'à ce que la LED clignote"
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/energy_monitoring_plug_nedis/assets/images/small.png",
+        "large": "/drivers/energy_monitoring_plug_nedis/assets/images/large.png"
+      },
+      "id": "energy_monitoring_plug_nedis"
+    },
+    {
       "id": "extension_plug",
       "name": {
         "en": "Extension Plug"
@@ -1817,6 +1887,69 @@
       ]
     },
     {
+      "name": {
+        "en": "LED Strip WoodUpp CREATE",
+        "fr": "Bande LED WoodUpp CREATE"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature"
+      ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "WoodUpp",
+          "_TZ3000_woodupp",
+          "_TZE200_woodupp"
+        ],
+        "productId": [
+          "CREATE LED",
+          "TS0505A",
+          "TS0505B"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8,
+              768
+            ],
+            "bindings": [
+              6,
+              8,
+              768
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/led_strip_woodupp/assets/images/large.png",
+          "instruction": {
+            "en": "Press and hold power button for 3 seconds until LED blinks",
+            "fr": "Appuyez et maintenez le bouton d'alimentation pendant 3 secondes jusqu'à ce que la LED clignote"
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/led_strip_woodupp/assets/images/small.png",
+        "large": "/drivers/led_strip_woodupp/assets/images/large.png"
+      },
+      "id": "led_strip_woodupp"
+    },
+    {
       "id": "lux_sensor",
       "name": {
         "en": "Lux Sensor"
@@ -2029,6 +2162,72 @@
         ]
       },
       "settings": []
+    },
+    {
+      "name": {
+        "en": "PIR Motion Sensor HOBEIAN",
+        "fr": "Capteur de Mouvement PIR HOBEIAN"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery",
+        "measure_luminance"
+      ],
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Motion",
+            "fr": "Mouvement"
+          }
+        }
+      },
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "HOBEIAN",
+          "_TZ3000_hobeian",
+          "_TZE200_hobeian"
+        ],
+        "productId": [
+          "ZG-204Z",
+          "TS0202"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1280,
+              1030,
+              1024
+            ],
+            "bindings": [
+              1,
+              1030,
+              1024
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/motion_sensor_hobeian/assets/images/large.png",
+          "instruction": {
+            "en": "Press the pairing button until LED blinks rapidly",
+            "fr": "Appuyez sur le bouton d'appairage jusqu'à ce que la LED clignote rapidement"
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/motion_sensor_hobeian/assets/images/small.png",
+        "large": "/drivers/motion_sensor_hobeian/assets/images/large.png"
+      },
+      "id": "motion_sensor_hobeian"
     },
     {
       "name": {
@@ -2999,6 +3198,86 @@
       "connectivity": [
         "zigbee"
       ]
+    },
+    {
+      "name": {
+        "en": "mmWave Radar Motion Sensor",
+        "fr": "Capteur Mouvement Radar mmWave"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery",
+        "measure_luminance",
+        "alarm_generic"
+      ],
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Motion (Radar)",
+            "fr": "Mouvement (Radar)"
+          }
+        },
+        "alarm_generic": {
+          "title": {
+            "en": "Presence Detection",
+            "fr": "Détection de Présence"
+          }
+        }
+      },
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AA"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_ztc6ggyl",
+          "_TZE201_ztc6ggyl",
+          "_TZE202_ztc6ggyl",
+          "_TZE203_ztc6ggyl",
+          "_TZE204_ztc6ggyl",
+          "_TZE204_qasjif9e",
+          "_TZE204_ijxvkhd0",
+          "_TZE204_sxm7l9xa",
+          "_TZE284_radar_mm"
+        ],
+        "productId": [
+          "TS0601",
+          "TS0202"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1280,
+              1030,
+              1024,
+              61184
+            ],
+            "bindings": [
+              1,
+              1030,
+              1024
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/radar_motion_sensor_mmwave/assets/images/large.png",
+          "instruction": {
+            "en": "Press and hold pairing button for 5 seconds until LED blinks rapidly",
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/radar_motion_sensor_mmwave/assets/images/small.png",
+        "large": "/drivers/radar_motion_sensor_mmwave/assets/images/large.png"
+      },
+      "id": "radar_motion_sensor_mmwave"
     },
     {
       "id": "radiator_valve",
@@ -6503,7 +6782,12 @@
         "manufacturerName": [
           "_TZ3000_",
           "_TZE200_",
-          "_TZE204_"
+          "_TZE204_",
+          "_TZE284_",
+          "_TYZB01_",
+          "_TZ3210_",
+          "Tuya",
+          "BSEED"
         ],
         "manufacturerIds": [
           4417,
@@ -6650,7 +6934,15 @@
         "manufacturerName": [
           "_TZ3000_",
           "_TZE200_",
-          "_TZE204_"
+          "_TZE204_",
+          "_TZE284_",
+          "_TYZB01_",
+          "_TZ3210_",
+          "_TZ3400_",
+          "Tuya",
+          "MOES",
+          "BSEED",
+          "Lonsonho"
         ],
         "manufacturerIds": [
           4417,
@@ -7646,6 +7938,95 @@
       "connectivity": [
         "zigbee"
       ]
+    },
+    {
+      "name": {
+        "en": "Wireless Switch 4-Gang (CR2450)",
+        "fr": "Interrupteur Sans Fil 4-Gang (CR2450)"
+      },
+      "class": "button",
+      "capabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4",
+        "measure_battery"
+      ],
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1"
+          }
+        },
+        "button.2": {
+          "title": {
+            "en": "Button 2",
+            "fr": "Bouton 2"
+          }
+        },
+        "button.3": {
+          "title": {
+            "en": "Button 3",
+            "fr": "Bouton 3"
+          }
+        },
+        "button.4": {
+          "title": {
+            "en": "Button 4",
+            "fr": "Bouton 4"
+          }
+        }
+      },
+      "energy": {
+        "batteries": [
+          "CR2450",
+          "CR2032"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE204_",
+          "_TZE284_",
+          "_TYZB01_",
+          "Tuya",
+          "MOES"
+        ],
+        "productId": [
+          "TS0044",
+          "TS004F",
+          "TS0042"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/wireless_switch_4gang_cr2450/assets/images/large.png",
+          "instruction": {
+            "en": "Press any button 3 times rapidly",
+            "fr": "Appuyez sur n'importe quel bouton 3 fois rapidement"
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/wireless_switch_4gang_cr2450/assets/images/small.png",
+        "large": "/drivers/wireless_switch_4gang_cr2450/assets/images/large.png"
+      },
+      "id": "wireless_switch_4gang_cr2450"
     },
     {
       "id": "wireless_switch_5gang_cr2032",
