@@ -1,0 +1,52 @@
+{
+  "name": {
+    "en": "USB Outlet Advanced"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "measure_current",
+    "measure_voltage"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_",
+      "_TZE200_",
+      "_TZE204_",
+      "_TZE284_",
+      "_TZ3000_18ejxno0",
+      "_TZ3000_hhiodade",
+      "_TZ3000_v1w2k9dd",
+      "_TZ3000_kfu8zapd",
+      "_TZE284_uqfph8ah",
+      "_TZE284_myd45weu",
+      "_TZE284_n4ttsck2",
+      "_TZE200_2aaelwxk",
+      "_TZE200_3towulqd",
+      "_TZE204_bjzrowv2",
+      "_TZE284_gyzlwu5q",
+      "_TZ3000_c8ozah8n",
+      "_TZE200_ztc6ggyl",
+      "_TZE204_qasjif9e",
+      "_TZE204_ijxvkhd0",
+      "MOES",
+      "BSEED",
+      "Nedis"
+    ],
+    "productId": [
+      "TS011F",
+      "TS0121"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [0, 3, 4, 5, 6, 1794, 2820],
+        "bindings": [6, 1794, 2820]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/usb_outlet_advanced/assets/images/small.png",
+    "large": "/drivers/usb_outlet_advanced/assets/images/large.png"
+  }
+}
