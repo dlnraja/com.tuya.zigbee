@@ -1,0 +1,36 @@
+{
+  "name": {
+    "en": "Temperature Humidity Sensor v1w2k9dd"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+  ],
+  "energy": {
+    "batteries": ["CR2032", "AAA"]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_v1w2k9dd",
+      "_TZ3000_",
+      "_TZE200_",
+      "_TZE204_",
+      "Mefiboset666"
+    ],
+    "productId": [
+      "TS0201"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [0, 1, 3, 1026, 1029],
+        "bindings": [1026, 1029]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/temp_humid_sensor_v1w2k9dd/assets/images/small.png",
+    "large": "/drivers/temp_humid_sensor_v1w2k9dd/assets/images/large.png"
+  }
+}

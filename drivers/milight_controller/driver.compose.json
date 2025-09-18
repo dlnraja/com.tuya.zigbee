@@ -1,0 +1,37 @@
+{
+  "name": {
+    "en": "Mi-Light Controller"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature",
+    "light_mode"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "Mi-Light",
+      "_TZ3000_",
+      "_TZE200_",
+      "_TZE204_",
+      "rockybeachradio"
+    ],
+    "productId": [
+      "T0202",
+      "TZ0304"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [0, 3, 4, 5, 6, 8, 768],
+        "bindings": [6, 8, 768]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/milight_controller/assets/images/small.png",
+    "large": "/drivers/milight_controller/assets/images/large.png"
+  }
+}
