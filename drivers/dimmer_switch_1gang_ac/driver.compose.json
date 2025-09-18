@@ -1,0 +1,36 @@
+{
+  "name": {
+    "en": "Dimmer Switch 1-Gang AC"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_",
+      "_TZE200_", 
+      "_TZE204_",
+      "BSEED",
+      "MOES",
+      "Lonsonho",
+      "Tuya"
+    ],
+    "productId": [
+      "TS0501A",
+      "TS0505A", 
+      "TS011F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [0, 3, 4, 5, 6, 8],
+        "bindings": [6, 8]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/dimmer_switch_1gang_ac/assets/images/small.png",
+    "large": "/drivers/dimmer_switch_1gang_ac/assets/images/large.png"
+  }
+}
