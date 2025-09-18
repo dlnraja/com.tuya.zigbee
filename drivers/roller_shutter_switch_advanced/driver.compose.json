@@ -1,0 +1,36 @@
+{
+  "name": {
+    "en": "Roller Shutter Switch Advanced"
+  },
+  "class": "windowcoverings",
+  "capabilities": [
+    "windowcoverings_closed",
+    "windowcoverings_set",
+    "button.up",
+    "button.down", 
+    "button.stop",
+    "measure_power"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE284_uqfph8ah",
+      "_TZE284_",
+      "_TZE200_",
+      "_TZ3000_",
+      "Quintvermeij"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [0, 3, 4, 5, 6, 61184, 1794],
+        "bindings": [6, 1794]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/roller_shutter_switch_advanced/assets/images/small.png",
+    "large": "/drivers/roller_shutter_switch_advanced/assets/images/large.png"
+  }
+}

@@ -8,8 +8,8 @@
     "button.2"
   ],
   "zigbee": {
-    "manufacturerName": ["_TZ3000_", "_TZE200_", "_TZE204_", "BSEED", "MOES"],
-    "productId": ["TS0012", "TS011F"],
+    "manufacturerName": ["_TZ3000_", "_TZE200_", "_TZE204_", "_TZE284_", "_TZ3000_18ejxno0", "_TZ3000_hhiodade", "_TZ3000_v1w2k9dd", "_TZ3000_kfu8zapd", "_TZE284_uqfph8ah", "_TZE284_myd45weu", "_TZE284_n4ttsck2", "_TZE200_2aaelwxk", "_TZE200_3towulqd", "_TZE204_bjzrowv2", "_TZE284_gyzlwu5q", "_TZ3000_c8ozah8n", "BSEED", "MOES", "Lonsonho", "GIRIER"],
+    "productId": ["TS0012", "TS011F", "_TZ3000_18ejxno0"],
     "endpoints": {
       "1": {
         "clusters": [0, 3, 6, 8],
