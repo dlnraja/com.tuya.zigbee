@@ -43,10 +43,15 @@
       "_TYZB01_",
       "_TZ3210_",
       "_TZ3400_",
+      "_TZ3000_kfu8zapd",
+      "_TZE204_bjzrowv2",
+      "_TZE284_gyzlwu5q",
       "Tuya",
       "MOES",
       "BSEED",
-      "Lonsonho"
+      "Lonsonho",
+      "GIRIER",
+      "EweLink"
     ],
     "manufacturerIds": [
       4417,
@@ -71,7 +76,10 @@
   },
   "settings": [],
   "name": {
-    "en": "Wall Switch 3gang AC"
+    "en": "Wall Switch 3-Gang AC",
+    "fr": "Interrupteur Mural 3-Gang AC",
+    "nl": "Wandschakelaar 3-Gang AC",
+    "de": "Wandschalter 3-Gang AC"
   },
   "platforms": [
     "local"
