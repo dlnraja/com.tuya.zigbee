@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "2.0.9",
+  "version": "2.1.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -11,7 +11,7 @@
     "en": "Ultimate Zigbee Hub"
   },
   "description": {
-    "en": "Ultimate Zigbee Hub v2.1.7 - Complete unbranded Zigbee ecosystem with enhanced Johan Benz compatibility. Professional driver collection for 1500+ devices from 80+ manufacturers including IKEA, Aqara, Philips Hue, and Sonoff. Local Zigbee 3.0 operation with no cloud dependencies. Latest update includes intelligent image generation, comprehensive device categorization, and advanced publication automation."
+    "en": "Ultimate Zigbee Hub v2.1.0 - Complete unbranded Zigbee ecosystem with enhanced Johan Benz compatibility. Professional driver collection for 1500+ devices from 80+ manufacturers. Local Zigbee 3.0 operation with buffer optimization and advanced publication automation."
   },
   "category": [
     "lights",
@@ -6786,8 +6786,11 @@
           "_TZE284_",
           "_TYZB01_",
           "_TZ3210_",
+          "_TZ3400_",
           "Tuya",
-          "BSEED"
+          "MOES",
+          "BSEED",
+          "Lonsonho"
         ],
         "manufacturerIds": [
           4417,
@@ -6820,6 +6823,76 @@
       "connectivity": [
         "zigbee"
       ]
+    },
+    {
+      "name": {
+        "en": "Wall Switch 2-Gang BSEED",
+        "fr": "Interrupteur Mur 2-Gang BSEED"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "button.2"
+      ],
+      "capabilitiesOptions": {
+        "button.2": {
+          "title": {
+            "en": "Switch 2",
+            "fr": "Interrupteur 2"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "BSEED",
+          "_TZ3000_bseed",
+          "_TZE200_bseed",
+          "_TZE204_bseed"
+        ],
+        "productId": [
+          "TS0012",
+          "TS0002",
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
+          "2": {
+            "clusters": [
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/wall_switch_2gang_bseed/assets/images/large.png",
+          "instruction": {
+            "en": "Press both switches simultaneously for 3 seconds",
+            "fr": "Appuyez sur les deux interrupteurs simultanément pendant 3 secondes"
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/wall_switch_2gang_bseed/assets/images/small.png",
+        "large": "/drivers/wall_switch_2gang_bseed/assets/images/large.png"
+      },
+      "id": "wall_switch_2gang_bseed"
     },
     {
       "id": "wall_switch_2gang_dc",

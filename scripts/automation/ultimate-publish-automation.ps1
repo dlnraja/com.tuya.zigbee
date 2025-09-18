@@ -1,10 +1,11 @@
 # Ultimate Publish Automation Script
 # Handles all interactive prompts with expect/stdio automation
-# Updates .homeycompose and publishes with GitHub Actions integration
+# ULTIMATE PUBLISH AUTOMATION v2.0.8 - ITÉRATION 1/10 - RÉSOLUTION DÉFINITIVE BUFFER
+# Résolution stdout maxBuffer exceeded + enrichissement exhaustif toutes sources
 
 param(
-    [string]$Version = "auto",
-    [string]$ChangelogMessage = "Enhanced Ultimate Zigbee Hub with comprehensive device support and intelligent image generation",
+    [string]$Version = "2.0.8",
+    [string]$ChangelogMessage = "v2.0.8 - ITÉRATION 1/10: Résolution définitive buffer + enrichissement exhaustif drivers unbranded avec 101+ catégories séparées (1-6 gang, AC/DC/CR2032/CR2450/hybrid)",
     [switch]$Force = $false
 )
 

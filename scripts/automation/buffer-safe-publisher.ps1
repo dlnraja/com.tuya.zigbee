@@ -1,10 +1,12 @@
-# BUFFER-SAFE PUBLISHER v2.0 - ITÉRATION 7/10
+# ULTIMATE BUFFER FIX PUBLISHER v2.0.8 - EXPECT AUTOMATION
+# Résolution "stdout maxBuffer exceeded" + stdio automation - ITÉRATION 7/10
 # Résolution DÉFINITIVE du problème stdout maxBuffer exceeded
 
 param(
     [string]$Changelog = "v2.0.5 - ITÉRATION 7/10: Résolution buffer définitive, WoodUpp CREATE LED ajouté, images contextuelles optimisées"
 )
 
+Write-Host "🚀 ULTIMATE BUFFER FIX PUBLISHER v2.0.8 - EXPECT AUTOMATION" -ForegroundColor Green
 Write-Host "🚀 BUFFER-SAFE PUBLISHER v2.0 - ITÉRATION 7/10" -ForegroundColor Green
 Write-Host "=================================================" -ForegroundColor Green
 
