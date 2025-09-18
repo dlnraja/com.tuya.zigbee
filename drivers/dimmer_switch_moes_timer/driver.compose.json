@@ -1,0 +1,34 @@
+{
+  "name": {
+    "en": "Dimmer Switch MOES Timer Module"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "MOES",
+      "_TZ3000_",
+      "_TZE200_",
+      "_TZE204_",
+      "arnaudbrucy"
+    ],
+    "productId": [
+      "ZM-105-M",
+      "TS0505A",
+      "TS011F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [0, 3, 4, 5, 6, 8],
+        "bindings": [6, 8]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/dimmer_switch_moes_timer/assets/images/small.png",
+    "large": "/drivers/dimmer_switch_moes_timer/assets/images/large.png"
+  }
+}
