@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "2.1.0",
+  "version": "1.0.36",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -11,7 +11,7 @@
     "en": "Ultimate Zigbee Hub"
   },
   "description": {
-    "en": "Ultimate Zigbee Hub v2.1.0 - Complete unbranded Zigbee ecosystem with enhanced Johan Benz compatibility. Professional driver collection for 1500+ devices from 80+ manufacturers. Local Zigbee 3.0 operation with buffer optimization and advanced publication automation."
+    "en": "Ultimate Zigbee Hub v1.0.32 - Complete unbranded Zigbee ecosystem with exhaustive enrichment from Johan Bendz, ZHA, Zigbee2MQTT, and community sources. Professional driver collection for 1500+ devices with maxBuffer resolution and enhanced categorization."
   },
   "category": [
     "lights",
@@ -753,6 +753,167 @@
     },
     {
       "name": {
+        "en": "Dimmer Switch 1-Gang AC"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE204_",
+          "BSEED",
+          "MOES",
+          "Lonsonho",
+          "Tuya"
+        ],
+        "productId": [
+          "TS0501A",
+          "TS0505A",
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/dimmer_switch_1gang_ac/assets/images/small.png",
+        "large": "/drivers/dimmer_switch_1gang_ac/assets/images/large.png"
+      },
+      "id": "dimmer_switch_1gang_ac"
+    },
+    {
+      "name": {
+        "en": "Dimmer Switch 3-Gang AC"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "button.2",
+        "button.3"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE204_",
+          "_TZE284_",
+          "gpmachado",
+          "BSEED",
+          "MOES"
+        ],
+        "productId": [
+          "TS0503A",
+          "TS0505A",
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
+          "2": {
+            "clusters": [
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
+          "3": {
+            "clusters": [
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/dimmer_switch_3gang_ac/assets/images/small.png",
+        "large": "/drivers/dimmer_switch_3gang_ac/assets/images/large.png"
+      },
+      "id": "dimmer_switch_3gang_ac"
+    },
+    {
+      "name": {
+        "en": "Dimmer Switch MOES Timer Module"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "MOES",
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE204_",
+          "arnaudbrucy"
+        ],
+        "productId": [
+          "ZM-105-M",
+          "TS0505A",
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/dimmer_switch_moes_timer/assets/images/small.png",
+        "large": "/drivers/dimmer_switch_moes_timer/assets/images/large.png"
+      },
+      "id": "dimmer_switch_moes_timer"
+    },
+    {
+      "name": {
         "en": "Led Strip"
       },
       "class": "light",
@@ -1079,6 +1240,21 @@
           "_TZE200_oisqyl4o",
           "_TZE200_dwcarsat",
           "_TZE200_whpb9yts",
+          "_TZE284_uqfph8ah",
+          "_TZE284_myd45weu",
+          "_TZE284_n4ttsck2",
+          "_TZE200_2aaelwxk",
+          "_TZE200_3towulqd",
+          "_TZE204_bjzrowv2",
+          "_TZE284_gyzlwu5q",
+          "_TZ3000_c8ozah8n",
+          "_TZE200_ztc6ggyl",
+          "_TZE204_qasjif9e",
+          "_TZE204_ijxvkhd0",
+          "_TZ3000_18ejxno0",
+          "_TZ3000_hhiodade",
+          "_TZ3000_v1w2k9dd",
+          "_TZ3000_kfu8zapd",
           "_TZ3000_*",
           "_TZ3210_*",
           "_TYZB01_*",
@@ -1519,6 +1695,62 @@
       "connectivity": [
         "zigbee"
       ]
+    },
+    {
+      "name": {
+        "en": "Garage Door Controller"
+      },
+      "class": "garagedoor",
+      "capabilities": [
+        "garagedoor_closed",
+        "button.open",
+        "button.close"
+      ],
+      "capabilitiesOptions": {
+        "button.open": {
+          "title": {
+            "en": "Open"
+          }
+        },
+        "button.close": {
+          "title": {
+            "en": "Close"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE204_",
+          "TKGHill",
+          "Tuya"
+        ],
+        "productId": [
+          "TS0601",
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              61184
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/garage_door_controller/assets/images/small.png",
+        "large": "/drivers/garage_door_controller/assets/images/large.png"
+      },
+      "id": "garage_door_controller"
     },
     {
       "id": "garage_door_opener",
@@ -2027,6 +2259,56 @@
     },
     {
       "name": {
+        "en": "Mi-Light Controller"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "Mi-Light",
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE204_",
+          "rockybeachradio"
+        ],
+        "productId": [
+          "T0202",
+          "TZ0304"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8,
+              768
+            ],
+            "bindings": [
+              6,
+              8,
+              768
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/milight_controller/assets/images/small.png",
+        "large": "/drivers/milight_controller/assets/images/large.png"
+      },
+      "id": "milight_controller"
+    },
+    {
+      "name": {
         "en": "Sonoff Mini",
         "fr": "Sonoff Mini",
         "de": "Sonoff Mini",
@@ -2447,7 +2729,26 @@
         "manufacturerName": [
           "_TZ3000_",
           "_TZE200_",
-          "_TZE204_"
+          "_TZE204_",
+          "_TZE284_",
+          "_TZE284_uqfph8ah",
+          "_TZE284_myd45weu",
+          "_TZE284_n4ttsck2",
+          "_TZE200_2aaelwxk",
+          "_TZE200_3towulqd",
+          "_TZE204_bjzrowv2",
+          "_TZE284_gyzlwu5q",
+          "_TZ3000_c8ozah8n",
+          "_TZE200_ztc6ggyl",
+          "_TZE204_qasjif9e",
+          "_TZE204_ijxvkhd0",
+          "_TZ3000_18ejxno0",
+          "_TZ3000_hhiodade",
+          "_TZ3000_v1w2k9dd",
+          "_TZ3000_kfu8zapd",
+          "Tuya",
+          "MOES",
+          "GIRIER"
         ],
         "manufacturerIds": [
           4417,
@@ -2893,6 +3194,55 @@
       "settings": []
     },
     {
+      "name": {
+        "en": "PIR Motion Sensor Advanced"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR123A",
+          "AA"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_c8ozah8n",
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE204_",
+          "chernals"
+        ],
+        "productId": [
+          "TS0202"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1024,
+              1030
+            ],
+            "bindings": [
+              1024,
+              1030
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/pir_sensor_advanced/assets/images/small.png",
+        "large": "/drivers/pir_sensor_advanced/assets/images/large.png"
+      },
+      "id": "pir_sensor_advanced"
+    },
+    {
       "id": "pm25_sensor",
       "name": {
         "en": "Pm25 Sensor"
@@ -2967,6 +3317,67 @@
       "connectivity": [
         "zigbee"
       ]
+    },
+    {
+      "name": {
+        "en": "Pool Pump Controller"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "measure_current",
+        "dim"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_",
+          "_TZ3000_",
+          "_TZE204_",
+          "_TZE284_",
+          "_TZE284_uqfph8ah",
+          "_TZE284_myd45weu",
+          "_TZE284_n4ttsck2",
+          "_TZE200_2aaelwxk",
+          "_TZE200_3towulqd",
+          "_TZE204_bjzrowv2",
+          "_TZE284_gyzlwu5q",
+          "_TZ3000_c8ozah8n",
+          "_TZE200_ztc6ggyl",
+          "_TZE204_qasjif9e",
+          "_TZE204_ijxvkhd0",
+          "_TZ3000_18ejxno0",
+          "_TZ3000_hhiodade",
+          "_TZ3000_v1w2k9dd",
+          "_TZ3000_kfu8zapd",
+          "Tuya"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              6,
+              8,
+              1794,
+              61184
+            ],
+            "bindings": [
+              6,
+              8,
+              1794
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/pool_pump_controller/assets/images/small.png",
+        "large": "/drivers/pool_pump_controller/assets/images/large.png"
+      },
+      "id": "pool_pump_controller"
     },
     {
       "id": "presence_sensor_radar",
@@ -3201,6 +3612,58 @@
     },
     {
       "name": {
+        "en": "Radar Motion Sensor Advanced"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance",
+        "measure_distance",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "AA",
+          "CR123A"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_ztc6ggyl",
+          "_TZE204_qasjif9e",
+          "_TZE204_ijxvkhd0",
+          "_TZE200_",
+          "_TZ3000_",
+          "Rudy_De_Vylder"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1024,
+              1030,
+              61184
+            ],
+            "bindings": [
+              1024,
+              1030
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/radar_motion_sensor_advanced/assets/images/small.png",
+        "large": "/drivers/radar_motion_sensor_advanced/assets/images/large.png"
+      },
+      "id": "radar_motion_sensor_advanced"
+    },
+    {
+      "name": {
         "en": "mmWave Radar Motion Sensor",
         "fr": "Capteur Mouvement Radar mmWave"
       },
@@ -3278,6 +3741,57 @@
         "large": "/drivers/radar_motion_sensor_mmwave/assets/images/large.png"
       },
       "id": "radar_motion_sensor_mmwave"
+    },
+    {
+      "name": {
+        "en": "Radar Sensor TZE200 2AAELWXK"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance",
+        "measure_distance",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "AA",
+          "CR123A"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_2aaelwxk",
+          "_TZE200_",
+          "_TZ3000_",
+          "_TZE204_",
+          "eelco2k"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1024,
+              1030,
+              61184
+            ],
+            "bindings": [
+              1024,
+              1030
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/radar_sensor_2aaelwxk/assets/images/small.png",
+        "large": "/drivers/radar_sensor_2aaelwxk/assets/images/large.png"
+      },
+      "id": "radar_sensor_2aaelwxk"
     },
     {
       "id": "radiator_valve",
@@ -3631,6 +4145,99 @@
         "large": "/drivers/roller_shutter_controller/assets/images/large.png"
       },
       "id": "roller_shutter_controller"
+    },
+    {
+      "name": {
+        "en": "Roller Shutter Switch"
+      },
+      "class": "windowcoverings",
+      "capabilities": [
+        "windowcoverings_closed",
+        "windowcoverings_set",
+        "button.up",
+        "button.down",
+        "button.stop"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE284_uqfph8ah",
+          "_TZE284_",
+          "_TZE200_",
+          "_TZ3000_",
+          "Quintvermeij"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              61184
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/roller_shutter_switch/assets/images/small.png",
+        "large": "/drivers/roller_shutter_switch/assets/images/large.png"
+      },
+      "id": "roller_shutter_switch"
+    },
+    {
+      "name": {
+        "en": "Roller Shutter Switch Advanced"
+      },
+      "class": "windowcoverings",
+      "capabilities": [
+        "windowcoverings_closed",
+        "windowcoverings_set",
+        "button.up",
+        "button.down",
+        "button.stop",
+        "measure_power"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE284_uqfph8ah",
+          "_TZE284_",
+          "_TZE200_",
+          "_TZ3000_",
+          "Quintvermeij"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              61184,
+              1794
+            ],
+            "bindings": [
+              6,
+              1794
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/roller_shutter_switch_advanced/assets/images/small.png",
+        "large": "/drivers/roller_shutter_switch_advanced/assets/images/large.png"
+      },
+      "id": "roller_shutter_switch_advanced"
     },
     {
       "id": "scene_controller_2button",
@@ -5385,7 +5992,12 @@
         "manufacturerName": [
           "_TZ3000_",
           "_TZ3210_",
-          "_TYZB01_"
+          "_TYZB01_",
+          "_TZE284_gyzlwu5q",
+          "_TZE200_gyzlwu5q",
+          "_TZE204_n4ttsck2",
+          "ONENUO",
+          "Tuya"
         ],
         "productId": [
           "TS0001",
@@ -5450,6 +6062,131 @@
       "connectivity": [
         "zigbee"
       ]
+    },
+    {
+      "name": {
+        "en": "Smoke Detector Temperature Humidity Advanced"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_smoke",
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR123A",
+          "AA"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE284_n4ttsck2",
+          "_TZE284_",
+          "_TZE200_",
+          "_TZ3000_",
+          "_TZE204_",
+          "_TZ3000_18ejxno0",
+          "_TZ3000_hhiodade",
+          "_TZ3000_v1w2k9dd",
+          "_TZ3000_kfu8zapd",
+          "_TZE284_uqfph8ah",
+          "_TZE284_myd45weu",
+          "_TZE200_2aaelwxk",
+          "_TZE200_3towulqd",
+          "_TZE204_bjzrowv2",
+          "_TZE284_gyzlwu5q",
+          "_TZ3000_c8ozah8n",
+          "_TZE200_ztc6ggyl",
+          "_TZE204_qasjif9e",
+          "_TZE204_ijxvkhd0",
+          "ONENUO",
+          "Tuya"
+        ],
+        "productId": [
+          "TS0601",
+          "TS0205"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1026,
+              1029,
+              1280,
+              61184
+            ],
+            "bindings": [
+              1026,
+              1029,
+              1280
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/smoke_detector_temp_humidity_advanced/assets/images/small.png",
+        "large": "/drivers/smoke_detector_temp_humidity_advanced/assets/images/large.png"
+      },
+      "id": "smoke_detector_temp_humidity_advanced"
+    },
+    {
+      "name": {
+        "en": "Smoke Temperature Humidity Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_smoke",
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR123A",
+          "AA"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE284_gyzlwu5q",
+          "_TZE284_",
+          "_TZE200_",
+          "_TZ3000_",
+          "WJGvdVelden"
+        ],
+        "productId": [
+          "TS0601",
+          "TS0205"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1280,
+              1026,
+              1029,
+              61184
+            ],
+            "bindings": [
+              1280,
+              1026,
+              1029
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/smoke_temp_humid_sensor/assets/images/small.png",
+        "large": "/drivers/smoke_temp_humid_sensor/assets/images/large.png"
+      },
+      "id": "smoke_temp_humid_sensor"
     },
     {
       "id": "soil_moisture_sensor",
@@ -5601,6 +6338,1062 @@
         "large": "/drivers/soil_moisture_temperature_sensor/assets/images/large.png"
       },
       "id": "soil_moisture_temperature_sensor"
+    },
+    {
+      "name": {
+        "en": "Soil Tester Temperature Humidity"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR123A",
+          "AA"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE284_myd45weu",
+          "_TZE284_",
+          "_TZE200_",
+          "_TZ3000_",
+          "Sarcas666"
+        ],
+        "productId": [
+          "TS0601",
+          "CK-TLSR8656-SS5-01"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1026,
+              1029,
+              1024,
+              61184
+            ],
+            "bindings": [
+              1026,
+              1029,
+              1024
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/soil_tester_temp_humid/assets/images/small.png",
+        "large": "/drivers/soil_tester_temp_humid/assets/images/large.png"
+      },
+      "id": "soil_tester_temp_humid"
+    },
+    {
+      "name": {
+        "en": "Solar Panel Controller"
+      },
+      "class": "other",
+      "capabilities": [
+        "measure_power",
+        "measure_voltage",
+        "measure_current",
+        "measure_battery",
+        "onoff"
+      ],
+      "energy": {
+        "batteries": [
+          "LiFePO4",
+          "Li-ion"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_",
+          "_TZ3000_",
+          "_TZE204_",
+          "_TZE284_",
+          "_TZE284_uqfph8ah",
+          "_TZE284_myd45weu",
+          "_TZE284_n4ttsck2",
+          "_TZE200_2aaelwxk",
+          "_TZE200_3towulqd",
+          "_TZE204_bjzrowv2",
+          "_TZE284_gyzlwu5q",
+          "_TZ3000_c8ozah8n",
+          "_TZE200_ztc6ggyl",
+          "_TZE204_qasjif9e",
+          "_TZE204_ijxvkhd0",
+          "_TZ3000_18ejxno0",
+          "_TZ3000_hhiodade",
+          "_TZ3000_v1w2k9dd",
+          "_TZ3000_kfu8zapd",
+          "Tuya",
+          "EPEVER"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6,
+              1794,
+              2820,
+              61184
+            ],
+            "bindings": [
+              6,
+              1794,
+              2820
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/solar_panel_controller/assets/images/small.png",
+        "large": "/drivers/solar_panel_controller/assets/images/large.png"
+      },
+      "id": "solar_panel_controller"
+    },
+    {
+      "name": {
+        "en": "SOS Emergency Button"
+      },
+      "class": "button",
+      "capabilities": [
+        "button.sos",
+        "alarm_generic",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE204_",
+          "_TZE284_",
+          "Tuya"
+        ],
+        "productId": [
+          "TS0215",
+          "TS0041"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6,
+              1280
+            ],
+            "bindings": [
+              6,
+              1280
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/sos_emergency_button/assets/images/small.png",
+        "large": "/drivers/sos_emergency_button/assets/images/large.png"
+      },
+      "id": "sos_emergency_button"
+    },
+    {
+      "name": {
+        "en": "Switch 1-Gang Battery CR2032"
+      },
+      "class": "button",
+      "capabilities": [
+        "button.1",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE204_",
+          "_TZE284_",
+          "_TZ3000_hhiodade",
+          "_TZ3000_v1w2k9dd",
+          "_TZ3000_kfu8zapd",
+          "_TZE284_uqfph8ah",
+          "_TZE284_myd45weu",
+          "_TZE284_n4ttsck2",
+          "_TZE200_2aaelwxk",
+          "_TZE200_3towulqd",
+          "_TZE204_bjzrowv2",
+          "_TZE284_gyzlwu5q",
+          "_TZ3000_c8ozah8n",
+          "Tuya",
+          "MOES",
+          "GIRIER",
+          "MrFuxus"
+        ],
+        "productId": [
+          "TS0041"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/switch_1gang_battery/assets/images/small.png",
+        "large": "/drivers/switch_1gang_battery/assets/images/large.png"
+      },
+      "id": "switch_1gang_battery"
+    },
+    {
+      "name": {
+        "en": "Switch 2-Gang AC Power"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "button.2"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE204_",
+          "_TZE284_",
+          "_TZ3000_18ejxno0",
+          "_TZ3000_hhiodade",
+          "_TZ3000_v1w2k9dd",
+          "_TZ3000_kfu8zapd",
+          "_TZE284_uqfph8ah",
+          "_TZE284_myd45weu",
+          "_TZE284_n4ttsck2",
+          "_TZE200_2aaelwxk",
+          "_TZE200_3towulqd",
+          "_TZE204_bjzrowv2",
+          "_TZE284_gyzlwu5q",
+          "_TZ3000_c8ozah8n",
+          "BSEED",
+          "MOES",
+          "Lonsonho",
+          "GIRIER"
+        ],
+        "productId": [
+          "TS0012",
+          "TS011F",
+          "_TZ3000_18ejxno0"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
+          "2": {
+            "clusters": [
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/switch_2gang_ac/assets/images/small.png",
+        "large": "/drivers/switch_2gang_ac/assets/images/large.png"
+      },
+      "id": "switch_2gang_ac"
+    },
+    {
+      "name": {
+        "en": "Switch 2-Gang Hybrid AC/DC"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "button.2",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE204_",
+          "_TZE284_",
+          "Tuya",
+          "MOES"
+        ],
+        "productId": [
+          "TS0012",
+          "TS0042",
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
+          "2": {
+            "clusters": [
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/switch_2gang_hybrid/assets/images/small.png",
+        "large": "/drivers/switch_2gang_hybrid/assets/images/large.png"
+      },
+      "id": "switch_2gang_hybrid"
+    },
+    {
+      "name": {
+        "en": "Switch 3-Gang Battery CR2450"
+      },
+      "class": "button",
+      "capabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2450",
+          "CR2032"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE204_",
+          "_TZE284_",
+          "_TZ3000_18ejxno0",
+          "_TZ3000_hhiodade",
+          "_TZ3000_v1w2k9dd",
+          "_TZ3000_kfu8zapd",
+          "_TZE284_uqfph8ah",
+          "_TZE284_myd45weu",
+          "_TZE284_n4ttsck2",
+          "_TZE200_2aaelwxk",
+          "_TZE200_3towulqd",
+          "_TZE204_bjzrowv2",
+          "_TZE284_gyzlwu5q",
+          "_TZ3000_c8ozah8n",
+          "_TZE200_ztc6ggyl",
+          "_TZE204_qasjif9e",
+          "_TZE204_ijxvkhd0",
+          "Tuya",
+          "MOES",
+          "GIRIER",
+          "Lonsonho"
+        ],
+        "productId": [
+          "TS0043",
+          "TS004F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/switch_3gang_battery/assets/images/small.png",
+        "large": "/drivers/switch_3gang_battery/assets/images/large.png"
+      },
+      "id": "switch_3gang_battery"
+    },
+    {
+      "name": {
+        "en": "Switch 4-Gang AC Power"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "button.2",
+        "button.3",
+        "button.4"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE204_",
+          "_TZE284_",
+          "_TZ3000_18ejxno0",
+          "_TZ3000_hhiodade",
+          "_TZ3000_v1w2k9dd",
+          "_TZ3000_kfu8zapd",
+          "_TZE284_uqfph8ah",
+          "_TZE284_myd45weu",
+          "_TZE284_n4ttsck2",
+          "_TZE200_2aaelwxk",
+          "_TZE200_3towulqd",
+          "_TZE204_bjzrowv2",
+          "_TZE284_gyzlwu5q",
+          "_TZ3000_c8ozah8n",
+          "_TZE200_ztc6ggyl",
+          "_TZE204_qasjif9e",
+          "_TZE204_ijxvkhd0",
+          "BSEED",
+          "MOES",
+          "Lonsonho",
+          "GIRIER"
+        ],
+        "productId": [
+          "TS0014",
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
+          "2": {
+            "clusters": [
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
+          "3": {
+            "clusters": [
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
+          "4": {
+            "clusters": [
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/switch_4gang_ac/assets/images/small.png",
+        "large": "/drivers/switch_4gang_ac/assets/images/large.png"
+      },
+      "id": "switch_4gang_ac"
+    },
+    {
+      "name": {
+        "en": "Switch 4-Gang Girier Remote"
+      },
+      "class": "button",
+      "capabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2450"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "Girier",
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE204_",
+          "dlnraja"
+        ],
+        "productId": [
+          "TS0044",
+          "TS004F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/switch_4gang_girier/assets/images/small.png",
+        "large": "/drivers/switch_4gang_girier/assets/images/large.png"
+      },
+      "id": "switch_4gang_girier"
+    },
+    {
+      "name": {
+        "en": "Switch 5-Gang Battery CR2450"
+      },
+      "class": "button",
+      "capabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2450",
+          "AAA"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE204_",
+          "_TZE284_",
+          "Tuya",
+          "MOES",
+          "GIRIER"
+        ],
+        "productId": [
+          "TS0045",
+          "TS004F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/switch_5gang_battery/assets/images/small.png",
+        "large": "/drivers/switch_5gang_battery/assets/images/large.png"
+      },
+      "id": "switch_5gang_battery"
+    },
+    {
+      "name": {
+        "en": "Switch 6-Gang AC Power"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5",
+        "button.6"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE204_",
+          "_TZE284_",
+          "BSEED",
+          "MOES",
+          "Lonsonho"
+        ],
+        "productId": [
+          "TS0016",
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
+          "2": {
+            "clusters": [
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
+          "3": {
+            "clusters": [
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
+          "4": {
+            "clusters": [
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
+          "5": {
+            "clusters": [
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
+          "6": {
+            "clusters": [
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/switch_6gang_ac/assets/images/small.png",
+        "large": "/drivers/switch_6gang_ac/assets/images/large.png"
+      },
+      "id": "switch_6gang_ac"
+    },
+    {
+      "name": {
+        "en": "Switch 8-Gang AC Power"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5",
+        "button.6",
+        "button.7",
+        "button.8"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE204_",
+          "_TZE284_",
+          "_TZ3000_18ejxno0",
+          "_TZ3000_hhiodade",
+          "_TZ3000_v1w2k9dd",
+          "_TZ3000_kfu8zapd",
+          "_TZE284_uqfph8ah",
+          "_TZE284_myd45weu",
+          "_TZE284_n4ttsck2",
+          "_TZE200_2aaelwxk",
+          "_TZE200_3towulqd",
+          "_TZE204_bjzrowv2",
+          "_TZE284_gyzlwu5q",
+          "_TZ3000_c8ozah8n",
+          "BSEED",
+          "MOES",
+          "Lonsonho"
+        ],
+        "productId": [
+          "TS0018",
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
+          "2": {
+            "clusters": [
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
+          "3": {
+            "clusters": [
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
+          "4": {
+            "clusters": [
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
+          "5": {
+            "clusters": [
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
+          "6": {
+            "clusters": [
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
+          "7": {
+            "clusters": [
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
+          "8": {
+            "clusters": [
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/switch_8gang_ac/assets/images/small.png",
+        "large": "/drivers/switch_8gang_ac/assets/images/large.png"
+      },
+      "id": "switch_8gang_ac"
+    },
+    {
+      "name": {
+        "en": "Tank Level Monitor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_water",
+        "alarm_water",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR123A",
+          "AA"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_",
+          "_TZ3000_",
+          "_TZE204_",
+          "jeroenvanagt"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1280,
+              61184
+            ],
+            "bindings": [
+              1280
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tank_level_monitor/assets/images/small.png",
+        "large": "/drivers/tank_level_monitor/assets/images/large.png"
+      },
+      "id": "tank_level_monitor"
+    },
+    {
+      "name": {
+        "en": "Temperature Humidity Sensor Advanced"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_pressure",
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE284_",
+          "_TZE200_",
+          "_TZ3000_",
+          "_TZE204_",
+          "CK-TLSR8656-SS5-01",
+          "luuk0412-wq"
+        ],
+        "productId": [
+          "TS0601",
+          "TS0201"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1026,
+              1029,
+              1027,
+              1024,
+              61184
+            ],
+            "bindings": [
+              1026,
+              1029,
+              1027,
+              1024
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/temp_humid_sensor_advanced/assets/images/small.png",
+        "large": "/drivers/temp_humid_sensor_advanced/assets/images/large.png"
+      },
+      "id": "temp_humid_sensor_advanced"
+    },
+    {
+      "name": {
+        "en": "Temperature Humidity Sensor v1w2k9dd"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_v1w2k9dd",
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE204_",
+          "Mefiboset666"
+        ],
+        "productId": [
+          "TS0201"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1026,
+              1029
+            ],
+            "bindings": [
+              1026,
+              1029
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/temp_humid_sensor_v1w2k9dd/assets/images/small.png",
+        "large": "/drivers/temp_humid_sensor_v1w2k9dd/assets/images/large.png"
+      },
+      "id": "temp_humid_sensor_v1w2k9dd"
+    },
+    {
+      "name": {
+        "en": "Temperature Sensor OWON THS317-ET-TU"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "OWON",
+          "_TZE200_",
+          "_TZ3000_",
+          "_TZE204_",
+          "jrevillard"
+        ],
+        "productId": [
+          "THS317-ET-TU",
+          "TS0201"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1026,
+              1029
+            ],
+            "bindings": [
+              1026,
+              1029
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/temp_sensor_owon/assets/images/small.png",
+        "large": "/drivers/temp_sensor_owon/assets/images/large.png"
+      },
+      "id": "temp_sensor_owon"
     },
     {
       "id": "temperature_controller",
@@ -5895,6 +7688,65 @@
     },
     {
       "name": {
+        "en": "Temperature Sensor EweLink"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "eWeLink",
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE204_",
+          "_TZE284_",
+          "_TZ3000_18ejxno0",
+          "_TZ3000_hhiodade",
+          "_TZ3000_v1w2k9dd",
+          "_TZ3000_kfu8zapd",
+          "_TZE284_uqfph8ah",
+          "_TZE284_myd45weu",
+          "_TZE284_n4ttsck2",
+          "_TZE200_2aaelwxk",
+          "_TZE200_3towulqd",
+          "_TZE204_bjzrowv2",
+          "_TZE284_gyzlwu5q",
+          "_TZ3000_c8ozah8n"
+        ],
+        "productId": [
+          "SNZB-02",
+          "TS0201"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1026
+            ],
+            "bindings": [
+              1026
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/temperature_sensor_ewelink/assets/images/small.png",
+        "large": "/drivers/temperature_sensor_ewelink/assets/images/large.png"
+      },
+      "id": "temperature_sensor_ewelink"
+    },
+    {
+      "name": {
         "en": "Thermostat"
       },
       "class": "sensor",
@@ -6043,6 +7895,67 @@
       "connectivity": [
         "zigbee"
       ]
+    },
+    {
+      "name": {
+        "en": "Touch Dimmer 1-Gang"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE204_",
+          "_TZE284_",
+          "_TZ3000_18ejxno0",
+          "_TZ3000_hhiodade",
+          "_TZ3000_v1w2k9dd",
+          "_TZ3000_kfu8zapd",
+          "_TZE284_uqfph8ah",
+          "_TZE284_myd45weu",
+          "_TZE284_n4ttsck2",
+          "_TZE200_2aaelwxk",
+          "_TZE200_3towulqd",
+          "_TZE204_bjzrowv2",
+          "_TZE284_gyzlwu5q",
+          "_TZ3000_c8ozah8n",
+          "_TZE200_ztc6ggyl",
+          "_TZE204_qasjif9e",
+          "_TZE204_ijxvkhd0",
+          "MOES",
+          "BSEED",
+          "Lonsonho"
+        ],
+        "productId": [
+          "TS0011",
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/touch_dimmer_1gang/assets/images/small.png",
+        "large": "/drivers/touch_dimmer_1gang/assets/images/large.png"
+      },
+      "id": "touch_dimmer_1gang"
     },
     {
       "id": "touch_switch_1gang",
@@ -6443,6 +8356,72 @@
       ]
     },
     {
+      "name": {
+        "en": "TVOC Sensor Advanced"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_co2",
+        "measure_voc",
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR123A",
+          "AA"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_yvx5lh6k",
+          "_TZE200_8ygsuhe1",
+          "_TZE200_mja3fuja",
+          "_TZE200_",
+          "_TZ3000_",
+          "_TZE204_",
+          "_TZE284_",
+          "_TZ3000_18ejxno0",
+          "_TZ3000_hhiodade",
+          "_TZ3000_v1w2k9dd",
+          "_TZ3000_kfu8zapd",
+          "_TZE284_uqfph8ah",
+          "_TZE284_myd45weu",
+          "_TZE284_n4ttsck2",
+          "_TZE200_2aaelwxk",
+          "_TZE200_3towulqd",
+          "_TZE204_bjzrowv2",
+          "_TZE284_gyzlwu5q",
+          "_TZ3000_c8ozah8n"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1026,
+              1029,
+              61184
+            ],
+            "bindings": [
+              1026,
+              1029
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/tvoc_sensor_advanced/assets/images/small.png",
+        "large": "/drivers/tvoc_sensor_advanced/assets/images/large.png"
+      },
+      "id": "tvoc_sensor_advanced"
+    },
+    {
       "id": "usb_outlet",
       "name": {
         "en": "USB Outlet"
@@ -6515,6 +8494,71 @@
       "connectivity": [
         "zigbee"
       ]
+    },
+    {
+      "name": {
+        "en": "USB Outlet Advanced"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "measure_current",
+        "measure_voltage"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE204_",
+          "_TZE284_",
+          "_TZ3000_18ejxno0",
+          "_TZ3000_hhiodade",
+          "_TZ3000_v1w2k9dd",
+          "_TZ3000_kfu8zapd",
+          "_TZE284_uqfph8ah",
+          "_TZE284_myd45weu",
+          "_TZE284_n4ttsck2",
+          "_TZE200_2aaelwxk",
+          "_TZE200_3towulqd",
+          "_TZE204_bjzrowv2",
+          "_TZE284_gyzlwu5q",
+          "_TZ3000_c8ozah8n",
+          "_TZE200_ztc6ggyl",
+          "_TZE204_qasjif9e",
+          "_TZE204_ijxvkhd0",
+          "MOES",
+          "BSEED",
+          "Nedis"
+        ],
+        "productId": [
+          "TS011F",
+          "TS0121"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              6,
+              1794,
+              2820
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/usb_outlet_advanced/assets/images/small.png",
+        "large": "/drivers/usb_outlet_advanced/assets/images/large.png"
+      },
+      "id": "usb_outlet_advanced"
     },
     {
       "id": "vibration_sensor",
@@ -6784,12 +8828,21 @@
           "_TZE200_",
           "_TZE204_",
           "_TZE284_",
+          "BSEED",
+          "MOES",
+          "Lonsonho",
+          "GIRIER",
+          "_TZ3000_kfu8zapd",
+          "_TZE204_bjzrowv2",
           "_TYZB01_",
           "_TZ3210_",
           "_TZ3400_",
           "Tuya",
-          "MOES",
           "BSEED",
+          "_TZ3000_bseed",
+          "_TZE200_bseed",
+          "_TZE204_bseed",
+          "_TZE284_bseed",
           "Lonsonho"
         ],
         "manufacturerIds": [
@@ -6823,76 +8876,6 @@
       "connectivity": [
         "zigbee"
       ]
-    },
-    {
-      "name": {
-        "en": "Wall Switch 2-Gang BSEED",
-        "fr": "Interrupteur Mur 2-Gang BSEED"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "button.2"
-      ],
-      "capabilitiesOptions": {
-        "button.2": {
-          "title": {
-            "en": "Switch 2",
-            "fr": "Interrupteur 2"
-          }
-        }
-      },
-      "zigbee": {
-        "manufacturerName": [
-          "BSEED",
-          "_TZ3000_bseed",
-          "_TZE200_bseed",
-          "_TZE204_bseed"
-        ],
-        "productId": [
-          "TS0012",
-          "TS0002",
-          "TS011F"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              4,
-              5,
-              6,
-              8
-            ],
-            "bindings": [
-              6,
-              8
-            ]
-          },
-          "2": {
-            "clusters": [
-              6,
-              8
-            ],
-            "bindings": [
-              6,
-              8
-            ]
-          }
-        },
-        "learnmode": {
-          "image": "/drivers/wall_switch_2gang_bseed/assets/images/large.png",
-          "instruction": {
-            "en": "Press both switches simultaneously for 3 seconds",
-            "fr": "Appuyez sur les deux interrupteurs simultanément pendant 3 secondes"
-          }
-        }
-      },
-      "images": {
-        "small": "/drivers/wall_switch_2gang_bseed/assets/images/small.png",
-        "large": "/drivers/wall_switch_2gang_bseed/assets/images/large.png"
-      },
-      "id": "wall_switch_2gang_bseed"
     },
     {
       "id": "wall_switch_2gang_dc",
@@ -7012,10 +8995,26 @@
           "_TYZB01_",
           "_TZ3210_",
           "_TZ3400_",
+          "_TZ3000_kfu8zapd",
+          "_TZE204_bjzrowv2",
+          "_TZE284_gyzlwu5q",
+          "_TZ3000_c8ozah8n",
+          "_TZE284_uqfph8ah",
+          "_TZE284_myd45weu",
+          "_TZE284_n4ttsck2",
+          "_TZE200_2aaelwxk",
+          "_TZE200_3towulqd",
           "Tuya",
           "MOES",
           "BSEED",
-          "Lonsonho"
+          "Lonsonho",
+          "GIRIER",
+          "EweLink",
+          "YuriEstevan",
+          "jeroenvanagt",
+          "eelco2k",
+          "maccyber",
+          "danielgajdos"
         ],
         "manufacturerIds": [
           4417,
@@ -7040,7 +9039,10 @@
       },
       "settings": [],
       "name": {
-        "en": "Wall Switch 3gang AC"
+        "en": "Wall Switch 3-Gang AC",
+        "fr": "Interrupteur Mural 3-Gang AC",
+        "nl": "Wandschakelaar 3-Gang AC",
+        "de": "Wandschalter 3-Gang AC"
       },
       "platforms": [
         "local"
@@ -7481,6 +9483,52 @@
       "id": "water_leak_detector_advanced"
     },
     {
+      "name": {
+        "en": "Water Leak Detector EweLink"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_water",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "EweLink",
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE204_",
+          "semolex"
+        ],
+        "productId": [
+          "SQ510A",
+          "TS0207"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1280
+            ],
+            "bindings": [
+              1280
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/water_leak_detector_ewelink/assets/images/small.png",
+        "large": "/drivers/water_leak_detector_ewelink/assets/images/large.png"
+      },
+      "id": "water_leak_detector_ewelink"
+    },
+    {
       "id": "water_leak_sensor",
       "name": {
         "en": "Water Leak Sensor"
@@ -7620,6 +9668,72 @@
         "productIds": []
       },
       "settings": []
+    },
+    {
+      "name": {
+        "en": "Water Valve Smart"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "measure_water",
+        "alarm_water",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR123A",
+          "AA"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_",
+          "_TZ3000_",
+          "_TZE204_",
+          "_TZE284_",
+          "_TZ3000_18ejxno0",
+          "_TZ3000_hhiodade",
+          "_TZ3000_v1w2k9dd",
+          "_TZ3000_kfu8zapd",
+          "_TZE284_uqfph8ah",
+          "_TZE284_myd45weu",
+          "_TZE284_n4ttsck2",
+          "_TZE200_2aaelwxk",
+          "_TZE200_3towulqd",
+          "_TZE204_bjzrowv2",
+          "_TZE284_gyzlwu5q",
+          "_TZ3000_c8ozah8n",
+          "_TZE200_ztc6ggyl",
+          "_TZE204_qasjif9e",
+          "_TZE204_ijxvkhd0",
+          "Tuya"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6,
+              1280,
+              61184
+            ],
+            "bindings": [
+              6,
+              1280
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/water_valve_smart/assets/images/small.png",
+        "large": "/drivers/water_valve_smart/assets/images/large.png"
+      },
+      "id": "water_valve_smart"
     },
     {
       "id": "wireless_switch",
@@ -8359,6 +10473,62 @@
       "connectivity": [
         "zigbee"
       ]
+    },
+    {
+      "name": {
+        "en": "Zigbee Gateway Hub"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "measure_signal_strength"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE204_",
+          "_TZE284_",
+          "_TZE284_uqfph8ah",
+          "_TZE284_myd45weu",
+          "_TZE284_n4ttsck2",
+          "_TZE200_2aaelwxk",
+          "_TZE200_3towulqd",
+          "_TZE204_bjzrowv2",
+          "_TZE284_gyzlwu5q",
+          "_TZ3000_c8ozah8n",
+          "_TZE200_ztc6ggyl",
+          "_TZE204_qasjif9e",
+          "_TZE204_ijxvkhd0",
+          "_TZ3000_18ejxno0",
+          "_TZ3000_hhiodade",
+          "_TZ3000_v1w2k9dd",
+          "_TZ3000_kfu8zapd",
+          "Tuya",
+          "eWeLink"
+        ],
+        "productId": [
+          "ZBBridge",
+          "ZB-GW03"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/zigbee_gateway_hub/assets/images/small.png",
+        "large": "/drivers/zigbee_gateway_hub/assets/images/large.png"
+      },
+      "id": "zigbee_gateway_hub"
     }
   ]
 }
