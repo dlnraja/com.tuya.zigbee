@@ -1,0 +1,1 @@
+Generic Tuya device support for unbranded and no-name devices. Covers devices not supported by dedicated brand apps with active maintenance and SDK3 compliance. Essential for users with generic/white-label Tuya devices needing reliable integration.
