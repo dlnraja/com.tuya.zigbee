@@ -1,0 +1,13 @@
+{
+  "driver": "motion_sensor_pir_battery",
+  "specifications": {
+    "type": "motion_sensor",
+    "form": "small"
+  },
+  "sizes": [
+    "75x75",
+    "500x500"
+  ],
+  "format": "PNG",
+  "style": "johan_bendz_compliant"
+}

@@ -1,0 +1,21 @@
+{
+  "name": {
+    "en": "Smart Switch 1gang Ac"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE284_",
+      "_TZE200_",
+      "_TZ3000_"
+    ],
+    "productId": [
+      "TS0001",
+      "TS0002",
+      "TS0003"
+    ]
+  }
+}
