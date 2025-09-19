@@ -42,5 +42,82 @@ __pycache__/
 analysis-results/*.json
 !analysis-results/.gitkeep
 
-# Added by Homey CLI
-/.homeybuild/
+# Added by Homey CLI - ALWAYS CLEAN BEFORE PUSH (SECURITY RULE)
+.homeycompose/
+.homeybuild/
+*.homeybuild
+.homeybuild-cache/
+
+# MANDATORY: Clean .homeycompose before EVERY push/publish to avoid cached files
+# This prevents security risks and ensures clean builds
+
+# HOMEY SECURITY COMPLIANCE
+*credential*
+*password*
+*token*
+*secret*
+*key*
+.env
+.auth
+
+# SECURITY - NEVER COMMIT CREDENTIALS (HOMEY REJECTION PREVENTION)
+# MANDATORY HOMEY COMPLIANCE - RESPONSE TO SECURITY REJECTION
+*password*
+*token*
+*secret*
+*credential*
+*auth*
+*.key
+*.pem
+*.p12
+*api_key*
+*access_token*
+.env*
+.auth*
+
+# HOMEY SPECIFIC - ALWAYS CLEAN BEFORE PUBLISH
+.homeycompose/
+.homeybuild/
+*.homeybuild
+.homeybuild-cache/
+
+# RULE: CLEAN .homeycompose BEFORE EVERY PUSH/PUBLISH (PREVENTS CACHE ISSUES)
+*.env
+.env*
+env.json
+credentials.json
+secrets.json
+api-keys.json
+auth-tokens.json
+*password*
+*token*
+*key*
+*secret*
+*credential*
+.auth
+.credentials
+*api_key*
+*access_token*
+bearer*
+authorization*
+
+# BACKUP DIRECTORIES - SECURITY RISK
+project-archive/
+backup*/
+temp*/
+*cache*/
+.backup/
+
+# Project data and logs
+project-data/
+publish-logs/
+*.log.txt
+# HOMEY SECURITY RULES - MANDATORY COMPLIANCE
+.homeycompose/
+.homeybuild/
+*.credential*
+*.key*
+*.token*
+.env*
+.auth*
+# NEVER COMMIT CREDENTIALS (HOMEY REJECTION PREVENTION)

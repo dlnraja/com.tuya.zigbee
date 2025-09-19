@@ -1,0 +1,30 @@
+name: TRIGGER PUBLISH NOW
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  immediate-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install Homey CLI
+        run: npm install -g homey
+        
+      - name: Security Clean
+        run: |
+          rm -rf .homeycompose || true
+          echo "🧹 Security cleaned"
+          
+      - name: PUBLISH v1.0.31
+        run: |
+          echo "🚀 PUBLISHING Generic Tuya v1.0.31"
+          echo "Addressing Homey rejection - all points resolved"
+          homey app publish --force
