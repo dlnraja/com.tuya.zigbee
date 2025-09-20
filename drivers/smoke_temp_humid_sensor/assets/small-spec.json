@@ -1,0 +1,17 @@
+{
+  "driver": "smoke_temp_humid_sensor",
+  "category": "temp",
+  "size": "small",
+  "dimensions": "75x75px",
+  "description": "temperature sensor",
+  "homeySDK3": true,
+  "johanBenzStyle": true,
+  "aiRecognition": true,
+  "instructions": [
+    "White background or transparent",
+    "Professional minimalist style",
+    "No brand logos",
+    "High contrast for AI recognition",
+    "Homey SDK3 compliant dimensions"
+  ]
+}

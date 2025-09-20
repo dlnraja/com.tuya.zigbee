@@ -1,13 +1,6 @@
 {
   "driver": "smart_switch_3gang_ac",
-  "specifications": {
-    "buttons": 3,
-    "type": "wall_switch"
-  },
-  "sizes": [
-    "75x75",
-    "500x500"
-  ],
-  "format": "PNG",
-  "style": "johan_bendz_compliant"
+  "context": "3 buttons visible",
+  "guidelines": "Homey SDK3 compliant, 75x75px minimum",
+  "style": "Johan Bendz inspired, professional, unbranded"
 }

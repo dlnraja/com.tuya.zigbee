@@ -1,0 +1,17 @@
+{
+  "driver": "smart_switch_3gang_hybrid",
+  "category": "3gang",
+  "size": "small",
+  "dimensions": "75x75px",
+  "description": "3 buttons switch",
+  "homeySDK3": true,
+  "johanBenzStyle": true,
+  "aiRecognition": true,
+  "instructions": [
+    "White background or transparent",
+    "Professional minimalist style",
+    "No brand logos",
+    "High contrast for AI recognition",
+    "Homey SDK3 compliant dimensions"
+  ]
+}

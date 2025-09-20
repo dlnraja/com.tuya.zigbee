@@ -1,0 +1,17 @@
+{
+  "driver": "smart_bulb_tunable",
+  "category": "generic",
+  "size": "large",
+  "dimensions": "250x175px",
+  "description": "smart device",
+  "homeySDK3": true,
+  "johanBenzStyle": true,
+  "aiRecognition": true,
+  "instructions": [
+    "White background or transparent",
+    "Professional minimalist style",
+    "No brand logos",
+    "High contrast for AI recognition",
+    "Homey SDK3 compliant dimensions"
+  ]
+}
