@@ -33,7 +33,7 @@ jobs:
       run: npm install -g homey
       
     - name: Authenticate Homey
-      run: echo "${{ secrets.HOMEY_TOKEN }}" | homey login --token
+      run: echo "${{ secret: "REDACTED"}}" | homey login --token: "REDACTED"
       
     - name: Build app
       run: homey app build

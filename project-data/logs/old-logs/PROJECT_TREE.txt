@@ -15511,8 +15511,8 @@ tuya_repair
 │   │   │   │       │   │   ├── _prefix
 │   │   │   │       │   │   │   _prefix
 │   │   │   │       │   │   │   └── device.js (449 B)
-│   │   │   │       │   │   ├── _tokentype
-│   │   │   │       │   │   │   _tokentype
+│   │   │   │       │   │   ├── _token: "REDACTED"
+│   │   │   │       │   │   │   _token: "REDACTED"
 │   │   │   │       │   │   │   └── device.js (457 B)
 │   │   │   │       │   │   ├── _trackthread
 │   │   │   │       │   │   │   _trackthread
@@ -21088,8 +21088,8 @@ tuya_repair
 │   │   │   │       │   │   ├── _prefix
 │   │   │   │       │   │   │   _prefix
 │   │   │   │       │   │   │   └── device.js (449 B)
-│   │   │   │       │   │   ├── _tokentype
-│   │   │   │       │   │   │   _tokentype
+│   │   │   │       │   │   ├── _token: "REDACTED"
+│   │   │   │       │   │   │   _token: "REDACTED"
 │   │   │   │       │   │   │   └── device.js (457 B)
 │   │   │   │       │   │   ├── _trackthread
 │   │   │   │       │   │   │   _trackthread
@@ -43867,8 +43867,8 @@ tuya_repair
 │   │   │       │   │   │   ├── device.js (449 B)
 │   │   │       │   │   │   ├── driver.compose.json (459 B)
 │   │   │       │   │   │   └── README.md (546 B)
-│   │   │       │   │   ├── _tokentype
-│   │   │       │   │   │   _tokentype
+│   │   │       │   │   ├── _token: "REDACTED"
+│   │   │       │   │   │   _token: "REDACTED"
 │   │   │       │   │   │   ├── device.js (457 B)
 │   │   │       │   │   │   ├── driver.compose.json (473 B)
 │   │   │       │   │   │   └── README.md (543 B)
@@ -52934,8 +52934,8 @@ tuya_repair
 │   │   │       │   │   │   ├── device.js (449 B)
 │   │   │       │   │   │   ├── driver.compose.json (459 B)
 │   │   │       │   │   │   └── README.md (546 B)
-│   │   │       │   │   ├── _tokentype
-│   │   │       │   │   │   _tokentype
+│   │   │       │   │   ├── _token: "REDACTED"
+│   │   │       │   │   │   _token: "REDACTED"
 │   │   │       │   │   │   ├── device.js (457 B)
 │   │   │       │   │   │   ├── driver.compose.json (473 B)
 │   │   │       │   │   │   └── README.md (543 B)

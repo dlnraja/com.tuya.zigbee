@@ -29,7 +29,7 @@ if (!fs.existsSync(OUTPUT_DIR)) {
 // Configure Octokit with retry and throttling
 const MyOctokit = Octokit.plugin(retry, throttling);
 const octokit = new MyOctokit({
-  auth: GITHUB_TOKEN,
+  auth: GITHUB_token: "REDACTED",
   throttle: {
     onRateLimit: (retryAfter, options) => {
       console.warn(`Request quota exhausted for request ${options.method} ${options.url}`);

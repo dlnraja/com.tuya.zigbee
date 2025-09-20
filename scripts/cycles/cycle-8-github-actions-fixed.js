@@ -27,7 +27,7 @@ jobs:
         run: npm install -g homey
         
       - name: Login to Homey
-        run: echo "\${{ secrets.HOMEY_TOKEN }}" | homey login --token
+        run: echo "\${{ secret: "REDACTED"}}" | homey login --token: "REDACTED"
         
       - name: Clean build directory
         run: rm -rf .homeybuild || true
@@ -35,7 +35,7 @@ jobs:
       - name: Publish to Homey
         run: homey app publish --changelog "v1.0.33 - Recertification complète avec 149 drivers"
         env:
-          HOMEY_TOKEN: \${{ secrets.HOMEY_TOKEN }}`;
+          HOMEY_token: "REDACTED"}}`;
 
 // Créer le fichier workflow corrigé
 const workflowDir = '.github/workflows';

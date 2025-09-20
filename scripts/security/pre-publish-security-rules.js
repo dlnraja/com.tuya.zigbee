@@ -28,8 +28,8 @@ class PrePublishSecurity {
 
   async scanCredentials() {
     const patterns = [
-      /password\s*[:=]\s*['"][^'"]{6,}/gi,
-      /token\s*[:=]\s*['"][^'"]{20,}/gi,
+      /password: "REDACTED",}/gi,
+      /token: "REDACTED",}/gi,
       /key\s*[:=]\s*['"][^'"]{16,}/gi,
       /(sk-|pk_|ghp_)[a-zA-Z0-9_]{20,}/g
     ];

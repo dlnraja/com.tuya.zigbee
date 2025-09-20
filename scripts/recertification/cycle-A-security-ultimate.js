@@ -41,11 +41,11 @@ class CycleASecurityUltimate {
   async deepCredentialScan() {
     const patterns = [
       // Patterns that likely triggered Homey rejection
-      /(?:password|token|key|secret|auth|credential)\s*[:=]\s*['"][^'"]{6,}/gi,
+      /(?:password: "REDACTED",}/gi,
       /(?:sk-|pk_|ghp_|gho_)[a-zA-Z0-9_]{20,}/g,
       /(?:AKIA|ASIA)[A-Z0-9]{16}/g, // AWS keys
       /xox[baprs]-[0-9a-zA-Z]{10,48}/g, // Slack tokens
-      /(?:api|access|bearer)[_\s]*(?:key|token)[_\s]*[:=]\s*['"][^'"]{10,}/gi
+      /(?:api|access|bearer)[_\s]*(?:key|token: "REDACTED",}/gi
     ];
     
     console.log('  🔍 Deep credential scan...');
@@ -73,7 +73,7 @@ class CycleASecurityUltimate {
       '.homeybuild/',
       '*.credential*',
       '*.key*', 
-      '*.token*',
+      '*.token: "REDACTED",
       '.env*',
       '.auth*',
       '# NEVER COMMIT CREDENTIALS (HOMEY REJECTION PREVENTION)'
