@@ -1,0 +1,54 @@
+# Script d'installation et d'exécution
+Write-Host "=== Installation et exécution du script update-drivers.js ===" -ForegroundColor Cyan
+
+# Vérifier si Node.js est installé
+$nodePath = (Get-Command node -ErrorAction SilentlyContinue).Source
+if (-not $nodePath) {
+    Write-Host "❌ Node.js n'est pas installé ou n'est pas dans le PATH" -ForegroundColor Red
+    Write-Host "Veuillez installer Node.js depuis https://nodejs.org/"
+    exit 1
+}
+
+# Afficher les versions
+$nodeVersion = node --version
+$npmVersion = npm --version
+Write-Host "- Node.js $nodeVersion"
+Write-Host "- npm $npmVersion"
+
+# Aller dans le dossier scripts
+Set-Location scripts -ErrorAction Stop
+
+# Créer un package.json minimal s'il n'existe pas
+if (-not (Test-Path "package.json")) {
+    Write-Host "Création d'un fichier package.json minimal..."
+    @{
+        "name" = "tuya-zigbee-scripts"
+        "version" = "1.0.0"
+        "private" = $true
+        "type" = "module"
+    } | ConvertTo-Json | Set-Content -Path "package.json"
+}
+
+# Installer les dépendances requises
+$dependencies = @("uuid@9.0.0", "axios@1.6.2", "chalk@5.3.0", "fs-extra@11.1.1", "glob@10.3.3")
+
+foreach ($dep in $dependencies) {
+    $package = $dep -replace '@.*', ''
+    Write-Host "Installation de $dep..."
+    npm install $dep --save
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "❌ Échec de l'installation de $dep" -ForegroundColor Red
+        exit 1
+    }
+}
+
+# Exécuter le script
+Write-Host "`n=== Exécution de update-drivers.js ===" -ForegroundColor Cyan
+node update-drivers.js
+
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "❌ Le script a échoué avec le code $LASTEXITCODE" -ForegroundColor Red
+    exit $LASTEXITCODE
+}
+
+Write-Host "✅ Script exécuté avec succès" -ForegroundColor Green

@@ -1,0 +1,39 @@
+﻿**********************
+Début de la transcription Windows PowerShell
+Heure de début : 20250905015920
+Nom d'utilisateur : DESKTOP-R88B9I0\HP
+Utilisateur runAs :  DESKTOP-R88B9I0\HP
+Nom de la configuration : 
+Ordinateur : DESKTOP-R88B9I0 (Microsoft Windows NT 10.0.26100.0)
+Application hôte : C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File verify_and_fix.ps1
+ID de processus : 27944
+PSVersion: 5.1.26100.4768
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.4768
+BuildVersion: 10.0.26100.4768
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcription démarrée, le fichier de sortie est verification_20250905_015919.log
+[2025-09-05 01:59:20] [INFO] 1. Verifying project structure...
+PS>Erreur de terminaison (Add-Content) : « L’exécution de la commande s’est arrêtée, car la variable de préférence « ErrorActionPreference » ou le paramètre courant a la valeur Stop : Le processus ne peut pas accéder au fichier 'C:\Users\HP\Desktop\tuya_repair\verification_20250905_015919.log', car il est en cours d'utilisation par un autre processus. »
+>> Erreur de terminaison (Add-Content) : « L’exécution de la commande s’est arrêtée, car la variable de préférence « ErrorActionPreference » ou le paramètre courant a la valeur Stop : Le processus ne peut pas accéder au fichier 'C:\Users\HP\Desktop\tuya_repair\verification_20250905_015919.log', car il est en cours d'utilisation par un autre processus. »
+>> Erreur de terminaison (Add-Content) : « L’exécution de la commande s’est arrêtée, car la variable de préférence « ErrorActionPreference » ou le paramètre courant a la valeur Stop : Le processus ne peut pas accéder au fichier 'C:\Users\HP\Desktop\tuya_repair\verification_20250905_015919.log', car il est en cours d'utilisation par un autre processus. »
+L’exécution de la commande s’est arrêtée, car la variable de préférence « ErrorActionPreference » ou le paramètre courant a la valeur Stop : Le processus ne peut pas accéder au fichier 'C:\Users\HP\Desktop\tuya_repair\verification_20250905_015919.log', car il est en cours d'utilisation par un autre processus.
+Add-Content : Le processus ne peut pas accéder au fichier
+'C:\Users\HP\Desktop\tuya_repair\verification_20250905_015919.log', car il est
+en cours d'utilisation par un autre processus.
+Au caractère C:\Users\HP\Desktop\tuya_repair\verify_and_fix.ps1:15 : 5
++     Add-Content -Path $logFile -Value "[$timestamp] [$status] $messag ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (C:\Users\HP\Des...0905_015919.log:St
+   ring) [Add-Content], IOException
+    + FullyQualifiedErrorId : GetContentWriterIOError,Microsoft.PowerShell.Comm
+   ands.AddContentCommand
+
+**********************
+Fin de la transcription Windows PowerShell
+Heure de fin : 20250905015925
+**********************

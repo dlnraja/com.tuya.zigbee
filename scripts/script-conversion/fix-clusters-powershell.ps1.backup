@@ -1,0 +1,99 @@
+# Fix Clusters to Numbers - PowerShell Script
+Write-Host "🔧 CONVERSION CLUSTERS VERS NUMÉROS" -ForegroundColor Green
+Write-Host "===================================" -ForegroundColor Green
+
+# Mapping des clusters
+$clusterIds = @{
+    'genBasic' = 0
+    'genPowerCfg' = 1
+    'genOnOff' = 6
+    'genLevelCtrl' = 8
+    'genScenes' = 5
+    'genGroups' = 4
+    'genAlarms' = 9
+    'genTime' = 10
+    'genElectricalMeasurement' = 2820
+    'genMetering' = 1794
+    'genTemperatureMeasurement' = 1026
+    'genHumidityMeasurement' = 1029
+    'genOccupancySensing' = 1030
+    'genColorCtrl' = 768
+    'genFanControl' = 514
+    'genDoorLock' = 257
+    'genThermostat' = 513
+    'genWindowCovering' = 258
+}
+
+# Lire app.json
+$appJsonPath = Join-Path $PSScriptRoot "..\..\app.json"
+Write-Host "📂 Lecture de app.json..." -ForegroundColor Yellow
+
+if (-not (Test-Path $appJsonPath)) {
+    Write-Host "❌ app.json non trouvé !" -ForegroundColor Red
+    exit 1
+}
+
+try {
+    $content = Get-Content $appJsonPath -Raw -Encoding UTF8
+    $appConfig = $content | ConvertFrom-Json
+    
+    if (-not $appConfig.drivers -or $appConfig.drivers.Count -eq 0) {
+        Write-Host "❌ Aucun driver trouvé dans app.json !" -ForegroundColor Red
+        exit 1
+    }
+    
+    Write-Host "📊 Trouvé $($appConfig.drivers.Count) drivers" -ForegroundColor Yellow
+    
+    $correctedCount = 0
+    
+    foreach ($driver in $appConfig.drivers) {
+        if (-not $driver.zigbee -or -not $driver.zigbee.endpoints) {
+            continue
+        }
+        
+        $driverModified = $false
+        
+        foreach ($endpointId in $driver.zigbee.endpoints.PSObject.Properties.Name) {
+            $endpoint = $driver.zigbee.endpoints.$endpointId
+            
+            if ($endpoint.clusters -and $endpoint.clusters -is [array]) {
+                $numericClusters = @()
+                
+                foreach ($cluster in $endpoint.clusters) {
+                    if ($cluster -is [string] -and $clusterIds.ContainsKey($cluster)) {
+                        $numericClusters += $clusterIds[$cluster]
+                    } else {
+                        $numericClusters += $cluster
+                    }
+                }
+                
+                $endpoint.clusters = $numericClusters
+                $driverModified = $true
+            }
+        }
+        
+        if ($driverModified) {
+            $correctedCount++
+            Write-Host "✅ $($driver.id) - clusters convertis" -ForegroundColor Green
+        }
+    }
+    
+    # Sauvegarder le fichier corrigé
+    $updatedContent = $appConfig | ConvertTo-Json -Depth 10
+    Set-Content -Path $appJsonPath -Value $updatedContent -Encoding UTF8
+    
+    Write-Host "`n📊 RÉSUMÉ:" -ForegroundColor Cyan
+    Write-Host "   - Drivers corrigés: $correctedCount" -ForegroundColor White
+    Write-Host "   - Total drivers: $($appConfig.drivers.Count)" -ForegroundColor White
+    
+    if ($correctedCount -gt 0) {
+        Write-Host "`n🎉 Conversion terminée !" -ForegroundColor Green
+        Write-Host "🚀 Prêt pour homey app validate" -ForegroundColor Green
+    } else {
+        Write-Host "`n⚠️  Aucune conversion nécessaire" -ForegroundColor Yellow
+    }
+    
+} catch {
+    Write-Host "❌ Erreur: $($_.Exception.Message)" -ForegroundColor Red
+    exit 1
+}

@@ -1,0 +1,81 @@
+# Configuration
+$repoPath = "c:\Users\HP\Desktop\tuya_repair"
+$githubUser = "dlnraja"
+$githubEmail = "dylan.rajasekaram@gmail.com"
+$repoName = "com.tuya.zigbee"
+$branch = "master"
+
+# Se déplacer dans le répertoire du projet
+Set-Location -Path $repoPath
+
+# Configuration de Git
+Write-Host "Configuration de Git..." -ForegroundColor Cyan
+try {
+    git config --global user.name $githubUser
+    git config --global user.email $githubEmail
+    Write-Host "✓ Configuration Git effectuée" -ForegroundColor Green
+} catch {
+    Write-Host "Erreur de configuration Git: $_" -ForegroundColor Red
+    exit 1
+}
+
+# Vérifier si c'est un dépôt Git
+if (-not (Test-Path "$repoPath\.git")) {
+    Write-Host "Initialisation d'un nouveau dépôt Git..." -ForegroundColor Cyan
+    try {
+        git init
+        Write-Host "✓ Dépôt Git initialisé" -ForegroundColor Green
+    } catch {
+        Write-Host "Erreur lors de l'initialisation du dépôt: $_" -ForegroundColor Red
+        exit 1
+    }
+}
+
+# Ajouter le dépôt distant (le supprimer d'abord s'il existe déjà)
+try {
+    git remote remove origin
+} catch {}
+
+try {
+    git remote add origin "https://github.com/$githubUser/$repoName.git"
+    Write-Host "✓ Dépôt distant configuré: https://github.com/$githubUser/$repoName.git" -ForegroundColor Green
+} catch {
+    Write-Host "Erreur lors de la configuration du dépôt distant: $_" -ForegroundColor Red
+    exit 1
+}
+
+# Ajouter tous les fichiers
+Write-Host "Ajout des fichiers..." -ForegroundColor Cyan
+try {
+    git add .
+    Write-Host "✓ Fichiers ajoutés" -ForegroundColor Green
+} catch {
+    Write-Host "Erreur lors de l'ajout des fichiers: $_" -ForegroundColor Red
+    exit 1
+}
+
+# Créer un commit
+Write-Host "Création du commit..." -ForegroundColor Cyan
+try {
+    git commit -m "Mise à jour du projet Tuya Zigbee"
+    Write-Host "✓ Commit créé" -ForegroundColor Green
+} catch {
+    Write-Host "Erreur lors de la création du commit: $_" -ForegroundColor Red
+    exit 1
+}
+
+# Pousser vers la branche principale
+Write-Host "Pousse des modifications vers $branch..." -ForegroundColor Cyan
+try {
+    git push -u origin $branch --force
+    Write-Host "✓ Modifications poussées avec succès vers $branch" -ForegroundColor Green
+} catch {
+    Write-Host "Erreur lors du push: $_" -ForegroundColor Red
+    Write-Host "Vérifiez que vous avez les droits d'accès au dépôt." -ForegroundColor Yellow
+    exit 1
+}
+
+Write-Host "\n✓ Opération terminée avec succès!" -ForegroundColor Green
+Write-Host "Vos modifications ont été poussées vers: https://github.com/$githubUser/$repoName/tree/$branch" -ForegroundColor Green
+
+Read-Host "Appuyez sur Entrée pour quitter..."

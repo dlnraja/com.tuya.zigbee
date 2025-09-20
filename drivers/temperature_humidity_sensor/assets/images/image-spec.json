@@ -1,0 +1,13 @@
+{
+  "driver": "temperature_humidity_sensor",
+  "specifications": {
+    "type": "temp_sensor",
+    "display": true
+  },
+  "sizes": [
+    "75x75",
+    "500x500"
+  ],
+  "format": "PNG",
+  "style": "johan_bendz_compliant"
+}

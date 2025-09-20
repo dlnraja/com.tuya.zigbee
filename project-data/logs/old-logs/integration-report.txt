@@ -1,0 +1,279 @@
+===== RAPPORT D'INTÉGRATION =====
+Date: 10/09/2025 12:09:51
+
+=== STRUCTURE DU PROJET ===
+
+Dossiers racine:
+.backup-central
+.external_sources
+.git
+.github
+.homeybuild
+.homeycompose
+.vscode
+analysis-results
+archives
+assets
+backup
+backups
+catalog
+config
+dashboard
+data
+deployment
+dist
+docs
+drivers
+enriched
+evidence
+examples
+final-release
+final-validation
+generated-drivers
+homey-ultimate-zigbee-hub
+improved-drivers
+lib
+locales
+logs
+matrices
+monitoring
+public
+python_service
+ref
+references
+release
+releases
+reports
+research
+resources
+scan-results
+schemas
+scraping-data
+script-consolidation
+script-conversion
+scripts
+scripts_tools
+script_env
+settings
+src
+sync
+temp
+templates
+temp_install
+temp_ultimate_script
+test
+tests
+tools
+tuya-light
+tuya_refactor_patch
+types
+web-enriched
+__mocks__
+__pycache__
+
+Fichiers racine:
+app.js
+app.json
+automated-test-report.json
+babel.config.js
+CHANGELOG.md
+compatibility-matrix.js
+CONTRIBUTING.md
+DEVELOPMENT.md
+driver-registry.json
+drivers-check-report.json
+enrich-drivers.js
+ersHPDesktoptuya_repair'
+eslint.config.js
+file-organization.log
+FINAL_ANALYSIS_REPORT.md
+final_verification_launch.ps1
+integration-report.txt
+jest.config.js
+LICENSE
+MASTER_IMPROVEMENT_PLAN.md
+MEGA_PROMPT.md
+mega_script_optimized.js
+nodemon.json
+package.json
+PROJECT_TREE.txt
+PUBLICATION_READY.md
+README.md
+RESEARCH-TOOLS.md
+run-all.ps1
+setup-dev.ps1
+SOURCES.md
+start-restructuration.js
+system-check.log
+temp-package.json
+test-env.js
+tsconfig.json
+ultimate-project-corrected.js
+ultimate-project-latest.js
+ultimate-project-v2.js
+ultimate-project.js
+ultimate-project.log
+verification_20250905_015919.log
+verify_and_fix.ps1
+
+=== DRIVERS ===
+[aqara_motion_sensor]
+- Configuration: OUI
+name: {"en":"Aqara Motion Sensor","fr":"Capteur de Mouvement Aqara"}
+class: "sensor"
+
+[bosch_thermostat_valve]
+- Configuration: OUI
+name: {"en":"Bosch Thermostat Valve","fr":"Tête Thermostatique Bosch"}
+class: "thermostat"
+
+[climate]
+- Configuration: OUI
+name: "Climate Devices"
+class: "sensor"
+
+[common]
+- Configuration: OUI
+name: "Common Utilities"
+class: "sensor"
+
+[covers]
+- Configuration: OUI
+name: "Covers"
+class: "sensor"
+
+[ikea_tradfri_bulb]
+- Configuration: OUI
+name: {"en":"IKEA TRÅDFRI Bulb","fr":"Ampoule IKEA TRÅDFRI"}
+class: "light"
+
+[lights]
+- Configuration: OUI
+name: "Lights"
+class: "sensor"
+
+[manufacturers]
+- Configuration: OUI
+name: "Manufacturers Container"
+class: "sensor"
+
+[protocols]
+- Configuration: OUI
+name: "Protocols Container"
+class: "folder"
+
+[security]
+- Configuration: OUI
+name: "Security Devices"
+class: "sensor"
+
+[sensors]
+- Configuration: OUI
+name: "Sensors"
+class: "sensor"
+
+[sensors-TS0601_motion]
+- Configuration: OUI
+name: {"en":"Tuya TS0601 Motion Sensor","fr":"Détecteur de mouvement Tuya TS0601","nl":"Tuya TS0601 Bewegingssensor","ta":"Tuya TS0601 இயக்க உணரி"}
+class: "sensor"
+
+[switches]
+- Configuration: OUI
+name: "Switches"
+class: "sensor"
+
+[templates]
+- Configuration: OUI
+name: {"en":"Template Device"}
+class: "sensor"
+
+[tuya]
+- Configuration: OUI
+name: {"en":"tuya","fr":"tuya"}
+class: "other"
+
+[tuya-ts0011]
+- Configuration: OUI
+name: {"en":"Tuya TS0011 Smart Switch"}
+class: "sensor"
+
+[tuya-ts011f]
+- Configuration: OUI
+name: {"en":"Tuya Smart Plug (TS011F)","fr":"Prise intelligente Tuya (TS011F)","nl":"Tuya Slimme stekker (TS011F)"}
+class: "socket"
+
+[tuya_light_ts0501a]
+- Configuration: OUI
+name: {"en":"Tuya Dimmable Bulb","fr":"Tuya Dimmable Bulb","nl":"Tuya Dimmable Bulb","de":"Tuya Dimmable Bulb"}
+class: "light"
+
+[tuya_light_ts0502a]
+- Configuration: OUI
+name: {"en":"Tuya CCT Bulb","fr":"Tuya CCT Bulb","nl":"Tuya CCT Bulb","de":"Tuya CCT Bulb"}
+class: "light"
+
+[tuya_light_ts0502b]
+- Configuration: OUI
+name: {"en":"Tuya CCT Bulb v2","fr":"Tuya CCT Bulb v2","nl":"Tuya CCT Bulb v2","de":"Tuya CCT Bulb v2"}
+class: "light"
+
+[tuya_light_ts0505a]
+- Configuration: OUI
+name: {"en":"Tuya RGB+CCT Bulb Alt","fr":"Tuya RGB+CCT Bulb Alt","nl":"Tuya RGB+CCT Bulb Alt","de":"Tuya RGB+CCT Bulb Alt"}
+class: "light"
+
+[tuya_light_ts0505b]
+- Configuration: OUI
+name: {"en":"Tuya RGB+CCT Bulb","fr":"Tuya RGB+CCT Bulb","nl":"Tuya RGB+CCT Bulb","de":"Tuya RGB+CCT Bulb"}
+class: "light"
+
+[tuya_light_universal]
+- Configuration: OUI
+name: {"en":"Tuya Smart Light (Universal)","fr":"Tuya Smart Light (Universel)","nl":"Tuya Smart Light (Universeel)","de":"Tuya Smart Light (Universal)"}
+class: "light"
+
+[tuya_thermostat]
+- Configuration: OUI
+name: "Tuya Thermostat"
+class: "thermostat"
+
+[tuya_water_sensor]
+- Configuration: OUI
+name: "Tuya Water Sensor"
+class: "sensor"
+
+[types]
+- Configuration: OUI
+name: {"en":"Device Types"}
+class: "other"
+
+[zigbee]
+- Configuration: OUI
+name: {"en":"Zigbee Devices"}
+class: "other"
+
+[zigbee-tuya-universal]
+- Configuration: OUI
+name: {"en":"Zigbee-Tuya-Universal","fr":"Zigbee-Tuya-Universal"}
+class: "other"
+
+[_base]
+- Configuration: OUI
+name: {"en":"Base Driver"}
+class: "sensor"
+
+[_template]
+- Configuration: OUI
+name: {"en":"Template Device","fr":"Modèle d'appareil"}
+class: "other"
+
+[_templates]
+- Configuration: OUI
+name: {"en":"Tuya Device Template"}
+class: "other"
+
+
+=== RÉSUMÉ ===
+Nombre total de drivers: 31
+
+===== FIN DU RAPPORT =====
