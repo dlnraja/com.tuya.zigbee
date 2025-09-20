@@ -1,0 +1,29 @@
+=== Début du diagnostic système ===
+Date: 2025-09-10T10:10:24.788Z
+
+
+=== Informations système ===
+OS: Windows_NT 10.0.26100 (win32 x64)
+Hostname: DESKTOP-R88B9I0
+CPU: Intel(R) Core(TM) i7-7600U CPU @ 2.80GHz (4 cores)
+Total RAM: 15.88 GB
+
+=== Variables d'environnement ===
+PATH=C:\Program Files\PowerShell\7;C:\Python313\Scripts\;C:\Python313\;c:\Users\HP\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\ImageMagick-7.1.2-Q16-HDRI;C:\Program Files\VanDyke Software\Clients\;C:\Program Files (x86)\VMware\VMware Player\bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\HP\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\HP\AppData\Local\Programs\Python\Python311\;C:\Users\HP\AppData\Local\Microsoft\WindowsApps;C:\adb;C:\Program Files\dotnet\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\WireGuard\;C:\Program Files\qemu;C:\Users\HP\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\PuTTY\;C:\Program Files (x86)\Common Files\Acronis\SnapAPI\;C:\Program Files (x86)\Common Files\Acronis\VirtualFile\;C:\Program Files (x86)\Common Files\Acronis\VirtualFile64\;C:\Program Files (x86)\Common Files\Acron;C:\Program Files\cursor\resources\app\bin;C:\Program Files\GitHub CLI\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Program Files\PowerShell\7;C:\Program Files\ImageMagick-7.1.2-Q16-HDRI;C:\Python313\Scripts\;C:\Python313\;C:\Program Files\VanDyke Software\Clients\;C:\Program Files (x86)\VMware\VMware Player\bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\HP\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\HP\AppData\Local\Programs\Python\Python311\;C:\Users\HP\AppData\Local\Microsoft\WindowsApps;C:\adb;C:\Program Files\dotnet\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\WireGuard\;C:\Program Files\qemu;C:\Users\HP\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\PuTTY\;C:\Program Files (x86)\Common Files\Acronis\SnapAPI\;C:\Program Files (x86)\Common Files\Acronis\VirtualFile\;C:\Program Files (x86)\Common Files\Acronis\VirtualFile64\;C:\Program Files (x86)\Common Files\Acronis\FileProtector\;C:\Program Files (x86)\Common Files\Acronis\FileProtector64\;C:\Program Files (x86)\AOMEI;C:\Program Files\Git\cmd;C:\Program Files\PowerShell\7\;C:\Program Files\nodejs\;C:\Users\HP\AppData\Local\UniGetUI\Chocolatey\bin;C:\Users\HP\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\HP\AppData\Local\Programs\Python\Python312\;C:\Users\HP\AppData\Local\Programs\WingetUI\choco-cli\bin;C:\Users\HP\AppData\Local\atom\bin;C:\Users\HP\AppData\Roaming\nvm;C:\Users\HP\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\HP\AppData\Local\Programs\cursor\resources\app\bin;C:\Users\HP\AppData\Local\gitkraken\bin;C:\Users\HP\AppData\Local\GitHubDesktop\bin;C:\Program Files\GitHub CLI;C:\Users\HP\AppData\Local\Programs\Windsurf\bin;C:\Users\HP\AppData\Roaming\npm;c:\Users\HP\.windsurf\extensions\ms-python.debugpy-2025.6.0-win32-x64\bundled\scripts\noConfigScripts
+
+=== Node.js ===
+Node.js version: v22.19.0
+
+=== npm ===
+npm version: 11.5.2
+
+=== Test d'accès au système de fichiers ===
+✅ Test d'écriture réussi
+
+=== Test d'exécution Node.js ===
+Test réussi!
+Node.js version: v22.19.0
+Répertoire: C:\Users\HP\Desktop\tuya_repair
+
+=== Fin du diagnostic ===
+Date: 2025-09-10T10:10:35.120Z

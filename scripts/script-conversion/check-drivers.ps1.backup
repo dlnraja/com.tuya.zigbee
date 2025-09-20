@@ -1,0 +1,79 @@
+# Script PowerShell pour vérifier la structure des drivers
+Write-Host "=== VÉRIFICATION DES DRIVERS TUYA ZIGBEE ===`n" -ForegroundColor Cyan
+
+# Vérifier le dossier des drivers
+$driversPath = Join-Path $PSScriptRoot "drivers"
+
+if (-not (Test-Path $driversPath)) {
+    Write-Host "❌ Le dossier des drivers est introuvable: $driversPath" -ForegroundColor Red
+    exit 1
+}
+
+# Compter les dossiers de drivers
+$driverDirs = Get-ChildItem -Path $driversPath -Directory
+$driverCount = $driverDirs.Count
+
+Write-Host "📦 $driverCount dossiers de drivers trouvés`n" -ForegroundColor Green
+
+# Analyser les 5 premiers dossiers
+Write-Host "🔍 Analyse des 5 premiers dossiers de drivers :`n" -ForegroundColor Cyan
+
+$driverDirs | Select-Object -First 5 | ForEach-Object {
+    $driverName = $_.Name
+    $driverPath = $_.FullName
+    $configPath = Join-Path $driverPath "driver.compose.json"
+    
+    Write-Host "📂 $driverName" -ForegroundColor Yellow
+    
+    # Vérifier le fichier de configuration
+    if (Test-Path $configPath) {
+        try {
+            $config = Get-Content $configPath -Raw | ConvertFrom-Json
+            
+            # Afficher les informations de base
+            $id = $config.id
+            $name = if ($config.name) { $config.name.en } else { "Non défini" }
+            $class = $config.class
+            
+            Write-Host "   - ID: $id"
+            Write-Host "   - Nom: $name"
+            Write-Host "   - Classe: $class"
+            
+            # Vérifier les icônes
+            if ($config.images) {
+                $smallIcon = Join-Path $driverPath $config.images.small
+                $largeIcon = Join-Path $driverPath $config.images.large
+                
+                $smallExists = Test-Path $smallIcon
+                $largeExists = Test-Path $largeIcon
+                
+                Write-Host "   - Icône petite: $($smallExists ? '✅' : '❌') $($config.images.small)"
+                Write-Host "   - Icône grande: $($largeExists ? '✅' : '❌') $($config.images.large)"
+            } else {
+                Write-Host "   - Aucune icône configurée" -ForegroundColor Yellow
+            }
+            
+            # Vérifier les capacités
+            if ($config.capabilities -and $config.capabilities.Count -gt 0) {
+                Write-Host "   - Capacités: $($config.capabilities -join ', ')"
+            } else {
+                Write-Host "   - Aucune capacité définie" -ForegroundColor Yellow
+            }
+            
+        } catch {
+            Write-Host "   ❌ Erreur lors de la lecture du fichier de configuration: $_" -ForegroundColor Red
+        }
+    } else {
+        Write-Host "   ❌ Fichier de configuration introuvable" -ForegroundColor Red
+    }
+    
+    Write-Host ""
+}
+
+# Afficher un résumé
+Write-Host "=== RÉSUMÉ ===" -ForegroundColor Cyan
+Write-Host "- Dossiers de drivers trouvés: $driverCount"
+Write-Host "- Pour voir la liste complète des dossiers, utilisez: Get-ChildItem -Path "$driversPath" -Directory"
+Write-Host "- Pour analyser un driver spécifique: .\check-driver.ps1 -DriverName 'nom_du_driver'"
+
+Write-Host "`nVérification terminée." -ForegroundColor Green
