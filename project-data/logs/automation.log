@@ -1,0 +1,20 @@
+[2025-08-31T20:36:11.056Z] [INFO] Starting Tuya Zigbee Automation
+[2025-08-31T20:36:11.075Z] [INFO] Created directory: C:\Users\HP\Desktop\tuya_repair\dumps
+[2025-08-31T20:36:11.080Z] [INFO] Starting step: Analyzing existing drivers
+[2025-08-31T20:36:11.612Z] [INFO] Completed step: Analyzing existing drivers (532ms)
+[2025-08-31T20:36:11.614Z] [INFO] Starting step: Processing device dumps
+[2025-08-31T20:36:11.997Z] [INFO] Completed step: Processing device dumps (383ms)
+[2025-08-31T20:36:11.998Z] [INFO] Starting step: Updating device references
+[2025-08-31T20:36:12.717Z] [INFO] Completed step: Updating device references (719ms)
+[2025-08-31T20:36:12.718Z] [INFO] Starting step: Enriching drivers
+[2025-08-31T20:36:13.304Z] [INFO] Completed step: Enriching drivers (586ms)
+[2025-08-31T20:36:13.305Z] [INFO] Starting step: Updating placeholders
+[2025-08-31T20:36:23.581Z] [INFO] Completed step: Updating placeholders (10276ms)
+[2025-08-31T20:36:23.582Z] [INFO] Starting step: Generating final report
+[2025-08-31T20:36:24.022Z] [WARN] Script generateReport stderr: Error generating driver report: ReferenceError: writeFile is not defined
+    at generateDriverReport (C:\Users\HP\Desktop\tuya_repair\tools\generate-driver-report.js:167:5)
+ReferenceError: writeFile is not defined
+    at generateDriverReport (C:\Users\HP\Desktop\tuya_repair\tools\generate-driver-report.js:167:5)
+
+[2025-08-31T20:36:24.023Z] [INFO] Completed step: Generating final report (441ms)
+[2025-08-31T20:36:24.023Z] [INFO] Automation completed in 12970ms

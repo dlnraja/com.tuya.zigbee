@@ -1,0 +1,149 @@
+# Check project structure and dependencies
+Write-Host "=== Project Structure Check ===" -ForegroundColor Cyan
+
+# Check Node.js and npm
+Write-Host "`n[Node.js and npm]" -ForegroundColor Green
+try {
+    $nodeVersion = node --version
+    $npmVersion = npm --version
+    Write-Host "Node.js: $nodeVersion"
+    Write-Host "npm: $npmVersion"
+} catch {
+    Write-Host "Node.js or npm not found. Please install Node.js from https://nodejs.org/" -ForegroundColor Red
+    exit 1
+}
+
+# Check project structure
+Write-Host "`n[Project Structure]" -ForegroundColor Green
+$requiredDirs = @('drivers', 'scripts', '.github/workflows')
+$missingDirs = @()
+
+foreach ($dir in $requiredDirs) {
+    $fullPath = Join-Path $PSScriptRoot $dir
+    if (Test-Path $fullPath) {
+        $itemCount = (Get-ChildItem -Path $fullPath -Recurse -File -ErrorAction SilentlyContinue).Count
+        Write-Host "$dir/ : Found ($itemCount files)" -ForegroundColor Green
+    } else {
+        Write-Host "$dir/ : Missing" -ForegroundColor Red
+        $missingDirs += $dir
+    }
+}
+
+# Check package.json
+Write-Host "`n[package.json]" -ForegroundColor Green
+$packageJsonPath = Join-Path $PSScriptRoot "package.json"
+if (Test-Path $packageJsonPath) {
+    try {
+        $packageJson = Get-Content -Path $packageJsonPath -Raw | ConvertFrom-Json
+        Write-Host "Name: $($packageJson.name)"
+        Write-Host "Version: $($packageJson.version)"
+        
+        # Check scripts
+        if ($packageJson.scripts) {
+            Write-Host "`nAvailable Scripts:"
+            $packageJson.scripts.PSObject.Properties | ForEach-Object {
+                Write-Host "- $($_.Name): $($_.Value)"
+            }
+        }
+    } catch {
+        Write-Host "Error parsing package.json: $_" -ForegroundColor Red
+    }
+} else {
+    Write-Host "package.json not found" -ForegroundColor Red
+}
+
+# Check drivers
+Write-Host "`n[Drivers]" -ForegroundColor Green
+$driversPath = Join-Path $PSScriptRoot "drivers"
+if (Test-Path $driversPath) {
+    $driverDirs = Get-ChildItem -Path $driversPath -Directory
+    Write-Host "Found $($driverDirs.Count) driver directories"
+    
+    # Check a sample of drivers
+    $sampleDrivers = $driverDirs | Select-Object -First 5
+    Write-Host "`nSample drivers:"
+    foreach ($driver in $sampleDrivers) {
+        $hasDeviceJs = Test-Path (Join-Path $driver.FullName "device.js")
+        $hasDriverJs = Test-Path (Join-Path $driver.FullName "driver.js")
+        $hasCompose = Test-Path (Join-Path $driver.FullName "driver.compose.json")
+        
+        $status = @(
+            "device.js:" + $(if ($hasDeviceJs) { "✅" } else { "❌" }),
+            "driver.js:" + $(if ($hasDriverJs) { "✅" } else { "❌" }),
+            "compose.json:" + $(if ($hasCompose) { "✅" } else { "❌" })
+        ) -join " "
+        
+        Write-Host "- $($driver.Name): $status"
+    }
+} else {
+    Write-Host "Drivers directory not found" -ForegroundColor Red
+}
+
+# Check CI/CD workflows
+Write-Host "`n[CI/CD Workflows]" -ForegroundColor Green
+$workflowsPath = Join-Path $PSScriptRoot ".github\workflows"
+if (Test-Path $workflowsPath) {
+    $workflowFiles = Get-ChildItem -Path $workflowsPath -Filter "*.yml"
+    Write-Host "Found $($workflowFiles.Count) workflow files:"
+    $workflowFiles | ForEach-Object { Write-Host "- $($_.Name)" }
+} else {
+    Write-Host "No CI/CD workflow files found" -ForegroundColor Yellow
+}
+
+# Check for common issues
+Write-Host "`n[Common Issues]" -ForegroundColor Green
+$issues = @()
+
+# Check for missing node_modules
+$nodeModulesPath = Join-Path $PSScriptRoot "node_modules"
+if (-not (Test-Path $nodeModulesPath)) {
+    $issues += "node_modules/ directory is missing. Run 'npm install' to install dependencies."
+}
+
+# Check for build directory
+$buildPath = Join-Path $PSScriptRoot "dist"
+if (-not (Test-Path $buildPath)) {
+    $issues += "dist/ directory not found. Run 'npm run build' to build the project."
+}
+
+# Check for test directory
+$testPath = Join-Path $PSScriptRoot "test"
+if (-not (Test-Path $testPath)) {
+    $issues += "test/ directory not found. Consider adding tests for better code quality."
+}
+
+# Display issues
+if ($issues.Count -gt 0) {
+    Write-Host "`nFound $($issues.Count) potential issues:" -ForegroundColor Yellow
+    $issues | ForEach-Object { Write-Host "- $_" }
+} else {
+    Write-Host "No common issues found." -ForegroundColor Green
+}
+
+# Recommendations
+Write-Host "`n[Recommendations]" -ForegroundColor Cyan
+$recommendations = @()
+
+if ($missingDirs.Count -gt 0) {
+    $recommendations += "Create missing directories: $($missingDirs -join ', ')"
+}
+
+if (-not (Test-Path $nodeModulesPath)) {
+    $recommendations += "Run 'npm install' to install project dependencies"
+}
+
+if (-not (Test-Path $buildPath)) {
+    $recommendations += "Run 'npm run build' to build the project"
+}
+
+if ($packageJson.scripts.test) {
+    $recommendations += "Run 'npm test' to execute tests"
+}
+
+if ($recommendations.Count -gt 0) {
+    $recommendations | ForEach-Object { Write-Host "- $_" }
+} else {
+    Write-Host "No specific recommendations. Project structure looks good!" -ForegroundColor Green
+}
+
+Write-Host "`n=== Check Complete ===" -ForegroundColor Cyan

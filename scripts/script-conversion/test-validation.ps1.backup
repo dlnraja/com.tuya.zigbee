@@ -1,0 +1,40 @@
+Write-Host "🔍 TEST VALIDATION HOMEY" -ForegroundColor Green
+Write-Host "=========================" -ForegroundColor Green
+
+Write-Host "`n📂 Vérification de app.json..." -ForegroundColor Yellow
+if (Test-Path "app.json") {
+    Write-Host "✅ app.json trouvé" -ForegroundColor Green
+    
+    # Vérifier la taille
+    $size = (Get-Item "app.json").Length
+    Write-Host "📊 Taille: $size bytes" -ForegroundColor Cyan
+    
+    # Vérifier le contenu des clusters
+    $content = Get-Content "app.json" -Raw
+    if ($content -match '"clusters":\s*\[[^\]]*\]') {
+        Write-Host "✅ Section clusters trouvée" -ForegroundColor Green
+        
+        # Vérifier si les clusters sont numériques
+        if ($content -match '"clusters":\s*\[\s*\d+') {
+            Write-Host "✅ Clusters numériques détectés" -ForegroundColor Green
+        } else {
+            Write-Host "❌ Clusters non numériques détectés" -ForegroundColor Red
+        }
+    } else {
+        Write-Host "❌ Section clusters non trouvée" -ForegroundColor Red
+    }
+} else {
+    Write-Host "❌ app.json non trouvé" -ForegroundColor Red
+}
+
+Write-Host "`n🚀 Test de validation Homey..." -ForegroundColor Yellow
+try {
+    $result = homey app validate 2>&1
+    Write-Host "✅ Validation terminée" -ForegroundColor Green
+    Write-Host "📋 Résultat:" -ForegroundColor Cyan
+    Write-Host $result
+} catch {
+    Write-Host "❌ Erreur de validation: $($_.Exception.Message)" -ForegroundColor Red
+}
+
+Write-Host "`n🎯 Test terminé" -ForegroundColor Green
