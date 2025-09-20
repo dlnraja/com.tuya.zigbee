@@ -9,3 +9,7 @@ config/secrets.js
 .homeybuild/
 project-data/publish-*.txt
 project-data/auth-*.json
+
+# Image placeholders (remplacer par vraies images)
+**/*.placeholder
+**/image-spec.json

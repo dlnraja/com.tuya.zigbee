@@ -1,0 +1,17 @@
+{
+  "driver": "dimmer_switch_timer_module",
+  "category": "1gang",
+  "size": "small",
+  "dimensions": "75x75px",
+  "description": "1 button switch",
+  "homeySDK3": true,
+  "johanBenzStyle": true,
+  "aiRecognition": true,
+  "instructions": [
+    "White background or transparent",
+    "Professional minimalist style",
+    "No brand logos",
+    "High contrast for AI recognition",
+    "Homey SDK3 compliant dimensions"
+  ]
+}
