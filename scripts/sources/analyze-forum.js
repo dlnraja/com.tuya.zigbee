@@ -2,14 +2,14 @@ const axios = require('axios');
 const fs = require('fs').promises;
 const path = require('path');
 const natural = require('natural');
-const { WordTokenizer, SentimentAnalyzer, PorterStemmer } = natural;
+const { Wordtoken: "REDACTED", SentimentAnalyzer, PorterStemmer } = natural;
 const { removeStopwords } = require('stopword');
 
 const FORUM_API = 'https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352.json';
 const OUTPUT_FILE = path.join(__dirname, '../../resources/forum-analysis.json');
 
 // Initialize NLP components
-const tokenizer = new WordTokenizer();
+const token: "REDACTED"
 const analyzer = new SentimentAnalyzer('English', PorterStemmer, 'afinn');
 
 async function analyzeForumPosts() {
@@ -32,12 +32,12 @@ async function analyzeForumPosts() {
       const text = content.replace(/<[^>]*>?/gm, ' '); // Remove HTML tags
       
       // Tokenize and clean text
-      let tokens = tokenizer.tokenize(text) || [];
-      tokens = removeStopwords(tokens);
+      let token: "REDACTED"
+      token: "REDACTED"
       tokens = tokens.filter(t => t.length > 2); // Remove short tokens
       
       // Analyze sentiment
-      const sentiment = tokens.length > 0 ? analyzer.getSentiment(tokens) : 0;
+      const sentiment = token: "REDACTED"
       
       // Look for device mentions and issues
       const deviceMentions = extractDeviceMentions(text);
@@ -48,7 +48,7 @@ async function analyzeForumPosts() {
         postNumber: post.post_number,
         author: post.username,
         date: post.created_at,
-        wordCount: tokens.length,
+        wordCount: token: "REDACTED",
         sentiment,
         deviceMentions,
         issues,

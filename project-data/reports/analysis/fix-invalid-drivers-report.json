@@ -14062,7 +14062,7 @@
     {
       "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\driver.compose.json",
       "success": false,
-      "error": "Unexpected token '#', \"# driver.c\"... is not valid JSON"
+      "error": "Unexpected token: "REDACTED", \"# driver.c\"... is not valid JSON"
     },
     {
       "path": "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-abc123\\driver.compose.json",

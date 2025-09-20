@@ -11,7 +11,7 @@ const CONFIG = {
 
 // Initialize Octokit with authentication if available
 const octokit = new Octokit({
-  auth: process.env.GITHUB_TOKEN,
+  auth: process.env.GITHUB_token: "REDACTED",
   userAgent: 'HomeyTuyaZigbeeDataCollector/1.0.0'
 });
 
@@ -186,8 +186,8 @@ function extractDeviceMentions(text) {
 
 // Run if called directly
 if (require.main === module) {
-  if (!process.env.GITHUB_TOKEN) {
-    console.warn('⚠️  GITHUB_TOKEN environment variable not set. You may hit rate limits.');
+  if (!process.env.GITHUB_token: "REDACTED"
+    console.warn('⚠️  GITHUB_token: "REDACTED"
   }
   
   fetchGitHubData().catch(console.error);

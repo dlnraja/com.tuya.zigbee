@@ -29908,9 +29908,9 @@
           "lastModified": "2025-09-03T21:18:39.011Z"
         },
         {
-          "path": "final-release\\drivers\\tuya\\unknown\\lights\\lights\\_tokentype\\device.js",
+          "path": "final-release\\drivers\\tuya\\unknown\\lights\\lights\\_token: "REDACTED",
           "size": 457,
-          "category": "_tokentype",
+          "category": "_token: "REDACTED",
           "type": "javascript",
           "functions": [],
           "dependencies": [
@@ -56112,9 +56112,9 @@
           "lastModified": "2025-09-04T07:50:44.563Z"
         },
         {
-          "path": "release\\drivers\\tuya\\unknown\\lights\\lights\\_tokentype\\device.js",
+          "path": "release\\drivers\\tuya\\unknown\\lights\\lights\\_token: "REDACTED",
           "size": 457,
-          "category": "_tokentype",
+          "category": "_token: "REDACTED",
           "type": "javascript",
           "functions": [],
           "dependencies": [
@@ -62985,7 +62985,7 @@
             "tesseract",
             "spacy",
             "natural",
-            "LLMARENA_API_KEY",
+            "LLMARENA_apiKey: "REDACTED",
             "LLMARENA_FALLBACK",
             "LLMARENA_API_URL",
             "limiter",
@@ -62996,8 +62996,8 @@
             "response",
             "processTextLocally",
             "entities",
-            "tokenizer",
-            "tokens",
+            "token: "REDACTED",
+            "token: "REDACTED",
             "deviceInfo",
             "processImageLocally"
           ],
@@ -68900,7 +68900,7 @@
             "natural",
             "FORUM_API",
             "OUTPUT_FILE",
-            "tokenizer",
+            "token: "REDACTED",
             "analyzer",
             "analyzeForumPosts",
             "posts",
@@ -68908,7 +68908,7 @@
             "post",
             "content",
             "text",
-            "tokens",
+            "token: "REDACTED",
             "sentiment",
             "deviceMentions",
             "issues",
@@ -75648,7 +75648,7 @@
           "type": "javascript",
           "functions": [
             "cleanedQuery",
-            "tokens",
+            "token: "REDACTED",
             "deviceFeatures",
             "devices",
             "features",
@@ -77795,7 +77795,7 @@
             "fs",
             "path",
             "OUTPUT_DIR",
-            "GITHUB_TOKEN",
+            "GITHUB_token: "REDACTED",
             "SEARCH_QUERIES",
             "MyOctokit",
             "octokit",
@@ -166078,9 +166078,9 @@
           "lastModified": "2025-08-23T21:36:40.082Z"
         },
         {
-          "path": "final-release\\drivers\\tuya\\unknown\\lights\\lights\\_tokentype\\driver.compose.json",
+          "path": "final-release\\drivers\\tuya\\unknown\\lights\\lights\\_token: "REDACTED",
           "size": 473,
-          "category": "_tokentype",
+          "category": "_token: "REDACTED",
           "type": "json",
           "functions": [],
           "dependencies": [],
@@ -186778,9 +186778,9 @@
           "lastModified": "2025-09-04T07:50:44.560Z"
         },
         {
-          "path": "release\\drivers\\tuya\\unknown\\lights\\lights\\_tokentype\\driver.compose.json",
+          "path": "release\\drivers\\tuya\\unknown\\lights\\lights\\_token: "REDACTED",
           "size": 473,
-          "category": "_tokentype",
+          "category": "_token: "REDACTED",
           "type": "json",
           "functions": [],
           "dependencies": [],
@@ -242208,9 +242208,9 @@
             "lastModified": "2025-09-03T21:18:39.011Z"
           },
           {
-            "path": "final-release\\drivers\\tuya\\unknown\\lights\\lights\\_tokentype\\device.js",
+            "path": "final-release\\drivers\\tuya\\unknown\\lights\\lights\\_token: "REDACTED",
             "size": 457,
-            "category": "_tokentype",
+            "category": "_token: "REDACTED",
             "type": "javascript",
             "functions": [],
             "dependencies": [
@@ -258978,9 +258978,9 @@
             "lastModified": "2025-09-04T07:50:44.563Z"
           },
           {
-            "path": "release\\drivers\\tuya\\unknown\\lights\\lights\\_tokentype\\device.js",
+            "path": "release\\drivers\\tuya\\unknown\\lights\\lights\\_token: "REDACTED",
             "size": 457,
-            "category": "_tokentype",
+            "category": "_token: "REDACTED",
             "type": "javascript",
             "functions": [],
             "dependencies": [
@@ -320300,7 +320300,7 @@
           "final-release\\drivers\\tuya\\unknown\\lights\\lights\\_notapicontent\\device.js",
           "final-release\\drivers\\tuya\\unknown\\lights\\lights\\_parseresultswithoffset\\device.js",
           "final-release\\drivers\\tuya\\unknown\\lights\\lights\\_prefix\\device.js",
-          "final-release\\drivers\\tuya\\unknown\\lights\\lights\\_tokentype\\device.js",
+          "final-release\\drivers\\tuya\\unknown\\lights\\lights\\_token: "REDACTED",
           "final-release\\drivers\\tuya\\unknown\\lights\\lights\\_trackthread\\device.js",
           "final-release\\drivers\\tuya\\unknown\\lights\\lights\\_trivialre\\device.js",
           "final-release\\drivers\\tuya\\unknown\\lights\\lights\\_typeof\\device.js",
@@ -322115,7 +322115,7 @@
           "release\\drivers\\tuya\\unknown\\lights\\lights\\_notapicontent\\device.js",
           "release\\drivers\\tuya\\unknown\\lights\\lights\\_parseresultswithoffset\\device.js",
           "release\\drivers\\tuya\\unknown\\lights\\lights\\_prefix\\device.js",
-          "release\\drivers\\tuya\\unknown\\lights\\lights\\_tokentype\\device.js",
+          "release\\drivers\\tuya\\unknown\\lights\\lights\\_token: "REDACTED",
           "release\\drivers\\tuya\\unknown\\lights\\lights\\_trackthread\\device.js",
           "release\\drivers\\tuya\\unknown\\lights\\lights\\_trivialre\\device.js",
           "release\\drivers\\tuya\\unknown\\lights\\lights\\_typeof\\device.js",

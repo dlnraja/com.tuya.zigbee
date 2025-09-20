@@ -36,7 +36,7 @@
               "valid": 4861,
               "invalid": 1,
               "errors": [
-                "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\driver.compose.json: JSON invalide - Unexpected token '#', \"# driver.c\"... is not valid JSON"
+                "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\driver.compose.json: JSON invalide - Unexpected token: "REDACTED", \"# driver.c\"... is not valid JSON"
               ],
               "warnings": [
                 "drivers\\zigbee\\specific\\zigbee_1753911769134_1\\generic\\generic--TZ3000-abc123\\driver.compose.json: device.js manquant",

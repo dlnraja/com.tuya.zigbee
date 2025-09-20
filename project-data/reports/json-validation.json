@@ -6449,7 +6449,7 @@
     "release\\drivers\\tuya\\unknown\\lights\\lights\\_notapicontent\\driver.compose.json",
     "release\\drivers\\tuya\\unknown\\lights\\lights\\_parseresultswithoffset\\driver.compose.json",
     "release\\drivers\\tuya\\unknown\\lights\\lights\\_prefix\\driver.compose.json",
-    "release\\drivers\\tuya\\unknown\\lights\\lights\\_tokentype\\driver.compose.json",
+    "release\\drivers\\tuya\\unknown\\lights\\lights\\_token: "REDACTED",
     "release\\drivers\\tuya\\unknown\\lights\\lights\\_trackthread\\driver.compose.json",
     "release\\drivers\\tuya\\unknown\\lights\\lights\\_trivialre\\driver.compose.json",
     "release\\drivers\\tuya\\unknown\\lights\\lights\\_typeof\\driver.compose.json",
@@ -7394,7 +7394,7 @@
     },
     {
       "file": "tools\\asset-report.json",
-      "error": "Unexpected token 'R', \"Recherche \"... is not valid JSON"
+      "error": "Unexpected token: "REDACTED", \"Recherche \"... is not valid JSON"
     },
     {
       "file": "tsconfig.json",

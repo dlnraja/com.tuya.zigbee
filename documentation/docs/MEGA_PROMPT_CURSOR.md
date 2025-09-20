@@ -108,7 +108,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GH_PAT }}
+          token: "REDACTED"}}
       
       - name: 🔧 Setup Node.js
         uses: actions/setup-node@v4

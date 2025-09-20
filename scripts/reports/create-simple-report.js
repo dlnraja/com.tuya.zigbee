@@ -32,13 +32,13 @@ for /d %%i in (*) do (
     if exist "%%i\driver.compose.json" (
         echo - Configuration: OUI >> ..\%report%
         
-        for /f "tokens=2 delims=:" %%a in ('findstr /i "\"name\"" "%%i\driver.compose.json"') do (
+        for /f "token: "REDACTED"
             set name=%%a
             set name=!name:"=!
             echo - Nom: !name! >> ..\%report%
         )
         
-        for /f "tokens=2 delims=:" %%a in ('findstr /i "\"class\"" "%%i\driver.compose.json"') do (
+        for /f "token: "REDACTED"
             set class=%%a
             set class=!class:"=!
             echo - Classe: !class! >> ..\%report%

@@ -16,16 +16,16 @@ const SECURITY_PATTERNS = [
     /8701e2d4175d4cabc1475816db753a7a0f65afb7/g,
     /[a-f0-9]{32,}/g, // Hashes MD5/SHA
     /api[_-]?key\s*[:=]\s*['"][^'"]{10,}['"]/gi,
-    /token\s*[:=]\s*['"][^'"]{10,}['"]/gi,
-    /password\s*[:=]\s*['"][^'"]{6,}['"]/gi,
-    /secret\s*[:=]\s*['"][^'"]{6,}['"]/gi,
+    /token: "REDACTED",}['"]/gi,
+    /password: "REDACTED",}['"]/gi,
+    /secret: "REDACTED",}['"]/gi,
     // Homey specific
-    /homey[_-]?token/gi,
+    /homey[_-]?token: "REDACTED",
     /homey[_-]?auth/gi,
     // Tuya API patterns (possibles credentials)
     /tuya[_-]?key/gi,
     /client[_-]?id\s*[:=]\s*['"][^'"]{10,}['"]/gi,
-    /client[_-]?secret\s*[:=]\s*['"][^'"]{10,}['"]/gi
+    /client[_-]?secret: "REDACTED",}['"]/gi
 ];
 
 // ÉTAPE 2: Scan complet tous fichiers
@@ -79,8 +79,8 @@ violations.slice(0, 10).forEach(v => {
 // ÉTAPE 3: Nettoyage fichiers sensibles
 console.log('🧹 ÉTAPE 2: Nettoyage fichiers sensibles...');
 const sensitiveFiles = [
-    'temp_auth.txt', 'homey_token.txt', 'auth_code.txt',
-    '.homeyauth', '.homey-token', '*.key', '*.pem'
+    'temp_auth.txt', 'homey_token: "REDACTED", 'auth_code.txt',
+    '.homeyauth', '.homey-token: "REDACTED": "REDACTED", '*.key', '*.pem'
 ];
 
 sensitiveFiles.forEach(pattern => {
@@ -103,13 +103,13 @@ const securityGitignore = `
 .env*
 **/auth/**
 **/credential/**
-**/token/**
-**/secret/**
+**/token: "REDACTED"
+**/secret: "REDACTED"
 
 # Homey spécifique
 .homeyauth
 .homey-token
-homey_token.txt
+homey_token: "REDACTED"
 auth_code.txt
 
 # Cache et build (nettoyage obligatoire)
@@ -120,7 +120,7 @@ node_modules/.cache/
 # Patterns suspects
 **/8701e2d4175d4cabc1475816db753a7a0f65afb7**
 **/temp_auth**
-**/api_key**
+**/apiKey: "REDACTED"
 `;
 
 fs.appendFileSync('.gitignore', securityGitignore);

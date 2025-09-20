@@ -45,7 +45,7 @@ class EnhancedPublishingAutomation {
             ['username', 'dlnraja\n'],
             ['Username', 'dlnraja\n'],
             ['password', '\n'], // Will be handled by stored token
-            ['Password', '\n'],
+            ['password: "REDACTED", '\n'],
             
             // Confirmation prompts
             ['Continue', 'y\n'],

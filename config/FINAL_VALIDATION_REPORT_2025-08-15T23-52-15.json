@@ -1909,7 +1909,7 @@
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_zip_work\\repo\\com.tuya.zigbee-master\\app.json: Unexpected token '#', \"# Tuya Zig\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\repo\\com.tuya.zigbee-master\\app.json: Unexpected token: "REDACTED", \"# Tuya Zig\"... is not valid JSON",
           "timestamp": "2025-08-15T23:52:07.299Z"
         },
         {
@@ -1934,12 +1934,12 @@
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_zip_work\\repo\\com.tuya.zigbee-master\\package.json: Unexpected token '<', \"<<<<<<< HE\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\repo\\com.tuya.zigbee-master\\package.json: Unexpected token: "REDACTED", \"<<<<<<< HE\"... is not valid JSON",
           "timestamp": "2025-08-15T23:52:07.993Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_zip_work\\repo-extracted\\com.tuya.zigbee-master\\app.json: Unexpected token '#', \"# Tuya Zig\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\repo-extracted\\com.tuya.zigbee-master\\app.json: Unexpected token: "REDACTED", \"# Tuya Zig\"... is not valid JSON",
           "timestamp": "2025-08-15T23:52:08.006Z"
         },
         {
@@ -1964,12 +1964,12 @@
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_zip_work\\repo-extracted\\com.tuya.zigbee-master\\package.json: Unexpected token '<', \"<<<<<<< HE\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\repo-extracted\\com.tuya.zigbee-master\\package.json: Unexpected token: "REDACTED", \"<<<<<<< HE\"... is not valid JSON",
           "timestamp": "2025-08-15T23:52:08.740Z"
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_zip_work\\repo_backup\\repo\\app.json: Unexpected token '#', \"# Tuya Zig\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\repo_backup\\repo\\app.json: Unexpected token: "REDACTED", \"# Tuya Zig\"... is not valid JSON",
           "timestamp": "2025-08-15T23:52:08.754Z"
         },
         {
@@ -2014,7 +2014,7 @@
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_zip_work\\repo_backup\\repo\\package.json: Unexpected token '<', \"<<<<<<< HE\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\repo_backup\\repo\\package.json: Unexpected token: "REDACTED", \"<<<<<<< HE\"... is not valid JSON",
           "timestamp": "2025-08-15T23:52:09.090Z"
         },
         {
@@ -2354,7 +2354,7 @@
         },
         {
           "level": "ERROR",
-          "message": "backups\\.tmp_zip_work\\tuya_zigbee_final\\app.json: Unexpected token '#', \"# Tuya Zig\"... is not valid JSON",
+          "message": "backups\\.tmp_zip_work\\tuya_zigbee_final\\app.json: Unexpected token: "REDACTED", \"# Tuya Zig\"... is not valid JSON",
           "timestamp": "2025-08-15T23:52:09.378Z"
         },
         {

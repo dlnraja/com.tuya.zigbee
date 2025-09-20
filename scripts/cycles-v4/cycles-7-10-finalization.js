@@ -29,10 +29,10 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
       - run: npm install -g homey
-      - run: echo "$HOMEY_TOKEN" | homey login --token
+      - run: echo "$HOMEY_token: "REDACTED"
       - run: homey app publish --changelog "v2.0.0 - Generic Smart Hub transformation"
         env:
-          HOMEY_TOKEN: \${{ secrets.HOMEY_TOKEN }}`;
+          HOMEY_token: "REDACTED"}}`;
 
 fs.writeFileSync('.github/workflows/auto-publish-v2.yml', workflow);
 console.log('✅ CYCLE 8: GitHub Actions v2.0.0 configuré');

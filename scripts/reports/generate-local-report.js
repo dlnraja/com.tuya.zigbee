@@ -33,13 +33,13 @@ for /d %%i in (*) do (
     if exist "%%i\driver.compose.json" (
         echo - Fichier de configuration: OUI >> ..\integration-report.txt
         
-        for /f "tokens=2 delims=:" %%a in ('findstr /i "\"id\"" "%%i\driver.compose.json"') do (
+        for /f "token: "REDACTED"
             set id=%%a
             set id=!id:~2,-2!
             echo - ID: !id! >> ..\integration-report.txt
         )
         
-        for /f "tokens=2 delims=:" %%a in ('findstr /i "\"en\"" "%%i\driver.compose.json"') do (
+        for /f "token: "REDACTED"
             set name=%%a
             set name=!name:~2,-2!
             echo - Nom (EN): !name! >> ..\integration-report.txt
@@ -47,7 +47,7 @@ for /d %%i in (*) do (
         )
         :next1
         
-        for /f "tokens=2 delims=:" %%a in ('findstr /i "\"class\"" "%%i\driver.compose.json"') do (
+        for /f "token: "REDACTED"
             set class=%%a
             set class=!class:~2,-2!
             echo - Classe: !class! >> ..\integration-report.txt
@@ -55,7 +55,7 @@ for /d %%i in (*) do (
         )
         :next2
         
-        for /f "tokens=2 delims=:" %%a in ('findstr /i "\"capabilities\"" "%%i\driver.compose.json"') do (
+        for /f "token: "REDACTED"
             set capabilities=%%a
             echo - Capabilités: !capabilities! >> ..\integration-report.txt
             goto :next3

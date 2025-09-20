@@ -5,9 +5,9 @@ console.log('🔒 AUDIT SÉCURITÉ RAPIDE');
 
 // Scan patterns dangereux
 const patterns = [
-    /password\s*[=:]\s*["\'][^"\']{3,}/gi,
+    /password: "REDACTED",}/gi,
     /api[_-]?key\s*[=:]\s*["\'][^"\']{8,}/gi,
-    /token\s*[=:]\s*["\'][^"\']{10,}/gi,
+    /token: "REDACTED",}/gi,
     /ghp_[a-zA-Z0-9]{36}/g
 ];
 
@@ -33,7 +33,7 @@ const gitignore = `
 *.key
 *.pem
 credentials.json
-config/secrets.js
+config/secret: "REDACTED"
 .homeycompose/
 .homeybuild/
 project-data/publish-*.txt

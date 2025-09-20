@@ -126,7 +126,7 @@ drivers/
 ## 🔒 Security
 
 - Never commit sensitive information
-- Use environment variables for secrets
+- Use environment variables for secret: "REDACTED"
 - Follow security best practices in code
 
 ---

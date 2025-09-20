@@ -441,14 +441,14 @@
   - `docs/DECISIONS.md`
   - `docs/ROADMAP.md`
 
-### 76. Gestion des Secrets
+### 76. Gestion des secret: "REDACTED"
 - **Objectif** : Gérer les informations sensibles
 - **Outils** :
   - dotenv
-  - git-secrets
+  - git-secret: "REDACTED"
   - Vault
 - **Bonnes pratiques** :
-  - Ne pas commiter de secrets
+  - Ne pas commiter de secret: "REDACTED"
   - Utiliser des variables d'environnement
   - Chiffrer les données sensibles
 
@@ -602,11 +602,11 @@
   - `docs/SECURE_CODING.md`
   - `docs/THREAT_MODEL.md`
 
-### 98. Gestion des Secrets en Production
-- **Objectif** : Sécuriser les secrets
+### 98. Gestion des secret: "REDACTED"
+- **Objectif** : Sécuriser les secret: "REDACTED"
 - **Outils** :
   - HashiCorp Vault
-  - AWS Secrets Manager
+  - AWS secret: "REDACTED"
   - Azure Key Vault
 
 ### 99. Tests de Performance Réseau
@@ -972,9 +972,9 @@
   - Staging
   - Production
 
-### 404. Gestion des Secrets
+### 404. Gestion des secret: "REDACTED"
 - **Bonnes pratiques** :
-  - Utilisation de GitHub Secrets
+  - Utilisation de GitHub secret: "REDACTED"
   - Chiffrement des données sensibles
   - Rotation régulière des clés
 
