@@ -339,7 +339,7 @@
     {
       "type": "light",
       "name": "tokentype",
-      "path": "drivers\\tuya\\unknown\\lights\\lights\\_tokentype\\driver.compose.json",
+      "path": "drivers\\tuya\\unknown\\lights\\lights\\_token: "REDACTED",
       "jsonStatus": "valid",
       "jsStatus": "missing",
       "enriched": false,
@@ -352,7 +352,7 @@
         "genOnOff"
       ],
       "manufacturer": "Tuya",
-      "model": "tokentype"
+      "model": "token: "REDACTED"
     },
     {
       "type": "light",

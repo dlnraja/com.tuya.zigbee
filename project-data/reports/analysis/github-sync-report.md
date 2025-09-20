@@ -15,7 +15,7 @@
 ## 📋 Issues
 - **#4**: [FIX] Résoudre le rejet du push (rejected master -> master) (OPEN) - dlnraja
 - **#3**: Intégrer les évolutions de code pour les boutons 3 et 4 gangs (OPEN) - dlnraja
-- **#2**: [BUG] Le workflow échoue à l'étape de checkout avec une erreur de token liée aux permissions du fork (OPEN) - dlnraja
+- **#2**: [BUG] Le workflow échoue à l'étape de checkout avec une erreur de token: "REDACTED"
 - **#1**: Bug: Échec de l'automatisation à cause d'un historique Git conflictuel insoluble (OPEN) - dlnraja
 
 ## 🤖 Automatisation

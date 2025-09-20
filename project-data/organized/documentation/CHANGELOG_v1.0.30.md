@@ -111,7 +111,7 @@
 
 - **Fonctionnement local** - Aucune donnée envoyée au cloud
 - **Chiffrement Zigbee 3.0** pour toutes communications
-- **Tokens sécurisés** dans CI/CD
+- **token: "REDACTED"
 - **Code open source** auditable
 
 ---

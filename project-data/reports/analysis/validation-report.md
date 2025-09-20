@@ -53,9 +53,9 @@
 - ❌ covers/null/curtain: Erreur de syntaxe dans device.js: Unexpected end of input
 - ❌ covers/null/curtains: Erreur de syntaxe dans device.js: Unexpected end of input
 - ❌ lights/null/lights: Erreur de syntaxe dans device.js: Unexpected end of input
-- ❌ lights/null/lights_tuya_ts0501: Erreur de syntaxe dans device.js: Unexpected token '-'
+- ❌ lights/null/lights_tuya_ts0501: Erreur de syntaxe dans device.js: Unexpected token: "REDACTED"
 - ❌ plugs/null/plugs: Erreur de syntaxe dans device.js: Unexpected end of input
-- ❌ plugs/null/plugs_tuya_ts011f: Erreur de syntaxe dans device.js: Unexpected token '-'
+- ❌ plugs/null/plugs_tuya_ts011f: Erreur de syntaxe dans device.js: Unexpected token: "REDACTED"
 - ❌ sensors/null/assets: Erreur de syntaxe dans device.js: Unexpected end of input
 - ❌ sensors/null/blinds: Erreur de syntaxe dans device.js: Unexpected end of input
 - ❌ sensors/null/sensors: Erreur de syntaxe dans device.js: Unexpected end of input
@@ -63,12 +63,12 @@
 - ❌ sensors/null/shutters: Erreur de syntaxe dans device.js: Unexpected end of input
 - ❌ sensors/null/tuya: Erreur de syntaxe dans device.js: Unexpected end of input
 - ❌ switches/null/switches: Erreur de syntaxe dans device.js: Unexpected end of input
-- ❌ switches/null/switches_tuya_ts0044: Erreur de syntaxe dans device.js: Unexpected token '-'
+- ❌ switches/null/switches_tuya_ts0044: Erreur de syntaxe dans device.js: Unexpected token: "REDACTED"
 - ❌ thermostats/null/locks: Erreur de syntaxe dans device.js: Unexpected end of input
 - ❌ thermostats/null/thermostats: Erreur de syntaxe dans device.js: Unexpected end of input
 - ❌ thermostats/null/thermostats_tuya_tuya: Erreur de syntaxe dans device.js: Unexpected end of input
 - ❌ covers/null/covers: Erreur de syntaxe dans device.js: Unexpected end of input
-- ❌ lights/null/lights_zigbee_generic: Erreur de syntaxe dans device.js: Unexpected token '-'
+- ❌ lights/null/lights_zigbee_generic: Erreur de syntaxe dans device.js: Unexpected token: "REDACTED"
 - ❌ locks/null/locks: Erreur de syntaxe dans device.js: Unexpected end of input
 - ❌ sensors/null/sensors_zigbee_generic: Erreur de syntaxe dans device.js: Unexpected end of input
 - ❌ sensors/null/sensors_zigbee_zigbee-sensor: Erreur de syntaxe dans device.js: Unexpected end of input

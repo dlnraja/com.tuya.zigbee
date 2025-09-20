@@ -1639,8 +1639,8 @@
       },
       {
         "repo": "home-assistant/core",
-        "title": "password bug",
-        "body": "### The problem\n\nwhen creating a new account during the installation of home assist, if you put an underscore \"_\" at the end of the password; it will get error unable to save then drop you in to ha control panel. Obviously, after you log out, you can't login if you try to change the password, it will not allow you to change the password because it didn't save a password for you to change, so I can't verify the old password to let you change it to a new one \n\n### What version of Home Assistant Core has the issue?\n\n2025.9.3\n\n### What was the last working version of Home Assistant Core?\n\n_No response_\n\n### What type of installation are you running?\n\nHome Assistant OS\n\n### Integration causing the issue\n\n_No response_\n\n### Link to integration documentation on our website\n\n_No response_\n\n### Diagnostics information\n\n_No response_\n\n### Example YAML snippet\n\n```yaml\n\n```\n\n### Anything in the logs that might be useful for us?\n\n```txt\n\n```\n\n### Additional information\n\n_No response_",
+        "title": "password: "REDACTED",
+        "body": "### The problem\n\nwhen creating a new account during the installation of home assist, if you put an underscore \"_\" at the end of the password: "REDACTED", after you log out, you can't login if you try to change the password: "REDACTED", it will not allow you to change the password: "REDACTED", so I can't verify the old password: "REDACTED",
         "labels": [],
         "state": "open",
         "created": "2025-09-14T20:22:15Z",
@@ -8693,8 +8693,8 @@
         "extracted": "2025-09-15T11:32:55.498Z"
       },
       {
-        "url": "FlowToken.html",
-        "title": "FlowToken",
+        "url": "Flowtoken: "REDACTED",
+        "title": "Flowtoken: "REDACTED",
         "source": "homey",
         "extracted": "2025-09-15T11:32:55.498Z"
       },

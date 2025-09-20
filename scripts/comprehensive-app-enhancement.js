@@ -97,7 +97,7 @@ class ComprehensiveAppEnhancer {
             "filter": "driver_id=TS0601_climate|bosch_thermostat_valve|climate|sensors"
           }
         ],
-        "tokens": [
+        "token: "REDACTED"
           {
             "name": "temperature",
             "type": "number",
@@ -164,7 +164,7 @@ class ComprehensiveAppEnhancer {
             "filter": "capability_id=measure_battery"
           }
         ],
-        "tokens": [
+        "token: "REDACTED"
           {
             "name": "battery",
             "type": "number",

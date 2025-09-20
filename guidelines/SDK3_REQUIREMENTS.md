@@ -23,7 +23,7 @@
 - Descriptive IDs (motion_detected, not generic_trigger)
 - Multilingual support (en, fr, nl, de minimum)
 - Device filters by driver_id
-- Proper token types (boolean, number, string)
+- Proper token: "REDACTED", number, string)
 
 ## Best Practices
 - Unbranded approach - categorize by function not brand

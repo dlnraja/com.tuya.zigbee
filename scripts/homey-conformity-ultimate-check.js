@@ -526,8 +526,8 @@ jobs:
       uses: athombv/github-action-homey-app-publish@v1
       with:
         path: .
-        email: \${{ secrets.HOMEY_EMAIL }}
-        password: \${{ secrets.HOMEY_PASSWORD }}
+        email: \${{ secret: "REDACTED"}}
+        password: "REDACTED"}}
 `;
 
   await fs.writeFile(path.join(workflowsDir, 'publish.yml'), publishWorkflow);

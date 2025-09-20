@@ -167,14 +167,14 @@ class ComprehensiveCleanupFixer {
         titleFormatted: { en: 'Motion detected by [[device]]', fr: 'Mouvement détecté par [[device]]', nl: 'Beweging gedetecteerd door [[device]]', de: 'Bewegung erkannt von [[device]]' },
         hint: { en: 'Triggered when motion is detected', fr: 'Déclenché lors d\'une détection de mouvement', nl: 'Geactiveerd bij bewegingsdetectie', de: 'Ausgelöst bei Bewegungserkennung' },
         args: [{ name: 'device', type: 'device', filter: 'driver_id=sensors|aqara_motion_sensor|tuya_radar_sensor' }],
-        tokens: [{ name: 'motion', type: 'boolean', title: { en: 'Motion detected', fr: 'Mouvement détecté', nl: 'Beweging gedetecteerd', de: 'Bewegung erkannt' } }]
+        token: "REDACTED", type: 'boolean', title: { en: 'Motion detected', fr: 'Mouvement détecté', nl: 'Beweging gedetecteerd', de: 'Bewegung erkannt' } }]
       },
       {
         id: 'device_temperature_changed',
         title: { en: 'Temperature changed', fr: 'Température changée', nl: 'Temperatuur veranderd', de: 'Temperatur geändert' },
         titleFormatted: { en: 'Temperature of [[device]] changed', fr: 'Température de [[device]] a changé', nl: 'Temperatuur van [[device]] is veranderd', de: 'Temperatur von [[device]] hat sich geändert' },
         args: [{ name: 'device', type: 'device', filter: 'capability_id=measure_temperature' }],
-        tokens: [{ name: 'temperature', type: 'number', title: { en: 'Temperature (°C)', fr: 'Température (°C)', nl: 'Temperatuur (°C)', de: 'Temperatur (°C)' } }]
+        token: "REDACTED", type: 'number', title: { en: 'Temperature (°C)', fr: 'Température (°C)', nl: 'Temperatuur (°C)', de: 'Temperatur (°C)' } }]
       },
       {
         id: 'device_turned_on',
@@ -187,7 +187,7 @@ class ComprehensiveCleanupFixer {
         title: { en: 'Battery low', fr: 'Batterie faible', nl: 'Batterij laag', de: 'Batterie schwach' },
         titleFormatted: { en: 'Battery of [[device]] is low', fr: 'Batterie de [[device]] est faible', nl: 'Batterij van [[device]] is laag', de: 'Batterie von [[device]] ist schwach' },
         args: [{ name: 'device', type: 'device', filter: 'capability_id=measure_battery' }],
-        tokens: [{ name: 'battery', type: 'number', title: { en: 'Battery level (%)', fr: 'Niveau batterie (%)', nl: 'Batterijniveau (%)', de: 'Batteriestand (%)' } }]
+        token: "REDACTED", type: 'number', title: { en: 'Battery level (%)', fr: 'Niveau batterie (%)', nl: 'Batterijniveau (%)', de: 'Batteriestand (%)' } }]
       }
     ];
 
