@@ -63,7 +63,6 @@
   },
   "drivers": [
     {
-      "id": "air_conditioner_controller",
       "name": {
         "en": "Air Conditioner Controller"
       },
@@ -916,10 +915,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "air_conditioner_controller"
     },
     {
-      "id": "air_quality_monitor",
       "name": {
         "en": "Air Quality Monitor"
       },
@@ -1768,7 +1767,8 @@
           "CR2032"
         ]
       },
-      "settings": []
+      "settings": [],
+      "id": "air_quality_monitor"
     },
     {
       "name": {
@@ -2631,7 +2631,6 @@
       "id": "air_quality_monitor_advanced"
     },
     {
-      "id": "ceiling_light_controller",
       "name": {
         "en": "Ceiling Light Controller"
       },
@@ -3491,7 +3490,8 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "ceiling_light_controller"
     },
     {
       "name": {
@@ -4366,7 +4366,6 @@
         "enriched": true,
         "last_updated": "2025-09-15T19:34:03.053Z"
       },
-      "id": "co2_sensor",
       "manufacturerId": [],
       "productId": [],
       "platforms": [
@@ -4374,7 +4373,8 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "co2_sensor"
     },
     {
       "name": {
@@ -5227,13 +5227,13 @@
         "enriched": true,
         "last_updated": "2025-09-15T19:34:03.023Z"
       },
-      "id": "co_detector",
       "platforms": [
         "local"
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "co_detector"
     },
     {
       "name": {
@@ -6084,7 +6084,6 @@
       "id": "co_detector_advanced"
     },
     {
-      "id": "curtain_motor",
       "name": {
         "en": "Curtain Motor"
       },
@@ -6937,7 +6936,8 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "curtain_motor"
     },
     {
       "name": {
@@ -7791,13 +7791,13 @@
         ],
         "productIds": []
       },
-      "id": "dimmer",
       "platforms": [
         "local"
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "dimmer"
     },
     {
       "name": {
@@ -11159,7 +11159,6 @@
         "type": "generic",
         "last_updated": "2025-09-15T19:34:02.943Z"
       },
-      "id": "door_controller",
       "manufacturerId": [],
       "productId": [],
       "platforms": [
@@ -11167,10 +11166,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "door_controller"
     },
     {
-      "id": "door_lock",
       "name": {
         "en": "Door Lock"
       },
@@ -12022,10 +12021,10 @@
           "CR2032"
         ]
       },
-      "settings": []
+      "settings": [],
+      "id": "door_lock"
     },
     {
-      "id": "door_window_sensor",
       "name": {
         "en": "Door Window Sensor"
       },
@@ -12892,10 +12891,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "door_window_sensor"
     },
     {
-      "id": "doorbell",
       "name": {
         "en": "Doorbell"
       },
@@ -13746,7 +13745,8 @@
           "CR2032"
         ]
       },
-      "settings": []
+      "settings": [],
+      "id": "doorbell"
     },
     {
       "name": {
@@ -14608,13 +14608,13 @@
         "enriched": true,
         "last_updated": "2025-09-15T19:34:02.983Z"
       },
-      "id": "energy_monitoring_plug",
       "platforms": [
         "local"
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "energy_monitoring_plug"
     },
     {
       "name": {
@@ -15472,7 +15472,6 @@
       "id": "energy_monitoring_plug_advanced"
     },
     {
-      "id": "extension_plug",
       "name": {
         "en": "Extension Plug"
       },
@@ -16330,10 +16329,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "extension_plug"
     },
     {
-      "id": "fan_controller",
       "name": {
         "en": "Fan Controller"
       },
@@ -17187,10 +17186,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "fan_controller"
     },
     {
-      "id": "fingerprint_lock",
       "name": {
         "en": "Fingerprint Lock"
       },
@@ -18051,10 +18050,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "fingerprint_lock"
     },
     {
-      "id": "formaldehyde_sensor",
       "name": {
         "en": "Formaldehyde Sensor"
       },
@@ -18910,7 +18909,8 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "formaldehyde_sensor"
     },
     {
       "name": {
@@ -19751,7 +19751,6 @@
       "id": "garage_door_controller"
     },
     {
-      "id": "garage_door_opener",
       "name": {
         "en": "Garage Door Opener"
       },
@@ -20602,10 +20601,10 @@
           "CR2032"
         ]
       },
-      "settings": []
+      "settings": [],
+      "id": "garage_door_opener"
     },
     {
-      "id": "gas_detector",
       "name": {
         "en": "Gas Detector"
       },
@@ -21465,7 +21464,8 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "gas_detector"
     },
     {
       "name": {
@@ -22306,13 +22306,13 @@
         "type": "generic",
         "last_updated": "2025-09-15T19:34:02.875Z"
       },
-      "id": "hvac_controller",
       "platforms": [
         "local"
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "hvac_controller"
     },
     {
       "name": {
@@ -23164,7 +23164,6 @@
       "id": "led_strip_advanced"
     },
     {
-      "id": "led_strip_controller",
       "name": {
         "en": "LED Strip Controller"
       },
@@ -24020,10 +24019,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "led_strip_controller"
     },
     {
-      "id": "lux_sensor",
       "name": {
         "en": "Lux Sensor"
       },
@@ -24879,7 +24878,8 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "lux_sensor"
     },
     {
       "name": {
@@ -26563,16 +26563,15 @@
         ],
         "productIds": []
       },
-      "id": "mini",
       "platforms": [
         "local"
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "mini"
     },
     {
-      "id": "mini_switch",
       "name": {
         "en": "Mini Switch"
       },
@@ -27424,7 +27423,8 @@
           "CR2032"
         ]
       },
-      "settings": []
+      "settings": [],
+      "id": "mini_switch"
     },
     {
       "name": {
@@ -27462,7 +27462,17 @@
           "TS0001",
           "TS0002",
           "TS0003"
-        ]
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              1030
+            ]
+          }
+        }
       },
       "id": "motion_sensor_battery"
     },
@@ -28321,7 +28331,6 @@
       "id": "motion_sensor_mmwave"
     },
     {
-      "id": "motion_sensor_pir_ac",
       "name": {
         "en": "Motion Sensor PIR AC"
       },
@@ -29202,10 +29211,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "motion_sensor_pir_ac"
     },
     {
-      "id": "motion_sensor_pir_battery",
       "name": {
         "en": "Motion Sensor PIR Battery"
       },
@@ -30038,7 +30047,8 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "motion_sensor_pir_battery"
     },
     {
       "name": {
@@ -30893,7 +30903,6 @@
       "id": "motion_sensor_zigbee_204z"
     },
     {
-      "id": "multisensor",
       "name": {
         "en": "Multisensor"
       },
@@ -31755,10 +31764,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "multisensor"
     },
     {
-      "id": "noise_level_sensor",
       "name": {
         "en": "Noise Level Sensor"
       },
@@ -32614,10 +32623,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "noise_level_sensor"
     },
     {
-      "id": "outdoor_light_controller",
       "name": {
         "en": "Outdoor Light Controller"
       },
@@ -33477,10 +33486,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "outdoor_light_controller"
     },
     {
-      "id": "outdoor_siren",
       "name": {
         "en": "Outdoor Siren"
       },
@@ -34331,10 +34340,10 @@
           "CR2032"
         ]
       },
-      "settings": []
+      "settings": [],
+      "id": "outdoor_siren"
     },
     {
-      "id": "pet_feeder",
       "name": {
         "en": "Pet Feeder"
       },
@@ -35183,7 +35192,8 @@
           "CR2032"
         ]
       },
-      "settings": []
+      "settings": [],
+      "id": "pet_feeder"
     },
     {
       "name": {
@@ -36017,7 +36027,6 @@
       "id": "pir_sensor_advanced"
     },
     {
-      "id": "pm25_sensor",
       "name": {
         "en": "Pm25 Sensor"
       },
@@ -36873,7 +36882,8 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "pm25_sensor"
     },
     {
       "name": {
@@ -37703,7 +37713,6 @@
       "id": "pool_pump_controller"
     },
     {
-      "id": "presence_sensor_radar",
       "name": {
         "en": "Presence Sensor Radar"
       },
@@ -38558,10 +38567,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "presence_sensor_radar"
     },
     {
-      "id": "pressure_sensor",
       "name": {
         "en": "Pressure Sensor"
       },
@@ -39424,10 +39433,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "pressure_sensor"
     },
     {
-      "id": "projector_screen_controller",
       "name": {
         "en": "Projector Screen Controller"
       },
@@ -40280,7 +40289,8 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "projector_screen_controller"
     },
     {
       "name": {
@@ -42811,7 +42821,6 @@
       "id": "radar_motion_sensor_tank_level"
     },
     {
-      "id": "radiator_valve",
       "name": {
         "en": "Radiator Valve"
       },
@@ -43671,7 +43680,8 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "radiator_valve"
     },
     {
       "name": {
@@ -44529,16 +44539,15 @@
           1045
         ]
       },
-      "id": "relay_switch_1gang",
       "platforms": [
         "local"
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "relay_switch_1gang"
     },
     {
-      "id": "remote_switch",
       "name": {
         "en": "Remote Switch"
       },
@@ -45390,7 +45399,8 @@
           "CR2032"
         ]
       },
-      "settings": []
+      "settings": [],
+      "id": "remote_switch"
     },
     {
       "name": {
@@ -46244,13 +46254,13 @@
         "enriched": true,
         "last_updated": "2025-09-15T19:34:02.896Z"
       },
-      "id": "roller_blind_controller",
       "platforms": [
         "local"
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "roller_blind_controller"
     },
     {
       "name": {
@@ -48750,7 +48760,6 @@
       "id": "roller_shutter_switch_advanced"
     },
     {
-      "id": "scene_controller_2button",
       "class": "button",
       "capabilities": [
         "onoff",
@@ -49623,10 +49632,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "scene_controller_2button"
     },
     {
-      "id": "scene_controller_4button",
       "class": "button",
       "capabilities": [
         "onoff",
@@ -50501,10 +50510,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "scene_controller_4button"
     },
     {
-      "id": "scene_controller_6button",
       "class": "button",
       "capabilities": [
         "onoff",
@@ -51381,10 +51390,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "scene_controller_6button"
     },
     {
-      "id": "scene_controller_8button",
       "class": "button",
       "capabilities": [
         "onoff",
@@ -52263,7 +52272,8 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "scene_controller_8button"
     },
     {
       "name": {
@@ -53120,16 +53130,15 @@
         "type": "generic",
         "last_updated": "2025-09-15T19:34:03.118Z"
       },
-      "id": "scene_controller_battery",
       "platforms": [
         "local"
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "scene_controller_battery"
     },
     {
-      "id": "shade_controller",
       "name": {
         "en": "Shade Controller"
       },
@@ -53982,7 +53991,8 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "shade_controller"
     },
     {
       "name": {
@@ -54854,7 +54864,6 @@
         "enriched": true,
         "last_updated": "2025-09-15T19:34:02.950Z"
       },
-      "id": "smart_bulb_rgb",
       "manufacturerId": [],
       "productId": [],
       "platforms": [
@@ -54862,10 +54871,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "smart_bulb_rgb"
     },
     {
-      "id": "smart_bulb_tunable",
       "name": {
         "en": "Smart Bulb Tunable"
       },
@@ -55726,10 +55735,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "smart_bulb_tunable"
     },
     {
-      "id": "smart_bulb_white",
       "name": {
         "en": "Smart Bulb White"
       },
@@ -56589,10 +56598,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "smart_bulb_white"
     },
     {
-      "id": "smart_curtain_motor",
       "name": {
         "en": "Smart Curtain Motor"
       },
@@ -57434,7 +57443,8 @@
         ],
         "productIds": []
       },
-      "settings": []
+      "settings": [],
+      "id": "smart_curtain_motor"
     },
     {
       "name": {
@@ -58280,7 +58290,6 @@
       "id": "smart_dimmer_module_1gang"
     },
     {
-      "id": "smart_doorbell",
       "name": {
         "en": "Smart Doorbell"
       },
@@ -59131,10 +59140,10 @@
           "CR2032"
         ]
       },
-      "settings": []
+      "settings": [],
+      "id": "smart_doorbell"
     },
     {
-      "id": "smart_garden_sprinkler",
       "name": {
         "en": "Smart Garden Sprinkler"
       },
@@ -59983,7 +59992,8 @@
           "CR2032"
         ]
       },
-      "settings": []
+      "settings": [],
+      "id": "smart_garden_sprinkler"
     },
     {
       "name": {
@@ -61671,16 +61681,15 @@
         "type": "generic",
         "last_updated": "2025-09-15T19:34:02.864Z"
       },
-      "id": "smart_lock",
       "platforms": [
         "local"
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "smart_lock"
     },
     {
-      "id": "smart_plug",
       "name": {
         "en": "Smart Plug"
       },
@@ -62538,7 +62547,8 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "smart_plug"
     },
     {
       "name": {
@@ -62576,12 +62586,22 @@
           "TS0001",
           "TS0002",
           "TS0003"
-        ]
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6,
+              1794
+            ]
+          }
+        }
       },
       "id": "smart_plug_energy"
     },
     {
-      "id": "smart_radiator_valve",
       "name": {
         "en": "Smart Radiator Valve"
       },
@@ -63423,7 +63443,8 @@
         ],
         "productIds": []
       },
-      "settings": []
+      "settings": [],
+      "id": "smart_radiator_valve"
     },
     {
       "name": {
@@ -64270,7 +64291,6 @@
       "id": "smart_smoke_detector_advanced"
     },
     {
-      "id": "smart_spot",
       "name": {
         "en": "Smart Spot"
       },
@@ -65126,7 +65146,8 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "smart_spot"
     },
     {
       "name": {
@@ -65164,12 +65185,21 @@
           "TS0001",
           "TS0002",
           "TS0003"
-        ]
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6
+            ]
+          }
+        }
       },
       "id": "smart_switch_1gang_ac"
     },
     {
-      "id": "smart_switch_1gang_hybrid",
       "class": "light",
       "capabilities": [
         "onoff"
@@ -66025,7 +66055,8 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "smart_switch_1gang_hybrid"
     },
     {
       "name": {
@@ -66063,12 +66094,29 @@
           "TS0001",
           "TS0002",
           "TS0003"
-        ]
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6
+            ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6
+            ]
+          }
+        }
       },
       "id": "smart_switch_2gang_ac"
     },
     {
-      "id": "smart_switch_2gang_hybrid",
       "class": "light",
       "capabilities": [
         "onoff",
@@ -66921,7 +66969,8 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "smart_switch_2gang_hybrid"
     },
     {
       "name": {
@@ -66959,12 +67008,37 @@
           "TS0001",
           "TS0002",
           "TS0003"
-        ]
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6
+            ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6
+            ]
+          },
+          "3": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6
+            ]
+          }
+        }
       },
       "id": "smart_switch_3gang_ac"
     },
     {
-      "id": "smart_switch_3gang_hybrid",
       "class": "light",
       "capabilities": [
         "onoff",
@@ -67818,10 +67892,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "smart_switch_3gang_hybrid"
     },
     {
-      "id": "smart_switch_4gang_hybrid",
       "class": "light",
       "capabilities": [
         "onoff",
@@ -68676,10 +68750,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "smart_switch_4gang_hybrid"
     },
     {
-      "id": "smart_water_valve",
       "name": {
         "en": "Smart Water Valve"
       },
@@ -69521,10 +69595,10 @@
         ],
         "productIds": []
       },
-      "settings": []
+      "settings": [],
+      "id": "smart_water_valve"
     },
     {
-      "id": "smoke_detector",
       "name": {
         "en": "Smoke Detector"
       },
@@ -70391,10 +70465,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "smoke_detector"
     },
     {
-      "id": "smoke_detector_temp_humidity_advanced",
       "name": {
         "en": "Advanced Smoke Detector with Temperature & Humidity"
       },
@@ -71233,7 +71307,8 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "smoke_detector_temp_humidity_advanced"
     },
     {
       "name": {
@@ -72072,7 +72147,6 @@
       "id": "smoke_temp_humid_sensor"
     },
     {
-      "id": "soil_moisture_sensor",
       "name": {
         "en": "Soil Moisture Sensor"
       },
@@ -72934,7 +73008,8 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "soil_moisture_sensor"
     },
     {
       "name": {
@@ -87266,7 +87341,6 @@
       "id": "temp_humid_sensor_v1w2k9dd"
     },
     {
-      "id": "temperature_controller",
       "name": {
         "en": "Temperature Controller"
       },
@@ -88124,10 +88198,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "temperature_controller"
     },
     {
-      "id": "temperature_humidity_sensor",
       "name": {
         "en": "Temperature Humidity Sensor"
       },
@@ -88995,10 +89069,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "temperature_humidity_sensor"
     },
     {
-      "id": "temperature_sensor",
       "name": {
         "en": "Temperature Sensor"
       },
@@ -89851,7 +89925,8 @@
           "CR2032"
         ]
       },
-      "settings": []
+      "settings": [],
+      "id": "temperature_sensor"
     },
     {
       "name": {
@@ -92363,7 +92438,6 @@
         "type": "generic",
         "last_updated": "2025-09-15T19:34:02.887Z"
       },
-      "id": "thermostat",
       "platforms": [
         "local"
       ],
@@ -92375,10 +92449,10 @@
           "CR2032",
           "AA"
         ]
-      }
+      },
+      "id": "thermostat"
     },
     {
-      "id": "touch_dimmer",
       "name": {
         "en": "Touch Dimmer"
       },
@@ -93231,7 +93305,8 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "touch_dimmer"
     },
     {
       "name": {
@@ -94059,7 +94134,6 @@
       "id": "touch_dimmer_1gang"
     },
     {
-      "id": "touch_switch_1gang",
       "name": {
         "en": "Touch Switch 1gang"
       },
@@ -94918,10 +94992,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "touch_switch_1gang"
     },
     {
-      "id": "touch_switch_2gang",
       "name": {
         "en": "Touch Switch 2gang"
       },
@@ -95781,10 +95855,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "touch_switch_2gang"
     },
     {
-      "id": "touch_switch_3gang",
       "name": {
         "en": "Touch Switch 3gang"
       },
@@ -96645,10 +96719,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "touch_switch_3gang"
     },
     {
-      "id": "touch_switch_4gang",
       "name": {
         "en": "Touch Switch 4gang"
       },
@@ -97510,10 +97584,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "touch_switch_4gang"
     },
     {
-      "id": "tvoc_sensor",
       "name": {
         "en": "Tvoc Sensor"
       },
@@ -98369,7 +98443,8 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "tvoc_sensor"
     },
     {
       "name": {
@@ -99208,7 +99283,6 @@
       "id": "tvoc_sensor_advanced"
     },
     {
-      "id": "usb_outlet",
       "name": {
         "en": "USB Outlet"
       },
@@ -100062,7 +100136,8 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "usb_outlet"
     },
     {
       "name": {
@@ -100894,7 +100969,6 @@
       "id": "usb_outlet_advanced"
     },
     {
-      "id": "vibration_sensor",
       "name": {
         "en": "Vibration Sensor"
       },
@@ -101757,10 +101831,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "vibration_sensor"
     },
     {
-      "id": "wall_switch_1gang_ac",
       "class": "light",
       "capabilities": [
         "onoff"
@@ -102612,10 +102686,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "wall_switch_1gang_ac"
     },
     {
-      "id": "wall_switch_1gang_dc",
       "class": "light",
       "capabilities": [
         "onoff"
@@ -103467,10 +103541,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "wall_switch_1gang_dc"
     },
     {
-      "id": "wall_switch_2gang_ac",
       "class": "light",
       "capabilities": [
         "onoff",
@@ -104327,10 +104401,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "wall_switch_2gang_ac"
     },
     {
-      "id": "wall_switch_2gang_dc",
       "class": "light",
       "capabilities": [
         "onoff",
@@ -105183,10 +105257,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "wall_switch_2gang_dc"
     },
     {
-      "id": "wall_switch_3gang_ac",
       "class": "light",
       "capabilities": [
         "onoff",
@@ -106049,10 +106123,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "wall_switch_3gang_ac"
     },
     {
-      "id": "wall_switch_3gang_dc",
       "class": "light",
       "capabilities": [
         "onoff",
@@ -106906,10 +106980,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "wall_switch_3gang_dc"
     },
     {
-      "id": "wall_switch_4gang_ac",
       "class": "light",
       "capabilities": [
         "onoff",
@@ -107764,10 +107838,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "wall_switch_4gang_ac"
     },
     {
-      "id": "wall_switch_4gang_dc",
       "class": "light",
       "capabilities": [
         "onoff",
@@ -108622,10 +108696,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "wall_switch_4gang_dc"
     },
     {
-      "id": "wall_switch_5gang_ac",
       "class": "light",
       "capabilities": [
         "onoff",
@@ -109481,10 +109555,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "wall_switch_5gang_ac"
     },
     {
-      "id": "wall_switch_6gang_ac",
       "class": "light",
       "capabilities": [
         "onoff",
@@ -110341,7 +110415,8 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "wall_switch_6gang_ac"
     },
     {
       "name": {
@@ -112012,7 +112087,6 @@
       "id": "water_leak_detector_sq510a"
     },
     {
-      "id": "water_leak_sensor",
       "name": {
         "en": "Water Leak Sensor"
       },
@@ -112875,10 +112949,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "water_leak_sensor"
     },
     {
-      "id": "water_valve",
       "name": {
         "en": "Water Valve"
       },
@@ -113720,7 +113794,8 @@
         ],
         "productIds": []
       },
-      "settings": []
+      "settings": [],
+      "id": "water_valve"
     },
     {
       "name": {
@@ -114555,7 +114630,6 @@
       "id": "water_valve_smart"
     },
     {
-      "id": "wireless_switch",
       "name": {
         "en": "Wireless Switch"
       },
@@ -115408,7 +115482,8 @@
           "CR2032"
         ]
       },
-      "settings": []
+      "settings": [],
+      "id": "wireless_switch"
     },
     {
       "name": {
@@ -116265,7 +116340,6 @@
           1045
         ]
       },
-      "id": "wireless_switch_1gang_cr2032",
       "manufacturerId": [],
       "productId": [],
       "platforms": [
@@ -116273,10 +116347,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "wireless_switch_1gang_cr2032"
     },
     {
-      "id": "wireless_switch_2gang_cr2032",
       "class": "button",
       "capabilities": [
         "onoff",
@@ -117137,10 +117211,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "wireless_switch_2gang_cr2032"
     },
     {
-      "id": "wireless_switch_3gang_cr2032",
       "class": "button",
       "capabilities": [
         "onoff",
@@ -118001,10 +118075,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "wireless_switch_3gang_cr2032"
     },
     {
-      "id": "wireless_switch_4gang_cr2032",
       "class": "button",
       "capabilities": [
         "onoff",
@@ -118865,7 +118939,8 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "wireless_switch_4gang_cr2032"
     },
     {
       "name": {
@@ -119736,7 +119811,6 @@
       "id": "wireless_switch_4gang_cr2450"
     },
     {
-      "id": "wireless_switch_5gang_cr2032",
       "class": "button",
       "capabilities": [
         "onoff",
@@ -120612,10 +120686,10 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "wireless_switch_5gang_cr2032"
     },
     {
-      "id": "wireless_switch_6gang_cr2032",
       "class": "button",
       "capabilities": [
         "onoff",
@@ -121492,7 +121566,8 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "wireless_switch_6gang_cr2032"
     },
     {
       "name": {
@@ -122338,13 +122413,13 @@
         ],
         "productIds": []
       },
-      "id": "zbbridge",
       "platforms": [
         "local"
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "zbbridge"
     },
     {
       "name": {
