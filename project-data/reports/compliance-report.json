@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-09-21T12:36:39.655Z",
+  "guidelines": {
+    "appName": {
+      "current": "Generic Smart Hub",
+      "maxWords": 4,
+      "valid": true
+    },
+    "description": {
+      "required": "Professional description focusing on capability",
+      "hasMarkdown": false,
+      "valid": true
+    },
+    "images": {
+      "required": [
+        "250x175",
+        "500x350",
+        "1000x700"
+      ],
+      "format": "PNG/JPG",
+      "created": 5
+    },
+    "readme": {
+      "maxLines": 10,
+      "noChangelog": true,
+      "valid": true
+    }
+  },
+  "status": "COMPLIANT",
+  "issues": []
+}

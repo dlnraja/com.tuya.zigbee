@@ -1,12 +1,22 @@
 {
   "name": {
-    "en": "Motion Sensor Battery"
+    "en": "PIR Motion Sensor Battery"
   },
   "class": "socket",
   "capabilities": [
     "onoff"
   ],
   "zigbee": {
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          1030
+        ]
+      }
+    },
     "manufacturerName": [
       "_TZE284_",
       "_TZE200_",
@@ -28,22 +38,20 @@
       "_TZ3400_bjawzodf",
       "_TYZB01_iuibaj4r",
       "_TYZB02_keyjhapk",
-      "_TYST11_whpb9yts"
+      "_TYST11_whpb9yts",
+      "_TZ3400_",
+      "_TZE284_uqfph8ah",
+      "_TZE284_bjawzodf",
+      "_TZE200_s8gkrkxk",
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_odygigth",
+      "_TYZB01_",
+      "_TYST11_"
     ],
     "productId": [
       "TS0001",
       "TS0002",
       "TS0003"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          4,
-          5,
-          1030
-        ]
-      }
-    }
+    ]
   }
 }
