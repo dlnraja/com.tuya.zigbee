@@ -1,6 +1,6 @@
 {
   "name": "generic-smart-hub",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "🏠 Ultimate Zigbee Hub - Comprehensive support for 4776+ Tuya & Zigbee devices. Johan Benz style integration with 48 professional drivers for lights, sensors, switches, climate control, security, and more.",
   "main": "app.js",
   "keywords": [
@@ -40,12 +40,12 @@
     "rh3052"
   ],
   "dependencies": {
-    "canvas": "^3.2.0",
-    "fs-extra": "^11.3.2",
+    "canvas": "^2.11.2",
+    "fs-extra": "^11.2.0",
     "homey-zigbeedriver": "^1.5.0",
-    "jimp": "^1.6.0",
-    "puppeteer": "^24.21.0",
-    "sharp": "^0.34.3",
+    "jimp": "^0.22.12",
+    "puppeteer": "^21.0.0",
+    "sharp": "^0.32.6",
     "zigbee-clusters": "^1.0.0"
   },
   "engines": {
@@ -56,7 +56,10 @@
     "start": "node app.js",
     "validate": "homey app validate",
     "build": "homey app build",
-    "publish": "homey app publish"
+    "publish": "homey app publish",
+    "clean": "rm -rf node_modules package-lock.json",
+    "fresh-install": "npm run clean && npm install --legacy-peer-deps",
+    "security-audit": "npm audit --audit-level moderate"
   },
   "repository": {
     "type": "git",
@@ -113,6 +116,12 @@
     }
   },
   "devDependencies": {
-    "homey": "^2.34.0"
+    "homey": "^3.0.0"
+  },
+  "overrides": {
+    "rimraf": "^5.0.0",
+    "glob": "^10.0.0",
+    "eslint": "^8.0.0",
+    "inflight": "^2.0.0"
   }
 }
