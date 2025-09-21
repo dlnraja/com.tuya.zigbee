@@ -1,26 +1,27 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "1.0.33",
+  "version": "1.0.32",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
     "local"
   ],
   "name": {
-    "en": "Tuya Universal"
+    "en": "Generic Smart Hub"
   },
   "description": {
-    "en": "Connect generic and unbranded Tuya devices to your smart home. Community-maintained app with active updates for devices without dedicated support."
+    "en": "Universal Zigbee device support for generic smart home devices. Supports switches, sensors, and controllers with automatic device recognition."
   },
   "category": [
     "lights",
-    "appliances",
     "security",
     "climate"
   ],
   "brandColor": "#1E88E5",
-  "permissions": [],
+  "permissions": [
+    "homey:wireless:zigbee"
+  ],
   "images": {
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png",

@@ -1,12 +1,11 @@
-# Generic Smart Hub v2.0.0
+# Generic Smart Hub
 
-Professional smart device integration platform. Community-driven solution providing extensive compatibility with modern generic devices.
+Universal Zigbee device support for smart home automation.
 
 ## Features
-- 80+ device drivers
-- SDK3 optimized
-- Active maintenance
-- Universal compatibility
+- Multi-gang switches (1/2/3 gang)
+- PIR motion sensors
+- Energy monitoring outlets
+- Automatic device recognition
 
-## Installation
-Install from Homey App Store or developer mode.
+Compatible with generic Zigbee devices from various manufacturers.
