@@ -7,6 +7,34 @@
     "onoff"
   ],
   "zigbee": {
+    "manufacturerName": [
+      "_TZE284_",
+      "_TZE200_",
+      "_TZ3000_",
+      "_TZE284_1tlkgmvn",
+      "_TZE284_2aaelwxk",
+      "_TZE284_3towulqd",
+      "_TZE200_bjawzodf",
+      "_TZE200_ntcy3xu1",
+      "_TZE200_oisqyl4o",
+      "_TZ3000_8ybe88nf",
+      "_TZ3000_4fjiwweb",
+      "_TZ3000_26fmupbb",
+      "_TZE204_qasjif9e",
+      "_TZE204_ijxvkhd0",
+      "_TZE204_2aaelwxk",
+      "_TZ3210_ncw88jfq",
+      "_TZ3400_keyjhapk",
+      "_TZ3400_bjawzodf",
+      "_TYZB01_iuibaj4r",
+      "_TYZB02_keyjhapk",
+      "_TYST11_whpb9yts"
+    ],
+    "productId": [
+      "TS0001",
+      "TS0002",
+      "TS0003"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -24,40 +52,6 @@
           6
         ]
       }
-    },
-    "manufacturerName": [
-      "BSEED",
-      "EweLink",
-      "GIRIER",
-      "Lonsonho",
-      "MOES",
-      "Nedis",
-      "OWON",
-      "_TYST11_",
-      "_TZE284_uqfph8ah",
-      "_TZE200_pay2byax",
-      "_TZ3000_g5xawfcq",
-      "Tuya",
-      "SmartLife",
-      "Alecto",
-      "Zemismart",
-      "Lidl",
-      "Neo",
-      "Meross",
-      "_TZ3000_wxktbrwl",
-      "_TZE200_9ctu7aik",
-      "_TZ3000_tscnmps8"
-    ],
-    "productId": [
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS011F",
-      "TS0121",
-      "TS0202",
-      "TS0203",
-      "TS0601",
-      "TS0301"
-    ]
+    }
   }
 }
