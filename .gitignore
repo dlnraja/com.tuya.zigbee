@@ -1,15 +1,44 @@
 
+# 🔐 SÉCURITÉ MAXIMALE - Fichiers sensibles
 .env
 .env.local
+.env.*
 *.key
 *.pem
+*.p12
+*.crt
+*.csr
+id_rsa*
+*.ssh
 credentials.json
 config/secrets.js
+auth-*.json
+token-*.json
+
+# 🏗️ Build & Cache Homey
 .homeycompose/
 .homeybuild/
 project-data/publish-*.txt
 project-data/auth-*.json
 
-# Image placeholders (remplacer par vraies images)
+# 📦 Dependencies
+node_modules/
+**/node_modules/**
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 🔍 Fichiers test dangereux
+**/test/fixtures/**/*.key
+**/test/fixtures/**/*.pem
+**/test/fixtures/**/id_rsa*
+
+# 🖼️ Image placeholders (remplacer par vraies images)
 **/*.placeholder
 **/image-spec.json
+
+# 🔒 Secrets potentiels
+*.secret
+*.private
+.secrets/
+private/
