@@ -1,5 +1,13 @@
 <svg width="75" height="75" viewBox="0 0 75 75" xmlns="http://www.w3.org/2000/svg">
   <rect width="75" height="75" fill="white"/>
-  <circle cx="37.5" cy="37.5" r="20" fill="#1E88E5"/>
-  <polygon points="30,30 45,30 37.5,45" fill="white"/>
+  <g transform="translate(37.5, 37.5)">
+    <!-- Air Conditioner Unit -->
+    <rect x="-20" y="-10" width="40" height="20" rx="2" fill="#4A90E2" stroke="#333" stroke-width="1"/>
+    <!-- Vents -->
+    <line x1="-15" y1="-5" x2="15" y2="-5" stroke="white" stroke-width="0.5"/>
+    <line x1="-15" y1="0" x2="15" y2="0" stroke="white" stroke-width="0.5"/>  
+    <line x1="-15" y1="5" x2="15" y2="5" stroke="white" stroke-width="0.5"/>
+    <!-- LED -->
+    <circle cx="12" cy="-5" r="1" fill="#00ff00"/>
+  </g>
 </svg>
