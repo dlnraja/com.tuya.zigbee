@@ -1,29 +1,31 @@
 # Universal Tuya Zigbee
 
-## Description
-Support for generic Tuya & Zigbee devices including switches, sensors, and controllers. This app provides device drivers for unlabeled or generic Tuya devices that may not be supported by brand-specific apps.
-
 ## Credits
-- **Original Author**: Johan Bendz - [Tuya Zigbee App](https://github.com/JohanBendz/com.tuya.cloud) (MIT License)
-- **Current Maintainer**: dlnraja
-- **Community**: Thanks to Homey Community for testing and feedback
+**Original Author**: Johan Bendz - [Tuya Zigbee App](https://community.homey.app/t/app-pro-tuya-zigbee-app/26439) (MIT License)
+**Current Maintainer**: dlnraja
 
-## Supported Devices
-This app supports 149+ generic Tuya & Zigbee devices including:
-- Smart switches (1-6 gang)
-- Motion sensors
-- Temperature/humidity sensors  
-- Smart plugs
-- Door/window sensors
-- Scene controllers
-- And many more generic devices
+## Description
+Support for generic Tuya & Zigbee devices. This app provides drivers for unlabeled devices based on Johan's excellent work.
 
-## Installation
-This app can be installed manually via GitHub or through the Homey App Store.
-
-## Issues & Support
-- Report issues on [GitHub](https://github.com/dlnraja/com.tuya.zigbee/issues)
-- Community discussion: [Homey Community Forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352)
+## Supported Devices (149+)
+- Smart switches, sensors, plugs
+- Motion detectors, door sensors  
+- RGB lights, thermostats
+- Scene controllers and more
 
 ## License
 MIT License - Based on Johan Bendz's original work
+
+
+## Nouveaux Appareils 2024-2025
+Support ajouté basé sur demandes communauté:
+- GIRIER Switch Module (_TZ3000_ltt60asa / TS0004)
+- Moes 4-Gang Switch avec contrôle scène
+- PIR Combo Sensors avec temp/humidité
+- Door/Window Sensors avec détection sabotage
+- Vibration Sensors pour monitoring appareils
+- RGB Bulbs avec effets dynamiques
+- Thermostats Moes HY367
+- 4-Button Remotes avec liaisons multi-appareils
+
+**Total**: 15+ nouveaux drivers depuis 2024!
