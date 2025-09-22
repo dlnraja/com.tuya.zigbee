@@ -8,10 +8,10 @@
     "local"
   ],
   "name": {
-    "en": "Generic Smart Hub"
+    "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "Universal Zigbee device support for generic smart home devices. Supports switches, sensors, and controllers with automatic device recognition."
+    "en": "Support for generic Tuya & Zigbee devices including switches, sensors, and controllers. Based on Johan Bendz's work with community improvements."
   },
   "category": [
     "lights",
@@ -36,6 +36,11 @@
       {
         "name": "dlnraja",
         "email": "support@community.tuya"
+      },
+      {
+        "name": "Johan Bendz (Original Author)",
+        "email": "johan@bendz.org",
+        "role": "Original Tuya Zigbee App - MIT License"
       }
     ],
     "translators": []
@@ -123243,6 +123248,56 @@
         "large": "/drivers/zigbee_gateway_hub/assets/images/large.png"
       },
       "id": "zigbee_gateway_hub"
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "App Information"
+      },
+      "children": [
+        {
+          "id": "app_version",
+          "type": "label",
+          "label": {
+            "en": "Version"
+          },
+          "value": "2.0.5"
+        },
+        {
+          "id": "supported_devices",
+          "type": "label",
+          "label": {
+            "en": "Supported Devices"
+          },
+          "value": "149+ Generic Zigbee Devices"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Credits & Attribution"
+      },
+      "children": [
+        {
+          "id": "johan_credit",
+          "type": "label",
+          "label": {
+            "en": "Based on work by"
+          },
+          "value": "Johan Bendz - Original Tuya Zigbee App"
+        },
+        {
+          "id": "community_credit",
+          "type": "label",
+          "label": {
+            "en": "Community"
+          },
+          "value": "Thanks to Homey Community for testing & feedback"
+        }
+      ]
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
-  "name": "generic-smart-hub",
+  "name": "universal-tuya-zigbee",
   "version": "2.0.5",
-  "description": "🏠 Ultimate Zigbee Hub - Comprehensive support for 4776+ Tuya & Zigbee devices. Johan Benz style integration with 48 professional drivers for lights, sensors, switches, climate control, security, and more.",
+  "description": "Support for generic Tuya & Zigbee devices including switches, sensors, and controllers. Based on Johan Bendz's work with community improvements.",
   "main": "app.js",
   "keywords": [
     "homey",
@@ -88,10 +88,10 @@
   "homey": {
     "id": "com.dlnraja.ultimate.zigbee.hub",
     "name": {
-      "en": "Ultimate Zigbee Hub"
+      "en": "Universal Tuya Zigbee"
     },
     "description": {
-      "en": "🏠 Ultimate Zigbee Hub - Comprehensive support for 4776+ Tuya & Zigbee devices with 48 professional drivers"
+      "en": "Support for generic Tuya & Zigbee devices including switches, sensors, and controllers. Based on Johan Bendz's work with community improvements."
     },
     "category": "lighting",
     "tags": [
