@@ -123249,55 +123249,5 @@
       },
       "id": "zigbee_gateway_hub"
     }
-  ],
-  "settings": [
-    {
-      "type": "group",
-      "label": {
-        "en": "App Information"
-      },
-      "children": [
-        {
-          "id": "app_version",
-          "type": "label",
-          "label": {
-            "en": "Version"
-          },
-          "value": "2.0.5"
-        },
-        {
-          "id": "supported_devices",
-          "type": "label",
-          "label": {
-            "en": "Supported Devices"
-          },
-          "value": "149+ Generic Zigbee Devices"
-        }
-      ]
-    },
-    {
-      "type": "group",
-      "label": {
-        "en": "Credits & Attribution"
-      },
-      "children": [
-        {
-          "id": "johan_credit",
-          "type": "label",
-          "label": {
-            "en": "Based on work by"
-          },
-          "value": "Johan Bendz - Original Tuya Zigbee App"
-        },
-        {
-          "id": "community_credit",
-          "type": "label",
-          "label": {
-            "en": "Community"
-          },
-          "value": "Thanks to Homey Community for testing & feedback"
-        }
-      ]
-    }
   ]
 }
