@@ -1,0 +1,15 @@
+name: Force Publish to Homey
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - run: echo "Generic Smart Hub v2.0.5 ready for Homey Dashboard"
