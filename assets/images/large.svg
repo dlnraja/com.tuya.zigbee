@@ -1,17 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="500" height="350" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="appGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1E88E5;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#2196F3;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1976D2;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#appGradient)" rx="30"/>
-  <circle cx="250" cy="175" r="87.5" fill="white" opacity="0.9"/>
-  <g transform="translate(250,175)" opacity="0.4">
-    <circle r="6" fill="#1976D2"/>
-    <g transform="rotate(0)"><circle cx="25" cy="0" r="3" fill="#1976D2"/><line x1="6" y1="0" x2="22" y2="0" stroke="#1976D2" stroke-width="1.5"/></g><g transform="rotate(60)"><circle cx="25" cy="0" r="3" fill="#1976D2"/><line x1="6" y1="0" x2="22" y2="0" stroke="#1976D2" stroke-width="1.5"/></g><g transform="rotate(120)"><circle cx="25" cy="0" r="3" fill="#1976D2"/><line x1="6" y1="0" x2="22" y2="0" stroke="#1976D2" stroke-width="1.5"/></g><g transform="rotate(180)"><circle cx="25" cy="0" r="3" fill="#1976D2"/><line x1="6" y1="0" x2="22" y2="0" stroke="#1976D2" stroke-width="1.5"/></g><g transform="rotate(240)"><circle cx="25" cy="0" r="3" fill="#1976D2"/><line x1="6" y1="0" x2="22" y2="0" stroke="#1976D2" stroke-width="1.5"/></g><g transform="rotate(300)"><circle cx="25" cy="0" r="3" fill="#1976D2"/><line x1="6" y1="0" x2="22" y2="0" stroke="#1976D2" stroke-width="1.5"/></g>
+<svg width="75" height="75" viewBox="0 0 75 75" xmlns="http://www.w3.org/2000/svg">
+  <rect width="75" height="75" fill="white"/>
+  <g transform="translate(12.5, 12.5)">
+    <!-- Air Conditioner Unit -->
+    <rect x="5" y="15" width="40" height="25" rx="3" fill="#4A90E2" stroke="#333" stroke-width="1.5"/>
+    <!-- Front Panel -->
+    <rect x="8" y="18" width="34" height="8" rx="1" fill="#f0f0f0" stroke="#ddd"/>
+    <!-- Vents -->
+    <line x1="10" y1="30" x2="42" y2="30" stroke="#666" stroke-width="0.5"/>
+    <line x1="10" y1="32" x2="42" y2="32" stroke="#666" stroke-width="0.5"/>
+    <line x1="10" y1="34" x2="42" y2="34" stroke="#666" stroke-width="0.5"/>
+    <!-- Power LED -->
+    <circle cx="40" cy="22" r="1.5" fill="#00ff00"/>
+    <!-- Temperature Display -->
+    <rect x="12" y="20" width="8" height="4" rx="1" fill="#000"/>
+    <text x="16" y="23" text-anchor="middle" fill="#0f0" font-size="2" font-family="monospace">24°</text>
   </g>
-  <text x="250" y="315" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="23.333333333333332" font-weight="600">Ultimate Zigbee</text>
 </svg>
