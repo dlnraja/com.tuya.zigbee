@@ -1,6 +1,8 @@
 {
   "name": {
-    "en": "Smart Curtain Motor"
+    "en": "Smart Curtain Motor",
+    "fr": "Interrupteur Intelligent",
+    "de": "Smart Switch"
   },
   "class": "windowcoverings",
   "capabilities": [
@@ -809,7 +811,16 @@
       "_TZE200_s8gkrkxk",
       "_TZ3000_kmh5qpmb",
       "_TZ3000_odygigth",
-      "_TYST11_"
+      "_TYST11_",
+      "_TZE200_rq0qlyss",
+      "_TZE200_1ibpyhdc",
+      "_TZE200_3ejwq9cd",
+      "_TZ3000_bjawzodf",
+      "_TZ3000_keyjhapk",
+      "eWeLink",
+      "SmartLife",
+      "TuyaSmart",
+      "Zemismart"
     ],
     "productId": "_TZ3000_IYME7MIJ",
     "endpoints": {
