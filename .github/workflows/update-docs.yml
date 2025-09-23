@@ -1,0 +1,33 @@
+name: Update Documentation
+
+on:
+  push:
+    paths:
+      - 'drivers/**'
+      - 'app.json'
+    branches: [ master ]
+
+jobs:
+  update-docs:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Generate driver stats
+      run: |
+        echo "# Auto-Generated Driver Statistics" > DRIVER_STATS.md
+        echo "" >> DRIVER_STATS.md
+        echo "**Total Drivers**: $(ls drivers/ | wc -l)" >> DRIVER_STATS.md
+        echo "**Last Update**: $(date)" >> DRIVER_STATS.md
+        echo "" >> DRIVER_STATS.md
+        echo "## Driver List" >> DRIVER_STATS.md
+        ls drivers/ | sed 's/^/- /' >> DRIVER_STATS.md
+    
+    - name: Commit docs
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add DRIVER_STATS.md
+        git commit -m "📊 AUTO-UPDATE: Driver statistics" || exit 0
+        git push
