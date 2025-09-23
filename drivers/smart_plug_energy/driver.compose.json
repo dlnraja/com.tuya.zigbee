@@ -1,87 +1,20 @@
 {
   "name": {
-    "en": "Smart Power Outlet with Energy Monitor",
-    "fr": "Interrupteur Intelligent",
-    "de": "Smart Switch"
+    "en": "smart plug energy"
   },
-  "class": "socket",
+  "class": "sensor",
   "capabilities": [
-    "onoff",
-    "measure_power"
+    "onoff"
   ],
   "zigbee": {
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          4,
-          5,
-          6,
-          1794
-        ]
-      }
-    },
     "manufacturerName": [
-      "_TZE284_",
       "_TZE200_",
       "_TZ3000_",
-      "_TZE284_1tlkgmvn",
-      "_TZE284_2aaelwxk",
-      "_TZE284_3towulqd",
-      "_TZE200_bjawzodf",
-      "_TZE200_ntcy3xu1",
-      "_TZE200_oisqyl4o",
-      "_TZ3000_8ybe88nf",
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_26fmupbb",
-      "_TZE204_qasjif9e",
-      "_TZE204_ijxvkhd0",
-      "_TZE204_2aaelwxk",
-      "_TZ3210_ncw88jfq",
-      "_TZ3400_keyjhapk",
-      "_TZ3400_bjawzodf",
-      "_TYZB01_iuibaj4r",
-      "_TYZB02_keyjhapk",
-      "_TYST11_whpb9yts",
-      "_TZ3400_",
-      "_TZE284_uqfph8ah",
-      "_TZE284_bjawzodf",
-      "_TZE200_s8gkrkxk",
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_odygigth",
-      "_TYZB01_",
-      "_TYST11_",
       "Tuya",
-      "MOES",
-      "_TZE204_",
-      "_TZ3210_",
-      "_TYZB02_",
-      "_TZE300_",
-      "_TZE400_",
-      "_TZE200_rq0qlyss",
-      "_TZE200_dwcarsat",
-      "_TZE200_1ibpyhdc",
-      "_TZE200_3ejwq9cd",
-      "_TZE200_amp6tsvy",
-      "_TZE200_whpb9yts",
-      "_TZE200_mcxw5ehu",
-      "_TZ3000_bjawzodf",
-      "_TZ3000_keyjhapk",
-      "BSEED",
-      "Lonsonho",
-      "Nedis",
-      "GIRIER",
-      "ONENUO",
-      "eWeLink",
-      "SmartLife",
-      "TuyaSmart",
-      "Zemismart"
+      "MOES"
     ],
     "productId": [
-      "TS0001",
-      "TS0002",
-      "TS0003"
+      "TS0601"
     ]
-  },
-  "capabilitiesOptions": {}
+  }
 }

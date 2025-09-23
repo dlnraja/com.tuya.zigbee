@@ -1,0 +1,20 @@
+{
+  "name": {
+    "en": "led strip advanced"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_",
+      "_TZ3000_",
+      "Tuya",
+      "MOES"
+    ],
+    "productId": [
+      "TS0601"
+    ]
+  }
+}
