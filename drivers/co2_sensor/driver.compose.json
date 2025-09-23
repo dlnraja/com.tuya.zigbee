@@ -1,0 +1,17 @@
+{
+  "name": {
+    "en": "co2 sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ]
+  }
+}
