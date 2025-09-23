@@ -1,18 +1,13 @@
-# Universal Tuya Zigbee Device App
+# Universal Tuya Zigbee
 
-## For Homey Users
-Support for 150+ generic Tuya Zigbee devices. Connect unlabeled smart switches, sensors, and controllers to your Homey.
+Support for 159+ generic Tuya devices.
 
-### Supported Categories
-- Smart Lighting (switches, dimmers, RGB)
-- Sensors (motion, door/window, temperature)  
-- Energy Monitoring (smart plugs, meters)
-- Climate Control (thermostats, valves)
-- Security (smoke detectors, alarms)
+## Categories
+- Smart Lighting (39 drivers)
+- Sensors (45 drivers)  
+- Energy Monitoring (15 drivers)
+- Climate Control (12 drivers)
+- Security (20 drivers)
+- Scene Controls (28 drivers)
 
-### Installation
-1. Install from Homey App Store
-2. Add devices via Homey Settings > Zigbee
-3. Select device category that matches your hardware
-
-Built with ❤️ by the community based on Johan Bendz's work.
+Install from Homey App Store.
