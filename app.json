@@ -116352,6 +116352,18 @@
         "large": "/drivers/zigbee_gateway_hub/assets/images/large.png"
       },
       "id": "zigbee_gateway_hub"
+    },
+    {
+      "id": "air_quality_monitor",
+      "name": {
+        "en": "Air Quality Monitor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_pm25",
+        "measure_temperature",
+        "measure_humidity"
+      ]
     }
   ]
 }
