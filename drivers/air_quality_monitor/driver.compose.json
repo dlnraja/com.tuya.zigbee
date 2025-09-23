@@ -1,18 +1,105 @@
 {
   "name": {
-    "en": "Air Quality Monitor"
+    "en": "Air Quality Monitor",
+    "fr": "Moniteur de Qualité d'Air",
+    "de": "Luftqualitätsmonitor",
+    "es": "Monitor de Calidad del Aire",
+    "it": "Monitor Qualità Aria",
+    "nl": "Luchtkwaliteit Monitor"
   },
   "class": "sensor",
   "capabilities": [
     "measure_pm25",
     "measure_temperature",
-    "measure_humidity"
+    "measure_humidity",
+    "measure_co2",
+    "alarm_battery",
+    "measure_battery"
   ],
+  "capabilitiesOptions": {
+    "measure_pm25": {
+      "title": {
+        "en": "PM2.5",
+        "fr": "PM2.5"
+      },
+      "units": {
+        "en": "μg/m³"
+      },
+      "decimals": 1
+    },
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature",
+        "fr": "Température"
+      },
+      "units": {
+        "en": "°C"
+      },
+      "decimals": 1
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Humidity",
+        "fr": "Humidité"
+      },
+      "units": {
+        "en": "%"
+      },
+      "decimals": 0
+    },
+    "measure_co2": {
+      "title": {
+        "en": "CO2",
+        "fr": "CO2"
+      },
+      "units": {
+        "en": "ppm"
+      },
+      "decimals": 0
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AA",
+      "AAA",
+      "CR123A"
+    ]
+  },
   "zigbee": {
     "manufacturerName": [
       "_TZE200_",
+      "_TZE204_",
       "_TZ3000_",
-      "Tuya"
+      "_TZ3400_",
+      "_TZ3210_",
+      "_TYZB01_",
+      "_TZE284_",
+      "_TYZB02_",
+      "_TZE300_",
+      "_TZE400_",
+      "_TZE200_rq0qlyss",
+      "_TZE204_rq0qlyss",
+      "_TZ3000_rq0qlyss",
+      "_TZE200_dwcarsat",
+      "_TZE204_dwcarsat",
+      "_TZ3000_dwcarsat",
+      "_TZE200_1ibpyhdc",
+      "_TZE204_1ibpyhdc",
+      "_TZ3000_1ibpyhdc",
+      "_TZE200_3ejwq9cd",
+      "_TZE204_3ejwq9cd",
+      "_TZ3000_3ejwq9cd",
+      "Tuya",
+      "MOES",
+      "BSEED",
+      "Lonsonho",
+      "Nedis",
+      "GIRIER",
+      "ONENUO",
+      "eWeLink",
+      "SmartLife",
+      "TuyaSmart"
     ],
     "productId": [
       "TS0601"
@@ -21,11 +108,21 @@
       "1": {
         "clusters": [
           0,
+          1,
+          4,
+          5,
           61184
         ],
         "bindings": [
           25
         ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/air_quality_monitor/assets/icon.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until LED blinks",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote"
       }
     }
   }
