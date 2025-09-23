@@ -1,0 +1,23 @@
+{
+  "name": {
+    "en": "air quality monitor pro"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "onoff",
+    "measure_temperature"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_",
+      "_TZ3000_",
+      "_TZE284_",
+      "Tuya",
+      "MOES",
+      "BSEED"
+    ],
+    "productId": [
+      "TS0601"
+    ]
+  }
+}
