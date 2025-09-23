@@ -14,6 +14,9 @@
           4,
           5,
           6
+        ],
+        "bindings": [
+          6
         ]
       },
       "2": {
@@ -22,6 +25,9 @@
           4,
           5,
           6
+        ],
+        "bindings": [
+          6
         ]
       },
       "3": {
@@ -29,6 +35,9 @@
           0,
           4,
           5,
+          6
+        ],
+        "bindings": [
           6
         ]
       }
@@ -64,7 +73,30 @@
       "_TYZB01_",
       "_TYST11_",
       "Tuya",
-      "MOES"
+      "MOES",
+      "_TZE204_",
+      "_TZ3210_",
+      "_TYZB02_",
+      "_TZE300_",
+      "_TZE400_",
+      "_TZE200_rq0qlyss",
+      "_TZE200_dwcarsat",
+      "_TZE200_1ibpyhdc",
+      "_TZE200_3ejwq9cd",
+      "_TZE200_amp6tsvy",
+      "_TZE200_whpb9yts",
+      "_TZE200_mcxw5ehu",
+      "_TZ3000_bjawzodf",
+      "_TZ3000_keyjhapk",
+      "BSEED",
+      "Lonsonho",
+      "Nedis",
+      "GIRIER",
+      "ONENUO",
+      "eWeLink",
+      "SmartLife",
+      "TuyaSmart",
+      "Zemismart"
     ],
     "productId": [
       "TS0001",

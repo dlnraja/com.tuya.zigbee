@@ -15,13 +15,34 @@
       "1": {
         "clusters": [
           0,
-          3,
-          6,
-          8
+          4,
+          5,
+          6
         ],
         "bindings": [
-          6,
-          8
+          6
+        ]
+      },
+      "2": {
+        "clusters": [
+          0,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "3": {
+        "clusters": [
+          0,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
         ]
       }
     },
@@ -831,7 +852,16 @@
       "_TZE200_s8gkrkxk",
       "_TZ3000_kmh5qpmb",
       "_TZ3000_odygigth",
-      "_TYST11_"
+      "_TYST11_",
+      "_TZE200_rq0qlyss",
+      "_TZE200_1ibpyhdc",
+      "_TZE200_3ejwq9cd",
+      "_TZ3000_bjawzodf",
+      "_TZ3000_keyjhapk",
+      "eWeLink",
+      "SmartLife",
+      "TuyaSmart",
+      "Zemismart"
     ],
     "manufacturerIds": [
       4417,
