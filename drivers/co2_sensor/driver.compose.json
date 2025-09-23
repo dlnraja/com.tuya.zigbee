@@ -1,21 +1,18 @@
 {
   "name": {
-    "en": "co2 sensor"
+    "en": "CO2 Sensor"
   },
   "class": "sensor",
   "capabilities": [
-    "onoff"
+    "measure_co2",
+    "measure_temperature"
   ],
   "zigbee": {
     "manufacturerName": [
-      "Tuya",
       "_TZE200_",
       "_TZ3000_",
-      "MOES",
-      "_TZE284_uqfph8ah",
-      "_TZE200_bjawzodf",
-      "_TZ3000_26fmupbb",
-      "BSEED"
+      "Tuya",
+      "MOES"
     ],
     "productId": [
       "TS0601"

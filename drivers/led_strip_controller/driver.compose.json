@@ -1,21 +1,19 @@
 {
   "name": {
-    "en": "led strip controller"
+    "en": "LED Strip Controller"
   },
-  "class": "sensor",
+  "class": "light",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "dim",
+    "light_hue"
   ],
   "zigbee": {
     "manufacturerName": [
-      "Tuya",
       "_TZE200_",
       "_TZ3000_",
-      "MOES",
-      "_TZE284_uqfph8ah",
-      "_TZE200_bjawzodf",
-      "_TZ3000_26fmupbb",
-      "BSEED"
+      "Tuya",
+      "MOES"
     ],
     "productId": [
       "TS0601"
