@@ -1,0 +1,17 @@
+{
+  "name": {
+    "en": "ceiling light controller"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ]
+  }
+}

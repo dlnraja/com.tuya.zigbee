@@ -1,0 +1,17 @@
+{
+  "name": {
+    "en": "led strip controller"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ]
+  }
+}

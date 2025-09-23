@@ -1,0 +1,17 @@
+{
+  "name": {
+    "en": "energy monitoring plug"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601"
+    ]
+  }
+}
