@@ -2610,8 +2610,7 @@
         "alarm_battery",
         "light_hue",
         "light_saturation",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "images": {
         "small": "/drivers/dimmer/assets/images/small.png",
@@ -6025,8 +6024,7 @@
       "capabilities": [
         "locked",
         "alarm_battery",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "images": {
         "small": "/drivers/doorbell/assets/images/small.png",
@@ -13788,8 +13786,7 @@
       "capabilities": [
         "locked",
         "alarm_battery",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "images": {
         "small": "/drivers/garage_door_opener/assets/images/small.png",
@@ -25934,8 +25931,7 @@
       "capabilities": [
         "locked",
         "alarm_battery",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "images": {
         "small": "/drivers/outdoor_siren/assets/images/small.png",
@@ -26799,8 +26795,7 @@
         "measure_temperature",
         "measure_humidity",
         "alarm_battery",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "images": {
         "small": "/drivers/pet_feeder/assets/images/small.png",
@@ -38850,8 +38845,7 @@
         "windowcoverings_set",
         "windowcoverings_state",
         "alarm_battery",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "images": {
         "small": "/drivers/roller_shutter_controller/assets/images/small.png",
@@ -50921,8 +50915,7 @@
       "capabilities": [
         "locked",
         "alarm_battery",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "images": {
         "small": "/drivers/smart_doorbell/assets/images/small.png",
@@ -51788,8 +51781,7 @@
         "measure_temperature",
         "measure_humidity",
         "alarm_battery",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "images": {
         "small": "/drivers/smart_garden_sprinkler/assets/images/small.png",
@@ -79885,8 +79877,7 @@
         "measure_temperature",
         "measure_humidity",
         "alarm_battery",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "images": {
         "small": "/drivers/temperature_sensor/assets/images/small.png",
@@ -109312,8 +109303,7 @@
       "class": "button",
       "capabilities": [
         "alarm_battery",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "images": {
         "small": "/drivers/wireless_switch_1gang_cr2032/assets/images/small.png",
