@@ -1,21 +1,18 @@
 {
   "name": {
-    "en": "ceiling light controller"
+    "en": "Ceiling Light Controller"
   },
   "class": "light",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "dim"
   ],
   "zigbee": {
     "manufacturerName": [
-      "Tuya",
       "_TZE200_",
       "_TZ3000_",
-      "MOES",
-      "_TZE284_uqfph8ah",
-      "_TZE200_bjawzodf",
-      "_TZ3000_26fmupbb",
-      "BSEED"
+      "Tuya",
+      "MOES"
     ],
     "productId": [
       "TS0601"
