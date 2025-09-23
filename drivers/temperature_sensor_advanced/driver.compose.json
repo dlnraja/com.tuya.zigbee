@@ -832,5 +832,23 @@
   "images": {
     "small": "/drivers/temp_sensor_owon/assets/images/small.png",
     "large": "/drivers/temp_sensor_owon/assets/images/large.png"
+  },
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature"
+      },
+      "units": {
+        "en": "°C"
+      }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Humidity"
+      },
+      "units": {
+        "en": "%"
+      }
+    }
   }
 }

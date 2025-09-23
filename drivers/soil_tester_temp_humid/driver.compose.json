@@ -836,5 +836,23 @@
   "images": {
     "small": "/drivers/soil_tester_temp_humid/assets/images/small.png",
     "large": "/drivers/soil_tester_temp_humid/assets/images/large.png"
+  },
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature"
+      },
+      "units": {
+        "en": "°C"
+      }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Humidity"
+      },
+      "units": {
+        "en": "%"
+      }
+    }
   }
 }

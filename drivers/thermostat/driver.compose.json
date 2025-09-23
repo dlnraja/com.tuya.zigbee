@@ -863,5 +863,15 @@
       "CR2032",
       "AA"
     ]
+  },
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature"
+      },
+      "units": {
+        "en": "°C"
+      }
+    }
   }
 }
