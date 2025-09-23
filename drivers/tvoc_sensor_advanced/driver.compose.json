@@ -836,5 +836,23 @@
   "images": {
     "small": "/drivers/tvoc_sensor_advanced/assets/images/small.png",
     "large": "/drivers/tvoc_sensor_advanced/assets/images/large.png"
+  },
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature"
+      },
+      "units": {
+        "en": "°C"
+      }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Humidity"
+      },
+      "units": {
+        "en": "%"
+      }
+    }
   }
 }
