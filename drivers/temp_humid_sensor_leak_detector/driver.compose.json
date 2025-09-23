@@ -842,5 +842,23 @@
   "images": {
     "small": "/drivers/temperature_humidity_sensor_ewelink/assets/images/small.png",
     "large": "/drivers/temperature_humidity_sensor_ewelink/assets/images/large.png"
+  },
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature"
+      },
+      "units": {
+        "en": "°C"
+      }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Humidity"
+      },
+      "units": {
+        "en": "%"
+      }
+    }
   }
 }

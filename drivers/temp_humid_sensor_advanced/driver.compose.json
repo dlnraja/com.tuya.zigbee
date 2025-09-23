@@ -840,5 +840,23 @@
   "images": {
     "small": "/drivers/temp_humid_sensor_advanced/assets/images/small.png",
     "large": "/drivers/temp_humid_sensor_advanced/assets/images/large.png"
+  },
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature"
+      },
+      "units": {
+        "en": "°C"
+      }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Humidity"
+      },
+      "units": {
+        "en": "%"
+      }
+    }
   }
 }

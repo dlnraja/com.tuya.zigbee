@@ -845,5 +845,15 @@
     ],
     "productIds": []
   },
-  "settings": []
+  "settings": [],
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature"
+      },
+      "units": {
+        "en": "°C"
+      }
+    }
+  }
 }

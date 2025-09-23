@@ -829,5 +829,15 @@
   "images": {
     "small": "/drivers/temperature_sensor_ewelink/assets/images/small.png",
     "large": "/drivers/temperature_sensor_ewelink/assets/images/large.png"
+  },
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature"
+      },
+      "units": {
+        "en": "°C"
+      }
+    }
   }
 }
