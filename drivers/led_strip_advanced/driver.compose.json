@@ -1,21 +1,20 @@
 {
   "name": {
-    "en": "led strip advanced"
+    "en": "LED Strip Advanced"
   },
-  "class": "sensor",
+  "class": "light",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation"
   ],
   "zigbee": {
     "manufacturerName": [
       "_TZE200_",
       "_TZ3000_",
       "Tuya",
-      "MOES",
-      "_TZE284_uqfph8ah",
-      "_TZE200_bjawzodf",
-      "_TZ3000_26fmupbb",
-      "BSEED"
+      "MOES"
     ],
     "productId": [
       "TS0601"

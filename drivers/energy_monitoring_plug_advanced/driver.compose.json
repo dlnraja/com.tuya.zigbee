@@ -1,21 +1,19 @@
 {
   "name": {
-    "en": "energy monitoring plug advanced"
+    "en": "Energy Plug Advanced"
   },
   "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_power",
+    "meter_power"
   ],
   "zigbee": {
     "manufacturerName": [
-      "Tuya",
       "_TZE200_",
       "_TZ3000_",
-      "MOES",
-      "_TZE284_uqfph8ah",
-      "_TZE200_bjawzodf",
-      "_TZ3000_26fmupbb",
-      "BSEED"
+      "Tuya",
+      "MOES"
     ],
     "productId": [
       "TS0601"
