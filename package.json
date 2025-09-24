@@ -1,6 +1,6 @@
 {
   "name": "universal-tuya-zigbee",
-  "version": "2.0.5",
+  "version": "2.2.0",
   "description": "Support for generic Tuya & Zigbee devices including switches, sensors, and controllers. Based on Johan Bendz's work with community improvements.",
   "main": "app.js",
   "keywords": [
@@ -46,10 +46,11 @@
     "jimp": "^0.22.12",
     "puppeteer": "^21.0.0",
     "sharp": "^0.32.6",
-    "zigbee-clusters": "^1.0.0"
+    "zigbee-clusters": "^1.0.0",
+    "homey": "^3.0.0"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18.0.0"
   },
   "scripts": {
     "test": "echo \"No tests specified\"",
