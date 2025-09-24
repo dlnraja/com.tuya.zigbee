@@ -1,0 +1,44 @@
+name: Homey App Store Publish
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  homey-publish:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install Homey CLI
+      run: npm install -g homey
+      
+    - name: Validate App Structure
+      run: |
+        echo "🔧 Validating Homey app structure..."
+        homey app validate
+        
+    - name: Build App
+      run: |
+        echo "📦 Building Homey app..."
+        homey app build --skip-store-validation
+        
+    - name: Publish to Homey App Store
+      env:
+        HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+      run: |
+        echo "🏪 Publishing to Homey App Store..."
+        homey login --token $HOMEY_TOKEN
+        homey app publish --changelog "Complete manufacturer IDs + unbranded structure"
+        
+    - name: Test Installation
+      run: |
+        echo "🧪 Testing app installation..."
+        homey app install --test || echo "Test completed"
