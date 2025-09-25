@@ -7,7 +7,10 @@
   "class": "thermostat",
   "capabilities": [
     "target_temperature",
-    "measure_temperature"
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery",
+    "alarm_battery"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -75,14 +78,13 @@
       "1": {
         "clusters": [
           0,
-          3,
-          4,
-          5,
-          6
+          1,
+          1026,
+          1029,
+          61184
         ],
         "bindings": [
-          6,
-          8
+          25
         ]
       }
     },
