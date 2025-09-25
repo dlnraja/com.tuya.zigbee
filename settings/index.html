@@ -32,12 +32,12 @@
     <script>
         function onHomeyReady(Homey) {
             Homey.ready(() => {
-                Homey.get('debug_mode', (err, value) => {
+                Homey.get('debug_logging', (err, value) => {
                     if (!err) document.getElementById('debug_mode').checked = !!value;
                 });
                 
                 document.getElementById('debug_mode').addEventListener('change', function() {
-                    Homey.set('debug_mode', this.checked);
+                    Homey.set('debug_logging', this.checked);
                 });
             });
         }
