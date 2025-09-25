@@ -34,13 +34,10 @@
     "manufacturerName": [
       "_TZE284_aao6qtcs",
       "_TZE284_3towulqd",
-      "_TZE284_bxoo2swd",
       "_TZE200_cwbvmsar",
       "_TZE200_bjawzodf",
-      "_TZE200_3towulqd",
       "_TZ3000_mmtwjmaq",
       "_TZ3000_kmh5qpmb",
-      "_TZ3000_8ybe88nf",
       "Tuya",
       "MOES",
       "BSEED"
@@ -78,5 +75,6 @@
   "images": {
     "small": "/drivers/radar_motion_sensor_mmwave/assets/images/small.png",
     "large": "/drivers/radar_motion_sensor_mmwave/assets/images/large.png"
-  }
+  },
+  "id": "radar_motion_sensor_mmwave"
 }
