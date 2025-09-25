@@ -1,13 +1,10 @@
 {
   "id": "com.dlnraja.ultimate.tuya.zigbee.hub",
-  "version": "5.1.0",
+  "version": "6.0.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "name": {
-    "en": "Ultimate Tuya Zigbee Hub - Community Edition",
-    "fr": "Hub Tuya Zigbee Ultimate - Édition Communauté",
-    "de": "Ultimate Tuya Zigbee Hub - Community Edition",
-    "nl": "Ultimate Tuya Zigbee Hub - Community Editie"
+    "en": "Ultimate Tuya Zigbee Hub - Community Edition"
   },
   "description": {
     "en": "Community-driven Ultimate Tuya Zigbee device support with comprehensive manufacturer compatibility and forum-based enhancements",
@@ -27,7 +24,7 @@
     "large": "/assets/images/large.png"
   },
   "author": {
-    "name": "Dylan Rajasekaram - Community Developer",
+    "name": "Dylan Rajasekaram",
     "email": "dylan@dlnraja.com"
   },
   "drivers": [
