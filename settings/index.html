@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ultimate Zigbee Hub Settings</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        h1 { color: #00E5FF; }
+        .setting { margin: 20px 0; }
+        input[type="checkbox"] { margin-right: 10px; }
+    </style>
+</head>
+<body>
+    <h1>🏠 Ultimate Zigbee Hub Settings</h1>
+    <div class="setting">
+        <label>
+            <input type="checkbox" id="debug" />
+            Enable debug logging
+        </label>
+    </div>
+    <script>
+        // Simple settings management
+        document.getElementById('debug').addEventListener('change', function() {
+            Homey.set('debug', this.checked);
+        });
+        
+        Homey.ready(() => {
+            Homey.get('debug', (err, value) => {
+                if (!err) document.getElementById('debug').checked = value;
+            });
+        });
+    </script>
+</body>
+</html>
