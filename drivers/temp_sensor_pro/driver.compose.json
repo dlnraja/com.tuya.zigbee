@@ -16,13 +16,10 @@
     "manufacturerName": [
       "_TZE284_aao6qtcs",
       "_TZE284_3towulqd",
-      "_TZE284_bxoo2swd",
       "_TZE200_cwbvmsar",
       "_TZE200_bjawzodf",
-      "_TZE200_3towulqd",
       "_TZ3000_mmtwjmaq",
       "_TZ3000_kmh5qpmb",
-      "_TZ3000_8ybe88nf",
       "Tuya",
       "MOES",
       "BSEED"
@@ -49,5 +46,10 @@
         ]
       }
     }
+  },
+  "id": "temp_sensor_pro",
+  "images": {
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
   }
 }

@@ -17,13 +17,10 @@
     "manufacturerName": [
       "_TZE284_aao6qtcs",
       "_TZE284_3towulqd",
-      "_TZE284_bxoo2swd",
       "_TZE200_cwbvmsar",
       "_TZE200_bjawzodf",
-      "_TZE200_3towulqd",
       "_TZ3000_mmtwjmaq",
       "_TZ3000_kmh5qpmb",
-      "_TZ3000_8ybe88nf",
       "Tuya",
       "MOES",
       "BSEED"
@@ -55,5 +52,6 @@
     "small": "/drivers/sos_emergency_button/assets/images/small.png",
     "large": "/drivers/sos_emergency_button/assets/images/large.png"
   },
-  "capabilitiesOptions": {}
+  "capabilitiesOptions": {},
+  "id": "sos_emergency_button"
 }
