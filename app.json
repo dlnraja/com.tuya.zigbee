@@ -1,13 +1,13 @@
 {
   "id": "com.tuya.zigbee",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "name": {
     "en": "Tuya Zigbee"
   },
   "description": {
-    "en": "Professional Tuya Zigbee device support"
+    "en": "Professional Tuya Zigbee device support for Homey"
   },
   "category": [
     "climate",
@@ -22,7 +22,8 @@
     "large": "/assets/images/large.png"
   },
   "author": {
-    "name": "Community"
+    "name": "Community",
+    "email": "support@community.homey.app"
   },
   "drivers": [
     {
@@ -2615,14 +2616,17 @@
     {
       "type": "group",
       "label": {
-        "en": "Settings"
+        "en": "Application Settings"
       },
       "children": [
         {
           "id": "debug_logging",
           "type": "checkbox",
           "label": {
-            "en": "Debug logging"
+            "en": "Enable debug logging"
+          },
+          "hint": {
+            "en": "Enable detailed logging for troubleshooting"
           },
           "value": false
         }
