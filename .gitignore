@@ -9,11 +9,52 @@ yarn-debug.log*
 yarn-error.log*
 package-lock.json
 
-# Environment & credentials
+# Environment & credentials - SECURITY CRITICAL
 *.env
-*.env.local
-*.env.production
+*.env.*
+.env.local
+.env.production
+.env.development
+.env.staging
 credentials.*
+config.json
+secrets.json
+
+# Private keys & certificates - SECURITY CRITICAL
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+ssh_config
+id_rsa*
+id_dsa*
+id_ed25519*
+
+# API keys & tokens - SECURITY CRITICAL
+api-keys.json
+tokens.txt
+access_token.*
+refresh_token.*
+bearer_token.*
+
+# Database & connection strings - SECURITY CRITICAL
+database.json
+connection-string.*
+db-config.*
+
+# Private configuration directories
+config/private/
+secrets/
+.secrets/
+private/
+
+# Homey App Store credentials - SECURITY CRITICAL
+homey-auth.*
+app-store-key.*
+publishing-credentials.*
 
 # Logs
 *.log
