@@ -1,6 +1,6 @@
 {
   "id": "com.tuya.zigbee",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "name": {
@@ -2614,23 +2614,15 @@
   "brandColor": "#00E5FF",
   "settings": [
     {
-      "type": "group",
-      "label": {
-        "en": "Application Settings"
+      "id": "debug_logging",
+      "type": "checkbox",
+      "title": {
+        "en": "Enable debug logging"
       },
-      "children": [
-        {
-          "id": "debug_logging",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable debug logging"
-          },
-          "hint": {
-            "en": "Enable detailed logging for troubleshooting"
-          },
-          "value": false
-        }
-      ]
+      "hint": {
+        "en": "Enable detailed logging for troubleshooting device issues"
+      },
+      "value": false
     }
   ],
   "contributors": {
