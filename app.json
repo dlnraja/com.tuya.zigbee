@@ -1,16 +1,18 @@
 {
-  "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "4.0.7",
+  "id": "com.tuya.zigbee",
+  "version": "2.0.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "name": {
-    "en": "Ultimate Zigbee Hub"
+    "en": "Tuya Zigbee"
   },
   "description": {
-    "en": "Universal Zigbee device support"
+    "en": "Professional Tuya Zigbee device support"
   },
   "category": [
-    "tools"
+    "climate",
+    "lights",
+    "security"
   ],
   "permissions": [],
   "images": {
@@ -2615,10 +2617,10 @@
       },
       "children": [
         {
-          "id": "debug",
+          "id": "debug_logging",
           "type": "checkbox",
           "label": {
-            "en": "Debug mode"
+            "en": "Debug logging"
           },
           "value": false
         }
