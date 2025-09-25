@@ -3,32 +3,44 @@
 <head>
     <meta charset="utf-8">
     <title>Ultimate Zigbee Hub Settings</title>
+    <link rel="stylesheet" href="/manager/webserver/assets/css/semantic.min.css">
     <style>
-        body { font-family: Arial, sans-serif; padding: 20px; }
-        h1 { color: #00E5FF; }
-        .setting { margin: 20px 0; }
-        input[type="checkbox"] { margin-right: 10px; }
+        body { background: #f8f9fa; font-family: 'Segoe UI', sans-serif; }
+        .container { max-width: 600px; margin: 20px auto; background: white; padding: 30px; border-radius: 8px; }
+        .header { text-align: center; color: #00E5FF; margin-bottom: 30px; }
     </style>
 </head>
 <body>
-    <h1>🏠 Ultimate Zigbee Hub Settings</h1>
-    <div class="setting">
-        <label>
-            <input type="checkbox" id="debug" />
-            Enable debug logging
-        </label>
+    <div class="container">
+        <h1 class="header">🏠 Ultimate Zigbee Hub Settings</h1>
+        <div class="ui form">
+            <div class="field">
+                <div class="ui toggle checkbox">
+                    <input type="checkbox" id="debug_mode" name="debug">
+                    <label>Enable debug logging</label>
+                </div>
+                <div class="ui small message">
+                    <p>Enable detailed logging for troubleshooting device issues</p>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 30px; color: #6c757d;">
+            Professional UNBRANDED Zigbee Device Support
+        </div>
     </div>
+    
     <script>
-        // Simple settings management
-        document.getElementById('debug').addEventListener('change', function() {
-            Homey.set('debug', this.checked);
-        });
-        
-        Homey.ready(() => {
-            Homey.get('debug', (err, value) => {
-                if (!err) document.getElementById('debug').checked = value;
+        function onHomeyReady(Homey) {
+            Homey.ready(() => {
+                Homey.get('debug_mode', (err, value) => {
+                    if (!err) document.getElementById('debug_mode').checked = !!value;
+                });
+                
+                document.getElementById('debug_mode').addEventListener('change', function() {
+                    Homey.set('debug_mode', this.checked);
+                });
             });
-        });
+        }
     </script>
 </body>
 </html>
