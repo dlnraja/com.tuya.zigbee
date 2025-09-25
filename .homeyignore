@@ -1,81 +1,18 @@
+# Build cache
+.homeycompose/
+.homeybuild/
+
 # Development files
-.git
-.gitignore
-.vscode
-.idea
-*.md
-*.mdx
-*.markdown
-*.txt
-*.log
-*.log.*
-logs
-log
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Build files
-build
-dist
-*.tsbuildinfo
-coverage
-.nyc_output
-
-# Dependency directories
-node_modules
-bower_components
-jspm_packages
-
-# Environment files
-.env
-.env.*
-!.env.example
-
-# Test files
-test
-tests
-__tests__
-*.test.js
-*.spec.js
-*.test.ts
-*.spec.ts
-
-# Editor directories and files
-.idea
-.vscode/*
-!.vscode/extensions.json
-!.vscode/launch.json
-!.vscode/settings.json
-!.vscode/tasks.json
-.history
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# Project specific
-python_service/
-docs/
 scripts/
 tools/
-backup/
-archive/
-releases/
-research/
-scraping-data/
-*.ps1
-*.bat
-*.sh
-*.py
+docs/development/
+*.tmp
+*.log
+
+# Node.js
+node_modules/
+package-lock.json
+
+# IDE
+.vscode/
+.idea/
