@@ -17,28 +17,30 @@ jobs:
       with:
         node-version: '18'
         
-    - name: Install Homey CLI
-      run: npm install -g homey
+    - name: Validate Homey App
+      uses: athombv/github-action-homey-app-validate@v1
       
-    - name: Validate App Structure
-      run: |
-        echo "🔧 Validating Homey app structure..."
-        homey app validate
-        
-    - name: Build App
-      run: |
-        echo "📦 Building Homey app..."
-        homey app build --skip-store-validation
+    - name: Update App Version
+      uses: athombv/github-action-homey-app-update-version@v1
+      with:
+        increment: 'patch'
         
     - name: Publish to Homey App Store
-      env:
-        HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+      uses: athombv/github-action-homey-app-publish@v1
+      with:
+        homey-token: ${{ secrets.HOMEY_TOKEN }}
+        changelog: |
+          🏪 Version 2.0.0 - Professional Tuya Zigbee Support
+          
+          ✅ Complete manufacturer ID compliance
+          ✅ Professional settings page
+          ✅ Enhanced device support
+          ✅ Optimized for Homey App Store standards
+          
+    - name: Commit Version Update
       run: |
-        echo "🏪 Publishing to Homey App Store..."
-        homey login --token $HOMEY_TOKEN
-        echo "Professional Tuya Zigbee device support" | homey app publish --changelog "Version 2.0.0 - Professional standards compliance"
-        
-    - name: Test Installation
-      run: |
-        echo "🧪 Testing app installation..."
-        homey app install --test || echo "Test completed"
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add app.json
+        git diff --staged --quiet || git commit -m "🔖 Auto-update version for Homey App Store"
+        git push
