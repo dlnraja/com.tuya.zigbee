@@ -1,80 +1,24 @@
-# Homey cache directories
+# Homey build
 .homeycompose/
 .homeybuild/
 
-# Node.js dependencies
+# Node.js
 node_modules/
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-package-lock.json
 
-# Environment & credentials - SECURITY CRITICAL
-*.env
-*.env.*
-.env.local
-.env.production
-.env.development
-.env.staging
-credentials.*
-config.json
-secrets.json
-
-# Private keys & certificates - SECURITY CRITICAL
+# Sensitive data - NEVER COMMIT
+*.env*
 *.key
 *.pem
-*.p12
-*.pfx
-*.crt
-*.cer
-*.der
-ssh_config
-id_rsa*
-id_dsa*
-id_ed25519*
-
-# API keys & tokens - SECURITY CRITICAL
-api-keys.json
-tokens.txt
-access_token.*
-refresh_token.*
-bearer_token.*
-
-# Database & connection strings - SECURITY CRITICAL
-database.json
-connection-string.*
-db-config.*
-
-# Private configuration directories
-config/private/
-secrets/
-.secrets/
-private/
-
-# Homey App Store credentials - SECURITY CRITICAL
+*.token
+config.json
+secrets.json
 homey-auth.*
-app-store-key.*
-publishing-credentials.*
 
-# Logs
-*.log
-logs/
-
-# OS generated files
+# OS files
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
 
-# IDE files
+# IDE
 .vscode/
 .idea/
-*.swp
-*.swo
-
-# Temporary files
-*.tmp
-*.temp
