@@ -8,7 +8,10 @@
   "capabilities": [
     "garagedoor_closed",
     "button.open",
-    "button.close"
+    "button.close",
+    "alarm_contact",
+    "measure_battery",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "button.open": {
@@ -66,7 +69,21 @@
       "Lonsonho",
       "Lidl",
       "Nedis",
-      "eWeLink"
+      "eWeLink",
+      "_TZE200_pay2byax",
+      "_TZE200_znbl8dj5",
+      "_TZE200_cirvgep4",
+      "_TZE200_rq0qlyss",
+      "_TZE200_1ibpyhdc",
+      "_TZE200_3ejwq9cd",
+      "_TZE200_s8gkrkxk",
+      "_TZE200_bq5c8xfe",
+      "_TZ3000_rusu2vzb",
+      "_TZ3000_itnrsufe",
+      "_TZ3000_ruxexjfz",
+      "_TZ3000_pmz6mjyu",
+      "_TZE284_zocpsznt",
+      "_TZE284_4fjiwweb"
     ],
     "productId": [
       "TS0001",
@@ -88,14 +105,11 @@
       "1": {
         "clusters": [
           0,
-          3,
-          4,
-          5,
-          6,
-          61184
+          1,
+          1280
         ],
         "bindings": [
-          6
+          25
         ]
       }
     }
