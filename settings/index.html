@@ -2,18 +2,21 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Ultimate Tuya Zigbee Hub Settings</title>
+    <title>Ultimate Tuya Zigbee Hub - Community Edition</title>
     <link rel="stylesheet" href="/manager/webserver/assets/css/semantic.min.css">
     <style>
         body { background: #f8f9fa; font-family: 'Segoe UI', sans-serif; }
         .container { max-width: 600px; margin: 20px auto; background: white; padding: 30px; border-radius: 8px; }
-        .header { text-align: center; color: #00E5FF; margin-bottom: 30px; }
+        .header { text-align: center; color: #FF4500; margin-bottom: 30px; }
+        .community-badge { background: #FF4500; color: white; padding: 5px 15px; border-radius: 15px; font-size: 12px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="header">🏠 Ultimate Tuya Zigbee Hub Settings</h1>
-        <div class="ui form">
+        <h1 class="header">🏠 Ultimate Tuya Zigbee Hub</h1>
+        <div class="community-badge">Community Edition by Dylan Rajasekaram</div>
+        
+        <div class="ui form" style="margin-top: 20px;">
             <div class="field">
                 <div class="ui toggle checkbox">
                     <input type="checkbox" id="debug_logging" name="debug_logging">
@@ -23,21 +26,30 @@
                     <p>Enable detailed logging for troubleshooting device issues</p>
                 </div>
             </div>
-        </div>
-        <div style="text-align: center; margin-top: 30px; color: #6c757d;">
-            Professional UNBRANDED Zigbee Device Support
+            
+            <div class="field">
+                <div class="ui toggle checkbox">
+                    <input type="checkbox" id="community_updates" name="community_updates">
+                    <label>Enable community updates</label>
+                </div>
+                <div class="ui small message">
+                    <p>Receive notifications about new device support from community</p>
+                </div>
+            </div>
         </div>
     </div>
     
     <script>
         function onHomeyReady(Homey) {
             Homey.ready(() => {
-                Homey.get('debug_logging', (err, value) => {
-                    if (!err) document.getElementById('debug_logging').checked = !!value;
-                });
-                
-                document.getElementById('debug_logging').addEventListener('change', function() {
-                    Homey.set('debug_logging', this.checked);
+                ['debug_logging', 'community_updates'].forEach(setting => {
+                    Homey.get(setting, (err, value) => {
+                        if (!err) document.getElementById(setting).checked = !!value;
+                    });
+                    
+                    document.getElementById(setting).addEventListener('change', function() {
+                        Homey.set(setting, this.checked);
+                    });
                 });
             });
         }
