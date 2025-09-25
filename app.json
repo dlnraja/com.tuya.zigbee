@@ -1,6 +1,6 @@
 {
-  "id": "com.dlnraja.tuya.zigbee.ultimate",
-  "version": "5.0.0",
+  "id": "com.dlnraja.ultimate.tuya.zigbee.hub",
+  "version": "5.1.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "name": {
@@ -28,8 +28,7 @@
   },
   "author": {
     "name": "Dylan Rajasekaram - Community Developer",
-    "email": "dylan@dlnraja.com",
-    "website": "https://github.com/dlnraja"
+    "email": "dylan@dlnraja.com"
   },
   "drivers": [
     {
