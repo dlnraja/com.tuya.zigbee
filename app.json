@@ -1,18 +1,19 @@
 {
-  "id": "com.tuya.zigbee",
-  "version": "3.0.0",
+  "id": "com.dlnraja.tuya.zigbee.ultimate",
+  "version": "4.0.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "name": {
-    "en": "Tuya Zigbee"
+    "en": "Ultimate Tuya Zigbee Hub"
   },
   "description": {
-    "en": "Professional Tuya Zigbee device support for Homey"
+    "en": "Community-driven Tuya Zigbee device support with comprehensive manufacturer compatibility"
   },
   "category": [
     "climate",
     "lights",
-    "security"
+    "security",
+    "tools"
   ],
   "permissions": [],
   "images": {
@@ -20,8 +21,8 @@
     "large": "/assets/images/large.png"
   },
   "author": {
-    "name": "Community",
-    "email": "support@community.homey.app"
+    "name": "Dylan Rajasekaram",
+    "email": "dylan@dlnraja.com"
   },
   "drivers": [
     {
@@ -2609,7 +2610,7 @@
       }
     }
   ],
-  "brandColor": "#00E5FF",
+  "brandColor": "#FF6B35",
   "settings": [
     {
       "id": "debug_logging",
@@ -2631,7 +2632,7 @@
       }
     ]
   },
-  "homeyCommunityTopicId": 26439,
+  "homeyCommunityTopicId": 140352,
   "source": "https://github.com/dlnraja/com.tuya.zigbee",
   "bugs": {
     "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"

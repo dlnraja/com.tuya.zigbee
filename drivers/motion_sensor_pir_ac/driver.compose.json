@@ -6,7 +6,9 @@
   },
   "class": "sensor",
   "capabilities": [
-    "alarm_motion"
+    "alarm_motion",
+    "measure_luminance",
+    "measure_battery"
   ],
   "zigbee": {
     "productId": [
@@ -29,10 +31,15 @@
       "1": {
         "clusters": [
           0,
-          3,
-          1030
+          1,
+          1024,
+          1030,
+          1280,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          25
+        ]
       }
     },
     "learnmode": {

@@ -6,7 +6,9 @@
   "capabilities": [
     "onoff",
     "measure_temperature",
-    "alarm_motion"
+    "alarm_motion",
+    "measure_luminance",
+    "measure_battery"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -74,14 +76,14 @@
       "1": {
         "clusters": [
           0,
-          3,
-          4,
-          5,
-          6
+          1,
+          1024,
+          1030,
+          1280,
+          61184
         ],
         "bindings": [
-          6,
-          8
+          25
         ]
       }
     },

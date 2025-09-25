@@ -6,9 +6,9 @@
   "capabilities": [
     "onoff",
     "measure_power",
-    "measure_current",
+    "meter_power",
     "measure_voltage",
-    "meter_power"
+    "measure_current"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -71,7 +71,46 @@
       "TS0821",
       "TS1001",
       "TS0202"
-    ]
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          1794,
+          2820
+        ],
+        "bindings": [
+          6,
+          1794,
+          2820
+        ]
+      }
+    }
   },
-  "capabilitiesOptions": {}
+  "capabilitiesOptions": {
+    "measure_power": {
+      "title": {
+        "en": "Power Consumption",
+        "fr": "Consommation"
+      },
+      "units": {
+        "en": "W"
+      },
+      "decimals": 1
+    },
+    "meter_power": {
+      "title": {
+        "en": "Energy Usage",
+        "fr": "Consommation énergie"
+      },
+      "units": {
+        "en": "kWh"
+      },
+      "decimals": 3
+    }
+  }
 }

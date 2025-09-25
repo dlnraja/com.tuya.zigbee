@@ -5,7 +5,12 @@
   "class": "sensor",
   "capabilities": [
     "onoff",
-    "measure_temperature"
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery",
+    "alarm_battery",
+    "alarm_motion",
+    "measure_luminance"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -68,6 +73,21 @@
       "TS0821",
       "TS1001",
       "TS0202"
-    ]
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1024,
+          1030,
+          1280,
+          61184
+        ],
+        "bindings": [
+          25
+        ]
+      }
+    }
   }
 }
