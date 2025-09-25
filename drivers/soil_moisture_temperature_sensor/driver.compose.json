@@ -8,7 +8,9 @@
     "measure_temperature",
     "measure_humidity",
     "alarm_battery",
-    "measure_battery"
+    "measure_battery",
+    "alarm_motion",
+    "measure_luminance"
   ],
   "capabilitiesOptions": {
     "measure_temperature": {
@@ -101,14 +103,14 @@
       "1": {
         "clusters": [
           0,
-          4,
-          5,
-          61184,
-          60672
+          1,
+          1024,
+          1030,
+          1280,
+          61184
         ],
         "bindings": [
-          25,
-          10
+          25
         ]
       }
     },

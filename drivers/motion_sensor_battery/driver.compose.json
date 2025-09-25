@@ -6,16 +6,24 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "alarm_motion",
+    "measure_luminance",
+    "measure_battery"
   ],
   "zigbee": {
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          4,
-          5,
-          1030
+          1,
+          1024,
+          1030,
+          1280,
+          61184
+        ],
+        "bindings": [
+          25
         ]
       }
     },
