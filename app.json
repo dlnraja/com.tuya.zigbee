@@ -14,7 +14,9 @@
     "lights",
     "security"
   ],
-  "permissions": [],
+  "permissions": [
+    "homey:manager:zigbee"
+  ],
   "images": {
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png"
@@ -2608,7 +2610,7 @@
       }
     }
   ],
-  "brandColor": "#2196F3",
+  "brandColor": "#00E5FF",
   "settings": [
     {
       "type": "group",
@@ -2633,6 +2635,21 @@
         "name": "Dylan Rajasekaram",
         "email": "dylan@dlnraja.com"
       }
+    ]
+  },
+  "homeyCommunityTopicId": 26439,
+  "source": "https://github.com/dlnraja/com.tuya.zigbee",
+  "bugs": {
+    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
+  },
+  "tags": {
+    "en": [
+      "tuya",
+      "zigbee",
+      "smart home",
+      "automation",
+      "sensors",
+      "switches"
     ]
   }
 }
