@@ -1,6 +1,6 @@
 {
   "id": "com.tuya.zigbee",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "name": {
@@ -14,9 +14,7 @@
     "lights",
     "security"
   ],
-  "permissions": [
-    "homey:manager:zigbee"
-  ],
+  "permissions": [],
   "images": {
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png"
