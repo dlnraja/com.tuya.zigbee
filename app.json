@@ -1,6 +1,6 @@
 {
   "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "name": {
@@ -2606,5 +2606,31 @@
       }
     }
   ],
-  "brandColor": "#2196F3"
+  "brandColor": "#2196F3",
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Settings"
+      },
+      "children": [
+        {
+          "id": "debug",
+          "type": "checkbox",
+          "label": {
+            "en": "Debug mode"
+          },
+          "value": false
+        }
+      ]
+    }
+  ],
+  "contributors": {
+    "developers": [
+      {
+        "name": "Dylan Rajasekaram",
+        "email": "dylan@dlnraja.com"
+      }
+    ]
+  }
 }
