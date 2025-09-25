@@ -16,7 +16,7 @@
         <div class="ui form">
             <div class="field">
                 <div class="ui toggle checkbox">
-                    <input type="checkbox" id="debug_mode" name="debug">
+                    <input type="checkbox" id="debug_logging" name="debug_logging">
                     <label>Enable debug logging</label>
                 </div>
                 <div class="ui small message">
@@ -33,10 +33,10 @@
         function onHomeyReady(Homey) {
             Homey.ready(() => {
                 Homey.get('debug_logging', (err, value) => {
-                    if (!err) document.getElementById('debug_mode').checked = !!value;
+                    if (!err) document.getElementById('debug_logging').checked = !!value;
                 });
                 
-                document.getElementById('debug_mode').addEventListener('change', function() {
+                document.getElementById('debug_logging').addEventListener('change', function() {
                     Homey.set('debug_logging', this.checked);
                 });
             });
