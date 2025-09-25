@@ -1,6 +1,6 @@
 {
   "id": "com.dlnraja.tuya.zigbee.ultimate",
-  "version": "4.0.1",
+  "version": "4.2.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "name": {
@@ -2616,10 +2616,12 @@
       "id": "debug_logging",
       "type": "checkbox",
       "title": {
-        "en": "Enable debug logging"
+        "en": "Enable debug logging",
+        "fr": "Activer les logs de debug"
       },
       "hint": {
-        "en": "Enable detailed logging for troubleshooting device issues"
+        "en": "Enable detailed logging for troubleshooting",
+        "fr": "Activer les logs détaillés pour le dépannage"
       },
       "value": false
     }
