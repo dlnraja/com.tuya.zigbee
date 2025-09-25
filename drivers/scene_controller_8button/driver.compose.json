@@ -19,9 +19,12 @@
   },
   "zigbee": {
     "productId": [
-      "TS0601",
+      "TS0001",
+      "TS0011",
+      "TS0201",
       "TS011F",
-      "TS0121"
+      "TS130F",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -51,7 +54,9 @@
       "_TZE284_cjbofhxw",
       "_TZ3000_mmtwjmaq",
       "TS011F",
-      "Tuya"
+      "TS0201",
+      "Tuya",
+      "MOES"
     ],
     "manufacturerIds": [
       "1005007769107379",
