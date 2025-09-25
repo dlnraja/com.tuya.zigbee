@@ -2,17 +2,83 @@
 .homeycompose/
 .homeybuild/
 
-# Development files
+# Development files - EXCLUDE ALL
 scripts/
 tools/
-docs/development/
-*.tmp
-*.log
+docs/
+tests/
+utils/
+lib/
+config/
 
-# Node.js
+# Development documentation
+*.md
+README.md
+SECURITY.md
+CHANGELOG.md
+CONTRIBUTING.md
+LICENSE
+
+# Git files
+.git/
+.gitignore
+.gitattributes
+
+# Node.js development
 node_modules/
 package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# IDE
+# IDE and editor files
 .vscode/
 .idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.cache
+
+# User response and diagnostic files
+user-response-*.md
+diagnostic-*.md
+
+# Archive and backup files
+archive/
+backup/
+temp/
+*.bak
+*.backup
+
+# Development scripts and tools
+*.bat
+*.ps1
+*.sh
+
+# Environment files
+.env*
+config.json
+secrets.json
+
+# Test files
+test/
+tests/
+spec/
+*.test.js
+*.spec.js
+
+# Source maps and debug
+*.map
+*.debug
+
+# Documentation assets
+assets/docs/
+assets/screenshots/
+assets/dev/
