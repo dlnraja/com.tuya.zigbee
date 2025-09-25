@@ -1,13 +1,19 @@
 {
   "id": "com.dlnraja.tuya.zigbee.ultimate",
-  "version": "4.2.0",
+  "version": "5.0.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "name": {
-    "en": "Ultimate Tuya Zigbee Hub"
+    "en": "Ultimate Tuya Zigbee Hub - Community Edition",
+    "fr": "Hub Tuya Zigbee Ultimate - Édition Communauté",
+    "de": "Ultimate Tuya Zigbee Hub - Community Edition",
+    "nl": "Ultimate Tuya Zigbee Hub - Community Editie"
   },
   "description": {
-    "en": "Community-driven Tuya Zigbee device support with comprehensive manufacturer compatibility"
+    "en": "Community-driven Ultimate Tuya Zigbee device support with comprehensive manufacturer compatibility and forum-based enhancements",
+    "fr": "Support communautaire ultime pour appareils Tuya Zigbee avec compatibilité fabricant complète",
+    "de": "Community-gesteuerte ultimative Tuya Zigbee-Geräteunterstützung",
+    "nl": "Community-gedreven ultieme Tuya Zigbee apparaatondersteuning"
   },
   "category": [
     "climate",
@@ -21,8 +27,9 @@
     "large": "/assets/images/large.png"
   },
   "author": {
-    "name": "Dylan Rajasekaram",
-    "email": "dylan@dlnraja.com"
+    "name": "Dylan Rajasekaram - Community Developer",
+    "email": "dylan@dlnraja.com",
+    "website": "https://github.com/dlnraja"
   },
   "drivers": [
     {
@@ -2610,20 +2617,37 @@
       }
     }
   ],
-  "brandColor": "#FF6B35",
+  "brandColor": "#FF4500",
   "settings": [
     {
       "id": "debug_logging",
       "type": "checkbox",
       "title": {
         "en": "Enable debug logging",
-        "fr": "Activer les logs de debug"
+        "fr": "Activer les logs de debug",
+        "de": "Debug-Protokollierung aktivieren",
+        "nl": "Debug logging inschakelen"
       },
       "hint": {
-        "en": "Enable detailed logging for troubleshooting",
-        "fr": "Activer les logs détaillés pour le dépannage"
+        "en": "Enable detailed logging for troubleshooting device issues",
+        "fr": "Activer les logs détaillés pour le dépannage",
+        "de": "Detaillierte Protokollierung zur Fehlerbehebung aktivieren",
+        "nl": "Gedetailleerde logging voor probleemoplossing inschakelen"
       },
       "value": false
+    },
+    {
+      "id": "community_updates",
+      "type": "checkbox",
+      "title": {
+        "en": "Enable community updates",
+        "fr": "Activer les mises à jour communautaires"
+      },
+      "hint": {
+        "en": "Receive notifications about new device support from community",
+        "fr": "Recevoir des notifications sur les nouveaux appareils supportés"
+      },
+      "value": true
     }
   ],
   "contributors": {
@@ -2643,10 +2667,14 @@
     "en": [
       "tuya",
       "zigbee",
-      "smart home",
-      "automation",
-      "sensors",
-      "switches"
+      "ultimate",
+      "community",
+      "dlnraja",
+      "comprehensive"
     ]
+  },
+  "platformCompatibility": {
+    "local": true,
+    "cloud": true
   }
 }
