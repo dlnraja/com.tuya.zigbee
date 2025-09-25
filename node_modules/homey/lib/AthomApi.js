@@ -3,16 +3,27 @@
 const path = require('path');
 const os = require('os');
 
-const { AthomCloudAPI } = require('athom-api');
 const inquirer = require('inquirer');
 const colors = require('colors');
 const _ = require('underscore');
 const fetch = require('node-fetch');
 const express = require('express');
 const open = require('open');
+const {
+  AthomCloudAPI,
+  HomeyAPI,
+  APIErrorHomeyOffline,
+} = require('homey-api');
+const AthomCloudAPIToken = require('homey-api/lib/AthomCloudAPI/Token');
 
-const config = require('../config');
-const { Log, Settings } = require('../index');
+const AthomApiStorage = require('./AthomApiStorage');
+const Log = require('./Log');
+const Settings = require('../services/Settings');
+const {
+  ATHOM_API_CLIENT_ID,
+  ATHOM_API_CLIENT_SECRET,
+  ATHOM_API_LOGIN_URL,
+} = require('../config');
 
 class AthomApi {
 
@@ -21,22 +32,24 @@ class AthomApi {
     this._user = null;
     this._homeys = null;
     this._activeHomey = null;
-
-    this._store = {
-      async get() {
-        return await Settings.get('_athom_api_state') || {};
-      },
-      async set(value) {
-        return Settings.set('_athom_api_state', value);
-      },
-    };
   }
 
   _createApi() {
+    this._store = new AthomApiStorage();
     this._api = new AthomCloudAPI({
-      clientId: config.athomApiClientId,
-      clientSecret: config.athomApiClientSecret,
+      clientId: ATHOM_API_CLIENT_ID,
+      clientSecret: ATHOM_API_CLIENT_SECRET,
       store: this._store,
+
+      // Authenticate with Personal Access Token (PAT) if provided
+      ...(process.env.HOMEY_PAT
+        ? {
+          autoRefreshTokens: false,
+          token: new AthomCloudAPIToken({
+            access_token: process.env.HOMEY_PAT,
+          }),
+        }
+        : {}),
     });
   }
 
@@ -45,21 +58,31 @@ class AthomApi {
 
     this._createApi();
 
-    // migration
-    const token = await Settings.get('athomToken');
-    if (token) {
-      await this._api.setToken(token);
-      await Settings.unset('athomToken');
+    // Migration from node-athom-api to node-homey-api
+    const athomApiState = await Settings.get('_athom_api_state');
+    if (athomApiState && athomApiState.athomCloudToken) {
+      await Settings.set('homeyApi', {
+        token: {
+          token_type: 'bearer',
+          access_token: athomApiState.athomCloudToken.access_token,
+          refresh_token: athomApiState.athomCloudToken.refresh_token,
+          expires_in: 3660,
+          grant_type: 'authorization_code',
+        },
+      });
+      await Settings.unset('_athom_api_state');
     }
 
+    // Ensure the user is logged in
     if (!await this._api.isLoggedIn()) {
       await this.login();
     }
+
     return this._api;
   }
 
   async login() {
-    Log(colors.green('✓ Logging in...'));
+    Log.success('Logging in...');
     let listener;
 
     this._createApi();
@@ -71,7 +94,7 @@ class AthomApi {
       });
     });
 
-    const url = `${config.athomApiLoginUrl}?port=${port}&clientId=${config.athomApiClientId}`;
+    const url = `${ATHOM_API_LOGIN_URL}?port=${port}&clientId=${ATHOM_API_CLIENT_ID}`;
     Log(colors.bold('To log in with your Athom Account, please visit', colors.underline.cyan(url)));
     open(url).catch(err => { });
 
@@ -83,7 +106,7 @@ class AthomApi {
           app.get('/auth', (req, res) => {
             res.sendFile(path.join(__dirname, '..', 'assets', '1px.png'));
             if (req.query.code) {
-              console.log(req.query.code);
+              Log(req.query.code);
               resolve(req.query.code);
             }
           });
@@ -107,7 +130,7 @@ class AthomApi {
 
       new Promise((resolve, reject) => {
         setTimeout(() => {
-          console.log('');
+          Log('');
           reject(new Error('Timeout getting authorization code!'));
         }, 1000 * 60 * 5); // 5 minutes
       }),
@@ -115,21 +138,19 @@ class AthomApi {
 
     listener.close();
 
-    const token = await this._api.authenticateWithAuthorizationCode(code);
+    await this._api.authenticateWithAuthorizationCode({ code });
 
     try {
-      await this._api.setToken(token);
-
       const profile = await this.getProfile();
 
-      Log(colors.green(`✓ You are now logged in as ${profile.firstname} ${profile.lastname} <${profile.email}>`));
+      Log.success(`You are now logged in as ${profile.firstname} ${profile.lastname} <${profile.email}>`);
     } catch (err) {
-      Log(colors.red(`Invalid Account Token, please try again:${err.stack}`));
+      Log.error(`Invalid Account Token, please try again:${err.stack}`);
     }
   }
 
   async logout() {
-    Log(colors.green('✓ You are now logged out'));
+    Log.success('You are now logged out');
     await this._createApi();
     await this._api.logout();
     await this.unsetActiveHomey();
@@ -137,20 +158,16 @@ class AthomApi {
 
   async getProfile() {
     await this._initApi();
-    try {
-      return await this._api.getAuthenticatedUser();
-    } catch (e) {
-      return this._api.getAuthenticatedUserCached();
-    }
+    return this._api.getAuthenticatedUser();
   }
 
-  async getHomey(homeyId, { cache = false } = {}) {
+  async getHomey(homeyId) {
     const homeys = await this.getHomeys();
     for (let i = 0; i < homeys.length; i++) {
       const homey = homeys[i];
-      if (homey._id === homeyId) return homey;
+      if (homey.id === homeyId) return homey;
     }
-    throw new Error('Invalid Homey');
+    throw new Error(`Homey Not Found: ${homeyId}`);
   }
 
   async getHomeys({
@@ -176,8 +193,6 @@ class AthomApi {
             ip[3] = '1';
             ip = ip.join('.');
 
-            // TODO: manager webserver's api was removed.
-            // This is fine for now since we are only checking the header but we should fix this!
             const res = await fetch(`http://${ip}/api/manager/webserver/ping`, {
               timeout: 1000,
             });
@@ -198,56 +213,36 @@ class AthomApi {
   }
 
   async getActiveHomey() {
-    if (this._activeHomey) return this._activeHomey;
-
-    let activeHomey = await Settings.get('activeHomey');
-    if (activeHomey === null) {
-      activeHomey = await this.selectActiveHomey();
-    }
-    const homey = await this.getHomey(activeHomey.id);
-    const homeyApi = await homey.authenticate({
-      ...(homey.apiVersion >= 3
-        ? {}
-        : {
-          strategy: ['localSecure', 'local'],
-        }
-      ),
-    }).catch(err => {
-      if (err && err.cause === 'homey_offline') {
-        throw new Error(`${homey.name} seems to be offline! (${homey.localUrl}, ${homey.localUrlSecure})`);
+    if (!this._activeHomey) {
+      let activeHomey = await Settings.get('activeHomey');
+      if (activeHomey === null) {
+        activeHomey = await this.selectActiveHomey();
       }
-      throw err;
-    });
 
-    if (homey.name) {
-      homeyApi.name = homey.name;
+      const homey = await this.getHomey(activeHomey.id);
+      const homeyApi = await homey.authenticate({
+        strategy: homey.platform === HomeyAPI.PLATFORMS.CLOUD
+          ? [
+            HomeyAPI.DISCOVERY_STRATEGIES.CLOUD,
+          ]
+          : [
+            HomeyAPI.DISCOVERY_STRATEGIES.LOCAL,
+            HomeyAPI.DISCOVERY_STRATEGIES.LOCAL_SECURE,
+            HomeyAPI.DISCOVERY_STRATEGIES.REMOTE_FORWARDED,
+          ],
+      }).catch(err => {
+        if (err instanceof APIErrorHomeyOffline) {
+          throw new Error(`${homey.name} (${homey.id}) seems to be offline. Are you sure you're in the same LAN network?`);
+        }
+        throw err;
+      });
+
+      if (homey.usb) {
+        homeyApi.__baseUrlPromise = Promise.resolve(`http://${homey.usb}:80`);
+      }
+
+      this._activeHomey = homeyApi;
     }
-
-    if (homey.version) {
-      homeyApi.version = homey.version;
-    }
-
-    if (homey.platform) {
-      homeyApi.platform = homey.platform;
-    }
-
-    if (homey.platformVersion) {
-      homeyApi.platformVersion = homey.platformVersion;
-    }
-
-    if (homey.language) {
-      homeyApi.language = homey.language;
-    }
-
-    if (homey.apiVersion) {
-      homeyApi.apiVersion = homey.apiVersion;
-    }
-
-    if (homey.usb) {
-      homeyApi.baseUrl = Promise.resolve(`http://${homey.usb}:80`);
-    }
-
-    this._activeHomey = homeyApi;
 
     return this._activeHomey;
   }
@@ -286,15 +281,13 @@ class AthomApi {
               if (filter.online && homey.state && homey.state.indexOf('online') !== 0) return false;
               return true;
             })
-            .map(homey => {
-              return {
-                value: {
-                  name: homey.name,
-                  id: homey._id,
-                },
+            .map(homey => ({
+              value: {
                 name: homey.name,
-              };
-            }),
+                id: homey.id,
+              },
+              name: homey.name,
+            })),
         },
       ]);
 

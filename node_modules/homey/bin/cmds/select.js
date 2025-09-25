@@ -1,8 +1,7 @@
 'use strict';
 
-const colors = require('colors');
-const { Log } = require('../../index');
-const { AthomApi } = require('../../index');
+const Log = require('../../lib/Log');
+const AthomApi = require('../../services/AthomApi');
 
 exports.desc = 'Select a Homey as active';
 exports.builder = yargs => {
@@ -25,7 +24,9 @@ exports.handler = async yargs => {
       id: yargs.id,
       name: yargs.name,
     });
+    process.exit(0);
   } catch (err) {
-    Log(colors.red(err.message));
+    Log.error(err);
+    process.exit(1);
   }
 };

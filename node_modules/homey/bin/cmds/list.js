@@ -2,8 +2,8 @@
 
 const Table = require('cli-table');
 const colors = require('colors');
-const { Log } = require('../../index');
-const { AthomApi } = require('../../index');
+const Log = require('../../lib/Log');
+const AthomApi = require('../../services/AthomApi');
 
 exports.desc = 'List all Homeys';
 exports.handler = async () => {
@@ -14,8 +14,10 @@ exports.handler = async () => {
       head: [
         'ID',
         'Name',
-        'Version',
-        'API',
+        'Platform',
+        'Platform Version',
+        'Software Version',
+        'API Version',
         'Language',
         'Users',
         'Role',
@@ -30,8 +32,10 @@ exports.handler = async () => {
 
     homeys.forEach(homey => {
       table.push([
-        homey._id,
+        homey.id,
         homey.name,
+        homey.platform,
+        homey.platformVersion,
         homey.softwareVersion,
         homey.apiVersion,
         homey.language,
@@ -43,7 +47,9 @@ exports.handler = async () => {
     });
 
     Log(table.toString());
+    process.exit(0);
   } catch (err) {
-    Log(colors.red(err.message));
+    Log.error(err.stack);
+    process.exit(1);
   }
 };

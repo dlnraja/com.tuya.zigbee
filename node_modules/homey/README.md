@@ -38,7 +38,7 @@ The `oauth2` installs [homey-oauth2app](https://github.com/athombv/node-homey-oa
 The `log` installs [homey-log](https://www.npmjs.com/package/homey-log). You must still require the module in the app yourself:
 
 ```
-const { Log } = require('homey-log');
+const Log = require('homey-log');
 ```
 
 Don't forget to add the `HOMEY_LOG_URL` variable to your `env.json`.
