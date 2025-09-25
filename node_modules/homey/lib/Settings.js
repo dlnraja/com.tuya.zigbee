@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const util = require('util');
 
-const { Log } = require('..');
+const Log = require('./Log');
 
 const statAsync = util.promisify(fs.stat);
 const readFileAsync = util.promisify(fs.readFile);
@@ -20,6 +20,10 @@ class Settings {
   }
 
   getSettingsDirectory() {
+    if (process.env.HOMEY_HOME) {
+      return process.env.HOMEY_HOME;
+    }
+
     const platform = os.platform();
 
     if (platform === 'win32') {

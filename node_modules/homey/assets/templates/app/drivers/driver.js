@@ -1,8 +1,8 @@
 'use strict';
 
-const { Driver } = require('homey');
+const Homey = require('homey');
 
-class MyDriver extends Driver {
+module.exports = class MyDriver extends Homey.Driver {
 
   /**
    * onInit is called when the driver is initialized.
@@ -31,6 +31,4 @@ class MyDriver extends Driver {
     ];
   }
 
-}
-
-module.exports = MyDriver;
+};

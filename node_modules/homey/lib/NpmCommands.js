@@ -4,9 +4,7 @@ const path = require('path');
 const util = require('util');
 const childProcess = require('child_process');
 
-const colors = require('colors');
-
-const { Log } = require('..');
+const Log = require('./Log');
 
 const exec = util.promisify(childProcess.exec);
 
@@ -19,9 +17,9 @@ class NpmCommands {
    * @returns {Promise<void>}
    */
   static async install(packages, { appPath } = {}) {
-    Log(colors.green(`✓ Installing dependencies: ${packages.join(', ')}`));
+    Log.success(`Installing dependencies: ${packages.join(', ')}`);
     await exec(`npm install --save ${packages.join(' ')}`, { cwd: appPath });
-    Log(colors.green('✓ Installation complete'));
+    Log.success('Installation complete');
   }
 
   /**
@@ -31,9 +29,9 @@ class NpmCommands {
    * @returns {Promise<void>}
    */
   static async installDev(packages, { appPath } = {}) {
-    Log(colors.green(`✓ Installing dev dependencies: ${packages.join(', ')}`));
+    Log.success(`Installing dev dependencies: ${packages.join(', ')}`);
     await exec(`npm install --save-dev ${packages.join(' ')}`, { cwd: appPath });
-    Log(colors.green('✓ Installation complete'));
+    Log.success('Installation complete');
   }
 
   /**

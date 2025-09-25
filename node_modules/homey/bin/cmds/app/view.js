@@ -1,18 +1,19 @@
 'use strict';
 
-const colors = require('colors');
 const open = require('open');
-const { Log } = require('../../..');
-const { App } = require('../../..');
+const Log = require('../../../lib/Log');
+const App = require('../../../lib/App');
 
-exports.desc = 'View your app in the Homey Apps Store';
+exports.desc = 'View your app in the Homey App Store';
 exports.handler = async yargs => {
   try {
     const manifest = App.getManifest({ appPath: yargs.path });
     const url = `https://homey.app/a/${manifest.id}`;
-    Log(colors.green(`✓ Opening URL: ${url}`));
+    Log.success(`Opening URL: ${url}`);
     open(url);
+    process.exit(0);
   } catch (err) {
-    Log(colors.red(err.message));
+    Log.error(err);
+    process.exit(1);
   }
 };

@@ -1,16 +1,17 @@
 'use strict';
 
 const open = require('open');
-const colors = require('colors');
-const { Log } = require('../..');
+const Log = require('../../lib/Log');
 
 exports.desc = 'Open Homey Developer Documentation';
 exports.handler = async yargs => {
   try {
     const url = 'https://apps.developer.homey.app';
-    Log(colors.green(`✓ Opening URL: ${url}`));
+    Log.success(`Opening URL: ${url}`);
     await open(url);
+    process.exit(0);
   } catch (err) {
-    Log(colors.red(err.message));
+    Log.error(err);
+    process.exit(1);
   }
 };

@@ -4,8 +4,11 @@ const fetch = require('node-fetch');
 const colors = require('colors');
 const Table = require('cli-table');
 
-const config = require('../config');
-const { Log, Settings } = require('..');
+const Log = require('./Log');
+const Settings = require('../services/Settings');
+const {
+  ATHOM_CLI_MESSAGE_URL,
+} = require('../config');
 
 const CACHE_HOURS = 12;
 
@@ -23,7 +26,7 @@ class AthomMessage {
 
       const hours = Math.abs(now - lastCheck) / 36e5;
       if (hours > CACHE_HOURS) {
-        const res = await fetch(config.athomMessageUrl, { timeout: 1000 });
+        const res = await fetch(ATHOM_CLI_MESSAGE_URL, { timeout: 1000 });
         if (!res.ok) return undefined;
 
         const json = await res.json();
@@ -48,7 +51,7 @@ class AthomMessage {
         table.push([message]);
         Log(table.toString());
       }
-    } catch (err) {}
+    } catch (err) { }
   }
 
   static formatMessage(message) {
