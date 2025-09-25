@@ -10,14 +10,33 @@
   "zigbee": {
     "manufacturerName": [
       "_TZE284_aao6qtcs",
+      "_TZE284_cjbofhxw",
+      "_TZE284_aagrxlbd",
+      "_TZE284_uqfph8ah",
       "_TZ3000_mmtwjmaq",
+      "_TZ3000_g5xawfcq",
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_fllyghyj",
+      "_TZE200_cwbvmsar",
+      "_TZE200_bjawzodf",
+      "_TZE200_3towulqd",
+      "_TZE200_locansqn",
       "TS011F",
-      "Tuya"
+      "TS0201",
+      "TS0001",
+      "TS0011",
+      "TS130F",
+      "TS0601",
+      "Tuya",
+      "MOES"
     ],
     "productId": [
       "TS0001",
+      "TS0011",
+      "TS0201",
       "TS011F",
-      "TS0201"
+      "TS130F",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
