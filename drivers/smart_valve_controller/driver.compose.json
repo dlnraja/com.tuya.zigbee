@@ -1,12 +1,12 @@
 {
+  "id": "smart_valve_controller",
   "name": {
-    "en": "Lux Sensor"
+    "en": "Smart Valve Controller",
+    "fr": "Contrôleur de valve intelligent"
   },
-  "class": "sensor",
+  "class": "other",
   "capabilities": [
-    "measure_temperature",
-    "alarm_motion",
-    "measure_luminance",
+    "onoff",
     "measure_battery"
   ],
   "zigbee": {
@@ -65,86 +65,20 @@
       "Zemismart"
     ],
     "productId": [
-      "TS0001",
-      "TS0011",
-      "TS011F",
-      "TS0201",
-      "TS0203",
-      "TS130F",
       "TS0601",
-      "TS004F",
-      "TS0121",
-      "TS110E",
-      "TS0502A",
-      "TS0821",
-      "TS1001",
-      "TS0202",
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044",
-      "TS0221",
-      "TS0505A",
-      "TS0503A"
+      "TS011F"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
           1,
-          1024,
-          1030,
-          1280,
-          61184
+          6
         ],
         "bindings": [
+          6,
           25
         ]
-      }
-    },
-    "manufacturerIds": [
-      4417,
-      4098,
-      4619,
-      4742,
-      4648,
-      4644,
-      4455,
-      4659,
-      4660
-    ],
-    "productIds": []
-  },
-  "images": {
-    "large": "./assets/large.png",
-    "small": "./assets/small.png"
-  },
-  "pair": [
-    {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-        "next": "add_devices"
-      }
-    },
-    {
-      "id": "add_devices",
-      "template": "add_devices"
-    }
-  ],
-  "platforms": [
-    "local"
-  ],
-  "connectivity": [
-    "zigbee"
-  ],
-  "capabilitiesOptions": {
-    "measure_temperature": {
-      "title": {
-        "en": "Temperature"
-      },
-      "units": {
-        "en": "°C"
       }
     }
   }
