@@ -26,7 +26,7 @@ const app = JSON.parse(fs.readFileSync('app.json', 'utf8'));
 app.version = '2.0.5';
 
 // Apply Memory 9f7be57a: UNBRANDED structure
-if (!app.name || typeof app.name === 'string') {
+if (!app.name || typeof app.name === 'string' || (typeof app.name === 'object' && JSON.stringify(app.name).includes('Tuya'))) {
     app.name = { "en": "Ultimate Zigbee Hub" };
 }
 
