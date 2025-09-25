@@ -3,7 +3,8 @@
   "capabilities": [
     "onoff",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "dim"
   ],
   "energy": {
     "batteries": [
@@ -35,32 +36,12 @@
           0,
           4,
           5,
-          6
+          6,
+          8
         ],
         "bindings": [
-          6
-        ]
-      },
-      "2": {
-        "clusters": [
-          0,
-          4,
-          5,
-          6
-        ],
-        "bindings": [
-          6
-        ]
-      },
-      "3": {
-        "clusters": [
-          0,
-          4,
-          5,
-          6
-        ],
-        "bindings": [
-          6
+          6,
+          8
         ]
       }
     },
@@ -116,7 +97,21 @@
       "Lonsonho",
       "Lidl",
       "Nedis",
-      "eWeLink"
+      "eWeLink",
+      "_TZE200_pay2byax",
+      "_TZE200_znbl8dj5",
+      "_TZE200_cirvgep4",
+      "_TZE200_rq0qlyss",
+      "_TZE200_1ibpyhdc",
+      "_TZE200_3ejwq9cd",
+      "_TZE200_s8gkrkxk",
+      "_TZE200_bq5c8xfe",
+      "_TZ3000_rusu2vzb",
+      "_TZ3000_itnrsufe",
+      "_TZ3000_ruxexjfz",
+      "_TZ3000_pmz6mjyu",
+      "_TZE284_zocpsznt",
+      "_TZE284_4fjiwweb"
     ],
     "manufacturerIds": [
       "1005007769107379",
