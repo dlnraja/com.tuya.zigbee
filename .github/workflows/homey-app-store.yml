@@ -36,7 +36,7 @@ jobs:
       run: |
         echo "🏪 Publishing to Homey App Store..."
         homey login --token $HOMEY_TOKEN
-        homey app publish --changelog "Complete manufacturer IDs + unbranded structure"
+        echo "Professional Tuya Zigbee device support" | homey app publish --changelog "Version 2.0.0 - Professional standards compliance"
         
     - name: Test Installation
       run: |
