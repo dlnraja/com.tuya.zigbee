@@ -40,14 +40,12 @@
     "rh3052"
   ],
   "dependencies": {
-    "canvas": "^2.11.2",
-    "fs-extra": "^11.2.0",
     "homey-zigbeedriver": "^1.5.0",
+    "homey": "^3.0.0",
+    "fs-extra": "^11.2.0",
+    "sharp": "^0.33.0",
     "jimp": "^0.22.12",
-    "puppeteer": "^21.0.0",
-    "sharp": "^0.32.6",
-    "zigbee-clusters": "^1.0.0",
-    "homey": "^3.0.0"
+    "zigbee-clusters": "^1.0.0"
   },
   "engines": {
     "node": ">=18.0.0"
@@ -120,9 +118,8 @@
     "homey": "^3.0.0"
   },
   "overrides": {
-    "rimraf": "^5.0.0",
-    "glob": "^10.0.0",
-    "eslint": "^8.0.0",
-    "inflight": "^2.0.0"
+    "rimraf": "^5.0.5",
+    "glob": "^10.3.0",
+    "eslint": "^8.57.0"
   }
 }
