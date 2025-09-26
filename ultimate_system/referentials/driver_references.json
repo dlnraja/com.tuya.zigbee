@@ -1,0 +1,46 @@
+{
+  "_TZ3000_mmtwjmaq": {
+    "productName": "Motion Sensor PIR",
+    "manufacturerName": "_TZ3000_mmtwjmaq",
+    "productId": ["TS0202"],
+    "clusterId": [0, 1, 3, 1024, 1280],
+    "capabilities": ["alarm_motion", "measure_luminance", "measure_battery"],
+    "category": "motion_sensors",
+    "folderName": "motion_sensor_advanced",
+    "deviceType": "sensor",
+    "powerType": "battery"
+  },
+  "_TZ3000_qzjcsmar": {
+    "productName": "Smart Switch 1 Gang",
+    "manufacturerName": "_TZ3000_qzjcsmar", 
+    "productId": ["TS0001"],
+    "clusterId": [0, 1, 3, 6],
+    "capabilities": ["onoff"],
+    "category": "switches",
+    "folderName": "smart_switch_1gang",
+    "deviceType": "switch",
+    "powerType": "mains"
+  },
+  "_TZ3000_g5xawfcq": {
+    "productName": "Smart Plug with Power Monitoring",
+    "manufacturerName": "_TZ3000_g5xawfcq",
+    "productId": ["TS011F"],
+    "clusterId": [0, 1, 3, 6, 1794],
+    "capabilities": ["onoff", "measure_power", "meter_power"],
+    "category": "smart_plugs",
+    "folderName": "smart_plug_advanced",
+    "deviceType": "plug",
+    "powerType": "mains"
+  },
+  "_TZE200_fctwhugx": {
+    "productName": "Tuya Curtain Motor",
+    "manufacturerName": "_TZE200_fctwhugx",
+    "productId": ["TS130F"],
+    "clusterId": [0, 1, 3, 258],
+    "capabilities": ["windowcoverings_set", "windowcoverings_state"],
+    "category": "curtains",
+    "folderName": "curtain_motor_advanced",
+    "deviceType": "curtain",
+    "powerType": "mains"
+  }
+}
