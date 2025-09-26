@@ -17,7 +17,8 @@
   },
   "zigbee": {
     "productId": [
-      "TS0001"
+      "TS0001",
+      "TS0011"
     ],
     "endpoints": {
       "1": {
@@ -44,7 +45,8 @@
       }
     },
     "manufacturerName": [
-      "_TZ3000_qzjcsmar"
+      "_TZ3000_qzjcsmar",
+      "_TZ3000_ji4araar"
     ],
     "manufacturerIds": [
       "1005007769107379",
