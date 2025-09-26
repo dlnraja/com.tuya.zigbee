@@ -1,0 +1,38 @@
+{
+  "zigbee_specifications": {
+    "clusters": {
+      "0": "Basic",
+      "1": "Power Configuration", 
+      "3": "Identify",
+      "6": "On/Off",
+      "8": "Level Control",
+      "258": "Window Covering",
+      "1024": "Illuminance Measurement",
+      "1280": "Color Control",
+      "1794": "Smart Energy Metering"
+    },
+    "manufacturers": {
+      "_TZ3000_": "Tuya Generic Devices",
+      "_TZE200_": "Tuya Advanced Climate/Curtain",
+      "_TZE284_": "Tuya Enhanced Switches"
+    }
+  },
+  "tuya_specifications": {
+    "product_families": {
+      "TS0001": "1 Gang Switch",
+      "TS0011": "2 Gang Switch", 
+      "TS0012": "3 Gang Switch",
+      "TS011F": "Smart Plug",
+      "TS0202": "PIR Motion Sensor",
+      "TS0203": "Door/Window Sensor",
+      "TS130F": "Curtain Switch Motor",
+      "TS0601": "Climate/Thermostat"
+    },
+    "chip_creators": [
+      "Telink",
+      "Silicon Labs",
+      "Texas Instruments",
+      "NXP"
+    ]
+  }
+}
