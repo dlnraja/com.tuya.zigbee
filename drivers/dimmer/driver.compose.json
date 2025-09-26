@@ -1,39 +1,28 @@
 {
   "name": {
-    "en": "Philips Hue Dimmer",
-    "fr": "Philips Hue Dimmer",
-    "de": "Philips Hue Dimmer",
-    "nl": "Philips Hue Dimmer"
+    "en": "Tuya Dimmer Switch"
   },
-  "class": "button",
+  "class": "light",
   "capabilities": [
-    "alarm_battery",
-    "light_hue",
-    "light_saturation",
-    "measure_battery",
     "onoff",
     "dim"
   ],
-  "energy": {
-    "batteries": [
-      "CR2032"
-    ]
-  },
   "images": {
     "small": "./assets/images/small.png",
     "large": "./assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_qzjcsmar"
+      "_TZ3000_rdz06uge"
     ],
     "productId": [
-      "TS0001"
+      "TS0601"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
+          3,
           4,
           5,
           6,
@@ -48,24 +37,9 @@
     "learnmode": {
       "image": "./assets/images/large.png",
       "instruction": {
-        "en": "Use the Philips Hue Bridge or hold the setup button for 3 seconds.",
-        "fr": "Use the Philips Hue Bridge or hold the setup button for 3 seconds.",
-        "de": "Use the Philips Hue Bridge or hold the setup button for 3 seconds.",
-        "nl": "Use the Philips Hue Bridge or hold the setup button for 3 seconds."
+        "en": "Press and hold setup button for 3 seconds"
       }
-    },
-    "manufacturerIds": [
-      4417,
-      4098,
-      4619,
-      4742,
-      4648,
-      4644,
-      4455,
-      4659,
-      4660
-    ],
-    "productIds": []
+    }
   },
   "platforms": [
     "local"
@@ -73,6 +47,5 @@
   "connectivity": [
     "zigbee"
   ],
-  "capabilitiesOptions": {},
   "id": "dimmer"
 }
