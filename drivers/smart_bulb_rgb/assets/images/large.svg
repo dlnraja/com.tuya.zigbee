@@ -1,13 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="deviceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.1" />
-      <stop offset="100%" style="stop-color:#F57C00;stop-opacity:0.05" />
-    </linearGradient>
-  </defs>
-  <rect width="100%" height="100%" fill="white" rx="25"/>
-  <circle cx="250" cy="250" r="200" fill="url(#deviceGradient)" opacity="0.3"/>
-  <circle cx="250" cy="250" r="142.85714285714286" fill="#FFD700" opacity="0.15"/>
-  <rect x="2" y="2" width="496" height="496" fill="none" stroke="#FFD700" stroke-width="1" opacity="0.1" rx="25"/>
-</svg>
+        <rect width="500" height="500" fill="#4ECDC4" rx="50"/>
+        <text x="250" y="200" font-family="Arial" font-size="80" text-anchor="middle" fill="white">💡</text>
+        <text x="250" y="320" font-family="Arial" font-size="18" text-anchor="middle" fill="white">SWITCH</text>
+      </svg>
