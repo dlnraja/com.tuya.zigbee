@@ -1,9 +1,9 @@
 const fs = require('fs');
 
-console.log('📦 ORGANIZE ALL v4.0.0');
+console.log('📦 ORGANIZE ALL v6.0.0');
 
-// Create directories
-const dirs = ['./scripts/organized', './scripts/backup', './scripts/enrichment'];
+// Créer structure
+const dirs = ['./scripts/organized/backup'];
 dirs.forEach(dir => {
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, {recursive: true});
 });
@@ -15,7 +15,7 @@ const rootFiles = fs.readdirSync('./').filter(f =>
 
 rootFiles.forEach(file => {
   try {
-    fs.renameSync(`./${file}`, `./scripts/organized/${file}`);
+    fs.renameSync(`./${file}`, `./scripts/organized/backup/${file}`);
     console.log(`📁 Moved ${file}`);
   } catch (e) {
     console.log(`⚠️ Could not move ${file}`);
