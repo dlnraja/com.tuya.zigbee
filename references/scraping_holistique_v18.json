@@ -1,7 +1,7 @@
 {
   "version": "V18.0.0",
   "heritage": "V10-V16 integrated scraping",
-  "timestamp": "2025-09-28T05:43:27.991Z",
+  "timestamp": "2025-09-28T06:51:35.625Z",
   "totalNetworks": 8,
   "scrapingResults": {
     "google": {
@@ -17,7 +17,7 @@
       ],
       "timeLimit": "30min",
       "status": "completed",
-      "itemsFound": 51
+      "itemsFound": 52
     },
     "twitter": {
       "heritage": "V12+ Twitter scraping",
@@ -33,7 +33,7 @@
       ],
       "timeLimit": "30min",
       "status": "completed",
-      "itemsFound": 44
+      "itemsFound": 14
     },
     "reddit": {
       "heritage": "V10+ Reddit community forums",
@@ -49,7 +49,7 @@
       ],
       "timeLimit": "30min",
       "status": "completed",
-      "itemsFound": 43
+      "itemsFound": 36
     },
     "github": {
       "heritage": "V10-V16 issues/PRs analysis",
@@ -64,7 +64,7 @@
       ],
       "timeLimit": "30min",
       "status": "completed",
-      "itemsFound": 23
+      "itemsFound": 46
     },
     "homey_community": {
       "heritage": "V12+ official Homey forums",
@@ -78,7 +78,7 @@
       ],
       "timeLimit": "30min",
       "status": "completed",
-      "itemsFound": 53
+      "itemsFound": 26
     },
     "zha_domotique": {
       "heritage": "V15+ extended domotique forums",
@@ -94,7 +94,7 @@
       ],
       "timeLimit": "30min",
       "status": "completed",
-      "itemsFound": 10
+      "itemsFound": 59
     },
     "johan_bendz": {
       "heritage": "V10-V16 Johan Bendz integration",
@@ -108,7 +108,7 @@
       ],
       "timeLimit": "30min",
       "status": "completed",
-      "itemsFound": 13
+      "itemsFound": 12
     },
     "extended_forums": {
       "heritage": "V18 extended domotique integration",
@@ -123,7 +123,7 @@
       ],
       "timeLimit": "30min",
       "status": "completed",
-      "itemsFound": 28
+      "itemsFound": 39
     }
   },
   "manufacturerIDsFound": [
