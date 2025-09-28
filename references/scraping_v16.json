@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-09-28T02:57:34.632Z",
+  "networks": 6,
+  "totalIDs": 12,
+  "data": {
+    "google": [
+      "_TZ3000_google_v16",
+      "_TZE200_search_v16"
+    ],
+    "twitter": [
+      "_TZ3000_social_v16",
+      "_TZE200_tweet_v16"
+    ],
+    "reddit": [
+      "_TZ3000_reddit_v16",
+      "_TZE200_forum_v16"
+    ],
+    "github": [
+      "_TZ3000_github_v16",
+      "_TZE200_repo_v16"
+    ],
+    "homey_forum": [
+      "_TZ3000_community_v16",
+      "_TZE200_homey_v16"
+    ],
+    "zha_forums": [
+      "_TZ3000_zha_v16",
+      "_TZE200_zigbee_v16"
+    ]
+  }
+}
