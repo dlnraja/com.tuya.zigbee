@@ -1,7 +1,7 @@
 const fs = require('fs');
 const { execSync } = require('child_process');
 
-console.log('🚀 ULTIMATE V13');
+console.log('🚀 ULTIMATE V13 - INSPIRÉ DE TOUS LES ANCIENS PUSH');
 
 // Backup
 if (!fs.existsSync('./backup')) fs.mkdirSync('./backup');
