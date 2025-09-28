@@ -19,5 +19,10 @@
     "small": "./assets/images/small.png",
     "large": "./assets/images/large.png"
   },
-  "manufacturerName": "MOES"
+  "manufacturerName": "MOES",
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  }
 }

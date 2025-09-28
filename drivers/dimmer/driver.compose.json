@@ -48,5 +48,10 @@
     "zigbee"
   ],
   "id": "_TZ3210_alproto2",
-  "manufacturerName": "Lonsonho"
+  "manufacturerName": "Lonsonho",
+  "energy": {
+    "approximation": {
+      "usageConstant": 10
+    }
+  }
 }

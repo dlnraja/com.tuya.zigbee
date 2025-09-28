@@ -41,5 +41,10 @@
     "small": "./assets/images/small.png",
     "large": "./assets/images/large.png"
   },
-  "manufacturerName": "BSEED"
+  "manufacturerName": "BSEED",
+  "energy": {
+    "approximation": {
+      "usageConstant": 10
+    }
+  }
 }

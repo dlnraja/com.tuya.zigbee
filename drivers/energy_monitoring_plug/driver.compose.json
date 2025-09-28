@@ -76,5 +76,10 @@
     "small": "./assets/images/small.png",
     "large": "./assets/images/large.png"
   },
-  "manufacturerName": "Tuya"
+  "manufacturerName": "Tuya",
+  "energy": {
+    "approximation": {
+      "usageConstant": 5
+    }
+  }
 }
