@@ -1,0 +1,50 @@
+{
+  "version": "V18.0.0",
+  "timestamp": "2025-09-28T05:43:30.615Z",
+  "heritage": {
+    "v15": "Organisation 75 scripts par catégories",
+    "v16": "Optimisation vers 7 scripts essentiels",
+    "v18": "Organisation ultime + fusion intelligente"
+  },
+  "results": {
+    "organized": 9,
+    "merged": 0,
+    "kept": 8,
+    "total": 20,
+    "optimized": 0
+  },
+  "structure": {
+    "./scripts/organized/backup": [
+      "BACKUP_",
+      "DUMP_",
+      "HISTORICAL_"
+    ],
+    "./scripts/organized/enrichment": [
+      "ENRICH",
+      "ULTIMATE_",
+      "MEGA_"
+    ],
+    "./scripts/organized/validation": [
+      "VALID",
+      "CHECK_",
+      "TEST_"
+    ],
+    "./scripts/organized/scraping": [
+      "SCRAP",
+      "WEB_",
+      "SEARCH_"
+    ],
+    "./scripts/organized/orchestration": [
+      "ORCHESTR",
+      "MASTER",
+      "FINAL_"
+    ],
+    "./scripts/organized/analysis": [
+      "ANALY",
+      "SCAN_",
+      "COHERENCE"
+    ]
+  },
+  "essentialFiles": 13,
+  "optimization": "Fusion + suppression doublons"
+}
