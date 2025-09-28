@@ -22,40 +22,25 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
-backup/
 
+# Backup complete system - NEVER COMMIT (too large)
 backup/
+backup/*/
+backup/*/*
+ultimate_system/backup/
+ultimate_system/backup/*/
+ultimate_system/backup/*/*
+ultimate_system/backup/*/*/*
 
-backup/
+# Git clones history - NEVER COMMIT
+backup/git_clones/
+backup/git_history/
+backup/branches/
+backup/commits/
+backup/versions/
 
-backup/
-
-backup/
-
-backup/
-
-backup/
-
-backup/
-
-backup/
-
-backup/
-
-backup/
-
-backup/
-
-backup/
-
-backup/
-
-backup/
-
-backup/
-
-backup/
-
-backup/
-
-backup/
+# Dumps and archives - NEVER COMMIT (generated files)
+dumps/
+dumps/*
+archives/large/
+temp_clones/
