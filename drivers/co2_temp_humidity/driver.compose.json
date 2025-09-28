@@ -38,5 +38,10 @@
     "small": "./assets/images/small.png",
     "large": "./assets/images/large.png"
   },
-  "manufacturerName": "Tuya"
+  "manufacturerName": "Tuya",
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  }
 }
