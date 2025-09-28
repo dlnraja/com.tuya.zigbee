@@ -20,5 +20,10 @@
     "small": "./assets/images/small.png",
     "large": "./assets/images/large.png"
   },
-  "manufacturerName": "Lonsonho"
+  "manufacturerName": "Lonsonho",
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  }
 }
