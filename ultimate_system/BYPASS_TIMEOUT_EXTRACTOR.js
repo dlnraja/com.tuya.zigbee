@@ -1,28 +1,34 @@
 const fs = require('fs');
+const path = require('path');
 const { execSync } = require('child_process');
 
 console.log('⏰ BYPASS TIMEOUT EXTRACTOR - Méthodes alternatives avec sleep');
 
 // Alternative methods to bypass git checkout timeouts
+const projectRoot = path.resolve(__dirname, '..');
+const delayedDirRoot = path.join(__dirname, 'backup', 'commits_delayed');
+fs.mkdirSync(delayedDirRoot, { recursive: true });
+
 async function extractWithDelay(commitHash, delay = 3000) {
   return new Promise((resolve) => {
     setTimeout(() => {
       try {
         console.log(`🔄 Extracting ${commitHash} with delay...`);
-        execSync('git stash', {stdio: 'pipe'});
-        execSync(`git checkout ${commitHash}`, {stdio: 'pipe'});
+        execSync('git stash', {stdio: 'pipe', cwd: projectRoot});
+        execSync(`git checkout ${commitHash}`, {stdio: 'pipe', cwd: projectRoot});
         
-        const dir = `./backup/commits_delayed/${commitHash}`;
+        const dir = path.join(delayedDirRoot, commitHash);
         if (!fs.existsSync(dir)) fs.mkdirSync(dir, {recursive: true});
         
-        if (fs.existsSync('../app.json')) {
-          fs.copyFileSync('../app.json', `${dir}/app.json`);
+        const appJson = path.join(projectRoot, 'app.json');
+        if (fs.existsSync(appJson)) {
+          fs.copyFileSync(appJson, path.join(dir, 'app.json'));
         }
         
-        execSync('git checkout master', {stdio: 'pipe'});
+        execSync('git checkout master', {stdio: 'pipe', cwd: projectRoot});
         resolve(true);
       } catch(e) {
-        try { execSync('git checkout master', {stdio: 'pipe'}); } catch(e2) {}
+        try { execSync('git checkout master', {stdio: 'pipe', cwd: projectRoot}); } catch(e2) {}
         resolve(false);
       }
     }, delay);

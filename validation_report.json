@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-09-29T08:31:39.034Z",
+  "gitHistory": {
+    "totalCommits": "missing",
+    "projectCreation": "missing",
+    "status": "NEEDS_ATTENTION"
+  },
+  "drivers": {
+    "total": 164,
+    "withIds": 164,
+    "withManufacturerName": 164,
+    "withProductId": 164,
+    "withEndpoints": 164,
+    "multiGangOk": 164,
+    "missingId": [],
+    "missingManufacturerName": [],
+    "missingProductId": [],
+    "missingEndpoints": [],
+    "insufficientMultiGang": [],
+    "status": "VALIDATED"
+  },
+  "organization": {
+    "ultimateSystemReady": true,
+    "backupComplete": true,
+    "status": "VALIDATED"
+  },
+  "overallStatus": "READY_FOR_PUBLISH"
+}
