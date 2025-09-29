@@ -1,0 +1,26 @@
+{
+  "timestamp": "2025-09-01T12:38:21.694Z",
+  "packageJson": {
+    "exists": true,
+    "valid": true
+  },
+  "nodeModules": {
+    "exists": true
+  },
+  "dependencies": {
+    "total": 70,
+    "critical": {
+      "total": 5,
+      "found": 5,
+      "missing": []
+    },
+    "installed": [
+      "axios",
+      "chalk",
+      "glob"
+    ],
+    "missing": [
+      "fs-extra"
+    ]
+  }
+}

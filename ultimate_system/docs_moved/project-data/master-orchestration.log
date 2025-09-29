@@ -1,0 +1,19 @@
+[2025-09-16T19:57:58.252Z] [INFO] 🎭 Starting Master Publication Orchestration
+[2025-09-16T19:57:58.255Z] [INFO] 📋 Version: auto
+[2025-09-16T19:57:58.257Z] [INFO] 📝 Changelog: Ultimate Zigbee Hub - Enhanced with comprehensive automation, intelligent image generation, and maximum device compatibility
+[2025-09-16T19:57:58.262Z] [INFO] 🧪 PHASE 1: Comprehensive Automation Testing
+[2025-09-16T19:58:41.367Z] [INFO] ✅ Phase 1 completed: FAILED (continuing with --force)
+[2025-09-16T19:58:41.373Z] [INFO] 🔍 PHASE 2: Validation and Preparation
+[2025-09-16T19:58:41.373Z] [INFO] 📝 Updating version and .homeycompose...
+[2025-09-16T19:58:41.686Z] [INFO] 🔢 Auto-incremented version: 2.1.5 → 2.1.6
+[2025-09-16T19:58:41.703Z] [INFO] 💾 Updated app configuration to version 2.1.6
+[2025-09-16T19:58:41.704Z] [INFO] 🧹 Cleaning build cache...
+[2025-09-16T19:58:41.922Z] [INFO] ✅ Cleaned .homeybuild directory
+[2025-09-16T19:58:41.923Z] [INFO] 🏠 Running Homey validation...
+[2025-09-16T19:59:41.927Z] [WARN] ⚠️ Validation issues: Command timeout: homey app validate --level=publish
+[2025-09-16T19:59:41.928Z] [INFO] ✅ Phase 2 completed successfully
+[2025-09-16T19:59:41.929Z] [INFO] 🚀 PHASE 3: Automated Publication
+[2025-09-16T19:59:41.930Z] [INFO] 🤖 Initiating automated publication with enhanced stdio handling...
+[2025-09-16T20:09:34.427Z] [ERROR] ❌ Publication failed
+[2025-09-16T20:09:34.428Z] [INFO] 📊 Generating Master Orchestration Report...
+[2025-09-16T20:09:34.430Z] [INFO] 💾 Master orchestration report saved: C:\Users\HP\Desktop\tuya_repair\master-orchestration-report.json

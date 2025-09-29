@@ -1,0 +1,366 @@
+{
+  "timestamp": "2025-09-15T22:52:10.775Z",
+  "scan_summary": {
+    "repositories_scanned": 2,
+    "total_branches": 1,
+    "total_drivers_found": 0,
+    "unique_manufacturer_ids": 0,
+    "unique_product_ids": 0
+  },
+  "enhanced_categorization": {
+    "battery_switches": {
+      "wireless_switch_1gang_battery": {
+        "buttons": 1,
+        "power": "battery",
+        "type": "CR2032"
+      },
+      "wireless_switch_2gang_battery": {
+        "buttons": 2,
+        "power": "battery",
+        "type": "CR2032"
+      },
+      "wireless_switch_3gang_battery": {
+        "buttons": 3,
+        "power": "battery",
+        "type": "CR2032"
+      },
+      "wireless_switch_4gang_battery": {
+        "buttons": 4,
+        "power": "battery",
+        "type": "CR2032"
+      },
+      "wireless_switch_5gang_battery": {
+        "buttons": 5,
+        "power": "battery",
+        "type": "CR2032"
+      },
+      "wireless_switch_6gang_battery": {
+        "buttons": 6,
+        "power": "battery",
+        "type": "CR2032"
+      }
+    },
+    "ac_wall_switches": {
+      "wall_switch_1gang_ac": {
+        "buttons": 1,
+        "power": "ac",
+        "voltage": "110-240V"
+      },
+      "wall_switch_2gang_ac": {
+        "buttons": 2,
+        "power": "ac",
+        "voltage": "110-240V"
+      },
+      "wall_switch_3gang_ac": {
+        "buttons": 3,
+        "power": "ac",
+        "voltage": "110-240V"
+      },
+      "wall_switch_4gang_ac": {
+        "buttons": 4,
+        "power": "ac",
+        "voltage": "110-240V"
+      },
+      "wall_switch_5gang_ac": {
+        "buttons": 5,
+        "power": "ac",
+        "voltage": "110-240V"
+      },
+      "wall_switch_6gang_ac": {
+        "buttons": 6,
+        "power": "ac",
+        "voltage": "110-240V"
+      }
+    },
+    "dc_switches": {
+      "wall_switch_1gang_dc": {
+        "buttons": 1,
+        "power": "dc",
+        "voltage": "12-24V"
+      },
+      "wall_switch_2gang_dc": {
+        "buttons": 2,
+        "power": "dc",
+        "voltage": "12-24V"
+      },
+      "wall_switch_3gang_dc": {
+        "buttons": 3,
+        "power": "dc",
+        "voltage": "12-24V"
+      },
+      "wall_switch_4gang_dc": {
+        "buttons": 4,
+        "power": "dc",
+        "voltage": "12-24V"
+      }
+    },
+    "hybrid_switches": {
+      "smart_switch_1gang_hybrid": {
+        "buttons": 1,
+        "power": "hybrid",
+        "voltage": "AC/DC/Battery"
+      },
+      "smart_switch_2gang_hybrid": {
+        "buttons": 2,
+        "power": "hybrid",
+        "voltage": "AC/DC/Battery"
+      },
+      "smart_switch_3gang_hybrid": {
+        "buttons": 3,
+        "power": "hybrid",
+        "voltage": "AC/DC/Battery"
+      },
+      "smart_switch_4gang_hybrid": {
+        "buttons": 4,
+        "power": "hybrid",
+        "voltage": "AC/DC/Battery"
+      }
+    },
+    "scene_controllers": {
+      "scene_controller_2button": {
+        "buttons": 2,
+        "power": "battery",
+        "type": "CR2032"
+      },
+      "scene_controller_4button": {
+        "buttons": 4,
+        "power": "battery",
+        "type": "CR2032"
+      },
+      "scene_controller_6button": {
+        "buttons": 6,
+        "power": "battery",
+        "type": "CR2032"
+      },
+      "scene_controller_8button": {
+        "buttons": 8,
+        "power": "battery",
+        "type": "CR2032"
+      }
+    },
+    "touch_switches": {
+      "touch_switch_1gang": {
+        "buttons": 1,
+        "power": "ac",
+        "interface": "capacitive"
+      },
+      "touch_switch_2gang": {
+        "buttons": 2,
+        "power": "ac",
+        "interface": "capacitive"
+      },
+      "touch_switch_3gang": {
+        "buttons": 3,
+        "power": "ac",
+        "interface": "capacitive"
+      },
+      "touch_switch_4gang": {
+        "buttons": 4,
+        "power": "ac",
+        "interface": "capacitive"
+      }
+    },
+    "motion_sensors": {
+      "motion_sensor_pir_battery": {
+        "type": "PIR",
+        "power": "battery",
+        "range": "8m"
+      },
+      "motion_sensor_radar_battery": {
+        "type": "radar",
+        "power": "battery",
+        "range": "12m"
+      },
+      "motion_sensor_mmwave_battery": {
+        "type": "mmWave",
+        "power": "battery",
+        "range": "15m"
+      },
+      "motion_sensor_pir_ac": {
+        "type": "PIR",
+        "power": "ac",
+        "range": "12m"
+      },
+      "motion_sensor_radar_ac": {
+        "type": "radar",
+        "power": "ac",
+        "range": "20m"
+      }
+    }
+  },
+  "historical_data": {
+    "branches": [
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "branch": "gh-pages",
+        "drivers": [],
+        "commits": [
+          {
+            "sha": "705a675bab8fc420e16c7d14c1a1c629982fdf97",
+            "node_id": "C_kwDOPPue0toAKDcwNWE2NzViYWI4ZmM0MjBlMTZjN2QxNGMxYTFjNjI5OTgyZmRmOTc",
+            "commit": {
+              "author": {
+                "name": "dlnraja",
+                "email": "dlnraja@users.noreply.github.com",
+                "date": "2025-09-05T20:40:17Z"
+              },
+              "committer": {
+                "name": "dlnraja",
+                "email": "dlnraja@users.noreply.github.com",
+                "date": "2025-09-05T20:40:17Z"
+              },
+              "message": "deploy: 5a6aad1cc674d2d0c1b51c1111c7340c4e297f25",
+              "tree": {
+                "sha": "0d1513fbdc0f14280a19fda58b74932fbc5d8a64",
+                "url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/git/trees/0d1513fbdc0f14280a19fda58b74932fbc5d8a64"
+              },
+              "url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/git/commits/705a675bab8fc420e16c7d14c1a1c629982fdf97",
+              "comment_count": 0,
+              "verification": {
+                "verified": false,
+                "reason": "unsigned",
+                "signature": null,
+                "payload": null,
+                "verified_at": null
+              }
+            },
+            "url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/commits/705a675bab8fc420e16c7d14c1a1c629982fdf97",
+            "html_url": "https://github.com/dlnraja/com.tuya.zigbee/commit/705a675bab8fc420e16c7d14c1a1c629982fdf97",
+            "comments_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/commits/705a675bab8fc420e16c7d14c1a1c629982fdf97/comments",
+            "author": {
+              "login": "dlnraja",
+              "id": 9746898,
+              "node_id": "MDQ6VXNlcjk3NDY4OTg=",
+              "avatar_url": "https://avatars.githubusercontent.com/u/9746898?v=4",
+              "gravatar_id": "",
+              "url": "https://api.github.com/users/dlnraja",
+              "html_url": "https://github.com/dlnraja",
+              "followers_url": "https://api.github.com/users/dlnraja/followers",
+              "following_url": "https://api.github.com/users/dlnraja/following{/other_user}",
+              "gists_url": "https://api.github.com/users/dlnraja/gists{/gist_id}",
+              "starred_url": "https://api.github.com/users/dlnraja/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/dlnraja/subscriptions",
+              "organizations_url": "https://api.github.com/users/dlnraja/orgs",
+              "repos_url": "https://api.github.com/users/dlnraja/repos",
+              "events_url": "https://api.github.com/users/dlnraja/events{/privacy}",
+              "received_events_url": "https://api.github.com/users/dlnraja/received_events",
+              "type": "User",
+              "user_view_type": "public",
+              "site_admin": false
+            },
+            "committer": {
+              "login": "dlnraja",
+              "id": 9746898,
+              "node_id": "MDQ6VXNlcjk3NDY4OTg=",
+              "avatar_url": "https://avatars.githubusercontent.com/u/9746898?v=4",
+              "gravatar_id": "",
+              "url": "https://api.github.com/users/dlnraja",
+              "html_url": "https://github.com/dlnraja",
+              "followers_url": "https://api.github.com/users/dlnraja/followers",
+              "following_url": "https://api.github.com/users/dlnraja/following{/other_user}",
+              "gists_url": "https://api.github.com/users/dlnraja/gists{/gist_id}",
+              "starred_url": "https://api.github.com/users/dlnraja/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/dlnraja/subscriptions",
+              "organizations_url": "https://api.github.com/users/dlnraja/orgs",
+              "repos_url": "https://api.github.com/users/dlnraja/repos",
+              "events_url": "https://api.github.com/users/dlnraja/events{/privacy}",
+              "received_events_url": "https://api.github.com/users/dlnraja/received_events",
+              "type": "User",
+              "user_view_type": "public",
+              "site_admin": false
+            },
+            "parents": [
+              {
+                "sha": "8dc80f2f279b9cc1b0e397c9f82caf72c47fa192",
+                "url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/commits/8dc80f2f279b9cc1b0e397c9f82caf72c47fa192",
+                "html_url": "https://github.com/dlnraja/com.tuya.zigbee/commit/8dc80f2f279b9cc1b0e397c9f82caf72c47fa192"
+              }
+            ]
+          },
+          {
+            "sha": "8dc80f2f279b9cc1b0e397c9f82caf72c47fa192",
+            "node_id": "C_kwDOPPue0toAKDhkYzgwZjJmMjc5YjljYzFiMGUzOTdjOWY4MmNhZjcyYzQ3ZmExOTI",
+            "commit": {
+              "author": {
+                "name": "dlnraja",
+                "email": "dlnraja@users.noreply.github.com",
+                "date": "2025-09-04T09:37:33Z"
+              },
+              "committer": {
+                "name": "dlnraja",
+                "email": "dlnraja@users.noreply.github.com",
+                "date": "2025-09-04T09:37:33Z"
+              },
+              "message": "deploy: 436e6a8d527d4a1559d67cd8d4cd1d09d09fb6d7",
+              "tree": {
+                "sha": "6990e5ad1536abf9f4ca57ff2438492af5744d04",
+                "url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/git/trees/6990e5ad1536abf9f4ca57ff2438492af5744d04"
+              },
+              "url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/git/commits/8dc80f2f279b9cc1b0e397c9f82caf72c47fa192",
+              "comment_count": 0,
+              "verification": {
+                "verified": false,
+                "reason": "unsigned",
+                "signature": null,
+                "payload": null,
+                "verified_at": null
+              }
+            },
+            "url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/commits/8dc80f2f279b9cc1b0e397c9f82caf72c47fa192",
+            "html_url": "https://github.com/dlnraja/com.tuya.zigbee/commit/8dc80f2f279b9cc1b0e397c9f82caf72c47fa192",
+            "comments_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/commits/8dc80f2f279b9cc1b0e397c9f82caf72c47fa192/comments",
+            "author": {
+              "login": "dlnraja",
+              "id": 9746898,
+              "node_id": "MDQ6VXNlcjk3NDY4OTg=",
+              "avatar_url": "https://avatars.githubusercontent.com/u/9746898?v=4",
+              "gravatar_id": "",
+              "url": "https://api.github.com/users/dlnraja",
+              "html_url": "https://github.com/dlnraja",
+              "followers_url": "https://api.github.com/users/dlnraja/followers",
+              "following_url": "https://api.github.com/users/dlnraja/following{/other_user}",
+              "gists_url": "https://api.github.com/users/dlnraja/gists{/gist_id}",
+              "starred_url": "https://api.github.com/users/dlnraja/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/dlnraja/subscriptions",
+              "organizations_url": "https://api.github.com/users/dlnraja/orgs",
+              "repos_url": "https://api.github.com/users/dlnraja/repos",
+              "events_url": "https://api.github.com/users/dlnraja/events{/privacy}",
+              "received_events_url": "https://api.github.com/users/dlnraja/received_events",
+              "type": "User",
+              "user_view_type": "public",
+              "site_admin": false
+            },
+            "committer": {
+              "login": "dlnraja",
+              "id": 9746898,
+              "node_id": "MDQ6VXNlcjk3NDY4OTg=",
+              "avatar_url": "https://avatars.githubusercontent.com/u/9746898?v=4",
+              "gravatar_id": "",
+              "url": "https://api.github.com/users/dlnraja",
+              "html_url": "https://github.com/dlnraja",
+              "followers_url": "https://api.github.com/users/dlnraja/followers",
+              "following_url": "https://api.github.com/users/dlnraja/following{/other_user}",
+              "gists_url": "https://api.github.com/users/dlnraja/gists{/gist_id}",
+              "starred_url": "https://api.github.com/users/dlnraja/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/dlnraja/subscriptions",
+              "organizations_url": "https://api.github.com/users/dlnraja/orgs",
+              "repos_url": "https://api.github.com/users/dlnraja/repos",
+              "events_url": "https://api.github.com/users/dlnraja/events{/privacy}",
+              "received_events_url": "https://api.github.com/users/dlnraja/received_events",
+              "type": "User",
+              "user_view_type": "public",
+              "site_admin": false
+            },
+            "parents": []
+          }
+        ]
+      }
+    ],
+    "commits": [],
+    "drivers": [],
+    "devices": [],
+    "manufacturerIds": {},
+    "productIds": {}
+  },
+  "driver_patterns": {}
+}

@@ -1,0 +1,536 @@
+============================================================
+TUYA ZIGBEE DRIVERS REPORT
+============================================================
+Generated: 2025-09-01T06:07:21.862Z
+Repository: https://github.com/dlnraja/com.tuya.zigbee
+============================================================
+Total drivers: 63
+Valid drivers: 0 (0%)
+Drivers with issues: 63
+============================================================
+
+DRIVERS DETAILS
+
+[ISSUES] base
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Base","fr":"Base"}
+  - Class: other
+  - Capabilities: onoff
+
+[ISSUES] climate
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Climate","fr":"Climate"}
+  - Class: climate
+  - Capabilities: target_temperature
+
+[ISSUES] climates-TS0601_ac
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Climates-Ts0601 Ac","fr":"Climates-Ts0601 Ac"}
+  - Class: climate
+  - Capabilities: target_temperature
+
+[ISSUES] cover
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Cover","fr":"Cover"}
+  - Class: cover
+  - Capabilities: windowcoverings_state
+
+[ISSUES] covers-TS0602_cover
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Covers-Ts0602 Cover","fr":"Covers-Ts0602 Cover"}
+  - Class: cover
+  - Capabilities: windowcoverings_state
+
+[ISSUES] fan
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Fan","fr":"Fan"}
+  - Class: fan
+  - Capabilities: onoff, fan_speed
+
+[ISSUES] fan-tuya-universal
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Fan-Tuya-Universal","fr":"Fan-Tuya-Universal"}
+  - Class: fan
+  - Capabilities: onoff, fan_speed
+
+[ISSUES] fans-TS0601_fan
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Fans-Ts0601 Fan","fr":"Fans-Ts0601 Fan"}
+  - Class: fan
+  - Capabilities: onoff, fan_speed
+
+[ISSUES] fans-TS0602_fan
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Fans-Ts0602 Fan","fr":"Fans-Ts0602 Fan"}
+  - Class: fan
+  - Capabilities: onoff, fan_speed
+
+[ISSUES] generic
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Generic","fr":"Generic"}
+  - Class: other
+  - Capabilities: onoff
+
+[ISSUES] light
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Light","fr":"Light"}
+  - Class: light
+  - Capabilities: onoff, dim
+
+[ISSUES] lights-TS0501B
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Lights-Ts0501B","fr":"Lights-Ts0501B"}
+  - Class: light
+  - Capabilities: onoff, dim
+
+[ISSUES] lights-TS0601_dimmer
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Lights-Ts0601 Dimmer","fr":"Lights-Ts0601 Dimmer"}
+  - Class: light
+  - Capabilities: onoff, dim
+
+[ISSUES] lights-TS0601_rgb
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Lights-Ts0601 Rgb","fr":"Lights-Ts0601 Rgb"}
+  - Class: light
+  - Capabilities: onoff, dim
+
+[ISSUES] lights-TS0601_switch
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Lights-Ts0601 Switch","fr":"Lights-Ts0601 Switch"}
+  - Class: light
+  - Capabilities: onoff, dim
+
+[ISSUES] lock
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Lock","fr":"Lock"}
+  - Class: lock
+  - Capabilities: lock_state
+
+[ISSUES] lock-tuya-universal
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Lock-Tuya-Universal","fr":"Lock-Tuya-Universal"}
+  - Class: lock
+  - Capabilities: lock_state
+
+[ISSUES] locks-TS0601_lock
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Locks-Ts0601 Lock","fr":"Locks-Ts0601 Lock"}
+  - Class: lock
+  - Capabilities: lock_state
+
+[ISSUES] plug
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Plug","fr":"Plug"}
+  - Class: socket
+  - Capabilities: onoff, measure_power
+
+[ISSUES] plugs-TS011F
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Plugs-Ts011F","fr":"Plugs-Ts011F"}
+  - Class: socket
+  - Capabilities: onoff, measure_power
+
+[ISSUES] plugs-TS011G
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Plugs-Ts011G","fr":"Plugs-Ts011G"}
+  - Class: socket
+  - Capabilities: onoff, measure_power
+
+[ISSUES] plugs-TS011H
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Plugs-Ts011H","fr":"Plugs-Ts011H"}
+  - Class: socket
+  - Capabilities: onoff, measure_power
+
+[ISSUES] plugs-TS011I
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Plugs-Ts011I","fr":"Plugs-Ts011I"}
+  - Class: socket
+  - Capabilities: onoff, measure_power
+
+[ISSUES] plugs-TS011J
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Plugs-Ts011J","fr":"Plugs-Ts011J"}
+  - Class: socket
+  - Capabilities: onoff, measure_power
+
+[ISSUES] plugs-TS0121
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Plugs-Ts0121","fr":"Plugs-Ts0121"}
+  - Class: socket
+  - Capabilities: onoff, measure_power
+
+[ISSUES] plugs-TS0122
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Plugs-Ts0122","fr":"Plugs-Ts0122"}
+  - Class: socket
+  - Capabilities: onoff, measure_power
+
+[ISSUES] plugs-TS0123
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Plugs-Ts0123","fr":"Plugs-Ts0123"}
+  - Class: socket
+  - Capabilities: onoff, measure_power
+
+[ISSUES] plugs-TS0124
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Plugs-Ts0124","fr":"Plugs-Ts0124"}
+  - Class: socket
+  - Capabilities: onoff, measure_power
+
+[ISSUES] plugs-TS0125
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Plugs-Ts0125","fr":"Plugs-Ts0125"}
+  - Class: socket
+  - Capabilities: onoff, measure_power
+
+[ISSUES] remotes-TS0601_remote
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Remotes-Ts0601 Remote","fr":"Remotes-Ts0601 Remote"}
+  - Class: other
+  - Capabilities: onoff
+
+[ISSUES] sensor
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Sensor","fr":"Sensor"}
+  - Class: sensor
+  - Capabilities: measure_temperature
+
+[ISSUES] sensors-TS0201
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Sensors-Ts0201","fr":"Sensors-Ts0201"}
+  - Class: sensor
+  - Capabilities: measure_temperature
+
+[ISSUES] sensors-TS0601_contact
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Sensors-Ts0601 Contact","fr":"Sensors-Ts0601 Contact"}
+  - Class: sensor
+  - Capabilities: measure_temperature
+
+[ISSUES] sensors-TS0601_gas
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Sensors-Ts0601 Gas","fr":"Sensors-Ts0601 Gas"}
+  - Class: sensor
+  - Capabilities: measure_temperature
+
+[ISSUES] sensors-TS0601_motion
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Tuya TS0601 Motion Sensor","fr":"Détecteur de mouvement Tuya TS0601","nl":"Tuya TS0601 Bewegingssensor","ta":"Tuya TS0601 இயக்க உணரி"}
+  - Class: sensor
+  - Capabilities: alarm_motion, measure_temperature, measure_battery, alarm_battery
+
+[ISSUES] sensors-TS0601_sensor
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Sensors-Ts0601 Sensor","fr":"Sensors-Ts0601 Sensor"}
+  - Class: sensor
+  - Capabilities: measure_temperature
+
+[ISSUES] sensors-TS0601_smoke
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Sensors-Ts0601 Smoke","fr":"Sensors-Ts0601 Smoke"}
+  - Class: sensor
+  - Capabilities: measure_temperature
+
+[ISSUES] sensors-TS0601_vibration
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Sensors-Ts0601 Vibration","fr":"Sensors-Ts0601 Vibration"}
+  - Class: sensor
+  - Capabilities: measure_temperature
+
+[ISSUES] sensors-TS0601_water
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Sensors-Ts0601 Water","fr":"Sensors-Ts0601 Water"}
+  - Class: sensor
+  - Capabilities: measure_temperature
+
+[ISSUES] switch
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Switch","fr":"Switch"}
+  - Class: switch
+  - Capabilities: onoff
+
+[ISSUES] switches-TS0001
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Switches-Ts0001","fr":"Switches-Ts0001"}
+  - Class: switch
+  - Capabilities: onoff
+
+[ISSUES] switches-TS0002
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Switches-Ts0002","fr":"Switches-Ts0002"}
+  - Class: switch
+  - Capabilities: onoff
+
+[ISSUES] switches-TS0003
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Switches-Ts0003","fr":"Switches-Ts0003"}
+  - Class: switch
+  - Capabilities: onoff
+
+[ISSUES] switches-TS0004
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Switches-Ts0004","fr":"Switches-Ts0004"}
+  - Class: switch
+  - Capabilities: onoff
+
+[ISSUES] switches-TS0005
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Switches-Ts0005","fr":"Switches-Ts0005"}
+  - Class: switch
+  - Capabilities: onoff
+
+[ISSUES] switches-TS0006
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Switches-Ts0006","fr":"Switches-Ts0006"}
+  - Class: switch
+  - Capabilities: onoff
+
+[ISSUES] switches-TS0007
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Switches-Ts0007","fr":"Switches-Ts0007"}
+  - Class: switch
+  - Capabilities: onoff
+
+[ISSUES] switches-TS0008
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Switches-Ts0008","fr":"Switches-Ts0008"}
+  - Class: switch
+  - Capabilities: onoff
+
+[ISSUES] thermostats-TS0601_thermostat
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Thermostats-Ts0601 Thermostat","fr":"Thermostats-Ts0601 Thermostat"}
+  - Class: other
+  - Capabilities: onoff
+
+[ISSUES] thermostats-TS0603_thermostat
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Thermostats-Ts0603 Thermostat","fr":"Thermostats-Ts0603 Thermostat"}
+  - Class: other
+  - Capabilities: onoff
+
+[ISSUES] tuya
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"tuya","fr":"tuya"}
+  - Class: other
+  - Capabilities: 
+
+[ISSUES] tuya-climate-universal
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Tuya-Climate-Universal","fr":"Tuya-Climate-Universal"}
+  - Class: climate
+  - Capabilities: target_temperature
+
+[ISSUES] tuya-cover-universal
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Tuya-Cover-Universal","fr":"Tuya-Cover-Universal"}
+  - Class: cover
+  - Capabilities: windowcoverings_state
+
+[ISSUES] tuya-light-universal
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Tuya-Light-Universal","fr":"Tuya-Light-Universal"}
+  - Class: light
+  - Capabilities: onoff, dim
+
+[ISSUES] tuya-plug-universal
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Tuya-Plug-Universal","fr":"Tuya-Plug-Universal"}
+  - Class: socket
+  - Capabilities: onoff, measure_power
+
+[ISSUES] tuya-remote-universal
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Tuya-Remote-Universal","fr":"Tuya-Remote-Universal"}
+  - Class: other
+  - Capabilities: onoff
+
+[ISSUES] tuya-sensor-universal
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Tuya-Sensor-Universal","fr":"Tuya-Sensor-Universal"}
+  - Class: sensor
+  - Capabilities: measure_temperature
+
+[ISSUES] tuya-ts0011
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Tuya TS0011 Smart Switch"}
+
+[ISSUES] tuya-ts011f
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Tuya Smart Plug (TS011F)","fr":"Prise intelligente Tuya (TS011F)","nl":"Tuya Slimme stekker (TS011F)"}
+  - Class: socket
+  - Capabilities: onoff, measure_power, meter_power
+
+[ISSUES] tuya_zigbee
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Tuya Zigbee","fr":"Tuya Zigbee"}
+  - Class: other
+  - Capabilities: onoff
+
+[ISSUES] tuya_zigbee_switch
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Tuya Zigbee Switch","fr":"Interrupteur Tuya Zigbee","nl":"Tuya Zigbee Schakelaar"}
+  - Class: socket
+  - Capabilities: onoff, measure_battery, alarm_battery
+
+[ISSUES] zigbee-tuya-universal
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":"Zigbee-Tuya-Universal","fr":"Zigbee-Tuya-Universal"}
+  - Class: other
+  - Capabilities: onoff
+
+[ISSUES] _common
+  Issues:
+  - Missing icons
+  Config:
+  - Name: {"en":" Common","fr":" Common"}
+  - Class: other
+  - Capabilities: onoff
+
+============================================================
+RECOMMENDATIONS
+============================================================
+1. Fix critical issues first
+   - Start with drivers missing configuration files
+   - Then fix invalid JSON in config files
+
+2. Add missing icons
+   - Each driver should have both SVG and PNG icons
+   - Standard paths: assets/icon.svg and assets/images/large.png
+
+3. Validate configurations
+   - Check all required fields in driver.compose.json
+   - Verify capabilities match device functionality
+
+4. Documentation
+   - Update README with setup instructions
+   - Document any special requirements for each driver
+============================================================
+END OF REPORT
+============================================================

@@ -1,0 +1,34 @@
+[
+  {
+    "vendor": "Tuya",
+    "model": "TS0011",
+    "description": "Smart switch (1 gang)",
+    "exposes": [
+      "switch"
+    ],
+    "source": "zigbee2mqtt",
+    "lastUpdated": "2025-09-10T10:12:54.790Z"
+  },
+  {
+    "vendor": "Tuya",
+    "model": "TS0012",
+    "description": "Smart switch (2 gang)",
+    "exposes": [
+      "switch_left",
+      "switch_right"
+    ],
+    "source": "zigbee2mqtt",
+    "lastUpdated": "2025-09-10T10:12:54.795Z"
+  },
+  {
+    "vendor": "Tuya",
+    "model": "TS004F",
+    "description": "Wireless switch (4 button)",
+    "exposes": [
+      "battery",
+      "action"
+    ],
+    "source": "zigbee2mqtt",
+    "lastUpdated": "2025-09-10T10:12:54.795Z"
+  }
+]

@@ -1,0 +1,402 @@
+{
+  "timestamp": "2025-08-22T09:21:39.397Z",
+  "total_devices": 15,
+  "devices": [
+    {
+      "id": "TS011F_switch_1ch",
+      "name": "Tuya Smart Switch 1 Channel",
+      "manufacturer": "Tuya",
+      "model": "TS011F",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "zigbee": {
+        "manufacturer": "Tuya",
+        "model": "TS011F_switch_1ch",
+        "vendor": "Tuya",
+        "description": "1 channel switch",
+        "supports": "Zigbee 1.2"
+      },
+      "source": "blakadder",
+      "confidence_score": 73,
+      "last_seen": "2025-08-02T16:00:43.643Z"
+    },
+    {
+      "id": "TS0601_switch_2ch",
+      "name": "Tuya Smart Switch 2 Channel",
+      "manufacturer": "Tuya",
+      "model": "TS0601",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "zigbee": {
+        "manufacturer": "Tuya",
+        "model": "TS0601_switch_2ch",
+        "vendor": "Tuya",
+        "description": "2 channel switch",
+        "supports": "Zigbee 1.2"
+      },
+      "source": "blakadder",
+      "confidence_score": 94,
+      "last_seen": "2025-07-31T17:44:31.947Z"
+    },
+    {
+      "id": "TS0501B_light",
+      "name": "Tuya Smart Light Bulb",
+      "manufacturer": "Tuya",
+      "model": "TS0501B",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature"
+      ],
+      "zigbee": {
+        "manufacturer": "Tuya",
+        "model": "TS0501B_light",
+        "vendor": "Tuya",
+        "description": "Smart light bulb",
+        "supports": "Zigbee 1.2"
+      },
+      "source": "blakadder",
+      "confidence_score": 98,
+      "last_seen": "2025-08-22T05:39:32.136Z"
+    },
+    {
+      "id": "TS011F_switch_1ch",
+      "name": "Tuya Smart Switch 1 Channel",
+      "manufacturer": "Tuya",
+      "model": "TS011F",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "zigbee": {
+        "manufacturer": "Tuya",
+        "model": "TS011F_switch_1ch",
+        "vendor": "Tuya",
+        "description": "1 channel switch",
+        "supports": "Zigbee 1.2"
+      },
+      "source": "home-assistant",
+      "confidence_score": 96,
+      "last_seen": "2025-08-16T05:13:46.707Z"
+    },
+    {
+      "id": "TS0601_switch_2ch",
+      "name": "Tuya Smart Switch 2 Channel",
+      "manufacturer": "Tuya",
+      "model": "TS0601",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "zigbee": {
+        "manufacturer": "Tuya",
+        "model": "TS0601_switch_2ch",
+        "vendor": "Tuya",
+        "description": "2 channel switch",
+        "supports": "Zigbee 1.2"
+      },
+      "source": "home-assistant",
+      "confidence_score": 99,
+      "last_seen": "2025-07-27T15:36:26.403Z"
+    },
+    {
+      "id": "TS0501B_light",
+      "name": "Tuya Smart Light Bulb",
+      "manufacturer": "Tuya",
+      "model": "TS0501B",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature"
+      ],
+      "zigbee": {
+        "manufacturer": "Tuya",
+        "model": "TS0501B_light",
+        "vendor": "Tuya",
+        "description": "Smart light bulb",
+        "supports": "Zigbee 1.2"
+      },
+      "source": "home-assistant",
+      "confidence_score": 82,
+      "last_seen": "2025-07-27T19:54:10.651Z"
+    },
+    {
+      "id": "TS011F_switch_1ch",
+      "name": "Tuya Smart Switch 1 Channel",
+      "manufacturer": "Tuya",
+      "model": "TS011F",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "zigbee": {
+        "manufacturer": "Tuya",
+        "model": "TS011F_switch_1ch",
+        "vendor": "Tuya",
+        "description": "1 channel switch",
+        "supports": "Zigbee 1.2"
+      },
+      "source": "homey-forums",
+      "confidence_score": 87,
+      "last_seen": "2025-07-25T01:16:14.814Z"
+    },
+    {
+      "id": "TS0601_switch_2ch",
+      "name": "Tuya Smart Switch 2 Channel",
+      "manufacturer": "Tuya",
+      "model": "TS0601",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "zigbee": {
+        "manufacturer": "Tuya",
+        "model": "TS0601_switch_2ch",
+        "vendor": "Tuya",
+        "description": "2 channel switch",
+        "supports": "Zigbee 1.2"
+      },
+      "source": "homey-forums",
+      "confidence_score": 87,
+      "last_seen": "2025-08-09T12:25:24.848Z"
+    },
+    {
+      "id": "TS0501B_light",
+      "name": "Tuya Smart Light Bulb",
+      "manufacturer": "Tuya",
+      "model": "TS0501B",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature"
+      ],
+      "zigbee": {
+        "manufacturer": "Tuya",
+        "model": "TS0501B_light",
+        "vendor": "Tuya",
+        "description": "Smart light bulb",
+        "supports": "Zigbee 1.2"
+      },
+      "source": "homey-forums",
+      "confidence_score": 99,
+      "last_seen": "2025-08-08T01:26:14.793Z"
+    },
+    {
+      "id": "TS011F_switch_1ch",
+      "name": "Tuya Smart Switch 1 Channel",
+      "manufacturer": "Tuya",
+      "model": "TS011F",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "zigbee": {
+        "manufacturer": "Tuya",
+        "model": "TS011F_switch_1ch",
+        "vendor": "Tuya",
+        "description": "1 channel switch",
+        "supports": "Zigbee 1.2"
+      },
+      "source": "tuya-developer",
+      "confidence_score": 90,
+      "last_seen": "2025-07-24T01:53:53.077Z"
+    },
+    {
+      "id": "TS0601_switch_2ch",
+      "name": "Tuya Smart Switch 2 Channel",
+      "manufacturer": "Tuya",
+      "model": "TS0601",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "zigbee": {
+        "manufacturer": "Tuya",
+        "model": "TS0601_switch_2ch",
+        "vendor": "Tuya",
+        "description": "2 channel switch",
+        "supports": "Zigbee 1.2"
+      },
+      "source": "tuya-developer",
+      "confidence_score": 99,
+      "last_seen": "2025-08-03T13:02:36.691Z"
+    },
+    {
+      "id": "TS0501B_light",
+      "name": "Tuya Smart Light Bulb",
+      "manufacturer": "Tuya",
+      "model": "TS0501B",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature"
+      ],
+      "zigbee": {
+        "manufacturer": "Tuya",
+        "model": "TS0501B_light",
+        "vendor": "Tuya",
+        "description": "Smart light bulb",
+        "supports": "Zigbee 1.2"
+      },
+      "source": "tuya-developer",
+      "confidence_score": 78,
+      "last_seen": "2025-08-09T00:36:46.049Z"
+    },
+    {
+      "id": "TS011F_switch_1ch",
+      "name": "Tuya Smart Switch 1 Channel",
+      "manufacturer": "Tuya",
+      "model": "TS011F",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "zigbee": {
+        "manufacturer": "Tuya",
+        "model": "TS011F_switch_1ch",
+        "vendor": "Tuya",
+        "description": "1 channel switch",
+        "supports": "Zigbee 1.2"
+      },
+      "source": "zigbee2mqtt",
+      "confidence_score": 78,
+      "last_seen": "2025-07-31T07:16:20.369Z"
+    },
+    {
+      "id": "TS0601_switch_2ch",
+      "name": "Tuya Smart Switch 2 Channel",
+      "manufacturer": "Tuya",
+      "model": "TS0601",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "zigbee": {
+        "manufacturer": "Tuya",
+        "model": "TS0601_switch_2ch",
+        "vendor": "Tuya",
+        "description": "2 channel switch",
+        "supports": "Zigbee 1.2"
+      },
+      "source": "zigbee2mqtt",
+      "confidence_score": 74,
+      "last_seen": "2025-08-08T22:18:51.767Z"
+    },
+    {
+      "id": "TS0501B_light",
+      "name": "Tuya Smart Light Bulb",
+      "manufacturer": "Tuya",
+      "model": "TS0501B",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature"
+      ],
+      "zigbee": {
+        "manufacturer": "Tuya",
+        "model": "TS0501B_light",
+        "vendor": "Tuya",
+        "description": "Smart light bulb",
+        "supports": "Zigbee 1.2"
+      },
+      "source": "zigbee2mqtt",
+      "confidence_score": 72,
+      "last_seen": "2025-08-03T16:43:22.668Z"
+    }
+  ],
+  "manufacturers": {
+    "Tuya": [
+      "TS011F_switch_1ch",
+      "TS0601_switch_2ch",
+      "TS0501B_light",
+      "TS011F_switch_1ch",
+      "TS0601_switch_2ch",
+      "TS0501B_light",
+      "TS011F_switch_1ch",
+      "TS0601_switch_2ch",
+      "TS0501B_light",
+      "TS011F_switch_1ch",
+      "TS0601_switch_2ch",
+      "TS0501B_light",
+      "TS011F_switch_1ch",
+      "TS0601_switch_2ch",
+      "TS0501B_light"
+    ]
+  },
+  "capabilities": {
+    "onoff": [
+      "TS011F_switch_1ch",
+      "TS0601_switch_2ch",
+      "TS0501B_light",
+      "TS011F_switch_1ch",
+      "TS0601_switch_2ch",
+      "TS0501B_light",
+      "TS011F_switch_1ch",
+      "TS0601_switch_2ch",
+      "TS0501B_light",
+      "TS011F_switch_1ch",
+      "TS0601_switch_2ch",
+      "TS0501B_light",
+      "TS011F_switch_1ch",
+      "TS0601_switch_2ch",
+      "TS0501B_light"
+    ],
+    "measure_power": [
+      "TS011F_switch_1ch",
+      "TS0601_switch_2ch",
+      "TS011F_switch_1ch",
+      "TS0601_switch_2ch",
+      "TS011F_switch_1ch",
+      "TS0601_switch_2ch",
+      "TS011F_switch_1ch",
+      "TS0601_switch_2ch",
+      "TS011F_switch_1ch",
+      "TS0601_switch_2ch"
+    ],
+    "dim": [
+      "TS0501B_light",
+      "TS0501B_light",
+      "TS0501B_light",
+      "TS0501B_light",
+      "TS0501B_light"
+    ],
+    "light_temperature": [
+      "TS0501B_light",
+      "TS0501B_light",
+      "TS0501B_light",
+      "TS0501B_light",
+      "TS0501B_light"
+    ]
+  },
+  "sources": {
+    "blakadder": [
+      "TS011F_switch_1ch",
+      "TS0601_switch_2ch",
+      "TS0501B_light"
+    ],
+    "home-assistant": [
+      "TS011F_switch_1ch",
+      "TS0601_switch_2ch",
+      "TS0501B_light"
+    ],
+    "homey-forums": [
+      "TS011F_switch_1ch",
+      "TS0601_switch_2ch",
+      "TS0501B_light"
+    ],
+    "tuya-developer": [
+      "TS011F_switch_1ch",
+      "TS0601_switch_2ch",
+      "TS0501B_light"
+    ],
+    "zigbee2mqtt": [
+      "TS011F_switch_1ch",
+      "TS0601_switch_2ch",
+      "TS0501B_light"
+    ]
+  }
+}

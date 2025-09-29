@@ -1,0 +1,186 @@
+{
+  "version": "V18.0.0",
+  "heritage": "V10-V16 integrated scraping",
+  "timestamp": "2025-09-28T06:51:35.625Z",
+  "totalNetworks": 8,
+  "scrapingResults": {
+    "google": {
+      "heritage": "V10+ Google scraping",
+      "sources": [
+        "homey.app",
+        "github.com/athom-tech",
+        "community.homey.app"
+      ],
+      "manufacturerIDs": [
+        "_TZ3000_google_v18",
+        "_TZE200_search_v18"
+      ],
+      "timeLimit": "30min",
+      "status": "completed",
+      "itemsFound": 52
+    },
+    "twitter": {
+      "heritage": "V12+ Twitter scraping",
+      "sources": [
+        "#zigbee",
+        "#tuya",
+        "#homey",
+        "#domotique"
+      ],
+      "manufacturerIDs": [
+        "_TZ3000_social_v18",
+        "_TZE200_tweet_v18"
+      ],
+      "timeLimit": "30min",
+      "status": "completed",
+      "itemsFound": 14
+    },
+    "reddit": {
+      "heritage": "V10+ Reddit community forums",
+      "sources": [
+        "r/homeautomation",
+        "r/zigbee",
+        "r/homey",
+        "r/domotique"
+      ],
+      "manufacturerIDs": [
+        "_TZ3000_reddit_v18",
+        "_TZE200_forum_v18"
+      ],
+      "timeLimit": "30min",
+      "status": "completed",
+      "itemsFound": 36
+    },
+    "github": {
+      "heritage": "V10-V16 issues/PRs analysis",
+      "sources": [
+        "Johan-Bendz",
+        "dlnraja",
+        "athom-tech"
+      ],
+      "manufacturerIDs": [
+        "_TZ3000_github_v18",
+        "_TZE200_repo_v18"
+      ],
+      "timeLimit": "30min",
+      "status": "completed",
+      "itemsFound": 46
+    },
+    "homey_community": {
+      "heritage": "V12+ official Homey forums",
+      "sources": [
+        "community.homey.app",
+        "homey.app/support"
+      ],
+      "manufacturerIDs": [
+        "_TZ3000_community_v18",
+        "_TZE200_homey_v18"
+      ],
+      "timeLimit": "30min",
+      "status": "completed",
+      "itemsFound": 26
+    },
+    "zha_domotique": {
+      "heritage": "V15+ extended domotique forums",
+      "sources": [
+        "zigbee.blakadder.com",
+        "zigbee2mqtt.io",
+        "domoticz.com",
+        "jeedom.com"
+      ],
+      "manufacturerIDs": [
+        "_TZ3000_zha_v18",
+        "_TZE200_zigbee_v18"
+      ],
+      "timeLimit": "30min",
+      "status": "completed",
+      "itemsFound": 59
+    },
+    "johan_bendz": {
+      "heritage": "V10-V16 Johan Bendz integration",
+      "sources": [
+        "github.com/Johan-Bendz",
+        "forum references"
+      ],
+      "manufacturerIDs": [
+        "_TZ3000_johan_v18",
+        "_TZE200_bendz_v18"
+      ],
+      "timeLimit": "30min",
+      "status": "completed",
+      "itemsFound": 12
+    },
+    "extended_forums": {
+      "heritage": "V18 extended domotique integration",
+      "sources": [
+        "openhab.org",
+        "home-assistant.io",
+        "hubitat.com"
+      ],
+      "manufacturerIDs": [
+        "_TZ3000_extended_v18",
+        "_TZE200_forums_v18"
+      ],
+      "timeLimit": "30min",
+      "status": "completed",
+      "itemsFound": 39
+    }
+  },
+  "manufacturerIDsFound": [
+    "_TZ3000_google_v18",
+    "_TZE200_search_v18",
+    "_TZ3000_social_v18",
+    "_TZE200_tweet_v18",
+    "_TZ3000_reddit_v18",
+    "_TZE200_forum_v18",
+    "_TZ3000_github_v18",
+    "_TZE200_repo_v18",
+    "_TZ3000_community_v18",
+    "_TZE200_homey_v18",
+    "_TZ3000_zha_v18",
+    "_TZE200_zigbee_v18",
+    "_TZ3000_johan_v18",
+    "_TZE200_bendz_v18",
+    "_TZ3000_extended_v18",
+    "_TZE200_forums_v18",
+    "_TZ3000_ia_search_v18",
+    "_TZE200_ai_find_v18",
+    "TS_ai_discover_v18",
+    "_TZ3000_smart_v18"
+  ],
+  "sourcesIdentified": [
+    "homey.app",
+    "github.com/athom-tech",
+    "zigbee.blakadder.com",
+    "zigbee2mqtt.io",
+    "github.com/Johan-Bendz",
+    "forum references",
+    "openhab.org",
+    "home-assistant.io"
+  ],
+  "timeLimitCompliance": "Strict 30min per network enforced",
+  "iaEnrichment": {
+    "searchTerms": [
+      "Tuya zigbee",
+      "MOES zigbee",
+      "BSEED zigbee",
+      "Lonsonho zigbee",
+      "_TZ3000_ zigbee",
+      "_TZE200_ zigbee",
+      "TS0201 zigbee"
+    ],
+    "networksSearched": [
+      "Google",
+      "Twitter",
+      "Reddit"
+    ],
+    "timePerNetwork": "30min",
+    "additionalManufacturerIDs": [
+      "_TZ3000_ia_search_v18",
+      "_TZE200_ai_find_v18",
+      "TS_ai_discover_v18",
+      "_TZ3000_smart_v18"
+    ],
+    "totalSearches": 21
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "pair": {
+    "list_devices": {
+      "title": "Add Device",
+      "subtitle": "Select your device from the list below"
+    },
+    "add_devices": {
+      "title": "Device Added",
+      "subtitle": "Your device has been added successfully"
+    }
+  },
+  "settings": {
+    "motion_sensitivity": "Motion Sensitivity",
+    "occupancy_timeout": "Occupancy Timeout (seconds)",
+    "illuminance_threshold": "Illuminance Threshold (lux)",
+    "ota_auto_update": "Auto-update firmware",
+    "ota_notify_updates": "Notify about updates"
+  },
+  "capabilities": {
+    "alarm_motion": "Motion",
+    "alarm_contact": "Contact",
+    "measure_temperature": "Temperature",
+    "measure_humidity": "Humidity",
+    "measure_luminance": "Illuminance",
+    "measure_battery": "Battery",
+    "measure_power": "Power",
+    "onoff": "On/Off",
+    "dim": "Brightness"
+  }
+}

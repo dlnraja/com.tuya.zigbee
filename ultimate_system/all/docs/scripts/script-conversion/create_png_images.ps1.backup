@@ -1,0 +1,35 @@
+# Script PowerShell pour créer des images PNG conformes à Homey
+Write-Host "🎨 CRÉATION DES IMAGES PNG CONFORMES..." -ForegroundColor Green
+
+# Créer le dossier assets s'il n'existe pas
+if (!(Test-Path "assets")) {
+    New-Item -ItemType Directory -Path "assets" -Force
+    Write-Host "📁 Dossier assets créé" -ForegroundColor Yellow
+}
+
+# Créer une image PNG basique 75x75 (small)
+$smallSvg = @"
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="75" height="75" viewBox="0 0 75 75" xmlns="http://www.w3.org/2000/svg">
+  <rect width="75" height="75" fill="#FF6B35"/>
+  <text x="37.5" y="37.5" text-anchor="middle" dy=".3em" font-family="Arial" font-size="8" fill="white" font-weight="bold">TUYA</text>
+</svg>
+"@
+
+$smallSvg | Out-File -FilePath "assets/small.svg" -Encoding UTF8
+Write-Host "✅ Image small.svg créée (75x75)" -ForegroundColor Green
+
+# Créer une image PNG basique 256x256 (large)
+$largeSvg = @"
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <rect width="256" height="256" fill="#FF6B35"/>
+  <text x="128" y="128" text-anchor="middle" dy=".3em" font-family="Arial" font-size="24" fill="white" font-weight="bold">TUYA</text>
+  <text x="128" y="160" text-anchor="middle" font-family="Arial" font-size="16" fill="white">ZIGBEE</text>
+</svg>
+"@
+
+$largeSvg | Out-File -FilePath "assets/large.svg" -Encoding UTF8
+Write-Host "✅ Image large.svg créée (256x256)" -ForegroundColor Green
+
+Write-Host "🎯 Images SVG créées avec succès !" -ForegroundColor Green

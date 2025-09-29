@@ -1,0 +1,1290 @@
+{
+  "updated": "2025-09-02T08:26:31.835Z",
+  "drivers": {
+    "base": {
+      "name": "base",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "climate": {
+      "name": "climate",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": false,
+        "target_temperature": true,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "climates-TS0601_ac": {
+      "name": "climates-TS0601_ac",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": false,
+        "target_temperature": true,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "cover": {
+      "name": "cover",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": false,
+        "target_temperature": false,
+        "windowcoverings_state": true,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "covers-TS0602_cover": {
+      "name": "covers-TS0602_cover",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": false,
+        "target_temperature": false,
+        "windowcoverings_state": true,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "fan": {
+      "name": "fan",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": true,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "fan-tuya-universal": {
+      "name": "fan-tuya-universal",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": true,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "fans-TS0601_fan": {
+      "name": "fans-TS0601_fan",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": true,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "fans-TS0602_fan": {
+      "name": "fans-TS0602_fan",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": true,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "generic": {
+      "name": "generic",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "light": {
+      "name": "light",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": true,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "lights-TS0501B": {
+      "name": "lights-TS0501B",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": true,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "lights-TS0601_dimmer": {
+      "name": "lights-TS0601_dimmer",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": true,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "lights-TS0601_rgb": {
+      "name": "lights-TS0601_rgb",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": true,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "lights-TS0601_switch": {
+      "name": "lights-TS0601_switch",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": true,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "lock": {
+      "name": "lock",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": false,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": true,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "lock-tuya-universal": {
+      "name": "lock-tuya-universal",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": false,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": true,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "locks-TS0601_lock": {
+      "name": "locks-TS0601_lock",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": false,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": true,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "plug": {
+      "name": "plug",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": true,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "plugs-TS011F": {
+      "name": "plugs-TS011F",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": true,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "plugs-TS011G": {
+      "name": "plugs-TS011G",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": true,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "plugs-TS011H": {
+      "name": "plugs-TS011H",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": true,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "plugs-TS011I": {
+      "name": "plugs-TS011I",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": true,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "plugs-TS011J": {
+      "name": "plugs-TS011J",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": true,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "plugs-TS0121": {
+      "name": "plugs-TS0121",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": true,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "plugs-TS0122": {
+      "name": "plugs-TS0122",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": true,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "plugs-TS0123": {
+      "name": "plugs-TS0123",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": true,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "plugs-TS0124": {
+      "name": "plugs-TS0124",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": true,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "plugs-TS0125": {
+      "name": "plugs-TS0125",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": true,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "remotes-TS0601_remote": {
+      "name": "remotes-TS0601_remote",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "sensor": {
+      "name": "sensor",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": false,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": true,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "sensors-TS0201": {
+      "name": "sensors-TS0201",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": false,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": true,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "sensors-TS0601_contact": {
+      "name": "sensors-TS0601_contact",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": false,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": true,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "sensors-TS0601_gas": {
+      "name": "sensors-TS0601_gas",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": false,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": true,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "sensors-TS0601_motion": {
+      "name": "sensors-TS0601_motion",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": true,
+        "windowcoverings_state": true,
+        "fan_speed": true,
+        "dim": true,
+        "lock_state": true,
+        "measure_power": true,
+        "measure_temperature": true,
+        "alarm_motion": true,
+        "measure_battery": true,
+        "alarm_battery": true,
+        "meter_power": true
+      }
+    },
+    "sensors-TS0601_sensor": {
+      "name": "sensors-TS0601_sensor",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": false,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": true,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "sensors-TS0601_smoke": {
+      "name": "sensors-TS0601_smoke",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": false,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": true,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "sensors-TS0601_vibration": {
+      "name": "sensors-TS0601_vibration",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": false,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": true,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "sensors-TS0601_water": {
+      "name": "sensors-TS0601_water",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": false,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": true,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "switch": {
+      "name": "switch",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "switches-TS0001": {
+      "name": "switches-TS0001",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "switches-TS0002": {
+      "name": "switches-TS0002",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "switches-TS0003": {
+      "name": "switches-TS0003",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "switches-TS0004": {
+      "name": "switches-TS0004",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "switches-TS0005": {
+      "name": "switches-TS0005",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "switches-TS0006": {
+      "name": "switches-TS0006",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "switches-TS0007": {
+      "name": "switches-TS0007",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "switches-TS0008": {
+      "name": "switches-TS0008",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "thermostats-TS0601_thermostat": {
+      "name": "thermostats-TS0601_thermostat",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "thermostats-TS0603_thermostat": {
+      "name": "thermostats-TS0603_thermostat",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "tuya": {
+      "name": "tuya",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": false,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "tuya-climate-universal": {
+      "name": "tuya-climate-universal",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": false,
+        "target_temperature": true,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "tuya-cover-universal": {
+      "name": "tuya-cover-universal",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": false,
+        "target_temperature": false,
+        "windowcoverings_state": true,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "tuya-light-universal": {
+      "name": "tuya-light-universal",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": true,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "tuya-plug-universal": {
+      "name": "tuya-plug-universal",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": true,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "tuya-remote-universal": {
+      "name": "tuya-remote-universal",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "tuya-sensor-universal": {
+      "name": "tuya-sensor-universal",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": false,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": true,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "tuya-ts0011": {
+      "name": "tuya-ts0011",
+      "type": [
+        "switch"
+      ],
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": false,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "tuya-ts011f": {
+      "name": "tuya-ts011f",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": true,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": true
+      }
+    },
+    "zigbee": {
+      "name": "zigbee",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "zigbee_switch": {
+      "name": "zigbee_switch",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": true,
+        "alarm_battery": true,
+        "meter_power": false
+      }
+    },
+    "zigbee-tuya-universal": {
+      "name": "zigbee-tuya-universal",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "common": {
+      "name": "common",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": true,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    },
+    "template": {
+      "name": "template",
+      "type": "unknown",
+      "manufacturer": "unknown",
+      "model": "unknown",
+      "capabilities": {
+        "onoff": false,
+        "target_temperature": false,
+        "windowcoverings_state": false,
+        "fan_speed": false,
+        "dim": false,
+        "lock_state": false,
+        "measure_power": false,
+        "measure_temperature": false,
+        "alarm_motion": false,
+        "measure_battery": false,
+        "alarm_battery": false,
+        "meter_power": false
+      }
+    }
+  },
+  "lastEnriched": "2025-09-15T11:32:56.769Z",
+  "githubData": 5,
+  "deviceCount": 0
+}

@@ -1,0 +1,827 @@
+{
+  "timestamp": "2025-09-14T20:57:09.413273",
+  "total_devices_processed": 101,
+  "drivers_generated": 101,
+  "drivers_updated": 0,
+  "generated_drivers": [
+    {
+      "driver_id": "tuya_smart_temperature_and_humidity_sensor_tuya",
+      "device_name": "Tuya Smart Temperature And Humidity Sensor- Tuya",
+      "manufacturer": "TUYA",
+      "model": "CK-TLSR8656-SS5-01(7014)",
+      "path": "drivers\\tuya_smart_temperature_and_humidity_sensor_tuya",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1284"
+    },
+    {
+      "driver_id": "tuya_zigbee_2_gang_switch",
+      "device_name": "Tuya Zigbee 2 gang switch",
+      "manufacturer": "TUYA",
+      "model": "TS0012 (This one is already supported in v0.2.73!) - Issue can be removed",
+      "path": "drivers\\tuya_zigbee_2_gang_switch",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1283"
+    },
+    {
+      "driver_id": "zigbee_smart_dimmer_switch_module_timer",
+      "device_name": "Zigbee Smart Dimmer Switch Module Timer",
+      "manufacturer": "MOES",
+      "model": "ZM-105-M",
+      "path": "drivers\\zigbee_smart_dimmer_switch_module_timer",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1282"
+    },
+    {
+      "driver_id": "device_name",
+      "device_name": "Device name",
+      "manufacturer": "manufacturerName",
+      "model": "modelId",
+      "path": "drivers\\device_name",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/890"
+    },
+    {
+      "driver_id": "tuya_smart_zigbee_soil_tester_temperature_and_humi",
+      "device_name": "[Tuya Smart Zigbee Soil Tester Temperature and Humidity Meter]",
+      "manufacturer": "[TS0601",
+      "model": "_TZE284_myd45weu]",
+      "path": "drivers\\tuya_smart_zigbee_soil_tester_temperature_and_humi",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1280"
+    },
+    {
+      "driver_id": "smoke_detector",
+      "device_name": "smoke detector",
+      "manufacturer": "onenuo",
+      "model": "TZE284_n4ttsck2",
+      "path": "drivers\\smoke_detector",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1279"
+    },
+    {
+      "driver_id": "2_gang_zigbee_switches",
+      "device_name": "2 Gang Zigbee Switches",
+      "manufacturer": "BSEED",
+      "model": "TS0012",
+      "path": "drivers\\2_gang_zigbee_switches",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1278"
+    },
+    {
+      "driver_id": "woodupp_create_led",
+      "device_name": "WoodUpp CREATE LED",
+      "manufacturer": "WoodUpp",
+      "model": "CREATE LED",
+      "path": "drivers\\woodupp_create_led",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1276"
+    },
+    {
+      "driver_id": "tuya_smart_thermostatic_radiator_valve",
+      "device_name": "Tuya Smart Thermostatic Radiator Valve",
+      "manufacturer": "manufacturerName",
+      "model": "TRV602-Zigbee",
+      "path": "drivers\\tuya_smart_thermostatic_radiator_valve",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1274"
+    },
+    {
+      "driver_id": "zigbee_rain_brightness_light_sensor",
+      "device_name": "Zigbee Rain & Brightness Light Sensor",
+      "manufacturer": "HOBEIAN",
+      "model": "ZG-223Z",
+      "path": "drivers\\zigbee_rain_brightness_light_sensor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1273"
+    },
+    {
+      "driver_id": "zigbee_rain_brightness_light_sensor",
+      "device_name": "Zigbee Rain & Brightness Light Sensor",
+      "manufacturer": "_TZE200_u6x1zyv2",
+      "model": "TS0601",
+      "path": "drivers\\zigbee_rain_brightness_light_sensor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1272"
+    },
+    {
+      "driver_id": "zigbee_wireless_button",
+      "device_name": "Zigbee Wireless Button",
+      "manufacturer": "Tuya",
+      "model": "LQ-01",
+      "path": "drivers\\zigbee_wireless_button",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1271"
+    },
+    {
+      "driver_id": "human_presence_sensor",
+      "device_name": "Human presence sensor",
+      "manufacturer": "Wenzhou Wenzhi Automation  [ _TZ321C_fkzihax8 ]",
+      "model": "Zigbee 5.8G Radar [ TS0225 ]",
+      "path": "drivers\\human_presence_sensor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1270"
+    },
+    {
+      "driver_id": "zigbee_smart_button",
+      "device_name": "Zigbee Smart Button",
+      "manufacturer": "_TZ3000_5bpeda8u",
+      "model": "TS0041",
+      "path": "drivers\\zigbee_smart_button",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1268"
+    },
+    {
+      "driver_id": "zigbee_pir_sensor_with_lux",
+      "device_name": "Zigbee PIR Sensor with lux",
+      "manufacturer": "HOBEIAN",
+      "model": "ZG-204ZL",
+      "path": "drivers\\zigbee_pir_sensor_with_lux",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1267"
+    },
+    {
+      "driver_id": "wall_switch_1_gang",
+      "device_name": "Wall Switch 1 Gang",
+      "manufacturer": "MOES",
+      "model": "_TZ3000_bzzgvet0",
+      "path": "drivers\\wall_switch_1_gang",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1265"
+    },
+    {
+      "driver_id": "4_gang_wall_remote",
+      "device_name": "4 Gang Wall Remote",
+      "manufacturer": "_TZ3000_5tqxpine",
+      "model": "TS0044",
+      "path": "drivers\\4_gang_wall_remote",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1264"
+    },
+    {
+      "driver_id": "motion_sensor_with_temperature_humidity",
+      "device_name": "Motion sensor with Temperature & Humidity",
+      "manufacturer": "HOBEIAN",
+      "model": "ZG-204ZV",
+      "path": "drivers\\motion_sensor_with_temperature_humidity",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1263"
+    },
+    {
+      "driver_id": "smart_knob",
+      "device_name": "Smart Knob",
+      "manufacturer": "_TZ3000_gwkzibhs",
+      "model": "TS004F",
+      "path": "drivers\\smart_knob",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1256"
+    },
+    {
+      "driver_id": "smart_plug",
+      "device_name": "Smart Plug",
+      "manufacturer": "_TZ3000_iiacqpdz",
+      "model": "TS011F",
+      "path": "drivers\\smart_plug",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1252"
+    },
+    {
+      "driver_id": "temperaturemoisture_meter",
+      "device_name": "Temperature/Moisture meter",
+      "manufacturer": "TZ3000_tsgqxdb4",
+      "model": "TS0201",
+      "path": "drivers\\temperaturemoisture_meter",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1246"
+    },
+    {
+      "driver_id": "_tze200_vvmbj46n",
+      "device_name": "_TZE200_vvmbj46n",
+      "manufacturer": "Tuya",
+      "model": "TS0601",
+      "path": "drivers\\_tze200_vvmbj46n",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1003"
+    },
+    {
+      "driver_id": "wall_switch_with_blug_and_usb",
+      "device_name": "Wall switch with blug and USB",
+      "manufacturer": "_TZ3000_lqb7lcq9",
+      "model": "TS011F",
+      "path": "drivers\\wall_switch_with_blug_and_usb",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1244"
+    },
+    {
+      "driver_id": "tuya_zigbee_smart_ir_remote",
+      "device_name": "tuya zigbee smart IR-remote",
+      "manufacturer": "tuya",
+      "model": "CB3S or ih-f8260",
+      "path": "drivers\\tuya_zigbee_smart_ir_remote",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1240"
+    },
+    {
+      "driver_id": "zigbee_light_switch_push_button",
+      "device_name": "Zigbee Light Switch Push Button",
+      "manufacturer": "_TZ3000_zxrfobzw",
+      "model": "TS0002",
+      "path": "drivers\\zigbee_light_switch_push_button",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1239"
+    },
+    {
+      "driver_id": "soil_temperature_moisture_plant_sensor",
+      "device_name": "[Soil Temperature Moisture Plant Sensor]",
+      "manufacturer": "_TZE200_npj9bug3",
+      "model": "TS0601",
+      "path": "drivers\\soil_temperature_moisture_plant_sensor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1238"
+    },
+    {
+      "driver_id": "tuya_zigbee_temperature_sensor",
+      "device_name": "Tuya Zigbee Temperature Sensor",
+      "manufacturer": "_TZ3000_1o6x1bl0",
+      "model": "TS0201",
+      "path": "drivers\\tuya_zigbee_temperature_sensor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1235"
+    },
+    {
+      "driver_id": "tuya_zigbee_soil_moisture_sensor",
+      "device_name": "Tuya Zigbee Soil Moisture Sensor",
+      "manufacturer": "_TZE200_wqashyqo",
+      "model": "TS0601",
+      "path": "drivers\\tuya_zigbee_soil_moisture_sensor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1234"
+    },
+    {
+      "driver_id": "temperature_and_humidity_sensor",
+      "device_name": "Temperature and Humidity sensor",
+      "manufacturer": "[manufacturerName]",
+      "model": "TS0201",
+      "path": "drivers\\temperature_and_humidity_sensor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1232"
+    },
+    {
+      "driver_id": "insoma_water_timer",
+      "device_name": "Insoma Water Timer",
+      "manufacturer": "_TZE284_fhvpaltk",
+      "model": "TS0601",
+      "path": "drivers\\insoma_water_timer",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1226"
+    },
+    {
+      "driver_id": "device_name",
+      "device_name": "Device name",
+      "manufacturer": "_TZ3000_xkap8wtb",
+      "model": "TS000F",
+      "path": "drivers\\device_name",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1225"
+    },
+    {
+      "driver_id": "soil_sensor",
+      "device_name": "Soil sensor",
+      "manufacturer": "_TZE284_nhgdf6qr",
+      "model": "TS0601",
+      "path": "drivers\\soil_sensor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1223"
+    },
+    {
+      "driver_id": "mini_curtain_switch_module",
+      "device_name": "Mini Curtain Switch Module",
+      "manufacturer": "Moes",
+      "model": "TS130F, _TZ3210_zana8d08",
+      "path": "drivers\\mini_curtain_switch_module",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1222"
+    },
+    {
+      "driver_id": "moes_bliend_motor",
+      "device_name": "MOES Bliend Motor",
+      "manufacturer": "[MOES]",
+      "model": "[TS0601]",
+      "path": "drivers\\moes_bliend_motor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1217"
+    },
+    {
+      "driver_id": "avatto_tuya_zigbee_e_ink_screen_temperature_and_hu",
+      "device_name": "AVATTO Tuya ZigBee E-ink Screen Temperature And Humidity Sensor",
+      "manufacturer": "_TZE204_s139roas",
+      "model": "TS0601",
+      "path": "drivers\\avatto_tuya_zigbee_e_ink_screen_temperature_and_hu",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1214"
+    },
+    {
+      "driver_id": "ewelink_gu10_zigbee_led_lampen",
+      "device_name": "Ewelink GU10 Zigbee LED-lampen",
+      "manufacturer": "eWeLink",
+      "model": "CK-BL702-AL-01(7009_Z102LG03-1)",
+      "path": "drivers\\ewelink_gu10_zigbee_led_lampen",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1213"
+    },
+    {
+      "driver_id": "18w_15w_tuya_zigbee_smart_home_led_lamp",
+      "device_name": "18W 15W Tuya zigbee Smart Home Led Lamp",
+      "manufacturer": "_TZ3210_r5afgmkl",
+      "model": "TS0505B",
+      "path": "drivers\\18w_15w_tuya_zigbee_smart_home_led_lamp",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1212"
+    },
+    {
+      "driver_id": "water_leak_detector",
+      "device_name": "Water Leak detector",
+      "manufacturer": "_TZ3000_upgcbody",
+      "model": "SNZB-05",
+      "path": "drivers\\water_leak_detector",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1211"
+    },
+    {
+      "driver_id": "valve_controller_white",
+      "device_name": "Valve Controller White",
+      "manufacturer": "_TZE284_d0ypnbvn",
+      "model": "TS0601 (working code is attached)",
+      "path": "drivers\\valve_controller_white",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1208"
+    },
+    {
+      "driver_id": "cr_rnz1",
+      "device_name": "[CR-RNZ1]",
+      "manufacturer": "_TZ3000_x3ewpzyr",
+      "model": "TS0001",
+      "path": "drivers\\cr_rnz1",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1207"
+    },
+    {
+      "driver_id": "human_presence_detector",
+      "device_name": "Human Presence Detector",
+      "manufacturer": "Tuya - _TZ3000_5k5vh43t",
+      "model": "TS0207",
+      "path": "drivers\\human_presence_detector",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1206"
+    },
+    {
+      "driver_id": "usb_micro_switch_single",
+      "device_name": "usb micro switch (single)",
+      "manufacturer": "tuya",
+      "model": "TS0001",
+      "path": "drivers\\usb_micro_switch_single",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1203"
+    },
+    {
+      "driver_id": "moes_star_ring_smart_knob_thermostat",
+      "device_name": "Moes Star Ring Smart Knob Thermostat",
+      "manufacturer": "MOES",
+      "model": "_TZE204_lpedvtvr / TS0601",
+      "path": "drivers\\moes_star_ring_smart_knob_thermostat",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1202"
+    },
+    {
+      "driver_id": "zigbee_1_gang_dimmer",
+      "device_name": "Zigbee 1 gang dimmer",
+      "manufacturer": "_TZE204_nqqylykc",
+      "model": "TS0601",
+      "path": "drivers\\zigbee_1_gang_dimmer",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1201"
+    },
+    {
+      "driver_id": "smart_curtain_robot",
+      "device_name": "smart curtain robot",
+      "manufacturer": "_TZE200_cpbo62rn",
+      "model": "TS0601",
+      "path": "drivers\\smart_curtain_robot",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1200"
+    },
+    {
+      "driver_id": "lcd_temperature_humidity_sensor",
+      "device_name": "LCD temperature & humidity sensor",
+      "manufacturer": "_TZ3210_ncw88jfq",
+      "model": "TS0201",
+      "path": "drivers\\lcd_temperature_humidity_sensor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1199"
+    },
+    {
+      "driver_id": "zigbee_smart_plug",
+      "device_name": "Zigbee Smart Plug",
+      "manufacturer": "Tuya",
+      "model": "XH-TZ3PJ",
+      "path": "drivers\\zigbee_smart_plug",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1198"
+    },
+    {
+      "driver_id": "tuya",
+      "device_name": "Tuya",
+      "manufacturer": "Tuya Zigbee 3.0 Temperature and Humidity Smart Home Thermometer Hygrometer",
+      "model": "ZY-ZTH02",
+      "path": "drivers\\tuya",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1197"
+    },
+    {
+      "driver_id": "pir_sensor_pir1_zb",
+      "device_name": "PIR Sensor PIR1-ZB",
+      "manufacturer": "MiBoxer, Mi-Light, LIGHTEU",
+      "model": "TS0202",
+      "path": "drivers\\pir_sensor_pir1_zb",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1193"
+    },
+    {
+      "driver_id": "motion_sensor_with_lux",
+      "device_name": "Motion sensor with Lux",
+      "manufacturer": "AliExpress",
+      "model": "TS0601",
+      "path": "drivers\\motion_sensor_with_lux",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1192"
+    },
+    {
+      "driver_id": "device_request_3_button_switch",
+      "device_name": "Device Request -3 button switch",
+      "manufacturer": "_TZ3000_bczr4e10",
+      "model": "[TS0043]",
+      "path": "drivers\\device_request_3_button_switch",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1190"
+    },
+    {
+      "driver_id": "tuya_zigbee_doorwindow_sensor_aliexpress",
+      "device_name": "Tuya Zigbee Door/Window Sensor - AliExpress",
+      "manufacturer": "_TZ3000_n2egfsli",
+      "model": "SNZB-04",
+      "path": "drivers\\tuya_zigbee_doorwindow_sensor_aliexpress",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/998"
+    },
+    {
+      "driver_id": "device_request_already_fixed_girier_tuya_smart_zig",
+      "device_name": "Device Request / already fixed- GIRIER Tuya Smart ZigBee",
+      "manufacturer": "GIRIER",
+      "model": "_TZ3000_ltt60asa TS0004",
+      "path": "drivers\\device_request_already_fixed_girier_tuya_smart_zig",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1187"
+    },
+    {
+      "driver_id": "zigbee_intelligent_curtain_motor",
+      "device_name": "ZigBee Intelligent curtain motor",
+      "manufacturer": "Autorail \"_TZE204_bjzrowv2\"",
+      "model": "\"TS0601\"",
+      "path": "drivers\\zigbee_intelligent_curtain_motor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1186"
+    },
+    {
+      "driver_id": "radar_sensor",
+      "device_name": "Radar Sensor",
+      "manufacturer": "_TZE200_ya4ft0w4",
+      "model": "TS0601",
+      "path": "drivers\\radar_sensor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1185"
+    },
+    {
+      "driver_id": "radar_sensor",
+      "device_name": "Radar Sensor",
+      "manufacturer": "_TZE204_nbkshs6k",
+      "model": "TS0601",
+      "path": "drivers\\radar_sensor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1183"
+    },
+    {
+      "driver_id": "gu10_zigbee_rgbcct_5w_bulb",
+      "device_name": "GU10 Zigbee RGBCCT 5W bulb",
+      "manufacturer": "MOES",
+      "model": "TS0505B _TZ3210_rcggc0ys",
+      "path": "drivers\\gu10_zigbee_rgbcct_5w_bulb",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1182"
+    },
+    {
+      "driver_id": "zigbee_1ch_th_smart_switch",
+      "device_name": "Zigbee 1CH TH Smart Switch",
+      "manufacturer": "_TZ3218_7fiyo3kv",
+      "model": "TS000F",
+      "path": "drivers\\zigbee_1ch_th_smart_switch",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1176"
+    },
+    {
+      "driver_id": "temperature_humidity_tz3000_akqdg6g7",
+      "device_name": "Temperature-Humidity- TZ3000_akqdg6g7",
+      "manufacturer": "TUYA",
+      "model": "TS0201",
+      "path": "drivers\\temperature_humidity_tz3000_akqdg6g7",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1174"
+    },
+    {
+      "driver_id": "moes_smart_scene_switch_4button_wireless",
+      "device_name": "MOES Smart Scene Switch 4Button Wireless",
+      "manufacturer": "_TZ3000_kfu8zapd",
+      "model": "TS0044",
+      "path": "drivers\\moes_smart_scene_switch_4button_wireless",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1173"
+    },
+    {
+      "driver_id": "door_windows_sensor",
+      "device_name": "Door-Windows sensor",
+      "manufacturer": "eWeLink",
+      "model": "SNZB-04",
+      "path": "drivers\\door_windows_sensor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1170"
+    },
+    {
+      "driver_id": "tuya_2_in_1_zigbee_mini_pir_motion_detector_bright",
+      "device_name": "Tuya 2 in 1 Zigbee Mini PIR Motion Detector +Bright Lux",
+      "manufacturer": "_TZE200_3towulqd",
+      "model": "TS0601",
+      "path": "drivers\\tuya_2_in_1_zigbee_mini_pir_motion_detector_bright",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1169"
+    },
+    {
+      "driver_id": "smart_socket_ip_3010s",
+      "device_name": "Smart Socket IP-3010S",
+      "manufacturer": "EMOS",
+      "model": "IP-3010S",
+      "path": "drivers\\smart_socket_ip_3010s",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1168"
+    },
+    {
+      "driver_id": "temperature_humidity_sensor",
+      "device_name": "Temperature Humidity Sensor",
+      "manufacturer": "manufacturerName not specificed",
+      "model": "modelId: \"TS0201\"",
+      "path": "drivers\\temperature_humidity_sensor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1224"
+    },
+    {
+      "driver_id": "mi_light",
+      "device_name": "Mi-Light",
+      "manufacturer": "TUYA",
+      "model": "T0202 TZ0304",
+      "path": "drivers\\mi_light",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1184"
+    },
+    {
+      "driver_id": "one_gang_switch_moes",
+      "device_name": "One Gang Switch- MOES",
+      "manufacturer": "TUYA",
+      "model": "TS0011 _TZ3000_hhiodade",
+      "path": "drivers\\one_gang_switch_moes",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1181"
+    },
+    {
+      "driver_id": "two_gang_switch",
+      "device_name": "Two Gang Switch",
+      "manufacturer": "MOES",
+      "model": "TS0012 _TZ3000_18ejxno0",
+      "path": "drivers\\two_gang_switch",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1180"
+    },
+    {
+      "driver_id": "device_request_ceilling_human_presence_sensor",
+      "device_name": "Device Request -Ceilling Human Presence Sensor",
+      "manufacturer": "Wenzhi",
+      "model": "WZ-M100-C",
+      "path": "drivers\\device_request_ceilling_human_presence_sensor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1156"
+    },
+    {
+      "driver_id": "zigbee_smart_plug",
+      "device_name": "Zigbee Smart Plug",
+      "manufacturer": "TZ3000_w0qqde0g",
+      "model": "TS011F",
+      "path": "drivers\\zigbee_smart_plug",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1148"
+    },
+    {
+      "driver_id": "zigbee_smart_dimmer_module",
+      "device_name": "Zigbee Smart Dimmer Module",
+      "manufacturer": "Avatto",
+      "model": "DMS16/ZDMS16",
+      "path": "drivers\\zigbee_smart_dimmer_module",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1132"
+    },
+    {
+      "driver_id": "tomzn_zigbee_rail_relais_63a_1p_n",
+      "device_name": "TOMZN Zigbee Rail relais 63A 1P + N",
+      "manufacturer": "TOMZ smartlife",
+      "model": "TOB9Z-M",
+      "path": "drivers\\tomzn_zigbee_rail_relais_63a_1p_n",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1099"
+    },
+    {
+      "driver_id": "thermo_hygrometer",
+      "device_name": "Thermo-Hygrometer",
+      "manufacturer": "Shenzhen Huayuan",
+      "model": "TH02",
+      "path": "drivers\\thermo_hygrometer",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1095"
+    },
+    {
+      "driver_id": "smart_rotary_dimmer",
+      "device_name": "Smart Rotary Dimmer",
+      "manufacturer": "MOES",
+      "model": "modelId",
+      "path": "drivers\\smart_rotary_dimmer",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1090"
+    },
+    {
+      "driver_id": "2_gang_zigbee_dimmer",
+      "device_name": "2 Gang Zigbee Dimmer",
+      "manufacturer": "_TZ3000_7ysdnebc",
+      "model": "TS1101",
+      "path": "drivers\\2_gang_zigbee_dimmer",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1086"
+    },
+    {
+      "driver_id": "tuya_zigbee_smart_curtain_motor",
+      "device_name": "Tuya zigbee smart curtain motor",
+      "manufacturer": "Leisguar",
+      "model": "LS82-Tuya-zigbee smart curtain motor",
+      "path": "drivers\\tuya_zigbee_smart_curtain_motor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1070"
+    },
+    {
+      "driver_id": "temperature_and_humidity_sensor",
+      "device_name": "Temperature and humidity sensor",
+      "manufacturer": "Tuya",
+      "model": "_TZ3000_akqdg6g7",
+      "path": "drivers\\temperature_and_humidity_sensor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1040"
+    },
+    {
+      "driver_id": "outdoor_power_plug",
+      "device_name": "Outdoor power plug",
+      "manufacturer": "Nedis ZBP0130FWT",
+      "model": "TS011F",
+      "path": "drivers\\outdoor_power_plug",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1036"
+    },
+    {
+      "driver_id": "bseed_wall_socket_with_metering_and_2x_usb",
+      "device_name": "BSEED Wall Socket with metering and 2x usb",
+      "manufacturer": "TS011F",
+      "model": "_TZ3000_5ct6e7ye",
+      "path": "drivers\\bseed_wall_socket_with_metering_and_2x_usb",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1019"
+    },
+    {
+      "driver_id": "smart_button",
+      "device_name": "Smart Button",
+      "manufacturer": "_TZ3000_ja5osu5g",
+      "model": "TS004F",
+      "path": "drivers\\smart_button",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1011"
+    },
+    {
+      "driver_id": "human_presence_sensor",
+      "device_name": "Human Presence Sensor",
+      "manufacturer": "Tuya",
+      "model": "ZG-204ZM",
+      "path": "drivers\\human_presence_sensor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1002"
+    },
+    {
+      "driver_id": "smart_switch_with_power_monitor",
+      "device_name": "[Smart Switch with Power Monitor]",
+      "manufacturer": "[TS0207",
+      "model": "_TZ3000_nkkl7uzv]",
+      "path": "drivers\\smart_switch_with_power_monitor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/988"
+    },
+    {
+      "driver_id": "temp_and_hum_sensor",
+      "device_name": "Temp and Hum Sensor",
+      "manufacturer": "_TZE200_a8sdabtg",
+      "model": "TS0601",
+      "path": "drivers\\temp_and_hum_sensor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/979"
+    },
+    {
+      "driver_id": "moes_smart_thermostatic_radiator_valve",
+      "device_name": "MOES Smart Thermostatic Radiator Valve",
+      "manufacturer": "_TZE200_ckud7u2l",
+      "model": "TS0601",
+      "path": "drivers\\moes_smart_thermostatic_radiator_valve",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/975"
+    },
+    {
+      "driver_id": "nodon",
+      "device_name": "NODON",
+      "manufacturer": "NODON Fil pilote",
+      "model": "SIN-4-FP-21",
+      "path": "drivers\\nodon",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/973"
+    },
+    {
+      "driver_id": "smart_switch",
+      "device_name": "Smart Switch",
+      "manufacturer": "_TZ3000_3u4hripk",
+      "model": "TS0011",
+      "path": "drivers\\smart_switch",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/971"
+    },
+    {
+      "driver_id": "one_gang_switch_module",
+      "device_name": "One gang switch module",
+      "manufacturer": "_TZ3000_prits6g4",
+      "model": "TS0001",
+      "path": "drivers\\one_gang_switch_module",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/970"
+    },
+    {
+      "driver_id": "3_gang_wall_switch",
+      "device_name": "3 Gang Wall Switch",
+      "manufacturer": "_TZ3000_aezbqpcu",
+      "model": "TS0013",
+      "path": "drivers\\3_gang_wall_switch",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/969"
+    },
+    {
+      "driver_id": "door_windows_sensor_zd08",
+      "device_name": "Door & Windows Sensor ZD08",
+      "manufacturer": "_TZ3000_1bwpjvlz",
+      "model": "TS0203",
+      "path": "drivers\\door_windows_sensor_zd08",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/967"
+    },
+    {
+      "driver_id": "door_window_sensor",
+      "device_name": "Door / Window sensor",
+      "manufacturer": "Tuya",
+      "model": "TS0203 _TZ3000_au2o5e6q",
+      "path": "drivers\\door_window_sensor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/938"
+    },
+    {
+      "driver_id": "smart_knob_switch_ts004f",
+      "device_name": "Smart Knob Switch TS004F",
+      "manufacturer": "TUYA",
+      "model": "_TZ3000_abrsvsou",
+      "path": "drivers\\smart_knob_switch_ts004f",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/929"
+    },
+    {
+      "driver_id": "temperature_and_humidity_sensor",
+      "device_name": "Temperature and humidity sensor",
+      "manufacturer": "_TZ3000_xr3htd96",
+      "model": "TS0201",
+      "path": "drivers\\temperature_and_humidity_sensor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/922"
+    },
+    {
+      "driver_id": "smart_home_3_gang_zigbee",
+      "device_name": "Smart Home 3 gang Zigbee",
+      "manufacturer": "_TZ3000_w05exif3",
+      "model": "TS0003",
+      "path": "drivers\\smart_home_3_gang_zigbee",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/918"
+    },
+    {
+      "driver_id": "smart_home_2_gang_zigbee",
+      "device_name": "Smart Home 2 gang Zigbee",
+      "manufacturer": "_TZ3000_mklgayek",
+      "model": "TS0002",
+      "path": "drivers\\smart_home_2_gang_zigbee",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/917"
+    },
+    {
+      "driver_id": "smart_home_1_gang_zigbee",
+      "device_name": "Smart Home 1 gang Zigbee",
+      "manufacturer": "_TZ3000_ysdv91bk",
+      "model": "TS0001",
+      "path": "drivers\\smart_home_1_gang_zigbee",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/916"
+    },
+    {
+      "driver_id": "tuya_smart_zigbee_smoke_detector",
+      "device_name": "Tuya Smart Zigbee Smoke Detector",
+      "manufacturer": "_TZE200_rccxox8p",
+      "model": "TS0601",
+      "path": "drivers\\tuya_smart_zigbee_smoke_detector",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/903"
+    },
+    {
+      "driver_id": "onesmart_tuya_wifi_zigbee_curtain_motor",
+      "device_name": "Onesmart Tuya Wifi Zigbee Curtain Motor",
+      "manufacturer": "_TZE204_1fuxihti",
+      "model": "TS0601",
+      "path": "drivers\\onesmart_tuya_wifi_zigbee_curtain_motor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/902"
+    },
+    {
+      "driver_id": "water_leak_sensor",
+      "device_name": "Water Leak Sensor",
+      "manufacturer": "_TZ3000_wuep9zng",
+      "model": "TS0207",
+      "path": "drivers\\water_leak_sensor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/897"
+    },
+    {
+      "driver_id": "zigbee_temperature_and_humidity_sensor",
+      "device_name": "Zigbee Temperature and Humidity sensor",
+      "manufacturer": "_TZE200_vvmbj46n",
+      "model": "TS0601",
+      "path": "drivers\\zigbee_temperature_and_humidity_sensor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/895"
+    },
+    {
+      "driver_id": "zigbee_temperature_and_humidity_sensor",
+      "device_name": "Zigbee Temperature and Humidity sensor",
+      "manufacturer": "_TZ3000_qaaysllp",
+      "model": "TS0201",
+      "path": "drivers\\zigbee_temperature_and_humidity_sensor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/894"
+    },
+    {
+      "driver_id": "pir_motion_sensor",
+      "device_name": "PIR Motion Sensor",
+      "manufacturer": "Aubess",
+      "model": "TS0202 / ZMS-102",
+      "path": "drivers\\pir_motion_sensor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/893"
+    },
+    {
+      "driver_id": "temperature_humidity_sensor",
+      "device_name": "Temperature & Humidity sensor",
+      "manufacturer": "Shenzhen Haihao Electronics",
+      "model": "TS0601",
+      "path": "drivers\\temperature_humidity_sensor",
+      "source_issue": "https://github.com/JohanBendz/com.tuya.zigbee/issues/891"
+    }
+  ],
+  "updated_drivers": [],
+  "device_type_breakdown": {
+    "sensor": 32,
+    "switch": 18,
+    "other": 37,
+    "detector": 5,
+    "thermostat": 3,
+    "plug": 4,
+    "valve": 1,
+    "light": 1
+  }
+}

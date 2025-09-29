@@ -1,0 +1,443 @@
+{
+  "timestamp": "2025-09-15T22:28:52.757Z",
+  "summary": {
+    "totalCurrentDrivers": 57,
+    "totalMissingDrivers": 32,
+    "categoriesCovered": 13,
+    "johanBenzCategories": 13
+  },
+  "currentCategories": {
+    "Environmental Sensors": [
+      "air_quality_monitor",
+      "soil_moisture_sensor",
+      "temperature_humidity_sensor"
+    ],
+    "Window Coverings": [
+      "blind_controller",
+      "curtain_motor",
+      "roller_blind",
+      "shade_controller",
+      "window_motor"
+    ],
+    "Smart Lighting": [
+      "candle_bulb",
+      "dimmer_switch",
+      "filament_bulb",
+      "gu10_spot",
+      "led_controller",
+      "led_strip",
+      "rgb_bulb",
+      "rotary_dimmer",
+      "smart_bulb",
+      "tunable_white_bulb"
+    ],
+    "Contact & Security": [
+      "contact_sensor",
+      "door_window_sensor",
+      "vibration_sensor"
+    ],
+    "Safety Detection": [
+      "co_detector",
+      "gas_detector",
+      "smoke_detector",
+      "water_leak_sensor"
+    ],
+    "Locks & Access": [
+      "door_controller",
+      "door_lock",
+      "fingerprint_lock",
+      "garage_door",
+      "keypad_lock",
+      "smart_lock"
+    ],
+    "Scene Control": [
+      "emergency_button",
+      "panic_button",
+      "sos_button",
+      "wireless_button"
+    ],
+    "Power Management": [
+      "energy_plug",
+      "extension_plug",
+      "smart_outlet",
+      "smart_plug",
+      "usb_outlet",
+      "wall_outlet"
+    ],
+    "Fan Control": [
+      "fan_controller"
+    ],
+    "Climate Systems": [
+      "hvac_controller",
+      "radiator_valve",
+      "temperature_controller",
+      "thermostat"
+    ],
+    "Motion & Presence": [
+      "motion_sensor",
+      "pir_sensor",
+      "presence_sensor",
+      "radar_sensor"
+    ],
+    "Multi-Function": [
+      "multisensor"
+    ],
+    "Wall Switches": [
+      "scene_switch",
+      "touch_switch",
+      "wall_switch_1gang",
+      "wall_switch_2gang",
+      "wall_switch_3gang",
+      "wall_switch_4gang"
+    ]
+  },
+  "missingDrivers": {
+    "byPriority": {
+      "high": [],
+      "medium": [
+        {
+          "name": "ikea_tradfri_bulb",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "ikea_styrbar_remote",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "ikea_symfonisk_remote",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "aqara_cube",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "aqara_button",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "aqara_motion_sensor",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "aqara_temperature_sensor",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "hue_bulb",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "hue_dimmer",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "hue_motion_sensor",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "sonoff_basic",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "sonoff_mini",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "sonoff_zbbridge",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "xiaomi_button",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "xiaomi_door_sensor",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "xiaomi_motion_sensor",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "lux_sensor",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "noise_sensor",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "pressure_sensor",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "formaldehyde_sensor",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "zigbee_coordinator",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "repeater_node",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "sprinkler_controller",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "garden_sensor",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "pet_feeder",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "air_purifier_controller",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "neon_strip",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "under_cabinet_light",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "outdoor_light",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "level_sensor",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "flow_sensor",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        },
+        {
+          "name": "current_sensor",
+          "category": "Johan Bendz Specific",
+          "priority": "medium"
+        }
+      ],
+      "low": []
+    },
+    "all": [
+      {
+        "name": "ikea_tradfri_bulb",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "ikea_styrbar_remote",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "ikea_symfonisk_remote",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "aqara_cube",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "aqara_button",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "aqara_motion_sensor",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "aqara_temperature_sensor",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "hue_bulb",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "hue_dimmer",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "hue_motion_sensor",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "sonoff_basic",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "sonoff_mini",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "sonoff_zbbridge",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "xiaomi_button",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "xiaomi_door_sensor",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "xiaomi_motion_sensor",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "lux_sensor",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "noise_sensor",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "pressure_sensor",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "formaldehyde_sensor",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "zigbee_coordinator",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "repeater_node",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "sprinkler_controller",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "garden_sensor",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "pet_feeder",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "air_purifier_controller",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "neon_strip",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "under_cabinet_light",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "outdoor_light",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "level_sensor",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "flow_sensor",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      },
+      {
+        "name": "current_sensor",
+        "category": "Johan Bendz Specific",
+        "priority": "medium"
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "priority": "next_phase",
+      "action": "Add Johan Bendz specific devices",
+      "drivers": [
+        "ikea_tradfri_bulb",
+        "ikea_styrbar_remote",
+        "ikea_symfonisk_remote",
+        "aqara_cube",
+        "aqara_button",
+        "aqara_motion_sensor",
+        "aqara_temperature_sensor",
+        "hue_bulb",
+        "hue_dimmer",
+        "hue_motion_sensor"
+      ],
+      "reason": "Enhance compatibility with Johan Bendz ecosystem"
+    }
+  ]
+}

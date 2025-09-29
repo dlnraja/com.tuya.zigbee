@@ -1,0 +1,53 @@
+{
+  "discovered": [
+    "_TZ3000_",
+    "_TZ3210_",
+    "_TZE200_",
+    "_TZE204_",
+    "_TZ3000_8"
+  ],
+  "categorized": {
+    "motion": [
+      "_TZ3000_mmtwjmaq",
+      "_TZ3000_kmh5qpmb",
+      "_TZE200_3towulqd",
+      "_TZ3000_mcxw5ehu"
+    ],
+    "switch": [
+      "_TZ3000_qzjcsmar",
+      "_TZ3000_ji4araar",
+      "_TZE284_aao6qtcs",
+      "_TZ3000_fllyghyj"
+    ],
+    "plug": [
+      "_TZ3000_g5xawfcq",
+      "_TZ3000_cehuw1lw",
+      "_TZE284_cjbofhxw"
+    ],
+    "climate": [
+      "_TZE200_cwbvmsar",
+      "_TZE200_bjawzodf",
+      "_TZE200_locansqn"
+    ],
+    "curtain": [
+      "_TZE200_fctwhugx",
+      "_TZE200_cowvfni3",
+      "_TZE284_khkk23xi"
+    ],
+    "contact": [
+      "_TZ3000_26fmupbb",
+      "_TZ3000_n2egfsli",
+      "_TZE284_9cxrt8gp"
+    ],
+    "dimmer": [
+      "_TZ3000_rdz06uge",
+      "_TZE284_rccgwzz8"
+    ],
+    "light": [
+      "_TZ3000_msl6wxk9",
+      "_TZE284_98z4zhra"
+    ]
+  },
+  "totalCommits": 1744,
+  "enrichedDrivers": 164
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "device": "TS0011",
+    "issue": "Switch not responding after firmware update",
+    "solution": "Add debounce delay in driver",
+    "user": "community_user_1",
+    "source": "forum",
+    "lastUpdated": "2025-09-10T08:12:13.540Z"
+  }
+]

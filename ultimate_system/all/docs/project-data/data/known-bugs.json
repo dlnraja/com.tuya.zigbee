@@ -1,0 +1,15 @@
+{
+  "missing_files": [
+    "app.js not found",
+    "driver.compose.json missing",
+    "icon.svg missing"
+  ],
+  "wrong_clusters": [
+    "genOnOff not recognized",
+    "seMetering missing"
+  ],
+  "missing_icons": [
+    "driver icon not found",
+    "app icon missing"
+  ]
+}

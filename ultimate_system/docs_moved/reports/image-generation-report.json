@@ -1,0 +1,1497 @@
+{
+  "timestamp": "2025-09-15T19:28:40.838Z",
+  "total_generated": 181,
+  "sdk3_compliant": true,
+  "johan_benz_design": true,
+  "categories": {
+    "app": [
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\assets\\images\\small.png",
+        "dimensions": {
+          "width": 250,
+          "height": 175
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\assets\\images\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 350
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\assets\\images\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 700
+        }
+      }
+    ],
+    "access": [
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\access\\door_controller\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\access\\door_controller\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\access\\door_controller\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\access\\door_lock\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\access\\door_lock\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\access\\door_lock\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\access\\fingerprint_lock\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\access\\fingerprint_lock\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\access\\fingerprint_lock\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\access\\keypad_lock\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\access\\keypad_lock\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\access\\keypad_lock\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\access\\smart_lock\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\access\\smart_lock\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\access\\smart_lock\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      }
+    ],
+    "climate": [
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\climate\\fan_controller\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\climate\\fan_controller\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\climate\\fan_controller\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\climate\\hvac_controller\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\climate\\hvac_controller\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\climate\\hvac_controller\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\climate\\radiator_valve\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\climate\\radiator_valve\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\climate\\radiator_valve\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\climate\\temperature_controller\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\climate\\temperature_controller\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\climate\\temperature_controller\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\climate\\thermostat\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\climate\\thermostat\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\climate\\thermostat\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\climate.png",
+        "dimensions": {
+          "width": 500,
+          "height": 300
+        }
+      }
+    ],
+    "covers": [
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\covers\\blind_controller\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\covers\\blind_controller\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\covers\\blind_controller\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\covers\\curtain_motor\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\covers\\curtain_motor\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\covers\\curtain_motor\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\covers\\garage_door\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\covers\\garage_door\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\covers\\garage_door\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\covers\\roller_blind\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\covers\\roller_blind\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\covers\\roller_blind\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\covers\\shade_controller\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\covers\\shade_controller\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\covers\\shade_controller\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\covers\\window_motor\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\covers\\window_motor\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\covers\\window_motor\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\covers.png",
+        "dimensions": {
+          "width": 500,
+          "height": 300
+        }
+      }
+    ],
+    "lights": [
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights\\candle_bulb\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights\\candle_bulb\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights\\candle_bulb\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights\\filament_bulb\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights\\filament_bulb\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights\\filament_bulb\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights\\gu10_spot\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights\\gu10_spot\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights\\gu10_spot\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights\\led_controller\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights\\led_controller\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights\\led_controller\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights\\led_strip\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights\\led_strip\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights\\led_strip\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights\\rgb_bulb\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights\\rgb_bulb\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights\\rgb_bulb\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights\\smart_bulb\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights\\smart_bulb\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights\\smart_bulb\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights\\tunable_white_bulb\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights\\tunable_white_bulb\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lights\\tunable_white_bulb\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\lights.png",
+        "dimensions": {
+          "width": 500,
+          "height": 300
+        }
+      }
+    ],
+    "plugs": [
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs\\energy_plug\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs\\energy_plug\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs\\energy_plug\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs\\extension_plug\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs\\extension_plug\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs\\extension_plug\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs\\smart_outlet\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs\\smart_outlet\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs\\smart_outlet\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs\\smart_plug\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs\\smart_plug\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs\\smart_plug\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs\\usb_outlet\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs\\usb_outlet\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs\\usb_outlet\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs\\wall_outlet\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs\\wall_outlet\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\plugs\\wall_outlet\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\plugs.png",
+        "dimensions": {
+          "width": 500,
+          "height": 300
+        }
+      }
+    ],
+    "safety": [
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\safety\\co_detector\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\safety\\co_detector\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\safety\\co_detector\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\safety\\emergency_button\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\safety\\emergency_button\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\safety\\emergency_button\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\safety\\gas_detector\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\safety\\gas_detector\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\safety\\gas_detector\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\safety\\panic_button\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\safety\\panic_button\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\safety\\panic_button\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\safety\\smoke_detector\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\safety\\smoke_detector\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\safety\\smoke_detector\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\safety\\sos_button\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\safety\\sos_button\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\safety\\sos_button\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\safety\\water_leak_sensor\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\safety\\water_leak_sensor\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\safety\\water_leak_sensor\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\safety.png",
+        "dimensions": {
+          "width": 500,
+          "height": 300
+        }
+      }
+    ],
+    "sensors": [
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\air_quality_monitor\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\air_quality_monitor\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\air_quality_monitor\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\contact_sensor\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\contact_sensor\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\contact_sensor\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\door_window_sensor\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\door_window_sensor\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\door_window_sensor\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\motion_sensor\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\motion_sensor\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\motion_sensor\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\multisensor\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\multisensor\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\multisensor\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\pir_sensor\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\pir_sensor\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\pir_sensor\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\presence_sensor\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\presence_sensor\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\presence_sensor\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\radar_sensor\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\radar_sensor\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\radar_sensor\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\soil_moisture_sensor\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\soil_moisture_sensor\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\soil_moisture_sensor\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\temperature_humidity_sensor\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\temperature_humidity_sensor\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\temperature_humidity_sensor\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\vibration_sensor\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\vibration_sensor\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sensors\\vibration_sensor\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\sensors.png",
+        "dimensions": {
+          "width": 500,
+          "height": 300
+        }
+      }
+    ],
+    "switches": [
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\dimmer_switch\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\dimmer_switch\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\dimmer_switch\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\rotary_dimmer\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\rotary_dimmer\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\rotary_dimmer\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\scene_switch\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\scene_switch\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\scene_switch\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\touch_switch\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\touch_switch\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\touch_switch\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\wall_switch_1gang\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\wall_switch_1gang\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\wall_switch_1gang\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\wall_switch_2gang\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\wall_switch_2gang\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\wall_switch_2gang\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\wall_switch_3gang\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\wall_switch_3gang\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\wall_switch_3gang\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\wall_switch_4gang\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\wall_switch_4gang\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\wall_switch_4gang\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "size": "small",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\wireless_button\\assets\\small.png",
+        "dimensions": {
+          "width": 75,
+          "height": 75
+        }
+      },
+      {
+        "size": "large",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\wireless_button\\assets\\large.png",
+        "dimensions": {
+          "width": 500,
+          "height": 500
+        }
+      },
+      {
+        "size": "xlarge",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switches\\wireless_button\\assets\\xlarge.png",
+        "dimensions": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      {
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\catalog\\switches.png",
+        "dimensions": {
+          "width": 500,
+          "height": 300
+        }
+      }
+    ]
+  },
+  "dimensions_used": {
+    "app": {
+      "small": {
+        "width": 250,
+        "height": 175
+      },
+      "large": {
+        "width": 500,
+        "height": 350
+      },
+      "xlarge": {
+        "width": 1000,
+        "height": 700
+      }
+    },
+    "driver": {
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "xlarge": {
+        "width": 1000,
+        "height": 1000
+      }
+    }
+  }
+}

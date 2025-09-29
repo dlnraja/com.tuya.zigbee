@@ -1,0 +1,37 @@
+{
+  "timestamp": "2025-08-14T17:38:42.488Z",
+  "status": "COMPLETELY_RESTORED",
+  "files": {
+    "essential": [
+      "app.json",
+      "package.json",
+      "app.js",
+      "README.md",
+      "CHANGELOG.md"
+    ],
+    "drivers": [],
+    "assets": [],
+    "docs": []
+  },
+  "structure": {
+    "drivers": {
+      "zigbee": {
+        "generic": 1,
+        "templates": 1,
+        "assets": 2,
+        "brands": 1,
+        "categories": 1,
+        "models": 11
+      },
+      "tuya": {
+        "plug": 1,
+        "sensor-contact": 1,
+        "sensor-motion": 1,
+        "siren": 1,
+        "switch": 1
+      }
+    },
+    "categories": 34,
+    "totalDrivers": 466
+  }
+}

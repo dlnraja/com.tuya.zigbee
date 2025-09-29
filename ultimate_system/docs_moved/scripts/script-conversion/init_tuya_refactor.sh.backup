@@ -1,0 +1,36 @@
+#!/bin/bash
+# init_tuya_refactor.sh
+
+# Configuration initiale
+PROJECT_DIR="tuya-zigbee-app"
+REPO_URL="https://github.com/dlnraja/com.tuya.zigbee.git"
+BRANCH="tuya-light"
+
+# Clone et setup
+echo "🚀 Initialisation du projet..."
+git clone $REPO_URL $PROJECT_DIR
+cd $PROJECT_DIR
+git checkout $BRANCH
+
+# Création de l'arborescence
+mkdir -p {.homeycompose,drivers,lib,tools,data,docs,.github/workflows}
+mkdir -p data/sources_cache/{forums,github,datasheets}
+
+# Installation des dépendances
+echo "📦 Installation des dépendances..."
+npm init -y
+npm install tesseract.js spacy-nlp natural node-fetch cheerio axios
+npm install -g homey
+
+# Analyse initiale avec DeepSeek
+echo "🔍 Analyse initiale avec DeepSeek-V3.1..."
+node -e "
+const deepseek = require('./lib/deepseek_integration.js');
+deepseek.analyzeProject({
+  mode: 'thinking',
+  depth: 'full',
+  output: 'analysis/initial_report.json'
+});
+"
+
+echo "✅ Initialisation terminée!"

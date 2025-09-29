@@ -1,0 +1,85 @@
+# Check project structure and save to file
+$outputFile = "$PSScriptRoot\project_structure.txt"
+
+# Clear existing file
+"Project Structure Report - Generated $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')" | Out-File -FilePath $outputFile
+"==================================================" | Out-File -FilePath $outputFile -Append
+
+# Check Node.js and npm versions
+try {
+    $nodeVersion = node --version 2>&1
+    "Node.js Version: $nodeVersion" | Out-File -FilePath $outputFile -Append
+} catch {
+    "Node.js is not installed or not in PATH" | Out-File -FilePath $outputFile -Append
+}
+
+try {
+    $npmVersion = npm --version 2>&1
+    "npm Version: $npmVersion" | Out-File -FilePath $outputFile -Append
+} catch {
+    "npm is not installed or not in PATH" | Out-File -FilePath $outputFile -Append
+}
+
+"`nDirectory Structure:" | Out-File -FilePath $outputFile -Append
+"-------------------" | Out-File -FilePath $outputFile -Append
+
+# List top-level directories
+Get-ChildItem -Directory | ForEach-Object {
+    $dir = $_.Name
+    $itemCount = (Get-ChildItem -Path $_.FullName -Recurse -File -ErrorAction SilentlyContinue).Count
+    $sizeMB = [math]::Round(((Get-ChildItem -Path $_.FullName -Recurse -File -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum / 1MB), 2)
+    "- $dir ($itemCount files, $sizeMB MB)" | Out-File -FilePath $outputFile -Append
+}
+
+# Check for required files
+"`nRequired Files Check:" | Out-File -FilePath $outputFile -Append
+"-------------------" | Out-File -FilePath $outputFile -Append
+
+$requiredFiles = @("package.json", "app.json", "README.md", "drivers")
+foreach ($file in $requiredFiles) {
+    $exists = Test-Path -Path $file
+    $status = if ($exists) { "✅" } else { "❌" }
+    "$status $file" | Out-File -FilePath $outputFile -Append
+}
+
+# Check drivers directory
+"`nDrivers Directory:" | Out-File -FilePath $outputFile -Append
+"-------------------" | Out-File -FilePath $outputFile -Append
+
+if (Test-Path -Path "drivers") {
+    $driverDirs = Get-ChildItem -Directory -Path "drivers"
+    "Found $($driverDirs.Count) driver directories" | Out-File -FilePath $outputFile -Append
+    
+    # Sample first 5 drivers
+    $sampleDrivers = $driverDirs | Select-Object -First 5 | ForEach-Object { $_.Name }
+    "Sample drivers: $($sampleDrivers -join ', ')" | Out-File -FilePath $outputFile -Append
+    
+    # Check files in first driver (as sample)
+    if ($driverDirs.Count -gt 0) {
+        $sampleDriver = $driverDirs[0].FullName
+        "`nSample driver files in $($driverDirs[0].Name):" | Out-File -FilePath $outputFile -Append
+        Get-ChildItem -Path $sampleDriver -File | Select-Object -ExpandProperty Name | ForEach-Object {
+            "- $_" | Out-File -FilePath $outputFile -Append
+        }
+    }
+} else {
+    "Drivers directory not found!" | Out-File -FilePath $outputFile -Append
+}
+
+# Check for package.json
+if (Test-Path -Path "package.json") {
+    try {
+        $packageJson = Get-Content -Path "package.json" -Raw | ConvertFrom-Json
+        "`nPackage.json Analysis:" | Out-File -FilePath $outputFile -Append
+        "-------------------" | Out-File -FilePath $outputFile -Append
+        "Name: $($packageJson.name)" | Out-File -FilePath $outputFile -Append
+        "Version: $($packageJson.version)" | Out-File -FilePath $outputFile -Append
+        "Dependencies: $($packageJson.dependencies.PSObject.Properties.Count)" | Out-File -FilePath $outputFile -Append
+        "Scripts: $($packageJson.scripts.PSObject.Properties.Count)" | Out-File -FilePath $outputFile -Append
+    } catch {
+        "Error reading package.json: $_" | Out-File -FilePath $outputFile -Append
+    }
+}
+
+"`nReport saved to: $outputFile" | Out-File -FilePath $outputFile -Append
+Write-Host "Project structure analysis complete. Report saved to: $outputFile"

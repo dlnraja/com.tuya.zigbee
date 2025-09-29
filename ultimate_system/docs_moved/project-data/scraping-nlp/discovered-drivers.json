@@ -1,0 +1,29 @@
+{
+  "drivers": [
+    "roller_shutter_advanced",
+    "smart_dimmer_tunable",
+    "soil_moisture_advanced",
+    "water_leak_detector",
+    "smoke_detector_advanced",
+    "smart_button_4gang",
+    "thermostat_valve",
+    "curtain_motor_battery",
+    "led_strip_rgb",
+    "garage_door_sensor",
+    "smart_lock_advanced",
+    "outdoor_sensor",
+    "zigbee_coordinator",
+    "multi_sensor_advanced"
+  ],
+  "count": 14,
+  "sources": [
+    "github_johan_prs",
+    "github_johan_issues",
+    "zha_handlers",
+    "homey_forum",
+    "zigbee2mqtt",
+    "blakadder",
+    "domoticz_zigbee"
+  ],
+  "timestamp": "2025-09-20T14:45:03.354Z"
+}

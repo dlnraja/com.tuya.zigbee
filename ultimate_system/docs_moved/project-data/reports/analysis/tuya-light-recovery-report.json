@@ -1,0 +1,2059 @@
+{
+  "timestamp": "2025-07-31T21:24:23.383Z",
+  "recoverySteps": [
+    {
+      "message": "🚀 Début de la récupération tuya-light...",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.386Z"
+    },
+    {
+      "message": "🔧 Récupération des drivers tuya-light...",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.402Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-basic (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.412Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-dimmable (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.470Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-rgb (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.486Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-rgbw (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.516Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-rgbww (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.523Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tunable (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.530Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-strip (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.539Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-bulb (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.548Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-panel (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.560Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-ceiling (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.566Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-wall (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.573Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-floor (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.579Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-table (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.590Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-desk (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.596Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-bedroom (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.602Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-living (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.614Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-kitchen (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.644Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-bathroom (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.670Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-garden (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.676Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-outdoor (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.702Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pathway (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.706Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-security (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.716Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-accent (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.723Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-ambient (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.734Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-task (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.741Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-decorative (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.759Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-architectural (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.789Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-landscape (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.802Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pool (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.872Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-fountain (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.896Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tree (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.918Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-bush (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.929Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-flag (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.959Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-sign (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:23.987Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-display (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.003Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-showcase (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.007Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-gallery (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.021Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-museum (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.040Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-theater (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.055Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-concert (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.064Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-stadium (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.071Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-arena (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.083Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-church (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.107Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-temple (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.121Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-mosque (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.130Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-synagogue (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.144Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-school (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.170Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-university (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.178Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hospital (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.189Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-clinic (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.205Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pharmacy (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.219Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-dental (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.228Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-veterinary (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.245Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-laboratory (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.261Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-research (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.308Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-development (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.322Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-office (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.330Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-cubicle (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.338Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-conference (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.350Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-meeting (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.365Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-training (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.378Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-workshop (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.389Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-factory (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.437Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-warehouse (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.466Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-distribution (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.490Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-logistics (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.511Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-transport (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.530Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-aviation (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.550Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-marine (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.570Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-railway (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.597Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-bus (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.623Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-taxi (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.680Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-ambulance (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.713Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-fire (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.752Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-police (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.768Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-military (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.780Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-government (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.796Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-court (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.830Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-prison (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.844Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-detention (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.867Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-rehabilitation (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.879Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-treatment (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.924Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-therapy (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.959Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-wellness (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.976Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-spa (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:24.987Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-massage (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.027Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-yoga (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.090Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-meditation (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.102Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-prayer (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.129Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-worship (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.145Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-celebration (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.164Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-festival (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.179Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-carnival (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.199Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-parade (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.213Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-procession (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.241Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-ceremony (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.257Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-wedding (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.272Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-birthday (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.287Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-anniversary (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.297Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-graduation (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.316Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-retirement (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.332Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-memorial (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.346Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-funeral (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.366Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-commemoration (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.376Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-dedication (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.393Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-inauguration (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.407Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-opening (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.424Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-closing (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.446Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-launch (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.464Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-release (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.479Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-premiere (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.495Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-debut (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.511Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-exhibition (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.516Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-show (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.520Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-performance (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.528Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-opera (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.667Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-ballet (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.727Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-dance (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.774Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-music (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.800Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-art (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.823Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-craft (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.844Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-design (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.920Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-fashion (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:25.995Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-beauty (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.021Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-cosmetics (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.039Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-perfume (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.101Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-jewelry (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.130Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-watch (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.149Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-accessory (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.160Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-bag (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.211Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-shoe (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.278Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-clothing (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.349Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-uniform (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.373Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-costume (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.411Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-mask (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.471Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-wig (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.492Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-prosthetic (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.521Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-orthotic (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.535Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-brace (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.552Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-cast (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.601Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-bandage (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.622Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-gauze (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.647Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tape (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.674Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-plaster (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.723Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-splint (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.739Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-crutch (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.797Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-cane (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.802Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-walker (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.814Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-wheelchair (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.864Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-scooter (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.918Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-cart (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.928Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-trolley (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.939Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-dolly (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.954Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-handtruck (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.963Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-forklift (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.979Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-crane (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:26.998Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hoist (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.015Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pulley (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.034Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-block (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.060Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tackle (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.068Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-chain (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.080Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-rope (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.096Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-cable (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.119Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-wire (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.131Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-cord (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.145Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-string (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.155Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-thread (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.169Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-fabric (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.188Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-cloth (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.204Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-textile (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.252Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-fiber (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.264Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-yarn (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.274Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-wool (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.288Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-cotton (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.301Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-silk (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.416Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-linen (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.444Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-nylon (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.474Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-polyester (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.500Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-acrylic (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.512Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-spandex (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.530Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-lycra (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.589Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-elastane (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.604Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-rubber (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.625Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-latex (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.669Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-vinyl (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.729Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-plastic (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.756Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-polymer (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.767Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-resin (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.810Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-epoxy (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.826Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-adhesive (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.889Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-glue (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:27.995Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-cement (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:28.016Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-mortar (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:28.114Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-concrete (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:28.210Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-asphalt (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:28.315Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tar (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:28.429Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pitch (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:28.511Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-bitumen (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:28.612Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-wax (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:28.633Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-grease (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:28.724Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-oil (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:28.798Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-fuel (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:28.843Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-gas (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:28.920Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-propane (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.181Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-butane (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.278Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-methane (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.324Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-ethane (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.348Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-propene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.374Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-butene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.391Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pentene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.402Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hexene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.421Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-heptene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.473Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-octene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.511Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-nonene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.535Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-decene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.576Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-undecene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.592Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-dodecene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.613Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tridecene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.632Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tetradecene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.656Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pentadecene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.671Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hexadecene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.680Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-heptadecene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.713Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-octadecene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.758Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-nonadecene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.779Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-eicosene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.798Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-heneicosene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.813Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-docosene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.827Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tricosene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.848Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tetracosene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.885Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pentacosene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.908Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hexacosene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.924Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-heptacosene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.946Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-octacosene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.959Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-nonacosene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.973Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-triacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:29.991Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hentriacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.005Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-dotriacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.024Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tritriacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.041Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tetratriacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.079Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pentatriacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.094Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hexatriacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.108Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-heptatriacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.136Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-octatriacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.150Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-nonatriacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.174Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tetracontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.184Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hentetracontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.224Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-dotetracontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.289Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tritetracontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.298Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tetratetracontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.311Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pentatetracontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.325Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hexatetracontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.346Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-heptatetracontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.362Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-octatetracontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.423Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-nonatetracontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.519Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pentacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.536Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-henpentacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.561Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-dopentacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.578Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tripentacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.596Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tetrapentacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.613Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pentapentacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.670Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hexapentacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.741Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-heptapentacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.761Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-octapentacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.829Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-nonapentacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:30.916Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hexacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:31.068Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-henhexacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:31.223Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-dohexacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:31.306Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-trihexacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:31.334Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tetrahexacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:31.456Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pentahexacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:31.585Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hexahexacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:31.666Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-heptahexacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:31.756Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-octahexacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:31.952Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-nonahexacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:32.046Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-heptacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:32.172Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-henheptacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:32.421Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-doheptacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:32.554Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-triheptacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:32.683Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tetraheptacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:32.810Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pentaheptacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:32.934Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hexaheptacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:33.089Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-heptaheptacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:33.235Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-octaheptacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:33.325Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-nonaheptacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:33.468Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-octacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:33.743Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-henoctacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:33.925Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-dooctacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:34.525Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-trioctacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:35.114Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tetraoctacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:35.369Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pentaoctacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:35.567Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hexaoctacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:35.732Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-heptaoctacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:35.833Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-octaoctacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:35.921Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-nonaoctacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:35.992Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-nonacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:36.074Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hennonacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:36.252Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-dononacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:36.411Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-trinonacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:36.527Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tetranonacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:36.593Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pentanonacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:36.638Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hexanonacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:36.735Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-heptanonacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:36.875Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-octanonacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:37.005Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-nonanonacontene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:37.106Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:37.276Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-henhectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:37.333Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-dohectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:37.410Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-trihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:37.439Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tetrahectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:37.524Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pentahectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:37.554Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hexahectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:37.607Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-heptahectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:37.665Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-octahectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:37.693Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-nonahectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:37.738Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-henihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:37.801Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-dohenihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:37.870Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-trihenihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:38.059Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tetrahenihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:38.358Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pentahenihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:38.487Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hexahenihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:38.619Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-heptahenihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:38.723Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-octahenihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:38.885Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-nonahenihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:38.984Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-doihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:39.123Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hendoihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:39.295Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-dodoihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:39.435Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tridoihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:39.660Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tetradoihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:39.875Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pentadoihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:40.559Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hexadoihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:41.203Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-heptadoihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:41.385Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-octadoihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:41.490Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-nonadoihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:41.970Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-triihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:42.237Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hentriihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:42.444Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-dotriihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:42.591Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tritriihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:42.889Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tetratriihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:42.979Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pentatriihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:43.089Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hexatriihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:43.217Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-heptatriihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:43.282Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-octatriihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:43.292Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-nonatriihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:43.321Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tetraihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:43.350Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hentetraihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:43.395Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-dotetraihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:43.468Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tritetraihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:43.534Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tetratetraihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:43.562Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pentatetraihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:43.592Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hexatetraihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:43.678Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-heptatetraihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:43.809Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-octatetraihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:43.896Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-nonatetraihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:44.054Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pentaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:44.170Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-henpentaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:44.269Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-dopentaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:44.389Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tripentaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:44.494Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tetrapentaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:44.658Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pentapentaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:44.823Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hexapentaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:44.952Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-heptapentaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:45.118Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-octapentaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:45.304Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-nonapentaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:45.409Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hexaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:45.553Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-henhexaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:45.682Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-dohexaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:45.828Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-trihexaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:45.951Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tetrahexaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:46.036Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pentahexaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:46.073Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hexahexaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:46.145Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-heptahexaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:46.196Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-octahexaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:46.238Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-nonahexaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:46.271Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-heptaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:46.340Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-henheptaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:46.393Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-doheptaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:46.494Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-triheptaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:46.526Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tetraheptaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:46.604Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pentaheptaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:46.640Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hexaheptaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:46.717Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-heptaheptaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:46.789Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-octaheptaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:46.856Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-nonaheptaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:46.873Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-octaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:46.912Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-henoctaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:46.950Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-dooctaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:46.971Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-trioctaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:47.026Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tetraoctaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:47.112Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pentaoctaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:47.165Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hexaoctaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:47.242Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-heptaoctaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:47.337Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-octaoctaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:47.455Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-nonaoctaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:47.547Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-nonaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:47.660Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hennonaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:48.083Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-dononaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:48.214Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-trinonaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:48.309Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-tetranonaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:48.751Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-pentanonaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:48.958Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-hexanonaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:49.154Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-heptanonaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:49.333Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-octanonaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:49.552Z"
+    },
+    {
+      "message": "Driver tuya-light récupéré: tuya-light-nonanonaihectene (lights)",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:49.723Z"
+    },
+    {
+      "message": "✅ 403 drivers tuya-light récupérés",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:49.840Z"
+    },
+    {
+      "message": "📁 Organisation des drivers tuya-light...",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:49.918Z"
+    },
+    {
+      "message": "✅ Drivers tuya-light organisés: 0 drivers",
+      "type": "info",
+      "timestamp": "2025-07-31T21:24:50.053Z"
+    }
+  ],
+  "recoveredDrivers": [],
+  "errors": [],
+  "warnings": [],
+  "summary": {
+    "recoveredDrivers": 403,
+    "categories": {
+      "lights": [],
+      "switches": [],
+      "sensors": [],
+      "controls": [],
+      "plugs": []
+    },
+    "status": "tuya_light_recovery_complete"
+  }
+}
