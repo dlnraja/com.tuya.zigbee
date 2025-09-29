@@ -1,0 +1,83 @@
+{
+  "timestamp": "2025-09-29T22:46:21.911Z",
+  "verification": "DEEP_ANALYSIS",
+  "app": {
+    "id": "com.dlnraja.ultimate.tuya.zigbee.hub",
+    "version": "2.0.0",
+    "name": "Ultimate Tuya Zigbee Hub - Community Edition",
+    "sdk": 3,
+    "category": [
+      "climate",
+      "lights",
+      "security",
+      "tools"
+    ],
+    "compatibility": ">=5.0.0",
+    "validation": "SUCCESS"
+  },
+  "git": {
+    "totalCommits": 20,
+    "publishCommits": 3,
+    "latestPublishCommit": "3139209b9 🎯 Master publish orchestration",
+    "recentActivity": [
+      "3139209b9 🎯 Master publish orchestration",
+      "62b1f1804 🔄 Auto-retry publication",
+      "3df2f3771 🔧 Pre-publication cleanup",
+      "2c531c1fa 🎯 Organisation complète + Enrichissements finalisés",
+      "d6873eafd 🚀 Comprehensive Driver Enrichment V25 - 147/164 drivers enhanced"
+    ]
+  },
+  "workflows": {
+    "totalWorkflows": 26,
+    "publishWorkflows": 13,
+    "workflows": [
+      "auto-publish-fixed.yml",
+      "auto-publish-v1033.yml",
+      "auto-publish-v2.yml",
+      "auto-publish.yml",
+      "force-publish.yml",
+      "homey-app-publish.yml",
+      "homey-app-store.yml",
+      "homey-publish-cycle.yml",
+      "homey-publish.yml",
+      "publish-homey-app.yml",
+      "publish.yml",
+      "recertification-publish.yml",
+      "trigger-publish.yml"
+    ]
+  },
+  "indicators": [
+    "GIT_PUBLISH_COMMITS_FOUND",
+    "AUTO_TRIGGER_CONFIGURED",
+    "PUBLISH_COMMAND_FOUND",
+    "AUTO_TRIGGER_CONFIGURED",
+    "PUBLISH_COMMAND_FOUND",
+    "AUTO_TRIGGER_CONFIGURED",
+    "PUBLISH_COMMAND_FOUND",
+    "AUTO_TRIGGER_CONFIGURED",
+    "PUBLISH_COMMAND_FOUND",
+    "AUTO_TRIGGER_CONFIGURED",
+    "AUTO_TRIGGER_CONFIGURED",
+    "PUBLISH_COMMAND_FOUND",
+    "AUTO_TRIGGER_CONFIGURED",
+    "PUBLISH_COMMAND_FOUND",
+    "AUTO_TRIGGER_CONFIGURED",
+    "PUBLISH_COMMAND_FOUND",
+    "PUBLISH_COMMAND_FOUND",
+    "PUBLISH_COMMAND_FOUND",
+    "PUBLISH_COMMAND_FOUND",
+    "AUTO_TRIGGER_CONFIGURED",
+    "PUBLISH_COMMAND_FOUND",
+    "RECENT_ACTIVITY",
+    "RECENT_TAGS",
+    "SUCCESS_REPORT_FOUND"
+  ],
+  "confidence": 80,
+  "assessment": "🎉 TRÈS PROBABLEMENT PUBLIÉ",
+  "recommendation": "Vérifiez le Dashboard Homey pour confirmation définitive",
+  "monitoringLinks": {
+    "githubActions": "https://github.com/dlnraja/com.tuya.zigbee/actions",
+    "homeyDashboard": "https://tools.developer.homey.app/apps/app/com.dlnraja.ultimate.zigbee.hub",
+    "repository": "https://github.com/dlnraja/com.tuya.zigbee"
+  }
+}
