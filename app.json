@@ -1,22 +1,25 @@
 {
   "id": "com.dlnraja.ultimate.tuya.zigbee.hub",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "name": {
-    "en": "Ultimate Tuya Zigbee Hub - Community Edition"
+    "en": "Ultimate Zigbee Hub - Professional Edition",
+    "fr": "Hub Zigbee Ultime - Édition Professionnelle",
+    "de": "Ultimate Zigbee Hub - Professional Edition",
+    "nl": "Ultimate Zigbee Hub - Professionele Editie"
   },
   "description": {
-    "en": "Community-driven Ultimate Tuya Zigbee device support with comprehensive manufacturer compatibility and forum-based enhancements",
-    "fr": "Support communautaire ultime pour appareils Tuya Zigbee avec compatibilité fabricant complète",
-    "de": "Community-gesteuerte ultimative Tuya Zigbee-Geräteunterstützung",
-    "nl": "Community-gedreven ultieme Tuya Zigbee apparaatondersteuning"
+    "en": "Professional Zigbee device support with comprehensive manufacturer compatibility. SDK3 compliant, organized by device function rather than brand.",
+    "fr": "Support professionnel des appareils Zigbee avec compatibilité fabricant complète. Conforme SDK3, organisé par fonction plutôt que par marque.",
+    "de": "Professionelle Zigbee-Geräteunterstützung mit umfassender Herstellerkompatibilität. SDK3-konform, nach Gerätefunktion organisiert.",
+    "nl": "Professionele Zigbee apparaatondersteuning met uitgebreide fabrikantcompatibiliteit. SDK3-conform, georganiseerd naar apparaatfunctie."
   },
   "category": [
-    "climate",
+    "tools",
     "lights",
-    "security",
-    "tools"
+    "climate",
+    "security"
   ],
   "permissions": [],
   "images": {
@@ -24,8 +27,8 @@
     "large": "/assets/images/large.png"
   },
   "author": {
-    "name": "Dylan Rajasekaram",
-    "email": "dylan@dlnraja.com"
+    "name": "Dylan L.N. Raja",
+    "email": "contact@dlnraja.com"
   },
   "drivers": [
     {
@@ -2646,14 +2649,6 @@
       "value": true
     }
   ],
-  "contributors": {
-    "developers": [
-      {
-        "name": "Dylan Rajasekaram",
-        "email": "dylan@dlnraja.com"
-      }
-    ]
-  },
   "homeyCommunityTopicId": 140352,
   "source": "https://github.com/dlnraja/com.tuya.zigbee",
   "bugs": {
@@ -2672,5 +2667,9 @@
   "platformCompatibility": {
     "local": true,
     "cloud": true
-  }
+  },
+  "platforms": [
+    "local",
+    "cloud"
+  ]
 }

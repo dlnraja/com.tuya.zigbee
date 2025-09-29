@@ -78,3 +78,24 @@ Available on Homey App Store: [Ultimate Zigbee Hub](https://homey.app/a/com.dlnr
 - [Homey App Store](https://apps.developer.homey.app/app-store/publishing)
 - [GitHub Repository](https://github.com/dlnraja/com.tuya.zigbee)
 - [Community Forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352/)
+## 🙏 Credits & Acknowledgments
+
+### Original Work
+This project builds upon the excellent foundation laid by **Johan Bendz** with his original [Tuya Zigbee App](https://community.homey.app/t/app-pro-tuya-zigbee-app/26439).
+
+### MIT License
+This project is released under the MIT License, ensuring open collaboration and community development.
+
+### Community Contributors
+- **Johan Bendz** - Original Tuya Zigbee App creator
+- **Homey Community** - Feedback, testing, and device compatibility reports
+- **Zigbee Community** - Device database and manufacturer identification
+
+### Project Evolution
+- **Original**: Johan Bendz's Tuya Zigbee App (SDK2/3 hybrid)
+- **Current**: Full SDK3 rewrite with professional UNBRANDED structure
+- **Future**: AI-powered device identification and dynamic capabilities
+
+---
+
+*Built with ❤️ for the Homey community*

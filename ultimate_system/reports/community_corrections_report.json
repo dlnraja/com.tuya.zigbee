@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-09-29T23:23:17.692Z",
+  "source": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352",
+  "corrections": {
+    "appTitle": "Ultimate Zigbee Hub - Professional Edition",
+    "appId": "com.dlnraja.ultimate.zigbee.hub",
+    "description": "Professional, realistic description",
+    "credits": "Johan Bendz credited as original creator",
+    "categories": [
+      "tools",
+      "lights",
+      "climate",
+      "security"
+    ],
+    "compliance": "Full Homey App Store guidelines"
+  },
+  "communityFeedback": {
+    "titleFormat": "Fixed - removed \"Community\" term",
+    "uniqueId": "Ensured no conflicts with existing apps",
+    "credits": "Johan Bendz properly acknowledged",
+    "description": "Removed excessive promises, made realistic",
+    "guidelines": "Full compliance with Homey guidelines"
+  },
+  "nextSteps": [
+    "homey app validate - verify SDK3 compliance",
+    "git commit - commit corrections",
+    "git push - trigger GitHub Actions",
+    "Monitor publication - check App Store approval"
+  ]
+}
