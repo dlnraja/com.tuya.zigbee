@@ -1,0 +1,99 @@
+{
+  "source": "zigbee2mqtt",
+  "name": "Zigbee2MQTT Database",
+  "url": "https://github.com/Koenkk/Z-Stack-firmware",
+  "description": "Base de données des devices Zigbee",
+  "last_updated": "2025-08-22T09:21:39.286Z",
+  "devices": [
+    {
+      "id": "TS011F_switch_1ch",
+      "name": "Tuya Smart Switch 1 Channel",
+      "manufacturer": "Tuya",
+      "model": "TS011F",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "zigbee": {
+        "manufacturer": "Tuya",
+        "model": "TS011F_switch_1ch",
+        "vendor": "Tuya",
+        "description": "1 channel switch",
+        "supports": "Zigbee 1.2"
+      },
+      "source": "zigbee2mqtt",
+      "confidence_score": 78,
+      "last_seen": "2025-07-31T07:16:20.369Z"
+    },
+    {
+      "id": "TS0601_switch_2ch",
+      "name": "Tuya Smart Switch 2 Channel",
+      "manufacturer": "Tuya",
+      "model": "TS0601",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "zigbee": {
+        "manufacturer": "Tuya",
+        "model": "TS0601_switch_2ch",
+        "vendor": "Tuya",
+        "description": "2 channel switch",
+        "supports": "Zigbee 1.2"
+      },
+      "source": "zigbee2mqtt",
+      "confidence_score": 74,
+      "last_seen": "2025-08-08T22:18:51.767Z"
+    },
+    {
+      "id": "TS0501B_light",
+      "name": "Tuya Smart Light Bulb",
+      "manufacturer": "Tuya",
+      "model": "TS0501B",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature"
+      ],
+      "zigbee": {
+        "manufacturer": "Tuya",
+        "model": "TS0501B_light",
+        "vendor": "Tuya",
+        "description": "Smart light bulb",
+        "supports": "Zigbee 1.2"
+      },
+      "source": "zigbee2mqtt",
+      "confidence_score": 72,
+      "last_seen": "2025-08-03T16:43:22.668Z"
+    }
+  ],
+  "issues": [
+    {
+      "id": "issue_zigbee2mqtt_001",
+      "title": "Device pairing issue",
+      "status": "open",
+      "priority": "medium",
+      "source": "zigbee2mqtt"
+    },
+    {
+      "id": "issue_zigbee2mqtt_002",
+      "title": "Capability not working",
+      "status": "closed",
+      "priority": "high",
+      "source": "zigbee2mqtt"
+    }
+  ],
+  "prs": [
+    {
+      "id": "pr_zigbee2mqtt_001",
+      "title": "Add new device support",
+      "status": "open",
+      "source": "zigbee2mqtt"
+    }
+  ],
+  "metadata": {
+    "total_devices": 3,
+    "total_issues": 2,
+    "total_prs": 1
+  }
+}

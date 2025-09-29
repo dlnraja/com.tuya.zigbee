@@ -1,0 +1,34 @@
+{
+  "all": true,
+  "check-coverage": true,
+  "branches": 70,
+  "lines": 70,
+  "functions": 70,
+  "statements": 70,
+  "reporter": [
+    "text-summary",
+    "lcov",
+    "html"
+  ],
+  "include": [
+    "app.js",
+    "drivers/**/*.js",
+    "tools/**/*.js"
+  ],
+  "exclude": [
+    "**/*.test.js",
+    "**/test/**",
+    "**/node_modules/**",
+    "**/coverage/**",
+    "**/python_service/**"
+  ],
+  "extension": [
+    ".js"
+  ],
+  "require": [
+    "@babel/register"
+  ],
+  "sourceMap": true,
+  "instrument": true,
+  "cache": true
+}

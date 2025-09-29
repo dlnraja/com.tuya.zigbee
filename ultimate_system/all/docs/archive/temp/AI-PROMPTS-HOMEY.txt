@@ -1,0 +1,20 @@
+🎨 IA IMAGES HOMEY SDK3 - Prompts Optimisés
+
+GUIDELINES:
+- Tailles: 75x75, 500x500, 1000x1000px
+- Format: PNG, fond blanc
+- Style: Produit professionnel Johan Bendz
+
+PROMPTS:
+motion_sensor: white PIR dome sensor, blue LED, studio lighting, white background
+smart_switch_1gang: white single wall switch, 1 button, modern minimalist design
+smart_switch_2gang: white double wall switch, 2 buttons side by side
+smart_switch_3gang: white triple wall switch, 3 buttons horizontal
+smart_plug: white smart plug EU socket, LED indicator, product photo
+temperature_sensor: white temp sensor, LCD display, rounded design
+
+OUTILS:
+1. Fooocus (simple)
+2. AUTOMATIC1111 (avancé)
+3. Générer 3 tailles par driver
+4. Nommer: small.png, large.png, xlarge.png

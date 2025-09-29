@@ -1,0 +1,904 @@
+{
+  "timestamp": "2025-08-22T11:34:25.441Z",
+  "summary": {
+    "totalDrivers": 10,
+    "metricCategories": 6,
+    "factors": [
+      "files",
+      "capabilities",
+      "clusters",
+      "assets",
+      "documentation",
+      "code_quality",
+      "structure",
+      "naming",
+      "consistency",
+      "capabilities",
+      "flow_cards",
+      "settings",
+      "advanced_features",
+      "zigbee_support",
+      "homey_integration",
+      "device_coverage",
+      "ai_features",
+      "heuristics",
+      "automation",
+      "smart_detection",
+      "documentation",
+      "testing",
+      "error_handling",
+      "logging"
+    ],
+    "weights": {
+      "completeness": 0.25,
+      "quality": 0.2,
+      "functionality": 0.2,
+      "compatibility": 0.15,
+      "innovation": 0.1,
+      "maintenance": 0.1
+    }
+  },
+  "driverScores": {
+    "fan-tuya-universal": {
+      "path": "fan-tuya-universal",
+      "scores": {
+        "completeness": 0.55,
+        "quality": 0.7999999999999999,
+        "functionality": 0.75,
+        "compatibility": 0.6333333333333333,
+        "innovation": 0.35000000000000003,
+        "maintenance": 0.6749999999999999
+      },
+      "quality": {
+        "completeness": "critical",
+        "quality": "average",
+        "functionality": "average",
+        "compatibility": "poor",
+        "innovation": "critical",
+        "maintenance": "poor"
+      },
+      "issues": [],
+      "strengths": [],
+      "overall": 0.645,
+      "grade": "C",
+      "rank": 0,
+      "weaknesses": [
+        "completeness: 55%",
+        "innovation: 35%"
+      ]
+    },
+    "lock-tuya-universal": {
+      "path": "lock-tuya-universal",
+      "scores": {
+        "completeness": 0.52,
+        "quality": 0.7999999999999999,
+        "functionality": 0.7125,
+        "compatibility": 0.6333333333333333,
+        "innovation": 0.35000000000000003,
+        "maintenance": 0.6749999999999999
+      },
+      "quality": {
+        "completeness": "critical",
+        "quality": "average",
+        "functionality": "average",
+        "compatibility": "poor",
+        "innovation": "critical",
+        "maintenance": "poor"
+      },
+      "issues": [],
+      "strengths": [],
+      "overall": 0.6300000000000001,
+      "grade": "C",
+      "rank": 0,
+      "weaknesses": [
+        "completeness: 52%",
+        "innovation: 35%"
+      ]
+    },
+    "switch": {
+      "path": "switch",
+      "scores": {
+        "completeness": 0.4833333333333334,
+        "quality": 0.6749999999999999,
+        "functionality": 0.21250000000000002,
+        "compatibility": 0.5,
+        "innovation": 0.375,
+        "maintenance": 0.625
+      },
+      "quality": {
+        "completeness": "critical",
+        "quality": "poor",
+        "functionality": "critical",
+        "compatibility": "critical",
+        "innovation": "critical",
+        "maintenance": "poor"
+      },
+      "issues": [],
+      "strengths": [],
+      "overall": 0.4733333333333334,
+      "grade": "F",
+      "rank": 0,
+      "weaknesses": [
+        "completeness: 48%",
+        "functionality: 21%",
+        "compatibility: 50%",
+        "innovation: 38%"
+      ]
+    },
+    "tuya-climate-universal": {
+      "path": "tuya-climate-universal",
+      "scores": {
+        "completeness": 0.575,
+        "quality": 0.7999999999999999,
+        "functionality": 0.7166666666666667,
+        "compatibility": 0.6666666666666666,
+        "innovation": 0.375,
+        "maintenance": 0.6749999999999999
+      },
+      "quality": {
+        "completeness": "critical",
+        "quality": "average",
+        "functionality": "average",
+        "compatibility": "poor",
+        "innovation": "critical",
+        "maintenance": "poor"
+      },
+      "issues": [],
+      "strengths": [],
+      "overall": 0.6520833333333332,
+      "grade": "C",
+      "rank": 0,
+      "weaknesses": [
+        "completeness: 57%",
+        "innovation: 38%"
+      ]
+    },
+    "tuya-cover-universal": {
+      "path": "tuya-cover-universal",
+      "scores": {
+        "completeness": 0.52,
+        "quality": 0.7999999999999999,
+        "functionality": 0.7125,
+        "compatibility": 0.6333333333333333,
+        "innovation": 0.35000000000000003,
+        "maintenance": 0.6749999999999999
+      },
+      "quality": {
+        "completeness": "critical",
+        "quality": "average",
+        "functionality": "average",
+        "compatibility": "poor",
+        "innovation": "critical",
+        "maintenance": "poor"
+      },
+      "issues": [],
+      "strengths": [],
+      "overall": 0.6300000000000001,
+      "grade": "C",
+      "rank": 0,
+      "weaknesses": [
+        "completeness: 52%",
+        "innovation: 35%"
+      ]
+    },
+    "tuya-light-universal": {
+      "path": "tuya-light-universal",
+      "scores": {
+        "completeness": 0.5783333333333334,
+        "quality": 0.7999999999999999,
+        "functionality": 0.7374999999999999,
+        "compatibility": 0.6,
+        "innovation": 0.35000000000000003,
+        "maintenance": 0.6749999999999999
+      },
+      "quality": {
+        "completeness": "critical",
+        "quality": "average",
+        "functionality": "average",
+        "compatibility": "poor",
+        "innovation": "critical",
+        "maintenance": "poor"
+      },
+      "issues": [],
+      "strengths": [],
+      "overall": 0.6445833333333333,
+      "grade": "C",
+      "rank": 0,
+      "weaknesses": [
+        "completeness: 58%",
+        "innovation: 35%"
+      ]
+    },
+    "tuya-plug-universal": {
+      "path": "tuya-plug-universal",
+      "scores": {
+        "completeness": 0.5783333333333334,
+        "quality": 0.7999999999999999,
+        "functionality": 0.7374999999999999,
+        "compatibility": 0.6666666666666666,
+        "innovation": 0.35000000000000003,
+        "maintenance": 0.6749999999999999
+      },
+      "quality": {
+        "completeness": "critical",
+        "quality": "average",
+        "functionality": "average",
+        "compatibility": "poor",
+        "innovation": "critical",
+        "maintenance": "poor"
+      },
+      "issues": [],
+      "strengths": [],
+      "overall": 0.6545833333333333,
+      "grade": "C",
+      "rank": 0,
+      "weaknesses": [
+        "completeness: 58%",
+        "innovation: 35%"
+      ]
+    },
+    "tuya-remote-universal": {
+      "path": "tuya-remote-universal",
+      "scores": {
+        "completeness": 0.45,
+        "quality": 0.7999999999999999,
+        "functionality": 0.575,
+        "compatibility": 0.6333333333333333,
+        "innovation": 0.35000000000000003,
+        "maintenance": 0.625
+      },
+      "quality": {
+        "completeness": "critical",
+        "quality": "average",
+        "functionality": "critical",
+        "compatibility": "poor",
+        "innovation": "critical",
+        "maintenance": "poor"
+      },
+      "issues": [],
+      "strengths": [],
+      "overall": 0.58,
+      "grade": "D",
+      "rank": 0,
+      "weaknesses": [
+        "completeness: 45%",
+        "functionality: 57%",
+        "innovation: 35%"
+      ]
+    },
+    "tuya-sensor-universal": {
+      "path": "tuya-sensor-universal",
+      "scores": {
+        "completeness": 0.635,
+        "quality": 0.7999999999999999,
+        "functionality": 0.7916666666666666,
+        "compatibility": 0.6666666666666666,
+        "innovation": 0.4,
+        "maintenance": 0.6749999999999999
+      },
+      "quality": {
+        "completeness": "poor",
+        "quality": "average",
+        "functionality": "average",
+        "compatibility": "poor",
+        "innovation": "critical",
+        "maintenance": "poor"
+      },
+      "issues": [],
+      "strengths": [],
+      "overall": 0.6845833333333333,
+      "grade": "C",
+      "rank": 0,
+      "weaknesses": [
+        "innovation: 40%"
+      ]
+    },
+    "zigbee-tuya-universal": {
+      "path": "zigbee-tuya-universal",
+      "scores": {
+        "completeness": 0.51,
+        "quality": 0.7999999999999999,
+        "functionality": 0.7,
+        "compatibility": 0.6333333333333333,
+        "innovation": 0.35000000000000003,
+        "maintenance": 0.6749999999999999
+      },
+      "quality": {
+        "completeness": "critical",
+        "quality": "average",
+        "functionality": "average",
+        "compatibility": "poor",
+        "innovation": "critical",
+        "maintenance": "poor"
+      },
+      "issues": [],
+      "strengths": [],
+      "overall": 0.625,
+      "grade": "C",
+      "rank": 0,
+      "weaknesses": [
+        "completeness: 51%",
+        "innovation: 35%"
+      ]
+    }
+  },
+  "qualityMetrics": {
+    "average": 0.6219166666666667,
+    "median": 0.6445833333333333,
+    "distribution": {
+      "excellent": 0,
+      "good": 0,
+      "average": 0,
+      "poor": 8,
+      "critical": 2
+    },
+    "trends": {},
+    "correlations": {}
+  },
+  "recommendations": {
+    "immediate": [
+      {
+        "driver": "switch",
+        "action": "Correction critique requise",
+        "priority": "critical",
+        "impact": "high",
+        "effort": "medium"
+      }
+    ],
+    "shortTerm": [
+      {
+        "driver": "fan-tuya-universal",
+        "action": "Amélioration de la qualité",
+        "priority": "high",
+        "impact": "medium",
+        "effort": "low"
+      },
+      {
+        "driver": "lock-tuya-universal",
+        "action": "Amélioration de la qualité",
+        "priority": "high",
+        "impact": "medium",
+        "effort": "low"
+      },
+      {
+        "driver": "tuya-climate-universal",
+        "action": "Amélioration de la qualité",
+        "priority": "high",
+        "impact": "medium",
+        "effort": "low"
+      },
+      {
+        "driver": "tuya-cover-universal",
+        "action": "Amélioration de la qualité",
+        "priority": "high",
+        "impact": "medium",
+        "effort": "low"
+      },
+      {
+        "driver": "tuya-light-universal",
+        "action": "Amélioration de la qualité",
+        "priority": "high",
+        "impact": "medium",
+        "effort": "low"
+      },
+      {
+        "driver": "tuya-plug-universal",
+        "action": "Amélioration de la qualité",
+        "priority": "high",
+        "impact": "medium",
+        "effort": "low"
+      },
+      {
+        "driver": "tuya-remote-universal",
+        "action": "Amélioration de la qualité",
+        "priority": "high",
+        "impact": "medium",
+        "effort": "low"
+      },
+      {
+        "driver": "tuya-sensor-universal",
+        "action": "Amélioration de la qualité",
+        "priority": "high",
+        "impact": "medium",
+        "effort": "low"
+      },
+      {
+        "driver": "zigbee-tuya-universal",
+        "action": "Amélioration de la qualité",
+        "priority": "high",
+        "impact": "medium",
+        "effort": "low"
+      }
+    ],
+    "longTerm": [
+      {
+        "action": "Implémentation de tests automatisés",
+        "priority": "medium",
+        "impact": "high",
+        "effort": "high"
+      },
+      {
+        "action": "Standardisation des patterns de code",
+        "priority": "medium",
+        "impact": "medium",
+        "effort": "medium"
+      }
+    ],
+    "strategic": [
+      {
+        "action": "Développement d'un pipeline d'enrichissement automatique",
+        "priority": "high",
+        "impact": "very_high",
+        "effort": "very_high"
+      }
+    ]
+  },
+  "rankings": {
+    "topDrivers": [
+      {
+        "name": "tuya-sensor-universal",
+        "score": 0.6845833333333333,
+        "grade": "C",
+        "strengths": []
+      },
+      {
+        "name": "tuya-plug-universal",
+        "score": 0.6545833333333333,
+        "grade": "C",
+        "strengths": []
+      },
+      {
+        "name": "tuya-climate-universal",
+        "score": 0.6520833333333332,
+        "grade": "C",
+        "strengths": []
+      },
+      {
+        "name": "fan-tuya-universal",
+        "score": 0.645,
+        "grade": "C",
+        "strengths": []
+      },
+      {
+        "name": "tuya-light-universal",
+        "score": 0.6445833333333333,
+        "grade": "C",
+        "strengths": []
+      },
+      {
+        "name": "lock-tuya-universal",
+        "score": 0.6300000000000001,
+        "grade": "C",
+        "strengths": []
+      },
+      {
+        "name": "tuya-cover-universal",
+        "score": 0.6300000000000001,
+        "grade": "C",
+        "strengths": []
+      },
+      {
+        "name": "zigbee-tuya-universal",
+        "score": 0.625,
+        "grade": "C",
+        "strengths": []
+      },
+      {
+        "name": "tuya-remote-universal",
+        "score": 0.58,
+        "grade": "D",
+        "strengths": []
+      },
+      {
+        "name": "switch",
+        "score": 0.4733333333333334,
+        "grade": "F",
+        "strengths": []
+      }
+    ],
+    "bottomDrivers": [
+      {
+        "name": "tuya-sensor-universal",
+        "score": 0.6845833333333333,
+        "grade": "C",
+        "weaknesses": [
+          "innovation: 40%"
+        ]
+      },
+      {
+        "name": "tuya-plug-universal",
+        "score": 0.6545833333333333,
+        "grade": "C",
+        "weaknesses": [
+          "completeness: 58%",
+          "innovation: 35%"
+        ]
+      },
+      {
+        "name": "tuya-climate-universal",
+        "score": 0.6520833333333332,
+        "grade": "C",
+        "weaknesses": [
+          "completeness: 57%",
+          "innovation: 38%"
+        ]
+      },
+      {
+        "name": "fan-tuya-universal",
+        "score": 0.645,
+        "grade": "C",
+        "weaknesses": [
+          "completeness: 55%",
+          "innovation: 35%"
+        ]
+      },
+      {
+        "name": "tuya-light-universal",
+        "score": 0.6445833333333333,
+        "grade": "C",
+        "weaknesses": [
+          "completeness: 58%",
+          "innovation: 35%"
+        ]
+      },
+      {
+        "name": "lock-tuya-universal",
+        "score": 0.6300000000000001,
+        "grade": "C",
+        "weaknesses": [
+          "completeness: 52%",
+          "innovation: 35%"
+        ]
+      },
+      {
+        "name": "tuya-cover-universal",
+        "score": 0.6300000000000001,
+        "grade": "C",
+        "weaknesses": [
+          "completeness: 52%",
+          "innovation: 35%"
+        ]
+      },
+      {
+        "name": "zigbee-tuya-universal",
+        "score": 0.625,
+        "grade": "C",
+        "weaknesses": [
+          "completeness: 51%",
+          "innovation: 35%"
+        ]
+      },
+      {
+        "name": "tuya-remote-universal",
+        "score": 0.58,
+        "grade": "D",
+        "weaknesses": [
+          "completeness: 45%",
+          "functionality: 57%",
+          "innovation: 35%"
+        ]
+      },
+      {
+        "name": "switch",
+        "score": 0.4733333333333334,
+        "grade": "F",
+        "weaknesses": [
+          "completeness: 48%",
+          "functionality: 21%",
+          "compatibility: 50%"
+        ]
+      }
+    ],
+    "byCategory": {
+      "completeness": [
+        {
+          "name": "tuya-sensor-universal",
+          "score": 0.635
+        },
+        {
+          "name": "tuya-plug-universal",
+          "score": 0.5783333333333334
+        },
+        {
+          "name": "tuya-light-universal",
+          "score": 0.5783333333333334
+        },
+        {
+          "name": "tuya-climate-universal",
+          "score": 0.575
+        },
+        {
+          "name": "fan-tuya-universal",
+          "score": 0.55
+        }
+      ],
+      "quality": [
+        {
+          "name": "tuya-sensor-universal",
+          "score": 0.7999999999999999
+        },
+        {
+          "name": "tuya-plug-universal",
+          "score": 0.7999999999999999
+        },
+        {
+          "name": "tuya-climate-universal",
+          "score": 0.7999999999999999
+        },
+        {
+          "name": "fan-tuya-universal",
+          "score": 0.7999999999999999
+        },
+        {
+          "name": "tuya-light-universal",
+          "score": 0.7999999999999999
+        }
+      ],
+      "functionality": [
+        {
+          "name": "tuya-sensor-universal",
+          "score": 0.7916666666666666
+        },
+        {
+          "name": "fan-tuya-universal",
+          "score": 0.75
+        },
+        {
+          "name": "tuya-plug-universal",
+          "score": 0.7374999999999999
+        },
+        {
+          "name": "tuya-light-universal",
+          "score": 0.7374999999999999
+        },
+        {
+          "name": "tuya-climate-universal",
+          "score": 0.7166666666666667
+        }
+      ],
+      "compatibility": [
+        {
+          "name": "tuya-sensor-universal",
+          "score": 0.6666666666666666
+        },
+        {
+          "name": "tuya-plug-universal",
+          "score": 0.6666666666666666
+        },
+        {
+          "name": "tuya-climate-universal",
+          "score": 0.6666666666666666
+        },
+        {
+          "name": "fan-tuya-universal",
+          "score": 0.6333333333333333
+        },
+        {
+          "name": "lock-tuya-universal",
+          "score": 0.6333333333333333
+        }
+      ],
+      "innovation": [
+        {
+          "name": "tuya-sensor-universal",
+          "score": 0.4
+        },
+        {
+          "name": "tuya-climate-universal",
+          "score": 0.375
+        },
+        {
+          "name": "switch",
+          "score": 0.375
+        },
+        {
+          "name": "tuya-plug-universal",
+          "score": 0.35000000000000003
+        },
+        {
+          "name": "fan-tuya-universal",
+          "score": 0.35000000000000003
+        }
+      ],
+      "maintenance": [
+        {
+          "name": "tuya-sensor-universal",
+          "score": 0.6749999999999999
+        },
+        {
+          "name": "tuya-plug-universal",
+          "score": 0.6749999999999999
+        },
+        {
+          "name": "tuya-climate-universal",
+          "score": 0.6749999999999999
+        },
+        {
+          "name": "fan-tuya-universal",
+          "score": 0.6749999999999999
+        },
+        {
+          "name": "tuya-light-universal",
+          "score": 0.6749999999999999
+        }
+      ]
+    },
+    "improvements": [
+      {
+        "name": "tuya-sensor-universal",
+        "currentScore": 0.6845833333333333,
+        "targetScore": 0.8,
+        "improvement": 0.11541666666666672,
+        "priority": "medium"
+      },
+      {
+        "name": "tuya-plug-universal",
+        "currentScore": 0.6545833333333333,
+        "targetScore": 0.8,
+        "improvement": 0.14541666666666675,
+        "priority": "medium"
+      },
+      {
+        "name": "tuya-climate-universal",
+        "currentScore": 0.6520833333333332,
+        "targetScore": 0.8,
+        "improvement": 0.1479166666666668,
+        "priority": "medium"
+      },
+      {
+        "name": "fan-tuya-universal",
+        "currentScore": 0.645,
+        "targetScore": 0.8,
+        "improvement": 0.15500000000000003,
+        "priority": "medium"
+      },
+      {
+        "name": "tuya-light-universal",
+        "currentScore": 0.6445833333333333,
+        "targetScore": 0.8,
+        "improvement": 0.15541666666666676,
+        "priority": "medium"
+      },
+      {
+        "name": "lock-tuya-universal",
+        "currentScore": 0.6300000000000001,
+        "targetScore": 0.8,
+        "improvement": 0.16999999999999993,
+        "priority": "medium"
+      },
+      {
+        "name": "tuya-cover-universal",
+        "currentScore": 0.6300000000000001,
+        "targetScore": 0.8,
+        "improvement": 0.16999999999999993,
+        "priority": "medium"
+      },
+      {
+        "name": "zigbee-tuya-universal",
+        "currentScore": 0.625,
+        "targetScore": 0.8,
+        "improvement": 0.17500000000000004,
+        "priority": "medium"
+      },
+      {
+        "name": "tuya-remote-universal",
+        "currentScore": 0.58,
+        "targetScore": 0.8,
+        "improvement": 0.22000000000000008,
+        "priority": "medium"
+      },
+      {
+        "name": "switch",
+        "currentScore": 0.4733333333333334,
+        "targetScore": 0.8,
+        "improvement": 0.32666666666666666,
+        "priority": "high"
+      }
+    ]
+  },
+  "trends": {
+    "scoreDistribution": {
+      "range": {
+        "min": 0.4733333333333334,
+        "max": 0.6845833333333333
+      },
+      "standardDeviation": 0.05561031329209037,
+      "skewness": -1.7563464458807352
+    },
+    "qualityEvolution": {},
+    "categoryPerformance": {
+      "completeness": {
+        "average": 0.5399999999999999,
+        "best": 0.635,
+        "worst": 0.45,
+        "variance": 0.0026299999999999995
+      },
+      "quality": {
+        "average": 0.7874999999999999,
+        "best": 0.7999999999999999,
+        "worst": 0.6749999999999999,
+        "variance": 0.0014062500000000002
+      },
+      "functionality": {
+        "average": 0.6645833333333334,
+        "best": 0.7916666666666666,
+        "worst": 0.21250000000000002,
+        "variance": 0.02550434027777777
+      },
+      "compatibility": {
+        "average": 0.6266666666666667,
+        "best": 0.6666666666666666,
+        "worst": 0.5,
+        "variance": 0.002177777777777777
+      },
+      "innovation": {
+        "average": 0.36000000000000004,
+        "best": 0.4,
+        "worst": 0.35000000000000003,
+        "variance": 0.00027499999999999975
+      },
+      "maintenance": {
+        "average": 0.6649999999999999,
+        "best": 0.6749999999999999,
+        "worst": 0.625,
+        "variance": 0.000399999999999999
+      }
+    },
+    "recommendations": [
+      {
+        "type": "focus_area",
+        "description": "Concentrer les efforts sur les catégories avec les scores les plus faibles",
+        "priority": "high"
+      }
+    ]
+  },
+  "aiInsights": {
+    "patterns": [
+      {
+        "type": "score_distribution",
+        "description": "Distribution normale des scores avec concentration autour de la moyenne",
+        "confidence": 0.8
+      },
+      {
+        "type": "category_correlation",
+        "description": "Corrélation positive entre la qualité du code et la fonctionnalité",
+        "confidence": 0.7
+      }
+    ],
+    "anomalies": [
+      {
+        "type": "outlier_score",
+        "description": "Drivers avec des scores exceptionnellement élevés ou faibles",
+        "count": 3
+      }
+    ],
+    "opportunities": [
+      {
+        "type": "low_hanging_fruit",
+        "description": "Drivers avec des améliorations faciles à implémenter",
+        "count": 5
+      },
+      {
+        "type": "high_impact_low_effort",
+        "description": "Améliorations avec un impact élevé et un effort minimal",
+        "count": 3
+      }
+    ],
+    "risks": [
+      {
+        "type": "technical_debt",
+        "description": "Accumulation de dette technique dans les drivers critiques",
+        "severity": "medium",
+        "probability": "high"
+      }
+    ],
+    "predictions": [
+      {
+        "type": "quality_improvement",
+        "description": "Amélioration de 15% de la qualité globale dans les 3 prochains mois",
+        "confidence": 0.7,
+        "timeframe": "3 months"
+      }
+    ]
+  }
+}

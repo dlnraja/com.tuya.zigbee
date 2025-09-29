@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-08-16T10:28:06.547Z",
+  "version": "3.5.0",
+  "stats": {
+    "driversProcessed": 520,
+    "driversEnriched": 0,
+    "errors": 0,
+    "sourcesUsed": []
+  },
+  "sources": {
+    "homeyForum": "https://community.homey.app",
+    "zigbee2mqtt": "https://www.zigbee2mqtt.io",
+    "blakadder": "https://blakadder.com"
+  },
+  "summary": {
+    "totalDrivers": 520,
+    "enrichedDrivers": 0,
+    "enrichmentRate": "0.00",
+    "errors": 0
+  }
+}

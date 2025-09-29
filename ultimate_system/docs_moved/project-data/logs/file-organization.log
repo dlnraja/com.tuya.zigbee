@@ -1,0 +1,201 @@
+[2025-09-04T15:59:17.140Z] MOVE: file-organization.log -> logs\file-organization.log
+[2025-09-04T15:59:17.149Z] MOVE: FINAL_REPORT.md -> docs\FINAL_REPORT.md
+[2025-09-04T15:59:17.160Z] MOVE: fix_drivers_intelligently.py -> tools\python\fix_drivers_intelligently.py
+[2025-09-04T15:59:17.163Z] MOVE: fix_image_paths.py -> tools\python\fix_image_paths.py
+[2025-09-04T15:59:17.166Z] MOVE: fix_image_sizes.py -> tools\python\fix_image_sizes.py
+[2025-09-04T15:59:17.175Z] MOVE: generate_report.py -> tools\python\generate_report.py
+[2025-09-04T15:59:17.180Z] MOVE: GITHUB_SETUP_INSTRUCTIONS.txt -> reports\GITHUB_SETUP_INSTRUCTIONS.txt
+[2025-09-04T15:59:17.183Z] MOVE: mega-restructure.log -> logs\mega-restructure.log
+[2025-09-04T15:59:17.191Z] MOVE: MEGA_ENHANCEMENT_ULTIMATE_COMPLETE_REPORT.md -> docs\MEGA_ENHANCEMENT_ULTIMATE_COMPLETE_REPORT.md
+[2025-09-04T15:59:17.197Z] MOVE: MEGA_PROMPT_500_STEPS.md -> docs\MEGA_PROMPT_500_STEPS.md
+[2025-09-04T15:59:17.200Z] MOVE: mega_prompt_checklist.csv -> data\exports\mega_prompt_checklist.csv
+[2025-09-04T15:59:17.207Z] MOVE: mega_prompt_checklist.md -> docs\mega_prompt_checklist.md
+[2025-09-04T15:59:17.214Z] MOVE: MEGA_PROMPT_CURSOR.md -> docs\MEGA_PROMPT_CURSOR.md
+[2025-09-04T15:59:17.219Z] MOVE: mega_prompt_full.md -> docs\mega_prompt_full.md
+[2025-09-04T15:59:17.227Z] MOVE: output.txt -> reports\output.txt
+[2025-09-04T15:59:17.233Z] MOVE: placeholder-update-report.md -> docs\placeholder-update-report.md
+[2025-09-04T15:59:17.241Z] MOVE: project_structure.txt -> reports\project_structure.txt
+[2025-09-04T15:59:17.248Z] MOVE: PR_PLAN.md -> docs\PR_PLAN.md
+[2025-09-04T15:59:17.257Z] MOVE: reports-move.log -> logs\reports-move.log
+[2025-09-04T15:59:17.265Z] MOVE: simple-report.cmd -> scripts\windows\simple-report.cmd
+[2025-09-04T15:59:17.276Z] MOVE: simple_fix.py -> tools\python\simple_fix.py
+[2025-09-04T15:59:17.295Z] MOVE: test-output.txt -> reports\test-output.txt
+[2025-09-04T15:59:17.311Z] MOVE: test.txt -> reports\test.txt
+[2025-09-04T15:59:17.381Z] MOVE: TESTING.md -> docs\TESTING.md
+[2025-09-04T15:59:17.392Z] MOVE: tuya-check.cmd -> scripts\windows\tuya-check.cmd
+[2025-09-04T15:59:17.399Z] MOVE: ultimate-project.log -> logs\ultimate-project.log
+[2025-09-04T15:59:17.428Z] MOVE: VALIDATION_FINAL_REPORT.md -> docs\VALIDATION_FINAL_REPORT.md
+[2025-09-04T15:59:17.434Z] Résumé: 47 fichier(s) déplacé(s)
+
+[2025-09-04T15:59:17.446Z] Reorganization finished.
+[2025-09-04T18:28:52.154Z] Reorganization started. mode=DRY-RUN
+[2025-09-04T18:28:52.169Z] KEEP: .env
+[2025-09-04T18:28:52.171Z] KEEP: .gitignore
+[2025-09-04T18:28:52.172Z] KEEP: .homeyignore
+[2025-09-04T18:28:52.174Z] KEEP-DIR: analysis-results
+[2025-09-04T18:28:52.175Z] SKIP: app.d.ts
+[2025-09-04T18:28:52.177Z] SKIP: app.d.ts.map
+[2025-09-04T18:28:52.178Z] KEEP: app.js
+[2025-09-04T18:28:52.180Z] KEEP: app.json
+[2025-09-04T18:28:52.182Z] KEEP-DIR: archives
+[2025-09-04T18:28:52.184Z] KEEP-DIR: catalog
+[2025-09-04T18:28:52.186Z] KEEP: CHANGELOG.md
+[2025-09-04T18:28:52.188Z] SKIP: CODEOWNERS
+[2025-09-04T18:28:52.189Z] KEEP-DIR: config
+[2025-09-04T18:28:52.191Z] KEEP-DIR: data
+[2025-09-04T18:28:52.192Z] KEEP-DIR: deployment
+[2025-09-04T18:28:52.193Z] KEEP-DIR: dist
+[2025-09-04T18:28:52.195Z] KEEP-DIR: enriched
+[2025-09-04T18:28:52.197Z] SKIP: ersHPDesktoptuya_repair'
+[2025-09-04T18:28:52.198Z] KEEP-DIR: evidence
+[2025-09-04T18:28:52.202Z] KEEP-DIR: examples
+[2025-09-04T18:28:52.205Z] KEEP-DIR: final-release
+[2025-09-04T18:28:52.209Z] KEEP-DIR: final-validation
+[2025-09-04T18:28:52.210Z] KEEP: jest.config.js
+[2025-09-04T18:28:52.214Z] KEEP-DIR: locales
+[2025-09-04T18:28:52.221Z] KEEP-DIR: logs
+[2025-09-04T18:28:52.232Z] KEEP-DIR: matrices
+[2025-09-04T18:28:52.235Z] KEEP: nodemon.json
+[2025-09-04T18:28:52.238Z] KEEP-DIR: node_modules
+[2025-09-04T18:28:52.241Z] KEEP: package.json
+[2025-09-04T18:28:52.243Z] KEEP-DIR: public
+[2025-09-04T18:28:52.247Z] KEEP-DIR: python_service
+[2025-09-04T18:28:52.256Z] SKIP: quick-save.ps1
+[2025-09-04T18:28:52.267Z] KEEP: README.md
+[2025-09-04T18:28:52.272Z] KEEP-DIR: ref
+[2025-09-04T18:28:52.276Z] KEEP-DIR: references
+[2025-09-04T18:28:52.278Z] KEEP-DIR: release
+[2025-09-04T18:28:52.280Z] KEEP-DIR: releases
+[2025-09-04T18:28:52.283Z] KEEP-DIR: reports
+[2025-09-04T18:28:52.285Z] KEEP-DIR: research
+[2025-09-04T18:28:52.287Z] KEEP-DIR: scan-results
+[2025-09-04T18:28:52.288Z] KEEP-DIR: scraping-data
+[2025-09-04T18:28:52.290Z] KEEP-DIR: script-consolidation
+[2025-09-04T18:28:52.292Z] KEEP-DIR: script-conversion
+[2025-09-04T18:28:52.294Z] KEEP-DIR: settings
+[2025-09-04T18:28:52.296Z] KEEP-DIR: src
+[2025-09-04T18:28:52.298Z] KEEP-DIR: sync
+[2025-09-04T18:28:52.300Z] KEEP-DIR: temp
+[2025-09-04T18:28:52.302Z] KEEP-DIR: templates
+[2025-09-04T18:28:52.303Z] KEEP-DIR: test
+[2025-09-04T18:28:52.306Z] KEEP: tsconfig.json
+[2025-09-04T18:28:52.310Z] SKIP: tsconfig.tsbuildinfo
+[2025-09-04T18:28:52.313Z] KEEP-DIR: tuya_refactor_patch
+[2025-09-04T18:28:52.315Z] KEEP-DIR: web-enriched
+[2025-09-04T18:28:52.316Z] KEEP-DIR: __pycache__
+[2025-09-04T18:28:52.318Z] DRY:  file-organization.log -> logs\file-organization.log
+[2025-09-04T18:28:52.319Z] Résumé: 1 fichier(s) prévu(s)
+
+[2025-09-04T18:28:52.320Z] Reorganization finished.
+[2025-09-04T18:30:25.832Z] Reorganization started. mode=DRY-RUN
+[2025-09-04T18:30:25.860Z] KEEP: .env
+[2025-09-04T18:30:25.862Z] KEEP: .gitignore
+[2025-09-04T18:30:25.865Z] KEEP: .homeyignore
+[2025-09-04T18:30:25.869Z] KEEP-DIR: analysis-results
+[2025-09-04T18:30:25.872Z] KEEP: app.js
+[2025-09-04T18:30:25.874Z] KEEP: app.json
+[2025-09-04T18:30:25.877Z] KEEP-DIR: archives
+[2025-09-04T18:30:25.879Z] KEEP-DIR: catalog
+[2025-09-04T18:30:25.881Z] KEEP: CHANGELOG.md
+[2025-09-04T18:30:25.883Z] KEEP-DIR: config
+[2025-09-04T18:30:25.886Z] KEEP-DIR: data
+[2025-09-04T18:30:25.888Z] KEEP-DIR: deployment
+[2025-09-04T18:30:25.890Z] KEEP-DIR: dist
+[2025-09-04T18:30:25.891Z] KEEP-DIR: enriched
+[2025-09-04T18:30:25.893Z] SKIP: ersHPDesktoptuya_repair'
+[2025-09-04T18:30:25.894Z] KEEP-DIR: evidence
+[2025-09-04T18:30:25.895Z] KEEP-DIR: examples
+[2025-09-04T18:30:25.897Z] KEEP-DIR: final-release
+[2025-09-04T18:30:25.900Z] KEEP-DIR: final-validation
+[2025-09-04T18:30:25.901Z] KEEP: jest.config.js
+[2025-09-04T18:30:25.902Z] KEEP-DIR: locales
+[2025-09-04T18:30:25.904Z] KEEP-DIR: logs
+[2025-09-04T18:30:25.905Z] KEEP-DIR: matrices
+[2025-09-04T18:30:25.906Z] KEEP: nodemon.json
+[2025-09-04T18:30:25.907Z] KEEP-DIR: node_modules
+[2025-09-04T18:30:25.909Z] KEEP: package.json
+[2025-09-04T18:30:25.911Z] KEEP-DIR: public
+[2025-09-04T18:30:25.912Z] KEEP-DIR: python_service
+[2025-09-04T18:30:25.914Z] KEEP: README.md
+[2025-09-04T18:30:25.919Z] KEEP-DIR: ref
+[2025-09-04T18:30:25.920Z] KEEP-DIR: references
+[2025-09-04T18:30:25.922Z] KEEP-DIR: release
+[2025-09-04T18:30:25.924Z] KEEP-DIR: releases
+[2025-09-04T18:30:25.925Z] KEEP-DIR: reports
+[2025-09-04T18:30:25.927Z] KEEP-DIR: research
+[2025-09-04T18:30:25.928Z] KEEP-DIR: scan-results
+[2025-09-04T18:30:25.929Z] KEEP-DIR: scraping-data
+[2025-09-04T18:30:25.934Z] KEEP-DIR: script-consolidation
+[2025-09-04T18:30:25.937Z] KEEP-DIR: script-conversion
+[2025-09-04T18:30:25.940Z] KEEP-DIR: settings
+[2025-09-04T18:30:25.942Z] KEEP-DIR: src
+[2025-09-04T18:30:25.945Z] KEEP-DIR: sync
+[2025-09-04T18:30:25.949Z] KEEP-DIR: temp
+[2025-09-04T18:30:25.952Z] KEEP-DIR: templates
+[2025-09-04T18:30:25.954Z] KEEP-DIR: test
+[2025-09-04T18:30:25.957Z] KEEP: tsconfig.json
+[2025-09-04T18:30:25.959Z] KEEP-DIR: tuya_refactor_patch
+[2025-09-04T18:30:25.962Z] KEEP-DIR: web-enriched
+[2025-09-04T18:30:25.964Z] KEEP-DIR: __pycache__
+[2025-09-04T18:30:25.966Z] DRY:  app.d.ts -> types\app.d.ts
+[2025-09-04T18:30:25.970Z] DRY:  app.d.ts.map -> types\app.d.ts.map
+[2025-09-04T18:30:25.972Z] DRY:  CODEOWNERS -> .github\CODEOWNERS
+[2025-09-04T18:30:25.981Z] DRY:  file-organization.log -> logs\file-organization.log
+[2025-09-04T18:30:25.984Z] DRY:  quick-save.ps1 -> scripts\windows\quick-save.ps1
+[2025-09-04T18:30:25.987Z] DRY:  tsconfig.tsbuildinfo -> temp\tsconfig.tsbuildinfo
+[2025-09-04T18:30:25.989Z] Résumé: 6 fichier(s) prévu(s)
+
+[2025-09-04T18:30:25.991Z] Reorganization finished.
+[2025-09-04T18:32:45.885Z] Reorganization started. mode=APPLY
+[2025-09-04T18:32:45.901Z] KEEP: .env
+[2025-09-04T18:32:45.902Z] KEEP: .gitignore
+[2025-09-04T18:32:45.904Z] KEEP: .homeyignore
+[2025-09-04T18:32:45.914Z] KEEP-DIR: analysis-results
+[2025-09-04T18:32:45.916Z] KEEP: app.js
+[2025-09-04T18:32:45.917Z] KEEP: app.json
+[2025-09-04T18:32:45.918Z] KEEP-DIR: archives
+[2025-09-04T18:32:45.920Z] KEEP-DIR: catalog
+[2025-09-04T18:32:45.922Z] KEEP: CHANGELOG.md
+[2025-09-04T18:32:45.923Z] KEEP-DIR: config
+[2025-09-04T18:32:45.925Z] KEEP-DIR: data
+[2025-09-04T18:32:45.927Z] KEEP-DIR: deployment
+[2025-09-04T18:32:45.929Z] KEEP-DIR: dist
+[2025-09-04T18:32:45.930Z] KEEP-DIR: enriched
+[2025-09-04T18:32:45.931Z] SKIP: ersHPDesktoptuya_repair'
+[2025-09-04T18:32:45.932Z] KEEP-DIR: evidence
+[2025-09-04T18:32:45.933Z] KEEP-DIR: examples
+[2025-09-04T18:32:45.934Z] KEEP-DIR: final-release
+[2025-09-04T18:32:45.935Z] KEEP-DIR: final-validation
+[2025-09-04T18:32:45.936Z] KEEP: jest.config.js
+[2025-09-04T18:32:45.937Z] KEEP-DIR: locales
+[2025-09-04T18:32:45.938Z] KEEP-DIR: logs
+[2025-09-04T18:32:45.939Z] KEEP-DIR: matrices
+[2025-09-04T18:32:45.940Z] KEEP: nodemon.json
+[2025-09-04T18:32:45.941Z] KEEP-DIR: node_modules
+[2025-09-04T18:32:45.944Z] KEEP: package.json
+[2025-09-04T18:32:45.945Z] KEEP-DIR: public
+[2025-09-04T18:32:45.946Z] KEEP-DIR: python_service
+[2025-09-04T18:32:45.947Z] KEEP: README.md
+[2025-09-04T18:32:45.949Z] KEEP-DIR: ref
+[2025-09-04T18:32:45.950Z] KEEP-DIR: references
+[2025-09-04T18:32:45.952Z] KEEP-DIR: release
+[2025-09-04T18:32:45.953Z] KEEP-DIR: releases
+[2025-09-04T18:32:45.954Z] KEEP-DIR: reports
+[2025-09-04T18:32:45.955Z] KEEP-DIR: research
+[2025-09-04T18:32:45.955Z] KEEP-DIR: scan-results
+[2025-09-04T18:32:45.956Z] KEEP-DIR: scraping-data
+[2025-09-04T18:32:45.959Z] KEEP-DIR: script-consolidation
+[2025-09-04T18:32:45.960Z] KEEP-DIR: script-conversion
+[2025-09-04T18:32:45.961Z] KEEP-DIR: settings
+[2025-09-04T18:32:45.962Z] KEEP-DIR: src
+[2025-09-04T18:32:45.964Z] KEEP-DIR: sync
+[2025-09-04T18:32:45.966Z] KEEP-DIR: temp
+[2025-09-04T18:32:45.967Z] KEEP-DIR: templates
+[2025-09-04T18:32:45.969Z] KEEP-DIR: test
+[2025-09-04T18:32:45.970Z] KEEP: tsconfig.json
+[2025-09-04T18:32:45.971Z] KEEP-DIR: tuya_refactor_patch
+[2025-09-04T18:32:45.972Z] KEEP-DIR: web-enriched
+[2025-09-04T18:32:45.975Z] KEEP-DIR: __pycache__
+[2025-09-04T18:32:45.977Z] MOVE: app.d.ts -> types\app.d.ts
+[2025-09-04T18:32:45.979Z] MOVE: app.d.ts.map -> types\app.d.ts.map
+[2025-09-04T18:32:45.981Z] MOVE: CODEOWNERS -> .github\CODEOWNERS

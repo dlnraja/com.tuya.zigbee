@@ -1,0 +1,11 @@
+homey.js app publish
+
+Publish a Homey App to the Homey Apps Store
+
+Options:
+      --version  Show version number                                   [boolean]
+  -p, --path     Path to a Homey App directory
+                           [string] [default: "C:\Users\HP\Desktop\tuya_repair"]
+      --help     Show help                                             [boolean]
+
+Unknown argument: minor

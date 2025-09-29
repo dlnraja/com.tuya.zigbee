@@ -1,0 +1,371 @@
+{
+  "timestamp": "2025-09-10T10:14:10.284Z",
+  "totalIssues": 40,
+  "issuesByType": {
+    "incorrect_cluster_import": 40
+  },
+  "filesAffected": [
+    "drivers\\climate\\device.js",
+    "drivers\\climate\\thermostat\\TS0601\\device.js",
+    "drivers\\common\\BaseDevice.js",
+    "drivers\\common\\BaseZigbeeDevice.js",
+    "drivers\\common\\device.js",
+    "drivers\\covers\\device.js",
+    "drivers\\lights\\bulb\\TS0501A\\device.js",
+    "drivers\\lights\\device.js",
+    "drivers\\manufacturers\\device.js",
+    "drivers\\protocols\\device.js",
+    "drivers\\security\\device.js",
+    "drivers\\security\\lock\\TY0203\\device.js",
+    "drivers\\sensors\\air_quality\\TS0205\\device.js",
+    "drivers\\sensors\\device.js",
+    "drivers\\sensors\\rs0201\\device.js",
+    "drivers\\sensors\\temperature\\TS0201\\device.js",
+    "drivers\\sensors\\ts0201\\device.js",
+    "drivers\\sensors\\tuya_water_leak\\driver.js",
+    "drivers\\sensors\\water_leak\\TS0207\\device.js",
+    "drivers\\sensors-TS0601_motion\\device.js",
+    "drivers\\switches\\device.js",
+    "drivers\\switches\\simple_switch\\TS0011\\device.js",
+    "drivers\\templates\\BaseZigbeeDevice.js",
+    "drivers\\TS0601_climate\\device.js",
+    "drivers\\TS0601_cover\\device.js",
+    "drivers\\TS0601_irrigation\\device.js",
+    "drivers\\TS0601_lock\\device.js",
+    "drivers\\TS0601_siren\\device.js",
+    "drivers\\tuya_future_ai_device\\device.js",
+    "drivers\\tuya_generic_light\\device.js",
+    "drivers\\tuya_generic_plug\\device.js",
+    "drivers\\tuya_generic_sensor\\device.js",
+    "drivers\\tuya_generic_switch\\device.js",
+    "drivers\\tuya_thermostat\\device.js",
+    "drivers\\tuya_universal_adapter\\device.js",
+    "drivers\\tuya_water_sensor\\device.js",
+    "drivers\\_base\\device.js",
+    "drivers\\_base\\TuyaBaseDevice.js",
+    "drivers\\_template\\standard_driver.js",
+    "drivers\\_templates\\device.js"
+  ],
+  "issues": [
+    {
+      "file": "drivers\\climate\\device.js",
+      "line": 4,
+      "code": "const { CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\climate\\thermostat\\TS0601\\device.js",
+      "line": 2,
+      "code": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\common\\BaseDevice.js",
+      "line": 4,
+      "code": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\common\\BaseZigbeeDevice.js",
+      "line": 2,
+      "code": "const { CLUSTER } = require('zigbee-clusters');",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\common\\device.js",
+      "line": 4,
+      "code": "const { CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\covers\\device.js",
+      "line": 4,
+      "code": "const { CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\lights\\bulb\\TS0501A\\device.js",
+      "line": 2,
+      "code": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\lights\\device.js",
+      "line": 4,
+      "code": "const { CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\manufacturers\\device.js",
+      "line": 4,
+      "code": "const { CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\protocols\\device.js",
+      "line": 4,
+      "code": "const { CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\security\\device.js",
+      "line": 4,
+      "code": "const { CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\security\\lock\\TY0203\\device.js",
+      "line": 2,
+      "code": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\sensors\\air_quality\\TS0205\\device.js",
+      "line": 2,
+      "code": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\sensors\\device.js",
+      "line": 4,
+      "code": "const { CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\sensors\\rs0201\\device.js",
+      "line": 2,
+      "code": "const { CLUSTER } = require('zigbee-clusters');",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\sensors\\temperature\\TS0201\\device.js",
+      "line": 4,
+      "code": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\sensors\\ts0201\\device.js",
+      "line": 2,
+      "code": "const { CLUSTER } = require('zigbee-clusters');",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\sensors\\tuya_water_leak\\driver.js",
+      "line": 2,
+      "code": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\sensors\\water_leak\\TS0207\\device.js",
+      "line": 4,
+      "code": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\sensors-TS0601_motion\\device.js",
+      "line": 2,
+      "code": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\switches\\device.js",
+      "line": 4,
+      "code": "const { CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\switches\\simple_switch\\TS0011\\device.js",
+      "line": 2,
+      "code": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\templates\\BaseZigbeeDevice.js",
+      "line": 4,
+      "code": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\TS0601_climate\\device.js",
+      "line": 4,
+      "code": "const { CLUSTER, Cluster } = require('zigbee-clusters');",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\TS0601_cover\\device.js",
+      "line": 4,
+      "code": "const { CLUSTER, Cluster } = require('zigbee-clusters');",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\TS0601_irrigation\\device.js",
+      "line": 4,
+      "code": "const { CLUSTER, Cluster } = require('zigbee-clusters');",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\TS0601_lock\\device.js",
+      "line": 4,
+      "code": "const { CLUSTER, Cluster } = require('zigbee-clusters');",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\TS0601_siren\\device.js",
+      "line": 4,
+      "code": "const { CLUSTER, Cluster } = require('zigbee-clusters');",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\tuya_future_ai_device\\device.js",
+      "line": 4,
+      "code": "const { CLUSTER, Cluster } = require('zigbee-clusters');",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\tuya_generic_light\\device.js",
+      "line": 4,
+      "code": "const { CLUSTER, Cluster } = require('zigbee-clusters');",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\tuya_generic_plug\\device.js",
+      "line": 4,
+      "code": "const { CLUSTER, Cluster } = require('zigbee-clusters');",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\tuya_generic_sensor\\device.js",
+      "line": 4,
+      "code": "const { CLUSTER, Cluster } = require('zigbee-clusters');",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\tuya_generic_switch\\device.js",
+      "line": 4,
+      "code": "const { CLUSTER, Cluster } = require('zigbee-clusters');",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\tuya_thermostat\\device.js",
+      "line": 2,
+      "code": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\tuya_universal_adapter\\device.js",
+      "line": 4,
+      "code": "const { CLUSTER, Cluster } = require('zigbee-clusters');",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\tuya_water_sensor\\device.js",
+      "line": 2,
+      "code": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\_base\\device.js",
+      "line": 4,
+      "code": "const { CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\_base\\TuyaBaseDevice.js",
+      "line": 2,
+      "code": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\_template\\standard_driver.js",
+      "line": 2,
+      "code": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    },
+    {
+      "file": "drivers\\_templates\\device.js",
+      "line": 4,
+      "code": "const { CLUSTER } = require(\"zigbee-clusters\");",
+      "type": "incorrect_cluster_import",
+      "message": "Incorrect zigbee-clusters import, should use destructured imports",
+      "fix": "const { Cluster, CLUSTER } = require(\"zigbee-clusters\");"
+    }
+  ]
+}

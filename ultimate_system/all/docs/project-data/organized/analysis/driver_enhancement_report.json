@@ -1,0 +1,165 @@
+{
+  "enhanced_drivers": [
+    {
+      "driver": "air_quality_sensor",
+      "category": "sensors",
+      "device_type": "air_quality_sensor",
+      "capabilities": 3,
+      "clusters": 5,
+      "settings": 1
+    },
+    {
+      "driver": "contact_sensor",
+      "category": "sensors",
+      "device_type": "contact_sensor",
+      "capabilities": 3,
+      "clusters": 5,
+      "settings": 2
+    },
+    {
+      "driver": "co_detector",
+      "category": "sensors",
+      "device_type": "co_detector",
+      "capabilities": 2,
+      "clusters": 5,
+      "settings": 1
+    },
+    {
+      "driver": "curtain_motor",
+      "category": "covers",
+      "device_type": "curtain_motor",
+      "capabilities": 2,
+      "clusters": 3,
+      "settings": 2
+    },
+    {
+      "driver": "dimmer_switch",
+      "category": "switches",
+      "device_type": "dimmer_switch",
+      "capabilities": 2,
+      "clusters": 4,
+      "settings": 2
+    },
+    {
+      "driver": "energy_plug",
+      "category": "plugs",
+      "device_type": "energy_plug",
+      "capabilities": 5,
+      "clusters": 5,
+      "settings": 2
+    },
+    {
+      "driver": "light_switch",
+      "category": "lights",
+      "device_type": "smart_light",
+      "capabilities": 2,
+      "clusters": 6,
+      "settings": 1
+    },
+    {
+      "driver": "motion_sensor",
+      "category": "sensors",
+      "device_type": "motion_sensor",
+      "capabilities": 3,
+      "clusters": 6,
+      "settings": 3
+    },
+    {
+      "driver": "multisensor",
+      "category": "sensors",
+      "device_type": "multisensor",
+      "capabilities": 5,
+      "clusters": 7,
+      "settings": 3
+    },
+    {
+      "driver": "presence_sensor",
+      "category": "sensors",
+      "device_type": "presence_sensor",
+      "capabilities": 3,
+      "clusters": 5,
+      "settings": 2
+    },
+    {
+      "driver": "rgb_light",
+      "category": "lights",
+      "device_type": "rgb_light",
+      "capabilities": 5,
+      "clusters": 7,
+      "settings": 2
+    },
+    {
+      "driver": "scene_remote_2gang",
+      "category": "remotes",
+      "device_type": "scene_remote_2gang",
+      "capabilities": 0,
+      "clusters": 4,
+      "settings": 1
+    },
+    {
+      "driver": "scene_remote_4gang",
+      "category": "remotes",
+      "device_type": "scene_remote_4gang",
+      "capabilities": 0,
+      "clusters": 4,
+      "settings": 1
+    },
+    {
+      "driver": "scene_switch",
+      "category": "switches",
+      "device_type": "scene_switch",
+      "capabilities": 1,
+      "clusters": 4,
+      "settings": 1
+    },
+    {
+      "driver": "smart_light",
+      "category": "lights",
+      "device_type": "smart_light",
+      "capabilities": 2,
+      "clusters": 6,
+      "settings": 1
+    },
+    {
+      "driver": "smart_plug",
+      "category": "plugs",
+      "device_type": "smart_plug",
+      "capabilities": 1,
+      "clusters": 3,
+      "settings": 1
+    },
+    {
+      "driver": "smoke_detector",
+      "category": "sensors",
+      "device_type": "smoke_detector",
+      "capabilities": 2,
+      "clusters": 4,
+      "settings": 1
+    },
+    {
+      "driver": "temperature_humidity_sensor",
+      "category": "sensors",
+      "device_type": "temperature_humidity_sensor",
+      "capabilities": 3,
+      "clusters": 5,
+      "settings": 3
+    },
+    {
+      "driver": "thermostat",
+      "category": "climate",
+      "device_type": "thermostat",
+      "capabilities": 4,
+      "clusters": 5,
+      "settings": 2
+    },
+    {
+      "driver": "water_leak_detector",
+      "category": "sensors",
+      "device_type": "water_leak_detector",
+      "capabilities": 2,
+      "clusters": 4,
+      "settings": 1
+    }
+  ],
+  "errors": []
+}

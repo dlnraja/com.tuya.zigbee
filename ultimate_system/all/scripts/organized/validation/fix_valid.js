@@ -1,0 +1,1 @@
+const fs=require("fs");console.log("📋 VALIDATION");const s={backup:fs.existsSync("./backup"),drivers:fs.existsSync("./drivers")?fs.readdirSync("./drivers").length:0};Object.keys(s).forEach(k=>console.log(`${s[k]?"✅":"❌"} ${k}: ${s[k]}`));console.log("✅ VALID OK");

@@ -1,0 +1,48 @@
+{
+  "timestamp": "2025-09-10T11:09:26.892Z",
+  "summary": {
+    "overallValid": false,
+    "totalErrors": 1,
+    "totalWarnings": 6,
+    "errorsFixed": 0,
+    "duration": "30.42s",
+    "hasHomeyCliAvailable": false
+  },
+  "validationResults": {
+    "appJson": {
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "Consider adding Homey Pro (Early 2023) compatibility",
+        "Non-standard capability: locked in driver TS0601_lock",
+        "Non-standard capability: fan_speed in driver sensors-TS0601_motion",
+        "Non-standard capability: lock_state in driver sensors-TS0601_motion",
+        "Non-standard capability: measure_generic in driver future_ai_device",
+        "Non-standard capability: dynamic in driver universal_adapter"
+      ]
+    },
+    "drivers": {
+      "valid": false,
+      "errors": [
+        "Error processing driver ts0201: Expected ',' or ']' after array element in JSON at position 1047 (line 50 column 12)"
+      ]
+    },
+    "homeyValidation": {
+      "skipped": true,
+      "reason": "Homey CLI not available"
+    },
+    "unitTests": {
+      "valid": false,
+      "output": ""
+    }
+  },
+  "recommendations": [
+    "Install Homey CLI for full validation support",
+    "Fix remaining validation errors before publication",
+    "Review and address validation warnings"
+  ],
+  "nextSteps": [
+    "❌ Fix remaining validation errors",
+    "Re-run validation until zero errors achieved"
+  ]
+}

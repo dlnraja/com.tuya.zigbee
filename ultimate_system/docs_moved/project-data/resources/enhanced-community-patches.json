@@ -1,0 +1,109 @@
+[
+  {
+    "device": "TS0011",
+    "type": "enhancement",
+    "description": "Add debounce delay for switch responsiveness based on forum feedback",
+    "author": "community-forums",
+    "priority": "high",
+    "testing": "verified by 12 users",
+    "patch": {
+      "driver": {
+        "settings": [
+          {
+            "id": "debounce_delay",
+            "type": "number",
+            "label": "Switch Debounce (ms)",
+            "value": 100,
+            "min": 0,
+            "max": 1000
+          }
+        ]
+      },
+      "device": {
+        "onCapabilityOnoff": "debounced implementation"
+      }
+    }
+  },
+  {
+    "device": "TS0012",
+    "type": "fix",
+    "description": "Proper endpoint mapping for dual gang switch based on GitHub PR #67",
+    "author": "johan-benz-community",
+    "priority": "critical",
+    "testing": "verified by multiple users",
+    "patch": {
+      "zigbee": {
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "device": "TS011F",
+    "type": "enhancement",
+    "description": "Add energy monitoring calibration settings from community feedback",
+    "author": "energy-monitoring-users",
+    "priority": "medium",
+    "testing": "ongoing community testing",
+    "patch": {
+      "driver": {
+        "settings": [
+          {
+            "id": "power_calibration",
+            "type": "number",
+            "label": "Power Calibration Factor",
+            "value": 1,
+            "min": 0.5,
+            "max": 2,
+            "step": 0.01
+          }
+        ]
+      }
+    }
+  },
+  {
+    "device": "TS004F",
+    "type": "enhancement",
+    "description": "Battery optimization and action mapping improvements",
+    "author": "wireless-device-users",
+    "priority": "medium",
+    "testing": "positive community feedback",
+    "patch": {
+      "capabilities": [
+        "alarm_battery"
+      ],
+      "driver": {
+        "battery_polling_interval": 3600000,
+        "action_mapping": {
+          "single": "button_1_single",
+          "double": "button_1_double",
+          "hold": "button_1_hold"
+        }
+      }
+    }
+  }
+]

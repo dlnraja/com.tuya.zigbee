@@ -1,0 +1,22 @@
+{
+  "Smart Lighting": {
+    "description": "Switches, dimmers, RGB controllers",
+    "drivers": ["ceiling_light_controller", "led_strip_controller", "smart_bulb_rgb"]
+  },
+  "Sensors": {
+    "description": "Motion, door/window, temperature sensors", 
+    "drivers": ["motion_sensor_pir", "door_window_sensor", "temperature_sensor"]
+  },
+  "Energy Monitoring": {
+    "description": "Smart plugs, energy meters",
+    "drivers": ["energy_monitoring_plug", "smart_plug_energy"]
+  },
+  "Climate Control": {
+    "description": "Thermostats, valves, HVAC",
+    "drivers": ["thermostat", "radiator_valve", "hvac_controller"]
+  },
+  "Security & Safety": {
+    "description": "Smoke detectors, alarms, sensors",
+    "drivers": ["smoke_detector", "co_detector_pro", "water_leak_detector"]
+  }
+}

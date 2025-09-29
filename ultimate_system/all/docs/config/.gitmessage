@@ -1,0 +1,29 @@
+# Commit Message Template
+# Language Priority: EN, FR, TA, NL, then others
+# Format: [LANG] 🚀 Description
+
+# English Title (required, max 50 chars)
+[EN] 🚀 Add new feature
+
+# French Title (required, max 50 chars)
+[FR] 🚀 Ajouter nouvelle fonctionnalité
+
+# English Description (optional)
+[EN] This feature does something.
+
+# French Description (optional)
+[FR] Cette fonctionnalité fait quelque chose.
+
+# Examples:
+# [EN] 🚀 Add TS011F plug driver with power monitoring
+# [FR] 🚀 Ajouter driver prise TS011F avec surveillance d'énergie
+#
+# [EN] This feature adds support for TS011F plug with power monitoring.
+# [FR] Cette fonctionnalité ajoute la prise en charge de la prise TS011F avec surveillance d'énergie.
+
+# Language Rules:
+# 1. English (EN) - Primary
+# 2. French (FR) - Secondary  
+# 3. Tamil (TA) - Tertiary
+# 4. Dutch (NL) - Quaternary
+# 5. Other languages - Additional support 

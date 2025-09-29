@@ -1,0 +1,16 @@
+{
+  "timestamp": "2025-08-05T13:07:28.364Z",
+  "driversProcessed": 0,
+  "driversFused": 12,
+  "driversRenamed": 4,
+  "filesReorganized": 0,
+  "errors": [
+    "EPERM: operation not permitted, rename 'C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya\\covers\\covers_tuya_tuya\\images' -> 'C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tuya\\covers\\covers_tuya_tuya\\covers_unknown_covers_tuya_tuya'"
+  ],
+  "warnings": [],
+  "performance": {
+    "startTime": 1754399248364,
+    "endTime": null,
+    "duration": null
+  }
+}

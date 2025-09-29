@@ -1,0 +1,260 @@
+{
+  "timestamp": "2025-08-31T20:36:13.155Z",
+  "updatedDrivers": [],
+  "skippedDrivers": [
+    {
+      "driver": "base",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "climate",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "climates-TS0601_ac",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "cover",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "covers-TS0602_cover",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "fan",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "fan-tuya-universal",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "fans-TS0601_fan",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "fans-TS0602_fan",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "generic",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "light",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "lights-TS0501B",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "lights-TS0601_dimmer",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "lights-TS0601_rgb",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "lights-TS0601_switch",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "lock",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "lock-tuya-universal",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "locks-TS0601_lock",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "plug",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "plugs-TS011F",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "plugs-TS011G",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "plugs-TS011H",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "plugs-TS011I",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "plugs-TS011J",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "plugs-TS0121",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "plugs-TS0122",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "plugs-TS0123",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "plugs-TS0124",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "plugs-TS0125",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "remotes-TS0601_remote",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "sensor",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "sensors-TS0201",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "sensors-TS0601_contact",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "sensors-TS0601_gas",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "sensors-TS0601_motion",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "sensors-TS0601_sensor",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "sensors-TS0601_smoke",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "sensors-TS0601_vibration",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "sensors-TS0601_water",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "switch",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "switches-TS0001",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "switches-TS0002",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "switches-TS0003",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "switches-TS0004",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "switches-TS0005",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "switches-TS0006",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "switches-TS0007",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "switches-TS0008",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "thermostats-TS0601_thermostat",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "thermostats-TS0603_thermostat",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "tuya",
+      "reason": "No driver.compose.json found"
+    },
+    {
+      "driver": "tuya-climate-universal",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "tuya-cover-universal",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "tuya-light-universal",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "tuya-plug-universal",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "tuya-remote-universal",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "tuya-sensor-universal",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "tuya-ts0011",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "tuya-ts011f",
+      "model": "TS011F",
+      "reason": "No updates needed"
+    },
+    {
+      "driver": "zigbee",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "zigbee_switch",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "zigbee-tuya-universal",
+      "reason": "No modelId found in driver.compose.json"
+    },
+    {
+      "driver": "common",
+      "reason": "No modelId found in driver.compose.json"
+    }
+  ],
+  "errors": []
+}

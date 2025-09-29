@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-09-10T09:57:16.260Z",
+  "projectInfo": {
+    "package.json": true,
+    "app.json": false,
+    "README.md": true,
+    "nodeVersion": "v22.19.0",
+    "npmVersion": "11.5.2",
+    "gitBranch": "master",
+    "gitCommit": "177883f2c3eb0692e35831d8a329528d2a6a88ff"
+  },
+  "drivers": {},
+  "scripts": {},
+  "workflows": {},
+  "issues": [
+    "Missing required project file: app.json",
+    "Drivers directory not found",
+    "Scripts directory not found",
+    "Workflows directory not found"
+  ],
+  "recommendations": [
+    {
+      "priority": "high",
+      "message": "Found 4 issues that need attention",
+      "action": "Review and fix the reported issues"
+    }
+  ]
+}

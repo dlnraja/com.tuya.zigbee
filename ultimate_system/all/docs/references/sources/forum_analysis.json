@@ -1,0 +1,206 @@
+{
+  "summary": {
+    "total_devices_analyzed": 6,
+    "total_manufacturers": 3,
+    "total_product_ids": 3,
+    "connectivity_issues_found": 1,
+    "aliexpress_items_identified": 1,
+    "analysis_timestamp": "2025-09-15T20:11:07.355Z"
+  },
+  "devices": [
+    {
+      "id": "1005007769107379",
+      "category": "button_devices",
+      "type": "button",
+      "manufacturer": "_TZ3000_qorxjsci",
+      "productId": "TS0042",
+      "capabilities": [],
+      "source": "homey_forum",
+      "reported_by": "W_vd_P",
+      "implementation_status": "pending"
+    },
+    {
+      "id": "_TZE200_ztc6ggyl",
+      "category": "radar_sensors",
+      "type": "radar_motion_sensor",
+      "manufacturer": "Tuya",
+      "productId": "TS0601",
+      "capabilities": [
+        "presence_detection",
+        "motion_detection",
+        "sensitivity_control"
+      ],
+      "source": "homey_forum",
+      "reported_by": "Rudy_De_Vylder",
+      "implementation_status": "implemented"
+    },
+    {
+      "id": "_TZE204_qasjif9e",
+      "category": "radar_sensors",
+      "type": "mmwave_radar",
+      "manufacturer": "Tuya",
+      "productId": "TS0601",
+      "capabilities": [
+        "presence_detection",
+        "distance_measurement"
+      ],
+      "source": "homey_forum",
+      "implementation_status": "pending"
+    },
+    {
+      "id": "_TZ3000_4fjiwweb",
+      "category": "soil_sensors",
+      "type": "soil_moisture_sensor",
+      "manufacturer": "Tuya",
+      "productId": "QT-07S",
+      "capabilities": [
+        "soil_moisture",
+        "temperature",
+        "battery_level"
+      ],
+      "source": "homey_forum",
+      "implementation_status": "pending"
+    },
+    {
+      "id": "TZE284_n4ttsck2",
+      "category": "smoke_detectors",
+      "type": "enhanced_smoke_detector",
+      "manufacturer": "ONENUO",
+      "productId": "TS0601",
+      "capabilities": [
+        "smoke_alarm",
+        "co_detection",
+        "battery_level",
+        "test_mode"
+      ],
+      "source": "homey_forum",
+      "reported_by": "community",
+      "implementation_status": "pending"
+    },
+    {
+      "id": "ZM-105-M",
+      "category": "moes_switches",
+      "type": "smart_dimmer_switch",
+      "manufacturer": "MOES",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "timer_function",
+        "scene_control"
+      ],
+      "source": "homey_forum",
+      "implementation_status": "pending"
+    }
+  ],
+  "manufacturers": [
+    "_TZ3000_qorxjsci",
+    "ONENUO",
+    "MOES"
+  ],
+  "product_ids": [
+    "TS0042",
+    "TS0601",
+    "QT-07S"
+  ],
+  "connectivity_issues": [
+    {
+      "device": "Tuya button",
+      "aliexpress_id": "1005007769107379",
+      "symptom": "Device pairs but immediately disconnects, blue LED keeps blinking",
+      "priority": "critical",
+      "solution_approach": "Improve Zigbee pairing stability for buttons",
+      "driver_impact": "button_driver_stability_enhancement"
+    }
+  ],
+  "driver_requirements": {
+    "wireless_button": {
+      "manufacturerIds": [
+        "_TZ3000_qorxjsci"
+      ],
+      "productIds": [
+        "TS0042"
+      ],
+      "capabilities": [],
+      "settings": [
+        "connection_retry_interval"
+      ],
+      "connectivity_enhancements": [
+        "pairing_stability"
+      ]
+    },
+    "radar_sensor": {
+      "manufacturerIds": [
+        "Tuya"
+      ],
+      "productIds": [
+        "TS0601"
+      ],
+      "capabilities": [
+        "presence_detection",
+        "motion_detection",
+        "sensitivity_control",
+        "distance_measurement"
+      ],
+      "settings": [],
+      "connectivity_enhancements": []
+    },
+    "soil_moisture_sensor": {
+      "manufacturerIds": [
+        "Tuya"
+      ],
+      "productIds": [
+        "QT-07S"
+      ],
+      "capabilities": [
+        "soil_moisture",
+        "temperature",
+        "battery_level"
+      ],
+      "settings": [],
+      "connectivity_enhancements": []
+    },
+    "smoke_detector": {
+      "manufacturerIds": [
+        "ONENUO"
+      ],
+      "productIds": [
+        "TS0601"
+      ],
+      "capabilities": [
+        "smoke_alarm",
+        "co_detection",
+        "battery_level",
+        "test_mode"
+      ],
+      "settings": [],
+      "connectivity_enhancements": []
+    },
+    "dimmer_switch": {
+      "manufacturerIds": [
+        "MOES"
+      ],
+      "productIds": [
+        null
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "timer_function",
+        "scene_control"
+      ],
+      "settings": [
+        "connection_retry_interval"
+      ],
+      "connectivity_enhancements": [
+        "pairing_stability"
+      ]
+    }
+  },
+  "recommendations": [
+    "Prioritize button/switch connection stability improvements",
+    "Implement radar sensor support for community requests",
+    "Add soil moisture sensor category for agricultural users",
+    "Enhance smoke detector capabilities based on ONENUO feedback",
+    "Create MOES manufacturer compatibility layer"
+  ]
+}

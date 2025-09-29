@@ -1,0 +1,84 @@
+{
+  "timestamp": "2025-09-10T09:56:49.799Z",
+  "version": "3.0.0",
+  "tests": [
+    {
+      "name": "Fichiers essentiels",
+      "status": "passed",
+      "duration": 2,
+      "timestamp": "2025-09-10T09:56:49.770Z"
+    },
+    {
+      "name": "Dossiers requis",
+      "status": "passed",
+      "duration": 1,
+      "timestamp": "2025-09-10T09:56:49.771Z"
+    },
+    {
+      "name": "Drivers générés",
+      "status": "passed",
+      "duration": 1,
+      "timestamp": "2025-09-10T09:56:49.774Z"
+    },
+    {
+      "name": "Validation app.json",
+      "status": "passed",
+      "duration": 2,
+      "timestamp": "2025-09-10T09:56:49.777Z"
+    },
+    {
+      "name": "Validation syntaxe JavaScript",
+      "status": "passed",
+      "duration": 1,
+      "timestamp": "2025-09-10T09:56:49.778Z"
+    },
+    {
+      "name": "Validation drivers syntaxe",
+      "status": "passed",
+      "duration": 3,
+      "timestamp": "2025-09-10T09:56:49.781Z"
+    },
+    {
+      "name": "Temps de chargement",
+      "status": "passed",
+      "duration": 2,
+      "timestamp": "2025-09-10T09:56:49.784Z"
+    },
+    {
+      "name": "Taille des fichiers",
+      "status": "passed",
+      "duration": 0,
+      "timestamp": "2025-09-10T09:56:49.784Z"
+    },
+    {
+      "name": "Validation des permissions",
+      "status": "passed",
+      "duration": 1,
+      "timestamp": "2025-09-10T09:56:49.786Z"
+    },
+    {
+      "name": "Validation des URLs",
+      "status": "passed",
+      "duration": 3,
+      "timestamp": "2025-09-10T09:56:49.789Z"
+    },
+    {
+      "name": "Compatibilité Homey",
+      "status": "passed",
+      "duration": 1,
+      "timestamp": "2025-09-10T09:56:49.791Z"
+    },
+    {
+      "name": "Structure des drivers",
+      "status": "failed",
+      "error": "Structure de driver invalide: device.js",
+      "timestamp": "2025-09-10T09:56:49.799Z"
+    }
+  ],
+  "summary": {
+    "total": 12,
+    "passed": 11,
+    "failed": 1,
+    "skipped": 0
+  }
+}
