@@ -54,9 +54,11 @@ jobs:
         "
         
     - name: Login to Homey
+      env:
+        HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
       run: |
         echo "🔐 Logging into Homey..."
-        homey login --token ${{ secrets.HOMEY_TOKEN }}
+        echo "$HOMEY_TOKEN" | homey login
         
     - name: Publish to Homey App Store
       run: |
