@@ -1,1 +1,0 @@
-const fs=require("fs");let n=0;if(fs.existsSync("./drivers"))fs.readdirSync("./drivers").forEach(d=>{try{const f=`./drivers/${d}/driver.compose.json`;if(fs.existsSync(f)){let data=JSON.parse(fs.readFileSync(f,"utf8"));if(!data.id||data.id.length<8){data.id="_TZ3000_fixed";fs.writeFileSync(f,JSON.stringify(data,null,2));n++}}}catch(e){}});console.log(`✅ ${n} ENRICHED`);
