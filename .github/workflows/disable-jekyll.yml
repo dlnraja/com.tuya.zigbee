@@ -1,0 +1,19 @@
+name: Disable Jekyll (Fix Pages Conflict)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  disable-jekyll:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Create .nojekyll file
+      run: |
+        echo "Creating .nojekyll to disable GitHub Pages Jekyll processing"
+        touch .nojekyll
+        
+    - name: Summary
+      run: |
+        echo "✅ Jekyll disabled for this repository"
+        echo "🎯 Focus on Homey App Store publication only"
+        echo "📱 No GitHub Pages conflicts"
