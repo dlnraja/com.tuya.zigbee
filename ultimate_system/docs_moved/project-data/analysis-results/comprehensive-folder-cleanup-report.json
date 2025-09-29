@@ -1,0 +1,2161 @@
+{
+  "timestamp": "2025-09-15T23:22:31.964Z",
+  "summary": {
+    "duplicatesFound": 14,
+    "foldersMerged": 70,
+    "foldersRenamed": 10,
+    "foldersRemoved": 60
+  },
+  "duplicates": [
+    {
+      "key": "unknown_ac_1btn",
+      "best": {
+        "name": "hvac_controller",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\hvac_controller",
+        "analysis": {
+          "name": "hvac_controller",
+          "hasDriverJson": false,
+          "hasDeviceJs": true,
+          "hasAssets": true,
+          "fileCount": 11,
+          "manufacturerIds": [],
+          "productIds": [],
+          "capabilities": [],
+          "category": "unknown",
+          "powerType": "ac",
+          "buttonCount": 1
+        }
+      },
+      "duplicates": [
+        {
+          "name": "access_controller",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\access_controller",
+          "analysis": {
+            "name": "access_controller",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 4,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "ac",
+            "buttonCount": 1
+          }
+        }
+      ]
+    },
+    {
+      "key": "unknown_unknown_1btn",
+      "best": {
+        "name": "door_controller",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\door_controller",
+        "analysis": {
+          "name": "door_controller",
+          "hasDriverJson": false,
+          "hasDeviceJs": true,
+          "hasAssets": true,
+          "fileCount": 11,
+          "manufacturerIds": [],
+          "productIds": [],
+          "capabilities": [],
+          "category": "unknown",
+          "powerType": "unknown",
+          "buttonCount": 1
+        }
+      },
+      "duplicates": [
+        {
+          "name": "emergency_button",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\emergency_button",
+          "analysis": {
+            "name": "emergency_button",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "fan_controller",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\fan_controller",
+          "analysis": {
+            "name": "fan_controller",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "garage_door_controller",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\garage_door_controller",
+          "analysis": {
+            "name": "garage_door_controller",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "led_strip_controller",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\led_strip_controller",
+          "analysis": {
+            "name": "led_strip_controller",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "panic_button",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\panic_button",
+          "analysis": {
+            "name": "panic_button",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "radiator_valve",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\radiator_valve",
+          "analysis": {
+            "name": "radiator_valve",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "shade_controller",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\shade_controller",
+          "analysis": {
+            "name": "shade_controller",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "smart_spot",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_spot",
+          "analysis": {
+            "name": "smart_spot",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "sos_button",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sos_button",
+          "analysis": {
+            "name": "sos_button",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "temperature_controller",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\temperature_controller",
+          "analysis": {
+            "name": "temperature_controller",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "touch_dimmer",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_dimmer",
+          "analysis": {
+            "name": "touch_dimmer",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "usb_outlet",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\usb_outlet",
+          "analysis": {
+            "name": "usb_outlet",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "window_motor",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\window_motor",
+          "analysis": {
+            "name": "window_motor",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "cube_controller",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\cube_controller",
+          "analysis": {
+            "name": "cube_controller",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 9,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "hue_dimmer",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\hue_dimmer",
+          "analysis": {
+            "name": "hue_dimmer",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 9,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "ikea_styrbar_remote",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\ikea_styrbar_remote",
+          "analysis": {
+            "name": "ikea_styrbar_remote",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 9,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "ikea_symfonisk_remote",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\ikea_symfonisk_remote",
+          "analysis": {
+            "name": "ikea_symfonisk_remote",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 9,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "sonoff_basic",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sonoff_basic",
+          "analysis": {
+            "name": "sonoff_basic",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 9,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "sonoff_mini",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sonoff_mini",
+          "analysis": {
+            "name": "sonoff_mini",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 9,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "sonoff_zbbridge",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sonoff_zbbridge",
+          "analysis": {
+            "name": "sonoff_zbbridge",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 9,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "air_conditioner_controller",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\air_conditioner_controller",
+          "analysis": {
+            "name": "air_conditioner_controller",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 4,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "alarm_keypad",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\alarm_keypad",
+          "analysis": {
+            "name": "alarm_keypad",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 4,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "awning_controller",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\awning_controller",
+          "analysis": {
+            "name": "awning_controller",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 4,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "dehumidifier_controller",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\dehumidifier_controller",
+          "analysis": {
+            "name": "dehumidifier_controller",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 4,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "fan_speed_controller",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\fan_speed_controller",
+          "analysis": {
+            "name": "fan_speed_controller",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 4,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "projector_screen_controller",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\projector_screen_controller",
+          "analysis": {
+            "name": "projector_screen_controller",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 4,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "smart_doorbell",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_doorbell",
+          "analysis": {
+            "name": "smart_doorbell",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 4,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "unknown",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        }
+      ]
+    },
+    {
+      "key": "sensor_unknown_1btn",
+      "best": {
+        "name": "air_quality_sensor",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\air_quality_sensor",
+        "analysis": {
+          "name": "air_quality_sensor",
+          "hasDriverJson": false,
+          "hasDeviceJs": true,
+          "hasAssets": true,
+          "fileCount": 11,
+          "manufacturerIds": [],
+          "productIds": [],
+          "capabilities": [],
+          "category": "sensor",
+          "powerType": "unknown",
+          "buttonCount": 1
+        }
+      },
+      "duplicates": [
+        {
+          "name": "motion_sensor_pir",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\motion_sensor_pir",
+          "analysis": {
+            "name": "motion_sensor_pir",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "sensor",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "motion_sensor_radar",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\motion_sensor_radar",
+          "analysis": {
+            "name": "motion_sensor_radar",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "sensor",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "multisensor",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\multisensor",
+          "analysis": {
+            "name": "multisensor",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "sensor",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "presence_sensor_radar",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\presence_sensor_radar",
+          "analysis": {
+            "name": "presence_sensor_radar",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "sensor",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "soil_moisture_sensor",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\soil_moisture_sensor",
+          "analysis": {
+            "name": "soil_moisture_sensor",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "sensor",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "vibration_sensor",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\vibration_sensor",
+          "analysis": {
+            "name": "vibration_sensor",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "sensor",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "water_leak_sensor",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\water_leak_sensor",
+          "analysis": {
+            "name": "water_leak_sensor",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "sensor",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "aqara_motion_sensor",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\aqara_motion_sensor",
+          "analysis": {
+            "name": "aqara_motion_sensor",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 9,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "sensor",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "formaldehyde_sensor",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\formaldehyde_sensor",
+          "analysis": {
+            "name": "formaldehyde_sensor",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 9,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "sensor",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "hue_motion_sensor",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\hue_motion_sensor",
+          "analysis": {
+            "name": "hue_motion_sensor",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 9,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "sensor",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "lux_sensor",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lux_sensor",
+          "analysis": {
+            "name": "lux_sensor",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 9,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "sensor",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "noise_level_sensor",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\noise_level_sensor",
+          "analysis": {
+            "name": "noise_level_sensor",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 9,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "sensor",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "pressure_sensor",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\pressure_sensor",
+          "analysis": {
+            "name": "pressure_sensor",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 9,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "sensor",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "co2_sensor",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\co2_sensor",
+          "analysis": {
+            "name": "co2_sensor",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 4,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "sensor",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "motion_sensor_mmwave",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\motion_sensor_mmwave",
+          "analysis": {
+            "name": "motion_sensor_mmwave",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 4,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "sensor",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "pm25_sensor",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\pm25_sensor",
+          "analysis": {
+            "name": "pm25_sensor",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 4,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "sensor",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "temperature_humidity_sensor",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\temperature_humidity_sensor",
+          "analysis": {
+            "name": "temperature_humidity_sensor",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 4,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "sensor",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "tvoc_sensor",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tvoc_sensor",
+          "analysis": {
+            "name": "tvoc_sensor",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 4,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "sensor",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        }
+      ]
+    },
+    {
+      "key": "cover_unknown_1btn",
+      "best": {
+        "name": "blind_controller",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\blind_controller",
+        "analysis": {
+          "name": "blind_controller",
+          "hasDriverJson": false,
+          "hasDeviceJs": true,
+          "hasAssets": true,
+          "fileCount": 11,
+          "manufacturerIds": [],
+          "productIds": [],
+          "capabilities": [],
+          "category": "cover",
+          "powerType": "unknown",
+          "buttonCount": 1
+        }
+      },
+      "duplicates": [
+        {
+          "name": "curtain_motor",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\curtain_motor",
+          "analysis": {
+            "name": "curtain_motor",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "cover",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "roller_blind_controller",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\roller_blind_controller",
+          "analysis": {
+            "name": "roller_blind_controller",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "cover",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "venetian_blind_controller",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\venetian_blind_controller",
+          "analysis": {
+            "name": "venetian_blind_controller",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 4,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "cover",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        }
+      ]
+    },
+    {
+      "key": "light_unknown_1btn",
+      "best": {
+        "name": "smart_bulb_rgb",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_bulb_rgb",
+        "analysis": {
+          "name": "smart_bulb_rgb",
+          "hasDriverJson": false,
+          "hasDeviceJs": true,
+          "hasAssets": true,
+          "fileCount": 11,
+          "manufacturerIds": [],
+          "productIds": [],
+          "capabilities": [],
+          "category": "light",
+          "powerType": "unknown",
+          "buttonCount": 1
+        }
+      },
+      "duplicates": [
+        {
+          "name": "smart_bulb_tunable",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_bulb_tunable",
+          "analysis": {
+            "name": "smart_bulb_tunable",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "light",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "smart_bulb_white",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_bulb_white",
+          "analysis": {
+            "name": "smart_bulb_white",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "light",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "hue_bulb",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\hue_bulb",
+          "analysis": {
+            "name": "hue_bulb",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 9,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "light",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "ikea_tradfri_bulb",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\ikea_tradfri_bulb",
+          "analysis": {
+            "name": "ikea_tradfri_bulb",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 9,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "light",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "ceiling_light_controller",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\ceiling_light_controller",
+          "analysis": {
+            "name": "ceiling_light_controller",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 4,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "light",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "outdoor_light_controller",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\outdoor_light_controller",
+          "analysis": {
+            "name": "outdoor_light_controller",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 4,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "light",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "strip_light_controller",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\strip_light_controller",
+          "analysis": {
+            "name": "strip_light_controller",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 4,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "light",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        }
+      ]
+    },
+    {
+      "key": "detector_unknown_1btn",
+      "best": {
+        "name": "co_detector",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\co_detector",
+        "analysis": {
+          "name": "co_detector",
+          "hasDriverJson": false,
+          "hasDeviceJs": true,
+          "hasAssets": true,
+          "fileCount": 11,
+          "manufacturerIds": [],
+          "productIds": [],
+          "capabilities": [],
+          "category": "detector",
+          "powerType": "unknown",
+          "buttonCount": 1
+        }
+      },
+      "duplicates": [
+        {
+          "name": "gas_detector",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\gas_detector",
+          "analysis": {
+            "name": "gas_detector",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "detector",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "smoke_detector",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smoke_detector",
+          "analysis": {
+            "name": "smoke_detector",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "detector",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        }
+      ]
+    },
+    {
+      "key": "lock_unknown_1btn",
+      "best": {
+        "name": "door_lock",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\door_lock",
+        "analysis": {
+          "name": "door_lock",
+          "hasDriverJson": false,
+          "hasDeviceJs": true,
+          "hasAssets": true,
+          "fileCount": 11,
+          "manufacturerIds": [],
+          "productIds": [],
+          "capabilities": [],
+          "category": "lock",
+          "powerType": "unknown",
+          "buttonCount": 1
+        }
+      },
+      "duplicates": [
+        {
+          "name": "fingerprint_lock",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\fingerprint_lock",
+          "analysis": {
+            "name": "fingerprint_lock",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "lock",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "keypad_lock",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\keypad_lock",
+          "analysis": {
+            "name": "keypad_lock",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "lock",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "smart_lock",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_lock",
+          "analysis": {
+            "name": "smart_lock",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "lock",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        }
+      ]
+    },
+    {
+      "key": "plug_unknown_1btn",
+      "best": {
+        "name": "energy_monitoring_plug",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\energy_monitoring_plug",
+        "analysis": {
+          "name": "energy_monitoring_plug",
+          "hasDriverJson": false,
+          "hasDeviceJs": true,
+          "hasAssets": true,
+          "fileCount": 11,
+          "manufacturerIds": [],
+          "productIds": [],
+          "capabilities": [],
+          "category": "plug",
+          "powerType": "unknown",
+          "buttonCount": 1
+        }
+      },
+      "duplicates": [
+        {
+          "name": "extension_plug",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\extension_plug",
+          "analysis": {
+            "name": "extension_plug",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "plug",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "smart_plug",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_plug",
+          "analysis": {
+            "name": "smart_plug",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 11,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "plug",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        }
+      ]
+    },
+    {
+      "key": "sensor_battery_1btn",
+      "best": {
+        "name": "motion_sensor_mmwave_battery",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\motion_sensor_mmwave_battery",
+        "analysis": {
+          "name": "motion_sensor_mmwave_battery",
+          "hasDriverJson": false,
+          "hasDeviceJs": true,
+          "hasAssets": true,
+          "fileCount": 4,
+          "manufacturerIds": [],
+          "productIds": [],
+          "capabilities": [],
+          "category": "sensor",
+          "powerType": "battery",
+          "buttonCount": 1
+        }
+      },
+      "duplicates": [
+        {
+          "name": "motion_sensor_pir_battery",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\motion_sensor_pir_battery",
+          "analysis": {
+            "name": "motion_sensor_pir_battery",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 4,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "sensor",
+            "powerType": "battery",
+            "buttonCount": 1
+          }
+        },
+        {
+          "name": "motion_sensor_radar_battery",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\motion_sensor_radar_battery",
+          "analysis": {
+            "name": "motion_sensor_radar_battery",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 4,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "sensor",
+            "powerType": "battery",
+            "buttonCount": 1
+          }
+        }
+      ]
+    },
+    {
+      "key": "sensor_ac_1btn",
+      "best": {
+        "name": "motion_sensor_pir_ac",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\motion_sensor_pir_ac",
+        "analysis": {
+          "name": "motion_sensor_pir_ac",
+          "hasDriverJson": false,
+          "hasDeviceJs": true,
+          "hasAssets": true,
+          "fileCount": 4,
+          "manufacturerIds": [],
+          "productIds": [],
+          "capabilities": [],
+          "category": "sensor",
+          "powerType": "ac",
+          "buttonCount": 1
+        }
+      },
+      "duplicates": [
+        {
+          "name": "motion_sensor_radar_ac",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\motion_sensor_radar_ac",
+          "analysis": {
+            "name": "motion_sensor_radar_ac",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 4,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "sensor",
+            "powerType": "ac",
+            "buttonCount": 1
+          }
+        }
+      ]
+    },
+    {
+      "key": "switch_unknown_1btn",
+      "best": {
+        "name": "wall_switch_1gang",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_1gang",
+        "analysis": {
+          "name": "wall_switch_1gang",
+          "hasDriverJson": false,
+          "hasDeviceJs": true,
+          "hasAssets": true,
+          "fileCount": 11,
+          "manufacturerIds": [],
+          "productIds": [],
+          "capabilities": [],
+          "category": "switch",
+          "powerType": "unknown",
+          "buttonCount": 1
+        }
+      },
+      "duplicates": [
+        {
+          "name": "touch_switch_1gang",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_switch_1gang",
+          "analysis": {
+            "name": "touch_switch_1gang",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 4,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "switch",
+            "powerType": "unknown",
+            "buttonCount": 1
+          }
+        }
+      ]
+    },
+    {
+      "key": "switch_unknown_2btn",
+      "best": {
+        "name": "wall_switch_2gang",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_2gang",
+        "analysis": {
+          "name": "wall_switch_2gang",
+          "hasDriverJson": false,
+          "hasDeviceJs": true,
+          "hasAssets": true,
+          "fileCount": 11,
+          "manufacturerIds": [],
+          "productIds": [],
+          "capabilities": [],
+          "category": "switch",
+          "powerType": "unknown",
+          "buttonCount": 2
+        }
+      },
+      "duplicates": [
+        {
+          "name": "touch_switch_2gang",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_switch_2gang",
+          "analysis": {
+            "name": "touch_switch_2gang",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 4,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "switch",
+            "powerType": "unknown",
+            "buttonCount": 2
+          }
+        }
+      ]
+    },
+    {
+      "key": "switch_unknown_3btn",
+      "best": {
+        "name": "wall_switch_3gang",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_3gang",
+        "analysis": {
+          "name": "wall_switch_3gang",
+          "hasDriverJson": false,
+          "hasDeviceJs": true,
+          "hasAssets": true,
+          "fileCount": 11,
+          "manufacturerIds": [],
+          "productIds": [],
+          "capabilities": [],
+          "category": "switch",
+          "powerType": "unknown",
+          "buttonCount": 3
+        }
+      },
+      "duplicates": [
+        {
+          "name": "touch_switch_3gang",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_switch_3gang",
+          "analysis": {
+            "name": "touch_switch_3gang",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 4,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "switch",
+            "powerType": "unknown",
+            "buttonCount": 3
+          }
+        }
+      ]
+    },
+    {
+      "key": "switch_unknown_4btn",
+      "best": {
+        "name": "wall_switch_4gang",
+        "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_4gang",
+        "analysis": {
+          "name": "wall_switch_4gang",
+          "hasDriverJson": false,
+          "hasDeviceJs": true,
+          "hasAssets": true,
+          "fileCount": 11,
+          "manufacturerIds": [],
+          "productIds": [],
+          "capabilities": [],
+          "category": "switch",
+          "powerType": "unknown",
+          "buttonCount": 4
+        }
+      },
+      "duplicates": [
+        {
+          "name": "touch_switch_4gang",
+          "path": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_switch_4gang",
+          "analysis": {
+            "name": "touch_switch_4gang",
+            "hasDriverJson": false,
+            "hasDeviceJs": true,
+            "hasAssets": true,
+            "fileCount": 4,
+            "manufacturerIds": [],
+            "productIds": [],
+            "capabilities": [],
+            "category": "switch",
+            "powerType": "unknown",
+            "buttonCount": 4
+          }
+        }
+      ]
+    }
+  ],
+  "merged": [
+    {
+      "from": "access_controller",
+      "to": "hvac_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "emergency_button",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "fan_controller",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "garage_door_controller",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "led_strip_controller",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "panic_button",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "radiator_valve",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "shade_controller",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "smart_spot",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "sos_button",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "temperature_controller",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "touch_dimmer",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "usb_outlet",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "window_motor",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "cube_controller",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "hue_dimmer",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "ikea_styrbar_remote",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "ikea_symfonisk_remote",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "sonoff_basic",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "sonoff_mini",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "sonoff_zbbridge",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "air_conditioner_controller",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "alarm_keypad",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "awning_controller",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "dehumidifier_controller",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "fan_speed_controller",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "projector_screen_controller",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "smart_doorbell",
+      "to": "door_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "motion_sensor_pir",
+      "to": "air_quality_sensor",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "motion_sensor_radar",
+      "to": "air_quality_sensor",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "multisensor",
+      "to": "air_quality_sensor",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "presence_sensor_radar",
+      "to": "air_quality_sensor",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "soil_moisture_sensor",
+      "to": "air_quality_sensor",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "vibration_sensor",
+      "to": "air_quality_sensor",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "water_leak_sensor",
+      "to": "air_quality_sensor",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "aqara_motion_sensor",
+      "to": "air_quality_sensor",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "formaldehyde_sensor",
+      "to": "air_quality_sensor",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "hue_motion_sensor",
+      "to": "air_quality_sensor",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "lux_sensor",
+      "to": "air_quality_sensor",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "noise_level_sensor",
+      "to": "air_quality_sensor",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "pressure_sensor",
+      "to": "air_quality_sensor",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "co2_sensor",
+      "to": "air_quality_sensor",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "motion_sensor_mmwave",
+      "to": "air_quality_sensor",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "pm25_sensor",
+      "to": "air_quality_sensor",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "temperature_humidity_sensor",
+      "to": "air_quality_sensor",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "tvoc_sensor",
+      "to": "air_quality_sensor",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "curtain_motor",
+      "to": "blind_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "roller_blind_controller",
+      "to": "blind_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "venetian_blind_controller",
+      "to": "blind_controller",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "smart_bulb_tunable",
+      "to": "smart_bulb_rgb",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "smart_bulb_white",
+      "to": "smart_bulb_rgb",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "hue_bulb",
+      "to": "smart_bulb_rgb",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "ikea_tradfri_bulb",
+      "to": "smart_bulb_rgb",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "ceiling_light_controller",
+      "to": "smart_bulb_rgb",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "outdoor_light_controller",
+      "to": "smart_bulb_rgb",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "strip_light_controller",
+      "to": "smart_bulb_rgb",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "gas_detector",
+      "to": "co_detector",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "smoke_detector",
+      "to": "co_detector",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "fingerprint_lock",
+      "to": "door_lock",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "keypad_lock",
+      "to": "door_lock",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "smart_lock",
+      "to": "door_lock",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "extension_plug",
+      "to": "energy_monitoring_plug",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "smart_plug",
+      "to": "energy_monitoring_plug",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "motion_sensor_pir_battery",
+      "to": "motion_sensor_mmwave_battery",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "motion_sensor_radar_battery",
+      "to": "motion_sensor_mmwave_battery",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "motion_sensor_radar_ac",
+      "to": "motion_sensor_pir_ac",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "touch_switch_1gang",
+      "to": "wall_switch_1gang",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "touch_switch_2gang",
+      "to": "wall_switch_2gang",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "touch_switch_3gang",
+      "to": "wall_switch_3gang",
+      "reason": "duplicate_merge"
+    },
+    {
+      "from": "touch_switch_4gang",
+      "to": "wall_switch_4gang",
+      "reason": "duplicate_merge"
+    }
+  ],
+  "renamed": [
+    {
+      "from": "aqara_motion_sensor",
+      "to": "motion_sensor_pir_battery",
+      "reason": "unbrand"
+    },
+    {
+      "from": "hue_bulb",
+      "to": "smart_bulb_rgb",
+      "reason": "unbrand"
+    },
+    {
+      "from": "hue_dimmer",
+      "to": "dimmer",
+      "reason": "unbrand"
+    },
+    {
+      "from": "hue_motion_sensor",
+      "to": "motion_sensor",
+      "reason": "unbrand"
+    },
+    {
+      "from": "ikea_styrbar_remote",
+      "to": "styrbar_remote",
+      "reason": "unbrand"
+    },
+    {
+      "from": "ikea_symfonisk_remote",
+      "to": "symfonisk_remote",
+      "reason": "unbrand"
+    },
+    {
+      "from": "ikea_tradfri_bulb",
+      "to": "smart_bulb_tunable",
+      "reason": "unbrand"
+    },
+    {
+      "from": "sonoff_basic",
+      "to": "relay_switch_1gang",
+      "reason": "unbrand"
+    },
+    {
+      "from": "sonoff_mini",
+      "to": "mini",
+      "reason": "unbrand"
+    },
+    {
+      "from": "sonoff_zbbridge",
+      "to": "zbbridge",
+      "reason": "unbrand"
+    }
+  ],
+  "removed": [
+    {
+      "name": "access_controller",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "emergency_button",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "fan_controller",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "garage_door_controller",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "led_strip_controller",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "panic_button",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "radiator_valve",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "shade_controller",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "smart_spot",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "sos_button",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "temperature_controller",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "touch_dimmer",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "usb_outlet",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "window_motor",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "cube_controller",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "air_conditioner_controller",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "alarm_keypad",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "awning_controller",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "dehumidifier_controller",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "fan_speed_controller",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "projector_screen_controller",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "smart_doorbell",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "motion_sensor_pir",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "motion_sensor_radar",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "multisensor",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "presence_sensor_radar",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "soil_moisture_sensor",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "vibration_sensor",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "water_leak_sensor",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "formaldehyde_sensor",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "lux_sensor",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "noise_level_sensor",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "pressure_sensor",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "co2_sensor",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "motion_sensor_mmwave",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "pm25_sensor",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "temperature_humidity_sensor",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "tvoc_sensor",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "curtain_motor",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "roller_blind_controller",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "venetian_blind_controller",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "smart_bulb_tunable",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "smart_bulb_white",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "ceiling_light_controller",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "outdoor_light_controller",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "strip_light_controller",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "gas_detector",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "smoke_detector",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "fingerprint_lock",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "keypad_lock",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "smart_lock",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "extension_plug",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "smart_plug",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "motion_sensor_pir_battery",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "motion_sensor_radar_battery",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "motion_sensor_radar_ac",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "touch_switch_1gang",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "touch_switch_2gang",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "touch_switch_3gang",
+      "reason": "merged_duplicate"
+    },
+    {
+      "name": "touch_switch_4gang",
+      "reason": "merged_duplicate"
+    }
+  ],
+  "actions": [
+    "Identified 14 duplicate groups",
+    "Merged 70 similar folders",
+    "Renamed 10 branded folders",
+    "Removed 60 unnecessary folders"
+  ]
+}

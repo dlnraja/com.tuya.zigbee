@@ -1,0 +1,572 @@
+{
+  "timestamp": "02/09/2025  5:15:11,13",
+  "drivers": [
+    {
+      "name": "base"
+      ,"has_device_js": 1
+      ,"has_driver_js": 1
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "climate"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "climates-TS0601_ac"
+      ,"has_device_js": 1
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "cover"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "covers-TS0602_cover"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "fan"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "fan-tuya-universal"
+      ,"has_device_js": 1
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 1
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "fans-TS0601_fan"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "fans-TS0602_fan"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "generic"
+      ,"has_device_js": 1
+      ,"has_driver_js": 1
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "light"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "lights-TS0501B"
+      ,"has_device_js": 1
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "lights-TS0601_dimmer"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "lights-TS0601_rgb"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "lights-TS0601_switch"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "lock"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "lock-tuya-universal"
+      ,"has_device_js": 1
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 1
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "locks-TS0601_lock"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "plug"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "plugs-TS011F"
+      ,"has_device_js": 1
+      ,"has_driver_js": 1
+      ,"has_compose_json": 1
+      ,"has_readme": 1
+      ,"has_tests": 1
+    }
+   ,
+    {
+      "name": "plugs-TS011G"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "plugs-TS011H"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "plugs-TS011I"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "plugs-TS011J"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "plugs-TS0121"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "plugs-TS0122"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "plugs-TS0123"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "plugs-TS0124"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "plugs-TS0125"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "remotes-TS0601_remote"
+      ,"has_device_js": 1
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "sensor"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "sensors-TS0201"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "sensors-TS0601_contact"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "sensors-TS0601_gas"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "sensors-TS0601_motion"
+      ,"has_device_js": 1
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "sensors-TS0601_sensor"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "sensors-TS0601_smoke"
+      ,"has_device_js": 1
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "sensors-TS0601_vibration"
+      ,"has_device_js": 1
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "sensors-TS0601_water"
+      ,"has_device_js": 1
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "switch"
+      ,"has_device_js": 1
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 1
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "switches-TS0001"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "switches-TS0002"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "switches-TS0003"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "switches-TS0004"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "switches-TS0005"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "switches-TS0006"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "switches-TS0007"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "switches-TS0008"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "thermostats-TS0601_thermostat"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "thermostats-TS0603_thermostat"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "tuya"
+      ,"has_device_js": 0
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "tuya-climate-universal"
+      ,"has_device_js": 1
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 1
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "tuya-cover-universal"
+      ,"has_device_js": 1
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 1
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "tuya-light-universal"
+      ,"has_device_js": 1
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 1
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "tuya-plug-universal"
+      ,"has_device_js": 1
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 1
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "tuya-remote-universal"
+      ,"has_device_js": 1
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 1
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "tuya-sensor-universal"
+      ,"has_device_js": 1
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 1
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "tuya-ts0011"
+      ,"has_device_js": 1
+      ,"has_driver_js": 1
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "tuya-ts011f"
+      ,"has_device_js": 1
+      ,"has_driver_js": 1
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "tuya_zigbee"
+      ,"has_device_js": 1
+      ,"has_driver_js": 1
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "tuya_zigbee_switch"
+      ,"has_device_js": 1
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 0
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "zigbee-tuya-universal"
+      ,"has_device_js": 1
+      ,"has_driver_js": 0
+      ,"has_compose_json": 1
+      ,"has_readme": 1
+      ,"has_tests": 0
+    }
+   ,
+    {
+      "name": "_common"
+      ,"has_device_js": 1
+      ,"has_driver_js": 1
+      ,"has_compose_json": 1
+      ,"has_readme": 1
+      ,"has_tests": 0
+    }
+
+  ]
+}

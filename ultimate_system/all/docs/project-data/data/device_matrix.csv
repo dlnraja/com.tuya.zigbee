@@ -1,0 +1,2 @@
+driver_id,class,name_en,name_fr,capabilities,pairing,path
+tuya_plug,socket,Tuya Smart Plug,Prise intelligente Tuya,onoff,list_devices:; add_devices:,.homeycompose\drivers\tuya_plug

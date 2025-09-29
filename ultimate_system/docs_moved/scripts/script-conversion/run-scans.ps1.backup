@@ -1,0 +1,124 @@
+# Script PowerShell pour exécuter les analyses une par une
+
+# Configuration
+$scriptDir = $PSScriptRoot
+$outputDir = Join-Path -Path $scriptDir -ChildPath "scan-results"
+$scripts = @("scout", "architect", "optimizer", "validator")
+$timestamp = Get-Date -Format "yyyyMMdd-HHmmss"
+
+# Créer le dossier de sortie
+if (-not (Test-Path -Path $outputDir)) {
+    New-Item -ItemType Directory -Path $outputDir | Out-Null
+    Write-Host "Dossier de sortie créé: $outputDir" -ForegroundColor Green
+}
+
+# Fonction pour exécuter un script
+function Invoke-ScanScript {
+    param (
+        [string]$scriptName
+    )
+    
+    $scriptPath = Join-Path -Path $scriptDir -ChildPath "scripts\$scriptName.js"
+    $outputFile = Join-Path -Path $outputDir -ChildPath "$scriptName-$timestamp.txt"
+    
+    Write-Host "`n=== Exécution de $scriptName ===" -ForegroundColor Cyan
+    Write-Host "Script: $scriptPath"
+    Write-Host "Sortie: $outputFile"
+    
+    # Vérifier si le script existe
+    if (-not (Test-Path -Path $scriptPath)) {
+        $errorMsg = "ERREUR: Le script $scriptName.js est introuvable"
+        Write-Host $errorMsg -ForegroundColor Red
+        $errorMsg | Out-File -FilePath $outputFile -Encoding UTF8
+        return $false
+    }
+    
+    # Exécuter le script
+    try {
+        $startTime = Get-Date
+        $output = & node $scriptPath 2>&1 | Out-String
+        $exitCode = $LASTEXITCODE
+        $endTime = Get-Date
+        $duration = $endTime - $startTime
+        
+        # Enregistrer les résultats
+        $result = @"
+=== $scriptName ===
+Date: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')
+Durée: $($duration.TotalSeconds.ToString('0.00')) secondes
+Code de sortie: $exitCode
+
+=== SORTIE ===
+$output
+"@
+        
+        $result | Out-File -FilePath $outputFile -Encoding UTF8
+        
+        if ($exitCode -eq 0) {
+            Write-Host "✅ $scriptName terminé avec succès" -ForegroundColor Green
+            Write-Host "   Durée: $($duration.TotalSeconds.ToString('0.00')) secondes"
+            Write-Host "   Fichier: $outputFile"
+            return $true
+        } else {
+            Write-Host "❌ $scriptName a échoué avec le code $exitCode" -ForegroundColor Red
+            Write-Host "   Durée: $($duration.TotalSeconds.ToString('0.00')) secondes"
+            Write-Host "   Fichier: $outputFile"
+            
+            # Afficher les erreurs
+            $errors = $output -split "`n" | Where-Object { $_ -match "error|fail|warning" -and $_ -notmatch "no error|no warning" }
+            if ($errors) {
+                Write-Host "   Erreurs trouvées:" -ForegroundColor Yellow
+                $errors | ForEach-Object { Write-Host "   - $_" }
+            }
+            
+            return $false
+        }
+    } catch {
+        $errorMsg = "ERREUR inattendue lors de l'exécution de $scriptName : $_"
+        Write-Host $errorMsg -ForegroundColor Red
+        $errorMsg | Out-File -FilePath $outputFile -Encoding UTF8
+        return $false
+    }
+}
+
+# Exécuter tous les scripts
+$results = @{}
+$allSuccess = $true
+
+foreach ($script in $scripts) {
+    $result = Invoke-ScanScript -scriptName $script
+    $results[$script] = $result
+    
+    if (-not $result) {
+        $allSuccess = $false
+        $continue = Read-Host "Voulez-vous continuer avec les analyses restantes ? (O/N)"
+        if ($continue -ne "O" -and $continue -ne "o") {
+            break
+        }
+    }
+}
+
+# Afficher le résumé
+Write-Host "`n=== RÉSUMÉ DES ANALYSES ===" -ForegroundColor Cyan
+foreach ($script in $scripts) {
+    $status = if ($results.ContainsKey($script)) {
+        if ($results[$script]) { "✅" } else { "❌" }
+    } else {
+        "⏩"
+    }
+    Write-Host "$status $script"
+}
+
+# Afficher l'emplacement des résultats
+Write-Host "`nRésultats enregistrés dans: $outputDir" -ForegroundColor Green
+Get-ChildItem -Path $outputDir -Filter "*$timestamp*" | Select-Object Name, LastWriteTime | Format-Table -AutoSize
+
+# Terminer
+if ($allSuccess) {
+    Write-Host "`nToutes les analyses ont réussi !" -ForegroundColor Green
+} else {
+    Write-Host "`nCertaines analyses ont échoué. Vérifiez les fichiers de sortie pour plus de détails." -ForegroundColor Yellow
+}
+
+# Ouvrir le dossier des résultats
+explorer $outputDir

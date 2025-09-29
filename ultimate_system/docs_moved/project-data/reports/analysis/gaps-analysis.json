@@ -1,0 +1,3846 @@
+{
+  "drivers": {
+    "missing": [],
+    "incomplete": [
+      {
+        "driver": "generic--TZ3000-excgg5kb",
+        "missingFiles": []
+      },
+      {
+        "driver": "generic--TZ3000-hdlpifbk",
+        "missingFiles": []
+      },
+      {
+        "driver": "generic--TZ3000-u3oupgdy",
+        "missingFiles": []
+      },
+      {
+        "driver": "generic--TZ3000-wkr3jqmr",
+        "missingFiles": []
+      },
+      {
+        "driver": "forum-homey-community-device-1",
+        "missingFiles": []
+      },
+      {
+        "driver": "forum-homey-community-device-2",
+        "missingFiles": []
+      },
+      {
+        "driver": "homey-apps-device-1",
+        "missingFiles": []
+      },
+      {
+        "driver": "homey-apps-device-2",
+        "missingFiles": []
+      },
+      {
+        "driver": "homey-apps-device-3",
+        "missingFiles": []
+      },
+      {
+        "driver": "zigbee2mqtt-devices-device-1",
+        "missingFiles": []
+      },
+      {
+        "driver": "zigbee2mqtt-devices-device-2",
+        "missingFiles": []
+      },
+      {
+        "driver": "zigbee2mqtt-devices-device-3",
+        "missingFiles": []
+      },
+      {
+        "driver": "base-tuya-driver",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee",
+        "missingFiles": [
+          "device.js"
+        ]
+      },
+      {
+        "driver": "Automation",
+        "missingFiles": []
+      },
+      {
+        "driver": "Climate",
+        "missingFiles": []
+      },
+      {
+        "driver": "thermostatic_radiator_valve",
+        "missingFiles": []
+      },
+      {
+        "driver": "Controllers",
+        "missingFiles": []
+      },
+      {
+        "driver": "zigbee-light-bulb-community",
+        "missingFiles": []
+      },
+      {
+        "driver": "generic--tz3000-unknown001",
+        "missingFiles": []
+      },
+      {
+        "driver": "generic--tz3000-unknown002",
+        "missingFiles": []
+      },
+      {
+        "driver": "generic--tz3000-unknown003",
+        "missingFiles": []
+      },
+      {
+        "driver": "Automatisation",
+        "missingFiles": []
+      },
+      {
+        "driver": "Automatisering",
+        "missingFiles": []
+      },
+      {
+        "driver": "Available scripts",
+        "missingFiles": []
+      },
+      {
+        "driver": "Beveiliging",
+        "missingFiles": []
+      },
+      {
+        "driver": "Capabilities",
+        "missingFiles": []
+      },
+      {
+        "driver": "Capteurs",
+        "missingFiles": []
+      },
+      {
+        "driver": "Cat├®gories",
+        "missingFiles": []
+      },
+      {
+        "driver": "Climat",
+        "missingFiles": []
+      },
+      {
+        "driver": "Clusters",
+        "missingFiles": []
+      },
+      {
+        "driver": "Contr├┤leurs",
+        "missingFiles": []
+      },
+      {
+        "driver": "Drivers Zigbee",
+        "missingFiles": []
+      },
+      {
+        "driver": "forum-homey-community-device-1",
+        "missingFiles": []
+      },
+      {
+        "driver": "forum-homey-community-device-2",
+        "missingFiles": []
+      },
+      {
+        "driver": "homey-apps-device-1",
+        "missingFiles": []
+      },
+      {
+        "driver": "homey-apps-device-2",
+        "missingFiles": []
+      },
+      {
+        "driver": "homey-apps-device-3",
+        "missingFiles": []
+      },
+      {
+        "driver": "images",
+        "missingFiles": []
+      },
+      {
+        "driver": "Klimaat",
+        "missingFiles": []
+      },
+      {
+        "driver": "Local Only Mode",
+        "missingFiles": []
+      },
+      {
+        "driver": "Mode Local Only",
+        "missingFiles": []
+      },
+      {
+        "driver": "Native Zigbee",
+        "missingFiles": []
+      },
+      {
+        "driver": "Project status",
+        "missingFiles": []
+      },
+      {
+        "driver": "Scripts disponibles",
+        "missingFiles": []
+      },
+      {
+        "driver": "SDK3 Compliant",
+        "missingFiles": []
+      },
+      {
+        "driver": "S├®curit├®",
+        "missingFiles": []
+      },
+      {
+        "driver": "Zigbee",
+        "missingFiles": []
+      },
+      {
+        "driver": "Zigbee drivers",
+        "missingFiles": []
+      },
+      {
+        "driver": "Zigbee Natif",
+        "missingFiles": []
+      },
+      {
+        "driver": "zigbee2mqtt-devices-device-1",
+        "missingFiles": []
+      },
+      {
+        "driver": "zigbee2mqtt-devices-device-2",
+        "missingFiles": []
+      },
+      {
+        "driver": "zigbee2mqtt-devices-device-3",
+        "missingFiles": []
+      },
+      {
+        "driver": "├ëtat du projet",
+        "missingFiles": []
+      },
+      {
+        "driver": "forum-homey-community-device-1",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-1",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smart_air_detection_box",
+        "missingFiles": [
+          "device.js"
+        ]
+      },
+      {
+        "driver": "tuya",
+        "missingFiles": [
+          "device.js",
+          "assets/"
+        ]
+      },
+      {
+        "driver": "timers",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "Automation",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "gateway",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-104",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-114",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-14",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-24",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-34",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-4",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-44",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-54",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-64",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-74",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-84",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-94",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "irrigation",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-15",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-27",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-3",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-39",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-51",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-63",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-75",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-curtain",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-104",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-109",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-114",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-119",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-124",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-129",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-134",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-139",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-14",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-144",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-149",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-154",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-159",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-19",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-24",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-29",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-34",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-39",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-4",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-44",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-49",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-54",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-59",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-64",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-69",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-74",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-79",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-84",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-89",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-9",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-94",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-99",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-fan",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-gateway",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-irrigation",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "thermostats",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "Climate",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-11",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-15",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-19",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-23",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-27",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-3",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-31",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-35",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-39",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-43",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-47",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-51",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-55",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-59",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-7",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-108",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-118",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-18",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-28",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-38",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-48",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-58",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-68",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-78",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-8",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-88",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-98",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "hvac",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "thermostat",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "thermostatic_radiator_valve",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-103",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-108",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-113",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-118",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-123",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-128",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-13",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-133",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-138",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-143",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-148",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-153",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-158",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-18",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-23",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-28",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-3",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-33",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-38",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-43",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-48",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-53",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-58",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-63",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-68",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-73",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-78",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-8",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-83",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-88",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-93",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-98",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-hvac",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-thermostat",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-valve",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "valve",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-105",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-111",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-117",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-123",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-129",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-135",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-141",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-147",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-15",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-153",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-159",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-165",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-171",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-177",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-183",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-189",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-195",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-21",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-27",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-3",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-33",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-39",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-45",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-51",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-57",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-63",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-69",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-75",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-81",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-87",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-9",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-93",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-99",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "switches",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "Controllers",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "curtain",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "fan",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "garage",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "git-history-device-12",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "git-history-device-16",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "git-history-device-20",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "git-history-device-24",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "git-history-device-28",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "git-history-device-32",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "git-history-device-36",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "git-history-device-4",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "git-history-device-40",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "git-history-device-8",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-12",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-16",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-20",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-24",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-28",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-32",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-36",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-4",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-40",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-44",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-48",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-52",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-56",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-60",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-8",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-10",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-100",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-110",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-120",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-20",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-30",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-40",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-50",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-60",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-70",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-80",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-90",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-12",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-16",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-20",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-24",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-28",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-32",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-36",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-4",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-40",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-44",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-48",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-52",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-56",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-60",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-8",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-100",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-12",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-16",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-20",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-24",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-28",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-32",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-36",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-4",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-40",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-44",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-48",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-52",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-56",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-60",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-64",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-68",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-72",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-76",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-8",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-80",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-84",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-88",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-92",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-96",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "light",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "local-files-device-12",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "local-files-device-18",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "local-files-device-6",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "openhab-device-12",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "openhab-device-18",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "openhab-device-24",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "openhab-device-30",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "openhab-device-36",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "openhab-device-6",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "plug",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smart-plug",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-12",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-24",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-36",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-48",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-60",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-72",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "switch",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-curtain",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-10",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-100",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-105",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-110",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-115",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-120",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-125",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-130",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-135",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-140",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-145",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-15",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-150",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-155",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-160",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-20",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-25",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-30",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-35",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-40",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-45",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-5",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-50",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-55",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-60",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-65",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-70",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-75",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-80",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-85",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-90",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-95",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-fan",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-garage-door",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-light",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-smart-plug",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-smart-plug-community",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-switch",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-switch-ts",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-wall-switch",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-102",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-108",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-114",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-12",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-120",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-126",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-132",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-138",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-144",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-150",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-156",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-162",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-168",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-174",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-18",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-180",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-186",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-192",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-198",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-24",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-30",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-36",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-42",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-48",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-54",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-6",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-60",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-66",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-72",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-78",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-84",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-90",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-device-96",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "unknown",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "Automatisation",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "Automatisering",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "Beveiliging",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "Capteurs",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "Climat",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "Contr├┤leurs",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "dimmer_1_gang_tuya",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "Drivers Tuya",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "images",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "Klimaat",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "local-files-device-14",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "local-files-device-2",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "local-files-device-20",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "local-files-device-8",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smart_air_detection_box",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "S├®curit├®",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "Tuya",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "Tuya drivers",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "Tuya Zigbee",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "Tuya Zigbee - Drivers Homey Intelligents",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-apparaten",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-compatibiliteit",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-gateway",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-hvac",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-rgb",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-zigbee",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-zigbee-app",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-zigbee-rules",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "bulbs",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "locks",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "git-history-device-10",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "git-history-device-14",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "git-history-device-18",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "git-history-device-2",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "git-history-device-22",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "git-history-device-26",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "git-history-device-30",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "git-history-device-34",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "git-history-device-38",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "git-history-device-6",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-10",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-14",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-18",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-2",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-22",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-26",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-30",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-34",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-38",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-42",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-46",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-50",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-54",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-58",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-6",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-102",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-112",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-12",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-2",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-22",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-32",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-42",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-52",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-62",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-72",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-82",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-92",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-10",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-14",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-18",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-2",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-22",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-26",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-30",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-34",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-38",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-42",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-46",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-50",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-54",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-58",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-6",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-10",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-14",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-18",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-2",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-22",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-26",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-30",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-34",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-38",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-42",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-46",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-50",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-54",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-58",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-6",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-62",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-66",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-70",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-74",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-78",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-82",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-86",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-90",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-94",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-community-device-98",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "lock",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "openhab-device-14",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "openhab-device-2",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "openhab-device-20",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "openhab-device-26",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "openhab-device-32",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "openhab-device-38",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "openhab-device-8",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "Security",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-18",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-30",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-42",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-54",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-6",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-66",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-78",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-102",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-107",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-112",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-117",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-12",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-122",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-127",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-132",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-137",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-142",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-147",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-152",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-157",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-17",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-2",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-22",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-27",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-32",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-37",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-42",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-47",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-52",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-57",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-62",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-67",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-7",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-72",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-77",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-82",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-87",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-92",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-97",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-lock",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "motion",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "contact",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-contact-sensor",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-1",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-13",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-17",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-21",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-25",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-29",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-33",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-37",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-41",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-45",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-49",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-5",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-53",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-57",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "github-tuya-device-9",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-106",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-116",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-16",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-26",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-36",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-46",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-56",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-6",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-66",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-76",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-86",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "home-assistant-device-96",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "humidity",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "local-files-device-10",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "local-files-device-16",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "local-files-device-4",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "openhab-device-10",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "openhab-device-16",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "openhab-device-22",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "openhab-device-28",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "openhab-device-34",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "openhab-device-4",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "openhab-device-40",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "pressure",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "Sensoren",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "Sensors",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-21",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-33",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-45",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-57",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-69",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "smartthings-device-9",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "temperature",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-contact-sensor",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-1",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-101",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-106",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-11",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-111",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-116",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-121",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-126",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-131",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-136",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-141",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-146",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-151",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-156",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-16",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-21",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-26",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-31",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-36",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-41",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-46",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-51",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-56",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-6",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-61",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-66",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-71",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-76",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-81",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-86",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-91",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-developer-device-96",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-humidity-sensor",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-motion",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-motion-sensor",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-motion-sensor-community",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-pressure-sensor",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-temperature",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-temperature-sensor",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "tuya-gateway",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-devices-device-1",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "scraped-app--tz3000-excgg5kb",
+        "missingFiles": []
+      },
+      {
+        "driver": "scraped-app--tz3000-hdlpifbk",
+        "missingFiles": []
+      },
+      {
+        "driver": "scraped-app--tz3000-wkr3jqmr",
+        "missingFiles": []
+      },
+      {
+        "driver": "scraped-forum--tz3000-excgg5kb",
+        "missingFiles": []
+      },
+      {
+        "driver": "scraped-forum--tz3000-hdlpifbk",
+        "missingFiles": []
+      },
+      {
+        "driver": "scraped-forum--tz3000-wkr3jqmr",
+        "missingFiles": []
+      },
+      {
+        "driver": "Security",
+        "missingFiles": []
+      },
+      {
+        "driver": "forum-homey-community-device-2",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-2",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "homey-apps-device-3",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "Sensoren",
+        "missingFiles": []
+      },
+      {
+        "driver": "Sensors",
+        "missingFiles": []
+      },
+      {
+        "driver": "zigbee2mqtt-devices-device-2",
+        "missingFiles": [
+          "assets/"
+        ]
+      },
+      {
+        "driver": "zigbee2mqtt-devices-device-3",
+        "missingFiles": [
+          "assets/"
+        ]
+      }
+    ],
+    "issues": [],
+    "total": 29,
+    "expected": 29,
+    "coverage": "100%"
+  },
+  "inference": {
+    "missingModels": [],
+    "missingClusters": [],
+    "lowConfidence": []
+  },
+  "compatibility": {
+    "firmwareGaps": [],
+    "homeyBoxGaps": []
+  },
+  "performance": {
+    "slowDrivers": [],
+    "memoryIssues": [],
+    "optimizationOpportunities": []
+  }
+}

@@ -1,0 +1,66 @@
+Write-Host "=== Vérification de l'environnement Node.js ===" -ForegroundColor Cyan
+
+# Vérifier si Node.js est installé
+$nodePath = Get-Command node -ErrorAction SilentlyContinue
+if (-not $nodePath) {
+    Write-Host "❌ Node.js n'est pas installé ou n'est pas dans le PATH." -ForegroundColor Red
+    Write-Host "Veuillez installer Node.js depuis https://nodejs.org/" -ForegroundColor Yellow
+    exit 1
+}
+
+# Afficher la version de Node.js
+$nodeVersion = node -v
+Write-Host "✅ Node.js version $nodeVersion est installé" -ForegroundColor Green
+
+# Vérifier l'accès au système de fichiers
+$testFile = Join-Path $PWD "test-ps-env.txt"
+try {
+    "Test d'écriture à $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')" | Out-File -FilePath $testFile -Encoding utf8
+    if (Test-Path $testFile) {
+        Write-Host "✅ Écriture de fichier réussie" -ForegroundColor Green
+        $content = Get-Content -Path $testFile -Raw
+        Write-Host "   Contenu du fichier: $($content.Trim())" -ForegroundColor Gray
+        Remove-Item -Path $testFile -Force -ErrorAction SilentlyContinue
+    }
+} catch {
+    Write-Host "❌ Impossible d'écrire dans le répertoire: $($_.Exception.Message)" -ForegroundColor Red
+}
+
+# Vérifier l'accès réseau
+try {
+    $ping = Test-Connection -ComputerName "www.google.com" -Count 1 -ErrorAction Stop
+    Write-Host "✅ Connexion Internet fonctionnelle" -ForegroundColor Green
+} catch {
+    Write-Host "⚠ Impossible de se connecter à Internet: $($_.Exception.Message)" -ForegroundColor Yellow
+}
+
+# Vérifier les dépendances
+Write-Host "`n=== Vérification des dépendances ===" -ForegroundColor Cyan
+$dependencies = @(
+    @{ Name = "axios"; Version = "^1.6.2" },
+    @{ Name = "uuid"; Version = "^9.0.0" },
+    @{ Name = "chalk"; Version = "^5.3.0" }
+)
+
+$allDepsOk = $true
+foreach ($dep in $dependencies) {
+    $installed = npm list $($dep.Name) --depth=0 --json 2>$null | ConvertFrom-Json
+    if ($installed.dependencies.PSObject.Properties.Name -contains $dep.Name) {
+        $version = $installed.dependencies.($dep.Name).version
+        Write-Host "✅ $($dep.Name) $version est installé" -ForegroundColor Green
+    } else {
+        Write-Host "❌ $($dep.Name) n'est pas installé (version requise: $($dep.Version))" -ForegroundColor Red
+        $allDepsOk = $false
+    }
+}
+
+if (-not $allDepsOk) {
+    Write-Host "`n⚠ Certaines dépendances sont manquantes. Exécutez 'npm install' pour les installer." -ForegroundColor Yellow
+} else {
+    Write-Host "`n✅ Toutes les dépendances sont installées" -ForegroundColor Green
+}
+
+Write-Host "`n=== Vérification terminée ===" -ForegroundColor Cyan
+if (-not $allDepsOk) {
+    exit 1
+}

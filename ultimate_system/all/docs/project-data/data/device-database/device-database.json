@@ -1,0 +1,92 @@
+{
+  "metadata": {
+    "generatedAt": "2025-09-11T17:43:16.818Z",
+    "deviceCount": 3,
+    "source": "homey-tuya-zigbee",
+    "version": "1.0.0"
+  },
+  "devices": [
+    {
+      "model": "TZE200",
+      "sources": [
+        "forum"
+      ],
+      "features": [
+        "protocol:zigbee",
+        "protocol:tuya",
+        "type:sensor",
+        "type:plug",
+        "type:thermostat",
+        "type:curtain"
+      ],
+      "repositories": [
+        "https://github.com/JohanBendz/com.tuya.zigbee"
+      ],
+      "lastSeen": "2025-09-11T17:43:16.817Z",
+      "firstSeen": "2024-09-01T00:00:00.000Z",
+      "source": [
+        "forum"
+      ],
+      "status": "unverified",
+      "notes": "",
+      "forumPosts": [
+        {
+          "url": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352",
+          "title": "Universal TUYA Zigbee Device App - lite version",
+          "date": "2024-09-01T00:00:00Z"
+        }
+      ],
+      "repositoryCount": 1,
+      "forumPostCount": 1,
+      "lastUpdated": "2025-09-11T17:43:16.818Z"
+    },
+    {
+      "model": "RH3052",
+      "sources": [],
+      "features": [
+        "protocol:zigbee",
+        "protocol:tuya"
+      ],
+      "repositories": [
+        "https://github.com/JohanBendz/com.tuya.zigbee"
+      ],
+      "lastSeen": "2025-09-11T17:43:16.815Z",
+      "firstSeen": "2024-12-01T00:00:00.000Z",
+      "source": [],
+      "status": "unverified",
+      "notes": "",
+      "forumPosts": [],
+      "repositoryCount": 1,
+      "forumPostCount": 0,
+      "lastUpdated": "2025-09-11T17:43:16.818Z"
+    },
+    {
+      "model": "TS130F",
+      "sources": [],
+      "features": [
+        "type:sensor",
+        "type:plug",
+        "type:thermostat",
+        "type:curtain",
+        "protocol:zigbee",
+        "protocol:tuya"
+      ],
+      "forumPosts": [
+        {
+          "url": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352",
+          "title": "Universal TUYA Zigbee Device App - lite version",
+          "date": "2024-09-01T00:00:00Z"
+        }
+      ],
+      "lastSeen": "2025-09-11T17:43:16.817Z",
+      "firstSeen": "2024-09-01T00:00:00.000Z",
+      "source": [],
+      "status": "unverified",
+      "notes": "",
+      "repositories": [],
+      "repositoryCount": 0,
+      "forumPostCount": 1,
+      "lastUpdated": "2025-09-11T17:43:16.818Z"
+    }
+  ]
+}

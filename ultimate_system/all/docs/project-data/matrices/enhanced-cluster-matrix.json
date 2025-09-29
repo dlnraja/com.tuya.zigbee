@@ -1,0 +1,119 @@
+[
+  {
+    "cluster_id": "0x0000",
+    "cluster_name": "Basic",
+    "capability": "identify",
+    "description": "Device identification and basic info",
+    "homey_support": "full",
+    "community_notes": "Essential for all devices",
+    "usage_frequency": "always"
+  },
+  {
+    "cluster_id": "0x0001",
+    "cluster_name": "Power Configuration",
+    "capability": "measure_battery",
+    "description": "Battery level and power status",
+    "homey_support": "full",
+    "community_notes": "Works well with TS004F and battery devices",
+    "usage_frequency": "battery-devices"
+  },
+  {
+    "cluster_id": "0x0003",
+    "cluster_name": "Identify",
+    "capability": "identify",
+    "description": "Device identification requests",
+    "homey_support": "full",
+    "community_notes": "Used for device discovery",
+    "usage_frequency": "pairing"
+  },
+  {
+    "cluster_id": "0x0004",
+    "cluster_name": "Groups",
+    "capability": "",
+    "description": "Group management functionality",
+    "homey_support": "partial",
+    "community_notes": "Limited support in current implementation",
+    "usage_frequency": "optional"
+  },
+  {
+    "cluster_id": "0x0005",
+    "cluster_name": "Scenes",
+    "capability": "",
+    "description": "Scene management and recall",
+    "homey_support": "partial",
+    "community_notes": "Good for scene controllers like TS004F",
+    "usage_frequency": "scene-devices"
+  },
+  {
+    "cluster_id": "0x0006",
+    "cluster_name": "On/Off",
+    "capability": "onoff",
+    "description": "Basic on/off control",
+    "homey_support": "full",
+    "community_notes": "Most important cluster for switches and plugs",
+    "usage_frequency": "always"
+  },
+  {
+    "cluster_id": "0x0008",
+    "cluster_name": "Level Control",
+    "capability": "dim",
+    "description": "Dimming and brightness control",
+    "homey_support": "full",
+    "community_notes": "Works with dimmable devices",
+    "usage_frequency": "dimmers"
+  },
+  {
+    "cluster_id": "0x0300",
+    "cluster_name": "Color Control",
+    "capability": "light_hue,light_saturation,light_temperature",
+    "description": "Color and temperature control",
+    "homey_support": "full",
+    "community_notes": "For rgb and tunable white lights",
+    "usage_frequency": "color-lights"
+  },
+  {
+    "cluster_id": "0x0402",
+    "cluster_name": "Temperature Measurement",
+    "capability": "measure_temperature",
+    "description": "Temperature sensor readings",
+    "homey_support": "full",
+    "community_notes": "Reliable for temperature sensors",
+    "usage_frequency": "sensors"
+  },
+  {
+    "cluster_id": "0x0405",
+    "cluster_name": "Relative Humidity",
+    "capability": "measure_humidity",
+    "description": "Humidity sensor readings",
+    "homey_support": "full",
+    "community_notes": "Works with combined temp/humidity sensors",
+    "usage_frequency": "sensors"
+  },
+  {
+    "cluster_id": "0x0406",
+    "cluster_name": "Occupancy Sensing",
+    "capability": "alarm_motion",
+    "description": "Motion and occupancy detection",
+    "homey_support": "full",
+    "community_notes": "Good performance with PIR sensors",
+    "usage_frequency": "motion-sensors"
+  },
+  {
+    "cluster_id": "0x0500",
+    "cluster_name": "IAS Zone",
+    "capability": "alarm_contact,alarm_smoke,alarm_water",
+    "description": "Security sensors and alarms",
+    "homey_support": "full",
+    "community_notes": "Essential for security devices",
+    "usage_frequency": "security"
+  },
+  {
+    "cluster_id": "0x0702",
+    "cluster_name": "Simple Metering",
+    "capability": "meter_power,measure_power",
+    "description": "Energy monitoring and metering",
+    "homey_support": "full",
+    "community_notes": "Accurate with TS011F energy plugs",
+    "usage_frequency": "energy-monitoring"
+  }
+]

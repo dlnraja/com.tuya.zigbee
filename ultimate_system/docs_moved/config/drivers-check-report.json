@@ -1,0 +1,180 @@
+{
+  "timestamp": "2025-08-07T16:47:18.073Z",
+  "summary": {
+    "total": 24,
+    "complete": 24,
+    "partial": 0,
+    "empty": 0,
+    "completenessRate": 100
+  },
+  "drivers": [
+    {
+      "name": "automation",
+      "type": "tuya",
+      "category": "root",
+      "status": "complete",
+      "path": "drivers\\tuya\\automation"
+    },
+    {
+      "name": "climate",
+      "type": "tuya",
+      "category": "root",
+      "status": "complete",
+      "path": "drivers\\tuya\\climate"
+    },
+    {
+      "name": "controllers",
+      "type": "tuya",
+      "category": "root",
+      "status": "complete",
+      "path": "drivers\\tuya\\controllers"
+    },
+    {
+      "name": "covers",
+      "type": "tuya",
+      "category": "root",
+      "status": "complete",
+      "path": "drivers\\tuya\\covers"
+    },
+    {
+      "name": "generic",
+      "type": "tuya",
+      "category": "root",
+      "status": "complete",
+      "path": "drivers\\tuya\\generic"
+    },
+    {
+      "name": "lighting",
+      "type": "tuya",
+      "category": "root",
+      "status": "complete",
+      "path": "drivers\\tuya\\lighting"
+    },
+    {
+      "name": "lights",
+      "type": "tuya",
+      "category": "root",
+      "status": "complete",
+      "path": "drivers\\tuya\\lights"
+    },
+    {
+      "name": "locks",
+      "type": "tuya",
+      "category": "root",
+      "status": "complete",
+      "path": "drivers\\tuya\\locks"
+    },
+    {
+      "name": "plugs",
+      "type": "tuya",
+      "category": "root",
+      "status": "complete",
+      "path": "drivers\\tuya\\plugs"
+    },
+    {
+      "name": "security",
+      "type": "tuya",
+      "category": "root",
+      "status": "complete",
+      "path": "drivers\\tuya\\security"
+    },
+    {
+      "name": "sensors",
+      "type": "tuya",
+      "category": "root",
+      "status": "complete",
+      "path": "drivers\\tuya\\sensors"
+    },
+    {
+      "name": "switches",
+      "type": "tuya",
+      "category": "root",
+      "status": "complete",
+      "path": "drivers\\tuya\\switches"
+    },
+    {
+      "name": "thermostats",
+      "type": "tuya",
+      "category": "root",
+      "status": "complete",
+      "path": "drivers\\tuya\\thermostats"
+    },
+    {
+      "name": "unknown",
+      "type": "tuya",
+      "category": "root",
+      "status": "complete",
+      "path": "drivers\\tuya\\unknown"
+    },
+    {
+      "name": "automation",
+      "type": "zigbee",
+      "category": "root",
+      "status": "complete",
+      "path": "drivers\\zigbee\\automation"
+    },
+    {
+      "name": "covers",
+      "type": "zigbee",
+      "category": "root",
+      "status": "complete",
+      "path": "drivers\\zigbee\\covers"
+    },
+    {
+      "name": "dimmers",
+      "type": "zigbee",
+      "category": "root",
+      "status": "complete",
+      "path": "drivers\\zigbee\\dimmers"
+    },
+    {
+      "name": "lights",
+      "type": "zigbee",
+      "category": "root",
+      "status": "complete",
+      "path": "drivers\\zigbee\\lights"
+    },
+    {
+      "name": "onoff",
+      "type": "zigbee",
+      "category": "root",
+      "status": "complete",
+      "path": "drivers\\zigbee\\onoff"
+    },
+    {
+      "name": "plugs",
+      "type": "zigbee",
+      "category": "root",
+      "status": "complete",
+      "path": "drivers\\zigbee\\plugs"
+    },
+    {
+      "name": "security",
+      "type": "zigbee",
+      "category": "root",
+      "status": "complete",
+      "path": "drivers\\zigbee\\security"
+    },
+    {
+      "name": "sensors",
+      "type": "zigbee",
+      "category": "root",
+      "status": "complete",
+      "path": "drivers\\zigbee\\sensors"
+    },
+    {
+      "name": "switches",
+      "type": "zigbee",
+      "category": "root",
+      "status": "complete",
+      "path": "drivers\\zigbee\\switches"
+    },
+    {
+      "name": "thermostats",
+      "type": "zigbee",
+      "category": "root",
+      "status": "complete",
+      "path": "drivers\\zigbee\\thermostats"
+    }
+  ]
+}

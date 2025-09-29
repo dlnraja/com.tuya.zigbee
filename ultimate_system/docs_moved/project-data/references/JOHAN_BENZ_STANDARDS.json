@@ -1,0 +1,46 @@
+{
+  "title": "Johan Benz Tuya Zigbee App - Quality Standards Reference",
+  "appId": "com.tuya.zigbee",
+  "testUrl": "https://homey.app/a/com.tuya.zigbee/test",
+  "author": "Johan Bengtsson",
+  "version": "Latest",
+  "qualityStandards": {
+    "deviceIcons": {
+      "style": "Professional with consistent styling",
+      "format": "SVG preferred, PNG fallback",
+      "dimensions": "Small: 75x75px, Large: 500x500px",
+      "colors": "Brand-consistent palette"
+    },
+    "flowCards": {
+      "coverage": "Comprehensive for all device types",
+      "descriptions": "Clear, multilingual with hints",
+      "organization": "When/And/Then structure",
+      "localization": "EN, FR, NL, DE minimum"
+    },
+    "supportLinks": {
+      "primary": "Homey Community Forum discussion",
+      "secondary": "GitHub repository and issues",
+      "documentation": "Comprehensive README and changelog"
+    },
+    "appPage": {
+      "description": "Professional multi-language descriptions",
+      "deviceNaming": "Coherent and user-friendly",
+      "assetOrganization": "Proper paths and fallbacks",
+      "changelogFormatting": "Professional with emojis and structure"
+    },
+    "deviceCoverage": {
+      "manufacturerIds": "Multiple variations for broad compatibility",
+      "fallbackDrivers": "Universal adapters for unknown devices",
+      "communityPatches": "Integration of user contributions",
+      "testingStandards": "Validation against real devices"
+    }
+  },
+  "implementationNotes": {
+    "sdkCompliance": "Full SDK v3 compliance with endpoints",
+    "performanceOptimization": "Battery device optimizations",
+    "userExperience": "Zero configuration, works out-of-the-box",
+    "communityEngagement": "Active forum support and updates"
+  },
+  "inspiration": "This reference serves as the gold standard for professional Zigbee app development on Homey platform.",
+  "lastUpdated": "2025-09-12T23:23:26.253Z"
+}

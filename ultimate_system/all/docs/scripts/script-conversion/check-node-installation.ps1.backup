@@ -1,0 +1,78 @@
+# Script pour vérifier l'installation de Node.js
+Write-Host "=== Vérification de l'installation de Node.js ===" -ForegroundColor Cyan
+
+# 1. Vérifier si Node.js est dans le PATH
+$nodePath = (Get-Command node -ErrorAction SilentlyContinue).Source
+if ($nodePath) {
+    $nodeVersion = & node --version
+    Write-Host "[OK] Node.js trouvé dans le PATH" -ForegroundColor Green
+    Write-Host "    Chemin: $nodePath"
+    Write-Host "    Version: $nodeVersion"
+} else {
+    Write-Host "[ERREUR] Node.js n'est pas dans le PATH" -ForegroundColor Red
+}
+
+# 2. Vérifier les installations de Node.js dans les dossiers courants
+$commonPaths = @(
+    "$env:ProgramFiles\nodejs",
+    "${env:ProgramFiles(x86)}\nodejs",
+    "$env:LOCALAPPDATA\nvs-tool\node",
+    "$env:USERPROFILE\AppData\Roaming\nvm"
+)
+
+Write-Host "\nRecherche de Node.js dans les emplacements courants..."
+$nodeFound = $false
+
+foreach ($path in $commonPaths) {
+    $nodeExe = Join-Path $path "node.exe"
+    if (Test-Path $nodeExe) {
+        $nodeFound = $true
+        $version = & $nodeExe --version
+        Write-Host "[TROUVÉ] Node.js dans $path" -ForegroundColor Green
+        Write-Host "    Version: $version"
+    }
+}
+
+if (-not $nodeFound) {
+    Write-Host "[ERREUR] Aucune installation de Node.js trouvée dans les emplacements courants" -ForegroundColor Red
+}
+
+# 3. Vérifier les variables d'environnement
+Write-Host "\n=== Variables d'environnement ===" -ForegroundColor Cyan
+$envVars = @("NODE_PATH", "NVM_HOME", "NVM_SYMLINK")
+
+foreach ($var in $envVars) {
+    $value = [Environment]::GetEnvironmentVariable($var)
+    if ($value) {
+        Write-Host "$var = $value"
+    } else {
+        Write-Host "$var = (non défini)" -ForegroundColor Yellow
+    }
+}
+
+# 4. Vérifier la configuration de base
+Write-Host "\n=== Test de base de Node.js ===" -ForegroundColor Cyan
+$testFile = Join-Path $PSScriptRoot "node-test-$(Get-Date -Format 'yyyyMMddHHmmss').js"
+"console.log('Test réussi: ' + new Date().toISOString());" | Out-File -FilePath $testFile -Encoding utf8
+
+try {
+    Write-Host "Exécution d'un script de test..."
+    $output = & node $testFile 2>&1
+    
+    if ($LASTEXITCODE -eq 0) {
+        Write-Host "[SUCCÈS] Node.js fonctionne correctement" -ForegroundColor Green
+        Write-Host "Sortie: $output"
+    } else {
+        Write-Host "[ERREUR] Le script Node.js a échoué avec le code $LASTEXITCODE" -ForegroundColor Red
+        Write-Host "Sortie: $output"
+    }
+} catch {
+    Write-Host "[ERREUR] Impossible d'exécuter le script de test: $_" -ForegroundColor Red
+} finally {
+    # Nettoyer
+    if (Test-Path $testFile) {
+        Remove-Item $testFile -Force
+    }
+}
+
+Write-Host "\n=== Fin de la vérification ===" -ForegroundColor Cyan

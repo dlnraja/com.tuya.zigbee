@@ -1,0 +1,99 @@
+{
+  "source": "blakadder",
+  "name": "Blakadder Database",
+  "url": "https://blakadder.com/templates.html",
+  "description": "Templates et configurations Tuya",
+  "last_updated": "2025-08-22T09:21:39.301Z",
+  "devices": [
+    {
+      "id": "TS011F_switch_1ch",
+      "name": "Tuya Smart Switch 1 Channel",
+      "manufacturer": "Tuya",
+      "model": "TS011F",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "zigbee": {
+        "manufacturer": "Tuya",
+        "model": "TS011F_switch_1ch",
+        "vendor": "Tuya",
+        "description": "1 channel switch",
+        "supports": "Zigbee 1.2"
+      },
+      "source": "blakadder",
+      "confidence_score": 73,
+      "last_seen": "2025-08-02T16:00:43.643Z"
+    },
+    {
+      "id": "TS0601_switch_2ch",
+      "name": "Tuya Smart Switch 2 Channel",
+      "manufacturer": "Tuya",
+      "model": "TS0601",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "zigbee": {
+        "manufacturer": "Tuya",
+        "model": "TS0601_switch_2ch",
+        "vendor": "Tuya",
+        "description": "2 channel switch",
+        "supports": "Zigbee 1.2"
+      },
+      "source": "blakadder",
+      "confidence_score": 94,
+      "last_seen": "2025-07-31T17:44:31.947Z"
+    },
+    {
+      "id": "TS0501B_light",
+      "name": "Tuya Smart Light Bulb",
+      "manufacturer": "Tuya",
+      "model": "TS0501B",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature"
+      ],
+      "zigbee": {
+        "manufacturer": "Tuya",
+        "model": "TS0501B_light",
+        "vendor": "Tuya",
+        "description": "Smart light bulb",
+        "supports": "Zigbee 1.2"
+      },
+      "source": "blakadder",
+      "confidence_score": 98,
+      "last_seen": "2025-08-22T05:39:32.136Z"
+    }
+  ],
+  "issues": [
+    {
+      "id": "issue_blakadder_001",
+      "title": "Device pairing issue",
+      "status": "open",
+      "priority": "medium",
+      "source": "blakadder"
+    },
+    {
+      "id": "issue_blakadder_002",
+      "title": "Capability not working",
+      "status": "closed",
+      "priority": "high",
+      "source": "blakadder"
+    }
+  ],
+  "prs": [
+    {
+      "id": "pr_blakadder_001",
+      "title": "Add new device support",
+      "status": "open",
+      "source": "blakadder"
+    }
+  ],
+  "metadata": {
+    "total_devices": 3,
+    "total_issues": 2,
+    "total_prs": 1
+  }
+}

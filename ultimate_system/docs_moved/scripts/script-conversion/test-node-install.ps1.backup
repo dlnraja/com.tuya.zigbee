@@ -1,0 +1,50 @@
+# Script simple pour tester l'installation de Node.js
+$nodePath = (Get-Command node -ErrorAction SilentlyContinue).Source
+
+if ($nodePath) {
+    Write-Host "Node.js est installé à: $nodePath" -ForegroundColor Green
+    $nodeVersion = & node --version
+    Write-Host "Version de Node.js: $nodeVersion"
+    
+    # Tester l'exécution d'un script simple
+    $testScript = @"
+    console.log('Test réussi!');
+    console.log('Node.js version:', process.version);
+    console.log('Plateforme:', process.platform, process.arch);
+"@
+    
+    $testFile = "$env:TEMP\node-test-$(Get-Date -Format 'yyyyMMddHHmmss').js"
+    $testScript | Out-File -FilePath $testFile -Encoding utf8
+    
+    Write-Host "\nExécution du script de test..."
+    & node $testFile
+    
+    # Nettoyer
+    Remove-Item $testFile -ErrorAction SilentlyContinue
+} else {
+    Write-Host "Node.js n'est pas installé ou n'est pas dans le PATH" -ForegroundColor Red
+    
+    # Vérifier les emplacements courants
+    $commonPaths = @(
+        "$env:ProgramFiles\nodejs\node.exe",
+        "${env:ProgramFiles(x86)}\nodejs\node.exe",
+        "$env:LOCALAPPDATA\nvs-tool\node\node.exe",
+        "$env:USERPROFILE\AppData\Roaming\nvm\node.exe"
+    )
+    
+    Write-Host "\nRecherche de Node.js dans les emplacements courants..."
+    $found = $false
+    
+    foreach ($path in $commonPaths) {
+        if (Test-Path $path) {
+            $found = $true
+            $version = & $path --version
+            Write-Host "[TROUVÉ] Node.js dans $path" -ForegroundColor Green
+            Write-Host "    Version: $version"
+        }
+    }
+    
+    if (-not $found) {
+        Write-Host "Aucune installation de Node.js trouvée dans les emplacements courants" -ForegroundColor Red
+    }
+}

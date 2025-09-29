@@ -1,0 +1,92 @@
+{
+  "startTime": "2025-08-31T20:36:11.053Z",
+  "endTime": "2025-08-31T20:36:24.023Z",
+  "duration": 12970,
+  "steps": [
+    {
+      "name": "Analyzing existing drivers",
+      "startTime": "2025-08-31T20:36:11.080Z",
+      "success": true,
+      "endTime": "2025-08-31T20:36:11.612Z",
+      "duration": 532,
+      "result": {
+        "stdout": "Analysis complete. Results saved to C:\\Users\\HP\\Desktop\\repair\\driver-analysis.json",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "Processing device dumps",
+      "startTime": "2025-08-31T20:36:11.614Z",
+      "success": true,
+      "endTime": "2025-08-31T20:36:11.997Z",
+      "duration": 383,
+      "result": {
+        "stdout": "No dump files found in the dumps directory",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "Updating device references",
+      "startTime": "2025-08-31T20:36:11.998Z",
+      "success": true,
+      "endTime": "2025-08-31T20:36:12.717Z",
+      "duration": 719,
+      "result": {
+        "stdout": "No existing references found, starting fresh Processing driver_search_queries.json... Added reference for TS011F Updated references saved to C:\\Users\\HP\\Desktop\\repair\\references\\device-references.json Total references: 521",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "Enriching drivers",
+      "startTime": "2025-08-31T20:36:12.718Z",
+      "success": true,
+      "endTime": "2025-08-31T20:36:13.304Z",
+      "duration": 586,
+      "result": {
+        "stdout": "Enrichment complete. Report saved to C:\\Users\\HP\\Desktop\\repair\\driver-enrichment-report.json Updated 0 drivers Skipped 63 drivers",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "Updating placeholders",
+      "startTime": "2025-08-31T20:36:13.305Z",
+      "success": true,
+      "endTime": "2025-08-31T20:36:23.581Z",
+      "duration": 10276,
+      "result": {
+        "stdout": "Placeholder update complete. Report saved to C:\\Users\\HP\\Desktop\\repair\\placeholder-update-report.md Updated 0 files",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "Generating final report",
+      "startTime": "2025-08-31T20:36:23.582Z",
+      "success": true,
+      "endTime": "2025-08-31T20:36:24.023Z",
+      "duration": 441,
+      "result": {
+        "stdout": "",
+        "stderr": "Error generating driver report: ReferenceError: writeFile is not defined at generateDriverReport (C:\\Users\\HP\\Desktop\\repair\\tools\\generate-driver-report.js:167:5) ReferenceError: writeFile is not defined at generateDriverReport (C:\\Users\\HP\\Desktop\\repair\\tools\\generate-driver-report.js:167:5)"
+      }
+    }
+  ],
+  "errors": [],
+  "summary": {},
+  "config": {
+    "rootDir": "C:\\Users\\HP\\Desktop\\repair",
+    "toolsDir": "C:\\Users\\HP\\Desktop\\repair\\tools",
+    "driversDir": "C:\\Users\\HP\\Desktop\\repair\\drivers",
+    "referencesDir": "C:\\Users\\HP\\Desktop\\repair\\references",
+    "dumpsDir": "C:\\Users\\HP\\Desktop\\repair\\dumps",
+    "logFile": "C:\\Users\\HP\\Desktop\\repair\\automation.log",
+    "reportFile": "C:\\Users\\HP\\Desktop\\repair\\automation-report.md",
+    "scripts": {
+      "analyzeDrivers": "\\tools\\analyze-drivers.js",
+      "updateReferences": "\\tools\\update-references.js",
+      "enrichDrivers": "\\tools\\enrich-drivers.js",
+      "generateReport": "\\tools\\generate-driver-report.js",
+      "processDumps": "\\tools\\process-dumps.js",
+      "updatePlaceholders": "\\tools\\update-placeholders.js"
+    }
+  }
+}

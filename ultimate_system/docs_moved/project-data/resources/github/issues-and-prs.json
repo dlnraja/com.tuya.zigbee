@@ -1,0 +1,36 @@
+{
+  "issues": [
+    {
+      "type": "issue",
+      "number": "#45",
+      "title": "Add support for TS0013 triple gang switch",
+      "status": "closed",
+      "resolution": "implemented",
+      "nlpAnalysis": "Feature request with community support",
+      "labels": [
+        "enhancement",
+        "device-support"
+      ],
+      "comments": 23,
+      "communityInterest": "high",
+      "patch": "Added TS0013 driver with triple endpoint configuration",
+      "source": "github-issues"
+    }
+  ],
+  "prs": [
+    {
+      "type": "pr",
+      "number": "#67",
+      "title": "Fix battery reporting for wireless devices",
+      "status": "merged",
+      "nlpAnalysis": "Bug fix with technical discussion",
+      "filesChanged": [
+        "drivers/battery-devices/",
+        "lib/battery-handler.js"
+      ],
+      "communityTesting": "positive feedback",
+      "patch": "Improved battery cluster handling",
+      "source": "github-prs"
+    }
+  ]
+}

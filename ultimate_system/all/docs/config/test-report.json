@@ -1,0 +1,57 @@
+{
+  "timestamp": "2025-09-01T12:37:53.855Z",
+  "summary": {
+    "total": 4,
+    "existing": 4,
+    "readable": 4,
+    "withImports": 4,
+    "withAsync": 4,
+    "withMain": 3
+  },
+  "details": {
+    "scout": {
+      "name": "scout",
+      "exists": true,
+      "readable": true,
+      "lines": 160,
+      "hasImports": true,
+      "hasAsync": true,
+      "hasMain": true,
+      "size": 4998,
+      "errors": []
+    },
+    "architect": {
+      "name": "architect",
+      "exists": true,
+      "readable": true,
+      "lines": 296,
+      "hasImports": true,
+      "hasAsync": true,
+      "hasMain": false,
+      "size": 8945,
+      "errors": []
+    },
+    "optimizer": {
+      "name": "optimizer",
+      "exists": true,
+      "readable": true,
+      "lines": 168,
+      "hasImports": true,
+      "hasAsync": true,
+      "hasMain": true,
+      "size": 5091,
+      "errors": []
+    },
+    "validator": {
+      "name": "validator",
+      "exists": true,
+      "readable": true,
+      "lines": 227,
+      "hasImports": true,
+      "hasAsync": true,
+      "hasMain": true,
+      "size": 7745,
+      "errors": []
+    }
+  }
+}

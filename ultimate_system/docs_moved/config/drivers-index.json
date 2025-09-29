@@ -1,0 +1,71 @@
+[
+  {
+    "name": "tuya-light-bulb",
+    "type": "tuya",
+    "category": "lights",
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_temperature",
+      "light_hue",
+      "light_saturation"
+    ],
+    "icon": "💡",
+    "path": "drivers/tuya/tuya-light-bulb.js"
+  },
+  {
+    "name": "tuya-switch",
+    "type": "tuya",
+    "category": "switches",
+    "capabilities": [
+      "onoff"
+    ],
+    "icon": "🔌",
+    "path": "drivers/tuya/tuya-switch.js"
+  },
+  {
+    "name": "tuya-sensor",
+    "type": "tuya",
+    "category": "sensors",
+    "capabilities": [
+      "measure_temperature",
+      "measure_humidity",
+      "measure_pressure"
+    ],
+    "icon": "🌡️",
+    "path": "drivers/tuya/tuya-sensor.js"
+  },
+  {
+    "name": "zigbee-light-bulb",
+    "type": "zigbee",
+    "category": "lights",
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_temperature"
+    ],
+    "icon": "💡",
+    "path": "drivers/zigbee/zigbee-light-bulb.js"
+  },
+  {
+    "name": "zigbee-switch",
+    "type": "zigbee",
+    "category": "switches",
+    "capabilities": [
+      "onoff"
+    ],
+    "icon": "🔌",
+    "path": "drivers/zigbee/zigbee-switch.js"
+  },
+  {
+    "name": "zigbee-sensor",
+    "type": "zigbee",
+    "category": "sensors",
+    "capabilities": [
+      "measure_temperature",
+      "measure_humidity"
+    ],
+    "icon": "🌡️",
+    "path": "drivers/zigbee/zigbee-sensor.js"
+  }
+]

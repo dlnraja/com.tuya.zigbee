@@ -1,0 +1,123 @@
+{
+  "project": {
+    "name": "Tuya Zigbee for Homey",
+    "repository": "dlnraja/com.tuya.zigbee",
+    "liteVersion": "tuya-light",
+    "languages": [
+      "en",
+      "fr",
+      "nl",
+      "ta"
+    ],
+    "mainBranch": "master"
+  },
+  "automation": {
+    "updateFrequency": "monthly",
+    "runTests": true,
+    "updateDocumentation": true,
+    "syncLiteVersion": true,
+    "createPullRequest": true
+  },
+  "fileStructure": {
+    "drivers": "drivers/{manufacturer}/{model}",
+    "tests": "tests/{type}/{category}",
+    "documentation": "docs/{language}",
+    "data": "data/{category}"
+  },
+  "codeStandards": {
+    "indentSize": 2,
+    "quoteStyle": "single",
+    "maxLineLength": 100,
+    "trailingComma": "es5"
+  },
+  "testing": {
+    "minCoverage": 80,
+    "browserSupport": [
+      "last 2 versions"
+    ],
+    "testEnvironments": [
+      "node",
+      "browser"
+    ]
+  },
+  "documentation": {
+    "languages": {
+      "en": "English",
+      "fr": "Français",
+      "nl": "Nederlands",
+      "ta": "தமிழ்"
+    },
+    "requiredSections": [
+      "overview",
+      "installation",
+      "usage",
+      "api",
+      "contributing",
+      "license"
+    ]
+  },
+  "dependencies": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0",
+    "homey": ">=3.0.0"
+  },
+  "scripts": {
+    "analyze": "node scripts/analyze.js",
+    "build": "npm run lint && npm test && npm run docs",
+    "test": "jest --coverage",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "format": "prettier --write .",
+    "docs": "node scripts/generate-docs.js",
+    "update-matrix": "node scripts/update_device_matrix.mjs",
+    "sync-lite": "node scripts/sync_lite_version.mjs"
+  },
+  "workflows": {
+    "ci": ".github/workflows/ci.yml",
+    "monthly": ".github/workflows/monthly_enrichment.yml",
+    "release": ".github/workflows/release.yml"
+  },
+  "contributing": {
+    "prTitle": "[type](scope): short description Description en français si nécessaire",
+    "commitTypes": [
+      "feat",
+      "fix",
+      "docs",
+      "style",
+      "refactor",
+      "test",
+      "chore"
+    ],
+    "scopes": [
+      "drivers",
+      "core",
+      "docs",
+      "ci",
+      "tests",
+      "deps"
+    ]
+  },
+  "aiPrompts": {
+    "driverGeneration": {
+      "system": "You are a senior Homey developer creating a new Zigbee driver.",
+      "user": "Generate a Homey Zigbee driver for {deviceModel} with the following specifications..."
+    },
+    "documentation": {
+      "system": "You are a technical writer creating clear, concise documentation.",
+      "user": "Write documentation for {feature} in {language}..."
+    },
+    "testing": {
+      "system": "You are a QA engineer writing comprehensive tests.",
+      "user": "Create test cases for {component}..."
+    }
+  },
+  "versioning": {
+    "type": "semver",
+    "changelog": "CHANGELOG.md",
+    "bumpTypes": [
+      "major",
+      "minor",
+      "patch",
+      "prerelease"
+    ]
+  }
+}

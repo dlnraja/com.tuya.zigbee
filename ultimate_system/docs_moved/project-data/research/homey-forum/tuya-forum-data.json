@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Universal TUYA Zigbee Device App - lite version",
+    "content": "SDK3 app with 300+ device IDs supported including TS0121, TS011F, TS0001, TS0011, TS0002, TS0003, TS110F, TS1111, TS130F, TS0203, TS0202, TS0201, TS0601, TS004F, TS0041, TS0505B, TZE200 series, _TZ3000 series. PIR sensors _TZ3000_mmtwjmaq, _TZ3000_kmh5qpmb. TH Sensor TS0201, TS0601, _TZE200_cwbvmsar. Plugs _TZ3000_g5xawfcq, _TZ3000_vzopcetz, TS011F. RGBW TS0505B, TZE200 LED strip drivers. Curtain TS130F motors. TRV TZE200 thermostats.",
+    "url": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352",
+    "date": "2024-09-01T00:00:00Z",
+    "tags": ["tuya", "zigbee", "sdk3", "homey"],
+    "replies": [
+      {
+        "content": "Device requests should be made on Github with zigbee interview data from developer.athom.com/tools/zigbee"
+      }
+    ]
+  },
+  {
+    "title": "Tuya Zigbee App - Main Thread",
+    "content": "Johan Bendz official Tuya Zigbee app supporting Temperature and Humidity Sensors TUYATEC-g3gl6cgy/RH3052, _TZ3000_i8jfiezr/TS0201, _TZ3000_bguser20/TS0201. LCD sensors _TZ2000_a476raq2/TS0201, _TZ2000_xogb73am/TS0201. PIR Sensors TUYATEC-lha8pbwd/RH3040, _TYZB01_jytabjkb/TS0202, _TZ3000_mmtwjmaq/TS0202. Door/Window sensors TUYATEC-g3gl6cgy/RH3001, _TZ3000_ebar6ljy/TS0203. Water detectors _TYST11_qq9mpfhw/q9mpfhw. Motion sensors _TZ1800_fcdjzz3s/TY0202, _TZE200_3towulqd/TS0601.",
+    "url": "https://community.homey.app/t/app-pro-tuya-zigbee-app/26439",
+    "date": "2022-01-01T00:00:00Z",
+    "tags": ["tuya", "zigbee", "johan", "official"],
+    "replies": []
+  }
+]

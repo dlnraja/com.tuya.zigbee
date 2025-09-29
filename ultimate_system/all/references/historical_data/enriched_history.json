@@ -1,0 +1,1047 @@
+{
+  "totalCommits": 1737,
+  "manufacturerIDs": [
+    "_TZ3000_",
+    "_TZ3210_",
+    "_TZE200_",
+    "_TZE204_",
+    "_TZ3000_8"
+  ],
+  "productIDs": [
+    "TS0601",
+    "TS011F",
+    "TS130F",
+    "TS0044",
+    "TS0004",
+    "TS004F",
+    "TS0207",
+    "TS0205",
+    "TS601",
+    "TS0203"
+  ],
+  "categories": [
+    "curtain",
+    "plug",
+    "switch",
+    "motion",
+    "light",
+    "climate"
+  ],
+  "improvements": [
+    {
+      "hash": "cfa8b3647",
+      "message": "🔧 Multiple unique IDs enrichment v2.0.0 - Validation SUCCESS",
+      "type": "improvement"
+    },
+    {
+      "hash": "33774630f",
+      "message": "🔧 ULTIMATE Driver categorization fixed v2.0.0 - Unique IDs per category",
+      "type": "improvement"
+    },
+    {
+      "hash": "37297d70d",
+      "message": "🎨 Images fixed SDK3 - Version 2.0.0",
+      "type": "improvement"
+    },
+    {
+      "hash": "80707d073",
+      "message": "🔧 Official Homey Actions integration - App Store publishing fix",
+      "type": "improvement"
+    },
+    {
+      "hash": "0242d3e78",
+      "message": "🔧 Johan Bendz settings fix + complete manufacturer IDs v4.0.7",
+      "type": "improvement"
+    },
+    {
+      "hash": "be75f13b9",
+      "message": "🔧 Forum Analysis: Applied all Homey Community fixes v4.0.6",
+      "type": "improvement"
+    },
+    {
+      "hash": "4f92a67b1",
+      "message": "🏭 Ultimate fix v4.0.0",
+      "type": "improvement"
+    },
+    {
+      "hash": "1313d5f30",
+      "message": "🔧 Ultra fix + enrich v2.8.0",
+      "type": "improvement"
+    },
+    {
+      "hash": "a61571512",
+      "message": "🚀 Quick fix publish v2.7.0",
+      "type": "improvement"
+    },
+    {
+      "hash": "587bfaf47",
+      "message": "🔧 NPM fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "d1c4fbba4",
+      "message": "­ƒöº Auto-fix attempt 1",
+      "type": "improvement"
+    },
+    {
+      "hash": "706770c66",
+      "message": "🔧 Pre-publish fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "486250390",
+      "message": "🔄 HOMEY MONITOR 20: Auto-fix cycle",
+      "type": "improvement"
+    },
+    {
+      "hash": "2a8dfb314",
+      "message": "🔄 HOMEY MONITOR 19: Auto-fix cycle",
+      "type": "improvement"
+    },
+    {
+      "hash": "e4a7438f8",
+      "message": "🔄 HOMEY MONITOR 18: Auto-fix cycle",
+      "type": "improvement"
+    },
+    {
+      "hash": "8e472f2ad",
+      "message": "🔄 HOMEY MONITOR 17: Auto-fix cycle",
+      "type": "improvement"
+    },
+    {
+      "hash": "c325eeb74",
+      "message": "🔄 HOMEY MONITOR 16: Auto-fix cycle",
+      "type": "improvement"
+    },
+    {
+      "hash": "5eb54ef07",
+      "message": "🔄 HOMEY MONITOR 15: Auto-fix cycle",
+      "type": "improvement"
+    },
+    {
+      "hash": "228d70700",
+      "message": "🔄 HOMEY MONITOR 14: Auto-fix cycle",
+      "type": "improvement"
+    },
+    {
+      "hash": "9ad56bcea",
+      "message": "🔄 HOMEY MONITOR 13: Auto-fix cycle",
+      "type": "improvement"
+    },
+    {
+      "hash": "0b75e91d7",
+      "message": "🔄 HOMEY MONITOR 12: Auto-fix cycle",
+      "type": "improvement"
+    },
+    {
+      "hash": "e8e337031",
+      "message": "🔄 HOMEY MONITOR 11: Auto-fix cycle",
+      "type": "improvement"
+    },
+    {
+      "hash": "e0eae7227",
+      "message": "🔧 AUTO-FIX 1: Applied 1 fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "21b4873f8",
+      "message": "🔄 HOMEY MONITOR 10: Auto-fix cycle",
+      "type": "improvement"
+    },
+    {
+      "hash": "9cdd72948",
+      "message": "🔄 HOMEY MONITOR 9: Auto-fix cycle",
+      "type": "improvement"
+    },
+    {
+      "hash": "c0372a338",
+      "message": "🔄 HOMEY MONITOR 8: Auto-fix cycle",
+      "type": "improvement"
+    },
+    {
+      "hash": "cfb016092",
+      "message": "🔄 HOMEY MONITOR 6: Auto-fix cycle",
+      "type": "improvement"
+    },
+    {
+      "hash": "e881a48f8",
+      "message": "🔄 HOMEY MONITOR 5: Auto-fix cycle",
+      "type": "improvement"
+    },
+    {
+      "hash": "8e4579779",
+      "message": "🔄 HOMEY MONITOR 4: Auto-fix cycle",
+      "type": "improvement"
+    },
+    {
+      "hash": "ebd80ded6",
+      "message": "🔄 HOMEY MONITOR 3: Auto-fix cycle",
+      "type": "improvement"
+    },
+    {
+      "hash": "24db5fb6a",
+      "message": "🔄 HOMEY MONITOR 2: Auto-fix cycle",
+      "type": "improvement"
+    },
+    {
+      "hash": "d0cdc38f0",
+      "message": "🔄 HOMEY MONITOR 1: Auto-fix cycle",
+      "type": "improvement"
+    },
+    {
+      "hash": "a7ad83fbe",
+      "message": "🌐 MEGA: All sources enriched v2.1.0",
+      "type": "improvement"
+    },
+    {
+      "hash": "d241e0441",
+      "message": "🎯 MEGA FIX: Apply 50+ proven GitHub Actions fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "e9e22f481",
+      "message": "🚨 EMERGENCY: Critical fixes for GitHub Actions validation",
+      "type": "improvement"
+    },
+    {
+      "hash": "c83efbf78",
+      "message": "🚀 MEGA: All drivers enriched",
+      "type": "improvement"
+    },
+    {
+      "hash": "c2c1f1c68",
+      "message": "🔄 RESTORE: 6 eliminated drivers fixed",
+      "type": "improvement"
+    },
+    {
+      "hash": "ff8e7c0aa",
+      "message": "✅ FINAL: All drivers restored and fixed",
+      "type": "improvement"
+    },
+    {
+      "hash": "8d3e3ab11",
+      "message": "🔄 RESTORE: All drivers back in app.json + ultra JSON fix applied",
+      "type": "improvement"
+    },
+    {
+      "hash": "923a3e8ac",
+      "message": "📊 COMPLETE: All drivers improved + enriched + ready for Homey App Store",
+      "type": "improvement"
+    },
+    {
+      "hash": "110fc05af",
+      "message": "🔧 IMPROVE: All drivers enhanced + fixed",
+      "type": "improvement"
+    },
+    {
+      "hash": "16adf4277",
+      "message": "🔄 RESTORE: air_quality_monitor fixed",
+      "type": "improvement"
+    },
+    {
+      "hash": "76cf3a285",
+      "message": "🔧 AUTO-FIX 12: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "0e2a5e70d",
+      "message": "🔧 AUTO-FIX 11: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "4b3087d32",
+      "message": "🔧 AUTO-FIX 10: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "a937011f1",
+      "message": "🔧 AUTO-FIX 9: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "8a23387a3",
+      "message": "🔧 AUTO-FIX 8: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "af7d8e21d",
+      "message": "🔧 AUTO-FIX 7: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "d8d16ec8c",
+      "message": "🔧 AUTO-FIX 6: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "45eda6fa0",
+      "message": "🔧 AUTO-FIX 5: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "aaa30bc98",
+      "message": "🔧 AUTO-FIX 4: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "441aa52ca",
+      "message": "🔧 AUTO-FIX 3: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "f6001fc36",
+      "message": "🔧 AUTO-FIX 2: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "97ef945b1",
+      "message": "🔧 AUTO-FIX 1: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "9e5437439",
+      "message": "🔧 AUTO-FIX 12: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "599465c64",
+      "message": "🔧 AUTO-FIX 11: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "375baec9e",
+      "message": "🔧 AUTO-FIX 10: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "3990e4521",
+      "message": "🔧 AUTO-FIX 9: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "97919e648",
+      "message": "🔧 AUTO-FIX 8: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "bd16721ac",
+      "message": "🔧 AUTO-FIX 7: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "d38f19b35",
+      "message": "🔧 AUTO-FIX 6: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "37727b51c",
+      "message": "🔧 AUTO-FIX 5: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "b61cfaf56",
+      "message": "🔧 AUTO-FIX 4: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "c36ea07e6",
+      "message": "🔧 AUTO-FIX 3: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "3b605fdac",
+      "message": "🔧 AUTO-FIX 2: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "f8047edbc",
+      "message": "🔧 AUTO-FIX 1: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "dc3978988",
+      "message": "🔧 AUTO-FIX 1: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "c561db013",
+      "message": "🔧 AUTO-FIX 12: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "f1c460a89",
+      "message": "🔧 AUTO-FIX 11: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "3e567ccbb",
+      "message": "🔧 AUTO-FIX 10: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "f41b71f6e",
+      "message": "🔧 AUTO-FIX 9: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "43433d46c",
+      "message": "🔧 AUTO-FIX 8: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "07ed929cf",
+      "message": "🔧 AUTO-FIX 7: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "5dd01b25b",
+      "message": "🔧 AUTO-FIX 6: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "dcb8a6297",
+      "message": "🔧 AUTO-FIX 5: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "323613517",
+      "message": "🔧 AUTO-FIX 4: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "c88b4e951",
+      "message": "🔧 AUTO-FIX 3: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "a2ebcab9e",
+      "message": "🔧 AUTO-FIX 2: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "cd06a2e9e",
+      "message": "🔧 AUTO-FIX 1: Continuous publication fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "5b9330d90",
+      "message": "🚀 PUBLISH CYCLE 1: Monitor & fix",
+      "type": "improvement"
+    },
+    {
+      "hash": "18d5cecba",
+      "message": "🚨 EMERGENCY ENDPOINTS FIX: Force fix endpoints problématiques",
+      "type": "improvement"
+    },
+    {
+      "hash": "9c2211a98",
+      "message": "🔍 ENRICHISSEMENT HISTORIQUE COMPLET: Analyse 50 commits + 22 versions + TOUS drivers enrichis avec manufacturers/productIds historiques",
+      "type": "improvement"
+    },
+    {
+      "hash": "0825d673b",
+      "message": "🎉 CYCLES 1-10/10 TERMINÉS: RECERTIFICATION HOMEY COMPLÈTE ✅ Driver smoke_detector complet ✅ 149 drivers + 3947 manufacturer IDs enrichis ✅ Version 1.0.32 ✅ Images contextuelles ✅ GitHub Actions ✅ Validation 118/149 drivers complets → Publication v1.0.32",
+      "type": "improvement"
+    },
+    {
+      "hash": "206a52a26",
+      "message": "🎯 CYCLES 1-10/10: RECERTIFICATION HOMEY COMPLÈTE - Security audit + Guidelines compliance + Unbranding + Source enrichment + Buffer-safe publish v1.0.32",
+      "type": "improvement"
+    },
+    {
+      "hash": "12ddf10a3",
+      "message": "🔄 CYCLES U-Y: OWON THS317 sensor + enrichissement 2gang manufacturers + version 1.0.30→1.0.31",
+      "type": "improvement"
+    },
+    {
+      "hash": "639dbc2e4",
+      "message": "🚀 FORCE v1.0.31: Drivers enrichment + structure cleanup + prepare publish",
+      "type": "improvement"
+    },
+    {
+      "hash": "948af7163",
+      "message": "ITÉRATION 2/10: Buffer fix + enrichissement manufacturer IDs (BSEED, Lonsonho)",
+      "type": "improvement"
+    },
+    {
+      "hash": "436e2c418",
+      "message": "Ultimate Zigbee Hub v2.1.2 - Git history enrichments + GitHub Actions publishing",
+      "type": "improvement"
+    },
+    {
+      "hash": "a70e0e3e8",
+      "message": "Recursive fix attempt 1: Auto-corrections applied",
+      "type": "improvement"
+    },
+    {
+      "hash": "b23cb2509",
+      "message": "Recursive fix attempt 1: Auto-corrections applied",
+      "type": "improvement"
+    },
+    {
+      "hash": "e010f395c",
+      "message": "Recursive fix attempt 1: Auto-corrections applied",
+      "type": "improvement"
+    },
+    {
+      "hash": "b80a648ae",
+      "message": "Recursive fix attempt 1: Auto-corrections applied",
+      "type": "improvement"
+    },
+    {
+      "hash": "91d1544d9",
+      "message": "Recursive fix attempt 1: Auto-corrections applied",
+      "type": "improvement"
+    },
+    {
+      "hash": "cef054289",
+      "message": "Recursive fix attempt 1: Auto-corrections applied",
+      "type": "improvement"
+    },
+    {
+      "hash": "fc63dc926",
+      "message": "Recursive fix attempt 1: Auto-corrections applied",
+      "type": "improvement"
+    },
+    {
+      "hash": "3f116ab04",
+      "message": "Recursive fix attempt 1: Auto-corrections applied",
+      "type": "improvement"
+    },
+    {
+      "hash": "584f05a7c",
+      "message": "Recursive fix attempt 1: Auto-corrections applied",
+      "type": "improvement"
+    },
+    {
+      "hash": "1908c1aa7",
+      "message": "Recursive fix attempt 1: Auto-corrections applied",
+      "type": "improvement"
+    },
+    {
+      "hash": "07fd18088",
+      "message": "Recursive fix attempt 1: Auto-corrections applied",
+      "type": "improvement"
+    },
+    {
+      "hash": "096a77ba3",
+      "message": "Recursive fix attempt 1: Auto-corrections applied",
+      "type": "improvement"
+    },
+    {
+      "hash": "48b1ceee6",
+      "message": "Simplify GitHub Actions workflow - fix YAML syntax errors",
+      "type": "improvement"
+    },
+    {
+      "hash": "bb94a310e",
+      "message": "fix: Add SOS button driver and resolve community forum issues - v1.0.31 with proper SOS emergency button recognition and enhanced flow triggers",
+      "type": "improvement"
+    },
+    {
+      "hash": "8f9fc18ee",
+      "message": "hotfix: Fix multisensor driver cluster ID error causing device initialization failure - production critical fix for TypeError: expected_cluster_id_number",
+      "type": "improvement"
+    },
+    {
+      "hash": "173268dbb",
+      "message": "fix: Correct validation errors - Fixed image sizes to 75x75, corrected multisensor image paths, all drivers now validate for publication",
+      "type": "improvement"
+    },
+    {
+      "hash": "74b92c052",
+      "message": "Complete app reorganization: Added missing driver manifests, asset images, and fixed validation issues for v1.0.10 following Johan Benz standards",
+      "type": "improvement"
+    },
+    {
+      "hash": "7f7ef0a64",
+      "message": "🎉 v1.0.6: Ultimate Professional Release - Complete app page fix",
+      "type": "improvement"
+    },
+    {
+      "hash": "591b0ef97",
+      "message": "v1.0.2 CRITICAL FIX - Added proper SDK 3 specification, fixed undefined SDK version error preventing publication. Changed compatibility to >=5.0.0 for SDK 3 support. Ready for Homey App Store.",
+      "type": "improvement"
+    },
+    {
+      "hash": "c3753cd9c",
+      "message": "🧹 NPM CLEANUP - Dependencies fixed",
+      "type": "improvement"
+    },
+    {
+      "hash": "e93cc0311",
+      "message": "🚀 PUBLICATION READY - Final validation fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "4c7c701d0",
+      "message": "FINAL: Use authentic Johan Benz images + enriched device database from official sources",
+      "type": "improvement"
+    },
+    {
+      "hash": "1842aa878",
+      "message": "Final production release v4.0.1 - Added exotic drivers (soil sensor, radar sensor, generic fallback) with AI pattern recognition, fixed validation errors, 46+ drivers ready for Homey Store",
+      "type": "improvement"
+    },
+    {
+      "hash": "b467b6d0d",
+      "message": "Final fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "21e95ba4d",
+      "message": "Final fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "d825f7c80",
+      "message": "Final fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "e98f5e7c5",
+      "message": "Add Zigbee 3.0 support and localization improvements",
+      "type": "improvement"
+    },
+    {
+      "hash": "32a2c9dbf",
+      "message": "feat: Implement driver enrichment, repair, and multilingual documentation",
+      "type": "improvement"
+    },
+    {
+      "hash": "c00c12c60",
+      "message": "🚀 MEGA ENHANCEMENT ULTIMATE COMPLETE - Systèmes d'IA et d'enrichissement intelligent",
+      "type": "improvement"
+    },
+    {
+      "hash": "40f9d9420",
+      "message": "🧹 MEGA CLEAN & FIX: Clean repo, fix workflows, correct Pages, align upstream",
+      "type": "improvement"
+    },
+    {
+      "hash": "e9d5f3d41",
+      "message": "✅ Terminal fixes & validation complete (v3.8.0 Final)",
+      "type": "improvement"
+    },
+    {
+      "hash": "c353b362d",
+      "message": "feat(validation): fix zigbee endpoints + overlays + diagnostics - SDK3 compliance",
+      "type": "improvement"
+    },
+    {
+      "hash": "f6997136c",
+      "message": "EN: chore(pipeline): fix run script to use initialize+executePipeline; run MEGA and add enriched outputs\\nFR: chore(pipeline): correctif run pour initialize+executePipeline; exécution MEGA et ajouts enrichis",
+      "type": "improvement"
+    },
+    {
+      "hash": "5d1e8cd96",
+      "message": "EN: fix(validate): map cluster names to numeric IDs (e.g., genBasic=0x0000, genOnOff=0x0006); validation green\\nFR: fix(validate): conversion des noms de clusters en IDs numériques; validation verte",
+      "type": "improvement"
+    },
+    {
+      "hash": "96dc195b5",
+      "message": "EN: ci(pages,validate): fix workflows; add docs index; update README\\nFR: ci(pages,validate): correction workflows; ajout index docs; mise à jour README",
+      "type": "improvement"
+    },
+    {
+      "hash": "150de45ed",
+      "message": "EN: chore(tools): add crawlers + validate loop; fix compose and drivers for green validation\\nFR: chore(outils): ajouts crawlers + boucle de validation; corrections compose et drivers (validation OK)",
+      "type": "improvement"
+    },
+    {
+      "hash": "3e9ec1b5d",
+      "message": "🚀 INTÉGRATION COMPLÈTE YOLO - Tous les drivers enrichis + Scripts intelligents + Fallbacks génériques + Mode heuristique",
+      "type": "improvement"
+    },
+    {
+      "hash": "3264e8ffe",
+      "message": "fix: Restructuration nomenclature drivers - structure drivers/{tuya|zigbee}/{category}/{vendor}/{model} - 29/01/2025 22:35",
+      "type": "improvement"
+    },
+    {
+      "hash": "3fb57e598",
+      "message": "fix: Safe scripts PS + récupération erreurs Cursor - 29/01/2025 21:45",
+      "type": "improvement"
+    },
+    {
+      "hash": "9e569077e",
+      "message": "fix: JSON auto-fix étendu + pipeline continue - 29/01/2025 20:10",
+      "type": "improvement"
+    },
+    {
+      "hash": "c7ad63c6d",
+      "message": "fix: auto-fix JSON avant lint + pipeline continue - 29/01/2025 20:05",
+      "type": "improvement"
+    },
+    {
+      "hash": "c17634706",
+      "message": "feat: progressive batch enrichissement complet - 210 drivers mis à jour - 29/01/2025 18:15",
+      "type": "improvement"
+    },
+    {
+      "hash": "890d155fc",
+      "message": "fix: correction GitHub Pages - workflow moderne + dashboard amélioré - 29/01/2025 17:45",
+      "type": "improvement"
+    },
+    {
+      "hash": "2155c9268",
+      "message": "build-enrich-batch-202508121715",
+      "type": "improvement"
+    },
+    {
+      "hash": "8ed52a6ad",
+      "message": "fix: correction message commit mega-pipeline + enrichissement continu - 29/01/2025 17:15",
+      "type": "improvement"
+    },
+    {
+      "hash": "b7374afe7",
+      "message": "feat: finalisation mode enrichissement - git robuste + changelog auto + scripts npm - 29/01/2025 17:10",
+      "type": "improvement"
+    },
+    {
+      "hash": "54218d5f0",
+      "message": "feat: mode enrichissement + CI hebdo + helpers sécurisés - 29/01/2025 17:00",
+      "type": "improvement"
+    },
+    {
+      "hash": "52d7aae7f",
+      "message": "chore: full pipeline sans scan ZIP (enrich/reorg/verify/diagnose/assets/reindex/dashboard)",
+      "type": "improvement"
+    },
+    {
+      "hash": "fc79f7aa4",
+      "message": "build: reorg to drivers/{tuya|zigbee}/category/vendor/model + enrich + verify + assets + docs (tmp/backup persistent)",
+      "type": "improvement"
+    },
+    {
+      "hash": "443be7209",
+      "message": "🚀 MEGA-ULTIMATE-ORCHESTRATOR V3.2.0 - Réorganisation complète et enrichissement",
+      "type": "improvement"
+    },
+    {
+      "hash": "7be605a30",
+      "message": "🚀 MEGA-ULTIMATE-ORCHESTRATOR V3.2.0 - Réorganisation complète et enrichissement",
+      "type": "improvement"
+    },
+    {
+      "hash": "0b84864aa",
+      "message": "🚀 EXÉCUTION COMPLÈTE DES SCRIPTS D'ENRICHISSEMENT - 2025-01-29 02:35:00 - v3.0.0 - Tous les scripts d'enrichissement exécutés et corrigés, script unifié créé, validation finale réussie - Mode 100% local garanti",
+      "type": "improvement"
+    },
+    {
+      "hash": "ea17b7af8",
+      "message": "🚀 CORRECTION BUGS ET AVANCEMENT MEGA ULTIMATE - 2025-01-29 02:30:00 - v3.0.0 - Correction des bugs, script enrich-drivers-ai-heuristic-mega-fixed.js créé, drivers AI Enhanced supplémentaires - Mode 100% local garanti",
+      "type": "improvement"
+    },
+    {
+      "hash": "149c848a8",
+      "message": "🚀 PROCHAINES ÉTAPES MEGA ULTIMATE - 2025-01-29 02:20:00 - v3.0.0 - Installation Docker, enrichissement complet des drivers, tests automatisés et mise à jour documentation - Mode 100% local garanti",
+      "type": "improvement"
+    },
+    {
+      "hash": "df63e8b03",
+      "message": "🚀 ENRICHISSEMENT MEGA ULTIMATE DES DRIVERS JS - 2025-01-29 02:15:00 - v3.0.0 - Complétion et enrichissement de tous les drivers JavaScript avec fonctionnalités avancées, système de monitoring MEGA ULTIMATE, fallback systems, et capacités étendues pour TUYA et ZIGBEE - Mode 100% local garanti",
+      "type": "improvement"
+    },
+    {
+      "hash": "874914607",
+      "message": "🚀 AJOUT DRIVERS MANQUANTS - Curtains + Fans + Valves + Buttons + Mega.js enrichissement",
+      "type": "improvement"
+    },
+    {
+      "hash": "925643a73",
+      "message": "🚀 RELEASE v3.0.0 - ULTIMATE FINAL FIXER COMPLETE - 2025-01-29 02:15:00 - Terminal issues fixed - All drivers validated - Images corrected - Homey validation successful - Ready for publication - YOLO Ultra Mode confirmed",
+      "type": "improvement"
+    },
+    {
+      "hash": "e3dc745c7",
+      "message": "🚀 [2025-01-29 02:26:00] MEGA ULTIMATE RESUME COMPLET - Toutes les tâches suspendues/annulées reprises - Drivers corrigés et enrichis - Scripts restaurés - Documentation fixée - Assets créés - Workflows corrigés - Validation Homey réussie - Mode ULTIMATE activé",
+      "type": "improvement"
+    },
+    {
+      "hash": "eb2e426cb",
+      "message": "🚀 [2025-01-29 02:24:00] MEGA RÉORGANISATION ET ENRICHISSEMENT COMPLET - Doublons supprimés et fichiers inutiles nettoyés - Structure réorganisée et optimisée - Fichiers renommés et adaptés - Drivers enrichis en mode MEGA - app.js mis à jour avec mode MEGA - Validation Homey réussie - Mode YOLO Ultra activé",
+      "type": "improvement"
+    },
+    {
+      "hash": "aefda4cf3",
+      "message": "🚀 [2025-01-29 02:20:00] ENRICHISSEMENT HÉURISTIQUE COMPLET - Référentiels et sources intégrés - Device IDs ajoutés - Drivers enrichis avec DataPoints - app.js mis à jour avec chargement dynamique - Validation Homey réussie - Mode YOLO Ultra activé",
+      "type": "improvement"
+    },
+    {
+      "hash": "56a48b5d5",
+      "message": "🚀 [2025-01-29 02:18:00] RESTAURATION COMPLÈTE - Structure corrigée et enrichie - 20+ drivers Tuya restaurés - 3+ drivers Zigbee restaurés - Assets créés - app.js mis à jour - Validation Homey réussie - Mode YOLO Ultra activé",
+      "type": "improvement"
+    },
+    {
+      "hash": "bafb7fe10",
+      "message": "🚀 MEGA UPDATE: Complete structure reorganization and mega enrichment - ✅ Restored and completed 166 drivers - ✅ Reorganized structure to 2 directories (tuya, zigbee) - ✅ Merged SDK3 into Zigbee drivers - ✅ Enhanced all drivers with advanced features - ✅ Updated app.js with proper driver registration - ✅ All validations passed (4/4 sections) - ✅ Ready for deployment",
+      "type": "improvement"
+    },
+    {
+      "hash": "cd4da49ad",
+      "message": "🔧 FIX: Complete app validation and bug fixes - All drivers completed and validated - Fixed CLI installation issues - Added comprehensive test suite - Resolved Homey Community thread bugs - App now ready for deployment",
+      "type": "improvement"
+    },
+    {
+      "hash": "cc21b0c5b",
+      "message": "🧠 MEGA-PROMPT FINAL EXECUTOR [EN/FR/NL/TA] - Version 3.5.6 - Projet validé + Drivers synchronisés + Scripts enrichis + Automatisation configurée + Documentation refaite + GitHub Actions + Performance +60%",
+      "type": "improvement"
+    },
+    {
+      "hash": "a123922a3",
+      "message": "🚀 Full rebuild and sync [EN] / Refonte complète [FR] / Volledige rebuild [NL] / முழுமையான மறுசீரமைப்பு [TA] - Ultimate Fix Script - Complete project reorganization with 4108 drivers restructured, forum bugs fixed, external sources integrated, multilingual documentation generated, and both master and tuya-light branches synchronized",
+      "type": "improvement"
+    },
+    {
+      "hash": "27037a77e",
+      "message": "[EN] 🌐 Language rules correction - Complete project analysis and fixes [FR] 🌐 Correction des règles de langues - Analyse complète du projet et corrections [TA] 🌐 மொழி விதிகளின் திருத்தம் - முழுமையான திட்ட பகுப்பாய்வு மற்றும் சரிசெய்தல்கள் [NL] 🌐 Taalregels correctie - Volledige projectanalyse en fixes",
+      "type": "improvement"
+    },
+    {
+      "hash": "627683b45",
+      "message": "🚀 Mise à jour complète - Drivers enrichis et documentation mise à jour - 2025-01-29 16:00",
+      "type": "improvement"
+    },
+    {
+      "hash": "2351e90cc",
+      "message": "🔄 Mise à jour branche master - Drivers enrichis et documentation mise à jour",
+      "type": "improvement"
+    },
+    {
+      "hash": "115fb194e",
+      "message": "💡 Mise à jour branche tuya-light - Drivers Tuya enrichis et documentation mise à jour",
+      "type": "improvement"
+    },
+    {
+      "hash": "7d63c6aac",
+      "message": "🔄 Mise à jour branche master - Drivers enrichis et documentation mise à jour",
+      "type": "improvement"
+    },
+    {
+      "hash": "6a5aab87d",
+      "message": "🔧 RÉSOLUTION PROBLÈMES INSTALLATION CLI - Script fix-all-issues.js créé - Suppression scripts PowerShell problématiques - Correction app.json, package.json, app.js - Création README.md et CHANGELOG.md - Structure validée pour installation CLI - Résolution problème forum Homey (Peter) - Prêt pour homey app install et validate - Date: 31/07/2025 23:59",
+      "type": "improvement"
+    },
+    {
+      "hash": "3709a70f7",
+      "message": "🔧 FIX: CLI Installation + Forum Errors + Mega Pipeline Integration - Complete package.json correction for Homey app - Added homey@^2.0.0 dependency - Fixed app.json structure and permissions - Created 7 new generic drivers for TS0004 and missing models - Integrated crawlForumErrorsAndFixDrivers into mega-pipeline - Added all forum bug fixes and corrections - Created CLI installation guide and test scripts - Fixed all driver.compose.json files - Added comprehensive documentation and reports",
+      "type": "improvement"
+    },
+    {
+      "hash": "7c6c0c893",
+      "message": "🔧 fix: Correction du bug driverName.toLowerCase is not a function - Validation et conversion en string ajoutées - Réorganisation intelligente opérationnelle - 2 drivers déplacés avec succès - Structure optimisée et catégorisée - Pipeline résiliente avec gestion d'erreurs robuste",
+      "type": "improvement"
+    },
+    {
+      "hash": "561b3494b",
+      "message": "🔧 fix: Correction syntaxe mega-pipeline.js pour exécution locale",
+      "type": "improvement"
+    },
+    {
+      "hash": "0d0a86bcc",
+      "message": "🚀 feat: Méga Pipeline JavaScript complète avec correction automatique, enrichissement IA et validation CLI",
+      "type": "improvement"
+    },
+    {
+      "hash": "48bb0f0b7",
+      "message": "🚀 feat: Pipeline complète autonome avec correction automatique + scripts d'enrichissement IA + scraping + documentation",
+      "type": "improvement"
+    },
+    {
+      "hash": "1b3ea7d57",
+      "message": "feat: Complete README and enhance dashboard with Zigbee2MQTT integration - 29/07/2025 02:45:00 - Completely rewrote README with all project constraints and 4464 devices support - Removed all invalid links and references, updated to clean professional standards - Enhanced dashboard with real-time metrics, Chart.js integration, and dynamic logs - Integrated 4464 devices from 504 manufacturers according to Zigbee2MQTT.io - Added intelligent firmware detection for unknown devices with 100% fallback - Implemented 6 device categories: Light (1200), Switch (800), Sensor (600), Controller (400), Specialized (200), Universal (1264) - Created comprehensive device optimization with 95%+ performance and compatibility - Added 5 intelligent detection systems with 85-95% success rates - Implemented 5 unknown firmware handling strategies with universal fallback - All workflows tested with fallback and skip mechanisms for robustness - Dashboard now shows real-time stats: 4544 total drivers, 504 manufacturers, 50+ capabilities - Maintained 100% local mode and complete Tuya API avoidance - All changes are additive and enriching, never degrading existing functionality",
+      "type": "improvement"
+    },
+    {
+      "hash": "298e1711e",
+      "message": "refactor: Remove VLC references and implement standard versionning - 29/07/2025 02:35:00 - Removed all VLC references from project policies and documentation - Updated 'Releases VLC' to 'Releases Standards' in project policies - Created new standard releases script with professional versionning principles - Implemented 5 versions with detailed changelog: v1.0.0 to v2.0.0 - Created 5 ZIP files with proper naming and content organization - Maintained all versionning principles: semantic versioning, detailed changelog, ZIP releases, multi-language support - All releases follow professional standards without VLC branding - Enhanced documentation with standard versionning guidelines - Maintained additive and enriching approach for all features - Project now uses clean, professional versionning standards",
+      "type": "improvement"
+    },
+    {
+      "hash": "98bd7fafd",
+      "message": "feat: Apply local drivers rules and avoid Tuya APIs - 29/07/2025 02:30:00 - Implemented 5 critical local rules: drivers locaux uniquement, éviter API Tuya, mode additif et enrichissant, communication locale, pas d'API externe - Updated 5 drivers with local features: TuyaZigBeeLightDevice, TuyaOnOffCluster, TuyaColorControlCluster, TuyaPowerOnStateCluster, TuyaSpecificCluster - Avoided 5 Tuya APIs: Cloud API, IoT Platform, Smart Life API, Device API, Authentication API - Added 5 local features: Local Device Discovery, Local Device Control, Local State Management, Local Security, Local Performance - Created 16 additive enrichments across 4 categories: Performance, Security, Functionality, Reliability - Updated project policies with comprehensive local mode guidelines and critical rules - Created complete local mode guide with architecture, features, and implementation examples - All drivers now operate in 100% local mode with direct Zigbee communication and no external dependencies - Enhanced security with local encryption, authentication, and validation - Optimized performance with local caching, minimal latency, and intelligent compression - All changes are additive and enriching, never degrading existing functionality",
+      "type": "improvement"
+    },
+    {
+      "hash": "7291e76f4",
+      "message": "feat: Complete TODO processing and README matrix update - 2025-01-28 18:45 GMT+2 - Processed all 12 TODOs with 100% completion rate - Generated complete driver matrix with 26 drivers from all directories - Updated README.md and README_EN.md with comprehensive driver matrix - Organized drivers by manufacturer and category with detailed statistics - Added complete capabilities list and performance metrics - Updated cursor_todo_queue.md with final completion status - Created driver matrix reports in ref/driver-matrix/ - All drivers properly categorized with manufacturer and capability information - Matrix includes intelligent, improved, new, manufacturers, and coherent drivers - Generated by TODO processor and README updater with complete automation",
+      "type": "improvement"
+    },
+    {
+      "hash": "6dec6686b",
+      "message": "feat: Complete manufacturer research and improvements implementation -  GMT+2 - Analyzed 20 manufacturers (10 existing + 10 new) - Improved coverage score from 40% to 85% - Generated 10 new drivers for missing manufacturers - Created comprehensive manufacturer specifications - Implemented all technical specifications (7 cluster categories, 6 capability categories) - Added detailed manufacturer characteristics and capabilities - Created comprehensive manufacturer summary with implementation plan - Enhanced intelligent system with complete manufacturer data - Generated by manufacturer research analyzer and improvements implementer",
+      "type": "improvement"
+    },
+    {
+      "hash": "8c11ff502",
+      "message": "feat: Complete implementation of forum improvements and documentation finalization -  GMT+2 - Implemented 28 driver improvements from forum analysis - Created 1 new driver (smart_life_devices) - Created tools/forum-improvements-implementer.js for automated improvements - Created tools/documentation-finalizer.js for complete documentation - Finalized installation guides in 4 languages (EN, FR, NL, TA) - Documented all 13 tools with comprehensive information - Updated cursor_todo_queue.md with completed phases - Generated implementation reports and documentation - Enhanced system with automated improvement implementation - Generated by forum improvements implementer and documentation finalizer",
+      "type": "improvement"
+    },
+    {
+      "hash": "aa50463d1",
+      "message": "fix: Restore essential files and clean project structure - Recreate app.json, package.json, app.js files - Fix driver.js and driver.compose.json for wall_switch_1_gang - Add placeholder images for assets - Remove non-essential files (tatus, olution-strategy, Gemfile, etc.) - Ensure project works with homey app install and validate",
+      "type": "improvement"
+    },
+    {
+      "hash": "779d7b748",
+      "message": "feat: Update README for Cursor compliance - Remove ChatGPT Plus references and replace with intelligent automation - Update project description to focus on local intelligent improvements - Maintain comprehensive documentation structure (692 lines) - Keep all features and functionality intact - Ensure compliance with Cursor CGU while preserving project value",
+      "type": "improvement"
+    },
+    {
+      "hash": "2836017b6",
+      "message": "🚀 IMPLÉMENTATION EXHAUSTIVE COMPLÈTE - Système TODO complet créé - Dashboard GitHub Pages prêt - Workflows critiques créés - Système anti-crash implémenté - Modules AI créés - Mode enrichissement avec fallback maximum - Version 1.0.24",
+      "type": "improvement"
+    },
+    {
+      "hash": "b16921fdb",
+      "message": "🔧 WORKFLOW FIXES - Correction des workflows corrompus - Création workflows de base - Script de correction global - Mode enrichissement avec fallback - Version 1.0.23",
+      "type": "improvement"
+    },
+    {
+      "hash": "bd5f509df",
+      "message": "🔄 REPRISE COMPLÈTE - 2025-07-27 04:14:58 - Version 1.0.19 - Intégration ChatGPT complète, modules IA créés, workflow d'intégration IA, documentation mise à jour, référentiel Zigbee enrichi, stabilité terminal corrigée, toutes les tâches reprises automatiquement",
+      "type": "improvement"
+    },
+    {
+      "hash": "87e3d5e18",
+      "message": "🔧 CORRECTION BUGS POWERSHELL - Suppression des scripts corrompus et création de scripts propres - Mode enrichissement additif",
+      "type": "improvement"
+    },
+    {
+      "hash": "42c9b8284",
+      "message": "🔧 CORRECTION BUGS ET VERSIONS LINUX - Correction des scripts PowerShell corrompus et création des versions Linux parallèles - Mode enrichissement additif",
+      "type": "improvement"
+    },
+    {
+      "hash": "82e99304e",
+      "message": "🔗 ZIGBEE CLUSTER REFERENTIAL - Création du référentiel Zigbee complet avec sources officielles - Mode enrichissement additif",
+      "type": "improvement"
+    },
+    {
+      "hash": "0a94cd7d3",
+      "message": "🔧 CORRECTION BUGS - Fix syntaxe PowerShell et workflows - Mode enrichissement additif",
+      "type": "improvement"
+    },
+    {
+      "hash": "c7c643a49",
+      "message": "🔧 TEST WORKFLOWS - Validation complète de tous les workflows GitHub Actions (65 workflows détectés) - Mode enrichissement additif",
+      "type": "improvement"
+    },
+    {
+      "hash": "2a8414424",
+      "message": "🔧 CORRECTION BUGS GITHUB PAGES - Mode enrichissement additif",
+      "type": "improvement"
+    },
+    {
+      "hash": "63c280003",
+      "message": "🔧 CORRECTION BUGS GITHUB PAGES - Mode enrichissement additif",
+      "type": "improvement"
+    },
+    {
+      "hash": "a82ed73a8",
+      "message": "🚀 PUSH FINAL VÉRIFIÉ - PROJET 100% VALIDÉ (2025-07-25 22:24:37) - 208 Drivers SDK3 (100%) - 60 Workflows automatisés - 36 Documents multilingues - 34 Scripts d'optimisation - Dashboard enrichi - README multilingue - Plan d'enrichissement 600 features - YOLO Mode: ENABLED - READY FOR PRODUCTION",
+      "type": "improvement"
+    },
+    {
+      "hash": "cc28d6ab8",
+      "message": "🚀 MISSION ACCOMPLIE - PROJET 100% VALIDÉ (2025-07-25 22:00:00) - 208 Drivers SDK3 (100%) - 60 Workflows automatisés - 35 Documents multilingues - 34 Scripts d'optimisation - Dashboard enrichi - README multilingue - IA Analysis activée - YOLO Mode: ENABLED",
+      "type": "improvement"
+    },
+    {
+      "hash": "0eb3f44a3",
+      "message": "🔧 Phase 1 - Validation renommage (20h16) - Suppression références YOLO MODE textuelles - Mise à jour README et rapports - Préparation workflows enrichis",
+      "type": "improvement"
+    },
+    {
+      "hash": "b893b7869",
+      "message": "[FR/EN][2025-07-25 17:20] Push intermédiaire : corrections docs, suppression YOLO MODE textuel, renommage global, enrichissement workflows. (EN) Intermediate push: doc fixes, YOLO MODE text removal, global renaming, workflow enrichment.",
+      "type": "improvement"
+    },
+    {
+      "hash": "f901ff7b3",
+      "message": "[EN/FR] Implémentation des améliorations suggérées - Guide de contribution détaillé, validation automatique des app.json et drivers, stratégie de rétrocompatibilité, et README enrichi avec roadmap et compatibilité. (2025-07-25)",
+      "type": "improvement"
+    },
+    {
+      "hash": "22955c81a",
+      "message": "[EN/FR] Archivage automatique des fichiers .md et TODO avec versionning horodaté, réorganisation des dossiers, enrichissement anti-blocage, et mise à jour des workflows pour cohérence et automatisation continue. (2025-07-25)",
+      "type": "improvement"
+    },
+    {
+      "hash": "e3145bf95",
+      "message": "[EN/FR] Archivage automatique des fichiers .md et TODO avec versionning horodaté, réorganisation des dossiers, enrichissement anti-blocage, et mise à jour des workflows pour cohérence et automatisation continue. (2025-07-25)",
+      "type": "improvement"
+    },
+    {
+      "hash": "117bfbaed",
+      "message": "🏆 RAPPORT FINAL - Projet 100% opérationnel - Dashboard Bootstrap, README enrichi, workflows corrigés - 2025-07-24 22:30 UTC",
+      "type": "improvement"
+    },
+    {
+      "hash": "80d273c08",
+      "message": "🚀 Correction complète du projet - Dashboard amélioré, README enrichi, workflows corrigés - 2025-07-24 22:20 UTC",
+      "type": "improvement"
+    },
+    {
+      "hash": "05661e45a",
+      "message": "Correction et enrichissement automatique de tous les drivers SDK3 (compatibilité, clusters, batteries, logs, robustesse) - 2025-07-25 01:54:10",
+      "type": "improvement"
+    },
+    {
+      "hash": "3671c9e3a",
+      "message": "Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee fix",
+      "type": "improvement"
+    },
+    {
+      "hash": "d74bcd4cd",
+      "message": "🚀 [2025-07-25 00:15 UTC] RESTAURATION ET CORRECTION SÉCURISÉE: Projet restauré depuis fdb75ab, 128 drivers récupérés, workflows corrigés (checkout/setup-node v4), dashboard et README mis à jour. Scripts de restauration et correction sécurisés créés. Powered by GPT-4, Cursor, PowerShell 🚀 [2025-07-25 00:15 UTC] SECURE RESTORATION AND FIX: Project restored from fdb75ab, 128 drivers recovered, workflows fixed (checkout/setup-node v4), dashboard and README updated. Secure restoration and fix scripts created. Powered by GPT-4, Cursor, PowerShell",
+      "type": "improvement"
+    },
+    {
+      "hash": "ef00960da",
+      "message": "🚀 [2025-07-24 21:50 UTC] Mise à jour complète : README enrichi avec tableau des 5 derniers drivers implémentés, version anglaise README_EN.md créée, workflows auto-translate et auto-tutorial générés. 5 nouvelles features : traduction automatique, génération tutoriels, tableau drivers, documentation multilingue, workflows automatisés. (GPT-4, Cursor)",
+      "type": "improvement"
+    },
+    {
+      "hash": "d38c4a598",
+      "message": "📊 [2025-07-24 21:44 UTC] Rapport communautaire complet : STATUS_COMMUNAUTAIRE.md créé avec KPIs détaillés, progression 4% (5/124 drivers enrichis), planning détaillé, métriques de performance, innovations IA-first. Rapport prêt pour thread communautaire. (GPT-4, Cursor)",
+      "type": "improvement"
+    },
+    {
+      "hash": "719450821",
+      "message": "🚀 [2025-07-24 21:43 UTC] Mise à jour complète : README enrichi avec KPIs drivers (124+ supportés, 5 enrichis, 15 en cours, 104 à traiter), dashboard modernisé avec progression temps réel, diagnostic terminal fonctionnel. Progression 4% - Date estimée finalisation : 28/07/2025. (GPT-4, Cursor)",
+      "type": "improvement"
+    },
+    {
+      "hash": "6665d74f5",
+      "message": "✅ [2025-07-24 21:28 UTC] Test workflows : ajout manufacturer_ids.json, test enrichissement drivers réussi, logs générés. Workflows PR/Issue et enrichissement drivers fonctionnels. (GPT-4, Cursor, PowerShell, GitHub Actions)",
+      "type": "improvement"
+    },
+    {
+      "hash": "429d0c1ab",
+      "message": "chore: Full restoration and fixes – 2025-07-21 20:42:10 UTC",
+      "type": "improvement"
+    },
+    {
+      "hash": "7b97c9cc9",
+      "message": "Support for smoke detector TS0205 and improvements for wall thermostat TS601 (#948)",
+      "type": "improvement"
+    },
+    {
+      "hash": "d88ae11df",
+      "message": "Color fix",
+      "type": "improvement"
+    },
+    {
+      "hash": "32d4a7d9d",
+      "message": "v.0.1.39 - Testing fix for RGB Lights",
+      "type": "improvement"
+    }
+  ],
+  "analysis": {
+    "mostUsedPrefix": "_TZ3000_",
+    "categoryCount": 6,
+    "lastUpdate": "2025-09-26T21:20:40.450Z"
+  }
+}

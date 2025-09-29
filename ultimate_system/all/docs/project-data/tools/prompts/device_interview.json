@@ -1,0 +1,29 @@
+{
+  "name": "device_interview",
+  "description": "Complete device interview from https://developer.athom.com/tools/zigbee",
+  "required_fields": [
+    "manufacturerName",
+    "productId",
+    "modelId",
+    "endpoints"
+  ],
+  "template": {
+    "manufacturerName": "_TZ3000_xxxxxxxx",
+    "productId": "TSxxxx",
+    "modelId": "TSxxxx",
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  }
+}

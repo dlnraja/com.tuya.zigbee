@@ -1,0 +1,43 @@
+{
+  "startTime": "2025-09-10T09:58:11.209Z",
+  "endTime": "2025-09-10T09:58:12.580Z",
+  "duration": 1371,
+  "steps": [
+    {
+      "name": "Analyzing existing drivers",
+      "startTime": "2025-09-10T09:58:11.261Z",
+      "success": false,
+      "endTime": "2025-09-10T09:58:12.579Z",
+      "duration": 1318,
+      "error": "Script not found: analyzeDrivers"
+    }
+  ],
+  "errors": [
+    {
+      "step": "Analyzing existing drivers",
+      "error": "Script not found: analyzeDrivers",
+      "stack": "AutomationError: Script not found: analyzeDrivers\n    at TuyaZigbeeAutomation.runScript (C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\automate.js:189:13)\n    at TuyaZigbeeAutomation.analyzeDrivers (C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\automate.js:162:17)\n    at TuyaZigbeeAutomation.step (C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\automate.js:128:28)\n    at TuyaZigbeeAutomation.run (C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\automate.js:87:18)\n    at Object.<anonymous> (C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\automate.js:322:14)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)",
+      "details": {
+        "scriptPath": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\tools\\analyze-drivers.js"
+      }
+    }
+  ],
+  "summary": {},
+  "config": {
+    "rootDir": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts",
+    "toolsDir": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\tools",
+    "driversDir": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\drivers",
+    "referencesDir": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\references",
+    "dumpsDir": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\dumps",
+    "logFile": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\automation.log",
+    "reportFile": "C:\\Users\\HP\\Desktop\\tuya_repair\\scripts\\automation-report.md",
+    "scripts": {
+      "analyzeDrivers": "\\tools\\analyze-drivers.js",
+      "updateReferences": "\\tools\\update-references.js",
+      "enrichDrivers": "\\tools\\enrich-drivers.js",
+      "generateReport": "\\tools\\generate-driver-report.js",
+      "processDumps": "\\tools\\process-dumps.js",
+      "updatePlaceholders": "\\tools\\update-placeholders.js"
+    }
+  }
+}

@@ -1,0 +1,115 @@
+# Script de test PowerShell pour diagnostiquer l'environnement
+
+Write-Host "=== Test d'environnement PowerShell ===" -ForegroundColor Green
+Write-Host "Date: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+Write-Host "`n1. Vérification de Node.js..." -ForegroundColor Cyan
+
+# Vérifier Node.js
+$nodePath = Get-Command node -ErrorAction SilentlyContinue
+if ($nodePath) {
+    $nodeVersion = (node --version).Trim()
+    Write-Host "✅ Node.js est installé (version: $nodeVersion)" -ForegroundColor Green
+} else {
+    Write-Host "❌ Node.js n'est pas installé ou n'est pas dans le PATH" -ForegroundColor Red
+    exit 1
+}
+
+# Vérifier npm
+Write-Host "`n2. Vérification de npm..." -ForegroundColor Cyan
+$npmPath = Get-Command npm -ErrorAction SilentlyContinue
+if ($npmPath) {
+    $npmVersion = (npm --version).Trim()
+    Write-Host "✅ npm est installé (version: $npmVersion)" -ForegroundColor Green
+} else {
+    Write-Host "❌ npm n'est pas installé ou n'est pas dans le PATH" -ForegroundColor Red
+    exit 1
+}
+
+# Vérifier l'accès au système de fichiers
+Write-Host "`n3. Test d'accès au système de fichiers..." -ForegroundColor Cyan
+$testFile = "test-file-$(Get-Date -Format 'yyyyMMddHHmmss').txt"
+try {
+    "Test d'écriture" | Out-File -FilePath $testFile -Encoding utf8 -Force
+    if (Test-Path $testFile) {
+        Write-Host "✅ Écriture de fichier réussie" -ForegroundColor Green
+        Remove-Item $testFile -Force -ErrorAction SilentlyContinue
+    } else {
+        Write-Host "❌ Impossible d'écrire des fichiers" -ForegroundColor Red
+    }
+} catch {
+    Write-Host "❌ Erreur lors de l'accès au système de fichiers: $_" -ForegroundColor Red
+}
+
+# Vérifier les fichiers du projet
+Write-Host "`n4. Vérification des fichiers du projet..." -ForegroundColor Cyan
+$requiredFiles = @("package.json", "app.json", "scripts/scout.js", "scripts/architect.js", "scripts/optimizer.js", "scripts/validator.js")
+$allFilesExist = $true
+
+foreach ($file in $requiredFiles) {
+    $filePath = Join-Path -Path $PSScriptRoot -ChildPath $file
+    if (Test-Path $filePath) {
+        Write-Host "✅ $file trouvé" -ForegroundColor Green
+    } else {
+        Write-Host "❌ $file est manquant" -ForegroundColor Red
+        $allFilesExist = $false
+    }
+}
+
+# Tester l'exécution d'un script Node.js simple
+Write-Host "`n5. Test d'exécution de script Node.js..." -ForegroundColor Cyan
+$testScript = @"
+console.log('Test d\\'exécution réussi!');
+console.log('Node.js version:', process.version);
+console.log('Plateforme:', process.platform, process.arch);
+console.log('Répertoire:', process.cwd());
+"@
+
+$testFile = "test-script-$(Get-Date -Format 'yyyyMMddHHmmss').js"
+try {
+    $testScript | Out-File -FilePath $testFile -Encoding utf8 -Force
+    Write-Host "Exécution de: node $testFile"
+    
+    $process = Start-Process -FilePath "node" -ArgumentList $testFile -NoNewWindow -Wait -PassThru -RedirectStandardOutput "$testFile-output.txt" -RedirectStandardError "$testFile-error.txt"
+    
+    if ($process.ExitCode -eq 0) {
+        Write-Host "✅ Script exécuté avec succès" -ForegroundColor Green
+        Write-Host "Sortie:"
+        Get-Content "$testFile-output.txt" | ForEach-Object { Write-Host "   $_" }
+    } else {
+        Write-Host "❌ Le script a échoué avec le code de sortie $($process.ExitCode)" -ForegroundColor Red
+        
+        if (Test-Path "$testFile-error.txt") {
+            Write-Host "Erreurs:"
+            Get-Content "$testFile-error.txt" | ForEach-Object { Write-Host "   $_" -ForegroundColor Red }
+        }
+    }
+} catch {
+    Write-Host "❌ Erreur lors de l'exécution du script: $_" -ForegroundColor Red
+} finally {
+    # Nettoyage
+    if (Test-Path $testFile) { Remove-Item $testFile -Force -ErrorAction SilentlyContinue }
+    if (Test-Path "$testFile-output.txt") { Remove-Item "$testFile-output.txt" -Force -ErrorAction SilentlyContinue }
+    if (Test-Path "$testFile-error.txt") { Remove-Item "$testFile-error.txt" -Force -ErrorAction SilentlyContinue }
+}
+
+# Installer les dépendances si nécessaire
+if ($allFilesExist) {
+    Write-Host "`n6. Vérification des dépendances..." -ForegroundColor Cyan
+    
+    if (Test-Path "node_modules") {
+        Write-Host "Le dossier node_modules existe déjà" -ForegroundColor Yellow
+    } else {
+        Write-Host "Installation des dépendances (cela peut prendre quelques minutes)..."
+        $process = Start-Process -FilePath "npm" -ArgumentList "install" -NoNewWindow -Wait -PassThru -WorkingDirectory $PSScriptRoot
+        
+        if ($process.ExitCode -eq 0) {
+            Write-Host "✅ Dépendances installées avec succès" -ForegroundColor Green
+        } else {
+            Write-Host "❌ Échec de l'installation des dépendances (code de sortie: $($process.ExitCode))" -ForegroundColor Red
+        }
+    }
+}
+
+Write-Host "`n=== Test terminé ===" -ForegroundColor Green
+Write-Host "Appuyez sur une touche pour continuer..."
+$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown')

@@ -1,0 +1,19 @@
+[
+  {
+    "driver": "default-tuya-device",
+    "compatibleDevices": [
+      "TS0001",
+      "TS0011",
+      "TS004F",
+      "TS0121"
+    ],
+    "supportedProtocols": [
+      "zigbee"
+    ],
+    "categories": [
+      "lights",
+      "switches",
+      "sensors"
+    ]
+  }
+]

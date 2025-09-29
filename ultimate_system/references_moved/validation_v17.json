@@ -1,0 +1,12 @@
+{
+  "version": "V17.0.0",
+  "heritage": "V10-V16 intégré",
+  "systems": {
+    "backup": true,
+    "drivers": 164,
+    "organization": true,
+    "backup_data": true,
+    "scraping_data": true
+  },
+  "status": "SUCCESS"
+}

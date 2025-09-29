@@ -1,0 +1,208 @@
+{
+  "timestamp": "2025-09-16T20:31:25.755Z",
+  "summary": {
+    "total_categories": 43,
+    "total_drivers": 105,
+    "categorization_strategy": "buttons_power_source_type"
+  },
+  "categories": {
+    "generic_device": [
+      "air_conditioner_controller",
+      "air_quality_monitor",
+      "dimmer",
+      "doorbell",
+      "fan_controller",
+      "for_tank_level_monitor_device",
+      "for_tz3000fa9mlvja_and_tz3000rcuyhwe3",
+      "garage_door_opener",
+      "hvac_controller",
+      "mini",
+      "outdoor_siren",
+      "pet_feeder",
+      "projector_screen_controller",
+      "radiator_valve",
+      "request_944",
+      "smart_doorbell",
+      "smart_garden_sprinkler",
+      "smart_radiator_valve",
+      "smart_spot",
+      "smart_water_valve",
+      "touch_dimmer",
+      "tz3000fa9mlvja_and_tz3000rcuyhwe3",
+      "water_valve",
+      "zbbridge"
+    ],
+    "ceiling_light_controller": [
+      "ceiling_light_controller"
+    ],
+    "co2_sensor": [
+      "co2_sensor"
+    ],
+    "multisensor": [
+      "co_detector",
+      "formaldehyde_sensor",
+      "lux_sensor",
+      "multisensor",
+      "noise_level_sensor",
+      "presence_sensor_radar",
+      "pressure_sensor",
+      "soil_moisture_sensor",
+      "tvoc_sensor",
+      "vibration_sensor"
+    ],
+    "curtain_motor": [
+      "curtain_motor",
+      "smart_curtain_motor"
+    ],
+    "door_controller": [
+      "door_controller"
+    ],
+    "smart_lock": [
+      "door_lock",
+      "smart_lock"
+    ],
+    "door_window_sensor": [
+      "door_window_sensor"
+    ],
+    "energy_monitoring_plug": [
+      "energy_monitoring_plug"
+    ],
+    "extension_plug": [
+      "extension_plug"
+    ],
+    "fingerprint_lock": [
+      "fingerprint_lock"
+    ],
+    "motion_sensor_generic": [
+      "for_pirillumination_sensor_tze2003towulqd_resolves_780_1010"
+    ],
+    "motion_sensor_radar_ac": [
+      "for_tze200kb5noeto_human_presence_detector_with_pir_24g_radar_httpswww",
+      "motion_sensor_mmwave"
+    ],
+    "gas_detector": [
+      "gas_detector"
+    ],
+    "keypad_lock": [
+      "keypad_lock"
+    ],
+    "led_strip_controller": [
+      "led_strip_controller"
+    ],
+    "wall_switch_1gang_ac": [
+      "mini_switch",
+      "remote_switch",
+      "snzb-01_switch",
+      "relay_switch_1gang",
+      "smart_switch_1gang_hybrid",
+      "touch_switch_1gang",
+      "wall_switch_1gang_ac",
+      "wall_switch_1gang_dc",
+      "wireless_switch_1gang_cr2032"
+    ],
+    "thermostat": [
+      "moes_006_series_thermostat_adds_support_for_the_006_series_thermostathttpsmoeshouse",
+      "temperature_controller",
+      "thermostat"
+    ],
+    "motion_sensor_pir_ac": [
+      "motion_sensor_pir_ac"
+    ],
+    "motion_sensor_pir_battery": [
+      "motion_sensor_pir_battery"
+    ],
+    "outdoor_light_controller": [
+      "outdoor_light_controller"
+    ],
+    "air_quality_sensor": [
+      "pm25_sensor"
+    ],
+    "roller_blind_controller": [
+      "roller_blind_controller",
+      "shade_controller"
+    ],
+    "scene_controller_2button": [
+      "scene_controller_2button"
+    ],
+    "scene_controller_4button": [
+      "scene_controller_4button",
+      "styrbar_remote",
+      "symfonisk_remote"
+    ],
+    "scene_controller_6button": [
+      "scene_controller_6button"
+    ],
+    "scene_controller_8button": [
+      "scene_controller_8button"
+    ],
+    "scene_controller_battery": [
+      "scene_controller_battery"
+    ],
+    "smart_bulb_rgb": [
+      "smart_bulb_rgb"
+    ],
+    "smart_bulb_tunable": [
+      "smart_bulb_tunable"
+    ],
+    "smart_bulb_white": [
+      "smart_bulb_white"
+    ],
+    "smart_plug": [
+      "smart_plug"
+    ],
+    "wall_switch_2gang_ac": [
+      "smart_switch_2gang_hybrid",
+      "touch_switch_2gang",
+      "wall_switch_2gang_ac",
+      "wall_switch_2gang_dc",
+      "wireless_switch_2gang_cr2032"
+    ],
+    "wall_switch_3gang_ac": [
+      "smart_switch_3gang_hybrid",
+      "touch_switch_3gang",
+      "wall_switch_3gang_ac",
+      "wall_switch_3gang_dc",
+      "wireless_switch_3gang_cr2032"
+    ],
+    "wall_switch_4gang_ac": [
+      "smart_switch_4gang_hybrid",
+      "touch_switch_4gang",
+      "wall_switch_4gang_ac",
+      "wall_switch_4gang_dc",
+      "wireless_switch_4gang_cr2032"
+    ],
+    "smoke_detector": [
+      "smoke_detector"
+    ],
+    "temperature_humidity_sensor": [
+      "temperature_humidity_sensor"
+    ],
+    "temperature_sensor": [
+      "temperature_sensor"
+    ],
+    "usb_outlet": [
+      "usb_outlet"
+    ],
+    "wall_switch_5gang_ac": [
+      "wall_switch_5gang_ac",
+      "wireless_switch_5gang_cr2032"
+    ],
+    "wall_switch_6gang_ac": [
+      "wall_switch_6gang_ac",
+      "wireless_switch_6gang_cr2032"
+    ],
+    "water_leak_sensor": [
+      "water_leak_sensor"
+    ],
+    "wireless_switch_1gang_cr2032": [
+      "wireless_switch"
+    ]
+  },
+  "recommendations": [
+    "Separate wireless switches by button count (1-6)",
+    "Distinguish AC/DC power sources",
+    "Group sensors by detection type and power",
+    "Create specific categories for multi-gang switches",
+    "Maintain unbranded naming for maximum compatibility"
+  ]
+}

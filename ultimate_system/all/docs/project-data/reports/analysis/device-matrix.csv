@@ -1,0 +1,63 @@
+ID,Device,Manufacturer,ProductId,Clusters,Datapoints,Capabilities,Traductions,Icone,Code,Source,MissingFields
+1,Base,Tuya,TS0601,[object Object],N/A,onoff,2,✅,✅,GitHub,translations
+2,Climate,Tuya,TS0601,[object Object],N/A,target_temperature,2,❌,✅,GitHub,icon,translations
+3,Climates-Ts0601 Ac,Tuya,TS0601,[object Object],N/A,target_temperature,2,❌,✅,GitHub,icon,translations
+4,Cover,Tuya,TS0601,[object Object],N/A,windowcoverings_state,2,❌,✅,GitHub,icon,translations
+5,Covers-Ts0602 Cover,Tuya,TS0601,[object Object],N/A,windowcoverings_state,2,❌,✅,GitHub,icon,translations
+6,Fan,Tuya,TS0601,[object Object],N/A,onoff,fan_speed,2,❌,✅,GitHub,icon,translations
+7,Fan-Tuya-Universal,Tuya,TS0601,[object Object],N/A,onoff,fan_speed,2,❌,✅,GitHub,icon,translations
+8,Fans-Ts0601 Fan,Tuya,TS0601,[object Object],N/A,onoff,fan_speed,2,❌,✅,GitHub,icon,translations
+9,Fans-Ts0602 Fan,Tuya,TS0601,[object Object],N/A,onoff,fan_speed,2,❌,✅,GitHub,icon,translations
+10,Generic,Tuya,TS0601,[object Object],N/A,onoff,2,✅,✅,GitHub,translations
+11,Light,Tuya,TS0601,[object Object],N/A,onoff,dim,2,❌,✅,GitHub,icon,translations
+12,Lights-Ts0501B,Tuya,TS0601,[object Object],N/A,onoff,dim,2,❌,✅,GitHub,icon,translations
+13,Lights-Ts0601 Dimmer,Tuya,TS0601,[object Object],N/A,onoff,dim,2,❌,✅,GitHub,icon,translations
+14,Lights-Ts0601 Rgb,Tuya,TS0601,[object Object],N/A,onoff,dim,2,❌,✅,GitHub,icon,translations
+15,Lights-Ts0601 Switch,Tuya,TS0601,[object Object],N/A,onoff,dim,2,❌,✅,GitHub,icon,translations
+16,Lock,Tuya,TS0601,[object Object],N/A,lock_state,2,❌,✅,GitHub,icon,translations
+17,Lock-Tuya-Universal,Tuya,TS0601,[object Object],N/A,lock_state,2,❌,✅,GitHub,icon,translations
+18,Locks-Ts0601 Lock,Tuya,TS0601,[object Object],N/A,lock_state,2,❌,✅,GitHub,icon,translations
+19,Plug,Tuya,TS0601,[object Object],N/A,onoff,measure_power,2,❌,✅,GitHub,icon,translations
+20,Plugs-Ts011F,Tuya,TS0601,[object Object],N/A,onoff,measure_power,2,❌,✅,GitHub,icon,translations
+21,Plugs-Ts011G,Tuya,TS0601,[object Object],N/A,onoff,measure_power,2,❌,✅,GitHub,icon,translations
+22,Plugs-Ts011H,Tuya,TS0601,[object Object],N/A,onoff,measure_power,2,❌,✅,GitHub,icon,translations
+23,Plugs-Ts011I,Tuya,TS0601,[object Object],N/A,onoff,measure_power,2,❌,✅,GitHub,icon,translations
+24,Plugs-Ts011J,Tuya,TS0601,[object Object],N/A,onoff,measure_power,2,❌,✅,GitHub,icon,translations
+25,Plugs-Ts0121,Tuya,TS0601,[object Object],N/A,onoff,measure_power,2,❌,✅,GitHub,icon,translations
+26,Plugs-Ts0122,Tuya,TS0601,[object Object],N/A,onoff,measure_power,2,❌,✅,GitHub,icon,translations
+27,Plugs-Ts0123,Tuya,TS0601,[object Object],N/A,onoff,measure_power,2,❌,✅,GitHub,icon,translations
+28,Plugs-Ts0124,Tuya,TS0601,[object Object],N/A,onoff,measure_power,2,❌,✅,GitHub,icon,translations
+29,Plugs-Ts0125,Tuya,TS0601,[object Object],N/A,onoff,measure_power,2,❌,✅,GitHub,icon,translations
+30,Remotes-Ts0601 Remote,Tuya,TS0601,[object Object],N/A,onoff,2,❌,✅,GitHub,icon,translations
+31,Sensor,Tuya,TS0601,[object Object],N/A,measure_temperature,2,❌,✅,GitHub,icon,translations
+32,Sensors-Ts0201,Tuya,TS0601,[object Object],N/A,measure_temperature,2,❌,✅,GitHub,icon,translations
+33,Sensors-Ts0601 Contact,Tuya,TS0601,[object Object],N/A,measure_temperature,2,❌,✅,GitHub,icon,translations
+34,Sensors-Ts0601 Gas,Tuya,TS0601,[object Object],N/A,measure_temperature,2,❌,✅,GitHub,icon,translations
+35,Tuya TS0601 Motion Sensor,_TZE200_7tdtqgwv,TS0601,[object Object],N/A,alarm_motion,measure_temperature,measure_battery,alarm_battery,4,✅,✅,GitHub,translations
+36,Sensors-Ts0601 Sensor,Tuya,TS0601,[object Object],N/A,measure_temperature,2,❌,✅,GitHub,icon,translations
+37,Sensors-Ts0601 Smoke,Tuya,TS0601,[object Object],N/A,measure_temperature,2,❌,✅,GitHub,icon,translations
+38,Sensors-Ts0601 Vibration,Tuya,TS0601,[object Object],N/A,measure_temperature,2,❌,✅,GitHub,icon,translations
+39,Sensors-Ts0601 Water,Tuya,TS0601,[object Object],N/A,measure_temperature,2,❌,✅,GitHub,icon,translations
+40,Switch,Tuya,TS0601,[object Object],N/A,onoff,2,❌,✅,GitHub,icon,translations
+41,Switches-Ts0001,Tuya,TS0601,[object Object],N/A,onoff,2,❌,✅,GitHub,icon,translations
+42,Switches-Ts0002,Tuya,TS0601,[object Object],N/A,onoff,2,❌,✅,GitHub,icon,translations
+43,Switches-Ts0003,Tuya,TS0601,[object Object],N/A,onoff,2,❌,✅,GitHub,icon,translations
+44,Switches-Ts0004,Tuya,TS0601,[object Object],N/A,onoff,2,❌,✅,GitHub,icon,translations
+45,Switches-Ts0005,Tuya,TS0601,[object Object],N/A,onoff,2,❌,✅,GitHub,icon,translations
+46,Switches-Ts0006,Tuya,TS0601,[object Object],N/A,onoff,2,❌,✅,GitHub,icon,translations
+47,Switches-Ts0007,Tuya,TS0601,[object Object],N/A,onoff,2,❌,✅,GitHub,icon,translations
+48,Switches-Ts0008,Tuya,TS0601,[object Object],N/A,onoff,2,❌,✅,GitHub,icon,translations
+49,Thermostats-Ts0601 Thermostat,Tuya,TS0601,[object Object],N/A,onoff,2,❌,✅,GitHub,icon,translations
+50,Thermostats-Ts0603 Thermostat,Tuya,TS0601,[object Object],N/A,onoff,2,❌,✅,GitHub,icon,translations
+51,Tuya-Climate-Universal,Tuya,TS0601,[object Object],N/A,target_temperature,2,❌,✅,GitHub,icon,translations
+52,Tuya-Cover-Universal,Tuya,TS0601,[object Object],N/A,windowcoverings_state,2,❌,✅,GitHub,icon,translations
+53,Tuya-Light-Universal,Tuya,TS0601,[object Object],N/A,onoff,dim,2,❌,✅,GitHub,icon,translations
+54,Tuya-Plug-Universal,Tuya,TS0601,[object Object],N/A,onoff,measure_power,2,❌,✅,GitHub,icon,translations
+55,Tuya-Remote-Universal,Tuya,TS0601,[object Object],N/A,onoff,2,❌,✅,GitHub,icon,translations
+56,Tuya-Sensor-Universal,Tuya,TS0601,[object Object],N/A,measure_temperature,2,❌,✅,GitHub,icon,translations
+57,Tuya TS0011 Smart Switch,_,TS0011,[object Object],N/A,N/A,1,❌,✅,GitHub,icon,translations
+58,Tuya Smart Plug (TS011F),_,N/A,[object Object],N/A,onoff,measure_power,meter_power,3,❌,✅,GitHub,icon,translations
+59,Tuya Zigbee,Tuya,TS0601,[object Object],N/A,onoff,2,✅,✅,GitHub,translations
+60,Tuya Zigbee Switch,N/A,N/A,N/A,N/A,onoff,measure_battery,alarm_battery,3,❌,✅,GitHub,icon,translations
+61,Zigbee-Tuya-Universal,Tuya,TS0601,[object Object],N/A,onoff,2,❌,✅,GitHub,icon,translations
+62, Common,Tuya,TS0601,[object Object],N/A,onoff,2,✅,✅,GitHub,translations

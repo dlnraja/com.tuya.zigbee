@@ -1,0 +1,26 @@
+[
+  {
+    "category": "sensor",
+    "powerType": "battery",
+    "buttonCount": 0,
+    "name": "motion_sensor_pir_battery"
+  },
+  {
+    "category": "sensor",
+    "powerType": "ac",
+    "buttonCount": 0,
+    "name": "motion_sensor_pir_ac"
+  },
+  {
+    "category": "sensor",
+    "powerType": "battery",
+    "buttonCount": 0,
+    "name": "temperature_humidity_sensor_battery"
+  },
+  {
+    "category": "sensor",
+    "powerType": "ac",
+    "buttonCount": 0,
+    "name": "temperature_humidity_sensor_ac"
+  }
+]
