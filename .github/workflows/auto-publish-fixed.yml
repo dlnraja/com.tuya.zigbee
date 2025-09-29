@@ -21,7 +21,9 @@ jobs:
         npm install fs-extra homey-zigbeedriver zigbee-clusters
         
     - name: Login to Homey
-      run: homey login --token ${{ secrets.HOMEY_TOKEN }}
+      env:
+        HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+      run: echo "$HOMEY_TOKEN" | homey login
       
     - name: Buffer-Safe Publication with Expect
       run: |
