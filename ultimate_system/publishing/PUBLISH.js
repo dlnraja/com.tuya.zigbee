@@ -36,7 +36,6 @@ function incrementVersion() {
     console.log(`✅ Version: ${app.version}`);
     return app.version;
   } catch (error) {
-    console.error('❌ Erreur version:', error.message);
     return null;
   }
 }
@@ -44,14 +43,14 @@ function incrementVersion() {
 function publishToHomey() {
   console.log('\n🏪 PUBLICATION HOMEY APP STORE:');
   try {
-    // Publication locale directe
-    execSync('homey app publish --changelog "Ultimate Zigbee Hub - Professional Edition"', {
+    // Publication interactive
+    execSync('homey app publish', {
       cwd: rootDir,
       stdio: 'inherit'
     });
     console.log('✅ Publication réussie');
     return true;
-  } catch (error) {
+{{ ... }}
     console.error('❌ Publication échouée');
     return false;
   }
