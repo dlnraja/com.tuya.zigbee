@@ -202,6 +202,8 @@
       }
     }
   },
-  "id": "_TZ3000_fixed",
-  "manufacturerName": "BSEED"
+  "manufacturerName": "BSEED",
+  "platforms": [
+    "local"
+  ]
 }

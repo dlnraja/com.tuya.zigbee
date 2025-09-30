@@ -182,6 +182,8 @@
     "large": "/drivers/switch_8gang_ac/assets/images/large.png"
   },
   "capabilitiesOptions": {},
-  "id": "_TZE200_cowvfni3",
-  "manufacturerName": "MOES"
+  "manufacturerName": "MOES",
+  "platforms": [
+    "local"
+  ]
 }

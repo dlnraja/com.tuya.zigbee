@@ -173,6 +173,8 @@
     "large": "/drivers/radar_motion_sensor_advanced/assets/images/large.png"
   },
   "capabilitiesOptions": {},
-  "id": "_TZ3000_mmtwjmaq",
-  "manufacturerName": "Tuya"
+  "manufacturerName": "Tuya",
+  "platforms": [
+    "local"
+  ]
 }

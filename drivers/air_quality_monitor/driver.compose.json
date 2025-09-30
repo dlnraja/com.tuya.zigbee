@@ -175,7 +175,6 @@
       }
     }
   },
-  "id": "_TZE200_3towulqd",
   "images": {
     "small": "./assets/images/small.png",
     "large": "./assets/images/large.png"
@@ -185,5 +184,8 @@
     "batteries": [
       "CR2032"
     ]
-  }
+  },
+  "platforms": [
+    "local"
+  ]
 }

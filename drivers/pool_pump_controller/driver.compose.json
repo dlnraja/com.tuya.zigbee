@@ -176,6 +176,8 @@
     "large": "/drivers/pool_pump_controller/assets/images/large.png"
   },
   "capabilitiesOptions": {},
-  "id": "_TZE200_cwbvmsar",
-  "manufacturerName": "MOES"
+  "manufacturerName": "MOES",
+  "platforms": [
+    "local"
+  ]
 }

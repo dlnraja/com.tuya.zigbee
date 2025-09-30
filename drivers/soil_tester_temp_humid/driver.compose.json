@@ -246,6 +246,8 @@
       }
     }
   },
-  "id": "_TZ3000_n2egfsli",
-  "manufacturerName": "Tuya"
+  "manufacturerName": "Tuya",
+  "platforms": [
+    "local"
+  ]
 }

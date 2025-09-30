@@ -7,8 +7,7 @@
     "measure_temperature",
     "measure_humidity",
     "alarm_battery",
-    "measure_battery",
-    "alarm_battery"
+    "measure_battery"
   ],
   "platforms": [
     "local"
@@ -221,6 +220,5 @@
       }
     }
   },
-  "id": "_TZ3000_fixed",
   "manufacturerName": "BSEED"
 }

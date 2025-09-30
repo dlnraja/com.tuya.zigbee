@@ -194,6 +194,8 @@
     "small": "/drivers/smart_smoke_detector_advanced/assets/images/small.png",
     "large": "/drivers/smart_smoke_detector_advanced/assets/images/large.png"
   },
-  "id": "_TZ3210_alproto2",
-  "manufacturerName": "Lonsonho"
+  "manufacturerName": "Lonsonho",
+  "platforms": [
+    "local"
+  ]
 }

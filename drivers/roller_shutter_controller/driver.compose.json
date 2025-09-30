@@ -203,6 +203,8 @@
     "small": "/drivers/roller_shutter_controller/assets/images/small.png",
     "large": "/drivers/roller_shutter_controller/assets/images/large.png"
   },
-  "id": "_TZ3000_kmh5qpmb",
-  "manufacturerName": "Tuya"
+  "manufacturerName": "Tuya",
+  "platforms": [
+    "local"
+  ]
 }

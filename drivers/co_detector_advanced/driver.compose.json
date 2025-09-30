@@ -202,6 +202,8 @@
     "small": "/drivers/co_detector_advanced/assets/images/small.png",
     "large": "/drivers/co_detector_advanced/assets/images/large.png"
   },
-  "id": "_TZ3000_26fmupbb",
-  "manufacturerName": "Tuya"
+  "manufacturerName": "Tuya",
+  "platforms": [
+    "local"
+  ]
 }

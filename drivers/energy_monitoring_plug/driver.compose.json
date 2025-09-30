@@ -230,7 +230,6 @@
       "decimals": 2
     }
   },
-  "id": "_TZ3000_ji4araar",
   "images": {
     "small": "./assets/images/small.png",
     "large": "./assets/images/large.png"
@@ -240,5 +239,8 @@
     "approximation": {
       "usageConstant": 5
     }
-  }
+  },
+  "platforms": [
+    "local"
+  ]
 }
