@@ -206,8 +206,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/garage_door_controller/assets/images/small.png",
+    "large": "/drivers/garage_door_controller/assets/images/large.png"
   },
   "manufacturerName": "MOES",
   "platforms": [

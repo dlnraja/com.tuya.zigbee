@@ -236,8 +236,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/temp_sensor_owon/assets/images/small.png",
+    "large": "/drivers/temp_sensor_owon/assets/images/large.png"
   },
   "capabilitiesOptions": {
     "measure_temperature": {
