@@ -216,8 +216,8 @@
     }
   },
   "images": {
-    "small": "/drivers/wireless_switch_4gang_cr2450/assets/images/small.png",
-    "large": "/drivers/wireless_switch_4gang_cr2450/assets/images/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "manufacturerName": "Tuya",
   "platforms": [

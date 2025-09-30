@@ -170,9 +170,9 @@
     "productIds": []
   },
   "images": {
-    "small": "/drivers/hvac_controller/assets/small.png",
-    "large": "/drivers/hvac_controller/assets/large.png",
-    "xlarge": "/drivers/hvac_controller/assets/xlarge.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png",
+    "xlarge": "./assets/xlarge.png"
   },
   "community": {
     "sources": [

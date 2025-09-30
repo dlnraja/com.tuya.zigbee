@@ -262,8 +262,8 @@
     }
   },
   "images": {
-    "small": "/drivers/dimmer_switch_1gang_ac/assets/images/small.png",
-    "large": "/drivers/dimmer_switch_1gang_ac/assets/images/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "capabilitiesOptions": {},
   "manufacturerName": "Tuya",
