@@ -51,14 +51,12 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "test": "echo \"No tests specified\"",
-    "start": "node app.js",
     "validate": "homey app validate",
-    "build": "homey app build",
-    "publish": "homey app publish",
-    "clean": "rm -rf node_modules package-lock.json",
-    "fresh-install": "npm run clean && npm install --legacy-peer-deps",
-    "security-audit": "npm audit --audit-level moderate"
+    "publish": "node ultimate_system/publishing/PUBLISH.js",
+    "monitor": "node ultimate_system/publishing/MONITOR.js",
+    "clean": "rm -rf .homeycompose node_modules",
+    "dev": "homey app run",
+    "install": "homey app install"
   },
   "repository": {
     "type": "git",
