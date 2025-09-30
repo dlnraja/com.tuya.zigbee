@@ -18,10 +18,54 @@ jobs:
       with:
         node-version: '18'
         
-    - name: Install Homey CLI (try multiple packages)
+        - name: Install Homey CLI (robust)
       run: |
-        echo "🔍 Trying Homey CLI installation..."
-        npm install -g homey || npm install -g athom-cli || npm install -g @athombv/cli || echo "CLI installation failed, continuing..."
+        echo "🔍 Installing Homey CLI with multiple fallbacks..."
+        
+        # Method 1: Try homey package
+        if npm install -g homey --no-audit --no-fund; then
+          echo "✅ homey package installed"
+          homey --version || echo "homey command not working"
+        fi
+        
+        # Method 2: Try athom-cli package  
+        if ! command -v homey &> /dev/null && ! command -v athom &> /dev/null; then
+          echo "🔄 Trying athom-cli..."
+          npm install -g athom-cli --no-audit --no-fund || echo "athom-cli failed"
+        fi
+        
+        # Method 3: Try direct GitHub install
+        if ! command -v homey &> /dev/null && ! command -v athom &> /dev/null; then
+          echo "🔄 Trying GitHub direct install..."
+          npm install -g https://github.com/athombv/node-homey-cli.git || echo "GitHub install failed"
+        fi
+        
+        # Verify installation
+        if command -v homey &> /dev/null; then
+          echo "✅ CLI ready: homey"
+          homey --version
+        elif command -v athom &> /dev/null; then
+          echo "✅ CLI ready: athom"  
+          athom --version
+        else
+          echo "⚠️ No CLI installed, will skip CLI operations"
+        fi
+        
+    - name: Debug Environment
+      run: |
+        echo "🔍 ENVIRONMENT DEBUG:"
+        echo "Node version: $(node --version)"
+        echo "NPM version: $(npm --version)"
+        echo "Current directory: $(pwd)"
+        echo "Directory contents:"
+        ls -la
+        echo "Available commands:"
+        command -v homey && echo "✅ homey available" || echo "❌ homey not found"
+        command -v athom && echo "✅ athom available" || echo "❌ athom not found"
+        echo "NPM global packages:"
+        npm list -g --depth=0 | grep -E "(homey|athom)" || echo "No Homey CLI found"
+        
+        
         
     - name: Clean environment
       run: |

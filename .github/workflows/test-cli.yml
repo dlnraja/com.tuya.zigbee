@@ -1,0 +1,53 @@
+name: Test Homey CLI Installation
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-cli:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Test CLI Installation
+      run: |
+        echo "🧪 TESTING HOMEY CLI INSTALLATION METHODS"
+        
+        echo "Method 1: homey package"
+        npm install -g homey --no-audit --no-fund && echo "✅ homey installed" || echo "❌ homey failed"
+        
+        echo "Method 2: athom-cli package"  
+        npm install -g athom-cli --no-audit --no-fund && echo "✅ athom-cli installed" || echo "❌ athom-cli failed"
+        
+        echo "Method 3: GitHub direct"
+        npm install -g https://github.com/athombv/node-homey-cli.git && echo "✅ GitHub install OK" || echo "❌ GitHub failed"
+        
+        echo "Available commands:"
+        command -v homey && homey --version || echo "homey not available"
+        command -v athom && athom --version || echo "athom not available"
+        
+        echo "Global packages:"
+        npm list -g --depth=0
+        
+    - name: Test App Validation
+      run: |
+        echo "🔍 TESTING APP VALIDATION"
+        
+        if command -v homey &> /dev/null; then
+          echo "Testing with homey CLI:"
+          homey app validate || echo "homey validate failed"
+        fi
+        
+        if command -v athom &> /dev/null; then
+          echo "Testing with athom CLI:"
+          athom app validate || echo "athom validate failed"
+        fi
+        
+        echo "✅ CLI test completed"
