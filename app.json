@@ -891,14 +891,17 @@
             "fr": "Appuyez sur le bouton test pendant 3 secondes jusqu'à ce que la LED clignote"
           }
         }
-      }
+      },
+      "platforms": [
+        "local"
+      ]
     },
     {
       "id": "curtain_motor",
       "name": {
         "en": "Curtain Motor"
       },
-      "class": "other",
+      "class": "windowcoverings",
       "capabilities": [
         "onoff"
       ],
@@ -1743,7 +1746,10 @@
           4660
         ],
         "productIds": []
-      }
+      },
+      "platforms": [
+        "local"
+      ]
     },
     {
       "id": "dimmer",
@@ -1753,7 +1759,7 @@
         "de": "Philips Hue Dimmer",
         "nl": "Philips Hue Dimmer"
       },
-      "class": "button",
+      "class": "light",
       "capabilities": [
         "alarm_battery",
         "light_hue",
@@ -2613,7 +2619,10 @@
           4660
         ],
         "productIds": []
-      }
+      },
+      "platforms": [
+        "local"
+      ]
     }
   ],
   "brandColor": "#FF4500",
