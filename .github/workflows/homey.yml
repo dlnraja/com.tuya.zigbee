@@ -1,0 +1,24 @@
+name: Homey Publication
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+    - run: npm install -g @athombv/homey-cli
+    - run: rm -rf .homeycompose node_modules docs/ public/ || true
+    - run: homey app validate
+    - name: Publish
+      env:
+        HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+      run: |
+        echo "$HOMEY_TOKEN" | homey login
+        homey app publish --changelog "Ultimate Zigbee Hub - Professional Edition"
