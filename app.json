@@ -2625,7 +2625,7 @@
       ]
     }
   ],
-  "brandColor": "#FF4500",
+  "brandColor": "#00A8E8",
   "settings": [
     {
       "id": "debug_logging",
@@ -2667,10 +2667,49 @@
     "en": [
       "tuya",
       "zigbee",
-      "ultimate",
-      "community",
-      "dlnraja",
-      "comprehensive"
+      "smart home",
+      "iot",
+      "sensors",
+      "lights",
+      "switches",
+      "climate",
+      "security",
+      "unbranded",
+      "professional",
+      "sdk3"
+    ],
+    "fr": [
+      "tuya",
+      "zigbee",
+      "maison intelligente",
+      "iot",
+      "capteurs",
+      "lumières",
+      "interrupteurs",
+      "climatisation",
+      "sécurité"
+    ],
+    "de": [
+      "tuya",
+      "zigbee",
+      "smart home",
+      "iot",
+      "sensoren",
+      "lichter",
+      "schalter",
+      "klima",
+      "sicherheit"
+    ],
+    "nl": [
+      "tuya",
+      "zigbee",
+      "smart home",
+      "iot",
+      "sensoren",
+      "lampen",
+      "schakelaars",
+      "klimaat",
+      "beveiliging"
     ]
   },
   "platformCompatibility": {
@@ -2680,5 +2719,15 @@
   "platforms": [
     "local",
     "cloud"
-  ]
+  ],
+  "contributors": {
+    "developers": [
+      {
+        "name": "Dylan L.N. Raja",
+        "email": "contact@dlnraja.com"
+      }
+    ]
+  },
+  "homepage": "https://github.com/dlnraja/com.tuya.zigbee",
+  "support": "https://github.com/dlnraja/com.tuya.zigbee/issues"
 }
