@@ -176,8 +176,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/milight_controller/assets/images/small.png",
+    "large": "/drivers/milight_controller/assets/images/large.png"
   },
   "capabilitiesOptions": {},
   "manufacturerName": "BSEED",
