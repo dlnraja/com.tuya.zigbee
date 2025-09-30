@@ -190,11 +190,7 @@
       "_TZE200_amp6tsvy"
     ],
     "productId": [
-      "TS0001",
-      "TS0011",
-      "TS0002",
-      "TS0601",
-      "TS011F"
+      "TS0001"
     ],
     "endpoints": {
       "1": {
@@ -220,8 +216,8 @@
     }
   },
   "images": {
-    "small": "/drivers/wireless_switch_4gang_cr2450/assets/images/small.png",
-    "large": "/drivers/wireless_switch_4gang_cr2450/assets/images/large.png"
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
   },
   "manufacturerName": "Tuya",
   "platforms": [

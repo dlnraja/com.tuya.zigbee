@@ -165,11 +165,7 @@
       "_TZE200_oisqyl4o"
     ],
     "productId": [
-      "TS0001",
-      "TS0011",
-      "TS0002",
-      "TS0601",
-      "TS011F"
+      "TS0001"
     ],
     "endpoints": {
       "1": {
@@ -195,8 +191,8 @@
     }
   },
   "images": {
-    "small": "/drivers/smart_smoke_detector_advanced/assets/images/small.png",
-    "large": "/drivers/smart_smoke_detector_advanced/assets/images/large.png"
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
   },
   "manufacturerName": "Lonsonho",
   "platforms": [

@@ -152,11 +152,7 @@
       "_TZE200_qasjif9e"
     ],
     "productId": [
-      "TS0001",
-      "TS0011",
-      "TS0002",
-      "TS0601",
-      "TS011F"
+      "TS0001"
     ],
     "endpoints": {
       "1": {
@@ -172,8 +168,8 @@
     }
   },
   "images": {
-    "small": "/drivers/zigbee_gateway_hub/assets/images/small.png",
-    "large": "/drivers/zigbee_gateway_hub/assets/images/large.png"
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
   },
   "capabilitiesOptions": {},
   "manufacturerName": "Tuya",

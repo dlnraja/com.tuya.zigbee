@@ -204,10 +204,7 @@
       "TS0001",
       "TS110E",
       "TS110F",
-      "TS0601",
-      "TS0011",
-      "TS0002",
-      "TS011F"
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -233,8 +230,8 @@
     }
   },
   "images": {
-    "small": "/drivers/smart_dimmer_module_1gang/assets/images/small.png",
-    "large": "/drivers/smart_dimmer_module_1gang/assets/images/large.png"
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
   },
   "manufacturerName": "Tuya",
   "platforms": [

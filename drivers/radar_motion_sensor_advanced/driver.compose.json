@@ -150,12 +150,7 @@
       "_TZE200_oisqyl4o"
     ],
     "productId": [
-      "TS0202",
-      "TS0001",
-      "TS0011",
-      "TS0002",
-      "TS0601",
-      "TS011F"
+      "TS0202"
     ],
     "endpoints": {
       "1": {
@@ -174,8 +169,8 @@
     }
   },
   "images": {
-    "small": "/drivers/radar_motion_sensor_advanced/assets/images/small.png",
-    "large": "/drivers/radar_motion_sensor_advanced/assets/images/large.png"
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
   },
   "capabilitiesOptions": {},
   "manufacturerName": "Tuya",
