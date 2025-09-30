@@ -266,11 +266,13 @@
     "large": "/drivers/dimmer_switch_1gang_ac/assets/images/large.png"
   },
   "capabilitiesOptions": {},
-  "id": "_TZ3000_qzjcsmar",
   "manufacturerName": "Tuya",
   "energy": {
     "approximation": {
       "usageConstant": 10
     }
-  }
+  },
+  "platforms": [
+    "local"
+  ]
 }

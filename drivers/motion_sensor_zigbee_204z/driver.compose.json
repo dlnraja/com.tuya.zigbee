@@ -185,6 +185,8 @@
     "small": "/drivers/motion_sensor_hobeian/assets/images/small.png",
     "large": "/drivers/motion_sensor_hobeian/assets/images/large.png"
   },
-  "id": "_TZ3000_ji4araar",
-  "manufacturerName": "Tuya"
+  "manufacturerName": "Tuya",
+  "platforms": [
+    "local"
+  ]
 }

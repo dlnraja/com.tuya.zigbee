@@ -192,6 +192,8 @@
     "small": "/drivers/radar_motion_sensor_mmwave/assets/images/small.png",
     "large": "/drivers/radar_motion_sensor_mmwave/assets/images/large.png"
   },
-  "id": "_TZ3000_kmh5qpmb",
-  "manufacturerName": "Tuya"
+  "manufacturerName": "Tuya",
+  "platforms": [
+    "local"
+  ]
 }

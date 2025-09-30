@@ -1,5 +1,4 @@
 {
-  "id": "_TZ3000_ji4araar",
   "name": {
     "en": "RGB LED Controller",
     "fr": "Contrôleur LED RGB"
@@ -178,5 +177,8 @@
     "small": "./assets/images/small.png",
     "large": "./assets/images/large.png"
   },
-  "manufacturerName": "Tuya"
+  "manufacturerName": "Tuya",
+  "platforms": [
+    "local"
+  ]
 }

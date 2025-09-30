@@ -265,6 +265,8 @@
     "small": "/drivers/soil_moisture_temperature_sensor/assets/images/small.png",
     "large": "/drivers/soil_moisture_temperature_sensor/assets/images/large.png"
   },
-  "id": "_TZ3000_mmtwjmaq",
-  "manufacturerName": "Tuya"
+  "manufacturerName": "Tuya",
+  "platforms": [
+    "local"
+  ]
 }

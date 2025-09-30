@@ -212,11 +212,13 @@
     "large": "/drivers/dimmer_switch_moes_timer/assets/images/large.png"
   },
   "capabilitiesOptions": {},
-  "id": "_TZE200_bjawzodf",
   "manufacturerName": "MOES",
   "energy": {
     "approximation": {
       "usageConstant": 10
     }
-  }
+  },
+  "platforms": [
+    "local"
+  ]
 }
