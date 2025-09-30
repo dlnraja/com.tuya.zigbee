@@ -11,8 +11,9 @@
   ],
   "energy": {},
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png",
+    "xlarge": "./assets/images/xlarge.png"
   },
   "zigbee": {
     "manufacturerName": [
@@ -159,11 +160,7 @@
       "_TZE200_amp6tsvy"
     ],
     "productId": [
-      "TS0001",
-      "TS0011",
-      "TS0002",
-      "TS0601",
-      "TS011F"
+      "TS0001"
     ],
     "endpoints": {
       "1": {

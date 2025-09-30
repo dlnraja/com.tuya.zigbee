@@ -157,11 +157,7 @@
       "_TZE200_amp6tsvy"
     ],
     "productId": [
-      "TS0001",
-      "TS0011",
-      "TS0002",
-      "TS0601",
-      "TS011F"
+      "TS0001"
     ],
     "endpoints": {
       "1": {
@@ -180,8 +176,8 @@
     }
   },
   "images": {
-    "small": "/drivers/switch_6gang_ac/assets/images/small.png",
-    "large": "/drivers/switch_6gang_ac/assets/images/large.png"
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
   },
   "capabilitiesOptions": {},
   "manufacturerName": "MOES",

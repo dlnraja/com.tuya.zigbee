@@ -178,11 +178,7 @@
       "_TZE200_whpb9yts"
     ],
     "productId": [
-      "TS0001",
-      "TS0601",
-      "TS011F",
-      "TS0011",
-      "TS0002"
+      "TS0001"
     ],
     "endpoints": {
       "1": {
@@ -204,8 +200,8 @@
     }
   },
   "images": {
-    "small": "/drivers/roller_shutter_controller/assets/images/small.png",
-    "large": "/drivers/roller_shutter_controller/assets/images/large.png"
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
   },
   "manufacturerName": "Tuya",
   "platforms": [

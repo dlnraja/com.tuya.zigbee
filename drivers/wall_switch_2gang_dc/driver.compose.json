@@ -8,10 +8,7 @@
     "productId": [
       "TS0001",
       "TS0002",
-      "TS0012",
-      "TS0011",
-      "TS0601",
-      "TS011F"
+      "TS0012"
     ],
     "endpoints": {
       "1": {
@@ -227,8 +224,8 @@
     ]
   },
   "images": {
-    "small": "/drivers/wall_switch_2gang_dc/assets/small.png",
-    "large": "/drivers/wall_switch_2gang_dc/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "settings": [],
   "name": {

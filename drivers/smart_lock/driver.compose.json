@@ -156,11 +156,7 @@
       "_TZE200_mhxn2jso"
     ],
     "productId": [
-      "TS0001",
-      "TS0011",
-      "TS0002",
-      "TS0601",
-      "TS011F"
+      "TS0001"
     ],
     "endpoints": {
       "1": {
@@ -184,8 +180,8 @@
     "productIds": []
   },
   "images": {
-    "small": "/drivers/smart_lock/assets/small.png",
-    "large": "/drivers/smart_lock/assets/large.png",
+    "small": "./assets/small.png",
+    "large": "./assets/large.png",
     "xlarge": "/drivers/smart_lock/assets/xlarge.png"
   },
   "energy": {

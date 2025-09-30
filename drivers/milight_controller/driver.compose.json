@@ -155,11 +155,7 @@
       "_TZE200_oisqyl4o"
     ],
     "productId": [
-      "TS0001",
-      "TS0601",
-      "TS011F",
-      "TS0011",
-      "TS0002"
+      "TS0001"
     ],
     "endpoints": {
       "1": {
@@ -180,8 +176,8 @@
     }
   },
   "images": {
-    "small": "/drivers/milight_controller/assets/images/small.png",
-    "large": "/drivers/milight_controller/assets/images/large.png"
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
   },
   "capabilitiesOptions": {},
   "manufacturerName": "BSEED",
