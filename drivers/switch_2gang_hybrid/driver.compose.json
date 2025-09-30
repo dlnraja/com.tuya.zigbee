@@ -203,6 +203,8 @@
       }
     }
   },
-  "id": "_TZ3000_kmh5qpmb",
-  "manufacturerName": "Tuya"
+  "manufacturerName": "Tuya",
+  "platforms": [
+    "local"
+  ]
 }

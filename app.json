@@ -1,4 +1,5 @@
 {
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.ultimate.zigbee.hub",
   "version": "2.0.0",
   "compatibility": ">=5.0.0",
@@ -307,7 +308,6 @@
           }
         }
       },
-      "id": "air_quality_monitor",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -320,7 +320,8 @@
       },
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "air_quality_monitor"
     },
     {
       "name": {
@@ -497,7 +498,6 @@
           }
         }
       },
-      "id": "air_quality_monitor_pro",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -510,7 +510,8 @@
       },
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "air_quality_monitor_pro"
     },
     {
       "name": {
@@ -693,7 +694,6 @@
         }
       },
       "capabilitiesOptions": {},
-      "id": "ceiling_light_controller",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -706,7 +706,8 @@
       },
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "ceiling_light_controller"
     },
     {
       "name": {
@@ -892,7 +893,6 @@
           }
         }
       },
-      "id": "ceiling_light_rgb",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -905,7 +905,8 @@
       },
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "ceiling_light_rgb"
     },
     {
       "name": {
@@ -1208,7 +1209,6 @@
           ]
         }
       },
-      "id": "climate_monitor",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -1221,7 +1221,8 @@
       },
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "climate_monitor"
     },
     {
       "name": {
@@ -1407,7 +1408,6 @@
         }
       },
       "capabilitiesOptions": {},
-      "id": "co2_sensor",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -1420,7 +1420,8 @@
       },
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "co2_sensor"
     },
     {
       "name": {
@@ -1686,7 +1687,6 @@
           }
         }
       },
-      "id": "co2_temp_humidity",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -1699,7 +1699,8 @@
       },
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "co2_temp_humidity"
     },
     {
       "name": {
@@ -1905,11 +1906,11 @@
         "small": "/drivers/co_detector_advanced/assets/images/small.png",
         "large": "/drivers/co_detector_advanced/assets/images/large.png"
       },
-      "id": "co_detector_advanced",
       "manufacturerName": "Tuya",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "co_detector_advanced"
     },
     {
       "name": {
@@ -2093,7 +2094,6 @@
           }
         }
       },
-      "id": "co_detector_pro",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -2101,10 +2101,10 @@
       "manufacturerName": "Tuya",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "co_detector_pro"
     },
     {
-      "id": "comprehensive_air_monitor",
       "name": {
         "en": "Comprehensive Air Monitor",
         "fr": "Moniteur d'air complet"
@@ -2294,7 +2294,8 @@
       },
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "comprehensive_air_monitor"
     },
     {
       "name": {
@@ -2800,13 +2801,13 @@
       "connectivity": [
         "zigbee"
       ],
-      "id": "dimmer",
       "manufacturerName": "Lonsonho",
       "energy": {
         "approximation": {
           "usageConstant": 10
         }
-      }
+      },
+      "id": "dimmer"
     },
     {
       "name": {
@@ -3076,7 +3077,6 @@
         "large": "/drivers/dimmer_switch_1gang_ac/assets/images/large.png"
       },
       "capabilitiesOptions": {},
-      "id": "dimmer_switch_1gang_ac",
       "manufacturerName": "Tuya",
       "energy": {
         "approximation": {
@@ -3085,7 +3085,8 @@
       },
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "dimmer_switch_1gang_ac"
     },
     {
       "name": {
@@ -3346,7 +3347,6 @@
           }
         }
       },
-      "id": "dimmer_switch_3gang_ac",
       "manufacturerName": "Tuya",
       "energy": {
         "approximation": {
@@ -3355,7 +3355,8 @@
       },
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "dimmer_switch_3gang_ac"
     },
     {
       "name": {
@@ -3571,7 +3572,6 @@
         "large": "/drivers/dimmer_switch_moes_timer/assets/images/large.png"
       },
       "capabilitiesOptions": {},
-      "id": "dimmer_switch_timer_module",
       "manufacturerName": "MOES",
       "energy": {
         "approximation": {
@@ -3580,7 +3580,8 @@
       },
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "dimmer_switch_timer_module"
     },
     {
       "name": {
@@ -3813,13 +3814,13 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "door_controller",
       "manufacturerName": "Tuya",
       "energy": {
         "approximation": {
           "usageConstant": 10
         }
-      }
+      },
+      "id": "door_controller"
     },
     {
       "name": {
@@ -4058,8 +4059,8 @@
       },
       "settings": [],
       "capabilitiesOptions": {},
-      "id": "door_lock",
-      "manufacturerName": "MOES"
+      "manufacturerName": "MOES",
+      "id": "door_lock"
     },
     {
       "name": {
@@ -4325,8 +4326,8 @@
           }
         }
       },
-      "id": "door_window_sensor",
-      "manufacturerName": "MOES"
+      "manufacturerName": "MOES",
+      "id": "door_window_sensor"
     },
     {
       "name": {
@@ -4575,8 +4576,8 @@
           }
         }
       },
-      "id": "doorbell",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "doorbell"
     },
     {
       "name": {
@@ -4810,7 +4811,6 @@
           "decimals": 2
         }
       },
-      "id": "energy_monitoring_plug",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -4823,7 +4823,8 @@
       },
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "energy_monitoring_plug"
     },
     {
       "name": {
@@ -5057,7 +5058,6 @@
           "decimals": 2
         }
       },
-      "id": "energy_monitoring_plug_advanced",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -5065,7 +5065,8 @@
       "manufacturerName": "Lonsonho",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "energy_monitoring_plug_advanced"
     },
     {
       "name": {
@@ -5299,7 +5300,6 @@
           "decimals": 2
         }
       },
-      "id": "energy_plug_advanced",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -5307,7 +5307,8 @@
       "manufacturerName": "Tuya",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "energy_plug_advanced"
     },
     {
       "name": {
@@ -5580,8 +5581,8 @@
           "decimals": 2
         }
       },
-      "id": "extension_plug",
-      "manufacturerName": "Lonsonho"
+      "manufacturerName": "Lonsonho",
+      "id": "extension_plug"
     },
     {
       "name": {
@@ -5788,8 +5789,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "fan_controller",
-      "manufacturerName": "MOES"
+      "manufacturerName": "MOES",
+      "id": "fan_controller"
     },
     {
       "name": {
@@ -6006,8 +6007,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "fingerprint_lock",
-      "manufacturerName": "MOES"
+      "manufacturerName": "MOES",
+      "id": "fingerprint_lock"
     },
     {
       "name": {
@@ -6227,8 +6228,8 @@
           }
         }
       },
-      "id": "formaldehyde_sensor",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "formaldehyde_sensor"
     },
     {
       "name": {
@@ -6441,11 +6442,11 @@
         "small": "/drivers/garage_door_controller/assets/images/small.png",
         "large": "/drivers/garage_door_controller/assets/images/large.png"
       },
-      "id": "garage_door_controller",
       "manufacturerName": "MOES",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "garage_door_controller"
     },
     {
       "name": {
@@ -6683,8 +6684,8 @@
       },
       "settings": [],
       "capabilitiesOptions": {},
-      "id": "garage_door_opener",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "garage_door_opener"
     },
     {
       "name": {
@@ -6911,8 +6912,8 @@
           }
         }
       },
-      "id": "gas_detector",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "gas_detector"
     },
     {
       "name": {
@@ -7131,7 +7132,6 @@
           }
         }
       },
-      "id": "humidity_controller",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -7139,7 +7139,8 @@
       "manufacturerName": "BSEED",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "humidity_controller"
     },
     {
       "name": {
@@ -7333,8 +7334,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "hvac_controller",
-      "manufacturerName": "MOES"
+      "manufacturerName": "MOES",
+      "id": "hvac_controller"
     },
     {
       "name": {
@@ -7514,7 +7515,6 @@
         }
       },
       "capabilitiesOptions": {},
-      "id": "led_strip_advanced",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -7522,7 +7522,8 @@
       "manufacturerName": "BSEED",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "led_strip_advanced"
     },
     {
       "name": {
@@ -7699,7 +7700,6 @@
         }
       },
       "capabilitiesOptions": {},
-      "id": "led_strip_controller",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -7707,7 +7707,8 @@
       "manufacturerName": "BSEED",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "led_strip_controller"
     },
     {
       "name": {
@@ -7885,7 +7886,6 @@
           }
         }
       },
-      "id": "led_strip_controller_pro",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -7893,7 +7893,8 @@
       "manufacturerName": "BSEED",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "led_strip_controller_pro"
     },
     {
       "name": {
@@ -8113,8 +8114,8 @@
           }
         }
       },
-      "id": "lux_sensor",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "lux_sensor"
     },
     {
       "name": {
@@ -8298,11 +8299,11 @@
         "large": "/drivers/milight_controller/assets/images/large.png"
       },
       "capabilitiesOptions": {},
-      "id": "milight_controller",
       "manufacturerName": "BSEED",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "milight_controller"
     },
     {
       "name": {
@@ -8513,8 +8514,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "mini",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "mini"
     },
     {
       "name": {
@@ -8729,8 +8730,8 @@
       },
       "settings": [],
       "capabilitiesOptions": {},
-      "id": "mini_switch",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "mini_switch"
     },
     {
       "name": {
@@ -8897,7 +8898,6 @@
         ]
       },
       "capabilitiesOptions": {},
-      "id": "motion_sensor_battery",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -8905,7 +8905,8 @@
       "manufacturerName": "BSEED",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "motion_sensor_battery"
     },
     {
       "name": {
@@ -9104,8 +9105,8 @@
       },
       "settings": [],
       "capabilitiesOptions": {},
-      "id": "motion_sensor_mmwave",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "motion_sensor_mmwave"
     },
     {
       "name": {
@@ -9340,8 +9341,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "motion_sensor_pir_ac",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "motion_sensor_pir_ac"
     },
     {
       "name": {
@@ -9525,8 +9526,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "motion_sensor_pir_battery",
-      "manufacturerName": "MOES"
+      "manufacturerName": "MOES",
+      "id": "motion_sensor_pir_battery"
     },
     {
       "name": {
@@ -9715,11 +9716,11 @@
         "small": "/drivers/motion_sensor_hobeian/assets/images/small.png",
         "large": "/drivers/motion_sensor_hobeian/assets/images/large.png"
       },
-      "id": "motion_sensor_zigbee_204z",
       "manufacturerName": "Tuya",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "motion_sensor_zigbee_204z"
     },
     {
       "name": {
@@ -9945,8 +9946,8 @@
           }
         }
       },
-      "id": "multisensor",
-      "manufacturerName": "MOES"
+      "manufacturerName": "MOES",
+      "id": "multisensor"
     },
     {
       "name": {
@@ -10166,8 +10167,8 @@
           }
         }
       },
-      "id": "noise_level_sensor",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "noise_level_sensor"
     },
     {
       "name": {
@@ -10411,8 +10412,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "outdoor_light_controller",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "outdoor_light_controller"
     },
     {
       "name": {
@@ -10659,8 +10660,8 @@
           }
         }
       },
-      "id": "outdoor_siren",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "outdoor_siren"
     },
     {
       "name": {
@@ -10884,8 +10885,8 @@
           }
         }
       },
-      "id": "pet_feeder",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "pet_feeder"
     },
     {
       "name": {
@@ -11083,11 +11084,11 @@
         "large": "/drivers/pir_sensor_advanced/assets/images/large.png"
       },
       "capabilitiesOptions": {},
-      "id": "pir_sensor_advanced",
       "manufacturerName": "BSEED",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "pir_sensor_advanced"
     },
     {
       "name": {
@@ -11257,7 +11258,6 @@
           }
         }
       },
-      "id": "pm25_detector",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -11265,7 +11265,8 @@
       "manufacturerName": "BSEED",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "pm25_detector"
     },
     {
       "name": {
@@ -11485,8 +11486,8 @@
           }
         }
       },
-      "id": "pm25_sensor",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "pm25_sensor"
     },
     {
       "name": {
@@ -11666,11 +11667,11 @@
         "large": "/drivers/pool_pump_controller/assets/images/large.png"
       },
       "capabilitiesOptions": {},
-      "id": "pool_pump_controller",
       "manufacturerName": "MOES",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "pool_pump_controller"
     },
     {
       "name": {
@@ -11925,7 +11926,6 @@
           "decimals": 2
         }
       },
-      "id": "power_meter_socket",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -11933,7 +11933,8 @@
       "manufacturerName": "Lonsonho",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "power_meter_socket"
     },
     {
       "name": {
@@ -12154,8 +12155,8 @@
           }
         }
       },
-      "id": "presence_sensor_radar",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "presence_sensor_radar"
     },
     {
       "name": {
@@ -12380,8 +12381,8 @@
           }
         }
       },
-      "id": "pressure_sensor",
-      "manufacturerName": "MOES"
+      "manufacturerName": "MOES",
+      "id": "pressure_sensor"
     },
     {
       "name": {
@@ -12587,8 +12588,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "projector_screen_controller",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "projector_screen_controller"
     },
     {
       "name": {
@@ -12765,11 +12766,11 @@
         "large": "/drivers/radar_motion_sensor_advanced/assets/images/large.png"
       },
       "capabilitiesOptions": {},
-      "id": "radar_motion_sensor_advanced",
       "manufacturerName": "Tuya",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "radar_motion_sensor_advanced"
     },
     {
       "name": {
@@ -12965,11 +12966,11 @@
         "small": "/drivers/radar_motion_sensor_mmwave/assets/images/small.png",
         "large": "/drivers/radar_motion_sensor_mmwave/assets/images/large.png"
       },
-      "id": "radar_motion_sensor_mmwave",
       "manufacturerName": "Tuya",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "radar_motion_sensor_mmwave"
     },
     {
       "name": {
@@ -13144,11 +13145,11 @@
         "large": "/drivers/radar_sensor_2aaelwxk/assets/images/large.png"
       },
       "capabilitiesOptions": {},
-      "id": "radar_motion_sensor_tank_level",
       "manufacturerName": "MOES",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "radar_motion_sensor_tank_level"
     },
     {
       "name": {
@@ -13364,8 +13365,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "radiator_valve",
-      "manufacturerName": "MOES"
+      "manufacturerName": "MOES",
+      "id": "radiator_valve"
     },
     {
       "name": {
@@ -13582,8 +13583,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "relay_switch_1gang",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "relay_switch_1gang"
     },
     {
       "name": {
@@ -13796,11 +13797,10 @@
       },
       "settings": [],
       "capabilitiesOptions": {},
-      "id": "remote_switch",
-      "manufacturerName": "MOES"
+      "manufacturerName": "MOES",
+      "id": "remote_switch"
     },
     {
-      "id": "rgb_led_controller",
       "name": {
         "en": "RGB LED Controller",
         "fr": "Contrôleur LED RGB"
@@ -13982,7 +13982,8 @@
       "manufacturerName": "Tuya",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "rgb_led_controller"
     },
     {
       "name": {
@@ -14203,8 +14204,8 @@
           }
         }
       },
-      "id": "roller_blind_controller",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "roller_blind_controller"
     },
     {
       "name": {
@@ -14411,11 +14412,11 @@
         "small": "/drivers/roller_shutter_controller/assets/images/small.png",
         "large": "/drivers/roller_shutter_controller/assets/images/large.png"
       },
-      "id": "roller_shutter_controller",
       "manufacturerName": "Tuya",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "roller_shutter_controller"
     },
     {
       "name": {
@@ -14617,11 +14618,11 @@
           }
         }
       },
-      "id": "roller_shutter_switch",
       "manufacturerName": "Lonsonho",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "roller_shutter_switch"
     },
     {
       "name": {
@@ -14823,14 +14824,13 @@
           }
         }
       },
-      "id": "roller_shutter_switch_advanced",
       "manufacturerName": "Tuya",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "roller_shutter_switch_advanced"
     },
     {
-      "id": "scene_controller",
       "name": {
         "en": "Scene Controller",
         "fr": "Contrôleur de scènes"
@@ -15007,7 +15007,8 @@
       "manufacturerName": "Lonsonho",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "scene_controller"
     },
     {
       "class": "button",
@@ -15234,8 +15235,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "scene_controller_2button",
-      "manufacturerName": "MOES"
+      "manufacturerName": "MOES",
+      "id": "scene_controller_2button"
     },
     {
       "class": "button",
@@ -15464,8 +15465,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "scene_controller_4button",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "scene_controller_4button"
     },
     {
       "class": "button",
@@ -15696,8 +15697,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "scene_controller_6button",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "scene_controller_6button"
     },
     {
       "class": "button",
@@ -15930,8 +15931,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "scene_controller_8button",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "scene_controller_8button"
     },
     {
       "name": {
@@ -16132,8 +16133,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "scene_controller_battery",
-      "manufacturerName": "Lonsonho"
+      "manufacturerName": "Lonsonho",
+      "id": "scene_controller_battery"
     },
     {
       "name": {
@@ -16339,8 +16340,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "shade_controller",
-      "manufacturerName": "Lonsonho"
+      "manufacturerName": "Lonsonho",
+      "id": "shade_controller"
     },
     {
       "name": {
@@ -16552,7 +16553,6 @@
           }
         }
       },
-      "id": "smart_bulb_dimmer",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -16560,7 +16560,8 @@
       "manufacturerName": "MOES",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "smart_bulb_dimmer"
     },
     {
       "name": {
@@ -16779,8 +16780,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "smart_bulb_rgb",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "smart_bulb_rgb"
     },
     {
       "name": {
@@ -17001,8 +17002,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "smart_bulb_tunable",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "smart_bulb_tunable"
     },
     {
       "name": {
@@ -17223,8 +17224,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "smart_bulb_white",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "smart_bulb_white"
     },
     {
       "name": {
@@ -17455,8 +17456,8 @@
           }
         }
       },
-      "id": "smart_curtain_motor",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "smart_curtain_motor"
     },
     {
       "name": {
@@ -17693,11 +17694,11 @@
         "small": "/drivers/smart_dimmer_module_1gang/assets/images/small.png",
         "large": "/drivers/smart_dimmer_module_1gang/assets/images/large.png"
       },
-      "id": "smart_dimmer_module_1gang",
       "manufacturerName": "Tuya",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "smart_dimmer_module_1gang"
     },
     {
       "name": {
@@ -17946,8 +17947,8 @@
           }
         }
       },
-      "id": "smart_doorbell",
-      "manufacturerName": "MOES"
+      "manufacturerName": "MOES",
+      "id": "smart_doorbell"
     },
     {
       "name": {
@@ -18173,8 +18174,8 @@
           }
         }
       },
-      "id": "smart_garden_sprinkler",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "smart_garden_sprinkler"
     },
     {
       "name": {
@@ -18360,11 +18361,11 @@
         "large": "/drivers/smart_irrigation_controller/assets/images/large.png"
       },
       "capabilitiesOptions": {},
-      "id": "smart_irrigation_controller",
       "manufacturerName": "Tuya",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "smart_irrigation_controller"
     },
     {
       "name": {
@@ -18574,8 +18575,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "smart_lock",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "smart_lock"
     },
     {
       "name": {
@@ -18790,7 +18791,6 @@
           "decimals": 2
         }
       },
-      "id": "smart_outlet_monitor",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -18798,7 +18798,8 @@
       "manufacturerName": "MOES",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "smart_outlet_monitor"
     },
     {
       "name": {
@@ -19308,7 +19309,6 @@
           "decimals": 2
         }
       },
-      "id": "smart_plug_energy",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -19316,7 +19316,8 @@
       "manufacturerName": "Lonsonho",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "smart_plug_energy"
     },
     {
       "name": {
@@ -19526,8 +19527,8 @@
           }
         }
       },
-      "id": "smart_radiator_valve",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "smart_radiator_valve"
     },
     {
       "name": {
@@ -19725,11 +19726,11 @@
         "small": "/drivers/smart_smoke_detector_advanced/assets/images/small.png",
         "large": "/drivers/smart_smoke_detector_advanced/assets/images/large.png"
       },
-      "id": "smart_smoke_detector_advanced",
       "manufacturerName": "Lonsonho",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "smart_smoke_detector_advanced"
     },
     {
       "name": {
@@ -19943,8 +19944,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "smart_spot",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "smart_spot"
     },
     {
       "name": {
@@ -20117,7 +20118,6 @@
         ]
       },
       "capabilitiesOptions": {},
-      "id": "smart_switch_1gang_ac",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -20125,7 +20125,8 @@
       "manufacturerName": "MOES",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "smart_switch_1gang_ac"
     },
     {
       "class": "light",
@@ -20338,8 +20339,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "smart_switch_1gang_hybrid",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "smart_switch_1gang_hybrid"
     },
     {
       "name": {
@@ -20534,7 +20535,6 @@
           }
         }
       },
-      "id": "smart_switch_2gang_ac",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -20542,7 +20542,8 @@
       "manufacturerName": "MOES",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "smart_switch_2gang_ac"
     },
     {
       "class": "light",
@@ -20777,8 +20778,8 @@
           }
         }
       },
-      "id": "smart_switch_2gang_hybrid",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "smart_switch_2gang_hybrid"
     },
     {
       "name": {
@@ -20991,7 +20992,6 @@
           }
         }
       },
-      "id": "smart_switch_3gang_ac",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -20999,7 +20999,8 @@
       "manufacturerName": "Tuya",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "smart_switch_3gang_ac"
     },
     {
       "class": "light",
@@ -21252,8 +21253,8 @@
           }
         }
       },
-      "id": "smart_switch_3gang_hybrid",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "smart_switch_3gang_hybrid"
     },
     {
       "class": "light",
@@ -21469,11 +21470,10 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "smart_switch_4gang_hybrid",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "smart_switch_4gang_hybrid"
     },
     {
-      "id": "smart_thermostat",
       "name": {
         "en": "Smart Thermostat",
         "fr": "Thermostat intelligent"
@@ -21736,10 +21736,10 @@
       "manufacturerName": "Tuya",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "smart_thermostat"
     },
     {
-      "id": "smart_valve_controller",
       "name": {
         "en": "Smart Valve Controller",
         "fr": "Contrôleur de valve intelligent"
@@ -21914,7 +21914,8 @@
       "manufacturerName": "Tuya",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "smart_valve_controller"
     },
     {
       "name": {
@@ -22126,8 +22127,8 @@
           }
         }
       },
-      "id": "smart_water_valve",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "smart_water_valve"
     },
     {
       "name": {
@@ -22361,8 +22362,8 @@
           }
         }
       },
-      "id": "smoke_detector",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "smoke_detector"
     },
     {
       "name": {
@@ -22619,8 +22620,8 @@
           }
         }
       },
-      "id": "smoke_detector_temp_humidity_advanced",
-      "manufacturerName": "Lonsonho"
+      "manufacturerName": "Lonsonho",
+      "id": "smoke_detector_temp_humidity_advanced"
     },
     {
       "name": {
@@ -22883,11 +22884,11 @@
           }
         }
       },
-      "id": "smoke_temp_humid_sensor",
       "manufacturerName": "MOES",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "smoke_temp_humid_sensor"
     },
     {
       "name": {
@@ -23113,8 +23114,8 @@
           }
         }
       },
-      "id": "soil_moisture_sensor",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "soil_moisture_sensor"
     },
     {
       "name": {
@@ -23383,11 +23384,11 @@
         "small": "/drivers/soil_moisture_temperature_sensor/assets/images/small.png",
         "large": "/drivers/soil_moisture_temperature_sensor/assets/images/large.png"
       },
-      "id": "soil_moisture_temperature_sensor",
       "manufacturerName": "Tuya",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "soil_moisture_temperature_sensor"
     },
     {
       "name": {
@@ -23637,11 +23638,11 @@
           }
         }
       },
-      "id": "soil_tester_temp_humid",
       "manufacturerName": "Tuya",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "soil_tester_temp_humid"
     },
     {
       "name": {
@@ -23829,11 +23830,11 @@
         "large": "/drivers/solar_panel_controller/assets/images/large.png"
       },
       "capabilitiesOptions": {},
-      "id": "solar_panel_controller",
       "manufacturerName": "BSEED",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "solar_panel_controller"
     },
     {
       "name": {
@@ -24018,11 +24019,11 @@
         "large": "/drivers/sos_emergency_button/assets/images/large.png"
       },
       "capabilitiesOptions": {},
-      "id": "sos_emergency_button",
       "manufacturerName": "BSEED",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "sos_emergency_button"
     },
     {
       "name": {
@@ -24208,11 +24209,11 @@
         "large": "/drivers/switch_1gang_battery/assets/images/large.png"
       },
       "capabilitiesOptions": {},
-      "id": "switch_1gang_battery",
       "manufacturerName": "BSEED",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "switch_1gang_battery"
     },
     {
       "name": {
@@ -24413,11 +24414,11 @@
           }
         }
       },
-      "id": "switch_2gang_ac",
       "manufacturerName": "MOES",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "switch_2gang_ac"
     },
     {
       "name": {
@@ -24624,11 +24625,11 @@
           }
         }
       },
-      "id": "switch_2gang_hybrid",
       "manufacturerName": "Tuya",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "switch_2gang_hybrid"
     },
     {
       "name": {
@@ -24853,11 +24854,11 @@
           }
         }
       },
-      "id": "switch_3gang_battery",
       "manufacturerName": "BSEED",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "switch_3gang_battery"
     },
     {
       "name": {
@@ -25039,11 +25040,11 @@
         "large": "/drivers/switch_4gang_ac/assets/images/large.png"
       },
       "capabilitiesOptions": {},
-      "id": "switch_4gang_ac",
       "manufacturerName": "BSEED",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "switch_4gang_ac"
     },
     {
       "name": {
@@ -25232,11 +25233,11 @@
         "large": "/drivers/switch_4gang_girier/assets/images/large.png"
       },
       "capabilitiesOptions": {},
-      "id": "switch_4gang_battery_cr2032",
       "manufacturerName": "BSEED",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "switch_4gang_battery_cr2032"
     },
     {
       "name": {
@@ -25427,11 +25428,11 @@
         "large": "/drivers/switch_5gang_battery/assets/images/large.png"
       },
       "capabilitiesOptions": {},
-      "id": "switch_5gang_battery",
       "manufacturerName": "Tuya",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "switch_5gang_battery"
     },
     {
       "name": {
@@ -25615,11 +25616,11 @@
         "large": "/drivers/switch_6gang_ac/assets/images/large.png"
       },
       "capabilitiesOptions": {},
-      "id": "switch_6gang_ac",
       "manufacturerName": "MOES",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "switch_6gang_ac"
     },
     {
       "name": {
@@ -25805,11 +25806,11 @@
         "large": "/drivers/switch_8gang_ac/assets/images/large.png"
       },
       "capabilitiesOptions": {},
-      "id": "switch_8gang_ac",
       "manufacturerName": "MOES",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "switch_8gang_ac"
     },
     {
       "name": {
@@ -25994,11 +25995,11 @@
         "large": "/drivers/tank_level_monitor/assets/images/large.png"
       },
       "capabilitiesOptions": {},
-      "id": "tank_level_monitor",
       "manufacturerName": "BSEED",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "tank_level_monitor"
     },
     {
       "name": {
@@ -26261,11 +26262,11 @@
           }
         }
       },
-      "id": "temp_humid_sensor_advanced",
       "manufacturerName": "BSEED",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "temp_humid_sensor_advanced"
     },
     {
       "name": {
@@ -26531,11 +26532,11 @@
           }
         }
       },
-      "id": "temp_humid_sensor_leak_detector",
       "manufacturerName": "MOES",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "temp_humid_sensor_leak_detector"
     },
     {
       "name": {
@@ -26797,11 +26798,11 @@
           }
         }
       },
-      "id": "temp_humid_sensor_v1w2k9dd",
       "manufacturerName": "BSEED",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "temp_humid_sensor_v1w2k9dd"
     },
     {
       "name": {
@@ -27034,7 +27035,6 @@
           }
         }
       },
-      "id": "temp_sensor_pro",
       "images": {
         "small": "./assets/images/small.png",
         "large": "./assets/images/large.png"
@@ -27042,7 +27042,8 @@
       "manufacturerName": "BSEED",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "temp_sensor_pro"
     },
     {
       "name": {
@@ -27313,8 +27314,8 @@
           }
         }
       },
-      "id": "temperature_controller",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "temperature_controller"
     },
     {
       "name": {
@@ -27610,8 +27611,8 @@
           }
         }
       },
-      "id": "temperature_humidity_sensor",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "temperature_humidity_sensor"
     },
     {
       "name": {
@@ -27899,8 +27900,8 @@
           }
         }
       },
-      "id": "temperature_sensor",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "temperature_sensor"
     },
     {
       "name": {
@@ -28161,268 +28162,11 @@
           }
         }
       },
-      "id": "temperature_sensor_advanced",
       "manufacturerName": "Tuya",
       "platforms": [
         "local"
-      ]
-    },
-    {
-      "name": {
-        "en": "Temperature Sensor",
-        "fr": "Capteur de Température",
-        "de": "Temperature Sensor"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "measure_temperature",
-        "measure_battery",
-        "measure_humidity",
-        "alarm_battery",
-        "alarm_motion",
-        "measure_luminance",
-        "alarm_water"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AAA"
-        ]
-      },
-      "zigbee": {
-        "manufacturerName": [
-          "_TZ3000_qzjcsmar",
-          "_TZ3000_ji4araar",
-          "_TZ3000_rk2yzt0u",
-          "_TZ3000_o4cjetlm",
-          "_TZ3000_h",
-          "_TZ3000_tqlv4ug4",
-          "_TZ3000_tgddllx4",
-          "_TZ3000_veu2v775",
-          "_TZ3000_xkap8wtb",
-          "_TZ3000_wrhhi5h2",
-          "_TZ3000_zw7yf6yk",
-          "_TZ3000_46t1rvdu",
-          "_TZ3000_bvrlqyj7",
-          "_TZ3000_qewo8dlz",
-          "_tz3000_xr3htd96",
-          "_TZ3000_xr3htd96",
-          "_TZ3000_qaaysllp",
-          "_TZ3000_dowj6gyi",
-          "_TZ3000_bguser20",
-          "_tz3000_fie1dp",
-          "_TZ3000_fllyghyj",
-          "_TZ3000_bjawzodf",
-          "_TZ3000_iv6ph5tr",
-          "_TZE200_a8sdabtg",
-          "_TZ3000_kky16aay",
-          "_tz3000_zed",
-          "_TZ3210_dse8ogfy",
-          "_TZ3210_j4pdtz9v",
-          "_TZ3000_npzfdcof",
-          "_TZ3000_prits6g4",
-          "_TZ3000_wpueorev",
-          "_TZ3000_kqvb5akv",
-          "_TZ3000_mkhkxx1p",
-          "_TZE200_vs0skpuc",
-          "_TZ3000_lbtpiody",
-          "_TZ3000_amqudjr0",
-          "_TYZB01_hjsgdkfl",
-          "_TZ3000_rdhukkmi",
-          "_TZ3000_bjawzod",
-          "_TZ3210_ncw88jfq",
-          "_TZ3000_utwgoauk",
-          "_TZ3000_saiqcn0y",
-          "_TZ3000_zl1kmjqx",
-          "_TZ3000_0s1izerx",
-          "_TZ3000_ena8vgqb",
-          "_TZE200_cpmgn2cf",
-          "_TZE200_mby4kbtq",
-          "_TZE200_znbl8dj5",
-          "_TZE200_dwcarsat",
-          "_TZE200_r0jdjrvi",
-          "_TZE200_la2c2uo9",
-          "_TZE200_TS0601",
-          "_TZE200_lvkk0hdg",
-          "_TZE200_e3oitdyu",
-          "_TZE200_aycxwiau",
-          "_TZE200_mja3fuja",
-          "_TZE200_aoclfnxz",
-          "_TZE200_myd45weu",
-          "_TZE200_htnnfasr",
-          "_TZE200_h",
-          "_TZE200_zah67ekd",
-          "_TZE200_yjjdcqsq",
-          "_TZE200_b6wax7g0",
-          "_TZE200_gubdgai2",
-          "_TZE200_v1jqz5cy",
-          "_TZE200_nslr42tt",
-          "_TZE200_bjawzodf",
-          "_TZE200_lsanae15",
-          "_TZE200_rks0sgb7",
-          "_TZE200_npj9bug3",
-          "_TZE200_bh3n6gk8",
-          "_TZE200_1ibpyhdc",
-          "_TZ3000_5tqxpine",
-          "_TZE200_cwbvmsar",
-          "_TZ3000_mmtwjmaq",
-          "_TYZB01_ef5xlc9q",
-          "_TZ3000_kmh5qpmb",
-          "_TZ3000_lf56vpxj",
-          "_TZ3000_msl6wxk9",
-          "_TZ3040_bb6xaihh",
-          "_TZE204_81yrt3lo",
-          "_TZ3000_lqmvrwa2",
-          "_TZ3000_ywagc4rj",
-          "_TZ3210_up3pngle",
-          "_TYZB01_wqcac7lo",
-          "_TZ3000_qrldbmfn",
-          "_TZ3000_rcuyhwe3",
-          "_TZ3000_7d8yme6f",
-          "_TZ3000_2mbfxlzr",
-          "_TZ3000_n2egfsli",
-          "_TZE284_aao6qtcs",
-          "_TZ3000_tasrktzi",
-          "_TZ3000_wyhuocal",
-          "_TZE200_locansqn",
-          "_TZE200_cowvfni3",
-          "_TZE284_3towulqd",
-          "_TZE284_bxoo2swd",
-          "_TZE200_3towulqd",
-          "_TZ3000_8ybe88nf",
-          "_TZE200_pay2byax",
-          "_TZE200_cirvgep4",
-          "_TZE200_rq0qlyss",
-          "_TZE200_3ejwq9cd",
-          "_TZE200_s8gkrkxk",
-          "_TZE200_bq5c8xfe",
-          "_TZE200_ppuj1vem",
-          "_TZE200_yojqa8xn",
-          "_TZE200_tcp1h5w9",
-          "_TZE200_vhy3iakz",
-          "_TZ3000_rusu2vzb",
-          "_TZ3000_itnrsufe",
-          "_TZ3000_ruxexjfz",
-          "_TZ3000_pmz6mjyu",
-          "_TZ3000_jmrgyl7o",
-          "_TZ3000_6ygjfyll",
-          "_TZ3000_typdpbpg",
-          "_TZ3000_okaz9tjs",
-          "_TZ3000_26fmupbb",
-          "_TZE284_sooucan5",
-          "_TZE284_lyddnfte",
-          "_TZE284_zocpsznt",
-          "_TZE284_4fjiwweb",
-          "_TZE284_9txy5f8h",
-          "_TZE284_aabybja2",
-          "_TZE284_abci23x5",
-          "_TZE284_afbe2fk0",
-          "_TZE284_cjbofhxw",
-          "_TZE284_yjjdcqsq",
-          "_TZE200_fctwhugx",
-          "_TZE200_drs6j6m5",
-          "_TZE284_whpb9yts",
-          "_TZE284_amp6tsvy",
-          "_TZE284_bjzrowv2",
-          "_TZE284_ntcy3xu1",
-          "_TZE284_mcxw5ehu",
-          "_TZE200_yvx5lh6k",
-          "_TZE200_bxoo2swd",
-          "_TZE200_ntcy3xu1",
-          "_TZ3000_g5xawfcq",
-          "_TZ3000_cehuw1lw",
-          "_TZ3000_h4w2onij",
-          "_TZ3000_bsvqrxru",
-          "_TZ3000_o4mkahkc",
-          "_TZ3000_keyjhapk",
-          "_TZ3000_odygigth",
-          "_TZE284_aagrxlbd",
-          "_TZE284_uqfph8ah",
-          "_TZ3000_18ejxno0",
-          "_TZ3000_hhiodade",
-          "_TZ3000_v1w2k9dd",
-          "_TZ3000_kfu8zapd",
-          "_TZE284_myd45weu",
-          "_TZE284_n4ttsck2",
-          "_TZE200_2aaelwxk",
-          "_TZE204_bjzrowv2",
-          "_TZE284_gyzlwu5q",
-          "_TZ3000_c8ozah8n",
-          "_TZE284_2aaelwxk",
-          "_TZE284_ztc6ggyl",
-          "_TZE284_qasjif9e",
-          "_TZE284_ijxvkhd0",
-          "_TZE284_18ejxno0",
-          "_TZE284_hhiodade",
-          "_TZE284_v1w2k9dd",
-          "_TZE284_kfu8zapd",
-          "_TZE284_c8ozah8n",
-          "_TZE284_dwcarsat",
-          "_TZE284_mhxn2jso",
-          "_TZE284_yojqa8xn",
-          "_TZE284_oisqyl4o",
-          "_TZE284_6ygjfyll",
-          "_TZE284_bsvqrxru",
-          "_TZE200_uqfph8ah",
-          "_TZE200_n4ttsck2",
-          "_TZE200_gyzlwu5q",
-          "_TZE200_ztc6ggyl",
-          "_TZE200_bjzrowv2",
-          "_TZE200_qasjif9e",
-          "_TZE200_ijxvkhd0",
-          "_TZE200_18ejxno0",
-          "_TZE200_hhiodade",
-          "_TZE200_v1w2k9dd",
-          "_TZE200_kfu8zapd",
-          "_TZE200_c8ozah8n",
-          "_TZE200_mhxn2jso",
-          "_TZE200_amp6tsvy",
-          "_TZE200_oisqyl4o",
-          "_TZE200_whpb9yts",
-          "_TZE200_mcxw5ehu",
-          "_TZE200_6ygjfyll",
-          "_TZE200_bsvqrxru",
-          "_TZ3000_uqfph8ah",
-          "_TZ3000_myd45weu"
-        ],
-        "productId": [
-          "TS0001",
-          "TS0201",
-          "TS0601"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              1,
-              1280,
-              1026
-            ],
-            "bindings": [
-              25
-            ]
-          }
-        }
-      },
-      "images": {
-        "small": "/drivers/temperature_sensor_ewelink/assets/images/small.png",
-        "large": "/drivers/temperature_sensor_ewelink/assets/images/large.png"
-      },
-      "capabilitiesOptions": {
-        "measure_temperature": {
-          "title": {
-            "en": "Temperature"
-          },
-          "units": {
-            "en": "°C"
-          }
-        }
-      },
-      "id": "temperature_sensor_leak_combo",
-      "manufacturerName": "Tuya",
-      "platforms": [
-        "local"
-      ]
+      "id": "temperature_sensor_advanced"
     },
     {
       "name": {
@@ -28974,8 +28718,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "touch_dimmer",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "touch_dimmer"
     },
     {
       "name": {
@@ -29193,11 +28937,11 @@
         "large": "/drivers/touch_dimmer_1gang/assets/images/large.png"
       },
       "capabilitiesOptions": {},
-      "id": "touch_dimmer_1gang",
       "manufacturerName": "Lonsonho",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "touch_dimmer_1gang"
     },
     {
       "name": {
@@ -29410,8 +29154,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "touch_switch_1gang",
-      "manufacturerName": "Lonsonho"
+      "manufacturerName": "Lonsonho",
+      "id": "touch_switch_1gang"
     },
     {
       "name": {
@@ -29645,8 +29389,8 @@
           }
         }
       },
-      "id": "touch_switch_2gang",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "touch_switch_2gang"
     },
     {
       "name": {
@@ -29898,8 +29642,8 @@
           }
         }
       },
-      "id": "touch_switch_3gang",
-      "manufacturerName": "MOES"
+      "manufacturerName": "MOES",
+      "id": "touch_switch_3gang"
     },
     {
       "name": {
@@ -30115,8 +29859,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "touch_switch_4gang",
-      "manufacturerName": "MOES"
+      "manufacturerName": "MOES",
+      "id": "touch_switch_4gang"
     },
     {
       "name": {
@@ -30336,8 +30080,8 @@
           }
         }
       },
-      "id": "tvoc_sensor",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "tvoc_sensor"
     },
     {
       "name": {
@@ -30543,11 +30287,11 @@
           }
         }
       },
-      "id": "tvoc_sensor_advanced",
       "manufacturerName": "BSEED",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "tvoc_sensor_advanced"
     },
     {
       "name": {
@@ -30795,8 +30539,8 @@
           "decimals": 2
         }
       },
-      "id": "usb_outlet",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "usb_outlet"
     },
     {
       "name": {
@@ -31013,11 +30757,11 @@
           "decimals": 2
         }
       },
-      "id": "usb_outlet_advanced",
       "manufacturerName": "Lonsonho",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "usb_outlet_advanced"
     },
     {
       "name": {
@@ -31243,8 +30987,8 @@
           }
         }
       },
-      "id": "vibration_sensor",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "vibration_sensor"
     },
     {
       "class": "light",
@@ -31466,8 +31210,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "wall_switch_1gang_ac",
-      "manufacturerName": "MOES"
+      "manufacturerName": "MOES",
+      "id": "wall_switch_1gang_ac"
     },
     {
       "class": "light",
@@ -31689,8 +31433,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "wall_switch_1gang_dc",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "wall_switch_1gang_dc"
     },
     {
       "class": "light",
@@ -31945,8 +31689,8 @@
           }
         }
       },
-      "id": "wall_switch_2gang_ac",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "wall_switch_2gang_ac"
     },
     {
       "class": "light",
@@ -32201,8 +31945,8 @@
           }
         }
       },
-      "id": "wall_switch_2gang_dc",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "wall_switch_2gang_dc"
     },
     {
       "class": "light",
@@ -32474,8 +32218,8 @@
           }
         }
       },
-      "id": "wall_switch_3gang_ac",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "wall_switch_3gang_ac"
     },
     {
       "class": "light",
@@ -32744,8 +32488,8 @@
           }
         }
       },
-      "id": "wall_switch_3gang_dc",
-      "manufacturerName": "Lonsonho"
+      "manufacturerName": "Lonsonho",
+      "id": "wall_switch_3gang_dc"
     },
     {
       "class": "light",
@@ -33009,8 +32753,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "wall_switch_4gang_ac",
-      "manufacturerName": "MOES"
+      "manufacturerName": "MOES",
+      "id": "wall_switch_4gang_ac"
     },
     {
       "class": "light",
@@ -33274,8 +33018,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "wall_switch_4gang_dc",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "wall_switch_4gang_dc"
     },
     {
       "class": "light",
@@ -33548,8 +33292,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "wall_switch_5gang_ac",
-      "manufacturerName": "MOES"
+      "manufacturerName": "MOES",
+      "id": "wall_switch_5gang_ac"
     },
     {
       "class": "light",
@@ -33837,8 +33581,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "wall_switch_6gang_ac",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "wall_switch_6gang_ac"
     },
     {
       "name": {
@@ -34036,11 +33780,11 @@
           }
         }
       },
-      "id": "water_leak_detector_advanced",
       "manufacturerName": "Tuya",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "water_leak_detector_advanced"
     },
     {
       "name": {
@@ -34220,11 +33964,11 @@
         "large": "/drivers/water_leak_detector_ewelink/assets/images/large.png"
       },
       "capabilitiesOptions": {},
-      "id": "water_leak_detector_sq510a",
       "manufacturerName": "BSEED",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "water_leak_detector_sq510a"
     },
     {
       "name": {
@@ -34450,8 +34194,8 @@
           }
         }
       },
-      "id": "water_leak_sensor",
-      "manufacturerName": "MOES"
+      "manufacturerName": "MOES",
+      "id": "water_leak_sensor"
     },
     {
       "name": {
@@ -34661,8 +34405,8 @@
           }
         }
       },
-      "id": "water_valve",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "water_valve"
     },
     {
       "name": {
@@ -34847,11 +34591,11 @@
         "large": "/drivers/water_valve_smart/assets/images/large.png"
       },
       "capabilitiesOptions": {},
-      "id": "water_valve_smart",
       "manufacturerName": "MOES",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "water_valve_smart"
     },
     {
       "name": {
@@ -35065,8 +34809,8 @@
       },
       "settings": [],
       "capabilitiesOptions": {},
-      "id": "wireless_switch",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "wireless_switch"
     },
     {
       "name": {
@@ -35289,8 +35033,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "wireless_switch_1gang_cr2032",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "wireless_switch_1gang_cr2032"
     },
     {
       "class": "button",
@@ -35530,8 +35274,8 @@
           }
         }
       },
-      "id": "wireless_switch_2gang_cr2032",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "wireless_switch_2gang_cr2032"
     },
     {
       "class": "button",
@@ -35789,8 +35533,8 @@
           }
         }
       },
-      "id": "wireless_switch_3gang_cr2032",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "wireless_switch_3gang_cr2032"
     },
     {
       "class": "button",
@@ -36010,8 +35754,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "wireless_switch_4gang_cr2032",
-      "manufacturerName": "MOES"
+      "manufacturerName": "MOES",
+      "id": "wireless_switch_4gang_cr2032"
     },
     {
       "name": {
@@ -36234,11 +35978,11 @@
         "small": "/drivers/wireless_switch_4gang_cr2450/assets/images/small.png",
         "large": "/drivers/wireless_switch_4gang_cr2450/assets/images/large.png"
       },
-      "id": "wireless_switch_4gang_cr2450",
       "manufacturerName": "Tuya",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "wireless_switch_4gang_cr2450"
     },
     {
       "class": "button",
@@ -36473,8 +36217,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "wireless_switch_5gang_cr2032",
-      "manufacturerName": "Tuya"
+      "manufacturerName": "Tuya",
+      "id": "wireless_switch_5gang_cr2032"
     },
     {
       "class": "button",
@@ -36710,8 +36454,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "wireless_switch_6gang_cr2032",
-      "manufacturerName": "MOES"
+      "manufacturerName": "MOES",
+      "id": "wireless_switch_6gang_cr2032"
     },
     {
       "name": {
@@ -36917,8 +36661,8 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "zbbridge",
-      "manufacturerName": "BSEED"
+      "manufacturerName": "BSEED",
+      "id": "zbbridge"
     },
     {
       "name": {
@@ -37094,11 +36838,11 @@
         "large": "/drivers/zigbee_gateway_hub/assets/images/large.png"
       },
       "capabilitiesOptions": {},
-      "id": "zigbee_gateway_hub",
       "manufacturerName": "Tuya",
       "platforms": [
         "local"
-      ]
+      ],
+      "id": "zigbee_gateway_hub"
     }
   ]
 }

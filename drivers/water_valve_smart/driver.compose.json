@@ -181,6 +181,8 @@
     "large": "/drivers/water_valve_smart/assets/images/large.png"
   },
   "capabilitiesOptions": {},
-  "id": "_TZE200_bjawzodf",
-  "manufacturerName": "MOES"
+  "manufacturerName": "MOES",
+  "platforms": [
+    "local"
+  ]
 }

@@ -1,5 +1,4 @@
 {
-  "id": "_TZ3000_fixed",
   "name": {
     "en": "Scene Controller",
     "fr": "Contrôleur de scènes"
@@ -173,5 +172,8 @@
       }
     }
   },
-  "manufacturerName": "Lonsonho"
+  "manufacturerName": "Lonsonho",
+  "platforms": [
+    "local"
+  ]
 }

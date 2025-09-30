@@ -1,5 +1,4 @@
 {
-  "id": "_TZ3000_cehuw1lw",
   "name": {
     "en": "Comprehensive Air Monitor",
     "fr": "Moniteur d'air complet"
@@ -186,5 +185,8 @@
     "batteries": [
       "CR2032"
     ]
-  }
+  },
+  "platforms": [
+    "local"
+  ]
 }

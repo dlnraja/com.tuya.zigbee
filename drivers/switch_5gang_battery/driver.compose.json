@@ -187,6 +187,8 @@
     "large": "/drivers/switch_5gang_battery/assets/images/large.png"
   },
   "capabilitiesOptions": {},
-  "id": "_TZ3000_26fmupbb",
-  "manufacturerName": "Tuya"
+  "manufacturerName": "Tuya",
+  "platforms": [
+    "local"
+  ]
 }

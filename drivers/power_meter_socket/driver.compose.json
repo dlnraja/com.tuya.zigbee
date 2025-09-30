@@ -251,10 +251,12 @@
       "decimals": 2
     }
   },
-  "id": "_TZ3000_fixed",
   "images": {
     "small": "./assets/images/small.png",
     "large": "./assets/images/large.png"
   },
-  "manufacturerName": "Lonsonho"
+  "manufacturerName": "Lonsonho",
+  "platforms": [
+    "local"
+  ]
 }

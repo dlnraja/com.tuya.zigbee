@@ -209,6 +209,8 @@
     "small": "/drivers/garage_door_controller/assets/images/small.png",
     "large": "/drivers/garage_door_controller/assets/images/large.png"
   },
-  "id": "_TZE200_cwbvmsar",
-  "manufacturerName": "MOES"
+  "manufacturerName": "MOES",
+  "platforms": [
+    "local"
+  ]
 }

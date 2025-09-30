@@ -169,10 +169,12 @@
     ]
   },
   "capabilitiesOptions": {},
-  "id": "_TZE200_cwbvmsar",
   "images": {
     "small": "./assets/images/small.png",
     "large": "./assets/images/large.png"
   },
-  "manufacturerName": "MOES"
+  "manufacturerName": "MOES",
+  "platforms": [
+    "local"
+  ]
 }
