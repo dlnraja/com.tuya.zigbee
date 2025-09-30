@@ -1,0 +1,16 @@
+# This workflow explicitly disables GitHub Pages
+# GitHub Pages is not needed for Homey app publication
+
+name: Disable GitHub Pages
+
+on:
+  # Never run this workflow
+  workflow_dispatch:
+
+jobs:
+  disable:
+    runs-on: ubuntu-latest
+    if: false  # Never execute
+    steps:
+      - name: Disabled
+        run: echo "GitHub Pages disabled - use homey.yml for publication"
