@@ -209,7 +209,7 @@
   "images": {
     "small": "./assets/small.png",
     "large": "./assets/large.png",
-    "xlarge": "./assets/xlarge.png"
+    "xlarge": "/drivers/led_strip/assets/xlarge.png"
   },
   "community": {
     "sources": [

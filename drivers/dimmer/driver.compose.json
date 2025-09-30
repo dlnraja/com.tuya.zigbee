@@ -8,9 +8,8 @@
     "dim"
   ],
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png",
-    "xlarge": "./assets/xlarge.png"
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [
