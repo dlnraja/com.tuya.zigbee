@@ -84,6 +84,9 @@ assets/screenshots/
 assets/dev/
 backup/
 
+# Project internal heavy folder (exclude from package)
+ultimate_system/
+
 backup/
 
 backup/
