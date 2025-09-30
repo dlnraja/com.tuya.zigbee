@@ -1,0 +1,24 @@
+{
+  "timestamp": "2025-09-30T08:21:28.927Z",
+  "action": "GITHUB_ACTIONS_TESTING_DEPLOYMENT",
+  "improvements": [
+    "Robust CLI installation with 3 fallback methods",
+    "Debug environment information",
+    "Dedicated test workflow for CLI validation",
+    "Enhanced error handling and logging"
+  ],
+  "workflows": [
+    "homey.yml - Main publication (improved)",
+    "test-cli.yml - CLI installation testing"
+  ],
+  "testing": {
+    "methods": [
+      "homey package",
+      "athom-cli package",
+      "GitHub direct install"
+    ],
+    "validation": "Multiple CLI detection and validation",
+    "debugging": "Environment info, global packages, command availability"
+  },
+  "monitoring": "https://github.com/dlnraja/com.tuya.zigbee/actions"
+}
