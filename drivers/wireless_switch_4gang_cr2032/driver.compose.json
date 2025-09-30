@@ -15,7 +15,11 @@
   },
   "zigbee": {
     "productId": [
-      "TS0001"
+      "TS0001",
+      "TS0011",
+      "TS0002",
+      "TS0601",
+      "TS011F"
     ],
     "endpoints": {
       "1": {
