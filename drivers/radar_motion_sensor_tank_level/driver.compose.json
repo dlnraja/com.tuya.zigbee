@@ -148,12 +148,7 @@
       "_TZE200_mcxw5ehu"
     ],
     "productId": [
-      "TS0202",
-      "TS0001",
-      "TS0011",
-      "TS0002",
-      "TS0601",
-      "TS011F"
+      "TS0202"
     ],
     "endpoints": {
       "1": {
@@ -172,8 +167,8 @@
     }
   },
   "images": {
-    "small": "/drivers/radar_sensor_2aaelwxk/assets/images/small.png",
-    "large": "/drivers/radar_sensor_2aaelwxk/assets/images/large.png"
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
   },
   "capabilitiesOptions": {},
   "manufacturerName": "MOES",

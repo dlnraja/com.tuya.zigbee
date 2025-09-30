@@ -148,11 +148,7 @@
       "_TZE200_mhxn2jso"
     ],
     "productId": [
-      "TS0001",
-      "TS0601",
-      "TS011F",
-      "TS0011",
-      "TS0002"
+      "TS0001"
     ],
     "endpoints": {
       "1": {
@@ -183,7 +179,7 @@
   "images": {
     "small": "./assets/small.png",
     "large": "./assets/large.png",
-    "xlarge": "/drivers/scene_switch/assets/xlarge.png"
+    "xlarge": "./assets/xlarge.png"
   },
   "community": {
     "sources": [

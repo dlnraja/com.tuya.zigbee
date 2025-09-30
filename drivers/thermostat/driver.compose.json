@@ -199,10 +199,7 @@
     "productId": [
       "TS0001",
       "TS0201",
-      "TS0601",
-      "TS0011",
-      "TS0002",
-      "TS011F"
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -234,9 +231,9 @@
     "productIds": []
   },
   "images": {
-    "small": "/drivers/thermostat/assets/small.png",
-    "large": "/drivers/thermostat/assets/large.png",
-    "xlarge": "/drivers/thermostat/assets/xlarge.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png",
+    "xlarge": "./assets/xlarge.png"
   },
   "community": {
     "sources": [

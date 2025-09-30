@@ -162,11 +162,7 @@
       "_TZE200_18ejxno0"
     ],
     "productId": [
-      "TS0001",
-      "TS0011",
-      "TS0002",
-      "TS0601",
-      "TS011F"
+      "TS0001"
     ],
     "endpoints": {
       "1": {
@@ -185,8 +181,8 @@
     }
   },
   "images": {
-    "small": "/drivers/tvoc_sensor_advanced/assets/images/small.png",
-    "large": "/drivers/tvoc_sensor_advanced/assets/images/large.png"
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
   },
   "capabilitiesOptions": {
     "measure_temperature": {

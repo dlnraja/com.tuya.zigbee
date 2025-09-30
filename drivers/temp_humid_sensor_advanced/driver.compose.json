@@ -219,10 +219,7 @@
     "productId": [
       "TS0001",
       "TS0201",
-      "TS0601",
-      "TS0011",
-      "TS0002",
-      "TS011F"
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -241,8 +238,8 @@
     }
   },
   "images": {
-    "small": "/drivers/temp_humid_sensor_advanced/assets/images/small.png",
-    "large": "/drivers/temp_humid_sensor_advanced/assets/images/large.png"
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png"
   },
   "capabilitiesOptions": {
     "measure_temperature": {

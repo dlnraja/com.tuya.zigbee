@@ -11,11 +11,7 @@
   "zigbee": {
     "productId": [
       "TS0001",
-      "TS0005",
-      "TS0011",
-      "TS0002",
-      "TS0601",
-      "TS011F"
+      "TS0005"
     ],
     "endpoints": {
       "1": {
@@ -259,8 +255,8 @@
     ]
   },
   "images": {
-    "small": "/drivers/wall_switch_5gang_ac/assets/small.png",
-    "large": "/drivers/wall_switch_5gang_ac/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "settings": [],
   "name": {

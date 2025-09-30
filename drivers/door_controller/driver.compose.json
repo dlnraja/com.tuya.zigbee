@@ -175,11 +175,7 @@
     ],
     "productId": [
       "TS0001",
-      "TS0203",
-      "TS0601",
-      "TS011F",
-      "TS0011",
-      "TS0002"
+      "TS0203"
     ],
     "endpoints": {
       "1": {
@@ -213,7 +209,7 @@
   "images": {
     "small": "./assets/small.png",
     "large": "./assets/large.png",
-    "xlarge": "/drivers/led_strip/assets/xlarge.png"
+    "xlarge": "./assets/xlarge.png"
   },
   "community": {
     "sources": [
