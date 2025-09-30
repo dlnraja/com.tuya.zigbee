@@ -177,8 +177,8 @@
     }
   },
   "images": {
-    "small": "/drivers/sos_emergency_button/assets/images/small.png",
-    "large": "/drivers/sos_emergency_button/assets/images/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "capabilitiesOptions": {},
   "manufacturerName": "BSEED",

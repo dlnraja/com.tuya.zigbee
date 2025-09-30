@@ -186,8 +186,8 @@
     }
   },
   "images": {
-    "small": "/drivers/switch_2gang_hybrid/assets/images/small.png",
-    "large": "/drivers/switch_2gang_hybrid/assets/images/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "capabilitiesOptions": {
     "onoff": {

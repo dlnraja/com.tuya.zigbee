@@ -255,8 +255,8 @@
     ]
   },
   "images": {
-    "small": "/drivers/wall_switch_5gang_ac/assets/small.png",
-    "large": "/drivers/wall_switch_5gang_ac/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "settings": [],
   "name": {

@@ -193,8 +193,8 @@
     ]
   },
   "images": {
-    "small": "/drivers/smart_switch_1gang_hybrid/assets/small.png",
-    "large": "/drivers/smart_switch_1gang_hybrid/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "settings": [],
   "name": {
