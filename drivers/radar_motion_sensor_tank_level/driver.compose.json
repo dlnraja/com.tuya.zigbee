@@ -167,8 +167,8 @@
     }
   },
   "images": {
-    "small": "/drivers/radar_sensor_2aaelwxk/assets/images/small.png",
-    "large": "/drivers/radar_sensor_2aaelwxk/assets/images/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "capabilitiesOptions": {},
   "manufacturerName": "MOES",

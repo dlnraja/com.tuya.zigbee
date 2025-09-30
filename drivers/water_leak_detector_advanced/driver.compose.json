@@ -181,8 +181,8 @@
     }
   },
   "images": {
-    "small": "/drivers/water_leak_detector_advanced/assets/images/small.png",
-    "large": "/drivers/water_leak_detector_advanced/assets/images/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "capabilitiesOptions": {
     "measure_temperature": {
