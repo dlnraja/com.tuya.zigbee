@@ -1,124 +1,21 @@
 {
-  "name": "universal-tuya-zigbee",
-  "version": "2.2.0",
-  "description": "Support for generic Tuya & Zigbee devices including switches, sensors, and controllers. Based on Johan Bendz's work with community improvements.",
+  "name": "ultimate-zigbee-hub",
+  "version": "2.1.5",
+  "description": "Ultimate Zigbee Hub for Homey - Professional Edition",
   "main": "app.js",
+  "scripts": {
+    "validate": "homey app validate",
+    "publish": "homey app publish"
+  },
   "keywords": [
     "homey",
     "zigbee",
     "tuya",
-    "smart-home",
-    "iot",
-    "automation",
-    "lights",
-    "sensors",
-    "switches",
-    "climate",
-    "security",
-    "johan-benz",
-    "community",
-    "ts0121",
-    "ts011f",
-    "ts0001",
-    "ts0011",
-    "ts0002",
-    "ts0003",
-    "ts110f",
-    "ts1111",
-    "ts130f",
-    "ts0203",
-    "ts0202",
-    "ts0201",
-    "ts0601",
-    "ts004f",
-    "ts0041",
-    "ts0505b",
-    "tze200",
-    "tz3000",
-    "rh3001",
-    "rh3040",
-    "rh3052"
+    "professional"
   ],
-  "dependencies": {
-    "athom-cli": "^3.1.22",
-    "fs-extra": "^11.2.0",
-    "homey": "^3.0.0",
-    "homey-zigbeedriver": "^1.5.0",
-    "jimp": "^0.22.12",
-    "sharp": "^0.33.0",
-    "zigbee-clusters": "^1.0.0"
-  },
+  "author": "Dylan L.N. Raja",
+  "license": "MIT",
   "engines": {
     "node": ">=18.0.0"
-  },
-  "scripts": {
-    "validate": "homey app validate",
-    "publish": "node ultimate_system/publishing/PUBLISH.js",
-    "monitor": "node ultimate_system/publishing/MONITOR.js",
-    "clean": "rm -rf .homeycompose node_modules",
-    "dev": "homey app run",
-    "install": "homey app install"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dlnraja/com.tuya.zigbee.git"
-  },
-  "bugs": {
-    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
-  },
-  "homepage": "https://github.com/dlnraja/com.tuya.zigbee#readme",
-  "author": {
-    "name": "dlnraja",
-    "url": "https://github.com/dlnraja"
-  },
-  "contributors": [
-    {
-      "name": "Johan Bendz",
-      "url": "https://github.com/JohanBendz",
-      "role": "Architecture inspiration & community standards"
-    },
-    {
-      "name": "Homey Community",
-      "role": "Testing, feedback & device contributions"
-    }
-  ],
-  "license": "MIT",
-  "homey": {
-    "id": "com.dlnraja.ultimate.zigbee.hub",
-    "name": {
-      "en": "Universal Tuya Zigbee"
-    },
-    "description": {
-      "en": "Support for generic Tuya & Zigbee devices including switches, sensors, and controllers. Based on Johan Bendz's work with community improvements."
-    },
-    "category": "lighting",
-    "tags": [
-      "zigbee",
-      "tuya",
-      "lights",
-      "sensors",
-      "switches",
-      "climate",
-      "security"
-    ],
-    "version": "1.0.4",
-    "compatibility": ">=5.0.0",
-    "sdk": 3,
-    "brandColor": "#00A8E8",
-    "permissions": [
-      "homey:manager:zigbee"
-    ],
-    "images": {
-      "large": "/assets/images/large.png",
-      "small": "/assets/images/small.png"
-    }
-  },
-  "devDependencies": {
-    "homey": "^3.0.0"
-  },
-  "overrides": {
-    "rimraf": "^5.0.5",
-    "glob": "^10.3.0",
-    "eslint": "^8.57.0"
   }
 }
