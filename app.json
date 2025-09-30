@@ -4,23 +4,18 @@
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "name": {
-    "en": "Ultimate Zigbee Hub - Professional Edition",
-    "fr": "Hub Zigbee Ultime - Édition Professionnelle",
-    "de": "Ultimate Zigbee Hub - Professional Edition",
-    "nl": "Ultimate Zigbee Hub - Professionele Editie"
+    "en": "Ultimate Zigbee Hub",
+    "fr": "Hub Zigbee Ultime",
+    "de": "Ultimate Zigbee Hub",
+    "nl": "Ultimate Zigbee Hub"
   },
   "description": {
-    "en": "Professional Zigbee device support with comprehensive manufacturer compatibility. SDK3 compliant, organized by device function rather than brand.",
+    "en": "Ultimate Zigbee Hub v2.1.9 - Enhanced compatibility with 1000+ devices from 60+ manufacturers. Professional SDK3 architecture with comprehensive Johan Bendz compatibility. Local Zigbee 3.0 operation.",
     "fr": "Support professionnel des appareils Zigbee avec compatibilité fabricant complète. Conforme SDK3, organisé par fonction plutôt que par marque.",
     "de": "Professionelle Zigbee-Geräteunterstützung mit umfassender Herstellerkompatibilität. SDK3-konform, nach Gerätefunktion organisiert.",
     "nl": "Professionele Zigbee apparaatondersteuning met uitgebreide fabrikantcompatibiliteit. SDK3-conform, georganiseerd naar apparaatfunctie."
   },
-  "category": [
-    "tools",
-    "lights",
-    "climate",
-    "security"
-  ],
+  "category": "lights",
   "permissions": [],
   "images": {
     "small": "/assets/images/small.png",
@@ -2625,7 +2620,7 @@
       ]
     }
   ],
-  "brandColor": "#00A8E8",
+  "brandColor": "#1E88E5",
   "settings": [
     {
       "id": "debug_logging",
@@ -2717,8 +2712,7 @@
     "cloud": true
   },
   "platforms": [
-    "local",
-    "cloud"
+    "local"
   ],
   "contributors": {
     "developers": [
