@@ -172,8 +172,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/pool_pump_controller/assets/images/small.png",
+    "large": "/drivers/pool_pump_controller/assets/images/large.png"
   },
   "capabilitiesOptions": {},
   "manufacturerName": "MOES",

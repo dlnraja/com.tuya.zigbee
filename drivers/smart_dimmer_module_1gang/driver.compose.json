@@ -230,8 +230,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/smart_dimmer_module_1gang/assets/images/small.png",
+    "large": "/drivers/smart_dimmer_module_1gang/assets/images/large.png"
   },
   "manufacturerName": "Tuya",
   "platforms": [

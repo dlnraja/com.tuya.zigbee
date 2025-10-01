@@ -241,8 +241,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/temperature_humidity_sensor_ewelink/assets/images/small.png",
+    "large": "/drivers/temperature_humidity_sensor_ewelink/assets/images/large.png"
   },
   "capabilitiesOptions": {
     "measure_temperature": {

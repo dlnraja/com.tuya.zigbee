@@ -178,8 +178,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/smart_irrigation_controller/assets/images/small.png",
+    "large": "/drivers/smart_irrigation_controller/assets/images/large.png"
   },
   "capabilitiesOptions": {},
   "manufacturerName": "Tuya",

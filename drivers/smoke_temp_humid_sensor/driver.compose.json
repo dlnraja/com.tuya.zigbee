@@ -238,8 +238,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/smoke_temp_humid_sensor/assets/images/small.png",
+    "large": "/drivers/smoke_temp_humid_sensor/assets/images/large.png"
   },
   "capabilitiesOptions": {
     "measure_temperature": {
